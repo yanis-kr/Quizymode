@@ -1,0 +1,52 @@
+﻿
+
+
+
+
+Describing Quizymode automation durable state and locks
+ [+] rejects a duplicate live controller lock without truncating metadata 1.12s
+ [+] writes valid JSON atomically and keeps a last-good backup 198ms
+ [+] resumes an interrupted stage without incrementing a repair attempt 52ms
+Describing Quizymode evidence contract
+ [+] rejects stale candidate evidence 449ms
+ [+] rejects local artifact paths and missing command exits 45ms
+ [+] does not treat schema-valid NOT RUN evidence as releasable 43ms
+ [+] rejects nonzero command exits and mismatched issue or PR identity 58ms
+Describing Quizymode provider handoff validation
+ [+] accepts an exact current handoff 147ms
+ [+] rejects stale identity and non-UX skips 44ms
+Describing Quizymode release failure gates
+ [+] blocks release when main advanced after verification 109ms
+ [+] blocks missing pending failed and stale checks 40ms
+ [+] requires release enablement and never interprets policy changes from candidate config 36ms
+ [+] preserves conflicts and failed deployments without closing the issue 46ms
+ [+] allows two repairs and blocks on the third failure 45ms
+ [+] checkpoints quota exhaustion without repair or provider fallback 45ms
+ [+] resumes merge deployment rollback and finalization at the durable side effect 51ms
+Describing Quizymode trusted policy classifier
+ [+] classifies configured automation deployment controls and destructive migrations for machine gates 100ms
+ [+] parses a database connection string without exposing or truncating password characters 120ms
+Describing Quizymode usage summary
+ [+] sums cost and tokens per provider across multiple issue states 237ms
+ [+] does not throw on a state with no usage field at all (pre-existing checkpoints) 58ms
+Describing Claude provider adapter contract
+ [+] declares the required capabilities and subscription-only authentication 237ms
+ [+] rejects a stage with no agent mapping before invoking the CLI 72ms
+Describing Claude provider adapter stage invocation
+ [+] parses a schema-valid completed response and records the actual model 882ms
+ [+] extracts cost and token usage from a successful envelope 188ms
+ [+] still reports usage on an error envelope, since the call was still billed 83ms
+ [+] returns a usage object with null fields rather than throwing when there is no envelope at all 70ms
+ [+] extracts the JSON object when a custom agent persona wraps it in prose 130ms
+ [+] reports quota-exhausted without treating it as a hard failure 141ms
+ [+] recognizes Claude JSON session-limit envelopes even when the CLI exits zero 88ms
+ [+] reports timeout distinctly from a hard CLI failure 63ms
+ [+] treats a malformed CLI envelope as failed, not a silent pass 118ms
+ [+] treats a non-success subtype as failed even with a clean exit code 98ms
+Describing Codex provider adapter usage extraction (best-effort, unverified against real codex.exe)
+ [+] extracts cost and token fields scattered across separate JSONL events 386ms
+ [+] returns null usage fields rather than throwing when no usage fields are present 113ms
+ [+] reports a null usage object (not a throw) on timeout 69ms
+Tests completed in 5.8s
+Passed: 35 Failed: 0 Skipped: 0 Pending: 0 Inconclusive: 0
+

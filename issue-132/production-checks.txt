@@ -1,0 +1,36 @@
+# curl -sI https://www.quizymode.com/og-image.png
+HTTP/1.1 200 OK
+Content-Type: image/png
+Content-Length: 76877
+Connection: keep-alive
+Server: AmazonS3
+Date: Fri, 16 Oct 2026 10:58:39 GMT
+Last-Modified: Fri, 16 Oct 2026 00:50:07 GMT
+ETag: "cb8f82999719017beda5e46dc9e2bfd7"
+x-amz-server-side-encryption: AES256
+Cache-Control: public, max-age=86400
+Accept-Ranges: bytes
+X-Cache: Miss from cloudfront
+Via: 1.1 040805442e27a31aa3f9f01ab2dce57e.cloudfront.net (CloudFront)
+X-Amz-Cf-Pop: ATL59-P6
+X-Amz-Cf-Id: T2E8HkYTcJ8GGnHtDoViJdsXDOa6Jlv-t717aOdZ2Ks_gP2AJ6O2Rw==
+
+
+# curl -sI https://www.quizymode.com/og-image.svg
+HTTP/1.1 200 OK
+Content-Type: image/svg+xml
+Content-Length: 4563
+Connection: keep-alive
+Server: AmazonS3
+
+# og/twitter meta in served HTML
+<meta property="og:image" content="https://www.quizymode.com/og-image.png" />
+<meta property="og:image:type" content="image/png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="Quizymode – Smart Flashcards &amp; Learning Quizzes" />
+<meta name="twitter:image" content="https://www.quizymode.com/og-image.png" />
+<meta name="twitter:image:alt" content="Quizymode – Smart Flashcards &amp; Learning Quizzes" />
+
+# og-image.svg refs in served HTML:
+0

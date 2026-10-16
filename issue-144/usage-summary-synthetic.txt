@@ -1,0 +1,21 @@
+﻿SYNTHETIC INPUT (hand-written values, not from real runs) -> Get-QmUsageSummary
+[
+    {
+        "provider":  "claude",
+        "costUsd":  0.75,
+        "inputTokens":  1500,
+        "outputTokens":  300,
+        "cacheReadTokens":  50,
+        "cacheCreationTokens":  10,
+        "recordedStages":  2
+    },
+    {
+        "provider":  "codex",
+        "costUsd":  0,
+        "inputTokens":  300,
+        "outputTokens":  40,
+        "cacheReadTokens":  0,
+        "cacheCreationTokens":  0,
+        "recordedStages":  1
+    }
+]

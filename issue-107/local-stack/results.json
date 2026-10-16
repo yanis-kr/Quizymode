@@ -1,0 +1,124 @@
+[
+  {
+    "step": "desktop-1280x900: primary action visible without scrolling",
+    "outcome": "PASS",
+    "detail": {
+      "box": {
+        "x": 1014.390625,
+        "y": 99.140625,
+        "width": 212.609375,
+        "height": 40
+      }
+    }
+  },
+  {
+    "step": "desktop-1280x900: five-question size (CTA), no-account text, heading",
+    "outcome": "PASS",
+    "detail": {
+      "heading": "Learn something new in five questions.",
+      "cta": "Play a 5-question quiz"
+    }
+  },
+  {
+    "step": "desktop-1280x900: no horizontal overflow",
+    "outcome": "PASS"
+  },
+  {
+    "step": "mobile-390x844: primary action visible without scrolling",
+    "outcome": "PASS",
+    "detail": {
+      "box": {
+        "x": 15,
+        "y": 180,
+        "width": 360,
+        "height": 40
+      }
+    }
+  },
+  {
+    "step": "mobile-390x844: five-question size (CTA), no-account text, heading",
+    "outcome": "PASS",
+    "detail": {
+      "heading": "Learn something new in five questions.",
+      "cta": "Play a 5-question quiz"
+    }
+  },
+  {
+    "step": "mobile-390x844: no horizontal overflow",
+    "outcome": "PASS"
+  },
+  {
+    "step": "desktop-200pct-640x450: no horizontal overflow at 200% zoom",
+    "outcome": "PASS"
+  },
+  {
+    "step": "desktop-200pct-640x450: CTA reachable and operable",
+    "outcome": "PASS"
+  },
+  {
+    "step": "mobile-200pct-195x422: no horizontal overflow at 200% zoom",
+    "outcome": "FAIL"
+  },
+  {
+    "step": "mobile-200pct-195x422: CTA reachable and operable",
+    "outcome": "PASS"
+  },
+  {
+    "step": "keyboard: Tab reaches the primary action",
+    "outcome": "PASS",
+    "detail": {
+      "accessibleName": "Play a 5-question quiz",
+      "href": "/quiz/collections/8f9b8c14-8d30-4d94-9b20-4c7bb7f7f511/fun+trivia+facts"
+    }
+  },
+  {
+    "step": "CTA opens the public collection quiz directly, no /login, usable question",
+    "outcome": "PASS",
+    "detail": {
+      "navigations": [
+        "http://localhost:7000/",
+        "http://localhost:7000/",
+        "http://localhost:7000/quiz/collections/8f9b8c14-8d30-4d94-9b20-4c7bb7f7f511/fun+trivia+facts",
+        "http://localhost:7000/quiz/collections/8f9b8c14-8d30-4d94-9b20-4c7bb7f7f511/fun+trivia+facts/item/365b5b12-6803-48e9-b907-2b40c1d487f5"
+      ]
+    }
+  },
+  {
+    "step": "failure categories-fail: hero and CTA stay usable (390x844)",
+    "outcome": "PASS",
+    "detail": {
+      "blocked": [
+        "categories"
+      ]
+    }
+  },
+  {
+    "step": "failure collections-fail: hero and CTA stay usable (390x844)",
+    "outcome": "PASS",
+    "detail": {
+      "blocked": [
+        "collections"
+      ]
+    }
+  },
+  {
+    "step": "failure featured-fail: hero and CTA stay usable (390x844)",
+    "outcome": "PASS",
+    "detail": {
+      "blocked": [
+        "featured"
+      ]
+    }
+  },
+  {
+    "step": "failure all-fail: hero and CTA stay usable (390x844)",
+    "outcome": "PASS",
+    "detail": {
+      "blocked": [
+        "categories",
+        "collections",
+        "featured"
+      ]
+    }
+  }
+]

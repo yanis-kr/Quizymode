@@ -1,0 +1,17 @@
+[PASS] desktop-1280x900: primary action visible without scrolling {"box":{"x":1014.390625,"y":99.140625,"width":212.609375,"height":40}}
+[PASS] desktop-1280x900: five-question size (CTA), no-account text, heading {"heading":"Learn something new in five questions.","cta":"Play a 5-question quiz"}
+[PASS] desktop-1280x900: no horizontal overflow 
+[PASS] mobile-390x844: primary action visible without scrolling {"box":{"x":15,"y":180,"width":360,"height":40}}
+[PASS] mobile-390x844: five-question size (CTA), no-account text, heading {"heading":"Learn something new in five questions.","cta":"Play a 5-question quiz"}
+[PASS] mobile-390x844: no horizontal overflow 
+[PASS] desktop-200pct-640x450: no horizontal overflow at 200% zoom 
+[PASS] desktop-200pct-640x450: CTA reachable and operable 
+[FAIL] mobile-200pct-195x422: no horizontal overflow at 200% zoom 
+[PASS] mobile-200pct-195x422: CTA reachable and operable 
+[PASS] keyboard: Tab reaches the primary action {"accessibleName":"Play a 5-question quiz","href":"/quiz/collections/8f9b8c14-8d30-4d94-9b20-4c7bb7f7f511/fun+trivia+facts"}
+[PASS] CTA opens the public collection quiz directly, no /login, usable question {"navigations":["http://localhost:7000/","http://localhost:7000/","http://localhost:7000/quiz/collections/8f9b8c14-8d30-4d94-9b20-4c7bb7f7f511/fun+trivia+facts","http://localhost:7000/quiz/collections/8f9b8c14-8d30-4d94-9b20-4c7bb7f7f511/fun+trivia+facts/item/365b5b12-6803-48e9-b907-2b40c1d487f5"]}
+[PASS] failure categories-fail: hero and CTA stay usable (390x844) {"blocked":["categories"]}
+[PASS] failure collections-fail: hero and CTA stay usable (390x844) {"blocked":["collections"]}
+[PASS] failure featured-fail: hero and CTA stay usable (390x844) {"blocked":["featured"]}
+[PASS] failure all-fail: hero and CTA stay usable (390x844) {"blocked":["categories","collections","featured"]}
+FAILED: 1
