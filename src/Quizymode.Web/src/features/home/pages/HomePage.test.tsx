@@ -83,6 +83,16 @@ describe("HomePage", () => {
     });
   });
 
+  it("clips the decorative hero shapes so they cannot cause horizontal page scroll", () => {
+    renderPage();
+
+    // jsdom has no layout; the real-browser width check lives in playwright/e2e/home.spec.ts (#151).
+    const decor = screen.getByTestId("home-hero-decor");
+    expect(decor).toHaveClass("absolute", "inset-0", "overflow-hidden", "pointer-events-none");
+    expect(decor).toHaveAttribute("aria-hidden", "true");
+    expect(decor.parentElement).toHaveClass("relative");
+  });
+
   it("keeps the hero and category browsing usable when categories fail", async () => {
     vi.mocked(categoriesApi.getAll).mockRejectedValueOnce(new Error("db down"));
 
