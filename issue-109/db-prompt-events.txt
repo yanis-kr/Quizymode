@@ -1,31 +1,31 @@
               SessionId               |       EventName       | IsAuthenticated | UserId | ContextType |   ContextId   | RunId | Score | Total |                     DedupeKey                     |                                                       Path                                                        
 --------------------------------------+-----------------------+-----------------+--------+-------------+---------------+-------+-------+-------+---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------
- 49393fe9-045b-486f-af8b-8e0d9c8689c4 | signup_prompt_viewed  | f               |        | auth        | save-progress |       |       |       | signup_prompt_viewed:client:prompt:save-progress  | /quiz/collections/8f9b8c14-8d30-4d94-9b20-4c7bb7f7f511/fun+trivia+facts/item/b9aaa60d-33ec-4b02-b313-3720665a01f9
- 6aeacb54-fa92-4f22-83fb-98ee6db7a541 | signup_prompt_viewed  | f               |        | auth        | save-progress |       |       |       | signup_prompt_viewed:client:prompt:save-progress  | /quiz/collections/8f9b8c14-8d30-4d94-9b20-4c7bb7f7f511/fun+trivia+facts/item/b9aaa60d-33ec-4b02-b313-3720665a01f9
- 7cd765dd-9e21-4083-b1b1-ed6ddf84f49c | signup_prompt_viewed  | f               |        | auth        | save-progress |       |       |       | signup_prompt_viewed:client:prompt:save-progress  | /quiz/collections/8f9b8c14-8d30-4d94-9b20-4c7bb7f7f511/fun+trivia+facts/item/b9aaa60d-33ec-4b02-b313-3720665a01f9
- 7cd765dd-9e21-4083-b1b1-ed6ddf84f49c | signup_prompt_clicked | f               |        | auth        | save-progress |       |       |       | signup_prompt_clicked:client:prompt:save-progress | /quiz/collections/8f9b8c14-8d30-4d94-9b20-4c7bb7f7f511/fun+trivia+facts/item/b9aaa60d-33ec-4b02-b313-3720665a01f9
- 8c0ef797-1174-4702-a365-2ae0179b60c7 | signup_prompt_viewed  | f               |        | auth        | save-progress |       |       |       | signup_prompt_viewed:client:prompt:save-progress  | /quiz/collections/8f9b8c14-8d30-4d94-9b20-4c7bb7f7f511/fun+trivia+facts/item/b9aaa60d-33ec-4b02-b313-3720665a01f9
- 8c0ef797-1174-4702-a365-2ae0179b60c7 | signup_prompt_clicked | f               |        | auth        | save-progress |       |       |       | signup_prompt_clicked:client:prompt:save-progress | /quiz/collections/8f9b8c14-8d30-4d94-9b20-4c7bb7f7f511/fun+trivia+facts/item/b9aaa60d-33ec-4b02-b313-3720665a01f9
+ 55df3d21-e4cc-4018-b3ec-da8ed89fb398 | signup_prompt_viewed  | f               |        | auth        | save-progress |       |       |       | signup_prompt_viewed:client:prompt:save-progress  | /quiz/collections/8f9b8c14-8d30-4d94-9b20-4c7bb7f7f511/fun+trivia+facts/item/b9aaa60d-33ec-4b02-b313-3720665a01f9
+ 55df3d21-e4cc-4018-b3ec-da8ed89fb398 | signup_prompt_clicked | f               |        | auth        | save-progress |       |       |       | signup_prompt_clicked:client:prompt:save-progress | /quiz/collections/8f9b8c14-8d30-4d94-9b20-4c7bb7f7f511/fun+trivia+facts/item/b9aaa60d-33ec-4b02-b313-3720665a01f9
+ 9cf30d08-2826-4503-92e7-196963c79284 | signup_prompt_viewed  | f               |        | auth        | save-progress |       |       |       | signup_prompt_viewed:client:prompt:save-progress  | /quiz/collections/8f9b8c14-8d30-4d94-9b20-4c7bb7f7f511/fun+trivia+facts/item/b9aaa60d-33ec-4b02-b313-3720665a01f9
+ e15f99be-1310-4510-bd10-5f606255fac5 | signup_prompt_viewed  | f               |        | auth        | save-progress |       |       |       | signup_prompt_viewed:client:prompt:save-progress  | /quiz/collections/8f9b8c14-8d30-4d94-9b20-4c7bb7f7f511/fun+trivia+facts/item/b9aaa60d-33ec-4b02-b313-3720665a01f9
+ feb7b3b0-c4c1-4c66-a7c2-81579e375f3c | signup_prompt_viewed  | f               |        | auth        | save-progress |       |       |       | signup_prompt_viewed:client:prompt:save-progress  | /quiz/collections/8f9b8c14-8d30-4d94-9b20-4c7bb7f7f511/fun+trivia+facts/item/b9aaa60d-33ec-4b02-b313-3720665a01f9
+ feb7b3b0-c4c1-4c66-a7c2-81579e375f3c | signup_prompt_clicked | f               |        | auth        | save-progress |       |       |       | signup_prompt_clicked:client:prompt:save-progress | /quiz/collections/8f9b8c14-8d30-4d94-9b20-4c7bb7f7f511/fun+trivia+facts/item/b9aaa60d-33ec-4b02-b313-3720665a01f9
 (6 rows)
 
               SessionId               |       EventName       | count 
 --------------------------------------+-----------------------+-------
- 49393fe9-045b-486f-af8b-8e0d9c8689c4 | signup_prompt_viewed  |     1
- 6aeacb54-fa92-4f22-83fb-98ee6db7a541 | signup_prompt_viewed  |     1
- 7cd765dd-9e21-4083-b1b1-ed6ddf84f49c | signup_prompt_clicked |     1
- 7cd765dd-9e21-4083-b1b1-ed6ddf84f49c | signup_prompt_viewed  |     1
- 8c0ef797-1174-4702-a365-2ae0179b60c7 | signup_prompt_clicked |     1
- 8c0ef797-1174-4702-a365-2ae0179b60c7 | signup_prompt_viewed  |     1
+ 55df3d21-e4cc-4018-b3ec-da8ed89fb398 | signup_prompt_clicked |     1
+ 55df3d21-e4cc-4018-b3ec-da8ed89fb398 | signup_prompt_viewed  |     1
+ 9cf30d08-2826-4503-92e7-196963c79284 | signup_prompt_viewed  |     1
+ e15f99be-1310-4510-bd10-5f606255fac5 | signup_prompt_viewed  |     1
+ feb7b3b0-c4c1-4c66-a7c2-81579e375f3c | signup_prompt_clicked |     1
+ feb7b3b0-c4c1-4c66-a7c2-81579e375f3c | signup_prompt_viewed  |     1
 (6 rows)
 
               SessionId               | authenticated | quiz_completed | prompt_events 
 --------------------------------------+---------------+----------------+---------------
- 280189e1-6ff6-4a99-a560-7fbb5ea85228 | t             |              1 |             0
- 49393fe9-045b-486f-af8b-8e0d9c8689c4 | f             |              2 |             1
- 6aeacb54-fa92-4f22-83fb-98ee6db7a541 | f             |              2 |             1
- 7cd765dd-9e21-4083-b1b1-ed6ddf84f49c | f             |              1 |             2
- 8c0ef797-1174-4702-a365-2ae0179b60c7 | f             |              1 |             2
- 9b88b5a6-0cb4-4875-b66f-68dd16c6cd7c | t             |              1 |             0
+ 25e1b52d-b8c6-4dac-90cf-1c6071d9496d | t             |              1 |             0
+ 55df3d21-e4cc-4018-b3ec-da8ed89fb398 | f             |              1 |             2
+ 7499a753-8f6f-48f4-9b25-7eeda093b0bd | t             |              1 |             0
+ 9cf30d08-2826-4503-92e7-196963c79284 | f             |              2 |             1
+ e15f99be-1310-4510-bd10-5f606255fac5 | f             |              2 |             1
+ feb7b3b0-c4c1-4c66-a7c2-81579e375f3c | f             |              1 |             2
 (6 rows)
 
  prompt_rows_with_pii_markers 

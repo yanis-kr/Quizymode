@@ -9,7 +9,7 @@
       "outcome": "PASS",
       "detail": {
         "heading": "Make your next quiz yours",
-        "body": "Quiz scores are not saved to accounts yet. A free account lets you bookmark collections and build private practice sets."
+        "body": "Quiz scores are not saved to accounts yet. A free account lets you bookmark public collections and build private practice sets."
       }
     },
     {
@@ -25,6 +25,14 @@
       }
     },
     {
+      "step": "390: signup copy for reason=save-progress is neutral (no keep/saved-in-browser claim)",
+      "outcome": "PASS",
+      "detail": {
+        "signupHeading": "Make your next quiz yours",
+        "signupBody": "Quiz scores are not saved to accounts yet. Create a free account to bookmark public collections and build private practice sets."
+      }
+    },
+    {
       "step": "1280: no signup prompt on the first question",
       "outcome": "PASS"
     },
@@ -33,7 +41,7 @@
       "outcome": "PASS",
       "detail": {
         "heading": "Make your next quiz yours",
-        "body": "Quiz scores are not saved to accounts yet. A free account lets you bookmark collections and build private practice sets."
+        "body": "Quiz scores are not saved to accounts yet. A free account lets you bookmark public collections and build private practice sets."
       }
     },
     {
@@ -49,11 +57,19 @@
       }
     },
     {
+      "step": "1280: signup copy for reason=save-progress is neutral (no keep/saved-in-browser claim)",
+      "outcome": "PASS",
+      "detail": {
+        "signupHeading": "Make your next quiz yours",
+        "signupBody": "Quiz scores are not saved to accounts yet. Create a free account to bookmark public collections and build private practice sets."
+      }
+    },
+    {
       "step": "390: dismiss hides the prompt and keeps the result",
       "outcome": "PASS",
       "detail": {
-        "scoreBefore": "1 / 5",
-        "scoreAfter": "1 / 5"
+        "scoreBefore": "2 / 5",
+        "scoreAfter": "2 / 5"
       }
     },
     {
@@ -71,8 +87,8 @@
       "step": "1280: dismiss hides the prompt and keeps the result",
       "outcome": "PASS",
       "detail": {
-        "scoreBefore": "2 / 5",
-        "scoreAfter": "2 / 5"
+        "scoreBefore": "1 / 5",
+        "scoreAfter": "1 / 5"
       }
     },
     {
@@ -102,11 +118,11 @@
     }
   ],
   "sessions": {
-    "anon-click-390": "7cd765dd-9e21-4083-b1b1-ed6ddf84f49c",
-    "anon-click-1280": "8c0ef797-1174-4702-a365-2ae0179b60c7",
-    "anon-dismiss-390": "49393fe9-045b-486f-af8b-8e0d9c8689c4",
-    "anon-dismiss-1280": "6aeacb54-fa92-4f22-83fb-98ee6db7a541",
-    "signed-in-390": "280189e1-6ff6-4a99-a560-7fbb5ea85228",
-    "signed-in-1280": "9b88b5a6-0cb4-4875-b66f-68dd16c6cd7c"
+    "anon-click-390": "55df3d21-e4cc-4018-b3ec-da8ed89fb398",
+    "anon-click-1280": "feb7b3b0-c4c1-4c66-a7c2-81579e375f3c",
+    "anon-dismiss-390": "9cf30d08-2826-4503-92e7-196963c79284",
+    "anon-dismiss-1280": "e15f99be-1310-4510-bd10-5f606255fac5",
+    "signed-in-390": "7499a753-8f6f-48f4-9b25-7eeda093b0bd",
+    "signed-in-1280": "25e1b52d-b8c6-4dac-90cf-1c6071d9496d"
   }
 }

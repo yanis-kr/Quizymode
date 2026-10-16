@@ -97,6 +97,12 @@ try {
       signupUrl.pathname === "/signup" && signupUrl.searchParams.get("reason") === "save-progress" && signupUrl.searchParams.get("returnTo") === expectedReturn,
       { signupUrl: `${signupUrl.pathname}${signupUrl.search}`, expectedReturn });
     await shot(page, `${w}-03-signup-from-prompt`);
+    const signupHeading = (await page.getByRole("heading", { name: /make your next quiz yours|keep this result/i }).first().textContent())?.trim();
+    const signupBody = (await page.getByText(/quiz scores are not saved to accounts yet/i).first().textContent().catch(() => null))?.trim() ?? null;
+    const pageText = (await page.locator("main, body").first().innerText()).toLowerCase();
+    record(`${w}: signup copy for reason=save-progress is neutral (no keep/saved-in-browser claim)`,
+      signupHeading === "Make your next quiz yours" && Boolean(signupBody) && !pageText.includes("keep this result") && !pageText.includes("stays saved") && !pageText.includes("in this browser"),
+      { signupHeading, signupBody });
     sessions[label] = await sessionIdOf(page);
     await context.close();
   }

@@ -15,7 +15,7 @@ info: Microsoft.AspNetCore.Http.Result.JsonResult[3]
 info: Microsoft.AspNetCore.Routing.EndpointMiddleware[1]
       Executed endpoint 'HTTP: GET /jwks'
 info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
-      Request finished HTTP/1.1 GET https://localhost:7443/jwks - 200 - application/json;+charset=utf-8 250.3332ms
+      Request finished HTTP/1.1 GET https://localhost:7443/jwks - 200 - application/json;+charset=utf-8 137.5127ms
 info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
       Request starting HTTP/1.1 GET https://localhost:7443/jwks - - -
 info: Microsoft.AspNetCore.Routing.EndpointMiddleware[0]
@@ -25,7 +25,7 @@ info: Microsoft.AspNetCore.Http.Result.JsonResult[3]
 info: Microsoft.AspNetCore.Routing.EndpointMiddleware[1]
       Executed endpoint 'HTTP: GET /jwks'
 info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
-      Request finished HTTP/1.1 GET https://localhost:7443/jwks - 200 - application/json;+charset=utf-8 4.9163ms
+      Request finished HTTP/1.1 GET https://localhost:7443/jwks - 200 - application/json;+charset=utf-8 9.7470ms
 info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
       Request starting HTTP/1.1 GET https://localhost:7443/jwks - - -
 info: Microsoft.AspNetCore.Routing.EndpointMiddleware[0]
@@ -35,7 +35,7 @@ info: Microsoft.AspNetCore.Http.Result.JsonResult[3]
 info: Microsoft.AspNetCore.Routing.EndpointMiddleware[1]
       Executed endpoint 'HTTP: GET /jwks'
 info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
-      Request finished HTTP/1.1 GET https://localhost:7443/jwks - 200 - application/json;+charset=utf-8 0.3069ms
+      Request finished HTTP/1.1 GET https://localhost:7443/jwks - 200 - application/json;+charset=utf-8 0.5785ms
 info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
       Request starting HTTP/1.1 GET https://localhost:7443/jwks - - -
 info: Microsoft.AspNetCore.Routing.EndpointMiddleware[0]
@@ -45,7 +45,27 @@ info: Microsoft.AspNetCore.Http.Result.JsonResult[3]
 info: Microsoft.AspNetCore.Routing.EndpointMiddleware[1]
       Executed endpoint 'HTTP: GET /jwks'
 info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
-      Request finished HTTP/1.1 GET https://localhost:7443/jwks - 200 - application/json;+charset=utf-8 0.3539ms
+      Request finished HTTP/1.1 GET https://localhost:7443/jwks - 200 - application/json;+charset=utf-8 0.4682ms
+info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      Request starting HTTP/1.1 GET https://localhost:7443/jwks - - -
+info: Microsoft.AspNetCore.Routing.EndpointMiddleware[0]
+      Executing endpoint 'HTTP: GET /jwks'
+info: Microsoft.AspNetCore.Http.Result.JsonResult[3]
+      Writing value of type '<>f__AnonymousType0`1' as Json.
+info: Microsoft.AspNetCore.Routing.EndpointMiddleware[1]
+      Executed endpoint 'HTTP: GET /jwks'
+info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      Request finished HTTP/1.1 GET https://localhost:7443/jwks - 200 - application/json;+charset=utf-8 0.3596ms
+info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      Request starting HTTP/1.1 GET https://localhost:7443/jwks - - -
+info: Microsoft.AspNetCore.Routing.EndpointMiddleware[0]
+      Executing endpoint 'HTTP: GET /jwks'
+info: Microsoft.AspNetCore.Http.Result.JsonResult[3]
+      Writing value of type '<>f__AnonymousType0`1' as Json.
+info: Microsoft.AspNetCore.Routing.EndpointMiddleware[1]
+      Executed endpoint 'HTTP: GET /jwks'
+info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      Request finished HTTP/1.1 GET https://localhost:7443/jwks - 200 - application/json;+charset=utf-8 0.4733ms
 info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
       Request starting HTTP/1.1 GET https://localhost:7443/mint?sub=evidence-109-390&email=evidence-109-390%40example.test - - -
 info: Microsoft.AspNetCore.Routing.EndpointMiddleware[0]
@@ -55,7 +75,7 @@ info: Microsoft.AspNetCore.Http.Result.JsonResult[3]
 info: Microsoft.AspNetCore.Routing.EndpointMiddleware[1]
       Executed endpoint 'HTTP: GET /mint'
 info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
-      Request finished HTTP/1.1 GET https://localhost:7443/mint?sub=evidence-109-390&email=evidence-109-390%40example.test - 200 - application/json;+charset=utf-8 27.0483ms
+      Request finished HTTP/1.1 GET https://localhost:7443/mint?sub=evidence-109-390&email=evidence-109-390%40example.test - 200 - application/json;+charset=utf-8 59.7906ms
 info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
       Request starting HTTP/1.1 GET https://localhost:7443/.well-known/openid-configuration - - -
 info: Microsoft.AspNetCore.Routing.EndpointMiddleware[0]
@@ -65,7 +85,7 @@ info: Microsoft.AspNetCore.Http.Result.JsonResult[3]
 info: Microsoft.AspNetCore.Routing.EndpointMiddleware[1]
       Executed endpoint 'HTTP: GET /.well-known/openid-configuration'
 info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
-      Request finished HTTP/1.1 GET https://localhost:7443/.well-known/openid-configuration - 200 - application/json;+charset=utf-8 3.4784ms
+      Request finished HTTP/1.1 GET https://localhost:7443/.well-known/openid-configuration - 200 - application/json;+charset=utf-8 5.9149ms
 info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
       Request starting HTTP/1.1 GET https://localhost:7443/jwks - - -
 info: Microsoft.AspNetCore.Routing.EndpointMiddleware[0]
@@ -75,7 +95,7 @@ info: Microsoft.AspNetCore.Http.Result.JsonResult[3]
 info: Microsoft.AspNetCore.Routing.EndpointMiddleware[1]
       Executed endpoint 'HTTP: GET /jwks'
 info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
-      Request finished HTTP/1.1 GET https://localhost:7443/jwks - 200 - application/json;+charset=utf-8 0.3364ms
+      Request finished HTTP/1.1 GET https://localhost:7443/jwks - 200 - application/json;+charset=utf-8 0.6977ms
 info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
       Request starting HTTP/1.1 GET https://localhost:7443/mint?sub=evidence-109-1280&email=evidence-109-1280%40example.test - - -
 info: Microsoft.AspNetCore.Routing.EndpointMiddleware[0]
@@ -85,44 +105,4 @@ info: Microsoft.AspNetCore.Http.Result.JsonResult[3]
 info: Microsoft.AspNetCore.Routing.EndpointMiddleware[1]
       Executed endpoint 'HTTP: GET /mint'
 info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
-      Request finished HTTP/1.1 GET https://localhost:7443/mint?sub=evidence-109-1280&email=evidence-109-1280%40example.test - 200 - application/json;+charset=utf-8 1.7520ms
-info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
-      Request starting HTTP/1.1 GET https://localhost:7443/mint?sub=evidence-109-390&email=evidence-109-390%40example.test - - -
-info: Microsoft.AspNetCore.Routing.EndpointMiddleware[0]
-      Executing endpoint 'HTTP: GET /mint'
-info: Microsoft.AspNetCore.Http.Result.JsonResult[3]
-      Writing value of type '<>f__AnonymousType2`3' as Json.
-info: Microsoft.AspNetCore.Routing.EndpointMiddleware[1]
-      Executed endpoint 'HTTP: GET /mint'
-info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
-      Request finished HTTP/1.1 GET https://localhost:7443/mint?sub=evidence-109-390&email=evidence-109-390%40example.test - 200 - application/json;+charset=utf-8 3.0580ms
-info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
-      Request starting HTTP/1.1 GET https://localhost:7443/.well-known/openid-configuration - - -
-info: Microsoft.AspNetCore.Routing.EndpointMiddleware[0]
-      Executing endpoint 'HTTP: GET /.well-known/openid-configuration'
-info: Microsoft.AspNetCore.Http.Result.JsonResult[3]
-      Writing value of type 'Dictionary`2' as Json.
-info: Microsoft.AspNetCore.Routing.EndpointMiddleware[1]
-      Executed endpoint 'HTTP: GET /.well-known/openid-configuration'
-info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
-      Request finished HTTP/1.1 GET https://localhost:7443/.well-known/openid-configuration - 200 - application/json;+charset=utf-8 0.9472ms
-info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
-      Request starting HTTP/1.1 GET https://localhost:7443/jwks - - -
-info: Microsoft.AspNetCore.Routing.EndpointMiddleware[0]
-      Executing endpoint 'HTTP: GET /jwks'
-info: Microsoft.AspNetCore.Http.Result.JsonResult[3]
-      Writing value of type '<>f__AnonymousType0`1' as Json.
-info: Microsoft.AspNetCore.Routing.EndpointMiddleware[1]
-      Executed endpoint 'HTTP: GET /jwks'
-info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
-      Request finished HTTP/1.1 GET https://localhost:7443/jwks - 200 - application/json;+charset=utf-8 0.4303ms
-info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
-      Request starting HTTP/1.1 GET https://localhost:7443/mint?sub=evidence-109-1280&email=evidence-109-1280%40example.test - - -
-info: Microsoft.AspNetCore.Routing.EndpointMiddleware[0]
-      Executing endpoint 'HTTP: GET /mint'
-info: Microsoft.AspNetCore.Http.Result.JsonResult[3]
-      Writing value of type '<>f__AnonymousType2`3' as Json.
-info: Microsoft.AspNetCore.Routing.EndpointMiddleware[1]
-      Executed endpoint 'HTTP: GET /mint'
-info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
-      Request finished HTTP/1.1 GET https://localhost:7443/mint?sub=evidence-109-1280&email=evidence-109-1280%40example.test - 200 - application/json;+charset=utf-8 1.9207ms
+      Request finished HTTP/1.1 GET https://localhost:7443/mint?sub=evidence-109-1280&email=evidence-109-1280%40example.test - 200 - application/json;+charset=utf-8 1.5112ms
