@@ -26,8 +26,7 @@ public sealed record IdeaSummaryResponse(
     int? MyRating,
     bool CanEdit,
     bool CanDelete,
-    bool CanChangeStatus,
-    bool CanModerate);
+    bool CanChangeStatus);
 
 public sealed record IdeaBoardResponse(List<IdeaSummaryResponse> Ideas);
 
@@ -122,7 +121,6 @@ internal static partial class IdeaFeatureSupport
                 myRatings.GetValueOrDefault(idea.Id),
                 CanEditIdea(idea, userContext),
                 CanDeleteIdea(idea, userContext),
-                userContext.IsAdmin,
                 userContext.IsAdmin))
             .ToList();
     }

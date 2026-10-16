@@ -9390,8 +9390,7 @@
           "myRating",
           "canEdit",
           "canDelete",
-          "canChangeStatus",
-          "canModerate"
+          "canChangeStatus"
         ],
         "type": "object",
         "properties": {
@@ -9502,9 +9501,6 @@
             "$ref": "#/components/schemas/System.Boolean"
           },
           "canChangeStatus": {
-            "$ref": "#/components/schemas/System.Boolean"
-          },
-          "canModerate": {
             "$ref": "#/components/schemas/System.Boolean"
           }
         }
