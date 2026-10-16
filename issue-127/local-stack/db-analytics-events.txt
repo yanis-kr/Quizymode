@@ -1,0 +1,25 @@
+ session  |      EventName       |   run    | Position | IsCorrect | Score | Total | IsInternal | IsBot | ContextType 
+----------+----------------------+----------+----------+-----------+-------+-------+------------+-------+-------------
+ a1747776 | quick_quiz_started   | fcb406a3 |          |           |       |    10 | f          | f     | quiz
+ a1747776 | question_answered    | fcb406a3 |        1 | f         |       |       | f          | f     | quiz
+ a1747776 | question_answered    | fcb406a3 |        2 | t         |       |       | f          | f     | quiz
+ a1747776 | question_answered    | fcb406a3 |        3 | f         |       |       | f          | f     | quiz
+ a1747776 | question_answered    | fcb406a3 |        4 | t         |       |       | f          | f     | quiz
+ a1747776 | question_answered    | fcb406a3 |        5 | f         |       |       | f          | f     | quiz
+ a1747776 | question_answered    | fcb406a3 |        6 | t         |       |       | f          | f     | quiz
+ a1747776 | question_answered    | fcb406a3 |        7 | f         |       |       | f          | f     | quiz
+ a1747776 | question_answered    | fcb406a3 |        8 | f         |       |       | f          | f     | quiz
+ a1747776 | question_answered    | fcb406a3 |        9 | f         |       |       | f          | f     | quiz
+ a1747776 | question_answered    | fcb406a3 |       10 | f         |       |       | f          | f     | quiz
+ a1747776 | quiz_completed       | fcb406a3 |          |           |     3 |    10 | f          | f     | quiz
+ a1747776 | signup_prompt_viewed |          |          |           |       |       | f          | f     | auth
+ a1747776 | quick_quiz_started   | 8652fe8c |          |           |       |    10 | f          | f     | quiz
+ a1747776 | question_answered    | 8652fe8c |        1 | t         |       |       | f          | f     | quiz
+ a1747776 | question_answered    | 8652fe8c |        2 | t         |       |       | f          | f     | quiz
+ a1747776 | question_answered    | 8652fe8c |        3 | f         |       |       | f          | f     | quiz
+ a1747776 | question_answered    | 8652fe8c |        4 | f         |       |       | f          | f     | quiz
+ e3eda551 | quick_quiz_started   | dca3f534 |          |           |       |    10 | t          | f     | quiz
+ e3eda551 | question_answered    | dca3f534 |        1 | f         |       |       | t          | f     | quiz
+ e3eda551 | question_answered    | dca3f534 |        2 | f         |       |       | t          | f     | quiz
+(21 rows)
+

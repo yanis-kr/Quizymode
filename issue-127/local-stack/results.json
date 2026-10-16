@@ -1,0 +1,99 @@
+[
+  {
+    "step": "10-question quiz: 1 start, 10 answers, 1 completion, same runId",
+    "outcome": "PASS",
+    "detail": {
+      "counts": {
+        "quick_quiz_started": 1,
+        "question_answered": 10,
+        "quiz_completed": 1
+      },
+      "requests": 4
+    }
+  },
+  {
+    "step": "Changing an answer sends no second question_answered for position 1",
+    "outcome": "PASS"
+  },
+  {
+    "step": "Play again starts a new runId",
+    "outcome": "PASS",
+    "detail": {
+      "first": "fcb406a3",
+      "replay": "8652fe8c"
+    }
+  },
+  {
+    "step": "Closing the tab after 4 answers delivers those 4 answers (stored rows for the replay run)",
+    "outcome": "PASS",
+    "detail": {
+      "sentByRegularBatchesBeforeClose": 0,
+      "storedPositions": [
+        "1",
+        "2",
+        "3",
+        "4"
+      ]
+    }
+  },
+  {
+    "step": "Internal browser sends internalBrowser: true",
+    "outcome": "PASS"
+  },
+  {
+    "step": "Unknown names and out-of-range values return 400 and store nothing",
+    "outcome": "PASS",
+    "detail": {
+      "statuses": {
+        "unknownName": 400,
+        "positionZero": 400,
+        "position501": 400,
+        "scoreOverTotal": 400,
+        "total501": 400
+      },
+      "rowCountBefore": "21",
+      "rowCountAfter": "21"
+    }
+  },
+  {
+    "step": "Learning report (default): 2 quiz runs started, 1 completed, 50% completion",
+    "outcome": "PASS",
+    "detail": {
+      "mode": "quiz",
+      "contextType": "quiz",
+      "contextId": null,
+      "runsStarted": 2,
+      "runsCompleted": 1,
+      "completionRatePercent": 50,
+      "averageScorePercent": 30,
+      "averageItemsReached": 7
+    }
+  },
+  {
+    "step": "Abandoned replay counts as stopped at position 4",
+    "outcome": "PASS",
+    "detail": {
+      "p4": {
+        "position": 4,
+        "runsReached": 2,
+        "sharePercent": 100,
+        "runsAbandonedHere": 1
+      },
+      "p5": {
+        "position": 5,
+        "runsReached": 1,
+        "sharePercent": 50,
+        "runsAbandonedHere": 0
+      }
+    }
+  },
+  {
+    "step": "Internal session excluded by default and included with includeInternal=true",
+    "outcome": "PASS",
+    "detail": {
+      "internalSessions": 1,
+      "internalExcluded": true,
+      "runsStartedWithInternal": 3
+    }
+  }
+]

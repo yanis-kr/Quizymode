@@ -1,0 +1,83 @@
+{
+  "windowStartUtc": "2026-10-09T22:35:21.1245655Z",
+  "windowEndUtc": "2026-10-16T22:35:21.1245655Z",
+  "botSessions": 0,
+  "botsExcluded": true,
+  "internalSessions": 1,
+  "internalExcluded": false,
+  "scopes": [
+    {
+      "mode": "quiz",
+      "contextType": "quiz",
+      "contextId": null,
+      "runsStarted": 3,
+      "runsCompleted": 1,
+      "completionRatePercent": 33.3,
+      "averageScorePercent": 30,
+      "averageItemsReached": 5.3
+    }
+  ],
+  "quizRunsAbandonedBeforeFirstAnswer": 0,
+  "quizDropOff": [
+    {
+      "position": 1,
+      "runsReached": 3,
+      "sharePercent": 100,
+      "runsAbandonedHere": 0
+    },
+    {
+      "position": 2,
+      "runsReached": 3,
+      "sharePercent": 100,
+      "runsAbandonedHere": 1
+    },
+    {
+      "position": 3,
+      "runsReached": 2,
+      "sharePercent": 66.7,
+      "runsAbandonedHere": 0
+    },
+    {
+      "position": 4,
+      "runsReached": 2,
+      "sharePercent": 66.7,
+      "runsAbandonedHere": 1
+    },
+    {
+      "position": 5,
+      "runsReached": 1,
+      "sharePercent": 33.3,
+      "runsAbandonedHere": 0
+    },
+    {
+      "position": 6,
+      "runsReached": 1,
+      "sharePercent": 33.3,
+      "runsAbandonedHere": 0
+    },
+    {
+      "position": 7,
+      "runsReached": 1,
+      "sharePercent": 33.3,
+      "runsAbandonedHere": 0
+    },
+    {
+      "position": 8,
+      "runsReached": 1,
+      "sharePercent": 33.3,
+      "runsAbandonedHere": 0
+    },
+    {
+      "position": 9,
+      "runsReached": 1,
+      "sharePercent": 33.3,
+      "runsAbandonedHere": 0
+    },
+    {
+      "position": 10,
+      "runsReached": 1,
+      "sharePercent": 33.3,
+      "runsAbandonedHere": 0
+    }
+  ]
+}

@@ -1,0 +1,35 @@
+ ✓ src/features/items/quiz/quizAnalytics.test.ts > quizAnalytics > reports the home quick quiz separately from other collections
+ ✓ src/features/items/quiz/quizAnalytics.test.ts > quizAnalytics > uses the category as context and drops ids the API would reject
+ ✓ src/features/items/quiz/quizAnalytics.test.ts > quizAnalytics > scopes Flashcards context to the collection, category, or the whole bank
+ ✓ src/features/items/quiz/quizAnalytics.test.ts > quizAnalytics > sends one start and one completion keyed by the run id
+ ✓ src/features/items/quiz/quizAnalytics.test.ts > quizAnalytics > defers question_answered keyed by run and item, with the 1-based position
+ ✓ src/features/items/quiz/quizAnalytics.test.ts > quizAnalytics > does not report an item that is not part of the run
+ ✓ src/features/items/quiz/quizAnalytics.test.ts > quizAnalytics > sends one flashcards_started per run
+ ✓ src/features/items/quiz/quizAnalytics.test.ts > quizAnalytics > defers flashcard_revealed keyed by run and item
+ ✓ src/features/analytics/PageViewTracker.test.tsx > PageViewTracker > records a hit for public routes without the internal marker
+ ✓ src/features/analytics/PageViewTracker.test.tsx > PageViewTracker > sends the internal-browser marker when this browser is excluded
+ ✓ src/features/analytics/PageViewTracker.test.tsx > PageViewTracker > records nothing for admin route /admin
+ ✓ src/features/analytics/PageViewTracker.test.tsx > PageViewTracker > records nothing for admin route /admin/page-view-analytics
+ ✓ src/features/analytics/PageViewTracker.test.tsx > PageViewTracker > records nothing for admin route /admin/user-settings
+ ✓ src/features/admin/components/LearningTab.test.tsx > LearningTab > lists each mode and scope with completion and drop-off
+ ✓ src/features/admin/components/LearningTab.test.tsx > LearningTab > shows empty states when nothing was recorded
+ ✓ src/features/admin/components/LearningTab.test.tsx > LearningTab > shows an error state when the report fails
+ ✓ src/features/items/quiz/studyRunAcceptance.test.ts > study run acceptance (#127) > records one start, ten first answers and one completion with the same run id
+ ✓ src/features/items/quiz/studyRunAcceptance.test.ts > study run acceptance (#127) > delivers four held answers when the page hides mid-run
+ ✓ src/features/items/quiz/studyRunAcceptance.test.ts > study run acceptance (#127) > gives Play again a new run id so its answers are recorded again
+ ✓ src/features/analytics/analyticsEvents.test.tsx > analyticsEvents > batches events queued in the same tick with the page session and app-relative path
+ ✓ src/features/analytics/analyticsEvents.test.tsx > analyticsEvents > sends the internal marker only from a browser marked as internal
+ ✓ src/features/analytics/analyticsEvents.test.tsx > analyticsEvents > never sends a context id without its context type
+ ✓ src/features/analytics/analyticsEvents.test.tsx > analyticsEvents > splits large bursts into batches of at most 25
+ ✓ src/features/analytics/analyticsEvents.test.tsx > analyticsEvents > swallows delivery failures without throwing or retrying
+ ✓ src/features/analytics/analyticsEvents.test.tsx > analyticsEvents > sends a keyed impression once per tab session and passes the key as the idempotency id
+ ✓ src/features/analytics/analyticsEvents.test.tsx > analyticsEvents > dedupes locally but omits the idempotency id when the key is not a short token
+ ✓ src/features/analytics/analyticsEvents.test.tsx > analyticsEvents > records a component impression once despite StrictMode double effects and remounts
+ ✓ src/features/analytics/analyticsEvents.test.tsx > analyticsEvents deferred batching > holds deferred events until the batch size is reached
+ ✓ src/features/analytics/analyticsEvents.test.tsx > analyticsEvents deferred batching > ignores a repeated onceKey instead of queuing it again
+ ✓ src/features/analytics/analyticsEvents.test.tsx > analyticsEvents deferred batching > sends nothing on an explicit flush when nothing is deferred
+ ✓ src/features/analytics/analyticsEvents.test.tsx > analyticsEvents deferred batching > flushes fewer than the batch size via flushDeferredAnalyticsEvents
+ ✓ src/features/analytics/analyticsEvents.test.tsx > analyticsEvents page-hide delivery > sends held deferred events with a keepalive fetch and the bearer token
+ ✓ src/features/analytics/analyticsEvents.test.tsx > analyticsEvents page-hide delivery > omits the Authorization header when no token is stored
+ ✓ src/features/analytics/analyticsEvents.test.tsx > analyticsEvents page-hide delivery > does nothing when there is nothing pending
+      Tests  34 passed (34)

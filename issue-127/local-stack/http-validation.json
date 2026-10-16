@@ -1,0 +1,22 @@
+{
+  "unknownName": {
+    "status": 400,
+    "body": "{\"type\":\"https://tools.ietf.org/html/rfc9110#section-15.5.1\",\"title\":\"One or more validation errors occurred.\",\"status\":400,\"errors\":{\"Events[0].Name\":[\"Unknown event name 'quiz_paused'.\"]}}"
+  },
+  "positionZero": {
+    "status": 400,
+    "body": "{\"type\":\"https://tools.ietf.org/html/rfc9110#section-15.5.1\",\"title\":\"One or more validation errors occurred.\",\"status\":400,\"errors\":{\"Events[0].Position\":[\"'Position' must be between 1 and 500. You entered 0.\"]}}"
+  },
+  "position501": {
+    "status": 400,
+    "body": "{\"type\":\"https://tools.ietf.org/html/rfc9110#section-15.5.1\",\"title\":\"One or more validation errors occurred.\",\"status\":400,\"errors\":{\"Events[0].Position\":[\"'Position' must be between 1 and 500. You entered 501.\"]}}"
+  },
+  "scoreOverTotal": {
+    "status": 400,
+    "body": "{\"type\":\"https://tools.ietf.org/html/rfc9110#section-15.5.1\",\"title\":\"One or more validation errors occurred.\",\"status\":400,\"errors\":{\"Events[0].Score\":[\"Score cannot exceed Total.\"]}}"
+  },
+  "total501": {
+    "status": 400,
+    "body": "{\"type\":\"https://tools.ietf.org/html/rfc9110#section-15.5.1\",\"title\":\"One or more validation errors occurred.\",\"status\":400,\"errors\":{\"Events[0].Total\":[\"'Total' must be between 1 and 500. You entered 501.\"]}}"
+  }
+}

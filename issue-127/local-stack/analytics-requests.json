@@ -1,0 +1,142 @@
+[
+  {
+    "actor": "anon",
+    "url": "/api/analytics/events",
+    "keepalive": false,
+    "events": [
+      {
+        "name": "quick_quiz_started",
+        "runId": "fcb406a3",
+        "total": 10
+      }
+    ],
+    "internalBrowser": false
+  },
+  {
+    "actor": "anon",
+    "url": "/api/analytics/events",
+    "keepalive": false,
+    "events": [
+      {
+        "name": "question_answered",
+        "runId": "fcb406a3",
+        "position": 1,
+        "isCorrect": false
+      },
+      {
+        "name": "question_answered",
+        "runId": "fcb406a3",
+        "position": 2,
+        "isCorrect": true
+      },
+      {
+        "name": "question_answered",
+        "runId": "fcb406a3",
+        "position": 3,
+        "isCorrect": false
+      },
+      {
+        "name": "question_answered",
+        "runId": "fcb406a3",
+        "position": 4,
+        "isCorrect": true
+      },
+      {
+        "name": "question_answered",
+        "runId": "fcb406a3",
+        "position": 5,
+        "isCorrect": false
+      }
+    ],
+    "internalBrowser": false
+  },
+  {
+    "actor": "anon",
+    "url": "/api/analytics/events",
+    "keepalive": false,
+    "events": [
+      {
+        "name": "question_answered",
+        "runId": "fcb406a3",
+        "position": 6,
+        "isCorrect": true
+      },
+      {
+        "name": "question_answered",
+        "runId": "fcb406a3",
+        "position": 7,
+        "isCorrect": false
+      },
+      {
+        "name": "question_answered",
+        "runId": "fcb406a3",
+        "position": 8,
+        "isCorrect": false
+      },
+      {
+        "name": "question_answered",
+        "runId": "fcb406a3",
+        "position": 9,
+        "isCorrect": false
+      },
+      {
+        "name": "question_answered",
+        "runId": "fcb406a3",
+        "position": 10,
+        "isCorrect": false
+      }
+    ],
+    "internalBrowser": false
+  },
+  {
+    "actor": "anon",
+    "url": "/api/analytics/events",
+    "keepalive": false,
+    "events": [
+      {
+        "name": "quiz_completed",
+        "runId": "fcb406a3",
+        "score": 3,
+        "total": 10
+      }
+    ],
+    "internalBrowser": false
+  },
+  {
+    "actor": "anon",
+    "url": "/api/analytics/events",
+    "keepalive": false,
+    "events": [
+      {
+        "name": "signup_prompt_viewed"
+      }
+    ],
+    "internalBrowser": false
+  },
+  {
+    "actor": "anon",
+    "url": "/api/analytics/events",
+    "keepalive": false,
+    "events": [
+      {
+        "name": "quick_quiz_started",
+        "runId": "8652fe8c",
+        "total": 10
+      }
+    ],
+    "internalBrowser": false
+  },
+  {
+    "actor": "internal",
+    "url": "/api/analytics/events",
+    "keepalive": false,
+    "events": [
+      {
+        "name": "quick_quiz_started",
+        "runId": "dca3f534",
+        "total": 10
+      }
+    ],
+    "internalBrowser": true
+  }
+]
