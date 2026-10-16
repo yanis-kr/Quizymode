@@ -1,0 +1,28 @@
+{
+  "1-home": {
+    "url": "http://127.0.0.1:7134/",
+    "h1": "Learn something new in five questions.",
+    "header": 1
+  },
+  "2-quiz": {
+    "url": "http://127.0.0.1:7134/quiz",
+    "h1": null,
+    "header": 1
+  },
+  "3-lazy-about": {
+    "url": "http://127.0.0.1:7134/about",
+    "h1": "About QuizyMode",
+    "header": 1
+  },
+  "4-chunk-fail": {
+    "url": "http://127.0.0.1:7134/roadmap",
+    "reloads": 1,
+    "retryVisible": true,
+    "text": true
+  },
+  "5-retry": {
+    "url": "http://127.0.0.1:7134/roadmap",
+    "totalDocumentLoadsAfterFailure": 2,
+    "h1": "Quizymode Roadmap"
+  }
+}
