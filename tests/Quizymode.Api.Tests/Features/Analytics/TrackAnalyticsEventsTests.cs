@@ -215,7 +215,33 @@ public sealed class TrackAnalyticsEventsTests : DatabaseTestFixture
         { "total out of range", new(AnalyticsEventCatalog.QuizCompleted, "/", RunId: "r", Score: 1, Total: 501) },
         { "field not allowed for event", new(AnalyticsEventCatalog.SignupSubmitted, "/", Score: 1) },
         { "item fields reserved for study events", new(AnalyticsEventCatalog.QuizCompleted, "/", RunId: "r", Score: 1, Total: 2, ItemId: Guid.NewGuid()) },
+        { "answer without correctness", new(AnalyticsEventCatalog.QuestionAnswered, "/", RunId: "r", ItemId: Guid.NewGuid(), Position: 1) },
+        { "answer without item", new(AnalyticsEventCatalog.QuestionAnswered, "/", RunId: "r", Position: 1, IsCorrect: true) },
+        { "answer position zero", new(AnalyticsEventCatalog.QuestionAnswered, "/", RunId: "r", ItemId: Guid.NewGuid(), Position: 0, IsCorrect: true) },
+        { "answer position out of range", new(AnalyticsEventCatalog.QuestionAnswered, "/", RunId: "r", ItemId: Guid.NewGuid(), Position: 501, IsCorrect: true) },
+        { "answer with score", new(AnalyticsEventCatalog.QuestionAnswered, "/", RunId: "r", ItemId: Guid.NewGuid(), Position: 1, IsCorrect: true, Score: 1) },
+        { "reveal without position", new(AnalyticsEventCatalog.FlashcardRevealed, "/", RunId: "r", ItemId: Guid.NewGuid()) },
+        { "reveal with correctness", new(AnalyticsEventCatalog.FlashcardRevealed, "/", RunId: "r", ItemId: Guid.NewGuid(), Position: 1, IsCorrect: true) },
+        { "flashcards start without run", new(AnalyticsEventCatalog.FlashcardsStarted, "/", "flashcards") },
     };
+
+    [Fact]
+    public async Task HandleAsync_StoresOneAnswerPerItemPerRun()
+    {
+        Guid itemId = Guid.NewGuid();
+        TrackAnalyticsEvents.EventRequest first = new(AnalyticsEventCatalog.QuestionAnswered, "/quiz", RunId: "run-1", ItemId: itemId, Position: 1, IsCorrect: false);
+        // A changed answer for the same item, a retry, and the same item in a new run.
+        TrackAnalyticsEvents.EventRequest changed = first with { IsCorrect = true };
+        TrackAnalyticsEvents.EventRequest replay = first with { RunId = "run-2" };
+
+        TrackAnalyticsEvents.Response response = await Track("s", first, changed, first, replay);
+
+        response.Accepted.Should().Be(2);
+        response.Duplicates.Should().Be(2);
+        List<AnalyticsEvent> stored = await DbContext.AnalyticsEvents.AsNoTracking().OrderBy(analyticsEvent => analyticsEvent.RunId).ToListAsync();
+        stored.Select(analyticsEvent => (analyticsEvent.RunId, analyticsEvent.IsCorrect)).Should().Equal(("run-1", false), ("run-2", false));
+        stored.Should().OnlyContain(analyticsEvent => analyticsEvent.ItemId == itemId && analyticsEvent.Position == 1);
+    }
 
     [Theory]
     [MemberData(nameof(InvalidEvents))]

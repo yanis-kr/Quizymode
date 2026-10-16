@@ -8,6 +8,31 @@ import { itemsApi } from "@/api/items";
 import { categoriesApi } from "@/api/categories";
 import { keywordsApi } from "@/api/keywords";
 
+const {
+  mockCreateAnalyticsId,
+  mockFlushDeferredAnalyticsEvents,
+  mockFlashcardsEventContext,
+  mockTrackFlashcardsStarted,
+  mockTrackFlashcardRevealed,
+} = vi.hoisted(() => ({
+  mockCreateAnalyticsId: vi.fn(() => "run-abc"),
+  mockFlushDeferredAnalyticsEvents: vi.fn(),
+  mockFlashcardsEventContext: vi.fn(() => ({ contextType: "category", contextId: "exams" })),
+  mockTrackFlashcardsStarted: vi.fn(),
+  mockTrackFlashcardRevealed: vi.fn(),
+}));
+
+vi.mock("@/features/analytics/analyticsEvents", () => ({
+  createAnalyticsId: mockCreateAnalyticsId,
+  flushDeferredAnalyticsEvents: mockFlushDeferredAnalyticsEvents,
+}));
+
+vi.mock("@/features/items/quiz/quizAnalytics", () => ({
+  flashcardsEventContext: mockFlashcardsEventContext,
+  trackFlashcardsStarted: mockTrackFlashcardsStarted,
+  trackFlashcardRevealed: mockTrackFlashcardRevealed,
+}));
+
 vi.mock("@/contexts/AuthContext", () => ({
   useAuth: () => ({
     isAuthenticated: true,
@@ -46,7 +71,15 @@ vi.mock("@/components/CommentsDrawer", () => ({
 }));
 
 vi.mock("@/components/study/ExploreRenderer", () => ({
-  ExploreRenderer: () => <div>Explore Renderer</div>,
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  ExploreRenderer: ({ item, onReveal }: { item: any; onReveal?: (item: any) => void }) => (
+    <div>
+      Explore Renderer
+      <button type="button" onClick={() => onReveal?.(item)}>
+        Reveal
+      </button>
+    </div>
+  ),
 }));
 
 vi.mock("@/components/ItemCollectionsModal", () => ({
@@ -112,6 +145,8 @@ describe("ExploreModePage", () => {
   beforeEach(() => {
     vi.clearAllMocks();
     sessionStorage.clear();
+    mockCreateAnalyticsId.mockReturnValue("run-abc");
+    mockFlashcardsEventContext.mockReturnValue({ contextType: "category", contextId: "exams" });
 
     vi.mocked(categoriesApi.getAll).mockResolvedValue({
       categories: [{ category: "exams" }],
@@ -170,5 +205,36 @@ describe("ExploreModePage", () => {
         "/categories/exams/act/math?view=items&keywords=algebra"
       )
     );
+  });
+
+  it("starts one Flashcards run once items load and reports the first reveal", async () => {
+    const user = userEvent.setup({ delay: null });
+    renderPage("/explore/exams/item/item-1?nav=act,math&keywords=act,math,algebra");
+
+    await screen.findByText(/Explore Renderer/i);
+    await waitFor(() => expect(mockTrackFlashcardsStarted).toHaveBeenCalledTimes(1));
+    expect(mockTrackFlashcardsStarted).toHaveBeenCalledWith("run-abc", 1, {
+      contextType: "category",
+      contextId: "exams",
+    });
+
+    await user.click(screen.getByRole("button", { name: /reveal/i }));
+
+    expect(mockTrackFlashcardRevealed).toHaveBeenCalledWith("run-abc", "item-1", 1, {
+      contextType: "category",
+      contextId: "exams",
+    });
+  });
+
+  it("flushes deferred analytics events when leaving Flashcards", async () => {
+    const { unmount } = renderPage(
+      "/explore/exams/item/item-1?nav=act,math&keywords=act,math,algebra"
+    );
+    await screen.findByText(/Explore Renderer/i);
+    mockFlushDeferredAnalyticsEvents.mockClear();
+
+    unmount();
+
+    expect(mockFlushDeferredAnalyticsEvents).toHaveBeenCalledTimes(1);
   });
 });

@@ -14,9 +14,11 @@ const EXPLANATION_CLAMP_THRESHOLD = 220;
 
 export interface ExploreRendererProps {
   item: ItemResponse;
+  /** Called each time the card is flipped to its answer. */
+  onReveal?: (item: ItemResponse) => void;
 }
 
-export function ExploreRenderer({ item }: ExploreRendererProps) {
+export function ExploreRenderer({ item, onReveal }: ExploreRendererProps) {
   const [isFlipped, setIsFlipped] = useState(false);
   const [explanationExpanded, setExplanationExpanded] = useState(false);
   const { isSupported } = useSpeech();
@@ -62,7 +64,10 @@ export function ExploreRenderer({ item }: ExploreRendererProps) {
           </div>
           <button
             type="button"
-            onClick={() => setIsFlipped(true)}
+            onClick={() => {
+              setIsFlipped(true);
+              onReveal?.(item);
+            }}
             aria-expanded={false}
             aria-label="Show answer and explanation"
             className="w-full rounded-b-xl px-6 pb-6 pt-2 text-left focus:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500 focus-visible:ring-offset-2"

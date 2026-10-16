@@ -12,6 +12,8 @@ import {
   signOut,
   signUp,
   confirmSignUp,
+  autoSignIn,
+  resendSignUpCode,
 } from "aws-amplify/auth";
 import { usersApi } from "@/api/users";
 import {
@@ -30,9 +32,12 @@ interface AuthContextType {
   isAdmin: boolean;
   login: (username: string, password: string) => Promise<void>;
   signup: (username: string, password: string, email: string) => Promise<void>;
-  confirmSignup: (username: string, code: string) => Promise<void>;
+  /** Resolves true only when confirmation completed AND a real session was verified (auto-sign-in succeeded). */
+  confirmSignup: (username: string, code: string) => Promise<boolean>;
+  resendConfirmationCode: (username: string) => Promise<void>;
   logout: () => Promise<void>;
-  refreshAuth: () => Promise<void>;
+  /** Resolves true only when a verified authenticated session was established. */
+  refreshAuth: () => Promise<boolean>;
 }
 
 const AuthContext = createContext<AuthContextType | undefined>(undefined);
@@ -90,7 +95,8 @@ export const AuthProvider = ({ children }: AuthProviderProps) => {
     clearTokens();
   }, []);
 
-  const refreshAuth = useCallback(async () => {
+  /** Returns true only when a verified, unexpired authenticated session was established. */
+  const refreshAuth = useCallback(async (): Promise<boolean> => {
     try {
       // Use forceRefresh to ensure we get fresh tokens if refresh token is available
       const session = await fetchAuthSession({ forceRefresh: false });
@@ -115,7 +121,7 @@ export const AuthProvider = ({ children }: AuthProviderProps) => {
                 // Still expired after refresh - clear auth state
                 console.warn("Token still expired after refresh, clearing auth state");
                 clearAuthState();
-                return;
+                return false;
               }
               
               // Use refreshed token
@@ -170,17 +176,17 @@ export const AuthProvider = ({ children }: AuthProviderProps) => {
               
               setIsAdmin(isUserAdmin);
               await syncPendingPolicyAcceptances(resolvedEmail);
-              return;
+              return true;
             } else {
               // No tokens after refresh - clear auth state
               clearAuthState();
-              return;
+              return false;
             }
           } catch (refreshError) {
             // Refresh failed - clear auth state
             console.warn("Token refresh failed:", refreshError);
             clearAuthState();
-            return;
+            return false;
           }
         }
 
@@ -236,7 +242,7 @@ export const AuthProvider = ({ children }: AuthProviderProps) => {
                   // Still expired - clear auth state
                   console.warn("ID token still expired after refresh, clearing auth state");
                   clearAuthState();
-                  return;
+                  return false;
                 }
                 
                 // Use refreshed ID token
@@ -257,13 +263,13 @@ export const AuthProvider = ({ children }: AuthProviderProps) => {
               } else {
                 // No ID token after refresh - clear auth state
                 clearAuthState();
-                return;
+                return false;
               }
             } catch (refreshError) {
               // Refresh failed - clear auth state
               console.warn("ID token refresh failed:", refreshError);
               clearAuthState();
-              return;
+              return false;
             }
           } else {
             // Get email from idToken if not in accessToken
@@ -284,12 +290,15 @@ export const AuthProvider = ({ children }: AuthProviderProps) => {
 
         setIsAdmin(isUserAdmin);
         await syncPendingPolicyAcceptances(resolvedEmail);
+        return true;
       } else {
         clearAuthState();
+        return false;
       }
     } catch (error) {
       console.error("Auth refresh error:", error);
       clearAuthState();
+      return false;
     } finally {
       setIsLoading(false);
     }
@@ -327,13 +336,29 @@ export const AuthProvider = ({ children }: AuthProviderProps) => {
     };
   }, [isAuthenticated, refreshAuth]);
 
+  /**
+   * Resolves only when the provider reports completed sign-in AND the app has
+   * verified an authenticated session via refreshAuth -- a resolved signIn
+   * promise alone (e.g. isSignedIn: false pending another step) is not
+   * sufficient evidence to navigate. "Already signed in" is detected via
+   * Amplify's typed exception name, not by matching error message text.
+   */
   const login = async (username: string, password: string) => {
     try {
-      const { isSignedIn } = await signIn({ username, password });
-      if (isSignedIn) {
-        await refreshAuth();
+      const { isSignedIn, nextStep } = await signIn({ username, password });
+      if (!isSignedIn) {
+        throw new Error(`Sign-in requires an additional step: ${nextStep.signInStep}`);
+      }
+      const established = await refreshAuth();
+      if (!established) {
+        throw new Error("Sign-in succeeded but the session could not be established.");
       }
     } catch (error) {
+      if (error instanceof Error && error.name === "UserAlreadyAuthenticatedException") {
+        const established = await refreshAuth();
+        if (established) return;
+        throw error;
+      }
       console.error("Login error:", error);
       throw error;
     }
@@ -351,6 +376,7 @@ export const AuthProvider = ({ children }: AuthProviderProps) => {
             email,
             name: username, // Store the display username in the 'name' attribute
           },
+          autoSignIn: true,
         },
       });
     } catch (error) {
@@ -359,11 +385,41 @@ export const AuthProvider = ({ children }: AuthProviderProps) => {
     }
   };
 
-  const confirmSignup = async (username: string, code: string) => {
+  /**
+   * Confirmation completion alone does not establish an authenticated
+   * session. When the provider reports COMPLETE_AUTO_SIGN_IN, this calls
+   * autoSignIn() and then verifies the real session via refreshAuth before
+   * resolving -- callers must not infer success from confirmSignUp alone.
+   *
+   * autoSignIn() is caught separately: confirmSignUp having already
+   * succeeded means the account IS confirmed even if the auto-sign-in step
+   * itself is unavailable/expired/interrupted (a real AutoSignInException
+   * case, not hypothetical). That must resolve false (the UI's "confirmed,
+   * sign in to continue" path), not reject -- the caller would otherwise
+   * have no way to clear pending confirmation state or route anywhere.
+   */
+  const confirmSignup = async (username: string, code: string): Promise<boolean> => {
     try {
-      await confirmSignUp({ username, confirmationCode: code });
+      const { nextStep } = await confirmSignUp({ username, confirmationCode: code });
+      if (nextStep.signUpStep === "COMPLETE_AUTO_SIGN_IN") {
+        try {
+          await autoSignIn();
+        } catch (autoSignInError) {
+          console.warn("Auto-sign-in could not complete:", autoSignInError);
+        }
+      }
+      return await refreshAuth();
     } catch (error) {
       console.error("Confirm signup error:", error);
+      throw error;
+    }
+  };
+
+  const resendConfirmationCode = async (username: string): Promise<void> => {
+    try {
+      await resendSignUpCode({ username });
+    } catch (error) {
+      console.error("Resend confirmation code error:", error);
       throw error;
     }
   };
@@ -391,6 +447,7 @@ export const AuthProvider = ({ children }: AuthProviderProps) => {
         login,
         signup,
         confirmSignup,
+        resendConfirmationCode,
         logout,
         refreshAuth,
       }}
