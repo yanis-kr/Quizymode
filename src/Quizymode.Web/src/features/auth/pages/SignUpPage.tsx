@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { useNavigate, useLocation, Link } from "react-router-dom";
+import { useNavigate, useLocation, Link, Navigate } from "react-router-dom";
 import { useAuth } from "@/contexts/AuthContext";
 import { usersApi } from "@/api/users";
 import { queueSignUpPolicyAcceptances } from "@/features/legal/policyAcceptanceStorage";
@@ -68,7 +68,13 @@ function describeConfirmError(err: unknown): string {
 const SignUpPage = () => {
   const navigate = useNavigate();
   const location = useLocation();
-  const { signup, confirmSignup, resendConfirmationCode } = useAuth();
+  const {
+    signup,
+    confirmSignup,
+    resendConfirmationCode,
+    isAuthenticated,
+    isLoading: authLoading,
+  } = useAuth();
   const intent = parseAuthIntent(location.search);
   const benefit = intent.reason ? BENEFIT_COPY[intent.reason] : DEFAULT_BENEFIT;
   const loginHref = `${LOGIN_PATH}${buildAuthIntentQuery(intent)}`;
@@ -106,6 +112,15 @@ const SignUpPage = () => {
   const cooldownRemainingSeconds = resendCooldownUntil
     ? Math.max(0, Math.ceil((resendCooldownUntil - now) / 1000))
     : 0;
+
+  // Already-authenticated visitors follow the same validated-destination
+  // rule as LoginPage (#110), once initial auth loading has settled. This
+  // also prevents a confusing identity mix-up: without it, signing up for a
+  // second account in a tab where account A is still logged in could leave
+  // confirmSignup verifying A's still-valid session instead of B's.
+  if (!authLoading && isAuthenticated) {
+    return <Navigate to={intent.returnTo} replace />;
+  }
 
   const handleSignUp = async (e: React.FormEvent) => {
     e.preventDefault();

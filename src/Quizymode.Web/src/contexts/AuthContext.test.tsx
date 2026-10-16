@@ -199,6 +199,27 @@ describe("AuthContext.signup/confirmSignup/resendConfirmationCode", () => {
     expect(authenticated).toBe(false);
   });
 
+  it("resolves false rather than rejecting when autoSignIn throws (e.g. AutoSignInException) after confirmation already succeeded", async () => {
+    mockConfirmSignUp.mockResolvedValueOnce({ nextStep: { signUpStep: "COMPLETE_AUTO_SIGN_IN" } });
+    const autoSignInError = new Error("The autoSignIn flow has not started or already completed.");
+    autoSignInError.name = "AutoSignInException";
+    mockAutoSignIn.mockRejectedValueOnce(autoSignInError);
+    mockFetchAuthSession.mockImplementation(noSessionFetch);
+
+    const { result } = renderAuth();
+    await waitFor(() => expect(result.current.isLoading).toBe(false));
+
+    let authenticated: boolean | undefined;
+    await act(async () => {
+      // The account IS confirmed at this point (confirmSignUp already
+      // succeeded) -- this must not reject, or the caller has no way to
+      // clear pending confirmation state or route the user anywhere.
+      authenticated = await result.current.confirmSignup("alice@example.com", "123456");
+    });
+
+    expect(authenticated).toBe(false);
+  });
+
   it("resolves false, not true, when auto-sign-in reports a step but no real session can be verified", async () => {
     mockConfirmSignUp.mockResolvedValueOnce({ nextStep: { signUpStep: "COMPLETE_AUTO_SIGN_IN" } });
     mockAutoSignIn.mockResolvedValueOnce({ isSignedIn: false });

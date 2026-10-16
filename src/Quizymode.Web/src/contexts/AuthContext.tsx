@@ -390,12 +390,23 @@ export const AuthProvider = ({ children }: AuthProviderProps) => {
    * session. When the provider reports COMPLETE_AUTO_SIGN_IN, this calls
    * autoSignIn() and then verifies the real session via refreshAuth before
    * resolving -- callers must not infer success from confirmSignUp alone.
+   *
+   * autoSignIn() is caught separately: confirmSignUp having already
+   * succeeded means the account IS confirmed even if the auto-sign-in step
+   * itself is unavailable/expired/interrupted (a real AutoSignInException
+   * case, not hypothetical). That must resolve false (the UI's "confirmed,
+   * sign in to continue" path), not reject -- the caller would otherwise
+   * have no way to clear pending confirmation state or route anywhere.
    */
   const confirmSignup = async (username: string, code: string): Promise<boolean> => {
     try {
       const { nextStep } = await confirmSignUp({ username, confirmationCode: code });
       if (nextStep.signUpStep === "COMPLETE_AUTO_SIGN_IN") {
-        await autoSignIn();
+        try {
+          await autoSignIn();
+        } catch (autoSignInError) {
+          console.warn("Auto-sign-in could not complete:", autoSignInError);
+        }
       }
       return await refreshAuth();
     } catch (error) {

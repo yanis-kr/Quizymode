@@ -9,12 +9,16 @@ const mockConfirmSignup = vi.fn();
 const mockResendConfirmationCode = vi.fn();
 const mockNavigate = vi.fn();
 const mockCheckAvailability = vi.fn();
+let mockIsAuthenticated = false;
+let mockAuthLoading = false;
 
 vi.mock("@/contexts/AuthContext", () => ({
   useAuth: () => ({
     signup: mockSignup,
     confirmSignup: mockConfirmSignup,
     resendConfirmationCode: mockResendConfirmationCode,
+    isAuthenticated: mockIsAuthenticated,
+    isLoading: mockAuthLoading,
   }),
 }));
 
@@ -72,6 +76,8 @@ describe("SignUpPage", () => {
   beforeEach(() => {
     vi.clearAllMocks();
     window.sessionStorage.clear();
+    mockIsAuthenticated = false;
+    mockAuthLoading = false;
     mockCheckAvailability.mockResolvedValue({
       isUsernameAvailable: true,
       isEmailAvailable: true,
@@ -280,6 +286,15 @@ describe("SignUpPage", () => {
     const link = screen.getByRole("link", { name: /sign in/i });
     expect(link.getAttribute("href")).toContain("returnTo=%2Fitems%2Fadd");
     expect(link.getAttribute("href")).toContain("reason=create-content");
+  });
+
+  it("redirects an already-authenticated visitor to the validated returnTo instead of rendering the form", () => {
+    mockIsAuthenticated = true;
+    mockAuthLoading = false;
+    renderPage("/signup?returnTo=%2Fitems%2Fadd");
+    // Prevents signing up for a second account while a different account's
+    // session is still live in this tab -- the form must not render at all.
+    expect(screen.queryByRole("heading", { name: /make your next study session yours/i })).not.toBeInTheDocument();
   });
 
   it("has links to terms and privacy pages", () => {
