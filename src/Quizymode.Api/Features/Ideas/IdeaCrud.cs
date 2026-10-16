@@ -344,18 +344,29 @@ public static class IdeaCrud
             }
 
             DateTime utcNow = DateTime.UtcNow;
-            List<Idea> existingIdeas = await db.Ideas
-                .Where(idea => idea.CreatedBy == userContext.UserId)
-                .ToListAsync(cancellationToken);
-
-            int recentIdeaCount = existingIdeas.Count(idea => idea.CreatedAt >= utcNow.AddHours(-24));
-            if (abuseOptions.CreateDailyLimit > 0 && recentIdeaCount >= abuseOptions.CreateDailyLimit)
+            if (abuseOptions.CreateDailyLimit > 0)
             {
-                return Result.Failure<IdeaSummaryResponse>(
-                    Error.Conflict("Ideas.DailyLimitExceeded", $"You can submit up to {abuseOptions.CreateDailyLimit} ideas in 24 hours."));
+                DateTime windowStart = utcNow.AddHours(-24);
+                int recentIdeaCount = await db.Ideas
+                    .CountAsync(
+                        idea => idea.CreatedBy == userContext.UserId && idea.CreatedAt >= windowStart,
+                        cancellationToken);
+
+                if (recentIdeaCount >= abuseOptions.CreateDailyLimit)
+                {
+                    return Result.Failure<IdeaSummaryResponse>(
+                        Error.Conflict("Ideas.DailyLimitExceeded", $"You can submit up to {abuseOptions.CreateDailyLimit} ideas in 24 hours."));
+                }
             }
 
-            if (IdeaFeatureSupport.IsExactDuplicate(existingIdeas, normalizedTitle, normalizedProblem, normalizedProposedChange))
+            if (await HasExactDuplicateAsync(
+                    db,
+                    userContext.UserId,
+                    normalizedTitle,
+                    normalizedProblem,
+                    normalizedProposedChange,
+                    excludeId: null,
+                    cancellationToken))
             {
                 return Result.Failure<IdeaSummaryResponse>(
                     Error.Conflict("Ideas.Duplicate", "You already submitted this exact idea."));
@@ -460,11 +471,14 @@ public static class IdeaCrud
                     Error.Validation("Ideas.ProfanityBlocked", "This idea contains blocked language and could not be saved."));
             }
 
-            List<Idea> existingIdeas = await db.Ideas
-                .Where(existing => existing.CreatedBy == idea.CreatedBy)
-                .ToListAsync(cancellationToken);
-
-            if (IdeaFeatureSupport.IsExactDuplicate(existingIdeas, normalizedTitle, normalizedProblem, normalizedProposedChange, idea.Id))
+            if (await HasExactDuplicateAsync(
+                    db,
+                    idea.CreatedBy,
+                    normalizedTitle,
+                    normalizedProblem,
+                    normalizedProposedChange,
+                    idea.Id,
+                    cancellationToken))
             {
                 return Result.Failure<IdeaSummaryResponse>(
                     Error.Conflict("Ideas.Duplicate", "You already have another idea with the same content."));
@@ -584,7 +598,12 @@ public static class IdeaCrud
                     Error.NotFound("Ideas.NotFound", "Idea not found."));
             }
 
-            IdeaFeatureSupport.TryParseStatus(request.Status, out IdeaStatus newStatus);
+            if (!IdeaFeatureSupport.TryParseStatus(request.Status, out IdeaStatus newStatus))
+            {
+                return Result.Failure<IdeaSummaryResponse>(
+                    Error.Validation("Ideas.InvalidStatus", $"Unknown idea status '{request.Status}'."));
+            }
+
             idea.Status = newStatus;
             idea.UpdatedAt = DateTime.UtcNow;
 
@@ -634,6 +653,35 @@ public static class IdeaCrud
         }
 
         return Result.Success();
+    }
+
+    /// <summary>
+    /// Duplicate check scoped in SQL to the author's ideas with the same (case-insensitive) title,
+    /// so only matching candidates are materialized before the full normalized comparison.
+    /// Stored fields are already normalized on write, so a lower-cased title match is sufficient
+    /// to narrow candidates.
+    /// </summary>
+    private static async Task<bool> HasExactDuplicateAsync(
+        ApplicationDbContext db,
+        string createdBy,
+        string normalizedTitle,
+        string normalizedProblem,
+        string normalizedProposedChange,
+        Guid? excludeId,
+        CancellationToken cancellationToken)
+    {
+        string comparisonTitle = IdeaFeatureSupport.NormalizeForComparison(normalizedTitle);
+
+        List<Idea> candidates = await db.Ideas
+            .Where(idea => idea.CreatedBy == createdBy && idea.Title.ToLower() == comparisonTitle)
+            .ToListAsync(cancellationToken);
+
+        return IdeaFeatureSupport.IsExactDuplicate(
+            candidates,
+            normalizedTitle,
+            normalizedProblem,
+            normalizedProposedChange,
+            excludeId);
     }
 
     private static async Task<Result<IdeaSummaryResponse>> LoadIdeaSummaryAsync(
