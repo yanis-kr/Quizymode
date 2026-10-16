@@ -8,6 +8,7 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Hosting.Server;
 using Microsoft.AspNetCore.Hosting.Server.Features;
+using Microsoft.AspNetCore.HttpOverrides;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using Moq;
@@ -134,6 +135,41 @@ public sealed class ReportClientErrorHttpTests : DatabaseTestFixture, IAsyncLife
         statuses.Take(30).Should().OnlyContain(status => status == HttpStatusCode.Accepted);
         statuses.Skip(30).Should().OnlyContain(status => status == HttpStatusCode.TooManyRequests);
         (await RowCountAsync()).Should().Be(30);
+    }
+
+    [Fact]
+    public async Task Post_BehindTrustedProxy_UsesOnlyTheProxyAppendedHop()
+    {
+        // Production-like: UseForwardedHeaders trusts the loopback peer as the proxy, which appends the real
+        // client (198.51.100.7) after whatever the client itself put in X-Forwarded-For.
+        Mock<IUserContext> userContext = new();
+        WebApplicationBuilder builder = WebApplication.CreateBuilder();
+        builder.WebHost.UseUrls("http://127.0.0.1:0");
+        builder.AddRateLimitingServices();
+        builder.Services.Configure<ForwardedHeadersOptions>(options => options.ForwardedHeaders = ForwardedHeaders.XForwardedFor);
+        builder.Services.AddScoped<ApplicationDbContext>(_ => CreateDbContext());
+        builder.Services.AddScoped<IValidator<ReportClientError.Request>, ReportClientError.Validator>();
+        builder.Services.AddSingleton(userContext.Object);
+        await using WebApplication app = builder.Build();
+        app.UseForwardedHeaders();
+        app.UseRateLimiter();
+        new ReportClientError.Endpoint().MapEndpoint(app);
+        await app.StartAsync();
+        using HttpClient client = new() { BaseAddress = new Uri(app.Services.GetRequiredService<IServer>().Features.Get<IServerAddressesFeature>()!.Addresses.First()) };
+
+        List<HttpStatusCode> statuses = [];
+        for (int attempt = 0; attempt < 35; attempt++)
+        {
+            using HttpRequestMessage request = new(HttpMethod.Post, "/client-errors") { Content = JsonContent.Create(Body($"proxied-{attempt}")) };
+            request.Headers.Add("X-Forwarded-For", $"203.0.113.{attempt + 1}, 198.51.100.7");
+            using HttpResponseMessage response = await client.SendAsync(request);
+            statuses.Add(response.StatusCode);
+        }
+
+        statuses.Take(30).Should().OnlyContain(status => status == HttpStatusCode.Accepted);
+        statuses.Skip(30).Should().OnlyContain(status => status == HttpStatusCode.TooManyRequests);
+        (await RowCountAsync()).Should().Be(30);
+        await app.StopAsync();
     }
 
     [Fact]
