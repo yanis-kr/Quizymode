@@ -1,0 +1,12 @@
+      EventName      | ContextType |              ContextId               | auth | internal | bot |   sess   |   utc    
+---------------------+-------------+--------------------------------------+------+----------+-----+----------+----------
+ quick_quiz_started  | home        | 8f9b8c14-8d30-4d94-9b20-4c7bb7f7f511 | f    | f        | f   | f47d920f | 18:43:24
+ quiz_completed      | home        | 8f9b8c14-8d30-4d94-9b20-4c7bb7f7f511 | f    | f        | f   | f47d920f | 18:43:28
+ question_answered   | home        | 8f9b8c14-8d30-4d94-9b20-4c7bb7f7f511 | f    | f        | f   | f47d920f | 18:43:28
+ question_answered   | home        | 8f9b8c14-8d30-4d94-9b20-4c7bb7f7f511 | f    | f        | f   | f47d920f | 18:43:28
+ question_answered   | home        | 8f9b8c14-8d30-4d94-9b20-4c7bb7f7f511 | f    | f        | f   | f47d920f | 18:43:28
+ question_answered   | home        | 8f9b8c14-8d30-4d94-9b20-4c7bb7f7f511 | f    | f        | f   | f47d920f | 18:43:28
+ question_answered   | home        | 8f9b8c14-8d30-4d94-9b20-4c7bb7f7f511 | f    | f        | f   | f47d920f | 18:43:28
+ signup_form_started | auth        | save-progress                        | f    | f        | f   | f47d920f | 18:43:31
+(8 rows)
+

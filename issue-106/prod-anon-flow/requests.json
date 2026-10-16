@@ -1,0 +1,57 @@
+{
+  "outcome": "ok",
+  "sessionStart": "f47d920f-7d79-4626-a874-0776358221ee",
+  "sessionEnd": "f47d920f-7d79-4626-a874-0776358221ee",
+  "captured": [
+    {
+      "t": "2026-10-16T18:43:24.858Z",
+      "url": "https://container-service-1.g3tzw2psg9dm4.us-east-1.cs.amazonlightsail.com/analytics/events",
+      "method": "POST",
+      "status": 202,
+      "events": [
+        "quick_quiz_started"
+      ],
+      "sessionId": "f47d920f-7d79-4626-a874-0776358221ee",
+      "resp": "{\"accepted\":1,\"duplicates\":0}"
+    },
+    {
+      "t": "2026-10-16T18:43:28.567Z",
+      "url": "https://container-service-1.g3tzw2psg9dm4.us-east-1.cs.amazonlightsail.com/analytics/events",
+      "method": "POST",
+      "status": 202,
+      "events": [
+        "quiz_completed"
+      ],
+      "sessionId": "f47d920f-7d79-4626-a874-0776358221ee",
+      "resp": "{\"accepted\":1,\"duplicates\":0}"
+    },
+    {
+      "t": "2026-10-16T18:43:28.573Z",
+      "url": "https://container-service-1.g3tzw2psg9dm4.us-east-1.cs.amazonlightsail.com/analytics/events",
+      "method": "POST",
+      "status": 202,
+      "events": [
+        "question_answered",
+        "question_answered",
+        "question_answered",
+        "question_answered",
+        "question_answered"
+      ],
+      "sessionId": "f47d920f-7d79-4626-a874-0776358221ee",
+      "resp": "{\"accepted\":5,\"duplicates\":0}"
+    },
+    {
+      "t": "2026-10-16T18:43:31.288Z",
+      "url": "https://container-service-1.g3tzw2psg9dm4.us-east-1.cs.amazonlightsail.com/analytics/events",
+      "method": "POST",
+      "status": 202,
+      "events": [
+        "signup_form_started"
+      ],
+      "sessionId": "f47d920f-7d79-4626-a874-0776358221ee",
+      "resp": "{\"accepted\":1,\"duplicates\":0}"
+    }
+  ],
+  "failures": [],
+  "console_": []
+}
