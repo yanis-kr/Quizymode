@@ -100,7 +100,12 @@ const HomePage = () => {
 
       <div className="bg-slate-950 text-white">
         <section className="relative bg-[radial-gradient(circle_at_top,#1e3a8a_0%,#0f172a_42%,#020617_100%)]">
-          <div className="absolute inset-0 pointer-events-none opacity-30">
+          {/* Decorative shapes are rotated/skewed past the section edges; clip them so narrow or zoomed viewports never scroll sideways (#151). */}
+          <div
+            aria-hidden="true"
+            data-testid="home-hero-decor"
+            className="absolute inset-0 overflow-hidden pointer-events-none opacity-30"
+          >
             <div className="absolute inset-y-0 left-[-8%] w-1/3 skew-x-[-24deg] bg-white/5" />
             <div className="absolute inset-y-0 left-[24%] w-24 rotate-12 bg-sky-400/20 blur-3xl" />
             <div className="absolute inset-y-0 right-[18%] w-20 -rotate-12 bg-indigo-300/20 blur-3xl" />

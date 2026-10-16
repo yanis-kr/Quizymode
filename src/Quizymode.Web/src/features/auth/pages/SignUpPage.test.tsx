@@ -98,7 +98,7 @@ describe("SignUpPage", () => {
     ["keep-collection", /bookmark this collection/i],
     ["create-content", /create private items/i],
     ["join-discussion", /join the discussion/i],
-    ["save-progress", /stays saved in this browser/i],
+    ["save-progress", /quiz scores are not saved to accounts yet/i],
   ])("renders truthful copy for reason=%s", (reason, expectedText) => {
     renderPage(`/signup?reason=${reason}`);
     expect(screen.getByText(expectedText)).toBeInTheDocument();
@@ -109,11 +109,16 @@ describe("SignUpPage", () => {
     expect(screen.getByRole("heading", { name: /make your next study session yours/i })).toBeInTheDocument();
   });
 
-  it("does not promise score sync or import in save-progress copy", () => {
+  it("does not claim the result is saved, kept, synced or imported in save-progress copy", () => {
     renderPage("/signup?reason=save-progress");
-    const bodyText = screen.getByText(/stays saved in this browser/i).textContent ?? "";
-    expect(bodyText.toLowerCase()).not.toContain("sync");
-    expect(bodyText.toLowerCase()).not.toContain("import");
+    expect(screen.getByRole("heading", { name: "Make your next quiz yours" })).toBeInTheDocument();
+    expect(screen.queryByText(/keep this result/i)).not.toBeInTheDocument();
+    const bodyText = (screen.getByText(/quiz scores are not saved to accounts yet/i).textContent ?? "").toLowerCase();
+    expect(bodyText).toContain("bookmark public collections");
+    expect(bodyText).toContain("private practice sets");
+    for (const claim of ["sync", "import", "stays saved", "in this browser", "keep", "restore"]) {
+      expect(bodyText).not.toContain(claim);
+    }
   });
 
   it("toggles password visibility", () => {
