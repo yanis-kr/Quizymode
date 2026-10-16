@@ -87,7 +87,9 @@ export default defineConfig({
   },
   build: {
     outDir: "dist",
-    sourcemap: false,
+    // Maps are generated for decoding reported stacks by hand, but bundles do not reference them and
+    // deploy.yml never uploads *.map files; CI publishes them as a build artifact instead (OBS-001).
+    sourcemap: "hidden",
     rollupOptions: {
       output: {
         manualChunks: {

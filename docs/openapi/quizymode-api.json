@@ -777,6 +777,70 @@
         }
       }
     },
+    "/admin/client-errors": {
+      "get": {
+        "tags": [
+          "Admin"
+        ],
+        "summary": "Get front-end errors grouped by fingerprint (Admin only)",
+        "description": "Groups SPA error reports in the selected window by fingerprint with count, affected sessions, first and last seen, latest app version, top paths, browser and device mix, and a sample stack. Optional appVersion filter. Bot reports are excluded unless includeBots=true, and internal sessions unless includeInternal=true.",
+        "parameters": [
+          {
+            "name": "days",
+            "in": "query",
+            "schema": {
+              "default": 7,
+              "$ref": "#/components/schemas/System.Int32"
+            }
+          },
+          {
+            "name": "appVersion",
+            "in": "query",
+            "schema": {
+              "$ref": "#/components/schemas/System.String"
+            }
+          },
+          {
+            "name": "includeBots",
+            "in": "query",
+            "schema": {
+              "default": false,
+              "$ref": "#/components/schemas/System.Boolean"
+            }
+          },
+          {
+            "name": "includeInternal",
+            "in": "query",
+            "schema": {
+              "default": false,
+              "$ref": "#/components/schemas/System.Boolean"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Quizymode.Api.Features.Admin.GetClientErrors.Response"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "/admin/analytics/funnel": {
       "get": {
         "tags": [
@@ -1736,6 +1800,72 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/Quizymode.Api.Features.Categories.GetCategories.Response"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/client-errors": {
+      "post": {
+        "tags": [
+          "Observability"
+        ],
+        "summary": "Report a front-end error",
+        "description": "Stores one sanitized, bounded SPA error report for an anonymous or authenticated session and writes a structured warning log with its fingerprint and app version. Accepts a JSON body as application/json or text/plain (navigator.sendBeacon). Text fields are truncated, never rejected for length; query strings, fragments, emails and tokens are removed. The same fingerprint is stored at most once per session and at most 10 reports per session. Rate limited.",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Quizymode.Api.Features.ClientErrors.ReportClientError.Request"
+              }
+            },
+            "text/plain": {
+              "schema": {
+                "$ref": "#/components/schemas/Quizymode.Api.Features.ClientErrors.ReportClientError.Request"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "202": {
+            "description": "Accepted",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Quizymode.Api.Features.ClientErrors.ReportClientError.Response"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Microsoft.AspNetCore.Http.HttpValidationProblemDetails"
+                }
+              }
+            }
+          },
+          "413": {
+            "description": "Payload Too Large",
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Too Many Requests",
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails"
                 }
               }
             }
@@ -5253,6 +5383,170 @@
           }
         }
       },
+      "Quizymode.Api.Features.Admin.GetClientErrors.GroupResponse": {
+        "required": [
+          "fingerprint",
+          "errorName",
+          "message",
+          "source",
+          "count",
+          "sessions",
+          "firstSeenUtc",
+          "lastSeenUtc",
+          "isNew",
+          "latestAppVersion",
+          "topPaths",
+          "browsers",
+          "devices",
+          "sampleStack",
+          "sampleComponentStack",
+          "sampleSessionId"
+        ],
+        "type": "object",
+        "properties": {
+          "fingerprint": {
+            "$ref": "#/components/schemas/System.String"
+          },
+          "errorName": {
+            "$ref": "#/components/schemas/System.String"
+          },
+          "message": {
+            "$ref": "#/components/schemas/System.String"
+          },
+          "source": {
+            "$ref": "#/components/schemas/System.String"
+          },
+          "count": {
+            "$ref": "#/components/schemas/System.Int32"
+          },
+          "sessions": {
+            "$ref": "#/components/schemas/System.Int32"
+          },
+          "firstSeenUtc": {
+            "$ref": "#/components/schemas/System.DateTime"
+          },
+          "lastSeenUtc": {
+            "$ref": "#/components/schemas/System.DateTime"
+          },
+          "isNew": {
+            "$ref": "#/components/schemas/System.Boolean"
+          },
+          "latestAppVersion": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/components/schemas/System.String"
+              }
+            ]
+          },
+          "topPaths": {
+            "$ref": "#/components/schemas/System.Collections.Generic.ListOfQuizymode.Api.Features.Admin.GetClientErrors.ValueCount"
+          },
+          "browsers": {
+            "$ref": "#/components/schemas/System.Collections.Generic.ListOfQuizymode.Api.Features.Admin.GetClientErrors.ValueCount"
+          },
+          "devices": {
+            "$ref": "#/components/schemas/System.Collections.Generic.ListOfQuizymode.Api.Features.Admin.GetClientErrors.ValueCount"
+          },
+          "sampleStack": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/components/schemas/System.String"
+              }
+            ]
+          },
+          "sampleComponentStack": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/components/schemas/System.String"
+              }
+            ]
+          },
+          "sampleSessionId": {
+            "$ref": "#/components/schemas/System.String"
+          }
+        }
+      },
+      "Quizymode.Api.Features.Admin.GetClientErrors.Response": {
+        "required": [
+          "windowStartUtc",
+          "windowEndUtc",
+          "totalReports",
+          "totalGroups",
+          "newGroups",
+          "botReports",
+          "botsExcluded",
+          "internalSessions",
+          "internalExcluded",
+          "truncated",
+          "appVersions",
+          "groups"
+        ],
+        "type": "object",
+        "properties": {
+          "windowStartUtc": {
+            "$ref": "#/components/schemas/System.DateTime"
+          },
+          "windowEndUtc": {
+            "$ref": "#/components/schemas/System.DateTime"
+          },
+          "totalReports": {
+            "$ref": "#/components/schemas/System.Int32"
+          },
+          "totalGroups": {
+            "$ref": "#/components/schemas/System.Int32"
+          },
+          "newGroups": {
+            "description": "Groups whose first report ever (within retention) falls inside the window.",
+            "$ref": "#/components/schemas/System.Int32"
+          },
+          "botReports": {
+            "$ref": "#/components/schemas/System.Int32"
+          },
+          "botsExcluded": {
+            "$ref": "#/components/schemas/System.Boolean"
+          },
+          "internalSessions": {
+            "$ref": "#/components/schemas/System.Int32"
+          },
+          "internalExcluded": {
+            "$ref": "#/components/schemas/System.Boolean"
+          },
+          "truncated": {
+            "description": "True when the window held more than int GetClientErrors.MaxRows reports and only the latest were aggregated.",
+            "$ref": "#/components/schemas/System.Boolean"
+          },
+          "appVersions": {
+            "$ref": "#/components/schemas/System.Collections.Generic.ListOfSystem.String"
+          },
+          "groups": {
+            "$ref": "#/components/schemas/System.Collections.Generic.ListOfQuizymode.Api.Features.Admin.GetClientErrors.GroupResponse"
+          }
+        }
+      },
+      "Quizymode.Api.Features.Admin.GetClientErrors.ValueCount": {
+        "required": [
+          "value",
+          "count"
+        ],
+        "type": "object",
+        "properties": {
+          "value": {
+            "$ref": "#/components/schemas/System.String"
+          },
+          "count": {
+            "$ref": "#/components/schemas/System.Int32"
+          }
+        }
+      },
       "Quizymode.Api.Features.Admin.GetConversionFunnel.Response": {
         "required": [
           "windowStartUtc",
@@ -7404,6 +7698,145 @@
         "properties": {
           "categories": {
             "$ref": "#/components/schemas/System.Collections.Generic.ListOfQuizymode.Api.Features.Categories.GetCategories.CategoryResponse"
+          }
+        }
+      },
+      "Quizymode.Api.Features.ClientErrors.ReportClientError.Request": {
+        "required": [
+          "source",
+          "message"
+        ],
+        "type": "object",
+        "properties": {
+          "source": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/components/schemas/System.String"
+              }
+            ]
+          },
+          "message": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/components/schemas/System.String"
+              }
+            ]
+          },
+          "name": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/components/schemas/System.String"
+              }
+            ]
+          },
+          "stack": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/components/schemas/System.String"
+              }
+            ]
+          },
+          "componentStack": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/components/schemas/System.String"
+              }
+            ]
+          },
+          "path": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/components/schemas/System.String"
+              }
+            ]
+          },
+          "appVersion": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/components/schemas/System.String"
+              }
+            ]
+          },
+          "sessionId": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/components/schemas/System.String"
+              }
+            ]
+          },
+          "visitorId": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/components/schemas/System.String"
+              }
+            ]
+          },
+          "internalBrowser": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "description": "Client-asserted internal-browser marker, as on page views (#121); it can only remove the sender's own errors from reports.",
+                "$ref": "#/components/schemas/System.NullableOfSystem.Boolean"
+              }
+            ]
+          }
+        }
+      },
+      "Quizymode.Api.Features.ClientErrors.ReportClientError.Response": {
+        "required": [
+          "stored",
+          "reason",
+          "fingerprint"
+        ],
+        "type": "object",
+        "properties": {
+          "stored": {
+            "description": "False when the same error was already stored for this session, or the session hit its limit.",
+            "$ref": "#/components/schemas/System.Boolean"
+          },
+          "reason": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "description": "`duplicate` or `session_limit` when not stored.",
+                "$ref": "#/components/schemas/System.String"
+              }
+            ]
+          },
+          "fingerprint": {
+            "description": "The report's 32-hex-character grouping key.",
+            "$ref": "#/components/schemas/System.String"
           }
         }
       },
@@ -11325,6 +11758,18 @@
           "$ref": "#/components/schemas/Quizymode.Api.Features.Admin.GetCategoryKeywordsAdmin.CategoryKeywordAdminResponse"
         }
       },
+      "System.Collections.Generic.ListOfQuizymode.Api.Features.Admin.GetClientErrors.GroupResponse": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/Quizymode.Api.Features.Admin.GetClientErrors.GroupResponse"
+        }
+      },
+      "System.Collections.Generic.ListOfQuizymode.Api.Features.Admin.GetClientErrors.ValueCount": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/Quizymode.Api.Features.Admin.GetClientErrors.ValueCount"
+        }
+      },
       "System.Collections.Generic.ListOfQuizymode.Api.Features.Admin.GetConversionFunnel.StepResponse": {
         "type": "array",
         "items": {
@@ -11695,6 +12140,9 @@
     },
     {
       "name": "Categories"
+    },
+    {
+      "name": "Observability"
     },
     {
       "name": "Collections"

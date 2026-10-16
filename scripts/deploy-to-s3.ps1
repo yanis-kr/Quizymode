@@ -152,8 +152,9 @@ try {
         --exclude "*.html" `
         --exclude "*.json" `
         --exclude "*.css" `
-        --exclude "*.js"
-    
+        --exclude "*.js" `
+        --exclude "*.map"
+
     if ($LASTEXITCODE -ne 0) {
         throw "S3 sync failed"
     }

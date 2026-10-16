@@ -105,6 +105,15 @@ jobs:
           npm ci
           npm run build
 
+      # Hidden source maps (OBS-001) are kept as an artifact of the deployed build and never uploaded to S3.
+      - name: Upload deployed web source maps
+        uses: actions/upload-artifact@v7
+        with:
+          name: deployed-web-sourcemaps-${{ github.event.workflow_run.head_sha }}
+          path: src/Quizymode.Web/dist/**/*.map
+          if-no-files-found: warn
+          retention-days: 90
+
       - name: Configure AWS credentials
         uses: aws-actions/configure-aws-credentials@v4
         with:
@@ -114,12 +123,12 @@ jobs:
       - name: Sync to S3
         working-directory: src/Quizymode.Web/dist
         run: |
-          # General assets — long-lived immutable cache
+          # General assets — long-lived immutable cache. Source maps (*.map) are never published (OBS-001).
           aws s3 sync . s3://quizymode-web/ \
             --delete --exact-timestamps \
             --cache-control "public, max-age=31536000, immutable" \
             --exclude "*.html" --exclude "*.json" --exclude "*.css" --exclude "*.js" \
-            --exclude "og-image.png"
+            --exclude "*.map" --exclude "og-image.png"
 
           # CSS — explicit content-type (required for Safari iOS)
           aws s3 sync . s3://quizymode-web/ \

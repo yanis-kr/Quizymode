@@ -42,6 +42,22 @@ internal static partial class StartupExtensions
                     });
             });
 
+            // Front-end error reports (OBS-001). The SPA sends at most 10 per tab session, so this only
+            // bites when an error loop or a script floods the endpoint.
+            options.AddPolicy("client-errors", httpContext =>
+            {
+                string partitionKey = GetAuthenticatedOrIpPartitionKey(httpContext);
+                return RateLimitPartition.GetFixedWindowLimiter(
+                    partitionKey,
+                    static _ => new FixedWindowRateLimiterOptions
+                    {
+                        PermitLimit = 30,
+                        Window = TimeSpan.FromMinutes(10),
+                        QueueLimit = 0,
+                        AutoReplenishment = true
+                    });
+            });
+
             options.AddPolicy("feedback-submissions", httpContext =>
             {
                 string partitionKey = GetAuthenticatedOrIpPartitionKey(httpContext);
@@ -134,6 +150,11 @@ internal static partial class StartupExtensions
         if (path.EndsWith("/analytics/events", StringComparison.OrdinalIgnoreCase))
         {
             return "Too many analytics events. Please slow down.";
+        }
+
+        if (path.EndsWith("/client-errors", StringComparison.OrdinalIgnoreCase))
+        {
+            return "Too many error reports. Please slow down.";
         }
 
         if (path.Contains("/ideas/", StringComparison.OrdinalIgnoreCase) && path.EndsWith("/comments", StringComparison.OrdinalIgnoreCase))

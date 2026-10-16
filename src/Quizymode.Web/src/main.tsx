@@ -6,8 +6,12 @@ import { HelmetProvider } from "react-helmet-async";
 import { configureAmplify } from "./utils/amplifyConfig";
 import { AuthProvider } from "./contexts/AuthContext";
 import ErrorBoundary from "./components/ErrorBoundary";
+import { installClientErrorReporting } from "./features/errorReporting/clientErrorReporter";
 import "./index.css";
 import App from "./App.tsx";
+
+// Report runtime errors, failed script loads, and unhandled rejections (OBS-001) before anything else runs.
+installClientErrorReporting();
 
 // Configure AWS Amplify with error handling
 try {
