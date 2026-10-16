@@ -1,0 +1,58 @@
+{
+ "focus": [
+  {
+   "control": "display name",
+   "outline": "none 0px rgb(16, 16, 16)",
+   "boxShadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, oklch(0.585 0.233 277.117) 0px 0px 0px 2px, rgba(0, 0, 0, 0) 0px 0px 0px 0px",
+   "borderColor": "oklch(0.585 0.233 277.117)",
+   "focusVisible": true
+  },
+  {
+   "control": "email",
+   "outline": "none 0px rgb(16, 16, 16)",
+   "boxShadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, oklch(0.585 0.233 277.117) 0px 0px 0px 2px, rgba(0, 0, 0, 0) 0px 0px 0px 0px",
+   "borderColor": "oklch(0.585 0.233 277.117)",
+   "focusVisible": true
+  },
+  {
+   "control": "password",
+   "outline": "none 0px rgb(16, 16, 16)",
+   "boxShadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, oklch(0.585 0.233 277.117) 0px 0px 0px 2px, rgba(0, 0, 0, 0) 0px 0px 0px 0px",
+   "borderColor": "oklch(0.585 0.233 277.117)",
+   "focusVisible": true
+  },
+  {
+   "control": "show-password toggle",
+   "outline": "auto 1px rgb(16, 16, 16)",
+   "boxShadow": "none",
+   "borderColor": "oklch(0.707 0.022 261.325)",
+   "focusVisible": true
+  },
+  {
+   "control": "legal checkbox",
+   "outline": "auto 1px rgb(16, 16, 16)",
+   "boxShadow": "none",
+   "borderColor": "oklch(0.511 0.262 276.966)",
+   "focusVisible": true
+  },
+  {
+   "control": "terms link",
+   "outline": "auto 1px rgb(16, 16, 16)",
+   "boxShadow": "none",
+   "borderColor": "oklch(0.511 0.262 276.966)",
+   "focusVisible": true
+  },
+  {
+   "control": "sign up button",
+   "outline": "none 0px rgb(16, 16, 16)",
+   "boxShadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgb(255, 255, 255) 0px 0px 0px 2px, oklch(0.585 0.233 277.117) 0px 0px 0px 4px, rgba(0, 0, 0, 0) 0px 0px 0px 0px",
+   "borderColor": "rgba(0, 0, 0, 0)",
+   "focusVisible": true
+  }
+ ],
+ "overflow": {
+  "vw": 195,
+  "scrollWidth": 195,
+  "offenders": []
+ }
+}
