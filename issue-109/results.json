@@ -1,0 +1,112 @@
+{
+  "results": [
+    {
+      "step": "390: no signup prompt on the first question",
+      "outcome": "PASS"
+    },
+    {
+      "step": "390: anonymous completion shows the save-progress prompt",
+      "outcome": "PASS",
+      "detail": {
+        "heading": "Make your next quiz yours",
+        "body": "Quiz scores are not saved to accounts yet. A free account lets you bookmark collections and build private practice sets."
+      }
+    },
+    {
+      "step": "390: completion page has no horizontal scroll",
+      "outcome": "PASS"
+    },
+    {
+      "step": "390: click-through lands on /signup with reason and returnTo",
+      "outcome": "PASS",
+      "detail": {
+        "signupUrl": "/signup?returnTo=%2Fquiz%2Fcollections%2F8f9b8c14-8d30-4d94-9b20-4c7bb7f7f511%2Ffun%2Btrivia%2Bfacts%2Fitem%2Fb9aaa60d-33ec-4b02-b313-3720665a01f9&reason=save-progress",
+        "expectedReturn": "/quiz/collections/8f9b8c14-8d30-4d94-9b20-4c7bb7f7f511/fun+trivia+facts/item/b9aaa60d-33ec-4b02-b313-3720665a01f9"
+      }
+    },
+    {
+      "step": "1280: no signup prompt on the first question",
+      "outcome": "PASS"
+    },
+    {
+      "step": "1280: anonymous completion shows the save-progress prompt",
+      "outcome": "PASS",
+      "detail": {
+        "heading": "Make your next quiz yours",
+        "body": "Quiz scores are not saved to accounts yet. A free account lets you bookmark collections and build private practice sets."
+      }
+    },
+    {
+      "step": "1280: completion page has no horizontal scroll",
+      "outcome": "PASS"
+    },
+    {
+      "step": "1280: click-through lands on /signup with reason and returnTo",
+      "outcome": "PASS",
+      "detail": {
+        "signupUrl": "/signup?returnTo=%2Fquiz%2Fcollections%2F8f9b8c14-8d30-4d94-9b20-4c7bb7f7f511%2Ffun%2Btrivia%2Bfacts%2Fitem%2Fb9aaa60d-33ec-4b02-b313-3720665a01f9&reason=save-progress",
+        "expectedReturn": "/quiz/collections/8f9b8c14-8d30-4d94-9b20-4c7bb7f7f511/fun+trivia+facts/item/b9aaa60d-33ec-4b02-b313-3720665a01f9"
+      }
+    },
+    {
+      "step": "390: dismiss hides the prompt and keeps the result",
+      "outcome": "PASS",
+      "detail": {
+        "scoreBefore": "1 / 5",
+        "scoreAfter": "1 / 5"
+      }
+    },
+    {
+      "step": "390: still dismissed after Play again (next completed run)",
+      "outcome": "PASS"
+    },
+    {
+      "step": "390: still dismissed after a reload in the same tab",
+      "outcome": "PASS",
+      "detail": {
+        "completionSummaryVisibleAfterReload": true
+      }
+    },
+    {
+      "step": "1280: dismiss hides the prompt and keeps the result",
+      "outcome": "PASS",
+      "detail": {
+        "scoreBefore": "2 / 5",
+        "scoreAfter": "2 / 5"
+      }
+    },
+    {
+      "step": "1280: still dismissed after Play again (next completed run)",
+      "outcome": "PASS"
+    },
+    {
+      "step": "1280: still dismissed after a reload in the same tab",
+      "outcome": "PASS",
+      "detail": {
+        "completionSummaryVisibleAfterReload": true
+      }
+    },
+    {
+      "step": "390: signed-in completion shows no signup prompt",
+      "outcome": "PASS",
+      "detail": {
+        "headerHasNoSignInLink": true
+      }
+    },
+    {
+      "step": "1280: signed-in completion shows no signup prompt",
+      "outcome": "PASS",
+      "detail": {
+        "headerHasNoSignInLink": true
+      }
+    }
+  ],
+  "sessions": {
+    "anon-click-390": "7cd765dd-9e21-4083-b1b1-ed6ddf84f49c",
+    "anon-click-1280": "8c0ef797-1174-4702-a365-2ae0179b60c7",
+    "anon-dismiss-390": "49393fe9-045b-486f-af8b-8e0d9c8689c4",
+    "anon-dismiss-1280": "6aeacb54-fa92-4f22-83fb-98ee6db7a541",
+    "signed-in-390": "280189e1-6ff6-4a99-a560-7fbb5ea85228",
+    "signed-in-1280": "9b88b5a6-0cb4-4875-b66f-68dd16c6cd7c"
+  }
+}

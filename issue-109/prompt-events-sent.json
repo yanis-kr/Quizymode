@@ -1,0 +1,56 @@
+[
+  {
+    "actor": "anon-click-390",
+    "status": 202,
+    "name": "signup_prompt_viewed",
+    "path": "/quiz/collections/8f9b8c14-8d30-4d94-9b20-4c7bb7f7f511/fun+trivia+facts/item/b9aaa60d-33ec-4b02-b313-3720665a01f9",
+    "contextType": "auth",
+    "contextId": "save-progress",
+    "clientEventId": "prompt:save-progress"
+  },
+  {
+    "actor": "anon-click-390",
+    "status": 202,
+    "name": "signup_prompt_clicked",
+    "path": "/quiz/collections/8f9b8c14-8d30-4d94-9b20-4c7bb7f7f511/fun+trivia+facts/item/b9aaa60d-33ec-4b02-b313-3720665a01f9",
+    "contextType": "auth",
+    "contextId": "save-progress",
+    "clientEventId": "prompt:save-progress"
+  },
+  {
+    "actor": "anon-click-1280",
+    "status": 202,
+    "name": "signup_prompt_viewed",
+    "path": "/quiz/collections/8f9b8c14-8d30-4d94-9b20-4c7bb7f7f511/fun+trivia+facts/item/b9aaa60d-33ec-4b02-b313-3720665a01f9",
+    "contextType": "auth",
+    "contextId": "save-progress",
+    "clientEventId": "prompt:save-progress"
+  },
+  {
+    "actor": "anon-click-1280",
+    "status": 202,
+    "name": "signup_prompt_clicked",
+    "path": "/quiz/collections/8f9b8c14-8d30-4d94-9b20-4c7bb7f7f511/fun+trivia+facts/item/b9aaa60d-33ec-4b02-b313-3720665a01f9",
+    "contextType": "auth",
+    "contextId": "save-progress",
+    "clientEventId": "prompt:save-progress"
+  },
+  {
+    "actor": "anon-dismiss-390",
+    "status": 202,
+    "name": "signup_prompt_viewed",
+    "path": "/quiz/collections/8f9b8c14-8d30-4d94-9b20-4c7bb7f7f511/fun+trivia+facts/item/b9aaa60d-33ec-4b02-b313-3720665a01f9",
+    "contextType": "auth",
+    "contextId": "save-progress",
+    "clientEventId": "prompt:save-progress"
+  },
+  {
+    "actor": "anon-dismiss-1280",
+    "status": 202,
+    "name": "signup_prompt_viewed",
+    "path": "/quiz/collections/8f9b8c14-8d30-4d94-9b20-4c7bb7f7f511/fun+trivia+facts/item/b9aaa60d-33ec-4b02-b313-3720665a01f9",
+    "contextType": "auth",
+    "contextId": "save-progress",
+    "clientEventId": "prompt:save-progress"
+  }
+]
