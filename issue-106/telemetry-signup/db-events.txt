@@ -1,0 +1,17 @@
+         EventName         |                                                       Path                                                        | ContextType |              ContextId               | IsAuthenticated | IsBot | session  
+---------------------------+-------------------------------------------------------------------------------------------------------------------+-------------+--------------------------------------+-----------------+-------+----------
+ quick_quiz_started        | /quiz/collections/8f9b8c14-8d30-4d94-9b20-4c7bb7f7f511/fun+trivia+facts/item/365b5b12-6803-48e9-b907-2b40c1d487f5 | home        | 8f9b8c14-8d30-4d94-9b20-4c7bb7f7f511 | f               | f     | 47f68b07
+ quiz_completed            | /quiz/collections/8f9b8c14-8d30-4d94-9b20-4c7bb7f7f511/fun+trivia+facts/item/b9aaa60d-33ec-4b02-b313-3720665a01f9 | home        | 8f9b8c14-8d30-4d94-9b20-4c7bb7f7f511 | f               | f     | 47f68b07
+ question_answered         | /quiz/collections/8f9b8c14-8d30-4d94-9b20-4c7bb7f7f511/fun+trivia+facts/item/b9aaa60d-33ec-4b02-b313-3720665a01f9 | home        | 8f9b8c14-8d30-4d94-9b20-4c7bb7f7f511 | f               | f     | 47f68b07
+ question_answered         | /quiz/collections/8f9b8c14-8d30-4d94-9b20-4c7bb7f7f511/fun+trivia+facts/item/ab50d87c-eb2a-4953-a34b-f2c6facaa139 | home        | 8f9b8c14-8d30-4d94-9b20-4c7bb7f7f511 | f               | f     | 47f68b07
+ question_answered         | /quiz/collections/8f9b8c14-8d30-4d94-9b20-4c7bb7f7f511/fun+trivia+facts/item/9c536e25-e9e7-4356-b675-52d729469441 | home        | 8f9b8c14-8d30-4d94-9b20-4c7bb7f7f511 | f               | f     | 47f68b07
+ question_answered         | /quiz/collections/8f9b8c14-8d30-4d94-9b20-4c7bb7f7f511/fun+trivia+facts/item/8fa4a171-1328-4e98-9048-c98edddaff2f | home        | 8f9b8c14-8d30-4d94-9b20-4c7bb7f7f511 | f               | f     | 47f68b07
+ question_answered         | /quiz/collections/8f9b8c14-8d30-4d94-9b20-4c7bb7f7f511/fun+trivia+facts/item/365b5b12-6803-48e9-b907-2b40c1d487f5 | home        | 8f9b8c14-8d30-4d94-9b20-4c7bb7f7f511 | f               | f     | 47f68b07
+ signup_form_started       | /signup                                                                                                           | auth        | save-progress                        | f               | f     | 47f68b07
+ signup_submitted          | /signup                                                                                                           | auth        | save-progress                        | f               | f     | 47f68b07
+ signup_confirmation_shown | /signup                                                                                                           | auth        | save-progress                        | f               | f     | 47f68b07
+ signup_confirmed          | /signup                                                                                                           | auth        | save-progress                        | f               | f     | 47f68b07
+(11 rows)
+
+        1
+

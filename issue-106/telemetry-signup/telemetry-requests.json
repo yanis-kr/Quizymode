@@ -1,0 +1,115 @@
+{
+  "outcome": "ok",
+  "sessionId": "47f68b07-48dd-4311-b7e6-4ef7f3441dd9",
+  "cognitoCalls": [
+    "SignUp",
+    "ConfirmSignUp",
+    "InitiateAuth"
+  ],
+  "captured": [
+    {
+      "status": 202,
+      "events": [
+        {
+          "name": "quick_quiz_started",
+          "contextType": "home",
+          "contextId": "8f9b8c14-8d30-4d94-9b20-4c7bb7f7f511",
+          "runId": "f114f074"
+        }
+      ],
+      "sessionId": "47f68b07-48dd-4311-b7e6-4ef7f3441dd9"
+    },
+    {
+      "status": 202,
+      "events": [
+        {
+          "name": "quiz_completed",
+          "contextType": "home",
+          "contextId": "8f9b8c14-8d30-4d94-9b20-4c7bb7f7f511",
+          "runId": "f114f074"
+        }
+      ],
+      "sessionId": "47f68b07-48dd-4311-b7e6-4ef7f3441dd9"
+    },
+    {
+      "status": 202,
+      "events": [
+        {
+          "name": "question_answered",
+          "contextType": "home",
+          "contextId": "8f9b8c14-8d30-4d94-9b20-4c7bb7f7f511",
+          "runId": "f114f074"
+        },
+        {
+          "name": "question_answered",
+          "contextType": "home",
+          "contextId": "8f9b8c14-8d30-4d94-9b20-4c7bb7f7f511",
+          "runId": "f114f074"
+        },
+        {
+          "name": "question_answered",
+          "contextType": "home",
+          "contextId": "8f9b8c14-8d30-4d94-9b20-4c7bb7f7f511",
+          "runId": "f114f074"
+        },
+        {
+          "name": "question_answered",
+          "contextType": "home",
+          "contextId": "8f9b8c14-8d30-4d94-9b20-4c7bb7f7f511",
+          "runId": "f114f074"
+        },
+        {
+          "name": "question_answered",
+          "contextType": "home",
+          "contextId": "8f9b8c14-8d30-4d94-9b20-4c7bb7f7f511",
+          "runId": "f114f074"
+        }
+      ],
+      "sessionId": "47f68b07-48dd-4311-b7e6-4ef7f3441dd9"
+    },
+    {
+      "status": 202,
+      "events": [
+        {
+          "name": "signup_form_started",
+          "contextType": "auth",
+          "contextId": "save-progress"
+        }
+      ],
+      "sessionId": "47f68b07-48dd-4311-b7e6-4ef7f3441dd9"
+    },
+    {
+      "status": 202,
+      "events": [
+        {
+          "name": "signup_submitted",
+          "contextType": "auth",
+          "contextId": "save-progress"
+        }
+      ],
+      "sessionId": "47f68b07-48dd-4311-b7e6-4ef7f3441dd9"
+    },
+    {
+      "status": 202,
+      "events": [
+        {
+          "name": "signup_confirmation_shown",
+          "contextType": "auth",
+          "contextId": "save-progress"
+        }
+      ],
+      "sessionId": "47f68b07-48dd-4311-b7e6-4ef7f3441dd9"
+    },
+    {
+      "status": 202,
+      "events": [
+        {
+          "name": "signup_confirmed",
+          "contextType": "auth",
+          "contextId": "save-progress"
+        }
+      ],
+      "sessionId": "47f68b07-48dd-4311-b7e6-4ef7f3441dd9"
+    }
+  ]
+}
