@@ -33,7 +33,17 @@ export function isKnownReason(value: string | null | undefined): value is AuthRe
 
 function normalizedPathFor(path: string): string {
   if (path.length <= 1) return path;
-  const trimmed = path.replace(/\/+$/, "");
+  // Decode percent-encoding before comparing so an alternate encoding of
+  // "/login" (e.g. "/%6C%6Fgin") can't slip past the recursion check as a
+  // byte-for-byte-different string. Falls back to the raw path on a
+  // malformed escape rather than throwing.
+  let decoded = path;
+  try {
+    decoded = decodeURIComponent(path);
+  } catch {
+    // Keep the raw (still same-origin, already-validated) path.
+  }
+  const trimmed = decoded.replace(/\/+$/, "");
   return trimmed.length === 0 ? "/" : trimmed.toLowerCase();
 }
 
