@@ -1,5 +1,41 @@
 import type { SessionOutcome } from "@/api/admin";
 
+/** Display labels for the server-side page-hit feature areas (ANALYTICS-004). */
+export const AREA_LABELS: Record<string, string> = {
+  home: "Home",
+  browse: "Browse",
+  quiz: "Quiz",
+  flashcards: "Flashcards",
+  collections: "Collections",
+  featured: "Featured",
+  "item-detail": "Item detail",
+  create: "Create",
+  "study-guide": "Study guide",
+  auth: "Sign in / up",
+  community: "Community",
+  info: "Info",
+  admin: "Admin",
+  other: "Other",
+};
+
+export function formatArea(area: string | null | undefined): string {
+  if (!area) {
+    return AREA_LABELS.other;
+  }
+  return AREA_LABELS[area] ?? area;
+}
+
+/** "category: geography", "collection: <id>", or "" when the hit has no content scope. */
+export function formatScope(
+  scopeType: string | null | undefined,
+  scopeKey: string | null | undefined
+): string {
+  if (!scopeType || !scopeKey) {
+    return "";
+  }
+  return `${scopeType}: ${scopeKey}`;
+}
+
 /** Compact duration for table cells: 0s, 45s, 3m 20s, 1h 12m. */
 export function formatDuration(seconds: number): string {
   if (!Number.isFinite(seconds) || seconds <= 0) {

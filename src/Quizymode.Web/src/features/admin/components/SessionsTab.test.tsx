@@ -64,6 +64,8 @@ const baseResponse = {
         avgPagesPerSession: 5,
       },
     ],
+    studySessions: 3,
+    avgItemStepsPerStudySession: 4.5,
   },
   depthBuckets: [
     {
@@ -109,6 +111,19 @@ const baseResponse = {
       bouncedSessions: 6,
       bounceRatePercent: 100,
       avgPagesPerSession: 1,
+      area: "other",
+      scopeType: null,
+      scopeKey: null,
+    },
+    {
+      path: "/quiz/geography",
+      sessions: 3,
+      bouncedSessions: 1,
+      bounceRatePercent: 33.3,
+      avgPagesPerSession: 5,
+      area: "quiz",
+      scopeType: "category" as const,
+      scopeKey: "geography",
     },
   ],
   sessions: [
@@ -129,6 +144,8 @@ const baseResponse = {
       userAgent: "Mozilla/5.0",
       isBot: false,
       isInternal: false,
+      entryArea: "home",
+      itemSteps: 0,
     },
   ],
   totalCount: 1,
@@ -232,10 +249,19 @@ describe("SessionsTab", () => {
     expect(outcomeRows.getByText("Authenticated")).toBeInTheDocument();
   });
 
+  it("summarizes study activity and groups landing by area and scope", async () => {
+    renderTab();
+
+    expect(await screen.findByText("Sessions with study activity")).toBeInTheDocument();
+    expect(screen.getByText("4.5")).toBeInTheDocument();
+    expect(screen.getByText("category: geography")).toBeInTheDocument();
+    expect(screen.getByText("e.g. /quiz/geography")).toBeInTheDocument();
+  });
+
   it("flags a landing page where every visitor bounced", async () => {
     renderTab();
 
-    expect(await screen.findByText("/promo")).toBeInTheDocument();
+    expect(await screen.findByText("e.g. /promo")).toBeInTheDocument();
     expect(screen.getByText("100%")).toBeInTheDocument();
   });
 
@@ -264,6 +290,8 @@ describe("SessionsTab", () => {
           isAuthenticated: false,
           createdUtc: "2026-07-25T10:00:00Z",
           dwellSeconds: 120,
+          area: "home",
+          isItemStep: false,
         },
         {
           stepNumber: 2,
@@ -273,6 +301,8 @@ describe("SessionsTab", () => {
           isAuthenticated: true,
           createdUtc: "2026-07-25T10:02:00Z",
           dwellSeconds: null,
+          area: "collections",
+          isItemStep: false,
         },
       ],
     });
@@ -294,6 +324,9 @@ describe("SessionsTab", () => {
     );
 
     expect(await screen.findByText("stayed 2m")).toBeInTheDocument();
+    // Each journey step is labelled with its feature area.
+    expect(screen.getByText("Home")).toBeInTheDocument();
+    expect(screen.getAllByText("Collections").length).toBeGreaterThan(0);
     // The last page has no exit event, so its dwell time must not read as zero.
     expect(screen.getByText("last page — dwell unknown")).toBeInTheDocument();
   });

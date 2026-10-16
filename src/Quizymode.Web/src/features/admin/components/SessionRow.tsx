@@ -5,6 +5,7 @@ import {
   OUTCOME_BADGE_CLASSES,
   OUTCOME_LABELS,
   describeClient,
+  formatArea,
   formatDuration,
   shortenUserAgent,
 } from "./sessionFormatting";
@@ -136,6 +137,9 @@ const SessionRow = ({ session, formatDateTime }: SessionRowProps) => {
                         </span>
                         <div className="min-w-0">
                           <div className="break-all text-sm font-medium text-slate-900">
+                            <span className="mr-2 inline-flex rounded-full bg-indigo-50 px-2 py-0.5 text-xs font-semibold text-indigo-700">
+                              {formatArea(step.area)}
+                            </span>
                             {step.url}
                           </div>
                           <div className="mt-0.5 text-xs text-slate-500">

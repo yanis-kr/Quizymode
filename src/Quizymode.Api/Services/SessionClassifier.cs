@@ -29,9 +29,16 @@ internal static class SessionClassifier
         Guid? UserId,
         string IpAddress,
         string? UserAgent,
-        bool IsBot)
+        bool IsBot,
+        string EntryArea = PageHitClassifier.AreaOther,
+        string? EntryScopeType = null,
+        string? EntryScopeKey = null,
+        int ItemSteps = 0)
     {
         public bool IsBounce => PageHits == 1;
+
+        /// <summary>Any Quiz or Flashcards question viewed (ANALYTICS-004).</summary>
+        public bool HasStudyActivity => ItemSteps > 0;
 
         public bool IsEngaged => DistinctPages >= 2;
     }
@@ -56,7 +63,8 @@ internal static class SessionClassifier
                 LastSeenUtc = group.Max(pageView => pageView.CreatedUtc),
                 PageHits = group.Count(),
                 DistinctPages = group.Select(pageView => pageView.Path).Distinct().Count(),
-                AuthHits = group.Sum(pageView => pageView.IsAuthenticated ? 1 : 0)
+                AuthHits = group.Sum(pageView => pageView.IsAuthenticated ? 1 : 0),
+                ItemSteps = group.Sum(pageView => pageView.IsItemStep ? 1 : 0)
             })
             .ToListAsync(cancellationToken);
 
@@ -80,6 +88,10 @@ internal static class SessionClassifier
                 pageView.Id,
                 pageView.SessionId,
                 pageView.Path,
+                pageView.QueryString,
+                pageView.Area,
+                pageView.ScopeType,
+                pageView.ScopeKey,
                 pageView.CreatedUtc,
                 pageView.IsAuthenticated,
                 pageView.UserId,
@@ -105,6 +117,11 @@ internal static class SessionClassifier
                         .OrderBy(row => row.Id)
                         .Last();
 
+                    // Rows not yet reached by the classification backfill are classified on the fly.
+                    PageHitClassifier.Classification entryClass = entry.Area is null
+                        ? PageHitClassifier.Classify(entry.Path, entry.QueryString)
+                        : new PageHitClassifier.Classification(entry.Area, entry.ScopeType, entry.ScopeKey, null, false);
+
                     return new Boundary(
                         EntryPath: entry.Path,
                         ExitPath: exit.Path,
@@ -112,7 +129,10 @@ internal static class SessionClassifier
                         UserId: exit.UserId ?? entry.UserId,
                         IpAddress: entry.IpAddress,
                         UserAgent: entry.UserAgent,
-                        IsBot: entry.IsBot);
+                        IsBot: entry.IsBot,
+                        EntryArea: entryClass.Area,
+                        EntryScopeType: entryClass.ScopeType,
+                        EntryScopeKey: entryClass.ScopeKey);
                 });
 
         return aggregates
@@ -140,7 +160,11 @@ internal static class SessionClassifier
                     UserId: boundary.UserId,
                     IpAddress: boundary.IpAddress,
                     UserAgent: boundary.UserAgent,
-                    IsBot: boundary.IsBot);
+                    IsBot: boundary.IsBot,
+                    EntryArea: boundary.EntryArea,
+                    EntryScopeType: boundary.EntryScopeType,
+                    EntryScopeKey: boundary.EntryScopeKey,
+                    ItemSteps: aggregate.ItemSteps);
             })
             .ToList();
     }
@@ -152,5 +176,8 @@ internal static class SessionClassifier
         Guid? UserId,
         string IpAddress,
         string? UserAgent,
-        bool IsBot);
+        bool IsBot,
+        string EntryArea,
+        string? EntryScopeType,
+        string? EntryScopeKey);
 }
