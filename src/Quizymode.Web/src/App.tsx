@@ -21,6 +21,7 @@ import AdminCategoriesPage from "./features/admin/pages/AdminCategoriesPage";
 import AdminUserSettingsPage from "./features/admin/pages/AdminUserSettingsPage";
 import AdminSeedSyncPage from "./features/admin/pages/AdminSeedSyncPage";
 import PageViewAnalyticsPage from "./features/admin/pages/PageViewAnalyticsPage";
+import AdminClientErrorsPage from "./features/admin/pages/AdminClientErrorsPage";
 import BulkCreateItemsPage from "./features/items/pages/BulkCreateItemsPage";
 import AddItemsPage from "./features/items/pages/AddItemsPage";
 import UploadToCollectionPage from "./features/items/pages/UploadToCollectionPage";
@@ -124,6 +125,7 @@ function App() {
           <Route path="/admin/user-settings" element={<AdminUserSettingsPage />} />
           <Route path="/admin/seed-sync" element={<AdminSeedSyncPage />} />
           <Route path="/admin/page-views" element={<PageViewAnalyticsPage />} />
+          <Route path="/admin/client-errors" element={<AdminClientErrorsPage />} />
           <Route path="/admin/ideas" element={<AdminIdeasPage />} />
           <Route path="/admin/featured" element={<AdminFeaturedPage />} />
         </Route>

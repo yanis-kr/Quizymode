@@ -96,6 +96,15 @@ const AdminDashboardPage = () => {
           </p>
         </Link>
         <Link
+          to="/admin/client-errors"
+          className="bg-white shadow rounded-lg p-6 hover:shadow-lg transition-shadow cursor-pointer"
+        >
+          <h3 className="text-lg font-medium text-gray-900 mb-2">Client Errors</h3>
+          <p className="text-sm text-gray-500">
+            Front-end crashes grouped by fingerprint, page, browser, and release
+          </p>
+        </Link>
+        <Link
           to="/admin/ideas"
           className="bg-white shadow rounded-lg p-6 hover:shadow-lg transition-shadow cursor-pointer"
         >

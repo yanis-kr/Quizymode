@@ -42,6 +42,24 @@ internal static partial class StartupExtensions
                     });
             });
 
+            // Front-end error reports (OBS-001). The SPA sends at most 10 per tab session, so this only
+            // bites when an error loop or a script floods the endpoint.
+            options.AddPolicy("client-errors", httpContext =>
+            {
+                // Keyed on the server-trusted client IP, never on a client-sent X-Forwarded-For value
+                // or session id, so rotating either cannot buy a fresh budget.
+                string partitionKey = GetAuthenticatedOrTrustedIpPartitionKey(httpContext);
+                return RateLimitPartition.GetFixedWindowLimiter(
+                    partitionKey,
+                    static _ => new FixedWindowRateLimiterOptions
+                    {
+                        PermitLimit = 30,
+                        Window = TimeSpan.FromMinutes(10),
+                        QueueLimit = 0,
+                        AutoReplenishment = true
+                    });
+            });
+
             options.AddPolicy("feedback-submissions", httpContext =>
             {
                 string partitionKey = GetAuthenticatedOrIpPartitionKey(httpContext);
@@ -128,12 +146,36 @@ internal static partial class StartupExtensions
         return $"ip:{ipAddress}";
     }
 
+    /// <summary>
+    /// The user subject when authenticated, otherwise <see cref="ConnectionInfo.RemoteIpAddress"/>, which
+    /// <c>UseForwardedHeaders</c> sets from X-Forwarded-For only for hops appended by configured trusted proxies.
+    /// </summary>
+    internal static string GetAuthenticatedOrTrustedIpPartitionKey(HttpContext httpContext)
+    {
+        ClaimsPrincipal user = httpContext.User;
+        if (user.Identity?.IsAuthenticated == true)
+        {
+            string? subject = user.FindFirstValue("sub") ?? user.FindFirstValue(ClaimTypes.NameIdentifier);
+            if (!string.IsNullOrWhiteSpace(subject))
+            {
+                return $"user:{subject}";
+            }
+        }
+
+        return $"ip:{httpContext.Connection.RemoteIpAddress?.ToString() ?? "unknown"}";
+    }
+
     private static string GetRejectionDetail(PathString requestPath)
     {
         string path = requestPath.Value ?? string.Empty;
         if (path.EndsWith("/analytics/events", StringComparison.OrdinalIgnoreCase))
         {
             return "Too many analytics events. Please slow down.";
+        }
+
+        if (path.EndsWith("/client-errors", StringComparison.OrdinalIgnoreCase))
+        {
+            return "Too many error reports. Please slow down.";
         }
 
         if (path.Contains("/ideas/", StringComparison.OrdinalIgnoreCase) && path.EndsWith("/comments", StringComparison.OrdinalIgnoreCase))

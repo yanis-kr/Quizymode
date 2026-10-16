@@ -1,4 +1,5 @@
 import { Component, type ReactNode } from "react";
+import { reportClientError } from "@/features/errorReporting/clientErrorReporter";
 
 interface Props {
   children: ReactNode;
@@ -21,6 +22,7 @@ class ErrorBoundary extends Component<Props, State> {
 
   componentDidCatch(error: Error, errorInfo: React.ErrorInfo) {
     console.error("ErrorBoundary caught an error:", error, errorInfo);
+    reportClientError("boundary", error, errorInfo.componentStack);
   }
 
   render() {
@@ -32,8 +34,9 @@ class ErrorBoundary extends Component<Props, State> {
               Something went wrong
             </h1>
             <p className="text-gray-700 mb-4">
-              The application encountered an error. Please check the browser
-              console for details.
+              The application encountered an error. We record problems like
+              this automatically so we can fix them. Reloading the page usually
+              helps.
             </p>
             {this.state.error && (
               <details className="mb-4">

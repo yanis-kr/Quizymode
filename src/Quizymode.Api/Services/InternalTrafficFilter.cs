@@ -49,6 +49,24 @@ internal static class InternalTrafficFilter
                 .Select(analyticsEvent => analyticsEvent.SessionId));
     }
 
+    /// <summary>
+    /// Session ids, among the sessions with front-end errors in <paramref name="errorScope"/>, that are internal:
+    /// any of their error reports was internal at write time, their page-view session is internal, or a report
+    /// belongs to a user flagged internal now (so flagging is retroactive).
+    /// </summary>
+    public static IQueryable<string> InternalClientErrorSessionIds(ApplicationDbContext db, IQueryable<ClientError> errorScope)
+    {
+        IQueryable<string> scopeSessionIds = errorScope.Select(clientError => clientError.SessionId);
+
+        return InternalSessionIds(db, db.PageViews.Where(pageView => scopeSessionIds.Contains(pageView.SessionId)))
+            .Union(errorScope
+                .Where(clientError =>
+                    clientError.IsInternal ||
+                    (clientError.UserId != null &&
+                        db.Users.Any(user => user.Id == clientError.UserId && user.IsInternal)))
+                .Select(clientError => clientError.SessionId));
+    }
+
     /// <summary>Removes every hit that belongs to an internal session.</summary>
     public static IQueryable<PageView> ExcludeInternalSessions(ApplicationDbContext db, IQueryable<PageView> query)
     {

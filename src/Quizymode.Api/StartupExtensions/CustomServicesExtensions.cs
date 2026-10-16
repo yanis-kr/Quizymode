@@ -40,6 +40,7 @@ internal static partial class StartupExtensions
         builder.Services.AddScoped<IStudyGuideChunkingService, StudyGuideChunkingService>();
         builder.Services.AddScoped<IStudyGuidePromptBuilderService, StudyGuidePromptBuilderService>();
         builder.Services.AddHostedService<StudyGuideCleanupService>();
+        builder.Services.AddHostedService<ClientErrorCleanupService>();
         builder.Services.AddMemoryCache();
         return builder;
     }

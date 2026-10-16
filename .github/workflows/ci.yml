@@ -69,6 +69,15 @@ jobs:
           npm ci
           npm run build
 
+      # Hidden source maps (OBS-001): never deployed, kept per version for decoding reported stacks by hand.
+      - name: Upload web source maps
+        uses: actions/upload-artifact@v7
+        with:
+          name: web-sourcemaps-${{ steps.app_version.outputs.app_version }}-${{ github.run_number }}
+          path: src/Quizymode.Web/dist/**/*.map
+          if-no-files-found: error
+          retention-days: 90
+
       - name: Run frontend tests with coverage
         working-directory: src/Quizymode.Web
         run: npm run test:coverage

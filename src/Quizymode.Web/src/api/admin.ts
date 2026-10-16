@@ -516,6 +516,46 @@ export interface SeedSyncHistoryResponse {
   runs: SeedSyncHistoryRunResponse[];
 }
 
+export interface ClientErrorValueCount {
+  value: string;
+  count: number;
+}
+
+export interface ClientErrorGroup {
+  fingerprint: string;
+  errorName: string;
+  message: string;
+  source: "boundary" | "window" | "promise" | string;
+  count: number;
+  sessions: number;
+  firstSeenUtc: string;
+  lastSeenUtc: string;
+  /** First report ever (within retention) falls inside the window. */
+  isNew: boolean;
+  latestAppVersion: string | null;
+  topPaths: ClientErrorValueCount[];
+  browsers: ClientErrorValueCount[];
+  devices: ClientErrorValueCount[];
+  sampleStack: string | null;
+  sampleComponentStack: string | null;
+  sampleSessionId: string;
+}
+
+export interface ClientErrorsResponse {
+  windowStartUtc: string;
+  windowEndUtc: string;
+  totalReports: number;
+  totalGroups: number;
+  newGroups: number;
+  botReports: number;
+  botsExcluded: boolean;
+  internalSessions: number;
+  internalExcluded: boolean;
+  truncated: boolean;
+  appVersions: string[];
+  groups: ClientErrorGroup[];
+}
+
 export const adminApi = {
   getReviewBoardItems: async (): Promise<ReviewBoardResponse> => {
     const response = await apiClient.get<ReviewBoardResponse>(
@@ -658,6 +698,27 @@ export const adminApi = {
           params: { includeInternal: true },
         })
       : await apiClient.get<PageViewSessionDetailResponse>(url);
+    return response.data;
+  },
+
+  getClientErrors: async (
+    days: number = 7,
+    appVersion: string = "",
+    includeBots: boolean = false,
+    includeInternal: boolean = false
+  ): Promise<ClientErrorsResponse> => {
+    const params: Record<string, number | boolean | string> = { days };
+    if (appVersion) {
+      params.appVersion = appVersion;
+    }
+    if (includeBots) {
+      params.includeBots = true;
+    }
+    if (includeInternal) {
+      params.includeInternal = true;
+    }
+
+    const response = await apiClient.get<ClientErrorsResponse>("/admin/client-errors", { params });
     return response.data;
   },
 
