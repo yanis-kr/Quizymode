@@ -26,17 +26,24 @@ import {
   sortIdeas,
 } from "@/features/ideas/ideaBoard";
 
-const FILTERS: IdeaModerationState[] = [
+type AdminIdeaFilter = IdeaModerationState | "all";
+
+const FILTERS: AdminIdeaFilter[] = [
   "PendingReview",
   "Published",
   "Rejected",
+  "all",
 ];
+
+function formatFilterLabel(filter: AdminIdeaFilter): string {
+  return filter === "all" ? "All" : formatModerationLabel(filter);
+}
 
 const AdminIdeasPage = () => {
   const { isAdmin, isAuthenticated } = useAuth();
   const queryClient = useQueryClient();
   const [activeFilter, setActiveFilter] =
-    useState<IdeaModerationState>("PendingReview");
+    useState<AdminIdeaFilter>("PendingReview");
   const [search, setSearch] = useState("");
   const [expandedIdeaIds, setExpandedIdeaIds] = useState<string[]>([]);
   const [editingIdea, setEditingIdea] = useState<IdeaSummaryResponse | null>(null);
@@ -172,13 +179,14 @@ const AdminIdeasPage = () => {
                   key={filter}
                   type="button"
                   onClick={() => setActiveFilter(filter)}
+                  aria-pressed={activeFilter === filter}
                   className={`rounded-full px-4 py-2 text-sm font-medium transition ${
                     activeFilter === filter
                       ? "bg-slate-900 text-white"
                       : "border border-slate-300 bg-white text-slate-700 hover:bg-slate-50"
                   }`}
                 >
-                  {formatModerationLabel(filter)}
+                  {formatFilterLabel(filter)}
                 </button>
               ))}
             </div>

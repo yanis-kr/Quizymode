@@ -139,6 +139,35 @@ public sealed class IdeasFeatureTests : DatabaseTestFixture
     }
 
     [Fact]
+    public async Task HandleListAsync_AllReturnsEveryModerationStateWithAdminPermission()
+    {
+        Idea pending = NewIdea(Guid.NewGuid().ToString(), "Pending idea", DateTime.UtcNow.AddDays(-1));
+        Idea published = NewIdea(Guid.NewGuid().ToString(), "Published idea", DateTime.UtcNow.AddDays(-2));
+        published.ModerationState = IdeaModerationState.Published;
+        Idea rejected = NewIdea(Guid.NewGuid().ToString(), "Rejected idea", DateTime.UtcNow.AddDays(-3));
+        rejected.ModerationState = IdeaModerationState.Rejected;
+        DbContext.Ideas.AddRange(pending, published, rejected);
+        await DbContext.SaveChangesAsync();
+
+        Result<IdeaBoardResponse> all = await IdeasAdmin.HandleListAsync(
+            "all",
+            DbContext,
+            AuthenticatedUser(Guid.NewGuid().ToString(), isAdmin: true).Object,
+            CancellationToken.None);
+        Result<IdeaBoardResponse> pendingOnly = await IdeasAdmin.HandleListAsync(
+            "PendingReview",
+            DbContext,
+            AuthenticatedUser(Guid.NewGuid().ToString(), isAdmin: true).Object,
+            CancellationToken.None);
+
+        all.IsSuccess.Should().BeTrue();
+        all.Value.Ideas.Select(idea => idea.ModerationState).Should()
+            .BeEquivalentTo(["PendingReview", "Published", "Rejected"]);
+        all.Value.Ideas.Should().OnlyContain(idea => idea.CanChangeStatus);
+        pendingOnly.Value.Ideas.Should().ContainSingle(idea => idea.Title == "Pending idea");
+    }
+
+    [Fact]
     public async Task HandleCreateAsync_RejectsWhenDailyLimitReached()
     {
         string userId = Guid.NewGuid().ToString();

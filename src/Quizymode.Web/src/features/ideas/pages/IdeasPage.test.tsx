@@ -72,7 +72,6 @@ describe("IdeasPage", () => {
           canEdit: false,
           canDelete: false,
           canChangeStatus: false,
-          canModerate: false,
         },
       ],
     });
@@ -124,7 +123,6 @@ describe("IdeasPage", () => {
           canEdit: true,
           canDelete: true,
           canChangeStatus: false,
-          canModerate: false,
         },
       ],
     });
