@@ -33,7 +33,12 @@ import type { CollectionRatingResponse } from "@/types/api";
 import { getCategoryScopeModeConfig } from "@/features/categories/utils/categoryScopeMode";
 import { getStudyScopeKeywords } from "@/features/items/utils/studyScopeParams";
 import { QuizCompletionView } from "@/features/items/quiz/QuizCompletionView";
-import { trackQuizRunCompleted, trackQuizRunStarted } from "@/features/items/quiz/quizAnalytics";
+import { flushDeferredAnalyticsEvents } from "@/features/analytics/analyticsEvents";
+import {
+  trackQuestionAnswered,
+  trackQuizRunCompleted,
+  trackQuizRunStarted,
+} from "@/features/items/quiz/quizAnalytics";
 import {
   createQuizRun,
   getQuizOptions,
@@ -548,6 +553,8 @@ const QuizModePage = () => {
   // Funnel telemetry (AC 5.4.9): only a new run id is a new start; other run updates are answers.
   // trackEventOnce also dedupes per tab, so restores, remounts and StrictMode do not repeat it.
   const startTrackedRunId = useRef<string | null>(null);
+  // Answers are sent in batches; leaving the quiz (in-app navigation) sends any still held.
+  useEffect(() => () => flushDeferredAnalyticsEvents(), []);
   useEffect(() => {
     if (!run || startTrackedRunId.current === run.runId) return;
     startTrackedRunId.current = run.runId;
@@ -572,6 +579,8 @@ const QuizModePage = () => {
 
   const handleAnswerSelect = (answer: string) => {
     if (!run || !currentItem || currentOutcome) return;
+    // Only the first answer per item is scored and reported (AC 5.5.2); later clicks return above.
+    trackQuestionAnswered(run, currentItem.id, answer === currentItem.correctAnswer);
     setRun((current) =>
       current
         ? reduceQuizRun(current, {

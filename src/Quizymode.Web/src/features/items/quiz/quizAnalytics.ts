@@ -1,4 +1,6 @@
 import {
+  flushDeferredAnalyticsEvents,
+  trackEventDeferredOnce,
   trackEventOnce,
   type AnalyticsContextType,
 } from "@/features/analytics/analyticsEvents";
@@ -8,7 +10,7 @@ import type { QuizCompletionSnapshot, QuizRunScope, QuizRunState } from "./quizR
 /** Must match the API's context id rule (AC 5.4.2). Ids that do not fit are left out. */
 const CONTEXT_ID_PATTERN = /^[A-Za-z0-9._:/-]{1,128}$/;
 
-interface QuizEventContext {
+export interface StudyEventContext {
   contextType: AnalyticsContextType;
   contextId?: string;
 }
@@ -17,7 +19,7 @@ interface QuizEventContext {
  * Where a quiz run came from, for the conversion funnel. The home page's quick quiz is the sample
  * collection, so it is reported as "home" to separate it from other collection quizzes.
  */
-export function quizEventContext(scope: QuizRunScope): QuizEventContext {
+export function quizEventContext(scope: QuizRunScope): StudyEventContext {
   if (scope.kind === "collection") {
     return scope.collectionId === HOME_SAMPLE_COLLECTION_ID
       ? { contextType: "home", contextId: scope.collectionId }
@@ -31,7 +33,16 @@ export function quizEventContext(scope: QuizRunScope): QuizEventContext {
   return { contextType: "quiz" };
 }
 
-function withContextId(contextType: AnalyticsContextType, contextId: string): QuizEventContext {
+/** Scope of a Flashcards run: the collection or category being studied, otherwise the whole bank. */
+export function flashcardsEventContext(collectionId?: string, category?: string): StudyEventContext {
+  if (collectionId) {
+    return withContextId("collection", collectionId);
+  }
+
+  return category ? withContextId("category", category) : { contextType: "flashcards" };
+}
+
+function withContextId(contextType: AnalyticsContextType, contextId: string): StudyEventContext {
   return CONTEXT_ID_PATTERN.test(contextId) ? { contextType, contextId } : { contextType };
 }
 
@@ -45,13 +56,50 @@ export function trackQuizRunStarted(run: QuizRunState): void {
   });
 }
 
-/** One `quiz_completed` per run, sent alongside the in-app completion notice. */
+/**
+ * One `question_answered` per item per run, for the first (scored) answer only (AC 5.5.2). Answers are
+ * held and sent in small batches; the completion event and page hide flush them.
+ */
+export function trackQuestionAnswered(run: QuizRunState, itemId: string, isCorrect: boolean): void {
+  const position = run.itemIds.indexOf(itemId) + 1;
+  if (position < 1) {
+    return;
+  }
+
+  trackEventDeferredOnce(`${run.runId}:${itemId}`, {
+    name: "question_answered",
+    runId: run.runId,
+    itemId,
+    position,
+    isCorrect,
+    ...quizEventContext(run.scope),
+  });
+}
+
+/** One `quiz_completed` per run, sent alongside the in-app completion notice after any held answers. */
 export function trackQuizRunCompleted(snapshot: QuizCompletionSnapshot): void {
+  flushDeferredAnalyticsEvents();
   trackEventOnce(snapshot.runId, {
     name: "quiz_completed",
     runId: snapshot.runId,
     score: snapshot.correct,
     total: snapshot.total,
     ...quizEventContext(snapshot.scope),
+  });
+}
+
+/** One `flashcards_started` per Flashcards run. */
+export function trackFlashcardsStarted(runId: string, total: number, context: StudyEventContext): void {
+  trackEventOnce(runId, { name: "flashcards_started", runId, total, ...context });
+}
+
+/** One `flashcard_revealed` per card per run, the first time its answer is shown. */
+export function trackFlashcardRevealed(runId: string, itemId: string, position: number, context: StudyEventContext): void {
+  trackEventDeferredOnce(`${runId}:${itemId}`, {
+    name: "flashcard_revealed",
+    runId,
+    itemId,
+    position,
+    ...context,
   });
 }

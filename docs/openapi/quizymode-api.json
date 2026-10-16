@@ -887,6 +887,63 @@
         }
       }
     },
+    "/admin/analytics/learning": {
+      "get": {
+        "tags": [
+          "Admin"
+        ],
+        "summary": "Get study engagement by mode and scope (Admin only)",
+        "description": "Returns quiz and flashcards runs started and completed, average score, items reached, and quiz drop-off by question position for the selected window. Bot sessions are excluded unless includeBots=true, and internal sessions unless includeInternal=true.",
+        "parameters": [
+          {
+            "name": "days",
+            "in": "query",
+            "schema": {
+              "default": 7,
+              "$ref": "#/components/schemas/System.Int32"
+            }
+          },
+          {
+            "name": "includeBots",
+            "in": "query",
+            "schema": {
+              "default": false,
+              "$ref": "#/components/schemas/System.Boolean"
+            }
+          },
+          {
+            "name": "includeInternal",
+            "in": "query",
+            "schema": {
+              "default": false,
+              "$ref": "#/components/schemas/System.Boolean"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Quizymode.Api.Features.Admin.GetLearningReport.Response"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "/admin/page-view-analytics": {
       "get": {
         "tags": [
@@ -5429,6 +5486,151 @@
         "properties": {
           "items": {
             "$ref": "#/components/schemas/System.Collections.Generic.ListOfQuizymode.Api.Features.Admin.GetFeaturedAdmin.FeaturedItemDto"
+          }
+        }
+      },
+      "Quizymode.Api.Features.Admin.GetLearningReport.DropOffPointResponse": {
+        "required": [
+          "position",
+          "runsReached",
+          "sharePercent",
+          "runsAbandonedHere"
+        ],
+        "type": "object",
+        "properties": {
+          "position": {
+            "$ref": "#/components/schemas/System.Int32"
+          },
+          "runsReached": {
+            "description": "Started quiz runs that answered at least Position questions.",
+            "$ref": "#/components/schemas/System.Int32"
+          },
+          "sharePercent": {
+            "$ref": "#/components/schemas/System.Double"
+          },
+          "runsAbandonedHere": {
+            "description": "Unfinished quiz runs whose furthest answered question is Position.",
+            "$ref": "#/components/schemas/System.Int32"
+          }
+        }
+      },
+      "Quizymode.Api.Features.Admin.GetLearningReport.Response": {
+        "required": [
+          "windowStartUtc",
+          "windowEndUtc",
+          "botSessions",
+          "botsExcluded",
+          "internalSessions",
+          "internalExcluded",
+          "scopes",
+          "quizRunsAbandonedBeforeFirstAnswer",
+          "quizDropOff"
+        ],
+        "type": "object",
+        "properties": {
+          "windowStartUtc": {
+            "$ref": "#/components/schemas/System.DateTime"
+          },
+          "windowEndUtc": {
+            "$ref": "#/components/schemas/System.DateTime"
+          },
+          "botSessions": {
+            "$ref": "#/components/schemas/System.Int32"
+          },
+          "botsExcluded": {
+            "$ref": "#/components/schemas/System.Boolean"
+          },
+          "internalSessions": {
+            "$ref": "#/components/schemas/System.Int32"
+          },
+          "internalExcluded": {
+            "$ref": "#/components/schemas/System.Boolean"
+          },
+          "scopes": {
+            "$ref": "#/components/schemas/System.Collections.Generic.ListOfQuizymode.Api.Features.Admin.GetLearningReport.ScopeResponse"
+          },
+          "quizRunsAbandonedBeforeFirstAnswer": {
+            "$ref": "#/components/schemas/System.Int32"
+          },
+          "quizDropOff": {
+            "$ref": "#/components/schemas/System.Collections.Generic.ListOfQuizymode.Api.Features.Admin.GetLearningReport.DropOffPointResponse"
+          }
+        }
+      },
+      "Quizymode.Api.Features.Admin.GetLearningReport.ScopeResponse": {
+        "required": [
+          "mode",
+          "contextType",
+          "contextId",
+          "runsStarted",
+          "runsCompleted",
+          "completionRatePercent",
+          "averageScorePercent",
+          "averageItemsReached"
+        ],
+        "type": "object",
+        "properties": {
+          "mode": {
+            "$ref": "#/components/schemas/System.String"
+          },
+          "contextType": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/components/schemas/System.String"
+              }
+            ]
+          },
+          "contextId": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/components/schemas/System.String"
+              }
+            ]
+          },
+          "runsStarted": {
+            "$ref": "#/components/schemas/System.Int32"
+          },
+          "runsCompleted": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "description": "Quiz runs that reached every question; null for flashcards, which have no completion.",
+                "$ref": "#/components/schemas/System.NullableOfSystem.Int32"
+              }
+            ]
+          },
+          "completionRatePercent": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/components/schemas/System.NullableOfSystem.Double"
+              }
+            ]
+          },
+          "averageScorePercent": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "description": "Mean of score / total over completed quiz runs; null when none completed.",
+                "$ref": "#/components/schemas/System.NullableOfSystem.Double"
+              }
+            ]
+          },
+          "averageItemsReached": {
+            "description": "Mean questions answered (quiz) or cards revealed (flashcards) per started run.",
+            "$ref": "#/components/schemas/System.Double"
           }
         }
       },
@@ -11133,6 +11335,18 @@
         "type": "array",
         "items": {
           "$ref": "#/components/schemas/Quizymode.Api.Features.Admin.GetFeaturedAdmin.FeaturedItemDto"
+        }
+      },
+      "System.Collections.Generic.ListOfQuizymode.Api.Features.Admin.GetLearningReport.DropOffPointResponse": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/Quizymode.Api.Features.Admin.GetLearningReport.DropOffPointResponse"
+        }
+      },
+      "System.Collections.Generic.ListOfQuizymode.Api.Features.Admin.GetLearningReport.ScopeResponse": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/Quizymode.Api.Features.Admin.GetLearningReport.ScopeResponse"
         }
       },
       "System.Collections.Generic.ListOfQuizymode.Api.Features.Admin.GetPageViewAnalytics.RecentPageViewResponse": {

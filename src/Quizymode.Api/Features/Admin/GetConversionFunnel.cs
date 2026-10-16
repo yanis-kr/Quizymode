@@ -91,18 +91,7 @@ public static class GetConversionFunnel
             .Distinct()
             .CountAsync(cancellationToken);
 
-        // A funnel session is internal when any of its events was internal at write time, when its
-        // page-view session (same client session id) is internal, or when any of its events belongs to a
-        // user flagged internal now. The user flag is evaluated at query time, so flagging is retroactive.
-        IQueryable<string> windowSessionIds = windowQuery.Select(analyticsEvent => analyticsEvent.SessionId);
-        IQueryable<string> internalSessionIds = InternalTrafficFilter
-            .InternalSessionIds(db, db.PageViews.Where(pageView => windowSessionIds.Contains(pageView.SessionId)))
-            .Union(windowQuery
-                .Where(analyticsEvent =>
-                    analyticsEvent.IsInternal ||
-                    (analyticsEvent.UserId != null &&
-                        db.Users.Any(user => user.Id == analyticsEvent.UserId && user.IsInternal)))
-                .Select(analyticsEvent => analyticsEvent.SessionId));
+        IQueryable<string> internalSessionIds = InternalTrafficFilter.InternalEventSessionIds(db, windowQuery);
 
         int internalSessions = await internalSessionIds.CountAsync(cancellationToken);
 

@@ -10,10 +10,16 @@ import { keywordsApi } from "@/api/keywords";
 import { collectionsApi } from "@/api/collections";
 import { QUIZ_COMPLETED_EVENT, type QuizCompletionSnapshot } from "@/features/items/quiz/quizRun";
 
-const { mockTrackEventOnce } = vi.hoisted(() => ({ mockTrackEventOnce: vi.fn() }));
+const { mockTrackEventOnce, mockTrackEventDeferredOnce, mockFlushDeferredAnalyticsEvents } = vi.hoisted(() => ({
+  mockTrackEventOnce: vi.fn(),
+  mockTrackEventDeferredOnce: vi.fn(),
+  mockFlushDeferredAnalyticsEvents: vi.fn(),
+}));
 
 vi.mock("@/features/analytics/analyticsEvents", () => ({
   trackEventOnce: mockTrackEventOnce,
+  trackEventDeferredOnce: mockTrackEventDeferredOnce,
+  flushDeferredAnalyticsEvents: mockFlushDeferredAnalyticsEvents,
 }));
 
 vi.mock("@/contexts/AuthContext", () => ({
@@ -360,6 +366,26 @@ describe("QuizModePage", () => {
 
     expect(screen.getByText(/Score: 0 \/ 1 correct/i)).toBeInTheDocument();
     expect(wrongAnswer).toBeDisabled();
+    // AC 5.5.2: the first call carries the scored (wrong) answer. The deferred tracker's own
+    // key-based dedupe (verified in analyticsEvents.test.tsx) drops any later call for the same item.
+    expect(mockTrackEventDeferredOnce.mock.calls[0][1]).toMatchObject({
+      name: "question_answered",
+      itemId: "item-1",
+      position: 1,
+      isCorrect: false,
+    });
+  });
+
+  it("flushes deferred analytics events when leaving the quiz", async () => {
+    const { unmount } = renderPage(
+      "/quiz/exams/item/item-1?nav=act,math&keywords=act,math,algebra"
+    );
+    await screen.findByText("What is 2 + 2?");
+    mockFlushDeferredAnalyticsEvents.mockClear();
+
+    unmount();
+
+    expect(mockFlushDeferredAnalyticsEvents).toHaveBeenCalledTimes(1);
   });
 
   it("shows an empty state without completing an empty collection", async () => {

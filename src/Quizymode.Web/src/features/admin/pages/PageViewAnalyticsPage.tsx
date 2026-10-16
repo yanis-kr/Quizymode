@@ -11,6 +11,7 @@ import LoadingSpinner from "@/components/LoadingSpinner";
 import { useAuth } from "@/contexts/AuthContext";
 import FunnelTab from "../components/FunnelTab";
 import InternalBrowserToggle from "../components/InternalBrowserToggle";
+import LearningTab from "../components/LearningTab";
 import SessionsTab from "../components/SessionsTab";
 
 const RANGE_OPTIONS: Array<{ label: string; days: number }> = [
@@ -29,12 +30,13 @@ const VISITOR_OPTIONS: Array<{ label: string; value: PageViewVisitorType }> = [
 const PAGE_SIZE = 25;
 const TOP_PAGES_LIMIT = 10;
 
-type AnalyticsTab = "pages" | "sessions" | "funnel";
+type AnalyticsTab = "pages" | "sessions" | "funnel" | "learning";
 
 const TAB_OPTIONS: Array<{ label: string; value: AnalyticsTab; hint: string }> = [
   { label: "Pages", value: "pages", hint: "Which URLs were hit" },
   { label: "Sessions", value: "sessions", hint: "Whether visitors stayed" },
   { label: "Funnel", value: "funnel", hint: "Where visitors convert" },
+  { label: "Learning", value: "learning", hint: "How study runs go" },
 ];
 
 const PageViewAnalyticsPage = () => {
@@ -220,6 +222,10 @@ const PageViewAnalyticsPage = () => {
 
       {tab === "funnel" && (
         <FunnelTab days={days} includeBots={includeBots} includeInternal={includeInternal} />
+      )}
+
+      {tab === "learning" && (
+        <LearningTab days={days} includeBots={includeBots} includeInternal={includeInternal} />
       )}
 
       {tab === "pages" && isLoading && <LoadingSpinner />}
