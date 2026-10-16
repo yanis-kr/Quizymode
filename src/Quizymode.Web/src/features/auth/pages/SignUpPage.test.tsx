@@ -302,4 +302,102 @@ describe("SignUpPage", () => {
     expect(screen.getByRole("link", { name: /terms of service/i })).toHaveAttribute("href", "/terms");
     expect(screen.getByRole("link", { name: /privacy policy/i })).toHaveAttribute("href", "/privacy");
   });
+
+  describe("error semantics (#156)", () => {
+    it("announces a short-password error in an alert, marks the field invalid and focuses it", async () => {
+      renderPage();
+      fillSignUpForm({ password: "short" });
+      fireEvent.click(screen.getByRole("button", { name: /sign up/i }));
+
+      const alert = await screen.findByRole("alert");
+      expect(alert).toHaveTextContent(/at least 8 characters/i);
+      const password = screen.getByLabelText(/^password$/i);
+      expect(password).toHaveAttribute("aria-invalid", "true");
+      expect(password.getAttribute("aria-describedby")).toContain(alert.id);
+      expect(password.getAttribute("aria-describedby")).toContain("password-hint");
+      expect(password).toHaveFocus();
+    });
+
+    it("links a taken display name or email to its own field only", async () => {
+      mockCheckAvailability.mockResolvedValueOnce({
+        isUsernameAvailable: true,
+        isEmailAvailable: false,
+        usernameError: null,
+        emailError: "That email is already registered",
+      });
+      renderPage();
+      fillSignUpForm();
+      fireEvent.click(screen.getByRole("button", { name: /sign up/i }));
+
+      await screen.findByRole("alert");
+      const email = screen.getByLabelText(/^email$/i);
+      expect(email).toHaveAttribute("aria-invalid", "true");
+      expect(email).toHaveFocus();
+      expect(screen.getByLabelText(/display name/i)).not.toHaveAttribute("aria-invalid");
+      expect(screen.getByLabelText(/^password$/i)).not.toHaveAttribute("aria-invalid");
+    });
+
+    it("links the unchecked legal acknowledgement error to the checkbox", async () => {
+      renderPage();
+      fillSignUpForm({ acceptLegal: false });
+      fireEvent.click(screen.getByRole("button", { name: /sign up/i }));
+
+      await screen.findByRole("alert");
+      expect(screen.getByRole("checkbox")).toHaveAttribute("aria-invalid", "true");
+      expect(screen.getByRole("checkbox")).toHaveFocus();
+    });
+
+    it("clears the invalid state when the form is resubmitted", async () => {
+      renderPage();
+      fillSignUpForm({ password: "short" });
+      fireEvent.click(screen.getByRole("button", { name: /sign up/i }));
+      await screen.findByRole("alert");
+
+      mockSignup.mockResolvedValueOnce(undefined);
+      fireEvent.change(screen.getByLabelText(/^password$/i), { target: { value: "LongEnough1" } });
+      fireEvent.click(screen.getByRole("button", { name: /sign up/i }));
+
+      await screen.findByLabelText(/confirmation code/i);
+      expect(screen.queryByRole("alert")).not.toBeInTheDocument();
+    });
+
+    it("announces a wrong confirmation code and focuses the code field", async () => {
+      mockSignup.mockResolvedValueOnce(undefined);
+      const mismatch = new Error("raw");
+      mismatch.name = "CodeMismatchException";
+      mockConfirmSignup.mockRejectedValueOnce(mismatch);
+      renderPage();
+      fillSignUpForm();
+      fireEvent.click(screen.getByRole("button", { name: /sign up/i }));
+
+      fireEvent.change(await screen.findByLabelText(/confirmation code/i), { target: { value: "000000" } });
+      fireEvent.click(screen.getByRole("button", { name: /confirm/i }));
+
+      const alert = await screen.findByRole("alert");
+      expect(alert).toHaveTextContent(/doesn't match/i);
+      const code = screen.getByLabelText(/confirmation code/i);
+      expect(code).toHaveAttribute("aria-invalid", "true");
+      expect(code.getAttribute("aria-describedby")).toBe(alert.id);
+      expect(code).toHaveFocus();
+    });
+
+    it("lets a long email wrap on the confirmation step instead of forcing horizontal scroll", async () => {
+      mockSignup.mockResolvedValueOnce(undefined);
+      renderPage();
+      const longEmail = `${"a".repeat(60)}@example.com`;
+      fillSignUpForm({ email: longEmail });
+      fireEvent.click(screen.getByRole("button", { name: /sign up/i }));
+
+      const line = await screen.findByText(/we sent a confirmation code to/i);
+      expect(line.className).toContain("overflow-wrap:anywhere");
+      expect(line).toHaveTextContent(longEmail);
+    });
+
+    it("gives every text input a visible focus ring, not just a border colour", () => {
+      renderPage();
+      for (const field of [screen.getByLabelText(/display name/i), screen.getByLabelText(/^email$/i), screen.getByLabelText(/^password$/i)]) {
+        expect(field.className).toContain("focus:ring-2");
+      }
+    });
+  });
 });
