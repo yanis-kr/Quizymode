@@ -1,4 +1,4 @@
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, useLocation } from "react-router-dom";
 import Layout from "./components/Layout";
 import HomePage from "./features/home/pages/HomePage";
 import CategoriesPage from "./features/categories/pages/CategoriesPage";
@@ -7,44 +7,51 @@ import ExploreModePage from "./features/items/pages/ExploreModePage";
 import QuizModePage from "./features/items/pages/QuizModePage";
 import LoginPage from "./features/auth/pages/LoginPage";
 import SignUpPage from "./features/auth/pages/SignUpPage";
-import CreateItemPage from "./features/items/pages/CreateItemPage";
 import ItemDetailPage from "./features/items/pages/ItemDetailPage";
 import CollectionsPage from "./features/collections/pages/CollectionsPage";
 import CollectionDetailPage from "./features/collections/pages/CollectionDetailPage";
-import AdminDashboardPage from "./features/admin/pages/AdminDashboardPage";
-import ReviewBoardPage from "./features/admin/pages/ReviewBoardPage";
-import DatabaseSizePage from "./features/admin/pages/DatabaseSizePage";
-import AuditLogsPage from "./features/admin/pages/AuditLogsPage";
-import AdminKeywordsPage from "./features/admin/pages/AdminKeywordsPage";
-import AdminKeywordReviewPage from "./features/admin/pages/AdminKeywordReviewPage";
-import AdminCategoriesPage from "./features/admin/pages/AdminCategoriesPage";
-import AdminUserSettingsPage from "./features/admin/pages/AdminUserSettingsPage";
-import AdminSeedSyncPage from "./features/admin/pages/AdminSeedSyncPage";
-import PageViewAnalyticsPage from "./features/admin/pages/PageViewAnalyticsPage";
-import AdminClientErrorsPage from "./features/admin/pages/AdminClientErrorsPage";
-import BulkCreateItemsPage from "./features/items/pages/BulkCreateItemsPage";
-import AddItemsPage from "./features/items/pages/AddItemsPage";
-import UploadToCollectionPage from "./features/items/pages/UploadToCollectionPage";
 import ItemCommentsPage from "./features/items/pages/ItemCommentsPage";
-import EditItemPage from "./features/items/pages/EditItemPage";
-import AboutPage from "./features/about/pages/AboutPage";
-import RoadmapPage from "./features/roadmap/pages/RoadmapPage";
-import FeedbackPage from "./features/feedback/pages/FeedbackPage";
-import IdeasPage from "./features/ideas/pages/IdeasPage";
-import StudyGuidePage from "./features/studyGuide/pages/StudyGuidePage";
-import StudyGuideImportPage from "./features/studyGuide/pages/StudyGuideImportPage";
-import PrivacyPolicyPage from "./features/legal/pages/PrivacyPolicyPage";
-import TermsOfServicePage from "./features/legal/pages/TermsOfServicePage";
 import PageViewTracker from "./features/analytics/PageViewTracker";
 import RequireAuthRoute from "./components/RequireAuthRoute";
-import AdminIdeasPage from "./features/admin/pages/AdminIdeasPage";
+import { LazyRoute } from "./components/LazyRoute";
+import { lazyPage } from "./utils/lazyPage";
 import FeaturedPage from "./features/featured/pages/FeaturedPage";
-import AdminFeaturedPage from "./features/admin/pages/AdminFeaturedPage";
+
+// Route-level code splitting (PERF-001): anonymous landing/study pages stay eager; admin, authoring,
+// study guide, community and legal pages load on demand. Keep this list in sync with docs/AC.md.
+const CreateItemPage = lazyPage(() => import("./features/items/pages/CreateItemPage"));
+const AdminDashboardPage = lazyPage(() => import("./features/admin/pages/AdminDashboardPage"));
+const ReviewBoardPage = lazyPage(() => import("./features/admin/pages/ReviewBoardPage"));
+const DatabaseSizePage = lazyPage(() => import("./features/admin/pages/DatabaseSizePage"));
+const AuditLogsPage = lazyPage(() => import("./features/admin/pages/AuditLogsPage"));
+const AdminKeywordsPage = lazyPage(() => import("./features/admin/pages/AdminKeywordsPage"));
+const AdminKeywordReviewPage = lazyPage(() => import("./features/admin/pages/AdminKeywordReviewPage"));
+const AdminCategoriesPage = lazyPage(() => import("./features/admin/pages/AdminCategoriesPage"));
+const AdminUserSettingsPage = lazyPage(() => import("./features/admin/pages/AdminUserSettingsPage"));
+const AdminSeedSyncPage = lazyPage(() => import("./features/admin/pages/AdminSeedSyncPage"));
+const PageViewAnalyticsPage = lazyPage(() => import("./features/admin/pages/PageViewAnalyticsPage"));
+const AdminClientErrorsPage = lazyPage(() => import("./features/admin/pages/AdminClientErrorsPage"));
+const BulkCreateItemsPage = lazyPage(() => import("./features/items/pages/BulkCreateItemsPage"));
+const AddItemsPage = lazyPage(() => import("./features/items/pages/AddItemsPage"));
+const UploadToCollectionPage = lazyPage(() => import("./features/items/pages/UploadToCollectionPage"));
+const EditItemPage = lazyPage(() => import("./features/items/pages/EditItemPage"));
+const AboutPage = lazyPage(() => import("./features/about/pages/AboutPage"));
+const RoadmapPage = lazyPage(() => import("./features/roadmap/pages/RoadmapPage"));
+const FeedbackPage = lazyPage(() => import("./features/feedback/pages/FeedbackPage"));
+const IdeasPage = lazyPage(() => import("./features/ideas/pages/IdeasPage"));
+const StudyGuidePage = lazyPage(() => import("./features/studyGuide/pages/StudyGuidePage"));
+const StudyGuideImportPage = lazyPage(() => import("./features/studyGuide/pages/StudyGuideImportPage"));
+const PrivacyPolicyPage = lazyPage(() => import("./features/legal/pages/PrivacyPolicyPage"));
+const TermsOfServicePage = lazyPage(() => import("./features/legal/pages/TermsOfServicePage"));
+const AdminIdeasPage = lazyPage(() => import("./features/admin/pages/AdminIdeasPage"));
+const AdminFeaturedPage = lazyPage(() => import("./features/admin/pages/AdminFeaturedPage"));
 
 function App() {
+  const location = useLocation();
   return (
     <Layout>
       <PageViewTracker />
+      <LazyRoute resetKey={location.pathname}>
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route
@@ -138,6 +145,7 @@ function App() {
         <Route path="/terms" element={<TermsOfServicePage />} />
         <Route path="/terms-of-service" element={<TermsOfServicePage />} />
       </Routes>
+      </LazyRoute>
     </Layout>
   );
 }

@@ -123,6 +123,8 @@ jobs:
       - name: Sync to S3
         working-directory: src/Quizymode.Web/dist
         run: |
+          # *.js and *.css are excluded from --delete on purpose: lazy route chunks (PERF-001) are fetched on demand,
+          # so tabs still running an older index.html must keep finding the earlier hashed chunks after a deploy.
           # General assets — long-lived immutable cache. Source maps (*.map) are never published (OBS-001).
           aws s3 sync . s3://quizymode-web/ \
             --delete --exact-timestamps \
