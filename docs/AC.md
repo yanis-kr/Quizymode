@@ -833,20 +833,17 @@ Authentication uses **email + password** with secure password hashing and short-
 
 ### AC 4.2 Registration (sign up)
 
-**API**
-
-- **AC 4.2.1** [Anonymous] **Given** I am not authenticated, **when** I call `POST /auth/register` with a valid body `{ "email": "...", "password": "...", "displayName": "..." }`, **then** the API:
-  - (a) creates a new user record with a **unique email**, normalized to a canonical form;
-  - (b) stores a **hashed password** using a modern algorithm (e.g. PBKDF2, bcrypt, or Argon2) with per-user salt;
-  - (c) sets my initial role to `User` (not `Admin`);
-  - (d) returns 201 with a minimal user DTO (id, email, displayName) and **does not** return the hashed password.
-- **AC 4.2.2** [Anonymous] **Given** I call `POST /auth/register` with an email that already exists (case-insensitive), **when** the request is processed, **then** the API returns **400 Bad Request** with a validation error indicating that the email is already in use.
-- **AC 4.2.3** [Anonymous] **Given** I call `POST /auth/register` with an invalid password (too short or failing password policy), **when** the request is processed, **then** the API returns **400 Bad Request** with a validation error explaining the constraints; the user record is not created.
-- **AC 4.2.4** [Authenticated] **Given** I am already authenticated, **when** I call `POST /auth/register`, **then** the API returns **400 Bad Request** or **409 Conflict** indicating that I already have an account; the existing identity is not changed.
+There is no first-party `/auth/register` endpoint. Sign-up, confirmation, and credential storage are handled directly by Amplify against the configured Cognito user pool; `usersApi.checkAvailability` is the only first-party pre-check (duplicate display name/email), and `POST /users/policy-acceptances` is the only first-party write this flow makes (see AC 4.6.5).
 
 **UI**
 
-- **AC 4.2.5** [Anonymous] **Given** I open the **Sign up** page, **when** I submit the form with email, password, and display name, **then** the UI calls `POST /auth/register`; on success it signs me in (per login flow) or redirects me to the login page with a success message; validation errors from the API are shown inline next to the affected fields.
+- **AC 4.2.1** [Anonymous] **Given** I open the **Sign up** page with no `reason` (or an unknown one), **when** the page renders, **then** I see the default benefit-led heading **"Make your next study session yours."** and a one-sentence description of a benefit that exists in the deployed release; an allowlisted `reason` (`save-progress`, `keep-collection`, `create-content`, `join-discussion`) swaps in reason-specific copy from a fixed lookup, never echoing the raw query value. Before **PROGRESS-001** (#114) and **CLAIM-003** (#115) ship, `save-progress` copy explains that the guest result stays in this browser rather than claiming score sync or import.
+- **AC 4.2.2** [Anonymous] **Given** I open the **Sign up** page, **then** the display-name, email, and password fields have persistent visible labels (not placeholder-only), the password field is a single field with a keyboard-accessible show/hide toggle, and a hint states the minimum length before I submit. Terms of Service / Privacy Policy links and the required acknowledgement checkbox remain present and must be checked to submit.
+- **AC 4.2.3** [Anonymous] **Given** I submit the sign-up form, **when** the display name equals the email, the password is under 8 characters, the legal acknowledgement is unchecked, or `usersApi.checkAvailability` reports the display name or email already taken, **then** submission is blocked with an inline error and no Cognito `signUp` call is made.
+- **AC 4.2.4** [Anonymous] **Given** sign-up succeeds, **when** the UI transitions to the confirmation step, **then** it shows the destination email, starts a 60-second resend cooldown, and persists only the email and cooldown timing (never a password or code) to tab-scoped storage that expires after 24 hours, so a reload during confirmation can resume without losing the pending email.
+- **AC 4.2.5** [Anonymous] **Given** I am on the confirmation step, **when** I submit a code, **then** the UI calls Cognito's `confirmSignUp`, attempts auto-sign-in when the provider reports an auto-sign-in step, and verifies a real session before navigating. A mismatched or expired code keeps the email and intent and explains how to retry or resend; a "use a different email" action clears the pending state and restarts the form.
+- **AC 4.2.6** [Anonymous] **Given** confirmation completes, **when** a verified authenticated session was established (auto-sign-in succeeded), **then** the UI navigates directly to the validated `returnTo` destination from AC 4.3.5a without requiring a manual sign-in; **when** no real session can be verified (auto-sign-in unavailable, expired, or interrupted), **then** the UI shows **"Account confirmed — sign in to continue"** with a link to **Sign in** that preserves the destination, and does not ask me to register again.
+- **AC 4.2.7** [Anonymous] **Given** I am on the confirmation step, **when** the 60-second cooldown has elapsed, **then** I can resend the code; resend failures (including provider throttling) show an actionable message and do not restart the cooldown on failure.
 
 ### AC 4.3 Login and tokens
 
@@ -867,9 +864,11 @@ Authentication uses **email + password** with secure password hashing and short-
 
 **UI**
 
-- **AC 4.3.5** [Anonymous] **Given** I open the **Sign in** page, **when** I submit valid credentials, **then** the UI stores the received access token (and handles refresh token via secure cookie where applicable), updates the app state to "authenticated", and redirects me to the intended page (or home).
+- **AC 4.3.5** [Anonymous] **Given** I open the **Sign in** page, **when** I submit valid credentials, **then** the UI navigates only once the provider reports completed sign-in and the app has verified an authenticated session (not merely a resolved promise), storing tokens and updating app state to "authenticated" before redirecting me to the validated `returnTo` destination carried in the URL, or home when none is present.
+- **AC 4.3.5a** [Anonymous] **Given** an anonymous visitor is sent to a protected route, **when** `RequireAuthRoute` redirects them, **then** it redirects to **Sign in** carrying the current path/query/hash as a validated `returnTo` (and an allowlisted `reason` when known); after successful sign-in, signup, or confirmation, the app returns to that exact destination with its query intact, applying normal authorization there (a non-admin returning to an admin URL still gets the existing denied/fallback behavior, not another login loop).
+- **AC 4.3.5b** [Anonymous] **Given** a `returnTo` value is present anywhere in the auth flow, **when** it is used to build a redirect, **then** it is validated against this app's own origin (same-origin, leading single `/`, no backslashes/control characters, bounded length, not a login/signup destination); an invalid, unsafe, missing, or duplicated value falls back to home rather than being used as-is. Already-authenticated visitors who land on Sign in/Sign up also redirect to the validated destination once auth loading settles.
 - **AC 4.3.6** [Anonymous] **Given** I submit invalid credentials, **when** the API returns 401, **then** the UI shows a non-specific error message (e.g. "Invalid email or password") and does not reveal whether the email exists; no token is stored.
-- **AC 4.3.7** [Authenticated] **Given** I return to an authenticated-only SPA route after my session has expired or can no longer be refreshed, **when** the app re-checks auth state, **then** it clears local auth state and redirects me to the public home page instead of leaving me on an auth-only screen with an access-denied error.
+- **AC 4.3.7** [Authenticated] **Given** I am on an authenticated-only SPA route when my session expires or can no longer be refreshed, **when** the app re-checks auth state, **then** it clears local auth state; the next render of that protected route redirects to **Sign in** with the current destination preserved as `returnTo` (the same path as AC 4.3.5a), rather than silently bouncing to home.
 
 ### AC 4.4 Logout and token revocation
 
