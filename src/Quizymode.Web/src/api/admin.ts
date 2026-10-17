@@ -184,6 +184,33 @@ export interface PageViewAnalyticsResponse {
   contentScopes: ContentScopesResponse;
 }
 
+/** Long-range trends read from daily rollups (ANALYTICS-011); bots and internal traffic excluded. */
+export interface PageViewRollupsResponse {
+  windowStartDay: string;
+  windowEndDay: string;
+  /** Raw page hits are kept this many days; older traffic exists only as rollups. */
+  retentionDays: number;
+  latestRolledDay: string | null;
+  totalHits: number;
+  /** Sum of each day's distinct sessions; a session spanning midnight counts once per day. */
+  totalSessionDays: number;
+  totalBouncedSessionDays: number;
+  totalItemSteps: number;
+  daily: Array<{ day: string; sessions: number; hits: number; itemSteps: number }>;
+  areas: Array<{ area: string; hits: number; sessionDays: number; itemSteps: number }>;
+  channels: PageViewRollupDimensionRow[];
+  deviceClasses: PageViewRollupDimensionRow[];
+  outcomes: PageViewRollupDimensionRow[];
+  visitorTypes: PageViewRollupDimensionRow[];
+  topScopes: Array<{ scopeType: string; scopeKey: string; hits: number; itemSteps: number }>;
+}
+
+export interface PageViewRollupDimensionRow {
+  value: string;
+  sessionDays: number;
+  hits: number;
+}
+
 /**
  * A session's outcome is decided by its FIRST hit, so the three values are
  * mutually exclusive: "converted" means it started anonymous and then signed in.
@@ -807,6 +834,14 @@ export const adminApi = {
     const response = await apiClient.get<PageViewSessionsResponse>(
       "/admin/page-view-sessions",
       { params }
+    );
+    return response.data;
+  },
+
+  getPageViewRollups: async (days: number = 365): Promise<PageViewRollupsResponse> => {
+    const response = await apiClient.get<PageViewRollupsResponse>(
+      "/admin/page-view-rollups",
+      { params: { days } }
     );
     return response.data;
   },

@@ -48,6 +48,7 @@ public sealed class ApplicationDbContext : DbContext
 
     public DbSet<ClientError> ClientErrors => Set<ClientError>();
     public DbSet<AnalyticsSession> AnalyticsSessions => Set<AnalyticsSession>();
+    public DbSet<PageViewDailyRollup> PageViewDailyRollups => Set<PageViewDailyRollup>();
 
     public DbSet<Keyword> Keywords => Set<Keyword>();
 

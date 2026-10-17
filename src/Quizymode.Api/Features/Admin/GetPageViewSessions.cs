@@ -165,10 +165,13 @@ public static class GetPageViewSessions
         IIpGeolocationService geoService,
         CancellationToken cancellationToken)
     {
-        if (request.Days is < 1 or > 365)
+        // Raw hits are kept for RetentionDays only; longer ranges use GET /admin/page-view-rollups.
+        if (request.Days < 1 || request.Days > PageViewRetentionService.RetentionDays)
         {
             return Result.Failure<Response>(
-                Error.Validation("Admin.PageViewSessions.InvalidDays", "Days must be between 1 and 365."));
+                Error.Validation(
+                    "Admin.PageViewSessions.InvalidDays",
+                    $"Days must be between 1 and {PageViewRetentionService.RetentionDays}. Raw page hits are kept for {PageViewRetentionService.RetentionDays} days; use the daily rollups report for longer ranges."));
         }
 
         OutcomeFilter outcomeFilter;
