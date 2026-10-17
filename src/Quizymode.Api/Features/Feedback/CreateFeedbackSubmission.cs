@@ -31,6 +31,9 @@ public static class CreateFeedbackSubmission
         public string? Email { get; init; }
 
         public string? AdditionalKeywords { get; init; }
+
+        /// <summary>Current analytics session id, so an admin can see the journey that led to the report.</summary>
+        public string? SessionId { get; init; }
     }
 
     public sealed class Response
@@ -82,6 +85,10 @@ public static class CreateFeedbackSubmission
                 .EmailAddress()
                 .When(x => !string.IsNullOrWhiteSpace(x.Email))
                 .WithMessage("Email must be a valid email address");
+
+            RuleFor(x => x.SessionId)
+                .MaximumLength(128)
+                .WithMessage("Session id must not exceed 128 characters");
 
             RuleFor(x => x.AdditionalKeywords)
                 .MaximumLength(500)
@@ -176,6 +183,8 @@ public static class CreateFeedbackSubmission
                 AdditionalKeywords = additionalKeywords,
                 UserId = userId,
                 UserAgent = userAgent,
+                SessionId = NormalizeOptional(request.SessionId),
+                Status = FeedbackStatus.New,
                 CreatedAt = DateTime.UtcNow
             };
 

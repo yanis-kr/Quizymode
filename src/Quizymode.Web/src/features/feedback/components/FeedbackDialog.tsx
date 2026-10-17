@@ -1,3 +1,4 @@
+import { getPageViewSessionId } from "@/utils/pageViewTracking";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import { useMutation } from "@tanstack/react-query";
@@ -37,6 +38,7 @@ const FeedbackDialog = ({
           type === "requestItems" && additionalKeywords.trim()
             ? additionalKeywords.trim()
             : null,
+        sessionId: getPageViewSessionId(),
       }),
     onSuccess: () => {
       setErrorMessage(null);

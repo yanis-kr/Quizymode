@@ -36,11 +36,20 @@ internal sealed class FeedbackSubmissionConfiguration : IEntityTypeConfiguration
         builder.Property(x => x.UserAgent)
             .HasMaxLength(512);
 
+        builder.Property(x => x.SessionId)
+            .HasMaxLength(128);
+
+        builder.Property(x => x.Status)
+            .IsRequired()
+            .HasMaxLength(16)
+            .HasDefaultValue(FeedbackStatus.New);
+
         builder.Property(x => x.CreatedAt)
             .IsRequired();
 
         builder.HasIndex(x => x.CreatedAt);
         builder.HasIndex(x => x.Type);
         builder.HasIndex(x => x.UserId);
+        builder.HasIndex(x => x.Status);
     }
 }

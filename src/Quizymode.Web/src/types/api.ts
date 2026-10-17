@@ -249,6 +249,8 @@ export interface CreateFeedbackSubmissionRequest {
   details: string;
   email?: string | null;
   additionalKeywords?: string | null;
+  /** Current analytics session id so admins can see the journey behind a report. */
+  sessionId?: string | null;
 }
 
 export interface FeedbackSubmissionResponse {

@@ -436,6 +436,41 @@ export interface PageViewSessionDetailResponse {
   steps: SessionJourneyStep[];
 }
 
+export type FeedbackStatus = "New" | "Reviewed" | "Archived";
+
+/** Admin feedback inbox row (ANALYTICS-006). Contact emails are admin-only. */
+export interface AdminFeedbackItem {
+  id: string;
+  type: string;
+  status: FeedbackStatus;
+  details: string;
+  pageUrl: string;
+  additionalKeywords: string | null;
+  userEmail: string | null;
+  contactEmail: string | null;
+  userAgent: string | null;
+  sessionId: string | null;
+  createdAt: string;
+}
+
+export interface AdminFeedbackListResponse {
+  items: AdminFeedbackItem[];
+  totalCount: number;
+  page: number;
+  pageSize: number;
+  newCount: number;
+}
+
+export interface AdminFeedbackQuery {
+  page?: number;
+  pageSize?: number;
+  type?: string;
+  status?: string;
+  from?: string;
+  to?: string;
+  search?: string;
+}
+
 export interface ConversionFunnelStep {
   eventName: string;
   sessions: number;
@@ -1031,6 +1066,27 @@ export const adminApi = {
           params: { includeInternal: true },
         })
       : await apiClient.get<PageViewSessionDetailResponse>(url);
+    return response.data;
+  },
+
+  getAdminFeedback: async (
+    query: AdminFeedbackQuery = {}
+  ): Promise<AdminFeedbackListResponse> => {
+    const params = Object.fromEntries(
+      Object.entries(query).filter(([, value]) => value !== undefined && value !== "")
+    );
+    const response = await apiClient.get<AdminFeedbackListResponse>("/admin/feedback", { params });
+    return response.data;
+  },
+
+  updateFeedbackStatus: async (
+    id: string,
+    status: FeedbackStatus
+  ): Promise<AdminFeedbackItem> => {
+    const response = await apiClient.put<AdminFeedbackItem>(
+      `/admin/feedback/${encodeURIComponent(id)}/status`,
+      { status }
+    );
     return response.data;
   },
 
