@@ -38,9 +38,27 @@ export interface StudySessionSummary {
   importedSessions: number;
 }
 
+export interface ImportGuestStudySessionsRequest {
+  version: number;
+  runs: RecordStudySessionRequest[];
+}
+
+export interface ImportGuestStudySessionsResponse {
+  imported: number;
+  duplicates: number;
+  rejectedRunIds: string[];
+}
+
 export const studySessionsApi = {
   record: async (request: RecordStudySessionRequest): Promise<RecordStudySessionResponse> => {
     const response = await apiClient.post<RecordStudySessionResponse>("/study-sessions", request);
+    return response.data;
+  },
+
+  importGuest: async (
+    request: ImportGuestStudySessionsRequest,
+  ): Promise<ImportGuestStudySessionsResponse> => {
+    const response = await apiClient.post<ImportGuestStudySessionsResponse>("/study-sessions/import", request);
     return response.data;
   },
 

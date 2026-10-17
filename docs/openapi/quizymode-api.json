@@ -4337,6 +4337,43 @@
         }
       }
     },
+    "/study-sessions/import": {
+      "post": {
+        "tags": [
+          "StudySessions"
+        ],
+        "summary": "Import browser-local guest quiz history into the current user's history",
+        "description": "Version 1 payload of up to 50 runs. Idempotent by run ID; imported sessions have origin guest-import (unverified). Requires authentication.",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Quizymode.Api.Features.StudySessions.ImportGuestStudySessions.Request"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Quizymode.Api.Features.StudySessions.ImportGuestStudySessions.Response"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "401": {
+            "description": "Unauthorized"
+          }
+        }
+      }
+    },
     "/taxonomy": {
       "get": {
         "tags": [
@@ -12144,6 +12181,50 @@
           }
         }
       },
+      "Quizymode.Api.Features.StudySessions.ImportGuestStudySessions.Request": {
+        "required": [
+          "version",
+          "runs"
+        ],
+        "type": "object",
+        "properties": {
+          "version": {
+            "$ref": "#/components/schemas/System.Int32"
+          },
+          "runs": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/components/schemas/System.Collections.Generic.ListOfQuizymode.Api.Features.StudySessions.RecordStudySession.Request"
+              }
+            ]
+          }
+        }
+      },
+      "Quizymode.Api.Features.StudySessions.ImportGuestStudySessions.Response": {
+        "required": [
+          "imported",
+          "duplicates",
+          "rejectedRunIds"
+        ],
+        "type": "object",
+        "properties": {
+          "imported": {
+            "description": "Runs newly stored.",
+            "$ref": "#/components/schemas/System.Int32"
+          },
+          "duplicates": {
+            "description": "Runs already stored for this account (kept as-is).",
+            "$ref": "#/components/schemas/System.Int32"
+          },
+          "rejectedRunIds": {
+            "description": "Runs that failed validation and can never be accepted; safe to discard.",
+            "$ref": "#/components/schemas/System.Collections.Generic.ListOfSystem.String"
+          }
+        }
+      },
       "Quizymode.Api.Features.StudySessions.RecordStudySession.Request": {
         "required": [
           "runId",
@@ -13283,6 +13364,12 @@
         "type": "array",
         "items": {
           "$ref": "#/components/schemas/Quizymode.Api.Features.StudyGuideImport.GetImportSession.PromptResultDto"
+        }
+      },
+      "System.Collections.Generic.ListOfQuizymode.Api.Features.StudySessions.RecordStudySession.Request": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/Quizymode.Api.Features.StudySessions.RecordStudySession.Request"
         }
       },
       "System.Collections.Generic.ListOfQuizymode.Api.Features.StudySessions.RecordStudySession.SessionDto": {
