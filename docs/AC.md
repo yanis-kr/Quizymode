@@ -1260,6 +1260,14 @@ The ideas board is a public-facing product planning surface at `/ideas`. It show
 - **AC 5.9.5** [Anyone] **Given** I read the Privacy Policy, **then** its Retention section states that page-view records are deleted after 180 days, that traffic-attribution records are deleted once older than 180 days with no page views left, that daily usage totals without identifiers may be kept longer, and that error reports are deleted after 90 days.
 ---
 
+### AC 5.11 Admin feedback inbox (ANALYTICS-006 #126)
+
+- **AC 5.11.1** **Given** I submit the feedback form, **then** the submission starts with status `New` and stores the current analytics session id (optional, at most 128 characters) so an admin can see the journey that led to the report.
+- **AC 5.11.2** [Admin] **Given** I call `GET /admin/feedback`, **then** submissions are returned newest first, paged (`page`, `pageSize` 1-100), filterable by `type`, `status` (New, Reviewed, Archived), `from`/`to` UTC dates (inclusive), and `search` over details, page URL, and emails; the response includes the total and the count of `New` submissions. An invalid status or paging value returns **400**. `GET /admin/feedback/{id}` returns one submission (**404** when missing).
+- **AC 5.11.3** [Admin] **Given** I call `PUT /admin/feedback/{id}/status` with `New`, `Reviewed`, or `Archived`, **then** the status persists; any other value returns **400** and an unknown id **404**.
+- **AC 5.11.4** Every admin feedback endpoint returns **403** for non-admins (and **401** when unauthenticated). Contact emails (signed-in user email and the optional email typed into the form) are returned only by these endpoints.
+- **AC 5.11.5** [Admin] **Given** I open `/admin/feedback`, **then** I see submissions with type, status, details, page URL, user and contact email, user agent, and time; I can filter by type, status (default New), date range, and text search; mark a submission New, Reviewed, or Archived; and show the session journey when a session id exists. The `/admin` dashboard shows the count of `New` submissions on the Feedback card. Loading, empty, and error states are shown.
+
 ## 6. Study guides and import
 
 ### AC 6.1 Study guide CRUD and per-user size limit
