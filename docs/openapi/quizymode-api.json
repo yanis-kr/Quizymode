@@ -190,6 +190,20 @@
               "default": false,
               "$ref": "#/components/schemas/System.Boolean"
             }
+          },
+          {
+            "name": "sortBy",
+            "in": "query",
+            "schema": {
+              "$ref": "#/components/schemas/System.String"
+            }
+          },
+          {
+            "name": "sortDir",
+            "in": "query",
+            "schema": {
+              "$ref": "#/components/schemas/System.String"
+            }
           }
         ],
         "responses": {
@@ -1177,6 +1191,47 @@
         }
       }
     },
+    "/admin/analytics/lifecycle": {
+      "get": {
+        "tags": [
+          "Admin"
+        ],
+        "summary": "Get registered-user lifecycle cohorts (Admin only)",
+        "description": "Returns weekly signup cohorts with 7-day activation and week 1, 2, and 4 retention, plus signup-source attribution by first-touch channel and campaign. Internal users are excluded.",
+        "parameters": [
+          {
+            "name": "weeks",
+            "in": "query",
+            "schema": {
+              "default": 12,
+              "$ref": "#/components/schemas/System.Int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Quizymode.Api.Features.Admin.GetLifecycleReport.Response"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "/admin/page-view-analytics": {
       "get": {
         "tags": [
@@ -1446,6 +1501,13 @@
             "schema": {
               "default": false,
               "$ref": "#/components/schemas/System.Boolean"
+            }
+          },
+          {
+            "name": "userId",
+            "in": "query",
+            "schema": {
+              "$ref": "#/components/schemas/System.NullableOfSystem.Guid"
             }
           }
         ],
@@ -4398,6 +4460,145 @@
         }
       }
     },
+    "/study-sessions": {
+      "get": {
+        "tags": [
+          "StudySessions"
+        ],
+        "summary": "List the current user's recent study sessions",
+        "description": "Newest first. limit defaults to 20 and is capped at 50. Requires authentication.",
+        "parameters": [
+          {
+            "name": "limit",
+            "in": "query",
+            "schema": {
+              "$ref": "#/components/schemas/System.NullableOfSystem.Int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Quizymode.Api.Features.StudySessions.GetStudySessions.SessionsResponse"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "StudySessions"
+        ],
+        "summary": "Save a completed quiz run to the current user's history",
+        "description": "Idempotent by run ID: a retry returns the stored session with created=false. Requires authentication.",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Quizymode.Api.Features.StudySessions.RecordStudySession.Request"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Quizymode.Api.Features.StudySessions.RecordStudySession.Response"
+                }
+              }
+            }
+          },
+          "201": {
+            "description": "Created",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Quizymode.Api.Features.StudySessions.RecordStudySession.Response"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "401": {
+            "description": "Unauthorized"
+          }
+        }
+      }
+    },
+    "/study-sessions/summary": {
+      "get": {
+        "tags": [
+          "StudySessions"
+        ],
+        "summary": "Summary statistics for the current user's study sessions",
+        "description": "Private to the current user; there is no public comparison. Requires authentication.",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Quizymode.Api.Features.StudySessions.GetStudySessions.SummaryResponse"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          }
+        }
+      }
+    },
+    "/study-sessions/import": {
+      "post": {
+        "tags": [
+          "StudySessions"
+        ],
+        "summary": "Import browser-local guest quiz history into the current user's history",
+        "description": "Version 1 payload of up to 50 runs. Idempotent by run ID; imported sessions have origin guest-import (unverified). Requires authentication.",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Quizymode.Api.Features.StudySessions.ImportGuestStudySessions.Request"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Quizymode.Api.Features.StudySessions.ImportGuestStudySessions.Response"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "401": {
+            "description": "Unauthorized"
+          }
+        }
+      }
+    },
     "/taxonomy": {
       "get": {
         "tags": [
@@ -5037,7 +5238,14 @@
           "totalPageViewsInWindow",
           "lastOpenedUtc",
           "lastKnownCountry",
-          "isInternal"
+          "isInternal",
+          "sessionsInWindow",
+          "studySessionsInWindow",
+          "collectionsCreated",
+          "itemsCreated",
+          "ratings",
+          "comments",
+          "signupChannel"
         ],
         "type": "object",
         "properties": {
@@ -5098,6 +5306,27 @@
           },
           "isInternal": {
             "$ref": "#/components/schemas/System.Boolean"
+          },
+          "sessionsInWindow": {
+            "$ref": "#/components/schemas/System.Int32"
+          },
+          "studySessionsInWindow": {
+            "$ref": "#/components/schemas/System.Int32"
+          },
+          "collectionsCreated": {
+            "$ref": "#/components/schemas/System.Int32"
+          },
+          "itemsCreated": {
+            "$ref": "#/components/schemas/System.Int32"
+          },
+          "ratings": {
+            "$ref": "#/components/schemas/System.Int32"
+          },
+          "comments": {
+            "$ref": "#/components/schemas/System.Int32"
+          },
+          "signupChannel": {
+            "$ref": "#/components/schemas/System.String"
           }
         }
       },
@@ -6776,6 +7005,125 @@
           "averageItemsReached": {
             "description": "Mean questions answered (quiz) or cards revealed (flashcards) per started run.",
             "$ref": "#/components/schemas/System.Double"
+          }
+        }
+      },
+      "Quizymode.Api.Features.Admin.GetLifecycleReport.CohortResponse": {
+        "required": [
+          "weekStartUtc",
+          "signups",
+          "activated7Days",
+          "activatedEligible",
+          "activeWeek1",
+          "eligibleWeek1",
+          "activeWeek2",
+          "eligibleWeek2",
+          "activeWeek4",
+          "eligibleWeek4"
+        ],
+        "type": "object",
+        "properties": {
+          "weekStartUtc": {
+            "description": "Monday of the signup week.",
+            "$ref": "#/components/schemas/System.DateTime"
+          },
+          "signups": {
+            "$ref": "#/components/schemas/System.Int32"
+          },
+          "activated7Days": {
+            "description": "Users with a completed quiz within 7 days of signup.",
+            "$ref": "#/components/schemas/System.Int32"
+          },
+          "activatedEligible": {
+            "description": "Users whose 7-day activation window has ended.",
+            "$ref": "#/components/schemas/System.Int32"
+          },
+          "activeWeek1": {
+            "$ref": "#/components/schemas/System.Int32"
+          },
+          "eligibleWeek1": {
+            "$ref": "#/components/schemas/System.Int32"
+          },
+          "activeWeek2": {
+            "$ref": "#/components/schemas/System.Int32"
+          },
+          "eligibleWeek2": {
+            "$ref": "#/components/schemas/System.Int32"
+          },
+          "activeWeek4": {
+            "$ref": "#/components/schemas/System.Int32"
+          },
+          "eligibleWeek4": {
+            "$ref": "#/components/schemas/System.Int32"
+          }
+        }
+      },
+      "Quizymode.Api.Features.Admin.GetLifecycleReport.Response": {
+        "required": [
+          "windowStartUtc",
+          "windowEndUtc",
+          "totalSignups",
+          "cohorts",
+          "sources"
+        ],
+        "type": "object",
+        "properties": {
+          "windowStartUtc": {
+            "$ref": "#/components/schemas/System.DateTime"
+          },
+          "windowEndUtc": {
+            "$ref": "#/components/schemas/System.DateTime"
+          },
+          "totalSignups": {
+            "$ref": "#/components/schemas/System.Int32"
+          },
+          "cohorts": {
+            "$ref": "#/components/schemas/System.Collections.Generic.ListOfQuizymode.Api.Features.Admin.GetLifecycleReport.CohortResponse"
+          },
+          "sources": {
+            "$ref": "#/components/schemas/System.Collections.Generic.ListOfQuizymode.Api.Features.Admin.GetLifecycleReport.SourceResponse"
+          }
+        }
+      },
+      "Quizymode.Api.Features.Admin.GetLifecycleReport.SourceResponse": {
+        "required": [
+          "channel",
+          "campaign",
+          "signups",
+          "activated7Days",
+          "activatedEligible",
+          "activeWeek1",
+          "eligibleWeek1"
+        ],
+        "type": "object",
+        "properties": {
+          "channel": {
+            "$ref": "#/components/schemas/System.String"
+          },
+          "campaign": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/components/schemas/System.String"
+              }
+            ]
+          },
+          "signups": {
+            "$ref": "#/components/schemas/System.Int32"
+          },
+          "activated7Days": {
+            "$ref": "#/components/schemas/System.Int32"
+          },
+          "activatedEligible": {
+            "$ref": "#/components/schemas/System.Int32"
+          },
+          "activeWeek1": {
+            "$ref": "#/components/schemas/System.Int32"
+          },
+          "eligibleWeek1": {
+            "$ref": "#/components/schemas/System.Int32"
           }
         }
       },
@@ -12654,6 +13002,271 @@
           }
         }
       },
+      "Quizymode.Api.Features.StudySessions.GetStudySessions.SessionsResponse": {
+        "required": [
+          "sessions"
+        ],
+        "type": "object",
+        "properties": {
+          "sessions": {
+            "$ref": "#/components/schemas/System.Collections.Generic.ListOfQuizymode.Api.Features.StudySessions.RecordStudySession.SessionDto"
+          }
+        }
+      },
+      "Quizymode.Api.Features.StudySessions.GetStudySessions.SummaryResponse": {
+        "required": [
+          "totalSessions",
+          "totalQuestions",
+          "totalCorrect",
+          "accuracyPercent",
+          "last30DaysSessions",
+          "last30DaysAccuracyPercent",
+          "importedSessions"
+        ],
+        "type": "object",
+        "properties": {
+          "totalSessions": {
+            "$ref": "#/components/schemas/System.Int32"
+          },
+          "totalQuestions": {
+            "$ref": "#/components/schemas/System.Int32"
+          },
+          "totalCorrect": {
+            "$ref": "#/components/schemas/System.Int32"
+          },
+          "accuracyPercent": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/components/schemas/System.NullableOfSystem.Int32"
+              }
+            ]
+          },
+          "last30DaysSessions": {
+            "$ref": "#/components/schemas/System.Int32"
+          },
+          "last30DaysAccuracyPercent": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/components/schemas/System.NullableOfSystem.Int32"
+              }
+            ]
+          },
+          "importedSessions": {
+            "$ref": "#/components/schemas/System.Int32"
+          }
+        }
+      },
+      "Quizymode.Api.Features.StudySessions.ImportGuestStudySessions.Request": {
+        "required": [
+          "version",
+          "runs"
+        ],
+        "type": "object",
+        "properties": {
+          "version": {
+            "$ref": "#/components/schemas/System.Int32"
+          },
+          "runs": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/components/schemas/System.Collections.Generic.ListOfQuizymode.Api.Features.StudySessions.RecordStudySession.Request"
+              }
+            ]
+          }
+        }
+      },
+      "Quizymode.Api.Features.StudySessions.ImportGuestStudySessions.Response": {
+        "required": [
+          "imported",
+          "duplicates",
+          "rejectedRunIds"
+        ],
+        "type": "object",
+        "properties": {
+          "imported": {
+            "description": "Runs newly stored.",
+            "$ref": "#/components/schemas/System.Int32"
+          },
+          "duplicates": {
+            "description": "Runs already stored for this account (kept as-is).",
+            "$ref": "#/components/schemas/System.Int32"
+          },
+          "rejectedRunIds": {
+            "description": "Runs that failed validation and can never be accepted; safe to discard.",
+            "$ref": "#/components/schemas/System.Collections.Generic.ListOfSystem.String"
+          }
+        }
+      },
+      "Quizymode.Api.Features.StudySessions.RecordStudySession.Request": {
+        "required": [
+          "runId",
+          "completedAt",
+          "correct",
+          "total",
+          "source",
+          "missedItemIds"
+        ],
+        "type": "object",
+        "properties": {
+          "runId": {
+            "$ref": "#/components/schemas/System.String"
+          },
+          "completedAt": {
+            "$ref": "#/components/schemas/System.DateTime"
+          },
+          "correct": {
+            "$ref": "#/components/schemas/System.Int32"
+          },
+          "total": {
+            "$ref": "#/components/schemas/System.Int32"
+          },
+          "source": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/components/schemas/Quizymode.Api.Features.StudySessions.RecordStudySession.SourceDto"
+              }
+            ]
+          },
+          "missedItemIds": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/components/schemas/System.Collections.Generic.ListOfSystem.Guid"
+              }
+            ]
+          }
+        }
+      },
+      "Quizymode.Api.Features.StudySessions.RecordStudySession.Response": {
+        "required": [
+          "session",
+          "created"
+        ],
+        "type": "object",
+        "properties": {
+          "session": {
+            "$ref": "#/components/schemas/Quizymode.Api.Features.StudySessions.RecordStudySession.SessionDto"
+          },
+          "created": {
+            "$ref": "#/components/schemas/System.Boolean"
+          }
+        }
+      },
+      "Quizymode.Api.Features.StudySessions.RecordStudySession.SessionDto": {
+        "required": [
+          "id",
+          "runId",
+          "origin",
+          "completedAt",
+          "correct",
+          "total",
+          "source",
+          "missedItemIds"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "$ref": "#/components/schemas/System.Guid"
+          },
+          "runId": {
+            "$ref": "#/components/schemas/System.String"
+          },
+          "origin": {
+            "$ref": "#/components/schemas/System.String"
+          },
+          "completedAt": {
+            "$ref": "#/components/schemas/System.DateTime"
+          },
+          "correct": {
+            "$ref": "#/components/schemas/System.Int32"
+          },
+          "total": {
+            "$ref": "#/components/schemas/System.Int32"
+          },
+          "source": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/components/schemas/Quizymode.Api.Features.StudySessions.RecordStudySession.SourceDto"
+              }
+            ]
+          },
+          "missedItemIds": {
+            "$ref": "#/components/schemas/System.Collections.Generic.ListOfSystem.Guid"
+          }
+        }
+      },
+      "Quizymode.Api.Features.StudySessions.RecordStudySession.SourceDto": {
+        "required": [
+          "kind",
+          "collectionId",
+          "categorySlug",
+          "navigationKeywords",
+          "filterKeywords"
+        ],
+        "type": "object",
+        "properties": {
+          "kind": {
+            "$ref": "#/components/schemas/System.String"
+          },
+          "collectionId": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/components/schemas/System.NullableOfSystem.Guid"
+              }
+            ]
+          },
+          "categorySlug": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/components/schemas/System.String"
+              }
+            ]
+          },
+          "navigationKeywords": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/components/schemas/System.Collections.Generic.ListOfSystem.String"
+              }
+            ]
+          },
+          "filterKeywords": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/components/schemas/System.Collections.Generic.ListOfSystem.String"
+              }
+            ]
+          }
+        }
+      },
       "Quizymode.Api.Features.Taxonomy.GetTaxonomy.CategoryDto": {
         "required": [
           "slug",
@@ -13400,6 +14013,18 @@
           "$ref": "#/components/schemas/Quizymode.Api.Features.Admin.GetLearningReport.ScopeResponse"
         }
       },
+      "System.Collections.Generic.ListOfQuizymode.Api.Features.Admin.GetLifecycleReport.CohortResponse": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/Quizymode.Api.Features.Admin.GetLifecycleReport.CohortResponse"
+        }
+      },
+      "System.Collections.Generic.ListOfQuizymode.Api.Features.Admin.GetLifecycleReport.SourceResponse": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/Quizymode.Api.Features.Admin.GetLifecycleReport.SourceResponse"
+        }
+      },
       "System.Collections.Generic.ListOfQuizymode.Api.Features.Admin.GetPageViewAnalytics.ContentScopeRowResponse": {
         "type": "array",
         "items": {
@@ -13676,6 +14301,18 @@
           "$ref": "#/components/schemas/Quizymode.Api.Features.StudyGuideImport.GetImportSession.PromptResultDto"
         }
       },
+      "System.Collections.Generic.ListOfQuizymode.Api.Features.StudySessions.RecordStudySession.Request": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/Quizymode.Api.Features.StudySessions.RecordStudySession.Request"
+        }
+      },
+      "System.Collections.Generic.ListOfQuizymode.Api.Features.StudySessions.RecordStudySession.SessionDto": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/Quizymode.Api.Features.StudySessions.RecordStudySession.SessionDto"
+        }
+      },
       "System.Collections.Generic.ListOfQuizymode.Api.Services.VisitorCohortReport.ReturnRateRow": {
         "type": "array",
         "items": {
@@ -13835,6 +14472,9 @@
     },
     {
       "name": "StudyGuides"
+    },
+    {
+      "name": "StudySessions"
     },
     {
       "name": "Taxonomy"

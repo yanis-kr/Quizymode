@@ -50,6 +50,10 @@ public sealed class ApplicationDbContext : DbContext
     public DbSet<AnalyticsSession> AnalyticsSessions => Set<AnalyticsSession>();
     public DbSet<PageViewDailyRollup> PageViewDailyRollups => Set<PageViewDailyRollup>();
 
+    public DbSet<StudySession> StudySessions => Set<StudySession>();
+
+    public DbSet<StudySessionMissedItem> StudySessionMissedItems => Set<StudySessionMissedItem>();
+
     public DbSet<Keyword> Keywords => Set<Keyword>();
 
     public DbSet<ItemKeyword> ItemKeywords => Set<ItemKeyword>();
