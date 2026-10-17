@@ -142,7 +142,9 @@ public static class IdeasAdmin
         string? moderationState,
         ApplicationDbContext db,
         IUserContext userContext,
-        CancellationToken cancellationToken)
+        CancellationToken cancellationToken,
+        int? page = null,
+        int? pageSize = null)
     {
         try
         {
@@ -160,15 +162,18 @@ public static class IdeasAdmin
                 query = query.Where(idea => idea.ModerationState == parsedState);
             }
 
-            List<IdeaSummaryResponse> ideas = await IdeaFeatureSupport.BuildSummariesAsync(
+            IdeaBoardResponse response = await IdeaFeatureSupport.BuildPageAsync(
                 db,
                 userContext,
                 query
                     .OrderBy(idea => idea.ModerationState)
-                    .ThenByDescending(idea => idea.UpdatedAt ?? idea.CreatedAt),
+                    .ThenByDescending(idea => idea.UpdatedAt ?? idea.CreatedAt)
+                    .ThenBy(idea => idea.Id),
+                page,
+                pageSize,
                 cancellationToken);
 
-            return Result.Success(new IdeaBoardResponse(ideas));
+            return Result.Success(response);
         }
         catch (Exception ex)
         {

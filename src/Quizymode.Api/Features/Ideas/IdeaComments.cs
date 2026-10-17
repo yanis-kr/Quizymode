@@ -396,9 +396,10 @@ public static class IdeaComments
                 return Result.Failure(Error.NotFound("IdeaComments.NotFound", "Comment not found."));
             }
 
-            if (!string.Equals(comment.CreatedBy, userContext.UserId, StringComparison.Ordinal))
+            if (!userContext.IsAdmin &&
+                !string.Equals(comment.CreatedBy, userContext.UserId, StringComparison.Ordinal))
             {
-                return Result.Failure(Error.Validation("IdeaComments.Forbidden", "You can only delete your own comments."));
+                return Result.Failure(Error.Validation("IdeaComments.Forbidden", "You can only delete your own comments unless you are an admin."));
             }
 
             db.IdeaComments.Remove(comment);

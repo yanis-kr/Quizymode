@@ -21,6 +21,8 @@ public static class GetMyIdeas
         }
 
         private static async Task<IResult> Handler(
+            int? page,
+            int? pageSize,
             ApplicationDbContext db,
             IUserContext userContext,
             CancellationToken cancellationToken)
@@ -31,7 +33,7 @@ public static class GetMyIdeas
             }
 
             Result<IdeaBoardResponse> result =
-                await IdeaBoard.HandleMineAsync(db, userContext, cancellationToken);
+                await IdeaBoard.HandleMineAsync(db, userContext, cancellationToken, page, pageSize);
 
             return result.Match(
                 value => Results.Ok(value),

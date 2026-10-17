@@ -4,7 +4,12 @@ import {
   type Dispatch,
   type SetStateAction,
 } from "react";
-import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
+import {
+  keepPreviousData,
+  useMutation,
+  useQuery,
+  useQueryClient,
+} from "@tanstack/react-query";
 import { Navigate } from "react-router-dom";
 import {
   ideasApi,
@@ -18,6 +23,7 @@ import { useAuth } from "@/contexts/AuthContext";
 import { getApiErrorMessage } from "@/utils/apiError";
 import { getIdeaErrorMessage } from "@/features/ideas/ideaErrors";
 import IdeaCard from "@/features/ideas/components/IdeaCard";
+import IdeaPager from "@/features/ideas/components/IdeaPager";
 import IdeaFormModal, {
   type IdeaFormValues,
 } from "@/features/ideas/components/IdeaFormModal";
@@ -45,6 +51,7 @@ const AdminIdeasPage = () => {
   const queryClient = useQueryClient();
   const [activeFilter, setActiveFilter] =
     useState<AdminIdeaFilter>("PendingReview");
+  const [page, setPage] = useState(1);
   const [search, setSearch] = useState("");
   const [expandedIdeaIds, setExpandedIdeaIds] = useState<string[]>([]);
   const [editingIdea, setEditingIdea] = useState<IdeaSummaryResponse | null>(null);
@@ -55,9 +62,10 @@ const AdminIdeasPage = () => {
   );
 
   const ideasQuery = useQuery({
-    queryKey: ["ideas", "admin", activeFilter],
-    queryFn: () => ideasApi.getAdminIdeas(activeFilter),
+    queryKey: ["ideas", "admin", activeFilter, page],
+    queryFn: () => ideasApi.getAdminIdeas(activeFilter, page),
     enabled: isAuthenticated && isAdmin,
+    placeholderData: keepPreviousData,
   });
 
   const invalidateIdeaQueries = () => {
@@ -189,7 +197,10 @@ const AdminIdeasPage = () => {
                 <button
                   key={filter}
                   type="button"
-                  onClick={() => setActiveFilter(filter)}
+                  onClick={() => {
+                    setActiveFilter(filter);
+                    setPage(1);
+                  }}
                   aria-pressed={activeFilter === filter}
                   className={`rounded-full px-4 py-2 text-sm font-medium transition ${
                     activeFilter === filter
@@ -280,6 +291,14 @@ const AdminIdeasPage = () => {
             ))}
           </div>
         )}
+        <IdeaPager
+          page={page}
+          pageSize={ideasQuery.data?.pageSize ?? 50}
+          totalCount={ideasQuery.data?.totalCount ?? 0}
+          onPageChange={setPage}
+          tone="light"
+          label="Moderation queue pagination"
+        />
       </div>
 
       <IdeaFormModal
