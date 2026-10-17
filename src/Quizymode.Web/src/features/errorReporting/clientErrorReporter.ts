@@ -1,6 +1,7 @@
 import { API_URL } from "@/api/client";
 import { getPageViewSessionId, isInternalBrowser } from "@/utils/pageViewTracking";
 import { getToken } from "@/utils/tokenStorage";
+import { getVisitorId } from "@/utils/visitorId";
 
 /**
  * Front-end error reporting (OBS-001). Captures React render errors (via ErrorBoundary), window
@@ -20,6 +21,8 @@ export interface ClientErrorPayload {
   path: string;
   appVersion: string;
   sessionId: string;
+  /** Returning-visitor id (ANALYTICS-003); omitted when Global Privacy Control is on or storage is unavailable. */
+  visitorId?: string;
   internalBrowser?: boolean;
 }
 
@@ -77,6 +80,7 @@ export function reportClientError(
 
     saveSent([...sent, key]);
 
+    const visitorId = getVisitorId();
     const payload: ClientErrorPayload = {
       source,
       name,
@@ -88,6 +92,7 @@ export function reportClientError(
       path: currentPath(),
       appVersion: typeof __APP_VERSION__ === "string" ? __APP_VERSION__ : "unknown",
       sessionId: getPageViewSessionId(),
+      ...(visitorId ? { visitorId } : {}),
       ...(isInternalBrowser() ? { internalBrowser: true } : {}),
     };
 

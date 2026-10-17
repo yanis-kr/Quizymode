@@ -1,4 +1,5 @@
 import { studySessionsApi, type ImportGuestStudySessionsResponse } from "@/api/studySessions";
+import { trackEventOnce } from "@/features/analytics/analyticsEvents";
 import { clearGuestHistory, readGuestHistory } from "./guestHistoryStorage";
 
 export const GUEST_IMPORT_VERSION = 1;
@@ -35,9 +36,15 @@ export async function claimGuestProgress(): Promise<ClaimGuestProgressResult> {
   }
 
   clearGuestHistory();
+  const saved = response.imported + response.duplicates;
+  if (saved > 0) {
+    // Funnel step (AC 5.4.10): once per tab session, auth context only, no counts or run data.
+    trackEventOnce("imported", { name: "guest_state_imported", contextType: "auth" });
+  }
+
   return {
     status: "saved",
-    saved: response.imported + response.duplicates,
+    saved,
     skipped: response.rejectedRunIds.length,
   };
 }

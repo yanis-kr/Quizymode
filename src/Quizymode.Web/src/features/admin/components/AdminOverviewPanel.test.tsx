@@ -43,7 +43,7 @@ const populated = {
     activeRegisteredUsers: 0,
   })),
   releaseMarkers: [{ version: "3.64.0", day: "2026-10-11" }],
-  workQueue: { itemsAwaitingReview: 4, pendingPrivateKeywords: 2, ideasAwaitingModeration: 1 },
+  workQueue: { itemsAwaitingReview: 4, pendingPrivateKeywords: 2, ideasAwaitingModeration: 1, newClientErrorGroups: 3 },
 };
 
 function renderPanel() {

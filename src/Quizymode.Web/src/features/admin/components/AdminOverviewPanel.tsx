@@ -175,10 +175,11 @@ const AdminOverviewPanel = () => {
             <DailyChart data={data} />
           </div>
 
-          <div className="grid grid-cols-1 gap-3 sm:grid-cols-3">
+          <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-4">
             <WorkQueueLink to="/admin/review-board" label="Items awaiting review" count={data.workQueue.itemsAwaitingReview} />
             <WorkQueueLink to="/admin/keyword-review" label="Pending private keywords" count={data.workQueue.pendingPrivateKeywords} />
             <WorkQueueLink to="/admin/ideas" label="Ideas awaiting moderation" count={data.workQueue.ideasAwaitingModeration} />
+            <WorkQueueLink to="/admin/client-errors" label="New front-end error groups" count={data.workQueue.newClientErrorGroups} />
           </div>
         </>
       )}
