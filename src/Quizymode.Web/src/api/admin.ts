@@ -211,6 +211,43 @@ export interface PageViewRollupDimensionRow {
   hits: number;
 }
 
+/** Admin overview KPIs for a window (ANALYTICS-005); visitor fields are null when unavailable. */
+export interface AnalyticsOverviewKpis {
+  humanSessions: number;
+  engagedSessions: number;
+  studySessions: number;
+  convertedSessions: number;
+  newSignups: number;
+  activeRegisteredUsers: number;
+  newVisitors: number | null;
+  returningVisitors: number | null;
+}
+
+export interface AnalyticsOverviewDailyPoint {
+  day: string;
+  humanSessions: number;
+  engagedSessions: number;
+  studySessions: number;
+  convertedSessions: number;
+  newSignups: number;
+  activeRegisteredUsers: number;
+}
+
+export interface AnalyticsOverviewResponse {
+  days: number;
+  windowStartDay: string;
+  windowEndDay: string;
+  current: AnalyticsOverviewKpis;
+  previous: AnalyticsOverviewKpis;
+  daily: AnalyticsOverviewDailyPoint[];
+  releaseMarkers: Array<{ version: string; day: string }>;
+  workQueue: {
+    itemsAwaitingReview: number;
+    pendingPrivateKeywords: number;
+    ideasAwaitingModeration: number;
+  };
+}
+
 /**
  * A session's outcome is decided by its FIRST hit, so the three values are
  * mutually exclusive: "converted" means it started anonymous and then signed in.
@@ -971,6 +1008,14 @@ export const adminApi = {
   getPageViewRollups: async (days: number = 365): Promise<PageViewRollupsResponse> => {
     const response = await apiClient.get<PageViewRollupsResponse>(
       "/admin/page-view-rollups",
+      { params: { days } }
+    );
+    return response.data;
+  },
+
+  getAnalyticsOverview: async (days: 7 | 30 | 90 = 7): Promise<AnalyticsOverviewResponse> => {
+    const response = await apiClient.get<AnalyticsOverviewResponse>(
+      "/admin/analytics/overview",
       { params: { days } }
     );
     return response.data;

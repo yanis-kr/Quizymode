@@ -1267,6 +1267,12 @@ The ideas board is a public-facing product planning surface at `/ideas`. It show
 - **AC 5.9.5** [Anyone] **Given** I read the Privacy Policy, **then** its Retention section states that page-view records are deleted after 180 days, that traffic-attribution records are deleted once older than 180 days with no page views left, that daily usage totals without identifiers may be kept longer, and that error reports are deleted after 90 days.
 ---
 
+### AC 5.10 Admin overview and daily trends (ANALYTICS-005 #125)
+
+- **AC 5.10.1** [Admin] **Given** I call `GET /admin/analytics/overview` with `days` of 7, 30, or 90 (default 7), **then** the API returns, for the window of whole UTC days ending today and for the previous window of equal length: human sessions, engaged sessions, study sessions, converted sessions, new signups (`Users.CreatedAt`, internal users excluded), active registered users, and new and returning visitors. Session numbers use the same classification as the Sessions and Acquisition reports. Bots and internal sessions are always excluded. Any other `days` returns **400**; a non-admin caller gets **403**.
+- **AC 5.10.2** [Admin] **Then** the response includes a daily series with exactly one point per UTC day of the window (zero-filled), release markers (the first UTC day each app version appeared in non-internal, non-bot traffic, only when that day is inside the window), and work-queue counts for items awaiting review, pending private keywords, and ideas awaiting moderation.
+- **AC 5.10.3** [Admin] **Given** I open `/admin`, **then** above the tool grid I see KPI cards with the value and percentage change versus the previous window (the card shows "new" instead of a percentage when the previous value is zero), a plain-SVG daily chart with release markers, a 7/30/90 day selector, and work-queue counts that link to the review board, private keyword review, and ideas moderation pages. Loading, empty ("No traffic recorded"), and error states are shown.
+
 ## 6. Study guides and import
 
 ### AC 6.1 Study guide CRUD and per-user size limit
