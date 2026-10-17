@@ -6,6 +6,7 @@ import { useAuth } from "@/contexts/AuthContext";
 import ErrorMessage from "@/components/ErrorMessage";
 import LoadingSpinner from "@/components/LoadingSpinner";
 import { getApiErrorMessage } from "@/utils/apiError";
+import { IDEA_COMMENT_MAX, getIdeaCommentError } from "../ideaValidation";
 
 interface IdeaDiscussionPanelProps {
   ideaId: string;
@@ -75,6 +76,11 @@ const IdeaDiscussionPanel = ({
   });
 
   const comments = data?.comments ?? [];
+  // Only surface the inline error once the user has typed something; an empty
+  // composer just keeps the Post button disabled.
+  const newCommentError = newCommentText.trim()
+    ? getIdeaCommentError(newCommentText)
+    : null;
 
   return (
     <div className="space-y-4 rounded-[24px] border border-slate-200 bg-slate-50 p-4">
@@ -102,18 +108,40 @@ const IdeaDiscussionPanel = ({
 
       {isAuthenticated && canPost ? (
         <div className="rounded-2xl border border-slate-200 bg-white p-4">
+          <label htmlFor={`idea-comment-${ideaId}`} className="sr-only">
+            New comment
+          </label>
           <textarea
+            id={`idea-comment-${ideaId}`}
             value={newCommentText}
             onChange={(event) => setNewCommentText(event.target.value)}
             rows={3}
+            maxLength={IDEA_COMMENT_MAX + 10}
+            aria-invalid={!!newCommentError}
+            aria-describedby={`idea-comment-${ideaId}-hint`}
             placeholder="Add context, concerns, or edge cases."
             className="w-full rounded-2xl border border-slate-300 px-4 py-3 text-sm text-slate-900 shadow-sm outline-none transition focus:border-emerald-500 focus:ring-2 focus:ring-emerald-200"
           />
+          <div
+            id={`idea-comment-${ideaId}-hint`}
+            className="mt-1.5 flex items-baseline justify-between gap-2 text-xs"
+          >
+            <span className="text-rose-600">{newCommentError ?? ""}</span>
+            <span className="text-slate-400">
+              {newCommentText.trim().length}/{IDEA_COMMENT_MAX}
+            </span>
+          </div>
           <div className="mt-3 flex justify-end">
             <button
               type="button"
-              onClick={() => createMutation.mutate(newCommentText.trim())}
-              disabled={!newCommentText.trim() || createMutation.isPending}
+              onClick={() => {
+                if (getIdeaCommentError(newCommentText) === null) {
+                  createMutation.mutate(newCommentText.trim());
+                }
+              }}
+              disabled={
+                getIdeaCommentError(newCommentText) !== null || createMutation.isPending
+              }
               className="rounded-full bg-slate-900 px-4 py-2 text-sm font-medium text-white transition hover:bg-slate-800 disabled:opacity-50"
             >
               {createMutation.isPending ? "Posting..." : "Post comment"}
@@ -201,6 +229,8 @@ function CommentCard({
   isSaving: boolean;
   isDeleting: boolean;
 }) {
+  const editingError = editingText.trim() ? getIdeaCommentError(editingText) : null;
+
   return (
     <article className="rounded-2xl border border-slate-200 bg-white p-4">
       <div className="flex items-start justify-between gap-3">
@@ -240,12 +270,23 @@ function CommentCard({
 
       {isEditing ? (
         <div className="mt-3 space-y-3">
-          <textarea
-            value={editingText}
-            onChange={(event) => onEditingTextChange(event.target.value)}
-            rows={3}
-            className="w-full rounded-2xl border border-slate-300 px-4 py-3 text-sm text-slate-900 shadow-sm outline-none transition focus:border-emerald-500 focus:ring-2 focus:ring-emerald-200"
-          />
+          <div>
+            <textarea
+              value={editingText}
+              onChange={(event) => onEditingTextChange(event.target.value)}
+              rows={3}
+              maxLength={IDEA_COMMENT_MAX + 10}
+              aria-label="Edit comment text"
+              aria-invalid={!!editingError}
+              className="w-full rounded-2xl border border-slate-300 px-4 py-3 text-sm text-slate-900 shadow-sm outline-none transition focus:border-emerald-500 focus:ring-2 focus:ring-emerald-200"
+            />
+            <div className="mt-1.5 flex items-baseline justify-between gap-2 text-xs">
+              <span className="text-rose-600">{editingError ?? ""}</span>
+              <span className="text-slate-400">
+                {editingText.trim().length}/{IDEA_COMMENT_MAX}
+              </span>
+            </div>
+          </div>
           <div className="flex justify-end gap-2">
             <button
               type="button"
@@ -257,7 +298,7 @@ function CommentCard({
             <button
               type="button"
               onClick={onSaveEdit}
-              disabled={!editingText.trim() || isSaving}
+              disabled={getIdeaCommentError(editingText) !== null || isSaving}
               className="rounded-full bg-slate-900 px-4 py-2 text-sm font-medium text-white transition hover:bg-slate-800 disabled:opacity-50"
             >
               {isSaving ? "Saving..." : "Save"}

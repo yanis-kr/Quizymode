@@ -26,9 +26,16 @@ function createStorage(): Storage {
   } as Storage;
 }
 
-const { mockTrackEvents, mockIsInternalBrowser } = vi.hoisted(() => ({
+const VISITOR_ID = "11111111-2222-4333-8444-555555555555";
+
+const { mockTrackEvents, mockIsInternalBrowser, mockGetVisitorId } = vi.hoisted(() => ({
   mockTrackEvents: vi.fn(),
   mockIsInternalBrowser: vi.fn(() => false),
+  mockGetVisitorId: vi.fn<() => string | null>(() => null),
+}));
+
+vi.mock("@/utils/visitorId", () => ({
+  getVisitorId: mockGetVisitorId,
 }));
 
 vi.mock("@/api/analytics", () => ({
@@ -56,6 +63,8 @@ describe("analyticsEvents", () => {
     mockTrackEvents.mockReset();
     mockIsInternalBrowser.mockReset();
     mockIsInternalBrowser.mockReturnValue(false);
+    mockGetVisitorId.mockReset();
+    mockGetVisitorId.mockReturnValue(VISITOR_ID);
     mockTrackEvents.mockResolvedValue(undefined);
     window.history.replaceState(null, "", "/quiz/science?item=abc");
   });
@@ -71,11 +80,20 @@ describe("analyticsEvents", () => {
     await waitFor(() => expect(mockTrackEvents).toHaveBeenCalledTimes(1));
     expect(mockTrackEvents).toHaveBeenCalledWith({
       sessionId: "session-1",
+      visitorId: VISITOR_ID,
       events: [
         { name: "quick_quiz_started", path: "/quiz/science", contextType: "home", runId: "run-1", total: 10 },
         { name: "quiz_completed", path: "/quiz/science", runId: "run-1", score: 7, total: 10 },
       ],
     });
+  });
+
+  it("omits the visitor id when none is allowed (Global Privacy Control or no storage)", async () => {
+    mockGetVisitorId.mockReturnValue(null);
+    trackEvent({ name: "quick_quiz_started", runId: "run-1" });
+
+    await waitFor(() => expect(mockTrackEvents).toHaveBeenCalledTimes(1));
+    expect(mockTrackEvents.mock.calls[0][0]).not.toHaveProperty("visitorId");
   });
 
   it("sends the internal marker only from a browser marked as internal", async () => {
