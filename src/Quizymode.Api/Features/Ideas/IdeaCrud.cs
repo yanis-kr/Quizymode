@@ -406,6 +406,25 @@ public static class IdeaCrud
                     Error.Validation("Ideas.InvalidStatus", $"Unknown idea status '{request.Status}'."));
             }
 
+            if (idea.ModerationState != IdeaModerationState.Published)
+            {
+                return Result.Failure<IdeaSummaryResponse>(
+                    Error.Conflict("Ideas.StatusRequiresPublished", "Only published ideas can change lifecycle status."));
+            }
+
+            if (newStatus == idea.Status)
+            {
+                return await LoadIdeaSummaryAsync(idea.Id, db, userContext, cancellationToken);
+            }
+
+            if (!IdeaFeatureSupport.IsAllowedStatusTransition(idea.Status, newStatus))
+            {
+                return Result.Failure<IdeaSummaryResponse>(
+                    Error.Conflict(
+                        "Ideas.InvalidStatusTransition",
+                        $"An idea cannot move from '{IdeaFeatureSupport.ToStatusString(idea.Status)}' to '{IdeaFeatureSupport.ToStatusString(newStatus)}'."));
+            }
+
             idea.Status = newStatus;
             idea.UpdatedAt = DateTime.UtcNow;
 
