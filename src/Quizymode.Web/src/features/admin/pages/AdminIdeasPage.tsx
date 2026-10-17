@@ -21,6 +21,7 @@ import ErrorMessage from "@/components/ErrorMessage";
 import LoadingSpinner from "@/components/LoadingSpinner";
 import { useAuth } from "@/contexts/AuthContext";
 import { getApiErrorMessage } from "@/utils/apiError";
+import { getIdeaErrorMessage } from "@/features/ideas/ideaErrors";
 import IdeaCard from "@/features/ideas/components/IdeaCard";
 import IdeaPager from "@/features/ideas/components/IdeaPager";
 import IdeaFormModal, {
@@ -93,18 +94,28 @@ const AdminIdeasPage = () => {
       invalidateIdeaQueries();
     },
     onError: (error) => {
-      setFormError(getApiErrorMessage(error));
+      setFormError(getIdeaErrorMessage(error));
     },
   });
 
   const approveMutation = useMutation({
-    mutationFn: (ideaId: string) => ideasApi.approve(ideaId),
+    mutationFn: ({
+      ideaId,
+      moderationNotes,
+    }: {
+      ideaId: string;
+      moderationNotes: string;
+    }) =>
+      ideasApi.approve(
+        ideaId,
+        moderationNotes ? { moderationNotes } : undefined
+      ),
     onSuccess: () => {
       setActionError(null);
       invalidateIdeaQueries();
     },
     onError: (error) => {
-      setActionError(getApiErrorMessage(error));
+      setActionError(getIdeaErrorMessage(error));
     },
   });
 
@@ -121,7 +132,7 @@ const AdminIdeasPage = () => {
       invalidateIdeaQueries();
     },
     onError: (error) => {
-      setActionError(getApiErrorMessage(error));
+      setActionError(getIdeaErrorMessage(error));
     },
   });
 
@@ -132,7 +143,7 @@ const AdminIdeasPage = () => {
       invalidateIdeaQueries();
     },
     onError: (error) => {
-      setActionError(getApiErrorMessage(error));
+      setActionError(getIdeaErrorMessage(error));
     },
   });
 
@@ -147,7 +158,7 @@ const AdminIdeasPage = () => {
       invalidateIdeaQueries();
     },
     onError: (error) => {
-      setActionError(getApiErrorMessage(error));
+      setActionError(getIdeaErrorMessage(error));
     },
     onSettled: () => {
       setStatusUpdatingIdeaId(null);
@@ -268,7 +279,9 @@ const AdminIdeasPage = () => {
                     idea={idea}
                     isApproving={approveMutation.isPending}
                     isRejecting={rejectMutation.isPending}
-                    onApprove={() => approveMutation.mutate(idea.id)}
+                    onApprove={(moderationNotes) =>
+                      approveMutation.mutate({ ideaId: idea.id, moderationNotes })
+                    }
                     onReject={(moderationNotes) =>
                       rejectMutation.mutate({ ideaId: idea.id, moderationNotes })
                     }
@@ -329,7 +342,7 @@ function ModerationPanel({
   idea: IdeaSummaryResponse;
   isApproving: boolean;
   isRejecting: boolean;
-  onApprove: () => void;
+  onApprove: (moderationNotes: string) => void;
   onReject: (moderationNotes: string) => void;
 }) {
   const [note, setNote] = useState(idea.moderationNotes ?? "");
@@ -343,6 +356,10 @@ function ModerationPanel({
             className="block text-sm font-medium text-slate-900"
           >
             Moderation note
+            <span className="font-normal text-slate-500">
+              {" "}
+              (required to reject, optional when approving)
+            </span>
           </label>
           <textarea
             id={`idea-reject-note-${idea.id}`}
@@ -358,7 +375,7 @@ function ModerationPanel({
           {idea.moderationState !== "Published" && (
             <button
               type="button"
-              onClick={onApprove}
+              onClick={() => onApprove(note.trim())}
               disabled={isApproving || isRejecting}
               className="rounded-full bg-emerald-600 px-4 py-2 text-sm font-medium text-white transition hover:bg-emerald-700 disabled:opacity-50"
             >

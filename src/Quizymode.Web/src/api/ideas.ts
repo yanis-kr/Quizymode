@@ -61,6 +61,10 @@ export interface UpdateIdeaStatusRequest {
   status: IdeaStatus;
 }
 
+export interface ApproveIdeaRequest {
+  moderationNotes?: string | null;
+}
+
 export interface RejectIdeaRequest {
   moderationNotes: string;
 }
@@ -198,9 +202,13 @@ export const ideasApi = {
     return response.data;
   },
 
-  approve: async (id: string): Promise<IdeaSummaryResponse> => {
+  approve: async (
+    id: string,
+    data?: ApproveIdeaRequest
+  ): Promise<IdeaSummaryResponse> => {
     const response = await apiClient.post<IdeaSummaryResponse>(
-      `/admin/ideas/${id}/approve`
+      `/admin/ideas/${id}/approve`,
+      data
     );
     return response.data;
   },

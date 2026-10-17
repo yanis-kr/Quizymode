@@ -13,6 +13,17 @@ public static class IdeasAdmin
 {
     public sealed record RejectRequest(string ModerationNotes);
 
+    public sealed record ApproveRequest(string? ModerationNotes);
+
+    public sealed class ApproveValidator : AbstractValidator<ApproveRequest>
+    {
+        public ApproveValidator()
+        {
+            RuleFor(x => x.ModerationNotes)
+                .MaximumLength(1000);
+        }
+    }
+
     public sealed class RejectValidator : AbstractValidator<RejectRequest>
     {
         public RejectValidator()
@@ -73,6 +84,7 @@ public static class IdeasAdmin
             CancellationToken cancellationToken)
         {
             Result<IdeaSummaryResponse> result = await HandleApproveAsync(id, db, userContext, auditService, cancellationToken);
+
 
             return result.Match(
                 value => Results.Ok(value),
@@ -175,7 +187,8 @@ public static class IdeasAdmin
         ApplicationDbContext db,
         IUserContext userContext,
         IAuditService auditService,
-        CancellationToken cancellationToken)
+        CancellationToken cancellationToken,
+        string? moderationNotes = null)
     {
         try
         {
@@ -187,7 +200,12 @@ public static class IdeasAdmin
             }
 
             idea.ModerationState = IdeaModerationState.Published;
-            idea.ModerationNotes = null;
+            string normalizedNotes = IdeaFeatureSupport.NormalizeInput(moderationNotes);
+            if (normalizedNotes.Length > 0)
+            {
+                idea.ModerationNotes = normalizedNotes;
+            }
+
             idea.ReviewedAt = DateTime.UtcNow;
             idea.ReviewedBy = userContext.UserId;
             idea.UpdatedAt = idea.ReviewedAt;
@@ -278,6 +296,7 @@ public static class IdeasAdmin
     {
         public void AddToServiceCollection(IServiceCollection services, IConfiguration configuration)
         {
+            services.AddScoped<IValidator<ApproveRequest>, ApproveValidator>();
             services.AddScoped<IValidator<RejectRequest>, RejectValidator>();
         }
     }

@@ -241,6 +241,20 @@ internal static partial class IdeaFeatureSupport
         return Enum.TryParse(normalized, ignoreCase: true, out status);
     }
 
+    /// <summary>
+    /// Allowed admin lifecycle transitions. Moving to the same status is handled as a no-op by the caller.
+    /// </summary>
+    public static bool IsAllowedStatusTransition(IdeaStatus from, IdeaStatus to) =>
+        from switch
+        {
+            IdeaStatus.Proposed => to is IdeaStatus.Planned or IdeaStatus.InProgress or IdeaStatus.Archived,
+            IdeaStatus.Planned => to is IdeaStatus.Proposed or IdeaStatus.InProgress or IdeaStatus.Archived,
+            IdeaStatus.InProgress => to is IdeaStatus.Planned or IdeaStatus.Shipped or IdeaStatus.Archived,
+            IdeaStatus.Shipped => to is IdeaStatus.Archived,
+            IdeaStatus.Archived => to is IdeaStatus.Proposed,
+            _ => false
+        };
+
     public static string ToStatusString(IdeaStatus status) =>
         status switch
         {
