@@ -1,5 +1,6 @@
 import { useAuth } from '@/contexts/AuthContext';
 import { Navigate, Link } from 'react-router-dom';
+import AdminOverviewPanel from '../components/AdminOverviewPanel';
 
 const AdminDashboardPage = () => {
   const { isAuthenticated, isAdmin } = useAuth();
@@ -14,6 +15,7 @@ const AdminDashboardPage = () => {
       <p className="text-gray-600 text-sm mb-6">
         Administrative tools for managing the application. Access review board, database monitoring, and audit logs.
       </p>
+      <AdminOverviewPanel />
       <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
         <Link
           to="/admin/review-board"

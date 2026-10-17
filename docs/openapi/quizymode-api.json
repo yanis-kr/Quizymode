@@ -761,6 +761,47 @@
         }
       }
     },
+    "/admin/analytics/overview": {
+      "get": {
+        "tags": [
+          "Admin"
+        ],
+        "summary": "Get the admin overview with KPIs, daily trends, release markers, and work queue counts (Admin only)",
+        "description": "days must be 7, 30, or 90. Returns KPIs for the window and the previous window of equal length, a zero-filled UTC daily series, release markers (first UTC day each app version appeared), and moderation work-queue counts. Bot and internal traffic is always excluded.",
+        "parameters": [
+          {
+            "name": "days",
+            "in": "query",
+            "schema": {
+              "default": 7,
+              "$ref": "#/components/schemas/System.Int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Quizymode.Api.Features.Admin.GetAnalyticsOverview.Response"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "/admin/audit-logs": {
       "get": {
         "tags": [
@@ -5457,6 +5498,170 @@
           },
           "conversionRatePercent": {
             "$ref": "#/components/schemas/System.Double"
+          }
+        }
+      },
+      "Quizymode.Api.Features.Admin.GetAnalyticsOverview.DailyPoint": {
+        "required": [
+          "day",
+          "humanSessions",
+          "engagedSessions",
+          "studySessions",
+          "convertedSessions",
+          "newSignups",
+          "activeRegisteredUsers"
+        ],
+        "type": "object",
+        "properties": {
+          "day": {
+            "$ref": "#/components/schemas/System.DateOnly"
+          },
+          "humanSessions": {
+            "$ref": "#/components/schemas/System.Int32"
+          },
+          "engagedSessions": {
+            "$ref": "#/components/schemas/System.Int32"
+          },
+          "studySessions": {
+            "$ref": "#/components/schemas/System.Int32"
+          },
+          "convertedSessions": {
+            "$ref": "#/components/schemas/System.Int32"
+          },
+          "newSignups": {
+            "$ref": "#/components/schemas/System.Int32"
+          },
+          "activeRegisteredUsers": {
+            "$ref": "#/components/schemas/System.Int32"
+          }
+        }
+      },
+      "Quizymode.Api.Features.Admin.GetAnalyticsOverview.Kpis": {
+        "required": [
+          "humanSessions",
+          "engagedSessions",
+          "studySessions",
+          "convertedSessions",
+          "newSignups",
+          "activeRegisteredUsers",
+          "newVisitors",
+          "returningVisitors"
+        ],
+        "type": "object",
+        "properties": {
+          "humanSessions": {
+            "$ref": "#/components/schemas/System.Int32"
+          },
+          "engagedSessions": {
+            "$ref": "#/components/schemas/System.Int32"
+          },
+          "studySessions": {
+            "$ref": "#/components/schemas/System.Int32"
+          },
+          "convertedSessions": {
+            "$ref": "#/components/schemas/System.Int32"
+          },
+          "newSignups": {
+            "$ref": "#/components/schemas/System.Int32"
+          },
+          "activeRegisteredUsers": {
+            "$ref": "#/components/schemas/System.Int32"
+          },
+          "newVisitors": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "description": "Distinct first-time visitors (ANALYTICS-003).",
+                "$ref": "#/components/schemas/System.NullableOfSystem.Int32"
+              }
+            ]
+          },
+          "returningVisitors": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "description": "Distinct returning visitors (ANALYTICS-003).",
+                "$ref": "#/components/schemas/System.NullableOfSystem.Int32"
+              }
+            ]
+          }
+        }
+      },
+      "Quizymode.Api.Features.Admin.GetAnalyticsOverview.ReleaseMarker": {
+        "required": [
+          "version",
+          "day"
+        ],
+        "type": "object",
+        "properties": {
+          "version": {
+            "$ref": "#/components/schemas/System.String"
+          },
+          "day": {
+            "description": "First UTC day the version appeared in non-internal, non-bot traffic.",
+            "$ref": "#/components/schemas/System.DateOnly"
+          }
+        }
+      },
+      "Quizymode.Api.Features.Admin.GetAnalyticsOverview.Response": {
+        "required": [
+          "days",
+          "windowStartDay",
+          "windowEndDay",
+          "current",
+          "previous",
+          "daily",
+          "releaseMarkers",
+          "workQueue"
+        ],
+        "type": "object",
+        "properties": {
+          "days": {
+            "$ref": "#/components/schemas/System.Int32"
+          },
+          "windowStartDay": {
+            "$ref": "#/components/schemas/System.DateOnly"
+          },
+          "windowEndDay": {
+            "$ref": "#/components/schemas/System.DateOnly"
+          },
+          "current": {
+            "$ref": "#/components/schemas/Quizymode.Api.Features.Admin.GetAnalyticsOverview.Kpis"
+          },
+          "previous": {
+            "$ref": "#/components/schemas/Quizymode.Api.Features.Admin.GetAnalyticsOverview.Kpis"
+          },
+          "daily": {
+            "$ref": "#/components/schemas/System.Collections.Generic.ListOfQuizymode.Api.Features.Admin.GetAnalyticsOverview.DailyPoint"
+          },
+          "releaseMarkers": {
+            "$ref": "#/components/schemas/System.Collections.Generic.ListOfQuizymode.Api.Features.Admin.GetAnalyticsOverview.ReleaseMarker"
+          },
+          "workQueue": {
+            "$ref": "#/components/schemas/Quizymode.Api.Features.Admin.GetAnalyticsOverview.WorkQueue"
+          }
+        }
+      },
+      "Quizymode.Api.Features.Admin.GetAnalyticsOverview.WorkQueue": {
+        "required": [
+          "itemsAwaitingReview",
+          "pendingPrivateKeywords",
+          "ideasAwaitingModeration"
+        ],
+        "type": "object",
+        "properties": {
+          "itemsAwaitingReview": {
+            "$ref": "#/components/schemas/System.Int32"
+          },
+          "pendingPrivateKeywords": {
+            "$ref": "#/components/schemas/System.Int32"
+          },
+          "ideasAwaitingModeration": {
+            "$ref": "#/components/schemas/System.Int32"
           }
         }
       },
@@ -12636,6 +12841,18 @@
         "type": "array",
         "items": {
           "$ref": "#/components/schemas/Quizymode.Api.Features.Admin.GetAcquisitionReport.SourceCampaignRowResponse"
+        }
+      },
+      "System.Collections.Generic.ListOfQuizymode.Api.Features.Admin.GetAnalyticsOverview.DailyPoint": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/Quizymode.Api.Features.Admin.GetAnalyticsOverview.DailyPoint"
+        }
+      },
+      "System.Collections.Generic.ListOfQuizymode.Api.Features.Admin.GetAnalyticsOverview.ReleaseMarker": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/Quizymode.Api.Features.Admin.GetAnalyticsOverview.ReleaseMarker"
         }
       },
       "System.Collections.Generic.ListOfQuizymode.Api.Features.Admin.GetAuditLogs.AuditLogResponse": {

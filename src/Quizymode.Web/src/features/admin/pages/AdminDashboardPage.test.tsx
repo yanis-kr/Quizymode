@@ -3,6 +3,10 @@ import { render, screen } from "@testing-library/react";
 import { MemoryRouter, Routes, Route } from "react-router-dom";
 import AdminDashboardPage from "./AdminDashboardPage";
 
+vi.mock("../components/AdminOverviewPanel", () => ({
+  default: () => <div>overview panel</div>,
+}));
+
 vi.mock("@/contexts/AuthContext", () => ({
   useAuth: () => mockUseAuth(),
 }));
