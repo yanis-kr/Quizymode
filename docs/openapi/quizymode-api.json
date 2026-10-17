@@ -241,6 +241,104 @@
         }
       }
     },
+    "/admin/llm-providers": {
+      "get": {
+        "tags": [
+          "Admin"
+        ],
+        "summary": "Get LLM vendor models, routes, key status, and the monthly section budget (Admin only)",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Quizymode.Api.Features.Admin.AdminLlmProviders.Response"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "Admin"
+        ],
+        "summary": "Update LLM vendor models and per-tier routes (Admin only)",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Quizymode.Api.Features.Admin.AdminLlmProviders.UpdateRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Quizymode.Api.Features.Admin.AdminLlmProviders.Response"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          }
+        }
+      }
+    },
+    "/admin/llm-providers/attempts": {
+      "get": {
+        "tags": [
+          "Admin"
+        ],
+        "summary": "List recent LLM vendor attempts, newest first, at most 200 (Admin only)",
+        "parameters": [
+          {
+            "name": "days",
+            "in": "query",
+            "schema": {
+              "$ref": "#/components/schemas/System.NullableOfSystem.Int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Quizymode.Api.Features.Admin.AdminLlmProviders.AttemptsResponse"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          }
+        }
+      }
+    },
     "/admin/users/{id}/settings": {
       "get": {
         "tags": [
@@ -2859,8 +2957,8 @@
         "tags": [
           "Collections"
         ],
-        "summary": "Search public collections",
-        "description": "Returns public collections matching optional text (name/description), and/or items in the collection matching category, navigation keywords (L1/L2), and item tags.",
+        "summary": "Search public collections that are listed in Discover",
+        "description": "Returns public, discoverable collections matching optional text (name/description), and/or items in the collection matching category, navigation keywords (L1/L2), and item tags.",
         "parameters": [
           {
             "name": "q",
@@ -4408,6 +4506,304 @@
         }
       }
     },
+    "/study-guides/documents/{id}/accept": {
+      "post": {
+        "tags": [
+          "StudyGuideDocuments"
+        ],
+        "summary": "Save selected generated questions as my private items and add them to the study guide's collection",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "$ref": "#/components/schemas/System.Guid"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Quizymode.Api.Features.StudyGuideDocuments.AcceptStudyGuideCandidates.Request"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Quizymode.Api.Features.StudyGuideDocuments.AcceptStudyGuideCandidates.Response"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        }
+      }
+    },
+    "/study-guides/documents": {
+      "post": {
+        "tags": [
+          "StudyGuideDocuments"
+        ],
+        "summary": "Upload a study guide file or pasted text and split it into sections",
+        "description": "multipart/form-data with either file (PDF, DOCX, PPTX, TXT, MD; at most 20 MB) or text, plus category, navigationKeyword1, navigationKeyword2, optional title and keywords (repeated or comma-separated). Returns 201 with the document, or 200 with isDuplicate=true when this user already uploaded the same text.",
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "type": "object",
+                "allOf": [
+                  {
+                    "type": "object",
+                    "properties": {
+                      "file": {
+                        "$ref": "#/components/schemas/Microsoft.AspNetCore.Http.IFormFile"
+                      }
+                    }
+                  },
+                  {
+                    "type": "object",
+                    "properties": {
+                      "text": {
+                        "$ref": "#/components/schemas/System.String"
+                      }
+                    }
+                  },
+                  {
+                    "type": "object",
+                    "properties": {
+                      "title": {
+                        "$ref": "#/components/schemas/System.String"
+                      }
+                    }
+                  },
+                  {
+                    "type": "object",
+                    "properties": {
+                      "category": {
+                        "$ref": "#/components/schemas/System.String"
+                      }
+                    }
+                  },
+                  {
+                    "type": "object",
+                    "properties": {
+                      "navigationKeyword1": {
+                        "$ref": "#/components/schemas/System.String"
+                      }
+                    }
+                  },
+                  {
+                    "type": "object",
+                    "properties": {
+                      "navigationKeyword2": {
+                        "$ref": "#/components/schemas/System.String"
+                      }
+                    }
+                  },
+                  {
+                    "type": "object",
+                    "properties": {
+                      "keywords": {
+                        "$ref": "#/components/schemas/System.String"
+                      }
+                    }
+                  }
+                ]
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "201": {
+            "description": "Created",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Quizymode.Api.Features.StudyGuideDocuments.StudyGuideDocumentContracts.Document"
+                }
+              }
+            }
+          },
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Quizymode.Api.Features.StudyGuideDocuments.StudyGuideDocumentContracts.Document"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "413": {
+            "description": "Payload Too Large"
+          },
+          "429": {
+            "description": "Too Many Requests"
+          }
+        }
+      },
+      "get": {
+        "tags": [
+          "StudyGuideDocuments"
+        ],
+        "summary": "List my study guide documents (newest first)",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Quizymode.Api.Features.StudyGuideDocuments.ListStudyGuideDocuments.Response"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          }
+        }
+      }
+    },
+    "/study-guides/documents/{id}/generate": {
+      "post": {
+        "tags": [
+          "StudyGuideDocuments"
+        ],
+        "summary": "Queue question generation for selected sections of my study guide",
+        "description": "Returns 202 with queued/cached/charged counts and the updated quota. 429 StudyGuideDocument.QuotaExceeded when the charge would exceed the daily or monthly section quota (nothing is queued); 503 StudyGuideDocument.Disabled when no LLM vendor is configured or StudyGuideDocument.BudgetReached when the global monthly budget is used up.",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "$ref": "#/components/schemas/System.Guid"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Quizymode.Api.Features.StudyGuideDocuments.GenerateStudyGuideSections.Request"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "202": {
+            "description": "Accepted",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Quizymode.Api.Features.StudyGuideDocuments.GenerateStudyGuideSections.Response"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "404": {
+            "description": "Not Found"
+          },
+          "429": {
+            "description": "Too Many Requests"
+          },
+          "503": {
+            "description": "Service Unavailable"
+          }
+        }
+      }
+    },
+    "/study-guides/documents/{id}": {
+      "get": {
+        "tags": [
+          "StudyGuideDocuments"
+        ],
+        "summary": "Get a study guide document with its sections, generation status, and generated questions",
+        "description": "Owner only; other users get 404. Poll while any section is Queued or Processing.",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "$ref": "#/components/schemas/System.Guid"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Quizymode.Api.Features.StudyGuideDocuments.StudyGuideDocumentContracts.Document"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        }
+      }
+    },
+    "/study-guides/documents/config": {
+      "get": {
+        "tags": [
+          "StudyGuideDocuments"
+        ],
+        "summary": "Get study guide document upload availability, limits, and my section quota",
+        "description": "enabled is true when at least one LLM vendor API key is configured.",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Quizymode.Api.Features.StudyGuideDocuments.GetStudyGuideDocumentConfig.Response"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          }
+        }
+      }
+    },
     "/study-guides/import/sessions": {
       "post": {
         "tags": [
@@ -5385,6 +5781,10 @@
           }
         }
       },
+      "Microsoft.AspNetCore.Http.IFormFile": {
+        "type": "string",
+        "format": "binary"
+      },
       "Microsoft.AspNetCore.Mvc.ProblemDetails": {
         "type": "object",
         "properties": {
@@ -5644,6 +6044,167 @@
         "type": "object",
         "properties": {
           "status": {
+            "$ref": "#/components/schemas/System.String"
+          }
+        }
+      },
+      "Quizymode.Api.Features.Admin.AdminLlmProviders.AttemptResponse": {
+        "required": [
+          "createdUtc",
+          "vendor",
+          "model",
+          "outcome",
+          "inputTokens",
+          "outputTokens",
+          "durationMs"
+        ],
+        "type": "object",
+        "properties": {
+          "createdUtc": {
+            "$ref": "#/components/schemas/System.DateTime"
+          },
+          "vendor": {
+            "$ref": "#/components/schemas/System.String"
+          },
+          "model": {
+            "$ref": "#/components/schemas/System.String"
+          },
+          "outcome": {
+            "$ref": "#/components/schemas/System.String"
+          },
+          "inputTokens": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/components/schemas/System.NullableOfSystem.Int32"
+              }
+            ]
+          },
+          "outputTokens": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/components/schemas/System.NullableOfSystem.Int32"
+              }
+            ]
+          },
+          "durationMs": {
+            "$ref": "#/components/schemas/System.Int32"
+          }
+        }
+      },
+      "Quizymode.Api.Features.Admin.AdminLlmProviders.AttemptsResponse": {
+        "required": [
+          "attempts"
+        ],
+        "type": "object",
+        "properties": {
+          "attempts": {
+            "$ref": "#/components/schemas/System.Collections.Generic.ListOfQuizymode.Api.Features.Admin.AdminLlmProviders.AttemptResponse"
+          }
+        }
+      },
+      "Quizymode.Api.Features.Admin.AdminLlmProviders.Response": {
+        "required": [
+          "vendors",
+          "routes",
+          "monthlySectionBudget",
+          "monthlySectionsUsed"
+        ],
+        "type": "object",
+        "properties": {
+          "vendors": {
+            "$ref": "#/components/schemas/System.Collections.Generic.ListOfQuizymode.Api.Features.Admin.AdminLlmProviders.VendorResponse"
+          },
+          "routes": {
+            "$ref": "#/components/schemas/Quizymode.Api.Features.Admin.AdminLlmProviders.Routes"
+          },
+          "monthlySectionBudget": {
+            "$ref": "#/components/schemas/System.Int32"
+          },
+          "monthlySectionsUsed": {
+            "$ref": "#/components/schemas/System.Int32"
+          }
+        }
+      },
+      "Quizymode.Api.Features.Admin.AdminLlmProviders.Routes": {
+        "required": [
+          "free",
+          "premium"
+        ],
+        "type": "object",
+        "properties": {
+          "free": {
+            "$ref": "#/components/schemas/System.Collections.Generic.ListOfSystem.String"
+          },
+          "premium": {
+            "$ref": "#/components/schemas/System.Collections.Generic.ListOfSystem.String"
+          }
+        }
+      },
+      "Quizymode.Api.Features.Admin.AdminLlmProviders.UpdateRequest": {
+        "required": [
+          "vendors",
+          "routes"
+        ],
+        "type": "object",
+        "properties": {
+          "vendors": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/components/schemas/System.Collections.Generic.ListOfQuizymode.Api.Features.Admin.AdminLlmProviders.VendorModel"
+              }
+            ]
+          },
+          "routes": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/components/schemas/Quizymode.Api.Features.Admin.AdminLlmProviders.Routes"
+              }
+            ]
+          }
+        }
+      },
+      "Quizymode.Api.Features.Admin.AdminLlmProviders.VendorModel": {
+        "required": [
+          "vendor",
+          "model"
+        ],
+        "type": "object",
+        "properties": {
+          "vendor": {
+            "$ref": "#/components/schemas/System.String"
+          },
+          "model": {
+            "$ref": "#/components/schemas/System.String"
+          }
+        }
+      },
+      "Quizymode.Api.Features.Admin.AdminLlmProviders.VendorResponse": {
+        "required": [
+          "vendor",
+          "keyConfigured",
+          "model"
+        ],
+        "type": "object",
+        "properties": {
+          "vendor": {
+            "$ref": "#/components/schemas/System.String"
+          },
+          "keyConfigured": {
+            "$ref": "#/components/schemas/System.Boolean"
+          },
+          "model": {
             "$ref": "#/components/schemas/System.String"
           }
         }
@@ -10203,8 +10764,19 @@
                 "$ref": "#/components/schemas/System.NullableOfSystem.Boolean"
               }
             ]
+          },
+          "isDiscoverable": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/components/schemas/System.NullableOfSystem.Boolean"
+              }
+            ]
           }
-        }
+        },
+        "description": "IsPublic: anyone with the link can view (default false). IsDiscoverable: listed in Discover (default false; forced false when not public)."
       },
       "Quizymode.Api.Features.Collections.AddCollection.Response": {
         "required": [
@@ -10212,7 +10784,8 @@
           "name",
           "description",
           "createdAt",
-          "isPublic"
+          "isPublic",
+          "isDiscoverable"
         ],
         "type": "object",
         "properties": {
@@ -10236,6 +10809,9 @@
             "$ref": "#/components/schemas/System.DateTime"
           },
           "isPublic": {
+            "$ref": "#/components/schemas/System.Boolean"
+          },
+          "isDiscoverable": {
             "$ref": "#/components/schemas/System.Boolean"
           }
         }
@@ -10489,7 +11065,8 @@
           "createdBy",
           "createdAt",
           "itemCount",
-          "isPublic"
+          "isPublic",
+          "isDiscoverable"
         ],
         "type": "object",
         "properties": {
@@ -10519,6 +11096,9 @@
             "$ref": "#/components/schemas/System.Int32"
           },
           "isPublic": {
+            "$ref": "#/components/schemas/System.Boolean"
+          },
+          "isDiscoverable": {
             "$ref": "#/components/schemas/System.Boolean"
           }
         }
@@ -10563,7 +11143,8 @@
           "description",
           "createdAt",
           "itemCount",
-          "isPublic"
+          "isPublic",
+          "isDiscoverable"
         ],
         "type": "object",
         "properties": {
@@ -10590,6 +11171,9 @@
             "$ref": "#/components/schemas/System.Int32"
           },
           "isPublic": {
+            "$ref": "#/components/schemas/System.Boolean"
+          },
+          "isDiscoverable": {
             "$ref": "#/components/schemas/System.Boolean"
           }
         }
@@ -10642,8 +11226,19 @@
                 "$ref": "#/components/schemas/System.NullableOfSystem.Boolean"
               }
             ]
+          },
+          "isDiscoverable": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/components/schemas/System.NullableOfSystem.Boolean"
+              }
+            ]
           }
-        }
+        },
+        "description": "Omitted fields are unchanged. Setting IsPublic = false also turns IsDiscoverable off; IsDiscoverable = true on a non-public collection is ignored."
       },
       "Quizymode.Api.Features.Collections.UpdateCollection.Response": {
         "required": [
@@ -10652,7 +11247,8 @@
           "description",
           "createdAt",
           "updatedAt",
-          "isPublic"
+          "isPublic",
+          "isDiscoverable"
         ],
         "type": "object",
         "properties": {
@@ -10686,6 +11282,9 @@
             ]
           },
           "isPublic": {
+            "$ref": "#/components/schemas/System.Boolean"
+          },
+          "isDiscoverable": {
             "$ref": "#/components/schemas/System.Boolean"
           }
         }
@@ -13149,6 +13748,498 @@
           }
         }
       },
+      "Quizymode.Api.Features.StudyGuideDocuments.AcceptStudyGuideCandidates.CandidateEdit": {
+        "required": [
+          "id",
+          "question",
+          "correctAnswer",
+          "incorrectAnswers",
+          "explanation"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "$ref": "#/components/schemas/System.Guid"
+          },
+          "question": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/components/schemas/System.String"
+              }
+            ]
+          },
+          "correctAnswer": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/components/schemas/System.String"
+              }
+            ]
+          },
+          "incorrectAnswers": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/components/schemas/System.Collections.Generic.ListOfSystem.String"
+              }
+            ]
+          },
+          "explanation": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/components/schemas/System.String"
+              }
+            ]
+          }
+        }
+      },
+      "Quizymode.Api.Features.StudyGuideDocuments.AcceptStudyGuideCandidates.Request": {
+        "required": [
+          "candidates"
+        ],
+        "type": "object",
+        "properties": {
+          "candidates": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/components/schemas/System.Collections.Generic.ListOfQuizymode.Api.Features.StudyGuideDocuments.AcceptStudyGuideCandidates.CandidateEdit"
+              }
+            ]
+          }
+        }
+      },
+      "Quizymode.Api.Features.StudyGuideDocuments.AcceptStudyGuideCandidates.Response": {
+        "required": [
+          "collectionId",
+          "createdCount",
+          "duplicateCount",
+          "failedCount",
+          "itemIds"
+        ],
+        "type": "object",
+        "properties": {
+          "collectionId": {
+            "$ref": "#/components/schemas/System.String"
+          },
+          "createdCount": {
+            "$ref": "#/components/schemas/System.Int32"
+          },
+          "duplicateCount": {
+            "$ref": "#/components/schemas/System.Int32"
+          },
+          "failedCount": {
+            "$ref": "#/components/schemas/System.Int32"
+          },
+          "itemIds": {
+            "$ref": "#/components/schemas/System.Collections.Generic.ListOfSystem.String"
+          }
+        }
+      },
+      "Quizymode.Api.Features.StudyGuideDocuments.GenerateStudyGuideSections.Request": {
+        "required": [
+          "sectionIds"
+        ],
+        "type": "object",
+        "properties": {
+          "sectionIds": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/components/schemas/System.Collections.Generic.ListOfSystem.Guid"
+              }
+            ]
+          }
+        }
+      },
+      "Quizymode.Api.Features.StudyGuideDocuments.GenerateStudyGuideSections.Response": {
+        "required": [
+          "queuedCount",
+          "cachedCount",
+          "chargedSections",
+          "quota"
+        ],
+        "type": "object",
+        "properties": {
+          "queuedCount": {
+            "$ref": "#/components/schemas/System.Int32"
+          },
+          "cachedCount": {
+            "$ref": "#/components/schemas/System.Int32"
+          },
+          "chargedSections": {
+            "$ref": "#/components/schemas/System.Int32"
+          },
+          "quota": {
+            "$ref": "#/components/schemas/Quizymode.Api.Features.StudyGuideDocuments.StudyGuideDocumentContracts.Quota"
+          }
+        }
+      },
+      "Quizymode.Api.Features.StudyGuideDocuments.GetStudyGuideDocumentConfig.Response": {
+        "required": [
+          "enabled",
+          "maxFileBytes",
+          "maxPages",
+          "maxTextBytes",
+          "acceptedExtensions",
+          "freeTierDelayMinutes",
+          "quota"
+        ],
+        "type": "object",
+        "properties": {
+          "enabled": {
+            "$ref": "#/components/schemas/System.Boolean"
+          },
+          "maxFileBytes": {
+            "$ref": "#/components/schemas/System.Int32"
+          },
+          "maxPages": {
+            "$ref": "#/components/schemas/System.Int32"
+          },
+          "maxTextBytes": {
+            "$ref": "#/components/schemas/System.Int32"
+          },
+          "acceptedExtensions": {
+            "$ref": "#/components/schemas/System.Collections.Generic.ListOfSystem.String"
+          },
+          "freeTierDelayMinutes": {
+            "$ref": "#/components/schemas/System.Int32"
+          },
+          "quota": {
+            "$ref": "#/components/schemas/Quizymode.Api.Features.StudyGuideDocuments.StudyGuideDocumentContracts.Quota"
+          }
+        }
+      },
+      "Quizymode.Api.Features.StudyGuideDocuments.ListStudyGuideDocuments.Response": {
+        "required": [
+          "documents"
+        ],
+        "type": "object",
+        "properties": {
+          "documents": {
+            "$ref": "#/components/schemas/System.Collections.Generic.ListOfQuizymode.Api.Features.StudyGuideDocuments.StudyGuideDocumentContracts.DocumentSummary"
+          }
+        }
+      },
+      "Quizymode.Api.Features.StudyGuideDocuments.StudyGuideDocumentContracts.Candidate": {
+        "required": [
+          "id",
+          "index",
+          "question",
+          "correctAnswer",
+          "incorrectAnswers",
+          "explanation",
+          "sourceQuote",
+          "page",
+          "accepted"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "$ref": "#/components/schemas/System.String"
+          },
+          "index": {
+            "$ref": "#/components/schemas/System.Int32"
+          },
+          "question": {
+            "$ref": "#/components/schemas/System.String"
+          },
+          "correctAnswer": {
+            "$ref": "#/components/schemas/System.String"
+          },
+          "incorrectAnswers": {
+            "$ref": "#/components/schemas/System.Collections.Generic.ListOfSystem.String"
+          },
+          "explanation": {
+            "$ref": "#/components/schemas/System.String"
+          },
+          "sourceQuote": {
+            "$ref": "#/components/schemas/System.String"
+          },
+          "page": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/components/schemas/System.NullableOfSystem.Int32"
+              }
+            ]
+          },
+          "accepted": {
+            "$ref": "#/components/schemas/System.Boolean"
+          }
+        }
+      },
+      "Quizymode.Api.Features.StudyGuideDocuments.StudyGuideDocumentContracts.Document": {
+        "required": [
+          "id",
+          "title",
+          "fileType",
+          "pageCount",
+          "category",
+          "navigationKeyword1",
+          "navigationKeyword2",
+          "keywords",
+          "collectionId",
+          "createdUtc",
+          "expiresUtc",
+          "isDuplicate",
+          "quota",
+          "sections"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "$ref": "#/components/schemas/System.String"
+          },
+          "title": {
+            "$ref": "#/components/schemas/System.String"
+          },
+          "fileType": {
+            "$ref": "#/components/schemas/System.String"
+          },
+          "pageCount": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/components/schemas/System.NullableOfSystem.Int32"
+              }
+            ]
+          },
+          "category": {
+            "$ref": "#/components/schemas/System.String"
+          },
+          "navigationKeyword1": {
+            "$ref": "#/components/schemas/System.String"
+          },
+          "navigationKeyword2": {
+            "$ref": "#/components/schemas/System.String"
+          },
+          "keywords": {
+            "$ref": "#/components/schemas/System.Collections.Generic.ListOfSystem.String"
+          },
+          "collectionId": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/components/schemas/System.String"
+              }
+            ]
+          },
+          "createdUtc": {
+            "$ref": "#/components/schemas/System.DateTime"
+          },
+          "expiresUtc": {
+            "$ref": "#/components/schemas/System.DateTime"
+          },
+          "isDuplicate": {
+            "$ref": "#/components/schemas/System.Boolean"
+          },
+          "quota": {
+            "$ref": "#/components/schemas/Quizymode.Api.Features.StudyGuideDocuments.StudyGuideDocumentContracts.Quota"
+          },
+          "sections": {
+            "$ref": "#/components/schemas/System.Collections.Generic.ListOfQuizymode.Api.Features.StudyGuideDocuments.StudyGuideDocumentContracts.Section"
+          }
+        }
+      },
+      "Quizymode.Api.Features.StudyGuideDocuments.StudyGuideDocumentContracts.DocumentSummary": {
+        "required": [
+          "id",
+          "title",
+          "fileType",
+          "sectionCount",
+          "generatedSectionCount",
+          "acceptedCount",
+          "collectionId",
+          "createdUtc",
+          "lastActivityUtc",
+          "expiresUtc"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "$ref": "#/components/schemas/System.String"
+          },
+          "title": {
+            "$ref": "#/components/schemas/System.String"
+          },
+          "fileType": {
+            "$ref": "#/components/schemas/System.String"
+          },
+          "sectionCount": {
+            "$ref": "#/components/schemas/System.Int32"
+          },
+          "generatedSectionCount": {
+            "$ref": "#/components/schemas/System.Int32"
+          },
+          "acceptedCount": {
+            "$ref": "#/components/schemas/System.Int32"
+          },
+          "collectionId": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/components/schemas/System.String"
+              }
+            ]
+          },
+          "createdUtc": {
+            "$ref": "#/components/schemas/System.DateTime"
+          },
+          "lastActivityUtc": {
+            "$ref": "#/components/schemas/System.DateTime"
+          },
+          "expiresUtc": {
+            "$ref": "#/components/schemas/System.DateTime"
+          }
+        }
+      },
+      "Quizymode.Api.Features.StudyGuideDocuments.StudyGuideDocumentContracts.Quota": {
+        "required": [
+          "tier",
+          "dailyLimit",
+          "dailyUsed",
+          "monthlyLimit",
+          "monthlyUsed",
+          "remainingToday"
+        ],
+        "type": "object",
+        "properties": {
+          "tier": {
+            "$ref": "#/components/schemas/System.String"
+          },
+          "dailyLimit": {
+            "$ref": "#/components/schemas/System.Int32"
+          },
+          "dailyUsed": {
+            "$ref": "#/components/schemas/System.Int32"
+          },
+          "monthlyLimit": {
+            "$ref": "#/components/schemas/System.Int32"
+          },
+          "monthlyUsed": {
+            "$ref": "#/components/schemas/System.Int32"
+          },
+          "remainingToday": {
+            "$ref": "#/components/schemas/System.Int32"
+          }
+        },
+        "description": "Tier is \"Free\" or \"Premium\"; remainingToday = min(daily left, monthly left)."
+      },
+      "Quizymode.Api.Features.StudyGuideDocuments.StudyGuideDocumentContracts.Section": {
+        "required": [
+          "id",
+          "index",
+          "label",
+          "pageStart",
+          "pageEnd",
+          "preview",
+          "sizeBytes",
+          "textExpired",
+          "status",
+          "cached",
+          "notBeforeUtc",
+          "error",
+          "droppedCount",
+          "candidates"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "$ref": "#/components/schemas/System.String"
+          },
+          "index": {
+            "$ref": "#/components/schemas/System.Int32"
+          },
+          "label": {
+            "$ref": "#/components/schemas/System.String"
+          },
+          "pageStart": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/components/schemas/System.NullableOfSystem.Int32"
+              }
+            ]
+          },
+          "pageEnd": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/components/schemas/System.NullableOfSystem.Int32"
+              }
+            ]
+          },
+          "preview": {
+            "$ref": "#/components/schemas/System.String"
+          },
+          "sizeBytes": {
+            "$ref": "#/components/schemas/System.Int32"
+          },
+          "textExpired": {
+            "$ref": "#/components/schemas/System.Boolean"
+          },
+          "status": {
+            "$ref": "#/components/schemas/System.String"
+          },
+          "cached": {
+            "$ref": "#/components/schemas/System.Boolean"
+          },
+          "notBeforeUtc": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/components/schemas/System.NullableOfSystem.DateTime"
+              }
+            ]
+          },
+          "error": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/components/schemas/System.String"
+              }
+            ]
+          },
+          "droppedCount": {
+            "$ref": "#/components/schemas/System.Int32"
+          },
+          "candidates": {
+            "$ref": "#/components/schemas/System.Collections.Generic.ListOfQuizymode.Api.Features.StudyGuideDocuments.StudyGuideDocumentContracts.Candidate"
+          }
+        },
+        "description": "Status: New | Queued | Processing | Generated | Failed. Candidates are listed only when Generated."
+      },
       "Quizymode.Api.Features.StudyGuideImport.CreateImportSession.Request": {
         "required": [
           "categoryName",
@@ -14711,6 +15802,24 @@
           "$ref": "#/components/schemas/Quizymode.Api.Features.Admin.AdminFeedback.FeedbackResponse"
         }
       },
+      "System.Collections.Generic.ListOfQuizymode.Api.Features.Admin.AdminLlmProviders.AttemptResponse": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/Quizymode.Api.Features.Admin.AdminLlmProviders.AttemptResponse"
+        }
+      },
+      "System.Collections.Generic.ListOfQuizymode.Api.Features.Admin.AdminLlmProviders.VendorModel": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/Quizymode.Api.Features.Admin.AdminLlmProviders.VendorModel"
+        }
+      },
+      "System.Collections.Generic.ListOfQuizymode.Api.Features.Admin.AdminLlmProviders.VendorResponse": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/Quizymode.Api.Features.Admin.AdminLlmProviders.VendorResponse"
+        }
+      },
       "System.Collections.Generic.ListOfQuizymode.Api.Features.Admin.AdminUsersActivity.UserOverviewResponse": {
         "type": "array",
         "items": {
@@ -15107,6 +16216,30 @@
           "$ref": "#/components/schemas/Quizymode.Api.Features.Keywords.GetKeywords.KeywordResponse"
         }
       },
+      "System.Collections.Generic.ListOfQuizymode.Api.Features.StudyGuideDocuments.AcceptStudyGuideCandidates.CandidateEdit": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/Quizymode.Api.Features.StudyGuideDocuments.AcceptStudyGuideCandidates.CandidateEdit"
+        }
+      },
+      "System.Collections.Generic.ListOfQuizymode.Api.Features.StudyGuideDocuments.StudyGuideDocumentContracts.Candidate": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/Quizymode.Api.Features.StudyGuideDocuments.StudyGuideDocumentContracts.Candidate"
+        }
+      },
+      "System.Collections.Generic.ListOfQuizymode.Api.Features.StudyGuideDocuments.StudyGuideDocumentContracts.DocumentSummary": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/Quizymode.Api.Features.StudyGuideDocuments.StudyGuideDocumentContracts.DocumentSummary"
+        }
+      },
+      "System.Collections.Generic.ListOfQuizymode.Api.Features.StudyGuideDocuments.StudyGuideDocumentContracts.Section": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/Quizymode.Api.Features.StudyGuideDocuments.StudyGuideDocumentContracts.Section"
+        }
+      },
       "System.Collections.Generic.ListOfQuizymode.Api.Features.StudyGuideImport.GenerateChunks.ChunkInfo": {
         "type": "array",
         "items": {
@@ -15302,6 +16435,9 @@
     },
     {
       "name": "Ratings"
+    },
+    {
+      "name": "StudyGuideDocuments"
     },
     {
       "name": "StudyGuideImport"

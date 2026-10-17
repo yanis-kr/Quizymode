@@ -1,0 +1,385 @@
+using FluentValidation;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Options;
+using Quizymode.Api.Data;
+using Quizymode.Api.Features.Items.AddBulk;
+using Quizymode.Api.Services;
+using Quizymode.Api.Services.Taxonomy;
+using Quizymode.Api.Shared.Kernel;
+using Quizymode.Api.Shared.Models;
+using Quizymode.Api.Shared.Options;
+
+namespace Quizymode.Api.Features.StudyGuideDocuments;
+
+/// <summary>
+/// POST /study-guides/documents/{id}/accept: save selected (optionally edited) generated questions as the owner's private
+/// items through the standard bulk item-creation path, and add them to the document's collection. The first accept
+/// creates the collection (link access on, not listed in Discover). Already-saved candidates are skipped.
+/// </summary>
+public static class AcceptStudyGuideCandidates
+{
+    public const int MaxCandidatesPerRequest = 200;
+    public const int MaxCollectionNameLength = 200;
+    public const int MaxCollectionDescriptionLength = 2000;
+    public const int MaxExplanationLength = 4000;
+
+    public sealed record CandidateEdit(
+        Guid Id,
+        string? Question,
+        string? CorrectAnswer,
+        List<string>? IncorrectAnswers,
+        string? Explanation);
+
+    public sealed record Request(List<CandidateEdit>? Candidates);
+
+    public sealed record Response(
+        string CollectionId,
+        int CreatedCount,
+        int DuplicateCount,
+        int FailedCount,
+        List<string> ItemIds);
+
+    public sealed class Validator : AbstractValidator<Request>
+    {
+        public Validator()
+        {
+            RuleFor(x => x.Candidates)
+                .NotNull()
+                .WithMessage("Select at least one question.")
+                .Must(candidates => candidates is not null && candidates.Count is > 0 and <= MaxCandidatesPerRequest)
+                .WithMessage($"Select between 1 and {MaxCandidatesPerRequest} questions.");
+
+            RuleForEach(x => x.Candidates).ChildRules(candidate =>
+            {
+                candidate.RuleFor(c => c.Id).NotEmpty().WithMessage("Candidate id is required.");
+                candidate.RuleFor(c => c.Question)
+                    .NotEmpty().WithMessage("Question cannot be empty.")
+                    .MaximumLength(1000).WithMessage("Question must not exceed 1000 characters.")
+                    .When(c => c.Question is not null);
+                candidate.RuleFor(c => c.CorrectAnswer)
+                    .NotEmpty().WithMessage("Correct answer cannot be empty.")
+                    .MaximumLength(500).WithMessage("Correct answer must not exceed 500 characters.")
+                    .When(c => c.CorrectAnswer is not null);
+                candidate.RuleFor(c => c.IncorrectAnswers)
+                    .Must(answers => answers is not null && answers.Count is >= 1 and <= 4)
+                    .WithMessage("Provide 1 to 4 incorrect answers.")
+                    .When(c => c.IncorrectAnswers is not null);
+                candidate.RuleForEach(c => c.IncorrectAnswers)
+                    .NotEmpty().WithMessage("Incorrect answers cannot be empty.")
+                    .MaximumLength(500).WithMessage("Each incorrect answer must not exceed 500 characters.");
+                candidate.RuleFor(c => c.Explanation)
+                    .MaximumLength(3500).WithMessage("Explanation must not exceed 3500 characters.")
+                    .When(c => c.Explanation is not null);
+            });
+        }
+    }
+
+    public sealed class Endpoint : IEndpoint
+    {
+        public void MapEndpoint(IEndpointRouteBuilder app)
+        {
+            app.MapPost("study-guides/documents/{id:guid}/accept", Handler)
+                .WithTags("StudyGuideDocuments")
+                .WithSummary("Save selected generated questions as my private items and add them to the study guide's collection")
+                .RequireAuthorization()
+                .Produces<Response>(StatusCodes.Status200OK)
+                .Produces(StatusCodes.Status400BadRequest)
+                .Produces(StatusCodes.Status401Unauthorized)
+                .Produces(StatusCodes.Status404NotFound);
+        }
+
+        private static async Task<IResult> Handler(
+            Guid id,
+            Request request,
+            IValidator<Request> validator,
+            ApplicationDbContext db,
+            IUserContext userContext,
+            ISimHashService simHashService,
+            ITaxonomyItemCategoryResolver itemCategoryResolver,
+            ITaxonomyRegistry taxonomyRegistry,
+            IAuditService auditService,
+            ITextModerationService moderation,
+            IOptions<StudyGuideDocumentOptions> documentOptions,
+            TimeProvider timeProvider,
+            CancellationToken cancellationToken)
+        {
+            if (!userContext.IsAuthenticated || string.IsNullOrEmpty(userContext.UserId))
+            {
+                return Results.Unauthorized();
+            }
+
+            FluentValidation.Results.ValidationResult validation = await validator.ValidateAsync(request, cancellationToken);
+            if (!validation.IsValid)
+            {
+                return Results.BadRequest(validation.Errors);
+            }
+
+            Result<Response?> result = await HandleAsync(
+                id,
+                request,
+                db,
+                userContext,
+                simHashService,
+                itemCategoryResolver,
+                taxonomyRegistry,
+                auditService,
+                moderation,
+                documentOptions.Value.RetentionDays,
+                timeProvider.GetUtcNow().UtcDateTime,
+                cancellationToken);
+
+            return result.Match(
+                value => value is null ? Results.NotFound() : Results.Ok(value),
+                _ => StudyGuideDocumentResults.Problem(result));
+        }
+    }
+
+    internal static async Task<Result<Response?>> HandleAsync(
+        Guid id,
+        Request request,
+        ApplicationDbContext db,
+        IUserContext userContext,
+        ISimHashService simHashService,
+        ITaxonomyItemCategoryResolver itemCategoryResolver,
+        ITaxonomyRegistry taxonomyRegistry,
+        IAuditService auditService,
+        ITextModerationService moderation,
+        int retentionDays,
+        DateTime nowUtc,
+        CancellationToken cancellationToken)
+    {
+        string userId = userContext.UserId!;
+        StudyGuideDocument? document = await db.StudyGuideDocuments
+            .FirstOrDefaultAsync(d => d.Id == id && d.UserId == userId, cancellationToken);
+        if (document is null)
+        {
+            return Result.Success<Response?>(null);
+        }
+
+        Dictionary<Guid, CandidateEdit> edits = (request.Candidates ?? [])
+            .GroupBy(edit => edit.Id)
+            .ToDictionary(group => group.Key, group => group.Last());
+        List<Guid> candidateIds = edits.Keys.ToList();
+
+        var sectionsByGeneration = (await db.StudyGuideSections
+                .AsNoTracking()
+                .Where(section => section.DocumentId == document.Id && section.GenerationId != null)
+                .Select(section => new { GenerationId = section.GenerationId!.Value, section.Label, section.Index })
+                .ToListAsync(cancellationToken))
+            .GroupBy(section => section.GenerationId)
+            .ToDictionary(group => group.Key, group => group.OrderBy(section => section.Index).Select(section => (section.Label, section.Index)).First());
+        List<Guid> generationIds = sectionsByGeneration.Keys.ToList();
+
+        List<GenerationCandidate> candidates = await db.GenerationCandidates
+            .AsNoTracking()
+            .Where(candidate => candidateIds.Contains(candidate.Id) && generationIds.Contains(candidate.GenerationId))
+            .ToListAsync(cancellationToken);
+        if (candidates.Count != candidateIds.Count)
+        {
+            return Result.Failure<Response?>(StudyGuideDocumentErrors.InvalidCandidates);
+        }
+
+        HashSet<Guid> alreadyAccepted = (await db.StudyGuideAcceptedCandidates
+                .AsNoTracking()
+                .Where(accepted => accepted.DocumentId == document.Id && candidateIds.Contains(accepted.CandidateId))
+                .Select(accepted => accepted.CandidateId)
+                .ToListAsync(cancellationToken))
+            .ToHashSet();
+
+        int duplicateCount = alreadyAccepted.Count;
+        List<(GenerationCandidate Candidate, AddItemsBulk.ItemRequest Item)> pending = [];
+        HashSet<string> seenQuestions = new(StringComparer.OrdinalIgnoreCase);
+        List<string> invalid = [];
+        AddItemsBulk.ItemRequestValidator itemValidator = new();
+
+        foreach (GenerationCandidate candidate in candidates.OrderBy(c => sectionsByGeneration[c.GenerationId].Index).ThenBy(c => c.Index))
+        {
+            if (alreadyAccepted.Contains(candidate.Id))
+            {
+                continue;
+            }
+
+            CandidateEdit edit = edits[candidate.Id];
+            string question = (edit.Question ?? candidate.Question).Trim();
+            string correctAnswer = (edit.CorrectAnswer ?? candidate.CorrectAnswer).Trim();
+            List<string> incorrectAnswers = (edit.IncorrectAnswers ?? GetStudyGuideDocument.ReadAnswers(candidate.IncorrectAnswersJson))
+                .Select(answer => answer.Trim())
+                .ToList();
+            string baseExplanation = (edit.Explanation ?? candidate.Explanation).Trim();
+
+            List<string?> moderated = [question, correctAnswer, baseExplanation];
+            moderated.AddRange(incorrectAnswers);
+            if (moderation.Evaluate(moderated.ToArray()).Outcome == TextModerationOutcome.Blocked)
+            {
+                return Result.Failure<Response?>(Error.Validation(
+                    StudyGuideDocumentErrors.ProfanityBlocked.Code,
+                    "One or more questions contain blocked language. Edit them and try again."));
+            }
+
+            string explanation = BuildExplanation(baseExplanation, document.Title, sectionsByGeneration[candidate.GenerationId].Label);
+            AddItemsBulk.ItemRequest item = new(question, correctAnswer, incorrectAnswers, explanation);
+            FluentValidation.Results.ValidationResult itemValidation = itemValidator.Validate(item);
+            if (!itemValidation.IsValid)
+            {
+                invalid.Add($"\"{Truncate(question, 60)}\": {itemValidation.Errors[0].ErrorMessage}");
+                continue;
+            }
+
+            if (!seenQuestions.Add(question))
+            {
+                duplicateCount++;
+                continue;
+            }
+
+            pending.Add((candidate, item));
+        }
+
+        if (invalid.Count > 0)
+        {
+            return Result.Failure<Response?>(Error.Validation(
+                "StudyGuideDocument.InvalidEdit",
+                string.Join(" ", invalid.Take(5))));
+        }
+
+        int createdCount = 0;
+        int failedCount = 0;
+        List<Guid> createdIds = [];
+        if (pending.Count > 0)
+        {
+            List<AddItemsBulk.KeywordRequest> keywords = GetStudyGuideDocument.ReadKeywords(document)
+                .Select(keyword => new AddItemsBulk.KeywordRequest(keyword, true))
+                .ToList();
+            AddItemsBulk.Request bulkRequest = new(
+                IsPrivate: true,
+                Category: document.CategoryName,
+                Keyword1: document.NavigationKeyword1,
+                Keyword2: document.NavigationKeyword2,
+                Keywords: keywords,
+                Items: pending.Select(entry => entry.Item).ToList(),
+                UploadId: document.Id);
+
+            Result<AddItemsBulk.Response> bulkResult = await AddItemsBulkHandler.HandleAsync(
+                bulkRequest,
+                db,
+                simHashService,
+                userContext,
+                itemCategoryResolver,
+                taxonomyRegistry,
+                auditService,
+                cancellationToken);
+            if (bulkResult.IsFailure)
+            {
+                return Result.Failure<Response?>(bulkResult.Error);
+            }
+
+            AddItemsBulk.Response bulk = bulkResult.Value;
+            createdCount = bulk.CreatedCount;
+            failedCount = bulk.FailedCount;
+            duplicateCount += bulk.DuplicateCount;
+            createdIds = bulk.CreatedItemIds ?? [];
+        }
+
+        Dictionary<string, Guid> createdByQuestion = createdIds.Count == 0
+            ? []
+            : (await db.Items
+                    .AsNoTracking()
+                    .Where(item => createdIds.Contains(item.Id))
+                    .Select(item => new { item.Id, item.Question })
+                    .ToListAsync(cancellationToken))
+                .GroupBy(item => item.Question, StringComparer.Ordinal)
+                .ToDictionary(group => group.Key, group => group.First().Id, StringComparer.Ordinal);
+
+        foreach ((GenerationCandidate candidate, AddItemsBulk.ItemRequest item) in pending)
+        {
+            if (createdByQuestion.TryGetValue(item.Question, out Guid itemId))
+            {
+                db.StudyGuideAcceptedCandidates.Add(new StudyGuideAcceptedCandidate
+                {
+                    DocumentId = document.Id,
+                    CandidateId = candidate.Id,
+                    ItemId = itemId,
+                    AcceptedUtc = nowUtc
+                });
+            }
+        }
+
+        Collection collection = await EnsureCollectionAsync(db, document, userId, nowUtc, cancellationToken);
+        HashSet<Guid> inCollection = (await db.CollectionItems
+                .AsNoTracking()
+                .Where(ci => ci.CollectionId == collection.Id && createdIds.Contains(ci.ItemId))
+                .Select(ci => ci.ItemId)
+                .ToListAsync(cancellationToken))
+            .ToHashSet();
+        foreach (Guid itemId in createdIds.Where(itemId => !inCollection.Contains(itemId)))
+        {
+            db.CollectionItems.Add(new CollectionItem
+            {
+                Id = Guid.NewGuid(),
+                CollectionId = collection.Id,
+                ItemId = itemId,
+                AddedAt = nowUtc
+            });
+        }
+
+        if (createdIds.Count > 0)
+        {
+            collection.UpdatedAt = nowUtc;
+        }
+
+        document.CollectionId = collection.Id;
+        document.LastActivityUtc = nowUtc;
+        document.ExpiresUtc = nowUtc.AddDays(Math.Max(1, retentionDays));
+        await db.SaveChangesAsync(cancellationToken);
+
+        return Result.Success<Response?>(new Response(
+            collection.Id.ToString(),
+            createdCount,
+            duplicateCount,
+            failedCount,
+            createdIds.Select(itemId => itemId.ToString()).ToList()));
+    }
+
+    /// <summary>The document's collection if it still exists and is owned by the user; otherwise a new one.</summary>
+    private static async Task<Collection> EnsureCollectionAsync(
+        ApplicationDbContext db,
+        StudyGuideDocument document,
+        string userId,
+        DateTime nowUtc,
+        CancellationToken cancellationToken)
+    {
+        if (document.CollectionId is Guid collectionId)
+        {
+            Collection? existing = await db.Collections
+                .FirstOrDefaultAsync(c => c.Id == collectionId && c.CreatedBy == userId, cancellationToken);
+            if (existing is not null)
+            {
+                return existing;
+            }
+        }
+
+        Collection collection = new()
+        {
+            Id = Guid.NewGuid(),
+            IsRepoManaged = false,
+            Name = Truncate(document.Title, MaxCollectionNameLength),
+            Description = Truncate($"Generated from study guide {document.Title}", MaxCollectionDescriptionLength),
+            CreatedBy = userId,
+            CreatedAt = nowUtc,
+            IsPublic = true,
+            IsDiscoverable = false
+        };
+        db.Collections.Add(collection);
+        return collection;
+    }
+
+    internal static string BuildExplanation(string explanation, string title, string label)
+    {
+        string suffix = $"\n\nFrom \"{title}\", {label}";
+        int room = MaxExplanationLength - suffix.Length;
+        string body = explanation.Length <= room ? explanation : explanation[..Math.Max(0, room)].TrimEnd();
+        return body.Length == 0 ? suffix.TrimStart('\n') : body + suffix;
+    }
+
+    private static string Truncate(string value, int maxLength) =>
+        value.Length <= maxLength ? value : value[..maxLength].TrimEnd();
+}

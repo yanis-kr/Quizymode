@@ -1,79 +1,75 @@
 import * as React from "react";
-import { isAxiosError } from "axios";
-import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
-import { Link, Navigate, useSearchParams } from "react-router-dom";
+import { useMutation, useQuery } from "@tanstack/react-query";
+import { Link, Navigate, useNavigate, useSearchParams } from "react-router-dom";
 import { useAuth } from "@/contexts/AuthContext";
 import { categoriesApi } from "@/api/categories";
 import { keywordsApi } from "@/api/keywords";
-import {
-  studyGuideUploadsApi,
-  type AcceptStudyGuideUploadResponse,
-  type CreateStudyGuideUploadRequest,
-  type StudyGuideUploadResponse,
-} from "@/api/studyGuideUploads";
+import { studyGuideDocumentsApi, type CreateStudyGuideDocumentRequest } from "@/api/studyGuideDocuments";
 import LoadingSpinner from "@/components/LoadingSpinner";
 import ErrorMessage from "@/components/ErrorMessage";
 import { ItemTopicScopeFields } from "@/components/items/ItemTopicScopeFields";
 import ContentComplianceNotice from "@/features/legal/components/ContentComplianceNotice";
-import { buildCategoryPath, categoryNameToSlug } from "@/utils/categorySlug";
+import { parseKeywordsInput, utf8ByteLength } from "../studyGuideUploadSchema";
 import {
-  STUDY_GUIDE_UPLOAD_MAX_BYTES,
-  parseKeywordsInput,
-  utf8ByteLength,
-  validateStudyGuideUploadForm,
-} from "../studyGuideUploadSchema";
+  DEFAULT_DOCUMENT_LIMITS,
+  STUDY_GUIDE_TITLE_MAX_LENGTH,
+  formatBytes,
+  validateStudyGuideDocumentForm,
+  type StudyGuideDocumentLimits,
+  type StudyGuideInputMode,
+} from "../studyGuideDocumentSchema";
+import { readApiError } from "../studyGuideApiErrors";
+import { LegacyStudyGuideUploadResult } from "../components/LegacyStudyGuideUploadResult";
 
-const POLL_INTERVAL_MS = 2000;
-const UNAVAILABLE_MESSAGE =
-  "AI study guide upload is unavailable right now. Please try again later.";
+const UNAVAILABLE_MESSAGE = "AI study guide upload is unavailable right now. Please try again later.";
 
-function getUploadErrorMessage(error: unknown): string {
-  if (!isAxiosError(error)) {
-    return error instanceof Error && error.message ? error.message : "Something went wrong.";
+function getCreateErrorMessage(error: unknown, limits: StudyGuideDocumentLimits): string {
+  const info = readApiError(error);
+  if (info.status === 503) return UNAVAILABLE_MESSAGE;
+  if (info.status === 413) return `File is too large. The limit is ${formatBytes(limits.maxFileBytes)}.`;
+  if (info.status === 429) {
+    return "You have uploaded several study guides recently. Please wait a while and try again.";
   }
-
-  const status = error.response?.status;
-  if (status === 503) return UNAVAILABLE_MESSAGE;
-  if (status === 429) return "You have uploaded several study guides recently. Please wait a while and try again.";
-
-  const data: unknown = error.response?.data;
-  if (Array.isArray(data)) {
-    const first = data.find(
-      (entry): entry is { errorMessage: string } =>
-        !!entry && typeof entry === "object" && typeof (entry as { errorMessage?: unknown }).errorMessage === "string"
-    );
-    if (first) return first.errorMessage;
-  }
-  if (data && typeof data === "object") {
-    const detail = (data as { detail?: unknown }).detail;
-    if (typeof detail === "string" && detail.trim()) return detail;
-  }
-  return error.message || "Something went wrong.";
+  return info.message;
 }
+
+const TABS: Array<{ id: StudyGuideInputMode; label: string }> = [
+  { id: "file", label: "Upload file" },
+  { id: "text", label: "Paste text" },
+];
 
 const StudyGuideUploadPage = () => {
   const { isAuthenticated } = useAuth();
-  const queryClient = useQueryClient();
+  const navigate = useNavigate();
   const [searchParams, setSearchParams] = useSearchParams();
-  const uploadId = searchParams.get("id")?.trim() ?? "";
+  const legacyUploadId = searchParams.get("id")?.trim() ?? "";
 
+  const [mode, setMode] = React.useState<StudyGuideInputMode>("file");
+  const [file, setFile] = React.useState<File | null>(null);
+  const [isDragging, setIsDragging] = React.useState(false);
   const [text, setText] = React.useState("");
+  const [title, setTitle] = React.useState("");
   const [categoryName, setCategoryName] = React.useState("");
   const [rank1Name, setRank1Name] = React.useState("");
   const [rank2Name, setRank2Name] = React.useState("");
   const [keywordsText, setKeywordsText] = React.useState("");
   const [formError, setFormError] = React.useState<string | null>(null);
-  const [duplicateNotice, setDuplicateNotice] = React.useState(false);
   const [forcedUnavailable, setForcedUnavailable] = React.useState(false);
-  const [deselected, setDeselected] = React.useState<Set<number>>(new Set());
-  const [acceptSummary, setAcceptSummary] = React.useState<AcceptStudyGuideUploadResponse | null>(null);
+  const tabRefs = React.useRef<Record<StudyGuideInputMode, HTMLButtonElement | null>>({ file: null, text: null });
 
   const { data: config, isLoading: isLoadingConfig } = useQuery({
-    queryKey: ["studyGuideUploads", "config"],
-    queryFn: () => studyGuideUploadsApi.getConfig(),
-    enabled: isAuthenticated,
+    queryKey: ["studyGuideDocuments", "config"],
+    queryFn: () => studyGuideDocumentsApi.getConfig(),
+    enabled: isAuthenticated && !legacyUploadId,
   });
-  const maxBytes = config?.maxTextBytes ?? STUDY_GUIDE_UPLOAD_MAX_BYTES;
+  const limits: StudyGuideDocumentLimits = {
+    maxFileBytes: config?.maxFileBytes ?? DEFAULT_DOCUMENT_LIMITS.maxFileBytes,
+    maxTextBytes: config?.maxTextBytes ?? DEFAULT_DOCUMENT_LIMITS.maxTextBytes,
+    acceptedExtensions:
+      config?.acceptedExtensions && config.acceptedExtensions.length > 0
+        ? config.acceptedExtensions
+        : DEFAULT_DOCUMENT_LIMITS.acceptedExtensions,
+  };
   const isEnabled = !!config?.enabled && !forcedUnavailable;
 
   const { data: categoriesData } = useQuery({
@@ -102,43 +98,19 @@ const StudyGuideUploadPage = () => {
   });
   const rank2Options = (rank2Data?.keywords ?? []).map((keyword) => keyword.name);
 
-  const {
-    data: upload,
-    isLoading: isLoadingUpload,
-    error: uploadError,
-  } = useQuery<StudyGuideUploadResponse>({
-    queryKey: ["studyGuideUploads", uploadId],
-    queryFn: () => studyGuideUploadsApi.get(uploadId),
-    enabled: isAuthenticated && !!uploadId,
-    refetchInterval: (query) =>
-      query.state.data?.status === "Pending" ? POLL_INTERVAL_MS : false,
-  });
-
   const createMutation = useMutation({
-    mutationFn: (request: CreateStudyGuideUploadRequest) => studyGuideUploadsApi.create(request),
-    onSuccess: (response) => {
-      setDuplicateNotice(response.isDuplicate);
-      setDeselected(new Set());
-      setAcceptSummary(null);
-      void queryClient.invalidateQueries({ queryKey: ["studyGuideUploads", response.id] });
-      setSearchParams({ id: response.id });
+    mutationFn: (request: CreateStudyGuideDocumentRequest) => studyGuideDocumentsApi.create(request),
+    onSuccess: (document) => {
+      navigate(`/study-guides/documents/${encodeURIComponent(document.id)}`, {
+        state: { isDuplicate: document.isDuplicate },
+      });
     },
     onError: (error) => {
-      if (isAxiosError(error) && error.response?.status === 503) {
+      if (readApiError(error).status === 503) {
         setForcedUnavailable(true);
       }
-      setFormError(getUploadErrorMessage(error));
+      setFormError(getCreateErrorMessage(error, limits));
     },
-  });
-
-  const acceptMutation = useMutation({
-    mutationFn: ({ id, indexes }: { id: string; indexes: number[] }) =>
-      studyGuideUploadsApi.accept(id, indexes),
-    onSuccess: (response) => {
-      setAcceptSummary(response);
-      void queryClient.invalidateQueries({ queryKey: ["studyGuideUploads", uploadId] });
-    },
-    onError: (error) => setFormError(getUploadErrorMessage(error)),
   });
 
   if (!isAuthenticated) {
@@ -146,184 +118,63 @@ const StudyGuideUploadPage = () => {
   }
 
   const byteCount = utf8ByteLength(text);
-  const overLimit = byteCount > maxBytes;
+  const textOverLimit = byteCount > limits.maxTextBytes;
+  const fileOverLimit = !!file && file.size > limits.maxFileBytes;
+  const submitBlocked = mode === "text" ? textOverLimit : fileOverLimit;
+
+  const chooseFile = (candidate: File | null) => {
+    setFile(candidate);
+    setFormError(null);
+  };
 
   const handleSubmit = (event: React.FormEvent) => {
     event.preventDefault();
     setFormError(null);
     const form = {
-      text,
+      mode,
+      file: mode === "file" ? file : null,
+      text: mode === "text" ? text : "",
+      title,
       category: categoryName,
       navigationKeyword1: rank1Name,
       navigationKeyword2: rank2Name,
       keywords: parseKeywordsInput(keywordsText),
     };
-    const validationError = validateStudyGuideUploadForm(form, maxBytes);
+    const validationError = validateStudyGuideDocumentForm(form, limits);
     if (validationError) {
       setFormError(validationError);
       return;
     }
-    createMutation.mutate(form);
-  };
-
-  const startOver = () => {
-    setSearchParams({});
-    setDuplicateNotice(false);
-    setAcceptSummary(null);
-    setDeselected(new Set());
-    setFormError(null);
-  };
-
-  const toggleQuestion = (index: number) => {
-    setDeselected((current) => {
-      const next = new Set(current);
-      if (next.has(index)) next.delete(index);
-      else next.add(index);
-      return next;
+    createMutation.mutate({
+      file: form.file,
+      text: form.mode === "text" ? form.text : null,
+      title: title.trim() || null,
+      category: form.category,
+      navigationKeyword1: form.navigationKeyword1,
+      navigationKeyword2: form.navigationKeyword2,
+      keywords: form.keywords,
     });
   };
 
-  const renderResult = () => {
-    if (isLoadingUpload) return <LoadingSpinner />;
-    if (uploadError || !upload) {
-      return (
-        <div className="space-y-3">
-          <ErrorMessage message="This upload could not be found." />
-          <button type="button" onClick={startOver} className="text-sm font-medium text-indigo-600 hover:text-indigo-800">
-            Start a new upload
-          </button>
-        </div>
-      );
-    }
-
-    if (upload.status === "Pending") {
-      return (
-        <div role="status" className="rounded-lg bg-white p-6 shadow text-center space-y-3">
-          <LoadingSpinner />
-          <p className="text-sm font-medium text-gray-900">Generating questions…</p>
-          <p className="text-xs text-gray-500">
-            This usually takes under a minute. You can leave this page and come back with the same link.
-          </p>
-        </div>
-      );
-    }
-
-    if (upload.status === "Failed") {
-      return (
-        <div className="space-y-3">
-          <ErrorMessage message={upload.error || "Question generation failed."} />
-          <p className="text-sm text-gray-600">
-            Submitting the same text again will retry generation.
-          </p>
-          <button type="button" onClick={startOver} className="rounded-md bg-indigo-600 px-4 py-2 text-sm font-medium text-white hover:bg-indigo-700">
-            Try again
-          </button>
-        </div>
-      );
-    }
-
-    const selectedIndexes = upload.questions
-      .map((_, index) => index)
-      .filter((index) => !deselected.has(index));
-    const categoryPath = buildCategoryPath(categoryNameToSlug(upload.category), [
-      upload.navigationKeyword1,
-      upload.navigationKeyword2,
-    ]);
-    const accepted = !!upload.acceptedUtc || !!acceptSummary;
-
-    return (
-      <div className="space-y-4">
-        <div className="flex flex-wrap items-center justify-between gap-2">
-          <h2 className="text-lg font-semibold text-gray-900">
-            {upload.questions.length} generated question{upload.questions.length === 1 ? "" : "s"}
-          </h2>
-          <span className="text-xs text-gray-500">
-            {upload.category} / {upload.navigationKeyword1} / {upload.navigationKeyword2}
-          </span>
-        </div>
-
-        {accepted ? (
-          <div className="rounded-md bg-green-50 p-4 text-sm text-green-800" role="status">
-            {acceptSummary
-              ? `Added ${acceptSummary.createdCount} item${acceptSummary.createdCount === 1 ? "" : "s"} to your private items` +
-                (acceptSummary.duplicateCount > 0 ? ` (${acceptSummary.duplicateCount} duplicate${acceptSummary.duplicateCount === 1 ? "" : "s"} skipped)` : "") +
-                "."
-              : `These questions were already added to your private items (${upload.createdItemCount ?? 0} created).`}{" "}
-            <Link to={categoryPath} className="font-medium underline">
-              View topic
-            </Link>
-          </div>
-        ) : (
-          <p className="text-sm text-gray-600">
-            Review the questions for accuracy. Uncheck any you do not want, then add the rest as private items.
-          </p>
-        )}
-
-        <ol className="space-y-3">
-          {upload.questions.map((question, index) => (
-            <li key={index} className="rounded-lg border border-gray-200 bg-white p-4 shadow-sm">
-              <label className="flex items-start gap-3">
-                {!accepted && (
-                  <input
-                    type="checkbox"
-                    className="mt-1 h-4 w-4"
-                    checked={!deselected.has(index)}
-                    onChange={() => toggleQuestion(index)}
-                    aria-label={`Include question ${index + 1}`}
-                  />
-                )}
-                <div className="min-w-0 flex-1 space-y-2">
-                  <p className="text-sm font-medium text-gray-900">
-                    {index + 1}. {question.question}
-                  </p>
-                  <ul className="space-y-1 text-sm">
-                    <li className="text-green-700">✓ {question.correctAnswer}</li>
-                    {question.incorrectAnswers.map((answer, answerIndex) => (
-                      <li key={answerIndex} className="text-gray-600">
-                        ✗ {answer}
-                      </li>
-                    ))}
-                  </ul>
-                  {question.explanation && (
-                    <p className="text-xs text-gray-500">{question.explanation}</p>
-                  )}
-                </div>
-              </label>
-            </li>
-          ))}
-        </ol>
-
-        <div className="flex flex-wrap gap-3">
-          {!accepted && (
-            <button
-              type="button"
-              disabled={selectedIndexes.length === 0 || acceptMutation.isPending}
-              onClick={() => acceptMutation.mutate({ id: upload.id, indexes: selectedIndexes })}
-              className="rounded-md bg-indigo-600 px-4 py-2 text-sm font-medium text-white hover:bg-indigo-700 disabled:opacity-50"
-            >
-              {acceptMutation.isPending
-                ? "Adding…"
-                : `Add ${selectedIndexes.length} selected to my items`}
-            </button>
-          )}
-          <button
-            type="button"
-            onClick={startOver}
-            className="rounded-md border border-gray-300 bg-white px-4 py-2 text-sm font-medium text-gray-700 hover:bg-gray-50"
-          >
-            Upload another study guide
-          </button>
-        </div>
-      </div>
-    );
+  const handleTabKeyDown = (event: React.KeyboardEvent<HTMLButtonElement>) => {
+    if (event.key !== "ArrowRight" && event.key !== "ArrowLeft") return;
+    event.preventDefault();
+    const next: StudyGuideInputMode = mode === "file" ? "text" : "file";
+    setMode(next);
+    tabRefs.current[next]?.focus();
   };
 
   return (
     <div className="px-4 py-6 sm:px-0 max-w-3xl mx-auto">
-      <h1 className="text-2xl font-bold text-gray-900 mb-1">Generate Quiz from Study Guide</h1>
+      <div className="mb-1 flex flex-wrap items-baseline justify-between gap-2">
+        <h1 className="text-2xl font-bold text-gray-900">Generate Quiz from Study Guide</h1>
+        <Link to="/study-guides/documents" className="text-sm font-medium text-indigo-600 hover:text-indigo-800">
+          My study guides
+        </Link>
+      </div>
       <p className="text-gray-600 text-sm mb-4">
-        Paste up to {Math.round(maxBytes / 1024)} KB of notes and get up to {config?.maxQuestions ?? 20}{" "}
-        multiple-choice questions generated by AI. You review them before anything is saved.
+        Upload a PDF, Word, PowerPoint, or text file (or paste notes). You pick which pages to turn into
+        multiple-choice questions, and you review every question before anything is saved.
       </p>
 
       <ContentComplianceNotice />
@@ -334,17 +185,10 @@ const StudyGuideUploadPage = () => {
         </div>
       )}
 
-      {isLoadingConfig ? (
+      {legacyUploadId ? (
+        <LegacyStudyGuideUploadResult uploadId={legacyUploadId} onStartOver={() => setSearchParams({})} />
+      ) : isLoadingConfig ? (
         <LoadingSpinner />
-      ) : uploadId ? (
-        <>
-          {duplicateNotice && (
-            <div className="mb-4 rounded-md bg-blue-50 p-3 text-sm text-blue-800" role="status">
-              You already uploaded this study guide, so here is the existing result.
-            </div>
-          )}
-          {renderResult()}
-        </>
       ) : !isEnabled ? (
         <div className="rounded-lg border border-gray-200 bg-white p-6 shadow-sm space-y-2" role="status">
           <h2 className="text-sm font-semibold text-gray-900">Feature unavailable</h2>
@@ -353,6 +197,10 @@ const StudyGuideUploadPage = () => {
             You can still{" "}
             <Link to="/study-guide" className="font-medium text-indigo-600 hover:text-indigo-800">
               build sets from a study guide manually
+            </Link>{" "}
+            or open{" "}
+            <Link to="/study-guides/documents" className="font-medium text-indigo-600 hover:text-indigo-800">
+              your earlier study guides
             </Link>
             .
           </p>
@@ -360,25 +208,121 @@ const StudyGuideUploadPage = () => {
       ) : (
         <form onSubmit={handleSubmit} className="space-y-5 bg-white p-4 rounded-lg shadow" noValidate>
           <div>
-            <label htmlFor="study-guide-upload-text" className="block text-sm font-medium text-gray-700 mb-1">
-              Study guide text *
+            <div role="tablist" aria-label="Study guide source" className="flex gap-1 border-b border-gray-200">
+              {TABS.map((tab) => (
+                <button
+                  key={tab.id}
+                  ref={(element) => {
+                    tabRefs.current[tab.id] = element;
+                  }}
+                  type="button"
+                  role="tab"
+                  id={`study-guide-tab-${tab.id}`}
+                  aria-selected={mode === tab.id}
+                  aria-controls={`study-guide-panel-${tab.id}`}
+                  tabIndex={mode === tab.id ? 0 : -1}
+                  onClick={() => {
+                    setMode(tab.id);
+                    setFormError(null);
+                  }}
+                  onKeyDown={handleTabKeyDown}
+                  className={`-mb-px border-b-2 px-4 py-2 text-sm font-medium ${
+                    mode === tab.id
+                      ? "border-indigo-600 text-indigo-700"
+                      : "border-transparent text-gray-500 hover:text-gray-700"
+                  }`}
+                >
+                  {tab.label}
+                </button>
+              ))}
+            </div>
+
+            {mode === "file" ? (
+              <div role="tabpanel" id="study-guide-panel-file" aria-labelledby="study-guide-tab-file" className="pt-4">
+                <div
+                  onDragOver={(event) => {
+                    event.preventDefault();
+                    setIsDragging(true);
+                  }}
+                  onDragLeave={() => setIsDragging(false)}
+                  onDrop={(event) => {
+                    event.preventDefault();
+                    setIsDragging(false);
+                    chooseFile(event.dataTransfer.files?.[0] ?? null);
+                  }}
+                  className={`rounded-lg border-2 border-dashed p-6 text-center ${
+                    isDragging ? "border-indigo-500 bg-indigo-50" : "border-gray-300 bg-gray-50"
+                  }`}
+                  data-testid="study-guide-drop-zone"
+                >
+                  <p className="text-sm text-gray-700">Drag a file here, or</p>
+                  <label
+                    htmlFor="study-guide-file"
+                    className="mt-2 inline-block cursor-pointer rounded-md border border-gray-300 bg-white px-3 py-1.5 text-sm font-medium text-gray-700 hover:bg-gray-50 has-[:focus-visible]:ring-2 has-[:focus-visible]:ring-indigo-500"
+                  >
+                    Choose study guide file
+                    <input
+                      id="study-guide-file"
+                      type="file"
+                      accept={limits.acceptedExtensions.join(",")}
+                      className="sr-only"
+                      aria-describedby="study-guide-file-hint"
+                      onChange={(event) => chooseFile(event.target.files?.[0] ?? null)}
+                    />
+                  </label>
+                  <p id="study-guide-file-hint" className="mt-2 text-xs text-gray-500">
+                    {limits.acceptedExtensions.join(", ")} · up to {formatBytes(limits.maxFileBytes)}
+                    {config?.maxPages ? ` · up to ${config.maxPages} pages` : ""}. Scanned PDFs without selectable
+                    text are not supported yet.
+                  </p>
+                  {file && (
+                    <p
+                      className={`mt-3 text-sm ${fileOverLimit ? "font-medium text-red-600" : "text-gray-800"}`}
+                      data-testid="study-guide-selected-file"
+                    >
+                      Selected: {file.name} ({formatBytes(file.size)}){fileOverLimit ? " — too large" : ""}
+                    </p>
+                  )}
+                </div>
+              </div>
+            ) : (
+              <div role="tabpanel" id="study-guide-panel-text" aria-labelledby="study-guide-tab-text" className="pt-4">
+                <label htmlFor="study-guide-upload-text" className="block text-sm font-medium text-gray-700 mb-1">
+                  Study guide text *
+                </label>
+                <textarea
+                  id="study-guide-upload-text"
+                  value={text}
+                  onChange={(event) => setText(event.target.value)}
+                  rows={12}
+                  className="w-full rounded-md border border-gray-300 px-3 py-2 text-sm text-gray-900"
+                  placeholder="Paste your notes, a chapter summary, or a study guide…"
+                  aria-describedby="study-guide-upload-counter"
+                />
+                <p
+                  id="study-guide-upload-counter"
+                  className={`mt-1 text-xs ${textOverLimit ? "text-red-600 font-medium" : "text-gray-500"}`}
+                >
+                  {byteCount.toLocaleString()} / {limits.maxTextBytes.toLocaleString()} bytes
+                  {textOverLimit ? " — too long" : ""}
+                </p>
+              </div>
+            )}
+          </div>
+
+          <div>
+            <label htmlFor="study-guide-upload-title" className="block text-sm font-medium text-gray-700 mb-1">
+              Title (optional)
             </label>
-            <textarea
-              id="study-guide-upload-text"
-              value={text}
-              onChange={(event) => setText(event.target.value)}
-              rows={12}
+            <input
+              id="study-guide-upload-title"
+              type="text"
+              value={title}
+              maxLength={STUDY_GUIDE_TITLE_MAX_LENGTH}
+              onChange={(event) => setTitle(event.target.value)}
               className="w-full rounded-md border border-gray-300 px-3 py-2 text-sm text-gray-900"
-              placeholder="Paste your notes, a chapter summary, or a study guide…"
-              aria-describedby="study-guide-upload-counter"
+              placeholder="Defaults to the file name or the first line"
             />
-            <p
-              id="study-guide-upload-counter"
-              className={`mt-1 text-xs ${overLimit ? "text-red-600 font-medium" : "text-gray-500"}`}
-            >
-              {byteCount.toLocaleString()} / {maxBytes.toLocaleString()} bytes
-              {overLimit ? " — too long" : ""}
-            </p>
           </div>
 
           <ItemTopicScopeFields
@@ -425,10 +369,10 @@ const StudyGuideUploadPage = () => {
 
           <button
             type="submit"
-            disabled={createMutation.isPending || overLimit}
+            disabled={createMutation.isPending || submitBlocked}
             className="rounded-md bg-indigo-600 px-4 py-2 text-sm font-medium text-white hover:bg-indigo-700 disabled:opacity-50"
           >
-            {createMutation.isPending ? "Uploading…" : "Generate questions"}
+            {createMutation.isPending ? "Uploading…" : "Upload study guide"}
           </button>
         </form>
       )}

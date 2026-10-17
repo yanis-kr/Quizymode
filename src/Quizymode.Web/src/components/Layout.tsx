@@ -96,6 +96,10 @@ function getFallbackTitle(pathname: string): string | undefined {
     return "Generate Quiz";
   }
 
+  if (pathname === "/study-guides/documents" || pathname.startsWith("/study-guides/documents/")) {
+    return "My Study Guides";
+  }
+
   if (pathname === "/admin" || pathname.startsWith("/admin/")) {
     return "Admin";
   }
@@ -178,6 +182,10 @@ const Layout = ({ children }: LayoutProps) => {
     if (path === basePath) return true;
     if (path.startsWith(`${basePath}/`)) return true;
     // Treat explore/quiz collection routes as part of Collections
+    // Study guide documents belong to the Generate Quiz flow
+    if (basePath === "/study-guide/upload" && path.startsWith("/study-guides/")) {
+      return true;
+    }
     if (
       basePath === "/collections" &&
       (path.startsWith("/explore/collections/") || path.startsWith("/quiz/collections/"))

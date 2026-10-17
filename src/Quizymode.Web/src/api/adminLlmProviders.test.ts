@@ -1,0 +1,40 @@
+import { beforeEach, describe, expect, it, vi } from "vitest";
+import { adminLlmProvidersApi } from "./adminLlmProviders";
+
+const { mockGet, mockPut } = vi.hoisted(() => ({
+  mockGet: vi.fn(),
+  mockPut: vi.fn(),
+}));
+
+vi.mock("./client", () => ({
+  apiClient: {
+    get: mockGet,
+    put: mockPut,
+  },
+}));
+
+describe("adminLlmProvidersApi", () => {
+  beforeEach(() => vi.clearAllMocks());
+
+  it("get calls GET /admin/llm-providers", async () => {
+    mockGet.mockResolvedValueOnce({ data: { vendors: [] } });
+    await adminLlmProvidersApi.get();
+    expect(mockGet).toHaveBeenCalledWith("/admin/llm-providers");
+  });
+
+  it("update puts models and routes", async () => {
+    mockPut.mockResolvedValueOnce({ data: {} });
+    const request = {
+      vendors: [{ vendor: "Gemini" as const, model: "gemini-2.5-flash-lite" }],
+      routes: { free: ["Gemini" as const], premium: ["DeepSeek" as const] },
+    };
+    await adminLlmProvidersApi.update(request);
+    expect(mockPut).toHaveBeenCalledWith("/admin/llm-providers", request);
+  });
+
+  it("getAttempts passes the day window", async () => {
+    mockGet.mockResolvedValueOnce({ data: { attempts: [] } });
+    await adminLlmProvidersApi.getAttempts(30);
+    expect(mockGet).toHaveBeenCalledWith("/admin/llm-providers/attempts", { params: { days: 30 } });
+  });
+});

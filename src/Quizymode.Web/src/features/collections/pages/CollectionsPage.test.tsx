@@ -1,5 +1,5 @@
 import { beforeEach, describe, expect, it, vi } from "vitest";
-import { render, screen, waitFor } from "@testing-library/react";
+import { fireEvent, render, screen, waitFor } from "@testing-library/react";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { MemoryRouter } from "react-router-dom";
 import CollectionsPage from "./CollectionsPage";
@@ -9,6 +9,7 @@ const mockDiscover = vi.fn();
 const mockGetBookmarks = vi.fn();
 const mockGetSettings = vi.fn();
 const mockGetAllItems = vi.fn();
+const mockUpdate = vi.fn();
 
 vi.mock("@/api/collections", () => ({
   collectionsApi: {
@@ -18,7 +19,7 @@ vi.mock("@/api/collections", () => ({
     getBookmarkedBy: vi.fn().mockResolvedValue({ users: [] }),
     getRating: vi.fn().mockResolvedValue({ averageStars: null, count: 0 }),
     create: vi.fn(),
-    update: vi.fn(),
+    update: (...args: unknown[]) => mockUpdate(...args),
     delete: vi.fn(),
     bookmark: vi.fn(),
     unbookmark: vi.fn(),
@@ -133,6 +134,41 @@ describe("CollectionsPage", () => {
     await waitFor(() => {
       expect(screen.getByText("My AWS Collection")).toBeInTheDocument();
     });
+  });
+
+  it("edits link access and Discover listing together in the edit modal", async () => {
+    mockUseAuth.mockReturnValue({ isAuthenticated: true, userId: "u1", isAdmin: false });
+    mockUpdate.mockResolvedValue({});
+    mockGetAll.mockResolvedValue({
+      collections: [
+        {
+          id: "c1", name: "Shared Set", description: null, isPublic: true, isDiscoverable: true,
+          itemCount: 2, createdBy: "u1", createdAt: "2024-01-01T00:00:00Z",
+        },
+      ],
+    });
+
+    renderPage();
+
+    fireEvent.click(await screen.findByTitle("Edit collection"));
+    const linkAccess = screen.getByLabelText(/anyone with the link can view/i);
+    const discover = screen.getByLabelText(/list in discover/i);
+    expect(linkAccess).toBeChecked();
+    expect(discover).toBeChecked();
+
+    fireEvent.click(linkAccess);
+    expect(discover).not.toBeChecked();
+    expect(discover).toBeDisabled();
+
+    fireEvent.click(screen.getByRole("button", { name: /^save/i }));
+    await waitFor(() =>
+      expect(mockUpdate).toHaveBeenCalledWith("c1", {
+        name: "Shared Set",
+        description: null,
+        isPublic: false,
+        isDiscoverable: false,
+      })
+    );
   });
 
   it("renders Discover tab", async () => {

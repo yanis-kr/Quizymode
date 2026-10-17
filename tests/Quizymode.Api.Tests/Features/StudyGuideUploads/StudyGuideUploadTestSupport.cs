@@ -29,7 +29,7 @@ internal sealed class FakeDeepSeekHandler(Func<HttpRequestMessage, string, HttpR
         {
             id = "chatcmpl-test",
             @object = "chat.completion",
-            model = "deepseek-chat",
+            model = "deepseek-flash",
             choices = new object[]
             {
                 new

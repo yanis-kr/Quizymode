@@ -1,6 +1,7 @@
 using FluentValidation;
 using Microsoft.EntityFrameworkCore;
 using Quizymode.Api.Data;
+using Quizymode.Api.Shared.Helpers;
 using Quizymode.Api.Shared.Http;
 using Quizymode.Api.Shared.Kernel;
 using Quizymode.Api.Shared.Models;
@@ -26,6 +27,11 @@ public static class AdminUserSettings
             RuleFor(x => x.Value)
                 .NotNull()
                 .MaximumLength(500);
+
+            RuleFor(x => x)
+                .Must(request => StudyGuideSettingKeys.Validate(request.Key ?? string.Empty, request.Value) is null)
+                .WithName("Value")
+                .WithMessage(request => StudyGuideSettingKeys.Validate(request.Key ?? string.Empty, request.Value) ?? string.Empty);
         }
     }
 
@@ -143,13 +149,17 @@ public static class AdminUserSettings
                     Error.NotFound("Admin.UserNotFound", $"User with id {id} not found"));
             }
 
+            // Study guide keys are stored with their canonical casing so quota lookups find them.
+            string key = StudyGuideSettingKeys.Canonicalize(request.Key);
+            string value = StudyGuideSettingKeys.AdminOnly.Contains(key) ? request.Value.Trim() : request.Value;
+
             UserSetting? existing = await db.UserSettings
-                .FirstOrDefaultAsync(us => us.UserId == userId && us.Key == request.Key, cancellationToken);
+                .FirstOrDefaultAsync(us => us.UserId == userId && us.Key == key, cancellationToken);
 
             DateTime updatedAt;
             if (existing is not null)
             {
-                existing.Value = request.Value;
+                existing.Value = value;
                 existing.UpdatedAt = DateTime.UtcNow;
                 updatedAt = existing.UpdatedAt;
             }
@@ -159,8 +169,8 @@ public static class AdminUserSettings
                 UserSetting setting = new()
                 {
                     UserId = userId,
-                    Key = request.Key,
-                    Value = request.Value,
+                    Key = key,
+                    Value = value,
                     CreatedAt = now,
                     UpdatedAt = now
                 };
@@ -170,7 +180,7 @@ public static class AdminUserSettings
 
             await db.SaveChangesAsync(cancellationToken);
 
-            return Result.Success(new UpdateResponse(request.Key, request.Value, updatedAt));
+            return Result.Success(new UpdateResponse(key, value, updatedAt));
         }
         catch (Exception ex)
         {

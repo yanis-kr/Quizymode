@@ -428,7 +428,8 @@ internal sealed class DatabaseSeederHostedService(
                     Description = seedData.Description,
                     CreatedBy = SeederUserId,
                     CreatedAt = DateTime.UtcNow,
-                    IsPublic = true
+                    IsPublic = true,
+                    IsDiscoverable = true
                 };
                 await db.Collections.AddAsync(collection, cancellationToken);
             }
@@ -443,6 +444,7 @@ internal sealed class DatabaseSeederHostedService(
                 collection.Name = seedData.Name;
                 collection.Description = seedData.Description;
                 collection.IsPublic = true;
+                collection.IsDiscoverable = true;
                 collection.IsRepoManaged = true;
                 collection.UpdatedAt = DateTime.UtcNow;
             }

@@ -76,7 +76,16 @@ const AdminDashboardPage = () => {
         >
           <h3 className="text-lg font-medium text-gray-900 mb-2">Users &amp; Activity</h3>
           <p className="text-sm text-gray-500">
-            Browse registered users, inspect URL history, and update study guide limits
+            Browse registered users, inspect URL history, and update study guide limits and plans
+          </p>
+        </Link>
+        <Link
+          to="/admin/ai-providers"
+          className="bg-white shadow rounded-lg p-6 hover:shadow-lg transition-shadow cursor-pointer"
+        >
+          <h3 className="text-lg font-medium text-gray-900 mb-2">AI Providers</h3>
+          <p className="text-sm text-gray-500">
+            Models, vendor fallback order, monthly budget, and recent generation attempts
           </p>
         </Link>
         <Link

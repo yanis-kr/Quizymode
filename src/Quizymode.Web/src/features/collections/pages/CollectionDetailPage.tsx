@@ -17,6 +17,8 @@ import { usePageSize, PAGE_SIZE_OPTIONS } from "@/hooks/usePageSize";
 import { useShowAnswers } from "@/hooks/useShowAnswers";
 import { useListenAll } from "@/hooks/useListenAll";
 import { SpeakerWaveIcon, PauseIcon } from "@heroicons/react/24/outline";
+import { CollectionVisibilityToggles } from "../components/CollectionVisibilityToggles";
+import { ShareCollectionButton } from "../components/ShareCollectionButton";
 
 const CollectionDetailPage = () => {
   const { id } = useParams<{ id: string }>();
@@ -78,7 +80,7 @@ const CollectionDetailPage = () => {
   });
 
   const updateCollectionMutation = useMutation({
-    mutationFn: (payload: { name?: string; description?: string | null; isPublic?: boolean }) =>
+    mutationFn: (payload: { name?: string; description?: string | null; isPublic?: boolean; isDiscoverable?: boolean }) =>
       collectionsApi.update(id!, payload),
     onSuccess: () => {
       queryClient.invalidateQueries({ queryKey: ["collection", id] });
@@ -225,6 +227,13 @@ const CollectionDetailPage = () => {
               </select>
             </div>
           )}
+          {collectionData && id && (isOwner || collectionData.isPublic) && (
+            <ShareCollectionButton
+              url={`${window.location.origin}${buildCollectionPath(id, collectionData.name)}`}
+              title={collectionData.name}
+              isPublic={collectionData.isPublic ?? false}
+            />
+          )}
           <button
             type="button"
             onClick={() => setShowDetails(true)}
@@ -234,35 +243,18 @@ const CollectionDetailPage = () => {
           </button>
         </div>
       </div>
-      {isOwner && (
-        <div className="flex flex-wrap items-center justify-between gap-2 rounded-2xl border border-slate-200 bg-slate-50/90 p-4">
-          <div className="flex items-center gap-2">
-            <span className="text-sm font-medium text-slate-700">Shared with others</span>
-            <span className="text-sm text-slate-600">(anyone with the link can view and quiz; collection also appears in Discover search)</span>
-          </div>
-          <button
-            type="button"
-            role="switch"
-            aria-checked={collectionData?.isPublic ?? false}
-            onClick={() => {
-              if (collectionData && !updateCollectionMutation.isPending) {
-                updateCollectionMutation.mutate({
-                  name: collectionData.name,
-                  isPublic: !collectionData.isPublic,
-                });
+      {isOwner && collectionData && (
+        <div className="rounded-2xl border border-slate-200 bg-slate-50/90 p-4">
+          <CollectionVisibilityToggles
+            isPublic={collectionData.isPublic ?? false}
+            isDiscoverable={collectionData.isDiscoverable ?? false}
+            disabled={updateCollectionMutation.isPending}
+            onChange={(patch) => {
+              if (!updateCollectionMutation.isPending) {
+                updateCollectionMutation.mutate({ name: collectionData.name, ...patch });
               }
             }}
-            disabled={updateCollectionMutation.isPending}
-            className={`relative inline-flex h-6 w-11 flex-shrink-0 cursor-pointer rounded-full border-2 border-transparent transition-colors focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 disabled:opacity-50 ${
-              collectionData?.isPublic ? "bg-indigo-600" : "bg-gray-200"
-            }`}
-          >
-            <span
-              className={`pointer-events-none inline-block h-5 w-5 transform rounded-full bg-white shadow ring-0 transition duration-200 ease-in-out ${
-                collectionData?.isPublic ? "translate-x-5" : "translate-x-1"
-              }`}
-            />
-          </button>
+          />
         </div>
       )}
       {isOwner && (
@@ -378,7 +370,11 @@ const CollectionDetailPage = () => {
                 <div className="flex justify-between gap-4">
                   <dt className="font-medium text-gray-600">Visibility</dt>
                   <dd className="text-right">
-                    {collectionData.isPublic ? "Public" : "Private"}
+                    {collectionData.isPublic
+                      ? collectionData.isDiscoverable
+                        ? "Anyone with the link · listed in Discover"
+                        : "Anyone with the link"
+                      : "Private"}
                   </dd>
                 </div>
               )}

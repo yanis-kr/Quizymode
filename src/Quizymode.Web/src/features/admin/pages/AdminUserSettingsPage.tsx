@@ -8,6 +8,7 @@ import {
   type AdminUserSortBy,
 } from "@/api/admin";
 import UserSessionsPanel from "../components/UserSessionsPanel";
+import { StudyGuidePlanSettings } from "../components/StudyGuidePlanSettings";
 import { useAuth } from "@/contexts/AuthContext";
 import LoadingSpinner from "@/components/LoadingSpinner";
 import ErrorMessage from "@/components/ErrorMessage";
@@ -799,6 +800,14 @@ const AdminUserSettingsPage = () => {
                   </div>
                 )}
               </section>
+
+              {selectedUserId && settingsData && (
+                <StudyGuidePlanSettings
+                  key={selectedUserId}
+                  userId={selectedUserId}
+                  settings={settingsData.settings}
+                />
+              )}
 
               <section className="rounded-2xl border border-slate-200">
                 <div className="border-b border-slate-200 px-4 py-4">

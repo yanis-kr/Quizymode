@@ -82,6 +82,22 @@ public sealed class ApplicationDbContext : DbContext
 
     public DbSet<StudyGuideUpload> StudyGuideUploads => Set<StudyGuideUpload>();
 
+    public DbSet<StudyGuideDocument> StudyGuideDocuments => Set<StudyGuideDocument>();
+
+    public DbSet<StudyGuideSection> StudyGuideSections => Set<StudyGuideSection>();
+
+    public DbSet<SectionGeneration> SectionGenerations => Set<SectionGeneration>();
+
+    public DbSet<GenerationCandidate> GenerationCandidates => Set<GenerationCandidate>();
+
+    public DbSet<StudyGuideQuotaCharge> StudyGuideQuotaCharges => Set<StudyGuideQuotaCharge>();
+
+    public DbSet<StudyGuideAcceptedCandidate> StudyGuideAcceptedCandidates => Set<StudyGuideAcceptedCandidate>();
+
+    public DbSet<LlmProviderSettings> LlmProviderSettings => Set<LlmProviderSettings>();
+
+    public DbSet<LlmAttempt> LlmAttempts => Set<LlmAttempt>();
+
     public DbSet<FeaturedItem> FeaturedItems => Set<FeaturedItem>();
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)

@@ -39,7 +39,7 @@ public sealed class DeepSeekQuestionGeneratorTests
 
         using JsonDocument document = JsonDocument.Parse(body);
         JsonElement root = document.RootElement;
-        root.GetProperty("model").GetString().Should().Be("deepseek-chat");
+        root.GetProperty("model").GetString().Should().Be("deepseek-flash");
         root.GetProperty("response_format").GetProperty("type").GetString().Should().Be("json_object");
         root.GetProperty("temperature").GetDouble().Should().BeLessThanOrEqualTo(0.3);
         root.GetProperty("max_tokens").GetInt32().Should().BePositive();

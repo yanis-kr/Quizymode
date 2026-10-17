@@ -37,6 +37,10 @@ internal sealed class CollectionConfiguration : IEntityTypeConfiguration<Collect
             .IsRequired()
             .HasDefaultValue(false);
 
+        builder.Property(x => x.IsDiscoverable)
+            .IsRequired()
+            .HasDefaultValue(false);
+
         builder.HasIndex(x => x.CreatedBy);
         builder.HasIndex(x => x.IsPublic);
         builder.HasIndex(x => x.IsRepoManaged);

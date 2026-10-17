@@ -28,9 +28,9 @@ public static class DiscoverCollections
         {
             app.MapGet("collections/discover", Handler)
                 .WithTags("Collections")
-                .WithSummary("Search public collections")
+                .WithSummary("Search public collections that are listed in Discover")
                 .WithDescription(
-                    "Returns public collections matching optional text (name/description), and/or items in the collection matching category, navigation keywords (L1/L2), and item tags.")
+                    "Returns public, discoverable collections matching optional text (name/description), and/or items in the collection matching category, navigation keywords (L1/L2), and item tags.")
                 .Produces<Response>(StatusCodes.Status200OK)
                 .Produces(StatusCodes.Status400BadRequest);
         }
@@ -134,8 +134,9 @@ public static class DiscoverCollections
                 matchingItems = itemQueryResult.Value;
             }
 
+            // Discover lists only collections that are both link-public and opted into Discover (AC 1.9).
             var q = db.Collections
-                .Where(c => c.IsPublic)
+                .Where(c => c.IsPublic && c.IsDiscoverable)
                 .AsQueryable();
 
             if (hasTextQuery)

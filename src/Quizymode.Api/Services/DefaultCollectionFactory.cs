@@ -18,7 +18,8 @@ internal static class DefaultCollectionFactory
             Description = description,
             CreatedBy = createdBy,
             CreatedAt = DateTime.UtcNow,
-            IsPublic = false
+            IsPublic = false,
+            IsDiscoverable = false
         };
     }
 

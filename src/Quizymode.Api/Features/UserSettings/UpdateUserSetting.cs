@@ -1,6 +1,7 @@
 using FluentValidation;
 using Microsoft.EntityFrameworkCore;
 using Quizymode.Api.Data;
+using Quizymode.Api.Shared.Helpers;
 using Quizymode.Api.Shared.Http;
 using Quizymode.Api.Services;
 using Quizymode.Api.Shared.Kernel;
@@ -36,6 +37,11 @@ public static class UpdateUserSetting
                 .WithMessage("Setting key is required")
                 .MaximumLength(100)
                 .WithMessage("Setting key must not exceed 100 characters");
+
+            // Study guide tier and quota overrides are admin-only (AC 5.1); users cannot grant themselves premium.
+            RuleFor(x => x.Key)
+                .Must(key => key is null || !StudyGuideSettingKeys.AdminOnly.Contains(key))
+                .WithMessage("This setting can only be changed by an admin.");
 
             // Setting value must be provided and not exceed database constraint
             RuleFor(x => x.Value)
