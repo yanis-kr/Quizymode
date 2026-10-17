@@ -84,6 +84,73 @@ public sealed class InternalTrafficExclusionTests : DatabaseTestFixture
         await DbContext.SaveChangesAsync();
     }
 
+    private static AnalyticsSession AnalyticsSessionRow(string sessionId, string? visitorId, DateTime firstSeenUtc)
+    {
+        return new AnalyticsSession
+        {
+            Id = Guid.NewGuid(),
+            SessionId = sessionId,
+            VisitorId = visitorId,
+            FirstSeenUtc = firstSeenUtc,
+            LandingPath = "/",
+            LandingQuery = string.Empty,
+            Channel = "direct",
+            DeviceClass = "desktop",
+            CreatedUtc = firstSeenUtc
+        };
+    }
+
+    [Fact]
+    public async Task Sessions_TwoSessionsWithNullVisitorId_DoNotCrossContaminate()
+    {
+        const string nullVisitorInternalSession = "null-visitor-internal";
+        const string nullVisitorOrdinarySession = "null-visitor-ordinary";
+        DateTime now = DateTime.UtcNow;
+
+        await DbContext.PageViews.AddRangeAsync(
+            Hit(nullVisitorInternalSession, "/", now.AddMinutes(-10), isInternal: true),
+            Hit(nullVisitorOrdinarySession, "/", now.AddMinutes(-9)));
+
+        await DbContext.AnalyticsSessions.AddRangeAsync(
+            AnalyticsSessionRow(nullVisitorInternalSession, visitorId: null, now.AddMinutes(-10)),
+            AnalyticsSessionRow(nullVisitorOrdinarySession, visitorId: null, now.AddMinutes(-9)));
+
+        await DbContext.SaveChangesAsync();
+
+        Result<GetPageViewSessions.Response> result = await RunSessions();
+
+        result.IsSuccess.Should().BeTrue();
+        List<string> sessionIds = result.Value!.Sessions.Select(session => session.SessionId).ToList();
+        sessionIds.Should().Contain(nullVisitorOrdinarySession);
+        sessionIds.Should().NotContain(nullVisitorInternalSession);
+    }
+
+    [Fact]
+    public async Task Sessions_SharedNonNullVisitorId_PropagatesInternalStatusToSibling()
+    {
+        const string sharedVisitorInternalSession = "shared-visitor-internal";
+        const string sharedVisitorOrdinarySession = "shared-visitor-ordinary";
+        const string sharedVisitorId = "11111111-1111-1111-1111-111111111111";
+        DateTime now = DateTime.UtcNow;
+
+        await DbContext.PageViews.AddRangeAsync(
+            Hit(sharedVisitorInternalSession, "/", now.AddMinutes(-10), isInternal: true),
+            Hit(sharedVisitorOrdinarySession, "/", now.AddMinutes(-9)));
+
+        await DbContext.AnalyticsSessions.AddRangeAsync(
+            AnalyticsSessionRow(sharedVisitorInternalSession, sharedVisitorId, now.AddMinutes(-10)),
+            AnalyticsSessionRow(sharedVisitorOrdinarySession, sharedVisitorId, now.AddMinutes(-9)));
+
+        await DbContext.SaveChangesAsync();
+
+        Result<GetPageViewSessions.Response> result = await RunSessions();
+
+        result.IsSuccess.Should().BeTrue();
+        List<string> sessionIds = result.Value!.Sessions.Select(session => session.SessionId).ToList();
+        sessionIds.Should().NotContain(sharedVisitorInternalSession);
+        sessionIds.Should().NotContain(sharedVisitorOrdinarySession);
+    }
+
     private Task<Result<GetPageViewSessions.Response>> RunSessions(bool includeInternal = false) =>
         GetPageViewSessions.HandleAsync(
             new GetPageViewSessions.QueryRequest(Days: 7, IncludeInternal: includeInternal),

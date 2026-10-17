@@ -36,6 +36,7 @@ public sealed class InternalTrafficHttpTests : DatabaseTestFixture, IAsyncLifeti
             services =>
             {
                 services.AddSingleton(geolocation.Object);
+                services.AddSingleton<IAttributionClassifier, AttributionClassifier>();
                 services.AddScoped<IValidator<SetUserInternalFlag.Request>, SetUserInternalFlag.Validator>();
             },
             app =>

@@ -218,6 +218,66 @@ export interface PageViewSessionsResponse {
   page: number;
   pageSize: number;
   totalPages: number;
+  visitors: VisitorCohortSummary;
+}
+
+/** 7-day return rate for first-time visitors, by their first session's channel and campaign (ANALYTICS-003). */
+export interface VisitorReturnRateRow {
+  channel: string;
+  utmCampaign: string | null;
+  firstTimeVisitors: number;
+  returnedWithin7Days: number;
+  returnRatePercent: number;
+}
+
+/** Returning-visitor metrics shared by the Sessions and Acquisition reports (ANALYTICS-003). */
+export interface VisitorCohortSummary {
+  newVisitorSessions: number;
+  returningVisitorSessions: number;
+  /** Sessions with no visitor id (Global Privacy Control, no storage, or older history). */
+  unidentifiedSessions: number;
+  newVisitors: number;
+  returningVisitors: number;
+  returnWithin7Days: VisitorReturnRateRow[];
+  signupsWithVisitorHistory: number;
+  avgPreSignupSessions: number | null;
+  medianPreSignupSessions: number | null;
+  avgDaysToSignup: number | null;
+  medianDaysToSignup: number | null;
+}
+
+export interface AcquisitionSourceRow {
+  utmSource: string | null;
+  utmCampaign: string | null;
+  sessions: number;
+  bounceRatePercent: number;
+  engagedRatePercent: number;
+  convertedCount: number;
+  conversionRatePercent: number;
+}
+
+export interface AcquisitionChannelRow {
+  channel: string;
+  sessions: number;
+  bounceRatePercent: number;
+  engagedRatePercent: number;
+  convertedCount: number;
+  conversionRatePercent: number;
+  sourceBreakdown: AcquisitionSourceRow[];
+}
+
+export interface AcquisitionReportResponse {
+  windowStartUtc: string;
+  windowEndUtc: string;
+  totalSessions: number;
+  botSessions: number;
+  botsExcluded: boolean;
+  internalSessions: number;
+  internalExcluded: boolean;
+  channels: AcquisitionChannelRow[];
+  deviceBreakdown: Array<{ deviceClass: string; sessions: number }>;
+  countryBreakdown: Array<{ country: string | null; sessions: number }>;
+  visitors: VisitorCohortSummary;
 }
 
 export interface SessionJourneyStep {
@@ -734,6 +794,31 @@ export const adminApi = {
 
     const response = await apiClient.get<ConversionFunnelResponse>(
       "/admin/analytics/funnel",
+      { params }
+    );
+    return response.data;
+  },
+
+  getAcquisitionReport: async (
+    days: number = 7,
+    includeBots: boolean = false,
+    includeInternal: boolean = false,
+    deviceClass?: string,
+    country?: string
+  ): Promise<AcquisitionReportResponse> => {
+    const params: Record<string, number | boolean | string> = { days, includeBots };
+    if (includeInternal) {
+      params.includeInternal = true;
+    }
+    if (deviceClass) {
+      params.deviceClass = deviceClass;
+    }
+    if (country) {
+      params.country = country;
+    }
+
+    const response = await apiClient.get<AcquisitionReportResponse>(
+      "/admin/analytics/acquisition",
       { params }
     );
     return response.data;

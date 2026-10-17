@@ -1,13 +1,15 @@
 import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
-import { analyticsApi } from "@/api/analytics";
+import { analyticsApi, type TrackPageViewRequest } from "@/api/analytics";
 import { useAuth } from "@/contexts/AuthContext";
+import { getCapturedAttribution } from "@/utils/attributionCapture";
 import {
   getPageViewSessionId,
   isAdminPath,
   isInternalBrowser,
   shouldTrackPageView,
 } from "@/utils/pageViewTracking";
+import { getVisitorId } from "@/utils/visitorId";
 
 const PageViewTracker = () => {
   const location = useLocation();
@@ -25,16 +27,40 @@ const PageViewTracker = () => {
       return;
     }
 
-    void analyticsApi
-      .trackPageView({
-        path,
-        queryString,
-        sessionId: getPageViewSessionId(),
-        ...(isInternalBrowser() ? { internalBrowser: true } : {}),
-      })
-      .catch((error) => {
-        console.debug("Page view tracking failed", error);
-      });
+    // The API only uses attribution on a session's first hit, so it is harmless (and simpler) to
+    // send it with every hit rather than tracking "is this the first one" on the client too.
+    const attribution = getCapturedAttribution();
+    const visitorId = getVisitorId();
+
+    const request: TrackPageViewRequest = {
+      path,
+      queryString,
+      sessionId: getPageViewSessionId(),
+      ...(isInternalBrowser() ? { internalBrowser: true } : {}),
+      ...(visitorId ? { visitorId } : {}),
+      ...(typeof __APP_VERSION__ === "string"
+        ? { appVersion: __APP_VERSION__ }
+        : {}),
+      ...(attribution?.referrer ? { referrer: attribution.referrer } : {}),
+      ...(attribution?.utmSource ? { utmSource: attribution.utmSource } : {}),
+      ...(attribution?.utmMedium ? { utmMedium: attribution.utmMedium } : {}),
+      ...(attribution?.utmCampaign
+        ? { utmCampaign: attribution.utmCampaign }
+        : {}),
+      ...(attribution?.utmContent
+        ? { utmContent: attribution.utmContent }
+        : {}),
+      ...(attribution?.utmTerm ? { utmTerm: attribution.utmTerm } : {}),
+      ...(attribution?.gclid ? { gclid: attribution.gclid } : {}),
+      ...(attribution?.gbraid ? { gbraid: attribution.gbraid } : {}),
+      ...(attribution?.wbraid ? { wbraid: attribution.wbraid } : {}),
+      ...(attribution?.msclkid ? { msclkid: attribution.msclkid } : {}),
+      ...(attribution?.ttclid ? { ttclid: attribution.ttclid } : {}),
+    };
+
+    void analyticsApi.trackPageView(request).catch((error) => {
+      console.debug("Page view tracking failed", error);
+    });
   }, [isLoading, location.pathname, location.search]);
 
   return null;

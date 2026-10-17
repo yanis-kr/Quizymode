@@ -13,7 +13,30 @@ public static class TrackPageView
     /// Client-asserted internal-browser marker (set by an admin on their own devices and by E2E runs).
     /// Trusting it is safe because it can only remove the sender's own traffic from reports.
     /// </param>
-    public sealed record Request(string Path, string? QueryString, string SessionId, bool? InternalBrowser = null);
+    /// <param name="VisitorId">
+    /// Client-generated id persisted in the visitor's browser (localStorage), used to recognize a
+    /// returning visitor across sessions (TRAFFIC-122). Must be a syntactically valid UUID; an
+    /// invalid value is ignored (treated as absent) rather than rejecting the hit.
+    /// </param>
+    /// <param name="Referrer">Raw referrer URL reported by the client for the first hit of a session.</param>
+    public sealed record Request(
+        string Path,
+        string? QueryString,
+        string SessionId,
+        bool? InternalBrowser = null,
+        string? VisitorId = null,
+        string? Referrer = null,
+        string? UtmSource = null,
+        string? UtmMedium = null,
+        string? UtmCampaign = null,
+        string? UtmContent = null,
+        string? UtmTerm = null,
+        string? Gclid = null,
+        string? Gbraid = null,
+        string? Wbraid = null,
+        string? Msclkid = null,
+        string? Ttclid = null,
+        string? AppVersion = null);
 
     public sealed record Response(string Id, DateTime CreatedUtc);
 
@@ -24,7 +47,7 @@ public static class TrackPageView
             app.MapPost("analytics/page-views", Handler)
                 .WithTags("Analytics")
                 .WithSummary("Track a SPA page view")
-                .WithDescription("Stores a page-view event for an anonymous or authenticated SPA route hit. The hit is flagged internal when the caller is an admin, is a user flagged internal, or sends internalBrowser=true.")
+                .WithDescription("Stores a page-view event for an anonymous or authenticated SPA route hit. The hit is flagged internal when the caller is an admin, is a user flagged internal, or sends internalBrowser=true. The first hit of a session also creates an attribution snapshot (channel, referrer host, UTM tags, device class, country).")
                 .AllowAnonymous()
                 .Produces<Response>(StatusCodes.Status201Created)
                 .ProducesProblem(StatusCodes.Status400BadRequest);
@@ -35,9 +58,12 @@ public static class TrackPageView
             HttpContext httpContext,
             ApplicationDbContext db,
             IUserContext userContext,
+            IAttributionClassifier classifier,
+            IIpGeolocationService geoService,
             CancellationToken cancellationToken)
         {
-            Result<Response> result = await HandleAsync(request, httpContext, db, userContext, cancellationToken);
+            Result<Response> result = await HandleAsync(
+                request, httpContext, db, userContext, classifier, geoService, cancellationToken);
 
             return result.Match(
                 value => Results.Created($"/analytics/page-views/{value.Id}", value),
@@ -50,6 +76,8 @@ public static class TrackPageView
         HttpContext httpContext,
         ApplicationDbContext db,
         IUserContext userContext,
+        IAttributionClassifier classifier,
+        IIpGeolocationService geoService,
         CancellationToken cancellationToken)
     {
         string normalizedPath = NormalizePath(request.Path);
@@ -98,6 +126,9 @@ public static class TrackPageView
             userId = parsedUserId;
         }
 
+        // A syntactically invalid visitor id is dropped rather than rejecting the hit.
+        string? visitorId = Guid.TryParse(request.VisitorId, out Guid _) ? request.VisitorId!.Trim() : null;
+
         string? userAgent = RequestMetadataHelper.GetUserAgent(httpContext);
 
         bool isInternal = userContext.IsAdmin || request.InternalBrowser == true;
@@ -127,7 +158,158 @@ public static class TrackPageView
         db.PageViews.Add(pageView);
         await db.SaveChangesAsync(CancellationToken.None);
 
+        await EnsureAnalyticsSessionAsync(
+            db,
+            userContext,
+            classifier,
+            geoService,
+            httpContext,
+            normalizedSessionId,
+            normalizedPath,
+            normalizedQueryString,
+            visitorId,
+            userId,
+            userAgent,
+            request,
+            pageView.CreatedUtc,
+            pageView.IpAddress,
+            CancellationToken.None);
+
         return Result.Success(new Response(pageView.Id.ToString(), pageView.CreatedUtc));
+    }
+
+    /// <summary>
+    /// Creates the session's first-hit attribution snapshot the first time its SessionId is seen.
+    /// Later hits for the same session never modify it. Country resolution is best-effort and never
+    /// allowed to delay or fail the page-view response.
+    /// </summary>
+    private static async Task EnsureAnalyticsSessionAsync(
+        ApplicationDbContext db,
+        IUserContext userContext,
+        IAttributionClassifier classifier,
+        IIpGeolocationService geoService,
+        HttpContext httpContext,
+        string sessionId,
+        string landingPath,
+        string landingQuery,
+        string? visitorId,
+        Guid? userId,
+        string? userAgent,
+        Request request,
+        DateTime firstSeenUtc,
+        string ipAddress,
+        CancellationToken cancellationToken)
+    {
+        AnalyticsSession? existing = await db.AnalyticsSessions
+            .FirstOrDefaultAsync(session => session.SessionId == sessionId, cancellationToken);
+
+        if (existing is not null)
+        {
+            // Attribution is first-hit only, but identity links are filled in once: a session that
+            // started anonymous links to the user when they sign in (so pre-signup visits connect to
+            // the account), and a missing visitor id is filled from a later hit (ANALYTICS-003).
+            bool changed = false;
+            if (existing.UserId is null && userId is not null)
+            {
+                existing.UserId = userId;
+                changed = true;
+            }
+
+            if (existing.VisitorId is null && visitorId is not null)
+            {
+                existing.VisitorId = visitorId;
+                changed = true;
+            }
+
+            if (changed)
+            {
+                await db.SaveChangesAsync(cancellationToken);
+            }
+
+            return;
+        }
+
+        AttributionResult attribution = classifier.Classify(new AttributionRequest(
+            ReferrerUrl: request.Referrer,
+            RequestHost: httpContext.Request.Host.Host,
+            UtmSource: request.UtmSource,
+            UtmMedium: request.UtmMedium,
+            UtmCampaign: request.UtmCampaign,
+            UtmContent: request.UtmContent,
+            UtmTerm: request.UtmTerm,
+            Gclid: request.Gclid,
+            Gbraid: request.Gbraid,
+            Wbraid: request.Wbraid,
+            Msclkid: request.Msclkid,
+            Ttclid: request.Ttclid));
+
+        string? country = await ResolveCountryBestEffortAsync(geoService, ipAddress, cancellationToken);
+
+        AnalyticsSession analyticsSession = new()
+        {
+            Id = Guid.NewGuid(),
+            SessionId = sessionId,
+            VisitorId = visitorId,
+            UserId = userId,
+            FirstSeenUtc = firstSeenUtc,
+            LandingPath = landingPath,
+            LandingQuery = landingQuery,
+            ReferrerHost = attribution.ReferrerHost,
+            UtmSource = attribution.UtmSource,
+            UtmMedium = attribution.UtmMedium,
+            UtmCampaign = attribution.UtmCampaign,
+            UtmContent = attribution.UtmContent,
+            UtmTerm = attribution.UtmTerm,
+            ClickIdPlatform = attribution.ClickIdPlatform,
+            Channel = attribution.Channel,
+            DeviceClass = classifier.ClassifyDeviceClass(userAgent),
+            Country = country,
+            AppVersion = NormalizeAppVersion(request.AppVersion),
+            CreatedUtc = DateTime.UtcNow
+        };
+
+        db.AnalyticsSessions.Add(analyticsSession);
+        try
+        {
+            await db.SaveChangesAsync(cancellationToken);
+        }
+        catch (DbUpdateException)
+        {
+            // A concurrent request for the same brand-new session won the unique-SessionId race.
+            // The other request's snapshot wins; this one is discarded rather than overwriting it.
+            db.ChangeTracker.Clear();
+        }
+    }
+
+    /// <summary>Resolves the hit's country with a strict time budget; never throws, never delays the response.</summary>
+    private static async Task<string?> ResolveCountryBestEffortAsync(
+        IIpGeolocationService geoService,
+        string ipAddress,
+        CancellationToken cancellationToken)
+    {
+        try
+        {
+            using CancellationTokenSource timeoutCts = CancellationTokenSource.CreateLinkedTokenSource(cancellationToken);
+            timeoutCts.CancelAfter(TimeSpan.FromSeconds(2));
+            return await geoService.GetCountryAsync(ipAddress, timeoutCts.Token);
+        }
+        catch
+        {
+            // Geolocation is a nice-to-have; any failure (timeout, network, parsing) must not
+            // affect page-view ingestion.
+            return null;
+        }
+    }
+
+    private static string? NormalizeAppVersion(string? appVersion)
+    {
+        if (string.IsNullOrWhiteSpace(appVersion))
+        {
+            return null;
+        }
+
+        string trimmed = appVersion.Trim();
+        return trimmed.Length > 32 ? trimmed[..32] : trimmed;
     }
 
     private static string NormalizePath(string? path)
