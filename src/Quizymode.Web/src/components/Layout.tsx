@@ -3,6 +3,7 @@ import { useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useQuery } from "@tanstack/react-query";
 import { useAuth } from "@/contexts/AuthContext";
+import { GuestProgressClaim } from "@/features/guestHistory/GuestProgressClaim";
 import { usersApi } from "@/api/users";
 import { getUserGuideUrl } from "@/utils/userGuideLink";
 import { SEO } from "@/components/SEO";
@@ -403,6 +404,7 @@ const Layout = ({ children }: LayoutProps) => {
           </div>
         )}
       </nav>
+      <GuestProgressClaim />
       <main
         className={
           isFullBleedPage
