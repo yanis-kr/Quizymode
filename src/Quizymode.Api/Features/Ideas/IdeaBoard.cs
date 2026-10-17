@@ -11,20 +11,25 @@ public static class IdeaBoard
     internal static async Task<Result<IdeaBoardResponse>> HandlePublicAsync(
         ApplicationDbContext db,
         IUserContext userContext,
-        CancellationToken cancellationToken)
+        CancellationToken cancellationToken,
+        int? page = null,
+        int? pageSize = null)
     {
         try
         {
-            List<IdeaSummaryResponse> ideas = await IdeaFeatureSupport.BuildSummariesAsync(
+            IdeaBoardResponse response = await IdeaFeatureSupport.BuildPageAsync(
                 db,
                 userContext,
                 db.Ideas
                     .Where(idea => idea.ModerationState == IdeaModerationState.Published)
                     .OrderBy(idea => idea.Status)
-                    .ThenByDescending(idea => idea.UpdatedAt ?? idea.CreatedAt),
+                    .ThenByDescending(idea => idea.UpdatedAt ?? idea.CreatedAt)
+                    .ThenBy(idea => idea.Id),
+                page,
+                pageSize,
                 cancellationToken);
 
-            return Result.Success(new IdeaBoardResponse(ideas));
+            return Result.Success(response);
         }
         catch (Exception ex)
         {
@@ -36,19 +41,24 @@ public static class IdeaBoard
     internal static async Task<Result<IdeaBoardResponse>> HandleMineAsync(
         ApplicationDbContext db,
         IUserContext userContext,
-        CancellationToken cancellationToken)
+        CancellationToken cancellationToken,
+        int? page = null,
+        int? pageSize = null)
     {
         try
         {
-            List<IdeaSummaryResponse> ideas = await IdeaFeatureSupport.BuildSummariesAsync(
+            IdeaBoardResponse response = await IdeaFeatureSupport.BuildPageAsync(
                 db,
                 userContext,
                 db.Ideas
                     .Where(idea => idea.CreatedBy == userContext.UserId)
-                    .OrderByDescending(idea => idea.UpdatedAt ?? idea.CreatedAt),
+                    .OrderByDescending(idea => idea.UpdatedAt ?? idea.CreatedAt)
+                    .ThenBy(idea => idea.Id),
+                page,
+                pageSize,
                 cancellationToken);
 
-            return Result.Success(new IdeaBoardResponse(ideas));
+            return Result.Success(response);
         }
         catch (Exception ex)
         {

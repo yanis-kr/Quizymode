@@ -22,6 +22,8 @@ public static class GetIdeasAdmin
 
         private static async Task<IResult> Handler(
             string? moderationState,
+            int? page,
+            int? pageSize,
             ApplicationDbContext db,
             IUserContext userContext,
             CancellationToken cancellationToken)
@@ -30,7 +32,9 @@ public static class GetIdeasAdmin
                 moderationState,
                 db,
                 userContext,
-                cancellationToken);
+                cancellationToken,
+                page,
+                pageSize);
 
             return result.Match(
                 value => Results.Ok(value),
