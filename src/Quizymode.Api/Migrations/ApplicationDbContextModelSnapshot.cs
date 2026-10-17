@@ -1708,6 +1708,87 @@ namespace Quizymode.Api.Migrations
                     b.ToTable("StudyGuidePromptResults", (string)null);
                 });
 
+            modelBuilder.Entity("Quizymode.Api.Shared.Models.StudySession", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uuid")
+                        .HasDefaultValueSql("gen_random_uuid()");
+
+                    b.Property<DateTime>("CompletedAt")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<int>("Correct")
+                        .HasColumnType("integer");
+
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<string>("FilterKeywords")
+                        .IsRequired()
+                        .HasMaxLength(400)
+                        .HasColumnType("character varying(400)");
+
+                    b.Property<string>("NavigationKeywords")
+                        .IsRequired()
+                        .HasMaxLength(400)
+                        .HasColumnType("character varying(400)");
+
+                    b.Property<string>("Origin")
+                        .IsRequired()
+                        .HasMaxLength(16)
+                        .HasColumnType("character varying(16)");
+
+                    b.Property<string>("RunId")
+                        .IsRequired()
+                        .HasMaxLength(128)
+                        .HasColumnType("character varying(128)");
+
+                    b.Property<string>("SourceCategorySlug")
+                        .HasMaxLength(64)
+                        .HasColumnType("character varying(64)");
+
+                    b.Property<Guid?>("SourceCollectionId")
+                        .HasColumnType("uuid");
+
+                    b.Property<string>("SourceKind")
+                        .HasMaxLength(16)
+                        .HasColumnType("character varying(16)");
+
+                    b.Property<int>("Total")
+                        .HasColumnType("integer");
+
+                    b.Property<string>("UserId")
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("character varying(100)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("UserId", "CompletedAt");
+
+                    b.HasIndex("UserId", "RunId")
+                        .IsUnique();
+
+                    b.ToTable("StudySessions", null, t =>
+                        {
+                            t.HasCheckConstraint("CK_StudySessions_Counts", "\"Total\" > 0 AND \"Correct\" >= 0 AND \"Correct\" <= \"Total\"");
+                        });
+                });
+
+            modelBuilder.Entity("Quizymode.Api.Shared.Models.StudySessionMissedItem", b =>
+                {
+                    b.Property<Guid>("StudySessionId")
+                        .HasColumnType("uuid");
+
+                    b.Property<Guid>("ItemId")
+                        .HasColumnType("uuid");
+
+                    b.HasKey("StudySessionId", "ItemId");
+
+                    b.ToTable("StudySessionMissedItems", (string)null);
+                });
+
             modelBuilder.Entity("Quizymode.Api.Shared.Models.Upload", b =>
                 {
                     b.Property<Guid>("Id")
@@ -2020,6 +2101,15 @@ namespace Quizymode.Api.Migrations
                     b.Navigation("ImportSession");
                 });
 
+            modelBuilder.Entity("Quizymode.Api.Shared.Models.StudySessionMissedItem", b =>
+                {
+                    b.HasOne("Quizymode.Api.Shared.Models.StudySession", null)
+                        .WithMany("MissedItems")
+                        .HasForeignKey("StudySessionId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
             modelBuilder.Entity("Quizymode.Api.Shared.Models.UserPolicyAcceptance", b =>
                 {
                     b.HasOne("Quizymode.Api.Shared.Models.User", "User")
@@ -2055,6 +2145,11 @@ namespace Quizymode.Api.Migrations
             modelBuilder.Entity("Quizymode.Api.Shared.Models.SeedSyncRun", b =>
                 {
                     b.Navigation("ItemHistories");
+                });
+
+            modelBuilder.Entity("Quizymode.Api.Shared.Models.StudySession", b =>
+                {
+                    b.Navigation("MissedItems");
                 });
 #pragma warning restore 612, 618
         }

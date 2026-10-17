@@ -10,6 +10,10 @@ vi.mock("@/api/admin", () => ({
   },
 }));
 
+vi.mock("../components/AdminOverviewPanel", () => ({
+  default: () => <div>overview panel</div>,
+}));
+
 vi.mock("@/contexts/AuthContext", () => ({
   useAuth: () => mockUseAuth(),
 }));
