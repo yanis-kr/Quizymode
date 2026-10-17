@@ -28,5 +28,23 @@ public sealed class PageView
     /// </summary>
     public bool IsInternal { get; set; }
 
+    /// <summary>
+    /// Feature area from <c>PageHitClassifier</c> (home, browse, quiz, flashcards, ...; ANALYTICS-004).
+    /// Null only for historical rows not yet reached by the classification backfill.
+    /// </summary>
+    public string? Area { get; set; }
+
+    /// <summary>category, collection, item, or null.</summary>
+    public string? ScopeType { get; set; }
+
+    /// <summary>Category slug, collection id, or item id; at most 200 characters.</summary>
+    public string? ScopeKey { get; set; }
+
+    /// <summary>Category plus up to two navigation keywords, e.g. <c>geography/capitals</c>.</summary>
+    public string? NavPath { get; set; }
+
+    /// <summary>True when a Quiz or Flashcards path contains <c>/item/&lt;id&gt;</c> (one question viewed).</summary>
+    public bool IsItemStep { get; set; }
+
     public DateTime CreatedUtc { get; set; } = DateTime.UtcNow;
 }

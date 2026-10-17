@@ -128,6 +128,19 @@ const SessionsTab = ({
         />
       </section>
 
+      <section className="grid gap-4 sm:grid-cols-2">
+        <MetricCard
+          label="Sessions with study activity"
+          value={summary.studySessions ?? 0}
+          detail="Viewed at least one Quiz or Flashcards question"
+        />
+        <MetricCard
+          label="Avg questions / study session"
+          value={summary.avgItemStepsPerStudySession ?? 0}
+          detail="Quiz and Flashcards item steps per study session"
+        />
+      </section>
+
       {summary.botsExcluded && summary.botSessions > 0 && (
         <div className="rounded-2xl border border-slate-200 bg-slate-50 px-4 py-3 text-sm text-slate-700">
           <span className="font-medium">{summary.botSessions}</span> bot session
@@ -223,8 +236,8 @@ const SessionsTab = ({
       <section className="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm">
         <h2 className="text-lg font-semibold text-gray-900">Landing Pages</h2>
         <p className="mt-1 text-sm text-gray-600">
-          Where sessions started, and how often visitors left without going
-          anywhere else.
+          Where sessions started, grouped by feature area and content scope, and
+          how often visitors left without going anywhere else.
         </p>
         <LandingPagesTable landingPages={data.landingPages} />
       </section>

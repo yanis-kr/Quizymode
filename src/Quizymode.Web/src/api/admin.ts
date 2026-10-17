@@ -125,6 +125,53 @@ export interface RecentPageViewResponse {
   createdUtc: string;
 }
 
+/** Feature area assigned to each page hit by the server-side classifier (ANALYTICS-004). */
+export type PageHitArea =
+  | "home"
+  | "browse"
+  | "quiz"
+  | "flashcards"
+  | "collections"
+  | "featured"
+  | "item-detail"
+  | "create"
+  | "study-guide"
+  | "auth"
+  | "community"
+  | "info"
+  | "admin"
+  | "other";
+
+export type PageHitScopeType = "category" | "collection" | "item";
+
+export interface FeatureAreaRow {
+  area: PageHitArea | string;
+  /** Hits across all areas add up to the summary's total page hits. */
+  hits: number;
+  sessions: number;
+  /** A session can touch several areas, so shares can sum past 100%. */
+  sessionSharePercent: number;
+  /** Quiz/Flashcards question views (item-step hits). */
+  itemSteps: number;
+}
+
+export interface ContentScopeRow {
+  /** Category slug, navigation path (category/kw1/kw2), or collection id. */
+  key: string;
+  /** Resolved collection name; null for categories, nav paths, and deleted collections. */
+  name: string | null;
+  sessions: number;
+  hits: number;
+  itemSteps: number;
+  avgItemStepsPerSession: number;
+}
+
+export interface ContentScopesResponse {
+  topCategories: ContentScopeRow[];
+  topNavPaths: ContentScopeRow[];
+  topCollections: ContentScopeRow[];
+}
+
 export interface PageViewAnalyticsResponse {
   summary: PageViewAnalyticsSummary;
   topPages: TopPageAnalyticsResponse[];
@@ -133,6 +180,8 @@ export interface PageViewAnalyticsResponse {
   page: number;
   pageSize: number;
   totalPages: number;
+  featureAreas: FeatureAreaRow[];
+  contentScopes: ContentScopesResponse;
 }
 
 /**
@@ -171,6 +220,10 @@ export interface PageViewSessionsSummary {
   internalSessions: number;
   internalExcluded: boolean;
   byOutcome: SessionOutcomeStats[];
+  /** Sessions with at least one Quiz or Flashcards question view. */
+  studySessions: number;
+  /** Average questions viewed per study session. */
+  avgItemStepsPerStudySession: number;
 }
 
 export interface SessionDepthBucket {
@@ -181,12 +234,17 @@ export interface SessionDepthBucket {
   authenticatedSessions: number;
 }
 
+/** Landing sessions grouped by the entry hit's feature area and content scope. */
 export interface LandingPageResponse {
+  /** Most common entry path in the group, as an example. */
   path: string;
   sessions: number;
   bouncedSessions: number;
   bounceRatePercent: number;
   avgPagesPerSession: number;
+  area: PageHitArea | string;
+  scopeType: PageHitScopeType | null;
+  scopeKey: string | null;
 }
 
 export interface PageViewSessionResponse {
@@ -207,6 +265,9 @@ export interface PageViewSessionResponse {
   userAgent: string | null;
   isBot: boolean;
   isInternal: boolean;
+  entryArea: PageHitArea | string;
+  /** Quiz/Flashcards questions viewed in this session. */
+  itemSteps: number;
 }
 
 export interface PageViewSessionsResponse {
@@ -289,6 +350,8 @@ export interface SessionJourneyStep {
   createdUtc: string;
   /** Null on the final step: no exit event is recorded, so dwell time is unknown. */
   dwellSeconds: number | null;
+  area: PageHitArea | string;
+  isItemStep: boolean;
 }
 
 export interface PageViewSessionDetailResponse {

@@ -13,6 +13,8 @@ import AcquisitionTab from "../components/AcquisitionTab";
 import FunnelTab from "../components/FunnelTab";
 import InternalBrowserToggle from "../components/InternalBrowserToggle";
 import LearningTab from "../components/LearningTab";
+import { ContentScopeTables, FeatureAreaTable } from "../components/PagesBreakdown";
+import { GROUP_BY_OPTIONS, type PagesGroupBy } from "../components/pagesGroupBy";
 import SessionsTab from "../components/SessionsTab";
 
 const RANGE_OPTIONS: Array<{ label: string; days: number }> = [
@@ -34,7 +36,7 @@ const TOP_PAGES_LIMIT = 10;
 type AnalyticsTab = "pages" | "sessions" | "acquisition" | "funnel" | "learning";
 
 const TAB_OPTIONS: Array<{ label: string; value: AnalyticsTab; hint: string }> = [
-  { label: "Pages", value: "pages", hint: "Which URLs were hit" },
+  { label: "Pages", value: "pages", hint: "Which features and content were used" },
   { label: "Sessions", value: "sessions", hint: "Whether visitors stayed" },
   { label: "Acquisition", value: "acquisition", hint: "Where visitors came from" },
   { label: "Funnel", value: "funnel", hint: "Where visitors convert" },
@@ -51,6 +53,7 @@ const PageViewAnalyticsPage = () => {
   const [pathInput, setPathInput] = useState("");
   const [pathContains, setPathContains] = useState("");
   const [page, setPage] = useState(1);
+  const [groupBy, setGroupBy] = useState<PagesGroupBy>("area");
 
   const { data, isLoading, isFetching, error, refetch } = useQuery({
     queryKey: [
@@ -119,7 +122,8 @@ const PageViewAnalyticsPage = () => {
           </h1>
           <p className="mt-2 max-w-3xl text-sm text-gray-600">
             <strong>Sessions</strong> answers whether visitors stayed and explored
-            or landed and left. <strong>Pages</strong> ranks the URLs themselves.
+            or landed and left. <strong>Pages</strong> shows usage by feature area,
+            by content (categories, navigation sets, collections), or by raw URL.
             Bots and internal traffic (admins, users flagged internal, and
             excluded browsers) are left out of both unless you opt in.
           </p>
@@ -348,21 +352,61 @@ const PageViewAnalyticsPage = () => {
 
       <section className="grid gap-6 xl:grid-cols-[1.15fr_1fr]">
         <div className="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm">
-          <div className="flex items-center justify-between">
+          <div className="flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between">
             <div>
               <h2 className="text-lg font-semibold text-gray-900">
-                Most Visited Pages
+                {groupBy === "area"
+                  ? "Usage by Feature"
+                  : groupBy === "scope"
+                    ? "Usage by Content"
+                    : "Most Visited Pages"}
               </h2>
               <p className="mt-1 text-sm text-gray-600">
-                Ranked by total hits for the selected time window.
+                {groupBy === "area"
+                  ? "Sessions and hits per feature area for the selected time window."
+                  : groupBy === "scope"
+                    ? "Categories, navigation sets, and collections with question views (item steps)."
+                    : "Ranked by total hits for the selected time window."}
               </p>
             </div>
-            <div className="rounded-full bg-slate-100 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-slate-600">
-              Top {TOP_PAGES_LIMIT}
+            <div
+              role="group"
+              aria-label="Group by"
+              className="flex shrink-0 flex-wrap gap-1 rounded-full bg-slate-100 p-1"
+            >
+              {GROUP_BY_OPTIONS.map((option) => (
+                <button
+                  key={option.value}
+                  type="button"
+                  onClick={() => setGroupBy(option.value)}
+                  aria-pressed={groupBy === option.value}
+                  className={`rounded-full px-3 py-1 text-xs font-semibold transition ${
+                    groupBy === option.value
+                      ? "bg-white text-slate-900 shadow-sm"
+                      : "text-slate-600 hover:text-slate-900"
+                  }`}
+                >
+                  {option.label}
+                </button>
+              ))}
             </div>
           </div>
 
-          {data && data.topPages.length > 0 ? (
+          {groupBy === "area" && <FeatureAreaTable rows={data?.featureAreas ?? []} />}
+
+          {groupBy === "scope" && (
+            <ContentScopeTables
+              scopes={
+                data?.contentScopes ?? {
+                  topCategories: [],
+                  topNavPaths: [],
+                  topCollections: [],
+                }
+              }
+            />
+          )}
+
+          {groupBy === "raw" && (data && data.topPages.length > 0 ? (
             <div className="mt-5 space-y-4">
               {data.topPages.map((pageData, index) => (
                 <TopPageRow
@@ -378,7 +422,7 @@ const PageViewAnalyticsPage = () => {
             <div className="mt-6 rounded-2xl border border-dashed border-slate-300 bg-slate-50 px-4 py-8 text-center text-sm text-slate-500">
               No page hits matched the current filters.
             </div>
-          )}
+          ))}
         </div>
 
         <div className="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm">

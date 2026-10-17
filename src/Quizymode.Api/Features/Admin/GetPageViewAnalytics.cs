@@ -26,7 +26,37 @@ public static class GetPageViewAnalytics
         int TotalCount,
         int Page,
         int PageSize,
-        int TotalPages);
+        int TotalPages,
+        List<FeatureAreaResponse> FeatureAreas,
+        ContentScopesResponse ContentScopes);
+
+    /// <param name="Area">Feature area from the page-hit classifier; unclassified rows count as <c>other</c>.</param>
+    /// <param name="Hits">Hits in this area. Across all areas these add up to <c>Summary.TotalPageViews</c>.</param>
+    /// <param name="Sessions">Distinct sessions with at least one hit in this area.</param>
+    /// <param name="SessionSharePercent">Sessions as a percentage of all sessions; a session can touch several areas.</param>
+    /// <param name="ItemSteps">Quiz/Flashcards question views (item-step hits) in this area.</param>
+    public sealed record FeatureAreaResponse(
+        string Area,
+        int Hits,
+        int Sessions,
+        double SessionSharePercent,
+        int ItemSteps);
+
+    public sealed record ContentScopesResponse(
+        List<ContentScopeRowResponse> TopCategories,
+        List<ContentScopeRowResponse> TopNavPaths,
+        List<ContentScopeRowResponse> TopCollections);
+
+    /// <param name="Key">Category slug, navigation path (category/kw1/kw2), or collection id.</param>
+    /// <param name="Name">Resolved collection name; null for categories, navigation paths, and deleted collections.</param>
+    /// <param name="AvgItemStepsPerSession">ItemSteps divided by Sessions.</param>
+    public sealed record ContentScopeRowResponse(
+        string Key,
+        string? Name,
+        int Sessions,
+        int Hits,
+        int ItemSteps,
+        double AvgItemStepsPerSession);
 
     public sealed record SummaryResponse(
         DateTime WindowStartUtc,
@@ -77,7 +107,7 @@ public static class GetPageViewAnalytics
             app.MapGet("admin/page-view-analytics", Handler)
                 .WithTags("Admin")
                 .WithSummary("Get page-view analytics (Admin only)")
-                .WithDescription("Returns summary metrics, most visited pages, and recent page hits for anonymous and authenticated traffic. Internal sessions are excluded unless includeInternal=true.")
+                .WithDescription("Returns summary metrics, usage by feature area and content scope (categories, navigation sets, collections), most visited raw pages, and recent page hits for anonymous and authenticated traffic. Internal sessions are excluded unless includeInternal=true.")
                 .RequireAuthorization("Admin")
                 .Produces<Response>(StatusCodes.Status200OK)
                 .ProducesProblem(StatusCodes.Status400BadRequest);
@@ -295,8 +325,124 @@ public static class GetPageViewAnalytics
                 pageView.CreatedUtc))
             .ToList();
 
-        return Result.Success(new Response(summary, topPages, recentResponses, totalCount, page, pageSize, totalPages));
+        List<FeatureAreaResponse> featureAreas = await BuildFeatureAreasAsync(query, uniqueSessions, cancellationToken);
+        ContentScopesResponse contentScopes = await BuildContentScopesAsync(db, query, topPagesLimit, cancellationToken);
+
+        return Result.Success(new Response(
+            summary, topPages, recentResponses, totalCount, page, pageSize, totalPages, featureAreas, contentScopes));
     }
+
+    private static async Task<List<FeatureAreaResponse>> BuildFeatureAreasAsync(
+        IQueryable<PageView> query,
+        int uniqueSessions,
+        CancellationToken cancellationToken)
+    {
+        var rows = await query
+            .GroupBy(pageView => pageView.Area ?? PageHitClassifier.AreaOther)
+            .Select(group => new
+            {
+                Area = group.Key,
+                Hits = group.Count(),
+                Sessions = group.Select(pageView => pageView.SessionId).Distinct().Count(),
+                ItemSteps = group.Sum(pageView => pageView.IsItemStep ? 1 : 0)
+            })
+            .ToListAsync(cancellationToken);
+
+        return rows
+            .Select(row => new FeatureAreaResponse(
+                row.Area,
+                row.Hits,
+                row.Sessions,
+                uniqueSessions == 0 ? 0 : Math.Round(row.Sessions * 100.0 / uniqueSessions, 1),
+                row.ItemSteps))
+            .OrderByDescending(row => row.Sessions)
+            .ThenByDescending(row => row.Hits)
+            .ThenBy(row => row.Area, StringComparer.Ordinal)
+            .ToList();
+    }
+
+    private sealed record ScopeAggregate(string Key, int Sessions, int Hits, int ItemSteps);
+
+    private static async Task<ContentScopesResponse> BuildContentScopesAsync(
+        ApplicationDbContext db,
+        IQueryable<PageView> query,
+        int limit,
+        CancellationToken cancellationToken)
+    {
+        List<ScopeAggregate> categories = await AggregateScopeAsync(
+            query.Where(pageView => pageView.ScopeType == PageHitClassifier.ScopeCategory && pageView.ScopeKey != null),
+            pageView => pageView.ScopeKey!,
+            limit,
+            cancellationToken);
+
+        List<ScopeAggregate> navPaths = await AggregateScopeAsync(
+            query.Where(pageView => pageView.NavPath != null),
+            pageView => pageView.NavPath!,
+            limit,
+            cancellationToken);
+
+        List<ScopeAggregate> collections = await AggregateScopeAsync(
+            query.Where(pageView => pageView.ScopeType == PageHitClassifier.ScopeCollection && pageView.ScopeKey != null),
+            pageView => pageView.ScopeKey!,
+            limit,
+            cancellationToken);
+
+        List<Guid> collectionIds = collections
+            .Select(row => Guid.TryParse(row.Key, out Guid id) ? id : Guid.Empty)
+            .Where(id => id != Guid.Empty)
+            .Distinct()
+            .ToList();
+
+        Dictionary<Guid, string> collectionNames = collectionIds.Count == 0
+            ? new Dictionary<Guid, string>()
+            : await db.Collections
+                .AsNoTracking()
+                .Where(collection => collectionIds.Contains(collection.Id))
+                .Select(collection => new { collection.Id, collection.Name })
+                .ToDictionaryAsync(collection => collection.Id, collection => collection.Name, cancellationToken);
+
+        return new ContentScopesResponse(
+            categories.Select(row => ToRow(row, name: null)).ToList(),
+            navPaths.Select(row => ToRow(row, name: null)).ToList(),
+            collections
+                .Select(row => ToRow(
+                    row,
+                    Guid.TryParse(row.Key, out Guid id) && collectionNames.TryGetValue(id, out string? name) ? name : null))
+                .ToList());
+    }
+
+    private static async Task<List<ScopeAggregate>> AggregateScopeAsync(
+        IQueryable<PageView> scoped,
+        System.Linq.Expressions.Expression<Func<PageView, string>> keySelector,
+        int limit,
+        CancellationToken cancellationToken)
+    {
+        var rows = await scoped
+            .GroupBy(keySelector)
+            .Select(group => new
+            {
+                Key = group.Key,
+                Sessions = group.Select(pageView => pageView.SessionId).Distinct().Count(),
+                Hits = group.Count(),
+                ItemSteps = group.Sum(pageView => pageView.IsItemStep ? 1 : 0)
+            })
+            .OrderByDescending(row => row.Sessions)
+            .ThenByDescending(row => row.Hits)
+            .ThenBy(row => row.Key)
+            .Take(limit)
+            .ToListAsync(cancellationToken);
+
+        return rows.Select(row => new ScopeAggregate(row.Key, row.Sessions, row.Hits, row.ItemSteps)).ToList();
+    }
+
+    private static ContentScopeRowResponse ToRow(ScopeAggregate row, string? name) =>
+        new(
+            row.Key,
+            name,
+            row.Sessions,
+            row.Hits,
+            row.ItemSteps,
+            row.Sessions == 0 ? 0 : Math.Round(row.ItemSteps / (double)row.Sessions, 2));
 
     private static VisitorFilter ParseVisitorFilter(string? visitorType)
     {

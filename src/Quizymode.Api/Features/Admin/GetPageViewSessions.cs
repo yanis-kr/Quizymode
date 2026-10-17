@@ -53,7 +53,9 @@ public static class GetPageViewSessions
         bool BotsExcluded,
         int InternalSessions,
         bool InternalExcluded,
-        List<OutcomeStatsResponse> ByOutcome);
+        List<OutcomeStatsResponse> ByOutcome,
+        int StudySessions,
+        double AvgItemStepsPerStudySession);
 
     public sealed record OutcomeStatsResponse(
         string Outcome,
@@ -70,12 +72,17 @@ public static class GetPageViewSessions
         int ConvertedSessions,
         int AuthenticatedSessions);
 
+    /// <summary>Landing sessions grouped by the entry hit's feature area and content scope (ANALYTICS-004).</summary>
+    /// <param name="Path">The most common entry path in the group, as an example.</param>
     public sealed record LandingPageResponse(
         string Path,
         int Sessions,
         int BouncedSessions,
         double BounceRatePercent,
-        double AvgPagesPerSession);
+        double AvgPagesPerSession,
+        string Area,
+        string? ScopeType,
+        string? ScopeKey);
 
     public sealed record SessionResponse(
         string SessionId,
@@ -93,7 +100,9 @@ public static class GetPageViewSessions
         string? UserEmail,
         string? UserAgent,
         bool IsBot,
-        bool IsInternal);
+        bool IsInternal,
+        string EntryArea,
+        int ItemSteps);
 
     private enum OutcomeFilter
     {
@@ -121,7 +130,7 @@ public static class GetPageViewSessions
             app.MapGet("admin/page-view-sessions", Handler)
                 .WithTags("Admin")
                 .WithSummary("Get session-level page-view engagement (Admin only)")
-                .WithDescription("Groups page hits into sessions and reports bounce rate, session depth, landing pages, and per-session journeys split by anonymous, converted, and authenticated visitors. Internal sessions are excluded unless includeInternal=true.")
+                .WithDescription("Groups page hits into sessions and reports bounce rate, session depth, study activity (sessions with a Quiz or Flashcards question view), landing pages grouped by feature area and content scope, and per-session journeys split by anonymous, converted, and authenticated visitors. Internal sessions are excluded unless includeInternal=true.")
                 .RequireAuthorization("Admin")
                 .Produces<Response>(StatusCodes.Status200OK)
                 .ProducesProblem(StatusCodes.Status400BadRequest);
@@ -315,7 +324,9 @@ public static class GetPageViewSessions
                     : null,
                 session.UserAgent,
                 session.IsBot,
-                internalSessionIds.Contains(session.SessionId)))
+                internalSessionIds.Contains(session.SessionId),
+                session.EntryArea,
+                session.ItemSteps))
             .ToList();
 
         VisitorCohortReport.Response visitors = await VisitorCohortReport.BuildAsync(
@@ -355,6 +366,10 @@ public static class GetPageViewSessions
             .OrderBy(seconds => seconds)
             .ToList();
 
+        List<SessionClassifier.ClassifiedSession> studySessions = sessions
+            .Where(session => session.HasStudyActivity)
+            .ToList();
+
         List<OutcomeStatsResponse> byOutcome = new[] { OutcomeAnonymous, OutcomeConverted, OutcomeAuthenticated }
             .Select(outcome =>
             {
@@ -386,7 +401,11 @@ public static class GetPageViewSessions
             BotsExcluded: botsExcluded,
             InternalSessions: internalSessions,
             InternalExcluded: internalExcluded,
-            ByOutcome: byOutcome);
+            ByOutcome: byOutcome,
+            StudySessions: studySessions.Count,
+            AvgItemStepsPerStudySession: studySessions.Count == 0
+                ? 0
+                : Math.Round(studySessions.Average(session => session.ItemSteps), 2));
     }
 
     private static List<DepthBucketResponse> BuildDepthBuckets(List<SessionClassifier.ClassifiedSession> sessions)
@@ -420,20 +439,30 @@ public static class GetPageViewSessions
     private static List<LandingPageResponse> BuildLandingPages(List<SessionClassifier.ClassifiedSession> sessions, int limit)
     {
         return sessions
-            .GroupBy(session => session.EntryPath)
+            .GroupBy(session => (session.EntryArea, session.EntryScopeType, session.EntryScopeKey))
             .Select(group =>
             {
                 int bounced = group.Count(session => session.PageHits == 1);
+                string examplePath = group
+                    .GroupBy(session => session.EntryPath, StringComparer.Ordinal)
+                    .OrderByDescending(paths => paths.Count())
+                    .ThenBy(paths => paths.Key, StringComparer.Ordinal)
+                    .First()
+                    .Key;
 
                 return new LandingPageResponse(
-                    group.Key,
+                    examplePath,
                     group.Count(),
                     bounced,
                     Percent(bounced, group.Count()),
-                    Math.Round(group.Average(session => session.PageHits), 2));
+                    Math.Round(group.Average(session => session.PageHits), 2),
+                    group.Key.EntryArea,
+                    group.Key.EntryScopeType,
+                    group.Key.EntryScopeKey);
             })
             .OrderByDescending(landing => landing.Sessions)
-            .ThenBy(landing => landing.Path, StringComparer.Ordinal)
+            .ThenBy(landing => landing.Area, StringComparer.Ordinal)
+            .ThenBy(landing => landing.ScopeKey, StringComparer.Ordinal)
             .Take(limit)
             .ToList();
     }

@@ -38,6 +38,31 @@ public sealed class TrackPageViewTests : DatabaseTestFixture
         pageView.Url.Should().Be("/categories/science?sort=popular");
         pageView.SessionId.Should().Be("session-anon-1");
         pageView.IpAddress.Should().Be("198.51.100.24");
+        pageView.Area.Should().Be("browse");
+        pageView.ScopeType.Should().Be("category");
+        pageView.ScopeKey.Should().Be("science");
+        pageView.NavPath.Should().Be("science");
+        pageView.IsItemStep.Should().BeFalse();
+    }
+
+    [Fact]
+    public async Task HandleAsync_ClassifiesQuizItemStepAtWriteTime()
+    {
+        _userContextMock.SetupGet(context => context.IsAuthenticated).Returns(false);
+        _userContextMock.SetupGet(context => context.UserId).Returns((string?)null);
+        DefaultHttpContext httpContext = CreateHttpContext("198.51.100.25");
+
+        TrackPageView.Request request = new("/quiz/geography/item/abc", "nav=capitals", "session-quiz-1");
+
+        var result = await HandleAsync(request, httpContext);
+
+        result.IsSuccess.Should().BeTrue();
+        PageView pageView = await DbContext.PageViews.SingleAsync();
+        pageView.Area.Should().Be("quiz");
+        pageView.ScopeType.Should().Be("category");
+        pageView.ScopeKey.Should().Be("geography");
+        pageView.NavPath.Should().Be("geography/capitals");
+        pageView.IsItemStep.Should().BeTrue();
     }
 
     [Fact]

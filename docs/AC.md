@@ -1215,6 +1215,34 @@ The ideas board is a public-facing product planning surface at `/ideas`. It show
 - **AC 5.7.13** [Admin] **Given** an account was created in the window and is linked to a visitor id (AC 5.7.3a), **then** the panel reports signups with visit history, the median and average number of pre-signup sessions (that visitor's sessions that started before the account was created and never linked to it), and the median and average UTC calendar days from the visitor's first session to account creation. Example: anonymous visits on two different days and a signup on a third day count as 2 pre-signup sessions and 2 days to signup. Bot and internal exclusions apply; the device and country filters do not.
 - **AC 5.7.14** [Anyone] **Given** I read the Privacy Policy, **then** it describes the referrer domain, campaign tags, ad-platform click-id presence (never the value), device class, and approximate country recorded per session, and the browser visitor identifier, its purpose, that it is not created under Global Privacy Control, and how to clear it.
 
+
+### AC 5.8 Feature and scope classification for page hits (ANALYTICS-004 #124)
+
+**Design:** A server-side classifier (`PageHitClassifier`) runs at write time in `POST /analytics/page-views` and stores five columns on each `PageViews` row: `Area` (feature area), `ScopeType` (`category`, `collection`, `item`, or null), `ScopeKey` (category slug, collection id, or item id; lower-cased; at most 200 characters), `NavPath` (category plus up to two navigation keywords from `/categories/:category/:kw1/:kw2` path segments or the comma-separated `nav` query parameter; category scope only), and `IsItemStep` (true when a Quiz or Flashcards path contains `/item/<id>`, i.e. one question viewed). Specific routes are matched before parameterised ones, and unknown paths map to `other`.
+
+| Route | Area |
+| --- | --- |
+| `/` | `home` |
+| `/categories*`, `/items` | `browse` |
+| `/quiz*` | `quiz` |
+| `/explore*` | `flashcards` |
+| `/collections*` | `collections` |
+| `/featured` | `featured` |
+| `/items/:id`, `/items/:id/comments` | `item-detail` |
+| `/items/add`, `/items/bulk-create`, `/items/upload`, `/items/create`, `/add-new-item`, `/items/:id/edit` | `create` |
+| `/study-guide*` | `study-guide` |
+| `/login`, `/signup` | `auth` |
+| `/ideas`, `/roadmap`, `/feedback` | `community` |
+| `/about`, `/privacy*`, `/terms*` | `info` |
+| `/admin*` | `admin` |
+| anything else | `other` |
+
+- **AC 5.8.1** [System] **Given** `POST /analytics/page-views` stores a hit for `/quiz/geography/item/<id>?nav=capitals`, **then** the row has `Area = quiz`, `ScopeType = category`, `ScopeKey = geography`, `NavPath = geography/capitals`, `IsItemStep = true`. **Given** `/explore/collections/<id>/<slug>/item/<id>`, **then** `Area = flashcards`, `ScopeType = collection`, `ScopeKey = <collection id>`, `IsItemStep = true`. **Given** `/items/add`, **then** `Area = create`. **Given** a path matching no route, **then** `Area = other`.
+- **AC 5.8.2** [System] **Given** the API starts, **then** a background backfill classifies every `PageViews` row whose `Area` is still null with the same classifier (batches of 2,000; idempotent; a failed run is logged and retried on the next start), so backfilled rows match newly written rows exactly. Until a row is backfilled, reports count it as `other` in SQL aggregates and classify it on the fly where rows are already in memory (landing groups and journey steps).
+- **AC 5.8.3** [Admin] **Given** I call `GET /admin/page-view-analytics`, **then** the response also includes `featureAreas` (per area: hits, distinct sessions, share of sessions as a percentage of `uniqueSessions`, item steps) whose `hits` add up to `summary.totalPageViews`, and `contentScopes` with `topCategories`, `topNavPaths`, and `topCollections` (each limited by `topPagesLimit`; per row: key, sessions, hits, item steps, and average item steps per session), with collection names resolved from `Collections` (null when the collection no longer exists). The raw `topPages` list is unchanged. All existing filters (window, visitor type, path contains, bots, internal) apply.
+- **AC 5.8.4** [Admin] **Behavior change —** `GET /admin/page-view-sessions` groups `landingPages` by the entry hit's area, scope type, and scope key instead of by exact entry path; each row carries `area`, `scopeType`, `scopeKey`, and `path` (the most common entry path in the group, as an example). The summary adds `studySessions` (sessions with at least one Quiz or Flashcards item step) and `avgItemStepsPerStudySession`; each listed session adds `entryArea` and `itemSteps`. `GET /admin/page-view-sessions/{sessionId}` adds `area` and `isItemStep` to every journey step.
+- **AC 5.8.5** [Admin] **Given** I open **Usage Analytics → Pages**, **then** a **Group by** switch offers **Feature area** (default; a table of sessions, hits, and share of sessions per area), **Content scope** (top categories, navigation sets, and collections with sessions, item steps, and average item steps per session; collections show their name, or "Unknown collection"), and **Raw URL** (the previous most-visited-pages list). Summary cards and the recent-hits table are shown in every mode.
+- **AC 5.8.6** [Admin] **Given** I open the **Sessions** tab, **then** cards show **Sessions with study activity** and **Avg questions / study session**, the landing table lists entry area and scope with an example path, and each expanded journey step is labelled with its area.
 ---
 
 ## 6. Study guides and import
