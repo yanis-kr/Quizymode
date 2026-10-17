@@ -3,6 +3,7 @@ import { useParams, useNavigate, useSearchParams, Link, useLocation } from "reac
 import { useQuery, useMutation, useQueryClient } from "@tanstack/react-query";
 import { collectionsApi } from "@/api/collections";
 import { useAuth } from "@/contexts/AuthContext";
+import { useCurrentUserId } from "@/hooks/useCurrentUserId";
 import LoadingSpinner from "@/components/LoadingSpinner";
 import ErrorMessage from "@/components/ErrorMessage";
 import ItemListSection from "@/components/ItemListSection";
@@ -25,7 +26,8 @@ const CollectionDetailPage = () => {
   const [searchParams] = useSearchParams();
   const view = searchParams.get("view") || "list";
   const itemId = searchParams.get("item") || null;
-  const { isAuthenticated, userId } = useAuth();
+  const { isAuthenticated } = useAuth();
+  const currentUserId = useCurrentUserId();
   const queryClient = useQueryClient();
   const navigate = useNavigate();
   const location = useLocation();
@@ -101,7 +103,7 @@ const CollectionDetailPage = () => {
     },
   });
 
-  const isOwner = isAuthenticated && !!userId && collectionData?.createdBy === userId;
+  const isOwner = isAuthenticated && !!currentUserId && collectionData?.createdBy === currentUserId;
 
   const { data: bookmarkedByData } = useQuery({
     queryKey: ["collectionBookmarkedBy", id],

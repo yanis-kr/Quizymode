@@ -3,6 +3,7 @@ import { useState } from "react";
 import { useQuery, useMutation, useQueryClient } from "@tanstack/react-query";
 import { itemsApi } from "@/api/items";
 import { useAuth } from "@/contexts/AuthContext";
+import { useCurrentUserId } from "@/hooks/useCurrentUserId";
 import LoadingSpinner from "@/components/LoadingSpinner";
 import ErrorMessage from "@/components/ErrorMessage";
 import {
@@ -26,7 +27,8 @@ const ItemDetailPage = () => {
   const [searchParams] = useSearchParams();
   const [commentsDrawerItemId, setCommentsDrawerItemId] = useState<string | null>(null);
   const queryClient = useQueryClient();
-  const { isAuthenticated, userId, isAdmin } = useAuth();
+  const { isAuthenticated, isAdmin } = useAuth();
+  const currentUserId = useCurrentUserId();
   const returnUrl = searchParams.get("return");
   const returnMode = searchParams.get("returnMode");
   const safeReturnUrl =
@@ -65,7 +67,7 @@ const ItemDetailPage = () => {
   const canEdit =
     isAuthenticated &&
     item &&
-    (item.createdBy === userId || isAdmin);
+    ((!!currentUserId && item.createdBy === currentUserId) || isAdmin);
 
   if (isLoading) return <LoadingSpinner />;
   if (error || !item) {

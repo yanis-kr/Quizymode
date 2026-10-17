@@ -6,6 +6,7 @@ import { useState } from "react";
 import { useQuery, useMutation, useQueryClient } from "@tanstack/react-query";
 import { commentsApi, type CommentResponse } from "@/api/comments";
 import { useAuth } from "@/contexts/AuthContext";
+import { useCurrentUserId } from "@/hooks/useCurrentUserId";
 import { XMarkIcon, PencilIcon, TrashIcon } from "@heroicons/react/24/outline";
 import LoadingSpinner from "./LoadingSpinner";
 import ErrorMessage from "./ErrorMessage";
@@ -26,7 +27,8 @@ export function CommentsDrawer({
   previousItemId,
   nextItemId,
 }: CommentsDrawerProps) {
-  const { isAuthenticated, userId } = useAuth();
+  const { isAuthenticated } = useAuth();
+  const currentUserId = useCurrentUserId();
   const queryClient = useQueryClient();
   const [editingCommentId, setEditingCommentId] = useState<string | null>(null);
   const [editText, setEditText] = useState("");
@@ -181,7 +183,7 @@ export function CommentsDrawer({
               <div className="space-y-3">
                 {(data?.comments || []).length > 0 ? (
                   (data?.comments || []).map((comment) => {
-                    const isOwner = comment.createdBy === userId;
+                    const isOwner = !!currentUserId && comment.createdBy === currentUserId;
                     const isEditing = editingCommentId === comment.id;
 
                     return (
