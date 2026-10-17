@@ -53,6 +53,7 @@ import {
   type QuizRunState,
 } from "@/features/items/quiz/quizRun";
 import { recordGuestCompletion } from "@/features/guestHistory/guestHistoryStorage";
+import { recordAuthenticatedCompletion } from "@/features/studySessions/recordStudySession";
 
 const QuizModePage = () => {
   const { category: categorySlug, collectionId, itemId } = useParams();
@@ -576,6 +577,10 @@ const QuizModePage = () => {
       runIdentityKey: run.identityKey,
       currentIdentityKey: identityKey,
     });
+    // Authenticated history (AC 3.6.14): only runs started and completed under the same signed-in identity.
+    if (isAuthenticated && !isAuthLoading && run.identityKey === identityKey) {
+      void recordAuthenticatedCompletion(snapshot);
+    }
     // Persist the one-shot publication marker with the run after notifying consumers.
     // eslint-disable-next-line react-hooks/set-state-in-effect
     setRun((current) =>
