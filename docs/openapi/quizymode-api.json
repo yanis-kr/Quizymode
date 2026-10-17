@@ -6313,7 +6313,8 @@
         "required": [
           "itemsAwaitingReview",
           "pendingPrivateKeywords",
-          "ideasAwaitingModeration"
+          "ideasAwaitingModeration",
+          "newClientErrorGroups"
         ],
         "type": "object",
         "properties": {
@@ -6324,6 +6325,10 @@
             "$ref": "#/components/schemas/System.Int32"
           },
           "ideasAwaitingModeration": {
+            "$ref": "#/components/schemas/System.Int32"
+          },
+          "newClientErrorGroups": {
+            "description": "Front-end error groups first seen in the window, bots and internal traffic excluded (OBS-001).",
             "$ref": "#/components/schemas/System.Int32"
           }
         }
