@@ -156,3 +156,16 @@ export function buildIdeaExcerpt(text: string, maxLength: number): string {
 
   return `${normalized.slice(0, Math.max(0, maxLength - 1)).trimEnd()}...`;
 }
+
+/** Mirrors the backend IdeaFeatureSupport.IsAllowedStatusTransition rules. */
+const ALLOWED_STATUS_TRANSITIONS: Record<IdeaStatus, IdeaStatus[]> = {
+  Proposed: ["Planned", "In Progress", "Archived"],
+  Planned: ["Proposed", "In Progress", "Archived"],
+  "In Progress": ["Planned", "Shipped", "Archived"],
+  Shipped: ["Archived"],
+  Archived: ["Proposed"],
+};
+
+export function getAllowedStatusTransitions(status: IdeaStatus): IdeaStatus[] {
+  return ALLOWED_STATUS_TRANSITIONS[status] ?? [];
+}

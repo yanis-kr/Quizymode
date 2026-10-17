@@ -264,6 +264,7 @@ public sealed class IdeasFeatureTests : DatabaseTestFixture
     public async Task HandleStatusUpdateAsync_AppliesValidStatus()
     {
         Idea idea = NewIdea(Guid.NewGuid().ToString(), "Status test idea", DateTime.UtcNow.AddDays(-1));
+        idea.ModerationState = IdeaModerationState.Published;
         DbContext.Ideas.Add(idea);
         await DbContext.SaveChangesAsync();
 
@@ -277,6 +278,113 @@ public sealed class IdeasFeatureTests : DatabaseTestFixture
 
         result.IsSuccess.Should().BeTrue();
         result.Value.Status.Should().Be("In Progress");
+    }
+
+    [Theory]
+    [InlineData(IdeaStatus.Proposed, "Shipped")]
+    [InlineData(IdeaStatus.Shipped, "Proposed")]
+    [InlineData(IdeaStatus.Archived, "Shipped")]
+    [InlineData(IdeaStatus.InProgress, "Proposed")]
+    public async Task HandleStatusUpdateAsync_RejectsDisallowedTransition(IdeaStatus current, string requested)
+    {
+        Idea idea = NewIdea(Guid.NewGuid().ToString(), "Status test idea", DateTime.UtcNow.AddDays(-1));
+        idea.ModerationState = IdeaModerationState.Published;
+        idea.Status = current;
+        DbContext.Ideas.Add(idea);
+        await DbContext.SaveChangesAsync();
+
+        Result<IdeaSummaryResponse> result = await IdeaCrud.HandleStatusUpdateAsync(
+            idea.Id,
+            new IdeaCrud.StatusRequest(requested),
+            DbContext,
+            AuthenticatedUser(Guid.NewGuid().ToString(), isAdmin: true).Object,
+            new Mock<IAuditService>().Object,
+            CancellationToken.None);
+
+        result.IsFailure.Should().BeTrue();
+        result.Error.Code.Should().Be("Ideas.InvalidStatusTransition");
+        result.Error.Type.Should().Be(ErrorType.Conflict);
+        DbContext.Ideas.Single().Status.Should().Be(current);
+    }
+
+    [Fact]
+    public async Task HandleStatusUpdateAsync_RejectsUnpublishedIdea()
+    {
+        Idea idea = NewIdea(Guid.NewGuid().ToString(), "Status test idea", DateTime.UtcNow.AddDays(-1));
+        DbContext.Ideas.Add(idea);
+        await DbContext.SaveChangesAsync();
+
+        Result<IdeaSummaryResponse> result = await IdeaCrud.HandleStatusUpdateAsync(
+            idea.Id,
+            new IdeaCrud.StatusRequest("Planned"),
+            DbContext,
+            AuthenticatedUser(Guid.NewGuid().ToString(), isAdmin: true).Object,
+            new Mock<IAuditService>().Object,
+            CancellationToken.None);
+
+        result.IsFailure.Should().BeTrue();
+        result.Error.Code.Should().Be("Ideas.StatusRequiresPublished");
+        DbContext.Ideas.Single().Status.Should().Be(IdeaStatus.Proposed);
+    }
+
+    [Fact]
+    public async Task HandleStatusUpdateAsync_SameStatusIsNoOp()
+    {
+        Idea idea = NewIdea(Guid.NewGuid().ToString(), "Status test idea", DateTime.UtcNow.AddDays(-1));
+        idea.ModerationState = IdeaModerationState.Published;
+        DbContext.Ideas.Add(idea);
+        await DbContext.SaveChangesAsync();
+
+        Result<IdeaSummaryResponse> result = await IdeaCrud.HandleStatusUpdateAsync(
+            idea.Id,
+            new IdeaCrud.StatusRequest("Proposed"),
+            DbContext,
+            AuthenticatedUser(Guid.NewGuid().ToString(), isAdmin: true).Object,
+            new Mock<IAuditService>().Object,
+            CancellationToken.None);
+
+        result.IsSuccess.Should().BeTrue();
+        result.Value.Status.Should().Be("Proposed");
+    }
+
+    [Fact]
+    public async Task HandleApproveAsync_PreservesExistingNotesWhenNoNoteIsGiven()
+    {
+        Idea idea = NewIdea(Guid.NewGuid().ToString(), "Rejected idea", DateTime.UtcNow.AddDays(-1));
+        idea.ModerationState = IdeaModerationState.Rejected;
+        idea.ModerationNotes = "Needs more detail.";
+        DbContext.Ideas.Add(idea);
+        await DbContext.SaveChangesAsync();
+
+        Result<IdeaSummaryResponse> result = await IdeasAdmin.HandleApproveAsync(
+            idea.Id,
+            DbContext,
+            AuthenticatedUser(Guid.NewGuid().ToString(), isAdmin: true).Object,
+            new Mock<IAuditService>().Object,
+            CancellationToken.None);
+
+        result.IsSuccess.Should().BeTrue();
+        DbContext.Ideas.Single().ModerationNotes.Should().Be("Needs more detail.");
+    }
+
+    [Fact]
+    public async Task HandleApproveAsync_StoresOptionalApprovalNote()
+    {
+        Idea idea = NewIdea(Guid.NewGuid().ToString(), "Pending idea", DateTime.UtcNow.AddDays(-1));
+        DbContext.Ideas.Add(idea);
+        await DbContext.SaveChangesAsync();
+
+        Result<IdeaSummaryResponse> result = await IdeasAdmin.HandleApproveAsync(
+            idea.Id,
+            DbContext,
+            AuthenticatedUser(Guid.NewGuid().ToString(), isAdmin: true).Object,
+            new Mock<IAuditService>().Object,
+            CancellationToken.None,
+            "  Great idea, scheduling soon.  ");
+
+        result.IsSuccess.Should().BeTrue();
+        result.Value.ModerationNotes.Should().Be("Great idea, scheduling soon.");
+        DbContext.Ideas.Single().ModerationState.Should().Be(IdeaModerationState.Published);
     }
 
     private async Task<Result<IdeaSummaryResponse>> CreateAsync(string userId, string title, int dailyLimit)

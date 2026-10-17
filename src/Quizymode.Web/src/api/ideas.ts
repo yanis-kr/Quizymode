@@ -37,6 +37,9 @@ export interface IdeaSummaryResponse {
 
 export interface IdeaBoardResponse {
   ideas: IdeaSummaryResponse[];
+  page?: number;
+  pageSize?: number;
+  totalCount?: number;
 }
 
 export interface CreateIdeaRequest {
@@ -56,6 +59,10 @@ export interface UpdateIdeaRequest {
 
 export interface UpdateIdeaStatusRequest {
   status: IdeaStatus;
+}
+
+export interface ApproveIdeaRequest {
+  moderationNotes?: string | null;
 }
 
 export interface RejectIdeaRequest {
@@ -98,13 +105,17 @@ export interface UpdateIdeaRatingRequest {
 }
 
 export const ideasApi = {
-  getBoard: async (): Promise<IdeaBoardResponse> => {
-    const response = await apiClient.get<IdeaBoardResponse>("/ideas");
+  getBoard: async (page = 1): Promise<IdeaBoardResponse> => {
+    const response = await apiClient.get<IdeaBoardResponse>("/ideas", {
+      params: { page },
+    });
     return response.data;
   },
 
-  getMine: async (): Promise<IdeaBoardResponse> => {
-    const response = await apiClient.get<IdeaBoardResponse>("/ideas/mine");
+  getMine: async (page = 1): Promise<IdeaBoardResponse> => {
+    const response = await apiClient.get<IdeaBoardResponse>("/ideas/mine", {
+      params: { page },
+    });
     return response.data;
   },
 
@@ -182,17 +193,22 @@ export const ideasApi = {
   },
 
   getAdminIdeas: async (
-    moderationState: IdeaModerationState | "all" = "PendingReview"
+    moderationState: IdeaModerationState | "all" = "PendingReview",
+    page = 1
   ): Promise<IdeaBoardResponse> => {
     const response = await apiClient.get<IdeaBoardResponse>("/admin/ideas", {
-      params: { moderationState },
+      params: { moderationState, page },
     });
     return response.data;
   },
 
-  approve: async (id: string): Promise<IdeaSummaryResponse> => {
+  approve: async (
+    id: string,
+    data?: ApproveIdeaRequest
+  ): Promise<IdeaSummaryResponse> => {
     const response = await apiClient.post<IdeaSummaryResponse>(
-      `/admin/ideas/${id}/approve`
+      `/admin/ideas/${id}/approve`,
+      data
     );
     return response.data;
   },

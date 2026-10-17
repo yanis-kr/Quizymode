@@ -1,5 +1,10 @@
 import { useMemo, useState, type Dispatch, type SetStateAction } from "react";
-import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
+import {
+  keepPreviousData,
+  useMutation,
+  useQuery,
+  useQueryClient,
+} from "@tanstack/react-query";
 import { ArrowUpRightIcon, LightBulbIcon } from "@heroicons/react/24/outline";
 import { Link } from "react-router-dom";
 import { ideasApi, type IdeaSummaryResponse, type IdeaStatus } from "@/api/ideas";
@@ -8,7 +13,9 @@ import LoadingSpinner from "@/components/LoadingSpinner";
 import { SEO } from "@/components/SEO";
 import { useAuth } from "@/contexts/AuthContext";
 import { getApiErrorMessage } from "@/utils/apiError";
+import { getIdeaErrorMessage } from "../ideaErrors";
 import IdeaCard from "../components/IdeaCard";
+import IdeaPager from "../components/IdeaPager";
 import IdeaFormModal, { type IdeaFormValues } from "../components/IdeaFormModal";
 import {
   type BoardSort,
@@ -35,15 +42,20 @@ const IdeasPage = () => {
     null
   );
 
+  const [boardPage, setBoardPage] = useState(1);
+  const [minePage, setMinePage] = useState(1);
+
   const boardQuery = useQuery({
-    queryKey: ["ideas", "board"],
-    queryFn: () => ideasApi.getBoard(),
+    queryKey: ["ideas", "board", boardPage],
+    queryFn: () => ideasApi.getBoard(boardPage),
+    placeholderData: keepPreviousData,
   });
 
   const mineQuery = useQuery({
-    queryKey: ["ideas", "mine"],
-    queryFn: () => ideasApi.getMine(),
+    queryKey: ["ideas", "mine", minePage],
+    queryFn: () => ideasApi.getMine(minePage),
     enabled: isAuthenticated,
+    placeholderData: keepPreviousData,
   });
 
   const invalidateIdeaQueries = () => {
@@ -68,7 +80,7 @@ const IdeasPage = () => {
       invalidateIdeaQueries();
     },
     onError: (error) => {
-      setFormError(getApiErrorMessage(error));
+      setFormError(getIdeaErrorMessage(error));
     },
   });
 
@@ -92,7 +104,7 @@ const IdeasPage = () => {
       invalidateIdeaQueries();
     },
     onError: (error) => {
-      setFormError(getApiErrorMessage(error));
+      setFormError(getIdeaErrorMessage(error));
     },
   });
 
@@ -103,7 +115,7 @@ const IdeasPage = () => {
       invalidateIdeaQueries();
     },
     onError: (error) => {
-      setActionError(getApiErrorMessage(error));
+      setActionError(getIdeaErrorMessage(error));
     },
   });
 
@@ -118,7 +130,7 @@ const IdeasPage = () => {
       invalidateIdeaQueries();
     },
     onError: (error) => {
-      setActionError(getApiErrorMessage(error));
+      setActionError(getIdeaErrorMessage(error));
     },
     onSettled: () => {
       setStatusUpdatingIdeaId(null);
@@ -302,6 +314,13 @@ const IdeasPage = () => {
                   ))}
                 </div>
               )}
+              <IdeaPager
+                page={minePage}
+                pageSize={mineQuery.data?.pageSize ?? 50}
+                totalCount={mineQuery.data?.totalCount ?? 0}
+                onPageChange={setMinePage}
+                label="My submissions pagination"
+              />
             </section>
           )}
 
@@ -427,6 +446,13 @@ const IdeasPage = () => {
                 ))}
               </div>
             )}
+            <IdeaPager
+              page={boardPage}
+              pageSize={boardQuery.data?.pageSize ?? 50}
+              totalCount={boardQuery.data?.totalCount ?? 0}
+              onPageChange={setBoardPage}
+              label="Public board pagination"
+            />
           </section>
         </div>
       </div>
