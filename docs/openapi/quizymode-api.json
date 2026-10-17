@@ -4235,6 +4235,108 @@
         }
       }
     },
+    "/study-sessions": {
+      "get": {
+        "tags": [
+          "StudySessions"
+        ],
+        "summary": "List the current user's recent study sessions",
+        "description": "Newest first. limit defaults to 20 and is capped at 50. Requires authentication.",
+        "parameters": [
+          {
+            "name": "limit",
+            "in": "query",
+            "schema": {
+              "$ref": "#/components/schemas/System.NullableOfSystem.Int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Quizymode.Api.Features.StudySessions.GetStudySessions.SessionsResponse"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "StudySessions"
+        ],
+        "summary": "Save a completed quiz run to the current user's history",
+        "description": "Idempotent by run ID: a retry returns the stored session with created=false. Requires authentication.",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Quizymode.Api.Features.StudySessions.RecordStudySession.Request"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Quizymode.Api.Features.StudySessions.RecordStudySession.Response"
+                }
+              }
+            }
+          },
+          "201": {
+            "description": "Created",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Quizymode.Api.Features.StudySessions.RecordStudySession.Response"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "401": {
+            "description": "Unauthorized"
+          }
+        }
+      }
+    },
+    "/study-sessions/summary": {
+      "get": {
+        "tags": [
+          "StudySessions"
+        ],
+        "summary": "Summary statistics for the current user's study sessions",
+        "description": "Private to the current user; there is no public comparison. Requires authentication.",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Quizymode.Api.Features.StudySessions.GetStudySessions.SummaryResponse"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          }
+        }
+      }
+    },
     "/taxonomy": {
       "get": {
         "tags": [
@@ -11982,6 +12084,227 @@
           }
         }
       },
+      "Quizymode.Api.Features.StudySessions.GetStudySessions.SessionsResponse": {
+        "required": [
+          "sessions"
+        ],
+        "type": "object",
+        "properties": {
+          "sessions": {
+            "$ref": "#/components/schemas/System.Collections.Generic.ListOfQuizymode.Api.Features.StudySessions.RecordStudySession.SessionDto"
+          }
+        }
+      },
+      "Quizymode.Api.Features.StudySessions.GetStudySessions.SummaryResponse": {
+        "required": [
+          "totalSessions",
+          "totalQuestions",
+          "totalCorrect",
+          "accuracyPercent",
+          "last30DaysSessions",
+          "last30DaysAccuracyPercent",
+          "importedSessions"
+        ],
+        "type": "object",
+        "properties": {
+          "totalSessions": {
+            "$ref": "#/components/schemas/System.Int32"
+          },
+          "totalQuestions": {
+            "$ref": "#/components/schemas/System.Int32"
+          },
+          "totalCorrect": {
+            "$ref": "#/components/schemas/System.Int32"
+          },
+          "accuracyPercent": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/components/schemas/System.NullableOfSystem.Int32"
+              }
+            ]
+          },
+          "last30DaysSessions": {
+            "$ref": "#/components/schemas/System.Int32"
+          },
+          "last30DaysAccuracyPercent": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/components/schemas/System.NullableOfSystem.Int32"
+              }
+            ]
+          },
+          "importedSessions": {
+            "$ref": "#/components/schemas/System.Int32"
+          }
+        }
+      },
+      "Quizymode.Api.Features.StudySessions.RecordStudySession.Request": {
+        "required": [
+          "runId",
+          "completedAt",
+          "correct",
+          "total",
+          "source",
+          "missedItemIds"
+        ],
+        "type": "object",
+        "properties": {
+          "runId": {
+            "$ref": "#/components/schemas/System.String"
+          },
+          "completedAt": {
+            "$ref": "#/components/schemas/System.DateTime"
+          },
+          "correct": {
+            "$ref": "#/components/schemas/System.Int32"
+          },
+          "total": {
+            "$ref": "#/components/schemas/System.Int32"
+          },
+          "source": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/components/schemas/Quizymode.Api.Features.StudySessions.RecordStudySession.SourceDto"
+              }
+            ]
+          },
+          "missedItemIds": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/components/schemas/System.Collections.Generic.ListOfSystem.Guid"
+              }
+            ]
+          }
+        }
+      },
+      "Quizymode.Api.Features.StudySessions.RecordStudySession.Response": {
+        "required": [
+          "session",
+          "created"
+        ],
+        "type": "object",
+        "properties": {
+          "session": {
+            "$ref": "#/components/schemas/Quizymode.Api.Features.StudySessions.RecordStudySession.SessionDto"
+          },
+          "created": {
+            "$ref": "#/components/schemas/System.Boolean"
+          }
+        }
+      },
+      "Quizymode.Api.Features.StudySessions.RecordStudySession.SessionDto": {
+        "required": [
+          "id",
+          "runId",
+          "origin",
+          "completedAt",
+          "correct",
+          "total",
+          "source",
+          "missedItemIds"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "$ref": "#/components/schemas/System.Guid"
+          },
+          "runId": {
+            "$ref": "#/components/schemas/System.String"
+          },
+          "origin": {
+            "$ref": "#/components/schemas/System.String"
+          },
+          "completedAt": {
+            "$ref": "#/components/schemas/System.DateTime"
+          },
+          "correct": {
+            "$ref": "#/components/schemas/System.Int32"
+          },
+          "total": {
+            "$ref": "#/components/schemas/System.Int32"
+          },
+          "source": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/components/schemas/Quizymode.Api.Features.StudySessions.RecordStudySession.SourceDto"
+              }
+            ]
+          },
+          "missedItemIds": {
+            "$ref": "#/components/schemas/System.Collections.Generic.ListOfSystem.Guid"
+          }
+        }
+      },
+      "Quizymode.Api.Features.StudySessions.RecordStudySession.SourceDto": {
+        "required": [
+          "kind",
+          "collectionId",
+          "categorySlug",
+          "navigationKeywords",
+          "filterKeywords"
+        ],
+        "type": "object",
+        "properties": {
+          "kind": {
+            "$ref": "#/components/schemas/System.String"
+          },
+          "collectionId": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/components/schemas/System.NullableOfSystem.Guid"
+              }
+            ]
+          },
+          "categorySlug": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/components/schemas/System.String"
+              }
+            ]
+          },
+          "navigationKeywords": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/components/schemas/System.Collections.Generic.ListOfSystem.String"
+              }
+            ]
+          },
+          "filterKeywords": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/components/schemas/System.Collections.Generic.ListOfSystem.String"
+              }
+            ]
+          }
+        }
+      },
       "Quizymode.Api.Features.Taxonomy.GetTaxonomy.CategoryDto": {
         "required": [
           "slug",
@@ -12962,6 +13285,12 @@
           "$ref": "#/components/schemas/Quizymode.Api.Features.StudyGuideImport.GetImportSession.PromptResultDto"
         }
       },
+      "System.Collections.Generic.ListOfQuizymode.Api.Features.StudySessions.RecordStudySession.SessionDto": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/Quizymode.Api.Features.StudySessions.RecordStudySession.SessionDto"
+        }
+      },
       "System.Collections.Generic.ListOfQuizymode.Api.Services.VisitorCohortReport.ReturnRateRow": {
         "type": "array",
         "items": {
@@ -13121,6 +13450,9 @@
     },
     {
       "name": "StudyGuides"
+    },
+    {
+      "name": "StudySessions"
     },
     {
       "name": "Taxonomy"
