@@ -1,8 +1,15 @@
 import { useAuth } from '@/contexts/AuthContext';
 import { Navigate, Link } from 'react-router-dom';
+import { useQuery } from '@tanstack/react-query';
+import { adminApi } from '@/api/admin';
 
 const AdminDashboardPage = () => {
   const { isAuthenticated, isAdmin } = useAuth();
+  const feedbackSummary = useQuery({
+    queryKey: ['admin', 'feedback-new-count'],
+    queryFn: () => adminApi.getAdminFeedback({ page: 1, pageSize: 1, status: 'New' }),
+    enabled: isAuthenticated && isAdmin,
+  });
 
   if (!isAuthenticated || !isAdmin) {
     return <Navigate to="/" replace />;
@@ -103,6 +110,23 @@ const AdminDashboardPage = () => {
           <p className="text-sm text-gray-500">
             Front-end crashes grouped by fingerprint, page, browser, and release
           </p>
+        </Link>
+        <Link
+          to="/admin/feedback"
+          className="bg-white shadow rounded-lg p-6 hover:shadow-lg transition-shadow cursor-pointer"
+        >
+          <h3 className="text-lg font-medium text-gray-900 mb-2">
+            Feedback
+            {feedbackSummary.data && (
+              <span
+                className="ml-2 rounded-full bg-amber-100 px-2 py-0.5 text-xs font-semibold text-amber-800"
+                aria-label={`${feedbackSummary.data.newCount} new feedback submissions`}
+              >
+                {feedbackSummary.data.newCount} new
+              </span>
+            )}
+          </h3>
+          <p className="text-sm text-gray-500">Read and triage bug reports and requests</p>
         </Link>
         <Link
           to="/admin/ideas"

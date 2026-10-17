@@ -57,6 +57,190 @@
         }
       }
     },
+    "/admin/feedback": {
+      "get": {
+        "tags": [
+          "Admin"
+        ],
+        "summary": "List feedback submissions, newest first (Admin only)",
+        "description": "Paged (pageSize max 100). Filters: type (reportIssue, requestItems, generalFeedback), status (New, Reviewed, Archived), from/to (UTC dates, inclusive), and search over details, page URL, and emails. Also returns the count of New submissions.",
+        "parameters": [
+          {
+            "name": "page",
+            "in": "query",
+            "schema": {
+              "default": 1,
+              "$ref": "#/components/schemas/System.Int32"
+            }
+          },
+          {
+            "name": "pageSize",
+            "in": "query",
+            "schema": {
+              "default": 25,
+              "$ref": "#/components/schemas/System.Int32"
+            }
+          },
+          {
+            "name": "type",
+            "in": "query",
+            "schema": {
+              "$ref": "#/components/schemas/System.String"
+            }
+          },
+          {
+            "name": "status",
+            "in": "query",
+            "schema": {
+              "$ref": "#/components/schemas/System.String"
+            }
+          },
+          {
+            "name": "from",
+            "in": "query",
+            "schema": {
+              "$ref": "#/components/schemas/System.NullableOfSystem.DateTime"
+            }
+          },
+          {
+            "name": "to",
+            "in": "query",
+            "schema": {
+              "$ref": "#/components/schemas/System.NullableOfSystem.DateTime"
+            }
+          },
+          {
+            "name": "search",
+            "in": "query",
+            "schema": {
+              "$ref": "#/components/schemas/System.String"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Quizymode.Api.Features.Admin.AdminFeedback.ListResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/admin/feedback/{id}": {
+      "get": {
+        "tags": [
+          "Admin"
+        ],
+        "summary": "Get one feedback submission (Admin only)",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "$ref": "#/components/schemas/System.Guid"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Quizymode.Api.Features.Admin.AdminFeedback.FeedbackResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/admin/feedback/{id}/status": {
+      "put": {
+        "tags": [
+          "Admin"
+        ],
+        "summary": "Set a feedback submission's status to New, Reviewed, or Archived (Admin only)",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "$ref": "#/components/schemas/System.Guid"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Quizymode.Api.Features.Admin.AdminFeedback.UpdateStatusRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Quizymode.Api.Features.Admin.AdminFeedback.FeedbackResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "/admin/users/{id}/settings": {
       "get": {
         "tags": [
@@ -4738,6 +4922,134 @@
         "properties": {
           "id": {
             "$ref": "#/components/schemas/System.Guid"
+          }
+        }
+      },
+      "Quizymode.Api.Features.Admin.AdminFeedback.FeedbackResponse": {
+        "required": [
+          "id",
+          "type",
+          "status",
+          "details",
+          "pageUrl",
+          "additionalKeywords",
+          "userEmail",
+          "contactEmail",
+          "userAgent",
+          "sessionId",
+          "createdAt"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "$ref": "#/components/schemas/System.Guid"
+          },
+          "type": {
+            "$ref": "#/components/schemas/System.String"
+          },
+          "status": {
+            "$ref": "#/components/schemas/System.String"
+          },
+          "details": {
+            "$ref": "#/components/schemas/System.String"
+          },
+          "pageUrl": {
+            "$ref": "#/components/schemas/System.String"
+          },
+          "additionalKeywords": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/components/schemas/System.String"
+              }
+            ]
+          },
+          "userEmail": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "description": "Email of the signed-in submitter, when any.",
+                "$ref": "#/components/schemas/System.String"
+              }
+            ]
+          },
+          "contactEmail": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "description": "Email typed into the feedback form, when any.",
+                "$ref": "#/components/schemas/System.String"
+              }
+            ]
+          },
+          "userAgent": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/components/schemas/System.String"
+              }
+            ]
+          },
+          "sessionId": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "description": "Analytics session the report was sent from; the journey is read via the page-view session endpoint.",
+                "$ref": "#/components/schemas/System.String"
+              }
+            ]
+          },
+          "createdAt": {
+            "$ref": "#/components/schemas/System.DateTime"
+          }
+        }
+      },
+      "Quizymode.Api.Features.Admin.AdminFeedback.ListResponse": {
+        "required": [
+          "items",
+          "totalCount",
+          "page",
+          "pageSize",
+          "newCount"
+        ],
+        "type": "object",
+        "properties": {
+          "items": {
+            "$ref": "#/components/schemas/System.Collections.Generic.ListOfQuizymode.Api.Features.Admin.AdminFeedback.FeedbackResponse"
+          },
+          "totalCount": {
+            "$ref": "#/components/schemas/System.Int32"
+          },
+          "page": {
+            "$ref": "#/components/schemas/System.Int32"
+          },
+          "pageSize": {
+            "$ref": "#/components/schemas/System.Int32"
+          },
+          "newCount": {
+            "description": "Submissions currently in the New status (unfiltered), for the dashboard badge.",
+            "$ref": "#/components/schemas/System.Int32"
+          }
+        }
+      },
+      "Quizymode.Api.Features.Admin.AdminFeedback.UpdateStatusRequest": {
+        "required": [
+          "status"
+        ],
+        "type": "object",
+        "properties": {
+          "status": {
+            "$ref": "#/components/schemas/System.String"
           }
         }
       },
@@ -9444,6 +9756,17 @@
                 "$ref": "#/components/schemas/System.String"
               }
             ]
+          },
+          "sessionId": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "description": "Current analytics session id, so an admin can see the journey that led to the report.",
+                "$ref": "#/components/schemas/System.String"
+              }
+            ]
           }
         }
       },
@@ -12600,6 +12923,12 @@
         "type": "array",
         "items": {
           "$ref": "#/components/schemas/System.String"
+        }
+      },
+      "System.Collections.Generic.ListOfQuizymode.Api.Features.Admin.AdminFeedback.FeedbackResponse": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/Quizymode.Api.Features.Admin.AdminFeedback.FeedbackResponse"
         }
       },
       "System.Collections.Generic.ListOfQuizymode.Api.Features.Admin.AdminUsersActivity.UserOverviewResponse": {
