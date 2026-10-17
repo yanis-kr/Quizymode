@@ -136,4 +136,70 @@ public sealed class GetLearningReportTests : DatabaseTestFixture
         result.IsFailure.Should().BeTrue();
         result.Error.Type.Should().Be(ErrorType.Validation);
     }
+
+    private static AnalyticsSession Session(string sessionId, string? visitorId, string channel, int minutesAgo) => new()
+    {
+        Id = Guid.NewGuid(),
+        SessionId = sessionId,
+        VisitorId = visitorId,
+        FirstSeenUtc = Now.AddMinutes(-minutesAgo),
+        Channel = channel,
+        DeviceClass = "desktop",
+        CreatedUtc = Now.AddMinutes(-minutesAgo)
+    };
+
+    [Fact]
+    public async Task HandleAsync_ChannelAndVisitorTypeFilters_LimitEveryFigure()
+    {
+        // v1: first session s-new (search) and a later one s-ret (search). v2: only s-other (social, new).
+        await DbContext.AnalyticsSessions.AddRangeAsync(
+            Session("s-new", "v1", "search", minutesAgo: 600),
+            Session("s-ret", "v1", "search", minutesAgo: 60),
+            Session("s-other", "v2", "social", minutesAgo: 30));
+        await DbContext.AnalyticsEvents.AddRangeAsync(QuizRun("s-new", "r1", questions: 4, answered: 4, completed: true, score: 4));
+        await DbContext.AnalyticsEvents.AddRangeAsync(QuizRun("s-ret", "r2", questions: 4, answered: 2, completed: false));
+        await DbContext.AnalyticsEvents.AddRangeAsync(QuizRun("s-other", "r3", questions: 4, answered: 1, completed: false));
+        await DbContext.AnalyticsEvents.AddRangeAsync(QuizRun("s-nosnap", "r4", questions: 4, answered: 3, completed: false));
+        await DbContext.SaveChangesAsync();
+
+        GetLearningReport.Response all = (await Run(new GetLearningReport.QueryRequest(Days: 7))).Value!;
+        all.Scopes.Single().RunsStarted.Should().Be(4);
+
+        GetLearningReport.Response search = (await Run(new GetLearningReport.QueryRequest(Days: 7, Channel: "Search"))).Value!;
+        search.Scopes.Single().RunsStarted.Should().Be(2);
+        search.Scopes.Single().RunsCompleted.Should().Be(1);
+        search.Scopes.Single().AverageItemsReached.Should().Be(3.0);
+        search.QuizDropOff.Should().HaveCount(4);
+
+        GetLearningReport.Response unknown = (await Run(new GetLearningReport.QueryRequest(Days: 7, Channel: "unknown"))).Value!;
+        unknown.Scopes.Single().RunsStarted.Should().Be(1);
+        unknown.Scopes.Single().AverageItemsReached.Should().Be(3.0);
+
+        GetLearningReport.Response returning = (await Run(new GetLearningReport.QueryRequest(Days: 7, VisitorType: "returning"))).Value!;
+        returning.Scopes.Single().RunsStarted.Should().Be(1);
+        returning.Scopes.Single().RunsCompleted.Should().Be(0);
+        returning.QuizDropOff.Should().HaveCount(2);
+
+        GetLearningReport.Response newVisitors = (await Run(new GetLearningReport.QueryRequest(Days: 7, VisitorType: "new"))).Value!;
+        newVisitors.Scopes.Single().RunsStarted.Should().Be(2);
+
+        GetLearningReport.Response both = (await Run(new GetLearningReport.QueryRequest(Days: 7, Channel: "search", VisitorType: "new"))).Value!;
+        both.Scopes.Single().RunsStarted.Should().Be(1);
+        both.Scopes.Single().RunsCompleted.Should().Be(1);
+        both.Scopes.Single().AverageScorePercent.Should().Be(100.0);
+
+        GetLearningReport.Response none = (await Run(new GetLearningReport.QueryRequest(Days: 7, Channel: "paid"))).Value!;
+        none.Scopes.Should().BeEmpty();
+    }
+
+    [Theory]
+    [InlineData("tv", null)]
+    [InlineData(null, "everyone")]
+    public async Task HandleAsync_UnknownFilterValues_ReturnValidationError(string? channel, string? visitorType)
+    {
+        Result<GetLearningReport.Response> result = await Run(new GetLearningReport.QueryRequest(7, Channel: channel, VisitorType: visitorType));
+
+        result.IsFailure.Should().BeTrue();
+        result.Error.Type.Should().Be(ErrorType.Validation);
+    }
 }

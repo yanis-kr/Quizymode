@@ -1343,7 +1343,7 @@
           "Admin"
         ],
         "summary": "Get study engagement by mode and scope (Admin only)",
-        "description": "Returns quiz and flashcards runs started and completed, average score, items reached, and quiz drop-off by question position for the selected window. Bot sessions are excluded unless includeBots=true, and internal sessions unless includeInternal=true.",
+        "description": "Returns quiz and flashcards runs started and completed, average score, items reached, and quiz drop-off by question position for the selected window. Bot sessions are excluded unless includeBots=true, and internal sessions unless includeInternal=true. Optional channel (paid, email, campaign, search, social, referral, direct, unknown) and visitorType (new, returning) limit every figure to sessions of that traffic channel or visitor type; unknown values return 400.",
         "parameters": [
           {
             "name": "days",
@@ -1367,6 +1367,20 @@
             "schema": {
               "default": false,
               "$ref": "#/components/schemas/System.Boolean"
+            }
+          },
+          {
+            "name": "channel",
+            "in": "query",
+            "schema": {
+              "$ref": "#/components/schemas/System.String"
+            }
+          },
+          {
+            "name": "visitorType",
+            "in": "query",
+            "schema": {
+              "$ref": "#/components/schemas/System.String"
             }
           }
         ],
