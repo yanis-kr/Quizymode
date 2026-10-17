@@ -1,0 +1,93 @@
+[
+  {
+    "id": "#199",
+    "step": "ownership: member B GET member A's document -> 404",
+    "outcome": "PASS",
+    "detail": {
+      "status": 404,
+      "bearer": true
+    }
+  },
+  {
+    "id": "#199",
+    "step": "ownership: anonymous GET -> 401; member B generate on A's document -> 404",
+    "outcome": "PASS",
+    "detail": {
+      "anonymous": 401,
+      "bobGenerate": 404
+    }
+  },
+  {
+    "id": "#199",
+    "step": "member B uploading the same PDF gets his OWN document (201, different id, not a duplicate)",
+    "outcome": "PASS",
+    "detail": {
+      "status": 201,
+      "sameIdAsAlice": false,
+      "isDuplicate": false,
+      "sections": 7
+    }
+  },
+  {
+    "id": "#199",
+    "step": "cache: B's first 3 sections show 'Ready, free' immediately and generating them charges 0",
+    "outcome": "PASS",
+    "detail": {
+      "readyFreeChips": 3,
+      "bobChargeRows": "0",
+      "aliceChargeRows": "3",
+      "vendorCallsMade": 0,
+      "message": "Queued 0 sections (3 ready for free). Used 0 of your sections.",
+      "bobStatuses": [
+        {
+          "label": "pp. 1–2",
+          "status": "Generated",
+          "cached": true,
+          "droppedCount": 1,
+          "candidates": 4
+        },
+        {
+          "label": "pp. 3–4",
+          "status": "Generated",
+          "cached": true,
+          "droppedCount": 1,
+          "candidates": 4
+        },
+        {
+          "label": "pp. 5–6",
+          "status": "Generated",
+          "cached": true,
+          "droppedCount": 1,
+          "candidates": 4
+        },
+        {
+          "label": "pp. 7–8",
+          "status": "New",
+          "cached": false,
+          "droppedCount": 0,
+          "candidates": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": "#199",
+    "step": "admin UI sets StudyGuidePremium=true for member B",
+    "outcome": "PASS",
+    "detail": {
+      "dbValue": "true"
+    }
+  },
+  {
+    "id": "#199",
+    "step": "premium: B's new jobs are Tier=Premium, due immediately (NotBefore = Queued) and complete within seconds, no free-plan delay notice",
+    "outcome": "PASS",
+    "detail": {
+      "secondsFromClickToDone": "8.4",
+      "notBeforeMinusQueuedSeconds": 0,
+      "delayNoticeAbsent": true,
+      "bobChargeRows": "2",
+      "premiumCounter": "4 of 1000 this month · Premium plan"
+    }
+  }
+]

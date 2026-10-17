@@ -1,0 +1,20 @@
+{
+  "collectionId": "ca6a19e1-8906-45f4-b0c7-85deb0e87bc4",
+  "anonDefault": {
+    "status": 200,
+    "isPublic": true,
+    "isDiscoverable": false
+  },
+  "discoverBeforeToggle": {
+    "listsIt": false
+  },
+  "discoverAfterDiscoverOn": {
+    "listsIt": true
+  },
+  "afterLinkOff": {
+    "anonStatus": 404,
+    "discoverListsIt": false,
+    "ownerStatus": 200,
+    "otherMemberStatus": 404
+  }
+}

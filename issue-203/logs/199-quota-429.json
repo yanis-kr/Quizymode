@@ -1,0 +1,24 @@
+{
+  "adminSetDailyOverride": {
+    "status": 200,
+    "value": 4
+  },
+  "quotaBefore": {
+    "tier": "Free",
+    "dailyLimit": 4,
+    "dailyUsed": 3,
+    "monthlyLimit": 60,
+    "monthlyUsed": 3,
+    "remainingToday": 1
+  },
+  "requestedSections": 2,
+  "response": {
+    "status": 429,
+    "body": {
+      "title": "StudyGuideDocument.QuotaExceeded",
+      "status": 429,
+      "detail": "This needs 2 new section(s), but your daily limit of 4 sections leaves 1 for today."
+    }
+  },
+  "dbChargedSumAfter": "3"
+}

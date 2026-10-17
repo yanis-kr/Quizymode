@@ -1,0 +1,24 @@
+{"t":"2026-10-17T21:18:15.319Z","listening":7555}
+{"t":"2026-10-17T21:20:00.456Z","path":"/oai/chat/completions","model":"gpt-5-nano","status":200,"sectionChars":7146,"questionsReturned":5,"quotesFromText":4,"inventedQuotes":1,"pages":[1,1,2,2,1]}
+{"t":"2026-10-17T21:20:00.461Z","path":"/oai/chat/completions","model":"gpt-5-nano","status":200,"sectionChars":6998,"questionsReturned":5,"quotesFromText":4,"inventedQuotes":1,"pages":[5,5,6,6,1]}
+{"t":"2026-10-17T21:20:03.299Z","path":"/oai/chat/completions","model":"gpt-5-nano","status":200,"sectionChars":6776,"questionsReturned":5,"quotesFromText":4,"inventedQuotes":1,"pages":[3,3,4,4,1]}
+{"t":"2026-10-17T21:20:40.320Z","path":"/ds/chat/completions","model":"deepseek-flash","status":200,"sectionChars":7296,"questionsReturned":5,"quotesFromText":4,"inventedQuotes":1,"pages":[9,9,10,10,1]}
+{"t":"2026-10-17T21:20:40.325Z","path":"/ds/chat/completions","model":"deepseek-flash","status":200,"sectionChars":7220,"questionsReturned":5,"quotesFromText":4,"inventedQuotes":1,"pages":[7,7,8,8,1]}
+{"t":"2026-10-17T21:20:49.392Z","control":true,"failPrefix":"oai"}
+{"t":"2026-10-17T21:21:55.352Z","path":"/oai/chat/completions","model":"gpt-5-nano","status":500,"note":"forced vendor failure"}
+{"t":"2026-10-17T21:21:55.354Z","path":"/oai/chat/completions","model":"gpt-5-nano","status":500,"note":"forced vendor failure"}
+{"t":"2026-10-17T21:21:57.136Z","path":"/oai/chat/completions","model":"gpt-5-nano","status":500,"note":"forced vendor failure"}
+{"t":"2026-10-17T21:21:57.841Z","path":"/oai/chat/completions","model":"gpt-5-nano","status":500,"note":"forced vendor failure"}
+{"t":"2026-10-17T21:21:58.199Z","path":"/oai/chat/completions","model":"gpt-5-nano","status":500,"note":"forced vendor failure"}
+{"t":"2026-10-17T21:21:58.342Z","path":"/oai/chat/completions","model":"gpt-5-nano","status":500,"note":"forced vendor failure"}
+{"t":"2026-10-17T21:22:01.412Z","path":"/oai/chat/completions","model":"gpt-5-nano","status":500,"note":"forced vendor failure"}
+{"t":"2026-10-17T21:22:01.417Z","path":"/ds/chat/completions","model":"deepseek-flash","status":200,"sectionChars":6037,"questionsReturned":5,"quotesFromText":4,"inventedQuotes":1,"pages":[null,null,null,null,1]}
+{"t":"2026-10-17T21:22:02.801Z","path":"/oai/chat/completions","model":"gpt-5-nano","status":500,"note":"forced vendor failure"}
+{"t":"2026-10-17T21:22:02.806Z","path":"/ds/chat/completions","model":"deepseek-flash","status":200,"sectionChars":6164,"questionsReturned":4,"quotesFromText":3,"inventedQuotes":1,"pages":[null,null,null,1]}
+{"t":"2026-10-17T21:22:04.854Z","path":"/oai/chat/completions","model":"gpt-5-nano","status":500,"note":"forced vendor failure"}
+{"t":"2026-10-17T21:22:06.864Z","path":"/oai/chat/completions","model":"gpt-5-nano","status":500,"note":"forced vendor failure"}
+{"t":"2026-10-17T21:22:08.165Z","path":"/oai/chat/completions","model":"gpt-5-nano","status":500,"note":"forced vendor failure"}
+{"t":"2026-10-17T21:22:10.723Z","path":"/oai/chat/completions","model":"gpt-5-nano","status":500,"note":"forced vendor failure"}
+{"t":"2026-10-17T21:22:10.728Z","path":"/ds/chat/completions","model":"deepseek-flash","status":200,"sectionChars":5319,"questionsReturned":5,"quotesFromText":4,"inventedQuotes":1,"pages":[null,null,null,null,1]}
+{"t":"2026-10-17T21:22:12.763Z","control":true,"failPrefix":null}
+{"t":"2026-10-17T21:22:26.605Z","control":true,"failPrefix":null}

@@ -1,0 +1,40 @@
+-- PDF sections (document b91e3c4a-1e13-45cd-9a06-4a868a37d5c4)
+ Index |   Label   | PageStart | PageEnd | SizeBytes |                                                   text_start                                                   
+-------+-----------+-----------+---------+-----------+----------------------------------------------------------------------------------------------------------------
+     0 | pp. 1–2   |         1 |       2 |      7146 | [p. 1] | Chapter 1: Photosynthesis | Photosynthesis is covered in part 1 of this guide. Students should rememb
+     1 | pp. 3–4   |         3 |       4 |      6776 | [p. 3] | Chapter 3: Ecosystems | Ecosystems is covered in part 1 of this guide. Students should remember that 
+     2 | pp. 5–6   |         5 |       6 |      6998 | [p. 5] | Chapter 5: Evolution | Evolution is covered in part 1 of this guide. Students should remember that ev
+     3 | pp. 7–8   |         7 |       8 |      7220 | [p. 7] | Chapter 7: Plate tectonics | Plate tectonics is covered in part 1 of this guide. Students should reme
+     4 | pp. 9–10  |         9 |      10 |      7296 | [p. 9] | Chapter 9: Atoms and elements | Atoms and elements is covered in part 1 of this guide. Students shoul
+     5 | pp. 11–12 |        11 |      12 |      7298 | [p. 11] | Chapter 11: Forces and motion | Forces and motion is covered in part 1 of this guide. Students shoul
+     6 | pp. 13–14 |        13 |      14 |      7076 | [p. 13] | Chapter 13: Waves and sound | Waves and sound is covered in part 1 of this guide. Students should re
+(7 rows)
+
+
+-- header/page-number check
+sections containing the repeated header line: 0
+sections containing a "Page N of 14" line: 0
+sections with [p. N] markers: 7 of 7
+
+                                section 1 text (first 600 chars)                                 
+-------------------------------------------------------------------------------------------------
+ [p. 1]                                                                                         +
+ Chapter 1: Photosynthesis                                                                      +
+ Photosynthesis is covered in part 1 of this guide. Students should remember that photosynthesis+
+ depends on several linked processes. The first key idea about photosynthesis is that every     +
+ living or physical system keeps a balance between inputs and outputs. The second key idea is   +
+ that small changes in one part of photosynthesis can change the whole result over time. A third+
+ idea worth memorising is that photosynthesis can be measured, compared and explained with      +
+ simple evidence. Teachers often ask students to describe how photosynthesis links to everyday  +
+ life an
+(1 row)
+
+
+-- DOCX sections (document 42d8a03b-c3e0-405a-ba90-e42e9ab797bf)
+ Index |           Label           | PageStart | SizeBytes |                                         text_start                                         
+-------+---------------------------+-----------+-----------+--------------------------------------------------------------------------------------------
+     0 | The Industrial Revolution |           |      6037 | The Industrial Revolution |  | The Industrial Revolution began in Britain in the late eigh
+     1 | Railways and Trade        |           |      5319 | Railways and Trade |  | Railways connected factories, ports and cities during the nineteen
+     2 | Social Change             |           |      6164 | Social Change |  | Industrial towns were crowded and often unhealthy, and reformers pushed
+(3 rows)
+

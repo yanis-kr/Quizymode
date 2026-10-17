@@ -1,0 +1,34 @@
+[16:18:18 INF] Applying migration '20260317010026_InitialCreate'.
+[16:18:18 INF] Applying migration '20260317015404_AddKeywordSlug'.
+[16:18:18 INF] Applying migration '20260317041803_AddKeywordRelationAndItemNavigationColumns'.
+[16:18:18 INF] Applying migration '20260317042002_MigrateCategoryKeywordToKeywordRelation'.
+[16:18:18 INF] Applying migration '20260317043433_DropCategoryKeywordsAndRenameSuggestionParent'.
+[16:18:18 INF] Applying migration '20260317100000_AddKeywordRelationVisibilityAndDropSuggestions'.
+[16:18:18 INF] Applying migration '20260323233433_AddSeedSyncMetadata'.
+[16:18:18 INF] Applying migration '20260328195135_AddFeedbackSubmissions'.
+[16:18:18 INF] Applying migration '20260328221103_AddPageViews'.
+[16:18:18 INF] Applying migration '20260329140912_AddUserPolicyAcceptances'.
+[16:18:18 INF] Applying migration '20260329185915_AddStudyGuideExpiry'.
+[16:18:18 INF] Applying migration '20260404211221_RemoveSeedIdentityFields'.
+[16:18:18 INF] Applying migration '20260405032106_AddRepoManagedContentFlags'.
+[16:18:18 INF] Applying migration '20260405215203_AddSeedSyncHistory'.
+[16:18:18 INF] Applying migration '20260409140453_AddIdeasBoardWithModeration'.
+[16:18:19 INF] Applying migration '20260417164158_IncreaseItemSourceMaxLength'.
+[16:18:19 INF] Applying migration '20260417215527_AddItemSpeechMetadata'.
+[16:18:19 INF] Applying migration '20260427133432_AddItemUpdatedAt'.
+[16:18:19 INF] Applying migration '20260427133546_AddFeaturedItems'.
+[16:18:19 INF] Applying migration '20260726041953_AddPageViewUserAgentAndBotFlag'.
+[16:18:19 INF] Applying migration '20261015011209_AddInternalTrafficFlags'.
+[16:18:19 INF] Applying migration '20261015184329_AddAnalyticsEvents'.
+[16:18:19 INF] Applying migration '20261016192550_AddClientErrors'.
+[16:18:19 INF] Applying migration '20261016201656_MakeClientErrorSessionFingerprintUnique'.
+[16:18:19 INF] Applying migration '20261016232226_AddAnalyticsSessions'.
+[16:18:19 INF] Applying migration '20261016234610_AddPageViewClassification'.
+[16:18:19 INF] Applying migration '20261017000524_AddPageViewDailyRollups'.
+[16:18:19 INF] Applying migration '20261017024819_AddStudySessions'.
+[16:18:19 INF] Applying migration '20261017030343_AddFeedbackSessionAndStatus'.
+[16:18:19 INF] Applying migration '20261017055853_AddStudyGuideUploads'.
+[16:18:19 INF] Applying migration '20261017181457_AddStudyGuideDocuments'.
+[16:18:23 INF] Now listening on: https://localhost:8082
+[16:18:23 INF] Now listening on: http://localhost:8081
+[16:18:23 INF] Hosting environment: Development

@@ -1,0 +1,174 @@
+[
+  {
+    "id": "#202",
+    "step": "anonymous GET /admin/llm-providers -> 401",
+    "outcome": "PASS",
+    "detail": {
+      "status": 401
+    }
+  },
+  {
+    "id": "#202",
+    "step": "member GET /admin/llm-providers -> 403 (and /attempts -> 403)",
+    "outcome": "PASS",
+    "detail": {
+      "status": 403,
+      "attemptsStatus": 403,
+      "bearer": true
+    }
+  },
+  {
+    "id": "#202",
+    "step": "member PUT /admin/llm-providers -> 403",
+    "outcome": "PASS",
+    "detail": {
+      "status": 403
+    }
+  },
+  {
+    "id": "#202",
+    "step": "admin page shows key badges (DeepSeek, OpenAI configured; Gemini no key)",
+    "outcome": "PASS",
+    "detail": {
+      "keyConfiguredBadges": 2,
+      "noKeyBadges": 1
+    }
+  },
+  {
+    "id": "#202",
+    "step": "GET /admin/llm-providers returns seeded defaults (free Gemini,OpenAI,DeepSeek; premium DeepSeek,OpenAI,Gemini)",
+    "outcome": "PASS",
+    "detail": {
+      "routes": {
+        "free": [
+          "Gemini",
+          "OpenAI",
+          "DeepSeek"
+        ],
+        "premium": [
+          "DeepSeek",
+          "OpenAI",
+          "Gemini"
+        ]
+      },
+      "vendors": [
+        {
+          "vendor": "DeepSeek",
+          "keyConfigured": true,
+          "model": "deepseek-flash"
+        },
+        {
+          "vendor": "OpenAI",
+          "keyConfigured": true,
+          "model": "gpt-5-nano"
+        },
+        {
+          "vendor": "Gemini",
+          "keyConfigured": false,
+          "model": "gemini-2.5-flash-lite"
+        }
+      ]
+    }
+  },
+  {
+    "id": "#202",
+    "step": "free route saved as [OpenAI, DeepSeek] through the admin UI",
+    "outcome": "PASS",
+    "detail": {
+      "routes": {
+        "free": [
+          "OpenAI",
+          "DeepSeek"
+        ],
+        "premium": [
+          "DeepSeek",
+          "OpenAI",
+          "Gemini"
+        ]
+      }
+    }
+  },
+  {
+    "id": "#199",
+    "step": "picker preselects the first New sections up to remaining quota (7 checked) and counter reads '7 of 10 sections today'",
+    "outcome": "PASS",
+    "detail": {
+      "checked": 7,
+      "counter": "7 of 10 sections today"
+    }
+  },
+  {
+    "id": "#199",
+    "step": "after Generate the sections show Queued and the free-plan delay notice",
+    "outcome": "PASS",
+    "detail": {
+      "notice": "Free plan: generation starts within about 1 minute. You can leave this page and come back.",
+      "counterWith3Selected": "3 of 10 sections today",
+      "queuedChips": 4
+    }
+  },
+  {
+    "id": "#199",
+    "step": "DB: queued free-tier generations are due 60 s after queueing (config FreeTierDelayMinutes=1)",
+    "outcome": "PASS",
+    "detail": {
+      "delaySeconds": 60
+    }
+  },
+  {
+    "id": "#199",
+    "step": "worker completed the 3 free-tier generations after the delay",
+    "outcome": "PASS",
+    "detail": {
+      "secondsAfterUiConfirmation": 68
+    }
+  },
+  {
+    "id": "#199",
+    "step": "UI shows the sections Done / questions to review after completion",
+    "outcome": "PASS",
+    "detail": {
+      "has": {
+        "done": true,
+        "review": false
+      }
+    }
+  },
+  {
+    "id": "#199",
+    "step": "quota counter matches DB charges (3 sections charged to alice)",
+    "outcome": "PASS",
+    "detail": {
+      "dbChargedSum": "3",
+      "quota": {
+        "tier": "Free",
+        "dailyLimit": 10,
+        "dailyUsed": 3,
+        "monthlyLimit": 60,
+        "monthlyUsed": 3,
+        "remainingToday": 7
+      }
+    }
+  },
+  {
+    "id": "#199",
+    "step": "requesting 2 sections with 1 left (daily override 4, used 3) -> 429 QuotaExceeded, nothing charged",
+    "outcome": "PASS",
+    "detail": {
+      "setOverrideStatus": 200,
+      "status": 429,
+      "title": "StudyGuideDocument.QuotaExceeded",
+      "detail": "This needs 2 new section(s), but your daily limit of 4 sections leaves 1 for today.",
+      "dbChargedSumAfter": "3"
+    }
+  },
+  {
+    "id": "#199",
+    "step": "daily override cleared again (200)",
+    "outcome": "PASS",
+    "detail": {
+      "status": 200,
+      "emptySectionIdsStatus": 400
+    }
+  }
+]

@@ -1,0 +1,73 @@
+[
+  {
+    "id": "#202",
+    "step": "fallback: each DOCX generation logged OpenAI ProviderError (HTTP 500) then DeepSeek Success; all 3 completed with DeepSeek",
+    "outcome": "PASS",
+    "detail": {
+      "generationsCompleted": "3",
+      "attemptPairsOk": "t",
+      "completedBy": "DeepSeek",
+      "attemptsSeen": "DeepSeek:0,OpenAI:1"
+    }
+  },
+  {
+    "id": "#202",
+    "step": "fake vendor log shows the forced HTTP 500 on the OpenAI path and 200 on the DeepSeek path for the same sections",
+    "outcome": "PASS",
+    "detail": {
+      "http500OnOaiPath": 12
+    }
+  },
+  {
+    "id": "#202",
+    "step": "GET /admin/llm-providers/attempts lists OpenAI Success, OpenAI ProviderError, DeepSeek Success (newest first)",
+    "outcome": "PASS",
+    "detail": {
+      "outcomes": {
+        "DeepSeek:Success": 5,
+        "OpenAI:ProviderError": 3,
+        "OpenAI:Success": 3
+      },
+      "count": 11
+    }
+  },
+  {
+    "id": "#202",
+    "step": "admin page Recent attempts table shows ProviderError and Success rows and the monthly budget bar",
+    "outcome": "PASS",
+    "detail": {
+      "budgetLine": "8 of 1,000 sections generated this month (site-wide). Generation pauses when the budget is reached."
+    }
+  },
+  {
+    "id": "#202",
+    "step": "DB: every completed generation dropped exactly 1 question (the invented quote) and kept all the rest (fake vendor replies: 5 questions normally, 4 for a short section; kept = returned - 1)",
+    "outcome": "PASS",
+    "detail": {
+      "completedGenerations": "8",
+      "generationsWithDropped1": "8",
+      "candidatesStored": "31",
+      "expectedKeptFromVendorLog": 31,
+      "vendorReplies": 8,
+      "inventedQuoteCandidatesStored": "0"
+    }
+  },
+  {
+    "id": "#202",
+    "step": "DB: every stored candidate's sourceQuote occurs verbatim in its section text (whitespace-collapsed, case-insensitive position() check)",
+    "outcome": "PASS",
+    "detail": {
+      "candidatesChecked": "31",
+      "notFoundInSectionText": "0"
+    }
+  },
+  {
+    "id": "#202",
+    "step": "review UI shows 'From your guide, p. N: “quote”' and '1 question dropped: not found in your guide'",
+    "outcome": "PASS",
+    "detail": {
+      "sampleQuoteLine": "From your guide, p. 1: “Chapter 1: Photosynthesis Photosynthesis is covered in part 1 of this guide.”",
+      "droppedLines": 3
+    }
+  }
+]

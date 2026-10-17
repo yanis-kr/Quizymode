@@ -1,0 +1,26 @@
+{
+  "rejections": {
+    "png": {
+      "status": 400,
+      "body": {
+        "type": "https://tools.ietf.org/html/rfc7231#section-6.5.1",
+        "title": "StudyGuideDocument.UnsupportedType",
+        "status": 400,
+        "detail": "Only PDF, Word (.docx), PowerPoint (.pptx), and plain text or Markdown files are supported."
+      },
+      "bearer": true
+    },
+    "scanned": {
+      "status": 400,
+      "body": {
+        "type": "https://tools.ietf.org/html/rfc7231#section-6.5.1",
+        "title": "StudyGuideDocument.Scanned",
+        "status": 400,
+        "detail": "This looks like a scan; only PDFs with selectable text are supported for now."
+      },
+      "bearer": true
+    }
+  },
+  "pdfDocId": "b91e3c4a-1e13-45cd-9a06-4a868a37d5c4",
+  "docxDocId": "42d8a03b-c3e0-405a-ba90-e42e9ab797bf"
+}

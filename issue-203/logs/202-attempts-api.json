@@ -1,0 +1,103 @@
+{
+  "attempts": [
+    {
+      "createdUtc": "2026-10-17T21:22:10.748249Z",
+      "vendor": "DeepSeek",
+      "model": "deepseek-flash",
+      "outcome": "Success",
+      "inputTokens": 1559,
+      "outputTokens": 728,
+      "durationMs": 1
+    },
+    {
+      "createdUtc": "2026-10-17T21:22:10.725371Z",
+      "vendor": "OpenAI",
+      "model": "gpt-5-nano",
+      "outcome": "ProviderError",
+      "inputTokens": null,
+      "outputTokens": null,
+      "durationMs": 7880
+    },
+    {
+      "createdUtc": "2026-10-17T21:22:02.830483Z",
+      "vendor": "DeepSeek",
+      "model": "deepseek-flash",
+      "outcome": "Success",
+      "inputTokens": 1770,
+      "outputTokens": 608,
+      "durationMs": 2
+    },
+    {
+      "createdUtc": "2026-10-17T21:22:02.802766Z",
+      "vendor": "OpenAI",
+      "model": "gpt-5-nano",
+      "outcome": "ProviderError",
+      "inputTokens": null,
+      "outputTokens": null,
+      "durationMs": 9494
+    },
+    {
+      "createdUtc": "2026-10-17T21:22:01.4369Z",
+      "vendor": "DeepSeek",
+      "model": "deepseek-flash",
+      "outcome": "Success",
+      "inputTokens": 1738,
+      "outputTokens": 758,
+      "durationMs": 1
+    },
+    {
+      "createdUtc": "2026-10-17T21:22:01.413753Z",
+      "vendor": "OpenAI",
+      "model": "gpt-5-nano",
+      "outcome": "ProviderError",
+      "inputTokens": null,
+      "outputTokens": null,
+      "durationMs": 8105
+    },
+    {
+      "createdUtc": "2026-10-17T21:20:40.35118Z",
+      "vendor": "DeepSeek",
+      "model": "deepseek-flash",
+      "outcome": "Success",
+      "inputTokens": 2034,
+      "outputTokens": 767,
+      "durationMs": 2027
+    },
+    {
+      "createdUtc": "2026-10-17T21:20:40.34964Z",
+      "vendor": "DeepSeek",
+      "model": "deepseek-flash",
+      "outcome": "Success",
+      "inputTokens": 2053,
+      "outputTokens": 774,
+      "durationMs": 2024
+    },
+    {
+      "createdUtc": "2026-10-17T21:20:03.320705Z",
+      "vendor": "OpenAI",
+      "model": "gpt-5-nano",
+      "outcome": "Success",
+      "inputTokens": 1923,
+      "outputTokens": 738,
+      "durationMs": 3
+    },
+    {
+      "createdUtc": "2026-10-17T21:20:00.526192Z",
+      "vendor": "OpenAI",
+      "model": "gpt-5-nano",
+      "outcome": "Success",
+      "inputTokens": 2015,
+      "outputTokens": 766,
+      "durationMs": 2162
+    },
+    {
+      "createdUtc": "2026-10-17T21:20:00.526185Z",
+      "vendor": "OpenAI",
+      "model": "gpt-5-nano",
+      "outcome": "Success",
+      "inputTokens": 1978,
+      "outputTokens": 754,
+      "durationMs": 2162
+    }
+  ]
+}

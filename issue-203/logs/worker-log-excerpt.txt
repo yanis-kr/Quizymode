@@ -1,0 +1,14 @@
+[16:20:00 INF] StudyGuideGeneration: 7479eff5-cbd1-4efc-a7b2-c2b7a2980cca completed by OpenAI with 4 question(s), 1 dropped.
+[16:20:00 INF] StudyGuideGeneration: 9b6c39e6-437b-444e-af98-0ec00c8ef864 completed by OpenAI with 4 question(s), 1 dropped.
+[16:20:03 INF] StudyGuideGeneration: 9f5df045-7276-434b-ab81-4d02b6acb154 completed by OpenAI with 4 question(s), 1 dropped.
+[16:20:40 INF] StudyGuideGeneration: aa088ed7-8b3c-4ad2-a165-d323321d5cab completed by DeepSeek with 4 question(s), 1 dropped.
+[16:20:40 INF] StudyGuideGeneration: 973570db-5848-4ac2-a952-841f84fae56f completed by DeepSeek with 4 question(s), 1 dropped.
+[16:22:01 WRN] StudyGuideGeneration: OpenAI returned 500.
+[16:22:01 INF] StudyGuideGeneration: b669a1a2-e0b9-4323-99d5-b9270837e869 attempt with OpenAI ended ProviderError; trying the next vendor.
+[16:22:01 INF] StudyGuideGeneration: b669a1a2-e0b9-4323-99d5-b9270837e869 completed by DeepSeek with 4 question(s), 1 dropped.
+[16:22:02 WRN] StudyGuideGeneration: OpenAI returned 500.
+[16:22:02 INF] StudyGuideGeneration: 53974929-7e8a-48d2-a658-2c42c1ec6d44 attempt with OpenAI ended ProviderError; trying the next vendor.
+[16:22:02 INF] StudyGuideGeneration: 53974929-7e8a-48d2-a658-2c42c1ec6d44 completed by DeepSeek with 3 question(s), 1 dropped.
+[16:22:10 WRN] StudyGuideGeneration: OpenAI returned 500.
+[16:22:10 INF] StudyGuideGeneration: d8e957e2-9d00-4baa-83d3-2520fcfd71c8 attempt with OpenAI ended ProviderError; trying the next vendor.
+[16:22:10 INF] StudyGuideGeneration: d8e957e2-9d00-4baa-83d3-2520fcfd71c8 completed by DeepSeek with 4 question(s), 1 dropped.

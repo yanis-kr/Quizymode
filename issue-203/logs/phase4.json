@@ -1,0 +1,140 @@
+[
+  {
+    "id": "#200",
+    "step": "edit one question inline, uncheck one, 'Save 11 selected' creates the collection and saves 11 items",
+    "outcome": "PASS",
+    "detail": {
+      "buttonLabelBeforeUncheck": "Save 12 selected",
+      "buttonLabelAfterUncheck": "Save 11 selected",
+      "message": "Saved 11 questions to your collection. Open collection",
+      "collectionItems": "11",
+      "collectionId": "ca6a19e1-8906-45f4-b0c7-85deb0e87bc4"
+    }
+  },
+  {
+    "id": "#200",
+    "step": "edited text is what was stored; explanations get the 'From \"<title>\", <section>' suffix",
+    "outcome": "PASS",
+    "detail": {
+      "editedQuestionRows": "1",
+      "explanationsWithSuffix": "11"
+    }
+  },
+  {
+    "id": "#200",
+    "step": "'Open collection' opens the collection's flashcard (explore) view with the saved questions",
+    "outcome": "PASS",
+    "detail": {
+      "href": "/explore/collections/ca6a19e1-8906-45f4-b0c7-85deb0e87bc4",
+      "url": "/explore/collections/ca6a19e1-8906-45f4-b0c7-85deb0e87bc4/science+guide+14p/item/0dffcf44-a24e-4d7d-b60f-33d4a70d1877",
+      "mentionsEdited": true
+    }
+  },
+  {
+    "id": "#200",
+    "step": "My study guides lists both documents with progress ('3 of 7 sections generated · 11 questions saved'), Collection link and Continue",
+    "outcome": "PASS",
+    "detail": {
+      "progressLine": [
+        "3 of 3 sections generated · 0 questions saved",
+        "3 of 7 sections generated · 11 questions saved"
+      ]
+    }
+  },
+  {
+    "id": "#201",
+    "step": "DB: the auto-created study guide collection has IsPublic=true and IsDiscoverable=false",
+    "outcome": "PASS",
+    "detail": {
+      "IsPublic": "t",
+      "IsDiscoverable": "f"
+    }
+  },
+  {
+    "id": "#201",
+    "step": "UI: 'Anyone with the link can view' is on and 'List in Discover' is off on the new collection",
+    "outcome": "PASS",
+    "detail": {
+      "switches": [
+        {
+          "name": "Anyone with the link can view",
+          "checked": "true"
+        },
+        {
+          "name": "List in Discover",
+          "checked": "false"
+        }
+      ]
+    }
+  },
+  {
+    "id": "#201",
+    "step": "anonymous GET /collections/{id} -> 200 while link access is on",
+    "outcome": "PASS",
+    "detail": {
+      "status": 200,
+      "name": "science-guide-14p",
+      "isPublic": true,
+      "isDiscoverable": false
+    }
+  },
+  {
+    "id": "#201",
+    "step": "GET /collections/discover does NOT list the collection (IsDiscoverable=false)",
+    "outcome": "PASS",
+    "detail": {
+      "discoverTotalReturned": 1
+    }
+  },
+  {
+    "id": "#201",
+    "step": "Share dialog shows the link, Copy link and a rendered QR code",
+    "outcome": "PASS",
+    "detail": {
+      "dialogText": "Share collection | Collection link | Copy link | Show QR code",
+      "qrImages": 1
+    }
+  },
+  {
+    "id": "#201",
+    "step": "turning on 'List in Discover' (UI) makes it appear in GET /collections/discover",
+    "outcome": "PASS",
+    "detail": {
+      "flags": "true,true"
+    }
+  },
+  {
+    "id": "#201",
+    "step": "UI: anonymous visitor's Discover tab lists the collection",
+    "outcome": "PASS",
+    "detail": {
+      "found": true
+    }
+  },
+  {
+    "id": "#201",
+    "step": "turning link access off (UI) also turns Discover off; anonymous GET -> 404 and Discover hides it",
+    "outcome": "PASS",
+    "detail": {
+      "anonymousStatus": 404,
+      "flags": "false,false"
+    }
+  },
+  {
+    "id": "#201",
+    "step": "with link access off the owner still gets 200 and another member gets 404",
+    "outcome": "PASS",
+    "detail": {
+      "owner": 200,
+      "otherMember": 404
+    }
+  },
+  {
+    "id": "#201",
+    "step": "link access back on -> anonymous 200 again, still not in Discover",
+    "outcome": "PASS",
+    "detail": {
+      "status": 200
+    }
+  }
+]

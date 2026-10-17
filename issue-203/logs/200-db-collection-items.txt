@@ -1,0 +1,25 @@
+                  Id                  |       Name        |                 Description                  | IsPublic | IsDiscoverable |              CreatedBy               
+--------------------------------------+-------------------+----------------------------------------------+----------+----------------+--------------------------------------
+ ca6a19e1-8906-45f4-b0c7-85deb0e87bc4 | science-guide-14p | Generated from study guide science-guide-14p | t        | f              | d70a6084-49b0-45a0-9780-b1928272eaa3
+(1 row)
+
+
+collection items: 11
+                                question                                | IsPrivate |                                                       explanation                                                        
+------------------------------------------------------------------------+-----------+--------------------------------------------------------------------------------------------------------------------------
+ EDITED BY ALICE: which fact about photosynthesis does the guide state  | t         | The guide states: Chapter 1: Photosynthesis Photosynthesis is covered in part 1 of this guide. |  | From "science-guide-
+ Which statement does the study guide make that begins "Teachers often  | t         | The guide states: Teachers often ask students to describe how photosynthesis links to everyday life and to earlier chapt
+ Which statement does the study guide make that begins "Chapter 2: Cell | t         | The guide states: Chapter 2: Cell structure Cell structure is covered in part 1 of this guide. |  | From "science-guide-
+ Which statement does the study guide make that begins "Teachers often  | t         | The guide states: Teachers often ask students to describe how cell structure links to everyday life and to earlier chapt
+ Which statement does the study guide make that begins "Chapter 3: Ecos | t         | The guide states: Chapter 3: Ecosystems Ecosystems is covered in part 1 of this guide. |  | From "science-guide-14p", pp
+ Which statement does the study guide make that begins "Teachers often  | t         | The guide states: Teachers often ask students to describe how ecosystems links to everyday life and to earlier chapters.
+ Which statement does the study guide make that begins "Chapter 4: Gene | t         | The guide states: Chapter 4: Genetics Genetics is covered in part 1 of this guide. |  | From "science-guide-14p", pp. 3–
+ Which statement does the study guide make that begins "Teachers often  | t         | The guide states: Teachers often ask students to describe how genetics links to everyday life and to earlier chapters. |
+ Which statement does the study guide make that begins "Chapter 5: Evol | t         | The guide states: Chapter 5: Evolution Evolution is covered in part 1 of this guide. |  | From "science-guide-14p", pp. 
+ Which statement does the study guide make that begins "Teachers often  | t         | The guide states: Teachers often ask students to describe how evolution links to everyday life and to earlier chapters. 
+ Which statement does the study guide make that begins "Chapter 6: Huma | t         | The guide states: Chapter 6: Human digestion Human digestion is covered in part 1 of this guide. |  | From "science-guid
+(11 rows)
+
+
+edited question stored: 1
+items with 'From "<title>", <section>' explanation suffix: 11

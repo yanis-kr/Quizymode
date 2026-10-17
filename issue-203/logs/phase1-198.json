@@ -1,0 +1,97 @@
+[
+  {
+    "id": "#198",
+    "step": "PNG bytes renamed .pdf -> 400 UnsupportedType",
+    "outcome": "PASS",
+    "detail": {
+      "status": 400,
+      "body": {
+        "type": "https://tools.ietf.org/html/rfc7231#section-6.5.1",
+        "title": "StudyGuideDocument.UnsupportedType",
+        "status": 400,
+        "detail": "Only PDF, Word (.docx), PowerPoint (.pptx), and plain text or Markdown files are supported."
+      },
+      "bearer": true
+    }
+  },
+  {
+    "id": "#198",
+    "step": "mostly-empty scanned-like PDF -> 400 Scanned",
+    "outcome": "PASS",
+    "detail": {
+      "status": 400,
+      "body": {
+        "type": "https://tools.ietf.org/html/rfc7231#section-6.5.1",
+        "title": "StudyGuideDocument.Scanned",
+        "status": 400,
+        "detail": "This looks like a scan; only PDFs with selectable text are supported for now."
+      },
+      "bearer": true
+    }
+  },
+  {
+    "id": "#198",
+    "step": "anonymous upload -> 401",
+    "outcome": "PASS",
+    "detail": {
+      "status": 401
+    }
+  },
+  {
+    "id": "#198",
+    "step": "UI lists PDF sections with page labels (pp. N–M)",
+    "outcome": "PASS",
+    "detail": {
+      "labelsSeen": [
+        "pp. 1–2",
+        "pp. 3–4",
+        "pp. 5–6",
+        "pp. 7–8",
+        "pp. 9–10",
+        "pp. 11–12",
+        "pp. 13–14"
+      ]
+    }
+  },
+  {
+    "id": "#198",
+    "step": "UI lists DOCX sections labelled by heading",
+    "outcome": "PASS",
+    "detail": {
+      "snippet": [
+        "The Industrial Revolution",
+        "The Industrial Revolution The Industrial Revolution began in Britain in the late eighteenth century and changed how goods were made. Factories replaced many small workshops, and steam power drove new machines. Cities grew quickly as famili",
+        "Railways and Trade",
+        "Railways and Trade Railways connected factories, ports and cities during the nineteenth century. Cheap and fast transport let manufacturers sell goods across the whole country. The telegraph spread news along the railway lines within minut",
+        "Social Change",
+        "Social Change Industrial towns were crowded and often unhealthy, and reformers pushed for public sanitation and shorter working days. Laws gradually limited child labour and required safer factory conditions. Trade unions formed so that wo"
+      ]
+    }
+  },
+  {
+    "id": "#198",
+    "step": "DB: repeated header line stripped from every section",
+    "outcome": "PASS",
+    "detail": {
+      "sectionsWithHeader": "0",
+      "totalSections": "7"
+    }
+  },
+  {
+    "id": "#198",
+    "step": "DB: 'Page N of 14' footer lines stripped",
+    "outcome": "PASS",
+    "detail": {
+      "sectionsWithPageNumberLine": "0"
+    }
+  },
+  {
+    "id": "#198",
+    "step": "DB: every section keeps [p. N] markers; sections <= 10240 bytes",
+    "outcome": "PASS",
+    "detail": {
+      "sectionsWithMarkers": "7",
+      "maxSizeBytes": "7298"
+    }
+  }
+]

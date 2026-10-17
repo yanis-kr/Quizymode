@@ -1,0 +1,14 @@
+[PASS] #200 edit one question inline, uncheck one, 'Save 11 selected' creates the collection and saves 11 items {"buttonLabelBeforeUncheck":"Save 12 selected","buttonLabelAfterUncheck":"Save 11 selected","message":"Saved 11 questions to your collection. Open collection","collectionItems":"11","collectionId":"ca6a19e1-8906-45f4-b0c7-85deb0e87bc4"}
+[PASS] #200 edited text is what was stored; explanations get the 'From "<title>", <section>' suffix {"editedQuestionRows":"1","explanationsWithSuffix":"11"}
+[PASS] #200 'Open collection' opens the collection's flashcard (explore) view with the saved questions {"href":"/explore/collections/ca6a19e1-8906-45f4-b0c7-85deb0e87bc4","url":"/explore/collections/ca6a19e1-8906-45f4-b0c7-85deb0e87bc4/science+guide+14p/item/0dffcf44-a24e-4d7d-b60f-33d4a70d1877","mentionsEdited":true}
+[PASS] #200 My study guides lists both documents with progress ('3 of 7 sections generated · 11 questions saved'), Collection link and Continue {"progressLine":["3 of 3 sections generated · 0 questions saved","3 of 7 sections generated · 11 questions saved"]}
+[PASS] #201 DB: the auto-created study guide collection has IsPublic=true and IsDiscoverable=false {"IsPublic":"t","IsDiscoverable":"f"}
+[PASS] #201 UI: 'Anyone with the link can view' is on and 'List in Discover' is off on the new collection {"switches":[{"name":"Anyone with the link can view","checked":"true"},{"name":"List in Discover","checked":"false"}]}
+[PASS] #201 anonymous GET /collections/{id} -> 200 while link access is on {"status":200,"name":"science-guide-14p","isPublic":true,"isDiscoverable":false}
+[PASS] #201 GET /collections/discover does NOT list the collection (IsDiscoverable=false) {"discoverTotalReturned":1}
+[PASS] #201 Share dialog shows the link, Copy link and a rendered QR code {"dialogText":"Share collection | Collection link | Copy link | Show QR code","qrImages":1}
+[PASS] #201 turning on 'List in Discover' (UI) makes it appear in GET /collections/discover {"flags":"true,true"}
+[PASS] #201 UI: anonymous visitor's Discover tab lists the collection {"found":true}
+[PASS] #201 turning link access off (UI) also turns Discover off; anonymous GET -> 404 and Discover hides it {"anonymousStatus":404,"flags":"false,false"}
+[PASS] #201 with link access off the owner still gets 200 and another member gets 404 {"owner":200,"otherMember":404}
+[PASS] #201 link access back on -> anonymous 200 again, still not in Discover {"status":200}

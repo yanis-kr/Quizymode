@@ -1,0 +1,15 @@
+   time   |  Vendor  |     Model      |    outcome    | InputTokens | OutputTokens | DurationMs | generation 
+----------+----------+----------------+---------------+-------------+--------------+------------+------------
+ 21:20:00 | OpenAI   | gpt-5-nano     | Success       |        1978 |          754 |       2162 | 7479eff5
+ 21:20:00 | OpenAI   | gpt-5-nano     | Success       |        2015 |          766 |       2162 | 9b6c39e6
+ 21:20:03 | OpenAI   | gpt-5-nano     | Success       |        1923 |          738 |          3 | 9f5df045
+ 21:20:40 | DeepSeek | deepseek-flash | Success       |        2053 |          774 |       2024 | aa088ed7
+ 21:20:40 | DeepSeek | deepseek-flash | Success       |        2034 |          767 |       2027 | 973570db
+ 21:22:01 | OpenAI   | gpt-5-nano     | ProviderError |             |              |       8105 | b669a1a2
+ 21:22:01 | DeepSeek | deepseek-flash | Success       |        1738 |          758 |          1 | b669a1a2
+ 21:22:02 | OpenAI   | gpt-5-nano     | ProviderError |             |              |       9494 | 53974929
+ 21:22:02 | DeepSeek | deepseek-flash | Success       |        1770 |          608 |          2 | 53974929
+ 21:22:10 | OpenAI   | gpt-5-nano     | ProviderError |             |              |       7880 | d8e957e2
+ 21:22:10 | DeepSeek | deepseek-flash | Success       |        1559 |          728 |          1 | d8e957e2
+(11 rows)
+

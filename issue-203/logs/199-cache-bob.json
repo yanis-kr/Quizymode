@@ -1,0 +1,94 @@
+{
+  "bobStatusesBeforeGenerate": [
+    {
+      "label": "pp. 1–2",
+      "status": "New",
+      "cached": false
+    },
+    {
+      "label": "pp. 3–4",
+      "status": "New",
+      "cached": false
+    },
+    {
+      "label": "pp. 5–6",
+      "status": "New",
+      "cached": false
+    },
+    {
+      "label": "pp. 7–8",
+      "status": "New",
+      "cached": false
+    },
+    {
+      "label": "pp. 9–10",
+      "status": "New",
+      "cached": false
+    },
+    {
+      "label": "pp. 11–12",
+      "status": "New",
+      "cached": false
+    },
+    {
+      "label": "pp. 13–14",
+      "status": "New",
+      "cached": false
+    }
+  ],
+  "bobStatusesAfter": [
+    {
+      "label": "pp. 1–2",
+      "status": "Generated",
+      "cached": true,
+      "droppedCount": 1,
+      "candidates": 4
+    },
+    {
+      "label": "pp. 3–4",
+      "status": "Generated",
+      "cached": true,
+      "droppedCount": 1,
+      "candidates": 4
+    },
+    {
+      "label": "pp. 5–6",
+      "status": "Generated",
+      "cached": true,
+      "droppedCount": 1,
+      "candidates": 4
+    },
+    {
+      "label": "pp. 7–8",
+      "status": "New",
+      "cached": false,
+      "droppedCount": 0,
+      "candidates": 0
+    },
+    {
+      "label": "pp. 9–10",
+      "status": "New",
+      "cached": false,
+      "droppedCount": 0,
+      "candidates": 0
+    },
+    {
+      "label": "pp. 11–12",
+      "status": "New",
+      "cached": false,
+      "droppedCount": 0,
+      "candidates": 0
+    },
+    {
+      "label": "pp. 13–14",
+      "status": "New",
+      "cached": false,
+      "droppedCount": 0,
+      "candidates": 0
+    }
+  ],
+  "bobChargeRows": "0",
+  "aliceChargeRows": "3",
+  "fakeVendorCallsDuringBobGenerate": 0,
+  "uiMessage": "Queued 0 sections (3 ready for free). Used 0 of your sections."
+}

@@ -1,0 +1,14 @@
+[PASS] #202 anonymous GET /admin/llm-providers -> 401 {"status":401}
+[PASS] #202 member GET /admin/llm-providers -> 403 (and /attempts -> 403) {"status":403,"attemptsStatus":403,"bearer":true}
+[PASS] #202 member PUT /admin/llm-providers -> 403 {"status":403}
+[PASS] #202 admin page shows key badges (DeepSeek, OpenAI configured; Gemini no key) {"keyConfiguredBadges":2,"noKeyBadges":1}
+[PASS] #202 GET /admin/llm-providers returns seeded defaults (free Gemini,OpenAI,DeepSeek; premium DeepSeek,OpenAI,Gemini) {"routes":{"free":["Gemini","OpenAI","DeepSeek"],"premium":["DeepSeek","OpenAI","Gemini"]},"vendors":[{"vendor":"DeepSeek","keyConfigured":true,"model":"deepseek-flash"},{"vendor":"OpenAI","keyConfigured":true,"model":"gpt-5-nano"},{"vendor":"Gemini","keyConfigured":false,"model":"gemini-2.5-flash-lite"}]}
+[PASS] #202 free route saved as [OpenAI, DeepSeek] through the admin UI {"routes":{"free":["OpenAI","DeepSeek"],"premium":["DeepSeek","OpenAI","Gemini"]}}
+[PASS] #199 picker preselects the first New sections up to remaining quota (7 checked) and counter reads '7 of 10 sections today' {"checked":7,"counter":"7 of 10 sections today"}
+[PASS] #199 after Generate the sections show Queued and the free-plan delay notice {"notice":"Free plan: generation starts within about 1 minute. You can leave this page and come back.","counterWith3Selected":"3 of 10 sections today","queuedChips":4}
+[PASS] #199 DB: queued free-tier generations are due 60 s after queueing (config FreeTierDelayMinutes=1) {"delaySeconds":60}
+[PASS] #199 worker completed the 3 free-tier generations after the delay {"secondsAfterUiConfirmation":68}
+[PASS] #199 UI shows the sections Done / questions to review after completion {"has":{"done":true,"review":false}}
+[PASS] #199 quota counter matches DB charges (3 sections charged to alice) {"dbChargedSum":"3","quota":{"tier":"Free","dailyLimit":10,"dailyUsed":3,"monthlyLimit":60,"monthlyUsed":3,"remainingToday":7}}
+[PASS] #199 requesting 2 sections with 1 left (daily override 4, used 3) -> 429 QuotaExceeded, nothing charged {"setOverrideStatus":200,"status":429,"title":"StudyGuideDocument.QuotaExceeded","detail":"This needs 2 new section(s), but your daily limit of 4 sections leaves 1 for today.","dbChargedSumAfter":"3"}
+[PASS] #199 daily override cleared again (200) {"status":200,"emptySectionIdsStatus":400}
