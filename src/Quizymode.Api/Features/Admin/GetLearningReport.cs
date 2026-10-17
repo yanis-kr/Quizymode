@@ -25,7 +25,17 @@ public static class GetLearningReport
         AnalyticsEventCatalog.FlashcardRevealed
     ];
 
-    public sealed record QueryRequest(int Days = 7, bool IncludeBots = false, bool IncludeInternal = false);
+    public static readonly string[] Channels =
+        ["paid", "email", "campaign", "search", "social", "referral", "direct", "unknown"];
+
+    public static readonly string[] VisitorTypes = ["new", "returning"];
+
+    public sealed record QueryRequest(
+        int Days = 7,
+        bool IncludeBots = false,
+        bool IncludeInternal = false,
+        string? Channel = null,
+        string? VisitorType = null);
 
     public sealed record Response(
         DateTime WindowStartUtc,
@@ -62,7 +72,7 @@ public static class GetLearningReport
             app.MapGet("admin/analytics/learning", Handler)
                 .WithTags("Admin")
                 .WithSummary("Get study engagement by mode and scope (Admin only)")
-                .WithDescription("Returns quiz and flashcards runs started and completed, average score, items reached, and quiz drop-off by question position for the selected window. Bot sessions are excluded unless includeBots=true, and internal sessions unless includeInternal=true.")
+                .WithDescription("Returns quiz and flashcards runs started and completed, average score, items reached, and quiz drop-off by question position for the selected window. Bot sessions are excluded unless includeBots=true, and internal sessions unless includeInternal=true. Optional channel (paid, email, campaign, search, social, referral, direct, unknown) and visitorType (new, returning) limit every figure to sessions of that traffic channel or visitor type; unknown values return 400.")
                 .RequireAuthorization("Admin")
                 .Produces<Response>(StatusCodes.Status200OK)
                 .ProducesProblem(StatusCodes.Status400BadRequest);
@@ -72,10 +82,12 @@ public static class GetLearningReport
             int days = 7,
             bool includeBots = false,
             bool includeInternal = false,
+            string? channel = null,
+            string? visitorType = null,
             ApplicationDbContext db = null!,
             CancellationToken cancellationToken = default)
         {
-            Result<Response> result = await HandleAsync(new QueryRequest(days, includeBots, includeInternal), db, cancellationToken);
+            Result<Response> result = await HandleAsync(new QueryRequest(days, includeBots, includeInternal, channel, visitorType), db, cancellationToken);
 
             return result.Match(
                 value => Results.Ok(value),
@@ -104,6 +116,20 @@ public static class GetLearningReport
         {
             return Result.Failure<Response>(
                 Error.Validation("Admin.LearningReport.InvalidDays", "Days must be between 1 and 365."));
+        }
+
+        string? channelFilter = string.IsNullOrWhiteSpace(request.Channel) ? null : request.Channel.Trim().ToLowerInvariant();
+        if (channelFilter is not null && !Channels.Contains(channelFilter))
+        {
+            return Result.Failure<Response>(
+                Error.Validation("Admin.LearningReport.InvalidChannel", $"Channel must be one of: {string.Join(", ", Channels)}."));
+        }
+
+        string? visitorTypeFilter = string.IsNullOrWhiteSpace(request.VisitorType) ? null : request.VisitorType.Trim().ToLowerInvariant();
+        if (visitorTypeFilter is not null && !VisitorTypes.Contains(visitorTypeFilter))
+        {
+            return Result.Failure<Response>(
+                Error.Validation("Admin.LearningReport.InvalidVisitorType", $"VisitorType must be one of: {string.Join(", ", VisitorTypes)}."));
         }
 
         DateTime windowEndUtc = DateTime.UtcNow;
@@ -146,6 +172,17 @@ public static class GetLearningReport
                 analyticsEvent.Total))
             .ToListAsync(cancellationToken);
 
+        if (channelFilter is not null || visitorTypeFilter is not null)
+        {
+            HashSet<string> allowedSessions = await MatchingSessionIdsAsync(
+                db,
+                rows.Select(row => row.SessionId).Distinct(StringComparer.Ordinal).ToList(),
+                channelFilter,
+                visitorTypeFilter,
+                cancellationToken);
+            rows = rows.Where(row => allowedSessions.Contains(row.SessionId)).ToList();
+        }
+
         List<Run> runs = BuildRuns(rows);
 
         List<ScopeResponse> scopes = runs
@@ -179,6 +216,84 @@ public static class GetLearningReport
             scopes,
             abandonedBeforeFirstAnswer,
             dropOff));
+    }
+
+    // Channel comes from the session's first-hit attribution snapshot (sessions without one are "unknown").
+    // A visitor's first session (by first-seen time, then session id) is "new" and their later ones are
+    // "returning", matching the page-view rollups; sessions without a visitor id match neither type.
+    private static async Task<HashSet<string>> MatchingSessionIdsAsync(
+        ApplicationDbContext db,
+        List<string> sessionIds,
+        string? channel,
+        string? visitorType,
+        CancellationToken cancellationToken)
+    {
+        var snapshots = await db.AnalyticsSessions
+            .AsNoTracking()
+            .Where(session => sessionIds.Contains(session.SessionId))
+            .Select(session => new { session.SessionId, session.VisitorId, session.Channel })
+            .ToListAsync(cancellationToken);
+        Dictionary<string, string> channelBySession = snapshots
+            .GroupBy(snapshot => snapshot.SessionId, StringComparer.Ordinal)
+            .ToDictionary(group => group.Key, group => group.First().Channel, StringComparer.Ordinal);
+
+        Dictionary<string, string?> visitorBySession = snapshots
+            .GroupBy(snapshot => snapshot.SessionId, StringComparer.Ordinal)
+            .ToDictionary(group => group.Key, group => group.First().VisitorId, StringComparer.Ordinal);
+        Dictionary<string, string> firstSessionByVisitor = [];
+        if (visitorType is not null)
+        {
+            List<string> visitorIds = snapshots
+                .Where(snapshot => snapshot.VisitorId != null)
+                .Select(snapshot => snapshot.VisitorId!)
+                .Distinct(StringComparer.Ordinal)
+                .ToList();
+            var visitorSessions = await db.AnalyticsSessions
+                .AsNoTracking()
+                .Where(session => session.VisitorId != null && visitorIds.Contains(session.VisitorId))
+                .Select(session => new { VisitorId = session.VisitorId!, session.SessionId, session.FirstSeenUtc })
+                .ToListAsync(cancellationToken);
+            firstSessionByVisitor = visitorSessions
+                .GroupBy(session => session.VisitorId, StringComparer.Ordinal)
+                .ToDictionary(
+                    group => group.Key,
+                    group => group.OrderBy(session => session.FirstSeenUtc).ThenBy(session => session.SessionId, StringComparer.Ordinal).First().SessionId,
+                    StringComparer.Ordinal);
+        }
+
+        HashSet<string> matching = new(StringComparer.Ordinal);
+        foreach (string sessionId in sessionIds)
+        {
+            if (channel is not null)
+            {
+                string sessionChannel = channelBySession.TryGetValue(sessionId, out string? stored) && !string.IsNullOrEmpty(stored)
+                    ? stored
+                    : "unknown";
+                if (sessionChannel != channel)
+                {
+                    continue;
+                }
+            }
+
+            if (visitorType is not null)
+            {
+                visitorBySession.TryGetValue(sessionId, out string? visitorId);
+                if (visitorId is null || !firstSessionByVisitor.TryGetValue(visitorId, out string? firstSessionId))
+                {
+                    continue;
+                }
+
+                string type = firstSessionId == sessionId ? "new" : "returning";
+                if (type != visitorType)
+                {
+                    continue;
+                }
+            }
+
+            matching.Add(sessionId);
+        }
+
+        return matching;
     }
 
     // A run is counted from its start event; answers or completions without a stored start are ignored.
