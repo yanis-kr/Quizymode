@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { XMarkIcon } from "@heroicons/react/24/outline";
 import TurnstileWidget from "./TurnstileWidget";
+import { getIdeaFieldError } from "../ideaValidation";
 
 export interface IdeaFormValues {
   title: string;
@@ -31,31 +32,7 @@ const emptyValues: IdeaFormValues = {
   turnstileToken: null,
 };
 
-function getFieldError(field: "title" | "problem" | "proposedChange" | "tradeOffs", value: string): string | null {
-  const trimmed = value.trim();
-  switch (field) {
-    case "title":
-      if (trimmed.length === 0) return "Title is required.";
-      if (trimmed.length < 3) return "Title must be at least 3 characters.";
-      if (trimmed.length > 200) return `Title is too long (${trimmed.length}/200).`;
-      return null;
-    case "problem":
-      if (trimmed.length === 0) return "Problem is required.";
-      if (trimmed.length < 10) return "Problem must be at least 10 characters.";
-      if (trimmed.length > 4000) return `Problem is too long (${trimmed.length}/4000).`;
-      return null;
-    case "proposedChange":
-      if (trimmed.length === 0) return "Proposed change is required.";
-      if (trimmed.length < 10) return "Proposed change must be at least 10 characters.";
-      if (trimmed.length > 4000) return `Proposed change is too long (${trimmed.length}/4000).`;
-      return null;
-    case "tradeOffs":
-      if (trimmed.length === 0) return null;
-      if (trimmed.length < 10) return "Trade-offs must be at least 10 characters when provided.";
-      if (trimmed.length > 4000) return `Trade-offs is too long (${trimmed.length}/4000).`;
-      return null;
-  }
-}
+const getFieldError = getIdeaFieldError;
 
 const IdeaFormModal = ({
   isOpen,
