@@ -4,6 +4,7 @@ import { collectionsApi } from "@/api/collections";
 import { categoriesApi } from "@/api/categories";
 import { keywordsApi } from "@/api/keywords";
 import { useAuth } from "@/contexts/AuthContext";
+import { useCurrentUserId } from "@/hooks/useCurrentUserId";
 import { useActiveCollection } from "@/hooks/useActiveCollection";
 import { Link, useSearchParams, useNavigate } from "react-router-dom";
 import {
@@ -367,7 +368,8 @@ function CollectionCard({
 }
 
 const CollectionsPage = () => {
-  const { isAuthenticated, isLoading: authLoading, userId } = useAuth();
+  const { isAuthenticated, isLoading: authLoading } = useAuth();
+  const currentUserId = useCurrentUserId();
   const queryClient = useQueryClient();
   const { activeCollectionId, setActiveCollectionId } = useActiveCollection();
   const [showCreateModal, setShowCreateModal] = useState(false);
@@ -1108,7 +1110,7 @@ const CollectionsPage = () => {
                 itemCount={c.itemCount}
                 createdAt={c.createdAt}
                 createdBy={c.createdBy}
-                isOwner={userId ? c.createdBy === userId : false}
+                isOwner={currentUserId ? c.createdBy === currentUserId : false}
                 isBookmarked={true}
                 onUnbookmark={(id) => unbookmarkMutation.mutate(id)}
                 isBookmarkPending={unbookmarkMutation.isPending}

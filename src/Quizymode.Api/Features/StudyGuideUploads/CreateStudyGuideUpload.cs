@@ -153,12 +153,17 @@ public static class CreateStudyGuideUpload
                     }
                 });
 
+#pragma warning disable EXTEXP0001 // RemoveAllResilienceHandlers is marked experimental; it is the supported opt-out from ServiceDefaults.
             services.AddHttpClient<IStudyGuideQuestionGenerator, DeepSeekQuestionGenerator>((provider, client) =>
                 {
                     DeepSeekOptions options = provider.GetRequiredService<IOptions<DeepSeekOptions>>().Value;
                     client.Timeout = TimeSpan.FromSeconds(Math.Clamp(options.TimeoutSeconds, 10, 600));
                 })
+                // LLM calls run far longer than the default resilience pipeline allows (10 s per attempt, 30 s total, 3 retries),
+                // and retries can repeat billable requests. Rely on HttpClient.Timeout and the app's own vendor fallback (#206).
+                .RemoveAllResilienceHandlers()
                 .RedactLoggedHeaders(["Authorization"]);
+#pragma warning restore EXTEXP0001
 
             services.AddSingleton<StudyGuideUploadQueue>();
             services.AddScoped<StudyGuideUploadProcessor>();

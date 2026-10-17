@@ -3,6 +3,7 @@ import { useParams, useNavigate, useSearchParams } from "react-router-dom";
 import { useQuery, useMutation, useQueryClient } from "@tanstack/react-query";
 import { commentsApi } from "@/api/comments";
 import { useAuth } from "@/contexts/AuthContext";
+import { useCurrentUserId } from "@/hooks/useCurrentUserId";
 import { categoryNameToSlug } from "@/utils/categorySlug";
 import { PencilIcon, TrashIcon } from "@heroicons/react/24/outline";
 import LoadingSpinner from "@/components/LoadingSpinner";
@@ -12,7 +13,8 @@ const ItemCommentsPage = () => {
   const { id: itemId } = useParams<{ id: string }>();
   const navigate = useNavigate();
   const [searchParams] = useSearchParams();
-  const { isAuthenticated, userId } = useAuth();
+  const { isAuthenticated } = useAuth();
+  const currentUserId = useCurrentUserId();
   const queryClient = useQueryClient();
   const [editingCommentId, setEditingCommentId] = useState<string | null>(null);
   const [editText, setEditText] = useState("");
@@ -217,7 +219,7 @@ const ItemCommentsPage = () => {
         <div className="space-y-4">
           {comments.length > 0 ? (
             comments.map((comment) => {
-              const isOwner = comment.createdBy === userId;
+              const isOwner = !!currentUserId && comment.createdBy === currentUserId;
               const isEditing = editingCommentId === comment.id;
 
               return (

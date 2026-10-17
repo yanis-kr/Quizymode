@@ -196,12 +196,17 @@ public static class CreateStudyGuideDocument
             services.TryAddSingleton(TimeProvider.System);
             services.AddSingleton<ILlmVendorRegistry>(_ => new LlmVendorRegistry(configuration));
             services.AddSingleton<IStudyGuideTextExtractor, StudyGuideTextExtractor>();
+#pragma warning disable EXTEXP0001 // RemoveAllResilienceHandlers is marked experimental; it is the supported opt-out from ServiceDefaults.
             services.AddHttpClient<IOpenAiCompatibleChatClient, OpenAiCompatibleChatClient>((provider, client) =>
                 {
                     StudyGuideGenerationOptions options = provider.GetRequiredService<IOptions<StudyGuideGenerationOptions>>().Value;
                     client.Timeout = TimeSpan.FromSeconds(Math.Clamp(options.VendorTimeoutSeconds, 10, 600));
                 })
+                // LLM calls run far longer than the default resilience pipeline allows (10 s per attempt, 30 s total, 3 retries),
+                // and retries can repeat billable requests. Rely on HttpClient.Timeout and the app's own vendor fallback (#206).
+                .RemoveAllResilienceHandlers()
                 .RedactLoggedHeaders(["Authorization"]);
+#pragma warning restore EXTEXP0001
             services.AddScoped<StudyGuideGenerationQueue>();
             services.AddScoped<SectionGenerationProcessor>();
             services.AddHostedService<StudyGuideGenerationWorker>();
