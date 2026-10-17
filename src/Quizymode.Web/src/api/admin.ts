@@ -502,6 +502,30 @@ export interface ContentReportResponse {
   userCreated: ContentUserCreatedWeekResponse[];
 }
 
+export interface QuestionQualityItemResponse {
+  itemId: string;
+  question: string;
+  correctAnswer: string;
+  category: string | null;
+  collections: string[];
+  answers: number;
+  correctRatePercent: number;
+  randomGuessPercent: number;
+  checkAnswerKey: boolean;
+  lastEditedUtc: string | null;
+}
+
+export interface QuestionQualityReportResponse {
+  windowStartUtc: string;
+  windowEndUtc: string;
+  minAnswers: number;
+  botSessions: number;
+  botsExcluded: boolean;
+  internalSessions: number;
+  internalExcluded: boolean;
+  items: QuestionQualityItemResponse[];
+}
+
 export type AdminUserActivityFilter =
   | "all"
   | "with-activity"
@@ -1003,6 +1027,24 @@ export const adminApi = {
 
     const response = await apiClient.get<ContentReportResponse>(
       "/admin/analytics/content",
+      { params }
+    );
+    return response.data;
+  },
+
+  getQuestionQualityReport: async (
+    days: number = 30,
+    minAnswers: number = 10,
+    includeBots: boolean = false,
+    includeInternal: boolean = false
+  ): Promise<QuestionQualityReportResponse> => {
+    const params: Record<string, number | boolean> = { days, minAnswers, includeBots };
+    if (includeInternal) {
+      params.includeInternal = true;
+    }
+
+    const response = await apiClient.get<QuestionQualityReportResponse>(
+      "/admin/analytics/question-quality",
       { params }
     );
     return response.data;

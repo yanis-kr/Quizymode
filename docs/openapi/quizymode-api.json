@@ -1453,6 +1453,71 @@
         }
       }
     },
+    "/admin/analytics/question-quality": {
+      "get": {
+        "tags": [
+          "Admin"
+        ],
+        "summary": "Get question quality report (Admin only)",
+        "description": "Returns items with their first-attempt correct rate since the item's last edit, lowest first, listing only items with at least minAnswers answers, and flags items below the random-guess rate. Bot sessions are excluded unless includeBots=true, and internal sessions unless includeInternal=true.",
+        "parameters": [
+          {
+            "name": "days",
+            "in": "query",
+            "schema": {
+              "default": 30,
+              "$ref": "#/components/schemas/System.Int32"
+            }
+          },
+          {
+            "name": "minAnswers",
+            "in": "query",
+            "schema": {
+              "default": 10,
+              "$ref": "#/components/schemas/System.Int32"
+            }
+          },
+          {
+            "name": "includeBots",
+            "in": "query",
+            "schema": {
+              "default": false,
+              "$ref": "#/components/schemas/System.Boolean"
+            }
+          },
+          {
+            "name": "includeInternal",
+            "in": "query",
+            "schema": {
+              "default": false,
+              "$ref": "#/components/schemas/System.Boolean"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Quizymode.Api.Features.Admin.GetQuestionQualityReport.Response"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "/admin/ideas/{id}/reject": {
       "post": {
         "tags": [
@@ -7585,6 +7650,111 @@
           }
         }
       },
+      "Quizymode.Api.Features.Admin.GetQuestionQualityReport.QuestionResponse": {
+        "required": [
+          "itemId",
+          "question",
+          "correctAnswer",
+          "category",
+          "collections",
+          "answers",
+          "correctRatePercent",
+          "randomGuessPercent",
+          "checkAnswerKey",
+          "lastEditedUtc"
+        ],
+        "type": "object",
+        "properties": {
+          "itemId": {
+            "$ref": "#/components/schemas/System.Guid"
+          },
+          "question": {
+            "$ref": "#/components/schemas/System.String"
+          },
+          "correctAnswer": {
+            "$ref": "#/components/schemas/System.String"
+          },
+          "category": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/components/schemas/System.String"
+              }
+            ]
+          },
+          "collections": {
+            "$ref": "#/components/schemas/System.Collections.Generic.ListOfSystem.String"
+          },
+          "answers": {
+            "description": "First-attempt answers (one per session) recorded since the item's last edit.",
+            "$ref": "#/components/schemas/System.Int32"
+          },
+          "correctRatePercent": {
+            "description": "Share of those answers that were correct.",
+            "$ref": "#/components/schemas/System.Double"
+          },
+          "randomGuessPercent": {
+            "description": "100 divided by the number of options (one correct plus the incorrect answers).",
+            "$ref": "#/components/schemas/System.Double"
+          },
+          "checkAnswerKey": {
+            "description": "True when the correct rate is below the random-guess rate.",
+            "$ref": "#/components/schemas/System.Boolean"
+          },
+          "lastEditedUtc": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "description": "The item's last UpdatedAt; null when never edited. Statistics start after it.",
+                "$ref": "#/components/schemas/System.NullableOfSystem.DateTime"
+              }
+            ]
+          }
+        }
+      },
+      "Quizymode.Api.Features.Admin.GetQuestionQualityReport.Response": {
+        "required": [
+          "windowStartUtc",
+          "windowEndUtc",
+          "minAnswers",
+          "botSessions",
+          "botsExcluded",
+          "internalSessions",
+          "internalExcluded",
+          "items"
+        ],
+        "type": "object",
+        "properties": {
+          "windowStartUtc": {
+            "$ref": "#/components/schemas/System.DateTime"
+          },
+          "windowEndUtc": {
+            "$ref": "#/components/schemas/System.DateTime"
+          },
+          "minAnswers": {
+            "$ref": "#/components/schemas/System.Int32"
+          },
+          "botSessions": {
+            "$ref": "#/components/schemas/System.Int32"
+          },
+          "botsExcluded": {
+            "$ref": "#/components/schemas/System.Boolean"
+          },
+          "internalSessions": {
+            "$ref": "#/components/schemas/System.Int32"
+          },
+          "internalExcluded": {
+            "$ref": "#/components/schemas/System.Boolean"
+          },
+          "items": {
+            "$ref": "#/components/schemas/System.Collections.Generic.ListOfQuizymode.Api.Features.Admin.GetQuestionQualityReport.QuestionResponse"
+          }
+        }
+      },
       "Quizymode.Api.Features.Admin.IdeasAdmin.RejectRequest": {
         "required": [
           "moderationNotes"
@@ -13418,6 +13588,12 @@
         "type": "array",
         "items": {
           "$ref": "#/components/schemas/Quizymode.Api.Features.Admin.GetPendingKeywordsAdmin.PendingKeywordResponse"
+        }
+      },
+      "System.Collections.Generic.ListOfQuizymode.Api.Features.Admin.GetQuestionQualityReport.QuestionResponse": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/Quizymode.Api.Features.Admin.GetQuestionQualityReport.QuestionResponse"
         }
       },
       "System.Collections.Generic.ListOfQuizymode.Api.Features.Admin.SeedSyncAdmin.ChangeResponse": {
