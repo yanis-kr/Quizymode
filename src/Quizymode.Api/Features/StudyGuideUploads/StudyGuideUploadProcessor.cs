@@ -17,7 +17,7 @@ internal sealed class StudyGuideUploadProcessor(
     ApplicationDbContext db,
     IStudyGuideQuestionGenerator generator,
     ITextModerationService moderation,
-    IOptions<AnthropicOptions> options,
+    IOptions<DeepSeekOptions> options,
     ILogger<StudyGuideUploadProcessor> logger)
 {
     internal static readonly JsonSerializerOptions QuestionJsonOptions = new(JsonSerializerDefaults.Web);
@@ -28,7 +28,7 @@ internal sealed class StudyGuideUploadProcessor(
     private readonly ApplicationDbContext _db = db;
     private readonly IStudyGuideQuestionGenerator _generator = generator;
     private readonly ITextModerationService _moderation = moderation;
-    private readonly AnthropicOptions _options = options.Value;
+    private readonly DeepSeekOptions _options = options.Value;
     private readonly ILogger<StudyGuideUploadProcessor> _logger = logger;
 
     public async Task ProcessAsync(Guid uploadId, CancellationToken cancellationToken)
@@ -55,7 +55,7 @@ internal sealed class StudyGuideUploadProcessor(
 
         if (!generation.Succeeded || generation.RawText is null)
         {
-            await FailAsync(upload, generation.FailureReason ?? AnthropicQuestionGenerator.UnavailableMessage, cancellationToken);
+            await FailAsync(upload, generation.FailureReason ?? DeepSeekQuestionGenerator.UnavailableMessage, cancellationToken);
             return;
         }
 

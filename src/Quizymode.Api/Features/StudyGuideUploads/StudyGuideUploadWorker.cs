@@ -9,26 +9,26 @@ namespace Quizymode.Api.Features.StudyGuideUploads;
 /// <summary>
 /// In-API background job runner for study guide uploads. Reads upload ids from <see cref="StudyGuideUploadQueue"/>
 /// and processes them one at a time. On startup every Pending upload is re-enqueued, so a restart mid-job resumes it.
-/// Does nothing when no Anthropic API key is configured.
+/// Does nothing when no DeepSeek API key is configured.
 /// </summary>
 internal sealed class StudyGuideUploadWorker(
     StudyGuideUploadQueue queue,
     IServiceScopeFactory scopeFactory,
-    IOptions<AnthropicOptions> options,
+    IOptions<DeepSeekOptions> options,
     ILogger<StudyGuideUploadWorker> logger) : BackgroundService
 {
     public const string UnexpectedFailureMessage = "Question generation failed unexpectedly. Please try again.";
 
     private readonly StudyGuideUploadQueue _queue = queue;
     private readonly IServiceScopeFactory _scopeFactory = scopeFactory;
-    private readonly AnthropicOptions _options = options.Value;
+    private readonly DeepSeekOptions _options = options.Value;
     private readonly ILogger<StudyGuideUploadWorker> _logger = logger;
 
     protected override async Task ExecuteAsync(CancellationToken stoppingToken)
     {
         if (!_options.IsConfigured)
         {
-            _logger.LogInformation("StudyGuideUpload: worker disabled (no Anthropic API key configured).");
+            _logger.LogInformation("StudyGuideUpload: worker disabled (no DeepSeek API key configured).");
             return;
         }
 
