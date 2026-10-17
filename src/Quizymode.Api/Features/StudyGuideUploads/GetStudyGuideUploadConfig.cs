@@ -19,10 +19,10 @@ public static class GetStudyGuideUploadConfig
                 .Produces<Response>(StatusCodes.Status200OK);
         }
 
-        private static IResult Handler(IOptions<AnthropicOptions> options) =>
+        private static IResult Handler(IOptions<DeepSeekOptions> options) =>
             Results.Ok(Handle(options.Value));
     }
 
-    internal static Response Handle(AnthropicOptions options) =>
+    internal static Response Handle(DeepSeekOptions options) =>
         new(options.IsConfigured, StudyGuideUploadText.MaxTextBytes, Math.Clamp(options.MaxQuestions, 1, 20));
 }

@@ -102,7 +102,7 @@ public static class CreateStudyGuideUpload
             ITaxonomyItemCategoryResolver categoryResolver,
             ITaxonomyRegistry taxonomyRegistry,
             StudyGuideUploadQueue queue,
-            IOptions<AnthropicOptions> anthropicOptions,
+            IOptions<DeepSeekOptions> deepSeekOptions,
             CancellationToken cancellationToken)
         {
             if (!userContext.IsAuthenticated || string.IsNullOrEmpty(userContext.UserId))
@@ -110,7 +110,7 @@ public static class CreateStudyGuideUpload
                 return Results.Unauthorized();
             }
 
-            if (!anthropicOptions.Value.IsConfigured)
+            if (!deepSeekOptions.Value.IsConfigured)
             {
                 return DisabledResult();
             }
@@ -143,22 +143,22 @@ public static class CreateStudyGuideUpload
     {
         public void AddToServiceCollection(IServiceCollection services, IConfiguration configuration)
         {
-            services.AddOptions<AnthropicOptions>()
-                .Bind(configuration.GetSection(AnthropicOptions.SectionName))
+            services.AddOptions<DeepSeekOptions>()
+                .Bind(configuration.GetSection(DeepSeekOptions.SectionName))
                 .PostConfigure(options =>
                 {
                     if (string.IsNullOrWhiteSpace(options.ApiKey))
                     {
-                        options.ApiKey = configuration[AnthropicOptions.ApiKeyEnvironmentVariable] ?? string.Empty;
+                        options.ApiKey = configuration[DeepSeekOptions.ApiKeyEnvironmentVariable] ?? string.Empty;
                     }
                 });
 
-            services.AddHttpClient<IStudyGuideQuestionGenerator, AnthropicQuestionGenerator>((provider, client) =>
+            services.AddHttpClient<IStudyGuideQuestionGenerator, DeepSeekQuestionGenerator>((provider, client) =>
                 {
-                    AnthropicOptions options = provider.GetRequiredService<IOptions<AnthropicOptions>>().Value;
+                    DeepSeekOptions options = provider.GetRequiredService<IOptions<DeepSeekOptions>>().Value;
                     client.Timeout = TimeSpan.FromSeconds(Math.Clamp(options.TimeoutSeconds, 10, 600));
                 })
-                .RedactLoggedHeaders(["x-api-key"]);
+                .RedactLoggedHeaders(["Authorization"]);
 
             services.AddSingleton<StudyGuideUploadQueue>();
             services.AddScoped<StudyGuideUploadProcessor>();

@@ -74,15 +74,15 @@ public sealed class StudyGuideUploadTests : DatabaseTestFixture
         return ids;
     }
 
-    private StudyGuideUploadProcessor Processor(FakeAnthropicHandler handler, ApplicationDbContext? db = null) =>
+    private StudyGuideUploadProcessor Processor(FakeDeepSeekHandler handler, ApplicationDbContext? db = null) =>
         new(
             db ?? DbContext,
-            new AnthropicQuestionGenerator(
+            new DeepSeekQuestionGenerator(
                 new HttpClient(handler),
-                MsOptions.Create(new AnthropicOptions { ApiKey = "test-key" }),
-                NullLogger<AnthropicQuestionGenerator>.Instance),
+                MsOptions.Create(new DeepSeekOptions { ApiKey = "test-key" }),
+                NullLogger<DeepSeekQuestionGenerator>.Instance),
             _moderation,
-            MsOptions.Create(new AnthropicOptions { ApiKey = "test-key" }),
+            MsOptions.Create(new DeepSeekOptions { ApiKey = "test-key" }),
             NullLogger<StudyGuideUploadProcessor>.Instance);
 
     [Fact]
@@ -178,7 +178,7 @@ public sealed class StudyGuideUploadTests : DatabaseTestFixture
     {
         Result<CreateStudyGuideUpload.Response> created = await CreateAsync();
         Guid id = Guid.Parse(created.Value.Id);
-        FakeAnthropicHandler handler = FakeAnthropicHandler.ReturningText(StudyGuideUploadTestData.QuestionsJson(5));
+        FakeDeepSeekHandler handler = FakeDeepSeekHandler.ReturningText(StudyGuideUploadTestData.QuestionsJson(5));
 
         await Processor(handler).ProcessAsync(id, CancellationToken.None);
 
@@ -195,7 +195,7 @@ public sealed class StudyGuideUploadTests : DatabaseTestFixture
     {
         Result<CreateStudyGuideUpload.Response> created = await CreateAsync();
         Guid id = Guid.Parse(created.Value.Id);
-        FakeAnthropicHandler handler = FakeAnthropicHandler.ReturningText(StudyGuideUploadTestData.QuestionsJson(2));
+        FakeDeepSeekHandler handler = FakeDeepSeekHandler.ReturningText(StudyGuideUploadTestData.QuestionsJson(2));
 
         await Processor(handler).ProcessAsync(id, CancellationToken.None);
         await Processor(handler).ProcessAsync(id, CancellationToken.None);
@@ -211,7 +211,7 @@ public sealed class StudyGuideUploadTests : DatabaseTestFixture
         Result<CreateStudyGuideUpload.Response> created = await CreateAsync();
         Guid id = Guid.Parse(created.Value.Id);
 
-        await Processor(FakeAnthropicHandler.ReturningText(StudyGuideUploadTestData.QuestionsJson(21)))
+        await Processor(FakeDeepSeekHandler.ReturningText(StudyGuideUploadTestData.QuestionsJson(21)))
             .ProcessAsync(id, CancellationToken.None);
 
         StudyGuideUpload upload = await DbContext.StudyGuideUploads.SingleAsync();
@@ -225,7 +225,7 @@ public sealed class StudyGuideUploadTests : DatabaseTestFixture
     {
         Result<CreateStudyGuideUpload.Response> created = await CreateAsync();
 
-        await Processor(FakeAnthropicHandler.ReturningText("Sure! Here are your questions."))
+        await Processor(FakeDeepSeekHandler.ReturningText("Sure! Here are your questions."))
             .ProcessAsync(Guid.Parse(created.Value.Id), CancellationToken.None);
 
         (await DbContext.StudyGuideUploads.SingleAsync()).Status.Should().Be(StudyGuideUploadStatus.Failed);
@@ -236,7 +236,7 @@ public sealed class StudyGuideUploadTests : DatabaseTestFixture
     {
         Result<CreateStudyGuideUpload.Response> created = await CreateAsync();
 
-        await Processor(FakeAnthropicHandler.ReturningText(StudyGuideUploadTestData.QuestionsJson(2, "Why badword")))
+        await Processor(FakeDeepSeekHandler.ReturningText(StudyGuideUploadTestData.QuestionsJson(2, "Why badword")))
             .ProcessAsync(Guid.Parse(created.Value.Id), CancellationToken.None);
 
         StudyGuideUpload upload = await DbContext.StudyGuideUploads.SingleAsync();
@@ -249,12 +249,12 @@ public sealed class StudyGuideUploadTests : DatabaseTestFixture
     {
         Result<CreateStudyGuideUpload.Response> created = await CreateAsync();
 
-        await Processor(FakeAnthropicHandler.ReturningStatus(HttpStatusCode.ServiceUnavailable))
+        await Processor(FakeDeepSeekHandler.ReturningStatus(HttpStatusCode.ServiceUnavailable))
             .ProcessAsync(Guid.Parse(created.Value.Id), CancellationToken.None);
 
         StudyGuideUpload upload = await DbContext.StudyGuideUploads.SingleAsync();
         upload.Status.Should().Be(StudyGuideUploadStatus.Failed);
-        upload.Error.Should().Be(AnthropicQuestionGenerator.UnavailableMessage);
+        upload.Error.Should().Be(DeepSeekQuestionGenerator.UnavailableMessage);
     }
 
     [Fact]
@@ -278,7 +278,7 @@ public sealed class StudyGuideUploadTests : DatabaseTestFixture
         done.Status = StudyGuideUploadStatus.Completed;
         await DbContext.SaveChangesAsync();
 
-        FakeAnthropicHandler handler = FakeAnthropicHandler.ReturningText(StudyGuideUploadTestData.QuestionsJson(3));
+        FakeDeepSeekHandler handler = FakeDeepSeekHandler.ReturningText(StudyGuideUploadTestData.QuestionsJson(3));
         ServiceCollection services = new();
         services.AddScoped(_ => CreateDbContext());
         services.AddScoped(provider => Processor(handler, provider.GetRequiredService<ApplicationDbContext>()));
@@ -287,7 +287,7 @@ public sealed class StudyGuideUploadTests : DatabaseTestFixture
         StudyGuideUploadWorker worker = new(
             _queue,
             provider.GetRequiredService<IServiceScopeFactory>(),
-            MsOptions.Create(new AnthropicOptions { ApiKey = "test-key" }),
+            MsOptions.Create(new DeepSeekOptions { ApiKey = "test-key" }),
             NullLogger<StudyGuideUploadWorker>.Instance);
 
         int requeued = await worker.RequeuePendingAsync(CancellationToken.None);
@@ -309,7 +309,7 @@ public sealed class StudyGuideUploadTests : DatabaseTestFixture
         Guid id = Guid.Parse(created.Value.Id);
 
         int calls = 0;
-        FakeAnthropicHandler handler = new((_, _) =>
+        FakeDeepSeekHandler handler = new((_, _) =>
         {
             calls++;
             throw new InvalidOperationException("unexpected");
@@ -322,7 +322,7 @@ public sealed class StudyGuideUploadTests : DatabaseTestFixture
         StudyGuideUploadWorker worker = new(
             _queue,
             provider.GetRequiredService<IServiceScopeFactory>(),
-            MsOptions.Create(new AnthropicOptions { ApiKey = "test-key" }),
+            MsOptions.Create(new DeepSeekOptions { ApiKey = "test-key" }),
             NullLogger<StudyGuideUploadWorker>.Instance);
 
         await worker.ProcessOneAsync(id, CancellationToken.None);
@@ -344,7 +344,7 @@ public sealed class StudyGuideUploadTests : DatabaseTestFixture
         StudyGuideUploadWorker worker = new(
             _queue,
             provider.GetRequiredService<IServiceScopeFactory>(),
-            MsOptions.Create(new AnthropicOptions()),
+            MsOptions.Create(new DeepSeekOptions()),
             NullLogger<StudyGuideUploadWorker>.Instance);
 
         await worker.StartAsync(CancellationToken.None);
@@ -356,8 +356,8 @@ public sealed class StudyGuideUploadTests : DatabaseTestFixture
     [Fact]
     public void Config_ReflectsApiKeyPresence()
     {
-        GetStudyGuideUploadConfig.Handle(new AnthropicOptions()).Enabled.Should().BeFalse();
-        GetStudyGuideUploadConfig.Response enabled = GetStudyGuideUploadConfig.Handle(new AnthropicOptions { ApiKey = "k" });
+        GetStudyGuideUploadConfig.Handle(new DeepSeekOptions()).Enabled.Should().BeFalse();
+        GetStudyGuideUploadConfig.Response enabled = GetStudyGuideUploadConfig.Handle(new DeepSeekOptions { ApiKey = "k" });
         enabled.Enabled.Should().BeTrue();
         enabled.MaxTextBytes.Should().Be(10240);
         enabled.MaxQuestions.Should().Be(20);

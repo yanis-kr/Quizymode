@@ -6,8 +6,8 @@ using Quizymode.Api.Services;
 
 namespace Quizymode.Api.Tests.Features.StudyGuideUploads;
 
-/// <summary>Fake HTTP handler for the Anthropic Messages API; never touches the network.</summary>
-internal sealed class FakeAnthropicHandler(Func<HttpRequestMessage, string, HttpResponseMessage> respond) : HttpMessageHandler
+/// <summary>Fake HTTP handler for the DeepSeek chat completions API; never touches the network.</summary>
+internal sealed class FakeDeepSeekHandler(Func<HttpRequestMessage, string, HttpResponseMessage> respond) : HttpMessageHandler
 {
     public List<(HttpRequestMessage Request, string Body)> Requests { get; } = [];
 
@@ -18,27 +18,30 @@ internal sealed class FakeAnthropicHandler(Func<HttpRequestMessage, string, Http
         return respond(request, body);
     }
 
-    public static FakeAnthropicHandler ReturningText(string text, string stopReason = "end_turn") =>
-        new((_, _) => Json(HttpStatusCode.OK, MessageBody(text, stopReason)));
+    public static FakeDeepSeekHandler ReturningText(string text, string finishReason = "stop") =>
+        new((_, _) => Json(HttpStatusCode.OK, CompletionBody(text, finishReason)));
 
-    public static FakeAnthropicHandler ReturningStatus(HttpStatusCode statusCode) =>
-        new((_, _) => Json(statusCode, "{\"type\":\"error\",\"error\":{\"type\":\"api_error\",\"message\":\"boom\"}}"));
+    public static FakeDeepSeekHandler ReturningStatus(HttpStatusCode statusCode) =>
+        new((_, _) => Json(statusCode, "{\"error\":{\"message\":\"boom\",\"type\":\"api_error\",\"code\":\"x\"}}"));
 
-    public static string MessageBody(string text, string stopReason = "end_turn") =>
+    public static string CompletionBody(string text, string finishReason = "stop") =>
         JsonSerializer.Serialize(new
         {
-            id = "msg_test",
-            type = "message",
-            role = "assistant",
-            content = new object[]
+            id = "chatcmpl-test",
+            @object = "chat.completion",
+            model = "deepseek-chat",
+            choices = new object[]
             {
-                new { type = "thinking", thinking = "", signature = "sig" },
-                new { type = "text", text }
-            },
-            stop_reason = stopReason
+                new
+                {
+                    index = 0,
+                    message = new { role = "assistant", content = text },
+                    finish_reason = finishReason
+                }
+            }
         });
 
-    private static HttpResponseMessage Json(HttpStatusCode statusCode, string body) =>
+    public static HttpResponseMessage Json(HttpStatusCode statusCode, string body) =>
         new(statusCode) { Content = new StringContent(body, Encoding.UTF8, "application/json") };
 }
 

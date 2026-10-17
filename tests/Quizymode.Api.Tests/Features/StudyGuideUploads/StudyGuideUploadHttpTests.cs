@@ -13,7 +13,7 @@ using Xunit;
 
 namespace Quizymode.Api.Tests.Features.StudyGuideUploads;
 
-/// <summary>Over real HTTP: auth is required, and with no Anthropic key the feature reports itself disabled (503).</summary>
+/// <summary>Over real HTTP: auth is required, and with no DeepSeek key the feature reports itself disabled (503).</summary>
 public sealed class StudyGuideUploadHttpTests : DatabaseTestFixture, IAsyncLifetime
 {
     private JwtHttpTestHost _host = null!;
@@ -21,7 +21,7 @@ public sealed class StudyGuideUploadHttpTests : DatabaseTestFixture, IAsyncLifet
     public async Task InitializeAsync()
     {
         IConfiguration configuration = new ConfigurationBuilder()
-            .AddInMemoryCollection(new Dictionary<string, string?> { ["Anthropic:ApiKey"] = "" })
+            .AddInMemoryCollection(new Dictionary<string, string?> { ["DeepSeek:ApiKey"] = "" })
             .Build();
 
         _host = await JwtHttpTestHost.StartAsync(
