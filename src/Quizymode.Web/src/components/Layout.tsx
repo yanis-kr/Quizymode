@@ -92,6 +92,10 @@ function getFallbackTitle(pathname: string): string | undefined {
     return "Import Study Guide";
   }
 
+  if (pathname === "/study-guide/upload") {
+    return "Generate Quiz";
+  }
+
   if (pathname === "/admin" || pathname.startsWith("/admin/")) {
     return "Admin";
   }
@@ -237,6 +241,12 @@ const Layout = ({ children }: LayoutProps) => {
                     >
                       Add Items
                     </Link>
+                    <Link
+                      to="/study-guide/upload"
+                      className={desktopNavLinkClass(isPathActive("/study-guide/upload"))}
+                    >
+                      Generate Quiz
+                    </Link>
                     {userIsAdmin && (
                       <Link
                         to="/admin"
@@ -339,6 +349,13 @@ const Layout = ({ children }: LayoutProps) => {
                     onClick={closeMobileMenu}
                   >
                     Add Items
+                  </Link>
+                  <Link
+                    to="/study-guide/upload"
+                    className={mobileNavLinkClass(isPathActive("/study-guide/upload"))}
+                    onClick={closeMobileMenu}
+                  >
+                    Generate Quiz
                   </Link>
                   {userIsAdmin && (
                     <Link
