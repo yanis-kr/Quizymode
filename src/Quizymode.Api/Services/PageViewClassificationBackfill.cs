@@ -5,38 +5,16 @@ using Quizymode.Api.Shared.Models;
 namespace Quizymode.Api.Services;
 
 /// <summary>
-/// Background backfill that classifies historical <see cref="PageView"/> rows written before
-/// ANALYTICS-004 with the same <see cref="PageHitClassifier"/> that <c>TrackPageView</c> uses at write
-/// time, so backfilled and new rows always agree. Runs once per process start, in batches of
-/// <see cref="BatchSize"/>, and is idempotent: it only selects rows whose <c>Area</c> is still null,
-/// and the classifier always sets one, so a caught-up database does no work.
+/// Backfill that classifies historical <see cref="PageView"/> rows written before ANALYTICS-004 with
+/// the same <see cref="PageHitClassifier"/> that <c>TrackPageView</c> uses at write time, so
+/// backfilled and new rows always agree. Run by <see cref="PageViewRetentionService"/> at the start
+/// of every maintenance pass (before rollup and pruning, so the steps never race), in batches of
+/// <see cref="BatchSize"/>. Idempotent: it only selects rows whose <c>Area</c> is still null, and the
+/// classifier always sets one, so a caught-up database does no work.
 /// </summary>
-internal sealed class PageViewClassificationBackfill(
-    IServiceScopeFactory scopeFactory,
-    ILogger<PageViewClassificationBackfill> logger) : BackgroundService
+internal static class PageViewClassificationBackfill
 {
     public const int BatchSize = 2000;
-
-    protected override async Task ExecuteAsync(CancellationToken stoppingToken)
-    {
-        try
-        {
-            await using AsyncServiceScope scope = scopeFactory.CreateAsyncScope();
-            ApplicationDbContext db = scope.ServiceProvider.GetRequiredService<ApplicationDbContext>();
-
-            int total = await RunAsync(db, stoppingToken);
-            if (total > 0)
-            {
-                logger.LogInformation(
-                    "PageViewClassificationBackfill: classified {Count} historical page view(s).", total);
-            }
-        }
-        catch (Exception ex) when (ex is not OperationCanceledException)
-        {
-            // Best-effort: retried on the next process start.
-            logger.LogError(ex, "PageViewClassificationBackfill: backfill run failed.");
-        }
-    }
 
     /// <summary>Classifies every unclassified row; returns how many were updated.</summary>
     public static async Task<int> RunAsync(ApplicationDbContext db, CancellationToken cancellationToken)

@@ -1174,6 +1174,47 @@
         }
       }
     },
+    "/admin/page-view-rollups": {
+      "get": {
+        "tags": [
+          "Admin"
+        ],
+        "summary": "Get long-range page-view trends from daily rollups (Admin only)",
+        "description": "Returns daily sessions and hits plus totals by feature area, channel, device class, outcome, and new versus returning visitors for up to 730 days, read from daily rollups (bots and internal sessions excluded). Raw page hits are kept for 180 days; use this report for longer ranges.",
+        "parameters": [
+          {
+            "name": "days",
+            "in": "query",
+            "schema": {
+              "default": 365,
+              "$ref": "#/components/schemas/System.Int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Quizymode.Api.Features.Admin.GetPageViewRollups.Response"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "/admin/page-view-sessions/{sessionId}": {
       "get": {
         "tags": [
@@ -6456,6 +6497,172 @@
             "$ref": "#/components/schemas/System.DateTime"
           }
         }
+      },
+      "Quizymode.Api.Features.Admin.GetPageViewRollups.AreaRow": {
+        "required": [
+          "area",
+          "hits",
+          "sessionDays",
+          "itemSteps"
+        ],
+        "type": "object",
+        "properties": {
+          "area": {
+            "$ref": "#/components/schemas/System.String"
+          },
+          "hits": {
+            "$ref": "#/components/schemas/System.Int32"
+          },
+          "sessionDays": {
+            "description": "Sum over days of the distinct sessions that touched this area that day.",
+            "$ref": "#/components/schemas/System.Int32"
+          },
+          "itemSteps": {
+            "$ref": "#/components/schemas/System.Int32"
+          }
+        }
+      },
+      "Quizymode.Api.Features.Admin.GetPageViewRollups.DailyRow": {
+        "required": [
+          "day",
+          "sessions",
+          "hits",
+          "itemSteps"
+        ],
+        "type": "object",
+        "properties": {
+          "day": {
+            "$ref": "#/components/schemas/System.DateOnly"
+          },
+          "sessions": {
+            "$ref": "#/components/schemas/System.Int32"
+          },
+          "hits": {
+            "$ref": "#/components/schemas/System.Int32"
+          },
+          "itemSteps": {
+            "$ref": "#/components/schemas/System.Int32"
+          }
+        }
+      },
+      "Quizymode.Api.Features.Admin.GetPageViewRollups.DimensionRow": {
+        "required": [
+          "value",
+          "sessionDays",
+          "hits"
+        ],
+        "type": "object",
+        "properties": {
+          "value": {
+            "$ref": "#/components/schemas/System.String"
+          },
+          "sessionDays": {
+            "$ref": "#/components/schemas/System.Int32"
+          },
+          "hits": {
+            "$ref": "#/components/schemas/System.Int32"
+          }
+        }
+      },
+      "Quizymode.Api.Features.Admin.GetPageViewRollups.Response": {
+        "required": [
+          "windowStartDay",
+          "windowEndDay",
+          "retentionDays",
+          "latestRolledDay",
+          "totalHits",
+          "totalSessionDays",
+          "totalBouncedSessionDays",
+          "totalItemSteps",
+          "daily",
+          "areas",
+          "channels",
+          "deviceClasses",
+          "outcomes",
+          "visitorTypes",
+          "topScopes"
+        ],
+        "type": "object",
+        "properties": {
+          "windowStartDay": {
+            "$ref": "#/components/schemas/System.DateOnly"
+          },
+          "windowEndDay": {
+            "$ref": "#/components/schemas/System.DateOnly"
+          },
+          "retentionDays": {
+            "$ref": "#/components/schemas/System.Int32"
+          },
+          "latestRolledDay": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "description": "Most recent UTC day with rollup rows; null when nothing has been rolled up yet.",
+                "$ref": "#/components/schemas/System.NullableOfSystem.DateOnly"
+              }
+            ]
+          },
+          "totalHits": {
+            "$ref": "#/components/schemas/System.Int32"
+          },
+          "totalSessionDays": {
+            "description": "Sum of each day's distinct sessions; a session spanning midnight counts once per day.",
+            "$ref": "#/components/schemas/System.Int32"
+          },
+          "totalBouncedSessionDays": {
+            "$ref": "#/components/schemas/System.Int32"
+          },
+          "totalItemSteps": {
+            "$ref": "#/components/schemas/System.Int32"
+          },
+          "daily": {
+            "$ref": "#/components/schemas/System.Collections.Generic.ListOfQuizymode.Api.Features.Admin.GetPageViewRollups.DailyRow"
+          },
+          "areas": {
+            "$ref": "#/components/schemas/System.Collections.Generic.ListOfQuizymode.Api.Features.Admin.GetPageViewRollups.AreaRow"
+          },
+          "channels": {
+            "$ref": "#/components/schemas/System.Collections.Generic.ListOfQuizymode.Api.Features.Admin.GetPageViewRollups.DimensionRow"
+          },
+          "deviceClasses": {
+            "$ref": "#/components/schemas/System.Collections.Generic.ListOfQuizymode.Api.Features.Admin.GetPageViewRollups.DimensionRow"
+          },
+          "outcomes": {
+            "$ref": "#/components/schemas/System.Collections.Generic.ListOfQuizymode.Api.Features.Admin.GetPageViewRollups.DimensionRow"
+          },
+          "visitorTypes": {
+            "$ref": "#/components/schemas/System.Collections.Generic.ListOfQuizymode.Api.Features.Admin.GetPageViewRollups.DimensionRow"
+          },
+          "topScopes": {
+            "$ref": "#/components/schemas/System.Collections.Generic.ListOfQuizymode.Api.Features.Admin.GetPageViewRollups.ScopeRow"
+          }
+        }
+      },
+      "Quizymode.Api.Features.Admin.GetPageViewRollups.ScopeRow": {
+        "required": [
+          "scopeType",
+          "scopeKey",
+          "hits",
+          "itemSteps"
+        ],
+        "type": "object",
+        "properties": {
+          "scopeType": {
+            "$ref": "#/components/schemas/System.String"
+          },
+          "scopeKey": {
+            "$ref": "#/components/schemas/System.String"
+          },
+          "hits": {
+            "$ref": "#/components/schemas/System.Int32"
+          },
+          "itemSteps": {
+            "$ref": "#/components/schemas/System.Int32"
+          }
+        },
+        "description": "Hits and item steps per category or collection (sessions are not additive across areas, so not reported)."
       },
       "Quizymode.Api.Features.Admin.GetPageViewSessionDetail.JourneyStepResponse": {
         "required": [
@@ -12509,6 +12716,30 @@
           "$ref": "#/components/schemas/Quizymode.Api.Features.Admin.GetPageViewAnalytics.TopPageResponse"
         }
       },
+      "System.Collections.Generic.ListOfQuizymode.Api.Features.Admin.GetPageViewRollups.AreaRow": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/Quizymode.Api.Features.Admin.GetPageViewRollups.AreaRow"
+        }
+      },
+      "System.Collections.Generic.ListOfQuizymode.Api.Features.Admin.GetPageViewRollups.DailyRow": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/Quizymode.Api.Features.Admin.GetPageViewRollups.DailyRow"
+        }
+      },
+      "System.Collections.Generic.ListOfQuizymode.Api.Features.Admin.GetPageViewRollups.DimensionRow": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/Quizymode.Api.Features.Admin.GetPageViewRollups.DimensionRow"
+        }
+      },
+      "System.Collections.Generic.ListOfQuizymode.Api.Features.Admin.GetPageViewRollups.ScopeRow": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/Quizymode.Api.Features.Admin.GetPageViewRollups.ScopeRow"
+        }
+      },
       "System.Collections.Generic.ListOfQuizymode.Api.Features.Admin.GetPageViewSessionDetail.JourneyStepResponse": {
         "type": "array",
         "items": {
@@ -12749,6 +12980,10 @@
           "$ref": "#/components/schemas/System.String"
         }
       },
+      "System.DateOnly": {
+        "type": "string",
+        "format": "date"
+      },
       "System.DateTime": {
         "type": "string",
         "format": "date-time"
@@ -12783,6 +13018,10 @@
       },
       "System.NullableOfSystem.Boolean": {
         "type": "boolean"
+      },
+      "System.NullableOfSystem.DateOnly": {
+        "type": "string",
+        "format": "date"
       },
       "System.NullableOfSystem.DateTime": {
         "type": "string",

@@ -70,6 +70,13 @@ If you choose to paste content into an external AI tool, that provider handles t
 
 We retain information for as long as reasonably necessary to operate the service, maintain security, resolve disputes, enforce our terms, and comply with legal obligations.
 
+Usage analytics have fixed retention periods:
+
+- **Page-view records** (page path and query string, session identifier, IP address, browser user-agent, and sign-in state) are deleted **180 days** after they are recorded.
+- **Traffic-attribution records** for a browsing session (referring domain, campaign tags, device type, approximate country, and the visitor identifier) are deleted once they are older than 180 days and no page-view records for that session remain.
+- **Daily usage totals** derived from those records (for example, counts of sessions and page views per day by app area, category or collection, traffic channel, device type, country, sign-in outcome, and new versus returning visitor) contain no session identifiers, visitor identifiers, IP addresses, or account identifiers, and may be kept longer to understand long-term trends.
+- **Diagnostic error reports** are deleted after 90 days, as described above.
+
 Because self-service account deletion is not currently available in the app, you may contact us at `legal@quizymode.com` if you want to request review of a deletion request.
 
 ## 8. Your Choices and Rights

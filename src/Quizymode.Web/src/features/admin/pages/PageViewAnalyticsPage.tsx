@@ -16,6 +16,7 @@ import LearningTab from "../components/LearningTab";
 import { ContentScopeTables, FeatureAreaTable } from "../components/PagesBreakdown";
 import { GROUP_BY_OPTIONS, type PagesGroupBy } from "../components/pagesGroupBy";
 import SessionsTab from "../components/SessionsTab";
+import TrendsTab from "../components/TrendsTab";
 
 const RANGE_OPTIONS: Array<{ label: string; days: number }> = [
   { label: "24h", days: 1 },
@@ -33,7 +34,7 @@ const VISITOR_OPTIONS: Array<{ label: string; value: PageViewVisitorType }> = [
 const PAGE_SIZE = 25;
 const TOP_PAGES_LIMIT = 10;
 
-type AnalyticsTab = "pages" | "sessions" | "acquisition" | "funnel" | "learning";
+type AnalyticsTab = "pages" | "sessions" | "acquisition" | "funnel" | "learning" | "trends";
 
 const TAB_OPTIONS: Array<{ label: string; value: AnalyticsTab; hint: string }> = [
   { label: "Pages", value: "pages", hint: "Which features and content were used" },
@@ -41,6 +42,7 @@ const TAB_OPTIONS: Array<{ label: string; value: AnalyticsTab; hint: string }> =
   { label: "Acquisition", value: "acquisition", hint: "Where visitors came from" },
   { label: "Funnel", value: "funnel", hint: "Where visitors convert" },
   { label: "Learning", value: "learning", hint: "How study runs go" },
+  { label: "Trends", value: "trends", hint: "Up to 2 years, from daily rollups" },
 ];
 
 const PageViewAnalyticsPage = () => {
@@ -233,6 +235,8 @@ const PageViewAnalyticsPage = () => {
       {tab === "funnel" && (
         <FunnelTab days={days} includeBots={includeBots} includeInternal={includeInternal} />
       )}
+
+      {tab === "trends" && <TrendsTab />}
 
       {tab === "learning" && (
         <LearningTab days={days} includeBots={includeBots} includeInternal={includeInternal} />
