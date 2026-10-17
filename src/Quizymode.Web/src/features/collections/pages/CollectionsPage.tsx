@@ -37,6 +37,7 @@ interface CollectionCardProps {
   name: string;
   description?: string | null;
   isPublic?: boolean;
+  isDiscoverable?: boolean;
   itemCount: number;
   createdAt: string;
   createdBy?: string;
@@ -48,7 +49,7 @@ interface CollectionCardProps {
   onBookmark?: (id: string) => void;
   onUnbookmark?: (id: string) => void;
   onDelete?: (id: string, name: string) => void;
-  onEdit?: (id: string, payload: { name: string; description: string | null; isPublic: boolean }) => void;
+  onEdit?: (id: string, payload: { name: string; description: string | null; isPublic: boolean; isDiscoverable: boolean }) => void;
   onSetActive?: (id: string) => void;
   onCopyLink?: (id: string, name: string, isPublic: boolean) => void;
   onSelect?: (id: string) => void;
@@ -66,6 +67,7 @@ function CollectionCard({
   name,
   description,
   isPublic,
+  isDiscoverable,
   itemCount,
   createdAt,
   createdBy,
@@ -183,7 +185,12 @@ function CollectionCard({
               onClick={(e) => {
                 e.preventDefault();
                 e.stopPropagation();
-                onEdit(id, { name, description: description ?? null, isPublic: isPublic ?? false });
+                onEdit(id, {
+                  name,
+                  description: description ?? null,
+                  isPublic: isPublic ?? false,
+                  isDiscoverable: isDiscoverable ?? false,
+                });
               }}
               disabled={isEditPending}
               className="rounded-md p-2 text-slate-400 hover:bg-white/10 hover:text-indigo-300 disabled:opacity-50"
@@ -367,10 +374,12 @@ const CollectionsPage = () => {
   const [collectionName, setCollectionName] = useState("");
   const [createCollectionDescription, setCreateCollectionDescription] = useState("");
   const [createCollectionIsPublic, setCreateCollectionIsPublic] = useState(false);
+  const [createCollectionIsDiscoverable, setCreateCollectionIsDiscoverable] = useState(false);
   const [editingCollectionId, setEditingCollectionId] = useState<string | null>(null);
   const [editingName, setEditingName] = useState("");
   const [editingDescription, setEditingDescription] = useState("");
   const [editingIsPublic, setEditingIsPublic] = useState(false);
+  const [editingIsDiscoverable, setEditingIsDiscoverable] = useState(false);
   const [copyLinkWarning, setCopyLinkWarning] = useState<string | null>(null);
   const [searchParams, setSearchParams] = useSearchParams();
   const tabParam = searchParams.get("tab") as TabId | null;
@@ -518,12 +527,13 @@ const CollectionsPage = () => {
       setCollectionName("");
       setCreateCollectionDescription("");
       setCreateCollectionIsPublic(false);
+      setCreateCollectionIsDiscoverable(false);
     },
     onError: (err: unknown) => console.error("Failed to create collection:", err),
   });
 
   const updateMutation = useMutation({
-    mutationFn: ({ id, payload }: { id: string; payload: { name?: string; description?: string | null; isPublic?: boolean } }) =>
+    mutationFn: ({ id, payload }: { id: string; payload: { name?: string; description?: string | null; isPublic?: boolean; isDiscoverable?: boolean } }) =>
       collectionsApi.update(id, payload),
     onSuccess: () => {
       queryClient.invalidateQueries({ queryKey: ["collections"] });
@@ -577,11 +587,15 @@ const CollectionsPage = () => {
     }
   };
 
-  const handleOpenEdit = (id: string, payload: { name: string; description: string | null; isPublic: boolean }) => {
+  const handleOpenEdit = (
+    id: string,
+    payload: { name: string; description: string | null; isPublic: boolean; isDiscoverable: boolean }
+  ) => {
     setEditingCollectionId(id);
     setEditingName(payload.name);
     setEditingDescription(payload.description ?? "");
     setEditingIsPublic(payload.isPublic);
+    setEditingIsDiscoverable(payload.isPublic && payload.isDiscoverable);
   };
 
   const handleSaveEdit = (e: React.FormEvent) => {
@@ -593,6 +607,7 @@ const CollectionsPage = () => {
         name: editingName.trim(),
         description: editingDescription.trim() || null,
         isPublic: editingIsPublic,
+        isDiscoverable: editingIsPublic && editingIsDiscoverable,
       },
     });
   };
@@ -601,7 +616,7 @@ const CollectionsPage = () => {
     const url = `${window.location.origin}${buildCollectionPath(collectionId, collectionName)}`;
     void navigator.clipboard.writeText(url).then(() => {
       if (!isPublic) {
-        setCopyLinkWarning("Collection is private. Others cannot open this link until you make it public (Edit → Shared with others).");
+        setCopyLinkWarning("Collection is private. Others cannot open this link until you turn on “Anyone with the link can view” (Edit).");
         setTimeout(() => setCopyLinkWarning(null), 6000);
       }
     });
@@ -614,6 +629,7 @@ const CollectionsPage = () => {
         name: collectionName.trim(),
         description: createCollectionDescription.trim() || undefined,
         isPublic: createCollectionIsPublic,
+        isDiscoverable: createCollectionIsPublic && createCollectionIsDiscoverable,
       });
     }
   };
@@ -895,17 +911,36 @@ const CollectionsPage = () => {
                     id="collection-is-public"
                     type="checkbox"
                     checked={createCollectionIsPublic}
-                    onChange={(e) => setCreateCollectionIsPublic(e.target.checked)}
+                    onChange={(e) => {
+                      setCreateCollectionIsPublic(e.target.checked);
+                      if (!e.target.checked) setCreateCollectionIsDiscoverable(false);
+                    }}
                     className="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500"
                   />
                   <label htmlFor="collection-is-public" className="ml-2 block text-sm text-gray-700">
-                    Shared with others (anyone with the link can view and quiz; also appears in Discover)
+                    Anyone with the link can view (and quiz, without signing in)
+                  </label>
+                </div>
+                <div className="mb-4 flex items-center">
+                  <input
+                    id="collection-is-discoverable"
+                    type="checkbox"
+                    checked={createCollectionIsPublic && createCollectionIsDiscoverable}
+                    disabled={!createCollectionIsPublic}
+                    onChange={(e) => setCreateCollectionIsDiscoverable(e.target.checked)}
+                    className="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500 disabled:opacity-50"
+                  />
+                  <label
+                    htmlFor="collection-is-discoverable"
+                    className={`ml-2 block text-sm ${createCollectionIsPublic ? "text-gray-700" : "text-gray-400"}`}
+                  >
+                    List in Discover (anyone can find it in search)
                   </label>
                 </div>
                 <div className="flex justify-end space-x-3">
                   <button
                     type="button"
-                    onClick={() => { setShowCreateModal(false); setCollectionName(""); setCreateCollectionDescription(""); setCreateCollectionIsPublic(false); }}
+                    onClick={() => { setShowCreateModal(false); setCollectionName(""); setCreateCollectionDescription(""); setCreateCollectionIsPublic(false); setCreateCollectionIsDiscoverable(false); }}
                     className="px-4 py-2 text-sm font-medium text-gray-700 bg-white border border-gray-300 rounded-md hover:bg-gray-50"
                     disabled={createMutation.isPending}
                   >
@@ -979,11 +1014,30 @@ const CollectionsPage = () => {
                     id="edit-collection-is-public"
                     type="checkbox"
                     checked={editingIsPublic}
-                    onChange={(e) => setEditingIsPublic(e.target.checked)}
+                    onChange={(e) => {
+                      setEditingIsPublic(e.target.checked);
+                      if (!e.target.checked) setEditingIsDiscoverable(false);
+                    }}
                     className="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500"
                   />
                   <label htmlFor="edit-collection-is-public" className="ml-2 block text-sm text-gray-700">
-                    Shared with others (anyone with the link can view and quiz; appears in Discover)
+                    Anyone with the link can view (and quiz, without signing in)
+                  </label>
+                </div>
+                <div className="mb-4 flex items-center">
+                  <input
+                    id="edit-collection-is-discoverable"
+                    type="checkbox"
+                    checked={editingIsPublic && editingIsDiscoverable}
+                    disabled={!editingIsPublic}
+                    onChange={(e) => setEditingIsDiscoverable(e.target.checked)}
+                    className="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500 disabled:opacity-50"
+                  />
+                  <label
+                    htmlFor="edit-collection-is-discoverable"
+                    className={`ml-2 block text-sm ${editingIsPublic ? "text-gray-700" : "text-gray-400"}`}
+                  >
+                    List in Discover (anyone can find it in search)
                   </label>
                 </div>
                 <div className="flex justify-end space-x-3">
@@ -1022,6 +1076,7 @@ const CollectionsPage = () => {
                 name={c.name}
                 description={c.description}
                 isPublic={c.isPublic}
+                isDiscoverable={c.isDiscoverable}
                 itemCount={c.itemCount}
                 createdAt={c.createdAt}
                 isOwner={true}

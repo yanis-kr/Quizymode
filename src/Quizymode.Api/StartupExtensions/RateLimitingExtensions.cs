@@ -89,6 +89,21 @@ internal static partial class StartupExtensions
                     });
             });
 
+            // Study guide document uploads (AC 6.6): extraction is CPU-bound, so creates are capped per user.
+            options.AddPolicy("study-guide-documents", httpContext =>
+            {
+                string partitionKey = GetAuthenticatedOrTrustedIpPartitionKey(httpContext);
+                return RateLimitPartition.GetFixedWindowLimiter(
+                    partitionKey,
+                    static _ => new FixedWindowRateLimiterOptions
+                    {
+                        PermitLimit = 20,
+                        Window = TimeSpan.FromHours(1),
+                        QueueLimit = 0,
+                        AutoReplenishment = true
+                    });
+            });
+
             options.AddPolicy("ideas-create", httpContext =>
             {
                 string partitionKey = GetAuthenticatedOrIpPartitionKey(httpContext);
@@ -194,6 +209,11 @@ internal static partial class StartupExtensions
         }
 
         if (path.EndsWith("/study-guide-uploads", StringComparison.OrdinalIgnoreCase))
+        {
+            return "Too many study guide uploads. Please wait a while and try again.";
+        }
+
+        if (path.EndsWith("/study-guides/documents", StringComparison.OrdinalIgnoreCase))
         {
             return "Too many study guide uploads. Please wait a while and try again.";
         }

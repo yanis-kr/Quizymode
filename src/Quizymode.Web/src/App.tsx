@@ -42,11 +42,14 @@ const IdeasPage = lazyPage(() => import("./features/ideas/pages/IdeasPage"));
 const StudyGuidePage = lazyPage(() => import("./features/studyGuide/pages/StudyGuidePage"));
 const StudyGuideImportPage = lazyPage(() => import("./features/studyGuide/pages/StudyGuideImportPage"));
 const StudyGuideUploadPage = lazyPage(() => import("./features/studyGuide/pages/StudyGuideUploadPage"));
+const StudyGuideDocumentsPage = lazyPage(() => import("./features/studyGuide/pages/StudyGuideDocumentsPage"));
+const StudyGuideDocumentPage = lazyPage(() => import("./features/studyGuide/pages/StudyGuideDocumentPage"));
 const PrivacyPolicyPage = lazyPage(() => import("./features/legal/pages/PrivacyPolicyPage"));
 const TermsOfServicePage = lazyPage(() => import("./features/legal/pages/TermsOfServicePage"));
 const AdminFeedbackPage = lazyPage(() => import("./features/admin/pages/AdminFeedbackPage"));
 const AdminIdeasPage = lazyPage(() => import("./features/admin/pages/AdminIdeasPage"));
 const AdminFeaturedPage = lazyPage(() => import("./features/admin/pages/AdminFeaturedPage"));
+const AdminAiProvidersPage = lazyPage(() => import("./features/admin/pages/AdminAiProvidersPage"));
 
 function App() {
   const location = useLocation();
@@ -117,6 +120,8 @@ function App() {
           <Route path="/study-guide" element={<StudyGuidePage />} />
           <Route path="/study-guide/import" element={<StudyGuideImportPage />} />
           <Route path="/study-guide/upload" element={<StudyGuideUploadPage />} />
+          <Route path="/study-guides/documents" element={<StudyGuideDocumentsPage />} />
+          <Route path="/study-guides/documents/:id" element={<StudyGuideDocumentPage />} />
         </Route>
         <Route path="/items/:id/comments" element={<ItemCommentsPage />} />
         <Route path="/items/:id" element={<ItemDetailPage />} />
@@ -139,6 +144,7 @@ function App() {
           <Route path="/admin/feedback" element={<AdminFeedbackPage />} />
           <Route path="/admin/ideas" element={<AdminIdeasPage />} />
           <Route path="/admin/featured" element={<AdminFeaturedPage />} />
+          <Route path="/admin/ai-providers" element={<AdminAiProvidersPage />} />
         </Route>
         <Route path="/about" element={<AboutPage />} />
         <Route path="/ideas" element={<IdeasPage />} />

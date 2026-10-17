@@ -24,6 +24,9 @@
     <PackageVersion Include="Microsoft.EntityFrameworkCore.Sqlite" Version="10.0.7" />
     <PackageVersion Include="Dapper" Version="2.1.72" />
     <PackageVersion Include="YamlDotNet" Version="17.1.0" />
+    <!-- Study guide document extraction -->
+    <PackageVersion Include="PdfPig" Version="0.1.16" />
+    <PackageVersion Include="DocumentFormat.OpenXml" Version="3.5.1" />
     <PackageVersion Include="Npgsql.OpenTelemetry" Version="10.0.2" />
     <!-- Service Defaults -->
     <PackageVersion Include="Microsoft.Extensions.Http.Resilience" Version="10.5.0" />

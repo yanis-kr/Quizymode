@@ -10,7 +10,8 @@ namespace Quizymode.Api.Features.Collections;
 
 public static class UpdateCollection
 {
-    public sealed record Request(string? Name, string? Description, bool? IsPublic);
+    /// <summary>Omitted fields are unchanged. Setting IsPublic = false also turns IsDiscoverable off; IsDiscoverable = true on a non-public collection is ignored.</summary>
+    public sealed record Request(string? Name, string? Description, bool? IsPublic, bool? IsDiscoverable = null);
 
     public sealed record Response(
         string Id,
@@ -18,7 +19,8 @@ public static class UpdateCollection
         string? Description,
         DateTime CreatedAt,
         DateTime? UpdatedAt,
-        bool IsPublic);
+        bool IsPublic,
+        bool IsDiscoverable);
 
     public sealed class Validator : AbstractValidator<Request>
     {
@@ -114,6 +116,17 @@ public static class UpdateCollection
             {
                 collection.IsPublic = request.IsPublic.Value;
             }
+
+            if (request.IsDiscoverable.HasValue)
+            {
+                collection.IsDiscoverable = request.IsDiscoverable.Value;
+            }
+
+            // Discover listing requires link access (AC 1.7).
+            if (!collection.IsPublic)
+            {
+                collection.IsDiscoverable = false;
+            }
             collection.UpdatedAt = DateTime.UtcNow;
 
             await db.SaveChangesAsync(cancellationToken);
@@ -124,7 +137,8 @@ public static class UpdateCollection
                 collection.Description,
                 collection.CreatedAt,
                 collection.UpdatedAt,
-                collection.IsPublic);
+                collection.IsPublic,
+                collection.IsDiscoverable);
 
             return Result.Success(response);
         }

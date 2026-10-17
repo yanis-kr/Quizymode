@@ -21,6 +21,7 @@ public sealed class DiscoverCollectionsTests : ItemTestFixture
             Id = Guid.NewGuid(),
             Name = "Pub",
             IsPublic = true,
+            IsDiscoverable = true,
             CreatedBy = "u1",
             CreatedAt = DateTime.UtcNow,
         };
@@ -55,6 +56,7 @@ public sealed class DiscoverCollectionsTests : ItemTestFixture
             Id = Guid.NewGuid(),
             Name = "Mixed",
             IsPublic = true,
+            IsDiscoverable = true,
             CreatedBy = "u1",
             CreatedAt = DateTime.UtcNow,
         };
@@ -123,6 +125,7 @@ public sealed class DiscoverCollectionsTests : ItemTestFixture
             Id = Guid.NewGuid(),
             Name = "Tagged",
             IsPublic = true,
+            IsDiscoverable = true,
             CreatedBy = "u1",
             CreatedAt = DateTime.UtcNow,
         };
@@ -169,6 +172,7 @@ public sealed class DiscoverCollectionsTests : ItemTestFixture
             Id = Guid.NewGuid(),
             Name = "Alpha Set",
             IsPublic = true,
+            IsDiscoverable = true,
             CreatedBy = "u1",
             CreatedAt = DateTime.UtcNow,
         };
@@ -201,6 +205,37 @@ public sealed class DiscoverCollectionsTests : ItemTestFixture
             CancellationToken.None);
 
         miss.Value.TotalCount.Should().Be(0);
+    }
+
+    [Fact]
+    public async Task HandleAsync_LinkOnlyAndPrivateCollections_AreNotListed()
+    {
+        Mock<IUserContext> ctx = CreateAnonymousContext();
+        Item item = await CreateItemWithCategoryAsync("geography", "Q1", "A1", new List<string>(), "", isPrivate: false, createdBy: "u1");
+        Collection listed = new() { Id = Guid.NewGuid(), Name = "Listed", IsPublic = true, IsDiscoverable = true, CreatedBy = "u1", CreatedAt = DateTime.UtcNow };
+        Collection linkOnly = new() { Id = Guid.NewGuid(), Name = "Link only", IsPublic = true, IsDiscoverable = false, CreatedBy = "u1", CreatedAt = DateTime.UtcNow };
+        Collection hidden = new() { Id = Guid.NewGuid(), Name = "Private", IsPublic = false, IsDiscoverable = true, CreatedBy = "u1", CreatedAt = DateTime.UtcNow };
+        DbContext.Collections.AddRange(listed, linkOnly, hidden);
+        foreach (Collection collection in new[] { listed, linkOnly, hidden })
+        {
+            DbContext.CollectionItems.Add(new CollectionItem { Id = Guid.NewGuid(), CollectionId = collection.Id, ItemId = item.Id });
+        }
+
+        await DbContext.SaveChangesAsync();
+
+        Result<DiscoverCollections.Response> all = await DiscoverCollections.HandleAsync("", null, null, null, 1, 20, DbContext, ctx.Object, CancellationToken.None);
+        Result<DiscoverCollections.Response> byCategory = await DiscoverCollections.HandleAsync("", "geography", null, null, 1, 20, DbContext, ctx.Object, CancellationToken.None);
+        Result<DiscoverCollections.Response> byText = await DiscoverCollections.HandleAsync("link", null, null, null, 1, 20, DbContext, ctx.Object, CancellationToken.None);
+
+        all.Value.Items.Select(i => i.Name).Should().Equal("Listed");
+        byCategory.Value.Items.Select(i => i.Name).Should().Equal("Listed");
+        byText.Value.TotalCount.Should().Be(0);
+
+        // A link-only collection is still reachable by id (AC 1.4.1).
+        Result<GetCollectionById.Response> direct = await GetCollectionById.HandleAsync(linkOnly.Id, DbContext, ctx.Object, CancellationToken.None);
+        direct.IsSuccess.Should().BeTrue();
+        direct.Value.IsPublic.Should().BeTrue();
+        direct.Value.IsDiscoverable.Should().BeFalse();
     }
 
     private static Mock<IUserContext> CreateAnonymousContext()

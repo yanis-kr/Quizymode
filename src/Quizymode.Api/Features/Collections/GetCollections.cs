@@ -11,7 +11,7 @@ public static class GetCollections
 {
     public sealed record Response(List<CollectionResponse> Collections);
 
-    public sealed record CollectionResponse(string Id, string Name, string? Description, DateTime CreatedAt, int ItemCount, bool IsPublic);
+    public sealed record CollectionResponse(string Id, string Name, string? Description, DateTime CreatedAt, int ItemCount, bool IsPublic, bool IsDiscoverable);
 
     public sealed class Endpoint : IEndpoint
     {
@@ -79,7 +79,7 @@ public static class GetCollections
                 await db.SaveChangesAsync(cancellationToken);
                 return Result.Success(new Response(new List<CollectionResponse>
                 {
-                    new(defaultCollection.Id.ToString(), defaultCollection.Name, defaultCollection.Description, defaultCollection.CreatedAt, 0, false)
+                    new(defaultCollection.Id.ToString(), defaultCollection.Name, defaultCollection.Description, defaultCollection.CreatedAt, 0, false, false)
                 }));
             }
 
@@ -98,7 +98,8 @@ public static class GetCollections
                     c.Description,
                     c.CreatedAt,
                     itemCounts.GetValueOrDefault(c.Id),
-                    c.IsPublic))
+                    c.IsPublic,
+                    c.IsDiscoverable))
                 .ToList();
 
             return Result.Success(new Response(collections));

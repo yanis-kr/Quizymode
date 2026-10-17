@@ -85,7 +85,10 @@ export interface CollectionResponse {
   createdBy: string;
   createdAt: string;
   itemCount: number;
+  /** Anyone with the link can view (AC 1.4). */
   isPublic?: boolean;
+  /** Listed in Discover; only meaningful when isPublic (AC 1.9). */
+  isDiscoverable?: boolean;
 }
 
 export interface CollectionsResponse {
@@ -203,12 +206,14 @@ export interface CreateCollectionRequest {
   name: string;
   description?: string | null;
   isPublic?: boolean;
+  isDiscoverable?: boolean;
 }
 
 export interface UpdateCollectionRequest {
   name?: string;
   description?: string | null;
   isPublic?: boolean;
+  isDiscoverable?: boolean;
 }
 
 export interface AddItemToCollectionRequest {

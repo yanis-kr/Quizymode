@@ -680,6 +680,7 @@ internal sealed class SeedSyncAdminService(
         collection.Name = change.Collection.Name;
         collection.Description = change.Collection.Description;
         collection.IsPublic = true;
+        collection.IsDiscoverable = true;
         collection.IsRepoManaged = true;
         collection.UpdatedAt = change.ExistingCollection is null ? null : utcNow;
 

@@ -20,9 +20,15 @@ public sealed class Collection
     public DateTime? UpdatedAt { get; set; }
 
     /// <summary>
-    /// When true, collection appears in discover search for other users.
+    /// When true, anyone with the link (collection id) can view the collection.
     /// </summary>
     public bool IsPublic { get; set; }
+
+    /// <summary>
+    /// When true (and <see cref="IsPublic"/> is true), the collection is listed in Discover search for other users.
+    /// Always false when the collection is not public.
+    /// </summary>
+    public bool IsDiscoverable { get; set; }
 }
 
 

@@ -46,6 +46,7 @@ describe("AdminDashboardPage", () => {
     expect(screen.getByRole("link", { name: /seed sync/i })).toBeInTheDocument();
     expect(screen.getByRole("link", { name: /usage analytics/i })).toBeInTheDocument();
     expect(screen.getByRole("link", { name: /ideas moderation/i })).toBeInTheDocument();
+    expect(screen.getByRole("link", { name: /ai providers/i })).toHaveAttribute("href", "/admin/ai-providers");
   });
 
   it("redirects non-admin users to home", () => {

@@ -9,14 +9,16 @@ namespace Quizymode.Api.Features.Collections;
 
 public static class AddCollection
 {
-    public sealed record Request(string Name, string? Description = null, bool? IsPublic = null);
+    /// <summary>IsPublic: anyone with the link can view (default false). IsDiscoverable: listed in Discover (default false; forced false when not public).</summary>
+    public sealed record Request(string Name, string? Description = null, bool? IsPublic = null, bool? IsDiscoverable = null);
 
     public sealed record Response(
         string Id,
         string Name,
         string? Description,
         DateTime CreatedAt,
-        bool IsPublic);
+        bool IsPublic,
+        bool IsDiscoverable);
 
     public sealed class Validator : AbstractValidator<Request>
     {
@@ -102,7 +104,8 @@ public static class AddCollection
                 Description = request.Description,
                 CreatedBy = userId,
                 CreatedAt = DateTime.UtcNow,
-                IsPublic = request.IsPublic ?? false
+                IsPublic = request.IsPublic ?? false,
+                IsDiscoverable = (request.IsPublic ?? false) && (request.IsDiscoverable ?? false)
             };
 
             db.Collections.Add(entity);
@@ -113,7 +116,8 @@ public static class AddCollection
                 entity.Name,
                 entity.Description,
                 entity.CreatedAt,
-                entity.IsPublic);
+                entity.IsPublic,
+                entity.IsDiscoverable);
 
             return Result.Success(response);
         }
