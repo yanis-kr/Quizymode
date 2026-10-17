@@ -119,6 +119,19 @@ public static class GenerateStudyGuideSections
             return Result.Failure<Response?>(StudyGuideDocumentErrors.Disabled);
         }
 
+        // Serialize generate requests per user (Postgres only) so concurrent calls cannot both pass the quota check.
+        // The transaction-scoped advisory lock is released on commit, or on rollback when an early return disposes it.
+        await using Microsoft.EntityFrameworkCore.Storage.IDbContextTransaction? quotaLock = db.Database.IsNpgsql()
+            ? await db.Database.BeginTransactionAsync(cancellationToken)
+            : null;
+        if (quotaLock is not null)
+        {
+            string lockKey = "study-guide-quota:" + userId;
+            await db.Database.ExecuteSqlInterpolatedAsync(
+                $"SELECT pg_advisory_xact_lock(hashtext({lockKey}))",
+                cancellationToken);
+        }
+
         List<Guid> sectionIds = (request.SectionIds ?? []).Distinct().ToList();
         List<StudyGuideSection> sections = await db.StudyGuideSections
             .Where(section => section.DocumentId == document.Id && sectionIds.Contains(section.Id))
@@ -300,6 +313,10 @@ public static class GenerateStudyGuideSections
         try
         {
             await db.SaveChangesAsync(cancellationToken);
+            if (quotaLock is not null)
+            {
+                await quotaLock.CommitAsync(cancellationToken);
+            }
         }
         catch (DbUpdateException)
         {
