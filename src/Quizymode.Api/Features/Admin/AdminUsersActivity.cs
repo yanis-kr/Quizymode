@@ -15,7 +15,9 @@ public static class AdminUsersActivity
         string? ActivityFilter = null,
         int Page = 1,
         int PageSize = 25,
-        bool IncludeInternal = false);
+        bool IncludeInternal = false,
+        string? SortBy = null,
+        string? SortDir = null);
 
     public sealed record UsersResponse(
         UsersSummaryResponse Summary,
@@ -46,7 +48,14 @@ public static class AdminUsersActivity
         int TotalPageViewsInWindow,
         DateTime? LastOpenedUtc,
         string? LastKnownCountry,
-        bool IsInternal);
+        bool IsInternal,
+        int SessionsInWindow,
+        int StudySessionsInWindow,
+        int CollectionsCreated,
+        int ItemsCreated,
+        int Ratings,
+        int Comments,
+        string SignupChannel);
 
     public sealed record UserActivityQueryRequest(
         string UserId,
@@ -94,8 +103,17 @@ public static class AdminUsersActivity
     {
         All,
         WithActivity,
-        WithoutActivity
+        WithoutActivity,
+        Dormant
     }
+
+    /// <summary>Days without a page view after which a user counts as dormant.</summary>
+    public const int DormantDays = 30;
+
+    private static readonly string[] SortKeys =
+    [
+        "lastActive", "sessions", "studySessions", "collections", "items", "ratings", "comments", "channel", "registered"
+    ];
 
     private sealed record UserOverviewProjection(
         Guid Id,
@@ -106,7 +124,14 @@ public static class AdminUsersActivity
         int UniqueUrlsInWindow,
         int TotalPageViewsInWindow,
         DateTime? LastOpenedUtc,
-        bool IsInternal);
+        bool IsInternal,
+        int SessionsInWindow,
+        int StudySessionsInWindow,
+        int CollectionsCreated,
+        int ItemsCreated,
+        int Ratings,
+        int Comments,
+        string SignupChannel);
 
     private sealed record UserUrlHistoryProjection(
         string Url,
@@ -145,11 +170,13 @@ public static class AdminUsersActivity
             int page = 1,
             int pageSize = 25,
             bool includeInternal = false,
+            string? sortBy = null,
+            string? sortDir = null,
             ApplicationDbContext db = null!,
             IIpGeolocationService geoService = null!,
             CancellationToken cancellationToken = default)
         {
-            UsersQueryRequest request = new(search, activityDays, activityFilter, page, pageSize, includeInternal);
+            UsersQueryRequest request = new(search, activityDays, activityFilter, page, pageSize, includeInternal, sortBy, sortDir);
             Result<UsersResponse> result = await HandleGetUsersAsync(request, db, geoService, cancellationToken);
 
             return result.Match(
@@ -201,6 +228,15 @@ public static class AdminUsersActivity
                 Error.Validation("Admin.Users.InvalidActivityFilter", ex.Message));
         }
 
+        string sortBy = string.IsNullOrWhiteSpace(request.SortBy) ? "lastActive" : request.SortBy.Trim();
+        if (!SortKeys.Contains(sortBy, StringComparer.OrdinalIgnoreCase))
+        {
+            return Result.Failure<UsersResponse>(
+                Error.Validation("Admin.Users.InvalidSortBy", $"SortBy must be one of: {string.Join(", ", SortKeys)}."));
+        }
+
+        bool sortAscending = string.Equals(request.SortDir?.Trim(), "asc", StringComparison.OrdinalIgnoreCase);
+
         int page = Math.Max(1, request.Page);
         int pageSize = Math.Clamp(request.PageSize, 1, 100);
         string? search = string.IsNullOrWhiteSpace(request.Search)
@@ -228,7 +264,12 @@ public static class AdminUsersActivity
         List<User> filteredUsersList = await usersQuery.ToListAsync(cancellationToken);
         List<Guid> filteredUserIds = filteredUsersList.Select(user => user.Id).ToList();
 
-        Dictionary<Guid, (int UniqueUrlsInWindow, int TotalPageViewsInWindow)> windowActivityByUserId = [];
+        Dictionary<Guid, (int UniqueUrlsInWindow, int TotalPageViewsInWindow, int Sessions, int StudySessions)> windowActivityByUserId = [];
+        Dictionary<Guid, int> collectionsByUserId = [];
+        Dictionary<Guid, int> itemsByUserId = [];
+        Dictionary<Guid, int> ratingsByUserId = [];
+        Dictionary<Guid, int> commentsByUserId = [];
+        Dictionary<Guid, GetLifecycleReport.SignupSource> signupSources = [];
         Dictionary<Guid, DateTime> lastOpenedByUserId = [];
         int internalSessions = 0;
 
@@ -260,12 +301,41 @@ public static class AdminUsersActivity
                 {
                     UserId = group.Key,
                     UniqueUrlsInWindow = group.Select(pageView => pageView.Url).Distinct().Count(),
-                    TotalPageViewsInWindow = group.Count()
+                    TotalPageViewsInWindow = group.Count(),
+                    Sessions = group.Select(pageView => pageView.SessionId).Distinct().Count(),
+                    StudySessions = group
+                        .Where(pageView => pageView.Area == PageHitClassifier.AreaQuiz || pageView.Area == PageHitClassifier.AreaFlashcards)
+                        .Select(pageView => pageView.SessionId)
+                        .Distinct()
+                        .Count()
                 })
                 .ToListAsync(cancellationToken))
                 .ToDictionary(
                     item => item.UserId,
-                    item => (item.UniqueUrlsInWindow, item.TotalPageViewsInWindow));
+                    item => (item.UniqueUrlsInWindow, item.TotalPageViewsInWindow, item.Sessions, item.StudySessions));
+
+            List<string> userIdStrings = filteredUserIds.Select(id => id.ToString()).ToList();
+            collectionsByUserId = CountByCreator(
+                await db.Collections.AsNoTracking()
+                    .Where(collection => !collection.IsRepoManaged && userIdStrings.Contains(collection.CreatedBy))
+                    .Select(collection => collection.CreatedBy)
+                    .ToListAsync(cancellationToken));
+            itemsByUserId = CountByCreator(
+                await db.Items.AsNoTracking()
+                    .Where(item => !item.IsRepoManaged && userIdStrings.Contains(item.CreatedBy))
+                    .Select(item => item.CreatedBy)
+                    .ToListAsync(cancellationToken));
+            ratingsByUserId = CountByCreator(
+                await db.Ratings.AsNoTracking()
+                    .Where(rating => userIdStrings.Contains(rating.CreatedBy))
+                    .Select(rating => rating.CreatedBy)
+                    .ToListAsync(cancellationToken));
+            commentsByUserId = CountByCreator(
+                await db.Comments.AsNoTracking()
+                    .Where(comment => userIdStrings.Contains(comment.CreatedBy))
+                    .Select(comment => comment.CreatedBy)
+                    .ToListAsync(cancellationToken));
+            signupSources = await GetLifecycleReport.ResolveSignupSourcesAsync(db, filteredUserIds, cancellationToken);
 
             lastOpenedByUserId = (await userPageViews
                 .GroupBy(pageView => pageView.UserId!.Value)
@@ -280,8 +350,8 @@ public static class AdminUsersActivity
 
         IEnumerable<UserOverviewProjection> overviewQuery = filteredUsersList.Select(user =>
         {
-            (int UniqueUrlsInWindow, int TotalPageViewsInWindow) windowActivity =
-                windowActivityByUserId.GetValueOrDefault(user.Id, (0, 0));
+            (int UniqueUrlsInWindow, int TotalPageViewsInWindow, int Sessions, int StudySessions) windowActivity =
+                windowActivityByUserId.GetValueOrDefault(user.Id, (0, 0, 0, 0));
             DateTime? lastOpenedUtc = lastOpenedByUserId.TryGetValue(user.Id, out DateTime openedUtc)
                 ? openedUtc
                 : null;
@@ -295,13 +365,22 @@ public static class AdminUsersActivity
                 windowActivity.UniqueUrlsInWindow,
                 windowActivity.TotalPageViewsInWindow,
                 lastOpenedUtc,
-                user.IsInternal);
+                user.IsInternal,
+                windowActivity.Sessions,
+                windowActivity.StudySessions,
+                collectionsByUserId.GetValueOrDefault(user.Id),
+                itemsByUserId.GetValueOrDefault(user.Id),
+                ratingsByUserId.GetValueOrDefault(user.Id),
+                commentsByUserId.GetValueOrDefault(user.Id),
+                (signupSources.GetValueOrDefault(user.Id)?.Channel) ?? GetLifecycleReport.UnknownChannel);
         });
 
         overviewQuery = activityFilter switch
         {
             ActivityFilter.WithActivity => overviewQuery.Where(user => user.TotalPageViewsInWindow > 0),
             ActivityFilter.WithoutActivity => overviewQuery.Where(user => user.TotalPageViewsInWindow == 0),
+            ActivityFilter.Dormant => overviewQuery.Where(user =>
+                (user.LastOpenedUtc ?? user.CreatedAt) < windowEndUtc.AddDays(-DormantDays)),
             _ => overviewQuery
         };
 
@@ -314,10 +393,7 @@ public static class AdminUsersActivity
         int totalPages = filteredUsers == 0 ? 0 : (int)Math.Ceiling(filteredUsers / (double)pageSize);
         int skip = (page - 1) * pageSize;
 
-        List<UserOverviewProjection> pagedOverview = overviewList
-            .OrderByDescending(user => user.LastOpenedUtc ?? DateTime.MinValue)
-            .ThenByDescending(user => user.CreatedAt)
-            .ThenBy(user => user.Email ?? user.Name ?? user.Id.ToString())
+        List<UserOverviewProjection> pagedOverview = SortUsers(overviewList, sortBy, sortAscending)
             .Skip(skip)
             .Take(pageSize)
             .ToList();
@@ -358,7 +434,14 @@ public static class AdminUsersActivity
                     user.TotalPageViewsInWindow,
                     user.LastOpenedUtc,
                     lastCountry,
-                    user.IsInternal);
+                    user.IsInternal,
+                    user.SessionsInWindow,
+                    user.StudySessionsInWindow,
+                    user.CollectionsCreated,
+                    user.ItemsCreated,
+                    user.Ratings,
+                    user.Comments,
+                    user.SignupChannel);
             })
             .ToList();
 
@@ -496,6 +579,42 @@ public static class AdminUsersActivity
             totalPages));
     }
 
+    private static Dictionary<Guid, int> CountByCreator(List<string> creators)
+    {
+        return creators
+            .Select(creator => Guid.TryParse(creator, out Guid id) ? id : Guid.Empty)
+            .Where(id => id != Guid.Empty)
+            .GroupBy(id => id)
+            .ToDictionary(group => group.Key, group => group.Count());
+    }
+
+    private static IEnumerable<UserOverviewProjection> SortUsers(
+        List<UserOverviewProjection> users,
+        string sortBy,
+        bool ascending)
+    {
+        Func<UserOverviewProjection, IComparable> key = sortBy.ToLowerInvariant() switch
+        {
+            "sessions" => user => user.SessionsInWindow,
+            "studysessions" => user => user.StudySessionsInWindow,
+            "collections" => user => user.CollectionsCreated,
+            "items" => user => user.ItemsCreated,
+            "ratings" => user => user.Ratings,
+            "comments" => user => user.Comments,
+            "channel" => user => user.SignupChannel,
+            "registered" => user => user.CreatedAt,
+            _ => user => user.LastOpenedUtc ?? DateTime.MinValue
+        };
+
+        IOrderedEnumerable<UserOverviewProjection> ordered = ascending
+            ? users.OrderBy(key)
+            : users.OrderByDescending(key);
+
+        return ordered
+            .ThenByDescending(user => user.CreatedAt)
+            .ThenBy(user => user.Email ?? user.Name ?? user.Id.ToString());
+    }
+
     private static ActivityFilter ParseActivityFilter(string? value)
     {
         if (string.IsNullOrWhiteSpace(value))
@@ -508,7 +627,8 @@ public static class AdminUsersActivity
             "all" => ActivityFilter.All,
             "with-activity" => ActivityFilter.WithActivity,
             "without-activity" => ActivityFilter.WithoutActivity,
-            _ => throw new ArgumentException("ActivityFilter must be one of: all, with-activity, without-activity.")
+            "dormant" => ActivityFilter.Dormant,
+            _ => throw new ArgumentException("ActivityFilter must be one of: all, with-activity, without-activity, dormant.")
         };
     }
 

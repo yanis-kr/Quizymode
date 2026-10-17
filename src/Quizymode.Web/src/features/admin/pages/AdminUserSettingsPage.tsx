@@ -5,7 +5,9 @@ import {
   adminApi,
   type AdminUserActivityFilter,
   type AdminUserOverviewResponse,
+  type AdminUserSortBy,
 } from "@/api/admin";
+import UserSessionsPanel from "../components/UserSessionsPanel";
 import { useAuth } from "@/contexts/AuthContext";
 import LoadingSpinner from "@/components/LoadingSpinner";
 import ErrorMessage from "@/components/ErrorMessage";
@@ -29,6 +31,17 @@ const ACTIVITY_FILTER_OPTIONS: Array<{
   { label: "All users", value: "all" },
   { label: "With activity", value: "with-activity" },
   { label: "No activity", value: "without-activity" },
+  { label: "Dormant (30d)", value: "dormant" },
+];
+
+const SORT_COLUMNS: Array<{ label: string; value: AdminUserSortBy }> = [
+  { label: "Sessions", value: "sessions" },
+  { label: "Study", value: "studySessions" },
+  { label: "Collections", value: "collections" },
+  { label: "Items", value: "items" },
+  { label: "Ratings", value: "ratings" },
+  { label: "Comments", value: "comments" },
+  { label: "Channel", value: "channel" },
 ];
 
 const AdminUserSettingsPage = () => {
@@ -41,6 +54,8 @@ const AdminUserSettingsPage = () => {
     useState<AdminUserActivityFilter>("all");
   const [usersPage, setUsersPage] = useState(1);
   const [includeInternal, setIncludeInternal] = useState(false);
+  const [sortBy, setSortBy] = useState<AdminUserSortBy>("lastActive");
+  const [sortDir, setSortDir] = useState<"asc" | "desc">("desc");
   const [selectedUserId, setSelectedUserId] = useState<string | null>(null);
   const [historyDays, setHistoryDays] = useState(30);
   const [urlFilterInput, setUrlFilterInput] = useState("");
@@ -63,6 +78,8 @@ const AdminUserSettingsPage = () => {
       activityFilter,
       usersPage,
       includeInternal,
+      sortBy,
+      sortDir,
     ],
     queryFn: () =>
       adminApi.getUsers(
@@ -71,7 +88,9 @@ const AdminUserSettingsPage = () => {
         activityFilter,
         usersPage,
         USERS_PAGE_SIZE,
-        includeInternal
+        includeInternal,
+        sortBy,
+        sortDir
       ),
     enabled: !!isAuthenticated && !!isAdmin,
   });
@@ -207,6 +226,19 @@ const AdminUserSettingsPage = () => {
 
     return Math.trunc(parsed);
   })();
+
+  const toggleSort = (column: AdminUserSortBy) => {
+    if (sortBy === column) {
+      setSortDir((current) => (current === "asc" ? "desc" : "asc"));
+    } else {
+      setSortBy(column);
+      setSortDir("desc");
+    }
+    setUsersPage(1);
+  };
+
+  const sortIndicator = (column: AdminUserSortBy) =>
+    sortBy === column ? (sortDir === "asc" ? " ▲" : " ▼") : "";
 
   const handleSearchSubmit = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
@@ -439,9 +471,46 @@ const AdminUserSettingsPage = () => {
                       <th className="px-5 py-3 text-left text-xs font-semibold uppercase tracking-wide text-slate-500">
                         Unique URLs
                       </th>
-                      <th className="px-5 py-3 text-left text-xs font-semibold uppercase tracking-wide text-slate-500">
-                        Last opened
+                      <th
+                        className="px-5 py-3 text-left text-xs font-semibold uppercase tracking-wide text-slate-500"
+                        aria-sort={
+                          sortBy === "lastActive"
+                            ? sortDir === "asc"
+                              ? "ascending"
+                              : "descending"
+                            : "none"
+                        }
+                      >
+                        <button
+                          type="button"
+                          onClick={() => toggleSort("lastActive")}
+                          className="uppercase tracking-wide"
+                        >
+                          Last active{sortIndicator("lastActive")}
+                        </button>
                       </th>
+                      {SORT_COLUMNS.map((column) => (
+                        <th
+                          key={column.value}
+                          className="px-5 py-3 text-left text-xs font-semibold uppercase tracking-wide text-slate-500"
+                          aria-sort={
+                            sortBy === column.value
+                              ? sortDir === "asc"
+                                ? "ascending"
+                                : "descending"
+                              : "none"
+                          }
+                        >
+                          <button
+                            type="button"
+                            onClick={() => toggleSort(column.value)}
+                            className="uppercase tracking-wide"
+                          >
+                            {column.label}
+                            {sortIndicator(column.value)}
+                          </button>
+                        </th>
+                      ))}
                     </tr>
                   </thead>
                   <tbody className="divide-y divide-slate-200 bg-white">
@@ -493,6 +562,13 @@ const AdminUserSettingsPage = () => {
                           <td className="px-5 py-4 text-sm text-slate-700">
                             {formatDateTime(user.lastOpenedUtc)}
                           </td>
+                          <td className="px-5 py-4 text-sm text-slate-700">{user.sessionsInWindow}</td>
+                          <td className="px-5 py-4 text-sm text-slate-700">{user.studySessionsInWindow}</td>
+                          <td className="px-5 py-4 text-sm text-slate-700">{user.collectionsCreated}</td>
+                          <td className="px-5 py-4 text-sm text-slate-700">{user.itemsCreated}</td>
+                          <td className="px-5 py-4 text-sm text-slate-700">{user.ratings}</td>
+                          <td className="px-5 py-4 text-sm text-slate-700">{user.comments}</td>
+                          <td className="px-5 py-4 text-sm text-slate-700">{user.signupChannel}</td>
                         </tr>
                       );
                     })}
@@ -871,6 +947,16 @@ const AdminUserSettingsPage = () => {
                   </div>
                 )}
               </section>
+
+              <UserSessionsPanel
+                userId={selectedUserId}
+                days={historyDays}
+                includeInternal={
+                  includeInternal ||
+                  (selectedUser?.isInternal ?? selectedUserFromList?.isInternal ?? false)
+                }
+                formatDateTime={formatDateTime}
+              />
             </div>
           )}
         </div>
