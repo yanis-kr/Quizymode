@@ -98,6 +98,18 @@ Before pushing, run the repo pre-push verification workflow.
 
 If available, invoke the `quizymode-prepush` skill (`$quizymode-prepush`). Otherwise, follow the same workflow from the repo-managed skill at [`.agent-skills/quizymode-prepush/SKILL.md`](./.agent-skills/quizymode-prepush/SKILL.md).
 
+## Batched / Epic Issue Workflow
+
+To move through the backlog faster, related small/medium issues are bundled into a single `epic`-labeled GitHub issue and implemented together as one branch → one PR → one production deploy, instead of one PR per issue.
+
+- An epic issue's body has a checklist of sub-issue numbers (`- [ ] #124`) and lives under the same `area:` label as its sub-issues.
+- When asked to work an epic, implement every unchecked sub-issue on one branch/worktree, running the normal specialist pipeline (architect → ux-designer → reviewer → coder → tester → reviewer final pass) across the combined scope.
+- Validate each sub-issue locally and capture evidence (screenshots, test output, curl output) per sub-issue, but hold that evidence locally or in the PR description — do not attach it to the sub-issues yet, since they are not done until production confirms them.
+- Open exactly one PR for the whole epic. Do not merge or deploy without explicit user go-ahead, same as any other change.
+- After merge and production deploy: verify each sub-issue in prod, then attach the evidence to each individual sub-issue and close it, then close the epic once every sub-issue is closed.
+- If production reveals a defect in scope, file a **new** issue referencing the epic by number. Do not reopen a closed sub-issue to absorb a post-deploy regression.
+- Grouping principle for new epics: prefer bundling by shared functional area/feature (e.g. "same report family," "same screen") over hitting a specific issue count — 2–3 medium issues or 5–7 small ones are both fine as long as they're genuinely related.
+
 ## Change Rules
 
 - Do not hand-edit generated OpenAPI unless the generation path is broken and you are explicitly repairing it.
