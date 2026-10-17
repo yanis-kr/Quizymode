@@ -9,6 +9,12 @@ import { categoriesApi } from "@/api/categories";
 import { keywordsApi } from "@/api/keywords";
 import { collectionsApi } from "@/api/collections";
 import { QUIZ_COMPLETED_EVENT, type QuizCompletionSnapshot } from "@/features/items/quiz/quizRun";
+import { installMemoryLocalStorage } from "@/test/memoryStorage";
+import {
+  GUEST_HISTORY_STORAGE_KEY,
+  readGuestHistory,
+  resetGuestHistoryMemoryForTests,
+} from "@/features/guestHistory/guestHistoryStorage";
 
 const { mockTrackEventOnce, mockTrackEventDeferredOnce, mockFlushDeferredAnalyticsEvents } = vi.hoisted(() => ({
   mockTrackEventOnce: vi.fn(),
@@ -22,11 +28,12 @@ vi.mock("@/features/analytics/analyticsEvents", () => ({
   flushDeferredAnalyticsEvents: mockFlushDeferredAnalyticsEvents,
 }));
 
+const { mockAuth } = vi.hoisted(() => ({
+  mockAuth: { isAuthenticated: true, userId: "user-1" as string | undefined },
+}));
+
 vi.mock("@/contexts/AuthContext", () => ({
-  useAuth: () => ({
-    isAuthenticated: true,
-    userId: "user-1",
-  }),
+  useAuth: () => mockAuth,
 }));
 
 vi.mock("@/api/items", () => ({
@@ -155,6 +162,10 @@ describe("QuizModePage", () => {
   beforeEach(() => {
     vi.clearAllMocks();
     sessionStorage.clear();
+    mockAuth.isAuthenticated = true;
+    mockAuth.userId = "user-1";
+    installMemoryLocalStorage();
+    resetGuestHistoryMemoryForTests();
 
     vi.mocked(categoriesApi.getAll).mockResolvedValue({
       categories: [{ category: "exams" }],
@@ -306,6 +317,45 @@ describe("QuizModePage", () => {
     expect(telemetry[2].runId).not.toBe(telemetry[0].runId);
 
     window.removeEventListener(QUIZ_COMPLETED_EVENT, onComplete);
+  });
+
+  it("records one anonymous completion in browser-local guest history and a replay adds one more", async () => {
+    mockAuth.isAuthenticated = false;
+    mockAuth.userId = undefined;
+    const user = userEvent.setup({ delay: null });
+    const view = renderPage("/quiz/collections/collection-1/practice+set/item/item-1");
+
+    await user.click(await screen.findByRole("button", { name: /4/i }));
+    await user.click(screen.getByRole("button", { name: /^next$/i }));
+    await user.click(await screen.findByRole("button", { name: /Rome/i }));
+    await waitFor(() => expect(readGuestHistory()).toHaveLength(1));
+    expect(readGuestHistory()[0]).toMatchObject({ correct: 1, total: 2 });
+    // Non-GUID test identifiers are not persisted as practice sources or missed references.
+    expect(readGuestHistory()[0]).toMatchObject({ source: null, missedItemIds: [] });
+    expect(localStorage.getItem(GUEST_HISTORY_STORAGE_KEY)).not.toMatch(/What is|Paris|Rome/);
+
+    // Remounting the completed run (reload restore) must not duplicate it.
+    view.unmount();
+    renderPage("/quiz/collections/collection-1/practice+set/item/item-2");
+    await user.click(await screen.findByRole("button", { name: /view results/i }));
+    expect(readGuestHistory()).toHaveLength(1);
+
+    await user.click(screen.getByRole("button", { name: /play again/i }));
+    await user.click(await screen.findByRole("button", { name: /4/i }));
+    await user.click(screen.getByRole("button", { name: /^next$/i }));
+    await user.click(await screen.findByRole("button", { name: /Paris/i }));
+    await waitFor(() => expect(readGuestHistory()).toHaveLength(2));
+  });
+
+  it("never copies an authenticated completion into guest history", async () => {
+    const user = userEvent.setup({ delay: null });
+    renderPage("/quiz/collections/collection-1/practice+set/item/item-1");
+
+    await user.click(await screen.findByRole("button", { name: /4/i }));
+    await user.click(screen.getByRole("button", { name: /^next$/i }));
+    await user.click(await screen.findByRole("button", { name: /Rome/i }));
+    expect(await screen.findByText(/You answered every question/i)).toBeInTheDocument();
+    expect(localStorage.getItem(GUEST_HISTORY_STORAGE_KEY)).toBeNull();
   });
 
   it("restores submitted feedback when navigating back without inflating score", async () => {
