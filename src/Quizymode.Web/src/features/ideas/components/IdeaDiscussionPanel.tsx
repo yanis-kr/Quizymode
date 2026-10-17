@@ -5,7 +5,7 @@ import { ideasApi, type IdeaCommentResponse } from "@/api/ideas";
 import { useAuth } from "@/contexts/AuthContext";
 import ErrorMessage from "@/components/ErrorMessage";
 import LoadingSpinner from "@/components/LoadingSpinner";
-import { getApiErrorMessage } from "@/utils/apiError";
+import { getIdeaErrorMessage } from "../ideaErrors";
 import { IDEA_COMMENT_MAX, getIdeaCommentError } from "../ideaValidation";
 
 interface IdeaDiscussionPanelProps {
@@ -46,7 +46,7 @@ const IdeaDiscussionPanel = ({
       invalidateIdeaQueries();
     },
     onError: (mutationError) => {
-      setMutationError(getApiErrorMessage(mutationError));
+      setMutationError(getIdeaErrorMessage(mutationError));
     },
   });
 
@@ -60,7 +60,7 @@ const IdeaDiscussionPanel = ({
       invalidateIdeaQueries();
     },
     onError: (mutationError) => {
-      setMutationError(getApiErrorMessage(mutationError));
+      setMutationError(getIdeaErrorMessage(mutationError));
     },
   });
 
@@ -71,7 +71,7 @@ const IdeaDiscussionPanel = ({
       invalidateIdeaQueries();
     },
     onError: (mutationError) => {
-      setMutationError(getApiErrorMessage(mutationError));
+      setMutationError(getIdeaErrorMessage(mutationError));
     },
   });
 

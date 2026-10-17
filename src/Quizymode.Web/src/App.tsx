@@ -41,8 +41,10 @@ const FeedbackPage = lazyPage(() => import("./features/feedback/pages/FeedbackPa
 const IdeasPage = lazyPage(() => import("./features/ideas/pages/IdeasPage"));
 const StudyGuidePage = lazyPage(() => import("./features/studyGuide/pages/StudyGuidePage"));
 const StudyGuideImportPage = lazyPage(() => import("./features/studyGuide/pages/StudyGuideImportPage"));
+const StudyGuideUploadPage = lazyPage(() => import("./features/studyGuide/pages/StudyGuideUploadPage"));
 const PrivacyPolicyPage = lazyPage(() => import("./features/legal/pages/PrivacyPolicyPage"));
 const TermsOfServicePage = lazyPage(() => import("./features/legal/pages/TermsOfServicePage"));
+const AdminFeedbackPage = lazyPage(() => import("./features/admin/pages/AdminFeedbackPage"));
 const AdminIdeasPage = lazyPage(() => import("./features/admin/pages/AdminIdeasPage"));
 const AdminFeaturedPage = lazyPage(() => import("./features/admin/pages/AdminFeaturedPage"));
 
@@ -114,6 +116,7 @@ function App() {
           <Route path="/items/:id/edit" element={<EditItemPage />} />
           <Route path="/study-guide" element={<StudyGuidePage />} />
           <Route path="/study-guide/import" element={<StudyGuideImportPage />} />
+          <Route path="/study-guide/upload" element={<StudyGuideUploadPage />} />
         </Route>
         <Route path="/items/:id/comments" element={<ItemCommentsPage />} />
         <Route path="/items/:id" element={<ItemDetailPage />} />
@@ -133,6 +136,7 @@ function App() {
           <Route path="/admin/seed-sync" element={<AdminSeedSyncPage />} />
           <Route path="/admin/page-views" element={<PageViewAnalyticsPage />} />
           <Route path="/admin/client-errors" element={<AdminClientErrorsPage />} />
+          <Route path="/admin/feedback" element={<AdminFeedbackPage />} />
           <Route path="/admin/ideas" element={<AdminIdeasPage />} />
           <Route path="/admin/featured" element={<AdminFeaturedPage />} />
         </Route>

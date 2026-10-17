@@ -1,5 +1,5 @@
 import { beforeEach, describe, expect, it, vi } from "vitest";
-import { render, screen, within } from "@testing-library/react";
+import { fireEvent, render, screen, waitFor, within } from "@testing-library/react";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import LearningTab from "./LearningTab";
 
@@ -77,7 +77,7 @@ describe("LearningTab", () => {
     expect(screen.getByText(/2 runs started and never answered a question/)).toBeInTheDocument();
     expect(screen.getByText(/10 reached \(100%\)/)).toBeInTheDocument();
     expect(screen.getByText(/3 stopped here/)).toBeInTheDocument();
-    expect(mockGetLearningReport).toHaveBeenCalledWith(30, false, false);
+    expect(mockGetLearningReport).toHaveBeenCalledWith(30, false, false, undefined, undefined);
   });
 
   it("shows empty states when nothing was recorded", async () => {
@@ -105,5 +105,32 @@ describe("LearningTab", () => {
     renderTab();
 
     expect(await screen.findByText("Failed to load the learning report")).toBeInTheDocument();
+  });
+
+  it("applies the channel and visitor type filters", async () => {
+    mockGetLearningReport.mockResolvedValue({
+      windowStartUtc: "2026-10-01T00:00:00Z",
+      windowEndUtc: "2026-10-14T00:00:00Z",
+      botSessions: 0,
+      botsExcluded: true,
+      internalSessions: 0,
+      internalExcluded: true,
+      scopes: [],
+      quizRunsAbandonedBeforeFirstAnswer: 0,
+      quizDropOff: [],
+    });
+
+    renderTab();
+    await screen.findByText(/No study activity recorded/i);
+
+    fireEvent.change(screen.getByLabelText("Channel"), { target: { value: "search" } });
+    await waitFor(() =>
+      expect(mockGetLearningReport).toHaveBeenLastCalledWith(30, false, false, "search", undefined)
+    );
+
+    fireEvent.change(screen.getByLabelText("Visitor type"), { target: { value: "returning" } });
+    await waitFor(() =>
+      expect(mockGetLearningReport).toHaveBeenLastCalledWith(30, false, false, "search", "returning")
+    );
   });
 });

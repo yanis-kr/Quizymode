@@ -1,7 +1,7 @@
 import type { PolicyAcceptanceItemRequest } from "@/api/users";
 
 export const TERMS_OF_SERVICE_POLICY_VERSION = "2026-03-29";
-export const PRIVACY_POLICY_VERSION = "2026-10-16";
+export const PRIVACY_POLICY_VERSION = "2026-10-17";
 
 const POLICY_ACCEPTANCE_STORAGE_KEY = "PendingPolicyAcceptancesV1";
 

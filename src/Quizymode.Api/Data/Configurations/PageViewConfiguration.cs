@@ -51,6 +51,22 @@ internal sealed class PageViewConfiguration : IEntityTypeConfiguration<PageView>
             .IsRequired()
             .HasDefaultValue(false);
 
+        builder.Property(pageView => pageView.Area)
+            .HasMaxLength(32);
+
+        builder.Property(pageView => pageView.ScopeType)
+            .HasMaxLength(16);
+
+        builder.Property(pageView => pageView.ScopeKey)
+            .HasMaxLength(200);
+
+        builder.Property(pageView => pageView.NavPath)
+            .HasMaxLength(400);
+
+        builder.Property(pageView => pageView.IsItemStep)
+            .IsRequired()
+            .HasDefaultValue(false);
+
         builder.Property(pageView => pageView.CreatedUtc)
             .IsRequired();
 
@@ -63,5 +79,6 @@ internal sealed class PageViewConfiguration : IEntityTypeConfiguration<PageView>
         builder.HasIndex(pageView => pageView.IsInternal);
         builder.HasIndex(pageView => new { pageView.Path, pageView.CreatedUtc });
         builder.HasIndex(pageView => new { pageView.SessionId, pageView.CreatedUtc });
+        builder.HasIndex(pageView => new { pageView.Area, pageView.CreatedUtc });
     }
 }

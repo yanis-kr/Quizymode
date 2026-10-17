@@ -125,6 +125,53 @@ export interface RecentPageViewResponse {
   createdUtc: string;
 }
 
+/** Feature area assigned to each page hit by the server-side classifier (ANALYTICS-004). */
+export type PageHitArea =
+  | "home"
+  | "browse"
+  | "quiz"
+  | "flashcards"
+  | "collections"
+  | "featured"
+  | "item-detail"
+  | "create"
+  | "study-guide"
+  | "auth"
+  | "community"
+  | "info"
+  | "admin"
+  | "other";
+
+export type PageHitScopeType = "category" | "collection" | "item";
+
+export interface FeatureAreaRow {
+  area: PageHitArea | string;
+  /** Hits across all areas add up to the summary's total page hits. */
+  hits: number;
+  sessions: number;
+  /** A session can touch several areas, so shares can sum past 100%. */
+  sessionSharePercent: number;
+  /** Quiz/Flashcards question views (item-step hits). */
+  itemSteps: number;
+}
+
+export interface ContentScopeRow {
+  /** Category slug, navigation path (category/kw1/kw2), or collection id. */
+  key: string;
+  /** Resolved collection name; null for categories, nav paths, and deleted collections. */
+  name: string | null;
+  sessions: number;
+  hits: number;
+  itemSteps: number;
+  avgItemStepsPerSession: number;
+}
+
+export interface ContentScopesResponse {
+  topCategories: ContentScopeRow[];
+  topNavPaths: ContentScopeRow[];
+  topCollections: ContentScopeRow[];
+}
+
 export interface PageViewAnalyticsResponse {
   summary: PageViewAnalyticsSummary;
   topPages: TopPageAnalyticsResponse[];
@@ -133,6 +180,74 @@ export interface PageViewAnalyticsResponse {
   page: number;
   pageSize: number;
   totalPages: number;
+  featureAreas: FeatureAreaRow[];
+  contentScopes: ContentScopesResponse;
+}
+
+/** Long-range trends read from daily rollups (ANALYTICS-011); bots and internal traffic excluded. */
+export interface PageViewRollupsResponse {
+  windowStartDay: string;
+  windowEndDay: string;
+  /** Raw page hits are kept this many days; older traffic exists only as rollups. */
+  retentionDays: number;
+  latestRolledDay: string | null;
+  totalHits: number;
+  /** Sum of each day's distinct sessions; a session spanning midnight counts once per day. */
+  totalSessionDays: number;
+  totalBouncedSessionDays: number;
+  totalItemSteps: number;
+  daily: Array<{ day: string; sessions: number; hits: number; itemSteps: number }>;
+  areas: Array<{ area: string; hits: number; sessionDays: number; itemSteps: number }>;
+  channels: PageViewRollupDimensionRow[];
+  deviceClasses: PageViewRollupDimensionRow[];
+  outcomes: PageViewRollupDimensionRow[];
+  visitorTypes: PageViewRollupDimensionRow[];
+  topScopes: Array<{ scopeType: string; scopeKey: string; hits: number; itemSteps: number }>;
+}
+
+export interface PageViewRollupDimensionRow {
+  value: string;
+  sessionDays: number;
+  hits: number;
+}
+
+/** Admin overview KPIs for a window (ANALYTICS-005); visitor fields are null when unavailable. */
+export interface AnalyticsOverviewKpis {
+  humanSessions: number;
+  engagedSessions: number;
+  studySessions: number;
+  convertedSessions: number;
+  newSignups: number;
+  activeRegisteredUsers: number;
+  newVisitors: number | null;
+  returningVisitors: number | null;
+}
+
+export interface AnalyticsOverviewDailyPoint {
+  day: string;
+  humanSessions: number;
+  engagedSessions: number;
+  studySessions: number;
+  convertedSessions: number;
+  newSignups: number;
+  activeRegisteredUsers: number;
+}
+
+export interface AnalyticsOverviewResponse {
+  days: number;
+  windowStartDay: string;
+  windowEndDay: string;
+  current: AnalyticsOverviewKpis;
+  previous: AnalyticsOverviewKpis;
+  daily: AnalyticsOverviewDailyPoint[];
+  releaseMarkers: Array<{ version: string; day: string }>;
+  workQueue: {
+    itemsAwaitingReview: number;
+    pendingPrivateKeywords: number;
+    ideasAwaitingModeration: number;
+    /** Front-end error groups first seen in the window (OBS-001). */
+    newClientErrorGroups: number;
+  };
 }
 
 /**
@@ -171,6 +286,10 @@ export interface PageViewSessionsSummary {
   internalSessions: number;
   internalExcluded: boolean;
   byOutcome: SessionOutcomeStats[];
+  /** Sessions with at least one Quiz or Flashcards question view. */
+  studySessions: number;
+  /** Average questions viewed per study session. */
+  avgItemStepsPerStudySession: number;
 }
 
 export interface SessionDepthBucket {
@@ -181,12 +300,17 @@ export interface SessionDepthBucket {
   authenticatedSessions: number;
 }
 
+/** Landing sessions grouped by the entry hit's feature area and content scope. */
 export interface LandingPageResponse {
+  /** Most common entry path in the group, as an example. */
   path: string;
   sessions: number;
   bouncedSessions: number;
   bounceRatePercent: number;
   avgPagesPerSession: number;
+  area: PageHitArea | string;
+  scopeType: PageHitScopeType | null;
+  scopeKey: string | null;
 }
 
 export interface PageViewSessionResponse {
@@ -207,6 +331,9 @@ export interface PageViewSessionResponse {
   userAgent: string | null;
   isBot: boolean;
   isInternal: boolean;
+  entryArea: PageHitArea | string;
+  /** Quiz/Flashcards questions viewed in this session. */
+  itemSteps: number;
 }
 
 export interface PageViewSessionsResponse {
@@ -289,6 +416,8 @@ export interface SessionJourneyStep {
   createdUtc: string;
   /** Null on the final step: no exit event is recorded, so dwell time is unknown. */
   dwellSeconds: number | null;
+  area: PageHitArea | string;
+  isItemStep: boolean;
 }
 
 export interface PageViewSessionDetailResponse {
@@ -307,6 +436,41 @@ export interface PageViewSessionDetailResponse {
   isBot: boolean;
   isInternal: boolean;
   steps: SessionJourneyStep[];
+}
+
+export type FeedbackStatus = "New" | "Reviewed" | "Archived";
+
+/** Admin feedback inbox row (ANALYTICS-006). Contact emails are admin-only. */
+export interface AdminFeedbackItem {
+  id: string;
+  type: string;
+  status: FeedbackStatus;
+  details: string;
+  pageUrl: string;
+  additionalKeywords: string | null;
+  userEmail: string | null;
+  contactEmail: string | null;
+  userAgent: string | null;
+  sessionId: string | null;
+  createdAt: string;
+}
+
+export interface AdminFeedbackListResponse {
+  items: AdminFeedbackItem[];
+  totalCount: number;
+  page: number;
+  pageSize: number;
+  newCount: number;
+}
+
+export interface AdminFeedbackQuery {
+  page?: number;
+  pageSize?: number;
+  type?: string;
+  status?: string;
+  from?: string;
+  to?: string;
+  search?: string;
 }
 
 export interface ConversionFunnelStep {
@@ -360,10 +524,129 @@ export interface LearningReportResponse {
   quizDropOff: LearningDropOffPointResponse[];
 }
 
+export interface ContentRowResponse {
+  key: string;
+  name: string | null;
+  sessions: number;
+  studySessions: number;
+  itemSteps: number;
+  ratingsCount: number;
+  averageStars: number | null;
+  comments: number;
+  bookmarks: number | null;
+  shares: number | null;
+  completions: number | null;
+  averageScorePercent: number | null;
+}
+
+export interface ContentFeaturedRowResponse {
+  id: string;
+  type: string;
+  displayName: string;
+  sessionsSeen: number;
+  sessionsOpened: number;
+  clickThroughPercent: number | null;
+}
+
+export interface ContentUntouchedResponse {
+  key: string;
+  name: string;
+}
+
+export interface ContentUserCreatedWeekResponse {
+  weekStartUtc: string;
+  privateItems: number;
+  publicItems: number;
+  collections: number;
+}
+
+export interface ContentReportResponse {
+  windowStartUtc: string;
+  windowEndUtc: string;
+  botSessions: number;
+  botsExcluded: boolean;
+  internalSessions: number;
+  internalExcluded: boolean;
+  categories: ContentRowResponse[];
+  navigationSets: ContentRowResponse[];
+  collections: ContentRowResponse[];
+  featured: ContentFeaturedRowResponse[];
+  untouchedCategories: ContentUntouchedResponse[];
+  untouchedCollections: ContentUntouchedResponse[];
+  userCreated: ContentUserCreatedWeekResponse[];
+}
+
+export interface QuestionQualityItemResponse {
+  itemId: string;
+  question: string;
+  correctAnswer: string;
+  category: string | null;
+  collections: string[];
+  answers: number;
+  correctRatePercent: number;
+  randomGuessPercent: number;
+  checkAnswerKey: boolean;
+  lastEditedUtc: string | null;
+}
+
+export interface QuestionQualityReportResponse {
+  windowStartUtc: string;
+  windowEndUtc: string;
+  minAnswers: number;
+  botSessions: number;
+  botsExcluded: boolean;
+  internalSessions: number;
+  internalExcluded: boolean;
+  items: QuestionQualityItemResponse[];
+}
+
+export interface LifecycleCohortResponse {
+  weekStartUtc: string;
+  signups: number;
+  activated7Days: number;
+  activatedEligible: number;
+  activeWeek1: number;
+  eligibleWeek1: number;
+  activeWeek2: number;
+  eligibleWeek2: number;
+  activeWeek4: number;
+  eligibleWeek4: number;
+}
+
+export interface LifecycleSourceResponse {
+  channel: string;
+  campaign: string | null;
+  signups: number;
+  activated7Days: number;
+  activatedEligible: number;
+  activeWeek1: number;
+  eligibleWeek1: number;
+}
+
+export interface LifecycleReportResponse {
+  windowStartUtc: string;
+  windowEndUtc: string;
+  totalSignups: number;
+  cohorts: LifecycleCohortResponse[];
+  sources: LifecycleSourceResponse[];
+}
+
+export type AdminUserSortBy =
+  | "lastActive"
+  | "sessions"
+  | "studySessions"
+  | "collections"
+  | "items"
+  | "ratings"
+  | "comments"
+  | "channel"
+  | "registered";
+
 export type AdminUserActivityFilter =
   | "all"
   | "with-activity"
-  | "without-activity";
+  | "without-activity"
+  | "dormant";
 
 export interface AdminUsersSummaryResponse {
   activityWindowStartUtc: string;
@@ -388,6 +671,13 @@ export interface AdminUserOverviewResponse {
   lastOpenedUtc?: string | null;
   lastKnownCountry?: string | null;
   isInternal: boolean;
+  sessionsInWindow: number;
+  studySessionsInWindow: number;
+  collectionsCreated: number;
+  itemsCreated: number;
+  ratings: number;
+  comments: number;
+  signupChannel: string;
 }
 
 export interface AdminUsersResponse {
@@ -723,7 +1013,8 @@ export const adminApi = {
     page: number = 1,
     pageSize: number = 25,
     landingPagesLimit: number = 10,
-    includeInternal: boolean = false
+    includeInternal: boolean = false,
+    userId?: string
   ): Promise<PageViewSessionsResponse> => {
     const params: Record<string, string | number | boolean> = {
       days,
@@ -737,6 +1028,9 @@ export const adminApi = {
     if (minPages && minPages > 1) {
       params.minPages = minPages;
     }
+    if (userId) {
+      params.userId = userId;
+    }
     if (includeInternal) {
       params.includeInternal = true;
     }
@@ -744,6 +1038,22 @@ export const adminApi = {
     const response = await apiClient.get<PageViewSessionsResponse>(
       "/admin/page-view-sessions",
       { params }
+    );
+    return response.data;
+  },
+
+  getPageViewRollups: async (days: number = 365): Promise<PageViewRollupsResponse> => {
+    const response = await apiClient.get<PageViewRollupsResponse>(
+      "/admin/page-view-rollups",
+      { params: { days } }
+    );
+    return response.data;
+  },
+
+  getAnalyticsOverview: async (days: 7 | 30 | 90 = 7): Promise<AnalyticsOverviewResponse> => {
+    const response = await apiClient.get<AnalyticsOverviewResponse>(
+      "/admin/analytics/overview",
+      { params: { days } }
     );
     return response.data;
   },
@@ -758,6 +1068,27 @@ export const adminApi = {
           params: { includeInternal: true },
         })
       : await apiClient.get<PageViewSessionDetailResponse>(url);
+    return response.data;
+  },
+
+  getAdminFeedback: async (
+    query: AdminFeedbackQuery = {}
+  ): Promise<AdminFeedbackListResponse> => {
+    const params = Object.fromEntries(
+      Object.entries(query).filter(([, value]) => value !== undefined && value !== "")
+    );
+    const response = await apiClient.get<AdminFeedbackListResponse>("/admin/feedback", { params });
+    return response.data;
+  },
+
+  updateFeedbackStatus: async (
+    id: string,
+    status: FeedbackStatus
+  ): Promise<AdminFeedbackItem> => {
+    const response = await apiClient.put<AdminFeedbackItem>(
+      `/admin/feedback/${encodeURIComponent(id)}/status`,
+      { status }
+    );
     return response.data;
   },
 
@@ -827,16 +1158,67 @@ export const adminApi = {
   getLearningReport: async (
     days: number = 7,
     includeBots: boolean = false,
-    includeInternal: boolean = false
+    includeInternal: boolean = false,
+    channel?: string,
+    visitorType?: string
   ): Promise<LearningReportResponse> => {
-    const params: Record<string, number | boolean> = { days, includeBots };
+    const params: Record<string, number | boolean | string> = { days, includeBots };
     if (includeInternal) {
       params.includeInternal = true;
+    }
+    if (channel) {
+      params.channel = channel;
+    }
+    if (visitorType) {
+      params.visitorType = visitorType;
     }
 
     const response = await apiClient.get<LearningReportResponse>(
       "/admin/analytics/learning",
       { params }
+    );
+    return response.data;
+  },
+
+  getContentReport: async (
+    days: number = 30,
+    includeBots: boolean = false,
+    includeInternal: boolean = false
+  ): Promise<ContentReportResponse> => {
+    const params: Record<string, number | boolean> = { days, includeBots };
+    if (includeInternal) {
+      params.includeInternal = true;
+    }
+
+    const response = await apiClient.get<ContentReportResponse>(
+      "/admin/analytics/content",
+      { params }
+    );
+    return response.data;
+  },
+
+  getQuestionQualityReport: async (
+    days: number = 30,
+    minAnswers: number = 10,
+    includeBots: boolean = false,
+    includeInternal: boolean = false
+  ): Promise<QuestionQualityReportResponse> => {
+    const params: Record<string, number | boolean> = { days, minAnswers, includeBots };
+    if (includeInternal) {
+      params.includeInternal = true;
+    }
+
+    const response = await apiClient.get<QuestionQualityReportResponse>(
+      "/admin/analytics/question-quality",
+      { params }
+    );
+    return response.data;
+  },
+
+  getLifecycleReport: async (weeks: number = 12): Promise<LifecycleReportResponse> => {
+    const response = await apiClient.get<LifecycleReportResponse>(
+      "/admin/analytics/lifecycle",
+      { params: { weeks } }
     );
     return response.data;
   },
@@ -847,13 +1229,17 @@ export const adminApi = {
     activityFilter: AdminUserActivityFilter = "all",
     page: number = 1,
     pageSize: number = 25,
-    includeInternal: boolean = false
+    includeInternal: boolean = false,
+    sortBy: AdminUserSortBy = "lastActive",
+    sortDir: "asc" | "desc" = "desc"
   ): Promise<AdminUsersResponse> => {
     const params: Record<string, string | number | boolean> = {
       activityDays,
       activityFilter,
       page,
       pageSize,
+      sortBy,
+      sortDir,
     };
     if (search && search.trim().length > 0) {
       params.search = search.trim();

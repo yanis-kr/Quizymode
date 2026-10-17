@@ -28,7 +28,11 @@ public sealed record IdeaSummaryResponse(
     bool CanDelete,
     bool CanChangeStatus);
 
-public sealed record IdeaBoardResponse(List<IdeaSummaryResponse> Ideas);
+public sealed record IdeaBoardResponse(
+    List<IdeaSummaryResponse> Ideas,
+    int Page = 1,
+    int PageSize = IdeaFeatureSupport.DefaultPageSize,
+    int TotalCount = 0);
 
 public sealed record IdeaCommentResponse(
     string Id,
@@ -125,6 +129,38 @@ internal static partial class IdeaFeatureSupport
             .ToList();
     }
 
+    public const int DefaultPageSize = 50;
+    public const int MaxPageSize = 100;
+
+    /// <summary>Clamps caller-supplied paging values into the supported range.</summary>
+    public static (int Page, int PageSize) NormalizePaging(int? page, int? pageSize) =>
+        (Math.Max(page ?? 1, 1), Math.Clamp(pageSize ?? DefaultPageSize, 1, MaxPageSize));
+
+    /// <summary>
+    /// Counts the (already filtered and ordered) query and materializes one page of summaries.
+    /// </summary>
+    public static async Task<IdeaBoardResponse> BuildPageAsync(
+        ApplicationDbContext db,
+        IUserContext userContext,
+        IOrderedQueryable<Idea> orderedQuery,
+        int? page,
+        int? pageSize,
+        CancellationToken cancellationToken)
+    {
+        (int normalizedPage, int normalizedPageSize) = NormalizePaging(page, pageSize);
+        int totalCount = await orderedQuery.CountAsync(cancellationToken);
+
+        List<IdeaSummaryResponse> ideas = await BuildSummariesAsync(
+            db,
+            userContext,
+            orderedQuery
+                .Skip((normalizedPage - 1) * normalizedPageSize)
+                .Take(normalizedPageSize),
+            cancellationToken);
+
+        return new IdeaBoardResponse(ideas, normalizedPage, normalizedPageSize, totalCount);
+    }
+
     public static async Task<List<IdeaCommentResponse>> BuildCommentsAsync(
         ApplicationDbContext db,
         IUserContext userContext,
@@ -151,6 +187,7 @@ internal static partial class IdeaFeatureSupport
                 comment.CreatedAt,
                 comment.UpdatedAt,
                 string.Equals(comment.CreatedBy, userContext.UserId, StringComparison.Ordinal),
+                userContext.IsAdmin ||
                 string.Equals(comment.CreatedBy, userContext.UserId, StringComparison.Ordinal)))
             .ToList();
     }
@@ -203,6 +240,20 @@ internal static partial class IdeaFeatureSupport
         string normalized = value.Trim().Replace(" ", string.Empty, StringComparison.Ordinal);
         return Enum.TryParse(normalized, ignoreCase: true, out status);
     }
+
+    /// <summary>
+    /// Allowed admin lifecycle transitions. Moving to the same status is handled as a no-op by the caller.
+    /// </summary>
+    public static bool IsAllowedStatusTransition(IdeaStatus from, IdeaStatus to) =>
+        from switch
+        {
+            IdeaStatus.Proposed => to is IdeaStatus.Planned or IdeaStatus.InProgress or IdeaStatus.Archived,
+            IdeaStatus.Planned => to is IdeaStatus.Proposed or IdeaStatus.InProgress or IdeaStatus.Archived,
+            IdeaStatus.InProgress => to is IdeaStatus.Planned or IdeaStatus.Shipped or IdeaStatus.Archived,
+            IdeaStatus.Shipped => to is IdeaStatus.Archived,
+            IdeaStatus.Archived => to is IdeaStatus.Proposed,
+            _ => false
+        };
 
     public static string ToStatusString(IdeaStatus status) =>
         status switch

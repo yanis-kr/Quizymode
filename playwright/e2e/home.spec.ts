@@ -56,3 +56,39 @@ for (const [width, height] of [
     expect(scrollWidth).toBeLessThanOrEqual(innerWidth);
   });
 }
+
+// Browser-local guest history (#113, AC 3.0.15–3.0.19): phone-sized viewport, keyboard clearing.
+test.describe("guest history return card", () => {
+  test.use({ viewport: { width: 390, height: 844 } });
+
+  test("AC 3.0.15 - anonymous completion shows one return card after reload and can be cleared", async ({
+    page,
+  }) => {
+    await page.goto("/");
+    await page.getByRole("link", { name: /play a 5-question quiz/i }).click();
+    await expect(page.getByRole("heading", { name: "Question", exact: true })).toBeVisible({
+      timeout: 10_000,
+    });
+
+    for (let index = 0; index < 5; index += 1) {
+      await page.locator('button[type="button"]').filter({ hasText: /^\s*A\./ }).first().click();
+      if (index < 4) await page.getByRole("button", { name: /^next$/i }).click();
+    }
+    await expect(page.getByRole("button", { name: /view results/i })).toBeVisible();
+
+    await page.goto("/");
+    await page.reload();
+    const card = page.getByRole("region", { name: /your last quiz/i });
+    await expect(card).toHaveCount(1);
+    await expect(card.getByText(/saved in this browser only/i)).toBeVisible();
+    await expect(card.getByRole("link", { name: /practice again/i })).toHaveAttribute(
+      "href",
+      "/quiz/collections/8f9b8c14-8d30-4d94-9b20-4c7bb7f7f511"
+    );
+
+    await card.getByRole("button", { name: /clear guest history/i }).press("Enter");
+    await expect(page.getByRole("region", { name: /your last quiz/i })).toHaveCount(0);
+    await page.reload();
+    await expect(page.getByRole("region", { name: /your last quiz/i })).toHaveCount(0);
+  });
+});

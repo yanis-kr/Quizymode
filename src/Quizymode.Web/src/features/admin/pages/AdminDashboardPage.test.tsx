@@ -1,7 +1,18 @@
 import { describe, expect, it, vi } from "vitest";
 import { render, screen } from "@testing-library/react";
 import { MemoryRouter, Routes, Route } from "react-router-dom";
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import AdminDashboardPage from "./AdminDashboardPage";
+
+vi.mock("@/api/admin", () => ({
+  adminApi: {
+    getAdminFeedback: vi.fn().mockResolvedValue({ items: [], totalCount: 0, page: 1, pageSize: 1, newCount: 3 }),
+  },
+}));
+
+vi.mock("../components/AdminOverviewPanel", () => ({
+  default: () => <div>overview panel</div>,
+}));
 
 vi.mock("@/contexts/AuthContext", () => ({
   useAuth: () => mockUseAuth(),
@@ -11,12 +22,14 @@ const mockUseAuth = vi.fn();
 
 function renderPage(initialEntry = "/admin") {
   return render(
-    <MemoryRouter initialEntries={[initialEntry]}>
-      <Routes>
-        <Route path="/admin" element={<AdminDashboardPage />} />
-        <Route path="/" element={<div data-testid="home">Home</div>} />
-      </Routes>
-    </MemoryRouter>
+    <QueryClientProvider client={new QueryClient({ defaultOptions: { queries: { retry: false } } })}>
+      <MemoryRouter initialEntries={[initialEntry]}>
+        <Routes>
+          <Route path="/admin" element={<AdminDashboardPage />} />
+          <Route path="/" element={<div data-testid="home">Home</div>} />
+        </Routes>
+      </MemoryRouter>
+    </QueryClientProvider>
   );
 }
 
@@ -79,5 +92,13 @@ describe("AdminDashboardPage", () => {
       "href",
       "/admin/ideas"
     );
+  });
+
+  it("shows the count of new feedback on the feedback card", async () => {
+    mockUseAuth.mockReturnValue({ isAuthenticated: true, isAdmin: true });
+    renderPage();
+
+    expect(await screen.findByText("3 new")).toBeInTheDocument();
+    expect(screen.getByRole("link", { name: /feedback/i })).toHaveAttribute("href", "/admin/feedback");
   });
 });

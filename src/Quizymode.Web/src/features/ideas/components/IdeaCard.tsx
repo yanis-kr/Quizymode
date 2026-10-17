@@ -15,12 +15,13 @@ import {
   type IdeaSummaryResponse,
 } from "@/api/ideas";
 import { useAuth } from "@/contexts/AuthContext";
-import { getApiErrorMessage } from "@/utils/apiError";
+import { getIdeaErrorMessage } from "../ideaErrors";
 import {
   buildIdeaExcerpt,
   formatIdeaTimestamp,
   formatModerationLabel,
   formatStatusLabel,
+  getAllowedStatusTransitions,
   getModerationBadgeClass,
   getStatusBadgeClass,
   STATUS_ORDER,
@@ -81,7 +82,7 @@ const IdeaCard = ({
     },
     onError: (error) => {
       setOptimisticRating(undefined);
-      setRatingError(getApiErrorMessage(error));
+      setRatingError(getIdeaErrorMessage(error));
     },
   });
 
@@ -248,10 +249,21 @@ const IdeaCard = ({
                   onChange={(event) =>
                     onStatusChange(event.target.value as IdeaStatus)
                   }
-                  disabled={statusUpdatePending}
+                  disabled={
+                    statusUpdatePending || idea.moderationState !== "Published"
+                  }
+                  title={
+                    idea.moderationState !== "Published"
+                      ? "Only published ideas can change lifecycle status."
+                      : undefined
+                  }
                   className="rounded-full border border-slate-300 bg-white px-4 py-2 text-sm text-slate-700 outline-none transition focus:border-emerald-500"
                 >
-                  {STATUS_ORDER.map((status) => (
+                  {STATUS_ORDER.filter(
+                    (status) =>
+                      status === idea.status ||
+                      getAllowedStatusTransitions(idea.status).includes(status)
+                  ).map((status) => (
                     <option key={status} value={status}>
                       {status}
                     </option>

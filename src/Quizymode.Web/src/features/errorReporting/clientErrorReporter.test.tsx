@@ -10,12 +10,14 @@ import {
   type ClientErrorPayload,
 } from "./clientErrorReporter";
 
-const { mockGetToken, mockIsInternalBrowser } = vi.hoisted(() => ({
+const { mockGetToken, mockIsInternalBrowser, mockGetVisitorId } = vi.hoisted(() => ({
+  mockGetVisitorId: vi.fn<() => string | null>(() => null),
   mockGetToken: vi.fn<() => string | null>(() => null),
   mockIsInternalBrowser: vi.fn(() => false),
 }));
 
 vi.mock("@/api/client", () => ({ API_URL: "/api" }));
+vi.mock("@/utils/visitorId", () => ({ getVisitorId: mockGetVisitorId }));
 vi.mock("@/utils/tokenStorage", () => ({ getToken: mockGetToken }));
 vi.mock("@/utils/pageViewTracking", () => ({
   getPageViewSessionId: () => "session-1",
@@ -43,6 +45,7 @@ describe("clientErrorReporter", () => {
     fetchMock.mockResolvedValue(new Response(null, { status: 202 }));
     mockGetToken.mockReturnValue(null);
     mockIsInternalBrowser.mockReturnValue(false);
+    mockGetVisitorId.mockReturnValue(null);
     Object.defineProperty(navigator, "sendBeacon", { value: sendBeacon, configurable: true, writable: true });
     vi.stubGlobal("fetch", fetchMock);
     vi.stubGlobal("__APP_VERSION__", "9.9.9");
@@ -107,6 +110,17 @@ describe("clientErrorReporter", () => {
         message: "Non-Error promise rejection (object)",
       }),
     ]);
+  });
+
+  it("sends the visitor id only when one is available", () => {
+    mockGetVisitorId.mockReturnValue("0b8a5c1e-2f4d-4c53-9a77-3c1f5d0e9b11");
+    reportClientError("window", new Error("first"));
+    mockGetVisitorId.mockReturnValue(null);
+    reportClientError("window", new Error("second"));
+
+    const [first, second] = beaconPayloads();
+    expect(first.visitorId).toBe("0b8a5c1e-2f4d-4c53-9a77-3c1f5d0e9b11");
+    expect(second).not.toHaveProperty("visitorId");
   });
 
   it("captures failed script (chunk) loads without their query strings", () => {

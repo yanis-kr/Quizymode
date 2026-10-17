@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { useQuery } from "@tanstack/react-query";
 import { adminApi } from "@/api/admin";
 import ErrorMessage from "@/components/ErrorMessage";
@@ -9,6 +10,24 @@ interface LearningTabProps {
   includeInternal?: boolean;
 }
 
+const CHANNEL_OPTIONS = [
+  { value: "", label: "All channels" },
+  { value: "paid", label: "Paid" },
+  { value: "email", label: "Email" },
+  { value: "campaign", label: "Campaign" },
+  { value: "search", label: "Search" },
+  { value: "social", label: "Social" },
+  { value: "referral", label: "Referral" },
+  { value: "direct", label: "Direct" },
+  { value: "unknown", label: "Unknown" },
+];
+
+const VISITOR_OPTIONS = [
+  { value: "", label: "All visitors" },
+  { value: "new", label: "New visitors" },
+  { value: "returning", label: "Returning visitors" },
+];
+
 const formatPercent = (value: number | null) => (value === null ? "—" : `${value}%`);
 
 const scopeLabel = (contextType: string | null, contextId: string | null) => {
@@ -17,18 +36,73 @@ const scopeLabel = (contextType: string | null, contextId: string | null) => {
 };
 
 const LearningTab = ({ days, includeBots, includeInternal = false }: LearningTabProps) => {
+  const [channel, setChannel] = useState("");
+  const [visitorType, setVisitorType] = useState("");
+
   const { data, isLoading, error, refetch } = useQuery({
-    queryKey: ["admin", "learning-report", days, includeBots, includeInternal],
-    queryFn: () => adminApi.getLearningReport(days, includeBots, includeInternal),
+    queryKey: ["admin", "learning-report", days, includeBots, includeInternal, channel, visitorType],
+    queryFn: () =>
+      adminApi.getLearningReport(
+        days,
+        includeBots,
+        includeInternal,
+        channel || undefined,
+        visitorType || undefined
+      ),
   });
 
+  const filters = (
+    <div className="flex flex-wrap items-end gap-4">
+      <label className="text-sm text-slate-700">
+        <span className="block text-xs font-semibold uppercase tracking-wide text-slate-500">
+          Channel
+        </span>
+        <select
+          value={channel}
+          onChange={(event) => setChannel(event.target.value)}
+          className="mt-1 rounded-lg border border-slate-300 bg-white px-3 py-2 text-sm"
+        >
+          {CHANNEL_OPTIONS.map((option) => (
+            <option key={option.value} value={option.value}>
+              {option.label}
+            </option>
+          ))}
+        </select>
+      </label>
+      <label className="text-sm text-slate-700">
+        <span className="block text-xs font-semibold uppercase tracking-wide text-slate-500">
+          Visitor type
+        </span>
+        <select
+          value={visitorType}
+          onChange={(event) => setVisitorType(event.target.value)}
+          className="mt-1 rounded-lg border border-slate-300 bg-white px-3 py-2 text-sm"
+        >
+          {VISITOR_OPTIONS.map((option) => (
+            <option key={option.value} value={option.value}>
+              {option.label}
+            </option>
+          ))}
+        </select>
+      </label>
+    </div>
+  );
+
   if (isLoading) {
-    return <LoadingSpinner />;
+    return (
+      <div className="space-y-6">
+        {filters}
+        <LoadingSpinner />
+      </div>
+    );
   }
 
   if (error) {
     return (
-      <ErrorMessage message="Failed to load the learning report" onRetry={() => refetch()} />
+      <div className="space-y-6">
+        {filters}
+        <ErrorMessage message="Failed to load the learning report" onRetry={() => refetch()} />
+      </div>
     );
   }
 
@@ -40,6 +114,7 @@ const LearningTab = ({ days, includeBots, includeInternal = false }: LearningTab
 
   return (
     <div className="space-y-6">
+      {filters}
       <section className="rounded-2xl border border-slate-200 bg-white shadow-sm">
         <div className="border-b border-slate-200 px-5 py-4">
           <h2 className="text-lg font-semibold text-gray-900">Study Engagement</h2>

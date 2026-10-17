@@ -57,6 +57,190 @@
         }
       }
     },
+    "/admin/feedback": {
+      "get": {
+        "tags": [
+          "Admin"
+        ],
+        "summary": "List feedback submissions, newest first (Admin only)",
+        "description": "Paged (pageSize max 100). Filters: type (reportIssue, requestItems, generalFeedback), status (New, Reviewed, Archived), from/to (UTC dates, inclusive), and search over details, page URL, and emails. Also returns the count of New submissions.",
+        "parameters": [
+          {
+            "name": "page",
+            "in": "query",
+            "schema": {
+              "default": 1,
+              "$ref": "#/components/schemas/System.Int32"
+            }
+          },
+          {
+            "name": "pageSize",
+            "in": "query",
+            "schema": {
+              "default": 25,
+              "$ref": "#/components/schemas/System.Int32"
+            }
+          },
+          {
+            "name": "type",
+            "in": "query",
+            "schema": {
+              "$ref": "#/components/schemas/System.String"
+            }
+          },
+          {
+            "name": "status",
+            "in": "query",
+            "schema": {
+              "$ref": "#/components/schemas/System.String"
+            }
+          },
+          {
+            "name": "from",
+            "in": "query",
+            "schema": {
+              "$ref": "#/components/schemas/System.NullableOfSystem.DateTime"
+            }
+          },
+          {
+            "name": "to",
+            "in": "query",
+            "schema": {
+              "$ref": "#/components/schemas/System.NullableOfSystem.DateTime"
+            }
+          },
+          {
+            "name": "search",
+            "in": "query",
+            "schema": {
+              "$ref": "#/components/schemas/System.String"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Quizymode.Api.Features.Admin.AdminFeedback.ListResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/admin/feedback/{id}": {
+      "get": {
+        "tags": [
+          "Admin"
+        ],
+        "summary": "Get one feedback submission (Admin only)",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "$ref": "#/components/schemas/System.Guid"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Quizymode.Api.Features.Admin.AdminFeedback.FeedbackResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/admin/feedback/{id}/status": {
+      "put": {
+        "tags": [
+          "Admin"
+        ],
+        "summary": "Set a feedback submission's status to New, Reviewed, or Archived (Admin only)",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "$ref": "#/components/schemas/System.Guid"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Quizymode.Api.Features.Admin.AdminFeedback.UpdateStatusRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Quizymode.Api.Features.Admin.AdminFeedback.FeedbackResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "/admin/users/{id}/settings": {
       "get": {
         "tags": [
@@ -190,6 +374,20 @@
               "default": false,
               "$ref": "#/components/schemas/System.Boolean"
             }
+          },
+          {
+            "name": "sortBy",
+            "in": "query",
+            "schema": {
+              "$ref": "#/components/schemas/System.String"
+            }
+          },
+          {
+            "name": "sortDir",
+            "in": "query",
+            "schema": {
+              "$ref": "#/components/schemas/System.String"
+            }
           }
         ],
         "responses": {
@@ -315,6 +513,22 @@
             }
           }
         ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "oneOf": [
+                  {
+                    "type": "null"
+                  },
+                  {
+                    "$ref": "#/components/schemas/Quizymode.Api.Features.Admin.IdeasAdmin.ApproveRequest"
+                  }
+                ]
+              }
+            }
+          }
+        },
         "responses": {
           "200": {
             "description": "OK",
@@ -325,6 +539,9 @@
                 }
               }
             }
+          },
+          "400": {
+            "description": "Bad Request"
           },
           "404": {
             "description": "Not Found"
@@ -761,6 +978,47 @@
         }
       }
     },
+    "/admin/analytics/overview": {
+      "get": {
+        "tags": [
+          "Admin"
+        ],
+        "summary": "Get the admin overview with KPIs, daily trends, release markers, and work queue counts (Admin only)",
+        "description": "days must be 7, 30, or 90. Returns KPIs for the window and the previous window of equal length, a zero-filled UTC daily series, release markers (first UTC day each app version appeared), and moderation work-queue counts. Bot and internal traffic is always excluded.",
+        "parameters": [
+          {
+            "name": "days",
+            "in": "query",
+            "schema": {
+              "default": 7,
+              "$ref": "#/components/schemas/System.Int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Quizymode.Api.Features.Admin.GetAnalyticsOverview.Response"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "/admin/audit-logs": {
       "get": {
         "tags": [
@@ -912,6 +1170,63 @@
         }
       }
     },
+    "/admin/analytics/content": {
+      "get": {
+        "tags": [
+          "Admin"
+        ],
+        "summary": "Get content engagement report (Admin only)",
+        "description": "Returns per category, navigation set, and collection engagement, featured click-through, untouched public content, and user-created content by week for the selected window. Bot sessions are excluded unless includeBots=true, and internal sessions unless includeInternal=true.",
+        "parameters": [
+          {
+            "name": "days",
+            "in": "query",
+            "schema": {
+              "default": 30,
+              "$ref": "#/components/schemas/System.Int32"
+            }
+          },
+          {
+            "name": "includeBots",
+            "in": "query",
+            "schema": {
+              "default": false,
+              "$ref": "#/components/schemas/System.Boolean"
+            }
+          },
+          {
+            "name": "includeInternal",
+            "in": "query",
+            "schema": {
+              "default": false,
+              "$ref": "#/components/schemas/System.Boolean"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Quizymode.Api.Features.Admin.GetContentReport.Response"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "/admin/analytics/funnel": {
       "get": {
         "tags": [
@@ -1003,6 +1318,20 @@
             "schema": {
               "$ref": "#/components/schemas/System.String"
             }
+          },
+          {
+            "name": "page",
+            "in": "query",
+            "schema": {
+              "$ref": "#/components/schemas/System.NullableOfSystem.Int32"
+            }
+          },
+          {
+            "name": "pageSize",
+            "in": "query",
+            "schema": {
+              "$ref": "#/components/schemas/System.NullableOfSystem.Int32"
+            }
           }
         ],
         "responses": {
@@ -1028,7 +1357,7 @@
           "Admin"
         ],
         "summary": "Get study engagement by mode and scope (Admin only)",
-        "description": "Returns quiz and flashcards runs started and completed, average score, items reached, and quiz drop-off by question position for the selected window. Bot sessions are excluded unless includeBots=true, and internal sessions unless includeInternal=true.",
+        "description": "Returns quiz and flashcards runs started and completed, average score, items reached, and quiz drop-off by question position for the selected window. Bot sessions are excluded unless includeBots=true, and internal sessions unless includeInternal=true. Optional channel (paid, email, campaign, search, social, referral, direct, unknown) and visitorType (new, returning) limit every figure to sessions of that traffic channel or visitor type; unknown values return 400.",
         "parameters": [
           {
             "name": "days",
@@ -1052,6 +1381,20 @@
             "schema": {
               "default": false,
               "$ref": "#/components/schemas/System.Boolean"
+            }
+          },
+          {
+            "name": "channel",
+            "in": "query",
+            "schema": {
+              "$ref": "#/components/schemas/System.String"
+            }
+          },
+          {
+            "name": "visitorType",
+            "in": "query",
+            "schema": {
+              "$ref": "#/components/schemas/System.String"
             }
           }
         ],
@@ -1079,13 +1422,54 @@
         }
       }
     },
+    "/admin/analytics/lifecycle": {
+      "get": {
+        "tags": [
+          "Admin"
+        ],
+        "summary": "Get registered-user lifecycle cohorts (Admin only)",
+        "description": "Returns weekly signup cohorts with 7-day activation and week 1, 2, and 4 retention, plus signup-source attribution by first-touch channel and campaign. Internal users are excluded.",
+        "parameters": [
+          {
+            "name": "weeks",
+            "in": "query",
+            "schema": {
+              "default": 12,
+              "$ref": "#/components/schemas/System.Int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Quizymode.Api.Features.Admin.GetLifecycleReport.Response"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "/admin/page-view-analytics": {
       "get": {
         "tags": [
           "Admin"
         ],
         "summary": "Get page-view analytics (Admin only)",
-        "description": "Returns summary metrics, most visited pages, and recent page hits for anonymous and authenticated traffic. Internal sessions are excluded unless includeInternal=true.",
+        "description": "Returns summary metrics, usage by feature area and content scope (categories, navigation sets, collections), most visited raw pages, and recent page hits for anonymous and authenticated traffic. Internal sessions are excluded unless includeInternal=true.",
         "parameters": [
           {
             "name": "days",
@@ -1174,13 +1558,54 @@
         }
       }
     },
+    "/admin/page-view-rollups": {
+      "get": {
+        "tags": [
+          "Admin"
+        ],
+        "summary": "Get long-range page-view trends from daily rollups (Admin only)",
+        "description": "Returns daily sessions and hits plus totals by feature area, channel, device class, outcome, and new versus returning visitors for up to 730 days, read from daily rollups (bots and internal sessions excluded). Raw page hits are kept for 180 days; use this report for longer ranges.",
+        "parameters": [
+          {
+            "name": "days",
+            "in": "query",
+            "schema": {
+              "default": 365,
+              "$ref": "#/components/schemas/System.Int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Quizymode.Api.Features.Admin.GetPageViewRollups.Response"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "/admin/page-view-sessions/{sessionId}": {
       "get": {
         "tags": [
           "Admin"
         ],
         "summary": "Get the ordered page journey for one session (Admin only)",
-        "description": "Returns every page hit in a session in order, with dwell time per step. The final step has no dwell time because no exit event is recorded. Internal sessions return 404 unless includeInternal=true.",
+        "description": "Returns every page hit in a session in order, with its feature area and dwell time per step. The final step has no dwell time because no exit event is recorded. Internal sessions return 404 unless includeInternal=true.",
         "parameters": [
           {
             "name": "sessionId",
@@ -1238,7 +1663,7 @@
           "Admin"
         ],
         "summary": "Get session-level page-view engagement (Admin only)",
-        "description": "Groups page hits into sessions and reports bounce rate, session depth, landing pages, and per-session journeys split by anonymous, converted, and authenticated visitors. Internal sessions are excluded unless includeInternal=true.",
+        "description": "Groups page hits into sessions and reports bounce rate, session depth, study activity (sessions with a Quiz or Flashcards question view), landing pages grouped by feature area and content scope, and per-session journeys split by anonymous, converted, and authenticated visitors. Internal sessions are excluded unless includeInternal=true.",
         "parameters": [
           {
             "name": "days",
@@ -1308,6 +1733,13 @@
               "default": false,
               "$ref": "#/components/schemas/System.Boolean"
             }
+          },
+          {
+            "name": "userId",
+            "in": "query",
+            "schema": {
+              "$ref": "#/components/schemas/System.NullableOfSystem.Guid"
+            }
           }
         ],
         "responses": {
@@ -1348,6 +1780,71 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/Quizymode.Api.Features.Admin.GetPendingKeywordsAdmin.Response"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/admin/analytics/question-quality": {
+      "get": {
+        "tags": [
+          "Admin"
+        ],
+        "summary": "Get question quality report (Admin only)",
+        "description": "Returns items with their first-attempt correct rate since the item's last edit, lowest first, listing only items with at least minAnswers answers, and flags items below the random-guess rate. Bot sessions are excluded unless includeBots=true, and internal sessions unless includeInternal=true.",
+        "parameters": [
+          {
+            "name": "days",
+            "in": "query",
+            "schema": {
+              "default": 30,
+              "$ref": "#/components/schemas/System.Int32"
+            }
+          },
+          {
+            "name": "minAnswers",
+            "in": "query",
+            "schema": {
+              "default": 10,
+              "$ref": "#/components/schemas/System.Int32"
+            }
+          },
+          {
+            "name": "includeBots",
+            "in": "query",
+            "schema": {
+              "default": false,
+              "$ref": "#/components/schemas/System.Boolean"
+            }
+          },
+          {
+            "name": "includeInternal",
+            "in": "query",
+            "schema": {
+              "default": false,
+              "$ref": "#/components/schemas/System.Boolean"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Quizymode.Api.Features.Admin.GetQuestionQualityReport.Response"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails"
                 }
               }
             }
@@ -1813,7 +2310,7 @@
           "Analytics"
         ],
         "summary": "Track a SPA page view",
-        "description": "Stores a page-view event for an anonymous or authenticated SPA route hit. The hit is flagged internal when the caller is an admin, is a user flagged internal, or sends internalBrowser=true. The first hit of a session also creates an attribution snapshot (channel, referrer host, UTM tags, device class, country).",
+        "description": "Stores a page-view event for an anonymous or authenticated SPA route hit. The hit is flagged internal when the caller is an admin, is a user flagged internal, or sends internalBrowser=true. Each hit is classified by feature area and content scope. The first hit of a session also creates an attribution snapshot (channel, referrer host, UTM tags, device class, country).",
         "requestBody": {
           "content": {
             "application/json": {
@@ -2724,7 +3221,23 @@
           "Ideas"
         ],
         "summary": "Get the public ideas board",
-        "description": "Returns published ideas with rating and comment summaries.",
+        "description": "Returns a page of published ideas with rating and comment summaries (page defaults to 1, pageSize to 50, max 100).",
+        "parameters": [
+          {
+            "name": "page",
+            "in": "query",
+            "schema": {
+              "$ref": "#/components/schemas/System.NullableOfSystem.Int32"
+            }
+          },
+          {
+            "name": "pageSize",
+            "in": "query",
+            "schema": {
+              "$ref": "#/components/schemas/System.NullableOfSystem.Int32"
+            }
+          }
+        ],
         "responses": {
           "200": {
             "description": "OK",
@@ -3012,6 +3525,22 @@
         ],
         "summary": "Get the current user's ideas",
         "description": "Returns the authenticated user's ideas across moderation states.",
+        "parameters": [
+          {
+            "name": "page",
+            "in": "query",
+            "schema": {
+              "$ref": "#/components/schemas/System.NullableOfSystem.Int32"
+            }
+          },
+          {
+            "name": "pageSize",
+            "in": "query",
+            "schema": {
+              "$ref": "#/components/schemas/System.NullableOfSystem.Int32"
+            }
+          }
+        ],
         "responses": {
           "200": {
             "description": "OK",
@@ -4117,6 +4646,158 @@
         }
       }
     },
+    "/study-guide-uploads/{id}/accept": {
+      "post": {
+        "tags": [
+          "StudyGuideUploads"
+        ],
+        "summary": "Accept generated questions and create them as private items",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "$ref": "#/components/schemas/System.Guid"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Quizymode.Api.Features.StudyGuideUploads.AcceptStudyGuideUpload.Request"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Quizymode.Api.Features.StudyGuideUploads.AcceptStudyGuideUpload.Response"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "404": {
+            "description": "Not Found"
+          },
+          "409": {
+            "description": "Conflict"
+          }
+        }
+      }
+    },
+    "/study-guide-uploads": {
+      "post": {
+        "tags": [
+          "StudyGuideUploads"
+        ],
+        "summary": "Upload study guide text for AI question generation",
+        "description": "Queues up to 10 KB of pasted text for one LLM call that generates up to 20 quiz questions. Returns 202 with the upload id (poll GET /study-guide-uploads/{id}); returns 200 with isDuplicate=true when the same text was already uploaded by this user. Returns 503 when AI generation is not configured.",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Quizymode.Api.Features.StudyGuideUploads.CreateStudyGuideUpload.Request"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "202": {
+            "description": "Accepted",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Quizymode.Api.Features.StudyGuideUploads.CreateStudyGuideUpload.Response"
+                }
+              }
+            }
+          },
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Quizymode.Api.Features.StudyGuideUploads.CreateStudyGuideUpload.Response"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "429": {
+            "description": "Too Many Requests"
+          },
+          "503": {
+            "description": "Service Unavailable"
+          }
+        }
+      }
+    },
+    "/study-guide-uploads/{id}": {
+      "get": {
+        "tags": [
+          "StudyGuideUploads"
+        ],
+        "summary": "Get a study guide upload with its generation status and questions",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "$ref": "#/components/schemas/System.Guid"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Quizymode.Api.Features.StudyGuideUploads.GetStudyGuideUpload.Response"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        }
+      }
+    },
+    "/study-guide-uploads/config": {
+      "get": {
+        "tags": [
+          "StudyGuideUploads"
+        ],
+        "summary": "Get study guide upload availability and limits",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Quizymode.Api.Features.StudyGuideUploads.GetStudyGuideUploadConfig.Response"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "/study-guides/current": {
       "delete": {
         "tags": [
@@ -4184,6 +4865,145 @@
           },
           "201": {
             "description": "Created"
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "401": {
+            "description": "Unauthorized"
+          }
+        }
+      }
+    },
+    "/study-sessions": {
+      "get": {
+        "tags": [
+          "StudySessions"
+        ],
+        "summary": "List the current user's recent study sessions",
+        "description": "Newest first. limit defaults to 20 and is capped at 50. Requires authentication.",
+        "parameters": [
+          {
+            "name": "limit",
+            "in": "query",
+            "schema": {
+              "$ref": "#/components/schemas/System.NullableOfSystem.Int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Quizymode.Api.Features.StudySessions.GetStudySessions.SessionsResponse"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "StudySessions"
+        ],
+        "summary": "Save a completed quiz run to the current user's history",
+        "description": "Idempotent by run ID: a retry returns the stored session with created=false. Requires authentication.",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Quizymode.Api.Features.StudySessions.RecordStudySession.Request"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Quizymode.Api.Features.StudySessions.RecordStudySession.Response"
+                }
+              }
+            }
+          },
+          "201": {
+            "description": "Created",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Quizymode.Api.Features.StudySessions.RecordStudySession.Response"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "401": {
+            "description": "Unauthorized"
+          }
+        }
+      }
+    },
+    "/study-sessions/summary": {
+      "get": {
+        "tags": [
+          "StudySessions"
+        ],
+        "summary": "Summary statistics for the current user's study sessions",
+        "description": "Private to the current user; there is no public comparison. Requires authentication.",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Quizymode.Api.Features.StudySessions.GetStudySessions.SummaryResponse"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          }
+        }
+      }
+    },
+    "/study-sessions/import": {
+      "post": {
+        "tags": [
+          "StudySessions"
+        ],
+        "summary": "Import browser-local guest quiz history into the current user's history",
+        "description": "Version 1 payload of up to 50 runs. Idempotent by run ID; imported sessions have origin guest-import (unverified). Requires authentication.",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Quizymode.Api.Features.StudySessions.ImportGuestStudySessions.Request"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Quizymode.Api.Features.StudySessions.ImportGuestStudySessions.Response"
+                }
+              }
+            }
           },
           "400": {
             "description": "Bad Request"
@@ -4700,6 +5520,134 @@
           }
         }
       },
+      "Quizymode.Api.Features.Admin.AdminFeedback.FeedbackResponse": {
+        "required": [
+          "id",
+          "type",
+          "status",
+          "details",
+          "pageUrl",
+          "additionalKeywords",
+          "userEmail",
+          "contactEmail",
+          "userAgent",
+          "sessionId",
+          "createdAt"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "$ref": "#/components/schemas/System.Guid"
+          },
+          "type": {
+            "$ref": "#/components/schemas/System.String"
+          },
+          "status": {
+            "$ref": "#/components/schemas/System.String"
+          },
+          "details": {
+            "$ref": "#/components/schemas/System.String"
+          },
+          "pageUrl": {
+            "$ref": "#/components/schemas/System.String"
+          },
+          "additionalKeywords": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/components/schemas/System.String"
+              }
+            ]
+          },
+          "userEmail": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "description": "Email of the signed-in submitter, when any.",
+                "$ref": "#/components/schemas/System.String"
+              }
+            ]
+          },
+          "contactEmail": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "description": "Email typed into the feedback form, when any.",
+                "$ref": "#/components/schemas/System.String"
+              }
+            ]
+          },
+          "userAgent": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/components/schemas/System.String"
+              }
+            ]
+          },
+          "sessionId": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "description": "Analytics session the report was sent from; the journey is read via the page-view session endpoint.",
+                "$ref": "#/components/schemas/System.String"
+              }
+            ]
+          },
+          "createdAt": {
+            "$ref": "#/components/schemas/System.DateTime"
+          }
+        }
+      },
+      "Quizymode.Api.Features.Admin.AdminFeedback.ListResponse": {
+        "required": [
+          "items",
+          "totalCount",
+          "page",
+          "pageSize",
+          "newCount"
+        ],
+        "type": "object",
+        "properties": {
+          "items": {
+            "$ref": "#/components/schemas/System.Collections.Generic.ListOfQuizymode.Api.Features.Admin.AdminFeedback.FeedbackResponse"
+          },
+          "totalCount": {
+            "$ref": "#/components/schemas/System.Int32"
+          },
+          "page": {
+            "$ref": "#/components/schemas/System.Int32"
+          },
+          "pageSize": {
+            "$ref": "#/components/schemas/System.Int32"
+          },
+          "newCount": {
+            "description": "Submissions currently in the New status (unfiltered), for the dashboard badge.",
+            "$ref": "#/components/schemas/System.Int32"
+          }
+        }
+      },
+      "Quizymode.Api.Features.Admin.AdminFeedback.UpdateStatusRequest": {
+        "required": [
+          "status"
+        ],
+        "type": "object",
+        "properties": {
+          "status": {
+            "$ref": "#/components/schemas/System.String"
+          }
+        }
+      },
       "Quizymode.Api.Features.Admin.AdminUsersActivity.UserActivityResponse": {
         "required": [
           "user",
@@ -4833,7 +5781,14 @@
           "totalPageViewsInWindow",
           "lastOpenedUtc",
           "lastKnownCountry",
-          "isInternal"
+          "isInternal",
+          "sessionsInWindow",
+          "studySessionsInWindow",
+          "collectionsCreated",
+          "itemsCreated",
+          "ratings",
+          "comments",
+          "signupChannel"
         ],
         "type": "object",
         "properties": {
@@ -4894,6 +5849,27 @@
           },
           "isInternal": {
             "$ref": "#/components/schemas/System.Boolean"
+          },
+          "sessionsInWindow": {
+            "$ref": "#/components/schemas/System.Int32"
+          },
+          "studySessionsInWindow": {
+            "$ref": "#/components/schemas/System.Int32"
+          },
+          "collectionsCreated": {
+            "$ref": "#/components/schemas/System.Int32"
+          },
+          "itemsCreated": {
+            "$ref": "#/components/schemas/System.Int32"
+          },
+          "ratings": {
+            "$ref": "#/components/schemas/System.Int32"
+          },
+          "comments": {
+            "$ref": "#/components/schemas/System.Int32"
+          },
+          "signupChannel": {
+            "$ref": "#/components/schemas/System.String"
           }
         }
       },
@@ -5419,6 +6395,175 @@
           }
         }
       },
+      "Quizymode.Api.Features.Admin.GetAnalyticsOverview.DailyPoint": {
+        "required": [
+          "day",
+          "humanSessions",
+          "engagedSessions",
+          "studySessions",
+          "convertedSessions",
+          "newSignups",
+          "activeRegisteredUsers"
+        ],
+        "type": "object",
+        "properties": {
+          "day": {
+            "$ref": "#/components/schemas/System.DateOnly"
+          },
+          "humanSessions": {
+            "$ref": "#/components/schemas/System.Int32"
+          },
+          "engagedSessions": {
+            "$ref": "#/components/schemas/System.Int32"
+          },
+          "studySessions": {
+            "$ref": "#/components/schemas/System.Int32"
+          },
+          "convertedSessions": {
+            "$ref": "#/components/schemas/System.Int32"
+          },
+          "newSignups": {
+            "$ref": "#/components/schemas/System.Int32"
+          },
+          "activeRegisteredUsers": {
+            "$ref": "#/components/schemas/System.Int32"
+          }
+        }
+      },
+      "Quizymode.Api.Features.Admin.GetAnalyticsOverview.Kpis": {
+        "required": [
+          "humanSessions",
+          "engagedSessions",
+          "studySessions",
+          "convertedSessions",
+          "newSignups",
+          "activeRegisteredUsers",
+          "newVisitors",
+          "returningVisitors"
+        ],
+        "type": "object",
+        "properties": {
+          "humanSessions": {
+            "$ref": "#/components/schemas/System.Int32"
+          },
+          "engagedSessions": {
+            "$ref": "#/components/schemas/System.Int32"
+          },
+          "studySessions": {
+            "$ref": "#/components/schemas/System.Int32"
+          },
+          "convertedSessions": {
+            "$ref": "#/components/schemas/System.Int32"
+          },
+          "newSignups": {
+            "$ref": "#/components/schemas/System.Int32"
+          },
+          "activeRegisteredUsers": {
+            "$ref": "#/components/schemas/System.Int32"
+          },
+          "newVisitors": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "description": "Distinct first-time visitors (ANALYTICS-003).",
+                "$ref": "#/components/schemas/System.NullableOfSystem.Int32"
+              }
+            ]
+          },
+          "returningVisitors": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "description": "Distinct returning visitors (ANALYTICS-003).",
+                "$ref": "#/components/schemas/System.NullableOfSystem.Int32"
+              }
+            ]
+          }
+        }
+      },
+      "Quizymode.Api.Features.Admin.GetAnalyticsOverview.ReleaseMarker": {
+        "required": [
+          "version",
+          "day"
+        ],
+        "type": "object",
+        "properties": {
+          "version": {
+            "$ref": "#/components/schemas/System.String"
+          },
+          "day": {
+            "description": "First UTC day the version appeared in non-internal, non-bot traffic.",
+            "$ref": "#/components/schemas/System.DateOnly"
+          }
+        }
+      },
+      "Quizymode.Api.Features.Admin.GetAnalyticsOverview.Response": {
+        "required": [
+          "days",
+          "windowStartDay",
+          "windowEndDay",
+          "current",
+          "previous",
+          "daily",
+          "releaseMarkers",
+          "workQueue"
+        ],
+        "type": "object",
+        "properties": {
+          "days": {
+            "$ref": "#/components/schemas/System.Int32"
+          },
+          "windowStartDay": {
+            "$ref": "#/components/schemas/System.DateOnly"
+          },
+          "windowEndDay": {
+            "$ref": "#/components/schemas/System.DateOnly"
+          },
+          "current": {
+            "$ref": "#/components/schemas/Quizymode.Api.Features.Admin.GetAnalyticsOverview.Kpis"
+          },
+          "previous": {
+            "$ref": "#/components/schemas/Quizymode.Api.Features.Admin.GetAnalyticsOverview.Kpis"
+          },
+          "daily": {
+            "$ref": "#/components/schemas/System.Collections.Generic.ListOfQuizymode.Api.Features.Admin.GetAnalyticsOverview.DailyPoint"
+          },
+          "releaseMarkers": {
+            "$ref": "#/components/schemas/System.Collections.Generic.ListOfQuizymode.Api.Features.Admin.GetAnalyticsOverview.ReleaseMarker"
+          },
+          "workQueue": {
+            "$ref": "#/components/schemas/Quizymode.Api.Features.Admin.GetAnalyticsOverview.WorkQueue"
+          }
+        }
+      },
+      "Quizymode.Api.Features.Admin.GetAnalyticsOverview.WorkQueue": {
+        "required": [
+          "itemsAwaitingReview",
+          "pendingPrivateKeywords",
+          "ideasAwaitingModeration",
+          "newClientErrorGroups"
+        ],
+        "type": "object",
+        "properties": {
+          "itemsAwaitingReview": {
+            "$ref": "#/components/schemas/System.Int32"
+          },
+          "pendingPrivateKeywords": {
+            "$ref": "#/components/schemas/System.Int32"
+          },
+          "ideasAwaitingModeration": {
+            "$ref": "#/components/schemas/System.Int32"
+          },
+          "newClientErrorGroups": {
+            "description": "Front-end error groups first seen in the window, bots and internal traffic excluded (OBS-001).",
+            "$ref": "#/components/schemas/System.Int32"
+          }
+        }
+      },
       "Quizymode.Api.Features.Admin.GetAuditLogs.AuditLogResponse": {
         "required": [
           "id",
@@ -5786,6 +6931,246 @@
             "$ref": "#/components/schemas/System.String"
           },
           "count": {
+            "$ref": "#/components/schemas/System.Int32"
+          }
+        }
+      },
+      "Quizymode.Api.Features.Admin.GetContentReport.ContentRowResponse": {
+        "required": [
+          "key",
+          "name",
+          "sessions",
+          "studySessions",
+          "itemSteps",
+          "ratingsCount",
+          "averageStars",
+          "comments",
+          "bookmarks",
+          "shares",
+          "completions",
+          "averageScorePercent"
+        ],
+        "type": "object",
+        "properties": {
+          "key": {
+            "description": "Category slug, navigation path (category/keyword/keyword), or collection id.",
+            "$ref": "#/components/schemas/System.String"
+          },
+          "name": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/components/schemas/System.String"
+              }
+            ]
+          },
+          "sessions": {
+            "$ref": "#/components/schemas/System.Int32"
+          },
+          "studySessions": {
+            "description": "Sessions with a Quiz or Flashcards page hit in this scope.",
+            "$ref": "#/components/schemas/System.Int32"
+          },
+          "itemSteps": {
+            "$ref": "#/components/schemas/System.Int32"
+          },
+          "ratingsCount": {
+            "$ref": "#/components/schemas/System.Int32"
+          },
+          "averageStars": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/components/schemas/System.NullableOfSystem.Double"
+              }
+            ]
+          },
+          "comments": {
+            "$ref": "#/components/schemas/System.Int32"
+          },
+          "bookmarks": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "description": "Collections only; null for categories and navigation sets.",
+                "$ref": "#/components/schemas/System.NullableOfSystem.Int32"
+              }
+            ]
+          },
+          "shares": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "description": "Collections only; null for categories and navigation sets.",
+                "$ref": "#/components/schemas/System.NullableOfSystem.Int32"
+              }
+            ]
+          },
+          "completions": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "description": "Completed quiz runs; null when the scope has no recorded quiz runs.",
+                "$ref": "#/components/schemas/System.NullableOfSystem.Int32"
+              }
+            ]
+          },
+          "averageScorePercent": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/components/schemas/System.NullableOfSystem.Double"
+              }
+            ]
+          }
+        }
+      },
+      "Quizymode.Api.Features.Admin.GetContentReport.FeaturedRowResponse": {
+        "required": [
+          "id",
+          "type",
+          "displayName",
+          "sessionsSeen",
+          "sessionsOpened",
+          "clickThroughPercent"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "$ref": "#/components/schemas/System.Guid"
+          },
+          "type": {
+            "$ref": "#/components/schemas/System.String"
+          },
+          "displayName": {
+            "$ref": "#/components/schemas/System.String"
+          },
+          "sessionsSeen": {
+            "description": "Sessions that viewed home or the Featured page.",
+            "$ref": "#/components/schemas/System.Int32"
+          },
+          "sessionsOpened": {
+            "description": "Of those, sessions that then opened this entry's scope in the same session.",
+            "$ref": "#/components/schemas/System.Int32"
+          },
+          "clickThroughPercent": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/components/schemas/System.NullableOfSystem.Double"
+              }
+            ]
+          }
+        }
+      },
+      "Quizymode.Api.Features.Admin.GetContentReport.Response": {
+        "required": [
+          "windowStartUtc",
+          "windowEndUtc",
+          "botSessions",
+          "botsExcluded",
+          "internalSessions",
+          "internalExcluded",
+          "categories",
+          "navigationSets",
+          "collections",
+          "featured",
+          "untouchedCategories",
+          "untouchedCollections",
+          "userCreated"
+        ],
+        "type": "object",
+        "properties": {
+          "windowStartUtc": {
+            "$ref": "#/components/schemas/System.DateTime"
+          },
+          "windowEndUtc": {
+            "$ref": "#/components/schemas/System.DateTime"
+          },
+          "botSessions": {
+            "$ref": "#/components/schemas/System.Int32"
+          },
+          "botsExcluded": {
+            "$ref": "#/components/schemas/System.Boolean"
+          },
+          "internalSessions": {
+            "$ref": "#/components/schemas/System.Int32"
+          },
+          "internalExcluded": {
+            "$ref": "#/components/schemas/System.Boolean"
+          },
+          "categories": {
+            "$ref": "#/components/schemas/System.Collections.Generic.ListOfQuizymode.Api.Features.Admin.GetContentReport.ContentRowResponse"
+          },
+          "navigationSets": {
+            "$ref": "#/components/schemas/System.Collections.Generic.ListOfQuizymode.Api.Features.Admin.GetContentReport.ContentRowResponse"
+          },
+          "collections": {
+            "$ref": "#/components/schemas/System.Collections.Generic.ListOfQuizymode.Api.Features.Admin.GetContentReport.ContentRowResponse"
+          },
+          "featured": {
+            "$ref": "#/components/schemas/System.Collections.Generic.ListOfQuizymode.Api.Features.Admin.GetContentReport.FeaturedRowResponse"
+          },
+          "untouchedCategories": {
+            "$ref": "#/components/schemas/System.Collections.Generic.ListOfQuizymode.Api.Features.Admin.GetContentReport.UntouchedResponse"
+          },
+          "untouchedCollections": {
+            "$ref": "#/components/schemas/System.Collections.Generic.ListOfQuizymode.Api.Features.Admin.GetContentReport.UntouchedResponse"
+          },
+          "userCreated": {
+            "$ref": "#/components/schemas/System.Collections.Generic.ListOfQuizymode.Api.Features.Admin.GetContentReport.UserCreatedWeekResponse"
+          }
+        }
+      },
+      "Quizymode.Api.Features.Admin.GetContentReport.UntouchedResponse": {
+        "required": [
+          "key",
+          "name"
+        ],
+        "type": "object",
+        "properties": {
+          "key": {
+            "$ref": "#/components/schemas/System.String"
+          },
+          "name": {
+            "$ref": "#/components/schemas/System.String"
+          }
+        }
+      },
+      "Quizymode.Api.Features.Admin.GetContentReport.UserCreatedWeekResponse": {
+        "required": [
+          "weekStartUtc",
+          "privateItems",
+          "publicItems",
+          "collections"
+        ],
+        "type": "object",
+        "properties": {
+          "weekStartUtc": {
+            "description": "Monday of the week.",
+            "$ref": "#/components/schemas/System.DateTime"
+          },
+          "privateItems": {
+            "$ref": "#/components/schemas/System.Int32"
+          },
+          "publicItems": {
+            "$ref": "#/components/schemas/System.Int32"
+          },
+          "collections": {
             "$ref": "#/components/schemas/System.Int32"
           }
         }
@@ -6171,6 +7556,217 @@
           }
         }
       },
+      "Quizymode.Api.Features.Admin.GetLifecycleReport.CohortResponse": {
+        "required": [
+          "weekStartUtc",
+          "signups",
+          "activated7Days",
+          "activatedEligible",
+          "activeWeek1",
+          "eligibleWeek1",
+          "activeWeek2",
+          "eligibleWeek2",
+          "activeWeek4",
+          "eligibleWeek4"
+        ],
+        "type": "object",
+        "properties": {
+          "weekStartUtc": {
+            "description": "Monday of the signup week.",
+            "$ref": "#/components/schemas/System.DateTime"
+          },
+          "signups": {
+            "$ref": "#/components/schemas/System.Int32"
+          },
+          "activated7Days": {
+            "description": "Users with a completed quiz within 7 days of signup.",
+            "$ref": "#/components/schemas/System.Int32"
+          },
+          "activatedEligible": {
+            "description": "Users whose 7-day activation window has ended.",
+            "$ref": "#/components/schemas/System.Int32"
+          },
+          "activeWeek1": {
+            "$ref": "#/components/schemas/System.Int32"
+          },
+          "eligibleWeek1": {
+            "$ref": "#/components/schemas/System.Int32"
+          },
+          "activeWeek2": {
+            "$ref": "#/components/schemas/System.Int32"
+          },
+          "eligibleWeek2": {
+            "$ref": "#/components/schemas/System.Int32"
+          },
+          "activeWeek4": {
+            "$ref": "#/components/schemas/System.Int32"
+          },
+          "eligibleWeek4": {
+            "$ref": "#/components/schemas/System.Int32"
+          }
+        }
+      },
+      "Quizymode.Api.Features.Admin.GetLifecycleReport.Response": {
+        "required": [
+          "windowStartUtc",
+          "windowEndUtc",
+          "totalSignups",
+          "cohorts",
+          "sources"
+        ],
+        "type": "object",
+        "properties": {
+          "windowStartUtc": {
+            "$ref": "#/components/schemas/System.DateTime"
+          },
+          "windowEndUtc": {
+            "$ref": "#/components/schemas/System.DateTime"
+          },
+          "totalSignups": {
+            "$ref": "#/components/schemas/System.Int32"
+          },
+          "cohorts": {
+            "$ref": "#/components/schemas/System.Collections.Generic.ListOfQuizymode.Api.Features.Admin.GetLifecycleReport.CohortResponse"
+          },
+          "sources": {
+            "$ref": "#/components/schemas/System.Collections.Generic.ListOfQuizymode.Api.Features.Admin.GetLifecycleReport.SourceResponse"
+          }
+        }
+      },
+      "Quizymode.Api.Features.Admin.GetLifecycleReport.SourceResponse": {
+        "required": [
+          "channel",
+          "campaign",
+          "signups",
+          "activated7Days",
+          "activatedEligible",
+          "activeWeek1",
+          "eligibleWeek1"
+        ],
+        "type": "object",
+        "properties": {
+          "channel": {
+            "$ref": "#/components/schemas/System.String"
+          },
+          "campaign": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/components/schemas/System.String"
+              }
+            ]
+          },
+          "signups": {
+            "$ref": "#/components/schemas/System.Int32"
+          },
+          "activated7Days": {
+            "$ref": "#/components/schemas/System.Int32"
+          },
+          "activatedEligible": {
+            "$ref": "#/components/schemas/System.Int32"
+          },
+          "activeWeek1": {
+            "$ref": "#/components/schemas/System.Int32"
+          },
+          "eligibleWeek1": {
+            "$ref": "#/components/schemas/System.Int32"
+          }
+        }
+      },
+      "Quizymode.Api.Features.Admin.GetPageViewAnalytics.ContentScopeRowResponse": {
+        "required": [
+          "key",
+          "name",
+          "sessions",
+          "hits",
+          "itemSteps",
+          "avgItemStepsPerSession"
+        ],
+        "type": "object",
+        "properties": {
+          "key": {
+            "description": "Category slug, navigation path (category/kw1/kw2), or collection id.",
+            "$ref": "#/components/schemas/System.String"
+          },
+          "name": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "description": "Resolved collection name; null for categories, navigation paths, and deleted collections.",
+                "$ref": "#/components/schemas/System.String"
+              }
+            ]
+          },
+          "sessions": {
+            "$ref": "#/components/schemas/System.Int32"
+          },
+          "hits": {
+            "$ref": "#/components/schemas/System.Int32"
+          },
+          "itemSteps": {
+            "$ref": "#/components/schemas/System.Int32"
+          },
+          "avgItemStepsPerSession": {
+            "description": "ItemSteps divided by Sessions.",
+            "$ref": "#/components/schemas/System.Double"
+          }
+        }
+      },
+      "Quizymode.Api.Features.Admin.GetPageViewAnalytics.ContentScopesResponse": {
+        "required": [
+          "topCategories",
+          "topNavPaths",
+          "topCollections"
+        ],
+        "type": "object",
+        "properties": {
+          "topCategories": {
+            "$ref": "#/components/schemas/System.Collections.Generic.ListOfQuizymode.Api.Features.Admin.GetPageViewAnalytics.ContentScopeRowResponse"
+          },
+          "topNavPaths": {
+            "$ref": "#/components/schemas/System.Collections.Generic.ListOfQuizymode.Api.Features.Admin.GetPageViewAnalytics.ContentScopeRowResponse"
+          },
+          "topCollections": {
+            "$ref": "#/components/schemas/System.Collections.Generic.ListOfQuizymode.Api.Features.Admin.GetPageViewAnalytics.ContentScopeRowResponse"
+          }
+        }
+      },
+      "Quizymode.Api.Features.Admin.GetPageViewAnalytics.FeatureAreaResponse": {
+        "required": [
+          "area",
+          "hits",
+          "sessions",
+          "sessionSharePercent",
+          "itemSteps"
+        ],
+        "type": "object",
+        "properties": {
+          "area": {
+            "description": "Feature area from the page-hit classifier; unclassified rows count as `other`.",
+            "$ref": "#/components/schemas/System.String"
+          },
+          "hits": {
+            "description": "Hits in this area. Across all areas these add up to `Summary.TotalPageViews`.",
+            "$ref": "#/components/schemas/System.Int32"
+          },
+          "sessions": {
+            "description": "Distinct sessions with at least one hit in this area.",
+            "$ref": "#/components/schemas/System.Int32"
+          },
+          "sessionSharePercent": {
+            "description": "Sessions as a percentage of all sessions; a session can touch several areas.",
+            "$ref": "#/components/schemas/System.Double"
+          },
+          "itemSteps": {
+            "description": "Quiz/Flashcards question views (item-step hits) in this area.",
+            "$ref": "#/components/schemas/System.Int32"
+          }
+        }
+      },
       "Quizymode.Api.Features.Admin.GetPageViewAnalytics.RecentPageViewResponse": {
         "required": [
           "id",
@@ -6240,7 +7836,9 @@
           "totalCount",
           "page",
           "pageSize",
-          "totalPages"
+          "totalPages",
+          "featureAreas",
+          "contentScopes"
         ],
         "type": "object",
         "properties": {
@@ -6264,6 +7862,12 @@
           },
           "totalPages": {
             "$ref": "#/components/schemas/System.Int32"
+          },
+          "featureAreas": {
+            "$ref": "#/components/schemas/System.Collections.Generic.ListOfQuizymode.Api.Features.Admin.GetPageViewAnalytics.FeatureAreaResponse"
+          },
+          "contentScopes": {
+            "$ref": "#/components/schemas/Quizymode.Api.Features.Admin.GetPageViewAnalytics.ContentScopesResponse"
           }
         }
       },
@@ -6357,6 +7961,172 @@
           }
         }
       },
+      "Quizymode.Api.Features.Admin.GetPageViewRollups.AreaRow": {
+        "required": [
+          "area",
+          "hits",
+          "sessionDays",
+          "itemSteps"
+        ],
+        "type": "object",
+        "properties": {
+          "area": {
+            "$ref": "#/components/schemas/System.String"
+          },
+          "hits": {
+            "$ref": "#/components/schemas/System.Int32"
+          },
+          "sessionDays": {
+            "description": "Sum over days of the distinct sessions that touched this area that day.",
+            "$ref": "#/components/schemas/System.Int32"
+          },
+          "itemSteps": {
+            "$ref": "#/components/schemas/System.Int32"
+          }
+        }
+      },
+      "Quizymode.Api.Features.Admin.GetPageViewRollups.DailyRow": {
+        "required": [
+          "day",
+          "sessions",
+          "hits",
+          "itemSteps"
+        ],
+        "type": "object",
+        "properties": {
+          "day": {
+            "$ref": "#/components/schemas/System.DateOnly"
+          },
+          "sessions": {
+            "$ref": "#/components/schemas/System.Int32"
+          },
+          "hits": {
+            "$ref": "#/components/schemas/System.Int32"
+          },
+          "itemSteps": {
+            "$ref": "#/components/schemas/System.Int32"
+          }
+        }
+      },
+      "Quizymode.Api.Features.Admin.GetPageViewRollups.DimensionRow": {
+        "required": [
+          "value",
+          "sessionDays",
+          "hits"
+        ],
+        "type": "object",
+        "properties": {
+          "value": {
+            "$ref": "#/components/schemas/System.String"
+          },
+          "sessionDays": {
+            "$ref": "#/components/schemas/System.Int32"
+          },
+          "hits": {
+            "$ref": "#/components/schemas/System.Int32"
+          }
+        }
+      },
+      "Quizymode.Api.Features.Admin.GetPageViewRollups.Response": {
+        "required": [
+          "windowStartDay",
+          "windowEndDay",
+          "retentionDays",
+          "latestRolledDay",
+          "totalHits",
+          "totalSessionDays",
+          "totalBouncedSessionDays",
+          "totalItemSteps",
+          "daily",
+          "areas",
+          "channels",
+          "deviceClasses",
+          "outcomes",
+          "visitorTypes",
+          "topScopes"
+        ],
+        "type": "object",
+        "properties": {
+          "windowStartDay": {
+            "$ref": "#/components/schemas/System.DateOnly"
+          },
+          "windowEndDay": {
+            "$ref": "#/components/schemas/System.DateOnly"
+          },
+          "retentionDays": {
+            "$ref": "#/components/schemas/System.Int32"
+          },
+          "latestRolledDay": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "description": "Most recent UTC day with rollup rows; null when nothing has been rolled up yet.",
+                "$ref": "#/components/schemas/System.NullableOfSystem.DateOnly"
+              }
+            ]
+          },
+          "totalHits": {
+            "$ref": "#/components/schemas/System.Int32"
+          },
+          "totalSessionDays": {
+            "description": "Sum of each day's distinct sessions; a session spanning midnight counts once per day.",
+            "$ref": "#/components/schemas/System.Int32"
+          },
+          "totalBouncedSessionDays": {
+            "$ref": "#/components/schemas/System.Int32"
+          },
+          "totalItemSteps": {
+            "$ref": "#/components/schemas/System.Int32"
+          },
+          "daily": {
+            "$ref": "#/components/schemas/System.Collections.Generic.ListOfQuizymode.Api.Features.Admin.GetPageViewRollups.DailyRow"
+          },
+          "areas": {
+            "$ref": "#/components/schemas/System.Collections.Generic.ListOfQuizymode.Api.Features.Admin.GetPageViewRollups.AreaRow"
+          },
+          "channels": {
+            "$ref": "#/components/schemas/System.Collections.Generic.ListOfQuizymode.Api.Features.Admin.GetPageViewRollups.DimensionRow"
+          },
+          "deviceClasses": {
+            "$ref": "#/components/schemas/System.Collections.Generic.ListOfQuizymode.Api.Features.Admin.GetPageViewRollups.DimensionRow"
+          },
+          "outcomes": {
+            "$ref": "#/components/schemas/System.Collections.Generic.ListOfQuizymode.Api.Features.Admin.GetPageViewRollups.DimensionRow"
+          },
+          "visitorTypes": {
+            "$ref": "#/components/schemas/System.Collections.Generic.ListOfQuizymode.Api.Features.Admin.GetPageViewRollups.DimensionRow"
+          },
+          "topScopes": {
+            "$ref": "#/components/schemas/System.Collections.Generic.ListOfQuizymode.Api.Features.Admin.GetPageViewRollups.ScopeRow"
+          }
+        }
+      },
+      "Quizymode.Api.Features.Admin.GetPageViewRollups.ScopeRow": {
+        "required": [
+          "scopeType",
+          "scopeKey",
+          "hits",
+          "itemSteps"
+        ],
+        "type": "object",
+        "properties": {
+          "scopeType": {
+            "$ref": "#/components/schemas/System.String"
+          },
+          "scopeKey": {
+            "$ref": "#/components/schemas/System.String"
+          },
+          "hits": {
+            "$ref": "#/components/schemas/System.Int32"
+          },
+          "itemSteps": {
+            "$ref": "#/components/schemas/System.Int32"
+          }
+        },
+        "description": "Hits and item steps per category or collection (sessions are not additive across areas, so not reported)."
+      },
       "Quizymode.Api.Features.Admin.GetPageViewSessionDetail.JourneyStepResponse": {
         "required": [
           "stepNumber",
@@ -6365,7 +8135,9 @@
           "url",
           "isAuthenticated",
           "createdUtc",
-          "dwellSeconds"
+          "dwellSeconds",
+          "area",
+          "isItemStep"
         ],
         "type": "object",
         "properties": {
@@ -6396,6 +8168,12 @@
                 "$ref": "#/components/schemas/System.NullableOfSystem.Int32"
               }
             ]
+          },
+          "area": {
+            "$ref": "#/components/schemas/System.String"
+          },
+          "isItemStep": {
+            "$ref": "#/components/schemas/System.Boolean"
           }
         }
       },
@@ -6520,11 +8298,15 @@
           "sessions",
           "bouncedSessions",
           "bounceRatePercent",
-          "avgPagesPerSession"
+          "avgPagesPerSession",
+          "area",
+          "scopeType",
+          "scopeKey"
         ],
         "type": "object",
         "properties": {
           "path": {
+            "description": "The most common entry path in the group, as an example.",
             "$ref": "#/components/schemas/System.String"
           },
           "sessions": {
@@ -6538,8 +8320,32 @@
           },
           "avgPagesPerSession": {
             "$ref": "#/components/schemas/System.Double"
+          },
+          "area": {
+            "$ref": "#/components/schemas/System.String"
+          },
+          "scopeType": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/components/schemas/System.String"
+              }
+            ]
+          },
+          "scopeKey": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/components/schemas/System.String"
+              }
+            ]
           }
-        }
+        },
+        "description": "Landing sessions grouped by the entry hit's feature area and content scope (ANALYTICS-004)."
       },
       "Quizymode.Api.Features.Admin.GetPageViewSessions.OutcomeStatsResponse": {
         "required": [
@@ -6632,7 +8438,9 @@
           "userEmail",
           "userAgent",
           "isBot",
-          "isInternal"
+          "isInternal",
+          "entryArea",
+          "itemSteps"
         ],
         "type": "object",
         "properties": {
@@ -6704,6 +8512,12 @@
           },
           "isInternal": {
             "$ref": "#/components/schemas/System.Boolean"
+          },
+          "entryArea": {
+            "$ref": "#/components/schemas/System.String"
+          },
+          "itemSteps": {
+            "$ref": "#/components/schemas/System.Int32"
           }
         }
       },
@@ -6723,7 +8537,9 @@
           "botsExcluded",
           "internalSessions",
           "internalExcluded",
-          "byOutcome"
+          "byOutcome",
+          "studySessions",
+          "avgItemStepsPerStudySession"
         ],
         "type": "object",
         "properties": {
@@ -6771,6 +8587,12 @@
           },
           "byOutcome": {
             "$ref": "#/components/schemas/System.Collections.Generic.ListOfQuizymode.Api.Features.Admin.GetPageViewSessions.OutcomeStatsResponse"
+          },
+          "studySessions": {
+            "$ref": "#/components/schemas/System.Int32"
+          },
+          "avgItemStepsPerStudySession": {
+            "$ref": "#/components/schemas/System.Double"
           }
         }
       },
@@ -6824,6 +8646,129 @@
         "properties": {
           "keywords": {
             "$ref": "#/components/schemas/System.Collections.Generic.ListOfQuizymode.Api.Features.Admin.GetPendingKeywordsAdmin.PendingKeywordResponse"
+          }
+        }
+      },
+      "Quizymode.Api.Features.Admin.GetQuestionQualityReport.QuestionResponse": {
+        "required": [
+          "itemId",
+          "question",
+          "correctAnswer",
+          "category",
+          "collections",
+          "answers",
+          "correctRatePercent",
+          "randomGuessPercent",
+          "checkAnswerKey",
+          "lastEditedUtc"
+        ],
+        "type": "object",
+        "properties": {
+          "itemId": {
+            "$ref": "#/components/schemas/System.Guid"
+          },
+          "question": {
+            "$ref": "#/components/schemas/System.String"
+          },
+          "correctAnswer": {
+            "$ref": "#/components/schemas/System.String"
+          },
+          "category": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/components/schemas/System.String"
+              }
+            ]
+          },
+          "collections": {
+            "$ref": "#/components/schemas/System.Collections.Generic.ListOfSystem.String"
+          },
+          "answers": {
+            "description": "First-attempt answers (one per session) recorded since the item's last edit.",
+            "$ref": "#/components/schemas/System.Int32"
+          },
+          "correctRatePercent": {
+            "description": "Share of those answers that were correct.",
+            "$ref": "#/components/schemas/System.Double"
+          },
+          "randomGuessPercent": {
+            "description": "100 divided by the number of options (one correct plus the incorrect answers).",
+            "$ref": "#/components/schemas/System.Double"
+          },
+          "checkAnswerKey": {
+            "description": "True when the correct rate is below the random-guess rate.",
+            "$ref": "#/components/schemas/System.Boolean"
+          },
+          "lastEditedUtc": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "description": "The item's last UpdatedAt; null when never edited. Statistics start after it.",
+                "$ref": "#/components/schemas/System.NullableOfSystem.DateTime"
+              }
+            ]
+          }
+        }
+      },
+      "Quizymode.Api.Features.Admin.GetQuestionQualityReport.Response": {
+        "required": [
+          "windowStartUtc",
+          "windowEndUtc",
+          "minAnswers",
+          "botSessions",
+          "botsExcluded",
+          "internalSessions",
+          "internalExcluded",
+          "items"
+        ],
+        "type": "object",
+        "properties": {
+          "windowStartUtc": {
+            "$ref": "#/components/schemas/System.DateTime"
+          },
+          "windowEndUtc": {
+            "$ref": "#/components/schemas/System.DateTime"
+          },
+          "minAnswers": {
+            "$ref": "#/components/schemas/System.Int32"
+          },
+          "botSessions": {
+            "$ref": "#/components/schemas/System.Int32"
+          },
+          "botsExcluded": {
+            "$ref": "#/components/schemas/System.Boolean"
+          },
+          "internalSessions": {
+            "$ref": "#/components/schemas/System.Int32"
+          },
+          "internalExcluded": {
+            "$ref": "#/components/schemas/System.Boolean"
+          },
+          "items": {
+            "$ref": "#/components/schemas/System.Collections.Generic.ListOfQuizymode.Api.Features.Admin.GetQuestionQualityReport.QuestionResponse"
+          }
+        }
+      },
+      "Quizymode.Api.Features.Admin.IdeasAdmin.ApproveRequest": {
+        "required": [
+          "moderationNotes"
+        ],
+        "type": "object",
+        "properties": {
+          "moderationNotes": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/components/schemas/System.String"
+              }
+            ]
           }
         }
       },
@@ -9085,6 +11030,17 @@
                 "$ref": "#/components/schemas/System.String"
               }
             ]
+          },
+          "sessionId": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "description": "Current analytics session id, so an admin can see the journey that led to the report.",
+                "$ref": "#/components/schemas/System.String"
+              }
+            ]
           }
         }
       },
@@ -9153,6 +11109,15 @@
         "properties": {
           "ideas": {
             "$ref": "#/components/schemas/System.Collections.Generic.ListOfQuizymode.Api.Features.Ideas.IdeaSummaryResponse"
+          },
+          "page": {
+            "$ref": "#/components/schemas/System.Int32"
+          },
+          "pageSize": {
+            "$ref": "#/components/schemas/System.Int32"
+          },
+          "totalCount": {
+            "$ref": "#/components/schemas/System.Int32"
           }
         }
       },
@@ -11623,6 +13588,503 @@
           }
         }
       },
+      "Quizymode.Api.Features.StudyGuideUploads.AcceptStudyGuideUpload.Request": {
+        "required": [
+          "questionIndexes"
+        ],
+        "type": "object",
+        "properties": {
+          "questionIndexes": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/components/schemas/System.Collections.Generic.ListOfSystem.Int32"
+              }
+            ]
+          }
+        },
+        "description": "QuestionIndexes: zero-based indexes of the questions to keep; null or omitted keeps all."
+      },
+      "Quizymode.Api.Features.StudyGuideUploads.AcceptStudyGuideUpload.Response": {
+        "required": [
+          "createdCount",
+          "duplicateCount",
+          "failedCount",
+          "createdItemIds",
+          "errors"
+        ],
+        "type": "object",
+        "properties": {
+          "createdCount": {
+            "$ref": "#/components/schemas/System.Int32"
+          },
+          "duplicateCount": {
+            "$ref": "#/components/schemas/System.Int32"
+          },
+          "failedCount": {
+            "$ref": "#/components/schemas/System.Int32"
+          },
+          "createdItemIds": {
+            "$ref": "#/components/schemas/System.Collections.Generic.ListOfSystem.String"
+          },
+          "errors": {
+            "$ref": "#/components/schemas/System.Collections.Generic.ListOfSystem.String"
+          }
+        }
+      },
+      "Quizymode.Api.Features.StudyGuideUploads.CreateStudyGuideUpload.Request": {
+        "required": [
+          "text",
+          "category",
+          "navigationKeyword1",
+          "navigationKeyword2",
+          "keywords"
+        ],
+        "type": "object",
+        "properties": {
+          "text": {
+            "$ref": "#/components/schemas/System.String"
+          },
+          "category": {
+            "$ref": "#/components/schemas/System.String"
+          },
+          "navigationKeyword1": {
+            "$ref": "#/components/schemas/System.String"
+          },
+          "navigationKeyword2": {
+            "$ref": "#/components/schemas/System.String"
+          },
+          "keywords": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/components/schemas/System.Collections.Generic.ListOfSystem.String"
+              }
+            ]
+          }
+        }
+      },
+      "Quizymode.Api.Features.StudyGuideUploads.CreateStudyGuideUpload.Response": {
+        "required": [
+          "id",
+          "status",
+          "isDuplicate"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "$ref": "#/components/schemas/System.String"
+          },
+          "status": {
+            "$ref": "#/components/schemas/System.String"
+          },
+          "isDuplicate": {
+            "$ref": "#/components/schemas/System.Boolean"
+          }
+        }
+      },
+      "Quizymode.Api.Features.StudyGuideUploads.GetStudyGuideUpload.Response": {
+        "required": [
+          "id",
+          "status",
+          "category",
+          "navigationKeyword1",
+          "navigationKeyword2",
+          "keywords",
+          "questions",
+          "error",
+          "createdUtc",
+          "completedUtc",
+          "acceptedUtc",
+          "createdItemCount"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "$ref": "#/components/schemas/System.String"
+          },
+          "status": {
+            "$ref": "#/components/schemas/System.String"
+          },
+          "category": {
+            "$ref": "#/components/schemas/System.String"
+          },
+          "navigationKeyword1": {
+            "$ref": "#/components/schemas/System.String"
+          },
+          "navigationKeyword2": {
+            "$ref": "#/components/schemas/System.String"
+          },
+          "keywords": {
+            "$ref": "#/components/schemas/System.Collections.Generic.ListOfSystem.String"
+          },
+          "questions": {
+            "$ref": "#/components/schemas/System.Collections.Generic.ListOfQuizymode.Api.Features.StudyGuideUploads.StudyGuideGeneratedQuestion"
+          },
+          "error": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/components/schemas/System.String"
+              }
+            ]
+          },
+          "createdUtc": {
+            "$ref": "#/components/schemas/System.DateTime"
+          },
+          "completedUtc": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/components/schemas/System.NullableOfSystem.DateTime"
+              }
+            ]
+          },
+          "acceptedUtc": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/components/schemas/System.NullableOfSystem.DateTime"
+              }
+            ]
+          },
+          "createdItemCount": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/components/schemas/System.NullableOfSystem.Int32"
+              }
+            ]
+          }
+        }
+      },
+      "Quizymode.Api.Features.StudyGuideUploads.GetStudyGuideUploadConfig.Response": {
+        "required": [
+          "enabled",
+          "maxTextBytes",
+          "maxQuestions"
+        ],
+        "type": "object",
+        "properties": {
+          "enabled": {
+            "$ref": "#/components/schemas/System.Boolean"
+          },
+          "maxTextBytes": {
+            "$ref": "#/components/schemas/System.Int32"
+          },
+          "maxQuestions": {
+            "$ref": "#/components/schemas/System.Int32"
+          }
+        }
+      },
+      "Quizymode.Api.Features.StudyGuideUploads.StudyGuideGeneratedQuestion": {
+        "required": [
+          "question",
+          "correctAnswer",
+          "incorrectAnswers",
+          "explanation"
+        ],
+        "type": "object",
+        "properties": {
+          "question": {
+            "$ref": "#/components/schemas/System.String"
+          },
+          "correctAnswer": {
+            "$ref": "#/components/schemas/System.String"
+          },
+          "incorrectAnswers": {
+            "$ref": "#/components/schemas/System.Collections.Generic.ListOfSystem.String"
+          },
+          "explanation": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/components/schemas/System.String"
+              }
+            ]
+          }
+        },
+        "description": "A validated AI-generated question awaiting the owner's review."
+      },
+      "Quizymode.Api.Features.StudySessions.GetStudySessions.SessionsResponse": {
+        "required": [
+          "sessions"
+        ],
+        "type": "object",
+        "properties": {
+          "sessions": {
+            "$ref": "#/components/schemas/System.Collections.Generic.ListOfQuizymode.Api.Features.StudySessions.RecordStudySession.SessionDto"
+          }
+        }
+      },
+      "Quizymode.Api.Features.StudySessions.GetStudySessions.SummaryResponse": {
+        "required": [
+          "totalSessions",
+          "totalQuestions",
+          "totalCorrect",
+          "accuracyPercent",
+          "last30DaysSessions",
+          "last30DaysAccuracyPercent",
+          "importedSessions"
+        ],
+        "type": "object",
+        "properties": {
+          "totalSessions": {
+            "$ref": "#/components/schemas/System.Int32"
+          },
+          "totalQuestions": {
+            "$ref": "#/components/schemas/System.Int32"
+          },
+          "totalCorrect": {
+            "$ref": "#/components/schemas/System.Int32"
+          },
+          "accuracyPercent": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/components/schemas/System.NullableOfSystem.Int32"
+              }
+            ]
+          },
+          "last30DaysSessions": {
+            "$ref": "#/components/schemas/System.Int32"
+          },
+          "last30DaysAccuracyPercent": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/components/schemas/System.NullableOfSystem.Int32"
+              }
+            ]
+          },
+          "importedSessions": {
+            "$ref": "#/components/schemas/System.Int32"
+          }
+        }
+      },
+      "Quizymode.Api.Features.StudySessions.ImportGuestStudySessions.Request": {
+        "required": [
+          "version",
+          "runs"
+        ],
+        "type": "object",
+        "properties": {
+          "version": {
+            "$ref": "#/components/schemas/System.Int32"
+          },
+          "runs": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/components/schemas/System.Collections.Generic.ListOfQuizymode.Api.Features.StudySessions.RecordStudySession.Request"
+              }
+            ]
+          }
+        }
+      },
+      "Quizymode.Api.Features.StudySessions.ImportGuestStudySessions.Response": {
+        "required": [
+          "imported",
+          "duplicates",
+          "rejectedRunIds"
+        ],
+        "type": "object",
+        "properties": {
+          "imported": {
+            "description": "Runs newly stored.",
+            "$ref": "#/components/schemas/System.Int32"
+          },
+          "duplicates": {
+            "description": "Runs already stored for this account (kept as-is).",
+            "$ref": "#/components/schemas/System.Int32"
+          },
+          "rejectedRunIds": {
+            "description": "Runs that failed validation and can never be accepted; safe to discard.",
+            "$ref": "#/components/schemas/System.Collections.Generic.ListOfSystem.String"
+          }
+        }
+      },
+      "Quizymode.Api.Features.StudySessions.RecordStudySession.Request": {
+        "required": [
+          "runId",
+          "completedAt",
+          "correct",
+          "total",
+          "source",
+          "missedItemIds"
+        ],
+        "type": "object",
+        "properties": {
+          "runId": {
+            "$ref": "#/components/schemas/System.String"
+          },
+          "completedAt": {
+            "$ref": "#/components/schemas/System.DateTime"
+          },
+          "correct": {
+            "$ref": "#/components/schemas/System.Int32"
+          },
+          "total": {
+            "$ref": "#/components/schemas/System.Int32"
+          },
+          "source": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/components/schemas/Quizymode.Api.Features.StudySessions.RecordStudySession.SourceDto"
+              }
+            ]
+          },
+          "missedItemIds": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/components/schemas/System.Collections.Generic.ListOfSystem.Guid"
+              }
+            ]
+          }
+        }
+      },
+      "Quizymode.Api.Features.StudySessions.RecordStudySession.Response": {
+        "required": [
+          "session",
+          "created"
+        ],
+        "type": "object",
+        "properties": {
+          "session": {
+            "$ref": "#/components/schemas/Quizymode.Api.Features.StudySessions.RecordStudySession.SessionDto"
+          },
+          "created": {
+            "$ref": "#/components/schemas/System.Boolean"
+          }
+        }
+      },
+      "Quizymode.Api.Features.StudySessions.RecordStudySession.SessionDto": {
+        "required": [
+          "id",
+          "runId",
+          "origin",
+          "completedAt",
+          "correct",
+          "total",
+          "source",
+          "missedItemIds"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "$ref": "#/components/schemas/System.Guid"
+          },
+          "runId": {
+            "$ref": "#/components/schemas/System.String"
+          },
+          "origin": {
+            "$ref": "#/components/schemas/System.String"
+          },
+          "completedAt": {
+            "$ref": "#/components/schemas/System.DateTime"
+          },
+          "correct": {
+            "$ref": "#/components/schemas/System.Int32"
+          },
+          "total": {
+            "$ref": "#/components/schemas/System.Int32"
+          },
+          "source": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/components/schemas/Quizymode.Api.Features.StudySessions.RecordStudySession.SourceDto"
+              }
+            ]
+          },
+          "missedItemIds": {
+            "$ref": "#/components/schemas/System.Collections.Generic.ListOfSystem.Guid"
+          }
+        }
+      },
+      "Quizymode.Api.Features.StudySessions.RecordStudySession.SourceDto": {
+        "required": [
+          "kind",
+          "collectionId",
+          "categorySlug",
+          "navigationKeywords",
+          "filterKeywords"
+        ],
+        "type": "object",
+        "properties": {
+          "kind": {
+            "$ref": "#/components/schemas/System.String"
+          },
+          "collectionId": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/components/schemas/System.NullableOfSystem.Guid"
+              }
+            ]
+          },
+          "categorySlug": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/components/schemas/System.String"
+              }
+            ]
+          },
+          "navigationKeywords": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/components/schemas/System.Collections.Generic.ListOfSystem.String"
+              }
+            ]
+          },
+          "filterKeywords": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/components/schemas/System.Collections.Generic.ListOfSystem.String"
+              }
+            ]
+          }
+        }
+      },
       "Quizymode.Api.Features.Taxonomy.GetTaxonomy.CategoryDto": {
         "required": [
           "slug",
@@ -12243,6 +14705,12 @@
           "$ref": "#/components/schemas/System.String"
         }
       },
+      "System.Collections.Generic.ListOfQuizymode.Api.Features.Admin.AdminFeedback.FeedbackResponse": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/Quizymode.Api.Features.Admin.AdminFeedback.FeedbackResponse"
+        }
+      },
       "System.Collections.Generic.ListOfQuizymode.Api.Features.Admin.AdminUsersActivity.UserOverviewResponse": {
         "type": "array",
         "items": {
@@ -12279,6 +14747,18 @@
           "$ref": "#/components/schemas/Quizymode.Api.Features.Admin.GetAcquisitionReport.SourceCampaignRowResponse"
         }
       },
+      "System.Collections.Generic.ListOfQuizymode.Api.Features.Admin.GetAnalyticsOverview.DailyPoint": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/Quizymode.Api.Features.Admin.GetAnalyticsOverview.DailyPoint"
+        }
+      },
+      "System.Collections.Generic.ListOfQuizymode.Api.Features.Admin.GetAnalyticsOverview.ReleaseMarker": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/Quizymode.Api.Features.Admin.GetAnalyticsOverview.ReleaseMarker"
+        }
+      },
       "System.Collections.Generic.ListOfQuizymode.Api.Features.Admin.GetAuditLogs.AuditLogResponse": {
         "type": "array",
         "items": {
@@ -12309,6 +14789,30 @@
           "$ref": "#/components/schemas/Quizymode.Api.Features.Admin.GetClientErrors.ValueCount"
         }
       },
+      "System.Collections.Generic.ListOfQuizymode.Api.Features.Admin.GetContentReport.ContentRowResponse": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/Quizymode.Api.Features.Admin.GetContentReport.ContentRowResponse"
+        }
+      },
+      "System.Collections.Generic.ListOfQuizymode.Api.Features.Admin.GetContentReport.FeaturedRowResponse": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/Quizymode.Api.Features.Admin.GetContentReport.FeaturedRowResponse"
+        }
+      },
+      "System.Collections.Generic.ListOfQuizymode.Api.Features.Admin.GetContentReport.UntouchedResponse": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/Quizymode.Api.Features.Admin.GetContentReport.UntouchedResponse"
+        }
+      },
+      "System.Collections.Generic.ListOfQuizymode.Api.Features.Admin.GetContentReport.UserCreatedWeekResponse": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/Quizymode.Api.Features.Admin.GetContentReport.UserCreatedWeekResponse"
+        }
+      },
       "System.Collections.Generic.ListOfQuizymode.Api.Features.Admin.GetConversionFunnel.StepResponse": {
         "type": "array",
         "items": {
@@ -12333,6 +14837,30 @@
           "$ref": "#/components/schemas/Quizymode.Api.Features.Admin.GetLearningReport.ScopeResponse"
         }
       },
+      "System.Collections.Generic.ListOfQuizymode.Api.Features.Admin.GetLifecycleReport.CohortResponse": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/Quizymode.Api.Features.Admin.GetLifecycleReport.CohortResponse"
+        }
+      },
+      "System.Collections.Generic.ListOfQuizymode.Api.Features.Admin.GetLifecycleReport.SourceResponse": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/Quizymode.Api.Features.Admin.GetLifecycleReport.SourceResponse"
+        }
+      },
+      "System.Collections.Generic.ListOfQuizymode.Api.Features.Admin.GetPageViewAnalytics.ContentScopeRowResponse": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/Quizymode.Api.Features.Admin.GetPageViewAnalytics.ContentScopeRowResponse"
+        }
+      },
+      "System.Collections.Generic.ListOfQuizymode.Api.Features.Admin.GetPageViewAnalytics.FeatureAreaResponse": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/Quizymode.Api.Features.Admin.GetPageViewAnalytics.FeatureAreaResponse"
+        }
+      },
       "System.Collections.Generic.ListOfQuizymode.Api.Features.Admin.GetPageViewAnalytics.RecentPageViewResponse": {
         "type": "array",
         "items": {
@@ -12343,6 +14871,30 @@
         "type": "array",
         "items": {
           "$ref": "#/components/schemas/Quizymode.Api.Features.Admin.GetPageViewAnalytics.TopPageResponse"
+        }
+      },
+      "System.Collections.Generic.ListOfQuizymode.Api.Features.Admin.GetPageViewRollups.AreaRow": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/Quizymode.Api.Features.Admin.GetPageViewRollups.AreaRow"
+        }
+      },
+      "System.Collections.Generic.ListOfQuizymode.Api.Features.Admin.GetPageViewRollups.DailyRow": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/Quizymode.Api.Features.Admin.GetPageViewRollups.DailyRow"
+        }
+      },
+      "System.Collections.Generic.ListOfQuizymode.Api.Features.Admin.GetPageViewRollups.DimensionRow": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/Quizymode.Api.Features.Admin.GetPageViewRollups.DimensionRow"
+        }
+      },
+      "System.Collections.Generic.ListOfQuizymode.Api.Features.Admin.GetPageViewRollups.ScopeRow": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/Quizymode.Api.Features.Admin.GetPageViewRollups.ScopeRow"
         }
       },
       "System.Collections.Generic.ListOfQuizymode.Api.Features.Admin.GetPageViewSessionDetail.JourneyStepResponse": {
@@ -12379,6 +14931,12 @@
         "type": "array",
         "items": {
           "$ref": "#/components/schemas/Quizymode.Api.Features.Admin.GetPendingKeywordsAdmin.PendingKeywordResponse"
+        }
+      },
+      "System.Collections.Generic.ListOfQuizymode.Api.Features.Admin.GetQuestionQualityReport.QuestionResponse": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/Quizymode.Api.Features.Admin.GetQuestionQualityReport.QuestionResponse"
         }
       },
       "System.Collections.Generic.ListOfQuizymode.Api.Features.Admin.SeedSyncAdmin.ChangeResponse": {
@@ -12567,6 +15125,24 @@
           "$ref": "#/components/schemas/Quizymode.Api.Features.StudyGuideImport.GetImportSession.PromptResultDto"
         }
       },
+      "System.Collections.Generic.ListOfQuizymode.Api.Features.StudyGuideUploads.StudyGuideGeneratedQuestion": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/Quizymode.Api.Features.StudyGuideUploads.StudyGuideGeneratedQuestion"
+        }
+      },
+      "System.Collections.Generic.ListOfQuizymode.Api.Features.StudySessions.RecordStudySession.Request": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/Quizymode.Api.Features.StudySessions.RecordStudySession.Request"
+        }
+      },
+      "System.Collections.Generic.ListOfQuizymode.Api.Features.StudySessions.RecordStudySession.SessionDto": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/Quizymode.Api.Features.StudySessions.RecordStudySession.SessionDto"
+        }
+      },
       "System.Collections.Generic.ListOfQuizymode.Api.Services.VisitorCohortReport.ReturnRateRow": {
         "type": "array",
         "items": {
@@ -12579,11 +15155,21 @@
           "$ref": "#/components/schemas/System.Guid"
         }
       },
+      "System.Collections.Generic.ListOfSystem.Int32": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/System.Int32"
+        }
+      },
       "System.Collections.Generic.ListOfSystem.String": {
         "type": "array",
         "items": {
           "$ref": "#/components/schemas/System.String"
         }
+      },
+      "System.DateOnly": {
+        "type": "string",
+        "format": "date"
       },
       "System.DateTime": {
         "type": "string",
@@ -12619,6 +15205,10 @@
       },
       "System.NullableOfSystem.Boolean": {
         "type": "boolean"
+      },
+      "System.NullableOfSystem.DateOnly": {
+        "type": "string",
+        "format": "date"
       },
       "System.NullableOfSystem.DateTime": {
         "type": "string",
@@ -12717,7 +15307,13 @@
       "name": "StudyGuideImport"
     },
     {
+      "name": "StudyGuideUploads"
+    },
+    {
       "name": "StudyGuides"
+    },
+    {
+      "name": "StudySessions"
     },
     {
       "name": "Taxonomy"

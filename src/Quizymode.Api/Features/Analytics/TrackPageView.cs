@@ -47,7 +47,7 @@ public static class TrackPageView
             app.MapPost("analytics/page-views", Handler)
                 .WithTags("Analytics")
                 .WithSummary("Track a SPA page view")
-                .WithDescription("Stores a page-view event for an anonymous or authenticated SPA route hit. The hit is flagged internal when the caller is an admin, is a user flagged internal, or sends internalBrowser=true. The first hit of a session also creates an attribution snapshot (channel, referrer host, UTM tags, device class, country).")
+                .WithDescription("Stores a page-view event for an anonymous or authenticated SPA route hit. The hit is flagged internal when the caller is an admin, is a user flagged internal, or sends internalBrowser=true. Each hit is classified by feature area and content scope. The first hit of a session also creates an attribution snapshot (channel, referrer host, UTM tags, device class, country).")
                 .AllowAnonymous()
                 .Produces<Response>(StatusCodes.Status201Created)
                 .ProducesProblem(StatusCodes.Status400BadRequest);
@@ -139,6 +139,8 @@ public static class TrackPageView
                 .AnyAsync(user => user.Id == userId.Value && user.IsInternal, cancellationToken);
         }
 
+        PageHitClassifier.Classification classification = PageHitClassifier.Classify(normalizedPath, normalizedQueryString);
+
         PageView pageView = new()
         {
             Id = Guid.NewGuid(),
@@ -154,6 +156,8 @@ public static class TrackPageView
             IsInternal = isInternal,
             CreatedUtc = DateTime.UtcNow
         };
+
+        PageViewClassificationBackfill.Apply(pageView, classification);
 
         db.PageViews.Add(pageView);
         await db.SaveChangesAsync(CancellationToken.None);

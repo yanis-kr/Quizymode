@@ -44,6 +44,7 @@ internal static partial class StartupExtensions
         builder.Services.AddHostedService<StudyGuideCleanupService>();
         builder.Services.AddHostedService<ClientErrorCleanupService>();
         builder.Services.AddHostedService<AnalyticsSessionBackfill>();
+        builder.Services.AddHostedService<PageViewRetentionService>();
         builder.Services.AddMemoryCache();
         return builder;
     }

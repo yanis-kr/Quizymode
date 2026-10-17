@@ -181,6 +181,30 @@ describe("adminApi", () => {
     });
   });
 
+  it("getContentReport calls GET /admin/analytics/content with window and flags", async () => {
+    const data = { categories: [] };
+    mockGet.mockResolvedValueOnce({ data });
+
+    const result = await adminApi.getContentReport(30, true, true);
+
+    expect(mockGet).toHaveBeenCalledWith("/admin/analytics/content", {
+      params: { days: 30, includeBots: true, includeInternal: true },
+    });
+    expect(result).toEqual(data);
+  });
+
+  it("getQuestionQualityReport calls GET /admin/analytics/question-quality with minAnswers", async () => {
+    const data = { items: [] };
+    mockGet.mockResolvedValueOnce({ data });
+
+    const result = await adminApi.getQuestionQualityReport(30, 5, false);
+
+    expect(mockGet).toHaveBeenCalledWith("/admin/analytics/question-quality", {
+      params: { days: 30, minAnswers: 5, includeBots: false },
+    });
+    expect(result).toEqual(data);
+  });
+
   it("getLearningReport calls GET /admin/analytics/learning with window and bot flag", async () => {
     const data = { scopes: [] };
     mockGet.mockResolvedValueOnce({ data });

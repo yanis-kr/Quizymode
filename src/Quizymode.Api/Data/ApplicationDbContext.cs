@@ -48,6 +48,11 @@ public sealed class ApplicationDbContext : DbContext
 
     public DbSet<ClientError> ClientErrors => Set<ClientError>();
     public DbSet<AnalyticsSession> AnalyticsSessions => Set<AnalyticsSession>();
+    public DbSet<PageViewDailyRollup> PageViewDailyRollups => Set<PageViewDailyRollup>();
+
+    public DbSet<StudySession> StudySessions => Set<StudySession>();
+
+    public DbSet<StudySessionMissedItem> StudySessionMissedItems => Set<StudySessionMissedItem>();
 
     public DbSet<Keyword> Keywords => Set<Keyword>();
 
@@ -74,6 +79,8 @@ public sealed class ApplicationDbContext : DbContext
     public DbSet<StudyGuidePromptResult> StudyGuidePromptResults => Set<StudyGuidePromptResult>();
 
     public DbSet<StudyGuideDedupResult> StudyGuideDedupResults => Set<StudyGuideDedupResult>();
+
+    public DbSet<StudyGuideUpload> StudyGuideUploads => Set<StudyGuideUpload>();
 
     public DbSet<FeaturedItem> FeaturedItems => Set<FeaturedItem>();
 

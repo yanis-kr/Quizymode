@@ -52,6 +52,8 @@ import {
   type QuizRunScope,
   type QuizRunState,
 } from "@/features/items/quiz/quizRun";
+import { recordGuestCompletion } from "@/features/guestHistory/guestHistoryStorage";
+import { recordAuthenticatedCompletion } from "@/features/studySessions/recordStudySession";
 
 const QuizModePage = () => {
   const { category: categorySlug, collectionId, itemId } = useParams();
@@ -93,7 +95,7 @@ const QuizModePage = () => {
     keywords,
     searchParams,
   ]);
-  const { isAuthenticated, userId } = useAuth();
+  const { isAuthenticated, isLoading: isAuthLoading, userId } = useAuth();
   const identityKey = isAuthenticated ? `user:${userId ?? "unknown"}` : "guest";
   const previousIdentityKey = useRef(identityKey);
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -568,6 +570,17 @@ const QuizModePage = () => {
     completionPublishedRunIds.current.add(run.runId);
     publishQuizCompletion(snapshot);
     trackQuizRunCompleted(snapshot);
+    // Browser-local guest history (AC 3.6.13): only runs started and completed anonymously; upserted by run ID.
+    recordGuestCompletion(snapshot, {
+      isAuthenticated,
+      isAuthLoading,
+      runIdentityKey: run.identityKey,
+      currentIdentityKey: identityKey,
+    });
+    // Authenticated history (AC 3.6.14): only runs started and completed under the same signed-in identity.
+    if (isAuthenticated && !isAuthLoading && run.identityKey === identityKey) {
+      void recordAuthenticatedCompletion(snapshot);
+    }
     // Persist the one-shot publication marker with the run after notifying consumers.
     // eslint-disable-next-line react-hooks/set-state-in-effect
     setRun((current) =>
@@ -575,7 +588,7 @@ const QuizModePage = () => {
         ? reduceQuizRun(current, { type: "mark-completion-emitted" })
         : current
     );
-  }, [run]);
+  }, [run, isAuthenticated, isAuthLoading, identityKey]);
 
   const handleAnswerSelect = (answer: string) => {
     if (!run || !currentItem || currentOutcome) return;

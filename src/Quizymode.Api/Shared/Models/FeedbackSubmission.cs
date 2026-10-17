@@ -18,5 +18,11 @@ public sealed class FeedbackSubmission
 
     public string? UserAgent { get; set; }
 
+    /// <summary>Analytics session the submission was sent from, when known (ANALYTICS-006).</summary>
+    public string? SessionId { get; set; }
+
+    /// <summary>Triage state: New, Reviewed, or Archived (see <see cref="FeedbackStatus"/>).</summary>
+    public string Status { get; set; } = FeedbackStatus.New;
+
     public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
 }

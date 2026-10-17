@@ -1,12 +1,14 @@
 import type { LandingPageResponse } from "@/api/admin";
+import { formatArea, formatScope } from "./sessionFormatting";
 
 interface LandingPagesTableProps {
   landingPages: LandingPageResponse[];
 }
 
 /**
- * Where visitors arrive, and how often they leave without going anywhere else.
- * A high bounce rate on one entry path points at that page, not at traffic quality.
+ * Where visitors arrive, grouped by feature area and content scope, and how often
+ * they leave without going anywhere else. A high bounce rate on one entry group
+ * points at that page, not at traffic quality.
  */
 const LandingPagesTable = ({ landingPages }: LandingPagesTableProps) => {
   if (landingPages.length === 0) {
@@ -23,7 +25,7 @@ const LandingPagesTable = ({ landingPages }: LandingPagesTableProps) => {
         <thead>
           <tr>
             <th className="py-2 text-left text-xs font-semibold uppercase tracking-wide text-slate-500">
-              Entry page
+              Entry area / scope
             </th>
             <th className="py-2 text-right text-xs font-semibold uppercase tracking-wide text-slate-500">
               Sessions
@@ -38,9 +40,19 @@ const LandingPagesTable = ({ landingPages }: LandingPagesTableProps) => {
         </thead>
         <tbody className="divide-y divide-slate-100">
           {landingPages.map((landing) => (
-            <tr key={landing.path}>
-              <td className="max-w-xs break-all py-3 pr-4 text-sm font-medium text-slate-900">
-                {landing.path}
+            <tr key={`${landing.area}|${landing.scopeType ?? ""}|${landing.scopeKey ?? ""}`}>
+              <td className="max-w-xs break-all py-3 pr-4 text-sm text-slate-900">
+                <div className="font-medium">
+                  {formatArea(landing.area)}
+                  {formatScope(landing.scopeType, landing.scopeKey) && (
+                    <span className="ml-1.5 font-normal text-slate-600">
+                      {formatScope(landing.scopeType, landing.scopeKey)}
+                    </span>
+                  )}
+                </div>
+                <div className="mt-0.5 text-xs text-slate-500">
+                  e.g. {landing.path}
+                </div>
               </td>
               <td className="py-3 text-right text-sm text-slate-700">
                 {landing.sessions}

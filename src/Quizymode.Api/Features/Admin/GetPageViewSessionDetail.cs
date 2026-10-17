@@ -39,7 +39,9 @@ public static class GetPageViewSessionDetail
         string Url,
         bool IsAuthenticated,
         DateTime CreatedUtc,
-        int? DwellSeconds);
+        int? DwellSeconds,
+        string Area,
+        bool IsItemStep);
 
     public sealed class Endpoint : IEndpoint
     {
@@ -48,7 +50,7 @@ public static class GetPageViewSessionDetail
             app.MapGet("admin/page-view-sessions/{sessionId}", Handler)
                 .WithTags("Admin")
                 .WithSummary("Get the ordered page journey for one session (Admin only)")
-                .WithDescription("Returns every page hit in a session in order, with dwell time per step. The final step has no dwell time because no exit event is recorded. Internal sessions return 404 unless includeInternal=true.")
+                .WithDescription("Returns every page hit in a session in order, with its feature area and dwell time per step. The final step has no dwell time because no exit event is recorded. Internal sessions return 404 unless includeInternal=true.")
                 .RequireAuthorization("Admin")
                 .Produces<Response>(StatusCodes.Status200OK)
                 .ProducesProblem(StatusCodes.Status400BadRequest)
@@ -137,7 +139,12 @@ public static class GetPageViewSessionDetail
                 // dwell time is genuinely unknown rather than zero.
                 DwellSeconds: index == hits.Count - 1
                     ? null
-                    : (int)Math.Round((hits[index + 1].CreatedUtc - hit.CreatedUtc).TotalSeconds)))
+                    : (int)Math.Round((hits[index + 1].CreatedUtc - hit.CreatedUtc).TotalSeconds),
+                // Rows not yet reached by the classification backfill are classified on the fly.
+                Area: hit.Area ?? PageHitClassifier.Classify(hit.Path, hit.QueryString).Area,
+                IsItemStep: hit.Area is null
+                    ? PageHitClassifier.Classify(hit.Path, hit.QueryString).IsItemStep
+                    : hit.IsItemStep))
             .ToList();
 
         Guid? userId = hits.LastOrDefault(hit => hit.UserId.HasValue)?.UserId;

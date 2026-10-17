@@ -1,3 +1,4 @@
+using FluentValidation;
 using Quizymode.Api.Data;
 using Quizymode.Api.Features.Ideas;
 using Quizymode.Api.Services;
@@ -17,22 +18,36 @@ public static class ApproveIdeaAdmin
                 .WithSummary("Approve an idea for publication")
                 .RequireAuthorization("Admin")
                 .Produces<IdeaSummaryResponse>(StatusCodes.Status200OK)
+                .Produces(StatusCodes.Status400BadRequest)
                 .Produces(StatusCodes.Status404NotFound);
         }
 
         private static async Task<IResult> Handler(
             Guid id,
+            IdeasAdmin.ApproveRequest? request,
+            IValidator<IdeasAdmin.ApproveRequest> validator,
             ApplicationDbContext db,
             IUserContext userContext,
             IAuditService auditService,
             CancellationToken cancellationToken)
         {
+            if (request is not null)
+            {
+                FluentValidation.Results.ValidationResult validationResult =
+                    await validator.ValidateAsync(request, cancellationToken);
+                if (!validationResult.IsValid)
+                {
+                    return Results.BadRequest(validationResult.Errors);
+                }
+            }
+
             Result<IdeaSummaryResponse> result = await IdeasAdmin.HandleApproveAsync(
                 id,
                 db,
                 userContext,
                 auditService,
-                cancellationToken);
+                cancellationToken,
+                request?.ModerationNotes);
 
             return result.Match(
                 value => Results.Ok(value),

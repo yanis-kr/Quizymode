@@ -1,0 +1,53 @@
+import { useCallback, useEffect, useRef, useState } from "react";
+import { useAuth } from "@/contexts/AuthContext";
+import { claimGuestProgress, type ClaimGuestProgressResult } from "./claimGuestProgress";
+
+/**
+ * Confirms (or reports failure of) moving browser-local guest results into the account right after sign-in.
+ * Import is automatic, runs once per page session, and renders nothing when there is nothing to claim.
+ */
+export function GuestProgressClaim() {
+  const { isAuthenticated, isLoading } = useAuth();
+  const [result, setResult] = useState<ClaimGuestProgressResult>({ status: "none" });
+  const [busy, setBusy] = useState(false);
+  const started = useRef(false);
+
+  const run = useCallback(async () => {
+    setBusy(true);
+    const outcome = await claimGuestProgress();
+    setResult(outcome);
+    setBusy(false);
+  }, []);
+
+  useEffect(() => {
+    if (!isAuthenticated || isLoading || started.current) return;
+    started.current = true;
+    // eslint-disable-next-line react-hooks/set-state-in-effect
+    void run();
+  }, [isAuthenticated, isLoading, run]);
+
+  if (!isAuthenticated || result.status === "none") return null;
+
+  if (result.status === "saved") {
+    return (
+      <div role="status" className="mx-auto mt-3 max-w-3xl rounded-2xl border border-emerald-400/30 bg-emerald-500/10 px-4 py-3 text-sm text-emerald-100">
+        Saved {result.saved} quiz {result.saved === 1 ? "result" : "results"} from this browser to your account.
+        They are marked as imported and unverified.
+        {result.skipped > 0 ? ` ${result.skipped} could not be saved and were discarded.` : ""}
+        <button type="button" className="ml-3 underline" onClick={() => setResult({ status: "none" })}>
+          Dismiss
+        </button>
+      </div>
+    );
+  }
+
+  return (
+    <div role="alert" className="mx-auto mt-3 max-w-3xl rounded-2xl border border-amber-400/30 bg-amber-500/10 px-4 py-3 text-sm text-amber-100">
+      We could not save your {result.pending} earlier quiz {result.pending === 1 ? "result" : "results"} yet. They are still in
+      this browser.
+      <button type="button" className="ml-3 underline disabled:opacity-60" disabled={busy} onClick={() => void run()}>
+        {busy ? "Retrying..." : "Retry"}
+      </button>
+    </div>
+  );
+}

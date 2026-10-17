@@ -2,7 +2,6 @@ using FluentValidation;
 using Microsoft.EntityFrameworkCore;
 using Quizymode.Api.Data;
 using Quizymode.Api.Services;
-using Quizymode.Api.Shared.Http;
 using Quizymode.Api.Shared.Kernel;
 using Quizymode.Api.Shared.Models;
 
@@ -31,183 +30,6 @@ public static class IdeaComments
             RuleFor(x => x.Text)
                 .NotEmpty()
                 .MaximumLength(2000);
-        }
-    }
-
-    public sealed class GetEndpoint
-    {
-        public void MapEndpoint(IEndpointRouteBuilder app)
-        {
-            app.MapGet("ideas/{ideaId:guid}/comments", Handler)
-                .WithTags("Ideas")
-                .WithSummary("Get comments for a published idea")
-                .Produces<IdeaCommentsResponse>(StatusCodes.Status200OK)
-                .Produces(StatusCodes.Status404NotFound);
-        }
-
-        private static async Task<IResult> Handler(
-            Guid ideaId,
-            ApplicationDbContext db,
-            IUserContext userContext,
-            CancellationToken cancellationToken)
-        {
-            Result<IdeaCommentsResponse> result = await HandleGetAsync(ideaId, db, userContext, cancellationToken);
-
-            return result.Match(
-                value => Results.Ok(value),
-                failure => failure.Error.Type == ErrorType.NotFound
-                    ? Results.NotFound()
-                    : CustomResults.Problem(result));
-        }
-    }
-
-    public sealed class CreateEndpoint
-    {
-        public void MapEndpoint(IEndpointRouteBuilder app)
-        {
-            app.MapPost("ideas/{ideaId:guid}/comments", Handler)
-                .WithTags("Ideas")
-                .WithSummary("Create a comment on a published idea")
-                .RequireAuthorization()
-                .RequireRateLimiting("ideas-comments")
-                .Produces<IdeaCommentResponse>(StatusCodes.Status201Created)
-                .Produces(StatusCodes.Status400BadRequest)
-                .Produces(StatusCodes.Status401Unauthorized)
-                .Produces(StatusCodes.Status404NotFound)
-                .Produces(StatusCodes.Status429TooManyRequests);
-        }
-
-        private static async Task<IResult> Handler(
-            Guid ideaId,
-            CreateRequest request,
-            IValidator<CreateRequest> validator,
-            ApplicationDbContext db,
-            IUserContext userContext,
-            ITextModerationService textModerationService,
-            IAuditService auditService,
-            CancellationToken cancellationToken)
-        {
-            if (!userContext.IsAuthenticated || string.IsNullOrWhiteSpace(userContext.UserId))
-            {
-                return CustomResults.Unauthorized();
-            }
-
-            FluentValidation.Results.ValidationResult validationResult = await validator.ValidateAsync(request, cancellationToken);
-            if (!validationResult.IsValid)
-            {
-                return Results.BadRequest(validationResult.Errors);
-            }
-
-            Result<IdeaCommentResponse> result = await HandleCreateAsync(
-                ideaId,
-                request,
-                db,
-                userContext,
-                textModerationService,
-                auditService,
-                cancellationToken);
-
-            return result.Match(
-                value => Results.Created($"/api/ideas/{ideaId}/comments/{value.Id}", value),
-                failure => failure.Error.Type == ErrorType.NotFound
-                    ? Results.NotFound()
-                    : CustomResults.Problem(result));
-        }
-    }
-
-    public sealed class UpdateEndpoint
-    {
-        public void MapEndpoint(IEndpointRouteBuilder app)
-        {
-            app.MapPut("ideas/{ideaId:guid}/comments/{commentId:guid}", Handler)
-                .WithTags("Ideas")
-                .WithSummary("Update an idea comment")
-                .RequireAuthorization()
-                .Produces<IdeaCommentResponse>(StatusCodes.Status200OK)
-                .Produces(StatusCodes.Status400BadRequest)
-                .Produces(StatusCodes.Status401Unauthorized)
-                .Produces(StatusCodes.Status403Forbidden)
-                .Produces(StatusCodes.Status404NotFound);
-        }
-
-        private static async Task<IResult> Handler(
-            Guid ideaId,
-            Guid commentId,
-            UpdateRequest request,
-            IValidator<UpdateRequest> validator,
-            ApplicationDbContext db,
-            IUserContext userContext,
-            ITextModerationService textModerationService,
-            IAuditService auditService,
-            CancellationToken cancellationToken)
-        {
-            if (!userContext.IsAuthenticated || string.IsNullOrWhiteSpace(userContext.UserId))
-            {
-                return CustomResults.Unauthorized();
-            }
-
-            FluentValidation.Results.ValidationResult validationResult = await validator.ValidateAsync(request, cancellationToken);
-            if (!validationResult.IsValid)
-            {
-                return Results.BadRequest(validationResult.Errors);
-            }
-
-            Result<IdeaCommentResponse> result = await HandleUpdateAsync(
-                ideaId,
-                commentId,
-                request,
-                db,
-                userContext,
-                textModerationService,
-                auditService,
-                cancellationToken);
-
-            return result.Match(
-                value => Results.Ok(value),
-                failure => failure.Error.Code == "IdeaComments.Forbidden"
-                    ? Results.Forbid()
-                    : failure.Error.Type == ErrorType.NotFound
-                        ? Results.NotFound()
-                        : CustomResults.Problem(result));
-        }
-    }
-
-    public sealed class DeleteEndpoint
-    {
-        public void MapEndpoint(IEndpointRouteBuilder app)
-        {
-            app.MapDelete("ideas/{ideaId:guid}/comments/{commentId:guid}", Handler)
-                .WithTags("Ideas")
-                .WithSummary("Delete an idea comment")
-                .RequireAuthorization()
-                .Produces(StatusCodes.Status204NoContent)
-                .Produces(StatusCodes.Status401Unauthorized)
-                .Produces(StatusCodes.Status403Forbidden)
-                .Produces(StatusCodes.Status404NotFound);
-        }
-
-        private static async Task<IResult> Handler(
-            Guid ideaId,
-            Guid commentId,
-            ApplicationDbContext db,
-            IUserContext userContext,
-            IAuditService auditService,
-            CancellationToken cancellationToken)
-        {
-            if (!userContext.IsAuthenticated || string.IsNullOrWhiteSpace(userContext.UserId))
-            {
-                return CustomResults.Unauthorized();
-            }
-
-            Result result = await HandleDeleteAsync(ideaId, commentId, db, userContext, auditService, cancellationToken);
-
-            return result.Match(
-                () => Results.NoContent(),
-                failure => failure.Error.Code == "IdeaComments.Forbidden"
-                    ? Results.Forbid()
-                    : failure.Error.Type == ErrorType.NotFound
-                        ? Results.NotFound()
-                        : CustomResults.Problem(result));
         }
     }
 
@@ -396,9 +218,10 @@ public static class IdeaComments
                 return Result.Failure(Error.NotFound("IdeaComments.NotFound", "Comment not found."));
             }
 
-            if (!string.Equals(comment.CreatedBy, userContext.UserId, StringComparison.Ordinal))
+            if (!userContext.IsAdmin &&
+                !string.Equals(comment.CreatedBy, userContext.UserId, StringComparison.Ordinal))
             {
-                return Result.Failure(Error.Validation("IdeaComments.Forbidden", "You can only delete your own comments."));
+                return Result.Failure(Error.Validation("IdeaComments.Forbidden", "You can only delete your own comments unless you are an admin."));
             }
 
             db.IdeaComments.Remove(comment);

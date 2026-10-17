@@ -3,6 +3,7 @@ import { useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useQuery } from "@tanstack/react-query";
 import { useAuth } from "@/contexts/AuthContext";
+import { GuestProgressClaim } from "@/features/guestHistory/GuestProgressClaim";
 import { usersApi } from "@/api/users";
 import { getUserGuideUrl } from "@/utils/userGuideLink";
 import { SEO } from "@/components/SEO";
@@ -89,6 +90,10 @@ function getFallbackTitle(pathname: string): string | undefined {
 
   if (pathname === "/study-guide/import") {
     return "Import Study Guide";
+  }
+
+  if (pathname === "/study-guide/upload") {
+    return "Generate Quiz";
   }
 
   if (pathname === "/admin" || pathname.startsWith("/admin/")) {
@@ -236,6 +241,12 @@ const Layout = ({ children }: LayoutProps) => {
                     >
                       Add Items
                     </Link>
+                    <Link
+                      to="/study-guide/upload"
+                      className={desktopNavLinkClass(isPathActive("/study-guide/upload"))}
+                    >
+                      Generate Quiz
+                    </Link>
                     {userIsAdmin && (
                       <Link
                         to="/admin"
@@ -339,6 +350,13 @@ const Layout = ({ children }: LayoutProps) => {
                   >
                     Add Items
                   </Link>
+                  <Link
+                    to="/study-guide/upload"
+                    className={mobileNavLinkClass(isPathActive("/study-guide/upload"))}
+                    onClick={closeMobileMenu}
+                  >
+                    Generate Quiz
+                  </Link>
                   {userIsAdmin && (
                     <Link
                       to="/admin"
@@ -403,6 +421,7 @@ const Layout = ({ children }: LayoutProps) => {
           </div>
         )}
       </nav>
+      <GuestProgressClaim />
       <main
         className={
           isFullBleedPage
