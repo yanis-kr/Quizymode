@@ -526,10 +526,53 @@ export interface QuestionQualityReportResponse {
   items: QuestionQualityItemResponse[];
 }
 
+export interface LifecycleCohortResponse {
+  weekStartUtc: string;
+  signups: number;
+  activated7Days: number;
+  activatedEligible: number;
+  activeWeek1: number;
+  eligibleWeek1: number;
+  activeWeek2: number;
+  eligibleWeek2: number;
+  activeWeek4: number;
+  eligibleWeek4: number;
+}
+
+export interface LifecycleSourceResponse {
+  channel: string;
+  campaign: string | null;
+  signups: number;
+  activated7Days: number;
+  activatedEligible: number;
+  activeWeek1: number;
+  eligibleWeek1: number;
+}
+
+export interface LifecycleReportResponse {
+  windowStartUtc: string;
+  windowEndUtc: string;
+  totalSignups: number;
+  cohorts: LifecycleCohortResponse[];
+  sources: LifecycleSourceResponse[];
+}
+
+export type AdminUserSortBy =
+  | "lastActive"
+  | "sessions"
+  | "studySessions"
+  | "collections"
+  | "items"
+  | "ratings"
+  | "comments"
+  | "channel"
+  | "registered";
+
 export type AdminUserActivityFilter =
   | "all"
   | "with-activity"
-  | "without-activity";
+  | "without-activity"
+  | "dormant";
 
 export interface AdminUsersSummaryResponse {
   activityWindowStartUtc: string;
@@ -554,6 +597,13 @@ export interface AdminUserOverviewResponse {
   lastOpenedUtc?: string | null;
   lastKnownCountry?: string | null;
   isInternal: boolean;
+  sessionsInWindow: number;
+  studySessionsInWindow: number;
+  collectionsCreated: number;
+  itemsCreated: number;
+  ratings: number;
+  comments: number;
+  signupChannel: string;
 }
 
 export interface AdminUsersResponse {
@@ -889,7 +939,8 @@ export const adminApi = {
     page: number = 1,
     pageSize: number = 25,
     landingPagesLimit: number = 10,
-    includeInternal: boolean = false
+    includeInternal: boolean = false,
+    userId?: string
   ): Promise<PageViewSessionsResponse> => {
     const params: Record<string, string | number | boolean> = {
       days,
@@ -902,6 +953,9 @@ export const adminApi = {
     };
     if (minPages && minPages > 1) {
       params.minPages = minPages;
+    }
+    if (userId) {
+      params.userId = userId;
     }
     if (includeInternal) {
       params.includeInternal = true;
@@ -1050,19 +1104,31 @@ export const adminApi = {
     return response.data;
   },
 
+  getLifecycleReport: async (weeks: number = 12): Promise<LifecycleReportResponse> => {
+    const response = await apiClient.get<LifecycleReportResponse>(
+      "/admin/analytics/lifecycle",
+      { params: { weeks } }
+    );
+    return response.data;
+  },
+
   getUsers: async (
     search?: string,
     activityDays: number = 30,
     activityFilter: AdminUserActivityFilter = "all",
     page: number = 1,
     pageSize: number = 25,
-    includeInternal: boolean = false
+    includeInternal: boolean = false,
+    sortBy: AdminUserSortBy = "lastActive",
+    sortDir: "asc" | "desc" = "desc"
   ): Promise<AdminUsersResponse> => {
     const params: Record<string, string | number | boolean> = {
       activityDays,
       activityFilter,
       page,
       pageSize,
+      sortBy,
+      sortDir,
     };
     if (search && search.trim().length > 0) {
       params.search = search.trim();

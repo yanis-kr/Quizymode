@@ -190,6 +190,20 @@
               "default": false,
               "$ref": "#/components/schemas/System.Boolean"
             }
+          },
+          {
+            "name": "sortBy",
+            "in": "query",
+            "schema": {
+              "$ref": "#/components/schemas/System.String"
+            }
+          },
+          {
+            "name": "sortDir",
+            "in": "query",
+            "schema": {
+              "$ref": "#/components/schemas/System.String"
+            }
           }
         ],
         "responses": {
@@ -1136,6 +1150,47 @@
         }
       }
     },
+    "/admin/analytics/lifecycle": {
+      "get": {
+        "tags": [
+          "Admin"
+        ],
+        "summary": "Get registered-user lifecycle cohorts (Admin only)",
+        "description": "Returns weekly signup cohorts with 7-day activation and week 1, 2, and 4 retention, plus signup-source attribution by first-touch channel and campaign. Internal users are excluded.",
+        "parameters": [
+          {
+            "name": "weeks",
+            "in": "query",
+            "schema": {
+              "default": 12,
+              "$ref": "#/components/schemas/System.Int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Quizymode.Api.Features.Admin.GetLifecycleReport.Response"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "/admin/page-view-analytics": {
       "get": {
         "tags": [
@@ -1405,6 +1460,13 @@
             "schema": {
               "default": false,
               "$ref": "#/components/schemas/System.Boolean"
+            }
+          },
+          {
+            "name": "userId",
+            "in": "query",
+            "schema": {
+              "$ref": "#/components/schemas/System.NullableOfSystem.Guid"
             }
           }
         ],
@@ -5135,7 +5197,14 @@
           "totalPageViewsInWindow",
           "lastOpenedUtc",
           "lastKnownCountry",
-          "isInternal"
+          "isInternal",
+          "sessionsInWindow",
+          "studySessionsInWindow",
+          "collectionsCreated",
+          "itemsCreated",
+          "ratings",
+          "comments",
+          "signupChannel"
         ],
         "type": "object",
         "properties": {
@@ -5196,6 +5265,27 @@
           },
           "isInternal": {
             "$ref": "#/components/schemas/System.Boolean"
+          },
+          "sessionsInWindow": {
+            "$ref": "#/components/schemas/System.Int32"
+          },
+          "studySessionsInWindow": {
+            "$ref": "#/components/schemas/System.Int32"
+          },
+          "collectionsCreated": {
+            "$ref": "#/components/schemas/System.Int32"
+          },
+          "itemsCreated": {
+            "$ref": "#/components/schemas/System.Int32"
+          },
+          "ratings": {
+            "$ref": "#/components/schemas/System.Int32"
+          },
+          "comments": {
+            "$ref": "#/components/schemas/System.Int32"
+          },
+          "signupChannel": {
+            "$ref": "#/components/schemas/System.String"
           }
         }
       },
@@ -6710,6 +6800,125 @@
           "averageItemsReached": {
             "description": "Mean questions answered (quiz) or cards revealed (flashcards) per started run.",
             "$ref": "#/components/schemas/System.Double"
+          }
+        }
+      },
+      "Quizymode.Api.Features.Admin.GetLifecycleReport.CohortResponse": {
+        "required": [
+          "weekStartUtc",
+          "signups",
+          "activated7Days",
+          "activatedEligible",
+          "activeWeek1",
+          "eligibleWeek1",
+          "activeWeek2",
+          "eligibleWeek2",
+          "activeWeek4",
+          "eligibleWeek4"
+        ],
+        "type": "object",
+        "properties": {
+          "weekStartUtc": {
+            "description": "Monday of the signup week.",
+            "$ref": "#/components/schemas/System.DateTime"
+          },
+          "signups": {
+            "$ref": "#/components/schemas/System.Int32"
+          },
+          "activated7Days": {
+            "description": "Users with a completed quiz within 7 days of signup.",
+            "$ref": "#/components/schemas/System.Int32"
+          },
+          "activatedEligible": {
+            "description": "Users whose 7-day activation window has ended.",
+            "$ref": "#/components/schemas/System.Int32"
+          },
+          "activeWeek1": {
+            "$ref": "#/components/schemas/System.Int32"
+          },
+          "eligibleWeek1": {
+            "$ref": "#/components/schemas/System.Int32"
+          },
+          "activeWeek2": {
+            "$ref": "#/components/schemas/System.Int32"
+          },
+          "eligibleWeek2": {
+            "$ref": "#/components/schemas/System.Int32"
+          },
+          "activeWeek4": {
+            "$ref": "#/components/schemas/System.Int32"
+          },
+          "eligibleWeek4": {
+            "$ref": "#/components/schemas/System.Int32"
+          }
+        }
+      },
+      "Quizymode.Api.Features.Admin.GetLifecycleReport.Response": {
+        "required": [
+          "windowStartUtc",
+          "windowEndUtc",
+          "totalSignups",
+          "cohorts",
+          "sources"
+        ],
+        "type": "object",
+        "properties": {
+          "windowStartUtc": {
+            "$ref": "#/components/schemas/System.DateTime"
+          },
+          "windowEndUtc": {
+            "$ref": "#/components/schemas/System.DateTime"
+          },
+          "totalSignups": {
+            "$ref": "#/components/schemas/System.Int32"
+          },
+          "cohorts": {
+            "$ref": "#/components/schemas/System.Collections.Generic.ListOfQuizymode.Api.Features.Admin.GetLifecycleReport.CohortResponse"
+          },
+          "sources": {
+            "$ref": "#/components/schemas/System.Collections.Generic.ListOfQuizymode.Api.Features.Admin.GetLifecycleReport.SourceResponse"
+          }
+        }
+      },
+      "Quizymode.Api.Features.Admin.GetLifecycleReport.SourceResponse": {
+        "required": [
+          "channel",
+          "campaign",
+          "signups",
+          "activated7Days",
+          "activatedEligible",
+          "activeWeek1",
+          "eligibleWeek1"
+        ],
+        "type": "object",
+        "properties": {
+          "channel": {
+            "$ref": "#/components/schemas/System.String"
+          },
+          "campaign": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/components/schemas/System.String"
+              }
+            ]
+          },
+          "signups": {
+            "$ref": "#/components/schemas/System.Int32"
+          },
+          "activated7Days": {
+            "$ref": "#/components/schemas/System.Int32"
+          },
+          "activatedEligible": {
+            "$ref": "#/components/schemas/System.Int32"
+          },
+          "activeWeek1": {
+            "$ref": "#/components/schemas/System.Int32"
+          },
+          "eligibleWeek1": {
+            "$ref": "#/components/schemas/System.Int32"
           }
         }
       },
@@ -13585,6 +13794,18 @@
         "type": "array",
         "items": {
           "$ref": "#/components/schemas/Quizymode.Api.Features.Admin.GetLearningReport.ScopeResponse"
+        }
+      },
+      "System.Collections.Generic.ListOfQuizymode.Api.Features.Admin.GetLifecycleReport.CohortResponse": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/Quizymode.Api.Features.Admin.GetLifecycleReport.CohortResponse"
+        }
+      },
+      "System.Collections.Generic.ListOfQuizymode.Api.Features.Admin.GetLifecycleReport.SourceResponse": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/Quizymode.Api.Features.Admin.GetLifecycleReport.SourceResponse"
         }
       },
       "System.Collections.Generic.ListOfQuizymode.Api.Features.Admin.GetPageViewAnalytics.ContentScopeRowResponse": {

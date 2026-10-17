@@ -14,6 +14,7 @@ import FunnelTab from "../components/FunnelTab";
 import InternalBrowserToggle from "../components/InternalBrowserToggle";
 import LearningTab from "../components/LearningTab";
 import ContentTab from "../components/ContentTab";
+import LifecycleTab from "../components/LifecycleTab";
 import QuestionQualityTab from "../components/QuestionQualityTab";
 import { ContentScopeTables, FeatureAreaTable } from "../components/PagesBreakdown";
 import { GROUP_BY_OPTIONS, type PagesGroupBy } from "../components/pagesGroupBy";
@@ -36,7 +37,7 @@ const VISITOR_OPTIONS: Array<{ label: string; value: PageViewVisitorType }> = [
 const PAGE_SIZE = 25;
 const TOP_PAGES_LIMIT = 10;
 
-type AnalyticsTab = "pages" | "sessions" | "acquisition" | "funnel" | "learning" | "content" | "questions" | "trends";
+type AnalyticsTab = "pages" | "sessions" | "acquisition" | "funnel" | "learning" | "content" | "questions" | "lifecycle" | "trends";
 
 const TAB_OPTIONS: Array<{ label: string; value: AnalyticsTab; hint: string }> = [
   { label: "Pages", value: "pages", hint: "Which features and content were used" },
@@ -46,6 +47,7 @@ const TAB_OPTIONS: Array<{ label: string; value: AnalyticsTab; hint: string }> =
   { label: "Learning", value: "learning", hint: "How study runs go" },
   { label: "Content", value: "content", hint: "What content gets used" },
   { label: "Questions", value: "questions", hint: "Which questions look wrong" },
+  { label: "Lifecycle", value: "lifecycle", hint: "Signups, activation, retention" },
   { label: "Trends", value: "trends", hint: "Up to 2 years, from daily rollups" },
 ];
 
@@ -253,6 +255,8 @@ const PageViewAnalyticsPage = () => {
       {tab === "questions" && (
         <QuestionQualityTab days={days} includeBots={includeBots} includeInternal={includeInternal} />
       )}
+
+      {tab === "lifecycle" && <LifecycleTab />}
 
       {tab === "pages" && isLoading && <LoadingSpinner />}
 

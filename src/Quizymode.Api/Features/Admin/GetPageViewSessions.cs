@@ -25,7 +25,8 @@ public static class GetPageViewSessions
         int Page = 1,
         int PageSize = 25,
         int LandingPagesLimit = 10,
-        bool IncludeInternal = false);
+        bool IncludeInternal = false,
+        Guid? UserId = null);
 
     public sealed record Response(
         SummaryResponse Summary,
@@ -146,11 +147,12 @@ public static class GetPageViewSessions
             int pageSize = 25,
             int landingPagesLimit = 10,
             bool includeInternal = false,
+            Guid? userId = null,
             ApplicationDbContext db = null!,
             IIpGeolocationService geoService = null!,
             CancellationToken cancellationToken = default)
         {
-            QueryRequest request = new(days, outcome, minPages, includeBots, sortBy, page, pageSize, landingPagesLimit, includeInternal);
+            QueryRequest request = new(days, outcome, minPages, includeBots, sortBy, page, pageSize, landingPagesLimit, includeInternal, userId);
             Result<Response> result = await HandleAsync(request, db, geoService, cancellationToken);
 
             return result.Match(
@@ -198,6 +200,15 @@ public static class GetPageViewSessions
         IQueryable<PageView> windowQuery = db.PageViews
             .AsNoTracking()
             .Where(pageView => pageView.CreatedUtc >= windowStartUtc && pageView.CreatedUtc <= windowEndUtc);
+
+        // A user filter keeps every hit of the sessions the user took part in (user detail view).
+        if (request.UserId is Guid filterUserId)
+        {
+            IQueryable<string> userSessionIds = db.PageViews
+                .Where(pageView => pageView.UserId == filterUserId)
+                .Select(pageView => pageView.SessionId);
+            windowQuery = windowQuery.Where(pageView => userSessionIds.Contains(pageView.SessionId));
+        }
 
         // Bot sessions are reported even when excluded: the gap between the two numbers is
         // usually the explanation for anonymous traffic looking like one-off page checks.
