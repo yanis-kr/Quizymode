@@ -2,6 +2,8 @@ import { beforeEach, describe, expect, it, vi } from "vitest";
 import { claimGuestProgress } from "./claimGuestProgress";
 
 const { mockImport } = vi.hoisted(() => ({ mockImport: vi.fn() }));
+const { mockTrackOnce } = vi.hoisted(() => ({ mockTrackOnce: vi.fn() }));
+vi.mock("@/features/analytics/analyticsEvents", () => ({ trackEventOnce: mockTrackOnce }));
 vi.mock("@/api/studySessions", () => ({ studySessionsApi: { importGuest: mockImport } }));
 
 const { mockRead, mockClear } = vi.hoisted(() => ({ mockRead: vi.fn(), mockClear: vi.fn() }));
@@ -34,6 +36,16 @@ describe("claimGuestProgress", () => {
     expect(mockImport).toHaveBeenCalledWith({ version: 1, runs: [summary] });
     expect(result).toEqual({ status: "saved", saved: 2, skipped: 1 });
     expect(mockClear).toHaveBeenCalledTimes(1);
+    expect(mockTrackOnce).toHaveBeenCalledWith("imported", { name: "guest_state_imported", contextType: "auth" });
+  });
+
+  it("does not record the funnel event when nothing was saved", async () => {
+    mockRead.mockReturnValue([summary]);
+    mockImport.mockResolvedValueOnce({ imported: 0, duplicates: 0, rejectedRunIds: ["run-1"] });
+
+    await claimGuestProgress();
+
+    expect(mockTrackOnce).not.toHaveBeenCalled();
   });
 
   it("keeps guest storage when the import fails", async () => {
@@ -42,5 +54,6 @@ describe("claimGuestProgress", () => {
 
     expect(await claimGuestProgress()).toEqual({ status: "failed", pending: 1 });
     expect(mockClear).not.toHaveBeenCalled();
+    expect(mockTrackOnce).not.toHaveBeenCalled();
   });
 });

@@ -43,7 +43,12 @@ public static class GetAnalyticsOverview
     /// <param name="Day">First UTC day the version appeared in non-internal, non-bot traffic.</param>
     public sealed record ReleaseMarker(string Version, DateOnly Day);
 
-    public sealed record WorkQueue(int ItemsAwaitingReview, int PendingPrivateKeywords, int IdeasAwaitingModeration);
+    /// <param name="NewClientErrorGroups">Front-end error groups first seen in the window, bots and internal traffic excluded (OBS-001).</param>
+    public sealed record WorkQueue(
+        int ItemsAwaitingReview,
+        int PendingPrivateKeywords,
+        int IdeasAwaitingModeration,
+        int NewClientErrorGroups);
 
     public sealed record Response(
         int Days,
@@ -126,13 +131,17 @@ public static class GetAnalyticsOverview
 
         List<ReleaseMarker> markers = await BuildReleaseMarkersAsync(db, windowStart, windowEndExclusive, cancellationToken);
 
+        Result<GetClientErrors.Response> clientErrors = await GetClientErrors.HandleAsync(
+            new GetClientErrors.QueryRequest(request.Days), db, cancellationToken);
+
         WorkQueue workQueue = new(
             await db.Items.CountAsync(item => item.ReadyForReview, cancellationToken),
             await db.Keywords.CountAsync(
                 keyword => keyword.IsPrivate && keyword.IsReviewPending
                     && db.ItemKeywords.Any(itemKeyword => itemKeyword.KeywordId == keyword.Id),
                 cancellationToken),
-            await db.Ideas.CountAsync(idea => idea.ModerationState == IdeaModerationState.PendingReview, cancellationToken));
+            await db.Ideas.CountAsync(idea => idea.ModerationState == IdeaModerationState.PendingReview, cancellationToken),
+            clientErrors.IsSuccess ? clientErrors.Value.NewGroups : 0);
 
         return Result.Success(new Response(
             request.Days,

@@ -101,6 +101,40 @@ public sealed class GetAnalyticsOverviewTests : DatabaseTestFixture, IAsyncLifet
 
         result.Value.WorkQueue.IdeasAwaitingModeration.Should().Be(1);
         result.Value.WorkQueue.ItemsAwaitingReview.Should().Be(0);
+        result.Value.WorkQueue.NewClientErrorGroups.Should().Be(0);
+    }
+
+    [Fact]
+    public async Task Overview_CountsNewClientErrorGroupsExcludingInternalAndBots()
+    {
+        // The client-error report windows on the real clock, so these rows are dated relative to it.
+        static ClientError Error(string fingerprint, string session, int daysAgo = 1, bool internalTraffic = false, bool bot = false) => new()
+        {
+            Id = Guid.NewGuid(),
+            Source = "window",
+            ErrorName = "TypeError",
+            Message = "boom " + fingerprint,
+            Path = "/",
+            SessionId = session,
+            Fingerprint = fingerprint,
+            DeviceClass = "desktop",
+            IsInternal = internalTraffic,
+            IsBot = bot,
+            OccurredUtc = DateTime.UtcNow.AddDays(-daysAgo)
+        };
+
+        DbContext.ClientErrors.AddRange(
+            Error("fp-new", "s1"),
+            Error("fp-new", "s2"),
+            Error("fp-old", "s3", daysAgo: 20),
+            Error("fp-old", "s4"),
+            Error("fp-internal", "s5", internalTraffic: true),
+            Error("fp-bot", "s6", bot: true));
+        await DbContext.SaveChangesAsync();
+
+        Result<GetAnalyticsOverview.Response> result = await Run();
+
+        result.Value.WorkQueue.NewClientErrorGroups.Should().Be(1);
     }
 
     [Fact]

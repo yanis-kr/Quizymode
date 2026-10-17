@@ -245,6 +245,8 @@ export interface AnalyticsOverviewResponse {
     itemsAwaitingReview: number;
     pendingPrivateKeywords: number;
     ideasAwaitingModeration: number;
+    /** Front-end error groups first seen in the window (OBS-001). */
+    newClientErrorGroups: number;
   };
 }
 
