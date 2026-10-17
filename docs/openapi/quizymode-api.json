@@ -4646,6 +4646,158 @@
         }
       }
     },
+    "/study-guide-uploads/{id}/accept": {
+      "post": {
+        "tags": [
+          "StudyGuideUploads"
+        ],
+        "summary": "Accept generated questions and create them as private items",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "$ref": "#/components/schemas/System.Guid"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Quizymode.Api.Features.StudyGuideUploads.AcceptStudyGuideUpload.Request"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Quizymode.Api.Features.StudyGuideUploads.AcceptStudyGuideUpload.Response"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "404": {
+            "description": "Not Found"
+          },
+          "409": {
+            "description": "Conflict"
+          }
+        }
+      }
+    },
+    "/study-guide-uploads": {
+      "post": {
+        "tags": [
+          "StudyGuideUploads"
+        ],
+        "summary": "Upload study guide text for AI question generation",
+        "description": "Queues up to 10 KB of pasted text for one LLM call that generates up to 20 quiz questions. Returns 202 with the upload id (poll GET /study-guide-uploads/{id}); returns 200 with isDuplicate=true when the same text was already uploaded by this user. Returns 503 when AI generation is not configured.",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Quizymode.Api.Features.StudyGuideUploads.CreateStudyGuideUpload.Request"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "202": {
+            "description": "Accepted",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Quizymode.Api.Features.StudyGuideUploads.CreateStudyGuideUpload.Response"
+                }
+              }
+            }
+          },
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Quizymode.Api.Features.StudyGuideUploads.CreateStudyGuideUpload.Response"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "429": {
+            "description": "Too Many Requests"
+          },
+          "503": {
+            "description": "Service Unavailable"
+          }
+        }
+      }
+    },
+    "/study-guide-uploads/{id}": {
+      "get": {
+        "tags": [
+          "StudyGuideUploads"
+        ],
+        "summary": "Get a study guide upload with its generation status and questions",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "$ref": "#/components/schemas/System.Guid"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Quizymode.Api.Features.StudyGuideUploads.GetStudyGuideUpload.Response"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        }
+      }
+    },
+    "/study-guide-uploads/config": {
+      "get": {
+        "tags": [
+          "StudyGuideUploads"
+        ],
+        "summary": "Get study guide upload availability and limits",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Quizymode.Api.Features.StudyGuideUploads.GetStudyGuideUploadConfig.Response"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "/study-guides/current": {
       "delete": {
         "tags": [
@@ -13436,6 +13588,238 @@
           }
         }
       },
+      "Quizymode.Api.Features.StudyGuideUploads.AcceptStudyGuideUpload.Request": {
+        "required": [
+          "questionIndexes"
+        ],
+        "type": "object",
+        "properties": {
+          "questionIndexes": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/components/schemas/System.Collections.Generic.ListOfSystem.Int32"
+              }
+            ]
+          }
+        },
+        "description": "QuestionIndexes: zero-based indexes of the questions to keep; null or omitted keeps all."
+      },
+      "Quizymode.Api.Features.StudyGuideUploads.AcceptStudyGuideUpload.Response": {
+        "required": [
+          "createdCount",
+          "duplicateCount",
+          "failedCount",
+          "createdItemIds",
+          "errors"
+        ],
+        "type": "object",
+        "properties": {
+          "createdCount": {
+            "$ref": "#/components/schemas/System.Int32"
+          },
+          "duplicateCount": {
+            "$ref": "#/components/schemas/System.Int32"
+          },
+          "failedCount": {
+            "$ref": "#/components/schemas/System.Int32"
+          },
+          "createdItemIds": {
+            "$ref": "#/components/schemas/System.Collections.Generic.ListOfSystem.String"
+          },
+          "errors": {
+            "$ref": "#/components/schemas/System.Collections.Generic.ListOfSystem.String"
+          }
+        }
+      },
+      "Quizymode.Api.Features.StudyGuideUploads.CreateStudyGuideUpload.Request": {
+        "required": [
+          "text",
+          "category",
+          "navigationKeyword1",
+          "navigationKeyword2",
+          "keywords"
+        ],
+        "type": "object",
+        "properties": {
+          "text": {
+            "$ref": "#/components/schemas/System.String"
+          },
+          "category": {
+            "$ref": "#/components/schemas/System.String"
+          },
+          "navigationKeyword1": {
+            "$ref": "#/components/schemas/System.String"
+          },
+          "navigationKeyword2": {
+            "$ref": "#/components/schemas/System.String"
+          },
+          "keywords": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/components/schemas/System.Collections.Generic.ListOfSystem.String"
+              }
+            ]
+          }
+        }
+      },
+      "Quizymode.Api.Features.StudyGuideUploads.CreateStudyGuideUpload.Response": {
+        "required": [
+          "id",
+          "status",
+          "isDuplicate"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "$ref": "#/components/schemas/System.String"
+          },
+          "status": {
+            "$ref": "#/components/schemas/System.String"
+          },
+          "isDuplicate": {
+            "$ref": "#/components/schemas/System.Boolean"
+          }
+        }
+      },
+      "Quizymode.Api.Features.StudyGuideUploads.GetStudyGuideUpload.Response": {
+        "required": [
+          "id",
+          "status",
+          "category",
+          "navigationKeyword1",
+          "navigationKeyword2",
+          "keywords",
+          "questions",
+          "error",
+          "createdUtc",
+          "completedUtc",
+          "acceptedUtc",
+          "createdItemCount"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "$ref": "#/components/schemas/System.String"
+          },
+          "status": {
+            "$ref": "#/components/schemas/System.String"
+          },
+          "category": {
+            "$ref": "#/components/schemas/System.String"
+          },
+          "navigationKeyword1": {
+            "$ref": "#/components/schemas/System.String"
+          },
+          "navigationKeyword2": {
+            "$ref": "#/components/schemas/System.String"
+          },
+          "keywords": {
+            "$ref": "#/components/schemas/System.Collections.Generic.ListOfSystem.String"
+          },
+          "questions": {
+            "$ref": "#/components/schemas/System.Collections.Generic.ListOfQuizymode.Api.Features.StudyGuideUploads.StudyGuideGeneratedQuestion"
+          },
+          "error": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/components/schemas/System.String"
+              }
+            ]
+          },
+          "createdUtc": {
+            "$ref": "#/components/schemas/System.DateTime"
+          },
+          "completedUtc": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/components/schemas/System.NullableOfSystem.DateTime"
+              }
+            ]
+          },
+          "acceptedUtc": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/components/schemas/System.NullableOfSystem.DateTime"
+              }
+            ]
+          },
+          "createdItemCount": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/components/schemas/System.NullableOfSystem.Int32"
+              }
+            ]
+          }
+        }
+      },
+      "Quizymode.Api.Features.StudyGuideUploads.GetStudyGuideUploadConfig.Response": {
+        "required": [
+          "enabled",
+          "maxTextBytes",
+          "maxQuestions"
+        ],
+        "type": "object",
+        "properties": {
+          "enabled": {
+            "$ref": "#/components/schemas/System.Boolean"
+          },
+          "maxTextBytes": {
+            "$ref": "#/components/schemas/System.Int32"
+          },
+          "maxQuestions": {
+            "$ref": "#/components/schemas/System.Int32"
+          }
+        }
+      },
+      "Quizymode.Api.Features.StudyGuideUploads.StudyGuideGeneratedQuestion": {
+        "required": [
+          "question",
+          "correctAnswer",
+          "incorrectAnswers",
+          "explanation"
+        ],
+        "type": "object",
+        "properties": {
+          "question": {
+            "$ref": "#/components/schemas/System.String"
+          },
+          "correctAnswer": {
+            "$ref": "#/components/schemas/System.String"
+          },
+          "incorrectAnswers": {
+            "$ref": "#/components/schemas/System.Collections.Generic.ListOfSystem.String"
+          },
+          "explanation": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/components/schemas/System.String"
+              }
+            ]
+          }
+        },
+        "description": "A validated AI-generated question awaiting the owner's review."
+      },
       "Quizymode.Api.Features.StudySessions.GetStudySessions.SessionsResponse": {
         "required": [
           "sessions"
@@ -14741,6 +15125,12 @@
           "$ref": "#/components/schemas/Quizymode.Api.Features.StudyGuideImport.GetImportSession.PromptResultDto"
         }
       },
+      "System.Collections.Generic.ListOfQuizymode.Api.Features.StudyGuideUploads.StudyGuideGeneratedQuestion": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/Quizymode.Api.Features.StudyGuideUploads.StudyGuideGeneratedQuestion"
+        }
+      },
       "System.Collections.Generic.ListOfQuizymode.Api.Features.StudySessions.RecordStudySession.Request": {
         "type": "array",
         "items": {
@@ -14763,6 +15153,12 @@
         "type": "array",
         "items": {
           "$ref": "#/components/schemas/System.Guid"
+        }
+      },
+      "System.Collections.Generic.ListOfSystem.Int32": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/System.Int32"
         }
       },
       "System.Collections.Generic.ListOfSystem.String": {
@@ -14909,6 +15305,9 @@
     },
     {
       "name": "StudyGuideImport"
+    },
+    {
+      "name": "StudyGuideUploads"
     },
     {
       "name": "StudyGuides"
