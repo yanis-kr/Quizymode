@@ -487,6 +487,82 @@ export interface LearningReportResponse {
   quizDropOff: LearningDropOffPointResponse[];
 }
 
+export interface ContentRowResponse {
+  key: string;
+  name: string | null;
+  sessions: number;
+  studySessions: number;
+  itemSteps: number;
+  ratingsCount: number;
+  averageStars: number | null;
+  comments: number;
+  bookmarks: number | null;
+  shares: number | null;
+  completions: number | null;
+  averageScorePercent: number | null;
+}
+
+export interface ContentFeaturedRowResponse {
+  id: string;
+  type: string;
+  displayName: string;
+  sessionsSeen: number;
+  sessionsOpened: number;
+  clickThroughPercent: number | null;
+}
+
+export interface ContentUntouchedResponse {
+  key: string;
+  name: string;
+}
+
+export interface ContentUserCreatedWeekResponse {
+  weekStartUtc: string;
+  privateItems: number;
+  publicItems: number;
+  collections: number;
+}
+
+export interface ContentReportResponse {
+  windowStartUtc: string;
+  windowEndUtc: string;
+  botSessions: number;
+  botsExcluded: boolean;
+  internalSessions: number;
+  internalExcluded: boolean;
+  categories: ContentRowResponse[];
+  navigationSets: ContentRowResponse[];
+  collections: ContentRowResponse[];
+  featured: ContentFeaturedRowResponse[];
+  untouchedCategories: ContentUntouchedResponse[];
+  untouchedCollections: ContentUntouchedResponse[];
+  userCreated: ContentUserCreatedWeekResponse[];
+}
+
+export interface QuestionQualityItemResponse {
+  itemId: string;
+  question: string;
+  correctAnswer: string;
+  category: string | null;
+  collections: string[];
+  answers: number;
+  correctRatePercent: number;
+  randomGuessPercent: number;
+  checkAnswerKey: boolean;
+  lastEditedUtc: string | null;
+}
+
+export interface QuestionQualityReportResponse {
+  windowStartUtc: string;
+  windowEndUtc: string;
+  minAnswers: number;
+  botSessions: number;
+  botsExcluded: boolean;
+  internalSessions: number;
+  internalExcluded: boolean;
+  items: QuestionQualityItemResponse[];
+}
+
 export type AdminUserActivityFilter =
   | "all"
   | "with-activity"
@@ -979,6 +1055,41 @@ export const adminApi = {
 
     const response = await apiClient.get<LearningReportResponse>(
       "/admin/analytics/learning",
+      { params }
+    );
+    return response.data;
+  },
+
+  getContentReport: async (
+    days: number = 30,
+    includeBots: boolean = false,
+    includeInternal: boolean = false
+  ): Promise<ContentReportResponse> => {
+    const params: Record<string, number | boolean> = { days, includeBots };
+    if (includeInternal) {
+      params.includeInternal = true;
+    }
+
+    const response = await apiClient.get<ContentReportResponse>(
+      "/admin/analytics/content",
+      { params }
+    );
+    return response.data;
+  },
+
+  getQuestionQualityReport: async (
+    days: number = 30,
+    minAnswers: number = 10,
+    includeBots: boolean = false,
+    includeInternal: boolean = false
+  ): Promise<QuestionQualityReportResponse> => {
+    const params: Record<string, number | boolean> = { days, minAnswers, includeBots };
+    if (includeInternal) {
+      params.includeInternal = true;
+    }
+
+    const response = await apiClient.get<QuestionQualityReportResponse>(
+      "/admin/analytics/question-quality",
       { params }
     );
     return response.data;

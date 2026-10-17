@@ -953,6 +953,63 @@
         }
       }
     },
+    "/admin/analytics/content": {
+      "get": {
+        "tags": [
+          "Admin"
+        ],
+        "summary": "Get content engagement report (Admin only)",
+        "description": "Returns per category, navigation set, and collection engagement, featured click-through, untouched public content, and user-created content by week for the selected window. Bot sessions are excluded unless includeBots=true, and internal sessions unless includeInternal=true.",
+        "parameters": [
+          {
+            "name": "days",
+            "in": "query",
+            "schema": {
+              "default": 30,
+              "$ref": "#/components/schemas/System.Int32"
+            }
+          },
+          {
+            "name": "includeBots",
+            "in": "query",
+            "schema": {
+              "default": false,
+              "$ref": "#/components/schemas/System.Boolean"
+            }
+          },
+          {
+            "name": "includeInternal",
+            "in": "query",
+            "schema": {
+              "default": false,
+              "$ref": "#/components/schemas/System.Boolean"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Quizymode.Api.Features.Admin.GetContentReport.Response"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "/admin/analytics/funnel": {
       "get": {
         "tags": [
@@ -1430,6 +1487,71 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/Quizymode.Api.Features.Admin.GetPendingKeywordsAdmin.Response"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/admin/analytics/question-quality": {
+      "get": {
+        "tags": [
+          "Admin"
+        ],
+        "summary": "Get question quality report (Admin only)",
+        "description": "Returns items with their first-attempt correct rate since the item's last edit, lowest first, listing only items with at least minAnswers answers, and flags items below the random-guess rate. Bot sessions are excluded unless includeBots=true, and internal sessions unless includeInternal=true.",
+        "parameters": [
+          {
+            "name": "days",
+            "in": "query",
+            "schema": {
+              "default": 30,
+              "$ref": "#/components/schemas/System.Int32"
+            }
+          },
+          {
+            "name": "minAnswers",
+            "in": "query",
+            "schema": {
+              "default": 10,
+              "$ref": "#/components/schemas/System.Int32"
+            }
+          },
+          {
+            "name": "includeBots",
+            "in": "query",
+            "schema": {
+              "default": false,
+              "$ref": "#/components/schemas/System.Boolean"
+            }
+          },
+          {
+            "name": "includeInternal",
+            "in": "query",
+            "schema": {
+              "default": false,
+              "$ref": "#/components/schemas/System.Boolean"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Quizymode.Api.Features.Admin.GetQuestionQualityReport.Response"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails"
                 }
               }
             }
@@ -6036,6 +6158,246 @@
           }
         }
       },
+      "Quizymode.Api.Features.Admin.GetContentReport.ContentRowResponse": {
+        "required": [
+          "key",
+          "name",
+          "sessions",
+          "studySessions",
+          "itemSteps",
+          "ratingsCount",
+          "averageStars",
+          "comments",
+          "bookmarks",
+          "shares",
+          "completions",
+          "averageScorePercent"
+        ],
+        "type": "object",
+        "properties": {
+          "key": {
+            "description": "Category slug, navigation path (category/keyword/keyword), or collection id.",
+            "$ref": "#/components/schemas/System.String"
+          },
+          "name": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/components/schemas/System.String"
+              }
+            ]
+          },
+          "sessions": {
+            "$ref": "#/components/schemas/System.Int32"
+          },
+          "studySessions": {
+            "description": "Sessions with a Quiz or Flashcards page hit in this scope.",
+            "$ref": "#/components/schemas/System.Int32"
+          },
+          "itemSteps": {
+            "$ref": "#/components/schemas/System.Int32"
+          },
+          "ratingsCount": {
+            "$ref": "#/components/schemas/System.Int32"
+          },
+          "averageStars": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/components/schemas/System.NullableOfSystem.Double"
+              }
+            ]
+          },
+          "comments": {
+            "$ref": "#/components/schemas/System.Int32"
+          },
+          "bookmarks": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "description": "Collections only; null for categories and navigation sets.",
+                "$ref": "#/components/schemas/System.NullableOfSystem.Int32"
+              }
+            ]
+          },
+          "shares": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "description": "Collections only; null for categories and navigation sets.",
+                "$ref": "#/components/schemas/System.NullableOfSystem.Int32"
+              }
+            ]
+          },
+          "completions": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "description": "Completed quiz runs; null when the scope has no recorded quiz runs.",
+                "$ref": "#/components/schemas/System.NullableOfSystem.Int32"
+              }
+            ]
+          },
+          "averageScorePercent": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/components/schemas/System.NullableOfSystem.Double"
+              }
+            ]
+          }
+        }
+      },
+      "Quizymode.Api.Features.Admin.GetContentReport.FeaturedRowResponse": {
+        "required": [
+          "id",
+          "type",
+          "displayName",
+          "sessionsSeen",
+          "sessionsOpened",
+          "clickThroughPercent"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "$ref": "#/components/schemas/System.Guid"
+          },
+          "type": {
+            "$ref": "#/components/schemas/System.String"
+          },
+          "displayName": {
+            "$ref": "#/components/schemas/System.String"
+          },
+          "sessionsSeen": {
+            "description": "Sessions that viewed home or the Featured page.",
+            "$ref": "#/components/schemas/System.Int32"
+          },
+          "sessionsOpened": {
+            "description": "Of those, sessions that then opened this entry's scope in the same session.",
+            "$ref": "#/components/schemas/System.Int32"
+          },
+          "clickThroughPercent": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/components/schemas/System.NullableOfSystem.Double"
+              }
+            ]
+          }
+        }
+      },
+      "Quizymode.Api.Features.Admin.GetContentReport.Response": {
+        "required": [
+          "windowStartUtc",
+          "windowEndUtc",
+          "botSessions",
+          "botsExcluded",
+          "internalSessions",
+          "internalExcluded",
+          "categories",
+          "navigationSets",
+          "collections",
+          "featured",
+          "untouchedCategories",
+          "untouchedCollections",
+          "userCreated"
+        ],
+        "type": "object",
+        "properties": {
+          "windowStartUtc": {
+            "$ref": "#/components/schemas/System.DateTime"
+          },
+          "windowEndUtc": {
+            "$ref": "#/components/schemas/System.DateTime"
+          },
+          "botSessions": {
+            "$ref": "#/components/schemas/System.Int32"
+          },
+          "botsExcluded": {
+            "$ref": "#/components/schemas/System.Boolean"
+          },
+          "internalSessions": {
+            "$ref": "#/components/schemas/System.Int32"
+          },
+          "internalExcluded": {
+            "$ref": "#/components/schemas/System.Boolean"
+          },
+          "categories": {
+            "$ref": "#/components/schemas/System.Collections.Generic.ListOfQuizymode.Api.Features.Admin.GetContentReport.ContentRowResponse"
+          },
+          "navigationSets": {
+            "$ref": "#/components/schemas/System.Collections.Generic.ListOfQuizymode.Api.Features.Admin.GetContentReport.ContentRowResponse"
+          },
+          "collections": {
+            "$ref": "#/components/schemas/System.Collections.Generic.ListOfQuizymode.Api.Features.Admin.GetContentReport.ContentRowResponse"
+          },
+          "featured": {
+            "$ref": "#/components/schemas/System.Collections.Generic.ListOfQuizymode.Api.Features.Admin.GetContentReport.FeaturedRowResponse"
+          },
+          "untouchedCategories": {
+            "$ref": "#/components/schemas/System.Collections.Generic.ListOfQuizymode.Api.Features.Admin.GetContentReport.UntouchedResponse"
+          },
+          "untouchedCollections": {
+            "$ref": "#/components/schemas/System.Collections.Generic.ListOfQuizymode.Api.Features.Admin.GetContentReport.UntouchedResponse"
+          },
+          "userCreated": {
+            "$ref": "#/components/schemas/System.Collections.Generic.ListOfQuizymode.Api.Features.Admin.GetContentReport.UserCreatedWeekResponse"
+          }
+        }
+      },
+      "Quizymode.Api.Features.Admin.GetContentReport.UntouchedResponse": {
+        "required": [
+          "key",
+          "name"
+        ],
+        "type": "object",
+        "properties": {
+          "key": {
+            "$ref": "#/components/schemas/System.String"
+          },
+          "name": {
+            "$ref": "#/components/schemas/System.String"
+          }
+        }
+      },
+      "Quizymode.Api.Features.Admin.GetContentReport.UserCreatedWeekResponse": {
+        "required": [
+          "weekStartUtc",
+          "privateItems",
+          "publicItems",
+          "collections"
+        ],
+        "type": "object",
+        "properties": {
+          "weekStartUtc": {
+            "description": "Monday of the week.",
+            "$ref": "#/components/schemas/System.DateTime"
+          },
+          "privateItems": {
+            "$ref": "#/components/schemas/System.Int32"
+          },
+          "publicItems": {
+            "$ref": "#/components/schemas/System.Int32"
+          },
+          "collections": {
+            "$ref": "#/components/schemas/System.Int32"
+          }
+        }
+      },
       "Quizymode.Api.Features.Admin.GetConversionFunnel.Response": {
         "required": [
           "windowStartUtc",
@@ -7388,6 +7750,111 @@
         "properties": {
           "keywords": {
             "$ref": "#/components/schemas/System.Collections.Generic.ListOfQuizymode.Api.Features.Admin.GetPendingKeywordsAdmin.PendingKeywordResponse"
+          }
+        }
+      },
+      "Quizymode.Api.Features.Admin.GetQuestionQualityReport.QuestionResponse": {
+        "required": [
+          "itemId",
+          "question",
+          "correctAnswer",
+          "category",
+          "collections",
+          "answers",
+          "correctRatePercent",
+          "randomGuessPercent",
+          "checkAnswerKey",
+          "lastEditedUtc"
+        ],
+        "type": "object",
+        "properties": {
+          "itemId": {
+            "$ref": "#/components/schemas/System.Guid"
+          },
+          "question": {
+            "$ref": "#/components/schemas/System.String"
+          },
+          "correctAnswer": {
+            "$ref": "#/components/schemas/System.String"
+          },
+          "category": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/components/schemas/System.String"
+              }
+            ]
+          },
+          "collections": {
+            "$ref": "#/components/schemas/System.Collections.Generic.ListOfSystem.String"
+          },
+          "answers": {
+            "description": "First-attempt answers (one per session) recorded since the item's last edit.",
+            "$ref": "#/components/schemas/System.Int32"
+          },
+          "correctRatePercent": {
+            "description": "Share of those answers that were correct.",
+            "$ref": "#/components/schemas/System.Double"
+          },
+          "randomGuessPercent": {
+            "description": "100 divided by the number of options (one correct plus the incorrect answers).",
+            "$ref": "#/components/schemas/System.Double"
+          },
+          "checkAnswerKey": {
+            "description": "True when the correct rate is below the random-guess rate.",
+            "$ref": "#/components/schemas/System.Boolean"
+          },
+          "lastEditedUtc": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "description": "The item's last UpdatedAt; null when never edited. Statistics start after it.",
+                "$ref": "#/components/schemas/System.NullableOfSystem.DateTime"
+              }
+            ]
+          }
+        }
+      },
+      "Quizymode.Api.Features.Admin.GetQuestionQualityReport.Response": {
+        "required": [
+          "windowStartUtc",
+          "windowEndUtc",
+          "minAnswers",
+          "botSessions",
+          "botsExcluded",
+          "internalSessions",
+          "internalExcluded",
+          "items"
+        ],
+        "type": "object",
+        "properties": {
+          "windowStartUtc": {
+            "$ref": "#/components/schemas/System.DateTime"
+          },
+          "windowEndUtc": {
+            "$ref": "#/components/schemas/System.DateTime"
+          },
+          "minAnswers": {
+            "$ref": "#/components/schemas/System.Int32"
+          },
+          "botSessions": {
+            "$ref": "#/components/schemas/System.Int32"
+          },
+          "botsExcluded": {
+            "$ref": "#/components/schemas/System.Boolean"
+          },
+          "internalSessions": {
+            "$ref": "#/components/schemas/System.Int32"
+          },
+          "internalExcluded": {
+            "$ref": "#/components/schemas/System.Boolean"
+          },
+          "items": {
+            "$ref": "#/components/schemas/System.Collections.Generic.ListOfQuizymode.Api.Features.Admin.GetQuestionQualityReport.QuestionResponse"
           }
         }
       },
@@ -12885,6 +13352,30 @@
           "$ref": "#/components/schemas/Quizymode.Api.Features.Admin.GetClientErrors.ValueCount"
         }
       },
+      "System.Collections.Generic.ListOfQuizymode.Api.Features.Admin.GetContentReport.ContentRowResponse": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/Quizymode.Api.Features.Admin.GetContentReport.ContentRowResponse"
+        }
+      },
+      "System.Collections.Generic.ListOfQuizymode.Api.Features.Admin.GetContentReport.FeaturedRowResponse": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/Quizymode.Api.Features.Admin.GetContentReport.FeaturedRowResponse"
+        }
+      },
+      "System.Collections.Generic.ListOfQuizymode.Api.Features.Admin.GetContentReport.UntouchedResponse": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/Quizymode.Api.Features.Admin.GetContentReport.UntouchedResponse"
+        }
+      },
+      "System.Collections.Generic.ListOfQuizymode.Api.Features.Admin.GetContentReport.UserCreatedWeekResponse": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/Quizymode.Api.Features.Admin.GetContentReport.UserCreatedWeekResponse"
+        }
+      },
       "System.Collections.Generic.ListOfQuizymode.Api.Features.Admin.GetConversionFunnel.StepResponse": {
         "type": "array",
         "items": {
@@ -12991,6 +13482,12 @@
         "type": "array",
         "items": {
           "$ref": "#/components/schemas/Quizymode.Api.Features.Admin.GetPendingKeywordsAdmin.PendingKeywordResponse"
+        }
+      },
+      "System.Collections.Generic.ListOfQuizymode.Api.Features.Admin.GetQuestionQualityReport.QuestionResponse": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/Quizymode.Api.Features.Admin.GetQuestionQualityReport.QuestionResponse"
         }
       },
       "System.Collections.Generic.ListOfQuizymode.Api.Features.Admin.SeedSyncAdmin.ChangeResponse": {
