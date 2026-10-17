@@ -1158,11 +1158,19 @@ export const adminApi = {
   getLearningReport: async (
     days: number = 7,
     includeBots: boolean = false,
-    includeInternal: boolean = false
+    includeInternal: boolean = false,
+    channel?: string,
+    visitorType?: string
   ): Promise<LearningReportResponse> => {
-    const params: Record<string, number | boolean> = { days, includeBots };
+    const params: Record<string, number | boolean | string> = { days, includeBots };
     if (includeInternal) {
       params.includeInternal = true;
+    }
+    if (channel) {
+      params.channel = channel;
+    }
+    if (visitorType) {
+      params.visitorType = visitorType;
     }
 
     const response = await apiClient.get<LearningReportResponse>(
