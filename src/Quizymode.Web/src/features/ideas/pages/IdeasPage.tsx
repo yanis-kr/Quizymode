@@ -8,6 +8,7 @@ import LoadingSpinner from "@/components/LoadingSpinner";
 import { SEO } from "@/components/SEO";
 import { useAuth } from "@/contexts/AuthContext";
 import { getApiErrorMessage } from "@/utils/apiError";
+import { getIdeaErrorMessage } from "../ideaErrors";
 import IdeaCard from "../components/IdeaCard";
 import IdeaFormModal, { type IdeaFormValues } from "../components/IdeaFormModal";
 import {
@@ -68,7 +69,7 @@ const IdeasPage = () => {
       invalidateIdeaQueries();
     },
     onError: (error) => {
-      setFormError(getApiErrorMessage(error));
+      setFormError(getIdeaErrorMessage(error));
     },
   });
 
@@ -92,7 +93,7 @@ const IdeasPage = () => {
       invalidateIdeaQueries();
     },
     onError: (error) => {
-      setFormError(getApiErrorMessage(error));
+      setFormError(getIdeaErrorMessage(error));
     },
   });
 
@@ -103,7 +104,7 @@ const IdeasPage = () => {
       invalidateIdeaQueries();
     },
     onError: (error) => {
-      setActionError(getApiErrorMessage(error));
+      setActionError(getIdeaErrorMessage(error));
     },
   });
 
@@ -118,7 +119,7 @@ const IdeasPage = () => {
       invalidateIdeaQueries();
     },
     onError: (error) => {
-      setActionError(getApiErrorMessage(error));
+      setActionError(getIdeaErrorMessage(error));
     },
     onSettled: () => {
       setStatusUpdatingIdeaId(null);

@@ -513,6 +513,22 @@
             }
           }
         ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "oneOf": [
+                  {
+                    "type": "null"
+                  },
+                  {
+                    "$ref": "#/components/schemas/Quizymode.Api.Features.Admin.IdeasAdmin.ApproveRequest"
+                  }
+                ]
+              }
+            }
+          }
+        },
         "responses": {
           "200": {
             "description": "OK",
@@ -523,6 +539,9 @@
                 }
               }
             }
+          },
+          "400": {
+            "description": "Bad Request"
           },
           "404": {
             "description": "Not Found"
@@ -8515,6 +8534,24 @@
           },
           "items": {
             "$ref": "#/components/schemas/System.Collections.Generic.ListOfQuizymode.Api.Features.Admin.GetQuestionQualityReport.QuestionResponse"
+          }
+        }
+      },
+      "Quizymode.Api.Features.Admin.IdeasAdmin.ApproveRequest": {
+        "required": [
+          "moderationNotes"
+        ],
+        "type": "object",
+        "properties": {
+          "moderationNotes": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/components/schemas/System.String"
+              }
+            ]
           }
         }
       },
