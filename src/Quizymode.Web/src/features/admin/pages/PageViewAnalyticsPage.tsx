@@ -13,6 +13,8 @@ import AcquisitionTab from "../components/AcquisitionTab";
 import FunnelTab from "../components/FunnelTab";
 import InternalBrowserToggle from "../components/InternalBrowserToggle";
 import LearningTab from "../components/LearningTab";
+import ContentTab from "../components/ContentTab";
+import QuestionQualityTab from "../components/QuestionQualityTab";
 import { ContentScopeTables, FeatureAreaTable } from "../components/PagesBreakdown";
 import { GROUP_BY_OPTIONS, type PagesGroupBy } from "../components/pagesGroupBy";
 import SessionsTab from "../components/SessionsTab";
@@ -34,7 +36,7 @@ const VISITOR_OPTIONS: Array<{ label: string; value: PageViewVisitorType }> = [
 const PAGE_SIZE = 25;
 const TOP_PAGES_LIMIT = 10;
 
-type AnalyticsTab = "pages" | "sessions" | "acquisition" | "funnel" | "learning" | "trends";
+type AnalyticsTab = "pages" | "sessions" | "acquisition" | "funnel" | "learning" | "content" | "questions" | "trends";
 
 const TAB_OPTIONS: Array<{ label: string; value: AnalyticsTab; hint: string }> = [
   { label: "Pages", value: "pages", hint: "Which features and content were used" },
@@ -42,6 +44,8 @@ const TAB_OPTIONS: Array<{ label: string; value: AnalyticsTab; hint: string }> =
   { label: "Acquisition", value: "acquisition", hint: "Where visitors came from" },
   { label: "Funnel", value: "funnel", hint: "Where visitors convert" },
   { label: "Learning", value: "learning", hint: "How study runs go" },
+  { label: "Content", value: "content", hint: "What content gets used" },
+  { label: "Questions", value: "questions", hint: "Which questions look wrong" },
   { label: "Trends", value: "trends", hint: "Up to 2 years, from daily rollups" },
 ];
 
@@ -240,6 +244,14 @@ const PageViewAnalyticsPage = () => {
 
       {tab === "learning" && (
         <LearningTab days={days} includeBots={includeBots} includeInternal={includeInternal} />
+      )}
+
+      {tab === "content" && (
+        <ContentTab days={days} includeBots={includeBots} includeInternal={includeInternal} />
+      )}
+
+      {tab === "questions" && (
+        <QuestionQualityTab days={days} includeBots={includeBots} includeInternal={includeInternal} />
       )}
 
       {tab === "pages" && isLoading && <LoadingSpinner />}
