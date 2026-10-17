@@ -1299,6 +1299,20 @@
             "schema": {
               "$ref": "#/components/schemas/System.String"
             }
+          },
+          {
+            "name": "page",
+            "in": "query",
+            "schema": {
+              "$ref": "#/components/schemas/System.NullableOfSystem.Int32"
+            }
+          },
+          {
+            "name": "pageSize",
+            "in": "query",
+            "schema": {
+              "$ref": "#/components/schemas/System.NullableOfSystem.Int32"
+            }
           }
         ],
         "responses": {
@@ -3174,7 +3188,23 @@
           "Ideas"
         ],
         "summary": "Get the public ideas board",
-        "description": "Returns published ideas with rating and comment summaries.",
+        "description": "Returns a page of published ideas with rating and comment summaries (page defaults to 1, pageSize to 50, max 100).",
+        "parameters": [
+          {
+            "name": "page",
+            "in": "query",
+            "schema": {
+              "$ref": "#/components/schemas/System.NullableOfSystem.Int32"
+            }
+          },
+          {
+            "name": "pageSize",
+            "in": "query",
+            "schema": {
+              "$ref": "#/components/schemas/System.NullableOfSystem.Int32"
+            }
+          }
+        ],
         "responses": {
           "200": {
             "description": "OK",
@@ -3462,6 +3492,22 @@
         ],
         "summary": "Get the current user's ideas",
         "description": "Returns the authenticated user's ideas across moderation states.",
+        "parameters": [
+          {
+            "name": "page",
+            "in": "query",
+            "schema": {
+              "$ref": "#/components/schemas/System.NullableOfSystem.Int32"
+            }
+          },
+          {
+            "name": "pageSize",
+            "in": "query",
+            "schema": {
+              "$ref": "#/components/schemas/System.NullableOfSystem.Int32"
+            }
+          }
+        ],
         "responses": {
           "200": {
             "description": "OK",
@@ -10855,6 +10901,15 @@
         "properties": {
           "ideas": {
             "$ref": "#/components/schemas/System.Collections.Generic.ListOfQuizymode.Api.Features.Ideas.IdeaSummaryResponse"
+          },
+          "page": {
+            "$ref": "#/components/schemas/System.Int32"
+          },
+          "pageSize": {
+            "$ref": "#/components/schemas/System.Int32"
+          },
+          "totalCount": {
+            "$ref": "#/components/schemas/System.Int32"
           }
         }
       },

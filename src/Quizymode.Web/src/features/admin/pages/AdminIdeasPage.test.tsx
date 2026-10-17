@@ -95,11 +95,11 @@ describe("AdminIdeasPage", () => {
     renderPage();
 
     await screen.findByText("Review pending idea");
-    expect(mockIdeasApi.getAdminIdeas).toHaveBeenLastCalledWith("PendingReview");
+    expect(mockIdeasApi.getAdminIdeas).toHaveBeenLastCalledWith("PendingReview", 1);
 
     await user.click(screen.getByRole("button", { name: /^all$/i }));
 
-    expect(mockIdeasApi.getAdminIdeas).toHaveBeenLastCalledWith("all");
+    expect(mockIdeasApi.getAdminIdeas).toHaveBeenLastCalledWith("all", 1);
     expect(screen.getByRole("button", { name: /^all$/i })).toHaveAttribute(
       "aria-pressed",
       "true"
