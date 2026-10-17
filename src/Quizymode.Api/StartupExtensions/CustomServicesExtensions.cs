@@ -31,6 +31,8 @@ internal static partial class StartupExtensions
         builder.Services.AddHttpClient<ITurnstileVerificationService, TurnstileVerificationService>();
         builder.Services.AddSingleton<IIpGeolocationService, IpGeolocationService>();
         builder.Services.AddSingleton<ITextModerationService, IdeaTextModerationService>();
+        // Stateless classification logic, safe to share across requests.
+        builder.Services.AddSingleton<IAttributionClassifier, AttributionClassifier>();
         builder.Services.AddHttpContextAccessor();
         builder.Services.AddScoped<IUserContext, UserContext>();
         builder.Services.AddScoped<IAuditService, AuditService>();
@@ -41,6 +43,7 @@ internal static partial class StartupExtensions
         builder.Services.AddScoped<IStudyGuidePromptBuilderService, StudyGuidePromptBuilderService>();
         builder.Services.AddHostedService<StudyGuideCleanupService>();
         builder.Services.AddHostedService<ClientErrorCleanupService>();
+        builder.Services.AddHostedService<AnalyticsSessionBackfill>();
         builder.Services.AddMemoryCache();
         return builder;
     }

@@ -7,11 +7,16 @@ import { configureAmplify } from "./utils/amplifyConfig";
 import { AuthProvider } from "./contexts/AuthContext";
 import ErrorBoundary from "./components/ErrorBoundary";
 import { installClientErrorReporting } from "./features/errorReporting/clientErrorReporter";
+import { captureAttribution } from "./utils/attributionCapture";
 import "./index.css";
 import App from "./App.tsx";
 
 // Report runtime errors, failed script loads, and unhandled rejections (OBS-001) before anything else runs.
 installClientErrorReporting();
+
+// Capture referrer/UTM/click-id signals before the router mounts and can rewrite the URL
+// (QuizModePage, ExploreModePage). Must read window.location directly; no route exists yet.
+captureAttribution();
 
 // Configure AWS Amplify with error handling
 try {

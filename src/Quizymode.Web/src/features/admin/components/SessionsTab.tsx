@@ -10,6 +10,7 @@ import LoadingSpinner from "@/components/LoadingSpinner";
 import DepthHistogram from "./DepthHistogram";
 import LandingPagesTable from "./LandingPagesTable";
 import SessionRow from "./SessionRow";
+import VisitorCohortPanel from "./VisitorCohortPanel";
 import { OUTCOME_LABELS, formatDuration } from "./sessionFormatting";
 
 const OUTCOME_OPTIONS: Array<{ label: string; value: SessionOutcomeFilter }> = [
@@ -145,6 +146,10 @@ const SessionsTab = ({
           <span className="font-medium">Include internal traffic</span> above to
           compare.
         </div>
+      )}
+
+      {data.visitors && (
+        <VisitorCohortPanel visitors={data.visitors} showReturnTable={false} />
       )}
 
       <section className="grid gap-6 xl:grid-cols-[1fr_1fr]">

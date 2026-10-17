@@ -11,24 +11,41 @@ namespace Quizymode.Api.Services;
 /// A session is internal when <em>any</em> of its hits is internal, so an anonymous visit that
 /// later signs in as an internal user is excluded in full. The user flag is joined at query time
 /// rather than copied onto hits, which makes flagging a user retroactive without rewriting rows.
+/// Internal status also propagates between sessions that share the same non-null
+/// <see cref="AnalyticsSession.VisitorId"/> (TRAFFIC-122): if one of a visitor's sessions is internal
+/// by its own evidence, every other session sharing that visitor id is treated as internal too. Two
+/// sessions with a null <c>VisitorId</c> never match each other this way.
 /// </remarks>
 internal static class InternalTrafficFilter
 {
     /// <summary>
-    /// Session ids, among the sessions present in <paramref name="scope"/>, that contain at least one
-    /// internal hit anywhere in the table (not only inside the scope's time window).
+    /// Session ids, among the sessions present in <paramref name="scope"/>, that are internal either
+    /// by their own evidence (anywhere in the table, not only inside the scope's time window) or by
+    /// sharing a non-null visitor id with another session that is internal by its own evidence.
     /// </summary>
     public static IQueryable<string> InternalSessionIds(ApplicationDbContext db, IQueryable<PageView> scope)
     {
         IQueryable<string> scopeSessionIds = scope.Select(pageView => pageView.SessionId);
+        IQueryable<string> internalSessionIds = AllInternalSessionIds(db);
 
-        return db.PageViews
-            .Where(pageView => scopeSessionIds.Contains(pageView.SessionId))
-            .Where(pageView =>
-                pageView.IsInternal ||
-                (pageView.UserId != null && db.Users.Any(user => user.Id == pageView.UserId && user.IsInternal)))
-            .Select(pageView => pageView.SessionId)
-            .Distinct();
+        return internalSessionIds.Where(sessionId => scopeSessionIds.Contains(sessionId)).Distinct();
+    }
+
+    /// <summary>Every session id, anywhere in the table, that is internal by own evidence or sibling propagation.</summary>
+    public static IQueryable<string> AllInternalSessionIds(ApplicationDbContext db)
+    {
+        IQueryable<string> ownEvidenceSessionIds = OwnEvidenceInternalSessionIds(db);
+
+        IQueryable<string> siblingSessionIds =
+            from thisSession in db.AnalyticsSessions
+            join otherSession in db.AnalyticsSessions
+                on thisSession.VisitorId equals otherSession.VisitorId
+            where thisSession.VisitorId != null
+                && otherSession.VisitorId != null
+                && ownEvidenceSessionIds.Contains(otherSession.SessionId)
+            select thisSession.SessionId;
+
+        return ownEvidenceSessionIds.Concat(siblingSessionIds).Distinct();
     }
 
     /// <summary>
@@ -73,5 +90,16 @@ internal static class InternalTrafficFilter
         IQueryable<string> internalSessionIds = InternalSessionIds(db, query);
 
         return query.Where(pageView => !internalSessionIds.Contains(pageView.SessionId));
+    }
+
+    /// <summary>Sessions internal by their own hits: an internal hit, or a hit tied to a user currently flagged internal.</summary>
+    private static IQueryable<string> OwnEvidenceInternalSessionIds(ApplicationDbContext db)
+    {
+        return db.PageViews
+            .Where(pageView =>
+                pageView.IsInternal ||
+                (pageView.UserId != null && db.Users.Any(user => user.Id == pageView.UserId && user.IsInternal)))
+            .Select(pageView => pageView.SessionId)
+            .Distinct();
     }
 }

@@ -690,6 +690,77 @@
         }
       }
     },
+    "/admin/analytics/acquisition": {
+      "get": {
+        "tags": [
+          "Admin"
+        ],
+        "summary": "Get the acquisition channel report (Admin only)",
+        "description": "Rolls sessions up by acquisition channel, with a nested source/campaign breakdown, plus device-class and country breakdowns. Engaged, bounce, and converted numbers match GET /admin/page-view-sessions for the same window and exclusions. deviceClass and country filters narrow the whole report, not just their own breakdown. Bot sessions are excluded unless includeBots=true, and internal sessions unless includeInternal=true.",
+        "parameters": [
+          {
+            "name": "days",
+            "in": "query",
+            "schema": {
+              "default": 7,
+              "$ref": "#/components/schemas/System.Int32"
+            }
+          },
+          {
+            "name": "includeBots",
+            "in": "query",
+            "schema": {
+              "default": false,
+              "$ref": "#/components/schemas/System.Boolean"
+            }
+          },
+          {
+            "name": "includeInternal",
+            "in": "query",
+            "schema": {
+              "default": false,
+              "$ref": "#/components/schemas/System.Boolean"
+            }
+          },
+          {
+            "name": "deviceClass",
+            "in": "query",
+            "schema": {
+              "$ref": "#/components/schemas/System.String"
+            }
+          },
+          {
+            "name": "country",
+            "in": "query",
+            "schema": {
+              "$ref": "#/components/schemas/System.String"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Quizymode.Api.Features.Admin.GetAcquisitionReport.Response"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "/admin/audit-logs": {
       "get": {
         "tags": [
@@ -1742,7 +1813,7 @@
           "Analytics"
         ],
         "summary": "Track a SPA page view",
-        "description": "Stores a page-view event for an anonymous or authenticated SPA route hit. The hit is flagged internal when the caller is an admin, is a user flagged internal, or sends internalBrowser=true.",
+        "description": "Stores a page-view event for an anonymous or authenticated SPA route hit. The hit is flagged internal when the caller is an admin, is a user flagged internal, or sends internalBrowser=true. The first hit of a session also creates an attribution snapshot (channel, referrer host, UTM tags, device class, country).",
         "requestBody": {
           "content": {
             "application/json": {
@@ -5176,6 +5247,178 @@
           }
         }
       },
+      "Quizymode.Api.Features.Admin.GetAcquisitionReport.ChannelRowResponse": {
+        "required": [
+          "channel",
+          "sessions",
+          "bounceRatePercent",
+          "engagedRatePercent",
+          "convertedCount",
+          "conversionRatePercent",
+          "sourceBreakdown"
+        ],
+        "type": "object",
+        "properties": {
+          "channel": {
+            "$ref": "#/components/schemas/System.String"
+          },
+          "sessions": {
+            "$ref": "#/components/schemas/System.Int32"
+          },
+          "bounceRatePercent": {
+            "$ref": "#/components/schemas/System.Double"
+          },
+          "engagedRatePercent": {
+            "$ref": "#/components/schemas/System.Double"
+          },
+          "convertedCount": {
+            "$ref": "#/components/schemas/System.Int32"
+          },
+          "conversionRatePercent": {
+            "$ref": "#/components/schemas/System.Double"
+          },
+          "sourceBreakdown": {
+            "$ref": "#/components/schemas/System.Collections.Generic.ListOfQuizymode.Api.Features.Admin.GetAcquisitionReport.SourceCampaignRowResponse"
+          }
+        }
+      },
+      "Quizymode.Api.Features.Admin.GetAcquisitionReport.CountryBreakdownResponse": {
+        "required": [
+          "country",
+          "sessions"
+        ],
+        "type": "object",
+        "properties": {
+          "country": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/components/schemas/System.String"
+              }
+            ]
+          },
+          "sessions": {
+            "$ref": "#/components/schemas/System.Int32"
+          }
+        }
+      },
+      "Quizymode.Api.Features.Admin.GetAcquisitionReport.DeviceBreakdownResponse": {
+        "required": [
+          "deviceClass",
+          "sessions"
+        ],
+        "type": "object",
+        "properties": {
+          "deviceClass": {
+            "$ref": "#/components/schemas/System.String"
+          },
+          "sessions": {
+            "$ref": "#/components/schemas/System.Int32"
+          }
+        }
+      },
+      "Quizymode.Api.Features.Admin.GetAcquisitionReport.Response": {
+        "required": [
+          "windowStartUtc",
+          "windowEndUtc",
+          "totalSessions",
+          "botSessions",
+          "botsExcluded",
+          "internalSessions",
+          "internalExcluded",
+          "channels",
+          "deviceBreakdown",
+          "countryBreakdown",
+          "visitors"
+        ],
+        "type": "object",
+        "properties": {
+          "windowStartUtc": {
+            "$ref": "#/components/schemas/System.DateTime"
+          },
+          "windowEndUtc": {
+            "$ref": "#/components/schemas/System.DateTime"
+          },
+          "totalSessions": {
+            "$ref": "#/components/schemas/System.Int32"
+          },
+          "botSessions": {
+            "$ref": "#/components/schemas/System.Int32"
+          },
+          "botsExcluded": {
+            "$ref": "#/components/schemas/System.Boolean"
+          },
+          "internalSessions": {
+            "$ref": "#/components/schemas/System.Int32"
+          },
+          "internalExcluded": {
+            "$ref": "#/components/schemas/System.Boolean"
+          },
+          "channels": {
+            "$ref": "#/components/schemas/System.Collections.Generic.ListOfQuizymode.Api.Features.Admin.GetAcquisitionReport.ChannelRowResponse"
+          },
+          "deviceBreakdown": {
+            "$ref": "#/components/schemas/System.Collections.Generic.ListOfQuizymode.Api.Features.Admin.GetAcquisitionReport.DeviceBreakdownResponse"
+          },
+          "countryBreakdown": {
+            "$ref": "#/components/schemas/System.Collections.Generic.ListOfQuizymode.Api.Features.Admin.GetAcquisitionReport.CountryBreakdownResponse"
+          },
+          "visitors": {
+            "$ref": "#/components/schemas/Quizymode.Api.Services.VisitorCohortReport.Response"
+          }
+        }
+      },
+      "Quizymode.Api.Features.Admin.GetAcquisitionReport.SourceCampaignRowResponse": {
+        "required": [
+          "utmSource",
+          "utmCampaign",
+          "sessions",
+          "bounceRatePercent",
+          "engagedRatePercent",
+          "convertedCount",
+          "conversionRatePercent"
+        ],
+        "type": "object",
+        "properties": {
+          "utmSource": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/components/schemas/System.String"
+              }
+            ]
+          },
+          "utmCampaign": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/components/schemas/System.String"
+              }
+            ]
+          },
+          "sessions": {
+            "$ref": "#/components/schemas/System.Int32"
+          },
+          "bounceRatePercent": {
+            "$ref": "#/components/schemas/System.Double"
+          },
+          "engagedRatePercent": {
+            "$ref": "#/components/schemas/System.Double"
+          },
+          "convertedCount": {
+            "$ref": "#/components/schemas/System.Int32"
+          },
+          "conversionRatePercent": {
+            "$ref": "#/components/schemas/System.Double"
+          }
+        }
+      },
       "Quizymode.Api.Features.Admin.GetAuditLogs.AuditLogResponse": {
         "required": [
           "id",
@@ -6338,7 +6581,8 @@
           "totalCount",
           "page",
           "pageSize",
-          "totalPages"
+          "totalPages",
+          "visitors"
         ],
         "type": "object",
         "properties": {
@@ -6365,6 +6609,9 @@
           },
           "totalPages": {
             "$ref": "#/components/schemas/System.Int32"
+          },
+          "visitors": {
+            "$ref": "#/components/schemas/Quizymode.Api.Services.VisitorCohortReport.Response"
           }
         }
       },
@@ -7564,6 +7811,17 @@
                 "$ref": "#/components/schemas/System.NullableOfSystem.Boolean"
               }
             ]
+          },
+          "visitorId": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "description": "Browser visitor id (ANALYTICS-003). A syntactically invalid value is ignored, not rejected. When the\nsession already has an attribution row with no visitor id, it is filled in from here.",
+                "$ref": "#/components/schemas/System.String"
+              }
+            ]
           }
         }
       },
@@ -7614,6 +7872,138 @@
               {
                 "description": "Client-asserted internal-browser marker (set by an admin on their own devices and by E2E runs).\nTrusting it is safe because it can only remove the sender's own traffic from reports.",
                 "$ref": "#/components/schemas/System.NullableOfSystem.Boolean"
+              }
+            ]
+          },
+          "visitorId": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "description": "Client-generated id persisted in the visitor's browser (localStorage), used to recognize a\nreturning visitor across sessions (TRAFFIC-122). Must be a syntactically valid UUID; an\ninvalid value is ignored (treated as absent) rather than rejecting the hit.",
+                "$ref": "#/components/schemas/System.String"
+              }
+            ]
+          },
+          "referrer": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "description": "Raw referrer URL reported by the client for the first hit of a session.",
+                "$ref": "#/components/schemas/System.String"
+              }
+            ]
+          },
+          "utmSource": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/components/schemas/System.String"
+              }
+            ]
+          },
+          "utmMedium": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/components/schemas/System.String"
+              }
+            ]
+          },
+          "utmCampaign": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/components/schemas/System.String"
+              }
+            ]
+          },
+          "utmContent": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/components/schemas/System.String"
+              }
+            ]
+          },
+          "utmTerm": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/components/schemas/System.String"
+              }
+            ]
+          },
+          "gclid": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/components/schemas/System.String"
+              }
+            ]
+          },
+          "gbraid": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/components/schemas/System.String"
+              }
+            ]
+          },
+          "wbraid": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/components/schemas/System.String"
+              }
+            ]
+          },
+          "msclkid": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/components/schemas/System.String"
+              }
+            ]
+          },
+          "ttclid": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/components/schemas/System.String"
+              }
+            ]
+          },
+          "appVersion": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/components/schemas/System.String"
               }
             ]
           }
@@ -11636,6 +12026,135 @@
         },
         "description": "Response DTO containing the updated setting information."
       },
+      "Quizymode.Api.Services.VisitorCohortReport.Response": {
+        "required": [
+          "newVisitorSessions",
+          "returningVisitorSessions",
+          "unidentifiedSessions",
+          "newVisitors",
+          "returningVisitors",
+          "returnWithin7Days",
+          "signupsWithVisitorHistory",
+          "avgPreSignupSessions",
+          "medianPreSignupSessions",
+          "avgDaysToSignup",
+          "medianDaysToSignup"
+        ],
+        "type": "object",
+        "properties": {
+          "newVisitorSessions": {
+            "description": "Window sessions with a visitor id whose visitor had no earlier session.",
+            "$ref": "#/components/schemas/System.Int32"
+          },
+          "returningVisitorSessions": {
+            "description": "Window sessions whose visitor had an earlier session (possibly before the window).",
+            "$ref": "#/components/schemas/System.Int32"
+          },
+          "unidentifiedSessions": {
+            "description": "Window sessions with no visitor id (Global Privacy Control, storage unavailable, or history); counted as neither.",
+            "$ref": "#/components/schemas/System.Int32"
+          },
+          "newVisitors": {
+            "description": "Distinct visitors whose first-ever session is in the window.",
+            "$ref": "#/components/schemas/System.Int32"
+          },
+          "returningVisitors": {
+            "description": "Distinct visitors with a window session whose first-ever session predates the window.",
+            "$ref": "#/components/schemas/System.Int32"
+          },
+          "returnWithin7Days": {
+            "description": "First-time visitors in the window, grouped by their first session's channel and campaign.",
+            "$ref": "#/components/schemas/System.Collections.Generic.ListOfQuizymode.Api.Services.VisitorCohortReport.ReturnRateRow"
+          },
+          "signupsWithVisitorHistory": {
+            "description": "Accounts created in the window that are linked to a visitor id.",
+            "$ref": "#/components/schemas/System.Int32"
+          },
+          "avgPreSignupSessions": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "description": "Average sessions before the signup session; null when no signups qualify.",
+                "$ref": "#/components/schemas/System.NullableOfSystem.Double"
+              }
+            ]
+          },
+          "medianPreSignupSessions": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "description": "Median sessions before the signup session; null when no signups qualify.",
+                "$ref": "#/components/schemas/System.NullableOfSystem.Double"
+              }
+            ]
+          },
+          "avgDaysToSignup": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "description": "Average UTC calendar days from first visit to account creation; null when no signups qualify.",
+                "$ref": "#/components/schemas/System.NullableOfSystem.Double"
+              }
+            ]
+          },
+          "medianDaysToSignup": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "description": "Median UTC calendar days from first visit to account creation; null when no signups qualify.",
+                "$ref": "#/components/schemas/System.NullableOfSystem.Double"
+              }
+            ]
+          }
+        }
+      },
+      "Quizymode.Api.Services.VisitorCohortReport.ReturnRateRow": {
+        "required": [
+          "channel",
+          "utmCampaign",
+          "firstTimeVisitors",
+          "returnedWithin7Days",
+          "returnRatePercent"
+        ],
+        "type": "object",
+        "properties": {
+          "channel": {
+            "description": "Channel of the visitor's first session.",
+            "$ref": "#/components/schemas/System.String"
+          },
+          "utmCampaign": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "description": "Campaign of the visitor's first session, when tagged.",
+                "$ref": "#/components/schemas/System.String"
+              }
+            ]
+          },
+          "firstTimeVisitors": {
+            "description": "Visitors whose first-ever session is in the window with this channel and campaign.",
+            "$ref": "#/components/schemas/System.Int32"
+          },
+          "returnedWithin7Days": {
+            "description": "Those with another session that started within 7 days after the first one.",
+            "$ref": "#/components/schemas/System.Int32"
+          },
+          "returnRatePercent": {
+            "description": "ReturnedWithin7Days as a percentage of FirstTimeVisitors.",
+            "$ref": "#/components/schemas/System.Double"
+          }
+        }
+      },
       "Quizymode.Api.Shared.Models.ItemSpeechSupport": {
         "type": "object",
         "properties": {
@@ -11734,6 +12253,30 @@
         "type": "array",
         "items": {
           "$ref": "#/components/schemas/Quizymode.Api.Features.Admin.AdminUsersActivity.UserUrlHistoryResponse"
+        }
+      },
+      "System.Collections.Generic.ListOfQuizymode.Api.Features.Admin.GetAcquisitionReport.ChannelRowResponse": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/Quizymode.Api.Features.Admin.GetAcquisitionReport.ChannelRowResponse"
+        }
+      },
+      "System.Collections.Generic.ListOfQuizymode.Api.Features.Admin.GetAcquisitionReport.CountryBreakdownResponse": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/Quizymode.Api.Features.Admin.GetAcquisitionReport.CountryBreakdownResponse"
+        }
+      },
+      "System.Collections.Generic.ListOfQuizymode.Api.Features.Admin.GetAcquisitionReport.DeviceBreakdownResponse": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/Quizymode.Api.Features.Admin.GetAcquisitionReport.DeviceBreakdownResponse"
+        }
+      },
+      "System.Collections.Generic.ListOfQuizymode.Api.Features.Admin.GetAcquisitionReport.SourceCampaignRowResponse": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/Quizymode.Api.Features.Admin.GetAcquisitionReport.SourceCampaignRowResponse"
         }
       },
       "System.Collections.Generic.ListOfQuizymode.Api.Features.Admin.GetAuditLogs.AuditLogResponse": {
@@ -12022,6 +12565,12 @@
         "type": "array",
         "items": {
           "$ref": "#/components/schemas/Quizymode.Api.Features.StudyGuideImport.GetImportSession.PromptResultDto"
+        }
+      },
+      "System.Collections.Generic.ListOfQuizymode.Api.Services.VisitorCohortReport.ReturnRateRow": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/Quizymode.Api.Services.VisitorCohortReport.ReturnRateRow"
         }
       },
       "System.Collections.Generic.ListOfSystem.Guid": {
