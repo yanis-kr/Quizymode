@@ -4,7 +4,7 @@ import userEvent from "@testing-library/user-event";
 import { MemoryRouter } from "react-router-dom";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import AdminOverviewPanel from "./AdminOverviewPanel";
-import { formatChange } from "./overviewFormatting";
+import { formatChange, layoutReleaseLabels } from "./overviewFormatting";
 
 const { mockAdminApi } = vi.hoisted(() => ({
   mockAdminApi: { getAnalyticsOverview: vi.fn() },
@@ -112,3 +112,56 @@ describe("AdminOverviewPanel", () => {
     await waitFor(() => expect(mockAdminApi.getAnalyticsOverview).toHaveBeenCalledWith(30));
   });
 });
+
+describe("layoutReleaseLabels", () => {
+  const RIGHT_EDGE = 632;
+
+  it("moves a label on the next day to another row instead of overlapping", () => {
+    const labels = layoutReleaseLabels(
+      [
+        { x: 300, version: "3.69.1" },
+        { x: 315, version: "3.70.0" },
+      ],
+      RIGHT_EDGE
+    );
+    expect(labels.map((label) => label.row)).toEqual([0, 1]);
+  });
+
+  it("keeps far-apart labels on the first row", () => {
+    const labels = layoutReleaseLabels(
+      [
+        { x: 100, version: "3.60.0" },
+        { x: 300, version: "3.70.0" },
+      ],
+      RIGHT_EDGE
+    );
+    expect(labels.map((label) => label.row)).toEqual([0, 0]);
+  });
+
+  it("merges markers on the same day into one label", () => {
+    const labels = layoutReleaseLabels(
+      [
+        { x: 200, version: "3.71.0" },
+        { x: 200, version: "3.71.1" },
+      ],
+      RIGHT_EDGE
+    );
+    expect(labels).toHaveLength(1);
+    expect(labels[0].text).toBe("v3.71.0, v3.71.1");
+    expect(labels[0].versions).toEqual(["3.71.0", "3.71.1"]);
+  });
+
+  it("right-aligns a label that would run past the chart edge", () => {
+    const [label] = layoutReleaseLabels([{ x: 630, version: "3.80.4" }], RIGHT_EDGE);
+    expect(label.anchor).toBe("end");
+  });
+
+  it("puts any overflow on the last row", () => {
+    const labels = layoutReleaseLabels(
+      ["1", "2", "3", "4"].map((n, i) => ({ x: 300 + i * 5, version: `3.7${n}.0` })),
+      RIGHT_EDGE
+    );
+    expect(labels.map((label) => label.row)).toEqual([0, 1, 2, 2]);
+  });
+});
+

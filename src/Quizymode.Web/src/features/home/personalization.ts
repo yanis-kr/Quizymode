@@ -7,8 +7,10 @@ import type { GuestHistorySource } from "@/features/guestHistory/guestHistorySto
  * - Continue: the newest completed runs with a browsable source, one per source, at most 3.
  * - For you: explicit interests in the order chosen, then categories inferred from recent activity; at most 5.
  * - Recommended next: featured sets in For-you categories that were not attempted yet, in category rank then catalog
- *   (featured sort) order, with at most 2 per category in the first 5. With no interests and no history (cold start),
- *   popular categories replace For you; without those, the featured catalog order is used.
+ *   (featured sort) order, with at most 2 per category in the first 5. A For-you category with no unattempted featured
+ *   set gets one category-level "Explore" card in its place, so every chosen topic is represented (#220). With no
+ *   interests and no history (cold start), popular categories replace For you; without those, the featured catalog
+ *   order is used.
  */
 export const CONTINUE_LIMIT = 3;
 export const FOR_YOU_LIMIT = 5;
@@ -28,6 +30,24 @@ export interface PersonalizationInput {
   popularCategories: string[];
   /** Category slugs the SPA can show; anything else is ignored. */
   knownCategories: string[];
+  /** Display names by slug, for category-level fallback cards; the slug is used when missing. */
+  categoryNames?: ReadonlyMap<string, string>;
+}
+
+/** Id prefix of the category-level card used when a For-you category has no featured set to recommend. */
+export const CATEGORY_FALLBACK_ID_PREFIX = "category-fallback:";
+
+function categoryFallback(slug: string, name: string): FeaturedSetDto {
+  return {
+    id: `${CATEGORY_FALLBACK_ID_PREFIX}${slug}`,
+    displayName: `Explore ${name}`,
+    categorySlug: slug,
+    navKeyword1: null,
+    navKeyword2: null,
+    itemCount: 0,
+    lastModifiedAt: null,
+    sortOrder: Number.MAX_SAFE_INTEGER,
+  };
 }
 
 export interface ForYouCategory {
@@ -130,9 +150,18 @@ export function rankPersonalizedHome(input: PersonalizationInput): PersonalizedH
   const inRanked = catalog
     .filter((set) => rank(set.categorySlug) >= 0)
     .sort((a, b) => rank(a.categorySlug) - rank(b.categorySlug) || a.sortOrder - b.sortOrder);
-  // Interest categories only, unless that leaves nothing or this is a cold start: then the catalog fills in after them.
+  // A chosen category with nothing left to recommend gets a category-level card in its rank position.
+  const withFallbacks = isColdStart
+    ? inRanked
+    : rankCategories.flatMap((slug) => {
+        const sets = inRanked.filter((set) => set.categorySlug.toLowerCase() === slug);
+        return sets.length > 0 ? sets : [categoryFallback(slug, input.categoryNames?.get(slug) ?? slug)];
+      });
+  // Interest categories only, unless no featured set matched or this is a cold start: then the catalog fills in after them.
   const fillFromCatalog = isColdStart || inRanked.length === 0;
-  const candidates = fillFromCatalog ? [...inRanked, ...catalog.filter((set) => !inRanked.includes(set))] : inRanked;
+  const candidates = fillFromCatalog
+    ? [...withFallbacks, ...catalog.filter((set) => !inRanked.includes(set))]
+    : withFallbacks;
   const recommended = pickDiverse(candidates, RECOMMENDED_LIMIT);
 
   return { continueRuns, forYou, recommended, isColdStart };

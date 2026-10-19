@@ -1,6 +1,11 @@
 import { describe, expect, it } from "vitest";
 import type { FeaturedSetDto } from "@/api/featured";
-import { rankPersonalizedHome, type ActivityRun, type PersonalizationInput } from "./personalization";
+import {
+  CATEGORY_FALLBACK_ID_PREFIX,
+  rankPersonalizedHome,
+  type ActivityRun,
+  type PersonalizationInput,
+} from "./personalization";
 
 function set(id: string, categorySlug: string, sortOrder: number, nav1: string | null = null, nav2: string | null = null): FeaturedSetDto {
   return { id, displayName: id, categorySlug, navKeyword1: nav1, navKeyword2: nav2, itemCount: 10, lastModifiedAt: null, sortOrder };
@@ -71,6 +76,35 @@ describe("rankPersonalizedHome", () => {
 
     expect(result.isColdStart).toBe(false);
     expect(result.recommended.map((s) => s.id)).toEqual(["t1", "t2", "h1", "t3"]);
+  });
+
+  it("gives a chosen category with no featured set one Explore card in its rank position (#220)", () => {
+    const result = rankPersonalizedHome(
+      input({
+        explicitInterests: ["geography", "science"],
+        featuredSets: [set("s1", "science", 1, "solar-system"), set("t1", "trivia", 2)],
+        categoryNames: new Map([["geography", "Geography"]]),
+      }),
+    );
+
+    expect(result.recommended.map((s) => s.id)).toEqual([`${CATEGORY_FALLBACK_ID_PREFIX}geography`, "s1"]);
+    const fallback = result.recommended[0];
+    expect(fallback.displayName).toBe("Explore Geography");
+    expect(fallback.categorySlug).toBe("geography");
+    expect([fallback.navKeyword1, fallback.navKeyword2]).toEqual([null, null]);
+  });
+
+  it("falls back to the category card when every featured set in it was already attempted", () => {
+    const result = rankPersonalizedHome(
+      input({
+        explicitInterests: ["history"],
+        runs: [categoryRun("history", "2026-10-12T10:00:00Z", ["rome"])],
+        featuredSets: [set("h1", "history", 1, "rome"), set("t1", "trivia", 2)],
+      }),
+    );
+
+    expect(result.recommended.map((s) => s.id)).toEqual([`${CATEGORY_FALLBACK_ID_PREFIX}history`, "t1"]);
+    expect(result.recommended[0].displayName).toBe("Explore history");
   });
 
   it("returns distinct Continue sources newest first, at most 3, ignoring runs without a source", () => {
