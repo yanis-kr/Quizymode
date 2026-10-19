@@ -37,7 +37,7 @@ describe("getIdeaErrorMessage", () => {
   });
 
   it("maps 429 rate limits regardless of body", () => {
-    expect(getIdeaErrorMessage(apiError(429))).toMatch(/too quickly/i);
+    expect(getIdeaErrorMessage(apiError(429))).toMatch(/too quickly.*wait a few minutes/i);
   });
 
   it("falls back to the generic message for unknown codes", () => {
