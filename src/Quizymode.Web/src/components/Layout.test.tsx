@@ -1,5 +1,6 @@
 import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 import { render, screen, waitFor } from "@testing-library/react";
+import userEvent from "@testing-library/user-event";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { MemoryRouter } from "react-router-dom";
 import { HelmetProvider } from "react-helmet-async";
@@ -95,6 +96,21 @@ describe("Layout", () => {
       "href",
       USER_GUIDE_URL
     );
+  });
+
+  it("keeps the nav links in the menu below lg so the bar never overflows (#229)", async () => {
+    renderLayout();
+    const menuButton = screen.getByRole("button", { name: "Open main menu" });
+    expect(menuButton).toHaveClass("lg:hidden");
+    expect(menuButton).toHaveAttribute("aria-expanded", "false");
+    const desktopLinks = screen.getByRole("link", { name: "Categories" }).parentElement;
+    expect(desktopLinks).toHaveClass("hidden", "lg:flex");
+    expect(desktopLinks).not.toHaveClass("sm:flex");
+
+    await userEvent.click(menuButton);
+
+    expect(menuButton).toHaveAttribute("aria-expanded", "true");
+    expect(screen.getAllByRole("link", { name: "Sign In" })).toHaveLength(2);
   });
 
   it("shows the ideas footer link instead of the old map action", () => {
