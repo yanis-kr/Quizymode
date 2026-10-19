@@ -243,9 +243,20 @@ Describe 'Quizymode usage summary' {
         $claude.cacheReadTokens | Should Be 50
         $claude.recordedStages | Should Be 2
 
-        $codex.costUsd | Should Be 0
+        $codex.costUsd | Should Be $null
+        $codex.outputTokens | Should Be $null
         $codex.inputTokens | Should Be 300
         $codex.recordedStages | Should Be 1
+    }
+
+    It 'reports a real zero cost as 0, not as not-reported' {
+        $states = @([pscustomobject]@{ provider = 'claude'; usage = @(
+            [pscustomobject]@{ costUsd = 0; inputTokens = $null; outputTokens = $null; cacheReadTokens = $null; cacheCreationTokens = $null }
+        ) })
+        $claude = @(Get-QmUsageSummary -States $states)[0]
+        $claude.costUsd | Should Be 0
+        $null -eq $claude.costUsd | Should Be $false
+        $claude.inputTokens | Should Be $null
     }
 
     It 'does not throw on a state with no usage field at all (pre-existing checkpoints)' {
