@@ -632,6 +632,9 @@ function Get-QmUsageSummary {
     # Entries with a $null field (provider/stage didn't report it, e.g. a
     # timeout before any envelope was returned) are skipped for that field
     # rather than treated as zero, so partial data never understates cost.
+    # Totals start as $null and stay $null until at least one stage reports
+    # the field, so a provider that never reports cost (Codex) shows costUsd
+    # null ("not reported") instead of 0, which would read as free.
     param([Parameter(Mandatory = $true)][array]$States)
     $byProvider = [ordered]@{}
     foreach ($state in $States) {
@@ -640,11 +643,11 @@ function Get-QmUsageSummary {
         if (-not $byProvider.Contains($provider)) {
             $byProvider[$provider] = [ordered]@{
                 provider = $provider
-                costUsd = 0.0
-                inputTokens = 0.0
-                outputTokens = 0.0
-                cacheReadTokens = 0.0
-                cacheCreationTokens = 0.0
+                costUsd = $null
+                inputTokens = $null
+                outputTokens = $null
+                cacheReadTokens = $null
+                cacheCreationTokens = $null
                 recordedStages = 0
             }
         }
@@ -654,7 +657,8 @@ function Get-QmUsageSummary {
             foreach ($pair in @(@('costUsd', 'costUsd'), @('inputTokens', 'inputTokens'), @('outputTokens', 'outputTokens'), @('cacheReadTokens', 'cacheReadTokens'), @('cacheCreationTokens', 'cacheCreationTokens'))) {
                 $sourceField = $pair[0]
                 if ($entry.PSObject.Properties.Name -contains $sourceField -and $null -ne $entry.$sourceField) {
-                    $bucket[$pair[1]] = [double]$bucket[$pair[1]] + [double]$entry.$sourceField
+                    $current = if ($null -eq $bucket[$pair[1]]) { 0.0 } else { [double]$bucket[$pair[1]] }
+                    $bucket[$pair[1]] = $current + [double]$entry.$sourceField
                     $hadAny = $true
                 }
             }

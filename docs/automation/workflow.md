@@ -143,7 +143,8 @@ Run from repository root in Windows PowerShell:
 .\scripts\automation\Start-Automation.ps1 -Provider all -Once -Live
 
 # Operator controls and status (includes a usageSummary: cost/tokens per
-# provider, aggregated from each issue checkpoint's usage records).
+# provider, aggregated from each issue checkpoint's usage records; a field no stage
+# reported, such as Codex cost, is null rather than 0).
 .\scripts\automation\Pause-Automation.ps1 -Reason 'maintenance'
 .\scripts\automation\Resume-Automation.ps1
 .\scripts\automation\Get-AutomationStatus.ps1
