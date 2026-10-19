@@ -9,7 +9,7 @@ import {
 } from "@/api/admin";
 import ErrorMessage from "@/components/ErrorMessage";
 import LoadingSpinner from "@/components/LoadingSpinner";
-import { formatChange } from "./overviewFormatting";
+import { formatChange, layoutReleaseLabels } from "./overviewFormatting";
 
 type OverviewDays = 7 | 30 | 90;
 const RANGES: OverviewDays[] = [7, 30, 90];
@@ -30,19 +30,21 @@ const CHART_HEIGHT = 180;
 const PAD_LEFT = 32;
 const PAD_RIGHT = 8;
 const PAD_TOP = 14;
+const LABEL_ROW_HEIGHT = 10;
 const PAD_BOTTOM = 22;
 
 function buildPath(
   daily: AnalyticsOverviewDailyPoint[],
   pick: (point: AnalyticsOverviewDailyPoint) => number,
-  max: number
+  max: number,
+  padTop: number
 ): string {
   const plotWidth = CHART_WIDTH - PAD_LEFT - PAD_RIGHT;
-  const plotHeight = CHART_HEIGHT - PAD_TOP - PAD_BOTTOM;
+  const plotHeight = CHART_HEIGHT - padTop - PAD_BOTTOM;
   return daily
     .map((point, index) => {
       const x = PAD_LEFT + (daily.length === 1 ? 0 : (index / (daily.length - 1)) * plotWidth);
-      const y = PAD_TOP + plotHeight - (max === 0 ? 0 : (pick(point) / max) * plotHeight);
+      const y = padTop + plotHeight - (max === 0 ? 0 : (pick(point) / max) * plotHeight);
       return `${index === 0 ? "M" : "L"}${x.toFixed(1)},${y.toFixed(1)}`;
     })
     .join(" ");
@@ -54,39 +56,68 @@ const DailyChart = ({ data }: { data: AnalyticsOverviewResponse }) => {
   const max = Math.max(...daily.map((point) => point.humanSessions), 1);
   const plotWidth = CHART_WIDTH - PAD_LEFT - PAD_RIGHT;
   const dayIndex = new Map(daily.map((point, index) => [point.day, index]));
+  const xForDay = (day: string): number | undefined => {
+    const index = dayIndex.get(day);
+    if (index === undefined) {
+      return undefined;
+    }
+    return PAD_LEFT + (daily.length === 1 ? 0 : (index / (daily.length - 1)) * plotWidth);
+  };
+  const placedMarkers = releaseMarkers.flatMap((marker) => {
+    const x = xForDay(marker.day);
+    return x === undefined ? [] : [{ ...marker, x }];
+  });
+  const labels = layoutReleaseLabels(placedMarkers, CHART_WIDTH - PAD_RIGHT);
+  const rows = labels.reduce((most, label) => Math.max(most, label.row + 1), 1);
+  const padTop = PAD_TOP + (rows - 1) * LABEL_ROW_HEIGHT;
+  const markerSummary = placedMarkers.map((marker) => `v${marker.version} (${marker.day})`).join(", ");
 
   return (
     <div>
       <svg
         viewBox={`0 0 ${CHART_WIDTH} ${CHART_HEIGHT}`}
         role="img"
-        aria-label="Daily human and study sessions with release markers"
+        aria-label={
+          markerSummary
+            ? `Daily human and study sessions with release markers: ${markerSummary}`
+            : "Daily human and study sessions"
+        }
         className="w-full"
       >
         <line x1={PAD_LEFT} x2={CHART_WIDTH - PAD_RIGHT} y1={CHART_HEIGHT - PAD_BOTTOM} y2={CHART_HEIGHT - PAD_BOTTOM} stroke="#cbd5e1" />
-        <text x={PAD_LEFT - 4} y={PAD_TOP + 4} textAnchor="end" fontSize="10" fill="#64748b">
+        <text x={PAD_LEFT - 4} y={padTop + 4} textAnchor="end" fontSize="10" fill="#64748b">
           {max}
         </text>
         <text x={PAD_LEFT - 4} y={CHART_HEIGHT - PAD_BOTTOM} textAnchor="end" fontSize="10" fill="#64748b">
           0
         </text>
-        {releaseMarkers.map((marker) => {
-          const index = dayIndex.get(marker.day);
-          if (index === undefined) {
-            return null;
-          }
-          const x = PAD_LEFT + (daily.length === 1 ? 0 : (index / (daily.length - 1)) * plotWidth);
-          return (
-            <g key={marker.version} data-testid="release-marker">
-              <line x1={x} x2={x} y1={PAD_TOP} y2={CHART_HEIGHT - PAD_BOTTOM} stroke="#f59e0b" strokeDasharray="3 3" />
-              <text x={x + 2} y={PAD_TOP - 3} fontSize="9" fill="#b45309">
-                v{marker.version}
-              </text>
-            </g>
-          );
-        })}
-        <path d={buildPath(daily, (point) => point.humanSessions, max)} fill="none" stroke="#4f46e5" strokeWidth="2" />
-        <path d={buildPath(daily, (point) => point.studySessions, max)} fill="none" stroke="#059669" strokeWidth="2" />
+        {placedMarkers.map((marker) => (
+          <line
+            key={marker.version}
+            data-testid="release-marker"
+            x1={marker.x}
+            x2={marker.x}
+            y1={padTop}
+            y2={CHART_HEIGHT - PAD_BOTTOM}
+            stroke="#f59e0b"
+            strokeDasharray="3 3"
+          />
+        ))}
+        {labels.map((label) => (
+          <text
+            key={label.text}
+            data-testid="release-marker-label"
+            x={label.anchor === "start" ? label.x + 2 : label.x - 2}
+            y={padTop - 3 - label.row * LABEL_ROW_HEIGHT}
+            textAnchor={label.anchor}
+            fontSize="9"
+            fill="#b45309"
+          >
+            {label.text}
+          </text>
+        ))}
+        <path d={buildPath(daily, (point) => point.humanSessions, max, padTop)} fill="none" stroke="#4f46e5" strokeWidth="2" />
+        <path d={buildPath(daily, (point) => point.studySessions, max, padTop)} fill="none" stroke="#059669" strokeWidth="2" />
         <text x={PAD_LEFT} y={CHART_HEIGHT - 6} fontSize="10" fill="#64748b">
           {daily[0]?.day}
         </text>

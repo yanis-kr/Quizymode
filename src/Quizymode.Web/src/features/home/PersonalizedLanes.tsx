@@ -250,6 +250,7 @@ export function PersonalizedLanes({ featuredSets }: { featuredSets: FeaturedSetD
         featuredSets,
         popularCategories: popularQuery.data ?? [],
         knownCategories,
+        categoryNames,
       }),
     [explicitInterests, runs, featuredSets, popularQuery.data],
   );

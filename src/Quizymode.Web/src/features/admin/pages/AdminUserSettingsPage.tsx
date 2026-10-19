@@ -440,8 +440,8 @@ const AdminUserSettingsPage = () => {
         </div>
       </section>
 
-      <section className="grid gap-6 xl:grid-cols-[1.05fr_1.2fr]">
-        <div className="rounded-2xl border border-slate-200 bg-white shadow-sm">
+      <section className="grid grid-cols-1 gap-6 xl:grid-cols-[minmax(0,1.05fr)_minmax(0,1.2fr)]">
+        <div className="min-w-0 rounded-2xl border border-slate-200 bg-white shadow-sm">
           <div className="border-b border-slate-200 px-5 py-4">
             <h2 className="text-lg font-semibold text-gray-900">
               Registered Users
@@ -617,7 +617,7 @@ const AdminUserSettingsPage = () => {
             </div>
           )}
         </div>
-        <div className="rounded-2xl border border-slate-200 bg-white shadow-sm">
+        <div className="min-w-0 rounded-2xl border border-slate-200 bg-white shadow-sm">
           <div className="border-b border-slate-200 px-5 py-4">
             <h2 className="text-lg font-semibold text-gray-900">
               User Detail
