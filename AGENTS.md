@@ -104,11 +104,22 @@ To move through the backlog faster, related small/medium issues are bundled into
 
 - An epic issue's body has a checklist of sub-issue numbers (`- [ ] #124`) and lives under the same `area:` label as its sub-issues.
 - When asked to work an epic, implement every unchecked sub-issue on one branch/worktree, running the normal specialist pipeline (architect → ux-designer → reviewer → coder → tester → reviewer final pass) across the combined scope.
-- Validate each sub-issue locally and capture evidence (screenshots, test output, curl output) per sub-issue, but hold that evidence locally or in the PR description — do not attach it to the sub-issues yet, since they are not done until production confirms them.
+- Validate each sub-issue locally and capture evidence per sub-issue (see § Issue Closure Evidence), but hold that evidence locally or in the PR description — do not attach it to the sub-issues yet, since they are not done until production confirms them.
 - Open exactly one PR for the whole epic. Do not merge or deploy without explicit user go-ahead, same as any other change.
 - After merge and production deploy: verify each sub-issue in prod, then attach the evidence to each individual sub-issue and close it, then close the epic once every sub-issue is closed.
 - If production reveals a defect in scope, file a **new** issue referencing the epic by number. Do not reopen a closed sub-issue to absorb a post-deploy regression.
 - Grouping principle for new epics: prefer bundling by shared functional area/feature (e.g. "same report family," "same screen") over hitting a specific issue count — 2–3 medium issues or 5–7 small ones are both fine as long as they're genuinely related.
+
+## Issue Closure Evidence
+
+Do not close an issue or bug until its evidence is attached to the issue itself as an `Acceptance Evidence` comment. Evidence held only locally, in a chat transcript, or in the PR description does not count.
+
+- **Screenshots where applicable.** Any change with a visible surface (pages, components, admin screens, error states, emails rendered in a browser) must include screenshots of the verified behavior — production after deploy when the issue is closed post-deploy, otherwise the environment that was tested. Cover the states the acceptance criteria name (e.g. desktop and mobile, empty/error/success, authorized vs. redirected).
+- **Other forms of evidence where screenshots don't apply.** Backend, API, data, infra, or tooling changes attach the actual output instead: test run output (command plus pass/fail summary), `curl`/HTTP request and response status/body, relevant log lines, SQL query results, or CI run links. Paste the output in fenced blocks or collapsible `<details>` sections; trim noise but never edit results.
+- Mixed changes need both: screenshots for the UI part and command/log output for the rest.
+- **Hosting screenshots:** `gh` cannot upload attachments, so commit images under `issue-<n>/screenshots/` and link them via `https://raw.githubusercontent.com/yanis-kr/Quizymode/<commit-sha>/issue-<n>/screenshots/<file>.png` (pin the SHA so links don't break), or embed them with `![alt](url)`. Never link a local file path.
+- Never include secrets, tokens, connection strings, or real users' personal data in screenshots or pasted output — crop or redact first.
+- If evidence for a criterion can't be produced (e.g. needs an admin session that isn't available), say so explicitly as BLOCKED/NOT RUN in the comment and leave the issue open or get the user's explicit OK to close.
 
 ## Change Rules
 
