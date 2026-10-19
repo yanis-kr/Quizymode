@@ -37,6 +37,18 @@ export interface RecordPolicyAcceptancesResponse {
   acceptances: PolicyAcceptanceResponse[];
 }
 
+export interface PolicyStatusResponse {
+  policyType: string;
+  currentVersion: string;
+  acceptedVersion: string | null;
+  needsAcceptance: boolean;
+}
+
+export interface PolicyAcceptanceStatusResponse {
+  policies: PolicyStatusResponse[];
+  needsAcceptance: boolean;
+}
+
 export const usersApi = {
   getCurrent: async (): Promise<UserResponse> => {
     const response = await apiClient.get<UserResponse>("/users/me");
@@ -72,6 +84,13 @@ export const usersApi = {
     const response = await apiClient.post<RecordPolicyAcceptancesResponse>(
       "/users/policy-acceptances",
       data
+    );
+    return response.data;
+  },
+
+  getPolicyAcceptanceStatus: async (): Promise<PolicyAcceptanceStatusResponse> => {
+    const response = await apiClient.get<PolicyAcceptanceStatusResponse>(
+      "/users/policy-acceptances/status"
     );
     return response.data;
   },

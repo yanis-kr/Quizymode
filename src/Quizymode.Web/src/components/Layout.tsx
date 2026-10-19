@@ -4,6 +4,7 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useQuery } from "@tanstack/react-query";
 import { useAuth } from "@/contexts/AuthContext";
 import { GuestProgressClaim } from "@/features/guestHistory/GuestProgressClaim";
+import { PolicyAcceptancePrompt } from "@/features/legal/PolicyAcceptancePrompt";
 import { usersApi } from "@/api/users";
 import { getUserGuideUrl } from "@/utils/userGuideLink";
 import { SEO } from "@/components/SEO";
@@ -430,6 +431,7 @@ const Layout = ({ children }: LayoutProps) => {
         )}
       </nav>
       <GuestProgressClaim />
+      <PolicyAcceptancePrompt />
       <main
         className={
           isFullBleedPage

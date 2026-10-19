@@ -30,6 +30,11 @@ interface AuthContextType {
   username: string | null;
   email: string | null;
   isAdmin: boolean;
+  /**
+   * True once a verified session has finished syncing any acceptance queued at signup, so the re-acceptance check
+   * (#222) never runs ahead of that write and prompts a brand-new user a second time.
+   */
+  policyAcceptancesSynced: boolean;
   login: (username: string, password: string) => Promise<void>;
   signup: (username: string, password: string, email: string) => Promise<void>;
   /** Resolves true only when confirmation completed AND a real session was verified (auto-sign-in succeeded). */
@@ -77,6 +82,7 @@ export const AuthProvider = ({ children }: AuthProviderProps) => {
   const [username, setUsername] = useState<string | null>(null);
   const [email, setEmail] = useState<string | null>(null);
   const [isAdmin, setIsAdmin] = useState(false);
+  const [policyAcceptancesSynced, setPolicyAcceptancesSynced] = useState(false);
 
   const syncPendingPolicyAcceptances = useCallback(
     async (candidateEmails: Array<string | null>) => {
@@ -107,6 +113,7 @@ export const AuthProvider = ({ children }: AuthProviderProps) => {
     setUsername(null);
     setEmail(null);
     setIsAdmin(false);
+    setPolicyAcceptancesSynced(false);
     clearTokens();
   }, []);
 
@@ -194,6 +201,7 @@ export const AuthProvider = ({ children }: AuthProviderProps) => {
                 resolvedEmail,
                 readIdTokenEmail(refreshedSession.tokens.idToken),
               ]);
+              setPolicyAcceptancesSynced(true);
               return true;
             } else {
               // No tokens after refresh - clear auth state
@@ -308,6 +316,7 @@ export const AuthProvider = ({ children }: AuthProviderProps) => {
 
         setIsAdmin(isUserAdmin);
         await syncPendingPolicyAcceptances([resolvedEmail, readIdTokenEmail(session.tokens.idToken)]);
+        setPolicyAcceptancesSynced(true);
         return true;
       } else {
         clearAuthState();
@@ -462,6 +471,7 @@ export const AuthProvider = ({ children }: AuthProviderProps) => {
         username,
         email,
         isAdmin,
+        policyAcceptancesSynced,
         login,
         signup,
         confirmSignup,
