@@ -10,6 +10,7 @@ import { buildCollectionPath, buildCollectionStudyPath } from "@/utils/collectio
 import { buildCategoryPath } from "@/utils/categorySlug";
 import { getCategoryThemeBySlug } from "@/features/categories/categoryThemes";
 import { GuestHistoryCard } from "@/features/guestHistory/GuestHistoryCard";
+import { PersonalizedLanes } from "../PersonalizedLanes";
 import {
   HOME_SAMPLE_COLLECTION_ID,
   HOME_SAMPLE_COLLECTION_NAME,
@@ -141,6 +142,8 @@ const HomePage = () => {
             </section>
 
             <GuestHistoryCard />
+
+            <PersonalizedLanes featuredSets={featuredSets} />
 
             {/* ── Categories lane ── */}
             <section className="rounded-[24px] border border-white/10 bg-slate-950/70 p-2 sm:p-3 shadow-xl shadow-slate-950/25">

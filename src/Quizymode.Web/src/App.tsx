@@ -16,6 +16,7 @@ import RequireAuthRoute from "./components/RequireAuthRoute";
 import { LazyRoute } from "./components/LazyRoute";
 import { lazyPage } from "./utils/lazyPage";
 import FeaturedPage from "./features/featured/pages/FeaturedPage";
+import DailyQuizPage from "./features/learningLoop/pages/DailyQuizPage";
 
 // Route-level code splitting (PERF-001): anonymous landing/study pages stay eager; admin, authoring,
 // study guide, community and legal pages load on demand. Keep this list in sync with docs/AC.md.
@@ -50,6 +51,8 @@ const AdminFeedbackPage = lazyPage(() => import("./features/admin/pages/AdminFee
 const AdminIdeasPage = lazyPage(() => import("./features/admin/pages/AdminIdeasPage"));
 const AdminFeaturedPage = lazyPage(() => import("./features/admin/pages/AdminFeaturedPage"));
 const AdminAiProvidersPage = lazyPage(() => import("./features/admin/pages/AdminAiProvidersPage"));
+const AdminDailyQuizPage = lazyPage(() => import("./features/admin/pages/AdminDailyQuizPage"));
+const ReviewQueuePage = lazyPage(() => import("./features/learningLoop/pages/ReviewQueuePage"));
 
 function App() {
   const location = useLocation();
@@ -108,6 +111,7 @@ function App() {
           element={<QuizModePage />}
         />
         <Route path="/quiz/:category?" element={<QuizModePage />} />
+        <Route path="/daily" element={<DailyQuizPage />} />
         <Route path="/login" element={<LoginPage />} />
         <Route path="/signup" element={<SignUpPage />} />
         <Route element={<RequireAuthRoute />}>
@@ -122,6 +126,7 @@ function App() {
           <Route path="/study-guide/upload" element={<StudyGuideUploadPage />} />
           <Route path="/study-guides/documents" element={<StudyGuideDocumentsPage />} />
           <Route path="/study-guides/documents/:id" element={<StudyGuideDocumentPage />} />
+          <Route path="/review" element={<ReviewQueuePage />} />
         </Route>
         <Route path="/items/:id/comments" element={<ItemCommentsPage />} />
         <Route path="/items/:id" element={<ItemDetailPage />} />
@@ -145,6 +150,7 @@ function App() {
           <Route path="/admin/ideas" element={<AdminIdeasPage />} />
           <Route path="/admin/featured" element={<AdminFeaturedPage />} />
           <Route path="/admin/ai-providers" element={<AdminAiProvidersPage />} />
+          <Route path="/admin/daily-quiz" element={<AdminDailyQuizPage />} />
         </Route>
         <Route path="/about" element={<AboutPage />} />
         <Route path="/ideas" element={<IdeasPage />} />

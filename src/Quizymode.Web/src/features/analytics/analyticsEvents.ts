@@ -24,9 +24,11 @@ export type AnalyticsContextType =
   | "auth"
   | "category"
   | "collection"
+  | "daily"
   | "flashcards"
   | "home"
-  | "quiz";
+  | "quiz"
+  | "review";
 
 export interface AnalyticsEventInput {
   name: AnalyticsEventName;

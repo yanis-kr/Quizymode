@@ -1,5 +1,6 @@
 import { useCallback, useEffect, useRef, useState } from "react";
 import { useAuth } from "@/contexts/AuthContext";
+import { claimLocalInterests } from "@/features/learningLoop/claimLocalInterests";
 import { claimGuestProgress, type ClaimGuestProgressResult } from "./claimGuestProgress";
 
 /**
@@ -22,6 +23,8 @@ export function GuestProgressClaim() {
   useEffect(() => {
     if (!isAuthenticated || isLoading || started.current) return;
     started.current = true;
+    // Topic interests picked while anonymous (#116) merge silently in the same once-per-session pass.
+    void claimLocalInterests();
     // eslint-disable-next-line react-hooks/set-state-in-effect
     void run();
   }, [isAuthenticated, isLoading, run]);

@@ -82,9 +82,11 @@ public static class AnalyticsEventCatalog
         "auth",
         "category",
         "collection",
+        "daily",
         "flashcards",
         "home",
-        "quiz"
+        "quiz",
+        "review"
     };
 
     public const int MaxScoreOrTotal = 500;

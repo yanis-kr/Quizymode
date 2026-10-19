@@ -100,6 +100,16 @@ public sealed class ApplicationDbContext : DbContext
 
     public DbSet<FeaturedItem> FeaturedItems => Set<FeaturedItem>();
 
+    public DbSet<ReviewQueueEntry> ReviewQueueEntries => Set<ReviewQueueEntry>();
+
+    public DbSet<DailyQuizSet> DailyQuizSets => Set<DailyQuizSet>();
+
+    public DbSet<DailyQuizItem> DailyQuizItems => Set<DailyQuizItem>();
+
+    public DbSet<DailyQuizCompletion> DailyQuizCompletions => Set<DailyQuizCompletion>();
+
+    public DbSet<UserInterest> UserInterests => Set<UserInterest>();
+
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
         modelBuilder.ApplyConfigurationsFromAssembly(typeof(ApplicationDbContext).Assembly);

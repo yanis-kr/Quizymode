@@ -28,6 +28,14 @@ export async function recordAuthenticatedCompletion(
 ): Promise<boolean> {
   const request = toRecordRequest(snapshot);
   if (!request) return false;
+  return saveStudySession(request, delaysMs);
+}
+
+/** Saves any prepared run (for example a daily quiz with no browsable source). Same retries; never throws. */
+export async function saveStudySession(
+  request: RecordStudySessionRequest,
+  delaysMs: number[] = RETRY_DELAYS_MS,
+): Promise<boolean> {
   for (let attempt = 0; attempt <= delaysMs.length; attempt += 1) {
     try {
       await studySessionsApi.record(request);
