@@ -263,41 +263,52 @@ const IdeaFormModal = ({
                 <p className="mt-1.5 text-xs text-rose-600">{tradeOffsError}</p>
               )}
             </div>
+          </div>
 
-            {requireTurnstile && (
-              <div>
-                <p className="mb-2 text-sm font-medium text-slate-900">Verification</p>
-                <TurnstileWidget
-                  onTokenChange={(token) =>
-                    setValues((current) => ({ ...current, turnstileToken: token }))
-                  }
-                />
-              </div>
-            )}
-
+          {/* Verification and submit errors live in the footer, outside the scrolling body, so they
+              stay visible next to Submit on short screens. */}
+          <div className="space-y-3 border-t border-slate-200 px-6 py-4">
             {errorMessage && (
-              <div className="rounded-2xl border border-rose-200 bg-rose-50 px-4 py-3 text-sm text-rose-900">
+              <div
+                role="alert"
+                className="rounded-2xl border border-rose-200 bg-rose-50 px-4 py-3 text-sm text-rose-900"
+              >
                 {errorMessage}
               </div>
             )}
-          </div>
 
-          <div className="flex flex-col-reverse gap-3 border-t border-slate-200 px-6 py-4 sm:flex-row sm:items-center sm:justify-end">
-            <button
-              type="button"
-              onClick={onClose}
-              disabled={isPending}
-              className="rounded-full border border-slate-300 px-5 py-2.5 text-sm font-medium text-slate-700 transition hover:bg-slate-50 disabled:opacity-50"
-            >
-              Cancel
-            </button>
-            <button
-              type="submit"
-              disabled={!canSubmit || isPending}
-              className="rounded-full bg-slate-900 px-5 py-2.5 text-sm font-medium text-white transition hover:bg-slate-800 disabled:opacity-50"
-            >
-              {isPending ? "Saving..." : submitLabel}
-            </button>
+            <div className="flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
+              {requireTurnstile ? (
+                <div>
+                  <p className="mb-2 text-sm font-medium text-slate-900">Verification</p>
+                  <TurnstileWidget
+                    onTokenChange={(token) =>
+                      setValues((current) => ({ ...current, turnstileToken: token }))
+                    }
+                  />
+                </div>
+              ) : (
+                <span aria-hidden />
+              )}
+
+              <div className="flex flex-col-reverse gap-3 sm:flex-row sm:items-center">
+                <button
+                  type="button"
+                  onClick={onClose}
+                  disabled={isPending}
+                  className="rounded-full border border-slate-300 px-5 py-2.5 text-sm font-medium text-slate-700 transition hover:bg-slate-50 disabled:opacity-50"
+                >
+                  Cancel
+                </button>
+                <button
+                  type="submit"
+                  disabled={!canSubmit || isPending}
+                  className="rounded-full bg-slate-900 px-5 py-2.5 text-sm font-medium text-white transition hover:bg-slate-800 disabled:opacity-50"
+                >
+                  {isPending ? "Saving..." : submitLabel}
+                </button>
+              </div>
+            </div>
           </div>
         </form>
       </div>
