@@ -37,6 +37,7 @@ internal sealed class OpenAiCompatibleChatClient(HttpClient httpClient, ILogger<
 {
     private readonly HttpClient _httpClient = httpClient;
     private readonly ILogger<OpenAiCompatibleChatClient> _logger = logger;
+    private const int MaxErrorExcerptLength = 300;
 
     public async Task<ChatCompletionResult> CompleteAsync(
         LlmVendorEndpoint endpoint,
@@ -64,9 +65,10 @@ internal sealed class OpenAiCompatibleChatClient(HttpClient httpClient, ILogger<
             if (!response.IsSuccessStatusCode)
             {
                 _logger.LogWarning(
-                    "StudyGuideGeneration: {Vendor} returned {StatusCode}.",
+                    "StudyGuideGeneration: {Vendor} returned {StatusCode}: {Error}",
                     endpoint.Vendor,
-                    (int)response.StatusCode);
+                    (int)response.StatusCode,
+                    ErrorExcerpt(responseText));
                 return new ChatCompletionResult(LlmAttemptOutcome.ProviderError, null, null, null, elapsed);
             }
 
@@ -99,6 +101,8 @@ internal sealed class OpenAiCompatibleChatClient(HttpClient httpClient, ILogger<
         if (vendor == LlmVendors.OpenAI && IsOpenAiReasoningModel(model))
         {
             body["max_completion_tokens"] = request.MaxTokens;
+            // Without this, reasoning can use the whole completion budget before any answer is written.
+            body["reasoning_effort"] = ReasoningEffortFor(model);
         }
         else
         {
@@ -107,6 +111,20 @@ internal sealed class OpenAiCompatibleChatClient(HttpClient httpClient, ILogger<
         }
 
         return body;
+    }
+
+    /// <summary>The lowest effort each reasoning family accepts: gpt-5 models take "minimal", o-series models "low".</summary>
+    internal static string ReasoningEffortFor(string model) =>
+        model.Trim().StartsWith("gpt-5", StringComparison.OrdinalIgnoreCase) ? "minimal" : "low";
+
+    /// <summary>
+    /// A short, single-line excerpt of a vendor error body for the log. Vendor errors describe the problem
+    /// (bad key, unknown field, quota); they don't echo our request, so nothing from the study guide is logged.
+    /// </summary>
+    internal static string ErrorExcerpt(string responseText)
+    {
+        string singleLine = string.Join(' ', responseText.Split((char[]?)null, StringSplitOptions.RemoveEmptyEntries));
+        return singleLine.Length <= MaxErrorExcerptLength ? singleLine : singleLine[..MaxErrorExcerptLength] + "…";
     }
 
     internal static bool IsOpenAiReasoningModel(string model)
