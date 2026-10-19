@@ -43,6 +43,7 @@ function loadTurnstileScript(): Promise<void> {
 
 const TurnstileWidget = ({ onTokenChange }: TurnstileWidgetProps) => {
   const [loadError, setLoadError] = useState<string | null>(null);
+  const [challengeFailed, setChallengeFailed] = useState(false);
   const containerRef = useRef<HTMLDivElement | null>(null);
   const widgetIdRef = useRef<string | null>(null);
   // Parents usually pass an inline callback; keep the latest one in a ref so a new function
@@ -72,6 +73,7 @@ const TurnstileWidget = ({ onTokenChange }: TurnstileWidgetProps) => {
     let cancelled = false;
     onTokenChange(null);
     setLoadError(null);
+    setChallengeFailed(false);
 
     void loadTurnstileScript()
       .then(() => {
@@ -81,11 +83,14 @@ const TurnstileWidget = ({ onTokenChange }: TurnstileWidgetProps) => {
 
         widgetIdRef.current = window.turnstile.render(containerRef.current, {
           sitekey: siteKey,
-          callback: (token: string) => onTokenChange(token),
+          callback: (token: string) => {
+            setChallengeFailed(false);
+            onTokenChange(token);
+          },
           "expired-callback": () => onTokenChange(null),
           "error-callback": () => {
             onTokenChange(null);
-            setLoadError("Turnstile verification failed. Please refresh the widget and try again.");
+            setChallengeFailed(true);
           },
         });
       })
@@ -113,12 +118,35 @@ const TurnstileWidget = ({ onTokenChange }: TurnstileWidgetProps) => {
     );
   }
 
+  // Resets the widget in place so the typed form is kept.
+  const retryChallenge = () => {
+    if (widgetIdRef.current && window.turnstile) {
+      window.turnstile.reset(widgetIdRef.current);
+    }
+    setChallengeFailed(false);
+  };
+
   return (
     <div className="space-y-2">
       <div ref={containerRef} />
       {loadError && (
         <div className="rounded-2xl border border-rose-200 bg-rose-50 px-4 py-3 text-xs text-rose-900">
           {loadError}
+        </div>
+      )}
+      {challengeFailed && (
+        <div
+          role="alert"
+          className="flex flex-wrap items-center justify-between gap-2 rounded-2xl border border-rose-200 bg-rose-50 px-4 py-3 text-xs text-rose-900"
+        >
+          <span>Verification failed. Your idea is kept; try the check again.</span>
+          <button
+            type="button"
+            onClick={retryChallenge}
+            className="rounded-full border border-rose-300 bg-white px-3 py-1 font-semibold text-rose-900 hover:bg-rose-100"
+          >
+            Try again
+          </button>
         </div>
       )}
     </div>
