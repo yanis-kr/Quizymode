@@ -341,6 +341,45 @@ public sealed class StudyGuideGenerationTests : DatabaseTestFixture
         deepSeek["temperature"]!.GetValue<double>().Should().Be(0.2);
     }
 
+    [Theory]
+    [InlineData("gpt-5-nano", "minimal")]
+    [InlineData("gpt-5-mini", "minimal")]
+    [InlineData("o4-mini", "low")]
+    public void BuildRequestBody_SetsTheLowestReasoningEffortForOpenAiReasoningModels(string model, string expected)
+    {
+        ChatCompletionRequest request = new("system", "user", 8000, 0.2);
+
+        System.Text.Json.Nodes.JsonObject body = OpenAiCompatibleChatClient.BuildRequestBody(LlmVendors.OpenAI, model, request);
+
+        body["reasoning_effort"]!.GetValue<string>().Should().Be(expected);
+    }
+
+    [Theory]
+    [InlineData("DeepSeek", "deepseek-flash")]
+    [InlineData("Gemini", "gemini-2.5-flash-lite")]
+    [InlineData("OpenAI", "gpt-4o-mini")]
+    public void BuildRequestBody_OmitsReasoningEffortForNonReasoningModels(string vendor, string model)
+    {
+        ChatCompletionRequest request = new("system", "user", 8000, 0.2);
+
+        System.Text.Json.Nodes.JsonObject body = OpenAiCompatibleChatClient.BuildRequestBody(vendor, model, request);
+
+        body.ContainsKey("reasoning_effort").Should().BeFalse();
+    }
+
+    [Fact]
+    public void ErrorExcerpt_CollapsesWhitespaceAndTruncatesLongBodies()
+    {
+        string multiLine = "[{\n  \"error\": {\n    \"code\": 400,\n    \"message\": \"API key not valid.\"\n  }\n}]";
+        string longBody = new('x', 1000);
+
+        OpenAiCompatibleChatClient.ErrorExcerpt(multiLine)
+            .Should().Be("[{ \"error\": { \"code\": 400, \"message\": \"API key not valid.\" } }]");
+        string excerpt = OpenAiCompatibleChatClient.ErrorExcerpt(longBody);
+        excerpt.Should().HaveLength(301);
+        excerpt.Should().EndWith("…");
+    }
+
     [Fact]
     public void VendorRegistry_ReadsKeysFromConfigurationAndEnvironmentNames()
     {
