@@ -80,6 +80,15 @@ const AdminDashboardPage = () => {
           </p>
         </Link>
         <Link
+          to="/admin/daily-quiz"
+          className="bg-white shadow rounded-lg p-6 hover:shadow-lg transition-shadow cursor-pointer"
+        >
+          <h3 className="text-lg font-medium text-gray-900 mb-2">Daily Quiz</h3>
+          <p className="text-sm text-gray-500">
+            Check today's and upcoming daily sets and remove unsuitable questions
+          </p>
+        </Link>
+        <Link
           to="/admin/ai-providers"
           className="bg-white shadow rounded-lg p-6 hover:shadow-lg transition-shadow cursor-pointer"
         >

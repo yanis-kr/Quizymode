@@ -611,6 +611,73 @@ namespace Quizymode.Api.Migrations
                     b.ToTable("Comments", (string)null);
                 });
 
+            modelBuilder.Entity("Quizymode.Api.Shared.Models.DailyQuizCompletion", b =>
+                {
+                    b.Property<string>("UserId")
+                        .HasMaxLength(100)
+                        .HasColumnType("character varying(100)");
+
+                    b.Property<DateOnly>("Date")
+                        .HasColumnType("date");
+
+                    b.Property<DateTime>("CompletedAt")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<int>("Correct")
+                        .HasColumnType("integer");
+
+                    b.Property<int>("Total")
+                        .HasColumnType("integer");
+
+                    b.HasKey("UserId", "Date");
+
+                    b.ToTable("DailyQuizCompletions", null, t =>
+                        {
+                            t.HasCheckConstraint("CK_DailyQuizCompletions_Counts", "\"Total\" > 0 AND \"Correct\" >= 0 AND \"Correct\" <= \"Total\"");
+                        });
+                });
+
+            modelBuilder.Entity("Quizymode.Api.Shared.Models.DailyQuizItem", b =>
+                {
+                    b.Property<DateOnly>("Date")
+                        .HasColumnType("date");
+
+                    b.Property<Guid>("ItemId")
+                        .HasColumnType("uuid");
+
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<DateTime?>("ExcludedAt")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<string>("ExcludedBy")
+                        .HasMaxLength(100)
+                        .HasColumnType("character varying(100)");
+
+                    b.Property<int>("Position")
+                        .HasColumnType("integer");
+
+                    b.HasKey("Date", "ItemId");
+
+                    b.HasIndex("ItemId");
+
+                    b.ToTable("DailyQuizItems", (string)null);
+                });
+
+            modelBuilder.Entity("Quizymode.Api.Shared.Models.DailyQuizSet", b =>
+                {
+                    b.Property<DateOnly>("Date")
+                        .HasColumnType("date");
+
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.HasKey("Date");
+
+                    b.ToTable("DailyQuizSets", (string)null);
+                });
+
             modelBuilder.Entity("Quizymode.Api.Shared.Models.FeaturedItem", b =>
                 {
                     b.Property<Guid>("Id")
@@ -1505,6 +1572,43 @@ namespace Quizymode.Api.Migrations
                     b.ToTable("Requests");
                 });
 
+            modelBuilder.Entity("Quizymode.Api.Shared.Models.ReviewQueueEntry", b =>
+                {
+                    b.Property<string>("UserId")
+                        .HasMaxLength(100)
+                        .HasColumnType("character varying(100)");
+
+                    b.Property<Guid>("ItemId")
+                        .HasColumnType("uuid");
+
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<DateTime>("DueAt")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<int>("IntervalIndex")
+                        .HasColumnType("integer");
+
+                    b.Property<DateTime>("ItemVersionAt")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<DateTime?>("LastReviewedAt")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<DateTime>("UpdatedAt")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.HasKey("UserId", "ItemId");
+
+                    b.HasIndex("UserId", "DueAt");
+
+                    b.ToTable("ReviewQueueEntries", null, t =>
+                        {
+                            t.HasCheckConstraint("CK_ReviewQueueEntries_IntervalIndex", "\"IntervalIndex\" >= 0 AND \"IntervalIndex\" < 5");
+                        });
+                });
+
             modelBuilder.Entity("Quizymode.Api.Shared.Models.SectionGeneration", b =>
                 {
                     b.Property<Guid>("Id")
@@ -2327,6 +2431,26 @@ namespace Quizymode.Api.Migrations
                         .IsUnique();
 
                     b.ToTable("Users", (string)null);
+                });
+
+            modelBuilder.Entity("Quizymode.Api.Shared.Models.UserInterest", b =>
+                {
+                    b.Property<string>("UserId")
+                        .HasMaxLength(100)
+                        .HasColumnType("character varying(100)");
+
+                    b.Property<Guid>("CategoryId")
+                        .HasColumnType("uuid");
+
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<int>("SortOrder")
+                        .HasColumnType("integer");
+
+                    b.HasKey("UserId", "CategoryId");
+
+                    b.ToTable("UserInterests", (string)null);
                 });
 
             modelBuilder.Entity("Quizymode.Api.Shared.Models.UserPolicyAcceptance", b =>

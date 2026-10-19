@@ -187,6 +187,23 @@ public static class RecordStudySession
                 return Result.Success(new Response(ToDto(winner), false));
             }
 
+            if (origin == StudySessionOrigins.Quiz && entity.MissedItems.Count > 0)
+            {
+                // REVIEW-001 (#117): live misses join the review queue after the history row is safely stored;
+                // unverified guest imports do not.
+                try
+                {
+                    await ReviewQueue.ReviewQueue.EnqueueMissesAsync(
+                        db, userId, entity.MissedItems.Select(m => m.ItemId).ToList(), DateTime.UtcNow, cancellationToken);
+                }
+                catch (DbUpdateException)
+                {
+                    // The session is already stored; reporting failure would make the client retry into the idempotent
+                    // replay path, which never enqueues. Losing these misses after a repeated conflict is the lesser harm.
+                    db.ChangeTracker.Clear();
+                }
+            }
+
             await PruneExpiredAsync(db, userId, cancellationToken);
             return Result.Success(new Response(ToDto(entity), true));
         }

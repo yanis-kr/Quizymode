@@ -3216,6 +3216,155 @@
         }
       }
     },
+    "/daily-quiz": {
+      "get": {
+        "tags": [
+          "DailyQuiz"
+        ],
+        "summary": "Get today's daily quiz",
+        "description": "Today's (UTC) global set of up to 5 public items. Signed-in callers also get their completion for the day and streak.",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Quizymode.Api.Features.DailyQuiz.DailyQuiz.DailyQuizResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/daily-quiz/completions": {
+      "post": {
+        "tags": [
+          "DailyQuiz"
+        ],
+        "summary": "Record the current user's daily quiz completion",
+        "description": "Date must be today or yesterday (UTC) so a run that crosses midnight still counts. First write wins. Requires authentication.",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Quizymode.Api.Features.DailyQuiz.DailyQuiz.CompleteRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Quizymode.Api.Features.DailyQuiz.DailyQuiz.CompleteResponse"
+                }
+              }
+            }
+          },
+          "201": {
+            "description": "Created",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Quizymode.Api.Features.DailyQuiz.DailyQuiz.CompleteResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "401": {
+            "description": "Unauthorized"
+          }
+        }
+      }
+    },
+    "/admin/daily-quiz": {
+      "get": {
+        "tags": [
+          "Admin"
+        ],
+        "summary": "Get a day's daily quiz set (Admin only)",
+        "description": "date is yyyy-MM-dd from today to 7 days ahead (UTC), default today; the set is created if missing. Lists active and excluded items.",
+        "parameters": [
+          {
+            "name": "date",
+            "in": "query",
+            "schema": {
+              "$ref": "#/components/schemas/System.String"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Quizymode.Api.Features.DailyQuiz.DailyQuiz.AdminDayResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request"
+          }
+        }
+      }
+    },
+    "/admin/daily-quiz/{date}/items/{itemId}/exclude": {
+      "post": {
+        "tags": [
+          "Admin"
+        ],
+        "summary": "Remove an item from a day's daily quiz (Admin only)",
+        "description": "Marks the item excluded for that date and fills its slot with the next eligible item in seed order. Completions already recorded keep their streak credit.",
+        "parameters": [
+          {
+            "name": "date",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "$ref": "#/components/schemas/System.String"
+            }
+          },
+          {
+            "name": "itemId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "$ref": "#/components/schemas/System.Guid"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Quizymode.Api.Features.DailyQuiz.DailyQuiz.AdminDayResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "404": {
+            "description": "Not Found"
+          },
+          "409": {
+            "description": "Conflict"
+          }
+        }
+      }
+    },
     "/featured": {
       "get": {
         "tags": [
@@ -4396,6 +4545,86 @@
         }
       }
     },
+    "/users/me/interests": {
+      "get": {
+        "tags": [
+          "Users"
+        ],
+        "summary": "Get the current user's topic interests",
+        "description": "Category slugs in the order the user chose them; deleted or private categories are omitted. Requires authentication.",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Quizymode.Api.Features.Personalization.Personalization.InterestsResponse"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "Users"
+        ],
+        "summary": "Replace the current user's topic interests",
+        "description": "At most 10 unique slugs of public categories; the list order is kept. An empty list clears interests. Requires authentication.",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Quizymode.Api.Features.Personalization.Personalization.UpdateInterestsRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Quizymode.Api.Features.Personalization.Personalization.InterestsResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "401": {
+            "description": "Unauthorized"
+          }
+        }
+      }
+    },
+    "/home/popular-categories": {
+      "get": {
+        "tags": [
+          "Home"
+        ],
+        "summary": "Popular categories for the personalized home cold start",
+        "description": "Up to 6 public category slugs ranked by completed quiz runs in the last 30 days (bots and internal traffic excluded). Slugs only, no counts. Cached for an hour.",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Quizymode.Api.Features.Personalization.Personalization.PopularCategoriesResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "/ratings/{itemId}": {
       "post": {
         "tags": [
@@ -4502,6 +4731,101 @@
           },
           "400": {
             "description": "Bad Request"
+          }
+        }
+      }
+    },
+    "/review-queue": {
+      "get": {
+        "tags": [
+          "ReviewQueue"
+        ],
+        "summary": "Get the current user's due review items",
+        "description": "Up to 20 due items, oldest due first. Items that were deleted or made private are dropped silently; items edited since they were queued are re-surfaced at the first interval. Requires authentication.",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Quizymode.Api.Features.ReviewQueue.ReviewQueue.QueueResponse"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          }
+        }
+      }
+    },
+    "/review-queue/summary": {
+      "get": {
+        "tags": [
+          "ReviewQueue"
+        ],
+        "summary": "Counts for the current user's review queue",
+        "description": "Due and total counts of available queued items and the next due time. Requires authentication.",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Quizymode.Api.Features.ReviewQueue.ReviewQueue.SummaryResponse"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          }
+        }
+      }
+    },
+    "/review-queue/{itemId}/answers": {
+      "post": {
+        "tags": [
+          "ReviewQueue"
+        ],
+        "summary": "Record a review answer for a queued item",
+        "description": "Correct advances one interval (graduating after 30 days); incorrect resets to one day. An entry that is not due is left unchanged (applied=false). Requires authentication.",
+        "parameters": [
+          {
+            "name": "itemId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "$ref": "#/components/schemas/System.Guid"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Quizymode.Api.Features.ReviewQueue.ReviewQueue.AnswerRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Quizymode.Api.Features.ReviewQueue.ReviewQueue.AnswerResponse"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "404": {
+            "description": "Not Found"
           }
         }
       }
@@ -11462,6 +11786,164 @@
           }
         }
       },
+      "Quizymode.Api.Features.DailyQuiz.DailyQuiz.AdminDayResponse": {
+        "required": [
+          "date",
+          "items"
+        ],
+        "type": "object",
+        "properties": {
+          "date": {
+            "$ref": "#/components/schemas/System.String"
+          },
+          "items": {
+            "$ref": "#/components/schemas/System.Collections.Generic.ListOfQuizymode.Api.Features.DailyQuiz.DailyQuiz.AdminItemDto"
+          }
+        }
+      },
+      "Quizymode.Api.Features.DailyQuiz.DailyQuiz.AdminItemDto": {
+        "required": [
+          "itemId",
+          "position",
+          "question",
+          "category",
+          "excluded",
+          "excludedAt"
+        ],
+        "type": "object",
+        "properties": {
+          "itemId": {
+            "$ref": "#/components/schemas/System.Guid"
+          },
+          "position": {
+            "$ref": "#/components/schemas/System.Int32"
+          },
+          "question": {
+            "$ref": "#/components/schemas/System.String"
+          },
+          "category": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/components/schemas/System.String"
+              }
+            ]
+          },
+          "excluded": {
+            "$ref": "#/components/schemas/System.Boolean"
+          },
+          "excludedAt": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/components/schemas/System.NullableOfSystem.DateTime"
+              }
+            ]
+          }
+        }
+      },
+      "Quizymode.Api.Features.DailyQuiz.DailyQuiz.CompleteRequest": {
+        "required": [
+          "date",
+          "correct",
+          "total"
+        ],
+        "type": "object",
+        "properties": {
+          "date": {
+            "$ref": "#/components/schemas/System.String"
+          },
+          "correct": {
+            "$ref": "#/components/schemas/System.Int32"
+          },
+          "total": {
+            "$ref": "#/components/schemas/System.Int32"
+          }
+        }
+      },
+      "Quizymode.Api.Features.DailyQuiz.DailyQuiz.CompleteResponse": {
+        "required": [
+          "created",
+          "streak",
+          "completion"
+        ],
+        "type": "object",
+        "properties": {
+          "created": {
+            "$ref": "#/components/schemas/System.Boolean"
+          },
+          "streak": {
+            "$ref": "#/components/schemas/System.Int32"
+          },
+          "completion": {
+            "$ref": "#/components/schemas/Quizymode.Api.Features.DailyQuiz.DailyQuiz.CompletionDto"
+          }
+        }
+      },
+      "Quizymode.Api.Features.DailyQuiz.DailyQuiz.CompletionDto": {
+        "required": [
+          "correct",
+          "total",
+          "completedAt"
+        ],
+        "type": "object",
+        "properties": {
+          "correct": {
+            "$ref": "#/components/schemas/System.Int32"
+          },
+          "total": {
+            "$ref": "#/components/schemas/System.Int32"
+          },
+          "completedAt": {
+            "$ref": "#/components/schemas/System.DateTime"
+          }
+        }
+      },
+      "Quizymode.Api.Features.DailyQuiz.DailyQuiz.DailyQuizResponse": {
+        "required": [
+          "date",
+          "items",
+          "completion",
+          "streak"
+        ],
+        "type": "object",
+        "properties": {
+          "date": {
+            "description": "The UTC calendar date of the set, yyyy-MM-dd.",
+            "$ref": "#/components/schemas/System.String"
+          },
+          "items": {
+            "description": "The day's active items in slot order.",
+            "$ref": "#/components/schemas/System.Collections.Generic.ListOfQuizymode.Api.Features.Items.Get.GetItems.ItemResponse"
+          },
+          "completion": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "description": "The caller's completion for this date; always null for anonymous callers.",
+                "$ref": "#/components/schemas/Quizymode.Api.Features.DailyQuiz.DailyQuiz.CompletionDto"
+              }
+            ]
+          },
+          "streak": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "description": "Consecutive UTC days with a completion; null for anonymous callers (they keep it in the browser).",
+                "$ref": "#/components/schemas/System.NullableOfSystem.Int32"
+              }
+            ]
+          }
+        }
+      },
       "Quizymode.Api.Features.Featured.GetFeatured.FeaturedCollectionDto": {
         "required": [
           "id",
@@ -13604,6 +14086,39 @@
           }
         }
       },
+      "Quizymode.Api.Features.Personalization.Personalization.InterestsResponse": {
+        "required": [
+          "categories"
+        ],
+        "type": "object",
+        "properties": {
+          "categories": {
+            "$ref": "#/components/schemas/System.Collections.Generic.ListOfSystem.String"
+          }
+        }
+      },
+      "Quizymode.Api.Features.Personalization.Personalization.PopularCategoriesResponse": {
+        "required": [
+          "categories"
+        ],
+        "type": "object",
+        "properties": {
+          "categories": {
+            "$ref": "#/components/schemas/System.Collections.Generic.ListOfSystem.String"
+          }
+        }
+      },
+      "Quizymode.Api.Features.Personalization.Personalization.UpdateInterestsRequest": {
+        "required": [
+          "categories"
+        ],
+        "type": "object",
+        "properties": {
+          "categories": {
+            "$ref": "#/components/schemas/System.Collections.Generic.ListOfSystem.String"
+          }
+        }
+      },
       "Quizymode.Api.Features.Ratings.AddOrUpdateRating.Request": {
         "required": [
           "stars"
@@ -13737,6 +14252,119 @@
             "$ref": "#/components/schemas/System.DateTime"
           },
           "updatedAt": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/components/schemas/System.NullableOfSystem.DateTime"
+              }
+            ]
+          }
+        }
+      },
+      "Quizymode.Api.Features.ReviewQueue.ReviewQueue.AnswerRequest": {
+        "required": [
+          "isCorrect"
+        ],
+        "type": "object",
+        "properties": {
+          "isCorrect": {
+            "$ref": "#/components/schemas/System.Boolean"
+          }
+        }
+      },
+      "Quizymode.Api.Features.ReviewQueue.ReviewQueue.AnswerResponse": {
+        "required": [
+          "itemId",
+          "applied",
+          "graduated",
+          "intervalDays",
+          "dueAt"
+        ],
+        "type": "object",
+        "properties": {
+          "itemId": {
+            "description": "The answered item.",
+            "$ref": "#/components/schemas/System.Guid"
+          },
+          "applied": {
+            "description": "False when the entry was not due (for example a repeated submit); nothing changed.",
+            "$ref": "#/components/schemas/System.Boolean"
+          },
+          "graduated": {
+            "description": "True when a correct review at the last interval removed the item from the queue.",
+            "$ref": "#/components/schemas/System.Boolean"
+          },
+          "intervalDays": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "description": "Days until the item is due again; null once graduated.",
+                "$ref": "#/components/schemas/System.NullableOfSystem.Int32"
+              }
+            ]
+          },
+          "dueAt": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "description": "When the item is due again (UTC); null once graduated.",
+                "$ref": "#/components/schemas/System.NullableOfSystem.DateTime"
+              }
+            ]
+          }
+        }
+      },
+      "Quizymode.Api.Features.ReviewQueue.ReviewQueue.QueueResponse": {
+        "required": [
+          "items",
+          "dueCount",
+          "totalCount",
+          "nextDueAt"
+        ],
+        "type": "object",
+        "properties": {
+          "items": {
+            "$ref": "#/components/schemas/System.Collections.Generic.ListOfQuizymode.Api.Features.Items.Get.GetItems.ItemResponse"
+          },
+          "dueCount": {
+            "$ref": "#/components/schemas/System.Int32"
+          },
+          "totalCount": {
+            "$ref": "#/components/schemas/System.Int32"
+          },
+          "nextDueAt": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/components/schemas/System.NullableOfSystem.DateTime"
+              }
+            ]
+          }
+        }
+      },
+      "Quizymode.Api.Features.ReviewQueue.ReviewQueue.SummaryResponse": {
+        "required": [
+          "dueCount",
+          "totalCount",
+          "nextDueAt"
+        ],
+        "type": "object",
+        "properties": {
+          "dueCount": {
+            "$ref": "#/components/schemas/System.Int32"
+          },
+          "totalCount": {
+            "$ref": "#/components/schemas/System.Int32"
+          },
+          "nextDueAt": {
             "oneOf": [
               {
                 "type": "null"
@@ -16108,6 +16736,12 @@
           "$ref": "#/components/schemas/Quizymode.Api.Features.Comments.GetComments.CommentResponse"
         }
       },
+      "System.Collections.Generic.ListOfQuizymode.Api.Features.DailyQuiz.DailyQuiz.AdminItemDto": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/Quizymode.Api.Features.DailyQuiz.DailyQuiz.AdminItemDto"
+        }
+      },
       "System.Collections.Generic.ListOfQuizymode.Api.Features.Featured.GetFeatured.FeaturedCollectionDto": {
         "type": "array",
         "items": {
@@ -16419,6 +17053,9 @@
       "name": "Comments"
     },
     {
+      "name": "DailyQuiz"
+    },
+    {
       "name": "Featured"
     },
     {
@@ -16434,7 +17071,16 @@
       "name": "Keywords"
     },
     {
+      "name": "Users"
+    },
+    {
+      "name": "Home"
+    },
+    {
       "name": "Ratings"
+    },
+    {
+      "name": "ReviewQueue"
     },
     {
       "name": "StudyGuideDocuments"
@@ -16456,9 +17102,6 @@
     },
     {
       "name": "UserSettings"
-    },
-    {
-      "name": "Users"
     },
     {
       "name": "Auth"

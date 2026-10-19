@@ -26,6 +26,12 @@ vi.mock("@/api/featured", () => ({
   },
 }));
 
+vi.mock("@/api/learningLoop", () => ({
+  interestsApi: { popularCategories: vi.fn().mockResolvedValue([]), get: vi.fn(), replace: vi.fn() },
+  dailyQuizApi: { get: vi.fn() },
+  reviewQueueApi: { getSummary: vi.fn() },
+}));
+
 vi.mock("@/contexts/AuthContext", () => ({
   useAuth: () => ({
     isAuthenticated: false,
