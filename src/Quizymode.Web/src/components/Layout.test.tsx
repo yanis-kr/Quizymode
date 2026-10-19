@@ -19,6 +19,7 @@ vi.mock("@/contexts/AuthContext", () => ({
 vi.mock("@/api/users", () => ({
   usersApi: {
     getCurrent: vi.fn(),
+    getPolicyAcceptanceStatus: vi.fn(),
   },
 }));
 

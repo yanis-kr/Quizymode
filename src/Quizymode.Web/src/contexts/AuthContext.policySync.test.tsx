@@ -110,4 +110,26 @@ describe("pending policy acceptance sync after confirming a new account (#158)",
 
     expect(window.localStorage.getItem("PendingPolicyAcceptancesV1")).not.toBeNull();
   });
+
+  it("reports the sync as settled only after the queued acceptance was sent (#222)", async () => {
+    mockFetchAuthSession.mockResolvedValueOnce({ tokens: undefined });
+    const { result } = renderHook(() => useAuth(), { wrapper: AuthProvider });
+    await waitFor(() => expect(result.current.isLoading).toBe(false));
+    expect(result.current.policyAcceptancesSynced).toBe(false);
+
+    queueSignUpPolicyAcceptances(EMAIL, "2026-10-16T18:16:00.000Z");
+    mockFetchAuthSession.mockResolvedValue(session({ username: EMAIL }, { email: EMAIL }));
+    let syncedWhenRecorded: boolean | undefined;
+    mockRecord.mockImplementationOnce(async () => {
+      syncedWhenRecorded = result.current.policyAcceptancesSynced;
+      return { acceptances: [] };
+    });
+
+    await act(async () => {
+      await result.current.confirmSignup(EMAIL, "123456");
+    });
+
+    expect(syncedWhenRecorded).toBe(false);
+    expect(result.current.policyAcceptancesSynced).toBe(true);
+  });
 });
