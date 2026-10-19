@@ -21,7 +21,7 @@ const IDEA_ERROR_COPY: Record<string, string> = {
 };
 
 const RATE_LIMIT_COPY =
-  "You're doing that too quickly. Please wait a minute and try again.";
+  "You're doing that too quickly. Please wait a few minutes and try again.";
 
 /**
  * Map known Ideas API error codes (carried in the ProblemDetails title) and
