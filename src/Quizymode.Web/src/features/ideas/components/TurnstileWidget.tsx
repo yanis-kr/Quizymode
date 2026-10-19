@@ -45,9 +45,18 @@ const TurnstileWidget = ({ onTokenChange }: TurnstileWidgetProps) => {
   const [loadError, setLoadError] = useState<string | null>(null);
   const containerRef = useRef<HTMLDivElement | null>(null);
   const widgetIdRef = useRef<string | null>(null);
+  // Parents usually pass an inline callback; keep the latest one in a ref so a new function
+  // identity on every render does not tear down and re-render the widget (which reset the token
+  // and re-rendered the parent again, so the widget never appeared).
+  const onTokenChangeRef = useRef(onTokenChange);
   const siteKey = import.meta.env.VITE_TURNSTILE_SITE_KEY;
 
   useEffect(() => {
+    onTokenChangeRef.current = onTokenChange;
+  }, [onTokenChange]);
+
+  useEffect(() => {
+    const onTokenChange = (token: string | null) => onTokenChangeRef.current(token);
     if (!siteKey) {
       if (!import.meta.env.PROD) {
         onTokenChange("dev-turnstile-bypass");
@@ -94,7 +103,7 @@ const TurnstileWidget = ({ onTokenChange }: TurnstileWidgetProps) => {
       }
       widgetIdRef.current = null;
     };
-  }, [onTokenChange, siteKey]);
+  }, [siteKey]);
 
   if (!siteKey && !import.meta.env.PROD) {
     return (
