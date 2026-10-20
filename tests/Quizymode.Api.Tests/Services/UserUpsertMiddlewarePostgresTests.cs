@@ -193,6 +193,12 @@ public sealed class UserUpsertMiddlewarePostgresTests(PostgresContainerFixture f
 
     private static string NewSubject() => Guid.NewGuid().ToString();
 
+    private async Task<int> CountUserCreatedAuditsAsync()
+    {
+        await using ApplicationDbContext db = fixture.CreateDbContext();
+        return await db.Audits.CountAsync(a => a.Action == AuditAction.UserCreated);
+    }
+
     private static string NewEmail() => $"{Guid.NewGuid():N}@example.com";
 
     [SkippableTheory]
@@ -206,6 +212,7 @@ public sealed class UserUpsertMiddlewarePostgresTests(PostgresContainerFixture f
         string subjectA = NewSubject();
         string subjectB = NewSubject();
         User seeded = await SeedUserAsync(subjectA, seededEmail);
+        int userCreatedBefore = await CountUserCreatedAuditsAsync();
         await using Scenario scenario = await StartAsync();
 
         WhoAmI who = await WhoAmIAsync(scenario, subjectB, requestEmail, emailVerified);
@@ -220,8 +227,8 @@ public sealed class UserUpsertMiddlewarePostgresTests(PostgresContainerFixture f
         await using (ApplicationDbContext db = fixture.CreateDbContext())
         {
             (await db.Users.AnyAsync(u => u.Subject == subjectB)).Should().BeFalse();
-            (await db.Audits.AnyAsync(a => a.Action == AuditAction.UserCreated && a.UserId == seeded.Id)).Should().BeFalse();
         }
+        (await CountUserCreatedAuditsAsync()).Should().Be(userCreatedBefore, "a rejected match must not create a user");
 
         AssertNoUpsertFailure(scenario);
         CapturedLog warning = scenario.UpsertLogs.Should().ContainSingle(e => e.Level == LogLevel.Warning).Subject;
