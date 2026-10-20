@@ -53,9 +53,9 @@ public static class UploadItemsToCollection
             RuleFor(x => x.Items)
                 .NotNull()
                 .WithMessage("Items is required")
-                .Must(items => items.Count > 0)
+                .Must(items => items is null || items.Count > 0)
                 .WithMessage("At least one item is required")
-                .Must(items => items.Count <= maxItems)
+                .Must(items => items is null || items.Count <= maxItems)
                 .WithMessage($"Cannot upload more than {maxItems} items at once");
             RuleForEach(x => x.Items)
                 .SetValidator(new AddItemsBulk.ItemRequestValidator());
