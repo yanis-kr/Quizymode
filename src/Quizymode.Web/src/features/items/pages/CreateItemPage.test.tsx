@@ -166,4 +166,33 @@ describe("CreateItemPage", () => {
     expect(await screen.findByText("Item Detail")).toBeInTheDocument();
     expect(screen.getByTestId("location")).toHaveTextContent("/items/item-123");
   });
+
+  it("re-indexes incorrect-answer speech after dropping a blank answer (#269)", async () => {
+    // AC 3.12.7
+    const user = userEvent.setup({ delay: null });
+
+    renderPage("/add-new-item?category=science&keywords=anatomy,muscular");
+
+    await waitFor(() => expect(screen.getByLabelText(/subtopic/i)).toHaveValue("muscular"));
+
+    await user.type(getFieldControl("Question *"), "What connects muscle to bone?");
+    await user.type(getFieldControl("Correct Answer *"), "Tendons");
+    await user.type(screen.getByPlaceholderText("Incorrect answer 1"), "Ligaments");
+    await user.type(screen.getByPlaceholderText("Incorrect answer 3"), "Bones");
+
+    // Order: [a1p, a1l, a2p, a2l, a3p, a3l]
+    const speechInputs = screen.getAllByPlaceholderText("Optional");
+    await user.type(speechInputs[2], "ghost");
+    await user.type(speechInputs[4], "bownz");
+    await user.type(speechInputs[5], "en-US");
+
+    await user.click(screen.getByRole("button", { name: /create item/i }));
+
+    await waitFor(() => expect(itemsApi.create).toHaveBeenCalledTimes(1));
+    const payload = vi.mocked(itemsApi.create).mock.calls[0][0];
+    expect(payload.incorrectAnswers).toEqual(["Ligaments", "Bones"]);
+    expect(payload.incorrectAnswerSpeech).toEqual({
+      1: { pronunciation: "bownz", languageCode: "en-US" },
+    });
+  });
 });

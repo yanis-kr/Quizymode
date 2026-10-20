@@ -58,20 +58,32 @@ export function normalizeSpeechSupportInput(
   };
 }
 
-export function normalizeSpeechSupportMapInput(
+export function compactIncorrectAnswersWithSpeech(
+  answers: string[],
   speechByIndex?: Record<number, ItemSpeechSupport> | null
-): Record<number, ItemSpeechSupport> | undefined {
-  if (!speechByIndex) {
-    return undefined;
-  }
+): {
+  incorrectAnswers: string[];
+  incorrectAnswerSpeech: Record<number, ItemSpeechSupport> | undefined;
+} {
+  const incorrectAnswers: string[] = [];
+  const speechMap: Record<number, ItemSpeechSupport> = {};
 
-  const normalizedEntries = Object.entries(speechByIndex)
-    .map(([index, speech]) => [Number(index), normalizeSpeechSupportInput(speech)] as const)
-    .filter((entry): entry is readonly [number, ItemSpeechSupport] => Number.isInteger(entry[0]) && entry[1] != null);
+  answers.forEach((answer, originalIndex) => {
+    if (answer.trim() === "") {
+      return;
+    }
 
-  if (normalizedEntries.length === 0) {
-    return undefined;
-  }
+    const newIndex = incorrectAnswers.length;
+    incorrectAnswers.push(answer);
 
-  return Object.fromEntries(normalizedEntries) as Record<number, ItemSpeechSupport>;
+    const speech = normalizeSpeechSupportInput(speechByIndex?.[originalIndex]);
+    if (speech) {
+      speechMap[newIndex] = speech;
+    }
+  });
+
+  return {
+    incorrectAnswers,
+    incorrectAnswerSpeech: Object.keys(speechMap).length > 0 ? speechMap : undefined,
+  };
 }
