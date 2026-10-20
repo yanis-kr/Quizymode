@@ -1,8 +1,9 @@
 import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
-import { getCognitoDomain, isGoogleSignInEnabled } from "./googleSignInConfig";
+import { getCognitoDomain, isGoogleSignInEnabled, resetMisconfigurationLogForTests } from "./googleSignInConfig";
 
 describe("isGoogleSignInEnabled", () => {
   beforeEach(() => {
+    resetMisconfigurationLogForTests();
     vi.spyOn(console, "error").mockImplementation(() => undefined);
   });
 
@@ -27,7 +28,8 @@ describe("isGoogleSignInEnabled", () => {
     vi.stubEnv("VITE_GOOGLE_SIGNIN_ENABLED", "true");
     vi.stubEnv("VITE_COGNITO_DOMAIN", "");
     expect(isGoogleSignInEnabled()).toBe(false);
-    expect(console.error).toHaveBeenCalled();
+    expect(isGoogleSignInEnabled()).toBe(false);
+    expect(console.error).toHaveBeenCalledTimes(1);
   });
 
   it("is on when the flag is 'true' and a domain is set", () => {

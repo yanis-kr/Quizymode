@@ -226,6 +226,19 @@ describe("AuthCallbackPage", () => {
     expect(await screen.findByRole("heading", { name: "Sign-in cancelled" })).toBeInTheDocument();
   });
 
+  it("still retries once when a linked-account failure arrives after the URL already showed an error", async () => {
+    install("?error=invalid_request&error_description=PreSignUp+failed+with+error+QM_ACCOUNT_LINKED.");
+    sessionStorage.setItem("qm.auth.googleIntent", JSON.stringify({ returnTo: "/quiz", reason: null }));
+    renderPage();
+
+    emit("signInWithRedirect_failure", { error: new Error("PreSignUp failed with error QM_ACCOUNT_LINKED.") });
+
+    await waitFor(() =>
+      expect(mockSignInWithGoogle).toHaveBeenCalledWith({ returnTo: "/quiz", reason: null }, { isRetry: true })
+    );
+    expect(screen.queryByRole("alert")).not.toBeInTheDocument();
+  });
+
   it("shows a generic error when the session cannot be established after success", async () => {
     install("?code=abc");
     mockRefreshAuth.mockResolvedValue(false);

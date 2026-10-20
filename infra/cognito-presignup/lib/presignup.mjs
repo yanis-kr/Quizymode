@@ -91,6 +91,13 @@ async function handleExternalProvider(event, client) {
     return event;
   }
 
+  // AdminGetUser resolves aliases; never act on an account whose email is not the Google email.
+  const nativeEmail = getAttribute(native, "email");
+  if (typeof nativeEmail !== "string" || nativeEmail.toLowerCase() !== email.toLowerCase()) {
+    log(trigger, "native-email-mismatch");
+    throw new Error(NATIVE_ACCOUNT_STATE);
+  }
+
   if (native.UserStatus === "UNCONFIRMED") {
     // An unconfirmed password sign-up proves nothing about the email. Linking would hand the account to whoever
     // chose that password; leaving it would block the verified owner. Remove it and let the Google user be created.

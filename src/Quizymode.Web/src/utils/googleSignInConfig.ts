@@ -8,17 +8,27 @@ export function getCognitoDomain(): string | null {
   return domain ? domain.replace(/^https?:\/\//, "").replace(/\/+$/, "") : null;
 }
 
+let misconfigurationLogged = false;
+
 export function isGoogleSignInEnabled(): boolean {
   if (import.meta.env.VITE_GOOGLE_SIGNIN_ENABLED !== "true") {
     return false;
   }
 
   if (!getCognitoDomain()) {
-    console.error(
-      "VITE_GOOGLE_SIGNIN_ENABLED is true but VITE_COGNITO_DOMAIN is not set. Google sign-in stays disabled."
-    );
+    if (!misconfigurationLogged) {
+      misconfigurationLogged = true;
+      console.error(
+        "VITE_GOOGLE_SIGNIN_ENABLED is true but VITE_COGNITO_DOMAIN is not set. Google sign-in stays disabled."
+      );
+    }
     return false;
   }
 
   return true;
+}
+
+/** Test helper. */
+export function resetMisconfigurationLogForTests(): void {
+  misconfigurationLogged = false;
 }

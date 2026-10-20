@@ -35,7 +35,10 @@ function nativeUser(overrides = {}) {
   return {
     Username: "native-sub-1",
     UserStatus: "CONFIRMED",
-    UserAttributes: [{ Name: "email_verified", Value: "true" }],
+    UserAttributes: [
+      { Name: "email", Value: "jane@example.com" },
+      { Name: "email_verified", Value: "true" },
+    ],
     ...overrides,
   };
 }
@@ -124,7 +127,7 @@ describe("PreSignUp_ExternalProvider", () => {
 
   it("deletes an UNCONFIRMED password account and lets Cognito create the Google user", async () => {
     const client = fakeClient({
-      AdminGetUserCommand: () => nativeUser({ UserStatus: "UNCONFIRMED", UserAttributes: [] }),
+      AdminGetUserCommand: () => nativeUser({ UserStatus: "UNCONFIRMED" }),
       AdminDeleteUserCommand: () => ({}),
     });
     const event = externalEvent();
@@ -148,7 +151,17 @@ describe("PreSignUp_ExternalProvider", () => {
 
   it("fails closed for a confirmed password account whose email is not verified", async () => {
     const client = fakeClient({
-      AdminGetUserCommand: () => nativeUser({ UserAttributes: [{ Name: "email_verified", Value: "false" }] }),
+      AdminGetUserCommand: () => nativeUser({ UserAttributes: [{ Name: "email", Value: "jane@example.com" }, { Name: "email_verified", Value: "false" }] }),
+    });
+
+    await rejectsWith(handlePreSignUp(externalEvent(), client), NATIVE_ACCOUNT_STATE);
+
+    assert.deepEqual(client.sent.map((call) => call.name), ["AdminGetUserCommand"]);
+  });
+
+  it("fails closed when the account AdminGetUser returned has a different email", async () => {
+    const client = fakeClient({
+      AdminGetUserCommand: () => nativeUser({ UserAttributes: [{ Name: "email", Value: "other@example.com" }, { Name: "email_verified", Value: "true" }] }),
     });
 
     await rejectsWith(handlePreSignUp(externalEvent(), client), NATIVE_ACCOUNT_STATE);

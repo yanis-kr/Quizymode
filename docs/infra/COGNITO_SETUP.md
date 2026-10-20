@@ -147,8 +147,10 @@ Before attaching it, list the pool's existing users and look for anything that i
 
 ```bash
 aws cognito-idp list-users --user-pool-id us-east-1_LiJbvT212 --region us-east-1 \
-  --query "Users[?UserStatus!='CONFIRMED'].[Username,UserStatus]" --output table
+  --query "Users[].[Username,UserStatus,Attributes[?Name=='email_verified'].Value|[0]]" --output table
 ```
+
+A CONFIRMED user whose `email_verified` is not `true` is refused on first Google use (generic error), so fix or accept that before attaching the trigger.
 
 Also check that usernames are case-insensitive, because the Lambda looks the password account up with `AdminGetUser` using the email Google sends:
 
@@ -157,7 +159,13 @@ aws cognito-idp describe-user-pool --user-pool-id us-east-1_LiJbvT212 --region u
   --query "UserPool.UsernameConfiguration"
 ```
 
-`CaseSensitive` must be `false`. If it is `true`, stop and ask before continuing: a Google email with different casing would not find the existing account.
+`CaseSensitive` must be `false`. If it is `true`, **or the value is null/absent (a legacy case-sensitive pool)**, stop and ask before continuing: a Google email with different casing would not find the existing account. Also confirm that email is a sign-in identifier:
+
+```bash
+aws cognito-idp describe-user-pool --user-pool-id us-east-1_LiJbvT212 --region us-east-1   --query "UserPool.UsernameAttributes"
+```
+
+The result must contain `email`, because the Lambda calls `AdminGetUser` with the email address as the user name.
 
 Deploy:
 

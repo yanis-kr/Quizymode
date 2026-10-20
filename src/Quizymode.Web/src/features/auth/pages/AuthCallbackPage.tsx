@@ -34,6 +34,8 @@ import {
 
 const SLOW_HINT_MS = 10_000;
 const NO_OUTCOME_TIMEOUT_MS = 20_000;
+// Amplify may still report the failure (for example a late QM_ACCOUNT_LINKED) after the URL already shows an error.
+const URL_ERROR_GRACE_MS = 800;
 const DEFAULT_INTENT: AuthIntent = { returnTo: "/", reason: null };
 
 function resolveIntent(customState: string | null): AuthIntent {
@@ -123,12 +125,16 @@ const AuthCallbackPage = () => {
       return () => window.clearTimeout(timer);
     }
 
-    handledOutcome.current = outcome;
     if (initial.error) {
-      const mapped = mapGoogleFailure(`${initial.error} ${initial.errorDescription ?? ""}`);
-      fail(mapped);
-      return;
+      const timer = window.setTimeout(() => {
+        if (!finished.current) {
+          fail(mapGoogleFailure(`${initial.error} ${initial.errorDescription ?? ""}`));
+        }
+      }, URL_ERROR_GRACE_MS);
+      return () => window.clearTimeout(timer);
     }
+
+    handledOutcome.current = outcome;
 
     void fetchAuthSession()
       .then((session) => (session.tokens?.accessToken ? complete() : fail("generic")))
@@ -183,7 +189,10 @@ const AuthCallbackPage = () => {
             {slow && (
               <>
                 <p className="text-sm text-gray-600">Still working… If nothing happens, go back to sign in.</p>
-                <Link to={LOGIN_PATH} className="text-sm font-medium text-indigo-600 hover:text-indigo-500">
+                <Link
+                  to={`${LOGIN_PATH}${buildAuthIntentQuery(intent)}`}
+                  className="text-sm font-medium text-indigo-600 hover:text-indigo-500"
+                >
                   Back to sign in
                 </Link>
               </>

@@ -49,7 +49,12 @@ function normalizedPathFor(path: string): string {
 
 function isAuthReturnDestination(pathname: string): boolean {
   const normalized = normalizedPathFor(pathname);
-  return normalized === LOGIN_PATH || normalized === SIGNUP_PATH;
+  return (
+    normalized === LOGIN_PATH ||
+    normalized === SIGNUP_PATH ||
+    normalized === "/auth" ||
+    normalized.startsWith("/auth/")
+  );
 }
 
 /**
