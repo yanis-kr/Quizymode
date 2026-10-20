@@ -54,7 +54,7 @@ dotnet test --filter "FullyQualifiedName~AddItemTests"
 
 ### Postgres-backed tests
 
-Tests tagged `[Trait("Category", "Postgres")]` (for example `UserUpsertMiddlewarePostgresTests`) start a real PostgreSQL container with Testcontainers and apply the production migrations, so they cover PostgreSQL-only behavior that SQLite cannot run (`FOR UPDATE`, advisory locks, the `IX_Users_Email` unique index).
+Tests tagged `[Trait("Category", "Postgres")]` (for example `UserUpsertMiddlewarePostgresTests` and `AdminLlmUsagePostgresTests`) start a real PostgreSQL container with Testcontainers and apply the production migrations, so they cover PostgreSQL-only behavior that SQLite cannot run (`FOR UPDATE`, advisory locks, the `IX_Users_Email` unique index, the grouped SQL behind the admin LLM usage report).
 
 - They need Docker. Locally, when Docker is unavailable they are reported as skipped.
 - In CI (`CI` or `GITHUB_ACTIONS` set to `true`) a container startup failure fails the run instead of skipping.

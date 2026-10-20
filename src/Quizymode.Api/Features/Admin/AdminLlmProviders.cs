@@ -268,9 +268,66 @@ public static partial class AdminLlmProviders
             .ToList());
     }
 
+    internal sealed record UsageRowAggregate(
+        string Vendor,
+        string Model,
+        int Attempts,
+        int Successes,
+        long InputTokens,
+        long OutputTokens,
+        long DurationSumMs);
+
+    internal sealed record TopUserAggregate(string UserId, int ChargedSections, long InputTokens, long OutputTokens);
+
+    /// <summary>One grouped query: a row per (vendor, model) with sums computed by the database.</summary>
+    internal static IQueryable<UsageRowAggregate> BuildRowAggregatesQuery(ApplicationDbContext db, DateTime since) =>
+        db.LlmAttempts
+            .AsNoTracking()
+            .Where(attempt => attempt.CreatedUtc >= since)
+            .GroupBy(attempt => new { attempt.Vendor, attempt.Model })
+            .Select(group => new UsageRowAggregate(
+                group.Key.Vendor,
+                group.Key.Model,
+                group.Count(),
+                group.Count(attempt => attempt.Outcome == LlmAttemptOutcome.Success),
+                group.Sum(attempt => (long)(attempt.InputTokens ?? 0)),
+                group.Sum(attempt => (long)(attempt.OutputTokens ?? 0)),
+                group.Sum(attempt => (long)attempt.DurationMs)));
+
+    /// <summary>
+    /// One grouped query: a row per user. Charges have no unique (user, generation), so they are grouped per pair first
+    /// (cost adds up, the generation's tokens count once), then left-joined to the generations (a charge without a
+    /// generation row counts 0 tokens) and grouped per user.
+    /// </summary>
+    internal static IQueryable<TopUserAggregate> BuildTopUserAggregatesQuery(ApplicationDbContext db, DateTime since)
+    {
+        var pairs = db.StudyGuideQuotaCharges
+            .AsNoTracking()
+            .Where(charge => charge.ChargedUtc >= since)
+            .GroupBy(charge => new { charge.UserId, charge.GenerationId })
+            .Select(group => new { group.Key.UserId, group.Key.GenerationId, Cost = group.Sum(charge => charge.Cost) });
+
+        return from pair in pairs
+               join generation in db.SectionGenerations on pair.GenerationId equals generation.Id into generations
+               from generation in generations.DefaultIfEmpty()
+               group new
+               {
+                   pair.Cost,
+                   Input = generation == null ? 0L : (long)(generation.InputTokens ?? 0),
+                   Output = generation == null ? 0L : (long)(generation.OutputTokens ?? 0)
+               } by pair.UserId into user
+               select new TopUserAggregate(
+                   user.Key,
+                   user.Sum(x => x.Cost),
+                   user.Sum(x => x.Input),
+                   user.Sum(x => x.Output));
+    }
+
     /// <summary>
     /// Per vendor/model totals of the attempts in the window (failed attempts' tokens included) and the top users by
-    /// charged sections. Minimal columns are projected and aggregated in memory so the same code runs on every provider.
+    /// charged sections. Totals are aggregated in the database (two grouped queries, no attempt or charge rows are
+    /// loaded); ordering, the top-20 cut, average rounding and pricing are applied in memory so results do not depend
+    /// on the database collation and the same code runs on every provider.
     /// </summary>
     internal static async Task<UsageResponse> HandleUsageAsync(
         int days,
@@ -281,60 +338,24 @@ public static partial class AdminLlmProviders
     {
         DateTime since = nowUtc.AddDays(-days);
 
-        var attempts = await db.LlmAttempts
-            .AsNoTracking()
-            .Where(attempt => attempt.CreatedUtc >= since)
-            .Select(attempt => new { attempt.Vendor, attempt.Model, attempt.Outcome, attempt.InputTokens, attempt.OutputTokens, attempt.DurationMs })
-            .ToListAsync(cancellationToken);
-
-        List<UsageRow> rows = attempts
-            .GroupBy(attempt => (attempt.Vendor, attempt.Model))
-            .OrderBy(group => group.Key.Vendor, StringComparer.Ordinal)
-            .ThenBy(group => group.Key.Model, StringComparer.Ordinal)
-            .Select(group =>
-            {
-                long inputTokens = group.Sum(attempt => (long)(attempt.InputTokens ?? 0));
-                long outputTokens = group.Sum(attempt => (long)(attempt.OutputTokens ?? 0));
-                return new UsageRow(
-                    group.Key.Vendor,
-                    group.Key.Model,
-                    group.Count(),
-                    group.Count(attempt => attempt.Outcome == LlmAttemptOutcome.Success),
-                    inputTokens,
-                    outputTokens,
-                    (int)Math.Round(group.Average(attempt => (double)attempt.DurationMs), MidpointRounding.AwayFromZero),
-                    LlmPricing.EstimateCostUsd(configuration, group.Key.Model, inputTokens, outputTokens));
-            })
+        List<UsageRowAggregate> aggregates = await BuildRowAggregatesQuery(db, since).ToListAsync(cancellationToken);
+        List<UsageRow> rows = aggregates
+            .OrderBy(aggregate => aggregate.Vendor, StringComparer.Ordinal)
+            .ThenBy(aggregate => aggregate.Model, StringComparer.Ordinal)
+            .Select(aggregate => new UsageRow(
+                aggregate.Vendor,
+                aggregate.Model,
+                aggregate.Attempts,
+                aggregate.Successes,
+                aggregate.InputTokens,
+                aggregate.OutputTokens,
+                (int)Math.Round((double)aggregate.DurationSumMs / aggregate.Attempts, MidpointRounding.AwayFromZero),
+                LlmPricing.EstimateCostUsd(configuration, aggregate.Model, aggregate.InputTokens, aggregate.OutputTokens)))
             .ToList();
 
-        var charges = await db.StudyGuideQuotaCharges
-            .AsNoTracking()
-            .Where(charge => charge.ChargedUtc >= since)
-            .Select(charge => new { charge.UserId, charge.GenerationId, charge.Cost })
-            .ToListAsync(cancellationToken);
-        List<Guid> generationIds = charges.Select(charge => charge.GenerationId).Distinct().ToList();
-        Dictionary<Guid, (long Input, long Output)> tokensByGeneration = generationIds.Count == 0
-            ? []
-            : (await db.SectionGenerations
-                    .AsNoTracking()
-                    .Where(generation => generationIds.Contains(generation.Id))
-                    .Select(generation => new { generation.Id, generation.InputTokens, generation.OutputTokens })
-                    .ToListAsync(cancellationToken))
-                .ToDictionary(generation => generation.Id, generation => ((long)(generation.InputTokens ?? 0), (long)(generation.OutputTokens ?? 0)));
-
-        // Charges have no unique (user, generation), so group per pair first: cost adds up, the generation's tokens count once.
-        List<TopUser> topUsers = charges
-            .GroupBy(charge => (charge.UserId, charge.GenerationId))
-            .Select(pair => (
-                pair.Key.UserId,
-                Cost: pair.Sum(charge => charge.Cost),
-                Tokens: tokensByGeneration.GetValueOrDefault(pair.Key.GenerationId)))
-            .GroupBy(pair => pair.UserId)
-            .Select(user => new TopUser(
-                user.Key,
-                user.Sum(pair => pair.Cost),
-                user.Sum(pair => pair.Tokens.Input),
-                user.Sum(pair => pair.Tokens.Output)))
+        List<TopUserAggregate> users = await BuildTopUserAggregatesQuery(db, since).ToListAsync(cancellationToken);
+        List<TopUser> topUsers = users
+            .Select(user => new TopUser(user.UserId, user.ChargedSections, user.InputTokens, user.OutputTokens))
             .OrderByDescending(user => user.ChargedSections)
             .ThenByDescending(user => user.InputTokens + user.OutputTokens)
             .ThenBy(user => user.UserId, StringComparer.Ordinal)
