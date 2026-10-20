@@ -131,7 +131,7 @@ public sealed class StudyGuideChatClientTests
 
         string log = string.Join('\n', logger.Messages);
         log.Should().Contain("OpenAI").And.Contain(status.ToString());
-        log.Should().NotContain("abcd").And.NotContain("sk-").And.NotContain("Incorrect API key").And.NotContain("Authentication Fails");
+        log.Should().NotContain("abcd").And.NotContain("sk-").And.NotContain("Incorrect API key").And.NotContain("Authentication Fails").And.NotContain("API key not valid");
     }
 
     [Fact]
@@ -161,8 +161,9 @@ public sealed class StudyGuideChatClientTests
     [Fact]
     public void ErrorExcerpt_RedactsBeforeTruncating()
     {
-        string input = new string('x', 290) + " sk-proj-SECRETKEYSECRET";
+        string input = new string('x', 294) + " sk-proj-SECRETKEYSECRET";
 
-        OpenAiCompatibleChatClient.ErrorExcerpt(input).Should().NotContain("SECRET");
+        // "sk-pr" ends exactly at character 300, so truncate-then-redact would leak the "sk-pr" prefix.
+        OpenAiCompatibleChatClient.ErrorExcerpt(input).Should().NotContain("SECRET").And.NotContain("sk-");
     }
 }

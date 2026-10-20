@@ -86,6 +86,15 @@ describe("StudyGuideDocumentsPage", () => {
     expect(await screen.findByTestId("study-guide-summary")).toHaveTextContent("This month: 3 sections used (free plan).");
   });
 
+  it("uses the singular when the limit is zero and one section was used", async () => {
+    vi.mocked(studyGuideDocumentsApi.getConfig).mockResolvedValue(config("Free", 1, 0));
+    vi.mocked(studyGuideDocumentsApi.list).mockResolvedValue({ documents: [] });
+
+    renderPage();
+
+    expect(await screen.findByTestId("study-guide-summary")).toHaveTextContent("This month: 1 section used (free plan).");
+  });
+
   it("shows zeros above the empty state when there are no guides", async () => {
     vi.mocked(studyGuideDocumentsApi.list).mockResolvedValue({ documents: [] });
 

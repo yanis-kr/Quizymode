@@ -42,7 +42,8 @@ const StudyGuideDocumentsPage = () => {
         <p className="text-sm text-gray-700" aria-live="polite" data-testid="study-guide-summary">
           <span className="block">
             This month: {config.quota.monthlyUsed.toLocaleString()}
-            {config.quota.monthlyLimit > 0 ? ` of ${config.quota.monthlyLimit.toLocaleString()}` : ""} sections used (
+            {config.quota.monthlyLimit > 0 ? ` of ${config.quota.monthlyLimit.toLocaleString()}` : ""} section
+            {config.quota.monthlyLimit === 0 && config.quota.monthlyUsed === 1 ? "" : "s"} used (
             {config.quota.tier.toLowerCase()} plan).
           </span>
           <span className="block">

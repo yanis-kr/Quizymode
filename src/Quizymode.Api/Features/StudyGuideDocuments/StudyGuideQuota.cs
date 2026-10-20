@@ -58,7 +58,7 @@ internal static class StudyGuideQuota
         Dictionary<string, string> settings = new(StringComparer.OrdinalIgnoreCase);
         if (Guid.TryParse(userId, out Guid userGuid))
         {
-            string[] keys = [StudyGuideSettingKeys.Premium, StudyGuideSettingKeys.DailySections, StudyGuideSettingKeys.MonthlySections];
+            string[] keys = [StudyGuideSettingKeys.DailySections, StudyGuideSettingKeys.MonthlySections];
             List<UserSetting> rows = await db.UserSettings
                 .AsNoTracking()
                 .Where(setting => setting.UserId == userGuid && keys.Contains(setting.Key))
@@ -69,9 +69,8 @@ internal static class StudyGuideQuota
             }
         }
 
-        StudyGuideTier tier = StudyGuideSettingKeys.IsPremium(settings.GetValueOrDefault(StudyGuideSettingKeys.Premium))
-            ? StudyGuideTier.Premium
-            : StudyGuideTier.Free;
+        // One source of truth for the tier, shared with the route check (AC 6.6.9).
+        StudyGuideTier tier = await GetTierAsync(db, userId, cancellationToken);
 
         int dailyLimit = StudyGuideSettingKeys.ParseOverride(settings.GetValueOrDefault(StudyGuideSettingKeys.DailySections))
             ?? (tier == StudyGuideTier.Premium ? options.PremiumDailySections : options.FreeDailySections);
