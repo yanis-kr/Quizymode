@@ -421,6 +421,20 @@ public sealed class AddItemsBulkTests : ItemTestFixture
     }
 
     [Fact]
+    public void ItemValidator_NullIncorrectAnswersWithSpeech_ReturnsErrorsWithoutThrowing()
+    {
+        AddItemsBulk.ItemRequest item = new(
+            Question: "Q", CorrectAnswer: "A", IncorrectAnswers: null!, Explanation: "",
+            IncorrectAnswerSpeech: new Dictionary<int, ItemSpeechSupport> { [0] = new ItemSpeechSupport { Pronunciation = "pron" } });
+        AddItemsBulk.ItemRequestValidator validator = new();
+
+        FluentValidation.Results.ValidationResult result = validator.Validate(item);
+
+        result.IsValid.Should().BeFalse();
+        result.Errors.Should().Contain(e => e.ErrorMessage == "IncorrectAnswers is required");
+    }
+
+    [Fact]
     public void Validator_EmptyKeywords_IsAllowed()
     {
         AddItemsBulk.Request request = new(

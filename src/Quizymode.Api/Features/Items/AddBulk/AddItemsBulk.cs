@@ -126,7 +126,7 @@ public static class AddItemsBulk
                     .MaximumLength(500)
                     .WithMessage("Each incorrect answer must not exceed 500 characters"));
 
-            this.AddIncorrectAnswerSpeechRules(x => x.IncorrectAnswerSpeech, req => req.IncorrectAnswers.Count);
+            this.AddIncorrectAnswerSpeechRules(x => x.IncorrectAnswerSpeech, req => req.IncorrectAnswers?.Count ?? 0);
 
             RuleFor(x => x.Explanation)
                 .MaximumLength(4000)
