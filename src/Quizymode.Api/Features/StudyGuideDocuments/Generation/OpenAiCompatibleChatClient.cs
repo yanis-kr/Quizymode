@@ -183,7 +183,7 @@ internal sealed class OpenAiCompatibleChatClient(HttpClient httpClient, ILogger<
     [
         (new(@"\b(" + HeaderNames + @")(\s*[:=]\s*"")(?>(?:[^""\\]|\\.)*)(""?)", Opt), "${1}${2}[redacted]${3}"),
         (new(@"\b(" + HeaderNames + @")(\s*[:=]\s*')(?>(?:[^'\\]|\\.)*)('?)", Opt), "${1}${2}[redacted]${3}"),
-        (new(@"\b(" + HeaderNames + @")(\s*[:=]\s*\\"")(?>(?:[^""\\]|\\[^""])*)((?:\\"")?)", Opt), "${1}${2}[redacted]${3}"),
+        (new(@"\b(" + HeaderNames + @")(\s*[:=]\s*\\"")(?>(?:[^""\\]|\\[^""\\]|\\\\(?:\\\\|\\""|\\[^""\\]|[^""\\]))*)((?:\\"")?)", Opt), "${1}${2}[redacted]${3}"),
         (new(@"\b(" + HeaderNames + @")(\s*=\s*)" + Schemes + @"[^\s""'&#,;}\\]+", Opt), "${1}${2}[redacted]"),
         (new(@"\b(" + HeaderNames + @")(\s*:\s*)" + Schemes + HeaderTokenShape + @"[^\s""',}]+", Opt), "${1}${2}[redacted]"),
         (new(@"\bbearer\s+" + BearerTokenShape + @"[A-Za-z0-9\-._~+/]+=*", Opt), "Bearer [redacted]"),
@@ -200,7 +200,13 @@ internal sealed class OpenAiCompatibleChatClient(HttpClient httpClient, ILogger<
         (new(@"\*+[A-Za-z0-9]{3,6}", RegexOptions.Compiled), "[redacted]")
     ];
 
-    /// <summary>Redacts anything shaped like an API key, bearer token, credential header/field or key URL parameter. The field name, separator and quotes are kept.</summary>
+    /// <summary>The redaction regexes in application order; exposed so tests can check their options.</summary>
+    internal static IReadOnlyList<Regex> RedactionPatterns { get; } = KeyLikePatterns.Select(rule => rule.Pattern).ToArray();
+
+    /// <summary>
+    /// Redacts anything shaped like an API key, bearer token, credential header/field or key URL parameter.
+    /// The field name, separator and quotes are kept.
+    /// </summary>
     internal static string Redact(string text) =>
         KeyLikePatterns.Aggregate(text, (current, rule) => rule.Pattern.Replace(current, rule.Replacement));
 

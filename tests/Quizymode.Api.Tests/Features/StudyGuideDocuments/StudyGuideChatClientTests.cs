@@ -1,6 +1,7 @@
 using System.Diagnostics;
 using System.Globalization;
 using System.Net;
+using System.Text.RegularExpressions;
 using FluentAssertions;
 using Microsoft.Extensions.Logging;
 using Quizymode.Api.Features.StudyGuideDocuments.Generation;
@@ -293,6 +294,8 @@ public sealed class StudyGuideChatClientTests
     [InlineData("api_key: 'two words' end", "api_key: '[redacted]' end")]
     [InlineData("api_key: \"abc\\\"def\" end", "api_key: \"[redacted]\" end")]
     [InlineData("api_key=\\\"abc def\\\" end", "api_key=\\\"[redacted]\\\" end")]
+    [InlineData("api_key: \\\"abc\\\\\\\"def\\\" tail", "api_key: \\\"[redacted]\\\" tail")]
+    [InlineData("api_key=\\\"abc", "api_key=\\\"[redacted]")]
     public void ErrorExcerpt_RedactsKeyShapedText(string input, string expected)
     {
         OpenAiCompatibleChatClient.ErrorExcerpt(input).Should().Be(expected);
@@ -363,6 +366,17 @@ public sealed class StudyGuideChatClientTests
     {
         string singleLine = string.Join(' ', text.Split((char[]?)null, StringSplitOptions.RemoveEmptyEntries));
         return singleLine.Length <= 300 ? singleLine : singleLine[..300] + "…";
+    }
+
+    [Fact]
+    public void RedactionPatterns_EveryIgnoreCasePatternIsAlsoCultureInvariant()
+    {
+        foreach (Regex pattern in OpenAiCompatibleChatClient.RedactionPatterns.Where(p => p.Options.HasFlag(RegexOptions.IgnoreCase)))
+        {
+            pattern.Options.Should().HaveFlag(RegexOptions.CultureInvariant, pattern.ToString());
+        }
+
+        OpenAiCompatibleChatClient.RedactionPatterns.Should().Contain(p => p.Options.HasFlag(RegexOptions.IgnoreCase));
     }
 
     [Fact]
