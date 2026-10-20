@@ -98,6 +98,10 @@ internal static class StudyGuideItemValidator
             {
                 messages.Add($"Item {index + 1}: incorrectAnswers must have 1 to 4 items.");
             }
+            else if (incorrectAnswers.Any(answer => string.IsNullOrWhiteSpace(answer)))
+            {
+                messages.Add($"Item {index + 1}: incorrect answers cannot be blank.");
+            }
             else if (incorrectAnswers.Any(answer => answer.Length > 500))
             {
                 messages.Add($"Item {index + 1}: each incorrect answer must not exceed 500 characters.");

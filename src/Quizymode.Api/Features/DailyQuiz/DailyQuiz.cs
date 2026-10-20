@@ -1,3 +1,4 @@
+using Quizymode.Api.Shared.Helpers;
 using System.Buffers.Binary;
 using System.Globalization;
 using System.Security.Cryptography;
@@ -335,7 +336,7 @@ public static class DailyQuiz
     }
 
     /// <summary>
-    /// Eligible items in seed order for the date: public, in a public category, with at least one wrong answer, not flagged
+    /// Eligible items in seed order for the date: public, in a public category, with at least one playable wrong answer (#250: non-blank, not a duplicate, not equal to the correct answer), not flagged
     /// by the question quality report (#129), not in any other stored set within 30 days either side of the date (admins
     /// can create sets up to 7 days ahead), and not already taken for this date.
     /// </summary>
@@ -345,10 +346,10 @@ public static class DailyQuiz
         HashSet<Guid> taken,
         CancellationToken cancellationToken)
     {
-        // IncorrectAnswers is a value-converted JSON column, so the non-empty check runs after projection.
+        // IncorrectAnswers is a value-converted JSON column, so the playable check runs after projection.
         var rows = await db.Items.AsNoTracking()
             .Where(i => !i.IsPrivate && i.Category != null && !i.Category.IsPrivate)
-            .Select(i => new { i.Id, i.IncorrectAnswers })
+            .Select(i => new { i.Id, i.CorrectAnswer, i.IncorrectAnswers })
             .ToListAsync(cancellationToken);
 
         DateOnly windowStart = date.AddDays(-RepeatWindowDays);
@@ -362,7 +363,7 @@ public static class DailyQuiz
         HashSet<Guid> flagged = await LoadQualityFlaggedAsync(db, cancellationToken);
         string seed = FormatDate(date);
         return rows
-            .Where(r => r.IncorrectAnswers.Count > 0 && !recent.Contains(r.Id) && !flagged.Contains(r.Id) && !taken.Contains(r.Id))
+            .Where(r => QuizPlayability.IsPlayable(r.CorrectAnswer, r.IncorrectAnswers) && !recent.Contains(r.Id) && !flagged.Contains(r.Id) && !taken.Contains(r.Id))
             .Select(r => r.Id)
             .OrderBy(id => SeedRank(seed, id))
             .ThenBy(id => id)

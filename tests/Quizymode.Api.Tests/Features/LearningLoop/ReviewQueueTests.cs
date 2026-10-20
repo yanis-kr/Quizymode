@@ -122,6 +122,31 @@ public sealed class ReviewQueueTests : DatabaseTestFixture
     }
 
     [Fact]
+    public async Task Queue_NeverServesOrCountsUnplayableItems()
+    {
+        DateTime now = DateTime.UtcNow;
+        Category category = await LearningLoopTestData.AddCategoryAsync(DbContext, "trivia");
+        Item playable = await LearningLoopTestData.AddItemAsync(DbContext, category);
+        Item blankOnly = await LearningLoopTestData.AddItemAsync(DbContext, category, incorrect: new List<string> { " " });
+        Item none = await LearningLoopTestData.AddItemAsync(DbContext, category, incorrect: new List<string>());
+        foreach (Item item in new[] { blankOnly, none, playable })
+        {
+            DbContext.ReviewQueueEntries.Add(new ReviewQueueEntry { UserId = UserId, ItemId = item.Id, DueAt = now.AddHours(-1), ItemVersionAt = item.CreatedAt });
+        }
+        await DbContext.SaveChangesAsync();
+
+        Queue.SummaryResponse summary = await Queue.GetSummaryAsync(DbContext, UserId, now, CancellationToken.None);
+        summary.DueCount.Should().Be(1);
+        summary.TotalCount.Should().Be(1);
+
+        Queue.QueueResponse response = await Queue.GetQueueAsync(DbContext, LearningLoopTestData.User(UserId), now, CancellationToken.None);
+
+        response.Items.Select(i => i.Id).Should().Equal(playable.Id.ToString());
+        response.DueCount.Should().Be(1);
+        response.TotalCount.Should().Be(1);
+    }
+
+    [Fact]
     public async Task Queue_ItemChangedAfterQueued_RestartsAsFreshMiss()
     {
         DateTime now = DateTime.UtcNow;

@@ -2,6 +2,7 @@ using Microsoft.EntityFrameworkCore;
 using Quizymode.Api.Data;
 using Quizymode.Api.Features.Items.Get;
 using Quizymode.Api.Services;
+using Quizymode.Api.Shared.Helpers;
 using Quizymode.Api.Shared.Http;
 using Quizymode.Api.Shared.Models;
 
@@ -210,7 +211,7 @@ public static class ReviewQueue
 
             foreach (ReviewQueueEntry entry in batch)
             {
-                if (items.TryGetValue(entry.ItemId, out Item? item) && IsAvailable(item, userId))
+                if (items.TryGetValue(entry.ItemId, out Item? item) && IsAvailable(item, userId) && QuizPlayability.IsPlayable(item.CorrectAnswer, item.IncorrectAnswers))
                 {
                     if (available.Count < MaxItemsPerSession) available.Add(item);
                 }
@@ -242,8 +243,10 @@ public static class ReviewQueue
         var rows = await (from entry in db.ReviewQueueEntries.AsNoTracking()
                           join item in db.Items.AsNoTracking() on entry.ItemId equals item.Id
                           where entry.UserId == userId && (!item.IsPrivate || item.CreatedBy == userId)
-                          select new { entry.DueAt })
+                          select new { entry.DueAt, item.CorrectAnswer, item.IncorrectAnswers })
             .ToListAsync(cancellationToken);
+        // #250: unplayable legacy items (no usable distractor) are never counted or served.
+        rows = rows.Where(r => QuizPlayability.IsPlayable(r.CorrectAnswer, r.IncorrectAnswers)).ToList();
         int dueCount = rows.Count(r => r.DueAt <= nowUtc);
         DateTime? nextDue = rows.Where(r => r.DueAt > nowUtc).Select(r => (DateTime?)r.DueAt).Min();
         return new SummaryResponse(dueCount, rows.Count, nextDue is null ? null : DateTime.SpecifyKind(nextDue.Value, DateTimeKind.Utc));

@@ -2,6 +2,7 @@ import { describe, expect, it, vi } from "vitest";
 import {
   createQuizRun,
   getQuizOptions,
+  isQuizPlayable,
   reduceQuizRun,
   restoreQuizRun,
   summarizeQuizRun,
@@ -106,6 +107,27 @@ describe("quizRun", () => {
     } as Parameters<typeof getQuizOptions>[0];
     expect(getQuizOptions(item, "run-1")).toEqual(getQuizOptions(item, "run-1"));
     expect(getQuizOptions(item, "run-1")).not.toEqual(getQuizOptions(item, "run-2"));
+  });
+
+  it("shares one filter between isQuizPlayable and getQuizOptions", () => {
+    // AC 3.6.17
+    const base = { id: "a", correctAnswer: "Paris" } as Parameters<typeof getQuizOptions>[0];
+    const cases: string[][] = [
+      [],
+      ["", "   "],
+      ["paris", " PARIS "],
+      ["Lyon"],
+      ["Lyon", "lyon", " ", "Paris", "Nice"],
+    ];
+    for (const incorrectAnswers of cases) {
+      const item = { ...base, incorrectAnswers };
+      const options = getQuizOptions(item, "run-1");
+      expect(isQuizPlayable(item)).toBe(options.length > 1);
+      expect(options).toContain("Paris");
+      expect(options.filter((o) => o.trim() === "")).toHaveLength(0);
+    }
+    const mixed = { ...base, incorrectAnswers: ["Lyon", "lyon", " ", "Paris", "Nice"] };
+    expect([...getQuizOptions(mixed, "run-1")].sort()).toEqual(["Lyon", "Nice", "Paris"]);
   });
 
   it("locks rapid duplicate submissions", () => {

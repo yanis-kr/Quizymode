@@ -42,6 +42,7 @@ import {
 import {
   createQuizRun,
   getQuizOptions,
+  isQuizPlayable,
   publishQuizCompletion,
   reduceQuizRun,
   restoreQuizRun,
@@ -389,7 +390,7 @@ const QuizModePage = () => {
         (singleItemData && !storedItems ? [singleItemData] : []);
     const seen = new Set<string>();
     return loadedItems.filter((item) => {
-      if (!item.id || seen.has(item.id)) return false;
+      if (!item.id || seen.has(item.id) || !isQuizPlayable(item)) return false;
       seen.add(item.id);
       return true;
     });

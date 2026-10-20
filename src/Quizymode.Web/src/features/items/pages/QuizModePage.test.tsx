@@ -446,6 +446,44 @@ describe("QuizModePage", () => {
     expect(screen.queryByText(/quiz complete/i)).not.toBeInTheDocument();
   });
 
+  it("leaves legacy unplayable items out of a collection quiz roster", async () => {
+    // AC 3.6.17
+    const legacy = { ...secondItem, id: "item-legacy", incorrectAnswers: ["  ", ""] };
+    vi.mocked(collectionsApi.getItems).mockResolvedValueOnce({ items: [legacy, item] });
+    renderPage("/quiz/collections/collection-1/practice+set");
+
+    expect(await screen.findByText("What is 2 + 2?")).toBeInTheDocument();
+    expect(screen.queryByText(legacy.question)).not.toBeInTheDocument();
+  });
+
+  it("shows the empty state when every collection item is unplayable", async () => {
+    // AC 3.6.17
+    const legacy = { ...item, incorrectAnswers: [] };
+    vi.mocked(collectionsApi.getItems).mockResolvedValueOnce({ items: [legacy] });
+    renderPage("/quiz/collections/collection-1/practice+set");
+
+    expect(await screen.findByText(/no playable quiz items/i)).toBeInTheDocument();
+  });
+
+  it("shows No items found for a deep link to an unplayable item", async () => {
+    // AC 3.6.17
+    const legacy = { ...item, incorrectAnswers: [""] };
+    vi.mocked(itemsApi.getById).mockResolvedValue(legacy as Awaited<ReturnType<typeof itemsApi.getById>>);
+    vi.mocked(itemsApi.getRandom).mockResolvedValue({ items: [legacy] } as Awaited<
+      ReturnType<typeof itemsApi.getRandom>
+    >);
+    vi.mocked(itemsApi.getAll).mockResolvedValue({
+      items: [legacy],
+      totalCount: 1,
+      page: 1,
+      pageSize: 1,
+      totalPages: 1,
+    } as Awaited<ReturnType<typeof itemsApi.getAll>>);
+    renderPage("/quiz/exams/item/item-1");
+
+    expect(await screen.findByText(/no items found/i)).toBeInTheDocument();
+  });
+
   it("shows a retryable public browse route when a collection quiz fails", async () => {
     vi.mocked(collectionsApi.getItems).mockRejectedValueOnce(new Error("gone"));
     renderPage("/quiz/collections/collection-1/practice+set/item/item-1");

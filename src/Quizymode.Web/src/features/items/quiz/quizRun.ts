@@ -263,8 +263,31 @@ function hashSeed(value: string): number {
   return hash >>> 0;
 }
 
+/**
+ * Single playability filter (#250): trim, drop blanks, drop case-insensitive duplicates and drop values equal to the
+ * correct answer. Mirrored server-side by QuizPlayability.GetDistractors (Daily selection, review queue).
+ */
+function getQuizDistractors(item: Pick<ItemResponse, "correctAnswer" | "incorrectAnswers">): string[] {
+  const correct = (item.correctAnswer ?? "").trim().toLowerCase();
+  const seen = new Set<string>();
+  const result: string[] = [];
+  for (const raw of item.incorrectAnswers ?? []) {
+    const value = (raw ?? "").trim();
+    const key = value.toLowerCase();
+    if (!value || key === correct || seen.has(key)) continue;
+    seen.add(key);
+    result.push(value);
+  }
+  return result;
+}
+
+/** An item can be quizzed when at least one usable distractor remains. */
+export function isQuizPlayable(item: Pick<ItemResponse, "correctAnswer" | "incorrectAnswers">): boolean {
+  return getQuizDistractors(item).length > 0;
+}
+
 export function getQuizOptions(item: ItemResponse, runId: string): string[] {
-  const options = [item.correctAnswer, ...item.incorrectAnswers.slice(0, 3)];
+  const options = [item.correctAnswer, ...getQuizDistractors(item).slice(0, 3)];
   let seed = hashSeed(`${runId}:${item.id}`);
   for (let index = options.length - 1; index > 0; index -= 1) {
     seed = (Math.imul(seed, 1664525) + 1013904223) >>> 0;

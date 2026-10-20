@@ -31,7 +31,7 @@ Requirements:
   - "category" (max 50 characters)
   - a non-empty "question" (max 1,000 characters)
   - a non-empty "correctAnswer" (max 200 characters)
-  - 1–5 "incorrectAnswers" (each max 200 characters)
+  - 1–4 "incorrectAnswers" (each max 200 characters)
   - "source" (optional, max 1000 characters - e.g., a direct reference URL)
 - All strings must be plain text (no HTML, no LaTeX).
 
@@ -173,7 +173,10 @@ const UploadToCollectionPage = () => {
       question: String(row.question ?? ""),
       correctAnswer: String(row.correctAnswer ?? ""),
       incorrectAnswers: Array.isArray(row.incorrectAnswers)
-        ? row.incorrectAnswers.map(String)
+        ? row.incorrectAnswers
+            .map((a: unknown) => String(a ?? "").trim())
+            .filter(Boolean)
+            .slice(0, 4)
         : [],
       explanation: String(row.explanation ?? ""),
       keywords: Array.isArray(row.keywords)
@@ -185,6 +188,15 @@ const UploadToCollectionPage = () => {
         : undefined,
       source: row.source != null ? String(row.source) : undefined,
     }));
+    const missingRows = mapped
+      .map((row, index) => (row.incorrectAnswers.length === 0 ? index + 1 : 0))
+      .filter((n) => n > 0);
+    if (missingRows.length > 0) {
+      setParseError(
+        `Item${missingRows.length > 1 ? "s" : ""} ${missingRows.join(", ")}: provide at least one non-blank incorrect answer (1-4).`
+      );
+      return;
+    }
     uploadMutation.mutate({
       category: categoryName.trim(),
       keyword1: rank1Name.trim(),
