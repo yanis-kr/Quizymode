@@ -28,7 +28,7 @@ export function getPageViewSessionId(): string {
 const OAUTH_PARAMS = ["code", "state", "error", "error_description"] as const;
 
 /** Removes OAuth redirect parameters from a query string (leading "?" kept when anything remains). */
-export function stripOAuthParams(queryString: string): string {
+export function stripRedirectResultParams(queryString: string): string {
   if (!queryString) return "";
   const params = new URLSearchParams(queryString);
   OAUTH_PARAMS.forEach((name) => params.delete(name));

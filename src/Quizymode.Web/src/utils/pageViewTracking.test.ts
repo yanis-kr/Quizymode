@@ -7,7 +7,7 @@ import {
   isInternalBrowser,
   setInternalBrowser,
   shouldTrackPageView,
-  stripOAuthParams,
+  stripRedirectResultParams,
 } from "./pageViewTracking";
 import { installMemoryLocalStorage } from "@/test/memoryStorage";
 
@@ -106,10 +106,10 @@ describe("pageViewTracking", () => {
 
 describe("OAuth redirect parameters", () => {
   it("strips code, state, error and error_description but keeps other parameters", () => {
-    expect(stripOAuthParams("?code=abc&state=xyz")).toBe("");
-    expect(stripOAuthParams("?error=access_denied&error_description=nope&sort=popular")).toBe("?sort=popular");
-    expect(stripOAuthParams("?utm_source=news&code=1")).toBe("?utm_source=news");
-    expect(stripOAuthParams("")).toBe("");
+    expect(stripRedirectResultParams("?code=abc&state=xyz")).toBe("");
+    expect(stripRedirectResultParams("?error=access_denied&error_description=nope&sort=popular")).toBe("?sort=popular");
+    expect(stripRedirectResultParams("?utm_source=news&code=1")).toBe("?utm_source=news");
+    expect(stripRedirectResultParams("")).toBe("");
   });
 
   it("recognizes the callback path", () => {

@@ -9,7 +9,7 @@ import {
   isAuthCallbackPath,
   isInternalBrowser,
   shouldTrackPageView,
-  stripOAuthParams,
+  stripRedirectResultParams,
 } from "@/utils/pageViewTracking";
 import { getVisitorId } from "@/utils/visitorId";
 
@@ -25,7 +25,7 @@ const PageViewTracker = () => {
     const path = location.pathname || "/";
     // OAuth redirect parameters (code, state, error, error_description) can reach the URL after Amplify rewrites it
     // behind the router's back, so strip them here and never record the callback page itself.
-    const queryString = stripOAuthParams(location.search || "");
+    const queryString = stripRedirectResultParams(location.search || "");
 
     if (isAdminPath(path) || isAuthCallbackPath(path) || !shouldTrackPageView(path, queryString)) {
       return;

@@ -235,7 +235,7 @@ internal sealed class UserUpsertMiddleware
                                 existingByEmail.LastLogin = DateTime.UtcNow;
                                 await db.SaveChangesAsync(context.RequestAborted);
                                 userId = existingByEmail.Id;
-                                _logger.LogInformation("Linked existing user (UserId: {UserId}, Email: {Email}) to new Subject: {Subject}", userId, email, subject);
+                                _logger.LogInformation("Linked existing user (UserId: {UserId}) to new Subject: {Subject}", userId, subject);
                                 await transaction.CommitAsync(context.RequestAborted);
                             }
                         }
