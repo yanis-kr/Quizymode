@@ -236,7 +236,7 @@ public static class SeedSyncAdmin
             RuleFor(x => x.Items)
                 .NotNull()
                 .WithMessage("Items is required.")
-                .Must(items => items.Count <= 20000)
+                .Must(items => items is null || items.Count <= 20000)
                 .WithMessage("Cannot sync more than 20000 items at once.")
                 .Must(HaveUniqueItemIds)
                 .WithMessage("ItemId values must be unique within a sync request.");
@@ -244,13 +244,13 @@ public static class SeedSyncAdmin
             RuleFor(x => x.Collections)
                 .NotNull()
                 .WithMessage("Collections is required.")
-                .Must(collections => collections.Count <= 2000)
+                .Must(collections => collections is null || collections.Count <= 2000)
                 .WithMessage("Cannot sync more than 2000 collections at once.")
                 .Must(HaveUniqueCollectionIds)
                 .WithMessage("CollectionId values must be unique within a sync request.");
 
             RuleFor(x => x)
-                .Must(request => request.Items.Count > 0 || request.Collections.Count > 0)
+                .Must(request => request.Items is null || request.Collections is null || request.Items.Count > 0 || request.Collections.Count > 0)
                 .WithMessage("At least one item or collection is required.");
 
             RuleForEach(x => x.Items)
@@ -264,7 +264,7 @@ public static class SeedSyncAdmin
         {
             if (items is null)
             {
-                return false;
+                return true;
             }
 
             return items.Select(i => i.ItemId).Distinct().Count() == items.Count;
@@ -274,7 +274,7 @@ public static class SeedSyncAdmin
         {
             if (collections is null)
             {
-                return false;
+                return true;
             }
 
             return collections.Select(i => i.CollectionId).Distinct().Count() == collections.Count;
@@ -332,7 +332,7 @@ public static class SeedSyncAdmin
                     .MaximumLength(500)
                     .WithMessage("Each incorrect answer must not exceed 500 characters."));
 
-            this.AddIncorrectAnswerSpeechRules(x => x.IncorrectAnswerSpeech, req => req.IncorrectAnswers.Count);
+            this.AddIncorrectAnswerSpeechRules(x => x.IncorrectAnswerSpeech, req => req.IncorrectAnswers?.Count ?? 0);
 
             RuleFor(x => x.Explanation)
                 .MaximumLength(4000)
@@ -378,9 +378,9 @@ public static class SeedSyncAdmin
             RuleFor(x => x.ItemIds)
                 .NotNull()
                 .WithMessage("Collection itemIds are required.")
-                .Must(itemIds => itemIds.Count > 0)
+                .Must(itemIds => itemIds is null || itemIds.Count > 0)
                 .WithMessage("Collections must reference at least one item.")
-                .Must(itemIds => itemIds.Distinct().Count() == itemIds.Count)
+                .Must(itemIds => itemIds is null || itemIds.Distinct().Count() == itemIds.Count)
                 .WithMessage("Collection itemIds must be unique within a collection.");
         }
     }
