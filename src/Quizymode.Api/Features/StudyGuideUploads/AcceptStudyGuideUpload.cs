@@ -4,6 +4,7 @@ using Quizymode.Api.Data;
 using Quizymode.Api.Features.Items.AddBulk;
 using Quizymode.Api.Services;
 using Quizymode.Api.Services.Taxonomy;
+using Quizymode.Api.Shared.Helpers;
 using Quizymode.Api.Shared.Http;
 using Quizymode.Api.Shared.Kernel;
 using Quizymode.Api.Shared.Models;
@@ -143,6 +144,23 @@ public static class AcceptStudyGuideUpload
             return Result.Failure<Response?>(Error.Validation(
                 "StudyGuideUpload.NoQuestionsSelected",
                 "Select at least one question to add."));
+        }
+
+        // Stored questions may predate the distinct-incorrect-answers rule (#276): clean them and skip any question
+        // left with no incorrect answers rather than creating an unplayable item.
+        selected = selected
+            .Select(question => question with
+            {
+                IncorrectAnswers = QuizPlayability.GetDistractors(question.CorrectAnswer, question.IncorrectAnswers)
+            })
+            .Where(question => question.IncorrectAnswers.Count > 0)
+            .ToList();
+
+        if (selected.Count == 0)
+        {
+            return Result.Failure<Response?>(Error.Validation(
+                "StudyGuideUpload.NoQuestionsSelected",
+                "None of the selected questions can be added because they have no valid incorrect answers."));
         }
 
         List<AddItemsBulk.KeywordRequest> keywords = GetStudyGuideUpload.ReadKeywords(upload)

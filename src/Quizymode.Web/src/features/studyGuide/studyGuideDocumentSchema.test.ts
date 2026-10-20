@@ -65,6 +65,15 @@ describe("validateCandidateEdit", () => {
     expect(validateCandidateEdit({ ...edit, incorrectAnswers: ["1", "2", "3", "4", "5"] })).toMatch(/at most four/i);
     expect(validateCandidateEdit({ ...edit, incorrectAnswers: [""] })).toMatch(/cannot be empty/i);
   });
+
+  it("rejects wrong answers equal to the correct answer or to each other (#276)", () => {
+    expect(validateCandidateEdit({ ...edit, incorrectAnswers: [" a "] })).toBe(
+      "Wrong answers must be different from the correct answer."
+    );
+    expect(validateCandidateEdit({ ...edit, incorrectAnswers: ["B", "b"] })).toBe(
+      "Wrong answers must be different from each other."
+    );
+  });
 });
 
 describe("formatBytes", () => {

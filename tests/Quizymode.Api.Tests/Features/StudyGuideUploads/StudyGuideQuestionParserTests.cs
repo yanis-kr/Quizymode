@@ -74,6 +74,37 @@ public sealed class StudyGuideQuestionParserTests
     }
 
     [Fact]
+    public void Parse_DuplicateOrCorrectEqualDistractors_AreCleanedAndQuestionKept()
+    {
+        string raw = "{\"questions\":[{\"question\":\"Q1?\",\"correctAnswer\":\"A\",\"incorrectAnswers\":[\"B\",\"b\",\"a\",\"C\"]}]}";
+
+        Result<List<StudyGuideGeneratedQuestion>> result = Parse(raw);
+
+        result.IsSuccess.Should().BeTrue();
+        result.Value.Single().IncorrectAnswers.Should().Equal("B", "C");
+    }
+
+    [Fact]
+    public void Parse_QuestionWithNoDistinctDistractors_IsDroppedOthersKept()
+    {
+        string raw = "{\"questions\":[{\"question\":\"Q1?\",\"correctAnswer\":\"A\",\"incorrectAnswers\":[\"a\"]}," +
+                     "{\"question\":\"Q2?\",\"correctAnswer\":\"C\",\"incorrectAnswers\":[\"D\"]}]}";
+
+        Result<List<StudyGuideGeneratedQuestion>> result = Parse(raw);
+
+        result.IsSuccess.Should().BeTrue();
+        result.Value.Select(q => q.Question).Should().Equal("Q2?");
+    }
+
+    [Fact]
+    public void Parse_AllQuestionsDroppedAfterCleaning_Fails()
+    {
+        string raw = "{\"questions\":[{\"question\":\"Q1?\",\"correctAnswer\":\"A\",\"incorrectAnswers\":[\"a\"]}]}";
+
+        Parse(raw).IsFailure.Should().BeTrue();
+    }
+
+    [Fact]
     public void Parse_DuplicateQuestions_Fails()
     {
         string raw = "{\"questions\":[{\"question\":\"Same?\",\"correctAnswer\":\"A\",\"incorrectAnswers\":[\"B\"]}," +

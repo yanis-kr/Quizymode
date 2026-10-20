@@ -222,6 +222,25 @@ describe("EditItemPage", () => {
     );
   });
 
+  it.each([
+    ["a legacy item with repeated incorrect answers", ["x", "X"], "Incorrect answers must be different from each other."],
+    ["an incorrect answer equal to the correct answer", ["old ANSWER", "W2"], "Incorrect answers must be different from the correct answer."],
+  ])("blocks save for %s (#276)", async (_label, incorrectAnswers, message) => {
+    // AC 2.1.8
+    const user = userEvent.setup({ delay: null });
+    vi.mocked(itemsApi.getById).mockResolvedValueOnce({
+      ...itemMock,
+      incorrectAnswers,
+    } as Awaited<ReturnType<typeof itemsApi.getById>>);
+
+    renderPage("/items/item-1/edit");
+
+    await user.click(await screen.findByRole("button", { name: /save changes/i }));
+
+    expect(await screen.findByText(message)).toBeInTheDocument();
+    expect(itemsApi.update).not.toHaveBeenCalled();
+  });
+
   it("keeps three incorrect answer fields for an item with fewer than four (#265)", async () => {
     // AC 2.1.9
     const user = userEvent.setup({ delay: null });

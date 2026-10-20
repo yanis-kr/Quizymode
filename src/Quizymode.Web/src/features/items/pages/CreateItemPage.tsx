@@ -11,6 +11,7 @@ import { useActiveCollection } from "@/hooks/useActiveCollection";
 import { ItemForm, type ItemFormValues } from "@/components/items/ItemForm";
 import type { CreateItemRequest } from "@/types/api";
 import { validateNavigationKeywordName } from "@/utils/navigationKeywordRules";
+import { getIncorrectAnswerConflict } from "@/utils/incorrectAnswerRules";
 import { useExtraKeywordAutocompleteSource } from "@/hooks/useExtraKeywordAutocompleteSource";
 import { parseKeywordsParam } from "@/utils/addItemsScopeUrl";
 import LoadingSpinner from "@/components/LoadingSpinner";
@@ -168,6 +169,12 @@ function CreateItemEditor({
     );
     if (compacted.incorrectAnswers.length === 0) {
       setValidationError("Please provide at least one incorrect answer");
+      return;
+    }
+
+    const conflict = getIncorrectAnswerConflict(formData.correctAnswer, compacted.incorrectAnswers);
+    if (conflict) {
+      setValidationError(conflict);
       return;
     }
 

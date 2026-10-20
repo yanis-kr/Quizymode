@@ -212,6 +212,33 @@ describe("UploadToCollectionPage", () => {
     expect(itemsApi.uploadToCollection).not.toHaveBeenCalled();
   });
 
+  it("blocks submit with a row-numbered error when incorrect answers repeat or equal the correct answer (#276)", async () => {
+    // AC 2.6.8
+    const user = userEvent.setup({ delay: null });
+    renderPage("/items/upload-to-collection?category=science&keywords=anatomy,muscular");
+    await screen.findByLabelText(/category \(required\)/i);
+    await waitFor(() => {
+      expect(screen.getByLabelText(/keyword rank 1/i)).toHaveValue("anatomy");
+    });
+
+    await user.click(screen.getByLabelText(/json array of items/i));
+    await user.paste(
+      JSON.stringify([
+        { question: "Q1", correctAnswer: "A", incorrectAnswers: ["W1", "W2"] },
+        { question: "Q2", correctAnswer: "A", incorrectAnswers: ["W1", " w1 "] },
+        { question: "Q3", correctAnswer: "A", incorrectAnswers: ["a"] },
+      ])
+    );
+    await user.click(screen.getByRole("button", { name: /upload and open collection/i }));
+
+    expect(
+      await screen.findByText(
+        /items 2, 3: incorrect answers must be different from each other and from the correct answer/i
+      )
+    ).toBeInTheDocument();
+    expect(itemsApi.uploadToCollection).not.toHaveBeenCalled();
+  });
+
   it("trims incorrect answers and keeps at most four before uploading", async () => {
     // AC 2.6.8
     const user = userEvent.setup({ delay: null });

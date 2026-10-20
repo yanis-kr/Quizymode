@@ -2,6 +2,7 @@
  * Generate one AI batch: choose scope and keywords, create a prompt for 10-15 private items,
  * copy it to AI, paste the response, review in memory, then accept/reject before saving.
  */
+import { getIncorrectAnswerConflict } from "@/utils/incorrectAnswerRules";
 import { useState, useMemo, useEffect } from "react";
 import { useNavigate, useSearchParams } from "react-router-dom";
 import { useQuery, useMutation } from "@tanstack/react-query";
@@ -93,6 +94,7 @@ const BulkCreateItemsPage = () => {
   const [copySuccess, setCopySuccess] = useState(false);
   const [localError, setLocalError] = useState<string | null>(null);
   const [skippedNoDistractors, setSkippedNoDistractors] = useState(0);
+  const [skippedConflicts, setSkippedConflicts] = useState(0);
   const [resultModal, setResultModal] = useState<{
     isOpen: boolean;
     message: string;
@@ -258,6 +260,7 @@ Generate the JSON array only.`;
 
       const items: ParsedItem[] = [];
       let skippedCount = 0;
+      let conflictCount = 0;
       for (let i = 0; i < parsed.length; i++) {
         const o = parsed[i] as Record<string, unknown>;
         const itemCategory = (o.category ?? "").toString().trim();
@@ -281,6 +284,11 @@ Generate the JSON array only.`;
         }
         if (incorrectAnswers.length === 0) {
           skippedCount += 1;
+          continue;
+        }
+        const slicedIncorrectAnswers = incorrectAnswers.slice(0, 4);
+        if (getIncorrectAnswerConflict(correctAnswer, slicedIncorrectAnswers)) {
+          conflictCount += 1;
           continue;
         }
         const explanation = (o.explanation ?? "").toString().trim();
@@ -311,7 +319,7 @@ Generate the JSON array only.`;
         items.push({
           question,
           correctAnswer,
-          incorrectAnswers: incorrectAnswers.slice(0, 4),
+          incorrectAnswers: slicedIncorrectAnswers,
           explanation,
           source,
           keywords: keywords.length > 0 ? keywords : undefined,
@@ -319,10 +327,20 @@ Generate the JSON array only.`;
         });
       }
       setSkippedNoDistractors(skippedCount);
+      setSkippedConflicts(conflictCount);
       if (items.length === 0) {
+        const reasons: string[] = [];
+        if (skippedCount > 0) {
+          reasons.push(`${skippedCount} item(s) skipped because they have no incorrect answers (1-4 required)`);
+        }
+        if (conflictCount > 0) {
+          reasons.push(
+            `${conflictCount} item(s) skipped because their incorrect answers repeat each other or the correct answer`
+          );
+        }
         setLocalError(
-          skippedCount > 0
-            ? `No valid items found: ${skippedCount} item(s) skipped because they have no incorrect answers (1-4 required).`
+          reasons.length > 0
+            ? `No valid items found: ${reasons.join("; ")}.`
             : "No valid items found in the response, or category did not match."
         );
         return;
@@ -623,6 +641,11 @@ Generate the JSON array only.`;
             {skippedNoDistractors > 0 && (
               <p className="text-sm text-amber-700 mb-2" role="status">
                 {skippedNoDistractors} item(s) skipped: each item needs 1-4 incorrect answers.
+              </p>
+            )}
+            {skippedConflicts > 0 && (
+              <p className="text-sm text-amber-700 mb-2" role="status">
+                {skippedConflicts} item(s) skipped: incorrect answers must be different from each other and from the correct answer.
               </p>
             )}
             <ul className="space-y-3 divide-y divide-gray-200">

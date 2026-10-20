@@ -26,6 +26,28 @@ public sealed class IncorrectAnswersRuleTests
         { new[] { "A", "   " }, false },
     };
 
+    public static TheoryData<string[], string?> ConflictCases => new()
+    {
+        { new[] { "paris" }, QuizPlayability.IncorrectAnswerMatchesCorrectMessage },
+        { new[] { " PARIS " }, QuizPlayability.IncorrectAnswerMatchesCorrectMessage },
+        { new[] { "Lyon", "lyon" }, QuizPlayability.DuplicateIncorrectAnswersMessage },
+        { new[] { "Lyon", " LYON ", "Nice" }, QuizPlayability.DuplicateIncorrectAnswersMessage },
+        { new[] { "Lyon", "lyon", "paris" }, QuizPlayability.IncorrectAnswerMatchesCorrectMessage },
+        { new[] { "Lyon", "Nice" }, null },
+    };
+
+    private static void AssertConflict(FluentValidation.Results.ValidationResult result, string? expected)
+    {
+        if (expected is null)
+        {
+            result.IsValid.Should().BeTrue();
+            return;
+        }
+
+        result.IsValid.Should().BeFalse();
+        result.Errors.Select(e => e.ErrorMessage).Should().Contain(expected);
+    }
+
     private static Mock<IUserContext> Admin()
     {
         Mock<IUserContext> ctx = new();
@@ -56,7 +78,7 @@ public sealed class IncorrectAnswersRuleTests
     public void AddItemsBulk_Validator(string[] incorrect, bool valid)
     {
         AddItemsBulk.Request request = new(false, "geo", "capitals", "europe", [],
-            new List<AddItemsBulk.ItemRequest> { new("Q?", "A", incorrect.ToList(), "E") });
+            new List<AddItemsBulk.ItemRequest> { new("Q?", "Paris", incorrect.ToList(), "E") });
         new AddItemsBulk.Validator(Admin().Object).Validate(request).IsValid.Should().Be(valid);
     }
 
@@ -65,7 +87,7 @@ public sealed class IncorrectAnswersRuleTests
     public async Task UploadToCollection_Validator(string[] incorrect, bool valid)
     {
         UploadItemsToCollection.Request request = new("geo", "kw1", "kw2", [],
-            new List<AddItemsBulk.ItemRequest> { new("Q?", "A", incorrect.ToList(), "E") }, "text");
+            new List<AddItemsBulk.ItemRequest> { new("Q?", "Paris", incorrect.ToList(), "E") }, "text");
         var result = await new UploadItemsToCollection.Validator(Admin().Object).ValidateAsync(request);
         result.IsValid.Should().Be(valid);
     }
@@ -104,5 +126,108 @@ public sealed class IncorrectAnswersRuleTests
             .Should().Equal("Lyon", "Nice");
         QuizPlayability.IsPlayable("Paris", ["PARIS", "  "]).Should().BeFalse();
         QuizPlayability.IsPlayable("Paris", ["Lyon"]).Should().BeTrue();
+    }
+
+    [Theory]
+    [MemberData(nameof(ConflictCases))]
+    public void AddItem_Conflicts(string[] incorrect, string? expected) =>
+        AssertConflict(
+            new AddItem.Validator().Validate(new AddItem.Request("geo", "capitals", "europe", false, "Q?", "Paris", incorrect.ToList(), "")),
+            expected);
+
+    [Theory]
+    [MemberData(nameof(ConflictCases))]
+    public void UpdateItem_Conflicts(string[] incorrect, string? expected) =>
+        AssertConflict(
+            new UpdateItem.Validator().Validate(new UpdateItem.Request("geo", "capitals", "europe", "Q?", "Paris", incorrect.ToList(), "", false)),
+            expected);
+
+    [Theory]
+    [MemberData(nameof(ConflictCases))]
+    public void AddItemsBulk_Conflicts(string[] incorrect, string? expected) =>
+        AssertConflict(
+            new AddItemsBulk.Validator(Admin().Object).Validate(new AddItemsBulk.Request(false, "geo", "capitals", "europe", [],
+                new List<AddItemsBulk.ItemRequest> { new("Q?", "Paris", incorrect.ToList(), "E") })),
+            expected);
+
+    [Theory]
+    [MemberData(nameof(ConflictCases))]
+    public async Task UploadToCollection_Conflicts(string[] incorrect, string? expected) =>
+        AssertConflict(
+            await new UploadItemsToCollection.Validator(Admin().Object).ValidateAsync(new UploadItemsToCollection.Request("geo", "kw1", "kw2", [],
+                new List<AddItemsBulk.ItemRequest> { new("Q?", "Paris", incorrect.ToList(), "E") }, "text")),
+            expected);
+
+    [Theory]
+    [MemberData(nameof(ConflictCases))]
+    public void SeedSync_Conflicts(string[] incorrect, string? expected) =>
+        AssertConflict(
+            SeedSyncAdmin.ValidateManifest(new SeedSyncAdmin.ManifestRequest("set",
+                [new SeedSyncAdmin.SeedItemRequest(Guid.NewGuid(), "geo", "capitals", "europe", "Q?", "Paris", incorrect.ToList())],
+                [])),
+            expected);
+
+    [Theory]
+    [InlineData("Paris", new[] { "paris" }, QuizPlayability.IncorrectAnswerMatchesCorrectMessage)]
+    [InlineData("Paris", new[] { "Lyon", "LYON" }, QuizPlayability.DuplicateIncorrectAnswersMessage)]
+    [InlineData("Paris", new[] { "Lyon", "lyon", "PARIS" }, QuizPlayability.IncorrectAnswerMatchesCorrectMessage)]
+    [InlineData("Paris", new[] { "Lyon", "", "  ", "Nice" }, null)]
+    [InlineData("", new[] { "Lyon" }, null)]
+    [InlineData(null, new[] { "Lyon" }, null)]
+    public void GetIncorrectAnswerConflict_ReturnsExpectedMessage(string? correct, string[] incorrect, string? expected) =>
+        QuizPlayability.GetIncorrectAnswerConflict(correct, incorrect).Should().Be(expected);
+
+    [Fact]
+    public void GetIncorrectAnswerConflict_NullList_IsNotAConflict() =>
+        QuizPlayability.GetIncorrectAnswerConflict("Paris", null).Should().BeNull();
+
+    [Fact]
+    public void Validators_NullIncorrectAnswers_DoNotThrow()
+    {
+        AddItem.Request request = new("geo", "capitals", "europe", false, "Q?", "Paris", null!, "");
+        Action act = () => new AddItem.Validator().Validate(request);
+        act.Should().NotThrow();
+    }
+
+    [Theory]
+    [InlineData("""["Compute"]""", "Item 1: incorrect answers must be different from the correct answer.")]
+    [InlineData("""["a","A"]""", "Item 1: incorrect answers must be different from each other.")]
+    public void StudyGuideItemValidator_RejectsConflicts(string incorrectJson, string expected)
+    {
+        string json = $$"""[{"question":"What is EC2?","correctAnswer":"Compute","incorrectAnswers":{{incorrectJson}}}]""";
+        using JsonDocument doc = JsonDocument.Parse(json);
+        List<JsonElement> array = doc.RootElement.EnumerateArray().Select(e => e.Clone()).ToList();
+
+        var (isValid, messages, _, _) = StudyGuideItemValidator.ValidateAndMap(array, "exams", new[] { "aws", "saa" }, new());
+
+        isValid.Should().BeFalse();
+        messages.Should().Contain(expected);
+    }
+
+    [Fact]
+    public void StudyGuideItemValidator_CleanMode_DropsDuplicatesAndCorrectEqual_KeepsQuestion()
+    {
+        string json = """[{"question":"What is EC2?","correctAnswer":"Compute","incorrectAnswers":["Storage","storage","compute","Network"]}]""";
+        using JsonDocument doc = JsonDocument.Parse(json);
+        List<JsonElement> array = doc.RootElement.EnumerateArray().Select(e => e.Clone()).ToList();
+
+        var (isValid, _, items, _) = StudyGuideItemValidator.ValidateAndMap(array, "exams", new[] { "aws", "saa" }, new(), cleanIncorrectAnswers: true);
+
+        isValid.Should().BeTrue();
+        items!.Single().IncorrectAnswers.Should().Equal("Storage", "Network");
+    }
+
+    [Fact]
+    public void StudyGuideItemValidator_CleanMode_DropsOnlyQuestionLeftWithNoDistractors()
+    {
+        string json = """[{"question":"Q1?","correctAnswer":"A","incorrectAnswers":["a"," A "]},{"question":"Q2?","correctAnswer":"B","incorrectAnswers":["C"]}]""";
+        using JsonDocument doc = JsonDocument.Parse(json);
+        List<JsonElement> array = doc.RootElement.EnumerateArray().Select(e => e.Clone()).ToList();
+
+        var (isValid, messages, items, _) = StudyGuideItemValidator.ValidateAndMap(array, "exams", new[] { "aws", "saa" }, new(), cleanIncorrectAnswers: true);
+
+        isValid.Should().BeTrue();
+        messages.Should().BeEmpty();
+        items!.Select(i => i.Question).Should().Equal("Q2?");
     }
 }
