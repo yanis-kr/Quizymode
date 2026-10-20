@@ -43,11 +43,11 @@ public sealed class AdminLlmUsagePostgresTests(PostgresContainerFixture fixture,
 
     private static IConfiguration PricedConfig() => new ConfigurationBuilder().AddInMemoryCollection(new Dictionary<string, string?>
     {
-        ["LlmPricing:g-1:InputPer1M"] = "0.5",
-        ["LlmPricing:g-1:OutputPer1M"] = "1.5",
-        ["LlmPricing:gpt-5:InputPer1M"] = "1",
-        ["LlmPricing:gpt-5:OutputPer1M"] = "2",
-        ["LlmPricing:half:InputPer1M"] = "1",
+        ["LlmPricing:g-1:InputPerMTok"] = "0.5",
+        ["LlmPricing:g-1:OutputPerMTok"] = "1.5",
+        ["LlmPricing:gpt-5:InputPerMTok"] = "1",
+        ["LlmPricing:gpt-5:OutputPerMTok"] = "2",
+        ["LlmPricing:half:InputPerMTok"] = "1",
     }).Build();
 
     private async Task ResetAsync()
@@ -216,6 +216,8 @@ public sealed class AdminLlmUsagePostgresTests(PostgresContainerFixture fixture,
         legacy30.TopUsers.Should().HaveCount(20);
         legacy30.TopUsers.Should().Contain(user => user.UserId == "orphan" && user.InputTokens == 0 && user.OutputTokens == 0);
         legacy30.Rows.Should().Contain(row => row.Model == "gpt-5" && row.AvgDurationMs == 11);
+        legacy30.Rows.Should().Contain(row => row.Model == "gpt-5" && row.EstimatedCostUsd != null);
+        legacy30.Rows.Should().Contain(row => row.Model == "g-1" && row.EstimatedCostUsd != null);
 
         foreach (int days in new[] { 1, 30, 90 })
         {
