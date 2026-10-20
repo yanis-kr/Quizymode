@@ -16,6 +16,14 @@ import {
   normalizeSpeechSupportMapInput,
 } from "@/utils/itemSpeech";
 
+const MIN_INCORRECT_ANSWER_FIELDS = 3;
+
+function padIncorrectAnswers(answers: readonly string[]): string[] {
+  const padded = [...answers];
+  while (padded.length < MIN_INCORRECT_ANSWER_FIELDS) padded.push("");
+  return padded;
+}
+
 const EditItemPage = () => {
   const { id } = useParams<{ id: string }>();
   const { isAuthenticated, isAdmin } = useAuth();
@@ -102,10 +110,7 @@ const EditItemPage = () => {
         questionSpeech: itemData.questionSpeech ?? {},
         correctAnswer: itemData.correctAnswer || "",
         correctAnswerSpeech: itemData.correctAnswerSpeech ?? {},
-        incorrectAnswers:
-          itemData.incorrectAnswers && itemData.incorrectAnswers.length > 0
-            ? [...itemData.incorrectAnswers, "", "", ""].slice(0, 3)
-            : ["", "", ""],
+        incorrectAnswers: padIncorrectAnswers(itemData.incorrectAnswers ?? []),
         incorrectAnswerSpeech: itemData.incorrectAnswerSpeech ?? {},
         explanation: itemData.explanation || "",
         keywords: itemData.keywords
