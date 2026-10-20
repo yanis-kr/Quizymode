@@ -228,7 +228,7 @@ public sealed class StudyGuideGenerationTests : DatabaseTestFixture
         FakeVendorHandler handler = new((vendor, _) => vendor switch
         {
             LlmVendors.Gemini => FakeVendorHandler.Status(HttpStatusCode.Unauthorized),
-            LlmVendors.OpenAI => FakeVendorHandler.Status(HttpStatusCode.Forbidden),
+            LlmVendors.OpenAI => FakeVendorHandler.Json(HttpStatusCode.Forbidden, "{\"error\":{\"message\":\"Request blocked: restricted API key\"}}"),
             _ => FakeVendorHandler.Completion(StudyGuideTestData.QuestionsJson())
         });
 
@@ -240,6 +240,23 @@ public sealed class StudyGuideGenerationTests : DatabaseTestFixture
         Attempts().Select(a => (a.Outcome, a.HttpStatus)).Should().Equal(
             (LlmAttemptOutcome.AuthError, (int?)401),
             (LlmAttemptOutcome.AuthError, (int?)403),
+            (LlmAttemptOutcome.Success, (int?)200));
+    }
+
+    [Fact]
+    public async Task Processor_RegionBlock403IsProviderErrorAndFallsThrough()
+    {
+        SectionGeneration generation = await QueueAsync();
+        FakeVendorHandler handler = new((vendor, _) => vendor == LlmVendors.Gemini
+            ? FakeVendorHandler.Json(HttpStatusCode.Forbidden, "{\"error\":{\"code\":403,\"message\":\"User location is not supported for the API use.\",\"status\":\"PERMISSION_DENIED\"}}")
+            : FakeVendorHandler.Completion(StudyGuideTestData.QuestionsJson()));
+
+        SectionGeneration completed = await ClaimAndProcessAsync(generation, handler);
+
+        handler.Vendors.Should().Equal(LlmVendors.Gemini, LlmVendors.OpenAI);
+        completed.Status.Should().Be(SectionGenerationStatus.Completed);
+        Attempts().Select(a => (a.Outcome, a.HttpStatus)).Should().Equal(
+            (LlmAttemptOutcome.ProviderError, (int?)403),
             (LlmAttemptOutcome.Success, (int?)200));
     }
 

@@ -37,7 +37,9 @@ internal interface IOpenAiCompatibleChatClient
 /// One typed HttpClient for every OpenAI-compatible chat completions API (DeepSeek, OpenAI, Gemini): POST
 /// <c>{baseUrl}/chat/completions</c> with a Bearer key, JSON mode (<c>response_format: json_object</c>), low temperature,
 /// and capped output tokens. OpenAI reasoning models (gpt-5*, o-series) get <c>max_completion_tokens</c> and no
-/// temperature, which those models require. The Authorization header is redacted from HTTP logs and keys are never logged.
+/// temperature, which those models require. The Authorization header is redacted from HTTP logs and keys are never
+/// logged. HTTP 401 means a bad key; a 403 is a bad key only when its body says so (otherwise a region/model-access
+/// block, a provider error).
 /// </summary>
 internal sealed class OpenAiCompatibleChatClient(HttpClient httpClient, ILogger<OpenAiCompatibleChatClient> logger)
     : IOpenAiCompatibleChatClient
@@ -73,13 +75,23 @@ internal sealed class OpenAiCompatibleChatClient(HttpClient httpClient, ILogger<
             if (!response.IsSuccessStatusCode)
             {
                 LlmAttemptOutcome failure = ClassifyFailure(status, responseText);
-                if (failure == LlmAttemptOutcome.AuthError)
+                if (failure == LlmAttemptOutcome.AuthError && status != 403)
                 {
-                    // Vendors echo a masked key fragment in auth errors (AC 5.12.5), so the body is never logged.
+                    // 401 and 400 bodies are where vendors echo masked key fragments and they add nothing beyond the status,
+                    // so they are never logged (AC 5.12.5). A 403 is ambiguous (bad key vs. region/model block), so its
+                    // redacted body is the diagnostic and is always logged.
                     _logger.LogWarning(
                         "StudyGuideGeneration: {Vendor} rejected the API key (HTTP {StatusCode}).",
                         endpoint.Vendor,
                         status);
+                }
+                else if (failure == LlmAttemptOutcome.AuthError)
+                {
+                    _logger.LogWarning(
+                        "StudyGuideGeneration: {Vendor} rejected the API key (HTTP {StatusCode}): {Error}",
+                        endpoint.Vendor,
+                        status,
+                        ErrorExcerpt(responseText));
                 }
                 else
                 {
@@ -139,30 +151,44 @@ internal sealed class OpenAiCompatibleChatClient(HttpClient httpClient, ILogger<
         model.Trim().StartsWith("gpt-5", StringComparison.OrdinalIgnoreCase) ? "minimal" : "low";
 
     /// <summary>
-    /// Maps a non-2xx reply to an outcome: 401/403 are <see cref="LlmAttemptOutcome.AuthError"/>, and so is a 400 whose
-    /// body mentions an API key (Gemini answers a bad key with 400 "API key not valid"). Everything else is a provider error.
+    /// Maps a non-2xx reply to an outcome: 401 is <see cref="LlmAttemptOutcome.AuthError"/>; so is a 403 whose body
+    /// indicates a key/credential problem, and a 400 whose body mentions an API key (Gemini answers a bad key with 400
+    /// "API key not valid"). Any other 403 (region or model-access block) and everything else is a provider error.
     /// </summary>
     internal static LlmAttemptOutcome ClassifyFailure(int status, string body) =>
-        status is 401 or 403 ||
+        status == 401 ||
+        (status == 403 && IndicatesCredentialProblem(body)) ||
         (status == 400 && body.Contains("API key", StringComparison.OrdinalIgnoreCase))
             ? LlmAttemptOutcome.AuthError
             : LlmAttemptOutcome.ProviderError;
 
-    private static readonly Regex[] KeyLikePatterns =
+    private static readonly string[] CredentialMarkers = ["api key", "api_key", "apikey", "api-key", "authenticat", "credential"];
+
+    private static bool IndicatesCredentialProblem(string body) =>
+        CredentialMarkers.Any(marker => body.Contains(marker, StringComparison.OrdinalIgnoreCase));
+
+    // Applied in order; each replacement redacts the secret value and keeps the surrounding field name.
+    private static readonly (Regex Pattern, string Replacement)[] KeyLikePatterns =
     [
-        new(@"sk-[A-Za-z0-9_\-*]{4,}", RegexOptions.Compiled),
-        new(@"AIza[0-9A-Za-z_\-]{8,}", RegexOptions.Compiled),
-        new(@"\*+[A-Za-z0-9]{3,6}", RegexOptions.Compiled)
+        (new(@"\bbearer\s+[A-Za-z0-9\-._~+/]+=*", RegexOptions.IgnoreCase | RegexOptions.Compiled), "Bearer [redacted]"),
+        (new(@"\b(authorization|x-goog-api-key|api-key|x-api-key)\s*[:=]\s*""?(?:[A-Za-z]+\s+)?[^\s"",}]+", RegexOptions.IgnoreCase | RegexOptions.Compiled), "${1}: [redacted]"),
+        (new(@"(""(?:api[-_]?key|x-api-key|x-goog-api-key|apikey|key|token|access_token|authorization|secret|password)""\s*:\s*"")(?:[^""\\]|\\.)*""", RegexOptions.IgnoreCase | RegexOptions.Compiled), "${1}[redacted]\""),
+        (new(@"(\\""(?:api[-_]?key|x-api-key|x-goog-api-key|apikey|key|token|access_token|authorization|secret|password)\\""\s*:\s*\\"")[^""\\]*", RegexOptions.IgnoreCase | RegexOptions.Compiled), "${1}[redacted]"),
+        (new(@"([?&](?:amp;)?(?:key|api_key|apikey|access_token|token)=)[^&\s""'#]+", RegexOptions.IgnoreCase | RegexOptions.Compiled), "${1}[redacted]"),
+        (new(@"(?<![A-Za-z0-9])sk-[A-Za-z0-9_\-*]+", RegexOptions.Compiled), "[redacted]"),
+        (new(@"AIza[0-9A-Za-z_\-]*", RegexOptions.Compiled), "[redacted]"),
+        (new(@"\*+[A-Za-z0-9]{3,6}", RegexOptions.Compiled), "[redacted]")
     ];
 
     /// <summary>
     /// A short, single-line excerpt of a vendor error body for the log. Vendor errors describe the problem
     /// (bad key, unknown field, quota); they don't echo our request, so nothing from the study guide is logged.
-    /// Anything shaped like an API key (or a masked key fragment) is redacted as a second layer.
+    /// Anything shaped like an API key, bearer token, credential header/field or key URL parameter is redacted
+    /// from the whole body first, then whitespace is collapsed and the result is cut, so a secret can't straddle the cut.
     /// </summary>
     internal static string ErrorExcerpt(string responseText)
     {
-        string redacted = KeyLikePatterns.Aggregate(responseText, (text, pattern) => pattern.Replace(text, "[redacted]"));
+        string redacted = KeyLikePatterns.Aggregate(responseText, (text, rule) => rule.Pattern.Replace(text, rule.Replacement));
         string singleLine = string.Join(' ', redacted.Split((char[]?)null, StringSplitOptions.RemoveEmptyEntries));
         return singleLine.Length <= MaxErrorExcerptLength ? singleLine : singleLine[..MaxErrorExcerptLength] + "…";
     }
