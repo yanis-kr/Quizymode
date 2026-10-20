@@ -237,7 +237,7 @@ Terms used in this document with a specific meaning:
 - **AC 1.6.2** [Authenticated (non-owner)] **Given** I am authenticated but not the owner, **when** I call add/remove for that collection, **then** the API returns 400 with a message that only the collection owner can add or remove items.
 - **AC 1.6.3** [Admin (non-owner)] Same as Authenticated (non-owner) (AC 1.6.2).
 - **AC 1.6.4** [Anonymous] **Given** I am not authenticated, **when** I call add/remove, **then** the API returns 401.
-- **AC 1.6.7** [Authenticated] **Given** I call `POST /collections/{collectionId}/items/bulk`, **when** `itemIds` is omitted or null, is an empty array, or contains the empty GUID, **then** the API returns 400 with `ItemIds is required.` / `At least one ItemId is required.` / `All ItemIds must be valid GUIDs.`, adds nothing, and never exposes an internal exception message; body validation runs before the collection lookup and ownership check (#273).
+- **AC 1.6.7** [Authenticated] **Given** I call `POST /collections/{collectionId}/items/bulk`, **when** `itemIds` is omitted or null, is an empty array, or contains the empty GUID, **then** the API returns 400 with `ItemIds is required.` / `At least one ItemId is required.` / `All ItemIds must be valid GUIDs.`, adds nothing, and never exposes an internal exception message; body validation runs before the collection lookup and ownership check. Behavior change: an empty array and an array containing the empty GUID previously returned 200 (0 added / skipped) and now return 400 (#273).
 
 **UI**
 
