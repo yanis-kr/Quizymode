@@ -22,6 +22,8 @@ import {
 } from "@/features/legal/policyAcceptanceStorage";
 import { hasToken, setTokens, clearTokens } from "@/utils/tokenStorage";
 import { authApi } from "@/api/auth";
+import type { AuthIntent } from "@/features/auth/utils/authIntent";
+import { startGoogleSignIn } from "@/features/auth/utils/googleSignIn";
 
 interface AuthContextType {
   isAuthenticated: boolean;
@@ -41,6 +43,11 @@ interface AuthContextType {
   confirmSignup: (username: string, code: string) => Promise<boolean>;
   resendConfirmationCode: (username: string) => Promise<void>;
   logout: () => Promise<void>;
+  /**
+   * Starts the Google redirect sign-in (AUTH-003). Navigates away on success. `isRetry` is used only by
+   * /auth/callback for the single automatic retry after the Pre sign-up Lambda links an existing account.
+   */
+  signInWithGoogle: (intent: AuthIntent, options?: { isRetry?: boolean }) => Promise<void>;
   /** Resolves true only when a verified authenticated session was established. */
   refreshAuth: () => Promise<boolean>;
 }
@@ -454,6 +461,9 @@ export const AuthProvider = ({ children }: AuthProviderProps) => {
   const logout = async () => {
     try {
       await authApi.logoutAudit();
+      // For Google (OAuth) sessions signOut() redirects to the hosted /logout and the page unloads before the line
+      // after it runs, so drop the stored tokens first.
+      clearTokens();
       await signOut();
       clearAuthState();
     } catch (error) {
@@ -477,6 +487,7 @@ export const AuthProvider = ({ children }: AuthProviderProps) => {
         confirmSignup,
         resendConfirmationCode,
         logout,
+        signInWithGoogle: startGoogleSignIn,
         refreshAuth,
       }}
     >

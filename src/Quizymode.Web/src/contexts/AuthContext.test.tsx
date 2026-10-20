@@ -1,6 +1,7 @@
 import { describe, expect, it, vi, beforeEach } from "vitest";
 import { render, renderHook, waitFor, act } from "@testing-library/react";
 import { AuthProvider, useAuth } from "./AuthContext";
+import { clearTokens } from "@/utils/tokenStorage";
 
 const mockSignIn = vi.fn();
 const mockFetchAuthSession = vi.fn();
@@ -18,6 +19,7 @@ vi.mock("aws-amplify/auth", () => ({
   confirmSignUp: (...args: unknown[]) => mockConfirmSignUp(...args),
   autoSignIn: (...args: unknown[]) => mockAutoSignIn(...args),
   resendSignUpCode: (...args: unknown[]) => mockResendSignUpCode(...args),
+  signInWithRedirect: vi.fn(),
 }));
 
 vi.mock("@/api/users", () => ({
@@ -277,5 +279,32 @@ describe("AuthContext smoke", () => {
     mockFetchAuthSession.mockImplementation(noSessionFetch);
     render(<AuthProvider>{null}</AuthProvider>);
     await waitFor(() => expect(mockFetchAuthSession).toHaveBeenCalled());
+  });
+});
+
+describe("AuthContext.logout", () => {
+  beforeEach(() => {
+    vi.clearAllMocks();
+    mockFetchAuthSession.mockImplementation(noSessionFetch);
+  });
+
+  it("clears stored tokens before signOut so a Google hosted-logout redirect cannot leave them behind", async () => {
+    const order: string[] = [];
+    vi.mocked(clearTokens).mockImplementation(() => {
+      order.push("clearTokens");
+    });
+    mockSignOut.mockImplementation(async () => {
+      order.push("signOut");
+    });
+
+    const { result } = renderAuth();
+    await waitFor(() => expect(result.current.isLoading).toBe(false));
+    order.length = 0;
+
+    await act(async () => {
+      await result.current.logout();
+    });
+
+    expect(order.slice(0, 2)).toEqual(["clearTokens", "signOut"]);
   });
 });

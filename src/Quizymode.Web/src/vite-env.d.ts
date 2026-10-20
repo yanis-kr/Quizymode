@@ -1,5 +1,12 @@
 /// <reference types="vite/client" />
 
+interface ImportMetaEnv {
+  /** Cognito hosted-UI custom domain used for Google sign-in (for example auth.quizymode.com). */
+  readonly VITE_COGNITO_DOMAIN?: string;
+  /** Google sign-in is enabled only when this is exactly "true" and VITE_COGNITO_DOMAIN is set. */
+  readonly VITE_GOOGLE_SIGNIN_ENABLED?: string;
+}
+
 declare const __APP_VERSION__: string;
 declare const __BUILD_LABEL__: string;
 declare const __BUILD_VERSION__: string;

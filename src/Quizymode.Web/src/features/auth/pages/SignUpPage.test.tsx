@@ -1,10 +1,11 @@
-import { beforeEach, describe, expect, it, vi } from "vitest";
+import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 import { fireEvent, render, screen, waitFor } from "@testing-library/react";
 import { MemoryRouter } from "react-router-dom";
 import { HelmetProvider } from "react-helmet-async";
 import SignUpPage from "./SignUpPage";
 
 const mockSignup = vi.fn();
+const mockSignInWithGoogle = vi.fn();
 const mockConfirmSignup = vi.fn();
 const mockResendConfirmationCode = vi.fn();
 const mockNavigate = vi.fn();
@@ -15,6 +16,7 @@ let mockAuthLoading = false;
 vi.mock("@/contexts/AuthContext", () => ({
   useAuth: () => ({
     signup: mockSignup,
+    signInWithGoogle: mockSignInWithGoogle,
     confirmSignup: mockConfirmSignup,
     resendConfirmationCode: mockResendConfirmationCode,
     isAuthenticated: mockIsAuthenticated,
@@ -403,6 +405,55 @@ describe("SignUpPage", () => {
       for (const field of [screen.getByLabelText(/display name/i), screen.getByLabelText(/^email$/i), screen.getByLabelText(/^password$/i)]) {
         expect(field.className).toContain("focus:ring-2");
       }
+    });
+  });
+
+  describe("Continue with Google", () => {
+    afterEach(() => {
+      vi.unstubAllEnvs();
+    });
+
+    function enableGoogle() {
+      vi.stubEnv("VITE_GOOGLE_SIGNIN_ENABLED", "true");
+      vi.stubEnv("VITE_COGNITO_DOMAIN", "auth.quizymode.com");
+    }
+
+    it("is hidden when the flag is off", () => {
+      renderPage();
+      expect(screen.queryByRole("button", { name: /continue with google/i })).not.toBeInTheDocument();
+      expect(screen.queryByText(/By continuing with Google/)).not.toBeInTheDocument();
+    });
+
+    it("is shown with the terms helper when enabled, and is not gated by the legal checkbox", () => {
+      enableGoogle();
+      renderPage();
+      const button = screen.getByRole("button", { name: "Continue with Google" });
+      expect(button).toBeEnabled();
+      expect(screen.getByRole("checkbox")).not.toBeChecked();
+      expect(screen.getByText(/By continuing with Google you agree to the/)).toBeInTheDocument();
+    });
+
+    it("starts the redirect with the validated intent without requiring the checkbox", () => {
+      enableGoogle();
+      mockSignInWithGoogle.mockReturnValue(new Promise(() => undefined));
+      renderPage("/signup?returnTo=%2Fcollections&reason=keep-collection");
+
+      fireEvent.click(screen.getByRole("button", { name: "Continue with Google" }));
+
+      expect(mockSignInWithGoogle).toHaveBeenCalledWith({ returnTo: "/collections", reason: "keep-collection" });
+    });
+
+    it("explains a Google-only email without showing the Lambda sentinel, whether or not the flag is on", async () => {
+      mockSignup.mockRejectedValue(new Error("PreSignUp failed with error QM_USE_GOOGLE."));
+      renderPage();
+      fillSignUpForm();
+
+      fireEvent.click(screen.getByRole("button", { name: "Sign up" }));
+
+      const alert = await screen.findByRole("alert");
+      expect(alert).toHaveTextContent("This email uses Continue with Google");
+      expect(alert).not.toHaveTextContent("QM_USE_GOOGLE");
+      expect(screen.getByLabelText(/^email$/i)).toHaveAttribute("aria-invalid", "true");
     });
   });
 });

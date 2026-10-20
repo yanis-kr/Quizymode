@@ -22,6 +22,8 @@ import {
   trackSignupFormStarted,
   trackSignupSubmitted,
 } from "@/features/auth/utils/authAnalytics";
+import { GoogleSignInSection } from "@/features/auth/components/GoogleSignInSection";
+import { QM_USE_GOOGLE, hasSentinel } from "@/features/auth/utils/googleAuthErrors";
 import { EyeIcon, EyeSlashIcon } from "@heroicons/react/24/outline";
 
 const RESEND_COOLDOWN_MS = 60_000;
@@ -105,6 +107,7 @@ const SignUpPage = () => {
   const [error, setError] = useState("");
   const [errorFields, setErrorFields] = useState<FieldId[]>([]);
   const [isLoading, setIsLoading] = useState(false);
+  const [isGoogleStarting, setIsGoogleStarting] = useState(false);
   const [needsConfirmation, setNeedsConfirmation] = useState(false);
   const [autoSignInFailed, setAutoSignInFailed] = useState(false);
   const [resendCooldownUntil, setResendCooldownUntil] = useState<number | null>(null);
@@ -217,7 +220,12 @@ const SignUpPage = () => {
       setNeedsConfirmation(true);
       trackSignupConfirmationShown(intent);
     } catch (err: unknown) {
-      showError(err instanceof Error ? err.message : "Sign up failed. Please try again.");
+      if (err instanceof Error && hasSentinel(err.message, QM_USE_GOOGLE)) {
+        // The Pre sign-up Lambda (pool-wide) found a Google-only account with this email. Never show the sentinel.
+        showError("This email uses Continue with Google", ["email"]);
+      } else {
+        showError(err instanceof Error ? err.message : "Sign up failed. Please try again.");
+      }
     } finally {
       setIsLoading(false);
     }
@@ -478,12 +486,20 @@ const SignUpPage = () => {
           <div>
             <button
               type="submit"
-              disabled={isLoading}
+              disabled={isLoading || isGoogleStarting}
               className="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 disabled:opacity-50"
             >
               {isLoading ? "Signing up..." : "Sign up"}
             </button>
           </div>
+
+          <GoogleSignInSection
+            intent={intent}
+            showLegalHelper
+            disabled={isLoading}
+            onStartingChange={setIsGoogleStarting}
+            onError={(message) => (message ? showError(message) : clearError())}
+          />
 
           <div className="text-center text-sm">
             <span className="text-gray-600">Already have an account? </span>

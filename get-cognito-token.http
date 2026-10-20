@@ -1,4 +1,7 @@
 ### Get Cognito Bearer Token
+### NOTE (AUTH-003, #118): the production client no longer allows these callback URLs. Use the dev app client
+### (docs/infra/COGNITO_SETUP.md, Google sign-in step 7): set @clientId to its id and @redirectUri to
+### https://oauth.pstmn.io/v1/callback (and scope=openid+email+profile in the login URL below).
 ### This file can be used with REST Client extension in VS Code or imported into Postman
 
 ### Step 1: Get Authorization Code (Manual - Open in Browser)

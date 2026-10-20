@@ -65,6 +65,38 @@ internal sealed class UserUpsertMiddleware
         }
     }
 
+    internal enum EmailMatchDecision
+    {
+        /// <summary>The matched row already belongs to this subject; use it as-is.</summary>
+        UseExisting,
+        /// <summary>The matched row belongs to another subject and the email is verified; re-point it.</summary>
+        Relink,
+        /// <summary>The matched row belongs to another subject and the email is unverified; leave it untouched.</summary>
+        Reject
+    }
+
+    /// <summary>
+    /// True only when the token's email_verified claim is "true" (Cognito emits it as a boolean or string).
+    /// </summary>
+    internal static bool IsEmailVerified(ClaimsPrincipal user)
+    {
+        string? value = user.FindFirstValue("email_verified");
+        return string.Equals(value, "true", StringComparison.OrdinalIgnoreCase);
+    }
+
+    /// <summary>
+    /// Decides what to do when a login with no matching Subject finds an existing row by email.
+    /// Re-pointing a row to a different Subject requires a verified email, otherwise an unverified
+    /// federated identity could take over another account.
+    /// </summary>
+    internal static EmailMatchDecision DecideEmailMatch(string subject, string existingSubject, bool emailVerified)
+    {
+        if (string.Equals(subject, existingSubject, StringComparison.Ordinal))
+            return EmailMatchDecision.UseExisting;
+
+        return emailVerified ? EmailMatchDecision.Relink : EmailMatchDecision.Reject;
+    }
+
     public UserUpsertMiddleware(RequestDelegate next, ILogger<UserUpsertMiddleware> logger)
     {
         _next = next;
@@ -152,8 +184,10 @@ internal sealed class UserUpsertMiddleware
                                 context.RequestAborted);
                         }
                     
-                    Guid userId;
+                    Guid userId = Guid.Empty;
+                    bool userResolved = true;
                     bool shouldLogLogin = false;
+                    bool emailVerified = IsEmailVerified(user);
                     
                     if (lockedUser is null)
                     {
@@ -180,16 +214,30 @@ internal sealed class UserUpsertMiddleware
 
                         if (existingByEmail is not null)
                         {
-                            // Link this identity (Subject) to the existing user - update Subject and LastLogin
-                            existingByEmail.Subject = subject;
-                            existingByEmail.Email = email;
-                            if (string.IsNullOrWhiteSpace(existingByEmail.Name) || existingByEmail.Name == existingByEmail.Subject)
-                                existingByEmail.Name = name;
-                            existingByEmail.LastLogin = DateTime.UtcNow;
-                            await db.SaveChangesAsync(context.RequestAborted);
-                            userId = existingByEmail.Id;
-                            _logger.LogInformation("Linked existing user (UserId: {UserId}, Email: {Email}) to new Subject: {Subject}", userId, email, subject);
-                            await transaction.CommitAsync(context.RequestAborted);
+                            EmailMatchDecision decision = DecideEmailMatch(subject, existingByEmail.Subject, emailVerified);
+                            if (decision == EmailMatchDecision.Reject)
+                            {
+                                // Unverified email must not take over another identity's row, and a second row would
+                                // violate IX_Users_Email. Leave everything unchanged and continue without a user id.
+                                _logger.LogWarning(
+                                    "Not linking subject {Subject} to an existing user by email: email_verified is not true",
+                                    subject);
+                                userResolved = false;
+                                await transaction.RollbackAsync(context.RequestAborted);
+                            }
+                            else
+                            {
+                                // Link this identity (Subject) to the existing user - update Subject and LastLogin
+                                existingByEmail.Subject = subject;
+                                existingByEmail.Email = email;
+                                if (string.IsNullOrWhiteSpace(existingByEmail.Name) || existingByEmail.Name == existingByEmail.Subject)
+                                    existingByEmail.Name = name;
+                                existingByEmail.LastLogin = DateTime.UtcNow;
+                                await db.SaveChangesAsync(context.RequestAborted);
+                                userId = existingByEmail.Id;
+                                _logger.LogInformation("Linked existing user (UserId: {UserId}, Email: {Email}) to new Subject: {Subject}", userId, email, subject);
+                                await transaction.CommitAsync(context.RequestAborted);
+                            }
                         }
                         else
                         {
@@ -239,7 +287,16 @@ internal sealed class UserUpsertMiddleware
                                     .Where(u => u.Email != null && u.Email.Trim().ToLower() == emailNorm)
                                     .AsTracking()
                                     .FirstOrDefaultAsync(context.RequestAborted);
-                                if (byEmail is not null)
+                                if (byEmail is not null
+                                    && DecideEmailMatch(subject, byEmail.Subject, emailVerified) == EmailMatchDecision.Reject)
+                                {
+                                    _logger.LogWarning(
+                                        "Not linking subject {Subject} to an existing user after duplicate key: email_verified is not true",
+                                        subject);
+                                    userResolved = false;
+                                    await retryTransaction.RollbackAsync(context.RequestAborted);
+                                }
+                                else if (byEmail is not null)
                                 {
                                     byEmail.Subject = subject;
                                     byEmail.LastLogin = DateTime.UtcNow;
@@ -319,7 +376,10 @@ internal sealed class UserUpsertMiddleware
                     }
                     
                     // Store UserId in HttpContext.Items for UserContext to use
-                    context.Items["UserId"] = userId.ToString();
+                    if (userResolved)
+                    {
+                        context.Items["UserId"] = userId.ToString();
+                    }
                 }
                 catch
                 {

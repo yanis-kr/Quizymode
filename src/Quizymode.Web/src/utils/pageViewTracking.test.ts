@@ -3,9 +3,11 @@ import {
   INTERNAL_BROWSER_STORAGE_KEY,
   getPageViewSessionId,
   isAdminPath,
+  isAuthCallbackPath,
   isInternalBrowser,
   setInternalBrowser,
   shouldTrackPageView,
+  stripOAuthParams,
 } from "./pageViewTracking";
 import { installMemoryLocalStorage } from "@/test/memoryStorage";
 
@@ -99,5 +101,20 @@ describe("pageViewTracking", () => {
     expect(isAdminPath("/admin/page-view-analytics")).toBe(true);
     expect(isAdminPath("/administrator-guide")).toBe(false);
     expect(isAdminPath("/categories/admin")).toBe(false);
+  });
+});
+
+describe("OAuth redirect parameters", () => {
+  it("strips code, state, error and error_description but keeps other parameters", () => {
+    expect(stripOAuthParams("?code=abc&state=xyz")).toBe("");
+    expect(stripOAuthParams("?error=access_denied&error_description=nope&sort=popular")).toBe("?sort=popular");
+    expect(stripOAuthParams("?utm_source=news&code=1")).toBe("?utm_source=news");
+    expect(stripOAuthParams("")).toBe("");
+  });
+
+  it("recognizes the callback path", () => {
+    expect(isAuthCallbackPath("/auth/callback")).toBe(true);
+    expect(isAuthCallbackPath("/auth/callbackx")).toBe(false);
+    expect(isAuthCallbackPath("/login")).toBe(false);
   });
 });

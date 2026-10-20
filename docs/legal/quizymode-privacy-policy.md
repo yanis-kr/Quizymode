@@ -1,6 +1,6 @@
 # Privacy Policy
 
-**Effective date:** October 17, 2026
+**Effective date:** October 19, 2026
 
 ## 1. Overview
 
@@ -10,7 +10,7 @@ This Privacy Policy explains how Quizymode collects, uses, stores, and shares in
 
 We may collect the following categories of information:
 
-- **Account information:** email address, username, display name, and account metadata. Password handling is managed by AWS Cognito; Quizymode does not directly store your plain-text password.
+- **Account information:** email address, username, display name, and account metadata. Password handling is managed by AWS Cognito; Quizymode does not directly store your plain-text password. If you choose **Continue with Google**, see "Signing in with Google" below.
 - **Content you create or submit:** items, collections, study guides, comments, feedback submissions, and similar material you enter into the service.
 - **Usage and technical information:** page paths, query strings, session identifiers, authentication state, timestamps, browser user-agent strings (used to filter out automated traffic), and IP addresses associated with requests or page-view analytics.
 - **Product engagement events:** a limited set of in-app events, such as starting or finishing a quiz and viewing or using sign-up prompts, recorded with the session identifier, your account when you are signed in, the app page, a coarse context (for example the quiz's category or collection), and for quizzes an anonymous run identifier, your score, and the number of questions. We do not record question text, the answers you choose, your email address, or free-form content in these events. We use them only in aggregate to understand where people engage or leave.
@@ -18,6 +18,8 @@ We may collect the following categories of information:
 - **Traffic attribution:** for the first page hit of a browsing session, we record the referring website's domain only (never the full referring URL), any campaign tags present in the link you followed (for example `utm_source`), whether the link carried a known advertising platform's click identifier (we record only which platform, such as Google or Microsoft Ads — never the identifier value itself), a coarse device type (mobile, tablet, or desktop), and an approximate country derived from your IP address. We use this only in aggregate to understand how visitors find the product.
 - **Browser-stored data:** authentication tokens stored in browser `localStorage`; session-related data stored in browser `sessionStorage`, including page-view, engagement-event, and error-report tracking markers and study-flow state; and, only when you play quizzes without signing in, a short guest quiz history in browser `localStorage` (for each finished quiz: a random run identifier, the finish time, your score and question count, the collection or topic identifiers, and the IDs of up to a limited number of missed questions). Guest history stays in your browser: it is not sent to us, not linked to an account, and not synced across devices. It keeps at most your last 50 results for up to 90 days, and you can remove it with **Clear guest history** on the home page or by clearing your browser's site data.
 - **Visitor identifier:** a randomly generated id stored in your browser's `localStorage` so we can recognize a returning visitor across tabs and visits. It is created the first time analytics would otherwise record a hit, unless your browser signals Global Privacy Control, in which case it is not created, read, or sent. You can clear it at any time by clearing this site's browsing data.
+
+**Signing in with Google.** If you choose **Continue with Google**, Google shares your name, email address, and whether Google has verified that email address with Quizymode through AWS Cognito. We use this only to create your account or sign you in, and to link it to an existing Quizymode account that uses the same verified email address. We do not access your Google contacts, Drive, Gmail, or calendar, and we do not use this information for advertising. Google's own handling of your data is described in Google's privacy policy.
 
 ## 3. How We Use Information
 
@@ -44,7 +46,7 @@ Please do not upload personal, confidential, or third-party content unless you h
 
 Quizymode uses third-party providers to operate the service, including:
 
-- **AWS Cognito** for authentication;
+- **AWS Cognito** for authentication, and **Google** as an optional sign-in method;
 - **AWS Lightsail** for API hosting;
 - **AWS S3 and CloudFront** for web hosting and delivery;
 - **Supabase** for managed PostgreSQL storage;

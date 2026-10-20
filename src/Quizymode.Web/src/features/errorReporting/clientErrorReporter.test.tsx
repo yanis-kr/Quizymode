@@ -84,6 +84,17 @@ describe("clientErrorReporter", () => {
     expect(payload.internalBrowser).toBeUndefined();
   });
 
+  it("does not report the OAuth redirect query string from /auth/callback", () => {
+    window.history.replaceState(null, "", "/auth/callback?code=secret-code&state=secret-state&error_description=nope");
+    installClientErrorReporting();
+
+    window.dispatchEvent(new ErrorEvent("error", { error: new RangeError("bad index"), message: "bad index" }));
+
+    const [payload] = beaconPayloads();
+    expect(payload.path).toBe("/auth/callback");
+    expect(JSON.stringify(payload)).not.toMatch(/secret-code|secret-state|error_description/);
+  });
+
   it("captures window error events", () => {
     installClientErrorReporting();
 
