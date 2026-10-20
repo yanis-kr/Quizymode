@@ -1,4 +1,7 @@
+using System.Diagnostics;
+using System.Globalization;
 using System.Net;
+using System.Text.RegularExpressions;
 using FluentAssertions;
 using Microsoft.Extensions.Logging;
 using Quizymode.Api.Features.StudyGuideDocuments.Generation;
@@ -246,6 +249,53 @@ public sealed class StudyGuideChatClientTests
     [InlineData("https://h.test/v1?x=1&amp;key=plainsecret&amp;alt=json", "https://h.test/v1?x=1&amp;key=[redacted]&amp;alt=json")]
     [InlineData("https://h.test/v1?x=1&amp;api_key=zzz", "https://h.test/v1?x=1&amp;api_key=[redacted]")]
     [InlineData("env KEY_sk-abcdef123456 set", "env KEY_[redacted] set")]
+    [InlineData("authorization: required for this endpoint", "authorization: required for this endpoint")]
+    [InlineData("api-key: the provided value is invalid", "api-key: the provided value is invalid")]
+    [InlineData("Bearer token expired", "Bearer token expired")]
+    [InlineData("Invalid Bearer token.", "Invalid Bearer token.")]
+    [InlineData("Authorization: Bearer token is missing", "Authorization: Bearer token is missing")]
+    [InlineData("Authorization: Token expired", "Authorization: Token expired")]
+    [InlineData("Authorization: ApiKey expired", "Authorization: ApiKey expired")]
+    [InlineData("api-key: missing).", "api-key: missing).")]
+    [InlineData("WWW-Authenticate: Bearer realm=\"api\"", "WWW-Authenticate: Bearer realm=\"api\"")]
+    [InlineData("risk-based limits for desk-top clients", "risk-based limits for desk-top clients")]
+    [InlineData("api_keys: 5 per project", "api_keys: 5 per project")]
+    [InlineData("{\"max_tokens\": 4096}", "{\"max_tokens\": 4096}")]
+    [InlineData("{\"key_id\": 12345}", "{\"key_id\": 12345}")]
+    [InlineData("x-goog-api-key=AIza" + "SyD-ummy_Key1234567890", "x-goog-api-key=[redacted]")]
+    [InlineData("api-key=plainsecret", "api-key=[redacted]")]
+    [InlineData("x-api-key = hdrsecret9", "x-api-key = [redacted]")]
+    [InlineData("api_key: abc123xyz", "api_key: [redacted]")]
+    [InlineData("api_key=x", "api_key=[redacted]")]
+    [InlineData("api_key: \"x\"", "api_key: \"[redacted]\"")]
+    [InlineData("api_key: 'x'", "api_key: '[redacted]'")]
+    [InlineData("apiKey=plainsecret&alt=json", "apiKey=[redacted]&alt=json")]
+    [InlineData("access_token=yyy end", "access_token=[redacted] end")]
+    [InlineData("Authorization=Basic dXNlcjpwYXNz", "Authorization=[redacted]")]
+    [InlineData("authorization: \"Bearer eyJ.abc\"", "authorization: \"[redacted]\"")]
+    [InlineData("{\\\"token\\\":\\\"abc\\\\\\\"def\\\"}", "{\\\"token\\\":\\\"[redacted]\\\"}")]
+    [InlineData("{\\\"token\\\":\\\"abc\\\\\\\\\\\"} tail", "{\\\"token\\\":\\\"[redacted]\\\"} tail")]
+    [InlineData("{'api_key': 'x'}", "{'api_key': '[redacted]'}")]
+    [InlineData("{'token': 'ab\\'cd'}", "{'token': '[redacted]'}")]
+    [InlineData("{\"access_token\": 12345}", "{\"access_token\": [redacted]}")]
+    [InlineData("{'token': 12345}", "{'token': [redacted]}")]
+    [InlineData("{\\\"key\\\":98765}", "{\\\"key\\\":[redacted]}")]
+    [InlineData("{\"key\":\"abc", "{\"key\":\"[redacted]")]
+    [InlineData("{\"error\":{\"message\":\"bad\",\"key\":\"abc", "{\"error\":{\"message\":\"bad\",\"key\":\"[redacted]")]
+    [InlineData("{\\\"api_key\\\":\\\"abc", "{\\\"api_key\\\":\\\"[redacted]")]
+    [InlineData("{'secret': 'abc", "{'secret': '[redacted]")]
+    [InlineData("KEYsk-" + "0123456789abcdefABCD rest", "KEY[redacted] rest")]
+    [InlineData("sk_" + "live_51HabcdefGHIJ", "[redacted]")]
+    [InlineData("use sk_" + "test_ABCDEFGH1234 now", "use [redacted] now")]
+    [InlineData("rk_" + "live_abcdefgh12", "[redacted]")]
+    [InlineData("Bearer token expired; got Bearer abc.def9", "Bearer token expired; got Bearer [redacted]")]
+    [InlineData("Bearer dXNlcjpwYXNz", "Bearer [redacted]")]
+    [InlineData("api_key: \"my secret phrase\" end", "api_key: \"[redacted]\" end")]
+    [InlineData("api_key: 'two words' end", "api_key: '[redacted]' end")]
+    [InlineData("api_key: \"abc\\\"def\" end", "api_key: \"[redacted]\" end")]
+    [InlineData("api_key=\\\"abc def\\\" end", "api_key=\\\"[redacted]\\\" end")]
+    [InlineData("api_key: \\\"abc\\\\\\\"def\\\" tail", "api_key: \\\"[redacted]\\\" tail")]
+    [InlineData("api_key=\\\"abc", "api_key=\\\"[redacted]")]
     public void ErrorExcerpt_RedactsKeyShapedText(string input, string expected)
     {
         OpenAiCompatibleChatClient.ErrorExcerpt(input).Should().Be(expected);
@@ -261,15 +311,22 @@ public sealed class StudyGuideChatClientTests
     }
 
     [Theory]
-    [InlineData("sk-proj-", "SeCrEtKeYvAlUe99", "")]
-    [InlineData("sk-", "0123456789abcdefQWERTY", "")]
-    [InlineData("AIza", "SyD-ummy_Key1234567890", "")]
-    [InlineData("Bearer ", "eyJhbGciOi.pAyLoAd.sIgNaTuRe", "")]
-    [InlineData("?key=", "plainsecret123456", "&alt=json")]
-    [InlineData("{\"api_key\":\"", "plainsecret123456", "\"}")]
-    public void ErrorExcerpt_NeverLeaksASecretStraddlingTheCut(string prefix, string secret, string suffix)
+    [InlineData("sk-proj-", "SeCrEtKeYvAlUe99", "", "[redacted]")]
+    [InlineData("sk-", "0123456789abcdefQWERTY", "", "[redacted]")]
+    [InlineData("AIza", "SyD-ummy_Key1234567890", "", "[redacted]")]
+    [InlineData("Bearer ", "eyJhbGciOi.pAyLoAd.sIgNaTuRe", "", "Bearer [redacted]")]
+    [InlineData("?key=", "plainsecret123456", "&alt=json", "?key=[redacted]")]
+    [InlineData("{\"api_key\":\"", "plainsecret123456", "\"}", "{\"api_key\":\"[redacted]")]
+    [InlineData("x-api-key: ", "plainsecret123456", " end", "x-api-key: [redacted]")]
+    [InlineData("sk_" + "live_", "51HabcdefGHIJKLmnop", "", "[redacted]")]
+    [InlineData("{'api_key': '", "plainsecret123456", "'}", "{'api_key': '[redacted]")]
+    [InlineData("{\\\"token\\\":\\\"", "plainsecret123456", "\\\"}", "{\\\"token\\\":\\\"[redacted]")]
+    [InlineData("{\"access_token\": ", "98765432109876543210", "}", "{\"access_token\": [redacted]")]
+    [InlineData("KEYsk-", "0123456789abcdef" + "QWERTYxyz", "", "KEY[redacted]")]
+    public void ErrorExcerpt_NeverLeaksASecretStraddlingTheCut(string prefix, string secret, string suffix, string redactedPrefix)
     {
         int straddling = 0;
+        int orderingMistakesCaught = 0;
         for (int pad = 250; pad <= 305; pad++)
         {
             int secretStart = pad + 1 + prefix.Length;
@@ -279,18 +336,92 @@ public sealed class StudyGuideChatClientTests
             }
 
             straddling++;
-            string input = string.Concat(Enumerable.Repeat("z. ", pad / 3 + 1))[..pad] + " " + prefix + secret + suffix;
+            string padding = string.Concat(Enumerable.Repeat("z. ", pad / 3 + 1))[..pad];
+            string input = padding + " " + prefix + secret + suffix;
+            // Redact-then-cut: the whole secret becomes the marker first, then the 300-character cut applies to that.
+            string expected = CollapseAndCut(padding + " " + redactedPrefix + suffix);
 
             string excerpt = OpenAiCompatibleChatClient.ErrorExcerpt(input);
 
-            excerpt.Length.Should().BeLessThanOrEqualTo(301);
+            excerpt.Should().Be(expected, $"pad {pad}");
             for (int i = 0; i + 4 <= secret.Length; i++)
             {
                 excerpt.Should().NotContain(secret.Substring(i, 4), $"pad {pad}");
+            }
+
+            // What a cut-then-redact implementation would have produced; the exact-match assertion above must reject it.
+            if (OpenAiCompatibleChatClient.Redact(CollapseAndCut(input)) != expected)
+            {
+                orderingMistakesCaught++;
             }
         }
 
         // Guards against a row that never crosses character 300 and so proves nothing.
         straddling.Should().BeGreaterThan(5);
+        // Guards against a row on which the ordering mistake would go unnoticed.
+        orderingMistakesCaught.Should().BeGreaterThan(0);
+    }
+
+    private static string CollapseAndCut(string text)
+    {
+        string singleLine = string.Join(' ', text.Split((char[]?)null, StringSplitOptions.RemoveEmptyEntries));
+        return singleLine.Length <= 300 ? singleLine : singleLine[..300] + "…";
+    }
+
+    [Fact]
+    public void RedactionPatterns_EveryIgnoreCasePatternIsAlsoCultureInvariant()
+    {
+        foreach (Regex pattern in OpenAiCompatibleChatClient.RedactionPatterns.Where(p => p.Options.HasFlag(RegexOptions.IgnoreCase)))
+        {
+            pattern.Options.Should().HaveFlag(RegexOptions.CultureInvariant, pattern.ToString());
+        }
+
+        OpenAiCompatibleChatClient.RedactionPatterns.Should().Contain(p => p.Options.HasFlag(RegexOptions.IgnoreCase));
+    }
+
+    [Fact]
+    public void ErrorExcerpt_RedactsUppercaseHeaderNamesUnderTurkishCulture()
+    {
+        // The patterns are static and built with whatever culture is current at type init; CultureInvariant makes the
+        // uppercase "I" in AUTHORIZATION fold to "i" regardless, which this guards.
+        CultureInfo original = CultureInfo.CurrentCulture;
+        try
+        {
+            CultureInfo.CurrentCulture = new CultureInfo("tr-TR");
+            OpenAiCompatibleChatClient.ErrorExcerpt("AUTHORIZATION=abc123").Should().Be("AUTHORIZATION=[redacted]");
+        }
+        finally
+        {
+            CultureInfo.CurrentCulture = original;
+        }
+    }
+
+    public static TheoryData<string, string> AdversarialBodies => new()
+    {
+        { "authorization-200k-a", "authorization: " + new string('a', 200_000) },
+        { "bearer-200k-a", "Bearer " + new string('a', 200_000) },
+        { "api_key-colon-x30k", string.Concat(Enumerable.Repeat("api_key:", 30_000)) },
+        { "authorization-bearer-x20k", string.Concat(Enumerable.Repeat("authorization:Bearer ", 20_000)) },
+        { "bearer-a-x30k", string.Concat(Enumerable.Repeat("Bearer a", 30_000)) },
+        { "single-quoted-key-x30k", string.Concat(Enumerable.Repeat("{'key':'", 30_000)) },
+        { "escaped-json-key-x30k", string.Concat(Enumerable.Repeat("\\\"key\\\":", 30_000)) },
+        { "numeric-token-x30k", string.Concat(Enumerable.Repeat("\"token\": 1", 30_000)) },
+        { "asksk-x40k", string.Concat(Enumerable.Repeat("asksk-", 40_000)) },
+        { "sk-a-x60k", "x" + string.Concat(Enumerable.Repeat("sk-a", 60_000)) },
+        { "token-backslash-pairs", "\"token\":\"" + string.Concat(Enumerable.Repeat("\\\\", 100_000)) },
+    };
+
+    [Theory]
+    [MemberData(nameof(AdversarialBodies))]
+    public void ErrorExcerpt_AdversarialBodiesFinishQuickly(string name, string body)
+    {
+        // Construct the compiled regexes before timing.
+        OpenAiCompatibleChatClient.ErrorExcerpt("warm-up");
+
+        Stopwatch stopwatch = Stopwatch.StartNew();
+        OpenAiCompatibleChatClient.ErrorExcerpt(body);
+        stopwatch.Stop();
+
+        stopwatch.Elapsed.Should().BeLessThan(TimeSpan.FromSeconds(2), name);
     }
 }

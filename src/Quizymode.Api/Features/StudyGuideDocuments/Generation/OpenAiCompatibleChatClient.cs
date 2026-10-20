@@ -167,29 +167,58 @@ internal sealed class OpenAiCompatibleChatClient(HttpClient httpClient, ILogger<
     private static bool IndicatesCredentialProblem(string body) =>
         CredentialMarkers.Any(marker => body.Contains(marker, StringComparison.OrdinalIgnoreCase));
 
-    // Applied in order; each replacement redacts the secret value and keeps the surrounding field name.
+    private const RegexOptions Opt = RegexOptions.IgnoreCase | RegexOptions.CultureInvariant | RegexOptions.Compiled;
+    private const string HeaderNames = @"authorization|x-goog-api-key|x-api-key|api[-_ ]?key|access[-_]?token";
+    private const string Schemes = @"(?>(?:(?:bearer|basic|token|digest|apikey)\s+)?)";
+    private const string FieldNames = @"api[-_]?key|x-api-key|x-goog-api-key|key|access[-_]?token|token|authorization|secret|password";
+    // Token shape (kept case-sensitive with (?-i:)): 16+ characters, or a digit in the first 15, or a symbol inside the
+    // value, or a lowercase letter followed by an uppercase one. Ordinary prose such as "required for this endpoint" fails it.
+    private const string HeaderTokenShape = @"(?-i:(?=[^\s""',}]{16}|[^\s""',}0-9]{0,14}[0-9]|[A-Za-z]{0,13}[^\s""',}A-Za-z0-9]{1,14}[A-Za-z0-9]|[A-Z]{0,13}[a-z]{1,14}[A-Z]))";
+    private const string BearerTokenShape = @"(?-i:(?=[A-Za-z0-9\-._~+/=]{16}|[A-Za-z\-._~+/=]{0,14}[0-9]|[A-Za-z]{0,13}[\-._~+/=]{1,14}[A-Za-z0-9]|[A-Z]{0,13}[a-z]{1,14}[A-Z]))";
+
+    // Applied in order. Each replacement redacts the secret value and keeps the field name, separator and quotes.
+    // A value after "=" or inside quotes is always redacted; an unquoted value after ":" and a Bearer token are
+    // redacted only when token-shaped. Every bounded or atomic body keeps matching linear on adversarial input.
     private static readonly (Regex Pattern, string Replacement)[] KeyLikePatterns =
     [
-        (new(@"\bbearer\s+[A-Za-z0-9\-._~+/]+=*", RegexOptions.IgnoreCase | RegexOptions.Compiled), "Bearer [redacted]"),
-        (new(@"\b(authorization|x-goog-api-key|api-key|x-api-key)\s*[:=]\s*""?(?:[A-Za-z]+\s+)?[^\s"",}]+", RegexOptions.IgnoreCase | RegexOptions.Compiled), "${1}: [redacted]"),
-        (new(@"(""(?:api[-_]?key|x-api-key|x-goog-api-key|apikey|key|token|access_token|authorization|secret|password)""\s*:\s*"")(?:[^""\\]|\\.)*""", RegexOptions.IgnoreCase | RegexOptions.Compiled), "${1}[redacted]\""),
-        (new(@"(\\""(?:api[-_]?key|x-api-key|x-goog-api-key|apikey|key|token|access_token|authorization|secret|password)\\""\s*:\s*\\"")[^""\\]*", RegexOptions.IgnoreCase | RegexOptions.Compiled), "${1}[redacted]"),
-        (new(@"([?&](?:amp;)?(?:key|api_key|apikey|access_token|token)=)[^&\s""'#]+", RegexOptions.IgnoreCase | RegexOptions.Compiled), "${1}[redacted]"),
+        (new(@"\b(" + HeaderNames + @")(\s*[:=]\s*"")(?>(?:[^""\\]|\\.)*)(""?)", Opt), "${1}${2}[redacted]${3}"),
+        (new(@"\b(" + HeaderNames + @")(\s*[:=]\s*')(?>(?:[^'\\]|\\.)*)('?)", Opt), "${1}${2}[redacted]${3}"),
+        (new(@"\b(" + HeaderNames + @")(\s*[:=]\s*\\"")(?>(?:[^""\\]|\\[^""\\]|\\\\(?:\\\\|\\""|\\[^""\\]|[^""\\]))*)((?:\\"")?)", Opt), "${1}${2}[redacted]${3}"),
+        (new(@"\b(" + HeaderNames + @")(\s*=\s*)" + Schemes + @"[^\s""'&#,;}\\]+", Opt), "${1}${2}[redacted]"),
+        (new(@"\b(" + HeaderNames + @")(\s*:\s*)" + Schemes + HeaderTokenShape + @"[^\s""',}]+", Opt), "${1}${2}[redacted]"),
+        (new(@"\bbearer\s+" + BearerTokenShape + @"[A-Za-z0-9\-._~+/]+=*", Opt), "Bearer [redacted]"),
+        (new(@"(""(?:" + FieldNames + @")""\s*:\s*"")(?>(?:[^""\\]|\\.)*)(""?)", Opt), "${1}[redacted]${2}"),
+        (new(@"(\\""(?:" + FieldNames + @")\\""\s*:\s*\\"")(?>(?:[^""\\]|\\[^""\\]|\\\\(?:\\\\|\\""|\\[^""\\]|[^""\\]))*)((?:\\"")?)", Opt), "${1}[redacted]${2}"),
+        (new(@"('(?:" + FieldNames + @")'\s*:\s*')(?>(?:[^'\\]|\\.)*)('?)", Opt), "${1}[redacted]${2}"),
+        (new(@"((?:\\?""|')(?:" + FieldNames + @")(?:\\?""|')\s*:\s*)-?[0-9][0-9.eE+\-]*", Opt), "${1}[redacted]"),
+        (new(@"([?&](?:amp;)?(?:key|api_key|apikey|access_token|token)=)[^&\s""'#]+", Opt), "${1}[redacted]"),
         (new(@"(?<![A-Za-z0-9])sk-[A-Za-z0-9_\-*]+", RegexOptions.Compiled), "[redacted]"),
+        // Stuck to a preceding letter or digit: needs 20+ key characters with a digit in the first 48 (bounded to stay linear).
+        (new(@"(?<=[A-Za-z0-9])sk-(?=[A-Za-z0-9_\-]{20})(?=[A-Za-z_\-]{0,47}[0-9])[A-Za-z0-9_\-*]+", RegexOptions.Compiled), "[redacted]"),
+        (new(@"[sr]k_(?:live|test)_[A-Za-z0-9]{8,}", RegexOptions.Compiled), "[redacted]"),
         (new(@"AIza[0-9A-Za-z_\-]*", RegexOptions.Compiled), "[redacted]"),
         (new(@"\*+[A-Za-z0-9]{3,6}", RegexOptions.Compiled), "[redacted]")
     ];
 
+    /// <summary>The redaction regexes in application order; exposed so tests can check their options.</summary>
+    internal static IReadOnlyList<Regex> RedactionPatterns { get; } = KeyLikePatterns.Select(rule => rule.Pattern).ToArray();
+
+    /// <summary>
+    /// Redacts anything shaped like an API key, bearer token, credential header/field or key URL parameter.
+    /// The field name, separator and quotes are kept.
+    /// </summary>
+    internal static string Redact(string text) =>
+        KeyLikePatterns.Aggregate(text, (current, rule) => rule.Pattern.Replace(current, rule.Replacement));
+
     /// <summary>
     /// A short, single-line excerpt of a vendor error body for the log. Vendor errors describe the problem
     /// (bad key, unknown field, quota); they don't echo our request, so nothing from the study guide is logged.
-    /// Anything shaped like an API key, bearer token, credential header/field or key URL parameter is redacted
-    /// from the whole body first, then whitespace is collapsed and the result is cut, so a secret can't straddle the cut.
+    /// Key-shaped text is redacted from the whole body first (the name, separator and quotes are kept; ordinary words
+    /// that are not token-shaped are left alone), then whitespace is collapsed and the result is cut, so a secret can't straddle the cut.
     /// </summary>
     internal static string ErrorExcerpt(string responseText)
     {
-        string redacted = KeyLikePatterns.Aggregate(responseText, (text, rule) => rule.Pattern.Replace(text, rule.Replacement));
-        string singleLine = string.Join(' ', redacted.Split((char[]?)null, StringSplitOptions.RemoveEmptyEntries));
+        string singleLine = string.Join(' ', Redact(responseText).Split((char[]?)null, StringSplitOptions.RemoveEmptyEntries));
         return singleLine.Length <= MaxErrorExcerptLength ? singleLine : singleLine[..MaxErrorExcerptLength] + "…";
     }
 
