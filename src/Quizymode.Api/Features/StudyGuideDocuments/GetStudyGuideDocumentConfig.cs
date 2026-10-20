@@ -27,7 +27,7 @@ public static class GetStudyGuideDocumentConfig
             app.MapGet("study-guides/documents/config", Handler)
                 .WithTags("StudyGuideDocuments")
                 .WithSummary("Get study guide document upload availability, limits, and my section quota")
-                .WithDescription("enabled is true when at least one LLM vendor API key is configured.")
+                .WithDescription("enabled is true when at least one vendor in the caller's tier route (free or premium) has an API key configured.")
                 .RequireAuthorization()
                 .Produces<Response>(StatusCodes.Status200OK)
                 .Produces(StatusCodes.Status401Unauthorized);
@@ -69,7 +69,7 @@ public static class GetStudyGuideDocumentConfig
     {
         StudyGuideQuotaSnapshot quota = await StudyGuideQuota.GetAsync(db, userId, generationOptions, nowUtc, cancellationToken);
         return new Response(
-            vendors.AnyConfigured,
+            await LlmProviderSettingsStore.IsTierRouteAvailableAsync(db, vendors, quota.Tier, cancellationToken),
             documentOptions.MaxFileBytes,
             documentOptions.MaxPages,
             documentOptions.MaxTextBytes,

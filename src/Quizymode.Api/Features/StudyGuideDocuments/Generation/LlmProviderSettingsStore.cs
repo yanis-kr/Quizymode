@@ -43,6 +43,22 @@ internal static class LlmProviderSettingsStore
         return settings;
     }
 
+    /// <summary>True when at least one vendor in the tier's saved route has an API key (so a job for that tier can run).</summary>
+    public static async Task<bool> IsTierRouteAvailableAsync(
+        ApplicationDbContext db,
+        ILlmVendorRegistry vendors,
+        StudyGuideTier tier,
+        CancellationToken cancellationToken)
+    {
+        if (!vendors.AnyConfigured)
+        {
+            return false;
+        }
+
+        LlmProviderSettings settings = await GetOrCreateAsync(db, cancellationToken);
+        return RouteFor(settings, tier).Any(vendors.IsConfigured);
+    }
+
     public static LlmProviderSettings CreateDefaults(DateTime nowUtc) =>
         new()
         {

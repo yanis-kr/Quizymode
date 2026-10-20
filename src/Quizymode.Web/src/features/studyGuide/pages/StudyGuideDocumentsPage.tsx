@@ -12,7 +12,15 @@ const StudyGuideDocumentsPage = () => {
     queryFn: () => studyGuideDocumentsApi.list(),
   });
 
+  // Same key as the upload page, so the quota is shared from cache. If it fails the summary is simply omitted.
+  const { data: config } = useQuery({
+    queryKey: ["studyGuideDocuments", "config"],
+    queryFn: () => studyGuideDocumentsApi.getConfig(),
+  });
+
   const documents = data?.documents ?? [];
+  const showSummary = !!data && !!config;
+  const questionsSaved = documents.reduce((sum, document) => sum + document.acceptedCount, 0);
 
   return (
     <div className="px-4 py-6 sm:px-0 max-w-3xl mx-auto space-y-4">
@@ -29,6 +37,21 @@ const StudyGuideDocumentsPage = () => {
         Study guides you uploaded for quiz generation. The extracted text is kept for 30 days after you last use a
         guide; saved questions stay in your collections.
       </p>
+
+      {showSummary && (
+        <p className="text-sm text-gray-700" aria-live="polite" data-testid="study-guide-summary">
+          <span className="block">
+            This month: {config.quota.monthlyUsed.toLocaleString()}
+            {config.quota.monthlyLimit > 0 ? ` of ${config.quota.monthlyLimit.toLocaleString()}` : ""} section
+            {config.quota.monthlyLimit === 0 && config.quota.monthlyUsed === 1 ? "" : "s"} used (
+            {config.quota.tier.toLowerCase()} plan).
+          </span>
+          <span className="block">
+            Across all your guides: {questionsSaved.toLocaleString()} question{questionsSaved === 1 ? "" : "s"} saved in{" "}
+            {documents.length.toLocaleString()} study guide{documents.length === 1 ? "" : "s"}.
+          </span>
+        </p>
+      )}
 
       {isLoading ? (
         <LoadingSpinner />

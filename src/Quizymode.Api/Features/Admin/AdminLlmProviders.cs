@@ -36,9 +36,28 @@ public static partial class AdminLlmProviders
         string Outcome,
         int? InputTokens,
         int? OutputTokens,
-        int DurationMs);
+        int DurationMs,
+        int? HttpStatus);
 
     public sealed record AttemptsResponse(List<AttemptResponse> Attempts);
+
+    public const int DefaultUsageDays = 30;
+    public const int MaxUsageDays = 90;
+    public const int MaxTopUsers = 20;
+
+    public sealed record UsageRow(
+        string Vendor,
+        string Model,
+        int Attempts,
+        int Successes,
+        long InputTokens,
+        long OutputTokens,
+        int AvgDurationMs,
+        decimal? EstimatedCostUsd);
+
+    public sealed record TopUser(string UserId, int ChargedSections, long InputTokens, long OutputTokens);
+
+    public sealed record UsageResponse(int Days, DateTime SinceUtc, List<UsageRow> Rows, List<TopUser> TopUsers);
 
     public sealed class UpdateValidator : AbstractValidator<UpdateRequest>
     {
@@ -117,6 +136,32 @@ public static partial class AdminLlmProviders
                 .Produces<AttemptsResponse>(StatusCodes.Status200OK)
                 .Produces(StatusCodes.Status401Unauthorized)
                 .Produces(StatusCodes.Status403Forbidden);
+
+            app.MapGet("admin/llm-providers/usage", UsageHandler)
+                .WithTags("Admin")
+                .WithSummary("Summarize LLM vendor calls, tokens, and estimated cost per vendor and model, plus top users (Admin only)")
+                .WithDescription("days defaults to 30 and must be 1 to 90 (400 otherwise). Estimated cost uses the optional LlmPricing configuration.")
+                .RequireAuthorization("Admin")
+                .Produces<UsageResponse>(StatusCodes.Status200OK)
+                .Produces(StatusCodes.Status400BadRequest)
+                .Produces(StatusCodes.Status401Unauthorized)
+                .Produces(StatusCodes.Status403Forbidden);
+        }
+
+        private static async Task<IResult> UsageHandler(
+            int? days,
+            ApplicationDbContext db,
+            IConfiguration configuration,
+            TimeProvider timeProvider,
+            CancellationToken cancellationToken)
+        {
+            int window = days ?? DefaultUsageDays;
+            if (window is < 1 or > MaxUsageDays)
+            {
+                return Results.BadRequest(new { error = $"days must be between 1 and {MaxUsageDays}." });
+            }
+
+            return Results.Ok(await HandleUsageAsync(window, db, configuration, timeProvider.GetUtcNow().UtcDateTime, cancellationToken));
         }
 
         private static async Task<IResult> GetHandler(
@@ -218,8 +263,85 @@ public static partial class AdminLlmProviders
                 attempt.Outcome.ToString(),
                 attempt.InputTokens,
                 attempt.OutputTokens,
-                attempt.DurationMs))
+                attempt.DurationMs,
+                attempt.HttpStatus))
             .ToList());
+    }
+
+    /// <summary>
+    /// Per vendor/model totals of the attempts in the window (failed attempts' tokens included) and the top users by
+    /// charged sections. Minimal columns are projected and aggregated in memory so the same code runs on every provider.
+    /// </summary>
+    internal static async Task<UsageResponse> HandleUsageAsync(
+        int days,
+        ApplicationDbContext db,
+        IConfiguration configuration,
+        DateTime nowUtc,
+        CancellationToken cancellationToken)
+    {
+        DateTime since = nowUtc.AddDays(-days);
+
+        var attempts = await db.LlmAttempts
+            .AsNoTracking()
+            .Where(attempt => attempt.CreatedUtc >= since)
+            .Select(attempt => new { attempt.Vendor, attempt.Model, attempt.Outcome, attempt.InputTokens, attempt.OutputTokens, attempt.DurationMs })
+            .ToListAsync(cancellationToken);
+
+        List<UsageRow> rows = attempts
+            .GroupBy(attempt => (attempt.Vendor, attempt.Model))
+            .OrderBy(group => group.Key.Vendor, StringComparer.Ordinal)
+            .ThenBy(group => group.Key.Model, StringComparer.Ordinal)
+            .Select(group =>
+            {
+                long inputTokens = group.Sum(attempt => (long)(attempt.InputTokens ?? 0));
+                long outputTokens = group.Sum(attempt => (long)(attempt.OutputTokens ?? 0));
+                return new UsageRow(
+                    group.Key.Vendor,
+                    group.Key.Model,
+                    group.Count(),
+                    group.Count(attempt => attempt.Outcome == LlmAttemptOutcome.Success),
+                    inputTokens,
+                    outputTokens,
+                    (int)Math.Round(group.Average(attempt => (double)attempt.DurationMs), MidpointRounding.AwayFromZero),
+                    LlmPricing.EstimateCostUsd(configuration, group.Key.Model, inputTokens, outputTokens));
+            })
+            .ToList();
+
+        var charges = await db.StudyGuideQuotaCharges
+            .AsNoTracking()
+            .Where(charge => charge.ChargedUtc >= since)
+            .Select(charge => new { charge.UserId, charge.GenerationId, charge.Cost })
+            .ToListAsync(cancellationToken);
+        List<Guid> generationIds = charges.Select(charge => charge.GenerationId).Distinct().ToList();
+        Dictionary<Guid, (long Input, long Output)> tokensByGeneration = generationIds.Count == 0
+            ? []
+            : (await db.SectionGenerations
+                    .AsNoTracking()
+                    .Where(generation => generationIds.Contains(generation.Id))
+                    .Select(generation => new { generation.Id, generation.InputTokens, generation.OutputTokens })
+                    .ToListAsync(cancellationToken))
+                .ToDictionary(generation => generation.Id, generation => ((long)(generation.InputTokens ?? 0), (long)(generation.OutputTokens ?? 0)));
+
+        // Charges have no unique (user, generation), so group per pair first: cost adds up, the generation's tokens count once.
+        List<TopUser> topUsers = charges
+            .GroupBy(charge => (charge.UserId, charge.GenerationId))
+            .Select(pair => (
+                pair.Key.UserId,
+                Cost: pair.Sum(charge => charge.Cost),
+                Tokens: tokensByGeneration.GetValueOrDefault(pair.Key.GenerationId)))
+            .GroupBy(pair => pair.UserId)
+            .Select(user => new TopUser(
+                user.Key,
+                user.Sum(pair => pair.Cost),
+                user.Sum(pair => pair.Tokens.Input),
+                user.Sum(pair => pair.Tokens.Output)))
+            .OrderByDescending(user => user.ChargedSections)
+            .ThenByDescending(user => user.InputTokens + user.OutputTokens)
+            .ThenBy(user => user.UserId, StringComparer.Ordinal)
+            .Take(MaxTopUsers)
+            .ToList();
+
+        return new UsageResponse(days, since, rows, topUsers);
     }
 
     private static Response ToResponse(LlmProviderSettings settings, ILlmVendorRegistry vendors, int budget, int used) =>

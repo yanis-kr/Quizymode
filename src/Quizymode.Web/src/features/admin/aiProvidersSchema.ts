@@ -44,6 +44,16 @@ export function validateAiProvidersForm(form: AiProvidersForm): string | null {
   return issue.message;
 }
 
+/** True when at least one vendor in the route has an API key (AC 5.12.12); an empty route is handled separately. */
+export function routeHasKeyedVendor(route: readonly string[], keyConfigured: Record<string, boolean>): boolean {
+  return route.some((vendor) => keyConfigured[vendor] === true);
+}
+
+/** Display label for an attempt outcome; unknown values are shown as-is (AC 5.12.13). */
+export function formatAttemptOutcome(outcome: string): string {
+  return outcome === "AuthError" ? "Auth error (check key)" : outcome;
+}
+
 /** Moves the item at `index` by `delta` (−1 up, +1 down); returns a new array. */
 export function moveItem<T>(values: T[], index: number, delta: number): T[] {
   const target = index + delta;

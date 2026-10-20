@@ -11,7 +11,14 @@ import {
 import LoadingSpinner from "@/components/LoadingSpinner";
 import ErrorMessage from "@/components/ErrorMessage";
 import { readApiError } from "@/features/studyGuide/studyGuideApiErrors";
-import { moveItem, validateAiProvidersForm, type AiProvidersForm } from "../aiProvidersSchema";
+import LlmUsagePanel from "../components/LlmUsagePanel";
+import {
+  formatAttemptOutcome,
+  moveItem,
+  routeHasKeyedVendor,
+  validateAiProvidersForm,
+  type AiProvidersForm,
+} from "../aiProvidersSchema";
 
 const ATTEMPT_RANGES = [1, 7, 30];
 
@@ -29,11 +36,13 @@ interface RouteEditorProps {
   routeName: "free" | "premium";
   label: string;
   route: LlmVendor[];
+  /** The route as last saved; the no-key alert follows this, not unsaved edits. */
+  savedRoute: LlmVendor[];
   keyConfigured: Record<string, boolean>;
   onChange: (route: LlmVendor[]) => void;
 }
 
-function RouteEditor({ routeName, label, route, keyConfigured, onChange }: RouteEditorProps) {
+function RouteEditor({ routeName, label, route, savedRoute, keyConfigured, onChange }: RouteEditorProps) {
   const [vendorToAdd, setVendorToAdd] = React.useState<LlmVendor | "">("");
   const available = LLM_VENDORS.filter((vendor) => !route.includes(vendor));
   const headingId = `route-${routeName}-heading`;
@@ -45,6 +54,11 @@ function RouteEditor({ routeName, label, route, keyConfigured, onChange }: Route
         {label}
       </h3>
       <p className="mb-2 text-xs text-gray-500">Tried in order; vendors without a key are skipped.</p>
+      {savedRoute.length > 0 && !routeHasKeyedVendor(savedRoute, keyConfigured) && (
+        <p role="alert" className="mb-2 rounded-md border border-red-200 bg-red-50 px-3 py-2 text-sm text-red-800">
+          No vendor in this route has a key; generation for {routeName} users is off.
+        </p>
+      )}
       <ol className="space-y-2">
         {route.map((vendor, index) => (
           <li key={vendor} className="flex items-center gap-2 rounded-md bg-gray-50 px-3 py-2 text-sm">
@@ -252,6 +266,7 @@ function ProvidersForm({ data }: ProvidersFormProps) {
             routeName="free"
             label="Free route"
             route={form.routes.free}
+            savedRoute={data.routes.free}
             keyConfigured={keyConfigured}
             onChange={(route) => update({ ...form, routes: { ...form.routes, free: route } })}
           />
@@ -259,6 +274,7 @@ function ProvidersForm({ data }: ProvidersFormProps) {
             routeName="premium"
             label="Premium route"
             route={form.routes.premium}
+            savedRoute={data.routes.premium}
             keyConfigured={keyConfigured}
             onChange={(route) => update({ ...form, routes: { ...form.routes, premium: route } })}
           />
@@ -328,6 +344,7 @@ function AttemptsTable() {
                 <th className="py-2 pr-4">Vendor</th>
                 <th className="py-2 pr-4">Model</th>
                 <th className="py-2 pr-4">Outcome</th>
+                <th className="py-2 pr-4 text-right">HTTP</th>
                 <th className="py-2 pr-4 text-right">Tokens in / out</th>
                 <th className="py-2 text-right">Duration</th>
               </tr>
@@ -338,9 +355,12 @@ function AttemptsTable() {
                   <td className="py-1.5 pr-4 whitespace-nowrap">{new Date(attempt.createdUtc).toLocaleString()}</td>
                   <td className="py-1.5 pr-4">{attempt.vendor}</td>
                   <td className="py-1.5 pr-4 font-mono text-xs">{attempt.model}</td>
-                  <td className={`py-1.5 pr-4 ${attempt.outcome === "Success" ? "text-green-700" : "text-red-700"}`}>
-                    {attempt.outcome}
+                  <td
+                    className={`py-1.5 pr-4 whitespace-nowrap ${attempt.outcome === "Success" ? "text-green-700" : "text-red-700"}`}
+                  >
+                    {formatAttemptOutcome(attempt.outcome)}
                   </td>
+                  <td className="py-1.5 pr-4 text-right tabular-nums">{attempt.httpStatus ?? "—"}</td>
                   <td className="py-1.5 pr-4 text-right tabular-nums">
                     {attempt.inputTokens ?? "—"} / {attempt.outputTokens ?? "—"}
                   </td>
@@ -386,6 +406,7 @@ const AdminAiProvidersPage = () => {
         <ProvidersForm data={data} />
       )}
       {isAuthenticated && isAdmin && !isLoading && <AttemptsTable />}
+      {isAuthenticated && isAdmin && !isLoading && <LlmUsagePanel />}
     </div>
   );
 };

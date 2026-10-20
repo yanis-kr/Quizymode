@@ -12,7 +12,8 @@ export type LlmAttemptOutcome =
   | "Timeout"
   | "ContentFilter"
   | "LowQuoteYield"
-  | "InvalidJson";
+  | "InvalidJson"
+  | "AuthError";
 
 export interface LlmVendorSettings {
   vendor: LlmVendor;
@@ -45,6 +46,34 @@ export interface LlmAttempt {
   inputTokens?: number | null;
   outputTokens?: number | null;
   durationMs: number;
+  /** HTTP status of the vendor reply; null when no reply arrived or for rows from before this was recorded. */
+  httpStatus?: number | null;
+}
+
+export interface LlmUsageRow {
+  vendor: LlmVendor | string;
+  model: string;
+  attempts: number;
+  successes: number;
+  inputTokens: number;
+  outputTokens: number;
+  avgDurationMs: number;
+  /** null when no price is configured for the model. */
+  estimatedCostUsd: number | null;
+}
+
+export interface LlmTopUser {
+  userId: string;
+  chargedSections: number;
+  inputTokens: number;
+  outputTokens: number;
+}
+
+export interface LlmUsageResponse {
+  days: number;
+  sinceUtc: string;
+  rows: LlmUsageRow[];
+  topUsers: LlmTopUser[];
 }
 
 export const adminLlmProvidersApi = {
@@ -60,6 +89,13 @@ export const adminLlmProvidersApi = {
 
   getAttempts: async (days = 7): Promise<{ attempts: LlmAttempt[] }> => {
     const response = await apiClient.get<{ attempts: LlmAttempt[] }>("/admin/llm-providers/attempts", {
+      params: { days },
+    });
+    return response.data;
+  },
+
+  getUsage: async (days = 30): Promise<LlmUsageResponse> => {
+    const response = await apiClient.get<LlmUsageResponse>("/admin/llm-providers/usage", {
       params: { days },
     });
     return response.data;

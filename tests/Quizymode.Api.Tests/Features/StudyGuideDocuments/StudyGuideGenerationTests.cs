@@ -214,11 +214,33 @@ public sealed class StudyGuideGenerationTests : DatabaseTestFixture
 
         handler.Vendors.Should().Equal(LlmVendors.Gemini, LlmVendors.OpenAI, LlmVendors.DeepSeek);
         completed.Vendor.Should().Be(LlmVendors.DeepSeek);
-        Attempts().Select(a => (a.Vendor, a.Outcome)).Should().Equal(
-            (LlmVendors.Gemini, LlmAttemptOutcome.ProviderError),
-            (LlmVendors.OpenAI, LlmAttemptOutcome.Timeout),
-            (LlmVendors.DeepSeek, LlmAttemptOutcome.Success));
+        Attempts().Select(a => (a.Vendor, a.Outcome, a.HttpStatus)).Should().Equal(
+            (LlmVendors.Gemini, LlmAttemptOutcome.ProviderError, (int?)500),
+            (LlmVendors.OpenAI, LlmAttemptOutcome.Timeout, (int?)null),
+            (LlmVendors.DeepSeek, LlmAttemptOutcome.Success, (int?)200));
         Attempts().Should().OnlyContain(a => a.GenerationId == generation.Id);
+    }
+
+    [Fact]
+    public async Task Processor_AuthErrorFallsThroughToNextVendor()
+    {
+        SectionGeneration generation = await QueueAsync();
+        FakeVendorHandler handler = new((vendor, _) => vendor switch
+        {
+            LlmVendors.Gemini => FakeVendorHandler.Status(HttpStatusCode.Unauthorized),
+            LlmVendors.OpenAI => FakeVendorHandler.Status(HttpStatusCode.Forbidden),
+            _ => FakeVendorHandler.Completion(StudyGuideTestData.QuestionsJson())
+        });
+
+        SectionGeneration completed = await ClaimAndProcessAsync(generation, handler);
+
+        handler.Vendors.Should().Equal(LlmVendors.Gemini, LlmVendors.OpenAI, LlmVendors.DeepSeek);
+        completed.Status.Should().Be(SectionGenerationStatus.Completed);
+        completed.Vendor.Should().Be(LlmVendors.DeepSeek);
+        Attempts().Select(a => (a.Outcome, a.HttpStatus)).Should().Equal(
+            (LlmAttemptOutcome.AuthError, (int?)401),
+            (LlmAttemptOutcome.AuthError, (int?)403),
+            (LlmAttemptOutcome.Success, (int?)200));
     }
 
     [Fact]

@@ -15,7 +15,7 @@ namespace Quizymode.Api.Features.StudyGuideDocuments;
 /// already generated (by anyone) attach to the shared cached generation for free; sections already queued attach for free
 /// (a premium caller moves the job to the front); everything else is charged one section of quota and queued (free tier
 /// after a delay, premium immediately). All-or-nothing: if the charge would exceed the daily or monthly quota, nothing is
-/// queued.
+/// queued. Rejected with 503 Disabled, before anything is charged, when no vendor in the caller's tier route has an API key.
 /// </summary>
 public static class GenerateStudyGuideSections
 {
@@ -46,7 +46,7 @@ public static class GenerateStudyGuideSections
                 .WithSummary("Queue question generation for selected sections of my study guide")
                 .WithDescription("Returns 202 with queued/cached/charged counts and the updated quota. 429 StudyGuideDocument.QuotaExceeded " +
                     "when the charge would exceed the daily or monthly section quota (nothing is queued); 503 StudyGuideDocument.Disabled " +
-                    "when no LLM vendor is configured or StudyGuideDocument.BudgetReached when the global monthly budget is used up.")
+                    "when no vendor in the caller's tier route has an API key (nothing is charged or queued) or StudyGuideDocument.BudgetReached when the global monthly budget is used up.")
                 .RequireAuthorization()
                 .Produces<Response>(StatusCodes.Status202Accepted)
                 .Produces(StatusCodes.Status400BadRequest)
@@ -114,7 +114,10 @@ public static class GenerateStudyGuideSections
             return Result.Success<Response?>(null);
         }
 
-        if (!vendors.AnyConfigured)
+        // Runs before the quota transaction: seeding the routing row can SaveChanges and recover from a DbUpdateException,
+        // which would abort an open Npgsql transaction.
+        StudyGuideTier callerTier = await StudyGuideQuota.GetTierAsync(db, userId, cancellationToken);
+        if (!await LlmProviderSettingsStore.IsTierRouteAvailableAsync(db, vendors, callerTier, cancellationToken))
         {
             return Result.Failure<Response?>(StudyGuideDocumentErrors.Disabled);
         }

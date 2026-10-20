@@ -394,6 +394,51 @@ public sealed class StudyGuideDocumentTests : StudyGuideDocumentFixture
         (await GenerateAsync(document, document.Sections)).Error.Code.Should().Be(StudyGuideDocumentErrors.DisabledCode);
     }
 
+    private async Task SetUpPremiumRouteWithoutKeyAsync()
+    {
+        // Only Gemini has a key; the free route reaches it, the premium route (DeepSeek, OpenAI) does not.
+        Vendors = new LlmVendorRegistry(StudyGuideTestData.Keys(false, false, true));
+        await SetRoutesAsync([LlmVendors.Gemini], [LlmVendors.DeepSeek, LlmVendors.OpenAI]);
+        await MakePremiumAsync(UserA);
+    }
+
+    private Task<GetStudyGuideDocumentConfig.Response> ConfigAsync(string userId) =>
+        GetStudyGuideDocumentConfig.HandleAsync(DbContext, userId, Vendors, DocumentOptions, GenerationOptions, Clock.UtcNow, CancellationToken.None);
+
+    [Fact]
+    public async Task Config_PremiumRouteWithoutKeyedVendor_DisabledForPremiumEnabledForFree()
+    {
+        await SetUpPremiumRouteWithoutKeyAsync();
+
+        (await ConfigAsync(UserA)).Enabled.Should().BeFalse("the premium user's route has no keyed vendor");
+        (await ConfigAsync(UserB)).Enabled.Should().BeTrue("the free route reaches the keyed Gemini");
+    }
+
+    [Fact]
+    public async Task Generate_PremiumRouteWithoutKeyedVendor_IsDisabledAndWritesNothing()
+    {
+        await SetUpPremiumRouteWithoutKeyAsync();
+        StudyGuideDocumentContracts.Document document = await CreateTextAsync(MultiSectionText(1));
+
+        Result<GenerateStudyGuideSections.Response?> result = await GenerateAsync(document, document.Sections);
+
+        result.Error.Code.Should().Be(StudyGuideDocumentErrors.DisabledCode);
+        (await DbContext.StudyGuideQuotaCharges.CountAsync()).Should().Be(0);
+        (await DbContext.SectionGenerations.CountAsync()).Should().Be(0);
+    }
+
+    [Fact]
+    public async Task Generate_FreeUserWithKeyedFreeRoute_Succeeds()
+    {
+        await SetUpPremiumRouteWithoutKeyAsync();
+        StudyGuideDocumentContracts.Document document = await CreateTextAsync(MultiSectionText(1), UserB);
+
+        Result<GenerateStudyGuideSections.Response?> result = await GenerateAsync(document, document.Sections, UserB);
+
+        result.IsSuccess.Should().BeTrue();
+        result.Value!.ChargedSections.Should().Be(1);
+    }
+
     [Fact]
     public async Task Generate_ForeignSectionsOrDocument_AreRejected()
     {

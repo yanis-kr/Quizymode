@@ -339,6 +339,45 @@
         }
       }
     },
+    "/admin/llm-providers/usage": {
+      "get": {
+        "tags": [
+          "Admin"
+        ],
+        "summary": "Summarize LLM vendor calls, tokens, and estimated cost per vendor and model, plus top users (Admin only)",
+        "description": "days defaults to 30 and must be 1 to 90 (400 otherwise). Estimated cost uses the optional LlmPricing configuration.",
+        "parameters": [
+          {
+            "name": "days",
+            "in": "query",
+            "schema": {
+              "$ref": "#/components/schemas/System.NullableOfSystem.Int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Quizymode.Api.Features.Admin.AdminLlmProviders.UsageResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          }
+        }
+      }
+    },
     "/admin/users/{id}/settings": {
       "get": {
         "tags": [
@@ -5017,7 +5056,7 @@
           "StudyGuideDocuments"
         ],
         "summary": "Queue question generation for selected sections of my study guide",
-        "description": "Returns 202 with queued/cached/charged counts and the updated quota. 429 StudyGuideDocument.QuotaExceeded when the charge would exceed the daily or monthly section quota (nothing is queued); 503 StudyGuideDocument.Disabled when no LLM vendor is configured or StudyGuideDocument.BudgetReached when the global monthly budget is used up.",
+        "description": "Returns 202 with queued/cached/charged counts and the updated quota. 429 StudyGuideDocument.QuotaExceeded when the charge would exceed the daily or monthly section quota (nothing is queued); 503 StudyGuideDocument.Disabled when no vendor in the caller's tier route has an API key (nothing is charged or queued) or StudyGuideDocument.BudgetReached when the global monthly budget is used up.",
         "parameters": [
           {
             "name": "id",
@@ -5110,7 +5149,7 @@
           "StudyGuideDocuments"
         ],
         "summary": "Get study guide document upload availability, limits, and my section quota",
-        "description": "enabled is true when at least one LLM vendor API key is configured.",
+        "description": "enabled is true when at least one vendor in the caller's tier route (free or premium) has an API key configured.",
         "responses": {
           "200": {
             "description": "OK",
@@ -6404,7 +6443,8 @@
           "outcome",
           "inputTokens",
           "outputTokens",
-          "durationMs"
+          "durationMs",
+          "httpStatus"
         ],
         "type": "object",
         "properties": {
@@ -6442,6 +6482,16 @@
           },
           "durationMs": {
             "$ref": "#/components/schemas/System.Int32"
+          },
+          "httpStatus": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/components/schemas/System.NullableOfSystem.Int32"
+              }
+            ]
           }
         }
       },
@@ -6494,6 +6544,29 @@
           }
         }
       },
+      "Quizymode.Api.Features.Admin.AdminLlmProviders.TopUser": {
+        "required": [
+          "userId",
+          "chargedSections",
+          "inputTokens",
+          "outputTokens"
+        ],
+        "type": "object",
+        "properties": {
+          "userId": {
+            "$ref": "#/components/schemas/System.String"
+          },
+          "chargedSections": {
+            "$ref": "#/components/schemas/System.Int32"
+          },
+          "inputTokens": {
+            "$ref": "#/components/schemas/System.Int64"
+          },
+          "outputTokens": {
+            "$ref": "#/components/schemas/System.Int64"
+          }
+        }
+      },
       "Quizymode.Api.Features.Admin.AdminLlmProviders.UpdateRequest": {
         "required": [
           "vendors",
@@ -6518,6 +6591,75 @@
               },
               {
                 "$ref": "#/components/schemas/Quizymode.Api.Features.Admin.AdminLlmProviders.Routes"
+              }
+            ]
+          }
+        }
+      },
+      "Quizymode.Api.Features.Admin.AdminLlmProviders.UsageResponse": {
+        "required": [
+          "days",
+          "sinceUtc",
+          "rows",
+          "topUsers"
+        ],
+        "type": "object",
+        "properties": {
+          "days": {
+            "$ref": "#/components/schemas/System.Int32"
+          },
+          "sinceUtc": {
+            "$ref": "#/components/schemas/System.DateTime"
+          },
+          "rows": {
+            "$ref": "#/components/schemas/System.Collections.Generic.ListOfQuizymode.Api.Features.Admin.AdminLlmProviders.UsageRow"
+          },
+          "topUsers": {
+            "$ref": "#/components/schemas/System.Collections.Generic.ListOfQuizymode.Api.Features.Admin.AdminLlmProviders.TopUser"
+          }
+        }
+      },
+      "Quizymode.Api.Features.Admin.AdminLlmProviders.UsageRow": {
+        "required": [
+          "vendor",
+          "model",
+          "attempts",
+          "successes",
+          "inputTokens",
+          "outputTokens",
+          "avgDurationMs",
+          "estimatedCostUsd"
+        ],
+        "type": "object",
+        "properties": {
+          "vendor": {
+            "$ref": "#/components/schemas/System.String"
+          },
+          "model": {
+            "$ref": "#/components/schemas/System.String"
+          },
+          "attempts": {
+            "$ref": "#/components/schemas/System.Int32"
+          },
+          "successes": {
+            "$ref": "#/components/schemas/System.Int32"
+          },
+          "inputTokens": {
+            "$ref": "#/components/schemas/System.Int64"
+          },
+          "outputTokens": {
+            "$ref": "#/components/schemas/System.Int64"
+          },
+          "avgDurationMs": {
+            "$ref": "#/components/schemas/System.Int32"
+          },
+          "estimatedCostUsd": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/components/schemas/System.NullableOfSystem.Decimal"
               }
             ]
           }
@@ -16509,6 +16651,18 @@
         "type": "array",
         "items": {
           "$ref": "#/components/schemas/Quizymode.Api.Features.Admin.AdminLlmProviders.AttemptResponse"
+        }
+      },
+      "System.Collections.Generic.ListOfQuizymode.Api.Features.Admin.AdminLlmProviders.TopUser": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/Quizymode.Api.Features.Admin.AdminLlmProviders.TopUser"
+        }
+      },
+      "System.Collections.Generic.ListOfQuizymode.Api.Features.Admin.AdminLlmProviders.UsageRow": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/Quizymode.Api.Features.Admin.AdminLlmProviders.UsageRow"
         }
       },
       "System.Collections.Generic.ListOfQuizymode.Api.Features.Admin.AdminLlmProviders.VendorModel": {
