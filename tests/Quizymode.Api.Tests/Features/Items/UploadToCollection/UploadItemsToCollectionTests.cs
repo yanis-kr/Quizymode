@@ -172,4 +172,22 @@ public sealed class UploadItemsToCollectionValidatorTests
         var result = await validator.ValidateAsync(request);
         result.IsValid.Should().BeTrue();
     }
+
+    [Fact]
+    public void Validator_NullItems_ReturnsItemsRequiredError()
+    {
+        Mock<IUserContext> ctx = new();
+        UploadItemsToCollection.Validator validator = new(ctx.Object);
+        UploadItemsToCollection.Request request = new(
+            Category: "geo", Keyword1: "kw1", Keyword2: "kw2",
+            Keywords: new List<AddItemsBulk.KeywordRequest>(),
+            Items: null!,
+            InputText: "text");
+
+        FluentValidation.Results.ValidationResult result = validator.Validate(request);
+
+        result.IsValid.Should().BeFalse();
+        result.Errors.Should().Contain(e => e.ErrorMessage == "Items is required");
+        result.Errors.Should().NotContain(e => e.ErrorMessage == "At least one item is required");
+    }
 }

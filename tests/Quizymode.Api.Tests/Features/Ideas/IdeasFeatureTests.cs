@@ -449,4 +449,24 @@ public sealed class IdeasFeatureTests : DatabaseTestFixture
         userContext.SetupGet(ctx => ctx.IsAdmin).Returns(isAdmin);
         return userContext;
     }
+
+    [Theory]
+    [InlineData(null)]
+    [InlineData("")]
+    [InlineData("   ")]
+    public void TryParseStatus_NullOrBlank_ReturnsFalse(string? value)
+    {
+        IdeaFeatureSupport.TryParseStatus(value, out _).Should().BeFalse();
+    }
+
+    [Fact]
+    public void StatusValidator_NullStatus_ReturnsErrorsWithoutThrowing()
+    {
+        IdeaCrud.StatusValidator validator = new();
+
+        FluentValidation.Results.ValidationResult result = validator.Validate(new IdeaCrud.StatusRequest(null!));
+
+        result.IsValid.Should().BeFalse();
+        result.Errors.Should().Contain(e => e.PropertyName == "Status");
+    }
 }

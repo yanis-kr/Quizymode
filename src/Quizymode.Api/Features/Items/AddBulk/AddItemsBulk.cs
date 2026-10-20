@@ -62,9 +62,9 @@ public static class AddItemsBulk
             RuleFor(x => x.Items)
                 .NotNull()
                 .WithMessage("Items is required")
-                .Must(items => items.Count > 0)
+                .Must(items => items is null || items.Count > 0)
                 .WithMessage("At least one item is required")
-                .Must(items => items.Count <= maxItems)
+                .Must(items => items is null || items.Count <= maxItems)
                 .WithMessage($"Cannot create more than {maxItems} items at once");
 
             RuleForEach(x => x.Items)
@@ -91,7 +91,7 @@ public static class AddItemsBulk
             RuleFor(x => x.Keywords)
                 .NotNull()
                 .WithMessage("Keywords list is required")
-                .Must(k => k.Count <= 50)
+                .Must(k => k is null || k.Count <= 50)
                 .WithMessage("Cannot assign more than 50 default keywords")
                 .ForEach(rule => rule
                     .SetValidator(new KeywordRequestValidator()));
@@ -126,7 +126,7 @@ public static class AddItemsBulk
                     .MaximumLength(500)
                     .WithMessage("Each incorrect answer must not exceed 500 characters"));
 
-            this.AddIncorrectAnswerSpeechRules(x => x.IncorrectAnswerSpeech, req => req.IncorrectAnswers.Count);
+            this.AddIncorrectAnswerSpeechRules(x => x.IncorrectAnswerSpeech, req => req.IncorrectAnswers?.Count ?? 0);
 
             RuleFor(x => x.Explanation)
                 .MaximumLength(4000)

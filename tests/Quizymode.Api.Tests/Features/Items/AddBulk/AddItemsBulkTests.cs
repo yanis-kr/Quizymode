@@ -390,4 +390,73 @@ public sealed class AddItemsBulkTests : ItemTestFixture
         validationResult.Errors.Should().Contain(e => e.PropertyName == "Keyword2");
     }
 
+    [Fact]
+    public void Validator_NullKeywords_ReturnsKeywordsRequiredError()
+    {
+        AddItemsBulk.Request request = new(
+            IsPrivate: false, Category: "geography", Keyword1: "capitals", Keyword2: "europe",
+            Keywords: null!, Items: new List<AddItemsBulk.ItemRequest>());
+        AddItemsBulk.Validator validator = new(_userContextMock.Object);
+
+        FluentValidation.Results.ValidationResult result = validator.Validate(request);
+
+        result.IsValid.Should().BeFalse();
+        result.Errors.Where(e => e.PropertyName == "Keywords").Should().ContainSingle()
+            .Which.ErrorMessage.Should().Be("Keywords list is required");
+    }
+
+    [Fact]
+    public void Validator_NullItems_ReturnsItemsRequiredError()
+    {
+        AddItemsBulk.Request request = new(
+            IsPrivate: false, Category: "geography", Keyword1: "capitals", Keyword2: "europe",
+            Keywords: new List<AddItemsBulk.KeywordRequest>(), Items: null!);
+        AddItemsBulk.Validator validator = new(_userContextMock.Object);
+
+        FluentValidation.Results.ValidationResult result = validator.Validate(request);
+
+        result.IsValid.Should().BeFalse();
+        result.Errors.Should().Contain(e => e.ErrorMessage == "Items is required");
+        result.Errors.Should().NotContain(e => e.ErrorMessage == "At least one item is required");
+    }
+
+    [Fact]
+    public void ItemValidator_NullIncorrectAnswersWithSpeech_ReturnsErrorsWithoutThrowing()
+    {
+        AddItemsBulk.ItemRequest item = new(
+            Question: "Q", CorrectAnswer: "A", IncorrectAnswers: null!, Explanation: "",
+            IncorrectAnswerSpeech: new Dictionary<int, ItemSpeechSupport> { [0] = new ItemSpeechSupport { Pronunciation = "pron" } });
+        AddItemsBulk.ItemRequestValidator validator = new();
+
+        FluentValidation.Results.ValidationResult result = validator.Validate(item);
+
+        result.IsValid.Should().BeFalse();
+        result.Errors.Should().Contain(e => e.ErrorMessage == "IncorrectAnswers is required");
+    }
+
+    [Fact]
+    public void Validator_EmptyKeywords_IsAllowed()
+    {
+        AddItemsBulk.Request request = new(
+            IsPrivate: false, Category: "geography", Keyword1: "capitals", Keyword2: "europe",
+            Keywords: new List<AddItemsBulk.KeywordRequest>(),
+            Items: new List<AddItemsBulk.ItemRequest> { new("Q?", "A", new List<string> { "B" }, "") });
+        AddItemsBulk.Validator validator = new(_userContextMock.Object);
+
+        validator.Validate(request).Errors.Should().NotContain(e => e.PropertyName == "Keywords");
+    }
+
+    [Fact]
+    public void Validator_TooManyKeywords_ReturnsCountError()
+    {
+        List<AddItemsBulk.KeywordRequest> keywords = Enumerable.Range(1, 51)
+            .Select(i => new AddItemsBulk.KeywordRequest($"kw{i}", false)).ToList();
+        AddItemsBulk.Request request = new(
+            IsPrivate: false, Category: "geography", Keyword1: "capitals", Keyword2: "europe",
+            Keywords: keywords, Items: new List<AddItemsBulk.ItemRequest>());
+        AddItemsBulk.Validator validator = new(_userContextMock.Object);
+
+        validator.Validate(request).Errors.Should()
+            .Contain(e => e.ErrorMessage == "Cannot assign more than 50 default keywords");
+    }
 }

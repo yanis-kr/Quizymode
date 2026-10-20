@@ -233,9 +233,14 @@ internal static partial class IdeaFeatureSupport
     public static int CountMeaningfulCharacters(string? value) =>
         NormalizeInput(value).Count(char.IsLetterOrDigit);
 
-    public static bool TryParseStatus(string value, out IdeaStatus status)
+    public static bool TryParseStatus(string? value, out IdeaStatus status)
     {
         status = default;
+
+        if (string.IsNullOrWhiteSpace(value))
+        {
+            return false;
+        }
 
         string normalized = value.Trim().Replace(" ", string.Empty, StringComparison.Ordinal);
         return Enum.TryParse(normalized, ignoreCase: true, out status);
