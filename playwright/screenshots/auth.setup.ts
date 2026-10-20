@@ -29,5 +29,15 @@ setup("authenticate", async ({ page }) => {
   await expect(page).not.toHaveURL(/\/login/, { timeout: 15_000 });
   await page.waitForLoadState("networkidle");
 
+  // The test account must accept the current Terms and Privacy Policy (AC 4.6.8);
+  // otherwise the blocking prompt covers every page captured or tested later.
+  const policyPrompt = page.getByRole("dialog", {
+    name: /accept our terms and privacy policy/i,
+  });
+  if (await policyPrompt.waitFor({ timeout: 5_000 }).then(() => true, () => false)) {
+    await policyPrompt.getByRole("button", { name: /accept and continue/i }).click();
+    await expect(policyPrompt).toBeHidden({ timeout: 15_000 });
+  }
+
   await page.context().storageState({ path: authFile });
 });
