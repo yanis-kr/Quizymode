@@ -8,6 +8,7 @@ import {
   parseAuthIntent,
 } from "@/features/auth/utils/authIntent";
 import { trackSignInCompleted } from "@/features/auth/utils/authAnalytics";
+import { FEEDBACK_LINK_LABEL, mapSignInError } from "@/features/auth/utils/signInErrors";
 import { GoogleSignInSection } from "@/features/auth/components/GoogleSignInSection";
 
 const LoginPage = () => {
@@ -17,6 +18,7 @@ const LoginPage = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
+  const [feedbackLink, setFeedbackLink] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
   const [isGoogleStarting, setIsGoogleStarting] = useState(false);
 
@@ -32,6 +34,7 @@ const LoginPage = () => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setError("");
+    setFeedbackLink(false);
     setIsLoading(true);
 
     try {
@@ -42,9 +45,9 @@ const LoginPage = () => {
       trackSignInCompleted(intent);
       navigate(intent.returnTo, { replace: true });
     } catch (err: unknown) {
-      setError(
-        err instanceof Error ? err.message : "Login failed. Please try again."
-      );
+      const mapped = mapSignInError(err);
+      setError(mapped.text);
+      setFeedbackLink(mapped.linkToFeedback);
     } finally {
       setIsLoading(false);
     }
@@ -63,7 +66,21 @@ const LoginPage = () => {
         <form className="mt-8 space-y-6" onSubmit={handleSubmit}>
           {error && (
             <div role="alert" className="rounded-md bg-red-50 p-4">
-              <div className="text-sm text-red-800">{error}</div>
+              <div className="text-sm text-red-800">
+                {feedbackLink && error.includes(FEEDBACK_LINK_LABEL) ? (
+                  <>
+                    {error.slice(0, error.indexOf(FEEDBACK_LINK_LABEL))}
+                    <Link to="/feedback" className="font-medium underline">
+                      {FEEDBACK_LINK_LABEL}
+                    </Link>
+                    {error.slice(
+                      error.indexOf(FEEDBACK_LINK_LABEL) + FEEDBACK_LINK_LABEL.length
+                    )}
+                  </>
+                ) : (
+                  error
+                )}
+              </div>
             </div>
           )}
           <div className="rounded-md shadow-sm -space-y-px">
@@ -115,7 +132,10 @@ const LoginPage = () => {
             intent={intent}
             disabled={isLoading}
             onStartingChange={setIsGoogleStarting}
-            onError={setError}
+            onError={(message: string) => {
+              setFeedbackLink(false);
+              setError(message);
+            }}
           />
 
           <div className="text-center text-sm">

@@ -2,6 +2,7 @@ import { describe, expect, it, vi, beforeEach } from "vitest";
 import { render, renderHook, waitFor, act } from "@testing-library/react";
 import { AuthProvider, useAuth } from "./AuthContext";
 import { clearTokens } from "@/utils/tokenStorage";
+import { SignInStepRequiredError } from "@/features/auth/utils/signInErrors";
 
 const mockSignIn = vi.fn();
 const mockFetchAuthSession = vi.fn();
@@ -91,11 +92,14 @@ describe("AuthContext.login", () => {
     const { result } = renderAuth();
     await waitFor(() => expect(result.current.isLoading).toBe(false));
 
-    await expect(
-      act(async () => {
-        await result.current.login("user@example.com", "password123");
-      })
-    ).rejects.toThrow(/additional step/i);
+    const rejection = act(async () => {
+      await result.current.login("user@example.com", "password123");
+    });
+    await expect(rejection).rejects.toThrow(/additional step/i);
+    await expect(rejection).rejects.toBeInstanceOf(SignInStepRequiredError);
+    await expect(rejection).rejects.toMatchObject({
+      signInStep: "CONFIRM_SIGN_IN_WITH_SMS_CODE",
+    });
   });
 
   it("recovers from UserAlreadyAuthenticatedException by verifying the real session, not the message text", async () => {

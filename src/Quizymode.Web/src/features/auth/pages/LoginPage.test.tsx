@@ -3,6 +3,7 @@ import { fireEvent, render, screen, waitFor } from "@testing-library/react";
 import { MemoryRouter } from "react-router-dom";
 import { HelmetProvider } from "react-helmet-async";
 import LoginPage from "./LoginPage";
+import { SignInStepRequiredError } from "@/features/auth/utils/signInErrors";
 
 const mockLogin = vi.fn();
 const mockSignInWithGoogle = vi.fn();
@@ -104,8 +105,8 @@ describe("LoginPage", () => {
     });
   });
 
-  it("does not navigate when login rejects, and shows the error message", async () => {
-    mockLogin.mockRejectedValueOnce(new Error("Invalid credentials"));
+  async function submitBadLogin(error: Error) {
+    mockLogin.mockRejectedValueOnce(error);
     renderPage();
 
     fireEvent.change(screen.getByPlaceholderText(/email/i), {
@@ -115,11 +116,45 @@ describe("LoginPage", () => {
       target: { value: "wrongpass" },
     });
     fireEvent.click(screen.getByRole("button", { name: /sign in/i }));
+    return screen.findByRole("alert");
+  }
 
-    await waitFor(() => {
-      expect(screen.getByText(/invalid credentials/i)).toBeInTheDocument();
-      expect(mockNavigate).not.toHaveBeenCalled();
-    });
+  it("shows fixed incorrect-credentials copy for NotAuthorizedException, never the raw message", async () => {
+    const err = new Error("Incorrect username or password.");
+    err.name = "NotAuthorizedException";
+    const alert = await submitBadLogin(err);
+
+    expect(alert).toHaveTextContent("Incorrect email or password.");
+    expect(screen.queryByText(/incorrect username/i)).not.toBeInTheDocument();
+    expect(mockNavigate).not.toHaveBeenCalled();
+  });
+
+  it("shows the same copy for UserNotFoundException", async () => {
+    const err = new Error("User does not exist.");
+    err.name = "UserNotFoundException";
+    const alert = await submitBadLogin(err);
+
+    expect(alert).toHaveTextContent("Incorrect email or password.");
+    expect(screen.queryByText(/does not exist/i)).not.toBeInTheDocument();
+    expect(mockNavigate).not.toHaveBeenCalled();
+  });
+
+  it("shows unconfirmed copy with a Feedback link for CONFIRM_SIGN_UP", async () => {
+    const alert = await submitBadLogin(new SignInStepRequiredError("CONFIRM_SIGN_UP"));
+
+    expect(alert).toHaveTextContent(/hasn't been confirmed yet/i);
+    expect(screen.getByRole("link", { name: "Feedback page" })).toHaveAttribute(
+      "href",
+      "/feedback"
+    );
+    expect(mockNavigate).not.toHaveBeenCalled();
+  });
+
+  it("shows generic copy for an unknown error", async () => {
+    const alert = await submitBadLogin(new Error("boom internal detail"));
+
+    expect(alert).toHaveTextContent("Sign-in failed. Please try again.");
+    expect(screen.queryByText(/boom/i)).not.toBeInTheDocument();
   });
 
   it("shows loading state while submitting", async () => {
