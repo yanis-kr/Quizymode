@@ -189,8 +189,109 @@ describe("EditItemPage", () => {
           category: "science",
           navigationKeyword1: "anatomy",
           navigationKeyword2: "muscular",
+          incorrectAnswers: ["W1", "W2", "W3"],
         })
       )
     );
+  });
+
+  it("shows all four incorrect answer fields and keeps all four on save (#265)", async () => {
+    // AC 2.1.9
+    const user = userEvent.setup({ delay: null });
+    vi.mocked(itemsApi.getById).mockResolvedValueOnce({
+      ...itemMock,
+      incorrectAnswers: ["W1", "W2", "W3", "W4"],
+    } as Awaited<ReturnType<typeof itemsApi.getById>>);
+
+    renderPage("/items/item-1/edit");
+
+    const saveButton = await screen.findByRole("button", { name: /save changes/i });
+
+    expect(screen.getByPlaceholderText("Incorrect answer 1")).toHaveValue("W1");
+    expect(screen.getByPlaceholderText("Incorrect answer 2")).toHaveValue("W2");
+    expect(screen.getByPlaceholderText("Incorrect answer 3")).toHaveValue("W3");
+    expect(screen.getByPlaceholderText("Incorrect answer 4")).toHaveValue("W4");
+    expect(screen.queryByPlaceholderText("Incorrect answer 5")).toBeNull();
+
+    await user.click(saveButton);
+
+    await waitFor(() => expect(itemsApi.update).toHaveBeenCalledTimes(1));
+    expect(itemsApi.update).toHaveBeenCalledWith(
+      "item-1",
+      expect.objectContaining({ incorrectAnswers: ["W1", "W2", "W3", "W4"] })
+    );
+  });
+
+  it("keeps three incorrect answer fields for an item with fewer than four (#265)", async () => {
+    // AC 2.1.9
+    const user = userEvent.setup({ delay: null });
+    vi.mocked(itemsApi.getById).mockResolvedValueOnce({
+      ...itemMock,
+      incorrectAnswers: ["W1"],
+    } as Awaited<ReturnType<typeof itemsApi.getById>>);
+
+    renderPage("/items/item-1/edit");
+
+    const saveButton = await screen.findByRole("button", { name: /save changes/i });
+
+    expect(screen.getByPlaceholderText("Incorrect answer 1")).toHaveValue("W1");
+    expect(screen.getByPlaceholderText("Incorrect answer 2")).toBeInTheDocument();
+    expect(screen.getByPlaceholderText("Incorrect answer 3")).toBeInTheDocument();
+    expect(screen.queryByPlaceholderText("Incorrect answer 4")).toBeNull();
+
+    await user.click(saveButton);
+
+    await waitFor(() =>
+      expect(itemsApi.update).toHaveBeenCalledWith(
+        "item-1",
+        expect.objectContaining({ incorrectAnswers: ["W1"] })
+      )
+    );
+  });
+
+  it("drops a cleared 4th answer on save (#265)", async () => {
+    // AC 2.1.9
+    const user = userEvent.setup({ delay: null });
+    vi.mocked(itemsApi.getById).mockResolvedValueOnce({
+      ...itemMock,
+      incorrectAnswers: ["W1", "W2", "W3", "W4"],
+    } as Awaited<ReturnType<typeof itemsApi.getById>>);
+
+    renderPage("/items/item-1/edit");
+
+    const saveButton = await screen.findByRole("button", { name: /save changes/i });
+
+    await user.clear(screen.getByPlaceholderText("Incorrect answer 4"));
+    await user.click(saveButton);
+
+    await waitFor(() =>
+      expect(itemsApi.update).toHaveBeenCalledWith(
+        "item-1",
+        expect.objectContaining({ incorrectAnswers: ["W1", "W2", "W3"] })
+      )
+    );
+  });
+
+  it("keeps speech metadata for the 4th incorrect answer (#265)", async () => {
+    // AC 2.1.9
+    const user = userEvent.setup({ delay: null });
+    vi.mocked(itemsApi.getById).mockResolvedValueOnce({
+      ...itemMock,
+      incorrectAnswers: ["W1", "W2", "W3", "W4"],
+      incorrectAnswerSpeech: { 3: { pronunciation: "w4", languageCode: "en-US" } },
+    } as unknown as Awaited<ReturnType<typeof itemsApi.getById>>);
+
+    renderPage("/items/item-1/edit");
+
+    const saveButton = await screen.findByRole("button", { name: /save changes/i });
+
+    await user.click(saveButton);
+
+    await waitFor(() => expect(itemsApi.update).toHaveBeenCalledTimes(1));
+    const payload = vi.mocked(itemsApi.update).mock.calls[0][1];
+    expect(payload.incorrectAnswers).toHaveLength(4);
+    expect(payload.incorrectAnswerSpeech).toEqual({
+      3: { pronunciation: "w4", languageCode: "en-US" },
+    });
   });
 });
