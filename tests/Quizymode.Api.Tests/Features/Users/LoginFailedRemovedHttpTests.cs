@@ -1,10 +1,12 @@
 using System.Net;
 using FluentAssertions;
+using Microsoft.AspNetCore.Builder;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Moq;
 using Quizymode.Api.Features;
 using Quizymode.Api.Services;
+using Quizymode.Api.StartupExtensions;
 using Quizymode.Api.Tests.TestFixtures;
 using Xunit;
 
@@ -47,15 +49,20 @@ public sealed class LoginFailedRemovedHttpTests : DatabaseTestFixture, IAsyncLif
                     }
                 }
             },
-            app =>
-            {
-                foreach (Type endpointType in typeof(IEndpoint).Assembly.GetTypes()
-                             .Where(t => t is { IsClass: true, IsAbstract: false } && t.GetInterfaces().Contains(typeof(IEndpoint)))
-                             .OrderBy(t => t.FullName, StringComparer.Ordinal))
-                {
-                    ((IEndpoint)Activator.CreateInstance(endpointType)!).MapEndpoint(app);
-                }
-            });
+            // The host's route builder is the WebApplication; use the production endpoint discovery.
+            app => ((WebApplication)app).MapFeatureEndpoints());
+    }
+
+    [Fact]
+    public async Task PostAuthLogout_IsNotNotFound_ProvingTheRouteTableWasBuilt()
+    {
+        using HttpRequestMessage request = JwtHttpTestHost.Request(
+            HttpMethod.Post, "/auth/logout", _host.CreateToken("member", "member@example.com"));
+
+        using HttpResponseMessage response = await _host.Client.SendAsync(request);
+
+        response.StatusCode.Should().NotBe(HttpStatusCode.NotFound);
+        response.StatusCode.Should().Be(HttpStatusCode.OK);
     }
 
     public async Task DisposeAsync() => await _host.DisposeAsync();
