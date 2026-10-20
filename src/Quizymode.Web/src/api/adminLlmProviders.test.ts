@@ -37,4 +37,12 @@ describe("adminLlmProvidersApi", () => {
     await adminLlmProvidersApi.getAttempts(30);
     expect(mockGet).toHaveBeenCalledWith("/admin/llm-providers/attempts", { params: { days: 30 } });
   });
+
+  it("getUsage passes the day window and defaults to 30", async () => {
+    mockGet.mockResolvedValue({ data: { days: 30, rows: [], topUsers: [] } });
+    await adminLlmProvidersApi.getUsage();
+    expect(mockGet).toHaveBeenLastCalledWith("/admin/llm-providers/usage", { params: { days: 30 } });
+    await adminLlmProvidersApi.getUsage(7);
+    expect(mockGet).toHaveBeenLastCalledWith("/admin/llm-providers/usage", { params: { days: 7 } });
+  });
 });

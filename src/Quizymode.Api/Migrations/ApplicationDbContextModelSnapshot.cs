@@ -1266,6 +1266,9 @@ namespace Quizymode.Api.Migrations
                     b.Property<Guid?>("GenerationId")
                         .HasColumnType("uuid");
 
+                    b.Property<int?>("HttpStatus")
+                        .HasColumnType("integer");
+
                     b.Property<int?>("InputTokens")
                         .HasColumnType("integer");
 

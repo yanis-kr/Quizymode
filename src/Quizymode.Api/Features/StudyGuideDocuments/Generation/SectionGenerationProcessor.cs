@@ -11,8 +11,8 @@ namespace Quizymode.Api.Features.StudyGuideDocuments.Generation;
 /// <summary>
 /// Runs one claimed generation (AC 6.6): takes the tier's vendor route (premium route when the job's tier is Premium),
 /// skips vendors without an API key, and tries them in order with prompt v2. A vendor attempt fails over to the next
-/// vendor on a provider error, timeout, content-filter stop, invalid JSON, or low quote yield (no question kept, or fewer
-/// than half kept). Every attempt is logged in <c>LlmAttempts</c>. On success the candidates are saved, the source text is
+/// vendor on a provider error, auth error (rejected key), timeout, content-filter stop, invalid JSON, or low quote yield (no question kept, or fewer
+/// than half kept). Every attempt is logged in <c>LlmAttempts</c> with its outcome and the vendor's HTTP status. On success the candidates are saved, the source text is
 /// cleared, and tokens/vendor/model are recorded. When every vendor fails, the best low-yield result is kept if it has
 /// at least one verified question; otherwise the job is Failed with a user-safe error and its quota charges are refunded.
 /// Idempotent: jobs that are missing or no longer Processing are skipped.
@@ -110,6 +110,7 @@ internal sealed class SectionGenerationProcessor(
                 InputTokens = result.InputTokens,
                 OutputTokens = result.OutputTokens,
                 DurationMs = result.DurationMs,
+                HttpStatus = result.HttpStatus,
                 CreatedUtc = Now()
             });
 

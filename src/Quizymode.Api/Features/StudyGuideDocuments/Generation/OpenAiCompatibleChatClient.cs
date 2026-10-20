@@ -3,19 +3,26 @@ using System.Net.Http.Headers;
 using System.Net.Http.Json;
 using System.Text.Json;
 using System.Text.Json.Nodes;
+using System.Text.RegularExpressions;
 using Quizymode.Api.Shared.Models;
 
 namespace Quizymode.Api.Features.StudyGuideDocuments.Generation;
 
 internal sealed record ChatCompletionRequest(string SystemPrompt, string UserPrompt, int MaxTokens, double Temperature);
 
-/// <summary>Outcome of one vendor call. <see cref="Content"/> is set only on <see cref="LlmAttemptOutcome.Success"/>.</summary>
+/// <summary>
+/// Outcome of one vendor call. <see cref="Content"/> is set only on <see cref="LlmAttemptOutcome.Success"/>.
+/// <see cref="HttpStatus"/> is the status of every response that was received (including 2xx replies that turn out to
+/// be invalid); it is null when no response arrived: vendor not configured, timeout, <see cref="HttpRequestException"/>,
+/// or a body read that failed after the headers.
+/// </summary>
 internal sealed record ChatCompletionResult(
     LlmAttemptOutcome Outcome,
     string? Content,
     int? InputTokens,
     int? OutputTokens,
-    int DurationMs);
+    int DurationMs,
+    int? HttpStatus = null);
 
 internal interface IOpenAiCompatibleChatClient
 {
@@ -62,17 +69,31 @@ internal sealed class OpenAiCompatibleChatClient(HttpClient httpClient, ILogger<
             using HttpResponseMessage response = await _httpClient.SendAsync(httpRequest, cancellationToken);
             string responseText = await response.Content.ReadAsStringAsync(cancellationToken);
             int elapsed = (int)stopwatch.ElapsedMilliseconds;
+            int status = (int)response.StatusCode;
             if (!response.IsSuccessStatusCode)
             {
-                _logger.LogWarning(
-                    "StudyGuideGeneration: {Vendor} returned {StatusCode}: {Error}",
-                    endpoint.Vendor,
-                    (int)response.StatusCode,
-                    ErrorExcerpt(responseText));
-                return new ChatCompletionResult(LlmAttemptOutcome.ProviderError, null, null, null, elapsed);
+                LlmAttemptOutcome failure = ClassifyFailure(status, responseText);
+                if (failure == LlmAttemptOutcome.AuthError)
+                {
+                    // Vendors echo a masked key fragment in auth errors (AC 5.12.5), so the body is never logged.
+                    _logger.LogWarning(
+                        "StudyGuideGeneration: {Vendor} rejected the API key (HTTP {StatusCode}).",
+                        endpoint.Vendor,
+                        status);
+                }
+                else
+                {
+                    _logger.LogWarning(
+                        "StudyGuideGeneration: {Vendor} returned {StatusCode}: {Error}",
+                        endpoint.Vendor,
+                        status,
+                        ErrorExcerpt(responseText));
+                }
+
+                return new ChatCompletionResult(failure, null, null, null, elapsed, status);
             }
 
-            return ReadCompletion(endpoint.Vendor, responseText, elapsed);
+            return ReadCompletion(endpoint.Vendor, responseText, elapsed, status);
         }
         catch (TaskCanceledException) when (!cancellationToken.IsCancellationRequested)
         {
@@ -118,12 +139,31 @@ internal sealed class OpenAiCompatibleChatClient(HttpClient httpClient, ILogger<
         model.Trim().StartsWith("gpt-5", StringComparison.OrdinalIgnoreCase) ? "minimal" : "low";
 
     /// <summary>
+    /// Maps a non-2xx reply to an outcome: 401/403 are <see cref="LlmAttemptOutcome.AuthError"/>, and so is a 400 whose
+    /// body mentions an API key (Gemini answers a bad key with 400 "API key not valid"). Everything else is a provider error.
+    /// </summary>
+    internal static LlmAttemptOutcome ClassifyFailure(int status, string body) =>
+        status is 401 or 403 ||
+        (status == 400 && body.Contains("API key", StringComparison.OrdinalIgnoreCase))
+            ? LlmAttemptOutcome.AuthError
+            : LlmAttemptOutcome.ProviderError;
+
+    private static readonly Regex[] KeyLikePatterns =
+    [
+        new(@"sk-[A-Za-z0-9_\-*]{4,}", RegexOptions.Compiled),
+        new(@"AIza[0-9A-Za-z_\-]{8,}", RegexOptions.Compiled),
+        new(@"\*+[A-Za-z0-9]{3,6}", RegexOptions.Compiled)
+    ];
+
+    /// <summary>
     /// A short, single-line excerpt of a vendor error body for the log. Vendor errors describe the problem
     /// (bad key, unknown field, quota); they don't echo our request, so nothing from the study guide is logged.
+    /// Anything shaped like an API key (or a masked key fragment) is redacted as a second layer.
     /// </summary>
     internal static string ErrorExcerpt(string responseText)
     {
-        string singleLine = string.Join(' ', responseText.Split((char[]?)null, StringSplitOptions.RemoveEmptyEntries));
+        string redacted = KeyLikePatterns.Aggregate(responseText, (text, pattern) => pattern.Replace(text, "[redacted]"));
+        string singleLine = string.Join(' ', redacted.Split((char[]?)null, StringSplitOptions.RemoveEmptyEntries));
         return singleLine.Length <= MaxErrorExcerptLength ? singleLine : singleLine[..MaxErrorExcerptLength] + "…";
     }
 
@@ -134,7 +174,7 @@ internal sealed class OpenAiCompatibleChatClient(HttpClient httpClient, ILogger<
                (normalized.Length > 1 && normalized[0] == 'o' && char.IsDigit(normalized[1]));
     }
 
-    private ChatCompletionResult ReadCompletion(string vendor, string responseText, int elapsed)
+    private ChatCompletionResult ReadCompletion(string vendor, string responseText, int elapsed, int status)
     {
         try
         {
@@ -146,7 +186,7 @@ internal sealed class OpenAiCompatibleChatClient(HttpClient httpClient, ILogger<
                 choices.ValueKind != JsonValueKind.Array ||
                 choices.GetArrayLength() == 0)
             {
-                return new ChatCompletionResult(LlmAttemptOutcome.InvalidJson, null, inputTokens, outputTokens, elapsed);
+                return new ChatCompletionResult(LlmAttemptOutcome.InvalidJson, null, inputTokens, outputTokens, elapsed, status);
             }
 
             JsonElement choice = choices[0];
@@ -157,13 +197,13 @@ internal sealed class OpenAiCompatibleChatClient(HttpClient httpClient, ILogger<
             if (finishReason == "content_filter")
             {
                 _logger.LogInformation("StudyGuideGeneration: {Vendor} declined the request (content_filter).", vendor);
-                return new ChatCompletionResult(LlmAttemptOutcome.ContentFilter, null, inputTokens, outputTokens, elapsed);
+                return new ChatCompletionResult(LlmAttemptOutcome.ContentFilter, null, inputTokens, outputTokens, elapsed, status);
             }
 
             if (finishReason == "length")
             {
                 _logger.LogWarning("StudyGuideGeneration: {Vendor} reply hit the output token limit.", vendor);
-                return new ChatCompletionResult(LlmAttemptOutcome.InvalidJson, null, inputTokens, outputTokens, elapsed);
+                return new ChatCompletionResult(LlmAttemptOutcome.InvalidJson, null, inputTokens, outputTokens, elapsed, status);
             }
 
             string content = choice.TryGetProperty("message", out JsonElement message) &&
@@ -174,13 +214,13 @@ internal sealed class OpenAiCompatibleChatClient(HttpClient httpClient, ILogger<
                 : string.Empty;
 
             return content.Length == 0
-                ? new ChatCompletionResult(LlmAttemptOutcome.InvalidJson, null, inputTokens, outputTokens, elapsed)
-                : new ChatCompletionResult(LlmAttemptOutcome.Success, content, inputTokens, outputTokens, elapsed);
+                ? new ChatCompletionResult(LlmAttemptOutcome.InvalidJson, null, inputTokens, outputTokens, elapsed, status)
+                : new ChatCompletionResult(LlmAttemptOutcome.Success, content, inputTokens, outputTokens, elapsed, status);
         }
         catch (JsonException)
         {
             _logger.LogWarning("StudyGuideGeneration: {Vendor} response was not valid JSON.", vendor);
-            return new ChatCompletionResult(LlmAttemptOutcome.InvalidJson, null, null, null, elapsed);
+            return new ChatCompletionResult(LlmAttemptOutcome.InvalidJson, null, null, null, elapsed, status);
         }
     }
 

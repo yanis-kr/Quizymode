@@ -14,7 +14,7 @@ vi.mock("@/api/adminLlmProviders", async (importOriginal) => {
   const actual = await importOriginal<typeof import("@/api/adminLlmProviders")>();
   return {
     ...actual,
-    adminLlmProvidersApi: { get: vi.fn(), update: vi.fn(), getAttempts: vi.fn() },
+    adminLlmProvidersApi: { get: vi.fn(), update: vi.fn(), getAttempts: vi.fn(), getUsage: vi.fn() },
   };
 });
 
@@ -72,9 +72,88 @@ describe("AdminAiProvidersPage", () => {
           inputTokens: 1200,
           outputTokens: 800,
           durationMs: 4200,
+          httpStatus: 200,
+        },
+        {
+          createdUtc: "2026-10-17T09:00:00Z",
+          vendor: "OpenAI",
+          model: "gpt-5-nano",
+          outcome: "AuthError",
+          inputTokens: null,
+          outputTokens: null,
+          durationMs: 150,
+          httpStatus: 401,
+        },
+        {
+          createdUtc: "2026-10-17T08:00:00Z",
+          vendor: "DeepSeek",
+          model: "deepseek-flash",
+          outcome: "Timeout",
+          inputTokens: null,
+          outputTokens: null,
+          durationMs: 60000,
+          httpStatus: null,
         },
       ],
     });
+    vi.mocked(adminLlmProvidersApi.getUsage).mockResolvedValue({
+      days: 30,
+      sinceUtc: "2026-09-20T00:00:00Z",
+      rows: [],
+      topUsers: [],
+    });
+  });
+
+  it("shows the HTTP status column and a readable label for auth errors", async () => {
+    renderPage();
+
+    expect(await screen.findByText("Auth error (check key)")).toBeInTheDocument();
+    expect(screen.queryByText("AuthError")).not.toBeInTheDocument();
+    expect(screen.getByRole("columnheader", { name: "HTTP" })).toBeInTheDocument();
+    expect(screen.getByText("401")).toBeInTheDocument();
+    expect(screen.getByText("200")).toBeInTheDocument();
+    // The timed-out attempt has no HTTP status.
+    const timeoutRow = screen.getByText("Timeout").closest("tr");
+    expect(within(timeoutRow as HTMLElement).getAllByText("—").length).toBeGreaterThanOrEqual(1);
+  });
+
+  it("does not warn when every route has a keyed vendor", async () => {
+    renderPage();
+    await screen.findByLabelText("Model for DeepSeek");
+
+    expect(screen.queryByRole("alert")).not.toBeInTheDocument();
+  });
+
+  it("warns when the saved route has no keyed vendor, and follows the saved state only", async () => {
+    vi.mocked(adminLlmProvidersApi.get).mockResolvedValue({
+      ...settings,
+      routes: { free: ["OpenAI"], premium: ["DeepSeek", "Gemini"] },
+    });
+    renderPage();
+    await screen.findByLabelText("Model for DeepSeek");
+
+    const alert = screen.getByRole("alert");
+    expect(alert).toHaveTextContent("No vendor in this route has a key; generation for free users is off.");
+    expect(within(screen.getByRole("region", { name: "Free route" })).getByRole("alert")).toBe(alert);
+
+    // Unsaved edits do not toggle the alert: emptying the premium route only shows the existing line.
+    fireEvent.click(screen.getByRole("button", { name: "Remove DeepSeek from Premium route" }));
+    fireEvent.click(screen.getByRole("button", { name: "Remove Gemini from Premium route" }));
+    expect(screen.getAllByRole("alert")).toHaveLength(1);
+    expect(screen.getByText("No vendors in this route.")).toBeInTheDocument();
+  });
+
+  it("updates the warning after saving a route with no keyed vendor", async () => {
+    renderPage();
+    await screen.findByLabelText("Model for DeepSeek");
+    expect(screen.queryByRole("alert")).not.toBeInTheDocument();
+
+    fireEvent.click(screen.getByRole("button", { name: "Remove DeepSeek from Premium route" }));
+    fireEvent.click(screen.getByRole("button", { name: "Remove Gemini from Premium route" }));
+    fireEvent.click(screen.getByRole("button", { name: "Save settings" }));
+
+    expect(await screen.findByText("AI provider settings saved.")).toBeInTheDocument();
+    expect(screen.getByRole("alert")).toHaveTextContent("generation for premium users is off");
   });
 
   it("redirects non-admins", () => {

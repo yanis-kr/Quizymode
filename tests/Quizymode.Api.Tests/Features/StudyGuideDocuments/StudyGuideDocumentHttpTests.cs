@@ -215,7 +215,7 @@ public sealed class StudyGuideDocumentHttpTests : ItemTestFixture, IAsyncLifetim
     [Fact]
     public async Task AdminProviders_AreAdminOnly()
     {
-        foreach (string path in new[] { "/admin/llm-providers", "/admin/llm-providers/attempts?days=7" })
+        foreach (string path in new[] { "/admin/llm-providers", "/admin/llm-providers/attempts?days=7", "/admin/llm-providers/usage" })
         {
             using HttpResponseMessage anonymous = await SendAsync(HttpMethod.Get, path, null);
             using HttpResponseMessage member = await SendAsync(HttpMethod.Get, path, Token("member"));
@@ -314,14 +314,95 @@ public sealed class StudyGuideDocumentHttpTests : ItemTestFixture, IAsyncLifetim
             db.LlmAttempts.AddRange(
                 new Quizymode.Api.Shared.Models.LlmAttempt { Id = Guid.NewGuid(), Vendor = "Gemini", Model = "g", Outcome = Quizymode.Api.Shared.Models.LlmAttemptOutcome.LowQuoteYield, DurationMs = 10, CreatedUtc = now.AddHours(-2) },
                 new Quizymode.Api.Shared.Models.LlmAttempt { Id = Guid.NewGuid(), Vendor = "OpenAI", Model = "o", Outcome = Quizymode.Api.Shared.Models.LlmAttemptOutcome.Success, InputTokens = 5, OutputTokens = 6, DurationMs = 20, CreatedUtc = now.AddHours(-1) },
-                new Quizymode.Api.Shared.Models.LlmAttempt { Id = Guid.NewGuid(), Vendor = "DeepSeek", Model = "d", Outcome = Quizymode.Api.Shared.Models.LlmAttemptOutcome.Timeout, DurationMs = 30, CreatedUtc = now.AddDays(-10) });
+                new Quizymode.Api.Shared.Models.LlmAttempt { Id = Guid.NewGuid(), Vendor = "DeepSeek", Model = "d", Outcome = Quizymode.Api.Shared.Models.LlmAttemptOutcome.Timeout, DurationMs = 30, CreatedUtc = now.AddDays(-10) },
+                new Quizymode.Api.Shared.Models.LlmAttempt { Id = Guid.NewGuid(), Vendor = "DeepSeek", Model = "d", Outcome = Quizymode.Api.Shared.Models.LlmAttemptOutcome.AuthError, DurationMs = 40, HttpStatus = 401, CreatedUtc = now.AddHours(-3) });
             await db.SaveChangesAsync();
         }
 
         using HttpResponseMessage response = await SendAsync(HttpMethod.Get, "/admin/llm-providers/attempts?days=7", AdminToken());
 
         AdminLlmProviders.AttemptsResponse attempts = (await response.Content.ReadFromJsonAsync<AdminLlmProviders.AttemptsResponse>())!;
-        attempts.Attempts.Select(a => (a.Vendor, a.Outcome)).Should().Equal(("OpenAI", "Success"), ("Gemini", "LowQuoteYield"));
+        attempts.Attempts.Select(a => (a.Vendor, a.Outcome)).Should().Equal(("OpenAI", "Success"), ("Gemini", "LowQuoteYield"), ("DeepSeek", "AuthError"));
+        attempts.Attempts.Select(a => a.HttpStatus).Should().Equal(new int?[] { null, null, 401 });
         attempts.Attempts[0].InputTokens.Should().Be(5);
+    }
+
+    [Fact]
+    public async Task Generate_PremiumUserWithoutKeyedPremiumRoute_Gets503AndNothingIsWritten_FreeUserGets202()
+    {
+        StudyGuideDocumentContracts.Document premiumDoc = await UploadTextAsync("premium-user", "Paris is the capital and most populous city of France.");
+        StudyGuideDocumentContracts.Document freeDoc = await UploadTextAsync("free-user", "Berlin is the capital of Germany and its largest city by population.");
+        await using (Quizymode.Api.Data.ApplicationDbContext db = CreateDbContext())
+        {
+            // The premium user resolves to a Guid user id with a StudyGuidePremium row; only Gemini has a key.
+            System.Guid premiumUserId = db.Users.Single(u => u.Subject == "premium-user").Id;
+            db.UserSettings.Add(new Quizymode.Api.Shared.Models.UserSetting { Id = Guid.NewGuid(), UserId = premiumUserId, Key = "StudyGuidePremium", Value = "true" });
+            Quizymode.Api.Shared.Models.LlmProviderSettings settings = await Quizymode.Api.Features.StudyGuideDocuments.Generation.LlmProviderSettingsStore.GetOrCreateAsync(db, CancellationToken.None);
+            settings.RoutePremium = "DeepSeek,OpenAI";
+            settings.RouteFree = "Gemini";
+            await db.SaveChangesAsync();
+        }
+
+        using HttpResponseMessage premiumConfig = await SendAsync(HttpMethod.Get, "/study-guides/documents/config", Token("premium-user"));
+        using HttpResponseMessage freeConfig = await SendAsync(HttpMethod.Get, "/study-guides/documents/config", Token("free-user"));
+        using HttpResponseMessage premiumGenerate = await SendAsync(HttpMethod.Post, $"/study-guides/documents/{premiumDoc.Id}/generate", Token("premium-user"),
+            JsonContent.Create(new { sectionIds = premiumDoc.Sections.Select(section => section.Id) }));
+
+        (await premiumConfig.Content.ReadFromJsonAsync<GetStudyGuideDocumentConfig.Response>())!.Enabled.Should().BeFalse();
+        (await freeConfig.Content.ReadFromJsonAsync<GetStudyGuideDocumentConfig.Response>())!.Enabled.Should().BeTrue();
+        premiumGenerate.StatusCode.Should().Be(HttpStatusCode.ServiceUnavailable);
+        using JsonDocument problem = JsonDocument.Parse(await premiumGenerate.Content.ReadAsStringAsync());
+        problem.RootElement.GetProperty("title").GetString().Should().Be("StudyGuideDocument.Disabled");
+        await using (Quizymode.Api.Data.ApplicationDbContext db = CreateDbContext())
+        {
+            db.StudyGuideQuotaCharges.Count().Should().Be(0);
+            db.SectionGenerations.Count().Should().Be(0);
+        }
+
+        using HttpResponseMessage freeGenerate = await SendAsync(HttpMethod.Post, $"/study-guides/documents/{freeDoc.Id}/generate", Token("free-user"),
+            JsonContent.Create(new { sectionIds = freeDoc.Sections.Select(section => section.Id) }));
+        freeGenerate.StatusCode.Should().Be(HttpStatusCode.Accepted);
+    }
+
+    private async Task<StudyGuideDocumentContracts.Document> UploadTextAsync(string subject, string text)
+    {
+        using HttpResponseMessage created = await SendAsync(HttpMethod.Post, "/study-guides/documents", Token(subject), Upload(text: text));
+        created.StatusCode.Should().Be(HttpStatusCode.Created);
+        return (await created.Content.ReadFromJsonAsync<StudyGuideDocumentContracts.Document>())!;
+    }
+
+    [Theory]
+    [InlineData("0")]
+    [InlineData("91")]
+    [InlineData("-1")]
+    [InlineData("abc")]
+    public async Task AdminUsage_RejectsInvalidDays(string days)
+    {
+        using HttpResponseMessage response = await SendAsync(HttpMethod.Get, $"/admin/llm-providers/usage?days={days}", AdminToken());
+
+        response.StatusCode.Should().Be(HttpStatusCode.BadRequest);
+    }
+
+    [Fact]
+    public async Task AdminUsage_DefaultsTo30Days_AndAcceptsTheBounds()
+    {
+        await using (Quizymode.Api.Data.ApplicationDbContext db = CreateDbContext())
+        {
+            DateTime now = DateTime.UtcNow;
+            db.LlmAttempts.AddRange(
+                new Quizymode.Api.Shared.Models.LlmAttempt { Id = Guid.NewGuid(), Vendor = "Gemini", Model = "g", Outcome = Quizymode.Api.Shared.Models.LlmAttemptOutcome.Success, InputTokens = 10, OutputTokens = 20, DurationMs = 100, CreatedUtc = now.AddDays(-20) },
+                new Quizymode.Api.Shared.Models.LlmAttempt { Id = Guid.NewGuid(), Vendor = "Gemini", Model = "g", Outcome = Quizymode.Api.Shared.Models.LlmAttemptOutcome.Success, InputTokens = 1, OutputTokens = 2, DurationMs = 50, CreatedUtc = now.AddDays(-40) });
+            await db.SaveChangesAsync();
+        }
+
+        using HttpResponseMessage response = await SendAsync(HttpMethod.Get, "/admin/llm-providers/usage", AdminToken());
+        using HttpResponseMessage min = await SendAsync(HttpMethod.Get, "/admin/llm-providers/usage?days=1", AdminToken());
+        using HttpResponseMessage max = await SendAsync(HttpMethod.Get, "/admin/llm-providers/usage?days=90", AdminToken());
+
+        AdminLlmProviders.UsageResponse usage = (await response.Content.ReadFromJsonAsync<AdminLlmProviders.UsageResponse>())!;
+        usage.Days.Should().Be(30);
+        usage.Rows.Should().ContainSingle().Which.Attempts.Should().Be(1, "the 40-day-old attempt is outside the default window");
+        (await min.Content.ReadFromJsonAsync<AdminLlmProviders.UsageResponse>())!.Rows.Should().BeEmpty();
+        (await max.Content.ReadFromJsonAsync<AdminLlmProviders.UsageResponse>())!.Rows.Single().Attempts.Should().Be(2);
     }
 }

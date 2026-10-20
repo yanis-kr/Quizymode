@@ -32,6 +32,22 @@ internal static class StudyGuideQuota
 
     public static DateTime MonthStart(DateTime nowUtc) => new(nowUtc.Year, nowUtc.Month, 1, 0, 0, 0, DateTimeKind.Utc);
 
+    /// <summary>The caller's tier: premium only when the admin-set <c>StudyGuidePremium</c> user setting is "true".</summary>
+    public static async Task<StudyGuideTier> GetTierAsync(ApplicationDbContext db, string userId, CancellationToken cancellationToken)
+    {
+        if (!Guid.TryParse(userId, out Guid userGuid))
+        {
+            return StudyGuideTier.Free;
+        }
+
+        string? value = await db.UserSettings
+            .AsNoTracking()
+            .Where(setting => setting.UserId == userGuid && setting.Key == StudyGuideSettingKeys.Premium)
+            .Select(setting => setting.Value)
+            .FirstOrDefaultAsync(cancellationToken);
+        return StudyGuideSettingKeys.IsPremium(value) ? StudyGuideTier.Premium : StudyGuideTier.Free;
+    }
+
     public static async Task<StudyGuideQuotaSnapshot> GetAsync(
         ApplicationDbContext db,
         string userId,

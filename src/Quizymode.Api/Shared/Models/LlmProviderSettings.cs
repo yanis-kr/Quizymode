@@ -32,7 +32,10 @@ public enum LlmAttemptOutcome
     Timeout = 2,
     ContentFilter = 3,
     LowQuoteYield = 4,
-    InvalidJson = 5
+    InvalidJson = 5,
+
+    /// <summary>The vendor rejected our API key (HTTP 401/403, or 400 "API key not valid"). Stored as an int: never renumber.</summary>
+    AuthError = 6
 }
 
 /// <summary>One vendor call made for a section generation (kept 90 days).</summary>
@@ -53,6 +56,9 @@ public sealed class LlmAttempt
     public int? OutputTokens { get; set; }
 
     public int DurationMs { get; set; }
+
+    /// <summary>HTTP status of the vendor reply; null when no reply arrived (timeout, network error, no key) and for rows written before this column existed.</summary>
+    public int? HttpStatus { get; set; }
 
     public DateTime CreatedUtc { get; set; }
 }

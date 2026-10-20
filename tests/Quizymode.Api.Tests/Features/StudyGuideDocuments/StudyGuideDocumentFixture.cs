@@ -109,6 +109,15 @@ public abstract class StudyGuideDocumentFixture : ItemTestFixture, IAsyncLifetim
         await DbContext.SaveChangesAsync();
     }
 
+    /// <summary>Saves the admin routing row's free and premium vendor routes.</summary>
+    protected async Task SetRoutesAsync(IEnumerable<string> free, IEnumerable<string> premium)
+    {
+        LlmProviderSettings settings = await LlmProviderSettingsStore.GetOrCreateAsync(DbContext, CancellationToken.None);
+        settings.RouteFree = LlmProviderSettingsStore.FormatRoute(free);
+        settings.RoutePremium = LlmProviderSettingsStore.FormatRoute(premium);
+        await DbContext.SaveChangesAsync();
+    }
+
     protected Task MakePremiumAsync(string userId) => SetSettingAsync(userId, StudyGuideSettingKeys.Premium, "true");
 
     /// <summary>Marks a generation Completed with candidates copied from <see cref="StudyGuideTestData.Facts"/>.</summary>
