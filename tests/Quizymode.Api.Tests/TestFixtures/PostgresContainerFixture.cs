@@ -15,8 +15,8 @@ namespace Quizymode.Api.Tests.TestFixtures;
 /// </summary>
 public sealed class PostgresContainerFixture : IAsyncLifetime
 {
-    // ECR Public mirror of the official image avoids Docker Hub anonymous pull rate limits.
-    private const string Image = "public.ecr.aws/docker/library/postgres:17-alpine";
+    // Docker Hub, like the Testcontainers Ryuk image. CI pre-pulls it with retries ("Pre-pull Postgres test image"), and the default Missing pull policy then reuses the local copy.
+    private const string Image = "postgres:17-alpine";
 
     private PostgreSqlContainer? _container;
 
