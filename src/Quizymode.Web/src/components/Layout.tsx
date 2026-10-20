@@ -223,7 +223,7 @@ const Layout = ({ children }: LayoutProps) => {
               >
                 Quizymode
               </Link>
-              <div className="hidden sm:ml-6 sm:flex sm:space-x-8">
+              <div className="hidden lg:ml-6 lg:flex lg:space-x-5 xl:space-x-8">
                 <Link
                   to="/categories"
                   className={desktopNavLinkClass(isPathActive("/categories"))}
@@ -272,9 +272,9 @@ const Layout = ({ children }: LayoutProps) => {
               {/* Mobile menu button */}
               <button
                 type="button"
-                className="sm:hidden inline-flex items-center justify-center p-1.5 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500"
+                className="lg:hidden inline-flex items-center justify-center p-1.5 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500"
                 onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-                aria-expanded="false"
+                aria-expanded={mobileMenuOpen}
               >
                 <span className="sr-only">Open main menu</span>
                 {mobileMenuOpen ? (
@@ -285,14 +285,14 @@ const Layout = ({ children }: LayoutProps) => {
               </button>
 
               {/* Desktop menu */}
-              <div className="hidden sm:flex sm:items-center sm:gap-3">
+              <div className="hidden lg:flex lg:items-center lg:gap-3">
                 {isAuthenticated ? (
                   <div className="flex items-center space-x-4">
                     <button
                       onClick={() => setShowProfileModal(true)}
-                      className="text-right hover:bg-gray-50 px-2 py-1 rounded-md transition-colors"
+                      className="max-w-[12rem] text-right hover:bg-gray-50 px-2 py-1 rounded-md transition-colors"
                     >
-                      <div className="text-sm font-medium text-gray-900">
+                      <div className="truncate text-sm font-medium text-gray-900">
                         {headerDisplayName}
                       </div>
                       <div className="text-xs text-gray-500">{role}</div>
@@ -327,7 +327,7 @@ const Layout = ({ children }: LayoutProps) => {
 
         {/* Mobile menu */}
         {mobileMenuOpen && (
-          <div className="sm:hidden">
+          <div className="lg:hidden">
             <div className="pt-2 pb-3 space-y-1">
               <Link
                 to="/categories"
