@@ -6023,36 +6023,6 @@
         }
       }
     },
-    "/auth/login-failed": {
-      "post": {
-        "tags": [
-          "Auth"
-        ],
-        "summary": "Log login failure event",
-        "description": "Logs a LoginFailed audit event. Can be called by anonymous users. Email is optional for privacy.",
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "oneOf": [
-                  {
-                    "type": "null"
-                  },
-                  {
-                    "$ref": "#/components/schemas/Quizymode.Api.Features.Users.LogLoginFailed.RequestDto"
-                  }
-                ]
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "description": "OK"
-          }
-        }
-      }
-    },
     "/auth/logout": {
       "post": {
         "tags": [
@@ -16240,24 +16210,6 @@
           },
           "lastLogin": {
             "$ref": "#/components/schemas/System.DateTime"
-          }
-        }
-      },
-      "Quizymode.Api.Features.Users.LogLoginFailed.RequestDto": {
-        "required": [
-          "email"
-        ],
-        "type": "object",
-        "properties": {
-          "email": {
-            "oneOf": [
-              {
-                "type": "null"
-              },
-              {
-                "$ref": "#/components/schemas/System.String"
-              }
-            ]
           }
         }
       },

@@ -174,6 +174,19 @@ describe("AdminAiProvidersPage", () => {
     expect(screen.getByText("1200 / 800")).toBeInTheDocument();
   });
 
+  it("keeps the layout classes that prevent horizontal overflow on narrow screens (#245)", async () => {
+    renderPage();
+    const modelInput = await screen.findByLabelText("Model for DeepSeek");
+
+    expect(modelInput.closest("table")?.parentElement).toHaveClass("overflow-x-auto");
+
+    const routing = screen.getByRole("heading", { name: "Routing" }).nextElementSibling;
+    expect(routing).toHaveClass("grid-cols-1");
+
+    const routeItem = within(screen.getByRole("region", { name: /free/i })).getAllByRole("listitem")[0];
+    expect(routeItem).toHaveClass("flex-wrap");
+  });
+
   it("reorders routes with keyboard-operable buttons and saves", async () => {
     renderPage();
     await screen.findByLabelText("Model for DeepSeek");

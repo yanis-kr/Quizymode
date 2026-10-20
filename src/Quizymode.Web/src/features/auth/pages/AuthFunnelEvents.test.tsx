@@ -160,12 +160,12 @@ describe("signup and sign-in funnel events (AC 5.4.9a)", () => {
   });
 
   it("emits sign_in_completed after a successful login and nothing when login fails", async () => {
-    mockLogin.mockRejectedValueOnce(new Error("Incorrect username or password."));
+    mockLogin.mockRejectedValueOnce(Object.assign(new Error("raw"), { name: "NotAuthorizedException" }));
     renderRoute("login", "?reason=join-discussion");
     fireEvent.change(screen.getByPlaceholderText(/email/i), { target: { value: "u@example.com" } });
     fireEvent.change(screen.getByPlaceholderText(/password/i), { target: { value: "wrong-pass" } });
     fireEvent.click(screen.getByRole("button", { name: /sign in/i }));
-    await screen.findByText(/incorrect username or password/i);
+    await screen.findByText("Incorrect email or password.");
     expect(eventNames()).toEqual([]);
 
     mockLogin.mockResolvedValueOnce(undefined);

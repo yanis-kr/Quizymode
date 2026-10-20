@@ -49,7 +49,7 @@ function RouteEditor({ routeName, label, route, savedRoute, keyConfigured, onCha
   const addId = `route-${routeName}-add`;
 
   return (
-    <section aria-labelledby={headingId} className="rounded-lg border border-gray-200 p-4">
+    <section aria-labelledby={headingId} className="min-w-0 rounded-lg border border-gray-200 p-4">
       <h3 id={headingId} className="text-sm font-semibold text-gray-900">
         {label}
       </h3>
@@ -61,44 +61,46 @@ function RouteEditor({ routeName, label, route, savedRoute, keyConfigured, onCha
       )}
       <ol className="space-y-2">
         {route.map((vendor, index) => (
-          <li key={vendor} className="flex items-center gap-2 rounded-md bg-gray-50 px-3 py-2 text-sm">
+          <li key={vendor} className="flex flex-wrap items-center gap-2 rounded-md bg-gray-50 px-3 py-2 text-sm">
             <span className="w-5 text-gray-500">{index + 1}.</span>
-            <span className="flex-1 font-medium text-gray-900">
+            <span className="min-w-32 flex-1 font-medium text-gray-900">
               {vendor}
               {!keyConfigured[vendor] && <span className="ml-2 text-xs font-normal text-amber-700">(no key, skipped)</span>}
             </span>
-            <button
-              type="button"
-              onClick={() => onChange(moveItem(route, index, -1))}
-              disabled={index === 0}
-              aria-label={`Move ${vendor} up in ${label}`}
-              className="rounded border border-gray-300 bg-white px-2 py-0.5 text-xs text-gray-700 hover:bg-gray-100 disabled:opacity-40"
-            >
-              Up
-            </button>
-            <button
-              type="button"
-              onClick={() => onChange(moveItem(route, index, 1))}
-              disabled={index === route.length - 1}
-              aria-label={`Move ${vendor} down in ${label}`}
-              className="rounded border border-gray-300 bg-white px-2 py-0.5 text-xs text-gray-700 hover:bg-gray-100 disabled:opacity-40"
-            >
-              Down
-            </button>
-            <button
-              type="button"
-              onClick={() => onChange(route.filter((entry) => entry !== vendor))}
-              aria-label={`Remove ${vendor} from ${label}`}
-              className="rounded border border-gray-300 bg-white px-2 py-0.5 text-xs text-red-700 hover:bg-red-50"
-            >
-              Remove
-            </button>
+            <div className="flex shrink-0 gap-2">
+              <button
+                type="button"
+                onClick={() => onChange(moveItem(route, index, -1))}
+                disabled={index === 0}
+                aria-label={`Move ${vendor} up in ${label}`}
+                className="rounded border border-gray-300 bg-white px-2 py-0.5 text-xs text-gray-700 hover:bg-gray-100 disabled:opacity-40"
+              >
+                Up
+              </button>
+              <button
+                type="button"
+                onClick={() => onChange(moveItem(route, index, 1))}
+                disabled={index === route.length - 1}
+                aria-label={`Move ${vendor} down in ${label}`}
+                className="rounded border border-gray-300 bg-white px-2 py-0.5 text-xs text-gray-700 hover:bg-gray-100 disabled:opacity-40"
+              >
+                Down
+              </button>
+              <button
+                type="button"
+                onClick={() => onChange(route.filter((entry) => entry !== vendor))}
+                aria-label={`Remove ${vendor} from ${label}`}
+                className="rounded border border-gray-300 bg-white px-2 py-0.5 text-xs text-red-700 hover:bg-red-50"
+              >
+                Remove
+              </button>
+            </div>
           </li>
         ))}
         {route.length === 0 && <li className="text-sm text-red-700">No vendors in this route.</li>}
       </ol>
       {available.length > 0 && (
-        <div className="mt-3 flex items-end gap-2">
+        <div className="mt-3 flex flex-wrap items-end gap-2">
           <div>
             <label htmlFor={addId} className="block text-xs font-medium text-gray-700 mb-1">
               Add vendor to {label}
@@ -248,7 +250,7 @@ function ProvidersForm({ data }: ProvidersFormProps) {
                             ),
                           })
                         }
-                        className="w-full min-w-48 rounded-md border border-gray-300 px-3 py-1.5 font-mono text-sm"
+                        className="w-full min-w-36 rounded-md sm:min-w-48 border border-gray-300 px-3 py-1.5 font-mono text-sm"
                       />
                     </td>
                   </tr>
@@ -261,7 +263,7 @@ function ProvidersForm({ data }: ProvidersFormProps) {
 
       <section className="rounded-lg bg-white p-5 shadow">
         <h2 className="text-base font-semibold text-gray-900">Routing</h2>
-        <div className="mt-3 grid gap-4 md:grid-cols-2">
+        <div className="mt-3 grid grid-cols-1 gap-4 md:grid-cols-2">
           <RouteEditor
             routeName="free"
             label="Free route"

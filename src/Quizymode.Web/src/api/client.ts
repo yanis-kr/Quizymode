@@ -141,8 +141,8 @@ apiClient.interceptors.response.use(
     const originalRequest = error.config;
     const status = error.response?.status;
 
-    // Handle 401 (Unauthorized) and 403 (Forbidden/Access Denied) errors
-    if (status === 401 || status === 403) {
+    // Handle 401 (Unauthorized) only. A 403 is a valid token without permission: reject as-is (no refresh, clear or redirect).
+    if (status === 401) {
       // If this is a retry after refresh, or we've already tried refreshing, clear auth
       if (originalRequest._retry) {
         handleAuthFailure(originalRequest);

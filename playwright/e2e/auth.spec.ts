@@ -56,7 +56,7 @@ test(
     await page.locator("button[type='submit']").click();
 
     // An error banner should appear; the page must not navigate away from /login
-    await expect(page.locator(".bg-red-50")).toBeVisible({ timeout: 5_000 });
+    await expect(page.getByRole("alert")).toHaveText("Incorrect email or password.");
     await expect(page).toHaveURL(/\/login/);
   }
 );

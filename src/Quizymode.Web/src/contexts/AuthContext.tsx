@@ -17,6 +17,10 @@ import {
 } from "aws-amplify/auth";
 import { usersApi } from "@/api/users";
 import {
+  SignInSessionError,
+  SignInStepRequiredError,
+} from "@/features/auth/utils/signInErrors";
+import {
   clearPendingPolicyAcceptances,
   getPendingPolicyAcceptancesForEmail,
 } from "@/features/legal/policyAcceptanceStorage";
@@ -381,11 +385,11 @@ export const AuthProvider = ({ children }: AuthProviderProps) => {
     try {
       const { isSignedIn, nextStep } = await signIn({ username, password });
       if (!isSignedIn) {
-        throw new Error(`Sign-in requires an additional step: ${nextStep.signInStep}`);
+        throw new SignInStepRequiredError(nextStep.signInStep);
       }
       const established = await refreshAuth();
       if (!established) {
-        throw new Error("Sign-in succeeded but the session could not be established.");
+        throw new SignInSessionError();
       }
     } catch (error) {
       if (error instanceof Error && error.name === "UserAlreadyAuthenticatedException") {
