@@ -294,4 +294,34 @@ describe("EditItemPage", () => {
       3: { pronunciation: "w4", languageCode: "en-US" },
     });
   });
+
+  it("re-indexes incorrect-answer speech after a middle answer is cleared (#269)", async () => {
+    // AC 3.12.7
+    const user = userEvent.setup({ delay: null });
+    vi.mocked(itemsApi.getById).mockResolvedValueOnce({
+      ...itemMock,
+      incorrectAnswers: ["W1", "W2", "W3"],
+      incorrectAnswerSpeech: {
+        0: { pronunciation: "w1" },
+        1: { pronunciation: "w2" },
+        2: { pronunciation: "w3", languageCode: "ja-JP" },
+      },
+    } as unknown as Awaited<ReturnType<typeof itemsApi.getById>>);
+
+    renderPage("/items/item-1/edit");
+
+    const saveButton = await screen.findByRole("button", { name: /save changes/i });
+
+    await user.clear(screen.getByPlaceholderText("Incorrect answer 2"));
+    await user.click(saveButton);
+
+    await waitFor(() => expect(itemsApi.update).toHaveBeenCalledTimes(1));
+    const payload = vi.mocked(itemsApi.update).mock.calls[0][1];
+    expect(payload.incorrectAnswers).toEqual(["W1", "W3"]);
+    expect(payload.incorrectAnswerSpeech).toEqual({
+      0: { pronunciation: "w1" },
+      1: { pronunciation: "w3", languageCode: "ja-JP" },
+    });
+    expect(Object.values(payload.incorrectAnswerSpeech ?? {}).map((x) => x.pronunciation)).not.toContain("w2");
+  });
 });

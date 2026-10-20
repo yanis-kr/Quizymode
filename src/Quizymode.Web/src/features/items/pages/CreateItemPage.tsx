@@ -18,7 +18,7 @@ import ContentComplianceNotice from "@/features/legal/components/ContentComplian
 import { ActiveCollectionNotice } from "@/components/items/ActiveCollectionNotice";
 import {
   normalizeSpeechSupportInput,
-  normalizeSpeechSupportMapInput,
+  compactIncorrectAnswersWithSpeech,
 } from "@/utils/itemSpeech";
 
 interface ApiValidationError {
@@ -162,10 +162,11 @@ function CreateItemEditor({
     e.preventDefault();
     setValidationError("");
 
-    const filteredIncorrectAnswers = formData.incorrectAnswers.filter(
-      (answer) => answer.trim() !== ""
+    const compacted = compactIncorrectAnswersWithSpeech(
+      formData.incorrectAnswers,
+      formData.incorrectAnswerSpeech
     );
-    if (filteredIncorrectAnswers.length === 0) {
+    if (compacted.incorrectAnswers.length === 0) {
       setValidationError("Please provide at least one incorrect answer");
       return;
     }
@@ -199,8 +200,8 @@ function CreateItemEditor({
       questionSpeech: normalizeSpeechSupportInput(formData.questionSpeech),
       correctAnswer: formData.correctAnswer.trim(),
       correctAnswerSpeech: normalizeSpeechSupportInput(formData.correctAnswerSpeech),
-      incorrectAnswers: filteredIncorrectAnswers,
-      incorrectAnswerSpeech: normalizeSpeechSupportMapInput(formData.incorrectAnswerSpeech),
+      incorrectAnswers: compacted.incorrectAnswers,
+      incorrectAnswerSpeech: compacted.incorrectAnswerSpeech,
       explanation: formData.explanation.trim(),
       keywords: otherKeywords.length > 0 ? otherKeywords : undefined,
       source: formData.source.trim() || undefined,
