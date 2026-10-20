@@ -1,4 +1,5 @@
 using FluentValidation;
+using FluentValidation.Results;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
 using Quizymode.Api.Data;
@@ -46,9 +47,9 @@ public static class CollectionItems
             RuleFor(x => x.ItemIds)
                 .NotNull()
                 .WithMessage("ItemIds is required.")
-                .NotEmpty()
+                .Must(ids => ids is null || ids.Count > 0)
                 .WithMessage("At least one ItemId is required.")
-                .Must(ids => ids.All(id => id != Guid.Empty))
+                .Must(ids => ids is null || ids.All(id => id != Guid.Empty))
                 .WithMessage("All ItemIds must be valid GUIDs.");
         }
     }
@@ -109,11 +110,18 @@ public static class CollectionItems
         private static async Task<IResult> BulkAddHandler(
             Guid collectionId,
             BulkAddRequest request,
+            IValidator<BulkAddRequest> validator,
             ApplicationDbContext db,
             IUserContext userContext,
             ILogger<Endpoint> logger,
             CancellationToken cancellationToken)
         {
+            ValidationResult validationResult = await validator.ValidateAsync(request, cancellationToken);
+            if (!validationResult.IsValid)
+            {
+                return Results.BadRequest(validationResult.Errors);
+            }
+
             Result<BulkAddResponse> result = await HandleBulkAddAsync(
                 collectionId,
                 request,

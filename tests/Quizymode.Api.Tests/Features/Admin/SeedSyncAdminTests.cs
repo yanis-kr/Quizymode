@@ -327,6 +327,80 @@ public sealed class SeedSyncAdminTests : ItemTestFixture
         existing.Id.Should().Be(conflictingItemId);
     }
 
+    // --- #273: ValidateManifest must not throw on null lists ---
+
+    private static SeedSyncAdmin.ManifestRequest Manifest(
+        List<SeedSyncAdmin.SeedItemRequest>? items,
+        List<SeedSyncAdmin.SeedCollectionRequest>? collections) =>
+        new("seed", items!, collections!);
+
+    private static List<string> ManifestErrors(SeedSyncAdmin.ManifestRequest manifest)
+    {
+        FluentValidation.Results.ValidationResult result = null!;
+        Action act = () => result = SeedSyncAdmin.ValidateManifest(manifest);
+        act.Should().NotThrow();
+        result.IsValid.Should().BeFalse();
+        return result.Errors.Select(e => e.ErrorMessage).ToList();
+    }
+
+    private static SeedSyncAdmin.SeedItemRequest ValidItem() =>
+        BuildItem(Guid.NewGuid(), "What is the capital of France?", "Paris", ["Lyon"]);
+
+    private static SeedSyncAdmin.SeedCollectionRequest ValidCollection() =>
+        new(Guid.NewGuid(), "Collection", null, [Guid.NewGuid()]);
+
+    [Fact]
+    public void ValidateManifest_NullItems_ReturnsOnlyItemsRequired()
+    {
+        ManifestErrors(Manifest(null, [ValidCollection()])).Should().Equal("Items is required.");
+    }
+
+    [Fact]
+    public void ValidateManifest_NullCollections_ReturnsOnlyCollectionsRequired()
+    {
+        ManifestErrors(Manifest([ValidItem()], null)).Should().Equal("Collections is required.");
+    }
+
+    [Fact]
+    public void ValidateManifest_BothNull_ReturnsBothRequiredMessages()
+    {
+        ManifestErrors(Manifest(null, null)).Should().BeEquivalentTo("Items is required.", "Collections is required.");
+    }
+
+    [Fact]
+    public void ValidateManifest_CollectionItemIdsNull_ReturnsOnlyItemIdsRequired()
+    {
+        SeedSyncAdmin.SeedCollectionRequest collection = new(Guid.NewGuid(), "Collection", null, null!);
+
+        ManifestErrors(Manifest([ValidItem()], [collection])).Should().Equal("Collection itemIds are required.");
+    }
+
+    [Fact]
+    public void ValidateManifest_CollectionJsonWithoutItemIds_ReturnsItemIdsRequired()
+    {
+        SeedSyncAdmin.SeedCollectionRequest? collection = System.Text.Json.JsonSerializer.Deserialize<SeedSyncAdmin.SeedCollectionRequest>(
+            "{\"collectionId\":\"11111111-1111-1111-1111-111111111111\",\"name\":\"Collection\"}",
+            new System.Text.Json.JsonSerializerOptions(System.Text.Json.JsonSerializerDefaults.Web));
+
+        ManifestErrors(Manifest([ValidItem()], [collection!])).Should().Equal("Collection itemIds are required.");
+    }
+
+    [Theory]
+    [InlineData(false)]
+    [InlineData(true)]
+    public void ValidateManifest_NullIncorrectAnswers_ReturnsIncorrectAnswersRequired(bool withSpeech)
+    {
+        SeedSyncAdmin.SeedItemRequest item = ValidItem() with
+        {
+            IncorrectAnswers = null!,
+            IncorrectAnswerSpeech = withSpeech
+                ? new Dictionary<int, ItemSpeechSupport> { [0] = new ItemSpeechSupport { Pronunciation = "x" } }
+                : null
+        };
+
+        ManifestErrors(Manifest([item], [ValidCollection()])).Should().Contain("IncorrectAnswers is required.");
+    }
+
     private SeedSyncAdmin.Request BuildRequest(
         List<SeedSyncAdmin.SeedItemRequest> items,
         List<SeedSyncAdmin.SeedCollectionRequest>? collections = null)
