@@ -56,7 +56,7 @@ public sealed class UserUpsertMiddlewareTests : DatabaseTestFixture
     /// NOTE: The middleware uses PostgreSQL-specific FOR UPDATE row locking which SQLite cannot execute.
     /// The middleware catches this exception gracefully and still calls next().
     /// Tests here verify the observable contract: next is always called, no unhandled exceptions.
-    /// Full user-creation/update path is tested in integration tests against a real PostgreSQL database.
+    /// The full user-creation/update/relink path is covered against real PostgreSQL in UserUpsertMiddlewarePostgresTests.
     /// </summary>
     [Fact]
     public async Task InvokeAsync_CallsNextDelegate_ForAuthenticatedUser()

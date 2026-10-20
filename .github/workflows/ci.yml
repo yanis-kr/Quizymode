@@ -232,6 +232,16 @@ jobs:
             --logger "trx;LogFileName=architecture-tests.trx" \
             --results-directory TestResults/architecture
 
+      - name: Pre-pull Postgres test image
+        # Testcontainers-backed tests (Category=Postgres) need this image; retry around registry rate limits.
+        run: |
+          for attempt in 1 2 3 4 5; do
+            docker pull postgres:17-alpine && exit 0
+            echo "Pull attempt $attempt failed; retrying in $((attempt * 15))s"
+            sleep $((attempt * 15))
+          done
+          exit 1
+
       - name: Run backend tests with coverage
         run: dotnet test Quizymode.sln --no-restore --verbosity normal --collect:"XPlat Code Coverage" --settings tests/Quizymode.Api.Tests/coverlet.runsettings --results-directory TestResults/coverage
 

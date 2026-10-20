@@ -48,7 +48,8 @@ internal sealed class JwtHttpTestHost : IAsyncDisposable
     public static async Task<JwtHttpTestHost> StartAsync(
         Func<ApplicationDbContext> createDbContext,
         Action<IServiceCollection> configureServices,
-        Action<IEndpointRouteBuilder> mapEndpoints)
+        Action<IEndpointRouteBuilder> mapEndpoints,
+        bool useUserUpsertMiddleware = false)
     {
         SymmetricSecurityKey signingKey = new(RandomNumberGenerator.GetBytes(32));
 
@@ -77,7 +78,16 @@ internal sealed class JwtHttpTestHost : IAsyncDisposable
         WebApplication app = builder.Build();
         app.UseAuthentication();
         app.UseAuthorization();
-        app.Use(UpsertUserAsync);
+        if (useUserUpsertMiddleware)
+        {
+            // Real production middleware; requires a PostgreSQL-backed ApplicationDbContext (FOR UPDATE, advisory locks).
+            app.UseMiddleware<UserUpsertMiddleware>();
+        }
+        else
+        {
+            app.Use(UpsertUserAsync);
+        }
+
         mapEndpoints(app);
         await app.StartAsync();
 
@@ -144,8 +154,9 @@ internal sealed class JwtHttpTestHost : IAsyncDisposable
         await _app.DisposeAsync();
     }
 
-    // Stand-in for UserUpsertMiddleware, whose row lock uses PostgreSQL-only SQL (FOR UPDATE) that the
-    // SQLite test database cannot run. Like the real middleware it maps the token subject to a Users
+    // Stand-in for UserUpsertMiddleware (default), whose row lock uses PostgreSQL-only SQL (FOR UPDATE) that the
+    // SQLite test database cannot run. Pass useUserUpsertMiddleware: true with a PostgreSQL-backed context to run
+    // the real middleware instead (see UserUpsertMiddlewarePostgresTests). Like the real middleware it maps the token subject to a Users
     // row and publishes the row id through HttpContext.Items["UserId"] for IUserContext.
     private static async Task UpsertUserAsync(HttpContext context, RequestDelegate next)
     {

@@ -80,9 +80,12 @@ describe("GoogleSignInSection", () => {
         "We couldn't start Google sign-in. Please try again, or use your email and password."
       )
     );
-    const button = screen.getByRole("button", { name: "Continue with Google" });
-    expect(button).toBeEnabled();
-    expect(button).toHaveFocus();
+    // Focus is restored in an effect after the re-render, so wait for it rather than racing it.
+    await waitFor(() => {
+      const button = screen.getByRole("button", { name: "Continue with Google" });
+      expect(button).toBeEnabled();
+      expect(button).toHaveFocus();
+    });
   });
 
   it("is not gated by anything else on the page and can be disabled by the page", () => {
