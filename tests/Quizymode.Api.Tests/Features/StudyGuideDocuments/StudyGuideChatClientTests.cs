@@ -41,7 +41,20 @@ public sealed class StudyGuideChatClientTests
 
     [Theory]
     [InlineData(401, "{}", LlmAttemptOutcome.AuthError, 401)]
-    [InlineData(403, "{}", LlmAttemptOutcome.AuthError, 403)]
+    [InlineData(403, "{}", LlmAttemptOutcome.ProviderError, 403)]
+    [InlineData(403, "{\"error\":{\"code\":\"unsupported_country_region_territory\",\"message\":\"Country, region, or territory not supported\",\"type\":\"request_forbidden\"}}", LlmAttemptOutcome.ProviderError, 403)]
+    [InlineData(403, "Project `proj_abc` does not have access to model `gpt-5`", LlmAttemptOutcome.ProviderError, 403)]
+    [InlineData(403, "<html>403 Forbidden</html>", LlmAttemptOutcome.ProviderError, 403)]
+    [InlineData(403, "Forbidden", LlmAttemptOutcome.ProviderError, 403)]
+    [InlineData(403, "{\"error\":{\"code\":403,\"message\":\"The caller does not have permission\",\"status\":\"PERMISSION_DENIED\"}}", LlmAttemptOutcome.ProviderError, 403)]
+    [InlineData(403, "Request blocked: restricted API key", LlmAttemptOutcome.AuthError, 403)]
+    [InlineData(403, "{\"error\":{\"code\":\"invalid_api_key\",\"message\":\"nope\"}}", LlmAttemptOutcome.AuthError, 403)]
+    [InlineData(403, "Method doesn't allow unregistered callers. Please use API Key or other form of API consumer identity", LlmAttemptOutcome.AuthError, 403)]
+    [InlineData(403, "Your API key was reported as leaked. Please use another API key.", LlmAttemptOutcome.AuthError, 403)]
+    [InlineData(403, "{\"error\":{\"details\":[{\"reason\":\"API_KEY_SERVICE_BLOCKED\"}]}}", LlmAttemptOutcome.AuthError, 403)]
+    [InlineData(403, "{\"error\":{\"status\":\"UNAUTHENTICATED\"}}", LlmAttemptOutcome.AuthError, 403)]
+    [InlineData(403, "Request had invalid authentication credentials", LlmAttemptOutcome.AuthError, 403)]
+    [InlineData(401, "boom", LlmAttemptOutcome.AuthError, 401)]
     [InlineData(400, GeminiBadKeyBody, LlmAttemptOutcome.AuthError, 400)]
     [InlineData(400, "{\"error\":\"unknown field\"}", LlmAttemptOutcome.ProviderError, 400)]
     [InlineData(500, "{\"error\":\"boom\"}", LlmAttemptOutcome.ProviderError, 500)]
@@ -135,6 +148,55 @@ public sealed class StudyGuideChatClientTests
     }
 
     [Fact]
+    public async Task ChatClient_Unauthorized401_WithRestrictedKeyText_DoesNotLogBody()
+    {
+        CapturingLogger logger = new();
+
+        await CallAsync((_, _) => Body(HttpStatusCode.Unauthorized, "Request blocked: restricted API key"), logger);
+
+        string log = string.Join('\n', logger.Messages);
+        log.Should().Contain("401").And.NotContain("restricted");
+    }
+
+    [Fact]
+    public async Task ChatClient_RegionBlock403_LogsTheBody()
+    {
+        CapturingLogger logger = new();
+        string body = "{\"error\":{\"message\":\"Country, region, or territory not supported\"}}";
+
+        await CallAsync((_, _) => Body(HttpStatusCode.Forbidden, body), logger);
+
+        string log = string.Join('\n', logger.Messages);
+        log.Should().Contain("OpenAI").And.Contain("403").And.Contain("Country, region, or territory not supported");
+    }
+
+    [Fact]
+    public async Task ChatClient_CredentialBody403_LogsRedactedBody()
+    {
+        CapturingLogger logger = new();
+        string body = "{\"error\":\"restricted API key sk-proj-AbCdEf123456 ****wxyz\"}";
+
+        await CallAsync((_, _) => Body(HttpStatusCode.Forbidden, body), logger);
+
+        string log = string.Join('\n', logger.Messages);
+        log.Should().Contain("rejected the API key (HTTP 403): ").And.Contain("restricted API key").And.Contain("[redacted]");
+        log.Should().NotContain("AbCdEf123456").And.NotContain("wxyz").And.NotContain("sk-proj-A");
+    }
+
+    [Fact]
+    public async Task ChatClient_Forbidden403_BearerAndUrlKeysAreNotLogged()
+    {
+        CapturingLogger logger = new();
+        string body = "denied Bearer eyJhbGciOi.payloadpart.sigpart at https://x.test/v1?key=AIzaSyD-ummy_Key1234567890&alt=json";
+
+        await CallAsync((_, _) => Body(HttpStatusCode.Forbidden, body), logger);
+
+        string log = string.Join('\n', logger.Messages);
+        log.Should().Contain("denied").And.Contain("alt=json");
+        log.Should().NotContain("eyJhbGciOi").And.NotContain("payloadpart").And.NotContain("AIzaSy").And.NotContain("ummy_Key");
+    }
+
+    [Fact]
     public async Task ChatClient_ServerErrorLog_RedactsKeyLikeStrings()
     {
         CapturingLogger logger = new();
@@ -153,6 +215,37 @@ public sealed class StudyGuideChatClientTests
     [InlineData("Your api key: ****abcd is invalid", "Your api key: [redacted] is invalid")]
     [InlineData("AIzaSyDUMMYKEY123456", "[redacted]")]
     [InlineData("quota exceeded for model", "quota exceeded for model")]
+    [InlineData("sk-abc123DEF456", "[redacted]")]
+    [InlineData("sk-proj-AbC_dEf-123456", "[redacted]")]
+    [InlineData("AIzaSyD-ummy_Key1234567890", "[redacted]")]
+    // Split so push-protection secret scanners don't flag this fake DeepSeek-shaped key.
+    [InlineData("DeepSeek sk-" + "0123456789abcdef" + "0123456789abcdef bad", "DeepSeek [redacted] bad")]
+    [InlineData("Authorization: Bearer eyJhbGciOi.payload.sig", "Authorization: [redacted]")]
+    [InlineData("Authorization: Bearer sk-abc123DEF456 end", "Authorization: [redacted] end")]
+    [InlineData("Authorization: Basic dXNlcjpwYXNz end", "Authorization: [redacted] end")]
+    [InlineData("got bearer abc.def now", "got Bearer [redacted] now")]
+    [InlineData("x-goog-api-key: AIzaSyD-ummy_Key1234567890", "x-goog-api-key: [redacted]")]
+    [InlineData("api-key: plainsecretvalue", "api-key: [redacted]")]
+    [InlineData("{\"api_key\":\"plainsecret123\"}", "{\"api_key\":\"[redacted]\"}")]
+    [InlineData("{\"apiKey\":\"x9y8z7\"}", "{\"apiKey\":\"[redacted]\"}")]
+    [InlineData("{\"token\":\"t0k3n\"}", "{\"token\":\"[redacted]\"}")]
+    [InlineData("{\"x-api-key\":\"hdrsecret\"}", "{\"x-api-key\":\"[redacted]\"}")]
+    [InlineData("{\"token\":\"ab\\\"cdsecret\"}", "{\"token\":\"[redacted]\"}")]
+    [InlineData("https://h.test/v1?key=plainsecret123&alt=json", "https://h.test/v1?key=[redacted]&alt=json")]
+    [InlineData("https://h.test/v1?api_key=zzz", "https://h.test/v1?api_key=[redacted]")]
+    [InlineData("https://h.test/v1?a=1&access_token=yyy", "https://h.test/v1?a=1&access_token=[redacted]")]
+    [InlineData("... key sk-ab", "... key [redacted]")]
+    [InlineData("prefix AIza", "prefix [redacted]")]
+    [InlineData("task-force quota exceeded for model gpt-5", "task-force quota exceeded for model gpt-5")]
+    [InlineData("Country, region, or territory not supported", "Country, region, or territory not supported")]
+    [InlineData("key rotation", "key rotation")]
+    [InlineData("Authorization: Token abcdef123 end", "Authorization: [redacted] end")]
+    [InlineData("Authorization: Digest username=abcdef123", "Authorization: [redacted]")]
+    [InlineData("Authorization: ApiKey abcdef123", "Authorization: [redacted]")]
+    [InlineData("echo {\\\"api_key\\\":\\\"plainsecret\\\"} end", "echo {\\\"api_key\\\":\\\"[redacted]\\\"} end")]
+    [InlineData("https://h.test/v1?x=1&amp;key=plainsecret&amp;alt=json", "https://h.test/v1?x=1&amp;key=[redacted]&amp;alt=json")]
+    [InlineData("https://h.test/v1?x=1&amp;api_key=zzz", "https://h.test/v1?x=1&amp;api_key=[redacted]")]
+    [InlineData("env KEY_sk-abcdef123456 set", "env KEY_[redacted] set")]
     public void ErrorExcerpt_RedactsKeyShapedText(string input, string expected)
     {
         OpenAiCompatibleChatClient.ErrorExcerpt(input).Should().Be(expected);
@@ -165,5 +258,39 @@ public sealed class StudyGuideChatClientTests
 
         // "sk-pr" ends exactly at character 300, so truncate-then-redact would leak the "sk-pr" prefix.
         OpenAiCompatibleChatClient.ErrorExcerpt(input).Should().NotContain("SECRET").And.NotContain("sk-");
+    }
+
+    [Theory]
+    [InlineData("sk-proj-", "SeCrEtKeYvAlUe99", "")]
+    [InlineData("sk-", "0123456789abcdefQWERTY", "")]
+    [InlineData("AIza", "SyD-ummy_Key1234567890", "")]
+    [InlineData("Bearer ", "eyJhbGciOi.pAyLoAd.sIgNaTuRe", "")]
+    [InlineData("?key=", "plainsecret123456", "&alt=json")]
+    [InlineData("{\"api_key\":\"", "plainsecret123456", "\"}")]
+    public void ErrorExcerpt_NeverLeaksASecretStraddlingTheCut(string prefix, string secret, string suffix)
+    {
+        int straddling = 0;
+        for (int pad = 250; pad <= 305; pad++)
+        {
+            int secretStart = pad + 1 + prefix.Length;
+            if (secretStart >= 300 || secretStart + secret.Length <= 300)
+            {
+                continue;
+            }
+
+            straddling++;
+            string input = string.Concat(Enumerable.Repeat("z. ", pad / 3 + 1))[..pad] + " " + prefix + secret + suffix;
+
+            string excerpt = OpenAiCompatibleChatClient.ErrorExcerpt(input);
+
+            excerpt.Length.Should().BeLessThanOrEqualTo(301);
+            for (int i = 0; i + 4 <= secret.Length; i++)
+            {
+                excerpt.Should().NotContain(secret.Substring(i, 4), $"pad {pad}");
+            }
+        }
+
+        // Guards against a row that never crosses character 300 and so proves nothing.
+        straddling.Should().BeGreaterThan(5);
     }
 }

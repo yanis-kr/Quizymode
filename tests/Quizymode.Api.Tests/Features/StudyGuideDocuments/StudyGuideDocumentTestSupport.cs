@@ -152,6 +152,9 @@ internal sealed class FakeVendorHandler(Func<string, string, HttpResponseMessage
             usage = new { prompt_tokens = 1200, completion_tokens = 800 }
         }));
 
+    public static HttpResponseMessage Json(HttpStatusCode statusCode, string body) =>
+        FakeDeepSeekHandler.Json(statusCode, body);
+
     public static HttpResponseMessage Status(HttpStatusCode statusCode) =>
         FakeDeepSeekHandler.Json(statusCode, "{\"error\":{\"message\":\"boom\",\"type\":\"api_error\"}}");
 }

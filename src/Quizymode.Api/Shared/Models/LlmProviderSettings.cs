@@ -34,7 +34,7 @@ public enum LlmAttemptOutcome
     LowQuoteYield = 4,
     InvalidJson = 5,
 
-    /// <summary>The vendor rejected our API key (HTTP 401/403, or 400 "API key not valid"). Stored as an int: never renumber.</summary>
+    /// <summary>The vendor rejected our API key (HTTP 401; 403 whose body indicates a key/credential problem; or 400 "API key not valid"). Stored as an int: never renumber.</summary>
     AuthError = 6
 }
 
