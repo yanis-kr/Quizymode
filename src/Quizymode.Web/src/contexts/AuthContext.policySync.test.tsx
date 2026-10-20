@@ -16,6 +16,7 @@ vi.mock("aws-amplify/auth", () => ({
   confirmSignUp: (...args: unknown[]) => mockConfirmSignUp(...args),
   autoSignIn: (...args: unknown[]) => mockAutoSignIn(...args),
   resendSignUpCode: vi.fn(),
+  signInWithRedirect: vi.fn(),
 }));
 
 vi.mock("@/api/users", () => ({

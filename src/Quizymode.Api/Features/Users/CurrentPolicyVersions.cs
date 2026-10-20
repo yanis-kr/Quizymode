@@ -9,7 +9,7 @@ namespace Quizymode.Api.Features.Users;
 public static class CurrentPolicyVersions
 {
     public const string TermsOfService = "2026-03-29";
-    public const string PrivacyPolicy = "2026-10-17";
+    public const string PrivacyPolicy = "2026-10-19";
 
     public static IReadOnlyList<(string PolicyType, string Version)> All { get; } =
     [

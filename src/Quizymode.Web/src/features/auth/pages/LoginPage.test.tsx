@@ -1,10 +1,11 @@
-import { beforeEach, describe, expect, it, vi } from "vitest";
+import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 import { fireEvent, render, screen, waitFor } from "@testing-library/react";
 import { MemoryRouter } from "react-router-dom";
 import { HelmetProvider } from "react-helmet-async";
 import LoginPage from "./LoginPage";
 
 const mockLogin = vi.fn();
+const mockSignInWithGoogle = vi.fn();
 const mockNavigate = vi.fn();
 let mockIsAuthenticated = false;
 let mockAuthLoading = false;
@@ -12,6 +13,7 @@ let mockAuthLoading = false;
 vi.mock("@/contexts/AuthContext", () => ({
   useAuth: () => ({
     login: mockLogin,
+    signInWithGoogle: mockSignInWithGoogle,
     isAuthenticated: mockIsAuthenticated,
     isLoading: mockAuthLoading,
   }),
@@ -155,5 +157,49 @@ describe("LoginPage", () => {
     // Navigate renders nothing itself in this test setup (no matching route),
     // but the form should not render for an already-authenticated visitor.
     expect(screen.queryByRole("heading", { name: /sign in/i })).not.toBeInTheDocument();
+  });
+
+  describe("Continue with Google", () => {
+    afterEach(() => {
+      vi.unstubAllEnvs();
+    });
+
+    it("is hidden, with no divider, when the flag is off", () => {
+      renderPage();
+      expect(screen.queryByRole("button", { name: /continue with google/i })).not.toBeInTheDocument();
+      expect(screen.queryByText("or")).not.toBeInTheDocument();
+    });
+
+    it("is shown between the sign-in button and the sign-up link when enabled", () => {
+      vi.stubEnv("VITE_GOOGLE_SIGNIN_ENABLED", "true");
+      vi.stubEnv("VITE_COGNITO_DOMAIN", "auth.quizymode.com");
+      renderPage();
+      expect(screen.getByRole("button", { name: "Continue with Google" })).toBeInTheDocument();
+      expect(screen.getByText("or")).toBeInTheDocument();
+    });
+
+    it("starts the Google redirect with the validated intent and disables password sign-in meanwhile", async () => {
+      vi.stubEnv("VITE_GOOGLE_SIGNIN_ENABLED", "true");
+      vi.stubEnv("VITE_COGNITO_DOMAIN", "auth.quizymode.com");
+      mockSignInWithGoogle.mockReturnValue(new Promise(() => undefined));
+      renderPage("/login?returnTo=%2Fitems%2Fadd&reason=create-content");
+
+      fireEvent.click(screen.getByRole("button", { name: "Continue with Google" }));
+
+      expect(mockSignInWithGoogle).toHaveBeenCalledWith({ returnTo: "/items/add", reason: "create-content" });
+      await waitFor(() => expect(screen.getByRole("button", { name: "Sign in" })).toBeDisabled());
+    });
+
+    it("shows a fixed error in an alert when the redirect cannot start", async () => {
+      vi.stubEnv("VITE_GOOGLE_SIGNIN_ENABLED", "true");
+      vi.stubEnv("VITE_COGNITO_DOMAIN", "auth.quizymode.com");
+      vi.spyOn(console, "error").mockImplementation(() => undefined);
+      mockSignInWithGoogle.mockRejectedValue(new Error("boom"));
+      renderPage();
+
+      fireEvent.click(screen.getByRole("button", { name: "Continue with Google" }));
+
+      expect(await screen.findByRole("alert")).toHaveTextContent("We couldn't start Google sign-in.");
+    });
   });
 });

@@ -8,6 +8,7 @@ import {
   parseAuthIntent,
 } from "@/features/auth/utils/authIntent";
 import { trackSignInCompleted } from "@/features/auth/utils/authAnalytics";
+import { GoogleSignInSection } from "@/features/auth/components/GoogleSignInSection";
 
 const LoginPage = () => {
   const navigate = useNavigate();
@@ -17,6 +18,7 @@ const LoginPage = () => {
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
   const [isLoading, setIsLoading] = useState(false);
+  const [isGoogleStarting, setIsGoogleStarting] = useState(false);
 
   const intent = parseAuthIntent(location.search);
   const signupHref = `${SIGNUP_PATH}${buildAuthIntentQuery(intent)}`;
@@ -60,7 +62,7 @@ const LoginPage = () => {
         </div>
         <form className="mt-8 space-y-6" onSubmit={handleSubmit}>
           {error && (
-            <div className="rounded-md bg-red-50 p-4">
+            <div role="alert" className="rounded-md bg-red-50 p-4">
               <div className="text-sm text-red-800">{error}</div>
             </div>
           )}
@@ -102,12 +104,19 @@ const LoginPage = () => {
           <div>
             <button
               type="submit"
-              disabled={isLoading}
+              disabled={isLoading || isGoogleStarting}
               className="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 disabled:opacity-50"
             >
               {isLoading ? "Signing in..." : "Sign in"}
             </button>
           </div>
+
+          <GoogleSignInSection
+            intent={intent}
+            disabled={isLoading}
+            onStartingChange={setIsGoogleStarting}
+            onError={setError}
+          />
 
           <div className="text-center text-sm">
             <span className="text-gray-600">Don't have an account? </span>

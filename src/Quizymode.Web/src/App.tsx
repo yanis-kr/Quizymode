@@ -7,6 +7,7 @@ import ExploreModePage from "./features/items/pages/ExploreModePage";
 import QuizModePage from "./features/items/pages/QuizModePage";
 import LoginPage from "./features/auth/pages/LoginPage";
 import SignUpPage from "./features/auth/pages/SignUpPage";
+import AuthCallbackPage from "./features/auth/pages/AuthCallbackPage";
 import ItemDetailPage from "./features/items/pages/ItemDetailPage";
 import CollectionsPage from "./features/collections/pages/CollectionsPage";
 import CollectionDetailPage from "./features/collections/pages/CollectionDetailPage";
@@ -114,6 +115,7 @@ function App() {
         <Route path="/daily" element={<DailyQuizPage />} />
         <Route path="/login" element={<LoginPage />} />
         <Route path="/signup" element={<SignUpPage />} />
+        <Route path="/auth/callback" element={<AuthCallbackPage />} />
         <Route element={<RequireAuthRoute />}>
           <Route path="/items/add" element={<AddItemsPage />} />
           <Route path="/items/bulk-create" element={<BulkCreateItemsPage />} />

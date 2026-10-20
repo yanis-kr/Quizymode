@@ -24,6 +24,23 @@ export function getPageViewSessionId(): string {
   }
 }
 
+/** Query parameters of the Cognito/OAuth redirect. They are credentials or error text and must never be recorded. */
+const OAUTH_PARAMS = ["code", "state", "error", "error_description"] as const;
+
+/** Removes OAuth redirect parameters from a query string (leading "?" kept when anything remains). */
+export function stripRedirectResultParams(queryString: string): string {
+  if (!queryString) return "";
+  const params = new URLSearchParams(queryString);
+  OAUTH_PARAMS.forEach((name) => params.delete(name));
+  const remaining = params.toString();
+  return remaining ? `?${remaining}` : "";
+}
+
+/** The OAuth landing page is never recorded. */
+export function isAuthCallbackPath(path: string): boolean {
+  return path === "/auth/callback" || path.startsWith("/auth/callback/");
+}
+
 export function shouldTrackPageView(path: string, queryString: string): boolean {
   const marker = `${path}${queryString}`;
   const now = Date.now();

@@ -1,0 +1,17 @@
+{
+  "name": "quizymode-cognito-presignup",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Cognito Pre sign-up trigger that links verified Google sign-ins to existing Quizymode password accounts (AUTH-003, #118).",
+  "type": "module",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "test": "node --test",
+    "package": "node scripts/package.mjs"
+  },
+  "devDependencies": {
+    "@aws-sdk/client-cognito-identity-provider": "^3.700.0"
+  }
+}

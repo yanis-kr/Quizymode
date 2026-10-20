@@ -92,6 +92,14 @@ dotnet test
 dotnet build src/Quizymode.Api/Quizymode.Api.csproj --configuration Release
 ```
 
+Cognito Pre sign-up Lambda tests (`infra/cognito-presignup/`, Node 22; run when that folder changes):
+
+```bash
+cd infra/cognito-presignup
+npm ci
+npm test
+```
+
 ## Pre-Push Verification
 
 Before pushing, run the repo pre-push verification workflow.

@@ -72,6 +72,18 @@ npm test -- --run
 
 A passing frontend build alone is not enough. Always run the frontend tests too when frontend source changed.
 
+### Cognito Pre sign-up Lambda
+
+If any file under `infra/cognito-presignup/` changed, run (Node 22):
+
+```bash
+cd infra/cognito-presignup
+npm ci
+npm test
+```
+
+CI runs the same job (`cognito-presignup` in `.github/workflows/ci.yml`). Deploying the Lambda stays a manual owner step.
+
 ### OpenAPI
 
 If API surface changed, regenerate and verify the checked-in OpenAPI artifact with:

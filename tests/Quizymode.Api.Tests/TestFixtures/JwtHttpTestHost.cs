@@ -93,7 +93,8 @@ internal sealed class JwtHttpTestHost : IAsyncDisposable
         string email,
         IReadOnlyCollection<string>? groups = null,
         string issuer = Issuer,
-        DateTime? expiresUtc = null)
+        DateTime? expiresUtc = null,
+        object? emailVerified = null)
     {
         DateTime expires = expiresUtc ?? DateTime.UtcNow.AddMinutes(30);
         Dictionary<string, object> claims = new()
@@ -102,6 +103,12 @@ internal sealed class JwtHttpTestHost : IAsyncDisposable
             ["email"] = email,
             ["token_use"] = "id"
         };
+        if (emailVerified is not null)
+        {
+            // Pass a bool for a JSON boolean claim or a string for a string claim; omit for an absent claim.
+            claims["email_verified"] = emailVerified;
+        }
+
         if (groups is { Count: > 0 })
         {
             claims["cognito:groups"] = groups.ToArray();

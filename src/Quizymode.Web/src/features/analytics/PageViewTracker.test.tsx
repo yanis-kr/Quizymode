@@ -104,4 +104,20 @@ describe("PageViewTracker", () => {
       expect(mockTrackPageView).not.toHaveBeenCalled();
     }
   );
+
+  it("never records OAuth redirect parameters on any page", async () => {
+    renderAt("/?code=secret-code&state=secret-state&error=access_denied&error_description=nope&ref=news");
+
+    await waitFor(() => expect(mockTrackPageView).toHaveBeenCalledTimes(1));
+    const request = mockTrackPageView.mock.calls[0][0];
+    expect(request.queryString).toBe("?ref=news");
+    expect(JSON.stringify(request)).not.toMatch(/secret-code|secret-state|error_description/);
+  });
+
+  it("does not record the /auth/callback landing page at all", async () => {
+    renderAt("/auth/callback?code=secret-code&state=secret-state");
+
+    await new Promise((resolve) => setTimeout(resolve, 20));
+    expect(mockTrackPageView).not.toHaveBeenCalled();
+  });
 });

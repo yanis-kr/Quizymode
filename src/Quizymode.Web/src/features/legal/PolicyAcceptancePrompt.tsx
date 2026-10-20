@@ -4,7 +4,9 @@ import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
 import { useAuth } from "@/contexts/AuthContext";
 import { usersApi, type PolicyStatusResponse } from "@/api/users";
 
-const LEGAL_PATHS = new Set(["/privacy", "/privacy-policy", "/terms", "/terms-of-service"]);
+// The legal pages must stay readable, and /auth/callback is a transient redirect landing that forwards to the page the
+// prompt should appear on.
+const LEGAL_PATHS = new Set(["/privacy", "/privacy-policy", "/terms", "/terms-of-service", "/auth/callback"]);
 
 const POLICY_LABELS: Record<string, string> = {
   TermsOfService: "Terms of Service",

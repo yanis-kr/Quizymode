@@ -30,6 +30,30 @@ jobs:
         shell: powershell
         run: .\scripts\automation\Run-Tests.ps1
 
+  cognito-presignup:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    defaults:
+      run:
+        working-directory: infra/cognito-presignup
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6
+
+      - name: Setup Node
+        uses: actions/setup-node@v6
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: infra/cognito-presignup/package-lock.json
+
+      - name: Install
+        run: npm ci
+
+      - name: Test Pre sign-up Lambda
+        run: npm test
+
   build-test-publish:
     runs-on: ubuntu-latest
     permissions:
