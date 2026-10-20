@@ -65,6 +65,19 @@ public sealed class DailyQuizTests : DatabaseTestFixture
     }
 
     [Fact]
+    public async Task Get_ExcludesItemsWithOnlyBlankOrCorrectEquivalentWrongAnswers()
+    {
+        Category category = await LearningLoopTestData.AddCategoryAsync(DbContext, "trivia");
+        Item eligible = await LearningLoopTestData.AddItemAsync(DbContext, category);
+        await LearningLoopTestData.AddItemAsync(DbContext, category, incorrect: new List<string> { "  ", "" });
+        await LearningLoopTestData.AddItemAsync(DbContext, category, incorrect: new List<string> { "right" });
+
+        Daily.DailyQuizResponse response = await GetAsync();
+
+        response.Items.Select(i => i.Id).Should().Equal(eligible.Id.ToString());
+    }
+
+    [Fact]
     public async Task Get_DoesNotRepeatItemsUsedWithin30Days()
     {
         List<Item> items = await SeedPublicItemsAsync(10);

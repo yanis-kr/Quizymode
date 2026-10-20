@@ -189,4 +189,55 @@ describe("UploadToCollectionPage", () => {
       expect(screen.getByText(/already uploaded/i)).toBeInTheDocument();
     });
   });
+  it("blocks submit with a row-numbered error when a row has no non-blank incorrect answer", async () => {
+    // AC 2.6.8
+    const user = userEvent.setup({ delay: null });
+    renderPage("/items/upload-to-collection?category=science&keywords=anatomy,muscular");
+    await screen.findByLabelText(/category \(required\)/i);
+    await waitFor(() => {
+      expect(screen.getByLabelText(/keyword rank 1/i)).toHaveValue("anatomy");
+    });
+
+    await user.click(screen.getByLabelText(/json array of items/i));
+    await user.paste(
+      JSON.stringify([
+        { question: "Q1", correctAnswer: "A", incorrectAnswers: ["W1"] },
+        { question: "Q2", correctAnswer: "A", incorrectAnswers: ["  ", ""] },
+        { question: "Q3", correctAnswer: "A" },
+      ])
+    );
+    await user.click(screen.getByRole("button", { name: /upload and open collection/i }));
+
+    expect(await screen.findByText(/items 2, 3: provide at least one non-blank incorrect answer/i)).toBeInTheDocument();
+    expect(itemsApi.uploadToCollection).not.toHaveBeenCalled();
+  });
+
+  it("trims incorrect answers and keeps at most four before uploading", async () => {
+    // AC 2.6.8
+    const user = userEvent.setup({ delay: null });
+    renderPage("/items/upload-to-collection?category=science&keywords=anatomy,muscular");
+    await screen.findByLabelText(/category \(required\)/i);
+    await waitFor(() => {
+      expect(screen.getByLabelText(/keyword rank 1/i)).toHaveValue("anatomy");
+    });
+
+    await user.click(screen.getByLabelText(/json array of items/i));
+    await user.paste(
+      JSON.stringify([
+        { question: "Q", correctAnswer: "A", incorrectAnswers: [" W1 ", "", "W2", "W3", "W4", "W5"] },
+      ])
+    );
+    await user.click(screen.getByRole("button", { name: /upload and open collection/i }));
+
+    await waitFor(() => expect(itemsApi.uploadToCollection).toHaveBeenCalledTimes(1));
+    const payload = vi.mocked(itemsApi.uploadToCollection).mock.calls[0][0];
+    expect(payload.items[0].incorrectAnswers).toEqual(["W1", "W2", "W3", "W4"]);
+  });
+
+  it("asks for 1-4 incorrect answers in the prompt", async () => {
+    // AC 2.6.8
+    renderPage("/items/upload-to-collection");
+    await screen.findByLabelText(/category \(required\)/i);
+    expect(document.body.textContent).toContain('1–4 "incorrectAnswers"');
+  });
 });

@@ -86,8 +86,7 @@ public static class AddItem
             RuleFor(x => x.IncorrectAnswers)
                 .NotNull()
                 .WithMessage("IncorrectAnswers is required")
-                .Must(answers => answers.Count >= 0 && answers.Count <= 4)
-                .WithMessage("IncorrectAnswers must have between 0 and 4 answers")
+                .MustHaveOneToFourNonBlank()
                 .ForEach(rule => rule
                     .MaximumLength(500)
                     .WithMessage("Each incorrect answer must not exceed 500 characters"));

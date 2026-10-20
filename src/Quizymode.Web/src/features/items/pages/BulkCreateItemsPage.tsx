@@ -92,6 +92,7 @@ const BulkCreateItemsPage = () => {
   const [pendingItems, setPendingItems] = useState<ParsedItem[]>([]);
   const [copySuccess, setCopySuccess] = useState(false);
   const [localError, setLocalError] = useState<string | null>(null);
+  const [skippedNoDistractors, setSkippedNoDistractors] = useState(0);
   const [resultModal, setResultModal] = useState<{
     isOpen: boolean;
     message: string;
@@ -205,7 +206,7 @@ Each item must be a JSON object with this exact shape:
 Requirements:
 - Return a single JSON array of items: [ { ... }, { ... }, ... ].
 - Do NOT include any explanations, prose, comments, Markdown, or code fences. Output raw JSON only.
-- Every item must have: "category", exact "navigationKeyword1", exact "navigationKeyword2", non-empty "question", non-empty "correctAnswer", 1-5 "incorrectAnswers", optional "explanation" and "source".
+- Every item must have: "category", exact "navigationKeyword1", exact "navigationKeyword2", non-empty "question", non-empty "correctAnswer", 1-4 "incorrectAnswers", optional "explanation" and "source".
 - Use "${primaryTopic.trim()}" for "navigationKeyword1" and "${subtopic.trim()}" for "navigationKeyword2" on every item. These fields must not be moved into "keywords".
 - If you include "source", it must be a direct URL to a reliable, verifiable source for that fact or question. Prefer official documentation, standards bodies, government/education sites, textbooks, or other authoritative references. Do not use the AI assistant name as the source.
 - Optional "keywords": up to 5 extra tags per item (letters, numbers, hyphens only; lowercase recommended). Suggest tags that help discovery (skills, subthemes, standards) for that specific question. Do not repeat the navigation topic path ("${navLine}") or the category name as tags; omit "keywords" or use [] if none.${reservedTagsHint}
@@ -256,6 +257,7 @@ Generate the JSON array only.`;
       const extrasFromText = parseExtraKeywordsFromText(extraKeywordsText);
 
       const items: ParsedItem[] = [];
+      let skippedCount = 0;
       for (let i = 0; i < parsed.length; i++) {
         const o = parsed[i] as Record<string, unknown>;
         const itemCategory = (o.category ?? "").toString().trim();
@@ -276,6 +278,10 @@ Generate the JSON array only.`;
         let incorrectAnswers: string[] = [];
         if (Array.isArray(o.incorrectAnswers)) {
           incorrectAnswers = o.incorrectAnswers.map((a) => String(a).trim()).filter(Boolean);
+        }
+        if (incorrectAnswers.length === 0) {
+          skippedCount += 1;
+          continue;
         }
         const explanation = (o.explanation ?? "").toString().trim();
         const rawSource = (o.source ?? "").toString().trim();
@@ -305,15 +311,20 @@ Generate the JSON array only.`;
         items.push({
           question,
           correctAnswer,
-          incorrectAnswers: incorrectAnswers.slice(0, 5),
+          incorrectAnswers: incorrectAnswers.slice(0, 4),
           explanation,
           source,
           keywords: keywords.length > 0 ? keywords : undefined,
           consolidatedKeywords,
         });
       }
+      setSkippedNoDistractors(skippedCount);
       if (items.length === 0) {
-        setLocalError("No valid items found in the response, or category did not match.");
+        setLocalError(
+          skippedCount > 0
+            ? `No valid items found: ${skippedCount} item(s) skipped because they have no incorrect answers (1-4 required).`
+            : "No valid items found in the response, or category did not match."
+        );
         return;
       }
       setPendingItems(items);
@@ -609,6 +620,11 @@ Generate the JSON array only.`;
                 <XMarkIcon className="h-4 w-4" /> Reject all
               </button>
             </div>
+            {skippedNoDistractors > 0 && (
+              <p className="text-sm text-amber-700 mb-2" role="status">
+                {skippedNoDistractors} item(s) skipped: each item needs 1-4 incorrect answers.
+              </p>
+            )}
             <ul className="space-y-3 divide-y divide-gray-200">
               {pendingItems.map((item, index) => (
                 <li key={index} className="pt-3 first:pt-0">
