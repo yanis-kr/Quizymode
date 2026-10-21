@@ -18,8 +18,10 @@ public static class DeleteCollection
                 .WithSummary("Delete a collection")
                 .RequireAuthorization()
                 .Produces(StatusCodes.Status204NoContent)
-                .Produces(StatusCodes.Status404NotFound)
-                .Produces(StatusCodes.Status400BadRequest);
+                .Produces(StatusCodes.Status400BadRequest)
+                .Produces(StatusCodes.Status401Unauthorized)
+                .Produces(StatusCodes.Status403Forbidden)
+                .Produces(StatusCodes.Status404NotFound);
         }
 
         private static async Task<IResult> Handler(
@@ -32,9 +34,11 @@ public static class DeleteCollection
 
             return result.Match(
                 () => Results.NoContent(),
-                failure => failure.Error.Type == ErrorType.NotFound
-                    ? Results.NotFound()
-                    : CustomResults.Problem(result));
+                failure => failure.Error.Code == CollectionWriteAccess.ForbiddenCode
+                    ? CollectionWriteAccess.ForbiddenResult(failure.Error)
+                    : failure.Error.Type == ErrorType.NotFound
+                        ? Results.NotFound()
+                        : CustomResults.Problem(result));
         }
     }
 
@@ -61,10 +65,11 @@ public static class DeleteCollection
                     Error.NotFound("Collection.NotFound", $"Collection with id {id} not found"));
             }
 
-            if (string.IsNullOrEmpty(userContext.UserId) || collection.CreatedBy != userContext.UserId)
+            Error? accessError = CollectionWriteAccess.Check(
+                collection, userContext, collectionId, "You can only delete your own collections.");
+            if (accessError is not null)
             {
-                return Result.Failure(
-                    Error.Validation("Collection.Forbidden", "You can only delete your own collections"));
+                return Result.Failure(accessError);
             }
 
             var bookmarks = await db.CollectionBookmarks

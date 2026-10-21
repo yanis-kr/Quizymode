@@ -18,6 +18,7 @@ public static class BookmarkCollection
                 .WithSummary("Bookmark a collection")
                 .RequireAuthorization()
                 .Produces(StatusCodes.Status204NoContent)
+                .Produces(StatusCodes.Status401Unauthorized)
                 .Produces(StatusCodes.Status404NotFound);
         }
 
@@ -50,8 +51,10 @@ public static class BookmarkCollection
     {
         try
         {
-            var exists = await db.Collections.AnyAsync(c => c.Id == collectionId, cancellationToken);
-            if (!exists)
+            Collection? collection = await db.Collections
+                .AsNoTracking()
+                .FirstOrDefaultAsync(c => c.Id == collectionId, cancellationToken);
+            if (collection is null || !GetCollectionById.CanAccess(collection, userContext))
             {
                 return Result.Failure(Error.NotFound("Collection.NotFound", "Collection not found"));
             }

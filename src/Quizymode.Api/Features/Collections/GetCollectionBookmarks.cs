@@ -24,6 +24,7 @@ public static class GetCollectionBookmarks
                 .WithSummary("List users who bookmarked this collection (owner only)")
                 .RequireAuthorization()
                 .Produces<Response>(StatusCodes.Status200OK)
+                .Produces(StatusCodes.Status401Unauthorized)
                 .Produces(StatusCodes.Status403Forbidden)
                 .Produces(StatusCodes.Status404NotFound);
         }
@@ -40,9 +41,11 @@ public static class GetCollectionBookmarks
             Result<Response> result = await HandleAsync(id, db, userContext, cancellationToken);
             return result.Match(
                 value => Results.Ok(value),
-                failure => failure.Error.Type == ErrorType.NotFound
-                    ? Results.NotFound()
-                    : CustomResults.Problem(result));
+                failure => failure.Error.Code == CollectionWriteAccess.ForbiddenCode
+                    ? CollectionWriteAccess.ForbiddenResult(failure.Error)
+                    : failure.Error.Type == ErrorType.NotFound
+                        ? Results.NotFound()
+                        : CustomResults.Problem(result));
         }
     }
 
@@ -60,9 +63,10 @@ public static class GetCollectionBookmarks
             if (collection is null)
                 return Result.Failure<Response>(Error.NotFound("Collection.NotFound", "Collection not found"));
 
-            if (collection.CreatedBy != userContext.UserId)
-                return Result.Failure<Response>(
-                    Error.Validation("Collection.Forbidden", "Only the collection owner can see who bookmarked it."));
+            Error? accessError = CollectionWriteAccess.Check(
+                collection, userContext, collectionId, "Only the collection owner can see who bookmarked it.");
+            if (accessError is not null)
+                return Result.Failure<Response>(accessError);
 
             var bookmarks = await db.CollectionBookmarks
                 .Where(b => b.CollectionId == collectionId)

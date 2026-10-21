@@ -66,6 +66,8 @@ public static class CollectionItems
                 .RequireAuthorization()
                 .Produces<CollectionItemResponse>(StatusCodes.Status201Created)
                 .Produces(StatusCodes.Status400BadRequest)
+                .Produces(StatusCodes.Status401Unauthorized)
+                .Produces(StatusCodes.Status403Forbidden)
                 .Produces(StatusCodes.Status404NotFound);
 
             app.MapPost("collections/{collectionId:guid}/items/bulk", BulkAddHandler)
@@ -75,6 +77,8 @@ public static class CollectionItems
                 .RequireAuthorization()
                 .Produces<BulkAddResponse>(StatusCodes.Status200OK)
                 .Produces(StatusCodes.Status400BadRequest)
+                .Produces(StatusCodes.Status401Unauthorized)
+                .Produces(StatusCodes.Status403Forbidden)
                 .Produces(StatusCodes.Status404NotFound);
 
             app.MapDelete("collections/{collectionId:guid}/items/{itemId:guid}", RemoveHandler)
@@ -83,6 +87,8 @@ public static class CollectionItems
                 .WithDescription("Removes a quiz item from a collection.")
                 .RequireAuthorization()
                 .Produces(StatusCodes.Status204NoContent)
+                .Produces(StatusCodes.Status401Unauthorized)
+                .Produces(StatusCodes.Status403Forbidden)
                 .Produces(StatusCodes.Status404NotFound);
         }
 
@@ -110,9 +116,11 @@ public static class CollectionItems
 
             return result.Match(
                 value => Results.Created($"/api/collections/{value.CollectionId}/items/{value.ItemId}", value),
-                failure => failure.Error.Type == ErrorType.NotFound
-                    ? Results.NotFound()
-                    : CustomResults.Problem(result, logger));
+                failure => failure.Error.Code == CollectionWriteAccess.ForbiddenCode
+                    ? CollectionWriteAccess.ForbiddenResult(failure.Error)
+                    : failure.Error.Type == ErrorType.NotFound
+                        ? Results.NotFound()
+                        : CustomResults.Problem(result, logger));
         }
 
         private static async Task<IResult> BulkAddHandler(
@@ -139,9 +147,11 @@ public static class CollectionItems
 
             return result.Match(
                 value => Results.Ok(value),
-                failure => failure.Error.Type == ErrorType.NotFound
-                    ? Results.NotFound()
-                    : CustomResults.Problem(result, logger));
+                failure => failure.Error.Code == CollectionWriteAccess.ForbiddenCode
+                    ? CollectionWriteAccess.ForbiddenResult(failure.Error)
+                    : failure.Error.Type == ErrorType.NotFound
+                        ? Results.NotFound()
+                        : CustomResults.Problem(result, logger));
         }
 
         private static async Task<IResult> RemoveHandler(
@@ -156,9 +166,11 @@ public static class CollectionItems
 
             return result.Match(
                 () => Results.NoContent(),
-                failure => failure.Error.Type == ErrorType.NotFound
-                    ? Results.NotFound()
-                    : CustomResults.Problem(result, logger));
+                failure => failure.Error.Code == CollectionWriteAccess.ForbiddenCode
+                    ? CollectionWriteAccess.ForbiddenResult(failure.Error)
+                    : failure.Error.Type == ErrorType.NotFound
+                        ? Results.NotFound()
+                        : CustomResults.Problem(result, logger));
         }
     }
 
@@ -186,10 +198,11 @@ public static class CollectionItems
                     Error.NotFound("Collection.NotFound", $"Collection with id {collectionId} not found"));
             }
 
-            if (collection.CreatedBy != userContext.UserId)
+            Error? accessError = CollectionWriteAccess.Check(
+                collection, userContext, collectionId, "Only the collection owner can add or remove items.");
+            if (accessError is not null)
             {
-                return Result.Failure<CollectionItemResponse>(
-                    Error.Validation("CollectionItems.Forbidden", "Only the collection owner can add or remove items."));
+                return Result.Failure<CollectionItemResponse>(accessError);
             }
 
             Item? item = await ItemVisibility.AddableToCollection(db, userContext.UserId)
@@ -266,10 +279,11 @@ public static class CollectionItems
                     Error.NotFound("Collection.NotFound", $"Collection with id {collectionId} not found"));
             }
 
-            if (collection.CreatedBy != userContext.UserId)
+            Error? accessError = CollectionWriteAccess.Check(
+                collection, userContext, collectionId, "Only the collection owner can add or remove items.");
+            if (accessError is not null)
             {
-                return Result.Failure<BulkAddResponse>(
-                    Error.Validation("CollectionItems.Forbidden", "Only the collection owner can add or remove items."));
+                return Result.Failure<BulkAddResponse>(accessError);
             }
 
             // Get existing collection items to skip duplicates
@@ -348,10 +362,11 @@ public static class CollectionItems
                     Error.NotFound("Collection.NotFound", $"Collection with id {collectionId} not found"));
             }
 
-            if (collection.CreatedBy != userContext.UserId)
+            Error? accessError = CollectionWriteAccess.Check(
+                collection, userContext, collectionId, "Only the collection owner can add or remove items.");
+            if (accessError is not null)
             {
-                return Result.Failure(
-                    Error.Validation("CollectionItems.Forbidden", "Only the collection owner can add or remove items."));
+                return Result.Failure(accessError);
             }
 
             CollectionItem? entity = await db.CollectionItems

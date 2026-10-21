@@ -11,14 +11,15 @@ namespace Quizymode.Api.Tests.Features.Collections;
 
 public sealed class DeleteCollectionTests : DatabaseTestFixture
 {
-    private async Task<Collection> CreateCollectionAsync(string userId)
+    private async Task<Collection> CreateCollectionAsync(string userId, bool isPublic = false)
     {
         Collection col = new()
         {
             Id = Guid.NewGuid(),
             Name = "Test",
             CreatedBy = userId,
-            CreatedAt = DateTime.UtcNow
+            CreatedAt = DateTime.UtcNow,
+            IsPublic = isPublic
         };
         DbContext.Collections.Add(col);
         await DbContext.SaveChangesAsync();
@@ -99,11 +100,13 @@ public sealed class DeleteCollectionTests : DatabaseTestFixture
         result.Error.Type.Should().Be(ErrorType.NotFound);
     }
 
-    [Fact]
-    public async Task HandleAsync_ReturnsValidation_WhenNotOwner()
+    [Theory]
+    [InlineData(false, "Collection.NotFound")]
+    [InlineData(true, "Collection.Forbidden")]
+    public async Task HandleAsync_NonOwner_ReturnsNotFoundForPrivate_ForbiddenForPublic(bool isPublic, string code)
     {
         string ownerId = Guid.NewGuid().ToString();
-        Collection col = await CreateCollectionAsync(ownerId);
+        Collection col = await CreateCollectionAsync(ownerId, isPublic);
 
         var result = await DeleteCollection.HandleAsync(
             col.Id.ToString(),
@@ -112,7 +115,27 @@ public sealed class DeleteCollectionTests : DatabaseTestFixture
             CancellationToken.None);
 
         result.IsFailure.Should().BeTrue();
-        result.Error.Code.Should().Be("Collection.Forbidden");
+        result.Error.Code.Should().Be(code);
+        DbContext.Collections.Should().ContainSingle(c => c.Id == col.Id);
+    }
+
+    [Theory]
+    [InlineData(null, false, "Collection.NotFound")]
+    [InlineData("", false, "Collection.NotFound")]
+    [InlineData(null, true, "Collection.Forbidden")]
+    [InlineData("", true, "Collection.Forbidden")]
+    public async Task HandleAsync_NullOrEmptyUserId_IsNonOwner(string? userId, bool isPublic, string code)
+    {
+        Collection col = await CreateCollectionAsync(string.Empty, isPublic);
+        Mock<IUserContext> ctx = new();
+        ctx.SetupGet(x => x.UserId).Returns(userId);
+        ctx.SetupGet(x => x.IsAuthenticated).Returns(true);
+
+        var result = await DeleteCollection.HandleAsync(col.Id.ToString(), DbContext, ctx.Object, CancellationToken.None);
+
+        result.IsFailure.Should().BeTrue();
+        result.Error.Code.Should().Be(code);
+        DbContext.Collections.Should().ContainSingle(c => c.Id == col.Id);
     }
 
     [Fact]

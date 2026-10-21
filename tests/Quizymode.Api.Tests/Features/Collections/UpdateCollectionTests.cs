@@ -11,7 +11,7 @@ namespace Quizymode.Api.Tests.Features.Collections;
 
 public sealed class UpdateCollectionTests : DatabaseTestFixture
 {
-    private async Task<Collection> CreateCollectionAsync(string userId, string name = "Original Name")
+    private async Task<Collection> CreateCollectionAsync(string userId, string name = "Original Name", bool isPublic = false)
     {
         Collection col = new()
         {
@@ -20,7 +20,7 @@ public sealed class UpdateCollectionTests : DatabaseTestFixture
             Description = "Original desc",
             CreatedBy = userId,
             CreatedAt = DateTime.UtcNow,
-            IsPublic = false
+            IsPublic = isPublic
         };
         DbContext.Collections.Add(col);
         await DbContext.SaveChangesAsync();
@@ -31,6 +31,7 @@ public sealed class UpdateCollectionTests : DatabaseTestFixture
     {
         Mock<IUserContext> ctx = new();
         ctx.SetupGet(x => x.UserId).Returns(userId);
+        ctx.SetupGet(x => x.IsAuthenticated).Returns(true);
         return ctx;
     }
 
@@ -99,11 +100,13 @@ public sealed class UpdateCollectionTests : DatabaseTestFixture
         result.Error.Type.Should().Be(ErrorType.NotFound);
     }
 
-    [Fact]
-    public async Task HandleAsync_ReturnsValidation_WhenNotOwner()
+    [Theory]
+    [InlineData(false, "Collection.NotFound")]
+    [InlineData(true, "Collection.Forbidden")]
+    public async Task HandleAsync_NonOwner_ReturnsNotFoundForPrivate_ForbiddenForPublic(bool isPublic, string code)
     {
         string ownerId = Guid.NewGuid().ToString();
-        Collection col = await CreateCollectionAsync(ownerId);
+        Collection col = await CreateCollectionAsync(ownerId, isPublic: isPublic);
 
         var result = await UpdateCollection.HandleAsync(
             col.Id.ToString(),
@@ -113,7 +116,28 @@ public sealed class UpdateCollectionTests : DatabaseTestFixture
             CancellationToken.None);
 
         result.IsFailure.Should().BeTrue();
-        result.Error.Code.Should().Be("Collection.Forbidden");
+        result.Error.Code.Should().Be(code);
+        DbContext.Entry(col).Reload();
+        col.Name.Should().Be("Original Name");
+    }
+
+    [Theory]
+    [InlineData(null, false, "Collection.NotFound")]
+    [InlineData("", false, "Collection.NotFound")]
+    [InlineData(null, true, "Collection.Forbidden")]
+    [InlineData("", true, "Collection.Forbidden")]
+    public async Task HandleAsync_NullOrEmptyUserId_IsNonOwner(string? userId, bool isPublic, string code)
+    {
+        Collection col = await CreateCollectionAsync(string.Empty, isPublic: isPublic);
+        Mock<IUserContext> ctx = new();
+        ctx.SetupGet(x => x.UserId).Returns(userId);
+        ctx.SetupGet(x => x.IsAuthenticated).Returns(true);
+
+        var result = await UpdateCollection.HandleAsync(
+            col.Id.ToString(), new UpdateCollection.Request("Hijacked Name", null, null), DbContext, ctx.Object, CancellationToken.None);
+
+        result.IsFailure.Should().BeTrue();
+        result.Error.Code.Should().Be(code);
     }
 
     [Fact]

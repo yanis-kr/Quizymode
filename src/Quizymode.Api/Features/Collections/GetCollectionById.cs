@@ -101,13 +101,18 @@ public static class GetCollectionById
         IUserContext userContext,
         CancellationToken cancellationToken)
     {
+        return Task.FromResult(CanAccess(collection, userContext));
+    }
+
+    internal static bool CanAccess(Collection collection, IUserContext userContext)
+    {
         if (collection.IsPublic)
-            return Task.FromResult(true);
+            return true;
 
         if (!userContext.IsAuthenticated || string.IsNullOrEmpty(userContext.UserId))
-            return Task.FromResult(false);
+            return false;
 
-        return Task.FromResult(collection.CreatedBy == userContext.UserId);
+        return collection.CreatedBy == userContext.UserId;
     }
 
     public sealed class FeatureRegistration : IFeatureRegistration
