@@ -1,3 +1,4 @@
+import { getIncorrectAnswerConflict } from "@/utils/incorrectAnswerRules";
 import * as React from "react";
 import { useMutation, useQuery } from "@tanstack/react-query";
 import { useNavigate, useSearchParams, Link } from "react-router-dom";
@@ -194,6 +195,15 @@ const UploadToCollectionPage = () => {
     if (missingRows.length > 0) {
       setParseError(
         `Item${missingRows.length > 1 ? "s" : ""} ${missingRows.join(", ")}: provide at least one non-blank incorrect answer (1-4).`
+      );
+      return;
+    }
+    const conflictRows = mapped
+      .map((row, index) => (getIncorrectAnswerConflict(row.correctAnswer, row.incorrectAnswers) ? index + 1 : 0))
+      .filter((n) => n > 0);
+    if (conflictRows.length > 0) {
+      setParseError(
+        `Item${conflictRows.length > 1 ? "s" : ""} ${conflictRows.join(", ")}: incorrect answers must be different from each other and from the correct answer.`
       );
       return;
     }

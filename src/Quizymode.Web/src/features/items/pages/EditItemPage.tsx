@@ -10,6 +10,7 @@ import ErrorMessage from "@/components/ErrorMessage";
 import { ItemForm } from "@/components/items/ItemForm";
 import type { KeywordRequest } from "@/types/api";
 import { validateNavigationKeywordName } from "@/utils/navigationKeywordRules";
+import { getIncorrectAnswerConflict } from "@/utils/incorrectAnswerRules";
 import { useExtraKeywordAutocompleteSource } from "@/hooks/useExtraKeywordAutocompleteSource";
 import {
   normalizeSpeechSupportInput,
@@ -161,6 +162,11 @@ const EditItemPage = () => {
     );
     if (compacted.incorrectAnswers.length === 0) {
       setValidationError("Please provide at least one incorrect answer");
+      return;
+    }
+    const conflict = getIncorrectAnswerConflict(formData.correctAnswer, compacted.incorrectAnswers);
+    if (conflict) {
+      setValidationError(conflict);
       return;
     }
     if (!formData.navigationRank1.trim() || !formData.navigationRank2.trim()) {

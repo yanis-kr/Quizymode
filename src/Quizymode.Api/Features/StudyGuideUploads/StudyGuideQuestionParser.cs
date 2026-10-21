@@ -16,7 +16,8 @@ public sealed record StudyGuideGeneratedQuestion(
 /// <summary>
 /// Strictly validates the model reply: valid JSON, either <c>{"questions":[...]}</c> or a bare array, 1..max items, and
 /// every item must pass the same per-item rules as the manual study guide import (<see cref="StudyGuideItemValidator"/>).
-/// Any violation fails the whole upload rather than silently keeping a partial set.
+/// Any violation fails the whole upload, except that duplicate, blank and correct-equal incorrect answers are cleaned
+/// out of model output and a question left with no incorrect answers is dropped (#276).
 /// </summary>
 internal static class StudyGuideQuestionParser
 {
@@ -67,9 +68,10 @@ internal static class StudyGuideQuestionParser
             elements,
             categoryName,
             [navigationKeyword1, navigationKeyword2],
-            []);
+            [],
+            cleanIncorrectAnswers: true);
 
-        if (!isValid || items is null || items.Count != elements.Count)
+        if (!isValid || items is null || items.Count == 0)
         {
             string detail = messages.Count > 0 ? string.Join(" ", messages.Take(3)) : "Generated questions were invalid.";
             return Invalid($"Generated questions failed validation. {detail}");

@@ -40,6 +40,24 @@ public sealed class StudyGuideAcceptTests : StudyGuideDocumentFixture
     private static AcceptStudyGuideCandidates.CandidateEdit Pick(StudyGuideDocumentContracts.Candidate candidate) =>
         new(Guid.Parse(candidate.Id), null, null, null, null);
 
+    [Theory]
+    [InlineData("Paris", "paris", "Incorrect answers must be different from the correct answer.")]
+    [InlineData("Paris", "Nice,nice", "Incorrect answers must be different from each other.")]
+    public async Task Accept_EditedConflictingIncorrectAnswers_IsInvalidEditAndSavesNothing(string correct, string incorrectCsv, string message)
+    {
+        StudyGuideDocumentContracts.Document document = await GeneratedDocumentAsync();
+        StudyGuideDocumentContracts.Candidate candidate = document.Sections[0].Candidates[0];
+
+        Result<AcceptStudyGuideCandidates.Response?> result = await AcceptAsync(
+            document.Id,
+            [new AcceptStudyGuideCandidates.CandidateEdit(Guid.Parse(candidate.Id), null, correct, incorrectCsv.Split(',').ToList(), null)]);
+
+        result.IsFailure.Should().BeTrue();
+        result.Error.Code.Should().Be("StudyGuideDocument.InvalidEdit");
+        result.Error.Description.Should().Contain(message);
+        (await DbContext.Items.CountAsync()).Should().Be(0);
+    }
+
     [Fact]
     public async Task Accept_CreatesPrivateItemsAndALinkSharedCollectionNotInDiscover()
     {

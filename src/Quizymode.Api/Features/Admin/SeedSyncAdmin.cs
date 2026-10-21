@@ -326,6 +326,7 @@ public static class SeedSyncAdmin
                 .NotNull()
                 .WithMessage("IncorrectAnswers is required.")
                 .MustHaveOneToFourNonBlank()
+                .MustHaveDistinctIncorrectAnswers(x => x.CorrectAnswer)
                 .ForEach(rule => rule
                     .NotEmpty()
                     .WithMessage("Incorrect answers cannot be empty.")

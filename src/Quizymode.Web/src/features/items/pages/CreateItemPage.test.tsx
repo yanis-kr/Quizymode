@@ -195,4 +195,27 @@ describe("CreateItemPage", () => {
       1: { pronunciation: "bownz", languageCode: "en-US" },
     });
   });
+
+  it.each([
+    ["equals the correct answer", ["tendons", ""], "Incorrect answers must be different from the correct answer."],
+    ["repeats another incorrect answer", ["Ligaments", " ligaments "], "Incorrect answers must be different from each other."],
+  ])("blocks submit when an incorrect answer %s (#276)", async (_label, answers, message) => {
+    // AC 2.1.8
+    const user = userEvent.setup({ delay: null });
+
+    renderPage("/add-new-item?category=science&keywords=anatomy,muscular");
+
+    await waitFor(() => expect(screen.getByLabelText(/subtopic/i)).toHaveValue("muscular"));
+
+    await user.type(getFieldControl("Question *"), "What connects muscle to bone?");
+    await user.type(getFieldControl("Correct Answer *"), "Tendons");
+    for (let i = 0; i < answers.length; i++) {
+      if (answers[i]) await user.type(screen.getByPlaceholderText(`Incorrect answer ${i + 1}`), answers[i]);
+    }
+
+    await user.click(screen.getByRole("button", { name: /create item/i }));
+
+    expect(await screen.findByText(message)).toBeInTheDocument();
+    expect(itemsApi.create).not.toHaveBeenCalled();
+  });
 });

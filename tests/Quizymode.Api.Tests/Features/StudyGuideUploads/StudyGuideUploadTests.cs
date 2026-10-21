@@ -399,4 +399,72 @@ public sealed class StudyGuideUploadTests : DatabaseTestFixture
         Result<AcceptStudyGuideUpload.Response?> again = await Accept(UserId);
         again.Error.Code.Should().Be("StudyGuideUpload.AlreadyAccepted");
     }
+
+    private async Task<Result<AcceptStudyGuideUpload.Response?>> AcceptStoredQuestionsAsync(
+        List<StudyGuideGeneratedQuestion> stored)
+    {
+        Result<CreateStudyGuideUpload.Response> created = await CreateAsync();
+        Guid id = Guid.Parse(created.Value.Id);
+
+        Category category = new() { Id = Guid.NewGuid(), Name = "Science", CreatedBy = "seed", CreatedAt = DateTime.UtcNow };
+        Keyword primary = new() { Id = Guid.NewGuid(), Name = "biology", Slug = "biology", CreatedBy = "seed", CreatedAt = DateTime.UtcNow };
+        Keyword secondary = new() { Id = Guid.NewGuid(), Name = "plants", Slug = "plants", CreatedBy = "seed", CreatedAt = DateTime.UtcNow };
+        DbContext.Categories.Add(category);
+        DbContext.Keywords.AddRange(primary, secondary);
+        DbContext.KeywordRelations.AddRange(
+            new KeywordRelation { Id = Guid.NewGuid(), CategoryId = category.Id, ChildKeywordId = primary.Id, CreatedAt = DateTime.UtcNow },
+            new KeywordRelation { Id = Guid.NewGuid(), CategoryId = category.Id, ParentKeywordId = primary.Id, ChildKeywordId = secondary.Id, CreatedAt = DateTime.UtcNow });
+
+        StudyGuideUpload upload = await DbContext.StudyGuideUploads.SingleAsync();
+        upload.Status = StudyGuideUploadStatus.Completed;
+        upload.GeneratedQuestionsJson = System.Text.Json.JsonSerializer.Serialize(stored, StudyGuideUploadProcessor.QuestionJsonOptions);
+        await DbContext.SaveChangesAsync();
+
+        Mock<ITaxonomyItemCategoryResolver> resolver = new();
+        resolver
+            .Setup(x => x.ResolveForItemAsync(It.IsAny<string>(), It.IsAny<CancellationToken>()))
+            .ReturnsAsync(Result.Success(category));
+        Mock<IUserContext> userContext = new();
+        userContext.Setup(x => x.UserId).Returns(UserId);
+        userContext.Setup(x => x.IsAuthenticated).Returns(true);
+
+        return await AcceptStudyGuideUpload.HandleAsync(
+            id,
+            new AcceptStudyGuideUpload.Request(null),
+            DbContext,
+            userContext.Object,
+            new SimHashService(),
+            resolver.Object,
+            Taxonomy(),
+            Mock.Of<IAuditService>(),
+            CancellationToken.None);
+    }
+
+    [Fact]
+    public async Task Accept_CleansStoredDistractors_AndSkipsQuestionsWithNone()
+    {
+        Result<AcceptStudyGuideUpload.Response?> result = await AcceptStoredQuestionsAsync(
+        [
+            new("Legacy keep?", "Paris", ["Lyon", "lyon", "paris"], null),
+            new("Legacy drop?", "Rome", ["rome", " ROME "], null),
+        ]);
+
+        result.IsSuccess.Should().BeTrue(result.IsFailure ? result.Error.Description : "");
+        result.Value!.CreatedCount.Should().Be(1);
+        await using ApplicationDbContext verify = CreateDbContext();
+        Item item = await verify.Items.SingleAsync();
+        item.Question.Should().Be("Legacy keep?");
+        item.IncorrectAnswers.Should().Equal("Lyon");
+    }
+
+    [Fact]
+    public async Task Accept_AllSelectedQuestionsLackDistractors_FailsAndCreatesNothing()
+    {
+        Result<AcceptStudyGuideUpload.Response?> result = await AcceptStoredQuestionsAsync(
+            [new("Legacy drop?", "Rome", ["rome"], null)]);
+
+        result.IsFailure.Should().BeTrue();
+        (await DbContext.Items.CountAsync()).Should().Be(0);
+        (await DbContext.StudyGuideUploads.SingleAsync()).AcceptedUtc.Should().BeNull();
+    }
 }

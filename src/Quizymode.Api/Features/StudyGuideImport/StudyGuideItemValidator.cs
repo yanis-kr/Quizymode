@@ -1,6 +1,7 @@
 using System.Text.Json;
 using System.Text.Json.Serialization;
 using Quizymode.Api.Features.Items.AddBulk;
+using Quizymode.Api.Shared.Helpers;
 
 namespace Quizymode.Api.Features.StudyGuideImport;
 
@@ -35,7 +36,8 @@ internal static class StudyGuideItemValidator
         List<JsonElement> array,
         string categoryName,
         IReadOnlyList<string> navigationKeywordPath,
-        List<AddItemsBulk.KeywordRequest> sessionKeywords)
+        List<AddItemsBulk.KeywordRequest> sessionKeywords,
+        bool cleanIncorrectAnswers = false)
     {
         string nav1 = navigationKeywordPath.Count > 0 ? navigationKeywordPath[0] : "";
         string nav2 = navigationKeywordPath.Count > 1 ? navigationKeywordPath[1] : "";
@@ -90,9 +92,21 @@ internal static class StudyGuideItemValidator
                 messages.Add($"Item {index + 1}: correctAnswer must not exceed 500 characters.");
             }
 
+            // AI-generated output only (#276): drop blank, duplicate and correct-equal distractors instead of rejecting.
+            bool dropQuestion = false;
+            if (cleanIncorrectAnswers && incorrectAnswers is not null)
+            {
+                incorrectAnswers = QuizPlayability.GetDistractors(correctAnswer, incorrectAnswers);
+                dropQuestion = incorrectAnswers.Count == 0;
+            }
+
             if (incorrectAnswers is null)
             {
                 messages.Add($"Item {index + 1}: incorrectAnswers is required.");
+            }
+            else if (dropQuestion)
+            {
+                // Nothing playable remains; the question is skipped below unless it has other errors.
             }
             else if (incorrectAnswers.Count < 1 || incorrectAnswers.Count > 4)
             {
@@ -106,6 +120,14 @@ internal static class StudyGuideItemValidator
             {
                 messages.Add($"Item {index + 1}: each incorrect answer must not exceed 500 characters.");
             }
+            else
+            {
+                string? conflict = QuizPlayability.GetIncorrectAnswerConflict(correctAnswer, incorrectAnswers);
+                if (conflict is not null)
+                {
+                    messages.Add($"Item {index + 1}: {char.ToLowerInvariant(conflict[0])}{conflict[1..]}");
+                }
+            }
 
             if (explanation is not null && explanation.Length > 4000)
             {
@@ -118,6 +140,11 @@ internal static class StudyGuideItemValidator
             }
 
             if (messages.Any(message => message.StartsWith($"Item {index + 1}:", StringComparison.Ordinal)))
+            {
+                continue;
+            }
+
+            if (dropQuestion)
             {
                 continue;
             }

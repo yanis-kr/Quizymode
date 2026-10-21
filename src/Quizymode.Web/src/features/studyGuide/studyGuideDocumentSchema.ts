@@ -1,4 +1,8 @@
 import { z } from "zod";
+import {
+  INCORRECT_MATCHES_CORRECT_MESSAGE,
+  getIncorrectAnswerConflict,
+} from "@/utils/incorrectAnswerRules";
 import { STUDY_GUIDE_UPLOAD_MAX_KEYWORDS, utf8ByteLength } from "./studyGuideUploadSchema";
 
 export type StudyGuideInputMode = "file" | "text";
@@ -127,6 +131,18 @@ export const candidateEditSchema = z.object({
     .min(1, "Add at least one wrong answer.")
     .max(4, "Add at most four wrong answers."),
   explanation: z.string().trim().max(3500, "Explanation must be 3500 characters or less."),
+}).superRefine((edit, ctx) => {
+  const conflict = getIncorrectAnswerConflict(edit.correctAnswer, edit.incorrectAnswers);
+  if (conflict) {
+    ctx.addIssue({
+      code: "custom",
+      path: ["incorrectAnswers"],
+      message:
+        conflict === INCORRECT_MATCHES_CORRECT_MESSAGE
+          ? "Wrong answers must be different from the correct answer."
+          : "Wrong answers must be different from each other.",
+    });
+  }
 });
 
 export type CandidateEdit = z.infer<typeof candidateEditSchema>;

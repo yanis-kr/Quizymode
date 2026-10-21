@@ -57,4 +57,18 @@ public sealed class AddItemsBulkHttpTests : DatabaseTestFixture, IAsyncLifetime
         body.Should().Contain(expectedMessage);
         DbContext.Items.Count().Should().Be(0);
     }
+
+    [Theory]
+    [InlineData("[\"a\"]", "Incorrect answers must be different from the correct answer.")]
+    [InlineData("[\"B\",\"b\"]", "Incorrect answers must be different from each other.")]
+    public async Task PostBulk_ConflictingIncorrectAnswers_Returns400AndCreatesNothing(string incorrect, string expectedMessage)
+    {
+        string json = "{" + Head + ",\"keywords\":[],\"items\":[{\"question\":\"Q?\",\"correctAnswer\":\"A\",\"incorrectAnswers\":" + incorrect + ",\"explanation\":\"\"}]}";
+
+        (HttpStatusCode status, string body) = await PostAsync(json);
+
+        status.Should().Be(HttpStatusCode.BadRequest);
+        body.Should().Contain(expectedMessage);
+        DbContext.Items.Count().Should().Be(0);
+    }
 }

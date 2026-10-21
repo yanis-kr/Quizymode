@@ -122,6 +122,7 @@ public static class AddItemsBulk
                 .NotNull()
                 .WithMessage("IncorrectAnswers is required")
                 .MustHaveOneToFourNonBlank()
+                .MustHaveDistinctIncorrectAnswers(x => x.CorrectAnswer)
                 .ForEach(rule => rule
                     .MaximumLength(500)
                     .WithMessage("Each incorrect answer must not exceed 500 characters"));

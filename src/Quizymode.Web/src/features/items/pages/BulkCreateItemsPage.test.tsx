@@ -120,4 +120,51 @@ describe("BulkCreateItemsPage incorrect answers (#250)", () => {
 
     expect(await screen.findByText(/1 item\(s\) skipped because they have no incorrect answers/i)).toBeInTheDocument();
   });
+
+  it("skips rows whose incorrect answers repeat or equal the correct answer", async () => {
+    // AC 2.2.6.8 (#276)
+    const user = userEvent.setup({ delay: null });
+    await goToPaste(user);
+    await user.click(screen.getByRole("button", { name: /i pasted the response/i }));
+
+    const base = { category: "science", navigationKeyword1: "anatomy", navigationKeyword2: "muscular" };
+    await user.click(screen.getByRole("textbox"));
+    await user.paste(
+      JSON.stringify([
+        { ...base, question: "Keep?", correctAnswer: "Yes", incorrectAnswers: ["No", "Maybe"] },
+        { ...base, question: "Repeats?", correctAnswer: "Yes", incorrectAnswers: ["No", " no "] },
+        { ...base, question: "EqualsCorrect?", correctAnswer: "Yes", incorrectAnswers: ["YES", "No"] },
+      ])
+    );
+    await user.click(screen.getByRole("button", { name: /import & review/i }));
+
+    expect(await screen.findByText("Keep?")).toBeInTheDocument();
+    expect(screen.queryByText("Repeats?")).not.toBeInTheDocument();
+    expect(screen.queryByText("EqualsCorrect?")).not.toBeInTheDocument();
+    expect(
+      screen.getByText(
+        /2 item\(s\) skipped: incorrect answers must be different from each other and from the correct answer/i
+      )
+    ).toBeInTheDocument();
+  });
+
+  it("shows an error when every row is excluded for repeated incorrect answers", async () => {
+    // AC 2.2.6.8 (#276)
+    const user = userEvent.setup({ delay: null });
+    await goToPaste(user);
+    await user.click(screen.getByRole("button", { name: /i pasted the response/i }));
+    await user.click(screen.getByRole("textbox"));
+    await user.paste(
+      JSON.stringify([
+        { category: "science", question: "Q", correctAnswer: "A", incorrectAnswers: ["B", "b"] },
+      ])
+    );
+    await user.click(screen.getByRole("button", { name: /import & review/i }));
+
+    expect(
+      await screen.findByText(
+        /No valid items found: 1 item\(s\) skipped because their incorrect answers repeat each other or the correct answer/i
+      )
+    ).toBeInTheDocument();
+  });
 });
