@@ -7,6 +7,7 @@ import EditItemPage from "./EditItemPage";
 import { itemsApi } from "@/api/items";
 import { taxonomyApi } from "@/api/taxonomy";
 import { useAuth } from "@/contexts/AuthContext";
+import { useCurrentUserIdState } from "@/hooks/useCurrentUserId";
 import { useExtraKeywordAutocompleteSource } from "@/hooks/useExtraKeywordAutocompleteSource";
 
 vi.mock("@/contexts/AuthContext", () => ({
@@ -32,6 +33,10 @@ vi.mock("@/hooks/useExtraKeywordAutocompleteSource", () => ({
     extraKeywordAutocompleteSource: [],
     itemTagKeywordsLoading: false,
   })),
+}));
+
+vi.mock("@/hooks/useCurrentUserId", () => ({
+  useCurrentUserIdState: vi.fn(),
 }));
 
 vi.mock("@/components/LoadingSpinner", () => ({ default: () => <div>Loading...</div> }));
@@ -123,6 +128,12 @@ describe("EditItemPage", () => {
       isAdmin: false,
     } as ReturnType<typeof useAuth>);
 
+    vi.mocked(useCurrentUserIdState).mockReturnValue({
+      userId: "user-1",
+      isLoading: false,
+      isError: false,
+    });
+
     vi.mocked(taxonomyApi.getAll).mockResolvedValue(
       taxonomyMock as Awaited<ReturnType<typeof taxonomyApi.getAll>>
     );
@@ -170,6 +181,84 @@ describe("EditItemPage", () => {
     const privateCheckbox = screen.getByRole("checkbox", { name: /private item/i });
     expect(privateCheckbox).toBeInTheDocument();
     expect(privateCheckbox).not.toBeDisabled();
+  });
+
+  it("shows the owner gate instead of the form for a non-owner (#286)", async () => {
+    // AC 2.1.14
+    vi.mocked(useCurrentUserIdState).mockReturnValue({
+      userId: "someone-else",
+      isLoading: false,
+      isError: false,
+    });
+
+    renderPage("/items/item-1/edit");
+
+    expect(await screen.findByText("You can only edit your own items.")).toBeInTheDocument();
+    expect(screen.queryByRole("button", { name: /save changes/i })).not.toBeInTheDocument();
+  });
+
+  it("does not flash the gate while the current user id is loading (#286)", async () => {
+    // AC 2.1.14
+    vi.mocked(useCurrentUserIdState).mockReturnValue({
+      userId: null,
+      isLoading: true,
+      isError: false,
+    });
+
+    renderPage("/items/item-1/edit");
+
+    expect(await screen.findByText("Loading...")).toBeInTheDocument();
+    expect(screen.queryByText("You can only edit your own items.")).not.toBeInTheDocument();
+    expect(screen.queryByRole("button", { name: /save changes/i })).not.toBeInTheDocument();
+  });
+
+  it("shows the form when the current user id failed to load (#286)", async () => {
+    // AC 2.1.14: the server still enforces access
+    vi.mocked(useCurrentUserIdState).mockReturnValue({
+      userId: null,
+      isLoading: false,
+      isError: true,
+    });
+
+    renderPage("/items/item-1/edit");
+
+    expect(await screen.findByRole("button", { name: /save changes/i })).toBeInTheDocument();
+  });
+
+  it("lets an admin who is not the owner edit (#286)", async () => {
+    // AC 2.1.14
+    vi.mocked(useAuth).mockReturnValue({
+      isAuthenticated: true,
+      userId: "admin-sub",
+      isAdmin: true,
+    } as ReturnType<typeof useAuth>);
+    vi.mocked(useCurrentUserIdState).mockReturnValue({
+      userId: "admin-id",
+      isLoading: false,
+      isError: false,
+    });
+
+    renderPage("/items/item-1/edit");
+
+    expect(await screen.findByRole("button", { name: /save changes/i })).toBeInTheDocument();
+  });
+
+  it.each([
+    [401, "Your session has expired. Please sign in again."],
+    [403, "You can only edit your own items."],
+    [404, "This item no longer exists or you don't have access to it."],
+  ])("maps a %s save failure to a clear message without leaving the page (#286)", async (status, message) => {
+    // AC 2.1.14
+    const user = userEvent.setup({ delay: null });
+    vi.mocked(itemsApi.update).mockRejectedValueOnce({
+      response: { status, data: { title: "Forbidden" } },
+    });
+
+    renderPage("/items/item-1/edit");
+    await user.click(await screen.findByRole("button", { name: /save changes/i }));
+
+    expect(await screen.findByText(message)).toBeInTheDocument();
+    expect(screen.getByTestId("location")).toHaveTextContent("/items/item-1/edit");
   });
 
   it("calls update API with correct payload on submit", async () => {

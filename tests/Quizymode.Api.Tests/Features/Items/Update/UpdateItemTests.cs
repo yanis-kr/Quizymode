@@ -343,5 +343,29 @@ public sealed class UpdateItemTests : ItemTestFixture
         result.IsSuccess.Should().BeTrue();
     }
 
-}
 
+    [Fact]
+    public async Task HandleAsync_UnresolvedUserIdNonAdminOnPublicItem_ReturnsForbiddenAndChangesNothing()
+    {
+        Guid itemId = Guid.NewGuid();
+        await CreateItemWithCategoryAsync(
+            itemId, "geography", "Q?", "A", new List<string> { "B" }, "Old", false, "someone-else");
+        Mock<IUserContext> ctx = new();
+        ctx.Setup(x => x.UserId).Returns((string?)null);
+        ctx.Setup(x => x.IsAuthenticated).Returns(true);
+        ctx.Setup(x => x.IsAdmin).Returns(false);
+        UpdateItem.Request request = new(
+            Category: "geography", NavigationKeyword1: "capitals", NavigationKeyword2: "europe",
+            Question: "Q?", CorrectAnswer: "A", IncorrectAnswers: new List<string> { "B" },
+            Explanation: "New", IsPrivate: false, ReadyForReview: null);
+
+        Result<UpdateItem.Response> result = await UpdateItem.HandleAsync(
+            itemId.ToString(), request, DbContext, SimHashService, ctx.Object, _auditServiceMock.Object,
+            TaxonomyItemCategoryResolver, TaxonomyRegistry, CancellationToken.None);
+
+        result.IsFailure.Should().BeTrue();
+        result.Error.Code.Should().Be(Quizymode.Api.Shared.Helpers.ItemWriteAccess.ForbiddenCode);
+        (await DbContext.Items.FindAsync(itemId))!.Explanation.Should().Be("Old");
+        _auditServiceMock.VerifyNoOtherCalls();
+    }
+}

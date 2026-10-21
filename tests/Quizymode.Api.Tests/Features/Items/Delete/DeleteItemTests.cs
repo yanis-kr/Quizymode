@@ -29,7 +29,7 @@ public sealed class DeleteItemTests : DatabaseTestFixture
         // Arrange
         Item item = await CreateItemWithCategoryAsync(
             Guid.NewGuid(), "geography", "What is the capital of France?", "Paris",
-            new List<string> { "Lyon" }, "", false, "test");
+            new List<string> { "Lyon" }, "", false, _userContextMock.Object.UserId!);
 
         Guid itemId = item.Id;
 
@@ -56,6 +56,52 @@ public sealed class DeleteItemTests : DatabaseTestFixture
                 It.IsAny<Dictionary<string, string>?>(),
                 It.IsAny<CancellationToken>()),
             Times.Once);
+    }
+
+    [Fact]
+    public async Task HandleAsync_NonOwnerPublicItem_ReturnsForbiddenAndKeepsItem()
+    {
+        Item item = await CreateItemWithCategoryAsync(
+            Guid.NewGuid(), "geography", "Q?", "A", new List<string> { "B" }, "", false, "someone-else");
+
+        Result result = await DeleteItemHandler.HandleAsync(
+            item.Id.ToString(), DbContext, _userContextMock.Object, _auditServiceMock.Object, CancellationToken.None);
+
+        result.IsFailure.Should().BeTrue();
+        result.Error.Code.Should().Be(Quizymode.Api.Shared.Helpers.ItemWriteAccess.ForbiddenCode);
+        (await DbContext.Items.FindAsync(item.Id)).Should().NotBeNull();
+        _auditServiceMock.VerifyNoOtherCalls();
+    }
+
+    [Fact]
+    public async Task HandleAsync_NonOwnerPrivateItem_ReturnsNotFoundAndKeepsItem()
+    {
+        Item item = await CreateItemWithCategoryAsync(
+            Guid.NewGuid(), "geography", "Q?", "A", new List<string> { "B" }, "", true, "someone-else");
+
+        Result result = await DeleteItemHandler.HandleAsync(
+            item.Id.ToString(), DbContext, _userContextMock.Object, _auditServiceMock.Object, CancellationToken.None);
+
+        result.IsFailure.Should().BeTrue();
+        result.Error.Type.Should().Be(ErrorType.NotFound);
+        (await DbContext.Items.FindAsync(item.Id)).Should().NotBeNull();
+    }
+
+    [Fact]
+    public async Task HandleAsync_UnresolvedUserIdOnPublicItem_ReturnsForbidden()
+    {
+        Mock<IUserContext> ctx = new();
+        ctx.Setup(x => x.UserId).Returns((string?)null);
+        ctx.Setup(x => x.IsAuthenticated).Returns(true);
+        ctx.Setup(x => x.IsAdmin).Returns(false);
+        Item item = await CreateItemWithCategoryAsync(
+            Guid.NewGuid(), "geography", "Q?", "A", new List<string> { "B" }, "", false, "someone-else");
+
+        Result result = await DeleteItemHandler.HandleAsync(
+            item.Id.ToString(), DbContext, ctx.Object, _auditServiceMock.Object, CancellationToken.None);
+
+        result.Error.Code.Should().Be(Quizymode.Api.Shared.Helpers.ItemWriteAccess.ForbiddenCode);
+        (await DbContext.Items.FindAsync(item.Id)).Should().NotBeNull();
     }
 
     [Fact]

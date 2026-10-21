@@ -7,14 +7,26 @@ import { useAuth } from "@/contexts/AuthContext";
  * `createdBy` on collections, items and comments holds this id, not the token `sub`,
  * so ownership checks must compare against it. Null while loading or when signed out.
  */
-export function useCurrentUserId(): string | null {
+export function useCurrentUserIdState(): {
+  userId: string | null;
+  isLoading: boolean;
+  isError: boolean;
+} {
   const { isAuthenticated, userId: subject } = useAuth();
-  const { data } = useQuery({
+  const { data, isLoading, isError } = useQuery({
     queryKey: ["currentUser", "id", subject],
     queryFn: () => usersApi.getCurrent(),
     enabled: isAuthenticated && !!subject,
     retry: false,
     staleTime: Infinity,
   });
-  return isAuthenticated ? (data?.id ?? null) : null;
+  return {
+    userId: isAuthenticated ? (data?.id ?? null) : null,
+    isLoading: isAuthenticated && isLoading,
+    isError: isAuthenticated && isError,
+  };
+}
+
+export function useCurrentUserId(): string | null {
+  return useCurrentUserIdState().userId;
 }

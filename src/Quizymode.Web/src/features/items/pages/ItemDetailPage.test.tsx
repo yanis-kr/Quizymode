@@ -1,4 +1,4 @@
-import { describe, expect, it, vi } from "vitest";
+import { afterEach, describe, expect, it, vi } from "vitest";
 import { render, screen, waitFor } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
@@ -6,12 +6,18 @@ import { MemoryRouter, Route, Routes, useLocation } from "react-router-dom";
 import ItemDetailPage from "./ItemDetailPage";
 import { itemsApi } from "@/api/items";
 
+const authState = vi.hoisted(() => ({ isAuthenticated: false, currentUserId: null as string | null }));
+
 vi.mock("@/contexts/AuthContext", () => ({
   useAuth: () => ({
-    isAuthenticated: false,
-    userId: null,
+    isAuthenticated: authState.isAuthenticated,
+    userId: authState.isAuthenticated ? "sub-1" : null,
     isAdmin: false,
   }),
+}));
+
+vi.mock("@/hooks/useCurrentUserId", () => ({
+  useCurrentUserId: () => authState.currentUserId,
 }));
 
 vi.mock("@/api/items", () => ({
@@ -127,5 +133,36 @@ describe("ItemDetailPage", () => {
         "/explore/collections/collection-1/sample+collection/item/item-1?keywords=space"
       )
     );
+  });
+
+  describe("delete failures (#286)", () => {
+    afterEach(() => {
+      authState.isAuthenticated = false;
+      authState.currentUserId = null;
+      vi.restoreAllMocks();
+    });
+
+    it.each([
+      [401, "Your session has expired. Please sign in again."],
+      [403, "You can only delete your own items."],
+      [404, "This item no longer exists."],
+      [500, "Failed to delete item."],
+    ])("shows a clear message for a %s delete failure and stays on the page", async (status, message) => {
+      // AC 2.1.14
+      authState.isAuthenticated = true;
+      authState.currentUserId = "user-1";
+      vi.spyOn(window, "confirm").mockReturnValue(true);
+      vi.mocked(itemsApi.getById).mockResolvedValue(
+        item as Awaited<ReturnType<typeof itemsApi.getById>>
+      );
+      vi.mocked(itemsApi.delete).mockRejectedValueOnce({ response: { status } });
+
+      const user = userEvent.setup({ delay: null });
+      renderPage("/items/item-1");
+      await user.click(await screen.findByRole("button", { name: /delete/i }));
+
+      expect(await screen.findByText(message)).toBeInTheDocument();
+      expect(screen.getByTestId("location")).toHaveTextContent("/items/item-1");
+    });
   });
 });

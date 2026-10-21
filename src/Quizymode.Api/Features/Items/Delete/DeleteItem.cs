@@ -1,4 +1,5 @@
 using Quizymode.Api.Data;
+using Quizymode.Api.Shared.Helpers;
 using Quizymode.Api.Shared.Http;
 using Quizymode.Api.Services;
 using Quizymode.Api.Shared.Kernel;
@@ -18,6 +19,8 @@ public static class DeleteItem
                 .WithSummary("Delete a quiz item")
                 .RequireAuthorization()
                 .Produces(StatusCodes.Status204NoContent)
+                .Produces(StatusCodes.Status401Unauthorized)
+                .Produces(StatusCodes.Status403Forbidden)
                 .Produces(StatusCodes.Status404NotFound);
         }
 
@@ -32,9 +35,11 @@ public static class DeleteItem
 
             return result.Match(
                 () => Results.NoContent(),
-                error => result.Error.Type == ErrorType.NotFound
-                    ? Results.NotFound()
-                    : CustomResults.Problem(result));
+                error => result.Error.Code == ItemWriteAccess.ForbiddenCode
+                    ? ItemWriteAccess.ForbiddenResult()
+                    : result.Error.Type == ErrorType.NotFound
+                        ? Results.NotFound()
+                        : CustomResults.Problem(result));
         }
     }
 

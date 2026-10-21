@@ -4,6 +4,7 @@ import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
 import { itemsApi } from "@/api/items";
 import { taxonomyApi } from "@/api/taxonomy";
 import { useAuth } from "@/contexts/AuthContext";
+import { useCurrentUserIdState } from "@/hooks/useCurrentUserId";
 import { Navigate } from "react-router-dom";
 import LoadingSpinner from "@/components/LoadingSpinner";
 import ErrorMessage from "@/components/ErrorMessage";
@@ -28,6 +29,7 @@ function padIncorrectAnswers(answers: readonly string[]): string[] {
 const EditItemPage = () => {
   const { id } = useParams<{ id: string }>();
   const { isAuthenticated, isAdmin } = useAuth();
+  const { userId: currentUserId, isLoading: isLoadingUserId } = useCurrentUserIdState();
   const navigate = useNavigate();
   const queryClient = useQueryClient();
   const [formData, setFormData] = useState({
@@ -210,6 +212,10 @@ const EditItemPage = () => {
   const getSubmitError = () => {
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     const err = updateMutation.error as any;
+    const status = err?.response?.status;
+    if (status === 401) return "Your session has expired. Please sign in again.";
+    if (status === 403) return "You can only edit your own items.";
+    if (status === 404) return "This item no longer exists or you don't have access to it.";
     if (!err?.response?.data) return err?.message ?? "Failed to update item.";
     const data = err.response.data;
     if (Array.isArray(data))
@@ -223,7 +229,7 @@ const EditItemPage = () => {
     return <Navigate to="/login" replace />;
   }
 
-  if (isLoadingItem) {
+  if (isLoadingItem || (!isAdmin && isLoadingUserId)) {
     return <LoadingSpinner />;
   }
 
@@ -238,12 +244,24 @@ const EditItemPage = () => {
     );
   }
 
+  // Server enforces owner-or-admin (#286); this only avoids showing a form that cannot save.
+  if (!isAdmin && currentUserId && itemData.createdBy !== currentUserId) {
+    return (
+      <div className="px-4 py-6 sm:px-0">
+        <ErrorMessage
+          message="You can only edit your own items."
+          onRetry={() => navigate("/categories")}
+        />
+      </div>
+    );
+  }
+
   return (
     <div className="px-4 py-6 sm:px-0">
       <div className="max-w-2xl mx-auto">
         <h1 className="text-3xl font-bold text-gray-900 mb-2">Edit Item</h1>
         <p className="text-gray-600 text-sm mb-6">
-          Update the quiz item details. Regular users can edit their own private items; admins can edit any item including public ones.
+          Update the quiz item details. You can edit your own items; admins can edit any item.
         </p>
 
         <ItemForm

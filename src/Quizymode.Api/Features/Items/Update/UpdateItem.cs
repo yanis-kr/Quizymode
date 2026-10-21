@@ -129,8 +129,11 @@ public static class UpdateItem
             app.MapPut("items/{id}", Handler)
                 .WithTags("Items")
                 .WithSummary("Update an existing quiz item")
+                .RequireAuthorization()
                 .Produces<Response>(StatusCodes.Status200OK)
                 .Produces(StatusCodes.Status400BadRequest)
+                .Produces(StatusCodes.Status401Unauthorized)
+                .Produces(StatusCodes.Status403Forbidden)
                 .Produces(StatusCodes.Status404NotFound);
         }
 
@@ -165,9 +168,11 @@ public static class UpdateItem
 
             return result.Match(
                 value => Results.Ok(value),
-                failure => failure.Error.Type == ErrorType.NotFound
-                    ? Results.NotFound()
-                    : CustomResults.Problem(result));
+                failure => failure.Error.Code == ItemWriteAccess.ForbiddenCode
+                    ? ItemWriteAccess.ForbiddenResult()
+                    : failure.Error.Type == ErrorType.NotFound
+                        ? Results.NotFound()
+                        : CustomResults.Problem(result));
         }
     }
 
@@ -197,6 +202,12 @@ public static class UpdateItem
             {
                 return Result.Failure<Response>(
                     Error.NotFound("Item.NotFound", $"Item with id {id} not found"));
+            }
+
+            Error? accessError = ItemWriteAccess.Check(item, userContext, id);
+            if (accessError is not null)
+            {
+                return Result.Failure<Response>(accessError);
             }
 
             string questionText = $"{request.Question} {request.CorrectAnswer} {string.Join(" ", request.IncorrectAnswers)}";
