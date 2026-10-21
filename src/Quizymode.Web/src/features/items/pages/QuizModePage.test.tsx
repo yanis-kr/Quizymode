@@ -2,7 +2,7 @@ import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 import { act, fireEvent, render, screen, waitFor } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { MemoryRouter, Route, Routes, useLocation } from "react-router-dom";
+import { MemoryRouter, Route, Routes, useLocation, useNavigate } from "react-router-dom";
 import QuizModePage from "./QuizModePage";
 import { itemsApi } from "@/api/items";
 import { categoriesApi } from "@/api/categories";
@@ -27,6 +27,27 @@ vi.mock("@/features/analytics/analyticsEvents", () => ({
   trackEventDeferredOnce: mockTrackEventDeferredOnce,
   flushDeferredAnalyticsEvents: mockFlushDeferredAnalyticsEvents,
 }));
+
+const { navigateCalls } = vi.hoisted(() => ({ navigateCalls: [] as string[] }));
+
+// Records the target of every navigate(to) call and delegates to the real router.
+vi.mock("react-router-dom", async (importOriginal) => {
+  const actual = await importOriginal<typeof import("react-router-dom")>();
+  const react = await import("react");
+  return {
+    ...actual,
+    useNavigate: () => {
+      const navigate = actual.useNavigate();
+      return react.useCallback(
+        (to: unknown, options?: unknown) => {
+          if (typeof to === "string") navigateCalls.push(to);
+          return (navigate as (a: unknown, b?: unknown) => unknown)(to, options);
+        },
+        [navigate]
+      );
+    },
+  };
+});
 
 const { mockAuth } = vi.hoisted(() => ({
   mockAuth: { isAuthenticated: true, userId: "user-1" as string | undefined },
@@ -107,7 +128,16 @@ function LocationDisplay() {
   return <div data-testid="location">{`${location.pathname}${location.search}`}</div>;
 }
 
-function renderPage(initialEntry: string) {
+function BackButton() {
+  const navigate = useNavigate();
+  return (
+    <button type="button" onClick={() => navigate(-1)}>
+      test-back
+    </button>
+  );
+}
+
+function renderPageWithEntries(initialEntries: string[], initialIndex?: number) {
   const queryClient = new QueryClient({
     defaultOptions: {
       queries: {
@@ -115,43 +145,34 @@ function renderPage(initialEntry: string) {
       },
     },
   });
+  const page = (
+    <>
+      <QuizModePage />
+      <LocationDisplay />
+      <BackButton />
+    </>
+  );
 
-  return render(
+  const view = render(
     <QueryClientProvider client={queryClient}>
-      <MemoryRouter initialEntries={[initialEntry]}>
+      <MemoryRouter initialEntries={initialEntries} initialIndex={initialIndex}>
         <Routes>
-          <Route
-            path="/quiz/:category/item/:itemId"
-            element={
-              <>
-                <QuizModePage />
-                <LocationDisplay />
-              </>
-            }
-          />
-          <Route
-            path="/quiz/collections/:collectionId/:slug/item/:itemId"
-            element={
-              <>
-                <QuizModePage />
-                <LocationDisplay />
-              </>
-            }
-          />
-          <Route
-            path="/quiz/collections/:collectionId/:slug"
-            element={
-              <>
-                <QuizModePage />
-                <LocationDisplay />
-              </>
-            }
-          />
+          <Route path="/quiz/item/:itemId" element={page} />
+          <Route path="/quiz/:category/item/:itemId" element={page} />
+          <Route path="/quiz/collections/:collectionId/item/:itemId" element={page} />
+          <Route path="/quiz/collections/:collectionId/:slug/item/:itemId" element={page} />
+          <Route path="/quiz/collections/:collectionId/:slug" element={page} />
           <Route path="/categories/:category/:kw1/:kw2" element={<LocationDisplay />} />
+          <Route path="/prev" element={<LocationDisplay />} />
         </Routes>
       </MemoryRouter>
     </QueryClientProvider>
   );
+  return { ...view, queryClient };
+}
+
+function renderPage(initialEntry: string) {
+  return renderPageWithEntries([initialEntry]);
 }
 
 describe("QuizModePage", () => {
@@ -161,6 +182,7 @@ describe("QuizModePage", () => {
 
   beforeEach(() => {
     vi.clearAllMocks();
+    navigateCalls.length = 0;
     sessionStorage.clear();
     mockAuth.isAuthenticated = true;
     mockAuth.userId = "user-1";
@@ -482,6 +504,8 @@ describe("QuizModePage", () => {
     renderPage("/quiz/exams/item/item-1");
 
     expect(await screen.findByText(/no items found/i)).toBeInTheDocument();
+    // AC 3.6.17 (#275): with nothing playable the URL is left unchanged.
+    expect(screen.getByTestId("location")).toHaveTextContent("/quiz/exams/item/item-1");
   });
 
   it("shows a retryable public browse route when a collection quiz fails", async () => {
@@ -491,5 +515,178 @@ describe("QuizModePage", () => {
     expect(await screen.findByText(/collection quiz is unavailable/i)).toBeInTheDocument();
     expect(screen.getByRole("button", { name: /try again/i })).toBeInTheDocument();
     expect(screen.getByRole("link", { name: /browse categories/i })).toHaveAttribute("href", "/categories");
+  });
+
+  describe("deep link to an item outside the playable roster", () => {
+    const legacy = {
+      ...secondItem,
+      id: "item-legacy",
+      question: "Legacy unplayable question?",
+      correctAnswer: "4",
+      incorrectAnswers: ["  ", "4"],
+    };
+    const elsewhere = {
+      ...secondItem,
+      id: "item-elsewhere",
+      question: "Playable item outside the random set?",
+    };
+
+    // The page briefly shows a spinner while the new URL's single-item query loads, so wait for the
+    // location and the playable question together instead of asserting them one after the other.
+    async function expectShown(location: string | RegExp, question: string, hidden?: string) {
+      await waitFor(() => {
+        expect(screen.getByTestId("location")).toHaveTextContent(location);
+        expect(screen.getByText(question)).toBeInTheDocument();
+      });
+      if (hidden) expect(screen.queryByText(hidden)).not.toBeInTheDocument();
+    }
+
+    function mockRoster(items: unknown[]) {
+      vi.mocked(itemsApi.getRandom).mockResolvedValue({ items } as Awaited<
+        ReturnType<typeof itemsApi.getRandom>
+      >);
+    }
+
+    function mockById(...known: Array<{ id: string }>) {
+      vi.mocked(itemsApi.getById).mockImplementation(
+        async (id: string) =>
+          known.find((k) => k.id === id) as Awaited<ReturnType<typeof itemsApi.getById>>
+      );
+    }
+
+    it("replaces an unplayable category deep link with the item shown", async () => {
+      // AC 3.6.17 (#275)
+      mockRoster([legacy, item, secondItem]);
+      mockById(legacy, item, secondItem);
+      renderPage("/quiz/exams/item/item-legacy");
+
+      await expectShown("/quiz/exams/item/item-1", "What is 2 + 2?", legacy.question);
+    });
+
+    it("keeps the return query parameter when rewriting", async () => {
+      // AC 3.6.17 (#275)
+      mockRoster([legacy, item, secondItem]);
+      mockById(legacy, item, secondItem);
+      renderPage("/quiz/exams/item/item-legacy?return=%2Fcategories");
+
+      await expectShown("/quiz/exams/item/item-1?return=%2Fcategories", "What is 2 + 2?");
+    });
+
+    it("rewrites a collection deep link to the unplayable item", async () => {
+      // AC 3.6.17 (#275)
+      vi.mocked(collectionsApi.getItems).mockResolvedValue({ items: [legacy, item, secondItem] });
+      renderPage("/quiz/collections/collection-1/practice+set/item/item-legacy");
+
+      await expectShown(
+        "/quiz/collections/collection-1/practice+set/item/item-1",
+        "What is 2 + 2?",
+        legacy.question
+      );
+    });
+
+    it("rewrites a slugless collection deep link to the canonical slug and starts once", async () => {
+      // AC 3.6.17 (#275)
+      vi.mocked(collectionsApi.getItems).mockResolvedValue({ items: [legacy, item, secondItem] });
+      renderPage("/quiz/collections/collection-1/item/item-legacy");
+
+      await expectShown(
+        "/quiz/collections/collection-1/practice+set/item/item-1",
+        "What is 2 + 2?"
+      );
+      const starts = mockTrackEventOnce.mock.calls.filter(
+        ([, input]) => input?.name === "quick_quiz_started"
+      );
+      expect(starts).toHaveLength(1);
+    });
+
+    it("adds the canonical slug even when collection details resolve after the items", async () => {
+      // AC 3.6.17 (#275)
+      vi.mocked(collectionsApi.getItems).mockResolvedValue({ items: [legacy, item, secondItem] });
+      let resolveInfo: (value: Awaited<ReturnType<typeof collectionsApi.getById>>) => void = () => {};
+      vi.mocked(collectionsApi.getById).mockReturnValue(
+        new Promise((resolve) => {
+          resolveInfo = resolve;
+        })
+      );
+      renderPage("/quiz/collections/collection-1/item/item-legacy");
+
+      // Let the items settle first; the location must not be rewritten without the slug.
+      await screen.findByText("What is 2 + 2?");
+      expect(screen.getByTestId("location")).toHaveTextContent(
+        /^\/quiz\/collections\/collection-1\/item\/item-legacy$/
+      );
+
+      await act(async () => {
+        resolveInfo({
+          id: "collection-1",
+          name: "Practice Set",
+        } as Awaited<ReturnType<typeof collectionsApi.getById>>);
+      });
+
+      await expectShown(
+        "/quiz/collections/collection-1/practice+set/item/item-1",
+        "What is 2 + 2?"
+      );
+    });
+
+    it("rewrites a global deep link to a playable item outside the loaded set", async () => {
+      // AC 3.6.17 (#275)
+      mockRoster([item, secondItem]);
+      mockById(elsewhere, item, secondItem);
+      renderPage("/quiz/item/item-elsewhere");
+
+      await expectShown(/^\/quiz\/item\/item-1$/, "What is 2 + 2?", elsewhere.question);
+    });
+
+    it("does not rewrite a deep link to an item in the roster", async () => {
+      // AC 3.6.17 (#275)
+      mockRoster([legacy, item, secondItem]);
+      mockById(legacy, item, secondItem);
+      renderPage("/quiz/exams/item/item-2");
+
+      expect(await screen.findByText("What is the capital of France?")).toBeInTheDocument();
+      expect(screen.getByTestId("location")).toHaveTextContent(/^\/quiz\/exams\/item\/item-2$/);
+    });
+
+    it("names the item shown after the roster shrinks mid-run", async () => {
+      // AC 3.6.17 (#275)
+      const third = { ...secondItem, id: "item-3", question: "Third question?" };
+      vi.mocked(collectionsApi.getItems).mockResolvedValue({ items: [item, secondItem, third] });
+      const { queryClient } = renderPageWithEntries([
+        "/quiz/collections/collection-1/practice+set/item/item-2",
+      ]);
+      await expectShown(
+        "/quiz/collections/collection-1/practice+set/item/item-2",
+        "What is the capital of France?"
+      );
+
+      // The linked item leaves the collection: the run restarts on the remaining items and the
+      // URL must name the item shown by the restarted run, not one picked from the old run.
+      vi.mocked(collectionsApi.getItems).mockResolvedValue({ items: [item, third] });
+      await act(async () => {
+        await queryClient.invalidateQueries({ queryKey: ["collectionItems"] });
+      });
+
+      await expectShown(
+        "/quiz/collections/collection-1/practice+set/item/item-1",
+        "What is 2 + 2?",
+        third.question
+      );
+      // React Router can coalesce a superseded navigation, so check the calls themselves: the stale
+      // run must never have been used to pick item-3.
+      expect(navigateCalls.some((to) => to.endsWith("/item-3"))).toBe(false);
+    });
+
+    it("replaces the history entry instead of pushing one", async () => {
+      // AC 3.6.17 (#275)
+      const user = userEvent.setup({ delay: null });
+      mockRoster([legacy, item, secondItem]);
+      mockById(legacy, item, secondItem);
+      renderPageWithEntries(["/prev", "/quiz/exams/item/item-legacy"], 1);
+
+      await expectShown("/quiz/exams/item/item-1", "What is 2 + 2?");
+      await user.click(screen.getByRole("button", { name: "test-back" }));
+      await waitFor(() => expect(screen.getByTestId("location")).toHaveTextContent(/^\/prev$/));
+    });
   });
 });
