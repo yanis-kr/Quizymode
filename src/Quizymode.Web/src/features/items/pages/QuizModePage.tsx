@@ -141,14 +141,6 @@ const QuizModePage = () => {
   const [entryItemId, setEntryItemId] = useState<string | null>(() =>
     !collectionId ? (itemId ?? null) : null
   );
-  const previousCategorySlug = useRef(categorySlug);
-  useEffect(() => {
-    if (previousCategorySlug.current === categorySlug) return;
-    previousCategorySlug.current = categorySlug;
-    // A different category scope is a new entry: re-capture from the URL.
-    // eslint-disable-next-line react-hooks/set-state-in-effect
-    setEntryItemId(!collectionId ? (itemId ?? null) : null);
-  }, [categorySlug, collectionId, itemId]);
 
   /** Category/global quiz uses random N items; changing size must refetch and drop session-cached lists. */
   const handleQuizSizeChange = (raw: string) => {
@@ -226,6 +218,17 @@ const QuizModePage = () => {
     // eslint-disable-next-line react-hooks/preserve-manual-memoization
     [collectionId, category, navigationKeywords, filterKeywords, quizSize],
   );
+
+  // A different category scope is a new entry: re-capture from the URL, but only when no run
+  // exists for the new scope (Prev/Next write the canonical slug, which must not re-seed).
+  const previousCategorySlug = useRef(categorySlug);
+  useEffect(() => {
+    if (previousCategorySlug.current === categorySlug) return;
+    previousCategorySlug.current = categorySlug;
+    if (run && sameQuizScope(run.scope, runScope)) return;
+    // eslint-disable-next-line react-hooks/set-state-in-effect
+    setEntryItemId(!collectionId ? (itemId ?? null) : null);
+  }, [categorySlug, collectionId, itemId, run, runScope]);
 
   // Fetch navigation keyword descriptions for breadcrumb tooltips
   const { data: keywordDescriptionsData } = useQuery({

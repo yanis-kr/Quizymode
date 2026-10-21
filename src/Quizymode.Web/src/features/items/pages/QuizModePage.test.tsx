@@ -676,6 +676,29 @@ describe("QuizModePage", () => {
       expect(startEvents()).toHaveLength(1);
     });
 
+    it("keeps the roster when the URL slug differs in case from the canonical slug", async () => {
+      const user = userEvent.setup({ delay: null });
+      mockRoster([item, secondItem]);
+      const sameCategory = { ...elsewhere, category: "exams" };
+      mockById(sameCategory, item, secondItem);
+      renderPage("/quiz/Exams/item/item-elsewhere");
+
+      expect(await screen.findByText(elsewhere.question)).toBeInTheDocument();
+      expect(screen.getByText("1 of 3")).toBeInTheDocument();
+
+      await user.click(screen.getByRole("button", { name: /^next$/i }));
+      expect(await screen.findByText("What is 2 + 2?")).toBeInTheDocument();
+      expect(screen.getByText("2 of 3")).toBeInTheDocument();
+      await user.click(screen.getByRole("button", { name: /^previous$/i }));
+      expect(await screen.findByText(elsewhere.question)).toBeInTheDocument();
+      await act(async () => {});
+
+      expect(screen.getByText("1 of 3")).toBeInTheDocument();
+      expect(screen.queryByText(/no longer available/i)).not.toBeInTheDocument();
+      expect(itemsApi.getById).toHaveBeenCalledTimes(1);
+      expect(startEvents()).toHaveLength(1);
+    });
+
     it("keeps the quiz size when the linked item is added to a full random set", async () => {
       const random = Array.from({ length: 10 }, (_, i) => ({
         ...secondItem,
