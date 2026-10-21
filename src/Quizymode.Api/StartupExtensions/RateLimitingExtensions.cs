@@ -1,4 +1,5 @@
 using System.Security.Claims;
+using System.Text.RegularExpressions;
 using System.Threading.RateLimiting;
 using Microsoft.AspNetCore.RateLimiting;
 
@@ -104,6 +105,21 @@ internal static partial class StartupExtensions
                     });
             });
 
+            // Flashcard "Still learning" grades queue one item per call (#251); generous for a long deck, strict for floods.
+            options.AddPolicy("review-queue-enqueue", httpContext =>
+            {
+                string partitionKey = GetAuthenticatedOrTrustedIpPartitionKey(httpContext);
+                return RateLimitPartition.GetFixedWindowLimiter(
+                    partitionKey,
+                    static _ => new FixedWindowRateLimiterOptions
+                    {
+                        PermitLimit = 300,
+                        Window = TimeSpan.FromMinutes(10),
+                        QueueLimit = 0,
+                        AutoReplenishment = true
+                    });
+            });
+
             options.AddPolicy("ideas-create", httpContext =>
             {
                 string partitionKey = GetAuthenticatedOrIpPartitionKey(httpContext);
@@ -195,9 +211,14 @@ internal static partial class StartupExtensions
         return $"ip:{httpContext.Connection.RemoteIpAddress?.ToString() ?? "unknown"}";
     }
 
-    private static string GetRejectionDetail(PathString requestPath)
+    internal static string GetRejectionDetail(PathString requestPath)
     {
         string path = requestPath.Value ?? string.Empty;
+        if (ReviewQueueEnqueuePath().IsMatch(path))
+        {
+            return "Too many Review queue updates. Please slow down.";
+        }
+
         if (path.EndsWith("/analytics/events", StringComparison.OrdinalIgnoreCase))
         {
             return "Too many analytics events. Please slow down.";
@@ -235,4 +256,7 @@ internal static partial class StartupExtensions
 
         return "Too many feedback submissions. Please wait a few minutes and try again.";
     }
+
+    [GeneratedRegex("/review-queue/[0-9a-fA-F-]{36}$", RegexOptions.IgnoreCase)]
+    private static partial Regex ReviewQueueEnqueuePath();
 }

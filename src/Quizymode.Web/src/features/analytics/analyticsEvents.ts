@@ -18,7 +18,8 @@ export type AnalyticsEventName =
   | "guest_state_imported"
   | "question_answered"
   | "flashcards_started"
-  | "flashcard_revealed";
+  | "flashcard_revealed"
+  | "flashcard_graded";
 
 export type AnalyticsContextType =
   | "auth"

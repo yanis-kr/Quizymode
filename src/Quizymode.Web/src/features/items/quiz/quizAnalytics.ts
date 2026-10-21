@@ -93,6 +93,24 @@ export function trackFlashcardsStarted(runId: string, total: number, context: St
   trackEventOnce(runId, { name: "flashcards_started", runId, total, ...context });
 }
 
+/** One `flashcard_graded` per card per run, for the first grade only (isCorrect = "Got it"). */
+export function trackFlashcardGraded(
+  runId: string,
+  itemId: string,
+  position: number,
+  isCorrect: boolean,
+  context: StudyEventContext,
+): void {
+  trackEventDeferredOnce(`${runId}:${itemId}:graded`, {
+    name: "flashcard_graded",
+    runId,
+    itemId,
+    position,
+    isCorrect,
+    ...context,
+  });
+}
+
 /** One `flashcard_revealed` per card per run, the first time its answer is shown. */
 export function trackFlashcardRevealed(runId: string, itemId: string, position: number, context: StudyEventContext): void {
   trackEventDeferredOnce(`${runId}:${itemId}`, {

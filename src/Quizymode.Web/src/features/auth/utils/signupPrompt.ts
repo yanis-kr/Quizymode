@@ -33,6 +33,11 @@ export const SIGNUP_PROMPT_COPY: Record<AuthReason, SignupPromptCopy> = {
     body: "Create a free account to comment where discussion is available.",
     cta: "Create account to comment",
   },
+  "review-later": {
+    heading: "Keep reviewing these cards",
+    body: "Create a free account to add cards you're still learning to a Review queue that brings them back over the next days.",
+    cta: "Create a free account",
+  },
 };
 
 const DISMISSED_STORAGE_KEY = "quizymode.signup-prompt.dismissed";

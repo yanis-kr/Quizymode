@@ -245,4 +245,88 @@ public sealed class ReviewQueueTests : DatabaseTestFixture
         Entry(item.Id).IntervalIndex.Should().Be(1);
         otherUser.Should().BeNull();
     }
+
+    private async Task<Item> UnplayableItemAsync()
+    {
+        Category category = await LearningLoopTestData.AddCategoryAsync(DbContext, $"cat{Guid.NewGuid():N}"[..10]);
+        return await LearningLoopTestData.AddItemAsync(DbContext, category, incorrect: new List<string>());
+    }
+
+    [Fact]
+    public async Task EnqueueOne_NewItem_IsQueuedAtFirstIntervalDueNextDay()
+    {
+        Item item = await NewItemAsync();
+        DateTime now = DateTime.UtcNow;
+
+        Queue.EnqueueResponse? response = await Queue.EnqueueOneAsync(DbContext, UserId, item.Id, now, CancellationToken.None);
+
+        response.Should().NotBeNull();
+        response!.ItemId.Should().Be(item.Id);
+        response.IntervalDays.Should().Be(1);
+        response.DueAt.Should().BeCloseTo(now.AddDays(1), TimeSpan.FromSeconds(1));
+        response.DueAt.Kind.Should().Be(DateTimeKind.Utc);
+        Entry(item.Id).IntervalIndex.Should().Be(0);
+    }
+
+    [Fact]
+    public async Task EnqueueOne_AdvancedEntry_IsResetToFirstInterval()
+    {
+        Item item = await NewItemAsync();
+        DbContext.ReviewQueueEntries.Add(new ReviewQueueEntry
+        {
+            UserId = UserId, ItemId = item.Id, IntervalIndex = 2, DueAt = DateTime.UtcNow.AddDays(7), ItemVersionAt = item.CreatedAt,
+        });
+        await DbContext.SaveChangesAsync();
+        DateTime now = DateTime.UtcNow;
+
+        Queue.EnqueueResponse? response = await Queue.EnqueueOneAsync(DbContext, UserId, item.Id, now, CancellationToken.None);
+
+        response!.IntervalDays.Should().Be(1);
+        Entry(item.Id).IntervalIndex.Should().Be(0);
+        Entry(item.Id).DueAt.Should().BeCloseTo(now.AddDays(1), TimeSpan.FromSeconds(1));
+    }
+
+    [Fact]
+    public async Task EnqueueOne_CalledTwice_KeepsOneEntry()
+    {
+        Item item = await NewItemAsync();
+
+        await Queue.EnqueueOneAsync(DbContext, UserId, item.Id, DateTime.UtcNow, CancellationToken.None);
+        await Queue.EnqueueOneAsync(DbContext, UserId, item.Id, DateTime.UtcNow, CancellationToken.None);
+
+        DbContext.ReviewQueueEntries.Count(e => e.UserId == UserId).Should().Be(1);
+    }
+
+    [Fact]
+    public async Task EnqueueOne_OwnPrivateItem_IsQueued()
+    {
+        Item item = await NewItemAsync(isPrivate: true, createdBy: UserId);
+
+        (await Queue.EnqueueOneAsync(DbContext, UserId, item.Id, DateTime.UtcNow, CancellationToken.None)).Should().NotBeNull();
+        DbContext.ReviewQueueEntries.Count().Should().Be(1);
+    }
+
+    [Fact]
+    public async Task EnqueueOne_ForeignPrivateMissingOrUnplayableItem_ReturnsNullAndCreatesNoRow()
+    {
+        Item foreign = await NewItemAsync(isPrivate: true, createdBy: "someone-else");
+        Item unplayable = await UnplayableItemAsync();
+
+        (await Queue.EnqueueOneAsync(DbContext, UserId, foreign.Id, DateTime.UtcNow, CancellationToken.None)).Should().BeNull();
+        (await Queue.EnqueueOneAsync(DbContext, UserId, unplayable.Id, DateTime.UtcNow, CancellationToken.None)).Should().BeNull();
+        (await Queue.EnqueueOneAsync(DbContext, UserId, Guid.NewGuid(), DateTime.UtcNow, CancellationToken.None)).Should().BeNull();
+
+        DbContext.ReviewQueueEntries.Count().Should().Be(0);
+    }
+
+    [Fact]
+    public async Task EnqueueMisses_SkipsUnplayableItems_AndKeepsPlayableOnes()
+    {
+        Item playable = await NewItemAsync();
+        Item unplayable = await UnplayableItemAsync();
+
+        await Queue.EnqueueMissesAsync(DbContext, UserId, [playable.Id, unplayable.Id], DateTime.UtcNow, CancellationToken.None);
+
+        DbContext.ReviewQueueEntries.AsNoTracking().Select(e => e.ItemId).Should().Equal(playable.Id);
+    }
 }

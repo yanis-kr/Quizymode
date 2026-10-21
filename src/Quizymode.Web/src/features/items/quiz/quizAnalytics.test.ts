@@ -3,6 +3,7 @@ import { HOME_SAMPLE_COLLECTION_ID } from "@/features/home/homePageData";
 import {
   flashcardsEventContext,
   quizEventContext,
+  trackFlashcardGraded,
   trackFlashcardRevealed,
   trackFlashcardsStarted,
   trackQuestionAnswered,
@@ -135,6 +136,20 @@ describe("quizAnalytics", () => {
       itemId: "item-1",
       position: 3,
       contextType: "flashcards",
+    });
+  });
+
+  it("defers flashcard_graded keyed by run and item, separately from the reveal", () => {
+    trackFlashcardGraded("run-1", "item-1", 3, false, { contextType: "collection", contextId: "c-1" });
+
+    expect(mockTrackEventDeferredOnce).toHaveBeenCalledWith("run-1:item-1:graded", {
+      name: "flashcard_graded",
+      runId: "run-1",
+      itemId: "item-1",
+      position: 3,
+      isCorrect: false,
+      contextType: "collection",
+      contextId: "c-1",
     });
   });
 });

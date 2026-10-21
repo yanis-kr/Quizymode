@@ -31,6 +31,7 @@ vi.mock("@/features/items/quiz/quizAnalytics", () => ({
   flashcardsEventContext: mockFlashcardsEventContext,
   trackFlashcardsStarted: mockTrackFlashcardsStarted,
   trackFlashcardRevealed: mockTrackFlashcardRevealed,
+  trackFlashcardGraded: vi.fn(),
 }));
 
 vi.mock("@/contexts/AuthContext", () => ({

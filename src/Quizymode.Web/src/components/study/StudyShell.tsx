@@ -20,6 +20,10 @@ export interface StudyShellProps {
   totalCount: number;
   onPrev: () => void;
   onNext: () => void;
+  /** Label of the Next button and the chevron title; defaults to "Next" (Flashcards uses "Finish" on the last card). */
+  nextLabel?: string;
+  /** Muted label beside the counter, for example the Flashcards "Still learning" round. Hidden below sm. */
+  roundLabel?: string;
   isPrevDisabled: boolean;
   isNextDisabled: boolean;
   currentItem: ItemResponse | undefined;
@@ -58,6 +62,8 @@ export function StudyShell({
   totalCount,
   onPrev,
   onNext,
+  nextLabel = "Next",
+  roundLabel,
   isPrevDisabled,
   isNextDisabled,
   currentItem,
@@ -110,15 +116,23 @@ export function StudyShell({
               >
                 <ChevronLeftIcon className="h-5 w-5" />
               </button>
-              <span className="text-sm text-gray-500 min-w-[72px] text-center">
+              <span
+                className="text-sm text-gray-500 min-w-[72px] text-center"
+                aria-label={roundLabel ? `${currentIndex + 1} of ${totalCount}, ${roundLabel} round` : undefined}
+              >
                 {currentIndex + 1} of {totalCount}
               </span>
+              {roundLabel && (
+                <span className="hidden text-xs font-medium text-indigo-700 sm:inline" aria-hidden="true">
+                  {roundLabel}
+                </span>
+              )}
               <button
                 type="button"
                 onClick={onNext}
                 disabled={isNextDisabled}
                 className="p-1 text-gray-600 hover:text-gray-900 disabled:text-gray-300 disabled:cursor-not-allowed"
-                title="Next item"
+                title={nextLabel === "Next" ? "Next item" : nextLabel}
               >
                 <ChevronRightIcon className="h-5 w-5" />
               </button>
@@ -202,7 +216,7 @@ export function StudyShell({
               disabled={isNextDisabled}
               className="px-4 py-2 bg-indigo-600 text-white rounded-md hover:bg-indigo-700 disabled:opacity-50 disabled:cursor-not-allowed"
             >
-              Next
+              {nextLabel}
             </button>
           </div>
         </div>

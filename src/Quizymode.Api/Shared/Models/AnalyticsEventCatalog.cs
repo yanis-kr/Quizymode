@@ -21,6 +21,7 @@ public static class AnalyticsEventCatalog
     public const string QuestionAnswered = "question_answered";
     public const string FlashcardsStarted = "flashcards_started";
     public const string FlashcardRevealed = "flashcard_revealed";
+    public const string FlashcardGraded = "flashcard_graded";
 
     /// <summary>Optional fields an event may carry beyond name, session, path, and context.</summary>
     [Flags]
@@ -59,7 +60,11 @@ public static class AnalyticsEventCatalog
         [FlashcardsStarted] = new(EventFields.RunId | EventFields.Total, EventFields.RunId),
         [FlashcardRevealed] = new(
             EventFields.RunId | EventFields.ItemId | EventFields.Position,
-            EventFields.RunId | EventFields.ItemId | EventFields.Position)
+            EventFields.RunId | EventFields.ItemId | EventFields.Position),
+        // Self-graded flashcard (#251): IsCorrect is true for "Got it". Not a funnel step.
+        [FlashcardGraded] = new(
+            EventFields.RunId | EventFields.ItemId | EventFields.Position | EventFields.IsCorrect,
+            EventFields.RunId | EventFields.ItemId | EventFields.Position | EventFields.IsCorrect)
     };
 
     /// <summary>The initial conversion funnel, in step order, as reported to admins.</summary>

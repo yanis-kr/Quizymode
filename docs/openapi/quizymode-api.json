@@ -4876,6 +4876,46 @@
         }
       }
     },
+    "/review-queue/{itemId}": {
+      "post": {
+        "tags": [
+          "ReviewQueue"
+        ],
+        "summary": "Add an item to the current user's review queue",
+        "description": "Queues a public item, or the caller's own private item, at the first interval, due one day from now; an item already queued is reset to the first interval. Repeat calls keep one entry. A missing item, another user's private item and an item that cannot be played as a quiz question all return the same 404. Requires authentication.",
+        "parameters": [
+          {
+            "name": "itemId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "$ref": "#/components/schemas/System.Guid"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Quizymode.Api.Features.ReviewQueue.ReviewQueue.EnqueueResponse"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "404": {
+            "description": "Not Found"
+          },
+          "429": {
+            "description": "Too Many Requests"
+          }
+        }
+      }
+    },
     "/review-queue/{itemId}/answers": {
       "post": {
         "tags": [
@@ -14507,6 +14547,28 @@
                 "$ref": "#/components/schemas/System.NullableOfSystem.DateTime"
               }
             ]
+          }
+        }
+      },
+      "Quizymode.Api.Features.ReviewQueue.ReviewQueue.EnqueueResponse": {
+        "required": [
+          "itemId",
+          "intervalDays",
+          "dueAt"
+        ],
+        "type": "object",
+        "properties": {
+          "itemId": {
+            "description": "The queued item.",
+            "$ref": "#/components/schemas/System.Guid"
+          },
+          "intervalDays": {
+            "description": "Days until the item is due (always the first interval).",
+            "$ref": "#/components/schemas/System.Int32"
+          },
+          "dueAt": {
+            "description": "When the item is due (UTC).",
+            "$ref": "#/components/schemas/System.DateTime"
           }
         }
       },

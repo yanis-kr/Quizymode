@@ -23,6 +23,12 @@ export interface ReviewAnswerResponse {
   dueAt: string | null;
 }
 
+export interface ReviewEnqueueResponse {
+  itemId: string;
+  intervalDays: number;
+  dueAt: string;
+}
+
 /** Daily quiz (DAILY-001, #119). */
 export interface DailyQuizCompletion {
   correct: number;
@@ -64,6 +70,9 @@ export const reviewQueueApi = {
   get: async (): Promise<ReviewQueueResponse> => (await apiClient.get<ReviewQueueResponse>("/review-queue")).data,
   getSummary: async (): Promise<ReviewQueueSummary> =>
     (await apiClient.get<ReviewQueueSummary>("/review-queue/summary")).data,
+  /** Queues one item at the first interval (idempotent); 404 when the item cannot be reviewed (#251). */
+  enqueue: async (itemId: string): Promise<ReviewEnqueueResponse> =>
+    (await apiClient.post<ReviewEnqueueResponse>(`/review-queue/${encodeURIComponent(itemId)}`)).data,
   answer: async (itemId: string, isCorrect: boolean): Promise<ReviewAnswerResponse> =>
     (await apiClient.post<ReviewAnswerResponse>(`/review-queue/${encodeURIComponent(itemId)}/answers`, { isCorrect })).data,
 };

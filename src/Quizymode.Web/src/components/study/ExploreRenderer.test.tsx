@@ -1,4 +1,4 @@
-import { describe, it, expect } from "vitest";
+import { describe, it, expect, vi } from "vitest";
 import { render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import { ExploreRenderer } from "./ExploreRenderer";
@@ -61,5 +61,42 @@ describe("ExploreRenderer", () => {
     );
     expect(screen.getByTestId("flashcard-back")).toHaveAttribute("aria-hidden", "true");
     expect(screen.getByText("Next?")).toBeInTheDocument();
+  });
+
+  describe("self-grading", () => {
+    it("shows no grade group without onGrade", async () => {
+      const user = userEvent.setup();
+      render(<ExploreRenderer item={mockItem} />);
+      await user.click(screen.getByRole("button", { name: /show answer and explanation/i }));
+      expect(screen.queryByRole("group", { name: "How well did you know this?" })).toBeNull();
+    });
+
+    it("shows the group only after flipping, Got it first, outside the flip buttons", async () => {
+      const user = userEvent.setup();
+      render(<ExploreRenderer item={mockItem} onGrade={() => {}} />);
+      expect(screen.queryByRole("group", { name: "How well did you know this?" })).toBeNull();
+      await user.click(screen.getByRole("button", { name: /show answer and explanation/i }));
+      const group = screen.getByRole("group", { name: "How well did you know this?" });
+      const buttons = Array.from(group.querySelectorAll("button")).map((b) => b.textContent);
+      expect(buttons).toEqual(["Got it", "Still learning"]);
+      expect(group.closest("button")).toBeNull();
+      expect(screen.getByRole("button", { name: "Got it" })).toHaveAttribute("aria-keyshortcuts", "1");
+      expect(screen.getByRole("button", { name: "Still learning" })).toHaveAttribute("aria-keyshortcuts", "2");
+    });
+
+    it("marks the chosen grade pressed, grades once and ignores the already pressed grade", async () => {
+      const user = userEvent.setup();
+      const onGrade = vi.fn();
+      const { rerender } = render(<ExploreRenderer item={mockItem} onGrade={onGrade} />);
+      await user.click(screen.getByRole("button", { name: /show answer and explanation/i }));
+      await user.click(screen.getByRole("button", { name: "Still learning" }));
+      expect(onGrade).toHaveBeenCalledWith(mockItem, "still-learning");
+
+      rerender(<ExploreRenderer item={mockItem} onGrade={onGrade} grade="still-learning" />);
+      expect(screen.getByRole("button", { name: "Still learning" })).toHaveAttribute("aria-pressed", "true");
+      expect(screen.getByRole("button", { name: "Got it" })).toHaveAttribute("aria-pressed", "false");
+      await user.click(screen.getByRole("button", { name: "Still learning" }));
+      expect(onGrade).toHaveBeenCalledTimes(1);
+    });
   });
 });

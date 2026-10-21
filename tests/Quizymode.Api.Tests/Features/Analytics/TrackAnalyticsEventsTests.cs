@@ -222,8 +222,26 @@ public sealed class TrackAnalyticsEventsTests : DatabaseTestFixture
         { "answer with score", new(AnalyticsEventCatalog.QuestionAnswered, "/", RunId: "r", ItemId: Guid.NewGuid(), Position: 1, IsCorrect: true, Score: 1) },
         { "reveal without position", new(AnalyticsEventCatalog.FlashcardRevealed, "/", RunId: "r", ItemId: Guid.NewGuid()) },
         { "reveal with correctness", new(AnalyticsEventCatalog.FlashcardRevealed, "/", RunId: "r", ItemId: Guid.NewGuid(), Position: 1, IsCorrect: true) },
+        { "grade without correctness", new(AnalyticsEventCatalog.FlashcardGraded, "/", RunId: "r", ItemId: Guid.NewGuid(), Position: 1) },
+        { "grade without item", new(AnalyticsEventCatalog.FlashcardGraded, "/", RunId: "r", Position: 1, IsCorrect: true) },
+        { "grade without position", new(AnalyticsEventCatalog.FlashcardGraded, "/", RunId: "r", ItemId: Guid.NewGuid(), IsCorrect: true) },
+        { "grade with score", new(AnalyticsEventCatalog.FlashcardGraded, "/", RunId: "r", ItemId: Guid.NewGuid(), Position: 1, IsCorrect: true, Score: 1) },
         { "flashcards start without run", new(AnalyticsEventCatalog.FlashcardsStarted, "/", "flashcards") },
     };
+
+    [Fact]
+    public async Task HandleAsync_StoresOneFlashcardGradePerItemPerRun()
+    {
+        Guid itemId = Guid.NewGuid();
+        TrackAnalyticsEvents.EventRequest first = new(AnalyticsEventCatalog.FlashcardGraded, "/flashcards", "flashcards", "c", RunId: "run-1", ItemId: itemId, Position: 2, IsCorrect: false);
+        TrackAnalyticsEvents.EventRequest changed = first with { IsCorrect = true };
+
+        TrackAnalyticsEvents.Response response = await Track("s", first, changed);
+
+        response.Accepted.Should().Be(1);
+        response.Duplicates.Should().Be(1);
+        (await DbContext.AnalyticsEvents.SingleAsync()).IsCorrect.Should().BeFalse();
+    }
 
     [Fact]
     public async Task HandleAsync_StoresOneAnswerPerItemPerRun()
