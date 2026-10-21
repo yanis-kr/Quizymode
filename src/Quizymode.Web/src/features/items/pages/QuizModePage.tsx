@@ -37,7 +37,9 @@ import { useStudyHotkeys } from "@/components/study/useStudyHotkeys";
 import { StudyHotkeysDialog } from "@/components/study/StudyHotkeysDialog";
 import { QUIZ_SHORTCUTS } from "@/components/study/studyShortcuts";
 import { flushDeferredAnalyticsEvents } from "@/features/analytics/analyticsEvents";
+import { buildRunShare } from "@/features/items/quiz/resultShare";
 import {
+  quizEventContext,
   trackQuestionAnswered,
   trackQuizRunCompleted,
   trackQuizRunStarted,
@@ -892,6 +894,21 @@ const QuizModePage = () => {
           onReviewMistakes={() => setRun((current) => current ? reduceQuizRun(current, { type: "review-mistakes" }) : current)}
           onBackToResults={() => setRun((current) => current ? reduceQuizRun(current, { type: "show-summary" }) : current)}
           onPlayAgain={handlePlayAgain}
+          share={
+            run.view === "summary"
+              ? buildRunShare({
+                  scope: run.scope,
+                  correct: runSummary?.correct ?? 0,
+                  total: runSummary?.total ?? 0,
+                  collection:
+                    collectionId && collectionInfo
+                      ? { id: collectionId, name: collectionInfo.name, isPublic: collectionInfo.isPublic }
+                      : null,
+                  origin: window.location.origin,
+                })
+              : null
+          }
+          analyticsContext={quizEventContext(run.scope)}
         />
         <StudyHotkeysDialog open={isHelpOpen} onClose={closeHelp} shortcuts={[]} />
       </div>

@@ -6,6 +6,7 @@ import { QUIZ_SHORTCUTS } from "@/components/study/studyShortcuts";
 import { StudyHotkeysHint } from "@/components/study/StudyHotkeysHint";
 import { QuizRenderer } from "@/components/study/QuizRenderer";
 import { QuizCompletionView } from "@/features/items/quiz/QuizCompletionView";
+import type { ResultShareDescriptor } from "@/features/items/quiz/resultShare";
 import {
   createQuizRun,
   getQuizOptions,
@@ -36,6 +37,8 @@ export interface FixedSetQuizProps {
   onAnswer?: (item: ItemResponse, isCorrect: boolean, run: QuizRunState) => void;
   /** Called once per run when every item has an answer. */
   onComplete?: (run: QuizRunState) => void;
+  /** Builds the Share result descriptor for the finished run; omitted for the review queue (no Share). */
+  share?: (run: QuizRunState) => ResultShareDescriptor | null;
 }
 
 function newRun(items: ItemResponse[], identityKey: string): QuizRunState {
@@ -59,6 +62,7 @@ export function FixedSetQuiz({
   browseLabel,
   onAnswer,
   onComplete,
+  share,
 }: FixedSetQuizProps) {
   const [run, setRun] = useState<QuizRunState>(() => newRun(items, identityKey));
   const [index, setIndex] = useState(0);
@@ -153,6 +157,8 @@ export function FixedSetQuiz({
           setRun(newRun(items, identityKey));
           setIndex(0);
         }}
+        share={run.view === "summary" ? share?.(run) : null}
+        analyticsContext={context}
       />
       {helpDialog}
       </>

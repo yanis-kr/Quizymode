@@ -1,5 +1,6 @@
 import * as React from "react";
 import { ShareIcon, XMarkIcon } from "@heroicons/react/24/outline";
+import { useShareActions } from "@/components/share/useShareActions";
 
 interface ShareCollectionButtonProps {
   /** Absolute URL of the collection page. */
@@ -9,32 +10,17 @@ interface ShareCollectionButtonProps {
   isPublic: boolean;
 }
 
-type CopyState = "idle" | "copied" | "failed";
-
-async function copyToClipboard(text: string): Promise<boolean> {
-  try {
-    if (!navigator.clipboard?.writeText) return false;
-    await navigator.clipboard.writeText(text);
-    return true;
-  } catch {
-    return false;
-  }
-}
-
 export function ShareCollectionButton({ url, title, isPublic }: ShareCollectionButtonProps) {
   const [isOpen, setIsOpen] = React.useState(false);
-  const [copyState, setCopyState] = React.useState<CopyState>("idle");
-  const [qrDataUrl, setQrDataUrl] = React.useState<string | null>(null);
-  const [qrError, setQrError] = React.useState(false);
-  const [isLoadingQr, setIsLoadingQr] = React.useState(false);
-  const canNativeShare = typeof navigator !== "undefined" && typeof navigator.share === "function";
+  const { canNativeShare, copyState, copy, nativeShare, qrDataUrl, qrError, isLoadingQr, showQr, resetCopyState } =
+    useShareActions({ copyText: url, shareData: { title, url }, qrValue: url });
   const linkInputId = React.useId();
   const titleId = React.useId();
 
   const close = React.useCallback(() => {
     setIsOpen(false);
-    setCopyState("idle");
-  }, []);
+    resetCopyState();
+  }, [resetCopyState]);
 
   React.useEffect(() => {
     if (!isOpen) return;
@@ -44,33 +30,6 @@ export function ShareCollectionButton({ url, title, isPublic }: ShareCollectionB
     window.addEventListener("keydown", handleKeyDown);
     return () => window.removeEventListener("keydown", handleKeyDown);
   }, [close, isOpen]);
-
-  const handleCopy = async () => {
-    setCopyState((await copyToClipboard(url)) ? "copied" : "failed");
-  };
-
-  const handleNativeShare = async () => {
-    try {
-      await navigator.share({ title, url });
-    } catch (error) {
-      // The user closing the share sheet is not an error; anything else falls back to copying.
-      if (error instanceof DOMException && error.name === "AbortError") return;
-      await handleCopy();
-    }
-  };
-
-  const handleShowQr = async () => {
-    setIsLoadingQr(true);
-    setQrError(false);
-    try {
-      const QRCode = await import("qrcode");
-      setQrDataUrl(await QRCode.toDataURL(url, { width: 240, margin: 1 }));
-    } catch {
-      setQrError(true);
-    } finally {
-      setIsLoadingQr(false);
-    }
-  };
 
   return (
     <>
@@ -130,7 +89,7 @@ export function ShareCollectionButton({ url, title, isPublic }: ShareCollectionB
             <div className="mt-3 flex flex-wrap gap-2">
               <button
                 type="button"
-                onClick={() => void handleCopy()}
+                onClick={() => void copy()}
                 className="rounded-md bg-indigo-600 px-3 py-1.5 text-sm font-medium text-white hover:bg-indigo-700"
               >
                 Copy link
@@ -138,7 +97,7 @@ export function ShareCollectionButton({ url, title, isPublic }: ShareCollectionB
               {canNativeShare && (
                 <button
                   type="button"
-                  onClick={() => void handleNativeShare()}
+                  onClick={() => void nativeShare()}
                   className="rounded-md border border-gray-300 bg-white px-3 py-1.5 text-sm font-medium text-gray-700 hover:bg-gray-50"
                 >
                   Share via…
@@ -146,7 +105,7 @@ export function ShareCollectionButton({ url, title, isPublic }: ShareCollectionB
               )}
               <button
                 type="button"
-                onClick={() => void handleShowQr()}
+                onClick={() => void showQr()}
                 disabled={isLoadingQr}
                 className="rounded-md border border-gray-300 bg-white px-3 py-1.5 text-sm font-medium text-gray-700 hover:bg-gray-50 disabled:opacity-50"
               >

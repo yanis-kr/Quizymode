@@ -22,6 +22,7 @@ public static class AnalyticsEventCatalog
     public const string FlashcardsStarted = "flashcards_started";
     public const string FlashcardRevealed = "flashcard_revealed";
     public const string FlashcardGraded = "flashcard_graded";
+    public const string QuizResultShared = "quiz_result_shared";
 
     /// <summary>Optional fields an event may carry beyond name, session, path, and context.</summary>
     [Flags]
@@ -64,7 +65,11 @@ public static class AnalyticsEventCatalog
         // Self-graded flashcard (#251): IsCorrect is true for "Got it". Not a funnel step.
         [FlashcardGraded] = new(
             EventFields.RunId | EventFields.ItemId | EventFields.Position | EventFields.IsCorrect,
-            EventFields.RunId | EventFields.ItemId | EventFields.Position | EventFields.IsCorrect)
+            EventFields.RunId | EventFields.ItemId | EventFields.Position | EventFields.IsCorrect),
+        // A completed run's result was shared (#253): one per run. Not a funnel step.
+        [QuizResultShared] = new(
+            EventFields.RunId | EventFields.Score | EventFields.Total,
+            EventFields.RunId | EventFields.Score | EventFields.Total)
     };
 
     /// <summary>The initial conversion funnel, in step order, as reported to admins.</summary>

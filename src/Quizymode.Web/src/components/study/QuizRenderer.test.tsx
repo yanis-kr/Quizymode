@@ -79,4 +79,25 @@ describe("QuizRenderer", () => {
     );
     expect(screen.getByText(/Score: 3 \/ 5 correct/)).toBeInTheDocument();
   });
+
+  it("pulses the correct option and shakes a wrong pick with motion-safe classes and hidden icons", () => {
+    render(
+      <QuizRenderer
+        item={mockItem}
+        options={["3", "4", "5", "6"]}
+        selectedAnswer="3"
+        showAnswer
+        onAnswerSelect={vi.fn()}
+        stats={{ total: 1, correct: 0 }}
+      />
+    );
+    const correct = screen.getByRole("button", { name: /^B\. 4$/ });
+    const wrong = screen.getByRole("button", { name: /^A\. 3$/ });
+    expect(correct.className).toContain("motion-safe:animate-correct-pulse");
+    expect(wrong.className).toContain("motion-safe:animate-wrong-shake");
+    expect(correct.className).not.toMatch(/(^|\s)animate-/);
+    expect(correct.querySelector('svg[aria-hidden="true"]')).not.toBeNull();
+    expect(wrong.querySelector('svg[aria-hidden="true"]')).not.toBeNull();
+    expect(screen.getByRole("button", { name: /^C\. 5$/ }).querySelector("svg")).toBeNull();
+  });
 });

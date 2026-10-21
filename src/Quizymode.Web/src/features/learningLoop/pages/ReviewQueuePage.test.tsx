@@ -55,4 +55,16 @@ describe("ReviewQueuePage", () => {
     expect(screen.getByText(/3 questions are scheduled. The next one is due/)).toBeInTheDocument();
     expect(screen.getByRole("link", { name: "Play the daily quiz" })).toHaveAttribute("href", "/daily");
   });
+
+  it("shows results without a Share result button", async () => {
+    vi.mocked(reviewQueueApi.get).mockResolvedValue({ items: [testItem("a")], dueCount: 1, totalCount: 1, nextDueAt: null });
+    vi.mocked(reviewQueueApi.answer).mockResolvedValue({ itemId: "a", applied: true, graduated: false, intervalDays: 3, dueAt: "2026-10-21T00:00:00Z" });
+
+    renderWithProviders(<ReviewQueuePage />);
+    fireEvent.click(await screen.findByRole("button", { name: /Right a/ }));
+    fireEvent.click(await screen.findByRole("button", { name: "View results" }));
+
+    expect(screen.getByRole("heading", { name: "Quiz complete" })).toBeInTheDocument();
+    expect(screen.queryByRole("button", { name: /share/i })).toBeNull();
+  });
 });

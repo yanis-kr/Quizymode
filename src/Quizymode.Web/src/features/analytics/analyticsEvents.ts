@@ -19,7 +19,8 @@ export type AnalyticsEventName =
   | "question_answered"
   | "flashcards_started"
   | "flashcard_revealed"
-  | "flashcard_graded";
+  | "flashcard_graded"
+  | "quiz_result_shared";
 
 export type AnalyticsContextType =
   | "auth"

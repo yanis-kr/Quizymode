@@ -226,8 +226,28 @@ public sealed class TrackAnalyticsEventsTests : DatabaseTestFixture
         { "grade without item", new(AnalyticsEventCatalog.FlashcardGraded, "/", RunId: "r", Position: 1, IsCorrect: true) },
         { "grade without position", new(AnalyticsEventCatalog.FlashcardGraded, "/", RunId: "r", ItemId: Guid.NewGuid(), IsCorrect: true) },
         { "grade with score", new(AnalyticsEventCatalog.FlashcardGraded, "/", RunId: "r", ItemId: Guid.NewGuid(), Position: 1, IsCorrect: true, Score: 1) },
+        { "share without score", new(AnalyticsEventCatalog.QuizResultShared, "/", RunId: "r", Total: 2) },
+        { "share without run", new(AnalyticsEventCatalog.QuizResultShared, "/", Score: 1, Total: 2) },
+        { "share with item", new(AnalyticsEventCatalog.QuizResultShared, "/", RunId: "r", Score: 1, Total: 2, ItemId: Guid.NewGuid()) },
+        { "share with position", new(AnalyticsEventCatalog.QuizResultShared, "/", RunId: "r", Score: 1, Total: 2, Position: 1) },
+        { "share with correctness", new(AnalyticsEventCatalog.QuizResultShared, "/", RunId: "r", Score: 1, Total: 2, IsCorrect: true) },
+        { "share score above total", new(AnalyticsEventCatalog.QuizResultShared, "/", RunId: "r", Score: 3, Total: 2) },
         { "flashcards start without run", new(AnalyticsEventCatalog.FlashcardsStarted, "/", "flashcards") },
     };
+
+    [Fact]
+    public async Task HandleAsync_StoresOneQuizResultSharePerRun()
+    {
+        TrackAnalyticsEvents.EventRequest first = new(AnalyticsEventCatalog.QuizResultShared, "/quiz", "daily", "2026-10-20", RunId: "run-1", Score: 4, Total: 5);
+
+        TrackAnalyticsEvents.Response response = await Track("s", first, first with { Score = 5 });
+
+        response.Accepted.Should().Be(1);
+        response.Duplicates.Should().Be(1);
+        AnalyticsEvent stored = await DbContext.AnalyticsEvents.SingleAsync();
+        stored.Score.Should().Be(4);
+        stored.ContextType.Should().Be("daily");
+    }
 
     [Fact]
     public async Task HandleAsync_StoresOneFlashcardGradePerItemPerRun()

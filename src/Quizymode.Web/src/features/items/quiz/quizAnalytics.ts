@@ -88,6 +88,11 @@ export function trackQuizRunCompleted(snapshot: QuizCompletionSnapshot): void {
   });
 }
 
+/** One `quiz_result_shared` per run, after a native share resolves or a copy succeeds (AC 5.5.17). */
+export function trackQuizResultShared(runId: string, score: number, total: number, context: StudyEventContext): void {
+  trackEventOnce(runId, { name: "quiz_result_shared", runId, score, total, ...context });
+}
+
 /** One `flashcards_started` per Flashcards run. */
 export function trackFlashcardsStarted(runId: string, total: number, context: StudyEventContext): void {
   trackEventOnce(runId, { name: "flashcards_started", runId, total, ...context });

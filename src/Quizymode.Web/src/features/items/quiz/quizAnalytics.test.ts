@@ -4,6 +4,7 @@ import {
   flashcardsEventContext,
   quizEventContext,
   trackFlashcardGraded,
+  trackQuizResultShared,
   trackFlashcardRevealed,
   trackFlashcardsStarted,
   trackQuestionAnswered,
@@ -150,6 +151,19 @@ describe("quizAnalytics", () => {
       isCorrect: false,
       contextType: "collection",
       contextId: "c-1",
+    });
+  });
+
+  it("sends quiz_result_shared once per run with the run's own context", () => {
+    trackQuizResultShared("run-1", 4, 5, { contextType: "daily", contextId: "2026-10-20" });
+
+    expect(mockTrackEventOnce).toHaveBeenCalledWith("run-1", {
+      name: "quiz_result_shared",
+      runId: "run-1",
+      score: 4,
+      total: 5,
+      contextType: "daily",
+      contextId: "2026-10-20",
     });
   });
 });
