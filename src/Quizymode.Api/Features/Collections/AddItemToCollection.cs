@@ -3,6 +3,7 @@ using FluentValidation.Results;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
 using Quizymode.Api.Data;
+using Quizymode.Api.Shared.Helpers;
 using Quizymode.Api.Shared.Http;
 using Quizymode.Api.Services;
 using Quizymode.Api.Shared.Kernel;
@@ -191,7 +192,7 @@ public static class CollectionItems
                     Error.Validation("CollectionItems.Forbidden", "Only the collection owner can add or remove items."));
             }
 
-            Item? item = await db.Items
+            Item? item = await ItemVisibility.AddableToCollection(db, userContext.UserId)
                 .FirstOrDefaultAsync(i => i.Id == request.ItemId, cancellationToken);
 
             if (item is null)
@@ -278,7 +279,7 @@ public static class CollectionItems
                 .ToHashSetAsync(cancellationToken);
 
             // Filter out items that don't exist
-            List<Guid> validItemIds = await db.Items
+            List<Guid> validItemIds = await ItemVisibility.AddableToCollection(db, userContext.UserId)
                 .Where(i => request.ItemIds.Contains(i.Id))
                 .Select(i => i.Id)
                 .ToListAsync(cancellationToken);

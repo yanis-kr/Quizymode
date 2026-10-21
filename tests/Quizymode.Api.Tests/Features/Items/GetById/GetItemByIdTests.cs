@@ -88,6 +88,40 @@ public sealed class GetItemByIdTests : DatabaseTestFixture
         result.Error.Code.Should().Be("Item.NotFound");
     }
 
+    [Fact]
+    public async Task HandleAsync_OthersPrivateItem_ReturnsSameNotFoundAsMissingId()
+    {
+        Guid itemId = Guid.NewGuid();
+        await CreateItemWithCategoryAsync(itemId, "secret", "Q?", "A", new List<string> { "B" }, "", true, "someone-else");
+
+        Result<GetItemById.Response> missing = await GetItemById.HandleAsync(
+            Guid.NewGuid().ToString(), DbContext, FakeUserContext.User("test"), CancellationToken.None);
+        missing.Error.Type.Should().Be(ErrorType.NotFound);
+
+        foreach (FakeUserContext caller in new[] { FakeUserContext.User("test"), FakeUserContext.Anonymous })
+        {
+            Result<GetItemById.Response> result = await GetItemById.HandleAsync(
+                itemId.ToString(), DbContext, caller, CancellationToken.None);
+
+            result.IsFailure.Should().BeTrue();
+            result.Error.Type.Should().Be(ErrorType.NotFound);
+            result.Error.Code.Should().Be(missing.Error.Code);
+            result.Error.Description.Should().Be($"Item with id {itemId} not found");
+        }
+    }
+
+    [Fact]
+    public async Task HandleAsync_AdminNonOwner_CanReadPrivateItem()
+    {
+        Guid itemId = Guid.NewGuid();
+        await CreateItemWithCategoryAsync(itemId, "secret", "Q?", "A", new List<string> { "B" }, "", true, "someone-else");
+
+        Result<GetItemById.Response> result = await GetItemById.HandleAsync(
+            itemId.ToString(), DbContext, FakeUserContext.Admin(), CancellationToken.None);
+
+        result.IsSuccess.Should().BeTrue();
+    }
+
     private async Task<Item> CreateItemWithCategoryAsync(
         Guid itemId,
         string categoryName,

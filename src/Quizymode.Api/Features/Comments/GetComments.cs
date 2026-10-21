@@ -1,5 +1,7 @@
 using Microsoft.EntityFrameworkCore;
 using Quizymode.Api.Data;
+using Quizymode.Api.Services;
+using Quizymode.Api.Shared.Helpers;
 using Quizymode.Api.Shared.Http;
 using Quizymode.Api.Shared.Kernel;
 using Quizymode.Api.Shared.Models;
@@ -38,11 +40,12 @@ public static class GetComments
         private static async Task<IResult> Handler(
             Guid? itemId,
             ApplicationDbContext db,
+            IUserContext userContext,
             CancellationToken cancellationToken)
         {
             QueryRequest request = new(itemId);
 
-            Result<Response> result = await HandleAsync(request, db, cancellationToken);
+            Result<Response> result = await HandleAsync(request, db, userContext, cancellationToken);
 
             return result.Match(
                 value => Results.Ok(value),
@@ -53,6 +56,7 @@ public static class GetComments
     public static async Task<Result<Response>> HandleAsync(
         QueryRequest request,
         ApplicationDbContext db,
+        IUserContext userContext,
         CancellationToken cancellationToken)
     {
         try
@@ -62,6 +66,14 @@ public static class GetComments
             if (request.ItemId.HasValue && request.ItemId.Value != Guid.Empty)
             {
                 query = query.Where(c => c.ItemId == request.ItemId.Value);
+            }
+            else
+            {
+                // #285: listing all comments only exposes comments on items the caller can access by id.
+                IQueryable<Guid> accessibleItemIds = db.Items
+                    .Where(ItemVisibility.AccessibleById(userContext))
+                    .Select(i => i.Id);
+                query = query.Where(c => accessibleItemIds.Contains(c.ItemId));
             }
 
             List<Comment> comments = await query

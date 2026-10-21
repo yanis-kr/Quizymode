@@ -21,6 +21,7 @@ public sealed class GetCommentsTests : DatabaseTestFixture
         Result<GetComments.Response> result = await GetComments.HandleAsync(
             request,
             DbContext,
+            FakeUserContext.Anonymous,
             CancellationToken.None);
 
         // Assert
@@ -55,6 +56,7 @@ public sealed class GetCommentsTests : DatabaseTestFixture
         Result<GetComments.Response> result = await GetComments.HandleAsync(
             request,
             DbContext,
+            FakeUserContext.Anonymous,
             CancellationToken.None);
 
         // Assert
@@ -89,12 +91,67 @@ public sealed class GetCommentsTests : DatabaseTestFixture
         Result<GetComments.Response> result = await GetComments.HandleAsync(
             request,
             DbContext,
+            FakeUserContext.Anonymous,
             CancellationToken.None);
 
         // Assert
         result.IsSuccess.Should().BeTrue();
         result.Value.Comments.Should().HaveCount(2);
         result.Value.Comments.Should().BeInDescendingOrder(c => c.CreatedAt);
+    }
+
+    [Fact]
+    public async Task HandleAsync_NoItemId_HidesCommentsOnOthersPrivateItems()
+    {
+        Category category = VisibilitySeed.AddCategory(DbContext);
+        Item publicItem = VisibilitySeed.AddItem(DbContext, category, "owner", false);
+        Item privateItem = VisibilitySeed.AddItem(DbContext, category, "owner", true);
+        VisibilitySeed.AddComment(DbContext, publicItem);
+        VisibilitySeed.AddComment(DbContext, privateItem);
+        await DbContext.SaveChangesAsync();
+
+        (await IdsAsync(new GetComments.QueryRequest(null), FakeUserContext.Anonymous))
+            .Should().BeEquivalentTo(new[] { publicItem.Id });
+        (await IdsAsync(new GetComments.QueryRequest(null), FakeUserContext.User("other")))
+            .Should().BeEquivalentTo(new[] { publicItem.Id });
+        (await IdsAsync(new GetComments.QueryRequest(null), FakeUserContext.User("owner")))
+            .Should().BeEquivalentTo(new[] { publicItem.Id, privateItem.Id });
+        (await IdsAsync(new GetComments.QueryRequest(null), FakeUserContext.Admin()))
+            .Should().BeEquivalentTo(new[] { publicItem.Id, privateItem.Id });
+    }
+
+    [Fact]
+    public async Task HandleAsync_EmptyGuidItemId_IsTreatedAsMissingAndFiltered()
+    {
+        Category category = VisibilitySeed.AddCategory(DbContext);
+        Item publicItem = VisibilitySeed.AddItem(DbContext, category, "owner", false);
+        Item privateItem = VisibilitySeed.AddItem(DbContext, category, "owner", true);
+        VisibilitySeed.AddComment(DbContext, publicItem);
+        VisibilitySeed.AddComment(DbContext, privateItem);
+        await DbContext.SaveChangesAsync();
+
+        (await IdsAsync(new GetComments.QueryRequest(Guid.Empty), FakeUserContext.Anonymous))
+            .Should().BeEquivalentTo(new[] { publicItem.Id });
+    }
+
+    [Fact]
+    public async Task HandleAsync_WithItemIdOfPrivateItem_StillReturnsComments()
+    {
+        // Per-item comments are intentionally not gated yet (follow-up to #285).
+        Category category = VisibilitySeed.AddCategory(DbContext);
+        Item privateItem = VisibilitySeed.AddItem(DbContext, category, "owner", true);
+        VisibilitySeed.AddComment(DbContext, privateItem);
+        await DbContext.SaveChangesAsync();
+
+        (await IdsAsync(new GetComments.QueryRequest(privateItem.Id), FakeUserContext.Anonymous))
+            .Should().BeEquivalentTo(new[] { privateItem.Id });
+    }
+
+    private async Task<List<Guid>> IdsAsync(GetComments.QueryRequest request, FakeUserContext user)
+    {
+        Result<GetComments.Response> result = await GetComments.HandleAsync(request, DbContext, user, CancellationToken.None);
+        result.IsSuccess.Should().BeTrue();
+        return result.Value.Comments.Select(c => c.ItemId).ToList();
     }
 
     private async Task<Item> CreateItemWithCategoryAsync(

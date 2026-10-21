@@ -66,7 +66,7 @@ These invariants apply everywhere unless explicitly overridden by a feature-spec
 - **Invariant I4 – Removing items from collections**
   - Removing an item from a collection immediately revokes collection-scoped access to that item for users who only had access via that collection. Subsequent calls to `GET /items?collectionId={id}` must not include the removed item.
 - **Invariant I5 – Direct item access**
-  - Direct item APIs (e.g. `GET /items/{id}`) follow a strict rule: the owner can always access their own item by ID; anyone else (authenticated or anonymous) can access an item by ID only if the item is public (`IsPrivate = false`). Private items that are only visible via a collection remain inaccessible by direct item ID for non-owners; unauthorized callers receive 404 for direct access. (See AC 2.3.1–2.3.4.)
+  - Direct item APIs (e.g. `GET /items/{id}`) follow a strict rule: the owner can always access their own item by ID; an admin may read any item by ID (AC 2.3.6; admin moderation and edit flows rely on this, and the exception does not extend to lists or discovery); anyone else (authenticated or anonymous) can access an item by ID only if the item is public (`IsPrivate = false`). Private items that are only visible via a collection remain inaccessible by direct item ID for non-owners; they receive exactly the same 404 as a non-existent id. (See AC 2.3.1–2.3.6.)
 
 ### Keywords and categories
 
@@ -244,6 +244,7 @@ Terms used in this document with a specific meaning:
 **UI**
 
 - **AC 1.6.5** [Owner] **Given** I am on a collection I own, **when** I use "add to collection" / "remove from collection", **then** the UI calls the API per above and reflects success or error.
+- **AC 1.6.9** [Owner] **Given** I call `POST /collections/{collectionId}/items` or `/items/bulk` for my collection, **then** an item can be added only if it is public, created by me, or published by its creator through a public collection owned by that creator. Otherwise the single add returns the same 404 `Item.NotFound` as a missing item (checked before the idempotent already-in-collection result), and bulk add skips the item (counted in `skippedCount`, absent from `addedItemIds`). Collections owned by me or by a third party never make another user's private item addable, and admins get no exception (AC 1.6.3). Copies made earlier survive later revocation of the item's visibility (#285).
 - **AC 1.6.6** [Authenticated (non-owner)] **Given** I am viewing a collection I do not own, **when** the page loads, **then** add/remove controls for that collection are not offered (or are disabled) per API rules.
 
 ---
@@ -442,12 +443,13 @@ Terms used in this document with a specific meaning:
 
 - **AC 2.3.1** [Owner] **Given** I am the owner of an item, **when** I call `GET /items/{id}`, **then** the API returns the item regardless of `IsPrivate`.
 - **AC 2.3.2** [Anyone] **Given** an item exists with `IsPrivate = false`, **when** I call `GET /items/{id}`, **then** the API returns the item (subject to standard status codes for validation or deletion).
-- **AC 2.3.3** [Authenticated (non-owner) / Anonymous] **Given** an item exists with `IsPrivate = true` and I am not the owner, **when** I call `GET /items/{id}`, **then** the API returns 404 (the item is not directly accessible outside collections it belongs to, even if it appears in a collection I can access).
+- **AC 2.3.3** [Authenticated (non-owner, non-admin) / Anonymous] **Given** an item exists with `IsPrivate = true` and I am not the owner (and not an admin), **when** I call `GET /items/{id}`, **then** the API returns the same 404 (empty body, same headers) as for a non-existent id, so the response does not reveal the item exists (the item is not directly accessible outside collections it belongs to, even if it appears in a collection I can access) (#285).
 - **AC 2.3.4** [Anyone] **Given** the item ID does not exist (or has been hard-deleted), **when** I call `GET /items/{id}`, **then** the API returns 404.
 
 **UI**
 
-- **AC 2.3.5** [Anyone] **Given** I open an item detail page that uses a direct item route (e.g. `/items/{id}`), **when** the page loads, **then** the UI expects the item to be either public or owned by me; items that are only visible through a collection I can access are surfaced via the collection-based routes and APIs (e.g. `/collections/{collectionId}` with `GET /items?collectionId={collectionId}`), not via direct item URLs.
+- **AC 2.3.6** [Admin (non-owner)] **Given** an item exists with `IsPrivate = true` owned by another user, **when** I call `GET /items/{id}`, **then** the API returns the item (200). Listing and discovery (`GET /items`, review queue, Explore) are unchanged and give admins no extra visibility (#285).
+- **AC 2.3.5** [Anyone] **Given** I open an item detail page that uses a direct item route (e.g. `/items/{id}`), **when** the page loads, **then** the UI expects the item to be either public or owned by me (the admin Edit flow is the sanctioned exception, AC 2.3.6); items that are only visible through a collection I can access are surfaced via the collection-based routes and APIs (e.g. `/collections/{collectionId}` with `GET /items?collectionId={collectionId}`), not via direct item URLs.
 
 ---
 
@@ -475,7 +477,7 @@ Terms used in this document with a specific meaning:
 
 **API**
 
-- **AC 2.5.1** [Anyone] **Given** I call `GET /comments?itemId={guid}`, **then** the API returns all comments for that item ordered by creation date (newest first) including `id`, `itemId`, `text`, `createdBy` (user id), `createdByName` (display name), `createdAt`, and `updatedAt`; no authentication is required.
+- **AC 2.5.1** [Anyone] **Given** I call `GET /comments?itemId={guid}`, **then** the API returns all comments for that item ordered by creation date (newest first) including `id`, `itemId`, `text`, `createdBy` (user id), `createdByName` (display name), `createdAt`, and `updatedAt`; no authentication is required. **Given** I call `GET /comments` without `itemId` (or with the empty GUID), **then** only comments on items I can access by id (AC 2.3.1-2.3.6) are returned (#285). Comments and ratings addressed by an explicit private item id are not gated yet (tracked as a follow-up).
 - **AC 2.5.2** [Authenticated] **Given** I am authenticated, **when** I call `POST /comments` with `{ "itemId": guid, "text": "..." }`, **then** the API creates a comment attached to the item and returns 201 with the created comment; `text` must be non-empty and at most 2000 characters; the item must exist (404 if not found).
 - **AC 2.5.3** [Anonymous] **Given** I am not authenticated, **when** I call `POST /comments`, **then** the API returns 401.
 - **AC 2.5.4** [Owner of comment] **Given** I am authenticated and I own the comment, **when** I call `PUT /comments/{id}` with `{ "text": "..." }`, **then** the API updates the comment text and sets `updatedAt`, returning 200; `text` must be non-empty and at most 2000 characters.
