@@ -206,7 +206,7 @@ public static class DiscoverCollections
         catch (Exception ex)
         {
             return Result.Failure<Response>(
-                Error.Problem("Collections.DiscoverFailed", $"Failed to discover collections: {ex.Message}"));
+                Error.Problem("Collections.DiscoverFailed", "Failed to discover collections.", ex));
         }
     }
 

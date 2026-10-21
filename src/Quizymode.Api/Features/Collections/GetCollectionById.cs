@@ -88,7 +88,7 @@ public static class GetCollectionById
         catch (Exception ex)
         {
             return Result.Failure<Response>(
-                Error.Problem("Collection.GetFailed", $"Failed to get collection: {ex.Message}"));
+                Error.Problem("Collection.GetFailed", "Failed to get collection.", ex));
         }
     }
 

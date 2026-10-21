@@ -67,7 +67,7 @@ public static class UnbookmarkCollection
         catch (Exception ex)
         {
             return Result.Failure(
-                Error.Problem("Collections.UnbookmarkFailed", $"Failed to remove bookmark: {ex.Message}"));
+                Error.Problem("Collections.UnbookmarkFailed", "Failed to remove bookmark.", ex));
         }
     }
 

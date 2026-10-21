@@ -137,7 +137,7 @@ internal sealed class CategoryResolver(
         {
             _logger.LogError(ex, "Error resolving or creating category: {Name}", name);
             return Result.Failure<Category>(
-                Error.Problem("Category.ResolveFailed", $"Failed to resolve or create category: {ex.Message}"));
+                Error.Problem("Category.ResolveFailed", "Failed to resolve or create category."));
         }
     }
 }

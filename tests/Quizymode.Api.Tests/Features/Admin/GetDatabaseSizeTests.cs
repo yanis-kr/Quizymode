@@ -21,4 +21,14 @@ public sealed class GetDatabaseSizeTests : DatabaseTestFixture
         result.IsFailure.Should().BeTrue();
         result.Error!.Code.Should().Be("Admin.GetDatabaseSizeFailed");
     }
+
+    [Fact]
+    public async Task HandleAsync_OnFailure_DescriptionIsGenericAndExceptionCaptured()
+    {
+        var result = await GetDatabaseSize.HandleAsync(DbContext, CancellationToken.None);
+
+        result.Error!.Description.Should().Be("Failed to retrieve database size.");
+        result.Error.Description.Should().NotContain("pg_database_size");
+        result.Error.Exception.Should().NotBeNull();
+    }
 }

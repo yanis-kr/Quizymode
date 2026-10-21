@@ -78,7 +78,7 @@ public static class BookmarkCollection
         catch (Exception ex)
         {
             return Result.Failure(
-                Error.Problem("Collections.BookmarkFailed", $"Failed to bookmark: {ex.Message}"));
+                Error.Problem("Collections.BookmarkFailed", "Failed to bookmark.", ex));
         }
     }
 

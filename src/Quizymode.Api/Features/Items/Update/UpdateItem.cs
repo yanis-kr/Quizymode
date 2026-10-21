@@ -378,7 +378,7 @@ public static class UpdateItem
         catch (Exception ex)
         {
             return Result.Failure<Response>(
-                Error.Problem("Item.UpdateFailed", $"Failed to update item: {ex.Message}"));
+                Error.Problem("Item.UpdateFailed", "Failed to update item.", ex));
         }
     }
 

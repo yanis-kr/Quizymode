@@ -2,6 +2,7 @@ using System.Security.Cryptography;
 using System.Text;
 using FluentValidation;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Logging.Abstractions;
 using Quizymode.Api.Data;
 using Quizymode.Api.Features;
 using Quizymode.Api.Features.Collections;
@@ -87,6 +88,7 @@ public static class UploadItemsToCollection
             ITaxonomyItemCategoryResolver itemCategoryResolver,
             ITaxonomyRegistry taxonomyRegistry,
             IAuditService auditService,
+            ILogger<Endpoint> logger,
             CancellationToken cancellationToken)
         {
             if (!userContext.IsAuthenticated || string.IsNullOrEmpty(userContext.UserId))
@@ -108,7 +110,8 @@ public static class UploadItemsToCollection
                 itemCategoryResolver,
                 taxonomyRegistry,
                 auditService,
-                cancellationToken);
+                cancellationToken,
+                logger);
 
             return result.Match(
                 value => Results.Created($"/api/collections/{value.CollectionId}", value),
@@ -132,7 +135,8 @@ public static class UploadItemsToCollection
         ITaxonomyItemCategoryResolver itemCategoryResolver,
         ITaxonomyRegistry taxonomyRegistry,
         IAuditService auditService,
-        CancellationToken cancellationToken)
+        CancellationToken cancellationToken,
+        ILogger? logger = null)
     {
         if (string.IsNullOrEmpty(userContext.UserId) || !Guid.TryParse(userContext.UserId, out Guid userIdGuid))
         {
@@ -180,6 +184,7 @@ public static class UploadItemsToCollection
             itemCategoryResolver,
             taxonomyRegistry,
             auditService,
+            logger ?? NullLogger.Instance,
             cancellationToken);
 
         if (bulkResult.IsFailure)

@@ -79,7 +79,7 @@ public static class GetCurrentStudyGuide
         catch (Exception ex)
         {
             return Result.Failure<Response?>(
-                Error.Problem("StudyGuide.GetFailed", $"Failed to get study guide: {ex.Message}"));
+                Error.Problem("StudyGuide.GetFailed", "Failed to get study guide.", ex));
         }
     }
 }

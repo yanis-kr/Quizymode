@@ -173,7 +173,7 @@ public static class UpsertCurrentStudyGuide
         catch (Exception ex)
         {
             return Result.Failure<Response>(
-                Error.Problem("StudyGuide.UpsertFailed", $"Failed to save study guide: {ex.Message}"));
+                Error.Problem("StudyGuide.UpsertFailed", "Failed to save study guide.", ex));
         }
     }
 

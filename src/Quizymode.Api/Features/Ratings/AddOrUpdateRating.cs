@@ -159,7 +159,7 @@ public static class AddOrUpdateRating
         catch (Exception ex)
         {
             return Result.Failure<Response>(
-                Error.Problem("Ratings.CreateOrUpdateFailed", $"Failed to create or update rating: {ex.Message}"));
+                Error.Problem("Ratings.CreateOrUpdateFailed", "Failed to create or update rating.", ex));
         }
     }
 

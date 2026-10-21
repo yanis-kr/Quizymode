@@ -105,7 +105,7 @@ public static class GetCollectionBookmarks
         catch (Exception ex)
         {
             return Result.Failure<Response>(
-                Error.Problem("CollectionBookmarks.GetFailed", ex.Message));
+                Error.Problem("CollectionBookmarks.GetFailed", "Failed to get collection bookmarks.", ex));
         }
     }
 }

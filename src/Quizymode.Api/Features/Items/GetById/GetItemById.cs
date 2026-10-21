@@ -173,7 +173,7 @@ public static class GetItemById
         catch (Exception ex)
         {
             return Result.Failure<Response>(
-                Error.Problem("Item.GetFailed", $"Failed to get item: {ex.Message}"));
+                Error.Problem("Item.GetFailed", "Failed to get item.", ex));
         }
     }
 

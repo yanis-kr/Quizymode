@@ -106,7 +106,7 @@ public static class GetComments
         catch (Exception ex)
         {
             return Result.Failure<Response>(
-                Error.Problem("Comments.GetFailed", $"Failed to get comments: {ex.Message}"));
+                Error.Problem("Comments.GetFailed", "Failed to get comments.", ex));
         }
     }
 

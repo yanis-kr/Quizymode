@@ -98,7 +98,7 @@ internal sealed class DatabaseSeederHostedService(
                         recordHistory: false);
                     if (result.IsFailure)
                     {
-                        _logger.LogError("Failed to apply local item seed sync: {Error}", result.Error?.Description ?? "Unknown error");
+                        _logger.LogError(result.Error?.Exception, "Failed to apply local item seed sync: {Code} {Error}", result.Error?.Code, result.Error?.Description ?? "Unknown error");
                         return;
                     }
 
@@ -247,8 +247,15 @@ internal sealed class DatabaseSeederHostedService(
                 continue;
             }
 
-            foreach (RepoManagedItemSeedData item in items)
+            foreach (RepoManagedItemSeedData? item in items)
             {
+                if (item is null)
+                {
+                    // Pass null entries through so manifest validation rejects them with a clear message.
+                    requests.Add(null!);
+                    continue;
+                }
+
                 if (allowedIds is not null && !allowedIds.Contains(item.ItemId))
                 {
                     continue;

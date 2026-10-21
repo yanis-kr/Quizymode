@@ -67,7 +67,7 @@ internal static class GetItemsHandler
         catch (Exception ex)
         {
             return Result.Failure<GetItems.Response>(
-                Error.Problem("Items.GetFailed", $"Failed to get items: {ex.Message}"));
+                Error.Problem("Items.GetFailed", "Failed to get items.", ex));
         }
     }
 }

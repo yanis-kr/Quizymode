@@ -64,7 +64,7 @@ public static class IdeaComments
         catch (Exception ex)
         {
             return Result.Failure<IdeaCommentsResponse>(
-                Error.Problem("IdeaComments.GetFailed", $"Failed to load idea comments: {ex.Message}"));
+                Error.Problem("IdeaComments.GetFailed", "Failed to load idea comments.", ex));
         }
     }
 
@@ -134,7 +134,7 @@ public static class IdeaComments
         catch (Exception ex)
         {
             return Result.Failure<IdeaCommentResponse>(
-                Error.Problem("IdeaComments.CreateFailed", $"Failed to create idea comment: {ex.Message}"));
+                Error.Problem("IdeaComments.CreateFailed", "Failed to create idea comment.", ex));
         }
     }
 
@@ -196,7 +196,7 @@ public static class IdeaComments
         catch (Exception ex)
         {
             return Result.Failure<IdeaCommentResponse>(
-                Error.Problem("IdeaComments.UpdateFailed", $"Failed to update idea comment: {ex.Message}"));
+                Error.Problem("IdeaComments.UpdateFailed", "Failed to update idea comment.", ex));
         }
     }
 
@@ -239,7 +239,7 @@ public static class IdeaComments
         }
         catch (Exception ex)
         {
-            return Result.Failure(Error.Problem("IdeaComments.DeleteFailed", $"Failed to delete idea comment: {ex.Message}"));
+            return Result.Failure(Error.Problem("IdeaComments.DeleteFailed", "Failed to delete idea comment.", ex));
         }
     }
 

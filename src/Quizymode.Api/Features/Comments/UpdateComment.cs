@@ -139,7 +139,7 @@ public static class UpdateComment
         catch (Exception ex)
         {
             return Result.Failure<Response>(
-                Error.Problem("Comments.UpdateFailed", $"Failed to update comment: {ex.Message}"));
+                Error.Problem("Comments.UpdateFailed", "Failed to update comment.", ex));
         }
     }
 

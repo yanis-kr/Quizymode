@@ -180,6 +180,7 @@ public static class AddItemsBulk
             ITaxonomyItemCategoryResolver itemCategoryResolver,
             ITaxonomyRegistry taxonomyRegistry,
             IAuditService auditService,
+            ILogger<Endpoint> logger,
             CancellationToken cancellationToken)
         {
             if (!userContext.IsAuthenticated || string.IsNullOrEmpty(userContext.UserId))
@@ -201,6 +202,7 @@ public static class AddItemsBulk
                 itemCategoryResolver,
                 taxonomyRegistry,
                 auditService,
+                logger,
                 cancellationToken);
 
             return result.Match(

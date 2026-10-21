@@ -117,7 +117,7 @@ public static class RejectItem
         catch (Exception ex)
         {
             return Result.Failure<RejectItemResponse>(
-                Error.Problem("Items.RejectFailed", $"Failed to reject item: {ex.Message}"));
+                Error.Problem("Items.RejectFailed", "Failed to reject item.", ex));
         }
     }
 

@@ -50,7 +50,7 @@ internal static class DeleteItemHandler
         catch (Exception ex)
         {
             return Result.Failure(
-                Error.Problem("Item.DeleteFailed", $"Failed to delete item: {ex.Message}"));
+                Error.Problem("Item.DeleteFailed", "Failed to delete item.", ex));
         }
     }
 }

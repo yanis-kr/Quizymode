@@ -124,7 +124,7 @@ public static class AddCollection
         catch (Exception ex)
         {
             return Result.Failure<Response>(
-                Error.Problem("Collections.CreateFailed", $"Failed to create collection: {ex.Message}"));
+                Error.Problem("Collections.CreateFailed", "Failed to create collection.", ex));
         }
     }
 

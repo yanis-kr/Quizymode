@@ -101,7 +101,7 @@ public static class DeleteCollection
         catch (Exception ex)
         {
             return Result.Failure(
-                Error.Problem("Collections.DeleteFailed", $"Failed to delete collection: {ex.Message}"));
+                Error.Problem("Collections.DeleteFailed", "Failed to delete collection.", ex));
         }
     }
 

@@ -211,7 +211,7 @@ public static class IdeaCrud
         catch (Exception ex)
         {
             return Result.Failure<IdeaSummaryResponse>(
-                Error.Problem("Ideas.CreateFailed", $"Failed to create idea: {ex.Message}"));
+                Error.Problem("Ideas.CreateFailed", "Failed to create idea.", ex));
         }
     }
 
@@ -340,7 +340,7 @@ public static class IdeaCrud
         catch (Exception ex)
         {
             return Result.Failure<IdeaSummaryResponse>(
-                Error.Problem("Ideas.UpdateFailed", $"Failed to update idea: {ex.Message}"));
+                Error.Problem("Ideas.UpdateFailed", "Failed to update idea.", ex));
         }
     }
 
@@ -379,7 +379,7 @@ public static class IdeaCrud
         }
         catch (Exception ex)
         {
-            return Result.Failure(Error.Problem("Ideas.DeleteFailed", $"Failed to delete idea: {ex.Message}"));
+            return Result.Failure(Error.Problem("Ideas.DeleteFailed", "Failed to delete idea.", ex));
         }
     }
 
@@ -443,7 +443,7 @@ public static class IdeaCrud
         catch (Exception ex)
         {
             return Result.Failure<IdeaSummaryResponse>(
-                Error.Problem("Ideas.StatusUpdateFailed", $"Failed to update idea status: {ex.Message}"));
+                Error.Problem("Ideas.StatusUpdateFailed", "Failed to update idea status.", ex));
         }
     }
 

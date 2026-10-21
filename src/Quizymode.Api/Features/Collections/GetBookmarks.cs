@@ -98,7 +98,7 @@ public static class GetBookmarks
         catch (Exception ex)
         {
             return Result.Failure<Response>(
-                Error.Problem("Collections.GetBookmarksFailed", $"Failed to get bookmarks: {ex.Message}"));
+                Error.Problem("Collections.GetBookmarksFailed", "Failed to get bookmarks.", ex));
         }
     }
 

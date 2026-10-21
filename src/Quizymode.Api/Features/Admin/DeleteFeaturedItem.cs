@@ -54,7 +54,7 @@ public static class DeleteFeaturedItem
         catch (Exception ex)
         {
             return Result.Failure(
-                Error.Problem("Featured.DeleteFailed", $"Failed to delete featured item: {ex.Message}"));
+                Error.Problem("Featured.DeleteFailed", "Failed to delete featured item.", ex));
         }
     }
 

@@ -208,7 +208,7 @@ public static class CreateFeedbackSubmission
         catch (Exception ex)
         {
             return Result.Failure<Response>(
-                Error.Problem("Feedback.CreateFailed", $"Failed to create feedback submission: {ex.Message}"));
+                Error.Problem("Feedback.CreateFailed", "Failed to create feedback submission.", ex));
         }
     }
 

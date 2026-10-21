@@ -1,5 +1,6 @@
 using FluentValidation;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Logging.Abstractions;
 using Quizymode.Api.Data;
 using Quizymode.Api.Features.Items.AddBulk;
 using Quizymode.Api.Services;
@@ -66,6 +67,7 @@ public static class AcceptStudyGuideUpload
             ITaxonomyItemCategoryResolver itemCategoryResolver,
             ITaxonomyRegistry taxonomyRegistry,
             IAuditService auditService,
+            ILogger<Endpoint> logger,
             CancellationToken cancellationToken)
         {
             if (!userContext.IsAuthenticated || string.IsNullOrEmpty(userContext.UserId))
@@ -88,7 +90,8 @@ public static class AcceptStudyGuideUpload
                 itemCategoryResolver,
                 taxonomyRegistry,
                 auditService,
-                cancellationToken);
+                cancellationToken,
+                logger);
 
             return result.Match(
                 value => value is null ? Results.NotFound() : Results.Ok(value),
@@ -105,7 +108,8 @@ public static class AcceptStudyGuideUpload
         ITaxonomyItemCategoryResolver itemCategoryResolver,
         ITaxonomyRegistry taxonomyRegistry,
         IAuditService auditService,
-        CancellationToken cancellationToken)
+        CancellationToken cancellationToken,
+        ILogger? logger = null)
     {
         string? userId = userContext.UserId;
         StudyGuideUpload? upload = await db.StudyGuideUploads
@@ -190,6 +194,7 @@ public static class AcceptStudyGuideUpload
             itemCategoryResolver,
             taxonomyRegistry,
             auditService,
+            logger ?? NullLogger.Instance,
             cancellationToken);
 
         if (bulkResult.IsFailure)

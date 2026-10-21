@@ -105,8 +105,15 @@ internal sealed class LocalSeedLoader(
                 continue;
             }
 
-            foreach (RepoManagedItemSeedData item in items)
+            foreach (RepoManagedItemSeedData? item in items)
             {
+                if (item is null)
+                {
+                    // Pass null entries through so manifest validation rejects them with a clear message.
+                    requests.Add(null!);
+                    continue;
+                }
+
                 requests.Add(new SeedSyncAdmin.SeedItemRequest(
                     item.ItemId,
                     item.Category,

@@ -19,6 +19,7 @@ internal static class AddItemsBulkHandler
         ITaxonomyItemCategoryResolver itemCategoryResolver,
         ITaxonomyRegistry taxonomyRegistry,
         IAuditService auditService,
+        ILogger logger,
         CancellationToken cancellationToken)
     {
         try
@@ -173,7 +174,8 @@ internal static class AddItemsBulkHandler
                         }
                         catch (Exception ex)
                         {
-                            errors.Add(new AddItemsBulk.ItemError(index, itemRequest.Question, $"Unable to check for duplicates: {ex.Message}"));
+                            logger.LogError(ex, "Bulk add: duplicate check failed for item at index {Index}", index);
+                            errors.Add(new AddItemsBulk.ItemError(index, itemRequest.Question, "Unable to check for duplicates."));
                             continue;
                         }
 
@@ -214,7 +216,8 @@ internal static class AddItemsBulkHandler
                     }
                     catch (Exception ex)
                     {
-                        errors.Add(new AddItemsBulk.ItemError(index, itemRequest.Question, ex.Message));
+                        logger.LogError(ex, "Bulk add: failed to process item at index {Index}", index);
+                        errors.Add(new AddItemsBulk.ItemError(index, itemRequest.Question, "Failed to process item."));
                     }
                 }
 
@@ -358,7 +361,7 @@ internal static class AddItemsBulkHandler
         catch (Exception ex)
         {
             return Result.Failure<AddItemsBulk.Response>(
-                Error.Problem("Items.BulkCreateFailed", $"Failed to create items: {ex.Message}"));
+                Error.Problem("Items.BulkCreateFailed", "Failed to create items.", ex));
         }
     }
 

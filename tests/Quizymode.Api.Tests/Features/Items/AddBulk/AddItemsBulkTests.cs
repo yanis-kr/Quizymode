@@ -1,5 +1,7 @@
 using FluentAssertions;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Logging;
+using Microsoft.Extensions.Logging.Abstractions;
 using Moq;
 using Quizymode.Api.Features.Items.AddBulk;
 using Quizymode.Api.Services;
@@ -49,6 +51,7 @@ public sealed class AddItemsBulkTests : ItemTestFixture
             TaxonomyItemCategoryResolver,
             TaxonomyRegistry,
             _auditServiceMock.Object,
+            NullLogger.Instance,
             CancellationToken.None);
 
         // Assert
@@ -98,6 +101,7 @@ public sealed class AddItemsBulkTests : ItemTestFixture
             TaxonomyItemCategoryResolver,
             TaxonomyRegistry,
             _auditServiceMock.Object,
+            NullLogger.Instance,
             CancellationToken.None);
 
         // Assert
@@ -210,6 +214,7 @@ public sealed class AddItemsBulkTests : ItemTestFixture
             TaxonomyItemCategoryResolver,
             TaxonomyRegistry,
             _auditServiceMock.Object,
+            NullLogger.Instance,
             CancellationToken.None);
 
         // Assert
@@ -246,6 +251,7 @@ public sealed class AddItemsBulkTests : ItemTestFixture
             TaxonomyItemCategoryResolver,
             TaxonomyRegistry,
             _auditServiceMock.Object,
+            NullLogger.Instance,
             CancellationToken.None);
 
         result.IsSuccess.Should().BeFalse();
@@ -276,6 +282,7 @@ public sealed class AddItemsBulkTests : ItemTestFixture
             TaxonomyItemCategoryResolver,
             TaxonomyRegistry,
             _auditServiceMock.Object,
+            NullLogger.Instance,
             CancellationToken.None);
 
         result.IsSuccess.Should().BeFalse();
@@ -309,6 +316,7 @@ public sealed class AddItemsBulkTests : ItemTestFixture
             TaxonomyItemCategoryResolver,
             TaxonomyRegistry,
             _auditServiceMock.Object,
+            NullLogger.Instance,
             CancellationToken.None);
 
         // Assert
@@ -352,6 +360,7 @@ public sealed class AddItemsBulkTests : ItemTestFixture
             TaxonomyItemCategoryResolver,
             TaxonomyRegistry,
             _auditServiceMock.Object,
+            NullLogger.Instance,
             CancellationToken.None);
 
         // Assert
@@ -458,5 +467,94 @@ public sealed class AddItemsBulkTests : ItemTestFixture
 
         validator.Validate(request).Errors.Should()
             .Contain(e => e.ErrorMessage == "Cannot assign more than 50 default keywords");
+    }
+
+    [Fact]
+    public async Task HandleAsync_UnexpectedException_ReturnsGenericDescriptionAndKeepsCode()
+    {
+        Mock<IUserContext> noUser = new();
+        noUser.Setup(x => x.UserId).Returns((string?)null);
+        AddItemsBulk.Request request = new(
+            IsPrivate: false, Category: "geography", Keyword1: "capitals", Keyword2: "europe",
+            Keywords: new List<AddItemsBulk.KeywordRequest>(),
+            Items: new List<AddItemsBulk.ItemRequest> { new("Q?", "A", new List<string> { "B" }, "") });
+
+        Result<AddItemsBulk.Response> result = await AddItemsBulkHandler.HandleAsync(
+            request,
+            DbContext,
+            SimHashService,
+            noUser.Object,
+            TaxonomyItemCategoryResolver,
+            TaxonomyRegistry,
+            _auditServiceMock.Object,
+            NullLogger.Instance,
+            CancellationToken.None);
+
+        result.IsFailure.Should().BeTrue();
+        result.Error!.Code.Should().Be("Items.BulkCreateFailed");
+        result.Error.Description.Should().Be("Failed to create items.");
+        result.Error.Description.Should().NotContain("User ID is required");
+        result.Error.Exception.Should().NotBeNull();
+    }
+
+    private const string Secret = "secret-internal-detail-281";
+
+    private static AddItemsBulk.Request OneItemRequest() => new(
+        IsPrivate: false, Category: "geography", Keyword1: "capitals", Keyword2: "europe",
+        Keywords: new List<AddItemsBulk.KeywordRequest>(),
+        Items: new List<AddItemsBulk.ItemRequest> { new("What is the capital of France?", "Paris", new List<string> { "Lyon" }, "") });
+
+    private async Task<(Result<AddItemsBulk.Response> Result, CapturingLoggerProvider Logs)> RunAsync(ISimHashService simHash)
+    {
+        CapturingLoggerProvider logs = new();
+        Result<AddItemsBulk.Response> result = await AddItemsBulkHandler.HandleAsync(
+            OneItemRequest(),
+            DbContext,
+            simHash,
+            _userContextMock.Object,
+            TaxonomyItemCategoryResolver,
+            TaxonomyRegistry,
+            _auditServiceMock.Object,
+            logs.CreateLogger("test"),
+            CancellationToken.None);
+        return (result, logs);
+    }
+
+    [Fact]
+    public async Task HandleAsync_ItemProcessingThrows_ItemErrorIsGenericAndExceptionLoggedOnce()
+    {
+        await EnsureGeographyPublicWithNavAsync("test-user");
+        Mock<ISimHashService> simHash = new();
+        simHash.Setup(s => s.ComputeSimHash(It.IsAny<string>())).Throws(new InvalidOperationException(Secret));
+
+        (Result<AddItemsBulk.Response> result, CapturingLoggerProvider logs) = await RunAsync(simHash.Object);
+
+        result.IsSuccess.Should().BeTrue();
+        result.Value!.Errors.Should().ContainSingle().Which.ErrorMessage.Should().Be("Failed to process item.");
+        result.Value.Errors[0].ErrorMessage.Should().NotContain(Secret);
+        logs.Entries.Where(e => e.Level == LogLevel.Error).Should().ContainSingle()
+            .Which.Exception!.Message.Should().Be(Secret);
+    }
+
+    [Fact]
+    public async Task HandleAsync_DuplicateCheckThrows_ItemErrorIsGenericAndExceptionLoggedOnce()
+    {
+        await EnsureGeographyPublicWithNavAsync("test-user");
+        Mock<ISimHashService> simHash = new();
+        simHash.Setup(s => s.ComputeSimHash(It.IsAny<string>())).Returns("sig");
+        simHash.Setup(s => s.GetFuzzyBucket(It.IsAny<string>())).Returns(() =>
+        {
+            // Break the duplicate-check query: the Items table no longer exists under its name.
+            DbContext.Database.ExecuteSqlRaw("ALTER TABLE \"Items\" RENAME TO \"Items_gone\"");
+            return 1;
+        });
+
+        (Result<AddItemsBulk.Response> result, CapturingLoggerProvider logs) = await RunAsync(simHash.Object);
+
+        result.IsSuccess.Should().BeTrue();
+        result.Value!.Errors.Should().ContainSingle().Which.ErrorMessage.Should().Be("Unable to check for duplicates.");
+        result.Value.Errors[0].ErrorMessage.Should().NotContain("Items");
+        logs.Entries.Where(e => e.Level == LogLevel.Error).Should().ContainSingle()
+            .Which.Exception.Should().NotBeNull();
     }
 }

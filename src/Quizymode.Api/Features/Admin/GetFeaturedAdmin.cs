@@ -74,7 +74,7 @@ public static class GetFeaturedAdmin
         catch (Exception ex)
         {
             return Result.Failure<Response>(
-                Error.Problem("Featured.GetAdminFailed", $"Failed to retrieve featured items: {ex.Message}"));
+                Error.Problem("Featured.GetAdminFailed", "Failed to retrieve featured items.", ex));
         }
     }
 

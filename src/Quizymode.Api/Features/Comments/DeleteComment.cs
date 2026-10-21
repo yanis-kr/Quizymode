@@ -98,7 +98,7 @@ public static class DeleteComment
         catch (Exception ex)
         {
             return Result.Failure(
-                Error.Problem("Comments.DeleteFailed", $"Failed to delete comment: {ex.Message}"));
+                Error.Problem("Comments.DeleteFailed", "Failed to delete comment.", ex));
         }
     }
 

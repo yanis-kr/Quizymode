@@ -82,7 +82,7 @@ public static class GetRatings
         catch (Exception ex)
         {
             return Result.Failure<Response>(
-                Error.Problem("Ratings.GetFailed", $"Failed to get ratings: {ex.Message}"));
+                Error.Problem("Ratings.GetFailed", "Failed to get ratings.", ex));
         }
     }
 

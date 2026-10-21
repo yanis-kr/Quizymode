@@ -80,7 +80,7 @@ public static class SetItemVisibility
         catch (Exception ex)
         {
             return Result.Failure<Response>(
-                Error.Problem("Item.SetVisibilityFailed", $"Failed to set item visibility: {ex.Message}"));
+                Error.Problem("Item.SetVisibilityFailed", "Failed to set item visibility.", ex));
         }
     }
 

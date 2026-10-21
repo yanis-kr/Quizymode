@@ -238,6 +238,8 @@ public static class SeedSyncAdmin
                 .WithMessage("Items is required.")
                 .Must(items => items is null || items.Count <= 20000)
                 .WithMessage("Cannot sync more than 20000 items at once.")
+                .Must(items => items is null || items.All(i => i is not null))
+                .WithMessage("Items must not contain null entries.")
                 .Must(HaveUniqueItemIds)
                 .WithMessage("ItemId values must be unique within a sync request.");
 
@@ -246,6 +248,8 @@ public static class SeedSyncAdmin
                 .WithMessage("Collections is required.")
                 .Must(collections => collections is null || collections.Count <= 2000)
                 .WithMessage("Cannot sync more than 2000 collections at once.")
+                .Must(collections => collections is null || collections.All(c => c is not null))
+                .WithMessage("Collections must not contain null entries.")
                 .Must(HaveUniqueCollectionIds)
                 .WithMessage("CollectionId values must be unique within a sync request.");
 
@@ -267,7 +271,7 @@ public static class SeedSyncAdmin
                 return true;
             }
 
-            return items.Select(i => i.ItemId).Distinct().Count() == items.Count;
+            return items.Where(i => i is not null).Select(i => i.ItemId).Distinct().Count() == items.Count(i => i is not null);
         }
 
         private static bool HaveUniqueCollectionIds(List<SeedCollectionRequest>? collections)
@@ -277,7 +281,7 @@ public static class SeedSyncAdmin
                 return true;
             }
 
-            return collections.Select(i => i.CollectionId).Distinct().Count() == collections.Count;
+            return collections.Where(c => c is not null).Select(c => c.CollectionId).Distinct().Count() == collections.Count(c => c is not null);
         }
     }
 
