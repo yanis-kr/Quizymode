@@ -11,14 +11,15 @@ namespace Quizymode.Api.Tests.Features.Collections;
 
 public sealed class CollectionItemsTests : DatabaseTestFixture
 {
-    private async Task<Collection> CreateCollectionAsync(string userId)
+    private async Task<Collection> CreateCollectionAsync(string userId, bool isPublic = false)
     {
         Collection col = new()
         {
             Id = Guid.NewGuid(),
             Name = "Test Collection",
             CreatedBy = userId,
-            CreatedAt = DateTime.UtcNow
+            CreatedAt = DateTime.UtcNow,
+            IsPublic = isPublic
         };
         DbContext.Collections.Add(col);
         await DbContext.SaveChangesAsync();
@@ -112,10 +113,12 @@ public sealed class CollectionItemsTests : DatabaseTestFixture
         result.Error.Code.Should().Be("Collection.NotFound");
     }
 
-    [Fact]
-    public async Task HandleAddAsync_ReturnsValidation_WhenNotOwner()
+    [Theory]
+    [InlineData(false, "Collection.NotFound")]
+    [InlineData(true, "Collection.Forbidden")]
+    public async Task HandleAddAsync_NonOwner_ReturnsNotFoundForPrivate_ForbiddenForPublic(bool isPublic, string code)
     {
-        Collection col = await CreateCollectionAsync(Guid.NewGuid().ToString());
+        Collection col = await CreateCollectionAsync(Guid.NewGuid().ToString(), isPublic);
         Item item = await CreateItemAsync();
 
         var result = await CollectionItems.HandleAddAsync(
@@ -126,7 +129,65 @@ public sealed class CollectionItemsTests : DatabaseTestFixture
             CancellationToken.None);
 
         result.IsFailure.Should().BeTrue();
-        result.Error.Code.Should().Be("CollectionItems.Forbidden");
+        result.Error.Code.Should().Be(code);
+        DbContext.CollectionItems.Should().BeEmpty();
+    }
+
+    [Theory]
+    [InlineData(false, "Collection.NotFound")]
+    [InlineData(true, "Collection.Forbidden")]
+    public async Task HandleBulkAddAsync_NonOwner_ReturnsNotFoundForPrivate_ForbiddenForPublic(bool isPublic, string code)
+    {
+        Collection col = await CreateCollectionAsync(Guid.NewGuid().ToString(), isPublic);
+
+        var result = await CollectionItems.HandleBulkAddAsync(
+            col.Id,
+            new CollectionItems.BulkAddRequest([Guid.NewGuid()]),
+            DbContext,
+            UserContext(Guid.NewGuid().ToString()).Object,
+            CancellationToken.None);
+
+        result.IsFailure.Should().BeTrue();
+        result.Error.Code.Should().Be(code);
+    }
+
+    [Theory]
+    [InlineData(false, "Collection.NotFound")]
+    [InlineData(true, "Collection.Forbidden")]
+    public async Task HandleRemoveAsync_NonOwner_ReturnsNotFoundForPrivate_ForbiddenForPublic(bool isPublic, string code)
+    {
+        Collection col = await CreateCollectionAsync(Guid.NewGuid().ToString(), isPublic);
+
+        var result = await CollectionItems.HandleRemoveAsync(
+            col.Id,
+            Guid.NewGuid(),
+            DbContext,
+            UserContext(Guid.NewGuid().ToString()).Object,
+            CancellationToken.None);
+
+        result.IsFailure.Should().BeTrue();
+        result.Error.Code.Should().Be(code);
+    }
+
+    [Theory]
+    [InlineData(false, "Collection.NotFound")]
+    [InlineData(true, "Collection.Forbidden")]
+    public async Task HandleAddAsync_NullUserId_IsNonOwner(bool isPublic, string code)
+    {
+        Collection col = await CreateCollectionAsync(string.Empty, isPublic);
+        Mock<IUserContext> ctx = new();
+        ctx.SetupGet(x => x.UserId).Returns((string?)null);
+        ctx.SetupGet(x => x.IsAuthenticated).Returns(true);
+
+        var result = await CollectionItems.HandleAddAsync(
+            col.Id,
+            new CollectionItems.AddRequest(Guid.NewGuid()),
+            DbContext,
+            ctx.Object,
+            CancellationToken.None);
+
+        result.IsFailure.Should().BeTrue();
+        result.Error.Code.Should().Be(code);
     }
 
     [Fact]

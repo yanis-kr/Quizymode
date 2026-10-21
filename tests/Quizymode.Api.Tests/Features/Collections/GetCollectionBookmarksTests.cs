@@ -30,13 +30,15 @@ public sealed class GetCollectionBookmarksTests : DatabaseTestFixture
         result.Error.Code.Should().Be("Collection.NotFound");
     }
 
-    [Fact]
-    public async Task HandleAsync_NonOwner_ReturnsForbiddenError()
+    [Theory]
+    [InlineData(false, "Collection.NotFound")]
+    [InlineData(true, "Collection.Forbidden")]
+    public async Task HandleAsync_NonOwner_ReturnsNotFoundForPrivate_ForbiddenForPublic(bool isPublic, string code)
     {
         string ownerId = Guid.NewGuid().ToString();
         string nonOwnerId = Guid.NewGuid().ToString();
 
-        Collection collection = new() { Id = Guid.NewGuid(), Name = "My Col", CreatedBy = ownerId, CreatedAt = DateTime.UtcNow };
+        Collection collection = new() { Id = Guid.NewGuid(), Name = "My Col", CreatedBy = ownerId, CreatedAt = DateTime.UtcNow, IsPublic = isPublic };
         DbContext.Collections.Add(collection);
         await DbContext.SaveChangesAsync();
 
@@ -44,7 +46,27 @@ public sealed class GetCollectionBookmarksTests : DatabaseTestFixture
             collection.Id, DbContext, AuthenticatedUser(nonOwnerId).Object, CancellationToken.None);
 
         result.IsFailure.Should().BeTrue();
-        result.Error!.Code.Should().Be("Collection.Forbidden");
+        result.Error!.Code.Should().Be(code);
+    }
+
+    [Theory]
+    [InlineData(null, false, "Collection.NotFound")]
+    [InlineData("", false, "Collection.NotFound")]
+    [InlineData(null, true, "Collection.Forbidden")]
+    [InlineData("", true, "Collection.Forbidden")]
+    public async Task HandleAsync_NullOrEmptyUserId_IsNonOwner(string? userId, bool isPublic, string code)
+    {
+        Collection collection = new() { Id = Guid.NewGuid(), Name = "My Col", CreatedBy = string.Empty, CreatedAt = DateTime.UtcNow, IsPublic = isPublic };
+        DbContext.Collections.Add(collection);
+        await DbContext.SaveChangesAsync();
+        Mock<IUserContext> ctx = new();
+        ctx.SetupGet(x => x.UserId).Returns(userId);
+        ctx.SetupGet(x => x.IsAuthenticated).Returns(true);
+
+        var result = await GetCollectionBookmarks.HandleAsync(collection.Id, DbContext, ctx.Object, CancellationToken.None);
+
+        result.IsFailure.Should().BeTrue();
+        result.Error!.Code.Should().Be(code);
     }
 
     [Fact]

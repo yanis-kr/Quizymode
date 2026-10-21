@@ -51,6 +51,8 @@ public static class UpdateCollection
                 .RequireAuthorization()
                 .Produces<Response>(StatusCodes.Status200OK)
                 .Produces(StatusCodes.Status400BadRequest)
+                .Produces(StatusCodes.Status401Unauthorized)
+                .Produces(StatusCodes.Status403Forbidden)
                 .Produces(StatusCodes.Status404NotFound);
         }
 
@@ -72,9 +74,11 @@ public static class UpdateCollection
 
             return result.Match(
                 value => Results.Ok(value),
-                failure => failure.Error.Type == ErrorType.NotFound
-                    ? Results.NotFound()
-                    : CustomResults.Problem(result));
+                failure => failure.Error.Code == CollectionWriteAccess.ForbiddenCode
+                    ? CollectionWriteAccess.ForbiddenResult(failure.Error)
+                    : failure.Error.Type == ErrorType.NotFound
+                        ? Results.NotFound()
+                        : CustomResults.Problem(result));
         }
     }
 
@@ -102,10 +106,11 @@ public static class UpdateCollection
                     Error.NotFound("Collection.NotFound", $"Collection with id {id} not found"));
             }
 
-            if (string.IsNullOrEmpty(userContext.UserId) || collection.CreatedBy != userContext.UserId)
+            Error? accessError = CollectionWriteAccess.Check(
+                collection, userContext, collectionId, "You can only update your own collections.");
+            if (accessError is not null)
             {
-                return Result.Failure<Response>(
-                    Error.Validation("Collection.Forbidden", "You can only update your own collections"));
+                return Result.Failure<Response>(accessError);
             }
 
             if (request.Name != null)

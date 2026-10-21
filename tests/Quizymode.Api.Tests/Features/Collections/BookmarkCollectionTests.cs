@@ -11,14 +11,15 @@ namespace Quizymode.Api.Tests.Features.Collections;
 
 public sealed class BookmarkCollectionTests : DatabaseTestFixture
 {
-    private async Task<Collection> CreateCollectionAsync(string userId)
+    private async Task<Collection> CreateCollectionAsync(string userId, bool isPublic = false)
     {
         Collection col = new()
         {
             Id = Guid.NewGuid(),
             Name = "Test",
             CreatedBy = userId,
-            CreatedAt = DateTime.UtcNow
+            CreatedAt = DateTime.UtcNow,
+            IsPublic = isPublic
         };
         DbContext.Collections.Add(col);
         await DbContext.SaveChangesAsync();
@@ -37,7 +38,7 @@ public sealed class BookmarkCollectionTests : DatabaseTestFixture
     public async Task HandleAsync_AddsBookmark_WhenCollectionExists()
     {
         string userId = Guid.NewGuid().ToString();
-        Collection col = await CreateCollectionAsync("owner");
+        Collection col = await CreateCollectionAsync("owner", isPublic: true);
 
         var result = await BookmarkCollection.HandleAsync(col.Id, DbContext, UserContext(userId).Object, CancellationToken.None);
 
@@ -49,9 +50,34 @@ public sealed class BookmarkCollectionTests : DatabaseTestFixture
     public async Task HandleAsync_IsIdempotent_WhenAlreadyBookmarked()
     {
         string userId = Guid.NewGuid().ToString();
-        Collection col = await CreateCollectionAsync("owner");
+        Collection col = await CreateCollectionAsync("owner", isPublic: true);
 
         await BookmarkCollection.HandleAsync(col.Id, DbContext, UserContext(userId).Object, CancellationToken.None);
+        var result = await BookmarkCollection.HandleAsync(col.Id, DbContext, UserContext(userId).Object, CancellationToken.None);
+
+        result.IsSuccess.Should().BeTrue();
+        DbContext.CollectionBookmarks.Should().ContainSingle(b => b.CollectionId == col.Id && b.UserId == userId);
+    }
+
+    [Fact]
+    public async Task HandleAsync_ReturnsNotFound_AndWritesNoRow_WhenPrivateAndNotOwner()
+    {
+        string userId = Guid.NewGuid().ToString();
+        Collection col = await CreateCollectionAsync("owner");
+
+        var result = await BookmarkCollection.HandleAsync(col.Id, DbContext, UserContext(userId).Object, CancellationToken.None);
+
+        result.IsFailure.Should().BeTrue();
+        result.Error.Type.Should().Be(ErrorType.NotFound);
+        DbContext.CollectionBookmarks.Should().BeEmpty();
+    }
+
+    [Fact]
+    public async Task HandleAsync_AddsBookmark_WhenPrivateAndOwner()
+    {
+        string userId = Guid.NewGuid().ToString();
+        Collection col = await CreateCollectionAsync(userId);
+
         var result = await BookmarkCollection.HandleAsync(col.Id, DbContext, UserContext(userId).Object, CancellationToken.None);
 
         result.IsSuccess.Should().BeTrue();
