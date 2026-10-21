@@ -2,6 +2,7 @@ using FluentAssertions;
 using Moq;
 using Quizymode.Api.Features.Items.Update;
 using Quizymode.Api.Services;
+using Quizymode.Api.Services.Taxonomy;
 using Quizymode.Api.Shared.Kernel;
 using Quizymode.Api.Shared.Models;
 using Quizymode.Api.Tests.TestFixtures;
@@ -365,6 +366,46 @@ public sealed class UpdateItemTests : ItemTestFixture
 
         result.IsFailure.Should().BeTrue();
         result.Error.Code.Should().Be(Quizymode.Api.Shared.Helpers.ItemWriteAccess.ForbiddenCode);
+        (await DbContext.Items.FindAsync(itemId))!.Explanation.Should().Be("Old");
+        _auditServiceMock.VerifyNoOtherCalls();
+    }
+
+    [Theory]
+    [InlineData(false, true)]
+    [InlineData(true, false)]
+    public async Task HandleAsync_NonOwnerWithResolvedUserId_DoesNotResolveCategoryOrChangeAnything(bool isPrivate, bool expectForbidden)
+    {
+        Guid itemId = Guid.NewGuid();
+        await CreateItemWithCategoryAsync(
+            itemId, "geography", "Q?", "A", new List<string> { "B" }, "Old", isPrivate, "someone-else");
+        Mock<IUserContext> ctx = new();
+        ctx.Setup(x => x.UserId).Returns(Guid.NewGuid().ToString());
+        ctx.Setup(x => x.IsAuthenticated).Returns(true);
+        ctx.Setup(x => x.IsAdmin).Returns(false);
+        Mock<ITaxonomyItemCategoryResolver> resolver = new();
+        int keywordsBefore = DbContext.Keywords.Count();
+        UpdateItem.Request request = new(
+            Category: "geography", NavigationKeyword1: "capitals", NavigationKeyword2: "europe",
+            Question: "Q?", CorrectAnswer: "A", IncorrectAnswers: new List<string> { "B" },
+            Explanation: "New", IsPrivate: false, ReadyForReview: null,
+            Keywords: [new UpdateItem.KeywordRequest("brandnewkw", true)]);
+
+        Result<UpdateItem.Response> result = await UpdateItem.HandleAsync(
+            itemId.ToString(), request, DbContext, SimHashService, ctx.Object, _auditServiceMock.Object,
+            resolver.Object, TaxonomyRegistry, CancellationToken.None);
+
+        result.IsFailure.Should().BeTrue();
+        if (expectForbidden)
+        {
+            result.Error.Code.Should().Be(Quizymode.Api.Shared.Helpers.ItemWriteAccess.ForbiddenCode);
+        }
+        else
+        {
+            result.Error.Type.Should().Be(ErrorType.NotFound);
+        }
+
+        resolver.VerifyNoOtherCalls();
+        DbContext.Keywords.Count().Should().Be(keywordsBefore);
         (await DbContext.Items.FindAsync(itemId))!.Explanation.Should().Be("Old");
         _auditServiceMock.VerifyNoOtherCalls();
     }
