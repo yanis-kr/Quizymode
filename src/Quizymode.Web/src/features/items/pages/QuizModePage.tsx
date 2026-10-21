@@ -56,6 +56,25 @@ import {
 import { recordGuestCompletion } from "@/features/guestHistory/guestHistoryStorage";
 import { recordAuthenticatedCompletion } from "@/features/studySessions/recordStudySession";
 
+/** Quiz item URL for the current scope; Prev/Next, the initial sync and the deep-link rewrite all share it. */
+function buildQuizItemPath(
+  scope: {
+    collectionId?: string;
+    collectionName?: string | null;
+    category?: string;
+    search: string;
+  },
+  id: string
+): string {
+  if (scope.collectionId) {
+    return `${buildCollectionStudyPath("quiz", scope.collectionId, scope.collectionName, id)}${scope.search}`;
+  }
+  if (scope.category) {
+    return `/quiz/${categoryNameToSlug(scope.category)}/item/${id}${scope.search}`;
+  }
+  return `/quiz/item/${id}${scope.search}`;
+}
+
 const QuizModePage = () => {
   const { category: categorySlug, collectionId, itemId } = useParams();
   const [searchParams] = useSearchParams();
@@ -301,7 +320,7 @@ const QuizModePage = () => {
     enabled: !!collectionId, // Load even when itemId is present to get full list
   });
 
-  const { data: collectionInfo } = useQuery({
+  const { data: collectionInfo, isLoading: collectionInfoLoading } = useQuery({
     queryKey: ["collection", collectionId, identityKey],
     queryFn: () => collectionsApi.getById(collectionId!),
     enabled: !!collectionId, // Allow anonymous: shareable link shows collection name and items
@@ -425,22 +444,13 @@ const QuizModePage = () => {
       !hasSyncedInitialItemUrl.current
     ) {
       hasSyncedInitialItemUrl.current = true;
-      const firstId = items[0].id;
-      if (collectionId) {
-        navigate(
-          `${buildCollectionStudyPath("quiz", collectionId, collectionInfo?.name, firstId)}${quizItemSearch}`,
-          { replace: true }
-        );
-      } else if (category) {
-        navigate(
-          `/quiz/${categoryNameToSlug(category)}/item/${firstId}${quizItemSearch}`,
-          { replace: true }
-        );
-      } else {
-        navigate(`/quiz/item/${firstId}${quizItemSearch}`, {
-          replace: true,
-        });
-      }
+      navigate(
+        buildQuizItemPath(
+          { collectionId, collectionName: collectionInfo?.name, category, search: quizItemSearch },
+          items[0].id
+        ),
+        { replace: true }
+      );
     }
   }, [
     itemId,
@@ -530,6 +540,40 @@ const QuizModePage = () => {
     }
   }, [items, currentIndex, category, collectionId, run]);
 
+  // AC 3.6.17 (#275): a deep link to an id outside the playable roster shows the first playable
+  // item, so replace the URL (no history entry) with the item actually shown.
+  useEffect(() => {
+    if (!itemId || isLoadingItems || items.length === 0) return;
+    // Wait for collection details so the canonical slug can be included in the rewritten URL.
+    if (collectionId && collectionInfoLoading) return;
+    if (!run || !sameQuizScope(run.scope, runScope)) return;
+    // The run is about to be replaced (roster shrank); wait for the new run's items.
+    if (items.length !== run.itemIds.length) return;
+    if (items.some((candidate) => candidate.id === itemId)) return;
+    const shown = items[currentIndex];
+    if (!shown) return;
+    navigate(
+      buildQuizItemPath(
+        { collectionId, collectionName: collectionInfo?.name, category, search: quizItemSearch },
+        shown.id
+      ),
+      { replace: true }
+    );
+  }, [
+    itemId,
+    isLoadingItems,
+    items,
+    run,
+    runScope,
+    currentIndex,
+    collectionId,
+    collectionInfo?.name,
+    collectionInfoLoading,
+    category,
+    quizItemSearch,
+    navigate,
+  ]);
+
   // Prepare navigation context for ItemRatingsComments
   // Include context even when itemId is present (e.g., when navigating back from comments)
   const navigationContext =
@@ -608,22 +652,21 @@ const QuizModePage = () => {
     );
   };
 
+  const navigateToItem = (id: string, replace: boolean) => {
+    navigate(
+      buildQuizItemPath(
+        { collectionId, collectionName: collectionInfo?.name, category, search: quizItemSearch },
+        id
+      ),
+      { replace }
+    );
+  };
+
   const handleNext = () => {
     if (currentIndex < items.length - 1) {
       const newIndex = currentIndex + 1;
       setCurrentIndex(newIndex);
-      if (items[newIndex]) {
-        if (collectionId) {
-          navigate(
-            `${buildCollectionStudyPath("quiz", collectionId, collectionInfo?.name, items[newIndex].id)}${quizItemSearch}`,
-            { replace: true }
-          );
-        } else if (category) {
-          navigate(`/quiz/${categoryNameToSlug(category)}/item/${items[newIndex].id}${quizItemSearch}`, { replace: true });
-        } else {
-          navigate(`/quiz/item/${items[newIndex].id}${quizItemSearch}`, { replace: true });
-        }
-      }
+      if (items[newIndex]) navigateToItem(items[newIndex].id, true);
     }
   };
 
@@ -631,34 +674,14 @@ const QuizModePage = () => {
     if (currentIndex > 0) {
       const newIndex = currentIndex - 1;
       setCurrentIndex(newIndex);
-      if (items[newIndex]) {
-        if (collectionId) {
-          navigate(
-            `${buildCollectionStudyPath("quiz", collectionId, collectionInfo?.name, items[newIndex].id)}${quizItemSearch}`,
-            { replace: true }
-          );
-        } else if (category) {
-          navigate(`/quiz/${categoryNameToSlug(category)}/item/${items[newIndex].id}${quizItemSearch}`, { replace: true });
-        } else {
-          navigate(`/quiz/item/${items[newIndex].id}${quizItemSearch}`, { replace: true });
-        }
-      }
+      if (items[newIndex]) navigateToItem(items[newIndex].id, true);
     }
   };
 
   const navigateToRunItem = (index: number, replace = true) => {
     const target = items[index];
     if (!target) return;
-    if (collectionId) {
-      navigate(
-        `${buildCollectionStudyPath("quiz", collectionId, collectionInfo?.name, target.id)}${quizItemSearch}`,
-        { replace },
-      );
-    } else if (category) {
-      navigate(`/quiz/${categoryNameToSlug(category)}/item/${target.id}${quizItemSearch}`, { replace });
-    } else {
-      navigate(`/quiz/item/${target.id}${quizItemSearch}`, { replace });
-    }
+    navigateToItem(target.id, replace);
   };
 
   const handlePlayAgain = () => {
