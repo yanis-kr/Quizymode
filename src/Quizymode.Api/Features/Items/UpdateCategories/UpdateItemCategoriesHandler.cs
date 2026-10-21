@@ -1,6 +1,7 @@
 using Microsoft.EntityFrameworkCore;
 using Quizymode.Api.Data;
 using Quizymode.Api.Services;
+using Quizymode.Api.Shared.Helpers;
 using Quizymode.Api.Shared.Kernel;
 using Quizymode.Api.Shared.Models;
 
@@ -24,8 +25,6 @@ internal static class UpdateItemCategoriesHandler
                     Error.Validation("Item.InvalidId", "Invalid item ID format"));
             }
 
-            string userId = userContext.UserId ?? throw new InvalidOperationException("User ID is required");
-
             // Verify item exists
             Item? item = await db.Items
                 .FirstOrDefaultAsync(i => i.Id == itemId, cancellationToken);
@@ -35,6 +34,14 @@ internal static class UpdateItemCategoriesHandler
                 return Result.Failure<UpdateItemCategories.Response>(
                     Error.NotFound("Item.NotFound", $"Item with id {id} not found"));
             }
+
+            Error? accessError = ItemWriteAccess.Check(item, userContext, id);
+            if (accessError is not null)
+            {
+                return Result.Failure<UpdateItemCategories.Response>(accessError);
+            }
+
+            string userId = userContext.UserId ?? throw new InvalidOperationException("User ID is required");
 
             // Resolve category
             Category? category = null;

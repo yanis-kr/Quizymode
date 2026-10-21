@@ -1,6 +1,7 @@
 using Microsoft.EntityFrameworkCore;
 using Quizymode.Api.Data;
 using Quizymode.Api.Services;
+using Quizymode.Api.Shared.Helpers;
 using Quizymode.Api.Shared.Kernel;
 using Quizymode.Api.Shared.Models;
 
@@ -30,6 +31,12 @@ internal static class DeleteItemHandler
             {
                 return Result.Failure(
                     Error.NotFound("Item.NotFound", $"Item with id {id} not found"));
+            }
+
+            Error? accessError = ItemWriteAccess.Check(item, userContext, id);
+            if (accessError is not null)
+            {
+                return Result.Failure(accessError);
             }
 
             db.Items.Remove(item);

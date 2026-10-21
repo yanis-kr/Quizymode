@@ -25,6 +25,7 @@ const ItemDetailPage = () => {
   const { id } = useParams<{ id: string }>();
   const navigate = useNavigate();
   const [searchParams] = useSearchParams();
+  const [deleteError, setDeleteError] = useState<string | null>(null);
   const [commentsDrawerItemId, setCommentsDrawerItemId] = useState<string | null>(null);
   const queryClient = useQueryClient();
   const { isAuthenticated, isAdmin } = useAuth();
@@ -61,6 +62,19 @@ const ItemDetailPage = () => {
       queryClient.invalidateQueries({ queryKey: ["categories"] });
       queryClient.invalidateQueries({ queryKey: ["item", id] });
       navigate("/categories");
+    },
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    onError: (err: any) => {
+      const status = err?.response?.status;
+      setDeleteError(
+        status === 401
+          ? "Your session has expired. Please sign in again."
+          : status === 403
+            ? "You can only delete your own items."
+            : status === 404
+              ? "This item no longer exists."
+              : "Failed to delete item."
+      );
     },
   });
 
@@ -169,6 +183,7 @@ const ItemDetailPage = () => {
                 type="button"
                 onClick={() => {
                   if (window.confirm("Are you sure you want to delete this item? This cannot be undone.")) {
+                    setDeleteError(null);
                     deleteMutation.mutate();
                   }
                 }}
@@ -181,6 +196,12 @@ const ItemDetailPage = () => {
             </div>
           )}
         </div>
+
+        {deleteError && (
+          <div className="mb-4">
+            <ErrorMessage message={deleteError} />
+          </div>
+        )}
 
         <div className="bg-white shadow rounded-lg p-6">
           <div className="flex items-center gap-2 mb-4 text-gray-500">

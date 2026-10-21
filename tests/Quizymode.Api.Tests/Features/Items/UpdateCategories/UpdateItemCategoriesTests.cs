@@ -129,7 +129,7 @@ public sealed class UpdateItemCategoriesHandlerTests : DatabaseTestFixture
         Category itemCat = new() { Id = Guid.NewGuid(), Name = "item-cat", IsPrivate = false, CreatedBy = "admin", CreatedAt = DateTime.UtcNow };
         DbContext.Categories.AddRange(privateCat, itemCat);
         await DbContext.SaveChangesAsync();
-        Item item = await CreateItemAsync(itemCat.Id);
+        Item item = await CreateItemAsync(itemCat.Id, "current-user");
 
         var request = new UpdateItemCategories.Request(privateCat.Id, null, false);
         var userCtx = AuthenticatedUser("current-user").Object;
@@ -188,5 +188,61 @@ public sealed class UpdateItemCategoriesHandlerTests : DatabaseTestFixture
 
         result.IsSuccess.Should().BeTrue();
         result.Value!.Category.Name.Should().Be("resolved-cat");
+    }
+
+    [Fact]
+    public async Task HandleAsync_NonOwnerPublicItem_ReturnsForbiddenWithoutResolvingCategory()
+    {
+        Category cat = new() { Id = Guid.NewGuid(), Name = "existing", IsPrivate = false, CreatedBy = "admin", CreatedAt = DateTime.UtcNow };
+        DbContext.Categories.Add(cat);
+        await DbContext.SaveChangesAsync();
+        Item item = await CreateItemAsync(cat.Id, "someone-else");
+        Mock<ICategoryResolver> resolver = new();
+
+        var result = await UpdateItemCategoriesHandler.HandleAsync(
+            item.Id.ToString(), new UpdateItemCategories.Request(null, "brand-new", false),
+            DbContext, AuthenticatedUser("user-1").Object, resolver.Object, CancellationToken.None);
+
+        result.IsFailure.Should().BeTrue();
+        result.Error!.Code.Should().Be(Quizymode.Api.Shared.Helpers.ItemWriteAccess.ForbiddenCode);
+        resolver.VerifyNoOtherCalls();
+        (await DbContext.Items.FindAsync(item.Id))!.CategoryId.Should().Be(cat.Id);
+    }
+
+    [Fact]
+    public async Task HandleAsync_NonOwnerPrivateItem_ReturnsNotFound()
+    {
+        Category cat = new() { Id = Guid.NewGuid(), Name = "existing", IsPrivate = false, CreatedBy = "admin", CreatedAt = DateTime.UtcNow };
+        DbContext.Categories.Add(cat);
+        await DbContext.SaveChangesAsync();
+        Item item = await CreateItemAsync(cat.Id, "someone-else");
+        item.IsPrivate = true;
+        await DbContext.SaveChangesAsync();
+
+        var result = await UpdateItemCategoriesHandler.HandleAsync(
+            item.Id.ToString(), new UpdateItemCategories.Request(null, "brand-new", false),
+            DbContext, AuthenticatedUser("user-1").Object, Mock.Of<ICategoryResolver>(), CancellationToken.None);
+
+        result.Error!.Type.Should().Be(ErrorType.NotFound);
+        result.Error.Code.Should().Be("Item.NotFound");
+    }
+
+    [Fact]
+    public async Task HandleAsync_UnresolvedUserIdOnPublicItem_ReturnsForbidden()
+    {
+        Category cat = new() { Id = Guid.NewGuid(), Name = "existing", IsPrivate = false, CreatedBy = "admin", CreatedAt = DateTime.UtcNow };
+        DbContext.Categories.Add(cat);
+        await DbContext.SaveChangesAsync();
+        Item item = await CreateItemAsync(cat.Id, "someone-else");
+        Mock<IUserContext> ctx = new();
+        ctx.Setup(x => x.UserId).Returns((string?)null);
+        ctx.Setup(x => x.IsAuthenticated).Returns(true);
+        ctx.Setup(x => x.IsAdmin).Returns(false);
+
+        var result = await UpdateItemCategoriesHandler.HandleAsync(
+            item.Id.ToString(), new UpdateItemCategories.Request(null, "brand-new", false),
+            DbContext, ctx.Object, Mock.Of<ICategoryResolver>(), CancellationToken.None);
+
+        result.Error!.Code.Should().Be(Quizymode.Api.Shared.Helpers.ItemWriteAccess.ForbiddenCode);
     }
 }

@@ -1,5 +1,6 @@
 using FluentValidation;
 using Quizymode.Api.Data;
+using Quizymode.Api.Shared.Helpers;
 using Quizymode.Api.Shared.Http;
 using Quizymode.Api.Services;
 using Quizymode.Api.Shared.Kernel;
@@ -46,6 +47,8 @@ public static class UpdateItemCategories
                 .RequireAuthorization()
                 .Produces<Response>(StatusCodes.Status200OK)
                 .Produces(StatusCodes.Status400BadRequest)
+                .Produces(StatusCodes.Status401Unauthorized)
+                .Produces(StatusCodes.Status403Forbidden)
                 .Produces(StatusCodes.Status404NotFound);
         }
 
@@ -74,9 +77,11 @@ public static class UpdateItemCategories
 
             return result.Match(
                 value => Results.Ok(value),
-                failure => failure.Error.Type == ErrorType.NotFound
-                    ? Results.NotFound()
-                    : CustomResults.Problem(result));
+                failure => failure.Error.Code == ItemWriteAccess.ForbiddenCode
+                    ? ItemWriteAccess.ForbiddenResult()
+                    : failure.Error.Type == ErrorType.NotFound
+                        ? Results.NotFound()
+                        : CustomResults.Problem(result));
         }
     }
 
