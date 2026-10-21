@@ -211,7 +211,7 @@ public static class ReviewQueue
 
             foreach (ReviewQueueEntry entry in batch)
             {
-                if (items.TryGetValue(entry.ItemId, out Item? item) && IsAvailable(item, userId) && QuizPlayability.IsPlayable(item.CorrectAnswer, item.IncorrectAnswers))
+                if (items.TryGetValue(entry.ItemId, out Item? item) && ItemVisibility.IsVisibleTo(item, userId) && QuizPlayability.IsPlayable(item.CorrectAnswer, item.IncorrectAnswers))
                 {
                     if (available.Count < MaxItemsPerSession) available.Add(item);
                 }
@@ -329,6 +329,4 @@ public static class ReviewQueue
             return false;
         }
     }
-
-    internal static bool IsAvailable(Item item, string userId) => !item.IsPrivate || item.CreatedBy == userId;
 }

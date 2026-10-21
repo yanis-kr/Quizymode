@@ -1,5 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 using Quizymode.Api.Data;
+using Quizymode.Api.Shared.Helpers;
 using Quizymode.Api.Shared.Http;
 using Quizymode.Api.Services;
 using Quizymode.Api.Shared.Kernel;
@@ -86,6 +87,7 @@ public static class GetItemById
                 .Include(i => i.Category)
                 .Include(i => i.ItemKeywords)
                     .ThenInclude(ik => ik.Keyword)
+                .Where(ItemVisibility.AccessibleById(userContext))
                 .FirstOrDefaultAsync(i => i.Id == itemId, cancellationToken);
 
             if (item is null)
