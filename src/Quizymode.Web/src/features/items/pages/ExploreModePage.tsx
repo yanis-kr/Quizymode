@@ -170,7 +170,13 @@ const ExploreModePage = () => {
     // A different collection, category or keyword set is a different deck: drop grades, pile, loop and status.
     setRun(newFlashcardRun(runScopeKey, run.nonce));
     setEnqueueStatus(null);
+    setIsFlipped(false);
   }
+  // A pending "Added to Review" timer belongs to the previous deck.
+  useEffect(() => {
+    if (statusTimer.current) clearTimeout(statusTimer.current);
+    statusTimer.current = null;
+  }, [run.scopeKey]);
   const canShuffle = !!collectionId;
   const shuffleActive = canShuffle && shuffleOn;
 

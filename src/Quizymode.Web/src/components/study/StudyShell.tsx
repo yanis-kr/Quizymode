@@ -106,8 +106,8 @@ export function StudyShell({
           )}
 
           {/* Compact stripe: [quiz size / left] [navigation / center] [eye icon / right] */}
-          <div className="flex items-center justify-between gap-2 mb-3">
-            <div className="flex-1 flex items-center">
+          <div className="flex flex-wrap items-center justify-between gap-x-2 gap-y-1 mb-3">
+            <div className="flex-1 basis-auto min-[400px]:basis-0 flex items-center">
               {headerExtra ?? null}
             </div>
             <div className="flex items-center space-x-1 flex-shrink-0">
@@ -141,7 +141,7 @@ export function StudyShell({
                 <ChevronRightIcon className="h-5 w-5" />
               </button>
             </div>
-            <div className="flex-1 flex items-center justify-end gap-1">
+            <div className="flex-1 basis-auto min-[400px]:basis-0 flex items-center justify-end gap-1">
               {onOpenShortcuts && <StudyHotkeysHint onClick={onOpenShortcuts} />}
               {currentItem ? (
                 <Link

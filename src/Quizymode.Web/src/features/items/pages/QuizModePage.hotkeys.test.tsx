@@ -218,17 +218,37 @@ describe("QuizModePage keyboard shortcuts", () => {
     renderPageWithEntries([START]);
     await screen.findByText("What is 2 + 2?");
     await screen.findByText("1 of 2");
-    press({ key: "1", code: "Digit1" });
+    // A deliberate miss, so Review mistakes exists.
+    fireEvent.click(screen.getByRole("button", { name: /^[A-D]\. 1$/ }));
     press({ key: "ArrowRight" });
     await screen.findByText("What is the capital of France?");
     press({ key: "1", code: "Digit1" });
     press({ key: "Enter", code: "Enter" });
     await screen.findByRole("heading", { name: /quiz complete/i });
+    const locationAtResults = screen.getByTestId("location").textContent;
+    const summaryText = screen.getByText(/% correct/).textContent;
+    expect(locationAtResults).toContain("item-2");
 
+    const expectUntouched = () => {
+      // Left arrow would navigate back to item-1 and digits or Enter would change the run if the gate were missing.
+      expect(screen.getByTestId("location").textContent).toBe(locationAtResults);
+      expect(document.querySelector("[aria-keyshortcuts]")).toBeNull();
+    };
     press({ key: "1", code: "Digit1" });
     press({ key: "ArrowLeft" });
+    press({ key: "ArrowRight" });
     press({ key: "Enter", code: "Enter" });
     expect(screen.getByRole("heading", { name: /quiz complete/i })).toBeInTheDocument();
+    expect(screen.getByText(/% correct/).textContent).toBe(summaryText);
+    expectUntouched();
+
+    fireEvent.click(screen.getByRole("button", { name: /review mistakes/i }));
+    expect(screen.getByRole("heading", { name: /review mistakes/i })).toBeInTheDocument();
+    press({ key: "2", code: "Digit2" });
+    press({ key: "ArrowLeft" });
+    press({ key: "Enter", code: "Enter" });
+    expect(screen.getByRole("heading", { name: /review mistakes/i })).toBeInTheDocument();
+    expectUntouched();
 
     press({ key: "?" });
     expect(screen.getByRole("dialog", { name: "Keyboard shortcuts" })).toBeInTheDocument();

@@ -35,13 +35,15 @@ describe("ShareResultButton", () => {
   const writeText = vi.fn();
 
   beforeEach(() => {
-    vi.useRealTimers();
     trackShared.mockClear();
     writeText.mockReset().mockResolvedValue(undefined);
     setNavigator("clipboard", { writeText });
     setNavigator("share", undefined);
   });
-  afterEach(() => setNavigator("share", undefined));
+  afterEach(() => {
+    vi.useRealTimers();
+    setNavigator("share", undefined);
+  });
 
   it("opens a labelled modal dialog, focuses inside and previews the full text", () => {
     renderButton();
@@ -62,7 +64,6 @@ describe("ShareResultButton", () => {
       vi.advanceTimersByTime(3100);
     });
     expect(screen.queryByText("Copied.")).toBeNull();
-    vi.useRealTimers();
   });
 
   it("explains a copy failure, selects the textarea and reports nothing", async () => {
