@@ -111,6 +111,22 @@ public sealed class CustomResultsTests
     }
 
     [Fact]
+    public async Task Forbidden_DefaultsTo403ProblemDetailsWithGenericDetail()
+    {
+        DefaultHttpContext context = new() { RequestServices = new ServiceCollection().AddLogging().BuildServiceProvider() };
+        MemoryStream body = new();
+        context.Response.Body = body;
+
+        await CustomResults.Forbidden().ExecuteAsync(context);
+
+        context.Response.StatusCode.Should().Be(StatusCodes.Status403Forbidden);
+        string text = System.Text.Encoding.UTF8.GetString(body.ToArray());
+        text.Should().Contain("\"title\":\"Forbidden\"");
+        text.Should().Contain("https://tools.ietf.org/html/rfc7231#section-6.5.3");
+        text.Should().Contain("You do not have permission to perform this action.");
+    }
+
+    [Fact]
     public async Task Problem_WithoutException_LogsNothingAndBodyUnchanged()
     {
         (HttpContext context, string text, CapturingLoggerProvider provider) =

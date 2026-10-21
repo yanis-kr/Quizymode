@@ -104,6 +104,15 @@ public static class CustomResults
             statusCode: StatusCodes.Status401Unauthorized);
     }
 
+    public static IResult Forbidden(string? detail = null)
+    {
+        return Results.Problem(
+            title: "Forbidden",
+            detail: detail ?? "You do not have permission to perform this action.",
+            type: "https://tools.ietf.org/html/rfc7231#section-6.5.3",
+            statusCode: StatusCodes.Status403Forbidden);
+    }
+
     public static IResult NotFound(string? detail = null, string? title = null)
     {
         return Results.Problem(

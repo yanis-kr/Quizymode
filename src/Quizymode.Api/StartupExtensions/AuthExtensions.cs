@@ -1,5 +1,6 @@
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
+using Quizymode.Api.Shared.Http;
 using System.Security.Claims;
 
 namespace Quizymode.Api.StartupExtensions;
@@ -83,11 +84,32 @@ internal static partial class StartupExtensions
                         System.Diagnostics.Debug.WriteLine($"[JWT TOKEN VALIDATED] Claims Count: {context.Principal?.Claims.Count() ?? 0}");
                         return Task.CompletedTask;
                     },
-                    OnChallenge = context =>
+                    OnChallenge = async context =>
                     {
                         System.Diagnostics.Debug.WriteLine($"[JWT CHALLENGE] Error: {context.Error}");
                         System.Diagnostics.Debug.WriteLine($"[JWT CHALLENGE] Error Description: {context.ErrorDescription}");
-                        return Task.CompletedTask;
+
+                        // Suppress the default empty-body challenge and write ProblemDetails instead.
+                        context.HandleResponse();
+                        if (context.Response.HasStarted)
+                        {
+                            return;
+                        }
+
+                        // RFC 6750: never expose error_description / error_uri (they carry validator internals).
+                        context.Response.Headers.WWWAuthenticate = context.AuthenticateFailure is null
+                            ? context.Options.Challenge
+                            : $"{context.Options.Challenge} error=\"invalid_token\"";
+                        await CustomResults.Unauthorized().ExecuteAsync(context.HttpContext);
+                    },
+                    OnForbidden = async context =>
+                    {
+                        if (context.Response.HasStarted)
+                        {
+                            return;
+                        }
+
+                        await CustomResults.Forbidden().ExecuteAsync(context.HttpContext);
                     }
                 };
             });
