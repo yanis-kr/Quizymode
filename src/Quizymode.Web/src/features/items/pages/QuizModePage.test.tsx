@@ -8,7 +8,7 @@ import { itemsApi } from "@/api/items";
 import { categoriesApi } from "@/api/categories";
 import { keywordsApi } from "@/api/keywords";
 import { collectionsApi } from "@/api/collections";
-import { QUIZ_COMPLETED_EVENT, type QuizCompletionSnapshot } from "@/features/items/quiz/quizRun";
+import { QUIZ_COMPLETED_EVENT, seedQuizRoster, type QuizCompletionSnapshot } from "@/features/items/quiz/quizRun";
 import { installMemoryLocalStorage } from "@/test/memoryStorage";
 import {
   GUEST_HISTORY_STORAGE_KEY,
@@ -629,13 +629,144 @@ describe("QuizModePage", () => {
       );
     });
 
-    it("rewrites a global deep link to a playable item outside the loaded set", async () => {
-      // AC 3.6.17 (#275)
+    function startEvents() {
+      return mockTrackEventOnce.mock.calls.filter(
+        ([, input]) => input?.name === "quick_quiz_started"
+      );
+    }
+
+    // AC 3.6.17 (#278)
+    it("starts a cold global deep link on the linked item and keeps the roster across Next/Prev", async () => {
+      const user = userEvent.setup({ delay: null });
       mockRoster([item, secondItem]);
       mockById(elsewhere, item, secondItem);
       renderPage("/quiz/item/item-elsewhere");
 
+      expect(await screen.findByText(elsewhere.question)).toBeInTheDocument();
+      expect(screen.getByTestId("location")).toHaveTextContent(/^\/quiz\/item\/item-elsewhere$/);
+      expect(screen.getByText("1 of 3")).toBeInTheDocument();
+      expect(navigateCalls).toEqual([]);
+
+      await user.click(screen.getByRole("button", { name: /^next$/i }));
+      expect(await screen.findByText("What is 2 + 2?")).toBeInTheDocument();
+      await user.click(screen.getByRole("button", { name: /^next$/i }));
+      expect(await screen.findByText("What is the capital of France?")).toBeInTheDocument();
+      await user.click(screen.getByRole("button", { name: /^previous$/i }));
+      await user.click(screen.getByRole("button", { name: /^previous$/i }));
+      expect(await screen.findByText(elsewhere.question)).toBeInTheDocument();
+      await act(async () => {});
+
+      expect(screen.queryByText(/no longer available/i)).not.toBeInTheDocument();
+      expect(screen.getByText("1 of 3")).toBeInTheDocument();
+      expect(itemsApi.getById).toHaveBeenCalledTimes(1);
+      expect(itemsApi.getRandom).toHaveBeenCalledTimes(1);
+      expect(startEvents()).toHaveLength(1);
+      expect(startEvents()[0][1]).toMatchObject({ total: 3 });
+    });
+
+    it("starts a cold category deep link on the linked item and de-duplicates the random set", async () => {
+      mockRoster([item, secondItem]);
+      mockById(item, secondItem);
+      renderPage("/quiz/exams/item/item-2");
+
+      expect(await screen.findByText("What is the capital of France?")).toBeInTheDocument();
+      expect(screen.getByText("1 of 2")).toBeInTheDocument();
+      expect(screen.getByTestId("location")).toHaveTextContent(/^\/quiz\/exams\/item\/item-2$/);
+      await act(async () => {});
+      expect(startEvents()).toHaveLength(1);
+    });
+
+    it("keeps the quiz size when the linked item is added to a full random set", async () => {
+      const random = Array.from({ length: 10 }, (_, i) => ({
+        ...secondItem,
+        id: `random-${i}`,
+        question: `Random question ${i}?`,
+      }));
+      mockRoster(random);
+      mockById(elsewhere);
+      renderPage("/quiz/item/item-elsewhere");
+
+      expect(await screen.findByText(elsewhere.question)).toBeInTheDocument();
+      expect(screen.getByText("1 of 10")).toBeInTheDocument();
+    });
+
+    it("rewrites a category deep link to an item of another category", async () => {
+      const otherCategory = { ...elsewhere, category: "science" };
+      mockRoster([item, secondItem]);
+      mockById(otherCategory, item, secondItem);
+      renderPage("/quiz/exams/item/item-elsewhere");
+
+      await expectShown(/^\/quiz\/exams\/item\/item-1$/, "What is 2 + 2?", elsewhere.question);
+    });
+
+    it("rewrites a keyword-scoped deep link instead of adding the linked item", async () => {
+      mockRoster([item, secondItem]);
+      mockById(elsewhere, item, secondItem);
+      renderPage("/quiz/exams/item/item-elsewhere?nav=act");
+
+      await expectShown("/quiz/exams/item/item-1?nav=act", "What is 2 + 2?", elsewhere.question);
+    });
+
+    it("rewrites a global deep link to a private item instead of seeding it", async () => {
+      const privateItem = { ...elsewhere, isPrivate: true };
+      mockRoster([item, secondItem]);
+      mockById(privateItem, item, secondItem);
+      renderPage("/quiz/item/item-elsewhere");
+
       await expectShown(/^\/quiz\/item\/item-1$/, "What is 2 + 2?", elsewhere.question);
+    });
+
+    it("waits for the category roster before starting a cold category link", async () => {
+      let resolveCategories: (value: Awaited<ReturnType<typeof categoriesApi.getAll>>) => void =
+        () => {};
+      vi.mocked(categoriesApi.getAll).mockReturnValue(
+        new Promise((resolve) => {
+          resolveCategories = resolve;
+        })
+      );
+      mockRoster([item, secondItem]);
+      mockById(item, secondItem);
+      renderPage("/quiz/exams/item/item-2");
+
+      // getById settles first; no one-item run may start while the roster is pending.
+      await waitFor(() => expect(itemsApi.getById).toHaveBeenCalledTimes(1));
+      await act(async () => {});
+      expect(screen.queryByText("What is the capital of France?")).not.toBeInTheDocument();
+      expect(screen.queryByText(/no longer available/i)).not.toBeInTheDocument();
+      expect(itemsApi.getRandom).not.toHaveBeenCalled();
+      expect(mockTrackEventOnce).not.toHaveBeenCalled();
+
+      await act(async () => {
+        resolveCategories({ categories: [{ category: "exams" }] } as Awaited<
+          ReturnType<typeof categoriesApi.getAll>
+        >);
+      });
+
+      expect(await screen.findByText("What is the capital of France?")).toBeInTheDocument();
+      await act(async () => {});
+      expect(screen.getByText("1 of 2")).toBeInTheDocument();
+      expect(screen.queryByText(/no longer available/i)).not.toBeInTheDocument();
+      expect(navigateCalls).toEqual([]);
+      expect(itemsApi.getRandom).toHaveBeenCalledTimes(1);
+      expect(vi.mocked(itemsApi.getRandom).mock.calls[0][0]).toBe("exams");
+      expect(startEvents()).toHaveLength(1);
+    });
+
+    it("shows the linked item when the categories request fails", async () => {
+      vi.mocked(categoriesApi.getAll).mockRejectedValue(new Error("boom"));
+      mockById(item, secondItem);
+      renderPage("/quiz/exams/item/item-2");
+
+      expect(await screen.findByText("What is the capital of France?")).toBeInTheDocument();
+      expect(screen.getByText("1 of 1")).toBeInTheDocument();
+    });
+
+    it("falls back to a random item when the linked item cannot be loaded", async () => {
+      mockRoster([item, secondItem]);
+      vi.mocked(itemsApi.getById).mockRejectedValue(new Error("404"));
+      renderPage("/quiz/exams/item/item-gone");
+
+      await expectShown(/^\/quiz\/exams\/item\/item-1$/, "What is 2 + 2?");
     });
 
     it("does not rewrite a deep link to an item in the roster", async () => {
@@ -688,5 +819,72 @@ describe("QuizModePage", () => {
       await user.click(screen.getByRole("button", { name: "test-back" }));
       await waitFor(() => expect(screen.getByTestId("location")).toHaveTextContent(/^\/prev$/));
     });
+  });
+});
+
+describe("seedQuizRoster", () => {
+  type Linked = NonNullable<Parameters<typeof seedQuizRoster>[1]>;
+  const base = {
+    id: "linked",
+    category: "Science & Nature",
+    isPrivate: false,
+    correctAnswer: "a",
+    incorrectAnswers: ["b", "c"],
+  } as unknown as Linked;
+  const rnd = (n: number): Linked[] =>
+    Array.from({ length: n }, (_, i) => ({ ...base, id: `r${i}` }));
+  const opts = { navigationKeywords: [], filterKeywords: [], quizSize: 10 };
+
+  it("returns the random items when there is no linked item", () => {
+    expect(seedQuizRoster(rnd(2), null, opts)).toHaveLength(2);
+    expect(seedQuizRoster(rnd(2), undefined, opts)).toHaveLength(2);
+  });
+
+  it("does not seed an unplayable or private linked item", () => {
+    expect(seedQuizRoster(rnd(2), { ...base, incorrectAnswers: [] }, opts)).toHaveLength(2);
+    expect(seedQuizRoster(rnd(2), { ...base, isPrivate: true }, opts).map((i) => i.id)).toEqual([
+      "r0",
+      "r1",
+    ]);
+  });
+
+  it("puts the linked item first without duplicating it", () => {
+    const random = [...rnd(2), base];
+    expect(seedQuizRoster(random, base, opts).map((i) => i.id)).toEqual(["linked", "r0", "r1"]);
+  });
+
+  it("caps the roster at the quiz size, dropping the last random item", () => {
+    const result = seedQuizRoster(rnd(10), base, opts);
+    expect(result).toHaveLength(10);
+    expect(result[0].id).toBe("linked");
+    expect(result.some((i) => i.id === "r9")).toBe(false);
+  });
+
+  it("seeds only the linked item when there are no random items", () => {
+    expect(seedQuizRoster([], base, opts).map((i) => i.id)).toEqual(["linked"]);
+  });
+
+  it("does not seed under filter keywords, or under nav keywords for a category", () => {
+    expect(seedQuizRoster(rnd(1), base, { ...opts, filterKeywords: ["x"] })).toHaveLength(1);
+    expect(
+      seedQuizRoster(rnd(1), base, {
+        ...opts,
+        categorySlug: "science-nature",
+        navigationKeywords: ["x"],
+      })
+    ).toHaveLength(1);
+  });
+
+  it("matches the category by slug, ignoring case and punctuation", () => {
+    expect(seedQuizRoster(rnd(1), base, { ...opts, categorySlug: "Science-Nature" })[0].id).toBe(
+      "linked"
+    );
+    expect(seedQuizRoster(rnd(1), base, { ...opts, categorySlug: "exams" })[0].id).toBe("r0");
+  });
+
+  it("treats a missing linked category as out of scope for a category quiz", () => {
+    const noCategory = { ...base, category: "" };
+    expect(seedQuizRoster(rnd(1), noCategory, { ...opts, categorySlug: "exams" })[0].id).toBe("r0");
+    expect(seedQuizRoster(rnd(1), noCategory, opts)[0].id).toBe("linked");
   });
 });

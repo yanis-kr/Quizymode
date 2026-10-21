@@ -44,6 +44,7 @@ import {
   getQuizOptions,
   isQuizPlayable,
   publishQuizCompletion,
+  seedQuizRoster,
   reduceQuizRun,
   restoreQuizRun,
   sameQuizScope,
@@ -135,6 +136,20 @@ const QuizModePage = () => {
   const [showDetails, setShowDetails] = useState(false);
   const hasSyncedInitialItemUrl = useRef(false);
 
+  // AC 3.6.17 (#278): the item the page was entered on. Pinned for the life of the run so
+  // Prev/Next (which change the URL item id) never change the roster.
+  const [entryItemId, setEntryItemId] = useState<string | null>(() =>
+    !collectionId ? (itemId ?? null) : null
+  );
+  const previousCategorySlug = useRef(categorySlug);
+  useEffect(() => {
+    if (previousCategorySlug.current === categorySlug) return;
+    previousCategorySlug.current = categorySlug;
+    // A different category scope is a new entry: re-capture from the URL.
+    // eslint-disable-next-line react-hooks/set-state-in-effect
+    setEntryItemId(!collectionId ? (itemId ?? null) : null);
+  }, [categorySlug, collectionId, itemId]);
+
   /** Category/global quiz uses random N items; changing size must refetch and drop session-cached lists. */
   const handleQuizSizeChange = (raw: string) => {
     const n = parseInt(raw, 10);
@@ -152,6 +167,7 @@ const QuizModePage = () => {
 
     setQuizSize(next);
     setStoredItems(null);
+    setEntryItemId(null);
     setCurrentIndex(0);
     setRun(null);
     setRunRestartNotice(null);
@@ -177,7 +193,7 @@ const QuizModePage = () => {
   };
 
   // Fetch categories to convert slug to actual category name
-  const { data: categoriesData } = useQuery({
+  const { data: categoriesData, error: categoriesError } = useQuery({
     queryKey: ["categories"],
     queryFn: () => categoriesApi.getAll(),
     enabled: !!categorySlug && !collectionId,
@@ -289,6 +305,7 @@ const QuizModePage = () => {
     // Identity transitions intentionally invalidate all access-sensitive quiz state.
     setStoredItems(null);
     // eslint-disable-next-line react-hooks/set-state-in-effect
+    setEntryItemId(null);
     setRun(null);
     setRunRestartNotice(null);
     setCurrentIndex(0);
@@ -304,9 +321,9 @@ const QuizModePage = () => {
   }, [identityKey, queryClient]);
 
   const { data: singleItemData, isLoading: singleItemLoading } = useQuery({
-    queryKey: ["item", itemId, identityKey],
-    queryFn: () => itemsApi.getById(itemId!),
-    enabled: !!itemId && !storedItems, // Disable when restoring from sessionStorage
+    queryKey: ["item", entryItemId, identityKey],
+    queryFn: () => itemsApi.getById(entryItemId!),
+    enabled: !!entryItemId && !collectionId && !storedItems, // Disable when restoring from sessionStorage
   });
 
   const {
@@ -332,7 +349,12 @@ const QuizModePage = () => {
     enabled: !!collectionId,
   });
 
-  const { data, isLoading, error, refetch } = useQuery({
+  const {
+    data,
+    isPending: randomIsPending,
+    error,
+    refetch,
+  } = useQuery({
     queryKey: ["randomItems", category, quizSize, navigationKeywords, filterKeywords, identityKey],
     queryFn: () =>
       itemsApi.getRandom(
@@ -405,24 +427,42 @@ const QuizModePage = () => {
     const loadedItems = collectionId
       ? collectionData?.items ?? []
       : storedItems ||
-        data?.items ||
-        (singleItemData && !storedItems ? [singleItemData] : []);
+        seedQuizRoster(data?.items ?? [], singleItemData, {
+          categorySlug,
+          navigationKeywords,
+          filterKeywords,
+          quizSize,
+        });
     const seen = new Set<string>();
     return loadedItems.filter((item) => {
       if (!item.id || seen.has(item.id) || !isQuizPlayable(item)) return false;
       seen.add(item.id);
       return true;
     });
-  }, [collectionData?.items, collectionId, data?.items, singleItemData, storedItems]);
+  }, [
+    categorySlug,
+    collectionData?.items,
+    collectionId,
+    data?.items,
+    filterKeywords,
+    navigationKeywords,
+    quizSize,
+    singleItemData,
+    storedItems,
+  ]);
   const items = useMemo(() => {
     if (!run || !sameQuizScope(run.scope, runScope)) return availableItems;
     const byId = new Map(availableItems.map((item) => [item.id, item]));
     return run.itemIds.map((id) => byId.get(id)).filter((item): item is (typeof availableItems)[number] => Boolean(item));
   }, [availableItems, run, runScope]);
 
+  // Wait for the random roster (and, for a category link, the category name it depends on) so a
+  // one-item run is never created and then replaced (#278). A categories error stops the wait.
+  const rosterPending =
+    !collectionId && !storedItems && randomIsPending && !categoriesError;
   const isLoadingItems = collectionId
     ? collectionLoading
-    : isLoading || (itemId ? singleItemLoading : false);
+    : rosterPending || (entryItemId ? singleItemLoading : false);
 
   // Calculate current index based on itemId if present
   useEffect(() => {

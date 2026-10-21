@@ -1,4 +1,5 @@
 import type { ItemResponse } from "@/types/api";
+import { categoryNameToSlug } from "@/utils/categorySlug";
 
 export const QUIZ_RUN_SCHEMA_VERSION = 1;
 export const QUIZ_COMPLETED_EVENT = "quizymode:quiz-completed";
@@ -295,4 +296,41 @@ export function getQuizOptions(item: ItemResponse, runId: string): string[] {
     [options[index], options[target]] = [options[target], options[index]];
   }
   return options;
+}
+
+interface SeedQuizRosterOptions {
+  /** Category slug from the URL (not the resolved name); undefined for a global quiz. */
+  categorySlug?: string;
+  navigationKeywords: readonly string[];
+  filterKeywords: readonly string[];
+  quizSize: number;
+}
+
+/**
+ * AC 3.6.17 (#278): a cold deep link starts the run on the entry item when that item is
+ * quiz-playable, public and in the quiz's scope; the random items follow without duplicates.
+ * Otherwise the random roster is returned unchanged (the #275 rewrite then applies).
+ */
+export function seedQuizRoster<T extends ItemResponse>(
+  randomItems: readonly T[],
+  linked: T | null | undefined,
+  options: SeedQuizRosterOptions
+): T[] {
+  const random = [...randomItems];
+  if (!linked || !linked.id || linked.isPrivate || !isQuizPlayable(linked)) return random;
+  if (options.filterKeywords.length > 0) return random;
+  if (options.categorySlug) {
+    if (options.navigationKeywords.length > 0) return random;
+    if (!linked.category) return random;
+    if (
+      categoryNameToSlug(linked.category).toLowerCase() !==
+      options.categorySlug.toLowerCase()
+    ) {
+      return random;
+    }
+  }
+  return [linked, ...random.filter((item) => item.id !== linked.id)].slice(
+    0,
+    options.quizSize
+  );
 }
