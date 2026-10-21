@@ -136,7 +136,7 @@ public static class IdeaRatings
         catch (Exception ex)
         {
             return Result.Failure<Response>(
-                Error.Problem("IdeaRatings.UpsertFailed", $"Failed to save rating: {ex.Message}"));
+                Error.Problem("IdeaRatings.UpsertFailed", "Failed to save rating.", ex));
         }
     }
 

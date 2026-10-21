@@ -401,6 +401,45 @@ public sealed class SeedSyncAdminTests : ItemTestFixture
         ManifestErrors(Manifest([item], [ValidCollection()])).Should().Contain("IncorrectAnswers is required.");
     }
 
+    // --- #281: null list elements are rejected with a clear message, not a NullReferenceException ---
+
+    [Fact]
+    public void ValidateManifest_NullItemEntry_ReturnsOnlyNullEntriesMessage()
+    {
+        ManifestErrors(Manifest([null!], [ValidCollection()])).Should().Equal("Items must not contain null entries.");
+    }
+
+    [Fact]
+    public void ValidateManifest_ValidAndNullItemEntry_ReturnsSingleMessage()
+    {
+        ManifestErrors(Manifest([ValidItem(), null!], [ValidCollection()])).Should().Equal("Items must not contain null entries.");
+    }
+
+    [Fact]
+    public void ValidateManifest_TwoNullItemEntries_ReturnsSingleMessage()
+    {
+        ManifestErrors(Manifest([null!, null!], [ValidCollection()])).Should().Equal("Items must not contain null entries.");
+    }
+
+    [Fact]
+    public void ValidateManifest_NullCollectionEntry_ReturnsOnlyNullEntriesMessage()
+    {
+        ManifestErrors(Manifest([ValidItem()], [null!])).Should().Equal("Collections must not contain null entries.");
+    }
+
+    [Fact]
+    public async Task PreviewManifestAsync_NullItemEntry_ReturnsManifestInvalid()
+    {
+        SeedSyncAdmin.ManifestRequest manifest = Manifest([null!], [ValidCollection()]);
+        SeedSyncAdmin.SourceContext context = new("quizymode", "quizymode", "main", "abc", "items", 1, "collections", 1);
+
+        Result<SeedSyncAdmin.PreviewResponse> result = await _service.PreviewManifestAsync(manifest, context, CancellationToken.None);
+
+        result.IsFailure.Should().BeTrue();
+        result.Error!.Code.Should().Be("Admin.SeedSyncManifestInvalid");
+        result.Error.Description.Should().Be("Items must not contain null entries.");
+    }
+
     private SeedSyncAdmin.Request BuildRequest(
         List<SeedSyncAdmin.SeedItemRequest> items,
         List<SeedSyncAdmin.SeedCollectionRequest>? collections = null)

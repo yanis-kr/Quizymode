@@ -80,7 +80,7 @@ public static class UpdateFeaturedItem
         catch (Exception ex)
         {
             return Result.Failure(
-                Error.Problem("Featured.UpdateFailed", $"Failed to update featured item: {ex.Message}"));
+                Error.Problem("Featured.UpdateFailed", "Failed to update featured item.", ex));
         }
     }
 

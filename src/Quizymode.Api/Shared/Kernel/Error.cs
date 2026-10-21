@@ -1,6 +1,9 @@
 // Based on Milan Jovanović's Clean Architecture template
 // Source: https://www.milanjovanovic.tech/pragmatic-clean-architecture
 
+using System.Text;
+using System.Text.Json.Serialization;
+
 namespace Quizymode.Api.Shared.Kernel;
 
 /// <summary>
@@ -85,6 +88,23 @@ public record Error
     public ErrorType Type { get; }
 
     /// <summary>
+    /// Gets the underlying exception, if any. It is logged server-side and never written to responses.
+    /// </summary>
+    [JsonIgnore]
+    public Exception? Exception { get; init; }
+
+    /// <summary>
+    /// Prints only code, description and type so exception details never leak through ToString().
+    /// </summary>
+    protected virtual bool PrintMembers(StringBuilder builder)
+    {
+        builder.Append("Code = ").Append(Code)
+            .Append(", Description = ").Append(Description)
+            .Append(", Type = ").Append(Type);
+        return true;
+    }
+
+    /// <summary>
     /// Creates a generic failure error.
     /// </summary>
     /// <param name="code">The error code.</param>
@@ -119,6 +139,12 @@ public record Error
     /// </remarks>
     public static Error Problem(string code, string description) =>
         new(code, description, ErrorType.Problem);
+
+    /// <summary>
+    /// Creates a "problem" error that carries the originating exception for server-side logging.
+    /// </summary>
+    public static Error Problem(string code, string description, Exception exception) =>
+        new(code, description, ErrorType.Problem) { Exception = exception };
 
     /// <summary>
     /// Creates a "conflict" error (typically for duplicate resources or conflicting state).

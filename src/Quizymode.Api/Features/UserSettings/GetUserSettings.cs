@@ -93,7 +93,7 @@ public static class GetUserSettings
         catch (Exception ex)
         {
             return Result.Failure<Response>(
-                Error.Problem("UserSettings.GetFailed", $"Failed to get user settings: {ex.Message}"));
+                Error.Problem("UserSettings.GetFailed", "Failed to get user settings.", ex));
         }
     }
 }

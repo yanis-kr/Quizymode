@@ -220,7 +220,7 @@ public static class GetKeywords
             logger.LogError(ex, "Failed to get keywords. Category: {Category}, UserId: {UserId}",
                 request.Category, userContext.UserId);
             return Result.Failure<Response>(
-                Error.Problem("Keywords.GetFailed", $"Failed to get keywords: {ex.Message}"));
+                Error.Problem("Keywords.GetFailed", "Failed to get keywords."));
         }
     }
 

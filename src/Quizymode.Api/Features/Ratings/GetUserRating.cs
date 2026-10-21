@@ -97,7 +97,7 @@ public static class GetUserRating
         catch (Exception ex)
         {
             return Result.Failure<RatingResponse?>(
-                Error.Problem("Ratings.GetUserRatingFailed", $"Failed to get user rating: {ex.Message}"));
+                Error.Problem("Ratings.GetUserRatingFailed", "Failed to get user rating.", ex));
         }
     }
 

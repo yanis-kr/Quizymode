@@ -107,7 +107,7 @@ public static class GetCategoryKeywordsAdmin
         catch (Exception ex)
         {
             return Result.Failure<Response>(
-                Error.Problem("Admin.GetCategoryKeywordsFailed", $"Failed to get keyword relations: {ex.Message}"));
+                Error.Problem("Admin.GetCategoryKeywordsFailed", "Failed to get keyword relations.", ex));
         }
     }
 }

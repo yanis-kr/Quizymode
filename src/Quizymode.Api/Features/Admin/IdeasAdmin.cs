@@ -73,7 +73,7 @@ public static class IdeasAdmin
         catch (Exception ex)
         {
             return Result.Failure<IdeaBoardResponse>(
-                Error.Problem("AdminIdeas.ListFailed", $"Failed to load admin ideas: {ex.Message}"));
+                Error.Problem("AdminIdeas.ListFailed", "Failed to load admin ideas.", ex));
         }
     }
 
@@ -114,7 +114,7 @@ public static class IdeasAdmin
         catch (Exception ex)
         {
             return Result.Failure<IdeaSummaryResponse>(
-                Error.Problem("AdminIdeas.ApproveFailed", $"Failed to approve idea: {ex.Message}"));
+                Error.Problem("AdminIdeas.ApproveFailed", "Failed to approve idea.", ex));
         }
     }
 
@@ -150,7 +150,7 @@ public static class IdeasAdmin
         catch (Exception ex)
         {
             return Result.Failure<IdeaSummaryResponse>(
-                Error.Problem("AdminIdeas.RejectFailed", $"Failed to reject idea: {ex.Message}"));
+                Error.Problem("AdminIdeas.RejectFailed", "Failed to reject idea.", ex));
         }
     }
 

@@ -1,5 +1,6 @@
 using System.Text.Json;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Logging.Abstractions;
 using Quizymode.Api.Data;
 using Quizymode.Api.Features.Items.AddBulk;
 using Quizymode.Api.Shared.Http;
@@ -40,6 +41,7 @@ public static class FinalizeImport
             ITaxonomyItemCategoryResolver itemCategoryResolver,
             ITaxonomyRegistry taxonomyRegistry,
             IAuditService auditService,
+            ILogger<Endpoint> logger,
             CancellationToken cancellationToken)
         {
             if (!userContext.IsAuthenticated || string.IsNullOrEmpty(userContext.UserId))
@@ -53,7 +55,8 @@ public static class FinalizeImport
                 itemCategoryResolver,
                 taxonomyRegistry,
                 auditService,
-                cancellationToken);
+                cancellationToken,
+                logger);
             return result.Match(
                 value => value is null ? Results.NotFound() : Results.Ok(value),
                 error => CustomResults.Problem(result));
@@ -68,7 +71,8 @@ public static class FinalizeImport
         ITaxonomyItemCategoryResolver itemCategoryResolver,
         ITaxonomyRegistry taxonomyRegistry,
         IAuditService auditService,
-        CancellationToken cancellationToken)
+        CancellationToken cancellationToken,
+        ILogger? logger = null)
     {
         if (!Guid.TryParse(id, out Guid sessionId))
             return Result.Success<Response?>(null);
@@ -155,6 +159,7 @@ public static class FinalizeImport
             itemCategoryResolver,
             taxonomyRegistry,
             auditService,
+            logger ?? NullLogger.Instance,
             cancellationToken);
 
         if (bulkResult.IsFailure)

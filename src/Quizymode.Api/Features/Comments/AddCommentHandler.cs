@@ -72,7 +72,7 @@ internal static class AddCommentHandler
         catch (Exception ex)
         {
             return Result.Failure<AddComment.Response>(
-                Error.Problem("Comments.CreateFailed", $"Failed to create comment: {ex.Message}"));
+                Error.Problem("Comments.CreateFailed", "Failed to create comment.", ex));
         }
     }
 }

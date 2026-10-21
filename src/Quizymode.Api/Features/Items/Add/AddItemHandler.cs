@@ -214,7 +214,7 @@ internal static class AddItemHandler
         catch (Exception ex)
         {
             return Result.Failure<AddItem.Response>(
-                Error.Problem("Item.CreateFailed", $"Failed to create item: {ex.Message}"));
+                Error.Problem("Item.CreateFailed", "Failed to create item.", ex));
         }
     }
 }

@@ -73,7 +73,7 @@ public static class GetPendingKeywordsAdmin
         catch (Exception ex)
         {
             return Result.Failure<Response>(
-                Error.Problem("Admin.GetPendingKeywordsFailed", $"Failed to get pending keywords: {ex.Message}"));
+                Error.Problem("Admin.GetPendingKeywordsFailed", "Failed to get pending keywords.", ex));
         }
     }
 }

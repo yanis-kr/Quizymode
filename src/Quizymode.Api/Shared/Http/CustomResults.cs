@@ -17,7 +17,13 @@ public static class CustomResults
         }
 
         int statusCode = GetStatusCode(result.Error.Type);
-        if (logger is not null)
+        Exception? exception = result.Error.Exception;
+        if (logger is not null && exception is not null)
+        {
+            logger.LogError(exception, "Request failed: Code={Code}, Detail={Detail}, StatusCode={StatusCode}",
+                result.Error.Code, result.Error.Description, statusCode);
+        }
+        else if (logger is not null)
         {
             if (statusCode >= 500)
                 logger.LogError("Request failed: Code={Code}, Detail={Detail}, StatusCode={StatusCode}",
@@ -27,11 +33,18 @@ public static class CustomResults
                     result.Error.Code, result.Error.Description, statusCode);
         }
 
-        return Results.Problem(
+        IResult problem = Results.Problem(
             title: GetTitle(result.Error),
             detail: GetDetail(result.Error),
             type: GetType(result.Error.Type),
             statusCode: statusCode);
+
+        if (exception is not null && logger is null)
+        {
+            return new LoggingProblemResult(problem, exception, result.Error.Code);
+        }
+
+        return problem;
 
         static int GetStatusCode(ErrorType errorType) =>
             errorType switch
@@ -99,5 +112,27 @@ public static class CustomResults
             type: "https://tools.ietf.org/html/rfc7231#section-6.5.4",
             statusCode: StatusCodes.Status404NotFound);
     }
-}
 
+    /// <summary>
+    /// Wraps a problem result so the originating exception is logged at execution time
+    /// when the caller did not supply a logger.
+    /// </summary>
+    internal sealed class LoggingProblemResult(IResult inner, Exception exception, string code)
+        : IResult, IStatusCodeHttpResult, IValueHttpResult, IContentTypeHttpResult
+    {
+        public int? StatusCode => (inner as IStatusCodeHttpResult)?.StatusCode;
+
+        public object? Value => (inner as IValueHttpResult)?.Value;
+
+        public string? ContentType => (inner as IContentTypeHttpResult)?.ContentType;
+
+        public Task ExecuteAsync(HttpContext httpContext)
+        {
+            ILoggerFactory? factory = httpContext.RequestServices?.GetService(typeof(ILoggerFactory)) as ILoggerFactory;
+            factory?.CreateLogger("Quizymode.Api.Shared.Http.CustomResults")
+                .LogError(exception, "Unhandled handler exception: Code={Code}, Path={Path}",
+                    code, httpContext.Request.Path.Value);
+            return inner.ExecuteAsync(httpContext);
+        }
+    }
+}

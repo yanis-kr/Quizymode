@@ -88,11 +88,18 @@ public static class CollectionItems
         private static async Task<IResult> AddHandler(
             Guid collectionId,
             AddRequest request,
+            IValidator<AddRequest> validator,
             ApplicationDbContext db,
             IUserContext userContext,
             ILogger<Endpoint> logger,
             CancellationToken cancellationToken)
         {
+            ValidationResult validationResult = await validator.ValidateAsync(request, cancellationToken);
+            if (!validationResult.IsValid)
+            {
+                return Results.BadRequest(validationResult.Errors);
+            }
+
             Result<CollectionItemResponse> result = await HandleAddAsync(
                 collectionId,
                 request,
@@ -230,7 +237,7 @@ public static class CollectionItems
         catch (Exception ex)
         {
             return Result.Failure<CollectionItemResponse>(
-                Error.Problem("CollectionItems.AddFailed", $"Failed to add item to collection: {ex.Message}"));
+                Error.Problem("CollectionItems.AddFailed", "Failed to add item to collection.", ex));
         }
     }
 
@@ -312,7 +319,7 @@ public static class CollectionItems
         catch (Exception ex)
         {
             return Result.Failure<BulkAddResponse>(
-                Error.Problem("CollectionItems.BulkAddFailed", $"Failed to add items to collection: {ex.Message}"));
+                Error.Problem("CollectionItems.BulkAddFailed", "Failed to add items to collection.", ex));
         }
     }
 
@@ -365,7 +372,7 @@ public static class CollectionItems
         catch (Exception ex)
         {
             return Result.Failure(
-                Error.Problem("CollectionItems.RemoveFailed", $"Failed to remove item from collection: {ex.Message}"));
+                Error.Problem("CollectionItems.RemoveFailed", "Failed to remove item from collection.", ex));
         }
     }
 

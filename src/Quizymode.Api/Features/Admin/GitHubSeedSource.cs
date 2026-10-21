@@ -127,7 +127,7 @@ internal sealed class GitHubSeedSource(
         catch (Exception ex)
         {
             return Result.Failure<LoadedGitHubSeedManifest>(
-                Error.Problem("Admin.SeedSyncGitHubFetchFailed", $"Failed to load items from GitHub: {ex.Message}"));
+                Error.Problem("Admin.SeedSyncGitHubFetchFailed", "Failed to load items from GitHub.", ex));
         }
     }
 

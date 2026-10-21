@@ -159,7 +159,7 @@ public static class AddFeaturedItem
         catch (Exception ex)
         {
             return Result.Failure<Response>(
-                Error.Problem("Featured.AddFailed", $"Failed to add featured item: {ex.Message}"));
+                Error.Problem("Featured.AddFailed", "Failed to add featured item.", ex));
         }
     }
 

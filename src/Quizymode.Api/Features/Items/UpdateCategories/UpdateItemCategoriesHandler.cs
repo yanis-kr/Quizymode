@@ -101,7 +101,7 @@ internal static class UpdateItemCategoriesHandler
         catch (Exception ex)
         {
             return Result.Failure<UpdateItemCategories.Response>(
-                Error.Problem("ItemCategories.UpdateFailed", $"Failed to update item categories: {ex.Message}"));
+                Error.Problem("ItemCategories.UpdateFailed", "Failed to update item categories.", ex));
         }
     }
 }

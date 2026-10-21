@@ -145,7 +145,7 @@ public static class UpdateCollection
         catch (Exception ex)
         {
             return Result.Failure<Response>(
-                Error.Problem("Collections.UpdateFailed", $"Failed to update collection: {ex.Message}"));
+                Error.Problem("Collections.UpdateFailed", "Failed to update collection.", ex));
         }
     }
 

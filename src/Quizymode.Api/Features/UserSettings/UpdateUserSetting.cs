@@ -165,7 +165,7 @@ public static class UpdateUserSetting
         catch (Exception ex)
         {
             return Result.Failure<Response>(
-                Error.Problem("UserSettings.UpdateFailed", $"Failed to update user setting: {ex.Message}"));
+                Error.Problem("UserSettings.UpdateFailed", "Failed to update user setting.", ex));
         }
     }
 

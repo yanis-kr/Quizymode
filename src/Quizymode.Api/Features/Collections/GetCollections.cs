@@ -107,7 +107,7 @@ public static class GetCollections
         catch (Exception ex)
         {
             return Result.Failure<Response>(
-                Error.Problem("Collections.GetFailed", $"Failed to retrieve collections: {ex.Message}"));
+                Error.Problem("Collections.GetFailed", "Failed to retrieve collections.", ex));
         }
     }
 

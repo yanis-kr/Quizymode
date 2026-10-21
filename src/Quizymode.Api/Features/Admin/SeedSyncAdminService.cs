@@ -53,7 +53,7 @@ internal sealed class SeedSyncAdminService(
         catch (Exception ex)
         {
             return Result.Failure<SeedSyncAdmin.PreviewResponse>(
-                Error.Problem("Admin.SeedSyncPreviewFailed", $"Failed to preview item sync: {ex.Message}"));
+                Error.Problem("Admin.SeedSyncPreviewFailed", "Failed to preview item sync.", ex));
         }
     }
 
@@ -76,7 +76,7 @@ internal sealed class SeedSyncAdminService(
         catch (Exception ex)
         {
             return Result.Failure<SeedSyncAdmin.PreviewResponse>(
-                Error.Problem("Admin.SeedSyncPreviewFailed", $"Failed to preview item sync: {ex.Message}"));
+                Error.Problem("Admin.SeedSyncPreviewFailed", "Failed to preview item sync.", ex));
         }
     }
 
@@ -218,7 +218,7 @@ internal sealed class SeedSyncAdminService(
         {
             await TryRollbackAsync(transaction, cancellationToken);
             return Result.Failure<SeedSyncAdmin.ApplyResponse>(
-                Error.Problem("Admin.SeedSyncApplyFailed", $"Failed to apply item sync: {ex.Message}"));
+                Error.Problem("Admin.SeedSyncApplyFailed", "Failed to apply item sync.", ex));
         }
         finally
         {
@@ -289,7 +289,7 @@ internal sealed class SeedSyncAdminService(
         catch (Exception ex)
         {
             return Result.Failure<SeedSyncAdmin.HistoryResponse>(
-                Error.Problem("Admin.SeedSyncHistoryFailed", $"Failed to load seed sync history: {ex.Message}"));
+                Error.Problem("Admin.SeedSyncHistoryFailed", "Failed to load seed sync history.", ex));
         }
     }
 

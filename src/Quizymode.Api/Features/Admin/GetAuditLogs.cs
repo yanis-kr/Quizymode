@@ -185,7 +185,7 @@ public static class GetAuditLogs
         catch (Exception ex)
         {
             return Result.Failure<Response>(
-                Error.Problem("Admin.GetAuditLogsFailed", $"Failed to retrieve audit logs: {ex.Message}"));
+                Error.Problem("Admin.GetAuditLogsFailed", "Failed to retrieve audit logs.", ex));
         }
     }
 }

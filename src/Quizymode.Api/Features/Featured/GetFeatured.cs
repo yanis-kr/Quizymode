@@ -163,7 +163,7 @@ public static class GetFeatured
         catch (Exception ex)
         {
             return Result.Failure<Response>(
-                Error.Problem("Featured.GetFailed", $"Failed to retrieve featured items: {ex.Message}"));
+                Error.Problem("Featured.GetFailed", "Failed to retrieve featured items.", ex));
         }
     }
 

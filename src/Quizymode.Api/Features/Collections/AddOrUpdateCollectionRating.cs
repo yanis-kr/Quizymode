@@ -122,7 +122,7 @@ public static class AddOrUpdateCollectionRating
         catch (Exception ex)
         {
             return Result.Failure<Response>(
-                Error.Problem("CollectionRating.Failed", ex.Message));
+                Error.Problem("CollectionRating.Failed", "Failed to save collection rating.", ex));
         }
     }
 

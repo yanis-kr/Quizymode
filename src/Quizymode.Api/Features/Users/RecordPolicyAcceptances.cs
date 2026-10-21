@@ -221,7 +221,7 @@ public static class RecordPolicyAcceptances
         catch (Exception ex)
         {
             return Result.Failure<Response>(
-                Error.Problem("Users.PolicyAcceptance.RecordFailed", $"Failed to record policy acceptance: {ex.Message}"));
+                Error.Problem("Users.PolicyAcceptance.RecordFailed", "Failed to record policy acceptance.", ex));
         }
     }
 

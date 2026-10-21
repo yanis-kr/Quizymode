@@ -61,7 +61,7 @@ public static class DeleteCurrentStudyGuide
         catch (Exception ex)
         {
             return Result.Failure(
-                Error.Problem("StudyGuide.DeleteFailed", $"Failed to delete study guide: {ex.Message}"));
+                Error.Problem("StudyGuide.DeleteFailed", "Failed to delete study guide.", ex));
         }
     }
 }

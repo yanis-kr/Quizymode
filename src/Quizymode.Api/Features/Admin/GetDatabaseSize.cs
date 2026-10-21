@@ -122,7 +122,7 @@ public static class GetDatabaseSize
         catch (Exception ex)
         {
             return Result.Failure<Response>(
-                Error.Problem("Admin.GetDatabaseSizeFailed", $"Failed to retrieve database size: {ex.Message}"));
+                Error.Problem("Admin.GetDatabaseSizeFailed", "Failed to retrieve database size.", ex));
         }
     }
 }

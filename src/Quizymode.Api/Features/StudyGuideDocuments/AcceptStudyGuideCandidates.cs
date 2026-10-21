@@ -1,5 +1,6 @@
 using FluentValidation;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Logging.Abstractions;
 using Microsoft.Extensions.Options;
 using Quizymode.Api.Data;
 using Quizymode.Api.Features.Items.AddBulk;
@@ -101,6 +102,7 @@ public static class AcceptStudyGuideCandidates
             ITextModerationService moderation,
             IOptions<StudyGuideDocumentOptions> documentOptions,
             TimeProvider timeProvider,
+            ILogger<Endpoint> logger,
             CancellationToken cancellationToken)
         {
             if (!userContext.IsAuthenticated || string.IsNullOrEmpty(userContext.UserId))
@@ -126,7 +128,8 @@ public static class AcceptStudyGuideCandidates
                 moderation,
                 documentOptions.Value.RetentionDays,
                 timeProvider.GetUtcNow().UtcDateTime,
-                cancellationToken);
+                cancellationToken,
+                logger);
 
             return result.Match(
                 value => value is null ? Results.NotFound() : Results.Ok(value),
@@ -146,7 +149,8 @@ public static class AcceptStudyGuideCandidates
         ITextModerationService moderation,
         int retentionDays,
         DateTime nowUtc,
-        CancellationToken cancellationToken)
+        CancellationToken cancellationToken,
+        ILogger? logger = null)
     {
         string userId = userContext.UserId!;
         StudyGuideDocument? document = await db.StudyGuideDocuments
@@ -266,6 +270,7 @@ public static class AcceptStudyGuideCandidates
                 itemCategoryResolver,
                 taxonomyRegistry,
                 auditService,
+                logger ?? NullLogger.Instance,
                 cancellationToken);
             if (bulkResult.IsFailure)
             {

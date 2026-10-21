@@ -93,7 +93,7 @@ public static class ApproveItem
         catch (Exception ex)
         {
             return Result.Failure<ApproveItemResponse>(
-                Error.Problem("Items.ApproveFailed", $"Failed to approve item: {ex.Message}"));
+                Error.Problem("Items.ApproveFailed", "Failed to approve item.", ex));
         }
     }
 

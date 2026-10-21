@@ -34,7 +34,7 @@ public static class IdeaBoard
         catch (Exception ex)
         {
             return Result.Failure<IdeaBoardResponse>(
-                Error.Problem("Ideas.GetPublicFailed", $"Failed to load ideas board: {ex.Message}"));
+                Error.Problem("Ideas.GetPublicFailed", "Failed to load ideas board.", ex));
         }
     }
 
@@ -63,7 +63,7 @@ public static class IdeaBoard
         catch (Exception ex)
         {
             return Result.Failure<IdeaBoardResponse>(
-                Error.Problem("Ideas.GetMineFailed", $"Failed to load your ideas: {ex.Message}"));
+                Error.Problem("Ideas.GetMineFailed", "Failed to load your ideas.", ex));
         }
     }
 

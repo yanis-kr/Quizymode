@@ -94,7 +94,7 @@ public static class GetCurrentUser
         catch (Exception ex)
         {
             return Result.Failure<Response>(
-                Error.Problem("Users.GetCurrentUserFailed", $"Failed to get current user: {ex.Message}"));
+                Error.Problem("Users.GetCurrentUserFailed", "Failed to get current user.", ex));
         }
     }
 }

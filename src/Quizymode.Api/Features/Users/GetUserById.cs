@@ -80,7 +80,7 @@ public static class GetUserById
         catch (Exception ex)
         {
             return Result.Failure<Response>(
-                Error.Problem("Users.GetFailed", $"Failed to get user: {ex.Message}"));
+                Error.Problem("Users.GetFailed", "Failed to get user.", ex));
         }
     }
 

@@ -73,7 +73,7 @@ public static class GetCollectionRating
         catch (Exception ex)
         {
             return Result.Failure<Response>(
-                Error.Problem("CollectionRating.GetFailed", ex.Message));
+                Error.Problem("CollectionRating.GetFailed", "Failed to get collection rating.", ex));
         }
     }
 }

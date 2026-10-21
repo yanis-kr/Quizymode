@@ -131,7 +131,7 @@ public static class UpdateUserName
         catch (Exception ex)
         {
             return Result.Failure<Response>(
-                Error.Problem("Users.UpdateNameFailed", $"Failed to update user name: {ex.Message}"));
+                Error.Problem("Users.UpdateNameFailed", "Failed to update user name.", ex));
         }
     }
 

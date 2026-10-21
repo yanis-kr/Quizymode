@@ -59,7 +59,11 @@ public sealed class CollectionItemsBulkHttpTests : DatabaseTestFixture, IAsyncLi
 
         _host = await JwtHttpTestHost.StartAsync(
             CreateDbContext,
-            services => services.AddScoped<IValidator<CollectionItems.BulkAddRequest>, CollectionItems.BulkAddRequestValidator>(),
+            services =>
+            {
+                services.AddScoped<IValidator<CollectionItems.AddRequest>, CollectionItems.AddRequestValidator>();
+                services.AddScoped<IValidator<CollectionItems.BulkAddRequest>, CollectionItems.BulkAddRequestValidator>();
+            },
             app => new CollectionItems.Endpoint().MapEndpoint(app));
     }
 

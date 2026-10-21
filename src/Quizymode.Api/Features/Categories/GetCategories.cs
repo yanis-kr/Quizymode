@@ -156,7 +156,7 @@ public static class GetCategories
             logger.LogError(ex, "Failed to get categories. UserId: {UserId}, IsAuthenticated: {IsAuthenticated}", 
                 userContext.UserId, userContext.IsAuthenticated);
             return Result.Failure<Response>(
-                Error.Problem("Categories.GetFailed", $"Failed to get categories: {ex.Message}"));
+                Error.Problem("Categories.GetFailed", "Failed to get categories."));
         }
     }
 

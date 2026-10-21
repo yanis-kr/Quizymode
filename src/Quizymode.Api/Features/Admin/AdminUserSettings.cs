@@ -124,7 +124,7 @@ public static class AdminUserSettings
         catch (Exception ex)
         {
             return Result.Failure<SettingsResponse>(
-                Error.Problem("Admin.UserSettingsGetFailed", $"Failed to get user settings: {ex.Message}"));
+                Error.Problem("Admin.UserSettingsGetFailed", "Failed to get user settings.", ex));
         }
     }
 
@@ -185,7 +185,7 @@ public static class AdminUserSettings
         catch (Exception ex)
         {
             return Result.Failure<UpdateResponse>(
-                Error.Problem("Admin.UserSettingsUpdateFailed", $"Failed to update user setting: {ex.Message}"));
+                Error.Problem("Admin.UserSettingsUpdateFailed", "Failed to update user setting.", ex));
         }
     }
 

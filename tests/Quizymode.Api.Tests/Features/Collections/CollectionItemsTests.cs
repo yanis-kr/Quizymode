@@ -278,4 +278,52 @@ public sealed class CollectionItemsTests : DatabaseTestFixture
         result.IsFailure.Should().BeTrue();
         result.Error.Code.Should().Be("Collection.NotFound");
     }
+
+    // --- #281: unexpected exceptions never leak into the error description ---
+
+    private const string Secret = "secret-internal-detail-281";
+
+    private static IUserContext ThrowingUserContext()
+    {
+        Mock<IUserContext> ctx = new();
+        ctx.SetupGet(x => x.IsAuthenticated).Throws(new InvalidOperationException(Secret));
+        return ctx.Object;
+    }
+
+    private static void AssertGeneric(Error? error, string code, string description)
+    {
+        error.Should().NotBeNull();
+        error!.Code.Should().Be(code);
+        error.Description.Should().Be(description);
+        error.Description.Should().NotContain(Secret);
+        error.Exception.Should().NotBeNull();
+        error.Exception!.Message.Should().Be(Secret);
+    }
+
+    [Fact]
+    public async Task HandleAddAsync_UnexpectedException_ReturnsGenericDescription()
+    {
+        var result = await CollectionItems.HandleAddAsync(
+            Guid.NewGuid(), new CollectionItems.AddRequest(Guid.NewGuid()), DbContext, ThrowingUserContext(), CancellationToken.None);
+
+        AssertGeneric(result.Error, "CollectionItems.AddFailed", "Failed to add item to collection.");
+    }
+
+    [Fact]
+    public async Task HandleBulkAddAsync_UnexpectedException_ReturnsGenericDescription()
+    {
+        var result = await CollectionItems.HandleBulkAddAsync(
+            Guid.NewGuid(), new CollectionItems.BulkAddRequest([Guid.NewGuid()]), DbContext, ThrowingUserContext(), CancellationToken.None);
+
+        AssertGeneric(result.Error, "CollectionItems.BulkAddFailed", "Failed to add items to collection.");
+    }
+
+    [Fact]
+    public async Task HandleRemoveAsync_UnexpectedException_ReturnsGenericDescription()
+    {
+        var result = await CollectionItems.HandleRemoveAsync(
+            Guid.NewGuid(), Guid.NewGuid(), DbContext, ThrowingUserContext(), CancellationToken.None);
+
+        AssertGeneric(result.Error, "CollectionItems.RemoveFailed", "Failed to remove item from collection.");
+    }
 }

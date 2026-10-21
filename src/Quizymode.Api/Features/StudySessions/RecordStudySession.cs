@@ -210,7 +210,7 @@ public static class RecordStudySession
         catch (Exception ex)
         {
             return Result.Failure<Response>(
-                Error.Problem("StudySessions.RecordFailed", $"Failed to save study session: {ex.Message}"));
+                Error.Problem("StudySessions.RecordFailed", "Failed to save study session.", ex));
         }
     }
 

@@ -87,7 +87,7 @@ public static class GetReviewBoardItems
         catch (Exception ex)
         {
             return Result.Failure<Response>(
-                Error.Problem("Items.GetReviewBoardFailed", $"Failed to retrieve review board items: {ex.Message}"));
+                Error.Problem("Items.GetReviewBoardFailed", "Failed to retrieve review board items.", ex));
         }
     }
 
