@@ -166,3 +166,45 @@ test.describe("anonymous collection completion", () => {
     await expect(page).not.toHaveURL(/\/login(?:[/?#]|$)/);
   });
 });
+
+test(
+  "AC 3.16 @smoke - pressing 1 answers the question and Enter advances",
+  async ({ page }) => {
+    await navigateToQuiz(page);
+    await expect(page.getByText("Question")).toBeVisible({ timeout: 3_000 });
+
+    await page.keyboard.press("1");
+    await expect(page.getByText(/correct answer/i)).toBeVisible({ timeout: 3_000 });
+
+    await page.keyboard.press("Enter");
+    await expect(page.getByText(/correct answer/i)).toBeHidden({ timeout: 3_000 });
+  }
+);
+
+test(
+  "AC 3.16 @smoke - the single-key shortcuts switch turns shortcuts off and persists after reload",
+  async ({ page }) => {
+    await navigateToQuiz(page);
+    await expect(page.getByText("Question")).toBeVisible({ timeout: 3_000 });
+
+    await page.getByRole("button", { name: "Keyboard shortcuts" }).click();
+    const toggle = page.getByRole("switch", { name: "Single-key shortcuts" });
+    await expect(toggle).toBeFocused();
+    await toggle.click();
+    await expect(toggle).toHaveAttribute("aria-checked", "false");
+    await page.getByRole("button", { name: "Close" }).click();
+
+    await page.keyboard.press("1");
+    await expect(page.getByText(/correct answer/i)).toBeHidden();
+
+    await page.reload();
+    await page.waitForLoadState("networkidle");
+    await expect(page.getByText("Question")).toBeVisible({ timeout: 3_000 });
+    await page.keyboard.press("1");
+    await expect(page.getByText(/correct answer/i)).toBeHidden();
+
+    // Restore the default so later tests are unaffected.
+    await page.getByRole("button", { name: "Keyboard shortcuts" }).click();
+    await page.getByRole("switch", { name: "Single-key shortcuts" }).click();
+  }
+);

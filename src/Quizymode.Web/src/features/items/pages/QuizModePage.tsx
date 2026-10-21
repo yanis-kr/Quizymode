@@ -33,6 +33,9 @@ import type { CollectionRatingResponse } from "@/types/api";
 import { getCategoryScopeModeConfig } from "@/features/categories/utils/categoryScopeMode";
 import { getStudyScopeKeywords } from "@/features/items/utils/studyScopeParams";
 import { QuizCompletionView } from "@/features/items/quiz/QuizCompletionView";
+import { useStudyHotkeys } from "@/components/study/useStudyHotkeys";
+import { StudyHotkeysDialog } from "@/components/study/StudyHotkeysDialog";
+import { QUIZ_SHORTCUTS } from "@/components/study/studyShortcuts";
 import { flushDeferredAnalyticsEvents } from "@/features/analytics/analyticsEvents";
 import {
   trackQuestionAnswered,
@@ -790,6 +793,26 @@ const QuizModePage = () => {
     );
   };
 
+  const hasNextQuestion = currentIndex < items.length - 1;
+  const isQuestionActive = run?.view === "active" && !!currentItem;
+  const { isHelpOpen, openHelp, closeHelp } = useStudyHotkeys({
+    enabled: true,
+    letter: isQuestionActive && !showAnswer ? (index) => options[index] !== undefined && handleAnswerSelect(options[index]) : undefined,
+    digit: isQuestionActive && !showAnswer ? (n) => options[n - 1] !== undefined && handleAnswerSelect(options[n - 1]) : undefined,
+    prev: isQuestionActive && currentIndex > 0 ? handlePrev : undefined,
+    next: isQuestionActive && hasNextQuestion ? handleNext : undefined,
+    enter:
+      isQuestionActive && showAnswer
+        ? () => {
+            if (runSummary?.isComplete) {
+              setRun((current) => (current ? reduceQuizRun(current, { type: "show-summary" }) : current));
+            } else if (hasNextQuestion) {
+              handleNext();
+            }
+          }
+        : undefined,
+  });
+
   if (isLoadingItems) return <LoadingSpinner />;
   if (collectionId && collectionError)
     return (
@@ -870,6 +893,7 @@ const QuizModePage = () => {
           onBackToResults={() => setRun((current) => current ? reduceQuizRun(current, { type: "show-summary" }) : current)}
           onPlayAgain={handlePlayAgain}
         />
+        <StudyHotkeysDialog open={isHelpOpen} onClose={closeHelp} shortcuts={[]} />
       </div>
     );
   }
@@ -982,11 +1006,14 @@ const QuizModePage = () => {
           onClick={() => setShowDetails(false)}
         >
           <div
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="collection-details-title"
             className="relative top-24 mx-auto p-5 border w-full max-w-md shadow-lg rounded-md bg-white"
             onClick={(e) => e.stopPropagation()}
           >
             <div className="flex justify-between items-center mb-4">
-              <h3 className="text-lg font-medium text-gray-900">Collection details</h3>
+              <h3 id="collection-details-title" className="text-lg font-medium text-gray-900">Collection details</h3>
               <button
                 onClick={() => setShowDetails(false)}
                 className="text-gray-400 hover:text-gray-500"
@@ -1069,6 +1096,7 @@ const QuizModePage = () => {
         onCollectionChange={handleCollectionChange}
         isAuthenticated={isAuthenticated}
         showRatingsAndCollections={showAnswer}
+        onOpenShortcuts={openHelp}
         footerContent={
           collectionId ? (
             <button
@@ -1111,6 +1139,7 @@ const QuizModePage = () => {
         )}
       </StudyShell>
 
+      <StudyHotkeysDialog open={isHelpOpen} onClose={closeHelp} shortcuts={QUIZ_SHORTCUTS} />
       <CommentsDrawer
         itemId={commentsDrawerItemId}
         onClose={() => setCommentsDrawerItemId(null)}

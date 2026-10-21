@@ -8,6 +8,7 @@ import { ChevronLeftIcon, ChevronRightIcon, EyeIcon } from "@heroicons/react/24/
 import type { ItemResponse } from "@/types/api";
 import ItemRatingsComments from "@/components/ItemRatingsComments";
 import { ItemCollectionControls } from "@/components/ItemCollectionControls";
+import { StudyHotkeysHint } from "@/components/study/StudyHotkeysHint";
 
 export interface StudyShellProps {
   /** Back link / breadcrumb above the card */
@@ -47,6 +48,8 @@ export interface StudyShellProps {
   isAuthenticated: boolean;
   /** When false (e.g. quiz before answer), hide ratings and collection controls. Default true. */
   showRatingsAndCollections?: boolean;
+  /** Opens the keyboard shortcuts dialog; shows the Shortcuts hint beside the details link. */
+  onOpenShortcuts?: () => void;
   /** Footer (back to collection / categories) */
   footerContent?: ReactNode;
   /** Sign-up prompt when not authenticated */
@@ -76,6 +79,7 @@ export function StudyShell({
   showRatingsAndCollections = true,
   footerContent,
   signUpPrompt,
+  onOpenShortcuts,
 }: StudyShellProps) {
   const location = useLocation();
   const itemDetailHref = currentItem
@@ -137,7 +141,8 @@ export function StudyShell({
                 <ChevronRightIcon className="h-5 w-5" />
               </button>
             </div>
-            <div className="flex-1 flex items-center justify-end">
+            <div className="flex-1 flex items-center justify-end gap-1">
+              {onOpenShortcuts && <StudyHotkeysHint onClick={onOpenShortcuts} />}
               {currentItem ? (
                 <Link
                   to={itemDetailHref ?? `/items/${currentItem.id}`}

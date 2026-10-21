@@ -73,6 +73,7 @@ export function QuizRenderer({
                 type="button"
                 onClick={() => onAnswerSelect(option)}
                 disabled={showAnswer}
+                aria-keyshortcuts={`${index + 1} ${letter}`}
                 className={`w-full text-left px-3 py-2 border-2 rounded-lg ${bgColor} ${
                   showAnswer ? "cursor-default" : "cursor-pointer"
                 }`}

@@ -20,6 +20,9 @@ export interface ExploreRendererProps {
   /** The card's current self-grade. The grade group shows only when `onGrade` is set and the card is flipped. */
   grade?: FlashcardGrade;
   onGrade?: (item: ItemResponse, grade: FlashcardGrade) => void;
+  /** Controlled flip state (used for keyboard shortcuts). The owner resets it when the card changes. */
+  isFlipped?: boolean;
+  onFlippedChange?: (flipped: boolean) => void;
 }
 
 const GRADE_OPTIONS: ReadonlyArray<{ grade: FlashcardGrade; label: string; shortcut: string }> = [
@@ -27,16 +30,32 @@ const GRADE_OPTIONS: ReadonlyArray<{ grade: FlashcardGrade; label: string; short
   { grade: "still-learning", label: "Still learning", shortcut: "2" },
 ];
 
-export function ExploreRenderer({ item, onReveal, grade, onGrade }: ExploreRendererProps) {
-  const [isFlipped, setIsFlipped] = useState(false);
+export function ExploreRenderer({
+  item,
+  onReveal,
+  grade,
+  onGrade,
+  isFlipped: controlledFlipped,
+  onFlippedChange,
+}: ExploreRendererProps) {
+  const [internalFlipped, setInternalFlipped] = useState(false);
+  const isControlled = controlledFlipped !== undefined;
+  const isFlipped = isControlled ? controlledFlipped : internalFlipped;
+  const setIsFlipped = (flipped: boolean) => {
+    if (isControlled) onFlippedChange?.(flipped);
+    else setInternalFlipped(flipped);
+  };
   const [explanationExpanded, setExplanationExpanded] = useState(false);
   const { isSupported } = useSpeech();
 
   useEffect(() => {
-    // eslint-disable-next-line react-hooks/set-state-in-effect
-    setIsFlipped(false);
+    if (!isControlled) {
+      // eslint-disable-next-line react-hooks/set-state-in-effect
+      setInternalFlipped(false);
+    }
     // eslint-disable-next-line react-hooks/set-state-in-effect
     setExplanationExpanded(false);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [item.id]);
 
   const explanationTrimmed = item.explanation?.trim() ?? "";

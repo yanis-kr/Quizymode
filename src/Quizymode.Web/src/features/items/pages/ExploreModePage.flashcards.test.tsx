@@ -7,6 +7,7 @@ import { collectionsApi } from "@/api/collections";
 import { categoriesApi } from "@/api/categories";
 import { itemsApi } from "@/api/items";
 import { reviewQueueApi } from "@/api/learningLoop";
+import { resetStudyHotkeysPreferenceForTests } from "@/components/study/studyHotkeysPreference";
 import { installMemoryLocalStorage } from "@/test/memoryStorage";
 import { resetFlashcardsShufflePreferenceForTests } from "@/features/items/flashcards/flashcardsShufflePreference";
 
@@ -360,5 +361,86 @@ describe("ExploreModePage flashcards", () => {
     await screen.findByText("Question a");
     expect(screen.queryByRole("switch", { name: "Shuffle" })).toBeNull();
     expect(within(document.body).queryByText("Shuffle")).toBeNull();
+  });
+
+  describe("keyboard shortcuts", () => {
+    const press = (init: KeyboardEventInit) =>
+      act(() => {
+        document.dispatchEvent(new KeyboardEvent("keydown", { bubbles: true, cancelable: true, ...init }));
+      });
+
+    beforeEach(() => {
+      resetStudyHotkeysPreferenceForTests();
+    });
+
+    it("Space flips and fires the reveal, and Space again flips back", async () => {
+      await start();
+      press({ key: " ", code: "Space" });
+      expect(analytics.trackFlashcardRevealed).toHaveBeenCalledTimes(1);
+      expect(screen.getByTestId("flashcard-back")).not.toHaveAttribute("aria-hidden", "true");
+      press({ key: "Enter", code: "Enter" });
+      expect(screen.getByTestId("flashcard-front")).not.toHaveAttribute("aria-hidden", "true");
+    });
+
+    it("1 and 2 grade only after the card is flipped", async () => {
+      await start();
+      press({ key: "1", code: "Digit1" });
+      expect(analytics.trackFlashcardGraded).not.toHaveBeenCalled();
+      press({ key: " ", code: "Space" });
+      press({ key: "2", code: "Digit2" });
+      expect(screen.getByRole("button", { name: "Still learning" })).toHaveAttribute("aria-pressed", "true");
+      expect(await screen.findByText("Added to Review")).toBeInTheDocument();
+      press({ key: "1", code: "Digit1" });
+      expect(screen.getByRole("button", { name: "Got it" })).toHaveAttribute("aria-pressed", "true");
+    });
+
+    it("arrows move between cards and the right arrow finishes on the last card", async () => {
+      await start();
+      press({ key: "ArrowLeft" });
+      expect(currentCard()).toBe("a");
+      press({ key: "ArrowRight" });
+      await waitFor(() => expect(currentCard()).toBe("b"));
+      press({ key: "ArrowRight" });
+      await waitFor(() => expect(currentCard()).toBe("c"));
+      press({ key: "ArrowRight" });
+      await waitFor(() => expect(currentCard()).toBe("d"));
+      press({ key: "ArrowRight" });
+      expect(await screen.findByRole("heading", { name: "Deck complete" })).toBeInTheDocument();
+    });
+
+    it("only ? works on the summary and the dialog lists no other shortcuts", async () => {
+      await start();
+      for (let i = 0; i < 4; i += 1) press({ key: "ArrowRight" });
+      await screen.findByRole("heading", { name: "Deck complete" });
+      press({ key: " ", code: "Space" });
+      press({ key: "ArrowLeft" });
+      expect(screen.getByRole("heading", { name: "Deck complete" })).toBeInTheDocument();
+      press({ key: "?" });
+      expect(screen.getByRole("dialog", { name: "Keyboard shortcuts" })).toBeInTheDocument();
+      expect(screen.getByText("No other shortcuts on this screen.")).toBeInTheDocument();
+    });
+
+    it("keeps ? and digits inert while the Collection details overlay is open", async () => {
+      await start();
+      fireEvent.click(screen.getByRole("button", { name: "Details" }));
+      expect(screen.getByRole("dialog", { name: "Collection details" })).toHaveAttribute("aria-modal", "true");
+      press({ key: "?" });
+      press({ key: " ", code: "Space" });
+      expect(screen.queryByRole("dialog", { name: "Keyboard shortcuts" })).toBeNull();
+      expect(screen.getByTestId("flashcard-front")).not.toHaveAttribute("aria-hidden", "true");
+    });
+
+    it("the Shortcuts button opens the dialog even when single-key shortcuts are off", async () => {
+      await start();
+      fireEvent.click(screen.getByRole("button", { name: "Keyboard shortcuts" }));
+      fireEvent.click(screen.getByRole("switch", { name: "Single-key shortcuts" }));
+      fireEvent.click(screen.getByRole("button", { name: "Close" }));
+      press({ key: " ", code: "Space" });
+      press({ key: "?" });
+      expect(screen.getByTestId("flashcard-front")).not.toHaveAttribute("aria-hidden", "true");
+      expect(screen.queryByRole("dialog")).toBeNull();
+      fireEvent.click(screen.getByRole("button", { name: "Keyboard shortcuts" }));
+      expect(screen.getByRole("dialog", { name: "Keyboard shortcuts" })).toBeInTheDocument();
+    });
   });
 });

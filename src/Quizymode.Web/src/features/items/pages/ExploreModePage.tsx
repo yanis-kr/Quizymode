@@ -37,6 +37,9 @@ import {
   getFlashcardsShufflePreference,
   setFlashcardsShufflePreference,
 } from "@/features/items/flashcards/flashcardsShufflePreference";
+import { useStudyHotkeys } from "@/components/study/useStudyHotkeys";
+import { StudyHotkeysDialog } from "@/components/study/StudyHotkeysDialog";
+import { FLASHCARD_SHORTCUTS } from "@/components/study/studyShortcuts";
 import { StarIcon, XMarkIcon } from "@heroicons/react/24/outline";
 import { StarIcon as StarIconSolid } from "@heroicons/react/24/solid";
 import type { CollectionRatingResponse, ItemResponse } from "@/types/api";
@@ -157,6 +160,7 @@ const ExploreModePage = () => {
 
   const runScopeKey = `${collectionId ?? ""}|${category ?? ""}|${keywords.join(",")}`;
   const [run, setRun] = useState<FlashcardRun>(() => newFlashcardRun(runScopeKey, 0));
+  const [isFlipped, setIsFlipped] = useState(false);
   const [shuffleOn, setShuffleOn] = useState<boolean>(getFlashcardsShufflePreference);
   const [enqueueStatus, setEnqueueStatus] = useState<EnqueueStatus | null>(null);
   const enqueuedIds = useRef<Set<string>>(new Set());
@@ -380,6 +384,16 @@ const ExploreModePage = () => {
     []
   );
 
+  const flipCurrentCard = () => {
+    if (!currentItem) return;
+    if (isFlipped) {
+      setIsFlipped(false);
+    } else {
+      setIsFlipped(true);
+      handleFlashcardRevealed(currentItem);
+    }
+  };
+
   const handleFlashcardRevealed = (revealed: ItemResponse) => {
     const flashcardsRunInfo = flashcardsRun.current;
     const position = sourceDeck.findIndex((candidate) => candidate.id === revealed.id) + 1;
@@ -505,6 +519,7 @@ const ExploreModePage = () => {
     // The status belongs to the card it was shown for.
     // eslint-disable-next-line react-hooks/set-state-in-effect
     clearEnqueueStatus();
+    setIsFlipped(false);
   }, [currentItemIdForStatus]);
 
   useEffect(() => {
@@ -548,6 +563,92 @@ const ExploreModePage = () => {
             itemIds: sourceDeck.map((item) => item.id),
           }
         : undefined;
+
+  const buildExploreItemPath = (id: string): string =>
+    collectionId
+      ? `${buildCollectionStudyPath("explore", collectionId, collectionInfo?.name, id)}${exploreItemSearch}`
+      : category
+        ? `/explore/${categoryNameToSlug(category)}/item/${id}${exploreItemSearch}`
+        : `/explore/item/${id}${exploreItemSearch}`;
+
+  const handlePrev = () => {
+    if (currentIndex > 0) {
+      const newIndex = currentIndex - 1;
+      setCurrentIndex(newIndex);
+      if (items[newIndex]) navigate(buildExploreItemPath(items[newIndex].id), { replace: true });
+    }
+  };
+
+  const isLastCard = currentIndex >= items.length - 1;
+
+  const handleNext = () => {
+    if (!isLastCard) {
+      const newIndex = currentIndex + 1;
+      setCurrentIndex(newIndex);
+      if (items[newIndex]) navigate(buildExploreItemPath(items[newIndex].id), { replace: true });
+    } else {
+      // Finish: the URL stays on the last card.
+      setRun((previous) => ({ ...previous, isFinished: true }));
+    }
+  };
+
+  /** One handler per transition: sets the deck, index and URL together so effects cannot race. */
+  const startRound = (patch: Partial<FlashcardRun>, firstId: string | undefined, isNewRun: boolean) => {
+    clearEnqueueStatus();
+    setIsFlipped(false);
+    setRun((previous) => ({
+      ...previous,
+      grades: {},
+      loopIds: null,
+      isFinished: false,
+      ...patch,
+      roundKey: previous.roundKey + 1,
+      nonce: previous.nonce + (isNewRun ? 1 : 0),
+    }));
+    setCurrentIndex(0);
+    if (firstId) navigate(buildExploreItemPath(firstId), { replace: true });
+  };
+
+  const handleStudyPile = () => {
+    const pile = pileInDeckOrder(items, run.grades).map((item) => item.id);
+    if (pile.length === 0) return;
+    startRound({ loopIds: pile }, pile[0], false);
+  };
+
+  const handleRestart = () => {
+    const ids = baseItems.map((item) => item.id);
+    const order = shuffleActive ? shuffleWithAnchor(ids, null, Math.random) : null;
+    startRound({ order }, order?.[0] ?? ids[0], true);
+  };
+
+  const handleShuffleToggle = () => {
+    if (
+      Object.keys(run.grades).length > 0 &&
+      !window.confirm("Changing shuffle starts a new run and clears your grades for this deck. Continue?")
+    ) {
+      return;
+    }
+    const next = !shuffleOn;
+    setFlashcardsShufflePreference(next);
+    setShuffleOn(next);
+    const ids = baseItems.map((item) => item.id);
+    const order = next ? shuffleWithAnchor(ids, currentItem?.id, Math.random) : anchorFirst(ids, currentItem?.id);
+    startRound({ order }, order[0], true);
+  };
+
+  const showSummary = run.isFinished || (run.loopIds !== null && items.length === 0);
+  const counts = summaryCounts(items, run.grades);
+  const { isHelpOpen, openHelp, closeHelp } = useStudyHotkeys({
+    enabled: true,
+    // On the summary screen only "?" stays active.
+    flip: showSummary || !currentItem ? undefined : flipCurrentCard,
+    prev: showSummary || currentIndex === 0 ? undefined : handlePrev,
+    next: showSummary || !currentItem ? undefined : handleNext,
+    digit: showSummary || !currentItem || !isFlipped ? undefined : (n) => {
+      if (n === 1) handleGrade(currentItem, "got-it");
+      else if (n === 2) handleGrade(currentItem, "still-learning");
+    },
+  });
 
   if (isLoadingItems) return <LoadingSpinner />;
   if (error && !collectionId)
@@ -600,79 +701,6 @@ const ExploreModePage = () => {
     ? buildCollectionPath(collectionId, collectionInfo?.name)
     : null;
 
-  const buildExploreItemPath = (id: string): string =>
-    collectionId
-      ? `${buildCollectionStudyPath("explore", collectionId, collectionInfo?.name, id)}${exploreItemSearch}`
-      : category
-        ? `/explore/${categoryNameToSlug(category)}/item/${id}${exploreItemSearch}`
-        : `/explore/item/${id}${exploreItemSearch}`;
-
-  const handlePrev = () => {
-    if (currentIndex > 0) {
-      const newIndex = currentIndex - 1;
-      setCurrentIndex(newIndex);
-      if (items[newIndex]) navigate(buildExploreItemPath(items[newIndex].id), { replace: true });
-    }
-  };
-
-  const isLastCard = currentIndex >= items.length - 1;
-
-  const handleNext = () => {
-    if (!isLastCard) {
-      const newIndex = currentIndex + 1;
-      setCurrentIndex(newIndex);
-      if (items[newIndex]) navigate(buildExploreItemPath(items[newIndex].id), { replace: true });
-    } else {
-      // Finish: the URL stays on the last card.
-      setRun((previous) => ({ ...previous, isFinished: true }));
-    }
-  };
-
-  /** One handler per transition: sets the deck, index and URL together so effects cannot race. */
-  const startRound = (patch: Partial<FlashcardRun>, firstId: string | undefined, isNewRun: boolean) => {
-    clearEnqueueStatus();
-    setRun((previous) => ({
-      ...previous,
-      grades: {},
-      loopIds: null,
-      isFinished: false,
-      ...patch,
-      roundKey: previous.roundKey + 1,
-      nonce: previous.nonce + (isNewRun ? 1 : 0),
-    }));
-    setCurrentIndex(0);
-    if (firstId) navigate(buildExploreItemPath(firstId), { replace: true });
-  };
-
-  const handleStudyPile = () => {
-    const pile = pileInDeckOrder(items, run.grades).map((item) => item.id);
-    if (pile.length === 0) return;
-    startRound({ loopIds: pile }, pile[0], false);
-  };
-
-  const handleRestart = () => {
-    const ids = baseItems.map((item) => item.id);
-    const order = shuffleActive ? shuffleWithAnchor(ids, null, Math.random) : null;
-    startRound({ order }, order?.[0] ?? ids[0], true);
-  };
-
-  const handleShuffleToggle = () => {
-    if (
-      Object.keys(run.grades).length > 0 &&
-      !window.confirm("Changing shuffle starts a new run and clears your grades for this deck. Continue?")
-    ) {
-      return;
-    }
-    const next = !shuffleOn;
-    setFlashcardsShufflePreference(next);
-    setShuffleOn(next);
-    const ids = baseItems.map((item) => item.id);
-    const order = next ? shuffleWithAnchor(ids, currentItem?.id, Math.random) : anchorFirst(ids, currentItem?.id);
-    startRound({ order }, order[0], true);
-  };
-
-  const showSummary = run.isFinished || (run.loopIds !== null && items.length === 0);
-  const counts = summaryCounts(items, run.grades);
   const backFooter = collectionId ? (
     <button
       onClick={() => collectionListPath && navigate(collectionListPath)}
@@ -814,11 +842,14 @@ const ExploreModePage = () => {
           onClick={() => setShowDetails(false)}
         >
           <div
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="collection-details-title"
             className="relative top-24 mx-auto p-5 border w-full max-w-md shadow-lg rounded-md bg-white"
             onClick={(e) => e.stopPropagation()}
           >
             <div className="flex justify-between items-center mb-4">
-              <h3 className="text-lg font-medium text-gray-900">Collection details</h3>
+              <h3 id="collection-details-title" className="text-lg font-medium text-gray-900">Collection details</h3>
               <button
                 onClick={() => setShowDetails(false)}
                 className="text-gray-400 hover:text-gray-500"
@@ -940,6 +971,7 @@ const ExploreModePage = () => {
           ) : undefined
         }
         footerContent={backFooter}
+        onOpenShortcuts={openHelp}
       >
         {currentItem && (
           <>
@@ -949,6 +981,8 @@ const ExploreModePage = () => {
               onReveal={handleFlashcardRevealed}
               grade={run.grades[currentItem.id]}
               onGrade={handleGrade}
+              isFlipped={isFlipped}
+              onFlippedChange={setIsFlipped}
             />
             <p role="status" aria-live="polite" className="min-h-5 text-sm text-gray-600">
               {enqueueStatus?.itemId === currentItem.id && (
@@ -978,6 +1012,7 @@ const ExploreModePage = () => {
       </StudyShell>
       )}
 
+      <StudyHotkeysDialog open={isHelpOpen} onClose={closeHelp} shortcuts={showSummary ? [] : FLASHCARD_SHORTCUTS} />
       <CommentsDrawer
         itemId={commentsDrawerItemId}
         onClose={() => setCommentsDrawerItemId(null)}

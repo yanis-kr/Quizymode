@@ -214,11 +214,14 @@ const ItemCollectionsModal = ({
       onClick={onClose}
     >
       <div
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="item-collections-modal-title"
         className="relative top-20 mx-auto p-5 border w-96 shadow-lg rounded-md bg-white"
         onClick={(e) => e.stopPropagation()}
       >
         <div className="flex justify-between items-center mb-4">
-          <h3 className="text-lg font-medium text-gray-900">
+          <h3 id="item-collections-modal-title" className="text-lg font-medium text-gray-900">
             {isBulkMode
               ? `Add ${multipleItemIds.length} Item${multipleItemIds.length > 1 ? "s" : ""} to Collections`
               : "Manage Collections"}
