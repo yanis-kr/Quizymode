@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { anchorFirst, pileInDeckOrder, shuffleWithAnchor, summaryCounts } from "./flashcardDeck";
+import { anchorFirst, pileInDeckOrder, seedFlashcardDeck, shuffleWithAnchor, summaryCounts } from "./flashcardDeck";
 
 const deck = ["a", "b", "c", "d"].map((id) => ({ id }));
 
@@ -33,5 +33,40 @@ describe("flashcardDeck", () => {
       stillLearning: 1,
       notGraded: 2,
     });
+  });
+});
+
+// AC 3.6.18 (#288)
+describe("seedFlashcardDeck", () => {
+  const card = (id: string, extra: Record<string, unknown> = {}) =>
+    ({ id, category: "Science & Nature", isPrivate: false, ...extra }) as unknown as import("@/types/api").ItemResponse;
+  const opts = { navigationKeywords: [], filterKeywords: [], maxItems: 3 };
+
+  it("puts the linked card first and removes its duplicate", () => {
+    const result = seedFlashcardDeck([card("a"), card("l"), card("b")], card("l"), opts);
+    expect(result.map((i) => i.id)).toEqual(["l", "a", "b"]);
+  });
+
+  it("caps the deck at maxItems with the linked card kept", () => {
+    const result = seedFlashcardDeck([card("a"), card("b"), card("c")], card("l"), opts);
+    expect(result.map((i) => i.id)).toEqual(["l", "a", "b"]);
+  });
+
+  it("ignores null, private, filtered and out-of-category links", () => {
+    const random = [card("a")];
+    expect(seedFlashcardDeck(random, null, opts)).toHaveLength(1);
+    expect(seedFlashcardDeck(random, card("l", { isPrivate: true }), opts)).toHaveLength(1);
+    expect(seedFlashcardDeck(random, card("l"), { ...opts, filterKeywords: ["x"] })).toHaveLength(1);
+    expect(
+      seedFlashcardDeck(random, card("l"), { ...opts, categorySlug: "history" })
+    ).toHaveLength(1);
+    expect(
+      seedFlashcardDeck(random, card("l"), { ...opts, categorySlug: "science-nature", navigationKeywords: ["n"] })
+    ).toHaveLength(1);
+  });
+
+  it("matches the category slug case-insensitively with punctuation", () => {
+    const result = seedFlashcardDeck([card("a")], card("l"), { ...opts, categorySlug: "Science-Nature" });
+    expect(result.map((i) => i.id)).toEqual(["l", "a"]);
   });
 });

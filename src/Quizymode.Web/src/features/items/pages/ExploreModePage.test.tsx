@@ -278,3 +278,54 @@ describe("ExploreModePage", () => {
     await waitFor(() => expect(screen.getByTestId("face")).toHaveTextContent("front"));
   });
 });
+
+// AC 3.6.18 (#288)
+describe("ExploreModePage cold deep link deck", () => {
+  const other = (id: string) => ({ ...item, id, question: `Question ${id}` });
+
+  beforeEach(() => {
+    vi.clearAllMocks();
+    sessionStorage.clear();
+    mockCreateAnalyticsId.mockReturnValue("run-abc");
+    mockFlashcardsEventContext.mockReturnValue({ contextType: "category", contextId: "exams" });
+    vi.mocked(categoriesApi.getAll).mockResolvedValue({
+      categories: [{ category: "exams" }],
+    } as Awaited<ReturnType<typeof categoriesApi.getAll>>);
+    vi.mocked(itemsApi.getById).mockResolvedValue(
+      item as Awaited<ReturnType<typeof itemsApi.getById>>
+    );
+  });
+
+  it("includes a linked card that is not in the random deck, once, at the front", async () => {
+    vi.mocked(itemsApi.getRandom).mockResolvedValue({
+      items: [other("r1"), other("r2")],
+    } as Awaited<ReturnType<typeof itemsApi.getRandom>>);
+
+    renderPage("/explore/exams/item/item-1");
+
+    await waitFor(() => expect(screen.getByLabelText(/item count/i)).toHaveTextContent("(3)"));
+    expect(screen.getByTestId("location")).toHaveTextContent("/explore/exams/item/item-1");
+    expect(mockTrackFlashcardsStarted).toHaveBeenCalledTimes(1);
+    expect(mockTrackFlashcardsStarted).toHaveBeenCalledWith("run-abc", 3, expect.anything());
+  });
+
+  it("does not duplicate a linked card that is already in the random deck", async () => {
+    vi.mocked(itemsApi.getRandom).mockResolvedValue({
+      items: [other("r1"), item],
+    } as Awaited<ReturnType<typeof itemsApi.getRandom>>);
+
+    renderPage("/explore/exams/item/item-1");
+
+    await waitFor(() => expect(screen.getByLabelText(/item count/i)).toHaveTextContent("(2)"));
+  });
+
+  it("leaves the deck alone when the link carries keyword filters", async () => {
+    vi.mocked(itemsApi.getRandom).mockResolvedValue({
+      items: [other("r1"), other("r2")],
+    } as Awaited<ReturnType<typeof itemsApi.getRandom>>);
+
+    renderPage("/explore/exams/item/item-1?keywords=act");
+
+    await waitFor(() => expect(screen.getByLabelText(/item count/i)).toHaveTextContent("(2)"));
+  });
+});

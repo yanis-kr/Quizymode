@@ -28,6 +28,7 @@ import { FlashcardsDeckSummary } from "@/features/items/flashcards/FlashcardsDec
 import {
   anchorFirst,
   pileInDeckOrder,
+  seedFlashcardDeck,
   shuffleWithAnchor,
   summaryCounts,
   type FlashcardGrade,
@@ -166,6 +167,11 @@ const ExploreModePage = () => {
   const enqueuedIds = useRef<Set<string>>(new Set());
   const statusTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
   const currentIdRef = useRef<string | undefined>(undefined);
+  // The card named by the link when the page was opened; the deck keeps it while Prev/Next move the URL (#288).
+  // It is tied to the URL scope (not the resolved category name, which settles after load), so a new scope drops it.
+  const entryScopeKey = `${collectionId ?? ""}|${categorySlug ?? ""}|${keywords.join(",")}`;
+  const [entry] = useState(() => ({ itemId, scopeKey: entryScopeKey }));
+  const entryItemId = entry.scopeKey === entryScopeKey ? entry.itemId : undefined;
   if (run.scopeKey !== runScopeKey) {
     // A different collection, category or keyword set is a different deck: drop grades, pile, loop and status.
     setRun(newFlashcardRun(runScopeKey, run.nonce));
@@ -233,6 +239,12 @@ const ExploreModePage = () => {
     queryKey: ["item", itemId],
     queryFn: () => itemsApi.getById(itemId!),
     enabled: !!itemId, // Always fetch when itemId is present to get latest data including collections
+  });
+
+  const { data: entryItemData, isLoading: entryItemLoading } = useQuery({
+    queryKey: ["item", entryItemId],
+    queryFn: () => itemsApi.getById(entryItemId!),
+    enabled: !!entryItemId && !collectionId && !storedItems,
   });
 
   const { data: collectionData, isLoading: collectionLoading } = useQuery({
@@ -340,8 +352,18 @@ const ExploreModePage = () => {
     () =>
       collectionId
         ? collectionData?.items || (singleItemData ? [singleItemData] : [])
-        : storedItems || data?.items || (singleItemData ? [singleItemData] : []),
-    [collectionId, collectionData, storedItems, data, singleItemData]
+        : storedItems ||
+          (data?.items
+            ? seedFlashcardDeck(data.items, entryItemData, {
+                categorySlug: hasCategoryScope ? categorySlug : undefined,
+                navigationKeywords,
+                filterKeywords,
+                maxItems: EXPLORE_MAX_ITEMS,
+              })
+            : singleItemData
+              ? [singleItemData]
+              : []),
+    [collectionId, collectionData, storedItems, data, singleItemData, entryItemData, hasCategoryScope, categorySlug, navigationKeywords, filterKeywords]
   );
 
   // The run's order is fixed when the run starts (first load, Restart, Shuffle); a deep-linked card stays first.
@@ -371,7 +393,7 @@ const ExploreModePage = () => {
 
   const isLoadingItems = collectionId
     ? collectionLoading
-    : isCategoryResolving || isLoading || (itemId ? singleItemLoading : false);
+    : isCategoryResolving || isLoading || (itemId ? singleItemLoading : false) || (!storedItems && entryItemLoading);
 
   // Study telemetry (AC 5.5.4): one Flashcards run per page visit and scope; the first reveal of each card is reported.
   const flashcardsScopeKey = `${runScopeKey}|${shuffleActive ? "shuffle" : "ordered"}|${run.nonce}`;
