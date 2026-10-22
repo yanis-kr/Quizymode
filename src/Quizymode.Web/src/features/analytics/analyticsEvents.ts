@@ -29,6 +29,7 @@ export type AnalyticsContextType =
   | "daily"
   | "flashcards"
   | "home"
+  | "learn"
   | "quiz"
   | "review";
 

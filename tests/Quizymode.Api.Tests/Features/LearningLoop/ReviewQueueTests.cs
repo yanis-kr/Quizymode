@@ -329,4 +329,33 @@ public sealed class ReviewQueueTests : DatabaseTestFixture
 
         DbContext.ReviewQueueEntries.AsNoTracking().Select(e => e.ItemId).Should().Equal(playable.Id);
     }
+
+    [Fact]
+    public async Task LearnSession_With50FirstTryMisses_IsSavedAndEnqueuedForReview()
+    {
+        // AC 3.17.9: a finished 50-item Learn run reports total 50 and its first-try misses as missedItemIds.
+        Category category = await LearningLoopTestData.AddCategoryAsync(DbContext, $"cat{Guid.NewGuid():N}"[..10]);
+        List<Guid> missed = [];
+        for (int i = 0; i < 50; i++)
+        {
+            missed.Add((await LearningLoopTestData.AddItemAsync(DbContext, category, false, "seed")).Id);
+        }
+
+        RecordStudySession.Request request = new(
+            $"learn-{Guid.NewGuid():N}", DateTime.UtcNow.AddMinutes(-1), 0, 50, null, missed);
+        new RecordStudySession.Validator().Validate(request).IsValid.Should().BeTrue();
+        var result = await RecordStudySession.HandleAsync(request, StudySessionOrigins.Quiz, DbContext, UserId, CancellationToken.None);
+
+        result.IsSuccess.Should().BeTrue();
+        result.Value.Created.Should().BeTrue();
+        result.Value.Session.Total.Should().Be(50);
+        result.Value.Session.MissedItemIds.Should().BeEquivalentTo(missed);
+        DbContext.ReviewQueueEntries.AsNoTracking().Where(e => e.UserId == UserId).Select(e => e.ItemId)
+            .Should().BeEquivalentTo(missed);
+
+        // A retry of the same run id never creates a second session.
+        var retry = await RecordStudySession.HandleAsync(request, StudySessionOrigins.Quiz, DbContext, UserId, CancellationToken.None);
+        retry.Value.Created.Should().BeFalse();
+        DbContext.StudySessions.Count().Should().Be(1);
+    }
 }

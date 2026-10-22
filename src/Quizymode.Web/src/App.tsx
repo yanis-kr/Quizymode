@@ -5,6 +5,7 @@ import CategoriesPage from "./features/categories/pages/CategoriesPage";
 import ItemsPage from "./features/items/pages/ItemsPage";
 import ExploreModePage from "./features/items/pages/ExploreModePage";
 import QuizModePage from "./features/items/pages/QuizModePage";
+import LearnModePage from "./features/items/pages/LearnModePage";
 import LoginPage from "./features/auth/pages/LoginPage";
 import SignUpPage from "./features/auth/pages/SignUpPage";
 import AuthCallbackPage from "./features/auth/pages/AuthCallbackPage";
@@ -112,6 +113,11 @@ function App() {
           element={<QuizModePage />}
         />
         <Route path="/quiz/:category?" element={<QuizModePage />} />
+        <Route
+          path="/learn/collections/:collectionId/:slug?"
+          element={<LearnModePage />}
+        />
+        <Route path="/learn/:category?" element={<LearnModePage />} />
         <Route path="/daily" element={<DailyQuizPage />} />
         <Route path="/login" element={<LoginPage />} />
         <Route path="/signup" element={<SignUpPage />} />

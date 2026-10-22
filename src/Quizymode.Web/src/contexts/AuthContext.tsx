@@ -25,6 +25,7 @@ import {
   getPendingPolicyAcceptancesForEmail,
 } from "@/features/legal/policyAcceptanceStorage";
 import { hasToken, setTokens, clearTokens } from "@/utils/tokenStorage";
+import { GUEST_IDENTITY_KEY, purgeLearnRunsExcept } from "@/features/items/learn/learnStorage";
 import { authApi } from "@/api/auth";
 import type { AuthIntent } from "@/features/auth/utils/authIntent";
 import { startGoogleSignIn } from "@/features/auth/utils/googleSignIn";
@@ -342,6 +343,12 @@ export const AuthProvider = ({ children }: AuthProviderProps) => {
     }
   }, [clearAuthState, syncPendingPolicyAcceptances]);
 
+  // Once auth has settled, drop stored Learn runs that belong to any other identity (AC 3.17.8).
+  useEffect(() => {
+    if (isLoading) return;
+    purgeLearnRunsExcept(isAuthenticated ? `user:${userId ?? "unknown"}` : GUEST_IDENTITY_KEY);
+  }, [isLoading, isAuthenticated, userId]);
+
   useEffect(() => {
     // Wrap in try-catch to prevent errors from breaking the app
     refreshAuth().catch((error) => {
@@ -468,6 +475,8 @@ export const AuthProvider = ({ children }: AuthProviderProps) => {
       // For Google (OAuth) sessions signOut() redirects to the hosted /logout and the page unloads before the line
       // after it runs, so drop the stored tokens first.
       clearTokens();
+      // Learn progress of the signed-in identity must not outlive the session (AC 3.17.8); purge before the redirect.
+      purgeLearnRunsExcept(GUEST_IDENTITY_KEY);
       await signOut();
       clearAuthState();
     } catch (error) {

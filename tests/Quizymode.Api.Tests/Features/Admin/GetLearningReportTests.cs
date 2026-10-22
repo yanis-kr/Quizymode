@@ -98,6 +98,38 @@ public sealed class GetLearningReportTests : DatabaseTestFixture
     }
 
     [Fact]
+    public async Task HandleAsync_ReportsLearnRunsAsTheirOwnModeAndKeepsThemOutOfQuizDropOff()
+    {
+        await DbContext.AnalyticsEvents.AddRangeAsync(QuizRun("s1", "q-done", questions: 3, answered: 3, completed: true, score: 3));
+        // A Learn run that answered every item once but never finished must not look like a quiz abandoned at position 3.
+        await DbContext.AnalyticsEvents.AddRangeAsync(
+            Event("s2", AnalyticsEventCatalog.QuickQuizStarted, "l-open", total: 3, contextType: "learn", contextId: "category:science"),
+            Event("s2", AnalyticsEventCatalog.QuestionAnswered, "l-open", position: 1, isCorrect: true, contextType: "learn", contextId: "category:science"),
+            Event("s2", AnalyticsEventCatalog.QuestionAnswered, "l-open", position: 2, isCorrect: false, contextType: "learn", contextId: "category:science"),
+            Event("s2", AnalyticsEventCatalog.QuestionAnswered, "l-open", position: 3, isCorrect: true, contextType: "learn", contextId: "category:science"));
+        await DbContext.AnalyticsEvents.AddRangeAsync(
+            Event("s3", AnalyticsEventCatalog.QuickQuizStarted, "l-done", total: 4, contextType: "learn", contextId: "category:science"),
+            Event("s3", AnalyticsEventCatalog.QuizCompleted, "l-done", score: 3, total: 4, contextType: "learn", contextId: "category:science"));
+        await DbContext.SaveChangesAsync();
+
+        GetLearningReport.Response report = (await Run(new GetLearningReport.QueryRequest(Days: 7))).Value!;
+
+        GetLearningReport.ScopeResponse learn = report.Scopes.Single(scope => scope.Mode == GetLearningReport.LearnMode);
+        learn.ContextType.Should().Be("learn");
+        learn.ContextId.Should().Be("category:science");
+        learn.RunsStarted.Should().Be(2);
+        learn.RunsCompleted.Should().Be(1);
+        learn.AverageScorePercent.Should().Be(75.0);
+
+        GetLearningReport.ScopeResponse quiz = report.Scopes.Single(scope => scope.Mode == GetLearningReport.QuizMode);
+        quiz.RunsStarted.Should().Be(1);
+        report.QuizDropOff.Should().HaveCount(3);
+        report.QuizDropOff[0].RunsReached.Should().Be(1);
+        report.QuizDropOff.Sum(point => point.RunsAbandonedHere).Should().Be(0);
+        report.QuizRunsAbandonedBeforeFirstAnswer.Should().Be(0);
+    }
+
+    [Fact]
     public async Task HandleAsync_ExcludesBotAndInternalSessionsUnlessRequested()
     {
         await DbContext.AnalyticsEvents.AddRangeAsync(QuizRun("s-visitor", "r1", questions: 3, answered: 3, completed: true, score: 3));

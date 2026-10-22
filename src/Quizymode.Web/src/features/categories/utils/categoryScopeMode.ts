@@ -2,8 +2,8 @@ import type { ViewMode } from "@/components/ModeSwitcher";
 
 export type CategoryPageView = "sets" | "items";
 
-const modesWithSets: ViewMode[] = ["sets", "list", "explore", "quiz"];
-const modesWithoutSets: ViewMode[] = ["list", "explore", "quiz"];
+const modesWithSets: ViewMode[] = ["sets", "list", "explore", "quiz", "learn"];
+const modesWithoutSets: ViewMode[] = ["list", "explore", "quiz", "learn"];
 
 export function getCategoryScopeModeConfig(
   requestedView: CategoryPageView,

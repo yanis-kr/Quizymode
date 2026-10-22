@@ -99,6 +99,20 @@ public sealed class PersonalizationTests : DatabaseTestFixture
         Run("secret", true);
         Run("secret", true);
         Run("made-up", true);
+        // Learn runs (context type "learn") never count towards popular category quizzes (AC 3.17.11).
+        for (int learn = 0; learn < 5; learn++)
+        {
+            DbContext.AnalyticsEvents.Add(new AnalyticsEvent
+            {
+                Id = Guid.NewGuid(), EventName = "quick_quiz_started", SessionId = $"learn-s{learn}", RunId = $"learn-r{learn}", ContextType = "learn",
+                ContextId = "category:history", Total = 5, OccurredUtc = at, Path = "/learn/history",
+            });
+            DbContext.AnalyticsEvents.Add(new AnalyticsEvent
+            {
+                Id = Guid.NewGuid(), EventName = "quiz_completed", SessionId = $"learn-s{learn}", RunId = $"learn-r{learn}", ContextType = "learn",
+                ContextId = "category:trivia", Score = 5, Total = 5, OccurredUtc = at.AddMinutes(1), Path = "/learn/trivia",
+            });
+        }
         await DbContext.SaveChangesAsync();
 
         Personalization.PopularCategoriesResponse response = await Personalization.ComputePopularCategoriesAsync(DbContext, CancellationToken.None);

@@ -129,4 +129,44 @@ describe("ModeSwitcher", () => {
       expect(directButtonChildren).toHaveLength(4);
     });
   });
+
+  it("shows Learn after Quiz when available", () => {
+    render(
+      <ModeSwitcher
+        availableModes={["sets", "list", "explore", "quiz", "learn"]}
+        activeMode="learn"
+        onChange={() => {}}
+      />
+    );
+    const labels = screen.getAllByRole("tab").map((tab) => tab.textContent);
+    expect(labels).toEqual(["Sets", "List", "Flashcards", "Quiz", "Learn"]);
+    expect(screen.getByRole("tab", { name: "Learn" })).toHaveAttribute("aria-selected", "true");
+  });
+
+  it("scrolls the active tab into view and shows an edge cue only while tabs overflow", () => {
+    const scrollIntoView = vi.fn();
+    Element.prototype.scrollIntoView = scrollIntoView;
+    const widths = vi.spyOn(HTMLElement.prototype, "scrollWidth", "get").mockReturnValue(400);
+    const client = vi.spyOn(HTMLElement.prototype, "clientWidth", "get").mockReturnValue(300);
+
+    const { unmount } = render(
+      <ModeSwitcher
+        availableModes={["sets", "list", "explore", "quiz", "learn"]}
+        activeMode="learn"
+        onChange={() => {}}
+      />
+    );
+
+    expect(scrollIntoView).toHaveBeenCalledWith({ inline: "nearest", block: "nearest" });
+    expect(screen.getByTestId("mode-switcher-edge-cue")).toBeInTheDocument();
+    unmount();
+
+    client.mockReturnValue(400);
+    render(
+      <ModeSwitcher availableModes={["list", "explore", "quiz", "learn"]} activeMode="list" onChange={() => {}} />
+    );
+    expect(screen.queryByTestId("mode-switcher-edge-cue")).toBeNull();
+    widths.mockRestore();
+    client.mockRestore();
+  });
 });

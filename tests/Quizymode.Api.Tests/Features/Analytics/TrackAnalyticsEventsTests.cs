@@ -117,6 +117,24 @@ public sealed class TrackAnalyticsEventsTests : DatabaseTestFixture
     }
 
     [Fact]
+    public async Task HandleAsync_AcceptsLearnContextTypeWithPrefixedContextId()
+    {
+        string collectionId = $"collection:{Guid.NewGuid()}";
+
+        TrackAnalyticsEvents.Response response = await Track(
+            "session-learn",
+            new TrackAnalyticsEvents.EventRequest(
+                AnalyticsEventCatalog.QuickQuizStarted, "/learn/science", "learn", collectionId, RunId: "learn-run", Total: 12),
+            new TrackAnalyticsEvents.EventRequest(
+                AnalyticsEventCatalog.QuizCompleted, "/learn/science", "learn", "category:science", RunId: "learn-run", Score: 9, Total: 12));
+
+        response.Should().Be(new TrackAnalyticsEvents.Response(2, 0));
+        List<AnalyticsEvent> stored = await DbContext.AnalyticsEvents.OrderBy(e => e.EventName).ToListAsync();
+        stored.Should().OnlyContain(e => e.ContextType == "learn");
+        stored.Select(e => e.ContextId).Should().BeEquivalentTo(collectionId, "category:science");
+    }
+
+    [Fact]
     public async Task HandleAsync_AssociatesAuthenticatedUser()
     {
         Guid userId = Guid.NewGuid();
