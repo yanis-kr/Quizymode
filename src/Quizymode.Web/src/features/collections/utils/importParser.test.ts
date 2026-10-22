@@ -250,3 +250,9 @@ describe("buildImportItems", () => {
     expect(admin.truncated).toBe(0);
   });
 });
+
+describe("stripHtml nested fragments", () => {
+  it("leaves no tag behind for nested or overlapping fragments", () => {
+    expect(stripHtml("<scr<b>ipt>alert(1)</scr</b>ipt>")).not.toMatch(/<\/?[a-zA-Z]/);
+  });
+});

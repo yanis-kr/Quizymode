@@ -88,7 +88,12 @@ const NAMED_ENTITIES: Record<string, string> = {
 
 export function stripHtml(value: string): string {
   const withBreaks = value.replace(/<br\s*\/?>/gi, " ").replace(/<\/(div|p|li)>/gi, " ");
-  const noTags = withBreaks.replace(/<\/?[a-zA-Z][^>]*>/g, "");
+  // Strip until stable so nested fragments like "<scr<b>ipt>" cannot leave a tag behind.
+  let noTags = withBreaks;
+  for (let previous = ""; previous !== noTags; ) {
+    previous = noTags;
+    noTags = noTags.replace(/<\/?[a-zA-Z][^>]*>/g, "");
+  }
   const decoded = noTags.replace(/&(#x?[0-9a-fA-F]+|[a-zA-Z]+);/g, (match, body: string) => {
     if (body.startsWith("#")) {
       const code = body[1] === "x" || body[1] === "X" ? parseInt(body.slice(2), 16) : parseInt(body.slice(1), 10);
