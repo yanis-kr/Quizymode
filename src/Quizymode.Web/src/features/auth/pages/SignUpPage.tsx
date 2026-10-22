@@ -58,6 +58,10 @@ const BENEFIT_COPY: Record<AuthReason, BenefitCopy> = {
     heading: "Keep reviewing these cards",
     body: "Create a free account to add cards you're still learning to a Review queue that brings them back over the next days.",
   },
+  "track-progress": {
+    heading: "Track your progress across visits",
+    body: "Create a free account to save your quiz runs, see your study streak and keep an activity calendar that is not tied to this browser.",
+  },
 };
 
 const DEFAULT_BENEFIT: BenefitCopy = {

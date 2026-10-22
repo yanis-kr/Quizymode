@@ -7,9 +7,11 @@ import { HelmetProvider } from "react-helmet-async";
 import { USER_GUIDE_URL } from "@/utils/userGuideLink";
 import Layout from "./Layout";
 
+const authState = vi.hoisted(() => ({ isAuthenticated: false }));
+
 vi.mock("@/contexts/AuthContext", () => ({
   useAuth: () => ({
-    isAuthenticated: false,
+    isAuthenticated: authState.isAuthenticated,
     logout: vi.fn(),
     username: null,
     email: null,
@@ -59,6 +61,18 @@ describe("Layout", () => {
 
   beforeEach(() => {
     vi.clearAllMocks();
+    authState.isAuthenticated = false;
+  });
+
+  it("shows a My Progress link to /progress only for signed-in users", () => {
+    renderLayout();
+    expect(screen.queryByRole("link", { name: "My Progress" })).not.toBeInTheDocument();
+  });
+
+  it("links signed-in users to /progress from the navigation", () => {
+    authState.isAuthenticated = true;
+    renderLayout();
+    expect(screen.getAllByRole("link", { name: "My Progress" })[0]).toHaveAttribute("href", "/progress");
   });
 
   afterEach(() => {

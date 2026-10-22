@@ -24,6 +24,7 @@ export const AUTH_REASONS = [
   "create-content",
   "join-discussion",
   "review-later",
+  "track-progress",
 ] as const;
 
 export type AuthReason = (typeof AUTH_REASONS)[number];

@@ -38,6 +38,11 @@ export const SIGNUP_PROMPT_COPY: Record<AuthReason, SignupPromptCopy> = {
     body: "Create a free account to add cards you're still learning to a Review queue that brings them back over the next days.",
     cta: "Create a free account",
   },
+  "track-progress": {
+    heading: "Track your progress across visits",
+    body: "Create a free account to save your quiz runs, see your study streak and keep an activity calendar that is not tied to this browser.",
+    cta: "Create a free account",
+  },
 };
 
 const DISMISSED_STORAGE_KEY = "quizymode.signup-prompt.dismissed";
