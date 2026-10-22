@@ -2,6 +2,7 @@ using FluentValidation;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Caching.Memory;
 using Quizymode.Api.Data;
+using Quizymode.Api.Shared.Helpers;
 using Quizymode.Api.Shared.Http;
 using Quizymode.Api.Services;
 using Quizymode.Api.Shared.Kernel;
@@ -42,7 +43,8 @@ public static class AddOrUpdateRating
                 .WithDescription("Creates a new rating or updates existing rating for the current user. Stars can be null or 1-5.")
                 .RequireAuthorization()
                 .Produces<Response>(StatusCodes.Status200OK)
-                .Produces(StatusCodes.Status400BadRequest);
+                .Produces(StatusCodes.Status400BadRequest)
+                .Produces(StatusCodes.Status404NotFound);
         }
 
         private static async Task<IResult> Handler(
@@ -75,7 +77,9 @@ public static class AddOrUpdateRating
 
             return result.Match(
                 value => Results.Ok(value),
-                error => CustomResults.Problem(result));
+                failure => failure.Error.Type == ErrorType.NotFound
+                    ? Results.NotFound()
+                    : CustomResults.Problem(result));
         }
     }
 
@@ -95,7 +99,7 @@ public static class AddOrUpdateRating
                     Error.Validation("Rating.UserIdMissing", "User ID is missing"));
             }
 
-            bool itemExists = await db.Items.AnyAsync(i => i.Id == itemId, cancellationToken);
+            bool itemExists = await ItemVisibility.InteractableBy(db, userContext).AnyAsync(i => i.Id == itemId, cancellationToken);
             if (!itemExists)
             {
                 return Result.Failure<Response>(

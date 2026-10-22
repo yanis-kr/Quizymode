@@ -34,7 +34,8 @@ public static class GetComments
                 .WithTags("Comments")
                 .WithSummary("Get comments")
                 .WithDescription("Returns comments. Optionally filter by itemId using ?itemId={guid}.")
-                .Produces<Response>(StatusCodes.Status200OK);
+                .Produces<Response>(StatusCodes.Status200OK)
+                .Produces(StatusCodes.Status404NotFound);
         }
 
         private static async Task<IResult> Handler(
@@ -49,7 +50,9 @@ public static class GetComments
 
             return result.Match(
                 value => Results.Ok(value),
-                error => CustomResults.Problem(result));
+                failure => failure.Error.Type == ErrorType.NotFound
+                    ? Results.NotFound()
+                    : CustomResults.Problem(result));
         }
     }
 
@@ -65,6 +68,15 @@ public static class GetComments
 
             if (request.ItemId.HasValue && request.ItemId.Value != Guid.Empty)
             {
+                // #293: an explicit item id must be readable by the caller; otherwise same as a missing id.
+                bool interactable = await ItemVisibility.InteractableBy(db, userContext)
+                    .AnyAsync(i => i.Id == request.ItemId.Value, cancellationToken);
+                if (!interactable)
+                {
+                    return Result.Failure<Response>(
+                        Error.NotFound("Comments.ItemNotFound", $"Item with id {request.ItemId.Value} not found"));
+                }
+
                 query = query.Where(c => c.ItemId == request.ItemId.Value);
             }
             else

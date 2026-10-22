@@ -45,7 +45,8 @@ public static class AddComment
                 .WithSummary("Create a comment for an item")
                 .RequireAuthorization()
                 .Produces<Response>(StatusCodes.Status201Created)
-                .Produces(StatusCodes.Status400BadRequest);
+                .Produces(StatusCodes.Status400BadRequest)
+                .Produces(StatusCodes.Status404NotFound);
         }
 
         private static async Task<IResult> Handler(
@@ -71,7 +72,9 @@ public static class AddComment
 
             return result.Match(
                 value => Results.Created($"/api/comments/{value.Id}", value),
-                error => CustomResults.Problem(result));
+                failure => failure.Error.Type == ErrorType.NotFound
+                    ? Results.NotFound()
+                    : CustomResults.Problem(result));
         }
     }
 

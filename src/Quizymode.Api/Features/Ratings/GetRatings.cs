@@ -1,5 +1,7 @@
 using Microsoft.EntityFrameworkCore;
 using Quizymode.Api.Data;
+using Quizymode.Api.Services;
+using Quizymode.Api.Shared.Helpers;
 using Quizymode.Api.Shared.Http;
 using Quizymode.Api.Shared.Kernel;
 using Quizymode.Api.Shared.Models;
@@ -28,31 +30,45 @@ public static class GetRatings
                 .WithTags("Ratings")
                 .WithSummary("Get ratings statistics")
                 .WithDescription("Returns ratings count and average for the specified item.")
-                .Produces<Response>(StatusCodes.Status200OK);
+                .Produces<Response>(StatusCodes.Status200OK)
+                .Produces(StatusCodes.Status404NotFound);
         }
 
         private static async Task<IResult> Handler(
             Guid itemId,
             ApplicationDbContext db,
+            IUserContext userContext,
             CancellationToken cancellationToken)
         {
             QueryRequest request = new(itemId);
 
-            Result<Response> result = await HandleAsync(request, db, cancellationToken);
+            Result<Response> result = await HandleAsync(request, db, userContext, cancellationToken);
 
             return result.Match(
                 value => Results.Ok(value),
-                error => CustomResults.Problem(result));
+                failure => failure.Error.Type == ErrorType.NotFound
+                    ? Results.NotFound()
+                    : CustomResults.Problem(result));
         }
     }
 
     public static async Task<Result<Response>> HandleAsync(
         QueryRequest request,
         ApplicationDbContext db,
+        IUserContext userContext,
         CancellationToken cancellationToken)
     {
         try
         {
+            // #293: same 404 as a missing id when the caller cannot interact with the item.
+            bool interactable = await ItemVisibility.InteractableBy(db, userContext)
+                .AnyAsync(i => i.Id == request.ItemId, cancellationToken);
+            if (!interactable)
+            {
+                return Result.Failure<Response>(
+                    Error.NotFound("Ratings.ItemNotFound", $"Item with id {request.ItemId} not found"));
+            }
+
             IQueryable<Rating> query = db.Ratings
                 .AsNoTracking()
                 .Where(r => r.ItemId == request.ItemId);

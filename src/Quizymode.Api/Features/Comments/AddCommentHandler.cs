@@ -1,6 +1,7 @@
 using Microsoft.EntityFrameworkCore;
 using Quizymode.Api.Data;
 using Quizymode.Api.Services;
+using Quizymode.Api.Shared.Helpers;
 using Quizymode.Api.Shared.Kernel;
 using Quizymode.Api.Shared.Models;
 
@@ -23,7 +24,7 @@ internal static class AddCommentHandler
                     Error.Validation("Comment.UserIdMissing", "User ID is missing"));
             }
 
-            bool itemExists = await db.Items.AnyAsync(i => i.Id == request.ItemId, cancellationToken);
+            bool itemExists = await ItemVisibility.InteractableBy(db, userContext).AnyAsync(i => i.Id == request.ItemId, cancellationToken);
             if (!itemExists)
             {
                 return Result.Failure<AddComment.Response>(

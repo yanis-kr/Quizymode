@@ -25,6 +25,7 @@ public sealed class GetRatingsTests : DatabaseTestFixture
         Result<GetRatings.Response> result = await GetRatings.HandleAsync(
             request,
             DbContext,
+            FakeUserContext.Anonymous,
             CancellationToken.None);
 
         // Assert
@@ -57,6 +58,7 @@ public sealed class GetRatingsTests : DatabaseTestFixture
         Result<GetRatings.Response> result = await GetRatings.HandleAsync(
             request,
             DbContext,
+            FakeUserContext.Anonymous,
             CancellationToken.None);
 
         // Assert
@@ -87,6 +89,7 @@ public sealed class GetRatingsTests : DatabaseTestFixture
         Result<GetRatings.Response> result = await GetRatings.HandleAsync(
             request,
             DbContext,
+            FakeUserContext.Anonymous,
             CancellationToken.None);
 
         // Assert
@@ -95,6 +98,25 @@ public sealed class GetRatingsTests : DatabaseTestFixture
         result.Value.Stats.AverageStars.Should().BeNull();
     }
 
+
+    [Fact]
+    public async Task HandleAsync_MissingOrInaccessibleItem_ReturnsNotFound()
+    {
+        Item privateItem = await CreateItemWithCategoryAsync(
+            Guid.NewGuid(), "geography", "Q?", "A", new List<string> { "B" }, "", true, "owner");
+
+        foreach (Guid id in new[] { Guid.NewGuid(), privateItem.Id })
+        {
+            Result<GetRatings.Response> result = await GetRatings.HandleAsync(
+                new GetRatings.QueryRequest(id), DbContext, FakeUserContext.User("other"), CancellationToken.None);
+            result.IsFailure.Should().BeTrue();
+            result.Error.Type.Should().Be(ErrorType.NotFound);
+        }
+
+        (await GetRatings.HandleAsync(
+            new GetRatings.QueryRequest(privateItem.Id), DbContext, FakeUserContext.User("owner"), CancellationToken.None))
+            .IsSuccess.Should().BeTrue();
+    }
 
     private async Task<Item> CreateItemWithCategoryAsync(
         Guid itemId,

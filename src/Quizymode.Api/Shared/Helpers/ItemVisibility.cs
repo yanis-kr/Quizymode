@@ -50,6 +50,13 @@ internal static class ItemVisibility
                 select ci.Id).Any());
     }
 
+    /// <summary>
+    /// Items a caller may read or write comments and ratings on (#293): accessible by id (admin, public, own),
+    /// or published through a public collection owned by the item's creator.
+    /// </summary>
+    public static IQueryable<Item> InteractableBy(ApplicationDbContext db, IUserContext userContext) =>
+        userContext.IsAdmin ? db.Items : AddableToCollection(db, CallerId(userContext));
+
     private static string? CallerId(IUserContext userContext) =>
         userContext.IsAuthenticated ? userContext.UserId : null;
 }

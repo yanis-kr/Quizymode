@@ -135,15 +135,24 @@ public sealed class GetCommentsTests : DatabaseTestFixture
     }
 
     [Fact]
-    public async Task HandleAsync_WithItemIdOfPrivateItem_StillReturnsComments()
+    public async Task HandleAsync_WithItemId_PrivateOrMissingItem_ReturnsNotFoundUnlessAccessible()
     {
-        // Per-item comments are intentionally not gated yet (follow-up to #285).
         Category category = VisibilitySeed.AddCategory(DbContext);
         Item privateItem = VisibilitySeed.AddItem(DbContext, category, "owner", true);
         VisibilitySeed.AddComment(DbContext, privateItem);
         await DbContext.SaveChangesAsync();
 
-        (await IdsAsync(new GetComments.QueryRequest(privateItem.Id), FakeUserContext.Anonymous))
+        foreach (Guid id in new[] { privateItem.Id, Guid.NewGuid() })
+        {
+            Result<GetComments.Response> denied = await GetComments.HandleAsync(
+                new GetComments.QueryRequest(id), DbContext, FakeUserContext.Anonymous, CancellationToken.None);
+            denied.IsFailure.Should().BeTrue();
+            denied.Error.Type.Should().Be(ErrorType.NotFound);
+        }
+
+        (await IdsAsync(new GetComments.QueryRequest(privateItem.Id), FakeUserContext.User("owner")))
+            .Should().BeEquivalentTo(new[] { privateItem.Id });
+        (await IdsAsync(new GetComments.QueryRequest(privateItem.Id), FakeUserContext.Admin()))
             .Should().BeEquivalentTo(new[] { privateItem.Id });
     }
 
