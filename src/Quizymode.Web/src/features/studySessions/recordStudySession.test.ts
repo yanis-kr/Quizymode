@@ -26,7 +26,12 @@ describe("recordAuthenticatedCompletion", () => {
       total: 4,
       source: { kind: "global", filterKeywords: ["math"] },
       missedItemIds: [missed],
+      mode: "quiz",
     });
+  });
+
+  it("sends mode learn for a learn snapshot", () => {
+    expect(toRecordRequest({ ...snapshot, mode: "learn" })?.mode).toBe("learn");
   });
 
   it("saves once on success", async () => {

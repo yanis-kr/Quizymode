@@ -16,6 +16,7 @@ export function toRecordRequest(snapshot: QuizCompletionSnapshot): RecordStudySe
     total: summary.total,
     source: summary.source,
     missedItemIds: summary.missedItemIds,
+    mode: summary.mode,
   };
 }
 

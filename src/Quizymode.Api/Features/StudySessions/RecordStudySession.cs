@@ -34,7 +34,8 @@ public static class RecordStudySession
         int Correct,
         int Total,
         SourceDto? Source,
-        List<Guid>? MissedItemIds);
+        List<Guid>? MissedItemIds,
+        string? Mode = null);
 
     public sealed record SessionDto(
         Guid Id,
@@ -44,7 +45,8 @@ public static class RecordStudySession
         int Correct,
         int Total,
         SourceDto? Source,
-        List<Guid> MissedItemIds);
+        List<Guid> MissedItemIds,
+        string Mode);
 
     public sealed record Response(SessionDto Session, bool Created);
 
@@ -76,6 +78,8 @@ public static class RecordStudySession
             RuleFor(x => x.RunId).NotEmpty().MaximumLength(MaxRunIdLength).Matches("^[A-Za-z0-9-]+$");
             RuleFor(x => x.CompletedAt).Must(IsPlausibleTimestamp)
                 .WithMessage("CompletedAt must not be in the future or older than the retention window");
+            RuleFor(x => x.Mode).Must(m => m is null or StudySessionModes.Quiz or StudySessionModes.Learn)
+                .WithMessage("Mode must be quiz or learn");
             RuleFor(x => x.Total).InclusiveBetween(1, MaxTotal);
             RuleFor(x => x.Correct).GreaterThanOrEqualTo(0).LessThanOrEqualTo(x => x.Total);
             RuleFor(x => x.Source!).SetValidator(new SourceValidator()).When(x => x.Source is not null);
@@ -158,6 +162,7 @@ public static class RecordStudySession
                 UserId = userId,
                 RunId = request.RunId,
                 Origin = origin,
+                Mode = request.Mode ?? StudySessionModes.Quiz,
                 CompletedAt = DateTime.SpecifyKind(request.CompletedAt, DateTimeKind.Utc),
                 CreatedAt = DateTime.UtcNow,
                 Correct = request.Correct,
@@ -251,7 +256,8 @@ public static class RecordStudySession
             s.Correct,
             s.Total,
             source,
-            s.MissedItems.Select(m => m.ItemId).OrderBy(id => id).ToList());
+            s.MissedItems.Select(m => m.ItemId).OrderBy(id => id).ToList(),
+            s.Mode);
     }
 
     private static List<string> Split(string value) =>

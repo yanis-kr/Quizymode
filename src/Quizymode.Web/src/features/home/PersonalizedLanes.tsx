@@ -57,7 +57,7 @@ function ContinueCard({ run }: { run: ActivityRun }) {
   if (source.kind === "collection" && collection.isError) return null;
   const label = source.kind === "collection" ? collection.data?.name ?? "Collection" : describeGuestTopic(source);
   return (
-    <Link to={buildGuestPracticePath(source)} className={pillLinkClass}>
+    <Link to={buildGuestPracticePath(source, run.mode)} className={pillLinkClass}>
       {label}
       <ArrowRightIcon className="h-3 w-3" aria-hidden="true" />
     </Link>
@@ -236,9 +236,9 @@ export function PersonalizedLanes({ featuredSets }: { featuredSets: FeaturedSetD
       return (sessionsQuery.data ?? [])
         .map((session) => readGuestRunSummary(session))
         .filter((summary): summary is NonNullable<typeof summary> => summary !== null)
-        .map((summary) => ({ completedAt: summary.completedAt, source: summary.source }));
+        .map((summary) => ({ completedAt: summary.completedAt, source: summary.source, mode: summary.mode }));
     }
-    return isAuthLoading ? [] : readGuestHistory().map((summary) => ({ completedAt: summary.completedAt, source: summary.source }));
+    return isAuthLoading ? [] : readGuestHistory().map((summary) => ({ completedAt: summary.completedAt, source: summary.source, mode: summary.mode }));
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [signedIn, isAuthLoading, sessionsQuery.data, localVersion]);
 

@@ -2297,6 +2297,13 @@ namespace Quizymode.Api.Migrations
                         .HasMaxLength(400)
                         .HasColumnType("character varying(400)");
 
+                    b.Property<string>("Mode")
+                        .IsRequired()
+                        .ValueGeneratedOnAdd()
+                        .HasMaxLength(16)
+                        .HasColumnType("character varying(16)")
+                        .HasDefaultValue("quiz");
+
                     b.Property<string>("NavigationKeywords")
                         .IsRequired()
                         .HasMaxLength(400)

@@ -1,4 +1,4 @@
-import type { QuizCompletionSnapshot } from "@/features/items/quiz/quizRun";
+import type { QuizCompletionSnapshot, StudySessionMode } from "@/features/items/quiz/quizRun";
 import { categoryNameToSlug } from "@/utils/categorySlug";
 import { NAV_KEYWORD_MAX_LEN, NAV_KEYWORD_PATTERN } from "@/utils/navigationKeywordRules";
 
@@ -11,7 +11,9 @@ import { NAV_KEYWORD_MAX_LEN, NAV_KEYWORD_PATTERN } from "@/utils/navigationKeyw
  * rereads and merges by run ID, but there is no lock, so a truly simultaneous write can lose one result.
  */
 export const GUEST_HISTORY_STORAGE_KEY = "quizymode.guest.v1";
-export const GUEST_HISTORY_SCHEMA_VERSION = 1;
+export const GUEST_HISTORY_SCHEMA_VERSION = 2;
+/** Schema versions parsed on read; v1 entries have no mode and are read as quiz runs (issue #306). */
+const GUEST_HISTORY_READABLE_VERSIONS: readonly unknown[] = [1, GUEST_HISTORY_SCHEMA_VERSION];
 export const GUEST_HISTORY_CHANGED_EVENT = "quizymode:guest-history-changed";
 export const GUEST_HISTORY_MAX_SUMMARIES = 50;
 export const GUEST_HISTORY_MAX_MISSED_REFERENCES = 200;
@@ -43,6 +45,8 @@ export interface GuestRunSummary {
   /** Null when the completed scope had no identifiers that can build a safe practice link. */
   source: GuestHistorySource | null;
   missedItemIds: string[];
+  /** Study mode of the run; entries without one (schema v1, older server sessions) are quiz runs. */
+  mode: StudySessionMode;
 }
 
 export interface GuestHistoryEligibility {
@@ -148,6 +152,7 @@ export function readGuestRunSummary(value: unknown, now: number = Date.now()): G
     total,
     source,
     missedItemIds: uniqueMissed,
+    mode: candidate.mode === "learn" ? "learn" : "quiz",
   };
 }
 
@@ -195,8 +200,8 @@ export function parseGuestHistoryDocument(raw: string | null, now: number = Date
   }
   if (!parsed || typeof parsed !== "object") return [];
   const document = parsed as Record<string, unknown>;
-  // v1 is the only supported schema; unsupported versions are discarded rather than migrated.
-  if (document.version !== GUEST_HISTORY_SCHEMA_VERSION || !Array.isArray(document.summaries)) return [];
+  // v1 (no mode) and v2 are readable; other versions are discarded rather than migrated.
+  if (!GUEST_HISTORY_READABLE_VERSIONS.includes(document.version) || !Array.isArray(document.summaries)) return [];
   const summaries = document.summaries
     .slice(0, GUEST_HISTORY_MAX_SUMMARIES * 2)
     .map((value) => readGuestRunSummary(value, now))
@@ -273,6 +278,7 @@ export function summaryFromCompletionSnapshot(
       total: snapshot.total,
       source,
       missedItemIds,
+      mode: snapshot.mode,
     },
     now,
   );

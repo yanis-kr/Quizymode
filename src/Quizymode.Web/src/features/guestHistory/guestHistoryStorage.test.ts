@@ -13,6 +13,7 @@ import {
   recordGuestCompletion,
   resetGuestHistoryMemoryForTests,
   summaryFromCompletionSnapshot,
+  type GuestHistorySource,
   type GuestRunSummary,
 } from "./guestHistoryStorage";
 import { buildGuestBrowsePath, buildGuestPracticePath } from "./guestHistoryLinks";
@@ -50,6 +51,7 @@ function summary(index: number, overrides: Partial<GuestRunSummary> = {}): Guest
     total: 10,
     source: { kind: "collection", collectionId: COLLECTION_ID },
     missedItemIds: [],
+    mode: "quiz",
     ...overrides,
   };
 }
@@ -76,7 +78,7 @@ describe("guestHistoryStorage", () => {
     recordGuestCompletion(snapshot(), guest, NOW);
 
     const document = storedDocument(storage);
-    expect(document.version).toBe(1);
+    expect(document.version).toBe(2);
     expect(document.summaries).toEqual([
       {
         runId: "run-1",
@@ -85,6 +87,7 @@ describe("guestHistoryStorage", () => {
         total: 5,
         source: { kind: "collection", collectionId: COLLECTION_ID },
         missedItemIds: [guid(1), guid(2)],
+        mode: "quiz",
       },
     ]);
     expect(storage.getItem("quizymode.auth")).toBe("keep-me");
@@ -181,7 +184,7 @@ describe("guestHistoryStorage", () => {
 
   it("treats corrupt, unsupported, and oversized documents as empty and overwrites them safely", () => {
     expect(parseGuestHistoryDocument("{bad json", NOW)).toEqual([]);
-    expect(parseGuestHistoryDocument(JSON.stringify({ version: 2, summaries: [summary(1)] }), NOW)).toEqual([]);
+    expect(parseGuestHistoryDocument(JSON.stringify({ version: 3, summaries: [summary(1)] }), NOW)).toEqual([]);
     expect(parseGuestHistoryDocument(JSON.stringify({ version: 1, summaries: "nope" }), NOW)).toEqual([]);
     const oversized = JSON.stringify({
       version: 1,
@@ -274,5 +277,38 @@ describe("guestHistoryStorage", () => {
       NOW,
     );
     expect(invalidCollection?.source).toBeNull();
+  });
+
+  describe("session mode (issue #306)", () => {
+    it("reads a v1 document as quiz runs and writes v2 with the mode", () => {
+      const storage = installMemoryLocalStorage();
+      resetGuestHistoryMemoryForTests();
+      const legacy: Record<string, unknown> = { ...summary(1) };
+      delete legacy.mode;
+      storage.setItem(GUEST_HISTORY_STORAGE_KEY, JSON.stringify({ version: 1, summaries: [legacy] }));
+      expect(readGuestHistory(NOW)[0].mode).toBe("quiz");
+
+      recordGuestCompletion(snapshot({ runId: "learn-1", mode: "learn" }), guest, NOW);
+      const doc = storedDocument(storage);
+      expect(doc.version).toBe(2);
+      expect(doc.summaries.find((s) => s.runId === "learn-1")?.mode).toBe("learn");
+      expect(doc.summaries.find((s) => s.runId === "run-1")?.mode).toBe("quiz");
+    });
+
+    it("defaults a snapshot without mode to quiz and ignores unknown modes", () => {
+      expect(summaryFromCompletionSnapshot(snapshot(), NOW)?.mode).toBe("quiz");
+      expect(readGuestRunSummary({ ...summary(1), mode: "bogus" }, NOW)?.mode).toBe("quiz");
+      expect(readGuestRunSummary({ ...summary(1), mode: "learn" }, NOW)?.mode).toBe("learn");
+    });
+
+    it("builds learn practice paths with the same shape as quiz", () => {
+      expect(buildGuestPracticePath({ kind: "collection", collectionId: COLLECTION_ID }, "learn")).toBe(
+        `/learn/collections/${COLLECTION_ID}`,
+      );
+      const category: GuestHistorySource = { kind: "category", categorySlug: "science", navigationKeywords: ["space"], filterKeywords: [] };
+      expect(buildGuestPracticePath(category, "learn")).toBe("/learn/science?nav=space&keywords=space");
+      expect(buildGuestPracticePath(category)).toBe("/quiz/science?nav=space&keywords=space");
+      expect(buildGuestPracticePath({ kind: "global", filterKeywords: ["math"] }, "learn")).toBe("/learn?keywords=math");
+    });
   });
 });

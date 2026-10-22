@@ -372,6 +372,7 @@ describe("LearnModePage", () => {
         total: 2,
         missedItemIds: [missed.id],
         source: { kind: "collection", collectionId: COLLECTION_ID },
+        mode: "learn",
       });
       expect(await screen.findByText("Misses were added to your review queue.")).toBeInTheDocument();
       expect(completed).not.toHaveBeenCalled();

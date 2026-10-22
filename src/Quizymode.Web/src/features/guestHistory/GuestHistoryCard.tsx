@@ -68,7 +68,7 @@ function SourceActions({ summary }: { summary: GuestRunSummary }) {
       </p>
       <div className="mt-2 flex flex-wrap items-center gap-2">
         <Link
-          to={buildGuestPracticePath(source)}
+          to={buildGuestPracticePath(source, summary.mode)}
           className={`${linkClass} bg-[linear-gradient(135deg,#38bdf8_0%,#2563eb_100%)] text-white`}
         >
           Practice again

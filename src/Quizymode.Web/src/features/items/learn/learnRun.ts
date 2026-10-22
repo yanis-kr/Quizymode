@@ -272,6 +272,7 @@ export function toLearnCompletionSnapshot(run: LearnRunState): QuizCompletionSna
     correct: summary.firstTryCorrect,
     total: summary.total,
     missedItemIds: Object.freeze([...summary.missedItemIds]),
+    mode: "learn",
   });
 }
 

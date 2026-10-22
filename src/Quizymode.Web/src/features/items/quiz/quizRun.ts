@@ -63,6 +63,9 @@ export interface QuizRunSummary {
   isComplete: boolean;
 }
 
+/** Study mode a completed run was played in (issue #306). */
+export type StudySessionMode = "quiz" | "learn";
+
 export interface QuizCompletionSnapshot {
   readonly runId: string;
   readonly scope: QuizRunScope;
@@ -70,6 +73,8 @@ export interface QuizCompletionSnapshot {
   readonly correct: number;
   readonly total: number;
   readonly missedItemIds: readonly string[];
+  /** Defaults to "quiz" when omitted (issue #306). */
+  readonly mode?: StudySessionMode;
 }
 
 export type QuizRunAction =
