@@ -38,6 +38,12 @@ vi.mock("@/utils/tokenStorage", () => ({
   clearTokens: vi.fn(),
 }));
 
+const mockPurgeLearnRuns = vi.fn();
+vi.mock("@/features/items/learn/learnStorage", () => ({
+  GUEST_IDENTITY_KEY: "guest",
+  purgeLearnRunsExcept: (...args: unknown[]) => mockPurgeLearnRuns(...args),
+}));
+
 vi.mock("@/api/auth", () => ({
   authApi: { logoutAudit: vi.fn() },
 }));
@@ -310,5 +316,49 @@ describe("AuthContext.logout", () => {
     });
 
     expect(order.slice(0, 2)).toEqual(["clearTokens", "signOut"]);
+  });
+
+  it("purges stored Learn runs before signOut, so a Google hosted-logout redirect cannot leave them behind (AC 3.17.8)", async () => {
+    const order: string[] = [];
+    mockPurgeLearnRuns.mockImplementation((keep: string) => {
+      order.push(`purge:${keep}`);
+    });
+    mockSignOut.mockImplementation(async () => {
+      order.push("signOut");
+    });
+
+    const { result } = renderAuth();
+    await waitFor(() => expect(result.current.isLoading).toBe(false));
+    order.length = 0;
+
+    await act(async () => {
+      await result.current.logout();
+    });
+
+    expect(order.slice(0, 2)).toEqual(["purge:guest", "signOut"]);
+  });
+});
+
+describe("AuthContext Learn purge on settled load", () => {
+  beforeEach(() => {
+    vi.clearAllMocks();
+  });
+
+  it("keeps only guest runs for an anonymous visitor once auth settles", async () => {
+    mockFetchAuthSession.mockImplementation(noSessionFetch);
+    const { result } = renderAuth();
+    await waitFor(() => expect(result.current.isLoading).toBe(false));
+
+    expect(mockPurgeLearnRuns).toHaveBeenCalledWith("guest");
+    expect(mockPurgeLearnRuns).not.toHaveBeenCalledWith("user:user-1");
+  });
+
+  it("keeps only the signed-in identity's runs once auth settles", async () => {
+    mockFetchAuthSession.mockImplementation(validSessionFetch);
+    const { result } = renderAuth();
+    await waitFor(() => expect(result.current.isLoading).toBe(false));
+
+    await waitFor(() => expect(mockPurgeLearnRuns).toHaveBeenCalledWith("user:user-1"));
+    expect(mockPurgeLearnRuns).not.toHaveBeenCalledWith("guest");
   });
 });

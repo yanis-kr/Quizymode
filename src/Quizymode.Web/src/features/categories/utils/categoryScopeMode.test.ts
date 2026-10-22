@@ -6,7 +6,7 @@ describe("getCategoryScopeModeConfig", () => {
     const result = getCategoryScopeModeConfig("sets", true);
 
     expect(result.activeView).toBe("items");
-    expect(result.availableModes).toEqual(["list", "explore", "quiz"]);
+    expect(result.availableModes).toEqual(["list", "explore", "quiz", "learn"]);
   });
 
   it("keeps sets available for non-leaf scopes", () => {
@@ -18,6 +18,7 @@ describe("getCategoryScopeModeConfig", () => {
       "list",
       "explore",
       "quiz",
+      "learn",
     ]);
   });
 });

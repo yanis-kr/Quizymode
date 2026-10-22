@@ -95,6 +95,7 @@ public static class AnalyticsEventCatalog
         "daily",
         "flashcards",
         "home",
+        "learn",
         "quiz",
         "review"
     };

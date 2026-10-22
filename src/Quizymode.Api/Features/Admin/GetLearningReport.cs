@@ -14,6 +14,7 @@ namespace Quizymode.Api.Features.Admin;
 public static class GetLearningReport
 {
     public const string QuizMode = "quiz";
+    public const string LearnMode = "learn";
     public const string FlashcardsMode = "flashcards";
 
     private static readonly string[] StudyEventNames =
@@ -312,8 +313,11 @@ public static class GetLearningReport
                 double? scorePercent = completed is { Score: not null, Total: > 0 }
                     ? completed.Score.Value * 100.0 / completed.Total.Value
                     : null;
+                // Learn runs (context type "learn") are scored like quiz runs but kept out of quiz drop-off:
+                // they only report first-attempt answers, so an unfinished Learn run would distort the quiz funnel.
+                string startMode = quizStart.ContextType == "learn" ? LearnMode : QuizMode;
                 runs.Add(new Run(
-                    QuizMode,
+                    startMode,
                     quizStart.ContextType,
                     quizStart.ContextId,
                     answers.Count,
@@ -339,7 +343,7 @@ public static class GetLearningReport
     private static ScopeResponse ToScope(string mode, string? contextType, string? contextId, List<Run> runs)
     {
         double averageItemsReached = Math.Round(runs.Average(run => run.ItemsReached), 1);
-        if (mode != QuizMode)
+        if (mode != QuizMode && mode != LearnMode)
         {
             return new ScopeResponse(mode, contextType, contextId, runs.Count, null, null, null, averageItemsReached);
         }

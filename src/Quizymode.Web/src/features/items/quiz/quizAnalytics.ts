@@ -42,7 +42,7 @@ export function flashcardsEventContext(collectionId?: string, category?: string)
   return category ? withContextId("category", category) : { contextType: "flashcards" };
 }
 
-function withContextId(contextType: AnalyticsContextType, contextId: string): StudyEventContext {
+export function withContextId(contextType: AnalyticsContextType, contextId: string): StudyEventContext {
   return CONTEXT_ID_PATTERN.test(contextId) ? { contextType, contextId } : { contextType };
 }
 

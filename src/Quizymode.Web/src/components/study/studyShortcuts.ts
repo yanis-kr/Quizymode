@@ -15,3 +15,8 @@ export const QUIZ_SHORTCUTS: StudyShortcutHelp[] = [
   { keys: "← / →", description: "Previous / next question" },
   { keys: "Enter", description: "Next question, or view results when finished" },
 ];
+
+export const LEARN_SHORTCUTS: StudyShortcutHelp[] = [
+  { keys: "1-4 or A-D", description: "Choose an answer" },
+  { keys: "Enter", description: "Continue (after answering, and between rounds)" },
+];
