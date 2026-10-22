@@ -1,6 +1,7 @@
 /**
  * Renders a single item in Quiz mode: question, answer options, feedback.
  */
+import { CheckCircleIcon, XCircleIcon } from "@heroicons/react/24/solid";
 import type { ItemResponse } from "@/types/api";
 import { SpeakButton } from "@/components/SpeakButton";
 import { useSpeech } from "@/hooks/useSpeech";
@@ -59,12 +60,15 @@ export function QuizRenderer({
                   item.incorrectAnswers.findIndex((candidate) => candidate === option)
                 );
             let bgColor = "bg-white hover:bg-gray-50";
-            if (showAnswer) {
-              if (isCorrect) {
-                bgColor = "bg-green-100 border-green-500";
-              } else if (isSelected && !isCorrect) {
-                bgColor = "bg-red-100 border-red-500";
-              }
+            let motion = "";
+            const showsCorrect = showAnswer && isCorrect;
+            const showsWrong = showAnswer && isSelected && !isCorrect;
+            if (showsCorrect) {
+              bgColor = "bg-green-100 border-green-500";
+              motion = "motion-safe:animate-correct-pulse";
+            } else if (showsWrong) {
+              bgColor = "bg-red-100 border-red-500";
+              motion = "motion-safe:animate-wrong-shake";
             }
 
             return (
@@ -73,11 +77,18 @@ export function QuizRenderer({
                 type="button"
                 onClick={() => onAnswerSelect(option)}
                 disabled={showAnswer}
-                className={`w-full text-left px-3 py-2 border-2 rounded-lg ${bgColor} ${
+                aria-keyshortcuts={`${index + 1} ${letter}`}
+                className={`w-full text-left px-3 py-2 border-2 rounded-lg ${bgColor} ${motion} ${
                   showAnswer ? "cursor-default" : "cursor-pointer"
                 }`}
               >
-                <div>
+                <div className={showsCorrect || showsWrong ? "relative pr-7" : "relative"}>
+                  {showsCorrect && (
+                    <CheckCircleIcon className="absolute right-0 top-0 h-5 w-5 text-green-600" aria-hidden="true" />
+                  )}
+                  {showsWrong && (
+                    <XCircleIcon className="absolute right-0 top-0 h-5 w-5 text-red-600" aria-hidden="true" />
+                  )}
                   <span className="font-medium">{letter}.</span>{" "}
                   <ForeignPhraseText text={option} />
                   <PronunciationHint

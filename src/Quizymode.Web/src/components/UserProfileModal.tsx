@@ -133,6 +133,9 @@ const UserProfileModal = ({ isOpen, onClose }: UserProfileModalProps) => {
         onClick={onClose}
       >
         <div
+          role="dialog"
+          aria-modal="true"
+          aria-label="User Profile"
           className="relative top-20 mx-auto p-5 border w-full max-w-lg shadow-lg rounded-md bg-white"
           onClick={(e) => e.stopPropagation()}
         >
@@ -169,6 +172,9 @@ const UserProfileModal = ({ isOpen, onClose }: UserProfileModalProps) => {
         onClick={onClose}
       >
         <div
+          role="dialog"
+          aria-modal="true"
+          aria-label="User Profile"
           className="relative top-20 mx-auto p-5 border w-full max-w-lg shadow-lg rounded-md bg-white"
           onClick={(e) => e.stopPropagation()}
         >
@@ -311,6 +317,9 @@ const UserProfileModal = ({ isOpen, onClose }: UserProfileModalProps) => {
         onClick={onClose}
       >
         <div
+          role="dialog"
+          aria-modal="true"
+          aria-label="Error"
           className="relative top-20 mx-auto p-5 border w-full max-w-lg shadow-lg rounded-md bg-white"
           onClick={(e) => e.stopPropagation()}
         >
@@ -344,7 +353,7 @@ const UserProfileModal = ({ isOpen, onClose }: UserProfileModalProps) => {
   if (!displayUser && (isLoading || status === "pending")) {
     return (
       <div className="fixed inset-0 bg-gray-600 bg-opacity-50 overflow-y-auto h-full w-full z-50">
-        <div className="relative top-20 mx-auto p-5 border w-full max-w-lg shadow-lg rounded-md bg-white">
+        <div role="dialog" aria-modal="true" aria-label="User Profile" className="relative top-20 mx-auto p-5 border w-full max-w-lg shadow-lg rounded-md bg-white">
           <div className="text-center">Loading...</div>
         </div>
       </div>
@@ -358,6 +367,9 @@ const UserProfileModal = ({ isOpen, onClose }: UserProfileModalProps) => {
       onClick={onClose}
     >
       <div
+        role="dialog"
+        aria-modal="true"
+        aria-label="User Profile"
         className="relative top-20 mx-auto p-5 border w-full max-w-lg shadow-lg rounded-md bg-white"
         onClick={(e) => e.stopPropagation()}
       >

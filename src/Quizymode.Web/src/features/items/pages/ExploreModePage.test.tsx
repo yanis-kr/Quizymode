@@ -2,7 +2,7 @@ import { beforeEach, describe, expect, it, vi } from "vitest";
 import { render, screen, waitFor } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { MemoryRouter, Route, Routes, useLocation } from "react-router-dom";
+import { MemoryRouter, Route, Routes, useLocation, useNavigate } from "react-router-dom";
 import ExploreModePage from "./ExploreModePage";
 import { itemsApi } from "@/api/items";
 import { categoriesApi } from "@/api/categories";
@@ -31,6 +31,7 @@ vi.mock("@/features/items/quiz/quizAnalytics", () => ({
   flashcardsEventContext: mockFlashcardsEventContext,
   trackFlashcardsStarted: mockTrackFlashcardsStarted,
   trackFlashcardRevealed: mockTrackFlashcardRevealed,
+  trackFlashcardGraded: vi.fn(),
 }));
 
 vi.mock("@/contexts/AuthContext", () => ({
@@ -72,9 +73,25 @@ vi.mock("@/components/CommentsDrawer", () => ({
 
 vi.mock("@/components/study/ExploreRenderer", () => ({
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  ExploreRenderer: ({ item, onReveal }: { item: any; onReveal?: (item: any) => void }) => (
+  ExploreRenderer: ({
+    item,
+    onReveal,
+    isFlipped,
+    onFlippedChange,
+  }: {
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    item: any;
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    onReveal?: (item: any) => void;
+    isFlipped?: boolean;
+    onFlippedChange?: (flipped: boolean) => void;
+  }) => (
     <div>
       Explore Renderer
+      <span data-testid="face">{isFlipped ? "back" : "front"}</span>
+      <button type="button" onClick={() => onFlippedChange?.(true)}>
+        Flip
+      </button>
       <button type="button" onClick={() => onReveal?.(item)}>
         Reveal
       </button>
@@ -112,6 +129,15 @@ function LocationDisplay() {
   return <div data-testid="location">{`${location.pathname}${location.search}`}</div>;
 }
 
+function ChangeKeywords() {
+  const navigate = useNavigate();
+  return (
+    <button type="button" onClick={() => navigate("/explore/exams/item/item-1?keywords=other")}>
+      change keywords
+    </button>
+  );
+}
+
 function renderPage(initialEntry: string) {
   const queryClient = new QueryClient({
     defaultOptions: {
@@ -131,6 +157,7 @@ function renderPage(initialEntry: string) {
               <>
                 <ExploreModePage />
                 <LocationDisplay />
+                <ChangeKeywords />
               </>
             }
           />
@@ -236,5 +263,18 @@ describe("ExploreModePage", () => {
     unmount();
 
     expect(mockFlushDeferredAnalyticsEvents).toHaveBeenCalledTimes(1);
+  });
+
+  it("shows the front face again when the scope changes while the same card stays flipped", async () => {
+    const user = userEvent.setup({ delay: null });
+    renderPage("/explore/exams/item/item-1?keywords=act");
+    await screen.findByText(/Explore Renderer/i);
+
+    await user.click(screen.getByRole("button", { name: "Flip" }));
+    expect(screen.getByTestId("face")).toHaveTextContent("back");
+
+    await user.click(screen.getByRole("button", { name: "change keywords" }));
+    await waitFor(() => expect(screen.getByTestId("location")).toHaveTextContent("keywords=other"));
+    await waitFor(() => expect(screen.getByTestId("face")).toHaveTextContent("front"));
   });
 });

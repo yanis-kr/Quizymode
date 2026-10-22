@@ -88,9 +88,32 @@ export function trackQuizRunCompleted(snapshot: QuizCompletionSnapshot): void {
   });
 }
 
+/** One `quiz_result_shared` per run, after a native share resolves or a copy succeeds (AC 5.5.17). */
+export function trackQuizResultShared(runId: string, score: number, total: number, context: StudyEventContext): void {
+  trackEventOnce(runId, { name: "quiz_result_shared", runId, score, total, ...context });
+}
+
 /** One `flashcards_started` per Flashcards run. */
 export function trackFlashcardsStarted(runId: string, total: number, context: StudyEventContext): void {
   trackEventOnce(runId, { name: "flashcards_started", runId, total, ...context });
+}
+
+/** One `flashcard_graded` per card per run, for the first grade only (isCorrect = "Got it"). */
+export function trackFlashcardGraded(
+  runId: string,
+  itemId: string,
+  position: number,
+  isCorrect: boolean,
+  context: StudyEventContext,
+): void {
+  trackEventDeferredOnce(`${runId}:${itemId}:graded`, {
+    name: "flashcard_graded",
+    runId,
+    itemId,
+    position,
+    isCorrect,
+    ...context,
+  });
 }
 
 /** One `flashcard_revealed` per card per run, the first time its answer is shown. */

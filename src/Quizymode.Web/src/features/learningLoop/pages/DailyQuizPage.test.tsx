@@ -102,4 +102,25 @@ describe("DailyQuizPage", () => {
     renderWithProviders(<DailyQuizPage />);
     expect(await screen.findByRole("alert", undefined, { timeout: 4000 })).toHaveTextContent("Today's quiz could not be loaded.");
   });
+
+  it("shares the emoji grid in roster order and reports a daily share", async () => {
+    const writeText = vi.fn().mockResolvedValue(undefined);
+    Object.defineProperty(navigator, "clipboard", { value: { writeText }, configurable: true, writable: true });
+    vi.mocked(dailyQuizApi.get).mockResolvedValue({ date: "2026-10-18", items, completion: null, streak: null });
+
+    renderWithProviders(<DailyQuizPage />);
+    await answerAll(["a"]);
+    fireEvent.click(await screen.findByRole("button", { name: "Share result" }));
+    fireEvent.click(screen.getByRole("button", { name: "Copy" }));
+
+    const expected = `Quizymode Daily 2026-10-18 1/2\n\u{1F7E9}\u{1F7E5}\n${window.location.origin}/daily?utm_source=share&utm_medium=share&utm_campaign=quiz_result&utm_content=daily`;
+    await waitFor(() => expect(writeText).toHaveBeenCalledWith(expected));
+    expect(screen.getByRole("button", { name: "Show QR code" })).toBeInTheDocument();
+    await waitFor(() =>
+      expect(trackEventOnce).toHaveBeenCalledWith(
+        expect.any(String),
+        expect.objectContaining({ name: "quiz_result_shared", contextType: "daily", contextId: "2026-10-18", score: 1, total: 2 }),
+      ),
+    );
+  });
 });

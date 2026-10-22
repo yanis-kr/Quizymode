@@ -49,7 +49,8 @@ internal sealed class JwtHttpTestHost : IAsyncDisposable
         Func<ApplicationDbContext> createDbContext,
         Action<IServiceCollection> configureServices,
         Action<IEndpointRouteBuilder> mapEndpoints,
-        bool useUserUpsertMiddleware = false)
+        bool useUserUpsertMiddleware = false,
+        bool useRateLimiting = false)
     {
         SymmetricSecurityKey signingKey = new(RandomNumberGenerator.GetBytes(32));
 
@@ -69,6 +70,12 @@ internal sealed class JwtHttpTestHost : IAsyncDisposable
             options.ConfigurationManager = new StaticConfigurationManager<OpenIdConnectConfiguration>(configuration);
         });
 
+        if (useRateLimiting)
+        {
+            // The production policies and 429 body, for tests that need the real limiter.
+            builder.AddRateLimitingServices();
+        }
+
         builder.Services.AddHttpContextAccessor();
         builder.Services.AddScoped(_ => createDbContext());
         builder.Services.AddScoped<IUserContext, UserContext>();
@@ -77,6 +84,12 @@ internal sealed class JwtHttpTestHost : IAsyncDisposable
 
         WebApplication app = builder.Build();
         app.UseAuthentication();
+        if (useRateLimiting)
+        {
+            // After authentication so the per-user partition key sees the signed-in subject.
+            app.UseRateLimiter();
+        }
+
         app.UseAuthorization();
         if (useUserUpsertMiddleware)
         {

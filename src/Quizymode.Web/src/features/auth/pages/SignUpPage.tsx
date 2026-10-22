@@ -54,6 +54,10 @@ const BENEFIT_COPY: Record<AuthReason, BenefitCopy> = {
     heading: "Make your next quiz yours",
     body: "Quiz scores are not saved to accounts yet. Create a free account to bookmark public collections and build private practice sets.",
   },
+  "review-later": {
+    heading: "Keep reviewing these cards",
+    body: "Create a free account to add cards you're still learning to a Review queue that brings them back over the next days.",
+  },
 };
 
 const DEFAULT_BENEFIT: BenefitCopy = {

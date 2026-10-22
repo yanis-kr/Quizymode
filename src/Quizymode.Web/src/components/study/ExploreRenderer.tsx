@@ -2,7 +2,8 @@
  * Renders a single item in Explore (Flashcards) mode: question face-up; tap/click flips to answer + explanation.
  */
 import { useEffect, useState } from "react";
-import { ChevronDownIcon } from "@heroicons/react/24/outline";
+import { CheckIcon, ChevronDownIcon } from "@heroicons/react/24/outline";
+import type { FlashcardGrade } from "@/features/items/flashcards/flashcardDeck";
 import type { ItemResponse } from "@/types/api";
 import { SpeakButton } from "@/components/SpeakButton";
 import { useSpeech } from "@/hooks/useSpeech";
@@ -16,18 +17,45 @@ export interface ExploreRendererProps {
   item: ItemResponse;
   /** Called each time the card is flipped to its answer. */
   onReveal?: (item: ItemResponse) => void;
+  /** The card's current self-grade. The grade group shows only when `onGrade` is set and the card is flipped. */
+  grade?: FlashcardGrade;
+  onGrade?: (item: ItemResponse, grade: FlashcardGrade) => void;
+  /** Controlled flip state (used for keyboard shortcuts). The owner resets it when the card changes. */
+  isFlipped?: boolean;
+  onFlippedChange?: (flipped: boolean) => void;
 }
 
-export function ExploreRenderer({ item, onReveal }: ExploreRendererProps) {
-  const [isFlipped, setIsFlipped] = useState(false);
+const GRADE_OPTIONS: ReadonlyArray<{ grade: FlashcardGrade; label: string; shortcut: string }> = [
+  { grade: "got-it", label: "Got it", shortcut: "1" },
+  { grade: "still-learning", label: "Still learning", shortcut: "2" },
+];
+
+export function ExploreRenderer({
+  item,
+  onReveal,
+  grade,
+  onGrade,
+  isFlipped: controlledFlipped,
+  onFlippedChange,
+}: ExploreRendererProps) {
+  const [internalFlipped, setInternalFlipped] = useState(false);
+  const isControlled = controlledFlipped !== undefined;
+  const isFlipped = isControlled ? controlledFlipped : internalFlipped;
+  const setIsFlipped = (flipped: boolean) => {
+    if (isControlled) onFlippedChange?.(flipped);
+    else setInternalFlipped(flipped);
+  };
   const [explanationExpanded, setExplanationExpanded] = useState(false);
   const { isSupported } = useSpeech();
 
   useEffect(() => {
-    // eslint-disable-next-line react-hooks/set-state-in-effect
-    setIsFlipped(false);
+    if (!isControlled) {
+      // eslint-disable-next-line react-hooks/set-state-in-effect
+      setInternalFlipped(false);
+    }
     // eslint-disable-next-line react-hooks/set-state-in-effect
     setExplanationExpanded(false);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [item.id]);
 
   const explanationTrimmed = item.explanation?.trim() ?? "";
@@ -144,7 +172,41 @@ export function ExploreRenderer({ item, onReveal }: ExploreRendererProps) {
             </div>
           )}
 
-          {!hasExplanation && <div className="pb-4" />}
+          {onGrade && isFlipped && (
+            <div className={`px-6 pb-5 ${hasExplanation ? "pt-1" : "border-t border-indigo-200/80 pt-4"}`}>
+              <div role="group" aria-labelledby={`grade-label-${item.id}`}>
+                <p id={`grade-label-${item.id}`} className="text-sm font-medium text-gray-500">
+                  How well did you know this?
+                </p>
+                <div className="mt-2 flex flex-wrap gap-2">
+                  {GRADE_OPTIONS.map((option) => {
+                    const pressed = grade === option.grade;
+                    return (
+                      <button
+                        key={option.grade}
+                        type="button"
+                        aria-pressed={pressed}
+                        aria-keyshortcuts={option.shortcut}
+                        onClick={() => {
+                          if (!pressed) onGrade(item, option.grade);
+                        }}
+                        className={`inline-flex items-center gap-1.5 rounded-md border px-3 py-1.5 text-sm font-semibold focus:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500 focus-visible:ring-offset-2 ${
+                          pressed
+                            ? "border-indigo-600 bg-indigo-600 text-white"
+                            : "border-gray-300 bg-white text-gray-700 hover:bg-gray-50"
+                        }`}
+                      >
+                        {pressed && <CheckIcon className="h-4 w-4" aria-hidden="true" />}
+                        {option.label}
+                      </button>
+                    );
+                  })}
+                </div>
+              </div>
+            </div>
+          )}
+
+          {!hasExplanation && !(onGrade && isFlipped) && <div className="pb-4" />}
         </div>
       </div>
     </div>

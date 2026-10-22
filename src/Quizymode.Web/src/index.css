@@ -1,5 +1,35 @@
 @import "tailwindcss";
 
+@theme {
+  --animate-correct-pulse: correct-pulse 0.6s ease-out 1;
+  --animate-wrong-shake: wrong-shake 0.45s ease-in-out 1;
+
+  @keyframes correct-pulse {
+    0%,
+    100% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.02);
+    }
+  }
+
+  @keyframes wrong-shake {
+    0%,
+    100% {
+      transform: translateX(0);
+    }
+    20%,
+    60% {
+      transform: translateX(-4px);
+    }
+    40%,
+    80% {
+      transform: translateX(4px);
+    }
+  }
+}
+
 @layer base {
   body {
     @apply bg-gray-50 text-gray-900;

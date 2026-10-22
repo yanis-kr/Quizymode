@@ -23,6 +23,23 @@ import { ExploreQuizBreadcrumb } from "@/components/ExploreQuizBreadcrumb";
 import { ScopeSecondaryBar } from "@/components/ScopeSecondaryBar";
 import { ScopePathHeader } from "@/components/ScopePathHeader";
 import type { ViewMode } from "@/components/ModeSwitcher";
+import { reviewQueueApi } from "@/api/learningLoop";
+import { FlashcardsDeckSummary } from "@/features/items/flashcards/FlashcardsDeckSummary";
+import {
+  anchorFirst,
+  pileInDeckOrder,
+  shuffleWithAnchor,
+  summaryCounts,
+  type FlashcardGrade,
+  type FlashcardGrades,
+} from "@/features/items/flashcards/flashcardDeck";
+import {
+  getFlashcardsShufflePreference,
+  setFlashcardsShufflePreference,
+} from "@/features/items/flashcards/flashcardsShufflePreference";
+import { useStudyHotkeys } from "@/components/study/useStudyHotkeys";
+import { StudyHotkeysDialog } from "@/components/study/StudyHotkeysDialog";
+import { FLASHCARD_SHORTCUTS } from "@/components/study/studyShortcuts";
 import { StarIcon, XMarkIcon } from "@heroicons/react/24/outline";
 import { StarIcon as StarIconSolid } from "@heroicons/react/24/solid";
 import type { CollectionRatingResponse, ItemResponse } from "@/types/api";
@@ -32,9 +49,39 @@ import { getStudyScopeKeywords } from "@/features/items/utils/studyScopeParams";
 import { createAnalyticsId, flushDeferredAnalyticsEvents } from "@/features/analytics/analyticsEvents";
 import {
   flashcardsEventContext,
+  trackFlashcardGraded,
   trackFlashcardRevealed,
   trackFlashcardsStarted,
 } from "@/features/items/quiz/quizAnalytics";
+
+/** State of one Flashcards run (a pass through the deck); grades and the pile are per round and never persisted. */
+interface FlashcardRun {
+  scopeKey: string;
+  /** Bumps when Restart or Shuffle starts a new run (new analytics run id). */
+  nonce: number;
+  /** Bumps on every transition so the card remounts on its front face. */
+  roundKey: number;
+  /** The run's card order (ids); null means the natural order. Survivors keep their place when the list refetches. */
+  order: string[] | null;
+  grades: FlashcardGrades;
+  /** Ids of the still-learning round being studied, or null in the full deck. */
+  loopIds: string[] | null;
+  isFinished: boolean;
+}
+
+const newFlashcardRun = (scopeKey: string, nonce: number): FlashcardRun => ({
+  scopeKey,
+  nonce,
+  roundKey: 0,
+  order: null,
+  grades: {},
+  loopIds: null,
+  isFinished: false,
+});
+
+type EnqueueStatus = { itemId: string; kind: "added" | "failed" | "unavailable" };
+
+const ADDED_STATUS_MS = 3000;
 
 const ExploreModePage = () => {
   const { category: categorySlug, collectionId, itemId } = useParams();
@@ -110,6 +157,28 @@ const ExploreModePage = () => {
 
   // Track whether we're still resolving the category name from slug
   const isCategoryResolving = !!categorySlug && !categoriesData?.categories;
+
+  const runScopeKey = `${collectionId ?? ""}|${category ?? ""}|${keywords.join(",")}`;
+  const [run, setRun] = useState<FlashcardRun>(() => newFlashcardRun(runScopeKey, 0));
+  const [isFlipped, setIsFlipped] = useState(false);
+  const [shuffleOn, setShuffleOn] = useState<boolean>(getFlashcardsShufflePreference);
+  const [enqueueStatus, setEnqueueStatus] = useState<EnqueueStatus | null>(null);
+  const enqueuedIds = useRef<Set<string>>(new Set());
+  const statusTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const currentIdRef = useRef<string | undefined>(undefined);
+  if (run.scopeKey !== runScopeKey) {
+    // A different collection, category or keyword set is a different deck: drop grades, pile, loop and status.
+    setRun(newFlashcardRun(runScopeKey, run.nonce));
+    setEnqueueStatus(null);
+    setIsFlipped(false);
+  }
+  // A pending "Added to Review" timer belongs to the previous deck.
+  useEffect(() => {
+    if (statusTimer.current) clearTimeout(statusTimer.current);
+    statusTimer.current = null;
+  }, [run.scopeKey]);
+  const canShuffle = !!collectionId;
+  const shuffleActive = canShuffle && shuffleOn;
 
   // Fetch navigation keyword descriptions for breadcrumb tooltips
   const { data: keywordDescriptionsData } = useQuery({
@@ -267,33 +336,128 @@ const ExploreModePage = () => {
   }, [itemId, collectionId, category, hasRestoredItems]);
 
   // Use full list if available (when category/collection is present), otherwise use stored items or fetched items
-  const items = collectionId
-    ? collectionData?.items ||
-      (singleItemData ? [singleItemData] : [])
-    : storedItems ||
-      data?.items ||
-      (singleItemData ? [singleItemData] : []);
+  const baseItems: ItemResponse[] = useMemo(
+    () =>
+      collectionId
+        ? collectionData?.items || (singleItemData ? [singleItemData] : [])
+        : storedItems || data?.items || (singleItemData ? [singleItemData] : []),
+    [collectionId, collectionData, storedItems, data, singleItemData]
+  );
+
+  // The run's order is fixed when the run starts (first load, Restart, Shuffle); a deep-linked card stays first.
+  const deckReady = collectionId ? !!collectionData : true;
+  if (run.scopeKey === runScopeKey && run.order === null && shuffleActive && deckReady && baseItems.length > 0) {
+    setRun({ ...run, order: shuffleWithAnchor(baseItems.map((item) => item.id), itemId, Math.random) });
+  }
+
+  // The full deck for this run: positions, stored context, comments and the Quiz switch always use it.
+  const sourceDeck: ItemResponse[] = useMemo(() => {
+    if (!run.order) return baseItems;
+    const byId = new Map(baseItems.map((item) => [item.id, item]));
+    const ordered = run.order.map((id) => byId.get(id)).filter((item): item is ItemResponse => !!item);
+    const placed = new Set(run.order);
+    return [...ordered, ...baseItems.filter((item) => !placed.has(item.id))];
+  }, [baseItems, run.order]);
+
+  // The still-learning round, derived by id so a refetch that drops cards cannot leave a stale deck.
+  const loopDeck: ItemResponse[] | null = useMemo(() => {
+    if (!run.loopIds) return null;
+    const wanted = new Set(run.loopIds);
+    return sourceDeck.filter((item) => wanted.has(item.id));
+  }, [sourceDeck, run.loopIds]);
+
+  // The displayed deck: only the card, counter, prev/next and URL use it.
+  const items = loopDeck ?? sourceDeck;
 
   const isLoadingItems = collectionId
     ? collectionLoading
     : isCategoryResolving || isLoading || (itemId ? singleItemLoading : false);
 
   // Study telemetry (AC 5.5.4): one Flashcards run per page visit and scope; the first reveal of each card is reported.
-  const flashcardsScopeKey = `${collectionId ?? ""}|${category ?? ""}|${keywords.join(",")}`;
+  const flashcardsScopeKey = `${runScopeKey}|${shuffleActive ? "shuffle" : "ordered"}|${run.nonce}`;
   const flashcardsRun = useRef<{ scopeKey: string; runId: string } | null>(null);
   useEffect(() => {
-    if (isLoadingItems || items.length === 0) return;
+    if (isLoadingItems || sourceDeck.length === 0) return;
     if (flashcardsRun.current?.scopeKey === flashcardsScopeKey) return;
     flashcardsRun.current = { scopeKey: flashcardsScopeKey, runId: createAnalyticsId() };
-    trackFlashcardsStarted(flashcardsRun.current.runId, items.length, flashcardsEventContext(collectionId, category));
-  }, [category, collectionId, flashcardsScopeKey, isLoadingItems, items.length]);
-  useEffect(() => () => flushDeferredAnalyticsEvents(), []);
+    trackFlashcardsStarted(flashcardsRun.current.runId, sourceDeck.length, flashcardsEventContext(collectionId, category));
+  }, [category, collectionId, flashcardsScopeKey, isLoadingItems, sourceDeck.length]);
+  useEffect(
+    () => () => {
+      flushDeferredAnalyticsEvents();
+      if (statusTimer.current) clearTimeout(statusTimer.current);
+    },
+    []
+  );
+
+  const flipCurrentCard = () => {
+    if (!currentItem) return;
+    if (isFlipped) {
+      setIsFlipped(false);
+    } else {
+      setIsFlipped(true);
+      handleFlashcardRevealed(currentItem);
+    }
+  };
 
   const handleFlashcardRevealed = (revealed: ItemResponse) => {
-    const run = flashcardsRun.current;
-    const position = items.findIndex((candidate) => candidate.id === revealed.id) + 1;
-    if (!run || position < 1) return;
-    trackFlashcardRevealed(run.runId, revealed.id, position, flashcardsEventContext(collectionId, category));
+    const flashcardsRunInfo = flashcardsRun.current;
+    const position = sourceDeck.findIndex((candidate) => candidate.id === revealed.id) + 1;
+    if (!flashcardsRunInfo || position < 1) return;
+    trackFlashcardRevealed(flashcardsRunInfo.runId, revealed.id, position, flashcardsEventContext(collectionId, category));
+  };
+
+  const clearEnqueueStatus = () => {
+    if (statusTimer.current) clearTimeout(statusTimer.current);
+    statusTimer.current = null;
+    setEnqueueStatus(null);
+  };
+
+  const showEnqueueStatus = (status: EnqueueStatus) => {
+    // A late response never lands on a different card.
+    if (currentIdRef.current !== status.itemId) return;
+    if (statusTimer.current) clearTimeout(statusTimer.current);
+    statusTimer.current = null;
+    setEnqueueStatus(status);
+    if (status.kind === "added") {
+      statusTimer.current = setTimeout(() => setEnqueueStatus(null), ADDED_STATUS_MS);
+    }
+  };
+
+  /** Queues a Still-learning card for long-term review once per page visit; retryable failures allow another try. */
+  const startEnqueue = (id: string, force = false) => {
+    if (!force && enqueuedIds.current.has(id)) return;
+    enqueuedIds.current.add(id);
+    reviewQueueApi.enqueue(id).then(
+      () => showEnqueueStatus({ itemId: id, kind: "added" }),
+      (error: unknown) => {
+        const status = (error as { response?: { status?: number } })?.response?.status;
+        if (status === 404) {
+          showEnqueueStatus({ itemId: id, kind: "unavailable" });
+          return;
+        }
+        enqueuedIds.current.delete(id);
+        showEnqueueStatus({ itemId: id, kind: "failed" });
+      }
+    );
+  };
+
+  const handleGrade = (graded: ItemResponse, grade: FlashcardGrade) => {
+    if (run.grades[graded.id] === grade) return;
+    setRun((previous) => ({ ...previous, grades: { ...previous.grades, [graded.id]: grade } }));
+    const flashcardsRunInfo = flashcardsRun.current;
+    const position = sourceDeck.findIndex((candidate) => candidate.id === graded.id) + 1;
+    if (flashcardsRunInfo && position > 0) {
+      trackFlashcardGraded(
+        flashcardsRunInfo.runId,
+        graded.id,
+        position,
+        grade === "got-it",
+        flashcardsEventContext(collectionId, category)
+      );
+    }
+    // Got it never touches the review queue; guests keep an in-session pile only.
+    if (grade === "still-learning" && isAuthenticated) startEnqueue(graded.id);
   };
 
   // Calculate current index based on itemId if present
@@ -355,16 +519,28 @@ const ExploreModePage = () => {
     ? singleItemData
     : (currentItemData?.id === currentListItem?.id ? currentItemData : currentListItem);
 
+  const currentItemIdForStatus = currentItem?.id;
+  useEffect(() => {
+    currentIdRef.current = currentItemIdForStatus;
+    // The status belongs to the card it was shown for.
+    // eslint-disable-next-line react-hooks/set-state-in-effect
+    clearEnqueueStatus();
+    setIsFlipped(false);
+  }, [currentItemIdForStatus]);
+
   useEffect(() => {
     if (items.length > 0 && currentIndex >= items.length) {
+      // Keep the card named in the URL when a refetch shortens the deck; otherwise start over.
       // eslint-disable-next-line react-hooks/set-state-in-effect
-      setCurrentIndex(0);
+      setCurrentIndex(Math.max(0, items.findIndex((candidate) => candidate.id === itemId)));
     }
-  }, [items.length, currentIndex]);
+  }, [items, itemId, currentIndex]);
+
+  const deckIndex = currentItem ? sourceDeck.findIndex((candidate) => candidate.id === currentItem.id) : currentIndex;
 
   // Store items in sessionStorage when we have them (for restoration after comments)
   useEffect(() => {
-    if (items.length > 0 && !collectionId) {
+    if (sourceDeck.length > 0 && !collectionId) {
       // Store items for both random items and category-based items to restore after comments
       // Don't store for collections as they're stable and can be reloaded
       sessionStorage.setItem(
@@ -373,33 +549,119 @@ const ExploreModePage = () => {
           mode: "explore",
           category: category,
           collectionId: collectionId,
-          currentIndex: currentIndex,
-          itemIds: items.map((item) => item.id),
-          items: items, // Store full items data
+          currentIndex: Math.max(0, deckIndex),
+          itemIds: sourceDeck.map((item) => item.id),
+          items: sourceDeck, // Store full items data
         })
       );
     }
-  }, [items, currentIndex, category, collectionId]);
+  }, [sourceDeck, deckIndex, category, collectionId]);
 
   // Prepare navigation context for ItemRatingsComments
   // Include context even when itemId is present (e.g., when navigating back from comments)
   const navigationContext =
-    items.length > 0
+    sourceDeck.length > 0
         ? {
             mode: "explore" as const,
             category: category,
             collectionId: collectionId,
-            currentIndex: currentIndex,
-            itemIds: items.map((item) => item.id),
+            currentIndex: Math.max(0, deckIndex),
+            itemIds: sourceDeck.map((item) => item.id),
           }
         : undefined;
+
+  const buildExploreItemPath = (id: string): string =>
+    collectionId
+      ? `${buildCollectionStudyPath("explore", collectionId, collectionInfo?.name, id)}${exploreItemSearch}`
+      : category
+        ? `/explore/${categoryNameToSlug(category)}/item/${id}${exploreItemSearch}`
+        : `/explore/item/${id}${exploreItemSearch}`;
+
+  const handlePrev = () => {
+    if (currentIndex > 0) {
+      const newIndex = currentIndex - 1;
+      setCurrentIndex(newIndex);
+      if (items[newIndex]) navigate(buildExploreItemPath(items[newIndex].id), { replace: true });
+    }
+  };
+
+  const isLastCard = currentIndex >= items.length - 1;
+
+  const handleNext = () => {
+    if (!isLastCard) {
+      const newIndex = currentIndex + 1;
+      setCurrentIndex(newIndex);
+      if (items[newIndex]) navigate(buildExploreItemPath(items[newIndex].id), { replace: true });
+    } else {
+      // Finish: the URL stays on the last card.
+      setRun((previous) => ({ ...previous, isFinished: true }));
+    }
+  };
+
+  /** One handler per transition: sets the deck, index and URL together so effects cannot race. */
+  const startRound = (patch: Partial<FlashcardRun>, firstId: string | undefined, isNewRun: boolean) => {
+    clearEnqueueStatus();
+    setIsFlipped(false);
+    setRun((previous) => ({
+      ...previous,
+      grades: {},
+      loopIds: null,
+      isFinished: false,
+      ...patch,
+      roundKey: previous.roundKey + 1,
+      nonce: previous.nonce + (isNewRun ? 1 : 0),
+    }));
+    setCurrentIndex(0);
+    if (firstId) navigate(buildExploreItemPath(firstId), { replace: true });
+  };
+
+  const handleStudyPile = () => {
+    const pile = pileInDeckOrder(items, run.grades).map((item) => item.id);
+    if (pile.length === 0) return;
+    startRound({ loopIds: pile }, pile[0], false);
+  };
+
+  const handleRestart = () => {
+    const ids = baseItems.map((item) => item.id);
+    const order = shuffleActive ? shuffleWithAnchor(ids, null, Math.random) : null;
+    startRound({ order }, order?.[0] ?? ids[0], true);
+  };
+
+  const handleShuffleToggle = () => {
+    if (
+      Object.keys(run.grades).length > 0 &&
+      !window.confirm("Changing shuffle starts a new run and clears your grades for this deck. Continue?")
+    ) {
+      return;
+    }
+    const next = !shuffleOn;
+    setFlashcardsShufflePreference(next);
+    setShuffleOn(next);
+    const ids = baseItems.map((item) => item.id);
+    const order = next ? shuffleWithAnchor(ids, currentItem?.id, Math.random) : anchorFirst(ids, currentItem?.id);
+    startRound({ order }, order[0], true);
+  };
+
+  const showSummary = run.isFinished || (run.loopIds !== null && items.length === 0);
+  const counts = summaryCounts(items, run.grades);
+  const { isHelpOpen, openHelp, closeHelp } = useStudyHotkeys({
+    enabled: true,
+    // On the summary screen only "?" stays active.
+    flip: showSummary || !currentItem ? undefined : flipCurrentCard,
+    prev: showSummary || currentIndex === 0 ? undefined : handlePrev,
+    next: showSummary || !currentItem ? undefined : handleNext,
+    digit: showSummary || !currentItem || !isFlipped ? undefined : (n) => {
+      if (n === 1) handleGrade(currentItem, "got-it");
+      else if (n === 2) handleGrade(currentItem, "still-learning");
+    },
+  });
 
   if (isLoadingItems) return <LoadingSpinner />;
   if (error && !collectionId)
     return (
       <ErrorMessage message="Failed to load items" onRetry={() => refetch()} />
     );
-  if (items.length === 0) {
+  if (sourceDeck.length === 0) {
     return (
       <div className="py-4 sm:py-6">
         <div className="text-center py-12">
@@ -445,43 +707,27 @@ const ExploreModePage = () => {
     ? buildCollectionPath(collectionId, collectionInfo?.name)
     : null;
 
-  const handlePrev = () => {
-    if (currentIndex > 0) {
-      const newIndex = currentIndex - 1;
-      setCurrentIndex(newIndex);
-      if (items[newIndex]) {
-        if (collectionId) {
-          navigate(
-            `${buildCollectionStudyPath("explore", collectionId, collectionInfo?.name, items[newIndex].id)}${exploreItemSearch}`,
-            { replace: true }
-          );
-        } else if (category) {
-          navigate(`/explore/${categoryNameToSlug(category)}/item/${items[newIndex].id}${exploreItemSearch}`, { replace: true });
-        } else {
-          navigate(`/explore/item/${items[newIndex].id}${exploreItemSearch}`, { replace: true });
-        }
-      }
-    }
-  };
-
-  const handleNext = () => {
-    if (currentIndex < items.length - 1) {
-      const newIndex = currentIndex + 1;
-      setCurrentIndex(newIndex);
-      if (items[newIndex]) {
-        if (collectionId) {
-          navigate(
-            `${buildCollectionStudyPath("explore", collectionId, collectionInfo?.name, items[newIndex].id)}${exploreItemSearch}`,
-            { replace: true }
-          );
-        } else if (category) {
-          navigate(`/explore/${categoryNameToSlug(category)}/item/${items[newIndex].id}${exploreItemSearch}`, { replace: true });
-        } else {
-          navigate(`/explore/item/${items[newIndex].id}${exploreItemSearch}`, { replace: true });
-        }
-      }
-    }
-  };
+  const backFooter = collectionId ? (
+    <button
+      onClick={() => collectionListPath && navigate(collectionListPath)}
+      className="text-indigo-600 hover:text-indigo-700"
+      type="button"
+    >
+      ← Back to collection
+    </button>
+  ) : returnUrl ? (
+    <button
+      onClick={() => navigate(returnUrl)}
+      className="text-indigo-600 hover:text-indigo-700"
+      type="button"
+    >
+      ← Back
+    </button>
+  ) : (
+    <Link to="/categories" className="text-indigo-600 hover:text-indigo-700">
+      ← Categories
+    </Link>
+  );
 
   return (
     <div className="py-4 sm:py-6">
@@ -500,27 +746,27 @@ const ExploreModePage = () => {
               navigate(`${categoryScopePath}${categoryListSearch}`);
             else navigate("/categories");
           } else if (mode === "quiz") {
-            const targetItemId = currentItem?.id ?? items[0]?.id;
-            if (items.length > 0 && targetItemId) {
+            const targetItemId = currentItem?.id ?? sourceDeck[0]?.id;
+            if (sourceDeck.length > 0 && targetItemId) {
               const payload = {
                 mode: "quiz" as const,
                 category: category,
-                items: items,
-                currentIndex: currentIndex,
+                items: sourceDeck,
+                currentIndex: Math.max(0, deckIndex),
               };
               sessionStorage.setItem("navigationContext_quiz", JSON.stringify(payload));
               sessionStorage.setItem("quiz_scope_items_from_categories", JSON.stringify(payload));
             }
             if (collectionId)
               navigate(
-                `${buildCollectionStudyPath("quiz", collectionId, collectionInfo?.name, currentItem?.id ?? items[0]?.id)}${search}`
+                `${buildCollectionStudyPath("quiz", collectionId, collectionInfo?.name, currentItem?.id ?? sourceDeck[0]?.id)}${search}`
               );
             else if (category)
               navigate(
-                `/quiz/${categoryNameToSlug(category)}/item/${currentItem?.id ?? items[0]?.id}${search}`
+                `/quiz/${categoryNameToSlug(category)}/item/${currentItem?.id ?? sourceDeck[0]?.id}${search}`
               );
-            else if (items[0])
-              navigate(`/quiz/item/${currentItem?.id ?? items[0].id}${search}`);
+            else if (sourceDeck[0])
+              navigate(`/quiz/item/${currentItem?.id ?? sourceDeck[0].id}${search}`);
           }
         }}
       />
@@ -543,7 +789,7 @@ const ExploreModePage = () => {
           </div>
           <div className="flex flex-wrap items-center gap-4">
             <div className="text-sm text-gray-600">
-              {collectionInfo.itemCount ?? items.length} items
+              {collectionInfo.itemCount ?? sourceDeck.length} items
             </div>
             {ratingData && (
               <div className="flex items-center gap-2">
@@ -592,7 +838,7 @@ const ExploreModePage = () => {
               onNavigate={(path) => navigate(path)}
             />
           }
-          count={items.length}
+          count={sourceDeck.length}
           hint="Flashcards-style study mode for reviewing quiz items."
         />
       )}
@@ -602,11 +848,14 @@ const ExploreModePage = () => {
           onClick={() => setShowDetails(false)}
         >
           <div
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="collection-details-title"
             className="relative top-24 mx-auto p-5 border w-full max-w-md shadow-lg rounded-md bg-white"
             onClick={(e) => e.stopPropagation()}
           >
             <div className="flex justify-between items-center mb-4">
-              <h3 className="text-lg font-medium text-gray-900">Collection details</h3>
+              <h3 id="collection-details-title" className="text-lg font-medium text-gray-900">Collection details</h3>
               <button
                 onClick={() => setShowDetails(false)}
                 className="text-gray-400 hover:text-gray-500"
@@ -645,7 +894,37 @@ const ExploreModePage = () => {
           </div>
         </div>
       )}
+      {showSummary ? (
+        <FlashcardsDeckSummary
+          isLoopRound={run.loopIds !== null}
+          counts={counts}
+          onStudyPile={handleStudyPile}
+          onRestart={handleRestart}
+          backContent={backFooter}
+        />
+      ) : (
       <StudyShell
+        headerExtra={
+          canShuffle ? (
+            <button
+              type="button"
+              role="switch"
+              aria-checked={shuffleOn}
+              onClick={handleShuffleToggle}
+              className="inline-flex items-center gap-2 rounded-md px-1 py-1 text-sm text-gray-700 focus:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500"
+            >
+              <span
+                aria-hidden="true"
+                className={`relative inline-block h-5 w-9 rounded-full transition-colors ${shuffleOn ? "bg-indigo-600" : "bg-gray-300"}`}
+              >
+                <span
+                  className={`absolute top-0.5 h-4 w-4 rounded-full bg-white shadow transition-all ${shuffleOn ? "left-4.5" : "left-0.5"}`}
+                />
+              </span>
+              Shuffle
+            </button>
+          ) : undefined
+        }
         backContent={
           <>
             {!category && !collectionId && returnUrl && (
@@ -672,8 +951,10 @@ const ExploreModePage = () => {
         totalCount={items.length}
         onPrev={handlePrev}
         onNext={handleNext}
+        nextLabel={isLastCard ? "Finish" : undefined}
+        roundLabel={run.loopIds ? "Still learning" : undefined}
         isPrevDisabled={currentIndex === 0}
-        isNextDisabled={currentIndex >= items.length - 1}
+        isNextDisabled={false}
         currentItem={currentItem ?? undefined}
         navigationContext={navigationContext}
         onOpenComments={(id) => setCommentsDrawerItemId(id)}
@@ -695,57 +976,71 @@ const ExploreModePage = () => {
             </div>
           ) : undefined
         }
-        footerContent={
-          collectionId ? (
-            <button
-              onClick={() => collectionListPath && navigate(collectionListPath)}
-              className="text-indigo-600 hover:text-indigo-700"
-              type="button"
-            >
-              ← Back to collection
-            </button>
-          ) : returnUrl ? (
-            <button
-              onClick={() => navigate(returnUrl)}
-              className="text-indigo-600 hover:text-indigo-700"
-              type="button"
-            >
-              ← Back
-            </button>
-          ) : (
-            <Link to="/categories" className="text-indigo-600 hover:text-indigo-700">
-              ← Categories
-            </Link>
-          )
-        }
+        footerContent={backFooter}
+        onOpenShortcuts={openHelp}
       >
-        {currentItem && <ExploreRenderer item={currentItem} onReveal={handleFlashcardRevealed} />}
+        {currentItem && (
+          <>
+            <ExploreRenderer
+              key={`${run.roundKey}:${currentItem.id}`}
+              item={currentItem}
+              onReveal={handleFlashcardRevealed}
+              grade={run.grades[currentItem.id]}
+              onGrade={handleGrade}
+              isFlipped={isFlipped}
+              onFlippedChange={setIsFlipped}
+            />
+            <p role="status" aria-live="polite" className="min-h-5 text-sm text-gray-600">
+              {enqueueStatus?.itemId === currentItem.id && (
+                <>
+                  {enqueueStatus.kind === "added" && "Added to Review"}
+                  {enqueueStatus.kind === "unavailable" && "This card can't be added to Review"}
+                  {enqueueStatus.kind === "failed" && (
+                    <>
+                      Couldn't add to Review. It stays in this session's pile.{" "}
+                      <button
+                        type="button"
+                        onClick={() => {
+                          clearEnqueueStatus();
+                          startEnqueue(currentItem.id, true);
+                        }}
+                        className="font-medium text-indigo-600 underline hover:text-indigo-800"
+                      >
+                        Retry
+                      </button>
+                    </>
+                  )}
+                </>
+              )}
+            </p>
+          </>
+        )}
       </StudyShell>
+      )}
 
+      <StudyHotkeysDialog open={isHelpOpen} onClose={closeHelp} shortcuts={showSummary ? [] : FLASHCARD_SHORTCUTS} />
       <CommentsDrawer
         itemId={commentsDrawerItemId}
         onClose={() => setCommentsDrawerItemId(null)}
         onNavigateToItem={(targetId) => {
           const idx = items.findIndex((i) => i.id === targetId);
-          if (idx !== -1) {
-            setCurrentIndex(idx);
-            setCommentsDrawerItemId(targetId);
-          }
+          if (idx !== -1) setCurrentIndex(idx);
+          if (sourceDeck.some((i) => i.id === targetId)) setCommentsDrawerItemId(targetId);
         }}
         previousItemId={
           commentsDrawerItemId
             ? (() => {
-                const idx = items.findIndex((i) => i.id === commentsDrawerItemId);
-                return idx > 0 ? items[idx - 1]?.id ?? null : null;
+                const idx = sourceDeck.findIndex((i) => i.id === commentsDrawerItemId);
+                return idx > 0 ? sourceDeck[idx - 1]?.id ?? null : null;
               })()
             : null
         }
         nextItemId={
           commentsDrawerItemId
             ? (() => {
-                const idx = items.findIndex((i) => i.id === commentsDrawerItemId);
-                return idx >= 0 && idx < items.length - 1
-                  ? items[idx + 1]?.id ?? null
+                const idx = sourceDeck.findIndex((i) => i.id === commentsDrawerItemId);
+                return idx >= 0 && idx < sourceDeck.length - 1
+                  ? sourceDeck[idx + 1]?.id ?? null
                   : null;
               })()
             : null

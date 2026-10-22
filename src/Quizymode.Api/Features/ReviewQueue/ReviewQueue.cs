@@ -29,6 +29,11 @@ public static class ReviewQueue
 
     public sealed record AnswerRequest(bool IsCorrect);
 
+    /// <param name="ItemId">The queued item.</param>
+    /// <param name="IntervalDays">Days until the item is due (always the first interval).</param>
+    /// <param name="DueAt">When the item is due (UTC).</param>
+    public sealed record EnqueueResponse(Guid ItemId, int IntervalDays, DateTime DueAt);
+
     /// <param name="ItemId">The answered item.</param>
     /// <param name="Applied">False when the entry was not due (for example a repeated submit); nothing changed.</param>
     /// <param name="Graduated">True when a correct review at the last interval removed the item from the queue.</param>
@@ -55,6 +60,17 @@ public static class ReviewQueue
                 .RequireAuthorization()
                 .Produces<SummaryResponse>(StatusCodes.Status200OK)
                 .Produces(StatusCodes.Status401Unauthorized);
+
+            app.MapPost("review-queue/{itemId:guid}", EnqueueHandler)
+                .WithTags("ReviewQueue")
+                .WithSummary("Add an item to the current user's review queue")
+                .WithDescription("Queues a public item, or the caller's own private item, at the first interval, due one day from now; an item already queued is reset to the first interval. Repeat calls keep one entry. A missing item, another user's private item and an item that cannot be played as a quiz question all return the same 404. Requires authentication.")
+                .RequireAuthorization()
+                .RequireRateLimiting("review-queue-enqueue")
+                .Produces<EnqueueResponse>(StatusCodes.Status200OK)
+                .Produces(StatusCodes.Status401Unauthorized)
+                .Produces(StatusCodes.Status404NotFound)
+                .Produces(StatusCodes.Status429TooManyRequests);
 
             app.MapPost("review-queue/{itemId:guid}/answers", AnswerHandler)
                 .WithTags("ReviewQueue")
@@ -88,6 +104,22 @@ public static class ReviewQueue
                 return CustomResults.Unauthorized();
             }
             return Results.Ok(await GetSummaryAsync(db, userContext.UserId, DateTime.UtcNow, cancellationToken));
+        }
+
+        private static async Task<IResult> EnqueueHandler(
+            Guid itemId,
+            ApplicationDbContext db,
+            IUserContext userContext,
+            CancellationToken cancellationToken)
+        {
+            if (!userContext.IsAuthenticated || string.IsNullOrEmpty(userContext.UserId))
+            {
+                return CustomResults.Unauthorized();
+            }
+            EnqueueResponse? response = await EnqueueOneAsync(db, userContext.UserId, itemId, DateTime.UtcNow, cancellationToken);
+            return response is null
+                ? CustomResults.NotFound("This item can't be added to your review queue.", "Review item not found")
+                : Results.Ok(response);
         }
 
         private static async Task<IResult> AnswerHandler(
@@ -137,6 +169,34 @@ public static class ReviewQueue
         }
     }
 
+    /// <summary>
+    /// Queues one item the caller can see and play (#251). Returns null for a missing, not-visible or unplayable
+    /// item, without creating an entry.
+    /// </summary>
+    internal static async Task<EnqueueResponse?> EnqueueOneAsync(
+        ApplicationDbContext db,
+        string userId,
+        Guid itemId,
+        DateTime nowUtc,
+        CancellationToken cancellationToken)
+    {
+        Item? item = await db.Items.AsNoTracking()
+            .FirstOrDefaultAsync(i => i.Id == itemId, cancellationToken);
+        if (item is null
+            || !ItemVisibility.IsVisibleTo(item, userId)
+            || !QuizPlayability.IsPlayable(item.CorrectAnswer, item.IncorrectAnswers))
+        {
+            return null;
+        }
+
+        await EnqueueMissesAsync(db, userId, [itemId], nowUtc, cancellationToken);
+        ReviewQueueEntry? entry = await db.ReviewQueueEntries.AsNoTracking()
+            .FirstOrDefaultAsync(e => e.UserId == userId && e.ItemId == itemId, cancellationToken);
+        return entry is null
+            ? null
+            : new EnqueueResponse(itemId, IntervalDays[entry.IntervalIndex], DateTime.SpecifyKind(entry.DueAt, DateTimeKind.Utc));
+    }
+
     private static async Task UpsertMissesAsync(
         ApplicationDbContext db,
         string userId,
@@ -146,8 +206,10 @@ public static class ReviewQueue
     {
         var versions = await db.Items.AsNoTracking()
             .Where(i => ids.Contains(i.Id))
-            .Select(i => new { i.Id, i.UpdatedAt, i.CreatedAt })
+            .Select(i => new { i.Id, i.UpdatedAt, i.CreatedAt, i.CorrectAnswer, i.IncorrectAnswers })
             .ToListAsync(cancellationToken);
+        // #251: unplayable legacy items (no usable distractor) are never queued.
+        versions = versions.Where(v => QuizPlayability.IsPlayable(v.CorrectAnswer, v.IncorrectAnswers)).ToList();
         Dictionary<Guid, ReviewQueueEntry> existing = await db.ReviewQueueEntries
             .Where(e => e.UserId == userId && ids.Contains(e.ItemId))
             .ToDictionaryAsync(e => e.ItemId, cancellationToken);

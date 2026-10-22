@@ -1,7 +1,12 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 import type { ItemResponse } from "@/types/api";
+import { useStudyHotkeys } from "@/components/study/useStudyHotkeys";
+import { StudyHotkeysDialog } from "@/components/study/StudyHotkeysDialog";
+import { QUIZ_SHORTCUTS } from "@/components/study/studyShortcuts";
+import { StudyHotkeysHint } from "@/components/study/StudyHotkeysHint";
 import { QuizRenderer } from "@/components/study/QuizRenderer";
 import { QuizCompletionView } from "@/features/items/quiz/QuizCompletionView";
+import type { ResultShareDescriptor } from "@/features/items/quiz/resultShare";
 import {
   createQuizRun,
   getQuizOptions,
@@ -32,6 +37,8 @@ export interface FixedSetQuizProps {
   onAnswer?: (item: ItemResponse, isCorrect: boolean, run: QuizRunState) => void;
   /** Called once per run when every item has an answer. */
   onComplete?: (run: QuizRunState) => void;
+  /** Builds the Share result descriptor for the finished run; omitted for the review queue (no Share). */
+  share?: (run: QuizRunState) => ResultShareDescriptor | null;
 }
 
 function newRun(items: ItemResponse[], identityKey: string): QuizRunState {
@@ -55,6 +62,7 @@ export function FixedSetQuiz({
   browseLabel,
   onAnswer,
   onComplete,
+  share,
 }: FixedSetQuizProps) {
   const [run, setRun] = useState<QuizRunState>(() => newRun(items, identityKey));
   const [index, setIndex] = useState(0);
@@ -116,8 +124,28 @@ export function FixedSetQuiz({
     requestAnimationFrame(() => questionHeadingRef.current?.focus());
   };
 
+  const isLast = index === items.length - 1;
+  const isActive = run.view === "active" && !!item;
+  const canGoNext = !isLast && Boolean(outcome);
+  const { isHelpOpen, openHelp, closeHelp } = useStudyHotkeys({
+    enabled: true,
+    letter: isActive && !outcome ? (i) => options[i] !== undefined && handleAnswer(options[i]) : undefined,
+    digit: isActive && !outcome ? (n) => options[n - 1] !== undefined && handleAnswer(options[n - 1]) : undefined,
+    prev: isActive && index > 0 ? () => goTo(index - 1) : undefined,
+    next: isActive && !summary.isComplete && canGoNext ? () => goTo(index + 1) : undefined,
+    enter:
+      isActive && outcome
+        ? () => {
+            if (summary.isComplete) setRun((current) => reduceQuizRun(current, { type: "show-summary" }));
+            else if (canGoNext) goTo(index + 1);
+          }
+        : undefined,
+  });
+  const helpDialog = <StudyHotkeysDialog open={isHelpOpen} onClose={closeHelp} shortcuts={isActive ? QUIZ_SHORTCUTS : []} />;
+
   if (run.view !== "active") {
     return (
+      <>
       <QuizCompletionView
         run={run}
         items={items}
@@ -129,22 +157,28 @@ export function FixedSetQuiz({
           setRun(newRun(items, identityKey));
           setIndex(0);
         }}
+        share={run.view === "summary" ? share?.(run) : null}
+        analyticsContext={context}
       />
+      {helpDialog}
+      </>
     );
   }
 
   if (!item) return null;
-  const isLast = index === items.length - 1;
 
   return (
     <section className="mx-auto max-w-2xl rounded-lg bg-white p-4 shadow sm:p-6" aria-label="Quiz">
-      <div className="mb-3 flex items-center justify-between gap-3 text-sm text-gray-600">
+      <div className="mb-3 flex flex-wrap items-center justify-between gap-3 text-sm text-gray-600">
         <p ref={questionHeadingRef} tabIndex={-1} className="font-semibold text-gray-800 focus:outline-none" aria-live="polite">
           Question {index + 1} of {items.length}
         </p>
-        <p>
-          {summary.correct} correct · {summary.answered} answered
-        </p>
+        <div className="flex items-center gap-2">
+          <p>
+            {summary.correct} correct · {summary.answered} answered
+          </p>
+          <StudyHotkeysHint onClick={openHelp} />
+        </div>
       </div>
       <QuizRenderer
         item={item}
@@ -182,6 +216,7 @@ export function FixedSetQuiz({
           </button>
         )}
       </div>
+      {helpDialog}
     </section>
   );
 }

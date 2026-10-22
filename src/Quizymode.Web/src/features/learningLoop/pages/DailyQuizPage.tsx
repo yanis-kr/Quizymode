@@ -7,6 +7,7 @@ import { useAuth } from "@/contexts/AuthContext";
 import { dailyQuizApi } from "@/api/learningLoop";
 import { saveStudySession } from "@/features/studySessions/recordStudySession";
 import { summarizeQuizRun, type QuizRunState } from "@/features/items/quiz/quizRun";
+import { buildDailyShare } from "@/features/items/quiz/resultShare";
 import { FixedSetQuiz } from "../FixedSetQuiz";
 import { computeStreak, readDailyCompletions, recordLocalDailyCompletion } from "../localLearningState";
 
@@ -168,6 +169,13 @@ const DailyQuizPage = () => {
               browsePath="/categories"
               browseLabel="Browse categories"
               onComplete={(run) => void handleComplete(run)}
+              share={(run) =>
+                buildDailyShare({
+                  date: data.date,
+                  results: run.itemIds.map((id) => run.outcomes[id]?.isCorrect === true),
+                  origin: window.location.origin,
+                })
+              }
             />
           </>
         )}

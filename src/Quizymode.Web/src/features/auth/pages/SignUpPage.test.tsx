@@ -101,6 +101,7 @@ describe("SignUpPage", () => {
     ["create-content", /create private items/i],
     ["join-discussion", /join the discussion/i],
     ["save-progress", /quiz scores are not saved to accounts yet/i],
+    ["review-later", /review queue that brings them back/i],
   ])("renders truthful copy for reason=%s", (reason, expectedText) => {
     renderPage(`/signup?reason=${reason}`);
     expect(screen.getByText(expectedText)).toBeInTheDocument();

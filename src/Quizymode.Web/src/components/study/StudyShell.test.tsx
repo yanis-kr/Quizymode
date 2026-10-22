@@ -85,4 +85,33 @@ describe("StudyShell", () => {
       "/items/item-1?return=%2Fquiz%2Fcollections%2Fcollection-1%2Fsample%2Bcollection%2Fitem%2Fitem-1%3Fkeywords%3Dspace&returnMode=quiz"
     );
   });
+
+  it("labels Next as Finish on the button and the chevron, and shows the round label", () => {
+    render(
+      <MemoryRouter>
+        <StudyShell
+          currentIndex={1}
+          totalCount={2}
+          onPrev={() => {}}
+          onNext={() => {}}
+          nextLabel="Finish"
+          roundLabel="Still learning"
+          isPrevDisabled={false}
+          isNextDisabled={false}
+          currentItem={item}
+          onOpenComments={() => {}}
+          onOpenManageCollections={() => {}}
+          isAuthenticated={false}
+        >
+          <div>Body</div>
+        </StudyShell>
+      </MemoryRouter>
+    );
+
+    expect(screen.getAllByRole("button", { name: "Finish" })).toHaveLength(2);
+    expect(screen.getByTitle("Finish")).toBeInTheDocument();
+    expect(screen.queryByRole("button", { name: "Next" })).toBeNull();
+    expect(screen.getByLabelText("2 of 2, Still learning round")).toHaveTextContent("2 of 2");
+    expect(screen.getByText("Still learning")).toBeInTheDocument();
+  });
 });
