@@ -28,7 +28,7 @@ public static class DeleteCurrentStudyGuide
         {
             if (!userContext.IsAuthenticated || string.IsNullOrEmpty(userContext.UserId))
             {
-                return Results.Unauthorized();
+                return CustomResults.Unauthorized();
             }
 
             Result result = await HandleAsync(db, userContext.UserId, cancellationToken);

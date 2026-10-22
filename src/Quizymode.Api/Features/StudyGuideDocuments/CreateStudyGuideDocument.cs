@@ -1,3 +1,4 @@
+using Quizymode.Api.Shared.Http;
 using System.Security.Cryptography;
 using System.Text;
 using System.Text.Json;
@@ -131,7 +132,7 @@ public static class CreateStudyGuideDocument
         {
             if (!userContext.IsAuthenticated || string.IsNullOrEmpty(userContext.UserId))
             {
-                return Results.Unauthorized();
+                return CustomResults.Unauthorized();
             }
 
             Request request = new(

@@ -4,6 +4,9 @@ using FluentAssertions;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Routing;
+using Microsoft.Extensions.DependencyInjection;
+using Quizymode.Api.Features.Users;
+using Quizymode.Api.Services;
 using Quizymode.Api.Tests.TestFixtures;
 using Xunit;
 
@@ -159,5 +162,36 @@ public sealed class AuthChallengeProblemDetailsTests : DatabaseTestFixture, IAsy
         {
             response.StatusCode.Should().Be(HttpStatusCode.OK);
         }
+    }
+
+    [Fact]
+    public async Task ValidToken_WithUnresolvedUserId_HandlerReturns401ProblemDetailsWithoutInvalidToken()
+    {
+        await using JwtHttpTestHost host = await JwtHttpTestHost.StartAsync(
+            CreateDbContext,
+            services => services.AddScoped<IUserContext, UnresolvedUserContext>(),
+            app => new GetCurrentUser.Endpoint().MapEndpoint(app));
+
+        using HttpRequestMessage request = JwtHttpTestHost.Request(
+            HttpMethod.Get, "/users/me", host.CreateToken("sub-unresolved", "x@test.invalid"));
+        using HttpResponseMessage response = await host.Client.SendAsync(request);
+        string body = await response.Content.ReadAsStringAsync();
+
+        AssertProblem(response, body, HttpStatusCode.Unauthorized, "Unauthorized");
+        if (response.Headers.TryGetValues("WWW-Authenticate", out IEnumerable<string>? challenges))
+        {
+            challenges.Should().NotContain(value => value.Contains("invalid_token"));
+        }
+
+        AssertNoTokenInternals(response, body);
+    }
+
+    private sealed class UnresolvedUserContext : IUserContext
+    {
+        public bool IsAuthenticated => true;
+
+        public string? UserId => null;
+
+        public bool IsAdmin => false;
     }
 }

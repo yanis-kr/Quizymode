@@ -1,3 +1,4 @@
+using Quizymode.Api.Shared.Http;
 using FluentValidation;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging.Abstractions;
@@ -107,7 +108,7 @@ public static class AcceptStudyGuideCandidates
         {
             if (!userContext.IsAuthenticated || string.IsNullOrEmpty(userContext.UserId))
             {
-                return Results.Unauthorized();
+                return CustomResults.Unauthorized();
             }
 
             FluentValidation.Results.ValidationResult validation = await validator.ValidateAsync(request, cancellationToken);

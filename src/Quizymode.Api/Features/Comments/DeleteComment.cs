@@ -32,7 +32,7 @@ public static class DeleteComment
         {
             if (!userContext.IsAuthenticated || string.IsNullOrEmpty(userContext.UserId))
             {
-                return Results.Unauthorized();
+                return CustomResults.Unauthorized();
             }
 
             Result result = await HandleAsync(id, db, userContext, auditService, cancellationToken);

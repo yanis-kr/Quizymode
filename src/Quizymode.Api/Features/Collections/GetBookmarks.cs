@@ -36,7 +36,7 @@ public static class GetBookmarks
         {
             if (!userContext.IsAuthenticated || string.IsNullOrEmpty(userContext.UserId))
             {
-                return Results.Unauthorized();
+                return CustomResults.Unauthorized();
             }
 
             Result<Response> result = await HandleAsync(db, userContext, cancellationToken);

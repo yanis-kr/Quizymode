@@ -30,7 +30,7 @@ public static class BookmarkCollection
         {
             if (!userContext.IsAuthenticated || string.IsNullOrEmpty(userContext.UserId))
             {
-                return Results.Unauthorized();
+                return CustomResults.Unauthorized();
             }
 
             Result result = await HandleAsync(id, db, userContext, cancellationToken);

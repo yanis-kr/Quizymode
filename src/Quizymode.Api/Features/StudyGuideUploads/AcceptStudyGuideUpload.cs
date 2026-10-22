@@ -72,7 +72,7 @@ public static class AcceptStudyGuideUpload
         {
             if (!userContext.IsAuthenticated || string.IsNullOrEmpty(userContext.UserId))
             {
-                return Results.Unauthorized();
+                return CustomResults.Unauthorized();
             }
 
             FluentValidation.Results.ValidationResult validation = await validator.ValidateAsync(request, cancellationToken);

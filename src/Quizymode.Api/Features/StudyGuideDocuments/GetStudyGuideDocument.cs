@@ -1,3 +1,4 @@
+using Quizymode.Api.Shared.Http;
 using System.Text.Json;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Options;
@@ -38,7 +39,7 @@ public static class GetStudyGuideDocument
         {
             if (!userContext.IsAuthenticated || string.IsNullOrEmpty(userContext.UserId))
             {
-                return Results.Unauthorized();
+                return CustomResults.Unauthorized();
             }
 
             StudyGuideDocumentContracts.Document? response = await HandleAsync(

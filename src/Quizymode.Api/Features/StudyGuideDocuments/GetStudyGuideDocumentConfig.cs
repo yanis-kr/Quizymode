@@ -1,3 +1,4 @@
+using Quizymode.Api.Shared.Http;
 using Microsoft.Extensions.Options;
 using Quizymode.Api.Data;
 using Quizymode.Api.Features.StudyGuideDocuments.Generation;
@@ -44,7 +45,7 @@ public static class GetStudyGuideDocumentConfig
         {
             if (!userContext.IsAuthenticated || string.IsNullOrEmpty(userContext.UserId))
             {
-                return Results.Unauthorized();
+                return CustomResults.Unauthorized();
             }
 
             return Results.Ok(await HandleAsync(
