@@ -76,6 +76,17 @@ export function trackQuestionAnswered(run: QuizRunState, itemId: string, isCorre
   });
 }
 
+/**
+ * Test (AC 3.18.11): one `question_answered` per answered question, sent once at submit with the final
+ * correctness; unanswered questions send nothing. Call before `trackQuizRunCompleted`, which flushes them.
+ */
+export function trackTestQuestionsAnswered(run: QuizRunState): void {
+  for (const itemId of run.itemIds) {
+    const outcome = run.outcomes[itemId];
+    if (outcome) trackQuestionAnswered(run, itemId, outcome.isCorrect);
+  }
+}
+
 /** One `quiz_completed` per run, sent alongside the in-app completion notice after any held answers. */
 export function trackQuizRunCompleted(snapshot: QuizCompletionSnapshot): void {
   flushDeferredAnalyticsEvents();

@@ -100,4 +100,28 @@ describe("QuizRenderer", () => {
     expect(wrong.querySelector('svg[aria-hidden="true"]')).not.toBeNull();
     expect(screen.getByRole("button", { name: /^C\. 5$/ }).querySelector("svg")).toBeNull();
   });
+
+  it("hides every feedback surface when revealFeedback is false and marks the selection with aria-pressed", () => {
+    // AC 3.18.3
+    render(
+      <QuizRenderer
+        item={{ ...mockItem, correctAnswerSpeech: [{ text: "four", lang: "en" }] } as never}
+        options={["3", "4", "5", "6"]}
+        selectedAnswer="3"
+        showAnswer={true}
+        revealFeedback={false}
+        onAnswerSelect={vi.fn()}
+        stats={{ total: 1, correct: 0 }}
+      />
+    );
+    expect(screen.getByRole("button", { name: /^A. 3$/ })).toHaveAttribute("aria-pressed", "true");
+    expect(screen.getByRole("button", { name: /^B. 4$/ })).toHaveAttribute("aria-pressed", "false");
+    expect(screen.getByRole("button", { name: /^B. 4$/ })).toBeEnabled();
+    expect(screen.queryByText(/Correct Answer/)).toBeNull();
+    expect(screen.queryByText("Basic addition.")).toBeNull();
+    expect(screen.queryByText(/Score:/)).toBeNull();
+    expect(screen.queryByRole("button", { name: "Read answer aloud" })).toBeNull();
+    const html = document.body.innerHTML;
+    expect(html).not.toMatch(/bg-green|bg-red|border-green|border-red/);
+  });
 });

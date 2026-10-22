@@ -34,8 +34,12 @@ import { getCategoryScopeModeConfig } from "@/features/categories/utils/category
 import { getStudyScopeKeywords } from "@/features/items/utils/studyScopeParams";
 import { QuizCompletionView } from "@/features/items/quiz/QuizCompletionView";
 import { useStudyHotkeys } from "@/components/study/useStudyHotkeys";
+import { ModeSwitchDialog, QuizModeToggle } from "@/features/items/quiz/test/QuizModeToggle";
+import { TestRunView } from "@/features/items/quiz/test/TestRunView";
+import { TestSetupCard } from "@/features/items/quiz/test/TestSetupCard";
+import { useTestCountdown } from "@/features/items/quiz/test/useTestCountdown";
 import { StudyHotkeysDialog } from "@/components/study/StudyHotkeysDialog";
-import { QUIZ_SHORTCUTS } from "@/components/study/studyShortcuts";
+import { QUIZ_SHORTCUTS, TEST_SHORTCUTS } from "@/components/study/studyShortcuts";
 import { flushDeferredAnalyticsEvents } from "@/features/analytics/analyticsEvents";
 import { buildRunShare } from "@/features/items/quiz/resultShare";
 import {
@@ -43,11 +47,13 @@ import {
   trackQuestionAnswered,
   trackQuizRunCompleted,
   trackQuizRunStarted,
+  trackTestQuestionsAnswered,
 } from "@/features/items/quiz/quizAnalytics";
 import {
   createQuizRun,
   getQuizOptions,
   isQuizPlayable,
+  isTestInProgress,
   publishQuizCompletion,
   seedQuizRoster,
   reduceQuizRun,
@@ -56,11 +62,15 @@ import {
   summarizeQuizRun,
   toCompletionSnapshot,
   uniqueItemIds,
+  TEST_MAX_QUESTIONS,
+  type QuizRunMode,
   type QuizRunScope,
   type QuizRunState,
 } from "@/features/items/quiz/quizRun";
 import { recordGuestCompletion } from "@/features/guestHistory/guestHistoryStorage";
 import { recordAuthenticatedCompletion } from "@/features/studySessions/recordStudySession";
+
+const TEST_RESTORE_NOTICE = "We could not restore your earlier test, so we started a new one.";
 
 /** Quiz item URL for the current scope; Prev/Next, the initial sync and the deep-link rewrite all share it. */
 function buildQuizItemPath(
@@ -93,8 +103,10 @@ const QuizModePage = () => {
     () => getStudyScopeKeywords(searchParams, hasCategoryScope),
     [searchParams, hasCategoryScope]
   );
-  /** Query string for quiz item URLs; preserves keywords, return, and scope filter params across prev/next and mode switch */
-  const quizItemSearch = useMemo(() => {
+  /** AC 3.18.1: the URL holds the mode; anything but mode=test is Practice. */
+  const mode: QuizRunMode = searchParams.get("mode") === "test" ? "test" : "practice";
+  /** Query string for study URLs (Explore, Learn, quiz); preserves keywords, return, and scope filter params. Never carries mode. */
+  const studySearch = useMemo(() => {
     const params = new URLSearchParams();
     if (returnUrl) params.set("return", returnUrl);
     if (hasCategoryScope && (hasExplicitNavParam || navigationKeywords.length > 0)) {
@@ -121,12 +133,22 @@ const QuizModePage = () => {
     keywords,
     searchParams,
   ]);
+  /** Quiz item URLs also keep mode=test across Next, Prev, palette jumps, the initial sync and size changes. */
+  const searchForMode = (target: QuizRunMode): string =>
+    target === "test" ? `${studySearch}${studySearch ? "&" : "?"}mode=test` : studySearch;
+  const quizItemSearch = searchForMode(mode);
   const { isAuthenticated, isLoading: isAuthLoading, userId } = useAuth();
   const identityKey = isAuthenticated ? `user:${userId ?? "unknown"}` : "guest";
   const previousIdentityKey = useRef(identityKey);
   const [currentIndex, setCurrentIndex] = useState(0);
   const [run, setRun] = useState<QuizRunState | null>(null);
   const [runRestartNotice, setRunRestartNotice] = useState<string | null>(null);
+  /** Mode the user asked for while a run with answers exists; waits for the confirmation (AC 3.18.1). */
+  const [pendingMode, setPendingMode] = useState<QuizRunMode | null>(null);
+  /** Time limit kept for the setup card after Play again (AC 3.18.10). */
+  const [carriedLimitSec, setCarriedLimitSec] = useState<number | null>(null);
+  /** Mode requested by the switch handler until the URL catches up; keeps a stale-mode run from being recreated. */
+  const pendingSwitchRef = useRef<QuizRunMode | null>(null);
   const completionPublishedRunIds = useRef(new Set<string>());
   /** Quiz uses random N items (default 10); changing this refetches items */
   const [quizSize, setQuizSize] = useState(10);
@@ -431,7 +453,7 @@ const QuizModePage = () => {
 
   // Use full list if available (when category/collection is present), otherwise use stored items or fetched items
   // Never use singleItemData when storedItems exists (restoring from sessionStorage)
-  const availableItems = useMemo(() => {
+  const playableItems = useMemo(() => {
     const loadedItems = collectionId
       ? collectionData?.items ?? []
       : storedItems ||
@@ -458,11 +480,16 @@ const QuizModePage = () => {
     singleItemData,
     storedItems,
   ]);
+  // AC 3.18.2: a Test uses the first 500 playable items so every analytics event stays inside the API limits.
+  const availableItems = useMemo(
+    () => (mode === "test" ? playableItems.slice(0, TEST_MAX_QUESTIONS) : playableItems),
+    [mode, playableItems],
+  );
   const items = useMemo(() => {
-    if (!run || !sameQuizScope(run.scope, runScope)) return availableItems;
+    if (!run || !sameQuizScope(run.scope, runScope) || run.mode !== mode) return availableItems;
     const byId = new Map(availableItems.map((item) => [item.id, item]));
     return run.itemIds.map((id) => byId.get(id)).filter((item): item is (typeof availableItems)[number] => Boolean(item));
-  }, [availableItems, run, runScope]);
+  }, [availableItems, mode, run, runScope]);
 
   // Wait for the random roster (and, for a category link, the category name it depends on) so a
   // one-item run is never created and then replaced (#278). A categories error stops the wait.
@@ -538,14 +565,15 @@ const QuizModePage = () => {
 
   useEffect(() => {
     if (isLoadingItems || availableItems.length === 0) return;
+    if (pendingSwitchRef.current !== null && pendingSwitchRef.current !== mode) return;
     const roster = uniqueItemIds(availableItems);
-    if (run && run.identityKey === identityKey && sameQuizScope(run.scope, runScope)) {
+    if (run && run.identityKey === identityKey && sameQuizScope(run.scope, runScope) && run.mode === mode) {
       const allRunItemsStillAvailable = run.itemIds.every((id) => roster.includes(id));
       if (allRunItemsStillAvailable || summarizeQuizRun(run).isComplete) return;
       // The API roster is authoritative; synchronously replace a now-invalid active run.
       // eslint-disable-next-line react-hooks/set-state-in-effect
       setRunRestartNotice("Some questions from the saved run are no longer available, so a new run was started.");
-      setRun(createQuizRun(runScope, roster, identityKey));
+      setRun(createQuizRun(runScope, roster, identityKey, mode));
       setCurrentIndex(0);
       return;
     }
@@ -554,18 +582,27 @@ const QuizModePage = () => {
       const raw = sessionStorage.getItem("navigationContext_quiz");
       if (raw) {
         const context = JSON.parse(raw);
-        const restored = restoreQuizRun(context.quizRun, runScope, roster, identityKey);
+        const restored = restoreQuizRun(context.quizRun, runScope, roster, identityKey, mode);
         if (restored) {
           setRun(restored);
           return;
+        }
+        // AC 3.18.7: an earlier run of this scope that cannot be restored as a Test starts a new one with a notice.
+        if (
+          mode === "test" &&
+          context.quizRun?.identityKey === identityKey &&
+          sameQuizScope(context.quizRun?.scope, runScope)
+        ) {
+          setRunRestartNotice(TEST_RESTORE_NOTICE);
         }
       }
     } catch {
       // Storage is an optional restoration aid; gameplay remains in memory.
     }
 
-    setRun(createQuizRun(runScope, roster, identityKey));
-  }, [availableItems, identityKey, isLoadingItems, run, runScope]);
+    if (pendingSwitchRef.current === mode) pendingSwitchRef.current = null;
+    setRun(createQuizRun(runScope, roster, identityKey, mode));
+  }, [availableItems, identityKey, isLoadingItems, mode, run, runScope]);
 
   // Persist the validated run for URL navigation, item details, comments, and reload restoration.
   useEffect(() => {
@@ -594,7 +631,7 @@ const QuizModePage = () => {
     if (!itemId || isLoadingItems || items.length === 0) return;
     // Wait for collection details so the canonical slug can be included in the rewritten URL.
     if (collectionId && collectionInfoLoading) return;
-    if (!run || !sameQuizScope(run.scope, runScope)) return;
+    if (!run || !sameQuizScope(run.scope, runScope) || run.mode !== mode) return;
     // The run is about to be replaced (roster shrank); wait for the new run's items.
     if (items.length !== run.itemIds.length) return;
     if (items.some((candidate) => candidate.id === itemId)) return;
@@ -613,6 +650,7 @@ const QuizModePage = () => {
     items,
     run,
     runScope,
+    mode,
     currentIndex,
     collectionId,
     collectionInfo?.name,
@@ -651,7 +689,8 @@ const QuizModePage = () => {
   // Answers are sent in batches; leaving the quiz (in-app navigation) sends any still held.
   useEffect(() => () => flushDeferredAnalyticsEvents(), []);
   useEffect(() => {
-    if (!run || startTrackedRunId.current === run.runId) return;
+    // AC 3.18.2: a Test starts on Start test, not when its setup card appears.
+    if (!run || (run.mode === "test" && run.startedAt === null) || startTrackedRunId.current === run.runId) return;
     startTrackedRunId.current = run.runId;
     trackQuizRunStarted(run);
   }, [run]);
@@ -662,6 +701,7 @@ const QuizModePage = () => {
     if (!snapshot) return;
     completionPublishedRunIds.current.add(run.runId);
     publishQuizCompletion(snapshot);
+    if (run.mode === "test") trackTestQuestionsAnswered(run);
     trackQuizRunCompleted(snapshot);
     // Browser-local guest history (AC 3.6.13): only runs started and completed anonymously; upserted by run ID.
     recordGuestCompletion(snapshot, {
@@ -684,7 +724,23 @@ const QuizModePage = () => {
   }, [run, isAuthenticated, isAuthLoading, identityKey]);
 
   const handleAnswerSelect = (answer: string) => {
-    if (!run || !currentItem || currentOutcome) return;
+    if (!run || !currentItem) return;
+    if (run.mode === "test") {
+      // AC 3.18.3: the last answer before submit counts; nothing is sent per change (AC 3.18.11).
+      setRun((current) =>
+        current
+          ? reduceQuizRun(current, {
+              type: "answer",
+              itemId: currentItem.id,
+              selectedAnswer: answer,
+              isCorrect: answer === currentItem.correctAnswer,
+              completedAt: new Date().toISOString(),
+            })
+          : current
+      );
+      return;
+    }
+    if (currentOutcome) return;
     // Only the first answer per item is scored and reported (AC 5.5.2); later clicks return above.
     trackQuestionAnswered(run, currentItem.id, answer === currentItem.correctAnswer);
     setRun((current) =>
@@ -734,12 +790,77 @@ const QuizModePage = () => {
 
   const handlePlayAgain = () => {
     if (!run) return;
-    const replay = createQuizRun(run.scope, run.itemIds, identityKey);
+    const replay = createQuizRun(run.scope, run.itemIds, identityKey, run.mode);
+    // AC 3.18.10: a Test returns to the setup card with the same time limit.
+    setCarriedLimitSec(run.mode === "test" ? run.timeLimitSec : null);
     setRun(replay);
     setRunRestartNotice(null);
     setCurrentIndex(0);
     navigateToRunItem(0);
   };
+
+  /** AC 3.18.1: the mode lives in the URL; a switch always starts a new run. */
+  const applyModeChange = (target: QuizRunMode) => {
+    pendingSwitchRef.current = target;
+    setPendingMode(null);
+    setRun(null);
+    setRunRestartNotice(null);
+    setCarriedLimitSec(null);
+    setCurrentIndex(0);
+    try {
+      sessionStorage.removeItem("navigationContext_quiz");
+    } catch {
+      // Storage is optional; the new in-memory run still starts normally.
+    }
+    const firstId = availableItems[0]?.id;
+    const search = searchForMode(target);
+    if (firstId) {
+      navigate(
+        buildQuizItemPath({ collectionId, collectionName: collectionInfo?.name, category, search }, firstId),
+        { replace: true }
+      );
+    } else if (collectionId) {
+      navigate(`${buildCollectionStudyPath("quiz", collectionId, collectionInfo?.name)}${search}`, { replace: true });
+    } else {
+      navigate(category ? `/quiz/${categoryNameToSlug(category)}${search}` : `/quiz${search}`, { replace: true });
+    }
+  };
+
+  const requestModeChange = (target: QuizRunMode) => {
+    if (target === mode) return;
+    const hasAnswers = run !== null && Object.keys(run.outcomes).length > 0;
+    if (hasAnswers) setPendingMode(target);
+    else applyModeChange(target);
+  };
+
+  const handleStartTest = (timeLimitSec: number | null) => {
+    setRun((current) =>
+      current ? reduceQuizRun(current, { type: "start-test", startedAt: new Date().toISOString(), timeLimitSec }) : current
+    );
+  };
+
+  const handleSubmitTest = () => {
+    setRun((current) =>
+      current ? reduceQuizRun(current, { type: "submit", submittedAt: new Date().toISOString(), reason: "manual" }) : current
+    );
+  };
+
+  const handleToggleFlag = () => {
+    if (!currentItem) return;
+    setRun((current) => (current ? reduceQuizRun(current, { type: "toggle-flag", itemId: currentItem.id }) : current));
+  };
+
+  const handleJump = (index: number) => {
+    setCurrentIndex(index);
+    navigateToRunItem(index);
+  };
+
+  // AC 3.18.6: wall-clock countdown; at zero (also after a reload past the deadline) submit at the deadline.
+  const remainingSec = useTestCountdown(run, (deadlineIso) =>
+    setRun((current) =>
+      current ? reduceQuizRun(current, { type: "submit", submittedAt: deadlineIso, reason: "timeout" }) : current
+    )
+  );
 
   const handleCollectionChange = (
     changedItemId: string,
@@ -796,15 +917,23 @@ const QuizModePage = () => {
   };
 
   const hasNextQuestion = currentIndex < items.length - 1;
-  const isQuestionActive = run?.view === "active" && !!currentItem;
+  const isTestRun = run?.mode === "test";
+  const testInProgress = run !== null && isTestInProgress(run);
+  // A Test has no question until Start test (AC 3.18.2).
+  const isQuestionActive = run?.view === "active" && !!currentItem && (!isTestRun || testInProgress);
   const { isHelpOpen, openHelp, closeHelp } = useStudyHotkeys({
     enabled: true,
-    letter: isQuestionActive && !showAnswer ? (index) => options[index] !== undefined && handleAnswerSelect(options[index]) : undefined,
-    digit: isQuestionActive && !showAnswer ? (n) => options[n - 1] !== undefined && handleAnswerSelect(options[n - 1]) : undefined,
+    letter: isQuestionActive && (isTestRun || !showAnswer) ? (index) => options[index] !== undefined && handleAnswerSelect(options[index]) : undefined,
+    digit: isQuestionActive && (isTestRun || !showAnswer) ? (n) => options[n - 1] !== undefined && handleAnswerSelect(options[n - 1]) : undefined,
     prev: isQuestionActive && currentIndex > 0 ? handlePrev : undefined,
     next: isQuestionActive && hasNextQuestion ? handleNext : undefined,
-    enter:
-      isQuestionActive && showAnswer
+    // AC 3.18.5: in a Test, Enter only ever means Next; no key opens or confirms Submit.
+    flag: isQuestionActive && isTestRun ? handleToggleFlag : undefined,
+    enter: isTestRun
+      ? isQuestionActive && hasNextQuestion
+        ? handleNext
+        : undefined
+      : isQuestionActive && showAnswer
         ? () => {
             if (runSummary?.isComplete) {
               setRun((current) => (current ? reduceQuizRun(current, { type: "show-summary" }) : current));
@@ -834,6 +963,27 @@ const QuizModePage = () => {
     return (
       <ErrorMessage message="Failed to load items" onRetry={() => refetch()} />
     );
+  if (items.length === 0 && mode === "test") {
+    return (
+      <div className="py-4 sm:py-6">
+        <div className="text-center py-12">
+          <p className="text-gray-700 mb-4">No multiple-choice questions are available for Test here.</p>
+          <div className="flex flex-col items-center gap-2">
+            <button
+              type="button"
+              onClick={() => applyModeChange("practice")}
+              className="text-indigo-600 hover:text-indigo-700"
+            >
+              Switch to Practice
+            </button>
+            <Link to="/categories" className="text-indigo-600 hover:text-indigo-700">
+              Browse categories
+            </Link>
+          </div>
+        </div>
+      </div>
+    );
+  }
   if (items.length === 0) {
     return (
       <div className="py-4 sm:py-6">
@@ -892,6 +1042,7 @@ const QuizModePage = () => {
           browsePath={collectionListPath ?? categoryScopePath}
           browseLabel={collectionListPath ? "Back to collection" : "Browse topic"}
           onReviewMistakes={() => setRun((current) => current ? reduceQuizRun(current, { type: "review-mistakes" }) : current)}
+          onReviewAll={() => setRun((current) => current ? reduceQuizRun(current, { type: "review-all" }) : current)}
           onBackToResults={() => setRun((current) => current ? reduceQuizRun(current, { type: "show-summary" }) : current)}
           onPlayAgain={handlePlayAgain}
           share={
@@ -915,23 +1066,61 @@ const QuizModePage = () => {
     );
   }
 
+  // AC 3.18.3: while a Test is running the List/Explore/Sets switch is hidden so the answer cannot be reached.
+  const showScopeBar = !testInProgress;
+  const modeControls = (
+    <div className="flex w-full flex-wrap items-center gap-x-4 gap-y-2">
+      <QuizModeToggle mode={mode} onChange={requestModeChange} />
+      {!collectionId && (
+        <label className="flex items-center gap-2 text-sm text-gray-700">
+          <span>Quiz size:</span>
+          <input
+            type="number"
+            min={1}
+            max={1000}
+            value={quizSizeInput}
+            disabled={testInProgress}
+            onChange={(e) => setQuizSizeInput(e.target.value)}
+            onBlur={(e) => handleQuizSizeChange(e.target.value)}
+            className="w-16 rounded-md border border-gray-300 px-2 py-1 text-sm disabled:bg-gray-100 disabled:text-gray-500"
+          />
+        </label>
+      )}
+    </div>
+  );
+  const studyFooter = collectionId ? (
+    <button
+      onClick={() => collectionListPath && navigate(collectionListPath)}
+      className="text-indigo-600 hover:text-indigo-700"
+      type="button"
+    >
+      ← Back to collection
+    </button>
+  ) : (
+    <Link to="/categories" className="text-indigo-600 hover:text-indigo-700">
+      ← Categories
+    </Link>
+  );
+  const studyDescription = !category || !!collectionId ? "Test your knowledge with interactive quizzes." : undefined;
+
   return (
     <div className="py-3 sm:py-4">
+      {showScopeBar && (
       <ScopeSecondaryBar
         scopeType={collectionId ? "collection" : "category"}
         activeMode="quiz"
         availableModes={categoryAvailableModes}
-        onModeChange={(mode) => {
-          const search = quizItemSearch;
-          if (mode === "sets") {
+        onModeChange={(viewMode) => {
+          const search = studySearch;
+          if (viewMode === "sets") {
             if (category) navigate(categoryScopePath);
             else navigate("/categories");
-          } else if (mode === "list") {
+          } else if (viewMode === "list") {
             if (collectionId && collectionListPath) navigate(collectionListPath);
             else if (category)
               navigate(`${categoryScopePath}${categoryListSearch}`);
             else navigate("/categories");
-          } else if (mode === "explore") {
+          } else if (viewMode === "explore") {
             if (collectionId)
               navigate(
                 `${buildCollectionStudyPath("explore", collectionId, collectionInfo?.name, currentItem?.id ?? items[0]?.id)}${search}`
@@ -942,7 +1131,7 @@ const QuizModePage = () => {
               );
             else if (items[0])
               navigate(`/explore/item/${currentItem?.id ?? items[0].id}${search}`);
-          } else if (mode === "learn") {
+          } else if (viewMode === "learn") {
             if (collectionId)
               navigate(`${buildCollectionStudyPath("learn", collectionId, collectionInfo?.name)}${search}`);
             else if (category)
@@ -951,6 +1140,7 @@ const QuizModePage = () => {
           }
         }}
       />
+      )}
       {collectionId && collectionInfo && (
         <div className="flex flex-wrap items-center justify-between gap-4 mt-4 mb-4">
           <div className="min-w-0">
@@ -1080,32 +1270,48 @@ const QuizModePage = () => {
           {runRestartNotice}
         </div>
       )}
+      {run.mode === "test" && run.startedAt === null ? (
+        <div className="mx-auto max-w-4xl">
+          <div className="mb-4 rounded-lg bg-white p-4 shadow">{modeControls}</div>
+          <TestSetupCard
+            key={run.runId}
+            count={items.length}
+            availableCount={playableItems.length}
+            requestedSize={collectionId ? null : quizSize}
+            initialLimitSec={carriedLimitSec}
+            onStart={handleStartTest}
+          />
+          <div className="mt-4 text-center">{studyFooter}</div>
+        </div>
+      ) : testInProgress ? (
+        <TestRunView
+          run={run}
+          items={items}
+          currentIndex={currentIndex}
+          remainingSec={remainingSec}
+          onPrev={handlePrev}
+          onNext={handleNext}
+          onJump={handleJump}
+          onAnswer={handleAnswerSelect}
+          onToggleFlag={handleToggleFlag}
+          onSubmit={handleSubmitTest}
+          shell={{
+            backContent: <></>,
+            description: studyDescription,
+            headerExtra: modeControls,
+            navigationContext,
+            onOpenComments: (id) => setCommentsDrawerItemId(id),
+            onOpenManageCollections: (id) => setSelectedItemForCollections(id),
+            isAuthenticated,
+            onOpenShortcuts: openHelp,
+            footerContent: studyFooter,
+          }}
+        />
+      ) : (
       <StudyShell
-        backContent={
-          <>
-          </>
-        }
-        description={
-          !category || !!collectionId
-            ? "Test your knowledge with interactive quizzes."
-            : undefined
-        }
-        headerExtra={
-          !collectionId ? (
-            <label className="flex items-center gap-2 text-sm text-gray-700">
-              <span>Quiz size:</span>
-              <input
-                type="number"
-                min={1}
-                max={1000}
-                value={quizSizeInput}
-                onChange={(e) => setQuizSizeInput(e.target.value)}
-                onBlur={(e) => handleQuizSizeChange(e.target.value)}
-                className="w-16 rounded-md border border-gray-300 px-2 py-1 text-sm"
-              />
-            </label>
-          ) : undefined
-        }
+        backContent={<></>}
+        description={studyDescription}
+        headerExtra={modeControls}
         currentIndex={currentIndex}
         totalCount={items.length}
         onPrev={handlePrev}
@@ -1120,21 +1326,7 @@ const QuizModePage = () => {
         isAuthenticated={isAuthenticated}
         showRatingsAndCollections={showAnswer}
         onOpenShortcuts={openHelp}
-        footerContent={
-          collectionId ? (
-            <button
-              onClick={() => collectionListPath && navigate(collectionListPath)}
-              className="text-indigo-600 hover:text-indigo-700"
-              type="button"
-            >
-              ← Back to collection
-            </button>
-          ) : (
-            <Link to="/categories" className="text-indigo-600 hover:text-indigo-700">
-              ← Categories
-            </Link>
-          )
-        }
+        footerContent={studyFooter}
       >
         {currentItem && (
           <>
@@ -1161,8 +1353,16 @@ const QuizModePage = () => {
           </>
         )}
       </StudyShell>
+      )}
+      {pendingMode && (
+        <ModeSwitchDialog
+          target={pendingMode}
+          onKeep={() => setPendingMode(null)}
+          onConfirm={() => applyModeChange(pendingMode)}
+        />
+      )}
 
-      <StudyHotkeysDialog open={isHelpOpen} onClose={closeHelp} shortcuts={QUIZ_SHORTCUTS} />
+      <StudyHotkeysDialog open={isHelpOpen} onClose={closeHelp} shortcuts={isTestRun ? TEST_SHORTCUTS : QUIZ_SHORTCUTS} />
       <CommentsDrawer
         itemId={commentsDrawerItemId}
         onClose={() => setCommentsDrawerItemId(null)}

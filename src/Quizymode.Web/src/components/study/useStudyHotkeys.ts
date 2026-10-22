@@ -14,6 +14,8 @@ export interface StudyHotkeyBindings {
   digit?: (n: number) => void;
   /** A-D, passed as 0-3. */
   letter?: (index: number) => void;
+  /** F: toggles the review flag in Test (AC 3.18.4). */
+  flag?: () => void;
 }
 
 const INTERACTIVE_SELECTOR = 'button, a[href], [role="button"], [role="switch"], summary';
@@ -76,6 +78,8 @@ export function useStudyHotkeys(bindings: StudyHotkeyBindings): {
             const handler = current.digit;
             action = () => handler(digit);
           }
+        } else if (/^[fF]$/.test(event.key)) {
+          action = current.flag;
         } else if (/^[a-dA-D]$/.test(event.key) && current.letter) {
           const handler = current.letter;
           const index = event.key.toLowerCase().charCodeAt(0) - 97;

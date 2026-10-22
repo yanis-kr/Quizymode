@@ -70,6 +70,22 @@ describe("useStudyHotkeys", () => {
     expect(letter.mock.calls).toEqual([[1], [3]]);
   });
 
+  it("maps F to the flag binding and ignores it without one", () => {
+    const flag = vi.fn();
+    render(<Harness bindings={{ flag }} />);
+    press(document.body, { key: "f", code: "KeyF" });
+    press(document.body, { key: "F", code: "KeyF", shiftKey: true });
+    expect(flag).toHaveBeenCalledTimes(2);
+    const idle = press(document.body, { key: "f", code: "KeyF" });
+    expect(flag).toHaveBeenCalledTimes(3);
+    expect(idle.defaultPrevented).toBe(true);
+  });
+
+  it("does nothing for F when no flag binding is set", () => {
+    render(<Harness bindings={{}} />);
+    expect(press(document.body, { key: "f", code: "KeyF" }).defaultPrevented).toBe(false);
+  });
+
   it("is ignored in text fields, with modifiers, composing, repeating, or already handled", () => {
     const next = vi.fn();
     render(<Harness bindings={{ next }} />);

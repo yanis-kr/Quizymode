@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import type { ItemResponse } from "@/types/api";
 import type { QuizRunState } from "./quizRun";
 import { summarizeQuizRun } from "./quizRun";
+import { formatDuration } from "./test/testSetup";
 import { SignupPrompt } from "@/features/auth/components/SignupPrompt";
 import { celebratePerfectScore } from "./celebrate";
 import { scoreTier, type ResultShareDescriptor } from "./resultShare";
@@ -15,6 +16,8 @@ interface QuizCompletionViewProps {
   browsePath: string;
   browseLabel: string;
   onReviewMistakes: () => void;
+  /** Test only: lists every question in roster order (AC 3.18.8). */
+  onReviewAll?: () => void;
   onBackToResults: () => void;
   onPlayAgain: () => void;
   /** What Share result sends; omitted (for example for the review queue) hides the button. */
@@ -29,6 +32,7 @@ export function QuizCompletionView({
   browsePath,
   browseLabel,
   onReviewMistakes,
+  onReviewAll,
   onBackToResults,
   onPlayAgain,
   share,
@@ -44,29 +48,57 @@ export function QuizCompletionView({
   const tier = scoreTier(summary.percentage, summary.total);
   const isPerfect = tier?.id === "perfect";
   const isSummaryView = run.view === "summary";
+  const isTest = run.mode === "test";
+  const elapsedSec =
+    isTest && run.startedAt && run.submittedAt
+      ? Math.max(0, Math.round((Date.parse(run.submittedAt) - Date.parse(run.startedAt)) / 1000))
+      : null;
 
   // After the heading has focus: one burst per run for a perfect score.
   useEffect(() => {
     if (isSummaryView && isPerfect) void celebratePerfectScore(run.runId);
   }, [isSummaryView, isPerfect, run.runId]);
 
-  if (run.view === "review") {
+  if (run.view === "review" || run.view === "review-all") {
     const itemsById = new Map(items.map((item) => [item.id, item]));
-    const unavailableCount = summary.missedItemIds.filter((itemId) => !itemsById.has(itemId)).length;
+    const isReviewAll = run.view === "review-all";
+    const listedIds = isReviewAll ? run.itemIds : summary.missedItemIds;
+    const unavailableCount = listedIds.filter((itemId) => !itemsById.has(itemId)).length;
+    const flagged = new Set(run.flagged);
+    const backButton = (
+      <button type="button" onClick={onBackToResults} className="rounded-md bg-indigo-600 px-4 py-2 font-semibold text-white hover:bg-indigo-700 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500 focus-visible:ring-offset-2">
+        Back to results
+      </button>
+    );
     return (
       <section className="mx-auto max-w-4xl rounded-lg bg-white p-4 shadow sm:p-6">
         <h2 ref={headingRef} tabIndex={-1} className="text-2xl font-bold text-gray-900 focus:outline-none">
-          Review mistakes
+          {isReviewAll ? "Review all" : "Review mistakes"}
         </h2>
+        {isReviewAll && <div className="mt-3">{backButton}</div>}
         <div className="mt-4 space-y-4">
-          {summary.missedItemIds.map((itemId) => {
+          {listedIds.map((itemId) => {
             const item = itemsById.get(itemId);
             const outcome = run.outcomes[itemId];
-            if (!item || !outcome) return null;
+            if (!item || (!outcome && !isTest)) return null;
+            const position = run.itemIds.indexOf(itemId) + 1;
             return (
               <article key={itemId} className="rounded-lg border border-gray-200 p-4">
+                {isTest && (
+                  <div className="mb-2 flex flex-wrap items-center gap-2 text-xs font-medium">
+                    <span className="text-gray-600">Question {position}</span>
+                    <span className="rounded bg-gray-100 px-2 py-0.5 text-gray-700">
+                      {outcome ? (outcome.isCorrect ? "Correct" : "Incorrect") : "Not answered"}
+                    </span>
+                    {flagged.has(itemId) && <span className="rounded bg-amber-50 px-2 py-0.5 text-amber-800">Flagged</span>}
+                  </div>
+                )}
                 <h3 className="font-semibold text-gray-900">{item.question}</h3>
-                <p className="mt-2 text-sm text-red-700"><strong>Your answer:</strong> {outcome.selectedAnswer}</p>
+                {outcome && (
+                  <p className={`mt-2 text-sm ${outcome.isCorrect ? "text-green-700" : "text-red-700"}`}>
+                    <strong>Your answer:</strong> {outcome.selectedAnswer}
+                  </p>
+                )}
                 <p className="mt-1 text-sm text-green-700"><strong>Correct answer:</strong> {item.correctAnswer}</p>
                 {item.explanation && <p className="mt-2 text-sm text-gray-700">{item.explanation}</p>}
               </article>
@@ -75,12 +107,10 @@ export function QuizCompletionView({
         </div>
         {unavailableCount > 0 && (
           <p className="mt-4 rounded-md border border-amber-300 bg-amber-50 p-3 text-sm text-amber-900">
-            {unavailableCount} missed {unavailableCount === 1 ? "question is" : "questions are"} no longer available to review. Your completed score has not changed.
+            {unavailableCount} {isReviewAll ? "" : "missed "}{unavailableCount === 1 ? "question is" : "questions are"} no longer available to review. Your completed score has not changed.
           </p>
         )}
-        <button type="button" onClick={onBackToResults} className="mt-5 rounded-md bg-indigo-600 px-4 py-2 font-semibold text-white hover:bg-indigo-700 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500 focus-visible:ring-offset-2">
-          Back to results
-        </button>
+        <div className="mt-5">{backButton}</div>
       </section>
     );
   }
@@ -88,12 +118,31 @@ export function QuizCompletionView({
   return (
     <section className="mx-auto max-w-2xl rounded-lg bg-white p-4 text-center shadow sm:p-6">
       <h2 ref={headingRef} tabIndex={-1} className="text-2xl font-bold text-gray-900 focus:outline-none">
-        Quiz complete
+        {isTest ? "Test complete" : "Quiz complete"}
       </h2>
+      {isTest && run.submitReason === "timeout" && (
+        <p role="status" className="mt-3 rounded-md bg-amber-50 p-3 text-sm text-amber-900">
+          Time ran out. Your test was submitted automatically.
+        </p>
+      )}
       {tier && <p className="mt-2 text-lg font-semibold text-gray-800">{tier.label}</p>}
       <p className="mt-3 text-3xl font-bold text-indigo-700">{summary.correct} / {summary.total}</p>
-      <p className="mt-1 text-gray-700">{summary.percentage}% correct · {summary.missedItemIds.length} missed</p>
+      <p className="mt-1 text-gray-700">
+        {summary.percentage}% correct · {summary.missedItemIds.length} missed
+        {isTest && ` · ${summary.notAnswered} not answered`}
+      </p>
+      {isTest && elapsedSec !== null && (
+        <p className="mt-1 text-sm text-gray-700">
+          Time taken {formatDuration(elapsedSec)}
+          {run.timeLimitSec !== null && ` of ${formatDuration(run.timeLimitSec)}`}
+        </p>
+      )}
       <div className="mt-6 flex flex-col justify-center gap-3 sm:flex-row sm:flex-wrap">
+        {isTest && onReviewAll && (
+          <button type="button" onClick={onReviewAll} className="rounded-md border border-indigo-600 px-4 py-2 font-semibold text-indigo-700 hover:bg-indigo-50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500 focus-visible:ring-offset-2">
+            Review all
+          </button>
+        )}
         {summary.missedItemIds.length > 0 && (
           <button type="button" onClick={onReviewMistakes} className="rounded-md border border-indigo-600 px-4 py-2 font-semibold text-indigo-700 hover:bg-indigo-50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500 focus-visible:ring-offset-2">
             Review mistakes

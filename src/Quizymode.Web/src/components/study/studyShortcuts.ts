@@ -20,3 +20,9 @@ export const LEARN_SHORTCUTS: StudyShortcutHelp[] = [
   { keys: "1-4 or A-D", description: "Choose an answer" },
   { keys: "Enter", description: "Continue (after answering, and between rounds)" },
 ];
+
+export const TEST_SHORTCUTS: StudyShortcutHelp[] = [
+  { keys: "1-4 or A-D", description: "Choose or change an answer" },
+  { keys: "← / → or Enter", description: "Previous / next question" },
+  { keys: "F", description: "Flag or unflag the question for review" },
+];
