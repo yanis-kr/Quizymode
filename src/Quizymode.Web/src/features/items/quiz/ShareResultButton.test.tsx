@@ -71,7 +71,7 @@ describe("ShareResultButton", () => {
     renderButton();
     fireEvent.click(screen.getByRole("button", { name: "Copy" }));
     expect(await screen.findByText("Couldn't copy. Select the text above and copy it.")).toBeInTheDocument();
-    expect(screen.getByRole("textbox")).toHaveFocus();
+    await waitFor(() => expect(screen.getByRole("textbox")).toHaveFocus());
     expect(trackShared).not.toHaveBeenCalled();
   });
 
