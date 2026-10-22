@@ -1,4 +1,5 @@
 import type { ItemResponse } from "@/types/api";
+import { categoryNameToSlug } from "@/utils/categorySlug";
 
 export type FlashcardGrade = "got-it" | "still-learning";
 
@@ -42,4 +43,32 @@ export function summaryCounts(deck: readonly Pick<ItemResponse, "id">[], grades:
     else if (grades[item.id] === "still-learning") stillLearning += 1;
   }
   return { gotIt, stillLearning, notGraded: deck.length - gotIt - stillLearning };
+}
+
+interface SeedFlashcardDeckOptions {
+  /** Category slug from the URL (not the resolved name); undefined for a global deck. */
+  categorySlug?: string;
+  navigationKeywords: readonly string[];
+  filterKeywords: readonly string[];
+  maxItems: number;
+}
+
+/**
+ * AC 3.6.18 (#288): a cold deep link puts its entry card first in the random deck, without duplicates and
+ * within `maxItems`, when the card is public and in the deck's scope. Otherwise the random deck is unchanged.
+ */
+export function seedFlashcardDeck<T extends ItemResponse>(
+  randomItems: readonly T[],
+  linked: T | null | undefined,
+  options: SeedFlashcardDeckOptions
+): T[] {
+  const random = [...randomItems];
+  if (!linked || !linked.id || linked.isPrivate) return random;
+  if (options.filterKeywords.length > 0) return random;
+  if (options.categorySlug) {
+    if (options.navigationKeywords.length > 0) return random;
+    if (!linked.category) return random;
+    if (categoryNameToSlug(linked.category).toLowerCase() !== options.categorySlug.toLowerCase()) return random;
+  }
+  return [linked, ...random.filter((item) => item.id !== linked.id)].slice(0, options.maxItems);
 }
