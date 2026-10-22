@@ -16,15 +16,20 @@ internal static partial class StartupExtensions
             {
                 if (!context.HttpContext.Response.HasStarted)
                 {
+                    if (context.Lease.TryGetMetadata(MetadataName.RetryAfter, out TimeSpan retryAfter))
+                    {
+                        context.HttpContext.Response.Headers.RetryAfter =
+                            ((int)Math.Ceiling(retryAfter.TotalSeconds)).ToString(System.Globalization.CultureInfo.InvariantCulture);
+                    }
+
                     string detail = GetRejectionDetail(context.HttpContext.Request.Path);
-                    await context.HttpContext.Response.WriteAsJsonAsync(
-                        new
-                        {
-                            title = "Too Many Requests",
-                            status = StatusCodes.Status429TooManyRequests,
-                            detail
-                        },
-                        cancellationToken);
+                    context.HttpContext.Response.StatusCode = StatusCodes.Status429TooManyRequests;
+                    await Results.Problem(
+                            title: "Too Many Requests",
+                            detail: detail,
+                            type: "https://tools.ietf.org/html/rfc6585#section-4",
+                            statusCode: StatusCodes.Status429TooManyRequests)
+                        .ExecuteAsync(context.HttpContext);
                 }
             };
 

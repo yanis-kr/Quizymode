@@ -52,7 +52,7 @@ public static class AddOrUpdateCollectionRating
             CancellationToken cancellationToken)
         {
             if (!userContext.IsAuthenticated || string.IsNullOrEmpty(userContext.UserId))
-                return Results.Unauthorized();
+                return CustomResults.Unauthorized();
 
             var validationResult = await validator.ValidateAsync(request, cancellationToken);
             if (!validationResult.IsValid)

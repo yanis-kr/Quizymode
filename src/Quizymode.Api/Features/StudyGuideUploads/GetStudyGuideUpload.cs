@@ -1,3 +1,4 @@
+using Quizymode.Api.Shared.Http;
 using System.Text.Json;
 using Microsoft.EntityFrameworkCore;
 using Quizymode.Api.Data;
@@ -43,7 +44,7 @@ public static class GetStudyGuideUpload
         {
             if (!userContext.IsAuthenticated || string.IsNullOrEmpty(userContext.UserId))
             {
-                return Results.Unauthorized();
+                return CustomResults.Unauthorized();
             }
 
             Response? response = await HandleAsync(id, db, userContext.UserId, cancellationToken);

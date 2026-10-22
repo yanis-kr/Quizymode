@@ -1,3 +1,4 @@
+using Quizymode.Api.Shared.Http;
 using Microsoft.EntityFrameworkCore;
 using Quizymode.Api.Data;
 using Quizymode.Api.Services;
@@ -29,7 +30,7 @@ public static class ListStudyGuideDocuments
         {
             if (!userContext.IsAuthenticated || string.IsNullOrEmpty(userContext.UserId))
             {
-                return Results.Unauthorized();
+                return CustomResults.Unauthorized();
             }
 
             return Results.Ok(await HandleAsync(db, userContext.UserId, cancellationToken));

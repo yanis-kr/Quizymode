@@ -34,7 +34,7 @@ public static class GenerateChunks
             CancellationToken cancellationToken)
         {
             if (!userContext.IsAuthenticated || string.IsNullOrEmpty(userContext.UserId))
-                return Results.Unauthorized();
+                return CustomResults.Unauthorized();
 
             Result<Response?> result = await HandleAsync(id, db, userContext.UserId, chunkingService, promptBuilder, cancellationToken);
             return result.Match(

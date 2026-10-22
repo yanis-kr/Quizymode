@@ -1,3 +1,4 @@
+using Quizymode.Api.Shared.Http;
 using FluentValidation;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Options;
@@ -70,7 +71,7 @@ public static class GenerateStudyGuideSections
         {
             if (!userContext.IsAuthenticated || string.IsNullOrEmpty(userContext.UserId))
             {
-                return Results.Unauthorized();
+                return CustomResults.Unauthorized();
             }
 
             FluentValidation.Results.ValidationResult validation = await validator.ValidateAsync(request, cancellationToken);

@@ -156,7 +156,13 @@ public sealed class LearningLoopHttpTests : DatabaseTestFixture, IAsyncLifetime
         using (HttpResponseMessage rejected = await limited.Client.SendAsync(over))
         {
             rejected.StatusCode.Should().Be(HttpStatusCode.TooManyRequests);
-            (await rejected.Content.ReadAsStringAsync()).Should().Contain("Too many Review queue updates. Please slow down.");
+            rejected.Content.Headers.ContentType!.MediaType.Should().Be("application/problem+json");
+            rejected.Headers.Contains("Retry-After").Should().BeTrue();
+            using System.Text.Json.JsonDocument problem = System.Text.Json.JsonDocument.Parse(await rejected.Content.ReadAsStringAsync());
+            problem.RootElement.GetProperty("status").GetInt32().Should().Be(429);
+            problem.RootElement.GetProperty("title").GetString().Should().Be("Too Many Requests");
+            problem.RootElement.GetProperty("type").GetString().Should().Be("https://tools.ietf.org/html/rfc6585#section-4");
+            problem.RootElement.GetProperty("detail").GetString().Should().Be("Too many Review queue updates. Please slow down.");
         }
 
         using HttpRequestMessage other = JwtHttpTestHost.Request(HttpMethod.Post, $"/review-queue/{unknown}", userB);

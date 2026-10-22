@@ -31,7 +31,7 @@ public static class GetCollections
         {
             if (!userContext.IsAuthenticated || string.IsNullOrEmpty(userContext.UserId))
             {
-                return Results.Unauthorized();
+                return CustomResults.Unauthorized();
             }
 
             Result<Response> result = await HandleAsync(db, userContext, cancellationToken);

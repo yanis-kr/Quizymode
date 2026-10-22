@@ -39,7 +39,7 @@ public static class SubmitChunkResult
             CancellationToken cancellationToken)
         {
             if (!userContext.IsAuthenticated || string.IsNullOrEmpty(userContext.UserId))
-                return Results.Unauthorized();
+                return CustomResults.Unauthorized();
 
             Result<Response?> result = await HandleAsync(id, chunkIndex, request.RawResponseText, db, userContext.UserId, cancellationToken);
             return result.Match(

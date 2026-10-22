@@ -45,7 +45,7 @@ public static class GetImportSession
             CancellationToken cancellationToken)
         {
             if (!userContext.IsAuthenticated || string.IsNullOrEmpty(userContext.UserId))
-                return Results.Unauthorized();
+                return CustomResults.Unauthorized();
 
             Result<Response?> result = await HandleAsync(id, db, userContext.UserId, cancellationToken);
             return result.Match(

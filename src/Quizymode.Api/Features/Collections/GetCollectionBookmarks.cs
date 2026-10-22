@@ -36,7 +36,7 @@ public static class GetCollectionBookmarks
             CancellationToken cancellationToken)
         {
             if (!userContext.IsAuthenticated || string.IsNullOrEmpty(userContext.UserId))
-                return Results.Unauthorized();
+                return CustomResults.Unauthorized();
 
             Result<Response> result = await HandleAsync(id, db, userContext, cancellationToken);
             return result.Match(

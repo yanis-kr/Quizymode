@@ -107,7 +107,7 @@ public static class CreateStudyGuideUpload
         {
             if (!userContext.IsAuthenticated || string.IsNullOrEmpty(userContext.UserId))
             {
-                return Results.Unauthorized();
+                return CustomResults.Unauthorized();
             }
 
             if (!deepSeekOptions.Value.IsConfigured)

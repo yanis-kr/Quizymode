@@ -60,7 +60,7 @@ public static class AddCollection
             {
                 logger.LogWarning("Unauthorized attempt to create collection. IsAuthenticated: {IsAuthenticated}, UserId: {UserId}",
                     userContext.IsAuthenticated, userContext.UserId ?? "null");
-                return Results.Unauthorized();
+                return CustomResults.Unauthorized();
             }
 
             var validationResult = await validator.ValidateAsync(request, cancellationToken);
