@@ -48,6 +48,8 @@ export interface StudyShellProps {
   isAuthenticated: boolean;
   /** When false (e.g. quiz before answer), hide ratings and collection controls. Default true. */
   showRatingsAndCollections?: boolean;
+  /** Hides the "View item details" link (Test: the details page would show the answer). */
+  hideItemDetailsLink?: boolean;
   /** Opens the keyboard shortcuts dialog; shows the Shortcuts hint beside the details link. */
   onOpenShortcuts?: () => void;
   /** Footer (back to collection / categories) */
@@ -77,6 +79,7 @@ export function StudyShell({
   onCollectionChange,
   isAuthenticated,
   showRatingsAndCollections = true,
+  hideItemDetailsLink = false,
   footerContent,
   signUpPrompt,
   onOpenShortcuts,
@@ -143,7 +146,7 @@ export function StudyShell({
             </div>
             <div className="flex-1 basis-auto min-[400px]:basis-0 flex items-center justify-end gap-1">
               {onOpenShortcuts && <StudyHotkeysHint onClick={onOpenShortcuts} />}
-              {currentItem ? (
+              {currentItem && !hideItemDetailsLink ? (
                 <Link
                   to={itemDetailHref ?? `/items/${currentItem.id}`}
                   className="p-1.5 text-indigo-600 hover:bg-indigo-50 rounded-md"
@@ -151,7 +154,7 @@ export function StudyShell({
                 >
                   <EyeIcon className="h-5 w-5" />
                 </Link>
-              ) : (
+              ) : hideItemDetailsLink ? null : (
                 <span className="w-8" />
               )}
             </div>
