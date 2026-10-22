@@ -99,6 +99,9 @@ const EditItemPage = () => {
   });
 
   const [validationError, setValidationError] = useState<string>("");
+  const [savedAsPrivate, setSavedAsPrivate] = useState(false);
+  // #290: the server sends a non-admin owner's edit of a public item back to private (re-review).
+  const willBecomePrivate = !isAdmin && itemData?.isPrivate === false;
 
   useEffect(() => {
     if (itemData) {
@@ -142,6 +145,10 @@ const EditItemPage = () => {
         typeof variables?.category === "string" ? variables.category.trim() : "";
       if (cat) {
         queryClient.invalidateQueries({ queryKey: ["itemTagKeywords", cat] });
+      }
+      if (willBecomePrivate) {
+        setSavedAsPrivate(true);
+        return;
       }
       navigate("/categories");
     },
@@ -256,6 +263,28 @@ const EditItemPage = () => {
     );
   }
 
+  if (savedAsPrivate) {
+    return (
+      <div className="px-4 py-6 sm:px-0">
+        <div className="max-w-2xl mx-auto space-y-4">
+          <div
+            role="status"
+            className="rounded-md border border-amber-300 bg-amber-50 p-4 text-sm text-amber-900"
+          >
+            Your changes were saved. This item is now private again until an administrator approves it.
+          </div>
+          <button
+            type="button"
+            onClick={() => navigate("/categories")}
+            className="rounded-md bg-indigo-600 px-4 py-2 text-sm font-medium text-white hover:bg-indigo-700"
+          >
+            Back to categories
+          </button>
+        </div>
+      </div>
+    );
+  }
+
   return (
     <div className="px-4 py-6 sm:px-0">
       <div className="max-w-2xl mx-auto">
@@ -263,6 +292,15 @@ const EditItemPage = () => {
         <p className="text-gray-600 text-sm mb-6">
           Update the quiz item details. You can edit your own items; admins can edit any item.
         </p>
+
+        {willBecomePrivate && (
+          <div
+            role="note"
+            className="mb-4 rounded-md border border-amber-300 bg-amber-50 p-4 text-sm text-amber-900"
+          >
+            Saving changes will make this item private again until an administrator approves it.
+          </div>
+        )}
 
         <ItemForm
           mode="edit"

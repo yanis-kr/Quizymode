@@ -236,4 +236,104 @@ public sealed class ItemWriteOwnershipHttpTests : ItemTestFixture, IAsyncLifetim
         response.StatusCode.Should().Be(HttpStatusCode.Unauthorized);
         (await SnapshotAsync(item.Id)).Should().Be(before);
     }
+
+    [Fact]
+    public async Task Admin_EditingOthersItem_CreatesNewKeywordOwnedByItemCreator()
+    {
+        // AC 2.1.6 / K2 (#291)
+        Item item = await SeedItemAsync(isPrivate: true);
+
+        using HttpResponseMessage response = await SendAsync("update", item.Id.ToString(), AdminToken);
+
+        response.StatusCode.Should().Be(HttpStatusCode.OK);
+        await using ApplicationDbContext db = CreateDbContext();
+        List<Keyword> created = await db.Keywords.AsNoTracking().Where(k => k.Name == "brandnewkw").ToListAsync();
+        created.Should().ContainSingle();
+        created[0].CreatedBy.Should().Be(_ownerId.ToString());
+        created[0].IsPrivate.Should().BeTrue();
+    }
+
+    [Fact]
+    public async Task Admin_EditingOthersItem_ReusesCreatorsPrivateKeyword_NotAdminsOwn()
+    {
+        // AC 2.1.6 / K2 (#291)
+        Item item = await SeedItemAsync(isPrivate: true);
+        Keyword adminKw = NewPrivateKeyword("brandnewkw", _adminId.ToString());
+        Keyword ownerKw = NewPrivateKeyword("brandnewkw", _ownerId.ToString());
+        DbContext.Keywords.AddRange(adminKw, ownerKw);
+        await DbContext.SaveChangesAsync();
+
+        using HttpResponseMessage response = await SendAsync("update", item.Id.ToString(), AdminToken);
+
+        response.StatusCode.Should().Be(HttpStatusCode.OK);
+        await using ApplicationDbContext db = CreateDbContext();
+        List<Guid> attached = await db.ItemKeywords.AsNoTracking()
+            .Where(ik => ik.ItemId == item.Id).Select(ik => ik.KeywordId).ToListAsync();
+        attached.Should().Contain(ownerKw.Id).And.NotContain(adminKw.Id);
+        (await db.Keywords.CountAsync(k => k.Name == "brandnewkw")).Should().Be(2);
+    }
+
+    [Fact]
+    public async Task Owner_EditingOwnItem_CreatesNewKeywordOwnedByOwner()
+    {
+        // AC 2.1.6 (#291): unchanged behavior
+        Item item = await SeedItemAsync(isPrivate: true);
+
+        using HttpResponseMessage response = await SendAsync("update", item.Id.ToString(), OwnerToken);
+
+        response.StatusCode.Should().Be(HttpStatusCode.OK);
+        await using ApplicationDbContext db = CreateDbContext();
+        (await db.Keywords.AsNoTracking().SingleAsync(k => k.Name == "brandnewkw"))
+            .CreatedBy.Should().Be(_ownerId.ToString());
+    }
+
+    [Fact]
+    public async Task Admin_EditingOwnItem_CreatesNewKeywordOwnedByAdmin()
+    {
+        // AC 2.1.6 (#291): unchanged behavior
+        Item item = await CreateItemWithCategoryAsync(
+            Guid.NewGuid(), "geography", "Original?", "A", ["B"], "old", true, _adminId.ToString());
+
+        using HttpResponseMessage response = await SendAsync("update", item.Id.ToString(), AdminToken);
+
+        response.StatusCode.Should().Be(HttpStatusCode.OK);
+        await using ApplicationDbContext db = CreateDbContext();
+        (await db.Keywords.AsNoTracking().SingleAsync(k => k.Name == "brandnewkw"))
+            .CreatedBy.Should().Be(_adminId.ToString());
+    }
+
+    [Fact]
+    public async Task NonAdminOwner_EditingPublicItem_SetsItBackToPrivate()
+    {
+        // AC 2.1.6 (#290)
+        Item item = await SeedItemAsync(isPrivate: false);
+
+        using HttpResponseMessage response = await SendAsync("update", item.Id.ToString(), OwnerToken);
+
+        response.StatusCode.Should().Be(HttpStatusCode.OK);
+        (await SnapshotAsync(item.Id)).IsPrivate.Should().BeTrue();
+    }
+
+    [Fact]
+    public async Task Admin_EditingPublicItem_KeepsRequestedVisibility()
+    {
+        // AC 2.1.6 (#290)
+        Item item = await SeedItemAsync(isPrivate: false);
+
+        using HttpResponseMessage response = await SendAsync("update", item.Id.ToString(), AdminToken);
+
+        response.StatusCode.Should().Be(HttpStatusCode.OK);
+        (await SnapshotAsync(item.Id)).IsPrivate.Should().BeFalse();
+    }
+
+    private static Keyword NewPrivateKeyword(string name, string createdBy) => new()
+    {
+        Id = Guid.NewGuid(),
+        Name = name,
+        Slug = name,
+        IsPrivate = true,
+        CreatedBy = createdBy,
+        CreatedAt = DateTime.UtcNow,
+        IsReviewPending = true
+    };
 }
