@@ -2,12 +2,116 @@
  * Renders a single item in Quiz mode: question, answer options, feedback.
  */
 import { CheckCircleIcon, XCircleIcon } from "@heroicons/react/24/solid";
+import { useEffect, useRef, useState } from "react";
 import type { ItemResponse } from "@/types/api";
 import { SpeakButton } from "@/components/SpeakButton";
 import { useSpeech } from "@/hooks/useSpeech";
 import { PronunciationHint } from "@/components/items/PronunciationHint";
 import { ForeignPhraseText } from "@/components/ForeignPhraseText";
 import { getIndexedSpeech } from "@/utils/itemSpeech";
+import { toPlainText } from "@/utils/foreignPhrase";
+
+/** Result of a typed answer for the current item; `locked` once it has been recorded (no more override). */
+export interface TypedAnswerOutcome {
+  typed: string;
+  correct: boolean;
+  locked: boolean;
+}
+
+/** Practice-only Type answer option (AC 3.6.19). Omit it (Test, Daily, fixed sets) for multiple choice only. */
+export interface TypedAnswerControls {
+  isTypeable: boolean;
+  enabled: boolean;
+  onEnabledChange: (enabled: boolean) => void;
+  result: TypedAnswerOutcome | null;
+  onSubmit: (typed: string) => void;
+  onOverride: () => void;
+  onContinue: () => void;
+  continueLabel: string;
+}
+
+function TypedAnswerPanel({ item, controls }: { item: ItemResponse; controls: TypedAnswerControls }) {
+  const [text, setText] = useState("");
+  const continueRef = useRef<HTMLButtonElement>(null);
+  const { result } = controls;
+  const awaitingContinue = result !== null && !result.locked;
+  const canOverride = result !== null && !result.locked && !result.correct;
+
+  useEffect(() => {
+    if (awaitingContinue) continueRef.current?.focus();
+  }, [awaitingContinue]);
+
+  const submit = () => {
+    if (result || text.trim().length === 0) return;
+    controls.onSubmit(text);
+  };
+
+  return (
+    <div className="space-y-2">
+      <label htmlFor={`typed-answer-${item.id}`} className="block text-base font-medium text-gray-900">
+        Type your answer
+      </label>
+      <div className="flex gap-2">
+        <input
+          id={`typed-answer-${item.id}`}
+          type="text"
+          value={result ? result.typed : text}
+          onChange={(event) => setText(event.target.value)}
+          onKeyDown={(event) => {
+            if (event.key === "Enter") {
+              event.preventDefault();
+              submit();
+            }
+          }}
+          readOnly={result !== null}
+          autoComplete="off"
+          autoCorrect="off"
+          autoCapitalize="off"
+          spellCheck={false}
+          className="min-w-0 flex-1 rounded-md border border-gray-300 px-3 py-2 text-gray-900 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500"
+        />
+        {!result && (
+          <button
+            type="button"
+            onClick={submit}
+            disabled={text.trim().length === 0}
+            className="rounded-md bg-indigo-600 px-4 py-2 font-semibold text-white hover:bg-indigo-700 disabled:cursor-not-allowed disabled:opacity-50"
+          >
+            Check answer
+          </button>
+        )}
+      </div>
+      <div role="status" aria-live="polite">
+        {result && (
+          <p className={result.correct ? "font-medium text-green-800" : "font-medium text-red-800"}>
+            {result.correct ? "Correct." : "Incorrect."} Accepted answer: {toPlainText(item.correctAnswer)}
+          </p>
+        )}
+      </div>
+      {awaitingContinue && (
+        <div className="flex flex-wrap gap-2">
+          {canOverride && (
+            <button
+              type="button"
+              onClick={controls.onOverride}
+              className="rounded-md border border-gray-300 bg-white px-3 py-2 text-sm font-medium text-gray-700 hover:bg-gray-50"
+            >
+              I was right
+            </button>
+          )}
+          <button
+            ref={continueRef}
+            type="button"
+            onClick={controls.onContinue}
+            className="rounded-md bg-indigo-600 px-4 py-2 text-sm font-semibold text-white hover:bg-indigo-700"
+          >
+            {controls.continueLabel}
+          </button>
+        </div>
+      )}
+    </div>
+  );
+}
 
 export interface QuizRendererProps {
   item: ItemResponse;
@@ -21,6 +125,7 @@ export interface QuizRendererProps {
    * (aria-pressed), and no correctness, answer panel, score line or option pronunciation hint renders.
    */
   revealFeedback?: boolean;
+  typedAnswer?: TypedAnswerControls;
 }
 
 export function QuizRenderer({
@@ -31,8 +136,10 @@ export function QuizRenderer({
   onAnswerSelect,
   stats,
   revealFeedback = true,
+  typedAnswer,
 }: QuizRendererProps) {
   const { isSupported } = useSpeech();
+  const typedActive = typedAnswer !== undefined && (typedAnswer.enabled || typedAnswer.result !== null);
 
   return (
     <div className="space-y-3">
@@ -50,6 +157,23 @@ export function QuizRenderer({
         <PronunciationHint text={item.question} speech={item.questionSpeech} />
       </div>
 
+      {typedAnswer && !showAnswer && typedAnswer.isTypeable && (
+        <label className="flex items-center gap-2 text-sm text-gray-700">
+          <input
+            type="checkbox"
+            checked={typedAnswer.enabled}
+            onChange={(event) => typedAnswer.onEnabledChange(event.target.checked)}
+          />
+          Type answer
+        </label>
+      )}
+      {typedAnswer && !showAnswer && !typedAnswer.isTypeable && (
+        <p className="text-sm text-gray-500">This answer is too long to type, so choose an option.</p>
+      )}
+
+      {typedActive && typedAnswer && <TypedAnswerPanel key={item.id} item={item} controls={typedAnswer} />}
+
+      {!typedActive && (
       <div>
         <h3 className="text-base font-medium text-gray-900 mb-1">
           Select an answer:
@@ -118,6 +242,7 @@ export function QuizRenderer({
           })}
         </div>
       </div>
+      )}
 
       {revealFeedback && showAnswer && (
         <div className="p-3 bg-blue-50 rounded-lg">

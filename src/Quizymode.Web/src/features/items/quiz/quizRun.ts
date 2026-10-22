@@ -1,7 +1,9 @@
 import type { ItemResponse } from "@/types/api";
 import { categoryNameToSlug } from "@/utils/categorySlug";
 
-export const QUIZ_RUN_SCHEMA_VERSION = 2;
+export const QUIZ_RUN_SCHEMA_VERSION = 3;
+/** Snapshot versions restore accepts: v2 predates per-answer inputMode and restores as multiple choice (AC 3.6.12). */
+const RESTORABLE_SCHEMA_VERSIONS: readonly number[] = [2, QUIZ_RUN_SCHEMA_VERSION];
 export const QUIZ_COMPLETED_EVENT = "quizymode:quiz-completed";
 /** Test (AC 3.18): time limit bounds in seconds, and the roster cap set by the analytics 500 limit. */
 export const TEST_MIN_LIMIT_SEC = 60;
@@ -10,6 +12,7 @@ export const TEST_MAX_QUESTIONS = 500;
 
 export type QuizRunView = "active" | "summary" | "review" | "review-all";
 export type QuizRunMode = "practice" | "test";
+export type QuizInputMode = "choice" | "typed";
 export type TestSubmitReason = "manual" | "timeout";
 
 export type QuizRunScope =
@@ -26,6 +29,8 @@ export interface QuizAnswerOutcome {
   itemId: string;
   selectedAnswer: string;
   isCorrect: boolean;
+  /** How the answer was given: a multiple-choice option or a typed answer (AC 3.6.19). */
+  inputMode: QuizInputMode;
 }
 
 export interface QuizRunState {
@@ -78,7 +83,7 @@ export interface QuizCompletionSnapshot {
 }
 
 export type QuizRunAction =
-  | { type: "answer"; itemId: string; selectedAnswer: string; isCorrect: boolean; completedAt: string }
+  | { type: "answer"; itemId: string; selectedAnswer: string; isCorrect: boolean; completedAt: string; inputMode?: QuizInputMode }
   | { type: "start-test"; startedAt: string; timeLimitSec: number | null }
   | { type: "toggle-flag"; itemId: string }
   | { type: "submit"; submittedAt: string; reason: TestSubmitReason }
@@ -215,6 +220,7 @@ export function reduceQuizRun(run: QuizRunState, action: QuizRunAction): QuizRun
             itemId: action.itemId,
             selectedAnswer: action.selectedAnswer,
             isCorrect: action.isCorrect,
+            inputMode: action.inputMode ?? "choice",
           },
         },
       };
@@ -228,6 +234,7 @@ export function reduceQuizRun(run: QuizRunState, action: QuizRunAction): QuizRun
         itemId: action.itemId,
         selectedAnswer: action.selectedAnswer,
         isCorrect: action.isCorrect,
+        inputMode: action.inputMode ?? "choice",
       },
     };
     const isComplete = run.itemIds.every((itemId) => Boolean(outcomes[itemId]));
@@ -284,7 +291,8 @@ export function restoreQuizRun(
   if (!value || typeof value !== "object") return null;
   const candidate = value as Partial<QuizRunState>;
   if (
-    candidate.schemaVersion !== QUIZ_RUN_SCHEMA_VERSION ||
+    typeof candidate.schemaVersion !== "number" ||
+    !RESTORABLE_SCHEMA_VERSIONS.includes(candidate.schemaVersion) ||
     candidate.mode !== expectedMode ||
     typeof candidate.runId !== "string" ||
     candidate.runId.length === 0 ||
@@ -318,7 +326,17 @@ export function restoreQuizRun(
     ) {
       return null;
     }
-    outcomes[itemId] = outcome;
+    // v2 snapshots carry no inputMode: those answers were multiple choice. In v3 it is required and validated.
+    const inputMode: unknown = outcome.inputMode ?? ((candidate.schemaVersion as number) === 2 ? "choice" : undefined);
+    if (inputMode !== "choice" && inputMode !== "typed") return null;
+    // Test hides the answer until submit and has no typed input (AC 3.18.3).
+    if (inputMode === "typed" && expectedMode === "test") return null;
+    outcomes[itemId] = {
+      itemId,
+      selectedAnswer: outcome.selectedAnswer,
+      isCorrect: outcome.isCorrect,
+      inputMode,
+    };
   }
 
   const completedAt = candidate.completedAt;

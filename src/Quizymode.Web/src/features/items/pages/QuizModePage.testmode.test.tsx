@@ -465,7 +465,7 @@ describe("QuizModePage Test mode (AC 3.18)", () => {
       storedRun({
         startedAt: "2026-10-20T09:56:00.000Z",
         timeLimitSec: 600,
-        outcomes: { [GUID_1]: { itemId: GUID_1, selectedAnswer: "4", isCorrect: true } },
+        outcomes: { [GUID_1]: { itemId: GUID_1, selectedAnswer: "4", isCorrect: true, inputMode: "choice" } },
         flagged: [GUID_2],
       });
       renderPage(TEST_URL);
@@ -506,7 +506,7 @@ describe("QuizModePage Test mode (AC 3.18)", () => {
       storedRun({
         startedAt: "2026-10-20T09:00:00.000Z",
         timeLimitSec: 600,
-        outcomes: { [GUID_2]: { itemId: GUID_2, selectedAnswer: "Paris", isCorrect: true } },
+        outcomes: { [GUID_2]: { itemId: GUID_2, selectedAnswer: "Paris", isCorrect: true, inputMode: "choice" } },
       });
       renderPage(TEST_URL);
 
