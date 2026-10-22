@@ -98,6 +98,37 @@ describe("PersonalizedLanes", () => {
     expect(readLocalInterests()).toEqual([]);
   });
 
+  it("Continue opens Learn for learn sessions and Quiz otherwise", async () => {
+    auth.value = { isAuthenticated: true, isLoading: false, userId: "user-1" };
+    vi.mocked(interestsApi.get).mockResolvedValue([]);
+    vi.mocked(reviewQueueApi.getSummary).mockResolvedValue({ dueCount: 0, totalCount: 0, nextDueAt: null });
+    vi.mocked(dailyQuizApi.get).mockResolvedValue({ date: utcToday(), items: [], completion: null, streak: 0 });
+    const base = { origin: "quiz", correct: 3, total: 5, missedItemIds: [] };
+    vi.mocked(studySessionsApi.list).mockResolvedValue([
+      {
+        ...base,
+        id: "s1",
+        runId: "run-1",
+        completedAt: new Date().toISOString(),
+        mode: "learn",
+        source: { kind: "category", categorySlug: "trivia", navigationKeywords: ["sports"], filterKeywords: [] },
+      },
+      {
+        ...base,
+        id: "s2",
+        runId: "run-2",
+        completedAt: new Date(Date.now() - 60_000).toISOString(),
+        source: { kind: "category", categorySlug: "science", navigationKeywords: ["space"], filterKeywords: [] },
+      },
+    ]);
+
+    renderWithProviders(<PersonalizedLanes featuredSets={featured} />);
+    await screen.findByRole("heading", { name: "Continue" });
+    const hrefs = screen.getAllByRole("link").map((link) => link.getAttribute("href"));
+    expect(hrefs).toContain("/learn/trivia?nav=sports&keywords=sports");
+    expect(hrefs).toContain("/quiz/science?nav=space&keywords=space");
+  });
+
   it("keeps the picker open with an error when saving fails", async () => {
     auth.value = { isAuthenticated: true, isLoading: false, userId: "user-1" };
     vi.mocked(interestsApi.get).mockResolvedValue([]);

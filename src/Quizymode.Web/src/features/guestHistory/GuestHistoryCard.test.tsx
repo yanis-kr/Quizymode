@@ -97,6 +97,15 @@ describe("GuestHistoryCard", () => {
     );
   });
 
+  it("opens Learn for a learn run and Quiz otherwise", async () => {
+    recordGuestCompletion(completion({ mode: "learn" }), guest);
+    renderCard();
+    expect(await screen.findByRole("link", { name: /practice again/i })).toHaveAttribute(
+      "href",
+      `/learn/collections/${COLLECTION_ID}`,
+    );
+  });
+
   it("explains category practice is a new random set rather than an exact replay", () => {
     recordGuestCompletion(
       completion({

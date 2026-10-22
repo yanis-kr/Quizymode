@@ -17,6 +17,9 @@ public sealed class StudySession
     /// <summary><c>quiz</c> for a run recorded live, <c>guest-import</c> for unverified browser-local history (#115).</summary>
     public string Origin { get; set; } = StudySessionOrigins.Quiz;
 
+    /// <summary><c>quiz</c> (default, also for rows saved before #306) or <c>learn</c>.</summary>
+    public string Mode { get; set; } = StudySessionModes.Quiz;
+
     public DateTime CompletedAt { get; set; }
 
     public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
@@ -52,4 +55,10 @@ public static class StudySessionOrigins
 {
     public const string Quiz = "quiz";
     public const string GuestImport = "guest-import";
+}
+
+public static class StudySessionModes
+{
+    public const string Quiz = "quiz";
+    public const string Learn = "learn";
 }

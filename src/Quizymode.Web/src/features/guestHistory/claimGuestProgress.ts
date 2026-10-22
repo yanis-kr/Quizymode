@@ -29,6 +29,7 @@ export async function claimGuestProgress(): Promise<ClaimGuestProgressResult> {
         total: summary.total,
         source: summary.source,
         missedItemIds: summary.missedItemIds,
+        mode: summary.mode,
       })),
     });
   } catch {

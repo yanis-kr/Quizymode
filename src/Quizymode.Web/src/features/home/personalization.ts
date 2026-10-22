@@ -20,6 +20,8 @@ export const MAX_PER_CATEGORY = 2;
 export interface ActivityRun {
   completedAt: string;
   source: GuestHistorySource | null;
+  /** Defaults to quiz; Continue links open Learn for learn runs. Inference counts both modes. */
+  mode?: "quiz" | "learn";
 }
 
 export interface PersonalizationInput {

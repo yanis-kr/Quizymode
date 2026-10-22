@@ -15949,6 +15949,16 @@
                 "$ref": "#/components/schemas/System.Collections.Generic.ListOfSystem.Guid"
               }
             ]
+          },
+          "mode": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/components/schemas/System.String"
+              }
+            ]
           }
         }
       },
@@ -15976,7 +15986,8 @@
           "correct",
           "total",
           "source",
-          "missedItemIds"
+          "missedItemIds",
+          "mode"
         ],
         "type": "object",
         "properties": {
@@ -16010,6 +16021,9 @@
           },
           "missedItemIds": {
             "$ref": "#/components/schemas/System.Collections.Generic.ListOfSystem.Guid"
+          },
+          "mode": {
+            "$ref": "#/components/schemas/System.String"
           }
         }
       },

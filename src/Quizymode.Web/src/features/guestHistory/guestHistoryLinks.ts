@@ -1,11 +1,15 @@
 import { buildCollectionPath, buildCollectionStudyPath } from "@/utils/collectionPath";
 import { buildCategoryPath, categorySlugToName } from "@/utils/categorySlug";
+import type { StudySessionMode } from "@/features/items/quiz/quizRun";
 import type { GuestHistorySource } from "./guestHistoryStorage";
 
-/** Builds a quiz route for a validated stored source using app route helpers; stored URLs are never used. */
-export function buildGuestPracticePath(source: GuestHistorySource): string {
+/**
+ * Builds a quiz (default) or learn route for a validated stored source using app route helpers; stored URLs are never used.
+ * Learn and Quiz share the same path shape and query parameters.
+ */
+export function buildGuestPracticePath(source: GuestHistorySource, mode: StudySessionMode = "quiz"): string {
   if (source.kind === "collection") {
-    return buildCollectionStudyPath("quiz", source.collectionId);
+    return buildCollectionStudyPath(mode, source.collectionId);
   }
   const params = new URLSearchParams();
   if (source.kind === "category") {
@@ -13,11 +17,11 @@ export function buildGuestPracticePath(source: GuestHistorySource): string {
     const keywords = [...source.navigationKeywords, ...source.filterKeywords];
     if (keywords.length > 0) params.set("keywords", keywords.join(","));
     const search = params.toString();
-    return `/quiz/${encodeURIComponent(source.categorySlug)}${search ? `?${search}` : ""}`;
+    return `/${mode}/${encodeURIComponent(source.categorySlug)}${search ? `?${search}` : ""}`;
   }
   if (source.filterKeywords.length > 0) params.set("keywords", source.filterKeywords.join(","));
   const search = params.toString();
-  return `/quiz${search ? `?${search}` : ""}`;
+  return `/${mode}${search ? `?${search}` : ""}`;
 }
 
 export function buildGuestBrowsePath(source: GuestHistorySource, collectionName?: string | null): string {

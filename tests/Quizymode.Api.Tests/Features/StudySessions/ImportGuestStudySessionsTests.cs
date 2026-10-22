@@ -30,6 +30,25 @@ public sealed class ImportGuestStudySessionsTests : DatabaseTestFixture
     }
 
     [Fact]
+    public async Task Import_AcceptsModeAndDefaultsMissingModeToQuiz()
+    {
+        ImportGuestStudySessions.Request request = new(1, new List<RecordStudySession.Request>
+        {
+            Run("g-learn") with { Mode = "learn" },
+            Run("g-old"),
+            Run("g-bad") with { Mode = "bogus" },
+        });
+
+        Result<ImportGuestStudySessions.Response> result = await ImportGuestStudySessions.HandleAsync(
+            request, RunValidator, DbContext, "user-a", CancellationToken.None);
+
+        result.Value.Imported.Should().Be(2);
+        result.Value.RejectedRunIds.Should().Equal("g-bad");
+        DbContext.StudySessions.Single(s => s.RunId == "g-learn").Mode.Should().Be("learn");
+        DbContext.StudySessions.Single(s => s.RunId == "g-old").Mode.Should().Be("quiz");
+    }
+
+    [Fact]
     public async Task Import_Retry_IsIdempotentAndKeepsFirstScore()
     {
         ImportGuestStudySessions.Request request = new(1, new List<RecordStudySession.Request> { Run("g1") });

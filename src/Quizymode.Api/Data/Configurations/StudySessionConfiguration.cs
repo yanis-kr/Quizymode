@@ -14,6 +14,7 @@ internal sealed class StudySessionConfiguration : IEntityTypeConfiguration<Study
         builder.Property(x => x.UserId).IsRequired().HasMaxLength(100);
         builder.Property(x => x.RunId).IsRequired().HasMaxLength(128);
         builder.Property(x => x.Origin).IsRequired().HasMaxLength(16);
+        builder.Property(x => x.Mode).IsRequired().HasMaxLength(16).HasDefaultValue("quiz");
         builder.Property(x => x.CompletedAt).IsRequired();
         builder.Property(x => x.CreatedAt).IsRequired();
         builder.Property(x => x.Correct).IsRequired();

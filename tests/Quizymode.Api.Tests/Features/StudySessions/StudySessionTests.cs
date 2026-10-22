@@ -42,6 +42,39 @@ public sealed class StudySessionTests : DatabaseTestFixture
     }
 
     [Fact]
+    public async Task Record_OmittedMode_DefaultsToQuiz()
+    {
+        Result<RecordStudySession.Response> result = await RecordStudySession.HandleAsync(
+            NewRequest(), StudySessionOrigins.Quiz, DbContext, "user-a", CancellationToken.None);
+
+        result.Value.Session.Mode.Should().Be("quiz");
+        DbContext.StudySessions.Single().Mode.Should().Be("quiz");
+    }
+
+    [Fact]
+    public async Task Record_LearnMode_IsPersistedAndReturnedByList()
+    {
+        Result<RecordStudySession.Response> result = await RecordStudySession.HandleAsync(
+            NewRequest("learn-1") with { Mode = "learn" }, StudySessionOrigins.Quiz, DbContext, "user-a", CancellationToken.None);
+
+        result.Value.Session.Mode.Should().Be("learn");
+        DbContext.StudySessions.Single().Mode.Should().Be("learn");
+        RecordStudySession.ToDto(DbContext.StudySessions.Single()).Mode.Should().Be("learn");
+    }
+
+    [Theory]
+    [InlineData("quiz", true)]
+    [InlineData("learn", true)]
+    [InlineData(null, true)]
+    [InlineData("flashcards", false)]
+    [InlineData("", false)]
+    [InlineData("LEARN", false)]
+    public void Validator_ValidatesMode(string? mode, bool valid)
+    {
+        new RecordStudySession.Validator().Validate(NewRequest() with { Mode = mode }).IsValid.Should().Be(valid);
+    }
+
+    [Fact]
     public async Task Record_RetryWithSameRunId_IsIdempotent()
     {
         RecordStudySession.Request request = NewRequest();

@@ -15,6 +15,8 @@ export interface RecordStudySessionRequest {
   total: number;
   source: StudySessionSource | null;
   missedItemIds: string[];
+  /** Optional; omitted by old clients and treated as "quiz" by the server. */
+  mode?: "quiz" | "learn";
 }
 
 export interface StudySessionDto extends RecordStudySessionRequest {
