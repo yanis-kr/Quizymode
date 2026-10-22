@@ -131,7 +131,8 @@ public sealed class GetCollectionRatingTests : DatabaseTestFixture
             Id = Guid.NewGuid(),
             Name = "Test",
             CreatedBy = userId,
-            CreatedAt = DateTime.UtcNow
+            CreatedAt = DateTime.UtcNow,
+            IsPublic = true
         };
         DbContext.Collections.Add(col);
         await DbContext.SaveChangesAsync();

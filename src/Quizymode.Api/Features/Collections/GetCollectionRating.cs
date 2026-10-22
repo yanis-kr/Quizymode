@@ -3,6 +3,7 @@ using Quizymode.Api.Data;
 using Quizymode.Api.Shared.Http;
 using Quizymode.Api.Services;
 using Quizymode.Api.Shared.Kernel;
+using Quizymode.Api.Shared.Models;
 
 namespace Quizymode.Api.Features.Collections;
 
@@ -47,8 +48,10 @@ public static class GetCollectionRating
     {
         try
         {
-            bool collectionExists = await db.Collections.AnyAsync(c => c.Id == collectionId, cancellationToken);
-            if (!collectionExists)
+            Collection? collection = await db.Collections
+                .AsNoTracking()
+                .FirstOrDefaultAsync(c => c.Id == collectionId, cancellationToken);
+            if (collection is null || !GetCollectionById.CanAccess(collection, userContext))
                 return Result.Failure<Response>(Error.NotFound("Collection.NotFound", "Collection not found"));
 
             var ratings = await db.CollectionRatings
