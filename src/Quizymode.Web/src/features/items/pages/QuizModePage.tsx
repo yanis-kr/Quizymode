@@ -15,7 +15,7 @@ import LoadingSpinner from "@/components/LoadingSpinner";
 import ErrorMessage from "@/components/ErrorMessage";
 import { CommentsDrawer } from "@/components/CommentsDrawer";
 import { StudyShell } from "@/components/study/StudyShell";
-import { QuizRenderer } from "@/components/study/QuizRenderer";
+import { QuizRenderer, type TypedAnswerControls } from "@/components/study/QuizRenderer";
 import ItemCollectionsModal from "@/components/ItemCollectionsModal";
 import {
   categoryNameToSlug,
@@ -67,6 +67,7 @@ import {
   type QuizRunScope,
   type QuizRunState,
 } from "@/features/items/quiz/quizRun";
+import { gradeTypedAnswer, isTypeable } from "@/features/items/quiz/typedAnswer";
 import { recordGuestCompletion } from "@/features/guestHistory/guestHistoryStorage";
 import { recordAuthenticatedCompletion } from "@/features/studySessions/recordStudySession";
 
@@ -673,15 +674,31 @@ const QuizModePage = () => {
         }
       : undefined;
 
+  // AC 3.6.19: a typed answer is held here (override still possible) until it is recorded on Continue or navigation.
+  const [typedItemIds, setTypedItemIds] = useState<ReadonlySet<string>>(() => new Set());
+  const [typedDraft, setTypedDraft] = useState<{
+    runId: string;
+    itemId: string;
+    typed: string;
+    correct: boolean;
+  } | null>(null);
+  const draftForCurrent =
+    typedDraft && run && typedDraft.runId === run.runId && typedDraft.itemId === currentItem?.id ? typedDraft : null;
   const currentOutcome = currentItem && run ? run.outcomes[currentItem.id] : undefined;
   const selectedAnswer = currentOutcome?.selectedAnswer ?? null;
-  const showAnswer = Boolean(currentOutcome);
+  const showAnswer = Boolean(currentOutcome) || draftForCurrent !== null;
   const runSummary = run ? summarizeQuizRun(run) : null;
   const stats = {
     total: runSummary?.answered ?? 0,
     correct: runSummary?.correct ?? 0,
   };
   const options = currentItem && run ? getQuizOptions(currentItem, run.runId) : [];
+  const isCurrentTypeable = currentItem ? isTypeable(currentItem) : false;
+  const isPracticeActive = run?.mode === "practice" && run.view === "active";
+  const typedOutcome = currentOutcome?.inputMode === "typed" ? currentOutcome : undefined;
+  const isTypedAnswering = Boolean(
+    isPracticeActive && currentItem && isCurrentTypeable && !currentOutcome && typedItemIds.has(currentItem.id)
+  );
 
   // Funnel telemetry (AC 5.4.9): only a new run id is a new start; other run updates are answers.
   // trackEventOnce also dedupes per tab, so restores, remounts and StrictMode do not repeat it.
@@ -754,6 +771,60 @@ const QuizModePage = () => {
           })
         : current
     );
+  };
+
+  /** AC 3.6.19: records a held typed answer (first answer per item wins, one analytics event). */
+  const commitTypedDraft = (draft: NonNullable<typeof typedDraft>) => {
+    if (!run) return;
+    trackQuestionAnswered(run, draft.itemId, draft.correct);
+    setRun((current) =>
+      current && current.runId === draft.runId
+        ? reduceQuizRun(current, {
+            type: "answer",
+            itemId: draft.itemId,
+            selectedAnswer: draft.typed,
+            isCorrect: draft.correct,
+            completedAt: new Date().toISOString(),
+            inputMode: "typed",
+          })
+        : current
+    );
+  };
+
+  // Leaving the item (Next, Prev, palette, drawer, URL) or switching run records the held typed answer.
+  useEffect(() => {
+    if (!typedDraft) return;
+    if (!run || run.runId !== typedDraft.runId || run.view !== "active") {
+      setTypedDraft(null);
+      return;
+    }
+    if (currentItem && currentItem.id !== typedDraft.itemId) {
+      commitTypedDraft(typedDraft);
+      setTypedDraft(null);
+    }
+    // commitTypedDraft only reads run, which is in the dependency list.
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [typedDraft, run, currentItem]);
+
+  const handleTypedSubmit = (typed: string) => {
+    if (!run || !currentItem || run.mode !== "practice" || currentOutcome || typedDraft) return;
+    const result = gradeTypedAnswer(typed, currentItem.correctAnswer);
+    setTypedDraft({ runId: run.runId, itemId: currentItem.id, typed: typed.trim(), correct: result.correct });
+  };
+
+  const handleTypedOverride = () => {
+    setTypedDraft((draft) => (draft && !draft.correct ? { ...draft, correct: true } : draft));
+  };
+
+  const handleTypedContinue = () => {
+    if (!typedDraft) return;
+    if (currentIndex < items.length - 1) {
+      // The commit effect records the answer as the item changes.
+      handleNext();
+      return;
+    }
+    commitTypedDraft(typedDraft);
+    setTypedDraft(null);
   };
 
   const navigateToItem = (id: string, replace: boolean) => {
@@ -921,10 +992,34 @@ const QuizModePage = () => {
   const testInProgress = run !== null && isTestInProgress(run);
   // A Test has no question until Start test (AC 3.18.2).
   const isQuestionActive = run?.view === "active" && !!currentItem && (!isTestRun || testInProgress);
+  const typedResult = draftForCurrent
+    ? { typed: draftForCurrent.typed, correct: draftForCurrent.correct, locked: false }
+    : typedOutcome
+      ? { typed: typedOutcome.selectedAnswer, correct: typedOutcome.isCorrect, locked: true }
+      : null;
+  const typedAnswerControls: TypedAnswerControls | undefined =
+    isPracticeActive && currentItem
+      ? {
+          isTypeable: isCurrentTypeable,
+          enabled: isTypedAnswering,
+          onEnabledChange: (enabled) =>
+            setTypedItemIds((current) => {
+              const next = new Set(current);
+              if (enabled) next.add(currentItem.id);
+              else next.delete(currentItem.id);
+              return next;
+            }),
+          result: typedResult,
+          onSubmit: handleTypedSubmit,
+          onOverride: handleTypedOverride,
+          onContinue: handleTypedContinue,
+          continueLabel: hasNextQuestion ? "Next question" : "Finish",
+        }
+      : undefined;
   const { isHelpOpen, openHelp, closeHelp } = useStudyHotkeys({
     enabled: true,
-    letter: isQuestionActive && (isTestRun || !showAnswer) ? (index) => options[index] !== undefined && handleAnswerSelect(options[index]) : undefined,
-    digit: isQuestionActive && (isTestRun || !showAnswer) ? (n) => options[n - 1] !== undefined && handleAnswerSelect(options[n - 1]) : undefined,
+    letter: isQuestionActive && !isTypedAnswering && (isTestRun || !showAnswer) ? (index) => options[index] !== undefined && handleAnswerSelect(options[index]) : undefined,
+    digit: isQuestionActive && !isTypedAnswering && (isTestRun || !showAnswer) ? (n) => options[n - 1] !== undefined && handleAnswerSelect(options[n - 1]) : undefined,
     prev: isQuestionActive && currentIndex > 0 ? handlePrev : undefined,
     next: isQuestionActive && hasNextQuestion ? handleNext : undefined,
     // AC 3.18.5: in a Test, Enter only ever means Next; no key opens or confirms Submit.
@@ -935,7 +1030,9 @@ const QuizModePage = () => {
         : undefined
       : isQuestionActive && showAnswer
         ? () => {
-            if (runSummary?.isComplete) {
+            if (draftForCurrent) {
+              handleTypedContinue();
+            } else if (runSummary?.isComplete) {
               setRun((current) => (current ? reduceQuizRun(current, { type: "show-summary" }) : current));
             } else if (hasNextQuestion) {
               handleNext();
@@ -1337,6 +1434,7 @@ const QuizModePage = () => {
               showAnswer={showAnswer}
               onAnswerSelect={handleAnswerSelect}
               stats={stats}
+              typedAnswer={typedAnswerControls}
             />
             {runSummary?.isComplete && (
               <div role="status" className="mt-4 rounded-lg border border-indigo-200 bg-indigo-50 p-4 text-center">

@@ -37,7 +37,7 @@ describe("Test run reducer (AC 3.18)", () => {
   it("creates Practice runs with empty Test fields and Test runs on the setup card", () => {
     const practice = createQuizRun(scope, ids, "guest");
     expect(practice).toMatchObject({
-      schemaVersion: 2,
+      schemaVersion: 3,
       mode: "practice",
       flagged: [],
       startedAt: null,

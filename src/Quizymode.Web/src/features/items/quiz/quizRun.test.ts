@@ -139,4 +139,64 @@ describe("quizRun", () => {
     expect(second.outcomes.a.selectedAnswer).toBe("wrong");
     vi.unstubAllGlobals();
   });
+
+  describe("typed answers and schema v3 (AC 3.6.12, 3.6.19)", () => {
+    const answeredRun = (inputMode?: "choice" | "typed") =>
+      reduceQuizRun(createQuizRun(scope, ["a", "b"], "guest"), {
+        type: "answer",
+        itemId: "a",
+        selectedAnswer: "Paris",
+        isCorrect: true,
+        completedAt: "2026-10-15T00:00:00.000Z",
+        ...(inputMode ? { inputMode } : {}),
+      });
+
+    it("records inputMode on the outcome, defaulting to choice", () => {
+      expect(answeredRun().outcomes.a.inputMode).toBe("choice");
+      expect(answeredRun("typed").outcomes.a.inputMode).toBe("typed");
+      expect(createQuizRun(scope, ["a"], "guest").schemaVersion).toBe(3);
+    });
+
+    it("restores a typed answer", () => {
+      const run = answeredRun("typed");
+      expect(restoreQuizRun(run, scope, ["a", "b"], "guest")).toEqual(run);
+    });
+
+    it("restores a v2 snapshot (no inputMode) as multiple choice", () => {
+      const run = answeredRun();
+      const v2 = JSON.parse(JSON.stringify(run));
+      v2.schemaVersion = 2;
+      delete v2.outcomes.a.inputMode;
+      const restored = restoreQuizRun(v2, scope, ["a", "b"], "guest");
+      expect(restored?.schemaVersion).toBe(3);
+      expect(restored?.outcomes.a.inputMode).toBe("choice");
+    });
+
+    it("rejects v1, unknown versions, and a missing or bad inputMode in v3", () => {
+      const run = answeredRun();
+      expect(restoreQuizRun({ ...run, schemaVersion: 1 }, scope, ["a", "b"], "guest")).toBeNull();
+      expect(restoreQuizRun({ ...run, schemaVersion: 4 }, scope, ["a", "b"], "guest")).toBeNull();
+      const withMode = (inputMode: unknown) => ({
+        ...run,
+        outcomes: { a: { ...run.outcomes.a, inputMode } },
+      });
+      expect(restoreQuizRun(withMode("voice"), scope, ["a", "b"], "guest")).toBeNull();
+      expect(restoreQuizRun(withMode(undefined), scope, ["a", "b"], "guest")).toBeNull();
+      expect(restoreQuizRun(withMode(1), scope, ["a", "b"], "guest")).toBeNull();
+    });
+
+    it("rejects typed answers in a Test snapshot", () => {
+      let test = createQuizRun(scope, ["a"], "guest", "test");
+      test = reduceQuizRun(test, { type: "start-test", startedAt: "2026-10-15T00:00:00.000Z", timeLimitSec: null });
+      test = reduceQuizRun(test, {
+        type: "answer",
+        itemId: "a",
+        selectedAnswer: "x",
+        isCorrect: false,
+        completedAt: "2026-10-15T00:00:05.000Z",
+        inputMode: "typed",
+      });
+      expect(restoreQuizRun(test, scope, ["a"], "guest", "test")).toBeNull();
+    });
+  });
 });
