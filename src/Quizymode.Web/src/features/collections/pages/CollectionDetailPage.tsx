@@ -20,6 +20,8 @@ import { useListenAll } from "@/hooks/useListenAll";
 import { SpeakerWaveIcon, PauseIcon } from "@heroicons/react/24/outline";
 import { CollectionVisibilityToggles } from "../components/CollectionVisibilityToggles";
 import { ShareCollectionButton } from "../components/ShareCollectionButton";
+import { CollectionExportControls } from "../components/CollectionExportControls";
+import { CollectionPrintView } from "../components/CollectionPrintView";
 
 const CollectionDetailPage = () => {
   const { id } = useParams<{ id: string }>();
@@ -38,6 +40,7 @@ const CollectionDetailPage = () => {
   const showAnswersOverride = showAnswersParam === "true" ? true : showAnswersParam === "false" ? false : undefined;
   const { showAnswers, toggleShowAnswers } = useShowAnswers(showAnswersOverride);
   const [showDetails, setShowDetails] = useState(false);
+  const [hideAnswersOnPrint, setHideAnswersOnPrint] = useState(false);
 
   const {
     data: collectionData,
@@ -168,7 +171,8 @@ const CollectionDetailPage = () => {
   })();
 
   return (
-    <div className="space-y-4">
+    <>
+    <div className="space-y-4 print:hidden">
       {fromFeatured && (
         <Link
           to="/featured"
@@ -246,6 +250,14 @@ const CollectionDetailPage = () => {
           </button>
         </div>
       </div>
+      {allItems.length > 0 && (
+        <CollectionExportControls
+          items={allItems}
+          collectionName={collectionData?.name}
+          hideAnswers={hideAnswersOnPrint}
+          onHideAnswersChange={setHideAnswersOnPrint}
+        />
+      )}
       {isOwner && collectionData && (
         <div className="rounded-2xl border border-slate-200 bg-slate-50/90 p-4">
           <CollectionVisibilityToggles
@@ -503,6 +515,14 @@ const CollectionDetailPage = () => {
         />
       )}
     </div>
+    {allItems.length > 0 && (
+      <CollectionPrintView
+        title={collectionData?.name ?? "Untitled collection"}
+        items={allItems}
+        hideAnswers={hideAnswersOnPrint}
+      />
+    )}
+    </>
   );
 };
 

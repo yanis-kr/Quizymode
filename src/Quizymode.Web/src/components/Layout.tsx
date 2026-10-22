@@ -207,9 +207,9 @@ const Layout = ({ children }: LayoutProps) => {
     }`;
 
   return (
-    <div className="flex min-h-screen flex-col bg-[radial-gradient(circle_at_top,#1e3a8a_0%,#0f172a_34%,#020617_100%)]">
+    <div className="flex min-h-screen flex-col bg-[radial-gradient(circle_at_top,#1e3a8a_0%,#0f172a_34%,#020617_100%)] print:bg-none print:bg-white">
       {fallbackTitle && <SEO title={fallbackTitle} noindex={location.pathname === "/login" || location.pathname === "/signup"} />}
-      <nav className="border-b border-slate-200/70 bg-white/95 shadow-sm backdrop-blur">
+      <nav className="border-b border-slate-200/70 bg-white/95 shadow-sm backdrop-blur print:hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between h-14">
             <div className="flex">
@@ -430,8 +430,10 @@ const Layout = ({ children }: LayoutProps) => {
           </div>
         )}
       </nav>
-      <GuestProgressClaim />
-      <PolicyAcceptancePrompt />
+      <div className="print:hidden">
+        <GuestProgressClaim />
+        <PolicyAcceptancePrompt />
+      </div>
       <main
         className={
           isFullBleedPage
@@ -442,12 +444,12 @@ const Layout = ({ children }: LayoutProps) => {
         {isFullBleedPage ? (
           children
         ) : (
-          <div className="rounded-[32px] border border-white/45 bg-[linear-gradient(180deg,rgba(255,255,255,0.98)_0%,rgba(248,250,252,0.96)_100%)] p-2 text-slate-900 shadow-2xl shadow-slate-950/20 backdrop-blur sm:p-6 lg:p-8">
+          <div className="rounded-[32px] border border-white/45 bg-[linear-gradient(180deg,rgba(255,255,255,0.98)_0%,rgba(248,250,252,0.96)_100%)] p-2 text-slate-900 shadow-2xl shadow-slate-950/20 backdrop-blur sm:p-6 lg:p-8 print:rounded-none print:border-0 print:bg-none print:bg-white print:p-0 print:shadow-none">
             {children}
           </div>
         )}
       </main>
-      <footer className="mx-auto w-full max-w-7xl px-3 pb-3 pt-1 sm:px-6 lg:px-8">
+      <footer className="mx-auto w-full max-w-7xl px-3 pb-3 pt-1 sm:px-6 lg:px-8 print:hidden">
         <div className="rounded-[20px] border border-white/10 bg-[linear-gradient(180deg,rgba(15,23,42,0.7)_0%,rgba(2,6,23,0.64)_100%)] px-3 py-2.5 text-slate-100 shadow-xl shadow-slate-950/20 backdrop-blur sm:flex sm:items-center sm:justify-between sm:gap-4">
           <div className="hidden sm:block shrink-0">
             <div className="text-[11px] font-semibold uppercase tracking-[0.18em] text-slate-300">

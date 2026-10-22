@@ -8,6 +8,10 @@ import { taxonomyApi } from "@/api/taxonomy";
 import ErrorMessage from "@/components/ErrorMessage";
 import { DocumentArrowUpIcon, ClipboardDocumentIcon } from "@heroicons/react/24/outline";
 import ContentComplianceNotice from "@/features/legal/components/ContentComplianceNotice";
+import PasteTextImport from "@/features/collections/components/PasteTextImport";
+import { ADMIN_ITEM_LIMIT, NON_ADMIN_ITEM_LIMIT, type ImportItem } from "@/features/collections/utils/importParser";
+
+type UploadTab = "json" | "paste";
 
 const EXAMPLE_PROMPT = (topic: string, uploadId: string) => `You are creating study flashcards for an app called Quizymode.
 
@@ -39,7 +43,8 @@ Requirements:
 Now generate the JSON array only.`;
 
 const UploadToCollectionPage = () => {
-  const { isAuthenticated } = useAuth();
+  const { isAuthenticated, isAdmin } = useAuth();
+  const [activeTab, setActiveTab] = React.useState<UploadTab>("json");
   const navigate = useNavigate();
   const [searchParams] = useSearchParams();
   const categoryParam = searchParams.get("category") ?? "";
@@ -145,6 +150,7 @@ const UploadToCollectionPage = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+    if (activeTab !== "json") return; // Enter inside the Paste text fields must not run the JSON upload
     setParseError(null);
     if (!categoryName.trim()) {
       setParseError("Please select a category.");
@@ -217,6 +223,44 @@ const UploadToCollectionPage = () => {
     });
   };
 
+  const handlePasteImport = (items: ImportItem[], inputText: string) => {
+    setParseError(null);
+    if (!categoryName.trim()) {
+      setParseError("Please select a category.");
+      return;
+    }
+    if (!rank1Name.trim()) {
+      setParseError("Please select a rank-1 keyword.");
+      return;
+    }
+    if (!rank2Name.trim()) {
+      setParseError("Please select a rank-2 keyword.");
+      return;
+    }
+    uploadMutation.mutate({
+      category: categoryName.trim(),
+      keyword1: rank1Name.trim(),
+      keyword2: rank2Name.trim(),
+      keywords: [],
+      items: items.map((item) => ({ isPrivate: true, ...item })),
+      inputText,
+    });
+  };
+
+  const handleTabKeyDown = (e: React.KeyboardEvent<HTMLButtonElement>) => {
+    const tabs: UploadTab[] = ["json", "paste"];
+    const current = tabs.indexOf(activeTab);
+    let next = current;
+    if (e.key === "ArrowRight") next = (current + 1) % tabs.length;
+    else if (e.key === "ArrowLeft") next = (current + tabs.length - 1) % tabs.length;
+    else if (e.key === "Home") next = 0;
+    else if (e.key === "End") next = tabs.length - 1;
+    else return;
+    e.preventDefault();
+    setActiveTab(tabs[next]);
+    document.getElementById(`upload-tab-${tabs[next]}`)?.focus();
+  };
+
   const copyPrompt = () => {
     navigator.clipboard.writeText(examplePrompt);
     setCopiedPrompt(true);
@@ -243,7 +287,39 @@ const UploadToCollectionPage = () => {
 
       <ContentComplianceNotice />
 
-      <form onSubmit={handleSubmit} className="space-y-4">
+      <div role="tablist" aria-label="Import source" className="mb-4 flex gap-2 border-b border-gray-200">
+        {([
+          ["json", "JSON"],
+          ["paste", "Paste text"],
+        ] as const).map(([tab, label]) => (
+          <button
+            key={tab}
+            type="button"
+            role="tab"
+            id={`upload-tab-${tab}`}
+            aria-selected={activeTab === tab}
+            aria-controls="upload-tabpanel"
+            tabIndex={activeTab === tab ? 0 : -1}
+            onClick={() => setActiveTab(tab)}
+            onKeyDown={handleTabKeyDown}
+            className={`-mb-px border-b-2 px-3 py-2 text-sm font-medium ${
+              activeTab === tab
+                ? "border-indigo-600 text-indigo-600"
+                : "border-transparent text-gray-600 hover:text-gray-900"
+            }`}
+          >
+            {label}
+          </button>
+        ))}
+      </div>
+
+      <form
+        onSubmit={handleSubmit}
+        className="space-y-4"
+        role="tabpanel"
+        id="upload-tabpanel"
+        aria-labelledby={`upload-tab-${activeTab}`}
+      >
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
           <div>
             <label htmlFor="category" className="block text-sm font-medium text-gray-700 mb-1">
@@ -313,6 +389,16 @@ const UploadToCollectionPage = () => {
           </div>
         </div>
 
+        {activeTab === "paste" && (
+          <PasteTextImport
+            maxItems={isAdmin ? ADMIN_ITEM_LIMIT : NON_ADMIN_ITEM_LIMIT}
+            isPending={uploadMutation.isPending}
+            onImport={handlePasteImport}
+          />
+        )}
+
+        {activeTab === "json" && (
+        <>
         <div>
           <label className="block text-sm font-medium text-gray-700 mb-1">Example prompt for AI</label>
           <p className="text-xs text-gray-500 mb-1">
@@ -378,6 +464,8 @@ const UploadToCollectionPage = () => {
             {uploadMutation.isPending ? "Uploading…" : "Upload and open collection"}
           </button>
         </div>
+        </>
+        )}
       </form>
 
       {(parseError || uploadMutation.error) && (

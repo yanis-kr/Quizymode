@@ -1,5 +1,5 @@
 import { beforeEach, describe, expect, it, vi } from "vitest";
-import { render, screen, waitFor } from "@testing-library/react";
+import { fireEvent, render, screen, waitFor } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { MemoryRouter, Route, Routes, useLocation } from "react-router-dom";
@@ -7,8 +7,10 @@ import UploadToCollectionPage from "./UploadToCollectionPage";
 import { itemsApi } from "@/api/items";
 import { taxonomyApi } from "@/api/taxonomy";
 
+const authState = vi.hoisted(() => ({ isAdmin: false }));
+
 vi.mock("@/contexts/AuthContext", () => ({
-  useAuth: () => ({ isAuthenticated: true }),
+  useAuth: () => ({ isAuthenticated: true, isAdmin: authState.isAdmin }),
 }));
 
 vi.mock("@/api/items", () => ({
@@ -87,6 +89,7 @@ function renderPage(initialEntry: string) {
 describe("UploadToCollectionPage", () => {
   beforeEach(() => {
     vi.clearAllMocks();
+    authState.isAdmin = false;
 
     vi.mocked(taxonomyApi.getAll).mockResolvedValue(
       taxonomyMock as Awaited<ReturnType<typeof taxonomyApi.getAll>>
@@ -266,5 +269,120 @@ describe("UploadToCollectionPage", () => {
     renderPage("/items/upload-to-collection");
     await screen.findByLabelText(/category \(required\)/i);
     expect(document.body.textContent).toContain('1–4 "incorrectAnswers"');
+  });
+
+  describe("Paste text tab (#257)", () => {
+    const rows = ["cat\tgato", "dog\tperro", "bird\tpajaro", "fish\tpez"].join("\n");
+
+    async function openPasteTab(user: ReturnType<typeof userEvent.setup>) {
+      renderPage("/items/upload-to-collection?category=science&keywords=anatomy,muscular");
+      await screen.findByLabelText(/category \(required\)/i);
+      await waitFor(() => expect(screen.getByLabelText(/keyword rank 2/i)).toHaveValue("muscular"));
+      await user.click(screen.getByRole("tab", { name: /paste text/i }));
+    }
+
+    it("previews parsed rows and uploads built items", async () => {
+      // AC 2.6.9
+      const user = userEvent.setup({ delay: null });
+      await openPasteTab(user);
+      expect(screen.queryByLabelText(/json array of items/i)).not.toBeInTheDocument();
+
+      await user.click(screen.getByLabelText(/pasted text/i));
+      await user.paste(rows);
+      expect(await screen.findByText(/4 items ready/i)).toBeInTheDocument();
+
+      await user.click(screen.getByRole("button", { name: /upload and open collection/i }));
+      await waitFor(() => expect(itemsApi.uploadToCollection).toHaveBeenCalledTimes(1));
+      const payload = vi.mocked(itemsApi.uploadToCollection).mock.calls[0][0];
+      expect(payload.category).toBe("science");
+      expect(payload.items).toHaveLength(4);
+      expect(payload.items[0]).toMatchObject({ question: "cat", correctAnswer: "gato", isPrivate: true });
+      expect(payload.items[0].incorrectAnswers).toHaveLength(3);
+      await waitFor(() =>
+        expect(screen.getByTestId("location")).toHaveTextContent("/explore/collections/col-123")
+      );
+    });
+
+    it("applies direction and template", async () => {
+      // AC 2.6.9
+      const user = userEvent.setup({ delay: null });
+      await openPasteTab(user);
+      await user.click(screen.getByLabelText(/pasted text/i));
+      await user.paste(rows);
+      await user.selectOptions(screen.getByLabelText(/direction/i), "definition-to-term");
+      await user.clear(screen.getByLabelText(/question template/i));
+      await user.click(screen.getByLabelText(/question template/i));
+      await user.paste("Translate: {term}");
+      await user.click(screen.getByRole("button", { name: /upload and open collection/i }));
+      await waitFor(() => expect(itemsApi.uploadToCollection).toHaveBeenCalled());
+      const first = vi.mocked(itemsApi.uploadToCollection).mock.calls[0][0].items[0];
+      expect(first.question).toBe("Translate: gato");
+      expect(first.correctAnswer).toBe("cat");
+    });
+
+    it("blocks upload and explains when fewer than 4 rows are usable", async () => {
+      // AC 2.6.9
+      const user = userEvent.setup({ delay: null });
+      await openPasteTab(user);
+      await user.click(screen.getByLabelText(/pasted text/i));
+      fireEvent.change(screen.getByLabelText(/pasted text/i), { target: { value: "cat\tgato\ndog\tperro" } });
+      expect(await screen.findByText(/at least 4 usable rows are needed to build/i)).toBeInTheDocument();
+      expect(screen.getByRole("button", { name: /upload and open collection/i })).toBeDisabled();
+    });
+
+    it("warns that only the first 100 items are imported for non-admins", async () => {
+      // AC 2.6.9
+      const user = userEvent.setup({ delay: null });
+      await openPasteTab(user);
+      const many = Array.from({ length: 120 }, (_, i) => `t${i}\td${i}`).join("\n");
+      fireEvent.change(screen.getByLabelText(/pasted text/i), { target: { value: many } });
+      expect(await screen.findByText(/only the first 100 will be imported/i)).toBeInTheDocument();
+      await user.click(screen.getByRole("button", { name: /upload and open collection/i }));
+      await waitFor(() => expect(itemsApi.uploadToCollection).toHaveBeenCalled());
+      expect(vi.mocked(itemsApi.uploadToCollection).mock.calls[0][0].items).toHaveLength(100);
+    });
+
+    it("allows up to 1000 items for admins and warns above that", async () => {
+      // AC 2.6.9
+      authState.isAdmin = true;
+      const user = userEvent.setup({ delay: null });
+      await openPasteTab(user);
+      const lines = (n: number) => Array.from({ length: n }, (_, i) => `t${i}\td${i}`).join("\n");
+      fireEvent.change(screen.getByLabelText(/pasted text/i), { target: { value: lines(150) } });
+      expect(await screen.findByText(/150 items ready/i)).toBeInTheDocument();
+      expect(screen.queryByText(/only the first/i)).not.toBeInTheDocument();
+      fireEvent.change(screen.getByLabelText(/pasted text/i), { target: { value: lines(1100) } });
+      expect(await screen.findByText(/only the first 1000 will be imported/i)).toBeInTheDocument();
+    });
+
+    it("moves between the two tabs with the arrow keys using roving tabindex", async () => {
+      // AC 2.6.9
+      const user = userEvent.setup({ delay: null });
+      renderPage("/items/upload-to-collection");
+      await screen.findByLabelText(/category \(required\)/i);
+      const jsonTab = screen.getByRole("tab", { name: "JSON" });
+      const pasteTab = screen.getByRole("tab", { name: /paste text/i });
+      expect(jsonTab).toHaveAttribute("tabindex", "0");
+      expect(pasteTab).toHaveAttribute("tabindex", "-1");
+      jsonTab.focus();
+      await user.keyboard("{ArrowRight}");
+      expect(pasteTab).toHaveFocus();
+      expect(pasteTab).toHaveAttribute("aria-selected", "true");
+      await user.keyboard("{ArrowLeft}");
+      expect(jsonTab).toHaveFocus();
+      expect(jsonTab).toHaveAttribute("aria-selected", "true");
+    });
+
+    it("requires a category before uploading", async () => {
+      // AC 2.6.9
+      const user = userEvent.setup({ delay: null });
+      renderPage("/items/upload-to-collection");
+      await screen.findByLabelText(/category \(required\)/i);
+      await user.click(screen.getByRole("tab", { name: /paste text/i }));
+      fireEvent.change(screen.getByLabelText(/pasted text/i), { target: { value: rows } });
+      await user.click(screen.getByRole("button", { name: /upload and open collection/i }));
+      expect(await screen.findByText(/please select a category/i)).toBeInTheDocument();
+      expect(itemsApi.uploadToCollection).not.toHaveBeenCalled();
+    });
   });
 });
