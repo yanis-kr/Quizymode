@@ -318,6 +318,9 @@ public static class UpdateItem
                 foreach (KeywordRequest kw in request.Keywords)
                     AddUniqueName(kw.Name);
 
+                // #291: keywords created or reused during an edit belong to the item's creator, not an editing admin.
+                string keywordOwnerId = string.IsNullOrWhiteSpace(item.CreatedBy) ? userId : item.CreatedBy;
+
                 List<ItemKeyword> itemKeywords = [];
                 HashSet<Guid> attached = [];
 
@@ -334,7 +337,7 @@ public static class UpdateItem
                             db,
                             taxonomyRegistry,
                             category.Name,
-                            userId,
+                            keywordOwnerId,
                             normalizedName,
                             cancellationToken);
                     }

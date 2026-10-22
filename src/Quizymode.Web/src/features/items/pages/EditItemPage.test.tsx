@@ -432,4 +432,53 @@ describe("EditItemPage", () => {
     });
     expect(Object.values(payload.incorrectAnswerSpeech ?? {}).map((x) => x.pronunciation)).not.toContain("w2");
   });
+
+  describe("re-review of public items (#290)", () => {
+    const NOTICE = "Saving changes will make this item private again until an administrator approves it.";
+    const publicItem = { ...itemMock, isPrivate: false };
+
+    it("warns a non-admin owner of a public item before saving", async () => {
+      // AC 2.1.6
+      vi.mocked(itemsApi.getById).mockResolvedValue(
+        publicItem as Awaited<ReturnType<typeof itemsApi.getById>>
+      );
+      renderPage("/items/item-1/edit");
+      await screen.findByRole("button", { name: /save changes/i });
+      expect(screen.getByText(NOTICE)).toBeInTheDocument();
+    });
+
+    it("shows no notice for a private item", async () => {
+      // AC 2.1.6
+      renderPage("/items/item-1/edit");
+      await screen.findByRole("button", { name: /save changes/i });
+      expect(screen.queryByText(NOTICE)).not.toBeInTheDocument();
+    });
+
+    it("shows no notice for an admin editing a public item", async () => {
+      // AC 2.1.6
+      vi.mocked(useAuth).mockReturnValue({
+        isAuthenticated: true,
+        userId: "user-1",
+        isAdmin: true,
+      } as ReturnType<typeof useAuth>);
+      vi.mocked(itemsApi.getById).mockResolvedValue(
+        publicItem as Awaited<ReturnType<typeof itemsApi.getById>>
+      );
+      renderPage("/items/item-1/edit");
+      await screen.findByRole("button", { name: /save changes/i });
+      expect(screen.queryByText(NOTICE)).not.toBeInTheDocument();
+    });
+
+    it("tells the owner the item is now private after saving", async () => {
+      // AC 2.1.6
+      const user = userEvent.setup({ delay: null });
+      vi.mocked(itemsApi.getById).mockResolvedValue(
+        publicItem as Awaited<ReturnType<typeof itemsApi.getById>>
+      );
+      renderPage("/items/item-1/edit");
+      await user.click(await screen.findByRole("button", { name: /save changes/i }));
+      expect(await screen.findByRole("status")).toHaveTextContent(/now private again/i);
+      expect(screen.getByRole("button", { name: /back to categories/i })).toBeInTheDocument();
+    });
+  });
 });
