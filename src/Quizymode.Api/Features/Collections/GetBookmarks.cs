@@ -56,8 +56,10 @@ public static class GetBookmarks
         {
             var userId = userContext.UserId!;
 
+            // Only collections the caller can still access (public, or owned by the caller); mirrors GetCollectionById.CanAccess.
             var bookmarks = await db.CollectionBookmarks
                 .Where(b => b.UserId == userId)
+                .Where(b => db.Collections.Any(c => c.Id == b.CollectionId && (c.IsPublic || c.CreatedBy == userId)))
                 .OrderByDescending(b => b.CreatedAt)
                 .Select(b => b.CollectionId)
                 .ToListAsync(cancellationToken);
@@ -68,7 +70,7 @@ public static class GetBookmarks
             }
 
             var collections = await db.Collections
-                .Where(c => bookmarks.Contains(c.Id))
+                .Where(c => bookmarks.Contains(c.Id) && (c.IsPublic || c.CreatedBy == userId))
                 .ToListAsync(cancellationToken);
 
             var itemCounts = await db.CollectionItems

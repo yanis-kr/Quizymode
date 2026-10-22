@@ -16,7 +16,6 @@ namespace Quizymode.Api.Tests.Features.Collections;
 /// <summary>
 /// #289: collection write endpoints (and the owner-only bookmarkers list) are owner-only. A non-owner who cannot see the
 /// collection gets the same 404 as a missing id; a non-owner who can see it (public) gets 403. Admins are non-owners.
-/// Known gaps tracked in #298: GET /collections/{id}/rating and GET /bookmarks still reveal private collections.
 /// </summary>
 public sealed class CollectionWriteOwnershipHttpTests : DatabaseTestFixture, IAsyncLifetime
 {

@@ -40,7 +40,8 @@ public sealed class GetBookmarksTests : DatabaseTestFixture
             Id = Guid.NewGuid(),
             Name = "Bookmarked Collection",
             CreatedBy = "owner",
-            CreatedAt = DateTime.UtcNow
+            CreatedAt = DateTime.UtcNow,
+            IsPublic = true
         };
         DbContext.Collections.Add(col);
 
@@ -74,7 +75,8 @@ public sealed class GetBookmarksTests : DatabaseTestFixture
             Id = Guid.NewGuid(),
             Name = "Col With Items",
             CreatedBy = "owner",
-            CreatedAt = DateTime.UtcNow
+            CreatedAt = DateTime.UtcNow,
+            IsPublic = true
         };
         DbContext.Collections.Add(col);
 
@@ -113,7 +115,8 @@ public sealed class GetBookmarksTests : DatabaseTestFixture
             Id = Guid.NewGuid(),
             Name = "A's Collection",
             CreatedBy = "owner",
-            CreatedAt = DateTime.UtcNow
+            CreatedAt = DateTime.UtcNow,
+            IsPublic = true
         };
         DbContext.Collections.Add(col);
 
