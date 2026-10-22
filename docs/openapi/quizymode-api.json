@@ -5740,6 +5740,42 @@
         }
       }
     },
+    "/study-sessions/activity": {
+      "get": {
+        "tags": [
+          "StudySessions"
+        ],
+        "summary": "Per-day study activity and streaks for the current user",
+        "description": "One entry per UTC day with activity in the last `days` days (default 182, 1 to 365), plus the current and longest study streak over the retained history. Private to the current user. Requires authentication.",
+        "parameters": [
+          {
+            "name": "days",
+            "in": "query",
+            "schema": {
+              "$ref": "#/components/schemas/System.NullableOfSystem.Int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Quizymode.Api.Features.StudySessions.GetStudyActivity.Response"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "401": {
+            "description": "Unauthorized"
+          }
+        }
+      }
+    },
     "/study-sessions": {
       "get": {
         "tags": [
@@ -15803,6 +15839,61 @@
         },
         "description": "A validated AI-generated question awaiting the owner's review."
       },
+      "Quizymode.Api.Features.StudySessions.GetStudyActivity.DayDto": {
+        "required": [
+          "date",
+          "sessions",
+          "questions",
+          "correct",
+          "hasDaily"
+        ],
+        "type": "object",
+        "properties": {
+          "date": {
+            "$ref": "#/components/schemas/System.String"
+          },
+          "sessions": {
+            "$ref": "#/components/schemas/System.Int32"
+          },
+          "questions": {
+            "$ref": "#/components/schemas/System.Int32"
+          },
+          "correct": {
+            "$ref": "#/components/schemas/System.Int32"
+          },
+          "hasDaily": {
+            "$ref": "#/components/schemas/System.Boolean"
+          }
+        },
+        "description": "One UTC day with study activity. `HasDaily` marks days the daily quiz was completed."
+      },
+      "Quizymode.Api.Features.StudySessions.GetStudyActivity.Response": {
+        "required": [
+          "today",
+          "days",
+          "activity",
+          "currentStreak",
+          "longestStreak"
+        ],
+        "type": "object",
+        "properties": {
+          "today": {
+            "$ref": "#/components/schemas/System.String"
+          },
+          "days": {
+            "$ref": "#/components/schemas/System.Int32"
+          },
+          "activity": {
+            "$ref": "#/components/schemas/System.Collections.Generic.ListOfQuizymode.Api.Features.StudySessions.GetStudyActivity.DayDto"
+          },
+          "currentStreak": {
+            "$ref": "#/components/schemas/System.Int32"
+          },
+          "longestStreak": {
+            "$ref": "#/components/schemas/System.Int32"
+          }
+        }
+      },
       "Quizymode.Api.Features.StudySessions.GetStudySessions.SessionsResponse": {
         "required": [
           "sessions"
@@ -17219,6 +17310,12 @@
         "type": "array",
         "items": {
           "$ref": "#/components/schemas/Quizymode.Api.Features.StudyGuideUploads.StudyGuideGeneratedQuestion"
+        }
+      },
+      "System.Collections.Generic.ListOfQuizymode.Api.Features.StudySessions.GetStudyActivity.DayDto": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/Quizymode.Api.Features.StudySessions.GetStudyActivity.DayDto"
         }
       },
       "System.Collections.Generic.ListOfQuizymode.Api.Features.StudySessions.RecordStudySession.Request": {

@@ -1,6 +1,9 @@
 import { useState, useEffect } from "react";
 import { useQuery, useMutation, useQueryClient } from "@tanstack/react-query";
+import { Link } from "react-router-dom";
 import { usersApi } from "@/api/users";
+import { studySessionsApi } from "@/api/studySessions";
+import { STUDY_SUMMARY_QUERY_KEY } from "@/features/progress/queryKeys";
 import { useAuth } from "@/contexts/AuthContext";
 import { usePageSize, PAGE_SIZE_OPTIONS } from "@/hooks/usePageSize";
 import type { UserResponse } from "@/types/api";
@@ -15,8 +18,18 @@ const UserProfileModal = ({ isOpen, onClose }: UserProfileModalProps) => {
   const [isEditing, setIsEditing] = useState(false);
   const [name, setName] = useState("");
   const queryClient = useQueryClient();
-  const { isAuthenticated } = useAuth();
+  const { isAuthenticated, userId } = useAuth();
   const { pageSize, updatePageSize, isUpdating } = usePageSize();
+
+  // Private study totals (issue #259); a failure only hides this block, never the rest of the profile.
+  const summaryQuery = useQuery({
+    queryKey: [...STUDY_SUMMARY_QUERY_KEY, userId],
+    queryFn: () => studySessionsApi.getSummary(),
+    enabled: isOpen && isAuthenticated,
+    retry: false,
+    staleTime: 30000,
+  });
+  const studySummary = summaryQuery.data;
 
   // Try to get cached data first - check this outside the query
   const cachedUser = queryClient.getQueryData<UserResponse>(["currentUser"]);
@@ -277,6 +290,43 @@ const UserProfileModal = ({ isOpen, onClose }: UserProfileModalProps) => {
                 {new Date(displayUser.lastLogin).toLocaleDateString()}
               </div>
             </div>
+
+            <section aria-labelledby="profile-progress-heading">
+              <h4 id="profile-progress-heading" className="block text-sm font-medium text-gray-700 mb-1">
+                Study progress
+              </h4>
+              <div className="px-3 py-2 bg-gray-50 rounded-md text-sm text-gray-900">
+                {studySummary ? (
+                  <dl className="grid grid-cols-3 gap-2 text-center" data-testid="profile-study-summary">
+                    <div>
+                      <dd className="font-semibold">{studySummary.totalSessions}</dd>
+                      <dt className="text-xs text-gray-500">{studySummary.totalSessions === 1 ? "session" : "sessions"}</dt>
+                    </div>
+                    <div>
+                      <dd className="font-semibold">{studySummary.totalQuestions}</dd>
+                      <dt className="text-xs text-gray-500">{studySummary.totalQuestions === 1 ? "question" : "questions"}</dt>
+                    </div>
+                    <div>
+                      <dd className="font-semibold">
+                        {studySummary.accuracyPercent === null ? "None yet" : `${studySummary.accuracyPercent}%`}
+                      </dd>
+                      <dt className="text-xs text-gray-500">accuracy</dt>
+                    </div>
+                  </dl>
+                ) : summaryQuery.isLoading ? (
+                  <span className="text-gray-500">Loading...</span>
+                ) : (
+                  <span className="text-gray-500">Study totals are not available right now.</span>
+                )}
+              </div>
+              <Link
+                to="/progress"
+                onClick={onClose}
+                className="mt-1 inline-block text-xs font-medium text-indigo-600 hover:text-indigo-800 underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500"
+              >
+                View my progress
+              </Link>
+            </section>
 
             <div>
               <label className="block text-sm font-medium text-gray-700 mb-1">

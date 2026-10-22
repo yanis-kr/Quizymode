@@ -55,6 +55,7 @@ const AdminFeaturedPage = lazyPage(() => import("./features/admin/pages/AdminFea
 const AdminAiProvidersPage = lazyPage(() => import("./features/admin/pages/AdminAiProvidersPage"));
 const AdminDailyQuizPage = lazyPage(() => import("./features/admin/pages/AdminDailyQuizPage"));
 const ReviewQueuePage = lazyPage(() => import("./features/learningLoop/pages/ReviewQueuePage"));
+const ProgressPage = lazyPage(() => import("./features/progress/ProgressPage"));
 
 function App() {
   const location = useLocation();
@@ -119,6 +120,7 @@ function App() {
         />
         <Route path="/learn/:category?" element={<LearnModePage />} />
         <Route path="/daily" element={<DailyQuizPage />} />
+        <Route path="/progress" element={<ProgressPage />} />
         <Route path="/login" element={<LoginPage />} />
         <Route path="/signup" element={<SignUpPage />} />
         <Route path="/auth/callback" element={<AuthCallbackPage />} />

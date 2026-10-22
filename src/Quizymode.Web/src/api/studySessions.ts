@@ -40,6 +40,25 @@ export interface StudySessionSummary {
   importedSessions: number;
 }
 
+export interface StudyActivityDay {
+  /** UTC calendar day, yyyy-MM-dd. */
+  date: string;
+  sessions: number;
+  questions: number;
+  correct: number;
+  /** True when the daily quiz was completed that day. */
+  hasDaily: boolean;
+}
+
+export interface StudyActivity {
+  /** Server current UTC day, yyyy-MM-dd. */
+  today: string;
+  days: number;
+  activity: StudyActivityDay[];
+  currentStreak: number;
+  longestStreak: number;
+}
+
 export interface ImportGuestStudySessionsRequest {
   version: number;
   runs: RecordStudySessionRequest[];
@@ -73,6 +92,11 @@ export const studySessionsApi = {
 
   getSummary: async (): Promise<StudySessionSummary> => {
     const response = await apiClient.get<StudySessionSummary>("/study-sessions/summary");
+    return response.data;
+  },
+
+  getActivity: async (days = 182): Promise<StudyActivity> => {
+    const response = await apiClient.get<StudyActivity>("/study-sessions/activity", { params: { days } });
     return response.data;
   },
 };

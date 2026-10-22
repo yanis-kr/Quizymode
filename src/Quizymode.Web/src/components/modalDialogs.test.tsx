@@ -1,6 +1,7 @@
 import { beforeEach, describe, expect, it, vi } from "vitest";
 import { render, screen } from "@testing-library/react";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import { MemoryRouter } from "react-router-dom";
 import ItemCollectionsModal from "./ItemCollectionsModal";
 import UserProfileModal from "./UserProfileModal";
 
@@ -11,6 +12,7 @@ vi.mock("@/api/collections", () => ({
   collectionsApi: { getAll: vi.fn().mockResolvedValue({ collections: [] }) },
 }));
 vi.mock("@/api/items", () => ({ itemsApi: { getById: vi.fn().mockResolvedValue({ id: "i", collections: [] }) } }));
+vi.mock("@/api/studySessions", () => ({ studySessionsApi: { getSummary: vi.fn().mockResolvedValue({ totalSessions: 0, totalQuestions: 0, accuracyPercent: null }) } }));
 vi.mock("@/api/users", () => ({
   usersApi: { getCurrent: vi.fn().mockResolvedValue({ id: "u", name: "Ann", email: "a@b.c", isAdmin: false }) },
 }));
@@ -24,7 +26,11 @@ vi.mock("@/hooks/usePageSize", () => ({
 
 function renderWithClient(ui: React.ReactElement) {
   const client = new QueryClient({ defaultOptions: { queries: { retry: false } } });
-  return render(<QueryClientProvider client={client}>{ui}</QueryClientProvider>);
+  return render(
+    <QueryClientProvider client={client}>
+      <MemoryRouter>{ui}</MemoryRouter>
+    </QueryClientProvider>,
+  );
 }
 
 describe("modal dialog semantics (AC 3.16.8)", () => {

@@ -256,6 +256,12 @@ const Layout = ({ children }: LayoutProps) => {
                     >
                       Generate Quiz
                     </Link>
+                    <Link
+                      to="/progress"
+                      className={desktopNavLinkClass(isPathActive("/progress"))}
+                    >
+                      My Progress
+                    </Link>
                     {userIsAdmin && (
                       <Link
                         to="/admin"
@@ -365,6 +371,13 @@ const Layout = ({ children }: LayoutProps) => {
                     onClick={closeMobileMenu}
                   >
                     Generate Quiz
+                  </Link>
+                  <Link
+                    to="/progress"
+                    className={mobileNavLinkClass(isPathActive("/progress"))}
+                    onClick={closeMobileMenu}
+                  >
+                    My Progress
                   </Link>
                   {userIsAdmin && (
                     <Link
