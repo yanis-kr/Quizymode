@@ -59,7 +59,7 @@ function renderPage(initialEntry: string) {
       <MemoryRouter initialEntries={[initialEntry]}>
         <Routes>
           <Route
-            path="/add-new-item"
+            path="/create/question"
             element={
               <>
                 <CreateItemPage />
@@ -126,7 +126,7 @@ describe("CreateItemPage", () => {
   it("keeps URL-prefilled scope editable and redirects to the created item after submit", async () => {
     const user = userEvent.setup({ delay: null });
 
-    renderPage("/add-new-item?category=science&keywords=anatomy,muscular,arms");
+    renderPage("/create/question?category=science&keywords=anatomy,muscular,arms");
 
     const categorySelect = await screen.findByLabelText(/category \*/i);
     const rank1Select = await screen.findByLabelText(/primary topic/i);
@@ -167,11 +167,18 @@ describe("CreateItemPage", () => {
     expect(screen.getByTestId("location")).toHaveTextContent("/items/item-123");
   });
 
+  it("links back to the Create hub keeping the scope query (#296)", async () => {
+    renderPage("/create/question?category=science&keywords=anatomy,muscular");
+
+    const back = await screen.findByRole("link", { name: /back to create/i });
+    expect(back).toHaveAttribute("href", "/create?category=science&keywords=anatomy,muscular");
+  });
+
   it("re-indexes incorrect-answer speech after dropping a blank answer (#269)", async () => {
     // AC 3.12.7
     const user = userEvent.setup({ delay: null });
 
-    renderPage("/add-new-item?category=science&keywords=anatomy,muscular");
+    renderPage("/create/question?category=science&keywords=anatomy,muscular");
 
     await waitFor(() => expect(screen.getByLabelText(/subtopic/i)).toHaveValue("muscular"));
 
@@ -203,7 +210,7 @@ describe("CreateItemPage", () => {
     // AC 2.1.8
     const user = userEvent.setup({ delay: null });
 
-    renderPage("/add-new-item?category=science&keywords=anatomy,muscular");
+    renderPage("/create/question?category=science&keywords=anatomy,muscular");
 
     await waitFor(() => expect(screen.getByLabelText(/subtopic/i)).toHaveValue("muscular"));
 

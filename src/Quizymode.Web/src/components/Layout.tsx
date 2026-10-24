@@ -61,8 +61,20 @@ function getFallbackTitle(pathname: string): string | undefined {
     return "Items";
   }
 
-  if (pathname === "/items/add" || pathname === "/add-new-item" || pathname === "/items/create") {
+  if (pathname === "/create") {
+    return "Create";
+  }
+
+  if (pathname === "/create/notes") {
+    return "Generate Quiz";
+  }
+
+  if (pathname === "/create/question" || pathname === "/items/create" || pathname === "/add-new-item") {
     return "Add Items";
+  }
+
+  if (pathname === "/create/import") {
+    return "Import Questions";
   }
 
   if (pathname === "/items/bulk-create") {
@@ -91,10 +103,6 @@ function getFallbackTitle(pathname: string): string | undefined {
 
   if (pathname === "/study-guide/import") {
     return "Import Study Guide";
-  }
-
-  if (pathname === "/study-guide/upload") {
-    return "Generate Quiz";
   }
 
   if (pathname === "/study-guides/documents" || pathname.startsWith("/study-guides/documents/")) {
@@ -175,18 +183,28 @@ const Layout = ({ children }: LayoutProps) => {
     location.pathname === "/categories" ||
     location.pathname === "/collections" ||
     location.pathname === "/featured" ||
-    location.pathname === "/items/add" ||
+    location.pathname === "/create" ||
     location.pathname === "/ideas";
 
   const isPathActive = (basePath: string) => {
     const path = location.pathname;
     if (path === basePath) return true;
     if (path.startsWith(`${basePath}/`)) return true;
-    // Treat explore/quiz collection routes as part of Collections
-    // Study guide documents belong to the Generate Quiz flow
-    if (basePath === "/study-guide/upload" && path.startsWith("/study-guides/")) {
-      return true;
+    // Create covers its sub-pages plus the legacy create/study guide routes. /items/* legacy paths match
+    // exactly so /items and item detail pages do not light up Create.
+    if (basePath === "/create") {
+      return (
+        path === "/items/add" ||
+        path === "/items/create" ||
+        path === "/items/bulk-create" ||
+        path === "/items/upload" ||
+        path === "/add-new-item" ||
+        path === "/study-guide" ||
+        path.startsWith("/study-guide/") ||
+        path.startsWith("/study-guides/")
+      );
     }
+    // Treat explore/quiz collection routes as part of Collections
     if (
       basePath === "/collections" &&
       (path.startsWith("/explore/collections/") || path.startsWith("/quiz/collections/"))
@@ -245,16 +263,10 @@ const Layout = ({ children }: LayoutProps) => {
                 {isAuthenticated && (
                   <>
                     <Link
-                      to="/items/add"
-                      className={desktopNavLinkClass(isPathActive("/items"))}
+                      to="/create"
+                      className={desktopNavLinkClass(isPathActive("/create"))}
                     >
-                      Add Items
-                    </Link>
-                    <Link
-                      to="/study-guide/upload"
-                      className={desktopNavLinkClass(isPathActive("/study-guide/upload"))}
-                    >
-                      Generate Quiz
+                      Create
                     </Link>
                     <Link
                       to="/progress"
@@ -359,18 +371,11 @@ const Layout = ({ children }: LayoutProps) => {
               {isAuthenticated && (
                 <>
                   <Link
-                    to="/items/add"
-                    className={mobileNavLinkClass(isPathActive("/items"))}
+                    to="/create"
+                    className={mobileNavLinkClass(isPathActive("/create"))}
                     onClick={closeMobileMenu}
                   >
-                    Add Items
-                  </Link>
-                  <Link
-                    to="/study-guide/upload"
-                    className={mobileNavLinkClass(isPathActive("/study-guide/upload"))}
-                    onClick={closeMobileMenu}
-                  >
-                    Generate Quiz
+                    Create
                   </Link>
                   <Link
                     to="/progress"

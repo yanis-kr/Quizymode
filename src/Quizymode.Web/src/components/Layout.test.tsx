@@ -75,6 +75,42 @@ describe("Layout", () => {
     expect(screen.getAllByRole("link", { name: "My Progress" })[0]).toHaveAttribute("href", "/progress");
   });
 
+  it("shows a single Create nav link instead of Add Items and Generate Quiz for signed-in users", () => {
+    authState.isAuthenticated = true;
+    renderLayout();
+    expect(screen.getAllByRole("link", { name: "Create" })[0]).toHaveAttribute("href", "/create");
+    expect(screen.queryByRole("link", { name: "Add Items" })).not.toBeInTheDocument();
+    expect(screen.queryByRole("link", { name: "Generate Quiz" })).not.toBeInTheDocument();
+  });
+
+  it("hides the Create nav link from anonymous users", () => {
+    renderLayout();
+    expect(screen.queryByRole("link", { name: "Create" })).not.toBeInTheDocument();
+  });
+
+  it.each([
+    "/create",
+    "/create/notes",
+    "/items/add",
+    "/add-new-item",
+    "/items/create",
+    "/items/bulk-create",
+    "/items/upload",
+    "/study-guide",
+    "/study-guide/import",
+    "/study-guides/documents/abc",
+  ])("highlights Create on %s", (path) => {
+    authState.isAuthenticated = true;
+    renderLayout([path]);
+    expect(screen.getAllByRole("link", { name: "Create" })[0]).toHaveClass("text-indigo-600");
+  });
+
+  it.each(["/items", "/items/123", "/progress"])("does not highlight Create on %s", (path) => {
+    authState.isAuthenticated = true;
+    renderLayout([path]);
+    expect(screen.getAllByRole("link", { name: "Create" })[0]).not.toHaveClass("text-indigo-600");
+  });
+
   afterEach(() => {
     Object.defineProperty(window.navigator, "userAgent", {
       configurable: true,

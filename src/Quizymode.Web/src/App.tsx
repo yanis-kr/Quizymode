@@ -15,6 +15,7 @@ import CollectionDetailPage from "./features/collections/pages/CollectionDetailP
 import ItemCommentsPage from "./features/items/pages/ItemCommentsPage";
 import PageViewTracker from "./features/analytics/PageViewTracker";
 import RequireAuthRoute from "./components/RequireAuthRoute";
+import RedirectWithSearch from "./components/RedirectWithSearch";
 import { LazyRoute } from "./components/LazyRoute";
 import { lazyPage } from "./utils/lazyPage";
 import FeaturedPage from "./features/featured/pages/FeaturedPage";
@@ -35,8 +36,8 @@ const AdminSeedSyncPage = lazyPage(() => import("./features/admin/pages/AdminSee
 const PageViewAnalyticsPage = lazyPage(() => import("./features/admin/pages/PageViewAnalyticsPage"));
 const AdminClientErrorsPage = lazyPage(() => import("./features/admin/pages/AdminClientErrorsPage"));
 const BulkCreateItemsPage = lazyPage(() => import("./features/items/pages/BulkCreateItemsPage"));
-const AddItemsPage = lazyPage(() => import("./features/items/pages/AddItemsPage"));
-const UploadToCollectionPage = lazyPage(() => import("./features/items/pages/UploadToCollectionPage"));
+const CreateHubPage = lazyPage(() => import("./features/create/pages/CreateHubPage"));
+const CreateImportPage = lazyPage(() => import("./features/items/pages/CreateImportPage"));
 const EditItemPage = lazyPage(() => import("./features/items/pages/EditItemPage"));
 const AboutPage = lazyPage(() => import("./features/about/pages/AboutPage"));
 const RoadmapPage = lazyPage(() => import("./features/roadmap/pages/RoadmapPage"));
@@ -124,16 +125,21 @@ function App() {
         <Route path="/login" element={<LoginPage />} />
         <Route path="/signup" element={<SignUpPage />} />
         <Route path="/auth/callback" element={<AuthCallbackPage />} />
+        <Route path="/create" element={<CreateHubPage />} />
+        {/* Legacy create URLs (AC 2.2.5): outside RequireAuthRoute so anonymous return-to uses the new path. */}
+        <Route path="/items/add" element={<RedirectWithSearch to="/create" />} />
+        <Route path="/add-new-item" element={<RedirectWithSearch to="/create/question" />} />
+        <Route path="/items/create" element={<RedirectWithSearch to="/create/question" />} />
+        <Route path="/study-guide/upload" element={<RedirectWithSearch to="/create/notes" />} />
+        <Route path="/items/upload" element={<RedirectWithSearch to="/create/import" />} />
         <Route element={<RequireAuthRoute />}>
-          <Route path="/items/add" element={<AddItemsPage />} />
+          <Route path="/create/notes" element={<StudyGuideUploadPage />} />
+          <Route path="/create/question" element={<CreateItemPage />} />
+          <Route path="/create/import" element={<CreateImportPage />} />
           <Route path="/items/bulk-create" element={<BulkCreateItemsPage />} />
-          <Route path="/items/upload" element={<UploadToCollectionPage />} />
-          <Route path="/add-new-item" element={<CreateItemPage />} />
-          <Route path="/items/create" element={<CreateItemPage />} />
           <Route path="/items/:id/edit" element={<EditItemPage />} />
           <Route path="/study-guide" element={<StudyGuidePage />} />
           <Route path="/study-guide/import" element={<StudyGuideImportPage />} />
-          <Route path="/study-guide/upload" element={<StudyGuideUploadPage />} />
           <Route path="/study-guides/documents" element={<StudyGuideDocumentsPage />} />
           <Route path="/study-guides/documents/:id" element={<StudyGuideDocumentPage />} />
           <Route path="/review" element={<ReviewQueuePage />} />

@@ -19,7 +19,7 @@ interface LegacyStudyGuideUploadResultProps {
 }
 
 /**
- * Result view for AC 6.5 one-shot uploads (`/study-guide/upload?id=<uploadId>`). New uploads go
+ * Result view for AC 6.5 one-shot uploads (`/create/notes?id=<uploadId>`). New uploads go
  * through study guide documents (AC 6.6); this keeps links to earlier uploads working.
  */
 export function LegacyStudyGuideUploadResult({ uploadId, onStartOver }: LegacyStudyGuideUploadResultProps) {

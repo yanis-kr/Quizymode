@@ -27,7 +27,7 @@ const StudyGuideDocumentsPage = () => {
       <div className="flex flex-wrap items-baseline justify-between gap-2">
         <h1 className="text-2xl font-bold text-gray-900">My study guides</h1>
         <Link
-          to="/study-guide/upload"
+          to="/create/notes"
           className="rounded-md bg-indigo-600 px-3 py-1.5 text-sm font-medium text-white hover:bg-indigo-700"
         >
           Upload a study guide
@@ -60,7 +60,7 @@ const StudyGuideDocumentsPage = () => {
       ) : documents.length === 0 ? (
         <div className="rounded-lg border border-dashed border-gray-300 bg-gray-50 p-8 text-center text-sm text-gray-600">
           You have not uploaded any study guides yet.{" "}
-          <Link to="/study-guide/upload" className="font-medium text-indigo-600 hover:text-indigo-800">
+          <Link to="/create/notes" className="font-medium text-indigo-600 hover:text-indigo-800">
             Upload one
           </Link>{" "}
           to generate quiz questions.

@@ -1,0 +1,34 @@
+import { describe, expect, it, vi } from "vitest";
+import { render, screen } from "@testing-library/react";
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import { MemoryRouter } from "react-router-dom";
+import CreateImportPage from "./CreateImportPage";
+import { taxonomyApi } from "@/api/taxonomy";
+
+vi.mock("@/contexts/AuthContext", () => ({
+  useAuth: () => ({ isAuthenticated: true, isAdmin: false }),
+}));
+
+vi.mock("@/api/items", () => ({ itemsApi: { uploadToCollection: vi.fn() } }));
+
+vi.mock("@/api/taxonomy", () => ({ taxonomyApi: { getAll: vi.fn() } }));
+
+vi.mock("@/features/legal/components/ContentComplianceNotice", () => ({ default: () => null }));
+
+describe("CreateImportPage", () => {
+  it("opens the import on the Paste text tab under an Import questions heading", async () => {
+    vi.mocked(taxonomyApi.getAll).mockResolvedValue({ categories: [] });
+
+    render(
+      <QueryClientProvider client={new QueryClient({ defaultOptions: { queries: { retry: false } } })}>
+        <MemoryRouter initialEntries={["/create/import"]}>
+          <CreateImportPage />
+        </MemoryRouter>
+      </QueryClientProvider>
+    );
+
+    expect(screen.getByRole("heading", { level: 1, name: "Import questions" })).toBeInTheDocument();
+    expect(screen.getByRole("tab", { name: "Paste text", selected: true })).toBeInTheDocument();
+    expect(await screen.findByLabelText(/category \(required\)/i)).toBeInTheDocument();
+  });
+});

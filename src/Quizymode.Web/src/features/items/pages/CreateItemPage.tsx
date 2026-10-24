@@ -304,7 +304,7 @@ const CreateItemPage = () => {
     return <LoadingSpinner />;
   }
 
-  const addItemsBackTo = `/items/add${location.search}`;
+  const addItemsBackTo = `/create${location.search}`;
 
   return (
     <div className="px-4 py-6 sm:px-0">
@@ -315,7 +315,7 @@ const CreateItemPage = () => {
             className="inline-flex items-center gap-2 text-sm font-medium text-indigo-700 hover:text-indigo-900"
           >
             <ArrowLeftIcon className="h-4 w-4 shrink-0" aria-hidden />
-            Back to Add Items
+            Back to Create
           </Link>
         </div>
         <h1 className="text-3xl font-bold text-gray-900 mb-2">

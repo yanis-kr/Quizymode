@@ -754,20 +754,10 @@ async function ensurePromptSetsExist(page: Page) {
 
 async function openScopedAddItemsPage(page: Page) {
   await ensureSignedIn(page);
-  await safeGoto(page, "/categories/geography/capitals/world");
+  // The Create hub (/create) has no scope fields; the scoped form lives at /create/question.
+  await safeGoto(page, "/create/question?category=geography&keywords=capitals,world");
   await clickConsentIfPresent(page);
-
-  const addLink = page.locator("a[title='Add items for this category and navigation path']").first();
-  if (await addLink.isVisible({ timeout: 5_000 }).catch(() => false)) {
-    await addLink.click().catch(() => {});
-    await page.waitForURL(/\/items\/add/, { timeout: 15_000 }).catch(() => {});
-  } else {
-    // On mobile the link may be hidden behind overflow; navigate directly with scope pre-filled
-    await safeGoto(page, "/items/add?category=geography&keywords=capitals,world");
-  }
-
-  await clickConsentIfPresent(page);
-  await waitForAnyVisible(page, ["#add-hub-scope-category", "#add-hub-scope-rank1"]);
+  await waitForAnyVisible(page, ["#item-form-category", "#item-form-rank1"]);
 }
 
 async function applyKeywordFilterWithResults(page: Page) {
@@ -821,11 +811,19 @@ test.describe("User guide screenshots", () => {
   });
 
   test("add-items", async ({ page }, testInfo) => {
-    await capture(page, testInfo, "add-items", "/items/add");
+    await capture(page, testInfo, "add-items", "/create");
   });
 
   test("add-new-item", async ({ page }, testInfo) => {
-    await capture(page, testInfo, "add-new-item", "/add-new-item");
+    await capture(page, testInfo, "add-new-item", "/create/question");
+  });
+
+  test("create-notes", async ({ page }, testInfo) => {
+    await capture(page, testInfo, "create-notes", "/create/notes");
+  });
+
+  test("create-import", async ({ page }, testInfo) => {
+    await capture(page, testInfo, "create-import", "/create/import");
   });
 
   test("bulk-create-items", async ({ page }, testInfo) => {
@@ -1048,9 +1046,9 @@ test.describe("User guide screenshots", () => {
 
   test("add-items-prepopulated", async ({ page }, testInfo) => {
     await openScopedAddItemsPage(page);
-    await waitForSelectValue(page, "#add-hub-scope-category", "geography");
-    await waitForSelectValue(page, "#add-hub-scope-rank1", "capitals");
-    await waitForSelectValue(page, "#add-hub-scope-rank2", "world");
+    await waitForSelectValue(page, "#item-form-category", "geography");
+    await waitForSelectValue(page, "#item-form-rank1", "capitals");
+    await waitForSelectValue(page, "#item-form-rank2", "world");
     await captureCurrentPage(page, testInfo, "add-items-prepopulated");
   });
 

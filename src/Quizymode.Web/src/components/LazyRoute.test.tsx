@@ -82,7 +82,7 @@ describe("App route splitting", () => {
       expect.arrayContaining([
         "AdminDashboardPage", "AdminSeedSyncPage", "AdminKeywordsPage", "AdminUserSettingsPage",
         "PageViewAnalyticsPage", "AdminClientErrorsPage", "AdminFeaturedPage", "AdminIdeasPage",
-        "AddItemsPage", "BulkCreateItemsPage", "UploadToCollectionPage", "CreateItemPage", "EditItemPage",
+        "CreateHubPage", "CreateImportPage", "BulkCreateItemsPage", "CreateItemPage", "EditItemPage",
         "StudyGuidePage", "StudyGuideImportPage", "StudyGuideUploadPage", "IdeasPage", "RoadmapPage", "FeedbackPage",
         "AboutPage", "PrivacyPolicyPage", "TermsOfServicePage",
       ])

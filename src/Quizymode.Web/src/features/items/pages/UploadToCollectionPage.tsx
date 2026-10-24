@@ -42,9 +42,18 @@ Requirements:
 
 Now generate the JSON array only.`;
 
-const UploadToCollectionPage = () => {
+interface UploadToCollectionPageProps {
+  /** Tab shown first; /create/import opens on Paste text. */
+  initialTab?: UploadTab;
+  heading?: string;
+}
+
+const UploadToCollectionPage = ({
+  initialTab = "json",
+  heading = "Upload items to collection",
+}: UploadToCollectionPageProps) => {
   const { isAuthenticated, isAdmin } = useAuth();
-  const [activeTab, setActiveTab] = React.useState<UploadTab>("json");
+  const [activeTab, setActiveTab] = React.useState<UploadTab>(initialTab);
   const navigate = useNavigate();
   const [searchParams] = useSearchParams();
   const categoryParam = searchParams.get("category") ?? "";
@@ -280,7 +289,7 @@ const UploadToCollectionPage = () => {
 
   return (
     <div className="px-4 py-6 sm:px-0 max-w-3xl mx-auto">
-      <h1 className="text-3xl font-bold text-gray-900 mb-2">Upload items to collection</h1>
+      <h1 className="text-3xl font-bold text-gray-900 mb-2">{heading}</h1>
       <p className="text-gray-600 text-sm mb-6">
         Select category and keywords (required), then paste a JSON array of items or upload a JSON file. Items are added to a new collection. Duplicate uploads (same content) are rejected.
       </p>
