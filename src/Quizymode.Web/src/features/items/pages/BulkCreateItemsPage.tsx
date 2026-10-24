@@ -22,10 +22,28 @@ import { ItemTopicScopeFields } from "@/components/items/ItemTopicScopeFields";
 import { validateNavigationKeywordName } from "@/utils/navigationKeywordRules";
 import ContentComplianceNotice from "@/features/legal/components/ContentComplianceNotice";
 import { ActiveCollectionNotice } from "@/components/items/ActiveCollectionNotice";
+import { parseCloze, CLOZE_AI_HELPER_PROMPT, type ClozeSkipped } from "@/features/items/utils/clozeParser";
+import {
+  ADMIN_ITEM_LIMIT,
+  NON_ADMIN_ITEM_LIMIT,
+} from "@/features/collections/utils/importParser";
 
 const MAX_PROMPT_QUESTIONS = 15;
 
 type Step = "setup" | "prompt" | "paste" | "review";
+type PasteFormat = "json" | "cloze";
+
+const CLOZE_PLACEHOLDER =
+  "{{c1::Paris}} is the capital of France | Lyon | Marseille\n{{c1::France}}'s capital is {{c2::Paris}} | c1: Spain | c2: Rome";
+const CLOZE_HELP_ID = "bulk-cloze-help";
+const SKIPPED_PREVIEW_COUNT = 5;
+
+interface ClozeReport {
+  skipped: ClozeSkipped[];
+  duplicates: number;
+  truncated: boolean;
+  limit: number;
+}
 
 interface ParsedItem {
   question: string;
@@ -37,6 +55,8 @@ interface ParsedItem {
   keywords?: string[];
   /** Nav + user extras + AI tags, deduped (case-insensitive); for review display. */
   consolidatedKeywords: string[];
+  /** Set for cloze imports: position among cards kept from the same pasted line. */
+  clozeOrigin?: { line: number; card: number; count: number };
 }
 
 /** Comma-separated extras from setup, trim + dedupe by case, preserve first spelling. */
@@ -76,7 +96,7 @@ function consolidateBulkItemKeywords(
 }
 
 const BulkCreateItemsPage = () => {
-  const { isAuthenticated } = useAuth();
+  const { isAuthenticated, isAdmin } = useAuth();
   const { activeCollectionId, activeCollection } = useActiveCollection();
   const navigate = useNavigate();
   const [searchParams] = useSearchParams();
@@ -90,6 +110,10 @@ const BulkCreateItemsPage = () => {
   const [extraKeywordsText, setExtraKeywordsText] = useState("");
   const [generatedPrompt, setGeneratedPrompt] = useState("");
   const [pastedResponse, setPastedResponse] = useState("");
+  const [pastedCloze, setPastedCloze] = useState("");
+  const [pasteFormat, setPasteFormat] = useState<PasteFormat>("json");
+  const [clozeReport, setClozeReport] = useState<ClozeReport | null>(null);
+  const [copyHelperSuccess, setCopyHelperSuccess] = useState(false);
   const [pendingItems, setPendingItems] = useState<ParsedItem[]>([]);
   const [copySuccess, setCopySuccess] = useState(false);
   const [localError, setLocalError] = useState<string | null>(null);
@@ -158,26 +182,52 @@ const BulkCreateItemsPage = () => {
     [extraKeywordsText]
   );
 
-  const handleGeneratePrompt = () => {
+  /** Shared scope validation for "Generate AI Prompt" and "Paste cloze text". Sets localError and returns false on failure. */
+  const validateScope = (): boolean => {
     setLocalError(null);
     if (!category.trim()) {
       setLocalError("Select a category.");
-      return;
+      return false;
     }
     if (!primaryTopic.trim()) {
       setLocalError("Select or enter a primary topic (rank 1).");
-      return;
+      return false;
     }
     if (!subtopic.trim()) {
       setLocalError("Select or enter a subtopic (rank 2).");
-      return;
+      return false;
     }
     const r1Err = validateNavigationKeywordName(primaryTopic);
     const r2Err = validateNavigationKeywordName(subtopic);
     if (r1Err || r2Err) {
       setLocalError(r1Err || r2Err || "");
-      return;
+      return false;
     }
+    return true;
+  };
+
+  const clearReports = () => {
+    setSkippedNoDistractors(0);
+    setSkippedConflicts(0);
+    setClozeReport(null);
+  };
+
+  const handlePasteCloze = () => {
+    if (!validateScope()) return;
+    clearReports();
+    setPasteFormat("cloze");
+    setStep("paste");
+  };
+
+  const handleSelectFormat = (format: PasteFormat) => {
+    if (format === pasteFormat) return;
+    setLocalError(null);
+    clearReports();
+    setPasteFormat(format);
+  };
+
+  const handleGeneratePrompt = () => {
+    if (!validateScope()) return;
     const navLine = `${primaryTopic.trim()} → ${subtopic.trim()}`;
     const extraLine =
       extraKeywords.length > 0 ? ` Tags to include on each item: ${extraKeywords.join(", ")}.` : "";
@@ -219,6 +269,8 @@ Requirements:
 Generate the JSON array only.`;
 
     setGeneratedPrompt(prompt);
+    clearReports();
+    setPasteFormat("json");
     setStep("prompt");
   };
 
@@ -232,8 +284,69 @@ Generate the JSON array only.`;
     }
   };
 
-  const handleParseAndReview = () => {
+  const handleCopyHelperPrompt = async () => {
+    try {
+      await navigator.clipboard.writeText(CLOZE_AI_HELPER_PROMPT);
+      setCopyHelperSuccess(true);
+      setTimeout(() => setCopyHelperSuccess(false), 2000);
+    } catch (e) {
+      console.error(e);
+      setLocalError("Could not copy automatically. Select the prompt text and copy it manually.");
+    }
+  };
+
+  const handleParseCloze = () => {
     setLocalError(null);
+    clearReports();
+    if (!pastedCloze.trim()) {
+      setLocalError("Paste your cloze text first.");
+      return;
+    }
+    try {
+      const limit = isAdmin ? ADMIN_ITEM_LIMIT : NON_ADMIN_ITEM_LIMIT;
+      const result = parseCloze(pastedCloze, { limit });
+      const report: ClozeReport = {
+        skipped: result.skipped,
+        duplicates: result.duplicates,
+        truncated: result.truncated,
+        limit,
+      };
+      setClozeReport(report);
+      if (result.drafts.length === 0) {
+        setLocalError(
+          `No valid cards found. ${result.skipped.length} line(s) skipped; see the details below.`
+        );
+        return;
+      }
+      const consolidatedKeywords = consolidateBulkItemKeywords(
+        navKeywords,
+        parseExtraKeywordsFromText(extraKeywordsText),
+        []
+      );
+      setPendingItems(
+        result.drafts.map((d) => ({
+          question: d.question,
+          correctAnswer: d.correctAnswer,
+          incorrectAnswers: d.incorrectAnswers,
+          explanation: d.explanation,
+          keywords: undefined,
+          consolidatedKeywords,
+          clozeOrigin: { line: d.sourceLine, card: d.cardPosition, count: d.cardCount },
+        }))
+      );
+      setStep("review");
+    } catch {
+      setLocalError("Could not read the pasted text.");
+    }
+  };
+
+  const handleParseAndReview = () => {
+    if (pasteFormat === "cloze") {
+      handleParseCloze();
+      return;
+    }
+    setLocalError(null);
+    clearReports();
     if (!pastedResponse.trim()) {
       setLocalError("Paste the AI response first.");
       return;
@@ -442,6 +555,7 @@ Generate the JSON array only.`;
 
   const handleRejectAll = () => {
     setPendingItems([]);
+    setClozeReport(null);
     setStep("paste");
   };
 
@@ -451,6 +565,58 @@ Generate the JSON array only.`;
 
   const primaryTopicError = validateNavigationKeywordName(primaryTopic);
   const subtopicError = validateNavigationKeywordName(subtopic);
+  const scopeIncomplete =
+    !category ||
+    !primaryTopic.trim() ||
+    !subtopic.trim() ||
+    !!primaryTopicError ||
+    !!subtopicError;
+
+  const renderClozeReport = () => {
+    if (!clozeReport) return null;
+    const { skipped, duplicates, truncated, limit } = clozeReport;
+    if (skipped.length === 0 && duplicates === 0 && !truncated) return null;
+    const renderSkipped = (s: ClozeSkipped, i: number) => (
+      <li key={i}>
+        Line {s.line}
+        {s.card !== undefined ? ` (c${s.card})` : ""}: {s.reason}
+      </li>
+    );
+    return (
+      <div className="mb-2 space-y-1">
+        {skipped.length > 0 && (
+          <div>
+            <p role="status" className="text-sm text-amber-700">
+              {skipped.length} line(s) or card(s) skipped.
+            </p>
+            <ul className="mt-1 list-disc pl-5 text-xs text-amber-700 break-words">
+              {skipped.slice(0, SKIPPED_PREVIEW_COUNT).map(renderSkipped)}
+            </ul>
+            {skipped.length > SKIPPED_PREVIEW_COUNT && (
+              <details className="pl-5 text-xs text-amber-700">
+                <summary className="cursor-pointer">
+                  Show {skipped.length - SKIPPED_PREVIEW_COUNT} more
+                </summary>
+                <ul className="mt-1 list-disc pl-5 break-words">
+                  {skipped.slice(SKIPPED_PREVIEW_COUNT).map((s, i) => renderSkipped(s, i + SKIPPED_PREVIEW_COUNT))}
+                </ul>
+              </details>
+            )}
+          </div>
+        )}
+        {duplicates > 0 && (
+          <p role="status" className="text-sm text-amber-700">
+            {duplicates} duplicate card(s) removed (same question text already in this batch).
+          </p>
+        )}
+        {truncated && (
+          <p role="status" className="text-sm text-amber-700">
+            Only the first {limit} cards were kept. Split the rest into another import.
+          </p>
+        )}
+      </div>
+    );
+  };
 
   return (
     <div className="px-4 py-6 sm:px-0">
@@ -517,25 +683,30 @@ Generate the JSON array only.`;
                 </p>
               </div>
             </section>
-            <div className="flex gap-3">
+            <p className="text-xs text-gray-500">
+              Already have cloze-style notes? Skip the AI prompt and paste them directly.
+            </p>
+            <div className="flex flex-col gap-3 sm:flex-row sm:flex-wrap">
               <button
                 type="button"
                 onClick={handleGeneratePrompt}
-                disabled={
-                  !category ||
-                  !primaryTopic.trim() ||
-                  !subtopic.trim() ||
-                  !!primaryTopicError ||
-                  !!subtopicError
-                }
-                className="px-4 py-2 text-sm font-medium text-white bg-indigo-600 rounded-md hover:bg-indigo-700 disabled:opacity-50"
+                disabled={scopeIncomplete}
+                className="w-full sm:w-auto px-4 py-2 text-sm font-medium text-white bg-indigo-600 rounded-md hover:bg-indigo-700 disabled:opacity-50"
               >
                 Generate AI Prompt
               </button>
               <button
                 type="button"
+                onClick={handlePasteCloze}
+                disabled={scopeIncomplete}
+                className="w-full sm:w-auto px-4 py-2 text-sm font-medium text-indigo-700 bg-white border border-indigo-300 rounded-md hover:bg-indigo-50 disabled:opacity-50"
+              >
+                Paste cloze text
+              </button>
+              <button
+                type="button"
                 onClick={() => navigate("/categories")}
-                className="px-4 py-2 text-sm font-medium text-gray-700 bg-white border border-gray-300 rounded-md hover:bg-gray-50"
+                className="w-full sm:w-auto px-4 py-2 text-sm font-medium text-gray-700 bg-white border border-gray-300 rounded-md hover:bg-gray-50"
               >
                 Cancel
               </button>
@@ -565,7 +736,10 @@ Generate the JSON array only.`;
             <div className="flex gap-3">
               <button
                 type="button"
-                onClick={() => setStep("paste")}
+                onClick={() => {
+                  setPasteFormat("json");
+                  setStep("paste");
+                }}
                 className="px-4 py-2 text-sm font-medium text-white bg-indigo-600 rounded-md hover:bg-indigo-700"
               >
                 I pasted the response →
@@ -583,17 +757,116 @@ Generate the JSON array only.`;
 
         {step === "paste" && (
           <div className="bg-white shadow rounded-lg p-6 space-y-4">
-            <h2 className="text-lg font-medium text-gray-900">3. Paste AI response</h2>
-            <p className="text-sm text-gray-500">
-              Paste the raw JSON array from your AI assistant below. Items will be checked; only those matching your selected category will be kept. Optional per-item <code className="text-xs bg-gray-100 px-1 rounded">keywords</code> (up to five per item, format-valid and not duplicating your topic or extra tags) are merged with your setup tags on save. On the review step, each row shows that full combined tag list. You can then accept or reject each item before saving.
-            </p>
-            <textarea
-              value={pastedResponse}
-              onChange={(e) => setPastedResponse(e.target.value)}
-              rows={12}
-              className="w-full px-3 py-2 border border-gray-300 rounded-md text-sm font-mono"
-              placeholder='[ { "category": "...", "question": "...", "keywords": ["tag-one"], ... }, ... ]'
-            />
+            <h2 className="text-lg font-medium text-gray-900">
+              {pasteFormat === "cloze" ? "3. Paste cloze text" : "3. Paste AI response"}
+            </h2>
+            <div>
+              <p id="bulk-paste-format-label" className="text-sm font-medium text-gray-700 mb-1">
+                Format
+              </p>
+              <div
+                role="radiogroup"
+                aria-labelledby="bulk-paste-format-label"
+                className="inline-flex w-full sm:w-auto rounded-md border border-gray-300 bg-white p-0.5"
+              >
+                {(
+                  [
+                    ["json", "AI JSON response"],
+                    ["cloze", "Cloze text"],
+                  ] as const
+                ).map(([value, label]) => (
+                  <label
+                    key={value}
+                    className="flex-1 sm:flex-none text-center px-3 py-1.5 text-sm font-medium rounded cursor-pointer text-gray-700 has-[:checked]:bg-indigo-600 has-[:checked]:text-white has-[:focus-visible]:ring-2 has-[:focus-visible]:ring-indigo-500"
+                  >
+                    <input
+                      type="radio"
+                      name="bulk-paste-format"
+                      value={value}
+                      checked={pasteFormat === value}
+                      onChange={() => handleSelectFormat(value)}
+                      className="sr-only"
+                    />
+                    {label}
+                  </label>
+                ))}
+              </div>
+            </div>
+            {pasteFormat === "cloze" ? (
+              <>
+                <p className="text-sm text-gray-500">
+                  {"One note per line. Wrap each answer in {{c1::answer}}. Add wrong answers after | at the end of the line (1-4 required)."}
+                </p>
+                <div
+                  id={CLOZE_HELP_ID}
+                  className="rounded-md border border-gray-200 bg-slate-50/80 p-3 text-xs text-gray-700 space-y-2"
+                >
+                  <ul className="list-disc pl-4 space-y-1">
+                    <li>
+                      Same number = same card: <code className="text-xs bg-gray-100 px-1 rounded">{"{{c1::H}} and {{c1::O}}"}</code> blank together. Different numbers make separate cards.
+                    </li>
+                    <li>
+                      Add a hint with <code className="text-xs bg-gray-100 px-1 rounded">{"{{c1::Paris::city}}"}</code>.
+                    </li>
+                    <li>
+                      With several numbers, target one card by prefixing a wrong answer: <code className="text-xs bg-gray-100 px-1 rounded">| c1: Spain | c2: Rome</code>. Unprefixed wrong answers apply to every card on the line.
+                    </li>
+                    <li>
+                      Need a literal | in an answer? Write <code className="text-xs bg-gray-100 px-1 rounded">{"\\|"}</code>.
+                    </li>
+                  </ul>
+                  <pre className="text-xs font-mono whitespace-pre-wrap break-words bg-white border border-gray-200 rounded p-2">
+                    {CLOZE_PLACEHOLDER}
+                  </pre>
+                </div>
+                <details>
+                  <summary className="text-sm font-medium text-indigo-600 cursor-pointer">
+                    Need an AI to write cloze notes? Copy a helper prompt
+                  </summary>
+                  <div className="mt-2 space-y-2">
+                    <div className="flex justify-end">
+                      <button
+                        type="button"
+                        onClick={handleCopyHelperPrompt}
+                        className="flex items-center gap-2 px-3 py-1.5 text-sm font-medium text-indigo-600 bg-indigo-50 rounded-md hover:bg-indigo-100"
+                      >
+                        <ClipboardDocumentIcon className="h-4 w-4" />
+                        {copyHelperSuccess ? "Copied!" : "Copy helper prompt"}
+                      </button>
+                    </div>
+                    <pre className="text-xs text-gray-800 whitespace-pre-wrap font-mono bg-gray-50 p-4 rounded border border-gray-200 overflow-x-auto max-h-64 overflow-y-auto">
+                      {CLOZE_AI_HELPER_PROMPT}
+                    </pre>
+                  </div>
+                </details>
+                <span className="sr-only" role="status" aria-live="polite">
+                  {copyHelperSuccess ? "Helper prompt copied to clipboard." : ""}
+                </span>
+                <textarea
+                  value={pastedCloze}
+                  onChange={(e) => setPastedCloze(e.target.value)}
+                  rows={12}
+                  aria-describedby={CLOZE_HELP_ID}
+                  aria-label="Cloze text, one note per line"
+                  className="w-full px-3 py-2 border border-gray-300 rounded-md text-sm font-mono"
+                  placeholder={CLOZE_PLACEHOLDER}
+                />
+                {pendingItems.length === 0 && renderClozeReport()}
+              </>
+            ) : (
+              <>
+                <p className="text-sm text-gray-500">
+                  Paste the raw JSON array from your AI assistant below. Items will be checked; only those matching your selected category will be kept. Optional per-item <code className="text-xs bg-gray-100 px-1 rounded">keywords</code> (up to five per item, format-valid and not duplicating your topic or extra tags) are merged with your setup tags on save. On the review step, each row shows that full combined tag list. You can then accept or reject each item before saving.
+                </p>
+                <textarea
+                  value={pastedResponse}
+                  onChange={(e) => setPastedResponse(e.target.value)}
+                  rows={12}
+                  className="w-full px-3 py-2 border border-gray-300 rounded-md text-sm font-mono"
+                  placeholder='[ { "category": "...", "question": "...", "keywords": ["tag-one"], ... }, ... ]'
+                />
+              </>
+            )}
             <div className="flex gap-3">
               <button
                 type="button"
@@ -604,7 +877,10 @@ Generate the JSON array only.`;
               </button>
               <button
                 type="button"
-                onClick={() => setStep("prompt")}
+                onClick={() => {
+                  setLocalError(null);
+                  setStep(generatedPrompt ? "prompt" : "setup");
+                }}
                 className="px-4 py-2 text-sm font-medium text-gray-700 bg-white border border-gray-300 rounded-md hover:bg-gray-50"
               >
                 Back
@@ -620,7 +896,7 @@ Generate the JSON array only.`;
               Items are not saved yet. Accept to save them as private items. Reject to discard.
               Each row shows the full tag list: your category topics and optional extra tags from setup, plus any extra tags the AI suggested for that item (duplicates removed).
             </p>
-            <div className="flex gap-2 mb-4">
+            <div className="flex flex-wrap gap-2 mb-4">
               <button
                 type="button"
                 onClick={handleAcceptAll}
@@ -638,6 +914,12 @@ Generate the JSON array only.`;
                 <XMarkIcon className="h-4 w-4" /> Reject all
               </button>
             </div>
+            {renderClozeReport()}
+            {pendingItems.some((p) => p.clozeOrigin && p.clozeOrigin.count > 1) && (
+              <p className="text-xs text-gray-500">
+                Cards from the same line can reveal each other&apos;s answers when studied together. Reject any siblings you don&apos;t want.
+              </p>
+            )}
             {skippedNoDistractors > 0 && (
               <p className="text-sm text-amber-700 mb-2" role="status">
                 {skippedNoDistractors} item(s) skipped: each item needs 1-4 incorrect answers.
@@ -653,7 +935,14 @@ Generate the JSON array only.`;
                 <li key={index} className="pt-3 first:pt-0">
                   <div className="flex justify-between gap-4">
                     <div className="min-w-0 flex-1">
-                      <p className="text-sm font-medium text-gray-900">{item.question}</p>
+                      <p className={`text-sm font-medium text-gray-900${item.clozeOrigin ? " break-words" : ""}`}>
+                        {item.question}
+                      </p>
+                      {item.clozeOrigin && (
+                        <p className="text-xs text-gray-500 mt-0.5">
+                          Card {item.clozeOrigin.card} of {item.clozeOrigin.count} from line {item.clozeOrigin.line}
+                        </p>
+                      )}
                       <p className="text-xs text-gray-600 mt-1">
                         ✓ {item.correctAnswer}
                         {item.incorrectAnswers.length > 0 && (
@@ -673,6 +962,11 @@ Generate the JSON array only.`;
                         disabled={bulkCreateMutation.isPending}
                         className="p-1.5 text-emerald-600 hover:bg-emerald-50 rounded"
                         title="Accept"
+                        aria-label={
+                          item.clozeOrigin
+                            ? `Accept card ${item.clozeOrigin.card} of ${item.clozeOrigin.count} from line ${item.clozeOrigin.line}`
+                            : undefined
+                        }
                       >
                         <CheckIcon className="h-5 w-5" />
                       </button>
@@ -681,6 +975,11 @@ Generate the JSON array only.`;
                         onClick={() => handleRejectOne(index)}
                         className="p-1.5 text-red-600 hover:bg-red-50 rounded"
                         title="Reject"
+                        aria-label={
+                          item.clozeOrigin
+                            ? `Reject card ${item.clozeOrigin.card} of ${item.clozeOrigin.count} from line ${item.clozeOrigin.line}`
+                            : undefined
+                        }
                       >
                         <XMarkIcon className="h-5 w-5" />
                       </button>
