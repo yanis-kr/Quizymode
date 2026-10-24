@@ -371,7 +371,7 @@ public static class AcceptStudyGuideCandidates
             Description = Truncate($"Generated from study guide {document.Title}", MaxCollectionDescriptionLength),
             CreatedBy = userId,
             CreatedAt = nowUtc,
-            IsPublic = true,
+            IsPublic = false,
             IsDiscoverable = false
         };
         db.Collections.Add(collection);

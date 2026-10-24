@@ -75,7 +75,7 @@ public sealed class StudyGuideAcceptTests : StudyGuideDocumentFixture
         collection.Name.Should().Be("Europe Capitals");
         collection.Description.Should().Be("Generated from study guide Europe Capitals");
         collection.CreatedBy.Should().Be(UserA);
-        collection.IsPublic.Should().BeTrue();
+        collection.IsPublic.Should().BeFalse();
         collection.IsDiscoverable.Should().BeFalse();
         (await DbContext.CollectionItems.CountAsync(ci => ci.CollectionId == collection.Id)).Should().Be(2);
 
