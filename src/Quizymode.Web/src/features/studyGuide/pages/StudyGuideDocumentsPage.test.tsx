@@ -189,6 +189,6 @@ describe("StudyGuideDocumentsPage", () => {
     renderPage();
 
     expect(await screen.findByText(/not uploaded any study guides yet/i)).toBeInTheDocument();
-    expect(screen.getByRole("link", { name: "Upload one" })).toHaveAttribute("href", "/study-guide/upload");
+    expect(screen.getByRole("link", { name: "Upload one" })).toHaveAttribute("href", "/create/notes");
   });
 });

@@ -73,6 +73,7 @@ public static class PageHitClassifier
             case "items":
                 return ClassifyItems(segments);
             case "add-new-item":
+            case "create":
                 return Unscoped(AreaCreate);
             case "quiz":
                 return ClassifyStudyMode(AreaQuiz, segments, queryString);

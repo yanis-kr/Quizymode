@@ -48,13 +48,13 @@ function DocumentRouteProbe() {
   );
 }
 
-function renderPage(initialEntry = "/study-guide/upload") {
+function renderPage(initialEntry = "/create/notes") {
   const queryClient = new QueryClient({ defaultOptions: { queries: { retry: false } } });
   return render(
     <QueryClientProvider client={queryClient}>
       <MemoryRouter initialEntries={[initialEntry]}>
         <Routes>
-          <Route path="/study-guide/upload" element={<StudyGuideUploadPage />} />
+          <Route path="/create/notes" element={<StudyGuideUploadPage />} />
           <Route path="/study-guides/documents/:id" element={<DocumentRouteProbe />} />
         </Routes>
       </MemoryRouter>
@@ -274,7 +274,7 @@ describe("StudyGuideUploadPage", () => {
       errors: [],
     });
 
-    renderPage("/study-guide/upload?id=u1");
+    renderPage("/create/notes?id=u1");
 
     fireEvent.click(await screen.findByLabelText(/include question 2/i));
     fireEvent.click(screen.getByRole("button", { name: /add 1 selected to my items/i }));
@@ -292,7 +292,7 @@ describe("StudyGuideUploadPage", () => {
       error: "The question generator is temporarily unavailable. Please try again later.",
     });
 
-    renderPage("/study-guide/upload?id=u1");
+    renderPage("/create/notes?id=u1");
 
     expect(await screen.findByText(/temporarily unavailable/i)).toBeInTheDocument();
     expect(screen.getByRole("button", { name: /try again/i })).toBeInTheDocument();

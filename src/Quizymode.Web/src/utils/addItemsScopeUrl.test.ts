@@ -23,11 +23,11 @@ describe("addItemsScopeUrl", () => {
         ["Algebra"],
         ["geometry", "Algebra"]
       )
-    ).toBe("/items/add?category=Mathematics&keywords=Algebra%2Cgeometry");
+    ).toBe("/create?category=Mathematics&keywords=Algebra%2Cgeometry");
   });
 
   it("omits empty params when no category or keywords are present", () => {
-    expect(buildAddItemsPathWithParams("   ", [], ["   "])).toBe("/items/add");
+    expect(buildAddItemsPathWithParams("   ", [], ["   "])).toBe("/create");
   });
 
   it("builds ranked keyword params from scope fields", () => {

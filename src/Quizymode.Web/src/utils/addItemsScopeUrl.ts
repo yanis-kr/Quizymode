@@ -1,5 +1,5 @@
 /**
- * Helpers for `/items/add` query params: category + keywords (rank1, rank2, optional extras).
+ * Helpers for `/create` query params (legacy `/items/add`): category + keywords (rank1, rank2, optional extras).
  */
 
 /** Merge path navigation keywords + query filter keywords (dedupe case-insensitive; path order first). */
@@ -35,7 +35,7 @@ export function buildAddItemsPathWithParams(
   const merged = mergeKeywordsForAddItemsUrl(pathKws, queryKws);
   if (merged.length > 0) params.set("keywords", merged.join(","));
   const qs = params.toString();
-  return qs ? `/items/add?${qs}` : "/items/add";
+  return qs ? `/create?${qs}` : "/create";
 }
 
 /** Build `keywords` query value: rank1, rank2, then comma-split extras. */
