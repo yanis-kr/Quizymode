@@ -196,7 +196,13 @@ async function waitForUiToSettle(page: Page) {
       .evaluateAll((elements) =>
         elements.some((element) => {
           const htmlElement = element as HTMLElement;
-          return htmlElement.offsetParent !== null;
+          // Ignore screen-reader-only live regions (e.g. the header search's
+          // sr-only role="status"), which are always mounted and 1x1px.
+          return (
+            htmlElement.offsetParent !== null &&
+            htmlElement.offsetWidth > 1 &&
+            htmlElement.offsetHeight > 1
+          );
         })
       )
       .catch(() => false);

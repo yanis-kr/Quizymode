@@ -32,7 +32,6 @@ public sealed class SeedSyncAdminHttpTests : DatabaseTestFixture, IAsyncLifetime
                 services.AddScoped<IValidator<SeedSyncAdmin.Request>, SeedSyncAdmin.Validator>();
                 services.AddSingleton<IGitHubSeedSource, NullItemIdsSeedSource>();
                 services.AddScoped<LocalSeedLoader>();
-                services.AddScoped<LanguagesTaxonomyNormalizationService>();
                 services.AddSingleton(new Mock<ITaxonomyRegistry>().Object);
                 services.AddScoped<SeedSyncAdminService>();
             },
