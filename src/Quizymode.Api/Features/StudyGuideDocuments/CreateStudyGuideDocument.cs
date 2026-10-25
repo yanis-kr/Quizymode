@@ -286,7 +286,7 @@ public static class CreateStudyGuideDocument
             return Result.Failure<Outcome>(StudyGuideDocumentErrors.Empty);
         }
 
-        string textHash = StudyGuideUploads.StudyGuideUploadText.ComputeHash(fullText);
+        string textHash = StudyGuideTextHash.ComputeHash(fullText);
         DateTime expiresUtc = nowUtc.AddDays(Math.Max(1, documentOptions.RetentionDays));
 
         StudyGuideDocument? existing = await db.StudyGuideDocuments
@@ -417,7 +417,7 @@ public static class CreateStudyGuideDocument
 /// <summary>A validated taxonomy topic plus normalized extra keywords, shared by the study guide document endpoints.</summary>
 internal sealed record StudyGuideTopic(string CategoryName, string NavigationKeyword1, string NavigationKeyword2, List<string> Keywords)
 {
-    /// <summary>Same rules as AC 6.5: the category resolves, (nav1, nav2) is a valid taxonomy path, keywords are normalized and deduplicated.</summary>
+    /// <summary>AC 6.6.2: the category resolves, (nav1, nav2) is a valid taxonomy path, keywords are normalized and deduplicated.</summary>
     public static async Task<Result<StudyGuideTopic>> ResolveAsync(
         string category,
         string navigationKeyword1,

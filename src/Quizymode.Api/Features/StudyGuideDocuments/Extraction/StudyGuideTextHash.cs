@@ -2,16 +2,11 @@ using System.Security.Cryptography;
 using System.Text;
 using System.Text.RegularExpressions;
 
-namespace Quizymode.Api.Features.StudyGuideUploads;
+namespace Quizymode.Api.Features.StudyGuideDocuments.Extraction;
 
-/// <summary>Size limit, normalization, and hashing for pasted study guide text.</summary>
-internal static partial class StudyGuideUploadText
+/// <summary>Normalization and hashing for study guide text (duplicate detection).</summary>
+internal static partial class StudyGuideTextHash
 {
-    /// <summary>Maximum UTF-8 size of the pasted text (10 KB).</summary>
-    public const int MaxTextBytes = 10 * 1024;
-
-    public static int GetByteCount(string? text) => text is null ? 0 : Encoding.UTF8.GetByteCount(text);
-
     /// <summary>
     /// Normalizes text for duplicate detection: Unicode NFC, whitespace runs collapsed to one space, trimmed, lowercased.
     /// Reformatting or re-pasting the same guide therefore produces the same hash.

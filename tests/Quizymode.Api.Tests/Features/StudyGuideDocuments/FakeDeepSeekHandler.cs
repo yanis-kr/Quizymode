@@ -1,10 +1,8 @@
 using System.Net;
 using System.Text;
 using System.Text.Json;
-using Moq;
-using Quizymode.Api.Services;
 
-namespace Quizymode.Api.Tests.Features.StudyGuideUploads;
+namespace Quizymode.Api.Tests.Features.StudyGuideDocuments;
 
 /// <summary>Fake HTTP handler for the DeepSeek chat completions API; never touches the network.</summary>
 internal sealed class FakeDeepSeekHandler(Func<HttpRequestMessage, string, HttpResponseMessage> respond) : HttpMessageHandler
@@ -45,29 +43,3 @@ internal sealed class FakeDeepSeekHandler(Func<HttpRequestMessage, string, HttpR
         new(statusCode) { Content = new StringContent(body, Encoding.UTF8, "application/json") };
 }
 
-internal static class StudyGuideUploadTestData
-{
-    public static string QuestionsJson(int count, string? questionPrefix = null) =>
-        JsonSerializer.Serialize(new
-        {
-            questions = Enumerable.Range(1, count).Select(i => new
-            {
-                question = $"{questionPrefix ?? "What is fact"} {i}?",
-                correctAnswer = $"Answer {i}",
-                incorrectAnswers = new[] { $"Wrong {i}a", $"Wrong {i}b", $"Wrong {i}c" },
-                explanation = $"The material states answer {i}."
-            })
-        });
-
-    /// <summary>Moderation mock that blocks any value containing "badword".</summary>
-    public static ITextModerationService Moderation()
-    {
-        Mock<ITextModerationService> moderation = new();
-        moderation
-            .Setup(x => x.Evaluate(It.IsAny<string?[]>()))
-            .Returns((string?[] values) => values.Any(v => v is not null && v.Contains("badword", StringComparison.OrdinalIgnoreCase))
-                ? new TextModerationResult(TextModerationOutcome.Blocked, "badword")
-                : new TextModerationResult(TextModerationOutcome.Clean));
-        return moderation.Object;
-    }
-}

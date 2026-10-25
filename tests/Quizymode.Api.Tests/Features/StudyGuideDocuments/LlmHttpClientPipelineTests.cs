@@ -2,7 +2,6 @@ using FluentAssertions;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Quizymode.Api.Features.StudyGuideDocuments;
-using Quizymode.Api.Features.StudyGuideUploads;
 using Xunit;
 
 namespace Quizymode.Api.Tests.Features.StudyGuideDocuments;
@@ -15,7 +14,6 @@ public sealed class LlmHttpClientPipelineTests
 {
     [Theory]
     [InlineData("IOpenAiCompatibleChatClient")]
-    [InlineData("IStudyGuideQuestionGenerator")]
     public void LlmClients_HaveNoResilienceHandler(string clientName)
     {
         using ServiceProvider provider = BuildProvider();
@@ -42,7 +40,6 @@ public sealed class LlmHttpClientPipelineTests
         services.ConfigureHttpClientDefaults(http => http.AddStandardResilienceHandler());
 
         new CreateStudyGuideDocument.FeatureRegistration().AddToServiceCollection(services, configuration);
-        new CreateStudyGuideUpload.FeatureRegistration().AddToServiceCollection(services, configuration);
         services.AddHttpClient("control");
 
         return services.BuildServiceProvider();

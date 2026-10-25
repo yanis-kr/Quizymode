@@ -1,10 +1,9 @@
 using System.Text;
 using System.Text.RegularExpressions;
-using Quizymode.Api.Features.StudyGuideUploads;
 
 namespace Quizymode.Api.Features.StudyGuideDocuments.Extraction;
 
-/// <summary>A section ready to be stored: text at most SectionMaxBytes UTF-8 bytes, hashed like AC 6.5 text.</summary>
+/// <summary>A section ready to be stored: text at most SectionMaxBytes UTF-8 bytes, hashed with StudyGuideTextHash.</summary>
 internal sealed record SectionDraft(
     int Index,
     string Label,
@@ -40,7 +39,7 @@ internal static partial class StudyGuideSectioner
                 section.PageEnd,
                 section.Text,
                 ByteCount(section.Text),
-                StudyGuideUploadText.ComputeHash(section.Text)))
+                StudyGuideTextHash.ComputeHash(section.Text)))
             .ToList();
     }
 

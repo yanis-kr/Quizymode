@@ -6,7 +6,6 @@ import { AxiosError, AxiosHeaders } from "axios";
 import StudyGuideUploadPage from "./StudyGuideUploadPage";
 import { taxonomyApi, type TopicSuggestion } from "@/api/taxonomy";
 import { studyGuideDocumentsApi, type StudyGuideDocumentsConfig } from "@/api/studyGuideDocuments";
-import { studyGuideUploadsApi, type StudyGuideUploadResponse } from "@/api/studyGuideUploads";
 
 vi.mock("@/contexts/AuthContext", () => ({
   useAuth: () => ({ isAuthenticated: true }),
@@ -24,13 +23,6 @@ vi.mock("@/api/studyGuideDocuments", () => ({
   studyGuideDocumentsApi: {
     getConfig: vi.fn(),
     create: vi.fn(),
-  },
-}));
-
-vi.mock("@/api/studyGuideUploads", () => ({
-  studyGuideUploadsApi: {
-    get: vi.fn(),
-    accept: vi.fn(),
   },
 }));
 
@@ -65,23 +57,6 @@ const config: StudyGuideDocumentsConfig = {
   acceptedExtensions: [".pdf", ".docx", ".pptx", ".txt", ".md"],
   freeTierDelayMinutes: 10,
   quota: { tier: "Free", dailyLimit: 10, dailyUsed: 0, monthlyLimit: 60, monthlyUsed: 0, remainingToday: 10 },
-};
-
-const completedUpload: StudyGuideUploadResponse = {
-  id: "u1",
-  status: "Completed",
-  category: "science",
-  navigationKeyword1: "biology",
-  navigationKeyword2: "plants",
-  keywords: [],
-  questions: [
-    { question: "What do plants make?", correctAnswer: "Glucose", incorrectAnswers: ["Salt", "Iron", "Sand"], explanation: "From light." },
-    { question: "Where does it happen?", correctAnswer: "Chloroplasts", incorrectAnswers: ["Roots", "Bark", "Seeds"] },
-  ],
-  createdUtc: "2026-10-17T00:00:00Z",
-  completedUtc: "2026-10-17T00:00:10Z",
-  acceptedUtc: null,
-  createdItemCount: null,
 };
 
 const scienceChip: TopicSuggestion = {
@@ -370,37 +345,52 @@ describe("StudyGuideUploadPage", () => {
     expect(await screen.findByText(/looks like a scan/i)).toBeInTheDocument();
   });
 
-  it("keeps earlier one-shot upload links working (?id=)", async () => {
-    vi.mocked(studyGuideUploadsApi.get).mockResolvedValue(completedUpload);
-    vi.mocked(studyGuideUploadsApi.accept).mockResolvedValue({
-      createdCount: 1,
-      duplicateCount: 0,
-      failedCount: 0,
-      createdItemIds: ["i1"],
-      errors: [],
-    });
-
+  it("shows the retired-upload notice above the normal form for ?id= links", async () => {
     renderPage("/create/notes?id=u1");
 
-    fireEvent.click(await screen.findByLabelText(/include question 2/i));
-    fireEvent.click(screen.getByRole("button", { name: /add 1 selected to my items/i }));
-
-    await waitFor(() => expect(studyGuideUploadsApi.accept).toHaveBeenCalledWith("u1", [0]));
-    expect(await screen.findByText(/added 1 item to your private items/i)).toBeInTheDocument();
-    expect(studyGuideDocumentsApi.getConfig).not.toHaveBeenCalled();
+    const notice = await screen.findByTestId("retired-upload-notice");
+    expect(notice).toHaveAttribute("role", "status");
+    expect(notice).toHaveTextContent("That earlier upload is no longer available");
+    expect(notice).toHaveTextContent(
+      "Earlier one-step study guide uploads have been retired, so their results can no longer be opened. Questions you already added from them are still in your private items. Upload your study guide below to generate new questions."
+    );
+    expect(studyGuideDocumentsApi.getConfig).toHaveBeenCalled();
+    expect(await screen.findByRole("tab", { name: /upload file/i })).toBeInTheDocument();
   });
 
-  it("shows the failure reason for a failed one-shot upload", async () => {
-    vi.mocked(studyGuideUploadsApi.get).mockResolvedValue({
-      ...completedUpload,
-      status: "Failed",
-      questions: [],
-      error: "The question generator is temporarily unavailable. Please try again later.",
-    });
+  it("shows the notice and Feature unavailable when generation is disabled", async () => {
+    vi.mocked(studyGuideDocumentsApi.getConfig).mockResolvedValue({ ...config, enabled: false });
 
     renderPage("/create/notes?id=u1");
 
-    expect(await screen.findByText(/temporarily unavailable/i)).toBeInTheDocument();
-    expect(screen.getByRole("button", { name: /try again/i })).toBeInTheDocument();
+    expect(await screen.findByText(/feature unavailable/i)).toBeInTheDocument();
+    expect(screen.getByTestId("retired-upload-notice")).toBeInTheDocument();
+  });
+
+  it("shows no notice without an id or with a blank id", async () => {
+    const first = renderPage();
+    await screen.findByRole("tab", { name: /upload file/i });
+    expect(screen.queryByTestId("retired-upload-notice")).not.toBeInTheDocument();
+    first.unmount();
+
+    renderPage("/create/notes?id=%20");
+    await screen.findByRole("tab", { name: /upload file/i });
+    expect(screen.queryByTestId("retired-upload-notice")).not.toBeInTheDocument();
+  });
+
+  it("still uploads to the documents endpoint and navigates when ?id= is present", async () => {
+    vi.mocked(studyGuideDocumentsApi.create).mockResolvedValue({
+      id: "doc-9",
+      isDuplicate: false,
+    } as Awaited<ReturnType<typeof studyGuideDocumentsApi.create>>);
+    const file = new File(["%PDF-1.7"], "notes.pdf", { type: "application/pdf" });
+
+    renderPage("/create/notes?id=u1");
+    await fillTopic();
+    chooseFile(file);
+    fireEvent.click(screen.getByRole("button", { name: /upload study guide/i }));
+
+    await waitFor(() => expect(studyGuideDocumentsApi.create).toHaveBeenCalled());
+    expect(await screen.findByTestId("document-route")).toHaveTextContent("/study-guides/documents/doc-9");
   });
 });
