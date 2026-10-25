@@ -197,6 +197,7 @@ public sealed class DatabaseSeederProductionPostgresTests(PostgresContainerFixtu
         logs.Entries.Should().ContainSingle(e => e.Message.Contains("Skipping local dev seed") && e.Message.Contains("Production"));
         logs.Entries.Should().NotContain(e => e.Message.Contains("itemsSource") || e.Message.Contains("Seed items folder not found"));
 
+        sql.Count("\"FeaturedItems\"").Should().BeGreaterThan(0, "the interceptor must capture the featured-sets ensure");
         foreach (string table in new[] { "\"Items\"", "\"Ratings\"", "\"Collections\"", "\"CollectionItems\"" })
         {
             sql.Count(table).Should().Be(0, $"production startup must not query {table}");
