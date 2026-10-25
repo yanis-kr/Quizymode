@@ -65,6 +65,8 @@ internal static partial class StartupExtensions
                     return message.Contains("/health", StringComparison.OrdinalIgnoreCase);
                 })
                 .Enrich.FromLogContext()
+                // Never log the text a visitor searched for (GET /search?q=...).
+                .Enrich.With(SearchQueryLogRedactor.Instance)
                 .Enrich.WithProperty("Application", "QuizyMode")
                 .WriteTo.Console(theme: AnsiConsoleTheme.Code,
                                  outputTemplate: "[{Timestamp:HH:mm:ss} {Level:u3}] {Message:lj}{NewLine}{Exception}");
