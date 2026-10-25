@@ -171,6 +171,15 @@ public sealed class LearningLoopHttpTests : DatabaseTestFixture, IAsyncLifetime
     }
 
     [Fact]
+    public void GetRejectionDetail_Search_HasItsOwnMessage()
+    {
+        ApiStartup.GetRejectionDetail(new PathString("/search"))
+            .Should().Be("Too many searches. Please wait a moment and try again.");
+        ApiStartup.GetRejectionDetail(new PathString("/api/search"))
+            .Should().Be("Too many searches. Please wait a moment and try again.");
+    }
+
+    [Fact]
     public void GetRejectionDetail_ReviewText_AppliesOnlyToTheEnqueuePath()
     {
         Guid id = Guid.NewGuid();

@@ -11,6 +11,7 @@ export const AREA_LABELS: Record<string, string> = {
   "item-detail": "Item detail",
   create: "Create",
   "study-guide": "Study guide",
+  search: "Search",
   auth: "Sign in / up",
   community: "Community",
   info: "Info",

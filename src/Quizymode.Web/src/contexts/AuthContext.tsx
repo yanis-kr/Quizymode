@@ -27,6 +27,8 @@ import {
 import { hasToken, setTokens, clearTokens } from "@/utils/tokenStorage";
 import { GUEST_IDENTITY_KEY, purgeLearnRunsExcept } from "@/features/items/learn/learnStorage";
 import { authApi } from "@/api/auth";
+import { queryClient } from "@/api/queryClient";
+import { SEARCH_QUERY_ROOT } from "@/features/search/searchParams";
 import type { AuthIntent } from "@/features/auth/utils/authIntent";
 import { startGoogleSignIn } from "@/features/auth/utils/googleSignIn";
 
@@ -477,6 +479,8 @@ export const AuthProvider = ({ children }: AuthProviderProps) => {
       clearTokens();
       // Learn progress of the signed-in identity must not outlive the session (AC 3.17.8); purge before the redirect.
       purgeLearnRunsExcept(GUEST_IDENTITY_KEY);
+      // Search results include the user's own content (`mine`); drop them before another user can sign in (AC 11).
+      queryClient.removeQueries({ queryKey: [SEARCH_QUERY_ROOT] });
       await signOut();
       clearAuthState();
     } catch (error) {

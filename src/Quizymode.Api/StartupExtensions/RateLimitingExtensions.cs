@@ -66,6 +66,23 @@ internal static partial class StartupExtensions
                     });
             });
 
+            // Global search (#320): anonymous and cheap, but each call can run three GIN queries. Keyed on the
+            // server-trusted client IP (never a client-sent X-Forwarded-For), so rotating headers cannot buy a fresh
+            // budget. A fixed window (not sliding) so the rejection carries Retry-After.
+            options.AddPolicy("search", httpContext =>
+            {
+                string partitionKey = GetAuthenticatedOrTrustedIpPartitionKey(httpContext);
+                return RateLimitPartition.GetFixedWindowLimiter(
+                    partitionKey,
+                    static _ => new FixedWindowRateLimiterOptions
+                    {
+                        PermitLimit = 120,
+                        Window = TimeSpan.FromMinutes(1),
+                        QueueLimit = 0,
+                        AutoReplenishment = true
+                    });
+            });
+
             options.AddPolicy("feedback-submissions", httpContext =>
             {
                 string partitionKey = GetAuthenticatedOrIpPartitionKey(httpContext);
@@ -227,6 +244,11 @@ internal static partial class StartupExtensions
         if (path.EndsWith("/analytics/events", StringComparison.OrdinalIgnoreCase))
         {
             return "Too many analytics events. Please slow down.";
+        }
+
+        if (path.EndsWith("/search", StringComparison.OrdinalIgnoreCase))
+        {
+            return "Too many searches. Please wait a moment and try again.";
         }
 
         if (path.EndsWith("/client-errors", StringComparison.OrdinalIgnoreCase))

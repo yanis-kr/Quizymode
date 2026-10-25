@@ -9,6 +9,7 @@ import { usersApi } from "@/api/users";
 import { getUserGuideUrl } from "@/utils/userGuideLink";
 import { SEO } from "@/components/SEO";
 import FeedbackDialog from "@/features/feedback/components/FeedbackDialog";
+import GlobalSearch from "@/features/search/GlobalSearch";
 import UserProfileModal from "./UserProfileModal";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 
@@ -95,6 +96,10 @@ function getFallbackTitle(pathname: string): string | undefined {
 
   if (pathname.startsWith("/items/")) {
     return "Item Details";
+  }
+
+  if (pathname === "/search") {
+    return "Search";
   }
 
   if (pathname === "/study-guide") {
@@ -227,7 +232,7 @@ const Layout = ({ children }: LayoutProps) => {
   return (
     <div className="flex min-h-screen flex-col bg-[radial-gradient(circle_at_top,#1e3a8a_0%,#0f172a_34%,#020617_100%)] print:bg-none print:bg-white">
       {fallbackTitle && <SEO title={fallbackTitle} noindex={location.pathname === "/login" || location.pathname === "/signup"} />}
-      <nav className="border-b border-slate-200/70 bg-white/95 shadow-sm backdrop-blur print:hidden">
+      <nav className="relative z-40 border-b border-slate-200/70 bg-white/95 shadow-sm backdrop-blur print:hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between h-14">
             <div className="flex">
@@ -287,6 +292,9 @@ const Layout = ({ children }: LayoutProps) => {
               </div>
             </div>
             <div className="flex items-center">
+              {/* Search: inline input at xl, icon + full-screen overlay below xl */}
+              <GlobalSearch onOpen={closeMobileMenu} />
+
               {/* Mobile menu button */}
               <button
                 type="button"

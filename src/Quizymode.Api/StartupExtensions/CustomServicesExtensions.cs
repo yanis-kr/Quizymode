@@ -24,6 +24,9 @@ internal static partial class StartupExtensions
         builder.Services.Configure<TurnstileOptions>(builder.Configuration.GetSection(TurnstileOptions.SectionName));
         builder.Services.Configure<AuditLogsOptions>(builder.Configuration.GetSection(AuditLogsOptions.SectionName));
         builder.Services.AddSingleton<ITaxonomyRegistry, TaxonomyRegistry>();
+        // Global search (#319): in-memory topic index plus lazily refreshed public item counts.
+        builder.Services.AddSingleton<ITaxonomySearchIndex, TaxonomySearchIndex>();
+        builder.Services.AddSingleton<TaxonomySearchCounts>();
         // SimHashService is stateless, so it can be a singleton
         builder.Services.AddSingleton<ISimHashService, SimHashService>();
         builder.Services.AddHttpClient<IGitHubSeedSource, GitHubSeedSource>();

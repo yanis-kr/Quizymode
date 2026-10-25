@@ -64,6 +64,11 @@ describe("Layout", () => {
     authState.isAuthenticated = false;
   });
 
+  it("renders the search trigger in the header and titles /search as Search", () => {
+    renderLayout(["/search"]);
+    expect(screen.getByRole("button", { name: "Search" })).toHaveAttribute("aria-haspopup", "dialog");
+  });
+
   it("shows a My Progress link to /progress only for signed-in users", () => {
     renderLayout();
     expect(screen.queryByRole("link", { name: "My Progress" })).not.toBeInTheDocument();

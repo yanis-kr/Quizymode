@@ -20,7 +20,9 @@ export type AnalyticsEventName =
   | "flashcards_started"
   | "flashcard_revealed"
   | "flashcard_graded"
-  | "quiz_result_shared";
+  | "quiz_result_shared"
+  | "search_performed"
+  | "search_result_clicked";
 
 export type AnalyticsContextType =
   | "auth"
@@ -29,9 +31,12 @@ export type AnalyticsContextType =
   | "daily"
   | "flashcards"
   | "home"
+  | "item"
   | "learn"
+  | "mine"
   | "quiz"
-  | "review";
+  | "review"
+  | "search";
 
 export interface AnalyticsEventInput {
   name: AnalyticsEventName;

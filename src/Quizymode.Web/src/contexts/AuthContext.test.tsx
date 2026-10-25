@@ -1,6 +1,7 @@
 import { describe, expect, it, vi, beforeEach } from "vitest";
 import { render, renderHook, waitFor, act } from "@testing-library/react";
 import { AuthProvider, useAuth } from "./AuthContext";
+import { queryClient } from "@/api/queryClient";
 import { clearTokens } from "@/utils/tokenStorage";
 import { SignInStepRequiredError } from "@/features/auth/utils/signInErrors";
 
@@ -336,6 +337,22 @@ describe("AuthContext.logout", () => {
     });
 
     expect(order.slice(0, 2)).toEqual(["purge:guest", "signOut"]);
+  });
+
+  it("removes cached search queries on logout, leaving other queries alone (AC 11)", async () => {
+    queryClient.setQueryData(["search", "abc", "all", 5, 0, "user-1"], { marker: "mine" });
+    queryClient.setQueryData(["other", "x"], { marker: "keep" });
+
+    const { result } = renderAuth();
+    await waitFor(() => expect(result.current.isLoading).toBe(false));
+
+    await act(async () => {
+      await result.current.logout();
+    });
+
+    expect(queryClient.getQueryData(["search", "abc", "all", 5, 0, "user-1"])).toBeUndefined();
+    expect(queryClient.getQueryData(["other", "x"])).toEqual({ marker: "keep" });
+    queryClient.clear();
   });
 });
 

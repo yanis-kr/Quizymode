@@ -4975,6 +4975,77 @@
         }
       }
     },
+    "/search": {
+      "get": {
+        "tags": [
+          "Search"
+        ],
+        "summary": "Global search across topics, collections, questions and the caller's own content",
+        "description": "Returns up to `limit` results per requested group (categories, subcategories, collections, items, mine). Only discoverable public collections and non-private items are searched; `mine` is null for anonymous callers. Topic counts are public-only.",
+        "parameters": [
+          {
+            "name": "q",
+            "in": "query",
+            "schema": {
+              "$ref": "#/components/schemas/System.String"
+            }
+          },
+          {
+            "name": "types",
+            "in": "query",
+            "schema": {
+              "$ref": "#/components/schemas/System.String"
+            }
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "schema": {
+              "$ref": "#/components/schemas/System.NullableOfSystem.Int32"
+            }
+          },
+          {
+            "name": "offset",
+            "in": "query",
+            "schema": {
+              "$ref": "#/components/schemas/System.NullableOfSystem.Int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Quizymode.Api.Features.Search.GlobalSearch.Response"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Too Many Requests",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "/study-guides/documents/{id}/accept": {
       "post": {
         "tags": [
@@ -14676,6 +14747,357 @@
           }
         }
       },
+      "Quizymode.Api.Features.Search.GlobalSearch.CategoryResult": {
+        "required": [
+          "slug",
+          "name",
+          "description",
+          "itemCount"
+        ],
+        "type": "object",
+        "properties": {
+          "slug": {
+            "$ref": "#/components/schemas/System.String"
+          },
+          "name": {
+            "$ref": "#/components/schemas/System.String"
+          },
+          "description": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/components/schemas/System.String"
+              }
+            ]
+          },
+          "itemCount": {
+            "$ref": "#/components/schemas/System.Int32"
+          }
+        }
+      },
+      "Quizymode.Api.Features.Search.GlobalSearch.CollectionResult": {
+        "required": [
+          "id",
+          "name",
+          "description",
+          "itemCount"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "$ref": "#/components/schemas/System.Guid"
+          },
+          "name": {
+            "$ref": "#/components/schemas/System.String"
+          },
+          "description": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/components/schemas/System.String"
+              }
+            ]
+          },
+          "itemCount": {
+            "$ref": "#/components/schemas/System.Int32"
+          }
+        }
+      },
+      "Quizymode.Api.Features.Search.GlobalSearch.GroupOfQuizymode.Api.Features.Search.GlobalSearch.CategoryResult": {
+        "required": [
+          "results",
+          "hasMore"
+        ],
+        "type": "object",
+        "properties": {
+          "results": {
+            "$ref": "#/components/schemas/System.Collections.Generic.IReadOnlyListOfQuizymode.Api.Features.Search.GlobalSearch.CategoryResult"
+          },
+          "hasMore": {
+            "$ref": "#/components/schemas/System.Boolean"
+          }
+        }
+      },
+      "Quizymode.Api.Features.Search.GlobalSearch.GroupOfQuizymode.Api.Features.Search.GlobalSearch.CollectionResult": {
+        "required": [
+          "results",
+          "hasMore"
+        ],
+        "type": "object",
+        "properties": {
+          "results": {
+            "$ref": "#/components/schemas/System.Collections.Generic.IReadOnlyListOfQuizymode.Api.Features.Search.GlobalSearch.CollectionResult"
+          },
+          "hasMore": {
+            "$ref": "#/components/schemas/System.Boolean"
+          }
+        }
+      },
+      "Quizymode.Api.Features.Search.GlobalSearch.GroupOfQuizymode.Api.Features.Search.GlobalSearch.ItemResult": {
+        "required": [
+          "results",
+          "hasMore"
+        ],
+        "type": "object",
+        "properties": {
+          "results": {
+            "$ref": "#/components/schemas/System.Collections.Generic.IReadOnlyListOfQuizymode.Api.Features.Search.GlobalSearch.ItemResult"
+          },
+          "hasMore": {
+            "$ref": "#/components/schemas/System.Boolean"
+          }
+        }
+      },
+      "Quizymode.Api.Features.Search.GlobalSearch.GroupOfQuizymode.Api.Features.Search.GlobalSearch.MineResult": {
+        "required": [
+          "results",
+          "hasMore"
+        ],
+        "type": "object",
+        "properties": {
+          "results": {
+            "$ref": "#/components/schemas/System.Collections.Generic.IReadOnlyListOfQuizymode.Api.Features.Search.GlobalSearch.MineResult"
+          },
+          "hasMore": {
+            "$ref": "#/components/schemas/System.Boolean"
+          }
+        }
+      },
+      "Quizymode.Api.Features.Search.GlobalSearch.GroupOfQuizymode.Api.Features.Search.GlobalSearch.SubcategoryResult": {
+        "required": [
+          "results",
+          "hasMore"
+        ],
+        "type": "object",
+        "properties": {
+          "results": {
+            "$ref": "#/components/schemas/System.Collections.Generic.IReadOnlyListOfQuizymode.Api.Features.Search.GlobalSearch.SubcategoryResult"
+          },
+          "hasMore": {
+            "$ref": "#/components/schemas/System.Boolean"
+          }
+        }
+      },
+      "Quizymode.Api.Features.Search.GlobalSearch.Groups": {
+        "required": [
+          "categories",
+          "subcategories",
+          "collections",
+          "items",
+          "mine"
+        ],
+        "type": "object",
+        "properties": {
+          "categories": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/components/schemas/Quizymode.Api.Features.Search.GlobalSearch.GroupOfQuizymode.Api.Features.Search.GlobalSearch.CategoryResult"
+              }
+            ]
+          },
+          "subcategories": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/components/schemas/Quizymode.Api.Features.Search.GlobalSearch.GroupOfQuizymode.Api.Features.Search.GlobalSearch.SubcategoryResult"
+              }
+            ]
+          },
+          "collections": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/components/schemas/Quizymode.Api.Features.Search.GlobalSearch.GroupOfQuizymode.Api.Features.Search.GlobalSearch.CollectionResult"
+              }
+            ]
+          },
+          "items": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/components/schemas/Quizymode.Api.Features.Search.GlobalSearch.GroupOfQuizymode.Api.Features.Search.GlobalSearch.ItemResult"
+              }
+            ]
+          },
+          "mine": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/components/schemas/Quizymode.Api.Features.Search.GlobalSearch.GroupOfQuizymode.Api.Features.Search.GlobalSearch.MineResult"
+              }
+            ]
+          }
+        },
+        "description": "A group is null when it was not requested or is not permitted (for example `mine` for anonymous callers)."
+      },
+      "Quizymode.Api.Features.Search.GlobalSearch.Highlight": {
+        "required": [
+          "start",
+          "length"
+        ],
+        "type": "object",
+        "properties": {
+          "start": {
+            "$ref": "#/components/schemas/System.Int32"
+          },
+          "length": {
+            "$ref": "#/components/schemas/System.Int32"
+          }
+        }
+      },
+      "Quizymode.Api.Features.Search.GlobalSearch.ItemResult": {
+        "required": [
+          "id",
+          "snippet",
+          "categorySlug",
+          "l1",
+          "l2"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "$ref": "#/components/schemas/System.Guid"
+          },
+          "snippet": {
+            "$ref": "#/components/schemas/Quizymode.Api.Features.Search.GlobalSearch.Snippet"
+          },
+          "categorySlug": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/components/schemas/System.String"
+              }
+            ]
+          },
+          "l1": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/components/schemas/System.String"
+              }
+            ]
+          },
+          "l2": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/components/schemas/System.String"
+              }
+            ]
+          }
+        }
+      },
+      "Quizymode.Api.Features.Search.GlobalSearch.MineResult": {
+        "required": [
+          "kind",
+          "id",
+          "title"
+        ],
+        "type": "object",
+        "properties": {
+          "kind": {
+            "$ref": "#/components/schemas/System.String"
+          },
+          "id": {
+            "$ref": "#/components/schemas/System.Guid"
+          },
+          "title": {
+            "$ref": "#/components/schemas/System.String"
+          }
+        }
+      },
+      "Quizymode.Api.Features.Search.GlobalSearch.Response": {
+        "required": [
+          "query",
+          "groups"
+        ],
+        "type": "object",
+        "properties": {
+          "query": {
+            "$ref": "#/components/schemas/System.String"
+          },
+          "groups": {
+            "$ref": "#/components/schemas/Quizymode.Api.Features.Search.GlobalSearch.Groups"
+          }
+        }
+      },
+      "Quizymode.Api.Features.Search.GlobalSearch.Snippet": {
+        "required": [
+          "text",
+          "highlights"
+        ],
+        "type": "object",
+        "properties": {
+          "text": {
+            "$ref": "#/components/schemas/System.String"
+          },
+          "highlights": {
+            "$ref": "#/components/schemas/System.Collections.Generic.IReadOnlyListOfQuizymode.Api.Features.Search.GlobalSearch.Highlight"
+          }
+        }
+      },
+      "Quizymode.Api.Features.Search.GlobalSearch.SubcategoryResult": {
+        "required": [
+          "categorySlug",
+          "l1",
+          "l2",
+          "description",
+          "itemCount"
+        ],
+        "type": "object",
+        "properties": {
+          "categorySlug": {
+            "$ref": "#/components/schemas/System.String"
+          },
+          "l1": {
+            "$ref": "#/components/schemas/System.String"
+          },
+          "l2": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/components/schemas/System.String"
+              }
+            ]
+          },
+          "description": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/components/schemas/System.String"
+              }
+            ]
+          },
+          "itemCount": {
+            "$ref": "#/components/schemas/System.Int32"
+          }
+        }
+      },
       "Quizymode.Api.Features.StudyGuideDocuments.AcceptStudyGuideCandidates.CandidateEdit": {
         "required": [
           "id",
@@ -16802,6 +17224,42 @@
           "$ref": "#/components/schemas/Quizymode.Api.Features.Admin.GetDatabaseSize.TableSizeResponse"
         }
       },
+      "System.Collections.Generic.IReadOnlyListOfQuizymode.Api.Features.Search.GlobalSearch.CategoryResult": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/Quizymode.Api.Features.Search.GlobalSearch.CategoryResult"
+        }
+      },
+      "System.Collections.Generic.IReadOnlyListOfQuizymode.Api.Features.Search.GlobalSearch.CollectionResult": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/Quizymode.Api.Features.Search.GlobalSearch.CollectionResult"
+        }
+      },
+      "System.Collections.Generic.IReadOnlyListOfQuizymode.Api.Features.Search.GlobalSearch.Highlight": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/Quizymode.Api.Features.Search.GlobalSearch.Highlight"
+        }
+      },
+      "System.Collections.Generic.IReadOnlyListOfQuizymode.Api.Features.Search.GlobalSearch.ItemResult": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/Quizymode.Api.Features.Search.GlobalSearch.ItemResult"
+        }
+      },
+      "System.Collections.Generic.IReadOnlyListOfQuizymode.Api.Features.Search.GlobalSearch.MineResult": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/Quizymode.Api.Features.Search.GlobalSearch.MineResult"
+        }
+      },
+      "System.Collections.Generic.IReadOnlyListOfQuizymode.Api.Features.Search.GlobalSearch.SubcategoryResult": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/Quizymode.Api.Features.Search.GlobalSearch.SubcategoryResult"
+        }
+      },
       "System.Collections.Generic.IReadOnlyListOfQuizymode.Api.Features.Taxonomy.GetTaxonomy.CategoryDto": {
         "type": "array",
         "items": {
@@ -17501,6 +17959,9 @@
     },
     {
       "name": "ReviewQueue"
+    },
+    {
+      "name": "Search"
     },
     {
       "name": "StudyGuideDocuments"

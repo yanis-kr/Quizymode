@@ -25,6 +25,7 @@ public static class PageHitClassifier
     public const string AreaCommunity = "community";
     public const string AreaInfo = "info";
     public const string AreaAdmin = "admin";
+    public const string AreaSearch = "search";
     public const string AreaOther = "other";
 
     public const string ScopeCategory = "category";
@@ -38,7 +39,7 @@ public static class PageHitClassifier
     public static readonly IReadOnlyList<string> AllAreas =
     [
         AreaHome, AreaBrowse, AreaQuiz, AreaFlashcards, AreaCollections, AreaFeatured, AreaItemDetail,
-        AreaCreate, AreaStudyGuide, AreaAuth, AreaCommunity, AreaInfo, AreaAdmin, AreaOther
+        AreaCreate, AreaStudyGuide, AreaSearch, AreaAuth, AreaCommunity, AreaInfo, AreaAdmin, AreaOther
     ];
 
     private static readonly HashSet<string> CreateItemSubpaths =
@@ -87,6 +88,8 @@ public static class PageHitClassifier
                 return Unscoped(AreaFeatured);
             case "study-guide":
                 return Unscoped(AreaStudyGuide);
+            case "search":
+                return segments.Length == 1 ? Unscoped(AreaSearch) : Unscoped(AreaOther);
             case "login":
             case "signup":
                 return segments.Length == 1 ? Unscoped(AreaAuth) : Unscoped(AreaOther);
