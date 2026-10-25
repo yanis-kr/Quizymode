@@ -186,7 +186,7 @@ internal static class DatabaseSeederStartHarness
 public sealed class DatabaseSeederProductionPostgresTests(PostgresContainerFixture fixture) : IClassFixture<PostgresContainerFixture>
 {
     [SkippableFact]
-    public async Task StartAsync_Production_RunsOnlyTaxonomyAndIdeas()
+    public async Task StartAsync_Production_RunsOnlyTaxonomy()
     {
         Skip.If(fixture.UnavailableReason is not null, fixture.UnavailableReason);
 
@@ -197,8 +197,8 @@ public sealed class DatabaseSeederProductionPostgresTests(PostgresContainerFixtu
         logs.Entries.Should().ContainSingle(e => e.Message.Contains("Skipping local dev seed") && e.Message.Contains("Production"));
         logs.Entries.Should().NotContain(e => e.Message.Contains("itemsSource") || e.Message.Contains("Seed items folder not found"));
 
-        sql.Count("\"FeaturedItems\"").Should().BeGreaterThan(0, "the interceptor must capture the featured-sets ensure");
-        foreach (string table in new[] { "\"Items\"", "\"Ratings\"", "\"Collections\"", "\"CollectionItems\"" })
+        logs.Entries.Should().NotContain(e => e.Message.Contains("Ideas seed SQL applied."));
+        foreach (string table in new[] { "\"Items\"", "\"Ratings\"", "\"Collections\"", "\"CollectionItems\"", "\"FeaturedItems\"" })
         {
             sql.Count(table).Should().Be(0, $"production startup must not query {table}");
         }
@@ -207,6 +207,8 @@ public sealed class DatabaseSeederProductionPostgresTests(PostgresContainerFixtu
         (await db.Categories.CountAsync()).Should().BeGreaterThan(0);
         (await db.Collections.CountAsync()).Should().Be(0);
         (await db.Ratings.CountAsync()).Should().Be(0);
+        (await db.FeaturedItems.CountAsync()).Should().Be(0, "default featured sets are dev-only (#336)");
+        (await db.Ideas.CountAsync()).Should().Be(0, "the curated ideas seed is dev-only (#336)");
     }
 }
 

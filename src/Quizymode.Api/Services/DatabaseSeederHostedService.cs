@@ -40,18 +40,20 @@ internal sealed class DatabaseSeederHostedService(
 
             await db.Database.MigrateAsync(cancellationToken);
             await SeedCategoriesAndNavigationAsync(db, cancellationToken);
-            await SeedIdeasAsync(db, cancellationToken);
-            await EnsureFeaturedSetsAsync(db, cancellationToken);
 
             // #329: the local dev seed (selection.json items, Science ratings, seed-dev collections) is a
             // Development-only convenience. Production items and collections come from admin seed sync.
+            // #336: the curated ideas and default featured sets are dev-only too, so an admin's delete sticks in prod.
             if (!_environment.IsDevelopment())
             {
                 _logger.LogInformation(
-                    "Skipping local dev seed (seed items, ratings, collections) in {Environment} environment.",
+                    "Skipping local dev seed (ideas, featured sets, seed items, ratings, collections) in {Environment} environment.",
                     _environment.EnvironmentName);
                 return;
             }
+
+            await SeedIdeasAsync(db, cancellationToken);
+            await EnsureFeaturedSetsAsync(db, cancellationToken);
 
             if (string.IsNullOrWhiteSpace(_seedOptions.Path))
             {
