@@ -10,8 +10,8 @@ public enum StudyGuideUploadStatus
 /// <summary>
 /// Retired in #240: the one-shot upload flow no longer exists; the table is kept for history and existing
 /// <see cref="Item.UploadId"/> references. Formerly a pasted study guide (up to 10 KB) queued for one-shot AI question generation.
-/// Processed in-process by the study guide upload worker; the generated questions stay here until the
-/// owner reviews and accepts them, at which point private items are created with <see cref="Item.UploadId"/> = <see cref="Id"/>.
+/// It was processed in-process by the (now removed) upload worker; accepted questions became private items
+/// with <see cref="Item.UploadId"/> = <see cref="Id"/>. No code writes this table any more.
 /// </summary>
 public sealed class StudyGuideUpload
 {
