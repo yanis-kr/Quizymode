@@ -64,7 +64,6 @@ jobs:
             'src/Quizymode.Web/src/**'
             'src/Quizymode.Web/public/**'
             'src/Quizymode.Web/index.html'
-            'src/Quizymode.Web/tailwind.config.*'
             'src/Quizymode.Web/vite.config.*'
             'playwright/screenshots/**'
             'playwright/fixtures.ts'
@@ -73,7 +72,9 @@ jobs:
             'scripts/wait-for-production-ready.js'
             '.github/workflows/user-guide-pages.yml'
           )
-          CHANGED="$(git diff --name-only "${LAST_SHA}" HEAD -- "${GUIDE_PATHS[@]}" | grep -Ev '\.test\.(ts|tsx)$' || true)"
+          # Run git diff on its own so a failure fails the step instead of reading as "no changes".
+          DIFF="$(git diff --name-only "${LAST_SHA}" HEAD -- "${GUIDE_PATHS[@]}")"
+          CHANGED="$(echo "${DIFF}" | grep -Ev '^$|\.test\.(ts|tsx)$' || true)"
 
           if [[ -z "${CHANGED}" ]]; then
             echo "No guide-relevant changes since ${LAST_SHA:0:7}: skipping capture."
@@ -115,8 +116,15 @@ jobs:
         env:
           MANUAL_EXPECTED_BUILD_VERSION: ${{ github.event_name == 'workflow_dispatch' && github.event.inputs.expected_build_version || '' }}
         run: |
-          # Scheduled runs capture whatever build is live; a manual run may pin an exact build.
-          EXPECTED_BUILD_VERSION="${MANUAL_EXPECTED_BUILD_VERSION}"
+          # A scheduled run waits for the build of the commit it checked out, so a successful run's
+          # headSha is the build it captured; if prod never reaches it, the run fails and the next day
+          # diffs from the last real capture. A manual run may pin an exact build or accept any live one.
+          if [[ "${{ github.event_name }}" == "schedule" ]]; then
+            APP_VERSION="$(grep -oPm1 '(?<=<QuizymodeVersion>)[^<]+' Directory.Build.props)"
+            EXPECTED_BUILD_VERSION="${APP_VERSION}+sha.${GITHUB_SHA:0:7}"
+          else
+            EXPECTED_BUILD_VERSION="${MANUAL_EXPECTED_BUILD_VERSION}"
+          fi
 
           echo "value=${EXPECTED_BUILD_VERSION}" >> "${GITHUB_OUTPUT}"
           echo "Resolved expected build version: ${EXPECTED_BUILD_VERSION:-<any live build marker>}"
