@@ -36,6 +36,16 @@ export function stripRedirectResultParams(queryString: string): string {
   return remaining ? `?${remaining}` : "";
 }
 
+/** The search page keeps the visitor's search text in `?q=`, which must never be recorded (AC 11.13). */
+export function isSearchPath(path: string): boolean {
+  return path === "/search" || path === "/search/";
+}
+
+/** Drops the whole query string on /search (q, tab and page); other pages keep theirs. */
+export function stripSearchQueryText(path: string, queryString: string): string {
+  return isSearchPath(path) ? "" : queryString;
+}
+
 /** The OAuth landing page is never recorded. */
 export function isAuthCallbackPath(path: string): boolean {
   return path === "/auth/callback" || path.startsWith("/auth/callback/");

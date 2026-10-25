@@ -8,6 +8,7 @@ import {
   setInternalBrowser,
   shouldTrackPageView,
   stripRedirectResultParams,
+  stripSearchQueryText,
 } from "./pageViewTracking";
 import { installMemoryLocalStorage } from "@/test/memoryStorage";
 
@@ -116,5 +117,17 @@ describe("OAuth redirect parameters", () => {
     expect(isAuthCallbackPath("/auth/callback")).toBe(true);
     expect(isAuthCallbackPath("/auth/callbackx")).toBe(false);
     expect(isAuthCallbackPath("/login")).toBe(false);
+  });
+});
+
+describe("search page query text", () => {
+  it("drops the whole query string on /search so the searched text is never recorded", () => {
+    expect(stripSearchQueryText("/search", "?q=secret+words&tab=topics&page=2")).toBe("");
+    expect(stripSearchQueryText("/search/", "?q=secret")).toBe("");
+  });
+
+  it("keeps the query string on other pages, including look-alike paths", () => {
+    expect(stripSearchQueryText("/categories", "?q=keep")).toBe("?q=keep");
+    expect(stripSearchQueryText("/search-tips", "?q=keep")).toBe("?q=keep");
   });
 });

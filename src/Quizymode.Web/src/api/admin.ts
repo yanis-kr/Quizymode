@@ -136,6 +136,7 @@ export type PageHitArea =
   | "item-detail"
   | "create"
   | "study-guide"
+  | "search"
   | "auth"
   | "community"
   | "info"

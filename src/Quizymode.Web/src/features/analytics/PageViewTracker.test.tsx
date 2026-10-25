@@ -46,6 +46,15 @@ describe("PageViewTracker", () => {
     expect(request).not.toHaveProperty("internalBrowser");
   });
 
+  it("never sends the search text from /search", async () => {
+    renderAt("/search?q=secret+words&tab=topics");
+
+    await waitFor(() => expect(mockTrackPageView).toHaveBeenCalledTimes(1));
+    const request = mockTrackPageView.mock.calls[0][0];
+    expect(request).toMatchObject({ path: "/search", queryString: "" });
+    expect(JSON.stringify(request)).not.toContain("secret");
+  });
+
   it("sends the internal-browser marker when this browser is excluded", async () => {
     localStorage.setItem(INTERNAL_BROWSER_STORAGE_KEY, "true");
 
