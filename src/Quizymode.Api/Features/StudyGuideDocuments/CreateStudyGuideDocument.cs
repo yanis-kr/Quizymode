@@ -286,7 +286,7 @@ public static class CreateStudyGuideDocument
             return Result.Failure<Outcome>(StudyGuideDocumentErrors.Empty);
         }
 
-        string textHash = StudyGuideUploads.StudyGuideUploadText.ComputeHash(fullText);
+        string textHash = StudyGuideTextHash.ComputeHash(fullText);
         DateTime expiresUtc = nowUtc.AddDays(Math.Max(1, documentOptions.RetentionDays));
 
         StudyGuideDocument? existing = await db.StudyGuideDocuments

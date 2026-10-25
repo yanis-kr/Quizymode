@@ -12,7 +12,6 @@ using Quizymode.Api.Features.StudyGuideDocuments.Extraction;
 using Quizymode.Api.Features.StudyGuideDocuments.Generation;
 using Quizymode.Api.Services;
 using Quizymode.Api.Shared.Options;
-using Quizymode.Api.Tests.Features.StudyGuideUploads;
 using UglyToad.PdfPig.Content;
 using UglyToad.PdfPig.Core;
 using UglyToad.PdfPig.Fonts.Standard14Fonts;
@@ -211,7 +210,17 @@ internal static class StudyGuideTestData
             })
             .Build();
 
-    public static ITextModerationService Moderation() => StudyGuideUploadTestData.Moderation();
+    /// <summary>Moderation mock that blocks any value containing "badword".</summary>
+    public static ITextModerationService Moderation()
+    {
+        Mock<ITextModerationService> moderation = new();
+        moderation
+            .Setup(x => x.Evaluate(It.IsAny<string?[]>()))
+            .Returns((string?[] values) => values.Any(v => v is not null && v.Contains("badword", StringComparison.OrdinalIgnoreCase))
+                ? new TextModerationResult(TextModerationOutcome.Blocked, "badword")
+                : new TextModerationResult(TextModerationOutcome.Clean));
+        return moderation.Object;
+    }
 
     public static StudyGuideTextExtractor Extractor(StudyGuideDocumentOptions? options = null) =>
         new(MsOptions.Create(options ?? new StudyGuideDocumentOptions()));

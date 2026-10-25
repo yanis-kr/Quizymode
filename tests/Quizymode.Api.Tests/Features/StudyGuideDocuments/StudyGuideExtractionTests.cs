@@ -2,7 +2,6 @@ using System.Text;
 using FluentAssertions;
 using Quizymode.Api.Features.StudyGuideDocuments;
 using Quizymode.Api.Features.StudyGuideDocuments.Extraction;
-using Quizymode.Api.Features.StudyGuideUploads;
 using Quizymode.Api.Shared.Kernel;
 using Quizymode.Api.Shared.Options;
 using Xunit;
@@ -253,7 +252,7 @@ public sealed class StudyGuideSectionerTests
         sections[0].Text.Should().StartWith("[p. 1]\n").And.Contain("\n\n[p. 2]\n");
         sections[1].Label.Should().Be("pp. 3–4");
         sections.Should().OnlyContain(section => section.SizeBytes <= 10240);
-        sections[0].TextSha256.Should().Be(StudyGuideUploadText.ComputeHash(sections[0].Text));
+        sections[0].TextSha256.Should().Be(StudyGuideTextHash.ComputeHash(sections[0].Text));
         sections.Select(section => section.Index).Should().Equal(0, 1);
     }
 

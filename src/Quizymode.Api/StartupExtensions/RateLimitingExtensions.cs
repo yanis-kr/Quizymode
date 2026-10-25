@@ -113,21 +113,6 @@ internal static partial class StartupExtensions
                     });
             });
 
-            // AI study guide uploads (one paid LLM call each). Duplicate text is free on the server, but still counts here.
-            options.AddPolicy("study-guide-uploads", httpContext =>
-            {
-                string partitionKey = GetAuthenticatedOrTrustedIpPartitionKey(httpContext);
-                return RateLimitPartition.GetFixedWindowLimiter(
-                    partitionKey,
-                    static _ => new FixedWindowRateLimiterOptions
-                    {
-                        PermitLimit = 10,
-                        Window = TimeSpan.FromHours(1),
-                        QueueLimit = 0,
-                        AutoReplenishment = true
-                    });
-            });
-
             // Study guide document uploads (AC 6.6): extraction is CPU-bound, so creates are capped per user.
             options.AddPolicy("study-guide-documents", httpContext =>
             {
@@ -275,11 +260,6 @@ internal static partial class StartupExtensions
         if (path.EndsWith("/client-errors", StringComparison.OrdinalIgnoreCase))
         {
             return "Too many error reports. Please slow down.";
-        }
-
-        if (path.EndsWith("/study-guide-uploads", StringComparison.OrdinalIgnoreCase))
-        {
-            return "Too many study guide uploads. Please wait a while and try again.";
         }
 
         if (path.EndsWith("/study-guides/documents", StringComparison.OrdinalIgnoreCase))

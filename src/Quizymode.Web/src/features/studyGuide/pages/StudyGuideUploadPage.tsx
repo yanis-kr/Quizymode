@@ -25,7 +25,6 @@ import {
   type StudyGuideInputMode,
 } from "../studyGuideDocumentSchema";
 import { readApiError } from "../studyGuideApiErrors";
-import { LegacyStudyGuideUploadResult } from "../components/LegacyStudyGuideUploadResult";
 
 const UNAVAILABLE_MESSAGE = "AI study guide upload is unavailable right now. Please try again later.";
 
@@ -47,8 +46,9 @@ const TABS: Array<{ id: StudyGuideInputMode; label: string }> = [
 const StudyGuideUploadPage = () => {
   const { isAuthenticated } = useAuth();
   const navigate = useNavigate();
-  const [searchParams, setSearchParams] = useSearchParams();
-  const legacyUploadId = searchParams.get("id")?.trim() ?? "";
+  const [searchParams] = useSearchParams();
+  // #240: the one-shot upload flow is gone; old ?id= links only get a notice above the normal form.
+  const hasRetiredUploadLink = (searchParams.get("id")?.trim() ?? "") !== "";
 
   const [mode, setMode] = React.useState<StudyGuideInputMode>("file");
   const [file, setFile] = React.useState<File | null>(null);
@@ -70,7 +70,7 @@ const StudyGuideUploadPage = () => {
   const { data: config, isLoading: isLoadingConfig } = useQuery({
     queryKey: ["studyGuideDocuments", "config"],
     queryFn: () => studyGuideDocumentsApi.getConfig(),
-    enabled: isAuthenticated && !legacyUploadId,
+    enabled: isAuthenticated,
   });
   const limits: StudyGuideDocumentLimits = {
     maxFileBytes: config?.maxFileBytes ?? DEFAULT_DOCUMENT_LIMITS.maxFileBytes,
@@ -195,9 +195,22 @@ const StudyGuideUploadPage = () => {
         </div>
       )}
 
-      {legacyUploadId ? (
-        <LegacyStudyGuideUploadResult uploadId={legacyUploadId} onStartOver={() => setSearchParams({})} />
-      ) : isLoadingConfig ? (
+      {hasRetiredUploadLink && (
+        <div
+          className="mb-4 rounded-lg border border-amber-200 bg-amber-50 p-4 space-y-1"
+          role="status"
+          data-testid="retired-upload-notice"
+        >
+          <h2 className="text-sm font-semibold text-amber-900">That earlier upload is no longer available</h2>
+          <p className="text-sm text-amber-800">
+            Earlier one-step study guide uploads have been retired, so their results can no longer be opened.
+            Questions you already added from them are still in your private items. Upload your study guide below
+            to generate new questions.
+          </p>
+        </div>
+      )}
+
+      {isLoadingConfig ? (
         <LoadingSpinner />
       ) : !isEnabled ? (
         <div className="rounded-lg border border-gray-200 bg-white p-6 shadow-sm space-y-2" role="status">

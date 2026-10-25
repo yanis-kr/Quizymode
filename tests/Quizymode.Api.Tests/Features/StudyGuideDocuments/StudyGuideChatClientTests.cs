@@ -6,7 +6,6 @@ using FluentAssertions;
 using Microsoft.Extensions.Logging;
 using Quizymode.Api.Features.StudyGuideDocuments.Generation;
 using Quizymode.Api.Shared.Models;
-using Quizymode.Api.Tests.Features.StudyGuideUploads;
 using Xunit;
 
 namespace Quizymode.Api.Tests.Features.StudyGuideDocuments;
