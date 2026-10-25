@@ -37,12 +37,21 @@ internal sealed class DatabaseSeederHostedService(
         {
             using IServiceScope scope = _serviceProvider.CreateScope();
             ApplicationDbContext db = scope.ServiceProvider.GetRequiredService<ApplicationDbContext>();
-            SeedSyncAdminService seedSyncAdminService = scope.ServiceProvider.GetRequiredService<SeedSyncAdminService>();
 
             await db.Database.MigrateAsync(cancellationToken);
             await SeedCategoriesAndNavigationAsync(db, cancellationToken);
             await SeedIdeasAsync(db, cancellationToken);
             await EnsureFeaturedSetsAsync(db, cancellationToken);
+
+            // #329: the local dev seed (selection.json items, Science ratings, seed-dev collections) is a
+            // Development-only convenience. Production items and collections come from admin seed sync.
+            if (!_environment.IsDevelopment())
+            {
+                _logger.LogInformation(
+                    "Skipping local dev seed (seed items, ratings, collections) in {Environment} environment.",
+                    _environment.EnvironmentName);
+                return;
+            }
 
             if (string.IsNullOrWhiteSpace(_seedOptions.Path))
             {
@@ -50,7 +59,7 @@ internal sealed class DatabaseSeederHostedService(
                 return;
             }
 
-            string? resolvedSeedRoot = ResolveSeedPath(_seedOptions.Path);
+            string? resolvedSeedRoot = ResolveSeedPath(_seedOptions.Path, _environment.ContentRootPath);
             if (resolvedSeedRoot is null)
             {
                 _logger.LogWarning("Seed path {SeedPath} does not exist. Skipping database seeding.", _seedOptions.Path);
@@ -60,58 +69,60 @@ internal sealed class DatabaseSeederHostedService(
             bool hadItemsBefore = await db.Items.AnyAsync(cancellationToken);
 
             SeedSelection? selection = await LoadSelectionAsync(resolvedSeedRoot, cancellationToken);
-            string? resolvedItemsPath = ResolveItemsPath(resolvedSeedRoot, selection);
+            string? resolvedItemsPath = ResolveItemsPath(
+                resolvedSeedRoot, selection?.ItemsSource, _environment.ContentRootPath, _logger);
 
-            if (resolvedItemsPath is not null)
+            if (resolvedItemsPath is null)
             {
-                HashSet<Guid>? allowedIds = selection?.ItemIds?.Count > 0
-                    ? [.. selection.ItemIds]
-                    : null;
-
-                List<SeedSyncAdmin.SeedItemRequest> itemRequests = await LoadSeedItemRequestsAsync(
-                    resolvedItemsPath, allowedIds, cancellationToken);
-
-                if (itemRequests.Count > 0)
-                {
-                    SeedSyncAdmin.ManifestRequest manifest = new(
-                        SeedSet: "local-seed-dev",
-                        Items: itemRequests,
-                        Collections: [],
-                        DeltaPreviewLimit: 50);
-
-                    SeedSyncAdmin.SourceContext sourceContext = new(
-                        RepositoryOwner: "local",
-                        RepositoryName: "seed-dev",
-                        GitRef: "local-dev",
-                        ResolvedCommitSha: "local-dev",
-                        ItemsPath: resolvedItemsPath.Replace('\\', '/'),
-                        SourceFileCount: Directory.GetFiles(resolvedItemsPath, "*.json", SearchOption.AllDirectories).Length,
-                        CollectionsPath: string.Empty,
-                        CollectionSourceFileCount: 0);
-
-                    Result<SeedSyncAdmin.ApplyResponse> result = await seedSyncAdminService.ApplyManifestAsync(
-                        manifest,
-                        sourceContext,
-                        cancellationToken,
-                        recordHistory: false);
-                    if (result.IsFailure)
-                    {
-                        _logger.LogError(result.Error?.Exception, "Failed to apply local item seed sync: {Code} {Error}", result.Error?.Code, result.Error?.Description ?? "Unknown error");
-                        return;
-                    }
-
-                    SeedSyncAdmin.ApplyResponse response = result.Value!;
-                    _logger.LogInformation(
-                        "Applied local item seed sync: {Created} created, {Updated} updated, {Unchanged} unchanged from {Total} payload items.",
-                        response.CreatedCount,
-                        response.UpdatedCount,
-                        response.UnchangedCount,
-                        response.TotalItemsInPayload);
-                }
+                // Ratings and collections depend on the seeded items; ResolveItemsPath already logged one warning.
+                return;
             }
-            else
+
+            HashSet<Guid>? allowedIds = selection?.ItemIds?.Count > 0
+                ? [.. selection.ItemIds]
+                : null;
+
+            List<SeedSyncAdmin.SeedItemRequest> itemRequests = await LoadSeedItemRequestsAsync(
+                resolvedItemsPath, allowedIds, _logger, cancellationToken);
+
+            if (itemRequests.Count > 0)
             {
-                _logger.LogInformation("No items source found under {SeedRoot}. Skipping item seeding.", resolvedSeedRoot);
+                SeedSyncAdminService seedSyncAdminService = scope.ServiceProvider.GetRequiredService<SeedSyncAdminService>();
+
+                SeedSyncAdmin.ManifestRequest manifest = new(
+                    SeedSet: "local-seed-dev",
+                    Items: itemRequests,
+                    Collections: [],
+                    DeltaPreviewLimit: 50);
+
+                SeedSyncAdmin.SourceContext sourceContext = new(
+                    RepositoryOwner: "local",
+                    RepositoryName: "seed-dev",
+                    GitRef: "local-dev",
+                    ResolvedCommitSha: "local-dev",
+                    ItemsPath: resolvedItemsPath.Replace('\\', '/'),
+                    SourceFileCount: Directory.GetFiles(resolvedItemsPath, "*.json", SearchOption.AllDirectories).Length,
+                    CollectionsPath: string.Empty,
+                    CollectionSourceFileCount: 0);
+
+                Result<SeedSyncAdmin.ApplyResponse> result = await seedSyncAdminService.ApplyManifestAsync(
+                    manifest,
+                    sourceContext,
+                    cancellationToken,
+                    recordHistory: false);
+                if (result.IsFailure)
+                {
+                    _logger.LogError(result.Error?.Exception, "Failed to apply local item seed sync: {Code} {Error}", result.Error?.Code, result.Error?.Description ?? "Unknown error");
+                    return;
+                }
+
+                SeedSyncAdmin.ApplyResponse response = result.Value!;
+                _logger.LogInformation(
+                    "Applied local item seed sync: {Created} created, {Updated} updated, {Unchanged} unchanged from {Total} payload items.",
+                    response.CreatedCount,
+                    response.UpdatedCount,
+                    response.UnchangedCount,
+                    response.TotalItemsInPayload);
             }
 
             await EnsureSeedScienceRatingsAsync(db, cancellationToken);
@@ -145,7 +156,7 @@ internal sealed class DatabaseSeederHostedService(
 
     public Task StopAsync(CancellationToken cancellationToken) => Task.CompletedTask;
 
-    private string? ResolveSeedPath(string configuredSeedPath)
+    internal static string? ResolveSeedPath(string configuredSeedPath, string contentRootPath)
     {
         if (string.IsNullOrWhiteSpace(configuredSeedPath))
         {
@@ -157,13 +168,13 @@ internal sealed class DatabaseSeederHostedService(
             return Directory.Exists(configuredSeedPath) ? configuredSeedPath : null;
         }
 
-        string candidatePath = Path.GetFullPath(Path.Combine(_environment.ContentRootPath, configuredSeedPath));
+        string candidatePath = Path.GetFullPath(Path.Combine(contentRootPath, configuredSeedPath));
         if (Directory.Exists(candidatePath))
         {
             return candidatePath;
         }
 
-        DirectoryInfo? current = Directory.GetParent(_environment.ContentRootPath);
+        DirectoryInfo? current = Directory.GetParent(contentRootPath);
         while (current is not null)
         {
             candidatePath = Path.GetFullPath(Path.Combine(current.FullName, configuredSeedPath));
@@ -202,46 +213,77 @@ internal sealed class DatabaseSeederHostedService(
         return selection;
     }
 
-    private string? ResolveItemsPath(string resolvedSeedRoot, SeedSelection? selection)
+    internal static string? ResolveItemsPath(
+        string resolvedSeedRoot,
+        string? itemsSource,
+        string contentRootPath,
+        ILogger logger)
     {
         // If selection.json specifies an itemsSource path, resolve it the same way
-        // ResolveSeedPath does — first relative to the seed root, then walking up the tree.
-        if (!string.IsNullOrWhiteSpace(selection?.ItemsSource))
+        // ResolveSeedPath does: relative to the content root, then walking up the tree.
+        bool hasItemsSource = !string.IsNullOrWhiteSpace(itemsSource);
+        if (hasItemsSource)
         {
-            string? resolved = ResolveSeedPath(selection.ItemsSource);
+            string? resolved = ResolveSeedPath(itemsSource!, contentRootPath);
             if (resolved is not null)
             {
                 return resolved;
             }
-
-            _logger.LogWarning(
-                "selection.json itemsSource '{ItemsSource}' could not be resolved. Falling back to local items folder.",
-                selection.ItemsSource);
         }
 
-        // Fall back to a local items/ subfolder inside the seed root.
-        return ResolveSeedItemsPath(resolvedSeedRoot);
+        // Fall back to a local items/ subfolder inside the seed root. Never fall back to the seed root itself (#329).
+        string? localItems = ResolveSeedItemsPath(resolvedSeedRoot);
+        if (localItems is not null)
+        {
+            if (hasItemsSource)
+            {
+                logger.LogWarning(
+                    "itemsSource '{ItemsSource}' not found; using local items folder {Path}.",
+                    itemsSource,
+                    localItems);
+            }
+
+            return localItems;
+        }
+
+        logger.LogWarning(
+            "Seed items folder not found (itemsSource '{ItemsSource}', local '{SeedRoot}/items'). Skipping local item, rating and collection seeding.",
+            itemsSource ?? "(none)",
+            resolvedSeedRoot);
+        return null;
     }
 
-    private async Task<List<SeedSyncAdmin.SeedItemRequest>> LoadSeedItemRequestsAsync(
+    private static readonly JsonSerializerOptions SeedJsonOptions = new() { PropertyNameCaseInsensitive = true };
+
+    internal static async Task<List<SeedSyncAdmin.SeedItemRequest>> LoadSeedItemRequestsAsync(
         string resolvedItemsPath,
         HashSet<Guid>? allowedIds,
+        ILogger logger,
         CancellationToken cancellationToken)
     {
         string[] allFiles = Directory.GetFiles(resolvedItemsPath, "*.json", SearchOption.AllDirectories);
         Array.Sort(allFiles, StringComparer.OrdinalIgnoreCase);
 
         List<SeedSyncAdmin.SeedItemRequest> requests = [];
+        List<string> skippedFiles = [];
         foreach (string jsonFile in allFiles)
         {
             string fileJson = await File.ReadAllTextAsync(jsonFile, cancellationToken);
-            List<RepoManagedItemSeedData>? items = JsonSerializer.Deserialize<List<RepoManagedItemSeedData>>(
-                fileJson,
-                new JsonSerializerOptions { PropertyNameCaseInsensitive = true });
+            List<RepoManagedItemSeedData>? items;
+            try
+            {
+                items = JsonSerializer.Deserialize<List<RepoManagedItemSeedData>>(fileJson, SeedJsonOptions);
+            }
+            catch (JsonException)
+            {
+                // Not an item array (for example selection.json or a collection file): skip, never fail startup (#329).
+                skippedFiles.Add(Path.GetRelativePath(resolvedItemsPath, jsonFile));
+                continue;
+            }
 
             if (items is null || items.Count == 0)
             {
-                _logger.LogWarning("No items found in {FileName}", Path.GetFileName(jsonFile));
+                logger.LogWarning("No items found in {FileName}", Path.GetFileName(jsonFile));
                 continue;
             }
 
@@ -274,6 +316,15 @@ internal sealed class DatabaseSeederHostedService(
                     item.CorrectAnswerSpeech,
                     item.IncorrectAnswerSpeech));
             }
+        }
+
+        if (skippedFiles.Count > 0)
+        {
+            logger.LogWarning(
+                "Skipped {Count} non-item JSON file(s) under {ItemsPath}: {Files}",
+                skippedFiles.Count,
+                resolvedItemsPath,
+                string.Join(", ", skippedFiles));
         }
 
         return requests;
@@ -588,12 +639,7 @@ internal sealed class DatabaseSeederHostedService(
     private static string? ResolveSeedItemsPath(string resolvedSeedRoot)
     {
         string candidate = Path.Combine(resolvedSeedRoot, SeedItemsFolderName);
-        if (Directory.Exists(candidate))
-        {
-            return candidate;
-        }
-
-        return Directory.Exists(resolvedSeedRoot) ? resolvedSeedRoot : null;
+        return Directory.Exists(candidate) ? candidate : null;
     }
 
     private static string? ResolveSeedCollectionsPath(string resolvedSeedRoot)
