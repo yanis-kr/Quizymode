@@ -7,6 +7,7 @@ using Microsoft.EntityFrameworkCore.Storage;
 using Quizymode.Api.Data;
 using Quizymode.Api.Services;
 using Quizymode.Api.Services.Taxonomy;
+using Quizymode.Api.Services.Taxonomy.Suggestions;
 using Quizymode.Api.Shared.Helpers;
 using Quizymode.Api.Shared.Kernel;
 using Quizymode.Api.Shared.Models;
@@ -20,7 +21,8 @@ internal sealed class SeedSyncAdminService(
     IGitHubSeedSource gitHubSeedSource,
     LocalSeedLoader localSeedLoader,
     IUserContext userContext,
-    LanguagesTaxonomyNormalizationService languagesTaxonomyNormalizationService)
+    LanguagesTaxonomyNormalizationService languagesTaxonomyNormalizationService,
+    ITopicSuggestionInvalidator? topicSuggestionInvalidator = null)
 {
     private const string SeederUserId = "seeder";
     private readonly IGitHubSeedSource _gitHubSeedSource = gitHubSeedSource;
@@ -211,6 +213,9 @@ internal sealed class SeedSyncAdminService(
             {
                 await transaction.CommitAsync(cancellationToken);
             }
+
+            // Public items changed: topic suggestion reloads its profiles lazily (still bounded by its daily cap).
+            topicSuggestionInvalidator?.Invalidate();
 
             return Result.Success(ToApplyResponse(plan, sourceContext, manifest.DeltaPreviewLimit, historyRun));
         }

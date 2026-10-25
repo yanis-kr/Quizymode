@@ -6006,6 +6006,66 @@
         }
       }
     },
+    "/taxonomy/suggest": {
+      "post": {
+        "tags": [
+          "Taxonomy"
+        ],
+        "summary": "Suggest topic paths for text (no LLM)",
+        "description": "Returns up to `limit` full category > L1 > L2 paths for the text. Matches come from the taxonomy text and public items only; private items never contribute. Empty or unrecognised text returns the caller's recent paths, then popular ones, so the list is never empty. The text is never logged or stored.",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "oneOf": [
+                  {
+                    "type": "null"
+                  },
+                  {
+                    "$ref": "#/components/schemas/Quizymode.Api.Features.Taxonomy.SuggestTopics.Request"
+                  }
+                ]
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Quizymode.Api.Features.Taxonomy.SuggestTopics.Response"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "429": {
+            "description": "Too Many Requests",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "/users/settings": {
       "get": {
         "tags": [
@@ -16700,6 +16760,85 @@
           }
         }
       },
+      "Quizymode.Api.Features.Taxonomy.SuggestTopics.Request": {
+        "required": [
+          "text",
+          "limit"
+        ],
+        "type": "object",
+        "properties": {
+          "text": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/components/schemas/System.String"
+              }
+            ]
+          },
+          "limit": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/components/schemas/System.NullableOfSystem.Int32"
+              }
+            ]
+          }
+        }
+      },
+      "Quizymode.Api.Features.Taxonomy.SuggestTopics.Response": {
+        "required": [
+          "suggestions"
+        ],
+        "type": "object",
+        "properties": {
+          "suggestions": {
+            "$ref": "#/components/schemas/System.Collections.Generic.IReadOnlyListOfQuizymode.Api.Features.Taxonomy.SuggestTopics.Suggestion"
+          }
+        }
+      },
+      "Quizymode.Api.Features.Taxonomy.SuggestTopics.Suggestion": {
+        "required": [
+          "categorySlug",
+          "l1",
+          "l2",
+          "path",
+          "description",
+          "score",
+          "matchedTerms",
+          "reason"
+        ],
+        "type": "object",
+        "properties": {
+          "categorySlug": {
+            "$ref": "#/components/schemas/System.String"
+          },
+          "l1": {
+            "$ref": "#/components/schemas/System.String"
+          },
+          "l2": {
+            "$ref": "#/components/schemas/System.String"
+          },
+          "path": {
+            "$ref": "#/components/schemas/System.String"
+          },
+          "description": {
+            "$ref": "#/components/schemas/System.String"
+          },
+          "score": {
+            "$ref": "#/components/schemas/System.Double"
+          },
+          "matchedTerms": {
+            "$ref": "#/components/schemas/System.Collections.Generic.IReadOnlyListOfSystem.String"
+          },
+          "reason": {
+            "$ref": "#/components/schemas/System.String"
+          }
+        }
+      },
       "Quizymode.Api.Features.Users.CheckUserAvailability.CheckUserAvailabilityResponse": {
         "required": [
           "isUsernameAvailable",
@@ -17276,6 +17415,12 @@
         "type": "array",
         "items": {
           "$ref": "#/components/schemas/Quizymode.Api.Features.Taxonomy.GetTaxonomy.L2Dto"
+        }
+      },
+      "System.Collections.Generic.IReadOnlyListOfQuizymode.Api.Features.Taxonomy.SuggestTopics.Suggestion": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/Quizymode.Api.Features.Taxonomy.SuggestTopics.Suggestion"
         }
       },
       "System.Collections.Generic.IReadOnlyListOfSystem.String": {

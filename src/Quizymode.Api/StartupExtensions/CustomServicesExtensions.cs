@@ -1,6 +1,8 @@
+using Microsoft.Extensions.DependencyInjection.Extensions;
 using Quizymode.Api.Features.Admin;
 using Quizymode.Api.Services;
 using Quizymode.Api.Services.Taxonomy;
+using Quizymode.Api.Services.Taxonomy.Suggestions;
 using Quizymode.Api.Shared.Options;
 
 namespace Quizymode.Api.StartupExtensions;
@@ -27,6 +29,13 @@ internal static partial class StartupExtensions
         // Global search (#319): in-memory topic index plus lazily refreshed public item counts.
         builder.Services.AddSingleton<ITaxonomySearchIndex, TaxonomySearchIndex>();
         builder.Services.AddSingleton<TaxonomySearchCounts>();
+        // Topic suggestion (#322): in-memory model, lazily loaded public item profiles, invalidated by seed sync.
+        builder.Services.Configure<TopicSuggestionOptions>(builder.Configuration.GetSection(TopicSuggestionOptions.SectionName));
+        builder.Services.TryAddSingleton(TimeProvider.System);
+        builder.Services.AddSingleton<TopicTextAnalyzer>();
+        builder.Services.AddSingleton<TopicSuggestionProfiles>();
+        builder.Services.AddSingleton<ITopicSuggestionInvalidator>(provider => provider.GetRequiredService<TopicSuggestionProfiles>());
+        builder.Services.AddSingleton<TopicSuggester>();
         // SimHashService is stateless, so it can be a singleton
         builder.Services.AddSingleton<ISimHashService, SimHashService>();
         builder.Services.AddHttpClient<IGitHubSeedSource, GitHubSeedSource>();
