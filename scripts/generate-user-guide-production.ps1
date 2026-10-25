@@ -21,6 +21,7 @@ try {
 
     Write-Host "Capturing desktop screenshots from production..." -ForegroundColor Cyan
     Push-Location $RepoRoot
+    $env:PLAYWRIGHT_BASE_URL = "https://www.quizymode.com"
     npx playwright test --project=screenshots
     if ($LASTEXITCODE -ne 0) {
         Write-Host "Desktop screenshot capture had failures (non-zero exit). Proceeding to generate guide anyway." -ForegroundColor Yellow
