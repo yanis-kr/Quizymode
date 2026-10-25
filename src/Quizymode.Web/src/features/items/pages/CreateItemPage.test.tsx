@@ -24,6 +24,7 @@ vi.mock("@/api/items", () => ({
 vi.mock("@/api/taxonomy", () => ({
   taxonomyApi: {
     getAll: vi.fn(),
+    suggest: vi.fn(),
   },
 }));
 
@@ -113,6 +114,8 @@ describe("CreateItemPage", () => {
       ],
     });
 
+    vi.mocked(taxonomyApi.suggest).mockResolvedValue({ suggestions: [] });
+
     vi.mocked(useExtraKeywordAutocompleteSource).mockReturnValue({
       extraKeywordAutocompleteSource: ["arms"],
       itemTagKeywordsLoading: false,
@@ -139,6 +142,8 @@ describe("CreateItemPage", () => {
     });
 
     expect(screen.getByText("arms")).toBeInTheDocument();
+    // The URL prefill is the user's choice: it shows as the topic pill (AC 12.13).
+    expect(screen.getByTestId("topic-pill")).toHaveTextContent("science");
 
     await user.selectOptions(rank1Select, "physiology");
     await waitFor(() => expect(rank1Select).toHaveValue("physiology"));

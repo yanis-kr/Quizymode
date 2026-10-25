@@ -1,5 +1,6 @@
 using Microsoft.Data.Sqlite;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Diagnostics;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Storage;
 using Quizymode.Api.Data;
@@ -16,7 +17,12 @@ public abstract class DatabaseTestFixture : IDisposable
     private readonly DbContextOptions<ApplicationDbContext> _options;
     protected ApplicationDbContext DbContext { get; }
 
-    protected DatabaseTestFixture()
+    protected DatabaseTestFixture() : this([])
+    {
+    }
+
+    /// <param name="interceptors">EF Core interceptors for every context of this database (for example a command counter).</param>
+    protected DatabaseTestFixture(IReadOnlyList<IInterceptor> interceptors)
     {
         // Create and open a connection to keep the in-memory database alive
         _connection = new SqliteConnection("Data Source=:memory:");
@@ -26,6 +32,7 @@ public abstract class DatabaseTestFixture : IDisposable
             .UseSqlite(_connection)
             .ReplaceService<IModelCustomizer, TestModelCustomizer>()
             .EnableSensitiveDataLogging()
+            .AddInterceptors(interceptors.ToArray())
             .Options;
 
         DbContext = new ApplicationDbContext(_options);

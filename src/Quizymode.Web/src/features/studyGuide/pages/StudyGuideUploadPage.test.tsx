@@ -1,11 +1,10 @@
-import { beforeEach, describe, expect, it, vi } from "vitest";
+import { beforeEach, describe, expect, it, onTestFinished, vi } from "vitest";
 import { fireEvent, render, screen, waitFor } from "@testing-library/react";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { MemoryRouter, Route, Routes, useLocation } from "react-router-dom";
 import { AxiosError, AxiosHeaders } from "axios";
 import StudyGuideUploadPage from "./StudyGuideUploadPage";
-import { categoriesApi } from "@/api/categories";
-import { keywordsApi } from "@/api/keywords";
+import { taxonomyApi, type TopicSuggestion } from "@/api/taxonomy";
 import { studyGuideDocumentsApi, type StudyGuideDocumentsConfig } from "@/api/studyGuideDocuments";
 import { studyGuideUploadsApi, type StudyGuideUploadResponse } from "@/api/studyGuideUploads";
 
@@ -17,12 +16,8 @@ vi.mock("@/features/legal/components/ContentComplianceNotice", () => ({
   default: () => null,
 }));
 
-vi.mock("@/api/categories", () => ({
-  categoriesApi: { getAll: vi.fn() },
-}));
-
-vi.mock("@/api/keywords", () => ({
-  keywordsApi: { getNavigationKeywords: vi.fn() },
+vi.mock("@/api/taxonomy", () => ({
+  taxonomyApi: { getAll: vi.fn(), suggest: vi.fn() },
 }));
 
 vi.mock("@/api/studyGuideDocuments", () => ({
@@ -89,9 +84,20 @@ const completedUpload: StudyGuideUploadResponse = {
   createdItemCount: null,
 };
 
+const scienceChip: TopicSuggestion = {
+  categorySlug: "science",
+  l1: "biology",
+  l2: "plants",
+  path: "science › biology › plants",
+  description: "Plant biology",
+  score: 0.6,
+  matchedTerms: ["photosynthesis"],
+  reason: "text",
+};
+
 async function fillTopic() {
   await screen.findByRole("option", { name: "science" });
-  fireEvent.change(screen.getByLabelText(/category/i), { target: { value: "science" } });
+  fireEvent.change(screen.getByLabelText(/^category \*$/i), { target: { value: "science" } });
   await screen.findByRole("option", { name: "biology" });
   fireEvent.change(screen.getByLabelText(/primary topic/i), { target: { value: "biology" } });
   await screen.findByRole("option", { name: "plants" });
@@ -112,15 +118,26 @@ describe("StudyGuideUploadPage", () => {
   beforeEach(() => {
     vi.clearAllMocks();
     vi.mocked(studyGuideDocumentsApi.getConfig).mockResolvedValue(config);
-    vi.mocked(categoriesApi.getAll).mockResolvedValue({
-      categories: [{ category: "science" }],
-    } as Awaited<ReturnType<typeof categoriesApi.getAll>>);
-    vi.mocked(keywordsApi.getNavigationKeywords).mockImplementation(async (_category, selected) => ({
-      keywords:
-        selected && selected.length > 0
-          ? [{ name: "plants", itemCount: 0, averageRating: null, navigationRank: 2 }]
-          : [{ name: "biology", itemCount: 0, averageRating: null, navigationRank: 1 }],
-    }));
+    vi.mocked(taxonomyApi.getAll).mockResolvedValue({
+      categories: [
+        {
+          slug: "science",
+          name: "Science",
+          description: null,
+          itemCount: 0,
+          allKeywordSlugs: ["biology", "plants"],
+          groups: [
+            {
+              slug: "biology",
+              description: null,
+              itemCount: 0,
+              keywords: [{ slug: "plants", description: "Plant biology", itemCount: 0 }],
+            },
+          ],
+        },
+      ],
+    });
+    vi.mocked(taxonomyApi.suggest).mockResolvedValue({ suggestions: [] });
   });
 
   it("shows an unavailable message when AI generation is disabled", async () => {
@@ -157,13 +174,102 @@ describe("StudyGuideUploadPage", () => {
   it("requires a file and a full topic before uploading", async () => {
     renderPage();
 
+    // No topic: the page blocks the submit with the topic copy and focuses the topic search (AC 12.14).
+    await screen.findByRole("option", { name: "science" });
     fireEvent.click(await screen.findByRole("button", { name: /upload study guide/i }));
-    expect(await screen.findByText(/choose a file to upload/i)).toBeInTheDocument();
+    expect(
+      await screen.findByText(/choose a topic: pick a suggestion, search, or browse all topics/i)
+    ).toBeInTheDocument();
+    expect(screen.getByRole("combobox", { name: /search topics/i })).toHaveFocus();
 
-    chooseFile(new File(["notes"], "notes.pdf", { type: "application/pdf" }));
+    await fillTopic();
     fireEvent.click(screen.getByRole("button", { name: /upload study guide/i }));
-    expect(await screen.findByText(/choose a category/i)).toBeInTheDocument();
+    expect(await screen.findByText(/choose a file to upload/i)).toBeInTheDocument();
     expect(studyGuideDocumentsApi.create).not.toHaveBeenCalled();
+  });
+
+  it("suggests from the title and pasted notes, and one tap fills the whole topic (#323)", async () => {
+    // AC 12.12
+    vi.mocked(taxonomyApi.suggest).mockResolvedValue({ suggestions: [scienceChip] });
+    vi.mocked(studyGuideDocumentsApi.create).mockResolvedValue({
+      id: "doc-3",
+      isDuplicate: false,
+    } as Awaited<ReturnType<typeof studyGuideDocumentsApi.create>>);
+
+    renderPage();
+    fireEvent.click(await screen.findByRole("tab", { name: /paste text/i }));
+    fireEvent.change(screen.getByLabelText(/^title/i), { target: { value: "Plants" } });
+    fireEvent.change(screen.getByLabelText(/study guide text/i), {
+      target: { value: "Photosynthesis turns light into glucose inside the chloroplasts of plant cells." },
+    });
+
+    await waitFor(
+      () =>
+        expect(
+          vi.mocked(taxonomyApi.suggest).mock.calls.some(([text]) => text.includes("Plants\nPhotosynthesis turns light"))
+        ).toBe(true),
+      { timeout: 3000 }
+    );
+
+    fireEvent.click(await screen.findByRole("button", { name: /science.*biology.*plants/i }));
+    expect(screen.getByTestId("topic-pill")).toBeInTheDocument();
+    fireEvent.click(screen.getByRole("button", { name: /upload study guide/i }));
+
+    await waitFor(() =>
+      expect(studyGuideDocumentsApi.create).toHaveBeenCalledWith(
+        expect.objectContaining({ category: "science", navigationKeyword1: "biology", navigationKeyword2: "plants" })
+      )
+    );
+  });
+
+  it("reads at most the first 20,000 bytes of a .txt file to suggest from (#323)", async () => {
+    // AC 12.12
+    // jsdom has no Blob.text(); real browsers do, and the page relies on it.
+    const original = Blob.prototype.text;
+    Blob.prototype.text = function (this: Blob) {
+      return new Promise<string>((resolve) => {
+        const reader = new FileReader();
+        reader.onload = () => resolve(String(reader.result));
+        reader.readAsText(this);
+      });
+    };
+    onTestFinished(() => {
+      Blob.prototype.text = original;
+    });
+    vi.mocked(taxonomyApi.suggest).mockResolvedValue({ suggestions: [scienceChip] });
+    renderPage();
+    await screen.findByRole("tab", { name: /upload file/i });
+
+    const file = new File(["Mitochondria are the powerhouse of the cell. ".repeat(1000)], "cells.txt", {
+      type: "text/plain",
+    });
+    chooseFile(file);
+
+    await waitFor(
+      () =>
+        expect(
+          vi.mocked(taxonomyApi.suggest).mock.calls.some(([text]) => text.startsWith("Mitochondria are the powerhouse"))
+        ).toBe(true),
+      { timeout: 3000 }
+    );
+    const sent = vi.mocked(taxonomyApi.suggest).mock.calls.map(([text]) => text).find((t) => t.length > 0)!;
+    expect(sent.length).toBeLessThanOrEqual(5000);
+    expect(screen.queryByText(/topic suggestions use your title and file name/i)).not.toBeInTheDocument();
+  });
+
+  it("uses the title and file name for PDF files and says so under the chips (#323)", async () => {
+    // AC 12.12
+    vi.mocked(taxonomyApi.suggest).mockResolvedValue({ suggestions: [{ ...scienceChip, reason: "popular" }] });
+    renderPage();
+    await screen.findByRole("tab", { name: /upload file/i });
+    chooseFile(new File(["%PDF"], "plant-biology_chapter3.pdf", { type: "application/pdf" }));
+
+    expect(await screen.findByText(/topic suggestions use your title and file name for this file type/i)).toBeInTheDocument();
+    await waitFor(
+      () =>
+        expect(vi.mocked(taxonomyApi.suggest).mock.calls.some(([text]) => text === "plant biology chapter3")).toBe(true),
+      { timeout: 3000 }
+    );
   });
 
   it("rejects unsupported and oversized files on the client", async () => {

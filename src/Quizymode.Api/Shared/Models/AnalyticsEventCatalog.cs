@@ -28,6 +28,12 @@ public static class AnalyticsEventCatalog
     public const string SearchPerformed = "search_performed";
     public const string SearchResultClicked = "search_result_clicked";
 
+    // Topic suggestion (#322/#323). No event carries text; none is a funnel step. The context is the topic path
+    // (category/l1/l2) and is omitted when the saved item is private.
+    public const string TopicSuggestionShown = "topic_suggestion_shown";
+    public const string TopicSuggestionAccepted = "topic_suggestion_accepted";
+    public const string TopicSuggestionOverridden = "topic_suggestion_overridden";
+
     /// <summary>Optional fields an event may carry beyond name, session, path, and context.</summary>
     [Flags]
     public enum EventFields
@@ -78,7 +84,13 @@ public static class AnalyticsEventCatalog
         // number of results shown. The query text is never sent.
         [SearchPerformed] = new(EventFields.Total, EventFields.Total),
         // Position is the 1-based rank of the clicked result; the context is the public target (never a private one).
-        [SearchResultClicked] = new(EventFields.Position, EventFields.Position)
+        [SearchResultClicked] = new(EventFields.Position, EventFields.Position),
+        // Run-scoped (one per form session). Total is the number of chips shown; the context is the chips' reason.
+        [TopicSuggestionShown] = new(EventFields.RunId | EventFields.Total, EventFields.RunId | EventFields.Total),
+        // A saved item used a suggested chip; Position is the chip's 1-based rank.
+        [TopicSuggestionAccepted] = new(EventFields.RunId | EventFields.Position, EventFields.RunId | EventFields.Position),
+        // A saved item used a topic other than the suggested chips.
+        [TopicSuggestionOverridden] = new(EventFields.RunId, EventFields.RunId)
     };
 
     /// <summary>The initial conversion funnel, in step order, as reported to admins.</summary>
@@ -109,7 +121,8 @@ public static class AnalyticsEventCatalog
         "mine",
         "quiz",
         "review",
-        "search"
+        "search",
+        "topic"
     };
 
     public const int MaxScoreOrTotal = 500;

@@ -1,11 +1,18 @@
 import { getIncorrectAnswerConflict } from "@/utils/incorrectAnswerRules";
 import * as React from "react";
-import { useMutation, useQuery } from "@tanstack/react-query";
+import { useMutation } from "@tanstack/react-query";
 import { useNavigate, useSearchParams, Link } from "react-router-dom";
 import { useAuth } from "@/contexts/AuthContext";
 import { itemsApi, type UploadToCollectionResponse } from "@/api/items";
-import { taxonomyApi } from "@/api/taxonomy";
 import ErrorMessage from "@/components/ErrorMessage";
+import { ItemTopicScopeFields, type TopicScopeFieldsHandle } from "@/components/items/ItemTopicScopeFields";
+import { applyTopicScopePatch, isTopicComplete, TOPIC_REQUIRED_MESSAGE } from "@/features/topics/topicScope";
+import {
+  composeImportSuggestionText,
+  composeJsonSuggestionText,
+} from "@/features/topics/suggestionText";
+import { useTaxonomy } from "@/features/topics/useTaxonomy";
+import { useTopicSuggestionAnalytics } from "@/features/topics/topicSuggestionAnalytics";
 import { DocumentArrowUpIcon, ClipboardDocumentIcon } from "@heroicons/react/24/outline";
 import ContentComplianceNotice from "@/features/legal/components/ContentComplianceNotice";
 import PasteTextImport from "@/features/collections/components/PasteTextImport";
@@ -68,19 +75,11 @@ const UploadToCollectionPage = ({
   const [uploadId] = React.useState(() => crypto.randomUUID());
   const [copiedPrompt, setCopiedPrompt] = React.useState(false);
 
-  const { data: taxonomyData, isLoading: isTaxonomyLoading } = useQuery({
-    queryKey: ["taxonomy"],
-    queryFn: () => taxonomyApi.getAll(),
-    enabled: !!isAuthenticated,
-    staleTime: 24 * 60 * 60 * 1000,
-  });
-
-  const categoryOptions = React.useMemo(() => {
-    const rows = (taxonomyData?.categories ?? []).map((c) => ({
-      category: c.slug,
-    }));
-    return [...rows].sort((a, b) => a.category.localeCompare(b.category));
-  }, [taxonomyData]);
+  const { data: taxonomyData } = useTaxonomy(!!isAuthenticated);
+  const [topicBlocked, setTopicBlocked] = React.useState(false);
+  const [pasteItems, setPasteItems] = React.useState<ImportItem[]>([]);
+  const topicScopeRef = React.useRef<TopicScopeFieldsHandle>(null);
+  const topicAnalytics = useTopicSuggestionAnalytics();
 
   const selectedTaxonomyCategory = React.useMemo(
     () => taxonomyData?.categories.find((c) => c.slug === categoryName),
@@ -97,29 +96,19 @@ const UploadToCollectionPage = ({
     return g?.keywords.map((k) => k.slug) ?? [];
   }, [selectedTaxonomyCategory, rank1Name]);
 
-  const isLoadingRank1 = isTaxonomyLoading && !!categoryName.trim();
-  const isLoadingRank2 = isTaxonomyLoading && !!rank1Name.trim();
-
-  // Only sync from URL when we're still on the same category (avoid repopulating after user switches category)
+  // Initial values come from the URL via useState; re-apply only when the URL itself changes,
+  // so "Remove topic" can clear a URL-prefilled topic.
+  const appliedUrlRef = React.useRef(`${categoryParam}|${keywordsParam ?? ""}`);
   React.useEffect(() => {
-    if (categoryParam && !categoryName) setCategoryName(categoryParam);
-  }, [categoryParam, categoryName]);
-  React.useEffect(() => {
-    if (categoryParam && categoryName === categoryParam && keywordsFromUrl[0] && !rank1Name) {
-      setRank1Name(keywordsFromUrl[0]);
-    }
-  }, [categoryParam, categoryName, keywordsFromUrl, rank1Name]);
-  React.useEffect(() => {
-    if (
-      categoryParam &&
-      categoryName === categoryParam &&
-      rank1Name === keywordsFromUrl[0] &&
-      keywordsFromUrl[1] &&
-      !rank2Name
-    ) {
-      setRank2Name(keywordsFromUrl[1]);
-    }
-  }, [categoryParam, categoryName, rank1Name, keywordsFromUrl, rank2Name]);
+    const key = `${categoryParam}|${keywordsParam ?? ""}`;
+    if (appliedUrlRef.current === key) return;
+    appliedUrlRef.current = key;
+    const kws = keywordsParam ? keywordsParam.split(",").map((k) => k.trim()).filter(Boolean) : [];
+    // eslint-disable-next-line react-hooks/set-state-in-effect
+    setCategoryName(categoryParam);
+    setRank1Name(kws[0] ?? "");
+    setRank2Name(kws[1] ?? "");
+  }, [categoryParam, keywordsParam]);
   // Clear rank1/rank2 when they are invalid for the current category's options
   React.useEffect(() => {
     if (rank1Name && rank1Slugs.length > 0 && !rank1Slugs.includes(rank1Name)) {
@@ -139,10 +128,32 @@ const UploadToCollectionPage = ({
   const uploadMutation = useMutation({
     mutationFn: (payload: Parameters<typeof itemsApi.uploadToCollection>[0]) =>
       itemsApi.uploadToCollection(payload),
-    onSuccess: (data: UploadToCollectionResponse) => {
+    onSuccess: (data: UploadToCollectionResponse, payload) => {
+      // Imported items are always private, so the chosen path is not reported (AC 5.4.12).
+      topicAnalytics.onSaved({
+        category: payload.category,
+        rank1: payload.keyword1 ?? "",
+        rank2: payload.keyword2 ?? "",
+        isPrivate: true,
+      });
       navigate(`/explore/collections/${data.collectionId}`);
     },
   });
+
+  /** The JS replacement for the old `required` selects: blocks the submit and focuses the topic group. */
+  const checkTopic = (): boolean => {
+    setTopicBlocked(false);
+    if (isTopicComplete({ category: categoryName, rank1: rank1Name, rank2: rank2Name })) return true;
+    setTopicBlocked(true);
+    topicScopeRef.current?.focus();
+    return false;
+  };
+
+  const suggestionText = React.useMemo(
+    () =>
+      activeTab === "json" ? composeJsonSuggestionText(jsonText) : composeImportSuggestionText(pasteItems),
+    [activeTab, jsonText, pasteItems]
+  );
 
   const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files?.[0];
@@ -161,18 +172,7 @@ const UploadToCollectionPage = ({
     e.preventDefault();
     if (activeTab !== "json") return; // Enter inside the Paste text fields must not run the JSON upload
     setParseError(null);
-    if (!categoryName.trim()) {
-      setParseError("Please select a category.");
-      return;
-    }
-    if (!rank1Name.trim()) {
-      setParseError("Please select a rank-1 keyword.");
-      return;
-    }
-    if (!rank2Name.trim()) {
-      setParseError("Please select a rank-2 keyword.");
-      return;
-    }
+    if (!checkTopic()) return;
     let items: unknown;
     try {
       items = JSON.parse(jsonText);
@@ -234,18 +234,7 @@ const UploadToCollectionPage = ({
 
   const handlePasteImport = (items: ImportItem[], inputText: string) => {
     setParseError(null);
-    if (!categoryName.trim()) {
-      setParseError("Please select a category.");
-      return;
-    }
-    if (!rank1Name.trim()) {
-      setParseError("Please select a rank-1 keyword.");
-      return;
-    }
-    if (!rank2Name.trim()) {
-      setParseError("Please select a rank-2 keyword.");
-      return;
-    }
+    if (!checkTopic()) return;
     uploadMutation.mutate({
       category: categoryName.trim(),
       keyword1: rank1Name.trim(),
@@ -291,7 +280,7 @@ const UploadToCollectionPage = ({
     <div className="px-4 py-6 sm:px-0 max-w-3xl mx-auto">
       <h1 className="text-3xl font-bold text-gray-900 mb-2">{heading}</h1>
       <p className="text-gray-600 text-sm mb-6">
-        Select category and keywords (required), then paste a JSON array of items or upload a JSON file. Items are added to a new collection. Duplicate uploads (same content) are rejected.
+        Choose a topic (required), then paste a JSON array of items or upload a JSON file. Items are added to a new collection. Duplicate uploads (same content) are rejected.
       </p>
 
       <ContentComplianceNotice />
@@ -329,80 +318,37 @@ const UploadToCollectionPage = ({
         id="upload-tabpanel"
         aria-labelledby={`upload-tab-${activeTab}`}
       >
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-          <div>
-            <label htmlFor="category" className="block text-sm font-medium text-gray-700 mb-1">
-              Category (required)
-            </label>
-            <select
-              id="category"
-              value={categoryName}
-              onChange={(e) => {
-                setCategoryName(e.target.value);
-                setRank1Name("");
-                setRank2Name("");
-              }}
-              className="block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
-              required
-            >
-              <option value="">— Select —</option>
-              {categoryOptions.map((c) => (
-                <option key={c.category} value={c.category}>
-                  {c.category}
-                </option>
-              ))}
-            </select>
-          </div>
-          <div>
-            <label htmlFor="rank1" className="block text-sm font-medium text-gray-700 mb-1">
-              Keyword rank 1 (required)
-            </label>
-            <select
-              id="rank1"
-              value={rank1Name}
-              onChange={(e) => {
-                setRank1Name(e.target.value);
-                setRank2Name("");
-              }}
-              className="block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
-              required
-              disabled={!categoryName || isLoadingRank1}
-            >
-              <option value="">{isLoadingRank1 ? "Loading…" : "— Select —"}</option>
-              {rank1Slugs.map((name) => (
-                <option key={name} value={name}>
-                  {name}
-                </option>
-              ))}
-            </select>
-          </div>
-          <div>
-            <label htmlFor="rank2" className="block text-sm font-medium text-gray-700 mb-1">
-              Keyword rank 2 (required)
-            </label>
-            <select
-              id="rank2"
-              value={rank2Name}
-              onChange={(e) => setRank2Name(e.target.value)}
-              className="block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
-              required
-              disabled={!rank1Name || isLoadingRank2}
-            >
-              <option value="">{isLoadingRank2 ? "Loading…" : "— Select —"}</option>
-              {rank2Slugs.map((name) => (
-                <option key={name} value={name}>
-                  {name}
-                </option>
-              ))}
-            </select>
-          </div>
-        </div>
+        <ItemTopicScopeFields
+          idPrefix="upload-topic-scope"
+          ref={topicScopeRef}
+          category={categoryName}
+          rank1={rank1Name}
+          rank2={rank2Name}
+          onScopeChange={(patch) => {
+            const next = applyTopicScopePatch(
+              { category: categoryName, rank1: rank1Name, rank2: rank2Name },
+              patch
+            );
+            setCategoryName(next.category);
+            setRank1Name(next.rank1);
+            setRank2Name(next.rank2);
+          }}
+          disabled={uploadMutation.isPending}
+          suggestionText={suggestionText}
+          onSuggestionsShown={topicAnalytics.onSuggestionsShown}
+          error={
+            topicBlocked && !isTopicComplete({ category: categoryName, rank1: rank1Name, rank2: rank2Name })
+              ? TOPIC_REQUIRED_MESSAGE
+              : undefined
+          }
+        />
 
         {activeTab === "paste" && (
           <PasteTextImport
             maxItems={isAdmin ? ADMIN_ITEM_LIMIT : NON_ADMIN_ITEM_LIMIT}
             isPending={uploadMutation.isPending}
             onImport={handlePasteImport}
+            onPreviewChange={setPasteItems}
           />
         )}
 

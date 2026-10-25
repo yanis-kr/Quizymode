@@ -80,6 +80,35 @@ describe("LearningTab", () => {
     expect(mockGetLearningReport).toHaveBeenCalledWith(30, false, false, undefined, undefined);
   });
 
+  it("labels the topic context type with a readable name", async () => {
+    mockGetLearningReport.mockResolvedValue({
+      windowStartUtc: "2026-10-01T00:00:00Z",
+      windowEndUtc: "2026-10-14T00:00:00Z",
+      botSessions: 0,
+      botsExcluded: true,
+      internalSessions: 0,
+      internalExcluded: true,
+      scopes: [
+        {
+          mode: "quiz",
+          contextType: "topic",
+          contextId: "science/anatomy/muscular",
+          runsStarted: 1,
+          runsCompleted: 1,
+          completionRatePercent: 100,
+          averageScorePercent: 80,
+          averageItemsReached: 5,
+        },
+      ],
+      quizRunsAbandonedBeforeFirstAnswer: 0,
+      quizDropOff: [],
+    });
+
+    renderTab();
+
+    expect(await screen.findByText("Topic: science/anatomy/muscular")).toBeInTheDocument();
+  });
+
   it("shows empty states when nothing was recorded", async () => {
     mockGetLearningReport.mockResolvedValue({
       windowStartUtc: "2026-10-01T00:00:00Z",

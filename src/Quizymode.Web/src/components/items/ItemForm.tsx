@@ -1,10 +1,15 @@
 /**
  * Shared form for creating and editing quiz items. Used by CreateItemPage and EditItemPage.
  */
-import { useEffect, useMemo, useRef, useState } from "react";
+import { useEffect, useMemo, useRef, useState, type Ref } from "react";
 import type { ItemSpeechSupport, KeywordRequest } from "@/types/api";
 import ErrorMessage from "@/components/ErrorMessage";
-import { ItemTopicScopeFields } from "@/components/items/ItemTopicScopeFields";
+import {
+  ItemTopicScopeFields,
+  type TopicScopeFieldsHandle,
+} from "@/components/items/ItemTopicScopeFields";
+import { composeItemSuggestionText } from "@/features/topics/suggestionText";
+import type { TopicSuggestion } from "@/api/taxonomy";
 import { NAV_KEYWORD_MAX_LEN } from "@/utils/navigationKeywordRules";
 
 const EXTRA_KEYWORD_AUTOCOMPLETE_LIMIT = 10;
@@ -35,13 +40,6 @@ export interface ItemFormProps {
   onChange: (values: ItemFormValues) => void;
   onSubmit: (e: React.FormEvent) => void;
   onCancel: () => void;
-  categories: { category: string }[];
-  /** Rank-1 navigation keyword names for the selected category (for dropdown). */
-  rank1Options?: string[];
-  /** Rank-2 navigation keyword names for the selected rank1 (for dropdown). */
-  rank2Options?: string[];
-  isLoadingRank1?: boolean;
-  isLoadingRank2?: boolean;
   isAdmin: boolean;
   isPending: boolean;
   validationError?: string;
@@ -52,6 +50,12 @@ export interface ItemFormProps {
   extraKeywordAutocompleteLoading?: boolean;
   /** Category taxonomy slugs (L1/L2 and shared tags). Matching extra keywords show as public in the UI. */
   taxonomyPublicSlugs?: string[];
+  /** Set by the page when it blocks a submit because no complete topic is chosen (AC 12.14). */
+  topicError?: string;
+  /** Focus handle for the topic group, used by the page after a failed submit. */
+  topicScopeRef?: Ref<TopicScopeFieldsHandle>;
+  /** Create mode only: called when a set of topic chips has been shown. */
+  onTopicSuggestionsShown?: (suggestions: TopicSuggestion[]) => void;
 }
 
 export function ItemForm({
@@ -60,11 +64,6 @@ export function ItemForm({
   onChange,
   onSubmit,
   onCancel,
-  categories,
-  rank1Options = [],
-  rank2Options = [],
-  isLoadingRank1,
-  isLoadingRank2,
   isAdmin,
   isPending,
   validationError,
@@ -73,6 +72,9 @@ export function ItemForm({
   extraKeywordAutocompleteSource = [],
   extraKeywordAutocompleteLoading = false,
   taxonomyPublicSlugs = [],
+  topicError,
+  topicScopeRef,
+  onTopicSuggestionsShown,
 }: ItemFormProps) {
   const [newKeywordName, setNewKeywordName] = useState("");
   const [suggestOpen, setSuggestOpen] = useState(false);
@@ -197,7 +199,7 @@ export function ItemForm({
         </div>
         <ItemTopicScopeFields
           idPrefix="item-form"
-          categories={categories}
+          ref={topicScopeRef}
           category={values.category}
           rank1={values.navigationRank1}
           rank2={values.navigationRank2}
@@ -209,10 +211,13 @@ export function ItemForm({
               ...(patch.rank2 !== undefined && { navigationRank2: patch.rank2 }),
             })
           }
-          rank1Options={rank1Options}
-          rank2Options={rank2Options}
-          isLoadingRank1={isLoadingRank1}
-          isLoadingRank2={isLoadingRank2}
+          suggestionText={
+            mode === "create"
+              ? composeItemSuggestionText(values.question, values.correctAnswer, values.explanation)
+              : undefined
+          }
+          onSuggestionsShown={onTopicSuggestionsShown}
+          error={topicError}
         />
         <div className="pt-4 border-t border-gray-200/90">
           <label className="block text-sm font-medium text-gray-700 mb-2">

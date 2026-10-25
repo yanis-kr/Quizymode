@@ -30,9 +30,13 @@ const VISITOR_OPTIONS = [
 
 const formatPercent = (value: number | null) => (value === null ? "—" : `${value}%`);
 
+/** Display names for context types whose raw value reads badly in the table. */
+const CONTEXT_TYPE_LABELS: Record<string, string> = { topic: "Topic" };
+
 const scopeLabel = (contextType: string | null, contextId: string | null) => {
   if (!contextType) return "All";
-  return contextId ? `${contextType}: ${contextId}` : contextType;
+  const label = CONTEXT_TYPE_LABELS[contextType] ?? contextType;
+  return contextId ? `${label}: ${contextId}` : label;
 };
 
 const LearningTab = ({ days, includeBots, includeInternal = false }: LearningTabProps) => {

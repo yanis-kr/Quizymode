@@ -11,13 +11,14 @@ vi.mock("@/contexts/AuthContext", () => ({
 
 vi.mock("@/api/items", () => ({ itemsApi: { uploadToCollection: vi.fn() } }));
 
-vi.mock("@/api/taxonomy", () => ({ taxonomyApi: { getAll: vi.fn() } }));
+vi.mock("@/api/taxonomy", () => ({ taxonomyApi: { getAll: vi.fn(), suggest: vi.fn() } }));
 
 vi.mock("@/features/legal/components/ContentComplianceNotice", () => ({ default: () => null }));
 
 describe("CreateImportPage", () => {
   it("opens the import on the Paste text tab under an Import questions heading", async () => {
     vi.mocked(taxonomyApi.getAll).mockResolvedValue({ categories: [] });
+    vi.mocked(taxonomyApi.suggest).mockResolvedValue({ suggestions: [] });
 
     render(
       <QueryClientProvider client={new QueryClient({ defaultOptions: { queries: { retry: false } } })}>
@@ -29,6 +30,6 @@ describe("CreateImportPage", () => {
 
     expect(screen.getByRole("heading", { level: 1, name: "Import questions" })).toBeInTheDocument();
     expect(screen.getByRole("tab", { name: "Paste text", selected: true })).toBeInTheDocument();
-    expect(await screen.findByLabelText(/category \(required\)/i)).toBeInTheDocument();
+    expect(await screen.findByRole("combobox", { name: /search topics/i })).toBeInTheDocument();
   });
 });

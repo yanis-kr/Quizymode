@@ -29,6 +29,7 @@ import { GUEST_IDENTITY_KEY, purgeLearnRunsExcept } from "@/features/items/learn
 import { authApi } from "@/api/auth";
 import { queryClient } from "@/api/queryClient";
 import { SEARCH_QUERY_ROOT } from "@/features/search/searchParams";
+import { TAXONOMY_QUERY_ROOT, TOPIC_SUGGEST_QUERY_ROOT } from "@/features/topics/topicQueryKeys";
 import type { AuthIntent } from "@/features/auth/utils/authIntent";
 import { startGoogleSignIn } from "@/features/auth/utils/googleSignIn";
 
@@ -481,6 +482,9 @@ export const AuthProvider = ({ children }: AuthProviderProps) => {
       purgeLearnRunsExcept(GUEST_IDENTITY_KEY);
       // Search results include the user's own content (`mine`); drop them before another user can sign in (AC 11).
       queryClient.removeQueries({ queryKey: [SEARCH_QUERY_ROOT] });
+      // Suggestions include the user's own recent paths, and the taxonomy cache is keyed per user (AC 12.17).
+      queryClient.removeQueries({ queryKey: [TAXONOMY_QUERY_ROOT] });
+      queryClient.removeQueries({ queryKey: [TOPIC_SUGGEST_QUERY_ROOT] });
       await signOut();
       clearAuthState();
     } catch (error) {

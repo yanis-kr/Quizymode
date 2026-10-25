@@ -25,6 +25,7 @@ vi.mock("@/api/items", () => ({
 vi.mock("@/api/taxonomy", () => ({
   taxonomyApi: {
     getAll: vi.fn(),
+    suggest: vi.fn(),
   },
 }));
 
@@ -480,5 +481,57 @@ describe("EditItemPage", () => {
       expect(await screen.findByRole("status")).toHaveTextContent(/now private again/i);
       expect(screen.getByRole("button", { name: /back to categories/i })).toBeInTheDocument();
     });
+  });
+});
+
+describe("EditItemPage topic (#323)", () => {
+  beforeEach(() => {
+    vi.clearAllMocks();
+    vi.mocked(useAuth).mockReturnValue({
+      isAuthenticated: true,
+      userId: "user-1",
+      isAdmin: false,
+    } as ReturnType<typeof useAuth>);
+    vi.mocked(useCurrentUserIdState).mockReturnValue({ userId: "user-1", isLoading: false, isError: false });
+    vi.mocked(taxonomyApi.getAll).mockResolvedValue(
+      taxonomyMock as Awaited<ReturnType<typeof taxonomyApi.getAll>>
+    );
+    vi.mocked(taxonomyApi.suggest).mockResolvedValue({ suggestions: [] });
+    vi.mocked(itemsApi.getById).mockResolvedValue(itemMock as Awaited<ReturnType<typeof itemsApi.getById>>);
+    vi.mocked(itemsApi.update).mockResolvedValue({} as Awaited<ReturnType<typeof itemsApi.update>>);
+  });
+
+  it("shows the stored path as a pill, offers no chips and sends no suggest request", async () => {
+    // AC 12.11
+    renderPage("/items/item-1/edit");
+    await screen.findByRole("button", { name: /save changes/i });
+
+    expect(await screen.findByTestId("topic-pill")).toHaveTextContent("science");
+    expect(screen.queryByTestId("topic-chip")).not.toBeInTheDocument();
+    expect(taxonomyApi.suggest).not.toHaveBeenCalled();
+  });
+
+  it("lets the owner change the topic through the picker after removing the pill", async () => {
+    // AC 12.13
+    const user = userEvent.setup({ delay: null });
+    renderPage("/items/item-1/edit");
+    await screen.findByRole("button", { name: /save changes/i });
+
+    await user.click(await screen.findByRole("button", { name: /remove topic science, anatomy, muscular/i }));
+    const search = screen.getByRole("combobox", { name: /search topics/i });
+    expect(search).toHaveFocus();
+    expect(screen.queryByTestId("topic-pill")).not.toBeInTheDocument();
+
+    // Saving without a topic is blocked with the topic copy.
+    await user.click(screen.getByRole("button", { name: /save changes/i }));
+    expect(
+      await screen.findByText(/choose a topic: pick a suggestion, search, or browse all topics/i)
+    ).toBeInTheDocument();
+    expect(itemsApi.update).not.toHaveBeenCalled();
+
+    await user.type(search, "muscular");
+    await user.keyboard("{ArrowDown}{Enter}");
+    expect(await screen.findByTestId("topic-pill")).toBeInTheDocument();
+    expect(taxonomyApi.suggest).not.toHaveBeenCalled();
   });
 });

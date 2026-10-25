@@ -22,6 +22,7 @@ vi.mock("@/api/items", () => ({
 vi.mock("@/api/taxonomy", () => ({
   taxonomyApi: {
     getAll: vi.fn(),
+    suggest: vi.fn(),
   },
 }));
 
@@ -95,6 +96,8 @@ describe("UploadToCollectionPage", () => {
       taxonomyMock as Awaited<ReturnType<typeof taxonomyApi.getAll>>
     );
 
+    vi.mocked(taxonomyApi.suggest).mockResolvedValue({ suggestions: [] });
+
     vi.mocked(itemsApi.uploadToCollection).mockResolvedValue(
       { collectionId: "col-123", name: "abc", itemCount: 2 } as Awaited<
         ReturnType<typeof itemsApi.uploadToCollection>
@@ -106,20 +109,76 @@ describe("UploadToCollectionPage", () => {
     // AC 2.6.5
     renderPage("/items/upload-to-collection");
 
-    const categorySelect = await screen.findByLabelText(/category \(required\)/i);
+    const categorySelect = await screen.findByLabelText(/^category \*$/i);
     expect(categorySelect).toBeInTheDocument();
 
-    expect(screen.getByLabelText(/keyword rank 1/i)).toBeInTheDocument();
-    expect(screen.getByLabelText(/keyword rank 2/i)).toBeInTheDocument();
+    expect(screen.getByLabelText(/primary topic/i)).toBeInTheDocument();
+    expect(screen.getByLabelText(/subtopic/i)).toBeInTheDocument();
+  });
+
+  it("blocks the JSON upload without a full topic and focuses the topic search (#323)", async () => {
+    // AC 2.6.5, AC 12.14
+    const user = userEvent.setup({ delay: null });
+    renderPage("/items/upload-to-collection?category=science");
+    await screen.findByLabelText(/^category \*$/i);
+
+    await user.click(screen.getByLabelText(/json array of items/i));
+    await user.paste(JSON.stringify([{ question: "Q", correctAnswer: "A", incorrectAnswers: ["W1"] }]));
+    await user.click(screen.getByRole("button", { name: /upload and open collection/i }));
+
+    expect(await screen.findByText(/choose a topic: pick a suggestion, search, or browse all topics/i)).toBeInTheDocument();
+    expect(itemsApi.uploadToCollection).not.toHaveBeenCalled();
+    expect(screen.getByRole("combobox", { name: /search topics/i })).toHaveFocus();
+  });
+
+  it("suggests topics from the question and answer of the first 20 parsed rows (#323)", async () => {
+    // AC 12.12
+    const user = userEvent.setup({ delay: null });
+    vi.mocked(taxonomyApi.suggest).mockResolvedValue({
+      suggestions: [
+        {
+          categorySlug: "science",
+          l1: "anatomy",
+          l2: "muscular",
+          path: "science › anatomy › muscular",
+          description: "Muscles",
+          score: 0.5,
+          matchedTerms: ["muscle"],
+          reason: "text",
+        },
+      ],
+    });
+    renderPage("/items/upload-to-collection");
+    await screen.findByLabelText(/^category \*$/i);
+
+    const rows = Array.from({ length: 25 }, (_, i) => ({
+      question: `Which muscle moves joint number ${i}?`,
+      correctAnswer: `Biceps ${i}`,
+      incorrectAnswers: ["W"],
+    }));
+    fireEvent.change(screen.getByLabelText(/json array of items/i), { target: { value: JSON.stringify(rows) } });
+
+    await waitFor(() => {
+      const sent = vi.mocked(taxonomyApi.suggest).mock.calls.map((call) => call[0]).find((text) => text.length > 0);
+      expect(sent).toBeDefined();
+      expect(sent).toContain("Which muscle moves joint number 19? Biceps 19");
+      expect(sent).not.toContain("number 20?");
+      expect(sent!.length).toBeLessThanOrEqual(5000);
+    }, { timeout: 3000 });
+
+    const chip = await screen.findByRole("button", { name: /science.*anatomy.*muscular/i });
+    await user.click(chip);
+    expect(screen.getByTestId("topic-pill")).toHaveTextContent("science");
+    expect(screen.getByLabelText(/subtopic/i)).toHaveValue("muscular");
   });
 
   it("pre-fills category and keywords from URL params", async () => {
     // AC 2.6.5
     renderPage("/items/upload-to-collection?category=science&keywords=anatomy,muscular");
 
-    const categorySelect = await screen.findByLabelText(/category \(required\)/i);
-    const rank1Select = screen.getByLabelText(/keyword rank 1/i);
-    const rank2Select = screen.getByLabelText(/keyword rank 2/i);
+    const categorySelect = await screen.findByLabelText(/^category \*$/i);
+    const rank1Select = screen.getByLabelText(/primary topic/i);
+    const rank2Select = screen.getByLabelText(/subtopic/i);
 
     await waitFor(() => {
       expect(categorySelect).toHaveValue("science");
@@ -134,9 +193,9 @@ describe("UploadToCollectionPage", () => {
 
     renderPage("/items/upload-to-collection?category=science&keywords=anatomy,muscular");
 
-    const categorySelect = await screen.findByLabelText(/category \(required\)/i);
-    const rank1Select = screen.getByLabelText(/keyword rank 1/i);
-    const rank2Select = screen.getByLabelText(/keyword rank 2/i);
+    const categorySelect = await screen.findByLabelText(/^category \*$/i);
+    const rank1Select = screen.getByLabelText(/primary topic/i);
+    const rank2Select = screen.getByLabelText(/subtopic/i);
 
     await waitFor(() => {
       expect(categorySelect).toHaveValue("science");
@@ -171,10 +230,10 @@ describe("UploadToCollectionPage", () => {
 
     renderPage("/items/upload-to-collection?category=science&keywords=anatomy,muscular");
 
-    await screen.findByLabelText(/category \(required\)/i);
+    await screen.findByLabelText(/^category \*$/i);
 
     await waitFor(() => {
-      expect(screen.getByLabelText(/keyword rank 1/i)).toHaveValue("anatomy");
+      expect(screen.getByLabelText(/primary topic/i)).toHaveValue("anatomy");
     });
 
     const jsonInput = screen.getByLabelText(/json array of items/i);
@@ -196,9 +255,9 @@ describe("UploadToCollectionPage", () => {
     // AC 2.6.8
     const user = userEvent.setup({ delay: null });
     renderPage("/items/upload-to-collection?category=science&keywords=anatomy,muscular");
-    await screen.findByLabelText(/category \(required\)/i);
+    await screen.findByLabelText(/^category \*$/i);
     await waitFor(() => {
-      expect(screen.getByLabelText(/keyword rank 1/i)).toHaveValue("anatomy");
+      expect(screen.getByLabelText(/primary topic/i)).toHaveValue("anatomy");
     });
 
     await user.click(screen.getByLabelText(/json array of items/i));
@@ -219,9 +278,9 @@ describe("UploadToCollectionPage", () => {
     // AC 2.6.8
     const user = userEvent.setup({ delay: null });
     renderPage("/items/upload-to-collection?category=science&keywords=anatomy,muscular");
-    await screen.findByLabelText(/category \(required\)/i);
+    await screen.findByLabelText(/^category \*$/i);
     await waitFor(() => {
-      expect(screen.getByLabelText(/keyword rank 1/i)).toHaveValue("anatomy");
+      expect(screen.getByLabelText(/primary topic/i)).toHaveValue("anatomy");
     });
 
     await user.click(screen.getByLabelText(/json array of items/i));
@@ -246,9 +305,9 @@ describe("UploadToCollectionPage", () => {
     // AC 2.6.8
     const user = userEvent.setup({ delay: null });
     renderPage("/items/upload-to-collection?category=science&keywords=anatomy,muscular");
-    await screen.findByLabelText(/category \(required\)/i);
+    await screen.findByLabelText(/^category \*$/i);
     await waitFor(() => {
-      expect(screen.getByLabelText(/keyword rank 1/i)).toHaveValue("anatomy");
+      expect(screen.getByLabelText(/primary topic/i)).toHaveValue("anatomy");
     });
 
     await user.click(screen.getByLabelText(/json array of items/i));
@@ -267,7 +326,7 @@ describe("UploadToCollectionPage", () => {
   it("asks for 1-4 incorrect answers in the prompt", async () => {
     // AC 2.6.8
     renderPage("/items/upload-to-collection");
-    await screen.findByLabelText(/category \(required\)/i);
+    await screen.findByLabelText(/^category \*$/i);
     expect(document.body.textContent).toContain('1–4 "incorrectAnswers"');
   });
 
@@ -276,8 +335,8 @@ describe("UploadToCollectionPage", () => {
 
     async function openPasteTab(user: ReturnType<typeof userEvent.setup>) {
       renderPage("/items/upload-to-collection?category=science&keywords=anatomy,muscular");
-      await screen.findByLabelText(/category \(required\)/i);
-      await waitFor(() => expect(screen.getByLabelText(/keyword rank 2/i)).toHaveValue("muscular"));
+      await screen.findByLabelText(/^category \*$/i);
+      await waitFor(() => expect(screen.getByLabelText(/subtopic/i)).toHaveValue("muscular"));
       await user.click(screen.getByRole("tab", { name: /paste text/i }));
     }
 
@@ -359,7 +418,7 @@ describe("UploadToCollectionPage", () => {
       // AC 2.6.9
       const user = userEvent.setup({ delay: null });
       renderPage("/items/upload-to-collection");
-      await screen.findByLabelText(/category \(required\)/i);
+      await screen.findByLabelText(/^category \*$/i);
       const jsonTab = screen.getByRole("tab", { name: "JSON" });
       const pasteTab = screen.getByRole("tab", { name: /paste text/i });
       expect(jsonTab).toHaveAttribute("tabindex", "0");
@@ -377,12 +436,24 @@ describe("UploadToCollectionPage", () => {
       // AC 2.6.9
       const user = userEvent.setup({ delay: null });
       renderPage("/items/upload-to-collection");
-      await screen.findByLabelText(/category \(required\)/i);
+      await screen.findByLabelText(/^category \*$/i);
       await user.click(screen.getByRole("tab", { name: /paste text/i }));
       fireEvent.change(screen.getByLabelText(/pasted text/i), { target: { value: rows } });
       await user.click(screen.getByRole("button", { name: /upload and open collection/i }));
-      expect(await screen.findByText(/please select a category/i)).toBeInTheDocument();
+      expect(await screen.findByText(/choose a topic: pick a suggestion, search, or browse all topics/i)).toBeInTheDocument();
       expect(itemsApi.uploadToCollection).not.toHaveBeenCalled();
     });
+  });
+
+  it("Remove topic clears a URL-prefilled topic and focuses the search (#323)", async () => {
+    const user = userEvent.setup({ delay: null });
+    renderPage("/items/upload-to-collection?category=science&keywords=anatomy,muscular");
+    const remove = await screen.findByRole("button", { name: /remove topic/i });
+    await user.click(remove);
+    await waitFor(() => expect(screen.queryByTestId("topic-pill")).not.toBeInTheDocument());
+    expect(screen.getByLabelText(/category/i)).toHaveValue("");
+    expect(screen.getByLabelText(/primary topic/i)).toHaveValue("");
+    expect(screen.getByLabelText(/subtopic/i)).toHaveValue("");
+    await waitFor(() => expect(screen.getByRole("combobox", { name: /search topics/i })).toHaveFocus());
   });
 });

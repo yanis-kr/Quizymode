@@ -16,6 +16,14 @@ public sealed class SeedSyncAdminTests : ItemTestFixture
 {
     private readonly FakeGitHubSeedSource _gitHubSeedSource = new();
     private readonly SeedSyncAdminService _service;
+    private readonly RecordingInvalidator _topicSuggestionInvalidator = new();
+
+    private sealed class RecordingInvalidator : Quizymode.Api.Services.Taxonomy.Suggestions.ITopicSuggestionInvalidator
+    {
+        public int Calls { get; private set; }
+
+        public void Invalidate() => Calls++;
+    }
 
     public SeedSyncAdminTests()
     {
@@ -31,7 +39,8 @@ public sealed class SeedSyncAdminTests : ItemTestFixture
             TaxonomyRegistry,
             _gitHubSeedSource,
             localSeedLoader,
-            userContext.Object);
+            userContext.Object,
+            _topicSuggestionInvalidator);
     }
 
     [Fact]
@@ -118,6 +127,25 @@ public sealed class SeedSyncAdminTests : ItemTestFixture
 
         DbContext.Keywords.Should().Contain(k => k.Name == "eurozone" && !k.IsPrivate);
         DbContext.Keywords.Should().Contain(k => k.Name == "mediterranean" && !k.IsPrivate);
+    }
+
+    [Fact]
+    public async Task ApplyAsync_InvalidatesTopicSuggestionProfiles_OnlyAfterASuccessfulApply()
+    {
+        await EnsureGeographyPublicWithNavAsync("seeder");
+        SeedSyncAdmin.Request request = BuildRequest(
+            [
+                BuildItem(Guid.Parse("33333333-3333-3333-3333-333333333335"), "What is the capital of Spain?", "Madrid", ["Lisbon"])
+            ]);
+
+        Result<SeedSyncAdmin.PreviewResponse> preview = await _service.PreviewAsync(request, CancellationToken.None);
+        preview.IsSuccess.Should().BeTrue();
+        _topicSuggestionInvalidator.Calls.Should().Be(0, "a preview changes nothing");
+
+        Result<SeedSyncAdmin.ApplyResponse> result = await _service.ApplyAsync(request, CancellationToken.None);
+
+        result.IsSuccess.Should().BeTrue();
+        _topicSuggestionInvalidator.Calls.Should().Be(1);
     }
 
     [Fact]

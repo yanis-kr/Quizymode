@@ -6,8 +6,6 @@ import { useAuth } from "@/contexts/AuthContext";
 import { useActiveCollection } from "@/hooks/useActiveCollection";
 import { collectionsApi } from "@/api/collections";
 import { ActiveCollectionNotice } from "@/components/items/ActiveCollectionNotice";
-import { categoriesApi } from "@/api/categories";
-import { keywordsApi } from "@/api/keywords";
 import {
   studyGuidesApi,
   studyGuideImportApi,
@@ -16,7 +14,8 @@ import {
 } from "@/api/studyGuides";
 import LoadingSpinner from "@/components/LoadingSpinner";
 import ErrorMessage from "@/components/ErrorMessage";
-import { ItemTopicScopeFields } from "@/components/items/ItemTopicScopeFields";
+import { ItemTopicScopeFields, type TopicScopeFieldsHandle } from "@/components/items/ItemTopicScopeFields";
+import { applyTopicScopePatch, isTopicComplete, TOPIC_REQUIRED_MESSAGE } from "@/features/topics/topicScope";
 import {
   keywordsParamFromScope,
   parseKeywordsParam,
@@ -114,33 +113,8 @@ const StudyGuideImportPage = () => {
     enabled: isAuthenticated,
   });
 
-  const { data: categoriesData } = useQuery({
-    queryKey: ["categories"],
-    queryFn: () => categoriesApi.getAll(),
-    enabled: isAuthenticated,
-  });
-  const categories = categoriesData?.categories ?? [];
-  const categoryOptions = React.useMemo(
-    () => [...categories].sort((a, b) => a.category.localeCompare(b.category)),
-    [categories]
-  );
-
-  const { data: rank1Data, isLoading: isLoadingRank1 } = useQuery({
-    queryKey: ["keywords", "rank1", categoryName],
-    queryFn: () => keywordsApi.getNavigationKeywords(categoryName, []),
-    enabled: !!isAuthenticated && !!categoryName.trim(),
-  });
-  const rank1Options = (rank1Data?.keywords ?? [])
-    .filter((keyword) => keyword.name.toLowerCase() !== "other")
-    .map((keyword) => keyword.name);
-
-  const { data: rank2Data, isLoading: isLoadingRank2 } = useQuery({
-    queryKey: ["keywords", "rank2", categoryName, rank1Name],
-    queryFn: () =>
-      keywordsApi.getNavigationKeywords(categoryName, rank1Name ? [rank1Name] : []),
-    enabled: !!isAuthenticated && !!categoryName.trim() && !!rank1Name.trim(),
-  });
-  const rank2Options = (rank2Data?.keywords ?? []).map((keyword) => keyword.name);
+  const [topicBlocked, setTopicBlocked] = React.useState(false);
+  const topicScopeRef = React.useRef<TopicScopeFieldsHandle>(null);
 
   const {
     data: session,
@@ -187,13 +161,6 @@ const StudyGuideImportPage = () => {
     defaultKeywordsText,
     targetSetCount,
   ]);
-
-  React.useEffect(() => {
-    if (sessionId) return;
-    if (!categoryName && categoryOptions.length > 0) {
-      setCategoryName(categoryOptions[0].category);
-    }
-  }, [categoryName, categoryOptions, sessionId]);
 
   React.useEffect(() => {
     if (!session || !sessionId) return;
@@ -338,12 +305,10 @@ const StudyGuideImportPage = () => {
       setLocalError("You must save a study guide before creating prompt sets.");
       return;
     }
-    if (!categoryName.trim()) {
-      setLocalError("Select a category.");
-      return;
-    }
-    if (!rank1Name.trim() || !rank2Name.trim()) {
-      setLocalError("Primary topic (rank 1) and subtopic (rank 2) are required.");
+    setTopicBlocked(false);
+    if (!isTopicComplete({ category: categoryName, rank1: rank1Name, rank2: rank2Name })) {
+      setTopicBlocked(true);
+      topicScopeRef.current?.focus();
       return;
     }
 
@@ -486,29 +451,25 @@ const StudyGuideImportPage = () => {
             </div>
             <ItemTopicScopeFields
               idPrefix="study-guide-import-scope"
-              categories={categoryOptions}
+              ref={topicScopeRef}
               category={categoryName}
               rank1={rank1Name}
               rank2={rank2Name}
               onScopeChange={(patch) => {
-                if (patch.category !== undefined) {
-                  setCategoryName(patch.category);
-                  setRank1Name("");
-                  setRank2Name("");
-                  return;
-                }
-                if (patch.rank1 !== undefined) {
-                  setRank1Name(patch.rank1);
-                  setRank2Name("");
-                }
-                if (patch.rank2 !== undefined) {
-                  setRank2Name(patch.rank2);
-                }
+                const next = applyTopicScopePatch(
+                  { category: categoryName, rank1: rank1Name, rank2: rank2Name },
+                  patch
+                );
+                setCategoryName(next.category);
+                setRank1Name(next.rank1);
+                setRank2Name(next.rank2);
               }}
-              rank1Options={rank1Options}
-              rank2Options={rank2Options}
-              isLoadingRank1={isLoadingRank1}
-              isLoadingRank2={isLoadingRank2}
+              error={
+                topicBlocked &&
+                !isTopicComplete({ category: categoryName, rank1: rank1Name, rank2: rank2Name })
+                  ? TOPIC_REQUIRED_MESSAGE
+                  : undefined
+              }
             />
             <div className="pt-4 border-t border-gray-200/90">
               <label

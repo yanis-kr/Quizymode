@@ -8,12 +8,8 @@ import {
 } from "@heroicons/react/24/outline";
 import { categoriesApi } from "@/api/categories";
 import { keywordsApi } from "@/api/keywords";
-import {
-  taxonomyApi,
-  type TaxonomyCategory,
-  type TaxonomyL1,
-  type TaxonomyL2,
-} from "@/api/taxonomy";
+import type { TaxonomyCategory, TaxonomyL1, TaxonomyL2 } from "@/api/taxonomy";
+import { useTaxonomy } from "@/features/topics/useTaxonomy";
 import { categoryNameToSlug } from "@/utils/categorySlug";
 import LoadingSpinner from "./LoadingSpinner";
 import ErrorMessage from "./ErrorMessage";
@@ -187,11 +183,7 @@ const CategoriesMapModal = ({
   isOpen,
   onClose,
 }: CategoriesMapModalProps) => {
-  const { data: taxonomyData, isLoading, error, refetch } = useQuery({
-    queryKey: ["taxonomy"],
-    queryFn: () => taxonomyApi.getAll(),
-    staleTime: 24 * 60 * 60 * 1000,
-  });
+  const { data: taxonomyData, isLoading, error, refetch } = useTaxonomy();
   const { data: categoriesData } = useQuery({
     queryKey: ["categories"],
     queryFn: () => categoriesApi.getAll(),

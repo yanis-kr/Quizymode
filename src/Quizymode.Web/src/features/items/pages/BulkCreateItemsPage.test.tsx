@@ -20,7 +20,7 @@ vi.mock("@/components/items/ActiveCollectionNotice", () => ({
 }));
 
 vi.mock("@/api/taxonomy", () => ({
-  taxonomyApi: { getAll: vi.fn() },
+  taxonomyApi: { getAll: vi.fn(), suggest: vi.fn() },
 }));
 
 vi.mock("@/api/client", () => ({
@@ -421,5 +421,78 @@ describe("BulkCreateItemsPage cloze (#261)", () => {
 
     await user.click(screen.getByRole("radio", { name: "AI JSON response" }));
     expect(screen.queryByText(/Line 1:/)).not.toBeInTheDocument();
+  });
+});
+
+describe("BulkCreateItemsPage topic picker (#323)", () => {
+  beforeEach(() => {
+    vi.clearAllMocks();
+    vi.mocked(taxonomyApi.getAll).mockResolvedValue(
+      taxonomyMock as Awaited<ReturnType<typeof taxonomyApi.getAll>>
+    );
+    vi.mocked(taxonomyApi.suggest).mockResolvedValue({ suggestions: [] });
+  });
+
+  it("keeps Generate AI Prompt disabled until a full topic is chosen", async () => {
+    // AC 2.2.6.2
+    const user = userEvent.setup({ delay: null });
+    const queryClient = new QueryClient({ defaultOptions: { queries: { retry: false } } });
+    render(
+      <QueryClientProvider client={queryClient}>
+        <MemoryRouter initialEntries={["/items/bulk-create"]}>
+          <BulkCreateItemsPage />
+        </MemoryRouter>
+      </QueryClientProvider>
+    );
+
+    await screen.findByRole("option", { name: "science" });
+    const generate = screen.getByRole("button", { name: /generate ai prompt/i });
+    expect(generate).toBeDisabled();
+
+    await user.type(screen.getByRole("combobox", { name: /search topics/i }), "muscular");
+    await user.keyboard("{ArrowDown}{Enter}");
+    await waitFor(() => expect(generate).toBeEnabled());
+  });
+
+  it("picks a whole path from the search and never asks for suggestions", async () => {
+    // AC 2.2.6.2, AC 12.11
+    const user = userEvent.setup({ delay: null });
+    const queryClient = new QueryClient({ defaultOptions: { queries: { retry: false } } });
+    render(
+      <QueryClientProvider client={queryClient}>
+        <MemoryRouter initialEntries={["/items/bulk-create"]}>
+          <BulkCreateItemsPage />
+        </MemoryRouter>
+      </QueryClientProvider>
+    );
+
+    await screen.findByRole("option", { name: "science" });
+    expect(screen.queryByTestId("topic-chip")).not.toBeInTheDocument();
+
+    await user.type(screen.getByRole("combobox", { name: /search topics/i }), "muscular");
+    await user.keyboard("{ArrowDown}{Enter}");
+
+    expect(await screen.findByTestId("topic-pill")).toHaveTextContent("science");
+    expect(screen.getByLabelText(/subtopic/i)).toHaveValue("muscular");
+    expect(taxonomyApi.suggest).not.toHaveBeenCalled();
+  });
+
+  it("Remove topic clears a URL-prefilled topic and focuses the search (#323)", async () => {
+    const user = userEvent.setup({ delay: null });
+    const queryClient = new QueryClient({ defaultOptions: { queries: { retry: false } } });
+    render(
+      <QueryClientProvider client={queryClient}>
+        <MemoryRouter initialEntries={["/items/bulk-create?category=science&keywords=anatomy,muscular"]}>
+          <BulkCreateItemsPage />
+        </MemoryRouter>
+      </QueryClientProvider>
+    );
+    const remove = await screen.findByRole("button", { name: /remove topic/i });
+    await user.click(remove);
+    await waitFor(() => expect(screen.queryByTestId("topic-pill")).not.toBeInTheDocument());
+    expect(screen.getByLabelText(/category/i)).toHaveValue("");
+    expect(screen.getByLabelText(/primary topic/i)).toHaveValue("");
+    expect(screen.getByLabelText(/subtopic/i)).toHaveValue("");
+    await waitFor(() => expect(screen.getByRole("combobox", { name: /search topics/i })).toHaveFocus());
   });
 });

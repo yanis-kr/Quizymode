@@ -23,7 +23,12 @@ vi.mock("@/api/keywords", () => ({
 vi.mock("@/api/taxonomy", () => ({
   taxonomyApi: {
     getAll: vi.fn(),
+    suggest: vi.fn(),
   },
+}));
+
+vi.mock("@/contexts/AuthContext", () => ({
+  useAuth: () => ({ isAuthenticated: true, userId: "user-1" }),
 }));
 
 function renderModal() {
