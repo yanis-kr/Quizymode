@@ -593,12 +593,36 @@ internal sealed class DatabaseSeederHostedService(
         _logger.LogInformation("Taxonomy seed SQL applied.");
     }
 
+    /// <summary>#337: content root first, then the assembly base directory (mirrors TaxonomyYamlLoader); null when neither has the file.</summary>
+    internal static string? ResolveIdeasSeedPath(string contentRootPath, string baseDirectory)
+    {
+        foreach (string root in new[] { contentRootPath, baseDirectory })
+        {
+            if (string.IsNullOrWhiteSpace(root))
+            {
+                continue;
+            }
+
+            string candidate = Path.Combine(root, IdeasSeedRelativePath);
+            if (File.Exists(candidate))
+            {
+                return candidate;
+            }
+        }
+
+        return null;
+    }
+
     private async Task SeedIdeasAsync(ApplicationDbContext db, CancellationToken cancellationToken)
     {
-        string sqlPath = Path.Combine(_environment.ContentRootPath, IdeasSeedRelativePath);
-        if (!File.Exists(sqlPath))
+        string? sqlPath = ResolveIdeasSeedPath(_environment.ContentRootPath, AppContext.BaseDirectory);
+        if (sqlPath is null)
         {
-            _logger.LogWarning("Ideas seed SQL not found at {Path}. Skipping ideas seed.", sqlPath);
+            _logger.LogWarning(
+                "Ideas seed SQL not found under {ContentRoot} or {BaseDirectory} ({RelativePath}). Skipping ideas seed.",
+                _environment.ContentRootPath,
+                AppContext.BaseDirectory,
+                IdeasSeedRelativePath);
             return;
         }
 
