@@ -142,13 +142,19 @@ const SearchPage = () => {
     }
   }, [isFresh, trimmed, rowCount]);
 
-  // After a page change, move the screen reader to the new results.
+  // After a Previous/Next click, move the screen reader to the new results. Tab changes also reset the page but
+  // must leave focus on the selected tab, so only pager clicks arm this flag.
+  const pagerNavigation = useRef(false);
   const headingRef = useRef<HTMLHeadingElement>(null);
   const panelRef = useRef<HTMLDivElement>(null);
   const previousPage = useRef(page);
   useEffect(() => {
     if (previousPage.current !== page) {
       previousPage.current = page;
+      if (!pagerNavigation.current) {
+        return;
+      }
+      pagerNavigation.current = false;
       panelRef.current?.scrollIntoView?.({ block: "start" });
       headingRef.current?.focus();
     }
@@ -158,6 +164,11 @@ const SearchPage = () => {
     ? ["all", "topics", "collections", "questions", "mine"]
     : ["all", "topics", "collections", "questions"];
   const tabRefs = useRef<Partial<Record<SearchTab, HTMLButtonElement | null>>>({});
+
+  const goToPage = (nextPage: number) => {
+    pagerNavigation.current = true;
+    goTo(tab, nextPage);
+  };
 
   const goTo = (nextTab: SearchTab, nextPage = 1) => {
     navigate(buildSearchUrl({ q: trimmed, tab: nextTab, page: nextPage }), { replace: true });
@@ -307,7 +318,7 @@ const SearchPage = () => {
           <button
             type="button"
             disabled={page <= 1}
-            onClick={() => goTo(tab, page - 1)}
+            onClick={() => goToPage(page - 1)}
             className="rounded-md border border-gray-300 px-3 py-2 text-sm font-medium text-gray-700 hover:bg-gray-50 disabled:opacity-50"
           >
             Previous
@@ -316,7 +327,7 @@ const SearchPage = () => {
           <button
             type="button"
             disabled={!hasMore}
-            onClick={() => goTo(tab, page + 1)}
+            onClick={() => goToPage(page + 1)}
             className="rounded-md border border-gray-300 px-3 py-2 text-sm font-medium text-gray-700 hover:bg-gray-50 disabled:opacity-50"
           >
             Next

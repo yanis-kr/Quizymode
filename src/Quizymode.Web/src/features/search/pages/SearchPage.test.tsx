@@ -173,6 +173,39 @@ describe("SearchPage", () => {
     expect(screen.getByTestId("location")).not.toHaveTextContent("tab=");
   });
 
+  it("keeps focus on the selected tab when a keyboard tab change resets the page", async () => {
+    const user = userEvent.setup();
+    authState.isAuthenticated = true;
+    mockSearch.mockResolvedValue(
+      response({
+        items: {
+          results: [
+            {
+              id: ITEM_ID,
+              snippet: { text: "What is water?", highlights: [] },
+              categorySlug: "science",
+              l1: "chemistry",
+              l2: null,
+            },
+          ],
+          hasMore: true,
+        },
+      })
+    );
+    renderPage("/search?q=water&tab=questions&page=2");
+    const questions = await screen.findByRole("tab", { name: "Questions" });
+
+    questions.focus();
+    await user.keyboard("{ArrowRight}");
+    expect(screen.getByTestId("location")).toHaveTextContent("tab=mine");
+    expect(screen.getByTestId("location")).not.toHaveTextContent("page=");
+    await waitFor(() => expect(mockSearch).toHaveBeenCalledTimes(2));
+    expect(screen.getByRole("tab", { name: "Mine" })).toHaveFocus();
+
+    await user.keyboard("{ArrowLeft}");
+    expect(screen.getByRole("tab", { name: "Questions" })).toHaveFocus();
+  });
+
   it("only shows the Mine tab to signed-in visitors and treats an anonymous tab=mine as All", async () => {
     renderPage("/search?q=ai&tab=mine");
     await screen.findAllByRole("tab");
