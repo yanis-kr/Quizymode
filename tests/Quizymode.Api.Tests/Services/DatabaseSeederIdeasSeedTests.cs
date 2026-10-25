@@ -94,8 +94,8 @@ public sealed class DatabaseSeederIdeasSeedPostgresTests(PostgresContainerFixtur
     {
         Skip.If(fixture.UnavailableReason is not null, fixture.UnavailableReason);
 
-        // Seeder's own code path: StartAsync -> ResolveIdeasSeedPath (content root = test bin) -> SeedIdeasAsync.
-        (CapturingLoggerProvider logs, _) = await DatabaseSeederStartHarness.RunAsync(fixture, "Production");
+        // Seeder's own code path (Development only, #336): StartAsync -> ResolveIdeasSeedPath (content root = test bin) -> SeedIdeasAsync.
+        (CapturingLoggerProvider logs, _) = await DatabaseSeederStartHarness.RunAsync(fixture, "Development");
         logs.Entries.Should().Contain(e => e.Message.Contains("Ideas seed SQL applied."));
         logs.Entries.Should().NotContain(e => e.Message.Contains("Ideas seed SQL not found"));
 
@@ -121,7 +121,7 @@ public sealed class DatabaseSeederIdeasSeedPostgresTests(PostgresContainerFixtur
         db.Ideas.Remove(deleted);
         await db.SaveChangesAsync();
 
-        await DatabaseSeederStartHarness.RunAsync(fixture, "Production");
+        await DatabaseSeederStartHarness.RunAsync(fixture, "Development");
 
         await using ApplicationDbContext verify = fixture.CreateDbContext();
         (await verify.Ideas.CountAsync(i => i.CreatedBy == SeederUser)).Should().Be(8);
