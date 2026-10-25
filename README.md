@@ -2,7 +2,7 @@
 
 Quizymode is a full-stack study and quiz application built for people who want to learn from structured question banks. Users can browse items by category, study with flashcards, test themselves in quiz mode, and organise content into personal or shared collections. Content can be created manually, imported in bulk, or generated with AI assistance — and everything is tied to a taxonomy of categories and keywords to keep study sessions focused.
 
-For a full walkthrough with screenshots, see the **[Live User Guide](https://yanis-kr.github.io/Quizymode/)** (desktop and mobile, updated after each deploy) or the markdown sources: [User Guide](./docs/user-guide/user-guide.md) · [Mobile User Guide](./docs/user-guide/user-guide.mobile.md).
+For a full walkthrough with screenshots, see the **[Live User Guide](https://yanis-kr.github.io/Quizymode/)** (desktop and mobile, refreshed daily when the UI changes) or the markdown sources: [User Guide](./docs/user-guide/user-guide.md) · [Mobile User Guide](./docs/user-guide/user-guide.mobile.md).
 
 **Tech:** `.NET 10` Minimal API, React 19 SPA, AWS Cognito authentication, PostgreSQL.
 
@@ -338,7 +338,7 @@ Grafana Cloud setup is documented in [docs/infra/GRAFANA_CLOUD_SETUP.md](./docs/
 - [docs/infra/REPO_MANAGED_CONTENT_RESET.md](./docs/infra/REPO_MANAGED_CONTENT_RESET.md): runbook for deleting and rebuilding repo-managed content from source control
 - [docs/legal/quizymode-privacy-policy.md](./docs/legal/quizymode-privacy-policy.md): current privacy policy draft
 - [docs/legal/quizymode-terms-of-service.md](./docs/legal/quizymode-terms-of-service.md): current terms of service draft
-- [Live User Guide](https://yanis-kr.github.io/Quizymode/): interactive desktop/mobile guide, auto-published to GitHub Pages after each deploy
+- [Live User Guide](https://yanis-kr.github.io/Quizymode/): interactive desktop/mobile guide, auto-published to GitHub Pages once a day when UI or guide files changed (or on manual dispatch)
 - [docs/user-guide/user-guide.md](./docs/user-guide/user-guide.md): desktop end-user guide with screenshots (markdown source)
 - [docs/user-guide/user-guide.mobile.md](./docs/user-guide/user-guide.mobile.md): mobile end-user guide with screenshots (markdown source)
 - [scripts/_e2e-common.ps1](./scripts/_e2e-common.ps1) / [_e2e-common.sh](./scripts/_e2e-common.sh): shared E2E runner helpers (not run directly)

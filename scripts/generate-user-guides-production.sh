@@ -18,6 +18,7 @@ test_prerequisites
 
 echo "Capturing desktop and mobile screenshots from production..."
 cd "$REPO_ROOT"
+export PLAYWRIGHT_BASE_URL="https://www.quizymode.com"
 mkdir -p "$REPO_ROOT/docs/user-guide/screenshots/user"
 mkdir -p "$REPO_ROOT/docs/user-guide/screenshots/mobile"
 rm -f "$REPO_ROOT/docs/user-guide/screenshots/user"/*.png

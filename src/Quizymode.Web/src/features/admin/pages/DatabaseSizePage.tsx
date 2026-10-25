@@ -12,7 +12,8 @@ const DatabaseSizePage = () => {
     queryKey: ['databaseSize'],
     queryFn: () => adminApi.getDatabaseSize(),
     enabled: isAuthenticated && isAdmin,
-    refetchInterval: 60000, // Refetch every minute
+    refetchInterval: 5 * 60_000, // Refetch every 5 minutes while the tab is visible
+    refetchIntervalInBackground: false,
   });
 
   if (!isAuthenticated || !isAdmin) {

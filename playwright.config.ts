@@ -1,7 +1,8 @@
 import { defineConfig, devices } from "@playwright/test";
 
-const baseURL =
-  process.env.PLAYWRIGHT_BASE_URL ?? "https://www.quizymode.com";
+// Defaults to the local dev server. Production is an explicit opt-in
+// (PLAYWRIGHT_BASE_URL=https://www.quizymode.com) because authenticated runs add real prod DB load (#333).
+const baseURL = process.env.PLAYWRIGHT_BASE_URL || "http://localhost:7000";
 
 export default defineConfig({
   testDir: "./playwright",

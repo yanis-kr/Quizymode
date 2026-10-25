@@ -33,7 +33,7 @@ function renderPage() {
     },
   });
 
-  return render(
+  const view = render(
     <QueryClientProvider client={queryClient}>
       <MemoryRouter initialEntries={["/admin/database-size"]}>
         <Routes>
@@ -43,6 +43,8 @@ function renderPage() {
       </MemoryRouter>
     </QueryClientProvider>
   );
+
+  return { ...view, queryClient };
 }
 
 describe("DatabaseSizePage", () => {
@@ -85,6 +87,19 @@ describe("DatabaseSizePage", () => {
     expect(screen.getByRole("cell", { name: "Items" })).toBeInTheDocument();
     expect(screen.getByRole("cell", { name: "Keywords" })).toBeInTheDocument();
     expect(screen.getByText("50 MB")).toBeInTheDocument();
+  });
+
+  it("polls every 5 minutes only while the tab is visible", async () => {
+    mockUseAuth.mockReturnValue({ isAuthenticated: true, isAdmin: true });
+
+    const { queryClient } = renderPage();
+
+    expect(await screen.findByRole("heading", { name: /database size/i })).toBeInTheDocument();
+    const query = queryClient.getQueryCache().find({ queryKey: ["databaseSize"] });
+    expect(query?.options).toMatchObject({
+      refetchInterval: 5 * 60_000,
+      refetchIntervalInBackground: false,
+    });
   });
 
   it("redirects non-admin users away", () => {

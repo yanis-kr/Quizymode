@@ -1,16 +1,22 @@
 name: Publish User Guide
 
+# The capture signs in as the test user and sends ~250-300 authenticated page views per run to prod
+# (#333). It no longer runs after every Deploy: once a day it captures only when guide-relevant files
+# changed since the last successful run. Use workflow_dispatch to publish immediately.
 on:
-  workflow_run:
-    workflows: [Deploy]
-    types: [completed]
-    branches: [main]
+  schedule:
+    - cron: "30 6 * * *"
   workflow_dispatch:
     inputs:
       expected_build_version:
         description: Optional exact build version to wait for before capturing screenshots.
         required: false
         type: string
+      force:
+        description: Capture even when no guide-relevant files changed since the last successful run.
+        required: false
+        type: boolean
+        default: true
 
 concurrency:
   group: user-guide-pages
@@ -20,8 +26,68 @@ permissions:
   contents: read
 
 jobs:
+  changes:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      actions: read
+    outputs:
+      capture: ${{ steps.decide.outputs.capture }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6
+        with:
+          fetch-depth: 0
+
+      - name: Decide whether the guide needs a new capture
+        id: decide
+        shell: bash
+        env:
+          GH_TOKEN: ${{ github.token }}
+          FORCE: ${{ github.event_name == 'workflow_dispatch' && github.event.inputs.force == 'true' }}
+        run: |
+          if [[ "${FORCE}" == "true" ]]; then
+            echo "Manual run with force=true: capturing."
+            echo "capture=true" >> "${GITHUB_OUTPUT}"
+            exit 0
+          fi
+
+          LAST_SHA="$(gh run list --workflow user-guide-pages.yml --branch main --status success --limit 1 --json headSha --jq '.[0].headSha // empty')"
+          if [[ -z "${LAST_SHA}" ]] || ! git cat-file -e "${LAST_SHA}^{commit}" 2>/dev/null; then
+            echo "No usable previous successful run (${LAST_SHA:-none}): capturing."
+            echo "capture=true" >> "${GITHUB_OUTPUT}"
+            exit 0
+          fi
+
+          # Version-only bumps of package.json / package-lock.json and unit tests do not change screenshots.
+          GUIDE_PATHS=(
+            'src/Quizymode.Web/src/**'
+            'src/Quizymode.Web/public/**'
+            'src/Quizymode.Web/index.html'
+            'src/Quizymode.Web/vite.config.*'
+            'playwright/screenshots/**'
+            'playwright/fixtures.ts'
+            'playwright.config.ts'
+            'scripts/build-user-guide-site.js'
+            'scripts/wait-for-production-ready.js'
+            '.github/workflows/user-guide-pages.yml'
+          )
+          # Run git diff on its own so a failure fails the step instead of reading as "no changes".
+          DIFF="$(git diff --name-only "${LAST_SHA}" HEAD -- "${GUIDE_PATHS[@]}")"
+          CHANGED="$(echo "${DIFF}" | grep -Ev '^$|\.test\.(ts|tsx)$' || true)"
+
+          if [[ -z "${CHANGED}" ]]; then
+            echo "No guide-relevant changes since ${LAST_SHA:0:7}: skipping capture."
+            echo "capture=false" >> "${GITHUB_OUTPUT}"
+          else
+            echo "Guide-relevant changes since ${LAST_SHA:0:7}:"
+            echo "${CHANGED}"
+            echo "capture=true" >> "${GITHUB_OUTPUT}"
+          fi
+
   build-guide:
-    if: ${{ github.event_name != 'workflow_run' || github.event.workflow_run.conclusion == 'success' }}
+    needs: changes
+    if: ${{ needs.changes.outputs.capture == 'true' }}
     runs-on: ubuntu-latest
     permissions:
       contents: read
@@ -30,8 +96,6 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v6
-        with:
-          ref: ${{ github.event_name == 'workflow_run' && github.event.workflow_run.head_sha || github.sha }}
 
       - name: Setup Node
         uses: actions/setup-node@v6
@@ -52,12 +116,12 @@ jobs:
         env:
           MANUAL_EXPECTED_BUILD_VERSION: ${{ github.event_name == 'workflow_dispatch' && github.event.inputs.expected_build_version || '' }}
         run: |
-          APP_VERSION="$(grep -oPm1 '(?<=<QuizymodeVersion>)[^<]+' Directory.Build.props)"
-
-          if [[ "${{ github.event_name }}" == "workflow_run" ]]; then
-            SHORT_SHA="${{ github.event.workflow_run.head_sha }}"
-            SHORT_SHA="${SHORT_SHA:0:7}"
-            EXPECTED_BUILD_VERSION="${APP_VERSION}+sha.${SHORT_SHA}"
+          # A scheduled run waits for the build of the commit it checked out, so a successful run's
+          # headSha is the build it captured; if prod never reaches it, the run fails and the next day
+          # diffs from the last real capture. A manual run may pin an exact build or accept any live one.
+          if [[ "${{ github.event_name }}" == "schedule" ]]; then
+            APP_VERSION="$(grep -oPm1 '(?<=<QuizymodeVersion>)[^<]+' Directory.Build.props)"
+            EXPECTED_BUILD_VERSION="${APP_VERSION}+sha.${GITHUB_SHA:0:7}"
           else
             EXPECTED_BUILD_VERSION="${MANUAL_EXPECTED_BUILD_VERSION}"
           fi

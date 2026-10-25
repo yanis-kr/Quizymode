@@ -18,6 +18,7 @@ test_prerequisites
 
 echo "Capturing desktop screenshots from production..."
 cd "$REPO_ROOT"
+export PLAYWRIGHT_BASE_URL="https://www.quizymode.com"
 mkdir -p "$REPO_ROOT/docs/user-guide/screenshots/user"
 rm -f "$REPO_ROOT/docs/user-guide/screenshots/user"/*.png
 npx playwright test --project=screenshots || echo "Desktop screenshot capture had failures. Proceeding to generate guide anyway."
