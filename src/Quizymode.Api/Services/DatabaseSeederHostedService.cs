@@ -38,11 +38,9 @@ internal sealed class DatabaseSeederHostedService(
             using IServiceScope scope = _serviceProvider.CreateScope();
             ApplicationDbContext db = scope.ServiceProvider.GetRequiredService<ApplicationDbContext>();
             SeedSyncAdminService seedSyncAdminService = scope.ServiceProvider.GetRequiredService<SeedSyncAdminService>();
-            LanguagesTaxonomyNormalizationService languagesTaxonomyNormalizationService = scope.ServiceProvider.GetRequiredService<LanguagesTaxonomyNormalizationService>();
 
             await db.Database.MigrateAsync(cancellationToken);
             await SeedCategoriesAndNavigationAsync(db, cancellationToken);
-            await languagesTaxonomyNormalizationService.NormalizeAsync(cancellationToken);
             await SeedIdeasAsync(db, cancellationToken);
             await EnsureFeaturedSetsAsync(db, cancellationToken);
 

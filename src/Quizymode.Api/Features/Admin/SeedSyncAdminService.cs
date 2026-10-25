@@ -19,14 +19,12 @@ internal sealed class SeedSyncAdminService(
     ITaxonomyRegistry taxonomyRegistry,
     IGitHubSeedSource gitHubSeedSource,
     LocalSeedLoader localSeedLoader,
-    IUserContext userContext,
-    LanguagesTaxonomyNormalizationService languagesTaxonomyNormalizationService)
+    IUserContext userContext)
 {
     private const string SeederUserId = "seeder";
     private readonly IGitHubSeedSource _gitHubSeedSource = gitHubSeedSource;
     private readonly LocalSeedLoader _localSeedLoader = localSeedLoader;
     private readonly IUserContext _userContext = userContext;
-    private readonly LanguagesTaxonomyNormalizationService _languagesTaxonomyNormalizationService = languagesTaxonomyNormalizationService;
 
     public async Task<Result<SeedSyncAdmin.PreviewResponse>> PreviewAsync(
         SeedSyncAdmin.Request request,
@@ -150,8 +148,6 @@ internal sealed class SeedSyncAdminService(
 
         try
         {
-            await _languagesTaxonomyNormalizationService.NormalizeAsync(cancellationToken);
-
             Result<SeedSyncPlan> planResult = await BuildPlanAsync(manifest, cancellationToken, taxonomyOverride ?? taxonomyRegistry);
             if (planResult.IsFailure)
             {
