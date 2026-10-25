@@ -138,9 +138,9 @@ public sealed class UserUpsertMiddlewarePostgresTests(PostgresContainerFixture f
         return new Scenario { Host = host, Logs = logs };
     }
 
-    private static async Task<WhoAmI> WhoAmIAsync(Scenario scenario, string subject, string email, object? emailVerified)
+    private static async Task<WhoAmI> WhoAmIAsync(Scenario scenario, string subject, string email, object? emailVerified, string? name = null)
     {
-        string token = scenario.Host.CreateToken(subject, email, emailVerified: emailVerified);
+        string token = scenario.Host.CreateToken(subject, email, emailVerified: emailVerified, name: name);
         using HttpRequestMessage request = JwtHttpTestHost.Request(HttpMethod.Get, "/test/whoami", token);
         using HttpResponseMessage response = await scenario.Host.Client.SendAsync(request);
         response.StatusCode.Should().Be(System.Net.HttpStatusCode.OK);
@@ -356,5 +356,264 @@ public sealed class UserUpsertMiddlewarePostgresTests(PostgresContainerFixture f
         AssertNoUpsertFailure(scenario);
         CapturedLog warning = scenario.UpsertLogs.Should().ContainSingle(e => e.Level == LogLevel.Warning).Subject;
         warning.Message.Should().Contain("after duplicate key").And.Contain(subjectB).And.NotContain(email);
+    }
+
+    // ---- #328 cheap path: unchanged, recent logins take no transaction, row lock or write ----
+
+    private static DateTime WholeSecondsAgo(TimeSpan age)
+    {
+        DateTime target = DateTime.UtcNow - age;
+        return DateTime.SpecifyKind(target.AddTicks(-(target.Ticks % TimeSpan.TicksPerSecond)), DateTimeKind.Utc);
+    }
+
+    private async Task<User> SeedUserAsync(string subject, string email, string? name, DateTime lastLogin)
+    {
+        RequireDatabase();
+        User user = new()
+        {
+            Id = Guid.NewGuid(),
+            Subject = subject,
+            Email = email,
+            Name = name,
+            LastLogin = lastLogin,
+            CreatedAt = PastUtc
+        };
+        await using ApplicationDbContext db = fixture.CreateDbContext();
+        db.Users.Add(user);
+        await db.SaveChangesAsync();
+        return user;
+    }
+
+    private async Task<int> LoginSuccessCountAsync(Guid userId)
+    {
+        await using ApplicationDbContext db = fixture.CreateDbContext();
+        return await db.Audits.CountAsync(a => a.Action == AuditAction.LoginSuccess && a.UserId == userId);
+    }
+
+    private static void AssertLocked(SqlCaptureInterceptor sql)
+    {
+        sql.Count("FOR UPDATE").Should().BeGreaterThanOrEqualTo(1, "the locked upsert must run");
+        sql.TransactionStarts.Should().BeGreaterThanOrEqualTo(1);
+        sql.Count("UPDATE \"Users\"").Should().BeGreaterThanOrEqualTo(1);
+    }
+
+    private static void AssertSkipped(SqlCaptureInterceptor sql)
+    {
+        sql.Count("FOR UPDATE").Should().Be(0);
+        sql.Count("pg_advisory_xact_lock").Should().Be(0);
+        sql.Count("UPDATE \"Users\"").Should().Be(0);
+        sql.TransactionStarts.Should().Be(0);
+    }
+
+    [SkippableFact]
+    public async Task CheapPath_UnchangedRecentUser_TakesNoLockTransactionOrWrite()
+    {
+        string subject = NewSubject();
+        string email = NewEmail();
+        DateTime lastLogin = WholeSecondsAgo(TimeSpan.FromMinutes(1));
+        User seeded = await SeedUserAsync(subject, email, $"custom-{Guid.NewGuid()}", lastLogin);
+        SqlCaptureInterceptor sql = new();
+        await using Scenario scenario = await StartAsync(sql);
+
+        for (int i = 0; i < 5; i++)
+        {
+            WhoAmI who = await WhoAmIAsync(scenario, subject, email, emailVerified: true);
+            who.UserId.Should().Be(seeded.Id.ToString());
+        }
+
+        sql.Commands.Should().NotBeEmpty("the cheap path still reads the row, proving the interceptor is attached");
+        AssertSkipped(sql);
+        User? row = await UserByIdAsync(seeded.Id);
+        row!.LastLogin.Should().Be(lastLogin);
+        (await LoginSuccessCountAsync(seeded.Id)).Should().Be(0);
+        AssertNoUpsertFailure(scenario);
+    }
+
+    [SkippableTheory]
+    [InlineData("changed")]
+    [InlineData("case")]
+    public async Task CheapPath_EmailChanged_TakesLockedPathAndUpdatesEmail(string kind)
+    {
+        string subject = NewSubject();
+        string email = "Mixed." + NewEmail();
+        string requestEmail = kind == "case" ? email.ToLowerInvariant() : NewEmail();
+        DateTime lastLogin = WholeSecondsAgo(TimeSpan.FromMinutes(1));
+        User seeded = await SeedUserAsync(subject, email, $"custom-{Guid.NewGuid()}", lastLogin);
+        SqlCaptureInterceptor sql = new();
+        await using Scenario scenario = await StartAsync(sql);
+
+        WhoAmI who = await WhoAmIAsync(scenario, subject, requestEmail, emailVerified: true);
+
+        who.UserId.Should().Be(seeded.Id.ToString());
+        AssertLocked(sql);
+        (await UserByIdAsync(seeded.Id))!.Email.Should().Be(requestEmail);
+        (await LoginSuccessCountAsync(seeded.Id)).Should().Be(0);
+        AssertNoUpsertFailure(scenario);
+    }
+
+    [SkippableFact]
+    public async Task CheapPath_DefaultName_NameClaimChanged_TakesLockedPathAndUpdatesName()
+    {
+        string subject = NewSubject();
+        string email = NewEmail();
+        User seeded = await SeedUserAsync(subject, email, subject, WholeSecondsAgo(TimeSpan.FromMinutes(1)));
+        SqlCaptureInterceptor sql = new();
+        await using Scenario scenario = await StartAsync(sql);
+
+        await WhoAmIAsync(scenario, subject, email, emailVerified: true, name: "Fresh Name");
+
+        AssertLocked(sql);
+        (await UserByIdAsync(seeded.Id))!.Name.Should().Be("Fresh Name");
+        AssertNoUpsertFailure(scenario);
+    }
+
+    [SkippableFact]
+    public async Task CheapPath_CustomName_NameClaimChanged_StillSkips()
+    {
+        string subject = NewSubject();
+        string email = NewEmail();
+        string customName = $"custom-{Guid.NewGuid()}";
+        User seeded = await SeedUserAsync(subject, email, customName, WholeSecondsAgo(TimeSpan.FromMinutes(1)));
+        SqlCaptureInterceptor sql = new();
+        await using Scenario scenario = await StartAsync(sql);
+
+        WhoAmI who = await WhoAmIAsync(scenario, subject, email, emailVerified: true, name: "Different");
+
+        who.UserId.Should().Be(seeded.Id.ToString());
+        AssertSkipped(sql);
+        (await UserByIdAsync(seeded.Id))!.Name.Should().Be(customName);
+        AssertNoUpsertFailure(scenario);
+    }
+
+    [SkippableFact]
+    public async Task CheapPath_SevenMinutesStale_TakesLockedPathRefreshesLastLoginWithoutAudit()
+    {
+        string subject = NewSubject();
+        string email = NewEmail();
+        DateTime lastLogin = WholeSecondsAgo(TimeSpan.FromMinutes(7));
+        User seeded = await SeedUserAsync(subject, email, $"custom-{Guid.NewGuid()}", lastLogin);
+        SqlCaptureInterceptor sql = new();
+        await using Scenario scenario = await StartAsync(sql);
+
+        await WhoAmIAsync(scenario, subject, email, emailVerified: true);
+
+        AssertLocked(sql);
+        (await UserByIdAsync(seeded.Id))!.LastLogin.Should().BeAfter(lastLogin.AddMinutes(6));
+        (await LoginSuccessCountAsync(seeded.Id)).Should().Be(0, "7 minutes is inside the 10-minute audit debounce");
+        AssertNoUpsertFailure(scenario);
+    }
+
+    [SkippableFact]
+    public async Task CheapPath_PastAuditDebounce_WritesOneLoginSuccessThenSkips()
+    {
+        string subject = NewSubject();
+        string email = NewEmail();
+        User seeded = await SeedUserAsync(subject, email, $"custom-{Guid.NewGuid()}", PastUtc);
+        SqlCaptureInterceptor sql = new();
+        await using Scenario scenario = await StartAsync(sql);
+
+        await WhoAmIAsync(scenario, subject, email, emailVerified: true);
+
+        AssertLocked(sql);
+        (await LoginSuccessCountAsync(seeded.Id)).Should().Be(1);
+        int lockedBefore = sql.Count("FOR UPDATE");
+        int transactionsBefore = sql.TransactionStarts;
+
+        await WhoAmIAsync(scenario, subject, email, emailVerified: true);
+
+        sql.Count("FOR UPDATE").Should().Be(lockedBefore, "the second request is inside the refresh interval");
+        sql.TransactionStarts.Should().Be(transactionsBefore);
+        (await LoginSuccessCountAsync(seeded.Id)).Should().Be(1);
+        AssertNoUpsertFailure(scenario);
+    }
+
+    [SkippableFact]
+    public async Task CheapPath_NewUser_IsCreatedWithLockThenNextRequestSkips()
+    {
+        string subject = NewSubject();
+        string email = NewEmail();
+        SqlCaptureInterceptor sql = new();
+        await using Scenario scenario = await StartAsync(sql);
+
+        WhoAmI first = await WhoAmIAsync(scenario, subject, email, emailVerified: true);
+
+        first.UserId.Should().NotBeNull();
+        sql.Count("pg_advisory_xact_lock").Should().BeGreaterThanOrEqualTo(1);
+        sql.Count("FOR UPDATE").Should().BeGreaterThanOrEqualTo(1);
+        sql.TransactionStarts.Should().BeGreaterThanOrEqualTo(1);
+        int lockedBefore = sql.Count("FOR UPDATE");
+        int transactionsBefore = sql.TransactionStarts;
+        int advisoryBefore = sql.Count("pg_advisory_xact_lock");
+
+        WhoAmI second = await WhoAmIAsync(scenario, subject, email, emailVerified: true);
+
+        second.UserId.Should().Be(first.UserId);
+        sql.Count("FOR UPDATE").Should().Be(lockedBefore);
+        sql.Count("pg_advisory_xact_lock").Should().Be(advisoryBefore);
+        sql.TransactionStarts.Should().Be(transactionsBefore);
+        AssertNoUpsertFailure(scenario);
+    }
+
+    [SkippableFact]
+    public async Task VerifiedRelink_StillTakesAdvisoryLockAndRowLock()
+    {
+        string seededEmail = "Relink." + NewEmail();
+        User seeded = await SeedUserAsync(NewSubject(), seededEmail);
+        SqlCaptureInterceptor sql = new();
+        await using Scenario scenario = await StartAsync(sql);
+
+        WhoAmI who = await WhoAmIAsync(scenario, NewSubject(), seededEmail.ToLowerInvariant(), emailVerified: true);
+
+        who.UserId.Should().Be(seeded.Id.ToString());
+        sql.Count("pg_advisory_xact_lock").Should().BeGreaterThanOrEqualTo(1);
+        sql.Count("FOR UPDATE").Should().BeGreaterThanOrEqualTo(2, "the subject lookup and the by-email row lock");
+        sql.TransactionStarts.Should().BeGreaterThanOrEqualTo(1);
+        sql.Count("UPDATE \"Users\"").Should().BeGreaterThanOrEqualTo(1);
+        AssertNoUpsertFailure(scenario);
+    }
+
+    [SkippableFact]
+    public async Task CheapPath_FutureLastLogin_TakesLockedPathAndRepairsLastLogin()
+    {
+        string subject = NewSubject();
+        string email = NewEmail();
+        User seeded = await SeedUserAsync(subject, email, $"custom-{Guid.NewGuid()}", WholeSecondsAgo(TimeSpan.FromHours(-1)));
+        SqlCaptureInterceptor sql = new();
+        await using Scenario scenario = await StartAsync(sql);
+
+        await WhoAmIAsync(scenario, subject, email, emailVerified: true);
+
+        AssertLocked(sql);
+        (await UserByIdAsync(seeded.Id))!.LastLogin.Should().BeBefore(DateTime.UtcNow.AddMinutes(1));
+        (await LoginSuccessCountAsync(seeded.Id)).Should().Be(0);
+        AssertNoUpsertFailure(scenario);
+    }
+
+    [SkippableTheory]
+    [InlineData(false)]
+    [InlineData(true)]
+    public async Task AuthenticatedTokenWithoutSubject_InvokesDownstreamExactlyOnce(bool endpointThrows)
+    {
+        RequireDatabase();
+        int invocations = 0;
+        await using JwtHttpTestHost host = await JwtHttpTestHost.StartAsync(
+            () => fixture.CreateDbContext(),
+            _ => { },
+            app => app.MapGet("/test/count", () =>
+                {
+                    Interlocked.Increment(ref invocations);
+                    return endpointThrows
+                        ? throw new InvalidOperationException("downstream failure")
+                        : Results.Ok();
+                })
+                .RequireAuthorization(),
+            useUserUpsertMiddleware: true);
+        string token = host.CreateToken(NewSubject(), NewEmail(), omitSubject: true);
+        using HttpRequestMessage request = JwtHttpTestHost.Request(HttpMethod.Get, "/test/count", token);
+
+        using HttpResponseMessage response = await host.Client.SendAsync(request);
+
+        response.StatusCode.Should().Be(endpointThrows ? System.Net.HttpStatusCode.InternalServerError : System.Net.HttpStatusCode.OK);
+        invocations.Should().Be(1, "the middleware must call the next delegate exactly once, even when it throws");
     }
 }

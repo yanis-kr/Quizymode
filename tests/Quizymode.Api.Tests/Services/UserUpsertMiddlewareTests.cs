@@ -3,6 +3,7 @@ using FluentAssertions;
 using Microsoft.AspNetCore.Http;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Logging.Abstractions;
 using Moq;
 using Quizymode.Api.Services;
@@ -138,5 +139,55 @@ public sealed class UserUpsertMiddlewareTests : DatabaseTestFixture
 
         // The fallback lookup sets UserId even when FOR UPDATE path throws
         ctx.Items["UserId"].Should().Be(user.Id.ToString());
+    }
+
+    [Fact]
+    public async Task InvokeAsync_ResolvesUserWithoutLockedPath_WhenRowUnchangedAndRecent()
+    {
+        // #328: the cheap path needs only a plain SELECT, so it also runs on SQLite with no failure logged.
+        string sub = Guid.NewGuid().ToString();
+        User user = new()
+        {
+            Id = Guid.NewGuid(), Subject = sub, Email = "cheap@example.com",
+            Name = "Custom Name", LastLogin = DateTime.UtcNow.AddMinutes(-1)
+        };
+        DbContext.Users.Add(user);
+        await DbContext.SaveChangesAsync();
+        DbContext.ChangeTracker.Clear();
+
+        CapturingLoggerProvider logs = new();
+        using ILoggerFactory loggerFactory = LoggerFactory.Create(builder => builder.AddProvider(logs).SetMinimumLevel(LogLevel.Debug));
+        UserUpsertMiddleware middleware = new(_ => Task.CompletedTask, loggerFactory.CreateLogger<UserUpsertMiddleware>());
+        HttpContext ctx = BuildHttpContext(sub: sub, email: "cheap@example.com", name: "Alice");
+
+        await middleware.InvokeAsync(ctx);
+
+        ctx.Items["UserId"].Should().Be(user.Id.ToString());
+        logs.Entries.Where(e => e.Level >= LogLevel.Warning).Should().BeEmpty();
+        logs.Entries.Should().Contain(e => e.Message.Contains("Skipped user upsert"));
+    }
+
+    [Fact]
+    public async Task InvokeAsync_CallsNextExactlyOnce_WhenAuthenticatedUserHasNoSubAndNextThrows()
+    {
+        int calls = 0;
+        UserUpsertMiddleware middleware = BuildMiddleware(next: _ =>
+        {
+            calls++;
+            throw new InvalidOperationException("downstream failure");
+        });
+        DefaultHttpContext httpContext = new()
+        {
+            User = new ClaimsPrincipal(new ClaimsIdentity([new Claim("name", "NoSub")], "test"))
+        };
+        ServiceCollection services = new();
+        services.AddSingleton(DbContext);
+        services.AddSingleton(_auditService.Object);
+        httpContext.RequestServices = services.BuildServiceProvider();
+
+        Func<Task> act = () => middleware.InvokeAsync(httpContext);
+
+        await act.Should().ThrowAsync<InvalidOperationException>();
+        calls.Should().Be(1);
     }
 }
