@@ -117,15 +117,26 @@ internal sealed class JwtHttpTestHost : IAsyncDisposable
         IReadOnlyCollection<string>? groups = null,
         string issuer = Issuer,
         DateTime? expiresUtc = null,
-        object? emailVerified = null)
+        object? emailVerified = null,
+        string? name = null,
+        bool omitSubject = false)
     {
         DateTime expires = expiresUtc ?? DateTime.UtcNow.AddMinutes(30);
         Dictionary<string, object> claims = new()
         {
-            ["sub"] = subject,
             ["email"] = email,
             ["token_use"] = "id"
         };
+        if (!omitSubject)
+        {
+            claims["sub"] = subject;
+        }
+
+        if (name is not null)
+        {
+            claims["name"] = name;
+        }
+
         if (emailVerified is not null)
         {
             // Pass a bool for a JSON boolean claim or a string for a string claim; omit for an absent claim.
