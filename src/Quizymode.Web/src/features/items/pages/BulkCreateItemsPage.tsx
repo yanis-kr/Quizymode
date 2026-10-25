@@ -102,7 +102,12 @@ const BulkCreateItemsPage = () => {
   const navigate = useNavigate();
   const [searchParams] = useSearchParams();
   const urlCategory = searchParams.get("category") ?? "";
-  const urlKeywords = searchParams.get("keywords")?.split(",").filter(Boolean) ?? [];
+  const urlKeywordsParam = searchParams.get("keywords");
+  const urlKeywords = useMemo(
+    () => urlKeywordsParam?.split(",").filter(Boolean) ?? [],
+    [urlKeywordsParam]
+  );
+  const urlAppliedRef = useRef(false);
 
   const [step, setStep] = useState<Step>("setup");
   const [category, setCategory] = useState("");
@@ -137,19 +142,19 @@ const BulkCreateItemsPage = () => {
     return [...rows].sort((a, b) => a.category.localeCompare(b.category));
   }, [taxonomyData]);
 
+  // Apply the URL prefill once (after the taxonomy loads) so "Remove topic" can clear it.
   useEffect(() => {
-    if (categoryOptions.length === 0) return;
-    if (urlCategory && !category && categoryOptions.some((c) => c.category === urlCategory)) {
+    if (urlAppliedRef.current || categoryOptions.length === 0) return;
+    urlAppliedRef.current = true;
+    if (urlCategory && categoryOptions.some((c) => c.category === urlCategory)) {
       // eslint-disable-next-line react-hooks/set-state-in-effect
       setCategory(urlCategory);
     }
-    if (urlKeywords.length > 0 && !primaryTopic) {
-      // eslint-disable-next-line react-hooks/set-state-in-effect
+    if (urlKeywords.length > 0) {
       setPrimaryTopic(urlKeywords[0] ?? "");
-      // eslint-disable-next-line react-hooks/set-state-in-effect
       if (urlKeywords.length > 1) setSubtopic(urlKeywords[1] ?? "");
     }
-  }, [urlCategory, urlKeywords, categoryOptions.length]);
+  }, [urlCategory, urlKeywords, categoryOptions]);
 
   const navKeywords = useMemo(
     () => [primaryTopic.trim(), subtopic.trim()].filter(Boolean),

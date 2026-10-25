@@ -476,4 +476,23 @@ describe("BulkCreateItemsPage topic picker (#323)", () => {
     expect(screen.getByLabelText(/subtopic/i)).toHaveValue("muscular");
     expect(taxonomyApi.suggest).not.toHaveBeenCalled();
   });
+
+  it("Remove topic clears a URL-prefilled topic and focuses the search (#323)", async () => {
+    const user = userEvent.setup({ delay: null });
+    const queryClient = new QueryClient({ defaultOptions: { queries: { retry: false } } });
+    render(
+      <QueryClientProvider client={queryClient}>
+        <MemoryRouter initialEntries={["/items/bulk-create?category=science&keywords=anatomy,muscular"]}>
+          <BulkCreateItemsPage />
+        </MemoryRouter>
+      </QueryClientProvider>
+    );
+    const remove = await screen.findByRole("button", { name: /remove topic/i });
+    await user.click(remove);
+    await waitFor(() => expect(screen.queryByTestId("topic-pill")).not.toBeInTheDocument());
+    expect(screen.getByLabelText(/category/i)).toHaveValue("");
+    expect(screen.getByLabelText(/primary topic/i)).toHaveValue("");
+    expect(screen.getByLabelText(/subtopic/i)).toHaveValue("");
+    await waitFor(() => expect(screen.getByRole("combobox", { name: /search topics/i })).toHaveFocus());
+  });
 });

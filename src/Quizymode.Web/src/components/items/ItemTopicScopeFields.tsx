@@ -129,7 +129,6 @@ export function ItemTopicScopeFields({
 
   useImperativeHandle(ref, () => ({
     focus: () => {
-
       if (state === "B") removeRef.current?.focus();
       else inputRef.current?.focus();
     },
@@ -205,6 +204,7 @@ export function ItemTopicScopeFields({
           isLoading={isTaxonomyLoading}
           isError={isTaxonomyError}
           disabled={disabled}
+          invalid={!!error}
           inputRef={inputRef}
           onPick={onPathPick}
           onOpenBrowse={() => setBrowseOpen(true)}

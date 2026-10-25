@@ -19,6 +19,7 @@ interface TopicPathComboboxProps {
   isLoading: boolean;
   isError: boolean;
   disabled?: boolean;
+  invalid?: boolean;
   inputRef: RefObject<HTMLInputElement | null>;
   onPick: (path: TopicPath) => void;
   /** The "browse all topics" button of the no-match row. */
@@ -38,6 +39,7 @@ const TopicPathCombobox = ({
   isLoading,
   isError,
   disabled = false,
+  invalid = false,
   inputRef,
   onPick,
   onOpenBrowse,
@@ -239,6 +241,7 @@ const TopicPathCombobox = ({
           type="text"
           role="combobox"
           aria-autocomplete="list"
+          aria-invalid={invalid ? true : undefined}
           aria-expanded={expanded}
           aria-controls={expanded ? listboxId : undefined}
           aria-activedescendant={activeId ?? undefined}

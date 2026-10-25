@@ -444,4 +444,16 @@ describe("UploadToCollectionPage", () => {
       expect(itemsApi.uploadToCollection).not.toHaveBeenCalled();
     });
   });
+
+  it("Remove topic clears a URL-prefilled topic and focuses the search (#323)", async () => {
+    const user = userEvent.setup({ delay: null });
+    renderPage("/items/upload-to-collection?category=science&keywords=anatomy,muscular");
+    const remove = await screen.findByRole("button", { name: /remove topic/i });
+    await user.click(remove);
+    await waitFor(() => expect(screen.queryByTestId("topic-pill")).not.toBeInTheDocument());
+    expect(screen.getByLabelText(/category/i)).toHaveValue("");
+    expect(screen.getByLabelText(/primary topic/i)).toHaveValue("");
+    expect(screen.getByLabelText(/subtopic/i)).toHaveValue("");
+    await waitFor(() => expect(screen.getByRole("combobox", { name: /search topics/i })).toHaveFocus());
+  });
 });

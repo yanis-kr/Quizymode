@@ -1,4 +1,5 @@
 import { beforeEach, describe, expect, it, vi } from "vitest";
+import userEvent from "@testing-library/user-event";
 import { render, screen, waitFor } from "@testing-library/react";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { MemoryRouter, Route, Routes } from "react-router-dom";
@@ -111,7 +112,23 @@ describe("StudyGuideImportPage", () => {
     expect(await screen.findByRole("combobox", { name: /search topics/i })).toBeInTheDocument();
     expect(screen.queryByTestId("topic-chip")).not.toBeInTheDocument();
     // No first-category preselection: the topic starts empty.
-    expect(await screen.findByLabelText(/^category \*$/i)).toHaveValue("");
+    await screen.findByRole("option", { name: "science" });
+    expect(screen.getByLabelText(/^category \*$/i)).toHaveValue("");
     expect(taxonomyApi.suggest).not.toHaveBeenCalled();
+  });
+
+  it("blocks creating prompt sets without a full topic and focuses the search (#323)", async () => {
+    const user = userEvent.setup({ delay: null });
+    renderPage("/study-guide/import");
+
+    await screen.findByRole("option", { name: "science" });
+    await waitFor(() => expect(studyGuidesApi.getCurrent).toHaveBeenCalled());
+    const submit = screen.getByRole("button", { name: /create prompt sets/i });
+    await waitFor(() => expect(submit).toBeEnabled());
+    await user.click(submit);
+
+    expect(await screen.findByRole("alert")).toHaveTextContent(/choose a topic/i);
+    expect(studyGuideImportApi.createSession).not.toHaveBeenCalled();
+    expect(screen.getByRole("combobox", { name: /search topics/i })).toHaveFocus();
   });
 });

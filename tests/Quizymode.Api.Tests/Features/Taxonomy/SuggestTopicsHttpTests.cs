@@ -3,6 +3,9 @@ using System.Net.Http.Headers;
 using System.Text;
 using System.Text.Json;
 using FluentAssertions;
+using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Http.Metadata;
+using Microsoft.AspNetCore.Routing;
 using Microsoft.Extensions.Caching.Memory;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
@@ -29,6 +32,8 @@ public sealed class SuggestTopicsHttpTests : TopicDbFixture
 
     private TopicSuggestionHarness Harness => _harness ?? throw new InvalidOperationException("Host not started.");
 
+    private IEndpointRouteBuilder? _routes;
+
     private async Task<JwtHttpTestHost> StartAsync(bool rateLimiting = false)
     {
         _harness = new TopicSuggestionHarness(NewContext);
@@ -46,7 +51,11 @@ public sealed class SuggestTopicsHttpTests : TopicDbFixture
                 services.AddSingleton<ITaxonomySearchIndex>(new TaxonomySearchIndex(harness.Registry));
                 services.AddSingleton<TaxonomySearchCounts>();
             },
-            app => new SuggestTopics.Endpoint().MapEndpoint(app),
+            app =>
+            {
+                _routes = app;
+                new SuggestTopics.Endpoint().MapEndpoint(app);
+            },
             useRateLimiting: rateLimiting);
     }
 
@@ -341,6 +350,19 @@ public sealed class SuggestTopicsHttpTests : TopicDbFixture
     }
 
     [Fact]
+    public async Task TheEndpoint_DeclaresA64KiBRequestSizeLimit()
+    {
+        await using JwtHttpTestHost host = await StartAsync();
+
+        RouteEndpoint endpoint = _routes!.DataSources
+            .SelectMany(source => source.Endpoints)
+            .OfType<RouteEndpoint>()
+            .Single();
+
+        endpoint.Metadata.GetMetadata<IRequestSizeLimitMetadata>()!.MaxRequestBodySize.Should().Be(65536);
+    }
+
+    [Fact]
     public async Task AnOversizedBody_IsRejectedBeforeItIsRead()
     {
         await using JwtHttpTestHost host = await StartAsync();
@@ -350,7 +372,7 @@ public sealed class SuggestTopicsHttpTests : TopicDbFixture
         using HttpRequestMessage request = Post(token, json);
         using HttpResponseMessage response = await host.Client.SendAsync(request);
 
-        response.StatusCode.Should().BeOneOf(HttpStatusCode.RequestEntityTooLarge, HttpStatusCode.BadRequest);
+        response.StatusCode.Should().Be(HttpStatusCode.RequestEntityTooLarge);
         (await response.Content.ReadAsStringAsync()).Should().NotContain("zzuniquetoken");
     }
 

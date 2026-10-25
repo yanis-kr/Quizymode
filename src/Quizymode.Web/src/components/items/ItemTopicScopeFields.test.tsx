@@ -276,6 +276,7 @@ describe("ItemTopicScopeFields", () => {
     expect(alert).toHaveTextContent("Choose a topic");
     expect(group).toHaveAttribute("aria-invalid", "true");
     expect(group).toHaveAttribute("aria-describedby", alert.id);
+    expect(screen.getByRole("combobox", { name: /search topics/i })).toHaveAttribute("aria-invalid", "true");
     await screen.findByRole("option", { name: "tech" });
   });
 

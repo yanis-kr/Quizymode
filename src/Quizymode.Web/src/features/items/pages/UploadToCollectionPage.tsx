@@ -96,26 +96,19 @@ const UploadToCollectionPage = ({
     return g?.keywords.map((k) => k.slug) ?? [];
   }, [selectedTaxonomyCategory, rank1Name]);
 
-  // Only sync from URL when we're still on the same category (avoid repopulating after user switches category)
+  // Initial values come from the URL via useState; re-apply only when the URL itself changes,
+  // so "Remove topic" can clear a URL-prefilled topic.
+  const appliedUrlRef = React.useRef(`${categoryParam}|${keywordsParam ?? ""}`);
   React.useEffect(() => {
-    if (categoryParam && !categoryName) setCategoryName(categoryParam);
-  }, [categoryParam, categoryName]);
-  React.useEffect(() => {
-    if (categoryParam && categoryName === categoryParam && keywordsFromUrl[0] && !rank1Name) {
-      setRank1Name(keywordsFromUrl[0]);
-    }
-  }, [categoryParam, categoryName, keywordsFromUrl, rank1Name]);
-  React.useEffect(() => {
-    if (
-      categoryParam &&
-      categoryName === categoryParam &&
-      rank1Name === keywordsFromUrl[0] &&
-      keywordsFromUrl[1] &&
-      !rank2Name
-    ) {
-      setRank2Name(keywordsFromUrl[1]);
-    }
-  }, [categoryParam, categoryName, rank1Name, keywordsFromUrl, rank2Name]);
+    const key = `${categoryParam}|${keywordsParam ?? ""}`;
+    if (appliedUrlRef.current === key) return;
+    appliedUrlRef.current = key;
+    const kws = keywordsParam ? keywordsParam.split(",").map((k) => k.trim()).filter(Boolean) : [];
+    // eslint-disable-next-line react-hooks/set-state-in-effect
+    setCategoryName(categoryParam);
+    setRank1Name(kws[0] ?? "");
+    setRank2Name(kws[1] ?? "");
+  }, [categoryParam, keywordsParam]);
   // Clear rank1/rank2 when they are invalid for the current category's options
   React.useEffect(() => {
     if (rank1Name && rank1Slugs.length > 0 && !rank1Slugs.includes(rank1Name)) {
