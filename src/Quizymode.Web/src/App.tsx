@@ -57,6 +57,7 @@ const AdminAiProvidersPage = lazyPage(() => import("./features/admin/pages/Admin
 const AdminDailyQuizPage = lazyPage(() => import("./features/admin/pages/AdminDailyQuizPage"));
 const ReviewQueuePage = lazyPage(() => import("./features/learningLoop/pages/ReviewQueuePage"));
 const ProgressPage = lazyPage(() => import("./features/progress/ProgressPage"));
+const SearchPage = lazyPage(() => import("./features/search/pages/SearchPage"));
 
 function App() {
   const location = useLocation();
@@ -146,6 +147,7 @@ function App() {
         </Route>
         <Route path="/items/:id/comments" element={<ItemCommentsPage />} />
         <Route path="/items/:id" element={<ItemDetailPage />} />
+        <Route path="/search" element={<SearchPage />} />
         <Route path="/featured" element={<FeaturedPage />} />
         <Route path="/collections" element={<CollectionsPage />} />
         <Route path="/collections/:id/:slug" element={<CollectionDetailPage />} />

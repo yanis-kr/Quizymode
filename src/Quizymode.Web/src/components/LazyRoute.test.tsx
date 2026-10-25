@@ -84,7 +84,7 @@ describe("App route splitting", () => {
         "PageViewAnalyticsPage", "AdminClientErrorsPage", "AdminFeaturedPage", "AdminIdeasPage",
         "CreateHubPage", "CreateImportPage", "BulkCreateItemsPage", "CreateItemPage", "EditItemPage",
         "StudyGuidePage", "StudyGuideImportPage", "StudyGuideUploadPage", "IdeasPage", "RoadmapPage", "FeedbackPage",
-        "AboutPage", "PrivacyPolicyPage", "TermsOfServicePage",
+        "AboutPage", "PrivacyPolicyPage", "TermsOfServicePage", "SearchPage",
       ])
     );
     expect(eagerImports.filter((n) => /^Admin|StudyGuide/.test(n))).toEqual([]);
