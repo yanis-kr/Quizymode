@@ -31,6 +31,24 @@ function digitFromCode(code: string): number | null {
   return match ? Number(match[1]) : null;
 }
 
+/** True when a mounted dialog or modal owns the keyboard. */
+export function isDialogOpen(): boolean {
+  return document.querySelector('[role="dialog"],[aria-modal="true"]') !== null;
+}
+
+/**
+ * The AC 3.16.5 ignore rules shared by every single-key shortcut (study keys and the "/" search key): the key was
+ * already handled, is auto-repeating, is part of IME composition, has Ctrl/Alt/Meta held, a dialog is mounted, or the
+ * target accepts text.
+ */
+export function shouldIgnoreSingleKeyHotkey(event: KeyboardEvent): boolean {
+  if (event.defaultPrevented || event.repeat || event.isComposing || event.keyCode === 229) return true;
+  if (event.ctrlKey || event.altKey || event.metaKey) return true;
+  if (isDialogOpen()) return true;
+  const target = event.target instanceof Element ? event.target : null;
+  return Boolean(target?.closest(TEXT_SELECTOR) || (target instanceof HTMLElement && target.isContentEditable));
+}
+
 /**
  * Single-key study shortcuts (AC 3.16). Handled keys call preventDefault. `?` opens the help dialog that
  * the page renders with <StudyHotkeysDialog/>.
@@ -53,12 +71,9 @@ export function useStudyHotkeys(bindings: StudyHotkeyBindings): {
     const handle = (event: KeyboardEvent): void => {
       const current = bindingsRef.current;
       if (current.enabled === false || !getStudyHotkeysEnabled()) return;
-      if (event.defaultPrevented || event.repeat || event.isComposing || event.keyCode === 229) return;
-      if (event.ctrlKey || event.altKey || event.metaKey) return;
-      if (document.querySelector('[role="dialog"],[aria-modal="true"]')) return;
+      if (shouldIgnoreSingleKeyHotkey(event)) return;
 
       const target = event.target instanceof Element ? event.target : null;
-      if (target?.closest(TEXT_SELECTOR) || (target instanceof HTMLElement && target.isContentEditable)) return;
 
       let action: (() => void) | undefined;
       if (event.key === "?") {
