@@ -2,12 +2,18 @@ import * as React from "react";
 import { useMutation, useQuery } from "@tanstack/react-query";
 import { Link, Navigate, useNavigate, useSearchParams } from "react-router-dom";
 import { useAuth } from "@/contexts/AuthContext";
-import { categoriesApi } from "@/api/categories";
-import { keywordsApi } from "@/api/keywords";
 import { studyGuideDocumentsApi, type CreateStudyGuideDocumentRequest } from "@/api/studyGuideDocuments";
 import LoadingSpinner from "@/components/LoadingSpinner";
 import ErrorMessage from "@/components/ErrorMessage";
-import { ItemTopicScopeFields } from "@/components/items/ItemTopicScopeFields";
+import { ItemTopicScopeFields, type TopicScopeFieldsHandle } from "@/components/items/ItemTopicScopeFields";
+import { applyTopicScopePatch, isTopicComplete, TOPIC_REQUIRED_MESSAGE } from "@/features/topics/topicScope";
+import {
+  BINARY_FILE_HELPER,
+  composeNotesSuggestionText,
+  isReadableTextFile,
+  readFileSample,
+} from "@/features/topics/suggestionText";
+import { useTopicSuggestionAnalytics } from "@/features/topics/topicSuggestionAnalytics";
 import ContentComplianceNotice from "@/features/legal/components/ContentComplianceNotice";
 import { parseKeywordsInput, utf8ByteLength } from "../studyGuideUploadSchema";
 import {
@@ -55,6 +61,10 @@ const StudyGuideUploadPage = () => {
   const [keywordsText, setKeywordsText] = React.useState("");
   const [formError, setFormError] = React.useState<string | null>(null);
   const [forcedUnavailable, setForcedUnavailable] = React.useState(false);
+  const [topicBlocked, setTopicBlocked] = React.useState(false);
+  const [fileSample, setFileSample] = React.useState<{ file: File; text: string } | null>(null);
+  const topicScopeRef = React.useRef<TopicScopeFieldsHandle>(null);
+  const topicAnalytics = useTopicSuggestionAnalytics();
   const tabRefs = React.useRef<Record<StudyGuideInputMode, HTMLButtonElement | null>>({ file: null, text: null });
 
   const { data: config, isLoading: isLoadingConfig } = useQuery({
@@ -72,35 +82,16 @@ const StudyGuideUploadPage = () => {
   };
   const isEnabled = !!config?.enabled && !forcedUnavailable;
 
-  const { data: categoriesData } = useQuery({
-    queryKey: ["categories"],
-    queryFn: () => categoriesApi.getAll(),
-    enabled: isAuthenticated && isEnabled,
-  });
-  const categoryOptions = React.useMemo(
-    () => [...(categoriesData?.categories ?? [])].sort((a, b) => a.category.localeCompare(b.category)),
-    [categoriesData]
-  );
-
-  const { data: rank1Data, isLoading: isLoadingRank1 } = useQuery({
-    queryKey: ["keywords", "rank1", categoryName],
-    queryFn: () => keywordsApi.getNavigationKeywords(categoryName, []),
-    enabled: isAuthenticated && isEnabled && !!categoryName.trim(),
-  });
-  const rank1Options = (rank1Data?.keywords ?? [])
-    .filter((keyword) => keyword.name.toLowerCase() !== "other")
-    .map((keyword) => keyword.name);
-
-  const { data: rank2Data, isLoading: isLoadingRank2 } = useQuery({
-    queryKey: ["keywords", "rank2", categoryName, rank1Name],
-    queryFn: () => keywordsApi.getNavigationKeywords(categoryName, rank1Name ? [rank1Name] : []),
-    enabled: isAuthenticated && isEnabled && !!categoryName.trim() && !!rank1Name.trim(),
-  });
-  const rank2Options = (rank2Data?.keywords ?? []).map((keyword) => keyword.name);
-
   const createMutation = useMutation({
     mutationFn: (request: CreateStudyGuideDocumentRequest) => studyGuideDocumentsApi.create(request),
-    onSuccess: (document) => {
+    onSuccess: (document, request) => {
+      // The document and its collection are the owner's own, so the path is not reported (AC 5.4.12).
+      topicAnalytics.onSaved({
+        category: request.category,
+        rank1: request.navigationKeyword1,
+        rank2: request.navigationKeyword2,
+        isPrivate: true,
+      });
       navigate(`/study-guides/documents/${encodeURIComponent(document.id)}`, {
         state: { isDuplicate: document.isDuplicate },
       });
@@ -124,12 +115,31 @@ const StudyGuideUploadPage = () => {
 
   const chooseFile = (candidate: File | null) => {
     setFile(candidate);
+    setFileSample(null);
     setFormError(null);
+    if (candidate && isReadableTextFile(candidate.name)) {
+      void readFileSample(candidate).then((sample) => setFileSample({ file: candidate, text: sample }));
+    }
   };
+
+  const suggestionText = composeNotesSuggestionText({
+    mode,
+    title,
+    pastedText: text,
+    fileName: file?.name ?? null,
+    fileSample: fileSample && fileSample.file === file ? fileSample.text : "",
+  });
+  const binaryFileSelected = mode === "file" && !!file && !isReadableTextFile(file.name);
 
   const handleSubmit = (event: React.FormEvent) => {
     event.preventDefault();
     setFormError(null);
+    setTopicBlocked(false);
+    if (!isTopicComplete({ category: categoryName, rank1: rank1Name, rank2: rank2Name })) {
+      setTopicBlocked(true);
+      topicScopeRef.current?.focus();
+      return;
+    }
     const form = {
       mode,
       file: mode === "file" ? file : null,
@@ -327,30 +337,28 @@ const StudyGuideUploadPage = () => {
 
           <ItemTopicScopeFields
             idPrefix="study-guide-upload-scope"
-            categories={categoryOptions}
+            ref={topicScopeRef}
             category={categoryName}
             rank1={rank1Name}
             rank2={rank2Name}
             onScopeChange={(patch) => {
-              if (patch.category !== undefined) {
-                setCategoryName(patch.category);
-                setRank1Name("");
-                setRank2Name("");
-                return;
-              }
-              if (patch.rank1 !== undefined) {
-                setRank1Name(patch.rank1);
-                setRank2Name("");
-              }
-              if (patch.rank2 !== undefined) {
-                setRank2Name(patch.rank2);
-              }
+              const next = applyTopicScopePatch(
+                { category: categoryName, rank1: rank1Name, rank2: rank2Name },
+                patch
+              );
+              setCategoryName(next.category);
+              setRank1Name(next.rank1);
+              setRank2Name(next.rank2);
             }}
-            rank1Options={rank1Options}
-            rank2Options={rank2Options}
-            isLoadingRank1={isLoadingRank1}
-            isLoadingRank2={isLoadingRank2}
             disabled={createMutation.isPending}
+            suggestionText={suggestionText}
+            suggestionHelperText={binaryFileSelected ? BINARY_FILE_HELPER : undefined}
+            onSuggestionsShown={topicAnalytics.onSuggestionsShown}
+            error={
+              topicBlocked && !isTopicComplete({ category: categoryName, rank1: rank1Name, rank2: rank2Name })
+                ? TOPIC_REQUIRED_MESSAGE
+                : undefined
+            }
           />
 
           <div>

@@ -22,7 +22,10 @@ export type AnalyticsEventName =
   | "flashcard_graded"
   | "quiz_result_shared"
   | "search_performed"
-  | "search_result_clicked";
+  | "search_result_clicked"
+  | "topic_suggestion_shown"
+  | "topic_suggestion_accepted"
+  | "topic_suggestion_overridden";
 
 export type AnalyticsContextType =
   | "auth"
@@ -36,7 +39,8 @@ export type AnalyticsContextType =
   | "mine"
   | "quiz"
   | "review"
-  | "search";
+  | "search"
+  | "topic";
 
 export interface AnalyticsEventInput {
   name: AnalyticsEventName;

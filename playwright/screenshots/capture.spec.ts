@@ -757,7 +757,8 @@ async function openScopedAddItemsPage(page: Page) {
   // The Create hub (/create) has no scope fields; the scoped form lives at /create/question.
   await safeGoto(page, "/create/question?category=geography&keywords=capitals,world");
   await clickConsentIfPresent(page);
-  await waitForAnyVisible(page, ["#item-form-category", "#item-form-rank1"]);
+  // A prefilled topic shows as the pill (the cascading selects stay mounted but hidden; read them with inputValue()).
+  await waitForAnyVisible(page, ["[data-testid=\"topic-pill\"]"]);
 }
 
 async function applyKeywordFilterWithResults(page: Page) {

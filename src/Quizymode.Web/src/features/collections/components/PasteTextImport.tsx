@@ -14,13 +14,15 @@ interface PasteTextImportProps {
   isPending: boolean;
   /** Called with the previewed items and a stable text used for duplicate-upload detection. */
   onImport: (items: ImportItem[], inputText: string) => void;
+  /** Called with the previewed items whenever the preview changes (used to suggest a topic from them). */
+  onPreviewChange?: (items: ImportItem[]) => void;
 }
 
 const PREVIEW_ROWS = 5;
 const inputClass =
   "block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm";
 
-const PasteTextImport = ({ maxItems, isPending, onImport }: PasteTextImportProps) => {
+const PasteTextImport = ({ maxItems, isPending, onImport, onPreviewChange }: PasteTextImportProps) => {
   const [text, setText] = React.useState("");
   const [separator, setSeparator] = React.useState<SeparatorKind>("auto");
   const [customSeparator, setCustomSeparator] = React.useState("");
@@ -34,6 +36,11 @@ const PasteTextImport = ({ maxItems, isPending, onImport }: PasteTextImportProps
     const built = buildImportItems(parsed.pairs, { direction, template, limit: maxItems });
     return { parsed, built, skipped: [...parsed.skipped, ...built.skipped] };
   }, [text, separator, customSeparator, quotes, direction, template, maxItems]);
+
+  const previewItems = preview?.built.items;
+  React.useEffect(() => {
+    onPreviewChange?.(previewItems ?? []);
+  }, [previewItems, onPreviewChange]);
 
   const canImport = !!preview && !preview.built.error && preview.built.items.length > 0 && !isPending;
 

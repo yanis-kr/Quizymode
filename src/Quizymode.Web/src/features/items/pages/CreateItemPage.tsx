@@ -1,14 +1,17 @@
-import { useMemo, useState } from "react";
+import { useMemo, useRef, useState } from "react";
 import { Link, Navigate, useLocation, useNavigate, useSearchParams } from "react-router-dom";
 import { ArrowLeftIcon } from "@heroicons/react/24/outline";
-import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
+import { useMutation, useQueryClient } from "@tanstack/react-query";
 import { isAxiosError } from "axios";
 import { itemsApi } from "@/api/items";
 import { collectionsApi } from "@/api/collections";
-import { taxonomyApi } from "@/api/taxonomy";
 import { useAuth } from "@/contexts/AuthContext";
 import { useActiveCollection } from "@/hooks/useActiveCollection";
 import { ItemForm, type ItemFormValues } from "@/components/items/ItemForm";
+import { type TopicScopeFieldsHandle } from "@/components/items/ItemTopicScopeFields";
+import { isTopicComplete, TOPIC_REQUIRED_MESSAGE } from "@/features/topics/topicScope";
+import { useTaxonomy } from "@/features/topics/useTaxonomy";
+import { useTopicSuggestionAnalytics } from "@/features/topics/topicSuggestionAnalytics";
 import type { CreateItemRequest } from "@/types/api";
 import { validateNavigationKeywordName } from "@/utils/navigationKeywordRules";
 import { getIncorrectAnswerConflict } from "@/utils/incorrectAnswerRules";
@@ -94,35 +97,17 @@ function CreateItemEditor({
   const queryClient = useQueryClient();
   const [formData, setFormData] = useState(initialValues);
   const [validationError, setValidationError] = useState("");
+  const [topicBlocked, setTopicBlocked] = useState(false);
+  const topicScopeRef = useRef<TopicScopeFieldsHandle>(null);
+  const topicAnalytics = useTopicSuggestionAnalytics();
   const { activeCollectionId } = useActiveCollection();
 
-  const { data: taxonomyData, isLoading: isTaxonomyLoading } = useQuery({
-    queryKey: ["taxonomy"],
-    queryFn: () => taxonomyApi.getAll(),
-    staleTime: 24 * 60 * 60 * 1000,
-  });
-
-  const categoriesForForm = useMemo(
-    () => (taxonomyData?.categories ?? []).map((category) => ({ category: category.slug })),
-    [taxonomyData]
-  );
+  const { data: taxonomyData } = useTaxonomy();
 
   const selectedCategory = useMemo(
     () => taxonomyData?.categories.find((category) => category.slug === formData.category),
     [taxonomyData, formData.category]
   );
-
-  const rank1Options = useMemo(
-    () => selectedCategory?.groups.map((group) => group.slug) ?? [],
-    [selectedCategory]
-  );
-
-  const rank2Options = useMemo(() => {
-    const group = selectedCategory?.groups.find(
-      (candidate) => candidate.slug === formData.navigationRank1
-    );
-    return group?.keywords.map((keyword) => keyword.slug) ?? [];
-  }, [selectedCategory, formData.navigationRank1]);
 
   const taxonomyExtraSlugs = useMemo(() => {
     const rank1 = formData.navigationRank1.trim().toLowerCase();
@@ -144,6 +129,12 @@ function CreateItemEditor({
       if (category) {
         queryClient.invalidateQueries({ queryKey: ["itemTagKeywords", category] });
       }
+      topicAnalytics.onSaved({
+        category: variables.category,
+        rank1: variables.navigationKeyword1,
+        rank2: variables.navigationKeyword2,
+        isPrivate: variables.isPrivate !== false,
+      });
       const createdItemId = typeof data?.id === "string" ? data.id : "";
       if (activeCollectionId && createdItemId) {
         // Fire-and-forget: silently add to active collection; failure does not block navigation
@@ -162,6 +153,7 @@ function CreateItemEditor({
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     setValidationError("");
+    setTopicBlocked(false);
 
     const compacted = compactIncorrectAnswersWithSpeech(
       formData.incorrectAnswers,
@@ -178,8 +170,15 @@ function CreateItemEditor({
       return;
     }
 
-    if (!formData.navigationRank1.trim() || !formData.navigationRank2.trim()) {
-      setValidationError("Primary topic (rank 1) and subtopic (rank 2) are required.");
+    if (
+      !isTopicComplete({
+        category: formData.category,
+        rank1: formData.navigationRank1,
+        rank2: formData.navigationRank2,
+      })
+    ) {
+      setTopicBlocked(true);
+      topicScopeRef.current?.focus();
       return;
     }
 
@@ -225,11 +224,6 @@ function CreateItemEditor({
       onChange={setFormData}
       onSubmit={handleSubmit}
       onCancel={() => navigate("/categories")}
-      categories={categoriesForForm}
-      rank1Options={rank1Options}
-      rank2Options={rank2Options}
-      isLoadingRank1={isTaxonomyLoading && !!formData.category}
-      isLoadingRank2={isTaxonomyLoading && !!formData.navigationRank1}
       isAdmin={isAdmin}
       isPending={createMutation.isPending}
       validationError={validationError}
@@ -238,6 +232,18 @@ function CreateItemEditor({
       extraKeywordAutocompleteSource={extraKeywordAutocompleteSource}
       extraKeywordAutocompleteLoading={itemTagKeywordsLoading}
       taxonomyPublicSlugs={selectedCategory?.allKeywordSlugs ?? []}
+      topicError={
+        topicBlocked &&
+        !isTopicComplete({
+          category: formData.category,
+          rank1: formData.navigationRank1,
+          rank2: formData.navigationRank2,
+        })
+          ? TOPIC_REQUIRED_MESSAGE
+          : undefined
+      }
+      topicScopeRef={topicScopeRef}
+      onTopicSuggestionsShown={topicAnalytics.onSuggestionsShown}
     />
   );
 }
@@ -249,12 +255,7 @@ const CreateItemPage = () => {
   const categoryFromUrl = searchParams.get("category") || "";
   const keywordsParam = searchParams.get("keywords");
 
-  const { data: taxonomyBootstrap, isLoading: isTaxonomyBootstrapLoading } = useQuery({
-    queryKey: ["taxonomy"],
-    queryFn: () => taxonomyApi.getAll(),
-    staleTime: 24 * 60 * 60 * 1000,
-    enabled: isAuthenticated,
-  });
+  const { data: taxonomyBootstrap, isLoading: isTaxonomyBootstrapLoading } = useTaxonomy(isAuthenticated);
 
   const taxonomyAllSlugsForCategory = useMemo(() => {
     const cat = taxonomyBootstrap?.categories.find((c) => c.slug === categoryFromUrl);

@@ -3,7 +3,7 @@ import { useQuery, useMutation, useQueryClient } from "@tanstack/react-query";
 import { featuredApi } from "@/api/featured";
 import type { AdminFeaturedItemDto } from "@/api/featured";
 import { collectionsApi } from "@/api/collections";
-import { taxonomyApi } from "@/api/taxonomy";
+import { useTaxonomy } from "@/features/topics/useTaxonomy";
 import type { CollectionDiscoverItem } from "@/types/api";
 import {
   TrashIcon,
@@ -48,11 +48,7 @@ const AdminFeaturedPage = () => {
     queryFn: () => featuredApi.adminList(),
   });
 
-  const { data: taxonomyData } = useQuery({
-    queryKey: ["taxonomy"],
-    queryFn: () => taxonomyApi.getAll(),
-    enabled: tab === "set",
-  });
+  const { data: taxonomyData } = useTaxonomy(tab === "set");
 
   const { data: collectionsData } = useQuery({
     queryKey: ["collections", "discover", search],

@@ -1,14 +1,16 @@
-import { useState, useEffect, useMemo } from "react";
+import { useState, useEffect, useMemo, useRef } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
 import { itemsApi } from "@/api/items";
-import { taxonomyApi } from "@/api/taxonomy";
 import { useAuth } from "@/contexts/AuthContext";
 import { useCurrentUserIdState } from "@/hooks/useCurrentUserId";
 import { Navigate } from "react-router-dom";
 import LoadingSpinner from "@/components/LoadingSpinner";
 import ErrorMessage from "@/components/ErrorMessage";
 import { ItemForm } from "@/components/items/ItemForm";
+import { type TopicScopeFieldsHandle } from "@/components/items/ItemTopicScopeFields";
+import { isTopicComplete, TOPIC_REQUIRED_MESSAGE } from "@/features/topics/topicScope";
+import { useTaxonomy } from "@/features/topics/useTaxonomy";
 import type { KeywordRequest } from "@/types/api";
 import { validateNavigationKeywordName } from "@/utils/navigationKeywordRules";
 import { getIncorrectAnswerConflict } from "@/utils/incorrectAnswerRules";
@@ -49,33 +51,12 @@ const EditItemPage = () => {
     readyForReview: false,
   });
 
-  const { data: taxonomyData, isLoading: isTaxonomyLoading } = useQuery({
-    queryKey: ["taxonomy"],
-    queryFn: () => taxonomyApi.getAll(),
-    staleTime: 24 * 60 * 60 * 1000,
-  });
-
-  const categoriesForForm = useMemo(
-    () => (taxonomyData?.categories ?? []).map((c) => ({ category: c.slug })),
-    [taxonomyData]
-  );
+  const { data: taxonomyData } = useTaxonomy();
 
   const selectedCategory = useMemo(
     () => taxonomyData?.categories.find((c) => c.slug === formData.category),
     [taxonomyData, formData.category]
   );
-
-  const rank1Options = useMemo(
-    () => selectedCategory?.groups.map((g) => g.slug) ?? [],
-    [selectedCategory]
-  );
-
-  const rank2Options = useMemo(() => {
-    const g = selectedCategory?.groups.find(
-      (x) => x.slug === formData.navigationRank1
-    );
-    return g?.keywords.map((k) => k.slug) ?? [];
-  }, [selectedCategory, formData.navigationRank1]);
 
   const taxonomyExtraSlugs = useMemo(() => {
     const r1 = formData.navigationRank1.trim().toLowerCase();
@@ -99,6 +80,8 @@ const EditItemPage = () => {
   });
 
   const [validationError, setValidationError] = useState<string>("");
+  const [topicBlocked, setTopicBlocked] = useState(false);
+  const topicScopeRef = useRef<TopicScopeFieldsHandle>(null);
   const [savedAsPrivate, setSavedAsPrivate] = useState(false);
   // #290: the server sends a non-admin owner's edit of a public item back to private (re-review).
   const willBecomePrivate = !isAdmin && itemData?.isPrivate === false;
@@ -164,6 +147,7 @@ const EditItemPage = () => {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     setValidationError("");
+    setTopicBlocked(false);
 
     const compacted = compactIncorrectAnswersWithSpeech(
       formData.incorrectAnswers,
@@ -178,8 +162,15 @@ const EditItemPage = () => {
       setValidationError(conflict);
       return;
     }
-    if (!formData.navigationRank1.trim() || !formData.navigationRank2.trim()) {
-      setValidationError("Primary topic (rank 1) and subtopic (rank 2) are required.");
+    if (
+      !isTopicComplete({
+        category: formData.category,
+        rank1: formData.navigationRank1,
+        rank2: formData.navigationRank2,
+      })
+    ) {
+      setTopicBlocked(true);
+      topicScopeRef.current?.focus();
       return;
     }
     const navFormatError =
@@ -308,11 +299,6 @@ const EditItemPage = () => {
           onChange={setFormData}
           onSubmit={handleSubmit}
           onCancel={() => navigate("/categories")}
-          categories={categoriesForForm}
-          rank1Options={rank1Options}
-          rank2Options={rank2Options}
-          isLoadingRank1={isTaxonomyLoading && !!formData.category}
-          isLoadingRank2={isTaxonomyLoading && !!formData.navigationRank1}
           isAdmin={!!isAdmin}
           isPending={updateMutation.isPending}
           validationError={validationError}
@@ -321,6 +307,17 @@ const EditItemPage = () => {
           extraKeywordAutocompleteSource={extraKeywordAutocompleteSource}
           extraKeywordAutocompleteLoading={itemTagKeywordsLoading}
           taxonomyPublicSlugs={selectedCategory?.allKeywordSlugs ?? []}
+          topicError={
+            topicBlocked &&
+            !isTopicComplete({
+              category: formData.category,
+              rank1: formData.navigationRank1,
+              rank2: formData.navigationRank2,
+            })
+              ? TOPIC_REQUIRED_MESSAGE
+              : undefined
+          }
+          topicScopeRef={topicScopeRef}
         />
       </div>
     </div>

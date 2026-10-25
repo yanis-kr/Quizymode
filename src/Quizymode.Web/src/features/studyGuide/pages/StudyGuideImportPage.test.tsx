@@ -1,10 +1,9 @@
 import { beforeEach, describe, expect, it, vi } from "vitest";
-import { render, screen } from "@testing-library/react";
+import { render, screen, waitFor } from "@testing-library/react";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { MemoryRouter, Route, Routes } from "react-router-dom";
 import StudyGuideImportPage from "./StudyGuideImportPage";
-import { categoriesApi } from "@/api/categories";
-import { keywordsApi } from "@/api/keywords";
+import { taxonomyApi } from "@/api/taxonomy";
 import { studyGuidesApi, studyGuideImportApi } from "@/api/studyGuides";
 
 vi.mock("@/contexts/AuthContext", () => ({
@@ -13,15 +12,10 @@ vi.mock("@/contexts/AuthContext", () => ({
   }),
 }));
 
-vi.mock("@/api/categories", () => ({
-  categoriesApi: {
+vi.mock("@/api/taxonomy", () => ({
+  taxonomyApi: {
     getAll: vi.fn(),
-  },
-}));
-
-vi.mock("@/api/keywords", () => ({
-  keywordsApi: {
-    getNavigationKeywords: vi.fn(),
+    suggest: vi.fn(),
   },
 }));
 
@@ -73,18 +67,26 @@ describe("StudyGuideImportPage", () => {
       expiresAtUtc: "2026-04-07T00:00:00Z",
     });
 
-    vi.mocked(categoriesApi.getAll).mockResolvedValue({
-      categories: [{ category: "science" }],
-    } as Awaited<ReturnType<typeof categoriesApi.getAll>>);
-
-    vi.mocked(keywordsApi.getNavigationKeywords).mockImplementation(
-      async (_category, selectedKeywords) => ({
-        keywords:
-          selectedKeywords && selectedKeywords.length > 0
-            ? [{ name: "muscular", itemCount: 0, averageRating: null, navigationRank: 2 }]
-            : [{ name: "anatomy", itemCount: 0, averageRating: null, navigationRank: 1 }],
-      })
-    );
+    vi.mocked(taxonomyApi.getAll).mockResolvedValue({
+      categories: [
+        {
+          slug: "science",
+          name: "Science",
+          description: null,
+          itemCount: 0,
+          allKeywordSlugs: ["anatomy", "muscular"],
+          groups: [
+            {
+              slug: "anatomy",
+              description: null,
+              itemCount: 0,
+              keywords: [{ slug: "muscular", description: null, itemCount: 0 }],
+            },
+          ],
+        },
+      ],
+    });
+    vi.mocked(taxonomyApi.suggest).mockResolvedValue({ suggestions: [] });
 
     vi.mocked(studyGuideImportApi.getSession).mockResolvedValue(undefined as never);
   });
@@ -94,10 +96,22 @@ describe("StudyGuideImportPage", () => {
       "/study-guide/import?category=science&keywords=anatomy,muscular,exam-prep&sets=4"
     );
 
-    expect(await screen.findByLabelText(/category/i)).toHaveValue("science");
+    expect(await screen.findByTestId("topic-pill")).toHaveTextContent("science");
+    await waitFor(() => expect(screen.getByLabelText(/^category \*$/i)).toHaveValue("science"));
     expect(await screen.findByLabelText(/primary topic/i)).toHaveValue("anatomy");
     expect(await screen.findByLabelText(/subtopic/i)).toHaveValue("muscular");
     expect(await screen.findByLabelText(/additional keywords/i)).toHaveValue("exam-prep");
     expect(await screen.findByLabelText(/number of prompt sets/i)).toHaveValue(4);
+  });
+
+  it("shows the picker without chips and never asks for suggestions (#323)", async () => {
+    // AC 12.11
+    renderPage("/study-guide/import");
+
+    expect(await screen.findByRole("combobox", { name: /search topics/i })).toBeInTheDocument();
+    expect(screen.queryByTestId("topic-chip")).not.toBeInTheDocument();
+    // No first-category preselection: the topic starts empty.
+    expect(await screen.findByLabelText(/^category \*$/i)).toHaveValue("");
+    expect(taxonomyApi.suggest).not.toHaveBeenCalled();
   });
 });

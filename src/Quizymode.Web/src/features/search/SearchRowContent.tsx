@@ -7,6 +7,7 @@ import {
   Squares2X2Icon,
 } from "@heroicons/react/24/outline";
 import HighlightedText from "./HighlightedText";
+import TopicBreadcrumb from "@/features/topics/TopicBreadcrumb";
 import type { SearchRowData } from "./searchResultLinks";
 
 interface SearchRowContentProps {
@@ -28,30 +29,6 @@ function CountPill({ count }: { count: number }) {
       <span aria-hidden="true">{count}</span>
       <span className="sr-only">{count === 1 ? "1 item" : `${count} items`}</span>
     </span>
-  );
-}
-
-function Separator() {
-  return (
-    <>
-      <span aria-hidden="true" className="mx-1 text-slate-400">
-        ›
-      </span>
-      <span className="sr-only">, </span>
-    </>
-  );
-}
-
-function Breadcrumb({ parts, tokens }: { parts: string[]; tokens: string[] }) {
-  return (
-    <>
-      {parts.map((part, index) => (
-        <span key={`${part}-${index}`}>
-          {index > 0 && <Separator />}
-          <HighlightedText text={part} tokens={tokens} />
-        </span>
-      ))}
-    </>
   );
 }
 
@@ -96,7 +73,7 @@ const SearchRowContent = ({ data, tokens, density }: SearchRowContentProps) => {
         <Row icon={Squares2X2Icon}>
           <div className="min-w-0 flex-1">
             <div className="font-medium">
-              <Breadcrumb parts={parts} tokens={tokens} />
+              <TopicBreadcrumb parts={parts} tokens={tokens} />
             </div>
             {data.value.description && (
               <div className={descriptionClass}>
@@ -141,7 +118,7 @@ const SearchRowContent = ({ data, tokens, density }: SearchRowContentProps) => {
             </div>
             {crumbs.length > 0 && (
               <div className="mt-0.5 text-xs text-slate-600">
-                <Breadcrumb parts={crumbs} tokens={[]} />
+                <TopicBreadcrumb parts={crumbs} tokens={[]} />
               </div>
             )}
           </div>

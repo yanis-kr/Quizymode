@@ -354,6 +354,24 @@ describe("AuthContext.logout", () => {
     expect(queryClient.getQueryData(["other", "x"])).toEqual({ marker: "keep" });
     queryClient.clear();
   });
+
+  it("purges the per-user taxonomy and topic suggestions on logout (AC 12.17)", async () => {
+    queryClient.setQueryData(["taxonomy", "user-1"], { categories: [] });
+    queryClient.setQueryData(["topic-suggest", "user-1", "0:0"], [{ path: "mine" }]);
+    queryClient.setQueryData(["other", "x"], { marker: "keep" });
+
+    const { result } = renderAuth();
+    await waitFor(() => expect(result.current.isLoading).toBe(false));
+
+    await act(async () => {
+      await result.current.logout();
+    });
+
+    expect(queryClient.getQueryData(["taxonomy", "user-1"])).toBeUndefined();
+    expect(queryClient.getQueryData(["topic-suggest", "user-1", "0:0"])).toBeUndefined();
+    expect(queryClient.getQueryData(["other", "x"])).toEqual({ marker: "keep" });
+    queryClient.clear();
+  });
 });
 
 describe("AuthContext Learn purge on settled load", () => {

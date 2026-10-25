@@ -3,22 +3,23 @@
  * copy it to AI, paste the response, review in memory, then accept/reject before saving.
  */
 import { getIncorrectAnswerConflict } from "@/utils/incorrectAnswerRules";
-import { useState, useMemo, useEffect } from "react";
+import { useState, useMemo, useEffect, useRef } from "react";
 import { useNavigate, useSearchParams } from "react-router-dom";
-import { useQuery, useMutation } from "@tanstack/react-query";
+import { useMutation } from "@tanstack/react-query";
 import { useAuth } from "@/contexts/AuthContext";
 import { useActiveCollection } from "@/hooks/useActiveCollection";
 import { Navigate } from "react-router-dom";
 import ErrorMessage from "@/components/ErrorMessage";
 import { apiClient } from "@/api/client";
 import { collectionsApi } from "@/api/collections";
-import { taxonomyApi } from "@/api/taxonomy";
 import {
   XMarkIcon,
   ClipboardDocumentIcon,
   CheckIcon,
 } from "@heroicons/react/24/outline";
-import { ItemTopicScopeFields } from "@/components/items/ItemTopicScopeFields";
+import { ItemTopicScopeFields, type TopicScopeFieldsHandle } from "@/components/items/ItemTopicScopeFields";
+import { applyTopicScopePatch, isTopicComplete, TOPIC_REQUIRED_MESSAGE } from "@/features/topics/topicScope";
+import { useTaxonomy } from "@/features/topics/useTaxonomy";
 import { validateNavigationKeywordName } from "@/utils/navigationKeywordRules";
 import ContentComplianceNotice from "@/features/legal/components/ContentComplianceNotice";
 import { ActiveCollectionNotice } from "@/components/items/ActiveCollectionNotice";
@@ -125,12 +126,9 @@ const BulkCreateItemsPage = () => {
     details: string;
   }>({ isOpen: false, message: "", details: "" });
 
-  const { data: taxonomyData, isLoading: isTaxonomyLoading } = useQuery({
-    queryKey: ["taxonomy"],
-    queryFn: () => taxonomyApi.getAll(),
-    enabled: isAuthenticated,
-    staleTime: 24 * 60 * 60 * 1000,
-  });
+  const { data: taxonomyData } = useTaxonomy(isAuthenticated);
+  const [topicBlocked, setTopicBlocked] = useState(false);
+  const topicScopeRef = useRef<TopicScopeFieldsHandle>(null);
 
   const categoryOptions = useMemo(() => {
     const rows = (taxonomyData?.categories ?? []).map((c) => ({
@@ -138,21 +136,6 @@ const BulkCreateItemsPage = () => {
     }));
     return [...rows].sort((a, b) => a.category.localeCompare(b.category));
   }, [taxonomyData]);
-
-  const selectedTaxonomyCategory = useMemo(
-    () => taxonomyData?.categories.find((c) => c.slug === category),
-    [taxonomyData, category]
-  );
-
-  const rank1OptionSlugs = useMemo(
-    () => selectedTaxonomyCategory?.groups.map((g) => g.slug) ?? [],
-    [selectedTaxonomyCategory]
-  );
-
-  const rank2OptionSlugs = useMemo(() => {
-    const g = selectedTaxonomyCategory?.groups.find((x) => x.slug === primaryTopic);
-    return g?.keywords.map((k) => k.slug) ?? [];
-  }, [selectedTaxonomyCategory, primaryTopic]);
 
   useEffect(() => {
     if (categoryOptions.length === 0) return;
@@ -185,16 +168,10 @@ const BulkCreateItemsPage = () => {
   /** Shared scope validation for "Generate AI Prompt" and "Paste cloze text". Sets localError and returns false on failure. */
   const validateScope = (): boolean => {
     setLocalError(null);
-    if (!category.trim()) {
-      setLocalError("Select a category.");
-      return false;
-    }
-    if (!primaryTopic.trim()) {
-      setLocalError("Select or enter a primary topic (rank 1).");
-      return false;
-    }
-    if (!subtopic.trim()) {
-      setLocalError("Select or enter a subtopic (rank 2).");
+    setTopicBlocked(false);
+    if (!isTopicComplete({ category, rank1: primaryTopic, rank2: subtopic })) {
+      setTopicBlocked(true);
+      topicScopeRef.current?.focus();
       return false;
     }
     const r1Err = validateNavigationKeywordName(primaryTopic);
@@ -648,24 +625,24 @@ Generate the JSON array only.`;
               </div>
               <ItemTopicScopeFields
                 idPrefix="bulk-topic-scope"
-                categories={categoryOptions}
+                ref={topicScopeRef}
                 category={category}
                 rank1={primaryTopic}
                 rank2={subtopic}
                 onScopeChange={(patch) => {
-                  if (patch.category !== undefined) {
-                    setCategory(patch.category);
-                    setPrimaryTopic("");
-                    setSubtopic("");
-                    return;
-                  }
-                  if (patch.rank1 !== undefined) setPrimaryTopic(patch.rank1);
-                  if (patch.rank2 !== undefined) setSubtopic(patch.rank2);
+                  const next = applyTopicScopePatch(
+                    { category, rank1: primaryTopic, rank2: subtopic },
+                    patch
+                  );
+                  setCategory(next.category);
+                  setPrimaryTopic(next.rank1);
+                  setSubtopic(next.rank2);
                 }}
-                rank1Options={rank1OptionSlugs}
-                rank2Options={rank2OptionSlugs}
-                isLoadingRank1={isTaxonomyLoading && !!category.trim()}
-                isLoadingRank2={isTaxonomyLoading && !!primaryTopic.trim()}
+                error={
+                  topicBlocked && !isTopicComplete({ category, rank1: primaryTopic, rank2: subtopic })
+                    ? TOPIC_REQUIRED_MESSAGE
+                    : undefined
+                }
               />
               <div className="pt-4 border-t border-gray-200/90">
                 <label className="block text-sm font-medium text-gray-700 mb-1">
