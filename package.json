@@ -12,6 +12,7 @@
     "user-guide:local": "npm run screenshots:all && node scripts/generate-user-guide.js --all"
   },
   "devDependencies": {
+    "@axe-core/playwright": "^4.14.0",
     "@playwright/test": "^1.58.2"
   }
 }
