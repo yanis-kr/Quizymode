@@ -34,7 +34,6 @@ public sealed class SeedSyncAdminLeakHttpTests : DatabaseTestFixture
                 services.AddScoped<IValidator<SeedSyncAdmin.Request>, SeedSyncAdmin.Validator>();
                 services.AddSingleton(source);
                 services.AddScoped<LocalSeedLoader>();
-                services.AddScoped<LanguagesTaxonomyNormalizationService>();
                 services.AddSingleton(new Mock<ITaxonomyRegistry>().Object);
                 services.AddScoped<SeedSyncAdminService>();
             },

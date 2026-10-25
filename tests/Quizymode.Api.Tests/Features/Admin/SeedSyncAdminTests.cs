@@ -26,16 +26,12 @@ public sealed class SeedSyncAdminTests : ItemTestFixture
             NullLogger<LocalSeedLoader>.Instance);
 
         Mock<IUserContext> userContext = new();
-        LanguagesTaxonomyNormalizationService languagesTaxonomyNormalizationService = new(
-            DbContext,
-            NullLogger<LanguagesTaxonomyNormalizationService>.Instance);
         _service = new SeedSyncAdminService(
             DbContext,
             TaxonomyRegistry,
             _gitHubSeedSource,
             localSeedLoader,
-            userContext.Object,
-            languagesTaxonomyNormalizationService);
+            userContext.Object);
     }
 
     [Fact]
@@ -438,6 +434,54 @@ public sealed class SeedSyncAdminTests : ItemTestFixture
         result.IsFailure.Should().BeTrue();
         result.Error!.Code.Should().Be("Admin.SeedSyncManifestInvalid");
         result.Error.Description.Should().Be("Items must not contain null entries.");
+    }
+
+    // --- #326: retired Languages paths are rejected at ingest (no startup normalization any more) ---
+
+    [Theory]
+    [InlineData("esl", "beginner")]
+    [InlineData("other-langs", "spanish")]
+    public async Task ApplyManifestAsync_RetiredLanguagesPath_IsRejectedAndSavesNothing(string nav1, string nav2)
+    {
+        DbContext.Categories.Add(new Category
+        {
+            Id = Guid.NewGuid(),
+            Name = "languages",
+            IsPrivate = false,
+            CreatedBy = "seeder",
+            CreatedAt = DateTime.UtcNow
+        });
+        await DbContext.SaveChangesAsync();
+
+        Guid itemId = Guid.NewGuid();
+        SeedSyncAdmin.SeedItemRequest legacyItem = new(
+            ItemId: itemId,
+            Category: "languages",
+            NavigationKeyword1: nav1,
+            NavigationKeyword2: nav2,
+            Question: "How do you say hello?",
+            CorrectAnswer: "Hola",
+            IncorrectAnswers: ["Adios"],
+            Explanation: null,
+            Keywords: null,
+            Source: "seed-test",
+            QuestionSpeech: null,
+            CorrectAnswerSpeech: null,
+            IncorrectAnswerSpeech: null);
+        SeedSyncAdmin.ManifestRequest manifest = new("seed", [legacyItem], [], DeltaPreviewLimit: 50);
+        SeedSyncAdmin.SourceContext context = new("quizymode", "quizymode", "main", "abc", "items", 1, "collections", 0);
+
+        Result<SeedSyncAdmin.ApplyResponse> applyResult = await _service.ApplyManifestAsync(
+            manifest, context, CancellationToken.None, recordHistory: true);
+        Result<SeedSyncAdmin.PreviewResponse> previewResult = await _service.PreviewManifestAsync(
+            manifest, context, CancellationToken.None);
+
+        applyResult.IsFailure.Should().BeTrue();
+        applyResult.Error!.Code.Should().Be("Item.InvalidNavigationPath");
+        previewResult.IsFailure.Should().BeTrue();
+        previewResult.Error!.Code.Should().Be("Item.InvalidNavigationPath");
+        (await DbContext.Items.AnyAsync(i => i.Id == itemId)).Should().BeFalse();
+        (await DbContext.SeedSyncRuns.AnyAsync()).Should().BeFalse();
     }
 
     private SeedSyncAdmin.Request BuildRequest(
