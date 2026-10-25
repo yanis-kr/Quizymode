@@ -107,6 +107,11 @@ public static class TrackPageView
         }
 
         string normalizedQueryString = NormalizeQueryString(request.QueryString);
+        if (IsSearchPath(normalizedPath))
+        {
+            // The search text is user input (#324): never store it, whichever field the client put it in.
+            normalizedQueryString = string.Empty;
+        }
         if (normalizedQueryString.Length > 2048)
         {
             return Result.Failure<Response>(
@@ -318,7 +323,22 @@ public static class TrackPageView
 
     private static string NormalizePath(string? path)
     {
-        return (path ?? string.Empty).Trim();
+        string trimmed = (path ?? string.Empty).Trim();
+        if (IsSearchPath(trimmed))
+        {
+            int separator = trimmed.IndexOfAny(['?', '#']);
+            return separator >= 0 ? trimmed[..separator] : trimmed;
+        }
+
+        return trimmed;
+    }
+
+    /// <summary>True for <c>/search</c> and <c>/search/</c>, with or without a query string or fragment.</summary>
+    internal static bool IsSearchPath(string path)
+    {
+        int separator = path.IndexOfAny(['?', '#']);
+        string pathOnly = (separator >= 0 ? path[..separator] : path).TrimEnd('/');
+        return string.Equals(pathOnly, "/search", StringComparison.OrdinalIgnoreCase);
     }
 
     private static string NormalizeQueryString(string? queryString)

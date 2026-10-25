@@ -24,6 +24,10 @@ public static class AnalyticsEventCatalog
     public const string FlashcardGraded = "flashcard_graded";
     public const string QuizResultShared = "quiz_result_shared";
 
+    // Global search (#321). Neither event carries query text; neither is a funnel step.
+    public const string SearchPerformed = "search_performed";
+    public const string SearchResultClicked = "search_result_clicked";
+
     /// <summary>Optional fields an event may carry beyond name, session, path, and context.</summary>
     [Flags]
     public enum EventFields
@@ -69,7 +73,12 @@ public static class AnalyticsEventCatalog
         // A completed run's result was shared (#253): one per run. Not a funnel step.
         [QuizResultShared] = new(
             EventFields.RunId | EventFields.Score | EventFields.Total,
-            EventFields.RunId | EventFields.Score | EventFields.Total)
+            EventFields.RunId | EventFields.Score | EventFields.Total),
+        // One per committed search (result click, Enter, See all, or the /search page loading); Total is the
+        // number of results shown. The query text is never sent.
+        [SearchPerformed] = new(EventFields.Total, EventFields.Total),
+        // Position is the 1-based rank of the clicked result; the context is the public target (never a private one).
+        [SearchResultClicked] = new(EventFields.Position, EventFields.Position)
     };
 
     /// <summary>The initial conversion funnel, in step order, as reported to admins.</summary>
@@ -95,9 +104,12 @@ public static class AnalyticsEventCatalog
         "daily",
         "flashcards",
         "home",
+        "item",
         "learn",
+        "mine",
         "quiz",
-        "review"
+        "review",
+        "search"
     };
 
     public const int MaxScoreOrTotal = 500;

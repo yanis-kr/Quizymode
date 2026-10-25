@@ -114,7 +114,11 @@ public static partial class TrackAnalyticsEvents
 
             RuleFor(x => x.Position).InclusiveBetween(1, AnalyticsEventCatalog.MaxScoreOrTotal);
             RuleFor(x => x.Score).InclusiveBetween(0, AnalyticsEventCatalog.MaxScoreOrTotal);
-            RuleFor(x => x.Total).InclusiveBetween(1, AnalyticsEventCatalog.MaxScoreOrTotal);
+            RuleFor(x => x.Total).InclusiveBetween(1, AnalyticsEventCatalog.MaxScoreOrTotal)
+                .When(x => x.Name != AnalyticsEventCatalog.SearchPerformed);
+            // A search can legitimately show zero results.
+            RuleFor(x => x.Total).InclusiveBetween(0, AnalyticsEventCatalog.MaxScoreOrTotal)
+                .When(x => x.Name == AnalyticsEventCatalog.SearchPerformed);
 
             RuleFor(x => x)
                 .Must(x => x.Score is null || x.Total is null || x.Score <= x.Total)
