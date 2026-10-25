@@ -50,7 +50,7 @@ const SearchCombobox = ({
   shortcutHint,
 }: SearchComboboxProps) => {
   const navigate = useNavigate();
-  const { isAuthenticated } = useAuth();
+  const { isAuthenticated, userId } = useAuth();
   const overlay = variant === "overlay";
 
   const [open, setOpen] = useState(overlay);
@@ -65,7 +65,7 @@ const SearchCombobox = ({
     types,
     limit: GROUP_PREVIEW_LIMIT,
     offset: 0,
-    signedIn: isAuthenticated,
+    userId,
   });
 
   const rateLimit = query.isError ? getSearchRateLimit(query.error) : null;

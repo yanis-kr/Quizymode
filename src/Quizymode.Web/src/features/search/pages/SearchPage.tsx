@@ -107,7 +107,7 @@ function ResultRow({
 const SearchPage = () => {
   const [searchParams] = useSearchParams();
   const navigate = useNavigate();
-  const { isAuthenticated, isLoading: authLoading } = useAuth();
+  const { isAuthenticated, isLoading: authLoading, userId } = useAuth();
   // While auth is still resolving, keep a mine tab in the URL instead of silently downgrading it.
   const { q, tab, page } = parseSearchParams(searchParams, isAuthenticated || authLoading);
   const trimmed = q.trim();
@@ -121,7 +121,7 @@ const SearchPage = () => {
     types: tabSearchTypes(tab, isAuthenticated),
     limit,
     offset,
-    signedIn: isAuthenticated,
+    userId,
     debounce: false,
   });
 

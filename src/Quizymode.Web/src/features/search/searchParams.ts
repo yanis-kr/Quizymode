@@ -72,3 +72,16 @@ export function tabSearchTypes(tab: SearchTab, signedIn: boolean): SearchType[] 
         : ["categories", "subcategories", "collections", "items"];
   }
 }
+
+export const SEARCH_QUERY_ROOT = "search";
+
+/** Cache key of one search; includes the user so one user's `mine` titles are never served to another. */
+export function searchQueryKey(parts: {
+  q: string;
+  typesKey: string;
+  limit: number;
+  offset: number;
+  userId: string | null;
+}): readonly unknown[] {
+  return [SEARCH_QUERY_ROOT, parts.q, parts.typesKey, parts.limit, parts.offset, parts.userId ?? "anon"];
+}

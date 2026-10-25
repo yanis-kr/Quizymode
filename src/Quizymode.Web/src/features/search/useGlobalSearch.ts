@@ -1,7 +1,7 @@
 import { keepPreviousData, useQuery, type UseQueryResult } from "@tanstack/react-query";
 import { useEffect, useState } from "react";
 import { searchApi, type SearchResponse, type SearchType } from "@/api/search";
-import { MIN_QUERY_LENGTH } from "./searchParams";
+import { MIN_QUERY_LENGTH, searchQueryKey } from "./searchParams";
 
 export const SEARCH_DEBOUNCE_MS = 200;
 
@@ -20,8 +20,8 @@ interface UseGlobalSearchOptions {
   types: SearchType[];
   limit: number;
   offset: number;
-  /** Which kind of visitor is asking; results differ (`mine`), so the cache is split. */
-  signedIn: boolean;
+  /** The signed-in user id, or null for anonymous visitors; results differ per user (`mine`), so the cache is split. */
+  userId: string | null;
   /** Set false on the /search page, where the URL already is a committed search. */
   debounce?: boolean;
 }
@@ -43,7 +43,7 @@ export function useGlobalSearch({
   types,
   limit,
   offset,
-  signedIn,
+  userId,
   debounce = true,
 }: UseGlobalSearchOptions): GlobalSearchResult {
   const debouncedQ = useDebouncedValue(q, SEARCH_DEBOUNCE_MS);
@@ -52,7 +52,7 @@ export function useGlobalSearch({
   const enabled = effectiveQ.trim().length >= MIN_QUERY_LENGTH;
 
   const query = useQuery({
-    queryKey: ["search", effectiveQ, typesKey, limit, offset, signedIn],
+    queryKey: searchQueryKey({ q: effectiveQ, typesKey, limit, offset, userId }),
     queryFn: ({ signal }) => searchApi.search({ q: effectiveQ, types, limit, offset }, signal),
     enabled,
     retry: false,

@@ -1,6 +1,7 @@
 using FluentAssertions;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Caching.Memory;
+using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Logging.Abstractions;
 using Microsoft.Extensions.Options;
 using Quizymode.Api.Data;
@@ -469,6 +470,51 @@ public sealed class SearchQueryPostgresTests(PostgresContainerFixture fixture) :
         secondPage.Value.Groups.Items!.Results.Should().HaveCount(1);
         secondPage.Value.Groups.Items.HasMore.Should().BeFalse();
         firstPage.Value.Groups.Items.Results.Select(r => r.Id).Should().NotIntersectWith(secondPage.Value.Groups.Items.Results.Select(r => r.Id));
+    }
+
+    [SkippableFact]
+    public async Task Search_WhenPostgresRejectsTheQuery_Returns200ShapedEmptyGroupsAndLogsWarningWithoutQ()
+    {
+        RequireDatabase();
+        // A database that does not exist makes the first query fail with a PostgresException (SQLSTATE 3D000).
+        string missingDatabase = new Npgsql.NpgsqlConnectionStringBuilder(fixture.ConnectionString)
+        {
+            Database = "missing_" + Guid.NewGuid().ToString("N")
+        }.ConnectionString;
+        DbContextOptions<ApplicationDbContext> options = new DbContextOptionsBuilder<ApplicationDbContext>()
+            .UseNpgsql(missingDatabase)
+            .Options;
+        await using ApplicationDbContext db = new(options);
+
+        string secret = Word("secretterm");
+        CapturingLogger logger = new();
+        TaxonomySearchIndex index = new(Registry);
+        TaxonomySearchCounts counts = new(index, new MemoryCache(new MemoryCacheOptions()), NullLogger<TaxonomySearchCounts>.Instance);
+
+        Result<GlobalSearch.Response> result = await GlobalSearch.HandleAsync(
+            new GlobalSearch.Request(secret, "collections,items", null, null),
+            db, FakeUserContext.Anonymous, index, counts, logger, CancellationToken.None);
+
+        result.IsSuccess.Should().BeTrue();
+        result.Value.Groups.Collections!.Results.Should().BeEmpty();
+        result.Value.Groups.Collections.HasMore.Should().BeFalse();
+        result.Value.Groups.Items!.Results.Should().BeEmpty();
+        logger.Entries.Should().ContainSingle(entry => entry.Level == LogLevel.Warning);
+        logger.Entries.Should().OnlyContain(entry => !entry.Message.Contains(secret, StringComparison.OrdinalIgnoreCase));
+    }
+
+    private sealed class CapturingLogger : ILogger
+    {
+        public List<(LogLevel Level, string Message)> Entries { get; } = [];
+
+        public IDisposable? BeginScope<TState>(TState state) where TState : notnull => null;
+
+        public bool IsEnabled(LogLevel logLevel) => true;
+
+        public void Log<TState>(LogLevel logLevel, EventId eventId, TState state, Exception? exception, Func<TState, Exception?, string> formatter)
+        {
+            Entries.Add((logLevel, formatter(state, exception)));
+        }
     }
 
     private static Guid AddDocument(ApplicationDbContext db, string userId, string title, DateTime expiresUtc)

@@ -1,7 +1,20 @@
 import { describe, expect, it } from "vitest";
-import { buildSearchUrl, parseSearchParams, tabSearchTypes } from "./searchParams";
+import { buildSearchUrl, parseSearchParams, searchQueryKey, tabSearchTypes } from "./searchParams";
 
 const parse = (query: string, signedIn = false) => parseSearchParams(new URLSearchParams(query), signedIn);
+
+describe("searchQueryKey", () => {
+  const base = { q: "latin", typesKey: "items,mine", limit: 5, offset: 0 };
+
+  it("differs per user so cached `mine` titles are never shared (AC 11)", () => {
+    const a = searchQueryKey({ ...base, userId: "user-a" });
+    const b = searchQueryKey({ ...base, userId: "user-b" });
+    const anon = searchQueryKey({ ...base, userId: null });
+    expect(a).not.toEqual(b);
+    expect(a).not.toEqual(anon);
+    expect(anon).toEqual(searchQueryKey({ ...base, userId: null }));
+  });
+});
 
 describe("parseSearchParams", () => {
   it("defaults to an empty query on the All tab, page 1", () => {

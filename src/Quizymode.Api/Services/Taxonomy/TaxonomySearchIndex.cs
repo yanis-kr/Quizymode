@@ -75,7 +75,7 @@ internal sealed class TaxonomySearchIndex : ITaxonomySearchIndex
 
     public IReadOnlyList<TaxonomySearchHit> Search(string query, TaxonomyNodeLevels levels, int limit, int offset)
     {
-        List<string> tokens = Tokenize(query).Distinct(StringComparer.Ordinal).Take(MaxQueryTokens).ToList();
+        List<string> tokens = Tokenize(StripNegatedTokens(query)).Distinct(StringComparer.Ordinal).Take(MaxQueryTokens).ToList();
         if (tokens.Count == 0 || limit <= 0)
         {
             return [];
@@ -123,6 +123,37 @@ internal sealed class TaxonomySearchIndex : ITaxonomySearchIndex
             .Skip(Math.Max(0, offset))
             .Take(limit)
             .ToList();
+    }
+
+    /// <summary>Blanks every token that starts with <c>-</c> (a search exclusion) so it never contributes a match.</summary>
+    private static string StripNegatedTokens(string query)
+    {
+        char[] chars = query.ToCharArray();
+        bool atTokenStart = true;
+        bool negated = false;
+        for (int index = 0; index < chars.Length; index++)
+        {
+            char c = chars[index];
+            if (char.IsWhiteSpace(c))
+            {
+                atTokenStart = true;
+                negated = false;
+                continue;
+            }
+
+            if (atTokenStart && c == '-')
+            {
+                negated = true;
+            }
+
+            atTokenStart = false;
+            if (negated)
+            {
+                chars[index] = ' ';
+            }
+        }
+
+        return new string(chars);
     }
 
     /// <summary>Lowercases and splits on every character that is not a letter or digit.</summary>

@@ -36,6 +36,18 @@ public sealed class TaxonomySearchIndexTests
     }
 
     [Fact]
+    public void Search_NegatedToken_IsSkippedSoExclusionNeverAddsAMatch()
+    {
+        TaxonomySearchIndex index = CreateIndex();
+
+        index.Search("-ai", TaxonomyNodeLevels.Subcategories, 5, 0).Should().BeEmpty();
+        index.Search("tech -zzzz", TaxonomyNodeLevels.Category, 5, 0)
+            .Should().BeEquivalentTo(index.Search("tech", TaxonomyNodeLevels.Category, 5, 0));
+        index.Search("artificial -intelligence", TaxonomyNodeLevels.Subcategories, 5, 0)
+            .Should().BeEquivalentTo(index.Search("artificial", TaxonomyNodeLevels.Subcategories, 5, 0));
+    }
+
+    [Fact]
     public void Search_Categories_OnlyReturnsCategoryNodes()
     {
         IReadOnlyList<TaxonomySearchHit> hits = CreateIndex().Search("tech", TaxonomyNodeLevels.Category, 5, 0);
