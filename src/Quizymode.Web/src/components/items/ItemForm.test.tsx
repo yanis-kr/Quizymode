@@ -64,7 +64,7 @@ describe("ItemForm", () => {
         isPending={false}
       />
     );
-    expect(screen.getByRole("button", { name: /create item/i })).toBeInTheDocument();
+    expect(screen.getByRole("button", { name: /save and study/i })).toBeInTheDocument();
   });
 
   it("renders edit mode submit button label", () => {
@@ -79,7 +79,7 @@ describe("ItemForm", () => {
         isPending={false}
       />
     );
-    expect(screen.getByRole("button", { name: /save changes/i })).toBeInTheDocument();
+    expect(screen.getByRole("button", { name: /^save$/i })).toBeInTheDocument();
   });
 
   it("renders the topic group with a category select fed by the taxonomy, without a required attribute", async () => {
@@ -165,7 +165,7 @@ describe("ItemForm", () => {
         isPending={true}
       />
     );
-    expect(screen.getByRole("button", { name: /creating/i })).toBeDisabled();
+    expect(screen.getByRole("button", { name: /saving/i })).toBeDisabled();
   });
 
   it("asks for common topics once in create mode and never in edit mode", async () => {
@@ -199,5 +199,117 @@ describe("ItemForm", () => {
     await screen.findByRole("option", { name: "Math" });
     await vi.waitFor(() => expect(taxonomyApi.suggest).toHaveBeenCalledTimes(1));
     expect(vi.mocked(taxonomyApi.suggest).mock.calls[0][0]).toBe("");
+  });
+
+  function renderCreate(extra: Partial<React.ComponentProps<typeof ItemForm>> = {}) {
+    return renderForm(
+      <ItemForm
+        mode="create"
+        values={defaultValues}
+        onChange={() => {}}
+        onSubmit={() => {}}
+        onCancel={() => {}}
+        isAdmin={false}
+        isPending={false}
+        {...extra}
+      />
+    );
+  }
+
+  it("puts question and answers first, then More options, then Save to (#296)", async () => {
+    renderCreate();
+    await screen.findByRole("option", { name: "Math" });
+    const question = screen.getByLabelText(/^question \*/i);
+    const correct = screen.getByLabelText(/^correct answer \*/i);
+    const incorrect = screen.getByPlaceholderText("Incorrect answer 1");
+    const more = screen.getByRole("button", { name: /more options/i });
+    const saveTo = screen.getByRole("heading", { name: "Save to" });
+    const follows = (a: HTMLElement, b: HTMLElement) =>
+      Boolean(a.compareDocumentPosition(b) & Node.DOCUMENT_POSITION_FOLLOWING);
+    expect(follows(question, correct)).toBe(true);
+    expect(follows(correct, incorrect)).toBe(true);
+    expect(follows(incorrect, more)).toBe(true);
+    expect(follows(more, saveTo)).toBe(true);
+    expect(screen.getByRole("heading", { name: "Question and answers" })).toBeInTheDocument();
+  });
+
+  it("keeps More options collapsed by default and toggles it (#296)", async () => {
+    const user = userEvent.setup({ delay: null });
+    renderCreate();
+    const toggle = screen.getByRole("button", { name: /more options/i });
+    expect(toggle).toHaveAttribute("aria-expanded", "false");
+    const region = document.getElementById(toggle.getAttribute("aria-controls") ?? "");
+    expect(region).toHaveAttribute("hidden");
+    expect(screen.queryByRole("textbox", { name: /explanation/i })).not.toBeInTheDocument();
+
+    await user.click(toggle);
+    expect(toggle).toHaveAttribute("aria-expanded", "true");
+    expect(region).not.toHaveAttribute("hidden");
+    expect(screen.getByRole("textbox", { name: /explanation/i })).toBeInTheDocument();
+  });
+
+  it("opens More options when the server error points at a field inside it (#296)", () => {
+    renderCreate({ submitError: "Explanation must be at most 2000 characters." });
+    expect(screen.getByRole("button", { name: /more options/i })).toHaveAttribute(
+      "aria-expanded",
+      "true"
+    );
+  });
+
+  it("opens More options in edit mode when a stored value exists, not otherwise (#296)", () => {
+    const { unmount } = renderForm(
+      <ItemForm
+        mode="edit"
+        values={{ ...defaultValues, explanation: "Because." }}
+        onChange={() => {}}
+        onSubmit={() => {}}
+        onCancel={() => {}}
+        isAdmin={false}
+        isPending={false}
+      />
+    );
+    expect(screen.getByRole("button", { name: /more options/i })).toHaveAttribute(
+      "aria-expanded",
+      "true"
+    );
+    unmount();
+    renderForm(
+      <ItemForm
+        mode="edit"
+        values={defaultValues}
+        onChange={() => {}}
+        onSubmit={() => {}}
+        onCancel={() => {}}
+        isAdmin={false}
+        isPending={false}
+      />
+    );
+    expect(screen.getByRole("button", { name: /more options/i })).toHaveAttribute(
+      "aria-expanded",
+      "false"
+    );
+  });
+
+  it("edit mode has a single Save button and no create actions (#296)", () => {
+    renderForm(
+      <ItemForm
+        mode="edit"
+        values={defaultValues}
+        onChange={() => {}}
+        onSubmit={() => {}}
+        onCancel={() => {}}
+        isAdmin={false}
+        isPending={false}
+      />
+    );
+    expect(screen.getByRole("button", { name: "Save" })).toHaveAttribute("type", "submit");
+    expect(screen.queryByRole("button", { name: /save and/i })).not.toBeInTheDocument();
+    expect(screen.queryByRole("button", { name: /add another/i })).not.toBeInTheDocument();
+  });
+
+  it("create mode shows both save buttons, disabled while pending (#296)", () => {
+    renderCreate({ isPending: true });
+    expect(screen.getByRole("button", { name: /save and add another/i })).toBeDisabled();
+    expect(screen.getByRole("button", { name: /saving/i })).toBeDisabled();
   });
 });

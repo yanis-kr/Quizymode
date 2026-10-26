@@ -37,6 +37,10 @@ interface ApiProblemDetails {
 
 type CreateItemErrorResponse = ApiValidationError[] | string | ApiProblemDetails;
 
+type SaveAction = "study" | "another";
+
+const SAVED_ADD_NEXT_MESSAGE = "Saved. Add the next question.";
+
 function buildInitialFormData(
   category: string,
   rank1: string,
@@ -98,7 +102,9 @@ function CreateItemEditor({
   const [formData, setFormData] = useState(initialValues);
   const [validationError, setValidationError] = useState("");
   const [topicBlocked, setTopicBlocked] = useState(false);
+  const [statusMessage, setStatusMessage] = useState("");
   const topicScopeRef = useRef<TopicScopeFieldsHandle>(null);
+  const questionRef = useRef<HTMLTextAreaElement>(null);
   const topicAnalytics = useTopicSuggestionAnalytics();
   const { activeCollectionId } = useActiveCollection();
 
@@ -121,8 +127,9 @@ function CreateItemEditor({
     useExtraKeywordAutocompleteSource(formData.category, taxonomyExtraSlugs, isAuthenticated);
 
   const createMutation = useMutation({
-    mutationFn: (data: CreateItemRequest) => itemsApi.create(data),
-    onSuccess: (data, variables) => {
+    mutationFn: async ({ data }: { data: CreateItemRequest; action: SaveAction }) =>
+      itemsApi.create(data),
+    onSuccess: async (data, { data: variables, action }) => {
       queryClient.invalidateQueries({ queryKey: ["categoryItems"] });
       queryClient.invalidateQueries({ queryKey: ["categories"] });
       const category = variables.category.trim();
@@ -136,9 +143,33 @@ function CreateItemEditor({
         isPrivate: variables.isPrivate !== false,
       });
       const createdItemId = typeof data?.id === "string" ? data.id : "";
+      // A failure to add to the active collection never blocks the save or the navigation.
+      const addToCollection =
+        activeCollectionId && createdItemId
+          ? collectionsApi.addItem(activeCollectionId, { itemId: createdItemId }).catch(() => {})
+          : Promise.resolve();
+
+      if (action === "another") {
+        setStatusMessage(SAVED_ADD_NEXT_MESSAGE);
+        setFormData((current) => ({
+          ...current,
+          question: "",
+          questionSpeech: {},
+          correctAnswer: "",
+          correctAnswerSpeech: {},
+          incorrectAnswers: ["", "", ""],
+          incorrectAnswerSpeech: {},
+          explanation: "",
+        }));
+        questionRef.current?.focus();
+        return;
+      }
+
+      // Study opens the collection route, so wait until the item has been added to it.
+      await addToCollection;
       if (activeCollectionId && createdItemId) {
-        // Fire-and-forget: silently add to active collection; failure does not block navigation
-        collectionsApi.addItem(activeCollectionId, { itemId: createdItemId }).catch(() => {});
+        navigate(`/explore/collections/${activeCollectionId}/item/${createdItemId}`);
+        return;
       }
       navigate(createdItemId ? `/items/${createdItemId}` : "/categories");
     },
@@ -150,9 +181,10 @@ function CreateItemEditor({
     },
   });
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
+  const save = (action: SaveAction) => {
+    if (createMutation.isPending) return;
     setValidationError("");
+    setStatusMessage("");
     setTopicBlocked(false);
 
     const compacted = compactIncorrectAnswersWithSpeech(
@@ -214,7 +246,12 @@ function CreateItemEditor({
       readyForReview: formData.readyForReview,
     };
 
-    createMutation.mutate(data);
+    createMutation.mutate({ data, action });
+  };
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    save("study");
   };
 
   return (
@@ -223,6 +260,9 @@ function CreateItemEditor({
       values={formData}
       onChange={setFormData}
       onSubmit={handleSubmit}
+      onSaveAndAddAnother={() => save("another")}
+      statusMessage={statusMessage}
+      questionRef={questionRef}
       onCancel={() => navigate("/categories")}
       isAdmin={isAdmin}
       isPending={createMutation.isPending}

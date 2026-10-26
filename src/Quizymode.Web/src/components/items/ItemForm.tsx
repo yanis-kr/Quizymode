@@ -56,7 +56,18 @@ export interface ItemFormProps {
   topicScopeRef?: Ref<TopicScopeFieldsHandle>;
   /** Create mode only: called when a set of topic chips has been shown. */
   onTopicSuggestionsShown?: (suggestions: TopicSuggestion[]) => void;
+  /** Create mode only: saves, then resets the question fields for the next one (#296). */
+  onSaveAndAddAnother?: () => void;
+  /** Create mode only: non-blocking confirmation announced in a status region (#296). */
+  statusMessage?: string;
+  /** Focus handle for the Question field, used by the page after Save and add another. */
+  questionRef?: Ref<HTMLTextAreaElement>;
+  /** Error that belongs to a field inside More options; opens the disclosure. */
+  moreOptionsError?: string;
 }
+
+/** Server messages that point at a field inside More options. */
+const MORE_OPTIONS_ERROR_PATTERN = /explanation|source|pronunciation|language code|extra keyword|additional keyword/i;
 
 export function ItemForm({
   mode,
@@ -75,12 +86,34 @@ export function ItemForm({
   topicError,
   topicScopeRef,
   onTopicSuggestionsShown,
+  onSaveAndAddAnother,
+  statusMessage,
+  questionRef,
+  moreOptionsError,
 }: ItemFormProps) {
   const [newKeywordName, setNewKeywordName] = useState("");
   const [suggestOpen, setSuggestOpen] = useState(false);
   const [highlightIndex, setHighlightIndex] = useState(-1);
   const keywordInputContainerRef = useRef<HTMLDivElement>(null);
   const listboxId = `${mode}-extra-keyword-listbox`;
+  const moreOptionsId = `${mode}-more-options`;
+  const [moreOpenChoice, setMoreOpenChoice] = useState<boolean | null>(null);
+
+  const errorInMoreOptions =
+    Boolean(moreOptionsError) ||
+    (submitError !== undefined && MORE_OPTIONS_ERROR_PATTERN.test(submitError));
+  const moreOptionsHasValue =
+    values.explanation.trim() !== "" ||
+    values.source.trim() !== "" ||
+    values.keywords.length > 0 ||
+    Boolean(values.questionSpeech.pronunciation || values.questionSpeech.languageCode) ||
+    Boolean(values.correctAnswerSpeech.pronunciation || values.correctAnswerSpeech.languageCode) ||
+    Object.values(values.incorrectAnswerSpeech).some((sp) => sp?.pronunciation || sp?.languageCode);
+  // Closed by default; opens by itself for an error inside it, or on edit for a stored value.
+  // Once the user toggles it their choice wins, except that an error always opens it.
+  const moreOpen =
+    errorInMoreOptions ||
+    (moreOpenChoice ?? (mode === "edit" && moreOptionsHasValue));
 
   const publicTaxonomySlugSet = useMemo(
     () => new Set(taxonomyPublicSlugs.map((s) => s.trim().toLowerCase()).filter(Boolean)),
@@ -174,6 +207,146 @@ export function ItemForm({
     });
   };
 
+  const keywordBlock = (
+    <div>
+      <label className="block text-sm font-medium text-gray-700 mb-2">
+        Additional keywords (optional; official taxonomy slugs attach as shared tags, new labels
+        are private until reviewed)
+      </label>
+      <p className="text-xs text-gray-500 mb-2">
+        Type to see up to {EXTRA_KEYWORD_AUTOCOMPLETE_LIMIT} matching tags (prefix search), or enter a
+        new label (letters, numbers, hyphens; max {NAV_KEYWORD_MAX_LEN} chars).
+      </p>
+      {extraKeywordAutocompleteLoading && values.category.trim() !== "" && (
+        <p className="text-xs text-gray-500 mb-2" aria-live="polite">
+          Loading keyword suggestions for this category…
+        </p>
+      )}
+      <div className="flex gap-2 mb-2">
+        <div ref={keywordInputContainerRef} className="relative flex-1">
+          <input
+            type="text"
+            value={newKeywordName}
+            onChange={(e) => {
+              setNewKeywordName(e.target.value.slice(0, NAV_KEYWORD_MAX_LEN));
+              setSuggestOpen(true);
+            }}
+            onFocus={() => setSuggestOpen(true)}
+            onBlur={() => {
+              // Defer so mousedown on an option runs first
+              window.setTimeout(() => setSuggestOpen(false), 120);
+            }}
+            placeholder={`Keyword (max ${NAV_KEYWORD_MAX_LEN} chars)`}
+            maxLength={NAV_KEYWORD_MAX_LEN}
+            autoComplete="off"
+            role="combobox"
+            aria-expanded={Boolean(suggestOpen && matches.length > 0)}
+            aria-controls={listboxId}
+            aria-autocomplete="list"
+            aria-activedescendant={
+              suggestOpen && highlightIndex >= 0 && matches[highlightIndex]
+                ? `${listboxId}-opt-${highlightIndex}`
+                : undefined
+            }
+            className="w-full px-3 py-2 border border-gray-300 rounded-md text-sm bg-white text-gray-900 placeholder:text-gray-500"
+            onKeyDown={(e) => {
+              if (e.key === "ArrowDown") {
+                if (matches.length === 0) return;
+                e.preventDefault();
+                setSuggestOpen(true);
+                setHighlightIndex((i) =>
+                  i < matches.length - 1 ? i + 1 : i >= 0 ? i : 0
+                );
+                return;
+              }
+              if (e.key === "ArrowUp") {
+                if (matches.length === 0) return;
+                e.preventDefault();
+                setSuggestOpen(true);
+                setHighlightIndex((i) => (i > 0 ? i - 1 : 0));
+                return;
+              }
+              if (e.key === "Escape") {
+                if (suggestOpen) {
+                  e.preventDefault();
+                  setSuggestOpen(false);
+                }
+                return;
+              }
+              if (e.key === "Enter") {
+                e.preventDefault();
+                if (
+                  suggestOpen &&
+                  matches.length > 0 &&
+                  highlightIndex >= 0 &&
+                  matches[highlightIndex]
+                ) {
+                  tryAddKeyword(matches[highlightIndex]);
+                } else {
+                  addKeyword();
+                }
+              }
+            }}
+          />
+          {suggestOpen && matches.length > 0 && (
+            <ul
+              id={listboxId}
+              role="listbox"
+              className="absolute z-20 mt-1 max-h-60 w-full overflow-auto rounded-md border border-gray-200 bg-white py-1 text-sm shadow-lg"
+            >
+              {matches.map((name, idx) => (
+                <li
+                  key={name}
+                  id={`${listboxId}-opt-${idx}`}
+                  role="option"
+                  aria-selected={idx === highlightIndex}
+                  className={`cursor-pointer px-3 py-2 ${
+                    idx === highlightIndex ? "bg-indigo-50 text-indigo-900" : "text-gray-800"
+                  }`}
+                  onMouseEnter={() => setHighlightIndex(idx)}
+                  onMouseDown={(ev) => {
+                    ev.preventDefault();
+                    tryAddKeyword(name);
+                  }}
+                >
+                  {name}
+                </li>
+              ))}
+            </ul>
+          )}
+        </div>
+        <button
+          type="button"
+          onClick={addKeyword}
+          className="px-4 py-2 text-sm font-medium text-white bg-indigo-600 rounded-md hover:bg-indigo-700 shrink-0"
+        >
+          Add
+        </button>
+      </div>
+      {values.keywords.length > 0 && (
+        <div className="flex flex-wrap gap-2">
+          {values.keywords.map((keyword, index) => (
+            <span
+              key={index}
+              className="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-blue-100 text-blue-800"
+            >
+              {keyword.name}
+              {keyword.isPrivate && <span className="ml-1 text-xs">🔒</span>}
+              <button
+                type="button"
+                onClick={() => removeKeyword(index)}
+                className="ml-2 inline-flex items-center justify-center w-4 h-4 rounded-full hover:bg-blue-200"
+                aria-label={`Remove ${keyword.name}`}
+              >
+                ×
+              </button>
+            </span>
+          ))}
+        </div>
+      )}
+    </div>
+  );
+
   return (
     <form
       onSubmit={onSubmit}
@@ -189,12 +362,260 @@ export function ItemForm({
         />
       )}
 
+      <section aria-labelledby={`${mode}-question-heading`} className="space-y-6">
+        <h2 id={`${mode}-question-heading`} className="text-lg font-semibold text-gray-900">
+          Question and answers
+        </h2>
+        <div>
+          <label
+            htmlFor={`${mode}-question`}
+            className="block text-sm font-medium text-gray-700 mb-2"
+          >
+            Question *
+          </label>
+          <textarea
+            id={`${mode}-question`}
+            ref={questionRef}
+            value={values.question}
+            onChange={(e) => onChange({ ...values, question: e.target.value })}
+            required
+            rows={3}
+            className="w-full px-3 py-2 border border-gray-300 rounded-md text-sm bg-white text-gray-900 placeholder:text-gray-500"
+          />
+        </div>
+
+        <div>
+          <label
+            htmlFor={`${mode}-correct-answer`}
+            className="block text-sm font-medium text-gray-700 mb-2"
+          >
+            Correct Answer *
+          </label>
+          <input
+            id={`${mode}-correct-answer`}
+            type="text"
+            value={values.correctAnswer}
+            onChange={(e) =>
+              onChange({ ...values, correctAnswer: e.target.value })
+            }
+            required
+            className="w-full px-3 py-2 border border-gray-300 rounded-md text-sm bg-white text-gray-900 placeholder:text-gray-500"
+          />
+        </div>
+
+        <div>
+          <label className="block text-sm font-medium text-gray-700 mb-2">
+            Incorrect Answers (at least 1 required) *
+          </label>
+          {values.incorrectAnswers.map((answer, index) => (
+            <div key={index} className="mb-3">
+              <input
+                type="text"
+                value={answer}
+                onChange={(e) =>
+                  handleIncorrectAnswerChange(index, e.target.value)
+                }
+                aria-label={`Incorrect answer ${index + 1}`}
+                placeholder={`Incorrect answer ${index + 1}`}
+                className="w-full px-3 py-2 border border-gray-300 rounded-md text-sm bg-white text-gray-900 placeholder:text-gray-500"
+              />
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <div>
+        <button
+          type="button"
+          id={`${mode}-more-options-toggle`}
+          aria-expanded={moreOpen}
+          aria-controls={moreOptionsId}
+          onClick={() => setMoreOpenChoice(!moreOpen)}
+          className="inline-flex items-center gap-2 text-sm font-medium text-indigo-700 hover:text-indigo-900"
+        >
+          <span aria-hidden>{moreOpen ? "▾" : "▸"}</span>
+          More options
+        </button>
+        <p className="mt-1 text-xs text-gray-500">
+          Explanation, source, extra keywords and pronunciation (all optional).
+        </p>
+        <div
+          id={moreOptionsId}
+          role="group"
+          aria-labelledby={`${mode}-more-options-toggle`}
+          hidden={!moreOpen}
+          className="mt-4 space-y-6 rounded-lg border border-gray-200 bg-slate-50/80 p-4 sm:p-5"
+        >
+          {moreOptionsError && <ErrorMessage message={moreOptionsError} />}
+          <div>
+            <label
+              htmlFor={`${mode}-explanation`}
+              className="block text-sm font-medium text-gray-700 mb-2"
+            >
+              Explanation
+            </label>
+            <textarea
+              id={`${mode}-explanation`}
+              value={values.explanation}
+              onChange={(e) =>
+                onChange({ ...values, explanation: e.target.value })
+              }
+              rows={3}
+              className="w-full px-3 py-2 border border-gray-300 rounded-md text-sm bg-white text-gray-900 placeholder:text-gray-500"
+            />
+          </div>
+
+          <div>
+            <label
+              htmlFor={`${mode}-source`}
+              className="block text-sm font-medium text-gray-700 mb-2"
+            >
+              Source (optional)
+            </label>
+            <input
+              id={`${mode}-source`}
+              type="text"
+              value={values.source}
+              onChange={(e) => onChange({ ...values, source: e.target.value })}
+              maxLength={1000}
+              placeholder="e.g., ChatGPT, Claude, Manual"
+              className="w-full px-3 py-2 border border-gray-300 rounded-md text-sm bg-white text-gray-900 placeholder:text-gray-500"
+            />
+          </div>
+
+          {keywordBlock}
+
+          <fieldset className="space-y-4">
+            <legend className="text-sm font-medium text-gray-700">
+              Pronunciation and language (optional)
+            </legend>
+            <div className="grid gap-3 sm:grid-cols-2">
+              <div>
+                <label className="block text-xs font-medium text-gray-500 mb-1">
+                  Question pronunciation
+                </label>
+                <input
+                  type="text"
+                  value={values.questionSpeech.pronunciation ?? ""}
+                  onChange={(e) =>
+                    onChange({
+                      ...values,
+                      questionSpeech: updateSpeechSupport(
+                        values.questionSpeech,
+                        "pronunciation",
+                        e.target.value
+                      ),
+                    })
+                  }
+                  placeholder="kuroi"
+                  className="w-full px-3 py-2 border border-gray-300 rounded-md text-sm bg-white text-gray-900 placeholder:text-gray-500"
+                />
+              </div>
+              <div>
+                <label className="block text-xs font-medium text-gray-500 mb-1">
+                  Question language code
+                </label>
+                <input
+                  type="text"
+                  value={values.questionSpeech.languageCode ?? ""}
+                  onChange={(e) =>
+                    onChange({
+                      ...values,
+                      questionSpeech: updateSpeechSupport(
+                        values.questionSpeech,
+                        "languageCode",
+                        e.target.value
+                      ),
+                    })
+                  }
+                  placeholder="ja-JP"
+                  className="w-full px-3 py-2 border border-gray-300 rounded-md text-sm bg-white text-gray-900 placeholder:text-gray-500"
+                />
+              </div>
+              <div>
+                <label className="block text-xs font-medium text-gray-500 mb-1">
+                  Answer pronunciation
+                </label>
+                <input
+                  type="text"
+                  value={values.correctAnswerSpeech.pronunciation ?? ""}
+                  onChange={(e) =>
+                    onChange({
+                      ...values,
+                      correctAnswerSpeech: updateSpeechSupport(
+                        values.correctAnswerSpeech,
+                        "pronunciation",
+                        e.target.value
+                      ),
+                    })
+                  }
+                  placeholder="kuroi"
+                  className="w-full px-3 py-2 border border-gray-300 rounded-md text-sm bg-white text-gray-900 placeholder:text-gray-500"
+                />
+              </div>
+              <div>
+                <label className="block text-xs font-medium text-gray-500 mb-1">
+                  Answer language code
+                </label>
+                <input
+                  type="text"
+                  value={values.correctAnswerSpeech.languageCode ?? ""}
+                  onChange={(e) =>
+                    onChange({
+                      ...values,
+                      correctAnswerSpeech: updateSpeechSupport(
+                        values.correctAnswerSpeech,
+                        "languageCode",
+                        e.target.value
+                      ),
+                    })
+                  }
+                  placeholder="ja-JP"
+                  className="w-full px-3 py-2 border border-gray-300 rounded-md text-sm bg-white text-gray-900 placeholder:text-gray-500"
+                />
+              </div>
+            </div>
+            {values.incorrectAnswers.map((_, index) => (
+              <div key={index} className="grid gap-3 sm:grid-cols-2">
+                <div>
+                  <label className="block text-xs font-medium text-gray-500 mb-1">
+                    Incorrect answer {index + 1} pronunciation
+                  </label>
+                  <input
+                    type="text"
+                    value={values.incorrectAnswerSpeech[index]?.pronunciation ?? ""}
+                    onChange={(e) =>
+                      handleIncorrectAnswerSpeechChange(index, "pronunciation", e.target.value)
+                    }
+                    placeholder="Optional"
+                    className="w-full px-3 py-2 border border-gray-300 rounded-md text-sm bg-white text-gray-900 placeholder:text-gray-500"
+                  />
+                </div>
+                <div>
+                  <label className="block text-xs font-medium text-gray-500 mb-1">
+                    Incorrect answer {index + 1} language code
+                  </label>
+                  <input
+                    type="text"
+                    value={values.incorrectAnswerSpeech[index]?.languageCode ?? ""}
+                    onChange={(e) =>
+                      handleIncorrectAnswerSpeechChange(index, "languageCode", e.target.value)
+                    }
+                    placeholder="Optional"
+                    className="w-full px-3 py-2 border border-gray-300 rounded-md text-sm bg-white text-gray-900 placeholder:text-gray-500"
+                  />
+                </div>
+              </div>
+            ))}
+          </fieldset>
+        </div>
+      </div>
+
       <section className="rounded-lg border border-gray-200 bg-slate-50/80 p-4 sm:p-5 space-y-5">
         <div>
-          <h2 className="text-sm font-semibold text-gray-900">Topic and tags</h2>
+          <h2 className="text-sm font-semibold text-gray-900">Save to</h2>
           <p className="mt-1 text-xs text-gray-500">
-            Category, primary topic, and subtopic define where the item appears when browsing. Extra
-            keywords are optional tags for finer search.
+            Category, primary topic, and subtopic define where the item appears when browsing.
           </p>
         </div>
         <ItemTopicScopeFields
@@ -219,373 +640,44 @@ export function ItemForm({
           onSuggestionsShown={onTopicSuggestionsShown}
           error={topicError}
         />
-        <div className="pt-4 border-t border-gray-200/90">
-          <label className="block text-sm font-medium text-gray-700 mb-2">
-            Additional keywords (optional; official taxonomy slugs attach as shared tags, new labels
-            are private until reviewed)
+        <div className="pt-4 border-t border-gray-200/90 space-y-3">
+          <label className="flex items-center">
+            <input
+              type="checkbox"
+              checked={values.isPrivate}
+              onChange={(e) =>
+                onChange({ ...values, isPrivate: e.target.checked })
+              }
+              disabled={!isAdmin}
+              className="mr-2"
+            />
+            <span className="text-sm font-medium text-gray-700">
+              Private Item {!isAdmin && "(default for regular users)"}
+            </span>
           </label>
-          <p className="text-xs text-gray-500 mb-2">
-            Type to see up to {EXTRA_KEYWORD_AUTOCOMPLETE_LIMIT} matching tags (prefix search), or enter a
-            new label (letters, numbers, hyphens; max {NAV_KEYWORD_MAX_LEN} chars).
-          </p>
-          {extraKeywordAutocompleteLoading && values.category.trim() !== "" && (
-            <p className="text-xs text-gray-500 mb-2" aria-live="polite">
-              Loading keyword suggestions for this category…
-            </p>
-          )}
-          <div className="flex gap-2 mb-2">
-            <div ref={keywordInputContainerRef} className="relative flex-1">
+          {!isAdmin && (
+            <label className="flex items-center">
               <input
-                type="text"
-                value={newKeywordName}
-                onChange={(e) => {
-                  setNewKeywordName(e.target.value.slice(0, NAV_KEYWORD_MAX_LEN));
-                  setSuggestOpen(true);
-                }}
-                onFocus={() => setSuggestOpen(true)}
-                onBlur={() => {
-                  // Defer so mousedown on an option runs first
-                  window.setTimeout(() => setSuggestOpen(false), 120);
-                }}
-                placeholder={`Keyword (max ${NAV_KEYWORD_MAX_LEN} chars)`}
-                maxLength={NAV_KEYWORD_MAX_LEN}
-                autoComplete="off"
-                role="combobox"
-                aria-expanded={Boolean(suggestOpen && matches.length > 0)}
-                aria-controls={listboxId}
-                aria-autocomplete="list"
-                aria-activedescendant={
-                  suggestOpen && highlightIndex >= 0 && matches[highlightIndex]
-                    ? `${listboxId}-opt-${highlightIndex}`
-                    : undefined
+                type="checkbox"
+                checked={values.readyForReview}
+                onChange={(e) =>
+                  onChange({ ...values, readyForReview: e.target.checked })
                 }
-                className="w-full px-3 py-2 border border-gray-300 rounded-md text-sm bg-white text-gray-900 placeholder:text-gray-500"
-                onKeyDown={(e) => {
-                  if (e.key === "ArrowDown") {
-                    if (matches.length === 0) return;
-                    e.preventDefault();
-                    setSuggestOpen(true);
-                    setHighlightIndex((i) =>
-                      i < matches.length - 1 ? i + 1 : i >= 0 ? i : 0
-                    );
-                    return;
-                  }
-                  if (e.key === "ArrowUp") {
-                    if (matches.length === 0) return;
-                    e.preventDefault();
-                    setSuggestOpen(true);
-                    setHighlightIndex((i) => (i > 0 ? i - 1 : 0));
-                    return;
-                  }
-                  if (e.key === "Escape") {
-                    if (suggestOpen) {
-                      e.preventDefault();
-                      setSuggestOpen(false);
-                    }
-                    return;
-                  }
-                  if (e.key === "Enter") {
-                    e.preventDefault();
-                    if (
-                      suggestOpen &&
-                      matches.length > 0 &&
-                      highlightIndex >= 0 &&
-                      matches[highlightIndex]
-                    ) {
-                      tryAddKeyword(matches[highlightIndex]);
-                    } else {
-                      addKeyword();
-                    }
-                  }
-                }}
+                className="mr-2"
               />
-              {suggestOpen && matches.length > 0 && (
-                <ul
-                  id={listboxId}
-                  role="listbox"
-                  className="absolute z-20 mt-1 max-h-60 w-full overflow-auto rounded-md border border-gray-200 bg-white py-1 text-sm shadow-lg"
-                >
-                  {matches.map((name, idx) => (
-                    <li
-                      key={name}
-                      id={`${listboxId}-opt-${idx}`}
-                      role="option"
-                      aria-selected={idx === highlightIndex}
-                      className={`cursor-pointer px-3 py-2 ${
-                        idx === highlightIndex ? "bg-indigo-50 text-indigo-900" : "text-gray-800"
-                      }`}
-                      onMouseEnter={() => setHighlightIndex(idx)}
-                      onMouseDown={(ev) => {
-                        ev.preventDefault();
-                        tryAddKeyword(name);
-                      }}
-                    >
-                      {name}
-                    </li>
-                  ))}
-                </ul>
-              )}
-            </div>
-            <button
-              type="button"
-              onClick={addKeyword}
-              className="px-4 py-2 text-sm font-medium text-white bg-indigo-600 rounded-md hover:bg-indigo-700 shrink-0"
-            >
-              Add
-            </button>
-          </div>
-          {values.keywords.length > 0 && (
-            <div className="flex flex-wrap gap-2">
-              {values.keywords.map((keyword, index) => (
-                <span
-                  key={index}
-                  className="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-blue-100 text-blue-800"
-                >
-                  {keyword.name}
-                  {keyword.isPrivate && <span className="ml-1 text-xs">🔒</span>}
-                  <button
-                    type="button"
-                    onClick={() => removeKeyword(index)}
-                    className="ml-2 inline-flex items-center justify-center w-4 h-4 rounded-full hover:bg-blue-200"
-                    aria-label={`Remove ${keyword.name}`}
-                  >
-                    ×
-                  </button>
-                </span>
-              ))}
-            </div>
+              <span className="text-sm font-medium text-gray-700">
+                Request admin review to make this item public
+              </span>
+            </label>
           )}
         </div>
       </section>
 
-      <div>
-        <label className="flex items-center">
-          <input
-            type="checkbox"
-            checked={values.isPrivate}
-            onChange={(e) =>
-              onChange({ ...values, isPrivate: e.target.checked })
-            }
-            disabled={!isAdmin}
-            className="mr-2"
-          />
-          <span className="text-sm font-medium text-gray-700">
-            Private Item {!isAdmin && "(default for regular users)"}
-          </span>
-        </label>
-      </div>
-
-      {!isAdmin && (
-        <div>
-          <label className="flex items-center">
-            <input
-              type="checkbox"
-              checked={values.readyForReview}
-              onChange={(e) =>
-                onChange({ ...values, readyForReview: e.target.checked })
-              }
-              className="mr-2"
-            />
-            <span className="text-sm font-medium text-gray-700">
-              Request admin review to make this item public
-            </span>
-          </label>
+      {mode === "create" && (
+        <div role="status" className="text-sm text-green-800">
+          {statusMessage}
         </div>
       )}
-
-      <div>
-        <label className="block text-sm font-medium text-gray-700 mb-2">
-          Question *
-        </label>
-        <textarea
-          value={values.question}
-          onChange={(e) => onChange({ ...values, question: e.target.value })}
-          required
-          rows={3}
-          className="w-full px-3 py-2 border border-gray-300 rounded-md text-sm bg-white text-gray-900 placeholder:text-gray-500"
-        />
-        <div className="mt-3 grid gap-3 sm:grid-cols-2">
-          <div>
-            <label className="block text-xs font-medium text-gray-500 mb-1">
-              Question pronunciation
-            </label>
-            <input
-              type="text"
-              value={values.questionSpeech.pronunciation ?? ""}
-              onChange={(e) =>
-                onChange({
-                  ...values,
-                  questionSpeech: updateSpeechSupport(
-                    values.questionSpeech,
-                    "pronunciation",
-                    e.target.value
-                  ),
-                })
-              }
-              placeholder="kuroi"
-              className="w-full px-3 py-2 border border-gray-300 rounded-md text-sm bg-white text-gray-900 placeholder:text-gray-500"
-            />
-          </div>
-          <div>
-            <label className="block text-xs font-medium text-gray-500 mb-1">
-              Question language code
-            </label>
-            <input
-              type="text"
-              value={values.questionSpeech.languageCode ?? ""}
-              onChange={(e) =>
-                onChange({
-                  ...values,
-                  questionSpeech: updateSpeechSupport(
-                    values.questionSpeech,
-                    "languageCode",
-                    e.target.value
-                  ),
-                })
-              }
-              placeholder="ja-JP"
-              className="w-full px-3 py-2 border border-gray-300 rounded-md text-sm bg-white text-gray-900 placeholder:text-gray-500"
-            />
-          </div>
-        </div>
-      </div>
-
-      <div>
-        <label className="block text-sm font-medium text-gray-700 mb-2">
-          Correct Answer *
-        </label>
-        <input
-          type="text"
-          value={values.correctAnswer}
-          onChange={(e) =>
-            onChange({ ...values, correctAnswer: e.target.value })
-          }
-          required
-          className="w-full px-3 py-2 border border-gray-300 rounded-md text-sm bg-white text-gray-900 placeholder:text-gray-500"
-        />
-        <div className="mt-3 grid gap-3 sm:grid-cols-2">
-          <div>
-            <label className="block text-xs font-medium text-gray-500 mb-1">
-              Answer pronunciation
-            </label>
-            <input
-              type="text"
-              value={values.correctAnswerSpeech.pronunciation ?? ""}
-              onChange={(e) =>
-                onChange({
-                  ...values,
-                  correctAnswerSpeech: updateSpeechSupport(
-                    values.correctAnswerSpeech,
-                    "pronunciation",
-                    e.target.value
-                  ),
-                })
-              }
-              placeholder="kuroi"
-              className="w-full px-3 py-2 border border-gray-300 rounded-md text-sm bg-white text-gray-900 placeholder:text-gray-500"
-            />
-          </div>
-          <div>
-            <label className="block text-xs font-medium text-gray-500 mb-1">
-              Answer language code
-            </label>
-            <input
-              type="text"
-              value={values.correctAnswerSpeech.languageCode ?? ""}
-              onChange={(e) =>
-                onChange({
-                  ...values,
-                  correctAnswerSpeech: updateSpeechSupport(
-                    values.correctAnswerSpeech,
-                    "languageCode",
-                    e.target.value
-                  ),
-                })
-              }
-              placeholder="ja-JP"
-              className="w-full px-3 py-2 border border-gray-300 rounded-md text-sm bg-white text-gray-900 placeholder:text-gray-500"
-            />
-          </div>
-        </div>
-      </div>
-
-      <div>
-        <label className="block text-sm font-medium text-gray-700 mb-2">
-          Incorrect Answers (at least 1 required) *
-        </label>
-        {values.incorrectAnswers.map((answer, index) => (
-          <div key={index} className="mb-3 rounded-lg border border-gray-200 p-3">
-            <input
-              type="text"
-              value={answer}
-              onChange={(e) =>
-                handleIncorrectAnswerChange(index, e.target.value)
-              }
-              placeholder={`Incorrect answer ${index + 1}`}
-              className="w-full px-3 py-2 border border-gray-300 rounded-md text-sm bg-white text-gray-900 placeholder:text-gray-500"
-            />
-            <div className="mt-3 grid gap-3 sm:grid-cols-2">
-              <div>
-                <label className="block text-xs font-medium text-gray-500 mb-1">
-                  Pronunciation
-                </label>
-                <input
-                  type="text"
-                  value={values.incorrectAnswerSpeech[index]?.pronunciation ?? ""}
-                  onChange={(e) =>
-                    handleIncorrectAnswerSpeechChange(index, "pronunciation", e.target.value)
-                  }
-                  placeholder="Optional"
-                  className="w-full px-3 py-2 border border-gray-300 rounded-md text-sm bg-white text-gray-900 placeholder:text-gray-500"
-                />
-              </div>
-              <div>
-                <label className="block text-xs font-medium text-gray-500 mb-1">
-                  Language code
-                </label>
-                <input
-                  type="text"
-                  value={values.incorrectAnswerSpeech[index]?.languageCode ?? ""}
-                  onChange={(e) =>
-                    handleIncorrectAnswerSpeechChange(index, "languageCode", e.target.value)
-                  }
-                  placeholder="Optional"
-                  className="w-full px-3 py-2 border border-gray-300 rounded-md text-sm bg-white text-gray-900 placeholder:text-gray-500"
-                />
-              </div>
-            </div>
-          </div>
-        ))}
-      </div>
-
-      <div>
-        <label className="block text-sm font-medium text-gray-700 mb-2">
-          Explanation
-        </label>
-        <textarea
-          value={values.explanation}
-          onChange={(e) =>
-            onChange({ ...values, explanation: e.target.value })
-          }
-          rows={3}
-          className="w-full px-3 py-2 border border-gray-300 rounded-md text-sm bg-white text-gray-900 placeholder:text-gray-500"
-        />
-      </div>
-
-      <div>
-        <label className="block text-sm font-medium text-gray-700 mb-2">
-          Source (optional)
-        </label>
-        <input
-          type="text"
-          value={values.source}
-          onChange={(e) => onChange({ ...values, source: e.target.value })}
-          maxLength={1000}
-          placeholder="e.g., ChatGPT, Claude, Manual"
-          className="w-full px-3 py-2 border border-gray-300 rounded-md text-sm bg-white text-gray-900 placeholder:text-gray-500"
-        />
-      </div>
-
 
       <div className="flex justify-end space-x-4">
         <button
@@ -595,18 +687,22 @@ export function ItemForm({
         >
           Cancel
         </button>
+        {mode === "create" && (
+          <button
+            type="button"
+            onClick={onSaveAndAddAnother}
+            disabled={isPending}
+            className="px-4 py-2 text-sm font-medium text-indigo-700 bg-white border border-indigo-300 rounded-md hover:bg-indigo-50 disabled:opacity-50"
+          >
+            Save and add another
+          </button>
+        )}
         <button
           type="submit"
           disabled={isPending}
           className="px-4 py-2 text-sm font-medium text-white bg-indigo-600 rounded-md hover:bg-indigo-700 disabled:opacity-50"
         >
-          {isPending
-            ? mode === "create"
-              ? "Creating..."
-              : "Saving..."
-            : mode === "create"
-            ? "Create Item"
-            : "Save Changes"}
+          {isPending ? "Saving..." : mode === "create" ? "Save and study" : "Save"}
         </button>
       </div>
     </form>
