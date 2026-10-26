@@ -180,7 +180,7 @@ The **Bookmarked** tab shows all collections you have bookmarked. You can open a
 
 ### Add Items
 
-The Add Items hub is the central starting point for creating new quiz content. It provides a Topic and tags block where you choose category, primary topic (rank 1), subtopic (rank 2), and optional extra keywords. The same scope is forwarded to whichever creation method you pick. From here you can open the single-item create form, the AI-assisted Bulk Create flow, or the Study Guide import wizard. If you have an active collection, a banner reminds you that newly created items will be added to it automatically.
+The Add Items hub is the central starting point for creating new quiz content. It provides a Topic and tags block where you choose category, primary topic (rank 1), subtopic (rank 2), and optional extra keywords. The same scope is forwarded to whichever creation method you pick. From here you can open the single-item create form, the Import questions flow (paste text or a file), or the Study Guide import wizard. If you have an active collection, a banner reminds you that newly created items will be added to it automatically.
 
 ![Add Items](screenshots/user/add-items.png "Add Items")
 
@@ -196,29 +196,9 @@ The Create Item form lets you write a single quiz item from scratch. Fill in the
 
 ![Add New Item](screenshots/user/add-new-item.png "Add New Item")
 
-### Bulk Create Items
+### Import Questions
 
-The Bulk Create page (AI-assisted, no Study Guide) streamlines adding many items at once using an external AI assistant. Choose your category, primary topic, and subtopic; the app generates a structured prompt you copy into any AI tool. Paste the AI response back and the app parses the JSON into a review list where you can accept or reject each item individually before anything is saved to the database.
-
-![Bulk Create Items](screenshots/user/bulk-create-items.png "Bulk Create Items")
-
-### Bulk Create Prompt
-
-After choosing your scope and clicking **Generate Prompt**, the app builds a structured prompt asking an AI assistant to produce quiz items for that category, primary topic, and subtopic. Copy the prompt text and paste it into ChatGPT, Claude, or any other AI tool.
-
-![Bulk Create Prompt](screenshots/user/bulk-create-prompt.png "Bulk Create Prompt")
-
-### Bulk Create Paste
-
-Paste the AI assistant's raw JSON response into the text area and click **Import**. The app validates the JSON structure, checks each item's fields, and builds a review list. Invalid items are flagged; valid ones are ready for you to accept or reject.
-
-![Bulk Create Paste](screenshots/user/bulk-create-paste.png "Bulk Create Paste")
-
-### Bulk Create Review
-
-The review screen shows each parsed item as a card with the question, correct answer, incorrect options, explanation, source, and any AI-suggested keywords. Click **Accept** to save an individual item or **Reject** to discard it. **Accept All** saves every valid item at once.
-
-![Bulk Create Review](screenshots/user/bulk-create-review.png "Bulk Create Review")
+To add many questions at once, open **Create**, choose **Import questions from text or a file** and use the **Paste text** tab. Paste a Quizlet or Anki export, CSV/TSV, or cloze text, check the preview, pick a topic and upload. The AI-assisted Bulk Create page has been retired.
 
 ## Study Guide Import
 

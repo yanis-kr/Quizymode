@@ -282,7 +282,7 @@ describe("StudyGuideDocumentPage", () => {
   });
 
   it("hides the Save as control from non-admins and never sends publish", async () => {
-    // AC 6.6.16
+    // AC 6.6.28
     vi.mocked(studyGuideDocumentsApi.get).mockResolvedValue(
       makeDocument({ sections: [section(0, { status: "Generated", candidates: [candidate("c1")] }), section(1)] })
     );
@@ -301,7 +301,7 @@ describe("StudyGuideDocumentPage", () => {
   });
 
   it("lets admins publish: Private is the default and the publish flag is sent on every batch", async () => {
-    // AC 6.6.16
+    // AC 6.6.28
     authState.isAdmin = true;
     const many = Array.from({ length: 205 }, (_, i) => candidate(`m${i}`, { index: i }));
     vi.mocked(studyGuideDocumentsApi.get).mockResolvedValue(
@@ -326,7 +326,7 @@ describe("StudyGuideDocumentPage", () => {
   });
 
   it("an admin who leaves Private selected does not send publish", async () => {
-    // AC 6.6.16
+    // AC 6.6.28
     authState.isAdmin = true;
     vi.mocked(studyGuideDocumentsApi.get).mockResolvedValue(
       makeDocument({ sections: [section(0, { status: "Generated", candidates: [candidate("c1")] }), section(1)] })

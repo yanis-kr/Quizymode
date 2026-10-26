@@ -196,29 +196,9 @@ The Create Item form becomes a long, single-column form on mobile, with fields a
 
 ![Add New Item](screenshots/mobile/add-new-item.png "Add New Item")
 
-### Bulk Create Items
+### Import Questions
 
-The Bulk Create entry screen uses the same workflow on mobile, but the scope controls and helper text stack vertically. That makes the AI-assisted flow easier to follow on a handheld screen.
-
-![Bulk Create Items](screenshots/mobile/bulk-create-items.png "Bulk Create Items")
-
-### Bulk Create Prompt
-
-The generated AI prompt remains the same on mobile, but the prompt area and surrounding controls are compressed into a narrower reading column. Expect more vertical scrolling when reviewing or copying the prompt.
-
-![Bulk Create Prompt](screenshots/mobile/bulk-create-prompt.png "Bulk Create Prompt")
-
-### Bulk Create Paste
-
-Pasting the AI response on mobile keeps the same validation workflow, with the large textarea and import action arranged for a narrow screen. The stacked layout makes the JSON review flow workable without desktop width.
-
-![Bulk Create Paste](screenshots/mobile/bulk-create-paste.png "Bulk Create Paste")
-
-### Bulk Create Review
-
-The review step on mobile turns each parsed item into a tall stacked card. Accept and reject actions remain available per item, but the layout favors vertical scanning instead of wide comparisons.
-
-![Bulk Create Review](screenshots/mobile/bulk-create-review.png "Bulk Create Review")
+To add many questions at once, open **Create**, choose **Import questions from text or a file** and use the **Paste text** tab. Paste a Quizlet or Anki export, CSV/TSV, or cloze text, check the preview, pick a topic and upload. The AI-assisted Bulk Create page has been retired.
 
 ## Study Guide Import
 

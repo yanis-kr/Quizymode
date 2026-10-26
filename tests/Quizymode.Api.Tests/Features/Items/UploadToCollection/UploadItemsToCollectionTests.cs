@@ -2,6 +2,7 @@ using System.Security.Cryptography;
 using System.Text;
 using FluentAssertions;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.DependencyInjection;
 using Moq;
 using Quizymode.Api.Features.Items.AddBulk;
 using Quizymode.Api.Features.Items.UploadToCollection;
@@ -294,5 +295,72 @@ public sealed class UploadItemsToCollectionCollectionNameTests : ItemTestFixture
         validator.Validate(Build(new string('a', 201))).Errors.Should().Contain(e => e.PropertyName == "CollectionName");
         validator.Validate(Build(" " + new string('a', 200) + " ")).IsValid.Should().BeTrue();
         validator.Validate(Build("   ")).IsValid.Should().BeTrue();
+    }
+}
+
+public sealed class UploadItemsToCollectionHttpTests : ItemTestFixture, IAsyncLifetime
+{
+    private JwtHttpTestHost _host = null!;
+
+    public async Task InitializeAsync()
+    {
+        await EnsureGeographyPublicWithNavAsync("seeder");
+        _host = await JwtHttpTestHost.StartAsync(
+            CreateDbContext,
+            services =>
+            {
+                services.AddScoped<FluentValidation.IValidator<UploadItemsToCollection.Request>, UploadItemsToCollection.Validator>();
+                services.AddSingleton(SimHashService);
+                services.AddSingleton(TaxonomyRegistry);
+                services.AddScoped<ITaxonomyItemCategoryResolver>(provider =>
+                    new TaxonomyItemCategoryResolver(provider.GetRequiredService<Quizymode.Api.Data.ApplicationDbContext>(), TaxonomyRegistry));
+                Mock<ITextModerationService> moderation = new();
+                moderation.Setup(m => m.Evaluate(It.IsAny<string?[]>()))
+                    .Returns((string?[] values) => values.Any(v => v is not null && v.Contains("badword"))
+                        ? new TextModerationResult(TextModerationOutcome.Blocked, "badword")
+                        : new TextModerationResult(TextModerationOutcome.Clean));
+                services.AddSingleton(moderation.Object);
+            },
+            app => new UploadItemsToCollection.Endpoint().MapEndpoint(app));
+    }
+
+    public async Task DisposeAsync() => await _host.DisposeAsync();
+
+    private async Task<HttpResponseMessage> PostAsync(string collectionName)
+    {
+        string json = System.Text.Json.JsonSerializer.Serialize(new
+        {
+            category = "geography",
+            keyword1 = "capitals",
+            keyword2 = "europe",
+            keywords = Array.Empty<object>(),
+            items = new[] { new { question = "What is the capital of France?", correctAnswer = "Paris", incorrectAnswers = new[] { "Lyon" }, explanation = "" } },
+            inputText = "http-content",
+            collectionName
+        });
+        using StringContent content = new(json, Encoding.UTF8, "application/json");
+        using HttpRequestMessage request = JwtHttpTestHost.Request(HttpMethod.Post, "/items/upload-to-collection", _host.CreateToken("uploader", "uploader@example.com"), content);
+        return await _host.Client.SendAsync(request);
+    }
+
+    [Fact]
+    public async Task Post_BlockedCollectionName_Returns400AndSavesNothing()
+    {
+        using HttpResponseMessage response = await PostAsync("my badword list");
+
+        response.StatusCode.Should().Be(System.Net.HttpStatusCode.BadRequest);
+        (await response.Content.ReadAsStringAsync()).Should().Contain("Upload.CollectionNameBlocked");
+        DbContext.Uploads.Count().Should().Be(0);
+        DbContext.Items.Count().Should().Be(0);
+        DbContext.Collections.Count().Should().Be(0);
+    }
+
+    [Fact]
+    public async Task Post_CollectionNameOver200Chars_Returns400()
+    {
+        using HttpResponseMessage response = await PostAsync(new string('a', 201));
+
+        response.StatusCode.Should().Be(System.Net.HttpStatusCode.BadRequest);
+        DbContext.Uploads.Count().Should().Be(0);
     }
 }
