@@ -32,7 +32,7 @@ public static class AcceptStudyGuideCandidates
         List<string>? IncorrectAnswers,
         string? Explanation);
 
-    public sealed record Request(List<CandidateEdit>? Candidates);
+    public sealed record Request(List<CandidateEdit>? Candidates, string? CollectionName = null);
 
     public sealed record Response(
         string CollectionId,
@@ -45,6 +45,12 @@ public static class AcceptStudyGuideCandidates
     {
         public Validator()
         {
+            // The name is trimmed before use, so measure the trimmed value.
+            RuleFor(x => x.CollectionName)
+                .Must(name => name!.Trim().Length <= MaxCollectionNameLength)
+                .WithMessage($"Collection name must not exceed {MaxCollectionNameLength} characters.")
+                .When(x => x.CollectionName is not null && x.CollectionName.Trim().Length > 0);
+
             RuleFor(x => x.Candidates)
                 .NotNull()
                 .WithMessage("Select at least one question.")
@@ -159,6 +165,20 @@ public static class AcceptStudyGuideCandidates
         if (document is null)
         {
             return Result.Success<Response?>(null);
+        }
+
+        string collectionName = document.Title;
+        if (document.CollectionId is null && !string.IsNullOrWhiteSpace(request.CollectionName))
+        {
+            string requestedName = request.CollectionName.Trim();
+            if (moderation.Evaluate(requestedName).Outcome == TextModerationOutcome.Blocked)
+            {
+                return Result.Failure<Response?>(Error.Validation(
+                    StudyGuideDocumentErrors.ProfanityBlocked.Code,
+                    "The collection name contains blocked language. Edit it and try again."));
+            }
+
+            collectionName = requestedName;
         }
 
         Dictionary<Guid, CandidateEdit> edits = (request.Candidates ?? [])
@@ -309,7 +329,7 @@ public static class AcceptStudyGuideCandidates
             }
         }
 
-        Collection collection = await EnsureCollectionAsync(db, document, userId, nowUtc, cancellationToken);
+        Collection collection = await EnsureCollectionAsync(db, document, userId, collectionName, nowUtc, cancellationToken);
         HashSet<Guid> inCollection = (await db.CollectionItems
                 .AsNoTracking()
                 .Where(ci => ci.CollectionId == collection.Id && createdIds.Contains(ci.ItemId))
@@ -350,6 +370,7 @@ public static class AcceptStudyGuideCandidates
         ApplicationDbContext db,
         StudyGuideDocument document,
         string userId,
+        string collectionName,
         DateTime nowUtc,
         CancellationToken cancellationToken)
     {
@@ -367,7 +388,7 @@ public static class AcceptStudyGuideCandidates
         {
             Id = Guid.NewGuid(),
             IsRepoManaged = false,
-            Name = Truncate(document.Title, MaxCollectionNameLength),
+            Name = Truncate(collectionName, MaxCollectionNameLength),
             Description = Truncate($"Generated from study guide {document.Title}", MaxCollectionDescriptionLength),
             CreatedBy = userId,
             CreatedAt = nowUtc,

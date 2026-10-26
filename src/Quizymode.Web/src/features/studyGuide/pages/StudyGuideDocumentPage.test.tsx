@@ -218,6 +218,76 @@ describe("StudyGuideDocumentPage", () => {
     expect(screen.queryByText(/free plan: generation starts/i)).not.toBeInTheDocument();
   });
 
+  it("marks Choose coverage as the current step before anything is generated", async () => {
+    vi.mocked(studyGuideDocumentsApi.get).mockResolvedValue(makeDocument());
+
+    renderPage();
+
+    await screen.findByRole("heading", { name: "Biology Unit 3" });
+    const current = screen.getAllByRole("listitem").filter((item) => item.getAttribute("aria-current") === "step");
+    expect(current).toHaveLength(1);
+    expect(current[0]).toHaveTextContent("Choose coverage");
+    expect(screen.queryByLabelText("Collection name")).not.toBeInTheDocument();
+  });
+
+  it("marks Review as current once a section is generated", async () => {
+    vi.mocked(studyGuideDocumentsApi.get).mockResolvedValue(
+      makeDocument({ sections: [section(0, { status: "Generated", candidates: [candidate("c1")] }), section(1)] })
+    );
+
+    renderPage();
+
+    await screen.findByRole("heading", { name: "Biology Unit 3" });
+    const current = screen.getAllByRole("listitem").filter((item) => item.getAttribute("aria-current") === "step");
+    expect(current[0]).toHaveTextContent("Review");
+  });
+
+  it("sends the collection name on the first save, then hides the input and offers the four success actions", async () => {
+    vi.mocked(studyGuideDocumentsApi.get).mockResolvedValue(
+      makeDocument({ sections: [section(0, { status: "Generated", candidates: [candidate("c1")] }), section(1)] })
+    );
+    vi.mocked(studyGuideDocumentsApi.accept).mockResolvedValue({
+      collectionId: "col-9",
+      createdCount: 1,
+      duplicateCount: 0,
+      failedCount: 0,
+      itemIds: ["i1"],
+    });
+
+    renderPage();
+
+    const input = await screen.findByLabelText("Collection name");
+    expect(input).toHaveValue("Biology Unit 3");
+    fireEvent.change(input, { target: { value: "  Cell biology  " } });
+    fireEvent.click(screen.getByRole("button", { name: "Save 1 selected" }));
+
+    await waitFor(() =>
+      expect(studyGuideDocumentsApi.accept).toHaveBeenCalledWith("doc-1", [{ id: "c1" }], "Cell biology")
+    );
+    expect(await screen.findByText(/saved 1 question to your collection/i)).toBeInTheDocument();
+    expect(screen.queryByLabelText("Collection name")).not.toBeInTheDocument();
+    expect(screen.getByRole("link", { name: "Start quiz" })).toHaveAttribute("href", "/quiz/collections/col-9");
+    expect(screen.getByRole("link", { name: "Study flashcards" })).toHaveAttribute("href", "/explore/collections/col-9");
+    expect(screen.getAllByRole("link", { name: "Open collection" }).at(-1)).toHaveAttribute("href", "/collections/col-9");
+
+    fireEvent.click(screen.getByRole("button", { name: "Add more" }));
+    expect(screen.getByRole("heading", { name: "Choose sections" }).closest("div[tabindex='-1']")).toHaveFocus();
+  });
+
+  it("hides the collection name input when the document already has a collection", async () => {
+    vi.mocked(studyGuideDocumentsApi.get).mockResolvedValue(
+      makeDocument({
+        collectionId: "col-1",
+        sections: [section(0, { status: "Generated", candidates: [candidate("c1")] }), section(1)],
+      })
+    );
+
+    renderPage();
+
+    await screen.findByRole("button", { name: "Save 1 selected" });
+    expect(screen.queryByLabelText("Collection name")).not.toBeInTheDocument();
+  });
+
   it("shows quotes, dropped counts and saved state, and accepts edited questions", async () => {
     vi.mocked(studyGuideDocumentsApi.get).mockResolvedValue(
       makeDocument({
@@ -278,12 +348,12 @@ describe("StudyGuideDocumentPage", () => {
           explanation: "Because c1.",
         },
         { id: "c4" },
-      ])
+      ], "Biology Unit 3")
     );
     expect(await screen.findByText(/saved 2 questions to your collection/i)).toBeInTheDocument();
     expect(screen.getAllByRole("link", { name: /open collection/i }).at(-1)).toHaveAttribute(
       "href",
-      "/explore/collections/col-9"
+      "/collections/col-9"
     );
   });
 

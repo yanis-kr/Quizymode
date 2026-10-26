@@ -185,11 +185,12 @@ export const studyGuideDocumentsApi = {
 
   accept: async (
     id: string,
-    candidates: AcceptStudyGuideCandidate[]
+    candidates: AcceptStudyGuideCandidate[],
+    collectionName?: string
   ): Promise<AcceptStudyGuideCandidatesResponse> => {
     const response = await apiClient.post<AcceptStudyGuideCandidatesResponse>(
       `${documentPath(id)}/accept`,
-      { candidates }
+      collectionName ? { candidates, collectionName } : { candidates }
     );
     return response.data;
   },

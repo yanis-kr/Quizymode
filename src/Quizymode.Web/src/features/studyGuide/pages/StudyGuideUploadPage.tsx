@@ -7,6 +7,7 @@ import LoadingSpinner from "@/components/LoadingSpinner";
 import ErrorMessage from "@/components/ErrorMessage";
 import { ItemTopicScopeFields, type TopicScopeFieldsHandle } from "@/components/items/ItemTopicScopeFields";
 import { applyTopicScopePatch, isTopicComplete, TOPIC_REQUIRED_MESSAGE } from "@/features/topics/topicScope";
+import { StudyGuideSteps } from "../components/StudyGuideSteps";
 import {
   BINARY_FILE_HELPER,
   composeNotesSuggestionText,
@@ -176,8 +177,9 @@ const StudyGuideUploadPage = () => {
 
   return (
     <div className="px-4 py-6 sm:px-0 max-w-3xl mx-auto">
+      <StudyGuideSteps current="add" />
       <div className="mb-1 flex flex-wrap items-baseline justify-between gap-2">
-        <h1 className="text-2xl font-bold text-gray-900">Generate Quiz from Study Guide</h1>
+        <h1 className="text-2xl font-bold text-gray-900">Turn notes into a quiz</h1>
         <Link to="/study-guides/documents" className="text-sm font-medium text-indigo-600 hover:text-indigo-800">
           My study guides
         </Link>
