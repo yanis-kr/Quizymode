@@ -65,12 +65,21 @@ const PasteTextImport = ({ maxItems, isPending, onImport, onPreviewChange }: Pas
       ? !!clozePreview && clozePreview.items.length > 0 && !isPending
       : !!preview && !preview.built.error && preview.built.items.length > 0 && !isPending;
 
+  const copyTimer = React.useRef<ReturnType<typeof setTimeout> | null>(null);
+  React.useEffect(
+    () => () => {
+      if (copyTimer.current) clearTimeout(copyTimer.current);
+    },
+    []
+  );
+
   const handleCopyPrompt = async () => {
     try {
       await navigator.clipboard.writeText(CLOZE_AI_HELPER_PROMPT);
       setCopyError(false);
       setCopied(true);
-      setTimeout(() => setCopied(false), 2000);
+      if (copyTimer.current) clearTimeout(copyTimer.current);
+      copyTimer.current = setTimeout(() => setCopied(false), 2000);
     } catch {
       setCopied(false);
       setCopyError(true);
@@ -277,6 +286,9 @@ const PasteTextImport = ({ maxItems, isPending, onImport, onPreviewChange }: Pas
                       {s.card !== undefined && ` (card c${s.card})`}: {s.reason}
                     </li>
                   ))}
+                  {clozePreview.result.skipped.length > 20 && (
+                    <li>&hellip;and {clozePreview.result.skipped.length - 20} more</li>
+                  )}
                 </ul>
               </details>
             )}

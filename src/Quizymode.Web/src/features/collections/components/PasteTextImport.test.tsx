@@ -4,10 +4,13 @@ import userEvent from "@testing-library/user-event";
 import PasteTextImport from "./PasteTextImport";
 import { CLOZE_AI_HELPER_PROMPT } from "@/features/items/utils/clozeParser";
 
-function renderImport() {
+function renderImport(maxItems = 100) {
   const onImport = vi.fn();
-  render(<PasteTextImport maxItems={100} isPending={false} onImport={onImport} />);
-  return { onImport };
+  const onPreviewChange = vi.fn();
+  render(
+    <PasteTextImport maxItems={maxItems} isPending={false} onImport={onImport} onPreviewChange={onPreviewChange} />
+  );
+  return { onImport, onPreviewChange };
 }
 
 function pasteText(value: string) {
@@ -85,5 +88,47 @@ describe("PasteTextImport cloze format (#296)", () => {
     await user.click(screen.getByRole("button", { name: /copy ai helper prompt/i }));
     expect(await navigator.clipboard.readText()).toBe(CLOZE_AI_HELPER_PROMPT);
     expect(screen.getByRole("status")).toHaveTextContent("Helper prompt copied to clipboard.");
+  });
+
+  it("warns when there are more cards than the limit", () => {
+    renderImport(1);
+    chooseCloze();
+    pasteText("{{c1::A}} first | x\n{{c1::B}} second | y");
+    expect(screen.getByText(/1 card ready/)).toBeInTheDocument();
+    expect(screen.getByRole("alert")).toHaveTextContent("only the first 1 will be imported");
+  });
+
+  it("reports duplicates and more than 20 skipped lines", () => {
+    renderImport();
+    chooseCloze();
+    pasteText("{{c1::A}} same | x\n{{c1::A}} same | y");
+    expect(screen.getByText(/1 card ready, 1 duplicate removed/)).toBeInTheDocument();
+    pasteText(Array.from({ length: 22 }, (_, i) => `no deletion ${i}`).join("\n"));
+    expect(screen.getByText(/and 2 more/)).toBeInTheDocument();
+  });
+
+  it("sends cloze items to onPreviewChange", () => {
+    const { onPreviewChange } = renderImport();
+    chooseCloze();
+    pasteText("{{c1::Paris}} is the capital of France | Lyon");
+    expect(onPreviewChange).toHaveBeenLastCalledWith([
+      {
+        question: "___ is the capital of France",
+        correctAnswer: "Paris",
+        incorrectAnswers: ["Lyon"],
+        explanation: "",
+      },
+    ]);
+  });
+
+  it("restores term-pairs controls and preview when switching back", () => {
+    renderImport();
+    pasteText("cat\tgato\ndog\tperro\nbird\tpajaro\nfish\tpez");
+    expect(screen.getByText(/4 items ready/)).toBeInTheDocument();
+    chooseCloze();
+    expect(screen.queryByText(/4 items ready/)).not.toBeInTheDocument();
+    fireEvent.click(screen.getByRole("radio", { name: /term pairs/i }));
+    expect(screen.getByLabelText(/separator/i)).toBeInTheDocument();
+    expect(screen.getByText(/4 items ready/)).toBeInTheDocument();
   });
 });
