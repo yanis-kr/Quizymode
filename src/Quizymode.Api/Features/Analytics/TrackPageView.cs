@@ -281,15 +281,14 @@ public static class TrackPageView
         {
             // A concurrent request for the same brand-new session may win the unique-SessionId race; its snapshot wins.
             // ON CONFLICT avoids the unique violation that EF would log at Error before the catch below (#350).
-            AnalyticsSession row = analyticsSession;
             await db.Database.ExecuteSqlInterpolatedAsync(
                 $"""
                 INSERT INTO "AnalyticsSessions" ("Id", "SessionId", "VisitorId", "UserId", "FirstSeenUtc", "LandingPath",
                     "LandingQuery", "ReferrerHost", "UtmSource", "UtmMedium", "UtmCampaign", "UtmContent", "UtmTerm",
                     "ClickIdPlatform", "Channel", "DeviceClass", "Country", "AppVersion", "CreatedUtc")
-                VALUES ({row.Id}, {row.SessionId}, {row.VisitorId}, {row.UserId}, {row.FirstSeenUtc}, {row.LandingPath},
-                    {row.LandingQuery}, {row.ReferrerHost}, {row.UtmSource}, {row.UtmMedium}, {row.UtmCampaign}, {row.UtmContent}, {row.UtmTerm},
-                    {row.ClickIdPlatform}, {row.Channel}, {row.DeviceClass}, {row.Country}, {row.AppVersion}, {row.CreatedUtc})
+                VALUES ({analyticsSession.Id}, {analyticsSession.SessionId}, {analyticsSession.VisitorId}, {analyticsSession.UserId}, {analyticsSession.FirstSeenUtc}, {analyticsSession.LandingPath},
+                    {analyticsSession.LandingQuery}, {analyticsSession.ReferrerHost}, {analyticsSession.UtmSource}, {analyticsSession.UtmMedium}, {analyticsSession.UtmCampaign}, {analyticsSession.UtmContent}, {analyticsSession.UtmTerm},
+                    {analyticsSession.ClickIdPlatform}, {analyticsSession.Channel}, {analyticsSession.DeviceClass}, {analyticsSession.Country}, {analyticsSession.AppVersion}, {analyticsSession.CreatedUtc})
                 ON CONFLICT ("SessionId") DO NOTHING
                 """,
                 cancellationToken);

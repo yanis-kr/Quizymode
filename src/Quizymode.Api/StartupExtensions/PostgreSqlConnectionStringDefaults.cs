@@ -15,9 +15,13 @@ internal static class PostgreSqlConnectionStringDefaults
 
     public static string Apply(string connectionString, DatabaseOptions options)
     {
-        NpgsqlConnectionStringBuilder builder = new(connectionString);
-        Validate(options, builder.ConnectionPruningInterval);
+        if (options.MaxPoolSize < 1)
+        {
+            throw new InvalidOperationException(
+                $"{DatabaseOptions.SectionName}:{nameof(DatabaseOptions.MaxPoolSize)} must be at least 1 (was {options.MaxPoolSize}).");
+        }
 
+        NpgsqlConnectionStringBuilder builder = new(connectionString);
         bool hasMaxPoolSize = builder.Keys.Contains(MaxPoolSizeKey, StringComparer.OrdinalIgnoreCase);
         bool hasIdleLifetime = builder.Keys.Contains(IdleLifetimeKey, StringComparer.OrdinalIgnoreCase);
 
@@ -31,30 +35,28 @@ internal static class PostgreSqlConnectionStringDefaults
         {
             builder.ConnectionIdleLifetime = options.ConnectionIdleLifetimeSeconds;
         }
-        else if (builder.ConnectionIdleLifetime < builder.ConnectionPruningInterval)
+
+        // Npgsql checks these only when it builds a pooled data source, i.e. on first use inside the startup migration (#350).
+        // Fail here instead, naming the key; never echo the connection string.
+        if (builder.Pooling)
         {
-            // Npgsql would only throw on first use, inside the startup migration (#350). Never echo the connection string.
-            throw new InvalidOperationException(
-                $"{IdleLifetimeKey} in the PostgreSQL connection string must be at least its {PruningIntervalKey} of {builder.ConnectionPruningInterval} s (was {builder.ConnectionIdleLifetime}).");
+            int pruning = builder.ConnectionPruningInterval;
+            if (pruning < 1)
+            {
+                throw new InvalidOperationException(
+                    $"{PruningIntervalKey} in the PostgreSQL connection string must be at least 1 s (was {pruning}).");
+            }
+
+            if (builder.ConnectionIdleLifetime < pruning)
+            {
+                string source = hasIdleLifetime
+                    ? $"{IdleLifetimeKey} in the PostgreSQL connection string"
+                    : $"{DatabaseOptions.SectionName}:{nameof(DatabaseOptions.ConnectionIdleLifetimeSeconds)}";
+                throw new InvalidOperationException(
+                    $"{source} must be at least the {PruningIntervalKey} of {pruning} s (was {builder.ConnectionIdleLifetime}).");
+            }
         }
 
         return builder.ConnectionString;
-    }
-
-    /// <param name="pruningIntervalSeconds">The connection string's pruning interval (explicit or the Npgsql default, 10 s).</param>
-    private static void Validate(DatabaseOptions options, int pruningIntervalSeconds)
-    {
-        if (options.MaxPoolSize < 1)
-        {
-            throw new InvalidOperationException(
-                $"{DatabaseOptions.SectionName}:{nameof(DatabaseOptions.MaxPoolSize)} must be at least 1 (was {options.MaxPoolSize}).");
-        }
-
-        // Npgsql refuses an idle lifetime shorter than the pruning interval.
-        if (options.ConnectionIdleLifetimeSeconds < pruningIntervalSeconds)
-        {
-            throw new InvalidOperationException(
-                $"{DatabaseOptions.SectionName}:{nameof(DatabaseOptions.ConnectionIdleLifetimeSeconds)} must be at least the {PruningIntervalKey} of {pruningIntervalSeconds} s (was {options.ConnectionIdleLifetimeSeconds}).");
-        }
     }
 }
