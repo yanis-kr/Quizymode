@@ -98,14 +98,6 @@ function getFallbackTitle(pathname: string): string | undefined {
     return "Search";
   }
 
-  if (pathname === "/study-guide") {
-    return "Study Guide";
-  }
-
-  if (pathname === "/study-guide/import") {
-    return "Import Study Guide";
-  }
-
   if (pathname === "/study-guides/documents" || pathname.startsWith("/study-guides/documents/")) {
     return "My Study Guides";
   }
@@ -200,8 +192,6 @@ const Layout = ({ children }: LayoutProps) => {
         path === "/items/bulk-create" ||
         path === "/items/upload" ||
         path === "/add-new-item" ||
-        path === "/study-guide" ||
-        path.startsWith("/study-guide/") ||
         path.startsWith("/study-guides/")
       );
     }

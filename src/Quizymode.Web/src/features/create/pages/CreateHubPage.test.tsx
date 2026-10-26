@@ -64,11 +64,12 @@ describe("CreateHubPage", () => {
       "href",
       "/create/import"
     );
-    expect(screen.getByRole("link", { name: "My Study Guide" })).toHaveAttribute("href", "/study-guide");
+    expect(screen.queryByRole("link", { name: "My Study Guide" })).not.toBeInTheDocument();
+    expect(document.querySelector('a[href^="/study-guide?"], a[href="/study-guide"]')).toBeNull();
     await screen.findByText(/no study guides yet/i);
   });
 
-  it("keeps the query string on the question, import and study guide links", async () => {
+  it("keeps the query string on the question and import links", async () => {
     renderPage("/create?category=science&keywords=anatomy");
 
     expect(screen.getByRole("link", { name: "Write a question" })).toHaveAttribute(
@@ -79,10 +80,6 @@ describe("CreateHubPage", () => {
     expect(screen.getByRole("link", { name: "Import questions from text or a file" })).toHaveAttribute(
       "href",
       "/create/import?category=science&keywords=anatomy"
-    );
-    expect(screen.getByRole("link", { name: "My Study Guide" })).toHaveAttribute(
-      "href",
-      "/study-guide?category=science&keywords=anatomy"
     );
     await screen.findByText(/no study guides yet/i);
   });

@@ -70,18 +70,6 @@ public sealed class ApplicationDbContext : DbContext
 
     public DbSet<Upload> Uploads => Set<Upload>();
 
-    public DbSet<StudyGuide> StudyGuides => Set<StudyGuide>();
-
-    public DbSet<StudyGuideImportSession> StudyGuideImportSessions => Set<StudyGuideImportSession>();
-
-    public DbSet<StudyGuideChunk> StudyGuideChunks => Set<StudyGuideChunk>();
-
-    public DbSet<StudyGuidePromptResult> StudyGuidePromptResults => Set<StudyGuidePromptResult>();
-
-    public DbSet<StudyGuideDedupResult> StudyGuideDedupResults => Set<StudyGuideDedupResult>();
-
-    public DbSet<StudyGuideUpload> StudyGuideUploads => Set<StudyGuideUpload>();
-
     public DbSet<StudyGuideDocument> StudyGuideDocuments => Set<StudyGuideDocument>();
 
     public DbSet<StudyGuideSection> StudyGuideSections => Set<StudyGuideSection>();

@@ -43,6 +43,8 @@ describe("legacy create redirects (AC 2.2.5)", () => {
     ["/add-new-item?category=science", "/create/question?category=science"],
     ["/items/create?category=science#top", "/create/question?category=science#top"],
     ["/study-guide/upload?id=u1", "/create/notes?id=u1"],
+    ["/study-guide?category=x#h", "/create/notes?category=x#h"],
+    ["/study-guide/import?category=x&sets=2", "/create/notes?category=x&sets=2"],
     ["/items/upload?category=science", "/create/import?category=science"],
     ["/items/bulk-create?category=x&keywords=a", "/create/import?category=x&keywords=a"],
   ])("sends %s to %s keeping query and hash", async (from, to) => {
@@ -60,6 +62,12 @@ describe("legacy create redirects (AC 2.2.5)", () => {
     authState.isAuthenticated = false;
     renderApp("/study-guide/upload?id=u1");
     expect(await screen.findByTestId("where")).toHaveTextContent("/login?returnTo=%2Fcreate%2Fnotes%3Fid%3Du1");
+  });
+
+  it("sends anonymous visitors of the retired /study-guide/import to login with a /create/notes return-to", async () => {
+    authState.isAuthenticated = false;
+    renderApp("/study-guide/import?category=x");
+    expect(await screen.findByTestId("where")).toHaveTextContent("/login?returnTo=%2Fcreate%2Fnotes%3Fcategory%3Dx");
   });
 
   it("keeps /admin/import behind the admin route guard (AC 5.13.1)", async () => {

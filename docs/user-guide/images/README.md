@@ -13,7 +13,6 @@ Add **PNG** or **WebP** images here so the figures in [`../README.md`](../README
 | `07-quiz.png` | **Quiz** UI (question + answer choices or input—whatever your quiz step shows). | `/quiz/...` with an item open |
 | `08-items.png` | **All items** list. | `/items` |
 | `09-item-detail.png` | **Single item** detail page with content visible. | `/items/{id}` |
-| `10-study-guide.png` | **Study guide** page (editor or import). | Signed in; `/study-guide` or `/study-guide/import` |
 | `11-nav-signed-in.png` | Top nav showing **Categories**, **Collections**, **Add Items**, and **user menu** (no need to open the menu if space is tight). | Any signed-in page |
 
 ## Optional extras (not referenced in the guide yet)

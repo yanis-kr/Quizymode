@@ -44,7 +44,7 @@ const BENEFIT_COPY: Record<AuthReason, BenefitCopy> = {
   },
   "create-content": {
     heading: "Make your next study session yours.",
-    body: "Create a free account to create private items and collections, and use the existing study-guide import workflow.",
+    body: "Create a free account to create private items and collections, and turn your notes into quizzes.",
   },
   "join-discussion": {
     heading: "Make your next study session yours.",

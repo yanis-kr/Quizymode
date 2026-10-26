@@ -220,8 +220,8 @@ const StudyGuideUploadPage = () => {
           <p className="text-sm text-gray-600">{UNAVAILABLE_MESSAGE}</p>
           <p className="text-sm text-gray-600">
             You can still{" "}
-            <Link to="/study-guide" className="font-medium text-indigo-600 hover:text-indigo-800">
-              build sets from a study guide manually
+            <Link to="/create/import" className="font-medium text-indigo-600 hover:text-indigo-800">
+              import questions from text or a file
             </Link>{" "}
             or open{" "}
             <Link to="/study-guides/documents" className="font-medium text-indigo-600 hover:text-indigo-800">

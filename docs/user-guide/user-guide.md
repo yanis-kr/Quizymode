@@ -13,7 +13,6 @@ _Screenshots are generated automatically - run `npx playwright test --project=sc
 - [Building Your Collection](#building-your-collection)
 - [Collections](#collections)
 - [Adding Items](#adding-items)
-- [Study Guide Import](#study-guide-import)
 - [Other Pages](#other-pages)
 
 ## Home
@@ -180,7 +179,7 @@ The **Bookmarked** tab shows all collections you have bookmarked. You can open a
 
 ### Add Items
 
-The Add Items hub is the central starting point for creating new quiz content. It provides a Topic and tags block where you choose category, primary topic (rank 1), subtopic (rank 2), and optional extra keywords. The same scope is forwarded to whichever creation method you pick. From here you can open the single-item create form, the Import questions flow (paste text or a file), or the Study Guide import wizard. If you have an active collection, a banner reminds you that newly created items will be added to it automatically.
+The Add Items hub is the central starting point for creating new quiz content. It provides a Topic and tags block where you choose category, primary topic (rank 1), subtopic (rank 2), and optional extra keywords. The same scope is forwarded to whichever creation method you pick. From here you can open the single-item create form, the Import questions flow (paste text or a file), or Upload notes to turn a study guide into a quiz. If you have an active collection, a banner reminds you that newly created items will be added to it automatically.
 
 ![Add Items](screenshots/user/add-items.png "Add Items")
 
@@ -199,44 +198,6 @@ The Create Item form lets you write a single quiz item from scratch. Fill in the
 ### Import Questions
 
 To add many questions at once, open **Create**, choose **Import questions from text or a file** and use the **Paste text** tab. Paste a Quizlet or Anki export, CSV/TSV, or cloze text, check the preview, pick a topic and upload. The AI-assisted Bulk Create page has been retired.
-
-## Study Guide Import
-
-### Study Guide No Guide
-
-Navigating to the Study Guide Import wizard before uploading a study guide shows a message prompting you to save a study guide first. Click the link to go to the My Study Guide page and paste your material there.
-
-![Study Guide No Guide](screenshots/user/study-guide-no-guide.png "Study Guide No Guide")
-
-### Study Guide
-
-The My Study Guide page is a personal text editor where you paste or write the study material you want to turn into quiz items such as lecture notes, textbook excerpts, documentation, or any reference text. Your study guide is saved per user and used as the source content for the Study Guide import wizard, which generates targeted questions from it using AI.
-
-![Study Guide](screenshots/user/study-guide.png "Study Guide")
-
-### Study Guide Content
-
-With your study guide text pasted in, click **Save**. The content is stored on your account and is now available to the import wizard. You can update or replace it at any time by editing the text and saving again.
-
-![Study Guide Content](screenshots/user/study-guide-content.png "Study Guide Content")
-
-### Study Guide Import
-
-The Study Guide import wizard turns your saved study guide text into quiz items in a guided multi-step flow. Select the category, primary topic, subtopic, and optional extra keywords; set the number of prompt sets; then click **Create prompt sets**.
-
-![Study Guide Import](screenshots/user/study-guide-import.png "Study Guide Import")
-
-### Study Guide Import Prompts
-
-After you save a study guide and click **Create prompt sets**, the wizard splits that saved guide into chunks and generates one AI prompt per chunk. Each prompt card shows the chunk title, its size in bytes, and the full prompt text. Copy each prompt into an AI assistant, then paste the JSON response back into the matching text area and click **Validate JSON**.
-
-![Study Guide Import Prompts](screenshots/user/study-guide-import-prompts.png "Study Guide Import Prompts")
-
-### Study Guide Import First Prompt
-
-A prompt set contains the relevant excerpt from your study guide together with precise instructions for the AI: the exact category, primary topic, subtopic, output format, and field requirements. Paste this into any AI tool to get a structured batch of quiz items back.
-
-![Study Guide Import First Prompt](screenshots/user/study-guide-import-first-prompt.png "Study Guide Import First Prompt")
 
 ## Other Pages
 

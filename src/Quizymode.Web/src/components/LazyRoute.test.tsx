@@ -83,7 +83,7 @@ describe("App route splitting", () => {
         "AdminDashboardPage", "AdminSeedSyncPage", "AdminKeywordsPage", "AdminUserSettingsPage",
         "PageViewAnalyticsPage", "AdminClientErrorsPage", "AdminFeaturedPage", "AdminIdeasPage",
         "CreateHubPage", "CreateImportPage", "AdminImportPage", "CreateItemPage", "EditItemPage",
-        "StudyGuidePage", "StudyGuideImportPage", "StudyGuideUploadPage", "IdeasPage", "RoadmapPage", "FeedbackPage",
+        "StudyGuideUploadPage", "IdeasPage", "RoadmapPage", "FeedbackPage",
         "AboutPage", "PrivacyPolicyPage", "TermsOfServicePage", "SearchPage",
       ])
     );

@@ -101,8 +101,6 @@ describe("Layout", () => {
     "/items/create",
     "/items/bulk-create",
     "/items/upload",
-    "/study-guide",
-    "/study-guide/import",
     "/study-guides/documents/abc",
   ])("highlights Create on %s", (path) => {
     authState.isAuthenticated = true;
@@ -179,10 +177,10 @@ describe("Layout", () => {
   });
 
   it("applies a fallback title for routes without a page-specific SEO component", async () => {
-    renderLayout(["/study-guide"]);
+    renderLayout(["/study-guides/documents"]);
 
     await waitFor(() => {
-      expect(document.title).toBe("Study Guide | Quizymode");
+      expect(document.title).toBe("My Study Guides | Quizymode");
     });
   });
 });

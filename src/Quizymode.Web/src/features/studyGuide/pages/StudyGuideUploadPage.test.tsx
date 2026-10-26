@@ -131,6 +131,8 @@ describe("StudyGuideUploadPage", () => {
 
     expect(await screen.findByText(/feature unavailable/i)).toBeInTheDocument();
     expect(screen.queryByRole("tab", { name: /upload file/i })).not.toBeInTheDocument();
+    expect(screen.getByRole("link", { name: /import questions from text or a file/i })).toHaveAttribute("href", "/create/import");
+    expect(document.querySelector('a[href="/study-guide"]')).toBeNull();
     expect(screen.getByRole("link", { name: /your earlier study guides/i })).toHaveAttribute(
       "href",
       "/study-guides/documents"
