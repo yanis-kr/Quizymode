@@ -13,6 +13,8 @@ public sealed class StartupDatabaseRetryTests
     {
         public int Warnings { get; private set; }
 
+        public List<IReadOnlyDictionary<string, object?>> WarningValues { get; } = [];
+
         public IDisposable? BeginScope<TState>(TState state) where TState : notnull => null;
 
         public bool IsEnabled(LogLevel logLevel) => true;
@@ -22,6 +24,10 @@ public sealed class StartupDatabaseRetryTests
             if (logLevel == LogLevel.Warning)
             {
                 Warnings++;
+                if (state is IEnumerable<KeyValuePair<string, object?>> values)
+                {
+                    WarningValues.Add(values.ToDictionary(pair => pair.Key, pair => pair.Value));
+                }
             }
         }
     }
@@ -85,6 +91,7 @@ public sealed class StartupDatabaseRetryTests
     [Theory]
     [InlineData("42P01", "relation missing")]
     [InlineData("XX000", "some other internal error")]
+    [InlineData("28P01", "password authentication failed for user \"u\"")]
     public async Task NonTransientPostgresError_IsNotRetried(string sqlState, string message)
     {
         Probe probe = new();
@@ -112,6 +119,28 @@ public sealed class StartupDatabaseRetryTests
         StartupDatabaseRetry.IsRetryable(transient).Should().BeTrue();
         StartupDatabaseRetry.IsRetryable(new InvalidOperationException("wrapped", transient)).Should().BeTrue();
         StartupDatabaseRetry.IsRetryable(new InvalidOperationException("plain")).Should().BeFalse();
+    }
+
+    [Fact]
+    public async Task WrappedEMaxConnSession_WarningNamesTheInnerPostgresError()
+    {
+        Probe probe = new();
+
+        await probe.RunAsync(n => n == 1 ? new InvalidOperationException("transient failure wrapper", MaxConn()) : null);
+
+        probe.Calls.Should().Be(2);
+        IReadOnlyDictionary<string, object?> warning = probe.Logger.WarningValues.Should().ContainSingle().Subject;
+        warning["ErrorType"].Should().Be(nameof(PostgresException));
+        warning["SqlState"].Should().Be("XX000");
+        ((string)warning["Reason"]!).Should().Contain("EMAXCONNSESSION");
+    }
+
+    [Fact]
+    public void RootCause_WithoutNpgsqlException_IsTheExceptionItself()
+    {
+        InvalidOperationException plain = new("plain", new TimeoutException());
+
+        StartupDatabaseRetry.RootCause(plain).Should().BeSameAs(plain);
     }
 
     [Fact]

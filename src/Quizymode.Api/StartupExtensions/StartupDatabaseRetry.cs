@@ -29,10 +29,11 @@ internal static class StartupDatabaseRetry
             {
                 TimeSpan wait = TimeSpan.FromSeconds(
                     Math.Min(BaseDelay.TotalSeconds * Math.Pow(2, attempt - 1), MaxDelay.TotalSeconds));
-                PostgresException? pg = ex as PostgresException;
+                Exception cause = RootCause(ex);
+                PostgresException? pg = cause as PostgresException;
                 logger.LogWarning(
                     "Database migration attempt {Attempt}/{MaxAttempts} failed with {ErrorType} {SqlState}: {Reason}; retrying in {DelaySeconds}s",
-                    attempt, MaxAttempts, ex.GetType().Name, pg?.SqlState, pg?.MessageText ?? ex.Message, wait.TotalSeconds);
+                    attempt, MaxAttempts, cause.GetType().Name, pg?.SqlState, pg?.MessageText ?? cause.Message, wait.TotalSeconds);
                 await delay(wait, cancellationToken);
             }
         }
@@ -48,4 +49,21 @@ internal static class StartupDatabaseRetry
         { InnerException: { } inner } => IsRetryable(inner),
         _ => false,
     };
+
+    /// <summary>
+    /// The database exception behind EF's transient-failure wrapper (#350), so the retry warning names the real error.
+    /// Falls back to <paramref name="ex"/> when the chain holds no Npgsql exception.
+    /// </summary>
+    internal static Exception RootCause(Exception ex)
+    {
+        for (Exception? current = ex; current is not null; current = current.InnerException)
+        {
+            if (current is NpgsqlException)
+            {
+                return current;
+            }
+        }
+
+        return ex;
+    }
 }

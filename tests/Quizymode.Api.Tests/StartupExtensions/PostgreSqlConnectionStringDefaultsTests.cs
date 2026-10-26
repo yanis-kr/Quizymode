@@ -114,4 +114,50 @@ public sealed class PostgreSqlConnectionStringDefaultsTests
         Action build = () => NpgsqlDataSource.Create(cs).Dispose();
         build.Should().NotThrow();
     }
+
+    [Fact]
+    public void Apply_ExplicitPruningInterval_AboveIdleOption_ThrowsNamingTheKey()
+    {
+        DatabaseOptions options = new() { ConnectionIdleLifetimeSeconds = 20 };
+
+        Action act = () => PostgreSqlConnectionStringDefaults.Apply($"{Base};Connection Pruning Interval=30", options);
+
+        act.Should().Throw<InvalidOperationException>()
+            .WithMessage("*Database:ConnectionIdleLifetimeSeconds*Connection Pruning Interval of 30 s*");
+    }
+
+    [Fact]
+    public void Apply_ExplicitPruningInterval_AtOrBelowIdleOption_IsAccepted()
+    {
+        string cs = PostgreSqlConnectionStringDefaults.Apply($"{Base};Connection Pruning Interval=30", new DatabaseOptions());
+
+        Parse(cs).ConnectionIdleLifetime.Should().Be(60);
+        Parse(cs).ConnectionPruningInterval.Should().Be(30);
+        Action build = () => NpgsqlDataSource.Create(cs).Dispose();
+        build.Should().NotThrow();
+    }
+
+    [Theory]
+    [InlineData("Connection Idle Lifetime=5")]
+    [InlineData("Connection Idle Lifetime=20;Connection Pruning Interval=30")]
+    public void Apply_ExplicitIdleLifetimeBelowPruningInterval_ThrowsWithoutEchoingTheConnectionString(string pairs)
+    {
+        Action act = () => PostgreSqlConnectionStringDefaults.Apply($"{Base};{pairs}", new DatabaseOptions());
+
+        InvalidOperationException ex = act.Should().Throw<InvalidOperationException>()
+            .WithMessage("*Connection Idle Lifetime*Connection Pruning Interval*").Which;
+        ex.Message.Should().NotContain("Password").And.NotContain("Host=");
+    }
+
+    [Fact]
+    public void NpgsqlItself_RejectsIdleLifetimeBelowPruningInterval_OnlyOnFirstUse()
+    {
+        // The reason Apply checks it: Npgsql accepts the string and fails later, inside the startup migration.
+        string cs = $"{Base};Connection Idle Lifetime=5";
+        Action parse = () => Parse(cs);
+        parse.Should().NotThrow();
+
+        Action build = () => NpgsqlDataSource.Create(cs).OpenConnection();
+        build.Should().Throw<ArgumentException>();
+    }
 }
