@@ -7,6 +7,7 @@ import {
   type ImportItem,
   type SeparatorKind,
 } from "../utils/importParser";
+import { CLOZE_AI_HELPER_PROMPT, parseCloze } from "@/features/items/utils/clozeParser";
 
 interface PasteTextImportProps {
   /** Upload limit for this user (100 for regular users, 1000 for admins). */
@@ -18,11 +19,16 @@ interface PasteTextImportProps {
   onPreviewChange?: (items: ImportItem[]) => void;
 }
 
+type PasteFormat = "term-pairs" | "cloze";
+
 const PREVIEW_ROWS = 5;
 const inputClass =
   "block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm";
 
 const PasteTextImport = ({ maxItems, isPending, onImport, onPreviewChange }: PasteTextImportProps) => {
+  const [format, setFormat] = React.useState<PasteFormat>("term-pairs");
+  const [copied, setCopied] = React.useState(false);
+  const [copyError, setCopyError] = React.useState(false);
   const [text, setText] = React.useState("");
   const [separator, setSeparator] = React.useState<SeparatorKind>("auto");
   const [customSeparator, setCustomSeparator] = React.useState("");
@@ -30,27 +36,104 @@ const PasteTextImport = ({ maxItems, isPending, onImport, onPreviewChange }: Pas
   const [direction, setDirection] = React.useState<ImportDirection>("term-to-definition");
   const [template, setTemplate] = React.useState("{term}");
 
+  const clozePreview = React.useMemo(() => {
+    if (format !== "cloze" || !text.trim()) return null;
+    const result = parseCloze(text, { limit: maxItems });
+    const items: ImportItem[] = result.drafts.map((d) => ({
+      question: d.question,
+      correctAnswer: d.correctAnswer,
+      incorrectAnswers: d.incorrectAnswers,
+      explanation: d.explanation,
+    }));
+    return { result, items, hasSiblings: result.drafts.some((d) => d.cardCount > 1) };
+  }, [format, text, maxItems]);
+
   const preview = React.useMemo(() => {
-    if (!text.trim()) return null;
+    if (format !== "term-pairs" || !text.trim()) return null;
     const parsed = parseTermPairs(text, { ...DEFAULT_PARSE_OPTIONS, separator, customSeparator, quotes });
     const built = buildImportItems(parsed.pairs, { direction, template, limit: maxItems });
     return { parsed, built, skipped: [...parsed.skipped, ...built.skipped] };
-  }, [text, separator, customSeparator, quotes, direction, template, maxItems]);
+  }, [format, text, separator, customSeparator, quotes, direction, template, maxItems]);
 
-  const previewItems = preview?.built.items;
+  const previewItems = format === "cloze" ? clozePreview?.items : preview?.built.items;
   React.useEffect(() => {
     onPreviewChange?.(previewItems ?? []);
   }, [previewItems, onPreviewChange]);
 
-  const canImport = !!preview && !preview.built.error && preview.built.items.length > 0 && !isPending;
+  const canImport =
+    format === "cloze"
+      ? !!clozePreview && clozePreview.items.length > 0 && !isPending
+      : !!preview && !preview.built.error && preview.built.items.length > 0 && !isPending;
+
+  const handleCopyPrompt = async () => {
+    try {
+      await navigator.clipboard.writeText(CLOZE_AI_HELPER_PROMPT);
+      setCopyError(false);
+      setCopied(true);
+      setTimeout(() => setCopied(false), 2000);
+    } catch {
+      setCopied(false);
+      setCopyError(true);
+    }
+  };
 
   return (
     <div className="space-y-4">
+      <fieldset>
+        <legend className="block text-sm font-medium text-gray-700 mb-1">Format</legend>
+        <div className="flex flex-col gap-1 sm:flex-row sm:gap-6">
+          <label className="flex items-center gap-2 text-sm text-gray-700">
+            <input
+              type="radio"
+              name="paste-format"
+              checked={format === "term-pairs"}
+              onChange={() => setFormat("term-pairs")}
+              className="h-4 w-4 border-gray-300 text-indigo-600"
+            />
+            Term pairs (Quizlet, Anki, CSV/TSV)
+          </label>
+          <label className="flex items-center gap-2 text-sm text-gray-700">
+            <input
+              type="radio"
+              name="paste-format"
+              checked={format === "cloze"}
+              onChange={() => setFormat("cloze")}
+              className="h-4 w-4 border-gray-300 text-indigo-600"
+            />
+            Cloze
+          </label>
+        </div>
+      </fieldset>
+
+      {format === "term-pairs" ? (
       <p className="text-xs text-gray-500">
         Paste a Quizlet export (term, tab, definition), an Anki text export, or CSV/TSV. Quizlet links and Anki .apkg
         files are not supported. Wrong answers are picked from the other answers in the same set, so at least 4 usable
         rows are needed.
       </p>
+      ) : (
+        <div className="space-y-2 text-xs text-gray-600">
+          <p>
+            One note per line. Wrap each answer in <code>{"{{c1::answer}}"}</code> or{" "}
+            <code>{"{{c1::answer::hint}}"}</code>, then add 1-4 required wrong answers after <code>|</code>. Use{" "}
+            <code>| c2: wrong</code> to give a wrong answer to card 2 only, and <code>{"\\|"}</code> for a literal pipe.
+          </p>
+          <p>
+            Example: <code>{"{{c1::Paris}} is the capital of France | Lyon | Marseille"}</code>
+          </p>
+          <button
+            type="button"
+            onClick={handleCopyPrompt}
+            className="inline-flex items-center px-3 py-1.5 border border-gray-300 rounded-md text-xs font-medium text-gray-700 bg-white hover:bg-gray-50"
+          >
+            Copy AI helper prompt
+          </button>
+          <span role="status" aria-live="polite" className="ml-2">
+            {copied ? "Helper prompt copied to clipboard." : ""}
+            {copyError ? "Could not copy automatically." : ""}
+          </span>
+        </div>
+      )}
 
       <div>
         <label htmlFor="paste-text" className="block text-sm font-medium text-gray-700 mb-1">
@@ -62,10 +145,16 @@ const PasteTextImport = ({ maxItems, isPending, onImport, onPreviewChange }: Pas
           value={text}
           onChange={(e) => setText(e.target.value)}
           className={`${inputClass} font-mono`}
-          placeholder={"cat\tgato\ndog\tperro\nbird\tpájaro\nfish\tpez"}
+          placeholder={
+            format === "cloze"
+              ? "{{c1::Paris}} is the capital of France | Lyon | Marseille"
+              : "cat\tgato\ndog\tperro\nbird\tpájaro\nfish\tpez"
+          }
         />
       </div>
 
+      {format === "term-pairs" && (
+      <>
       <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
         <div>
           <label htmlFor="paste-separator" className="block text-sm font-medium text-gray-700 mb-1">
@@ -139,10 +228,60 @@ const PasteTextImport = ({ maxItems, isPending, onImport, onPreviewChange }: Pas
         />
         Treat double quotes as field quotes (CSV)
       </label>
+      </>
+      )}
 
       <div className="rounded-md border border-gray-200 bg-gray-50 p-3 text-sm text-gray-700">
         <h2 className="font-medium text-gray-900">Preview</h2>
-        {!preview && <p className="text-gray-500">Paste text above to see a preview.</p>}
+        {!preview && !clozePreview && <p className="text-gray-500">Paste text above to see a preview.</p>}
+        {clozePreview && (
+          <div className="space-y-2">
+            <p aria-live="polite">
+              {clozePreview.items.length} card{clozePreview.items.length === 1 ? "" : "s"} ready
+              {clozePreview.result.skipped.length > 0 &&
+                `, ${clozePreview.result.skipped.length} skipped`}
+              {clozePreview.result.duplicates > 0 &&
+                `, ${clozePreview.result.duplicates} duplicate${clozePreview.result.duplicates === 1 ? "" : "s"} removed`}
+              .
+            </p>
+            {clozePreview.result.truncated && (
+              <p role="alert" className="text-amber-700">
+                Your limit is {maxItems} items per upload, so only the first {maxItems} will be imported. Split the
+                rest into another upload.
+              </p>
+            )}
+            {clozePreview.hasSiblings && (
+              <p className="text-xs text-gray-600">
+                Some lines produce several cards. Cards from the same line can reveal each other&apos;s answers when
+                studied together.
+              </p>
+            )}
+            {clozePreview.items.length > 0 && (
+              <ul className="space-y-2">
+                {clozePreview.items.slice(0, PREVIEW_ROWS).map((item, i) => (
+                  <li key={i} className="break-words rounded border border-gray-200 bg-white p-2">
+                    <div className="font-medium text-gray-900">{item.question}</div>
+                    <div className="text-green-700">{item.correctAnswer}</div>
+                    <div className="text-xs text-gray-500">Wrong: {item.incorrectAnswers.join(" | ")}</div>
+                  </li>
+                ))}
+              </ul>
+            )}
+            {clozePreview.result.skipped.length > 0 && (
+              <details open>
+                <summary className="cursor-pointer text-xs text-gray-600">Skipped lines</summary>
+                <ul className="mt-1 list-disc pl-5 text-xs text-gray-600">
+                  {clozePreview.result.skipped.slice(0, 20).map((s, i) => (
+                    <li key={i}>
+                      Line {s.line}
+                      {s.card !== undefined && ` (card c${s.card})`}: {s.reason}
+                    </li>
+                  ))}
+                </ul>
+              </details>
+            )}
+          </div>
+        )}
         {preview && (
           <div className="space-y-2">
             <p aria-live="polite">
@@ -194,7 +333,9 @@ const PasteTextImport = ({ maxItems, isPending, onImport, onPreviewChange }: Pas
         type="button"
         disabled={!canImport}
         onClick={() => {
-          if (preview && canImport) onImport(preview.built.items, JSON.stringify(preview.built.items));
+          if (format === "cloze" && clozePreview && canImport) {
+            onImport(clozePreview.items, JSON.stringify(clozePreview.items));
+          } else if (format === "term-pairs" && preview && canImport) onImport(preview.built.items, JSON.stringify(preview.built.items));
         }}
         className="inline-flex items-center px-4 py-2 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-indigo-600 hover:bg-indigo-700 disabled:opacity-50 disabled:cursor-not-allowed"
       >
