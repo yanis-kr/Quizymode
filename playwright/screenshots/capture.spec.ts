@@ -9,60 +9,6 @@ const HOME_SAMPLE_COLLECTION_SLUG = "fun+trivia+facts";
 const HOME_SAMPLE_COLLECTION_DETAIL_PATH = `/collections/${HOME_SAMPLE_COLLECTION_ID}/${HOME_SAMPLE_COLLECTION_SLUG}`;
 const USER_GUIDE_COMMENT_TEXT = "Study tip: grouping capitals by continent makes them easier to remember — try Europe first, then expand to other regions.";
 
-const STUDY_GUIDE_TEXT = `Here are 50 random countries with their capitals and approximate current populations.
-
-Country\tCapital\tCurrency\tContinent\tPopulation
-Canada\tOttawa\tCanadian dollar\tNorth America\t40,467,728
-Morocco\tRabat\tMoroccan dirham\tAfrica\t38,762,441
-Japan\tTokyo\tJapanese yen\tAsia\t122,427,731
-Peru\tLima\tPeruvian sol\tSouth America\t34,922,148
-Kenya\tNairobi\tKenyan shilling\tAfrica\t58,636,412
-Argentina\tBuenos Aires\tArgentine peso\tSouth America\t46,003,734
-Thailand\tBangkok\tThai baht\tAsia\t71,559,614
-Poland\tWarsaw\tPolish zloty\tEurope\t37,843,188
-Ghana\tAccra\tGhanaian cedi\tAfrica\t35,697,557
-Vietnam\tHanoi\tVietnamese dong\tAsia\t102,177,431
-Australia\tCanberra\tAustralian dollar\tOceania\t27,227,096
-Colombia\tBogota\tColombian peso\tSouth America\t53,936,226
-Germany\tBerlin\tEuro\tEurope\t83,644,258
-Nepal\tKathmandu\tNepalese rupee\tAsia\t29,629,410
-Uganda\tKampala\tUgandan shilling\tAfrica\t52,761,469
-Mexico\tMexico City\tMexican peso\tNorth America\t132,997,658
-Spain\tMadrid\tEuro\tEurope\t47,850,793
-Malaysia\tKuala Lumpur\tMalaysian ringgit\tAsia\t36,385,115
-Ethiopia\tAddis Ababa\tEthiopian birr\tAfrica\t138,902,185
-Chile\tSantiago\tChilean peso\tSouth America\t19,945,850
-Saudi Arabia\tRiyadh\tSaudi riyal\tAsia\t35,165,787
-France\tParis\tEuro\tEurope\t66,746,401
-Uzbekistan\tTashkent\tUzbek sum\tAsia\t37,724,223
-Nigeria\tAbuja\tNigerian naira\tAfrica\t242,431,832
-Romania\tBucharest\tRomanian leu\tEurope\t18,800,605
-South Korea\tSeoul\tSouth Korean won\tAsia\t51,600,388
-Bangladesh\tDhaka\tBangladeshi taka\tAsia\t177,818,044
-Cambodia\tPhnom Penh\tCambodian riel\tAsia\t18,051,219
-Italy\tRome\tEuro\tEurope\t58,926,166
-Algeria\tAlgiers\tAlgerian dinar\tAfrica\t48,028,334
-Brazil\tBrasilia\tBrazilian real\tSouth America\t213,562,666
-Zimbabwe\tHarare\tZimbabwe Gold\tAfrica\t17,273,580
-Turkey\tAnkara\tTurkish lira\tAsia\t87,926,082
-Ecuador\tQuito\tUS dollar\tSouth America\t18,444,506
-Pakistan\tIslamabad\tPakistani rupee\tAsia\t259,299,791
-Angola\tLuanda\tAngolan kwanza\tAfrica\t40,215,179
-United Kingdom\tLondon\tPound sterling\tEurope\t69,931,528
-Tunisia\tTunis\tTunisian dinar\tAfrica\t12,415,138
-Indonesia\tJakarta\tIndonesian rupiah\tAsia\t287,886,782
-Senegal\tDakar\tCFA franc BCEAO\tAfrica\t19,366,548
-Egypt\tCairo\tEgyptian pound\tAfrica\t120,101,175
-Bolivia\tSucre\tBoliviano\tSouth America\t12,749,291
-Philippines\tManila\tPhilippine peso\tAsia\t117,724,471
-Mozambique\tMaputo\tMozambican metical\tAfrica\t36,639,851
-India\tNew Delhi\tIndian rupee\tAsia\t1,476,625,576
-Kazakhstan\tAstana\tKazakhstani tenge\tAsia\t21,083,626
-Iraq\tBaghdad\tIraqi dinar\tAsia\t48,007,437
-Guatemala\tGuatemala City\tGuatemalan quetzal\tNorth America\t18,967,978
-Afghanistan\tKabul\tAfghan afghani\tAsia\t45,047,069
-Cameroon\tYaounde\tCentral African CFA franc\tAfrica\t30,640,817`;
-
 async function safeGoto(page: Page, url: string) {
   await page.goto(url, { waitUntil: "load", timeout: 20_000 });
   await waitForUiToSettle(page);
@@ -611,67 +557,6 @@ async function setPageSizeToFive(page: Page) {
   }).catch(() => {});
 }
 
-async function ensureStudyGuideSaved(page: Page) {
-  await ensureSignedIn(page);
-  await safeGoto(page, "/study-guide");
-  await waitForAnyVisible(page, [
-    "#sg-title",
-    "text=Study Guide",
-  ]);
-
-  await page.locator("#sg-title").fill("Capitals Study Guide").catch(() => {});
-  await page.locator("#sg-content").fill(STUDY_GUIDE_TEXT).catch(() => {});
-  await page.getByRole("button", { name: /^save$/i }).click().catch(() => {});
-  await waitForTextToDisappear(page, /saving/i);
-  await waitForUiToSettle(page);
-  await waitForAnyVisible(page, ["button:has-text('Continue to prompt sets')", "#sg-content"]);
-}
-
-async function ensureStudyGuideDeleted(page: Page) {
-  await ensureSignedIn(page);
-  await safeGoto(page, "/study-guide");
-  await waitForAnyVisible(page, ["#sg-title", "button:has-text('Save')"]);
-
-  const deleteButton = page.getByRole("button", { name: /^delete$/i });
-  if (!(await deleteButton.isVisible().catch(() => false))) {
-    return;
-  }
-
-  page.once("dialog", (dialog) => dialog.accept().catch(() => {}));
-  await deleteButton.click().catch(() => {});
-  await waitForUiToSettle(page);
-  await waitForAnyVisible(page, ["button:has-text('Save')"]);
-}
-
-async function ensurePromptSetsExist(page: Page) {
-  await ensureStudyGuideSaved(page);
-  await safeGoto(
-    page,
-    "/study-guide/import?category=geography&keywords=capitals,world&sets=2"
-  );
-  await clickConsentIfPresent(page);
-  await waitForAnyVisible(page, [
-    "text=Using study guide:",
-    "text=You do not have a study guide yet.",
-  ]);
-
-  const hasPromptCards = await page
-    .getByText(/bytes of study guide content/i)
-    .first()
-    .isVisible()
-    .catch(() => false);
-
-  if (!hasPromptCards) {
-    await page
-      .getByRole("button", { name: /create prompt sets/i })
-      .click()
-      .catch(() => {});
-    await waitForAnyVisible(page, ["text=bytes of study guide content", "text=AI prompt"], 20_000);
-  }
-
-  await waitForUiToSettle(page);
-}
-
 async function openScopedAddItemsPage(page: Page) {
   await ensureSignedIn(page);
   // The Create hub (/create) has no scope fields; the scoped form lives at /create/question.
@@ -745,25 +630,6 @@ test.describe("User guide screenshots", () => {
 
   test("create-import", async ({ page }, testInfo) => {
     await capture(page, testInfo, "create-import", "/create/import");
-  });
-
-  test("study-guide", async ({ page }, testInfo) => {
-    await capture(page, testInfo, "study-guide", "/study-guide");
-  });
-
-  test("study-guide-import", async ({ page }, testInfo) => {
-    await ensureStudyGuideSaved(page);
-    await safeGoto(
-      page,
-      "/study-guide/import?category=geography&keywords=capitals,world&sets=2"
-    );
-    await clickConsentIfPresent(page);
-    await waitForAnyVisible(page, [
-      "#study-guide-import-scope-category",
-      "button:has-text('Create prompt sets')",
-      "text=Using study guide:",
-    ]);
-    await captureCurrentPage(page, testInfo, "study-guide-import");
   });
 
   test("collections-mine", async ({ page }, testInfo) => {
@@ -968,38 +834,5 @@ test.describe("User guide screenshots", () => {
     await waitForSelectValue(page, "#item-form-rank2", "world");
     await captureCurrentPage(page, testInfo, "add-items-prepopulated");
   });
-
-  test("study-guide-no-guide", async ({ page }, testInfo) => {
-    await ensureStudyGuideDeleted(page);
-    await capture(page, testInfo, "study-guide-no-guide", "/study-guide/import");
-  });
-
-  test("study-guide-content", async ({ page }, testInfo) => {
-    await ensureSignedIn(page);
-    await safeGoto(page, "/study-guide");
-    await waitForAnyVisible(page, ["#sg-title", "#sg-content"]);
-    await page.locator("#sg-title").fill("Capitals Study Guide").catch(() => {});
-    await page.locator("#sg-content").fill(STUDY_GUIDE_TEXT).catch(() => {});
-    await page.getByRole("button", { name: /save/i }).click().catch(() => {});
-    await waitForTextToDisappear(page, /saving/i);
-    await waitForUiToSettle(page);
-    await waitForAnyVisible(page, ["button:has-text('Continue to prompt sets')", "#sg-content"]);
-    await captureCurrentPage(page, testInfo, "study-guide-content");
-  });
-
-  test("study-guide-import-prompts", async ({ page }, testInfo) => {
-    await ensurePromptSetsExist(page);
-    await captureCurrentPage(page, testInfo, "study-guide-import-prompts");
-  });
-
-  test("study-guide-import-first-prompt", async ({ page }, testInfo) => {
-    await ensurePromptSetsExist(page);
-    await page
-      .locator(".font-mono, pre, code")
-      .first()
-      .scrollIntoViewIfNeeded()
-      .catch(() => {});
-    await waitForUiToSettle(page);
-    await captureCurrentPage(page, testInfo, "study-guide-import-first-prompt");
-  });
+});
 });

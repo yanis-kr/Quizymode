@@ -1,4 +1,3 @@
-using System.Text.Json;
 using FluentAssertions;
 using Moq;
 using Quizymode.Api.Features.Admin;
@@ -6,7 +5,6 @@ using Quizymode.Api.Features.Items.Add;
 using Quizymode.Api.Features.Items.AddBulk;
 using Quizymode.Api.Features.Items.Update;
 using Quizymode.Api.Features.Items.UploadToCollection;
-using Quizymode.Api.Features.StudyGuideImport;
 using Quizymode.Api.Services;
 using Quizymode.Api.Shared.Helpers;
 using Xunit;
@@ -102,23 +100,6 @@ public sealed class IncorrectAnswersRuleTests
         SeedSyncAdmin.ValidateManifest(manifest).IsValid.Should().Be(valid);
     }
 
-    [Theory]
-    [InlineData("""["A"]""", true)]
-    [InlineData("""["A","   "]""", false)]
-    [InlineData("""[]""", false)]
-    [InlineData("""["A","B","C","D","E"]""", false)]
-    public void StudyGuideItemValidator_RejectsBlankAndOutOfRange(string incorrectJson, bool valid)
-    {
-        string json = $$"""[{"question":"What is EC2?","correctAnswer":"Compute","incorrectAnswers":{{incorrectJson}}}]""";
-        using JsonDocument doc = JsonDocument.Parse(json);
-        List<JsonElement> array = doc.RootElement.EnumerateArray().Select(e => e.Clone()).ToList();
-
-        var (isValid, messages, _, _) = StudyGuideItemValidator.ValidateAndMap(array, "exams", new[] { "aws", "saa" }, new());
-
-        isValid.Should().Be(valid);
-        if (incorrectJson.Contains("   ")) messages.Should().Contain(m => m.Contains("cannot be blank"));
-    }
-
     [Fact]
     public void QuizPlayability_SharedFilter_DropsBlankDuplicateAndCorrect()
     {
@@ -187,47 +168,5 @@ public sealed class IncorrectAnswersRuleTests
         AddItem.Request request = new("geo", "capitals", "europe", false, "Q?", "Paris", null!, "");
         Action act = () => new AddItem.Validator().Validate(request);
         act.Should().NotThrow();
-    }
-
-    [Theory]
-    [InlineData("""["Compute"]""", "Item 1: incorrect answers must be different from the correct answer.")]
-    [InlineData("""["a","A"]""", "Item 1: incorrect answers must be different from each other.")]
-    public void StudyGuideItemValidator_RejectsConflicts(string incorrectJson, string expected)
-    {
-        string json = $$"""[{"question":"What is EC2?","correctAnswer":"Compute","incorrectAnswers":{{incorrectJson}}}]""";
-        using JsonDocument doc = JsonDocument.Parse(json);
-        List<JsonElement> array = doc.RootElement.EnumerateArray().Select(e => e.Clone()).ToList();
-
-        var (isValid, messages, _, _) = StudyGuideItemValidator.ValidateAndMap(array, "exams", new[] { "aws", "saa" }, new());
-
-        isValid.Should().BeFalse();
-        messages.Should().Contain(expected);
-    }
-
-    [Fact]
-    public void StudyGuideItemValidator_CleanMode_DropsDuplicatesAndCorrectEqual_KeepsQuestion()
-    {
-        string json = """[{"question":"What is EC2?","correctAnswer":"Compute","incorrectAnswers":["Storage","storage","compute","Network"]}]""";
-        using JsonDocument doc = JsonDocument.Parse(json);
-        List<JsonElement> array = doc.RootElement.EnumerateArray().Select(e => e.Clone()).ToList();
-
-        var (isValid, _, items, _) = StudyGuideItemValidator.ValidateAndMap(array, "exams", new[] { "aws", "saa" }, new(), cleanIncorrectAnswers: true);
-
-        isValid.Should().BeTrue();
-        items!.Single().IncorrectAnswers.Should().Equal("Storage", "Network");
-    }
-
-    [Fact]
-    public void StudyGuideItemValidator_CleanMode_DropsOnlyQuestionLeftWithNoDistractors()
-    {
-        string json = """[{"question":"Q1?","correctAnswer":"A","incorrectAnswers":["a"," A "]},{"question":"Q2?","correctAnswer":"B","incorrectAnswers":["C"]}]""";
-        using JsonDocument doc = JsonDocument.Parse(json);
-        List<JsonElement> array = doc.RootElement.EnumerateArray().Select(e => e.Clone()).ToList();
-
-        var (isValid, messages, items, _) = StudyGuideItemValidator.ValidateAndMap(array, "exams", new[] { "aws", "saa" }, new(), cleanIncorrectAnswers: true);
-
-        isValid.Should().BeTrue();
-        messages.Should().BeEmpty();
-        items!.Select(i => i.Question).Should().Equal("Q2?");
     }
 }

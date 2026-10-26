@@ -91,15 +91,9 @@ export const baseDescriptions = {
   "collections-discover-public": `Once you make a collection public it immediately appears in the Discover tab alongside the built-in Sample collection. Other users can find it by searching, browse its items, and bookmark it.`,
   "collection-bookmark": `Clicking the **Bookmark** button on a collection card in Discover saves it to your Bookmarked Collections tab. Bookmarks are personal: they do not affect the collection or its owner. The bookmark button toggles, so clicking it again removes the bookmark.`,
   "collections-bookmarked": `The **Bookmarked** tab shows all collections you have bookmarked. You can open any of them directly, study their items, or remove the bookmark. This is useful for keeping quick access to public collections you study regularly.`,
-  "add-items": `The Add Items hub is the central starting point for creating new quiz content. It provides a Topic and tags block where you choose category, primary topic (rank 1), subtopic (rank 2), and optional extra keywords. The same scope is forwarded to whichever creation method you pick. From here you can open the single-item create form, the Import questions flow (paste text or a file), or the Study Guide import wizard. If you have an active collection, a banner reminds you that newly created items will be added to it automatically.`,
+  "add-items": `The Add Items hub is the central starting point for creating new quiz content. It provides a Topic and tags block where you choose category, primary topic (rank 1), subtopic (rank 2), and optional extra keywords. The same scope is forwarded to whichever creation method you pick. From here you can open the single-item create form, the Import questions flow (paste text or a file), or Upload notes to turn a study guide into a quiz. If you have an active collection, a banner reminds you that newly created items will be added to it automatically.`,
   "add-items-prepopulated": `When you click the **Add** button while browsing a specific scope in Categories, the Add Items page opens with that scope already filled in: category, primary topic, and subtopic are pre-selected. The first time you visit you will see a brief content compliance notice; after clicking **I understand**, the page stays open with the selected scope ready for you to use.`,
   "add-new-item": `The Create Item form lets you write a single quiz item from scratch. Fill in the question, one correct answer, up to three incorrect answer options, an optional explanation, and a source URL. Category, primary topic, and subtopic are required and must be chosen from the taxonomy. You can add extra keywords. Successfully created items are automatically added to your active collection.`,
-  "study-guide-no-guide": `Navigating to the Study Guide Import wizard before uploading a study guide shows a message prompting you to save a study guide first. Click the link to go to the My Study Guide page and paste your material there.`,
-  "study-guide": `The My Study Guide page is a personal text editor where you paste or write the study material you want to turn into quiz items such as lecture notes, textbook excerpts, documentation, or any reference text. Your study guide is saved per user and used as the source content for the Study Guide import wizard, which generates targeted questions from it using AI.`,
-  "study-guide-content": `With your study guide text pasted in, click **Save**. The content is stored on your account and is now available to the import wizard. You can update or replace it at any time by editing the text and saving again.`,
-  "study-guide-import": `The Study Guide import wizard turns your saved study guide text into quiz items in a guided multi-step flow. Select the category, primary topic, subtopic, and optional extra keywords; set the number of prompt sets; then click **Create prompt sets**.`,
-  "study-guide-import-prompts": `After you save a study guide and click **Create prompt sets**, the wizard splits that saved guide into chunks and generates one AI prompt per chunk. Each prompt card shows the chunk title, its size in bytes, and the full prompt text. Copy each prompt into an AI assistant, then paste the JSON response back into the matching text area and click **Validate JSON**.`,
-  "study-guide-import-first-prompt": `A prompt set contains the relevant excerpt from your study guide together with precise instructions for the AI: the exact category, primary topic, subtopic, output format, and field requirements. Paste this into any AI tool to get a structured batch of quiz items back.`,
 };
 
 export const mobileDescriptionOverrides = {
@@ -132,12 +126,6 @@ export const mobileDescriptionOverrides = {
   "add-items": `The Add Items hub keeps the same branching workflow on mobile, but the scope controls, notices, and action buttons stack into a single-column layout. This makes the create options easier to scan on a phone.`,
   "add-items-prepopulated": `When Add Items opens from a scoped category on mobile, the same category and keyword selections are pre-filled. The difference is mostly layout: the scope controls and compliance notice stack for narrow screens.`,
   "add-new-item": `The Create Item form becomes a long, single-column form on mobile, with fields and actions stacked top to bottom. This keeps every required input accessible without shrinking the form controls.`,
-  "study-guide-no-guide": `If you open Study Guide Import on mobile before saving a guide, the same empty-state prompt appears in a narrow, centered layout. The next action still sends you to the study guide editor first.`,
-  "study-guide": `The study guide editor on mobile keeps the same personal note-taking workflow, but the title, editor, and actions stack into a tall single-column screen. This makes longer study material easier to edit in place.`,
-  "study-guide-content": `After saving study guide content on mobile, the editor remains in the same stacked reading and editing flow. You can keep refining the text without leaving the page.`,
-  "study-guide-import": `The import wizard keeps the same guided flow on mobile, but each setup control and step section stacks vertically. This preserves the multi-step workflow while fitting the full setup onto a phone screen.`,
-  "study-guide-import-prompts": `Prompt cards in the import wizard become tall mobile panels showing the chunk details, prompt text, response box, and validation actions in one vertical flow. This makes the workflow slower to scan than desktop, but still complete on a phone.`,
-  "study-guide-import-first-prompt": `On mobile, a single prompt set fills most of the screen as a narrow, scrollable block of instructions and source text. The screenshot highlights how the generated prompt remains usable even when the viewport is constrained.`,
   ideas: `The Ideas board on mobile stacks status groups and idea cards into a single-column scroll view. The submit and rating actions remain accessible, but the layout shifts from a wide grid to a more focused vertical feed.`,
 };
 
@@ -189,17 +177,6 @@ export const sections = [
       "add-items",
       "add-items-prepopulated",
       "add-new-item",
-    ],
-  },
-  {
-    title: "Study Guide Import",
-    slugs: [
-      "study-guide-no-guide",
-      "study-guide",
-      "study-guide-content",
-      "study-guide-import",
-      "study-guide-import-prompts",
-      "study-guide-import-first-prompt",
     ],
   },
   {

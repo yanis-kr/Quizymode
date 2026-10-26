@@ -282,7 +282,7 @@ describe("adminApi", () => {
   });
 
   it("getUserSettings calls GET /admin/users/:id/settings", async () => {
-    const data = { settings: { StudyGuideMaxBytes: "51200" } };
+    const data = { settings: { SomeOtherKey: "51200" } };
     mockGet.mockResolvedValueOnce({ data });
     const result = await adminApi.getUserSettings("u1");
     expect(mockGet).toHaveBeenCalledWith("/admin/users/u1/settings");
@@ -290,10 +290,10 @@ describe("adminApi", () => {
   });
 
   it("updateUserSetting calls PUT /admin/users/:id/settings", async () => {
-    const data = { key: "StudyGuideMaxBytes", value: "100000", updatedAt: "" };
+    const data = { key: "SomeOtherKey", value: "100000", updatedAt: "" };
     mockPut.mockResolvedValueOnce({ data });
-    const result = await adminApi.updateUserSetting("u1", "StudyGuideMaxBytes", "100000");
-    expect(mockPut).toHaveBeenCalledWith("/admin/users/u1/settings", { key: "StudyGuideMaxBytes", value: "100000" });
+    const result = await adminApi.updateUserSetting("u1", "SomeOtherKey", "100000");
+    expect(mockPut).toHaveBeenCalledWith("/admin/users/u1/settings", { key: "SomeOtherKey", value: "100000" });
     expect(result).toEqual(data);
   });
 

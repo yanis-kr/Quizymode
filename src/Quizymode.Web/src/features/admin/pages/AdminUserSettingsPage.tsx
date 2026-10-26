@@ -13,8 +13,6 @@ import { useAuth } from "@/contexts/AuthContext";
 import LoadingSpinner from "@/components/LoadingSpinner";
 import ErrorMessage from "@/components/ErrorMessage";
 
-const STUDY_GUIDE_KEY = "StudyGuideMaxBytes";
-const DEFAULT_MAX_BYTES = 51200;
 const USERS_PAGE_SIZE = 12;
 const URL_HISTORY_PAGE_SIZE = 12;
 
@@ -62,7 +60,6 @@ const AdminUserSettingsPage = () => {
   const [urlFilterInput, setUrlFilterInput] = useState("");
   const [urlFilter, setUrlFilter] = useState("");
   const [historyPage, setHistoryPage] = useState(1);
-  const [studyGuideBytes, setStudyGuideBytes] = useState("");
 
   const {
     data: usersData,
@@ -152,31 +149,6 @@ const AdminUserSettingsPage = () => {
     enabled: !!isAuthenticated && !!isAdmin && !!selectedUserId,
   });
 
-  useEffect(() => {
-    const rawValue = settingsData?.settings[STUDY_GUIDE_KEY];
-    // eslint-disable-next-line react-hooks/set-state-in-effect
-    setStudyGuideBytes(rawValue ?? "");
-  }, [selectedUserId, settingsData]);
-
-  const updateMutation = useMutation({
-    mutationFn: async (value: string) => {
-      if (!selectedUserId) {
-        throw new Error("No user selected.");
-      }
-
-      return adminApi.updateUserSetting(selectedUserId, STUDY_GUIDE_KEY, value);
-    },
-    onSuccess: async () => {
-      if (!selectedUserId) {
-        return;
-      }
-
-      await queryClient.invalidateQueries({
-        queryKey: ["admin", "user-settings", selectedUserId],
-      });
-    },
-  });
-
   const internalFlagMutation = useMutation({
     mutationFn: ({ userId, isInternal }: { userId: string; isInternal: boolean }) =>
       adminApi.setUserInternal(userId, isInternal),
@@ -209,24 +181,6 @@ const AdminUserSettingsPage = () => {
   const users = usersData?.users ?? [];
   const usersSummary = usersData?.summary;
   const selectedUser = activityData?.user ?? null;
-
-  const effectiveMaxBytes = (() => {
-    const rawValue = studyGuideBytes.trim();
-    if (rawValue === "") {
-      return DEFAULT_MAX_BYTES;
-    }
-
-    const parsed = Number(rawValue);
-    if (!Number.isFinite(parsed) || parsed < 0) {
-      return 0;
-    }
-
-    if (parsed > 1_000_000) {
-      return 1_000_000;
-    }
-
-    return Math.trunc(parsed);
-  })();
 
   const toggleSort = (column: AdminUserSortBy) => {
     if (sortBy === column) {
@@ -262,7 +216,6 @@ const AdminUserSettingsPage = () => {
   };
 
   const selectUser = (user: AdminUserOverviewResponse) => {
-    updateMutation.reset();
     setSelectedUserId(user.id);
     setHistoryDays(activityDays);
     setUrlFilterInput("");
@@ -296,8 +249,8 @@ const AdminUserSettingsPage = () => {
           </h1>
           <p className="mt-2 max-w-4xl text-sm text-gray-600">
             Review registered users, filter by recent activity, inspect the URLs
-            each user opened, and adjust per-user study guide limits from the
-            same admin workspace.
+            each user opened, and adjust per-user study guide plan settings from
+            the same admin workspace.
           </p>
         </div>
         {usersSummary && (
@@ -720,86 +673,17 @@ const AdminUserSettingsPage = () => {
                 />
               </section>
 
-              <section className="rounded-2xl border border-slate-200 p-4">
-                <h3 className="text-base font-semibold text-slate-900">
-                  Study Guide Limit
-                </h3>
-                <p className="mt-1 text-sm text-slate-600">
-                  Value is stored in bytes. Leave blank to use the default 51,200
-                  byte limit.
-                </p>
-
-                <div className="mt-4 flex flex-col gap-3 sm:flex-row sm:items-end">
-                  <div>
-                    <label
-                      htmlFor="studyGuideBytes"
-                      className="block text-sm font-medium text-slate-700 mb-1"
-                    >
-                      {STUDY_GUIDE_KEY}
-                    </label>
-                    <input
-                      id="studyGuideBytes"
-                      type="number"
-                      min={0}
-                      max={1_000_000}
-                      value={studyGuideBytes}
-                      onChange={(event) => {
-                        if (updateMutation.isSuccess || updateMutation.isError) {
-                          updateMutation.reset();
-                        }
-                        setStudyGuideBytes(event.target.value);
-                      }}
-                      className="w-44 rounded-xl border border-slate-300 px-3 py-2 text-sm"
-                    />
-                  </div>
-                  <div className="text-sm text-slate-600">
-                    <div>
-                      Effective max:{" "}
-                      <span className="font-mono text-slate-900">
-                        {effectiveMaxBytes.toLocaleString()} bytes
-                      </span>{" "}
-                      ({(effectiveMaxBytes / 1024).toFixed(1)} KB)
-                    </div>
-                    {settingsData?.settings[STUDY_GUIDE_KEY] === undefined && (
-                      <div className="mt-1 text-xs text-slate-500">
-                        No override saved for this user yet.
-                      </div>
-                    )}
-                  </div>
-                  <button
-                    type="button"
-                    onClick={() => updateMutation.mutate(String(effectiveMaxBytes))}
-                    disabled={updateMutation.isPending}
-                    className="rounded-xl bg-indigo-600 px-4 py-2 text-sm font-medium text-white hover:bg-indigo-700 disabled:opacity-50"
-                  >
-                    {updateMutation.isPending ? "Saving..." : "Save"}
-                  </button>
+              {isSettingsLoading && (
+                <div className="text-xs text-slate-500">
+                  Loading saved settings…
                 </div>
-
-                {isSettingsLoading && (
-                  <div className="mt-3 text-xs text-slate-500">
-                    Loading saved settings…
-                  </div>
-                )}
-                {settingsError && (
-                  <div className="mt-3">
-                    <ErrorMessage
-                      message="Failed to load user settings"
-                      onRetry={() => refetchSettings()}
-                    />
-                  </div>
-                )}
-                {updateMutation.isError && (
-                  <div className="mt-3">
-                    <ErrorMessage message="Failed to save study guide limit" />
-                  </div>
-                )}
-                {updateMutation.isSuccess && (
-                  <div className="mt-3 text-sm text-emerald-700">
-                    Study guide limit saved.
-                  </div>
-                )}
-              </section>
+              )}
+              {settingsError && (
+                <ErrorMessage
+                  message="Failed to load user settings"
+                  onRetry={() => refetchSettings()}
+                />
+              )}
 
               {selectedUserId && settingsData && (
                 <StudyGuidePlanSettings

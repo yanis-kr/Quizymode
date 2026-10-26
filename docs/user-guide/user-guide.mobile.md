@@ -13,7 +13,6 @@ _Screenshots are generated automatically - run `npx playwright test --project=sc
 - [Building Your Collection](#building-your-collection)
 - [Collections](#collections)
 - [Adding Items](#adding-items)
-- [Study Guide Import](#study-guide-import)
 - [Other Pages](#other-pages)
 
 ## Home
@@ -199,44 +198,6 @@ The Create Item form becomes a long, single-column form on mobile, with fields a
 ### Import Questions
 
 To add many questions at once, open **Create**, choose **Import questions from text or a file** and use the **Paste text** tab. Paste a Quizlet or Anki export, CSV/TSV, or cloze text, check the preview, pick a topic and upload. The AI-assisted Bulk Create page has been retired.
-
-## Study Guide Import
-
-### Study Guide No Guide
-
-If you open Study Guide Import on mobile before saving a guide, the same empty-state prompt appears in a narrow, centered layout. The next action still sends you to the study guide editor first.
-
-![Study Guide No Guide](screenshots/mobile/study-guide-no-guide.png "Study Guide No Guide")
-
-### Study Guide
-
-The study guide editor on mobile keeps the same personal note-taking workflow, but the title, editor, and actions stack into a tall single-column screen. This makes longer study material easier to edit in place.
-
-![Study Guide](screenshots/mobile/study-guide.png "Study Guide")
-
-### Study Guide Content
-
-After saving study guide content on mobile, the editor remains in the same stacked reading and editing flow. You can keep refining the text without leaving the page.
-
-![Study Guide Content](screenshots/mobile/study-guide-content.png "Study Guide Content")
-
-### Study Guide Import
-
-The import wizard keeps the same guided flow on mobile, but each setup control and step section stacks vertically. This preserves the multi-step workflow while fitting the full setup onto a phone screen.
-
-![Study Guide Import](screenshots/mobile/study-guide-import.png "Study Guide Import")
-
-### Study Guide Import Prompts
-
-Prompt cards in the import wizard become tall mobile panels showing the chunk details, prompt text, response box, and validation actions in one vertical flow. This makes the workflow slower to scan than desktop, but still complete on a phone.
-
-![Study Guide Import Prompts](screenshots/mobile/study-guide-import-prompts.png "Study Guide Import Prompts")
-
-### Study Guide Import First Prompt
-
-On mobile, a single prompt set fills most of the screen as a narrow, scrollable block of instructions and source text. The screenshot highlights how the generated prompt remains usable even when the viewport is constrained.
-
-![Study Guide Import First Prompt](screenshots/mobile/study-guide-import-first-prompt.png "Study Guide Import First Prompt")
 
 ## Other Pages
 

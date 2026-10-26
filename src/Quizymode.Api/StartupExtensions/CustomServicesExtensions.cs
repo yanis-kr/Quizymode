@@ -50,8 +50,6 @@ internal static partial class StartupExtensions
         builder.Services.AddScoped<IAuditService, AuditService>();
         builder.Services.AddScoped<ICategoryResolver, CategoryResolver>();
         builder.Services.AddScoped<ITaxonomyItemCategoryResolver, TaxonomyItemCategoryResolver>();
-        builder.Services.AddScoped<IStudyGuideChunkingService, StudyGuideChunkingService>();
-        builder.Services.AddScoped<IStudyGuidePromptBuilderService, StudyGuidePromptBuilderService>();
         builder.Services.AddHostedService<StudyGuideCleanupService>();
         builder.Services.AddHostedService<ClientErrorCleanupService>();
         builder.Services.AddHostedService<AnalyticsSessionBackfill>();

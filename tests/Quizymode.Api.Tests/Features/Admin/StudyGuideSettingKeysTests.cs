@@ -22,7 +22,7 @@ public sealed class StudyGuideSettingKeysTests : DatabaseTestFixture
     [InlineData("StudyGuideMonthlySections", "12.5", false)]
     [InlineData("StudyGuideMonthlySections", "", true)]
     [InlineData("studyguidemonthlysections", "abc", false)]
-    [InlineData("StudyGuideMaxBytes", "anything", true)]
+    [InlineData("SomeOtherKey", "anything", true)]
     public void AdminValidator_ValidatesStudyGuideKeys(string key, string value, bool valid)
     {
         new AdminUserSettings.UpdateValidator().Validate(new AdminUserSettings.UpdateRequest(key, value)).IsValid.Should().Be(valid);
@@ -61,6 +61,6 @@ public sealed class StudyGuideSettingKeysTests : DatabaseTestFixture
     [Fact]
     public void UserSelfUpdate_StillAllowsOtherKeys()
     {
-        new UpdateUserSetting.Validator().Validate(new UpdateUserSetting.Request("StudyGuideMaxBytes", "100000")).IsValid.Should().BeTrue();
+        new UpdateUserSetting.Validator().Validate(new UpdateUserSetting.Request("SomeOtherKey", "100000")).IsValid.Should().BeTrue();
     }
 }

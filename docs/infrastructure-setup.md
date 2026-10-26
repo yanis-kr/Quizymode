@@ -330,10 +330,7 @@ Aws__SqsQueueUrl=https://sqs.eu-west-1.amazonaws.com/<account>/<queue-name>
 Aws__StudyGuideBucket=quizymode-study-guides-prod
 Aws__AccessKeyId=<from IAM user if not using role>
 Aws__SecretAccessKey=<from IAM user if not using role>
-StudyGuideMaxBytes=5242880
 ```
-
-`StudyGuideMaxBytes` is 5MB. Adjust to taste.
 
 For **local development**, omit `Aws__SqsQueueUrl` entirely. The `IContentRequestQueue` implementation returns without error when the URL is missing, so the API starts and all endpoints work except actual job dispatch.
 

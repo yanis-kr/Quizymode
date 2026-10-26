@@ -77,6 +77,40 @@ public sealed class StudyGuideCandidateParserTests
         result.DroppedCount.Should().Be(5);
     }
 
+    [Fact]
+    public void Parse_CleansDuplicateAndCorrectEqualDistractors_KeepsQuestion()
+    {
+        string json = JsonSerializer.Serialize(new
+        {
+            questions = new object[]
+            {
+                new { question = "What is EC2?", correctAnswer = "Paris", incorrectAnswers = new[] { "Storage", "storage", "paris", "Network" }, explanation = "x", sourceQuote = "Paris is the capital and most populous city of France" }
+            }
+        });
+
+        CandidateParseResult result = StudyGuideCandidateParser.Parse(json, StudyGuideTestData.SectionText, 20, StudyGuideTestData.Moderation());
+
+        result.Kept.Should().ContainSingle().Which.IncorrectAnswers.Should().Equal("Storage", "Network");
+    }
+
+    [Fact]
+    public void Parse_DropsOnlyQuestionLeftWithNoDistractors_KeepsSibling()
+    {
+        string json = JsonSerializer.Serialize(new
+        {
+            questions = new object[]
+            {
+                new { question = "Q1?", correctAnswer = "Paris", incorrectAnswers = new[] { "paris", " PARIS " }, explanation = "x", sourceQuote = "Paris is the capital and most populous city of France" },
+                new { question = "Q2?", correctAnswer = "Berlin", incorrectAnswers = new[] { "Rome" }, explanation = "x", sourceQuote = "Berlin is the capital of Germany and its largest city" }
+            }
+        });
+
+        CandidateParseResult result = StudyGuideCandidateParser.Parse(json, StudyGuideTestData.SectionText, 20, StudyGuideTestData.Moderation());
+
+        result.Kept.Select(c => c.Question).Should().Equal("Q2?");
+        result.DroppedCount.Should().Be(1);
+    }
+
     [Theory]
     [InlineData("Sure! Here are your questions.")]
     [InlineData("{\"items\":[]}")]

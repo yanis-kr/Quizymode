@@ -8,7 +8,6 @@ namespace Quizymode.Api.Services;
 /// <summary>
 /// Background service that runs once per day and removes expired study guide data:
 /// <list type="bullet">
-/// <item>study guides (AC 6.1) 14 days after they were last saved;</item>
 /// <item>study guide documents (AC 6.6) past <c>ExpiresUtc</c> (30 days after the last activity): documents with no saved
 /// questions are deleted (sections cascade); documents with saved questions are kept, but their section text is cleared.
 /// Shared generations and candidates stay as the cache; accepted items and collections are untouched;</item>
@@ -30,7 +29,7 @@ internal sealed class StudyGuideCleanupService : BackgroundService
         _logger = logger;
     }
 
-    internal sealed record CleanupResult(int StudyGuides, int Documents, int SectionsCleared, int Attempts);
+    internal sealed record CleanupResult(int Documents, int SectionsCleared, int Attempts);
 
     protected override async Task ExecuteAsync(CancellationToken stoppingToken)
     {
@@ -52,11 +51,10 @@ internal sealed class StudyGuideCleanupService : BackgroundService
             DateTime now = DateTime.UtcNow;
             CleanupResult result = await CleanupAsync(db, now, attemptRetentionDays, cancellationToken);
 
-            if (result.StudyGuides + result.Documents + result.SectionsCleared + result.Attempts > 0)
+            if (result.Documents + result.SectionsCleared + result.Attempts > 0)
             {
                 _logger.LogInformation(
-                    "StudyGuideCleanup: deleted {StudyGuides} study guide(s) and {Documents} document(s), cleared text of {Sections} section(s), trimmed {Attempts} LLM attempt(s) at {UtcNow:O}",
-                    result.StudyGuides,
+                    "StudyGuideCleanup: deleted {Documents} document(s), cleared text of {Sections} section(s), trimmed {Attempts} LLM attempt(s) at {UtcNow:O}",
                     result.Documents,
                     result.SectionsCleared,
                     result.Attempts,
@@ -75,10 +73,6 @@ internal sealed class StudyGuideCleanupService : BackgroundService
         int attemptRetentionDays,
         CancellationToken cancellationToken)
     {
-        int studyGuides = await db.StudyGuides
-            .Where(sg => sg.ExpiresAtUtc <= nowUtc)
-            .ExecuteDeleteAsync(cancellationToken);
-
         int sectionsCleared = await db.StudyGuideSections
             .Where(section => section.Text != null &&
                 db.StudyGuideDocuments.Any(document =>
@@ -97,6 +91,6 @@ internal sealed class StudyGuideCleanupService : BackgroundService
             .Where(attempt => attempt.CreatedUtc < attemptCutoff)
             .ExecuteDeleteAsync(cancellationToken);
 
-        return new CleanupResult(studyGuides, documents, sectionsCleared, attempts);
+        return new CleanupResult(documents, sectionsCleared, attempts);
     }
 }

@@ -42,8 +42,6 @@ const AboutPage = lazyPage(() => import("./features/about/pages/AboutPage"));
 const RoadmapPage = lazyPage(() => import("./features/roadmap/pages/RoadmapPage"));
 const FeedbackPage = lazyPage(() => import("./features/feedback/pages/FeedbackPage"));
 const IdeasPage = lazyPage(() => import("./features/ideas/pages/IdeasPage"));
-const StudyGuidePage = lazyPage(() => import("./features/studyGuide/pages/StudyGuidePage"));
-const StudyGuideImportPage = lazyPage(() => import("./features/studyGuide/pages/StudyGuideImportPage"));
 const StudyGuideUploadPage = lazyPage(() => import("./features/studyGuide/pages/StudyGuideUploadPage"));
 const StudyGuideDocumentsPage = lazyPage(() => import("./features/studyGuide/pages/StudyGuideDocumentsPage"));
 const StudyGuideDocumentPage = lazyPage(() => import("./features/studyGuide/pages/StudyGuideDocumentPage"));
@@ -132,6 +130,8 @@ function App() {
         <Route path="/add-new-item" element={<RedirectWithSearch to="/create/question" />} />
         <Route path="/items/create" element={<RedirectWithSearch to="/create/question" />} />
         <Route path="/study-guide/upload" element={<RedirectWithSearch to="/create/notes" />} />
+        <Route path="/study-guide" element={<RedirectWithSearch to="/create/notes" />} />
+        <Route path="/study-guide/import" element={<RedirectWithSearch to="/create/notes" />} />
         <Route path="/items/upload" element={<RedirectWithSearch to="/create/import" />} />
         <Route path="/items/bulk-create" element={<RedirectWithSearch to="/create/import" />} />
         <Route element={<RequireAuthRoute />}>
@@ -139,8 +139,6 @@ function App() {
           <Route path="/create/question" element={<CreateItemPage />} />
           <Route path="/create/import" element={<CreateImportPage />} />
           <Route path="/items/:id/edit" element={<EditItemPage />} />
-          <Route path="/study-guide" element={<StudyGuidePage />} />
-          <Route path="/study-guide/import" element={<StudyGuideImportPage />} />
           <Route path="/study-guides/documents" element={<StudyGuideDocumentsPage />} />
           <Route path="/study-guides/documents/:id" element={<StudyGuideDocumentPage />} />
           <Route path="/review" element={<ReviewQueuePage />} />

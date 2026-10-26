@@ -13,11 +13,12 @@ using Xunit;
 namespace Quizymode.Api.Tests.Features.StudyGuideDocuments;
 
 /// <summary>
-/// #240: the legacy one-shot <c>/study-guide-uploads</c> flow was removed. The request goes through
+/// #240: the legacy one-shot <c>/study-guide-uploads</c> flow was removed; #296 PR 4 retired <c>/study-guides/current</c>
+/// and <c>/study-guides/import/*</c>. The request goes through
 /// a host that maps every discovered <see cref="IEndpoint"/> (the same discovery as production), so a 404 proves no
 /// slice still serves the route.
 /// </summary>
-public sealed class StudyGuideUploadsRemovedHttpTests : DatabaseTestFixture, IAsyncLifetime
+public sealed class LegacyStudyGuideRoutesRemovedHttpTests : DatabaseTestFixture, IAsyncLifetime
 {
     private JwtHttpTestHost _host = null!;
 
@@ -71,13 +72,22 @@ public sealed class StudyGuideUploadsRemovedHttpTests : DatabaseTestFixture, IAs
     [InlineData("GET", "/study-guide-uploads/config")]
     [InlineData("GET", "/study-guide-uploads/3f2b8c1e-0000-4000-8000-000000000001")]
     [InlineData("POST", "/study-guide-uploads/3f2b8c1e-0000-4000-8000-000000000001/accept")]
-    public async Task LegacyStudyGuideUploadRoutes_ReturnNotFound_ForAnonymousAndMemberCallers(string method, string path)
+    [InlineData("GET", "/study-guides/current")]
+    [InlineData("PUT", "/study-guides/current")]
+    [InlineData("DELETE", "/study-guides/current")]
+    [InlineData("POST", "/study-guides/import/sessions")]
+    [InlineData("GET", "/study-guides/import/sessions/3f2b8c1e-0000-4000-8000-000000000001")]
+    [InlineData("POST", "/study-guides/import/sessions/3f2b8c1e-0000-4000-8000-000000000001/generate-chunks")]
+    [InlineData("POST", "/study-guides/import/sessions/3f2b8c1e-0000-4000-8000-000000000001/chunks/0/result")]
+    [InlineData("POST", "/study-guides/import/sessions/3f2b8c1e-0000-4000-8000-000000000001/dedup-result")]
+    [InlineData("POST", "/study-guides/import/sessions/3f2b8c1e-0000-4000-8000-000000000001/finalize")]
+    public async Task LegacyStudyGuideRoutes_ReturnNotFound_ForAnonymousAndMemberCallers(string method, string path)
     {
         HttpMethod httpMethod = new(method);
         using HttpRequestMessage anonymous = JwtHttpTestHost.Request(
-            httpMethod, path, null, method == "POST" ? JsonContent("{}") : null);
+            httpMethod, path, null, method is "POST" or "PUT" ? JsonContent("{}") : null);
         using HttpRequestMessage member = JwtHttpTestHost.Request(
-            httpMethod, path, _host.CreateToken("member", "member@example.com"), method == "POST" ? JsonContent("{}") : null);
+            httpMethod, path, _host.CreateToken("member", "member@example.com"), method is "POST" or "PUT" ? JsonContent("{}") : null);
 
         using HttpResponseMessage anonymousResponse = await _host.Client.SendAsync(anonymous);
         using HttpResponseMessage memberResponse = await _host.Client.SendAsync(member);
