@@ -5,6 +5,7 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { MemoryRouter, Route, Routes, useLocation } from "react-router-dom";
 import CreateItemPage from "./CreateItemPage";
 import { itemsApi } from "@/api/items";
+import { collectionsApi } from "@/api/collections";
 import { taxonomyApi } from "@/api/taxonomy";
 import { useExtraKeywordAutocompleteSource } from "@/hooks/useExtraKeywordAutocompleteSource";
 
@@ -13,6 +14,22 @@ vi.mock("@/contexts/AuthContext", () => ({
     isAuthenticated: true,
     isAdmin: false,
   }),
+}));
+
+const activeCollection = vi.hoisted(() => ({ id: null as string | null }));
+
+vi.mock("@/hooks/useActiveCollection", () => ({
+  useActiveCollection: () => ({
+    activeCollectionId: activeCollection.id,
+    activeCollection: null,
+    setActiveCollectionId: vi.fn(),
+    isUpdating: false,
+    collections: [],
+  }),
+}));
+
+vi.mock("@/api/collections", () => ({
+  collectionsApi: { addItem: vi.fn().mockResolvedValue({}), getAll: vi.fn() },
 }));
 
 vi.mock("@/api/items", () => ({
@@ -77,6 +94,15 @@ function renderPage(initialEntry: string) {
               </>
             }
           />
+          <Route
+            path="/explore/collections/:collectionId/item/:itemId"
+            element={
+              <>
+                <div>Collection Study</div>
+                <LocationDisplay />
+              </>
+            }
+          />
           <Route path="/login" element={<div>Login</div>} />
         </Routes>
       </MemoryRouter>
@@ -87,6 +113,7 @@ function renderPage(initialEntry: string) {
 describe("CreateItemPage", () => {
   beforeEach(() => {
     vi.clearAllMocks();
+    activeCollection.id = null;
 
     vi.mocked(taxonomyApi.getAll).mockResolvedValue({
       categories: [
@@ -155,7 +182,7 @@ describe("CreateItemPage", () => {
     await user.type(getFieldControl("Correct Answer *"), "Motor neurons");
     await user.type(screen.getByPlaceholderText("Incorrect answer 1"), "Tendons");
 
-    await user.click(screen.getByRole("button", { name: /create item/i }));
+    await user.click(screen.getByRole("button", { name: /save and study/i }));
 
     await waitFor(() =>
       expect(itemsApi.create).toHaveBeenCalledWith(
@@ -192,13 +219,15 @@ describe("CreateItemPage", () => {
     await user.type(screen.getByPlaceholderText("Incorrect answer 1"), "Ligaments");
     await user.type(screen.getByPlaceholderText("Incorrect answer 3"), "Bones");
 
+    await user.click(screen.getByRole("button", { name: /more options/i }));
+
     // Order: [a1p, a1l, a2p, a2l, a3p, a3l]
     const speechInputs = screen.getAllByPlaceholderText("Optional");
     await user.type(speechInputs[2], "ghost");
     await user.type(speechInputs[4], "bownz");
     await user.type(speechInputs[5], "en-US");
 
-    await user.click(screen.getByRole("button", { name: /create item/i }));
+    await user.click(screen.getByRole("button", { name: /save and study/i }));
 
     await waitFor(() => expect(itemsApi.create).toHaveBeenCalledTimes(1));
     const payload = vi.mocked(itemsApi.create).mock.calls[0][0];
@@ -225,9 +254,98 @@ describe("CreateItemPage", () => {
       if (answers[i]) await user.type(screen.getByPlaceholderText(`Incorrect answer ${i + 1}`), answers[i]);
     }
 
-    await user.click(screen.getByRole("button", { name: /create item/i }));
+    await user.click(screen.getByRole("button", { name: /save and study/i }));
 
     expect(await screen.findByText(message)).toBeInTheDocument();
     expect(itemsApi.create).not.toHaveBeenCalled();
+  });
+
+  it("Save and add another keeps the topic, clears the question and focuses it (#296)", async () => {
+    const user = userEvent.setup({ delay: null });
+
+    renderPage("/create/question?category=science&keywords=anatomy,muscular");
+    await waitFor(() => expect(screen.getByLabelText(/subtopic/i)).toHaveValue("muscular"));
+
+    await user.type(getFieldControl("Question *"), "What connects muscle to bone?");
+    await user.type(getFieldControl("Correct Answer *"), "Tendons");
+    await user.type(screen.getByPlaceholderText("Incorrect answer 1"), "Ligaments");
+
+    await user.click(screen.getByRole("button", { name: /save and add another/i }));
+
+    await waitFor(() => expect(itemsApi.create).toHaveBeenCalledTimes(1));
+    const saved = await screen.findByText("Saved. Add the next question.");
+    expect(saved).toHaveAttribute("role", "status");
+    expect(getFieldControl("Question *")).toHaveValue("");
+    expect(getFieldControl("Correct Answer *")).toHaveValue("");
+    expect(screen.getByPlaceholderText("Incorrect answer 1")).toHaveValue("");
+    expect(getFieldControl("Question *")).toHaveFocus();
+    expect(screen.getByLabelText(/category \*/i)).toHaveValue("science");
+    expect(screen.getByLabelText(/primary topic/i)).toHaveValue("anatomy");
+    expect(screen.getByLabelText(/subtopic/i)).toHaveValue("muscular");
+    // Stayed on the form.
+    expect(screen.getByTestId("location")).toHaveTextContent("/create/question");
+
+    // The next question is saved with the kept topic.
+    await user.type(getFieldControl("Question *"), "Second?");
+    await user.type(getFieldControl("Correct Answer *"), "Yes");
+    await user.type(screen.getByPlaceholderText("Incorrect answer 1"), "No");
+    await user.click(screen.getByRole("button", { name: /save and add another/i }));
+    await waitFor(() => expect(itemsApi.create).toHaveBeenCalledTimes(2));
+    expect(vi.mocked(itemsApi.create).mock.calls[1][0]).toEqual(
+      expect.objectContaining({
+        question: "Second?",
+        category: "science",
+        navigationKeyword1: "anatomy",
+        navigationKeyword2: "muscular",
+      })
+    );
+  });
+
+  it("Save and study opens the study route of the active collection (#296)", async () => {
+    activeCollection.id = "col-1";
+    const user = userEvent.setup({ delay: null });
+
+    renderPage("/create/question?category=science&keywords=anatomy,muscular");
+    await waitFor(() => expect(screen.getByLabelText(/subtopic/i)).toHaveValue("muscular"));
+
+    await user.type(getFieldControl("Question *"), "What connects muscle to bone?");
+    await user.type(getFieldControl("Correct Answer *"), "Tendons");
+    await user.type(screen.getByPlaceholderText("Incorrect answer 1"), "Ligaments");
+    await user.click(screen.getByRole("button", { name: /save and study/i }));
+
+    expect(await screen.findByText("Collection Study")).toBeInTheDocument();
+    expect(collectionsApi.addItem).toHaveBeenCalledWith("col-1", { itemId: "item-123" });
+    expect(screen.getByTestId("location")).toHaveTextContent(
+      "/explore/collections/col-1/item/item-123"
+    );
+  });
+
+  it("Save and study without an active collection opens the item page (#296)", async () => {
+    const user = userEvent.setup({ delay: null });
+
+    renderPage("/create/question?category=science&keywords=anatomy,muscular");
+    await waitFor(() => expect(screen.getByLabelText(/subtopic/i)).toHaveValue("muscular"));
+
+    await user.type(getFieldControl("Question *"), "What connects muscle to bone?");
+    await user.type(getFieldControl("Correct Answer *"), "Tendons");
+    await user.type(screen.getByPlaceholderText("Incorrect answer 1"), "Ligaments");
+    await user.click(screen.getByRole("button", { name: /save and study/i }));
+
+    expect(await screen.findByText("Item Detail")).toBeInTheDocument();
+    expect(screen.getByTestId("location")).toHaveTextContent("/items/item-123");
+  });
+
+  it("Save and add another runs native validation and does not save a blank question (#296)", async () => {
+    const user = userEvent.setup({ delay: null });
+
+    renderPage("/create/question?category=science&keywords=anatomy,muscular");
+    await waitFor(() => expect(screen.getByLabelText(/subtopic/i)).toHaveValue("muscular"));
+
+    await user.type(getFieldControl("Correct Answer *"), "Tendons");
+    await user.type(screen.getByPlaceholderText("Incorrect answer 1"), "Ligaments");
+    await user.click(screen.getByRole("button", { name: /save and add another/i }));
+
+    expect(itemsApi.create).not.toHaveBeenCalled();
+    expect(screen.queryByText("Saved. Add the next question.")).not.toBeInTheDocument();
   });
 });
