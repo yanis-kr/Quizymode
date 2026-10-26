@@ -125,7 +125,7 @@ describe("CreateItemPage topic suggestions (#323)", () => {
     await screen.findAllByTestId("topic-chip");
     await fillRest(user);
 
-    await user.click(screen.getByRole("button", { name: /create item/i }));
+    await user.click(screen.getByRole("button", { name: /save and study/i }));
 
     expect(
       await screen.findByText(/choose a topic: pick a suggestion, search, or browse all topics/i)
@@ -144,7 +144,7 @@ describe("CreateItemPage topic suggestions (#323)", () => {
 
     await user.click(chips[1]);
     await fillRest(user);
-    await user.click(screen.getByRole("button", { name: /create item/i }));
+    await user.click(screen.getByRole("button", { name: /save and study/i }));
 
     await waitFor(() =>
       expect(itemsApi.create).toHaveBeenCalledWith(
@@ -161,7 +161,7 @@ describe("CreateItemPage topic suggestions (#323)", () => {
     await fillRest(user);
 
     expect(mockTrackEvent).not.toHaveBeenCalled();
-    await user.click(screen.getByRole("button", { name: /create item/i }));
+    await user.click(screen.getByRole("button", { name: /save and study/i }));
     await screen.findByText("Item Detail");
 
     expect(mockTrackEvent.mock.calls.map(([payload]) => payload)).toEqual([
@@ -178,7 +178,7 @@ describe("CreateItemPage topic suggestions (#323)", () => {
     await user.click((await screen.findAllByTestId("topic-chip"))[0]);
     await fillRest(user);
     await user.click(screen.getByRole("checkbox", { name: /private item/i }));
-    await user.click(screen.getByRole("button", { name: /create item/i }));
+    await user.click(screen.getByRole("button", { name: /save and study/i }));
     await screen.findByText("Item Detail");
 
     expect(mockTrackEvent).toHaveBeenLastCalledWith({
@@ -204,7 +204,7 @@ describe("CreateItemPage topic suggestions (#323)", () => {
 
     await fillRest(user);
     await user.click(screen.getByRole("checkbox", { name: /private item/i }));
-    await user.click(screen.getByRole("button", { name: /create item/i }));
+    await user.click(screen.getByRole("button", { name: /save and study/i }));
     await screen.findByText("Item Detail");
 
     const names = mockTrackEvent.mock.calls.map(([payload]) => payload.name);
@@ -223,7 +223,7 @@ describe("CreateItemPage topic suggestions (#323)", () => {
     renderPage("/create/question?category=science&keywords=anatomy,muscular");
     await waitFor(() => expect(screen.getByLabelText(/subtopic/i)).toHaveValue("muscular"));
     await fillRest(user);
-    await user.click(screen.getByRole("button", { name: /create item/i }));
+    await user.click(screen.getByRole("button", { name: /save and study/i }));
     await screen.findByText("Item Detail");
 
     expect(mockTrackEvent).not.toHaveBeenCalled();

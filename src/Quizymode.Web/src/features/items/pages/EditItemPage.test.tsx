@@ -158,7 +158,7 @@ describe("EditItemPage", () => {
     renderPage("/items/item-1/edit");
 
     // Wait for the form to load by checking for the save button
-    await screen.findByRole("button", { name: /save changes/i });
+    await screen.findByRole("button", { name: /^save$/i });
 
     expect(
       screen.getByText(/request admin review to make this item public/i)
@@ -176,7 +176,7 @@ describe("EditItemPage", () => {
     renderPage("/items/item-1/edit");
 
     // Wait for the form to load
-    await screen.findByRole("button", { name: /save changes/i });
+    await screen.findByRole("button", { name: /^save$/i });
 
     // Admin sees the Private Item checkbox (enabled)
     const privateCheckbox = screen.getByRole("checkbox", { name: /private item/i });
@@ -195,7 +195,7 @@ describe("EditItemPage", () => {
     renderPage("/items/item-1/edit");
 
     expect(await screen.findByText("You can only edit your own items.")).toBeInTheDocument();
-    expect(screen.queryByRole("button", { name: /save changes/i })).not.toBeInTheDocument();
+    expect(screen.queryByRole("button", { name: /^save$/i })).not.toBeInTheDocument();
   });
 
   it("does not flash the gate while the current user id is loading (#286)", async () => {
@@ -210,7 +210,7 @@ describe("EditItemPage", () => {
 
     expect(await screen.findByText("Loading...")).toBeInTheDocument();
     expect(screen.queryByText("You can only edit your own items.")).not.toBeInTheDocument();
-    expect(screen.queryByRole("button", { name: /save changes/i })).not.toBeInTheDocument();
+    expect(screen.queryByRole("button", { name: /^save$/i })).not.toBeInTheDocument();
   });
 
   it("shows the form when the current user id failed to load (#286)", async () => {
@@ -223,7 +223,7 @@ describe("EditItemPage", () => {
 
     renderPage("/items/item-1/edit");
 
-    expect(await screen.findByRole("button", { name: /save changes/i })).toBeInTheDocument();
+    expect(await screen.findByRole("button", { name: /^save$/i })).toBeInTheDocument();
   });
 
   it("lets an admin who is not the owner edit (#286)", async () => {
@@ -241,7 +241,7 @@ describe("EditItemPage", () => {
 
     renderPage("/items/item-1/edit");
 
-    expect(await screen.findByRole("button", { name: /save changes/i })).toBeInTheDocument();
+    expect(await screen.findByRole("button", { name: /^save$/i })).toBeInTheDocument();
   });
 
   it.each([
@@ -256,7 +256,7 @@ describe("EditItemPage", () => {
     });
 
     renderPage("/items/item-1/edit");
-    await user.click(await screen.findByRole("button", { name: /save changes/i }));
+    await user.click(await screen.findByRole("button", { name: /^save$/i }));
 
     expect(await screen.findByText(message)).toBeInTheDocument();
     expect(screen.getByTestId("location")).toHaveTextContent("/items/item-1/edit");
@@ -268,7 +268,7 @@ describe("EditItemPage", () => {
 
     renderPage("/items/item-1/edit");
 
-    const saveButton = await screen.findByRole("button", { name: /save changes/i });
+    const saveButton = await screen.findByRole("button", { name: /^save$/i });
 
     await user.click(saveButton);
 
@@ -295,7 +295,7 @@ describe("EditItemPage", () => {
 
     renderPage("/items/item-1/edit");
 
-    const saveButton = await screen.findByRole("button", { name: /save changes/i });
+    const saveButton = await screen.findByRole("button", { name: /^save$/i });
 
     expect(screen.getByPlaceholderText("Incorrect answer 1")).toHaveValue("W1");
     expect(screen.getByPlaceholderText("Incorrect answer 2")).toHaveValue("W2");
@@ -325,7 +325,7 @@ describe("EditItemPage", () => {
 
     renderPage("/items/item-1/edit");
 
-    await user.click(await screen.findByRole("button", { name: /save changes/i }));
+    await user.click(await screen.findByRole("button", { name: /^save$/i }));
 
     expect(await screen.findByText(message)).toBeInTheDocument();
     expect(itemsApi.update).not.toHaveBeenCalled();
@@ -341,7 +341,7 @@ describe("EditItemPage", () => {
 
     renderPage("/items/item-1/edit");
 
-    const saveButton = await screen.findByRole("button", { name: /save changes/i });
+    const saveButton = await screen.findByRole("button", { name: /^save$/i });
 
     expect(screen.getByPlaceholderText("Incorrect answer 1")).toHaveValue("W1");
     expect(screen.getByPlaceholderText("Incorrect answer 2")).toBeInTheDocument();
@@ -368,7 +368,7 @@ describe("EditItemPage", () => {
 
     renderPage("/items/item-1/edit");
 
-    const saveButton = await screen.findByRole("button", { name: /save changes/i });
+    const saveButton = await screen.findByRole("button", { name: /^save$/i });
 
     await user.clear(screen.getByPlaceholderText("Incorrect answer 4"));
     await user.click(saveButton);
@@ -392,7 +392,7 @@ describe("EditItemPage", () => {
 
     renderPage("/items/item-1/edit");
 
-    const saveButton = await screen.findByRole("button", { name: /save changes/i });
+    const saveButton = await screen.findByRole("button", { name: /^save$/i });
 
     await user.click(saveButton);
 
@@ -419,7 +419,7 @@ describe("EditItemPage", () => {
 
     renderPage("/items/item-1/edit");
 
-    const saveButton = await screen.findByRole("button", { name: /save changes/i });
+    const saveButton = await screen.findByRole("button", { name: /^save$/i });
 
     await user.clear(screen.getByPlaceholderText("Incorrect answer 2"));
     await user.click(saveButton);
@@ -444,14 +444,14 @@ describe("EditItemPage", () => {
         publicItem as Awaited<ReturnType<typeof itemsApi.getById>>
       );
       renderPage("/items/item-1/edit");
-      await screen.findByRole("button", { name: /save changes/i });
+      await screen.findByRole("button", { name: /^save$/i });
       expect(screen.getByText(NOTICE)).toBeInTheDocument();
     });
 
     it("shows no notice for a private item", async () => {
       // AC 2.1.6
       renderPage("/items/item-1/edit");
-      await screen.findByRole("button", { name: /save changes/i });
+      await screen.findByRole("button", { name: /^save$/i });
       expect(screen.queryByText(NOTICE)).not.toBeInTheDocument();
     });
 
@@ -466,7 +466,7 @@ describe("EditItemPage", () => {
         publicItem as Awaited<ReturnType<typeof itemsApi.getById>>
       );
       renderPage("/items/item-1/edit");
-      await screen.findByRole("button", { name: /save changes/i });
+      await screen.findByRole("button", { name: /^save$/i });
       expect(screen.queryByText(NOTICE)).not.toBeInTheDocument();
     });
 
@@ -477,7 +477,7 @@ describe("EditItemPage", () => {
         publicItem as Awaited<ReturnType<typeof itemsApi.getById>>
       );
       renderPage("/items/item-1/edit");
-      await user.click(await screen.findByRole("button", { name: /save changes/i }));
+      await user.click(await screen.findByRole("button", { name: /^save$/i }));
       expect(await screen.findByRole("status")).toHaveTextContent(/now private again/i);
       expect(screen.getByRole("button", { name: /back to categories/i })).toBeInTheDocument();
     });
@@ -504,7 +504,7 @@ describe("EditItemPage topic (#323)", () => {
   it("shows the stored path as a pill, offers no chips and sends no suggest request", async () => {
     // AC 12.11
     renderPage("/items/item-1/edit");
-    await screen.findByRole("button", { name: /save changes/i });
+    await screen.findByRole("button", { name: /^save$/i });
 
     expect(await screen.findByTestId("topic-pill")).toHaveTextContent("science");
     expect(screen.queryByTestId("topic-chip")).not.toBeInTheDocument();
@@ -515,7 +515,7 @@ describe("EditItemPage topic (#323)", () => {
     // AC 12.13
     const user = userEvent.setup({ delay: null });
     renderPage("/items/item-1/edit");
-    await screen.findByRole("button", { name: /save changes/i });
+    await screen.findByRole("button", { name: /^save$/i });
 
     await user.click(await screen.findByRole("button", { name: /remove topic science, anatomy, muscular/i }));
     const search = screen.getByRole("combobox", { name: /search topics/i });
@@ -523,7 +523,7 @@ describe("EditItemPage topic (#323)", () => {
     expect(screen.queryByTestId("topic-pill")).not.toBeInTheDocument();
 
     // Saving without a topic is blocked with the topic copy.
-    await user.click(screen.getByRole("button", { name: /save changes/i }));
+    await user.click(screen.getByRole("button", { name: /^save$/i }));
     expect(
       await screen.findByText(/choose a topic: pick a suggestion, search, or browse all topics/i)
     ).toBeInTheDocument();
