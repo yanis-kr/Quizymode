@@ -133,7 +133,11 @@ const StudyGuideDocumentPage = () => {
       void queryClient.invalidateQueries({ queryKey: ["studyGuideDocuments", "list"] });
       void queryClient.invalidateQueries({ queryKey: ["collections"] });
     },
-    onError: (mutationError) => setAcceptError(readApiError(mutationError).message),
+    onError: (mutationError) => {
+      setAcceptError(readApiError(mutationError).message);
+      // An earlier batch may have created the collection, so refresh the document to hide the name input.
+      void queryClient.invalidateQueries({ queryKey });
+    },
   });
 
   if (isLoading) return <LoadingSpinner />;
@@ -292,11 +296,13 @@ const StudyGuideDocumentPage = () => {
           </div>
 
           {acceptSummary && (
-            <div className="rounded-md bg-green-50 p-4 text-sm text-green-800" role="status">
-              Saved {acceptSummary.createdCount} question{acceptSummary.createdCount === 1 ? "" : "s"} to your
-              collection
-              {acceptSummary.duplicateCount > 0 ? ` (${acceptSummary.duplicateCount} already saved)` : ""}
-              {acceptSummary.failedCount > 0 ? ` · ${acceptSummary.failedCount} could not be saved` : ""}.
+            <div className="rounded-md bg-green-50 p-4 text-sm text-green-800">
+              <p role="status">
+                Saved {acceptSummary.createdCount} question{acceptSummary.createdCount === 1 ? "" : "s"} to your
+                collection
+                {acceptSummary.duplicateCount > 0 ? ` (${acceptSummary.duplicateCount} already saved)` : ""}
+                {acceptSummary.failedCount > 0 ? ` · ${acceptSummary.failedCount} could not be saved` : ""}.
+              </p>
               <div className="mt-3 flex flex-wrap gap-2">
                 <Link
                   to={buildCollectionStudyPath("quiz", acceptSummary.collectionId)}

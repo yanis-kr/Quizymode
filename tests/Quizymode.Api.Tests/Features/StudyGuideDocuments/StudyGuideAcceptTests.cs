@@ -232,6 +232,7 @@ public sealed class StudyGuideAcceptTests : StudyGuideDocumentFixture
 
         validator.Validate(new AcceptStudyGuideCandidates.Request(candidates, new string('a', 201))).IsValid.Should().BeFalse();
         validator.Validate(new AcceptStudyGuideCandidates.Request(candidates, new string('a', 200))).IsValid.Should().BeTrue();
+        validator.Validate(new AcceptStudyGuideCandidates.Request(candidates, "  " + new string('a', 200) + "  ")).IsValid.Should().BeTrue("the name is trimmed before use");
         validator.Validate(new AcceptStudyGuideCandidates.Request(candidates, null)).IsValid.Should().BeTrue();
     }
 

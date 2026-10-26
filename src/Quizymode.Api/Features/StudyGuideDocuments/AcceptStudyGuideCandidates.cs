@@ -45,8 +45,9 @@ public static class AcceptStudyGuideCandidates
     {
         public Validator()
         {
+            // The name is trimmed before use, so measure the trimmed value.
             RuleFor(x => x.CollectionName)
-                .MaximumLength(MaxCollectionNameLength)
+                .Must(name => name!.Trim().Length <= MaxCollectionNameLength)
                 .WithMessage($"Collection name must not exceed {MaxCollectionNameLength} characters.")
                 .When(x => x.CollectionName is not null && x.CollectionName.Trim().Length > 0);
 

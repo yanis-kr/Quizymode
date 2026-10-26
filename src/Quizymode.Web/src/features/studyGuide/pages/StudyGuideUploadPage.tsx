@@ -1,5 +1,4 @@
 import * as React from "react";
-import { StudyGuideSteps } from "../components/StudyGuideSteps";
 import { useMutation, useQuery } from "@tanstack/react-query";
 import { Link, Navigate, useNavigate, useSearchParams } from "react-router-dom";
 import { useAuth } from "@/contexts/AuthContext";
@@ -8,6 +7,7 @@ import LoadingSpinner from "@/components/LoadingSpinner";
 import ErrorMessage from "@/components/ErrorMessage";
 import { ItemTopicScopeFields, type TopicScopeFieldsHandle } from "@/components/items/ItemTopicScopeFields";
 import { applyTopicScopePatch, isTopicComplete, TOPIC_REQUIRED_MESSAGE } from "@/features/topics/topicScope";
+import { StudyGuideSteps } from "../components/StudyGuideSteps";
 import {
   BINARY_FILE_HELPER,
   composeNotesSuggestionText,
