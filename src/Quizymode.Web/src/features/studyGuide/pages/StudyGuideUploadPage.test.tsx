@@ -115,6 +115,15 @@ describe("StudyGuideUploadPage", () => {
     vi.mocked(taxonomyApi.suggest).mockResolvedValue({ suggestions: [] });
   });
 
+  it("shows the notes-to-quiz heading and marks Add material as the current step", async () => {
+    renderPage();
+
+    expect(await screen.findByRole("heading", { level: 1, name: "Turn notes into a quiz" })).toBeInTheDocument();
+    const current = screen.getAllByRole("listitem").filter((item) => item.getAttribute("aria-current") === "step");
+    expect(current).toHaveLength(1);
+    expect(current[0]).toHaveTextContent("Add material");
+  });
+
   it("shows an unavailable message when AI generation is disabled", async () => {
     vi.mocked(studyGuideDocumentsApi.getConfig).mockResolvedValue({ ...config, enabled: false });
 

@@ -14,10 +14,11 @@ public sealed class StudyGuideAcceptTests : StudyGuideDocumentFixture
     private Task<Result<AcceptStudyGuideCandidates.Response?>> AcceptAsync(
         string documentId,
         IEnumerable<AcceptStudyGuideCandidates.CandidateEdit> candidates,
-        string? userId = null) =>
+        string? userId = null,
+        string? collectionName = null) =>
         AcceptStudyGuideCandidates.HandleAsync(
             Guid.Parse(documentId),
-            new AcceptStudyGuideCandidates.Request(candidates.ToList()),
+            new AcceptStudyGuideCandidates.Request(candidates.ToList(), collectionName),
             DbContext,
             StudyGuideTestData.User(userId ?? UserA).Object,
             SimHashService,
@@ -178,6 +179,60 @@ public sealed class StudyGuideAcceptTests : StudyGuideDocumentFixture
 
         second.Value!.CollectionId.Should().NotBe(first.Value.CollectionId);
         (await DbContext.Collections.SingleAsync(c => c.CreatedBy == UserA)).IsDiscoverable.Should().BeFalse();
+    }
+
+    [Fact]
+    public async Task Accept_FirstSaveUsesTrimmedCollectionName_SecondSaveIgnoresIt()
+    {
+        StudyGuideDocumentContracts.Document document = await GeneratedDocumentAsync();
+        List<StudyGuideDocumentContracts.Candidate> candidates = document.Sections[0].Candidates;
+
+        Result<AcceptStudyGuideCandidates.Response?> first = await AcceptAsync(document.Id, candidates.Take(1).Select(Pick), collectionName: "  My Capitals  ");
+        Result<AcceptStudyGuideCandidates.Response?> second = await AcceptAsync(document.Id, candidates.Skip(1).Take(1).Select(Pick), collectionName: "Other Name");
+
+        Collection collection = await DbContext.Collections.SingleAsync(c => c.CreatedBy == UserA);
+        collection.Id.Should().Be(Guid.Parse(first.Value!.CollectionId));
+        collection.Name.Should().Be("My Capitals");
+        collection.IsPublic.Should().BeFalse();
+        second.Value!.CollectionId.Should().Be(first.Value.CollectionId);
+    }
+
+    [Theory]
+    [InlineData(null)]
+    [InlineData("")]
+    [InlineData("   ")]
+    public async Task Accept_BlankCollectionName_FallsBackToDocumentTitle(string? name)
+    {
+        StudyGuideDocumentContracts.Document document = await GeneratedDocumentAsync();
+
+        Result<AcceptStudyGuideCandidates.Response?> result = await AcceptAsync(document.Id, document.Sections[0].Candidates.Take(1).Select(Pick), collectionName: name);
+
+        result.IsSuccess.Should().BeTrue();
+        (await DbContext.Collections.SingleAsync(c => c.CreatedBy == UserA)).Name.Should().Be("Europe Capitals");
+    }
+
+    [Fact]
+    public async Task Accept_BlockedCollectionName_IsRejectedAndSavesNothing()
+    {
+        StudyGuideDocumentContracts.Document document = await GeneratedDocumentAsync();
+
+        Result<AcceptStudyGuideCandidates.Response?> result = await AcceptAsync(document.Id, document.Sections[0].Candidates.Take(1).Select(Pick), collectionName: "My badword guide");
+
+        result.IsFailure.Should().BeTrue();
+        result.Error.Code.Should().Be(StudyGuideDocumentErrors.ProfanityBlocked.Code);
+        (await DbContext.Items.AnyAsync()).Should().BeFalse();
+        (await DbContext.Collections.AnyAsync()).Should().BeFalse();
+    }
+
+    [Fact]
+    public void Accept_ValidatorRejectsOverlongCollectionName()
+    {
+        AcceptStudyGuideCandidates.Validator validator = new();
+        List<AcceptStudyGuideCandidates.CandidateEdit> candidates = [new(Guid.NewGuid(), null, null, null, null)];
+
+        validator.Validate(new AcceptStudyGuideCandidates.Request(candidates, new string('a', 201))).IsValid.Should().BeFalse();
+        validator.Validate(new AcceptStudyGuideCandidates.Request(candidates, new string('a', 200))).IsValid.Should().BeTrue();
+        validator.Validate(new AcceptStudyGuideCandidates.Request(candidates, null)).IsValid.Should().BeTrue();
     }
 
     [Fact]

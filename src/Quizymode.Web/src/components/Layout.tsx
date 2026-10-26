@@ -67,7 +67,7 @@ function getFallbackTitle(pathname: string): string | undefined {
   }
 
   if (pathname === "/create/notes") {
-    return "Generate Quiz";
+    return "Turn notes into a quiz";
   }
 
   if (pathname === "/create/question" || pathname === "/items/create" || pathname === "/add-new-item") {

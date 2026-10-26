@@ -10,7 +10,7 @@ import {
 } from "@/api/studyGuideDocuments";
 import LoadingSpinner from "@/components/LoadingSpinner";
 import ErrorMessage from "@/components/ErrorMessage";
-import { buildCollectionStudyPath } from "@/utils/collectionPath";
+import { buildCollectionPath, buildCollectionStudyPath } from "@/utils/collectionPath";
 import type { CandidateEdit } from "../studyGuideDocumentSchema";
 import { readApiError } from "../studyGuideApiErrors";
 import {
@@ -26,6 +26,7 @@ import {
 } from "../studyGuideSections";
 import { StudyGuideSectionPicker } from "../components/StudyGuideSectionPicker";
 import { StudyGuideCandidateCard } from "../components/StudyGuideCandidateCard";
+import { StudyGuideSteps } from "../components/StudyGuideSteps";
 
 const FILE_TYPE_LABELS: Record<string, string> = {
   pdf: "PDF",
@@ -70,6 +71,8 @@ const StudyGuideDocumentPage = () => {
   const [generateResult, setGenerateResult] = React.useState<GenerateStudyGuideSectionsResponse | null>(null);
   const [acceptError, setAcceptError] = React.useState<string | null>(null);
   const [acceptSummary, setAcceptSummary] = React.useState<AcceptSummary | null>(null);
+  const [collectionNameInput, setCollectionNameInput] = React.useState<string | null>(null);
+  const pickerRef = React.useRef<HTMLDivElement>(null);
 
   const queryKey = ["studyGuideDocuments", id];
   const {
@@ -101,10 +104,19 @@ const StudyGuideDocumentPage = () => {
   });
 
   const acceptMutation = useMutation({
-    mutationFn: async (candidates: AcceptStudyGuideCandidate[]) => {
+    mutationFn: async ({
+      candidates,
+      collectionName,
+    }: {
+      candidates: AcceptStudyGuideCandidate[];
+      collectionName?: string;
+    }) => {
       const responses: AcceptStudyGuideCandidatesResponse[] = [];
       for (const batch of chunk(candidates, MAX_CANDIDATES_PER_ACCEPT)) {
-        responses.push(await studyGuideDocumentsApi.accept(id, batch));
+        // Only the first batch can create the collection; later batches reuse it.
+        responses.push(
+          await studyGuideDocumentsApi.accept(id, batch, responses.length === 0 ? collectionName : undefined)
+        );
       }
       return responses;
     },
@@ -147,6 +159,17 @@ const StudyGuideDocumentPage = () => {
   const active = hasActiveGeneration(document);
   const freeTierWait = getFreeTierWaitMinutes(document, dataUpdatedAt);
   const collectionId = acceptSummary?.collectionId ?? document.collectionId ?? null;
+
+  const needsCollectionName = !collectionId;
+  const collectionNameValue = (collectionNameInput ?? document.title).slice(0, 200);
+  const currentStep = generatedCount > 0 ? "review" : "coverage";
+
+  const focusPicker = () => {
+    const picker = pickerRef.current;
+    if (!picker) return;
+    picker.scrollIntoView?.({ behavior: "smooth", block: "start" });
+    picker.focus();
+  };
 
   const toggleSection = (sectionId: string) => {
     const next = new Set(effectiveSelection);
@@ -196,6 +219,8 @@ const StudyGuideDocumentPage = () => {
         ← My study guides
       </Link>
 
+      <StudyGuideSteps current={currentStep} />
+
       <header className="space-y-1">
         <h1 className="text-2xl font-bold text-gray-900 break-words">{document.title}</h1>
         <p className="text-sm text-gray-600">
@@ -243,14 +268,16 @@ const StudyGuideDocumentPage = () => {
 
       {generateError && <ErrorMessage message={generateError} onRetry={() => setGenerateError(null)} />}
 
-      <StudyGuideSectionPicker
-        sections={sections}
-        quota={document.quota}
-        selection={effectiveSelection}
-        onToggle={toggleSection}
-        onGenerate={() => generateMutation.mutate([...effectiveSelection])}
-        isGenerating={generateMutation.isPending}
-      />
+      <div ref={pickerRef} tabIndex={-1} className="focus:outline-none">
+        <StudyGuideSectionPicker
+          sections={sections}
+          quota={document.quota}
+          selection={effectiveSelection}
+          onToggle={toggleSection}
+          onGenerate={() => generateMutation.mutate([...effectiveSelection])}
+          isGenerating={generateMutation.isPending}
+        />
+      </div>
 
       {generatedSections.length > 0 && (
         <section aria-labelledby="study-guide-review-heading" className="space-y-4">
@@ -269,13 +296,34 @@ const StudyGuideDocumentPage = () => {
               Saved {acceptSummary.createdCount} question{acceptSummary.createdCount === 1 ? "" : "s"} to your
               collection
               {acceptSummary.duplicateCount > 0 ? ` (${acceptSummary.duplicateCount} already saved)` : ""}
-              {acceptSummary.failedCount > 0 ? ` · ${acceptSummary.failedCount} could not be saved` : ""}.{" "}
-              <Link
-                to={buildCollectionStudyPath("explore", acceptSummary.collectionId)}
-                className="font-medium underline"
-              >
-                Open collection
-              </Link>
+              {acceptSummary.failedCount > 0 ? ` · ${acceptSummary.failedCount} could not be saved` : ""}.
+              <div className="mt-3 flex flex-wrap gap-2">
+                <Link
+                  to={buildCollectionStudyPath("quiz", acceptSummary.collectionId)}
+                  className="rounded-md bg-indigo-600 px-3 py-1.5 font-medium text-white hover:bg-indigo-700"
+                >
+                  Start quiz
+                </Link>
+                <Link
+                  to={buildCollectionStudyPath("explore", acceptSummary.collectionId)}
+                  className="rounded-md border border-green-300 bg-white px-3 py-1.5 font-medium text-green-900 hover:bg-green-100"
+                >
+                  Study flashcards
+                </Link>
+                <button
+                  type="button"
+                  onClick={focusPicker}
+                  className="rounded-md border border-green-300 bg-white px-3 py-1.5 font-medium text-green-900 hover:bg-green-100"
+                >
+                  Add more
+                </button>
+                <Link
+                  to={buildCollectionPath(acceptSummary.collectionId)}
+                  className="rounded-md border border-green-300 bg-white px-3 py-1.5 font-medium text-green-900 hover:bg-green-100"
+                >
+                  Open collection
+                </Link>
+              </div>
             </div>
           )}
           {acceptError && <ErrorMessage message={acceptError} onRetry={() => setAcceptError(null)} />}
@@ -316,11 +364,36 @@ const StudyGuideDocumentPage = () => {
             </div>
           ))}
 
+          {needsCollectionName && (
+            <div className="space-y-1">
+              <label htmlFor="study-guide-collection-name" className="block text-sm font-medium text-gray-800">
+                Collection name
+              </label>
+              <input
+                id="study-guide-collection-name"
+                type="text"
+                maxLength={200}
+                value={collectionNameValue}
+                onChange={(event) => setCollectionNameInput(event.target.value)}
+                disabled={acceptMutation.isPending}
+                className="block w-full rounded-md border border-gray-300 px-3 py-2 text-sm"
+              />
+              <p className="text-xs text-gray-500">
+                Your saved questions go into a new private collection with this name.
+              </p>
+            </div>
+          )}
+
           <div className="sticky bottom-0 flex flex-wrap items-center gap-3 border-t border-gray-200 bg-white/95 py-3">
             <button
               type="button"
               disabled={acceptPayload.length === 0 || acceptMutation.isPending}
-              onClick={() => acceptMutation.mutate(acceptPayload)}
+              onClick={() =>
+                acceptMutation.mutate({
+                  candidates: acceptPayload,
+                  collectionName: needsCollectionName ? collectionNameValue.trim() || undefined : undefined,
+                })
+              }
               className="rounded-md bg-indigo-600 px-4 py-2 text-sm font-medium text-white hover:bg-indigo-700 disabled:opacity-50"
             >
               {acceptMutation.isPending ? "Saving…" : `Save ${acceptPayload.length} selected`}
