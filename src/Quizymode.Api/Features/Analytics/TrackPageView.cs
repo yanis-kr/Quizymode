@@ -277,6 +277,24 @@ public static class TrackPageView
             CreatedUtc = DateTime.UtcNow
         };
 
+        if (db.Database.IsNpgsql())
+        {
+            // A concurrent request for the same brand-new session may win the unique-SessionId race; its snapshot wins.
+            // ON CONFLICT avoids the unique violation that EF would log at Error before the catch below (#350).
+            await db.Database.ExecuteSqlInterpolatedAsync(
+                $"""
+                INSERT INTO "AnalyticsSessions" ("Id", "SessionId", "VisitorId", "UserId", "FirstSeenUtc", "LandingPath",
+                    "LandingQuery", "ReferrerHost", "UtmSource", "UtmMedium", "UtmCampaign", "UtmContent", "UtmTerm",
+                    "ClickIdPlatform", "Channel", "DeviceClass", "Country", "AppVersion", "CreatedUtc")
+                VALUES ({analyticsSession.Id}, {analyticsSession.SessionId}, {analyticsSession.VisitorId}, {analyticsSession.UserId}, {analyticsSession.FirstSeenUtc}, {analyticsSession.LandingPath},
+                    {analyticsSession.LandingQuery}, {analyticsSession.ReferrerHost}, {analyticsSession.UtmSource}, {analyticsSession.UtmMedium}, {analyticsSession.UtmCampaign}, {analyticsSession.UtmContent}, {analyticsSession.UtmTerm},
+                    {analyticsSession.ClickIdPlatform}, {analyticsSession.Channel}, {analyticsSession.DeviceClass}, {analyticsSession.Country}, {analyticsSession.AppVersion}, {analyticsSession.CreatedUtc})
+                ON CONFLICT ("SessionId") DO NOTHING
+                """,
+                cancellationToken);
+            return;
+        }
+
         db.AnalyticsSessions.Add(analyticsSession);
         try
         {

@@ -88,7 +88,9 @@ public static class Extensions
                 metrics.UseGrafana()
                     .AddAspNetCoreInstrumentation()
                     .AddHttpClientInstrumentation()
-                    .AddRuntimeInstrumentation();
+                    .AddRuntimeInstrumentation()
+                    // Npgsql pool metrics (busy/idle connections, pending requests) (#350).
+                    .AddMeter("Npgsql");
             })
             .WithTracing(tracing =>
             {
