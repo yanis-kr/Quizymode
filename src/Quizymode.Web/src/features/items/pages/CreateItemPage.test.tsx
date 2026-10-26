@@ -5,6 +5,7 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { MemoryRouter, Route, Routes, useLocation } from "react-router-dom";
 import CreateItemPage from "./CreateItemPage";
 import { itemsApi } from "@/api/items";
+import { collectionsApi } from "@/api/collections";
 import { taxonomyApi } from "@/api/taxonomy";
 import { useExtraKeywordAutocompleteSource } from "@/hooks/useExtraKeywordAutocompleteSource";
 
@@ -218,6 +219,8 @@ describe("CreateItemPage", () => {
     await user.type(screen.getByPlaceholderText("Incorrect answer 1"), "Ligaments");
     await user.type(screen.getByPlaceholderText("Incorrect answer 3"), "Bones");
 
+    await user.click(screen.getByRole("button", { name: /more options/i }));
+
     // Order: [a1p, a1l, a2p, a2l, a3p, a3l]
     const speechInputs = screen.getAllByPlaceholderText("Optional");
     await user.type(speechInputs[2], "ghost");
@@ -311,6 +314,7 @@ describe("CreateItemPage", () => {
     await user.click(screen.getByRole("button", { name: /save and study/i }));
 
     expect(await screen.findByText("Collection Study")).toBeInTheDocument();
+    expect(collectionsApi.addItem).toHaveBeenCalledWith("col-1", { itemId: "item-123" });
     expect(screen.getByTestId("location")).toHaveTextContent(
       "/explore/collections/col-1/item/item-123"
     );
@@ -329,5 +333,19 @@ describe("CreateItemPage", () => {
 
     expect(await screen.findByText("Item Detail")).toBeInTheDocument();
     expect(screen.getByTestId("location")).toHaveTextContent("/items/item-123");
+  });
+
+  it("Save and add another runs native validation and does not save a blank question (#296)", async () => {
+    const user = userEvent.setup({ delay: null });
+
+    renderPage("/create/question?category=science&keywords=anatomy,muscular");
+    await waitFor(() => expect(screen.getByLabelText(/subtopic/i)).toHaveValue("muscular"));
+
+    await user.type(getFieldControl("Correct Answer *"), "Tendons");
+    await user.type(screen.getByPlaceholderText("Incorrect answer 1"), "Ligaments");
+    await user.click(screen.getByRole("button", { name: /save and add another/i }));
+
+    expect(itemsApi.create).not.toHaveBeenCalled();
+    expect(screen.queryByText("Saved. Add the next question.")).not.toBeInTheDocument();
   });
 });

@@ -256,6 +256,23 @@ describe("ItemForm", () => {
     );
   });
 
+  it("lets the user close More options after an error opened it, and ignores resource (#296)", async () => {
+    const user = userEvent.setup({ delay: null });
+    renderCreate({ submitError: "Explanation must be at most 2000 characters." });
+    const toggle = screen.getByRole("button", { name: /more options/i });
+    expect(toggle).toHaveAttribute("aria-expanded", "true");
+    await user.click(toggle);
+    expect(toggle).toHaveAttribute("aria-expanded", "false");
+  });
+
+  it("does not open More options for an unrelated word such as resource (#296)", () => {
+    renderCreate({ submitError: "Resource not found." });
+    expect(screen.getByRole("button", { name: /more options/i })).toHaveAttribute(
+      "aria-expanded",
+      "false"
+    );
+  });
+
   it("opens More options in edit mode when a stored value exists, not otherwise (#296)", () => {
     const { unmount } = renderForm(
       <ItemForm

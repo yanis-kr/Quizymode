@@ -251,7 +251,9 @@ function CreateItemEditor({
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    save("study");
+    // Both create buttons submit the form so native validation runs; the button says which one.
+    const submitter = (e.nativeEvent as SubmitEvent).submitter;
+    save(submitter?.getAttribute("data-action") === "another" ? "another" : "study");
   };
 
   return (
@@ -260,7 +262,6 @@ function CreateItemEditor({
       values={formData}
       onChange={setFormData}
       onSubmit={handleSubmit}
-      onSaveAndAddAnother={() => save("another")}
       statusMessage={statusMessage}
       questionRef={questionRef}
       onCancel={() => navigate("/categories")}

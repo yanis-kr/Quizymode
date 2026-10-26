@@ -393,7 +393,7 @@ test.describe("create question: chips and the picker", () => {
     expect(api.suggestBodies).toHaveLength(2);
     expect(await chosenPath(page, "item-form")).toEqual(["tech", "ai-ml", "nlp"]);
 
-    await page.getByRole("button", { name: "Create Item" }).click();
+    await page.getByRole("button", { name: "Save and study" }).click();
     await expect.poll(() => api.saved.length).toBe(1);
     expect(api.saved[0]).toMatchObject({ category: "tech", navigationKeyword1: "ai-ml", navigationKeyword2: "nlp" });
 
@@ -456,7 +456,7 @@ test.describe("create question: chips and the picker", () => {
     await page.getByRole("checkbox", { name: /private item/i }).uncheck();
     await page.getByText("Correct Answer *").locator("xpath=following-sibling::input").first().fill(ANSWER);
     await page.getByPlaceholder("Incorrect answer 1").fill("By guessing");
-    await page.getByRole("button", { name: "Create Item" }).click();
+    await page.getByRole("button", { name: "Save and study" }).click();
 
     await expect.poll(() => api.events.filter((event) => event.name.startsWith("topic_suggestion_")).length).toBe(2);
     const events = api.events.filter((event) => event.name.startsWith("topic_suggestion_"));
@@ -542,7 +542,7 @@ test.describe("create question: chips and the picker", () => {
     await expect(chips(page)).toHaveCount(2);
     await fillQuestionForm(page);
 
-    await page.getByRole("button", { name: "Create Item" }).click();
+    await page.getByRole("button", { name: "Save and study" }).click();
 
     await expect(topicGroup(page).getByRole("alert")).toHaveText(
       "Choose a topic: pick a suggestion, search, or browse all topics."
@@ -583,7 +583,7 @@ test.describe("create question: chips and the picker", () => {
     await page.keyboard.press("Enter");
     await expect(page.getByTestId("topic-pill")).toBeVisible();
     await fillQuestionForm(page);
-    await page.getByRole("button", { name: "Create Item" }).click();
+    await page.getByRole("button", { name: "Save and study" }).click();
     await expect.poll(() => api.saved.length).toBe(1);
     // No chip was ever shown, so nothing is reported.
     expect(api.events.filter((event) => event.name.startsWith("topic_suggestion_"))).toEqual([]);

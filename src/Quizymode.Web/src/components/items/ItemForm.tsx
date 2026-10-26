@@ -56,18 +56,15 @@ export interface ItemFormProps {
   topicScopeRef?: Ref<TopicScopeFieldsHandle>;
   /** Create mode only: called when a set of topic chips has been shown. */
   onTopicSuggestionsShown?: (suggestions: TopicSuggestion[]) => void;
-  /** Create mode only: saves, then resets the question fields for the next one (#296). */
-  onSaveAndAddAnother?: () => void;
   /** Create mode only: non-blocking confirmation announced in a status region (#296). */
   statusMessage?: string;
   /** Focus handle for the Question field, used by the page after Save and add another. */
   questionRef?: Ref<HTMLTextAreaElement>;
-  /** Error that belongs to a field inside More options; opens the disclosure. */
-  moreOptionsError?: string;
 }
 
 /** Server messages that point at a field inside More options. */
-const MORE_OPTIONS_ERROR_PATTERN = /explanation|source|pronunciation|language code|extra keyword|additional keyword/i;
+const MORE_OPTIONS_ERROR_PATTERN =
+  /\b(explanation|source|pronunciation|language code|extra keyword|additional keyword)/i;
 
 export function ItemForm({
   mode,
@@ -86,10 +83,8 @@ export function ItemForm({
   topicError,
   topicScopeRef,
   onTopicSuggestionsShown,
-  onSaveAndAddAnother,
   statusMessage,
   questionRef,
-  moreOptionsError,
 }: ItemFormProps) {
   const [newKeywordName, setNewKeywordName] = useState("");
   const [suggestOpen, setSuggestOpen] = useState(false);
@@ -100,8 +95,13 @@ export function ItemForm({
   const [moreOpenChoice, setMoreOpenChoice] = useState<boolean | null>(null);
 
   const errorInMoreOptions =
-    Boolean(moreOptionsError) ||
-    (submitError !== undefined && MORE_OPTIONS_ERROR_PATTERN.test(submitError));
+    submitError !== undefined && MORE_OPTIONS_ERROR_PATTERN.test(submitError);
+  // An error opens the panel when it appears; the user can close it afterwards.
+  const [sawMoreOptionsError, setSawMoreOptionsError] = useState(false);
+  if (errorInMoreOptions !== sawMoreOptionsError) {
+    setSawMoreOptionsError(errorInMoreOptions);
+    if (errorInMoreOptions) setMoreOpenChoice(true);
+  }
   const moreOptionsHasValue =
     values.explanation.trim() !== "" ||
     values.source.trim() !== "" ||
@@ -110,10 +110,8 @@ export function ItemForm({
     Boolean(values.correctAnswerSpeech.pronunciation || values.correctAnswerSpeech.languageCode) ||
     Object.values(values.incorrectAnswerSpeech).some((sp) => sp?.pronunciation || sp?.languageCode);
   // Closed by default; opens by itself for an error inside it, or on edit for a stored value.
-  // Once the user toggles it their choice wins, except that an error always opens it.
-  const moreOpen =
-    errorInMoreOptions ||
-    (moreOpenChoice ?? (mode === "edit" && moreOptionsHasValue));
+  // Once the user toggles it (or an error opens it) that choice wins.
+  const moreOpen = moreOpenChoice ?? (mode === "edit" && moreOptionsHasValue);
 
   const publicTaxonomySlugSet = useMemo(
     () => new Set(taxonomyPublicSlugs.map((s) => s.trim().toLowerCase()).filter(Boolean)),
@@ -446,7 +444,6 @@ export function ItemForm({
           hidden={!moreOpen}
           className="mt-4 space-y-6 rounded-lg border border-gray-200 bg-slate-50/80 p-4 sm:p-5"
         >
-          {moreOptionsError && <ErrorMessage message={moreOptionsError} />}
           <div>
             <label
               htmlFor={`${mode}-explanation`}
@@ -689,8 +686,8 @@ export function ItemForm({
         </button>
         {mode === "create" && (
           <button
-            type="button"
-            onClick={onSaveAndAddAnother}
+            type="submit"
+            data-action="another"
             disabled={isPending}
             className="px-4 py-2 text-sm font-medium text-indigo-700 bg-white border border-indigo-300 rounded-md hover:bg-indigo-50 disabled:opacity-50"
           >
