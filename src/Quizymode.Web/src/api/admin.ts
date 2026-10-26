@@ -1,5 +1,5 @@
 import { apiClient } from "./client";
-import type { BulkCreateItemsRequest, ItemSpeechSupport } from "@/types/api";
+import type { ItemSpeechSupport } from "@/types/api";
 
 interface ReviewBoardItemResponse {
   id: string;
@@ -929,16 +929,6 @@ export const adminApi = {
     const response = await apiClient.put<ReviewBoardItemResponse>(
       `/admin/items/${id}/rejection`,
       { reason }
-    );
-    return response.data;
-  },
-
-  bulkCreateItems: async (
-    data: BulkCreateItemsRequest
-  ): Promise<{ created: number; skipped: number }> => {
-    const response = await apiClient.post<{ created: number; skipped: number }>(
-      "/items/bulk",
-      data
     );
     return response.data;
   },

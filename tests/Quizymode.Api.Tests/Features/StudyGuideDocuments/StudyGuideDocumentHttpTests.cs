@@ -153,6 +153,68 @@ public sealed class StudyGuideDocumentHttpTests : ItemTestFixture, IAsyncLifetim
     }
 
     [Fact]
+    public async Task Accept_PublishByNonAdmin_Returns403AndWritesNothing()
+    {
+        using HttpResponseMessage created = await SendAsync(HttpMethod.Post, "/study-guides/documents", Token("owner"),
+            Upload(text: "Paris is the capital and most populous city of France."));
+        StudyGuideDocumentContracts.Document document = (await created.Content.ReadFromJsonAsync<StudyGuideDocumentContracts.Document>())!;
+        using HttpResponseMessage generated = await SendAsync(HttpMethod.Post, $"/study-guides/documents/{document.Id}/generate", Token("owner"),
+            JsonContent.Create(new { sectionIds = new[] { document.Sections[0].Id } }));
+        generated.StatusCode.Should().Be(HttpStatusCode.Accepted);
+
+        // Complete the queued generation with a real candidate so the accept would succeed without the 403 gate.
+        Guid candidateId = Guid.NewGuid();
+        await using (Quizymode.Api.Data.ApplicationDbContext db = CreateDbContext())
+        {
+            Quizymode.Api.Shared.Models.SectionGeneration generation = db.SectionGenerations.Single();
+            generation.Status = Quizymode.Api.Shared.Models.SectionGenerationStatus.Completed;
+            generation.SourceText = null;
+            generation.CompletedUtc = DateTime.UtcNow;
+            db.GenerationCandidates.Add(new Quizymode.Api.Shared.Models.GenerationCandidate
+            {
+                Id = candidateId,
+                GenerationId = generation.Id,
+                Index = 0,
+                Question = "What is the capital of France?",
+                CorrectAnswer = "Paris",
+                IncorrectAnswersJson = "[\"Lyon\",\"Vienna\",\"Lisbon\"]",
+                Explanation = "Because the guide says so.",
+                SourceQuote = "Paris is the capital and most populous city of France",
+                Page = 1
+            });
+            await db.SaveChangesAsync();
+        }
+
+        using HttpResponseMessage response = await SendAsync(HttpMethod.Post, $"/study-guides/documents/{document.Id}/accept", Token("owner"),
+            JsonContent.Create(new { candidates = new[] { new { id = candidateId } }, publish = true }));
+
+        response.StatusCode.Should().Be(HttpStatusCode.Forbidden);
+        DbContext.Items.Count().Should().Be(0);
+        DbContext.Collections.Count().Should().Be(0);
+        DbContext.StudyGuideAcceptedCandidates.Count().Should().Be(0);
+
+        // Control: the same candidate without publish is accepted, proving the zero rows above came from the gate.
+        using HttpResponseMessage control = await SendAsync(HttpMethod.Post, $"/study-guides/documents/{document.Id}/accept", Token("owner"),
+            JsonContent.Create(new { candidates = new[] { new { id = candidateId } } }));
+        control.StatusCode.Should().Be(HttpStatusCode.OK, await control.Content.ReadAsStringAsync());
+        DbContext.Items.Count().Should().Be(1);
+    }
+
+    [Fact]
+    public async Task Accept_PublishByAdmin_IsNotForbidden()
+    {
+        using HttpResponseMessage created = await SendAsync(HttpMethod.Post, "/study-guides/documents", Token("owner"),
+            Upload(text: "Paris is the capital and most populous city of France."));
+        StudyGuideDocumentContracts.Document document = (await created.Content.ReadFromJsonAsync<StudyGuideDocumentContracts.Document>())!;
+
+        // The admin does not own the document, so the request passes the publish gate and then hits 404.
+        using HttpResponseMessage response = await SendAsync(HttpMethod.Post, $"/study-guides/documents/{document.Id}/accept", AdminToken(),
+            JsonContent.Create(new { candidates = new[] { new { id = Guid.NewGuid() } }, publish = true }));
+
+        response.StatusCode.Should().Be(HttpStatusCode.NotFound);
+    }
+
+    [Fact]
     public async Task Generate_QueuesAndOverQuotaReturns429()
     {
         using HttpResponseMessage created = await SendAsync(HttpMethod.Post, "/study-guides/documents", Token("owner"),

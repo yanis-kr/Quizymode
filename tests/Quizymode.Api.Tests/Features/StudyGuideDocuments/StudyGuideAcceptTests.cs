@@ -15,12 +15,14 @@ public sealed class StudyGuideAcceptTests : StudyGuideDocumentFixture
         string documentId,
         IEnumerable<AcceptStudyGuideCandidates.CandidateEdit> candidates,
         string? userId = null,
-        string? collectionName = null) =>
+        string? collectionName = null,
+        bool publish = false,
+        bool isAdmin = false) =>
         AcceptStudyGuideCandidates.HandleAsync(
             Guid.Parse(documentId),
-            new AcceptStudyGuideCandidates.Request(candidates.ToList(), collectionName),
+            new AcceptStudyGuideCandidates.Request(candidates.ToList(), collectionName, publish),
             DbContext,
-            StudyGuideTestData.User(userId ?? UserA).Object,
+            AcceptUser(userId ?? UserA, isAdmin).Object,
             SimHashService,
             TaxonomyItemCategoryResolver,
             TaxonomyRegistry,
@@ -29,6 +31,13 @@ public sealed class StudyGuideAcceptTests : StudyGuideDocumentFixture
             DocumentOptions.RetentionDays,
             Clock.UtcNow,
             CancellationToken.None);
+
+    private static Mock<IUserContext> AcceptUser(string userId, bool isAdmin)
+    {
+        Mock<IUserContext> user = StudyGuideTestData.User(userId);
+        user.Setup(x => x.IsAdmin).Returns(isAdmin);
+        return user;
+    }
 
     private async Task<StudyGuideDocumentContracts.Document> GeneratedDocumentAsync(string title = "Europe Capitals")
     {
@@ -88,6 +97,54 @@ public sealed class StudyGuideAcceptTests : StudyGuideDocumentFixture
         reloaded!.CollectionId.Should().Be(result.Value.CollectionId);
         reloaded.Sections[0].Candidates.Select(c => c.Accepted).Should().Equal(true, true, false);
         (await ListStudyGuideDocuments.HandleAsync(DbContext, UserA, CancellationToken.None)).Documents.Single().AcceptedCount.Should().Be(2);
+    }
+
+    [Fact]
+    public async Task Accept_AdminPublish_CreatesPublicItemsInAPrivateCollectionWithoutDocumentTitle()
+    {
+        StudyGuideDocumentContracts.Document document = await GeneratedDocumentAsync();
+        List<StudyGuideDocumentContracts.Candidate> candidates = document.Sections[0].Candidates;
+
+        Result<AcceptStudyGuideCandidates.Response?> result = await AcceptAsync(
+            document.Id, candidates.Take(2).Select(Pick), publish: true, isAdmin: true);
+
+        result.IsSuccess.Should().BeTrue(result.IsFailure ? result.Error.Description : null);
+        result.Value!.CreatedCount.Should().Be(2);
+        List<Item> items = await DbContext.Items.Where(i => i.CreatedBy == UserA).OrderBy(i => i.Question).ToListAsync();
+        items.Should().HaveCount(2).And.OnlyContain(item => !item.IsPrivate);
+        items.Should().OnlyContain(item => !item.Explanation.Contains("Europe Capitals") && !item.Explanation.Contains("From "));
+        items[0].Explanation.Should().Be("Because the guide says so.");
+        Collection collection = await DbContext.Collections.SingleAsync(c => c.Id == Guid.Parse(result.Value.CollectionId));
+        collection.IsPublic.Should().BeFalse();
+        collection.IsDiscoverable.Should().BeFalse();
+    }
+
+    [Fact]
+    public async Task Accept_AdminWithoutPublish_StaysPrivate()
+    {
+        StudyGuideDocumentContracts.Document document = await GeneratedDocumentAsync();
+
+        Result<AcceptStudyGuideCandidates.Response?> result = await AcceptAsync(
+            document.Id, document.Sections[0].Candidates.Take(1).Select(Pick), isAdmin: true);
+
+        result.IsSuccess.Should().BeTrue();
+        Item item = await DbContext.Items.SingleAsync();
+        item.IsPrivate.Should().BeTrue();
+        item.Explanation.Should().Contain("Europe Capitals");
+    }
+
+    [Fact]
+    public async Task Accept_NonAdminPublishAtHandlerLevel_StaysPrivate()
+    {
+        StudyGuideDocumentContracts.Document document = await GeneratedDocumentAsync();
+
+        Result<AcceptStudyGuideCandidates.Response?> result = await AcceptAsync(
+            document.Id, document.Sections[0].Candidates.Take(1).Select(Pick), publish: true, isAdmin: false);
+
+        result.IsSuccess.Should().BeTrue();
+        Item item = await DbContext.Items.SingleAsync();
+        item.IsPrivate.Should().BeTrue();
+        item.Explanation.Should().Contain("Europe Capitals");
     }
 
     [Fact]

@@ -186,11 +186,17 @@ export const studyGuideDocumentsApi = {
   accept: async (
     id: string,
     candidates: AcceptStudyGuideCandidate[],
-    collectionName?: string
+    collectionName?: string,
+    /** Admin only: save as public items (the collection stays private). Sent only when true. */
+    publish?: boolean
   ): Promise<AcceptStudyGuideCandidatesResponse> => {
     const response = await apiClient.post<AcceptStudyGuideCandidatesResponse>(
       `${documentPath(id)}/accept`,
-      collectionName ? { candidates, collectionName } : { candidates }
+      {
+        candidates,
+        ...(collectionName ? { collectionName } : {}),
+        ...(publish ? { publish: true } : {}),
+      }
     );
     return response.data;
   },

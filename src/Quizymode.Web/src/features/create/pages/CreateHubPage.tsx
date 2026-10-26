@@ -104,9 +104,6 @@ const CreateHubPage = () => {
           <Link to={`/create/import${location.search}`} className={textLink}>
             Import questions from text or a file
           </Link>
-          <Link to={`/items/bulk-create${location.search}`} className={textLink}>
-            Bulk Create
-          </Link>
           <Link to={`/study-guide${location.search}`} className={textLink}>
             My Study Guide
           </Link>

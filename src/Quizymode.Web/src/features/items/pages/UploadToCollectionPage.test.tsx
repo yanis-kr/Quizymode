@@ -90,7 +90,7 @@ function renderPage(initialEntry: string) {
 describe("UploadToCollectionPage", () => {
   beforeEach(() => {
     vi.clearAllMocks();
-    authState.isAdmin = false;
+    authState.isAdmin = true; // JSON import is admin-only (AC 2.6.6); non-admin cases set this to false
 
     vi.mocked(taxonomyApi.getAll).mockResolvedValue(
       taxonomyMock as Awaited<ReturnType<typeof taxonomyApi.getAll>>
@@ -185,6 +185,50 @@ describe("UploadToCollectionPage", () => {
       expect(rank1Select).toHaveValue("anatomy");
       expect(rank2Select).toHaveValue("muscular");
     });
+  });
+
+  it("hides the JSON tab from non-admins and shows only Paste text without a tablist", async () => {
+    // AC 2.6.6, AC 2.6.9
+    authState.isAdmin = false;
+    renderPage("/items/upload-to-collection");
+    await screen.findByLabelText(/^category \*$/i);
+
+    expect(screen.queryByRole("tablist")).not.toBeInTheDocument();
+    expect(screen.queryByRole("tab")).not.toBeInTheDocument();
+    expect(screen.queryByLabelText(/json array of items/i)).not.toBeInTheDocument();
+    expect(screen.getByLabelText(/pasted text/i)).toBeInTheDocument();
+  });
+
+  it("shows both tabs to admins", async () => {
+    // AC 2.6.6, AC 2.6.9
+    renderPage("/items/upload-to-collection");
+    await screen.findByLabelText(/^category \*$/i);
+
+    expect(screen.getByRole("tab", { name: "JSON" })).toBeInTheDocument();
+    expect(screen.getByRole("tab", { name: /paste text/i })).toBeInTheDocument();
+    expect(screen.getByLabelText(/json array of items/i)).toBeInTheDocument();
+  });
+
+  it("sends a trimmed collectionName only when it is filled in (AC 2.6.1)", async () => {
+    const user = userEvent.setup({ delay: null });
+    const upload = async (name: string | null) => {
+      vi.mocked(itemsApi.uploadToCollection).mockClear();
+      const { unmount } = renderPage("/items/upload-to-collection?category=science&keywords=anatomy,muscular");
+      await screen.findByLabelText(/^category \*$/i);
+      await waitFor(() => expect(screen.getByLabelText(/subtopic/i)).toHaveValue("muscular"));
+      if (name !== null) await user.type(screen.getByLabelText(/collection name/i), name);
+      await user.click(screen.getByLabelText(/json array of items/i));
+      await user.paste(JSON.stringify([{ question: "Q", correctAnswer: "A", incorrectAnswers: ["W1"] }]));
+      await user.click(screen.getByRole("button", { name: /upload and open collection/i }));
+      await waitFor(() => expect(itemsApi.uploadToCollection).toHaveBeenCalled());
+      const payload = vi.mocked(itemsApi.uploadToCollection).mock.calls[0][0];
+      unmount();
+      return payload;
+    };
+
+    expect(await upload("  My capitals  ")).toMatchObject({ collectionName: "My capitals" });
+    expect(await upload(null)).not.toHaveProperty("collectionName");
+    expect(await upload("   ")).not.toHaveProperty("collectionName");
   });
 
   it("navigates to new collection on successful upload", async () => {
@@ -337,7 +381,8 @@ describe("UploadToCollectionPage", () => {
       renderPage("/items/upload-to-collection?category=science&keywords=anatomy,muscular");
       await screen.findByLabelText(/^category \*$/i);
       await waitFor(() => expect(screen.getByLabelText(/subtopic/i)).toHaveValue("muscular"));
-      await user.click(screen.getByRole("tab", { name: /paste text/i }));
+      const pasteTab = screen.queryByRole("tab", { name: /paste text/i });
+      if (pasteTab) await user.click(pasteTab); // non-admins have no tabs and start on Paste text
     }
 
     it("previews parsed rows and uploads built items", async () => {
@@ -391,6 +436,7 @@ describe("UploadToCollectionPage", () => {
 
     it("warns that only the first 100 items are imported for non-admins", async () => {
       // AC 2.6.9
+      authState.isAdmin = false;
       const user = userEvent.setup({ delay: null });
       await openPasteTab(user);
       const many = Array.from({ length: 120 }, (_, i) => `t${i}\td${i}`).join("\n");

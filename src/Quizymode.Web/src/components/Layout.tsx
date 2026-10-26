@@ -78,10 +78,6 @@ function getFallbackTitle(pathname: string): string | undefined {
     return "Import Questions";
   }
 
-  if (pathname === "/items/bulk-create") {
-    return "Bulk Create Items";
-  }
-
   if (pathname === "/items/upload") {
     return "Upload to Collection";
   }

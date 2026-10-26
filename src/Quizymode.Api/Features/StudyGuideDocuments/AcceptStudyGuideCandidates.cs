@@ -15,7 +15,7 @@ namespace Quizymode.Api.Features.StudyGuideDocuments;
 
 /// <summary>
 /// POST /study-guides/documents/{id}/accept: save selected (optionally edited) generated questions as the owner's private
-/// items through the standard bulk item-creation path, and add them to the document's collection. The first accept
+/// items (or public items when an admin sets Publish) through the standard bulk item-creation path, and add them to the document's collection. The first accept
 /// creates the collection (link access on, not listed in Discover). Already-saved candidates are skipped.
 /// </summary>
 public static class AcceptStudyGuideCandidates
@@ -32,7 +32,7 @@ public static class AcceptStudyGuideCandidates
         List<string>? IncorrectAnswers,
         string? Explanation);
 
-    public sealed record Request(List<CandidateEdit>? Candidates, string? CollectionName = null);
+    public sealed record Request(List<CandidateEdit>? Candidates, string? CollectionName = null, bool Publish = false);
 
     public sealed record Response(
         string CollectionId,
@@ -88,11 +88,12 @@ public static class AcceptStudyGuideCandidates
         {
             app.MapPost("study-guides/documents/{id:guid}/accept", Handler)
                 .WithTags("StudyGuideDocuments")
-                .WithSummary("Save selected generated questions as my private items and add them to the study guide's collection")
+                .WithSummary("Save selected generated questions as my private items (admins may publish them) and add them to the study guide's collection")
                 .RequireAuthorization()
                 .Produces<Response>(StatusCodes.Status200OK)
                 .Produces(StatusCodes.Status400BadRequest)
                 .Produces(StatusCodes.Status401Unauthorized)
+                .Produces(StatusCodes.Status403Forbidden)
                 .Produces(StatusCodes.Status404NotFound);
         }
 
@@ -115,6 +116,11 @@ public static class AcceptStudyGuideCandidates
             if (!userContext.IsAuthenticated || string.IsNullOrEmpty(userContext.UserId))
             {
                 return CustomResults.Unauthorized();
+            }
+
+            if (request.Publish && !userContext.IsAdmin)
+            {
+                return CustomResults.Forbidden("Only admins can publish generated questions.");
             }
 
             FluentValidation.Results.ValidationResult validation = await validator.ValidateAsync(request, cancellationToken);
@@ -160,6 +166,7 @@ public static class AcceptStudyGuideCandidates
         ILogger? logger = null)
     {
         string userId = userContext.UserId!;
+        bool publish = request.Publish && userContext.IsAdmin;
         StudyGuideDocument? document = await db.StudyGuideDocuments
             .FirstOrDefaultAsync(d => d.Id == id && d.UserId == userId, cancellationToken);
         if (document is null)
@@ -241,7 +248,10 @@ public static class AcceptStudyGuideCandidates
                     "One or more questions contain blocked language. Edit them and try again."));
             }
 
-            string explanation = BuildExplanation(baseExplanation, document.Title, sectionsByGeneration[candidate.GenerationId].Label);
+            // Published items must not carry the private document title, so the "From <title>" suffix is omitted.
+            string explanation = publish
+                ? baseExplanation
+                : BuildExplanation(baseExplanation, document.Title, sectionsByGeneration[candidate.GenerationId].Label);
             AddItemsBulk.ItemRequest item = new(question, correctAnswer, incorrectAnswers, explanation);
             FluentValidation.Results.ValidationResult itemValidation = itemValidator.Validate(item);
             if (!itemValidation.IsValid)
@@ -275,7 +285,7 @@ public static class AcceptStudyGuideCandidates
                 .Select(keyword => new AddItemsBulk.KeywordRequest(keyword, true))
                 .ToList();
             AddItemsBulk.Request bulkRequest = new(
-                IsPrivate: true,
+                IsPrivate: !publish,
                 Category: document.CategoryName,
                 Keyword1: document.NavigationKeyword1,
                 Keyword2: document.NavigationKeyword2,

@@ -164,11 +164,13 @@ public static class AddItemsBulk
         {
             app.MapPost("items/bulk", Handler)
                 .WithTags("Items")
-                .WithSummary("Create multiple items in bulk")
-                .WithDescription("Creates many items in a single request. Each item specifies its own category; isPrivate applies to all items.")
-                .RequireAuthorization()
+                .WithSummary("Create multiple items in bulk (admin only)")
+                .WithDescription("Admin only. Creates many items in a single request. Each item specifies its own category; isPrivate applies to all items.")
+                .RequireAuthorization("Admin")
                 .Produces<Response>(StatusCodes.Status200OK)
-                .Produces(StatusCodes.Status400BadRequest);
+                .Produces(StatusCodes.Status400BadRequest)
+                .Produces(StatusCodes.Status401Unauthorized)
+                .Produces(StatusCodes.Status403Forbidden);
         }
 
         private static async Task<IResult> Handler(

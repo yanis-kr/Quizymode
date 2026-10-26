@@ -4103,8 +4103,8 @@
         "tags": [
           "Items"
         ],
-        "summary": "Create multiple items in bulk",
-        "description": "Creates many items in a single request. Each item specifies its own category; isPrivate applies to all items.",
+        "summary": "Create multiple items in bulk (admin only)",
+        "description": "Admin only. Creates many items in a single request. Each item specifies its own category; isPrivate applies to all items.",
         "requestBody": {
           "content": {
             "application/json": {
@@ -4128,6 +4128,12 @@
           },
           "400": {
             "description": "Bad Request"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
           }
         }
       }
@@ -4494,7 +4500,7 @@
           "Items"
         ],
         "summary": "Upload JSON items into a new collection",
-        "description": "Creates items (private for non-admin) and a new collection with a unique GUID name, adds items to it. Returns collection ID to navigate. URL is shareable.",
+        "description": "Creates items (private for non-admin) and a new collection (optional collectionName, otherwise a unique GUID name), adds items to it. Returns collection ID to navigate. URL is shareable.",
         "requestBody": {
           "content": {
             "application/json": {
@@ -5051,7 +5057,7 @@
         "tags": [
           "StudyGuideDocuments"
         ],
-        "summary": "Save selected generated questions as my private items and add them to the study guide's collection",
+        "summary": "Save selected generated questions as my private items (admins may publish them) and add them to the study guide's collection",
         "parameters": [
           {
             "name": "id",
@@ -5088,6 +5094,9 @@
           },
           "401": {
             "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
           },
           "404": {
             "description": "Not Found"
@@ -14221,6 +14230,16 @@
           },
           "inputText": {
             "$ref": "#/components/schemas/System.String"
+          },
+          "collectionName": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/components/schemas/System.String"
+              }
+            ]
           }
         },
         "description": "InputText is the raw upload content (e.g. JSON string) used to compute a hash for duplicate detection. Category, Keyword1, Keyword2 define navigation; Keywords are additional default keywords for all items."
@@ -15086,6 +15105,9 @@
                 "$ref": "#/components/schemas/System.String"
               }
             ]
+          },
+          "publish": {
+            "$ref": "#/components/schemas/System.Boolean"
           }
         }
       },

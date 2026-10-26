@@ -110,14 +110,6 @@ describe("itemsApi", () => {
     expect(mockDelete).toHaveBeenCalledWith("/items/i1");
   });
 
-  it("bulkCreate calls POST /items/bulk", async () => {
-    const data = { created: 3, skipped: 1 };
-    mockPost.mockResolvedValueOnce({ data });
-    const result = await itemsApi.bulkCreate({ items: [] } as never);
-    expect(mockPost).toHaveBeenCalledWith("/items/bulk", expect.any(Object));
-    expect(result).toEqual(data);
-  });
-
   it("uploadToCollection calls POST /items/upload-to-collection", async () => {
     const data = { collectionId: "c1", name: "Col", itemCount: 5 };
     mockPost.mockResolvedValueOnce({ data });

@@ -387,7 +387,7 @@ curl -X POST https://cognito-idp.us-east-1.amazonaws.com/oauth2/token \
 
 Endpoints that require admin access (users in any group starting with "admin", case-insensitive):
 
-- `POST /items/bulk` - Bulk create items
+- `POST /items/bulk` - Bulk create items (admin only; 401 anonymous, 403 non-admin)
 - `PUT /items/{id}/visibility` - Set item visibility
 
 These endpoints use the `RequireAuthorization("Admin")` policy, which checks for the `cognito:groups` claim containing any group name starting with "admin" (case-insensitive).

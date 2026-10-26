@@ -269,15 +269,6 @@ export interface FeedbackSubmissionResponse {
   createdAt: string;
 }
 
-export interface BulkCreateItemsRequest {
-  isPrivate: boolean;
-  category: string;
-  keyword1: string;
-  keyword2: string;
-  keywords: KeywordRequest[];
-  items: CreateItemRequest[];
-}
-
 export interface UserResponse {
   id: string;
   name: string | null;

@@ -81,4 +81,20 @@ describe("studyGuideDocumentsApi", () => {
       candidates: [{ id: "c1" }, { id: "c2", question: "Edited?" }],
     });
   });
+
+  it("accept sends publish only when true, alongside the collection name", async () => {
+    mockPost.mockResolvedValue({ data: {} });
+
+    await studyGuideDocumentsApi.accept("d1", [{ id: "c1" }], "Name", true);
+    await studyGuideDocumentsApi.accept("d1", [{ id: "c1" }], undefined, false);
+
+    expect(mockPost).toHaveBeenNthCalledWith(1, "/study-guides/documents/d1/accept", {
+      candidates: [{ id: "c1" }],
+      collectionName: "Name",
+      publish: true,
+    });
+    expect(mockPost).toHaveBeenNthCalledWith(2, "/study-guides/documents/d1/accept", {
+      candidates: [{ id: "c1" }],
+    });
+  });
 });

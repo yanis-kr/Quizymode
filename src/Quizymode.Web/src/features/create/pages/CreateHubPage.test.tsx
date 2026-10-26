@@ -68,17 +68,14 @@ describe("CreateHubPage", () => {
     await screen.findByText(/no study guides yet/i);
   });
 
-  it("keeps the query string on the question, Bulk Create, import and study guide links", async () => {
+  it("keeps the query string on the question, import and study guide links", async () => {
     renderPage("/create?category=science&keywords=anatomy");
 
     expect(screen.getByRole("link", { name: "Write a question" })).toHaveAttribute(
       "href",
       "/create/question?category=science&keywords=anatomy"
     );
-    expect(screen.getByRole("link", { name: "Bulk Create" })).toHaveAttribute(
-      "href",
-      "/items/bulk-create?category=science&keywords=anatomy"
-    );
+    expect(screen.queryByRole("link", { name: "Bulk Create" })).not.toBeInTheDocument();
     expect(screen.getByRole("link", { name: "Import questions from text or a file" })).toHaveAttribute(
       "href",
       "/create/import?category=science&keywords=anatomy"

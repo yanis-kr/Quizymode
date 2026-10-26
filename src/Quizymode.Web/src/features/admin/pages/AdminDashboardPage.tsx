@@ -98,6 +98,15 @@ const AdminDashboardPage = () => {
           </p>
         </Link>
         <Link
+          to="/admin/import"
+          className="bg-white shadow rounded-lg p-6 hover:shadow-lg transition-shadow cursor-pointer"
+        >
+          <h3 className="text-lg font-medium text-gray-900 mb-2">Import</h3>
+          <p className="text-sm text-gray-500">
+            Bulk-import questions from JSON or pasted text into a new collection
+          </p>
+        </Link>
+        <Link
           to="/admin/featured"
           className="bg-white shadow rounded-lg p-6 hover:shadow-lg transition-shadow cursor-pointer"
         >

@@ -16,7 +16,7 @@ vi.mock("@/api/taxonomy", () => ({ taxonomyApi: { getAll: vi.fn(), suggest: vi.f
 vi.mock("@/features/legal/components/ContentComplianceNotice", () => ({ default: () => null }));
 
 describe("CreateImportPage", () => {
-  it("opens the import on the Paste text tab under an Import questions heading", async () => {
+  it("shows Paste text only for non-admins under an Import questions heading", async () => {
     vi.mocked(taxonomyApi.getAll).mockResolvedValue({ categories: [] });
     vi.mocked(taxonomyApi.suggest).mockResolvedValue({ suggestions: [] });
 
@@ -29,7 +29,9 @@ describe("CreateImportPage", () => {
     );
 
     expect(screen.getByRole("heading", { level: 1, name: "Import questions" })).toBeInTheDocument();
-    expect(screen.getByRole("tab", { name: "Paste text", selected: true })).toBeInTheDocument();
+    // Non-admins get Paste text only: no JSON tab and no tablist.
+    expect(screen.queryByRole("tab")).not.toBeInTheDocument();
+    expect(screen.getByLabelText(/pasted text/i)).toBeInTheDocument();
     expect(await screen.findByRole("combobox", { name: /search topics/i })).toBeInTheDocument();
   });
 });

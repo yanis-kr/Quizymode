@@ -5,7 +5,6 @@ import type {
   ItemResponse,
   CreateItemRequest,
   UpdateItemRequest,
-  BulkCreateItemsRequest,
 } from "@/types/api";
 
 export interface SeedExportItem {
@@ -101,16 +100,6 @@ export const itemsApi = {
     await apiClient.delete(`/items/${id}`);
   },
 
-  bulkCreate: async (
-    data: BulkCreateItemsRequest
-  ): Promise<{ created: number; skipped: number }> => {
-    const response = await apiClient.post<{ created: number; skipped: number }>(
-      "/items/bulk",
-      data
-    );
-    return response.data;
-  },
-
   /** Upload JSON items into a new collection. Requires category, keyword1, keyword2, keywords; inputText is the raw JSON for duplicate detection. Non-admin: private only. */
   uploadToCollection: async (data: {
     category: string;
@@ -119,6 +108,8 @@ export const itemsApi = {
     keywords: { name: string; isPrivate: boolean }[];
     items: Omit<CreateItemRequest, "category" | "navigationKeyword1" | "navigationKeyword2">[];
     inputText: string;
+    /** Optional collection name (trimmed, max 200); omitted means a generated name. */
+    collectionName?: string;
   }): Promise<UploadToCollectionResponse> => {
     const response = await apiClient.post<UploadToCollectionResponse>(
       "/items/upload-to-collection",

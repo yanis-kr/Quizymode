@@ -7,7 +7,7 @@ Add **PNG** or **WebP** images here so the figures in [`../README.md`](../README
 | `01-home.png` | Five-question quick-quiz hero, **Categories** carousel, and optional featured/public collection lanes. | `https://www.quizymode.com/` |
 | `02-categories.png` | Categories page with **mode tabs** (Sets / List / Flashcards / Quiz) visible; pick a category that shows both nav and content. | `/categories` or a deeper path like `/categories/sports` |
 | `03-collections.png` | Either **collections list** (`/collections`) or a **collection detail** with items and study links. | Signed in; `/collections` or `/collections/{id}/...` |
-| `04-add-items-hub.png` | **Add Items** hub with category/keyword scope and links to create / bulk / upload. | Signed in; `/items/add` |
+| `04-add-items-hub.png` | **Add Items** hub with category/keyword scope and links to create / import. | Signed in; `/items/add` |
 | `05-mode-switcher.png` | **Close-up** of the four mode tabs (Sets, List, Flashcards, Quiz) so labels are readable. | Crop from same screen as `02` or `06` |
 | `06-flashcards.png` | **Explore / Flashcards** UI showing one card (**question** face-up, or the flipped **answer** side). | `/explore/...` with an item open |
 | `07-quiz.png` | **Quiz** UI (question + answer choices or input—whatever your quiz step shows). | `/quiz/...` with an item open |
@@ -20,7 +20,7 @@ Add **PNG** or **WebP** images here so the figures in [`../README.md`](../README
 
 Add these if you later expand the doc:
 
-- `12-bulk-create.png` — `/items/bulk-create`
+- `12-import-paste.png` — `/create/import` (Paste text tab)
 - `13-upload-collection.png` — `/items/upload`
 - `14-admin-dashboard.png` — `/admin` (admin user only)
 
