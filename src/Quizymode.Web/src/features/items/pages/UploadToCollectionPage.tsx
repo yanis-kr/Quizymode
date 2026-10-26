@@ -61,6 +61,10 @@ const UploadToCollectionPage = ({
 }: UploadToCollectionPageProps) => {
   const { isAuthenticated, isAdmin } = useAuth();
   const [activeTab, setActiveTab] = React.useState<UploadTab>(initialTab);
+  // JSON import is an admin tool; everyone else only gets Paste text (the upload endpoint itself stays open).
+  const tabs: UploadTab[] = isAdmin ? ["json", "paste"] : ["paste"];
+  const effectiveTab: UploadTab = isAdmin ? activeTab : "paste";
+  const [collectionName, setCollectionName] = React.useState("");
   const navigate = useNavigate();
   const [searchParams] = useSearchParams();
   const categoryParam = searchParams.get("category") ?? "";
@@ -129,12 +133,12 @@ const UploadToCollectionPage = ({
     mutationFn: (payload: Parameters<typeof itemsApi.uploadToCollection>[0]) =>
       itemsApi.uploadToCollection(payload),
     onSuccess: (data: UploadToCollectionResponse, payload) => {
-      // Imported items are always private, so the chosen path is not reported (AC 5.4.12).
+      // Non-admin imports are always private, so their chosen path is not reported (AC 5.4.12).
       topicAnalytics.onSaved({
         category: payload.category,
         rank1: payload.keyword1 ?? "",
         rank2: payload.keyword2 ?? "",
-        isPrivate: true,
+        isPrivate: !isAdmin,
       });
       navigate(`/explore/collections/${data.collectionId}`);
     },
@@ -151,8 +155,8 @@ const UploadToCollectionPage = ({
 
   const suggestionText = React.useMemo(
     () =>
-      activeTab === "json" ? composeJsonSuggestionText(jsonText) : composeImportSuggestionText(pasteItems),
-    [activeTab, jsonText, pasteItems]
+      effectiveTab === "json" ? composeJsonSuggestionText(jsonText) : composeImportSuggestionText(pasteItems),
+    [effectiveTab, jsonText, pasteItems]
   );
 
   const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -168,9 +172,15 @@ const UploadToCollectionPage = ({
     e.target.value = "";
   };
 
+  /** collectionName is sent only when filled in; an omitted name keeps the generated default. */
+  const collectionNamePayload = (): { collectionName?: string } => {
+    const trimmed = collectionName.trim();
+    return trimmed ? { collectionName: trimmed } : {};
+  };
+
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    if (activeTab !== "json") return; // Enter inside the Paste text fields must not run the JSON upload
+    if (effectiveTab !== "json") return; // Enter inside the Paste text fields must not run the JSON upload
     setParseError(null);
     if (!checkTopic()) return;
     let items: unknown;
@@ -229,6 +239,7 @@ const UploadToCollectionPage = ({
       keywords: [],
       items: mapped,
       inputText: jsonText,
+      ...collectionNamePayload(),
     });
   };
 
@@ -242,12 +253,12 @@ const UploadToCollectionPage = ({
       keywords: [],
       items: items.map((item) => ({ isPrivate: true, ...item })),
       inputText,
+      ...collectionNamePayload(),
     });
   };
 
   const handleTabKeyDown = (e: React.KeyboardEvent<HTMLButtonElement>) => {
-    const tabs: UploadTab[] = ["json", "paste"];
-    const current = tabs.indexOf(activeTab);
+    const current = tabs.indexOf(effectiveTab);
     let next = current;
     if (e.key === "ArrowRight") next = (current + 1) % tabs.length;
     else if (e.key === "ArrowLeft") next = (current + tabs.length - 1) % tabs.length;
@@ -280,43 +291,44 @@ const UploadToCollectionPage = ({
     <div className="px-4 py-6 sm:px-0 max-w-3xl mx-auto">
       <h1 className="text-3xl font-bold text-gray-900 mb-2">{heading}</h1>
       <p className="text-gray-600 text-sm mb-6">
-        Choose a topic (required), then paste a JSON array of items or upload a JSON file. Items are added to a new collection. Duplicate uploads (same content) are rejected.
+        {effectiveTab === "json"
+          ? "Choose a topic (required), then paste a JSON array of items or upload a JSON file. Items are added to a new collection. Duplicate uploads (same content) are rejected."
+          : "Choose a topic (required), then paste your questions or upload a file. Items are added to a new collection. Duplicate uploads (same content) are rejected."}
       </p>
 
       <ContentComplianceNotice />
 
+      {tabs.length > 1 && (
       <div role="tablist" aria-label="Import source" className="mb-4 flex gap-2 border-b border-gray-200">
-        {([
-          ["json", "JSON"],
-          ["paste", "Paste text"],
-        ] as const).map(([tab, label]) => (
+        {tabs.map((tab) => (
           <button
             key={tab}
             type="button"
             role="tab"
             id={`upload-tab-${tab}`}
-            aria-selected={activeTab === tab}
+            aria-selected={effectiveTab === tab}
             aria-controls="upload-tabpanel"
-            tabIndex={activeTab === tab ? 0 : -1}
+            tabIndex={effectiveTab === tab ? 0 : -1}
             onClick={() => setActiveTab(tab)}
             onKeyDown={handleTabKeyDown}
             className={`-mb-px border-b-2 px-3 py-2 text-sm font-medium ${
-              activeTab === tab
+              effectiveTab === tab
                 ? "border-indigo-600 text-indigo-600"
                 : "border-transparent text-gray-600 hover:text-gray-900"
             }`}
           >
-            {label}
+            {tab === "json" ? "JSON" : "Paste text"}
           </button>
         ))}
       </div>
+      )}
 
       <form
         onSubmit={handleSubmit}
         className="space-y-4"
-        role="tabpanel"
-        id="upload-tabpanel"
-        aria-labelledby={`upload-tab-${activeTab}`}
+        {...(tabs.length > 1
+          ? { role: "tabpanel", id: "upload-tabpanel", "aria-labelledby": `upload-tab-${effectiveTab}` }
+          : {})}
       >
         <ItemTopicScopeFields
           idPrefix="upload-topic-scope"
@@ -343,7 +355,23 @@ const UploadToCollectionPage = ({
           }
         />
 
-        {activeTab === "paste" && (
+        <div>
+          <label htmlFor="upload-collection-name" className="block text-sm font-medium text-gray-700 mb-1">
+            Collection name (optional)
+          </label>
+          <input
+            id="upload-collection-name"
+            type="text"
+            maxLength={200}
+            value={collectionName}
+            onChange={(e) => setCollectionName(e.target.value)}
+            disabled={uploadMutation.isPending}
+            placeholder="Leave blank for an automatic name"
+            className="block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
+          />
+        </div>
+
+        {effectiveTab === "paste" && (
           <PasteTextImport
             maxItems={isAdmin ? ADMIN_ITEM_LIMIT : NON_ADMIN_ITEM_LIMIT}
             isPending={uploadMutation.isPending}
@@ -352,7 +380,7 @@ const UploadToCollectionPage = ({
           />
         )}
 
-        {activeTab === "json" && (
+        {effectiveTab === "json" && (
         <>
         <div>
           <label className="block text-sm font-medium text-gray-700 mb-1">Example prompt for AI</label>

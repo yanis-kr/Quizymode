@@ -24,7 +24,10 @@ public static class UploadItemsToCollection
         string Keyword2,
         List<AddItemsBulk.KeywordRequest> Keywords,
         List<AddItemsBulk.ItemRequest> Items,
-        string InputText);
+        string InputText,
+        string? CollectionName = null);
+
+    public const int MaxCollectionNameLength = 200;
 
     public sealed record Response(
         string CollectionId,
@@ -63,6 +66,11 @@ public static class UploadItemsToCollection
             RuleFor(x => x.InputText)
                 .NotNull()
                 .WithMessage("InputText is required for duplicate detection");
+            // The name is trimmed before use, so measure the trimmed value.
+            RuleFor(x => x.CollectionName)
+                .Must(name => name!.Trim().Length <= MaxCollectionNameLength)
+                .WithMessage($"Collection name must not exceed {MaxCollectionNameLength} characters.")
+                .When(x => x.CollectionName is not null && x.CollectionName.Trim().Length > 0);
         }
     }
 
@@ -73,7 +81,7 @@ public static class UploadItemsToCollection
             app.MapPost("items/upload-to-collection", Handler)
                 .WithTags("Items")
                 .WithSummary("Upload JSON items into a new collection")
-                .WithDescription("Creates items (private for non-admin) and a new collection with a unique GUID name, adds items to it. Returns collection ID to navigate. URL is shareable.")
+                .WithDescription("Creates items (private for non-admin) and a new collection (optional collectionName, otherwise a unique GUID name), adds items to it. Returns collection ID to navigate. URL is shareable.")
                 .RequireAuthorization()
                 .Produces<Response>(StatusCodes.Status201Created)
                 .Produces(StatusCodes.Status400BadRequest);
@@ -88,6 +96,7 @@ public static class UploadItemsToCollection
             ITaxonomyItemCategoryResolver itemCategoryResolver,
             ITaxonomyRegistry taxonomyRegistry,
             IAuditService auditService,
+            ITextModerationService moderation,
             ILogger<Endpoint> logger,
             CancellationToken cancellationToken)
         {
@@ -110,6 +119,7 @@ public static class UploadItemsToCollection
                 itemCategoryResolver,
                 taxonomyRegistry,
                 auditService,
+                moderation,
                 cancellationToken,
                 logger);
 
@@ -135,6 +145,7 @@ public static class UploadItemsToCollection
         ITaxonomyItemCategoryResolver itemCategoryResolver,
         ITaxonomyRegistry taxonomyRegistry,
         IAuditService auditService,
+        ITextModerationService moderation,
         CancellationToken cancellationToken,
         ILogger? logger = null)
     {
@@ -142,6 +153,13 @@ public static class UploadItemsToCollection
         {
             return Result.Failure<Response>(
                 Error.Validation("Upload.InvalidUser", "User ID is required and must be a valid GUID."));
+        }
+
+        string? requestedName = string.IsNullOrWhiteSpace(request.CollectionName) ? null : request.CollectionName.Trim();
+        if (requestedName is not null && moderation.Evaluate(requestedName).Outcome == TextModerationOutcome.Blocked)
+        {
+            return Result.Failure<Response>(
+                Error.Validation("Upload.CollectionNameBlocked", "The collection name contains blocked language. Edit it and try again."));
         }
 
         byte[] hashBytes = SHA256.HashData(Encoding.UTF8.GetBytes(request.InputText));
@@ -200,7 +218,7 @@ public static class UploadItemsToCollection
                 Error.Validation("Upload.NoItemsCreated", "No items were created. Check for duplicates or validation errors."));
         }
 
-        string collectionName = Guid.NewGuid().ToString("N");
+        string collectionName = requestedName ?? Guid.NewGuid().ToString("N");
         Collection collection = new()
         {
             Id = Guid.NewGuid(),

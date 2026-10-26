@@ -36,13 +36,41 @@ public sealed class AddItemsBulkHttpTests : DatabaseTestFixture, IAsyncLifetime
 
     public async Task DisposeAsync() => await _host.DisposeAsync();
 
-    private async Task<(HttpStatusCode Status, string Body)> PostAsync(string json)
+    private static readonly string[] AdminGroups = ["Admins"];
+
+    private async Task<(HttpStatusCode Status, string Body)> PostAsync(string json, bool admin = true)
     {
-        string token = _host.CreateToken("bulk-user", "bulk@example.com");
+        string token = admin
+            ? _host.CreateToken("bulk-admin", "bulk-admin@example.com", AdminGroups)
+            : _host.CreateToken("bulk-user", "bulk@example.com");
         using StringContent content = new(json, Encoding.UTF8, "application/json");
         using HttpRequestMessage request = JwtHttpTestHost.Request(HttpMethod.Post, "/items/bulk", token, content);
         using HttpResponseMessage response = await _host.Client.SendAsync(request);
         return (response.StatusCode, await response.Content.ReadAsStringAsync());
+    }
+
+    [Fact]
+    public async Task PostBulk_NonAdmin_Returns403AndCreatesNothing()
+    {
+        string json = "{" + Head + ",\"keywords\":[]," + ItemsJson + "}";
+
+        (HttpStatusCode status, _) = await PostAsync(json, admin: false);
+
+        status.Should().Be(HttpStatusCode.Forbidden);
+        DbContext.Items.Count().Should().Be(0);
+    }
+
+    [Fact]
+    public async Task PostBulk_Anonymous_Returns401AndCreatesNothing()
+    {
+        string json = "{" + Head + ",\"keywords\":[]," + ItemsJson + "}";
+        using StringContent content = new(json, Encoding.UTF8, "application/json");
+        using HttpRequestMessage request = JwtHttpTestHost.Request(HttpMethod.Post, "/items/bulk", null, content);
+
+        using HttpResponseMessage response = await _host.Client.SendAsync(request);
+
+        response.StatusCode.Should().Be(HttpStatusCode.Unauthorized);
+        DbContext.Items.Count().Should().Be(0);
     }
 
     [Theory]

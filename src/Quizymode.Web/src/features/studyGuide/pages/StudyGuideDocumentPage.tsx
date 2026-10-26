@@ -8,6 +8,7 @@ import {
   type GenerateStudyGuideSectionsResponse,
   type StudyGuideDocument,
 } from "@/api/studyGuideDocuments";
+import { useAuth } from "@/contexts/AuthContext";
 import LoadingSpinner from "@/components/LoadingSpinner";
 import ErrorMessage from "@/components/ErrorMessage";
 import { buildCollectionPath, buildCollectionStudyPath } from "@/utils/collectionPath";
@@ -52,6 +53,7 @@ function getGenerateErrorMessage(error: unknown): string {
 }
 
 interface AcceptSummary {
+  published: boolean;
   collectionId: string;
   createdCount: number;
   duplicateCount: number;
@@ -62,6 +64,7 @@ const StudyGuideDocumentPage = () => {
   const { id = "" } = useParams<{ id: string }>();
   const location = useLocation();
   const queryClient = useQueryClient();
+  const { isAdmin } = useAuth();
   const isDuplicate = !!(location.state as { isDuplicate?: boolean } | null)?.isDuplicate;
 
   const [selection, setSelection] = React.useState<Set<string> | null>(null);
@@ -72,6 +75,7 @@ const StudyGuideDocumentPage = () => {
   const [acceptError, setAcceptError] = React.useState<string | null>(null);
   const [acceptSummary, setAcceptSummary] = React.useState<AcceptSummary | null>(null);
   const [collectionNameInput, setCollectionNameInput] = React.useState<string | null>(null);
+  const [publish, setPublish] = React.useState(false);
   const pickerRef = React.useRef<HTMLDivElement>(null);
 
   const queryKey = ["studyGuideDocuments", id];
@@ -107,22 +111,30 @@ const StudyGuideDocumentPage = () => {
     mutationFn: async ({
       candidates,
       collectionName,
+      publish: publishItems,
     }: {
       candidates: AcceptStudyGuideCandidate[];
       collectionName?: string;
+      publish?: boolean;
     }) => {
       const responses: AcceptStudyGuideCandidatesResponse[] = [];
       for (const batch of chunk(candidates, MAX_CANDIDATES_PER_ACCEPT)) {
         // Only the first batch can create the collection; later batches reuse it.
         responses.push(
-          await studyGuideDocumentsApi.accept(id, batch, responses.length === 0 ? collectionName : undefined)
+          await studyGuideDocumentsApi.accept(
+            id,
+            batch,
+            responses.length === 0 ? collectionName : undefined,
+            publishItems ? true : undefined // every batch carries it, not just the first
+          )
         );
       }
       return responses;
     },
-    onSuccess: (responses) => {
+    onSuccess: (responses, variables) => {
       const last = responses[responses.length - 1];
       setAcceptSummary({
+        published: !!variables.publish,
         collectionId: last.collectionId,
         createdCount: responses.reduce((sum, response) => sum + response.createdCount, 0),
         duplicateCount: responses.reduce((sum, response) => sum + response.duplicateCount, 0),
@@ -298,8 +310,8 @@ const StudyGuideDocumentPage = () => {
           {acceptSummary && (
             <div className="rounded-md bg-green-50 p-4 text-sm text-green-800">
               <p role="status">
-                Saved {acceptSummary.createdCount} question{acceptSummary.createdCount === 1 ? "" : "s"} to your
-                collection
+                {acceptSummary.published ? "Published" : "Saved"} {acceptSummary.createdCount} question
+                {acceptSummary.createdCount === 1 ? "" : "s"}{" to your collection"}
                 {acceptSummary.duplicateCount > 0 ? ` (${acceptSummary.duplicateCount} already saved)` : ""}
                 {acceptSummary.failedCount > 0 ? ` · ${acceptSummary.failedCount} could not be saved` : ""}.
               </p>
@@ -390,6 +402,36 @@ const StudyGuideDocumentPage = () => {
             </div>
           )}
 
+          {isAdmin && (
+            <fieldset className="space-y-1">
+              <legend className="block text-sm font-medium text-gray-800">Save as</legend>
+              <label className="flex items-center gap-2 text-sm text-gray-700">
+                <input
+                  type="radio"
+                  name="study-guide-save-as"
+                  checked={!publish}
+                  onChange={() => setPublish(false)}
+                  disabled={acceptMutation.isPending}
+                />
+                Private (only me)
+              </label>
+              <label className="flex items-center gap-2 text-sm text-gray-700">
+                <input
+                  type="radio"
+                  name="study-guide-save-as"
+                  checked={publish}
+                  onChange={() => setPublish(true)}
+                  disabled={acceptMutation.isPending}
+                />
+                Publish to the library (public)
+              </label>
+              <p className="text-xs text-gray-500">
+                Published questions become public items. The collection itself stays private to you, and the
+                document title is not added to the explanations.
+              </p>
+            </fieldset>
+          )}
+
           <div className="sticky bottom-0 flex flex-wrap items-center gap-3 border-t border-gray-200 bg-white/95 py-3">
             <button
               type="button"
@@ -398,13 +440,16 @@ const StudyGuideDocumentPage = () => {
                 acceptMutation.mutate({
                   candidates: acceptPayload,
                   collectionName: needsCollectionName ? collectionNameValue.trim() || undefined : undefined,
+                  publish: isAdmin && publish,
                 })
               }
               className="rounded-md bg-indigo-600 px-4 py-2 text-sm font-medium text-white hover:bg-indigo-700 disabled:opacity-50"
             >
               {acceptMutation.isPending ? "Saving…" : `Save ${acceptPayload.length} selected`}
             </button>
-            <span className="text-xs text-gray-500">Questions are saved as your private items.</span>
+            <span className="text-xs text-gray-500">
+              {isAdmin && publish ? "Questions are published as public items." : "Questions are saved as your private items."}
+            </span>
           </div>
         </section>
       )}

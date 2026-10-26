@@ -35,7 +35,6 @@ const AdminUserSettingsPage = lazyPage(() => import("./features/admin/pages/Admi
 const AdminSeedSyncPage = lazyPage(() => import("./features/admin/pages/AdminSeedSyncPage"));
 const PageViewAnalyticsPage = lazyPage(() => import("./features/admin/pages/PageViewAnalyticsPage"));
 const AdminClientErrorsPage = lazyPage(() => import("./features/admin/pages/AdminClientErrorsPage"));
-const BulkCreateItemsPage = lazyPage(() => import("./features/items/pages/BulkCreateItemsPage"));
 const CreateHubPage = lazyPage(() => import("./features/create/pages/CreateHubPage"));
 const CreateImportPage = lazyPage(() => import("./features/items/pages/CreateImportPage"));
 const EditItemPage = lazyPage(() => import("./features/items/pages/EditItemPage"));
@@ -55,6 +54,7 @@ const AdminIdeasPage = lazyPage(() => import("./features/admin/pages/AdminIdeasP
 const AdminFeaturedPage = lazyPage(() => import("./features/admin/pages/AdminFeaturedPage"));
 const AdminAiProvidersPage = lazyPage(() => import("./features/admin/pages/AdminAiProvidersPage"));
 const AdminDailyQuizPage = lazyPage(() => import("./features/admin/pages/AdminDailyQuizPage"));
+const AdminImportPage = lazyPage(() => import("./features/admin/pages/AdminImportPage"));
 const ReviewQueuePage = lazyPage(() => import("./features/learningLoop/pages/ReviewQueuePage"));
 const ProgressPage = lazyPage(() => import("./features/progress/ProgressPage"));
 const SearchPage = lazyPage(() => import("./features/search/pages/SearchPage"));
@@ -133,11 +133,11 @@ function App() {
         <Route path="/items/create" element={<RedirectWithSearch to="/create/question" />} />
         <Route path="/study-guide/upload" element={<RedirectWithSearch to="/create/notes" />} />
         <Route path="/items/upload" element={<RedirectWithSearch to="/create/import" />} />
+        <Route path="/items/bulk-create" element={<RedirectWithSearch to="/create/import" />} />
         <Route element={<RequireAuthRoute />}>
           <Route path="/create/notes" element={<StudyGuideUploadPage />} />
           <Route path="/create/question" element={<CreateItemPage />} />
           <Route path="/create/import" element={<CreateImportPage />} />
-          <Route path="/items/bulk-create" element={<BulkCreateItemsPage />} />
           <Route path="/items/:id/edit" element={<EditItemPage />} />
           <Route path="/study-guide" element={<StudyGuidePage />} />
           <Route path="/study-guide/import" element={<StudyGuideImportPage />} />
@@ -169,6 +169,7 @@ function App() {
           <Route path="/admin/featured" element={<AdminFeaturedPage />} />
           <Route path="/admin/ai-providers" element={<AdminAiProvidersPage />} />
           <Route path="/admin/daily-quiz" element={<AdminDailyQuizPage />} />
+          <Route path="/admin/import" element={<AdminImportPage />} />
         </Route>
         <Route path="/about" element={<AboutPage />} />
         <Route path="/ideas" element={<IdeasPage />} />

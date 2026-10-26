@@ -17,6 +17,7 @@ vi.mock("./features/auth/pages/LoginPage", () => ({ default: () => <Where /> }))
 vi.mock("./features/create/pages/CreateHubPage", () => ({ default: () => <Where /> }));
 vi.mock("./features/items/pages/CreateImportPage", () => ({ default: () => <Where /> }));
 vi.mock("./features/items/pages/CreateItemPage", () => ({ default: () => <Where /> }));
+vi.mock("./features/admin/pages/AdminImportPage", () => ({ default: () => <Where /> }));
 vi.mock("./features/studyGuide/pages/StudyGuideUploadPage", () => ({ default: () => <Where /> }));
 
 function Where() {
@@ -43,6 +44,7 @@ describe("legacy create redirects (AC 2.2.5)", () => {
     ["/items/create?category=science#top", "/create/question?category=science#top"],
     ["/study-guide/upload?id=u1", "/create/notes?id=u1"],
     ["/items/upload?category=science", "/create/import?category=science"],
+    ["/items/bulk-create?category=x&keywords=a", "/create/import?category=x&keywords=a"],
   ])("sends %s to %s keeping query and hash", async (from, to) => {
     renderApp(from);
     expect(await screen.findByTestId("where")).toHaveTextContent(to);
@@ -58,5 +60,11 @@ describe("legacy create redirects (AC 2.2.5)", () => {
     authState.isAuthenticated = false;
     renderApp("/study-guide/upload?id=u1");
     expect(await screen.findByTestId("where")).toHaveTextContent("/login?returnTo=%2Fcreate%2Fnotes%3Fid%3Du1");
+  });
+
+  it("keeps /admin/import behind the admin route guard (AC 5.13.1)", async () => {
+    authState.isAuthenticated = false;
+    renderApp("/admin/import");
+    expect(await screen.findByTestId("where")).toHaveTextContent("/login?returnTo=%2Fadmin%2Fimport");
   });
 });

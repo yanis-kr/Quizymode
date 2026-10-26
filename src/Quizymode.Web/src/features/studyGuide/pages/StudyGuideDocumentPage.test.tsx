@@ -11,6 +11,12 @@ import {
   type StudyGuideSection,
 } from "@/api/studyGuideDocuments";
 
+const authState = vi.hoisted(() => ({ isAdmin: false }));
+
+vi.mock("@/contexts/AuthContext", () => ({
+  useAuth: () => ({ isAuthenticated: true, isAdmin: authState.isAdmin }),
+}));
+
 vi.mock("@/api/studyGuideDocuments", () => ({
   studyGuideDocumentsApi: {
     get: vi.fn(),
@@ -94,6 +100,7 @@ function sectionCheckbox(label: string) {
 describe("StudyGuideDocumentPage", () => {
   beforeEach(() => {
     vi.clearAllMocks();
+    authState.isAdmin = false;
   });
 
   it("shows the header with progress, expiry and the duplicate notice", async () => {
@@ -262,7 +269,7 @@ describe("StudyGuideDocumentPage", () => {
     fireEvent.click(screen.getByRole("button", { name: "Save 1 selected" }));
 
     await waitFor(() =>
-      expect(studyGuideDocumentsApi.accept).toHaveBeenCalledWith("doc-1", [{ id: "c1" }], "Cell biology")
+      expect(studyGuideDocumentsApi.accept).toHaveBeenCalledWith("doc-1", [{ id: "c1" }], "Cell biology", undefined)
     );
     expect(await screen.findByText(/saved 1 question to your collection/i)).toBeInTheDocument();
     expect(screen.queryByLabelText("Collection name")).not.toBeInTheDocument();
@@ -272,6 +279,67 @@ describe("StudyGuideDocumentPage", () => {
 
     fireEvent.click(screen.getByRole("button", { name: "Add more" }));
     expect(screen.getByRole("heading", { name: "Choose sections" }).closest("div[tabindex='-1']")).toHaveFocus();
+  });
+
+  it("hides the Save as control from non-admins and never sends publish", async () => {
+    // AC 6.6.16
+    vi.mocked(studyGuideDocumentsApi.get).mockResolvedValue(
+      makeDocument({ sections: [section(0, { status: "Generated", candidates: [candidate("c1")] }), section(1)] })
+    );
+    vi.mocked(studyGuideDocumentsApi.accept).mockResolvedValue({
+      collectionId: "col-9", createdCount: 1, duplicateCount: 0, failedCount: 0, itemIds: ["i1"],
+    });
+
+    renderPage();
+
+    await screen.findByRole("button", { name: "Save 1 selected" });
+    expect(screen.queryByText("Save as")).not.toBeInTheDocument();
+    expect(screen.queryByRole("radio", { name: /publish to the library/i })).not.toBeInTheDocument();
+    fireEvent.click(screen.getByRole("button", { name: "Save 1 selected" }));
+    await waitFor(() => expect(studyGuideDocumentsApi.accept).toHaveBeenCalled());
+    expect(vi.mocked(studyGuideDocumentsApi.accept).mock.calls[0][3]).toBeUndefined();
+  });
+
+  it("lets admins publish: Private is the default and the publish flag is sent on every batch", async () => {
+    // AC 6.6.16
+    authState.isAdmin = true;
+    const many = Array.from({ length: 205 }, (_, i) => candidate(`m${i}`, { index: i }));
+    vi.mocked(studyGuideDocumentsApi.get).mockResolvedValue(
+      makeDocument({ sections: [section(0, { status: "Generated", candidates: many }), section(1)] })
+    );
+    vi.mocked(studyGuideDocumentsApi.accept).mockResolvedValue({
+      collectionId: "col-9", createdCount: 1, duplicateCount: 0, failedCount: 0, itemIds: ["i1"],
+    });
+
+    renderPage();
+
+    await screen.findByRole("button", { name: "Save 205 selected" });
+    expect(screen.getByRole("radio", { name: "Private (only me)" })).toBeChecked();
+    fireEvent.click(screen.getByRole("radio", { name: /publish to the library/i }));
+    fireEvent.click(screen.getByRole("button", { name: "Save 205 selected" }));
+
+    await waitFor(() => expect(studyGuideDocumentsApi.accept).toHaveBeenCalledTimes(2));
+    for (const call of vi.mocked(studyGuideDocumentsApi.accept).mock.calls) {
+      expect(call[3]).toBe(true);
+    }
+    expect(await screen.findByText(/published 2 questions to your collection/i)).toBeInTheDocument();
+  });
+
+  it("an admin who leaves Private selected does not send publish", async () => {
+    // AC 6.6.16
+    authState.isAdmin = true;
+    vi.mocked(studyGuideDocumentsApi.get).mockResolvedValue(
+      makeDocument({ sections: [section(0, { status: "Generated", candidates: [candidate("c1")] }), section(1)] })
+    );
+    vi.mocked(studyGuideDocumentsApi.accept).mockResolvedValue({
+      collectionId: "col-9", createdCount: 1, duplicateCount: 0, failedCount: 0, itemIds: ["i1"],
+    });
+
+    renderPage();
+
+    fireEvent.click(await screen.findByRole("button", { name: "Save 1 selected" }));
+    await waitFor(() => expect(studyGuideDocumentsApi.accept).toHaveBeenCalled());
+    expect(vi.mocked(studyGuideDocumentsApi.accept).mock.calls[0][3]).toBeUndefined();
   });
 
   it("hides the collection name input when the document already has a collection", async () => {
@@ -348,7 +416,7 @@ describe("StudyGuideDocumentPage", () => {
           explanation: "Because c1.",
         },
         { id: "c4" },
-      ], "Biology Unit 3")
+      ], "Biology Unit 3", undefined)
     );
     expect(await screen.findByText(/saved 2 questions to your collection/i)).toBeInTheDocument();
     expect(screen.getAllByRole("link", { name: /open collection/i }).at(-1)).toHaveAttribute(

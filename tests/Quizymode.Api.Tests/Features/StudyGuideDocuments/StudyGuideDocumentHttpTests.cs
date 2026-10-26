@@ -153,6 +153,36 @@ public sealed class StudyGuideDocumentHttpTests : ItemTestFixture, IAsyncLifetim
     }
 
     [Fact]
+    public async Task Accept_PublishByNonAdmin_Returns403AndWritesNothing()
+    {
+        using HttpResponseMessage created = await SendAsync(HttpMethod.Post, "/study-guides/documents", Token("owner"),
+            Upload(text: "Paris is the capital and most populous city of France."));
+        StudyGuideDocumentContracts.Document document = (await created.Content.ReadFromJsonAsync<StudyGuideDocumentContracts.Document>())!;
+
+        using HttpResponseMessage response = await SendAsync(HttpMethod.Post, $"/study-guides/documents/{document.Id}/accept", Token("owner"),
+            JsonContent.Create(new { candidates = new[] { new { id = Guid.NewGuid() } }, publish = true }));
+
+        response.StatusCode.Should().Be(HttpStatusCode.Forbidden);
+        DbContext.Items.Count().Should().Be(0);
+        DbContext.Collections.Count().Should().Be(0);
+        DbContext.StudyGuideAcceptedCandidates.Count().Should().Be(0);
+    }
+
+    [Fact]
+    public async Task Accept_PublishByAdmin_IsNotForbidden()
+    {
+        using HttpResponseMessage created = await SendAsync(HttpMethod.Post, "/study-guides/documents", Token("owner"),
+            Upload(text: "Paris is the capital and most populous city of France."));
+        StudyGuideDocumentContracts.Document document = (await created.Content.ReadFromJsonAsync<StudyGuideDocumentContracts.Document>())!;
+
+        // The admin does not own the document, so the request passes the publish gate and then hits 404.
+        using HttpResponseMessage response = await SendAsync(HttpMethod.Post, $"/study-guides/documents/{document.Id}/accept", AdminToken(),
+            JsonContent.Create(new { candidates = new[] { new { id = Guid.NewGuid() } }, publish = true }));
+
+        response.StatusCode.Should().Be(HttpStatusCode.NotFound);
+    }
+
+    [Fact]
     public async Task Generate_QueuesAndOverQuotaReturns429()
     {
         using HttpResponseMessage created = await SendAsync(HttpMethod.Post, "/study-guides/documents", Token("owner"),

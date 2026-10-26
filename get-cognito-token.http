@@ -62,7 +62,7 @@ Content-Type: application/json
   "category": "Geography"
 }
 
-### Example: Bulk Add Items (requires Admin group)
+### Example: Bulk Add Items (admin only: the token must belong to the Admin group; other users get 403)
 POST {{apiBaseUrl}}/items/bulk
 Authorization: Bearer {{idToken}}
 Content-Type: application/json

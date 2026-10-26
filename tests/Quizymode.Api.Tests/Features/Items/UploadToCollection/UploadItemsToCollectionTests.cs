@@ -1,6 +1,7 @@
 using System.Security.Cryptography;
 using System.Text;
 using FluentAssertions;
+using Microsoft.EntityFrameworkCore;
 using Moq;
 using Quizymode.Api.Features.Items.AddBulk;
 using Quizymode.Api.Features.Items.UploadToCollection;
@@ -56,7 +57,7 @@ public sealed class UploadItemsToCollectionTests : DatabaseTestFixture
         var result = await UploadItemsToCollection.HandleAsync(
             BuildRequest(), DbContext, new SimHashService(), ctx.Object,
             Mock.Of<ITaxonomyItemCategoryResolver>(), Mock.Of<ITaxonomyRegistry>(),
-            Mock.Of<IAuditService>(), CancellationToken.None);
+            Mock.Of<IAuditService>(), Mock.Of<ITextModerationService>(), CancellationToken.None);
 
         result.IsFailure.Should().BeTrue();
         result.Error!.Code.Should().Be("Upload.InvalidUser");
@@ -83,7 +84,7 @@ public sealed class UploadItemsToCollectionTests : DatabaseTestFixture
         var result = await UploadItemsToCollection.HandleAsync(
             BuildRequest(inputText), DbContext, new SimHashService(), AdminUser(userId).Object,
             Mock.Of<ITaxonomyItemCategoryResolver>(), Mock.Of<ITaxonomyRegistry>(),
-            Mock.Of<IAuditService>(), CancellationToken.None);
+            Mock.Of<IAuditService>(), Mock.Of<ITextModerationService>(), CancellationToken.None);
 
         result.IsFailure.Should().BeTrue();
         result.Error!.Code.Should().Be("Upload.Duplicate");
@@ -189,5 +190,109 @@ public sealed class UploadItemsToCollectionValidatorTests
         result.IsValid.Should().BeFalse();
         result.Errors.Should().Contain(e => e.ErrorMessage == "Items is required");
         result.Errors.Should().NotContain(e => e.ErrorMessage == "At least one item is required");
+    }
+}
+
+public sealed class UploadItemsToCollectionCollectionNameTests : ItemTestFixture
+{
+    private readonly string _userId = Guid.NewGuid().ToString();
+
+    private static ITextModerationService Moderation()
+    {
+        Mock<ITextModerationService> moderation = new();
+        moderation.Setup(m => m.Evaluate(It.IsAny<string?[]>()))
+            .Returns((string?[] values) => values.Any(v => v is not null && v.Contains("badword"))
+                ? new TextModerationResult(TextModerationOutcome.Blocked, "badword")
+                : new TextModerationResult(TextModerationOutcome.Clean));
+        return moderation.Object;
+    }
+
+    private static UploadItemsToCollection.Request Build(string? collectionName, string inputText = "content") =>
+        new(
+            Category: "geography",
+            Keyword1: "capitals",
+            Keyword2: "europe",
+            Keywords: new List<AddItemsBulk.KeywordRequest>(),
+            Items: new List<AddItemsBulk.ItemRequest>
+            {
+                new("What is the capital of France?", "Paris", new List<string> { "Lyon", "Marseille", "Nice" }, "Paris is the capital.")
+            },
+            InputText: inputText,
+            CollectionName: collectionName);
+
+    private async Task<Result<UploadItemsToCollection.Response>> UploadAsync(UploadItemsToCollection.Request request, bool isAdmin = true)
+    {
+        await EnsureGeographyPublicWithNavAsync(_userId);
+        Mock<IUserContext> ctx = CreateUserContextMock(_userId);
+        ctx.Setup(x => x.IsAdmin).Returns(isAdmin);
+        return await UploadItemsToCollection.HandleAsync(
+            request, DbContext, SimHashService, ctx.Object, TaxonomyItemCategoryResolver, TaxonomyRegistry,
+            Mock.Of<IAuditService>(), Moderation(), CancellationToken.None);
+    }
+
+    [Fact]
+    public async Task HandleAsync_CollectionName_IsTrimmedAndUsed()
+    {
+        var result = await UploadAsync(Build("  My Capitals  "));
+
+        result.IsSuccess.Should().BeTrue(result.IsFailure ? result.Error!.Description : null);
+        result.Value!.Name.Should().Be("My Capitals");
+        (await DbContext.Collections.SingleAsync(c => c.Id == Guid.Parse(result.Value.CollectionId))).Name.Should().Be("My Capitals");
+    }
+
+    [Theory]
+    [InlineData(null)]
+    [InlineData("")]
+    [InlineData("   ")]
+    public async Task HandleAsync_BlankCollectionName_FallsBackToGuidName(string? name)
+    {
+        var result = await UploadAsync(Build(name));
+
+        result.IsSuccess.Should().BeTrue();
+        result.Value!.Name.Should().MatchRegex("^[0-9a-f]{32}$");
+    }
+
+    [Fact]
+    public async Task HandleAsync_BlockedCollectionName_FailsBeforeAnythingIsWritten()
+    {
+        var result = await UploadAsync(Build("my badword list"));
+
+        result.IsFailure.Should().BeTrue();
+        result.Error!.Code.Should().Be("Upload.CollectionNameBlocked");
+        result.Error.Type.Should().Be(ErrorType.Validation);
+        (await DbContext.Uploads.CountAsync()).Should().Be(0);
+        (await DbContext.Items.CountAsync()).Should().Be(0);
+        (await DbContext.Collections.CountAsync()).Should().Be(0);
+    }
+
+    [Fact]
+    public async Task HandleAsync_NonAdminWithName_StillCreatesPrivateItems()
+    {
+        var result = await UploadAsync(Build("Mine"), isAdmin: false);
+
+        result.IsSuccess.Should().BeTrue();
+        (await DbContext.Items.SingleAsync()).IsPrivate.Should().BeTrue();
+    }
+
+    [Fact]
+    public async Task HandleAsync_NameIsNotPartOfTheHash_SameContentWithDifferentNameIsDuplicate()
+    {
+        (await UploadAsync(Build("First"))).IsSuccess.Should().BeTrue();
+
+        var second = await UploadAsync(Build("Second"));
+
+        second.IsFailure.Should().BeTrue();
+        second.Error!.Code.Should().Be("Upload.Duplicate");
+    }
+
+    [Fact]
+    public void Validator_CollectionNameOver200AfterTrim_Fails()
+    {
+        Mock<IUserContext> ctx = new();
+        UploadItemsToCollection.Validator validator = new(ctx.Object);
+
+        validator.Validate(Build(new string('a', 201))).Errors.Should().Contain(e => e.PropertyName == "CollectionName");
+        validator.Validate(Build(" " + new string('a', 200) + " ")).IsValid.Should().BeTrue();
+        validator.Validate(Build("   ")).IsValid.Should().BeTrue();
     }
 }

@@ -63,92 +63,6 @@ Guatemala\tGuatemala City\tGuatemalan quetzal\tNorth America\t18,967,978
 Afghanistan\tKabul\tAfghan afghani\tAsia\t45,047,069
 Cameroon\tYaounde\tCentral African CFA franc\tAfrica\t30,640,817`;
 
-const BULK_AI_RESPONSE = JSON.stringify(
-  [
-    {
-      category: "geography",
-      navigationKeyword1: "capitals",
-      navigationKeyword2: "world",
-      question:
-        "The city-state of Singapore uses which city as its national capital?",
-      correctAnswer: "Singapore",
-      incorrectAnswers: ["Putrajaya", "Bangkok", "Manila"],
-      explanation:
-        "Britannica describes Singapore as an independent city-state where the urban area itself forms the country.",
-      keywords: ["world", "southeast-asia", "singapore"],
-      source: "https://www.britannica.com/place/Singapore",
-      seedId: "45353aec-8599-42cd-af38-793a023d33cd",
-    },
-    {
-      category: "geography",
-      navigationKeyword1: "capitals",
-      navigationKeyword2: "world",
-      question: "What is the national capital of the Netherlands?",
-      correctAnswer: "Amsterdam",
-      incorrectAnswers: ["The Hague", "Rotterdam", "Utrecht"],
-      explanation:
-        "Britannica calls Amsterdam the Netherlands' capital and principal commercial center, while noting government administration is mainly in The Hague.",
-      keywords: ["world", "the-netherlands", "western-europe"],
-      source: "https://www.britannica.com/place/Amsterdam",
-      seedId: "e2bb0023-f4d5-4bbc-923e-852b320a0f4c",
-    },
-    {
-      category: "geography",
-      navigationKeyword1: "capitals",
-      navigationKeyword2: "world",
-      question: "What is the national capital of Belgium?",
-      correctAnswer: "Brussels",
-      incorrectAnswers: ["Antwerp", "Ghent", "Bruges"],
-      explanation:
-        "Britannica names Brussels as Belgium's capital and administrative heart.",
-      keywords: ["world", "belgium", "western-europe"],
-      source: "https://www.britannica.com/place/Brussels",
-      seedId: "ddc70977-814d-498a-9e3b-082b56535f96",
-    },
-    {
-      category: "geography",
-      navigationKeyword1: "capitals",
-      navigationKeyword2: "world",
-      question: "What is the national capital of Switzerland?",
-      correctAnswer: "Bern",
-      incorrectAnswers: ["Zurich", "Geneva", "Basel"],
-      explanation:
-        "Britannica identifies Bern (Berne) as Switzerland's capital while larger cities handle finance and trade.",
-      keywords: ["world", "switzerland", "western-europe"],
-      source: "https://www.britannica.com/place/Bern",
-      seedId: "944c28d9-cb37-4e30-b07f-e61a0bc38666",
-    },
-    {
-      category: "geography",
-      navigationKeyword1: "capitals",
-      navigationKeyword2: "world",
-      question: "What is the national capital of Portugal?",
-      correctAnswer: "Lisbon",
-      incorrectAnswers: ["Porto", "Coimbra", "Faro"],
-      explanation:
-        "Britannica places Portugal's government in Lisbon on the Tagus estuary.",
-      keywords: ["world", "portugal", "iberia"],
-      source: "https://www.britannica.com/place/Lisbon",
-      seedId: "3eea07a9-9836-45ba-9c06-0fa1b070f76f",
-    },
-    {
-      category: "geography",
-      navigationKeyword1: "capitals",
-      navigationKeyword2: "world",
-      question: "What is the national capital of Austria?",
-      correctAnswer: "Vienna",
-      incorrectAnswers: ["Salzburg", "Graz", "Innsbruck"],
-      explanation:
-        "Britannica describes Vienna as Austria's capital and cultural center on the Danube.",
-      keywords: ["world", "austria", "central-europe"],
-      source: "https://www.britannica.com/place/Vienna",
-      seedId: "05fc682a-0f63-47fa-a5f0-d4536c16f276",
-    },
-  ],
-  null,
-  2
-);
-
 async function safeGoto(page: Page, url: string) {
   await page.goto(url, { waitUntil: "load", timeout: 20_000 });
   await waitForUiToSettle(page);
@@ -833,10 +747,6 @@ test.describe("User guide screenshots", () => {
     await capture(page, testInfo, "create-import", "/create/import");
   });
 
-  test("bulk-create-items", async ({ page }, testInfo) => {
-    await capture(page, testInfo, "bulk-create-items", "/items/bulk-create");
-  });
-
   test("study-guide", async ({ page }, testInfo) => {
     await capture(page, testInfo, "study-guide", "/study-guide");
   });
@@ -1057,53 +967,6 @@ test.describe("User guide screenshots", () => {
     await waitForSelectValue(page, "#item-form-rank1", "capitals");
     await waitForSelectValue(page, "#item-form-rank2", "world");
     await captureCurrentPage(page, testInfo, "add-items-prepopulated");
-  });
-
-  test("bulk-create-prompt", async ({ page }, testInfo) => {
-    await safeGoto(page, "/items/bulk-create?category=geography&keywords=capitals,world");
-    await page
-      .getByRole("button", { name: /generate ai prompt/i })
-      .click()
-      .catch(() => {});
-    await page.waitForTimeout(2_500);
-    await captureCurrentPage(page, testInfo, "bulk-create-prompt");
-  });
-
-  test("bulk-create-paste", async ({ page }, testInfo) => {
-    await safeGoto(page, "/items/bulk-create?category=geography&keywords=capitals,world");
-    await page
-      .getByRole("button", { name: /generate ai prompt/i })
-      .click()
-      .catch(() => {});
-    await page.waitForTimeout(1_500);
-    await page
-      .getByRole("button", { name: /i pasted the response/i })
-      .click()
-      .catch(() => {});
-    await page.waitForTimeout(1_000);
-    await page.locator("textarea").first().fill(BULK_AI_RESPONSE).catch(() => {});
-    await captureCurrentPage(page, testInfo, "bulk-create-paste");
-  });
-
-  test("bulk-create-review", async ({ page }, testInfo) => {
-    await safeGoto(page, "/items/bulk-create?category=geography&keywords=capitals,world");
-    await page
-      .getByRole("button", { name: /generate ai prompt/i })
-      .click()
-      .catch(() => {});
-    await page.waitForTimeout(1_500);
-    await page
-      .getByRole("button", { name: /i pasted the response/i })
-      .click()
-      .catch(() => {});
-    await page.waitForTimeout(1_000);
-    await page.locator("textarea").first().fill(BULK_AI_RESPONSE).catch(() => {});
-    await page
-      .getByRole("button", { name: /import.*review/i })
-      .click()
-      .catch(() => {});
-    await page.waitForTimeout(2_000);
-    await captureCurrentPage(page, testInfo, "bulk-create-review");
   });
 
   test("study-guide-no-guide", async ({ page }, testInfo) => {

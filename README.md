@@ -24,7 +24,7 @@ Visit [https://www.quizymode.com/](https://www.quizymode.com/) to use the applic
 - Collections: private, bookmarked, and discoverable public collections
 - Auth: Cognito-backed sign-in with JWT bearer auth enforced by the API
 - Admin tools: review board, audit logs, seed sync, keyword/category management
-- AI-assisted workflows: bulk item creation and study-guide import flows
+- AI-assisted workflows: paste/file import (cloze and term pairs) and study-guide import flows
 
 ## Stack
 
@@ -242,7 +242,7 @@ This README intentionally lists only the highest-signal endpoints. The full cont
 - `GET /categories`: category discovery
 - `GET /items`: item listing with filtering
 - `GET /items/{id}`: item detail
-- `POST /items` and `POST /items/bulk`: item creation
+- `POST /items`: item creation; `POST /items/bulk`: bulk item creation (admin only; non-admins import through `/items/upload-to-collection`)
 - `GET /collections`, `GET /collections/{id}`, `POST /collections`: collection workflows
 - `GET /users/me`: current-user profile
 - `GET|PUT|DELETE /study-guides/current`: study-guide persistence
