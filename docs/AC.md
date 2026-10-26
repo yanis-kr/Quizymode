@@ -1631,9 +1631,9 @@ The ideas board is a public-facing product planning surface at `/ideas`. It show
 
 **Retired in 3.101.0 (#296):** the legacy single-study-guide pipeline was removed together with its tables (`StudyGuides`, `StudyGuideImportSessions`, `StudyGuideChunks`, `StudyGuidePromptResults`, `StudyGuideDedupResults`, `StudyGuideUploads`), the `StudyGuideMaxBytes` per-user setting and the `/study-guide` and `/study-guide/import` pages. New study guides use the document flow (AC 6.6). The former ACs are retired:
 
-- **AC 6.1.1-6.1.9** **Retired (#296):** `GET`/`PUT`/`DELETE /study-guides/current`, the per-user byte limit, the 14-day guide expiry and the Study Guide screen (6.1.6, 6.1.7).
-- **AC 6.2.1-6.2.6** **Retired (#296):** `POST /study-guides/import/sessions`, `GET .../{id}`, `.../generate-chunks`, the owner check and the import wizard.
-- **AC 6.3.1-6.3.4a** **Retired (#296):** `.../chunks/{chunkIndex}/result`, `.../dedup-result` and the prompt copy/paste screens (including 6.3.1a).
+- **AC 6.1.1-6.1.11** **Retired (#296):** `GET`/`PUT`/`DELETE /study-guides/current`, the per-user byte limit, the 14-day guide expiry and the Study Guide screen (6.1.6, 6.1.7).
+- **AC 6.2.1-6.2.7** **Retired (#296):** `POST /study-guides/import/sessions`, `GET .../{id}`, `.../generate-chunks`, the owner check and the import wizard.
+- **AC 6.3.1-6.3.6** **Retired (#296):** `.../chunks/{chunkIndex}/result`, `.../dedup-result` and the prompt copy/paste screens (including 6.3.1a).
 - **AC 6.4.1-6.4.3** **Retired (#296):** `.../finalize` and the **Finalize import** step.
 - **AC 6.4.4** [Anyone] **Given** I call any retired legacy endpoint (`GET`, `PUT` or `DELETE /study-guides/current`; `POST /study-guides/import/sessions`; `GET /study-guides/import/sessions/{id}`; `POST` to `.../{id}/generate-chunks`, `.../{id}/chunks/{chunkIndex}/result`, `.../{id}/dedup-result` or `.../{id}/finalize`), anonymous or signed in, **then** the API returns 404 Not Found; `GET /study-guides/documents` is unaffected. The OpenAPI document (`docs/openapi/quizymode-api.json`) has no `/study-guides/current` or `/study-guides/import` paths and no `StudyGuides` or `StudyGuideImport` tags. (backend tests: LegacyStudyGuideRoutesRemovedHttpTests)
 - **AC 6.4.5** [Anyone] **Given** I open `/study-guide` or `/study-guide/import`, **then** I am redirected (replace) to `/create/notes` keeping the query string and hash, before the sign-in check (AC 2.2.5).

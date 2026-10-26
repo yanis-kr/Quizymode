@@ -835,4 +835,3 @@ test.describe("User guide screenshots", () => {
     await captureCurrentPage(page, testInfo, "add-items-prepopulated");
   });
 });
-});
