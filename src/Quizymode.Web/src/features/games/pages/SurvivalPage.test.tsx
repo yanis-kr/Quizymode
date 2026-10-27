@@ -90,6 +90,8 @@ function renderPage(path = "/games/survival/science") {
 async function openPage(path?: string) {
   const view = renderPage(path);
   await screen.findByRole("heading", { name: "Survival" });
+  // The initial focus runs in a passive effect; wait for it under real timers, or faking them can stall it.
+  await waitFor(() => expect(document.activeElement).not.toBe(document.body));
   vi.useFakeTimers({ shouldAdvanceTime: true });
   vi.setSystemTime(new Date("2026-06-01T12:00:00Z"));
   return view;
