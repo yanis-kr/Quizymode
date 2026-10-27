@@ -83,18 +83,25 @@ function FeaturedCard({ set }: { set: FeaturedSetDto }) {
   );
 }
 
+/** Whether the saved topics are known yet. Saving is only allowed once they are, so a failed load never wipes them. */
+type TopicPickerStatus = "loading" | "error" | "ready";
+
 interface TopicPickerProps {
   initial: string[];
+  status: TopicPickerStatus;
   saving: boolean;
   error: boolean;
   onSave: (categories: string[]) => void;
+  onRetry: () => void;
   onClose: () => void;
 }
 
-function TopicPicker({ initial, saving, error, onSave, onClose }: TopicPickerProps) {
-  const [selected, setSelected] = useState<string[]>(initial);
+function TopicPicker({ initial, status, saving, error, onSave, onRetry, onClose }: TopicPickerProps) {
+  // null until the saved topics have loaded; then prefilled once with them.
+  const [selected, setSelected] = useState<string[] | null>(status === "ready" ? initial : null);
+  if (selected === null && status === "ready") setSelected(initial);
   const dialogRef = useRef<HTMLDivElement>(null);
-  const full = selected.length >= MAX_INTERESTS;
+  const full = (selected?.length ?? 0) >= MAX_INTERESTS;
 
   useEffect(() => {
     const previous = document.activeElement as HTMLElement | null;
@@ -110,7 +117,9 @@ function TopicPicker({ initial, saving, error, onSave, onClose }: TopicPickerPro
   }, [onClose]);
 
   const toggle = (slug: string) =>
-    setSelected((current) => (current.includes(slug) ? current.filter((s) => s !== slug) : [...current, slug]));
+    setSelected((current) =>
+      current === null ? current : current.includes(slug) ? current.filter((s) => s !== slug) : [...current, slug],
+    );
 
   return (
     <div className="fixed inset-0 z-50 flex items-end justify-center bg-black/60 p-3 sm:items-center" onClick={onClose}>
@@ -124,29 +133,47 @@ function TopicPicker({ initial, saving, error, onSave, onClose }: TopicPickerPro
       >
         <h2 id="topic-picker-title" className="text-lg font-semibold">Choose your topics</h2>
         <p className="mt-1 text-xs text-slate-300">Pick up to {MAX_INTERESTS}. Your picks come first on the home page.</p>
-        <fieldset className="mt-3 flex flex-wrap gap-2">
-          <legend className="sr-only">Topics</legend>
-          {homeCategoryCards.map((card) => {
-            const checked = selected.includes(card.slug);
-            return (
-              <label
-                key={card.slug}
-                className={`cursor-pointer rounded-full border px-3 py-1.5 text-xs font-semibold has-[:focus-visible]:ring-2 has-[:focus-visible]:ring-sky-200 ${
-                  checked ? "border-sky-300 bg-sky-500/30" : "border-white/20 bg-white/5"
-                } ${!checked && full ? "opacity-50" : ""}`}
-              >
-                <input
-                  type="checkbox"
-                  className="sr-only"
-                  checked={checked}
-                  disabled={!checked && full}
-                  onChange={() => toggle(card.slug)}
-                />
-                {card.name}
-              </label>
-            );
-          })}
-        </fieldset>
+        {selected === null && status === "loading" && (
+          <div role="status" aria-busy="true" className="mt-3 flex flex-wrap gap-2">
+            <span className="sr-only">Loading your topics…</span>
+            {[0, 1, 2, 3, 4, 5].map((i) => (
+              <span key={i} aria-hidden="true" className="h-7 w-20 animate-pulse rounded-full bg-white/10" />
+            ))}
+          </div>
+        )}
+        {selected === null && status === "error" && (
+          <div role="alert" className="mt-3 text-xs text-red-300">
+            Your topics could not be loaded.{" "}
+            <button type="button" onClick={onRetry} className="font-semibold underline">
+              Retry
+            </button>
+          </div>
+        )}
+        {selected !== null && (
+          <fieldset className="mt-3 flex flex-wrap gap-2">
+            <legend className="sr-only">Topics</legend>
+            {homeCategoryCards.map((card) => {
+              const checked = selected.includes(card.slug);
+              return (
+                <label
+                  key={card.slug}
+                  className={`cursor-pointer rounded-full border px-3 py-1.5 text-xs font-semibold has-[:focus-visible]:ring-2 has-[:focus-visible]:ring-sky-200 ${
+                    checked ? "border-sky-300 bg-sky-500/30" : "border-white/20 bg-white/5"
+                  } ${!checked && full ? "opacity-50" : ""}`}
+                >
+                  <input
+                    type="checkbox"
+                    className="sr-only"
+                    checked={checked}
+                    disabled={!checked && full}
+                    onChange={() => toggle(card.slug)}
+                  />
+                  {card.name}
+                </label>
+              );
+            })}
+          </fieldset>
+        )}
         {error && (
           <p role="alert" className="mt-3 text-xs text-red-300">Your topics could not be saved. Try again.</p>
         )}
@@ -156,8 +183,10 @@ function TopicPicker({ initial, saving, error, onSave, onClose }: TopicPickerPro
           </button>
           <button
             type="button"
-            onClick={() => onSave(selected)}
-            disabled={saving}
+            onClick={() => {
+              if (selected !== null) onSave(selected);
+            }}
+            disabled={saving || selected === null}
             className="rounded-full bg-sky-500 px-4 py-2 text-xs font-semibold text-slate-950 hover:bg-sky-400 disabled:opacity-60"
           >
             {saving ? "Saving…" : "Save topics"}
@@ -224,6 +253,14 @@ export function PersonalizedLanes({ featuredSets }: { featuredSets: FeaturedSetD
       setPickerOpen(false);
     },
   });
+
+  const pickerStatus: TopicPickerStatus = !signedIn
+    ? "ready"
+    : interestsQuery.isSuccess
+      ? "ready"
+      : interestsQuery.isError
+        ? "error"
+        : "loading";
 
   const explicitInterests = useMemo(
     () => (signedIn ? interestsQuery.data ?? [] : readLocalInterests()),
@@ -351,9 +388,11 @@ export function PersonalizedLanes({ featuredSets }: { featuredSets: FeaturedSetD
       {pickerOpen && (
         <TopicPicker
           initial={explicitInterests}
+          status={pickerStatus}
           saving={saveInterests.isPending}
           error={saveInterests.isError}
           onSave={(categories) => saveInterests.mutate(categories)}
+          onRetry={() => void interestsQuery.refetch()}
           onClose={() => {
             saveInterests.reset();
             setPickerOpen(false);
