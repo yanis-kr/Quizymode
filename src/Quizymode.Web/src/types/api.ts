@@ -80,6 +80,19 @@ export interface RandomItemsResponse {
   items: ItemResponse[];
 }
 
+/** One requested scope of GET /games/roster; "empty" means no eligible item was returned for it. */
+export interface GameRosterScope {
+  scope: string;
+  available: number;
+  returned: number;
+  status: "ok" | "empty";
+}
+
+export interface GameRosterResponse {
+  items: ItemResponse[];
+  scopes: GameRosterScope[];
+}
+
 export interface CollectionResponse {
   id: string;
   name: string;

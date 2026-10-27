@@ -3,7 +3,7 @@ import { act, cleanup, fireEvent, render, screen, waitFor } from "@testing-libra
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { MemoryRouter, Route, Routes } from "react-router-dom";
 import SortItPage from "./SortItPage";
-import { itemsApi } from "@/api/items";
+import { gamesApi } from "@/api/games";
 import { categoriesApi } from "@/api/categories";
 import { collectionsApi } from "@/api/collections";
 import { reviewQueueApi } from "@/api/learningLoop";
@@ -28,6 +28,7 @@ const { mockAuth } = vi.hoisted(() => ({
 vi.mock("@/contexts/AuthContext", () => ({ useAuth: () => mockAuth }));
 
 vi.mock("@/api/items", () => ({ itemsApi: { getRandom: vi.fn(), getById: vi.fn() } }));
+vi.mock("@/api/games", () => ({ gamesApi: { getRoster: vi.fn() } }));
 vi.mock("@/api/categories", () => ({ categoriesApi: { getAll: vi.fn() } }));
 vi.mock("@/api/collections", () => ({ collectionsApi: { getItems: vi.fn(), getById: vi.fn() } }));
 vi.mock("@/api/learningLoop", () => ({ reviewQueueApi: { enqueue: vi.fn() } }));
@@ -140,7 +141,7 @@ describe("SortItPage", () => {
     mockAuth.isAuthenticated = false;
     mockAuth.isLoading = false;
     vi.mocked(categoriesApi.getAll).mockResolvedValue({ categories: [{ category: "science" }] } as never);
-    vi.mocked(itemsApi.getRandom).mockResolvedValue({ items: makeSortable(["Mammals", "Birds", "Fish"]) } as never);
+    vi.mocked(gamesApi.getRoster).mockResolvedValue({ items: makeSortable(["Mammals", "Birds", "Fish"]) } as never);
     vi.mocked(collectionsApi.getItems).mockResolvedValue({ items: makeSortable(["Mammals", "Birds"]) } as never);
     vi.mocked(collectionsApi.getById).mockResolvedValue({ id: "11111111-1111-4111-8111-111111111111", name: "Practice Set" } as never);
     vi.mocked(reviewQueueApi.enqueue).mockResolvedValue({ itemId: "x", intervalDays: 1, dueAt: "" });
@@ -168,14 +169,14 @@ describe("SortItPage", () => {
     });
 
     it("uses a two column grid for two groups and a 2x2 grid that widens for four", async () => {
-      vi.mocked(itemsApi.getRandom).mockResolvedValue({ items: makeSortable(["Mammals", "Birds"]) } as never);
+      vi.mocked(gamesApi.getRoster).mockResolvedValue({ items: makeSortable(["Mammals", "Birds"]) } as never);
       const first = await openPage();
       expect(screen.getByText("Tap a group, or press 1, 2.")).toBeInTheDocument();
       expect(buckets()[0].parentElement).toHaveClass("grid-cols-2");
       first.unmount();
       vi.useRealTimers();
 
-      vi.mocked(itemsApi.getRandom).mockResolvedValue({ items: makeSortable(["A", "B", "C", "D"]) } as never);
+      vi.mocked(gamesApi.getRoster).mockResolvedValue({ items: makeSortable(["A", "B", "C", "D"]) } as never);
       await openPage();
       expect(screen.getByText("Tap a group, or press 1, 2, 3, 4.")).toBeInTheDocument();
       expect(buckets()[0].parentElement).toHaveClass("grid-cols-2", "sm:grid-cols-4");
@@ -189,7 +190,7 @@ describe("SortItPage", () => {
     });
 
     it("shows the sortable-groups empty state when no two groups have four short items", async () => {
-      vi.mocked(itemsApi.getRandom).mockResolvedValue({
+      vi.mocked(gamesApi.getRoster).mockResolvedValue({
         items: [...makeSortable(["Mammals"]), makeItem(50, null, "plain")],
       } as never);
       renderPage();
@@ -199,7 +200,7 @@ describe("SortItPage", () => {
     });
 
     it("shows a retryable error when the roster fails to load", async () => {
-      vi.mocked(itemsApi.getRandom).mockRejectedValueOnce(new Error("boom"));
+      vi.mocked(gamesApi.getRoster).mockRejectedValueOnce(new Error("boom"));
       renderPage();
       expect(await screen.findByText("We couldn't load this game.")).toBeInTheDocument();
       fireEvent.click(screen.getByRole("button", { name: "Try again" }));

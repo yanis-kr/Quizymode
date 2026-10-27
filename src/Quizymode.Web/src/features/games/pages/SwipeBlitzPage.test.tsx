@@ -4,7 +4,7 @@ import userEvent from "@testing-library/user-event";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { MemoryRouter, Route, Routes, useLocation } from "react-router-dom";
 import SwipeBlitzPage from "./SwipeBlitzPage";
-import { itemsApi } from "@/api/items";
+import { gamesApi } from "@/api/games";
 import { categoriesApi } from "@/api/categories";
 import { collectionsApi } from "@/api/collections";
 import { reviewQueueApi } from "@/api/learningLoop";
@@ -37,6 +37,7 @@ vi.mock("@/features/studySessions/recordStudySession", async (importOriginal) =>
 });
 
 vi.mock("@/api/items", () => ({ itemsApi: { getRandom: vi.fn(), getById: vi.fn() } }));
+vi.mock("@/api/games", () => ({ gamesApi: { getRoster: vi.fn() } }));
 vi.mock("@/api/categories", () => ({ categoriesApi: { getAll: vi.fn() } }));
 vi.mock("@/api/collections", () => ({ collectionsApi: { getItems: vi.fn(), getById: vi.fn() } }));
 vi.mock("@/api/learningLoop", () => ({ reviewQueueApi: { enqueue: vi.fn() } }));
@@ -154,7 +155,7 @@ describe("SwipeBlitzPage", () => {
     mockAuth.isAuthenticated = false;
     mockAuth.isLoading = false;
     vi.mocked(categoriesApi.getAll).mockResolvedValue({ categories: [{ category: "science" }] } as never);
-    vi.mocked(itemsApi.getRandom).mockResolvedValue({ items: makeItems(8) } as never);
+    vi.mocked(gamesApi.getRoster).mockResolvedValue({ items: makeItems(8) } as never);
     vi.mocked(collectionsApi.getItems).mockResolvedValue({ items: makeItems(8) } as never);
     vi.mocked(collectionsApi.getById).mockResolvedValue({ id: "11111111-1111-4111-8111-111111111111", name: "Practice Set" } as never);
     vi.mocked(reviewQueueApi.enqueue).mockResolvedValue({ itemId: "x", intervalDays: 1, dueAt: "" });
@@ -170,7 +171,7 @@ describe("SwipeBlitzPage", () => {
 
   describe("loading", () => {
     it("shows the empty state with Open Quiz when fewer than 3 items qualify", async () => {
-      vi.mocked(itemsApi.getRandom).mockResolvedValue({ items: makeItems(2) } as never);
+      vi.mocked(gamesApi.getRoster).mockResolvedValue({ items: makeItems(2) } as never);
       renderPage();
       expect(await screen.findByText("Not enough short questions for games here")).toBeInTheDocument();
       fireEvent.click(screen.getByRole("link", { name: "Open Quiz" }));
@@ -178,7 +179,7 @@ describe("SwipeBlitzPage", () => {
     });
 
     it("shows a retryable alert when loading fails", async () => {
-      vi.mocked(itemsApi.getRandom).mockRejectedValueOnce(new Error("boom"));
+      vi.mocked(gamesApi.getRoster).mockRejectedValueOnce(new Error("boom"));
       renderPage();
       expect(await screen.findByRole("alert")).toHaveTextContent("We couldn't load this game.");
       fireEvent.click(screen.getByRole("button", { name: "Try again" }));
@@ -479,7 +480,7 @@ describe("SwipeBlitzPage", () => {
       expect(scoreLabel(0)).toBeInTheDocument();
       expect(screen.getByText("1:00")).toBeInTheDocument();
       expect(card()).toHaveFocus();
-      expect(itemsApi.getRandom).toHaveBeenCalledTimes(1);
+      expect(gamesApi.getRoster).toHaveBeenCalledTimes(1);
       decideRight();
       expect(trackedEvents("game_started").map(([, payload]) => payload.runId)).toEqual(["run-1", "run-2"]);
     });
