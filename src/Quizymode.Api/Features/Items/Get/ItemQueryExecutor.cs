@@ -49,18 +49,26 @@ internal sealed class ItemQueryExecutor
         IQueryable<Item> query,
         GetItems.QueryRequest request)
     {
-        List<Item> allItems = await query
+        // Pick the random ids in the database, then load only those rows with their keywords;
+        // loading the whole scope first took ~5 s for the unscoped pool in production.
+        List<Guid> ids = await query
             .AsNoTracking()
+            .OrderBy(_ => EF.Functions.Random())
+            .Select(i => i.Id)
+            .Take(request.PageSize)
+            .ToListAsync(_cancellationToken);
+
+        List<Item> items = await _db.Items
+            .AsNoTracking()
+            .Where(i => ids.Contains(i.Id))
             .Include(i => i.ItemKeywords)
                 .ThenInclude(ik => ik.Keyword)
             .Include(i => i.Category)
+            .AsSplitQuery()
             .ToListAsync(_cancellationToken);
 
-        Random random = new Random();
-        return allItems
-            .OrderBy(_ => random.Next())
-            .Take(request.PageSize)
-            .ToList();
+        Dictionary<Guid, int> order = ids.Select((id, index) => (id, index)).ToDictionary(x => x.id, x => x.index);
+        return items.OrderBy(i => order[i.Id]).ToList();
     }
 
     private async Task<List<Item>> ExecutePagedQueryAsync(

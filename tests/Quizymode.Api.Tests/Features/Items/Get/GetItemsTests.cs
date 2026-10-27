@@ -148,6 +148,28 @@ public sealed class GetItemsTests : ItemTestFixture
     }
 
     [Fact]
+    public async Task HandleAsync_WithIsRandom_ReturnsDistinctItemsWithKeywordsLoaded()
+    {
+        Keyword keyword = new() { Id = Guid.NewGuid(), Name = "capitals", IsPrivate = false, CreatedBy = "admin", CreatedAt = DateTime.UtcNow };
+        DbContext.Keywords.Add(keyword);
+        for (int i = 1; i <= 8; i++)
+        {
+            Item item = await CreateItemWithCategoryAsync("geography", $"Q{i}", $"A{i}", new List<string>(), "", isPrivate: false, createdBy: "test");
+            DbContext.ItemKeywords.Add(new ItemKeyword { Id = Guid.NewGuid(), ItemId = item.Id, KeywordId = keyword.Id });
+        }
+        await DbContext.SaveChangesAsync();
+
+        GetItems.QueryRequest request = new(Category: null, IsPrivate: null, Keywords: null, CollectionId: null, IsRandom: true, Page: 1, PageSize: 6);
+
+        Result<GetItems.Response> result = await GetItemsHandler.HandleAsync(request, DbContext, _userContextMock.Object, CancellationToken.None);
+
+        result.IsSuccess.Should().BeTrue();
+        result.Value.Items.Should().HaveCount(6);
+        result.Value.Items.Select(i => i.Id).Should().OnlyHaveUniqueItems();
+        result.Value.Items.Should().OnlyContain(i => i.Keywords.Any(k => k.Name == "capitals"));
+    }
+
+    [Fact]
     public async Task HandleAsync_AnonymousUser_NoCollectionsReturned()
     {
         // Arrange
