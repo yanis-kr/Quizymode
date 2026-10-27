@@ -24,7 +24,8 @@ public static class GetReviewBoardItems
         string? ReviewComments = null,
         ItemSpeechSupport? QuestionSpeech = null,
         ItemSpeechSupport? CorrectAnswerSpeech = null,
-        Dictionary<int, ItemSpeechSupport>? IncorrectAnswerSpeech = null);
+        Dictionary<int, ItemSpeechSupport>? IncorrectAnswerSpeech = null,
+        string? GroupLabel = null);
 
     public sealed class Endpoint : IEndpoint
     {
@@ -79,7 +80,8 @@ public static class GetReviewBoardItems
                     i.ReviewComments,
                     i.QuestionSpeech,
                     i.CorrectAnswerSpeech,
-                    i.IncorrectAnswerSpeech.Count > 0 ? i.IncorrectAnswerSpeech : null);
+                    i.IncorrectAnswerSpeech.Count > 0 ? i.IncorrectAnswerSpeech : null,
+                    i.GroupLabel);
             }).ToList();
 
             return Result.Success(new Response(itemResponses));

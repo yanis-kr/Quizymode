@@ -1031,6 +1031,10 @@ namespace Quizymode.Api.Migrations
                         .HasMaxLength(64)
                         .HasColumnType("character varying(64)");
 
+                    b.Property<string>("GroupLabel")
+                        .HasMaxLength(30)
+                        .HasColumnType("character varying(30)");
+
                     b.Property<string>("IncorrectAnswerSpeech")
                         .IsRequired()
                         .ValueGeneratedOnAdd()

@@ -285,6 +285,43 @@ describe("EditItemPage", () => {
     );
   });
 
+  it("opens More options for a stored group label and sends it trimmed when changed (#359)", async () => {
+    // AC 2.1.17, AC 2.1.18
+    const user = userEvent.setup({ delay: null });
+    vi.mocked(itemsApi.getById).mockResolvedValueOnce({
+      ...itemMock,
+      groupLabel: "Mammals",
+    } as Awaited<ReturnType<typeof itemsApi.getById>>);
+
+    renderPage("/items/item-1/edit");
+
+    const input = await screen.findByLabelText(/group label \(optional\)/i);
+    expect(input).toHaveValue("Mammals");
+    expect(screen.getByRole("button", { name: /more options/i })).toHaveAttribute("aria-expanded", "true");
+
+    await user.clear(input);
+    await user.type(input, "  Birds ");
+    await user.click(screen.getByRole("button", { name: /^save$/i }));
+    await waitFor(() => expect(itemsApi.update).toHaveBeenCalledTimes(1));
+    expect(itemsApi.update).toHaveBeenCalledWith("item-1", expect.objectContaining({ groupLabel: "Birds" }));
+  });
+
+  it("sends an empty group label to clear a stored one (#359)", async () => {
+    // AC 2.1.18
+    const user = userEvent.setup({ delay: null });
+    vi.mocked(itemsApi.getById).mockResolvedValueOnce({
+      ...itemMock,
+      groupLabel: "Mammals",
+    } as Awaited<ReturnType<typeof itemsApi.getById>>);
+
+    renderPage("/items/item-1/edit");
+
+    await user.clear(await screen.findByLabelText(/group label \(optional\)/i));
+    await user.click(screen.getByRole("button", { name: /^save$/i }));
+    await waitFor(() => expect(itemsApi.update).toHaveBeenCalledTimes(1));
+    expect(itemsApi.update).toHaveBeenCalledWith("item-1", expect.objectContaining({ groupLabel: "" }));
+  });
+
   it("shows all four incorrect answer fields and keeps all four on save (#265)", async () => {
     // AC 2.1.9
     const user = userEvent.setup({ delay: null });

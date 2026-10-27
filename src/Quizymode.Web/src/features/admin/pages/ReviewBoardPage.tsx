@@ -99,6 +99,7 @@ function ReviewBoardItemCard({
     createdAt: string;
     factualRisk?: number | null;
     reviewComments?: string | null;
+    groupLabel?: string | null;
   };
   onApprove: () => void;
   isApproving: boolean;
@@ -152,6 +153,9 @@ function ReviewBoardItemCard({
               </p>
             )}
             <p className="mt-2 text-sm text-gray-500">{item.category}</p>
+            {item.groupLabel && (
+              <p className="mt-1 text-sm text-gray-500">Group: {item.groupLabel}</p>
+            )}
             <p className="mt-1 text-sm text-gray-500">
               Created by: {item.createdBy}
             </p>

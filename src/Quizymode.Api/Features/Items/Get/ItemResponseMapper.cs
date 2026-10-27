@@ -36,7 +36,8 @@ internal sealed class ItemResponseMapper
             item.ReviewComments,
             item.QuestionSpeech,
             item.CorrectAnswerSpeech,
-            item.IncorrectAnswerSpeech.Count > 0 ? item.IncorrectAnswerSpeech : null);
+            item.IncorrectAnswerSpeech.Count > 0 ? item.IncorrectAnswerSpeech : null,
+            item.GroupLabel);
     }
 
     private List<GetItems.KeywordResponse> FilterVisibleKeywords(Item item)

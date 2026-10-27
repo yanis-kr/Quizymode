@@ -29,7 +29,8 @@ public static class GetItemById
         string? ReviewComments = null,
         ItemSpeechSupport? QuestionSpeech = null,
         ItemSpeechSupport? CorrectAnswerSpeech = null,
-        Dictionary<int, ItemSpeechSupport>? IncorrectAnswerSpeech = null);
+        Dictionary<int, ItemSpeechSupport>? IncorrectAnswerSpeech = null,
+        string? GroupLabel = null);
 
     public sealed record KeywordResponse(
         string Id,
@@ -168,7 +169,8 @@ public static class GetItemById
                 item.ReviewComments,
                 item.QuestionSpeech,
                 item.CorrectAnswerSpeech,
-                item.IncorrectAnswerSpeech.Count > 0 ? item.IncorrectAnswerSpeech : null);
+                item.IncorrectAnswerSpeech.Count > 0 ? item.IncorrectAnswerSpeech : null,
+                item.GroupLabel);
 
             return Result.Success(response);
         }
