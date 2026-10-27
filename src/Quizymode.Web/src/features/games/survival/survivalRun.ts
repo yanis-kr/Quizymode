@@ -29,10 +29,14 @@ export interface SurvivalRunState {
   /** Unique, in the order first missed. */
   missedItemIds: string[];
   lastAnswer: { option: string; isCorrect: boolean } | null;
+  /** Clock reading at the first answer; null until then or when answers carry no clock. */
+  startedAtMs: number | null;
+  /** Milliseconds since the first answer at each correct answer, ascending (the ghost timeline). */
+  correctMarksMs: number[];
   status: SurvivalStatus;
 }
 
-export type SurvivalAction = { type: "answer"; option: string } | { type: "next" };
+export type SurvivalAction = { type: "answer"; option: string; nowMs?: number } | { type: "next" };
 
 function optionsFor(state: Pick<SurvivalRunState, "runId" | "items">, itemId: string, sequence: number): string[] {
   return getGameOptions(state.items[itemId], `${state.runId}:${sequence}`);
@@ -66,6 +70,8 @@ export function createSurvivalRun(items: readonly ItemResponse[], runId: string)
     answered: 0,
     missedItemIds: [],
     lastAnswer: null,
+    startedAtMs: null,
+    correctMarksMs: [],
     status: "ready",
   };
 }
@@ -77,6 +83,8 @@ export function reduceSurvivalRun(state: SurvivalRunState, action: SurvivalActio
     // Same identity check as the quiz: the raw correct answer is what the option list holds.
     const isCorrect: boolean = action.option === state.items[state.itemId].correctAnswer;
     const streak: number = isCorrect ? state.streak + 1 : 0;
+    const startedAtMs: number | null = state.startedAtMs ?? action.nowMs ?? null;
+    const markMs: number = action.nowMs !== undefined && startedAtMs !== null ? Math.max(0, action.nowMs - startedAtMs) : 0;
     return {
       ...state,
       hearts: isCorrect ? state.hearts : state.hearts - 1,
@@ -89,6 +97,9 @@ export function reduceSurvivalRun(state: SurvivalRunState, action: SurvivalActio
           ? state.missedItemIds
           : [...state.missedItemIds, state.itemId],
       lastAnswer: { option: action.option, isCorrect },
+      startedAtMs,
+      correctMarksMs:
+        isCorrect && action.nowMs !== undefined ? [...state.correctMarksMs, markMs] : state.correctMarksMs,
       status: "feedback",
     };
   }

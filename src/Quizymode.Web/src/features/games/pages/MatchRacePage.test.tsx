@@ -12,6 +12,7 @@ import { recordAuthenticatedCompletion } from "@/features/studySessions/recordSt
 import { GUEST_HISTORY_STORAGE_KEY } from "@/features/guestHistory/guestHistoryStorage";
 import { installMemoryLocalStorage } from "@/test/memoryStorage";
 import { resetMatchRaceBestForTests } from "../matchRace/matchRaceBest";
+import { matchRaceGhostKey, readGhost, resetGhostForTests, writeMatchRaceGhostIfBetter } from "../ghostRun";
 import type { ItemResponse } from "@/types/api";
 
 const { mockTrackEventOnce, runCounter } = vi.hoisted(() => ({
@@ -115,6 +116,7 @@ describe("MatchRacePage", () => {
     vi.spyOn(Date, "now").mockImplementation(() => clock);
     installMemoryLocalStorage();
     resetMatchRaceBestForTests();
+    resetGhostForTests();
     mockAuth.isAuthenticated = false;
     mockAuth.isLoading = false;
     vi.mocked(categoriesApi.getAll).mockResolvedValue({ categories: [{ category: "science" }] } as never);
@@ -338,6 +340,77 @@ describe("MatchRacePage", () => {
       await playToTheEnd(false);
       expect(await screen.findByRole("heading", { name: "Done!" })).toBeInTheDocument();
       expect(screen.getByText("New best!")).toBeInTheDocument();
+    });
+  });
+
+  describe("ghost", () => {
+    const ghostKey = matchRaceGhostKey("category:science|nav=|kw=", 3);
+
+    async function playQuickly() {
+      await screen.findByRole("heading", { name: "Match Race" });
+      boardItems().forEach((n, index) => {
+        clock = 2_000_000 + index * 1000;
+        match(n);
+      });
+    }
+
+    it("shows no ghost track without a stored ghost", async () => {
+      renderPage();
+      await screen.findByRole("heading", { name: "Match Race" });
+      expect(screen.queryByText(/^Ghost:/)).toBeNull();
+    });
+
+    it("makes the first finished run the ghost and says so", async () => {
+      renderPage();
+      await playQuickly();
+      expect(await screen.findByText("First run: this is your ghost now.")).toBeInTheDocument();
+      expect(readGhost(ghostKey)).toEqual([0, 1000, 2000]);
+    });
+
+    it("shows the ghost progress by elapsed time while playing", async () => {
+      writeMatchRaceGhostIfBetter(ghostKey, [500, 1500, 2500]);
+      renderPage();
+      await screen.findByRole("heading", { name: "Match Race" });
+      expect(screen.getByText("Ghost: 0 of 3")).toBeInTheDocument();
+      const [first, second] = boardItems();
+      clock = 2_000_000;
+      match(first);
+      expect(screen.getByText("Ghost: 0 of 3")).toBeInTheDocument();
+      clock = 2_001_000;
+      match(second);
+      expect(screen.getByText("Ghost: 1 of 3")).toBeInTheDocument();
+    });
+
+    it("reports how far ahead of a slower ghost, announces it and replaces the ghost", async () => {
+      writeMatchRaceGhostIfBetter(ghostKey, [0, 5000, 10000]);
+      renderPage();
+      await playQuickly();
+      expect(await screen.findByText("8.0 s ahead of your ghost")).toBeInTheDocument();
+      expect(screen.getByRole("status")).toHaveTextContent("Done in 0:02.0. New best! 8.0 s ahead of your ghost.");
+      expect(readGhost(ghostKey)).toEqual([0, 1000, 2000]);
+    });
+
+    it("reports how far behind a faster ghost and keeps that ghost", async () => {
+      writeMatchRaceGhostIfBetter(ghostKey, [0, 500, 1000]);
+      renderPage();
+      await playQuickly();
+      expect(await screen.findByText("1.0 s behind your ghost")).toBeInTheDocument();
+      expect(readGhost(ghostKey)).toEqual([0, 500, 1000]);
+    });
+
+    it("includes the miss penalty in the ghost times", async () => {
+      renderPage();
+      await screen.findByRole("heading", { name: "Match Race" });
+      const items = boardItems();
+      clock = 2_000_000;
+      fireEvent.click(tile("question", items[0]));
+      fireEvent.click(tile("answer", items[1]));
+      items.forEach((n, index) => {
+        clock = 2_000_000 + (index + 1) * 1000;
+        match(n);
+      });
+      await screen.findByRole("heading", { name: "Done!" });
+      expect(readGhost(ghostKey)).toEqual([1000, 2000, 3000].map((ms) => ms + 1000));
     });
   });
 });

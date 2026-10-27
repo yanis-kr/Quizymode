@@ -8,7 +8,7 @@ import { categoriesApi } from "@/api/categories";
 import { collectionsApi } from "@/api/collections";
 import { installMemoryLocalStorage } from "@/test/memoryStorage";
 import { resetMatchRaceBestForTests, writeBestIfFaster } from "../matchRace/matchRaceBest";
-import { survivalBestKey, swipeBlitzBestKey, writeBestIfHigher } from "../gameBest";
+import { bucketDropBestKey, survivalBestKey, swipeBlitzBestKey, writeBestIfHigher } from "../gameBest";
 import type { ItemResponse } from "@/types/api";
 
 const { mockAuth } = vi.hoisted(() => ({
@@ -100,14 +100,15 @@ describe("GamesHubPage", () => {
     expect(await screen.findByTestId("location")).toHaveTextContent("/games/match-race/science?nav=physics&keywords=optics");
   });
 
-  it("shows the three game cards in order with their blurbs and Play links", async () => {
+  it("shows the four game cards in order with their blurbs and Play links", async () => {
     renderPage("/games/science?nav=physics&keywords=optics");
     await screen.findByRole("heading", { name: "Games" });
 
     const titles = screen.getAllByRole("heading", { level: 2 }).map((heading) => heading.textContent);
-    expect(titles).toEqual(["Match Race", "Swipe Blitz", "Survival"]);
+    expect(titles).toEqual(["Match Race", "Swipe Blitz", "Survival", "Bucket Drop"]);
     expect(screen.getByText("Right or wrong? Beat the clock.")).toBeInTheDocument();
     expect(screen.getByText("Answer until you miss 3.")).toBeInTheDocument();
+    expect(screen.getByText("Catch the answer before it lands.")).toBeInTheDocument();
 
     fireEvent.click(screen.getByRole("link", { name: "Play Swipe Blitz" }));
     expect(await screen.findByTestId("location")).toHaveTextContent("/games/swipe-blitz/science?nav=physics&keywords=optics");
@@ -131,9 +132,11 @@ describe("GamesHubPage", () => {
     const scopeKey = "category:science|nav=|kw=";
     writeBestIfHigher(swipeBlitzBestKey(scopeKey), 23);
     writeBestIfHigher(survivalBestKey(scopeKey), 12);
+    writeBestIfHigher(bucketDropBestKey(scopeKey), 14);
     renderPage("/games/science");
     expect(await screen.findByText("Best 23")).toBeInTheDocument();
     expect(screen.getByText("Best streak 12")).toBeInTheDocument();
+    expect(screen.getByText("Best 14")).toBeInTheDocument();
     expect(screen.queryByText(/^Best 0:/)).toBeNull();
   });
 

@@ -1,5 +1,5 @@
 import { beforeEach, describe, expect, it, vi } from "vitest";
-import { fireEvent, screen, waitFor } from "@testing-library/react";
+import { act, fireEvent, screen, waitFor, within } from "@testing-library/react";
 import { reviewQueueApi } from "@/api/learningLoop";
 import { trackEventOnce } from "@/features/analytics/analyticsEvents";
 import ReviewQueuePage from "./ReviewQueuePage";
@@ -66,5 +66,203 @@ describe("ReviewQueuePage", () => {
 
     expect(screen.getByRole("heading", { name: "Quiz complete" })).toBeInTheDocument();
     expect(screen.queryByRole("button", { name: /share/i })).toBeNull();
+  });
+
+  describe("boss fight", () => {
+    const ids = ["a", "b", "c", "d", "e"];
+    const appliedAnswer = { itemId: "x", applied: true, graduated: false, intervalDays: 3, dueAt: "2026-10-21T00:00:00Z" };
+    const queue = (dueCount: number, items = ids.map((id) => testItem(id))) => ({
+      items,
+      dueCount,
+      totalCount: dueCount,
+      nextDueAt: null,
+    });
+
+    beforeEach(() => {
+      vi.mocked(reviewQueueApi.answer).mockResolvedValue(appliedAnswer);
+      vi.mocked(reviewQueueApi.getSummary).mockResolvedValue({ dueCount: 0, totalCount: 5, nextDueAt: null });
+    });
+
+    const startBoss = async () => {
+      fireEvent.click(await screen.findByRole("button", { name: "Boss fight" }));
+      await screen.findByRole("meter");
+    };
+    /** Answers the current question right or wrong, then moves on (or stays for the results after the last one). */
+    const answer = (id: string, correct: boolean, last = false) => {
+      fireEvent.click(screen.getByRole("button", { name: new RegExp(`${correct ? "Right" : "Wrong"} ${id}`) }));
+      if (!last) fireEvent.click(screen.getByRole("button", { name: "Next" }));
+    };
+
+    it("offers a boss fight at 5 due and not at 4", async () => {
+      vi.mocked(reviewQueueApi.get).mockResolvedValue(queue(4, ids.slice(0, 4).map((id) => testItem(id))));
+      const first = renderWithProviders(<ReviewQueuePage />);
+      await screen.findByRole("button", { name: /Right a/ });
+      expect(screen.queryByRole("button", { name: "Boss fight" })).toBeNull();
+      first.unmount();
+
+      vi.mocked(reviewQueueApi.get).mockResolvedValue(queue(5));
+      renderWithProviders(<ReviewQueuePage />);
+      expect(await screen.findByText("5 due. Ready for a boss fight?")).toBeInTheDocument();
+      expect(screen.getByRole("button", { name: "Boss fight" })).toBeInTheDocument();
+    });
+
+    it("withdraws the offer once a normal answer is given", async () => {
+      vi.mocked(reviewQueueApi.get).mockResolvedValue(queue(5));
+      renderWithProviders(<ReviewQueuePage />);
+      fireEvent.click(await screen.findByRole("button", { name: /Right a/ }));
+      expect(screen.queryByRole("button", { name: "Boss fight" })).toBeNull();
+    });
+
+    it("starts with full HP, focuses the heading and lowers HP only on correct first answers", async () => {
+      vi.mocked(reviewQueueApi.get).mockResolvedValue(queue(5));
+      renderWithProviders(<ReviewQueuePage />);
+      await startBoss();
+
+      expect(screen.getByRole("heading", { name: "Boss fight" })).toHaveFocus();
+      expect(screen.getByRole("meter", { name: "Boss HP 5 of 5" })).toHaveAttribute("aria-valuenow", "5");
+      expect(screen.getByText("5 / 5 HP")).toBeInTheDocument();
+      expect(screen.queryByText(/Showing/)).toBeNull();
+
+      answer("a", true);
+      expect(screen.getByRole("meter", { name: "Boss HP 4 of 5" })).toBeInTheDocument();
+      expect(screen.getByText("Hit! Boss HP 4 of 5.")).toBeInTheDocument();
+      answer("b", false);
+      expect(screen.getByRole("meter", { name: "Boss HP 4 of 5" })).toBeInTheDocument();
+      expect(screen.getByText("Missed. Boss HP 4 of 5.")).toBeInTheDocument();
+    });
+
+    it("says how many are due when more than the served set are", async () => {
+      vi.mocked(reviewQueueApi.get).mockResolvedValue(queue(25));
+      renderWithProviders(<ReviewQueuePage />);
+      expect(await screen.findByText(/Showing 5 of 25 due questions/)).toBeInTheDocument();
+      await startBoss();
+      expect(screen.getByText("25 due, fighting 5")).toBeInTheDocument();
+      expect(screen.queryByText(/Showing/)).toBeNull();
+    });
+
+    it("saves each first answer once with the same arguments as the normal review", async () => {
+      vi.mocked(reviewQueueApi.get).mockResolvedValue(queue(5));
+      const normal = renderWithProviders(<ReviewQueuePage />);
+      fireEvent.click(await screen.findByRole("button", { name: /Right a/ }));
+      fireEvent.click(screen.getByRole("button", { name: "Next" }));
+      fireEvent.click(screen.getByRole("button", { name: /Wrong b/ }));
+      await waitFor(() => expect(reviewQueueApi.answer).toHaveBeenCalledTimes(2));
+      const normalCalls = vi.mocked(reviewQueueApi.answer).mock.calls.map((call) => [...call]);
+      normal.unmount();
+      vi.mocked(reviewQueueApi.answer).mockClear();
+
+      renderWithProviders(<ReviewQueuePage />);
+      await startBoss();
+      answer("a", true);
+      fireEvent.click(screen.getByRole("button", { name: /Wrong b/ }));
+      await waitFor(() => expect(reviewQueueApi.answer).toHaveBeenCalledTimes(2));
+      expect(vi.mocked(reviewQueueApi.answer).mock.calls.map((call) => [...call])).toEqual(normalCalls);
+      expect(await screen.findByText("1 moved to a longer interval · 1 back tomorrow")).toBeInTheDocument();
+    });
+
+    it("defeats the boss, announces it, then shows when the next boss arrives; the results stay available", async () => {
+      vi.mocked(reviewQueueApi.get).mockResolvedValue(queue(5));
+      vi.mocked(reviewQueueApi.getSummary).mockResolvedValue({ dueCount: 0, totalCount: 5, nextDueAt: "2026-10-20T12:00:00Z" });
+      renderWithProviders(<ReviewQueuePage />);
+      await startBoss();
+      ids.forEach((id, index) => answer(id, true, index === ids.length - 1));
+
+      const outcome = await screen.findByRole("heading", { name: "Boss defeated!" });
+      expect(outcome).not.toHaveFocus();
+      expect(screen.queryByRole("meter")).toBeNull();
+      expect(await screen.findByText(/^Next boss arrives .*2026/)).toBeInTheDocument();
+
+      fireEvent.click(screen.getByRole("button", { name: "View results" }));
+      expect(screen.getByRole("heading", { name: "Quiz complete" })).toBeInTheDocument();
+      expect(screen.getByRole("heading", { name: "Boss defeated!" })).toBeInTheDocument();
+    });
+
+    it("lets the boss escape and describes what is still due", async () => {
+      vi.mocked(reviewQueueApi.get).mockResolvedValue(queue(5));
+      vi.mocked(reviewQueueApi.getSummary).mockResolvedValue({ dueCount: 2, totalCount: 5, nextDueAt: null });
+      renderWithProviders(<ReviewQueuePage />);
+      await startBoss();
+      ids.forEach((id, index) => answer(id, index < 3, index === ids.length - 1));
+
+      expect(await screen.findByRole("heading", { name: "The boss escaped with 2 HP" })).toBeInTheDocument();
+      expect(await screen.findByText("2 still due.")).toBeInTheDocument();
+      expect(screen.queryByRole("button", { name: "Boss fight" })).toBeNull();
+      expect(screen.getAllByRole("link", { name: "Play the daily quiz" })[0]).toHaveAttribute("href", "/daily");
+    });
+
+    it("says no boss is scheduled when nothing is due and nothing is coming", async () => {
+      vi.mocked(reviewQueueApi.get).mockResolvedValue(queue(5));
+      renderWithProviders(<ReviewQueuePage />);
+      await startBoss();
+      ids.forEach((id, index) => answer(id, true, index === ids.length - 1));
+      expect(await screen.findByText("No boss scheduled.")).toBeInTheDocument();
+    });
+
+    it("waits for slow saves before reading the summary", async () => {
+      vi.mocked(reviewQueueApi.get).mockResolvedValue(queue(5));
+      let finish: (value: typeof appliedAnswer) => void = () => {};
+      vi.mocked(reviewQueueApi.answer).mockImplementation((itemId) =>
+        itemId === "e" ? new Promise((resolve) => (finish = resolve)) : Promise.resolve(appliedAnswer),
+      );
+      renderWithProviders(<ReviewQueuePage />);
+      await startBoss();
+      ids.forEach((id, index) => answer(id, true, index === ids.length - 1));
+
+      await screen.findByRole("heading", { name: "Boss defeated!" });
+      expect(screen.getByText("Checking...")).toHaveAttribute("role", "status");
+      await new Promise((resolve) => setTimeout(resolve, 30));
+      expect(reviewQueueApi.getSummary).not.toHaveBeenCalled();
+
+      await act(async () => finish(appliedAnswer));
+      await waitFor(() => expect(reviewQueueApi.getSummary).toHaveBeenCalledTimes(1));
+      expect(await screen.findByText("No boss scheduled.")).toBeInTheDocument();
+    });
+
+    it("drops the follow-up line quietly when the summary cannot be read", async () => {
+      vi.mocked(reviewQueueApi.get).mockResolvedValue(queue(5));
+      vi.mocked(reviewQueueApi.getSummary).mockRejectedValue(new Error("offline"));
+      renderWithProviders(<ReviewQueuePage />);
+      await startBoss();
+      ids.forEach((id, index) => answer(id, true, index === ids.length - 1));
+      await screen.findByRole("heading", { name: "Boss defeated!" });
+      await waitFor(() => expect(reviewQueueApi.getSummary).toHaveBeenCalled());
+      await waitFor(() => expect(screen.queryByText("Checking...")).toBeNull());
+      expect(screen.queryByRole("alert")).toBeNull();
+    });
+
+    it("starts a rematch with fresh questions, full HP and a clean tally", async () => {
+      vi.mocked(reviewQueueApi.get).mockResolvedValueOnce(queue(5));
+      vi.mocked(reviewQueueApi.getSummary).mockResolvedValue({ dueCount: 6, totalCount: 6, nextDueAt: null });
+      renderWithProviders(<ReviewQueuePage />);
+      await startBoss();
+      ids.forEach((id, index) => answer(id, true, index === ids.length - 1));
+      expect(await screen.findByText("Another boss is ready now.")).toBeInTheDocument();
+
+      const next = ["f", "g", "h", "i", "j"].map((id) => testItem(id));
+      vi.mocked(reviewQueueApi.get).mockResolvedValue(queue(6, next));
+      const outcomeCard = screen.getByRole("heading", { name: "Boss defeated!" }).parentElement!;
+      fireEvent.click(within(outcomeCard).getByRole("button", { name: "Boss fight" }));
+
+      expect(await screen.findByRole("meter", { name: "Boss HP 5 of 5" })).toBeInTheDocument();
+      expect(screen.getByRole("button", { name: /Right f/ })).toBeInTheDocument();
+      expect(screen.queryByRole("heading", { name: "Boss defeated!" })).toBeNull();
+      expect(screen.queryByText(/moved to a longer interval/)).toBeNull();
+      expect(reviewQueueApi.get).toHaveBeenCalledTimes(2);
+    });
+
+    it("ignores answers from Play again after the first run decided the outcome", async () => {
+      vi.mocked(reviewQueueApi.get).mockResolvedValue(queue(5));
+      renderWithProviders(<ReviewQueuePage />);
+      await startBoss();
+      ids.forEach((id, index) => answer(id, false, index === ids.length - 1));
+      expect(await screen.findByRole("heading", { name: "The boss escaped with 5 HP" })).toBeInTheDocument();
+
+      fireEvent.click(screen.getByRole("button", { name: "View results" }));
+      fireEvent.click(screen.getByRole("button", { name: "Play again" }));
+      fireEvent.click(await screen.findByRole("button", { name: /Right a/ }));
+
+      expect(screen.getByRole("heading", { name: "The boss escaped with 5 HP" })).toBeInTheDocument();
+      expect(screen.queryByRole("meter")).toBeNull();
+    });
   });
 });

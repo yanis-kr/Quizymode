@@ -1,12 +1,14 @@
 import { useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 import { StarIcon } from "@heroicons/react/24/solid";
+import type { GhostLine } from "../ghostRun";
 import { formatGameTime } from "./matchRaceRun";
 
 interface MatchRaceFinishProps {
   elapsedMs: number;
   bestMs: number;
   isNewBest: boolean;
+  ghostLine: GhostLine;
   hubPath: string;
   onPlayAgain: () => void;
 }
@@ -14,7 +16,7 @@ interface MatchRaceFinishProps {
 const RING =
   "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500 focus-visible:ring-offset-2";
 
-export function MatchRaceFinish({ elapsedMs, bestMs, isNewBest, hubPath, onPlayAgain }: MatchRaceFinishProps) {
+export function MatchRaceFinish({ elapsedMs, bestMs, isNewBest, ghostLine, hubPath, onPlayAgain }: MatchRaceFinishProps) {
   const headingRef = useRef<HTMLHeadingElement>(null);
   useEffect(() => {
     headingRef.current?.focus();
@@ -34,6 +36,7 @@ export function MatchRaceFinish({ elapsedMs, bestMs, isNewBest, hubPath, onPlayA
       ) : (
         <p className="mt-2 text-gray-700">Best {formatGameTime(bestMs)}</p>
       )}
+      <p className={`mt-1 text-sm ${ghostLine.tone === "ahead" ? "text-green-800" : "text-gray-700"}`}>{ghostLine.text}</p>
       <div className="mt-6 flex flex-col justify-center gap-3 sm:flex-row">
         <button
           type="button"

@@ -1,33 +1,32 @@
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
-import { useQuery, useQueryClient } from "@tanstack/react-query";
+import { useQuery } from "@tanstack/react-query";
 import { SEO } from "@/components/SEO";
 import LoadingSpinner from "@/components/LoadingSpinner";
 import { useAuth } from "@/contexts/AuthContext";
 import { reviewQueueApi } from "@/api/learningLoop";
+import type { QuizRunState } from "@/features/items/quiz/quizRun";
 import { FixedSetQuiz } from "../FixedSetQuiz";
+import { BossFightHeader } from "../BossFightHeader";
+import { BOSS_FIGHT_MIN_DUE, BossFightOutcome, type BossFollowUp } from "../BossFightOutcome";
+import { useReviewAnswers } from "../useReviewAnswers";
 
 export const REVIEW_QUEUE_QUERY_KEY = ["review-queue"] as const;
 
 const dateFormatter = new Intl.DateTimeFormat("en-US", { dateStyle: "medium", timeStyle: "short" });
 
-interface Tally {
-  forward: number;
-  reset: number;
-  graduated: number;
-  failed: number;
-}
-
-const EMPTY_TALLY: Tally = { forward: 0, reset: 0, graduated: 0, failed: 0 };
+/** How long the Hit! / Missed flash stays next to the boss HP. */
+const BOSS_FLASH_MS = 800;
 
 /**
  * REVIEW-001 (#117): up to 20 due questions the signed-in learner missed before. Each first answer is saved as it is
  * chosen: correct moves the question to a longer interval (1, 3, 7, 14, 30 days, then done), wrong brings it back tomorrow.
+ * With 5 or more due the learner can start a boss fight (#358): the same quiz and saves, with HP that drops on correct
+ * first answers.
  */
 const ReviewQueuePage = () => {
   const { userId } = useAuth();
-  const queryClient = useQueryClient();
-  const [tally, setTally] = useState<Tally>(EMPTY_TALLY);
+  const { tally, recordAnswer, settlePending, resetTally } = useReviewAnswers();
 
   // The roster is frozen for the visit: no refetch while answering, or answered items would vanish mid-run.
   const query = useQuery({
@@ -41,23 +40,94 @@ const ReviewQueuePage = () => {
     retry: 1,
   });
 
-  const recordAnswer = async (itemId: string, isCorrect: boolean) => {
-    try {
-      const response = await reviewQueueApi.answer(itemId, isCorrect);
-      if (!response.applied) return;
-      setTally((current) => ({
-        ...current,
-        graduated: current.graduated + (response.graduated ? 1 : 0),
-        forward: current.forward + (isCorrect && !response.graduated ? 1 : 0),
-        reset: current.reset + (isCorrect ? 0 : 1),
-      }));
-    } catch {
-      setTally((current) => ({ ...current, failed: current.failed + 1 }));
-    }
-    void queryClient.invalidateQueries({ queryKey: [...REVIEW_QUEUE_QUERY_KEY, "summary"] });
+  // Boss fight state. HP and the outcome follow only the first quiz run seen, so Play again does not change them.
+  const [bossActive, setBossActive] = useState(false);
+  const [answeredAny, setAnsweredAny] = useState(false);
+  const [hits, setHits] = useState(0);
+  const [flash, setFlash] = useState<{ id: number; kind: "hit" | "miss" } | null>(null);
+  const [bossMessage, setBossMessage] = useState<{ id: number; text: string }>({ id: 0, text: "" });
+  const [outcome, setOutcome] = useState<{ defeated: boolean; hp: number } | null>(null);
+  const [followUp, setFollowUp] = useState<BossFollowUp | null>(null);
+  const [rematching, setRematching] = useState(false);
+  const lockedRunId = useRef<string | null>(null);
+  const hitsRef = useRef(0);
+  const flashCount = useRef(0);
+  const mounted = useRef(true);
+
+  useEffect(() => {
+    mounted.current = true;
+    return () => {
+      mounted.current = false;
+    };
+  }, []);
+
+  useEffect(() => {
+    if (!flash) return;
+    const id = window.setTimeout(() => setFlash(null), BOSS_FLASH_MS);
+    return () => window.clearTimeout(id);
+  }, [flash]);
+
+  // A new id per message makes the live region re-announce a repeated one.
+  const announceBoss = (text: string) => setBossMessage((current) => ({ id: current.id + 1, text }));
+
+  const startBoss = () => {
+    lockedRunId.current = null;
+    hitsRef.current = 0;
+    setHits(0);
+    setFlash(null);
+    announceBoss("");
+    setOutcome(null);
+    setFollowUp(null);
+    setAnsweredAny(false);
+    resetTally();
+    setBossActive(true);
   };
 
   const data = query.data;
+  const maxHp: number = data?.items.length ?? 0;
+
+  const handleAnswer = (itemId: string, isCorrect: boolean, run: QuizRunState) => {
+    void recordAnswer(itemId, isCorrect);
+    setAnsweredAny(true);
+    if (!bossActive) return;
+    lockedRunId.current ??= run.runId;
+    if (run.runId !== lockedRunId.current) return;
+    if (isCorrect) hitsRef.current += 1;
+    setHits(hitsRef.current);
+    flashCount.current += 1;
+    setFlash({ id: flashCount.current, kind: isCorrect ? "hit" : "miss" });
+    announceBoss(`${isCorrect ? "Hit!" : "Missed."} Boss HP ${maxHp - hitsRef.current} of ${maxHp}.`);
+  };
+
+  const handleComplete = (run: QuizRunState) => {
+    if (!bossActive || run.runId !== lockedRunId.current) return;
+    const hp: number = Math.max(0, maxHp - hitsRef.current);
+    setOutcome({ defeated: hp === 0, hp });
+    announceBoss(hp === 0 ? "Boss defeated!" : `The boss escaped with ${hp} HP.`);
+    setFollowUp({ status: "loading" });
+    void (async () => {
+      // Wait for the answers still being saved, so the summary reflects them.
+      await settlePending();
+      try {
+        const summary = await reviewQueueApi.getSummary();
+        if (mounted.current) setFollowUp({ status: "ready", ...summary });
+      } catch {
+        if (mounted.current) setFollowUp({ status: "error" });
+      }
+    })();
+  };
+
+  const handleRematch = async () => {
+    setRematching(true);
+    try {
+      const result = await query.refetch();
+      if (!mounted.current) return;
+      if (result.data && result.data.items.length > 0 && result.data.dueCount >= BOSS_FIGHT_MIN_DUE) startBoss();
+      else setBossActive(false);
+    } finally {
+      if (mounted.current) setRematching(false);
+    }
+  };
 
   return (
     <>
@@ -105,11 +175,48 @@ const ReviewQueuePage = () => {
 
         {data && data.items.length > 0 && (
           <>
-            {data.dueCount > data.items.length && (
-              <p className="mb-3 text-sm text-gray-600">
-                Showing {data.items.length} of {data.dueCount} due questions. The rest stay due for your next review.
-              </p>
+            {bossActive ? (
+              outcome ? (
+                <BossFightOutcome
+                  defeated={outcome.defeated}
+                  hp={outcome.hp}
+                  followUp={followUp}
+                  rematching={rematching}
+                  onRematch={() => void handleRematch()}
+                />
+              ) : (
+                <BossFightHeader
+                  hp={maxHp - hits}
+                  maxHp={maxHp}
+                  dueCount={data.dueCount}
+                  hitCount={hits}
+                  flash={flash?.kind ?? null}
+                />
+              )
+            ) : (
+              <>
+                {data.dueCount >= BOSS_FIGHT_MIN_DUE && !answeredAny && (
+                  <div className="mb-3 flex flex-col gap-2 rounded-lg border border-gray-200 bg-white p-4 sm:flex-row sm:items-center sm:justify-between">
+                    <p className="text-sm text-gray-700">{data.dueCount} due. Ready for a boss fight?</p>
+                    <button
+                      type="button"
+                      onClick={startBoss}
+                      className="min-h-[44px] w-full rounded-md border border-indigo-600 px-4 py-2 font-semibold text-indigo-700 hover:bg-indigo-50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500 focus-visible:ring-offset-2 sm:w-auto"
+                    >
+                      Boss fight
+                    </button>
+                  </div>
+                )}
+                {data.dueCount > data.items.length && (
+                  <p className="mb-3 text-sm text-gray-600">
+                    Showing {data.items.length} of {data.dueCount} due questions. The rest stay due for your next review.
+                  </p>
+                )}
+              </>
             )}
+            <div role="status" aria-live="polite" className="sr-only">
+              <span key={bossMessage.id}>{bossMessage.text}</span>
+            </div>
             <div aria-live="polite" className="mb-3 text-sm text-gray-700">
               {tally.forward + tally.reset + tally.graduated > 0 && (
                 <p>
@@ -124,12 +231,14 @@ const ReviewQueuePage = () => {
               )}
             </div>
             <FixedSetQuiz
+              key={query.dataUpdatedAt}
               items={data.items}
               identityKey={`user:${userId ?? "unknown"}`}
               analytics={{ contextType: "review" }}
               browsePath="/categories"
               browseLabel="Browse categories"
-              onAnswer={(item, isCorrect) => void recordAnswer(item.id, isCorrect)}
+              onAnswer={(item, isCorrect, run) => handleAnswer(item.id, isCorrect, run)}
+              onComplete={handleComplete}
             />
           </>
         )}

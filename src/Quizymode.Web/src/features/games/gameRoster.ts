@@ -14,6 +14,14 @@ export const SWIPE_BLITZ_ROUND_MS = 60000;
 export const SWIPE_REVEAL_MS = 1000;
 export const SURVIVAL_HEARTS = 3;
 export const SURVIVAL_CORRECT_ADVANCE_MS = 600;
+export const BUCKET_DROP_LIVES = 3;
+/** Fall time of the first Bucket Drop card; it shortens by 15% after every 5 correct answers, down to the floor. */
+export const BUCKET_DROP_BASE_FALL_MS = 6000;
+export const BUCKET_DROP_MIN_FALL_MS = 2000;
+export const BUCKET_DROP_SPEEDUP = 0.85;
+export const BUCKET_DROP_SPEEDUP_EVERY = 5;
+/** How long Bucket Drop shows the result of a drop before the next card. */
+export const BUCKET_DROP_FEEDBACK_MS = 800;
 /** Items requested for category, keyword and global scopes. */
 export const GAME_FETCH_SIZE = 200;
 
@@ -65,6 +73,16 @@ export function buildGamePool(items: readonly ItemResponse[]): ItemResponse[] {
     pool.push(item);
   }
   return pool;
+}
+
+/** Bucket Drop needs a correct answer plus two short distractors for its three buckets. */
+export function isBucketDropEligible(item: Pick<ItemResponse, "correctAnswer" | "incorrectAnswers">): boolean {
+  return getGameDistractors(item).length >= 2;
+}
+
+/** The already-built game pool narrowed to items with at least two usable distractors. */
+export function buildBucketDropPool(pool: readonly ItemResponse[]): ItemResponse[] {
+  return pool.filter(isBucketDropEligible);
 }
 
 /** Pairs a new Match Race run aims for: 6 at 640 px and wider, otherwise 3 (also without matchMedia). */

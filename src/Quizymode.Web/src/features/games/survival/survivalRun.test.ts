@@ -125,4 +125,24 @@ describe("survivalRun", () => {
     expect(reduceSurvivalRun(withPadded, { type: "answer", option: "  Paris " }).lastAnswer?.isCorrect).toBe(true);
     expect(reduceSurvivalRun(withPadded, { type: "answer", option: "Rome" }).lastAnswer?.isCorrect).toBe(false);
   });
+
+  it("records the ghost timeline from the first answer clock reading", () => {
+    let state = createSurvivalRun(items(5), "run-1");
+    state = reduceSurvivalRun(state, { type: "answer", option: correctOption(state), nowMs: 10_000 });
+    expect(state.startedAtMs).toBe(10_000);
+    expect(state.correctMarksMs).toEqual([0]);
+    state = reduceSurvivalRun(state, { type: "next" });
+    state = reduceSurvivalRun(state, { type: "answer", option: wrongOption(state), nowMs: 12_000 });
+    expect(state.correctMarksMs).toEqual([0]);
+    state = reduceSurvivalRun(state, { type: "next" });
+    state = reduceSurvivalRun(state, { type: "answer", option: correctOption(state), nowMs: 15_500 });
+    expect(state.startedAtMs).toBe(10_000);
+    expect(state.correctMarksMs).toEqual([0, 5500]);
+  });
+
+  it("keeps no marks when answers carry no clock", () => {
+    const state = answerAndNext(createSurvivalRun(items(5), "run-1"), true);
+    expect(state.startedAtMs).toBeNull();
+    expect(state.correctMarksMs).toEqual([]);
+  });
 });

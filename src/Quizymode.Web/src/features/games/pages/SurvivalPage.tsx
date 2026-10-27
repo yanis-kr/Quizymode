@@ -12,6 +12,16 @@ import { SURVIVAL_ID } from "../gameRegistry";
 import { buildGamePath, gameScopeKey } from "../gameScope";
 import { trackGameCompleted, trackGameStarted } from "../gameAnalytics";
 import { survivalBestKey, writeBestIfHigher } from "../gameBest";
+import {
+  compareSurvivalToGhost,
+  describeSurvivalGhost,
+  ghostProgressAt,
+  readGhost,
+  survivalGhostKey,
+  writeSurvivalGhostIfBetter,
+  type GhostLine,
+} from "../ghostRun";
+import { GhostTrack } from "../GhostTrack";
 import { useGameRoster } from "../useGameRoster";
 import { GamesEmptyState } from "../GamesEmptyState";
 import { GameFinishCard } from "../GameFinishCard";
@@ -26,7 +36,11 @@ interface FinishResult {
   runId: string;
   best: number;
   isNewBest: boolean;
+  ghostLine: GhostLine;
 }
+
+/** How often the ghost marker steps while a ghost exists. */
+const GHOST_TICK_MS = 250;
 
 function heartsLeftText(hearts: number): string {
   if (hearts <= 0) return "No hearts left";
@@ -44,6 +58,8 @@ const SurvivalPage = () => {
   const nextRef = useRef<HTMLButtonElement>(null);
   const nextShownAt = useRef(0);
   const finishHandledRunIds = useRef(new Set<string>());
+  const [ghostMarks, setGhostMarks] = useState<number[] | null>(null);
+  const [nowMs, setNowMs] = useState<number>(() => Date.now());
 
   const run: SurvivalRunState | null = runBox && runBox.scopeKey === scopeKey ? runBox.state : null;
   const itemsById = useMemo(() => new Map<string, ItemResponse>(pool.map((item) => [item.id, item])), [pool]);
@@ -53,6 +69,7 @@ const SurvivalPage = () => {
 
   const startRun = () => {
     setRunBox({ scopeKey, state: createSurvivalRun(pool, createAnalyticsId()) });
+    setGhostMarks(readGhost(survivalGhostKey(scopeKey)));
     announce("");
     setFinishResult(null);
   };
@@ -72,8 +89,10 @@ const SurvivalPage = () => {
 
   const handleAnswer = (option: string) => {
     if (!run) return;
-    const next: SurvivalRunState = reduceSurvivalRun(run, { type: "answer", option });
+    const now: number = Date.now();
+    const next: SurvivalRunState = reduceSurvivalRun(run, { type: "answer", option, nowMs: now });
     if (next === run) return;
+    setNowMs(now);
     setRunBox({ scopeKey, state: next });
     if (run.status === "ready") trackGameStarted(SURVIVAL_ID, scope, next.runId, next.poolIds.length);
     if (next.lastAnswer?.isCorrect) {
@@ -86,7 +105,13 @@ const SurvivalPage = () => {
       finishHandledRunIds.current.add(next.runId);
       trackGameCompleted(SURVIVAL_ID, scope, next.runId, next.correct, next.answered);
       const result = writeBestIfHigher(survivalBestKey(scopeKey), next.longestStreak);
-      setFinishResult({ runId: next.runId, best: result.best, isNewBest: result.isNewBest });
+      const endMs: number = Math.max(0, now - (next.startedAtMs ?? now));
+      const ghostLine: GhostLine = describeSurvivalGhost(
+        ghostMarks ? compareSurvivalToGhost(ghostMarks, next.correct, endMs) : null,
+        endMs,
+      );
+      writeSurvivalGhostIfBetter(survivalGhostKey(scopeKey), next.correctMarksMs);
+      setFinishResult({ runId: next.runId, best: result.best, isNewBest: result.isNewBest, ghostLine });
     }
   };
 
@@ -97,10 +122,21 @@ const SurvivalPage = () => {
     setRunBox({ scopeKey, state: next });
     if (next.status === "finished") {
       const result: FinishResult | null = finishResult?.runId === next.runId ? finishResult : null;
-      announce(`Game over. Streak ${next.longestStreak}.${result?.isNewBest ? " New best!" : ""}`);
+      announce(
+        `Game over. Streak ${next.longestStreak}.${result?.isNewBest ? " New best!" : ""}${result ? ` ${result.ghostLine.text}.` : ""}`,
+      );
       if (result?.isNewBest) void celebratePerfectScore(next.runId);
     }
   };
+
+  // The ghost marker steps while there is a ghost to race and the run is under way.
+  const startedAtMs: number | null = run?.startedAtMs ?? null;
+  const ghostRunning: boolean = ghostMarks !== null && startedAtMs !== null && (status === "playing" || status === "feedback");
+  useEffect(() => {
+    if (!ghostRunning) return;
+    const id = window.setInterval(() => setNowMs(Date.now()), GHOST_TICK_MS);
+    return () => window.clearInterval(id);
+  }, [ghostRunning, runId]);
 
   // A correct answer moves on by itself.
   useEffect(() => {
@@ -165,6 +201,7 @@ const SurvivalPage = () => {
           statLine={`${run.correct} of ${run.answered} right`}
           bestLine={result.best > 0 ? `Best streak ${result.best}` : null}
           isNewBest={result.isNewBest}
+          ghostLine={result.ghostLine}
           hubPath={buildGamePath(scope)}
           onPlayAgain={startRun}
         >
@@ -175,6 +212,8 @@ const SurvivalPage = () => {
   } else {
     const item = run.items[run.itemId];
     const answered: boolean = run.status === "feedback";
+    const ghostCount: number =
+      ghostMarks && run.startedAtMs !== null ? ghostProgressAt(ghostMarks, Math.max(0, nowMs - run.startedAtMs)) : 0;
     const showNext: boolean = answered && run.lastAnswer?.isCorrect === false;
     body = (
       <section className="mx-auto max-w-2xl rounded-lg bg-white p-4 shadow sm:p-6">
@@ -199,6 +238,14 @@ const SurvivalPage = () => {
             <span className="text-sm font-semibold text-gray-800 tabular-nums sm:text-base">Streak {run.streak}</span>
           </div>
         </div>
+        {ghostMarks && (
+          <GhostTrack
+            yours={run.correct}
+            ghost={ghostCount}
+            scale={Math.max(ghostMarks.length, run.correct, 1)}
+            label={`Ghost: ${ghostCount}`}
+          />
+        )}
         <SurvivalQuestion
           question={item.question}
           options={run.options}

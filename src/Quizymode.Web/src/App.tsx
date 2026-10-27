@@ -60,6 +60,7 @@ const GamesHubPage = lazyPage(() => import("./features/games/pages/GamesHubPage"
 const MatchRacePage = lazyPage(() => import("./features/games/pages/MatchRacePage"));
 const SwipeBlitzPage = lazyPage(() => import("./features/games/pages/SwipeBlitzPage"));
 const SurvivalPage = lazyPage(() => import("./features/games/pages/SurvivalPage"));
+const BucketDropPage = lazyPage(() => import("./features/games/pages/BucketDropPage"));
 
 function App() {
   const location = useLocation();
@@ -130,6 +131,8 @@ function App() {
         <Route path="/games/swipe-blitz/:category?" element={<SwipeBlitzPage />} />
         <Route path="/games/survival/collections/:collectionId/:slug?" element={<SurvivalPage />} />
         <Route path="/games/survival/:category?" element={<SurvivalPage />} />
+        <Route path="/games/bucket-drop/collections/:collectionId/:slug?" element={<BucketDropPage />} />
+        <Route path="/games/bucket-drop/:category?" element={<BucketDropPage />} />
         <Route path="/games/:category?" element={<GamesHubPage />} />
         <Route path="/daily" element={<DailyQuizPage />} />
         <Route path="/progress" element={<ProgressPage />} />
