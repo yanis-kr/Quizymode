@@ -39,4 +39,30 @@ describe("gameAnalytics", () => {
     const odd: GameScope = { kind: "collection", collectionId: "x".repeat(200), collectionName: null };
     expect(gameEventContext("match-race", odd)).toEqual({ contextType: "game", contextId: "match-race" });
   });
+
+  it("builds swipe-blitz and survival context ids", () => {
+    expect(gameEventContext("swipe-blitz", category)).toEqual({
+      contextType: "game",
+      contextId: "swipe-blitz:category:science",
+    });
+    const collection: GameScope = { kind: "collection", collectionId: "11111111-1111-4111-8111-111111111111" };
+    expect(gameEventContext("survival", collection).contextId).toBe(
+      "survival:collection:11111111-1111-4111-8111-111111111111",
+    );
+    expect(gameEventContext("survival", { kind: "global", filterKeywords: [] }).contextId).toBe("survival:global");
+  });
+
+  it("keeps total within 1-500 and score within 0 to total as whole numbers", () => {
+    trackGameStarted("survival", category, "run-a", 0);
+    trackGameStarted("survival", category, "run-b", 900);
+    trackGameCompleted("survival", category, "run-c", 7, 3);
+    trackGameCompleted("survival", category, "run-d", -2, 0);
+    trackGameCompleted("survival", category, "run-e", 2.9, 4.7);
+    const payloads = mockTrackEventOnce.mock.calls.map(([, payload]) => payload);
+    expect(payloads[0].total).toBe(1);
+    expect(payloads[1].total).toBe(500);
+    expect(payloads[2]).toMatchObject({ score: 3, total: 3 });
+    expect(payloads[3]).toMatchObject({ score: 0, total: 1 });
+    expect(payloads[4]).toMatchObject({ score: 2, total: 4 });
+  });
 });

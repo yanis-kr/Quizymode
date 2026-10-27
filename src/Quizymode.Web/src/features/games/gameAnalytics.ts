@@ -8,23 +8,36 @@ export function gameEventContext(gameId: string, scope: GameScope): StudyEventCo
   return full.contextId ? full : withContextId("game", gameId);
 }
 
-/** One `game_started` per run, at the first tile selection. Total is the pair count. */
+const MAX_TOTAL = 500;
+
+/** The API rejects the whole batch for totals outside 1-500 or scores outside 0-total, so clamp whole numbers. */
+function clampTotal(total: number): number {
+  return Math.min(Math.max(Math.trunc(Number.isFinite(total) ? total : 1), 1), MAX_TOTAL);
+}
+
+function clampScore(score: number, total: number): number {
+  return Math.min(Math.max(Math.trunc(Number.isFinite(score) ? score : 0), 0), total);
+}
+
+/** One `game_started` per run, at the first move. Total is the game's size (AC 5.4.13). */
 export function trackGameStarted(gameId: string, scope: GameScope, runId: string, total: number): void {
+  const safeTotal: number = clampTotal(total);
   trackEventOnce(`${gameId}:${runId}:start`, {
     name: "game_started",
     runId,
-    total,
+    total: safeTotal,
     ...gameEventContext(gameId, scope),
   });
 }
 
-/** One `game_completed` per run. Score is pairs matched without a miss; no time is sent. */
+/** One `game_completed` per run. Score and total follow AC 5.4.13; no time, streak or item data is sent. */
 export function trackGameCompleted(gameId: string, scope: GameScope, runId: string, score: number, total: number): void {
+  const safeTotal: number = clampTotal(total);
   trackEventOnce(`${gameId}:${runId}:done`, {
     name: "game_completed",
     runId,
-    score,
-    total,
+    score: clampScore(score, safeTotal),
+    total: safeTotal,
     ...gameEventContext(gameId, scope),
   });
 }

@@ -487,7 +487,7 @@ function hashSeed(value: string): number {
  * Single playability filter (#250): trim, drop blanks, drop case-insensitive duplicates and drop values equal to the
  * correct answer. Mirrored server-side by QuizPlayability.GetDistractors (Daily selection, review queue).
  */
-function getQuizDistractors(item: Pick<ItemResponse, "correctAnswer" | "incorrectAnswers">): string[] {
+export function getQuizDistractors(item: Pick<ItemResponse, "correctAnswer" | "incorrectAnswers">): string[] {
   const correct = (item.correctAnswer ?? "").trim().toLowerCase();
   const seen = new Set<string>();
   const result: string[] = [];

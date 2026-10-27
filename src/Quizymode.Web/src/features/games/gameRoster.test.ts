@@ -3,6 +3,8 @@ import {
   GAME_MAX_ANSWER_CHARS,
   GAME_MAX_QUESTION_CHARS,
   buildGamePool,
+  getGameDistractors,
+  getGameOptions,
   getMatchRaceTargetPairs,
   isGameEligible,
 } from "./gameRoster";
@@ -49,6 +51,32 @@ describe("isGameEligible", () => {
 
   it("excludes items that are not quiz-playable", () => {
     expect(isGameEligible(makeItem(1, { incorrectAnswers: [] }))).toBe(false);
+  });
+
+  it("needs a distractor of at most 25 code points", () => {
+    expect(isGameEligible(makeItem(1, { incorrectAnswers: ["d".repeat(26)] }))).toBe(false);
+    expect(isGameEligible(makeItem(1, { incorrectAnswers: ["d".repeat(25)] }))).toBe(true);
+    expect(isGameEligible(makeItem(1, { incorrectAnswers: ["d".repeat(26), "short"] }))).toBe(true);
+  });
+});
+
+describe("getGameDistractors and getGameOptions", () => {
+  const item = makeItem(1, {
+    correctAnswer: "Paris",
+    incorrectAnswers: ["Rome", "rome", "D".repeat(26), "Paris", " Berlin ", "Madrid", "Oslo"],
+  });
+
+  it("drops long, duplicate and correct-answer distractors", () => {
+    expect(getGameDistractors(item)).toEqual(["Rome", "Berlin", "Madrid", "Oslo"]);
+  });
+
+  it("is deterministic, holds 2-4 options with the correct answer and never a long distractor", () => {
+    const options = getGameOptions(item, "seed-1");
+    expect(getGameOptions(item, "seed-1")).toEqual(options);
+    expect(options).toHaveLength(4);
+    expect(options).toContain("Paris");
+    expect(options.every((option) => Array.from(option).length <= GAME_MAX_ANSWER_CHARS)).toBe(true);
+    expect(getGameOptions(makeItem(2, { incorrectAnswers: ["only"] }), "s")).toHaveLength(2);
   });
 });
 

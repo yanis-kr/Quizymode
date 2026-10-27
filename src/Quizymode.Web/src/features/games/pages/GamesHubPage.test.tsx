@@ -1,5 +1,5 @@
 import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
-import { cleanup, fireEvent, render, screen } from "@testing-library/react";
+import { cleanup, fireEvent, render, screen, waitFor } from "@testing-library/react";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { MemoryRouter, Route, Routes, useLocation } from "react-router-dom";
 import GamesHubPage from "./GamesHubPage";
@@ -8,6 +8,7 @@ import { categoriesApi } from "@/api/categories";
 import { collectionsApi } from "@/api/collections";
 import { installMemoryLocalStorage } from "@/test/memoryStorage";
 import { resetMatchRaceBestForTests, writeBestIfFaster } from "../matchRace/matchRaceBest";
+import { survivalBestKey, swipeBlitzBestKey, writeBestIfHigher } from "../gameBest";
 import type { ItemResponse } from "@/types/api";
 
 const { mockAuth } = vi.hoisted(() => ({
@@ -58,6 +59,8 @@ function renderPage(path: string) {
           <Route path="/games/collections/:collectionId/:slug?" element={page} />
           <Route path="/games/:category?" element={page} />
           <Route path="/games/match-race/*" element={<LocationDisplay />} />
+          <Route path="/games/swipe-blitz/*" element={<LocationDisplay />} />
+          <Route path="/games/survival/*" element={<LocationDisplay />} />
           <Route path="/learn/*" element={<LocationDisplay />} />
           <Route path="/quiz/*" element={<LocationDisplay />} />
         </Routes>
@@ -97,6 +100,43 @@ describe("GamesHubPage", () => {
     expect(await screen.findByTestId("location")).toHaveTextContent("/games/match-race/science?nav=physics&keywords=optics");
   });
 
+  it("shows the three game cards in order with their blurbs and Play links", async () => {
+    renderPage("/games/science?nav=physics&keywords=optics");
+    await screen.findByRole("heading", { name: "Games" });
+
+    const titles = screen.getAllByRole("heading", { level: 2 }).map((heading) => heading.textContent);
+    expect(titles).toEqual(["Match Race", "Swipe Blitz", "Survival"]);
+    expect(screen.getByText("Right or wrong? Beat the clock.")).toBeInTheDocument();
+    expect(screen.getByText("Answer until you miss 3.")).toBeInTheDocument();
+
+    fireEvent.click(screen.getByRole("link", { name: "Play Swipe Blitz" }));
+    expect(await screen.findByTestId("location")).toHaveTextContent("/games/swipe-blitz/science?nav=physics&keywords=optics");
+  });
+
+  it("links Play Survival to the collection scope", async () => {
+    renderPage(`/games/collections/${COLLECTION_ID}/practice+set`);
+    await screen.findByRole("heading", { name: "Games" });
+    const link = await screen.findByRole("link", { name: "Play Survival" });
+    await waitFor(() => expect(link).toHaveAttribute("href", `/games/survival/collections/${COLLECTION_ID}/practice+set`));
+    fireEvent.click(link);
+    expect(await screen.findByTestId("location")).toHaveTextContent(`/games/survival/collections/${COLLECTION_ID}/practice+set`);
+  });
+
+  it("shows each game's best for the scope and no label without one", async () => {
+    renderPage("/games/science");
+    await screen.findByRole("heading", { name: "Games" });
+    expect(screen.queryByText(/^Best/)).toBeNull();
+    cleanup();
+
+    const scopeKey = "category:science|nav=|kw=";
+    writeBestIfHigher(swipeBlitzBestKey(scopeKey), 23);
+    writeBestIfHigher(survivalBestKey(scopeKey), 12);
+    renderPage("/games/science");
+    expect(await screen.findByText("Best 23")).toBeInTheDocument();
+    expect(screen.getByText("Best streak 12")).toBeInTheDocument();
+    expect(screen.queryByText(/^Best 0:/)).toBeNull();
+  });
+
   it("shows the best time for the scope", async () => {
     writeBestIfFaster("category:science|nav=|kw=", 3, 42100);
     renderPage("/games/science");
@@ -118,6 +158,8 @@ describe("GamesHubPage", () => {
 
     expect(await screen.findByText("Not enough short questions for games here")).toBeInTheDocument();
     expect(screen.queryByRole("link", { name: "Play Match Race" })).toBeNull();
+    expect(screen.queryByRole("link", { name: "Play Swipe Blitz" })).toBeNull();
+    expect(screen.queryByRole("link", { name: "Play Survival" })).toBeNull();
     fireEvent.click(screen.getByRole("link", { name: "Open Quiz" }));
     expect(await screen.findByTestId("location")).toHaveTextContent("/quiz/science?keywords=optics");
   });
