@@ -92,29 +92,44 @@ interface TopicPickerProps {
   saving: boolean;
   error: boolean;
   onSave: (categories: string[]) => void;
+  retrying: boolean;
   onRetry: () => void;
   onClose: () => void;
 }
 
-function TopicPicker({ initial, status, saving, error, onSave, onRetry, onClose }: TopicPickerProps) {
+function TopicPicker({ initial, status, saving, error, onSave, retrying, onRetry, onClose }: TopicPickerProps) {
   // null until the saved topics have loaded; then prefilled once with them.
   const [selected, setSelected] = useState<string[] | null>(status === "ready" ? initial : null);
   if (selected === null && status === "ready") setSelected(initial);
   const dialogRef = useRef<HTMLDivElement>(null);
   const full = (selected?.length ?? 0) >= MAX_INTERESTS;
 
+  // The parent passes a new onClose each render; keep the mount-only effect below from re-running (and moving focus).
+  const onCloseRef = useRef(onClose);
+  useEffect(() => {
+    onCloseRef.current = onClose;
+  }, [onClose]);
+
   useEffect(() => {
     const previous = document.activeElement as HTMLElement | null;
     dialogRef.current?.querySelector<HTMLElement>("input,button")?.focus();
     const onKey = (event: KeyboardEvent) => {
-      if (event.key === "Escape") onClose();
+      if (event.key === "Escape") onCloseRef.current();
     };
     window.addEventListener("keydown", onKey);
     return () => {
       window.removeEventListener("keydown", onKey);
       previous?.focus();
     };
-  }, [onClose]);
+  }, []);
+
+  // When the chips replace the loading or error state, move focus to the first chip.
+  const chipsShown = selected !== null;
+  const chipsWereShown = useRef(chipsShown);
+  useEffect(() => {
+    if (chipsShown && !chipsWereShown.current) dialogRef.current?.querySelector<HTMLElement>("fieldset input")?.focus();
+    chipsWereShown.current = chipsShown;
+  }, [chipsShown]);
 
   const toggle = (slug: string) =>
     setSelected((current) =>
@@ -134,7 +149,7 @@ function TopicPicker({ initial, status, saving, error, onSave, onRetry, onClose 
         <h2 id="topic-picker-title" className="text-lg font-semibold">Choose your topics</h2>
         <p className="mt-1 text-xs text-slate-300">Pick up to {MAX_INTERESTS}. Your picks come first on the home page.</p>
         {selected === null && status === "loading" && (
-          <div role="status" aria-busy="true" className="mt-3 flex flex-wrap gap-2">
+          <div role="status" className="mt-3 flex flex-wrap gap-2">
             <span className="sr-only">Loading your topics…</span>
             {[0, 1, 2, 3, 4, 5].map((i) => (
               <span key={i} aria-hidden="true" className="h-7 w-20 animate-pulse rounded-full bg-white/10" />
@@ -144,8 +159,8 @@ function TopicPicker({ initial, status, saving, error, onSave, onRetry, onClose 
         {selected === null && status === "error" && (
           <div role="alert" className="mt-3 text-xs text-red-300">
             Your topics could not be loaded.{" "}
-            <button type="button" onClick={onRetry} className="font-semibold underline">
-              Retry
+            <button type="button" onClick={onRetry} disabled={retrying} className="font-semibold underline disabled:opacity-60">
+              {retrying ? "Retrying…" : "Retry"}
             </button>
           </div>
         )}
@@ -392,6 +407,7 @@ export function PersonalizedLanes({ featuredSets }: { featuredSets: FeaturedSetD
           saving={saveInterests.isPending}
           error={saveInterests.isError}
           onSave={(categories) => saveInterests.mutate(categories)}
+          retrying={interestsQuery.isFetching}
           onRetry={() => void interestsQuery.refetch()}
           onClose={() => {
             saveInterests.reset();

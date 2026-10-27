@@ -174,8 +174,11 @@ describe("PersonalizedLanes", () => {
 
     fireEvent.click(within(dialog).getByRole("button", { name: "Retry" }));
     expect(await within(dialog).findByLabelText("History")).toBeChecked();
+    // Retry disappears with the error, so focus moves to the first chip instead of dropping to the page.
+    expect(within(dialog).getAllByRole("checkbox")[0]).toHaveFocus();
     expect(within(dialog).getByRole("button", { name: "Save topics" })).toBeEnabled();
     expect(within(dialog).queryByRole("alert")).not.toBeInTheDocument();
+    expect(interestsApi.replace).not.toHaveBeenCalled();
   });
 
   it("#380: opened while topics load, the picker waits and then prefills them", async () => {
@@ -193,5 +196,7 @@ describe("PersonalizedLanes", () => {
     resolve(["history"]);
     expect(await within(dialog).findByLabelText("History")).toBeChecked();
     expect(within(dialog).getByRole("button", { name: "Save topics" })).toBeEnabled();
+    fireEvent.keyDown(window, { key: "Escape" });
+    expect(screen.queryByRole("dialog")).not.toBeInTheDocument();
   });
 });
