@@ -124,7 +124,8 @@ const ReviewQueuePage = () => {
     try {
       const result = await query.refetch();
       if (!mounted.current) return;
-      if (!result.data || result.data.items.length === 0 || result.data.dueCount < BOSS_FIGHT_MIN_DUE) setBossActive(false);
+      // A failed refetch keeps the old data; never restart the boss over the finished quiz.
+      if (result.isError || !result.data || result.data.items.length === 0 || result.data.dueCount < BOSS_FIGHT_MIN_DUE) setBossActive(false);
     } finally {
       if (mounted.current) setRematching(false);
     }

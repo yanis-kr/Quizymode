@@ -250,6 +250,25 @@ describe("ReviewQueuePage", () => {
       expect(reviewQueueApi.get).toHaveBeenCalledTimes(2);
     });
 
+    it("stays on the outcome when the rematch reload fails", async () => {
+      // clearAllMocks keeps queued once-values from earlier tests; start from a clean mock.
+      vi.mocked(reviewQueueApi.get).mockReset().mockResolvedValueOnce(queue(5));
+      vi.mocked(reviewQueueApi.getSummary).mockResolvedValue({ dueCount: 6, totalCount: 6, nextDueAt: null });
+      renderWithProviders(<ReviewQueuePage />);
+      await startBoss();
+      ids.forEach((id, index) => answer(id, true, index === ids.length - 1));
+      expect(await screen.findByText("Another boss is ready now.")).toBeInTheDocument();
+
+      vi.mocked(reviewQueueApi.get).mockRejectedValue(new Error("offline"));
+      const outcomeCard = screen.getByRole("heading", { name: "Boss defeated!" }).parentElement!;
+      fireEvent.click(within(outcomeCard).getByRole("button", { name: "Boss fight" }));
+
+      // The page retries a failed load once (about 1 s) before giving up.
+      await waitFor(() => expect(reviewQueueApi.get).toHaveBeenCalledTimes(2));
+      await waitFor(() => expect(screen.queryByRole("meter")).toBeNull(), { timeout: 4000 });
+      expect(screen.queryByRole("button", { name: /Right a/ })).toBeNull();
+    });
+
     it("ignores answers from Play again after the first run decided the outcome", async () => {
       vi.mocked(reviewQueueApi.get).mockResolvedValue(queue(5));
       renderWithProviders(<ReviewQueuePage />);
