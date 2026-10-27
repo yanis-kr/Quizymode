@@ -87,10 +87,16 @@ public sealed class GroupLabelReadTests : ItemTestFixture
     [InlineData("a\nb")]
     [InlineData("a\rb")]
     [InlineData("a\tb")]
-    [InlineData("a​b")]
     [InlineData("a\u0000b")]
     public void HasValidCharacters_RejectsLineBreaksControlAndFormatChars(string value) =>
         ItemGroupLabelHelper.HasValidCharacters(value).Should().BeFalse();
+
+    [Theory]
+    [InlineData(0x200B)]
+    [InlineData(0x2028)]
+    [InlineData(0x2029)]
+    public void HasValidCharacters_RejectsFormatAndUnicodeSeparators(int codePoint) =>
+        ItemGroupLabelHelper.HasValidCharacters($"a{(char)codePoint}b").Should().BeFalse();
 
     [Fact]
     public void HasValidCharacters_AcceptsOrdinaryText()

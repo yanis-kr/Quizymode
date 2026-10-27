@@ -196,7 +196,7 @@ const SortItPage = () => {
       <GamesEmptyState
         quizPath={quizPath}
         heading="No sortable groups here"
-        message="Sort It needs 2 to 4 groups with at least 4 short questions each."
+        message="Sort It needs 2 to 4 groups with at least 4 short answers each."
       />
     );
   } else if (!run) {

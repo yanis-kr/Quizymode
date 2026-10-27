@@ -194,7 +194,7 @@ describe("SortItPage", () => {
       } as never);
       renderPage();
       expect(await screen.findByRole("heading", { name: "No sortable groups here" })).toBeInTheDocument();
-      expect(screen.getByText("Sort It needs 2 to 4 groups with at least 4 short questions each.")).toBeInTheDocument();
+      expect(screen.getByText("Sort It needs 2 to 4 groups with at least 4 short answers each.")).toBeInTheDocument();
       expect(screen.getByRole("link", { name: "Open Quiz" })).toBeInTheDocument();
     });
 

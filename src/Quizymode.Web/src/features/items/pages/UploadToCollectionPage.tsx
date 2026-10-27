@@ -219,7 +219,7 @@ const UploadToCollectionPage = ({
     }));
     const groupLabelRows = mapped
       .map((row, index) =>
-        row.groupLabel !== undefined && (row.groupLabel.length > 30 || /[\p{Cc}\p{Cf}]/u.test(row.groupLabel))
+        row.groupLabel !== undefined && (row.groupLabel.length > 30 || /[\p{Cc}\p{Cf}\p{Zl}\p{Zp}]/u.test(row.groupLabel))
           ? index + 1
           : 0
       )

@@ -30,7 +30,7 @@ internal static class ItemGroupLabelHelper
         foreach (char c in value.Trim())
         {
             if (c is '\r' or '\n' || char.IsControl(c)
-                || CharUnicodeInfo.GetUnicodeCategory(c) == UnicodeCategory.Format)
+                || CharUnicodeInfo.GetUnicodeCategory(c) is UnicodeCategory.Format or UnicodeCategory.LineSeparator or UnicodeCategory.ParagraphSeparator)
             {
                 return false;
             }
