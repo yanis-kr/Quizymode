@@ -97,7 +97,7 @@ const SurvivalPage = () => {
     setRunBox({ scopeKey, state: next });
     if (next.status === "finished") {
       const result: FinishResult | null = finishResult?.runId === next.runId ? finishResult : null;
-      announce(`Game over. Best streak ${next.longestStreak}.${result?.isNewBest ? " New best!" : ""}`);
+      announce(`Game over. Streak ${next.longestStreak}.${result?.isNewBest ? " New best!" : ""}`);
       if (result?.isNewBest) void celebratePerfectScore(next.runId);
     }
   };

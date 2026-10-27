@@ -328,7 +328,7 @@ describe("SurvivalPage", () => {
       expect(screen.getByText("Streak 2")).toBeInTheDocument();
       expect(screen.getByText("2 of 5 right")).toBeInTheDocument();
       expect(screen.getByText("New best!")).toBeInTheDocument();
-      expect(screen.getByRole("status")).toHaveTextContent("Game over. Best streak 2. New best!");
+      expect(screen.getByRole("status")).toHaveTextContent("Game over. Streak 2. New best!");
       expect(within(screen.getByRole("region", { name: "Misses" })).getAllByRole("listitem")).toHaveLength(3);
       expect(screen.queryByRole("button", { name: "Add misses to Review" })).toBeNull();
       expect(screen.getByRole("link", { name: "Back to games" })).toHaveAttribute("href", "/games/science");
