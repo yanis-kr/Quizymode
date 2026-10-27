@@ -27,6 +27,10 @@ internal static class GameRosterEligibility
     /// Items that suit a question game (short question, short answer, a distinct short distractor) or Sort It
     /// (a group label plus a short answer). Selects every Items column so EF can compose over it.
     /// </summary>
+    /// <remarks>
+    /// lower() follows the database collation while JS toLowerCase() uses full Unicode mapping; they can differ only for
+    /// rare non-ASCII letters (for example U+0130), and the client re-checks every item.
+    /// </remarks>
     public static readonly string Sql =
         "SELECT i.* FROM \"Items\" AS i WHERE (" +
         $"{Within("i.\"Question\"", MaxQuestionChars)} AND {Within("i.\"CorrectAnswer\"", MaxAnswerChars)} AND EXISTS (" +
