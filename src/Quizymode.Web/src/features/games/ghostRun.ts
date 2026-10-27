@@ -133,20 +133,20 @@ export function describeMatchRaceGhost(deltaMs: number | null): GhostLine {
   if (tenths === 0) return { text: "Level with your ghost.", tone: "level" };
   const seconds: string = (tenths / 10).toFixed(1);
   return deltaMs > 0
-    ? { text: `${seconds} s ahead of your ghost`, tone: "ahead" }
-    : { text: `${seconds} s behind your ghost`, tone: "behind" };
+    ? { text: `${seconds} s ahead of your ghost.`, tone: "ahead" }
+    : { text: `${seconds} s behind your ghost.`, tone: "behind" };
 }
 
 /** Finish line for Survival; `delta` is your correct answers minus the ghost's at `endMs`, null without a ghost. */
 export function describeSurvivalGhost(delta: number | null, endMs: number): GhostLine {
   if (delta === null) return { text: FIRST_RUN_TEXT, tone: "first" };
   const at: string = formatSeconds(endMs);
-  if (delta === 0) return { text: `Level with your ghost at ${at}`, tone: "level" };
+  if (delta === 0) return { text: `Level with your ghost at ${at}.`, tone: "level" };
   const count: number = Math.abs(delta);
   const noun: string = count === 1 ? "answer" : "answers";
   return delta > 0
-    ? { text: `${count} ${noun} ahead of your ghost at ${at}`, tone: "ahead" }
-    : { text: `${count} ${noun} behind your ghost at ${at}`, tone: "behind" };
+    ? { text: `${count} ${noun} ahead of your ghost at ${at}.`, tone: "ahead" }
+    : { text: `${count} ${noun} behind your ghost at ${at}.`, tone: "behind" };
 }
 
 /** Test-only: clears the in-memory fallback. */

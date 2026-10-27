@@ -365,6 +365,8 @@ describe("MatchRacePage", () => {
       await playQuickly();
       expect(await screen.findByText("First run: this is your ghost now.")).toBeInTheDocument();
       expect(readGhost(ghostKey)).toEqual([0, 1000, 2000]);
+      expect(screen.getByRole("status")).toHaveTextContent("Done in 0:02.0. New best! First run: this is your ghost now.");
+      expect(screen.getByRole("status").textContent).not.toContain("..");
     });
 
     it("shows the ghost progress by elapsed time while playing", async () => {
@@ -385,8 +387,9 @@ describe("MatchRacePage", () => {
       writeMatchRaceGhostIfBetter(ghostKey, [0, 5000, 10000]);
       renderPage();
       await playQuickly();
-      expect(await screen.findByText("8.0 s ahead of your ghost")).toBeInTheDocument();
+      expect(await screen.findByText("8.0 s ahead of your ghost.")).toBeInTheDocument();
       expect(screen.getByRole("status")).toHaveTextContent("Done in 0:02.0. New best! 8.0 s ahead of your ghost.");
+      expect(screen.getByRole("status").textContent).not.toContain("..");
       expect(readGhost(ghostKey)).toEqual([0, 1000, 2000]);
     });
 
@@ -394,7 +397,7 @@ describe("MatchRacePage", () => {
       writeMatchRaceGhostIfBetter(ghostKey, [0, 500, 1000]);
       renderPage();
       await playQuickly();
-      expect(await screen.findByText("1.0 s behind your ghost")).toBeInTheDocument();
+      expect(await screen.findByText("1.0 s behind your ghost.")).toBeInTheDocument();
       expect(readGhost(ghostKey)).toEqual([0, 500, 1000]);
     });
 

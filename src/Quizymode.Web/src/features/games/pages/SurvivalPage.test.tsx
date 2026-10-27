@@ -439,8 +439,8 @@ describe("SurvivalPage", () => {
     it("reports answers ahead of the ghost at the same moment, announces it and replaces a shorter ghost", async () => {
       writeSurvivalGhostIfBetter(ghostKey, [0]);
       await playToResults(2);
-      expect(screen.getByText(/^1 answer ahead of your ghost at 0:0\d$/)).toBeInTheDocument();
-      expect(screen.getByRole("status")).toHaveTextContent(/Game over\. Streak 2\..*1 answer ahead of your ghost at 0:0\d\./);
+      expect(screen.getByText(/^1 answer ahead of your ghost at 0:0\d\.$/)).toBeInTheDocument();
+      expect(screen.getByRole("status")).toHaveTextContent(/Game over\. Streak 2\..*1 answer ahead of your ghost at 0:0\d\.$/);
       expect(readGhost(ghostKey)).toHaveLength(2);
     });
 
@@ -448,7 +448,7 @@ describe("SurvivalPage", () => {
       const strong = [0, 10, 20, 30, 40];
       writeSurvivalGhostIfBetter(ghostKey, strong);
       await playToResults(2);
-      expect(screen.getByText(/^3 answers behind your ghost at 0:0\d$/)).toBeInTheDocument();
+      expect(screen.getByText(/^3 answers behind your ghost at 0:0\d\.$/)).toBeInTheDocument();
       expect(readGhost(ghostKey)).toEqual(strong);
     });
   });

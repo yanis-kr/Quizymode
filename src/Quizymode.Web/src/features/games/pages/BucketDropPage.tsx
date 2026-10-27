@@ -67,11 +67,18 @@ const BucketDropPage = () => {
   const run: BucketDropRunState | null = runBox && runBox.scopeKey === scopeKey ? runBox.state : null;
   const itemsById = useMemo(() => new Map<string, ItemResponse>(pool.map((item) => [item.id, item])), [pool]);
 
+  // The latest state is also kept in a ref, updated synchronously, for handlers that can fire before a render.
+  const runRef = useRef<BucketDropRunState | null>(null);
+  const commit = (state: BucketDropRunState) => {
+    runRef.current = state;
+    setRunBox({ scopeKey, state });
+  };
+
   // A new id per event makes the live region re-announce a repeated message.
   const announce = (text: string) => setAnnouncement((current) => ({ id: current.id + 1, text }));
 
   const startRun = () => {
-    setRunBox({ scopeKey, state: createBucketDropRun(pool, createAnalyticsId()) });
+    commit(createBucketDropRun(pool, createAnalyticsId()));
     announce("");
     setFinishResult(null);
   };
@@ -90,7 +97,7 @@ const BucketDropPage = () => {
 
   /** Reports and stores the result the moment the last life goes, not when the feedback ends. */
   const settle = (previous: BucketDropRunState, next: BucketDropRunState) => {
-    setRunBox({ scopeKey, state: next });
+    commit(next);
     if (previous.status === "ready") trackGameStarted(BUCKET_DROP_ID, scope, next.runId, next.poolIds.length);
     const result = next.lastResult;
     if (result?.isCorrect) {
@@ -106,16 +113,19 @@ const BucketDropPage = () => {
     }
   };
 
+  // Reduce against the latest committed state, so a tap or key in the same tick as a landing cannot overwrite it.
   const handlePick = (index: number) => {
-    if (!run) return;
-    const next: BucketDropRunState = reduceBucketDropRun(run, { type: "pick", index });
-    if (next !== run) settle(run, next);
+    const current = runRef.current;
+    if (!run || !current) return;
+    const next: BucketDropRunState = reduceBucketDropRun(current, { type: "pick", index });
+    if (next !== current) settle(current, next);
   };
 
   const handleLand = () => {
-    if (!run) return;
-    const next: BucketDropRunState = reduceBucketDropRun(run, { type: "land" });
-    if (next !== run) settle(run, next);
+    const current = runRef.current;
+    if (!run || !current || current.status !== "playing") return;
+    const next: BucketDropRunState = reduceBucketDropRun(current, { type: "land" });
+    if (next !== current) settle(current, next);
   };
 
   // After the feedback the next card starts to fall, or the game ends.
@@ -123,7 +133,7 @@ const BucketDropPage = () => {
     if (!run || status !== "feedback") return;
     const id = window.setTimeout(() => {
       const next: BucketDropRunState = reduceBucketDropRun(run, { type: "next" });
-      setRunBox({ scopeKey, state: next });
+      commit(next);
       if (next.status === "finished") {
         const result: FinishResult | null = finishResult?.runId === next.runId ? finishResult : null;
         announce(`Game over. Score ${next.score}.${result?.isNewBest ? " New best!" : ""}`);

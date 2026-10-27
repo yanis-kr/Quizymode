@@ -119,11 +119,12 @@ const ReviewQueuePage = () => {
 
   const handleRematch = async () => {
     setRematching(true);
+    // Reset first so no frame shows the new questions under the old outcome.
+    startBoss();
     try {
       const result = await query.refetch();
       if (!mounted.current) return;
-      if (result.data && result.data.items.length > 0 && result.data.dueCount >= BOSS_FIGHT_MIN_DUE) startBoss();
-      else setBossActive(false);
+      if (!result.data || result.data.items.length === 0 || result.data.dueCount < BOSS_FIGHT_MIN_DUE) setBossActive(false);
     } finally {
       if (mounted.current) setRematching(false);
     }

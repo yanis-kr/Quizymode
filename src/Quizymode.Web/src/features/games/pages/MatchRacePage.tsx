@@ -141,7 +141,7 @@ const MatchRacePage = () => {
       const ghostLine: GhostLine = describeMatchRaceGhost(ghostMarks ? compareMatchRaceToGhost(ghostMarks, elapsedMs) : null);
       writeMatchRaceGhostIfBetter(matchRaceGhostKey(scopeKey, next.pairCount), marksRef.current);
       setFinishResult({ runId: next.runId, elapsedMs, bestMs: result.best, isNewBest: result.isNewBest, ghostLine });
-      announce(`Done in ${formatGameTime(elapsedMs)}.${result.isNewBest ? " New best!" : ""} ${ghostLine.text}.`);
+      announce(`Done in ${formatGameTime(elapsedMs)}.${result.isNewBest ? " New best!" : ""} ${ghostLine.text}`);
       if (result.isNewBest) void celebratePerfectScore(next.runId);
       return;
     }

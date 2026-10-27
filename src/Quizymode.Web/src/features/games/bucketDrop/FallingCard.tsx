@@ -59,6 +59,11 @@ export function FallingCard({
     if (!running) return;
     let frame = 0;
     let last: number | null = null;
+    // Browsers stop frames in a hidden tab, so the first frame after returning must not add the whole gap.
+    const onVisibility = () => {
+      last = null;
+    };
+    document.addEventListener("visibilitychange", onVisibility);
     const tick = (now: number) => {
       if (document.hidden) {
         last = null;
@@ -75,7 +80,10 @@ export function FallingCard({
       frame = window.requestAnimationFrame(tick);
     };
     frame = window.requestAnimationFrame(tick);
-    return () => window.cancelAnimationFrame(frame);
+    return () => {
+      document.removeEventListener("visibilitychange", onVisibility);
+      window.cancelAnimationFrame(frame);
+    };
     // apply only reads refs and reducedMotion, which is fixed for a mount.
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [running, fallMs]);

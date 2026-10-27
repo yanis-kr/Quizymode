@@ -73,13 +73,13 @@ describe("ghostRun", () => {
   });
 
   it("describes the comparison", () => {
-    expect(describeMatchRaceGhost(1400)).toEqual({ text: "1.4 s ahead of your ghost", tone: "ahead" });
-    expect(describeMatchRaceGhost(-2100)).toEqual({ text: "2.1 s behind your ghost", tone: "behind" });
+    expect(describeMatchRaceGhost(1400)).toEqual({ text: "1.4 s ahead of your ghost.", tone: "ahead" });
+    expect(describeMatchRaceGhost(-2100)).toEqual({ text: "2.1 s behind your ghost.", tone: "behind" });
     expect(describeMatchRaceGhost(20).tone).toBe("level");
     expect(describeMatchRaceGhost(null)).toEqual({ text: "First run: this is your ghost now.", tone: "first" });
-    expect(describeSurvivalGhost(3, 42500).text).toBe("3 answers ahead of your ghost at 0:42");
-    expect(describeSurvivalGhost(-1, 65000).text).toBe("1 answer behind your ghost at 1:05");
-    expect(describeSurvivalGhost(0, 42500).text).toBe("Level with your ghost at 0:42");
+    expect(describeSurvivalGhost(3, 42500).text).toBe("3 answers ahead of your ghost at 0:42.");
+    expect(describeSurvivalGhost(-1, 65000).text).toBe("1 answer behind your ghost at 1:05.");
+    expect(describeSurvivalGhost(0, 42500).text).toBe("Level with your ghost at 0:42.");
     expect(describeSurvivalGhost(null, 0).tone).toBe("first");
   });
 

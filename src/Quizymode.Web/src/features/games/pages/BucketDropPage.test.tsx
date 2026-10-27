@@ -284,18 +284,41 @@ describe("BucketDropPage", () => {
       expect(bucket(`right-${n}`)).toHaveTextContent("Right answer");
     });
 
-    it("pauses during feedback and while the tab is hidden", async () => {
+    it("pauses while the tab is hidden: no frames run, then one late frame adds nothing", async () => {
       await openPage();
       await startFalling();
-      Object.defineProperty(document, "hidden", { configurable: true, get: () => true });
       await fall(100);
-      await fall(30000);
-      Object.defineProperty(document, "hidden", { configurable: true, get: () => false });
-      await fall(100);
-      await fall(5000);
-      expect(lives(3)).toBeInTheDocument();
       await fall(1000);
+      Object.defineProperty(document, "hidden", { configurable: true, get: () => true });
+      await act(async () => {
+        document.dispatchEvent(new Event("visibilitychange"));
+      });
+      Object.defineProperty(document, "hidden", { configurable: true, get: () => false });
+      await act(async () => {
+        document.dispatchEvent(new Event("visibilitychange"));
+      });
+      await fall(30000);
+      expect(lives(3)).toBeInTheDocument();
+      await fall(4000);
+      expect(lives(3)).toBeInTheDocument();
+      await fall(1100);
       expect(lives(2)).toBeInTheDocument();
+    });
+
+    it("applies only one outcome when a landing and a pick arrive in the same tick", async () => {
+      await openPage();
+      await startFalling();
+      await fall(100);
+      const n = questionN();
+      await act(async () => {
+        frameClock += 6000;
+        const due = [...frames.values()];
+        frames.clear();
+        due.forEach((callback) => callback(frameClock));
+        fireEvent.click(bucket(`right-${n}`));
+      });
+      expect(lives(2)).toBeInTheDocument();
+      expect(screen.getByText("Score 1")).toBeInTheDocument();
     });
 
     it("speeds up by 15% after five correct answers", async () => {
