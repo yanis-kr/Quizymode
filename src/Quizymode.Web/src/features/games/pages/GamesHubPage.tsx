@@ -1,15 +1,32 @@
 import { Link } from "react-router-dom";
-import { BoltIcon } from "@heroicons/react/24/outline";
 import LoadingSpinner from "@/components/LoadingSpinner";
 import ErrorMessage from "@/components/ErrorMessage";
 import { ScopeSecondaryBar } from "@/components/ScopeSecondaryBar";
 import { GAME_MIN_ITEMS, getMatchRaceTargetPairs } from "../gameRoster";
-import { GAMES } from "../gameRegistry";
+import { GAMES, MATCH_RACE_ID, SURVIVAL_ID, SWIPE_BLITZ_ID } from "../gameRegistry";
 import { buildGamePath, gameScopeKey } from "../gameScope";
+import { readGameBest, survivalBestKey, swipeBlitzBestKey } from "../gameBest";
 import { useGameRoster } from "../useGameRoster";
 import { GamesEmptyState } from "../GamesEmptyState";
 import { readBestForScope } from "../matchRace/matchRaceBest";
 import { formatGameTime } from "../matchRace/matchRaceRun";
+
+/** "Best 0:42.1" / "Best 23" / "Best streak 12"; null when the scope has no best for the game. */
+function getBestLabel(gameId: string, scopeKey: string, targetPairs: number): string | null {
+  if (gameId === MATCH_RACE_ID) {
+    const ms: number | null = readBestForScope(scopeKey, targetPairs);
+    return ms === null ? null : `Best ${formatGameTime(ms)}`;
+  }
+  if (gameId === SWIPE_BLITZ_ID) {
+    const score: number | null = readGameBest(swipeBlitzBestKey(scopeKey));
+    return score && score > 0 ? `Best ${score}` : null;
+  }
+  if (gameId === SURVIVAL_ID) {
+    const streak: number | null = readGameBest(survivalBestKey(scopeKey));
+    return streak && streak > 0 ? `Best streak ${streak}` : null;
+  }
+  return null;
+}
 
 const GamesHubPage = () => {
   const { scope, pool, isPending, error, refetch, availableModes, handleModeChange, quizPath } = useGameRoster();
@@ -40,23 +57,25 @@ const GamesHubPage = () => {
     body = (
       <>
         <h1 className="mx-auto mt-4 max-w-4xl text-lg font-semibold text-gray-900">Games</h1>
-        <div className="mx-auto mt-4 grid max-w-4xl grid-cols-1 gap-4 sm:grid-cols-2">
+        <div className="mx-auto mt-4 grid max-w-4xl grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {GAMES.map((game) => {
-            const best: number | null = readBestForScope(scopeKey, targetPairs);
+            const best: string | null = getBestLabel(game.id, scopeKey, targetPairs);
+            const Icon = game.icon;
             return (
-              <section key={game.id} className="rounded-lg bg-white p-4 shadow sm:p-6">
+              <section key={game.id} className="flex flex-col rounded-lg bg-white p-4 shadow sm:p-6">
                 <div className="flex items-center gap-3">
                   <span className="flex h-10 w-10 items-center justify-center rounded-md bg-indigo-50 text-indigo-700">
-                    <BoltIcon className="h-6 w-6" aria-hidden="true" />
+                    <Icon className="h-6 w-6" aria-hidden="true" />
                   </span>
                   <h2 className="text-base font-semibold text-gray-900">{game.name}</h2>
                 </div>
                 <p className="mt-2 text-sm text-gray-600">{game.blurb}</p>
-                {best !== null && <p className="mt-1 text-xs text-gray-500">Best {formatGameTime(best)}</p>}
+                {best !== null && <p className="mt-1 text-xs text-gray-500">{best}</p>}
+                <div className="mt-4" />
                 <Link
                   to={buildGamePath(scope, game.id)}
                   aria-label={`Play ${game.name}`}
-                  className="mt-4 inline-flex min-h-[44px] w-full items-center justify-center rounded-md bg-indigo-600 px-4 py-2 font-semibold text-white hover:bg-indigo-700 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500 focus-visible:ring-offset-2 sm:w-auto"
+                  className="mt-auto inline-flex min-h-[44px] w-full items-center justify-center rounded-md bg-indigo-600 px-4 py-2 font-semibold text-white hover:bg-indigo-700 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500 focus-visible:ring-offset-2 sm:w-auto"
                 >
                   Play
                 </Link>

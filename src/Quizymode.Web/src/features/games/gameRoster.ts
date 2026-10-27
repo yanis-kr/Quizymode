@@ -1,13 +1,19 @@
-import { isQuizPlayable } from "@/features/items/quiz/quizRun";
+import { getQuizDistractors } from "@/features/items/quiz/quizRun";
+import { seededShuffle } from "@/features/items/learn/learnRun";
 import type { ItemResponse } from "@/types/api";
 
-/** Tiles show raw item text, so games only take short, quiz-playable items (AC 3.20.2). */
+/** Tiles show raw item text, so games only take short items with at least one short distractor (AC 3.20.2). */
 export const GAME_MAX_QUESTION_CHARS = 80;
 export const GAME_MAX_ANSWER_CHARS = 25;
 /** Fewest eligible items a game needs; below this the scope shows the empty state. */
 export const GAME_MIN_ITEMS = 3;
 export const MATCH_RACE_PAIRS_MOBILE = 3;
 export const MATCH_RACE_PAIRS_DESKTOP = 6;
+export const SWIPE_BLITZ_ROUND_MS = 60000;
+/** How long a missed Swipe Blitz card shows its answer; input is ignored meanwhile. */
+export const SWIPE_REVEAL_MS = 1000;
+export const SURVIVAL_HEARTS = 3;
+export const SURVIVAL_CORRECT_ADVANCE_MS = 600;
 /** Items requested for category, keyword and global scopes. */
 export const GAME_FETCH_SIZE = 200;
 
@@ -18,6 +24,16 @@ function textLength(text: string): number {
   return Array.from(text.trim()).length;
 }
 
+/** The quiz distractors (AC 3.6.17) that are short enough to show in a game. */
+export function getGameDistractors(item: Pick<ItemResponse, "correctAnswer" | "incorrectAnswers">): string[] {
+  return getQuizDistractors(item).filter((distractor) => textLength(distractor) <= GAME_MAX_ANSWER_CHARS);
+}
+
+/** The correct answer plus up to 3 short distractors, shuffled from the seed (2-4 options). */
+export function getGameOptions(item: Pick<ItemResponse, "correctAnswer" | "incorrectAnswers">, seedText: string): string[] {
+  return seededShuffle([item.correctAnswer, ...getGameDistractors(item).slice(0, 3)], seedText);
+}
+
 export function isGameEligible(item: ItemResponse): boolean {
   const question: string = item.question ?? "";
   const answer: string = item.correctAnswer ?? "";
@@ -26,7 +42,7 @@ export function isGameEligible(item: ItemResponse): boolean {
     textLength(answer) > 0 &&
     textLength(question) <= GAME_MAX_QUESTION_CHARS &&
     textLength(answer) <= GAME_MAX_ANSWER_CHARS &&
-    isQuizPlayable(item)
+    getGameDistractors(item).length >= 1
   );
 }
 

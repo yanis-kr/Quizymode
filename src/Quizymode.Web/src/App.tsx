@@ -58,6 +58,8 @@ const ProgressPage = lazyPage(() => import("./features/progress/ProgressPage"));
 const SearchPage = lazyPage(() => import("./features/search/pages/SearchPage"));
 const GamesHubPage = lazyPage(() => import("./features/games/pages/GamesHubPage"));
 const MatchRacePage = lazyPage(() => import("./features/games/pages/MatchRacePage"));
+const SwipeBlitzPage = lazyPage(() => import("./features/games/pages/SwipeBlitzPage"));
+const SurvivalPage = lazyPage(() => import("./features/games/pages/SurvivalPage"));
 
 function App() {
   const location = useLocation();
@@ -124,6 +126,10 @@ function App() {
         <Route path="/games/collections/:collectionId/:slug?" element={<GamesHubPage />} />
         <Route path="/games/match-race/collections/:collectionId/:slug?" element={<MatchRacePage />} />
         <Route path="/games/match-race/:category?" element={<MatchRacePage />} />
+        <Route path="/games/swipe-blitz/collections/:collectionId/:slug?" element={<SwipeBlitzPage />} />
+        <Route path="/games/swipe-blitz/:category?" element={<SwipeBlitzPage />} />
+        <Route path="/games/survival/collections/:collectionId/:slug?" element={<SurvivalPage />} />
+        <Route path="/games/survival/:category?" element={<SurvivalPage />} />
         <Route path="/games/:category?" element={<GamesHubPage />} />
         <Route path="/daily" element={<DailyQuizPage />} />
         <Route path="/progress" element={<ProgressPage />} />
