@@ -56,6 +56,8 @@ const AdminImportPage = lazyPage(() => import("./features/admin/pages/AdminImpor
 const ReviewQueuePage = lazyPage(() => import("./features/learningLoop/pages/ReviewQueuePage"));
 const ProgressPage = lazyPage(() => import("./features/progress/ProgressPage"));
 const SearchPage = lazyPage(() => import("./features/search/pages/SearchPage"));
+const GamesHubPage = lazyPage(() => import("./features/games/pages/GamesHubPage"));
+const MatchRacePage = lazyPage(() => import("./features/games/pages/MatchRacePage"));
 
 function App() {
   const location = useLocation();
@@ -119,6 +121,10 @@ function App() {
           element={<LearnModePage />}
         />
         <Route path="/learn/:category?" element={<LearnModePage />} />
+        <Route path="/games/collections/:collectionId/:slug?" element={<GamesHubPage />} />
+        <Route path="/games/match-race/collections/:collectionId/:slug?" element={<MatchRacePage />} />
+        <Route path="/games/match-race/:category?" element={<MatchRacePage />} />
+        <Route path="/games/:category?" element={<GamesHubPage />} />
         <Route path="/daily" element={<DailyQuizPage />} />
         <Route path="/progress" element={<ProgressPage />} />
         <Route path="/login" element={<LoginPage />} />

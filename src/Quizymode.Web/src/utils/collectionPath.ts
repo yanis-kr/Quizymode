@@ -21,7 +21,7 @@ export function buildCollectionPath(
 }
 
 export function buildCollectionStudyPath(
-  mode: "explore" | "quiz" | "learn",
+  mode: "explore" | "quiz" | "learn" | "games",
   collectionId: string,
   collectionName?: string | null,
   itemId?: string | null

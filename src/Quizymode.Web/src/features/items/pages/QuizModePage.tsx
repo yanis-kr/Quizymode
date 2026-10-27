@@ -1102,7 +1102,7 @@ const QuizModePage = () => {
 
   const hideSetsMode = !!category && navigationKeywords.length >= 2;
   const categoryAvailableModes: ViewMode[] = collectionId
-    ? ["list", "explore", "quiz", "learn"]
+    ? ["list", "explore", "quiz", "learn", "games"]
     : getCategoryScopeModeConfig("sets", hideSetsMode).availableModes;
   const categoryScopePath = category
     ? buildCategoryPath(categoryNameToSlug(category), navigationKeywords)
@@ -1234,6 +1234,12 @@ const QuizModePage = () => {
             else if (category)
               navigate(`/learn/${categoryNameToSlug(category)}${search}`);
             else navigate(`/learn${search}`);
+          } else if (viewMode === "games") {
+            if (collectionId)
+              navigate(`${buildCollectionStudyPath("games", collectionId, collectionInfo?.name)}${search}`);
+            else if (category)
+              navigate(`/games/${categoryNameToSlug(category)}${search}`);
+            else navigate(`/games${search}`);
           }
         }}
       />
