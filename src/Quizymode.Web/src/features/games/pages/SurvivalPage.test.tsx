@@ -12,6 +12,7 @@ import { recordAuthenticatedCompletion } from "@/features/studySessions/recordSt
 import { GUEST_HISTORY_STORAGE_KEY } from "@/features/guestHistory/guestHistoryStorage";
 import { installMemoryLocalStorage } from "@/test/memoryStorage";
 import { readGameBest, resetGameBestForTests, survivalBestKey } from "../gameBest";
+import { readGhost, resetGhostForTests, survivalGhostKey, writeSurvivalGhostIfBetter } from "../ghostRun";
 import type { ItemResponse } from "@/types/api";
 
 const { mockTrackEventOnce, runCounter } = vi.hoisted(() => ({
@@ -127,6 +128,7 @@ describe("SurvivalPage", () => {
     runCounter.value = 0;
     installMemoryLocalStorage();
     resetGameBestForTests();
+    resetGhostForTests();
     mockAuth.isAuthenticated = false;
     mockAuth.isLoading = false;
     vi.mocked(categoriesApi.getAll).mockResolvedValue({ categories: [{ category: "science" }] } as never);
@@ -394,6 +396,60 @@ describe("SurvivalPage", () => {
       await waitFor(() => expect(screen.getByText("Added 3 to Review.")).toBeInTheDocument());
       expect(reviewQueueApi.enqueue).toHaveBeenCalledTimes(3);
       expect(new Set(vi.mocked(reviewQueueApi.enqueue).mock.calls.map(([id]) => id)).size).toBe(3);
+    });
+  });
+
+  describe("ghost", () => {
+    const ghostKey = survivalGhostKey("category:science|nav=|kw=");
+
+    async function playToResults(correctFirst: number) {
+      await openPage();
+      for (let step = 0; step < correctFirst; step += 1) {
+        pickRight();
+        await advance(700);
+      }
+      await missAndContinue();
+      await missAndContinue();
+      pickWrong();
+      await advance(400);
+      fireEvent.click(screen.getByRole("button", { name: "See results" }));
+    }
+
+    it("shows no ghost track without a stored ghost", async () => {
+      await openPage();
+      expect(screen.queryByText(/^Ghost:/)).toBeNull();
+    });
+
+    it("steps the ghost marker with the run clock", async () => {
+      writeSurvivalGhostIfBetter(ghostKey, [0, 2000, 60000]);
+      await openPage();
+      expect(screen.getByText("Ghost: 0")).toBeInTheDocument();
+      pickRight();
+      expect(screen.getByText("Ghost: 1")).toBeInTheDocument();
+      await advance(3000);
+      expect(screen.getByText("Ghost: 2")).toBeInTheDocument();
+    });
+
+    it("makes the first run the ghost and says so", async () => {
+      await playToResults(2);
+      expect(screen.getByText("First run: this is your ghost now.")).toBeInTheDocument();
+      expect(readGhost(ghostKey)).toHaveLength(2);
+    });
+
+    it("reports answers ahead of the ghost at the same moment, announces it and replaces a shorter ghost", async () => {
+      writeSurvivalGhostIfBetter(ghostKey, [0]);
+      await playToResults(2);
+      expect(screen.getByText(/^1 answer ahead of your ghost at 0:0\d\.$/)).toBeInTheDocument();
+      expect(screen.getByRole("status")).toHaveTextContent(/Game over\. Streak 2\..*1 answer ahead of your ghost at 0:0\d\.$/);
+      expect(readGhost(ghostKey)).toHaveLength(2);
+    });
+
+    it("reports answers behind the ghost and keeps the stronger ghost", async () => {
+      const strong = [0, 10, 20, 30, 40];
+      writeSurvivalGhostIfBetter(ghostKey, strong);
+      await playToResults(2);
+      expect(screen.getByText(/^3 answers behind your ghost at 0:0\d\.$/)).toBeInTheDocument();
+      expect(readGhost(ghostKey)).toEqual(strong);
     });
   });
 });

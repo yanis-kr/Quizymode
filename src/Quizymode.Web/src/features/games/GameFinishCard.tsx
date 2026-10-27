@@ -1,6 +1,7 @@
 import { useEffect, useRef, type ReactNode } from "react";
 import { Link } from "react-router-dom";
 import { StarIcon } from "@heroicons/react/24/solid";
+import type { GhostLine } from "./ghostRun";
 
 interface GameFinishCardProps {
   heading: string;
@@ -9,6 +10,8 @@ interface GameFinishCardProps {
   /** "Best 23"; null when no best is stored. */
   bestLine: string | null;
   isNewBest: boolean;
+  /** How the run compares with the player's ghost; omitted by games without one. */
+  ghostLine?: GhostLine;
   hubPath: string;
   onPlayAgain: () => void;
   /** Rendered after the buttons (the misses). */
@@ -25,6 +28,7 @@ export function GameFinishCard({
   statLine,
   bestLine,
   isNewBest,
+  ghostLine,
   hubPath,
   onPlayAgain,
   children,
@@ -48,6 +52,9 @@ export function GameFinishCard({
         </p>
       ) : (
         bestLine && <p className="mt-2 text-gray-700">{bestLine}</p>
+      )}
+      {ghostLine && (
+        <p className={`mt-1 text-sm ${ghostLine.tone === "ahead" ? "text-green-800" : "text-gray-700"}`}>{ghostLine.text}</p>
       )}
       <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:justify-center">
         <button

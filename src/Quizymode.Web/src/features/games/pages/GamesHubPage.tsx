@@ -3,9 +3,9 @@ import LoadingSpinner from "@/components/LoadingSpinner";
 import ErrorMessage from "@/components/ErrorMessage";
 import { ScopeSecondaryBar } from "@/components/ScopeSecondaryBar";
 import { GAME_MIN_ITEMS, getMatchRaceTargetPairs } from "../gameRoster";
-import { GAMES, MATCH_RACE_ID, SURVIVAL_ID, SWIPE_BLITZ_ID } from "../gameRegistry";
+import { BUCKET_DROP_ID, GAMES, MATCH_RACE_ID, SURVIVAL_ID, SWIPE_BLITZ_ID } from "../gameRegistry";
 import { buildGamePath, gameScopeKey } from "../gameScope";
-import { readGameBest, survivalBestKey, swipeBlitzBestKey } from "../gameBest";
+import { bucketDropBestKey, readGameBest, survivalBestKey, swipeBlitzBestKey } from "../gameBest";
 import { useGameRoster } from "../useGameRoster";
 import { GamesEmptyState } from "../GamesEmptyState";
 import { readBestForScope } from "../matchRace/matchRaceBest";
@@ -24,6 +24,10 @@ function getBestLabel(gameId: string, scopeKey: string, targetPairs: number): st
   if (gameId === SURVIVAL_ID) {
     const streak: number | null = readGameBest(survivalBestKey(scopeKey));
     return streak && streak > 0 ? `Best streak ${streak}` : null;
+  }
+  if (gameId === BUCKET_DROP_ID) {
+    const score: number | null = readGameBest(bucketDropBestKey(scopeKey));
+    return score && score > 0 ? `Best ${score}` : null;
   }
   return null;
 }

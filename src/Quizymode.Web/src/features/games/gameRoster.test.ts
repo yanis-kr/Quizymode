@@ -2,10 +2,12 @@ import { afterEach, describe, expect, it, vi } from "vitest";
 import {
   GAME_MAX_ANSWER_CHARS,
   GAME_MAX_QUESTION_CHARS,
+  buildBucketDropPool,
   buildGamePool,
   getGameDistractors,
   getGameOptions,
   getMatchRaceTargetPairs,
+  isBucketDropEligible,
   isGameEligible,
 } from "./gameRoster";
 import type { ItemResponse } from "@/types/api";
@@ -113,5 +115,23 @@ describe("getMatchRaceTargetPairs", () => {
     expect(getMatchRaceTargetPairs()).toBe(6);
     vi.stubGlobal("matchMedia", () => ({ matches: false }));
     expect(getMatchRaceTargetPairs()).toBe(3);
+  });
+});
+
+describe("Bucket Drop eligibility", () => {
+  it("needs at least two short distractors", () => {
+    expect(isBucketDropEligible(makeItem(1, { incorrectAnswers: ["a"] }))).toBe(false);
+    expect(isBucketDropEligible(makeItem(1, { incorrectAnswers: ["a", "b"] }))).toBe(true);
+    expect(isBucketDropEligible(makeItem(1, { incorrectAnswers: ["a", "b".repeat(26)] }))).toBe(false);
+    expect(isBucketDropEligible(makeItem(1, { incorrectAnswers: ["a", "b".repeat(26), "c"] }))).toBe(true);
+  });
+
+  it("narrows the game pool without changing its order", () => {
+    const pool = buildGamePool([
+      makeItem(1, { incorrectAnswers: ["a", "b"] }),
+      makeItem(2, { incorrectAnswers: ["a"] }),
+      makeItem(3, { incorrectAnswers: ["a", "b", "c"] }),
+    ]);
+    expect(buildBucketDropPool(pool).map((item) => item.id)).toEqual(["id-1", "id-3"]);
   });
 });

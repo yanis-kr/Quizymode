@@ -12,6 +12,10 @@ export function survivalBestKey(scopeKey: string): string {
   return `survival|${scopeKey}`;
 }
 
+export function bucketDropBestKey(scopeKey: string): string {
+  return `bucket-drop|${scopeKey}`;
+}
+
 /** Every stored best (storage merged over the in-memory fallback). Never throws. */
 export function readAllGameBests(): Record<string, number> {
   try {

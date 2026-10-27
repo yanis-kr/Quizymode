@@ -9,6 +9,16 @@ import { GAME_MIN_ITEMS, getMatchRaceTargetPairs } from "../gameRoster";
 import { MATCH_RACE_ID } from "../gameRegistry";
 import { buildGamePath, gameScopeKey } from "../gameScope";
 import { trackGameCompleted, trackGameStarted } from "../gameAnalytics";
+import {
+  compareMatchRaceToGhost,
+  describeMatchRaceGhost,
+  ghostProgressAt,
+  matchRaceGhostKey,
+  readGhost,
+  writeMatchRaceGhostIfBetter,
+  type GhostLine,
+} from "../ghostRun";
+import { GhostTrack } from "../GhostTrack";
 import { useGameRoster } from "../useGameRoster";
 import { GamesEmptyState } from "../GamesEmptyState";
 import { MatchTile, type MatchTileState } from "../matchRace/MatchTile";
@@ -32,6 +42,7 @@ interface FinishResult {
   elapsedMs: number;
   bestMs: number;
   isNewBest: boolean;
+  ghostLine: GhostLine;
 }
 
 const MatchRacePage = () => {
@@ -43,6 +54,9 @@ const MatchRacePage = () => {
   const [nowMs, setNowMs] = useState<number>(() => Date.now());
   const [announcement, setAnnouncement] = useState<{ id: number; text: string }>({ id: 0, text: "" });
   const [finishResult, setFinishResult] = useState<FinishResult | null>(null);
+  // The stored ghost for this run's board size and the elapsed time of each pair matched so far.
+  const [ghostMarks, setGhostMarks] = useState<number[] | null>(null);
+  const marksRef = useRef<number[]>([]);
   const headingRef = useRef<HTMLHeadingElement>(null);
   const finishHandledRunIds = useRef(new Set<string>());
 
@@ -53,14 +67,14 @@ const MatchRacePage = () => {
   const announce = (text: string) => setAnnouncement((current) => ({ id: current.id + 1, text }));
 
   const startRun = () => {
-    setRunBox({
-      scopeKey,
-      state: createMatchRaceRun(
-        pool.map((item) => item.id),
-        getMatchRaceTargetPairs(),
-        createAnalyticsId(),
-      ),
-    });
+    const state: MatchRaceRunState = createMatchRaceRun(
+      pool.map((item) => item.id),
+      getMatchRaceTargetPairs(),
+      createAnalyticsId(),
+    );
+    setRunBox({ scopeKey, state });
+    setGhostMarks(readGhost(matchRaceGhostKey(scopeKey, state.pairCount)));
+    marksRef.current = [];
     announce("");
     setFinishResult(null);
   };
@@ -115,6 +129,8 @@ const MatchRacePage = () => {
     if (next === run) return;
     setNowMs(now);
     setRunBox({ scopeKey, state: next });
+    // Same clock as the reducer (penalties included), so ghost times match the time on screen.
+    if (next.clearedItemIds.length > run.clearedItemIds.length) marksRef.current.push(getElapsedMs(next, now));
     if (next.status === "finished") {
       // Report, store the best time and announce, once per run.
       if (finishHandledRunIds.current.has(next.runId)) return;
@@ -122,8 +138,10 @@ const MatchRacePage = () => {
       const elapsedMs: number = getElapsedMs(next, next.finishedAtMs ?? now);
       trackGameCompleted(MATCH_RACE_ID, scope, next.runId, getFirstTryScore(next), next.pairCount);
       const result = writeBestIfFaster(scopeKey, next.pairCount, elapsedMs);
-      setFinishResult({ runId: next.runId, elapsedMs, bestMs: result.best, isNewBest: result.isNewBest });
-      announce(`Done in ${formatGameTime(elapsedMs)}.${result.isNewBest ? " New best!" : ""}`);
+      const ghostLine: GhostLine = describeMatchRaceGhost(ghostMarks ? compareMatchRaceToGhost(ghostMarks, elapsedMs) : null);
+      writeMatchRaceGhostIfBetter(matchRaceGhostKey(scopeKey, next.pairCount), marksRef.current);
+      setFinishResult({ runId: next.runId, elapsedMs, bestMs: result.best, isNewBest: result.isNewBest, ghostLine });
+      announce(`Done in ${formatGameTime(elapsedMs)}.${result.isNewBest ? " New best!" : ""} ${ghostLine.text}`);
       if (result.isNewBest) void celebratePerfectScore(next.runId);
       return;
     }
@@ -171,6 +189,7 @@ const MatchRacePage = () => {
           elapsedMs={result.elapsedMs}
           bestMs={result.bestMs}
           isNewBest={result.isNewBest}
+          ghostLine={result.ghostLine}
           hubPath={buildGamePath(scope)}
           onPlayAgain={startRun}
         />
@@ -204,6 +223,8 @@ const MatchRacePage = () => {
         </div>
       </div>
     );
+    const elapsedNow: number = getElapsedMs(run, Math.max(nowMs, run.startedAtMs ?? 0));
+    const ghostPairs: number = ghostMarks ? ghostProgressAt(ghostMarks, elapsedNow) : 0;
     body = (
       <section className="mx-auto max-w-4xl rounded-lg bg-white p-4 shadow sm:p-6">
         <div className="flex items-center justify-between gap-3">
@@ -214,9 +235,17 @@ const MatchRacePage = () => {
             <span aria-label={`${run.clearedItemIds.length} of ${run.pairCount} matched`}>
               {run.clearedItemIds.length} / {run.pairCount}
             </span>{" "}
-            · <span aria-hidden="true">{formatGameTime(getElapsedMs(run, Math.max(nowMs, run.startedAtMs ?? 0)))}</span>
+            · <span aria-hidden="true">{formatGameTime(elapsedNow)}</span>
           </p>
         </div>
+        {ghostMarks && (
+          <GhostTrack
+            yours={run.clearedItemIds.length}
+            ghost={ghostPairs}
+            scale={run.pairCount}
+            label={`Ghost: ${ghostPairs} of ${run.pairCount}`}
+          />
+        )}
         <div className="mt-4 grid grid-cols-2 gap-2 sm:gap-6">
           {column("question", "Questions", run.questionOrder)}
           {column("answer", "Answers", run.answerOrder)}
