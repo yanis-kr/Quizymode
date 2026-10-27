@@ -3,6 +3,7 @@ using FluentValidation.Results;
 using Microsoft.AspNetCore.Http;
 using Microsoft.EntityFrameworkCore;
 using Moq;
+using Quizymode.Api.Features.Admin;
 using Quizymode.Api.Features.Analytics;
 using Quizymode.Api.Services;
 using Quizymode.Api.Shared.Kernel;
@@ -68,6 +69,16 @@ public sealed class GameAnalyticsTests : DatabaseTestFixture
     public void NoGameEventIsAFunnelStep()
     {
         AnalyticsEventCatalog.FunnelSteps.Should().NotContain(AnalyticsEventCatalog.GameStarted)
+            .And.NotContain(AnalyticsEventCatalog.GameCompleted);
+    }
+
+    [Fact]
+    public void NoGameEventIsAStudyEventInTheLearningReport()
+    {
+        string[] studyEventNames = (string[])typeof(GetLearningReport)
+            .GetField("StudyEventNames", System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Static)!
+            .GetValue(null)!;
+        studyEventNames.Should().NotContain(AnalyticsEventCatalog.GameStarted)
             .And.NotContain(AnalyticsEventCatalog.GameCompleted);
     }
 

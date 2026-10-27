@@ -14,6 +14,7 @@ test("AC 3.17.12 @smoke - Learn and Games tabs follow Quiz, the strip fits the v
   await categoryCard.click();
   await page.waitForLoadState("networkidle");
 
+  await expect(page.getByRole("tab", { name: /^games$/i })).toBeVisible();
   const labels = await page.getByRole("tab").allTextContents();
   expect(labels.map((label) => label.trim()).slice(-3)).toEqual(["Quiz", "Learn", "Games"]);
 

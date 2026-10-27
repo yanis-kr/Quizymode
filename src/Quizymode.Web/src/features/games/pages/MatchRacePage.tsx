@@ -13,7 +13,7 @@ import { useGameRoster } from "../useGameRoster";
 import { GamesEmptyState } from "../GamesEmptyState";
 import { MatchTile, type MatchTileState } from "../matchRace/MatchTile";
 import { MatchRaceFinish } from "../matchRace/MatchRaceFinish";
-import { readBest, writeBestIfFaster } from "../matchRace/matchRaceBest";
+import { writeBestIfFaster } from "../matchRace/matchRaceBest";
 import {
   createMatchRaceRun,
   formatGameTime,
@@ -41,13 +41,16 @@ const MatchRacePage = () => {
   // The board size is decided once, when a run is created, and never changes mid-run.
   const [runBox, setRunBox] = useState<{ scopeKey: string; state: MatchRaceRunState } | null>(null);
   const [nowMs, setNowMs] = useState<number>(() => Date.now());
-  const [announcement, setAnnouncement] = useState("");
+  const [announcement, setAnnouncement] = useState<{ id: number; text: string }>({ id: 0, text: "" });
   const [finishResult, setFinishResult] = useState<FinishResult | null>(null);
   const headingRef = useRef<HTMLHeadingElement>(null);
   const finishHandledRunIds = useRef(new Set<string>());
 
   const run: MatchRaceRunState | null = runBox && runBox.scopeKey === scopeKey ? runBox.state : null;
   const itemsById = useMemo(() => new Map<string, ItemResponse>(pool.map((item) => [item.id, item])), [pool]);
+
+  // A new id per event makes the live region re-announce a repeated message.
+  const announce = (text: string) => setAnnouncement((current) => ({ id: current.id + 1, text }));
 
   const startRun = () => {
     setRunBox({
@@ -58,7 +61,7 @@ const MatchRacePage = () => {
         createAnalyticsId(),
       ),
     });
-    setAnnouncement("");
+    announce("");
     setFinishResult(null);
   };
 
@@ -80,19 +83,6 @@ const MatchRacePage = () => {
     // Only the run id and its start matter; scope and pair count are fixed for a run.
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [runId, startedAtMs]);
-
-  // Finish: report, store the best time, and announce, once per run.
-  useEffect(() => {
-    if (!run || run.status !== "finished" || finishHandledRunIds.current.has(run.runId)) return;
-    finishHandledRunIds.current.add(run.runId);
-    const elapsedMs: number = getElapsedMs(run, run.finishedAtMs ?? Date.now());
-    trackGameCompleted(MATCH_RACE_ID, scope, run.runId, getFirstTryScore(run), run.pairCount);
-    const result = writeBestIfFaster(scopeKey, run.pairCount, elapsedMs);
-    setFinishResult({ runId: run.runId, elapsedMs, bestMs: result.best, isNewBest: result.isNewBest });
-    setAnnouncement(`Done in ${formatGameTime(elapsedMs)}.${result.isNewBest ? " New best!" : ""}`);
-    if (result.isNewBest) void celebratePerfectScore(run.runId);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [run]);
 
   // The clock ticks only while playing.
   useEffect(() => {
@@ -125,15 +115,26 @@ const MatchRacePage = () => {
     if (next === run) return;
     setNowMs(now);
     setRunBox({ scopeKey, state: next });
-    if (next.status === "finished") return; // announced by the finish effect
+    if (next.status === "finished") {
+      // Report, store the best time and announce, once per run.
+      if (finishHandledRunIds.current.has(next.runId)) return;
+      finishHandledRunIds.current.add(next.runId);
+      const elapsedMs: number = getElapsedMs(next, next.finishedAtMs ?? now);
+      trackGameCompleted(MATCH_RACE_ID, scope, next.runId, getFirstTryScore(next), next.pairCount);
+      const result = writeBestIfFaster(scopeKey, next.pairCount, elapsedMs);
+      setFinishResult({ runId: next.runId, elapsedMs, bestMs: result.best, isNewBest: result.isNewBest });
+      announce(`Done in ${formatGameTime(elapsedMs)}.${result.isNewBest ? " New best!" : ""}`);
+      if (result.isNewBest) void celebratePerfectScore(next.runId);
+      return;
+    }
     if (next.clearedItemIds.length > run.clearedItemIds.length) {
-      setAnnouncement(`Matched. ${next.clearedItemIds.length} of ${next.pairCount}.`);
+      announce(`Matched. ${next.clearedItemIds.length} of ${next.pairCount}.`);
     } else if (next.mistakes > run.mistakes) {
-      setAnnouncement("Not a match. Plus 1 second.");
+      announce("Not a match. Plus 1 second.");
     } else if (next.selected) {
-      setAnnouncement(next.selected.kind === "question" ? "Selected. Pick an answer." : "Selected. Pick a question.");
+      announce(next.selected.kind === "question" ? "Selected. Pick an answer." : "Selected. Pick a question.");
     } else {
-      setAnnouncement("Cleared.");
+      announce("Cleared.");
     }
   };
 
@@ -147,7 +148,7 @@ const MatchRacePage = () => {
   );
   const liveRegion = (
     <div role="status" aria-live="polite" className="sr-only">
-      {announcement}
+      <span key={announcement.id}>{announcement.text}</span>
     </div>
   );
 
@@ -163,16 +164,8 @@ const MatchRacePage = () => {
   } else if (!run) {
     body = <LoadingSpinner />;
   } else if (run.status === "finished") {
-    const result: FinishResult =
-      finishResult?.runId === run.runId
-        ? finishResult
-        : {
-            runId: run.runId,
-            elapsedMs: getElapsedMs(run, run.finishedAtMs ?? nowMs),
-            bestMs: readBest(scopeKey, run.pairCount) ?? 0,
-            isNewBest: false,
-          };
-    body = (
+    const result: FinishResult | null = finishResult?.runId === run.runId ? finishResult : null;
+    body = result && (
       <div className="mt-4">
         <MatchRaceFinish
           elapsedMs={result.elapsedMs}

@@ -29,6 +29,12 @@ describe("createMatchRaceRun", () => {
     expect(first.status).toBe("ready");
   });
 
+  it("produces different boards for different run ids", () => {
+    const pool = Array.from({ length: 40 }, (_, index) => `item-${index}`);
+    const boards = new Set(Array.from({ length: 5 }, (_, index) => createMatchRaceRun(pool, 6, `run-${index}`).itemIds.join(",")));
+    expect(boards.size).toBeGreaterThan(1);
+  });
+
   it("uses a smaller board when the pool is smaller than the target", () => {
     expect(createMatchRaceRun(["a", "b", "c"], 6, "run-1").pairCount).toBe(3);
   });

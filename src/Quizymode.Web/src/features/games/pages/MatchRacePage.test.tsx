@@ -120,6 +120,7 @@ describe("MatchRacePage", () => {
     vi.mocked(categoriesApi.getAll).mockResolvedValue({ categories: [{ category: "science" }] } as never);
     vi.mocked(itemsApi.getRandom).mockResolvedValue({ items: makeItems(8) } as never);
     vi.mocked(collectionsApi.getItems).mockResolvedValue({ items: makeItems(8) } as never);
+    vi.mocked(collectionsApi.getById).mockResolvedValue({ id: "11111111-1111-4111-8111-111111111111", name: "Practice Set" } as never);
   });
 
   afterEach(() => {
@@ -215,10 +216,24 @@ describe("MatchRacePage", () => {
       await waitFor(() => expect(tile("question", a)).toHaveAccessibleName(`Question number ${a}?`), { timeout: 2000 });
     });
 
+    it("re-announces a repeated message, such as two misses in a row", async () => {
+      renderPage();
+      await screen.findByRole("heading", { name: "Match Race" });
+      const [a, b] = boardItems();
+      fireEvent.click(tile("question", a));
+      fireEvent.click(tile("answer", b));
+      const first = screen.getByText("Not a match. Plus 1 second.");
+      fireEvent.click(tile("question", a));
+      fireEvent.click(tile("answer", b));
+      const second = screen.getByText("Not a match. Plus 1 second.");
+      expect(second).not.toBe(first);
+    });
+
     it("selects the focused tile with Enter", async () => {
       const user = userEvent.setup();
       renderPage();
-      await screen.findByRole("heading", { name: "Match Race" });
+      const heading = await screen.findByRole("heading", { name: "Match Race" });
+      await waitFor(() => expect(heading).toHaveFocus());
       const [n] = boardItems();
       tile("question", n).focus();
       await user.keyboard("{Enter}");
