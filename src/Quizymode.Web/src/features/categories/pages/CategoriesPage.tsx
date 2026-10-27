@@ -762,6 +762,15 @@ const CategoriesPage = () => {
     navigate(pathCategorySlug === "all" ? `/learn${query}` : `/learn/${pathCategorySlug}${query}`);
   };
 
+  const navigateToGames = (pathCategorySlug: string, kws: string[]) => {
+    const deduped = dedupeKeywords(kws);
+    const p = buildScopeFilterQuery();
+    p.set("nav", pathKeywordsFromUrl.join(","));
+    if (deduped.length > 0) p.set("keywords", deduped.join(","));
+    const query = p.toString() ? `?${p.toString()}` : "";
+    navigate(pathCategorySlug === "all" ? `/games${query}` : `/games/${pathCategorySlug}${query}`);
+  };
+
   // Sets view: click = add keyword to path (navigate deeper)
   const handleKeywordClick = (keyword: string) => {
     const newPathKeywords = [...pathKeywordsFromUrl, keyword];
@@ -931,6 +940,7 @@ const CategoriesPage = () => {
                 else if (mode === "explore") navigateToExplore(categoryName ? categoryNameToSlug(categoryName)! : "all", kw, scopeFilteredItems);
                 else if (mode === "quiz") navigateToQuiz(categoryName ? categoryNameToSlug(categoryName)! : "all", kw, scopeFilteredItems);
                 else if (mode === "learn") navigateToLearn(categoryName ? categoryNameToSlug(categoryName)! : "all", kw);
+                else if (mode === "games") navigateToGames(categoryName ? categoryNameToSlug(categoryName)! : "all", kw);
               }}
               endSlot={
                 isAuthenticated && categoryName ? (
@@ -1277,6 +1287,7 @@ const CategoriesPage = () => {
                 else if (mode === "explore") navigateToExplore(categoryNameToSlug(categoryName)!, kw);
                 else if (mode === "quiz") navigateToQuiz(categoryNameToSlug(categoryName)!, kw);
                 else if (mode === "learn") navigateToLearn(categoryNameToSlug(categoryName)!, kw);
+                else if (mode === "games") navigateToGames(categoryNameToSlug(categoryName)!, kw);
               }}
               endSlot={
                 isAuthenticated ? (

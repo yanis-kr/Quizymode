@@ -25,7 +25,9 @@ export type AnalyticsEventName =
   | "search_result_clicked"
   | "topic_suggestion_shown"
   | "topic_suggestion_accepted"
-  | "topic_suggestion_overridden";
+  | "topic_suggestion_overridden"
+  | "game_started"
+  | "game_completed";
 
 export type AnalyticsContextType =
   | "auth"
@@ -33,6 +35,7 @@ export type AnalyticsContextType =
   | "collection"
   | "daily"
   | "flashcards"
+  | "game"
   | "home"
   | "item"
   | "learn"

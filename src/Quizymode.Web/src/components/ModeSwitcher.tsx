@@ -1,6 +1,6 @@
 /**
- * Shared mode tabs for study/browse screens: Sets | List | Flashcards | Quiz | Learn.
- * Visibility: show Sets only when scope has child buckets; show Flashcards/Quiz/Learn only when scope has items.
+ * Shared mode tabs for study/browse screens: Sets | List | Flashcards | Quiz | Learn | Games.
+ * Visibility: show Sets only when scope has child buckets; show Flashcards/Quiz/Learn/Games only when scope has items.
  */
 import { useEffect, useRef, useState } from "react";
 import {
@@ -9,9 +9,10 @@ import {
   ListBulletIcon,
   MagnifyingGlassIcon,
   AcademicCapIcon,
+  PuzzlePieceIcon,
 } from "@heroicons/react/24/outline";
 
-export type ViewMode = "sets" | "list" | "explore" | "quiz" | "learn";
+export type ViewMode = "sets" | "list" | "explore" | "quiz" | "learn" | "games";
 
 export interface ModeSwitcherProps {
   /** Which modes to show. Omit "sets" when no child buckets; omit "explore"/"quiz" when no items. */
@@ -40,6 +41,7 @@ export function ModeSwitcher({
     { mode: "explore", label: "Flashcards", icon: MagnifyingGlassIcon },
     { mode: "quiz", label: "Quiz", icon: AcademicCapIcon },
     { mode: "learn", label: "Learn", icon: ArrowPathIcon },
+    { mode: "games", label: "Games", icon: PuzzlePieceIcon },
   ];
 
   const stripRef = useRef<HTMLDivElement>(null);

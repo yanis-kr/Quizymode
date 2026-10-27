@@ -34,6 +34,10 @@ public static class AnalyticsEventCatalog
     public const string TopicSuggestionAccepted = "topic_suggestion_accepted";
     public const string TopicSuggestionOverridden = "topic_suggestion_overridden";
 
+    // Games (#352/#353). Run-scoped; neither event carries item text or elapsed time and neither is a funnel step.
+    public const string GameStarted = "game_started";
+    public const string GameCompleted = "game_completed";
+
     /// <summary>Optional fields an event may carry beyond name, session, path, and context.</summary>
     [Flags]
     public enum EventFields
@@ -90,7 +94,12 @@ public static class AnalyticsEventCatalog
         // A saved item used a suggested chip; Position is the chip's 1-based rank.
         [TopicSuggestionAccepted] = new(EventFields.RunId | EventFields.Position, EventFields.RunId | EventFields.Position),
         // A saved item used a topic other than the suggested chips.
-        [TopicSuggestionOverridden] = new(EventFields.RunId, EventFields.RunId)
+        [TopicSuggestionOverridden] = new(EventFields.RunId, EventFields.RunId),
+        // Games: Total is the pair count; Score is the pairs matched without a miss on that pair's question.
+        [GameStarted] = new(EventFields.RunId | EventFields.Total, EventFields.RunId | EventFields.Total),
+        [GameCompleted] = new(
+            EventFields.RunId | EventFields.Score | EventFields.Total,
+            EventFields.RunId | EventFields.Score | EventFields.Total)
     };
 
     /// <summary>The initial conversion funnel, in step order, as reported to admins.</summary>
@@ -115,6 +124,7 @@ public static class AnalyticsEventCatalog
         "collection",
         "daily",
         "flashcards",
+        "game",
         "home",
         "item",
         "learn",

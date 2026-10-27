@@ -5,7 +5,7 @@ import { test, expect } from "../fixtures";
 
 test.use({ viewport: { width: 375, height: 812 } });
 
-test("AC 3.17.12 @smoke - Learn tab follows Quiz, the strip fits the viewport and Learn opens", async ({ page }) => {
+test("AC 3.17.12 @smoke - Learn and Games tabs follow Quiz, the strip fits the viewport and Learn opens", async ({ page }) => {
   await page.goto("/categories");
   await page.waitForLoadState("networkidle");
 
@@ -15,7 +15,7 @@ test("AC 3.17.12 @smoke - Learn tab follows Quiz, the strip fits the viewport an
   await page.waitForLoadState("networkidle");
 
   const labels = await page.getByRole("tab").allTextContents();
-  expect(labels.map((label) => label.trim()).slice(-2)).toEqual(["Quiz", "Learn"]);
+  expect(labels.map((label) => label.trim()).slice(-3)).toEqual(["Quiz", "Learn", "Games"]);
 
   // The page is never wider than the viewport, even when the tab strip overflows.
   const widths = await page.evaluate(() => ({ scroll: document.documentElement.scrollWidth, inner: window.innerWidth }));

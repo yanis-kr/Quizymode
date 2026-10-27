@@ -143,6 +143,19 @@ describe("ModeSwitcher", () => {
     expect(screen.getByRole("tab", { name: "Learn" })).toHaveAttribute("aria-selected", "true");
   });
 
+  it("shows Games after Learn when available", () => {
+    render(
+      <ModeSwitcher
+        availableModes={["sets", "list", "explore", "quiz", "learn", "games"]}
+        activeMode="games"
+        onChange={() => {}}
+      />
+    );
+    const labels = screen.getAllByRole("tab").map((tab) => tab.textContent);
+    expect(labels).toEqual(["Sets", "List", "Flashcards", "Quiz", "Learn", "Games"]);
+    expect(screen.getByRole("tab", { name: "Games" })).toHaveAttribute("aria-selected", "true");
+  });
+
   it("scrolls the active tab into view and shows an edge cue only while tabs overflow", () => {
     const scrollIntoView = vi.fn();
     Element.prototype.scrollIntoView = scrollIntoView;

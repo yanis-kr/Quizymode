@@ -186,12 +186,13 @@ const CollectionDetailPage = () => {
         <ScopeSecondaryBar
           scopeType="collection"
           activeMode="list"
-          availableModes={["list", "explore", "quiz", "learn"]}
+          availableModes={["list", "explore", "quiz", "learn", "games"]}
           onModeChange={(mode) => {
             if (!id) return;
             if (mode === "explore") navigate(`${buildCollectionPath(id, collectionData?.name)}?view=explore`);
             else if (mode === "quiz") navigate(`${buildCollectionPath(id, collectionData?.name)}?view=quiz`);
             else if (mode === "learn") navigate(buildCollectionStudyPath("learn", id, collectionData?.name));
+            else if (mode === "games") navigate(buildCollectionStudyPath("games", id, collectionData?.name));
           }}
         />
       )}
