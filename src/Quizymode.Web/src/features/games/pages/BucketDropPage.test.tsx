@@ -3,7 +3,7 @@ import { act, cleanup, fireEvent, render, screen, waitFor } from "@testing-libra
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { MemoryRouter, Route, Routes } from "react-router-dom";
 import BucketDropPage from "./BucketDropPage";
-import { itemsApi } from "@/api/items";
+import { gamesApi } from "@/api/games";
 import { categoriesApi } from "@/api/categories";
 import { collectionsApi } from "@/api/collections";
 import { reviewQueueApi } from "@/api/learningLoop";
@@ -28,6 +28,7 @@ const { mockAuth } = vi.hoisted(() => ({
 vi.mock("@/contexts/AuthContext", () => ({ useAuth: () => mockAuth }));
 
 vi.mock("@/api/items", () => ({ itemsApi: { getRandom: vi.fn(), getById: vi.fn() } }));
+vi.mock("@/api/games", () => ({ gamesApi: { getRoster: vi.fn() } }));
 vi.mock("@/api/categories", () => ({ categoriesApi: { getAll: vi.fn() } }));
 vi.mock("@/api/collections", () => ({ collectionsApi: { getItems: vi.fn(), getById: vi.fn() } }));
 vi.mock("@/api/learningLoop", () => ({ reviewQueueApi: { enqueue: vi.fn() } }));
@@ -134,7 +135,7 @@ describe("BucketDropPage", () => {
     mockAuth.isAuthenticated = false;
     mockAuth.isLoading = false;
     vi.mocked(categoriesApi.getAll).mockResolvedValue({ categories: [{ category: "science" }] } as never);
-    vi.mocked(itemsApi.getRandom).mockResolvedValue({ items: makeItems(8) } as never);
+    vi.mocked(gamesApi.getRoster).mockResolvedValue({ items: makeItems(8) } as never);
     vi.mocked(collectionsApi.getItems).mockResolvedValue({ items: makeItems(8) } as never);
     vi.mocked(collectionsApi.getById).mockResolvedValue({ id: "11111111-1111-4111-8111-111111111111", name: "Practice Set" } as never);
     vi.mocked(reviewQueueApi.enqueue).mockResolvedValue({ itemId: "x", intervalDays: 1, dueAt: "" });
@@ -170,7 +171,7 @@ describe("BucketDropPage", () => {
     });
 
     it("shows the empty state when fewer than three items have two short distractors", async () => {
-      vi.mocked(itemsApi.getRandom).mockResolvedValue({
+      vi.mocked(gamesApi.getRoster).mockResolvedValue({
         items: [makeItem(1), makeItem(2), makeItem(3, { incorrectAnswers: ["only-one"] }), makeItem(4, { incorrectAnswers: ["a"] })],
       } as never);
       renderPage();
@@ -178,7 +179,7 @@ describe("BucketDropPage", () => {
     });
 
     it("shows a retryable error when the roster fails to load", async () => {
-      vi.mocked(itemsApi.getRandom).mockRejectedValueOnce(new Error("boom"));
+      vi.mocked(gamesApi.getRoster).mockRejectedValueOnce(new Error("boom"));
       renderPage();
       expect(await screen.findByText("We couldn't load this game.")).toBeInTheDocument();
       fireEvent.click(screen.getByRole("button", { name: "Try again" }));

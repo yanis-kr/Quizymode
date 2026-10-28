@@ -3,7 +3,7 @@ import { act, cleanup, fireEvent, render, screen, waitFor, within } from "@testi
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { MemoryRouter, Route, Routes, useLocation } from "react-router-dom";
 import SurvivalPage from "./SurvivalPage";
-import { itemsApi } from "@/api/items";
+import { gamesApi } from "@/api/games";
 import { categoriesApi } from "@/api/categories";
 import { collectionsApi } from "@/api/collections";
 import { reviewQueueApi } from "@/api/learningLoop";
@@ -37,6 +37,7 @@ vi.mock("@/features/studySessions/recordStudySession", async (importOriginal) =>
 });
 
 vi.mock("@/api/items", () => ({ itemsApi: { getRandom: vi.fn(), getById: vi.fn() } }));
+vi.mock("@/api/games", () => ({ gamesApi: { getRoster: vi.fn() } }));
 vi.mock("@/api/categories", () => ({ categoriesApi: { getAll: vi.fn() } }));
 vi.mock("@/api/collections", () => ({ collectionsApi: { getItems: vi.fn(), getById: vi.fn() } }));
 vi.mock("@/api/learningLoop", () => ({ reviewQueueApi: { enqueue: vi.fn() } }));
@@ -132,7 +133,7 @@ describe("SurvivalPage", () => {
     mockAuth.isAuthenticated = false;
     mockAuth.isLoading = false;
     vi.mocked(categoriesApi.getAll).mockResolvedValue({ categories: [{ category: "science" }] } as never);
-    vi.mocked(itemsApi.getRandom).mockResolvedValue({ items: makeItems(8) } as never);
+    vi.mocked(gamesApi.getRoster).mockResolvedValue({ items: makeItems(8) } as never);
     vi.mocked(collectionsApi.getItems).mockResolvedValue({ items: makeItems(8) } as never);
     vi.mocked(collectionsApi.getById).mockResolvedValue({ id: "11111111-1111-4111-8111-111111111111", name: "Practice Set" } as never);
     vi.mocked(reviewQueueApi.enqueue).mockResolvedValue({ itemId: "x", intervalDays: 1, dueAt: "" });
@@ -148,7 +149,7 @@ describe("SurvivalPage", () => {
 
   describe("loading", () => {
     it("shows the empty state with Open Quiz when fewer than 3 items qualify", async () => {
-      vi.mocked(itemsApi.getRandom).mockResolvedValue({ items: makeItems(2) } as never);
+      vi.mocked(gamesApi.getRoster).mockResolvedValue({ items: makeItems(2) } as never);
       renderPage();
       expect(await screen.findByText("Not enough short questions for games here")).toBeInTheDocument();
       fireEvent.click(screen.getByRole("link", { name: "Open Quiz" }));
@@ -156,7 +157,7 @@ describe("SurvivalPage", () => {
     });
 
     it("shows a retryable alert when loading fails", async () => {
-      vi.mocked(itemsApi.getRandom).mockRejectedValueOnce(new Error("boom"));
+      vi.mocked(gamesApi.getRoster).mockRejectedValueOnce(new Error("boom"));
       renderPage();
       expect(await screen.findByRole("alert")).toHaveTextContent("We couldn't load this game.");
       fireEvent.click(screen.getByRole("button", { name: "Try again" }));
@@ -183,7 +184,7 @@ describe("SurvivalPage", () => {
     });
 
     it("shows 2 options for an item with one short distractor and never a long one", async () => {
-      vi.mocked(itemsApi.getRandom).mockResolvedValue({
+      vi.mocked(gamesApi.getRoster).mockResolvedValue({
         items: [
           makeItem(1, { incorrectAnswers: ["wrong-1", "z".repeat(26)] }),
           makeItem(2, { incorrectAnswers: ["wrong-2"] }),
@@ -263,7 +264,7 @@ describe("SurvivalPage", () => {
     });
 
     it("shows every item once before repeating, then repeats without back-to-back duplicates", async () => {
-      vi.mocked(itemsApi.getRandom).mockResolvedValue({ items: makeItems(3) } as never);
+      vi.mocked(gamesApi.getRoster).mockResolvedValue({ items: makeItems(3) } as never);
       await openPage();
       const seen: number[] = [];
       for (let step = 0; step < 6; step += 1) {
@@ -380,7 +381,7 @@ describe("SurvivalPage", () => {
 
       expect(screen.getByRole("img", { name: "3 of 3 hearts left" })).toBeInTheDocument();
       expect(screen.getByText("Streak 0")).toBeInTheDocument();
-      expect(itemsApi.getRandom).toHaveBeenCalledTimes(1);
+      expect(gamesApi.getRoster).toHaveBeenCalledTimes(1);
       pickRight();
       expect(trackedEvents("game_started").map(([, payload]) => payload.runId)).toEqual(["run-1", "run-2"]);
     });

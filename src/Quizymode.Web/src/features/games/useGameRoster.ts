@@ -2,6 +2,7 @@ import { useMemo } from "react";
 import { useNavigate, useParams, useSearchParams } from "react-router-dom";
 import { useQuery } from "@tanstack/react-query";
 import { itemsApi } from "@/api/items";
+import { gamesApi } from "@/api/games";
 import { collectionsApi } from "@/api/collections";
 import { categoriesApi } from "@/api/categories";
 import { useAuth } from "@/contexts/AuthContext";
@@ -18,7 +19,8 @@ const EMPTY_ITEMS: ItemResponse[] = [];
 
 /**
  * Loads the short-item roster for the scope in the URL (AC 3.20.2) and the mode navigation shared by the Games pages.
- * Scope loading mirrors Learn's (collection: every item; category, keywords, global: a random 200).
+ * Collections load every item. Category and global scopes without keyword filters ask GET /games/roster, which applies
+ * the short-text rule in SQL before sampling 200 (AC 3.20.26); keyword-filtered scopes still sample 200 then filter here.
  */
 export function useGameRoster() {
   const { category: categorySlug, collectionId } = useParams();
@@ -53,17 +55,29 @@ export function useGameRoster() {
     enabled: !!collectionId,
   });
 
+  // Scope token for GET /games/roster ("" = every category), or null when the roster endpoint cannot express the scope.
+  const rosterScope: string | null = useMemo(() => {
+    if (collectionId || filterKeywords.length > 0) return null;
+    const segments: string[] = category ? [category, ...(hasCategoryScope ? navigationKeywords : [])] : [];
+    // "/" separates the segments on the wire, so a name containing one falls back to the items endpoint.
+    return segments.some((segment) => segment.includes("/")) ? null : segments.join("/");
+  }, [collectionId, filterKeywords, category, hasCategoryScope, navigationKeywords]);
+
   const {
     data: rosterItems,
     error,
     isPending,
     refetch,
   } = useQuery<ItemResponse[]>({
-    queryKey: ["gameRoster", identityKey, collectionId ?? null, category ?? null, navigationKeywords, filterKeywords],
+    queryKey: ["gameRoster", "v2", identityKey, collectionId ?? null, category ?? null, navigationKeywords, filterKeywords],
     queryFn: async () => {
       if (collectionId) {
         const response = await collectionsApi.getItems(collectionId);
         return response.items;
+      }
+      if (rosterScope !== null) {
+        const roster = await gamesApi.getRoster(rosterScope ? [rosterScope] : [], GAME_FETCH_SIZE);
+        return roster.items;
       }
       const response = await itemsApi.getRandom(
         category,
