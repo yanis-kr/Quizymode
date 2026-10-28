@@ -69,13 +69,19 @@ public sealed class DailyQuizCompletion
     public DateTime CompletedAt { get; set; } = DateTime.UtcNow;
 }
 
-/// <summary>An explicit topic interest (a public category) chosen by an authenticated user (PERSONAL-001, #116).</summary>
+/// <summary>An explicit public category or navigation path chosen by an authenticated user.</summary>
 public sealed class UserInterest
 {
+    public Guid Id { get; set; } = Guid.NewGuid();
+
     public string UserId { get; set; } = string.Empty;
 
     /// <summary>Category reference; a deleted or now-private category is skipped when interests are read.</summary>
     public Guid CategoryId { get; set; }
+
+    public Guid? NavigationKeywordId1 { get; set; }
+
+    public Guid? NavigationKeywordId2 { get; set; }
 
     /// <summary>Order the user listed the interest in; explicit order ranks For you.</summary>
     public int SortOrder { get; set; }

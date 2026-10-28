@@ -2170,9 +2170,10 @@ namespace Quizymode.Api.Migrations
 
             modelBuilder.Entity("Quizymode.Api.Shared.Models.UserInterest", b =>
                 {
-                    b.Property<string>("UserId")
-                        .HasMaxLength(100)
-                        .HasColumnType("character varying(100)");
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uuid")
+                        .HasDefaultValueSql("gen_random_uuid()");
 
                     b.Property<Guid>("CategoryId")
                         .HasColumnType("uuid");
@@ -2180,10 +2181,30 @@ namespace Quizymode.Api.Migrations
                     b.Property<DateTime>("CreatedAt")
                         .HasColumnType("timestamp with time zone");
 
+                    b.Property<Guid?>("NavigationKeywordId1")
+                        .HasColumnType("uuid");
+
+                    b.Property<Guid?>("NavigationKeywordId2")
+                        .HasColumnType("uuid");
+
                     b.Property<int>("SortOrder")
                         .HasColumnType("integer");
 
-                    b.HasKey("UserId", "CategoryId");
+                    b.Property<string>("UserId")
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("character varying(100)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("NavigationKeywordId1");
+
+                    b.HasIndex("NavigationKeywordId2");
+
+                    b.HasIndex("UserId", "CategoryId", "NavigationKeywordId1", "NavigationKeywordId2")
+                        .IsUnique();
+
+                    NpgsqlIndexBuilderExtensions.AreNullsDistinct(b.HasIndex("UserId", "CategoryId", "NavigationKeywordId1", "NavigationKeywordId2"), false);
 
                     b.ToTable("UserInterests", (string)null);
                 });
@@ -2411,6 +2432,19 @@ namespace Quizymode.Api.Migrations
                         .HasForeignKey("StudySessionId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+                });
+
+            modelBuilder.Entity("Quizymode.Api.Shared.Models.UserInterest", b =>
+                {
+                    b.HasOne("Quizymode.Api.Shared.Models.Keyword", null)
+                        .WithMany()
+                        .HasForeignKey("NavigationKeywordId1")
+                        .OnDelete(DeleteBehavior.Cascade);
+
+                    b.HasOne("Quizymode.Api.Shared.Models.Keyword", null)
+                        .WithMany()
+                        .HasForeignKey("NavigationKeywordId2")
+                        .OnDelete(DeleteBehavior.Cascade);
                 });
 
             modelBuilder.Entity("Quizymode.Api.Shared.Models.UserPolicyAcceptance", b =>

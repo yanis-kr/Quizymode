@@ -1,21 +1,23 @@
+import { isTopicPath, mergeTopics } from "@/features/interests/topicPaths";
+
 /**
  * Browser-local learning-loop state for anonymous visitors (epic #197).
  *
  * - `quizymode.daily.v1`: dates (UTC yyyy-MM-dd) of completed daily quizzes with their score, for the streak (#119).
- * - `quizymode.interests.v1`: explicitly chosen topic (category) slugs (#116).
+ * - `quizymode.interests.v2`: explicit category[/l1[/l2]] paths (v1 category-only data is still read) (#116).
  *
  * Both are separate from `quizymode.guest.v1`, so "Clear guest history" (AC 3.0.17) keeps its meaning. Nothing here
  * identifies the visitor, and every read tolerates missing, corrupt, or oversized data by returning an empty value.
  * Changing devices or clearing site data resets the streak; there is no cross-device anonymous identity.
  */
 export const DAILY_STORAGE_KEY = "quizymode.daily.v1";
-export const INTERESTS_STORAGE_KEY = "quizymode.interests.v1";
+export const INTERESTS_STORAGE_KEY = "quizymode.interests.v2";
+const LEGACY_INTERESTS_STORAGE_KEY = "quizymode.interests.v1";
 export const LEARNING_STATE_CHANGED_EVENT = "quizymode:learning-state-changed";
 export const DAILY_MAX_COMPLETIONS = 60;
 export const MAX_INTERESTS = 10;
 
 const DATE_PATTERN = /^\d{4}-\d{2}-\d{2}$/;
-const SLUG_PATTERN = /^[a-z0-9_-]{1,64}$/;
 const MAX_DOCUMENT_LENGTH = 16 * 1024;
 
 export interface LocalDailyCompletion {
@@ -93,22 +95,30 @@ export function utcToday(now: Date = new Date()): string {
 }
 
 export function readLocalInterests(): string[] {
-  const doc = readJson(INTERESTS_STORAGE_KEY) as { version?: unknown; categories?: unknown } | null;
-  if (!doc || doc.version !== 1 || !Array.isArray(doc.categories)) return [];
-  const slugs = doc.categories.filter((value): value is string => typeof value === "string" && SLUG_PATTERN.test(value));
-  return Array.from(new Set(slugs)).slice(0, MAX_INTERESTS);
+  // A corrupt v2 document must not resurrect an older, broader v1 selection.
+  let currentExists: boolean;
+  try { currentExists = window.localStorage.getItem(INTERESTS_STORAGE_KEY) !== null; } catch { return []; }
+  const current = readJson(INTERESTS_STORAGE_KEY) as { version?: unknown; categories?: unknown } | null;
+  const legacy = !currentExists ? readJson(LEGACY_INTERESTS_STORAGE_KEY) as { version?: unknown; categories?: unknown } | null : null;
+  const doc = current ?? legacy;
+  if (!doc || doc.version !== (current ? 2 : 1) || !Array.isArray(doc.categories)) return [];
+  const paths = doc.categories.filter((value): value is string => isTopicPath(value) && (current !== null || !value.includes("/")));
+  return mergeTopics([], paths, MAX_INTERESTS);
 }
 
 export function writeLocalInterests(categories: string[]): boolean {
-  const clean = Array.from(new Set(categories.filter((slug) => SLUG_PATTERN.test(slug)))).slice(0, MAX_INTERESTS);
-  return writeJson(INTERESTS_STORAGE_KEY, { version: 1, categories: clean });
+  const clean = mergeTopics([], categories.filter(isTopicPath), MAX_INTERESTS);
+  if (!writeJson(INTERESTS_STORAGE_KEY, { version: 2, categories: clean })) return false;
+  try { window.localStorage.removeItem(LEGACY_INTERESTS_STORAGE_KEY); } catch { /* The v2 document still takes precedence. */ }
+  return true;
 }
 
 export function clearLocalInterests(): void {
+  // Keep an empty v2 tombstone: if removing legacy storage fails, a broad v1 choice must never reappear.
+  if (!writeJson(INTERESTS_STORAGE_KEY, { version: 2, categories: [] })) return;
   try {
-    window.localStorage.removeItem(INTERESTS_STORAGE_KEY);
-    window.dispatchEvent(new Event(LEARNING_STATE_CHANGED_EVENT));
+    window.localStorage.removeItem(LEGACY_INTERESTS_STORAGE_KEY);
   } catch {
-    // Storage unavailable: nothing to clear.
+    // The empty v2 document already takes precedence.
   }
 }

@@ -22,6 +22,17 @@ function input(overrides: Partial<PersonalizationInput>): PersonalizationInput {
 }
 
 describe("rankPersonalizedHome", () => {
+  it("keeps refined recommendations and fallback links inside the chosen branch", () => {
+    const result = rankPersonalizedHome(input({
+      knownCategories: ["languages"], explicitInterests: ["languages/french"], focused: true,
+      runs: [categoryRun("languages", "2026-10-27T10:00:00Z", ["german"])],
+      featuredSets: [set("german", "languages", 0, "german"), set("french", "languages", 1, "french", "core")],
+    }));
+    expect(result.forYou).toEqual([{ slug: "languages/french", reason: "explicit" }]);
+    expect(result.recommended.map(entry => entry.id)).toEqual(["french"]);
+    const fallback = rankPersonalizedHome(input({ knownCategories: ["languages"], explicitInterests: ["languages/french/core"], focused: true }));
+    expect(fallback.recommended[0]).toMatchObject({ categorySlug: "languages", navKeyword1: "french", navKeyword2: "core" });
+  });
   it("cold start uses popular categories, then fills from the featured catalog", () => {
     const result = rankPersonalizedHome(
       input({

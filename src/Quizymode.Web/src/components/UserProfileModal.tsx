@@ -1,3 +1,4 @@
+import { topicLabel } from "@/features/interests/topicPaths";
 import { useState, useEffect } from "react";
 import { useQuery, useMutation, useQueryClient } from "@tanstack/react-query";
 import { Link } from "react-router-dom";
@@ -25,7 +26,7 @@ const UserProfileModal = ({ isOpen, onClose }: UserProfileModalProps) => {
   const { pageSize, updatePageSize, isUpdating } = usePageSize();
   const topicEditor = useTopicEditor();
   const { interests, status: interestsStatus } = useInterests({ enabled: isOpen });
-  const topicNames = interests.map((slug) => homeCategoryCards.find((card) => card.slug === slug)?.name ?? slug);
+  const topicNames = interests.map((slug) => topicLabel(slug, new Map(homeCategoryCards.map(card => [card.slug, card.name]))));
 
   // Private study totals (issue #259); a failure only hides this block, never the rest of the profile.
   const summaryQuery = useQuery({

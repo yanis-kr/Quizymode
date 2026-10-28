@@ -3,6 +3,8 @@ import { homeCategoryCards } from "@/features/home/homePageData";
 import { MAX_INTERESTS } from "@/features/learningLoop/localLearningState";
 import { useFocusTrap } from "@/hooks/useFocusTrap";
 import type { InterestsStatus } from "./useInterests";
+import { topicLabel, topicsOverlap } from "./topicPaths";
+import { TopicRefinements } from "./TopicRefinements";
 
 /** Layout marks its profile/menu triggers with this attribute so focus has a home when the opener is gone. */
 export const TOPIC_RETURN_FOCUS_ATTRIBUTE = "data-topic-return-focus";
@@ -64,7 +66,7 @@ export function TopicPicker({ initial, status, saving, error, onSave, retrying, 
 
   const toggle = (slug: string) =>
     setSelected((current) =>
-      current === null ? current : current.includes(slug) ? current.filter((s) => s !== slug) : [...current, slug],
+      current === null ? current : current.includes(slug) ? current.filter((s) => s !== slug) : [...current.filter(path => !topicsOverlap(path, slug)), slug],
     );
 
   return (
@@ -112,7 +114,7 @@ export function TopicPicker({ initial, status, saving, error, onSave, retrying, 
             <legend className="sr-only">Topics</legend>
             {homeCategoryCards.map((card) => {
               const checked = selected.includes(card.slug);
-              const blocked = !checked && full;
+              const blocked = !checked && full && !selected.some(path => topicsOverlap(path, card.slug));
               return (
                 <label
                   key={card.slug}
@@ -133,6 +135,16 @@ export function TopicPicker({ initial, status, saving, error, onSave, retrying, 
               );
             })}
           </fieldset>
+        )}
+        {selected !== null && (
+          <>
+            {selected.filter(path => path.includes("/") || !homeCategoryCards.some(card => card.slug === path)).map(path => (
+              <button key={path} type="button" aria-label={`Remove ${topicLabel(path)}`} onClick={() => setSelected(current => current?.filter(value => value !== path) ?? null)} className="mt-2 min-h-[44px] rounded-full border border-sky-300 bg-sky-500/30 px-4 py-2 text-sm font-semibold">
+                {topicLabel(path)} ×
+              </button>
+            ))}
+            <TopicRefinements selected={selected} onAdd={path => setSelected(current => current === null ? current : [...current.filter(value => !topicsOverlap(value, path)), path])} />
+          </>
         )}
         <p aria-live="polite" className="mt-2 text-xs text-slate-300 empty:hidden">
           {full ? `That's ${MAX_INTERESTS}, the most you can pick. Remove one to add another.` : ""}

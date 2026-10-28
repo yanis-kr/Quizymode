@@ -1,6 +1,7 @@
 import { beforeEach, describe, expect, it, vi } from "vitest";
 import { fireEvent, screen, waitFor, within } from "@testing-library/react";
 import { interestsApi } from "@/api/learningLoop";
+import { taxonomyApi } from "@/api/taxonomy";
 import { installMemoryLocalStorage } from "@/test/memoryStorage";
 import { renderWithProviders } from "@/features/learningLoop/learningLoopTestUtils";
 import { homeCategoryCards } from "@/features/home/homePageData";
@@ -11,6 +12,7 @@ import { useTopicEditor } from "./topicEditorContext";
 const auth = vi.hoisted(() => ({ value: { isAuthenticated: true, isLoading: false, userId: "user-1" as string | null } }));
 vi.mock("@/contexts/AuthContext", () => ({ useAuth: () => auth.value }));
 vi.mock("@/api/learningLoop", () => ({ interestsApi: { get: vi.fn(), replace: vi.fn() } }));
+vi.mock("@/api/taxonomy", () => ({ taxonomyApi: { getAll: vi.fn() } }));
 
 function Opener() {
   const { open } = useTopicEditor();
@@ -33,6 +35,24 @@ describe("My topics editor", () => {
     vi.clearAllMocks();
     installMemoryLocalStorage();
     auth.value = { isAuthenticated: true, isLoading: false, userId: "user-1" };
+    vi.mocked(taxonomyApi.getAll).mockResolvedValue({ categories: [{ slug: "languages", name: "Languages", description: null, itemCount: 1, allKeywordSlugs: ["french", "core"], groups: [{ slug: "french", description: null, itemCount: 1, keywords: [{ slug: "core", description: null, itemCount: 1 }] }] }] });
+  });
+
+  it("#383: progressively refines a category and saves the complete path without its parent", async () => {
+    vi.mocked(interestsApi.get).mockResolvedValue(["languages"]);
+    vi.mocked(interestsApi.replace).mockResolvedValue(["languages/french/core"]);
+    renderEditor();
+    fireEvent.click(screen.getByRole("button", { name: "Change topics" }));
+    await screen.findByRole("checkbox", { name: "Languages" });
+    fireEvent.click(screen.getByText("Refine a topic"));
+    fireEvent.change(await screen.findByLabelText("Category"), { target: { value: "languages" } });
+    fireEvent.change(screen.getByLabelText("Topic (optional)"), { target: { value: "french" } });
+    fireEvent.change(screen.getByLabelText("Subtopic (optional)"), { target: { value: "core" } });
+    fireEvent.click(screen.getByRole("button", { name: "Add topic" }));
+    expect(screen.getByRole("checkbox", { name: "Languages" })).not.toBeChecked();
+    expect(screen.getByRole("button", { name: "Remove Languages › French › Core" })).toBeInTheDocument();
+    fireEvent.click(screen.getByRole("button", { name: "Save topics" }));
+    await waitFor(() => expect(interestsApi.replace).toHaveBeenCalledWith(["languages/french/core"]));
   });
 
   it("#380: a failed topics load never lets Save replace the saved topics, and Retry prefills them", async () => {

@@ -58,7 +58,12 @@ internal sealed class UserInterestConfiguration : IEntityTypeConfiguration<UserI
     public void Configure(EntityTypeBuilder<UserInterest> builder)
     {
         builder.ToTable("UserInterests");
-        builder.HasKey(x => new { x.UserId, x.CategoryId });
+        builder.HasKey(x => x.Id);
+        builder.Property(x => x.Id).HasDefaultValueSql("gen_random_uuid()");
+        builder.HasIndex(x => new { x.UserId, x.CategoryId, x.NavigationKeywordId1, x.NavigationKeywordId2 })
+            .IsUnique().AreNullsDistinct(false);
+        builder.HasOne<Keyword>().WithMany().HasForeignKey(x => x.NavigationKeywordId1).OnDelete(DeleteBehavior.Cascade);
+        builder.HasOne<Keyword>().WithMany().HasForeignKey(x => x.NavigationKeywordId2).OnDelete(DeleteBehavior.Cascade);
         builder.Property(x => x.UserId).IsRequired().HasMaxLength(100);
     }
 }
