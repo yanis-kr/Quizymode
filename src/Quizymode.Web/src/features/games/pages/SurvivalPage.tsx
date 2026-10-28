@@ -48,10 +48,11 @@ function heartsLeftText(hearts: number): string {
 }
 
 const SurvivalPage = () => {
-  const { scope, pool, isPending, error, refetch, availableModes, handleModeChange, quizPath } = useGameRoster();
+  const { scope, runIdentityKey, topicBar, topicPrompt, pool, isPending, error, refetch, availableModes, handleModeChange, quizPath } = useGameRoster();
   const scopeKey: string = gameScopeKey(scope);
+  const runKey = `${runIdentityKey}|${scopeKey}`;
 
-  const [runBox, setRunBox] = useState<{ scopeKey: string; state: SurvivalRunState } | null>(null);
+  const [runBox, setRunBox] = useState<{ runKey: string; state: SurvivalRunState } | null>(null);
   const [announcement, setAnnouncement] = useState<{ id: number; text: string }>({ id: 0, text: "" });
   const [finishResult, setFinishResult] = useState<FinishResult | null>(null);
   const questionRef = useRef<HTMLParagraphElement>(null);
@@ -61,14 +62,14 @@ const SurvivalPage = () => {
   const [ghostMarks, setGhostMarks] = useState<number[] | null>(null);
   const [nowMs, setNowMs] = useState<number>(() => Date.now());
 
-  const run: SurvivalRunState | null = runBox && runBox.scopeKey === scopeKey ? runBox.state : null;
+  const run: SurvivalRunState | null = runBox && runBox.runKey === runKey ? runBox.state : null;
   const itemsById = useMemo(() => new Map<string, ItemResponse>(pool.map((item) => [item.id, item])), [pool]);
 
   // A new id per event makes the live region re-announce a repeated message.
   const announce = (text: string) => setAnnouncement((current) => ({ id: current.id + 1, text }));
 
   const startRun = () => {
-    setRunBox({ scopeKey, state: createSurvivalRun(pool, createAnalyticsId()) });
+    setRunBox({ runKey, state: createSurvivalRun(pool, createAnalyticsId()) });
     setGhostMarks(readGhost(survivalGhostKey(scopeKey)));
     announce("");
     setFinishResult(null);
@@ -80,7 +81,7 @@ const SurvivalPage = () => {
     startRun();
     // startRun only reads values already in this dependency list.
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [run, isPending, error, pool, scopeKey]);
+  }, [run, isPending, error, pool, scopeKey, runKey]);
 
   const runId: string | undefined = run?.runId;
   const sequence: number | undefined = run?.sequence;
@@ -93,7 +94,7 @@ const SurvivalPage = () => {
     const next: SurvivalRunState = reduceSurvivalRun(run, { type: "answer", option, nowMs: now });
     if (next === run) return;
     setNowMs(now);
-    setRunBox({ scopeKey, state: next });
+    setRunBox({ runKey, state: next });
     if (run.status === "ready") trackGameStarted(SURVIVAL_ID, scope, next.runId, next.poolIds.length);
     if (next.lastAnswer?.isCorrect) {
       announce(`Correct. Streak ${next.streak}.`);
@@ -119,7 +120,7 @@ const SurvivalPage = () => {
     if (!run || run.status !== "feedback") return;
     if (Date.now() - nextShownAt.current < NEXT_GUARD_MS) return;
     const next: SurvivalRunState = reduceSurvivalRun(run, { type: "next" });
-    setRunBox({ scopeKey, state: next });
+    setRunBox({ runKey, state: next });
     if (next.status === "finished") {
       const result: FinishResult | null = finishResult?.runId === next.runId ? finishResult : null;
       announce(
@@ -177,7 +178,9 @@ const SurvivalPage = () => {
   );
 
   let body;
-  if (error) {
+  if (topicPrompt) {
+    body = topicPrompt;
+  } else if (error) {
     body = (
       <div role="alert" className="mx-auto mt-4 max-w-4xl">
         <ErrorMessage message="We couldn't load this game." onRetry={refetch} />
@@ -273,6 +276,7 @@ const SurvivalPage = () => {
   return (
     <div className="py-3 sm:py-4">
       {scopeBar}
+      {topicBar}
       {liveRegion}
       <div className={run && run.status !== "finished" && !error ? "mt-4" : undefined}>{body}</div>
     </div>

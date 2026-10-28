@@ -1,3 +1,4 @@
+import { TopicEditorProvider } from "@/features/interests/TopicEditorProvider";
 import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 import { act, cleanup, fireEvent, render, screen, waitFor, within } from "@testing-library/react";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
@@ -76,6 +77,7 @@ function renderPage(path = "/games/survival/science") {
   );
   return render(
     <QueryClientProvider client={queryClient}>
+      <TopicEditorProvider>
       <MemoryRouter initialEntries={[path]}>
         <Routes>
           <Route path="/games/survival/collections/:collectionId/:slug?" element={page} />
@@ -84,6 +86,7 @@ function renderPage(path = "/games/survival/science") {
           <Route path="/quiz/*" element={<LocationDisplay />} />
         </Routes>
       </MemoryRouter>
+    </TopicEditorProvider>
     </QueryClientProvider>,
   );
 }

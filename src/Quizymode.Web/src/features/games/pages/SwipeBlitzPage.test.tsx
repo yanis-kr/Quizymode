@@ -1,3 +1,4 @@
+import { TopicEditorProvider } from "@/features/interests/TopicEditorProvider";
 import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 import { act, cleanup, fireEvent, render, screen, waitFor, within } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
@@ -12,6 +13,7 @@ import { QUIZ_COMPLETED_EVENT } from "@/features/items/quiz/quizRun";
 import { recordAuthenticatedCompletion } from "@/features/studySessions/recordStudySession";
 import { GUEST_HISTORY_STORAGE_KEY } from "@/features/guestHistory/guestHistoryStorage";
 import { installMemoryLocalStorage } from "@/test/memoryStorage";
+import { writeLocalInterests } from "@/features/learningLoop/localLearningState";
 import { resetGameBestForTests } from "../gameBest";
 import type { ItemResponse } from "@/types/api";
 
@@ -75,6 +77,7 @@ function renderPage(path = "/games/swipe-blitz/science") {
   );
   return render(
     <QueryClientProvider client={queryClient}>
+      <TopicEditorProvider>
       <MemoryRouter initialEntries={[path]}>
         <Routes>
           <Route path="/games/swipe-blitz/collections/:collectionId/:slug?" element={page} />
@@ -83,6 +86,7 @@ function renderPage(path = "/games/swipe-blitz/science") {
           <Route path="/quiz/*" element={<LocationDisplay />} />
         </Routes>
       </MemoryRouter>
+    </TopicEditorProvider>
     </QueryClientProvider>,
   );
 }
@@ -154,6 +158,7 @@ describe("SwipeBlitzPage", () => {
     resetGameBestForTests();
     mockAuth.isAuthenticated = false;
     mockAuth.isLoading = false;
+    mockAuth.userId = undefined;
     vi.mocked(categoriesApi.getAll).mockResolvedValue({ categories: [{ category: "science" }] } as never);
     vi.mocked(gamesApi.getRoster).mockResolvedValue({ items: makeItems(8) } as never);
     vi.mocked(collectionsApi.getItems).mockResolvedValue({ items: makeItems(8) } as never);
@@ -167,6 +172,37 @@ describe("SwipeBlitzPage", () => {
     vi.restoreAllMocks();
     vi.useRealTimers();
     vi.unstubAllGlobals();
+  });
+
+  it("#384: editor hotkeys and background focus cannot change the running game", async () => {
+    await openPage();
+    const original = cardInfo();
+    fireEvent.click(screen.getByRole("button", { name: "Change topics" }));
+    const dialog = screen.getByRole("dialog", { name: "My topics" });
+    const cancel = within(dialog).getByRole("button", { name: "Cancel" });
+    fireEvent.keyDown(cancel, { key: "ArrowRight", code: "ArrowRight" });
+    expect(cardInfo()).toEqual(original);
+    expect(mockTrackEventOnce).not.toHaveBeenCalled();
+    act(() => { card().focus(); });
+    expect(dialog.contains(document.activeElement)).toBe(true);
+    fireEvent.click(cancel);
+    expect(screen.queryByRole("dialog")).not.toBeInTheDocument();
+    expect(gamesApi.getRoster).toHaveBeenCalledTimes(1);
+  });
+
+  it("#384: changing identity starts a separate run even in the same URL scope", async () => {
+    await openPage();
+    fireEvent.click(correctButtonFor(cardInfo().isTrue));
+    const firstRun = mockTrackEventOnce.mock.calls.find(call => call[1]?.name === "game_started")?.[1].runId;
+    mockAuth.isAuthenticated = true;
+    mockAuth.userId = "another-user";
+    act(() => { writeLocalInterests(["history"]); });
+    await waitFor(() => expect(gamesApi.getRoster).toHaveBeenCalledTimes(2));
+    await waitFor(() => expect(card()).toBeInTheDocument());
+    fireEvent.click(correctButtonFor(cardInfo().isTrue));
+    const runs = mockTrackEventOnce.mock.calls.filter(call => call[1]?.name === "game_started").map(call => call[1].runId);
+    expect(runs).toHaveLength(2);
+    expect(runs[1]).not.toBe(firstRun);
   });
 
   describe("loading", () => {

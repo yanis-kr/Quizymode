@@ -8,6 +8,18 @@ const FOCUSABLE = 'a[href],button:not([disabled]),input:not([disabled]),select:n
  */
 export function useFocusTrap(containerRef: RefObject<HTMLElement | null>): void {
   useEffect(() => {
+    let lastInside: HTMLElement | null = null;
+    const onFocus = (event: FocusEvent) => {
+      const container = containerRef.current;
+      if (!container || !(event.target instanceof HTMLElement)) return;
+      if (container.contains(event.target)) {
+        lastInside = event.target;
+        return;
+      }
+      // Running games can advance or finish while this editor is open; their focus effects must not escape the modal.
+      const target = lastInside?.isConnected && lastInside.matches(FOCUSABLE) ? lastInside : container.querySelector<HTMLElement>(FOCUSABLE);
+      target?.focus({ preventScroll: true });
+    };
     const onKey = (event: KeyboardEvent) => {
       if (event.key !== "Tab") return;
       const container = containerRef.current;
@@ -30,6 +42,10 @@ export function useFocusTrap(containerRef: RefObject<HTMLElement | null>): void 
       }
     };
     window.addEventListener("keydown", onKey);
-    return () => window.removeEventListener("keydown", onKey);
+    document.addEventListener("focusin", onFocus);
+    return () => {
+      window.removeEventListener("keydown", onKey);
+      document.removeEventListener("focusin", onFocus);
+    };
   }, [containerRef]);
 }

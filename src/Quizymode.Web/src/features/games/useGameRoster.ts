@@ -1,5 +1,5 @@
-import { useMemo } from "react";
-import { useNavigate, useParams, useSearchParams } from "react-router-dom";
+import { createElement, useMemo, useState } from "react";
+import { useLocation, useNavigate, useParams, useSearchParams } from "react-router-dom";
 import { useQuery } from "@tanstack/react-query";
 import { itemsApi } from "@/api/items";
 import { gamesApi } from "@/api/games";
@@ -11,14 +11,18 @@ import { buildCategoryPath, categoryNameToSlug, findCategoryNameFromSlug } from 
 import { buildCollectionPath, buildCollectionStudyPath } from "@/utils/collectionPath";
 import { getCategoryScopeModeConfig } from "@/features/categories/utils/categoryScopeMode";
 import { getStudyScopeKeywords } from "@/features/items/utils/studyScopeParams";
-import type { ItemResponse } from "@/types/api";
+import { useInterests } from "@/features/interests/useInterests";
+import { topicNavigationSearch, topicParts } from "@/features/interests/topicPaths";
+import { GameTopicsBar, GameTopicsPrompt } from "./GameTopicsBar";
+import { resolveGameTopics, type GameTopicResolution } from "./gameTopicResolution";
+import type { GameRosterResponse, ItemResponse } from "@/types/api";
 import { GAME_FETCH_SIZE, buildGamePool } from "./gameRoster";
 import { buildGamePath, type GameScope } from "./gameScope";
 
 const EMPTY_ITEMS: ItemResponse[] = [];
 
 /**
- * Loads the short-item roster for the scope in the URL (AC 3.20.2) and the mode navigation shared by the Games pages.
+ * Loads a fixed roster for explicit URL scopes or the visitor's saved topic union (AC 3.20.2) and the mode navigation shared by the Games pages.
  * Collections load every item. Category and global scopes without keyword filters ask GET /games/roster, which applies
  * the short-text rule in SQL before sampling 200 (AC 3.20.26); keyword-filtered scopes still sample 200 then filter here.
  */
@@ -26,6 +30,7 @@ export function useGameRoster() {
   const { category: categorySlug, collectionId } = useParams();
   const [searchParams] = useSearchParams();
   const navigate = useNavigate();
+  const location = useLocation();
   const hasCategoryScope = !!categorySlug && !collectionId;
   const { navigationKeywords, filterKeywords } = useMemo(
     () => getStudyScopeKeywords(searchParams, hasCategoryScope),
@@ -34,6 +39,19 @@ export function useGameRoster() {
   const { isAuthenticated, isLoading: isAuthLoading, userId } = useAuth();
   const identityKey = isAuthenticated ? `user:${userId ?? "unknown"}` : "guest";
   const authSettled = !isAuthLoading;
+  const search = searchParams.toString() ? `?${searchParams.toString()}` : "";
+  const explicitScope = Boolean(collectionId || categorySlug || filterKeywords.length);
+  const allTopics = searchParams.get("all") === "1";
+  const preferences = useInterests({ enabled: !explicitScope && !allTopics });
+  const candidate = resolveGameTopics(explicitScope, allTopics, authSettled ? preferences.status : "loading", preferences.interests);
+  const snapshotKey = `${identityKey}|${location.key}|${location.pathname}|${search}`;
+  const [snapshot, setSnapshot] = useState<{ key: string; value: GameTopicResolution } | null>(null);
+  // Lock only a playable choice. The empty/error prompt must still respond to Retry or choosing topics.
+  const ready = candidate.mode === "explicit" || candidate.mode === "all" || candidate.mode === "topics";
+  if (authSettled && ready && snapshot?.key !== snapshotKey) setSnapshot({ key: snapshotKey, value: candidate });
+  const resolution = snapshot?.key === snapshotKey ? snapshot.value : candidate;
+  const canLoad = resolution.mode === "explicit" || resolution.mode === "all" || resolution.mode === "topics";
+
 
   const { data: categoriesData, error: categoriesError } = useQuery({
     queryKey: ["categories"],
@@ -64,42 +82,46 @@ export function useGameRoster() {
   }, [collectionId, filterKeywords, category, hasCategoryScope, navigationKeywords]);
 
   const {
-    data: rosterItems,
+    data: fetchedRoster,
     error,
     isPending,
     refetch,
-  } = useQuery<ItemResponse[]>({
-    queryKey: ["gameRoster", "v2", identityKey, collectionId ?? null, category ?? null, navigationKeywords, filterKeywords],
+  } = useQuery<GameRosterResponse>({
+    queryKey: ["gameRoster", "v3", identityKey, collectionId ?? null, category ?? null, navigationKeywords, filterKeywords, resolution],
     queryFn: async () => {
       if (collectionId) {
         const response = await collectionsApi.getItems(collectionId);
-        return response.items;
+        return { items: response.items, scopes: [] };
       }
-      if (rosterScope !== null) {
-        const roster = await gamesApi.getRoster(rosterScope ? [rosterScope] : [], GAME_FETCH_SIZE);
-        return roster.items;
-      }
+      if (resolution.mode === "topics") return gamesApi.getRoster(resolution.topics, GAME_FETCH_SIZE);
+      if (rosterScope !== null) return gamesApi.getRoster(rosterScope ? [rosterScope] : [], GAME_FETCH_SIZE);
       const response = await itemsApi.getRandom(
         category,
         GAME_FETCH_SIZE,
         filterKeywords.length > 0 ? filterKeywords : undefined,
         { navigationKeywords: hasCategoryScope && navigationKeywords.length > 0 ? navigationKeywords : undefined },
       );
-      return response.items;
+      return { items: response.items, scopes: [] };
     },
-    enabled: authSettled && categoryReady,
+    enabled: authSettled && categoryReady && canLoad,
+    retry: false,
     staleTime: Infinity,
     refetchOnWindowFocus: false,
   });
 
+  const [rosterSnapshot, setRosterSnapshot] = useState<{ key: string; data: GameRosterResponse } | null>(null);
+  if (authSettled && canLoad && fetchedRoster && rosterSnapshot?.key !== snapshotKey)
+    setRosterSnapshot({ key: snapshotKey, data: fetchedRoster });
+  const rosterData = rosterSnapshot?.key === snapshotKey ? rosterSnapshot.data : fetchedRoster;
+  const rosterItems = rosterData?.items;
   const pool = useMemo<ItemResponse[]>(() => buildGamePool(rosterItems ?? []), [rosterItems]);
 
-  const search = searchParams.toString() ? `?${searchParams.toString()}` : "";
   const scope = useMemo<GameScope>(() => {
+    if (resolution.mode === "topics") return { kind: "topics", topics: resolution.topics, search };
     if (collectionId) return { kind: "collection", collectionId, collectionName: collectionInfo?.name, search };
     if (category) return { kind: "category", category, navigationKeywords, filterKeywords, search };
     return { kind: "global", filterKeywords, search };
-  }, [collectionId, collectionInfo?.name, category, navigationKeywords, filterKeywords, search]);
+  }, [collectionId, collectionInfo?.name, category, navigationKeywords, filterKeywords, search, resolution]);
 
   const hideSetsMode = !!category && navigationKeywords.length >= 2;
   const availableModes: ViewMode[] = collectionId
@@ -112,6 +134,10 @@ export function useGameRoster() {
 
   const studyPath = (mode: "explore" | "quiz" | "learn"): string => {
     if (collectionId) return `${buildCollectionStudyPath(mode, collectionId, collectionInfo?.name)}${search}`;
+    if (scope.kind === "topics") {
+      const first = topicParts(scope.topics[0]);
+      return `/${mode}/${first.category}${topicNavigationSearch(scope.topics[0])}`;
+    }
     if (category) return `/${mode}/${categoryNameToSlug(category)}${search}`;
     return `/${mode}${search}`;
   };
@@ -131,11 +157,14 @@ export function useGameRoster() {
 
   return {
     scope,
+    runIdentityKey: snapshotKey,
+    topicBar: createElement(GameTopicsBar, { scope, resolution, unavailable: (rosterData?.scopes ?? []).filter(entry => entry.status === "empty").map(entry => entry.scope) }),
+    topicPrompt: resolution.mode === "choose" || resolution.mode === "error" ? createElement(GameTopicsPrompt, { mode: resolution.mode, onRetry: preferences.retry }) : null,
     title,
     pool,
     /** The roster before the short-text game pool rules; Sort It builds its own pool from it. */
     rawItems: rosterItems ?? EMPTY_ITEMS,
-    isPending: isPending || !authSettled,
+    isPending: !authSettled || resolution.mode === "loading" || (canLoad && isPending),
     error: error && !rosterItems ? error : null,
     refetch: () => void refetch(),
     availableModes,

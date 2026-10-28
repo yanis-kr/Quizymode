@@ -39,7 +39,7 @@ describe("gameScopeKey", () => {
 describe("gameContextId", () => {
   it("uses the documented formats", () => {
     expect(gameContextId("match-race", collection)).toBe("match-race:collection:11111111-1111-4111-8111-111111111111");
-    expect(gameContextId("match-race", category)).toBe("match-race:category:science");
+    expect(gameContextId("match-race", category)).toBe("match-race:category:science:physics");
     expect(gameContextId("match-race", global)).toBe("match-race:global");
   });
 });

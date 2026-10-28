@@ -1,12 +1,8 @@
-import { topicLabel } from "@/features/interests/topicPaths";
 import { useMemo } from "react";
 import { Link } from "react-router-dom";
 import LoadingSpinner from "@/components/LoadingSpinner";
 import ErrorMessage from "@/components/ErrorMessage";
 import { ScopeSecondaryBar } from "@/components/ScopeSecondaryBar";
-import { homeCategoryCards } from "@/features/home/homePageData";
-import { useInterests } from "@/features/interests/useInterests";
-import { useTopicEditor } from "@/features/interests/topicEditorContext";
 import { GAME_MIN_ITEMS, getMatchRaceTargetPairs } from "../gameRoster";
 import { BUCKET_DROP_ID, GAMES, MATCH_RACE_ID, SORT_IT_ID, SURVIVAL_ID, SWIPE_BLITZ_ID } from "../gameRegistry";
 import { buildGamePath, gameScopeKey } from "../gameScope";
@@ -42,44 +38,8 @@ function getBestLabel(gameId: string, scopeKey: string, targetPairs: number): st
   return null;
 }
 
-/** The visitor's chosen topics on the unscoped hub (#382). Games do not use them yet, and the bar says so. */
-function TopicsBar() {
-  const { interests, status } = useInterests();
-  const topicEditor = useTopicEditor();
-  const names: string = interests.map((slug) => topicLabel(slug, new Map(homeCategoryCards.map(card => [card.slug, card.name])))).join(", ");
-  const summary: string = status === "loading" ? "…" : names;
-  return (
-    <div
-      className="mx-auto mt-4 max-w-4xl rounded-lg bg-white px-4 py-3 text-sm shadow sm:flex sm:items-center sm:justify-between sm:gap-4"
-      aria-busy={status === "loading"}
-    >
-      <div>
-        <p className="text-gray-900">
-          {status === "error" ? (
-            "My topics unavailable"
-          ) : status === "ready" && names.length === 0 ? (
-            "No topics chosen"
-          ) : (
-            <>
-              <span className="font-medium">My topics:</span> {summary}
-            </>
-          )}
-        </p>
-        <p className="text-xs text-gray-500">Games use all topics for now.</p>
-      </div>
-      <button
-        type="button"
-        onClick={topicEditor.open}
-        className="mt-2 inline-flex min-h-[44px] w-full items-center justify-center rounded-md border border-indigo-600 px-3 text-indigo-600 hover:bg-indigo-50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500 sm:mt-0 sm:w-auto"
-      >
-        Change topics
-      </button>
-    </div>
-  );
-}
-
 const GamesHubPage = () => {
-  const { scope, pool, rawItems, isPending, error, refetch, availableModes, handleModeChange, quizPath } = useGameRoster();
+  const { scope, topicBar, topicPrompt, pool, rawItems, isPending, error, refetch, availableModes, handleModeChange, quizPath } = useGameRoster();
 
   const sortable: boolean = useMemo(() => hasSortableSet(rawItems), [rawItems]);
 
@@ -93,7 +53,9 @@ const GamesHubPage = () => {
   );
 
   let body;
-  if (error) {
+  if (topicPrompt) {
+    body = topicPrompt;
+  } else if (error) {
     body = (
       <div role="alert" className="mx-auto mt-4 max-w-4xl">
         <ErrorMessage message="We couldn't load games." onRetry={refetch} />
@@ -144,7 +106,7 @@ const GamesHubPage = () => {
   return (
     <div className="py-3 sm:py-4">
       {scopeBar}
-      {scope.kind === "global" && <TopicsBar />}
+      {topicBar}
       {body}
     </div>
   );

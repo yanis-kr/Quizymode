@@ -43,11 +43,12 @@ function livesLeftText(lives: number): string {
 }
 
 const BucketDropPage = () => {
-  const { scope, pool: gamePool, isPending, error, refetch, availableModes, handleModeChange, quizPath } = useGameRoster();
+  const { scope, runIdentityKey, topicBar, topicPrompt, pool: gamePool, isPending, error, refetch, availableModes, handleModeChange, quizPath } = useGameRoster();
   const scopeKey: string = gameScopeKey(scope);
+  const runKey = `${runIdentityKey}|${scopeKey}`;
   const pool = useMemo<ItemResponse[]>(() => buildBucketDropPool(gamePool), [gamePool]);
 
-  const [runBox, setRunBox] = useState<{ scopeKey: string; state: BucketDropRunState } | null>(null);
+  const [runBox, setRunBox] = useState<{ runKey: string; state: BucketDropRunState } | null>(null);
   const [announcement, setAnnouncement] = useState<{ id: number; text: string }>({ id: 0, text: "" });
   const [finishResult, setFinishResult] = useState<FinishResult | null>(null);
   const [reducedMotion] = useState<boolean>(() => prefersReducedMotion());
@@ -55,14 +56,14 @@ const BucketDropPage = () => {
   const touchStart = useRef<{ x: number; y: number } | null>(null);
   const finishHandledRunIds = useRef(new Set<string>());
 
-  const run: BucketDropRunState | null = runBox && runBox.scopeKey === scopeKey ? runBox.state : null;
+  const run: BucketDropRunState | null = runBox && runBox.runKey === runKey ? runBox.state : null;
   const itemsById = useMemo(() => new Map<string, ItemResponse>(pool.map((item) => [item.id, item])), [pool]);
 
   // The latest state is also kept in a ref, updated synchronously, for handlers that can fire before a render.
   const runRef = useRef<BucketDropRunState | null>(null);
   const commit = (state: BucketDropRunState) => {
     runRef.current = state;
-    setRunBox({ scopeKey, state });
+    setRunBox({ runKey, state });
   };
 
   // A new id per event makes the live region re-announce a repeated message.
@@ -80,7 +81,7 @@ const BucketDropPage = () => {
     startRun();
     // startRun only reads values already in this dependency list.
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [run, isPending, error, pool, scopeKey]);
+  }, [run, isPending, error, pool, scopeKey, runKey]);
 
   const runId: string | undefined = run?.runId;
   const sequence: number | undefined = run?.sequence;
@@ -184,7 +185,9 @@ const BucketDropPage = () => {
   );
 
   let body;
-  if (error) {
+  if (topicPrompt) {
+    body = topicPrompt;
+  } else if (error) {
     body = (
       <div role="alert" className="mx-auto mt-4 max-w-4xl">
         <ErrorMessage message="We couldn't load this game." onRetry={refetch} />
@@ -322,6 +325,7 @@ const BucketDropPage = () => {
   return (
     <div className="py-3 sm:py-4">
       {scopeBar}
+      {topicBar}
       {liveRegion}
       <div className={run && run.status !== "finished" && !error ? "mt-4" : undefined}>{body}</div>
     </div>

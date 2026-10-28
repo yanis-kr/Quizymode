@@ -46,11 +46,12 @@ interface FinishResult {
 }
 
 const MatchRacePage = () => {
-  const { scope, pool, isPending, error, refetch, availableModes, handleModeChange, quizPath } = useGameRoster();
+  const { scope, runIdentityKey, topicBar, topicPrompt, pool, isPending, error, refetch, availableModes, handleModeChange, quizPath } = useGameRoster();
   const scopeKey: string = gameScopeKey(scope);
+  const runKey = `${runIdentityKey}|${scopeKey}`;
 
   // The board size is decided once, when a run is created, and never changes mid-run.
-  const [runBox, setRunBox] = useState<{ scopeKey: string; state: MatchRaceRunState } | null>(null);
+  const [runBox, setRunBox] = useState<{ runKey: string; state: MatchRaceRunState } | null>(null);
   const [nowMs, setNowMs] = useState<number>(() => Date.now());
   const [announcement, setAnnouncement] = useState<{ id: number; text: string }>({ id: 0, text: "" });
   const [finishResult, setFinishResult] = useState<FinishResult | null>(null);
@@ -60,7 +61,7 @@ const MatchRacePage = () => {
   const headingRef = useRef<HTMLHeadingElement>(null);
   const finishHandledRunIds = useRef(new Set<string>());
 
-  const run: MatchRaceRunState | null = runBox && runBox.scopeKey === scopeKey ? runBox.state : null;
+  const run: MatchRaceRunState | null = runBox && runBox.runKey === runKey ? runBox.state : null;
   const itemsById = useMemo(() => new Map<string, ItemResponse>(pool.map((item) => [item.id, item])), [pool]);
 
   // A new id per event makes the live region re-announce a repeated message.
@@ -72,7 +73,7 @@ const MatchRacePage = () => {
       getMatchRaceTargetPairs(),
       createAnalyticsId(),
     );
-    setRunBox({ scopeKey, state });
+    setRunBox({ runKey, state });
     setGhostMarks(readGhost(matchRaceGhostKey(scopeKey, state.pairCount)));
     marksRef.current = [];
     announce("");
@@ -85,7 +86,7 @@ const MatchRacePage = () => {
     startRun();
     // startRun only reads values already in this dependency list.
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [run, isPending, error, pool, scopeKey]);
+  }, [run, isPending, error, pool, scopeKey, runKey]);
 
   const runId: string | undefined = run?.runId;
   const status = run?.status;
@@ -128,7 +129,7 @@ const MatchRacePage = () => {
     const next: MatchRaceRunState = reduceMatchRaceRun(run, { type: "select", kind, itemId, nowMs: now });
     if (next === run) return;
     setNowMs(now);
-    setRunBox({ scopeKey, state: next });
+    setRunBox({ runKey, state: next });
     // Same clock as the reducer (penalties included), so ghost times match the time on screen.
     if (next.clearedItemIds.length > run.clearedItemIds.length) marksRef.current.push(getElapsedMs(next, now));
     if (next.status === "finished") {
@@ -171,7 +172,9 @@ const MatchRacePage = () => {
   );
 
   let body;
-  if (error) {
+  if (topicPrompt) {
+    body = topicPrompt;
+  } else if (error) {
     body = (
       <div role="alert" className="mx-auto mt-4 max-w-4xl">
         <ErrorMessage message="We couldn't load this game." onRetry={refetch} />
@@ -257,6 +260,7 @@ const MatchRacePage = () => {
   return (
     <div className="py-3 sm:py-4">
       {scopeBar}
+      {topicBar}
       {liveRegion}
       <div className={run && run.status !== "finished" && !error ? "mt-4" : undefined}>{body}</div>
     </div>

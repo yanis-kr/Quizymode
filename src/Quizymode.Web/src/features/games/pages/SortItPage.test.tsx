@@ -1,3 +1,4 @@
+import { TopicEditorProvider } from "@/features/interests/TopicEditorProvider";
 import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 import { act, cleanup, fireEvent, render, screen, waitFor } from "@testing-library/react";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
@@ -63,6 +64,7 @@ function renderPage(path = "/games/sort-it/science") {
   const page = <SortItPage />;
   return render(
     <QueryClientProvider client={queryClient}>
+      <TopicEditorProvider>
       <MemoryRouter initialEntries={[path]}>
         <Routes>
           <Route path="/games/sort-it/collections/:collectionId/:slug?" element={page} />
@@ -71,6 +73,7 @@ function renderPage(path = "/games/sort-it/science") {
           <Route path="/quiz/*" element={<div />} />
         </Routes>
       </MemoryRouter>
+    </TopicEditorProvider>
     </QueryClientProvider>,
   );
 }

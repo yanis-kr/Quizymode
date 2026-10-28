@@ -174,7 +174,7 @@ describe("GamesHubPage", () => {
     });
 
     it("asks GET /games/roster with no scope for the global hub", async () => {
-      renderPage("/games");
+      renderPage("/games?all=1");
       await screen.findByRole("heading", { name: "Games" });
       expect(gamesApi.getRoster).toHaveBeenCalledWith([], 200);
     });
@@ -260,7 +260,7 @@ describe("GamesHubPage", () => {
 
   it("shows a retryable alert when loading fails", async () => {
     vi.mocked(gamesApi.getRoster).mockRejectedValueOnce(new Error("boom"));
-    renderPage("/games");
+    renderPage("/games?all=1");
 
     expect(await screen.findByRole("alert")).toHaveTextContent("We couldn't load games.");
     fireEvent.click(screen.getByRole("button", { name: "Try again" }));
@@ -274,49 +274,64 @@ describe("GamesHubPage", () => {
     expect(await screen.findByTestId("location")).toHaveTextContent("/learn/science?nav=physics");
   });
 
-  describe("My topics bar (#382)", () => {
-    it("lists the chosen topics, says games use all topics, and opens the editor", async () => {
+  describe("My topics defaults (#384)", () => {
+    it("loads every chosen topic and opens the shared editor", async () => {
       writeLocalInterests(["science", "history"]);
       renderPage("/games");
-
       await screen.findByRole("heading", { name: "Games" });
-      expect(screen.getByText("My topics:")).toBeInTheDocument();
-      expect(screen.getByText(/Science, History/)).toBeInTheDocument();
-      expect(screen.getByText("Games use all topics for now.")).toBeInTheDocument();
-
+      expect(gamesApi.getRoster).toHaveBeenCalledWith(["science", "history"], 200);
+      expect(screen.getByText("My topics: Science, History")).toBeInTheDocument();
       fireEvent.click(screen.getByRole("button", { name: "Change topics" }));
       expect(await screen.findByRole("dialog", { name: "My topics" })).toBeInTheDocument();
     });
 
-    it("says no topics are chosen", async () => {
+    it("waits for a deliberate all-topics choice when no topics are saved", async () => {
       renderPage("/games");
-      expect(await screen.findByText("No topics chosen")).toBeInTheDocument();
-      expect(screen.getByText("Games use all topics for now.")).toBeInTheDocument();
+      expect(await screen.findByRole("heading", { name: "Choose topics for your games" })).toBeInTheDocument();
+      expect(gamesApi.getRoster).not.toHaveBeenCalled();
+      fireEvent.click(screen.getByRole("link", { name: "Play all topics" }));
+      await screen.findByRole("heading", { name: "Games" });
+      expect(gamesApi.getRoster).toHaveBeenCalledWith([], 200);
+      expect(screen.getByTestId("location")).toHaveTextContent("/games?all=1");
     });
 
-    it("shows the bar even when games fail to load", async () => {
+    it("retains the topics bar when the selected roster fails", async () => {
+      writeLocalInterests(["science"]);
       vi.mocked(gamesApi.getRoster).mockRejectedValue(new Error("boom"));
       renderPage("/games");
       expect(await screen.findByRole("alert")).toHaveTextContent("We couldn't load games.");
-      expect(screen.getByRole("button", { name: "Change topics" })).toBeInTheDocument();
+      expect(screen.getByText("My topics: Science")).toBeInTheDocument();
     });
 
-    it("shows that topics are unavailable when a signed-in load fails, and the button still works", async () => {
+    it("does not load a global roster when account topics fail to load", async () => {
       mockAuth.isAuthenticated = true;
       mockAuth.userId = "user-1";
       vi.mocked(interestsApi.get).mockRejectedValue(new Error("down"));
       renderPage("/games");
-
       expect(await screen.findByText("My topics unavailable")).toBeInTheDocument();
+      expect(gamesApi.getRoster).not.toHaveBeenCalled();
       fireEvent.click(screen.getByRole("button", { name: "Change topics" }));
       expect(await screen.findByRole("dialog", { name: "My topics" })).toBeInTheDocument();
     });
 
-    it("is absent on a scoped hub", async () => {
+    it("shows the explicit scope and does not apply preferences on a scoped hub", async () => {
+      writeLocalInterests(["history"]);
       renderPage("/games/science");
       await screen.findByRole("heading", { name: "Games" });
-      expect(screen.queryByText("Games use all topics for now.")).not.toBeInTheDocument();
-      expect(screen.queryByRole("button", { name: "Change topics" })).not.toBeInTheDocument();
+      expect(gamesApi.getRoster).toHaveBeenCalledWith(["science"], 200);
+      expect(screen.getByRole("region", { name: "Game topics" })).toHaveTextContent("Science");
+    });
+
+    it("explains unavailable topics while keeping playable selected topics", async () => {
+      writeLocalInterests(["science", "history"]);
+      vi.mocked(gamesApi.getRoster).mockResolvedValue({ items: makeItems(5), scopes: [
+        { scope: "science", available: 5, returned: 5, status: "ok" },
+        { scope: "history", available: 0, returned: 0, status: "empty" },
+      ] });
+      renderPage("/games");
+      await screen.findByRole("heading", { name: "Games" });
+      expect(screen.getByRole("status")).toHaveTextContent("No playable questions in: History");
+      expect(gamesApi.getRoster).toHaveBeenCalledWith(["science", "history"], 200);
     });
   });
 });
