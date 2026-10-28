@@ -62,6 +62,8 @@ export interface ItemResponse {
   keywords: KeywordResponse[];
   collections: ItemCollectionResponse[];
   source?: string | null;
+  /** Optional short group label (max 30) used by Sort It. */
+  groupLabel?: string | null;
   /** Navigation path for breadcrumbs, e.g. [rank1, rank2] or ["other"]. Use "other" in URLs; display as "Others". */
   navigationBreadcrumb?: string[];
 }
@@ -76,6 +78,19 @@ export interface ItemsResponse {
 
 export interface RandomItemsResponse {
   items: ItemResponse[];
+}
+
+/** One requested scope of GET /games/roster; "empty" means no eligible item was returned for it. */
+export interface GameRosterScope {
+  scope: string;
+  available: number;
+  returned: number;
+  status: "ok" | "empty";
+}
+
+export interface GameRosterResponse {
+  items: ItemResponse[];
+  scopes: GameRosterScope[];
 }
 
 export interface CollectionResponse {
@@ -181,6 +196,7 @@ export interface CreateItemRequest {
   explanation: string;
   keywords?: KeywordRequest[];
   source?: string;
+  groupLabel?: string;
   uploadId?: string | null;
   readyForReview?: boolean | null;
 }
@@ -199,6 +215,8 @@ export interface UpdateItemRequest {
   explanation?: string;
   keywords?: KeywordRequest[];
   source?: string;
+  /** Omitted keeps the stored label; a blank value clears it. */
+  groupLabel?: string;
   readyForReview?: boolean | null;
 }
 

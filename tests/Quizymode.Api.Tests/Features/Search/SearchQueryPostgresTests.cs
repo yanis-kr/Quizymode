@@ -144,11 +144,12 @@ public sealed class SearchQueryPostgresTests(PostgresContainerFixture fixture) :
     public async Task LastWordMatchesAsPrefix_ButOnlyWhileItIsStillBeingTyped()
     {
         RequireDatabase();
-        string word = Word();
-        Item item = await AddItemAsync($"Describe the {word}ification process");
+        // A fixed final consonant keeps the English stemmer from rewriting the random prefix (for example y -> i).
+        string prefix = Word() + "k";
+        Item item = await AddItemAsync($"Describe the {prefix}ification process");
 
-        ItemIds(await SearchAsync(word[..^3])).Should().Contain(item.Id);
-        ItemIds(await SearchAsync(word[..^3] + " ")).Should().NotContain(item.Id);
+        ItemIds(await SearchAsync(prefix)).Should().Contain(item.Id);
+        ItemIds(await SearchAsync(prefix + " ")).Should().NotContain(item.Id);
     }
 
     [SkippableFact]

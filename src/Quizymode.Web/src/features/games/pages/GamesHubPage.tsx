@@ -1,3 +1,4 @@
+import { useMemo } from "react";
 import { Link } from "react-router-dom";
 import LoadingSpinner from "@/components/LoadingSpinner";
 import ErrorMessage from "@/components/ErrorMessage";
@@ -6,13 +7,14 @@ import { homeCategoryCards } from "@/features/home/homePageData";
 import { useInterests } from "@/features/interests/useInterests";
 import { useTopicEditor } from "@/features/interests/topicEditorContext";
 import { GAME_MIN_ITEMS, getMatchRaceTargetPairs } from "../gameRoster";
-import { BUCKET_DROP_ID, GAMES, MATCH_RACE_ID, SURVIVAL_ID, SWIPE_BLITZ_ID } from "../gameRegistry";
+import { BUCKET_DROP_ID, GAMES, MATCH_RACE_ID, SORT_IT_ID, SURVIVAL_ID, SWIPE_BLITZ_ID } from "../gameRegistry";
 import { buildGamePath, gameScopeKey } from "../gameScope";
-import { bucketDropBestKey, readGameBest, survivalBestKey, swipeBlitzBestKey } from "../gameBest";
+import { bucketDropBestKey, readGameBest, sortItBestKey, survivalBestKey, swipeBlitzBestKey } from "../gameBest";
 import { useGameRoster } from "../useGameRoster";
 import { GamesEmptyState } from "../GamesEmptyState";
 import { readBestForScope } from "../matchRace/matchRaceBest";
 import { formatGameTime } from "../matchRace/matchRaceRun";
+import { hasSortableSet } from "../sortIt/sortItPool";
 
 /** "Best 0:42.1" / "Best 23" / "Best streak 12"; null when the scope has no best for the game. */
 function getBestLabel(gameId: string, scopeKey: string, targetPairs: number): string | null {
@@ -30,6 +32,10 @@ function getBestLabel(gameId: string, scopeKey: string, targetPairs: number): st
   }
   if (gameId === BUCKET_DROP_ID) {
     const score: number | null = readGameBest(bucketDropBestKey(scopeKey));
+    return score && score > 0 ? `Best ${score}` : null;
+  }
+  if (gameId === SORT_IT_ID) {
+    const score: number | null = readGameBest(sortItBestKey(scopeKey));
     return score && score > 0 ? `Best ${score}` : null;
   }
   return null;
@@ -72,7 +78,9 @@ function TopicsBar() {
 }
 
 const GamesHubPage = () => {
-  const { scope, pool, isPending, error, refetch, availableModes, handleModeChange, quizPath } = useGameRoster();
+  const { scope, pool, rawItems, isPending, error, refetch, availableModes, handleModeChange, quizPath } = useGameRoster();
+
+  const sortable: boolean = useMemo(() => hasSortableSet(rawItems), [rawItems]);
 
   const scopeBar = (
     <ScopeSecondaryBar
@@ -92,7 +100,7 @@ const GamesHubPage = () => {
     );
   } else if (isPending) {
     body = <LoadingSpinner />;
-  } else if (pool.length < GAME_MIN_ITEMS) {
+  } else if (pool.length < GAME_MIN_ITEMS && !sortable) {
     body = <GamesEmptyState quizPath={quizPath} />;
   } else {
     const scopeKey: string = gameScopeKey(scope);
@@ -101,7 +109,9 @@ const GamesHubPage = () => {
       <>
         <h1 className="mx-auto mt-4 max-w-4xl text-lg font-semibold text-gray-900">Games</h1>
         <div className="mx-auto mt-4 grid max-w-4xl grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
-          {GAMES.map((game) => {
+          {GAMES.filter((game) =>
+            game.id === SORT_IT_ID ? sortable : pool.length >= GAME_MIN_ITEMS,
+          ).map((game) => {
             const best: string | null = getBestLabel(game.id, scopeKey, targetPairs);
             const Icon = game.icon;
             return (

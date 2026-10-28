@@ -5,6 +5,7 @@ import {
   GAME_BEST_STORAGE_KEY,
   readGameBest,
   resetGameBestForTests,
+  sortItBestKey,
   survivalBestKey,
   swipeBlitzBestKey,
   writeBestIfHigher,
@@ -20,6 +21,7 @@ describe("gameBest", () => {
   it("builds per-game keys", () => {
     expect(swipeBlitzBestKey("global|kw=")).toBe("swipe-blitz|global|kw=");
     expect(survivalBestKey("collection:x")).toBe("survival|collection:x");
+    expect(sortItBestKey("category:science|nav=|kw=")).toBe("sort-it|category:science|nav=|kw=");
   });
 
   it("stores the first positive value, replaces with higher, keeps equal and lower", () => {

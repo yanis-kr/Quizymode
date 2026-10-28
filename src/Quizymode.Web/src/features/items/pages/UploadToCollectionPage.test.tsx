@@ -318,6 +318,56 @@ describe("UploadToCollectionPage", () => {
     expect(itemsApi.uploadToCollection).not.toHaveBeenCalled();
   });
 
+  it("sends a trimmed group label, drops blank or missing ones and stringifies non-strings (#359)", async () => {
+    // AC 2.6.14
+    const user = userEvent.setup({ delay: null });
+    renderPage("/items/upload-to-collection?category=science&keywords=anatomy,muscular");
+    await screen.findByLabelText(/^category \*$/i);
+    await waitFor(() => {
+      expect(screen.getByLabelText(/primary topic/i)).toHaveValue("anatomy");
+    });
+
+    await user.click(screen.getByLabelText(/json array of items/i));
+    await user.paste(
+      JSON.stringify([
+        { question: "Q1", correctAnswer: "A", incorrectAnswers: ["W1"], groupLabel: "  Mammals " },
+        { question: "Q2", correctAnswer: "B", incorrectAnswers: ["W1"], groupLabel: "   " },
+        { question: "Q3", correctAnswer: "C", incorrectAnswers: ["W1"] },
+        { question: "Q4", correctAnswer: "D", incorrectAnswers: ["W1"], groupLabel: 42 },
+      ])
+    );
+    await user.click(screen.getByRole("button", { name: /upload and open collection/i }));
+
+    await waitFor(() => expect(itemsApi.uploadToCollection).toHaveBeenCalledTimes(1));
+    const items = vi.mocked(itemsApi.uploadToCollection).mock.calls[0][0].items;
+    expect(items.map((item) => item.groupLabel)).toEqual(["Mammals", undefined, undefined, "42"]);
+  });
+
+  it("blocks submit with a row-numbered error for a group label over 30 characters or with a line break (#359)", async () => {
+    // AC 2.6.14
+    const user = userEvent.setup({ delay: null });
+    renderPage("/items/upload-to-collection?category=science&keywords=anatomy,muscular");
+    await screen.findByLabelText(/^category \*$/i);
+    await waitFor(() => {
+      expect(screen.getByLabelText(/primary topic/i)).toHaveValue("anatomy");
+    });
+
+    await user.click(screen.getByLabelText(/json array of items/i));
+    await user.paste(
+      JSON.stringify([
+        { question: "Q1", correctAnswer: "A", incorrectAnswers: ["W1"], groupLabel: "x".repeat(30) },
+        { question: "Q2", correctAnswer: "B", incorrectAnswers: ["W1"], groupLabel: "x".repeat(31) },
+        { question: "Q3", correctAnswer: "C", incorrectAnswers: ["W1"], groupLabel: "two\nlines" },
+      ])
+    );
+    await user.click(screen.getByRole("button", { name: /upload and open collection/i }));
+
+    expect(
+      await screen.findByText(/items 2, 3: group label must be 30 characters or fewer, with no line breaks/i)
+    ).toBeInTheDocument();
+    expect(itemsApi.uploadToCollection).not.toHaveBeenCalled();
+  });
+
   it("blocks submit with a row-numbered error when incorrect answers repeat or equal the correct answer (#276)", async () => {
     // AC 2.6.8
     const user = userEvent.setup({ delay: null });

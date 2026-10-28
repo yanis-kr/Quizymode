@@ -48,6 +48,7 @@ const EditItemPage = () => {
     explanation: "",
     keywords: [] as KeywordRequest[],
     source: "",
+    groupLabel: "",
     readyForReview: false,
   });
 
@@ -112,6 +113,7 @@ const EditItemPage = () => {
               .map((k) => ({ name: k.name, isPrivate: k.isPrivate }))
           : [],
         source: itemData.source || "",
+        groupLabel: itemData.groupLabel || "",
         readyForReview: false,
       });
     }
@@ -123,6 +125,7 @@ const EditItemPage = () => {
     onSuccess: (_data, variables) => {
       queryClient.invalidateQueries({ queryKey: ["categoryItems"] });
       queryClient.invalidateQueries({ queryKey: ["item", id] });
+      queryClient.invalidateQueries({ queryKey: ["gameRoster"] });
       queryClient.invalidateQueries({ queryKey: ["categories"] });
       const cat =
         typeof variables?.category === "string" ? variables.category.trim() : "";
@@ -201,6 +204,8 @@ const EditItemPage = () => {
       explanation: formData.explanation.trim(),
       keywords: otherKeywords,
       source: formData.source.trim() || undefined,
+      // A blank value clears the stored label; an omitted one would keep it.
+      groupLabel: formData.groupLabel.trim(),
       readyForReview: formData.readyForReview,
     };
 

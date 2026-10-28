@@ -105,6 +105,9 @@ internal sealed class ItemConfiguration : IEntityTypeConfiguration<Item>
         builder.Property(x => x.Source)
             .HasMaxLength(1000);
 
+        builder.Property(x => x.GroupLabel)
+            .HasMaxLength(30);
+
         builder.Property(x => x.CategoryId)
             .IsRequired(false);
 

@@ -237,6 +237,34 @@ describe("CreateItemPage", () => {
     });
   });
 
+  it("sends a trimmed group label and omits a blank one (#359)", async () => {
+    // AC 2.1.17, AC 2.1.18
+    const user = userEvent.setup({ delay: null });
+
+    renderPage("/create/question?category=science&keywords=anatomy,muscular");
+    await waitFor(() => expect(screen.getByLabelText(/subtopic/i)).toHaveValue("muscular"));
+
+    await user.type(getFieldControl("Question *"), "What connects muscle to bone?");
+    await user.type(getFieldControl("Correct Answer *"), "Tendons");
+    await user.type(screen.getByPlaceholderText("Incorrect answer 1"), "Ligaments");
+    await user.click(screen.getByRole("button", { name: /more options/i }));
+    await user.type(screen.getByLabelText(/group label \(optional\)/i), "  Tissue ");
+    await user.click(screen.getByRole("button", { name: /save and add another/i }));
+    await waitFor(() => expect(itemsApi.create).toHaveBeenCalledTimes(1));
+    expect(vi.mocked(itemsApi.create).mock.calls[0][0].groupLabel).toBe("Tissue");
+
+    // The label stays for the next question; clearing it omits the field.
+    const input = screen.getByLabelText(/group label \(optional\)/i);
+    expect(input).toHaveValue("  Tissue ");
+    await user.clear(input);
+    await user.type(getFieldControl("Question *"), "Second?");
+    await user.type(getFieldControl("Correct Answer *"), "Yes");
+    await user.type(screen.getByPlaceholderText("Incorrect answer 1"), "No");
+    await user.click(screen.getByRole("button", { name: /save and add another/i }));
+    await waitFor(() => expect(itemsApi.create).toHaveBeenCalledTimes(2));
+    expect(vi.mocked(itemsApi.create).mock.calls[1][0].groupLabel).toBeUndefined();
+  });
+
   it.each([
     ["equals the correct answer", ["tendons", ""], "Incorrect answers must be different from the correct answer."],
     ["repeats another incorrect answer", ["Ligaments", " ligaments "], "Incorrect answers must be different from each other."],

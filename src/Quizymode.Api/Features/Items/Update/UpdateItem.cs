@@ -30,7 +30,8 @@ public static class UpdateItem
         string? Source = null,
         ItemSpeechSupport? QuestionSpeech = null,
         ItemSpeechSupport? CorrectAnswerSpeech = null,
-        Dictionary<int, ItemSpeechSupport>? IncorrectAnswerSpeech = null);
+        Dictionary<int, ItemSpeechSupport>? IncorrectAnswerSpeech = null,
+        string? GroupLabel = null);
 
     public sealed record Response(
         string Id,
@@ -44,7 +45,8 @@ public static class UpdateItem
         string? Source,
         ItemSpeechSupport? QuestionSpeech = null,
         ItemSpeechSupport? CorrectAnswerSpeech = null,
-        Dictionary<int, ItemSpeechSupport>? IncorrectAnswerSpeech = null);
+        Dictionary<int, ItemSpeechSupport>? IncorrectAnswerSpeech = null,
+        string? GroupLabel = null);
 
     public sealed class Validator : AbstractValidator<Request>
     {
@@ -106,6 +108,8 @@ public static class UpdateItem
             RuleFor(x => x.Source)
                 .MaximumLength(1000)
                 .WithMessage("Source must not exceed 1000 characters");
+
+            this.AddGroupLabelRules(x => x.GroupLabel);
 
         }
     }
@@ -291,6 +295,10 @@ public static class UpdateItem
             {
                 item.Source = string.IsNullOrWhiteSpace(request.Source) ? null : request.Source.Trim();
             }
+            if (request.GroupLabel is not null)
+            {
+                item.GroupLabel = ItemGroupLabelHelper.Normalize(request.GroupLabel);
+            }
             item.UpdatedAt = DateTime.UtcNow;
 
             if (request.Keywords is not null)
@@ -385,7 +393,8 @@ public static class UpdateItem
                 item.Source,
                 item.QuestionSpeech,
                 item.CorrectAnswerSpeech,
-                item.IncorrectAnswerSpeech.Count > 0 ? item.IncorrectAnswerSpeech : null);
+                item.IncorrectAnswerSpeech.Count > 0 ? item.IncorrectAnswerSpeech : null,
+                item.GroupLabel);
 
             return Result.Success(response);
         }

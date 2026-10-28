@@ -38,6 +38,11 @@ public sealed class Item
     public string? Source { get; set; }
 
     /// <summary>
+    /// Optional short group label (max 30) used by the Sort It game (#359).
+    /// </summary>
+    public string? GroupLabel { get; set; }
+
+    /// <summary>
     /// Optional link to the Upload record that created this item (e.g. bulk upload from JSON).
     /// </summary>
     public Guid? UploadId { get; set; }

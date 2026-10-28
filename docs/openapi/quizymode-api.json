@@ -3502,6 +3502,53 @@
         }
       }
     },
+    "/games/roster": {
+      "get": {
+        "tags": [
+          "Games"
+        ],
+        "summary": "Get a random roster of game-eligible items for one or more scopes",
+        "description": "Each `scope` is `category[/l1[/l2]]` (up to 10; none means every category). Items are filtered to the Games short-text rule in SQL before random sampling, then merged round-robin across scopes up to `limit`. Public items plus the caller's own when signed in. Unknown scopes report status `empty`.",
+        "parameters": [
+          {
+            "name": "scope",
+            "in": "query",
+            "schema": {
+              "$ref": "#/components/schemas/System.String[]"
+            }
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "schema": {
+              "$ref": "#/components/schemas/System.NullableOfSystem.Int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Quizymode.Api.Features.Games.GetRoster.GetGameRoster.Response"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "/ideas": {
       "post": {
         "tags": [
@@ -12133,6 +12180,45 @@
           }
         }
       },
+      "Quizymode.Api.Features.Games.GetRoster.GetGameRoster.Response": {
+        "required": [
+          "items",
+          "scopes"
+        ],
+        "type": "object",
+        "properties": {
+          "items": {
+            "$ref": "#/components/schemas/System.Collections.Generic.ListOfQuizymode.Api.Features.Items.Get.GetItems.ItemResponse"
+          },
+          "scopes": {
+            "$ref": "#/components/schemas/System.Collections.Generic.ListOfQuizymode.Api.Features.Games.GetRoster.GetGameRoster.ScopeResult"
+          }
+        }
+      },
+      "Quizymode.Api.Features.Games.GetRoster.GetGameRoster.ScopeResult": {
+        "required": [
+          "scope",
+          "available",
+          "returned",
+          "status"
+        ],
+        "type": "object",
+        "properties": {
+          "scope": {
+            "$ref": "#/components/schemas/System.String"
+          },
+          "available": {
+            "$ref": "#/components/schemas/System.Int32"
+          },
+          "returned": {
+            "$ref": "#/components/schemas/System.Int32"
+          },
+          "status": {
+            "$ref": "#/components/schemas/System.String"
+          }
+        },
+        "description": "One requested scope: its eligible count, how many of those made it into the roster, and ok/empty status."
+      },
       "Quizymode.Api.Features.Ideas.IdeaBoardResponse": {
         "required": [
           "ideas"
@@ -12616,6 +12702,16 @@
                 "$ref": "#/components/schemas/System.Collections.Generic.DictionaryOfSystem.Int32AndQuizymode.Api.Shared.Models.ItemSpeechSupport"
               }
             ]
+          },
+          "groupLabel": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/components/schemas/System.String"
+              }
+            ]
           }
         }
       },
@@ -12704,6 +12800,16 @@
               },
               {
                 "$ref": "#/components/schemas/System.Collections.Generic.DictionaryOfSystem.Int32AndQuizymode.Api.Shared.Models.ItemSpeechSupport"
+              }
+            ]
+          },
+          "groupLabel": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/components/schemas/System.String"
               }
             ]
           }
@@ -12796,6 +12902,16 @@
               },
               {
                 "$ref": "#/components/schemas/System.Collections.Generic.DictionaryOfSystem.Int32AndQuizymode.Api.Shared.Models.ItemSpeechSupport"
+              }
+            ]
+          },
+          "groupLabel": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/components/schemas/System.String"
               }
             ]
           }
@@ -13107,6 +13223,16 @@
                 "$ref": "#/components/schemas/System.Collections.Generic.DictionaryOfSystem.Int32AndQuizymode.Api.Shared.Models.ItemSpeechSupport"
               }
             ]
+          },
+          "groupLabel": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/components/schemas/System.String"
+              }
+            ]
           }
         }
       },
@@ -13330,6 +13456,16 @@
                 "$ref": "#/components/schemas/System.Collections.Generic.DictionaryOfSystem.Int32AndQuizymode.Api.Shared.Models.ItemSpeechSupport"
               }
             ]
+          },
+          "groupLabel": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/components/schemas/System.String"
+              }
+            ]
           }
         }
       },
@@ -13490,6 +13626,16 @@
               },
               {
                 "$ref": "#/components/schemas/System.Collections.Generic.DictionaryOfSystem.Int32AndQuizymode.Api.Shared.Models.ItemSpeechSupport"
+              }
+            ]
+          },
+          "groupLabel": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/components/schemas/System.String"
               }
             ]
           }
@@ -13741,6 +13887,16 @@
                 "$ref": "#/components/schemas/System.Collections.Generic.DictionaryOfSystem.Int32AndQuizymode.Api.Shared.Models.ItemSpeechSupport"
               }
             ]
+          },
+          "groupLabel": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/components/schemas/System.String"
+              }
+            ]
           }
         }
       },
@@ -13819,6 +13975,16 @@
               },
               {
                 "$ref": "#/components/schemas/System.Collections.Generic.DictionaryOfSystem.Int32AndQuizymode.Api.Shared.Models.ItemSpeechSupport"
+              }
+            ]
+          },
+          "groupLabel": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/components/schemas/System.String"
               }
             ]
           }
@@ -16665,6 +16831,12 @@
           "$ref": "#/components/schemas/Quizymode.Api.Features.Featured.GetFeatured.FeaturedSetDto"
         }
       },
+      "System.Collections.Generic.ListOfQuizymode.Api.Features.Games.GetRoster.GetGameRoster.ScopeResult": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/Quizymode.Api.Features.Games.GetRoster.GetGameRoster.ScopeResult"
+        }
+      },
       "System.Collections.Generic.ListOfQuizymode.Api.Features.Ideas.IdeaCommentResponse": {
         "type": "array",
         "items": {
@@ -16947,6 +17119,9 @@
     },
     {
       "name": "Feedback"
+    },
+    {
+      "name": "Games"
     },
     {
       "name": "Ideas"

@@ -7,11 +7,12 @@ import { itemsApi } from "@/api/items";
 import { interestsApi } from "@/api/learningLoop";
 import { TopicEditorProvider } from "@/features/interests/TopicEditorProvider";
 import { writeLocalInterests } from "@/features/learningLoop/localLearningState";
+import { gamesApi } from "@/api/games";
 import { categoriesApi } from "@/api/categories";
 import { collectionsApi } from "@/api/collections";
 import { installMemoryLocalStorage } from "@/test/memoryStorage";
 import { resetMatchRaceBestForTests, writeBestIfFaster } from "../matchRace/matchRaceBest";
-import { bucketDropBestKey, survivalBestKey, swipeBlitzBestKey, writeBestIfHigher } from "../gameBest";
+import { bucketDropBestKey, sortItBestKey, survivalBestKey, swipeBlitzBestKey, writeBestIfHigher } from "../gameBest";
 import type { ItemResponse } from "@/types/api";
 
 const { mockAuth } = vi.hoisted(() => ({
@@ -21,6 +22,7 @@ vi.mock("@/contexts/AuthContext", () => ({ useAuth: () => mockAuth }));
 
 vi.mock("@/api/learningLoop", () => ({ interestsApi: { get: vi.fn(), replace: vi.fn() } }));
 vi.mock("@/api/items", () => ({ itemsApi: { getRandom: vi.fn(), getById: vi.fn() } }));
+vi.mock("@/api/games", () => ({ gamesApi: { getRoster: vi.fn() } }));
 vi.mock("@/api/categories", () => ({ categoriesApi: { getAll: vi.fn() } }));
 vi.mock("@/api/collections", () => ({ collectionsApi: { getItems: vi.fn(), getById: vi.fn() } }));
 
@@ -86,6 +88,7 @@ describe("GamesHubPage", () => {
     vi.mocked(interestsApi.get).mockResolvedValue([]);
     vi.mocked(categoriesApi.getAll).mockResolvedValue({ categories: [{ category: "science" }] } as never);
     vi.mocked(itemsApi.getRandom).mockResolvedValue({ items: makeItems(5) } as never);
+    vi.mocked(gamesApi.getRoster).mockResolvedValue({ items: makeItems(5), scopes: [] });
     vi.mocked(collectionsApi.getItems).mockResolvedValue({ items: makeItems(5) } as never);
     vi.mocked(collectionsApi.getById).mockResolvedValue({ id: COLLECTION_ID, name: "Practice Set" } as never);
   });
@@ -159,12 +162,48 @@ describe("GamesHubPage", () => {
     expect(await screen.findByRole("heading", { name: "Games" })).toBeInTheDocument();
     expect(collectionsApi.getItems).toHaveBeenCalledWith(COLLECTION_ID);
     expect(itemsApi.getRandom).not.toHaveBeenCalled();
+    expect(gamesApi.getRoster).not.toHaveBeenCalled();
+  });
+
+  describe("roster endpoint", () => {
+    it("asks GET /games/roster for a category and navigation scope", async () => {
+      renderPage("/games/science?nav=physics");
+      await screen.findByRole("heading", { name: "Games" });
+      expect(gamesApi.getRoster).toHaveBeenCalledWith(["science/physics"], 200);
+      expect(itemsApi.getRandom).not.toHaveBeenCalled();
+    });
+
+    it("asks GET /games/roster with no scope for the global hub", async () => {
+      renderPage("/games");
+      await screen.findByRole("heading", { name: "Games" });
+      expect(gamesApi.getRoster).toHaveBeenCalledWith([], 200);
+    });
+
+    it("shows the games for a sparse scope whose few eligible items the server returns", async () => {
+      vi.mocked(gamesApi.getRoster).mockResolvedValue({
+        items: makeItems(3),
+        scopes: [{ scope: "science", available: 3, returned: 3, status: "ok" }],
+      });
+      renderPage("/games/science");
+
+      expect(await screen.findByRole("link", { name: "Play Match Race" })).toBeInTheDocument();
+      expect(screen.queryByText("Not enough short questions for games here")).toBeNull();
+    });
+
+    it("falls back to the items endpoint when a scope name contains a slash", async () => {
+      vi.mocked(categoriesApi.getAll).mockResolvedValue({ categories: [{ category: "ai/ml" }] } as never);
+      renderPage("/games/aiml");
+      await screen.findByRole("heading", { name: "Games" });
+      expect(gamesApi.getRoster).not.toHaveBeenCalled();
+      expect(itemsApi.getRandom).toHaveBeenCalledWith("ai/ml", 200, undefined, { navigationKeywords: undefined });
+    });
   });
 
   it("shows the empty state with Open Quiz when fewer than 3 items qualify", async () => {
-    vi.mocked(itemsApi.getRandom).mockResolvedValue({
+    vi.mocked(gamesApi.getRoster).mockResolvedValue({
       items: [...makeItems(2), { ...makeItem(9), question: "q".repeat(81) }],
-    } as never);
+      scopes: [],
+    });
     renderPage("/games/science?keywords=optics");
 
     expect(await screen.findByText("Not enough short questions for games here")).toBeInTheDocument();
@@ -175,8 +214,52 @@ describe("GamesHubPage", () => {
     expect(await screen.findByTestId("location")).toHaveTextContent("/quiz/science?keywords=optics");
   });
 
+  describe("Sort It card", () => {
+    const sortable = (labels: string[], overrides: Partial<ItemResponse> = {}): ItemResponse[] =>
+      labels.flatMap((label, g) =>
+        Array.from({ length: 4 }, (_, i) => ({
+          ...makeItem(100 + g * 10 + i),
+          correctAnswer: `${label}-${i}`,
+          groupLabel: label,
+          ...overrides,
+        })),
+      );
+
+    it("shows a fifth card with Best and a Play link when the scope has two groups of four", async () => {
+      writeBestIfHigher(sortItBestKey("category:science|nav=|kw="), 7);
+      vi.mocked(gamesApi.getRoster).mockResolvedValue({ items: [...makeItems(5), ...sortable(["Mammals", "Birds"])], scopes: [] });
+      renderPage("/games/science");
+      await screen.findByRole("heading", { name: "Games" });
+
+      const titles = screen.getAllByRole("heading", { level: 2 }).map((heading) => heading.textContent);
+      expect(titles).toEqual(["Match Race", "Swipe Blitz", "Survival", "Bucket Drop", "Sort It"]);
+      expect(screen.getByText("Sort each fact into its group.")).toBeInTheDocument();
+      expect(screen.getByText("Best 7")).toBeInTheDocument();
+      expect(screen.getByRole("link", { name: "Play Sort It" })).toHaveAttribute("href", "/games/sort-it/science");
+    });
+
+    it("hides the card when the scope has no sortable set", async () => {
+      vi.mocked(gamesApi.getRoster).mockResolvedValue({ items: [...makeItems(5), ...sortable(["Mammals"])], scopes: [] });
+      renderPage("/games/science");
+      await screen.findByRole("heading", { name: "Games" });
+      expect(screen.queryByRole("heading", { name: "Sort It" })).toBeNull();
+      expect(screen.queryByRole("link", { name: "Play Sort It" })).toBeNull();
+    });
+
+    it("shows only Sort It, not the empty state, when little else qualifies but groups are sortable", async () => {
+      vi.mocked(gamesApi.getRoster).mockResolvedValue({
+        items: sortable(["Mammals", "Birds"], { incorrectAnswers: [] }),
+        scopes: [],
+      });
+      renderPage("/games/science");
+      await screen.findByRole("heading", { name: "Games" });
+      expect(screen.getAllByRole("heading", { level: 2 }).map((heading) => heading.textContent)).toEqual(["Sort It"]);
+      expect(screen.queryByText("Not enough short questions for games here")).toBeNull();
+    });
+  });
+
   it("shows a retryable alert when loading fails", async () => {
-    vi.mocked(itemsApi.getRandom).mockRejectedValueOnce(new Error("boom"));
+    vi.mocked(gamesApi.getRoster).mockRejectedValueOnce(new Error("boom"));
     renderPage("/games");
 
     expect(await screen.findByRole("alert")).toHaveTextContent("We couldn't load games.");

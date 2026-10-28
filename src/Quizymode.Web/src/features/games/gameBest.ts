@@ -16,6 +16,10 @@ export function bucketDropBestKey(scopeKey: string): string {
   return `bucket-drop|${scopeKey}`;
 }
 
+export function sortItBestKey(scopeKey: string): string {
+  return `sort-it|${scopeKey}`;
+}
+
 /** Every stored best (storage merged over the in-memory fallback). Never throws. */
 export function readAllGameBests(): Record<string, number> {
   try {
