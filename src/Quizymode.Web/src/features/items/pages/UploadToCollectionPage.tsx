@@ -33,6 +33,7 @@ Each item must be a JSON object with this exact shape:
   "incorrectAnswers": ["Wrong answer 1", "Wrong answer 2", "Wrong answer 3"],
   "explanation": "Short explanation of why the correct answer is right (optional but recommended)",
   "source": "ChatGPT",
+  "groupLabel": "Short group name (optional, max 30 characters, no line breaks)",
   "uploadId" : "${uploadId}"
 }
 
@@ -45,6 +46,7 @@ Requirements:
   - a non-empty "correctAnswer" (max 200 characters)
   - 1–4 "incorrectAnswers" (each max 200 characters)
   - "source" (optional, max 1000 characters - e.g., a direct reference URL)
+  - "groupLabel" (optional, max 30 characters, no line breaks - used by the Sort It game, e.g., "Mammals")
 - All strings must be plain text (no HTML, no LaTeX).
 
 Now generate the JSON array only.`;
@@ -213,7 +215,21 @@ const UploadToCollectionPage = ({
           )
         : undefined,
       source: row.source != null ? String(row.source) : undefined,
+      groupLabel: row.groupLabel != null ? String(row.groupLabel).trim() || undefined : undefined,
     }));
+    const groupLabelRows = mapped
+      .map((row, index) =>
+        row.groupLabel !== undefined && (row.groupLabel.length > 30 || /[\p{Cc}\p{Cf}\p{Zl}\p{Zp}]/u.test(row.groupLabel))
+          ? index + 1
+          : 0
+      )
+      .filter((n) => n > 0);
+    if (groupLabelRows.length > 0) {
+      setParseError(
+        `Item${groupLabelRows.length > 1 ? "s" : ""} ${groupLabelRows.join(", ")}: group label must be 30 characters or fewer, with no line breaks.`
+      );
+      return;
+    }
     const missingRows = mapped
       .map((row, index) => (row.incorrectAnswers.length === 0 ? index + 1 : 0))
       .filter((n) => n > 0);
@@ -417,7 +433,7 @@ const UploadToCollectionPage = ({
             className="block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm font-mono text-sm"
             placeholder={[
               '[',
-              '  { "category": "Category Name", "question": "...", "correctAnswer": "...", "incorrectAnswers": ["...", "..."], "explanation": "...", "source": "ChatGPT", "uploadId": "' + uploadId + '" },',
+              '  { "category": "Category Name", "question": "...", "correctAnswer": "...", "incorrectAnswers": ["...", "..."], "explanation": "...", "source": "ChatGPT", "groupLabel": "Mammals", "uploadId": "' + uploadId + '" },',
               '  ...',
               ']',
             ].join("\n")}

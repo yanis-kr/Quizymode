@@ -208,6 +208,7 @@ internal static class AddItemsBulkHandler
                             NavigationKeywordId1 = keyword1Entity.Id,
                             NavigationKeywordId2 = keyword2Entity.Id,
                             Source = string.IsNullOrWhiteSpace(itemRequest.Source) ? null : itemRequest.Source.Trim(),
+                            GroupLabel = ItemGroupLabelHelper.Normalize(itemRequest.GroupLabel),
                             UploadId = request.UploadId,
                         };
 

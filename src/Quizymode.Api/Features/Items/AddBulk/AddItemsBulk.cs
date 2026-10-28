@@ -24,7 +24,8 @@ public static class AddItemsBulk
         string? Source = null,
         ItemSpeechSupport? QuestionSpeech = null,
         ItemSpeechSupport? CorrectAnswerSpeech = null,
-        Dictionary<int, ItemSpeechSupport>? IncorrectAnswerSpeech = null);
+        Dictionary<int, ItemSpeechSupport>? IncorrectAnswerSpeech = null,
+        string? GroupLabel = null);
 
     public sealed record Request(
         bool IsPrivate,
@@ -136,6 +137,8 @@ public static class AddItemsBulk
             RuleFor(x => x.Source)
                 .MaximumLength(1000)
                 .WithMessage("Source must not exceed 1000 characters");
+
+            this.AddGroupLabelRules(x => x.GroupLabel);
 
             RuleFor(x => x.Keywords)
                 .Must(keywords => keywords is null || keywords.Count <= 50)

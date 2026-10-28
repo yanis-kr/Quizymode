@@ -32,6 +32,7 @@ export interface ItemFormValues {
   explanation: string;
   keywords: KeywordRequest[];
   source: string;
+  groupLabel: string;
 }
 
 export interface ItemFormProps {
@@ -64,7 +65,7 @@ export interface ItemFormProps {
 
 /** Server messages that point at a field inside More options. */
 const MORE_OPTIONS_ERROR_PATTERN =
-  /\b(explanation|source|pronunciation|language code|extra keyword|additional keyword)/i;
+  /\b(explanation|source|group ?label|pronunciation|language code|extra keyword|additional keyword)/i;
 
 export function ItemForm({
   mode,
@@ -105,6 +106,7 @@ export function ItemForm({
   const moreOptionsHasValue =
     values.explanation.trim() !== "" ||
     values.source.trim() !== "" ||
+    values.groupLabel.trim() !== "" ||
     values.keywords.length > 0 ||
     Boolean(values.questionSpeech.pronunciation || values.questionSpeech.languageCode) ||
     Boolean(values.correctAnswerSpeech.pronunciation || values.correctAnswerSpeech.languageCode) ||
@@ -435,7 +437,7 @@ export function ItemForm({
           More options
         </button>
         <p className="mt-1 text-xs text-gray-500">
-          Explanation, source, extra keywords and pronunciation (all optional).
+          Group label, explanation, source, extra keywords and pronunciation (all optional).
         </p>
         <div
           id={moreOptionsId}
@@ -444,6 +446,28 @@ export function ItemForm({
           hidden={!moreOpen}
           className="mt-4 space-y-6 rounded-lg border border-gray-200 bg-slate-50/80 p-4 sm:p-5"
         >
+          <div>
+            <label
+              htmlFor={`${mode}-group-label`}
+              className="block text-sm font-medium text-gray-700 mb-2"
+            >
+              Group label (optional)
+            </label>
+            <input
+              id={`${mode}-group-label`}
+              type="text"
+              value={values.groupLabel}
+              onChange={(e) => onChange({ ...values, groupLabel: e.target.value })}
+              maxLength={30}
+              placeholder="e.g., Mammals"
+              aria-describedby={`${mode}-group-label-help`}
+              className="w-full px-3 py-2 border border-gray-300 rounded-md text-sm bg-white text-gray-900 placeholder:text-gray-500"
+            />
+            <p id={`${mode}-group-label-help`} className="mt-1 text-xs text-gray-500">
+              Used by Sort It. Items with the same label form a group. Up to 30 characters.
+            </p>
+          </div>
+
           <div>
             <label
               htmlFor={`${mode}-explanation`}

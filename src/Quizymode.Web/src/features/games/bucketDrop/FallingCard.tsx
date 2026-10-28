@@ -15,6 +15,8 @@ interface FallingCardProps {
   onLand: () => void;
   /** The focusable question card. */
   cardRef: RefObject<HTMLDivElement | null>;
+  /** Text before the revealed answer; Sort It uses "Group: ". */
+  revealPrefix?: string;
 }
 
 /**
@@ -31,6 +33,7 @@ export function FallingCard({
   reducedMotion,
   onLand,
   cardRef,
+  revealPrefix = "Answer: ",
 }: FallingCardProps) {
   const id: string = useId();
   const wrapperRef = useRef<HTMLDivElement>(null);
@@ -108,7 +111,7 @@ export function FallingCard({
           <p id={`${id}-q`} className="line-clamp-3">
             {revealed ? (
               <>
-                Answer: <ForeignPhraseText text={revealAnswer ?? ""} />
+                {revealPrefix}<ForeignPhraseText text={revealAnswer ?? ""} />
               </>
             ) : (
               <ForeignPhraseText text={question} />

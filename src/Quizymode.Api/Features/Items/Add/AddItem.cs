@@ -30,7 +30,8 @@ public static class AddItem
         Guid? UploadId = null,
         ItemSpeechSupport? QuestionSpeech = null,
         ItemSpeechSupport? CorrectAnswerSpeech = null,
-        Dictionary<int, ItemSpeechSupport>? IncorrectAnswerSpeech = null);
+        Dictionary<int, ItemSpeechSupport>? IncorrectAnswerSpeech = null,
+        string? GroupLabel = null);
 
     public sealed record Response(
         string Id,
@@ -45,7 +46,8 @@ public static class AddItem
         string? UploadId = null,
         ItemSpeechSupport? QuestionSpeech = null,
         ItemSpeechSupport? CorrectAnswerSpeech = null,
-        Dictionary<int, ItemSpeechSupport>? IncorrectAnswerSpeech = null);
+        Dictionary<int, ItemSpeechSupport>? IncorrectAnswerSpeech = null,
+        string? GroupLabel = null);
 
     public sealed class Validator : AbstractValidator<Request>
     {
@@ -107,6 +109,8 @@ public static class AddItem
             RuleFor(x => x.Source)
                 .MaximumLength(1000)
                 .WithMessage("Source must not exceed 1000 characters");
+
+            this.AddGroupLabelRules(x => x.GroupLabel);
 
         }
     }
