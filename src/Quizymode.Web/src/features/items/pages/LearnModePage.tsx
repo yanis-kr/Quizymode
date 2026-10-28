@@ -545,6 +545,7 @@ const LearnModePage = () => {
     <div className="flex flex-wrap items-start justify-between gap-x-4 gap-y-2">
       <div className="min-w-0">
         <h1 className="truncate text-lg font-semibold text-gray-900">{title}</h1>
+        <p className="text-xs font-medium text-gray-700">Learn, Test and Review are free.</p>
         <p className="text-xs text-gray-500">Quiz: one pass. Learn: repeat until mastered. Review: spaced, due items.</p>
       </div>
       {!collectionId && (
