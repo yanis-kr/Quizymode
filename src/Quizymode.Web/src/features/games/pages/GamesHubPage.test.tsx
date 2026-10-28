@@ -295,7 +295,7 @@ describe("GamesHubPage", () => {
     });
 
     it("shows the bar even when games fail to load", async () => {
-      vi.mocked(itemsApi.getRandom).mockRejectedValue(new Error("boom"));
+      vi.mocked(gamesApi.getRoster).mockRejectedValue(new Error("boom"));
       renderPage("/games");
       expect(await screen.findByRole("alert")).toHaveTextContent("We couldn't load games.");
       expect(screen.getByRole("button", { name: "Change topics" })).toBeInTheDocument();
