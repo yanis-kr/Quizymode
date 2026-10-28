@@ -2,6 +2,9 @@ import { Link } from "react-router-dom";
 import LoadingSpinner from "@/components/LoadingSpinner";
 import ErrorMessage from "@/components/ErrorMessage";
 import { ScopeSecondaryBar } from "@/components/ScopeSecondaryBar";
+import { homeCategoryCards } from "@/features/home/homePageData";
+import { useInterests } from "@/features/interests/useInterests";
+import { useTopicEditor } from "@/features/interests/topicEditorContext";
 import { GAME_MIN_ITEMS, getMatchRaceTargetPairs } from "../gameRoster";
 import { BUCKET_DROP_ID, GAMES, MATCH_RACE_ID, SURVIVAL_ID, SWIPE_BLITZ_ID } from "../gameRegistry";
 import { buildGamePath, gameScopeKey } from "../gameScope";
@@ -30,6 +33,42 @@ function getBestLabel(gameId: string, scopeKey: string, targetPairs: number): st
     return score && score > 0 ? `Best ${score}` : null;
   }
   return null;
+}
+
+/** The visitor's chosen topics on the unscoped hub (#382). Games do not use them yet, and the bar says so. */
+function TopicsBar() {
+  const { interests, status } = useInterests();
+  const topicEditor = useTopicEditor();
+  const names: string = interests.map((slug) => homeCategoryCards.find((card) => card.slug === slug)?.name ?? slug).join(", ");
+  const summary: string = status === "loading" ? "…" : names;
+  return (
+    <div
+      className="mx-auto mt-4 max-w-4xl rounded-lg bg-white px-4 py-3 text-sm shadow sm:flex sm:items-center sm:justify-between sm:gap-4"
+      aria-busy={status === "loading"}
+    >
+      <div>
+        <p className="text-gray-900">
+          {status === "error" ? (
+            "My topics unavailable"
+          ) : status === "ready" && names.length === 0 ? (
+            "No topics chosen"
+          ) : (
+            <>
+              <span className="font-medium">My topics:</span> {summary}
+            </>
+          )}
+        </p>
+        <p className="text-xs text-gray-500">Games use all topics for now.</p>
+      </div>
+      <button
+        type="button"
+        onClick={topicEditor.open}
+        className="mt-2 inline-flex min-h-[44px] w-full items-center justify-center rounded-md border border-indigo-600 px-3 text-indigo-600 hover:bg-indigo-50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500 sm:mt-0 sm:w-auto"
+      >
+        Change topics
+      </button>
+    </div>
+  );
 }
 
 const GamesHubPage = () => {
@@ -94,6 +133,7 @@ const GamesHubPage = () => {
   return (
     <div className="py-3 sm:py-4">
       {scopeBar}
+      {scope.kind === "global" && <TopicsBar />}
       {body}
     </div>
   );

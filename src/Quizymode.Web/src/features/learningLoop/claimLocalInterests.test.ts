@@ -34,4 +34,28 @@ describe("claimLocalInterests", () => {
     expect(await claimLocalInterests()).toBe(false);
     expect(readLocalInterests()).toEqual(["trivia"]);
   });
+
+  it("#382: hands the merged list to the caller before the local copy is cleared", async () => {
+    writeLocalInterests(["trivia"]);
+    vi.mocked(interestsApi.get).mockResolvedValue(["history"]);
+    vi.mocked(interestsApi.replace).mockResolvedValue(["history", "trivia"]);
+    let localAtCallback: string[] = [];
+    const onMerged = vi.fn(() => {
+      localAtCallback = readLocalInterests();
+    });
+
+    expect(await claimLocalInterests(onMerged)).toBe(true);
+    expect(onMerged).toHaveBeenCalledWith(["history", "trivia"]);
+    expect(localAtCallback).toEqual(["trivia"]);
+    expect(readLocalInterests()).toEqual([]);
+  });
+
+  it("#382: does not call the callback when the claim fails", async () => {
+    writeLocalInterests(["trivia"]);
+    vi.mocked(interestsApi.get).mockRejectedValue(new Error("offline"));
+    const onMerged = vi.fn();
+
+    expect(await claimLocalInterests(onMerged)).toBe(false);
+    expect(onMerged).not.toHaveBeenCalled();
+  });
 });

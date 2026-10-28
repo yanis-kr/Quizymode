@@ -1,15 +1,20 @@
 import { useMemo } from "react";
 import { Link } from "react-router-dom";
 import { useQuery } from "@tanstack/react-query";
-import { ArrowRightIcon } from "@heroicons/react/24/outline";
+import { ArrowRightIcon, ChevronDownIcon } from "@heroicons/react/24/outline";
 import { SEO } from "@/components/SEO";
 import { categoriesApi } from "@/api/categories";
 import { collectionsApi } from "@/api/collections";
-import { featuredApi } from "@/api/featured";
+import { featuredApi, type FeaturedSetDto } from "@/api/featured";
+import type { CollectionDiscoverItem } from "@/types/api";
+import { useAuth } from "@/contexts/AuthContext";
 import { buildCollectionPath, buildCollectionStudyPath } from "@/utils/collectionPath";
 import { buildCategoryPath } from "@/utils/categorySlug";
 import { getCategoryThemeBySlug } from "@/features/categories/categoryThemes";
 import { GuestHistoryCard } from "@/features/guestHistory/GuestHistoryCard";
+import { buildGamePath } from "@/features/games/gameScope";
+import { useInterests } from "@/features/interests/useInterests";
+import { TopicOnboardingPrompt } from "../TopicOnboardingPrompt";
 import { PersonalizedLanes } from "../PersonalizedLanes";
 import {
   HOME_SAMPLE_COLLECTION_ID,
@@ -50,7 +55,195 @@ function formatItemCount(count: number) {
   return `${numberFormatter.format(count)} item${count === 1 ? "" : "s"}`;
 }
 
+interface CatalogLanesProps {
+  countsByCategory: Map<string, number>;
+  featuredSets: FeaturedSetDto[];
+  publicCollections: CollectionDiscoverItem[];
+}
+
+/** The catalog browse lanes; shown directly on the full Home and inside "Explore all topics" on the focused Home. */
+function CatalogLanes({ countsByCategory, featuredSets, publicCollections }: CatalogLanesProps) {
+  return (
+    <>
+      {/* ── Categories lane ── */}
+      <section className="rounded-[24px] border border-white/10 bg-slate-950/70 p-2 sm:p-3 shadow-xl shadow-slate-950/25">
+        <div className="mb-1.5 flex items-center justify-between gap-3">
+          <div className="text-xs font-semibold uppercase tracking-[0.22em] text-sky-300">
+            Categories
+          </div>
+          <Link
+            to="/categories"
+            className="flex items-center gap-1 text-xs font-semibold text-sky-400 transition hover:text-sky-200"
+          >
+            Show all
+            <ArrowRightIcon className="h-3 w-3" />
+          </Link>
+        </div>
+
+        {/* Horizontal carousel: 2 visible by default, 3 on md, 4 on xl */}
+        <div className="flex gap-2.5 overflow-x-auto pb-1 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
+          {homeCategoryCards.map((category) => {
+            const liveCount = countsByCategory.get(category.slug);
+
+            return (
+              <Link
+                key={category.slug}
+                to={`/categories/${category.slug}`}
+                className="group relative min-w-0 shrink-0 overflow-hidden rounded-[18px] border border-white/10 bg-slate-900/90 transition duration-200 hover:-translate-y-0.5 hover:border-sky-300/50
+                  basis-[calc(50%-0.3125rem)] md:basis-[calc((100%-0.833rem)/3)] xl:basis-[calc((100%-1.875rem)/4)]"
+              >
+                <img
+                  src={category.image}
+                  alt=""
+                  className="absolute inset-0 h-full w-full object-cover transition duration-500 group-hover:scale-105"
+                />
+                <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(2,6,23,0.05)_0%,rgba(2,6,23,0.78)_100%)]" />
+                <div className="relative flex h-full min-h-[80px] flex-col justify-between p-3 text-white sm:min-h-[96px]">
+                  <div className="flex justify-end">
+                    {liveCount != null && (
+                      <span className="rounded-full border border-white/20 bg-black/55 px-2 py-0.5 text-[10px] font-semibold text-white backdrop-blur-sm">
+                        {formatItemCount(liveCount)}
+                      </span>
+                    )}
+                  </div>
+                  <div className="flex items-center justify-between gap-2">
+                    <h3 className="text-sm font-semibold text-white">{category.name}</h3>
+                    <ArrowRightIcon className="h-4 w-4 shrink-0 text-sky-200 transition group-hover:translate-x-1" />
+                  </div>
+                </div>
+              </Link>
+            );
+          })}
+        </div>
+      </section>
+
+      {/* ── Featured Sets lane ── */}
+      {featuredSets.length > 0 && (
+        <section className="rounded-[24px] border border-white/10 bg-slate-950/70 p-2 sm:p-3 shadow-xl shadow-slate-950/25">
+          <div className="mb-1.5 flex items-center justify-between gap-3">
+            <div className="text-xs font-semibold uppercase tracking-[0.22em] text-sky-300">
+              Featured Sets
+            </div>
+            <Link
+              to="/featured"
+              className="flex items-center gap-1 text-xs font-semibold text-sky-400 transition hover:text-sky-200"
+            >
+              Show all
+              <ArrowRightIcon className="h-3 w-3" />
+            </Link>
+          </div>
+
+          <div className="flex gap-2.5 overflow-x-auto pb-1 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
+            {featuredSets.map((set) => {
+              const keywords = [set.navKeyword1, set.navKeyword2].filter(Boolean) as string[];
+              const path = buildCategoryPath(set.categorySlug, keywords);
+              const image = getCategoryThemeBySlug(set.categorySlug).image;
+
+              return (
+                <Link
+                  key={set.id}
+                  to={path}
+                  className="group relative min-w-0 shrink-0 basis-[calc(50%-0.3125rem)] overflow-hidden rounded-[18px] border border-white/10 bg-slate-900/90 transition duration-200 hover:-translate-y-0.5 hover:border-sky-300/50 md:basis-[calc((100%-0.833rem)/3)] xl:basis-[calc((100%-1.875rem)/4)]"
+                >
+                  <img
+                    src={image}
+                    alt=""
+                    className="absolute inset-0 h-full w-full object-cover transition duration-500 group-hover:scale-105"
+                  />
+                  <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(2,6,23,0.05)_0%,rgba(2,6,23,0.78)_100%)]" />
+                  <div className="relative flex h-full min-h-[80px] flex-col justify-between p-3 sm:min-h-[96px]">
+                    <div className="flex justify-end">
+                      <span className="rounded-full border border-white/20 bg-black/55 px-2 py-0.5 text-[10px] font-semibold text-white backdrop-blur-sm">
+                        {set.categorySlug}
+                      </span>
+                    </div>
+                    <div className="flex items-center justify-between gap-2">
+                      <h3 className="text-sm font-semibold text-white">{set.displayName}</h3>
+                      <ArrowRightIcon className="h-4 w-4 shrink-0 text-sky-200 transition group-hover:translate-x-1" />
+                    </div>
+                  </div>
+                </Link>
+              );
+            })}
+          </div>
+        </section>
+      )}
+
+      {/* ── Recently Added Collections lane ── */}
+      {publicCollections.length > 0 && (
+        <section className="rounded-[24px] border border-white/10 bg-slate-950/70 p-2 sm:p-3 shadow-xl shadow-slate-950/25">
+          <div className="mb-1.5 flex items-center justify-between gap-3">
+            <div className="text-xs font-semibold uppercase tracking-[0.22em] text-sky-300">
+              Recently Added Collections
+            </div>
+            <Link
+              to="/collections?tab=discover"
+              className="flex items-center gap-1 text-xs font-semibold text-sky-400 transition hover:text-sky-200"
+            >
+              Show all
+              <ArrowRightIcon className="h-3 w-3" />
+            </Link>
+          </div>
+
+          <div className="flex gap-2.5 overflow-x-auto pb-1 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
+            {publicCollections.map((collection, index) => (
+              <Link
+                key={collection.id}
+                to={buildCollectionPath(collection.id, collection.name)}
+                className="group relative min-w-0 shrink-0 basis-[calc(50%-0.3125rem)] overflow-hidden rounded-[18px] border border-white/10 bg-slate-900/90 transition duration-200 hover:-translate-y-0.5 hover:border-sky-300/50 md:basis-[calc((100%-0.833rem)/3)] xl:basis-[calc((100%-1.875rem)/4)]"
+              >
+                <img
+                  src={publicCollectionCardImage(index)}
+                  alt=""
+                  className="absolute inset-0 h-full w-full object-cover transition duration-500 group-hover:scale-105"
+                />
+                <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(2,6,23,0.05)_0%,rgba(2,6,23,0.78)_100%)]" />
+                <div className="relative flex h-full min-h-[80px] flex-col justify-between p-3 sm:min-h-[96px]">
+                  <div className="flex justify-end">
+                    <span className="rounded-full border border-white/20 bg-black/55 px-2 py-0.5 text-[10px] font-semibold text-white backdrop-blur-sm">
+                      {collection.itemCount} {collection.itemCount === 1 ? "item" : "items"}
+                    </span>
+                  </div>
+                  <div>
+                    <div className="flex items-center justify-between gap-2">
+                      <h3 className="text-sm font-semibold text-white">{collection.name}</h3>
+                      <ArrowRightIcon className="h-4 w-4 shrink-0 text-sky-200 transition group-hover:translate-x-1" />
+                    </div>
+                    {collection.description && (
+                      <p className="mt-0.5 text-xs text-slate-300 line-clamp-2">
+                        {collection.description}
+                      </p>
+                    )}
+                  </div>
+                </div>
+              </Link>
+            ))}
+          </div>
+        </section>
+      )}
+    </>
+  );
+}
+
+const laneClass = "rounded-[24px] border border-white/10 bg-slate-950/70 p-2 sm:p-3 shadow-xl shadow-slate-950/25";
+const categoryNames = new Map(homeCategoryCards.map((card) => [card.slug, card.name]));
+
 const HomePage = () => {
+  const { isAuthenticated, isLoading: isAuthLoading } = useAuth();
+  const { interests, status: interestsStatus } = useInterests();
+  // Guests with browser-local picks go straight to the focused layout; only a signed-in visitor waits for their topics.
+  const layout: "pending" | "focused" | "full" =
+    isAuthLoading && interests.length === 0
+      ? "pending"
+      : !isAuthLoading && isAuthenticated && interestsStatus === "loading"
+        ? "pending"
+        : interestsStatus === "error"
+          ? "full"
+          : interests.length > 0
+            ? "focused"
+            : "full";
+  const focused = layout === "focused";
+  const firstTopic = interests.find((slug) => categoryNames.has(slug));
   const { data: categoriesData } = useQuery({
     queryKey: ["home", "categories"],
     queryFn: () => categoriesApi.getAll(),
@@ -121,10 +314,12 @@ const HomePage = () => {
                 <h1 className="text-xl font-semibold tracking-tight text-white sm:text-2xl lg:text-[1.65rem] lg:leading-snug">
                   Learn something new in five questions.
                 </h1>
-                <p className="mt-1.5 max-w-2xl text-xs leading-5 text-slate-200 lg:text-sm">
-                  Start with Fun Trivia Facts, then browse public topics or create private practice sets when you are ready.
-                </p>
-                <p className="mt-1 text-xs font-semibold text-sky-200">No account needed.</p>
+                {!focused && (
+                  <p className="mt-1.5 max-w-2xl text-xs leading-5 text-slate-200 lg:text-sm">
+                    Start with Fun Trivia Facts, then browse public topics or create private practice sets when you are ready.
+                  </p>
+                )}
+                {(!focused || !isAuthenticated) && <p className="mt-1 text-xs font-semibold text-sky-200">No account needed.</p>}
               </div>
               <div className="mt-3 flex shrink-0 items-center sm:mt-0">
                 <Link
@@ -143,163 +338,56 @@ const HomePage = () => {
 
             <GuestHistoryCard />
 
-            <PersonalizedLanes featuredSets={featuredSets} />
-
-            {/* ── Categories lane ── */}
-            <section className="rounded-[24px] border border-white/10 bg-slate-950/70 p-2 sm:p-3 shadow-xl shadow-slate-950/25">
-              <div className="mb-1.5 flex items-center justify-between gap-3">
-                <div className="text-xs font-semibold uppercase tracking-[0.22em] text-sky-300">
-                  Categories
-                </div>
-                <Link
-                  to="/categories"
-                  className="flex items-center gap-1 text-xs font-semibold text-sky-400 transition hover:text-sky-200"
-                >
-                  Show all
-                  <ArrowRightIcon className="h-3 w-3" />
-                </Link>
+            {layout === "pending" && (
+              <div role="status" className="flex flex-col gap-2">
+                <span className="sr-only">Loading your home</span>
+                <div aria-hidden="true" className={`${laneClass} h-24 animate-pulse bg-white/10`} />
+                <div aria-hidden="true" className={`${laneClass} h-24 animate-pulse bg-white/10`} />
               </div>
-
-              {/* Horizontal carousel: 2 visible by default, 3 on md, 4 on xl */}
-              <div className="flex gap-2.5 overflow-x-auto pb-1 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
-                {homeCategoryCards.map((category) => {
-                  const liveCount = countsByCategory.get(category.slug);
-
-                  return (
-                    <Link
-                      key={category.slug}
-                      to={`/categories/${category.slug}`}
-                      className="group relative min-w-0 shrink-0 overflow-hidden rounded-[18px] border border-white/10 bg-slate-900/90 transition duration-200 hover:-translate-y-0.5 hover:border-sky-300/50
-                        basis-[calc(50%-0.3125rem)] md:basis-[calc((100%-0.833rem)/3)] xl:basis-[calc((100%-1.875rem)/4)]"
-                    >
-                      <img
-                        src={category.image}
-                        alt=""
-                        className="absolute inset-0 h-full w-full object-cover transition duration-500 group-hover:scale-105"
-                      />
-                      <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(2,6,23,0.05)_0%,rgba(2,6,23,0.78)_100%)]" />
-                      <div className="relative flex h-full min-h-[80px] flex-col justify-between p-3 text-white sm:min-h-[96px]">
-                        <div className="flex justify-end">
-                          {liveCount != null && (
-                            <span className="rounded-full border border-white/20 bg-black/55 px-2 py-0.5 text-[10px] font-semibold text-white backdrop-blur-sm">
-                              {formatItemCount(liveCount)}
-                            </span>
-                          )}
-                        </div>
-                        <div className="flex items-center justify-between gap-2">
-                          <h3 className="text-sm font-semibold text-white">{category.name}</h3>
-                          <ArrowRightIcon className="h-4 w-4 shrink-0 text-sky-200 transition group-hover:translate-x-1" />
-                        </div>
-                      </div>
-                    </Link>
-                  );
-                })}
-              </div>
-            </section>
-
-            {/* ── Featured Sets lane ── */}
-            {featuredSets.length > 0 && (
-              <section className="rounded-[24px] border border-white/10 bg-slate-950/70 p-2 sm:p-3 shadow-xl shadow-slate-950/25">
-                <div className="mb-1.5 flex items-center justify-between gap-3">
-                  <div className="text-xs font-semibold uppercase tracking-[0.22em] text-sky-300">
-                    Featured Sets
-                  </div>
-                  <Link
-                    to="/featured"
-                    className="flex items-center gap-1 text-xs font-semibold text-sky-400 transition hover:text-sky-200"
-                  >
-                    Show all
-                    <ArrowRightIcon className="h-3 w-3" />
-                  </Link>
-                </div>
-
-                <div className="flex gap-2.5 overflow-x-auto pb-1 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
-                  {featuredSets.map((set) => {
-                    const keywords = [set.navKeyword1, set.navKeyword2].filter(Boolean) as string[];
-                    const path = buildCategoryPath(set.categorySlug, keywords);
-                    const image = getCategoryThemeBySlug(set.categorySlug).image;
-
-                    return (
-                      <Link
-                        key={set.id}
-                        to={path}
-                        className="group relative min-w-0 shrink-0 basis-[calc(50%-0.3125rem)] overflow-hidden rounded-[18px] border border-white/10 bg-slate-900/90 transition duration-200 hover:-translate-y-0.5 hover:border-sky-300/50 md:basis-[calc((100%-0.833rem)/3)] xl:basis-[calc((100%-1.875rem)/4)]"
-                      >
-                        <img
-                          src={image}
-                          alt=""
-                          className="absolute inset-0 h-full w-full object-cover transition duration-500 group-hover:scale-105"
-                        />
-                        <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(2,6,23,0.05)_0%,rgba(2,6,23,0.78)_100%)]" />
-                        <div className="relative flex h-full min-h-[80px] flex-col justify-between p-3 sm:min-h-[96px]">
-                          <div className="flex justify-end">
-                            <span className="rounded-full border border-white/20 bg-black/55 px-2 py-0.5 text-[10px] font-semibold text-white backdrop-blur-sm">
-                              {set.categorySlug}
-                            </span>
-                          </div>
-                          <div className="flex items-center justify-between gap-2">
-                            <h3 className="text-sm font-semibold text-white">{set.displayName}</h3>
-                            <ArrowRightIcon className="h-4 w-4 shrink-0 text-sky-200 transition group-hover:translate-x-1" />
-                          </div>
-                        </div>
-                      </Link>
-                    );
-                  })}
-                </div>
-              </section>
             )}
 
-            {/* ── Recently Added Collections lane ── */}
-            {publicCollections.length > 0 && (
-              <section className="rounded-[24px] border border-white/10 bg-slate-950/70 p-2 sm:p-3 shadow-xl shadow-slate-950/25">
-                <div className="mb-1.5 flex items-center justify-between gap-3">
-                  <div className="text-xs font-semibold uppercase tracking-[0.22em] text-sky-300">
-                    Recently Added Collections
-                  </div>
-                  <Link
-                    to="/collections?tab=discover"
-                    className="flex items-center gap-1 text-xs font-semibold text-sky-400 transition hover:text-sky-200"
-                  >
-                    Show all
-                    <ArrowRightIcon className="h-3 w-3" />
-                  </Link>
-                </div>
+            {layout === "full" && (
+              <>
+                <TopicOnboardingPrompt />
+                <PersonalizedLanes featuredSets={featuredSets} />
+                <CatalogLanes
+                  countsByCategory={countsByCategory}
+                  featuredSets={featuredSets}
+                  publicCollections={publicCollections}
+                />
+              </>
+            )}
 
-                <div className="flex gap-2.5 overflow-x-auto pb-1 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
-                  {publicCollections.map((collection, index) => (
+            {focused && (
+              <>
+                <PersonalizedLanes featuredSets={featuredSets} focused />
+                {firstTopic && (
+                  <div>
                     <Link
-                      key={collection.id}
-                      to={buildCollectionPath(collection.id, collection.name)}
-                      className="group relative min-w-0 shrink-0 basis-[calc(50%-0.3125rem)] overflow-hidden rounded-[18px] border border-white/10 bg-slate-900/90 transition duration-200 hover:-translate-y-0.5 hover:border-sky-300/50 md:basis-[calc((100%-0.833rem)/3)] xl:basis-[calc((100%-1.875rem)/4)]"
+                      to={buildGamePath({ kind: "category", category: firstTopic, navigationKeywords: [], filterKeywords: [] })}
+                      className="inline-flex min-h-[44px] items-center gap-1 rounded-full border border-white/15 bg-white/5 px-3 py-1.5 text-xs font-semibold text-white hover:bg-white/10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-200"
                     >
-                      <img
-                        src={publicCollectionCardImage(index)}
-                        alt=""
-                        className="absolute inset-0 h-full w-full object-cover transition duration-500 group-hover:scale-105"
-                      />
-                      <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(2,6,23,0.05)_0%,rgba(2,6,23,0.78)_100%)]" />
-                      <div className="relative flex h-full min-h-[80px] flex-col justify-between p-3 sm:min-h-[96px]">
-                        <div className="flex justify-end">
-                          <span className="rounded-full border border-white/20 bg-black/55 px-2 py-0.5 text-[10px] font-semibold text-white backdrop-blur-sm">
-                            {collection.itemCount} {collection.itemCount === 1 ? "item" : "items"}
-                          </span>
-                        </div>
-                        <div>
-                          <div className="flex items-center justify-between gap-2">
-                            <h3 className="text-sm font-semibold text-white">{collection.name}</h3>
-                            <ArrowRightIcon className="h-4 w-4 shrink-0 text-sky-200 transition group-hover:translate-x-1" />
-                          </div>
-                          {collection.description && (
-                            <p className="mt-0.5 text-xs text-slate-300 line-clamp-2">
-                              {collection.description}
-                            </p>
-                          )}
-                        </div>
-                      </div>
+                      Play a game in {categoryNames.get(firstTopic)}
+                      <ArrowRightIcon className="h-3 w-3" aria-hidden="true" />
                     </Link>
-                  ))}
-                </div>
-              </section>
+                  </div>
+                )}
+                <details className="group">
+                  <summary
+                    className={`${laneClass} flex min-h-[44px] cursor-pointer list-none items-center [&::-webkit-details-marker]:hidden justify-between gap-3 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-200`}
+                  >
+                    <span className="text-xs font-semibold uppercase tracking-[0.22em] text-sky-300">Explore all topics</span>
+                    <ChevronDownIcon className="h-4 w-4 text-sky-300 transition group-open:rotate-180" aria-hidden="true" />
+                  </summary>
+                  <div className="mt-2 flex flex-col gap-2">
+                    <CatalogLanes
+                      countsByCategory={countsByCategory}
+                      featuredSets={featuredSets}
+                      publicCollections={publicCollections}
+                    />
+                  </div>
+                </details>
+              </>
             )}
 
           </div>

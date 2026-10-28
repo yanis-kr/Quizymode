@@ -1,5 +1,7 @@
 import { useCallback, useEffect, useRef, useState } from "react";
+import { useQueryClient } from "@tanstack/react-query";
 import { useAuth } from "@/contexts/AuthContext";
+import { INTERESTS_QUERY_KEY } from "@/features/interests/useInterests";
 import { claimLocalInterests } from "@/features/learningLoop/claimLocalInterests";
 import { claimGuestProgress, type ClaimGuestProgressResult } from "./claimGuestProgress";
 
@@ -8,7 +10,8 @@ import { claimGuestProgress, type ClaimGuestProgressResult } from "./claimGuestP
  * Import is automatic, runs once per page session, and renders nothing when there is nothing to claim.
  */
 export function GuestProgressClaim() {
-  const { isAuthenticated, isLoading } = useAuth();
+  const { isAuthenticated, isLoading, userId } = useAuth();
+  const queryClient = useQueryClient();
   const [result, setResult] = useState<ClaimGuestProgressResult>({ status: "none" });
   const [busy, setBusy] = useState(false);
   const started = useRef(false);
@@ -24,10 +27,13 @@ export function GuestProgressClaim() {
     if (!isAuthenticated || isLoading || started.current) return;
     started.current = true;
     // Topic interests picked while anonymous (#116) merge silently in the same once-per-session pass.
-    void claimLocalInterests();
+    // The merged list is seeded into the cache before the local copy clears, then refetched, so Home never flashes empty.
+    void claimLocalInterests((merged) => queryClient.setQueryData(INTERESTS_QUERY_KEY(userId), merged)).then((claimed) => {
+      if (claimed) void queryClient.invalidateQueries({ queryKey: ["interests"] });
+    });
     // eslint-disable-next-line react-hooks/set-state-in-effect
     void run();
-  }, [isAuthenticated, isLoading, run]);
+  }, [isAuthenticated, isLoading, run, queryClient, userId]);
 
   if (!isAuthenticated || result.status === "none") return null;
 

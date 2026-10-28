@@ -1,9 +1,13 @@
 import { beforeEach, describe, expect, it, vi } from "vitest";
+import { useState } from "react";
 import { render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { MemoryRouter } from "react-router-dom";
 import { studySessionsApi } from "@/api/studySessions";
+import { interestsApi } from "@/api/learningLoop";
+import { installMemoryLocalStorage } from "@/test/memoryStorage";
+import { TopicEditorProvider } from "@/features/interests/TopicEditorProvider";
 import UserProfileModal from "./UserProfileModal";
 
 const auth = vi.hoisted(() => ({ isAuthenticated: true, userId: "user-1" as string | null }));
@@ -21,6 +25,7 @@ vi.mock("@/api/users", () => ({
     }),
   },
 }));
+vi.mock("@/api/learningLoop", () => ({ interestsApi: { get: vi.fn(), replace: vi.fn() } }));
 vi.mock("@/api/studySessions", () => ({ studySessionsApi: { getSummary: vi.fn() } }));
 vi.mock("@/hooks/usePageSize", () => ({
   usePageSize: () => ({ pageSize: 20, updatePageSize: vi.fn(), isUpdating: false }),
@@ -32,7 +37,9 @@ function renderModal(onClose: () => void = () => {}) {
   return render(
     <QueryClientProvider client={client}>
       <MemoryRouter>
-        <UserProfileModal isOpen onClose={onClose} />
+        <TopicEditorProvider>
+          <UserProfileModal isOpen onClose={onClose} />
+        </TopicEditorProvider>
       </MemoryRouter>
     </QueryClientProvider>,
   );
@@ -41,7 +48,9 @@ function renderModal(onClose: () => void = () => {}) {
 describe("UserProfileModal study totals (issue #259)", () => {
   beforeEach(() => {
     vi.clearAllMocks();
+    installMemoryLocalStorage();
     auth.isAuthenticated = true;
+    vi.mocked(interestsApi.get).mockResolvedValue([]);
   });
 
   it("shows the summary totals and a link to /progress", async () => {
@@ -96,5 +105,49 @@ describe("UserProfileModal study totals (issue #259)", () => {
     auth.isAuthenticated = false;
     renderModal();
     expect(studySessionsApi.getSummary).not.toHaveBeenCalled();
+  });
+
+  it("#382: shows the chosen topics in a My topics row", async () => {
+    vi.mocked(studySessionsApi.getSummary).mockRejectedValue(new Error("boom"));
+    vi.mocked(interestsApi.get).mockResolvedValue(["science", "history"]);
+    renderModal();
+    expect(await screen.findByText("Science, History")).toBeInTheDocument();
+    expect(screen.getByText("My topics")).toBeInTheDocument();
+  });
+
+  it("#382: shows None when no topics are chosen", async () => {
+    vi.mocked(studySessionsApi.getSummary).mockRejectedValue(new Error("boom"));
+    renderModal();
+    expect(await screen.findByText("None")).toBeInTheDocument();
+  });
+
+  it("#382: Change topics closes the profile first so only one dialog is open, then opens the editor", async () => {
+    vi.mocked(studySessionsApi.getSummary).mockRejectedValue(new Error("boom"));
+    const client = new QueryClient({ defaultOptions: { queries: { retry: false } } });
+    function Host() {
+      const [open, setOpen] = useState(true);
+      return <UserProfileModal isOpen={open} onClose={() => setOpen(false)} />;
+    }
+    render(
+      <QueryClientProvider client={client}>
+        <MemoryRouter>
+          <TopicEditorProvider>
+            <Host />
+          </TopicEditorProvider>
+        </MemoryRouter>
+      </QueryClientProvider>,
+    );
+
+    await userEvent.click(await screen.findByRole("button", { name: "Change topics" }));
+
+    expect(await screen.findByRole("dialog", { name: "My topics" })).toBeInTheDocument();
+    expect(screen.getAllByRole("dialog")).toHaveLength(1);
+    expect(screen.queryByRole("dialog", { name: "User Profile" })).not.toBeInTheDocument();
+  });
+
+  it("#382: does not request topics for guests", () => {
+    auth.isAuthenticated = false;
+    renderModal();
+    expect(interestsApi.get).not.toHaveBeenCalled();
   });
 });

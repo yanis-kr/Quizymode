@@ -4,6 +4,9 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { MemoryRouter, Route, Routes, useLocation } from "react-router-dom";
 import GamesHubPage from "./GamesHubPage";
 import { itemsApi } from "@/api/items";
+import { interestsApi } from "@/api/learningLoop";
+import { TopicEditorProvider } from "@/features/interests/TopicEditorProvider";
+import { writeLocalInterests } from "@/features/learningLoop/localLearningState";
 import { categoriesApi } from "@/api/categories";
 import { collectionsApi } from "@/api/collections";
 import { installMemoryLocalStorage } from "@/test/memoryStorage";
@@ -16,6 +19,7 @@ const { mockAuth } = vi.hoisted(() => ({
 }));
 vi.mock("@/contexts/AuthContext", () => ({ useAuth: () => mockAuth }));
 
+vi.mock("@/api/learningLoop", () => ({ interestsApi: { get: vi.fn(), replace: vi.fn() } }));
 vi.mock("@/api/items", () => ({ itemsApi: { getRandom: vi.fn(), getById: vi.fn() } }));
 vi.mock("@/api/categories", () => ({ categoriesApi: { getAll: vi.fn() } }));
 vi.mock("@/api/collections", () => ({ collectionsApi: { getItems: vi.fn(), getById: vi.fn() } }));
@@ -54,6 +58,7 @@ function renderPage(path: string) {
   );
   return render(
     <QueryClientProvider client={queryClient}>
+      <TopicEditorProvider>
       <MemoryRouter initialEntries={[path]}>
         <Routes>
           <Route path="/games/collections/:collectionId/:slug?" element={page} />
@@ -65,6 +70,7 @@ function renderPage(path: string) {
           <Route path="/quiz/*" element={<LocationDisplay />} />
         </Routes>
       </MemoryRouter>
+      </TopicEditorProvider>
     </QueryClientProvider>,
   );
 }
@@ -76,6 +82,8 @@ describe("GamesHubPage", () => {
     resetMatchRaceBestForTests();
     mockAuth.isAuthenticated = false;
     mockAuth.isLoading = false;
+    mockAuth.userId = undefined;
+    vi.mocked(interestsApi.get).mockResolvedValue([]);
     vi.mocked(categoriesApi.getAll).mockResolvedValue({ categories: [{ category: "science" }] } as never);
     vi.mocked(itemsApi.getRandom).mockResolvedValue({ items: makeItems(5) } as never);
     vi.mocked(collectionsApi.getItems).mockResolvedValue({ items: makeItems(5) } as never);
@@ -181,5 +189,51 @@ describe("GamesHubPage", () => {
     await screen.findByRole("heading", { name: "Games" });
     fireEvent.click(screen.getByRole("tab", { name: "Learn" }));
     expect(await screen.findByTestId("location")).toHaveTextContent("/learn/science?nav=physics");
+  });
+
+  describe("My topics bar (#382)", () => {
+    it("lists the chosen topics, says games use all topics, and opens the editor", async () => {
+      writeLocalInterests(["science", "history"]);
+      renderPage("/games");
+
+      await screen.findByRole("heading", { name: "Games" });
+      expect(screen.getByText("My topics:")).toBeInTheDocument();
+      expect(screen.getByText(/Science, History/)).toBeInTheDocument();
+      expect(screen.getByText("Games use all topics for now.")).toBeInTheDocument();
+
+      fireEvent.click(screen.getByRole("button", { name: "Change topics" }));
+      expect(await screen.findByRole("dialog", { name: "My topics" })).toBeInTheDocument();
+    });
+
+    it("says no topics are chosen", async () => {
+      renderPage("/games");
+      expect(await screen.findByText("No topics chosen")).toBeInTheDocument();
+      expect(screen.getByText("Games use all topics for now.")).toBeInTheDocument();
+    });
+
+    it("shows the bar even when games fail to load", async () => {
+      vi.mocked(itemsApi.getRandom).mockRejectedValue(new Error("boom"));
+      renderPage("/games");
+      expect(await screen.findByRole("alert")).toHaveTextContent("We couldn't load games.");
+      expect(screen.getByRole("button", { name: "Change topics" })).toBeInTheDocument();
+    });
+
+    it("shows that topics are unavailable when a signed-in load fails, and the button still works", async () => {
+      mockAuth.isAuthenticated = true;
+      mockAuth.userId = "user-1";
+      vi.mocked(interestsApi.get).mockRejectedValue(new Error("down"));
+      renderPage("/games");
+
+      expect(await screen.findByText("My topics unavailable")).toBeInTheDocument();
+      fireEvent.click(screen.getByRole("button", { name: "Change topics" }));
+      expect(await screen.findByRole("dialog", { name: "My topics" })).toBeInTheDocument();
+    });
+
+    it("is absent on a scoped hub", async () => {
+      renderPage("/games/science");
+      await screen.findByRole("heading", { name: "Games" });
+      expect(screen.queryByText("Games use all topics for now.")).not.toBeInTheDocument();
+      expect(screen.queryByRole("button", { name: "Change topics" })).not.toBeInTheDocument();
+    });
   });
 });

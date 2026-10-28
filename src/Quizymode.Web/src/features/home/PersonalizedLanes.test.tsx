@@ -5,8 +5,16 @@ import { dailyQuizApi, interestsApi, reviewQueueApi } from "@/api/learningLoop";
 import { studySessionsApi } from "@/api/studySessions";
 import type { FeaturedSetDto } from "@/api/featured";
 import { PersonalizedLanes } from "./PersonalizedLanes";
-import { readLocalInterests, recordLocalDailyCompletion, utcToday } from "@/features/learningLoop/localLearningState";
+import { readLocalInterests, recordLocalDailyCompletion, utcToday, writeLocalInterests } from "@/features/learningLoop/localLearningState";
 import { renderWithProviders } from "@/features/learningLoop/learningLoopTestUtils";
+import { TopicEditorProvider } from "@/features/interests/TopicEditorProvider";
+
+const renderLanes = (featuredSets: FeaturedSetDto[]) =>
+  renderWithProviders(
+    <TopicEditorProvider>
+      <PersonalizedLanes featuredSets={featuredSets} />
+    </TopicEditorProvider>,
+  );
 
 const auth = vi.hoisted(() => ({ value: { isAuthenticated: false, isLoading: false, userId: null as string | null } }));
 
@@ -33,7 +41,7 @@ describe("PersonalizedLanes", () => {
   });
 
   it("anonymous cold start: daily card, popular sets, and topics saved in this browser", async () => {
-    renderWithProviders(<PersonalizedLanes featuredSets={featured} />);
+    renderLanes(featured);
 
     expect(screen.getByRole("link", { name: /Daily quiz/ })).toHaveAttribute("href", "/daily");
     expect(screen.queryByRole("link", { name: /Review mistakes/ })).not.toBeInTheDocument();
@@ -43,9 +51,9 @@ describe("PersonalizedLanes", () => {
       expect(screen.getAllByRole("link", { name: /Solar System Sprint|World Cup Starter/ })[0]).toHaveTextContent("Solar System Sprint"),
     );
 
-    fireEvent.click(screen.getByRole("button", { name: "Choose topics" }));
-    const dialog = screen.getByRole("dialog", { name: "Choose your topics" });
-    fireEvent.click(within(dialog).getByLabelText("Trivia"));
+    fireEvent.click(screen.getByRole("button", { name: "Change topics" }));
+    const dialog = screen.getByRole("dialog", { name: "My topics" });
+    fireEvent.click(within(dialog).getByRole("checkbox", { name: "Trivia" }));
     fireEvent.click(within(dialog).getByRole("button", { name: "Save topics" }));
 
     await waitFor(() => expect(screen.queryByRole("dialog")).not.toBeInTheDocument());
@@ -58,7 +66,7 @@ describe("PersonalizedLanes", () => {
   it("anonymous: shows the local streak once today's daily quiz is done", () => {
     recordLocalDailyCompletion({ date: utcToday(), correct: 3, total: 5 });
 
-    renderWithProviders(<PersonalizedLanes featuredSets={[]} />);
+    renderLanes([]);
 
     expect(screen.getByRole("link", { name: /Daily quiz/ })).toHaveTextContent("Done for today");
     expect(screen.getByRole("link", { name: /Daily quiz/ })).toHaveTextContent("1-day streak");
@@ -83,15 +91,15 @@ describe("PersonalizedLanes", () => {
       },
     ]);
 
-    renderWithProviders(<PersonalizedLanes featuredSets={featured} />);
+    renderLanes(featured);
 
     expect(await screen.findByRole("link", { name: /Review mistakes/ })).toHaveTextContent("4 questions due");
     expect(await screen.findByRole("heading", { name: "Continue" })).toBeInTheDocument();
     expect(await screen.findByText(/5-day streak/)).toBeInTheDocument();
     expect(screen.getByRole("link", { name: "History" })).toBeInTheDocument();
 
-    fireEvent.click(screen.getByRole("button", { name: "Edit topics" }));
-    fireEvent.click(within(screen.getByRole("dialog")).getByLabelText("Trivia"));
+    fireEvent.click(screen.getByRole("button", { name: "Change topics" }));
+    fireEvent.click(within(await screen.findByRole("dialog")).getByRole("checkbox", { name: "Trivia" }));
     fireEvent.click(screen.getByRole("button", { name: "Save topics" }));
 
     await waitFor(() => expect(interestsApi.replace).toHaveBeenCalledWith(["history", "trivia"]));
@@ -122,7 +130,7 @@ describe("PersonalizedLanes", () => {
       },
     ]);
 
-    renderWithProviders(<PersonalizedLanes featuredSets={featured} />);
+    renderLanes(featured);
     await screen.findByRole("heading", { name: "Continue" });
     const hrefs = screen.getAllByRole("link").map((link) => link.getAttribute("href"));
     expect(hrefs).toContain("/learn/trivia?nav=sports&keywords=sports");
@@ -137,8 +145,8 @@ describe("PersonalizedLanes", () => {
     vi.mocked(dailyQuizApi.get).mockResolvedValue({ date: utcToday(), items: [], completion: null, streak: 0 });
     vi.mocked(studySessionsApi.list).mockResolvedValue([]);
 
-    renderWithProviders(<PersonalizedLanes featuredSets={featured} />);
-    fireEvent.click(await screen.findByRole("button", { name: "Choose topics" }));
+    renderLanes(featured);
+    fireEvent.click(await screen.findByRole("button", { name: "Change topics" }));
     await waitFor(() => expect(screen.getByRole("button", { name: "Save topics" })).toBeEnabled());
     fireEvent.click(screen.getByRole("button", { name: "Save topics" }));
 
@@ -148,55 +156,19 @@ describe("PersonalizedLanes", () => {
     expect(screen.queryByRole("dialog")).not.toBeInTheDocument();
   });
 
-  const signedInQuietLanes = () => {
-    auth.value = { isAuthenticated: true, isLoading: false, userId: "user-1" };
-    vi.mocked(reviewQueueApi.getSummary).mockResolvedValue({ dueCount: 0, totalCount: 0, nextDueAt: null });
-    vi.mocked(dailyQuizApi.get).mockResolvedValue({ date: utcToday(), items: [], completion: null, streak: 0 });
-    vi.mocked(studySessionsApi.list).mockResolvedValue([]);
-  };
-
-  it("#380: a failed topics load never lets Save replace the saved topics, and Retry prefills them", async () => {
-    signedInQuietLanes();
-    vi.mocked(interestsApi.get).mockRejectedValueOnce(new Error("down")).mockResolvedValue(["history"]);
-    vi.mocked(interestsApi.replace).mockResolvedValue([]);
-
-    renderWithProviders(<PersonalizedLanes featuredSets={featured} />);
-    await waitFor(() => expect(interestsApi.get).toHaveBeenCalledTimes(1));
-    fireEvent.click(await screen.findByRole("button", { name: "Choose topics" }));
-    const dialog = screen.getByRole("dialog", { name: "Choose your topics" });
-
-    expect(await within(dialog).findByRole("alert")).toHaveTextContent("Your topics could not be loaded.");
-    expect(within(dialog).queryByLabelText("History")).not.toBeInTheDocument();
-    const save = within(dialog).getByRole("button", { name: "Save topics" });
-    expect(save).toBeDisabled();
-    fireEvent.click(save);
-    expect(interestsApi.replace).not.toHaveBeenCalled();
-
-    fireEvent.click(within(dialog).getByRole("button", { name: "Retry" }));
-    expect(await within(dialog).findByLabelText("History")).toBeChecked();
-    // Retry disappears with the error, so focus moves to the first chip instead of dropping to the page.
-    expect(within(dialog).getAllByRole("checkbox")[0]).toHaveFocus();
-    expect(within(dialog).getByRole("button", { name: "Save topics" })).toBeEnabled();
-    expect(within(dialog).queryByRole("alert")).not.toBeInTheDocument();
-    expect(interestsApi.replace).not.toHaveBeenCalled();
+  it("shows Change topics in every state and opens the shared editor", async () => {
+    renderLanes(featured);
+    expect(screen.getByRole("button", { name: "Change topics" })).toBeInTheDocument();
+    expect(screen.queryByRole("button", { name: /Edit topics|Choose topics/ })).not.toBeInTheDocument();
   });
 
-  it("#380: opened while topics load, the picker waits and then prefills them", async () => {
-    signedInQuietLanes();
-    let resolve: (value: string[]) => void = () => {};
-    vi.mocked(interestsApi.get).mockReturnValue(new Promise<string[]>((r) => (resolve = r)));
-
-    renderWithProviders(<PersonalizedLanes featuredSets={featured} />);
-    fireEvent.click(await screen.findByRole("button", { name: "Choose topics" }));
-    const dialog = screen.getByRole("dialog", { name: "Choose your topics" });
-
-    expect(within(dialog).getByRole("status")).toHaveTextContent("Loading your topics…");
-    expect(within(dialog).getByRole("button", { name: "Save topics" })).toBeDisabled();
-
-    resolve(["history"]);
-    expect(await within(dialog).findByLabelText("History")).toBeChecked();
-    expect(within(dialog).getByRole("button", { name: "Save topics" })).toBeEnabled();
-    fireEvent.keyDown(window, { key: "Escape" });
-    expect(screen.queryByRole("dialog")).not.toBeInTheDocument();
+  it("focused: every chosen topic is listed and no recommended sets come from the catalog", async () => {
+    writeLocalInterests(["history", "geography", "tech", "exams"]);
+    renderWithProviders(<PersonalizedLanes featuredSets={featured} focused />);
+    await waitFor(() => expect(interestsApi.popularCategories).toHaveBeenCalled());
+    for (const name of ["History", "Geography", "Tech", "Exams"]) {
+      expect(screen.getByRole("link", { name })).toBeInTheDocument();
+    }
+    expect(screen.queryByRole("link", { name: /World Cup Starter|Solar System Sprint/ })).not.toBeInTheDocument();
   });
 });
