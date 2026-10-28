@@ -1,5 +1,8 @@
 import { beforeEach, describe, expect, it, vi } from "vitest";
-import { screen, waitFor, within } from "@testing-library/react";
+import { render, screen, waitFor, within } from "@testing-library/react";
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import { MemoryRouter } from "react-router-dom";
+import { HelmetProvider } from "react-helmet-async";
 import HomePage from "./HomePage";
 import { categoriesApi } from "@/api/categories";
 import { collectionsApi } from "@/api/collections";
@@ -142,5 +145,57 @@ describe("HomePage personalized layout (#382)", () => {
     expect(screen.getByText("Categories")).toBeInTheDocument();
     expect(screen.queryByText("Explore all topics")).not.toBeInTheDocument();
     expect(screen.queryByRole("region", { name: "Make Home yours" })).not.toBeInTheDocument();
+    // The error settles the layout: no pending/full loop, so the GET is not hammered.
+    await new Promise((resolve) => setTimeout(resolve, 100));
+    expect(vi.mocked(interestsApi.get).mock.calls.length).toBeLessThanOrEqual(3);
+    const settledCalls = vi.mocked(interestsApi.get).mock.calls.length;
+    await new Promise((resolve) => setTimeout(resolve, 100));
+    expect(interestsApi.get).toHaveBeenCalledTimes(settledCalls);
+  });
+
+  it("a later Home mount refetches a failed topics load and recovers into the focused layout", async () => {
+    auth.value = { isAuthenticated: true, isLoading: false, userId: "user-1" };
+    let failing = true;
+    vi.mocked(interestsApi.get).mockImplementation(() => (failing ? Promise.reject(new Error("down")) : Promise.resolve(["history"])));
+    const client = new QueryClient({ defaultOptions: { queries: { retry: false } } });
+    const tree = (
+      <HelmetProvider>
+        <QueryClientProvider client={client}>
+          <MemoryRouter>
+            <HomePage />
+          </MemoryRouter>
+        </QueryClientProvider>
+      </HelmetProvider>
+    );
+    const first = render(tree);
+    await waitFor(() => expect(screen.queryByRole("status")).not.toBeInTheDocument());
+    expect(screen.queryByText("Explore all topics")).not.toBeInTheDocument();
+    first.unmount();
+    failing = false;
+
+    render(tree);
+    expect(await screen.findByText("Explore all topics")).toBeInTheDocument();
+    expect(screen.getByRole("link", { name: /Play a game in History/ })).toBeInTheDocument();
+  });
+
+  it("signed in focused Home keeps Continue between Today and For you", async () => {
+    auth.value = { isAuthenticated: true, isLoading: false, userId: "user-1" };
+    vi.mocked(interestsApi.get).mockResolvedValue(["history"]);
+    vi.mocked(studySessionsApi.list).mockResolvedValue([
+      {
+        id: "s1",
+        origin: "quiz",
+        runId: "run-1",
+        completedAt: new Date().toISOString(),
+        correct: 3,
+        total: 5,
+        source: { kind: "category", categorySlug: "science", navigationKeywords: [], filterKeywords: [] },
+        missedItemIds: [],
+      },
+    ]);
+    renderWithProviders(<HomePage />);
+
+    await screen.findByRole("heading", { name: "Continue" });
+    expect(headingOrder()).toEqual(["Today", "Continue", "For you"]);
   });
 });

@@ -317,7 +317,7 @@ const UserProfileModal = ({ isOpen, onClose }: UserProfileModalProps) => {
                     onClose();
                     topicEditor.open();
                   }}
-                  className="ml-2 min-h-[44px] px-3 py-1 text-xs font-medium text-indigo-600 bg-white border border-indigo-600 rounded-md hover:bg-indigo-50 sm:min-h-0"
+                  className="ml-2 min-h-[44px] px-3 py-1 text-xs font-medium text-indigo-600 bg-white border border-indigo-600 rounded-md hover:bg-indigo-50"
                 >
                   Change topics
                 </button>

@@ -28,9 +28,13 @@ export function GuestProgressClaim() {
     started.current = true;
     // Topic interests picked while anonymous (#116) merge silently in the same once-per-session pass.
     // The merged list is seeded into the cache before the local copy clears, then refetched, so Home never flashes empty.
-    void claimLocalInterests((merged) => queryClient.setQueryData(INTERESTS_QUERY_KEY(userId), merged)).then((claimed) => {
-      if (claimed) void queryClient.invalidateQueries({ queryKey: ["interests"] });
-    });
+    // In-flight topic reads are cancelled first so a stale response cannot overwrite the seeded merged list.
+    void queryClient
+      .cancelQueries({ queryKey: INTERESTS_QUERY_KEY(userId) })
+      .then(() => claimLocalInterests((merged) => queryClient.setQueryData(INTERESTS_QUERY_KEY(userId), merged)))
+      .then((claimed) => {
+        if (claimed) void queryClient.invalidateQueries({ queryKey: ["interests"] });
+      });
     // eslint-disable-next-line react-hooks/set-state-in-effect
     void run();
   }, [isAuthenticated, isLoading, run, queryClient, userId]);

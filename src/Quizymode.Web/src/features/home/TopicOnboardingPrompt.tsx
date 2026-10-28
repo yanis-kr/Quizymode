@@ -63,7 +63,14 @@ export function TopicOnboardingPrompt() {
 
   const dismiss = () => {
     // Move focus to the next control before the card disappears, so it never falls back to the page body.
-    document.querySelector<HTMLElement>('a[href="/daily"]')?.focus();
+    const next =
+      document.querySelector<HTMLElement>('a[href="/daily"]') ??
+      document.querySelector<HTMLElement>("main") ??
+      document.querySelector<HTMLElement>("h1");
+    if (next) {
+      if (!next.matches("a,button,input,[tabindex]")) next.tabIndex = -1;
+      next.focus();
+    }
     writeSessionDismissed();
     setDismissedHere(true);
     queryClient.setQueryData<UserSettingsResponse>(["userSettings"], (current) => ({

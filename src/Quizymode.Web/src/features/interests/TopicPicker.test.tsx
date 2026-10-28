@@ -217,4 +217,18 @@ describe("My topics editor", () => {
     fireEvent.keyDown(window, { key: "Tab", shiftKey: true });
     expect(within(dialog).getByRole("button", { name: "Save topics" })).toHaveFocus();
   });
+
+  it("starts focus on the first enabled chip when the first category is disabled at 10", async () => {
+    const saved = homeCategoryCards.slice(1, 11).map((card) => card.slug);
+    vi.mocked(interestsApi.get).mockResolvedValue(saved);
+
+    renderEditor();
+    fireEvent.click(screen.getByRole("button", { name: "Change topics" }));
+    const dialog = screen.getByRole("dialog");
+    await within(dialog).findByText("10 of 10");
+
+    const first = within(dialog).getAllByRole("checkbox")[0];
+    expect(first).toBeDisabled();
+    expect(within(dialog).getAllByRole("checkbox").find((box) => !(box as HTMLInputElement).disabled)).toHaveFocus();
+  });
 });

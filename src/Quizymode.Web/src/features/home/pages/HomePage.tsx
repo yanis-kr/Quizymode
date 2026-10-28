@@ -1,4 +1,4 @@
-import { useMemo } from "react";
+import { useMemo, useState } from "react";
 import { Link } from "react-router-dom";
 import { useQuery } from "@tanstack/react-query";
 import { ArrowRightIcon, ChevronDownIcon } from "@heroicons/react/24/outline";
@@ -231,11 +231,15 @@ const categoryNames = new Map(homeCategoryCards.map((card) => [card.slug, card.n
 const HomePage = () => {
   const { isAuthenticated, isLoading: isAuthLoading } = useAuth();
   const { interests, status: interestsStatus } = useInterests();
+  // Pending only until a signed-in visitor's topics query first settles; a later refetch (after an error) keeps the
+  // full layout instead of flipping back to the skeleton, which would remount the lanes and refetch in a loop.
+  const [interestsSettled, setInterestsSettled] = useState(false);
+  if (!interestsSettled && !isAuthLoading && isAuthenticated && interestsStatus !== "loading") setInterestsSettled(true);
   // Guests with browser-local picks go straight to the focused layout; only a signed-in visitor waits for their topics.
   const layout: "pending" | "focused" | "full" =
     isAuthLoading && interests.length === 0
       ? "pending"
-      : !isAuthLoading && isAuthenticated && interestsStatus === "loading"
+      : !isAuthLoading && isAuthenticated && interestsStatus === "loading" && !interestsSettled
         ? "pending"
         : interestsStatus === "error"
           ? "full"

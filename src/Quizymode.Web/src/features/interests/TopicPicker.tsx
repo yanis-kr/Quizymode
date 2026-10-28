@@ -35,7 +35,7 @@ export function TopicPicker({ initial, status, saving, error, onSave, retrying, 
 
   useEffect(() => {
     const previous = document.activeElement as HTMLElement | null;
-    dialogRef.current?.querySelector<HTMLElement>("input,button")?.focus();
+    dialogRef.current?.querySelector<HTMLElement>("input:not([disabled]),button:not([disabled])")?.focus();
     const onKey = (event: KeyboardEvent) => {
       if (event.key === "Escape") onCloseRef.current();
     };
@@ -58,7 +58,7 @@ export function TopicPicker({ initial, status, saving, error, onSave, retrying, 
   const chipsShown = selected !== null;
   const chipsWereShown = useRef(chipsShown);
   useEffect(() => {
-    if (chipsShown && !chipsWereShown.current) dialogRef.current?.querySelector<HTMLElement>("fieldset input")?.focus();
+    if (chipsShown && !chipsWereShown.current) dialogRef.current?.querySelector<HTMLElement>("fieldset input:not([disabled])")?.focus();
     chipsWereShown.current = chipsShown;
   }, [chipsShown]);
 
@@ -134,11 +134,9 @@ export function TopicPicker({ initial, status, saving, error, onSave, retrying, 
             })}
           </fieldset>
         )}
-        {full && (
-          <p aria-live="polite" className="mt-2 text-xs text-slate-300">
-            That&apos;s {MAX_INTERESTS}, the most you can pick. Remove one to add another.
-          </p>
-        )}
+        <p aria-live="polite" className="mt-2 text-xs text-slate-300 empty:hidden">
+          {full ? `That's ${MAX_INTERESTS}, the most you can pick. Remove one to add another.` : ""}
+        </p>
         {error && (
           <p role="alert" className="mt-3 text-xs text-red-300">Your topics could not be saved. Try again.</p>
         )}

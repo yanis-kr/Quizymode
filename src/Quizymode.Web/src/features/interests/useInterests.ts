@@ -41,8 +41,6 @@ export function useInterests({ enabled = true }: { enabled?: boolean } = {}) {
     queryFn: () => interestsApi.get(),
     enabled: signedIn && enabled,
     retry: false,
-    // A failed load stays an error until Retry; remounting an observer must not silently reset it to loading.
-    retryOnMount: false,
   });
 
   const mutation = useMutation({
