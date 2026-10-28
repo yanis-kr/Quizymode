@@ -1,18 +1,28 @@
 import { beforeEach, describe, expect, it, vi } from "vitest";
-import { render, screen, waitFor } from "@testing-library/react";
+import { render as rtlRender, screen, waitFor } from "@testing-library/react";
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import type { ReactElement } from "react";
+import { INTERESTS_QUERY_KEY } from "@/features/interests/useInterests";
 import { GuestProgressClaim } from "./GuestProgressClaim";
 
-const { mockClaim, mockAuth } = vi.hoisted(() => ({
+const { mockClaim, mockAuth, mockClaimInterests } = vi.hoisted(() => ({
   mockClaim: vi.fn(),
   mockAuth: vi.fn(),
+  mockClaimInterests: vi.fn(),
 }));
 vi.mock("./claimGuestProgress", () => ({ claimGuestProgress: mockClaim }));
+vi.mock("@/features/learningLoop/claimLocalInterests", () => ({ claimLocalInterests: mockClaimInterests }));
+
+let queryClient: QueryClient;
+const render = (ui: ReactElement) => rtlRender(<QueryClientProvider client={queryClient}>{ui}</QueryClientProvider>);
 vi.mock("@/contexts/AuthContext", () => ({ useAuth: mockAuth }));
 
 describe("GuestProgressClaim", () => {
   beforeEach(() => {
     vi.clearAllMocks();
-    mockAuth.mockReturnValue({ isAuthenticated: true, isLoading: false });
+    queryClient = new QueryClient();
+    mockClaimInterests.mockResolvedValue(false);
+    mockAuth.mockReturnValue({ isAuthenticated: true, isLoading: false, userId: "user-1" });
   });
 
   it("does not claim for anonymous visitors", () => {
@@ -42,5 +52,28 @@ describe("GuestProgressClaim", () => {
     const retry = await screen.findByRole("button", { name: "Retry" });
     retry.click();
     expect(await screen.findByRole("status")).toHaveTextContent("Saved 1 quiz result from");
+  });
+
+  it("#382: a successful topics claim seeds the interests cache with the merged list and refetches it", async () => {
+    mockClaim.mockResolvedValue({ status: "none" });
+    mockClaimInterests.mockImplementation(async (onMerged: (merged: string[]) => void) => {
+      onMerged(["history", "trivia"]);
+      return true;
+    });
+    const invalidate = vi.spyOn(queryClient, "invalidateQueries");
+    render(<GuestProgressClaim />);
+
+    await waitFor(() => expect(invalidate).toHaveBeenCalledWith({ queryKey: ["interests"] }));
+    expect(queryClient.getQueryData(INTERESTS_QUERY_KEY("user-1"))).toEqual(["history", "trivia"]);
+  });
+
+  it("#382: a failed topics claim leaves the interests cache alone", async () => {
+    mockClaim.mockResolvedValue({ status: "none" });
+    const invalidate = vi.spyOn(queryClient, "invalidateQueries");
+    render(<GuestProgressClaim />);
+
+    await waitFor(() => expect(mockClaimInterests).toHaveBeenCalledTimes(1));
+    expect(invalidate).not.toHaveBeenCalled();
+    expect(queryClient.getQueryData(INTERESTS_QUERY_KEY("user-1"))).toBeUndefined();
   });
 });

@@ -3,6 +3,8 @@ import { useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useQuery } from "@tanstack/react-query";
 import { useAuth } from "@/contexts/AuthContext";
+import { TopicEditorProvider } from "@/features/interests/TopicEditorProvider";
+import { TOPIC_RETURN_FOCUS_ATTRIBUTE } from "@/features/interests/TopicPicker";
 import { GuestProgressClaim } from "@/features/guestHistory/GuestProgressClaim";
 import { PolicyAcceptancePrompt } from "@/features/legal/PolicyAcceptancePrompt";
 import { usersApi } from "@/api/users";
@@ -133,7 +135,7 @@ function getFallbackTitle(pathname: string): string | undefined {
   return undefined;
 }
 
-const Layout = ({ children }: LayoutProps) => {
+const LayoutContent = ({ children }: LayoutProps) => {
   const { isAuthenticated, logout, username, email, isAdmin } = useAuth();
   const navigate = useNavigate();
   const location = useLocation();
@@ -284,6 +286,7 @@ const Layout = ({ children }: LayoutProps) => {
               {/* Mobile menu button */}
               <button
                 type="button"
+                {...{ [TOPIC_RETURN_FOCUS_ATTRIBUTE]: "" }}
                 className="lg:hidden inline-flex items-center justify-center p-1.5 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500"
                 onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
                 aria-expanded={mobileMenuOpen}
@@ -301,6 +304,7 @@ const Layout = ({ children }: LayoutProps) => {
                 {isAuthenticated ? (
                   <div className="flex items-center space-x-4">
                     <button
+                      {...{ [TOPIC_RETURN_FOCUS_ATTRIBUTE]: "" }}
                       onClick={() => setShowProfileModal(true)}
                       className="max-w-[12rem] text-right hover:bg-gray-50 px-2 py-1 rounded-md transition-colors"
                     >
@@ -524,5 +528,12 @@ const Layout = ({ children }: LayoutProps) => {
     </div>
   );
 };
+
+// The My topics editor is opened from Home, the Games hub and the profile dialog, all of which Layout renders (#382).
+const Layout = ({ children }: LayoutProps) => (
+  <TopicEditorProvider>
+    <LayoutContent>{children}</LayoutContent>
+  </TopicEditorProvider>
+);
 
 export default Layout;

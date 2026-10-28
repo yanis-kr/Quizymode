@@ -127,4 +127,41 @@ describe("rankPersonalizedHome", () => {
       "2026-10-13T10:00:00Z",
     ]);
   });
+
+  describe("focused (#382)", () => {
+    const sets = [set("h1", "history", 1), set("s1", "science", 2), set("t1", "trivia", 3)];
+    const history = categoryRun("trivia", "2026-10-12T10:00:00Z");
+    const moreRuns = [history, categoryRun("exams", "2026-10-13T10:00:00Z"), categoryRun("tech", "2026-10-14T10:00:00Z")];
+
+    it("lists every chosen topic in saved order and ignores inference once 3 or more are chosen", () => {
+      const chosen = ["history", "geography", "tech", "exams", "science", "trivia"];
+      const result = rankPersonalizedHome(input({ explicitInterests: chosen, runs: [categoryRun("exams", "2026-10-13T10:00:00Z")], focused: true }));
+
+      expect(result.forYou.map((entry) => entry.slug)).toEqual(chosen);
+      expect(result.forYou.every((entry) => entry.reason === "explicit")).toBe(true);
+    });
+
+    it("adds inferred categories only while fewer than 3 are chosen, up to 5 in all", () => {
+      const result = rankPersonalizedHome(
+        input({ explicitInterests: ["history", "science"], runs: [...moreRuns, categoryRun("geography", "2026-10-15T10:00:00Z"), categoryRun("trivia", "2026-10-16T10:00:00Z")], focused: true }),
+      );
+
+      expect(result.forYou.map((entry) => entry.slug)).toEqual(["history", "science", "trivia", "geography", "tech"]);
+      expect(result.forYou.slice(2).every((entry) => entry.reason === "inferred")).toBe(true);
+    });
+
+    it("never fills Recommended from the catalog; chosen topics without sets get Explore cards", () => {
+      const unfocused = rankPersonalizedHome(input({ explicitInterests: ["geography"], featuredSets: sets }));
+      expect(unfocused.recommended.map((s) => s.id)).toEqual(expect.arrayContaining(["h1", "s1"]));
+
+      const result = rankPersonalizedHome(input({ explicitInterests: ["geography"], featuredSets: sets, focused: true }));
+      expect(result.recommended.map((s) => s.id)).toEqual([`${CATEGORY_FALLBACK_ID_PREFIX}geography`]);
+      expect(result.recommended.some((s) => ["h1", "s1", "t1"].includes(s.id))).toBe(false);
+    });
+
+    it("keeps featured sets of the chosen topics first", () => {
+      const result = rankPersonalizedHome(input({ explicitInterests: ["science", "history"], featuredSets: sets, focused: true }));
+      expect(result.recommended.map((s) => s.id)).toEqual(["s1", "h1"]);
+    });
+  });
 });

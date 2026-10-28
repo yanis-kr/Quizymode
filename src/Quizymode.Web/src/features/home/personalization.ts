@@ -11,11 +11,15 @@ import type { GuestHistorySource } from "@/features/guestHistory/guestHistorySto
  *   set gets one category-level "Explore" card in its place, so every chosen topic is represented (#220). With no
  *   interests and no history (cold start), popular categories replace For you; without those, the featured catalog
  *   order is used.
+ * - Focused Home (#382, the visitor has chosen topics): For you lists every chosen topic (up to 10, saved order) and adds
+ *   inferred categories only while fewer than 3 are chosen, up to 5 in all. Recommended next never fills from the catalog.
  */
 export const CONTINUE_LIMIT = 3;
 export const FOR_YOU_LIMIT = 5;
 export const RECOMMENDED_LIMIT = 5;
 export const MAX_PER_CATEGORY = 2;
+/** Focused Home adds inferred categories only while fewer topics than this are chosen. */
+const FOCUSED_INFERENCE_BELOW = 3;
 
 export interface ActivityRun {
   completedAt: string;
@@ -34,6 +38,8 @@ export interface PersonalizationInput {
   knownCategories: string[];
   /** Display names by slug, for category-level fallback cards; the slug is used when missing. */
   categoryNames?: ReadonlyMap<string, string>;
+  /** Focused Home: the visitor's chosen topics lead, so inference and catalog filling are reduced. */
+  focused?: boolean;
 }
 
 /** Id prefix of the category-level card used when a For-you category has no featured set to recommend. */
@@ -128,10 +134,13 @@ export function rankPersonalizedHome(input: PersonalizationInput): PersonalizedH
     const slug = run.source.categorySlug;
     if (known.has(slug) && !explicit.includes(slug) && !inferred.includes(slug)) inferred.push(slug);
   }
-  const forYou: ForYouCategory[] = [
-    ...explicit.map((slug) => ({ slug, reason: "explicit" as const })),
-    ...inferred.map((slug) => ({ slug, reason: "inferred" as const })),
-  ].slice(0, FOR_YOU_LIMIT);
+  const focused = input.focused === true;
+  const explicitEntries = explicit.map((slug) => ({ slug, reason: "explicit" as const }));
+  const inferredEntries = inferred.map((slug) => ({ slug, reason: "inferred" as const }));
+  const forYou: ForYouCategory[] =
+    focused && explicit.length >= FOCUSED_INFERENCE_BELOW
+      ? explicitEntries
+      : [...explicitEntries, ...inferredEntries].slice(0, FOR_YOU_LIMIT);
 
   const isColdStart = explicit.length === 0 && runs.length === 0;
   const rankCategories = isColdStart
@@ -159,8 +168,9 @@ export function rankPersonalizedHome(input: PersonalizationInput): PersonalizedH
         const sets = inRanked.filter((set) => set.categorySlug.toLowerCase() === slug);
         return sets.length > 0 ? sets : [categoryFallback(slug, input.categoryNames?.get(slug) ?? slug)];
       });
-  // Interest categories only, unless no featured set matched or this is a cold start: then the catalog fills in after them.
-  const fillFromCatalog = isColdStart || inRanked.length === 0;
+  // Interest categories only, unless no featured set matched or this is a cold start: then the catalog fills in after them
+  // (never when focused, where the fallback cards already cover every chosen topic).
+  const fillFromCatalog = !focused && (isColdStart || inRanked.length === 0);
   const candidates = fillFromCatalog
     ? [...withFallbacks, ...catalog.filter((set) => !inRanked.includes(set))]
     : withFallbacks;
