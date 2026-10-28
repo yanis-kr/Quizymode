@@ -139,10 +139,63 @@ describe("PersonalizedLanes", () => {
 
     renderWithProviders(<PersonalizedLanes featuredSets={featured} />);
     fireEvent.click(await screen.findByRole("button", { name: "Choose topics" }));
+    await waitFor(() => expect(screen.getByRole("button", { name: "Save topics" })).toBeEnabled());
     fireEvent.click(screen.getByRole("button", { name: "Save topics" }));
 
     expect(await screen.findByRole("alert")).toHaveTextContent("Your topics could not be saved.");
     expect(screen.getByRole("dialog")).toBeInTheDocument();
+    fireEvent.keyDown(window, { key: "Escape" });
+    expect(screen.queryByRole("dialog")).not.toBeInTheDocument();
+  });
+
+  const signedInQuietLanes = () => {
+    auth.value = { isAuthenticated: true, isLoading: false, userId: "user-1" };
+    vi.mocked(reviewQueueApi.getSummary).mockResolvedValue({ dueCount: 0, totalCount: 0, nextDueAt: null });
+    vi.mocked(dailyQuizApi.get).mockResolvedValue({ date: utcToday(), items: [], completion: null, streak: 0 });
+    vi.mocked(studySessionsApi.list).mockResolvedValue([]);
+  };
+
+  it("#380: a failed topics load never lets Save replace the saved topics, and Retry prefills them", async () => {
+    signedInQuietLanes();
+    vi.mocked(interestsApi.get).mockRejectedValueOnce(new Error("down")).mockResolvedValue(["history"]);
+    vi.mocked(interestsApi.replace).mockResolvedValue([]);
+
+    renderWithProviders(<PersonalizedLanes featuredSets={featured} />);
+    await waitFor(() => expect(interestsApi.get).toHaveBeenCalledTimes(1));
+    fireEvent.click(await screen.findByRole("button", { name: "Choose topics" }));
+    const dialog = screen.getByRole("dialog", { name: "Choose your topics" });
+
+    expect(await within(dialog).findByRole("alert")).toHaveTextContent("Your topics could not be loaded.");
+    expect(within(dialog).queryByLabelText("History")).not.toBeInTheDocument();
+    const save = within(dialog).getByRole("button", { name: "Save topics" });
+    expect(save).toBeDisabled();
+    fireEvent.click(save);
+    expect(interestsApi.replace).not.toHaveBeenCalled();
+
+    fireEvent.click(within(dialog).getByRole("button", { name: "Retry" }));
+    expect(await within(dialog).findByLabelText("History")).toBeChecked();
+    // Retry disappears with the error, so focus moves to the first chip instead of dropping to the page.
+    expect(within(dialog).getAllByRole("checkbox")[0]).toHaveFocus();
+    expect(within(dialog).getByRole("button", { name: "Save topics" })).toBeEnabled();
+    expect(within(dialog).queryByRole("alert")).not.toBeInTheDocument();
+    expect(interestsApi.replace).not.toHaveBeenCalled();
+  });
+
+  it("#380: opened while topics load, the picker waits and then prefills them", async () => {
+    signedInQuietLanes();
+    let resolve: (value: string[]) => void = () => {};
+    vi.mocked(interestsApi.get).mockReturnValue(new Promise<string[]>((r) => (resolve = r)));
+
+    renderWithProviders(<PersonalizedLanes featuredSets={featured} />);
+    fireEvent.click(await screen.findByRole("button", { name: "Choose topics" }));
+    const dialog = screen.getByRole("dialog", { name: "Choose your topics" });
+
+    expect(within(dialog).getByRole("status")).toHaveTextContent("Loading your topics…");
+    expect(within(dialog).getByRole("button", { name: "Save topics" })).toBeDisabled();
+
+    resolve(["history"]);
+    expect(await within(dialog).findByLabelText("History")).toBeChecked();
+    expect(within(dialog).getByRole("button", { name: "Save topics" })).toBeEnabled();
     fireEvent.keyDown(window, { key: "Escape" });
     expect(screen.queryByRole("dialog")).not.toBeInTheDocument();
   });
