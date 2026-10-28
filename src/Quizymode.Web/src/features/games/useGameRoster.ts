@@ -14,6 +14,8 @@ import type { ItemResponse } from "@/types/api";
 import { GAME_FETCH_SIZE, buildGamePool } from "./gameRoster";
 import { buildGamePath, type GameScope } from "./gameScope";
 
+const EMPTY_ITEMS: ItemResponse[] = [];
+
 /**
  * Loads the short-item roster for the scope in the URL (AC 3.20.2) and the mode navigation shared by the Games pages.
  * Scope loading mirrors Learn's (collection: every item; category, keywords, global: a random 200).
@@ -117,6 +119,8 @@ export function useGameRoster() {
     scope,
     title,
     pool,
+    /** The roster before the short-text game pool rules; Sort It builds its own pool from it. */
+    rawItems: rosterItems ?? EMPTY_ITEMS,
     isPending: isPending || !authSettled,
     error: error && !rosterItems ? error : null,
     refetch: () => void refetch(),

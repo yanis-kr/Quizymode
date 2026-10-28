@@ -29,6 +29,7 @@ const defaultValues = {
   explanation: "",
   keywords: [] as { name: string; isPrivate: boolean }[],
   source: "",
+  groupLabel: "",
 };
 
 function renderForm(ui: ReactElement) {
@@ -254,6 +255,38 @@ describe("ItemForm", () => {
       "aria-expanded",
       "true"
     );
+  });
+
+  it("opens More options for a group label server error (#359)", () => {
+    renderCreate({ submitError: "Group label must be 30 characters or fewer." });
+    expect(screen.getByRole("button", { name: /more options/i })).toHaveAttribute("aria-expanded", "true");
+  });
+
+  it("shows the group label field first in More options with help text and a 30 character limit (#359)", async () => {
+    const user = userEvent.setup({ delay: null });
+    renderCreate();
+    await user.click(screen.getByRole("button", { name: /more options/i }));
+    const input = screen.getByLabelText(/group label \(optional\)/i);
+    expect(input).toHaveAttribute("maxlength", "30");
+    expect(input).toHaveAttribute("placeholder", "e.g., Mammals");
+    expect(input).toHaveAccessibleDescription("Used by Sort It. Items with the same label form a group. Up to 30 characters.");
+    const fields = screen.getByRole("group", { name: /more options/i }).querySelectorAll("input, textarea");
+    expect(fields[0]).toBe(input);
+  });
+
+  it("opens More options in edit mode for a stored group label (#359)", () => {
+    renderForm(
+      <ItemForm
+        mode="edit"
+        values={{ ...defaultValues, groupLabel: "Mammals" }}
+        onChange={() => {}}
+        onSubmit={() => {}}
+        onCancel={() => {}}
+        isAdmin={false}
+        isPending={false}
+      />
+    );
+    expect(screen.getByRole("button", { name: /more options/i })).toHaveAttribute("aria-expanded", "true");
   });
 
   it("lets the user close More options after an error opened it, and ignores resource (#296)", async () => {

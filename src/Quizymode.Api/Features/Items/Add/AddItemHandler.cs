@@ -119,6 +119,7 @@ internal static class AddItemHandler
                 NavigationKeywordId1 = navK1.Id,
                 NavigationKeywordId2 = navK2.Id,
                 Source = string.IsNullOrWhiteSpace(request.Source) ? null : request.Source.Trim(),
+                GroupLabel = ItemGroupLabelHelper.Normalize(request.GroupLabel),
             };
 
             db.Items.Add(item);
@@ -207,7 +208,8 @@ internal static class AddItemHandler
                 item.UploadId?.ToString(),
                 item.QuestionSpeech,
                 item.CorrectAnswerSpeech,
-                item.IncorrectAnswerSpeech.Count > 0 ? item.IncorrectAnswerSpeech : null);
+                item.IncorrectAnswerSpeech.Count > 0 ? item.IncorrectAnswerSpeech : null,
+                item.GroupLabel);
 
             return Result.Success(response);
         }

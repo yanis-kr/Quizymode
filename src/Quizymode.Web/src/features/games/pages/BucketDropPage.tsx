@@ -16,6 +16,7 @@ import { bucketDropBestKey, writeBestIfHigher } from "../gameBest";
 import { useGameRoster } from "../useGameRoster";
 import { GamesEmptyState } from "../GamesEmptyState";
 import { GameFinishCard } from "../GameFinishCard";
+import { isGameKeyIgnored } from "../gameKeys";
 import { GameMisses, type GameMiss } from "../GameMisses";
 import { FallingCard } from "../bucketDrop/FallingCard";
 import { prefersReducedMotion } from "../bucketDrop/reducedMotion";
@@ -39,16 +40,6 @@ const RING =
 function livesLeftText(lives: number): string {
   if (lives <= 0) return "No lives left";
   return `${lives} ${lives === 1 ? "life" : "lives"} left`;
-}
-
-/** Keys 1-3 are game controls, but not while typing, composing or with a modifier (AC 3.20.17). */
-function isKeyIgnored(event: KeyboardEvent): boolean {
-  if (event.defaultPrevented || event.isComposing || event.repeat) return true;
-  if (event.ctrlKey || event.metaKey || event.altKey || event.shiftKey) return true;
-  const target = event.target as HTMLElement | null;
-  if (!target) return false;
-  const tag: string = target.tagName;
-  return tag === "INPUT" || tag === "TEXTAREA" || tag === "SELECT" || target.isContentEditable === true;
 }
 
 const BucketDropPage = () => {
@@ -155,7 +146,7 @@ const BucketDropPage = () => {
     if (!run || status === "finished") return;
     const onKeyDown = (event: KeyboardEvent) => {
       if (event.key !== "1" && event.key !== "2" && event.key !== "3") return;
-      if (isKeyIgnored(event)) return;
+      if (isGameKeyIgnored(event)) return;
       event.preventDefault();
       handlePick(Number(event.key) - 1);
     };

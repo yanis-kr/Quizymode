@@ -62,6 +62,8 @@ export interface ItemResponse {
   keywords: KeywordResponse[];
   collections: ItemCollectionResponse[];
   source?: string | null;
+  /** Optional short group label (max 30) used by Sort It. */
+  groupLabel?: string | null;
   /** Navigation path for breadcrumbs, e.g. [rank1, rank2] or ["other"]. Use "other" in URLs; display as "Others". */
   navigationBreadcrumb?: string[];
 }
@@ -181,6 +183,7 @@ export interface CreateItemRequest {
   explanation: string;
   keywords?: KeywordRequest[];
   source?: string;
+  groupLabel?: string;
   uploadId?: string | null;
   readyForReview?: boolean | null;
 }
@@ -199,6 +202,8 @@ export interface UpdateItemRequest {
   explanation?: string;
   keywords?: KeywordRequest[];
   source?: string;
+  /** Omitted keeps the stored label; a blank value clears it. */
+  groupLabel?: string;
   readyForReview?: boolean | null;
 }
 

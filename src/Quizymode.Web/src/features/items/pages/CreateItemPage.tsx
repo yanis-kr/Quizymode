@@ -65,6 +65,7 @@ function buildInitialFormData(
       return { name: n, isPrivate: !publicSet.has(n) };
     }),
     source: "",
+    groupLabel: "",
     readyForReview: false,
     questionSpeech: {},
     correctAnswerSpeech: {},
@@ -243,6 +244,7 @@ function CreateItemEditor({
       explanation: formData.explanation.trim(),
       keywords: otherKeywords.length > 0 ? otherKeywords : undefined,
       source: formData.source.trim() || undefined,
+      groupLabel: formData.groupLabel.trim() || undefined,
       readyForReview: formData.readyForReview,
     };
 

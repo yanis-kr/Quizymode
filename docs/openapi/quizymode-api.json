@@ -12616,6 +12616,16 @@
                 "$ref": "#/components/schemas/System.Collections.Generic.DictionaryOfSystem.Int32AndQuizymode.Api.Shared.Models.ItemSpeechSupport"
               }
             ]
+          },
+          "groupLabel": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/components/schemas/System.String"
+              }
+            ]
           }
         }
       },
@@ -12704,6 +12714,16 @@
               },
               {
                 "$ref": "#/components/schemas/System.Collections.Generic.DictionaryOfSystem.Int32AndQuizymode.Api.Shared.Models.ItemSpeechSupport"
+              }
+            ]
+          },
+          "groupLabel": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/components/schemas/System.String"
               }
             ]
           }
@@ -12796,6 +12816,16 @@
               },
               {
                 "$ref": "#/components/schemas/System.Collections.Generic.DictionaryOfSystem.Int32AndQuizymode.Api.Shared.Models.ItemSpeechSupport"
+              }
+            ]
+          },
+          "groupLabel": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/components/schemas/System.String"
               }
             ]
           }
@@ -13107,6 +13137,16 @@
                 "$ref": "#/components/schemas/System.Collections.Generic.DictionaryOfSystem.Int32AndQuizymode.Api.Shared.Models.ItemSpeechSupport"
               }
             ]
+          },
+          "groupLabel": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/components/schemas/System.String"
+              }
+            ]
           }
         }
       },
@@ -13330,6 +13370,16 @@
                 "$ref": "#/components/schemas/System.Collections.Generic.DictionaryOfSystem.Int32AndQuizymode.Api.Shared.Models.ItemSpeechSupport"
               }
             ]
+          },
+          "groupLabel": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/components/schemas/System.String"
+              }
+            ]
           }
         }
       },
@@ -13490,6 +13540,16 @@
               },
               {
                 "$ref": "#/components/schemas/System.Collections.Generic.DictionaryOfSystem.Int32AndQuizymode.Api.Shared.Models.ItemSpeechSupport"
+              }
+            ]
+          },
+          "groupLabel": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/components/schemas/System.String"
               }
             ]
           }
@@ -13741,6 +13801,16 @@
                 "$ref": "#/components/schemas/System.Collections.Generic.DictionaryOfSystem.Int32AndQuizymode.Api.Shared.Models.ItemSpeechSupport"
               }
             ]
+          },
+          "groupLabel": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/components/schemas/System.String"
+              }
+            ]
           }
         }
       },
@@ -13819,6 +13889,16 @@
               },
               {
                 "$ref": "#/components/schemas/System.Collections.Generic.DictionaryOfSystem.Int32AndQuizymode.Api.Shared.Models.ItemSpeechSupport"
+              }
+            ]
+          },
+          "groupLabel": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/components/schemas/System.String"
               }
             ]
           }

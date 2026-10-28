@@ -16,6 +16,7 @@ interface ReviewBoardItemResponse {
   createdAt: string;
   factualRisk?: number | null;
   reviewComments?: string | null;
+  groupLabel?: string | null;
 }
 
 interface ReviewBoardResponse {
