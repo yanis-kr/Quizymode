@@ -26,6 +26,7 @@ export function TestSetupCard({ count, availableCount, requestedSize, initialLim
       <h2 id="test-setup-title" className="text-xl font-bold text-gray-900">
         Test mode
       </h2>
+      <p className="mt-1 text-sm text-gray-700">Learn, Test and Review are free.</p>
       <p className="mt-1 text-gray-800">
         {count} {count === 1 ? "question" : "questions"}
       </p>
