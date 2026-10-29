@@ -43,15 +43,17 @@ function isArrowTargetIgnored(event: KeyboardEvent): boolean {
   if (event.ctrlKey || event.metaKey || event.altKey || event.shiftKey) return true;
   const target = event.target as HTMLElement | null;
   if (!target) return false;
+  if (target instanceof Element && target.closest('[role="dialog"]')) return true;
   const tag: string = target.tagName;
   return tag === "INPUT" || tag === "TEXTAREA" || tag === "SELECT" || target.isContentEditable === true;
 }
 
 const SwipeBlitzPage = () => {
-  const { scope, pool, isPending, error, refetch, availableModes, handleModeChange, quizPath } = useGameRoster();
+  const { scope, runIdentityKey, topicBar, topicPrompt, pool, isPending, error, refetch, availableModes, handleModeChange, quizPath } = useGameRoster();
   const scopeKey: string = gameScopeKey(scope);
+  const runKey = `${runIdentityKey}|${scopeKey}`;
 
-  const [runBox, setRunBox] = useState<{ scopeKey: string; state: SwipeBlitzRunState } | null>(null);
+  const [runBox, setRunBox] = useState<{ runKey: string; state: SwipeBlitzRunState } | null>(null);
   const [nowMs, setNowMs] = useState<number>(() => Date.now());
   const [announcement, setAnnouncement] = useState<{ id: number; text: string }>({ id: 0, text: "" });
   const [finishResult, setFinishResult] = useState<FinishResult | null>(null);
@@ -63,7 +65,7 @@ const SwipeBlitzPage = () => {
   const finishHandledRunIds = useRef(new Set<string>());
   const lowTimeAnnouncedRunIds = useRef(new Set<string>());
 
-  const run: SwipeBlitzRunState | null = runBox && runBox.scopeKey === scopeKey ? runBox.state : null;
+  const run: SwipeBlitzRunState | null = runBox && runBox.runKey === runKey ? runBox.state : null;
   const itemsById = useMemo(() => new Map<string, ItemResponse>(pool.map((item) => [item.id, item])), [pool]);
 
   // A new id per event makes the live region re-announce a repeated message.
@@ -71,7 +73,7 @@ const SwipeBlitzPage = () => {
 
   const startRun = () => {
     focusTarget.current = "card";
-    setRunBox({ scopeKey, state: createSwipeBlitzRun(pool, createAnalyticsId()) });
+    setRunBox({ runKey, state: createSwipeBlitzRun(pool, createAnalyticsId()) });
     setNowMs(Date.now());
     announce("");
     setFinishResult(null);
@@ -83,7 +85,7 @@ const SwipeBlitzPage = () => {
     startRun();
     // startRun only reads values already in this dependency list.
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [run, isPending, error, pool, scopeKey]);
+  }, [run, isPending, error, pool, scopeKey, runKey]);
 
   const runId: string | undefined = run?.runId;
   const status = run?.status;
@@ -102,7 +104,7 @@ const SwipeBlitzPage = () => {
 
   const commit = (previous: SwipeBlitzRunState, next: SwipeBlitzRunState, now: number) => {
     setNowMs(now);
-    setRunBox({ scopeKey, state: next });
+    setRunBox({ runKey, state: next });
     if (previous.startedAtMs === null && next.startedAtMs !== null) {
       trackGameStarted(SWIPE_BLITZ_ID, scope, next.runId, next.poolIds.length);
     }
@@ -218,7 +220,9 @@ const SwipeBlitzPage = () => {
   );
 
   let body;
-  if (error) {
+  if (topicPrompt) {
+    body = topicPrompt;
+  } else if (error) {
     body = (
       <div role="alert" className="mx-auto mt-4 max-w-4xl">
         <ErrorMessage message="We couldn't load this game." onRetry={refetch} />
@@ -326,6 +330,7 @@ const SwipeBlitzPage = () => {
   return (
     <div className="py-3 sm:py-4">
       {scopeBar}
+      {topicBar}
       {liveRegion}
       <div className={run && run.status !== "finished" && !error ? "mt-4" : undefined}>{body}</div>
     </div>

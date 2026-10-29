@@ -49,18 +49,19 @@ function hintText(count: number): string {
 }
 
 const SortItPage = () => {
-  const { scope, rawItems, isPending, error, refetch, availableModes, handleModeChange, quizPath } = useGameRoster();
+  const { scope, runIdentityKey, topicBar, topicPrompt, rawItems, isPending, error, refetch, availableModes, handleModeChange, quizPath } = useGameRoster();
   const scopeKey: string = gameScopeKey(scope);
+  const runKey = `${runIdentityKey}|${scopeKey}`;
   const groups = useMemo<SortItGroup[]>(() => buildSortItGroups(rawItems), [rawItems]);
 
-  const [runBox, setRunBox] = useState<{ scopeKey: string; state: SortItRunState } | null>(null);
+  const [runBox, setRunBox] = useState<{ runKey: string; state: SortItRunState } | null>(null);
   const [announcement, setAnnouncement] = useState<{ id: number; text: string }>({ id: 0, text: "" });
   const [finishResult, setFinishResult] = useState<FinishResult | null>(null);
   const [reducedMotion] = useState<boolean>(() => prefersReducedMotion());
   const cardRef = useRef<HTMLDivElement>(null);
   const finishHandledRunIds = useRef(new Set<string>());
 
-  const run: SortItRunState | null = runBox && runBox.scopeKey === scopeKey ? runBox.state : null;
+  const run: SortItRunState | null = runBox && runBox.runKey === runKey ? runBox.state : null;
   const itemsById = useMemo(
     () => new Map(groups.flatMap((group) => group.items.map((item) => [item.id, item] as const))),
     [groups],
@@ -70,7 +71,7 @@ const SortItPage = () => {
   const runRef = useRef<SortItRunState | null>(null);
   const commit = (state: SortItRunState) => {
     runRef.current = state;
-    setRunBox({ scopeKey, state });
+    setRunBox({ runKey, state });
   };
 
   // A new id per event makes the live region re-announce a repeated message.
@@ -185,7 +186,9 @@ const SortItPage = () => {
   );
 
   let body;
-  if (error) {
+  if (topicPrompt) {
+    body = topicPrompt;
+  } else if (error) {
     body = (
       <div role="alert" className="mx-auto mt-4 max-w-4xl">
         <ErrorMessage message="We couldn't load this game." onRetry={refetch} />
@@ -325,6 +328,7 @@ const SortItPage = () => {
   return (
     <div className="py-3 sm:py-4">
       {scopeBar}
+      {topicBar}
       {liveRegion}
       <div className={run && run.status !== "finished" && !error ? "mt-4" : undefined}>{body}</div>
     </div>

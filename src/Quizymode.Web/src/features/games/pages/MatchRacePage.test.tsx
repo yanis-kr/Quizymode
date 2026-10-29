@@ -1,3 +1,4 @@
+import { TopicEditorProvider } from "@/features/interests/TopicEditorProvider";
 import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 import { cleanup, fireEvent, render, screen, waitFor } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
@@ -74,6 +75,7 @@ function renderPage(path = "/games/match-race/science") {
   );
   return render(
     <QueryClientProvider client={queryClient}>
+      <TopicEditorProvider>
       <MemoryRouter initialEntries={[path]}>
         <Routes>
           <Route path="/games/match-race/collections/:collectionId/:slug?" element={page} />
@@ -83,6 +85,7 @@ function renderPage(path = "/games/match-race/science") {
           <Route path="/learn/*" element={<LocationDisplay />} />
         </Routes>
       </MemoryRouter>
+    </TopicEditorProvider>
     </QueryClientProvider>,
   );
 }
