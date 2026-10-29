@@ -41,6 +41,12 @@ function headingOrder(): string[] {
 }
 
 describe("HomePage personalized layout (#382)", () => {
+  it("#383: a refined choice keeps its full branch in topic and game links", async () => {
+    writeLocalInterests(["languages/french/core"]);
+    renderWithProviders(<HomePage />);
+    expect(await screen.findByRole("link", { name: "Languages › French › Core" })).toHaveAttribute("href", "/categories/languages/french/core");
+    expect(screen.getByRole("link", { name: "Play a game in Languages › French › Core" })).toHaveAttribute("href", "/games/languages?nav=french%2Ccore");
+  });
   beforeEach(async () => {
     vi.clearAllMocks();
     installMemoryLocalStorage();

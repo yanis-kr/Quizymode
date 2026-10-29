@@ -1,3 +1,4 @@
+import { isTopicPath, topicLabel, topicParts, topicNavigationSearch } from "@/features/interests/topicPaths";
 import { useMemo, useState } from "react";
 import { Link } from "react-router-dom";
 import { useQuery } from "@tanstack/react-query";
@@ -247,7 +248,7 @@ const HomePage = () => {
             ? "focused"
             : "full";
   const focused = layout === "focused";
-  const firstTopic = interests.find((slug) => categoryNames.has(slug));
+  const firstTopic = interests.find(isTopicPath);
   const { data: categoriesData } = useQuery({
     queryKey: ["home", "categories"],
     queryFn: () => categoriesApi.getAll(),
@@ -369,10 +370,10 @@ const HomePage = () => {
                 {firstTopic && (
                   <div>
                     <Link
-                      to={buildGamePath({ kind: "category", category: firstTopic, navigationKeywords: [], filterKeywords: [] })}
+                      to={buildGamePath({ kind: "category", category: topicParts(firstTopic).category, navigationKeywords: topicParts(firstTopic).navigationKeywords, filterKeywords: [], search: topicNavigationSearch(firstTopic) })}
                       className="inline-flex min-h-[44px] items-center gap-1 rounded-full border border-white/15 bg-white/5 px-3 py-1.5 text-xs font-semibold text-white hover:bg-white/10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-200"
                     >
-                      Play a game in {categoryNames.get(firstTopic)}
+                      Play a game in {topicLabel(firstTopic, categoryNames)}
                       <ArrowRightIcon className="h-3 w-3" aria-hidden="true" />
                     </Link>
                   </div>

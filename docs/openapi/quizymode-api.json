@@ -4703,7 +4703,7 @@
           "Users"
         ],
         "summary": "Get the current user's topic interests",
-        "description": "Category slugs in the order the user chose them; deleted or private categories are omitted. Requires authentication.",
+        "description": "Topic paths category[/l1[/l2]] in saved order. Deleted, private or unavailable paths are omitted without widening to a parent. Requires authentication.",
         "responses": {
           "200": {
             "description": "OK",
@@ -4725,7 +4725,7 @@
           "Users"
         ],
         "summary": "Replace the current user's topic interests",
-        "description": "At most 10 unique slugs of public categories; the list order is kept. An empty list clears interests. Requires authentication.",
+        "description": "At most 10 unique public topic paths category[/l1[/l2]], without overlapping parent/child paths. Category-only requests remain supported. Order is kept; an empty list clears interests. Requires authentication.",
         "requestBody": {
           "content": {
             "application/json": {

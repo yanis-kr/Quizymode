@@ -1,3 +1,4 @@
+import { topicBrowsePath, topicLabel, topicParts } from "@/features/interests/topicPaths";
 import { useMemo } from "react";
 import { Link } from "react-router-dom";
 import { useQuery } from "@tanstack/react-query";
@@ -122,7 +123,7 @@ export function PersonalizedLanes({ featuredSets, focused = false }: { featuredS
         runs,
         featuredSets,
         popularCategories: popularQuery.data ?? [],
-        knownCategories,
+        knownCategories: [...knownCategories, ...explicitInterests.map(path => topicParts(path).category)],
         categoryNames,
         focused,
       }),
@@ -200,8 +201,8 @@ export function PersonalizedLanes({ featuredSets, focused = false }: { featuredS
         {ranked.forYou.length > 0 ? (
           <div className="flex flex-wrap gap-2">
             {ranked.forYou.map((entry) => (
-              <Link key={entry.slug} to={`/categories/${entry.slug}`} className={pillLinkClass}>
-                {categoryNames.get(entry.slug) ?? entry.slug}
+              <Link key={entry.slug} to={topicBrowsePath(entry.slug)} className={pillLinkClass}>
+                {topicLabel(entry.slug, categoryNames)}
               </Link>
             ))}
           </div>

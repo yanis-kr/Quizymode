@@ -1,3 +1,4 @@
+import { isTopicPath, topicLabel, topicParts } from "@/features/interests/topicPaths";
 import type { FeaturedSetDto } from "@/api/featured";
 import type { GuestHistorySource } from "@/features/guestHistory/guestHistoryStorage";
 
@@ -49,9 +50,9 @@ function categoryFallback(slug: string, name: string): FeaturedSetDto {
   return {
     id: `${CATEGORY_FALLBACK_ID_PREFIX}${slug}`,
     displayName: `Explore ${name}`,
-    categorySlug: slug,
-    navKeyword1: null,
-    navKeyword2: null,
+    categorySlug: topicParts(slug).category,
+    navKeyword1: topicParts(slug).navigationKeywords[0] ?? null,
+    navKeyword2: topicParts(slug).navigationKeywords[1] ?? null,
     itemCount: 0,
     lastModifiedAt: null,
     sortOrder: Number.MAX_SAFE_INTEGER,
@@ -127,12 +128,12 @@ export function rankPersonalizedHome(input: PersonalizationInput): PersonalizedH
     if (continueRuns.length >= CONTINUE_LIMIT) break;
   }
 
-  const explicit = Array.from(new Set(input.explicitInterests.filter((slug) => known.has(slug))));
+  const explicit = Array.from(new Set(input.explicitInterests.filter((slug) => isTopicPath(slug) && known.has(topicParts(slug).category))));
   const inferred: string[] = [];
   for (const run of runs) {
     if (run.source?.kind !== "category") continue;
     const slug = run.source.categorySlug;
-    if (known.has(slug) && !explicit.includes(slug) && !inferred.includes(slug)) inferred.push(slug);
+    if (known.has(slug) && !explicit.some(path => topicParts(path).category === slug) && !inferred.includes(slug)) inferred.push(slug);
   }
   const focused = input.focused === true;
   const explicitEntries = explicit.map((slug) => ({ slug, reason: "explicit" as const }));
@@ -157,20 +158,24 @@ export function rankPersonalizedHome(input: PersonalizationInput): PersonalizedH
     .sort((a, b) => a.sortOrder - b.sortOrder)
     .filter((set) => !attempted.has(featuredKey(set.categorySlug, setKeywords(set))));
 
-  const rank = (slug: string) => rankCategories.indexOf(slug.toLowerCase());
+  const matches = (set: FeaturedSetDto, path: string) => {
+    const topic = topicParts(path);
+    return set.categorySlug.toLowerCase() === topic.category && topic.navigationKeywords.every((slug, index) => setKeywords(set)[index] === slug);
+  };
+  const rank = (set: FeaturedSetDto) => rankCategories.findIndex(path => matches(set, path));
   const inRanked = catalog
-    .filter((set) => rank(set.categorySlug) >= 0)
-    .sort((a, b) => rank(a.categorySlug) - rank(b.categorySlug) || a.sortOrder - b.sortOrder);
+    .filter((set) => rank(set) >= 0)
+    .sort((a, b) => rank(a) - rank(b) || a.sortOrder - b.sortOrder);
   // A chosen category with nothing left to recommend gets a category-level card in its rank position.
   const withFallbacks = isColdStart
     ? inRanked
     : rankCategories.flatMap((slug) => {
-        const sets = inRanked.filter((set) => set.categorySlug.toLowerCase() === slug);
-        return sets.length > 0 ? sets : [categoryFallback(slug, input.categoryNames?.get(slug) ?? slug)];
+        const sets = inRanked.filter((set) => matches(set, slug));
+        return sets.length > 0 ? sets : [categoryFallback(slug, slug.includes("/") ? topicLabel(slug, input.categoryNames) : input.categoryNames?.get(slug) ?? slug)];
       });
   // Interest categories only, unless no featured set matched or this is a cold start: then the catalog fills in after them
   // (never when focused, where the fallback cards already cover every chosen topic).
-  const fillFromCatalog = !focused && (isColdStart || inRanked.length === 0);
+  const fillFromCatalog = !focused && !explicit.some(path => path.includes("/")) && (isColdStart || inRanked.length === 0);
   const candidates = fillFromCatalog
     ? [...withFallbacks, ...catalog.filter((set) => !inRanked.includes(set))]
     : withFallbacks;

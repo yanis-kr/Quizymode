@@ -1,4 +1,4 @@
-import { beforeEach, describe, expect, it } from "vitest";
+import { beforeEach, describe, expect, it, vi } from "vitest";
 import { installMemoryLocalStorage } from "@/test/memoryStorage";
 import {
   DAILY_STORAGE_KEY,
@@ -8,6 +8,7 @@ import {
   readLocalInterests,
   recordLocalDailyCompletion,
   writeLocalInterests,
+  clearLocalInterests,
 } from "./localLearningState";
 
 describe("localLearningState", () => {
@@ -55,5 +56,29 @@ describe("localLearningState", () => {
 
     window.localStorage.setItem(INTERESTS_STORAGE_KEY, JSON.stringify({ version: 1, categories: "trivia" }));
     expect(readLocalInterests()).toEqual([]);
+  });
+
+  it("reads v1 category choices and migrates them on the next save", () => {
+    window.localStorage.setItem("quizymode.interests.v1", JSON.stringify({ version: 1, categories: ["history", "languages"] }));
+    expect(readLocalInterests()).toEqual(["history", "languages"]);
+    expect(writeLocalInterests(["history", "languages/french/core"])).toBe(true);
+    expect(readLocalInterests()).toEqual(["history", "languages/french/core"]);
+    expect(window.localStorage.getItem("quizymode.interests.v1")).toBeNull();
+    clearLocalInterests();
+    expect(readLocalInterests()).toEqual([]);
+  });
+
+  it("never resurrects a broader v1 pick when v2 is corrupt or deliberately empty", () => {
+    window.localStorage.setItem("quizymode.interests.v1", JSON.stringify({ version: 1, categories: ["languages"] }));
+    window.localStorage.setItem(INTERESTS_STORAGE_KEY, "{broken");
+    expect(readLocalInterests()).toEqual([]);
+    window.localStorage.setItem(INTERESTS_STORAGE_KEY, JSON.stringify({ version: 2, categories: [] }));
+    expect(readLocalInterests()).toEqual([]);
+  });
+
+  it("clearing never restores legacy picks when removing the legacy key fails", () => {
+    window.localStorage.setItem("quizymode.interests.v1", JSON.stringify({ version: 1, categories: ["languages"] }));
+    const remove = vi.spyOn(window.localStorage, "removeItem").mockImplementation(() => { throw new Error("unavailable"); });
+    try { clearLocalInterests(); expect(readLocalInterests()).toEqual([]); } finally { remove.mockRestore(); }
   });
 });

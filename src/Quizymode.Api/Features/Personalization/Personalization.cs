@@ -38,7 +38,10 @@ public static partial class Personalization
                 .WithMessage($"Choose at most {MaxInterests} topics");
             RuleFor(x => x.Categories).Must(c => c is null || c.Distinct(StringComparer.Ordinal).Count() == c.Count)
                 .WithMessage("Topics must be unique");
-            RuleForEach(x => x.Categories).NotEmpty().MaximumLength(64).Matches("^[a-z0-9_-]+$");
+            RuleForEach(x => x.Categories).NotEmpty().MaximumLength(126)
+                .Matches("^[a-z0-9_-]{1,64}(/[a-zA-Z0-9-]{1,30}){0,2}$");
+            RuleFor(x => x.Categories).Must(categories => categories is null || !HasOverlappingTopics(categories))
+                .WithMessage("Choose a topic or its refinements, not both");
         }
     }
 
@@ -49,7 +52,7 @@ public static partial class Personalization
             app.MapGet("users/me/interests", GetHandler)
                 .WithTags("Users")
                 .WithSummary("Get the current user's topic interests")
-                .WithDescription("Category slugs in the order the user chose them; deleted or private categories are omitted. Requires authentication.")
+                .WithDescription("Topic paths category[/l1[/l2]] in saved order. Deleted, private or unavailable paths are omitted without widening to a parent. Requires authentication.")
                 .RequireAuthorization()
                 .Produces<InterestsResponse>(StatusCodes.Status200OK)
                 .Produces(StatusCodes.Status401Unauthorized);
@@ -57,7 +60,7 @@ public static partial class Personalization
             app.MapPut("users/me/interests", PutHandler)
                 .WithTags("Users")
                 .WithSummary("Replace the current user's topic interests")
-                .WithDescription("At most 10 unique slugs of public categories; the list order is kept. An empty list clears interests. Requires authentication.")
+                .WithDescription("At most 10 unique public topic paths category[/l1[/l2]], without overlapping parent/child paths. Category-only requests remain supported. Order is kept; an empty list clears interests. Requires authentication.")
                 .RequireAuthorization()
                 .Produces<InterestsResponse>(StatusCodes.Status200OK)
                 .Produces(StatusCodes.Status400BadRequest)
@@ -116,13 +119,14 @@ public static partial class Personalization
 
     public static async Task<InterestsResponse> GetInterestsAsync(ApplicationDbContext db, string userId, CancellationToken cancellationToken)
     {
-        List<string> names = await (from interest in db.UserInterests.AsNoTracking()
-                                    join category in db.Categories.AsNoTracking() on interest.CategoryId equals category.Id
-                                    where interest.UserId == userId && !category.IsPrivate
-                                    orderby interest.SortOrder
-                                    select category.Name)
-            .ToListAsync(cancellationToken);
-        return new InterestsResponse(names.Select(ToSlug).Distinct(StringComparer.Ordinal).ToList());
+        List<UserInterest> saved = await db.UserInterests.AsNoTracking().Where(interest => interest.UserId == userId)
+            .OrderBy(interest => interest.SortOrder).ThenBy(interest => interest.Id).ToListAsync(cancellationToken);
+        if (saved.Count == 0) return new InterestsResponse([]);
+        Dictionary<string, Guid> categories = await LoadPublicCategorySlugsAsync(db, cancellationToken);
+        Dictionary<string, InterestTarget> targets = await LoadInterestTargetsAsync(db, categories, saved.Select(interest => interest.CategoryId).ToHashSet(), cancellationToken);
+        Dictionary<InterestTarget, string> paths = targets.ToDictionary(entry => entry.Value, entry => entry.Key);
+        return new InterestsResponse(saved.Select(interest => paths.GetValueOrDefault(TargetOf(interest)))
+            .Where(path => path is not null).Cast<string>().Distinct(StringComparer.Ordinal).ToList());
     }
 
     public static async Task<Result<InterestsResponse>> ReplaceInterestsAsync(
@@ -131,29 +135,32 @@ public static partial class Personalization
         string userId,
         CancellationToken cancellationToken)
     {
-        Dictionary<string, Guid> publicCategories = await LoadPublicCategorySlugsAsync(db, cancellationToken);
-        List<string> unknown = request.Categories.Where(slug => !publicCategories.ContainsKey(slug)).ToList();
-        if (unknown.Count > 0)
-        {
-            return Result.Failure<InterestsResponse>(
-                Error.Validation("Interests.UnknownCategory", $"Unknown topic: {string.Join(", ", unknown)}"));
-        }
+        FluentValidation.Results.ValidationResult validation = new UpdateValidator().Validate(request);
+        if (!validation.IsValid)
+            return Result.Failure<InterestsResponse>(Error.Validation("Interests.InvalidTopics", string.Join("; ", validation.Errors.Select(error => error.ErrorMessage))));
 
-        Dictionary<Guid, UserInterest> current = await db.UserInterests
-            .Where(i => i.UserId == userId)
-            .ToDictionaryAsync(i => i.CategoryId, cancellationToken);
-        List<Guid> wanted = request.Categories.Select(slug => publicCategories[slug]).ToList();
-        db.UserInterests.RemoveRange(current.Values.Where(i => !wanted.Contains(i.CategoryId)));
+        Dictionary<string, Guid> categories = await LoadPublicCategorySlugsAsync(db, cancellationToken);
+        HashSet<Guid> categoryIds = request.Categories.Select(path => path.Split('/')[0])
+            .Where(categories.ContainsKey).Select(slug => categories[slug]).ToHashSet();
+        Dictionary<string, InterestTarget> targets = await LoadInterestTargetsAsync(db, categories, categoryIds, cancellationToken);
+        List<string> unknown = request.Categories.Where(path => !targets.ContainsKey(path)).ToList();
+        if (unknown.Count > 0)
+            return Result.Failure<InterestsResponse>(Error.Validation("Interests.UnknownCategory", $"Unknown or unavailable topic: {string.Join(", ", unknown)}"));
+
+        Dictionary<InterestTarget, UserInterest> current = await db.UserInterests.Where(interest => interest.UserId == userId)
+            .ToDictionaryAsync(interest => new InterestTarget(interest.CategoryId, interest.NavigationKeywordId1, interest.NavigationKeywordId2), cancellationToken);
+        List<InterestTarget> wanted = request.Categories.Select(path => targets[path]).ToList();
+        db.UserInterests.RemoveRange(current.Where(entry => !wanted.Contains(entry.Key)).Select(entry => entry.Value));
         for (int index = 0; index < wanted.Count; index++)
         {
-            if (current.TryGetValue(wanted[index], out UserInterest? existing))
+            InterestTarget target = wanted[index];
+            if (current.TryGetValue(target, out UserInterest? existing)) existing.SortOrder = index;
+            else db.UserInterests.Add(new UserInterest
             {
-                existing.SortOrder = index;
-            }
-            else
-            {
-                db.UserInterests.Add(new UserInterest { UserId = userId, CategoryId = wanted[index], SortOrder = index, CreatedAt = DateTime.UtcNow });
-            }
+                UserId = userId, CategoryId = target.CategoryId,
+                NavigationKeywordId1 = target.NavigationKeywordId1, NavigationKeywordId2 = target.NavigationKeywordId2,
+                SortOrder = index, CreatedAt = DateTime.UtcNow
+            });
         }
         await db.SaveChangesAsync(cancellationToken);
         return Result.Success(new InterestsResponse(request.Categories.ToList()));

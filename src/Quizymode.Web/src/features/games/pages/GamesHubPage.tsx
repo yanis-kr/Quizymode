@@ -1,3 +1,4 @@
+import { topicLabel } from "@/features/interests/topicPaths";
 import { useMemo } from "react";
 import { Link } from "react-router-dom";
 import LoadingSpinner from "@/components/LoadingSpinner";
@@ -45,7 +46,7 @@ function getBestLabel(gameId: string, scopeKey: string, targetPairs: number): st
 function TopicsBar() {
   const { interests, status } = useInterests();
   const topicEditor = useTopicEditor();
-  const names: string = interests.map((slug) => homeCategoryCards.find((card) => card.slug === slug)?.name ?? slug).join(", ");
+  const names: string = interests.map((slug) => topicLabel(slug, new Map(homeCategoryCards.map(card => [card.slug, card.name])))).join(", ");
   const summary: string = status === "loading" ? "…" : names;
   return (
     <div
