@@ -318,6 +318,7 @@ const HomePage = () => {
                 <h1 className="text-xl font-semibold tracking-tight text-white sm:text-2xl lg:text-[1.65rem] lg:leading-snug">
                   Learn something new in five questions.
                 </h1>
+                <p className="mt-1 text-xs font-semibold text-sky-200">Learn, Test and Review are free.</p>
                 {!focused && (
                   <p className="mt-1.5 max-w-2xl text-xs leading-5 text-slate-200 lg:text-sm">
                     Start with Fun Trivia Facts, then browse public topics or create private practice sets when you are ready.
