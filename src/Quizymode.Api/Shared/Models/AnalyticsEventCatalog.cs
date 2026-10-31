@@ -136,4 +136,10 @@ public static class AnalyticsEventCatalog
     };
 
     public const int MaxScoreOrTotal = 500;
+
+    /// <summary>
+    /// Flashcard decks may hold as many cards as one items page returns (the items PageSize cap), which the
+    /// web client mirrors as EXPLORE_MAX_ITEMS. Only flashcard events use this larger bound.
+    /// </summary>
+    public const int MaxFlashcardDeckSize = 1000;
 }

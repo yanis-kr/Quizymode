@@ -56,6 +56,9 @@ public static partial class TrackAnalyticsEvents
     [GeneratedRegex("^[A-Za-z0-9._:/-]+$")]
     private static partial Regex ContextIdPattern();
 
+    private static bool IsFlashcardPositionEvent(string? name) =>
+        name == AnalyticsEventCatalog.FlashcardRevealed || name == AnalyticsEventCatalog.FlashcardGraded;
+
     public sealed class Validator : AbstractValidator<Request>
     {
         public Validator()
@@ -112,10 +115,17 @@ public static partial class TrackAnalyticsEvents
                 .Must(id => id is null || TokenPattern().IsMatch(id))
                 .WithMessage("RunId may contain only letters, digits, and . _ : -");
 
-            RuleFor(x => x.Position).InclusiveBetween(1, AnalyticsEventCatalog.MaxScoreOrTotal);
+            // Flashcard decks can be as large as an items page (AnalyticsEventCatalog.MaxFlashcardDeckSize);
+            // every other event keeps the 500 bound.
+            RuleFor(x => x.Position).InclusiveBetween(1, AnalyticsEventCatalog.MaxScoreOrTotal)
+                .When(x => !IsFlashcardPositionEvent(x.Name));
+            RuleFor(x => x.Position).InclusiveBetween(1, AnalyticsEventCatalog.MaxFlashcardDeckSize)
+                .When(x => IsFlashcardPositionEvent(x.Name));
             RuleFor(x => x.Score).InclusiveBetween(0, AnalyticsEventCatalog.MaxScoreOrTotal);
             RuleFor(x => x.Total).InclusiveBetween(1, AnalyticsEventCatalog.MaxScoreOrTotal)
-                .When(x => x.Name != AnalyticsEventCatalog.SearchPerformed);
+                .When(x => x.Name != AnalyticsEventCatalog.SearchPerformed && x.Name != AnalyticsEventCatalog.FlashcardsStarted);
+            RuleFor(x => x.Total).InclusiveBetween(1, AnalyticsEventCatalog.MaxFlashcardDeckSize)
+                .When(x => x.Name == AnalyticsEventCatalog.FlashcardsStarted);
             // A search can legitimately show zero results.
             RuleFor(x => x.Total).InclusiveBetween(0, AnalyticsEventCatalog.MaxScoreOrTotal)
                 .When(x => x.Name == AnalyticsEventCatalog.SearchPerformed);

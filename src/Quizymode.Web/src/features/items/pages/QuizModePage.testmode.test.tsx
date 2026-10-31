@@ -83,6 +83,7 @@ function renderPage(initialEntry: string) {
           <Route path="/quiz/collections/:collectionId/:slug" element={page} />
           <Route path="/quiz/collections/:collectionId" element={page} />
           <Route path="/quiz/item/:itemId" element={page} />
+          <Route path="/quiz/:category/item/:itemId" element={page} />
           <Route path="/quiz" element={page} />
           <Route path="/explore/*" element={<LocationDisplay />} />
         </Routes>
@@ -124,6 +125,28 @@ function storedRun(overrides: Partial<QuizRunState>): void {
     "navigationContext_quiz",
     JSON.stringify({ mode: "quiz", collectionId: COLLECTION_ID, currentIndex: 0, itemIds: run.itemIds, quizRun: run })
   );
+}
+
+const SIZED_IDS = [GUID_1, GUID_2, GUID_3, "55555555-5555-4555-8555-555555555555", "66666666-6666-4666-8666-666666666666"];
+const sizedItems = SIZED_IDS.map((id, index) => ({ ...item1, id, question: `Sized question ${index + 1}` }));
+const CATEGORY_TEST_URL = `/quiz/exams/item/${GUID_1}?mode=test`;
+
+/** A started category Test saved by a run of the given quiz size (AC 3.6.12, 3.18.7). */
+function storeCategoryTest(quizSize: number, startedAt: string): QuizRunState {
+  let run = createQuizRun(
+    { kind: "category", category: "exams", navigationKeywords: [], filterKeywords: [], quizSize },
+    SIZED_IDS,
+    IDENTITY,
+    "test"
+  );
+  run = reduceQuizRun(run, { type: "start-test", startedAt, timeLimitSec: 600 });
+  run = reduceQuizRun(run, { type: "answer", itemId: GUID_1, selectedAnswer: "1", isCorrect: false, completedAt: startedAt });
+  run = reduceQuizRun(run, { type: "toggle-flag", itemId: GUID_1 });
+  sessionStorage.setItem(
+    "navigationContext_quiz",
+    JSON.stringify({ mode: "quiz", category: "exams", currentIndex: 0, itemIds: SIZED_IDS, items: sizedItems, quizRun: run })
+  );
+  return run;
 }
 
 let onTestEnd: (() => void) | null = null;
@@ -679,5 +702,41 @@ describe("QuizModePage Test mode (AC 3.18)", () => {
 
     expect(await screen.findByText("500 questions")).toBeInTheDocument();
     expect(screen.getByText("Your test will use 500 of 520.")).toBeInTheDocument();
+  });
+
+  describe("category Test restore keeps the saved quiz size (AC 3.6.12, 3.18.7)", () => {
+    it.each([5, 10])("restores a started size-%i category Test without setup or a new roster", async (size) => {
+      const startedAt = new Date(Date.now() - 60_000).toISOString();
+      storeCategoryTest(size, startedAt);
+      renderPage(CATEGORY_TEST_URL);
+
+      expect(await screen.findByText("Sized question 1")).toBeInTheDocument();
+      expect(screen.queryByRole("heading", { name: "Test mode" })).not.toBeInTheDocument();
+      expect(screen.queryByRole("button", { name: "Start test" })).not.toBeInTheDocument();
+      expect(option("1")).toHaveAttribute("aria-pressed", "true");
+      expect(screen.getByRole("button", { name: "Question 1, answered, flagged, current" })).toBeInTheDocument();
+      expect(screen.getByRole("timer")).toBeInTheDocument();
+      const sizeInput = screen.getByLabelText("Quiz size:");
+      expect(sizeInput).toHaveValue(size);
+      expect(sizeInput).toBeDisabled();
+      expect(screen.queryByText(/Only \d+ questions? available/)).not.toBeInTheDocument();
+      expect(screen.queryByText(/We could not restore/)).not.toBeInTheDocument();
+      expect(itemsApi.getRandom).not.toHaveBeenCalled();
+      const stored = JSON.parse(sessionStorage.getItem("navigationContext_quiz")!) as { quizRun: QuizRunState };
+      expect(stored.quizRun.startedAt).toBe(startedAt);
+    });
+
+    it("ignores the saved size when the roster comes from the Categories list", async () => {
+      storeCategoryTest(5, new Date(Date.now() - 60_000).toISOString());
+      sessionStorage.setItem(
+        "quiz_scope_items_from_categories",
+        JSON.stringify({ items: [item1, item2, item3] })
+      );
+      renderPage(CATEGORY_TEST_URL);
+
+      expect(await screen.findByRole("heading", { name: "Test mode" })).toBeInTheDocument();
+      expect(screen.getByLabelText("Quiz size:")).toHaveValue(10);
+      expect(screen.getByLabelText("Quiz size:")).toBeEnabled();
+    });
   });
 });

@@ -5,7 +5,7 @@ export const QUIZ_RUN_SCHEMA_VERSION = 3;
 /** Snapshot versions restore accepts: v2 predates per-answer inputMode and restores as multiple choice (AC 3.6.12). */
 const RESTORABLE_SCHEMA_VERSIONS: readonly number[] = [2, QUIZ_RUN_SCHEMA_VERSION];
 export const QUIZ_COMPLETED_EVENT = "quizymode:quiz-completed";
-/** Test (AC 3.18): time limit bounds in seconds, and the roster cap set by the analytics 500 limit. */
+/** Test (AC 3.18): time limit bounds in seconds, and the Test roster cap (quiz analytics position/total stay at 500). */
 export const TEST_MIN_LIMIT_SEC = 60;
 export const TEST_MAX_LIMIT_SEC = 36000;
 export const TEST_MAX_QUESTIONS = 500;
@@ -279,6 +279,48 @@ export function sameQuizScope(left: unknown, right: QuizRunScope): boolean {
     "filterKeywords" in candidate &&
     sameStringArray(candidate.filterKeywords, right.filterKeywords)
   );
+}
+
+/**
+ * Size the saved category/global run was started with, so a reload seeds the size control with it
+ * (AC 3.6.12, 3.18.7). Null unless the saved run belongs to this identity and URL scope.
+ */
+export function readPersistedQuizSize(
+  context: unknown,
+  identityKey: string,
+  categorySlug: string | undefined,
+): number | null {
+  if (!context || typeof context !== "object") return null;
+  const candidate = context as { mode?: unknown; quizRun?: unknown };
+  if (candidate.mode !== "quiz") return null;
+  if (!candidate.quizRun || typeof candidate.quizRun !== "object") return null;
+  const savedRun = candidate.quizRun as { identityKey?: unknown; scope?: unknown };
+  if (savedRun.identityKey !== identityKey) return null;
+  if (!savedRun.scope || typeof savedRun.scope !== "object") return null;
+  const scope = savedRun.scope as {
+    kind?: unknown;
+    category?: unknown;
+    quizSize?: unknown;
+  };
+
+  if (scope.kind === "global") {
+    if (categorySlug) return null;
+  } else if (scope.kind === "category") {
+    if (
+      !categorySlug ||
+      typeof scope.category !== "string" ||
+      categoryNameToSlug(scope.category).toLowerCase() !== categorySlug.toLowerCase()
+    ) {
+      return null;
+    }
+  } else {
+    return null;
+  }
+
+  const size = scope.quizSize;
+  return typeof size === "number" && Number.isInteger(size) && size >= 1 && size <= 1000
+    ? size
+    : null;
 }
 
 export function restoreQuizRun(

@@ -58,6 +58,7 @@ import {
   seedQuizRoster,
   reduceQuizRun,
   restoreQuizRun,
+  readPersistedQuizSize,
   sameQuizScope,
   summarizeQuizRun,
   toCompletionSnapshot,
@@ -141,6 +142,28 @@ const QuizModePage = () => {
   const { isAuthenticated, isLoading: isAuthLoading, userId } = useAuth();
   const identityKey = isAuthenticated ? `user:${userId ?? "unknown"}` : "guest";
   const previousIdentityKey = useRef(identityKey);
+  /** Size of the saved run for this URL scope (AC 3.6.12); 10 when absent or when items come from the Categories list. */
+  const readSavedQuizSize = (): number => {
+    if (!itemId || collectionId) return 10;
+    try {
+      const fromCategories = sessionStorage.getItem("quiz_scope_items_from_categories");
+      if (fromCategories) {
+        try {
+          const parsed = JSON.parse(fromCategories) as { items?: Array<{ id?: string }> };
+          if (Array.isArray(parsed.items) && parsed.items.some((item) => item.id === itemId)) {
+            return 10;
+          }
+        } catch {
+          // Unparseable key is discarded by getStoredItems; fall through to the saved run.
+        }
+      }
+      const stored = sessionStorage.getItem("navigationContext_quiz");
+      if (!stored) return 10;
+      return readPersistedQuizSize(JSON.parse(stored), identityKey, categorySlug) ?? 10;
+    } catch {
+      return 10;
+    }
+  };
   const [currentIndex, setCurrentIndex] = useState(0);
   const [run, setRun] = useState<QuizRunState | null>(null);
   const [runRestartNotice, setRunRestartNotice] = useState<string | null>(null);
@@ -152,9 +175,10 @@ const QuizModePage = () => {
   const pendingSwitchRef = useRef<QuizRunMode | null>(null);
   const completionPublishedRunIds = useRef(new Set<string>());
   /** Quiz uses random N items (default 10); changing this refetches items */
-  const [quizSize, setQuizSize] = useState(10);
+  const [initialQuizSize] = useState<number>(() => readSavedQuizSize());
+  const [quizSize, setQuizSize] = useState<number>(initialQuizSize);
   /** Controlled display value for the quiz size input; committed on blur */
-  const [quizSizeInput, setQuizSizeInput] = useState("10");
+  const [quizSizeInput, setQuizSizeInput] = useState<string>(() => String(initialQuizSize));
   const [selectedItemForCollections, setSelectedItemForCollections] = useState<
     string | null
   >(null);

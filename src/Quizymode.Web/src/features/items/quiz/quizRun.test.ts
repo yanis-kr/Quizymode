@@ -3,6 +3,7 @@ import {
   createQuizRun,
   getQuizOptions,
   isQuizPlayable,
+  readPersistedQuizSize,
   reduceQuizRun,
   restoreQuizRun,
   summarizeQuizRun,
@@ -198,5 +199,70 @@ describe("quizRun", () => {
       });
       expect(restoreQuizRun(test, scope, ["a"], "guest", "test")).toBeNull();
     });
+  });
+});
+
+describe("readPersistedQuizSize", () => {
+  const categoryScope = (overrides: Record<string, unknown> = {}) => ({
+    kind: "category",
+    category: "Computer Science",
+    navigationKeywords: [],
+    filterKeywords: [],
+    quizSize: 5,
+    ...overrides,
+  });
+  const context = (savedScope: unknown, extra: Record<string, unknown> = {}, runExtra: Record<string, unknown> = {}) => ({
+    mode: "quiz",
+    quizRun: { identityKey: "guest", scope: savedScope, ...runExtra },
+    ...extra,
+  });
+
+  it("returns the saved size for a matching category scope, ignoring slug case", () => {
+    expect(readPersistedQuizSize(context(categoryScope()), "guest", "computer-science")).toBe(5);
+    expect(readPersistedQuizSize(context(categoryScope()), "guest", "Computer-Science")).toBe(5);
+  });
+
+  it("returns the saved size for a global scope with no slug", () => {
+    expect(readPersistedQuizSize(context(categoryScope({ kind: "global", category: null })), "guest", undefined)).toBe(5);
+  });
+
+  it("returns null for an identity or mode mismatch", () => {
+    expect(readPersistedQuizSize(context(categoryScope()), "user:1", "computer-science")).toBeNull();
+    expect(readPersistedQuizSize(context(categoryScope(), { mode: "explore" }), "guest", "computer-science")).toBeNull();
+  });
+
+  it("returns null for a collection scope", () => {
+    expect(
+      readPersistedQuizSize(context({ kind: "collection", collectionId: "c1", quizSize: 5 }), "guest", undefined),
+    ).toBeNull();
+  });
+
+  it("returns null when the saved scope kind does not match the URL", () => {
+    expect(readPersistedQuizSize(context(categoryScope()), "guest", undefined)).toBeNull();
+    expect(
+      readPersistedQuizSize(context(categoryScope({ kind: "global", category: null })), "guest", "computer-science"),
+    ).toBeNull();
+  });
+
+  it("returns null for a different category slug", () => {
+    expect(readPersistedQuizSize(context(categoryScope()), "guest", "history")).toBeNull();
+  });
+
+  it("returns null for malformed or missing context", () => {
+    expect(readPersistedQuizSize(null, "guest", undefined)).toBeNull();
+    expect(readPersistedQuizSize("text", "guest", undefined)).toBeNull();
+    expect(readPersistedQuizSize({ mode: "quiz" }, "guest", undefined)).toBeNull();
+    expect(readPersistedQuizSize({ mode: "quiz", quizRun: "x" }, "guest", undefined)).toBeNull();
+    expect(readPersistedQuizSize({ mode: "quiz", quizRun: { identityKey: "guest" } }, "guest", undefined)).toBeNull();
+    expect(readPersistedQuizSize(context(categoryScope({ category: 4 })), "guest", "computer-science")).toBeNull();
+  });
+
+  it.each([0, 1001, 5.5, "5", null, Number.NaN])("returns null for size %s", (size) => {
+    expect(readPersistedQuizSize(context(categoryScope({ quizSize: size })), "guest", "computer-science")).toBeNull();
+  });
+
+  it("accepts the 1 and 1000 bounds", () => {
+    expect(readPersistedQuizSize(context(categoryScope({ quizSize: 1 })), "guest", "computer-science")).toBe(1);
+    expect(readPersistedQuizSize(context(categoryScope({ quizSize: 1000 })), "guest", "computer-science")).toBe(1000);
   });
 });
