@@ -1,0 +1,268 @@
+[
+  {
+    "itemId": "a571245a-c219-4f46-8b25-3faee9877395",
+    "category": "tech",
+    "navigationKeyword1": "genai-for-devs",
+    "navigationKeyword2": "tokens-context",
+    "question": "What is a token, as an LLM sees text?",
+    "correctAnswer": "A chunk of text, often a word piece, read as one unit",
+    "incorrectAnswers": [
+      "Always exactly one character of the input",
+      "Always one complete sentence of the input",
+      "A fixed four-byte block of the raw input text"
+    ],
+    "explanation": "Most LLMs do not see raw characters. A tokenizer first cuts text into chunks from a fixed vocabulary: common words become one token, rarer words split into several pieces, and each piece maps to an integer ID. The model reads and writes those IDs.",
+    "keywords": [
+      "genai-for-devs",
+      "tokens-context"
+    ],
+    "source": "https://help.openai.com/en/articles/4936856-what-are-tokens-and-how-to-count-them"
+  },
+  {
+    "itemId": "09f23bc8-d5fc-43f7-82ed-5a60d15140ef",
+    "category": "tech",
+    "navigationKeyword1": "genai-for-devs",
+    "navigationKeyword2": "tokens-context",
+    "question": "For common English text, about how many characters does one token cover in OpenAI's tokenizers?",
+    "correctAnswer": "About 4 characters",
+    "incorrectAnswers": [
+      "Exactly 1 character",
+      "About 20 characters",
+      "About 100 characters"
+    ],
+    "explanation": "OpenAI's rule of thumb is that one token is roughly 4 characters, or about three quarters of a word, so 100 tokens is about 75 words. It is only an estimate: other languages and unusual text often take more tokens per character.",
+    "keywords": [
+      "genai-for-devs",
+      "tokens-context"
+    ],
+    "source": "https://help.openai.com/en/articles/4936856-what-are-tokens-and-how-to-count-them"
+  },
+  {
+    "itemId": "40d41f02-4757-4a93-9e33-d2aaf08509b8",
+    "category": "tech",
+    "navigationKeyword1": "genai-for-devs",
+    "navigationKeyword2": "tokens-context",
+    "question": "How does byte-pair encoding (BPE) build a tokenizer's vocabulary?",
+    "correctAnswer": "It repeatedly merges the most frequent adjacent pair of symbols",
+    "incorrectAnswers": [
+      "It assigns one token to every word in a dictionary",
+      "It hashes each word into a fixed number of buckets",
+      "It splits text at every vowel and consonant boundary"
+    ],
+    "explanation": "BPE starts from single characters (or bytes), counts which neighboring pair appears most often in the training text, and merges it into a new symbol. Repeat until the vocabulary hits a target size. It began as a data compression technique, which is why it feels like building a compression dictionary.",
+    "keywords": [
+      "genai-for-devs",
+      "tokens-context"
+    ],
+    "source": "https://arxiv.org/abs/1508.07909"
+  },
+  {
+    "itemId": "32e6f9a2-74f3-4c63-b8a5-70026da77abf",
+    "category": "tech",
+    "navigationKeyword1": "genai-for-devs",
+    "navigationKeyword2": "tokens-context",
+    "question": "Why can translating the same text into another language raise its token count, and so its API cost?",
+    "correctAnswer": "Tokenizers often split less-represented languages into more pieces",
+    "incorrectAnswers": [
+      "Providers add a surcharge token for non-English text",
+      "Non-English characters are always sent as images",
+      "Every language uses a separate model with its own price"
+    ],
+    "explanation": "A tokenizer's vocabulary reflects its training data, which is usually English-heavy. Text in other languages tends to break into smaller, more numerous tokens. A 2023 study found the same content can need several times more tokens depending on the language, which affects cost, speed, and how much fits in the context.",
+    "keywords": [
+      "genai-for-devs",
+      "tokens-context"
+    ],
+    "source": "https://arxiv.org/abs/2305.15425"
+  },
+  {
+    "itemId": "43db105d-c7cb-487b-bfb4-1293bcdc37e4",
+    "category": "tech",
+    "navigationKeyword1": "genai-for-devs",
+    "navigationKeyword2": "tokens-context",
+    "question": "What is a model's context window?",
+    "correctAnswer": "The maximum tokens it can handle in one request, input and output",
+    "incorrectAnswers": [
+      "The number of chat sessions it can serve at once",
+      "The time window during which a request stays cached",
+      "The maximum number of requests allowed per minute"
+    ],
+    "explanation": "Think of it as the model's working memory, or the buffer size for one call. Everything the model considers (system prompt, history, documents, and the reply it is writing) has to fit inside it. Text outside the window simply does not exist for that request.",
+    "keywords": [
+      "genai-for-devs",
+      "tokens-context"
+    ],
+    "source": "https://platform.claude.com/docs/en/build-with-claude/context-windows"
+  },
+  {
+    "itemId": "d2c29f2a-3ddf-4c7f-b2f7-828f86457b1a",
+    "category": "tech",
+    "navigationKeyword1": "genai-for-devs",
+    "navigationKeyword2": "tokens-context",
+    "question": "How do LLM APIs typically charge for usage?",
+    "correctAnswer": "Per token, with input and output tokens priced separately",
+    "incorrectAnswers": [
+      "Per request, no matter how long it is",
+      "Per second of GPU time, regardless of text length",
+      "Per character of the final answer only"
+    ],
+    "explanation": "Providers publish a price per million input tokens and a different, usually higher, price per million output tokens. So a long prompt with a short answer and a short prompt with a long answer cost very differently. Estimating cost means estimating tokens.",
+    "keywords": [
+      "genai-for-devs",
+      "tokens-context"
+    ],
+    "source": "https://claude.com/pricing"
+  },
+  {
+    "itemId": "634e844e-2e85-4cdb-ac04-67c5b86b8a1e",
+    "category": "tech",
+    "navigationKeyword1": "genai-for-devs",
+    "navigationKeyword2": "tokens-context",
+    "question": "The 2023 \"Lost in the Middle\" study found models use information least reliably when it sits where in a long input?",
+    "correctAnswer": "In the middle of the context",
+    "incorrectAnswers": [
+      "At the very start of the context",
+      "At the very end of the context",
+      "Inside the system prompt"
+    ],
+    "explanation": "Accuracy was highest when the relevant passage was at the beginning or end of the input and dropped when it was buried in the middle, even for long-context models. Practical takeaway: a bigger window does not guarantee the model uses all of it, so put key material near the start or end.",
+    "keywords": [
+      "genai-for-devs",
+      "tokens-context"
+    ],
+    "source": "https://arxiv.org/abs/2307.03172"
+  },
+  {
+    "itemId": "00e9318a-9043-494f-921c-14cf9c6dc7c8",
+    "category": "tech",
+    "navigationKeyword1": "genai-for-devs",
+    "navigationKeyword2": "tokens-context",
+    "question": "Why does standard self-attention get expensive as the input grows longer?",
+    "correctAnswer": "Every token is compared with every other token, so cost grows quadratically",
+    "incorrectAnswers": [
+      "Each new token forces the weights to be reloaded from disk",
+      "The tokenizer must restart from the beginning for each token",
+      "Longer inputs switch the model to a slower fallback model"
+    ],
+    "explanation": "Self-attention is the step where each token looks at every other token to decide what matters to it. That is O(n squared) work in the input length, like a nested loop over the input. Doubling the prompt roughly quadruples that part of the compute and memory, which is a big reason long contexts are slower and need more hardware.",
+    "keywords": [
+      "genai-for-devs",
+      "tokens-context"
+    ],
+    "source": "https://huggingface.co/docs/transformers/main/en/llm_tutorial_optimization"
+  },
+  {
+    "itemId": "1f98b7c9-aabf-409b-8f95-1aca04013735",
+    "category": "tech",
+    "navigationKeyword1": "genai-for-devs",
+    "navigationKeyword2": "tokens-context",
+    "question": "What does the KV cache store during text generation?",
+    "correctAnswer": "Intermediate attention data for earlier tokens",
+    "incorrectAnswers": [
+      "Answers from earlier users, kept for reuse",
+      "A key-value copy of the training data",
+      "API keys and their rate-limit counters"
+    ],
+    "explanation": "To produce each new token, the model combines intermediate vectors (called keys and values) from every earlier token. Those don't change, so the server keeps them in memory instead of recomputing them each step: classic memoization. It speeds generation up a lot but uses GPU memory that grows with the context length.",
+    "keywords": [
+      "genai-for-devs",
+      "tokens-context"
+    ],
+    "source": "https://huggingface.co/docs/transformers/main/en/llm_tutorial_optimization"
+  },
+  {
+    "itemId": "a5b350b5-1550-4b2c-ba08-f94c878dc3fc",
+    "category": "tech",
+    "navigationKeyword1": "genai-for-devs",
+    "navigationKeyword2": "tokens-context",
+    "question": "Prompt caching cuts cost and latency for repeated requests. Which part of the prompt must stay identical for a cache hit?",
+    "correctAnswer": "The beginning, up to the cache point",
+    "incorrectAnswers": [
+      "Only the final user message in the request",
+      "The same words, in any order",
+      "Only the model's previous answer"
+    ],
+    "explanation": "The cache stores the processed state of a prompt prefix, such as a long system prompt plus reference documents. A later request that starts with exactly the same prefix can reuse it. Change one character early on and everything after it is a miss, so put stable content first and variable content last.",
+    "keywords": [
+      "genai-for-devs",
+      "tokens-context"
+    ],
+    "source": "https://platform.claude.com/docs/en/build-with-claude/prompt-caching"
+  },
+  {
+    "itemId": "6c0695bb-ce59-4d25-83eb-756680fb3e21",
+    "category": "tech",
+    "navigationKeyword1": "genai-for-devs",
+    "navigationKeyword2": "tokens-context",
+    "question": "A response stops mid-sentence and the API reports a stop reason of max_tokens. What happened?",
+    "correctAnswer": "Generation hit the output token limit set on the request",
+    "incorrectAnswers": [
+      "The model detected a safety issue and refused",
+      "The client's network connection timed out",
+      "The prompt was too short for the model to finish"
+    ],
+    "explanation": "Requests carry a cap on output tokens. When generation reaches it, the model stops wherever it is and the response says so. It is like a fixed-size buffer filling up: check the stop reason, then raise the limit or ask the model to continue.",
+    "keywords": [
+      "genai-for-devs",
+      "tokens-context"
+    ],
+    "source": "https://platform.claude.com/docs/en/build-with-claude/handling-stop-reasons"
+  },
+  {
+    "itemId": "ebf4e2e9-7c4b-4fd8-bc1d-a562bd117734",
+    "category": "tech",
+    "navigationKeyword1": "genai-for-devs",
+    "navigationKeyword2": "tokens-context",
+    "question": "Plain self-attention is order-agnostic. How do Transformers know which token came first?",
+    "correctAnswer": "Position information is added through positional encodings",
+    "incorrectAnswers": [
+      "Tokens are always processed strictly one after another",
+      "The tokenizer sorts tokens alphabetically first",
+      "Each token's ID number is its position in the text"
+    ],
+    "explanation": "Without help, attention treats the input like an unordered set. The original Transformer added sine and cosine positional encodings to each token's vector; later models such as Llama use rotary position embeddings (RoPE). Either way, position becomes part of the data. (Some models, such as those using ALiBi, instead add a distance-based bias to the attention scores.)",
+    "keywords": [
+      "genai-for-devs",
+      "tokens-context"
+    ],
+    "source": "https://arxiv.org/abs/2104.09864"
+  },
+  {
+    "itemId": "beb8c88a-62d5-4b96-86aa-e873e1e3d68c",
+    "category": "tech",
+    "navigationKeyword1": "genai-for-devs",
+    "navigationKeyword2": "tokens-context",
+    "question": "Why might the same paragraph count as different numbers of tokens for two different models?",
+    "correctAnswer": "Different model families use different tokenizers",
+    "incorrectAnswers": [
+      "Larger models always produce fewer tokens",
+      "Token counts include hidden system tokens",
+      "Counts vary with the request's temperature"
+    ],
+    "explanation": "A tokenizer is built before the model is trained and stays fixed with it, so vocabularies differ between model families and even between versions. OpenAI's tiktoken library, for example, ships several named encodings for different models. Always count tokens with the tokenizer of the model you will call.",
+    "keywords": [
+      "genai-for-devs",
+      "tokens-context"
+    ],
+    "source": "https://github.com/openai/tiktoken"
+  },
+  {
+    "itemId": "0d0e3be7-34db-4484-9359-6645f821c616",
+    "category": "tech",
+    "navigationKeyword1": "genai-for-devs",
+    "navigationKeyword2": "tokens-context",
+    "question": "How does a model signal that it has finished its answer, if no length limit is hit?",
+    "correctAnswer": "It emits a special end-of-sequence token",
+    "incorrectAnswers": [
+      "It stops at the first full stop (period)",
+      "It stops when the reply matches the prompt's length",
+      "It stops after a fixed number of sentences"
+    ],
+    "explanation": "Vocabularies include special tokens that never appear in normal text. One of them marks end of sequence. The generation loop keeps sampling until the model produces it, or until a token limit or a stop sequence ends things first, much like a null terminator ending a C string.",
+    "keywords": [
+      "genai-for-devs",
+      "tokens-context"
+    ],
+    "source": "https://huggingface.co/docs/transformers/main/en/llm_tutorial"
+  }
+]

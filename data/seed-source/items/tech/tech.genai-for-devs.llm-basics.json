@@ -1,0 +1,268 @@
+[
+  {
+    "itemId": "0c6bc469-a98e-4b4a-9c62-0cf354bda970",
+    "category": "tech",
+    "navigationKeyword1": "genai-for-devs",
+    "navigationKeyword2": "llm-basics",
+    "question": "Each time an LLM produces the next piece of its answer, what does the model itself actually compute?",
+    "correctAnswer": "A probability for every possible next token",
+    "incorrectAnswers": [
+      "A query plan for a stored table of answers",
+      "A compiled program that it then executes",
+      "A lookup key into an index of past chats"
+    ],
+    "explanation": "An LLM is a function: given the tokens so far, it scores every token in its vocabulary and turns those scores into probabilities. The calling code picks one token, appends it, and calls the model again. That loop (autoregressive generation) is why answers appear piece by piece, and why there is no stored answer being looked up.",
+    "keywords": [
+      "genai-for-devs",
+      "llm-basics"
+    ],
+    "source": "https://huggingface.co/docs/transformers/main/en/llm_tutorial"
+  },
+  {
+    "itemId": "eed61946-fcc6-4657-a3d5-e254d4554fc0",
+    "category": "tech",
+    "navigationKeyword1": "genai-for-devs",
+    "navigationKeyword2": "llm-basics",
+    "question": "When a model is described as \"7B\", what is there 7 billion of?",
+    "correctAnswer": "Learned numeric weights (parameters)",
+    "incorrectAnswers": [
+      "Training documents it has read",
+      "Words in its vocabulary",
+      "Tokens it can accept per request"
+    ],
+    "explanation": "Parameters are the numbers inside the network that training adjusts, mostly large matrices of floats. A 7B model has about 7 billion of them. The downloaded model file is mainly these weights, a bit like a compiled binary that encodes what training produced.",
+    "keywords": [
+      "genai-for-devs",
+      "llm-basics"
+    ],
+    "source": "https://arxiv.org/abs/2307.09288"
+  },
+  {
+    "itemId": "02844710-9297-4d9a-b362-12844fdef2cc",
+    "category": "tech",
+    "navigationKeyword1": "genai-for-devs",
+    "navigationKeyword2": "llm-basics",
+    "question": "Why does a 7-billion-parameter model need roughly 14 GB of memory just to load its weights in 16-bit precision?",
+    "correctAnswer": "Each parameter takes 2 bytes, so 7 billion take about 14 GB",
+    "incorrectAnswers": [
+      "Each parameter stores one word of training text",
+      "The model keeps a compressed copy of its training data",
+      "Each parameter carries 16 bytes of index metadata"
+    ],
+    "explanation": "16-bit floats (float16 or bfloat16) use 2 bytes each, so memory for the weights is about 2 x the parameter count in GB. This back-of-the-envelope rule is how you size a GPU. Running the model needs extra memory on top, for example for the attention cache.",
+    "keywords": [
+      "genai-for-devs",
+      "llm-basics"
+    ],
+    "source": "https://huggingface.co/docs/transformers/main/en/llm_tutorial_optimization"
+  },
+  {
+    "itemId": "2dfbfb58-4cc7-42c9-8bed-868858fe438a",
+    "category": "tech",
+    "navigationKeyword1": "genai-for-devs",
+    "navigationKeyword2": "llm-basics",
+    "question": "In machine learning, what is \"inference\"?",
+    "correctAnswer": "Running a trained model on new input",
+    "incorrectAnswers": [
+      "Updating the weights with each new user prompt",
+      "Downloading weights from a model registry",
+      "Reading the training data back out of a model"
+    ],
+    "explanation": "Training is the expensive build step that sets the weights; inference is running the finished artifact on new input. Think compile time versus run time. Chatting with a deployed model is inference, so your messages do not retrain it.",
+    "keywords": [
+      "genai-for-devs",
+      "llm-basics"
+    ],
+    "source": "https://developers.google.com/machine-learning/glossary#inference"
+  },
+  {
+    "itemId": "dbb83b70-510f-4826-aa8b-e63b68fc0f8c",
+    "category": "tech",
+    "navigationKeyword1": "genai-for-devs",
+    "navigationKeyword2": "llm-basics",
+    "question": "An LLM confidently recommends a library function that does not exist. What best explains this \"hallucination\"?",
+    "correctAnswer": "It generates plausible text and has no built-in fact check",
+    "incorrectAnswers": [
+      "Its internal table of library functions is corrupted",
+      "Its temperature was set too low for the request",
+      "Its tokenizer dropped part of the function name"
+    ],
+    "explanation": "Plain generation picks likely-sounding tokens; nothing in that loop checks the result against a source of truth, and a made-up function name can be very \"likely\" text. A 2025 analysis also points out that training and benchmarks tend to reward a confident guess over \"I don't know\". Treat model output like an unreviewed pull request: verify it, or ground the model with real documents and tools.",
+    "keywords": [
+      "genai-for-devs",
+      "llm-basics"
+    ],
+    "source": "https://arxiv.org/abs/2509.04664"
+  },
+  {
+    "itemId": "039184e1-d01a-416d-bcb9-0da6b53a9db5",
+    "category": "tech",
+    "navigationKeyword1": "genai-for-devs",
+    "navigationKeyword2": "llm-basics",
+    "question": "What does the temperature setting control during text generation?",
+    "correctAnswer": "How random the choice of each next token is",
+    "incorrectAnswers": [
+      "How long the model may run before timing out",
+      "How many documents are retrieved for the prompt",
+      "How much GPU power the request may use"
+    ],
+    "explanation": "The model's scores are divided by the temperature before they become probabilities. A low temperature sharpens the distribution so the top token wins almost every time; a high one flattens it so less likely tokens get picked more often. Low suits extraction and code, higher suits brainstorming.",
+    "keywords": [
+      "genai-for-devs",
+      "llm-basics"
+    ],
+    "source": "https://huggingface.co/blog/how-to-generate"
+  },
+  {
+    "itemId": "56050d6a-3473-42ae-bea4-902f9de222bb",
+    "category": "tech",
+    "navigationKeyword1": "genai-for-devs",
+    "navigationKeyword2": "llm-basics",
+    "question": "Why can the exact same prompt return different answers on two calls?",
+    "correctAnswer": "The next token is usually sampled from probabilities",
+    "incorrectAnswers": [
+      "The model retrains itself between the two calls",
+      "The server swaps in a different model each time",
+      "The tokenizer splits the prompt differently each time"
+    ],
+    "explanation": "With sampling turned on, each step draws a token at random, weighted by its probability, so two runs can branch apart early and end up different. Greedy decoding always takes the top token instead. For testing, this means you assert on properties of the output, not exact strings. Even at temperature 0, hosted APIs are not guaranteed to be bit-for-bit repeatable.",
+    "keywords": [
+      "genai-for-devs",
+      "llm-basics"
+    ],
+    "source": "https://huggingface.co/docs/transformers/main/en/generation_strategies"
+  },
+  {
+    "itemId": "96de1944-d7f1-4df0-998a-ea878c933483",
+    "category": "tech",
+    "navigationKeyword1": "genai-for-devs",
+    "navigationKeyword2": "llm-basics",
+    "question": "What is a model's training data cutoff?",
+    "correctAnswer": "The date after which its training data has no information",
+    "incorrectAnswers": [
+      "The maximum length of a single training document",
+      "The date its provider stops supporting the model",
+      "The number of tokens after which it stops reading"
+    ],
+    "explanation": "The weights are frozen after training, so the model only \"knows\" what was in data up to that point, like a database restored from an old backup. Anything newer must come from the prompt, retrieved documents, or a tool such as web search. Coverage near the cutoff is thin, so providers may also publish an earlier \"reliable knowledge\" date.",
+    "keywords": [
+      "genai-for-devs",
+      "llm-basics"
+    ],
+    "source": "https://platform.claude.com/docs/en/about-claude/models/overview"
+  },
+  {
+    "itemId": "8cad3204-db6f-4f61-88ce-1c01a90fa02a",
+    "category": "tech",
+    "navigationKeyword1": "genai-for-devs",
+    "navigationKeyword2": "llm-basics",
+    "question": "A reasoning model with extended thinking returns a two-line answer, but the call is billed for thousands of output tokens. Why?",
+    "correctAnswer": "Its internal thinking tokens are billed as output",
+    "incorrectAnswers": [
+      "Input tokens are billed again for each output line",
+      "Tool definitions are re-billed as output tokens",
+      "Streaming doubles the number of output tokens"
+    ],
+    "explanation": "Reasoning models generate a stretch of internal reasoning before the visible answer. Those thinking tokens are produced like any other output, so they count toward the output limit and are billed as output, even when the API returns only a summary of them. A short answer can therefore be an expensive one.",
+    "keywords": [
+      "genai-for-devs",
+      "llm-basics"
+    ],
+    "source": "https://platform.claude.com/docs/en/build-with-claude/extended-thinking"
+  },
+  {
+    "itemId": "79311913-7a48-43e8-befc-e74b947eee5b",
+    "category": "tech",
+    "navigationKeyword1": "genai-for-devs",
+    "navigationKeyword2": "llm-basics",
+    "question": "A chat assistant seems to remember what you said three messages ago. How does a typical chat API make that work?",
+    "correctAnswer": "The client sends the whole conversation with every request",
+    "incorrectAnswers": [
+      "The client sends only a hash of earlier messages",
+      "The model keeps a session object inside its network",
+      "The provider stores a private copy of the model per user"
+    ],
+    "explanation": "Chat APIs like the Messages API are stateless, much like plain HTTP. Your code sends the full list of prior messages each time, and the model reads them as part of the input. That is also why long chats cost more: the history is billed again on every turn (prompt caching can discount the repeated part).",
+    "keywords": [
+      "genai-for-devs",
+      "llm-basics"
+    ],
+    "source": "https://platform.claude.com/docs/en/api/messages"
+  },
+  {
+    "itemId": "698c9908-986b-41ea-b46e-2e48289fb444",
+    "category": "tech",
+    "navigationKeyword1": "genai-for-devs",
+    "navigationKeyword2": "llm-basics",
+    "question": "Meta released both Llama 2 and Llama 2-Chat in 2023. How does the chat version differ from the base model?",
+    "correctAnswer": "It was further fine-tuned to follow dialogue instructions",
+    "incorrectAnswers": [
+      "It has a larger vocabulary of chat slang",
+      "It was trained only on chat logs from scratch",
+      "It runs a different, non-Transformer architecture"
+    ],
+    "explanation": "A base model simply continues text: give it a question and it might write more questions. Llama 2-Chat starts from the same pretrained weights, then gets supervised fine-tuning and reinforcement learning from human feedback so it answers helpfully. Same engine, extra tuning.",
+    "keywords": [
+      "genai-for-devs",
+      "llm-basics"
+    ],
+    "source": "https://arxiv.org/abs/2307.09288"
+  },
+  {
+    "itemId": "3e1d2f7b-2bae-4cfe-9977-6a696e423242",
+    "category": "tech",
+    "navigationKeyword1": "genai-for-devs",
+    "navigationKeyword2": "llm-basics",
+    "question": "What did the 2020 \"scaling laws\" study of language models find?",
+    "correctAnswer": "Loss falls predictably as model size, data, and compute grow",
+    "incorrectAnswers": [
+      "Models stop improving beyond about one billion parameters",
+      "Only the amount of training data affects quality",
+      "Network depth and width matter more than total size"
+    ],
+    "explanation": "Loss measures how wrong the model's next-token predictions are; lower is better. The study found test loss falls along smooth power-law curves as model size, dataset size, and training compute grow, across several orders of magnitude. That predictability let labs estimate a bigger model's quality before paying to train it, which helped drive the race to scale.",
+    "keywords": [
+      "genai-for-devs",
+      "llm-basics"
+    ],
+    "source": "https://arxiv.org/abs/2001.08361"
+  },
+  {
+    "itemId": "e16ae9de-aafa-4b95-af03-8f91815cf7b0",
+    "category": "tech",
+    "navigationKeyword1": "genai-for-devs",
+    "navigationKeyword2": "llm-basics",
+    "question": "DeepMind's 2022 Chinchilla paper concluded that many large models of the time were what?",
+    "correctAnswer": "Undertrained: too many parameters for the data they saw",
+    "incorrectAnswers": [
+      "Overtrained: they had seen far too much data",
+      "Too small to benefit from any more training data",
+      "Limited mainly by their tokenizer vocabulary"
+    ],
+    "explanation": "For a fixed compute budget, Chinchilla found model size and training tokens should grow in roughly equal proportion. Their 70B model, trained on about 4x more data than the 280B Gopher with the same compute, outperformed it. More data per parameter beat simply more parameters.",
+    "keywords": [
+      "genai-for-devs",
+      "llm-basics"
+    ],
+    "source": "https://arxiv.org/abs/2203.15556"
+  },
+  {
+    "itemId": "5c1cab9d-869a-4f70-b028-c87ed7441d1e",
+    "category": "tech",
+    "navigationKeyword1": "genai-for-devs",
+    "navigationKeyword2": "llm-basics",
+    "question": "In a Mixture-of-Experts (MoE) model, what happens to each token?",
+    "correctAnswer": "A router sends it to one or a few expert sub-networks",
+    "incorrectAnswers": [
+      "Every expert processes it and the results are averaged",
+      "A human expert reviews it before it is used",
+      "It is split into characters, one per expert"
+    ],
+    "explanation": "A small router (also called a gating network) picks one or a few experts for each token, so only a fraction of the expert weights do work on that token; attention and other shared layers still always run. It is like a load balancer routing each request to a specialist service. This lets total parameter count grow without per-token compute growing as fast.",
+    "keywords": [
+      "genai-for-devs",
+      "llm-basics"
+    ],
+    "source": "https://arxiv.org/abs/2101.03961"
+  }
+]

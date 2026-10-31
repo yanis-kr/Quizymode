@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-10-14T23:05:28.180484+00:00",
-  "totalItems": 13508,
+  "generatedAt": "2026-10-31T13:04:46.044874+00:00",
+  "totalItems": 13620,
   "files": [
     {
       "path": "data/seed-source/items/business/business.accounting.audit.json",
@@ -6033,6 +6033,70 @@
       "nav2": "terraform",
       "itemCount": 6,
       "modifiedAt": "2026-04-05T10:34:42-05:00"
+    },
+    {
+      "path": "data/seed-source/items/tech/tech.genai-for-devs.ai-agents.json",
+      "category": "tech",
+      "nav1": "genai-for-devs",
+      "nav2": "ai-agents",
+      "itemCount": 14,
+      "modifiedAt": "2026-10-31T13:04:46.044874+00:00"
+    },
+    {
+      "path": "data/seed-source/items/tech/tech.genai-for-devs.embeddings.json",
+      "category": "tech",
+      "nav1": "genai-for-devs",
+      "nav2": "embeddings",
+      "itemCount": 14,
+      "modifiedAt": "2026-10-31T13:04:46.044874+00:00"
+    },
+    {
+      "path": "data/seed-source/items/tech/tech.genai-for-devs.llm-basics.json",
+      "category": "tech",
+      "nav1": "genai-for-devs",
+      "nav2": "llm-basics",
+      "itemCount": 14,
+      "modifiedAt": "2026-10-31T13:04:46.044874+00:00"
+    },
+    {
+      "path": "data/seed-source/items/tech/tech.genai-for-devs.llm-ops.json",
+      "category": "tech",
+      "nav1": "genai-for-devs",
+      "nav2": "llm-ops",
+      "itemCount": 14,
+      "modifiedAt": "2026-10-31T13:04:46.044874+00:00"
+    },
+    {
+      "path": "data/seed-source/items/tech/tech.genai-for-devs.model-tuning.json",
+      "category": "tech",
+      "nav1": "genai-for-devs",
+      "nav2": "model-tuning",
+      "itemCount": 14,
+      "modifiedAt": "2026-10-31T13:04:46.044874+00:00"
+    },
+    {
+      "path": "data/seed-source/items/tech/tech.genai-for-devs.prompts-tools.json",
+      "category": "tech",
+      "nav1": "genai-for-devs",
+      "nav2": "prompts-tools",
+      "itemCount": 14,
+      "modifiedAt": "2026-10-31T13:04:46.044874+00:00"
+    },
+    {
+      "path": "data/seed-source/items/tech/tech.genai-for-devs.rag.json",
+      "category": "tech",
+      "nav1": "genai-for-devs",
+      "nav2": "rag",
+      "itemCount": 14,
+      "modifiedAt": "2026-10-31T13:04:46.044874+00:00"
+    },
+    {
+      "path": "data/seed-source/items/tech/tech.genai-for-devs.tokens-context.json",
+      "category": "tech",
+      "nav1": "genai-for-devs",
+      "nav2": "tokens-context",
+      "itemCount": 14,
+      "modifiedAt": "2026-10-31T13:04:46.044874+00:00"
     },
     {
       "path": "data/seed-source/items/tech/tech.mobile.android.json",

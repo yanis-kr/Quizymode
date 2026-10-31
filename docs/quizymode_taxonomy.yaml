@@ -249,6 +249,18 @@ tech:
         deep-learning: Neural nets
         nlp: Language AI
         computer-vision: Image AI
+    genai-for-devs:
+      description: AI for developers
+      keywords:
+        general-genai-for-devs: AI for developers
+        llm-basics: LLM basics
+        tokens-context: Tokens, context
+        embeddings: Vector search
+        rag: Retrieval RAG
+        prompts-tools: Prompts, tools
+        ai-agents: AI agents
+        model-tuning: Train, tune
+        llm-ops: Evals, cost, risk
     security:
       description: Security
       keywords:

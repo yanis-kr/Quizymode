@@ -1,0 +1,268 @@
+[
+  {
+    "itemId": "43484677-53ca-4e9b-aedc-aa1d90f761ff",
+    "category": "tech",
+    "navigationKeyword1": "genai-for-devs",
+    "navigationKeyword2": "ai-agents",
+    "question": "In LLM apps, what separates an \"agent\" from a fixed \"workflow\"?",
+    "correctAnswer": "The model decides its own steps and tool use as it goes",
+    "incorrectAnswers": [
+      "It calls tools such as search or code execution",
+      "It chains several LLM calls together",
+      "It follows steps the developer wrote in code"
+    ],
+    "explanation": "In a workflow, your code fixes the path: call the model, then do X, then call it again. In an agent, the model directs the process, choosing which tool to use next based on what it has seen so far. More flexible, but less predictable, like the difference between a fixed script and a person working a ticket.",
+    "keywords": [
+      "genai-for-devs",
+      "ai-agents"
+    ],
+    "source": "https://www.anthropic.com/engineering/building-effective-agents"
+  },
+  {
+    "itemId": "e22c2a86-884e-495f-be50-f7b028bf24cd",
+    "category": "tech",
+    "navigationKeyword1": "genai-for-devs",
+    "navigationKeyword2": "ai-agents",
+    "question": "What is the basic loop inside an LLM agent?",
+    "correctAnswer": "Model picks an action, code runs it, result goes back, repeat",
+    "incorrectAnswers": [
+      "Model writes a full program once, then exits",
+      "User approves every token before it is generated",
+      "Model retrains itself after each tool call"
+    ],
+    "explanation": "An agent is mostly a while loop: send context to the model, get back a tool call, execute it, append the result, and call again, until the model says it is done or a limit is hit. The \"intelligence\" is in choosing actions; the loop itself is ordinary code you write.",
+    "keywords": [
+      "genai-for-devs",
+      "ai-agents"
+    ],
+    "source": "https://www.anthropic.com/engineering/building-effective-agents"
+  },
+  {
+    "itemId": "eb99a907-c71f-4eb3-b8ac-1c3afa3f2db7",
+    "category": "tech",
+    "navigationKeyword1": "genai-for-devs",
+    "navigationKeyword2": "ai-agents",
+    "question": "The 2022 ReAct paper had models interleave which two things?",
+    "correctAnswer": "Reasoning steps and actions such as search calls",
+    "incorrectAnswers": [
+      "Planning steps and final answers only",
+      "Retrieval steps and fine-tuning steps",
+      "User questions and system prompts"
+    ],
+    "explanation": "ReAct (Reason + Act) prompts the model to write a thought, take an action like a Wikipedia lookup, read the observation, then think again. Grounding each step in real observations reduced made-up facts compared with reasoning alone, and the trace is readable, like a debug log of the agent's decisions.",
+    "keywords": [
+      "genai-for-devs",
+      "ai-agents"
+    ],
+    "source": "https://arxiv.org/abs/2210.03629"
+  },
+  {
+    "itemId": "a5f43e9f-17be-4e64-ac8b-93d62df91824",
+    "category": "tech",
+    "navigationKeyword1": "genai-for-devs",
+    "navigationKeyword2": "ai-agents",
+    "question": "Why should an agent loop have a maximum number of iterations?",
+    "correctAnswer": "The model may loop or wander, running up cost with no end",
+    "incorrectAnswers": [
+      "APIs refuse more than ten calls per conversation",
+      "Each iteration permanently changes the model's weights",
+      "Tool results expire after a fixed number of steps"
+    ],
+    "explanation": "Nothing guarantees the model will decide it is done. It can retry the same failing tool or chase side paths. A cap on iterations (and on time or spend) works like a watchdog timer: control stays with your code. Anthropic's guide lists stopping conditions such as a maximum number of iterations.",
+    "keywords": [
+      "genai-for-devs",
+      "ai-agents"
+    ],
+    "source": "https://www.anthropic.com/engineering/building-effective-agents"
+  },
+  {
+    "itemId": "d561d2f5-b56d-444b-8e77-5c20177996ef",
+    "category": "tech",
+    "navigationKeyword1": "genai-for-devs",
+    "navigationKeyword2": "ai-agents",
+    "question": "What do agent-building guides usually recommend before you build an agent?",
+    "correctAnswer": "Start simple; add complexity only when needed",
+    "incorrectAnswers": [
+      "Always start with several agents working together",
+      "Fine-tune a custom model before writing any code",
+      "Give the agent full system access to save time"
+    ],
+    "explanation": "The guide notes that the most successful teams used simple, composable patterns rather than complex frameworks. Often a single LLM call with retrieval and good examples is enough. Agents trade latency and cost for flexibility, so add one only when it clearly pays off: YAGNI applies here too.",
+    "keywords": [
+      "genai-for-devs",
+      "ai-agents"
+    ],
+    "source": "https://www.anthropic.com/engineering/building-effective-agents"
+  },
+  {
+    "itemId": "6d4f4224-3845-4941-aa0e-ff8ab57b7775",
+    "category": "tech",
+    "navigationKeyword1": "genai-for-devs",
+    "navigationKeyword2": "ai-agents",
+    "question": "With the Model Context Protocol's stdio transport, how does a client talk to a local MCP server?",
+    "correctAnswer": "It runs the server as a subprocess, using stdin/stdout",
+    "incorrectAnswers": [
+      "It loads the server as a DLL into its own process",
+      "It reads and writes rows in a shared database table",
+      "It relays messages through the model provider's cloud"
+    ],
+    "explanation": "MCP defines two standard transports: stdio for local servers and Streamable HTTP for remote ones. With stdio, stdout is reserved for protocol messages, so the server may log only to stderr. A stray print statement corrupts the stream, a classic debugging trap for anyone who has written a pipe-based tool.",
+    "keywords": [
+      "genai-for-devs",
+      "ai-agents"
+    ],
+    "source": "https://modelcontextprotocol.io/specification/2025-06-18/basic/transports"
+  },
+  {
+    "itemId": "780ac5bb-4816-42b1-bd9b-2b98fd84f3c2",
+    "category": "tech",
+    "navigationKeyword1": "genai-for-devs",
+    "navigationKeyword2": "ai-agents",
+    "question": "Building its SWE-bench coding agent, Anthropic said it spent more time optimizing which part than the overall prompt?",
+    "correctAnswer": "The agent's tools and their interfaces",
+    "incorrectAnswers": [
+      "The choice of sampling temperature",
+      "The orchestration framework it ran on",
+      "The formatting of the final answer"
+    ],
+    "explanation": "The guide urges investing in the agent-computer interface as much as you would in a human UI. In one example the model made mistakes with relative file paths once it had moved out of the root directory; requiring absolute paths fixed it. Tool names, descriptions, and parameters deserve as much care as the prompt itself.",
+    "keywords": [
+      "genai-for-devs",
+      "ai-agents"
+    ],
+    "source": "https://www.anthropic.com/engineering/building-effective-agents"
+  },
+  {
+    "itemId": "a13d8ade-7fd7-4ace-9b0f-0d3043a9ccb6",
+    "category": "tech",
+    "navigationKeyword1": "genai-for-devs",
+    "navigationKeyword2": "ai-agents",
+    "question": "In MCP's architecture, which component exposes tools, resources, and prompts to an AI app?",
+    "correctAnswer": "An MCP server",
+    "incorrectAnswers": [
+      "The language model's weights",
+      "A browser extension",
+      "The tokenizer"
+    ],
+    "explanation": "MCP uses a client-server design. The host app (such as a chat app or IDE) runs MCP clients, and each client connects to an MCP server that offers capabilities: tools to call, resources to read, and prompt templates. The pattern will feel familiar from any plugin or driver architecture.",
+    "keywords": [
+      "genai-for-devs",
+      "ai-agents"
+    ],
+    "source": "https://modelcontextprotocol.io/specification/2025-06-18"
+  },
+  {
+    "itemId": "9c55c10e-9c0a-4672-91de-d06e0404b189",
+    "category": "tech",
+    "navigationKeyword1": "genai-for-devs",
+    "navigationKeyword2": "ai-agents",
+    "question": "What message format does the Model Context Protocol use between clients and servers?",
+    "correctAnswer": "JSON-RPC 2.0",
+    "incorrectAnswers": [
+      "SOAP envelopes",
+      "CORBA IIOP",
+      "Raw CSV lines"
+    ],
+    "explanation": "MCP messages are JSON-RPC 2.0 requests, responses, and notifications: a method name, params, and an id to match replies. It travels over standard input/output for local servers or Streamable HTTP for remote ones. If you have built RPC services, the shape is old news.",
+    "keywords": [
+      "genai-for-devs",
+      "ai-agents"
+    ],
+    "source": "https://modelcontextprotocol.io/specification/2025-06-18"
+  },
+  {
+    "itemId": "2a3190bf-6544-45dd-80d1-06261eb1322e",
+    "category": "tech",
+    "navigationKeyword1": "genai-for-devs",
+    "navigationKeyword2": "ai-agents",
+    "question": "OWASP calls the risk of giving an LLM agent too many tools, permissions, or too much autonomy what?",
+    "correctAnswer": "Excessive Agency",
+    "incorrectAnswers": [
+      "Model Overfitting",
+      "Token Exhaustion",
+      "Context Drift"
+    ],
+    "explanation": "Excessive Agency (LLM06 in the 2025 list) covers agents that can do more than they need: extra functions, broad permissions, or acting without checks. If a prompt injection or a bad decision hits such an agent, the damage is large. Apply least privilege, as you would to a service account.",
+    "keywords": [
+      "genai-for-devs",
+      "ai-agents"
+    ],
+    "source": "https://genai.owasp.org/llmrisk/llm062025-excessive-agency/"
+  },
+  {
+    "itemId": "5b2ff53e-9627-461c-b480-d04f08f6adde",
+    "category": "tech",
+    "navigationKeyword1": "genai-for-devs",
+    "navigationKeyword2": "ai-agents",
+    "question": "What does OWASP recommend before an agent performs a high-impact action, such as deleting data?",
+    "correctAnswer": "Require a human to approve the action",
+    "incorrectAnswers": [
+      "Raise the model's temperature",
+      "Ask the model if it is sure",
+      "Log the action after it completes"
+    ],
+    "explanation": "For irreversible or risky operations, the safer design has the agent propose the action and a person confirm it, like a two-person rule or a change approval. Asking the model to double-check itself is not a control, and logging after the fact does not prevent damage.",
+    "keywords": [
+      "genai-for-devs",
+      "ai-agents"
+    ],
+    "source": "https://genai.owasp.org/llmrisk/llm062025-excessive-agency/"
+  },
+  {
+    "itemId": "5c724280-7b3b-4961-a2a1-d4dd5e9ccbb5",
+    "category": "tech",
+    "navigationKeyword1": "genai-for-devs",
+    "navigationKeyword2": "ai-agents",
+    "question": "In the \"orchestrator-workers\" pattern, what does the orchestrator LLM do?",
+    "correctAnswer": "Breaks a task into subtasks and hands them to worker LLM calls",
+    "incorrectAnswers": [
+      "Trains the workers' weights in real time",
+      "Schedules GPU servers in the data center",
+      "Translates the final answer into other languages"
+    ],
+    "explanation": "The orchestrator decides at run time which subtasks are needed, sends each to a worker call, then combines the results. It suits jobs where the subtasks are not known in advance, such as a code change touching an unknown set of files. Think master and worker processes, with an LLM as the master.",
+    "keywords": [
+      "genai-for-devs",
+      "ai-agents"
+    ],
+    "source": "https://www.anthropic.com/engineering/building-effective-agents"
+  },
+  {
+    "itemId": "9bac4247-5797-4778-82df-a87a82361648",
+    "category": "tech",
+    "navigationKeyword1": "genai-for-devs",
+    "navigationKeyword2": "ai-agents",
+    "question": "SWE-bench (2023) tests coding agents on what kind of tasks?",
+    "correctAnswer": "Real GitHub issues that must be fixed so the tests pass",
+    "incorrectAnswers": [
+      "Multiple-choice questions about language syntax",
+      "Short coding puzzles with known outputs",
+      "Code review comments rated by humans"
+    ],
+    "explanation": "Each task gives a real repository and an issue from a popular Python project. The model must produce a patch, and success means the tests from the real fix, plus the existing tests, pass. It is much closer to day-to-day engineering than toy puzzles, which is why it became a common benchmark for coding agents.",
+    "keywords": [
+      "genai-for-devs",
+      "ai-agents"
+    ],
+    "source": "https://arxiv.org/abs/2310.06770"
+  },
+  {
+    "itemId": "ad8db6d8-f6b9-487c-8ab9-fcbf9af2c2ab",
+    "category": "tech",
+    "navigationKeyword1": "genai-for-devs",
+    "navigationKeyword2": "ai-agents",
+    "question": "In the 2023 Reflexion approach, how does an agent improve on later attempts without retraining?",
+    "correctAnswer": "It writes notes on its mistakes and rereads them",
+    "incorrectAnswers": [
+      "It updates its own weights after each failure",
+      "It deletes its memory after every attempt",
+      "It switches to a larger model on each try"
+    ],
+    "explanation": "After a failed attempt, the agent writes a short verbal reflection, such as \"I used the wrong file\", which is stored and added to the prompt for the next try. Learning happens in text memory, not in the weights, much like a team's postmortem notes.",
+    "keywords": [
+      "genai-for-devs",
+      "ai-agents"
+    ],
+    "source": "https://arxiv.org/abs/2303.11366"
+  }
+]

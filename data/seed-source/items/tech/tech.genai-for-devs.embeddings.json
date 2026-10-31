@@ -1,0 +1,268 @@
+[
+  {
+    "itemId": "33c86351-885b-4b04-9e17-1e3813e3819b",
+    "category": "tech",
+    "navigationKeyword1": "genai-for-devs",
+    "navigationKeyword2": "embeddings",
+    "question": "What is a text embedding?",
+    "correctAnswer": "A vector of numbers where similar meanings sit close",
+    "incorrectAnswers": [
+      "A list of the text's token IDs, in their original order",
+      "A sparse vector counting how often each word appears",
+      "A hash value that matches only identical text"
+    ],
+    "explanation": "An embedding model turns text into a fixed-length vector of floats. Unlike a hash, which scatters similar inputs randomly, an embedding keeps related meanings near each other. Distance between vectors then works as a measure of how related two pieces of text are.",
+    "keywords": [
+      "genai-for-devs",
+      "embeddings"
+    ],
+    "source": "https://developers.openai.com/api/docs/guides/embeddings"
+  },
+  {
+    "itemId": "9e923f47-a449-45a7-bceb-6241fd4b1cb2",
+    "category": "tech",
+    "navigationKeyword1": "genai-for-devs",
+    "navigationKeyword2": "embeddings",
+    "question": "Which measure is most commonly used to compare two text embeddings?",
+    "correctAnswer": "Cosine similarity",
+    "incorrectAnswers": [
+      "Levenshtein edit distance",
+      "CRC32 checksum match",
+      "Longest common substring"
+    ],
+    "explanation": "Cosine similarity measures the angle between two vectors: close to 1 means they point the same way (similar meaning), lower means less related. Edit distance and substring checks compare characters, which is exactly what embeddings let you move beyond.",
+    "keywords": [
+      "genai-for-devs",
+      "embeddings"
+    ],
+    "source": "https://developers.openai.com/api/docs/guides/embeddings"
+  },
+  {
+    "itemId": "728b635d-c0f2-4ce2-acdc-8d3ef0259657",
+    "category": "tech",
+    "navigationKeyword1": "genai-for-devs",
+    "navigationKeyword2": "embeddings",
+    "question": "A search for \"automobile\" finds a document that only says \"car\". Why can vector search do this when SQL LIKE cannot?",
+    "correctAnswer": "It matches by closeness in meaning, not shared characters",
+    "incorrectAnswers": [
+      "It expands every query with a built-in thesaurus table",
+      "It runs LIKE against every possible spelling",
+      "It indexes all words by their first letter"
+    ],
+    "explanation": "LIKE and plain full-text indexes need the actual characters or word stems to match. Embedding models learn from usage that \"car\" and \"automobile\" appear in similar contexts, so their vectors land close together. Nearest-neighbor search then finds the match with no synonym list.",
+    "keywords": [
+      "genai-for-devs",
+      "embeddings"
+    ],
+    "source": "https://developers.google.com/machine-learning/crash-course/embeddings/embedding-space"
+  },
+  {
+    "itemId": "22014762-035a-4182-b1b8-6aba41a0e7c8",
+    "category": "tech",
+    "navigationKeyword1": "genai-for-devs",
+    "navigationKeyword2": "embeddings",
+    "question": "The 2013 word2vec work became famous for which vector arithmetic result?",
+    "correctAnswer": "King - Man + Woman lands closest to Queen",
+    "incorrectAnswers": [
+      "Paris + France - Europe lands closest to Spain",
+      "Cat + Dog - Animal lands closest to Pet",
+      "Run + Ran - Walk lands closest to Jump"
+    ],
+    "explanation": "Mikolov and colleagues showed in 2013 that word vectors capture relationships as directions. Subtract \"man\" from \"king\", add \"woman\", and the nearest word vector is \"queen\". It was early evidence that embeddings encode meaning in a structured, computable way.",
+    "keywords": [
+      "genai-for-devs",
+      "embeddings"
+    ],
+    "source": "https://arxiv.org/abs/1301.3781"
+  },
+  {
+    "itemId": "29d20742-9cb4-403e-8d37-c3e7da324dee",
+    "category": "tech",
+    "navigationKeyword1": "genai-for-devs",
+    "navigationKeyword2": "embeddings",
+    "question": "Vector indexes such as HNSW make search over millions of vectors fast. What do they trade for that speed?",
+    "correctAnswer": "Results are approximate and can miss some true nearest neighbors",
+    "incorrectAnswers": [
+      "They only work on vectors with fewer than ten dimensions",
+      "They must be rebuilt from scratch for every query",
+      "They require every vector to be stored as text"
+    ],
+    "explanation": "Comparing a query with every stored vector (exact k-nearest-neighbor search) is a full table scan. Approximate nearest neighbor (ANN) indexes such as HNSW jump to likely candidates instead, which is much faster, but recall (the share of true nearest matches found) can fall below 100%, depending on index settings. You tune speed against recall with index parameters.",
+    "keywords": [
+      "genai-for-devs",
+      "embeddings"
+    ],
+    "source": "https://arxiv.org/abs/1603.09320"
+  },
+  {
+    "itemId": "d3e15f43-338d-481e-b39c-6e6fea9782e1",
+    "category": "tech",
+    "navigationKeyword1": "genai-for-devs",
+    "navigationKeyword2": "embeddings",
+    "question": "The HNSW vector index is described by its authors as similar to which classic data structure?",
+    "correctAnswer": "A skip list",
+    "incorrectAnswers": [
+      "A hash table",
+      "A binary heap",
+      "A trie"
+    ],
+    "explanation": "HNSW (Hierarchical Navigable Small World) stacks graph layers: sparse upper layers with long jumps, denser lower layers with short ones. A search starts at the top and greedily descends, like a skip list's express lanes. That is how it reaches the right neighborhood in roughly logarithmic steps.",
+    "keywords": [
+      "genai-for-devs",
+      "embeddings"
+    ],
+    "source": "https://arxiv.org/abs/1603.09320"
+  },
+  {
+    "itemId": "6de505c9-e777-45cc-97d2-d92f75aa9743",
+    "category": "tech",
+    "navigationKeyword1": "genai-for-devs",
+    "navigationKeyword2": "embeddings",
+    "question": "Which PostgreSQL extension adds a vector column type and nearest-neighbor search?",
+    "correctAnswer": "pgvector",
+    "incorrectAnswers": [
+      "PostGIS",
+      "pg_trgm",
+      "hstore"
+    ],
+    "explanation": "pgvector adds a vector type, distance operators, and HNSW and IVFFlat indexes, so embeddings can live next to your normal rows and be filtered with ordinary WHERE clauses and joins. PostGIS handles geographic data, pg_trgm does trigram text similarity, and hstore stores key-value pairs.",
+    "keywords": [
+      "genai-for-devs",
+      "embeddings"
+    ],
+    "source": "https://github.com/pgvector/pgvector"
+  },
+  {
+    "itemId": "b8998827-0871-47e6-8a7e-2481c6fbf1cd",
+    "category": "tech",
+    "navigationKeyword1": "genai-for-devs",
+    "navigationKeyword2": "embeddings",
+    "question": "Matryoshka-trained embedding models (2022) have what useful property?",
+    "correctAnswer": "A vector cut to its first dimensions still works well",
+    "incorrectAnswers": [
+      "A vector can be decoded back into the original text",
+      "Vectors from different models can be compared directly",
+      "Each dimension maps to one vocabulary word"
+    ],
+    "explanation": "Matryoshka Representation Learning trains the model so the first part of the vector carries the most important information, coarse to fine, like nested dolls. You can truncate vectors to save storage and speed up search with only a small loss in quality; the paper reports up to 14x smaller embeddings at the same accuracy on an image task. OpenAI's text-embedding-3 models also let you request shorter vectors.",
+    "keywords": [
+      "genai-for-devs",
+      "embeddings"
+    ],
+    "source": "https://arxiv.org/abs/2205.13147"
+  },
+  {
+    "itemId": "06cc7357-942c-4de4-a919-e57f57d52093",
+    "category": "tech",
+    "navigationKeyword1": "genai-for-devs",
+    "navigationKeyword2": "embeddings",
+    "question": "OpenAI embeddings are normalized to length 1. What does that let you do?",
+    "correctAnswer": "Use a dot product instead of cosine similarity",
+    "incorrectAnswers": [
+      "Store each vector in one byte of space",
+      "Skip building any search index at all",
+      "Compare vectors from any two embedding models"
+    ],
+    "explanation": "Cosine similarity is the dot product divided by both vector lengths. When every length is already 1, the division does nothing, so the dot product alone gives the same ranking and is slightly cheaper to compute.",
+    "keywords": [
+      "genai-for-devs",
+      "embeddings"
+    ],
+    "source": "https://developers.openai.com/api/docs/guides/embeddings"
+  },
+  {
+    "itemId": "ad5e1745-4da3-40b8-a929-1024aaf0d8dc",
+    "category": "tech",
+    "navigationKeyword1": "genai-for-devs",
+    "navigationKeyword2": "embeddings",
+    "question": "BM25, the default ranking in Elasticsearch, scores documents mainly by what?",
+    "correctAnswer": "Query term frequency, term rarity, and document length",
+    "incorrectAnswers": [
+      "Neural embedding similarity between query and document",
+      "Number of links pointing to each document",
+      "Recency of the document's last modification"
+    ],
+    "explanation": "BM25 is a classic keyword ranking function from information retrieval. A document scores higher when it contains the query terms often (with diminishing returns), when those terms are rare across the collection (inverse document frequency, IDF), with a correction for document length. No neural network is involved.",
+    "keywords": [
+      "genai-for-devs",
+      "embeddings"
+    ],
+    "source": "https://www.elastic.co/docs/reference/elasticsearch/index-settings/similarity"
+  },
+  {
+    "itemId": "bf0639a4-3edb-45d6-92fb-0db1041bff7f",
+    "category": "tech",
+    "navigationKeyword1": "genai-for-devs",
+    "navigationKeyword2": "embeddings",
+    "question": "The 2021 BEIR benchmark tested search models across many different domains. What did it report about plain BM25?",
+    "correctAnswer": "It stayed a strong baseline that many neural retrievers failed to beat",
+    "incorrectAnswers": [
+      "It failed on every dataset compared with neural models",
+      "It only worked on documents written in English",
+      "It was too slow to finish on most datasets"
+    ],
+    "explanation": "BEIR evaluated retrievers zero-shot on 18 datasets. Dense embedding models that shone in-domain often did worse on unseen domains, while old-school BM25 held up as a robust baseline. A good reason to keep keyword search in your toolbox alongside vectors.",
+    "keywords": [
+      "genai-for-devs",
+      "embeddings"
+    ],
+    "source": "https://arxiv.org/abs/2104.08663"
+  },
+  {
+    "itemId": "ed5a5464-91dc-4309-9b53-0a826bf97f8a",
+    "category": "tech",
+    "navigationKeyword1": "genai-for-devs",
+    "navigationKeyword2": "embeddings",
+    "question": "Reciprocal Rank Fusion (RRF) is a simple way to merge keyword and vector search results. How does it score a document?",
+    "correctAnswer": "It sums 1 / (k + rank) across each result list",
+    "incorrectAnswers": [
+      "It multiplies the raw scores from each list",
+      "It keeps only documents ranked first in both lists",
+      "It takes the higher of the two raw scores"
+    ],
+    "explanation": "Raw BM25 scores and cosine similarities are on different scales, so adding them directly is unreliable without normalizing them first. RRF ignores scores and uses only rank positions: each list contributes 1 / (k + rank), with k = 60 in the original paper. Documents ranked well in several lists rise to the top.",
+    "keywords": [
+      "genai-for-devs",
+      "embeddings"
+    ],
+    "source": "http://cormack.uwaterloo.ca/cormacksigir09-rrf.pdf"
+  },
+  {
+    "itemId": "2fe533bd-e2a9-4581-bf0a-ae7b47cbb9b4",
+    "category": "tech",
+    "navigationKeyword1": "genai-for-devs",
+    "navigationKeyword2": "embeddings",
+    "question": "Why did Sentence-BERT (2019) matter for similarity search?",
+    "correctAnswer": "It embedded each sentence once, making comparisons fast",
+    "incorrectAnswers": [
+      "It was the first model to translate between languages",
+      "It removed the need for any labeled training data",
+      "It replaced dense vectors with weighted keyword lists"
+    ],
+    "explanation": "Plain BERT compares two sentences by reading them together, so finding the closest pair among 10,000 sentences took about 65 hours. Sentence-BERT encodes each sentence once into a vector and compares vectors with cosine similarity, cutting that to about 5 seconds. Precompute once, compare cheaply: the same idea vector search relies on.",
+    "keywords": [
+      "genai-for-devs",
+      "embeddings"
+    ],
+    "source": "https://arxiv.org/abs/1908.10084"
+  },
+  {
+    "itemId": "26d535f8-451f-478b-aeb1-24fc30b167a9",
+    "category": "tech",
+    "navigationKeyword1": "genai-for-devs",
+    "navigationKeyword2": "embeddings",
+    "question": "In retrieval, what is the difference between sparse and dense vectors?",
+    "correctAnswer": "Sparse: one slot per word, mostly zeros; dense: fewer, all-filled slots",
+    "incorrectAnswers": [
+      "Sparse store compressed text; dense store the full uncompressed text",
+      "Sparse are for images and audio; dense are for written text",
+      "Sparse are newer and always more accurate than dense"
+    ],
+    "explanation": "Keyword methods like BM25 work like sparse vectors: one dimension per vocabulary term, nearly all zero, matching exact words. Neural embeddings are dense: a few hundred to a few thousand dimensions, all used, matching meaning. Many systems combine both (hybrid search).",
+    "keywords": [
+      "genai-for-devs",
+      "embeddings"
+    ],
+    "source": "https://arxiv.org/abs/2104.08663"
+  }
+]
