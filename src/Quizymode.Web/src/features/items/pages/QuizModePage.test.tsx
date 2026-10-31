@@ -50,7 +50,7 @@ vi.mock("react-router-dom", async (importOriginal) => {
 });
 
 const { mockAuth } = vi.hoisted(() => ({
-  mockAuth: { isAuthenticated: true, userId: "user-1" as string | undefined },
+  mockAuth: { isAuthenticated: true, isLoading: false, userId: "user-1" as string | undefined },
 }));
 
 vi.mock("@/contexts/AuthContext", () => ({
@@ -145,7 +145,7 @@ function renderPageWithEntries(initialEntries: string[], initialIndex?: number) 
       },
     },
   });
-  const page = (
+  const buildPage = () => (
     <>
       <QuizModePage />
       <LocationDisplay />
@@ -153,22 +153,26 @@ function renderPageWithEntries(initialEntries: string[], initialIndex?: number) 
     </>
   );
 
-  const view = render(
-    <QueryClientProvider client={queryClient}>
-      <MemoryRouter initialEntries={initialEntries} initialIndex={initialIndex}>
-        <Routes>
-          <Route path="/quiz/item/:itemId" element={page} />
-          <Route path="/quiz/:category/item/:itemId" element={page} />
-          <Route path="/quiz/collections/:collectionId/item/:itemId" element={page} />
-          <Route path="/quiz/collections/:collectionId/:slug/item/:itemId" element={page} />
-          <Route path="/quiz/collections/:collectionId/:slug" element={page} />
-          <Route path="/categories/:category/:kw1/:kw2" element={<LocationDisplay />} />
-          <Route path="/prev" element={<LocationDisplay />} />
-        </Routes>
-      </MemoryRouter>
-    </QueryClientProvider>
-  );
-  return { ...view, queryClient };
+  const buildTree = () => {
+    const page = buildPage();
+    return (
+      <QueryClientProvider client={queryClient}>
+        <MemoryRouter initialEntries={initialEntries} initialIndex={initialIndex}>
+          <Routes>
+            <Route path="/quiz/item/:itemId" element={page} />
+            <Route path="/quiz/:category/item/:itemId" element={page} />
+            <Route path="/quiz/collections/:collectionId/item/:itemId" element={page} />
+            <Route path="/quiz/collections/:collectionId/:slug/item/:itemId" element={page} />
+            <Route path="/quiz/collections/:collectionId/:slug" element={page} />
+            <Route path="/categories/:category/:kw1/:kw2" element={<LocationDisplay />} />
+            <Route path="/prev" element={<LocationDisplay />} />
+          </Routes>
+        </MemoryRouter>
+      </QueryClientProvider>
+    );
+  };
+  const view = render(buildTree());
+  return { ...view, queryClient, rerenderPage: () => view.rerender(buildTree()) };
 }
 
 function renderPage(initialEntry: string) {
@@ -185,6 +189,7 @@ describe("QuizModePage", () => {
     navigateCalls.length = 0;
     sessionStorage.clear();
     mockAuth.isAuthenticated = true;
+    mockAuth.isLoading = false;
     mockAuth.userId = "user-1";
     installMemoryLocalStorage();
     resetGuestHistoryMemoryForTests();
@@ -407,6 +412,45 @@ describe("QuizModePage", () => {
     expect(await screen.findByText(/Correct Answer: 4/i)).toBeInTheDocument();
     expect(screen.getByRole("button", { name: /4/i })).toBeDisabled();
     expect(screen.getByText(/Score: 1 \/ 1 correct/i)).toBeInTheDocument();
+  });
+
+  it("restores a signed-in size-5 Practice category run with a locked answer after auth loading (#393)", async () => {
+    const ids = ["item-1", "item-2", "item-3", "item-4", "item-5"];
+    const items = ids.map((id) => ({ ...item, id, question: `Sized question ${id}` }));
+    let run = createQuizRun(
+      { kind: "category", category: "exams", navigationKeywords: [], filterKeywords: [], quizSize: 5 },
+      ids,
+      "user:user-1",
+    );
+    run = reduceQuizRun(run, {
+      type: "answer",
+      itemId: "item-1",
+      selectedAnswer: "4",
+      isCorrect: true,
+      completedAt: new Date().toISOString(),
+    });
+    sessionStorage.setItem(
+      "navigationContext_quiz",
+      JSON.stringify({ mode: "quiz", category: "exams", currentIndex: 0, itemIds: ids, items, quizRun: run }),
+    );
+    mockAuth.isLoading = true;
+    mockAuth.isAuthenticated = false;
+    mockAuth.userId = undefined;
+
+    const { rerenderPage } = renderPage("/quiz/exams/item/item-1");
+    expect(screen.getByRole("status")).toBeInTheDocument();
+    expect(itemsApi.getRandom).not.toHaveBeenCalled();
+
+    mockAuth.isLoading = false;
+    mockAuth.isAuthenticated = true;
+    mockAuth.userId = "user-1";
+    rerenderPage();
+
+    expect(await screen.findByText("Sized question item-1")).toBeInTheDocument();
+    expect(screen.getByLabelText("Quiz size:")).toHaveValue(5);
+    expect(screen.getByText(/Correct Answer: 4/i)).toBeInTheDocument();
+    expect(screen.getByRole("button", { name: /^[A-D]\. 4$/ })).toBeDisabled();
+    expect(itemsApi.getRandom).not.toHaveBeenCalled();
   });
 
   it("restores a size-5 Practice category run with its answer locked and the size control at 5", async () => {

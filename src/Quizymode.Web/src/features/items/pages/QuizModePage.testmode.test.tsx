@@ -68,28 +68,33 @@ function LocationDisplay() {
 
 function renderPage(initialEntry: string) {
   const queryClient = new QueryClient({ defaultOptions: { queries: { retry: false } } });
-  const page = (
+  const buildPage = () => (
     <>
       <QuizModePage />
       <LocationDisplay />
     </>
   );
-  return render(
-    <QueryClientProvider client={queryClient}>
-      <MemoryRouter initialEntries={[initialEntry]}>
-        <Routes>
-          <Route path="/quiz/collections/:collectionId/item/:itemId" element={page} />
-          <Route path="/quiz/collections/:collectionId/:slug/item/:itemId" element={page} />
-          <Route path="/quiz/collections/:collectionId/:slug" element={page} />
-          <Route path="/quiz/collections/:collectionId" element={page} />
-          <Route path="/quiz/item/:itemId" element={page} />
-          <Route path="/quiz/:category/item/:itemId" element={page} />
-          <Route path="/quiz" element={page} />
-          <Route path="/explore/*" element={<LocationDisplay />} />
-        </Routes>
-      </MemoryRouter>
-    </QueryClientProvider>
-  );
+  const buildTree = () => {
+    const page = buildPage();
+    return (
+      <QueryClientProvider client={queryClient}>
+        <MemoryRouter initialEntries={[initialEntry]}>
+          <Routes>
+            <Route path="/quiz/collections/:collectionId/item/:itemId" element={page} />
+            <Route path="/quiz/collections/:collectionId/:slug/item/:itemId" element={page} />
+            <Route path="/quiz/collections/:collectionId/:slug" element={page} />
+            <Route path="/quiz/collections/:collectionId" element={page} />
+            <Route path="/quiz/item/:itemId" element={page} />
+            <Route path="/quiz/:category/item/:itemId" element={page} />
+            <Route path="/quiz" element={page} />
+            <Route path="/explore/*" element={<LocationDisplay />} />
+          </Routes>
+        </MemoryRouter>
+      </QueryClientProvider>
+    );
+  };
+  const result = render(buildTree());
+  return { ...result, rerenderPage: () => result.rerender(buildTree()) };
 }
 
 const TEST_URL = `/quiz/collections/${COLLECTION_ID}/item/${GUID_1}?mode=test`;
@@ -132,11 +137,11 @@ const sizedItems = SIZED_IDS.map((id, index) => ({ ...item1, id, question: `Size
 const CATEGORY_TEST_URL = `/quiz/exams/item/${GUID_1}?mode=test`;
 
 /** A started category Test saved by a run of the given quiz size (AC 3.6.12, 3.18.7). */
-function storeCategoryTest(quizSize: number, startedAt: string): QuizRunState {
+function storeCategoryTest(quizSize: number, startedAt: string, identity: string = IDENTITY): QuizRunState {
   let run = createQuizRun(
     { kind: "category", category: "exams", navigationKeywords: [], filterKeywords: [], quizSize },
     SIZED_IDS,
-    IDENTITY,
+    identity,
     "test"
   );
   run = reduceQuizRun(run, { type: "start-test", startedAt, timeLimitSec: 600 });
@@ -156,6 +161,7 @@ describe("QuizModePage Test mode (AC 3.18)", () => {
     vi.clearAllMocks();
     sessionStorage.clear();
     mockAuth.isAuthenticated = false;
+    mockAuth.isLoading = false;
     mockAuth.userId = undefined;
     installMemoryLocalStorage();
     resetGuestHistoryMemoryForTests();
@@ -737,6 +743,87 @@ describe("QuizModePage Test mode (AC 3.18)", () => {
       expect(await screen.findByRole("heading", { name: "Test mode" })).toBeInTheDocument();
       expect(screen.getByLabelText("Quiz size:")).toHaveValue(10);
       expect(screen.getByLabelText("Quiz size:")).toBeEnabled();
+    });
+  });
+
+  describe("restore waits for auth to settle (AC 3.6.12, 3.18.7, #393)", () => {
+    function settleAs(isAuthenticated: boolean, userId?: string): void {
+      mockAuth.isLoading = false;
+      mockAuth.isAuthenticated = isAuthenticated;
+      mockAuth.userId = userId;
+    }
+
+    function startLoading(): void {
+      mockAuth.isLoading = true;
+      mockAuth.isAuthenticated = false;
+      mockAuth.userId = undefined;
+    }
+
+    it.each([5, 10])("restores a signed-in size-%i category Test after auth loading", async (size) => {
+      const startedAt = new Date(Date.now() - 60_000).toISOString();
+      storeCategoryTest(size, startedAt, "user:user-1");
+      const before = sessionStorage.getItem("navigationContext_quiz");
+      startLoading();
+      const { rerenderPage } = renderPage(CATEGORY_TEST_URL);
+
+      expect(screen.getByRole("status")).toBeInTheDocument();
+      expect(screen.queryByRole("heading", { name: "Test mode" })).not.toBeInTheDocument();
+      expect(itemsApi.getRandom).not.toHaveBeenCalled();
+      expect(sessionStorage.getItem("navigationContext_quiz")).toBe(before);
+
+      settleAs(true, "user-1");
+      rerenderPage();
+
+      expect(await screen.findByText("Sized question 1")).toBeInTheDocument();
+      expect(screen.queryByRole("button", { name: "Start test" })).not.toBeInTheDocument();
+      expect(screen.getByRole("button", { name: "Question 1, answered, flagged, current" })).toBeInTheDocument();
+      expect(screen.getByRole("timer")).toBeInTheDocument();
+      const sizeInput = screen.getByLabelText("Quiz size:");
+      expect(sizeInput).toHaveValue(size);
+      expect(sizeInput).toBeDisabled();
+      expect(itemsApi.getRandom).not.toHaveBeenCalled();
+      const stored = JSON.parse(sessionStorage.getItem("navigationContext_quiz")!) as { quizRun: QuizRunState };
+      expect(stored.quizRun.startedAt).toBe(startedAt);
+    });
+
+    it("still restores a guest size-5 Test after auth loading", async () => {
+      storeCategoryTest(5, new Date(Date.now() - 60_000).toISOString());
+      startLoading();
+      const { rerenderPage } = renderPage(CATEGORY_TEST_URL);
+      expect(screen.getByRole("status")).toBeInTheDocument();
+
+      settleAs(false);
+      rerenderPage();
+
+      expect(await screen.findByText("Sized question 1")).toBeInTheDocument();
+      expect(screen.getByLabelText("Quiz size:")).toHaveValue(5);
+      expect(itemsApi.getRandom).not.toHaveBeenCalled();
+    });
+
+    it("does not restore a run saved by another user", async () => {
+      storeCategoryTest(5, new Date(Date.now() - 60_000).toISOString(), "user:other");
+      startLoading();
+      const { rerenderPage } = renderPage(CATEGORY_TEST_URL);
+
+      settleAs(true, "user-1");
+      rerenderPage();
+
+      expect(await screen.findByRole("heading", { name: "Test mode" })).toBeInTheDocument();
+      expect(screen.getByLabelText("Quiz size:")).toHaveValue(10);
+      await waitFor(() => {
+        const stored = JSON.parse(sessionStorage.getItem("navigationContext_quiz")!) as { quizRun?: QuizRunState };
+        expect(stored.quizRun?.identityKey).toBe("user:user-1");
+        expect(stored.quizRun?.flagged ?? []).toEqual([]);
+      });
+    });
+
+    it("does not restore a saved user run for a settled guest", async () => {
+      storeCategoryTest(5, new Date(Date.now() - 60_000).toISOString(), "user:user-1");
+      settleAs(false);
+      renderPage(CATEGORY_TEST_URL);
+
+      expect(await screen.findByRole("heading", { name: "Test mode" })).toBeInTheDocument();
+      expect(screen.getByLabelText("Quiz size:")).toHaveValue(10);
     });
   });
 });

@@ -30,6 +30,7 @@ test("AC 3.18 @smoke - Test setup, palette sheet and Submit dialog fit a 375 px 
 });
 
 interface SavedTestRun {
+  identityKey?: string;
   startedAt: string | null;
   timeLimitSec: number | null;
   flagged: string[];
@@ -44,7 +45,11 @@ async function readSavedTestRun(page: Page): Promise<SavedTestRun | null> {
   });
 }
 
-async function startSizedTestAndReload(page: Page, size: number | null): Promise<void> {
+async function startSizedTestAndReload(
+  page: Page,
+  size: number | null,
+  expectedIdentityPrefix: "guest" | "user:"
+): Promise<void> {
   await page.goto("/quiz?mode=test");
   await page.waitForLoadState("networkidle");
   await expect(page.getByRole("heading", { name: "Test mode" })).toBeVisible();
@@ -68,6 +73,8 @@ async function startSizedTestAndReload(page: Page, size: number | null): Promise
     })
     .toBe(true);
   const before = await readSavedTestRun(page);
+  // A stale auth file would silently turn the signed-in cases into guest runs.
+  expect(before?.identityKey?.startsWith(expectedIdentityPrefix)).toBe(true);
 
   await page.reload();
   await page.waitForLoadState("networkidle");
@@ -79,15 +86,30 @@ async function startSizedTestAndReload(page: Page, size: number | null): Promise
   await expect(sizeInput).toBeDisabled();
 
   const after = await readSavedTestRun(page);
+  expect(after?.identityKey).toBe(before?.identityKey);
   expect(after?.startedAt).toBe(before?.startedAt);
   expect(after?.timeLimitSec).toBe(before?.timeLimitSec);
   expect(after?.flagged).toEqual(before?.flagged);
 }
 
-test("AC 3.18.7 - a started Test with quiz size 5 restores its flag, size and deadline after a reload", async ({ page }) => {
-  await startSizedTestAndReload(page, 5);
+test.describe("AC 3.18.7 reload as a guest", () => {
+  test.use({ storageState: { cookies: [], origins: [] } });
+
+  test("a started Test with quiz size 5 restores its flag, size and deadline after a reload", async ({ page }) => {
+    await startSizedTestAndReload(page, 5, "guest");
+  });
+
+  test("a started Test with the default quiz size 10 restores after a reload", async ({ page }) => {
+    await startSizedTestAndReload(page, null, "guest");
+  });
 });
 
-test("AC 3.18.7 - a started Test with the default quiz size 10 restores after a reload", async ({ page }) => {
-  await startSizedTestAndReload(page, null);
+test.describe("AC 3.18.7 reload when signed in (#393)", () => {
+  test("a started Test with quiz size 5 restores its flag, size and deadline after a reload", async ({ page }) => {
+    await startSizedTestAndReload(page, 5, "user:");
+  });
+
+  test("a started Test with the default quiz size 10 restores after a reload", async ({ page }) => {
+    await startSizedTestAndReload(page, null, "user:");
+  });
 });
