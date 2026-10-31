@@ -93,7 +93,7 @@ function buildQuizItemPath(
   return `/quiz/item/${id}${scope.search}`;
 }
 
-const QuizModePage = () => {
+const QuizModePageContent = () => {
   const { category: categorySlug, collectionId, itemId } = useParams();
   const [searchParams] = useSearchParams();
   const navigate = useNavigate();
@@ -1529,6 +1529,14 @@ const QuizModePage = () => {
       )}
     </div>
   );
+};
+
+// Auth must settle before saved-run restore reads the identity key; otherwise a
+// signed-in reload is treated as "guest" and its run is lost (#393).
+const QuizModePage = () => {
+  const { isLoading } = useAuth();
+  if (isLoading) return <LoadingSpinner />;
+  return <QuizModePageContent />;
 };
 
 export default QuizModePage;
