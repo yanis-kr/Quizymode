@@ -8,7 +8,7 @@ import { itemsApi } from "@/api/items";
 import { categoriesApi } from "@/api/categories";
 import { keywordsApi } from "@/api/keywords";
 import { collectionsApi } from "@/api/collections";
-import { QUIZ_COMPLETED_EVENT, seedQuizRoster, type QuizCompletionSnapshot } from "@/features/items/quiz/quizRun";
+import { QUIZ_COMPLETED_EVENT, createQuizRun, reduceQuizRun, seedQuizRoster, type QuizCompletionSnapshot, type QuizRunState } from "@/features/items/quiz/quizRun";
 import { installMemoryLocalStorage } from "@/test/memoryStorage";
 import {
   GUEST_HISTORY_STORAGE_KEY,
@@ -407,6 +407,46 @@ describe("QuizModePage", () => {
     expect(await screen.findByText(/Correct Answer: 4/i)).toBeInTheDocument();
     expect(screen.getByRole("button", { name: /4/i })).toBeDisabled();
     expect(screen.getByText(/Score: 1 \/ 1 correct/i)).toBeInTheDocument();
+  });
+
+  it("restores a size-5 Practice category run with its answer locked and the size control at 5", async () => {
+    const ids = ["item-1", "item-2", "item-3", "item-4", "item-5"];
+    const items = ids.map((id) => ({ ...item, id, question: `Sized question ${id}` }));
+    let run = createQuizRun(
+      { kind: "category", category: "exams", navigationKeywords: [], filterKeywords: [], quizSize: 5 },
+      ids,
+      "user:user-1",
+    );
+    run = reduceQuizRun(run, {
+      type: "answer",
+      itemId: "item-1",
+      selectedAnswer: "4",
+      isCorrect: true,
+      completedAt: new Date().toISOString(),
+    });
+    sessionStorage.setItem(
+      "navigationContext_quiz",
+      JSON.stringify({ mode: "quiz", category: "exams", currentIndex: 0, itemIds: ids, items, quizRun: run }),
+    );
+
+    renderPage("/quiz/exams/item/item-1");
+
+    expect(await screen.findByText("Sized question item-1")).toBeInTheDocument();
+    expect(screen.getByLabelText("Quiz size:")).toHaveValue(5);
+    expect(screen.getByText(/Correct Answer: 4/i)).toBeInTheDocument();
+    expect(screen.getByRole("button", { name: /^[A-D]\. 4$/ })).toBeDisabled();
+    expect(itemsApi.getRandom).not.toHaveBeenCalled();
+
+    // A real size change after the restore still starts a new random set (AC 3.6.5).
+    const size = screen.getByLabelText("Quiz size:");
+    fireEvent.change(size, { target: { value: "3" } });
+    fireEvent.blur(size);
+    await waitFor(() => expect(itemsApi.getRandom).toHaveBeenCalled());
+    await waitFor(() => {
+      const stored = sessionStorage.getItem("navigationContext_quiz");
+      const storedRun = stored ? (JSON.parse(stored) as { quizRun?: QuizRunState }).quizRun : undefined;
+      expect(storedRun?.scope).not.toMatchObject({ quizSize: 5 });
+    });
   });
 
   it("keeps an authenticated category quiz playable when storage is unavailable", async () => {

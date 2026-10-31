@@ -142,6 +142,17 @@ describe("ExploreModePage flashcards", () => {
     await waitFor(() => expect(currentCard()).toBe("a"));
   }
 
+  it("reports a 1000-card deck and a position past 500 unclamped (AC 5.5.1, 5.5.16)", async () => {
+    const ids = Array.from({ length: 1000 }, (_, index) => `card-${index + 1}`);
+    vi.mocked(collectionsApi.getItems).mockResolvedValue({ items: ids.map(makeItem) } as never);
+    renderCollection("/explore/collections/col-1/item/card-750");
+    await screen.findByText("Question card-750");
+
+    await waitFor(() => expect(analytics.trackFlashcardsStarted).toHaveBeenCalledWith("run-1", 1000, expect.anything()));
+    flip();
+    expect(analytics.trackFlashcardRevealed).toHaveBeenCalledWith("run-1", "card-750", 750, expect.anything());
+  });
+
   it("does not call the review API for guests and leaves guest storage untouched", async () => {
     authState.isAuthenticated = false;
     const before = localStorage.getItem("quizymode.guest.v1");
