@@ -111,6 +111,10 @@ VALUES ('2e9939e6-2c57-a34c-ac30-38c060b1eeff'::uuid, 'ai-900', 'ai-900', false,
 ON CONFLICT ("Name", "CreatedBy", "IsPrivate") DO UPDATE SET
   "Slug" = COALESCE("Keywords"."Slug", EXCLUDED."Slug");
 INSERT INTO "Keywords" ("Id", "Name", "Slug", "IsPrivate", "CreatedBy", "CreatedAt", "IsReviewPending")
+VALUES ('06ee0de2-f721-8042-aa3a-9e8dc7e78b1f'::uuid, 'ai-agents', 'ai-agents', false, 'seeder', timestamptz '2024-01-01 00:00:00+00', false)
+ON CONFLICT ("Name", "CreatedBy", "IsPrivate") DO UPDATE SET
+  "Slug" = COALESCE("Keywords"."Slug", EXCLUDED."Slug");
+INSERT INTO "Keywords" ("Id", "Name", "Slug", "IsPrivate", "CreatedBy", "CreatedAt", "IsReviewPending")
 VALUES ('2272891b-0937-0846-8990-8a7dcc9c0dfa'::uuid, 'ai-ml', 'ai-ml', false, 'seeder', timestamptz '2024-01-01 00:00:00+00', false)
 ON CONFLICT ("Name", "CreatedBy", "IsPrivate") DO UPDATE SET
   "Slug" = COALESCE("Keywords"."Slug", EXCLUDED."Slug");
@@ -1135,6 +1139,10 @@ VALUES ('a797e427-770e-d549-bd51-26064d78094e'::uuid, 'electricity', 'electricit
 ON CONFLICT ("Name", "CreatedBy", "IsPrivate") DO UPDATE SET
   "Slug" = COALESCE("Keywords"."Slug", EXCLUDED."Slug");
 INSERT INTO "Keywords" ("Id", "Name", "Slug", "IsPrivate", "CreatedBy", "CreatedAt", "IsReviewPending")
+VALUES ('af44fdb8-8baa-d246-a01d-5f15e73f9a7d'::uuid, 'embeddings', 'embeddings', false, 'seeder', timestamptz '2024-01-01 00:00:00+00', false)
+ON CONFLICT ("Name", "CreatedBy", "IsPrivate") DO UPDATE SET
+  "Slug" = COALESCE("Keywords"."Slug", EXCLUDED."Slug");
+INSERT INTO "Keywords" ("Id", "Name", "Slug", "IsPrivate", "CreatedBy", "CreatedAt", "IsReviewPending")
 VALUES ('06475d23-abb3-d94b-9783-7fa17490d4b4'::uuid, 'empires', 'empires', false, 'seeder', timestamptz '2024-01-01 00:00:00+00', false)
 ON CONFLICT ("Name", "CreatedBy", "IsPrivate") DO UPDATE SET
   "Slug" = COALESCE("Keywords"."Slug", EXCLUDED."Slug");
@@ -1372,6 +1380,10 @@ ON CONFLICT ("Name", "CreatedBy", "IsPrivate") DO UPDATE SET
   "Slug" = COALESCE("Keywords"."Slug", EXCLUDED."Slug");
 INSERT INTO "Keywords" ("Id", "Name", "Slug", "IsPrivate", "CreatedBy", "CreatedAt", "IsReviewPending")
 VALUES ('eddf2f1e-ed6c-764e-ad1d-9746085d3f35'::uuid, 'gear', 'gear', false, 'seeder', timestamptz '2024-01-01 00:00:00+00', false)
+ON CONFLICT ("Name", "CreatedBy", "IsPrivate") DO UPDATE SET
+  "Slug" = COALESCE("Keywords"."Slug", EXCLUDED."Slug");
+INSERT INTO "Keywords" ("Id", "Name", "Slug", "IsPrivate", "CreatedBy", "CreatedAt", "IsReviewPending")
+VALUES ('52341a6b-5a8f-1a44-992f-e5a9d9349048'::uuid, 'genai-for-devs', 'genai-for-devs', false, 'seeder', timestamptz '2024-01-01 00:00:00+00', false)
 ON CONFLICT ("Name", "CreatedBy", "IsPrivate") DO UPDATE SET
   "Slug" = COALESCE("Keywords"."Slug", EXCLUDED."Slug");
 INSERT INTO "Keywords" ("Id", "Name", "Slug", "IsPrivate", "CreatedBy", "CreatedAt", "IsReviewPending")
@@ -1628,6 +1640,10 @@ ON CONFLICT ("Name", "CreatedBy", "IsPrivate") DO UPDATE SET
   "Slug" = COALESCE("Keywords"."Slug", EXCLUDED."Slug");
 INSERT INTO "Keywords" ("Id", "Name", "Slug", "IsPrivate", "CreatedBy", "CreatedAt", "IsReviewPending")
 VALUES ('60ead6a2-19a7-ab43-949b-4477f1991d21'::uuid, 'general-gcp', 'general-gcp', false, 'seeder', timestamptz '2024-01-01 00:00:00+00', false)
+ON CONFLICT ("Name", "CreatedBy", "IsPrivate") DO UPDATE SET
+  "Slug" = COALESCE("Keywords"."Slug", EXCLUDED."Slug");
+INSERT INTO "Keywords" ("Id", "Name", "Slug", "IsPrivate", "CreatedBy", "CreatedAt", "IsReviewPending")
+VALUES ('5aef2f3a-733a-5345-9971-f6da4c416044'::uuid, 'general-genai-for-devs', 'general-genai-for-devs', false, 'seeder', timestamptz '2024-01-01 00:00:00+00', false)
 ON CONFLICT ("Name", "CreatedBy", "IsPrivate") DO UPDATE SET
   "Slug" = COALESCE("Keywords"."Slug", EXCLUDED."Slug");
 INSERT INTO "Keywords" ("Id", "Name", "Slug", "IsPrivate", "CreatedBy", "CreatedAt", "IsReviewPending")
@@ -2387,6 +2403,14 @@ VALUES ('5d5eda79-070a-ab4b-bd3d-da1d139131ea'::uuid, 'literature', 'literature'
 ON CONFLICT ("Name", "CreatedBy", "IsPrivate") DO UPDATE SET
   "Slug" = COALESCE("Keywords"."Slug", EXCLUDED."Slug");
 INSERT INTO "Keywords" ("Id", "Name", "Slug", "IsPrivate", "CreatedBy", "CreatedAt", "IsReviewPending")
+VALUES ('00b65178-771d-cb47-b083-61212d0227f3'::uuid, 'llm-basics', 'llm-basics', false, 'seeder', timestamptz '2024-01-01 00:00:00+00', false)
+ON CONFLICT ("Name", "CreatedBy", "IsPrivate") DO UPDATE SET
+  "Slug" = COALESCE("Keywords"."Slug", EXCLUDED."Slug");
+INSERT INTO "Keywords" ("Id", "Name", "Slug", "IsPrivate", "CreatedBy", "CreatedAt", "IsReviewPending")
+VALUES ('ccae737b-89a5-584f-bb24-f1f4f0322c63'::uuid, 'llm-ops', 'llm-ops', false, 'seeder', timestamptz '2024-01-01 00:00:00+00', false)
+ON CONFLICT ("Name", "CreatedBy", "IsPrivate") DO UPDATE SET
+  "Slug" = COALESCE("Keywords"."Slug", EXCLUDED."Slug");
+INSERT INTO "Keywords" ("Id", "Name", "Slug", "IsPrivate", "CreatedBy", "CreatedAt", "IsReviewPending")
 VALUES ('7a555554-93ec-e34f-b715-d7dc1d983178'::uuid, 'llms', 'llms', false, 'seeder', timestamptz '2024-01-01 00:00:00+00', false)
 ON CONFLICT ("Name", "CreatedBy", "IsPrivate") DO UPDATE SET
   "Slug" = COALESCE("Keywords"."Slug", EXCLUDED."Slug");
@@ -2556,6 +2580,10 @@ ON CONFLICT ("Name", "CreatedBy", "IsPrivate") DO UPDATE SET
   "Slug" = COALESCE("Keywords"."Slug", EXCLUDED."Slug");
 INSERT INTO "Keywords" ("Id", "Name", "Slug", "IsPrivate", "CreatedBy", "CreatedAt", "IsReviewPending")
 VALUES ('e84703c0-18cf-764b-8b01-1c3ed196b930'::uuid, 'mobile-ui', 'mobile-ui', false, 'seeder', timestamptz '2024-01-01 00:00:00+00', false)
+ON CONFLICT ("Name", "CreatedBy", "IsPrivate") DO UPDATE SET
+  "Slug" = COALESCE("Keywords"."Slug", EXCLUDED."Slug");
+INSERT INTO "Keywords" ("Id", "Name", "Slug", "IsPrivate", "CreatedBy", "CreatedAt", "IsReviewPending")
+VALUES ('053d9cd7-6a61-7840-810f-2e3a14a2dc5d'::uuid, 'model-tuning', 'model-tuning', false, 'seeder', timestamptz '2024-01-01 00:00:00+00', false)
 ON CONFLICT ("Name", "CreatedBy", "IsPrivate") DO UPDATE SET
   "Slug" = COALESCE("Keywords"."Slug", EXCLUDED."Slug");
 INSERT INTO "Keywords" ("Id", "Name", "Slug", "IsPrivate", "CreatedBy", "CreatedAt", "IsReviewPending")
@@ -3059,6 +3087,10 @@ VALUES ('49fe38d3-92e7-484f-ab44-ccaae9490af0'::uuid, 'prompt-eng', 'prompt-eng'
 ON CONFLICT ("Name", "CreatedBy", "IsPrivate") DO UPDATE SET
   "Slug" = COALESCE("Keywords"."Slug", EXCLUDED."Slug");
 INSERT INTO "Keywords" ("Id", "Name", "Slug", "IsPrivate", "CreatedBy", "CreatedAt", "IsReviewPending")
+VALUES ('29841d6e-c6c6-c748-98ed-e68451acef7f'::uuid, 'prompts-tools', 'prompts-tools', false, 'seeder', timestamptz '2024-01-01 00:00:00+00', false)
+ON CONFLICT ("Name", "CreatedBy", "IsPrivate") DO UPDATE SET
+  "Slug" = COALESCE("Keywords"."Slug", EXCLUDED."Slug");
+INSERT INTO "Keywords" ("Id", "Name", "Slug", "IsPrivate", "CreatedBy", "CreatedAt", "IsReviewPending")
 VALUES ('f46b9713-b595-fa4c-aab1-48a1c14b6905'::uuid, 'pronunciation', 'pronunciation', false, 'seeder', timestamptz '2024-01-01 00:00:00+00', false)
 ON CONFLICT ("Name", "CreatedBy", "IsPrivate") DO UPDATE SET
   "Slug" = COALESCE("Keywords"."Slug", EXCLUDED."Slug");
@@ -3108,6 +3140,10 @@ ON CONFLICT ("Name", "CreatedBy", "IsPrivate") DO UPDATE SET
   "Slug" = COALESCE("Keywords"."Slug", EXCLUDED."Slug");
 INSERT INTO "Keywords" ("Id", "Name", "Slug", "IsPrivate", "CreatedBy", "CreatedAt", "IsReviewPending")
 VALUES ('a56b7e5e-8aa2-e741-8802-4cf544d5b1b3'::uuid, 'quotes', 'quotes', false, 'seeder', timestamptz '2024-01-01 00:00:00+00', false)
+ON CONFLICT ("Name", "CreatedBy", "IsPrivate") DO UPDATE SET
+  "Slug" = COALESCE("Keywords"."Slug", EXCLUDED."Slug");
+INSERT INTO "Keywords" ("Id", "Name", "Slug", "IsPrivate", "CreatedBy", "CreatedAt", "IsReviewPending")
+VALUES ('17cd515a-e9f0-6340-84bd-fd9ad66a512f'::uuid, 'rag', 'rag', false, 'seeder', timestamptz '2024-01-01 00:00:00+00', false)
 ON CONFLICT ("Name", "CreatedBy", "IsPrivate") DO UPDATE SET
   "Slug" = COALESCE("Keywords"."Slug", EXCLUDED."Slug");
 INSERT INTO "Keywords" ("Id", "Name", "Slug", "IsPrivate", "CreatedBy", "CreatedAt", "IsReviewPending")
@@ -3600,6 +3636,10 @@ ON CONFLICT ("Name", "CreatedBy", "IsPrivate") DO UPDATE SET
   "Slug" = COALESCE("Keywords"."Slug", EXCLUDED."Slug");
 INSERT INTO "Keywords" ("Id", "Name", "Slug", "IsPrivate", "CreatedBy", "CreatedAt", "IsReviewPending")
 VALUES ('e6c4494e-7b4f-1142-9f7a-26793a3c868c'::uuid, 'togaf', 'togaf', false, 'seeder', timestamptz '2024-01-01 00:00:00+00', false)
+ON CONFLICT ("Name", "CreatedBy", "IsPrivate") DO UPDATE SET
+  "Slug" = COALESCE("Keywords"."Slug", EXCLUDED."Slug");
+INSERT INTO "Keywords" ("Id", "Name", "Slug", "IsPrivate", "CreatedBy", "CreatedAt", "IsReviewPending")
+VALUES ('a74afb9e-9401-df49-8167-01e6cb81471c'::uuid, 'tokens-context', 'tokens-context', false, 'seeder', timestamptz '2024-01-01 00:00:00+00', false)
 ON CONFLICT ("Name", "CreatedBy", "IsPrivate") DO UPDATE SET
   "Slug" = COALESCE("Keywords"."Slug", EXCLUDED."Slug");
 INSERT INTO "Keywords" ("Id", "Name", "Slug", "IsPrivate", "CreatedBy", "CreatedAt", "IsReviewPending")
@@ -14089,7 +14129,96 @@ ON CONFLICT ("CategoryId", "ParentKeywordId", "ChildKeywordId") DO UPDATE SET
   "Description" = EXCLUDED."Description",
   "SortOrder" = EXCLUDED."SortOrder";
 INSERT INTO "KeywordRelations" ("Id", "CategoryId", "ParentKeywordId", "ChildKeywordId", "SortOrder", "Description", "IsPrivate", "CreatedBy", "IsReviewPending", "CreatedAt")
-SELECT gen_random_uuid(), c."Id", NULL, k."Id", 9, 'Security', false, NULL, false, timestamptz '2024-01-01 00:00:00+00'
+SELECT gen_random_uuid(), c."Id", NULL, k."Id", 9, 'AI for developers', false, NULL, false, timestamptz '2024-01-01 00:00:00+00'
+FROM "Categories" c
+JOIN "Keywords" k ON k."Name" = 'genai-for-devs' AND k."IsPrivate" = false AND k."CreatedBy" = 'seeder'
+WHERE c."Name" = 'tech'
+ON CONFLICT ("CategoryId", "ParentKeywordId", "ChildKeywordId") DO UPDATE SET
+  "Description" = EXCLUDED."Description",
+  "SortOrder" = EXCLUDED."SortOrder";
+INSERT INTO "KeywordRelations" ("Id", "CategoryId", "ParentKeywordId", "ChildKeywordId", "SortOrder", "Description", "IsPrivate", "CreatedBy", "IsReviewPending", "CreatedAt")
+SELECT gen_random_uuid(), c."Id", pk."Id", ck."Id", 0, 'AI for developers', false, NULL, false, timestamptz '2024-01-01 00:00:00+00'
+FROM "Categories" c
+JOIN "Keywords" ck ON ck."Name" = 'general-genai-for-devs' AND ck."IsPrivate" = false AND ck."CreatedBy" = 'seeder'
+JOIN "Keywords" pk ON pk."Name" = 'genai-for-devs' AND pk."IsPrivate" = false AND pk."CreatedBy" = 'seeder'
+WHERE c."Name" = 'tech'
+ON CONFLICT ("CategoryId", "ParentKeywordId", "ChildKeywordId") DO UPDATE SET
+  "Description" = EXCLUDED."Description",
+  "SortOrder" = EXCLUDED."SortOrder";
+INSERT INTO "KeywordRelations" ("Id", "CategoryId", "ParentKeywordId", "ChildKeywordId", "SortOrder", "Description", "IsPrivate", "CreatedBy", "IsReviewPending", "CreatedAt")
+SELECT gen_random_uuid(), c."Id", pk."Id", ck."Id", 1, 'LLM basics', false, NULL, false, timestamptz '2024-01-01 00:00:00+00'
+FROM "Categories" c
+JOIN "Keywords" ck ON ck."Name" = 'llm-basics' AND ck."IsPrivate" = false AND ck."CreatedBy" = 'seeder'
+JOIN "Keywords" pk ON pk."Name" = 'genai-for-devs' AND pk."IsPrivate" = false AND pk."CreatedBy" = 'seeder'
+WHERE c."Name" = 'tech'
+ON CONFLICT ("CategoryId", "ParentKeywordId", "ChildKeywordId") DO UPDATE SET
+  "Description" = EXCLUDED."Description",
+  "SortOrder" = EXCLUDED."SortOrder";
+INSERT INTO "KeywordRelations" ("Id", "CategoryId", "ParentKeywordId", "ChildKeywordId", "SortOrder", "Description", "IsPrivate", "CreatedBy", "IsReviewPending", "CreatedAt")
+SELECT gen_random_uuid(), c."Id", pk."Id", ck."Id", 2, 'Tokens, context', false, NULL, false, timestamptz '2024-01-01 00:00:00+00'
+FROM "Categories" c
+JOIN "Keywords" ck ON ck."Name" = 'tokens-context' AND ck."IsPrivate" = false AND ck."CreatedBy" = 'seeder'
+JOIN "Keywords" pk ON pk."Name" = 'genai-for-devs' AND pk."IsPrivate" = false AND pk."CreatedBy" = 'seeder'
+WHERE c."Name" = 'tech'
+ON CONFLICT ("CategoryId", "ParentKeywordId", "ChildKeywordId") DO UPDATE SET
+  "Description" = EXCLUDED."Description",
+  "SortOrder" = EXCLUDED."SortOrder";
+INSERT INTO "KeywordRelations" ("Id", "CategoryId", "ParentKeywordId", "ChildKeywordId", "SortOrder", "Description", "IsPrivate", "CreatedBy", "IsReviewPending", "CreatedAt")
+SELECT gen_random_uuid(), c."Id", pk."Id", ck."Id", 3, 'Vector search', false, NULL, false, timestamptz '2024-01-01 00:00:00+00'
+FROM "Categories" c
+JOIN "Keywords" ck ON ck."Name" = 'embeddings' AND ck."IsPrivate" = false AND ck."CreatedBy" = 'seeder'
+JOIN "Keywords" pk ON pk."Name" = 'genai-for-devs' AND pk."IsPrivate" = false AND pk."CreatedBy" = 'seeder'
+WHERE c."Name" = 'tech'
+ON CONFLICT ("CategoryId", "ParentKeywordId", "ChildKeywordId") DO UPDATE SET
+  "Description" = EXCLUDED."Description",
+  "SortOrder" = EXCLUDED."SortOrder";
+INSERT INTO "KeywordRelations" ("Id", "CategoryId", "ParentKeywordId", "ChildKeywordId", "SortOrder", "Description", "IsPrivate", "CreatedBy", "IsReviewPending", "CreatedAt")
+SELECT gen_random_uuid(), c."Id", pk."Id", ck."Id", 4, 'Retrieval RAG', false, NULL, false, timestamptz '2024-01-01 00:00:00+00'
+FROM "Categories" c
+JOIN "Keywords" ck ON ck."Name" = 'rag' AND ck."IsPrivate" = false AND ck."CreatedBy" = 'seeder'
+JOIN "Keywords" pk ON pk."Name" = 'genai-for-devs' AND pk."IsPrivate" = false AND pk."CreatedBy" = 'seeder'
+WHERE c."Name" = 'tech'
+ON CONFLICT ("CategoryId", "ParentKeywordId", "ChildKeywordId") DO UPDATE SET
+  "Description" = EXCLUDED."Description",
+  "SortOrder" = EXCLUDED."SortOrder";
+INSERT INTO "KeywordRelations" ("Id", "CategoryId", "ParentKeywordId", "ChildKeywordId", "SortOrder", "Description", "IsPrivate", "CreatedBy", "IsReviewPending", "CreatedAt")
+SELECT gen_random_uuid(), c."Id", pk."Id", ck."Id", 5, 'Prompts, tools', false, NULL, false, timestamptz '2024-01-01 00:00:00+00'
+FROM "Categories" c
+JOIN "Keywords" ck ON ck."Name" = 'prompts-tools' AND ck."IsPrivate" = false AND ck."CreatedBy" = 'seeder'
+JOIN "Keywords" pk ON pk."Name" = 'genai-for-devs' AND pk."IsPrivate" = false AND pk."CreatedBy" = 'seeder'
+WHERE c."Name" = 'tech'
+ON CONFLICT ("CategoryId", "ParentKeywordId", "ChildKeywordId") DO UPDATE SET
+  "Description" = EXCLUDED."Description",
+  "SortOrder" = EXCLUDED."SortOrder";
+INSERT INTO "KeywordRelations" ("Id", "CategoryId", "ParentKeywordId", "ChildKeywordId", "SortOrder", "Description", "IsPrivate", "CreatedBy", "IsReviewPending", "CreatedAt")
+SELECT gen_random_uuid(), c."Id", pk."Id", ck."Id", 6, 'AI agents', false, NULL, false, timestamptz '2024-01-01 00:00:00+00'
+FROM "Categories" c
+JOIN "Keywords" ck ON ck."Name" = 'ai-agents' AND ck."IsPrivate" = false AND ck."CreatedBy" = 'seeder'
+JOIN "Keywords" pk ON pk."Name" = 'genai-for-devs' AND pk."IsPrivate" = false AND pk."CreatedBy" = 'seeder'
+WHERE c."Name" = 'tech'
+ON CONFLICT ("CategoryId", "ParentKeywordId", "ChildKeywordId") DO UPDATE SET
+  "Description" = EXCLUDED."Description",
+  "SortOrder" = EXCLUDED."SortOrder";
+INSERT INTO "KeywordRelations" ("Id", "CategoryId", "ParentKeywordId", "ChildKeywordId", "SortOrder", "Description", "IsPrivate", "CreatedBy", "IsReviewPending", "CreatedAt")
+SELECT gen_random_uuid(), c."Id", pk."Id", ck."Id", 7, 'Train, tune', false, NULL, false, timestamptz '2024-01-01 00:00:00+00'
+FROM "Categories" c
+JOIN "Keywords" ck ON ck."Name" = 'model-tuning' AND ck."IsPrivate" = false AND ck."CreatedBy" = 'seeder'
+JOIN "Keywords" pk ON pk."Name" = 'genai-for-devs' AND pk."IsPrivate" = false AND pk."CreatedBy" = 'seeder'
+WHERE c."Name" = 'tech'
+ON CONFLICT ("CategoryId", "ParentKeywordId", "ChildKeywordId") DO UPDATE SET
+  "Description" = EXCLUDED."Description",
+  "SortOrder" = EXCLUDED."SortOrder";
+INSERT INTO "KeywordRelations" ("Id", "CategoryId", "ParentKeywordId", "ChildKeywordId", "SortOrder", "Description", "IsPrivate", "CreatedBy", "IsReviewPending", "CreatedAt")
+SELECT gen_random_uuid(), c."Id", pk."Id", ck."Id", 8, 'Evals, cost, risk', false, NULL, false, timestamptz '2024-01-01 00:00:00+00'
+FROM "Categories" c
+JOIN "Keywords" ck ON ck."Name" = 'llm-ops' AND ck."IsPrivate" = false AND ck."CreatedBy" = 'seeder'
+JOIN "Keywords" pk ON pk."Name" = 'genai-for-devs' AND pk."IsPrivate" = false AND pk."CreatedBy" = 'seeder'
+WHERE c."Name" = 'tech'
+ON CONFLICT ("CategoryId", "ParentKeywordId", "ChildKeywordId") DO UPDATE SET
+  "Description" = EXCLUDED."Description",
+  "SortOrder" = EXCLUDED."SortOrder";
+INSERT INTO "KeywordRelations" ("Id", "CategoryId", "ParentKeywordId", "ChildKeywordId", "SortOrder", "Description", "IsPrivate", "CreatedBy", "IsReviewPending", "CreatedAt")
+SELECT gen_random_uuid(), c."Id", NULL, k."Id", 10, 'Security', false, NULL, false, timestamptz '2024-01-01 00:00:00+00'
 FROM "Categories" c
 JOIN "Keywords" k ON k."Name" = 'security' AND k."IsPrivate" = false AND k."CreatedBy" = 'seeder'
 WHERE c."Name" = 'tech'
@@ -14160,7 +14289,7 @@ ON CONFLICT ("CategoryId", "ParentKeywordId", "ChildKeywordId") DO UPDATE SET
   "Description" = EXCLUDED."Description",
   "SortOrder" = EXCLUDED."SortOrder";
 INSERT INTO "KeywordRelations" ("Id", "CategoryId", "ParentKeywordId", "ChildKeywordId", "SortOrder", "Description", "IsPrivate", "CreatedBy", "IsReviewPending", "CreatedAt")
-SELECT gen_random_uuid(), c."Id", NULL, k."Id", 10, 'DevOps', false, NULL, false, timestamptz '2024-01-01 00:00:00+00'
+SELECT gen_random_uuid(), c."Id", NULL, k."Id", 11, 'DevOps', false, NULL, false, timestamptz '2024-01-01 00:00:00+00'
 FROM "Categories" c
 JOIN "Keywords" k ON k."Name" = 'devops' AND k."IsPrivate" = false AND k."CreatedBy" = 'seeder'
 WHERE c."Name" = 'tech'
@@ -14240,7 +14369,7 @@ ON CONFLICT ("CategoryId", "ParentKeywordId", "ChildKeywordId") DO UPDATE SET
   "Description" = EXCLUDED."Description",
   "SortOrder" = EXCLUDED."SortOrder";
 INSERT INTO "KeywordRelations" ("Id", "CategoryId", "ParentKeywordId", "ChildKeywordId", "SortOrder", "Description", "IsPrivate", "CreatedBy", "IsReviewPending", "CreatedAt")
-SELECT gen_random_uuid(), c."Id", NULL, k."Id", 11, 'Mobile apps', false, NULL, false, timestamptz '2024-01-01 00:00:00+00'
+SELECT gen_random_uuid(), c."Id", NULL, k."Id", 12, 'Mobile apps', false, NULL, false, timestamptz '2024-01-01 00:00:00+00'
 FROM "Categories" c
 JOIN "Keywords" k ON k."Name" = 'mobile' AND k."IsPrivate" = false AND k."CreatedBy" = 'seeder'
 WHERE c."Name" = 'tech'
@@ -14302,7 +14431,7 @@ ON CONFLICT ("CategoryId", "ParentKeywordId", "ChildKeywordId") DO UPDATE SET
   "Description" = EXCLUDED."Description",
   "SortOrder" = EXCLUDED."SortOrder";
 INSERT INTO "KeywordRelations" ("Id", "CategoryId", "ParentKeywordId", "ChildKeywordId", "SortOrder", "Description", "IsPrivate", "CreatedBy", "IsReviewPending", "CreatedAt")
-SELECT gen_random_uuid(), c."Id", NULL, k."Id", 12, 'Computer nets', false, NULL, false, timestamptz '2024-01-01 00:00:00+00'
+SELECT gen_random_uuid(), c."Id", NULL, k."Id", 13, 'Computer nets', false, NULL, false, timestamptz '2024-01-01 00:00:00+00'
 FROM "Categories" c
 JOIN "Keywords" k ON k."Name" = 'networking' AND k."IsPrivate" = false AND k."CreatedBy" = 'seeder'
 WHERE c."Name" = 'tech'

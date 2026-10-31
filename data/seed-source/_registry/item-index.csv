@@ -12648,6 +12648,118 @@ b54413b9-61b6-420c-898c-2dc6ecde56fa,tech,devops,terraform,What is Terraform pri
 9ac3f206-49e9-498b-a579-ebdbc7a1c46d,tech,devops,terraform,What is a Terraform provider?,data/seed-source/items/tech/tech.devops.terraform.json
 59ee4de1-2bc7-407c-96fa-1544ae867440,tech,devops,terraform,What is a module in Terraform?,data/seed-source/items/tech/tech.devops.terraform.json
 c284a1df-0e7e-430b-923d-17d3516ef2bb,tech,devops,terraform,What language are `.tf` files usually written in?,data/seed-source/items/tech/tech.devops.terraform.json
+780ac5bb-4816-42b1-bd9b-2b98fd84f3c2,tech,genai-for-devs,ai-agents,"Building its SWE-bench coding agent, Anthropic sai",data/seed-source/items/tech/tech.genai-for-devs.ai-agents.json
+43484677-53ca-4e9b-aedc-aa1d90f761ff,tech,genai-for-devs,ai-agents,"In LLM apps, what separates an ""agent"" from a fixe",data/seed-source/items/tech/tech.genai-for-devs.ai-agents.json
+a13d8ade-7fd7-4ace-9b0f-0d3043a9ccb6,tech,genai-for-devs,ai-agents,"In MCP's architecture, which component exposes too",data/seed-source/items/tech/tech.genai-for-devs.ai-agents.json
+5c724280-7b3b-4961-a2a1-d4dd5e9ccbb5,tech,genai-for-devs,ai-agents,"In the ""orchestrator-workers"" pattern, what does t",data/seed-source/items/tech/tech.genai-for-devs.ai-agents.json
+ad8db6d8-f6b9-487c-8ab9-fcbf9af2c2ab,tech,genai-for-devs,ai-agents,"In the 2023 Reflexion approach, how does an agent ",data/seed-source/items/tech/tech.genai-for-devs.ai-agents.json
+2a3190bf-6544-45dd-80d1-06261eb1322e,tech,genai-for-devs,ai-agents,OWASP calls the risk of giving an LLM agent too ma,data/seed-source/items/tech/tech.genai-for-devs.ai-agents.json
+9bac4247-5797-4778-82df-a87a82361648,tech,genai-for-devs,ai-agents,SWE-bench (2023) tests coding agents on what kind ,data/seed-source/items/tech/tech.genai-for-devs.ai-agents.json
+eb99a907-c71f-4eb3-b8ac-1c3afa3f2db7,tech,genai-for-devs,ai-agents,The 2022 ReAct paper had models interleave which t,data/seed-source/items/tech/tech.genai-for-devs.ai-agents.json
+d561d2f5-b56d-444b-8e77-5c20177996ef,tech,genai-for-devs,ai-agents,What do agent-building guides usually recommend be,data/seed-source/items/tech/tech.genai-for-devs.ai-agents.json
+5b2ff53e-9627-461c-b480-d04f08f6adde,tech,genai-for-devs,ai-agents,What does OWASP recommend before an agent performs,data/seed-source/items/tech/tech.genai-for-devs.ai-agents.json
+e22c2a86-884e-495f-be50-f7b028bf24cd,tech,genai-for-devs,ai-agents,What is the basic loop inside an LLM agent?,data/seed-source/items/tech/tech.genai-for-devs.ai-agents.json
+9c55c10e-9c0a-4672-91de-d06e0404b189,tech,genai-for-devs,ai-agents,What message format does the Model Context Protoco,data/seed-source/items/tech/tech.genai-for-devs.ai-agents.json
+a5f43e9f-17be-4e64-ac8b-93d62df91824,tech,genai-for-devs,ai-agents,Why should an agent loop have a maximum number of ,data/seed-source/items/tech/tech.genai-for-devs.ai-agents.json
+6d4f4224-3845-4941-aa0e-ff8ab57b7775,tech,genai-for-devs,ai-agents,"With the Model Context Protocol's stdio transport,",data/seed-source/items/tech/tech.genai-for-devs.ai-agents.json
+728b635d-c0f2-4ce2-acdc-8d3ef0259657,tech,genai-for-devs,embeddings,"A search for ""automobile"" finds a document that on",data/seed-source/items/tech/tech.genai-for-devs.embeddings.json
+ad5e1745-4da3-40b8-a929-1024aaf0d8dc,tech,genai-for-devs,embeddings,"BM25, the default ranking in Elasticsearch, scores",data/seed-source/items/tech/tech.genai-for-devs.embeddings.json
+26d535f8-451f-478b-aeb1-24fc30b167a9,tech,genai-for-devs,embeddings,"In retrieval, what is the difference between spars",data/seed-source/items/tech/tech.genai-for-devs.embeddings.json
+b8998827-0871-47e6-8a7e-2481c6fbf1cd,tech,genai-for-devs,embeddings,Matryoshka-trained embedding models (2022) have wh,data/seed-source/items/tech/tech.genai-for-devs.embeddings.json
+06cc7357-942c-4de4-a919-e57f57d52093,tech,genai-for-devs,embeddings,OpenAI embeddings are normalized to length 1. What,data/seed-source/items/tech/tech.genai-for-devs.embeddings.json
+ed5a5464-91dc-4309-9b53-0a826bf97f8a,tech,genai-for-devs,embeddings,Reciprocal Rank Fusion (RRF) is a simple way to me,data/seed-source/items/tech/tech.genai-for-devs.embeddings.json
+22014762-035a-4182-b1b8-6aba41a0e7c8,tech,genai-for-devs,embeddings,The 2013 word2vec work became famous for which vec,data/seed-source/items/tech/tech.genai-for-devs.embeddings.json
+bf0639a4-3edb-45d6-92fb-0db1041bff7f,tech,genai-for-devs,embeddings,The 2021 BEIR benchmark tested search models acros,data/seed-source/items/tech/tech.genai-for-devs.embeddings.json
+d3e15f43-338d-481e-b39c-6e6fea9782e1,tech,genai-for-devs,embeddings,The HNSW vector index is described by its authors ,data/seed-source/items/tech/tech.genai-for-devs.embeddings.json
+29d20742-9cb4-403e-8d37-c3e7da324dee,tech,genai-for-devs,embeddings,Vector indexes such as HNSW make search over milli,data/seed-source/items/tech/tech.genai-for-devs.embeddings.json
+33c86351-885b-4b04-9e17-1e3813e3819b,tech,genai-for-devs,embeddings,What is a text embedding?,data/seed-source/items/tech/tech.genai-for-devs.embeddings.json
+6de505c9-e777-45cc-97d2-d92f75aa9743,tech,genai-for-devs,embeddings,Which PostgreSQL extension adds a vector column ty,data/seed-source/items/tech/tech.genai-for-devs.embeddings.json
+9e923f47-a449-45a7-bceb-6241fd4b1cb2,tech,genai-for-devs,embeddings,Which measure is most commonly used to compare two,data/seed-source/items/tech/tech.genai-for-devs.embeddings.json
+2fe533bd-e2a9-4581-bf0a-ae7b47cbb9b4,tech,genai-for-devs,embeddings,Why did Sentence-BERT (2019) matter for similarity,data/seed-source/items/tech/tech.genai-for-devs.embeddings.json
+79311913-7a48-43e8-befc-e74b947eee5b,tech,genai-for-devs,llm-basics,A chat assistant seems to remember what you said t,data/seed-source/items/tech/tech.genai-for-devs.llm-basics.json
+8cad3204-db6f-4f61-88ce-1c01a90fa02a,tech,genai-for-devs,llm-basics,A reasoning model with extended thinking returns a,data/seed-source/items/tech/tech.genai-for-devs.llm-basics.json
+dbb83b70-510f-4826-aa8b-e63b68fc0f8c,tech,genai-for-devs,llm-basics,An LLM confidently recommends a library function t,data/seed-source/items/tech/tech.genai-for-devs.llm-basics.json
+e16ae9de-aafa-4b95-af03-8f91815cf7b0,tech,genai-for-devs,llm-basics,DeepMind's 2022 Chinchilla paper concluded that ma,data/seed-source/items/tech/tech.genai-for-devs.llm-basics.json
+0c6bc469-a98e-4b4a-9c62-0cf354bda970,tech,genai-for-devs,llm-basics,Each time an LLM produces the next piece of its an,data/seed-source/items/tech/tech.genai-for-devs.llm-basics.json
+5c1cab9d-869a-4f70-b028-c87ed7441d1e,tech,genai-for-devs,llm-basics,"In a Mixture-of-Experts (MoE) model, what happens ",data/seed-source/items/tech/tech.genai-for-devs.llm-basics.json
+2dfbfb58-4cc7-42c9-8bed-868858fe438a,tech,genai-for-devs,llm-basics,"In machine learning, what is ""inference""?",data/seed-source/items/tech/tech.genai-for-devs.llm-basics.json
+698c9908-986b-41ea-b46e-2e48289fb444,tech,genai-for-devs,llm-basics,Meta released both Llama 2 and Llama 2-Chat in 202,data/seed-source/items/tech/tech.genai-for-devs.llm-basics.json
+3e1d2f7b-2bae-4cfe-9977-6a696e423242,tech,genai-for-devs,llm-basics,"What did the 2020 ""scaling laws"" study of language",data/seed-source/items/tech/tech.genai-for-devs.llm-basics.json
+039184e1-d01a-416d-bcb9-0da6b53a9db5,tech,genai-for-devs,llm-basics,What does the temperature setting control during t,data/seed-source/items/tech/tech.genai-for-devs.llm-basics.json
+96de1944-d7f1-4df0-998a-ea878c933483,tech,genai-for-devs,llm-basics,What is a model's training data cutoff?,data/seed-source/items/tech/tech.genai-for-devs.llm-basics.json
+eed61946-fcc6-4657-a3d5-e254d4554fc0,tech,genai-for-devs,llm-basics,"When a model is described as ""7B"", what is there 7",data/seed-source/items/tech/tech.genai-for-devs.llm-basics.json
+56050d6a-3473-42ae-bea4-902f9de222bb,tech,genai-for-devs,llm-basics,Why can the exact same prompt return different ans,data/seed-source/items/tech/tech.genai-for-devs.llm-basics.json
+02844710-9297-4d9a-b362-12844fdef2cc,tech,genai-for-devs,llm-basics,Why does a 7-billion-parameter model need roughly ,data/seed-source/items/tech/tech.genai-for-devs.llm-basics.json
+85274452-1890-4cca-a8e9-daaf03ac9db5,tech,genai-for-devs,llm-ops,An LLM API returns HTTP 429 Too Many Requests. Wha,data/seed-source/items/tech/tech.genai-for-devs.llm-ops.json
+47ac6483-4051-45f4-909f-62e79bd2515c,tech,genai-for-devs,llm-ops,How does speculative decoding speed up a large mod,data/seed-source/items/tech/tech.genai-for-devs.llm-ops.json
+e330a653-522c-46f6-83c3-2681f8983c19,tech,genai-for-devs,llm-ops,NIST's 2024 Generative AI Profile uses which term ,data/seed-source/items/tech/tech.genai-for-devs.llm-ops.json
+68f1e92e-63ac-44bf-bd05-8c71b48ca988,tech,genai-for-devs,llm-ops,"On the HumanEval coding benchmark (2021), what doe",data/seed-source/items/tech/tech.genai-for-devs.llm-ops.json
+053cdaeb-9425-4273-b9e2-c5cfaa1df802,tech,genai-for-devs,llm-ops,The 2023 MT-Bench study tested using a strong LLM ,data/seed-source/items/tech/tech.genai-for-devs.llm-ops.json
+6e214a46-a3a8-461a-ad72-35b7f3214a6d,tech,genai-for-devs,llm-ops,The vLLM serving engine's PagedAttention (2023) bo,data/seed-source/items/tech/tech.genai-for-devs.llm-ops.json
+6301e47e-18d1-4b57-9f2f-16f03c871505,tech,genai-for-devs,llm-ops,"What is the ""routing"" pattern for controlling LLM ",data/seed-source/items/tech/tech.genai-for-devs.llm-ops.json
+a49eff2d-037c-40f9-b57d-37659cb776f8,tech,genai-for-devs,llm-ops,Which bias did the 2023 MT-Bench study find in LLM,data/seed-source/items/tech/tech.genai-for-devs.llm-ops.json
+30b724d5-9331-4b07-9156-57a29edee225,tech,genai-for-devs,llm-ops,Which risk is number one (LLM01) in the OWASP Top ,data/seed-source/items/tech/tech.genai-for-devs.llm-ops.json
+e2e1ec52-da43-4f64-9884-621d62d15132,tech,genai-for-devs,llm-ops,Why can a model's score on a public benchmark be m,data/seed-source/items/tech/tech.genai-for-devs.llm-ops.json
+6804d5a8-1355-4fcc-aaa0-8b023f1c5fb3,tech,genai-for-devs,llm-ops,Why do LLM features need an evaluation set rather ,data/seed-source/items/tech/tech.genai-for-devs.llm-ops.json
+9f88fdb0-53e8-4b1d-936a-e3834659b26f,tech,genai-for-devs,llm-ops,Why do chat apps stream LLM responses token by tok,data/seed-source/items/tech/tech.genai-for-devs.llm-ops.json
+ef8984d9-973e-4e16-ba4b-d8f405a40805,tech,genai-for-devs,llm-ops,You need to classify a million support tickets by ,data/seed-source/items/tech/tech.genai-for-devs.llm-ops.json
+cfb2786c-62da-48e0-bc12-86c7087ddd30,tech,genai-for-devs,llm-ops,Your app inserts LLM output straight into an HTML ,data/seed-source/items/tech/tech.genai-for-devs.llm-ops.json
+03fc5c55-2b42-4230-b3c6-8e1a325cc2c2,tech,genai-for-devs,model-tuning,A fine-tuned model scores perfectly on its trainin,data/seed-source/items/tech/tech.genai-for-devs.model-tuning.json
+17014ff5-54d7-4807-bcae-dd2cafff6c81,tech,genai-for-devs,model-tuning,About how many tokens was Meta's Llama 2 (2023) pr,data/seed-source/items/tech/tech.genai-for-devs.model-tuning.json
+e9d8ec0f-9910-46fe-8887-b1fa2b381eba,tech,genai-for-devs,model-tuning,"After fine-tuning only on legal contracts, a model",data/seed-source/items/tech/tech.genai-for-devs.model-tuning.json
+b176df35-c6af-47b0-ad43-b170e2317473,tech,genai-for-devs,model-tuning,"How does Direct Preference Optimization (DPO, 2023",data/seed-source/items/tech/tech.genai-for-devs.model-tuning.json
+0a203571-bfe3-4a80-a0df-dbc53775384e,tech,genai-for-devs,model-tuning,How does LoRA (low-rank adaptation) make fine-tuni,data/seed-source/items/tech/tech.genai-for-devs.model-tuning.json
+4cbf6936-fc4f-40c5-918d-32ec8e54ead1,tech,genai-for-devs,model-tuning,In RLHF (reinforcement learning from human feedbac,data/seed-source/items/tech/tech.genai-for-devs.model-tuning.json
+b20c6f7e-e09e-4e5a-99a8-ad8ccc58cadd,tech,genai-for-devs,model-tuning,"In knowledge distillation, what is the ""student"" m",data/seed-source/items/tech/tech.genai-for-devs.model-tuning.json
+80618c8f-8792-410a-9642-d5ec9607e3e9,tech,genai-for-devs,model-tuning,Meta's 2023 LIMA model (65B LLaMa) was instruction,data/seed-source/items/tech/tech.genai-for-devs.model-tuning.json
+d55f56bf-5f75-4cd0-87a2-93371da05af3,tech,genai-for-devs,model-tuning,OpenAI's 2022 InstructGPT paper reported a surpris,data/seed-source/items/tech/tech.genai-for-devs.model-tuning.json
+0aa671d7-063a-4a8d-bbea-8c29ee62fff1,tech,genai-for-devs,model-tuning,The 2023 QLoRA paper showed it could fine-tune a 6,data/seed-source/items/tech/tech.genai-for-devs.model-tuning.json
+edf7a989-1556-4562-8dc1-681794bd378f,tech,genai-for-devs,model-tuning,What did Google's 2021 FLAN paper show about instr,data/seed-source/items/tech/tech.genai-for-devs.model-tuning.json
+effa1fa5-ac9e-4f3c-a68f-b1fd6d363497,tech,genai-for-devs,model-tuning,What does quantizing a model's weights to 8-bit or,data/seed-source/items/tech/tech.genai-for-devs.model-tuning.json
+a9b149bd-68e5-43ae-abe5-ff6f9cb550b5,tech,genai-for-devs,model-tuning,Which goal suits fine-tuning better than RAG?,data/seed-source/items/tech/tech.genai-for-devs.model-tuning.json
+1c37b803-8bf0-4741-b136-0ccaaeaa2f16,tech,genai-for-devs,model-tuning,Why doesn't pretraining an LLM need humans to labe,data/seed-source/items/tech/tech.genai-for-devs.model-tuning.json
+0b498684-3708-445f-98f7-b8fd7d950d0b,tech,genai-for-devs,prompts-tools,"According to OWASP's 2025 LLM risk list, why shoul",data/seed-source/items/tech/tech.genai-for-devs.prompts-tools.json
+3a18e2b7-a28e-43bd-8c22-87553f275047,tech,genai-for-devs,prompts-tools,Anthropic's guide to reducing hallucinations lists,data/seed-source/items/tech/tech.genai-for-devs.prompts-tools.json
+80bd1f2d-591c-45fd-aa10-833943d7fd56,tech,genai-for-devs,prompts-tools,"In a chat API, what is the system prompt for?",data/seed-source/items/tech/tech.genai-for-devs.prompts-tools.json
+9cd0a73d-0c1c-4b4d-b4b6-bb0b1a96c239,tech,genai-for-devs,prompts-tools,"In tool-use APIs, what format usually describes a ",data/seed-source/items/tech/tech.genai-for-devs.prompts-tools.json
+588d7ee1-d4d9-4b15-8854-8b6a2151ee46,tech,genai-for-devs,prompts-tools,The 2020 GPT-3 paper showed a model could learn a ,data/seed-source/items/tech/tech.genai-for-devs.prompts-tools.json
+8d32d511-d790-4829-bf34-439a3efab832,tech,genai-for-devs,prompts-tools,What did Meta's 2023 Toolformer paper show?,data/seed-source/items/tech/tech.genai-for-devs.prompts-tools.json
+96f5a149-ccf5-416b-9783-2d1817af6203,tech,genai-for-devs,prompts-tools,What did the 2022 chain-of-thought prompting paper,data/seed-source/items/tech/tech.genai-for-devs.prompts-tools.json
+1b7a7a98-b5a1-4b32-92df-e3f527dcb879,tech,genai-for-devs,prompts-tools,What does OpenAI's Structured Outputs feature (202,data/seed-source/items/tech/tech.genai-for-devs.prompts-tools.json
+485e1394-c667-4768-9e9d-3544f218049c,tech,genai-for-devs,prompts-tools,"What does the ""self-consistency"" prompting techniq",data/seed-source/items/tech/tech.genai-for-devs.prompts-tools.json
+b76ba48b-11c9-4cfe-885c-6e3e22d8eb23,tech,genai-for-devs,prompts-tools,When a model calls a function you defined through ,data/seed-source/items/tech/tech.genai-for-devs.prompts-tools.json
+1eff490a-b409-46e9-a772-20735cbf285a,tech,genai-for-devs,prompts-tools,Why do prompt guides suggest wrapping pasted docum,data/seed-source/items/tech/tech.genai-for-devs.prompts-tools.json
+1bdfbeb2-3fe6-4937-b49c-150f1f2b3d37,tech,genai-for-devs,prompts-tools,Why is putting user text into a prompt riskier tha,data/seed-source/items/tech/tech.genai-for-devs.prompts-tools.json
+26fc5572-d073-4595-aa80-ec951433cc2d,tech,genai-for-devs,prompts-tools,Your app summarizes web pages. One page hides the ,data/seed-source/items/tech/tech.genai-for-devs.prompts-tools.json
+a3fde4a4-1a14-43fb-bd97-18fa93e01400,tech,genai-for-devs,prompts-tools,Your extraction pipeline must always get a tool ca,data/seed-source/items/tech/tech.genai-for-devs.prompts-tools.json
+122e506b-31fb-4342-9ca5-3cb324830f44,tech,genai-for-devs,rag,A RAG assistant indexes HR documents. Where must y,data/seed-source/items/tech/tech.genai-for-devs.rag.json
+8ecf02d3-bb69-4c1e-bde5-6cb45d011f3c,tech,genai-for-devs,rag,A pipeline fetches the top 50 chunks by vector sea,data/seed-source/items/tech/tech.genai-for-devs.rag.json
+8e2685d8-f055-43b6-b3a4-e173a42289cd,tech,genai-for-devs,rag,"Anthropic's ""Contextual Retrieval"" technique (2024",data/seed-source/items/tech/tech.genai-for-devs.rag.json
+c0f3432d-20b3-4c0a-b501-17bd2d63189e,tech,genai-for-devs,rag,"Each test question has 5 relevant documents, and o",data/seed-source/items/tech/tech.genai-for-devs.rag.json
+301ba123-3cef-4246-98fe-232f667d2ef2,tech,genai-for-devs,rag,HyDE (2022) improves retrieval with an unusual tri,data/seed-source/items/tech/tech.genai-for-devs.rag.json
+e13e3e7c-6540-4884-8dd5-ecba12be8225,tech,genai-for-devs,rag,"In RAG evaluation, what does ""faithfulness"" measur",data/seed-source/items/tech/tech.genai-for-devs.rag.json
+4f1f7128-08dd-4eb7-8730-24f28a403be0,tech,genai-for-devs,rag,Models now accept very long inputs. Why do teams s,data/seed-source/items/tech/tech.genai-for-devs.rag.json
+607ce263-4240-4cc3-b1ea-18cf6b6f29d1,tech,genai-for-devs,rag,What does retrieval-augmented generation (RAG) do?,data/seed-source/items/tech/tech.genai-for-devs.rag.json
+6be33322-22c0-4927-b03e-1f874931e0ab,tech,genai-for-devs,rag,Why do RAG apps pass document IDs or titles along ,data/seed-source/items/tech/tech.genai-for-devs.rag.json
+e38967d1-e25b-4d7c-95b7-06bca079e7ad,tech,genai-for-devs,rag,Why do RAG pipelines split documents into chunks b,data/seed-source/items/tech/tech.genai-for-devs.rag.json
+71715712-d7e8-475d-ae79-4b30591f29f1,tech,genai-for-devs,rag,Why do many RAG chunkers make neighboring chunks o,data/seed-source/items/tech/tech.genai-for-devs.rag.json
+346d8e1c-4194-4aa7-883c-e16c509600d2,tech,genai-for-devs,rag,Why not embed a 300-page manual as one single vect,data/seed-source/items/tech/tech.genai-for-devs.rag.json
+f97ea81e-69d3-47d6-8a2d-a203e1d3e5fd,tech,genai-for-devs,rag,"Your RAG system retrieves the correct document, ye",data/seed-source/items/tech/tech.genai-for-devs.rag.json
+07618253-b8bc-4d98-b597-9f823c9d95c0,tech,genai-for-devs,rag,Your product docs change every week. Why is RAG us,data/seed-source/items/tech/tech.genai-for-devs.rag.json
+6c0695bb-ce59-4d25-83eb-756680fb3e21,tech,genai-for-devs,tokens-context,A response stops mid-sentence and the API reports ,data/seed-source/items/tech/tech.genai-for-devs.tokens-context.json
+09f23bc8-d5fc-43f7-82ed-5a60d15140ef,tech,genai-for-devs,tokens-context,"For common English text, about how many characters",data/seed-source/items/tech/tech.genai-for-devs.tokens-context.json
+d2c29f2a-3ddf-4c7f-b2f7-828f86457b1a,tech,genai-for-devs,tokens-context,How do LLM APIs typically charge for usage?,data/seed-source/items/tech/tech.genai-for-devs.tokens-context.json
+0d0e3be7-34db-4484-9359-6645f821c616,tech,genai-for-devs,tokens-context,How does a model signal that it has finished its a,data/seed-source/items/tech/tech.genai-for-devs.tokens-context.json
+40d41f02-4757-4a93-9e33-d2aaf08509b8,tech,genai-for-devs,tokens-context,How does byte-pair encoding (BPE) build a tokenize,data/seed-source/items/tech/tech.genai-for-devs.tokens-context.json
+ebf4e2e9-7c4b-4fd8-bc1d-a562bd117734,tech,genai-for-devs,tokens-context,Plain self-attention is order-agnostic. How do Tra,data/seed-source/items/tech/tech.genai-for-devs.tokens-context.json
+a5b350b5-1550-4b2c-ba08-f94c878dc3fc,tech,genai-for-devs,tokens-context,Prompt caching cuts cost and latency for repeated ,data/seed-source/items/tech/tech.genai-for-devs.tokens-context.json
+634e844e-2e85-4cdb-ac04-67c5b86b8a1e,tech,genai-for-devs,tokens-context,"The 2023 ""Lost in the Middle"" study found models u",data/seed-source/items/tech/tech.genai-for-devs.tokens-context.json
+1f98b7c9-aabf-409b-8f95-1aca04013735,tech,genai-for-devs,tokens-context,What does the KV cache store during text generatio,data/seed-source/items/tech/tech.genai-for-devs.tokens-context.json
+43db105d-c7cb-487b-bfb4-1293bcdc37e4,tech,genai-for-devs,tokens-context,What is a model's context window?,data/seed-source/items/tech/tech.genai-for-devs.tokens-context.json
+a571245a-c219-4f46-8b25-3faee9877395,tech,genai-for-devs,tokens-context,"What is a token, as an LLM sees text?",data/seed-source/items/tech/tech.genai-for-devs.tokens-context.json
+32e6f9a2-74f3-4c63-b8a5-70026da77abf,tech,genai-for-devs,tokens-context,Why can translating the same text into another lan,data/seed-source/items/tech/tech.genai-for-devs.tokens-context.json
+00e9318a-9043-494f-921c-14cf9c6dc7c8,tech,genai-for-devs,tokens-context,Why does standard self-attention get expensive as ,data/seed-source/items/tech/tech.genai-for-devs.tokens-context.json
+beb8c88a-62d5-4b96-86aa-e873e1e3d68c,tech,genai-for-devs,tokens-context,Why might the same paragraph count as different nu,data/seed-source/items/tech/tech.genai-for-devs.tokens-context.json
 dafd62bd-81b6-4b52-8672-4a55748cda0d,tech,mobile,android,What does the Android manifest declare about an ap,data/seed-source/items/tech/tech.mobile.android.json
 02b6103e-9229-4c1c-9238-b9c486923b36,tech,mobile,android,What file format packages Android apps for distrib,data/seed-source/items/tech/tech.mobile.android.json
 06bee9ea-b30e-4842-b29c-6cb57c73cf34,tech,mobile,android,What is a Service in Android when long work must r,data/seed-source/items/tech/tech.mobile.android.json

@@ -1,0 +1,268 @@
+[
+  {
+    "itemId": "607ce263-4240-4cc3-b1ea-18cf6b6f29d1",
+    "category": "tech",
+    "navigationKeyword1": "genai-for-devs",
+    "navigationKeyword2": "rag",
+    "question": "What does retrieval-augmented generation (RAG) do?",
+    "correctAnswer": "Fetches relevant documents and adds them to the prompt",
+    "incorrectAnswers": [
+      "Retrains the model on your documents every night",
+      "Caches every model answer in a table for reuse",
+      "Lets the model edit your database rows directly"
+    ],
+    "explanation": "RAG puts a search step in front of the model: find passages relevant to the question, paste them into the prompt, and ask the model to answer from them. Answering a question does not change the model's weights; new knowledge arrives through the retrieved text. It is like a report template filled with fresh query results at run time.",
+    "keywords": [
+      "genai-for-devs",
+      "rag"
+    ],
+    "source": "https://arxiv.org/abs/2005.11401"
+  },
+  {
+    "itemId": "e13e3e7c-6540-4884-8dd5-ecba12be8225",
+    "category": "tech",
+    "navigationKeyword1": "genai-for-devs",
+    "navigationKeyword2": "rag",
+    "question": "In RAG evaluation, what does \"faithfulness\" measure?",
+    "correctAnswer": "Whether the answer's claims are backed by the retrieved context",
+    "incorrectAnswers": [
+      "Whether the retriever found every relevant document",
+      "How quickly the system produced its answer",
+      "Whether the answer repeats the user's wording"
+    ],
+    "explanation": "A RAG system can fail in two places: retrieval can miss the right passages, or generation can stray from them. Faithfulness checks the second: every claim in the answer should be supported by the retrieved passages, not by the model's memory or imagination. The RAGAS framework (2023) scores it automatically, alongside answer relevance and context relevance.",
+    "keywords": [
+      "genai-for-devs",
+      "rag"
+    ],
+    "source": "https://arxiv.org/abs/2309.15217"
+  },
+  {
+    "itemId": "07618253-b8bc-4d98-b597-9f823c9d95c0",
+    "category": "tech",
+    "navigationKeyword1": "genai-for-devs",
+    "navigationKeyword2": "rag",
+    "question": "Your product docs change every week. Why is RAG usually a better fit than fine-tuning to keep answers current?",
+    "correctAnswer": "You update the search index instead of retraining the model",
+    "incorrectAnswers": [
+      "Fine-tuning cannot learn from documents at all",
+      "RAG makes the model's weights update automatically",
+      "RAG removes the need to store the documents anywhere"
+    ],
+    "explanation": "With RAG, knowledge lives in the index, so updating it is a data load, not a training run. The original RAG paper showed knowledge could be changed just by swapping the document index. Answers can also cite which document they came from, which fine-tuned weights cannot do.",
+    "keywords": [
+      "genai-for-devs",
+      "rag"
+    ],
+    "source": "https://arxiv.org/abs/2005.11401"
+  },
+  {
+    "itemId": "e38967d1-e25b-4d7c-95b7-06bca079e7ad",
+    "category": "tech",
+    "navigationKeyword1": "genai-for-devs",
+    "navigationKeyword2": "rag",
+    "question": "Why do RAG pipelines split documents into chunks before embedding them?",
+    "correctAnswer": "Small, focused pieces match questions better and fit in the prompt",
+    "incorrectAnswers": [
+      "Embedding models only accept one sentence at a time",
+      "Chunks are required to encrypt the documents",
+      "Splitting removes duplicate words from documents"
+    ],
+    "explanation": "A chunk of a few hundred tokens about one topic gets a sharp embedding that matches the right questions. It also means only the relevant parts go into the prompt, not whole files. Chunk size is a tuning knob: too small loses context, too large blurs meaning.",
+    "keywords": [
+      "genai-for-devs",
+      "rag"
+    ],
+    "source": "https://arxiv.org/abs/2312.10997"
+  },
+  {
+    "itemId": "346d8e1c-4194-4aa7-883c-e16c509600d2",
+    "category": "tech",
+    "navigationKeyword1": "genai-for-devs",
+    "navigationKeyword2": "rag",
+    "question": "Why not embed a 300-page manual as one single vector?",
+    "correctAnswer": "One vector blurs many topics, so passages are hard to match",
+    "incorrectAnswers": [
+      "Vectors cannot represent more than one language at once",
+      "A single vector would be far too large to store",
+      "Embedding models refuse any text over one page long"
+    ],
+    "explanation": "An embedding summarizes its whole input as one point. A full manual covers hundreds of topics, so its vector ends up a vague average that is not close to any specific question. Embedding model inputs also have length limits, so long text has to be split anyway.",
+    "keywords": [
+      "genai-for-devs",
+      "rag"
+    ],
+    "source": "https://arxiv.org/abs/2312.10997"
+  },
+  {
+    "itemId": "71715712-d7e8-475d-ae79-4b30591f29f1",
+    "category": "tech",
+    "navigationKeyword1": "genai-for-devs",
+    "navigationKeyword2": "rag",
+    "question": "Why do many RAG chunkers make neighboring chunks overlap a little?",
+    "correctAnswer": "So ideas cut at a boundary more often stay whole",
+    "incorrectAnswers": [
+      "So the vector index takes up less storage space",
+      "So each chunk gets its own unique primary key",
+      "So the model can skip reading some of the chunks"
+    ],
+    "explanation": "Fixed-size splitting can cut a sentence or paragraph in half, leaving neither chunk with the full thought. Repeating some text at each edge (a sliding window) makes it more likely that boundary content stays intact in one chunk, at the cost of storing a little duplicate text.",
+    "keywords": [
+      "genai-for-devs",
+      "rag"
+    ],
+    "source": "https://arxiv.org/abs/2312.10997"
+  },
+  {
+    "itemId": "8ecf02d3-bb69-4c1e-bde5-6cb45d011f3c",
+    "category": "tech",
+    "navigationKeyword1": "genai-for-devs",
+    "navigationKeyword2": "rag",
+    "question": "A pipeline fetches the top 50 chunks by vector search, then re-ranks them with a cross-encoder (a model that reads the query and a chunk together). Why not use the cross-encoder on everything?",
+    "correctAnswer": "Too slow: it must run once per query-chunk pair",
+    "incorrectAnswers": [
+      "It only understands documents written in English",
+      "Its scores become random on large collections",
+      "It cannot read more than one chunk per request"
+    ],
+    "explanation": "A cross-encoder scores a query and a passage in one pass, so it judges relevance well but must run once per pair, with nothing precomputed. Vector search uses embeddings computed ahead of time and is fast. So: cheap recall first, expensive precision on a short list, like a coarse index scan followed by a strict filter.",
+    "keywords": [
+      "genai-for-devs",
+      "rag"
+    ],
+    "source": "https://www.sbert.net/examples/applications/retrieve_rerank/README.html"
+  },
+  {
+    "itemId": "8e2685d8-f055-43b6-b3a4-e173a42289cd",
+    "category": "tech",
+    "navigationKeyword1": "genai-for-devs",
+    "navigationKeyword2": "rag",
+    "question": "Anthropic's \"Contextual Retrieval\" technique (2024) changes chunks before they are indexed. How?",
+    "correctAnswer": "An LLM adds a short note on where each chunk fits in its document",
+    "incorrectAnswers": [
+      "Each chunk is translated into English first",
+      "Chunks are merged until each fills the context window",
+      "Stop words are removed from every chunk"
+    ],
+    "explanation": "A bare chunk such as \"revenue grew 3%\" has lost which company and which quarter it is about. Prepending 50-100 tokens of chunk-specific context before embedding cut failed top-20 retrievals by 35%; adding contextual BM25 raised that to 49%, and adding reranking to 67%. It is like adding the missing foreign-key columns back before you index a table.",
+    "keywords": [
+      "genai-for-devs",
+      "rag"
+    ],
+    "source": "https://www.anthropic.com/engineering/contextual-retrieval"
+  },
+  {
+    "itemId": "f97ea81e-69d3-47d6-8a2d-a203e1d3e5fd",
+    "category": "tech",
+    "navigationKeyword1": "genai-for-devs",
+    "navigationKeyword2": "rag",
+    "question": "Your RAG system retrieves the correct document, yet the answer is still wrong. How can that happen?",
+    "correctAnswer": "The model can misread or ignore the context it was given",
+    "incorrectAnswers": [
+      "The embedding model rewrote the chunk's text",
+      "Retrieved chunks are hidden from the model by default",
+      "The vector index returned the chunk without its text"
+    ],
+    "explanation": "Retrieval only puts the right facts in front of the model. Generation can still misread them, blend them with what it learned in training, or miss them in a long context. RAG reduces hallucination but does not remove it, so evaluate retrieval and answering separately.",
+    "keywords": [
+      "genai-for-devs",
+      "rag"
+    ],
+    "source": "https://arxiv.org/abs/2312.10997"
+  },
+  {
+    "itemId": "6be33322-22c0-4927-b03e-1f874931e0ab",
+    "category": "tech",
+    "navigationKeyword1": "genai-for-devs",
+    "navigationKeyword2": "rag",
+    "question": "Why do RAG apps pass document IDs or titles along with each retrieved chunk?",
+    "correctAnswer": "So the answer can cite its sources for the user to check",
+    "incorrectAnswers": [
+      "So the model can download the full files itself",
+      "So the prompt uses fewer tokens overall",
+      "So the vector index can be rebuilt faster"
+    ],
+    "explanation": "If each chunk carries an identifier, the model can point to which passage supports each claim, and the app can link to it. Some APIs build this in: you pass documents and the response comes back with citations to the exact passages used. Verifiable answers build trust.",
+    "keywords": [
+      "genai-for-devs",
+      "rag"
+    ],
+    "source": "https://platform.claude.com/docs/en/build-with-claude/citations"
+  },
+  {
+    "itemId": "301ba123-3cef-4246-98fe-232f667d2ef2",
+    "category": "tech",
+    "navigationKeyword1": "genai-for-devs",
+    "navigationKeyword2": "rag",
+    "question": "HyDE (2022) improves retrieval with an unusual trick. What is it?",
+    "correctAnswer": "Embed an LLM-written fake answer and search with it",
+    "incorrectAnswers": [
+      "Index only document titles to save space",
+      "Embed the question twice and average the vectors",
+      "Ask the user to rephrase until results improve"
+    ],
+    "explanation": "Short questions and long answer passages look different, even as vectors. HyDE asks a model to draft a hypothetical answer, which may contain errors, embeds that draft, and searches for real documents near it. The draft only steers the search; the final answer still comes from the real documents.",
+    "keywords": [
+      "genai-for-devs",
+      "rag"
+    ],
+    "source": "https://arxiv.org/abs/2212.10496"
+  },
+  {
+    "itemId": "122e506b-31fb-4342-9ca5-3cb324830f44",
+    "category": "tech",
+    "navigationKeyword1": "genai-for-devs",
+    "navigationKeyword2": "rag",
+    "question": "A RAG assistant indexes HR documents. Where must you enforce who may see salary data?",
+    "correctAnswer": "At retrieval: only fetch chunks the user may access",
+    "incorrectAnswers": [
+      "In the system prompt: tell the model to keep secrets",
+      "In the embedding model: train it to forget salaries",
+      "In the answer: ask the model to blur numbers"
+    ],
+    "explanation": "Anything placed in the prompt can end up in the answer, and instructions to keep secrets can be talked around. So treat retrieval like a SQL query with row-level security: filter by the user's permissions before chunks reach the model. OWASP lists weak access control in vector stores as an LLM risk.",
+    "keywords": [
+      "genai-for-devs",
+      "rag"
+    ],
+    "source": "https://genai.owasp.org/llmrisk/llm082025-vector-and-embedding-weaknesses/"
+  },
+  {
+    "itemId": "c0f3432d-20b3-4c0a-b501-17bd2d63189e",
+    "category": "tech",
+    "navigationKeyword1": "genai-for-devs",
+    "navigationKeyword2": "rag",
+    "question": "Each test question has 5 relevant documents, and on average 4 of them appear in the top 10 results. Which classic metric is this?",
+    "correctAnswer": "Recall at 10",
+    "incorrectAnswers": [
+      "Precision at 1",
+      "Mean reciprocal rank",
+      "Cache hit ratio"
+    ],
+    "explanation": "Recall@k is the share of all relevant documents that show up in the top k results. It matters in RAG because the model can only use what retrieval hands it. Precision@k is the other side: what share of the top k is actually relevant.",
+    "keywords": [
+      "genai-for-devs",
+      "rag"
+    ],
+    "source": "https://en.wikipedia.org/wiki/Evaluation_measures_(information_retrieval)"
+  },
+  {
+    "itemId": "4f1f7128-08dd-4eb7-8730-24f28a403be0",
+    "category": "tech",
+    "navigationKeyword1": "genai-for-devs",
+    "navigationKeyword2": "rag",
+    "question": "Models now accept very long inputs. Why do teams still use retrieval over a 10 GB document store?",
+    "correctAnswer": "10 GB exceeds any context window, and every token costs",
+    "incorrectAnswers": [
+      "Long context windows accept only code, not prose",
+      "Retrieval makes the model's weights more accurate",
+      "APIs reject any prompt longer than a few pages"
+    ],
+    "explanation": "Even a 1-million-token window holds only a few megabytes of text, while 10 GB is billions of tokens. Sending more tokens also raises cost and latency on every request, and very long prompts can lower accuracy (\"context rot\"). Retrieval sends just the few relevant chunks, like querying a database instead of shipping the whole table to the client.",
+    "keywords": [
+      "genai-for-devs",
+      "rag"
+    ],
+    "source": "https://platform.claude.com/docs/en/build-with-claude/context-windows"
+  }
+]
