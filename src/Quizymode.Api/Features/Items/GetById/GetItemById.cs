@@ -30,7 +30,8 @@ public static class GetItemById
         ItemSpeechSupport? QuestionSpeech = null,
         ItemSpeechSupport? CorrectAnswerSpeech = null,
         Dictionary<int, ItemSpeechSupport>? IncorrectAnswerSpeech = null,
-        string? GroupLabel = null);
+        string? GroupLabel = null,
+        ItemImageReference? QuestionImage = null);
 
     public sealed record KeywordResponse(
         string Id,
@@ -170,7 +171,8 @@ public static class GetItemById
                 item.QuestionSpeech,
                 item.CorrectAnswerSpeech,
                 item.IncorrectAnswerSpeech.Count > 0 ? item.IncorrectAnswerSpeech : null,
-                item.GroupLabel);
+                item.GroupLabel,
+                ItemImageReferenceHelper.FromColumns(item.QuestionImageKey, item.QuestionImageAlt));
 
             return Result.Success(response);
         }

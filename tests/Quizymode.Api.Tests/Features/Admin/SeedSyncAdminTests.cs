@@ -512,6 +512,96 @@ public sealed class SeedSyncAdminTests : ItemTestFixture
         (await DbContext.SeedSyncRuns.AnyAsync()).Should().BeFalse();
     }
 
+    // --- #407 curated question pictures ---
+
+    private static readonly Guid PictureItemId = Guid.Parse("88888888-8888-8888-8888-888888888801");
+
+    private SeedSyncAdmin.Request PictureRequest(ItemImageReference? image) =>
+        BuildRequest([BuildItem(PictureItemId, "Which country uses this flag?", "France", ["Italy", "Ireland"], questionImage: image)]);
+
+    [Fact]
+    public async Task ApplyAsync_CreatesItemWithQuestionImage()
+    {
+        await EnsureGeographyPublicWithNavAsync("seeder");
+
+        Result<SeedSyncAdmin.ApplyResponse> result = await _service.ApplyAsync(
+            PictureRequest(new ItemImageReference("curated:flags/fr", "Three vertical bands: blue, white, red")), CancellationToken.None);
+
+        result.IsSuccess.Should().BeTrue();
+        Item item = await DbContext.Items.SingleAsync(i => i.Id == PictureItemId);
+        item.QuestionImageKey.Should().Be("curated:flags/fr");
+        item.QuestionImageAlt.Should().Be("Three vertical bands: blue, white, red");
+    }
+
+    [Fact]
+    public async Task ApplyAsync_UpdatesAndClearsQuestionImage_ReportingQuestionImageAsChangedField()
+    {
+        await EnsureGeographyPublicWithNavAsync("seeder");
+        ItemImageReference first = new("curated:flags/fr", "Vertical bands");
+        (await _service.ApplyAsync(PictureRequest(first), CancellationToken.None)).IsSuccess.Should().BeTrue();
+
+        ItemImageReference second = new("curated:flags/it", "Green, white, red");
+        Result<SeedSyncAdmin.PreviewResponse> preview = await _service.PreviewAsync(PictureRequest(second), CancellationToken.None);
+        preview.Value!.Changes.Should().ContainSingle().Which.ChangedFields.Should().Contain("questionImage");
+        (await _service.ApplyAsync(PictureRequest(second), CancellationToken.None)).IsSuccess.Should().BeTrue();
+        (await DbContext.Items.AsNoTracking().SingleAsync(i => i.Id == PictureItemId)).QuestionImageKey.Should().Be("curated:flags/it");
+
+        Result<SeedSyncAdmin.PreviewResponse> altOnly = await _service.PreviewAsync(
+            PictureRequest(new ItemImageReference("curated:flags/it", "Other description")), CancellationToken.None);
+        altOnly.Value!.Changes.Should().ContainSingle().Which.ChangedFields.Should().Contain("questionImage");
+
+        (await _service.ApplyAsync(PictureRequest(null), CancellationToken.None)).IsSuccess.Should().BeTrue();
+        Item cleared = await DbContext.Items.AsNoTracking().SingleAsync(i => i.Id == PictureItemId);
+        cleared.QuestionImageKey.Should().BeNull();
+        cleared.QuestionImageAlt.Should().BeNull();
+    }
+
+    [Fact]
+    public async Task PreviewAsync_UnchangedQuestionImage_IsReportedAsUnchanged()
+    {
+        await EnsureGeographyPublicWithNavAsync("seeder");
+        ItemImageReference image = new("curated:flags/fr", "Vertical bands");
+        (await _service.ApplyAsync(PictureRequest(image), CancellationToken.None)).IsSuccess.Should().BeTrue();
+
+        Result<SeedSyncAdmin.PreviewResponse> preview = await _service.PreviewAsync(PictureRequest(image), CancellationToken.None);
+
+        preview.Value!.UnchangedCount.Should().Be(1);
+        preview.Value.UpdatedCount.Should().Be(0);
+    }
+
+    [Theory]
+    [InlineData("__proto__", "alt")]
+    [InlineData("constructor", "alt")]
+    [InlineData("https://evil/x.webp", "alt")]
+    [InlineData("curated:../x", "alt")]
+    [InlineData("curated:flags/FR", "alt")]
+    [InlineData("curated:fr", "alt")]
+    [InlineData("curated:flags/fr", "")]
+    [InlineData("curated:flags/fr", "line one\nline two")]
+    [InlineData("curated:flags/fr", "tab\there")]
+    public async Task ApplyAsync_InvalidQuestionImage_IsRejected(string key, string altText)
+    {
+        await EnsureGeographyPublicWithNavAsync("seeder");
+
+        Result<SeedSyncAdmin.ApplyResponse> result = await _service.ApplyAsync(
+            PictureRequest(new ItemImageReference(key, altText)), CancellationToken.None);
+
+        result.IsFailure.Should().BeTrue();
+        (await DbContext.Items.AnyAsync(i => i.Id == PictureItemId)).Should().BeFalse();
+    }
+
+    [Fact]
+    public async Task ApplyAsync_QuestionImageOverLengthLimits_IsRejected()
+    {
+        await EnsureGeographyPublicWithNavAsync("seeder");
+        string longKey = "curated:flags/" + new string('a', 90);
+
+        (await _service.ApplyAsync(PictureRequest(new ItemImageReference(longKey, "alt")), CancellationToken.None))
+            .IsFailure.Should().BeTrue();
+        (await _service.ApplyAsync(PictureRequest(new ItemImageReference("curated:flags/fr", new string('a', 301))), CancellationToken.None))
+            .IsFailure.Should().BeTrue();
+    }
+
     private SeedSyncAdmin.Request BuildRequest(
         List<SeedSyncAdmin.SeedItemRequest> items,
         List<SeedSyncAdmin.SeedCollectionRequest>? collections = null)
@@ -552,7 +642,8 @@ public sealed class SeedSyncAdminTests : ItemTestFixture
         string? source = null,
         ItemSpeechSupport? questionSpeech = null,
         ItemSpeechSupport? correctAnswerSpeech = null,
-        Dictionary<int, ItemSpeechSupport>? incorrectAnswerSpeech = null)
+        Dictionary<int, ItemSpeechSupport>? incorrectAnswerSpeech = null,
+        ItemImageReference? questionImage = null)
     {
         return new SeedSyncAdmin.SeedItemRequest(
             ItemId: itemId,
@@ -567,7 +658,8 @@ public sealed class SeedSyncAdminTests : ItemTestFixture
             Source: source ?? "seed-test",
             QuestionSpeech: questionSpeech,
             CorrectAnswerSpeech: correctAnswerSpeech,
-            IncorrectAnswerSpeech: incorrectAnswerSpeech);
+            IncorrectAnswerSpeech: incorrectAnswerSpeech,
+            QuestionImage: questionImage);
     }
 
     private sealed class FakeGitHubSeedSource : IGitHubSeedSource

@@ -1,4 +1,5 @@
 import type { ItemResponse } from "@/types/api";
+import { isItemImageReference } from "@/media/curatedImages";
 import { isQuizPlayable, type QuizRunScope } from "@/features/items/quiz/quizRun";
 import { LEARN_MAX_ITEMS, restoreLearnRun, type LearnRunState } from "./learnRun";
 
@@ -68,6 +69,8 @@ function isStoredItem(value: unknown): value is ItemResponse {
     typeof item.question === "string" &&
     typeof item.correctAnswer === "string" &&
     isStringArray(item.incorrectAnswers) &&
+    // A picture question without its picture is unanswerable, so a malformed image invalidates the snapshot (#407).
+    (item.questionImage === undefined || item.questionImage === null || isItemImageReference(item.questionImage)) &&
     item.isPrivate !== true
   );
 }
@@ -84,6 +87,7 @@ export function toItemSnapshot(item: ItemResponse): ItemResponse {
     correctAnswerSpeech: item.correctAnswerSpeech,
     incorrectAnswers: [...item.incorrectAnswers],
     incorrectAnswerSpeech: item.incorrectAnswerSpeech,
+    ...(item.questionImage ? { questionImage: item.questionImage } : {}),
     explanation: item.explanation ?? "",
     createdAt: item.createdAt,
     keywords: [],

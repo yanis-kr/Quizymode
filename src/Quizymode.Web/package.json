@@ -1,12 +1,13 @@
 {
   "name": "quizymode-web",
   "private": true,
-  "version": "3.110.1",
+  "version": "3.111.0",
   "type": "module",
   "scripts": {
     "dev": "vite",
     "generate:sitemap": "node ./scripts/generate-sitemap.mjs",
     "build": "npm run generate:sitemap && tsc -b && vite build",
+    "check:curated-images": "node ./scripts/check-curated-images.mjs",
     "lint": "eslint .",
     "preview": "vite preview",
     "test": "vitest run",

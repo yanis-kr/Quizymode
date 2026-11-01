@@ -35,6 +35,12 @@ export interface KeywordResponse {
   isPrivate: boolean;
 }
 
+/** Curated question picture (#407): key resolved by the web build into a bundled image, plus alt text. */
+export interface ItemImageReference {
+  key: string;
+  altText: string;
+}
+
 export interface ItemSpeechSupport {
   pronunciation?: string | null;
   languageCode?: string | null;
@@ -64,6 +70,8 @@ export interface ItemResponse {
   source?: string | null;
   /** Optional short group label (max 30) used by Sort It. */
   groupLabel?: string | null;
+  /** Curated question picture (#407); set by seed sync only. */
+  questionImage?: ItemImageReference | null;
   /** Navigation path for breadcrumbs, e.g. [rank1, rank2] or ["other"]. Use "other" in URLs; display as "Others". */
   navigationBreadcrumb?: string[];
 }

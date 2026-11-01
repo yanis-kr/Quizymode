@@ -6,8 +6,9 @@ import { Navigate } from "react-router-dom";
 import LoadingSpinner from "@/components/LoadingSpinner";
 import ErrorMessage from "@/components/ErrorMessage";
 import { PronunciationHint } from "@/components/items/PronunciationHint";
+import { QuestionImage } from "@/components/study/QuestionImage";
 import { getIndexedSpeech } from "@/utils/itemSpeech";
-import type { ItemSpeechSupport } from "@/types/api";
+import type { ItemImageReference, ItemSpeechSupport } from "@/types/api";
 
 const ReviewBoardPage = () => {
   const { isAuthenticated, isAdmin } = useAuth();
@@ -94,6 +95,7 @@ function ReviewBoardItemCard({
     correctAnswerSpeech?: ItemSpeechSupport | null;
     incorrectAnswers: string[];
     incorrectAnswerSpeech?: Record<number, ItemSpeechSupport> | null;
+    questionImage?: ItemImageReference | null;
     explanation: string;
     createdBy: string;
     createdAt: string;
@@ -117,6 +119,7 @@ function ReviewBoardItemCard({
     <div className="bg-white shadow rounded-lg p-6">
       <div className="flex flex-col gap-4">
         <div className="flex justify-between items-start gap-4">
+          <QuestionImage image={item.questionImage} size="sm" />
           <div className="flex-1">
             <h3 className="text-lg font-medium text-gray-900">
               {item.question}

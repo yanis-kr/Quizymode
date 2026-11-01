@@ -153,6 +153,26 @@ describe("EditItemPage", () => {
     });
   });
 
+  it("shows a read-only picture preview for picture items (#407)", async () => {
+    vi.mocked(itemsApi.getById).mockResolvedValue({
+      ...itemMock,
+      questionImage: { key: "curated:flags/fr", altText: "Three vertical bands" },
+    } as Awaited<ReturnType<typeof itemsApi.getById>>);
+    renderPage("/items/item-1/edit");
+
+    await screen.findByRole("button", { name: /^save$/i });
+
+    const preview = screen.getByTestId("edit-item-picture");
+    expect(preview).toHaveTextContent("Picture comes from seed data; saving keeps it.");
+    expect(preview.querySelector("input, textarea, select")).toBeNull();
+  });
+
+  it("shows no picture preview for text-only items", async () => {
+    renderPage("/items/item-1/edit");
+    await screen.findByRole("button", { name: /^save$/i });
+    expect(screen.queryByTestId("edit-item-picture")).not.toBeInTheDocument();
+  });
+
   it("regular user sees readyForReview checkbox", async () => {
     // AC 2.1.4
     renderPage("/items/item-1/edit");

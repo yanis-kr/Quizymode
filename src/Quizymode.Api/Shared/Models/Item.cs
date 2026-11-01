@@ -43,6 +43,14 @@ public sealed class Item
     public string? GroupLabel { get; set; }
 
     /// <summary>
+    /// Optional curated question picture key (#407), e.g. "curated:flags/fr". Set by seed sync only.
+    /// </summary>
+    public string? QuestionImageKey { get; set; }
+
+    /// <summary>Alt text for <see cref="QuestionImageKey"/>; present exactly when the key is.</summary>
+    public string? QuestionImageAlt { get; set; }
+
+    /// <summary>
     /// Optional link to the Upload record that created this item (e.g. bulk upload from JSON).
     /// </summary>
     public Guid? UploadId { get; set; }

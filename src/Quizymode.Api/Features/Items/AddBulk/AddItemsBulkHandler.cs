@@ -168,9 +168,9 @@ internal static class AddItemsBulkHandler
                                     !existingItemIds.Contains(item.Id))
                                 .ToListAsync(cancellationToken);
 
-                            isDuplicate = candidateItems.Any(item =>
-                                string.Equals(item.Question, itemRequest.Question, StringComparison.OrdinalIgnoreCase)
-                                || item.FuzzySignature == fuzzySignature);
+                            isDuplicate = candidateItems.Any(item => ItemDuplicateRules.IsDuplicate(
+                                item.Question, item.FuzzySignature, item.QuestionImageKey,
+                                itemRequest.Question, fuzzySignature, null));
                         }
                         catch (Exception ex)
                         {

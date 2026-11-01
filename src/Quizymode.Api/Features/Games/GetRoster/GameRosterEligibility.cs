@@ -24,7 +24,7 @@ internal static class GameRosterEligibility
         $"char_length({Trimmed(column)}) BETWEEN 1 AND {max}";
 
     /// <summary>
-    /// Items that suit a question game (short question, short answer, a distinct short distractor) or Sort It
+    /// Items that suit a question game (no question picture, short question, short answer, a distinct short distractor) or Sort It
     /// (a group label plus a short answer). Selects every Items column so EF can compose over it.
     /// </summary>
     /// <remarks>
@@ -33,7 +33,7 @@ internal static class GameRosterEligibility
     /// </remarks>
     public static readonly string Sql =
         "SELECT i.* FROM \"Items\" AS i WHERE (" +
-        $"{Within("i.\"Question\"", MaxQuestionChars)} AND {Within("i.\"CorrectAnswer\"", MaxAnswerChars)} AND EXISTS (" +
+        $"i.\"QuestionImageKey\" IS NULL AND {Within("i.\"Question\"", MaxQuestionChars)} AND {Within("i.\"CorrectAnswer\"", MaxAnswerChars)} AND EXISTS (" +
         "SELECT 1 FROM jsonb_array_elements_text(i.\"IncorrectAnswers\") AS d(v) WHERE " +
         $"{Within("d.v", MaxAnswerChars)} AND lower({Trimmed("d.v")}) <> lower({Trimmed("i.\"CorrectAnswer\"")}))" +
         ") OR (" +

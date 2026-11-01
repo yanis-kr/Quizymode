@@ -27,6 +27,10 @@ vi.mock("@/api/items", () => ({
   },
 }));
 
+vi.mock("@/media/curatedImages", () => ({
+  resolveCuratedImage: (key: string) => (key === "curated:flags/fr" ? "/assets/m/fr.webp" : null),
+}));
+
 vi.mock("@/components/LoadingSpinner", () => ({
   default: () => <div>Loading...</div>,
 }));
@@ -93,6 +97,26 @@ function renderPage(initialEntry: string) {
 }
 
 describe("ItemDetailPage", () => {
+  it("shows the curated question picture under the question (#407, AC 2.3.7)", async () => {
+    vi.mocked(itemsApi.getById).mockResolvedValue({
+      ...item,
+      questionImage: { key: "curated:flags/fr", altText: "Three vertical bands" },
+    } as Awaited<ReturnType<typeof itemsApi.getById>>);
+
+    renderPage("/items/item-1");
+
+    expect(await screen.findByAltText("Three vertical bands")).toHaveAttribute("src", "/assets/m/fr.webp");
+  });
+
+  it("shows no picture for a text-only item", async () => {
+    vi.mocked(itemsApi.getById).mockResolvedValue(item as Awaited<ReturnType<typeof itemsApi.getById>>);
+
+    renderPage("/items/item-1");
+
+    await screen.findByText("Item details");
+    expect(screen.queryByTestId("question-image")).not.toBeInTheDocument();
+  });
+
   it("shows a back-to-quiz button when opened from quiz details and returns to the same URL", async () => {
     vi.mocked(itemsApi.getById).mockResolvedValue(
       item as Awaited<ReturnType<typeof itemsApi.getById>>

@@ -1,5 +1,5 @@
 import { apiClient } from "./client";
-import type { ItemSpeechSupport } from "@/types/api";
+import type { ItemImageReference, ItemSpeechSupport } from "@/types/api";
 
 interface ReviewBoardItemResponse {
   id: string;
@@ -17,6 +17,7 @@ interface ReviewBoardItemResponse {
   factualRisk?: number | null;
   reviewComments?: string | null;
   groupLabel?: string | null;
+  questionImage?: ItemImageReference | null;
 }
 
 interface ReviewBoardResponse {

@@ -1,6 +1,7 @@
 import { useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 import type { ItemResponse } from "@/types/api";
+import { QuestionImage } from "@/components/study/QuestionImage";
 import type { QuizRunState } from "./quizRun";
 import { summarizeQuizRun } from "./quizRun";
 import { formatDuration } from "./test/testSetup";
@@ -93,7 +94,10 @@ export function QuizCompletionView({
                     {flagged.has(itemId) && <span className="rounded bg-amber-50 px-2 py-0.5 text-amber-800">Flagged</span>}
                   </div>
                 )}
-                <h3 className="font-semibold text-gray-900">{item.question}</h3>
+                <div className="flex items-start gap-3">
+                  <QuestionImage image={item.questionImage} size="xs" />
+                  <h3 className="min-w-0 font-semibold text-gray-900">{item.question}</h3>
+                </div>
                 {outcome && (
                   <p className={`mt-2 text-sm ${outcome.isCorrect ? "text-green-700" : "text-red-700"}`}>
                     <strong>Your answer:</strong> {outcome.selectedAnswer}

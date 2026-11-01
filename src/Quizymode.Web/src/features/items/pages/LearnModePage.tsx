@@ -574,6 +574,7 @@ const LearnModePage = () => {
       return {
         itemId,
         question: itemsById.get(itemId)?.question ?? "Question",
+        questionImage: itemsById.get(itemId)?.questionImage,
         status: !attempt?.isCorrect ? "missed" : mastered ? "mastered" : "one-more",
       };
     });

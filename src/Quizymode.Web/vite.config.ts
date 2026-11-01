@@ -90,8 +90,16 @@ export default defineConfig({
     // Maps are generated for decoding reported stacks by hand, but bundles do not reference them and
     // deploy.yml never uploads *.map files; CI publishes them as a build artifact instead (OBS-001).
     sourcemap: "hidden",
+    // Curated question pictures (#407) are always emitted as files (never data: URIs in the JS bundle).
+    assetsInlineLimit: (filePath) => (filePath.includes("/assets/curated/") ? false : undefined),
     rollupOptions: {
       output: {
+        // Curated pictures ship as assets/m/<hash>.webp so deploy.yml can give them an explicit content type.
+        assetFileNames: (assetInfo) => {
+          const sources = [...(assetInfo.originalFileNames ?? []), ...(assetInfo.names ?? [])];
+          const isCurated = sources.some((name) => name.includes("assets/curated/"));
+          return isCurated ? "assets/m/[hash][extname]" : "assets/[name]-[hash][extname]";
+        },
         manualChunks: {
           vendor: ["react", "react-dom", "react-router-dom"],
           query: ["@tanstack/react-query"],

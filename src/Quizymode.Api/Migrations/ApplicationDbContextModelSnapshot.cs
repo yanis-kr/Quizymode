@@ -1066,6 +1066,14 @@ namespace Quizymode.Api.Migrations
                         .HasMaxLength(1000)
                         .HasColumnType("character varying(1000)");
 
+                    b.Property<string>("QuestionImageAlt")
+                        .HasMaxLength(300)
+                        .HasColumnType("character varying(300)");
+
+                    b.Property<string>("QuestionImageKey")
+                        .HasMaxLength(100)
+                        .HasColumnType("character varying(100)");
+
                     b.Property<string>("QuestionSpeech")
                         .HasColumnType("jsonb");
 
@@ -1111,6 +1119,8 @@ namespace Quizymode.Api.Migrations
                     b.ToTable("Items", null, t =>
                         {
                             t.HasCheckConstraint("CK_Items_IncorrectAnswers_Length", "jsonb_array_length(\"IncorrectAnswers\"::jsonb) >= 0 AND jsonb_array_length(\"IncorrectAnswers\"::jsonb) <= 4");
+
+                            t.HasCheckConstraint("CK_Items_QuestionImage_Alt", "(\"QuestionImageKey\" IS NULL) = (\"QuestionImageAlt\" IS NULL)");
                         });
                 });
 

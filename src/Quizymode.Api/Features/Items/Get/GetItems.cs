@@ -57,7 +57,8 @@ public static class GetItems
         ItemSpeechSupport? QuestionSpeech = null,
         ItemSpeechSupport? CorrectAnswerSpeech = null,
         Dictionary<int, ItemSpeechSupport>? IncorrectAnswerSpeech = null,
-        string? GroupLabel = null);
+        string? GroupLabel = null,
+        ItemImageReference? QuestionImage = null);
 
     public sealed record KeywordResponse(
         string Id,

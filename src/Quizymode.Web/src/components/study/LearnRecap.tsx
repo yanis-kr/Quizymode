@@ -1,12 +1,15 @@
 import { useEffect, useRef } from "react";
 import { CheckCircleIcon, XCircleIcon } from "@heroicons/react/24/solid";
 import { MasteryProgress } from "./MasteryProgress";
+import { QuestionImage } from "./QuestionImage";
+import type { ItemImageReference } from "@/types/api";
 
 export type LearnRecapStatus = "mastered" | "one-more" | "missed";
 
 export interface LearnRecapRow {
   itemId: string;
   question: string;
+  questionImage?: ItemImageReference | null;
   status: LearnRecapStatus;
 }
 
@@ -52,6 +55,7 @@ export function LearnRecap({ roundNumber, rows, mastered, total, caption, onCont
             ) : (
               <CheckCircleIcon className="h-5 w-5 shrink-0 text-green-600" aria-hidden="true" />
             )}
+            <QuestionImage image={row.questionImage} size="xs" />
             <span className="min-w-0 flex-1 truncate sm:whitespace-normal" title={row.question}>
               {row.question}
             </span>

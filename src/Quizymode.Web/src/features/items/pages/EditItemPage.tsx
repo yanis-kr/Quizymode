@@ -2,6 +2,7 @@ import { useState, useEffect, useMemo, useRef } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
 import { itemsApi } from "@/api/items";
+import { QuestionImage } from "@/components/study/QuestionImage";
 import { useAuth } from "@/contexts/AuthContext";
 import { useCurrentUserIdState } from "@/hooks/useCurrentUserId";
 import { Navigate } from "react-router-dom";
@@ -295,6 +296,14 @@ const EditItemPage = () => {
             className="mb-4 rounded-md border border-amber-300 bg-amber-50 p-4 text-sm text-amber-900"
           >
             Saving changes will make this item private again until an administrator approves it.
+          </div>
+        )}
+
+        {itemData.questionImage && (
+          <div className="mb-6" data-testid="edit-item-picture">
+            <p className="mb-2 text-sm font-medium text-gray-700">Picture</p>
+            <QuestionImage image={itemData.questionImage} />
+            <p className="mt-2 text-center text-xs text-gray-500">Picture comes from seed data; saving keeps it.</p>
           </div>
         )}
 

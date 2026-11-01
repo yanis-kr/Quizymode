@@ -42,6 +42,13 @@ public sealed class GameRosterPostgresTests(PostgresContainerFixture fixture) : 
         return item;
     }
 
+    private static Item WithPicture(Item item)
+    {
+        item.QuestionImageKey = "curated:flags/fr";
+        item.QuestionImageAlt = "Three vertical bands";
+        return item;
+    }
+
     private static Item AddEligible(ApplicationDbContext db, Category category, string owner = "owner", bool isPrivate = false) =>
         Add(db, category, "What is it?", "Yes", ["No"], null, owner, isPrivate);
 
@@ -127,6 +134,8 @@ public sealed class GameRosterPostgresTests(PostgresContainerFixture fixture) : 
             Case("sort-eligible with long question", true, Add(db, category, Chars(300), "Yes", [], "Fruit"));
             Case("sort label but long answer", false, Add(db, category, Chars(300), Chars(26), [], "Fruit"));
             Case("blank group label", false, Add(db, category, Chars(300), "Yes", [], Ideographic));
+            Case("picture question is excluded from question games (#407)", false, WithPicture(Add(db, category, "Which flag?", "Yes", ["No"])));
+            Case("picture item with a group label stays Sort It eligible (#407)", true, WithPicture(Add(db, category, "Which flag?", "Yes", [], "Flags")));
 
             await db.SaveChangesAsync();
         }

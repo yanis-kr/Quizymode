@@ -2,6 +2,7 @@ using Microsoft.EntityFrameworkCore;
 using Quizymode.Api.Data;
 using Quizymode.Api.Features.Items.Get;
 using Quizymode.Api.Services;
+using Quizymode.Api.Shared.Helpers;
 using Quizymode.Api.Shared.Http;
 using Quizymode.Api.Shared.Kernel;
 using Quizymode.Api.Shared.Models;
@@ -21,7 +22,8 @@ public static class ExportItems
         [property: JsonPropertyName("incorrectAnswers")] List<string> IncorrectAnswers,
         [property: JsonPropertyName("explanation")] string Explanation,
         [property: JsonPropertyName("keywords")] List<string> Keywords,
-        [property: JsonPropertyName("source")] string? Source);
+        [property: JsonPropertyName("source")] string? Source,
+        [property: JsonPropertyName("questionImage")] ItemImageReference? QuestionImage = null);
 
     public sealed class Endpoint : IEndpoint
     {
@@ -92,7 +94,8 @@ public static class ExportItems
                     item.IncorrectAnswers,
                     item.Explanation,
                     tagKeywords,
-                    item.Source);
+                    item.Source,
+                    ItemImageReferenceHelper.FromColumns(item.QuestionImageKey, item.QuestionImageAlt));
             }).ToList();
 
             return Results.Ok(result);

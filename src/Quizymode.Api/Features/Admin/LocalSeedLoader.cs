@@ -127,7 +127,8 @@ internal sealed class LocalSeedLoader(
                     item.Source,
                     item.QuestionSpeech,
                     item.CorrectAnswerSpeech,
-                    item.IncorrectAnswerSpeech));
+                    item.IncorrectAnswerSpeech,
+                    item.QuestionImage));
             }
         }
 
