@@ -83,7 +83,7 @@ jobs:
       contents: read
     steps:
       - name: Checkout previous release
-        uses: actions/checkout@v6
+        uses: actions/checkout@v7
         with:
           ref: ${{ inputs.previous_sha }}
 
