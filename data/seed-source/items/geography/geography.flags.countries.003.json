@@ -7,9 +7,9 @@
     "question": "Which country's flag is this?",
     "correctAnswer": "Vatican City",
     "incorrectAnswers": [
-      "Germany",
-      "Belarus",
-      "Austria"
+      "North Macedonia",
+      "Monaco",
+      "Portugal"
     ],
     "explanation": "This is the flag of Vatican City. A square flag with a yellow vertical band at the left and a white band at the right holding crossed keys beneath a triple crown.",
     "keywords": [
@@ -29,8 +29,8 @@
     "question": "Which country's flag is this?",
     "correctAnswer": "Venezuela",
     "incorrectAnswers": [
-      "Colombia",
       "Ecuador",
+      "Colombia",
       "Chile"
     ],
     "explanation": "This is the flag of Venezuela. Three equal horizontal stripes of yellow, blue and red, with an arc of eight white stars in the blue stripe.",
@@ -51,9 +51,9 @@
     "question": "Which country's flag is this?",
     "correctAnswer": "Vietnam",
     "incorrectAnswers": [
+      "T\u00fcrkiye",
       "Singapore",
-      "China",
-      "T\u00fcrkiye"
+      "China"
     ],
     "explanation": "This is the flag of Vietnam. A red field with a large yellow five-pointed star at the centre.",
     "keywords": [
@@ -74,8 +74,8 @@
     "correctAnswer": "Yemen",
     "incorrectAnswers": [
       "Syria",
-      "Kuwait",
-      "Palestine"
+      "Jordan",
+      "Iraq"
     ],
     "explanation": "This is the flag of Yemen. Three equal horizontal stripes of red, white and black.",
     "keywords": [
@@ -95,8 +95,8 @@
     "question": "Which country's flag is this?",
     "correctAnswer": "Zambia",
     "incorrectAnswers": [
-      "Uganda",
-      "Madagascar",
+      "Burundi",
+      "Botswana",
       "Cameroon"
     ],
     "explanation": "This is the flag of Zambia. A green field with three short vertical stripes of red, black and orange at the lower right and an orange eagle above them.",
@@ -117,9 +117,9 @@
     "question": "Which country's flag is this?",
     "correctAnswer": "Zimbabwe",
     "incorrectAnswers": [
-      "Ethiopia",
-      "Mauritius",
-      "Equatorial Guinea"
+      "Guinea",
+      "Republic of the Congo",
+      "Comoros"
     ],
     "explanation": "This is the flag of Zimbabwe. Seven horizontal stripes of green, yellow, red, black, red, yellow and green, with a white triangle at the left holding a red star and a yellow bird.",
     "keywords": [

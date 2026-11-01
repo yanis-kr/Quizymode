@@ -45,7 +45,7 @@ def item_id_for(iso2: str) -> str:
 
 
 def stable_rank(iso2: str, other: str) -> str:
-    return hashlib.sha1(f"{FLAG_NAMESPACE}:{iso2}:{other}".encode("utf-8")).hexdigest()
+    return hashlib.sha256(f"{FLAG_NAMESPACE}:{iso2}:{other}".encode("utf-8")).hexdigest()
 
 
 def choose_wrong_answers(iso2: str, region: str, regions: dict[str, str]) -> list[str]:
