@@ -12,7 +12,13 @@ updates:
         versions: [">=7.1.0"]
       - dependency-name: eslint-plugin-react-refresh
         versions: [">=0.5.0"]
+      # Node type majors track Node releases; CI and deploy run Node 22, so majors are taken with a Node upgrade.
+      - dependency-name: "@types/node"
+        update-types: ["version-update:semver-major"]
     groups:
+      # vitest and its coverage provider must share a major, so they always update together.
+      vitest:
+        patterns: ["vitest", "@vitest/*"]
       minor-and-patch:
         applies-to: version-updates
         update-types: [minor, patch]
