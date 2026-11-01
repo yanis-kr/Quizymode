@@ -6,6 +6,8 @@
     "screenshots:all": "playwright test --project=screenshots --project=screenshots-mobile",
     "screenshots:production": "npm run screenshots:all",
     "screenshots:local": "npm run screenshots:all",
+    "check:flag-images": "node scripts/curated-media/build_flag_images.mjs --check",
+    "build:flag-images": "node scripts/curated-media/build_flag_images.mjs",
     "user-guide:wait-ready": "node scripts/wait-for-production-ready.js",
     "user-guide:site": "node scripts/build-user-guide-site.js",
     "user-guide:production": "npm run screenshots:all && node scripts/generate-user-guide.js --all",
@@ -13,6 +15,7 @@
   },
   "devDependencies": {
     "@axe-core/playwright": "^4.14.0",
-    "@playwright/test": "^1.58.2"
+    "@playwright/test": "^1.58.2",
+    "sharp": "0.35.5"
   }
 }

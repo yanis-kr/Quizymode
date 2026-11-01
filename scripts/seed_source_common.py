@@ -130,6 +130,17 @@ def curated_asset_path(key: str) -> Path:
     return CURATED_ASSETS_ROOT / (key.removeprefix("curated:") + ".webp")
 
 
+def answer_in_alt_text(answer: str, alt: str) -> bool:
+    """True when a word in the alt text starts with the answer.
+
+    Only the left side is bounded: 'Oman' is not found inside 'Roman', but demonyms that start with the
+    answer ('Omani', 'Cuban', 'Mexican') are caught.
+    """
+    if not answer:
+        return False
+    return re.search(rf"(?<![^\W_]){re.escape(answer)}", alt, re.IGNORECASE) is not None
+
+
 def validate_question_image(item: SourceItem) -> list[str]:
     image = item.question_image
     if image is None:
@@ -156,7 +167,7 @@ def validate_question_image(item: SourceItem) -> list[str]:
             f"{where}: questionImage.altText is required (1-{QUESTION_IMAGE_ALT_MAX} characters, "
             f"no line breaks or control characters)."
         )
-    elif item.correct_answer and item.correct_answer.lower() in alt.lower():
+    elif answer_in_alt_text(item.correct_answer, alt):
         errors.append(f"{where}: questionImage.altText must not contain the correct answer.")
 
     return errors
