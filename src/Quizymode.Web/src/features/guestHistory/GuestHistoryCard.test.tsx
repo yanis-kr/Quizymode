@@ -66,6 +66,8 @@ describe("GuestHistoryCard", () => {
   });
 
   afterEach(() => {
+    // Vitest 3+ restoreAllMocks no longer clears vi.fn() call history.
+    vi.clearAllMocks();
     vi.restoreAllMocks();
     vi.unstubAllGlobals();
   });
