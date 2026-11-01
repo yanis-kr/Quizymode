@@ -108,6 +108,10 @@ jobs:
           if-no-files-found: error
           retention-days: 90
 
+      - name: Lint frontend
+        working-directory: src/Quizymode.Web
+        run: npm run lint
+
       - name: Run frontend tests with coverage
         working-directory: src/Quizymode.Web
         run: npm run test:coverage

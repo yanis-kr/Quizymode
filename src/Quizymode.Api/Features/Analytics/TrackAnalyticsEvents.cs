@@ -59,6 +59,12 @@ public static partial class TrackAnalyticsEvents
     private static bool IsFlashcardPositionEvent(string? name) =>
         name == AnalyticsEventCatalog.FlashcardRevealed || name == AnalyticsEventCatalog.FlashcardGraded;
 
+    private static bool IsQuizRunEvent(string? name) =>
+        name == AnalyticsEventCatalog.QuickQuizStarted
+        || name == AnalyticsEventCatalog.QuestionAnswered
+        || name == AnalyticsEventCatalog.QuizCompleted
+        || name == AnalyticsEventCatalog.QuizResultShared;
+
     public sealed class Validator : AbstractValidator<Request>
     {
         public Validator()
@@ -117,15 +123,23 @@ public static partial class TrackAnalyticsEvents
 
             // Flashcard decks can be as large as an items page (AnalyticsEventCatalog.MaxFlashcardDeckSize);
             // every other event keeps the 500 bound.
+            // Quiz runs are bounded by the same items page cap (AnalyticsEventCatalog.MaxQuizRunSize, #395).
             RuleFor(x => x.Position).InclusiveBetween(1, AnalyticsEventCatalog.MaxScoreOrTotal)
-                .When(x => !IsFlashcardPositionEvent(x.Name));
+                .When(x => !IsFlashcardPositionEvent(x.Name) && x.Name != AnalyticsEventCatalog.QuestionAnswered);
             RuleFor(x => x.Position).InclusiveBetween(1, AnalyticsEventCatalog.MaxFlashcardDeckSize)
                 .When(x => IsFlashcardPositionEvent(x.Name));
-            RuleFor(x => x.Score).InclusiveBetween(0, AnalyticsEventCatalog.MaxScoreOrTotal);
+            RuleFor(x => x.Position).InclusiveBetween(1, AnalyticsEventCatalog.MaxQuizRunSize)
+                .When(x => x.Name == AnalyticsEventCatalog.QuestionAnswered);
+            RuleFor(x => x.Score).InclusiveBetween(0, AnalyticsEventCatalog.MaxScoreOrTotal)
+                .When(x => !IsQuizRunEvent(x.Name));
+            RuleFor(x => x.Score).InclusiveBetween(0, AnalyticsEventCatalog.MaxQuizRunSize)
+                .When(x => IsQuizRunEvent(x.Name));
             RuleFor(x => x.Total).InclusiveBetween(1, AnalyticsEventCatalog.MaxScoreOrTotal)
-                .When(x => x.Name != AnalyticsEventCatalog.SearchPerformed && x.Name != AnalyticsEventCatalog.FlashcardsStarted);
+                .When(x => x.Name != AnalyticsEventCatalog.SearchPerformed
+                    && x.Name != AnalyticsEventCatalog.FlashcardsStarted
+                    && !IsQuizRunEvent(x.Name));
             RuleFor(x => x.Total).InclusiveBetween(1, AnalyticsEventCatalog.MaxFlashcardDeckSize)
-                .When(x => x.Name == AnalyticsEventCatalog.FlashcardsStarted);
+                .When(x => x.Name == AnalyticsEventCatalog.FlashcardsStarted || IsQuizRunEvent(x.Name));
             // A search can legitimately show zero results.
             RuleFor(x => x.Total).InclusiveBetween(0, AnalyticsEventCatalog.MaxScoreOrTotal)
                 .When(x => x.Name == AnalyticsEventCatalog.SearchPerformed);

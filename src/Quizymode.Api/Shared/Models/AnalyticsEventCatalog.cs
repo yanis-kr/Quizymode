@@ -142,4 +142,10 @@ public static class AnalyticsEventCatalog
     /// web client mirrors as EXPLORE_MAX_ITEMS. Only flashcard events use this larger bound.
     /// </summary>
     public const int MaxFlashcardDeckSize = 1000;
+
+    /// <summary>
+    /// Quiz runs may hold as many questions as one items page returns (the GetItems pageSize cap), which the
+    /// Quiz size control mirrors. Quiz-run events use this larger bound for position, score, and total (#395).
+    /// </summary>
+    public const int MaxQuizRunSize = 1000;
 }
