@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useRef, useState } from "react";
+import { useCallback, useEffect, useLayoutEffect, useRef, useState } from "react";
 import { getStudyHotkeysEnabled } from "./studyHotkeysPreference";
 
 export interface StudyHotkeyBindings {
@@ -60,7 +60,8 @@ export function useStudyHotkeys(bindings: StudyHotkeyBindings): {
 } {
   const [isHelpOpen, setIsHelpOpen] = useState(false);
   const bindingsRef = useRef(bindings);
-  useEffect(() => {
+  // Layout effect so a key pressed right after a commit (before passive effects flush) sees this render's bindings.
+  useLayoutEffect(() => {
     bindingsRef.current = bindings;
   });
 

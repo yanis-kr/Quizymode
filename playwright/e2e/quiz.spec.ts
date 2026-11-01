@@ -121,12 +121,52 @@ test(
   }
 );
 
+const FUN_TRIVIA_ID = "8f9b8c14-8d30-4d94-9b20-4c7bb7f7f511";
+
+// [question, correct answer, deliberately wrong answer, other incorrect answers]
+const FUN_TRIVIA_ITEMS: Array<[string, string, string, string[]]> = [
+  ['What color is the "black box" recorder on most commercial airplanes?', "Orange", "Black", ["Red", "Yellow"]],
+  ["What animal's fingerprints are so close to humans that they can confuse crime-scene analysis?", "Koalas", "Dogs", ["Cats", "Horses"]],
+  ["Which planet has a day longer than its year?", "Venus", "Mars", ["Jupiter", "Mercury"]],
+  ["What is the national animal of Scotland?", "The unicorn", "The stag", ["The lion", "The wolf"]],
+  ["What everyday food never really spoils when stored properly?", "Honey", "Brown rice", ["Bread", "Milk"]],
+];
+
+/** Mocks the collection, its rating, its items and analytics so the test does not depend on seeded data. */
+async function mockFunTriviaCollection(page: import("@playwright/test").Page) {
+  const json = (body: unknown) => ({ status: 200, contentType: "application/json", body: JSON.stringify(body) });
+  const items = FUN_TRIVIA_ITEMS.map(([question, correctAnswer, wrong, others], index) => ({
+    id: `00000000-0000-4000-8000-00000000000${index + 1}`,
+    category: "trivia",
+    isPrivate: false,
+    question,
+    correctAnswer,
+    incorrectAnswers: [wrong, ...others],
+    explanation: "",
+    createdAt: "2026-01-01T00:00:00Z",
+    keywords: [],
+    collections: [{ id: FUN_TRIVIA_ID, name: "Fun Trivia Facts", createdAt: "2026-01-01T00:00:00Z" }],
+  }));
+  // Only API calls (fetch/xhr) are mocked, so the dev server's source modules (e.g. src/api/items.ts?t=…) still load.
+  const api = (pattern: RegExp, response: () => Parameters<import("@playwright/test").Route["fulfill"]>[0]) =>
+    page.route(pattern, (route) =>
+      ["fetch", "xhr"].includes(route.request().resourceType()) ? route.fulfill(response()) : route.continue()
+    );
+  await api(/\/analytics\/(page-views|events)/, () => ({ status: 202, contentType: "application/json", body: "{}" }));
+  await api(/\/items\?/, () => json({ items, totalCount: items.length, page: 1, pageSize: 1000, totalPages: 1 }));
+  await api(new RegExp(`/collections/${FUN_TRIVIA_ID}/rating`), () => json({ count: 0, averageStars: null, myStars: null }));
+  await api(new RegExp(`/collections/${FUN_TRIVIA_ID}$`), () =>
+    json({ id: FUN_TRIVIA_ID, name: "Fun Trivia Facts", createdBy: "system", createdAt: "2026-01-01T00:00:00Z", itemCount: items.length, isPublic: true })
+  );
+}
+
 test.describe("anonymous collection completion", () => {
   test.use({ storageState: { cookies: [], origins: [] } });
 
   test("AC 3.6 @smoke - completes, reviews mistakes, returns to results, and replays", async ({
     page,
   }) => {
+    await mockFunTriviaCollection(page);
     await page.goto(
       "/quiz/collections/8f9b8c14-8d30-4d94-9b20-4c7bb7f7f511/fun+trivia+facts"
     );
@@ -140,7 +180,7 @@ test.describe("anonymous collection completion", () => {
     };
 
     for (let index = 0; index < 5; index += 1) {
-      const question = page.locator("h3", { hasText: "Question" }).locator("..").locator("p").first();
+      const question = page.locator("h3", { hasText: "Question" }).locator("xpath=../following-sibling::p[1]");
       await expect(question).toBeVisible({ timeout: 10_000 });
       const questionText = (await question.textContent())?.trim() ?? "";
       const wrongAnswer = deliberatelyWrongAnswers[questionText];
