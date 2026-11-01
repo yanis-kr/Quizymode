@@ -8,6 +8,7 @@ import type { ItemResponse } from "@/types/api";
 import { SpeakButton } from "@/components/SpeakButton";
 import { useSpeech } from "@/hooks/useSpeech";
 import { PronunciationHint } from "@/components/items/PronunciationHint";
+import { QuestionImage } from "@/components/study/QuestionImage";
 import { ForeignPhraseText } from "@/components/ForeignPhraseText";
 
 /** Characters beyond which the explanation is truncated with a "Show more" toggle. */
@@ -64,6 +65,12 @@ export function ExploreRenderer({
 
   return (
     <div className="mx-auto max-w-2xl">
+      {/* One picture slot above both faces: visible on both sides and never inside a flip button (so its alt text stays reachable). */}
+      {item.questionImage && (
+        <div className="mb-3">
+          <QuestionImage key={item.id} image={item.questionImage} />
+        </div>
+      )}
       {/*
         Outer container sets the minimum card height. Whichever face is
         currently visible is in normal document flow (drives height); the

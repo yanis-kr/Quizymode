@@ -42,10 +42,12 @@ export function getGameOptions(item: Pick<ItemResponse, "correctAnswer" | "incor
   return seededShuffle([item.correctAnswer, ...getGameDistractors(item).slice(0, 3)], seedText);
 }
 
+/** Question games show raw item text in tiles, so picture questions (#407) are excluded (AC 3.20.34). */
 export function isGameEligible(item: ItemResponse): boolean {
   const question: string = item.question ?? "";
   const answer: string = item.correctAnswer ?? "";
   return (
+    !item.questionImage &&
     textLength(question) > 0 &&
     textLength(answer) > 0 &&
     textLength(question) <= GAME_MAX_QUESTION_CHARS &&
@@ -65,7 +67,8 @@ export function buildGamePool(items: readonly ItemResponse[]): ItemResponse[] {
   for (const item of items) {
     if (!item.id || ids.has(item.id) || !isGameEligible(item)) continue;
     const answerKey: string = normalize(item.correctAnswer);
-    const questionKey: string = normalize(item.question);
+    // Picture questions are never eligible; the image key only guards identical questions that differ by picture.
+    const questionKey: string = `${normalize(item.question)}\u0000${item.questionImage?.key ?? ""}`;
     if (answers.has(answerKey) || questions.has(questionKey)) continue;
     ids.add(item.id);
     answers.add(answerKey);

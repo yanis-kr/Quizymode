@@ -1,4 +1,5 @@
 using Quizymode.Api.Services;
+using Quizymode.Api.Shared.Helpers;
 using Quizymode.Api.Shared.Models;
 
 namespace Quizymode.Api.Features.Items.Get;
@@ -37,7 +38,8 @@ internal sealed class ItemResponseMapper
             item.QuestionSpeech,
             item.CorrectAnswerSpeech,
             item.IncorrectAnswerSpeech.Count > 0 ? item.IncorrectAnswerSpeech : null,
-            item.GroupLabel);
+            item.GroupLabel,
+            ItemImageReferenceHelper.FromColumns(item.QuestionImageKey, item.QuestionImageAlt));
     }
 
     private List<GetItems.KeywordResponse> FilterVisibleKeywords(Item item)

@@ -18,6 +18,10 @@ REGISTRY_ROOT = ROOT / "data" / "seed-source" / "_registry"
 DEV_SELECTION_PATH = ROOT / "data" / "seed-dev" / "selection.json"
 SEED_DEV_ITEMS_ROOT = ROOT / "data" / "seed-dev" / "items"
 SEED_DEV_COLLECTIONS_ROOT = ROOT / "data" / "seed-dev" / "collections"
+CURATED_ASSETS_ROOT = ROOT / "src" / "Quizymode.Web" / "src" / "assets" / "curated"
+QUESTION_IMAGE_KEY_PATTERN = re.compile(r"^curated:[a-z0-9-]+(/[a-z0-9-]+)+$")
+QUESTION_IMAGE_KEY_MAX = 100
+QUESTION_IMAGE_ALT_MAX = 300
 TAXONOMY_YAML_PATH = ROOT / "docs" / "quizymode_taxonomy.yaml"
 TAXONOMY_SEED_SQL_PATH = ROOT / "docs" / "quizymode_taxonomy_seed.sql"
 SITEMAP_PATH = ROOT / "src" / "Quizymode.Web" / "public" / "sitemap.xml"
@@ -59,6 +63,8 @@ class SourceItem:
     source: str | None
     path: Path
     index: int
+    # Curated question picture (#407): {"key": "curated:flags/fr", "altText": "..."} or None.
+    question_image: dict[str, str] | None = None
 
 
 @dataclass
@@ -97,6 +103,65 @@ def normalize_question(text: str) -> str:
     return " ".join(text.lower().split())
 
 
+def question_image_key(item: SourceItem) -> str:
+    """Image key used in item identity; empty string for text-only items."""
+    return (item.question_image or {}).get("key", "")
+
+
+def question_identity(question: str, image: dict[str, Any] | None) -> tuple[str, str]:
+    """An item is identified by its normalized question text plus its question image key (#407)."""
+    key = image.get("key", "") if isinstance(image, dict) else ""
+    return normalize_question(question), str(key)
+
+
+def parse_question_image(value: Any, where: str) -> dict[str, str] | None:
+    if value is None:
+        return None
+    if not isinstance(value, dict):
+        raise ValueError(f"{where}: questionImage must be an object with key and altText.")
+    return {
+        "key": str(value.get("key", "")).strip(),
+        "altText": str(value.get("altText", "")).strip(),
+    }
+
+
+def curated_asset_path(key: str) -> Path:
+    """Source .webp path for a curated image key such as 'curated:flags/fr'."""
+    return CURATED_ASSETS_ROOT / (key.removeprefix("curated:") + ".webp")
+
+
+def validate_question_image(item: SourceItem) -> list[str]:
+    image = item.question_image
+    if image is None:
+        return []
+
+    where = f"{item.path} item {item.index}"
+    errors: list[str] = []
+    key = image.get("key", "")
+    alt = image.get("altText", "")
+
+    if len(key) > QUESTION_IMAGE_KEY_MAX or not QUESTION_IMAGE_KEY_PATTERN.match(key):
+        errors.append(
+            f"{where}: questionImage.key '{key}' must look like 'curated:folder/name' "
+            f"(lowercase letters, digits, hyphens; max {QUESTION_IMAGE_KEY_MAX} characters)."
+        )
+    elif not curated_asset_path(key).is_file():
+        errors.append(
+            f"{where}: questionImage.key '{key}' has no asset at "
+            f"src/Quizymode.Web/src/assets/curated/{key.removeprefix('curated:')}.webp."
+        )
+
+    if not alt or len(alt) > QUESTION_IMAGE_ALT_MAX or any(ord(ch) < 32 or 127 <= ord(ch) <= 159 for ch in alt):
+        errors.append(
+            f"{where}: questionImage.altText is required (1-{QUESTION_IMAGE_ALT_MAX} characters, "
+            f"no line breaks or control characters)."
+        )
+    elif item.correct_answer and item.correct_answer.lower() in alt.lower():
+        errors.append(f"{where}: questionImage.altText must not contain the correct answer.")
+
+    return errors
+
+
 def is_guid(value: str) -> bool:
     try:
         uuid.UUID(value)
@@ -126,6 +191,11 @@ def canonicalize_item_payload(item: SourceItem) -> dict[str, Any]:
         payload["keywords"] = item.keywords
     if item.source:
         payload["source"] = item.source
+    if item.question_image:
+        payload["questionImage"] = {
+            "key": item.question_image["key"],
+            "altText": item.question_image["altText"],
+        }
     return payload
 
 
@@ -161,6 +231,7 @@ def load_source_items(source_root: Path = SOURCE_ITEMS_ROOT) -> list[SourceItem]
                     source=_optional_str(item.get("source")),
                     path=path,
                     index=index,
+                    question_image=parse_question_image(item.get("questionImage"), f"{path} item {index}"),
                 )
             )
 
@@ -196,7 +267,7 @@ def validate_source(
 ) -> list[str]:
     errors: list[str] = []
     seen_item_ids: dict[str, SourceItem] = {}
-    seen_questions: dict[str, SourceItem] = {}
+    seen_questions: dict[tuple[str, str], SourceItem] = {}
     taxonomy_scopes = load_taxonomy_scopes()
 
     for item in items:
@@ -224,6 +295,7 @@ def validate_source(
             errors.append(f"{item.path} item {item.index}: question is required.")
         if not item.correct_answer:
             errors.append(f"{item.path} item {item.index}: correctAnswer is required.")
+        errors.extend(validate_question_image(item))
 
         existing_id = seen_item_ids.get(item.item_id)
         if existing_id is not None:
@@ -233,11 +305,12 @@ def validate_source(
         else:
             seen_item_ids[item.item_id] = item
 
-        normalized = normalize_question(item.question)
+        normalized = question_identity(item.question, item.question_image)
         existing_q = seen_questions.get(normalized)
         if existing_q is not None:
+            image_note = f" with picture '{normalized[1]}'" if normalized[1] else ""
             errors.append(
-                f"Duplicate question '{item.question}' found in {existing_q.path}#{existing_q.index} and {item.path}#{item.index}."
+                f"Duplicate question '{item.question}'{image_note} found in {existing_q.path}#{existing_q.index} and {item.path}#{item.index}."
             )
         else:
             seen_questions[normalized] = item

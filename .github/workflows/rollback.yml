@@ -111,5 +111,12 @@ jobs:
       - name: Restore S3 site
         working-directory: src/Quizymode.Web/dist
         run: |
-          aws s3 sync . s3://quizymode-web/ --delete --exact-timestamps
-          aws cloudfront create-invalidation +            --distribution-id EH1DS9REH8KR5 +            --paths "/*"
+          aws s3 sync . s3://quizymode-web/ --delete --exact-timestamps --exclude "*.webp"
+          # Curated question pictures (#407) — content-addressed (assets/m/<hash>.webp), so immutable; explicit content-type
+          aws s3 sync . s3://quizymode-web/ \
+            --exclude "*" --include "*.webp" \
+            --cache-control "public, max-age=31536000, immutable" \
+            --content-type "image/webp"
+          aws cloudfront create-invalidation \
+            --distribution-id EH1DS9REH8KR5 \
+            --paths "/*"

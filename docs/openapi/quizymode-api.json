@@ -13086,6 +13086,16 @@
                 "$ref": "#/components/schemas/System.String"
               }
             ]
+          },
+          "questionImage": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/components/schemas/Quizymode.Api.Shared.Models.ItemImageReference"
+              }
+            ]
           }
         }
       },
@@ -13231,6 +13241,16 @@
               },
               {
                 "$ref": "#/components/schemas/System.String"
+              }
+            ]
+          },
+          "questionImage": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/components/schemas/Quizymode.Api.Shared.Models.ItemImageReference"
               }
             ]
           }
@@ -13466,6 +13486,16 @@
                 "$ref": "#/components/schemas/System.String"
               }
             ]
+          },
+          "questionImage": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/components/schemas/Quizymode.Api.Shared.Models.ItemImageReference"
+              }
+            ]
           }
         }
       },
@@ -13533,6 +13563,16 @@
               },
               {
                 "$ref": "#/components/schemas/System.Collections.Generic.DictionaryOfSystem.Int32AndQuizymode.Api.Shared.Models.ItemSpeechSupport"
+              }
+            ]
+          },
+          "questionImage": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/components/schemas/Quizymode.Api.Shared.Models.ItemImageReference"
               }
             ]
           }
@@ -13638,6 +13678,16 @@
                 "$ref": "#/components/schemas/System.String"
               }
             ]
+          },
+          "questionImage": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/components/schemas/Quizymode.Api.Shared.Models.ItemImageReference"
+              }
+            ]
           }
         }
       },
@@ -13727,6 +13777,16 @@
               },
               {
                 "$ref": "#/components/schemas/System.Collections.Generic.DictionaryOfSystem.Int32AndQuizymode.Api.Shared.Models.ItemSpeechSupport"
+              }
+            ]
+          },
+          "questionImage": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/components/schemas/Quizymode.Api.Shared.Models.ItemImageReference"
               }
             ]
           }
@@ -16352,6 +16412,22 @@
             "$ref": "#/components/schemas/System.Double"
           }
         }
+      },
+      "Quizymode.Api.Shared.Models.ItemImageReference": {
+        "required": [
+          "key",
+          "altText"
+        ],
+        "type": "object",
+        "properties": {
+          "key": {
+            "$ref": "#/components/schemas/System.String"
+          },
+          "altText": {
+            "$ref": "#/components/schemas/System.String"
+          }
+        },
+        "description": "Curated question picture (#407): a key resolved by the web build into a bundled image, plus its alt text."
       },
       "Quizymode.Api.Shared.Models.ItemSpeechSupport": {
         "type": "object",

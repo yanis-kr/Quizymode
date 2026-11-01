@@ -7,6 +7,7 @@ import type { ItemResponse } from "@/types/api";
 import { SpeakButton } from "@/components/SpeakButton";
 import { useSpeech } from "@/hooks/useSpeech";
 import { PronunciationHint } from "@/components/items/PronunciationHint";
+import { QuestionImage } from "@/components/study/QuestionImage";
 import { ForeignPhraseText } from "@/components/ForeignPhraseText";
 import { getIndexedSpeech } from "@/utils/itemSpeech";
 import { toPlainText } from "@/utils/foreignPhrase";
@@ -155,6 +156,7 @@ export function QuizRenderer({
         </div>
         <p className="text-gray-700"><ForeignPhraseText text={item.question} /></p>
         <PronunciationHint text={item.question} speech={item.questionSpeech} />
+        <QuestionImage key={item.id} image={item.questionImage} className="mt-3" />
       </div>
 
       {typedAnswer && !showAnswer && typedAnswer.isTypeable && (

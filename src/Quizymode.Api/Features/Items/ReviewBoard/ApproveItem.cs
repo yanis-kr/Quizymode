@@ -1,5 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 using Quizymode.Api.Data;
+using Quizymode.Api.Shared.Helpers;
 using Quizymode.Api.Shared.Http;
 using Quizymode.Api.Shared.Kernel;
 using Quizymode.Api.Shared.Models;
@@ -19,7 +20,8 @@ public static class ApproveItem
         DateTime CreatedAt,
         ItemSpeechSupport? QuestionSpeech = null,
         ItemSpeechSupport? CorrectAnswerSpeech = null,
-        Dictionary<int, ItemSpeechSupport>? IncorrectAnswerSpeech = null);
+        Dictionary<int, ItemSpeechSupport>? IncorrectAnswerSpeech = null,
+        ItemImageReference? QuestionImage = null);
 
     public sealed class Endpoint : IEndpoint
     {
@@ -86,7 +88,8 @@ public static class ApproveItem
                 item.CreatedAt,
                 item.QuestionSpeech,
                 item.CorrectAnswerSpeech,
-                item.IncorrectAnswerSpeech.Count > 0 ? item.IncorrectAnswerSpeech : null);
+                item.IncorrectAnswerSpeech.Count > 0 ? item.IncorrectAnswerSpeech : null,
+                ItemImageReferenceHelper.FromColumns(item.QuestionImageKey, item.QuestionImageAlt));
 
             return Result.Success(response);
         }

@@ -19,6 +19,8 @@ from seed_source_common import (
     load_source_items,
     next_sharded_file_path,
     normalize_question,
+    parse_question_image,
+    question_identity,
     validate_source,
     write_json,
 )
@@ -108,7 +110,7 @@ def main() -> int:
     collections = load_public_collections()
 
     by_item_id = {item.item_id: item for item in existing_items}
-    by_question = {normalize_question(item.question): item for item in existing_items}
+    by_question = {question_identity(item.question, item.question_image): item for item in existing_items}
     existing_paths = {item.path for item in existing_items}
 
     pending_by_path: dict[Path, list[dict[str, Any]]] = defaultdict(list)
@@ -140,7 +142,7 @@ def main() -> int:
                 file_skipped += 1
                 continue
 
-            normalized_question = normalize_question(str(candidate["question"]))
+            normalized_question = question_identity(str(candidate["question"]), candidate.get("questionImage"))
             if normalized_question in pending_questions:
                 file_skipped += 1
                 continue
@@ -254,6 +256,12 @@ def build_candidate(
         payload["keywords"] = keywords[:50]
     if source:
         payload["source"] = source[:200]
+    try:
+        question_image = parse_question_image(raw_item.get("questionImage"), path.name)
+    except ValueError:
+        return None
+    if question_image:
+        payload["questionImage"] = question_image
 
     return payload
 
@@ -396,6 +404,7 @@ def _payload_to_source_item(payload: dict[str, Any], path: Path, index: int):
         source=str(payload["source"]) if "source" in payload else None,
         path=path,
         index=index,
+        question_image=payload.get("questionImage"),
     )
 
 

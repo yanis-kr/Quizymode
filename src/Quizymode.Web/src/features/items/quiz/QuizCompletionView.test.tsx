@@ -9,6 +9,9 @@ import type { ItemResponse } from "@/types/api";
 const { confetti } = vi.hoisted(() => ({ confetti: vi.fn() }));
 vi.mock("canvas-confetti", () => ({ default: confetti }));
 vi.mock("@/features/auth/components/SignupPrompt", () => ({ SignupPrompt: () => null }));
+vi.mock("@/media/curatedImages", () => ({
+  resolveCuratedImage: (key: string) => (key === "curated:flags/fr" ? "/assets/m/fr.webp" : null),
+}));
 vi.mock("./quizAnalytics", () => ({ trackQuizResultShared: vi.fn() }));
 
 const items = ["a", "b", "c", "d", "e"].map(
@@ -112,5 +115,29 @@ describe("QuizCompletionView tier, share and confetti", () => {
     render(ui(runWith(4, 5)));
     await new Promise((resolve) => setTimeout(resolve, 50));
     expect(confetti).not.toHaveBeenCalled();
+  });
+});
+
+describe("QuizCompletionView review list picture (#407, AC 3.21.6)", () => {
+  it("shows a small thumbnail before the question of a missed picture item only", () => {
+    const pictureItems = items.map((item, index) =>
+      index === 0 ? { ...item, questionImage: { key: "curated:flags/fr", altText: "Three vertical bands" } } : item
+    );
+    render(
+      <MemoryRouter>
+        <QuizCompletionView
+          run={runWith(0, 2, "review")}
+          items={pictureItems}
+          browsePath="/x"
+          browseLabel="Browse"
+          onReviewMistakes={() => {}}
+          onBackToResults={() => {}}
+          onPlayAgain={() => {}}
+        />
+      </MemoryRouter>
+    );
+
+    expect(screen.getByAltText("Three vertical bands")).toHaveAttribute("loading", "lazy");
+    expect(screen.getAllByTestId("question-image")).toHaveLength(1);
   });
 });

@@ -76,6 +76,33 @@ describe("learnStorage", () => {
     expect(result.items?.map((item) => item.id).sort()).toEqual(pool.map((item) => item.id).sort());
   });
 
+  it("saves and restores a picture question snapshot (#407)", () => {
+    const scope = categoryScope("science");
+    const picture = { key: "curated:flags/fr", altText: "Three vertical bands" };
+    const pool = [{ ...makeItem("item-1"), questionImage: picture }, makeItem("item-2"), makeItem("item-3")];
+    const run = createLearnRun(scope, pool.map((item) => item.id), "guest");
+
+    expect(writeLearnRun(scope, run, pool, NOW)).toBe(true);
+    const result = readLearnRun(scope, "guest", NOW + 1000);
+
+    expect(result.status).toBe("restored");
+    if (result.status !== "restored") return;
+    expect(result.items?.find((item) => item.id === "item-1")?.questionImage).toEqual(picture);
+    expect(result.items?.find((item) => item.id === "item-2")?.questionImage).toBeUndefined();
+  });
+
+  it("treats a snapshot with a malformed picture as invalid (#407)", () => {
+    const scope = categoryScope("science");
+    const pool = items(3);
+    const run = createLearnRun(scope, pool.map((item) => item.id), "guest");
+    writeLearnRun(scope, run, pool, NOW);
+    const document = readDocument();
+    (document.runs[0].items as Array<Record<string, unknown>>)[0].questionImage = { key: "https://evil/x.webp", altText: "x" };
+    localStorage.setItem(LEARN_STORAGE_KEY, JSON.stringify(document));
+
+    expect(readLearnRun(scope, "guest", NOW + 1000).status).toBe("invalid");
+  });
+
   it("stores only ids and progress for signed-in category runs and collection runs", () => {
     const signedScope = categoryScope("science");
     const signedRun = createLearnRun(signedScope, items(3).map((item) => item.id), "user:1");

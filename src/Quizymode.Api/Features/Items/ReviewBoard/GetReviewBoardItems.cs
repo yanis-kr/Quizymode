@@ -1,5 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 using Quizymode.Api.Data;
+using Quizymode.Api.Shared.Helpers;
 using Quizymode.Api.Shared.Http;
 using Quizymode.Api.Shared.Kernel;
 using Quizymode.Api.Shared.Models;
@@ -25,7 +26,8 @@ public static class GetReviewBoardItems
         ItemSpeechSupport? QuestionSpeech = null,
         ItemSpeechSupport? CorrectAnswerSpeech = null,
         Dictionary<int, ItemSpeechSupport>? IncorrectAnswerSpeech = null,
-        string? GroupLabel = null);
+        string? GroupLabel = null,
+        ItemImageReference? QuestionImage = null);
 
     public sealed class Endpoint : IEndpoint
     {
@@ -81,7 +83,8 @@ public static class GetReviewBoardItems
                     i.QuestionSpeech,
                     i.CorrectAnswerSpeech,
                     i.IncorrectAnswerSpeech.Count > 0 ? i.IncorrectAnswerSpeech : null,
-                    i.GroupLabel);
+                    i.GroupLabel,
+                    ItemImageReferenceHelper.FromColumns(i.QuestionImageKey, i.QuestionImageAlt));
             }).ToList();
 
             return Result.Success(new Response(itemResponses));

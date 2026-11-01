@@ -85,9 +85,10 @@ internal static class AddItemHandler
                     item.CategoryId == category.Id)
                 .ToListAsync(cancellationToken);
 
-            bool isDuplicate = candidateItems.Any(item =>
-                string.Equals(item.Question, request.Question, StringComparison.OrdinalIgnoreCase) ||
-                item.FuzzySignature == fuzzySignature);
+            // Write paths never set a question image (seed sync only), so a new item has no image key.
+            bool isDuplicate = candidateItems.Any(item => ItemDuplicateRules.IsDuplicate(
+                item.Question, item.FuzzySignature, item.QuestionImageKey,
+                request.Question, fuzzySignature, null));
 
             if (isDuplicate)
             {

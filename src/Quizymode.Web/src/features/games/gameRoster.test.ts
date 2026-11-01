@@ -98,6 +98,25 @@ describe("buildGamePool", () => {
     const pool = buildGamePool([makeItem(1), makeItem(2, { question: "q".repeat(81) }), makeItem(3, { incorrectAnswers: [] })]);
     expect(pool.map((item) => item.id)).toEqual(["id-1"]);
   });
+
+  it("excludes picture questions from the pool (#407, AC 3.20.34)", () => {
+    const picture = { key: "curated:flags/fr", altText: "Three vertical bands" };
+    const pool = buildGamePool([
+      makeItem(1, { question: "Which country uses this flag?", questionImage: picture }),
+      makeItem(2, { question: "Which country uses this flag?", questionImage: { ...picture, key: "curated:flags/it" } }),
+      makeItem(3),
+    ]);
+    expect(pool.map((item) => item.id)).toEqual(["id-3"]);
+  });
+});
+
+describe("isGameEligible with a question picture", () => {
+  it("is false whenever a picture is set, even for short text", () => {
+    const picture = { key: "curated:flags/fr", altText: "Three vertical bands" };
+    expect(isGameEligible(makeItem(1))).toBe(true);
+    expect(isGameEligible(makeItem(1, { questionImage: picture }))).toBe(false);
+    expect(isGameEligible(makeItem(1, { questionImage: null }))).toBe(true);
+  });
 });
 
 describe("getMatchRaceTargetPairs", () => {

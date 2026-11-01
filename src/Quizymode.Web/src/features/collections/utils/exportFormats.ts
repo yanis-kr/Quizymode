@@ -1,7 +1,11 @@
+import type { ItemImageReference } from "@/types/api";
+
 /** Client-side collection export formats (#258). Pure functions over loaded items. */
 
 export interface ExportableItem {
   question: string;
+  /** Printed by the print view only; CSV, TSV and Quizlet exports stay text-only (#407, #403). */
+  questionImage?: ItemImageReference | null;
   correctAnswer: string;
   incorrectAnswers: readonly string[];
   explanation?: string | null;

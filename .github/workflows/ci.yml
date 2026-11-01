@@ -92,6 +92,7 @@ jobs:
         run: |
           npm ci
           npm run build
+          npm run check:curated-images
 
       # Hidden source maps (OBS-001): never deployed, kept per version for decoding reported stacks by hand.
       - name: Upload web source maps

@@ -19,6 +19,7 @@ import ItemRatingsComments from "@/components/ItemRatingsComments";
 import { CommentsDrawer } from "@/components/CommentsDrawer";
 import { buildCategoryPath, categoryNameToSlug } from "@/utils/categorySlug";
 import { PronunciationHint } from "@/components/items/PronunciationHint";
+import { QuestionImage } from "@/components/study/QuestionImage";
 import { getIndexedSpeech } from "@/utils/itemSpeech";
 
 const ItemDetailPage = () => {
@@ -214,6 +215,7 @@ const ItemDetailPage = () => {
               <h2 className="text-sm font-medium text-gray-500 mb-1">Question</h2>
               <p className="text-gray-900"><ForeignPhraseText text={item.question} /></p>
               <PronunciationHint text={item.question} speech={item.questionSpeech} />
+              <QuestionImage key={item.id} image={item.questionImage} className="mt-3 sm:mx-0" />
             </div>
 
             <div>
