@@ -1,4 +1,5 @@
 import { useState, useEffect, useMemo, useRef } from "react";
+import { sanitizeInAppPath } from "@/utils/safeInAppPath";
 import { useParams, useNavigate, useSearchParams } from "react-router-dom";
 import { useQuery } from "@tanstack/react-query";
 import { itemsApi } from "@/api/items";
@@ -89,7 +90,7 @@ const ExploreModePage = () => {
   const [searchParams] = useSearchParams();
   const navigate = useNavigate();
   const { isAuthenticated } = useAuth();
-  const returnUrl = searchParams.get("return");
+  const returnUrl = sanitizeInAppPath(searchParams.get("return"));
   const hasCategoryScope = !!categorySlug && !collectionId;
   const hasExplicitNavParam = searchParams.has("nav");
   const { keywords, navigationKeywords, filterKeywords } = useMemo(

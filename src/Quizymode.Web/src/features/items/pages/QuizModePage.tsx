@@ -1,4 +1,5 @@
 import { useState, useEffect, useMemo, useRef } from "react";
+import { sanitizeInAppPath } from "@/utils/safeInAppPath";
 import {
   useParams,
   useNavigate,
@@ -98,7 +99,7 @@ const QuizModePageContent = () => {
   const [searchParams] = useSearchParams();
   const navigate = useNavigate();
   const queryClient = useQueryClient();
-  const returnUrl = searchParams.get("return");
+  const returnUrl = sanitizeInAppPath(searchParams.get("return"));
   const hasCategoryScope = !!categorySlug && !collectionId;
   const hasExplicitNavParam = searchParams.has("nav");
   const { keywords, navigationKeywords, filterKeywords } = useMemo(

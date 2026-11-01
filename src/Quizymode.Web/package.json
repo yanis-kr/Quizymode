@@ -1,7 +1,7 @@
 {
   "name": "quizymode-web",
   "private": true,
-  "version": "3.112.0",
+  "version": "3.112.1",
   "type": "module",
   "scripts": {
     "dev": "vite",
@@ -20,19 +20,19 @@
     "@hookform/resolvers": "^5.2.2",
     "@tanstack/react-query": "^5.90.10",
     "autoprefixer": "^10.4.22",
-    "aws-amplify": "^6.15.8",
-    "axios": "^1.13.2",
+    "aws-amplify": "^6.22.2",
+    "axios": "^1.21.0",
     "axios-retry": "^4.5.0",
     "canvas-confetti": "1.9.4",
-    "postcss": "^8.5.6",
+    "postcss": "^8.5.32",
     "qrcode": "1.5.4",
     "react": "^19.2.0",
     "react-dom": "^19.2.0",
     "react-helmet-async": "^2.0.5",
     "react-hook-form": "^7.66.1",
-    "react-router-dom": "^7.9.6",
+    "react-router-dom": "^7.18.5",
     "tailwindcss": "^4.1.17",
-    "zod": "^4.1.12"
+    "zod": "^4.6.6"
   },
   "devDependencies": {
     "@eslint/js": "^9.39.1",
@@ -56,7 +56,7 @@
     "marked": "^17.0.5",
     "typescript": "~5.9.3",
     "typescript-eslint": "^8.46.3",
-    "vite": "^7.2.2",
+    "vite": "^7.3.7",
     "vitest": "^2.1.8"
   }
 }

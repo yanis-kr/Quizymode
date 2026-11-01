@@ -8,15 +8,11 @@
  * externally or ambiguously, and never automatically replay a mutation.
  */
 
+import { parseInAppUrl } from "@/utils/safeInAppPath";
+
 export const LOGIN_PATH = "/login";
 export const SIGNUP_PATH = "/signup";
 const DEFAULT_RETURN_TO = "/";
-const MAX_RETURN_TO_LENGTH = 4096;
-// Deliberately matches control characters to reject them from a URL
-// destination; built from a string (not a literal regex) so the source file
-// never has to contain raw control bytes.
-// eslint-disable-next-line no-control-regex
-const CONTROL_CHAR_PATTERN = new RegExp("[\\x00-\\x1f\\x7f]");
 
 export const AUTH_REASONS = [
   "save-progress",
@@ -65,26 +61,8 @@ function isAuthReturnDestination(pathname: string): boolean {
  * the candidate is missing, invalid, unsafe, or points back at auth itself.
  */
 export function validateReturnTo(raw: string | null | undefined): string {
-  if (!raw) return DEFAULT_RETURN_TO;
-  if (raw.length > MAX_RETURN_TO_LENGTH) return DEFAULT_RETURN_TO;
-  if (CONTROL_CHAR_PATTERN.test(raw)) return DEFAULT_RETURN_TO;
-  if (raw.includes("\\")) return DEFAULT_RETURN_TO;
-  // Reject protocol-relative ("//host/...") before parsing: the URL
-  // constructor would otherwise happily resolve it to an external origin.
-  if (!raw.startsWith("/") || raw.startsWith("//")) return DEFAULT_RETURN_TO;
-
-  const origin = typeof window !== "undefined" ? window.location.origin : "http://localhost";
-  let parsed: URL;
-  try {
-    parsed = new URL(raw, origin);
-  } catch {
-    return DEFAULT_RETURN_TO;
-  }
-
-  if (parsed.origin !== origin) return DEFAULT_RETURN_TO;
-  if (!parsed.pathname.startsWith("/") || parsed.pathname.startsWith("//")) {
-    return DEFAULT_RETURN_TO;
-  }
+  const parsed = parseInAppUrl(raw);
+  if (!parsed) return DEFAULT_RETURN_TO;
   if (isAuthReturnDestination(parsed.pathname)) return DEFAULT_RETURN_TO;
 
   // Re-derive the destination from the parsed URL (not the raw string) so a

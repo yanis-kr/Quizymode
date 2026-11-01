@@ -159,6 +159,20 @@ describe("ItemDetailPage", () => {
     );
   });
 
+  it.each(["%2F%2Fevil.com", "%2F%5Cevil.com", "https%3A%2F%2Fevil.com", "javascript%3Aalert(1)"])(
+    "ignores an unsafe return value %s and shows no back-to-quiz or explore target (AC 4.3.5c)",
+    async (bad) => {
+      vi.mocked(itemsApi.getById).mockResolvedValue(
+        item as Awaited<ReturnType<typeof itemsApi.getById>>
+      );
+
+      renderPage(`/items/item-1?return=${bad}&returnMode=quiz`);
+
+      await screen.findByText("Item details");
+      expect(screen.queryByRole("button", { name: /^back/i })).not.toBeInTheDocument();
+    }
+  );
+
   describe("delete failures (#286)", () => {
     afterEach(() => {
       authState.isAuthenticated = false;

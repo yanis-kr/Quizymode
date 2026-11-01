@@ -656,6 +656,19 @@ describe("QuizModePage", () => {
       await expectShown("/quiz/exams/item/item-1?return=%2Fcategories", "What is 2 + 2?");
     });
 
+    it.each(["%2F%2Fevil.com", "%2F%5Cevil.com", "https%3A%2F%2Fevil.com"])(
+      "drops the unsafe return value %s instead of forwarding it (AC 4.3.5c)",
+      async (bad) => {
+        mockRoster([legacy, item, secondItem]);
+        mockById(legacy, item, secondItem);
+        renderPage(`/quiz/exams/item/item-legacy?return=${bad}`);
+
+        await expectShown("/quiz/exams/item/item-1", "What is 2 + 2?", legacy.question);
+        expect(screen.getByTestId("location")).not.toHaveTextContent("evil");
+        expect(screen.getByTestId("location")).not.toHaveTextContent("return=");
+      }
+    );
+
     it("rewrites a collection deep link to the unplayable item", async () => {
       // AC 3.6.17 (#275)
       vi.mocked(collectionsApi.getItems).mockResolvedValue({ items: [legacy, item, secondItem] });
