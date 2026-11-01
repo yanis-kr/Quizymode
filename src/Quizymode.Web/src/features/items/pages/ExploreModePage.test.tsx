@@ -161,6 +161,24 @@ function renderPage(initialEntry: string) {
               </>
             }
           />
+          <Route
+            path="/explore/item/:itemId"
+            element={
+              <>
+                <ExploreModePage />
+                <LocationDisplay />
+              </>
+            }
+          />
+          <Route
+            path="/explore/:category"
+            element={
+              <>
+                <ExploreModePage />
+                <LocationDisplay />
+              </>
+            }
+          />
           <Route path="/categories/:category/:kw1/:kw2" element={<LocationDisplay />} />
         </Routes>
       </MemoryRouter>
@@ -252,6 +270,45 @@ describe("ExploreModePage", () => {
       contextId: "exams",
     });
   });
+
+  it("shows a Back button for a safe return path on an unscoped item (AC 4.3.5c)", async () => {
+    renderPage("/explore/item/item-1?return=%2Fcategories%2Fgeo");
+
+    expect((await screen.findAllByRole("button", { name: /^← back$/i })).length).toBeGreaterThan(0);
+  });
+
+  it.each(["%2F%2Fevil.com", "%2F%5Cevil.com", "https%3A%2F%2Fevil.com"])(
+    "ignores the unsafe return value %s: no Back button (AC 4.3.5c)",
+    async (bad) => {
+      renderPage(`/explore/item/item-1?return=${bad}`);
+
+      await screen.findByText(/Explore Renderer/i);
+      expect(screen.queryByRole("button", { name: /^← back$/i })).not.toBeInTheDocument();
+    }
+  );
+
+  it("forwards a safe return path into the first-card URL (AC 4.3.5c)", async () => {
+    renderPage("/explore/exams?return=%2Fcategories%2Fexams");
+
+    await waitFor(() =>
+      expect(screen.getByTestId("location")).toHaveTextContent(
+        "/explore/exams/item/item-1?return=%2Fcategories%2Fexams"
+      )
+    );
+  });
+
+  it.each(["%2F%2Fevil.com", "%2F%5Cevil.com", "https%3A%2F%2Fevil.com"])(
+    "does not forward the unsafe return value %s into the first-card URL (AC 4.3.5c)",
+    async (bad) => {
+      renderPage(`/explore/exams?return=${bad}`);
+
+      await waitFor(() =>
+        expect(screen.getByTestId("location")).toHaveTextContent("/explore/exams/item/item-1")
+      );
+      expect(screen.getByTestId("location")).not.toHaveTextContent("evil");
+      expect(screen.getByTestId("location")).not.toHaveTextContent("return=");
+    }
+  );
 
   it("flushes deferred analytics events when leaving Flashcards", async () => {
     const { unmount } = renderPage(

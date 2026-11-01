@@ -21,6 +21,7 @@ import { buildCategoryPath, categoryNameToSlug } from "@/utils/categorySlug";
 import { PronunciationHint } from "@/components/items/PronunciationHint";
 import { QuestionImage } from "@/components/study/QuestionImage";
 import { getIndexedSpeech } from "@/utils/itemSpeech";
+import { sanitizeInAppPath } from "@/utils/safeInAppPath";
 
 const ItemDetailPage = () => {
   const { id } = useParams<{ id: string }>();
@@ -31,14 +32,12 @@ const ItemDetailPage = () => {
   const queryClient = useQueryClient();
   const { isAuthenticated, isAdmin } = useAuth();
   const currentUserId = useCurrentUserId();
-  const returnUrl = searchParams.get("return");
+  const returnUrl = sanitizeInAppPath(searchParams.get("return"));
   const returnMode = searchParams.get("returnMode");
-  const safeReturnUrl =
-    returnUrl && returnUrl.startsWith("/") ? returnUrl : null;
   const inferredReturnMode =
     returnMode ??
-    (safeReturnUrl?.startsWith("/quiz") ? "quiz" : undefined) ??
-    (safeReturnUrl?.startsWith("/explore") ? "explore" : undefined);
+    (returnUrl?.startsWith("/quiz") ? "quiz" : undefined) ??
+    (returnUrl?.startsWith("/explore") ? "explore" : undefined);
   const returnLabel =
     inferredReturnMode === "quiz"
       ? "Back to Quiz"
@@ -92,10 +91,10 @@ const ItemDetailPage = () => {
           message="Failed to load item. It may not exist or you may not have access."
           onRetry={() => refetch()}
         />
-        {safeReturnUrl ? (
+        {returnUrl ? (
           <button
             type="button"
-            onClick={() => navigate(safeReturnUrl)}
+            onClick={() => navigate(returnUrl)}
             className="mt-4 inline-flex items-center text-indigo-600 hover:text-indigo-800"
           >
             <ArrowLeftIcon className="h-4 w-4 mr-1" />
@@ -127,10 +126,10 @@ const ItemDetailPage = () => {
     <div className="px-4 py-6 sm:px-0">
       <div className="max-w-3xl mx-auto">
         <div className="mb-4 flex items-center justify-between flex-wrap gap-2">
-          {safeReturnUrl ? (
+          {returnUrl ? (
             <button
               type="button"
-              onClick={() => navigate(safeReturnUrl)}
+              onClick={() => navigate(returnUrl)}
               className="inline-flex items-center text-sm font-medium text-gray-600 hover:text-indigo-600"
             >
               <ArrowLeftIcon className="h-4 w-4 mr-1" />

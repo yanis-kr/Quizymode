@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { sanitizeInAppPath } from "@/utils/safeInAppPath";
 import { useParams, useNavigate, useSearchParams } from "react-router-dom";
 import { useQuery, useMutation, useQueryClient } from "@tanstack/react-query";
 import { commentsApi } from "@/api/comments";
@@ -31,7 +32,7 @@ const ItemCommentsPage = () => {
     ? parseInt(currentIndexParam, 10)
     : null;
   const itemIds = itemIdsParam ? itemIdsParam.split(",") : [];
-  const returnUrl = searchParams.get("return");
+  const returnUrl = sanitizeInAppPath(searchParams.get("return"));
   const hasNavigation = mode && currentIndex !== null && itemIds.length > 0;
 
   const handleNavigateBack = () => {
