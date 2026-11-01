@@ -230,13 +230,14 @@ public sealed class TrackAnalyticsEventsTests : DatabaseTestFixture
         { "completion without score", new(AnalyticsEventCatalog.QuizCompleted, "/", RunId: "r", Total: 2) },
         { "score above total", new(AnalyticsEventCatalog.QuizCompleted, "/", RunId: "r", Score: 3, Total: 2) },
         { "negative score", new(AnalyticsEventCatalog.QuizCompleted, "/", RunId: "r", Score: -1, Total: 2) },
-        { "total out of range", new(AnalyticsEventCatalog.QuizCompleted, "/", RunId: "r", Score: 1, Total: 501) },
+        { "total out of range", new(AnalyticsEventCatalog.QuizCompleted, "/", RunId: "r", Score: 1, Total: 1001) },
+        { "score out of range", new(AnalyticsEventCatalog.QuizCompleted, "/", RunId: "r", Score: 1001, Total: 1001) },
         { "field not allowed for event", new(AnalyticsEventCatalog.SignupSubmitted, "/", Score: 1) },
         { "item fields reserved for study events", new(AnalyticsEventCatalog.QuizCompleted, "/", RunId: "r", Score: 1, Total: 2, ItemId: Guid.NewGuid()) },
         { "answer without correctness", new(AnalyticsEventCatalog.QuestionAnswered, "/", RunId: "r", ItemId: Guid.NewGuid(), Position: 1) },
         { "answer without item", new(AnalyticsEventCatalog.QuestionAnswered, "/", RunId: "r", Position: 1, IsCorrect: true) },
         { "answer position zero", new(AnalyticsEventCatalog.QuestionAnswered, "/", RunId: "r", ItemId: Guid.NewGuid(), Position: 0, IsCorrect: true) },
-        { "answer position out of range", new(AnalyticsEventCatalog.QuestionAnswered, "/", RunId: "r", ItemId: Guid.NewGuid(), Position: 501, IsCorrect: true) },
+        { "answer position out of range", new(AnalyticsEventCatalog.QuestionAnswered, "/", RunId: "r", ItemId: Guid.NewGuid(), Position: 1001, IsCorrect: true) },
         { "answer with score", new(AnalyticsEventCatalog.QuestionAnswered, "/", RunId: "r", ItemId: Guid.NewGuid(), Position: 1, IsCorrect: true, Score: 1) },
         { "reveal without position", new(AnalyticsEventCatalog.FlashcardRevealed, "/", RunId: "r", ItemId: Guid.NewGuid()) },
         { "reveal with correctness", new(AnalyticsEventCatalog.FlashcardRevealed, "/", RunId: "r", ItemId: Guid.NewGuid(), Position: 1, IsCorrect: true) },
@@ -256,7 +257,8 @@ public sealed class TrackAnalyticsEventsTests : DatabaseTestFixture
         { "reveal position zero", new(AnalyticsEventCatalog.FlashcardRevealed, "/", RunId: "r", ItemId: Guid.NewGuid(), Position: 0) },
         { "grade position above deck cap", new(AnalyticsEventCatalog.FlashcardGraded, "/", RunId: "r", ItemId: Guid.NewGuid(), Position: 1001, IsCorrect: true) },
         { "grade position zero", new(AnalyticsEventCatalog.FlashcardGraded, "/", RunId: "r", ItemId: Guid.NewGuid(), Position: 0, IsCorrect: true) },
-        { "quick quiz start total above 500", new(AnalyticsEventCatalog.QuickQuizStarted, "/", RunId: "r", Total: 501) },
+        { "quick quiz start total above run cap", new(AnalyticsEventCatalog.QuickQuizStarted, "/", RunId: "r", Total: 1001) },
+        { "share total above run cap", new(AnalyticsEventCatalog.QuizResultShared, "/", RunId: "r", Score: 1, Total: 1001) },
         { "flashcards start without run", new(AnalyticsEventCatalog.FlashcardsStarted, "/", "flashcards") },
     };
 
@@ -275,6 +277,35 @@ public sealed class TrackAnalyticsEventsTests : DatabaseTestFixture
         new TrackAnalyticsEvents.Validator().Validate(request).IsValid.Should().BeTrue();
     }
 
+    [Theory]
+    [InlineData(501)]
+    [InlineData(1000)]
+    public void Validator_AcceptsQuizRunsPastFiveHundred(int size)
+    {
+        TrackAnalyticsEvents.Request request = new("session",
+        [
+            new(AnalyticsEventCatalog.QuickQuizStarted, "/quiz", "quiz", RunId: "r", Total: size),
+            new(AnalyticsEventCatalog.QuestionAnswered, "/quiz", RunId: "r", ItemId: Guid.NewGuid(), Position: size, IsCorrect: true),
+            new(AnalyticsEventCatalog.QuizCompleted, "/quiz", RunId: "r", Score: size, Total: size),
+            new(AnalyticsEventCatalog.QuizResultShared, "/quiz", RunId: "r", Score: size, Total: size)
+        ]);
+
+        new TrackAnalyticsEvents.Validator().Validate(request).IsValid.Should().BeTrue();
+    }
+
+    [Fact]
+    public async Task HandleAsync_AcceptsLargeQuizRunBatch()
+    {
+        TrackAnalyticsEvents.Response response = await Track(
+            "s",
+            new(AnalyticsEventCatalog.QuickQuizStarted, "/quiz", "quiz", RunId: "run-1", Total: 1000),
+            new(AnalyticsEventCatalog.QuestionAnswered, "/quiz", "quiz", RunId: "run-1", ItemId: Guid.NewGuid(), Position: 750, IsCorrect: true),
+            new(AnalyticsEventCatalog.QuizCompleted, "/quiz", "quiz", RunId: "run-1", Score: 600, Total: 1000));
+
+        response.Should().Be(new TrackAnalyticsEvents.Response(3, 0));
+        (await DbContext.AnalyticsEvents.CountAsync()).Should().Be(3);
+    }
+
     [Fact]
     public async Task HandleAsync_AcceptsLargeFlashcardDeckBatch()
     {
@@ -288,15 +319,17 @@ public sealed class TrackAnalyticsEventsTests : DatabaseTestFixture
     }
 
     [Fact]
-    public void Validator_KeepsFiveHundredBoundForNonFlashcardEvents()
+    public void Validator_KeepsFiveHundredBoundForNonFlashcardNonQuizEvents()
     {
         TrackAnalyticsEvents.Validator validator = new();
         validator.Validate(new TrackAnalyticsEvents.Request("s",
-            [new(AnalyticsEventCatalog.QuickQuizStarted, "/", RunId: "r", Total: 501)])).IsValid.Should().BeFalse();
+            [new(AnalyticsEventCatalog.GameStarted, "/", RunId: "r", Total: 501)])).IsValid.Should().BeFalse();
         validator.Validate(new TrackAnalyticsEvents.Request("s",
-            [new(AnalyticsEventCatalog.QuestionAnswered, "/", RunId: "r", ItemId: Guid.NewGuid(), Position: 501, IsCorrect: true)])).IsValid.Should().BeFalse();
+            [new(AnalyticsEventCatalog.GameCompleted, "/", RunId: "r", Score: 1, Total: 501)])).IsValid.Should().BeFalse();
         validator.Validate(new TrackAnalyticsEvents.Request("s",
-            [Completed("r", 1, 501)])).IsValid.Should().BeFalse();
+            [new(AnalyticsEventCatalog.SearchResultClicked, "/", Position: 501)])).IsValid.Should().BeFalse();
+        validator.Validate(new TrackAnalyticsEvents.Request("s",
+            [new(AnalyticsEventCatalog.TopicSuggestionShown, "/", RunId: "r", Total: 501)])).IsValid.Should().BeFalse();
         validator.Validate(new TrackAnalyticsEvents.Request("s",
             [new(AnalyticsEventCatalog.FlashcardsStarted, "/", "flashcards", RunId: "r", Total: 1001),
              new(AnalyticsEventCatalog.FlashcardsStarted, "/", "flashcards", RunId: "r2", Total: 5)])).IsValid.Should().BeFalse();

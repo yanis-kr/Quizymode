@@ -6,6 +6,12 @@ updates:
       interval: weekly
       day: monday
     open-pull-requests-limit: 5
+    ignore:
+      # React Compiler lint rules from these versions flag ~34 existing components; refactor tracked in #425.
+      - dependency-name: eslint-plugin-react-hooks
+        versions: [">=7.1.0"]
+      - dependency-name: eslint-plugin-react-refresh
+        versions: [">=0.5.0"]
     groups:
       minor-and-patch:
         applies-to: version-updates

@@ -506,7 +506,7 @@ const QuizModePageContent = () => {
     singleItemData,
     storedItems,
   ]);
-  // AC 3.18.2: a Test uses the first 500 playable items so every analytics event stays inside the API limits.
+  // AC 3.18.2: a Test uses the first 500 playable items.
   const availableItems = useMemo(
     () => (mode === "test" ? playableItems.slice(0, TEST_MAX_QUESTIONS) : playableItems),
     [mode, playableItems],
