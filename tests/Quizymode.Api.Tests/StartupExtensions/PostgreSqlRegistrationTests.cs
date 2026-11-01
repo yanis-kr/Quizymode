@@ -86,7 +86,7 @@ public sealed class PostgreSqlRegistrationTests(PostgresContainerFixture fixture
         Skip.If(fixture.UnavailableReason is not null, fixture.UnavailableReason);
         using ServiceProvider provider = Build(new()
         {
-            ["ConnectionStrings:PostgreSQL"] = fixture.ConnectionString + ";Timeout=2",
+            ["ConnectionStrings:PostgreSQL"] = fixture.ConnectionString + ";Timeout=30",
             ["Database:MaxPoolSize"] = "5",
         });
 
@@ -102,8 +102,10 @@ public sealed class PostgreSqlRegistrationTests(PostgresContainerFixture fixture
 
             using IServiceScope sixth = provider.CreateScope();
             ApplicationDbContext db6 = sixth.ServiceProvider.GetRequiredService<ApplicationDbContext>();
-            Func<Task> open = () => db6.Database.OpenConnectionAsync();
-            await open.Should().ThrowAsync<Exception>("the pool is capped at 5 and the sixth open times out");
+            // A cancellation token (not a short Timeout=, which also governs connect time) bounds the sixth open.
+            using CancellationTokenSource cts = new(TimeSpan.FromSeconds(1));
+            Func<Task> open = () => db6.Database.OpenConnectionAsync(cts.Token);
+            await open.Should().ThrowAsync<OperationCanceledException>("the pool is capped at 5 and the sixth open waits until cancelled");
 
             await scopes[0].ServiceProvider.GetRequiredService<ApplicationDbContext>().Database.CloseConnectionAsync();
             await db6.Database.OpenConnectionAsync();

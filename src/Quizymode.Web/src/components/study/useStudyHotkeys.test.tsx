@@ -1,3 +1,4 @@
+import { useLayoutEffect } from "react";
 import { beforeEach, describe, expect, it, vi } from "vitest";
 import { act, fireEvent, render, screen } from "@testing-library/react";
 import { installMemoryLocalStorage } from "@/test/memoryStorage";
@@ -149,6 +150,30 @@ describe("useStudyHotkeys", () => {
     expect(flip).not.toHaveBeenCalled();
     fireEvent.keyDown(document.body, { key: "?" });
     expect(flip).not.toHaveBeenCalled();
+  });
+
+  it("uses the bindings of the render a key is pressed right after, before passive effects run", () => {
+    function Dispatcher({ fire }: { fire: boolean }) {
+      // Sibling layout effects run after the hook's own layout effects and before any passive effect.
+      useLayoutEffect(() => {
+        if (fire) document.dispatchEvent(new KeyboardEvent("keydown", { key: "1", code: "Digit1", bubbles: true, cancelable: true }));
+      }, [fire]);
+      return null;
+    }
+    const digit = vi.fn();
+    const { rerender } = render(
+      <>
+        <Harness bindings={{}} />
+        <Dispatcher fire={false} />
+      </>
+    );
+    rerender(
+      <>
+        <Harness bindings={{ digit }} />
+        <Dispatcher fire />
+      </>
+    );
+    expect(digit).toHaveBeenCalledWith(1);
   });
 
   it("does not prevent default for keys without a binding", () => {

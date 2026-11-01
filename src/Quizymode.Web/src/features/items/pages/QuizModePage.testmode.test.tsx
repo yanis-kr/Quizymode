@@ -542,9 +542,12 @@ describe("QuizModePage Test mode (AC 3.18)", () => {
       expect(await screen.findByRole("heading", { name: "Test complete" })).toBeInTheDocument();
       expect(screen.getByText("Time ran out. Your test was submitted automatically.")).toBeInTheDocument();
       expect(screen.getByText("Time taken 10:00 of 10:00")).toBeInTheDocument();
-      const stored = JSON.parse(sessionStorage.getItem("navigationContext_quiz")!) as { quizRun: QuizRunState };
-      expect(stored.quizRun.submittedAt).toBe("2026-10-20T09:10:00.000Z");
-      expect(stored.quizRun.completedAt).toBe("2026-10-20T09:10:00.000Z");
+      // The run is persisted from an effect after the heading renders; vi.waitFor polls on real timers even while timers are faked.
+      await vi.waitFor(() => {
+        const stored = JSON.parse(sessionStorage.getItem("navigationContext_quiz")!) as { quizRun: QuizRunState };
+        expect(stored.quizRun.submittedAt).toBe("2026-10-20T09:10:00.000Z");
+        expect(stored.quizRun.completedAt).toBe("2026-10-20T09:10:00.000Z");
+      });
       expect(published).toHaveLength(1);
       expect(names(mockTrackEventOnce).filter((name) => name === "quiz_completed")).toHaveLength(1);
       expect(readGuestHistory()).toHaveLength(1);
