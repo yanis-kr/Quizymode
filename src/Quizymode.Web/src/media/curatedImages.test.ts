@@ -46,8 +46,9 @@ describe("resolveCuratedImage", () => {
     expect(resolveCuratedImage(undefined as unknown as string, map)).toBeNull();
   });
 
-  it("returns null when nothing is bundled", () => {
-    expect(resolveCuratedImage("curated:flags/fr")).toBeNull();
+  it("resolves bundled assets from the default map and returns null for an unbundled key", () => {
+    expect(resolveCuratedImage("curated:flags/fr")).toEqual(expect.stringContaining(".webp"));
+    expect(resolveCuratedImage("curated:flags/zz")).toBeNull();
   });
 });
 
@@ -95,6 +96,7 @@ describe("seed data questionImage keys", () => {
         }
       }
     }
+    expect(keys.size).toBeGreaterThanOrEqual(195);
     const unresolved = [...keys].filter((key) => resolveCuratedImage(key) === null);
     expect(unresolved).toEqual([]);
   });

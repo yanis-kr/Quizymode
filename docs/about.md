@@ -22,3 +22,7 @@ Content lives in clear category and keyword paths so it is easy to browse, drill
 You can upload questions, group them into collections, and share them with others. A teacher or tutor can upload a study guide, turn it into a collection, and share it with a class so students can review questions, see answers and explanations, and practice in quiz mode.
 
 Content can be submitted for public review, and you can request more questions for any topic that needs better coverage.
+
+## Image credits
+
+Country flag pictures are files from [Wikimedia Commons](https://commons.wikimedia.org/), converted to WebP. All 195 flag files are marked public domain on Commons, so no attribution is required; the source page of each picture is linked from its question's source field. Where a flag file lists a vector author on Commons, the author is recorded in `data/curated-media/flags/manifest.json`. The flag of Oman comes from the public-domain CIA World Factbook set hosted on Commons (2:1 proportions, the ratio before the 2004 decree).

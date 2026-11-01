@@ -1,0 +1,134 @@
+[
+  {
+    "itemId": "13671082-0f11-51b5-a08d-a09395aaab6f",
+    "category": "geography",
+    "navigationKeyword1": "flags",
+    "navigationKeyword2": "countries",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Vatican City",
+    "incorrectAnswers": [
+      "Germany",
+      "Belarus",
+      "Austria"
+    ],
+    "explanation": "This is the flag of Vatican City. A square flag with a yellow vertical band at the left and a white band at the right holding crossed keys beneath a triple crown.",
+    "keywords": [
+      "europe"
+    ],
+    "source": "https://commons.wikimedia.org/wiki/File:Flag_of_Vatican_City_(2023%E2%80%93present).svg",
+    "questionImage": {
+      "key": "curated:flags/va",
+      "altText": "A square flag with a yellow vertical band at the left and a white band at the right holding crossed keys beneath a triple crown."
+    }
+  },
+  {
+    "itemId": "3f0a2247-759e-5789-b5fd-97013315b729",
+    "category": "geography",
+    "navigationKeyword1": "flags",
+    "navigationKeyword2": "countries",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Venezuela",
+    "incorrectAnswers": [
+      "Colombia",
+      "Ecuador",
+      "Chile"
+    ],
+    "explanation": "This is the flag of Venezuela. Three equal horizontal stripes of yellow, blue and red, with an arc of eight white stars in the blue stripe.",
+    "keywords": [
+      "south-america"
+    ],
+    "source": "https://commons.wikimedia.org/wiki/File:Flag_of_Venezuela.svg",
+    "questionImage": {
+      "key": "curated:flags/ve",
+      "altText": "Three equal horizontal stripes of yellow, blue and red, with an arc of eight white stars in the blue stripe."
+    }
+  },
+  {
+    "itemId": "419f7bb4-1b5e-536c-af16-969a54bf7a68",
+    "category": "geography",
+    "navigationKeyword1": "flags",
+    "navigationKeyword2": "countries",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Vietnam",
+    "incorrectAnswers": [
+      "Singapore",
+      "China",
+      "T\u00fcrkiye"
+    ],
+    "explanation": "This is the flag of Vietnam. A red field with a large yellow five-pointed star at the centre.",
+    "keywords": [
+      "asia"
+    ],
+    "source": "https://commons.wikimedia.org/wiki/File:Flag_of_Vietnam.svg",
+    "questionImage": {
+      "key": "curated:flags/vn",
+      "altText": "A red field with a large yellow five-pointed star at the centre."
+    }
+  },
+  {
+    "itemId": "12970acd-5c9c-52b1-8527-c18fe6264844",
+    "category": "geography",
+    "navigationKeyword1": "flags",
+    "navigationKeyword2": "countries",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Yemen",
+    "incorrectAnswers": [
+      "Syria",
+      "Kuwait",
+      "Palestine"
+    ],
+    "explanation": "This is the flag of Yemen. Three equal horizontal stripes of red, white and black.",
+    "keywords": [
+      "asia"
+    ],
+    "source": "https://commons.wikimedia.org/wiki/File:Flag_of_Yemen.svg",
+    "questionImage": {
+      "key": "curated:flags/ye",
+      "altText": "Three equal horizontal stripes of red, white and black."
+    }
+  },
+  {
+    "itemId": "4d4e0336-3431-5e46-88fb-4c4880cbf2c0",
+    "category": "geography",
+    "navigationKeyword1": "flags",
+    "navigationKeyword2": "countries",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Zambia",
+    "incorrectAnswers": [
+      "Uganda",
+      "Madagascar",
+      "Cameroon"
+    ],
+    "explanation": "This is the flag of Zambia. A green field with three short vertical stripes of red, black and orange at the lower right and an orange eagle above them.",
+    "keywords": [
+      "africa"
+    ],
+    "source": "https://commons.wikimedia.org/wiki/File:Flag_of_Zambia.svg",
+    "questionImage": {
+      "key": "curated:flags/zm",
+      "altText": "A green field with three short vertical stripes of red, black and orange at the lower right and an orange eagle above them."
+    }
+  },
+  {
+    "itemId": "4414ca00-2072-5f24-a751-e09bb08869d9",
+    "category": "geography",
+    "navigationKeyword1": "flags",
+    "navigationKeyword2": "countries",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Zimbabwe",
+    "incorrectAnswers": [
+      "Ethiopia",
+      "Mauritius",
+      "Equatorial Guinea"
+    ],
+    "explanation": "This is the flag of Zimbabwe. Seven horizontal stripes of green, yellow, red, black, red, yellow and green, with a white triangle at the left holding a red star and a yellow bird.",
+    "keywords": [
+      "africa"
+    ],
+    "source": "https://commons.wikimedia.org/wiki/File:Flag_of_Zimbabwe.svg",
+    "questionImage": {
+      "key": "curated:flags/zw",
+      "altText": "Seven horizontal stripes of green, yellow, red, black, red, yellow and green, with a white triangle at the left holding a red star and a yellow bird."
+    }
+  }
+]
