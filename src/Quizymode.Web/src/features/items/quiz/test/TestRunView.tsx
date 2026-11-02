@@ -3,6 +3,7 @@ import { FlagIcon as FlagOutlineIcon } from "@heroicons/react/24/outline";
 import { FlagIcon as FlagSolidIcon } from "@heroicons/react/24/solid";
 import type { ItemResponse } from "@/types/api";
 import { QuizRenderer } from "@/components/study/QuizRenderer";
+import type { QuestionPictureStatuses } from "@/components/study/pictureGate";
 import { StudyShell, type StudyShellProps } from "@/components/study/StudyShell";
 import { getQuizOptions, type QuizRunState } from "../quizRun";
 import { SubmitTestDialog } from "./SubmitTestDialog";
@@ -30,12 +31,15 @@ interface TestRunViewProps {
   /** Seconds left, or null when the test has no time limit. */
   remainingSec: number | null;
   shell: PassThroughShellProps;
+  /** Question picture statuses, owned by the page so its answer handlers and hotkeys share the same gate (#403). */
+  pictures: QuestionPictureStatuses;
   onPrev: () => void;
   onNext: () => void;
   onJump: (index: number) => void;
   onAnswer: (answer: string) => void;
   onToggleFlag: () => void;
-  onSubmit: () => void;
+  /** Called with the ids of questions whose picture is unavailable right now; they are left out of the score. */
+  onSubmit: (unavailableItemIds: string[]) => void;
 }
 
 /**
@@ -48,6 +52,7 @@ export function TestRunView({
   currentIndex,
   remainingSec,
   shell,
+  pictures,
   onPrev,
   onNext,
   onJump,
@@ -57,7 +62,8 @@ export function TestRunView({
 }: TestRunViewProps) {
   const [submitOpen, setSubmitOpen] = useState(false);
   const currentItem = items[currentIndex];
-  const palette = useMemo(() => getTestPalette(run, currentIndex), [run, currentIndex]);
+  const unavailableIds = pictures.unavailableIds(items);
+  const palette = getTestPalette(run, currentIndex, unavailableIds);
   const options = useMemo(() => (currentItem ? getQuizOptions(currentItem, run.runId) : []), [currentItem, run.runId]);
   const isFlagged = currentItem ? run.flagged.includes(currentItem.id) : false;
   const selectedAnswer = currentItem ? (run.outcomes[currentItem.id]?.selectedAnswer ?? null) : null;
@@ -105,6 +111,7 @@ export function TestRunView({
               revealFeedback={false}
               onAnswerSelect={onAnswer}
               stats={{ total: palette.answered, correct: 0 }}
+              questionPicture={pictures.controlsFor(currentItem, currentIndex < items.length - 1 ? onNext : undefined)}
             />
 
             <button
@@ -128,12 +135,13 @@ export function TestRunView({
           total={items.length}
           unanswered={palette.unanswered}
           flagged={palette.flagged}
+          notScored={palette.notScored}
           onReturn={() => setSubmitOpen(false)}
           onShowUnanswered={() => jumpToFirst((entry) => !entry.answered)}
           onShowFlagged={() => jumpToFirst((entry) => entry.flagged)}
           onSubmit={() => {
             setSubmitOpen(false);
-            onSubmit();
+            onSubmit(unavailableIds);
           }}
         />
       )}

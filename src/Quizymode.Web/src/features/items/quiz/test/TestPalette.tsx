@@ -1,5 +1,5 @@
 import { useRef, useState } from "react";
-import { CheckIcon, FlagIcon } from "@heroicons/react/24/solid";
+import { CheckIcon, ExclamationTriangleIcon, FlagIcon } from "@heroicons/react/24/solid";
 import { dialogSecondaryButton, TestDialog } from "./TestDialog";
 import { paletteEntryLabel, type TestPalette as TestPaletteData } from "./paletteSelectors";
 
@@ -19,13 +19,20 @@ function PaletteGrid({ palette, onSelect }: PaletteGridProps) {
             onClick={() => onSelect(index)}
             aria-label={paletteEntryLabel(entry)}
             aria-current={entry.current ? "step" : undefined}
-            className={`relative flex h-10 w-10 items-center justify-center rounded-md border text-sm font-medium focus:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500 ${
-              entry.answered ? "border-slate-700 bg-slate-700 text-white" : "border-gray-300 bg-white text-gray-800"
+            className={`relative flex h-11 w-11 items-center justify-center rounded-md border text-sm font-medium focus:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500 ${
+              entry.notScored
+                ? "border-dashed border-amber-500 bg-amber-50 text-amber-900"
+                : entry.answered
+                  ? "border-slate-700 bg-slate-700 text-white"
+                  : "border-gray-300 bg-white text-gray-800"
             } ${entry.current ? "ring-2 ring-indigo-500 ring-offset-2" : ""}`}
           >
             <span aria-hidden="true">{entry.position}</span>
             {entry.answered && (
               <CheckIcon className="absolute bottom-0.5 right-0.5 h-3 w-3 text-white" aria-hidden="true" />
+            )}
+            {entry.notScored && (
+              <ExclamationTriangleIcon className="absolute bottom-0.5 right-0.5 h-3 w-3 text-amber-700" aria-hidden="true" />
             )}
             {entry.flagged && (
               <FlagIcon
@@ -39,13 +46,20 @@ function PaletteGrid({ palette, onSelect }: PaletteGridProps) {
       <p className="mt-3 text-xs text-gray-600">
         <span className="font-medium">Answered</span> (check) · <span className="font-medium">Unanswered</span> (number only) ·{" "}
         <span className="font-medium">Flagged</span> (flag)
+        {palette.notScored > 0 && (
+          <>
+            {" "}
+            · <span className="font-medium">Not scored (picture unavailable)</span> (warning)
+          </>
+        )}
       </p>
     </>
   );
 }
 
 function counts(palette: TestPaletteData): string {
-  return `${palette.answered} answered · ${palette.unanswered} unanswered · ${palette.flagged} flagged`;
+  const text = `${palette.answered} answered · ${palette.unanswered} unanswered · ${palette.flagged} flagged`;
+  return palette.notScored > 0 ? `${text} · ${palette.notScored} not scored` : text;
 }
 
 interface TestPalettePanelProps {

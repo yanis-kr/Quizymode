@@ -11860,6 +11860,9 @@
           },
           "total": {
             "$ref": "#/components/schemas/System.Int32"
+          },
+          "skipped": {
+            "$ref": "#/components/schemas/System.Int32"
           }
         }
       },
@@ -11898,6 +11901,9 @@
           },
           "completedAt": {
             "$ref": "#/components/schemas/System.DateTime"
+          },
+          "skipped": {
+            "$ref": "#/components/schemas/System.Int32"
           }
         }
       },
@@ -12215,9 +12221,12 @@
           },
           "status": {
             "$ref": "#/components/schemas/System.String"
+          },
+          "excludedPictures": {
+            "$ref": "#/components/schemas/System.Int32"
           }
         },
-        "description": "One requested scope: its eligible count, how many of those made it into the roster, and ok/empty status."
+        "description": "One requested scope: its eligible count, how many of those made it into the roster, ok/empty status, and how many\nvisible picture questions in scope are not playable as games (#403)."
       },
       "Quizymode.Api.Features.Ideas.IdeaBoardResponse": {
         "required": [
@@ -12712,6 +12721,12 @@
                 "$ref": "#/components/schemas/System.String"
               }
             ]
+          },
+          "questionImage": {
+            "description": "Not supported; omit or send null. A non-null value is rejected with 400 (curated pictures are added through seed data)."
+          },
+          "explanationImage": {
+            "description": "Not supported; omit or send null. A non-null value is rejected with 400 (curated pictures are added through seed data)."
           }
         }
       },
@@ -12914,6 +12929,12 @@
                 "$ref": "#/components/schemas/System.String"
               }
             ]
+          },
+          "questionImage": {
+            "description": "Not supported; omit or send null. A non-null value is rejected with 400 (curated pictures are added through seed data)."
+          },
+          "explanationImage": {
+            "description": "Not supported; omit or send null. A non-null value is rejected with 400 (curated pictures are added through seed data)."
           }
         }
       },
@@ -13096,6 +13117,16 @@
                 "$ref": "#/components/schemas/Quizymode.Api.Shared.Models.ItemImageReference"
               }
             ]
+          },
+          "explanationImage": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/components/schemas/Quizymode.Api.Shared.Models.ItemImageReference"
+              }
+            ]
           }
         }
       },
@@ -13245,6 +13276,16 @@
             ]
           },
           "questionImage": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/components/schemas/Quizymode.Api.Shared.Models.ItemImageReference"
+              }
+            ]
+          },
+          "explanationImage": {
             "oneOf": [
               {
                 "type": "null"
@@ -13496,6 +13537,16 @@
                 "$ref": "#/components/schemas/Quizymode.Api.Shared.Models.ItemImageReference"
               }
             ]
+          },
+          "explanationImage": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/components/schemas/Quizymode.Api.Shared.Models.ItemImageReference"
+              }
+            ]
           }
         }
       },
@@ -13567,6 +13618,16 @@
             ]
           },
           "questionImage": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/components/schemas/Quizymode.Api.Shared.Models.ItemImageReference"
+              }
+            ]
+          },
+          "explanationImage": {
             "oneOf": [
               {
                 "type": "null"
@@ -13688,6 +13749,16 @@
                 "$ref": "#/components/schemas/Quizymode.Api.Shared.Models.ItemImageReference"
               }
             ]
+          },
+          "explanationImage": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/components/schemas/Quizymode.Api.Shared.Models.ItemImageReference"
+              }
+            ]
           }
         }
       },
@@ -13781,6 +13852,16 @@
             ]
           },
           "questionImage": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/components/schemas/Quizymode.Api.Shared.Models.ItemImageReference"
+              }
+            ]
+          },
+          "explanationImage": {
             "oneOf": [
               {
                 "type": "null"

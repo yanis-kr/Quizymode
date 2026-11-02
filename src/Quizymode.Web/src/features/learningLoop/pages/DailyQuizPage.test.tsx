@@ -67,7 +67,7 @@ describe("DailyQuizPage", () => {
     await answerAll(["b"]);
 
     expect(await screen.findByText(/Counted for today · 3-day streak/)).toBeInTheDocument();
-    expect(dailyQuizApi.complete).toHaveBeenCalledWith("2026-10-18", 1, 2);
+    expect(dailyQuizApi.complete).toHaveBeenCalledWith("2026-10-18", 1, 2, 0);
     await waitFor(() =>
       expect(saveStudySession).toHaveBeenCalledWith(expect.objectContaining({ source: null, correct: 1, total: 2, missedItemIds: ["a"] })),
     );
@@ -90,6 +90,99 @@ describe("DailyQuizPage", () => {
     await answerAll([]);
     expect(await screen.findByText(/Practice run: today's result was already counted/)).toBeInTheDocument();
     expect(dailyQuizApi.complete).not.toHaveBeenCalled();
+  });
+
+  describe("unavailable pictures (#403)", () => {
+    const brokenPicture = { key: "curated:flags/zz", altText: "Not bundled" };
+    const pictureItems = [{ ...testItem("a"), questionImage: brokenPicture }, testItem("b")];
+
+    it("signed in: skipping a question posts skipped, scores the rest and keeps the streak", async () => {
+      auth.value = { isAuthenticated: true, isLoading: false, userId: "user-1" };
+      vi.mocked(dailyQuizApi.get).mockResolvedValue({ date: "2026-10-18", items: pictureItems, completion: null, streak: 2 });
+      vi.mocked(dailyQuizApi.complete).mockResolvedValue({
+        created: true,
+        streak: 3,
+        completion: { correct: 1, total: 2, skipped: 1, completedAt: "2026-10-18T10:00:00Z" },
+      });
+
+      renderWithProviders(<DailyQuizPage />);
+      expect(await screen.findByText("Picture isn't available")).toBeInTheDocument();
+      expect(screen.getByRole("button", { name: /Right a/ })).toBeDisabled();
+      fireEvent.click(screen.getByRole("button", { name: "Skip question (not scored)" }));
+      fireEvent.click(await screen.findByRole("button", { name: /Right b/ }));
+      fireEvent.click(screen.getByRole("button", { name: "View results" }));
+
+      expect(await screen.findByText(/Counted for today · 3-day streak/)).toBeInTheDocument();
+      expect(dailyQuizApi.complete).toHaveBeenCalledWith("2026-10-18", 1, 2, 1);
+      expect(screen.getByText("1 / 1")).toBeInTheDocument();
+      expect(screen.getByText("1 question skipped because the picture was unavailable. Not scored.")).toBeInTheDocument();
+      await waitFor(() =>
+        expect(saveStudySession).toHaveBeenCalledWith(expect.objectContaining({ correct: 1, total: 1, missedItemIds: [] })),
+      );
+    });
+
+    it("signed in: skipping every question still posts the completion but saves no study session", async () => {
+      auth.value = { isAuthenticated: true, isLoading: false, userId: "user-1" };
+      const allBroken = [
+        { ...testItem("a"), questionImage: brokenPicture },
+        { ...testItem("b"), questionImage: brokenPicture },
+      ];
+      vi.mocked(dailyQuizApi.get).mockResolvedValue({ date: "2026-10-18", items: allBroken, completion: null, streak: 0 });
+      vi.mocked(dailyQuizApi.complete).mockResolvedValue({
+        created: true,
+        streak: 1,
+        completion: { correct: 0, total: 2, skipped: 2, completedAt: "2026-10-18T10:00:00Z" },
+      });
+
+      renderWithProviders(<DailyQuizPage />);
+      fireEvent.click(await screen.findByRole("button", { name: "Skip question (not scored)" }));
+      fireEvent.click(await screen.findByRole("button", { name: "Skip question (not scored)" }));
+      fireEvent.click(await screen.findByRole("button", { name: "View results" }));
+
+      expect(await screen.findByText("No questions were scored")).toBeInTheDocument();
+      await waitFor(() => expect(dailyQuizApi.complete).toHaveBeenCalledWith("2026-10-18", 0, 2, 2));
+      expect(saveStudySession).not.toHaveBeenCalled();
+    });
+
+    it("anonymous: keeps skipped in the local completion record", async () => {
+      vi.mocked(dailyQuizApi.get).mockResolvedValue({ date: "2026-10-18", items: pictureItems, completion: null, streak: null });
+
+      renderWithProviders(<DailyQuizPage />);
+      fireEvent.click(await screen.findByRole("button", { name: "Skip question (not scored)" }));
+      fireEvent.click(await screen.findByRole("button", { name: /Right b/ }));
+      fireEvent.click(screen.getByRole("button", { name: "View results" }));
+
+      await screen.findByText(/Counted for today/);
+      expect(readDailyCompletions()).toEqual([{ date: "2026-10-18", correct: 1, total: 2, skipped: 1 }]);
+    });
+
+    it("reads No questions were scored on the done card when every question was skipped", async () => {
+      auth.value = { isAuthenticated: true, isLoading: false, userId: "user-1" };
+      vi.mocked(dailyQuizApi.get).mockResolvedValue({
+        date: "2026-10-18",
+        items,
+        completion: { correct: 0, total: 2, skipped: 2, completedAt: "2026-10-18T09:00:00Z" },
+        streak: 4,
+      });
+      renderWithProviders(<DailyQuizPage />);
+      expect(await screen.findByText("Done for today. No questions were scored")).toBeInTheDocument();
+      expect(screen.queryByText(/0 \/ 0/)).not.toBeInTheDocument();
+    });
+
+    it("shows the done card as correct out of scored questions with the skipped note", async () => {
+      auth.value = { isAuthenticated: true, isLoading: false, userId: "user-1" };
+      vi.mocked(dailyQuizApi.get).mockResolvedValue({
+        date: "2026-10-18",
+        items,
+        completion: { correct: 1, total: 2, skipped: 1, completedAt: "2026-10-18T09:00:00Z" },
+        streak: 4,
+      });
+
+      renderWithProviders(<DailyQuizPage />);
+
+      expect(await screen.findByText("Done for today: 1 / 1")).toBeInTheDocument();
+      expect(screen.getByText("1 question skipped because the picture was unavailable. Not scored.")).toBeInTheDocument();
+    });
   });
 
   it("shows empty and error states", async () => {

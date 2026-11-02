@@ -214,6 +214,13 @@ public static class UpdateItem
                 return Result.Failure<Response>(accessError);
             }
 
+            // Pictures are preserved by PUT; an explanation picture needs explanation text to illustrate (#403).
+            if (item.ExplanationImageKey is not null && string.IsNullOrWhiteSpace(request.Explanation))
+            {
+                return Result.Failure<Response>(
+                    Error.Validation("Item.ExplanationRequiredForImage", ItemImageReferenceHelper.ExplanationRequiredForUpdateMessage));
+            }
+
             string questionText = $"{request.Question} {request.CorrectAnswer} {string.Join(" ", request.IncorrectAnswers)}";
             string fuzzySignature = simHashService.ComputeSimHash(questionText);
             int fuzzyBucket = simHashService.GetFuzzyBucket(fuzzySignature);

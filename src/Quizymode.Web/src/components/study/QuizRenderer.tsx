@@ -8,6 +8,8 @@ import { SpeakButton } from "@/components/SpeakButton";
 import { useSpeech } from "@/hooks/useSpeech";
 import { PronunciationHint } from "@/components/items/PronunciationHint";
 import { QuestionImage } from "@/components/study/QuestionImage";
+import { PICTURE_REQUIRED_NOTE_ID, type QuestionPictureControls } from "@/components/study/pictureGate";
+import { PictureGateNotes } from "@/components/study/PictureGateNotes";
 import { ForeignPhraseText } from "@/components/ForeignPhraseText";
 import { getIndexedSpeech } from "@/utils/itemSpeech";
 import { toPlainText } from "@/utils/foreignPhrase";
@@ -31,7 +33,16 @@ export interface TypedAnswerControls {
   continueLabel: string;
 }
 
-function TypedAnswerPanel({ item, controls }: { item: ItemResponse; controls: TypedAnswerControls }) {
+function TypedAnswerPanel({
+  item,
+  controls,
+  disabled,
+}: {
+  item: ItemResponse;
+  controls: TypedAnswerControls;
+  /** True while the question picture is not showing (#403): typing and checking are off. */
+  disabled: boolean;
+}) {
   const [text, setText] = useState("");
   const continueRef = useRef<HTMLButtonElement>(null);
   const { result } = controls;
@@ -43,7 +54,7 @@ function TypedAnswerPanel({ item, controls }: { item: ItemResponse; controls: Ty
   }, [awaitingContinue]);
 
   const submit = () => {
-    if (result || text.trim().length === 0) return;
+    if (disabled || result || text.trim().length === 0) return;
     controls.onSubmit(text);
   };
 
@@ -65,6 +76,7 @@ function TypedAnswerPanel({ item, controls }: { item: ItemResponse; controls: Ty
             }
           }}
           readOnly={result !== null}
+          disabled={disabled}
           autoComplete="off"
           autoCorrect="off"
           autoCapitalize="off"
@@ -75,7 +87,7 @@ function TypedAnswerPanel({ item, controls }: { item: ItemResponse; controls: Ty
           <button
             type="button"
             onClick={submit}
-            disabled={text.trim().length === 0}
+            disabled={disabled || text.trim().length === 0}
             className="rounded-md bg-indigo-600 px-4 py-2 font-semibold text-white hover:bg-indigo-700 disabled:cursor-not-allowed disabled:opacity-50"
           >
             Check answer
@@ -127,6 +139,8 @@ export interface QuizRendererProps {
    */
   revealFeedback?: boolean;
   typedAnswer?: TypedAnswerControls;
+  /** Gate for the question picture (#403). Omit only where the item can never have one. */
+  questionPicture?: QuestionPictureControls;
 }
 
 export function QuizRenderer({
@@ -138,8 +152,10 @@ export function QuizRenderer({
   stats,
   revealFeedback = true,
   typedAnswer,
+  questionPicture,
 }: QuizRendererProps) {
   const { isSupported } = useSpeech();
+  const pictureBlocked = questionPicture?.blocked ?? false;
   const typedActive = typedAnswer !== undefined && (typedAnswer.enabled || typedAnswer.result !== null);
 
   return (
@@ -156,7 +172,13 @@ export function QuizRenderer({
         </div>
         <p className="text-gray-700"><ForeignPhraseText text={item.question} /></p>
         <PronunciationHint text={item.question} speech={item.questionSpeech} />
-        <QuestionImage key={item.id} image={item.questionImage} className="mt-3" />
+        <QuestionImage
+          key={item.id}
+          image={item.questionImage}
+          className="mt-3"
+          onStatusChange={questionPicture?.onStatusChange}
+          onSkip={questionPicture?.onSkip}
+        />
       </div>
 
       {typedAnswer && !showAnswer && typedAnswer.isTypeable && (
@@ -164,6 +186,7 @@ export function QuizRenderer({
           <input
             type="checkbox"
             checked={typedAnswer.enabled}
+            disabled={pictureBlocked}
             onChange={(event) => typedAnswer.onEnabledChange(event.target.checked)}
           />
           Type answer
@@ -173,14 +196,24 @@ export function QuizRenderer({
         <p className="text-sm text-gray-500">This answer is too long to type, so choose an option.</p>
       )}
 
-      {typedActive && typedAnswer && <TypedAnswerPanel key={item.id} item={item} controls={typedAnswer} />}
+      {typedActive && typedAnswer && (
+        <TypedAnswerPanel key={item.id} item={item} controls={typedAnswer} disabled={pictureBlocked} />
+      )}
+
+      <PictureGateNotes controls={questionPicture} />
 
       {!typedActive && (
       <div>
         <h3 className="text-base font-medium text-gray-900 mb-1">
           Select an answer:
         </h3>
-        <div className="space-y-1.5">
+        <div
+          role="group"
+          aria-label="Answer options"
+          aria-disabled={pictureBlocked || undefined}
+          aria-describedby={pictureBlocked ? PICTURE_REQUIRED_NOTE_ID : undefined}
+          className="space-y-1.5"
+        >
           {options.map((option, index) => {
             const letter = String.fromCharCode(65 + index);
             const isCorrect = option === item.correctAnswer;
@@ -212,11 +245,15 @@ export function QuizRenderer({
                 key={index}
                 type="button"
                 onClick={() => onAnswerSelect(option)}
-                disabled={revealFeedback && showAnswer}
+                disabled={(revealFeedback && showAnswer) || pictureBlocked}
                 aria-pressed={revealFeedback ? undefined : isSelected}
                 aria-keyshortcuts={`${index + 1} ${letter}`}
                 className={`w-full text-left px-3 py-2 border-2 rounded-lg ${bgColor} ${motion} ${
-                  revealFeedback && showAnswer ? "cursor-default" : "cursor-pointer"
+                  pictureBlocked
+                    ? "cursor-not-allowed opacity-60"
+                    : revealFeedback && showAnswer
+                      ? "cursor-default"
+                      : "cursor-pointer"
                 }`}
               >
                 <div className={showsCorrect || showsWrong || isNeutralSelected ? "relative pr-7" : "relative"}>
@@ -267,6 +304,13 @@ export function QuizRenderer({
           {item.explanation && (
             <p className="text-sm text-blue-700 mt-1"><ForeignPhraseText text={item.explanation} linkify /></p>
           )}
+          {/* Mounted only once the answer is revealed: the picture can show the answer (#403). */}
+          <QuestionImage
+            key={`${item.id}-explanation`}
+            image={item.explanationImage}
+            slot="explanation"
+            className="mt-3 rounded-lg bg-white"
+          />
         </div>
       )}
 

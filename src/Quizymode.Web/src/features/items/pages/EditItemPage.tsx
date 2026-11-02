@@ -307,6 +307,16 @@ const EditItemPage = () => {
           </div>
         )}
 
+        {itemData.explanationImage && (
+          <div className="mb-6" data-testid="edit-item-explanation-picture">
+            <p className="mb-2 text-sm font-medium text-gray-700">Explanation picture (read-only)</p>
+            <QuestionImage image={itemData.explanationImage} slot="explanation" />
+            <p className="mt-2 text-center text-xs text-gray-500">
+              Picture comes from seed data; saving keeps it. The explanation can&apos;t be emptied while it is set.
+            </p>
+          </div>
+        )}
+
         <ItemForm
           mode="edit"
           values={formData}

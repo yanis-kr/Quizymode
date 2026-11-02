@@ -318,6 +318,36 @@ describe("UploadToCollectionPage", () => {
     expect(itemsApi.uploadToCollection).not.toHaveBeenCalled();
   });
 
+  it("rejects a pasted item with a picture before sending, names the item and field, and disables Upload until edited (#403)", async () => {
+    const user = userEvent.setup({ delay: null });
+    renderPage("/items/upload-to-collection?category=science&keywords=anatomy,muscular");
+    await screen.findByLabelText(/^category \*$/i);
+    await waitFor(() => {
+      expect(screen.getByLabelText(/primary topic/i)).toHaveValue("anatomy");
+    });
+
+    await user.click(screen.getByLabelText(/json array of items/i));
+    await user.paste(
+      JSON.stringify([
+        { question: "Q1", correctAnswer: "A", incorrectAnswers: ["W1"], questionImage: null, explanationImage: null },
+        { question: "Q2", correctAnswer: "A", incorrectAnswers: ["W1"], questionImage: { key: "curated:flags/fr", altText: "x" } },
+      ])
+    );
+    const upload = screen.getByRole("button", { name: /upload and open collection/i });
+    await user.click(upload);
+
+    expect(
+      await screen.findByText(
+        `Item 2 has "questionImage". Pictures can't be imported. Remove questionImage and explanationImage from your JSON. Curated pictures are added through seed data.`
+      )
+    ).toBeInTheDocument();
+    expect(itemsApi.uploadToCollection).not.toHaveBeenCalled();
+    expect(upload).toBeDisabled();
+
+    await user.type(screen.getByLabelText(/json array of items/i), " ");
+    expect(screen.getByRole("button", { name: /upload and open collection/i })).toBeEnabled();
+  });
+
   it("sends a trimmed group label, drops blank or missing ones and stringifies non-strings (#359)", async () => {
     // AC 2.6.14
     const user = userEvent.setup({ delay: null });

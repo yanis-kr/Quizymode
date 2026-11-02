@@ -16,6 +16,7 @@ import { useTopicSuggestionAnalytics } from "@/features/topics/topicSuggestionAn
 import { DocumentArrowUpIcon, ClipboardDocumentIcon } from "@heroicons/react/24/outline";
 import ContentComplianceNotice from "@/features/legal/components/ContentComplianceNotice";
 import PasteTextImport from "@/features/collections/components/PasteTextImport";
+import { findPictureImportError } from "@/features/items/utils/pictureImport";
 import { ADMIN_ITEM_LIMIT, NON_ADMIN_ITEM_LIMIT, type ImportItem } from "@/features/collections/utils/importParser";
 
 type UploadTab = "json" | "paste";
@@ -78,6 +79,8 @@ const UploadToCollectionPage = ({
   const [rank2Name, setRank2Name] = React.useState(keywordsFromUrl[1] ?? "");
   const [jsonText, setJsonText] = React.useState("");
   const [parseError, setParseError] = React.useState<string | null>(null);
+  // True while the error is the picture rejection (#403): Upload stays off until the JSON is edited.
+  const [picturesRejected, setPicturesRejected] = React.useState(false);
   const [uploadId] = React.useState(() => crypto.randomUUID());
   const [copiedPrompt, setCopiedPrompt] = React.useState(false);
 
@@ -169,6 +172,7 @@ const UploadToCollectionPage = ({
       const text = reader.result as string;
       setJsonText(text);
       setParseError(null);
+      setPicturesRejected(false);
     };
     reader.readAsText(file);
     e.target.value = "";
@@ -194,6 +198,12 @@ const UploadToCollectionPage = ({
     }
     if (!Array.isArray(items) || items.length === 0) {
       setParseError("JSON must be a non-empty array of items.");
+      return;
+    }
+    const pictureError = findPictureImportError(items);
+    if (pictureError) {
+      setParseError(pictureError);
+      setPicturesRejected(true);
       return;
     }
     const mapped = items.map((row: Record<string, unknown>) => ({
@@ -429,6 +439,7 @@ const UploadToCollectionPage = ({
             onChange={(e) => {
               setJsonText(e.target.value);
               setParseError(null);
+              setPicturesRejected(false);
             }}
             className="block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm font-mono text-sm"
             placeholder={[
@@ -457,7 +468,7 @@ const UploadToCollectionPage = ({
           </label>
           <button
             type="submit"
-            disabled={uploadMutation.isPending || !jsonText.trim()}
+            disabled={uploadMutation.isPending || !jsonText.trim() || picturesRejected}
             className="inline-flex items-center px-4 py-2 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-indigo-600 hover:bg-indigo-700 disabled:opacity-50 disabled:cursor-not-allowed"
           >
             {uploadMutation.isPending ? "Uploading…" : "Upload and open collection"}

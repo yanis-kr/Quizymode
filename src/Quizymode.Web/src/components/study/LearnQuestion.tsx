@@ -9,6 +9,8 @@ import { SpeakButton } from "@/components/SpeakButton";
 import { useSpeech } from "@/hooks/useSpeech";
 import { PronunciationHint } from "@/components/items/PronunciationHint";
 import { QuestionImage } from "@/components/study/QuestionImage";
+import { PICTURE_REQUIRED_NOTE_ID, type QuestionPictureControls } from "@/components/study/pictureGate";
+import { PictureGateNotes } from "@/components/study/PictureGateNotes";
 import { ForeignPhraseText } from "@/components/ForeignPhraseText";
 import { getIndexedSpeech } from "@/utils/itemSpeech";
 
@@ -19,10 +21,21 @@ interface LearnQuestionProps {
   showAnswer: boolean;
   onAnswerSelect: (answer: string) => void;
   headingRef?: Ref<HTMLHeadingElement>;
+  /** Gate for the question picture (#403): answers stay off until it shows. */
+  questionPicture?: QuestionPictureControls;
 }
 
-export function LearnQuestion({ item, options, selectedAnswer, showAnswer, onAnswerSelect, headingRef }: LearnQuestionProps) {
+export function LearnQuestion({
+  item,
+  options,
+  selectedAnswer,
+  showAnswer,
+  onAnswerSelect,
+  headingRef,
+  questionPicture,
+}: LearnQuestionProps) {
   const { isSupported } = useSpeech();
+  const pictureBlocked = questionPicture?.blocked ?? false;
 
   return (
     <div className="space-y-3">
@@ -40,12 +53,25 @@ export function LearnQuestion({ item, options, selectedAnswer, showAnswer, onAns
         </div>
         <p className="text-gray-700"><ForeignPhraseText text={item.question} /></p>
         <PronunciationHint text={item.question} speech={item.questionSpeech} />
-        <QuestionImage key={item.id} image={item.questionImage} className="mt-3" />
+        <QuestionImage
+          key={item.id}
+          image={item.questionImage}
+          className="mt-3"
+          onStatusChange={questionPicture?.onStatusChange}
+          onSkip={questionPicture?.onSkip}
+        />
       </div>
 
       <div>
         <p className="mb-1 text-base font-medium text-gray-900">Select an answer:</p>
-        <div className="space-y-1.5">
+        <PictureGateNotes controls={questionPicture} />
+        <div
+          role="group"
+          aria-label="Answer options"
+          aria-disabled={pictureBlocked || undefined}
+          aria-describedby={pictureBlocked ? PICTURE_REQUIRED_NOTE_ID : undefined}
+          className="space-y-1.5"
+        >
           {options.map((option, index) => {
             const letter = String.fromCharCode(65 + index);
             const isCorrect = option === item.correctAnswer;
@@ -67,10 +93,10 @@ export function LearnQuestion({ item, options, selectedAnswer, showAnswer, onAns
                 key={index}
                 type="button"
                 onClick={() => onAnswerSelect(option)}
-                disabled={showAnswer}
+                disabled={showAnswer || pictureBlocked}
                 aria-keyshortcuts={`${index + 1} ${letter}`}
                 className={`min-h-[44px] w-full rounded-lg border-2 px-3 py-2 text-left ${bgColor} ${
-                  showAnswer ? "cursor-default" : "cursor-pointer"
+                  pictureBlocked ? "cursor-not-allowed opacity-60" : showAnswer ? "cursor-default" : "cursor-pointer"
                 }`}
               >
                 <div className={showsCorrect || showsWrong ? "relative pr-7" : "relative"}>

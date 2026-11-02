@@ -23,7 +23,8 @@ public static class ExportItems
         [property: JsonPropertyName("explanation")] string Explanation,
         [property: JsonPropertyName("keywords")] List<string> Keywords,
         [property: JsonPropertyName("source")] string? Source,
-        [property: JsonPropertyName("questionImage")] ItemImageReference? QuestionImage = null);
+        [property: JsonPropertyName("questionImage")] ItemImageReference? QuestionImage = null,
+        [property: JsonPropertyName("explanationImage")] ItemImageReference? ExplanationImage = null);
 
     public sealed class Endpoint : IEndpoint
     {
@@ -95,7 +96,8 @@ public static class ExportItems
                     item.Explanation,
                     tagKeywords,
                     item.Source,
-                    ItemImageReferenceHelper.FromColumns(item.QuestionImageKey, item.QuestionImageAlt));
+                    ItemImageReferenceHelper.FromColumns(item.QuestionImageKey, item.QuestionImageAlt),
+                    ItemImageReferenceHelper.FromColumns(item.ExplanationImageKey, item.ExplanationImageAlt));
             }).ToList();
 
             return Results.Ok(result);

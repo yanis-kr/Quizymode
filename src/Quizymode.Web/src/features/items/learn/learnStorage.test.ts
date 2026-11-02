@@ -103,6 +103,32 @@ describe("learnStorage", () => {
     expect(readLearnRun(scope, "guest", NOW + 1000).status).toBe("invalid");
   });
 
+  it("keeps an explanation picture in the snapshot and drops a malformed one instead of discarding the run (#403)", () => {
+    const scope = categoryScope("science");
+    const diagram = { key: "curated:diagrams/pythagorean-theorem", altText: "A labelled right triangle" };
+    const pool = [{ ...makeItem("item-1"), explanationImage: diagram }, makeItem("item-2"), makeItem("item-3")];
+    const run = createLearnRun(scope, pool.map((item) => item.id), "guest");
+    writeLearnRun(scope, run, pool, NOW);
+
+    const kept = readLearnRun(scope, "guest", NOW + 1000);
+    expect(kept.status).toBe("restored");
+    if (kept.status !== "restored") return;
+    expect(kept.items?.find((item) => item.id === "item-1")?.explanationImage).toEqual(diagram);
+
+    const document = readDocument();
+    (document.runs[0].items as Array<Record<string, unknown>>).find((item) => item.id === "item-1")!.explanationImage = {
+      key: "https://evil/x.webp",
+      altText: "x",
+    };
+    localStorage.setItem(LEARN_STORAGE_KEY, JSON.stringify(document));
+
+    const dropped = readLearnRun(scope, "guest", NOW + 1000);
+    expect(dropped.status).toBe("restored");
+    if (dropped.status !== "restored") return;
+    expect(dropped.items?.find((item) => item.id === "item-1")).not.toHaveProperty("explanationImage");
+    expect(dropped.items).toHaveLength(3);
+  });
+
   it("stores only ids and progress for signed-in category runs and collection runs", () => {
     const signedScope = categoryScope("science");
     const signedRun = createLearnRun(signedScope, items(3).map((item) => item.id), "user:1");

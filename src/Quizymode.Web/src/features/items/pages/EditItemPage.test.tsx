@@ -167,6 +167,21 @@ describe("EditItemPage", () => {
     expect(preview.querySelector("input, textarea, select")).toBeNull();
   });
 
+  it("shows a read-only explanation picture preview that saving keeps (#403)", async () => {
+    vi.mocked(itemsApi.getById).mockResolvedValue({
+      ...itemMock,
+      explanationImage: { key: "curated:flags/fr", altText: "A labelled right triangle" },
+    } as Awaited<ReturnType<typeof itemsApi.getById>>);
+    renderPage("/items/item-1/edit");
+
+    await screen.findByRole("button", { name: /^save$/i });
+
+    const preview = screen.getByTestId("edit-item-explanation-picture");
+    expect(preview).toHaveTextContent("Explanation picture (read-only)");
+    expect(preview).toHaveTextContent("saving keeps it");
+    expect(preview.querySelector("input, textarea, select")).toBeNull();
+  });
+
   it("shows no picture preview for text-only items", async () => {
     renderPage("/items/item-1/edit");
     await screen.findByRole("button", { name: /^save$/i });

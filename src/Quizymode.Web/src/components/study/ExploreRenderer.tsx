@@ -9,6 +9,8 @@ import { SpeakButton } from "@/components/SpeakButton";
 import { useSpeech } from "@/hooks/useSpeech";
 import { PronunciationHint } from "@/components/items/PronunciationHint";
 import { QuestionImage } from "@/components/study/QuestionImage";
+import { PICTURE_REQUIRED_NOTE_ID, type QuestionPictureControls } from "@/components/study/pictureGate";
+import { PictureGateNotes } from "@/components/study/PictureGateNotes";
 import { ForeignPhraseText } from "@/components/ForeignPhraseText";
 
 /** Characters beyond which the explanation is truncated with a "Show more" toggle. */
@@ -24,6 +26,8 @@ export interface ExploreRendererProps {
   /** Controlled flip state (used for keyboard shortcuts). The owner resets it when the card changes. */
   isFlipped?: boolean;
   onFlippedChange?: (flipped: boolean) => void;
+  /** Gate for the question picture (#403): the grade buttons stay off until it shows. Flipping is never blocked. */
+  questionPicture?: QuestionPictureControls;
 }
 
 const GRADE_OPTIONS: ReadonlyArray<{ grade: FlashcardGrade; label: string; shortcut: string }> = [
@@ -38,7 +42,9 @@ export function ExploreRenderer({
   onGrade,
   isFlipped: controlledFlipped,
   onFlippedChange,
+  questionPicture,
 }: ExploreRendererProps) {
+  const pictureBlocked = questionPicture?.blocked ?? false;
   const [internalFlipped, setInternalFlipped] = useState(false);
   const isControlled = controlledFlipped !== undefined;
   const isFlipped = isControlled ? controlledFlipped : internalFlipped;
@@ -68,7 +74,12 @@ export function ExploreRenderer({
       {/* One picture slot above both faces: visible on both sides and never inside a flip button (so its alt text stays reachable). */}
       {item.questionImage && (
         <div className="mb-3">
-          <QuestionImage key={item.id} image={item.questionImage} />
+          <QuestionImage
+            key={item.id}
+            image={item.questionImage}
+            onStatusChange={questionPicture?.onStatusChange}
+            onSkip={questionPicture?.onSkip}
+          />
         </div>
       )}
       {/*
@@ -176,15 +187,30 @@ export function ExploreRenderer({
                   />
                 </button>
               )}
+              {/* Mounted only while flipped: the back face is in the DOM before the flip, and the picture can show the answer (#403). */}
+              {isFlipped && (
+                <QuestionImage
+                  key={`${item.id}-explanation`}
+                  image={item.explanationImage}
+                  slot="explanation"
+                  className="mt-3 rounded-lg bg-white"
+                />
+              )}
             </div>
           )}
 
           {onGrade && isFlipped && (
             <div className={`px-6 pb-5 ${hasExplanation ? "pt-1" : "border-t border-indigo-200/80 pt-4"}`}>
-              <div role="group" aria-labelledby={`grade-label-${item.id}`}>
+              <div
+                role="group"
+                aria-labelledby={`grade-label-${item.id}`}
+                aria-disabled={pictureBlocked || undefined}
+                aria-describedby={pictureBlocked ? PICTURE_REQUIRED_NOTE_ID : undefined}
+              >
                 <p id={`grade-label-${item.id}`} className="text-sm font-medium text-gray-500">
                   How well did you know this?
                 </p>
+                <PictureGateNotes controls={questionPicture} />
                 <div className="mt-2 flex flex-wrap gap-2">
                   {GRADE_OPTIONS.map((option) => {
                     const pressed = grade === option.grade;
@@ -194,10 +220,11 @@ export function ExploreRenderer({
                         type="button"
                         aria-pressed={pressed}
                         aria-keyshortcuts={option.shortcut}
+                        disabled={pictureBlocked}
                         onClick={() => {
-                          if (!pressed) onGrade(item, option.grade);
+                          if (!pressed && !pictureBlocked) onGrade(item, option.grade);
                         }}
-                        className={`inline-flex items-center gap-1.5 rounded-md border px-3 py-1.5 text-sm font-semibold focus:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500 focus-visible:ring-offset-2 ${
+                        className={`inline-flex disabled:cursor-not-allowed disabled:opacity-60 items-center gap-1.5 rounded-md border px-3 py-1.5 text-sm font-semibold focus:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500 focus-visible:ring-offset-2 ${
                           pressed
                             ? "border-indigo-600 bg-indigo-600 text-white"
                             : "border-gray-300 bg-white text-gray-700 hover:bg-gray-50"

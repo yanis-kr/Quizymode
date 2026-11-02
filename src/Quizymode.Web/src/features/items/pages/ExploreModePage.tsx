@@ -40,6 +40,7 @@ import {
   setFlashcardsShufflePreference,
 } from "@/features/items/flashcards/flashcardsShufflePreference";
 import { useStudyHotkeys } from "@/components/study/useStudyHotkeys";
+import { useQuestionPictureStatuses } from "@/components/study/pictureGate";
 import { StudyHotkeysDialog } from "@/components/study/StudyHotkeysDialog";
 import { FLASHCARD_SHORTCUTS } from "@/components/study/studyShortcuts";
 import { StarIcon, XMarkIcon } from "@heroicons/react/24/outline";
@@ -413,6 +414,9 @@ const ExploreModePage = () => {
     []
   );
 
+  // #403: grading stays off until the card's question picture has loaded.
+  const pictures = useQuestionPictureStatuses();
+
   const flipCurrentCard = () => {
     if (!currentItem) return;
     if (isFlipped) {
@@ -466,7 +470,7 @@ const ExploreModePage = () => {
   };
 
   const handleGrade = (graded: ItemResponse, grade: FlashcardGrade) => {
-    if (run.grades[graded.id] === grade) return;
+    if (pictures.isBlocked(graded) || run.grades[graded.id] === grade) return;
     setRun((previous) => ({ ...previous, grades: { ...previous.grades, [graded.id]: grade } }));
     const flashcardsRunInfo = flashcardsRun.current;
     const position = sourceDeck.findIndex((candidate) => candidate.id === graded.id) + 1;
@@ -1024,6 +1028,7 @@ const ExploreModePage = () => {
               onGrade={handleGrade}
               isFlipped={isFlipped}
               onFlippedChange={setIsFlipped}
+              questionPicture={pictures.controlsFor(currentItem, handleNext)}
             />
             <p role="status" aria-live="polite" className="min-h-5 text-sm text-gray-600">
               {enqueueStatus?.itemId === currentItem.id && (

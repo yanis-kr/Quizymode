@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 400" width="600" height="400" role="img">
+  <title>Parallelogram with base b and perpendicular height h</title>
+  <desc>A parallelogram. Its bottom side is the base, labelled b. A dashed line drops straight down from the top side to the base, meeting it at a right angle. This perpendicular distance is the height, labelled h.</desc>
+  <rect width="600" height="400" fill="#ffffff"/>
+  <polygon points="110,320 410,320 490,120 190,120" fill="#dbeafe" stroke="#1e293b" stroke-width="4" stroke-linejoin="round"/>
+  <path d="M190 120 V320" stroke="#c2410c" stroke-width="4" stroke-dasharray="12 8" stroke-linecap="round"/>
+  <path d="M190 296 H214 V320" fill="none" stroke="#1e293b" stroke-width="3"/>
+  <path d="M110 320 H410" stroke="#2563eb" stroke-width="6" stroke-linecap="round"/>
+<g fill="none" stroke="#2563eb" stroke-width="1.88" stroke-linecap="round" stroke-linejoin="round"><g transform="translate(248.8 368.0) scale(1.6)"><circle cx="5.5" cy="-5.5" r="5.5"/><path d="M0 -20 V0"/></g></g>
+<g fill="none" stroke="#c2410c" stroke-width="1.88" stroke-linecap="round" stroke-linejoin="round"><g transform="translate(206.8 232.0) scale(1.6)"><path d="M0 -20 V0 M0 -7 Q0 -12 5.5 -12 Q11 -12 11 -7 V0"/></g></g>
+</svg>

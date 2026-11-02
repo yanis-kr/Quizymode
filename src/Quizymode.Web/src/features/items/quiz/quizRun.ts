@@ -42,6 +42,11 @@ export interface QuizRunState {
   outcomes: Record<string, QuizAnswerOutcome>;
   /** Practice reveals feedback per answer; Test hides it until submit (AC 3.18). */
   mode: QuizRunMode;
+  /**
+   * Items skipped because their picture was unavailable (#403), in roster order. They are not scored: they count in
+   * neither correct, scored total nor missed. Optional in stored v3 snapshots (read as empty).
+   */
+  skipped: string[];
   /** Test only: flagged item ids in roster order. Always empty in Practice. */
   flagged: string[];
   /** Test only: ISO time of Start test; null on the setup card and in Practice. */
@@ -59,10 +64,15 @@ export interface QuizRunState {
 export interface QuizRunSummary {
   answered: number;
   correct: number;
+  /** Roster size, including skipped items (Daily posts this as its total). */
   total: number;
+  /** Items skipped because their picture was unavailable (#403). */
+  skipped: number;
+  /** Roster size minus skipped: what correct is scored against. 0 means nothing was scored. */
+  scoredTotal: number;
   /** Wrong answers first, then (submitted Test) unanswered items in roster order. */
   missedItemIds: string[];
-  /** Roster items with no answer. */
+  /** Roster items with no answer that were not skipped. */
   notAnswered: number;
   percentage: number;
   isComplete: boolean;
@@ -86,7 +96,10 @@ export type QuizRunAction =
   | { type: "answer"; itemId: string; selectedAnswer: string; isCorrect: boolean; completedAt: string; inputMode?: QuizInputMode }
   | { type: "start-test"; startedAt: string; timeLimitSec: number | null }
   | { type: "toggle-flag"; itemId: string }
-  | { type: "submit"; submittedAt: string; reason: TestSubmitReason }
+  /** `unavailableItemIds`: items whose picture was unavailable at submit; they become skipped (unanswered ones only). */
+  | { type: "submit"; submittedAt: string; reason: TestSubmitReason; unavailableItemIds?: string[] }
+  /** Practice: skip an unanswered item whose picture is unavailable (#403); it is not scored. */
+  | { type: "skip-unavailable"; itemId: string; completedAt: string }
   | { type: "show-summary" }
   | { type: "review-mistakes" }
   | { type: "review-all" }
@@ -118,6 +131,7 @@ export function createQuizRun(
     itemIds: Array.from(new Set(itemIds.filter(Boolean))),
     outcomes: {},
     mode,
+    skipped: [],
     flagged: [],
     startedAt: null,
     timeLimitSec: null,
@@ -147,19 +161,25 @@ export function summarizeQuizRun(run: QuizRunState): QuizRunSummary {
     .filter((outcome): outcome is QuizAnswerOutcome => Boolean(outcome));
   const correct = outcomes.filter((outcome) => outcome.isCorrect).length;
   const total = run.itemIds.length;
+  const skippedIds = new Set(run.skipped.filter((itemId) => !run.outcomes[itemId]));
+  const scoredTotal = total - skippedIds.size;
   const wrong = outcomes.filter((outcome) => !outcome.isCorrect).map((outcome) => outcome.itemId);
-  const unanswered = run.itemIds.filter((itemId) => !run.outcomes[itemId]);
+  const unanswered = run.itemIds.filter((itemId) => !run.outcomes[itemId] && !skippedIds.has(itemId));
   const isTest = run.mode === "test";
 
   return {
     answered: outcomes.length,
     correct,
     total,
+    skipped: skippedIds.size,
+    scoredTotal,
     // A submitted Test scores unanswered questions as wrong (AC 3.18.8), listed after the wrong answers.
+    // Skipped items (unavailable picture) are in neither list (#403).
     missedItemIds: isTest && run.submittedAt !== null ? [...wrong, ...unanswered] : wrong,
     notAnswered: unanswered.length,
-    percentage: total === 0 ? 0 : Math.round((correct / total) * 100),
-    isComplete: isTest ? total > 0 && run.submittedAt !== null : total > 0 && outcomes.length === total,
+    percentage: scoredTotal === 0 ? 0 : Math.round((correct / scoredTotal) * 100),
+    // Practice is complete once every item is answered or skipped; all skipped is complete with nothing scored.
+    isComplete: isTest ? total > 0 && run.submittedAt !== null : total > 0 && outcomes.length + skippedIds.size === total,
   };
 }
 
@@ -196,7 +216,17 @@ export function reduceQuizRun(run: QuizRunState, action: QuizRunAction): QuizRun
       submittedAt = new Date(deadline).toISOString();
       reason = "timeout";
     }
-    return { ...run, submittedAt, submitReason: reason, completedAt: submittedAt, view: "summary" };
+    const unavailable = new Set(action.unavailableItemIds ?? []);
+    const skipped = run.itemIds.filter((itemId) => !run.outcomes[itemId] && (unavailable.has(itemId) || run.skipped.includes(itemId)));
+    return { ...run, skipped, submittedAt, submitReason: reason, completedAt: submittedAt, view: "summary" };
+  }
+
+  if (action.type === "skip-unavailable") {
+    if (run.mode !== "practice" || run.view !== "active" || !run.itemIds.includes(action.itemId)) return run;
+    if (run.outcomes[action.itemId] || run.skipped.includes(action.itemId)) return run;
+    const skipped = run.itemIds.filter((itemId) => itemId === action.itemId || run.skipped.includes(itemId));
+    const updated: QuizRunState = { ...run, skipped };
+    return { ...updated, completedAt: summarizeQuizRun(updated).isComplete ? action.completedAt : null };
   }
 
   if (action.type === "review-all") {
@@ -226,7 +256,7 @@ export function reduceQuizRun(run: QuizRunState, action: QuizRunAction): QuizRun
       };
     }
 
-    if (run.outcomes[action.itemId]) return run;
+    if (run.outcomes[action.itemId] || run.skipped.includes(action.itemId)) return run;
 
     const outcomes = {
       ...run.outcomes,
@@ -237,7 +267,7 @@ export function reduceQuizRun(run: QuizRunState, action: QuizRunAction): QuizRun
         inputMode: action.inputMode ?? "choice",
       },
     };
-    const isComplete = run.itemIds.every((itemId) => Boolean(outcomes[itemId]));
+    const isComplete = run.itemIds.every((itemId) => Boolean(outcomes[itemId]) || run.skipped.includes(itemId));
 
     return {
       ...run,
@@ -381,6 +411,19 @@ export function restoreQuizRun(
     };
   }
 
+  // `skipped` (#403) is optional in stored snapshots (v2 and early v3 predate it) and must be a clean subset otherwise.
+  const rawSkipped: unknown = candidate.skipped ?? [];
+  if (
+    !Array.isArray(rawSkipped) ||
+    rawSkipped.some((id) => typeof id !== "string" || !expectedItemIds.includes(id) || Boolean(outcomes[id])) ||
+    new Set(rawSkipped).size !== rawSkipped.length
+  ) {
+    return null;
+  }
+  const skipped = expectedItemIds.filter((id) => rawSkipped.includes(id));
+  // Test skips are only recorded at submit.
+  if (expectedMode === "test" && skipped.length > 0 && testFields.submittedAt === null) return null;
+
   const completedAt = candidate.completedAt;
   if (completedAt !== null && (typeof completedAt !== "string" || Number.isNaN(Date.parse(completedAt)))) {
     return null;
@@ -394,6 +437,7 @@ export function restoreQuizRun(
     itemIds: [...expectedItemIds],
     outcomes,
     mode: expectedMode,
+    skipped,
     ...testFields,
     view: candidate.view as QuizRunView,
     completedAt: completedAt ?? null,
@@ -493,7 +537,8 @@ function restoreTestFields(
 
 export function toCompletionSnapshot(run: QuizRunState): QuizCompletionSnapshot | null {
   const summary = summarizeQuizRun(run);
-  if (!summary.isComplete || !run.completedAt) return null;
+  // Nothing scored (every question skipped for an unavailable picture) leaves nothing to save (#403).
+  if (!summary.isComplete || !run.completedAt || summary.scoredTotal === 0) return null;
   const scope = { ...run.scope };
   if (scope.kind !== "collection") {
     scope.navigationKeywords = [...scope.navigationKeywords];
@@ -507,7 +552,7 @@ export function toCompletionSnapshot(run: QuizRunState): QuizCompletionSnapshot 
     scope,
     completedAt: run.completedAt,
     correct: summary.correct,
-    total: summary.total,
+    total: summary.scoredTotal,
     missedItemIds: Object.freeze([...summary.missedItemIds]),
   });
 }

@@ -46,6 +46,11 @@ export interface LearnRunState {
   scope: QuizRunScope;
   /** Roster in shuffled order, at most LEARN_MAX_ITEMS. */
   itemIds: string[];
+  /**
+   * Items skipped because their picture was unavailable (#403). Later rounds leave them out and completion counts
+   * only the other items. A missing field in a stored run reads as empty (no schema bump).
+   */
+  skipped: string[];
   round: LearnRound;
   progress: Record<string, LearnItemProgress>;
   view: LearnView;
@@ -56,11 +61,16 @@ export interface LearnRunState {
 export type LearnRunAction =
   | { type: "answer"; itemId: string; selectedIndex: number; isCorrect: boolean; completedAt: string }
   | { type: "advance" }
+  /** Leave the current, unanswered item because its picture is unavailable: no attempt and no miss are recorded. */
+  | { type: "skip-unavailable"; itemId: string; completedAt: string }
   | { type: "next-round" }
   | { type: "mark-completion-emitted" };
 
 export interface LearnRunSummary {
+  /** Roster size minus skipped items. */
   total: number;
+  /** Items skipped because their picture was unavailable (#403). */
+  skipped: number;
   mastered: number;
   /** Items whose first attempt was correct. */
   firstTryCorrect: number;
@@ -132,25 +142,38 @@ export function getCurrentLearnItemId(run: LearnRunState): string | undefined {
   return run.round.itemIds[run.round.position];
 }
 
+/** Roster items that are still in play: everything except items skipped for an unavailable picture. */
+export function activeLearnItemIds(run: LearnRunState): string[] {
+  return run.itemIds.filter((itemId) => !run.skipped.includes(itemId));
+}
+
 export function countMastered(run: LearnRunState): number {
-  return run.itemIds.filter((itemId) => progressOf(run, itemId).mastered).length;
+  return activeLearnItemIds(run).filter((itemId) => progressOf(run, itemId).mastered).length;
+}
+
+/** True when the item was answered in this round or skipped (it is done as far as the round position goes). */
+export function isLearnItemHandled(run: LearnRunState, itemId: string): boolean {
+  return getLearnAttemptInRound(run, itemId) !== undefined || run.skipped.includes(itemId);
 }
 
 export function summarizeLearnRun(run: LearnRunState): LearnRunSummary {
-  const total = run.itemIds.length;
+  const roster = activeLearnItemIds(run);
+  const total = roster.length;
   const mastered = countMastered(run);
-  const firstAttempts = run.itemIds
+  const firstAttempts = roster
     .map((itemId) => ({ itemId, first: progressOf(run, itemId).attempts[0] }))
     .filter((entry): entry is { itemId: string; first: LearnAttempt } => Boolean(entry.first));
   const firstTryCorrect = firstAttempts.filter((entry) => entry.first.isCorrect).length;
 
   return {
     total,
+    skipped: run.skipped.length,
     mastered,
     firstTryCorrect,
     missedItemIds: firstAttempts.filter((entry) => !entry.first.isCorrect).map((entry) => entry.itemId),
     firstTryPercentage: total === 0 ? 0 : Math.round((firstTryCorrect / total) * 100),
-    isComplete: total > 0 && mastered === total,
+    // Every item skipped is complete with nothing to master (the caller saves no session for it).
+    isComplete: total > 0 ? mastered === total : run.skipped.length > 0,
   };
 }
 
@@ -171,7 +194,7 @@ export function getLearnOptions(run: LearnRunState, item: ItemResponse): string[
  * items in roster order, at most 7, in a seeded order that never starts with the previous round's last item.
  */
 function composeRound(run: LearnRunState, number: number, previousLastItemId: string | null): string[] {
-  const unmastered = run.itemIds.filter((itemId) => !progressOf(run, itemId).mastered);
+  const unmastered = activeLearnItemIds(run).filter((itemId) => !progressOf(run, itemId).mastered);
   const attempted = unmastered
     .filter((itemId) => progressOf(run, itemId).attempts.length > 0)
     .map((itemId, rosterIndex) => {
@@ -203,6 +226,7 @@ export function createLearnRun(scope: QuizRunScope, playableItemIds: readonly st
     identityKey,
     scope,
     itemIds,
+    skipped: [],
     round: { number: 1, itemIds: [], position: 0 },
     progress: {},
     view: "active",
@@ -234,6 +258,20 @@ export function reduceLearnRun(run: LearnRunState, action: LearnRunAction): Lear
     return { ...updated, completedAt: isComplete ? action.completedAt : null };
   }
 
+  if (action.type === "skip-unavailable") {
+    if (run.view !== "active" || action.itemId !== getCurrentLearnItemId(run)) return run;
+    if (getLearnAttemptInRound(run, action.itemId) || run.skipped.includes(action.itemId)) return run;
+    const skipped = run.itemIds.filter((itemId) => itemId === action.itemId || run.skipped.includes(itemId));
+    const updated: LearnRunState = { ...run, skipped };
+    const completedAt = summarizeLearnRun(updated).isComplete ? action.completedAt : null;
+    const completed: LearnRunState = { ...updated, completedAt };
+    if (completedAt) return { ...completed, view: "finished" };
+    const nextPosition = run.round.position + 1;
+    return nextPosition < run.round.itemIds.length
+      ? { ...completed, round: { ...run.round, position: nextPosition } }
+      : { ...completed, view: "recap" };
+  }
+
   if (action.type === "advance") {
     const currentId = getCurrentLearnItemId(run);
     if (run.view !== "active" || !currentId || !getLearnAttemptInRound(run, currentId)) return run;
@@ -258,7 +296,8 @@ export function reduceLearnRun(run: LearnRunState, action: LearnRunAction): Lear
 /** Study-session snapshot: first-try correct out of the roster, first-try misses as missedItemIds (AC 3.17.9). */
 export function toLearnCompletionSnapshot(run: LearnRunState): QuizCompletionSnapshot | null {
   const summary = summarizeLearnRun(run);
-  if (!summary.isComplete || !run.completedAt) return null;
+  // Nothing scored (every question skipped for an unavailable picture) leaves nothing to save (#403).
+  if (!summary.isComplete || !run.completedAt || summary.total === 0) return null;
   const scope = { ...run.scope };
   if (scope.kind !== "collection") {
     scope.navigationKeywords = Object.freeze([...scope.navigationKeywords]) as string[];
@@ -336,6 +375,16 @@ export function restoreLearnRun(value: unknown, expectedScope: QuizRunScope, ide
 
   const itemIds = candidate.itemIds as string[];
   const rosterIds = new Set(itemIds);
+  // `skipped` is optional in stored runs (#403): a missing field reads as empty.
+  const rawSkipped: unknown = candidate.skipped ?? [];
+  if (
+    !Array.isArray(rawSkipped) ||
+    rawSkipped.some((id) => typeof id !== "string" || !rosterIds.has(id)) ||
+    new Set(rawSkipped).size !== rawSkipped.length
+  ) {
+    return null;
+  }
+  const skipped = itemIds.filter((id) => rawSkipped.includes(id));
   const roundRaw = candidate.round;
   const roundIds = roundRaw.itemIds;
   if (
@@ -380,6 +429,7 @@ export function restoreLearnRun(value: unknown, expectedScope: QuizRunScope, ide
     identityKey,
     scope: expectedScope,
     itemIds: [...itemIds],
+    skipped,
     round,
     progress,
     view: candidate.view as LearnView,
@@ -400,11 +450,11 @@ export function restoreLearnRun(value: unknown, expectedScope: QuizRunScope, ide
     if (!entry) continue;
     const taggedCurrent = entry.attempts.some((attempt) => attempt.round === round.number);
     if (taggedCurrent && !roundSet.has(itemId)) return null;
-    if (!entry.mastered && !roundSet.has(itemId)) return null;
+    if (!entry.mastered && !skipped.includes(itemId) && !roundSet.has(itemId)) return null;
   }
 
   // The current round must agree with what has been answered in it.
-  const answeredInRound = round.itemIds.map((id) => getLearnAttemptInRound(restored, id) !== undefined);
+  const answeredInRound = round.itemIds.map((id) => isLearnItemHandled(restored, id));
   if (restored.view === "recap" && (isComplete || !answeredInRound.every(Boolean))) return null;
   if (restored.view === "active") {
     if (!answeredInRound.slice(0, round.position).every(Boolean)) return null;

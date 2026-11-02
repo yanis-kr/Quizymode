@@ -101,9 +101,12 @@ const ReviewQueuePage = () => {
 
   const handleComplete = (run: QuizRunState) => {
     if (!bossActive || run.runId !== lockedRunId.current) return;
-    const hp: number = Math.max(0, maxHp - hitsRef.current);
-    setOutcome({ defeated: hp === 0, hp });
-    announceBoss(hp === 0 ? "Boss defeated!" : `The boss escaped with ${hp} HP.`);
+    // Questions skipped for an unavailable picture (#403) cannot be hit, so the boss has fewer HP to lose.
+    const scoredMax: number = Math.max(0, maxHp - run.skipped.length);
+    const hp: number = Math.max(0, scoredMax - hitsRef.current);
+    const defeated: boolean = scoredMax > 0 && hp === 0;
+    setOutcome({ defeated, hp });
+    announceBoss(defeated ? "Boss defeated!" : scoredMax === 0 ? "No questions were scored." : `The boss escaped with ${hp} HP.`);
     setFollowUp({ status: "loading" });
     void (async () => {
       // Wait for the answers still being saved, so the summary reflects them.

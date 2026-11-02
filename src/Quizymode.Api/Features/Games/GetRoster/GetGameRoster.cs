@@ -27,8 +27,11 @@ public static class GetGameRoster
     /// <summary>Scope tokens are <c>category[/l1[/l2]]</c>; no tokens means every category.</summary>
     public sealed record Request(string[]? Scope, int? Limit);
 
-    /// <summary>One requested scope: its eligible count, how many of those made it into the roster, and ok/empty status.</summary>
-    public sealed record ScopeResult(string Scope, int Available, int Returned, string Status);
+    /// <summary>
+    /// One requested scope: its eligible count, how many of those made it into the roster, ok/empty status, and how many
+    /// visible picture questions in scope are not playable as games (#403).
+    /// </summary>
+    public sealed record ScopeResult(string Scope, int Available, int Returned, string Status, int ExcludedPictures = 0);
 
     public sealed record Response(List<GetItems.ItemResponse> Items, List<ScopeResult> Scopes);
 

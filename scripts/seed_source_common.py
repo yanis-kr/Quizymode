@@ -65,6 +65,8 @@ class SourceItem:
     index: int
     # Curated question picture (#407): {"key": "curated:flags/fr", "altText": "..."} or None.
     question_image: dict[str, str] | None = None
+    # Curated explanation picture (#403): same shape; shown only after the answer is revealed.
+    explanation_image: dict[str, str] | None = None
 
 
 @dataclass
@@ -114,15 +116,23 @@ def question_identity(question: str, image: dict[str, Any] | None) -> tuple[str,
     return normalize_question(question), str(key)
 
 
-def parse_question_image(value: Any, where: str) -> dict[str, str] | None:
+def parse_image(value: Any, where: str, field: str) -> dict[str, str] | None:
     if value is None:
         return None
     if not isinstance(value, dict):
-        raise ValueError(f"{where}: questionImage must be an object with key and altText.")
+        raise ValueError(f"{where}: {field} must be an object with key and altText.")
     return {
         "key": str(value.get("key", "")).strip(),
         "altText": str(value.get("altText", "")).strip(),
     }
+
+
+def parse_question_image(value: Any, where: str) -> dict[str, str] | None:
+    return parse_image(value, where, "questionImage")
+
+
+def parse_explanation_image(value: Any, where: str) -> dict[str, str] | None:
+    return parse_image(value, where, "explanationImage")
 
 
 def curated_asset_path(key: str) -> Path:
@@ -141,35 +151,56 @@ def answer_in_alt_text(answer: str, alt: str) -> bool:
     return re.search(rf"(?<![^\W_]){re.escape(answer)}", alt, re.IGNORECASE) is not None
 
 
-def validate_question_image(item: SourceItem) -> list[str]:
-    image = item.question_image
-    if image is None:
-        return []
-
-    where = f"{item.path} item {item.index}"
+def _validate_image_reference(
+    image: dict[str, str], where: str, field: str
+) -> tuple[list[str], str]:
+    """Key format, asset existence and alt text shape shared by both picture slots; returns (errors, alt)."""
     errors: list[str] = []
     key = image.get("key", "")
     alt = image.get("altText", "")
 
     if len(key) > QUESTION_IMAGE_KEY_MAX or not QUESTION_IMAGE_KEY_PATTERN.match(key):
         errors.append(
-            f"{where}: questionImage.key '{key}' must look like 'curated:folder/name' "
+            f"{where}: {field}.key '{key}' must look like 'curated:folder/name' "
             f"(lowercase letters, digits, hyphens; max {QUESTION_IMAGE_KEY_MAX} characters)."
         )
     elif not curated_asset_path(key).is_file():
         errors.append(
-            f"{where}: questionImage.key '{key}' has no asset at "
+            f"{where}: {field}.key '{key}' has no asset at "
             f"src/Quizymode.Web/src/assets/curated/{key.removeprefix('curated:')}.webp."
         )
 
     if not alt or len(alt) > QUESTION_IMAGE_ALT_MAX or any(ord(ch) < 32 or 127 <= ord(ch) <= 159 for ch in alt):
         errors.append(
-            f"{where}: questionImage.altText is required (1-{QUESTION_IMAGE_ALT_MAX} characters, "
+            f"{where}: {field}.altText is required (1-{QUESTION_IMAGE_ALT_MAX} characters, "
             f"no line breaks or control characters)."
         )
-    elif answer_in_alt_text(item.correct_answer, alt):
-        errors.append(f"{where}: questionImage.altText must not contain the correct answer.")
+        return errors, ""
+    return errors, alt
 
+
+def validate_question_image(item: SourceItem) -> list[str]:
+    image = item.question_image
+    if image is None:
+        return []
+
+    where = f"{item.path} item {item.index}"
+    errors, alt = _validate_image_reference(image, where, "questionImage")
+    if alt and answer_in_alt_text(item.correct_answer, alt):
+        errors.append(f"{where}: questionImage.altText must not contain the correct answer.")
+    return errors
+
+
+def validate_explanation_image(item: SourceItem) -> list[str]:
+    """The explanation picture is only shown after reveal, so its alt text may name the answer (#403)."""
+    image = item.explanation_image
+    if image is None:
+        return []
+
+    where = f"{item.path} item {item.index}"
+    errors, _ = _validate_image_reference(image, where, "explanationImage")
+    if not (item.explanation or "").strip():
+        errors.append(f"{where}: explanationImage requires a non-empty explanation.")
     return errors
 
 
@@ -207,6 +238,11 @@ def canonicalize_item_payload(item: SourceItem) -> dict[str, Any]:
             "key": item.question_image["key"],
             "altText": item.question_image["altText"],
         }
+    if item.explanation_image:
+        payload["explanationImage"] = {
+            "key": item.explanation_image["key"],
+            "altText": item.explanation_image["altText"],
+        }
     return payload
 
 
@@ -243,6 +279,7 @@ def load_source_items(source_root: Path = SOURCE_ITEMS_ROOT) -> list[SourceItem]
                     path=path,
                     index=index,
                     question_image=parse_question_image(item.get("questionImage"), f"{path} item {index}"),
+                    explanation_image=parse_explanation_image(item.get("explanationImage"), f"{path} item {index}"),
                 )
             )
 
@@ -307,6 +344,7 @@ def validate_source(
         if not item.correct_answer:
             errors.append(f"{item.path} item {item.index}: correctAnswer is required.")
         errors.extend(validate_question_image(item))
+        errors.extend(validate_explanation_image(item))
 
         existing_id = seen_item_ids.get(item.item_id)
         if existing_id is not None:

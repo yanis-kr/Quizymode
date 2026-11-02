@@ -8,6 +8,22 @@ interface CollectionPrintViewProps {
   hideAnswers: boolean;
 }
 
+/** Explanation picture (#403): printed after the answer and explanation, never on a worksheet. */
+function PrintedExplanationPicture({ image }: { image: NonNullable<ExportableItem["explanationImage"]> }) {
+  const url = resolveCuratedImage(image.key);
+  if (url === null) {
+    return <p className="text-sm italic">[Picture unavailable: {image.altText}]</p>;
+  }
+  return (
+    <img
+      src={url}
+      alt={image.altText}
+      loading="eager"
+      className="mt-2 w-full max-w-[8cm] break-inside-avoid border border-gray-400 bg-slate-200 object-contain p-1 print:[print-color-adjust:exact]"
+    />
+  );
+}
+
 function PrintedPicture({ image }: { image: NonNullable<ExportableItem["questionImage"]> }) {
   const url = resolveCuratedImage(image.key);
   if (url === null) {
@@ -44,6 +60,7 @@ export const CollectionPrintView = ({ title, items, hideAnswers }: CollectionPri
                   <span className="font-semibold">Explanation:</span> {item.explanation}
                 </p>
               )}
+              {item.explanationImage && <PrintedExplanationPicture image={item.explanationImage} />}
             </>
           )}
         </li>

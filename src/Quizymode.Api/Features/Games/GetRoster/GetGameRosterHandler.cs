@@ -25,11 +25,13 @@ internal static class GetGameRosterHandler
             List<string> scopes = NormalizeScopes(request.Scope);
 
             List<List<Guid>> shuffled = [];
+            List<int> excludedPictures = [];
             foreach (string scope in scopes)
             {
-                List<Guid> ids = await LoadEligibleIdsAsync(scope, limit, db, userContext, cancellationToken);
+                (List<Guid> ids, int pictures) = await LoadEligibleIdsAsync(scope, limit, db, userContext, cancellationToken);
                 Shuffle(ids);
                 shuffled.Add(ids);
+                excludedPictures.Add(pictures);
             }
 
             (List<Guid> chosen, int[] returned) = MergeRoundRobin(shuffled, limit);
@@ -40,7 +42,8 @@ internal static class GetGameRosterHandler
                     scope,
                     shuffled[index].Count,
                     returned[index],
-                    returned[index] > 0 ? GetGameRoster.StatusOk : GetGameRoster.StatusEmpty))
+                    returned[index] > 0 ? GetGameRoster.StatusOk : GetGameRoster.StatusEmpty,
+                    excludedPictures[index]))
                 .ToList();
 
             return Result.Success(new GetGameRoster.Response(items, scopeResults));
@@ -62,7 +65,7 @@ internal static class GetGameRosterHandler
         return normalized.Count == 0 ? [string.Empty] : normalized;
     }
 
-    private static async Task<List<Guid>> LoadEligibleIdsAsync(
+    private static async Task<(List<Guid> Ids, int ExcludedPictures)> LoadEligibleIdsAsync(
         string scope,
         int limit,
         ApplicationDbContext db,
@@ -79,15 +82,23 @@ internal static class GetGameRosterHandler
         if (built.IsFailure)
         {
             // An invalid navigation path means nothing is playable there, not a failed request.
-            return [];
+            return ([], 0);
         }
 
         IQueryable<Guid> eligibleIds = db.Items.FromSqlRaw(GameRosterEligibility.Sql).Select(item => item.Id);
-        return await built.Value
+        List<Guid> ids = await built.Value
             .AsNoTracking()
             .Where(item => eligibleIds.Contains(item.Id))
             .Select(item => item.Id)
             .ToListAsync(cancellationToken);
+
+        // Picture questions the caller can see in this scope that no game can use (#403); same visibility and scope filter as above.
+        int excludedPictures = await built.Value
+            .AsNoTracking()
+            .Where(item => item.QuestionImageKey != null && !eligibleIds.Contains(item.Id))
+            .CountAsync(cancellationToken);
+
+        return (ids, excludedPictures);
     }
 
     private static void Shuffle(List<Guid> ids)

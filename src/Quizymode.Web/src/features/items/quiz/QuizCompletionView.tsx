@@ -46,7 +46,8 @@ export function QuizCompletionView({
     headingRef.current?.focus();
   }, [run.view]);
 
-  const tier = scoreTier(summary.percentage, summary.total);
+  // A run with skipped questions is not a "perfect" score: show the plain score with the skipped note.
+  const tier = summary.skipped > 0 ? null : scoreTier(summary.percentage, summary.scoredTotal);
   const isPerfect = tier?.id === "perfect";
   const isSummaryView = run.view === "summary";
   const isTest = run.mode === "test";
@@ -89,7 +90,13 @@ export function QuizCompletionView({
                   <div className="mb-2 flex flex-wrap items-center gap-2 text-xs font-medium">
                     <span className="text-gray-600">Question {position}</span>
                     <span className="rounded bg-gray-100 px-2 py-0.5 text-gray-700">
-                      {outcome ? (outcome.isCorrect ? "Correct" : "Incorrect") : "Not answered"}
+                      {outcome
+                        ? outcome.isCorrect
+                          ? "Correct"
+                          : "Incorrect"
+                        : run.skipped.includes(itemId)
+                          ? "Not scored (picture unavailable)"
+                          : "Not answered"}
                     </span>
                     {flagged.has(itemId) && <span className="rounded bg-amber-50 px-2 py-0.5 text-amber-800">Flagged</span>}
                   </div>
@@ -104,7 +111,12 @@ export function QuizCompletionView({
                   </p>
                 )}
                 <p className="mt-1 text-sm text-green-700"><strong>Correct answer:</strong> {item.correctAnswer}</p>
-                {item.explanation && <p className="mt-2 text-sm text-gray-700">{item.explanation}</p>}
+                {(item.explanation || item.explanationImage) && (
+                  <div className="mt-2 flex items-start gap-3">
+                    <QuestionImage image={item.explanationImage} slot="explanation" size="sm" />
+                    {item.explanation && <p className="min-w-0 text-sm text-gray-700">{item.explanation}</p>}
+                  </div>
+                )}
               </article>
             );
           })}
@@ -130,11 +142,24 @@ export function QuizCompletionView({
         </p>
       )}
       {tier && <p className="mt-2 text-lg font-semibold text-gray-800">{tier.label}</p>}
-      <p className="mt-3 text-3xl font-bold text-indigo-700">{summary.correct} / {summary.total}</p>
-      <p className="mt-1 text-gray-700">
-        {summary.percentage}% correct · {summary.missedItemIds.length} missed
-        {isTest && ` · ${summary.notAnswered} not answered`}
-      </p>
+      {summary.scoredTotal === 0 ? (
+        <p className="mt-3 text-xl font-semibold text-gray-800">No questions were scored</p>
+      ) : (
+        <>
+          <p className="mt-3 text-3xl font-bold text-indigo-700">{summary.correct} / {summary.scoredTotal}</p>
+          <p className="mt-1 text-gray-700">
+            {summary.percentage}% correct · {summary.missedItemIds.length} missed
+            {isTest && ` · ${summary.notAnswered} not answered`}
+          </p>
+        </>
+      )}
+      {summary.skipped > 0 && (
+        <p className="mt-1 text-sm text-gray-600">
+          {summary.skipped === 1
+            ? "1 question skipped because the picture was unavailable. Not scored."
+            : `${summary.skipped} questions skipped because the picture was unavailable. Not scored.`}
+        </p>
+      )}
       {isTest && elapsedSec !== null && (
         <p className="mt-1 text-sm text-gray-700">
           Time taken {formatDuration(elapsedSec)}
@@ -156,19 +181,19 @@ export function QuizCompletionView({
           type="button"
           onClick={onPlayAgain}
           className={
-            isPerfect && share && summary.total > 0
+            isPerfect && share && summary.scoredTotal > 0
               ? "rounded-md border border-indigo-600 px-4 py-2 font-semibold text-indigo-700 hover:bg-indigo-50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500 focus-visible:ring-offset-2"
               : "rounded-md bg-indigo-600 px-4 py-2 font-semibold text-white hover:bg-indigo-700 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500 focus-visible:ring-offset-2"
           }
         >
           Play again
         </button>
-        {share && summary.total > 0 && (
+        {share && summary.scoredTotal > 0 && (
           <ShareResultButton
             descriptor={share}
             runId={run.runId}
             score={summary.correct}
-            total={summary.total}
+            total={summary.scoredTotal}
             context={analyticsContext ?? { contextType: "quiz" }}
             emphasized={isPerfect}
           />

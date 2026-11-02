@@ -18,6 +18,7 @@ interface ReviewBoardItemResponse {
   reviewComments?: string | null;
   groupLabel?: string | null;
   questionImage?: ItemImageReference | null;
+  explanationImage?: ItemImageReference | null;
 }
 
 interface ReviewBoardResponse {

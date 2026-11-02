@@ -43,7 +43,7 @@ function livesLeftText(lives: number): string {
 }
 
 const BucketDropPage = () => {
-  const { scope, runIdentityKey, topicBar, topicPrompt, pool: gamePool, isPending, error, refetch, availableModes, handleModeChange, quizPath } = useGameRoster();
+  const { scope, runIdentityKey, topicBar, topicPrompt, pool: gamePool, isPending, error, refetch, availableModes, handleModeChange, quizPath, excludedPictures } = useGameRoster();
   const scopeKey: string = gameScopeKey(scope);
   const runKey = `${runIdentityKey}|${scopeKey}`;
   const pool = useMemo<ItemResponse[]>(() => buildBucketDropPool(gamePool), [gamePool]);
@@ -194,7 +194,7 @@ const BucketDropPage = () => {
       </div>
     );
   } else if (!isPending && pool.length < GAME_MIN_ITEMS) {
-    body = <GamesEmptyState quizPath={quizPath} />;
+    body = <GamesEmptyState quizPath={quizPath} excludedPictures={excludedPictures} poolEmpty={gamePool.length === 0} />;
   } else if (!run) {
     body = <LoadingSpinner />;
   } else if (run.status === "finished") {

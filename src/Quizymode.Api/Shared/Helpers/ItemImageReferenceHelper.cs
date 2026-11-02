@@ -14,6 +14,11 @@ internal static partial class ItemImageReferenceHelper
     internal const int MaxAltTextLength = 300;
     internal const string InvalidKeyMessage = "Question image key must look like 'curated:folder/name' (lowercase letters, digits, hyphens; max 100 characters).";
     internal const string InvalidAltTextMessage = "Question image alt text is required (1-300 characters, no line breaks or control characters).";
+    internal const string InvalidExplanationKeyMessage = "Explanation image key must look like 'curated:folder/name' (lowercase letters, digits, hyphens; max 100 characters).";
+    internal const string InvalidExplanationAltTextMessage = "Explanation image alt text is required (1-300 characters, no line breaks or control characters).";
+    internal const string ExplanationRequiredMessage = "Explanation is required when an explanation image is set.";
+    internal const string ExplanationRequiredForUpdateMessage = "Explanation can't be empty while the item has an explanation picture.";
+    internal const string PicturesNotImportableMessage = "Pictures can't be imported. Remove questionImage/explanationImage; curated pictures are added through seed data.";
 
     [GeneratedRegex("^curated:[a-z0-9-]+(/[a-z0-9-]+)+$", RegexOptions.CultureInvariant)]
     private static partial Regex KeyRegex();
@@ -50,14 +55,59 @@ internal static partial class ItemImageReferenceHelper
     /// <summary>Adds key format and alt text rules for an optional image reference.</summary>
     internal static void AddQuestionImageRules<T>(
         this AbstractValidator<T> validator,
-        System.Linq.Expressions.Expression<Func<T, ItemImageReference?>> expression)
+        System.Linq.Expressions.Expression<Func<T, ItemImageReference?>> expression) =>
+        validator.AddImageRules(expression, InvalidKeyMessage, InvalidAltTextMessage);
+
+    /// <summary>Adds key format and alt text rules for the optional explanation picture (#403).</summary>
+    internal static void AddExplanationImageRules<T>(
+        this AbstractValidator<T> validator,
+        System.Linq.Expressions.Expression<Func<T, ItemImageReference?>> expression,
+        System.Linq.Expressions.Expression<Func<T, string?>> explanation)
+    {
+        validator.AddImageRules(expression, InvalidExplanationKeyMessage, InvalidExplanationAltTextMessage);
+
+        Func<T, ItemImageReference?> imageOf = expression.Compile();
+        Func<T, string?> explanationOf = explanation.Compile();
+        validator.RuleFor(x => x)
+            .Must(x => imageOf(x) is null || !string.IsNullOrWhiteSpace(explanationOf(x)))
+            .WithName("ExplanationImage")
+            .WithMessage(ExplanationRequiredMessage);
+    }
+
+    private static void AddImageRules<T>(
+        this AbstractValidator<T> validator,
+        System.Linq.Expressions.Expression<Func<T, ItemImageReference?>> expression,
+        string keyMessage,
+        string altMessage)
     {
         validator.RuleFor(expression)
             .Must(image => image is null || IsValidKey(image.Key?.Trim()))
-            .WithMessage(InvalidKeyMessage);
+            .WithMessage(keyMessage);
 
         validator.RuleFor(expression)
             .Must(image => image is null || IsValidAltText(image.AltText))
-            .WithMessage(InvalidAltTextMessage);
+            .WithMessage(altMessage);
     }
+
+    /// <summary>
+    /// Import endpoints reject pictures (#403 D1): a missing field or JSON null is accepted, any other value is not.
+    /// </summary>
+    internal static void AddPictureImportRejectionRules<T>(
+        this AbstractValidator<T> validator,
+        System.Linq.Expressions.Expression<Func<T, System.Text.Json.JsonElement?>> questionImage,
+        System.Linq.Expressions.Expression<Func<T, System.Text.Json.JsonElement?>> explanationImage)
+    {
+        validator.RuleFor(questionImage)
+            .Must(IsAbsent)
+            .WithName("QuestionImage")
+            .WithMessage("QuestionImage: " + PicturesNotImportableMessage);
+
+        validator.RuleFor(explanationImage)
+            .Must(IsAbsent)
+            .WithName("ExplanationImage")
+            .WithMessage("ExplanationImage: " + PicturesNotImportableMessage);
+    }
+
+    private static bool IsAbsent(System.Text.Json.JsonElement? value) =>
+        value is null || value.Value.ValueKind is System.Text.Json.JsonValueKind.Null or System.Text.Json.JsonValueKind.Undefined;
 }

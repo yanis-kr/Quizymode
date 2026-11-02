@@ -50,6 +50,8 @@ describe("quizRun", () => {
       answered: 2,
       correct: 1,
       total: 2,
+      skipped: 0,
+      scoredTotal: 2,
       missedItemIds: ["b"],
       notAnswered: 0,
       percentage: 50,

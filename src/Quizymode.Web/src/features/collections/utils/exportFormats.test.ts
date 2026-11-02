@@ -3,6 +3,8 @@ import { afterEach, describe, expect, it, vi } from "vitest";
 import {
   downloadTextFile,
   exportFileName,
+  isPictureQuestion,
+  planTextExport,
   toCsv,
   toQuizletText,
   toTsv,
@@ -91,5 +93,38 @@ describe("downloadTextFile", () => {
     const blob = (create.mock.calls[0] as unknown as [Blob])[0];
     expect(blob.type).toBe("text/csv;charset=utf-8");
     expect(blob.size).toBeGreaterThan(1);
+  });
+});
+
+describe("planTextExport (#403)", () => {
+  const picture = { key: "curated:flags/fr", altText: "Three bands" };
+  const base = { correctAnswer: "A", incorrectAnswers: ["B"] };
+
+  it("counts only question pictures: an explanation picture alone is not a picture question", () => {
+    const list: ExportableItem[] = [
+      { ...base, question: "plain" },
+      { ...base, question: "flag", questionImage: picture },
+      { ...base, question: "diagram", explanationImage: picture },
+    ];
+    expect(isPictureQuestion(list[1])).toBe(true);
+    expect(isPictureQuestion(list[2])).toBe(false);
+    const plan = planTextExport(list);
+    expect(plan.total).toBe(3);
+    expect(plan.pictureCount).toBe(1);
+    expect(plan.withoutPictureQuestions.map((item) => item.question)).toEqual(["plain", "diagram"]);
+    expect(plan.hasExplanationPictures).toBe(true);
+  });
+
+  it("needs no choice when no item has a question picture", () => {
+    expect(planTextExport([{ ...base, question: "plain" }]).pictureCount).toBe(0);
+    expect(planTextExport([]).hasExplanationPictures).toBe(false);
+  });
+
+  it("keeps pictures out of every text format", () => {
+    const list: ExportableItem[] = [{ ...base, question: "flag", questionImage: picture, explanationImage: picture }];
+    for (const out of [toCsv(list), toTsv(list), toQuizletText(list)]) {
+      expect(out).not.toContain("curated:");
+      expect(out).not.toContain("Three bands");
+    }
   });
 });

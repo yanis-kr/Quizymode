@@ -23,6 +23,14 @@ async function navigateToQuiz(page: import("@playwright/test").Page) {
   await page.waitForLoadState("networkidle");
 }
 
+/**
+ * Answers stay disabled until a question's picture has loaded (#403), so wait for any picture box to settle before
+ * pressing keys or clicking options. Text-only questions have no picture box and pass straight through.
+ */
+async function waitForPicturesSettled(page: import("@playwright/test").Page) {
+  await expect(page.locator('[data-testid="question-image"][aria-busy="true"]')).toHaveCount(0, { timeout: 15_000 });
+}
+
 test(
   "AC 3.6 @smoke - quiz page loads and shows a question with answer options",
   async ({ page }) => {
@@ -50,6 +58,7 @@ test(
       .filter({ hasText: /^\s*A\./ })
       .first();
     await expect(firstOption).toBeVisible({ timeout: 3_000 });
+    await waitForPicturesSettled(page);
     await firstOption.click();
 
     // After answering, "Correct Answer:" text and explanation panel should appear
@@ -71,6 +80,7 @@ test(
       .locator('button[type="button"]')
       .filter({ hasText: /^\s*A\./ })
       .first();
+    await waitForPicturesSettled(page);
     await firstOption.click();
 
     // Progress indicator shows "1 of N" before clicking Next
@@ -110,6 +120,7 @@ test(
       .locator('button[type="button"]')
       .filter({ hasText: /^\s*A\./ })
       .first();
+    await waitForPicturesSettled(page);
     await firstOption.click();
 
     const nextBtn = page.getByRole("button", { name: /^next$/i });
@@ -185,6 +196,7 @@ test.describe("anonymous collection completion", () => {
       const questionText = (await question.textContent())?.trim() ?? "";
       const wrongAnswer = deliberatelyWrongAnswers[questionText];
       expect(wrongAnswer).toBeTruthy();
+      await waitForPicturesSettled(page);
       await page.getByRole("button", { name: new RegExp(wrongAnswer, "i") }).click();
       await expect(page.getByText(/correct answer:/i)).toBeVisible();
       if (index < 4) {
@@ -213,6 +225,7 @@ test(
     await navigateToQuiz(page);
     await expect(page.getByText("Question")).toBeVisible({ timeout: 3_000 });
 
+    await waitForPicturesSettled(page);
     await page.keyboard.press("1");
     await expect(page.getByText(/correct answer/i)).toBeVisible({ timeout: 3_000 });
 

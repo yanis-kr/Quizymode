@@ -108,6 +108,21 @@ describe("ItemDetailPage", () => {
     expect(await screen.findByAltText("Three vertical bands")).toHaveAttribute("src", "/assets/m/fr.webp");
   });
 
+  it("shows the explanation picture under the explanation text (#403)", async () => {
+    vi.mocked(itemsApi.getById).mockResolvedValue({
+      ...item,
+      explanation: "Because the triangle is right.",
+      explanationImage: { key: "curated:flags/fr", altText: "A labelled right triangle" },
+    } as Awaited<ReturnType<typeof itemsApi.getById>>);
+
+    renderPage("/items/item-1");
+
+    const picture = await screen.findByAltText("A labelled right triangle");
+    expect(picture).toHaveAttribute("src", "/assets/m/fr.webp");
+    expect(screen.getByTestId("explanation-image")).toBeInTheDocument();
+    expect(screen.queryByTestId("question-image")).not.toBeInTheDocument();
+  });
+
   it("shows no picture for a text-only item", async () => {
     vi.mocked(itemsApi.getById).mockResolvedValue(item as Awaited<ReturnType<typeof itemsApi.getById>>);
 

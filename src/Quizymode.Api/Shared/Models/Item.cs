@@ -51,6 +51,15 @@ public sealed class Item
     public string? QuestionImageAlt { get; set; }
 
     /// <summary>
+    /// Optional curated explanation picture key (#403), e.g. "curated:diagrams/pythagorean-theorem".
+    /// Shown only after the answer is revealed. Set by seed sync only.
+    /// </summary>
+    public string? ExplanationImageKey { get; set; }
+
+    /// <summary>Alt text for <see cref="ExplanationImageKey"/>; present exactly when the key is.</summary>
+    public string? ExplanationImageAlt { get; set; }
+
+    /// <summary>
     /// Optional link to the Upload record that created this item (e.g. bulk upload from JSON).
     /// </summary>
     public Guid? UploadId { get; set; }

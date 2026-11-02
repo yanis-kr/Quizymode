@@ -23,7 +23,8 @@ public static class SeedSyncAdmin
         ItemSpeechSupport? QuestionSpeech = null,
         ItemSpeechSupport? CorrectAnswerSpeech = null,
         Dictionary<int, ItemSpeechSupport>? IncorrectAnswerSpeech = null,
-        ItemImageReference? QuestionImage = null);
+        ItemImageReference? QuestionImage = null,
+        ItemImageReference? ExplanationImage = null);
 
     public sealed record SeedCollectionRequest(
         Guid CollectionId,
@@ -327,6 +328,7 @@ public static class SeedSyncAdmin
             this.AddSpeechSupportRules(x => x.QuestionSpeech, 1000, "QuestionSpeech");
             this.AddSpeechSupportRules(x => x.CorrectAnswerSpeech, 500, "CorrectAnswerSpeech");
             this.AddQuestionImageRules(x => x.QuestionImage);
+            this.AddExplanationImageRules(x => x.ExplanationImage, x => x.Explanation);
 
             RuleFor(x => x.IncorrectAnswers)
                 .NotNull()

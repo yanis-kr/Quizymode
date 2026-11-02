@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 400" width="600" height="400" role="img">
+  <title>Right triangle with legs a and b and hypotenuse c</title>
+  <desc>A right triangle. The two sides that meet at the right angle are labelled a and b. The longest side, opposite the right angle, is labelled c.</desc>
+  <rect width="600" height="400" fill="#ffffff"/>
+  <polygon points="130,340 450,340 130,100" fill="#dbeafe" stroke="#1e293b" stroke-width="4" stroke-linejoin="round"/>
+  <path d="M130 316 H154 V340" fill="none" stroke="#1e293b" stroke-width="3"/>
+<g fill="none" stroke="#1e293b" stroke-width="1.88" stroke-linecap="round" stroke-linejoin="round"><g transform="translate(278.8 382.0) scale(1.6)"><circle cx="5.5" cy="-5.5" r="5.5"/><path d="M11 -11 V0"/></g></g>
+<g fill="none" stroke="#1e293b" stroke-width="1.88" stroke-linecap="round" stroke-linejoin="round"><g transform="translate(80.8 232.0) scale(1.6)"><circle cx="5.5" cy="-5.5" r="5.5"/><path d="M0 -20 V0"/></g></g>
+<g fill="none" stroke="#c2410c" stroke-width="1.88" stroke-linecap="round" stroke-linejoin="round"><g transform="translate(311.6 200.0) scale(1.6)"><path d="M10.2 -9.04 A5.5 5.5 0 1 0 10.2 -1.96"/></g></g>
+  <path d="M450 340 L130 100" fill="none" stroke="#c2410c" stroke-width="5" stroke-linecap="round"/>
+</svg>

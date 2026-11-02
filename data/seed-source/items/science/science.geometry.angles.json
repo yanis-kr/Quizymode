@@ -111,7 +111,11 @@
       "triangle-sum",
       "angles"
     ],
-    "source": "https://www.mathsisfun.com/proofangles.html"
+    "source": "https://www.mathsisfun.com/proofangles.html",
+    "explanationImage": {
+      "key": "curated:diagrams/triangle-angle-sum",
+      "altText": "A triangle with its three corner angles shaded and labelled A, B and C, next to the same three angles placed side by side along a straight line, where together they fill a half circle of 180 degrees."
+    }
   },
   {
     "itemId": "a76631a0-cefd-41fa-a471-b64032e3a40e",

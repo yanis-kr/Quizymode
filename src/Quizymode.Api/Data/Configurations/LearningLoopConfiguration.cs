@@ -47,9 +47,13 @@ internal sealed class DailyQuizCompletionConfiguration : IEntityTypeConfiguratio
         builder.ToTable("DailyQuizCompletions");
         builder.HasKey(x => new { x.UserId, x.Date });
         builder.Property(x => x.UserId).IsRequired().HasMaxLength(100);
+        builder.Property(x => x.Skipped).HasDefaultValue(0);
         builder.ToTable(t => t.HasCheckConstraint(
             "CK_DailyQuizCompletions_Counts",
             "\"Total\" > 0 AND \"Correct\" >= 0 AND \"Correct\" <= \"Total\""));
+        builder.ToTable(t => t.HasCheckConstraint(
+            "CK_DailyQuizCompletions_Skipped",
+            "\"Skipped\" >= 0 AND \"Correct\" + \"Skipped\" <= \"Total\""));
     }
 }
 

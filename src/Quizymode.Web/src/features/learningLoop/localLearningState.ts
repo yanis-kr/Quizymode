@@ -23,7 +23,10 @@ const MAX_DOCUMENT_LENGTH = 16 * 1024;
 export interface LocalDailyCompletion {
   date: string;
   correct: number;
+  /** Roster size, including skipped questions. */
   total: number;
+  /** Questions skipped because their picture was unavailable (#403); missing in older records means 0. */
+  skipped?: number;
 }
 
 function readJson(key: string): unknown {
@@ -56,10 +59,12 @@ export function readDailyCompletions(): LocalDailyCompletion[] {
   const byDate = new Map<string, LocalDailyCompletion>();
   for (const entry of doc.completions.slice(0, DAILY_MAX_COMPLETIONS)) {
     if (!entry || typeof entry !== "object") continue;
-    const { date, correct, total } = entry as Record<string, unknown>;
+    const { date, correct, total, skipped } = entry as Record<string, unknown>;
     if (typeof date !== "string" || !DATE_PATTERN.test(date) || !isCount(correct) || !isCount(total)) continue;
-    if (total === 0 || correct > total || byDate.has(date)) continue;
-    byDate.set(date, { date, correct, total });
+    if (skipped !== undefined && !isCount(skipped)) continue;
+    const skippedCount = skipped ?? 0;
+    if (total === 0 || correct + skippedCount > total || byDate.has(date)) continue;
+    byDate.set(date, skippedCount > 0 ? { date, correct, total, skipped: skippedCount } : { date, correct, total });
   }
   return [...byDate.values()];
 }

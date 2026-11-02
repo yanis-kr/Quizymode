@@ -241,10 +241,11 @@ const ItemDetailPage = () => {
               </div>
             )}
 
-            {item.explanation && (
+            {(item.explanation || item.explanationImage) && (
               <div>
                 <h2 className="text-sm font-medium text-gray-500 mb-1">Explanation</h2>
-                <p className="text-gray-700"><ForeignPhraseText text={item.explanation} linkify /></p>
+                {item.explanation && <p className="text-gray-700"><ForeignPhraseText text={item.explanation} linkify /></p>}
+                <QuestionImage key={`${item.id}-explanation`} image={item.explanationImage} slot="explanation" className="mt-3 sm:mx-0" />
               </div>
             )}
 
