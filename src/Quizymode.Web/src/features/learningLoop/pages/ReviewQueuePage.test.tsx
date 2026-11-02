@@ -93,6 +93,22 @@ describe("ReviewQueuePage", () => {
       if (!last) fireEvent.click(screen.getByRole("button", { name: "Next" }));
     };
 
+    it("can still be won when a question is skipped for an unavailable picture (#403)", async () => {
+      const items = ids.map((id) => (id === "a" ? { ...testItem(id), questionImage: { key: "curated:flags/zz", altText: "Not bundled" } } : testItem(id)));
+      vi.mocked(reviewQueueApi.get).mockResolvedValue(queue(5, items));
+      renderWithProviders(<ReviewQueuePage />);
+      await startBoss();
+
+      fireEvent.click(await screen.findByRole("button", { name: "Skip question (not scored)" }));
+      answer("b", true);
+      answer("c", true);
+      answer("d", true);
+      answer("e", true, true);
+
+      expect(await screen.findByRole("heading", { name: "Boss defeated!" })).toBeInTheDocument();
+      expect(reviewQueueApi.answer).toHaveBeenCalledTimes(4);
+    });
+
     it("offers a boss fight at 5 due and not at 4", async () => {
       vi.mocked(reviewQueueApi.get).mockResolvedValue(queue(4, ids.slice(0, 4).map((id) => testItem(id))));
       const first = renderWithProviders(<ReviewQueuePage />);

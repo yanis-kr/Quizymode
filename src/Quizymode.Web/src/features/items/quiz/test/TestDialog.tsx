@@ -1,3 +1,4 @@
+import { createPortal } from "react-dom";
 import { useEffect, useRef, type KeyboardEvent, type ReactNode, type RefObject } from "react";
 
 interface TestDialogProps {
@@ -32,7 +33,7 @@ export function TestDialog({ titleId, title, initialFocusRef, onEscape, children
       return;
     }
     if (event.key !== "Tab" || !dialogRef.current) return;
-    const focusable = Array.from(dialogRef.current.querySelectorAll<HTMLElement>("button:not([disabled])"));
+    const focusable = Array.from(dialogRef.current.querySelectorAll<HTMLElement>("button:not([disabled]),input:not([disabled])"));
     if (focusable.length === 0) return;
     const first = focusable[0];
     const last = focusable[focusable.length - 1];
@@ -45,7 +46,8 @@ export function TestDialog({ titleId, title, initialFocusRef, onEscape, children
     }
   };
 
-  return (
+  // Portalled to the body so a backdrop-filter ancestor cannot turn `fixed` into content-relative positioning.
+  return createPortal(
     <div className="fixed inset-0 z-[60] overflow-y-auto bg-slate-950/60 px-4 py-10">
       <div
         ref={dialogRef}
@@ -60,7 +62,8 @@ export function TestDialog({ titleId, title, initialFocusRef, onEscape, children
         </h2>
         {children}
       </div>
-    </div>
+    </div>,
+    document.body,
   );
 }
 

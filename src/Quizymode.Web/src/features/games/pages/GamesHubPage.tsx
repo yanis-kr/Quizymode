@@ -39,7 +39,7 @@ function getBestLabel(gameId: string, scopeKey: string, targetPairs: number): st
 }
 
 const GamesHubPage = () => {
-  const { scope, topicBar, topicPrompt, pool, rawItems, isPending, error, refetch, availableModes, handleModeChange, quizPath } = useGameRoster();
+  const { scope, topicBar, topicPrompt, pool, rawItems, isPending, error, refetch, availableModes, handleModeChange, quizPath, excludedPictures } = useGameRoster();
 
   const sortable: boolean = useMemo(() => hasSortableSet(rawItems), [rawItems]);
 
@@ -64,13 +64,18 @@ const GamesHubPage = () => {
   } else if (isPending) {
     body = <LoadingSpinner />;
   } else if (pool.length < GAME_MIN_ITEMS && !sortable) {
-    body = <GamesEmptyState quizPath={quizPath} />;
+    body = <GamesEmptyState quizPath={quizPath} excludedPictures={excludedPictures} poolEmpty={pool.length === 0} />;
   } else {
     const scopeKey: string = gameScopeKey(scope);
     const targetPairs: number = getMatchRaceTargetPairs();
     body = (
       <>
         <h1 className="mx-auto mt-4 max-w-4xl text-lg font-semibold text-gray-900">Games</h1>
+        {excludedPictures > 0 && (
+          <p className="mx-auto mt-1 max-w-4xl text-xs text-gray-600">
+            {excludedPictures === 1 ? "1 picture question is left out of games." : `${excludedPictures} picture questions are left out of games.`}
+          </p>
+        )}
         <div className="mx-auto mt-4 grid max-w-4xl grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {GAMES.filter((game) =>
             game.id === SORT_IT_ID ? sortable : pool.length >= GAME_MIN_ITEMS,

@@ -69,13 +69,14 @@ export function buildGlobalShare(args: { correct: number; total: number; origin:
 }
 
 /** Wordle-style grid: one square per question in roster order, with no question text. */
-export function buildDailyShare(args: { date: string; results: boolean[]; origin: string }): ResultShareDescriptor {
+export function buildDailyShare(args: { date: string; results: Array<boolean | null>; origin: string }): ResultShareDescriptor {
   const { date, results, origin } = args;
-  const correct = results.filter(Boolean).length;
-  const grid = results.map((isCorrect) => (isCorrect ? "\u{1F7E9}" : "\u{1F7E5}")).join("");
+  const correct = results.filter((result) => result === true).length;
+  // null marks a question skipped for an unavailable picture (#403): a grey square, outside the score.
+  const grid = results.map((result) => (result === null ? "\u2B1C" : result ? "\u{1F7E9}" : "\u{1F7E5}")).join("");
   return {
     kind: "daily",
-    text: `Quizymode Daily ${date} ${correct}/${results.length}\n${grid}`,
+    text: `Quizymode Daily ${date} ${correct}/${results.filter((result) => result !== null).length}\n${grid}`,
     url: withUtm(`${origin}/daily`, "daily"),
   };
 }

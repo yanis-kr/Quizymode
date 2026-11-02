@@ -16,7 +16,11 @@
       "parallelogram",
       "area"
     ],
-    "source": "https://www.mathsisfun.com/geometry/parallelogram.html"
+    "source": "https://www.mathsisfun.com/geometry/parallelogram.html",
+    "explanationImage": {
+      "key": "curated:diagrams/parallelogram-area",
+      "altText": "A parallelogram with its bottom side labelled b as the base, and a dashed line labelled h dropping straight down from the top side to the base at a right angle."
+    }
   },
   {
     "itemId": "577dd3ba-9a9b-4445-ac94-d3aab270d6b2",

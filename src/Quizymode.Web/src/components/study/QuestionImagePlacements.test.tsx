@@ -2,8 +2,10 @@ import { beforeEach, describe, expect, it, vi } from "vitest";
 import { fireEvent, render, screen, within } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import type { ComponentProps } from "react";
 import { MemoryRouter } from "react-router-dom";
 import { QuizRenderer } from "./QuizRenderer";
+import { useQuestionPictureStatuses } from "./pictureGate";
 import { ExploreRenderer } from "./ExploreRenderer";
 import { LearnQuestion } from "./LearnQuestion";
 import { LearnRecap } from "./LearnRecap";
@@ -69,18 +71,6 @@ describe("QuizRenderer picture", () => {
   it("renders no picture for a text-only item", () => {
     render(quiz(textItem, false));
     expect(screen.queryByTestId("question-image")).not.toBeInTheDocument();
-  });
-
-  it("keeps answers selectable when the picture fails to load", async () => {
-    const onAnswerSelect = vi.fn();
-    const user = userEvent.setup({ delay: null });
-    render(quiz(pictureItem, false, onAnswerSelect));
-    fireEvent.error(screen.getByAltText(questionImage.altText));
-    expect(screen.getByText("Picture couldn't load")).toBeInTheDocument();
-
-    await user.click(screen.getByRole("button", { name: /France/ }));
-
-    expect(onAnswerSelect).toHaveBeenCalledWith("France");
   });
 });
 
@@ -207,5 +197,226 @@ describe("CollectionPrintView picture", () => {
     );
     expect(screen.getByText("[Picture unavailable: Green and white]")).toBeInTheDocument();
     expect(document.querySelector("img")).toBeNull();
+  });
+});
+
+const explanationImage = { key: "curated:flags/fr", altText: "Diagram of the tricolore with the answer France" };
+const explainedItem: ItemResponse = { ...pictureItem, id: "explained-1", questionImage: null, explanationImage };
+
+/** QuizRenderer wired to the page-level picture gate, the way every study surface uses it (#403). */
+function GatedQuiz({
+  item,
+  onAnswerSelect,
+  onSkip,
+  showAnswer = false,
+  revealFeedback = true,
+}: {
+  item: ItemResponse;
+  onAnswerSelect: (answer: string) => void;
+  onSkip?: () => void;
+  showAnswer?: boolean;
+  revealFeedback?: boolean;
+}) {
+  const pictures = useQuestionPictureStatuses();
+  return (
+    <QuizRenderer
+      item={item}
+      options={options}
+      selectedAnswer={showAnswer ? "France" : null}
+      showAnswer={showAnswer}
+      revealFeedback={revealFeedback}
+      onAnswerSelect={(answer) => {
+        if (pictures.isBlocked(item)) return;
+        onAnswerSelect(answer);
+      }}
+      stats={{ total: 0, correct: 0 }}
+      questionPicture={pictures.controlsFor(item, onSkip)}
+    />
+  );
+}
+
+describe("QuizRenderer picture gate", () => {
+  it("keeps every answer off until the picture has loaded, then enables them", async () => {
+    const onAnswerSelect = vi.fn();
+    const user = userEvent.setup({ delay: null });
+    render(<GatedQuiz item={pictureItem} onAnswerSelect={onAnswerSelect} />);
+
+    const france = screen.getByRole("button", { name: /France/ });
+    expect(france).toBeDisabled();
+    expect(screen.getByRole("group", { name: "Answer options" })).toHaveAttribute("aria-disabled", "true");
+    expect(screen.getByText("Answers are unavailable until the picture loads.")).toBeInTheDocument();
+    await user.click(france);
+    expect(onAnswerSelect).not.toHaveBeenCalled();
+
+    fireEvent.load(screen.getByAltText(questionImage.altText));
+
+    expect(screen.getByRole("button", { name: /France/ })).toBeEnabled();
+    expect(screen.queryByText("Answers are unavailable until the picture loads.")).not.toBeInTheDocument();
+    await user.click(screen.getByRole("button", { name: /France/ }));
+    expect(onAnswerSelect).toHaveBeenCalledWith("France");
+  });
+
+  it("keeps answers off when the picture fails, offers Skip, and re-enables on a successful Retry", async () => {
+    const onSkip = vi.fn();
+    const user = userEvent.setup({ delay: null });
+    render(<GatedQuiz item={pictureItem} onAnswerSelect={vi.fn()} onSkip={onSkip} />);
+    fireEvent.error(screen.getByAltText(questionImage.altText));
+
+    expect(screen.getByText("Picture couldn't load")).toBeInTheDocument();
+    expect(screen.getByRole("button", { name: /France/ })).toBeDisabled();
+
+    await user.click(screen.getByRole("button", { name: "Retry loading picture" }));
+    fireEvent.load(screen.getByAltText(questionImage.altText));
+    expect(screen.getByRole("button", { name: /France/ })).toBeEnabled();
+    expect(screen.getByText("Picture loaded. Answers are available.")).toBeInTheDocument();
+
+    fireEvent.error(screen.getByAltText(questionImage.altText));
+    await user.click(screen.getByRole("button", { name: "Skip question (not scored)" }));
+    expect(onSkip).toHaveBeenCalledTimes(1);
+  });
+
+  it("never blocks a text-only item", () => {
+    render(<GatedQuiz item={textItem} onAnswerSelect={vi.fn()} />);
+    expect(screen.getByRole("button", { name: /France/ })).toBeEnabled();
+    expect(screen.queryByRole("status")).not.toBeInTheDocument();
+  });
+
+  it("disables the Type answer checkbox while the picture is not showing", () => {
+    render(
+      <QuizRenderer
+        item={pictureItem}
+        options={options}
+        selectedAnswer={null}
+        showAnswer={false}
+        onAnswerSelect={vi.fn()}
+        stats={{ total: 0, correct: 0 }}
+        typedAnswer={{
+          isTypeable: true,
+          enabled: false,
+          onEnabledChange: vi.fn(),
+          result: null,
+          onSubmit: vi.fn(),
+          onOverride: vi.fn(),
+          onContinue: vi.fn(),
+          continueLabel: "Next",
+        }}
+        questionPicture={{ blocked: true, onStatusChange: vi.fn() }}
+      />,
+    );
+    expect(screen.getByRole("checkbox", { name: "Type answer" })).toBeDisabled();
+  });
+
+  it("disables the typed answer input and Check answer while blocked", () => {
+    render(
+      <QuizRenderer
+        item={pictureItem}
+        options={options}
+        selectedAnswer={null}
+        showAnswer={false}
+        onAnswerSelect={vi.fn()}
+        stats={{ total: 0, correct: 0 }}
+        typedAnswer={{
+          isTypeable: true,
+          enabled: true,
+          onEnabledChange: vi.fn(),
+          result: null,
+          onSubmit: vi.fn(),
+          onOverride: vi.fn(),
+          onContinue: vi.fn(),
+          continueLabel: "Next",
+        }}
+        questionPicture={{ blocked: true, onStatusChange: vi.fn() }}
+      />,
+    );
+    expect(screen.getByLabelText("Type your answer")).toBeDisabled();
+    expect(screen.getByRole("button", { name: "Check answer" })).toBeDisabled();
+  });
+});
+
+describe("explanation picture reveal", () => {
+  it("is absent from the DOM until the answer is revealed in a Quiz", () => {
+    const { rerender } = render(quiz(explainedItem, false));
+    expect(screen.queryByAltText(explanationImage.altText)).not.toBeInTheDocument();
+    expect(screen.queryByTestId("explanation-image")).not.toBeInTheDocument();
+
+    rerender(quiz(explainedItem, true));
+    expect(screen.getByAltText(explanationImage.altText)).toBeInTheDocument();
+    expect(screen.getByTestId("explanation-image")).toBeInTheDocument();
+  });
+
+  it("never shows an explanation picture in an unsubmitted Test", () => {
+    render(<GatedQuiz item={explainedItem} onAnswerSelect={vi.fn()} showAnswer revealFeedback={false} />);
+    expect(screen.queryByAltText(explanationImage.altText)).not.toBeInTheDocument();
+  });
+
+  it("does not block answering when the explanation picture fails, and offers Retry only", () => {
+    render(quiz(explainedItem, true));
+    fireEvent.error(screen.getByAltText(explanationImage.altText));
+    expect(screen.getByRole("button", { name: "Retry loading picture" })).toBeInTheDocument();
+    expect(screen.queryByRole("button", { name: /Skip question/ })).not.toBeInTheDocument();
+  });
+
+  it("mounts the explanation picture on the flashcard back only while flipped", async () => {
+    const user = userEvent.setup();
+    render(<ExploreRenderer item={explainedItem} />);
+    expect(screen.queryByAltText(explanationImage.altText)).not.toBeInTheDocument();
+
+    await user.click(screen.getByRole("button", { name: "Show answer and explanation" }));
+    expect(screen.getByAltText(explanationImage.altText)).toBeInTheDocument();
+    expect(screen.getByAltText(explanationImage.altText).closest("button")).toBeNull();
+
+    await user.click(screen.getByRole("button", { name: "Show question" }));
+    expect(screen.queryByAltText(explanationImage.altText)).not.toBeInTheDocument();
+  });
+
+  it("disables the flashcard grade buttons until the question picture has loaded", async () => {
+    const user = userEvent.setup();
+    const onGrade = vi.fn();
+    render(
+      <ExploreRenderer
+        item={pictureItem}
+        onGrade={onGrade}
+        questionPicture={{ blocked: true, onStatusChange: vi.fn() }}
+      />,
+    );
+    await user.click(screen.getByRole("button", { name: "Show answer and explanation" }));
+    expect(screen.getByRole("button", { name: "Got it" })).toBeDisabled();
+    await user.click(screen.getByRole("button", { name: "Got it" }));
+    expect(onGrade).not.toHaveBeenCalled();
+  });
+});
+
+describe("ItemListCard explanation thumbnail", () => {
+  const renderCard = (props: Partial<ComponentProps<typeof ItemListCard>>) =>
+    render(
+      <QueryClientProvider client={new QueryClient()}>
+        <MemoryRouter>
+          <ItemListCard item={explainedItem} {...props} />
+        </MemoryRouter>
+      </QueryClientProvider>,
+    );
+
+  it("shows a small thumbnail with the answer section, and none when answers are hidden", () => {
+    const { unmount } = renderCard({});
+    expect(screen.getByAltText(explanationImage.altText)).toHaveAttribute("loading", "lazy");
+    expect(screen.queryByRole("button", { name: "Enlarge picture" })).not.toBeInTheDocument();
+    unmount();
+
+    renderCard({ showAnswer: false });
+    expect(screen.queryByAltText(explanationImage.altText)).not.toBeInTheDocument();
+  });
+});
+
+describe("CollectionPrintView explanation picture", () => {
+  const baseItem = { question: "Q?", correctAnswer: "France", incorrectAnswers: ["Italy"], explanation: "Because." };
+
+  it("prints the explanation picture after the answer, but not in worksheet mode", () => {
+    const { unmount } = render(<CollectionPrintView title="T" hideAnswers={false} items={[{ ...baseItem, explanationImage }]} />);
+    const img = screen.getByAltText(explanationImage.altText);
+    expect(img).toHaveClass("max-w-[8cm]", "break-inside-avoid");
+    unmount();
+
+    render(<CollectionPrintView title="T" hideAnswers items={[{ ...baseItem, explanationImage }]} />);
+    expect(screen.queryByAltText(explanationImage.altText)).not.toBeInTheDocument();
   });
 });

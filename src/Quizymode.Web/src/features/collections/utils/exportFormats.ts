@@ -9,6 +9,33 @@ export interface ExportableItem {
   correctAnswer: string;
   incorrectAnswers: readonly string[];
   explanation?: string | null;
+  /** Printed after the answer by the print view; never part of a text export (#403). */
+  explanationImage?: ItemImageReference | null;
+}
+
+/**
+ * A "picture question" is an item with a question picture (#403): its text may not make sense without it. Items that
+ * only have an explanation picture still work as text, so they never trigger the export choice.
+ */
+export const isPictureQuestion = (item: Pick<ExportableItem, "questionImage">): boolean => Boolean(item.questionImage);
+
+export interface TextExportPlan {
+  total: number;
+  pictureCount: number;
+  /** The items left when picture questions are skipped. */
+  withoutPictureQuestions: ExportableItem[];
+  /** True when some item also has an explanation picture, which no text export includes either. */
+  hasExplanationPictures: boolean;
+}
+
+/** What a CSV, TSV or Quizlet export has to decide about pictures (#403). pictureCount 0 means no choice is needed. */
+export function planTextExport(items: readonly ExportableItem[]): TextExportPlan {
+  return {
+    total: items.length,
+    pictureCount: items.filter(isPictureQuestion).length,
+    withoutPictureQuestions: items.filter((item) => !isPictureQuestion(item)),
+    hasExplanationPictures: items.some((item) => Boolean(item.explanationImage)),
+  };
 }
 
 export const INCORRECT_ANSWER_JOINER = " | ";

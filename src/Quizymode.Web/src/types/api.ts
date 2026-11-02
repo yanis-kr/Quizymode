@@ -72,6 +72,8 @@ export interface ItemResponse {
   groupLabel?: string | null;
   /** Curated question picture (#407); set by seed sync only. */
   questionImage?: ItemImageReference | null;
+  /** Curated explanation picture (#403), shown only after the answer is revealed; set by seed sync only. */
+  explanationImage?: ItemImageReference | null;
   /** Navigation path for breadcrumbs, e.g. [rank1, rank2] or ["other"]. Use "other" in URLs; display as "Others". */
   navigationBreadcrumb?: string[];
 }
@@ -94,6 +96,8 @@ export interface GameRosterScope {
   available: number;
   returned: number;
   status: "ok" | "empty";
+  /** Visible picture questions in this scope that no game can use (#403). */
+  excludedPictures?: number;
 }
 
 export interface GameRosterResponse {

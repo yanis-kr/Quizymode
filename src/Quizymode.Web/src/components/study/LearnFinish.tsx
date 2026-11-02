@@ -7,6 +7,8 @@ interface LearnFinishProps {
   firstTryCorrect: number;
   firstTryPercentage: number;
   missedCount: number;
+  /** Questions skipped because their picture was unavailable (#403); not scored. */
+  skippedCount?: number;
   isAuthenticated: boolean;
   browsePath: string;
   browseLabel: string;
@@ -22,6 +24,7 @@ export function LearnFinish({
   firstTryCorrect,
   firstTryPercentage,
   missedCount,
+  skippedCount = 0,
   isAuthenticated,
   browsePath,
   browseLabel,
@@ -37,12 +40,23 @@ export function LearnFinish({
   return (
     <section className="mx-auto max-w-2xl rounded-lg bg-white p-4 text-center shadow sm:p-6">
       <h2 ref={headingRef} tabIndex={-1} className="text-2xl font-bold text-gray-900 focus:outline-none">
-        You&apos;ve mastered all {total} {total === 1 ? "item" : "items"}
+        {total === 0 ? "No questions were scored" : <>You&apos;ve mastered all {total} {total === 1 ? "item" : "items"}</>}
       </h2>
-      <p className="mt-3 text-3xl font-bold text-indigo-700">
-        First try: {firstTryCorrect} / {total}
-      </p>
-      <p className="mt-1 text-gray-700">{firstTryPercentage}% right first time</p>
+      {total > 0 && (
+        <>
+          <p className="mt-3 text-3xl font-bold text-indigo-700">
+            First try: {firstTryCorrect} / {total}
+          </p>
+          <p className="mt-1 text-gray-700">{firstTryPercentage}% right first time</p>
+        </>
+      )}
+      {skippedCount > 0 && (
+        <p className="mt-1 text-sm text-gray-600">
+          {skippedCount === 1
+            ? "1 question skipped because the picture was unavailable. Not scored."
+            : `${skippedCount} questions skipped because the picture was unavailable. Not scored.`}
+        </p>
+      )}
       {isAuthenticated && saveState === "saved" && missedCount > 0 && (
         <p role="status" className="mt-3 text-sm text-gray-700">
           Misses were added to your review queue.

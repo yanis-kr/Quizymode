@@ -46,7 +46,7 @@ interface FinishResult {
 }
 
 const MatchRacePage = () => {
-  const { scope, runIdentityKey, topicBar, topicPrompt, pool, isPending, error, refetch, availableModes, handleModeChange, quizPath } = useGameRoster();
+  const { scope, runIdentityKey, topicBar, topicPrompt, pool, isPending, error, refetch, availableModes, handleModeChange, quizPath, excludedPictures } = useGameRoster();
   const scopeKey: string = gameScopeKey(scope);
   const runKey = `${runIdentityKey}|${scopeKey}`;
 
@@ -181,7 +181,7 @@ const MatchRacePage = () => {
       </div>
     );
   } else if (!isPending && pool.length < GAME_MIN_ITEMS) {
-    body = <GamesEmptyState quizPath={quizPath} />;
+    body = <GamesEmptyState quizPath={quizPath} excludedPictures={excludedPictures} poolEmpty={pool.length === 0} />;
   } else if (!run) {
     body = <LoadingSpinner />;
   } else if (run.status === "finished") {

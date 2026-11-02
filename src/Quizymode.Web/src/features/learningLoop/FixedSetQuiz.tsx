@@ -5,6 +5,8 @@ import { StudyHotkeysDialog } from "@/components/study/StudyHotkeysDialog";
 import { QUIZ_SHORTCUTS } from "@/components/study/studyShortcuts";
 import { StudyHotkeysHint } from "@/components/study/StudyHotkeysHint";
 import { QuizRenderer } from "@/components/study/QuizRenderer";
+import { useQuestionPictureStatuses } from "@/components/study/pictureGate";
+import { usePreloadNextPicture } from "@/components/study/preloadPicture";
 import { QuizCompletionView } from "@/features/items/quiz/QuizCompletionView";
 import type { ResultShareDescriptor } from "@/features/items/quiz/resultShare";
 import {
@@ -71,6 +73,11 @@ export function FixedSetQuiz({
   const item = items[index];
   const summary = summarizeQuizRun(run);
   const outcome = item ? run.outcomes[item.id] : undefined;
+  // #403: answers stay off until the question's picture has loaded; a skipped question is never answerable again.
+  const pictures = useQuestionPictureStatuses();
+  const isSkipped = item ? run.skipped.includes(item.id) : false;
+  const pictureBlocked = pictures.isBlocked(item) || isSkipped;
+  usePreloadNextPicture(items[index + 1]);
   const options = useMemo(() => (item ? getQuizOptions(item, run.runId) : []), [item, run.runId]);
   const context = analytics.contextId
     ? { contextType: analytics.contextType, contextId: analytics.contextId }
@@ -90,7 +97,7 @@ export function FixedSetQuiz({
       name: "quiz_completed",
       runId: run.runId,
       score: summary.correct,
-      total: summary.total,
+      total: summary.scoredTotal,
       ...context,
     });
     onComplete?.(run);
@@ -98,7 +105,7 @@ export function FixedSetQuiz({
   }, [summary.isComplete, run.runId]);
 
   const handleAnswer = (answer: string) => {
-    if (!item || outcome) return;
+    if (!item || outcome || pictureBlocked) return;
     const isCorrect = answer === item.correctAnswer;
     const next = reduceQuizRun(run, {
       type: "answer",
@@ -119,6 +126,15 @@ export function FixedSetQuiz({
     onAnswer?.(item, isCorrect, next);
   };
 
+  /** Leaves a question whose picture will not load; it is not scored and the quiz moves on (#403). */
+  const handleSkipUnavailable = () => {
+    if (!item || outcome || isSkipped) return;
+    setRun((current) =>
+      reduceQuizRun(current, { type: "skip-unavailable", itemId: item.id, completedAt: new Date().toISOString() }),
+    );
+    if (!isLast) goTo(index + 1);
+  };
+
   const goTo = (nextIndex: number) => {
     setIndex(nextIndex);
     requestAnimationFrame(() => questionHeadingRef.current?.focus());
@@ -126,15 +142,16 @@ export function FixedSetQuiz({
 
   const isLast = index === items.length - 1;
   const isActive = run.view === "active" && !!item;
-  const canGoNext = !isLast && Boolean(outcome);
+  const handled = Boolean(outcome) || isSkipped;
+  const canGoNext = !isLast && handled;
   const { isHelpOpen, openHelp, closeHelp } = useStudyHotkeys({
     enabled: true,
-    letter: isActive && !outcome ? (i) => options[i] !== undefined && handleAnswer(options[i]) : undefined,
-    digit: isActive && !outcome ? (n) => options[n - 1] !== undefined && handleAnswer(options[n - 1]) : undefined,
+    letter: isActive && !outcome && !pictureBlocked ? (i) => options[i] !== undefined && handleAnswer(options[i]) : undefined,
+    digit: isActive && !outcome && !pictureBlocked ? (n) => options[n - 1] !== undefined && handleAnswer(options[n - 1]) : undefined,
     prev: isActive && index > 0 ? () => goTo(index - 1) : undefined,
     next: isActive && !summary.isComplete && canGoNext ? () => goTo(index + 1) : undefined,
     enter:
-      isActive && outcome
+      isActive && handled
         ? () => {
             if (summary.isComplete) setRun((current) => reduceQuizRun(current, { type: "show-summary" }));
             else if (canGoNext) goTo(index + 1);
@@ -176,6 +193,7 @@ export function FixedSetQuiz({
         <div className="flex items-center gap-2">
           <p>
             {summary.correct} correct · {summary.answered} answered
+            {summary.skipped > 0 && ` · ${summary.skipped} skipped`}
           </p>
           <StudyHotkeysHint onClick={openHelp} />
         </div>
@@ -187,6 +205,10 @@ export function FixedSetQuiz({
         showAnswer={Boolean(outcome)}
         onAnswerSelect={handleAnswer}
         stats={{ total: summary.answered, correct: summary.correct }}
+        questionPicture={{
+          ...pictures.controlsFor(item, isSkipped ? undefined : handleSkipUnavailable),
+          blocked: pictureBlocked,
+        }}
       />
       <div className="mt-4 flex items-center justify-between gap-3">
         <button
@@ -209,7 +231,7 @@ export function FixedSetQuiz({
           <button
             type="button"
             onClick={() => goTo(index + 1)}
-            disabled={isLast || !outcome}
+            disabled={isLast || !handled}
             className="rounded-md bg-indigo-600 px-4 py-2 text-sm font-semibold text-white hover:bg-indigo-700 disabled:cursor-not-allowed disabled:opacity-50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500 focus-visible:ring-offset-2"
           >
             Next

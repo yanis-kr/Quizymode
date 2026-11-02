@@ -167,6 +167,7 @@ describe("Quiz completion summary signup prompt", () => {
     runId: "run-1",
     view: "summary",
     itemIds: ["a", "b"],
+    skipped: [],
     outcomes: {
       a: { itemId: "a", selectedAnswer: "x", isCorrect: true },
       b: { itemId: "b", selectedAnswer: "y", isCorrect: false },

@@ -656,6 +656,8 @@ internal sealed class SeedSyncAdminService(
         item.Source = change.Item.Source;
         item.QuestionImageKey = change.Item.QuestionImage?.Key;
         item.QuestionImageAlt = change.Item.QuestionImage?.AltText;
+        item.ExplanationImageKey = change.Item.ExplanationImage?.Key;
+        item.ExplanationImageAlt = change.Item.ExplanationImage?.AltText;
         item.CategoryId = change.Navigation.Category.Id;
         item.NavigationKeywordId1 = change.Navigation.Nav1.Id;
         item.NavigationKeywordId2 = change.Navigation.Nav2.Id;
@@ -904,6 +906,7 @@ internal sealed class SeedSyncAdminService(
             500);
         List<string> keywords = NormalizeKeywords(item.Keywords, category, nav1, nav2);
         ItemImageReference? questionImage = ItemImageReferenceHelper.Normalize(item.QuestionImage);
+        ItemImageReference? explanationImage = ItemImageReferenceHelper.Normalize(item.ExplanationImage);
 
         return new NormalizedSeedItem(
             item.ItemId,
@@ -919,7 +922,8 @@ internal sealed class SeedSyncAdminService(
             explanation,
             keywords,
             source,
-            questionImage);
+            questionImage,
+            explanationImage);
     }
 
     private static NormalizedSeedCollection NormalizeCollection(SeedSyncAdmin.SeedCollectionRequest collection)
@@ -1048,6 +1052,12 @@ internal sealed class SeedSyncAdminService(
             changed.Add("questionImage");
         }
 
+        if (!string.Equals(existing.ExplanationImage?.Key, incoming.ExplanationImage?.Key, StringComparison.Ordinal)
+            || !string.Equals(existing.ExplanationImage?.AltText, incoming.ExplanationImage?.AltText, StringComparison.Ordinal))
+        {
+            changed.Add("explanationImage");
+        }
+
         return changed;
     }
 
@@ -1116,7 +1126,8 @@ internal sealed class SeedSyncAdminService(
             item.Explanation.Trim(),
             string.IsNullOrWhiteSpace(item.Source) ? null : item.Source.Trim(),
             extras,
-            ItemImageReferenceHelper.FromColumns(item.QuestionImageKey, item.QuestionImageAlt));
+            ItemImageReferenceHelper.FromColumns(item.QuestionImageKey, item.QuestionImageAlt),
+            ItemImageReferenceHelper.FromColumns(item.ExplanationImageKey, item.ExplanationImageAlt));
     }
 
     private static async Task TryRollbackAsync(
@@ -1151,7 +1162,8 @@ internal sealed class SeedSyncAdminService(
         string Explanation,
         List<string> Keywords,
         string? Source,
-        ItemImageReference? QuestionImage);
+        ItemImageReference? QuestionImage,
+        ItemImageReference? ExplanationImage);
 
     private sealed record ExistingItemState(
         string Category,
@@ -1166,7 +1178,8 @@ internal sealed class SeedSyncAdminService(
         string Explanation,
         string? Source,
         List<string> Keywords,
-        ItemImageReference? QuestionImage);
+        ItemImageReference? QuestionImage,
+        ItemImageReference? ExplanationImage);
 
     private sealed record NormalizedSeedCollection(
         Guid CollectionId,

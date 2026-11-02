@@ -96,6 +96,7 @@ function ReviewBoardItemCard({
     incorrectAnswers: string[];
     incorrectAnswerSpeech?: Record<number, ItemSpeechSupport> | null;
     questionImage?: ItemImageReference | null;
+    explanationImage?: ItemImageReference | null;
     explanation: string;
     createdBy: string;
     createdAt: string;
@@ -150,10 +151,11 @@ function ReviewBoardItemCard({
                 </ul>
               </div>
             )}
-            {item.explanation && (
-              <p className="mt-1 text-sm text-gray-600">
-                {item.explanation}
-              </p>
+            {(item.explanation || item.explanationImage) && (
+              <div className="mt-1 flex items-start gap-3">
+                <QuestionImage image={item.explanationImage} slot="explanation" size="sm" />
+                {item.explanation && <p className="min-w-0 text-sm text-gray-600">{item.explanation}</p>}
+              </div>
             )}
             <p className="mt-2 text-sm text-gray-500">{item.category}</p>
             {item.groupLabel && (

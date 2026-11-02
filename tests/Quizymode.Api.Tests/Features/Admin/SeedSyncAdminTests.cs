@@ -602,6 +602,80 @@ public sealed class SeedSyncAdminTests : ItemTestFixture
             .IsFailure.Should().BeTrue();
     }
 
+    // --- #403 curated explanation pictures ---
+
+    private static readonly ItemImageReference Diagram = new("curated:diagrams/pythagorean-theorem", "Right triangle with legs a, b and hypotenuse c");
+
+    private SeedSyncAdmin.Request DiagramRequest(ItemImageReference? image, string? explanation = "a squared plus b squared equals c squared") =>
+        BuildRequest([BuildItem(PictureItemId, "State the Pythagorean theorem?", "a2+b2=c2", ["a+b=c", "a2-b2=c2"], explanation, explanationImage: image)]);
+
+    [Fact]
+    public async Task ApplyAsync_CreatesItemWithExplanationImage_AndAllowsAltNamingTheAnswer()
+    {
+        await EnsureGeographyPublicWithNavAsync("seeder");
+        ItemImageReference namesAnswer = new(Diagram.Key, "Triangle labelled a2 + b2 = c2");
+
+        Result<SeedSyncAdmin.ApplyResponse> result = await _service.ApplyAsync(DiagramRequest(namesAnswer), CancellationToken.None);
+
+        result.IsSuccess.Should().BeTrue();
+        Item item = await DbContext.Items.SingleAsync(i => i.Id == PictureItemId);
+        item.ExplanationImageKey.Should().Be(Diagram.Key);
+        item.ExplanationImageAlt.Should().Be(namesAnswer.AltText);
+        item.QuestionImageKey.Should().BeNull();
+    }
+
+    [Fact]
+    public async Task ApplyAsync_ManifestWithoutExplanationImage_ClearsItAndRerunReportsNoChange()
+    {
+        await EnsureGeographyPublicWithNavAsync("seeder");
+        (await _service.ApplyAsync(DiagramRequest(Diagram), CancellationToken.None)).IsSuccess.Should().BeTrue();
+
+        Result<SeedSyncAdmin.PreviewResponse> preview = await _service.PreviewAsync(DiagramRequest(null), CancellationToken.None);
+        preview.Value!.Changes.Should().ContainSingle().Which.ChangedFields.Should().Equal("explanationImage");
+
+        (await _service.ApplyAsync(DiagramRequest(null), CancellationToken.None)).IsSuccess.Should().BeTrue();
+        Item cleared = await DbContext.Items.AsNoTracking().SingleAsync(i => i.Id == PictureItemId);
+        cleared.ExplanationImageKey.Should().BeNull();
+        cleared.ExplanationImageAlt.Should().BeNull();
+
+        Result<SeedSyncAdmin.PreviewResponse> rerun = await _service.PreviewAsync(DiagramRequest(null), CancellationToken.None);
+        rerun.Value!.UnchangedCount.Should().Be(1);
+        rerun.Value.UpdatedCount.Should().Be(0);
+    }
+
+    [Fact]
+    public async Task PreviewAsync_AltOnlyChange_ReportsExplanationImage_AndSameImageIsUnchanged()
+    {
+        await EnsureGeographyPublicWithNavAsync("seeder");
+        (await _service.ApplyAsync(DiagramRequest(Diagram), CancellationToken.None)).IsSuccess.Should().BeTrue();
+
+        Result<SeedSyncAdmin.PreviewResponse> same = await _service.PreviewAsync(DiagramRequest(Diagram), CancellationToken.None);
+        same.Value!.UnchangedCount.Should().Be(1);
+
+        Result<SeedSyncAdmin.PreviewResponse> alt = await _service.PreviewAsync(
+            DiagramRequest(new ItemImageReference(Diagram.Key, "Other description")), CancellationToken.None);
+        alt.Value!.Changes.Should().ContainSingle().Which.ChangedFields.Should().Contain("explanationImage");
+    }
+
+    [Theory]
+    [InlineData("__proto__", "alt", "text")]
+    [InlineData("https://evil/x.webp", "alt", "text")]
+    [InlineData("curated:diagrams/X", "alt", "text")]
+    [InlineData("curated:diagrams/x", "", "text")]
+    [InlineData("curated:diagrams/x", "line one\nline two", "text")]
+    [InlineData("curated:diagrams/x", "alt", "")]
+    [InlineData("curated:diagrams/x", "alt", "   ")]
+    public async Task ApplyAsync_InvalidExplanationImage_IsRejectedAndNothingApplied(string key, string altText, string explanation)
+    {
+        await EnsureGeographyPublicWithNavAsync("seeder");
+
+        Result<SeedSyncAdmin.ApplyResponse> result = await _service.ApplyAsync(
+            DiagramRequest(new ItemImageReference(key, altText), explanation), CancellationToken.None);
+
+        result.IsFailure.Should().BeTrue();
+        (await DbContext.Items.AnyAsync(i => i.Id == PictureItemId)).Should().BeFalse();
+    }
+
     private SeedSyncAdmin.Request BuildRequest(
         List<SeedSyncAdmin.SeedItemRequest> items,
         List<SeedSyncAdmin.SeedCollectionRequest>? collections = null)
@@ -643,7 +717,8 @@ public sealed class SeedSyncAdminTests : ItemTestFixture
         ItemSpeechSupport? questionSpeech = null,
         ItemSpeechSupport? correctAnswerSpeech = null,
         Dictionary<int, ItemSpeechSupport>? incorrectAnswerSpeech = null,
-        ItemImageReference? questionImage = null)
+        ItemImageReference? questionImage = null,
+        ItemImageReference? explanationImage = null)
     {
         return new SeedSyncAdmin.SeedItemRequest(
             ItemId: itemId,
@@ -659,7 +734,8 @@ public sealed class SeedSyncAdminTests : ItemTestFixture
             QuestionSpeech: questionSpeech,
             CorrectAnswerSpeech: correctAnswerSpeech,
             IncorrectAnswerSpeech: incorrectAnswerSpeech,
-            QuestionImage: questionImage);
+            QuestionImage: questionImage,
+            ExplanationImage: explanationImage);
     }
 
     private sealed class FakeGitHubSeedSource : IGitHubSeedSource

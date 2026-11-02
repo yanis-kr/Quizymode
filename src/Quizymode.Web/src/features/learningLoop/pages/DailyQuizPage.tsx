@@ -64,22 +64,28 @@ const DailyQuizPage = () => {
     }
 
     if (!isAuthenticated) {
-      const next = recordLocalDailyCompletion({ date: data.date, correct: summary.correct, total: summary.total });
+      const next = recordLocalDailyCompletion({
+        date: data.date,
+        correct: summary.correct,
+        total: summary.total,
+        ...(summary.skipped > 0 ? { skipped: summary.skipped } : {}),
+      });
       setCountState({ status: "counted", streak: computeStreak(next.map((entry) => entry.date), data.date) });
       return;
     }
 
     setCountState({ status: "saving" });
     try {
-      const response = await dailyQuizApi.complete(data.date, summary.correct, summary.total);
+      // Total is the whole roster; skipped questions (unavailable picture) are not scored and keep the streak (#403).
+      const response = await dailyQuizApi.complete(data.date, summary.correct, summary.total, summary.skipped);
       setCountState(response.created ? { status: "counted", streak: response.streak } : { status: "practice" });
-      if (response.created) {
+      if (response.created && summary.scoredTotal > 0) {
         // History plus review queue: misses from the counted run are due tomorrow (#117).
         void saveStudySession({
           runId: run.runId,
           completedAt: run.completedAt ?? new Date().toISOString(),
           correct: summary.correct,
-          total: summary.total,
+          total: summary.scoredTotal,
           source: null,
           missedItemIds: summary.missedItemIds,
         }).then(() => queryClient.invalidateQueries({ queryKey: ["review-queue"] }));
@@ -136,8 +142,17 @@ const DailyQuizPage = () => {
         {data && data.items.length > 0 && todaysResult && !started && (
           <div className="rounded-lg border border-emerald-200 bg-emerald-50 p-4">
             <p className="font-semibold text-emerald-900">
-              Done for today: {todaysResult.correct} / {todaysResult.total}
+              {todaysResult.total - (todaysResult.skipped ?? 0) === 0
+                ? "Done for today. No questions were scored"
+                : `Done for today: ${todaysResult.correct} / ${todaysResult.total - (todaysResult.skipped ?? 0)}`}
             </p>
+            {(todaysResult.skipped ?? 0) > 0 && (
+              <p className="mt-1 text-sm text-emerald-800">
+                {todaysResult.skipped === 1
+                  ? "1 question skipped because the picture was unavailable. Not scored."
+                  : `${todaysResult.skipped} questions skipped because the picture was unavailable. Not scored.`}
+              </p>
+            )}
             <p className="mt-1 text-sm text-emerald-800">Come back tomorrow for a new set. You can practice today's questions again; it won't change your score.</p>
             <button
               type="button"
@@ -172,7 +187,7 @@ const DailyQuizPage = () => {
               share={(run) =>
                 buildDailyShare({
                   date: data.date,
-                  results: run.itemIds.map((id) => run.outcomes[id]?.isCorrect === true),
+                  results: run.itemIds.map((id) => (run.skipped.includes(id) ? null : run.outcomes[id]?.isCorrect === true)),
                   origin: window.location.origin,
                 })
               }

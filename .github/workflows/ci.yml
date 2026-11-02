@@ -99,6 +99,9 @@ jobs:
           npm ci
           npm run check:flag-images
 
+      - name: Check curated explanation diagram manifest (offline)
+        run: npm run check:diagram-images
+
       # Hidden source maps (OBS-001): never deployed, kept per version for decoding reported stacks by hand.
       - name: Upload web source maps
         uses: actions/upload-artifact@v7

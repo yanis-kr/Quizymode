@@ -35,6 +35,8 @@ import { getCategoryScopeModeConfig } from "@/features/categories/utils/category
 import { getStudyScopeKeywords } from "@/features/items/utils/studyScopeParams";
 import { QuizCompletionView } from "@/features/items/quiz/QuizCompletionView";
 import { useStudyHotkeys } from "@/components/study/useStudyHotkeys";
+import { useQuestionPictureStatuses } from "@/components/study/pictureGate";
+import { usePreloadNextPicture } from "@/components/study/preloadPicture";
 import { ModeSwitchDialog, QuizModeToggle } from "@/features/items/quiz/test/QuizModeToggle";
 import { TestRunView } from "@/features/items/quiz/test/TestRunView";
 import { TestSetupCard } from "@/features/items/quiz/test/TestSetupCard";
@@ -720,6 +722,12 @@ const QuizModePageContent = () => {
   const options = currentItem && run ? getQuizOptions(currentItem, run.runId) : [];
   const isCurrentTypeable = currentItem ? isTypeable(currentItem) : false;
   const isPracticeActive = run?.mode === "practice" && run.view === "active";
+  // #403: answers stay off until the current question's picture has loaded (also computed for Test).
+  const pictures = useQuestionPictureStatuses();
+  // A question skipped for an unavailable picture is not answerable again in this run, even if the picture loads later.
+  const currentSkipped = Boolean(run && currentItem && run.skipped.includes(currentItem.id));
+  const pictureBlocked = pictures.isBlocked(currentItem) || currentSkipped;
+  usePreloadNextPicture(items[currentIndex + 1]);
   const typedOutcome = currentOutcome?.inputMode === "typed" ? currentOutcome : undefined;
   const isTypedAnswering = Boolean(
     isPracticeActive && currentItem && isCurrentTypeable && !currentOutcome && typedItemIds.has(currentItem.id)
@@ -766,7 +774,7 @@ const QuizModePageContent = () => {
   }, [run, isAuthenticated, isAuthLoading, identityKey]);
 
   const handleAnswerSelect = (answer: string) => {
-    if (!run || !currentItem) return;
+    if (!run || !currentItem || pictureBlocked) return;
     if (run.mode === "test") {
       // AC 3.18.3: the last answer before submit counts; nothing is sent per change (AC 3.18.11).
       setRun((current) =>
@@ -832,7 +840,7 @@ const QuizModePageContent = () => {
   }, [typedDraft, run, currentItem]);
 
   const handleTypedSubmit = (typed: string) => {
-    if (!run || !currentItem || run.mode !== "practice" || currentOutcome || typedDraft) return;
+    if (!run || !currentItem || pictureBlocked || run.mode !== "practice" || currentOutcome || typedDraft) return;
     const result = gradeTypedAnswer(typed, currentItem.correctAnswer);
     setTypedDraft({ runId: run.runId, itemId: currentItem.id, typed: typed.trim(), correct: result.correct });
   };
@@ -935,10 +943,32 @@ const QuizModePageContent = () => {
     );
   };
 
-  const handleSubmitTest = () => {
+  const handleSubmitTest = (unavailableItemIds: string[] = pictures.unavailableIds(items)) => {
     setRun((current) =>
-      current ? reduceQuizRun(current, { type: "submit", submittedAt: new Date().toISOString(), reason: "manual" }) : current
+      current
+        ? reduceQuizRun(current, {
+            type: "submit",
+            submittedAt: new Date().toISOString(),
+            reason: "manual",
+            unavailableItemIds,
+          })
+        : current
     );
+  };
+
+  /** Practice: leave a question whose picture will not load; it is not scored and the quiz moves on (#403). */
+  const handleSkipUnavailable = () => {
+    if (!run || !currentItem || run.mode !== "practice" || currentOutcome) return;
+    setRun((current) =>
+      current
+        ? reduceQuizRun(current, {
+            type: "skip-unavailable",
+            itemId: currentItem.id,
+            completedAt: new Date().toISOString(),
+          })
+        : current
+    );
+    handleNext();
   };
 
   const handleToggleFlag = () => {
@@ -954,7 +984,14 @@ const QuizModePageContent = () => {
   // AC 3.18.6: wall-clock countdown; at zero (also after a reload past the deadline) submit at the deadline.
   const remainingSec = useTestCountdown(run, (deadlineIso) =>
     setRun((current) =>
-      current ? reduceQuizRun(current, { type: "submit", submittedAt: deadlineIso, reason: "timeout" }) : current
+      current
+        ? reduceQuizRun(current, {
+            type: "submit",
+            submittedAt: deadlineIso,
+            reason: "timeout",
+            unavailableItemIds: pictures.unavailableIds(items),
+          })
+        : current
     )
   );
 
@@ -1172,7 +1209,7 @@ const QuizModePageContent = () => {
               ? buildRunShare({
                   scope: run.scope,
                   correct: runSummary?.correct ?? 0,
-                  total: runSummary?.total ?? 0,
+                  total: runSummary?.scoredTotal ?? 0,
                   collection:
                     collectionId && collectionInfo
                       ? { id: collectionId, name: collectionInfo.name, isPublic: collectionInfo.isPublic }
@@ -1423,6 +1460,7 @@ const QuizModePageContent = () => {
           onAnswer={handleAnswerSelect}
           onToggleFlag={handleToggleFlag}
           onSubmit={handleSubmitTest}
+          pictures={pictures}
           shell={{
             backContent: <></>,
             description: studyDescription,
@@ -1466,10 +1504,16 @@ const QuizModePageContent = () => {
               onAnswerSelect={handleAnswerSelect}
               stats={stats}
               typedAnswer={typedAnswerControls}
+              questionPicture={{
+                ...pictures.controlsFor(currentItem, isPracticeActive && !currentSkipped ? handleSkipUnavailable : undefined),
+                blocked: pictureBlocked,
+              }}
             />
             {runSummary?.isComplete && (
               <div role="status" className="mt-4 rounded-lg border border-indigo-200 bg-indigo-50 p-4 text-center">
-                <p className="font-semibold text-indigo-950">You answered every question.</p>
+                <p className="font-semibold text-indigo-950">
+                  {runSummary.skipped > 0 ? "You finished every question." : "You answered every question."}
+                </p>
                 <button
                   type="button"
                   onClick={() => setRun((current) => current ? reduceQuizRun(current, { type: "show-summary" }) : current)}

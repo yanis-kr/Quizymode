@@ -5,6 +5,8 @@ interface SubmitTestDialogProps {
   total: number;
   unanswered: number;
   flagged: number;
+  /** Unanswered questions whose picture is unavailable; they will not be scored (#403). */
+  notScored?: number;
   onReturn: () => void;
   onShowUnanswered: () => void;
   onShowFlagged: () => void;
@@ -16,6 +18,7 @@ export function SubmitTestDialog({
   total,
   unanswered,
   flagged,
+  notScored = 0,
   onReturn,
   onShowUnanswered,
   onShowFlagged,
@@ -30,7 +33,14 @@ export function SubmitTestDialog({
           ? `${unanswered} unanswered and ${flagged} flagged.`
           : `All ${total} questions are answered.${flagged > 0 ? ` ${flagged} flagged.` : ""}`}
       </p>
-      {unanswered > 0 && <p className="mt-1 text-sm">Unanswered questions count as wrong.</p>}
+      {unanswered > notScored && <p className="mt-1 text-sm">Unanswered questions count as wrong.</p>}
+      {notScored > 0 && (
+        <p className="mt-1 text-sm">
+          {notScored === 1
+            ? "1 question with an unavailable picture will not be scored."
+            : `${notScored} questions with an unavailable picture will not be scored.`}
+        </p>
+      )}
       {(unanswered > 0 || flagged > 0) && (
         <div className="mt-3 flex flex-wrap gap-4 text-sm">
           {unanswered > 0 && (

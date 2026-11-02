@@ -26,7 +26,7 @@ public static class DailyQuiz
     public const int MaxAdminDaysAhead = 7;
     private const int MaxStreakLookbackDays = 400;
 
-    public sealed record CompletionDto(int Correct, int Total, DateTime CompletedAt);
+    public sealed record CompletionDto(int Correct, int Total, DateTime CompletedAt, int Skipped = 0);
 
     /// <param name="Date">The UTC calendar date of the set, yyyy-MM-dd.</param>
     /// <param name="Items">The day's active items in slot order.</param>
@@ -38,7 +38,8 @@ public static class DailyQuiz
         CompletionDto? Completion,
         int? Streak);
 
-    public sealed record CompleteRequest(string Date, int Correct, int Total);
+    // Skipped: questions skipped because their picture was unavailable (#403); they are not scored. Defaults to 0.
+    public sealed record CompleteRequest(string Date, int Correct, int Total, int Skipped = 0);
 
     public sealed record CompleteResponse(bool Created, int Streak, CompletionDto Completion);
 
@@ -52,7 +53,8 @@ public static class DailyQuiz
         {
             RuleFor(x => x.Date).Must(d => TryParseDate(d, out _)).WithMessage("Date must be yyyy-MM-dd");
             RuleFor(x => x.Total).InclusiveBetween(1, SetSize);
-            RuleFor(x => x.Correct).GreaterThanOrEqualTo(0).LessThanOrEqualTo(x => x.Total);
+            RuleFor(x => x.Skipped).GreaterThanOrEqualTo(0).LessThanOrEqualTo(x => x.Total);
+            RuleFor(x => x.Correct).GreaterThanOrEqualTo(0).LessThanOrEqualTo(x => x.Total - x.Skipped);
         }
     }
 
@@ -216,6 +218,7 @@ public static class DailyQuiz
                 Date = date,
                 Correct = request.Correct,
                 Total = request.Total,
+                Skipped = request.Skipped,
                 CompletedAt = nowUtc,
             };
             db.DailyQuizCompletions.Add(entity);
@@ -448,7 +451,7 @@ public static class DailyQuiz
     internal static string FormatDate(DateOnly date) => date.ToString("yyyy-MM-dd", CultureInfo.InvariantCulture);
 
     private static CompletionDto ToDto(DailyQuizCompletion c) =>
-        new(c.Correct, c.Total, DateTime.SpecifyKind(c.CompletedAt, DateTimeKind.Utc));
+        new(c.Correct, c.Total, DateTime.SpecifyKind(c.CompletedAt, DateTimeKind.Utc), c.Skipped);
 
     public sealed class FeatureRegistration : IFeatureRegistration
     {

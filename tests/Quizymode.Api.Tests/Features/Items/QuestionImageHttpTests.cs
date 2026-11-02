@@ -10,6 +10,8 @@ using Quizymode.Api.Data;
 using Quizymode.Api.Features.Items.Add;
 using Quizymode.Api.Features.Items.AddBulk;
 using Quizymode.Api.Features.Items.Export;
+using Quizymode.Api.Features.Items.GetById;
+using Quizymode.Api.Features.Items.Update;
 using Quizymode.Api.Features.Items.UploadToCollection;
 using Quizymode.Api.Services;
 using Quizymode.Api.Services.Taxonomy;
@@ -19,7 +21,7 @@ using Xunit;
 
 namespace Quizymode.Api.Tests.Features.Items;
 
-/// <summary>#407: write paths ignore a questionImage body field (AC 2.1.20); export includes it (AC 2.2.7.10).</summary>
+/// <summary>#407/#403: import paths reject non-null picture fields (AC 2.1.20); PUT keeps pictures; export includes both (AC 2.2.7.10).</summary>
 public sealed class QuestionImageHttpTests : ItemTestFixture, IAsyncLifetime
 {
     private static readonly string[] AdminGroups = ["Admins"];
@@ -35,6 +37,7 @@ public sealed class QuestionImageHttpTests : ItemTestFixture, IAsyncLifetime
                 services.AddScoped<IValidator<AddItem.Request>, AddItem.Validator>();
                 services.AddScoped<IValidator<AddItemsBulk.Request>, AddItemsBulk.Validator>();
                 services.AddScoped<IValidator<UploadItemsToCollection.Request>, UploadItemsToCollection.Validator>();
+                services.AddScoped<IValidator<UpdateItem.Request>, UpdateItem.Validator>();
                 services.AddSingleton<ISimHashService>(SimHashService);
                 services.AddSingleton(TaxonomyRegistry);
                 services.AddScoped<ITaxonomyItemCategoryResolver>(sp =>
@@ -50,6 +53,8 @@ public sealed class QuestionImageHttpTests : ItemTestFixture, IAsyncLifetime
                 new AddItemsBulk.Endpoint().MapEndpoint(app);
                 new UploadItemsToCollection.Endpoint().MapEndpoint(app);
                 new ExportItems.Endpoint().MapEndpoint(app);
+                new UpdateItem.Endpoint().MapEndpoint(app);
+                new GetItemById.Endpoint().MapEndpoint(app);
             });
 
         _ownerId = Guid.NewGuid();
@@ -64,9 +69,9 @@ public sealed class QuestionImageHttpTests : ItemTestFixture, IAsyncLifetime
 
     private string AdminToken => _host.CreateToken("owner-sub", "owner@example.com", AdminGroups);
 
-    private const string ImageJson = ",\"questionImage\":{\"key\":\"curated:flags/fr\",\"altText\":\"Three bands\"}";
-
-    private static string ItemJson => "\"question\":\"Q?\",\"correctAnswer\":\"A\",\"incorrectAnswers\":[\"B\"],\"explanation\":\"\"" + ImageJson;
+    private const string QuestionImageJson = "\"questionImage\":{\"key\":\"curated:flags/fr\",\"altText\":\"Three bands\"}";
+    private const string ExplanationImageJson = "\"explanationImage\":{\"key\":\"curated:diagrams/x\",\"altText\":\"A diagram\"}";
+    private const string BaseItemJson = "\"question\":\"Q?\",\"correctAnswer\":\"A\",\"incorrectAnswers\":[\"B\"],\"explanation\":\"\"";
 
     private async Task<(HttpStatusCode Status, string Body)> SendAsync(HttpMethod method, string path, string? json, string token)
     {
@@ -76,31 +81,89 @@ public sealed class QuestionImageHttpTests : ItemTestFixture, IAsyncLifetime
         return (response.StatusCode, await response.Content.ReadAsStringAsync());
     }
 
+    private Task<(HttpStatusCode Status, string Body)> CreateAsync(string path, string itemFields) => path switch
+    {
+        "add" => SendAsync(HttpMethod.Post, "/items",
+            "{\"category\":\"geography\",\"navigationKeyword1\":\"capitals\",\"navigationKeyword2\":\"europe\",\"isPrivate\":false," + itemFields + "}",
+            UserToken),
+        "bulk" => SendAsync(HttpMethod.Post, "/items/bulk",
+            "{\"isPrivate\":true,\"category\":\"geography\",\"keyword1\":\"capitals\",\"keyword2\":\"europe\",\"keywords\":[],\"items\":[{" + itemFields + "}]}",
+            AdminToken),
+        _ => SendAsync(HttpMethod.Post, "/items/upload-to-collection",
+            "{\"category\":\"geography\",\"keyword1\":\"capitals\",\"keyword2\":\"europe\",\"keywords\":[],\"inputText\":\"qi-" + Guid.NewGuid() + "\",\"items\":[{" + itemFields + "}]}",
+            UserToken)
+    };
+
+    public static TheoryData<string, string, string> RejectedPictureCases()
+    {
+        TheoryData<string, string, string> data = [];
+        foreach (string path in new[] { "add", "bulk", "upload" })
+        {
+            data.Add(path, QuestionImageJson, "QuestionImage");
+            data.Add(path, ExplanationImageJson, "ExplanationImage");
+        }
+
+        return data;
+    }
+
     public static TheoryData<string> WritePaths => new() { "add", "bulk", "upload" };
 
     [Theory]
-    [MemberData(nameof(WritePaths))]
-    public async Task Create_WithQuestionImageBodyField_StoresNoImage(string path)
+    [MemberData(nameof(RejectedPictureCases))]
+    public async Task Create_WithPictureObject_Returns400NamingTheField_AndCreatesNothing(string path, string pictureJson, string field)
     {
-        (HttpStatusCode status, string body) = path switch
-        {
-            "add" => await SendAsync(HttpMethod.Post, "/items",
-                "{\"category\":\"geography\",\"navigationKeyword1\":\"capitals\",\"navigationKeyword2\":\"europe\",\"isPrivate\":false," + ItemJson + "}",
-                UserToken),
-            "bulk" => await SendAsync(HttpMethod.Post, "/items/bulk",
-                "{\"isPrivate\":true,\"category\":\"geography\",\"keyword1\":\"capitals\",\"keyword2\":\"europe\",\"keywords\":[],\"items\":[{" + ItemJson + "}]}",
-                AdminToken),
-            _ => await SendAsync(HttpMethod.Post, "/items/upload-to-collection",
-                "{\"category\":\"geography\",\"keyword1\":\"capitals\",\"keyword2\":\"europe\",\"keywords\":[],\"inputText\":\"qi-" + Guid.NewGuid() + "\",\"items\":[{" + ItemJson + "}]}",
-                UserToken)
-        };
+        (HttpStatusCode status, string body) = await CreateAsync(path, BaseItemJson + "," + pictureJson);
+
+        status.Should().Be(HttpStatusCode.BadRequest, body);
+        body.Should().Contain(field).And.Contain("Pictures can't be imported");
+        using ApplicationDbContext db = CreateDbContext();
+        (await db.Items.CountAsync()).Should().Be(0);
+    }
+
+    [Theory]
+    [MemberData(nameof(WritePaths))]
+    public async Task Create_WithNullPictureFields_IsAccepted(string path)
+    {
+        (HttpStatusCode status, string body) = await CreateAsync(
+            path, BaseItemJson + ",\"questionImage\":null,\"explanationImage\":null");
 
         status.Should().BeOneOf([HttpStatusCode.OK, HttpStatusCode.Created], body);
         using ApplicationDbContext db = CreateDbContext();
         List<Item> saved = await db.Items.AsNoTracking().ToListAsync();
         saved.Should().ContainSingle();
         saved[0].QuestionImageKey.Should().BeNull();
-        saved[0].QuestionImageAlt.Should().BeNull();
+        saved[0].ExplanationImageKey.Should().BeNull();
+    }
+
+    [Fact]
+    public async Task Update_PreservesBothPictures_AndRejectsClearingExplanation()
+    {
+        Item picture = await CreateItemWithCategoryAsync(
+            Guid.NewGuid(), "geography", "Which flag?", "France", ["Italy"], "Because", false, _ownerId.ToString());
+        picture.QuestionImageKey = "curated:flags/fr";
+        picture.QuestionImageAlt = "Three bands";
+        picture.ExplanationImageKey = "curated:diagrams/x";
+        picture.ExplanationImageAlt = "A diagram";
+        await DbContext.SaveChangesAsync();
+
+        string Put(string explanation) =>
+            "{\"category\":\"geography\",\"navigationKeyword1\":\"capitals\",\"navigationKeyword2\":\"europe\",\"isPrivate\":false," +
+            "\"question\":\"Which flag?\",\"correctAnswer\":\"France\",\"incorrectAnswers\":[\"Italy\"],\"explanation\":\"" + explanation + "\"," +
+            QuestionImageJson.Replace("fr", "xx") + "," + ExplanationImageJson.Replace("diagrams/x", "diagrams/y") + "}";
+
+        (HttpStatusCode edited, string editedBody) = await SendAsync(HttpMethod.Put, $"/items/{picture.Id}", Put("Edited"), UserToken);
+        edited.Should().Be(HttpStatusCode.OK, editedBody);
+
+        (HttpStatusCode cleared, string clearedBody) = await SendAsync(HttpMethod.Put, $"/items/{picture.Id}", Put("   "), UserToken);
+        cleared.Should().Be(HttpStatusCode.BadRequest, clearedBody);
+        clearedBody.Should().Contain("Explanation can't be empty while the item has an explanation picture.");
+
+        (HttpStatusCode fetched, string fetchedBody) = await SendAsync(HttpMethod.Get, $"/items/{picture.Id}", null, UserToken);
+        fetched.Should().Be(HttpStatusCode.OK, fetchedBody);
+        using JsonDocument doc = JsonDocument.Parse(fetchedBody);
+        doc.RootElement.GetProperty("explanation").GetString().Should().Be("Edited");
+        doc.RootElement.GetProperty("questionImage").GetProperty("key").GetString().Should().Be("curated:flags/fr");
+        doc.RootElement.GetProperty("explanationImage").GetProperty("key").GetString().Should().Be("curated:diagrams/x");
     }
 
     [Fact]
@@ -110,6 +173,8 @@ public sealed class QuestionImageHttpTests : ItemTestFixture, IAsyncLifetime
             Guid.NewGuid(), "geography", "Which flag?", "France", ["Italy"], "x", false, _ownerId.ToString());
         picture.QuestionImageKey = "curated:flags/fr";
         picture.QuestionImageAlt = "Three bands";
+        picture.ExplanationImageKey = "curated:diagrams/x";
+        picture.ExplanationImageAlt = "A diagram";
         await CreateItemWithCategoryAsync(
             Guid.NewGuid(), "geography", "Capital of France?", "Paris", ["Lyon"], "x", false, _ownerId.ToString());
         await DbContext.SaveChangesAsync();
@@ -125,5 +190,9 @@ public sealed class QuestionImageHttpTests : ItemTestFixture, IAsyncLifetime
         withImage.GetProperty("questionImage").GetProperty("altText").GetString().Should().Be("Three bands");
         JsonElement without = items.Single(i => i.GetProperty("question").GetString() == "Capital of France?");
         without.GetProperty("questionImage").ValueKind.Should().Be(JsonValueKind.Null);
+        withImage.GetProperty("explanationImage").GetProperty("key").GetString().Should().Be("curated:diagrams/x");
+        withImage.GetProperty("explanationImage").GetProperty("altText").GetString().Should().Be("A diagram");
+        without.GetProperty("explanationImage").ValueKind.Should().Be(JsonValueKind.Null);
+        body.Should().NotContain("http:").And.NotContain("data:").And.NotContain("storage");
     }
 }

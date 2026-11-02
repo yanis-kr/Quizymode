@@ -126,6 +126,35 @@ public sealed class DailyQuizTests : DatabaseTestFixture
     }
 
     [Fact]
+    public async Task Complete_WithSkipped_StoresItAndReturnsItOnTheCompletion()
+    {
+        await SeedPublicItemsAsync(10);
+        await GetAsync();
+
+        Result<Daily.CompleteResponse> result = await Daily.CompleteAsync(
+            new Daily.CompleteRequest("2026-10-18", 2, 5, 2), DbContext, "user-a", Now, CancellationToken.None);
+
+        result.Value.Completion.Should().Match<Daily.CompletionDto>(c => c.Correct == 2 && c.Total == 5 && c.Skipped == 2);
+        (await GetAsync("user-a")).Completion!.Skipped.Should().Be(2);
+        (await Daily.CompleteAsync(new Daily.CompleteRequest("2026-10-18", 0, 5, 5), DbContext, "user-b", Now, CancellationToken.None))
+            .Value.Completion.Skipped.Should().Be(5, "an all-skipped run still records the completion");
+    }
+
+    [Theory]
+    [InlineData(4, 5, 2, false)]
+    [InlineData(3, 5, 2, true)]
+    [InlineData(0, 5, 5, true)]
+    [InlineData(0, 5, 6, false)]
+    [InlineData(0, 5, -1, false)]
+    [InlineData(5, 5, 0, true)]
+    public void CompleteValidator_EnforcesSkippedBounds(int correct, int total, int skipped, bool valid) =>
+        new Daily.CompleteValidator().Validate(new Daily.CompleteRequest("2026-10-18", correct, total, skipped)).IsValid.Should().Be(valid);
+
+    [Fact]
+    public void CompleteRequest_WithoutSkipped_DefaultsToZero() =>
+        new Daily.CompleteRequest("2026-10-18", 3, 5).Skipped.Should().Be(0);
+
+    [Fact]
     public async Task Complete_RejectsDaysOutsideWindow_DaysWithoutQuiz_AndWrongTotals()
     {
         await SeedPublicItemsAsync(10);

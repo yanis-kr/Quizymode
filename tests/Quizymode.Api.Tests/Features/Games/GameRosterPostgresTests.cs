@@ -102,6 +102,30 @@ public sealed class GameRosterPostgresTests(PostgresContainerFixture fixture) : 
     }
 
     [SkippableFact]
+    public async Task ExcludedPictures_CountsOnlyVisiblePictureQuestionsInScope()
+    {
+        RequireDatabase();
+        Category category;
+        Category other;
+        await using (ApplicationDbContext db = fixture.CreateDbContext())
+        {
+            category = VisibilitySeed.AddCategory(db);
+            other = VisibilitySeed.AddCategory(db);
+            AddEligible(db, category);
+            WithPicture(Add(db, category, "Which flag?", "Yes", ["No"]));
+            WithPicture(Add(db, category, "Which other flag?", "Yes", ["No"]));
+            WithPicture(Add(db, category, "Grouped flag?", "Yes", [], "Flags"));
+            WithPicture(Add(db, category, "Someone else's private flag?", "Yes", ["No"], null, "someone-else", true));
+            WithPicture(Add(db, other, "Other scope flag?", "Yes", ["No"]));
+            await db.SaveChangesAsync();
+        }
+
+        GetGameRoster.Response response = await GetAsync([category.Name]);
+
+        response.Scopes.Should().ContainSingle().Which.ExcludedPictures.Should().Be(2);
+    }
+
+    [SkippableFact]
     public async Task EligibilityBoundaries_MatchTheClientRules()
     {
         RequireDatabase();

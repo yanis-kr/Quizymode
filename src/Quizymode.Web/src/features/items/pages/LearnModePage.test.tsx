@@ -620,3 +620,71 @@ describe("LearnModePage", () => {
     });
   });
 });
+
+describe("LearnModePage question pictures (#403)", () => {
+  const pictureItems = (): ItemResponse[] =>
+    makeItems(3).map((item) => ({ ...item, questionImage: { key: "curated:flags/zz", altText: "Not bundled" } }));
+
+  beforeEach(() => {
+    vi.clearAllMocks();
+    sessionStorage.clear();
+    installMemoryLocalStorage();
+    resetStudyHotkeysPreferenceForTests();
+    resetGuestHistoryMemoryForTests();
+    mockAuth.isAuthenticated = true;
+    mockAuth.isLoading = false;
+    mockAuth.userId = "user-1";
+    vi.mocked(categoriesApi.getAll).mockResolvedValue({ categories: [{ category: "science" }] } as never);
+    vi.mocked(collectionsApi.getById).mockResolvedValue({
+      id: COLLECTION_ID,
+      name: "Practice Set",
+      description: "",
+      itemCount: 3,
+      createdBy: "user-1",
+      createdAt: "2026-10-15T00:00:00Z",
+      isPublic: true,
+    } as never);
+    vi.mocked(recordAuthenticatedCompletion).mockResolvedValue(true);
+  });
+
+  afterEach(() => {
+    cleanup();
+    vi.restoreAllMocks();
+  });
+
+  it("ignores answer keys while the picture is unavailable, and Skip moves on without a miss", async () => {
+    const items = pictureItems();
+    vi.mocked(collectionsApi.getItems).mockResolvedValue({ items } as never);
+    renderPage(`/learn/collections/${COLLECTION_ID}/practice-set`);
+    await screen.findByRole("progressbar");
+    const first = currentItem(items);
+
+    expect(screen.getByText("Picture isn't available")).toBeInTheDocument();
+    press({ key: "1", code: "Digit1" });
+    press({ key: "b", code: "KeyB" });
+    expect(screen.queryByText(/Correct\.|Not quite/)).not.toBeInTheDocument();
+    screen.getAllByRole("button", { name: /^[A-D]\. / }).forEach((option) => expect(option).toBeDisabled());
+
+    fireEvent.click(screen.getByRole("button", { name: "Skip question (not scored)" }));
+
+    expect(screen.getByText(/Round 1 · 2 of 3/)).toBeInTheDocument();
+    expect(currentItem(items).id).not.toBe(first.id);
+    expect(screen.getByRole("progressbar", { name: "Mastered 0 of 2" })).toBeInTheDocument();
+    expect(screen.queryByText(/Not quite/)).not.toBeInTheDocument();
+  });
+
+  it("finishes with nothing scored when every picture is skipped, saving no session", async () => {
+    const items = pictureItems();
+    vi.mocked(collectionsApi.getItems).mockResolvedValue({ items } as never);
+    renderPage(`/learn/collections/${COLLECTION_ID}/practice-set`);
+    await screen.findByRole("progressbar");
+
+    for (let index = 0; index < 3; index += 1) {
+      fireEvent.click(await screen.findByRole("button", { name: "Skip question (not scored)" }));
+    }
+
+    expect(await screen.findByText("No questions were scored")).toBeInTheDocument();
+    expect(screen.getByText("3 questions skipped because the picture was unavailable. Not scored.")).toBeInTheDocument();
+    expect(recordAuthenticatedCompletion).not.toHaveBeenCalled();
+  });
+});

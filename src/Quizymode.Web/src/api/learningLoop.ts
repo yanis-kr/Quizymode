@@ -32,8 +32,11 @@ export interface ReviewEnqueueResponse {
 /** Daily quiz (DAILY-001, #119). */
 export interface DailyQuizCompletion {
   correct: number;
+  /** Roster size, including skipped questions. */
   total: number;
   completedAt: string;
+  /** Questions skipped because their picture was unavailable (#403); not scored. */
+  skipped?: number;
 }
 
 export interface DailyQuizResponse {
@@ -79,8 +82,8 @@ export const reviewQueueApi = {
 
 export const dailyQuizApi = {
   get: async (): Promise<DailyQuizResponse> => (await apiClient.get<DailyQuizResponse>("/daily-quiz")).data,
-  complete: async (date: string, correct: number, total: number): Promise<CompleteDailyQuizResponse> =>
-    (await apiClient.post<CompleteDailyQuizResponse>("/daily-quiz/completions", { date, correct, total })).data,
+  complete: async (date: string, correct: number, total: number, skipped = 0): Promise<CompleteDailyQuizResponse> =>
+    (await apiClient.post<CompleteDailyQuizResponse>("/daily-quiz/completions", { date, correct, total, skipped })).data,
   adminGet: async (date?: string): Promise<AdminDailyQuizDay> =>
     (await apiClient.get<AdminDailyQuizDay>("/admin/daily-quiz", { params: date ? { date } : undefined })).data,
   adminExclude: async (date: string, itemId: string): Promise<AdminDailyQuizDay> =>

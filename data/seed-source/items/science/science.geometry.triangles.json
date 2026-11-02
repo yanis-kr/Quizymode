@@ -187,7 +187,11 @@
       "pythagorean",
       "right-triangle"
     ],
-    "source": "https://www.mathsisfun.com/pythagoras.html"
+    "source": "https://www.mathsisfun.com/pythagoras.html",
+    "explanationImage": {
+      "key": "curated:diagrams/pythagorean-theorem",
+      "altText": "A right triangle with its two shorter sides labelled a and b, which meet at a right angle, and its longest side, opposite the right angle, labelled c."
+    }
   },
   {
     "itemId": "2e1cff93-e7ab-4af6-84b2-886f269289c5",

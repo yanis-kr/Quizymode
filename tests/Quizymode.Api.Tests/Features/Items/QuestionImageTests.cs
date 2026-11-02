@@ -22,11 +22,13 @@ public sealed class QuestionImageTests : ItemTestFixture
 {
     private const string Key = "curated:flags/fr";
     private const string Alt = "Three vertical bands: blue, white, red";
+    private const string ExplanationKey = "curated:diagrams/pythagorean-theorem";
+    private const string ExplanationAlt = "Right triangle with legs a and b and hypotenuse c";
     private readonly string _userId = Guid.NewGuid().ToString();
 
     private Mock<IUserContext> User() => CreateUserContextMock(_userId);
 
-    private async Task<Item> SeedAsync(bool withImage = true, string question = "Which country uses this flag?")
+    private async Task<Item> SeedAsync(bool withImage = true, string question = "Which country uses this flag?", bool withExplanationImage = false)
     {
         Item item = await CreateItemWithCategoryAsync(
             Guid.NewGuid(), "geography", question, "France", ["Italy"], "x", false, _userId);
@@ -34,6 +36,12 @@ public sealed class QuestionImageTests : ItemTestFixture
         {
             item.QuestionImageKey = Key;
             item.QuestionImageAlt = Alt;
+        }
+
+        if (withExplanationImage)
+        {
+            item.ExplanationImageKey = ExplanationKey;
+            item.ExplanationImageAlt = ExplanationAlt;
         }
 
         item.ReadyForReview = true;
@@ -100,7 +108,69 @@ public sealed class QuestionImageTests : ItemTestFixture
         rejected.Value.QuestionImage.Should().Be(new ItemImageReference(Key, Alt));
     }
 
+    [Fact]
+    public async Task ReadPaths_ReturnExplanationImage_OrNull()
+    {
+        Item picture = await SeedAsync(withImage: false, question: "Pythagoras?", withExplanationImage: true);
+        Item plain = await SeedAsync(withImage: false, question: "Plain question?");
+        ItemImageReference expected = new(ExplanationKey, ExplanationAlt);
+
+        Result<GetItemById.Response> byId = await GetItemById.HandleAsync(
+            picture.Id.ToString(), DbContext, User().Object, CancellationToken.None);
+        Result<GetReviewBoardItems.Response> board = await GetReviewBoardItems.HandleAsync(DbContext, CancellationToken.None);
+        ItemResponseMapper mapper = new(User().Object);
+
+        byId.Value.ExplanationImage.Should().Be(expected);
+        board.Value.Items.Single(i => i.Id == picture.Id.ToString()).ExplanationImage.Should().Be(expected);
+        mapper.MapToResponse(picture, []).ExplanationImage.Should().Be(expected);
+        mapper.MapToResponse(plain, []).ExplanationImage.Should().BeNull();
+    }
+
+    [Fact]
+    public async Task ApproveAndReject_ReturnExplanationImage()
+    {
+        Item first = await SeedAsync(withExplanationImage: true);
+        Item second = await SeedAsync(question: "Which country uses this other flag?", withExplanationImage: true);
+
+        Result<ApproveItem.ApproveItemResponse> approved = await ApproveItem.HandleAsync(first.Id, DbContext, CancellationToken.None);
+        Result<RejectItem.RejectItemResponse> rejected = await RejectItem.HandleAsync(
+            second.Id, new RejectItem.Request("nope"), DbContext, User().Object, CancellationToken.None);
+
+        approved.Value.ExplanationImage.Should().Be(new ItemImageReference(ExplanationKey, ExplanationAlt));
+        rejected.Value.ExplanationImage.Should().Be(new ItemImageReference(ExplanationKey, ExplanationAlt));
+    }
+
     // --- write paths ---
+
+    [Fact]
+    public async Task Update_KeepsStoredExplanationImage_AndRejectsEmptyingTheExplanation()
+    {
+        Item item = await SeedAsync(withExplanationImage: true);
+        UpdateItem.Request Request(string explanation) => new(
+            Category: "geography",
+            NavigationKeyword1: "capitals",
+            NavigationKeyword2: "europe",
+            Question: item.Question,
+            CorrectAnswer: "France",
+            IncorrectAnswers: ["Italy", "Ireland"],
+            Explanation: explanation,
+            IsPrivate: false);
+
+        Result<UpdateItem.Response> edited = await UpdateItem.HandleAsync(
+            item.Id.ToString(), Request("Edited"), DbContext, SimHashService, User().Object, new Mock<IAuditService>().Object,
+            TaxonomyItemCategoryResolver, TaxonomyRegistry, CancellationToken.None);
+        Result<UpdateItem.Response> emptied = await UpdateItem.HandleAsync(
+            item.Id.ToString(), Request(" "), DbContext, SimHashService, User().Object, new Mock<IAuditService>().Object,
+            TaxonomyItemCategoryResolver, TaxonomyRegistry, CancellationToken.None);
+
+        edited.IsSuccess.Should().BeTrue();
+        emptied.IsFailure.Should().BeTrue();
+        emptied.Error!.Description.Should().Be(ItemImageReferenceHelper.ExplanationRequiredForUpdateMessage);
+        Item stored = await DbContext.Items.AsNoTracking().SingleAsync(i => i.Id == item.Id);
+        stored.ExplanationImageKey.Should().Be(ExplanationKey);
+        stored.ExplanationImageAlt.Should().Be(ExplanationAlt);
+        stored.Explanation.Should().Be("Edited");
+    }
 
     [Fact]
     public async Task Update_KeepsStoredQuestionImage()

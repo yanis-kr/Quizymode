@@ -114,6 +114,12 @@ internal sealed class ItemConfiguration : IEntityTypeConfiguration<Item>
         builder.Property(x => x.QuestionImageAlt)
             .HasMaxLength(300);
 
+        builder.Property(x => x.ExplanationImageKey)
+            .HasMaxLength(100);
+
+        builder.Property(x => x.ExplanationImageAlt)
+            .HasMaxLength(300);
+
         builder.Property(x => x.CategoryId)
             .IsRequired(false);
 
@@ -161,6 +167,11 @@ internal sealed class ItemConfiguration : IEntityTypeConfiguration<Item>
         builder.ToTable(t => t.HasCheckConstraint(
             "CK_Items_QuestionImage_Alt",
             "(\"QuestionImageKey\" IS NULL) = (\"QuestionImageAlt\" IS NULL)"));
+
+        // An explanation picture key and its alt text are stored together or not at all (#403)
+        builder.ToTable(t => t.HasCheckConstraint(
+            "CK_Items_ExplanationImage_Alt",
+            "(\"ExplanationImageKey\" IS NULL) = (\"ExplanationImageAlt\" IS NULL)"));
 
         // Indexes for common queries
         builder.HasIndex(x => x.FuzzyBucket);

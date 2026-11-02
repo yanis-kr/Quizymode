@@ -60,6 +60,10 @@ vi.mock("@/api/collections", () => ({
   },
 }));
 
+vi.mock("@/media/curatedImages", () => ({
+  resolveCuratedImage: (key: string) => (key === "curated:flags/fr" ? "/assets/m/fr.webp" : null),
+}));
+
 vi.mock("@/components/CommentsDrawer", () => ({
   CommentsDrawer: () => null,
 }));
@@ -184,6 +188,71 @@ describe("QuizModePage keyboard shortcuts", () => {
     press({ key: "Enter", code: "Enter" });
     expect(await screen.findByText("What is the capital of France?")).toBeInTheDocument();
     expect(screen.getByTestId("location")).toHaveTextContent("item-2");
+  });
+
+  describe("question picture gate (#403)", () => {
+    const pictureItem = {
+      ...item,
+      questionImage: { key: "curated:flags/fr", altText: "Four stripes" },
+    };
+    const brokenItem = {
+      ...secondItem,
+      questionImage: { key: "curated:flags/zz", altText: "Not bundled" },
+    };
+
+    it("ignores 1-4 and A-D until the picture has loaded, then answers", async () => {
+      vi.mocked(collectionsApi.getItems).mockResolvedValue({ items: [pictureItem, secondItem] } as never);
+      vi.mocked(itemsApi.getById).mockResolvedValue(pictureItem as never);
+      renderPageWithEntries([START]);
+      await screen.findByText("What is 2 + 2?");
+      await screen.findByText("1 of 2");
+
+      press({ key: "1", code: "Digit1" });
+      press({ key: "b", code: "KeyB" });
+      expect(screen.getByText(/Score: 0 \/ 0 correct/)).toBeInTheDocument();
+      expect(screen.queryByText(/Correct Answer:/)).not.toBeInTheDocument();
+
+      fireEvent.load(await screen.findByAltText("Four stripes"));
+      press({ key: "1", code: "Digit1" });
+      expect(screen.getByText(/Score: [01] \/ 1 correct/)).toBeInTheDocument();
+    });
+
+    it("does nothing on 1, A or F while the zoom is open, so no answer is recorded", async () => {
+      vi.mocked(collectionsApi.getItems).mockResolvedValue({ items: [pictureItem, secondItem] } as never);
+      vi.mocked(itemsApi.getById).mockResolvedValue(pictureItem as never);
+      renderPageWithEntries([START]);
+      await screen.findByText("What is 2 + 2?");
+      fireEvent.load(await screen.findByAltText("Four stripes"));
+      fireEvent.click(screen.getByRole("button", { name: "Enlarge picture" }));
+      expect(screen.getByRole("dialog")).toBeInTheDocument();
+
+      press({ key: "1", code: "Digit1" });
+      press({ key: "a", code: "KeyA" });
+      press({ key: "f", code: "KeyF" });
+
+      expect(screen.getByText(/Score: 0 \/ 0 correct/)).toBeInTheDocument();
+      expect(screen.queryByText(/Correct Answer:/)).not.toBeInTheDocument();
+      expect(screen.getByRole("dialog")).toBeInTheDocument();
+    });
+
+    it("keeps answers off for a picture that is not bundled, and Skip moves on without scoring", async () => {
+      vi.mocked(collectionsApi.getItems).mockResolvedValue({ items: [brokenItem, item] } as never);
+      vi.mocked(itemsApi.getById).mockResolvedValue(brokenItem as never);
+      renderPageWithEntries(["/quiz/collections/collection-1/practice+set/item/item-2"]);
+      await screen.findByText("What is the capital of France?");
+      await screen.findByText("1 of 2");
+
+      expect(screen.getByText("Picture isn't available")).toBeInTheDocument();
+      press({ key: "1", code: "Digit1" });
+      expect(screen.getByText(/Score: 0 \/ 0 correct/)).toBeInTheDocument();
+
+      fireEvent.click(screen.getByRole("button", { name: "Skip question (not scored)" }));
+
+      expect(await screen.findByText("What is 2 + 2?")).toBeInTheDocument();
+      expect(screen.getByText(/Score: 0 \/ 0 correct/)).toBeInTheDocument();
+      press({ key: "1", code: "Digit1" });
+      expect(await screen.findByText("You finished every question.")).toBeInTheDocument();
+    });
   });
 
   it("arrows work while unanswered and mirror the disabled state", async () => {

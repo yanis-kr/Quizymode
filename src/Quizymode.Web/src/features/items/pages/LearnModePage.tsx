@@ -8,6 +8,9 @@ import { useAuth } from "@/contexts/AuthContext";
 import LoadingSpinner from "@/components/LoadingSpinner";
 import ErrorMessage from "@/components/ErrorMessage";
 import { LearnQuestion } from "@/components/study/LearnQuestion";
+import { QuestionImage } from "@/components/study/QuestionImage";
+import { useQuestionPictureStatuses } from "@/components/study/pictureGate";
+import { usePreloadNextPicture } from "@/components/study/preloadPicture";
 import { LearnRecap, type LearnRecapRow } from "@/components/study/LearnRecap";
 import { LearnFinish } from "@/components/study/LearnFinish";
 import { MasteryProgress } from "@/components/study/MasteryProgress";
@@ -296,9 +299,14 @@ const LearnModePage = () => {
   );
   const view = activeRun?.view;
   const summary = activeRun ? summarizeLearnRun(activeRun) : null;
+  // #403: answers stay off until the question's picture has loaded.
+  const pictures = useQuestionPictureStatuses();
+  const pictureBlocked = pictures.isBlocked(currentItem);
+  const nextItemId = activeRun ? activeRun.round.itemIds[activeRun.round.position + 1] : undefined;
+  usePreloadNextPicture(nextItemId ? itemsById.get(nextItemId) : undefined);
 
   const handleAnswer = (answer: string) => {
-    if (!activeRun || !currentItem || currentAttempt || activeRun.view !== "active") return;
+    if (!activeRun || !currentItem || currentAttempt || activeRun.view !== "active" || pictureBlocked) return;
     const selectedIndex = options.indexOf(answer);
     if (selectedIndex < 0) return;
     const isCorrect = answer === currentItem.correctAnswer;
@@ -313,6 +321,20 @@ const LearnModePage = () => {
             itemId: currentItem.id,
             selectedIndex,
             isCorrect,
+            completedAt: new Date().toISOString(),
+          })
+        : current,
+    );
+  };
+
+  /** Leaves a question whose picture will not load: no attempt and no miss are recorded (#403). */
+  const handleSkipUnavailable = () => {
+    if (!currentItem) return;
+    setRun((current) =>
+      current
+        ? reduceLearnRun(current, {
+            type: "skip-unavailable",
+            itemId: currentItem.id,
             completedAt: new Date().toISOString(),
           })
         : current,
@@ -354,7 +376,7 @@ const LearnModePage = () => {
     setLearnSize(next);
   };
 
-  const canAnswer = view === "active" && !!currentItem && !currentAttempt;
+  const canAnswer = view === "active" && !!currentItem && !currentAttempt && !pictureBlocked;
   const { isHelpOpen, openHelp, closeHelp } = useStudyHotkeys({
     enabled: true,
     letter: canAnswer ? (index) => options[index] !== undefined && handleAnswer(options[index]) : undefined,
@@ -487,6 +509,7 @@ const LearnModePage = () => {
             firstTryCorrect={summary.firstTryCorrect}
             firstTryPercentage={summary.firstTryPercentage}
             missedCount={summary.missedItemIds.length}
+            skippedCount={summary.skipped}
             isAuthenticated={isAuthenticated}
             browsePath={browsePath}
             browseLabel={browseLabel}
@@ -568,7 +591,7 @@ const LearnModePage = () => {
   );
 
   if (activeRun.view === "recap") {
-    const rows: LearnRecapRow[] = activeRun.round.itemIds.map((itemId) => {
+    const rows: LearnRecapRow[] = activeRun.round.itemIds.filter((itemId) => !activeRun.skipped.includes(itemId)).map((itemId) => {
       const attempt = getLearnAttemptInRound(activeRun, itemId);
       const mastered = activeRun.progress[itemId]?.mastered ?? false;
       return {
@@ -632,6 +655,7 @@ const LearnModePage = () => {
             showAnswer={!!currentAttempt}
             onAnswerSelect={handleAnswer}
             headingRef={questionHeadingRef}
+            questionPicture={pictures.controlsFor(currentItem, currentAttempt ? undefined : handleSkipUnavailable)}
           />
         )}
         <div aria-live="polite" className="min-h-[1.5rem] text-sm font-medium text-gray-900">
@@ -639,6 +663,15 @@ const LearnModePage = () => {
         </div>
         {currentAttempt && currentItem?.explanation && (
           <p className="rounded-lg bg-blue-50 p-3 text-sm text-blue-800">{currentItem.explanation}</p>
+        )}
+        {/* Mounted only after the answer is submitted: the picture can show the answer (#403). */}
+        {currentAttempt && currentItem?.explanationImage && (
+          <QuestionImage
+            key={`${currentItem.id}-explanation`}
+            image={currentItem.explanationImage}
+            slot="explanation"
+            className="rounded-lg bg-white"
+          />
         )}
         <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
           <div className="order-2 sm:order-1">{restartControl}</div>

@@ -116,6 +116,13 @@ export function useGameRoster() {
   const rosterItems = rosterData?.items;
   const pool = useMemo<ItemResponse[]>(() => buildGamePool(rosterItems ?? []), [rosterItems]);
 
+  // Picture questions no game can use (#403): the server counts them per scope; collection and keyword paths count the roster.
+  const excludedPictures = useMemo<number>(() => {
+    const scopes = rosterData?.scopes ?? [];
+    if (scopes.length > 0) return scopes.reduce((sum, entry) => sum + (entry.excludedPictures ?? 0), 0);
+    return (rosterItems ?? []).filter((item) => !!item.questionImage).length;
+  }, [rosterData?.scopes, rosterItems]);
+
   const scope = useMemo<GameScope>(() => {
     if (resolution.mode === "topics") return { kind: "topics", topics: resolution.topics, search };
     if (collectionId) return { kind: "collection", collectionId, collectionName: collectionInfo?.name, search };
@@ -170,5 +177,6 @@ export function useGameRoster() {
     availableModes,
     handleModeChange,
     quizPath,
+    excludedPictures,
   };
 }

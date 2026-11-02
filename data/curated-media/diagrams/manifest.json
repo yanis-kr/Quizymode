@@ -1,0 +1,75 @@
+{
+  "schema": 1,
+  "description": "Provenance for self-authored curated explanation diagrams (#403). Sources in data/curated-media/diagrams/src are original work released under CC0-1.0. Built by scripts/curated-media/build_diagram_images.mjs.",
+  "entries": [
+    {
+      "name": "pythagorean-theorem",
+      "title": "Right triangle with legs a and b and hypotenuse c",
+      "altText": "A right triangle with its two shorter sides labelled a and b, which meet at a right angle, and its longest side, opposite the right angle, labelled c.",
+      "key": "curated:diagrams/pythagorean-theorem",
+      "source": "src/pythagorean-theorem.svg",
+      "license": "CC0-1.0",
+      "author": "Quizymode",
+      "sourceSha256": "50ad45c8f9300070ed0500ed5f465a359ac0d24e1ce99237ad7c11244b1b4a65",
+      "output": "diagrams/pythagorean-theorem.webp",
+      "outputBytes": 7466,
+      "outputSha256": "38b15fa645629fdb71497e4002efa6379e73be9b84f9941da0feb910a30114e4",
+      "outputWidth": 900,
+      "outputHeight": 600,
+      "webpQuality": 90
+    },
+    {
+      "name": "triangle-angle-sum",
+      "title": "The three angles of a triangle make a straight angle",
+      "altText": "A triangle with its three corner angles shaded and labelled A, B and C, next to the same three angles placed side by side along a straight line, where together they fill a half circle of 180 degrees.",
+      "key": "curated:diagrams/triangle-angle-sum",
+      "source": "src/triangle-angle-sum.svg",
+      "license": "CC0-1.0",
+      "author": "Quizymode",
+      "sourceSha256": "68d15dc6e7dc0823c399e2c5d497ef406c6cb691dbcaece4cdb647a4c2d7e432",
+      "output": "diagrams/triangle-angle-sum.webp",
+      "outputBytes": 15650,
+      "outputSha256": "e4dfc4df8f6f8a5734f6156e731b5d3fda02817ea115bff3603e1b54d9619cbb",
+      "outputWidth": 900,
+      "outputHeight": 600,
+      "webpQuality": 90
+    },
+    {
+      "name": "circle-radius-diameter",
+      "title": "A circle with radius r, diameter d and circumference C",
+      "altText": "A circle with its centre marked, a radius r from the centre to the edge, a diameter d straight across through the centre, and the outline of the circle highlighted as the circumference C.",
+      "key": "curated:diagrams/circle-radius-diameter",
+      "source": "src/circle-radius-diameter.svg",
+      "license": "CC0-1.0",
+      "author": "Quizymode",
+      "sourceSha256": "849bdedde3297139fcc29aba193b1b3d925ee09f4a34376d5f6add9c330b716e",
+      "output": "diagrams/circle-radius-diameter.webp",
+      "outputBytes": 15190,
+      "outputSha256": "955729b4c5769e391cfe80d2bf30675c5c5ab4877058e813b247971aefc949e3",
+      "outputWidth": 900,
+      "outputHeight": 600,
+      "webpQuality": 90
+    },
+    {
+      "name": "parallelogram-area",
+      "title": "Parallelogram with base b and perpendicular height h",
+      "altText": "A parallelogram with its bottom side labelled b as the base, and a dashed line labelled h dropping straight down from the top side to the base at a right angle.",
+      "key": "curated:diagrams/parallelogram-area",
+      "source": "src/parallelogram-area.svg",
+      "license": "CC0-1.0",
+      "author": "Quizymode",
+      "sourceSha256": "01aabbf256210b2e9af54e95dc9f28846d1493439505c757a075b94802f060e4",
+      "output": "diagrams/parallelogram-area.webp",
+      "outputBytes": 7204,
+      "outputSha256": "b526e9f2ca15181ae01aff40fabc3fa1b66a8c0b41f546e152fcf08ad4907aef",
+      "outputWidth": 900,
+      "outputHeight": 600,
+      "webpQuality": 90
+    }
+  ],
+  "encoder": {
+    "sharp": "0.35.5",
+    "vips": "8.18.7",
+    "effort": 6
+  }
+}

@@ -19,6 +19,7 @@ from seed_source_common import (
     load_source_items,
     next_sharded_file_path,
     normalize_question,
+    parse_explanation_image,
     parse_question_image,
     question_identity,
     validate_source,
@@ -262,6 +263,12 @@ def build_candidate(
         return None
     if question_image:
         payload["questionImage"] = question_image
+    try:
+        explanation_image = parse_explanation_image(raw_item.get("explanationImage"), path.name)
+    except ValueError:
+        return None
+    if explanation_image:
+        payload["explanationImage"] = explanation_image
 
     return payload
 
@@ -405,6 +412,7 @@ def _payload_to_source_item(payload: dict[str, Any], path: Path, index: int):
         path=path,
         index=index,
         question_image=payload.get("questionImage"),
+        explanation_image=payload.get("explanationImage"),
     )
 
 

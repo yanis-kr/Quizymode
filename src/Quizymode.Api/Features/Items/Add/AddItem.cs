@@ -15,6 +15,8 @@ public static class AddItem
         string Name,
         bool IsPrivate);
 
+    /// <param name="QuestionImage">Not supported; omit or send null. A non-null value is rejected with 400 (curated pictures are added through seed data).</param>
+    /// <param name="ExplanationImage">Not supported; omit or send null. A non-null value is rejected with 400 (curated pictures are added through seed data).</param>
     public sealed record Request(
         string Category,
         string NavigationKeyword1,
@@ -31,7 +33,9 @@ public static class AddItem
         ItemSpeechSupport? QuestionSpeech = null,
         ItemSpeechSupport? CorrectAnswerSpeech = null,
         Dictionary<int, ItemSpeechSupport>? IncorrectAnswerSpeech = null,
-        string? GroupLabel = null);
+        string? GroupLabel = null,
+        System.Text.Json.JsonElement? QuestionImage = null,
+        System.Text.Json.JsonElement? ExplanationImage = null);
 
     public sealed record Response(
         string Id,
@@ -76,6 +80,7 @@ public static class AddItem
                 .WithMessage("Question must not exceed 1000 characters");
 
             this.AddSpeechSupportRules(x => x.QuestionSpeech, 1000, "QuestionSpeech");
+            this.AddPictureImportRejectionRules(x => x.QuestionImage, x => x.ExplanationImage);
 
             RuleFor(x => x.CorrectAnswer)
                 .NotEmpty()

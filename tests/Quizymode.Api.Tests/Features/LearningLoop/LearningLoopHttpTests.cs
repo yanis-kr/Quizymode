@@ -5,6 +5,7 @@ using FluentValidation;
 using Microsoft.AspNetCore.Http;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
+using Quizymode.Api.Data;
 using Quizymode.Api.Features.Personalization;
 using Quizymode.Api.Shared.Models;
 using ApiStartup = Quizymode.Api.StartupExtensions.StartupExtensions;
@@ -72,6 +73,9 @@ public sealed class LearningLoopHttpTests : DatabaseTestFixture, IAsyncLifetime
         (await SendAsync(HttpMethod.Get, "/users/me/interests", member)).Should().Be(HttpStatusCode.OK);
         (await SendAsync(HttpMethod.Put, "/users/me/interests", member, new { categories = new[] { "Bad Slug" } })).Should().Be(HttpStatusCode.BadRequest);
         (await SendAsync(HttpMethod.Post, "/daily-quiz/completions", member, new { date = today, correct = 1, total = 5 })).Should().Be(HttpStatusCode.BadRequest, "no daily set has any items");
+        (await SendAsync(HttpMethod.Post, "/daily-quiz/completions", member, new { date = today, correct = 1, total = 5, skipped = 1 })).Should().Be(HttpStatusCode.BadRequest, "no daily set has any items");
+        (await SendAsync(HttpMethod.Post, "/daily-quiz/completions", member, new { date = today, correct = 4, total = 5, skipped = 2 })).Should().Be(HttpStatusCode.BadRequest, "correct exceeds total minus skipped");
+        (await SendAsync(HttpMethod.Post, "/daily-quiz/completions", member, new { date = today, correct = 0, total = 5, skipped = 6 })).Should().Be(HttpStatusCode.BadRequest, "skipped exceeds total");
         (await SendAsync(HttpMethod.Get, "/admin/daily-quiz", member)).Should().Be(HttpStatusCode.Forbidden);
         (await SendAsync(HttpMethod.Post, $"/admin/daily-quiz/{today}/items/{Guid.NewGuid()}/exclude", member)).Should().Be(HttpStatusCode.Forbidden);
 
@@ -85,6 +89,52 @@ public sealed class LearningLoopHttpTests : DatabaseTestFixture, IAsyncLifetime
         using HttpRequestMessage request = JwtHttpTestHost.Request(method, url, token);
         using HttpResponseMessage response = await _host.Client.SendAsync(request);
         return (response.StatusCode, await response.Content.ReadAsStringAsync());
+    }
+
+    [Fact]
+    public async Task DailyCompletion_WithSkipped_RoundTripsAndRejectsInconsistentCounts()
+    {
+        string member = _host.CreateToken("member", "member@example.com");
+        string today = DateTime.UtcNow.ToString("yyyy-MM-dd");
+        Category category = await LearningLoopTestData.AddCategoryAsync(DbContext, "trivia");
+        for (int i = 0; i < 8; i++)
+        {
+            await LearningLoopTestData.AddItemAsync(DbContext, category);
+        }
+
+        (HttpStatusCode setStatus, _) = await SendWithBodyAsync(HttpMethod.Get, "/daily-quiz", member);
+        setStatus.Should().Be(HttpStatusCode.OK);
+
+        async Task<(HttpStatusCode Status, string Body)> Post(object body)
+        {
+            using HttpRequestMessage request = JwtHttpTestHost.Request(HttpMethod.Post, "/daily-quiz/completions", member);
+            request.Content = JsonContent.Create(body);
+            using HttpResponseMessage response = await _host.Client.SendAsync(request);
+            return (response.StatusCode, await response.Content.ReadAsStringAsync());
+        }
+
+        (HttpStatusCode tooManySkipped, string skippedBody) = await Post(new { date = today, correct = 0, total = 5, skipped = 6 });
+        tooManySkipped.Should().Be(HttpStatusCode.BadRequest);
+        skippedBody.Should().Contain("Skipped");
+        (HttpStatusCode tooManyCorrect, string correctBody) = await Post(new { date = today, correct = 4, total = 5, skipped = 2 });
+        tooManyCorrect.Should().Be(HttpStatusCode.BadRequest);
+        correctBody.Should().Contain("Correct");
+        (await Post(new { date = today, correct = 0, total = 5, skipped = -1 })).Status.Should().Be(HttpStatusCode.BadRequest);
+        (await SendWithBodyAsync(HttpMethod.Get, "/daily-quiz", member)).Body.Should().Contain("\"completion\":null");
+
+        (HttpStatusCode created, string createdBody) = await Post(new { date = today, correct = 2, total = 5, skipped = 2 });
+        created.Should().Be(HttpStatusCode.Created, createdBody);
+        createdBody.Should().Contain("\"skipped\":2");
+
+        (HttpStatusCode read, string readBody) = await SendWithBodyAsync(HttpMethod.Get, "/daily-quiz", member);
+        read.Should().Be(HttpStatusCode.OK);
+        using System.Text.Json.JsonDocument doc = System.Text.Json.JsonDocument.Parse(readBody);
+        System.Text.Json.JsonElement completion = doc.RootElement.GetProperty("completion");
+        completion.GetProperty("skipped").GetInt32().Should().Be(2);
+        completion.GetProperty("correct").GetInt32().Should().Be(2);
+        completion.GetProperty("total").GetInt32().Should().Be(5);
+        using ApplicationDbContext db = CreateDbContext();
+        (await db.DailyQuizCompletions.AsNoTracking().SingleAsync()).Skipped.Should().Be(2);
     }
 
     [Fact]

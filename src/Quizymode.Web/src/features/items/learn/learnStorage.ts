@@ -75,6 +75,19 @@ function isStoredItem(value: unknown): value is ItemResponse {
   );
 }
 
+/**
+ * A malformed explanation picture is dropped rather than discarding the whole snapshot (#403): the question is still
+ * answerable without it, unlike a malformed question picture.
+ */
+function withoutMalformedExplanationImage(item: ItemResponse): ItemResponse {
+  if (item.explanationImage === undefined || item.explanationImage === null || isItemImageReference(item.explanationImage)) {
+    return item;
+  }
+  const { explanationImage: _dropped, ...rest } = item;
+  void _dropped;
+  return rest;
+}
+
 /** Keeps only what the Learn page renders; never stores private items. */
 export function toItemSnapshot(item: ItemResponse): ItemResponse {
   return {
@@ -88,6 +101,7 @@ export function toItemSnapshot(item: ItemResponse): ItemResponse {
     incorrectAnswers: [...item.incorrectAnswers],
     incorrectAnswerSpeech: item.incorrectAnswerSpeech,
     ...(item.questionImage ? { questionImage: item.questionImage } : {}),
+    ...(item.explanationImage ? { explanationImage: item.explanationImage } : {}),
     explanation: item.explanation ?? "",
     createdAt: item.createdAt,
     keywords: [],
@@ -175,7 +189,9 @@ export function readLearnRun(scope: QuizRunScope, identityKey: string, now: numb
     return { status: "restored", state, items: null };
   }
 
-  const items = Array.isArray(entry.items) ? entry.items : null;
+  const items = Array.isArray(entry.items)
+    ? entry.items.map((item) => (item && typeof item === "object" ? withoutMalformedExplanationImage(item) : item))
+    : null;
   if (
     !items ||
     items.length !== state.itemIds.length ||

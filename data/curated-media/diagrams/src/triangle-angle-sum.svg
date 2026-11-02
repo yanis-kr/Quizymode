@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 400" width="600" height="400" role="img">
+  <title>The three angles of a triangle make a straight angle</title>
+  <desc>On the left, a triangle with its three corner angles shaded in different colours and labelled A, B and C. On the right, the same three angles placed side by side along a straight line fill a half circle, which measures 180 degrees.</desc>
+  <rect width="600" height="400" fill="#ffffff"/>
+  <polygon points="40,340 290,340 200,140" fill="#ffffff" stroke="#1e293b" stroke-width="4" stroke-linejoin="round"/>
+  <path d="M40 340 L86.0 340.0 A46 46 0 0 0 68.7 304.1 Z" fill="#bfdbfe" stroke="#1e293b" stroke-width="2"/>
+  <path d="M290 340 L271.1 298.1 A46 46 0 0 0 244.0 340.0 Z" fill="#bbf7d0" stroke="#1e293b" stroke-width="2"/>
+  <path d="M200 140 L171.3 175.9 A46 46 0 0 0 218.9 181.9 Z" fill="#fed7aa" stroke="#1e293b" stroke-width="2"/>
+  <path d="M315 330 H585" stroke="#1e293b" stroke-width="4" stroke-linecap="round"/>
+  <path d="M450 330 L570.0 330.0 A120 120 0 0 0 525.0 236.3 Z" fill="#bfdbfe" stroke="#1e293b" stroke-width="2"/>
+  <path d="M450 330 L525.0 236.3 A120 120 0 0 0 395.3 223.2 Z" fill="#bbf7d0" stroke="#1e293b" stroke-width="2"/>
+  <path d="M450 330 L395.3 223.2 A120 120 0 0 0 330.0 330.0 Z" fill="#fed7aa" stroke="#1e293b" stroke-width="2"/>
+  <circle cx="450" cy="330" r="5" fill="#1e293b"/>
+<g fill="none" stroke="#1e293b" stroke-width="3.00" stroke-linecap="round" stroke-linejoin="round"><g transform="translate(56.7 336.9) scale(1.0)"><path d="M0 0 L7 -18 L14 0 M3 -7 H11"/></g></g>
+<g fill="none" stroke="#1e293b" stroke-width="3.00" stroke-linecap="round" stroke-linejoin="round"><g transform="translate(256.3 332.7) scale(1.0)"><path d="M0 0 V-18 H7 Q13 -18 13 -13.5 Q13 -9.5 7 -9.5 H0 M7 -9.5 Q14 -9.5 14 -4.8 Q14 0 7 0 H0"/></g></g>
+<g fill="none" stroke="#1e293b" stroke-width="3.00" stroke-linecap="round" stroke-linejoin="round"><g transform="translate(187.0 176.8) scale(1.0)"><path d="M15.9 -14.8 A9 9 0 1 0 15.9 -3.2"/></g></g>
+<g fill="none" stroke="#1e293b" stroke-width="3.00" stroke-linecap="round" stroke-linejoin="round"><g transform="translate(517.2 302.6) scale(1.0)"><path d="M0 0 L7 -18 L14 0 M3 -7 H11"/></g></g>
+<g fill="none" stroke="#1e293b" stroke-width="3.00" stroke-linecap="round" stroke-linejoin="round"><g transform="translate(449.5 259.4) scale(1.0)"><path d="M0 0 V-18 H7 Q13 -18 13 -13.5 Q13 -9.5 7 -9.5 H0 M7 -9.5 Q14 -9.5 14 -4.8 Q14 0 7 0 H0"/></g></g>
+<g fill="none" stroke="#1e293b" stroke-width="3.00" stroke-linecap="round" stroke-linejoin="round"><g transform="translate(372.2 297.3) scale(1.0)"><path d="M15.9 -14.8 A9 9 0 1 0 15.9 -3.2"/></g></g>
+<g fill="none" stroke="#1e293b" stroke-width="2.31" stroke-linecap="round" stroke-linejoin="round"><g transform="translate(420.1 380.0) scale(1.3)"><path d="M2 -14 L6 -18 V0"/></g><g transform="translate(433.1 380.0) scale(1.3)"><circle cx="6" cy="-13.5" r="4.5"/><circle cx="6" cy="-4.5" r="4.5"/></g><g transform="translate(451.3 380.0) scale(1.3)"><ellipse cx="6" cy="-9" rx="5.5" ry="9"/></g><g transform="translate(469.5 380.0) scale(1.3)"><circle cx="3" cy="-16" r="2.5"/></g></g>
+</svg>

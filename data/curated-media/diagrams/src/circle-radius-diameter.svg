@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 400" width="600" height="400" role="img">
+  <title>A circle with radius r, diameter d and circumference C</title>
+  <desc>A circle with its centre marked. A green radius r runs from the centre to the edge. A blue diameter d runs straight across through the centre and is twice as long as the radius. The orange outline of the circle is the circumference C.</desc>
+  <rect width="600" height="400" fill="#ffffff"/>
+  <circle cx="300" cy="200" r="150" fill="#dbeafe" stroke="#c2410c" stroke-width="8"/>
+  <path d="M150 200 H450" stroke="#2563eb" stroke-width="5" stroke-linecap="round"/>
+  <path d="M300 200 L375.0 70.1" stroke="#16a34a" stroke-width="5" stroke-linecap="round"/>
+  <circle cx="300" cy="200" r="7" fill="#1e293b"/>
+<g fill="none" stroke="#2563eb" stroke-width="1.88" stroke-linecap="round" stroke-linejoin="round"><g transform="translate(288.8 240.0) scale(1.6)"><circle cx="5.5" cy="-5.5" r="5.5"/><path d="M11 -20 V0"/></g></g>
+<g fill="none" stroke="#16a34a" stroke-width="1.88" stroke-linecap="round" stroke-linejoin="round"><g transform="translate(353.2 152.0) scale(1.6)"><path d="M0 -11 V0 M0 -6 Q1 -11.5 8 -11"/></g></g>
+<g fill="none" stroke="#c2410c" stroke-width="1.67" stroke-linecap="round" stroke-linejoin="round"><g transform="translate(427.9 342.0) scale(1.8)"><path d="M15.9 -14.8 A9 9 0 1 0 15.9 -3.2"/></g></g>
+</svg>

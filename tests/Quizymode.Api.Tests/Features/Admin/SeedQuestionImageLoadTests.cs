@@ -22,7 +22,9 @@ public sealed class SeedQuestionImageLoadTests : IDisposable
             "question": "Which country uses this flag?",
             "correctAnswer": "France",
             "incorrectAnswers": ["Italy"],
-            "questionImage": { "key": "curated:flags/fr", "altText": "Three vertical bands" }
+            "explanation": "Vertical bands",
+            "questionImage": { "key": "curated:flags/fr", "altText": "Three vertical bands" },
+            "explanationImage": { "key": "curated:diagrams/x", "altText": "A diagram" }
           },
           {
             "itemId": "99999999-9999-9999-9999-999999999902",
@@ -58,6 +60,8 @@ public sealed class SeedQuestionImageLoadTests : IDisposable
         requests.Should().HaveCount(2);
         requests[0].QuestionImage.Should().Be(new Quizymode.Api.Shared.Models.ItemImageReference("curated:flags/fr", "Three vertical bands"));
         requests[1].QuestionImage.Should().BeNull();
+        requests[0].ExplanationImage.Should().Be(new Quizymode.Api.Shared.Models.ItemImageReference("curated:diagrams/x", "A diagram"));
+        requests[1].ExplanationImage.Should().BeNull();
     }
 
     [Fact]
@@ -72,6 +76,9 @@ public sealed class SeedQuestionImageLoadTests : IDisposable
         result.IsSuccess.Should().BeTrue();
         result.Value.Manifest.Items.Select(i => i.QuestionImage).Should().Equal(
             new Quizymode.Api.Shared.Models.ItemImageReference("curated:flags/fr", "Three vertical bands"),
+            null);
+        result.Value.Manifest.Items.Select(i => i.ExplanationImage).Should().Equal(
+            new Quizymode.Api.Shared.Models.ItemImageReference("curated:diagrams/x", "A diagram"),
             null);
     }
 }

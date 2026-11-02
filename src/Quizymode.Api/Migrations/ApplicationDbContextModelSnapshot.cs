@@ -626,6 +626,11 @@ namespace Quizymode.Api.Migrations
                     b.Property<int>("Correct")
                         .HasColumnType("integer");
 
+                    b.Property<int>("Skipped")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("integer")
+                        .HasDefaultValue(0);
+
                     b.Property<int>("Total")
                         .HasColumnType("integer");
 
@@ -634,6 +639,8 @@ namespace Quizymode.Api.Migrations
                     b.ToTable("DailyQuizCompletions", null, t =>
                         {
                             t.HasCheckConstraint("CK_DailyQuizCompletions_Counts", "\"Total\" > 0 AND \"Correct\" >= 0 AND \"Correct\" <= \"Total\"");
+
+                            t.HasCheckConstraint("CK_DailyQuizCompletions_Skipped", "\"Skipped\" >= 0 AND \"Correct\" + \"Skipped\" <= \"Total\"");
                         });
                 });
 
@@ -1019,6 +1026,14 @@ namespace Quizymode.Api.Migrations
                         .HasMaxLength(4000)
                         .HasColumnType("character varying(4000)");
 
+                    b.Property<string>("ExplanationImageAlt")
+                        .HasMaxLength(300)
+                        .HasColumnType("character varying(300)");
+
+                    b.Property<string>("ExplanationImageKey")
+                        .HasMaxLength(100)
+                        .HasColumnType("character varying(100)");
+
                     b.Property<decimal?>("FactualRisk")
                         .HasPrecision(5, 4)
                         .HasColumnType("numeric(5,4)");
@@ -1118,6 +1133,8 @@ namespace Quizymode.Api.Migrations
 
                     b.ToTable("Items", null, t =>
                         {
+                            t.HasCheckConstraint("CK_Items_ExplanationImage_Alt", "(\"ExplanationImageKey\" IS NULL) = (\"ExplanationImageAlt\" IS NULL)");
+
                             t.HasCheckConstraint("CK_Items_IncorrectAnswers_Length", "jsonb_array_length(\"IncorrectAnswers\"::jsonb) >= 0 AND jsonb_array_length(\"IncorrectAnswers\"::jsonb) <= 4");
 
                             t.HasCheckConstraint("CK_Items_QuestionImage_Alt", "(\"QuestionImageKey\" IS NULL) = (\"QuestionImageAlt\" IS NULL)");

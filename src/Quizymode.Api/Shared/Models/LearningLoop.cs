@@ -66,6 +66,9 @@ public sealed class DailyQuizCompletion
 
     public int Total { get; set; }
 
+    /// <summary>Questions skipped because their picture was unavailable (#403); excluded from scoring.</summary>
+    public int Skipped { get; set; }
+
     public DateTime CompletedAt { get; set; } = DateTime.UtcNow;
 }
 

@@ -35,7 +35,11 @@
       "circumference",
       "circle"
     ],
-    "source": "https://www.mathsisfun.com/geometry/circle.html"
+    "source": "https://www.mathsisfun.com/geometry/circle.html",
+    "explanationImage": {
+      "key": "curated:diagrams/circle-radius-diameter",
+      "altText": "A circle with its centre marked, a radius r from the centre to the edge, a diameter d straight across through the centre, and the outline of the circle highlighted as the circumference C."
+    }
   },
   {
     "itemId": "daf55d5a-50c6-4277-b711-c2e475156fb1",

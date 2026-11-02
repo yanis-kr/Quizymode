@@ -141,3 +141,112 @@ describe("QuizCompletionView review list picture (#407, AC 3.21.6)", () => {
     expect(screen.getAllByTestId("question-image")).toHaveLength(1);
   });
 });
+
+describe("QuizCompletionView unavailable pictures (#403)", () => {
+  const plainView = (run: QuizRunState) => (
+    <MemoryRouter>
+      <QuizCompletionView
+        run={run}
+        items={items}
+        browsePath="/x"
+        browseLabel="Browse"
+        onReviewMistakes={() => {}}
+        onBackToResults={() => {}}
+        onPlayAgain={() => {}}
+        share={share}
+      />
+    </MemoryRouter>
+  );
+
+  it("scores against the questions that could be scored and says how many were skipped", () => {
+    let run = createQuizRun(
+      { kind: "global", category: null, navigationKeywords: [], filterKeywords: [], quizSize: 3 },
+      ["a", "b", "c"],
+      "anon"
+    );
+    run = reduceQuizRun(run, { type: "answer", itemId: "a", selectedAnswer: "r", isCorrect: true, completedAt: "2026-01-01T00:00:00Z" });
+    run = reduceQuizRun(run, { type: "answer", itemId: "b", selectedAnswer: "x", isCorrect: false, completedAt: "2026-01-01T00:00:01Z" });
+    run = reduceQuizRun(run, { type: "skip-unavailable", itemId: "c", completedAt: "2026-01-01T00:00:02Z" });
+
+    render(plainView({ ...run, view: "summary" }));
+
+    expect(screen.getByText("1 / 2")).toBeInTheDocument();
+    expect(screen.getByText(/50% correct · 1 missed/)).toBeInTheDocument();
+    expect(screen.getByText("1 question skipped because the picture was unavailable. Not scored.")).toBeInTheDocument();
+  });
+
+  it("shows no tier or celebration for a full score when something was skipped", () => {
+    let run = createQuizRun(
+      { kind: "global", category: null, navigationKeywords: [], filterKeywords: [], quizSize: 2 },
+      ["a", "b"],
+      "anon"
+    );
+    run = reduceQuizRun(run, { type: "answer", itemId: "a", selectedAnswer: "r", isCorrect: true, completedAt: "2026-01-01T00:00:00Z" });
+    run = reduceQuizRun(run, { type: "skip-unavailable", itemId: "b", completedAt: "2026-01-01T00:00:01Z" });
+
+    render(plainView({ ...run, view: "summary" }));
+
+    expect(screen.getByText("1 / 1")).toBeInTheDocument();
+    expect(screen.queryByText(/perfect/i)).not.toBeInTheDocument();
+    expect(confetti).not.toHaveBeenCalled();
+    expect(screen.getByText("1 question skipped because the picture was unavailable. Not scored.")).toBeInTheDocument();
+  });
+
+  it("shows No questions were scored, with no percentage or Share, when everything was skipped", () => {
+    let run = createQuizRun(
+      { kind: "global", category: null, navigationKeywords: [], filterKeywords: [], quizSize: 2 },
+      ["a", "b"],
+      "anon"
+    );
+    run = reduceQuizRun(run, { type: "skip-unavailable", itemId: "a", completedAt: "2026-01-01T00:00:00Z" });
+    run = reduceQuizRun(run, { type: "skip-unavailable", itemId: "b", completedAt: "2026-01-01T00:00:01Z" });
+
+    render(plainView({ ...run, view: "summary" }));
+
+    expect(screen.getByText("No questions were scored")).toBeInTheDocument();
+    expect(screen.getByText("2 questions skipped because the picture was unavailable. Not scored.")).toBeInTheDocument();
+    expect(screen.queryByText(/% correct/)).not.toBeInTheDocument();
+    expect(screen.queryByRole("button", { name: /Share/ })).not.toBeInTheDocument();
+  });
+
+  it("labels a skipped Test question Not scored (picture unavailable) in Review all, with the explanation picture as a thumbnail", () => {
+    let run = createQuizRun(
+      { kind: "global", category: null, navigationKeywords: [], filterKeywords: [], quizSize: 2 },
+      ["a", "b"],
+      "anon",
+      "test"
+    );
+    run = reduceQuizRun(run, { type: "start-test", startedAt: "2026-01-01T00:00:00Z", timeLimitSec: null });
+    run = reduceQuizRun(run, { type: "answer", itemId: "a", selectedAnswer: "r", isCorrect: true, completedAt: "2026-01-01T00:00:05Z" });
+    run = reduceQuizRun(run, {
+      type: "submit",
+      submittedAt: "2026-01-01T00:00:10Z",
+      reason: "manual",
+      unavailableItemIds: ["b"],
+    });
+    const withDiagram = items.map((item) =>
+      item.id === "a"
+        ? { ...item, explanation: "Because.", explanationImage: { key: "curated:flags/fr", altText: "A diagram of the answer" } }
+        : item
+    );
+
+    render(
+      <MemoryRouter>
+        <QuizCompletionView
+          run={{ ...run, view: "review-all" }}
+          items={withDiagram}
+          browsePath="/x"
+          browseLabel="Browse"
+          onReviewMistakes={() => {}}
+          onBackToResults={() => {}}
+          onPlayAgain={() => {}}
+        />
+      </MemoryRouter>
+    );
+
+    expect(screen.getByText("Not scored (picture unavailable)")).toBeInTheDocument();
+    expect(screen.queryByText("Not answered")).not.toBeInTheDocument();
+    expect(screen.getByAltText("A diagram of the answer")).toHaveAttribute("loading", "lazy");
+    expect(screen.getByTestId("explanation-image")).toBeInTheDocument();
+  });
+});
