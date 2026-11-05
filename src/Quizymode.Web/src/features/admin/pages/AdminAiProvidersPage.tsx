@@ -155,9 +155,9 @@ function ProvidersForm({ data }: ProvidersFormProps) {
     const currentTime = Date.now();
     const deadlines = data.vendors
       .map((entry) => Date.parse(entry.coolingDownUntilUtc ?? ""))
-      .filter((deadline) => deadline > currentTime);
+      .filter((deadline) => deadline > now);
     if (deadlines.length === 0) return;
-    const timer = window.setTimeout(() => setNow(Date.now()), Math.min(...deadlines) - currentTime);
+    const timer = window.setTimeout(() => setNow(Date.now()), Math.max(0, Math.min(...deadlines) - currentTime));
     return () => window.clearTimeout(timer);
   }, [data.vendors, now]);
 
@@ -244,7 +244,7 @@ function ProvidersForm({ data }: ProvidersFormProps) {
                           No key
                         </span>
                       )}
-                      {coolingDownUntil[entry.vendor] && Date.parse(coolingDownUntil[entry.vendor]!) > Date.now() && (
+                      {coolingDownUntil[entry.vendor] && Date.parse(coolingDownUntil[entry.vendor]!) > now && (
                         <span className="mt-1 block text-xs font-medium text-amber-700">
                           Cooling down until {new Date(coolingDownUntil[entry.vendor]!).toLocaleTimeString()}
                         </span>
