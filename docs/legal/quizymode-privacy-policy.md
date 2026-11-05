@@ -65,7 +65,7 @@ We do not sell personal information, and the current app does not use third-part
 
 ## 6. AI-Assisted Workflows
 
-When you ask Quizymode to generate questions from a study guide you uploaded, the text of each section you choose is sent to a third-party AI provider, which returns draft questions. We send only the section text and our instructions; we do not send your name, email address, or account details. We clear the section text from our database once its questions are generated.
+When you ask Quizymode to generate questions from a study guide you uploaded, the text of each section you choose is sent to a third-party AI provider, which returns draft questions. We send only the section text and our instructions; we do not send your name, email address, or account details. We clear the temporary generation copy once its questions are generated. Uploaded section text remains until the document expires, normally 30 days after its last activity, when cleanup removes the text.
 
 Depending on availability, a section may be processed by one of these providers, tried in order until one succeeds:
 

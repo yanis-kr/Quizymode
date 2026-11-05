@@ -1,5 +1,5 @@
-import { beforeEach, describe, expect, it, vi } from "vitest";
-import { fireEvent, render, screen, waitFor, within } from "@testing-library/react";
+import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
+import { act, cleanup, fireEvent, render, screen, waitFor, within } from "@testing-library/react";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { MemoryRouter, Route, Routes } from "react-router-dom";
 import AdminAiProvidersPage from "./AdminAiProvidersPage";
@@ -22,7 +22,7 @@ const settings: LlmProvidersResponse = {
   vendors: [
     { vendor: "OpenRouter", keyConfigured: true, model: "google/gemma-4-31b-it:free" },
     { vendor: "OpenAI", keyConfigured: false, model: "gpt-5-nano" },
-    { vendor: "Gemini", keyConfigured: true, model: "gemini-3.5-flash-lite", coolingDownUntilUtc: "2026-11-05T08:00:00Z" },
+    { vendor: "Gemini", keyConfigured: true, model: "gemini-3.5-flash-lite" },
     { vendor: "Groq", keyConfigured: false, model: "openai/gpt-oss-120b" },
     { vendor: "Cerebras", keyConfigured: false, model: "gpt-oss-120b" },
   ],
@@ -52,6 +52,11 @@ function routeItems(label: string): string[] {
 }
 
 describe("AdminAiProvidersPage", () => {
+  afterEach(() => {
+    cleanup();
+    vi.useRealTimers();
+  });
+
   beforeEach(() => {
     vi.clearAllMocks();
     mockUseAuth.mockReturnValue({ isAuthenticated: true, isAdmin: true });
@@ -220,11 +225,74 @@ describe("AdminAiProvidersPage", () => {
   });
 
   it("shows a cooldown note for a rate-limited vendor", async () => {
+    vi.mocked(adminLlmProvidersApi.get).mockResolvedValue({
+      ...settings,
+      vendors: settings.vendors.map((vendor) => ({
+        ...vendor,
+        coolingDownUntilUtc: vendor.vendor === "Gemini" ? new Date(Date.now() + 60_000).toISOString() : null,
+      })),
+    });
     renderPage();
     await screen.findByLabelText("Model for OpenRouter");
 
     expect(screen.getByText(/Cooling down until/)).toBeInTheDocument();
     expect(screen.getAllByText(/Cooling down until/)).toHaveLength(1);
+  });
+
+  it("expires each cooldown in an open tab and ignores already expired timestamps", async () => {
+    const now = Date.now();
+    vi.mocked(adminLlmProvidersApi.get).mockResolvedValue({
+      ...settings,
+      vendors: settings.vendors.map((vendor) => ({
+        ...vendor,
+        coolingDownUntilUtc: new Date(now + (vendor.vendor === "Gemini" ? 1000 : vendor.vendor === "Groq" ? 2000 : -1000)).toISOString(),
+      })),
+    });
+    vi.useFakeTimers({ now });
+    renderPage();
+    await act(async () => { await vi.advanceTimersByTimeAsync(0); });
+    expect(screen.getAllByText(/Cooling down until/)).toHaveLength(2);
+
+    await act(async () => { await vi.advanceTimersByTimeAsync(1000); });
+    expect(screen.getAllByText(/Cooling down until/)).toHaveLength(1);
+    expect(within(screen.getByLabelText("Model for Groq").closest("tr")!).getByText(/Cooling down until/)).toBeInTheDocument();
+
+    await act(async () => { await vi.advanceTimersByTimeAsync(1000); });
+    expect(screen.queryByText(/Cooling down until/)).not.toBeInTheDocument();
+  });
+
+  it("refreshes extended cooldowns without losing unsaved models or routes, even after a refresh fails", async () => {
+    const now = Date.now();
+    const response = (seconds: number): LlmProvidersResponse => ({
+      ...settings,
+      vendors: settings.vendors.map((vendor) => ({
+        ...vendor,
+        coolingDownUntilUtc: vendor.vendor === "Gemini" ? new Date(now + seconds * 1000).toISOString() : null,
+      })),
+    });
+    vi.mocked(adminLlmProvidersApi.get)
+      .mockResolvedValueOnce(response(20))
+      .mockResolvedValueOnce(response(45))
+      .mockRejectedValueOnce(new Error("Temporary outage"))
+      .mockResolvedValue(response(45));
+    vi.useFakeTimers({ now });
+    renderPage();
+    await act(async () => { await vi.advanceTimersByTimeAsync(0); });
+    fireEvent.change(screen.getByLabelText("Model for Gemini"), { target: { value: "unsaved-model" } });
+    fireEvent.click(screen.getByRole("button", { name: "Move OpenAI up in Free route" }));
+
+    await act(async () => { await vi.advanceTimersByTimeAsync(15_000); });
+    expect(adminLlmProvidersApi.get).toHaveBeenCalledTimes(2);
+    await act(async () => { await vi.advanceTimersByTimeAsync(15_000); });
+    expect(adminLlmProvidersApi.get).toHaveBeenCalledTimes(3);
+    expect(screen.getByText(/Cooling down until/)).toBeInTheDocument();
+    expect(screen.getByLabelText("Model for Gemini")).toHaveValue("unsaved-model");
+    expect(routeItems("Free route")[0]).toMatch(/OpenAI/);
+
+    await act(async () => { await vi.advanceTimersByTimeAsync(15_000); });
+    expect(screen.queryByText(/Cooling down until/)).not.toBeInTheDocument();
+    expect(screen.getByLabelText("Model for Gemini")).toHaveValue("unsaved-model");
+    expect(routeItems("Free route")[0]).toMatch(/OpenAI/);
   });
 
   it("can add a removed vendor back to a route", async () => {

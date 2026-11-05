@@ -43,7 +43,7 @@ internal interface IOpenAiCompatibleChatClient
 /// and capped output tokens. OpenAI reasoning models (gpt-5*, o-series) get <c>max_completion_tokens</c> and no
 /// temperature, which those models require; gpt-oss models get <c>reasoning_effort: low</c>; a vendor's
 /// <see cref="LlmVendorEndpoint.MaxTokens"/> caps the requested output tokens. OpenRouter calls carry the app attribution
-/// headers. HTTP 429 is <see cref="LlmAttemptOutcome.RateLimited"/>. The Authorization header is redacted from HTTP logs and keys are never
+/// headers and restrict routing to providers that deny data collection. HTTP 429 is <see cref="LlmAttemptOutcome.RateLimited"/>. The Authorization header is redacted from HTTP logs and keys are never
 /// logged. HTTP 401 means a bad key; a 403 is a bad key only when its body says so (otherwise a region/model-access
 /// block, a provider error).
 /// </summary>
@@ -172,6 +172,11 @@ internal sealed class OpenAiCompatibleChatClient(HttpClient httpClient, ILogger<
                 // gpt-oss (Groq, Cerebras) reasons by default; low effort leaves the output budget for the answer.
                 body["reasoning_effort"] = "low";
             }
+        }
+
+        if (vendor == LlmVendors.OpenRouter)
+        {
+            body["provider"] = new JsonObject { ["data_collection"] = "deny" };
         }
 
         return body;

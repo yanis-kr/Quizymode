@@ -1,6 +1,7 @@
 using System.Diagnostics;
 using System.Globalization;
 using System.Net;
+using System.Text.Json;
 using System.Text.RegularExpressions;
 using FluentAssertions;
 using Microsoft.Extensions.Logging;
@@ -40,6 +41,41 @@ public sealed class StudyGuideChatClientTests
     }
 
     private static HttpResponseMessage Body(HttpStatusCode status, string body) => FakeChatHandler.Json(status, body);
+
+    [Theory]
+    [InlineData(LlmVendors.OpenRouter, true)]
+    [InlineData(LlmVendors.OpenAI, false)]
+    [InlineData(LlmVendors.Gemini, false)]
+    [InlineData(LlmVendors.Groq, false)]
+    [InlineData(LlmVendors.Cerebras, false)]
+    public async Task ChatClient_OnlyOpenRouterRestrictsProviderDataCollection(string vendor, bool restrictDataCollection)
+    {
+        bool received = false;
+        OpenAiCompatibleChatClient client = new(new HttpClient(new FakeChatHandler((request, body) =>
+        {
+            received = true;
+            using JsonDocument document = JsonDocument.Parse(body);
+            bool hasProvider = document.RootElement.TryGetProperty("provider", out JsonElement provider);
+            hasProvider.Should().Be(restrictDataCollection);
+            if (restrictDataCollection)
+            {
+                provider.GetProperty("data_collection").GetString().Should().Be("deny");
+                request.Headers.GetValues("HTTP-Referer").Should().ContainSingle().Which.Should().Be("https://www.quizymode.com");
+                request.Headers.GetValues("X-Title").Should().ContainSingle().Which.Should().Be("Quizymode");
+            }
+
+            return FakeVendorHandler.Completion("{}");
+        })), new CapturingLogger());
+
+        ChatCompletionResult result = await client.CompleteAsync(
+            new LlmVendorEndpoint(vendor, "https://vendor.test/v1", "test-key"),
+            "test-model",
+            new ChatCompletionRequest("system", "user", 1000, 0.2),
+            CancellationToken.None);
+
+        received.Should().BeTrue();
+        result.Outcome.Should().Be(LlmAttemptOutcome.Success);
+    }
 
     [Theory]
     [InlineData(401, "{}", LlmAttemptOutcome.AuthError, 401)]

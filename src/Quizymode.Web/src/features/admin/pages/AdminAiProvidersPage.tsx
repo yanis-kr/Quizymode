@@ -147,8 +147,19 @@ function ProvidersForm({ data }: ProvidersFormProps) {
   const [form, setForm] = React.useState<AiProvidersForm>(() => toForm(data));
   const [formError, setFormError] = React.useState<string | null>(null);
   const [saved, setSaved] = React.useState(false);
+  const [now, setNow] = React.useState(Date.now);
   const keyConfigured = Object.fromEntries(data.vendors.map((entry) => [entry.vendor, entry.keyConfigured]));
   const coolingDownUntil = Object.fromEntries(data.vendors.map((entry) => [entry.vendor, entry.coolingDownUntilUtc ?? null]));
+
+  React.useEffect(() => {
+    const currentTime = Date.now();
+    const deadlines = data.vendors
+      .map((entry) => Date.parse(entry.coolingDownUntilUtc ?? ""))
+      .filter((deadline) => deadline > currentTime);
+    if (deadlines.length === 0) return;
+    const timer = window.setTimeout(() => setNow(Date.now()), Math.min(...deadlines) - currentTime);
+    return () => window.clearTimeout(timer);
+  }, [data.vendors, now]);
 
   const saveMutation = useMutation({
     mutationFn: (request: AiProvidersForm) =>
@@ -233,7 +244,7 @@ function ProvidersForm({ data }: ProvidersFormProps) {
                           No key
                         </span>
                       )}
-                      {coolingDownUntil[entry.vendor] && (
+                      {coolingDownUntil[entry.vendor] && Date.parse(coolingDownUntil[entry.vendor]!) > Date.now() && (
                         <span className="mt-1 block text-xs font-medium text-amber-700">
                           Cooling down until {new Date(coolingDownUntil[entry.vendor]!).toLocaleTimeString()}
                         </span>
@@ -385,10 +396,12 @@ function AttemptsTable() {
 
 const AdminAiProvidersPage = () => {
   const { isAuthenticated, isAdmin } = useAuth();
-  const { data, isLoading, error, refetch } = useQuery({
+  const { data, isLoading, refetch } = useQuery({
     queryKey: ["admin", "llm-providers"],
     queryFn: () => adminLlmProvidersApi.get(),
     enabled: isAuthenticated && isAdmin,
+    refetchInterval: (query) =>
+      query.state.data?.vendors.some((vendor) => vendor.coolingDownUntilUtc) ? 15_000 : false,
   });
 
   if (!isAuthenticated || !isAdmin) {
@@ -408,7 +421,7 @@ const AdminAiProvidersPage = () => {
       </div>
       {isLoading ? (
         <LoadingSpinner />
-      ) : error || !data ? (
+      ) : !data ? (
         <ErrorMessage message="Failed to load AI provider settings" onRetry={() => void refetch()} />
       ) : (
         <ProvidersForm data={data} />
