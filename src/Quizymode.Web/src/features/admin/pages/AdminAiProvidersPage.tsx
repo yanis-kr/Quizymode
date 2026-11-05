@@ -148,6 +148,7 @@ function ProvidersForm({ data }: ProvidersFormProps) {
   const [formError, setFormError] = React.useState<string | null>(null);
   const [saved, setSaved] = React.useState(false);
   const keyConfigured = Object.fromEntries(data.vendors.map((entry) => [entry.vendor, entry.keyConfigured]));
+  const coolingDownUntil = Object.fromEntries(data.vendors.map((entry) => [entry.vendor, entry.coolingDownUntilUtc ?? null]));
 
   const saveMutation = useMutation({
     mutationFn: (request: AiProvidersForm) =>
@@ -230,6 +231,11 @@ function ProvidersForm({ data }: ProvidersFormProps) {
                       ) : (
                         <span className="rounded-full border border-gray-300 bg-gray-100 px-2 py-0.5 text-xs font-semibold text-gray-600">
                           No key
+                        </span>
+                      )}
+                      {coolingDownUntil[entry.vendor] && (
+                        <span className="mt-1 block text-xs font-medium text-amber-700">
+                          Cooling down until {new Date(coolingDownUntil[entry.vendor]!).toLocaleTimeString()}
                         </span>
                       )}
                     </td>

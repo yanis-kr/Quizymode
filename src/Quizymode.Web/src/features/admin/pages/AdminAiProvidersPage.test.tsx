@@ -20,11 +20,13 @@ vi.mock("@/api/adminLlmProviders", async (importOriginal) => {
 
 const settings: LlmProvidersResponse = {
   vendors: [
-    { vendor: "DeepSeek", keyConfigured: true, model: "deepseek-flash" },
+    { vendor: "OpenRouter", keyConfigured: true, model: "google/gemma-4-31b-it:free" },
     { vendor: "OpenAI", keyConfigured: false, model: "gpt-5-nano" },
-    { vendor: "Gemini", keyConfigured: true, model: "gemini-2.5-flash-lite" },
+    { vendor: "Gemini", keyConfigured: true, model: "gemini-3.5-flash-lite", coolingDownUntilUtc: "2026-11-05T08:00:00Z" },
+    { vendor: "Groq", keyConfigured: false, model: "openai/gpt-oss-120b" },
+    { vendor: "Cerebras", keyConfigured: false, model: "gpt-oss-120b" },
   ],
-  routes: { free: ["Gemini", "OpenAI", "DeepSeek"], premium: ["DeepSeek", "OpenAI", "Gemini"] },
+  routes: { free: ["Gemini", "OpenAI", "OpenRouter"], premium: ["OpenRouter", "OpenAI", "Gemini"] },
   monthlySectionBudget: 1000,
   monthlySectionsUsed: 250,
 };
@@ -67,7 +69,7 @@ describe("AdminAiProvidersPage", () => {
         {
           createdUtc: "2026-10-17T10:00:00Z",
           vendor: "Gemini",
-          model: "gemini-2.5-flash-lite",
+          model: "gemini-3.5-flash-lite",
           outcome: "LowQuoteYield",
           inputTokens: 1200,
           outputTokens: 800,
@@ -86,8 +88,8 @@ describe("AdminAiProvidersPage", () => {
         },
         {
           createdUtc: "2026-10-17T08:00:00Z",
-          vendor: "DeepSeek",
-          model: "deepseek-flash",
+          vendor: "OpenRouter",
+          model: "google/gemma-4-31b-it:free",
           outcome: "Timeout",
           inputTokens: null,
           outputTokens: null,
@@ -119,7 +121,7 @@ describe("AdminAiProvidersPage", () => {
 
   it("does not warn when every route has a keyed vendor", async () => {
     renderPage();
-    await screen.findByLabelText("Model for DeepSeek");
+    await screen.findByLabelText("Model for OpenRouter");
 
     expect(screen.queryByRole("alert")).not.toBeInTheDocument();
   });
@@ -127,17 +129,17 @@ describe("AdminAiProvidersPage", () => {
   it("warns when the saved route has no keyed vendor, and follows the saved state only", async () => {
     vi.mocked(adminLlmProvidersApi.get).mockResolvedValue({
       ...settings,
-      routes: { free: ["OpenAI"], premium: ["DeepSeek", "Gemini"] },
+      routes: { free: ["OpenAI"], premium: ["OpenRouter", "Gemini"] },
     });
     renderPage();
-    await screen.findByLabelText("Model for DeepSeek");
+    await screen.findByLabelText("Model for OpenRouter");
 
     const alert = screen.getByRole("alert");
     expect(alert).toHaveTextContent("No vendor in this route has a key; generation for free users is off.");
     expect(within(screen.getByRole("region", { name: "Free route" })).getByRole("alert")).toBe(alert);
 
     // Unsaved edits do not toggle the alert: emptying the premium route only shows the existing line.
-    fireEvent.click(screen.getByRole("button", { name: "Remove DeepSeek from Premium route" }));
+    fireEvent.click(screen.getByRole("button", { name: "Remove OpenRouter from Premium route" }));
     fireEvent.click(screen.getByRole("button", { name: "Remove Gemini from Premium route" }));
     expect(screen.getAllByRole("alert")).toHaveLength(1);
     expect(screen.getByText("No vendors in this route.")).toBeInTheDocument();
@@ -145,10 +147,10 @@ describe("AdminAiProvidersPage", () => {
 
   it("updates the warning after saving a route with no keyed vendor", async () => {
     renderPage();
-    await screen.findByLabelText("Model for DeepSeek");
+    await screen.findByLabelText("Model for OpenRouter");
     expect(screen.queryByRole("alert")).not.toBeInTheDocument();
 
-    fireEvent.click(screen.getByRole("button", { name: "Remove DeepSeek from Premium route" }));
+    fireEvent.click(screen.getByRole("button", { name: "Remove OpenRouter from Premium route" }));
     fireEvent.click(screen.getByRole("button", { name: "Remove Gemini from Premium route" }));
     fireEvent.click(screen.getByRole("button", { name: "Save settings" }));
 
@@ -165,9 +167,9 @@ describe("AdminAiProvidersPage", () => {
   it("shows key badges as text, models, budget and recent attempts", async () => {
     renderPage();
 
-    expect(await screen.findByLabelText("Model for DeepSeek")).toHaveValue("deepseek-flash");
+    expect(await screen.findByLabelText("Model for OpenRouter")).toHaveValue("google/gemma-4-31b-it:free");
     expect(screen.getAllByText("Key configured")).toHaveLength(2);
-    expect(screen.getByText("No key")).toBeInTheDocument();
+    expect(screen.getAllByText("No key")).toHaveLength(3);
     expect(screen.getByText(/250 of 1,000 sections generated this month/)).toBeInTheDocument();
     expect(screen.getByRole("progressbar", { name: /monthly section budget/i })).toHaveAttribute("aria-valuenow", "25");
     expect(await screen.findByText("LowQuoteYield")).toBeInTheDocument();
@@ -176,7 +178,7 @@ describe("AdminAiProvidersPage", () => {
 
   it("keeps the layout classes that prevent horizontal overflow on narrow screens (#245)", async () => {
     renderPage();
-    const modelInput = await screen.findByLabelText("Model for DeepSeek");
+    const modelInput = await screen.findByLabelText("Model for OpenRouter");
 
     expect(modelInput.closest("table")?.parentElement).toHaveClass("overflow-x-auto");
 
@@ -189,7 +191,7 @@ describe("AdminAiProvidersPage", () => {
 
   it("reorders routes with keyboard-operable buttons and saves", async () => {
     renderPage();
-    await screen.findByLabelText("Model for DeepSeek");
+    await screen.findByLabelText("Model for OpenRouter");
 
     expect(routeItems("Free route")[0]).toMatch(/Gemini/);
     const moveUp = screen.getByRole("button", { name: "Move OpenAI up in Free route" });
@@ -198,26 +200,36 @@ describe("AdminAiProvidersPage", () => {
     expect(routeItems("Free route")[0]).toMatch(/OpenAI/);
     expect(screen.getByRole("button", { name: "Move OpenAI up in Free route" })).toBeDisabled();
 
-    fireEvent.click(screen.getByRole("button", { name: "Remove DeepSeek from Premium route" }));
+    fireEvent.click(screen.getByRole("button", { name: "Remove OpenRouter from Premium route" }));
     fireEvent.change(screen.getByLabelText("Model for OpenAI"), { target: { value: " gpt-5-mini " } });
     fireEvent.click(screen.getByRole("button", { name: "Save settings" }));
 
     await waitFor(() =>
       expect(adminLlmProvidersApi.update).toHaveBeenCalledWith({
         vendors: [
-          { vendor: "DeepSeek", model: "deepseek-flash" },
+          { vendor: "Gemini", model: "gemini-3.5-flash-lite" },
+          { vendor: "Groq", model: "openai/gpt-oss-120b" },
+          { vendor: "Cerebras", model: "gpt-oss-120b" },
+          { vendor: "OpenRouter", model: "google/gemma-4-31b-it:free" },
           { vendor: "OpenAI", model: "gpt-5-mini" },
-          { vendor: "Gemini", model: "gemini-2.5-flash-lite" },
         ],
-        routes: { free: ["OpenAI", "Gemini", "DeepSeek"], premium: ["OpenAI", "Gemini"] },
+        routes: { free: ["OpenAI", "Gemini", "OpenRouter"], premium: ["OpenAI", "Gemini"] },
       })
     );
     expect(await screen.findByText("AI provider settings saved.")).toBeInTheDocument();
   });
 
+  it("shows a cooldown note for a rate-limited vendor", async () => {
+    renderPage();
+    await screen.findByLabelText("Model for OpenRouter");
+
+    expect(screen.getByText(/Cooling down until/)).toBeInTheDocument();
+    expect(screen.getAllByText(/Cooling down until/)).toHaveLength(1);
+  });
+
   it("can add a removed vendor back to a route", async () => {
     renderPage();
-    await screen.findByLabelText("Model for DeepSeek");
+    await screen.findByLabelText("Model for OpenRouter");
 
     fireEvent.click(screen.getByRole("button", { name: "Remove Gemini from Free route" }));
     fireEvent.change(screen.getByLabelText("Add vendor to Free route"), { target: { value: "Gemini" } });
@@ -228,14 +240,14 @@ describe("AdminAiProvidersPage", () => {
 
   it("validates models and empty routes before saving", async () => {
     renderPage();
-    await screen.findByLabelText("Model for DeepSeek");
+    await screen.findByLabelText("Model for OpenRouter");
 
     fireEvent.change(screen.getByLabelText("Model for Gemini"), { target: { value: "bad model!" } });
     fireEvent.click(screen.getByRole("button", { name: "Save settings" }));
     expect(await screen.findByText(/Gemini: Model may contain only/)).toBeInTheDocument();
 
     fireEvent.change(screen.getByLabelText("Model for Gemini"), { target: { value: "gemini-2.5-flash" } });
-    for (const vendor of ["DeepSeek", "OpenAI", "Gemini"]) {
+    for (const vendor of ["OpenRouter", "OpenAI", "Gemini"]) {
       fireEvent.click(screen.getByRole("button", { name: `Remove ${vendor} from Premium route` }));
     }
     fireEvent.click(screen.getByRole("button", { name: "Save settings" }));
