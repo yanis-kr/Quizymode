@@ -45,10 +45,12 @@ When in doubt between approving and rejecting, reject with a clear reason: the a
 Use this runbook when a picture may be illegal (for example child sexual abuse material, a credible threat, or other content that is unlawful to possess or share).
 
 1. Reject the pictures immediately with a neutral reason (for example "Removed under the picture policy"). Do not approve, and do not describe the content in the reason.
-2. Once the withdraw action exists (issue #405), withdraw the pictures so no reader can load them. Until then rejection keeps them from everyone but the creator and admins.
+2. Use **Withdraw picture everywhere** in the Pictures reports queue so every referring item loses eligibility and no reader can load the asset. Keep upload/AI disabled when needed; withdrawal remains available.
 3. Do not screenshot, download, save or paste the picture or its link anywhere, including issues, chat and logs. Do not forward it.
 4. Escalate to the owner straight away, outside the app, giving only the item id and the uploader's (item creator's) account. The owner decides on account action and on any report to the authorities or a hotline.
 5. Retention and reporting are decided by the owner, and what was done is recorded by the owner; the audit row records who decided, when and which policy version. Do not delete the audit row.
 6. Do not discuss the case with the author beyond the neutral rejection reason.
 
 The owner must approve this policy, and in particular this runbook, before epic #398 (user picture uploads) launches to users.
+
+Operational retention, tombstone/restore safety, reporting privacy, provider gates, scoped cleanup, switches and metrics are specified in [the media operations runbook](infra/MEDIA_OPERATIONS.md). The owner must approve that concrete procedure with this policy before general user launch. The optional advisory never replaces a human decision.

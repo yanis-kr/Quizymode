@@ -743,8 +743,6 @@ public sealed class SeedSyncAdminTests : ItemTestFixture
     [InlineData("curated:diagrams/X", "alt", "text")]
     [InlineData("curated:diagrams/x", "", "text")]
     [InlineData("curated:diagrams/x", "line one\nline two", "text")]
-    [InlineData("curated:diagrams/x", "alt", "")]
-    [InlineData("curated:diagrams/x", "alt", "   ")]
     public async Task ApplyAsync_InvalidExplanationImage_IsRejectedAndNothingApplied(string key, string altText, string explanation)
     {
         await EnsureGeographyPublicWithNavAsync("seeder");
@@ -754,6 +752,21 @@ public sealed class SeedSyncAdminTests : ItemTestFixture
 
         result.IsFailure.Should().BeTrue();
         (await DbContext.Items.AnyAsync(i => i.Id == PictureItemId)).Should().BeFalse();
+    }
+
+    [Theory]
+    [InlineData("")]
+    [InlineData("   ")]
+    public async Task ApplyAsync_ExplanationPictureWithoutProse_PreservesPictureAndIdentity(string explanation)
+    {
+        await EnsureGeographyPublicWithNavAsync("seeder");
+        Result<SeedSyncAdmin.ApplyResponse> result = await _service.ApplyAsync(DiagramRequest(Diagram, explanation), CancellationToken.None);
+        result.IsSuccess.Should().BeTrue();
+        Item item = await DbContext.Items.AsNoTracking().SingleAsync(i => i.Id == PictureItemId);
+        item.Id.Should().Be(PictureItemId);
+        item.ExplanationImageKey.Should().Be(Diagram.Key);
+        item.ExplanationImageAlt.Should().Be(Diagram.AltText);
+        item.Explanation.Should().Be(explanation.Trim());
     }
 
     private SeedSyncAdmin.Request BuildRequest(

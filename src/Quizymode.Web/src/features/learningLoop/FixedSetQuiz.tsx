@@ -118,7 +118,7 @@ export function FixedSetQuiz({
   }, [item?.id]);
 
   useEffect(() => {
-    if (!summary.isComplete || completedRunIds.current.has(run.runId)) return;
+    if (!summary.isComplete || summary.scoredTotal === 0 || completedRunIds.current.has(run.runId)) return;
     completedRunIds.current.add(run.runId);
     flushDeferredAnalyticsEvents();
     trackEventOnce(run.runId, {

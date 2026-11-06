@@ -24,6 +24,7 @@ public static class GetItemImageContent
         {
             app.MapGet("items/{id:guid}/images/{slot}", ItemHandler)
                 .WithTags("Media")
+                .RequireRateLimiting("media-reads")
                 .WithSummary("Download an item's uploaded question or explanation picture")
                 .WithDescription("slot is 'question' or 'explanation'. The creator and admins can read any state; everyone else, including anonymous callers, " +
                     "only an Approved picture of an item they can see. Everything else, including curated pictures, is 404. Responses are private and no-store.")
@@ -34,6 +35,7 @@ public static class GetItemImageContent
 
             app.MapGet("collections/{collectionId:guid}/items/{itemId:guid}/images/{slot}", CollectionHandler)
                 .WithTags("Media")
+                .RequireRateLimiting("media-reads")
                 .WithSummary("Download an uploaded picture of an item through a collection that holds it")
                 .WithDescription("Allowed when the caller can open the collection (public, share link, or owner), the item is in it, and the picture is Approved " +
                     "(or the caller created the item). Everything else is 404. Responses are private and no-store.")
@@ -108,6 +110,8 @@ public static class GetItemImageContent
             ILoggerFactory loggerFactory,
             CancellationToken cancellationToken)
         {
+            if (await db.MediaControls.AnyAsync(x => x.Id == 1 && !x.DeliveryEnabled, cancellationToken)) return Results.NotFound();
+
             Guid? assetId = slot switch
             {
                 "question" => item.QuestionImageAssetId,

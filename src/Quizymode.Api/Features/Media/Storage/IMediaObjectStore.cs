@@ -11,6 +11,9 @@ internal interface IMediaObjectStore
     /// <summary>False when no storage is configured (provider None, or a refused configuration).</summary>
     bool IsAvailable { get; }
 
+    Task DeleteAsync(string key, CancellationToken cancellationToken) => throw new MediaStorageException("Deletion is not configured.");
+    Task<MediaObjectPage> ListAsync(string? continuationToken, CancellationToken cancellationToken) => throw new MediaStorageException("Listing is not configured.");
+
     /// <summary>
     /// Writes <paramref name="content"/> at <paramref name="key"/> only if nothing exists there. An existing object is
     /// success (<see cref="PutOutcome.AlreadyExists"/>) and is never overwritten. Any other failure throws <see cref="MediaStorageException"/>.
@@ -63,3 +66,6 @@ internal static partial class MediaObjectKey
         }
     }
 }
+
+internal sealed record MediaObjectEntry(string Key, DateTime LastModified);
+internal sealed record MediaObjectPage(IReadOnlyList<MediaObjectEntry> Objects, string? ContinuationToken);

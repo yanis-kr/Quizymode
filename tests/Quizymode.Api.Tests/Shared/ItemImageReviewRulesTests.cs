@@ -211,4 +211,11 @@ public sealed class ItemImageReviewRulesTests
         ItemImageReviewRules.DuplicateIdentity("curated:flags/fr", null, null).Should().Be("curated:flags/fr");
         ItemImageReviewRules.DuplicateIdentity(null, null, null).Should().BeNull();
     }
+    [Fact]
+    public void NullDescriptionKeepsLegacyCanonicalHashButDescriptionChangesRequireNewReview()
+    {
+        Hash().Should().Be("e7ffbb76d0cb6631725afcd8df6bc3527c78e0ab19b8f4f1c970cd9d93e3569d");
+        Hash(questionImage: Question with { LongDescription = "A rising line." }).Should().NotBe(Hash());
+    }
+
 }

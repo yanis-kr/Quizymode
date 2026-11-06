@@ -35,7 +35,8 @@ public static class AddItem
         Dictionary<int, ItemSpeechSupport>? IncorrectAnswerSpeech = null,
         string? GroupLabel = null,
         ImageSlotInput? QuestionImage = null,
-        ImageSlotInput? ExplanationImage = null);
+        ImageSlotInput? ExplanationImage = null,
+        Guid? CreateRequestId = null);
 
     public sealed record Response(
         string Id,
@@ -147,6 +148,7 @@ public static class AddItem
                 .RequireAuthorization()
                 .Produces<Response>(StatusCodes.Status201Created)
                 .Produces(StatusCodes.Status400BadRequest)
+                .Produces(StatusCodes.Status429TooManyRequests)
                 .Produces(StatusCodes.Status409Conflict);
         }
 

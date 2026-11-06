@@ -152,9 +152,11 @@ public static class GetImageReviewQueue
                     x.Item.QuestionImageKey,
                     x.Item.QuestionImageAlt,
                     x.Item.QuestionImageAttribution,
+                    x.Item.QuestionImageLongDescription,
                     x.Item.ExplanationImageKey,
                     x.Item.ExplanationImageAlt,
                     x.Item.ExplanationImageAttribution,
+                    x.Item.ExplanationImageLongDescription,
                     x.Item.ImageRevision,
                     SubmittedBy = x.Review == null ? null : x.Review.SubmittedBy,
                     SubmittedAt = x.Review == null ? (DateTime?)null : x.Review.SubmittedAt,
@@ -193,8 +195,8 @@ public static class GetImageReviewQueue
                     r.IncorrectAnswers,
                     r.Explanation,
                     r.CreatedBy,
-                    ItemImageReferenceHelper.FromColumns(r.QuestionImageKey, r.QuestionImageAlt, r.QuestionImageAttribution),
-                    ItemImageReferenceHelper.FromColumns(r.ExplanationImageKey, r.ExplanationImageAlt, r.ExplanationImageAttribution),
+                    ItemImageReferenceHelper.FromColumns(r.QuestionImageKey, r.QuestionImageAlt, r.QuestionImageAttribution, r.QuestionImageLongDescription, r.ImageRevision),
+                    ItemImageReferenceHelper.FromColumns(r.ExplanationImageKey, r.ExplanationImageAlt, r.ExplanationImageAttribution, r.ExplanationImageLongDescription, r.ImageRevision),
                     new ReviewResponse(state.ToString(), r.ImageRevision, r.SubmittedBy, display, r.SubmittedAt, r.DecidedBy, r.DecidedAt, r.Reason),
                     r.SubmittedAt is null ? null : Math.Max(0L, (long)(nowUtc - r.SubmittedAt.Value).TotalSeconds));
             }).ToList();

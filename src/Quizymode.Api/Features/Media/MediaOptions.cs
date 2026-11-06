@@ -22,6 +22,19 @@ internal sealed class MediaOptions
 
     public const string ForbiddenWebBucket = "quizymode-web";
 
+    public int MaxUploadsPerHour { get; set; } = 20;
+    public int MaxUploadsPerDay { get; set; } = 20;
+    public int MaxPendingReviewItems { get; set; } = 20;
+    public long MaxRetainedBytes { get; set; } = 20 * 1024 * 1024;
+    public long MaxGlobalRetainedBytes { get; set; } = 1024L * 1024 * 1024;
+    public int MaxGlobalUploads { get; set; } = 8;
+    public bool CleanupAllOwnersApproved { get; set; }
+    public bool CleanupEnabled { get; set; }
+    public string? CleanupOwnerUserId { get; set; }
+    public int UnattachedRetentionDays { get; set; } = 7;
+    public int RejectedRetentionDays { get; set; } = 7;
+    public int WithdrawnRetentionDays { get; set; } = 7;
+
     public StorageSettings Storage { get; set; } = new();
 
     public S3Settings S3 { get; set; } = new();
@@ -63,17 +76,26 @@ internal sealed class MediaOptions
     public IReadOnlyList<string> Validate()
     {
         List<string> errors = [];
+        Require(MaxUploadsPerHour > 0 && MaxUploadsPerHour <= 20, nameof(MaxUploadsPerHour));
+        Require(MaxUploadsPerDay > 0 && MaxUploadsPerDay <= 20, nameof(MaxUploadsPerDay));
+        Require(MaxPendingReviewItems > 0 && MaxPendingReviewItems <= 20, nameof(MaxPendingReviewItems));
+        Require(MaxRetainedBytes > 0 && MaxRetainedBytes <= 20 * 1024 * 1024, nameof(MaxRetainedBytes));
+        Require(MaxGlobalRetainedBytes > 0, nameof(MaxGlobalRetainedBytes));
+        Require(MaxGlobalUploads > 0 && MaxGlobalUploads <= 20, nameof(MaxGlobalUploads));
+        Require(UnattachedRetentionDays > 0 && UnattachedRetentionDays <= 7, nameof(UnattachedRetentionDays));
+        Require(RejectedRetentionDays > 0 && RejectedRetentionDays <= 7, nameof(RejectedRetentionDays));
+        Require(WithdrawnRetentionDays > 0 && WithdrawnRetentionDays <= 7, nameof(WithdrawnRetentionDays));
         Require(MaxSourceBytes > 0 && MaxSourceBytes <= DefaultMaxSourceBytes, nameof(MaxSourceBytes));
         Require(MaxPixels > 0, nameof(MaxPixels));
         Require(MaxSide > 0, nameof(MaxSide));
         Require(MaxOutputBytes > 0 && MaxOutputBytes <= AbsoluteMaxOutputBytes, nameof(MaxOutputBytes));
         Require(LosslessKeepBytes >= 0, nameof(LosslessKeepBytes));
-        Require(MaxOutputSide > 0, nameof(MaxOutputSide));
+        Require(MaxOutputSide > 0 && MaxOutputSide <= 1280, nameof(MaxOutputSide));
         Require(MaxConcurrentDecodes > 0, nameof(MaxConcurrentDecodes));
         Require(MaxWaiters >= 0, nameof(MaxWaiters));
-        Require(SemaphoreWaitTimeout >= TimeSpan.Zero, nameof(SemaphoreWaitTimeout));
-        Require(ProcessingBudget > TimeSpan.Zero, nameof(ProcessingBudget));
-        Require(StorageWriteTimeout > TimeSpan.Zero, nameof(StorageWriteTimeout));
+        Require(SemaphoreWaitTimeout >= TimeSpan.Zero && SemaphoreWaitTimeout <= TimeSpan.FromSeconds(15), nameof(SemaphoreWaitTimeout));
+        Require(ProcessingBudget > TimeSpan.Zero && ProcessingBudget <= TimeSpan.FromSeconds(30), nameof(ProcessingBudget));
+        Require(StorageWriteTimeout > TimeSpan.Zero && StorageWriteTimeout <= TimeSpan.FromSeconds(45), nameof(StorageWriteTimeout));
         return errors;
 
         void Require(bool condition, string name)

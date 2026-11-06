@@ -11,6 +11,7 @@ import { QuestionImage } from "@/components/study/QuestionImage";
 import { useFocusTrap } from "@/hooks/useFocusTrap";
 import type { ItemImageReference } from "@/types/api";
 import { IMAGE_REVIEW_QUEUE_KEY, useImageReviewQueue } from "../hooks/useImageReviewQueue";
+import { MediaOperations, PictureAdvisory } from "./MediaOperations";
 import { formatAge, secondsSince } from "./overviewFormatting";
 
 /** The repo is public; this opens the policy the reviewer judges against. Keep the version in step with docs/picture-policy.md. */
@@ -199,7 +200,7 @@ function PictureSlot({
             onClick={() => setZoomOpen(true)}
             className="block w-full cursor-zoom-in rounded border border-gray-200 bg-gray-50 focus:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500"
           >
-            <img src={blob.url} alt={image.altText} className="aspect-square w-full rounded object-cover" />
+            <img src={blob.url} alt={image.altText} className="aspect-square w-full rounded object-contain" />
           </button>
         ) : blob.status === "error" ? (
           <div className="flex aspect-square w-full flex-col items-center justify-center gap-2 rounded border border-gray-200 bg-gray-50 p-2 text-center">
@@ -224,6 +225,7 @@ function PictureSlot({
       <p className={`mt-2 break-words text-sm ${image.altText ? "text-gray-700" : "text-amber-700"}`}>
         Alt text: {image.altText || "none provided"}
       </p>
+      {image.longDescription && <p className="mt-1 whitespace-pre-wrap break-words text-sm">Long description: {image.longDescription}</p>}
       {image.attribution ? <p className="mt-1 break-words text-xs text-gray-500">Attribution: {image.attribution}</p> : null}
       {zoomOpen && blob.status === "ready" ? (
         <PictureZoomDialog
@@ -309,6 +311,7 @@ function ImageReviewCard({
           <p className="mt-1 text-sm text-gray-500">Picture revision {revision}</p>
         </div>
 
+        <PictureAdvisory itemId={item.id} revision={revision} />
         <div className="grid grid-cols-2 gap-2 sm:gap-4">
           <PictureSlot itemId={item.id} slot="question" image={item.questionImage} onLoadChange={handleSlotLoad} />
           <PictureSlot itemId={item.id} slot="explanation" image={item.explanationImage} onLoadChange={handleSlotLoad} />
@@ -436,6 +439,7 @@ export function ImageReviewQueue() {
 
   return (
     <div>
+      <MediaOperations />
       <p role="status" aria-live="polite" className="sr-only">
         {announcement}
       </p>

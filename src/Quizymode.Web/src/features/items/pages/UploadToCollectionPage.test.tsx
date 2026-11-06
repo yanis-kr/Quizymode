@@ -318,7 +318,7 @@ describe("UploadToCollectionPage", () => {
     expect(itemsApi.uploadToCollection).not.toHaveBeenCalled();
   });
 
-  it("rejects a pasted item with a picture before sending, names the item and field, and disables Upload until edited (#403)", async () => {
+  it("rejects an unsupported curated picture reference before sending and retains the input for correction (#403)", async () => {
     const user = userEvent.setup({ delay: null });
     renderPage("/items/upload-to-collection?category=science&keywords=anatomy,muscular");
     await screen.findByLabelText(/^category \*$/i);
@@ -338,7 +338,7 @@ describe("UploadToCollectionPage", () => {
 
     expect(
       await screen.findByText(
-        `Item 2 has "questionImage". Pictures can't be imported. Remove questionImage and explanationImage from your JSON. Curated pictures are added through seed data.`
+        `Item 2 has "questionImage". Only your own uploaded asset references can be imported. Curated keys, URLs, bytes and other authors' pictures cannot be imported.`
       )
     ).toBeInTheDocument();
     expect(itemsApi.uploadToCollection).not.toHaveBeenCalled();

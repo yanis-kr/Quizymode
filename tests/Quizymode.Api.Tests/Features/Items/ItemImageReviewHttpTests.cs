@@ -69,6 +69,7 @@ public sealed class ItemImageReviewHttpTests : ItemTestFixture, IAsyncLifetime
                 new SetItemVisibility.Endpoint().MapEndpoint(app);
                 new GetItemImageContent.Endpoint().MapEndpoint(app);
                 new GetImageContent.Endpoint().MapEndpoint(app);
+                new MediaLifecycleEndpoints.Endpoint().MapEndpoint(app);
             });
 
         _ownerId = Guid.NewGuid();
@@ -297,17 +298,17 @@ public sealed class ItemImageReviewHttpTests : ItemTestFixture, IAsyncLifetime
     }
 
     [Fact]
-    public async Task Post_ExplanationPictureNeedsExplanationText()
+    public async Task Post_ExplanationPictureCanBeTheWholeExplanation()
     {
         MediaAsset asset = await AssetAsync();
 
         (HttpStatusCode status, string body) = await SendAsync(
             HttpMethod.Post, "/items", Body(explanation: "", explanationImage: Pic(asset)), OwnerToken);
-        status.Should().Be(HttpStatusCode.BadRequest, body);
-        body.Should().Contain("Explanation is required when an explanation picture is set");
+        status.Should().Be(HttpStatusCode.Created, body);
+        Json(body).GetProperty("explanation").GetString().Should().BeEmpty();
 
         (HttpStatusCode ok, string okBody) = await SendAsync(
-            HttpMethod.Post, "/items", Body(explanation: "Because", explanationImage: Pic(asset)), OwnerToken);
+            HttpMethod.Post, "/items", Body(question: "Another explanation?", explanation: "Because", explanationImage: Pic(asset)), OwnerToken);
         ok.Should().Be(HttpStatusCode.Created, okBody);
         Json(okBody).GetProperty("imageReview").GetProperty("state").GetString().Should().Be("PendingReview");
     }
@@ -540,7 +541,7 @@ public sealed class ItemImageReviewHttpTests : ItemTestFixture, IAsyncLifetime
         Guid id = await CreateAsync(Body(explanation: "Because", questionImage: Pic(q), explanationImage: Pic(e)));
 
         (HttpStatusCode keepStatus, string keepBody) = await SendAsync(HttpMethod.Put, $"/items/{id}", Body(explanation: ""), OwnerToken);
-        keepStatus.Should().Be(HttpStatusCode.BadRequest, keepBody);
+        keepStatus.Should().Be(HttpStatusCode.OK, keepBody);
 
         (HttpStatusCode status, string body) = await SendAsync(
             HttpMethod.Put, $"/items/{id}", Body(explanation: "", questionImage: "{\"remove\":true}", explanationImage: "{\"remove\":true}"), OwnerToken);
@@ -1253,7 +1254,7 @@ public sealed class ItemImageReviewHttpTests : ItemTestFixture, IAsyncLifetime
         curated.QuestionImageAlt = "Three bands";
         await DbContext.SaveChangesAsync();
 
-        (HttpStatusCode status, string body) = await SendAsync(HttpMethod.Get, "/items/export?category=geography", token: OtherToken);
+        (HttpStatusCode status, string body) = await SendAsync(HttpMethod.Get, "/items/export?category=geography&acknowledgePictureLoss=true", token: OtherToken);
 
         status.Should().Be(HttpStatusCode.OK, body);
         JsonElement[] exported = Json(body).EnumerateArray().ToArray();
@@ -1386,4 +1387,46 @@ public sealed class ItemImageReviewHttpTests : ItemTestFixture, IAsyncLifetime
         review.GetProperty("state").GetString().Should().Be("Rejected");
         review.GetProperty("reason").GetString().Should().Be("Wrong subject");
     }
+    [Fact]
+    public async Task WithdrawalRevokesEveryReferenceAndOldDeliveryAndCannotReattach()
+    {
+        MediaAsset asset = await AssetAsync();
+        Item first = await SeedPictureItemAsync(ItemImageReviewState.Approved, question: asset);
+        Item second = await SeedPictureItemAsync(ItemImageReviewState.Approved, question: asset);
+        (await SendAsync(HttpMethod.Get, $"/items/{first.Id}/images/question")).Status.Should().Be(HttpStatusCode.OK);
+        string request = $"{{\"itemId\":\"{first.Id}\",\"expectedRevision\":1,\"category\":\"privacy\"}}";
+        (await SendAsync(HttpMethod.Post, $"/admin/media/{asset.Id}/withdraw", request, OtherToken)).Status.Should().Be(HttpStatusCode.Forbidden);
+        var withdrawn = await SendAsync(HttpMethod.Post, $"/admin/media/{asset.Id}/withdraw", request, AdminToken);
+        withdrawn.Status.Should().Be(HttpStatusCode.OK, withdrawn.Body);
+        (await ItemAsync(first.Id)).ImageReviewState.Should().Be(ItemImageReviewState.Withdrawn);
+        (await ItemAsync(second.Id)).ImageRevision.Should().Be(2);
+        (await SendAsync(HttpMethod.Get, $"/items/{first.Id}/images/question")).Status.Should().Be(HttpStatusCode.NotFound);
+        (await SendAsync(HttpMethod.Get, $"/items/{second.Id}/images/question", token: OwnerToken)).Status.Should().Be(HttpStatusCode.NotFound);
+        (await SendAsync(HttpMethod.Post, "/items", Body(question: "Cannot reuse?", questionImage: Pic(asset)), OwnerToken)).Status.Should().Be(HttpStatusCode.BadRequest);
+    }
+    [Fact]
+    public async Task ReportsRequireVisibleExactRevisionAndDoNotWithdrawAutomatically()
+    {
+        Item item = await SeedPictureItemAsync(ItemImageReviewState.Approved);
+        string report = "{\"slot\":\"question\",\"category\":\"privacy\",\"expectedRevision\":1}";
+        (await SendAsync(HttpMethod.Post, $"/items/{item.Id}/image-reports", report)).Status.Should().Be(HttpStatusCode.Accepted);
+        (await SendAsync(HttpMethod.Post, $"/items/{item.Id}/image-reports", report)).Status.Should().Be(HttpStatusCode.Accepted);
+        await using ApplicationDbContext db = CreateDbContext();
+        (await db.MediaReports.CountAsync()).Should().Be(1);
+        (await ItemAsync(item.Id)).ImageReviewState.Should().Be(ItemImageReviewState.Approved);
+        (await SendAsync(HttpMethod.Post, $"/items/{item.Id}/image-reports", report.Replace(":1", ":99"))).Status.Should().Be(HttpStatusCode.NotFound);
+    }
+    [Fact]
+    public async Task LostSuccessCreateRetryUsesOneItemAndOneSubmission()
+    {
+        MediaAsset asset = await AssetAsync(); Guid key = Guid.NewGuid();
+        string body = Body(questionImage: Pic(asset), extra: $",\"createRequestId\":\"{key}\"");
+        var first = await SendAsync(HttpMethod.Post, "/items", body, OwnerToken);
+        var second = await SendAsync(HttpMethod.Post, "/items", body, OwnerToken);
+        first.Status.Should().Be(HttpStatusCode.Created, first.Body); second.Status.Should().Be(HttpStatusCode.Created, second.Body);
+        Json(first.Body).GetProperty("id").GetString().Should().Be(Json(second.Body).GetProperty("id").GetString());
+        (await DbContext.Items.CountAsync()).Should().Be(1); (await DbContext.ItemImageReviews.CountAsync()).Should().Be(1);
+        (await SendAsync(HttpMethod.Post, "/items", body.Replace("Which flag?", "Different content?"), OwnerToken)).Status.Should().Be(HttpStatusCode.Conflict);
+    }
+
 }

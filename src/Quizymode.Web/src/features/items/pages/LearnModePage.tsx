@@ -708,7 +708,7 @@ const LearnModePage = () => {
         {currentAttempt && currentItem?.explanationImage && (
           <QuestionImage
             key={`${currentItem.id}-explanation`}
-            image={currentItem.explanationImage}
+            itemId={currentItem.id} image={currentItem.explanationImage}
             slot="explanation"
             className="rounded-lg bg-white"
           />

@@ -981,6 +981,11 @@ const QuizModePageContent = () => {
     navigateToRunItem(index);
   };
 
+  const pictureTimerPaused = Boolean(run?.mode === "test" && run.startedAt && !run.submittedAt && currentItem && pictures.isBlocked(currentItem));
+  useEffect(() => {
+    setRun(current => current ? reduceQuizRun(current, { type: "picture-pause", paused: pictureTimerPaused, at: new Date().toISOString() }) : current);
+  }, [pictureTimerPaused]);
+
   // AC 3.18.6: wall-clock countdown; at zero (also after a reload past the deadline) submit at the deadline.
   const remainingSec = useTestCountdown(run, (deadlineIso) =>
     setRun((current) =>
@@ -992,7 +997,7 @@ const QuizModePageContent = () => {
             unavailableItemIds: pictures.unavailableIds(items),
           })
         : current
-    )
+    ), pictureTimerPaused
   );
 
   const handleCollectionChange = (

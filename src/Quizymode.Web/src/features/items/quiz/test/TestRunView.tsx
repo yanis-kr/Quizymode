@@ -101,6 +101,7 @@ export function TestRunView({
               </button>
             </div>
 
+            {currentItem.questionImage && pictures.isBlocked(currentItem) && <p role="status" className="text-sm text-amber-800">Timer paused while this required picture is unavailable. Retry or skip; unresolved pictures are not scored.</p>}
             <TestPalettePanel palette={palette} currentIndex={currentIndex} onSelect={onJump} />
 
             <QuizRenderer

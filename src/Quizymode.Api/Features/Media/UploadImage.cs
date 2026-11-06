@@ -136,6 +136,8 @@ public static class UploadImage
                 provider.GetRequiredService<IHostEnvironment>(),
                 provider.GetRequiredService<ILoggerFactory>().CreateLogger("Quizymode.Api.Features.Media.Storage")));
             services.AddSingleton<ImageNormalizer>();
+            services.AddHostedService<MediaCleanupWorker>();
+            services.AddHostedService<MediaMetricsWorker>();
         }
     }
 
@@ -163,6 +165,10 @@ public static class UploadImage
             return readProblem.ToResult();
         }
 
+        string requestKey = httpRequest.Headers["Idempotency-Key"].FirstOrDefault() ?? Guid.NewGuid().ToString("N");
+        (MediaUploadClaim? claim, IResult? admissionError) = await MediaAdmission.ReserveAsync(db, userId, requestKey, source!, options, timeProvider.GetUtcNow().UtcDateTime, cancellationToken);
+        if (admissionError is not null) return admissionError;
+
         NormalizeResult normalized = await normalizer.NormalizeAsync(source!, cancellationToken);
         if (normalized.Problem is not null)
         {
@@ -171,6 +177,7 @@ public static class UploadImage
                 normalized.Problem.Code,
                 source!.Length,
                 clock.ElapsedMilliseconds);
+            await MediaAdmission.FinishAsync(db, claim!.Id, "Failed");
             return normalized.Problem.ToResult();
         }
 
@@ -178,7 +185,7 @@ public static class UploadImage
         DateTime createdAt = timeProvider.GetUtcNow().UtcDateTime;
         MediaAsset asset = new()
         {
-            Id = Guid.NewGuid(),
+            Id = claim!.AssetId,
             OwnerUserId = userId,
             State = MediaAssetState.Processing,
             Sha256 = image.Sha256,
@@ -192,6 +199,9 @@ public static class UploadImage
             CreatedAt = createdAt,
             UpdatedAt = createdAt
         };
+        MediaAsset? previousAttempt = await db.MediaAssets.SingleOrDefaultAsync(x => x.Id == asset.Id, cancellationToken);
+        if (previousAttempt?.DeletedAt is not null || previousAttempt?.PurgedAt is not null) return MediaErrors.Withdrawn.ToResult();
+        if (previousAttempt is not null) { db.MediaAssets.Remove(previousAttempt); await db.SaveChangesAsync(cancellationToken); }
         db.MediaAssets.Add(asset);
         await db.SaveChangesAsync(cancellationToken);
 
@@ -214,6 +224,7 @@ public static class UploadImage
                         .SetProperty(x => x.FailureCode, MediaErrors.StorageFailed.Code)
                         .SetProperty(x => x.UpdatedAt, failedAt),
                     CancellationToken.None);
+            await MediaAdmission.FinishAsync(db, claim!.Id, "Failed");
             return MediaErrors.StorageFailed.ToResult();
         }
 
@@ -241,6 +252,8 @@ public static class UploadImage
             image.Height,
             clock.ElapsedMilliseconds);
 
+        await MediaAdmission.FinishAsync(db, claim!.Id, "Ready");
+        MediaMetrics.Uploads.Add(1, new KeyValuePair<string, object?>("outcome", "ready"));
         Response response = new(
             asset.Id,
             MediaAssetState.Ready.ToString(),

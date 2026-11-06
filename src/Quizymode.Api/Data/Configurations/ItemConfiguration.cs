@@ -198,6 +198,11 @@ internal sealed class ItemConfiguration : IEntityTypeConfiguration<Item>
             "CK_Items_IncorrectAnswers_Length",
             "jsonb_array_length(\"IncorrectAnswers\"::jsonb) >= 0 AND jsonb_array_length(\"IncorrectAnswers\"::jsonb) <= 4"));
 
+        builder.Property(x => x.CreateRequestHash).HasMaxLength(64);
+        builder.HasIndex(x => new { x.CreatedBy, x.CreateRequestId }).IsUnique();
+        builder.Property(x => x.QuestionImageLongDescription).HasMaxLength(2000);
+        builder.Property(x => x.ExplanationImageLongDescription).HasMaxLength(2000);
+
         // A question picture key and its alt text are stored together or not at all (#407)
         builder.ToTable(t => t.HasCheckConstraint(
             "CK_Items_QuestionImage_Alt",

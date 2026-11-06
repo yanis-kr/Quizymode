@@ -109,7 +109,7 @@ export function QuizCompletionView({
                   </div>
                 )}
                 <div className="flex items-start gap-3">
-                  <QuestionImage image={item.questionImage} size="xs" />
+                  <QuestionImage itemId={item.id} image={item.questionImage} size="xs" />
                   <h3 className="min-w-0 font-semibold text-gray-900">{item.question}</h3>
                 </div>
                 {outcome && (
@@ -120,7 +120,7 @@ export function QuizCompletionView({
                 <p className="mt-1 text-sm text-green-700"><strong>Correct answer:</strong> {item.correctAnswer}</p>
                 {(item.explanation || item.explanationImage) && (
                   <div className="mt-2 flex items-start gap-3">
-                    <QuestionImage image={item.explanationImage} slot="explanation" size="sm" />
+                    <QuestionImage itemId={item.id} image={item.explanationImage} slot="explanation" size="sm" />
                     {item.explanation && <p className="min-w-0 text-sm text-gray-700">{item.explanation}</p>}
                   </div>
                 )}
