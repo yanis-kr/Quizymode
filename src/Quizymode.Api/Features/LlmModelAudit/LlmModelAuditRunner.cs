@@ -104,7 +104,7 @@ internal sealed class LlmModelAuditRunner(
                 newFindings++;
                 logger.LogWarning("LlmModelAudit: {Vendor} model {Model} is not in the vendor model list", vendor, model);
             }
-            catch (DbUpdateException)
+            catch (DbUpdateException ex) when (ex.InnerException is Npgsql.PostgresException { SqlState: Npgsql.PostgresErrorCodes.UniqueViolation })
             {
                 // Another instance inserted the same open finding first (partial unique index): nothing new from this run.
                 db.Entry(added).State = EntityState.Detached;

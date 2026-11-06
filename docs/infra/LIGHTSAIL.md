@@ -55,3 +55,5 @@ The daily LLM model-list audit emails the admin through SMTP (the SES SMTP endpo
 | `Llm__ModelAudit__Smtp__Password` | the SES SMTP password (secret) |
 
 Without the SMTP variables the audit still records findings and shows the admin banner; the email is retried on each run once the settings exist.
+
+The first audit run happens 24 hours after the API boots, then every 24 hours, so an instance that restarts more often than that may never run the audit on its own. Use `POST /admin/llm-model-audit/run` to run it on demand.
