@@ -24,9 +24,10 @@ function row(overrides: Record<string, unknown> = {}) {
     question: "Which flag is this?",
     correctAnswer: "France",
     incorrectAnswers: ["Italy"],
+    incorrectAnswerRationale: { 0: "Different flag proportions" },
     explanation: "",
     createdBy: "user-1",
-    questionImage: { key: "media:abc", altText: "Three vertical bands", attribution: "Photo by A" },
+    questionImage: { revision: 4, key: "media:abc", altText: "Three vertical bands", attribution: "Photo by A" },
     explanationImage: null,
     imageReview: {
       state: "PendingReview",
@@ -93,7 +94,8 @@ describe("ImageReviewQueue", () => {
     expect(screen.getByText(/Item visibility: Public\. Approving these pictures only clears the pictures/)).toBeInTheDocument();
     expect(screen.getByText(/Submitted by owner@example\.com/)).toBeInTheDocument();
     expect(screen.getByText("Picture revision 4")).toBeInTheDocument();
-    expect(mockAdminApi.fetchItemImageBlob).toHaveBeenCalledWith("item-1", "question");
+    expect(mockAdminApi.fetchItemImageBlob).toHaveBeenCalledWith("item-1", "question", 4);
+    expect(screen.getByText(/Incorrect answer: Italy.*Different flag proportions/)).toBeInTheDocument();
   });
 
   it("uses the private intent line for private items, even when ready for review", async () => {

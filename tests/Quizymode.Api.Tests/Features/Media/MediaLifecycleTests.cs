@@ -136,4 +136,82 @@ public sealed class MediaLifecycleTests : DatabaseTestFixture
         (await restarted.MediaUploadAttempts.CountAsync()).Should().Be(retryExpired ? 2 : 1, "refused work creates no attempt or extra active reservation");
     }
 
+
+    [Theory]
+    [InlineData(false)]
+    [InlineData(true)]
+    public async Task DeletedOrHistoricalPendingAuditDoesNotRetainOldBytesAfterRestart(bool historical)
+    {
+        DateTime now = DateTime.UtcNow;
+        var category = VisibilitySeed.AddCategory(DbContext);
+        MediaAsset asset = PictureSeed.AddAsset(DbContext, "owner"); asset.CreatedAt = now.AddDays(-10);
+        Item item = PictureSeed.AddPictureItem(DbContext, category, "owner", true, ItemImageReviewState.PendingReview, asset);
+        await DbContext.SaveChangesAsync();
+        if (historical) { item.QuestionImageAssetId = null; item.QuestionImageKey = null; item.ImageRevision++; item.ImageReviewState = null; }
+        else DbContext.Items.Remove(item);
+        await DbContext.SaveChangesAsync();
+        FakeMediaObjectStore store = new(); store.Objects[asset.ObjectKey!] = [1];
+        await using var restarted = CreateDbContext();
+        (await MediaCleanupWorker.RunOnceAsync(restarted, store, new MediaOptions { CleanupOwnerUserId = "owner" }, now, CancellationToken.None)).Should().Be(1);
+        (await restarted.ItemImageReviews.CountAsync()).Should().Be(1, "audit history survives object retention");
+        (await restarted.MediaAssets.SingleAsync()).PurgedAt.Should().NotBeNull();
+    }
+
+    [Theory]
+    [InlineData(null)]
+    [InlineData(ItemImageReviewState.Approved)]
+    [InlineData(ItemImageReviewState.PendingReview)]
+    public async Task RejectedDistinctSlotsReclaimBothAcrossRestartsUnlessSiblingHasAnotherLiveOwner(ItemImageReviewState? shared)
+    {
+        DateTime now = DateTime.UtcNow;
+        var category = VisibilitySeed.AddCategory(DbContext);
+        MediaAsset a = PictureSeed.AddAsset(DbContext, "owner"), b = PictureSeed.AddAsset(DbContext, "owner");
+        a.CreatedAt = now.AddDays(-11); b.CreatedAt = now.AddDays(-10);
+        PictureSeed.AddPictureItem(DbContext, category, "owner", true, ItemImageReviewState.Rejected, a, b);
+        foreach (ItemImageReview review in DbContext.ItemImageReviews.Local) review.DecidedAt = now.AddDays(-9);
+        if (shared is not null) PictureSeed.AddPictureItem(DbContext, category, "another-owner", true, shared.Value, b);
+        await DbContext.SaveChangesAsync();
+        FakeMediaObjectStore store = new(); store.Objects[a.ObjectKey!] = [1]; store.Objects[b.ObjectKey!] = [2];
+        await MediaCleanupWorker.RunOnceAsync(DbContext, store, new MediaOptions { CleanupOwnerUserId = "owner" }, now, CancellationToken.None);
+        await using var restarted = CreateDbContext();
+        await MediaCleanupWorker.RunOnceAsync(restarted, store, new MediaOptions { CleanupOwnerUserId = "owner" }, now.AddMinutes(1), CancellationToken.None);
+        (await restarted.MediaAssets.SingleAsync(x => x.Id == a.Id)).PurgedAt.Should().NotBeNull();
+        MediaAsset sibling = await restarted.MediaAssets.SingleAsync(x => x.Id == b.Id);
+        if (shared is null) { sibling.PurgedAt.Should().NotBeNull(); store.Objects.Should().NotContainKey(b.ObjectKey!); }
+        else { sibling.DeletedAt.Should().BeNull(); sibling.PurgedAt.Should().BeNull(); store.Objects.Should().ContainKey(b.ObjectKey!); }
+    }
+
+    [Fact]
+    public async Task CurrentRejectedWithoutDueDecisionAndCurrentPendingRemainProtected()
+    {
+        DateTime now = DateTime.UtcNow;
+        var category = VisibilitySeed.AddCategory(DbContext);
+        MediaAsset a = PictureSeed.AddAsset(DbContext, "owner"), b = PictureSeed.AddAsset(DbContext, "owner");
+        a.CreatedAt = b.CreatedAt = now.AddDays(-10);
+        PictureSeed.AddPictureItem(DbContext, category, "owner", true, ItemImageReviewState.Rejected, a);
+        PictureSeed.AddPictureItem(DbContext, category, "owner", true, ItemImageReviewState.PendingReview, b);
+        await DbContext.SaveChangesAsync();
+        FakeMediaObjectStore store = new(); store.Objects[a.ObjectKey!] = [1]; store.Objects[b.ObjectKey!] = [2];
+        (await MediaCleanupWorker.RunOnceAsync(DbContext, store, new MediaOptions { CleanupOwnerUserId = "owner" }, now, CancellationToken.None)).Should().Be(0);
+        (await DbContext.MediaAssets.CountAsync(x => x.DeletedAt != null)).Should().Be(0);
+    }
+
+    [Fact]
+    public async Task SameAssetInBothRejectedSlotsDeletesOnceAndDirectWithdrawalKeepsOriginalSchedule()
+    {
+        DateTime now = DateTime.UtcNow;
+        var category = VisibilitySeed.AddCategory(DbContext);
+        MediaAsset rejected = PictureSeed.AddAsset(DbContext, "owner"); rejected.CreatedAt = now.AddDays(-10);
+        PictureSeed.AddPictureItem(DbContext, category, "owner", true, ItemImageReviewState.Rejected, rejected, rejected);
+        foreach (var review in DbContext.ItemImageReviews.Local) review.DecidedAt = now.AddDays(-9);
+        MediaAsset withdrawn = PictureSeed.AddAsset(DbContext, "owner"); withdrawn.CreatedAt = now.AddDays(-10); withdrawn.DeletedAt = now.AddDays(-1);
+        DateTime original = withdrawn.DeletedAt.Value;
+        await DbContext.SaveChangesAsync();
+        int deletes = 0; FakeMediaObjectStore store = new(); store.Objects[rejected.ObjectKey!] = [1]; store.Objects[withdrawn.ObjectKey!] = [2]; store.OnDelete = _ => { deletes++; return Task.CompletedTask; };
+        (await MediaCleanupWorker.RunOnceAsync(DbContext, store, new MediaOptions { CleanupOwnerUserId = "owner" }, now, CancellationToken.None)).Should().Be(1);
+        deletes.Should().Be(1); withdrawn.DeletedAt.Should().Be(original); withdrawn.PurgedAt.Should().BeNull();
+        await using var restarted = CreateDbContext();
+        (await MediaCleanupWorker.RunOnceAsync(restarted, store, new MediaOptions { CleanupOwnerUserId = "owner" }, now.AddDays(7), CancellationToken.None)).Should().Be(1);
+        (await restarted.MediaAssets.SingleAsync(x => x.Id == withdrawn.Id)).DeletedAt.Should().Be(original); deletes.Should().Be(2);
+    }
 }

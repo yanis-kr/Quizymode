@@ -158,7 +158,7 @@ export function FixedSetQuiz({
   const handleSkipUnavailable = () => {
     if (!item || outcome || isSkipped) return;
     setRun((current) =>
-      reduceQuizRun(current, { type: "skip-unavailable", itemId: item.id, completedAt: new Date().toISOString() }),
+      reduceQuizRun(current, { type: "skip-unavailable", reason: pictures.isBlocked(item) ? "picture-unavailable" : "picture-inaccessible", itemId: item.id, completedAt: new Date().toISOString() }),
     );
     if (!isLast) goTo(index + 1);
   };

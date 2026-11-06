@@ -106,18 +106,18 @@ function QuestionImageBox({
   const uploaded = image.key.startsWith("media:");
   const [blobUrl, setBlobUrl] = useState<string | null>(null);
   const url = uploaded ? blobUrl : resolveCuratedImage(image.key);
-  const isUnknown = (uploaded && !itemId) || (!uploaded && url === null);
+  const isUnknown = (uploaded && (!itemId || !Number.isSafeInteger(image.revision) || (image.revision ?? 0) <= 0)) || (!uploaded && url === null);
   const [status, setStatus] = useState<PictureStatus>(isUnknown ? "unknown" : "loading");
   const [attempt, setAttempt] = useState(0);
   const [zoomOpen, setZoomOpen] = useState(false);
   useEffect(() => {
-    if (!uploaded || !itemId) return;
+    if (!uploaded || !itemId || isUnknown) return;
     const abort = new AbortController(); let created: string | null = null;
-    mediaApi.content(itemId, slot, collectionId, abort.signal).then(blob => {
+    mediaApi.content(itemId, slot, collectionId, abort.signal, image.revision!).then(blob => {
       if (!abort.signal.aborted) { created = URL.createObjectURL(blob); setBlobUrl(created); }
     }).catch(() => { if (!abort.signal.aborted) setStatus("error"); });
     return () => { abort.abort(); if (created) URL.revokeObjectURL(created); };
-  }, [uploaded, itemId, collectionId, slot, image.revision, attempt]);
+  }, [uploaded, itemId, collectionId, slot, image.revision, isUnknown, attempt]);
 
   const boxRef = useRef<HTMLDivElement>(null);
   const enlargeRef = useRef<HTMLButtonElement>(null);
@@ -249,6 +249,7 @@ function QuestionImageBox({
   return (
     <div className={`relative mx-auto w-full max-w-md ${className}`.trim()}>
       {box}
+      {status === "loaded" && isQuestion && onSkip && <button type="button" onClick={onSkip} data-testid="question-image-skip" className={`${buttonClass} mt-2`}>Skip question (not scored)</button>}
       {uploaded && itemId && (image.revision ?? 0) > 0 && <PictureReportButton itemId={itemId} slot={slot} revision={image.revision!} collectionId={collectionId} />}
       {image.longDescription && <details className="mt-2 text-sm"><summary>Picture description</summary><p className="whitespace-pre-wrap">{image.longDescription}</p></details>}
       {canZoom && (

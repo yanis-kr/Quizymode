@@ -28,6 +28,9 @@ internal sealed class MediaOptions
     public long MaxRetainedBytes { get; set; } = 20 * 1024 * 1024;
     public long MaxGlobalRetainedBytes { get; set; } = 1024L * 1024 * 1024;
     public int MaxGlobalUploads { get; set; } = 8;
+    public int MaxGlobalIngress { get; set; } = 8;
+    public long MaxIngressBytesPerDay { get; set; } = 44L * 1024 * 1024;
+    public TimeSpan IngressReadTimeout { get; set; } = TimeSpan.FromSeconds(20);
     public bool CleanupAllOwnersApproved { get; set; }
     public bool CleanupEnabled { get; set; }
     public string? CleanupOwnerUserId { get; set; }
@@ -81,6 +84,9 @@ internal sealed class MediaOptions
         Require(MaxPendingReviewItems > 0 && MaxPendingReviewItems <= 20, nameof(MaxPendingReviewItems));
         Require(MaxRetainedBytes > 0 && MaxRetainedBytes <= 20 * 1024 * 1024, nameof(MaxRetainedBytes));
         Require(MaxGlobalRetainedBytes > 0, nameof(MaxGlobalRetainedBytes));
+        Require(MaxGlobalIngress > 0 && MaxGlobalIngress <= 20, nameof(MaxGlobalIngress));
+        Require(MaxIngressBytesPerDay >= (long)MaxSourceBytes + 64 * 1024 && MaxIngressBytesPerDay <= 44L * 1024 * 1024, nameof(MaxIngressBytesPerDay));
+        Require(IngressReadTimeout > TimeSpan.Zero && IngressReadTimeout <= TimeSpan.FromSeconds(30), nameof(IngressReadTimeout));
         Require(MaxGlobalUploads > 0 && MaxGlobalUploads <= 20, nameof(MaxGlobalUploads));
         Require(UnattachedRetentionDays > 0 && UnattachedRetentionDays <= 7, nameof(UnattachedRetentionDays));
         Require(RejectedRetentionDays > 0 && RejectedRetentionDays <= 7, nameof(RejectedRetentionDays));

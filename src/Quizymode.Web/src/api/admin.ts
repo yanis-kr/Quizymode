@@ -285,6 +285,7 @@ export interface ImageReviewQueueItem {
   explanationImage?: ItemImageReference | null;
   imageReview: ImageReviewQueueReview;
   ageSeconds?: number | null;
+  incorrectAnswerRationale?: Record<number, string> | null;
 }
 
 export interface ImageReviewQueueResponse {
@@ -984,9 +985,10 @@ export const adminApi = {
   },
 
   /** Fetches an uploaded picture with the admin bearer token (an <img> tag cannot send it). */
-  fetchItemImageBlob: async (id: string, slot: "question" | "explanation"): Promise<Blob> => {
+  fetchItemImageBlob: async (id: string, slot: "question" | "explanation", expectedRevision: number): Promise<Blob> => {
+    if (!Number.isSafeInteger(expectedRevision) || expectedRevision <= 0) throw new Error("Picture revision unavailable");
     const response = await apiClient.get<Blob>(`/items/${id}/images/${slot}`, {
-      responseType: "blob",
+      responseType: "blob", params: { expectedRevision },
     });
     return response.data;
   },

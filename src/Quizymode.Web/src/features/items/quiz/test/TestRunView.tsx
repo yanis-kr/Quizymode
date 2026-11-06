@@ -35,6 +35,7 @@ interface TestRunViewProps {
   pictures: QuestionPictureStatuses;
   onPrev: () => void;
   onNext: () => void;
+  onSkip?: () => void;
   onJump: (index: number) => void;
   onAnswer: (answer: string) => void;
   onToggleFlag: () => void;
@@ -55,6 +56,7 @@ export function TestRunView({
   pictures,
   onPrev,
   onNext,
+  onSkip,
   onJump,
   onAnswer,
   onToggleFlag,
@@ -112,7 +114,7 @@ export function TestRunView({
               revealFeedback={false}
               onAnswerSelect={onAnswer}
               stats={{ total: palette.answered, correct: 0 }}
-              questionPicture={pictures.controlsFor(currentItem, currentIndex < items.length - 1 ? onNext : undefined)}
+              questionPicture={{ ...pictures.controlsFor(currentItem, run.skipped.includes(currentItem.id) ? undefined : onSkip), blocked: run.skipped.includes(currentItem.id) || pictures.isBlocked(currentItem) }}
             />
 
             <button

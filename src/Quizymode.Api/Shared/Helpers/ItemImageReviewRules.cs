@@ -64,7 +64,8 @@ internal static class ItemImageReviewRules
         string explanation,
         ItemSpeechSupport? questionSpeech,
         PictureSlot? questionImage,
-        PictureSlot? explanationImage)
+        PictureSlot? explanationImage,
+        IReadOnlyDictionary<int, string>? incorrectAnswerRationale = null)
     {
         using MemoryStream stream = new();
         using (Utf8JsonWriter writer = new(stream))
@@ -95,6 +96,13 @@ internal static class ItemImageReviewRules
 
             WriteSlot(writer, "questionImage", questionImage);
             WriteSlot(writer, "explanationImage", explanationImage);
+            // Omit empty rationale entirely to preserve historical canonical hashes.
+            if (incorrectAnswerRationale is { Count: > 0 })
+            {
+                writer.WriteStartObject("incorrectAnswerRationale");
+                foreach (KeyValuePair<int, string> rationale in incorrectAnswerRationale.OrderBy(x => x.Key)) writer.WriteString(rationale.Key.ToString(System.Globalization.CultureInfo.InvariantCulture), rationale.Value);
+                writer.WriteEndObject();
+            }
             writer.WriteEndObject();
         }
 

@@ -22,4 +22,16 @@ describe("Required picture timed fairness", () => {
     run = reduceQuizRun(run, { type: "submit", submittedAt: "2026-01-01T00:00:02Z", reason: "manual", unavailableItemIds: ["a"] });
     const result = summarizeQuizRun(run); expect(result.scoredTotal).toBe(0); expect(result.missedItemIds).toEqual([]); expect(toCompletionSnapshot(run)).toBeNull();
   });
+  it("persists a loaded-picture last-item accessibility skip and never grants pause or completion credit", () => {
+    let run = createQuizRun(scope, ["a"], "owner", "test");
+    run = reduceQuizRun(run, { type: "start-test", startedAt: "2026-01-01T00:00:00Z", timeLimitSec: 60 });
+    const deadline = getTestDeadlineMs(run);
+    run = reduceQuizRun(run, { type: "skip-unavailable", itemId: "a", completedAt: "2026-01-01T00:00:09Z", reason: "picture-inaccessible" });
+    run = restoreQuizRun(JSON.parse(JSON.stringify(run)), scope, ["a"], "owner", "test")!;
+    expect(run.skippedReasons?.a).toBe("picture-inaccessible"); expect(getTestDeadlineMs(run)).toBe(deadline); expect(run.picturePausedMs ?? 0).toBe(0);
+    run = reduceQuizRun(run, { type: "answer", itemId: "a", selectedAnswer: "A", isCorrect: true, completedAt: "2026-01-01T00:00:10Z" });
+    expect(run.outcomes.a).toBeUndefined();
+    run = reduceQuizRun(run, { type: "submit", submittedAt: "2026-01-01T00:00:11Z", reason: "manual" });
+    expect(summarizeQuizRun(run).scoredTotal).toBe(0); expect(toCompletionSnapshot(run)).toBeNull();
+  });
 });

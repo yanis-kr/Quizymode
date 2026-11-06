@@ -1077,6 +1077,12 @@ namespace Quizymode.Api.Migrations
                         .HasColumnType("integer")
                         .HasDefaultValue(0);
 
+                    b.Property<string>("IncorrectAnswerRationale")
+                        .IsRequired()
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("jsonb")
+                        .HasDefaultValueSql("'{}'::jsonb");
+
                     b.Property<string>("IncorrectAnswerSpeech")
                         .IsRequired()
                         .ValueGeneratedOnAdd()
@@ -1459,6 +1465,53 @@ namespace Quizymode.Api.Migrations
                     b.ToTable("LlmAttempts", (string)null);
                 });
 
+            modelBuilder.Entity("Quizymode.Api.Shared.Models.LlmModelFinding", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .HasColumnType("uuid");
+
+                    b.Property<DateTime>("FirstSeenUtc")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<string>("Kind")
+                        .IsRequired()
+                        .HasMaxLength(30)
+                        .HasColumnType("character varying(30)");
+
+                    b.Property<DateTime>("LastSeenUtc")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<string>("Model")
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("character varying(100)");
+
+                    b.Property<DateTime?>("NotifiedUtc")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<DateTime?>("ResolvedUtc")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<string>("Status")
+                        .IsRequired()
+                        .HasMaxLength(20)
+                        .HasColumnType("character varying(20)");
+
+                    b.Property<string>("Vendor")
+                        .IsRequired()
+                        .HasMaxLength(20)
+                        .HasColumnType("character varying(20)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("Vendor", "Model")
+                        .IsUnique()
+                        .HasDatabaseName("IX_LlmModelFindings_Vendor_Model_Open")
+                        .HasFilter("\"Status\" = 'Open'");
+
+                    b.ToTable("LlmModelFindings", (string)null);
+                });
+
             modelBuilder.Entity("Quizymode.Api.Shared.Models.LlmProviderSettings", b =>
                 {
                     b.Property<int>("Id")
@@ -1687,6 +1740,41 @@ namespace Quizymode.Api.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("MediaControls");
+                });
+
+            modelBuilder.Entity("Quizymode.Api.Shared.Models.MediaIngressAttempt", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uuid");
+
+                    b.Property<DateTime?>("CompletedAt")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<DateTime>("LeaseUntil")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<string>("OwnerUserId")
+                        .IsRequired()
+                        .HasMaxLength(200)
+                        .HasColumnType("character varying(200)");
+
+                    b.Property<long>("ReceivedBytes")
+                        .HasColumnType("bigint");
+
+                    b.Property<long>("ReservedBytes")
+                        .HasColumnType("bigint");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("CompletedAt", "LeaseUntil");
+
+                    b.HasIndex("OwnerUserId", "CreatedAt");
+
+                    b.ToTable("MediaIngressAttempts");
                 });
 
             modelBuilder.Entity("Quizymode.Api.Shared.Models.MediaReport", b =>

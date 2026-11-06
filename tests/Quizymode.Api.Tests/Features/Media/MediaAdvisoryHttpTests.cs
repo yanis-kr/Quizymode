@@ -34,6 +34,7 @@ public sealed class MediaAdvisoryHttpTests : DatabaseTestFixture
         store.Objects[asset.ObjectKey!] = image.Bytes;
         Category category = VisibilitySeed.AddCategory(DbContext);
         Item item = PictureSeed.AddPictureItem(DbContext, category, "fixture-owner", true, ItemImageReviewState.PendingReview, asset);
+        item.IncorrectAnswerRationale = new() { [0] = "Synthetic incorrect-answer reasoning" };
         item.Question = "Synthetic flag question"; item.QuestionImageLongDescription = "Synthetic normalized stripes";
         if (!await DbContext.MediaControls.AnyAsync()) DbContext.MediaControls.Add(new MediaControl { AdvisoryEnabled = switchEnabled });
         await DbContext.SaveChangesAsync(); return item;
@@ -99,7 +100,7 @@ public sealed class MediaAdvisoryHttpTests : DatabaseTestFixture
         (await JsonAsync(first)).GetProperty("state").GetString().Should().Be("Complete");
         using HttpResponseMessage repeated = await PostAsync(s, item.Id, s.AdminToken); repeated.StatusCode.Should().Be(HttpStatusCode.OK);
         using HttpResponseMessage refresh = await s.Host.Client.SendAsync(JwtHttpTestHost.Request(HttpMethod.Get, $"/admin/items/{item.Id}/image-advisory", s.AdminToken)); refresh.StatusCode.Should().Be(HttpStatusCode.OK);
-        provider.Calls.Should().Be(1); provider.LastBody.Should().Contain("Synthetic flag question").And.Contain("Synthetic normalized stripes").And.Contain("image/webp");
+        provider.Calls.Should().Be(1); provider.LastBody.Should().Contain("Synthetic flag question").And.Contain("Synthetic normalized stripes").And.Contain("image/webp").And.Contain("Synthetic incorrect-answer reasoning");
         MediaAdvisoryJob job = await DbContext.MediaAdvisoryJobs.AsNoTracking().SingleAsync(); job.ReservedCostUsd.Should().Be(.05m); job.InputTokens.Should().Be(120); job.OutputTokens.Should().Be(12); job.EstimatedCostUsd.Should().Be(.000066m, "120 input tokens at $0.30/M plus 12 output/thinking tokens at $2.50/M must be recorded as an estimate");
         await AssertStillPendingAsync(item.Id);
     }

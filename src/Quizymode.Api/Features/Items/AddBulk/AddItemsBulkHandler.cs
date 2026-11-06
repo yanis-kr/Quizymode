@@ -210,6 +210,9 @@ internal static class AddItemsBulkHandler
                                 itemRequest.IncorrectAnswerSpeech,
                                 itemRequest.IncorrectAnswers.Count,
                                 500),
+                            IncorrectAnswerRationale = IncorrectAnswerRationaleHelper.Normalize(
+                                itemRequest.IncorrectAnswerRationale,
+                                itemRequest.IncorrectAnswers.Count),
                             Explanation = itemRequest.Explanation,
                             FuzzySignature = fuzzySignature,
                             FuzzyBucket = fuzzyBucket,
@@ -227,7 +230,7 @@ internal static class AddItemsBulkHandler
                         if (questionPicture is not null || explanationPicture is not null)
                         {
                             item.IsPrivate = true; item.ImageRevision = 1; item.ImageReviewState = ItemImageReviewState.PendingReview;
-                            string contentHash = ItemImageReviewRules.ComputeContentHash(item.Question, item.CorrectAnswer, item.IncorrectAnswers, item.Explanation, item.QuestionSpeech, questionPicture, explanationPicture);
+                            string contentHash = ItemImageReviewRules.ComputeContentHash(item.Question, item.CorrectAnswer, item.IncorrectAnswers, item.Explanation, item.QuestionSpeech, questionPicture, explanationPicture, item.IncorrectAnswerRationale);
                             db.ItemImageReviews.Add(ItemImageSubmission.NewSubmission(item.Id, 1, contentHash, questionPicture, explanationPicture, userId));
                         }
                         itemsToInsert.Add(item);

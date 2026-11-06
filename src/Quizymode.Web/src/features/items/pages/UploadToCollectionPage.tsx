@@ -1,3 +1,4 @@
+import { compactIncorrectAnswerRationale } from "@/utils/itemSpeech";
 import { getIncorrectAnswerConflict } from "@/utils/incorrectAnswerRules";
 import * as React from "react";
 import { useMutation } from "@tanstack/react-query";
@@ -216,6 +217,9 @@ const UploadToCollectionPage = ({
             .filter(Boolean)
             .slice(0, 4)
         : [],
+      incorrectAnswerRationale: Array.isArray(row.incorrectAnswers) && row.incorrectAnswerRationale && typeof row.incorrectAnswerRationale === "object" && !Array.isArray(row.incorrectAnswerRationale)
+        ? Object.fromEntries(Object.entries(compactIncorrectAnswerRationale(row.incorrectAnswers.map((answer: unknown) => String(answer ?? "")), Object.fromEntries(Object.entries(row.incorrectAnswerRationale).filter((entry): entry is [string, string] => typeof entry[1] === "string"))) ?? {}).filter(([index]) => Number(index) < 4))
+        : undefined,
       explanation: String(row.explanation ?? ""),
       questionImage: row.questionImage as import("@/api/media").ImageSlotInput | undefined,
       explanationImage: row.explanationImage as import("@/api/media").ImageSlotInput | undefined,

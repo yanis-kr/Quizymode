@@ -664,6 +664,7 @@ internal sealed class SeedSyncAdminService(
         item.ExplanationImageLongDescription = change.Item.ExplanationImage?.LongDescription;
         item.StarterWorld = change.Item.StarterWorld;
         item.WowLine = change.Item.WowLine;
+        item.IncorrectAnswerRationale = change.Item.IncorrectAnswerRationale;
         item.CategoryId = change.Navigation.Category.Id;
         item.NavigationKeywordId1 = change.Navigation.Nav1.Id;
         item.NavigationKeywordId2 = change.Navigation.Nav2.Id;
@@ -915,6 +916,9 @@ internal sealed class SeedSyncAdminService(
         ItemImageReference? explanationImage = ItemImageReferenceHelper.Normalize(item.ExplanationImage);
         string? starterWorld = string.IsNullOrWhiteSpace(item.StarterWorld) ? null : item.StarterWorld.Trim();
         string? wowLine = string.IsNullOrWhiteSpace(item.WowLine) ? null : item.WowLine.Trim();
+        Dictionary<int, string> incorrectAnswerRationale = IncorrectAnswerRationaleHelper.Normalize(
+            item.IncorrectAnswerRationale,
+            incorrectAnswers.Count);
 
         return new NormalizedSeedItem(
             item.ItemId,
@@ -933,7 +937,8 @@ internal sealed class SeedSyncAdminService(
             questionImage,
             explanationImage,
             starterWorld,
-            wowLine);
+            wowLine,
+            incorrectAnswerRationale);
     }
 
     private static NormalizedSeedCollection NormalizeCollection(SeedSyncAdmin.SeedCollectionRequest collection)
@@ -1073,6 +1078,11 @@ internal sealed class SeedSyncAdminService(
             changed.Add("starterWorld");
         }
 
+        if (!IncorrectAnswerRationaleHelper.AreEquivalent(existing.IncorrectAnswerRationale, incoming.IncorrectAnswerRationale))
+        {
+            changed.Add("incorrectAnswerRationale");
+        }
+
         if (!string.Equals(existing.WowLine, incoming.WowLine, StringComparison.Ordinal))
         {
             changed.Add("wowLine");
@@ -1149,7 +1159,8 @@ internal sealed class SeedSyncAdminService(
             ItemImageReferenceHelper.FromColumns(item.QuestionImageKey, item.QuestionImageAlt, item.QuestionImageAttribution, item.QuestionImageLongDescription),
             ItemImageReferenceHelper.FromColumns(item.ExplanationImageKey, item.ExplanationImageAlt, item.ExplanationImageAttribution, item.ExplanationImageLongDescription),
             item.StarterWorld,
-            item.WowLine);
+            item.WowLine,
+            IncorrectAnswerRationaleHelper.Normalize(item.IncorrectAnswerRationale, item.IncorrectAnswers.Count));
     }
 
     private static async Task TryRollbackAsync(
@@ -1187,7 +1198,8 @@ internal sealed class SeedSyncAdminService(
         ItemImageReference? QuestionImage,
         ItemImageReference? ExplanationImage,
         string? StarterWorld,
-        string? WowLine);
+        string? WowLine,
+        Dictionary<int, string> IncorrectAnswerRationale);
 
     private sealed record ExistingItemState(
         string Category,
@@ -1205,7 +1217,8 @@ internal sealed class SeedSyncAdminService(
         ItemImageReference? QuestionImage,
         ItemImageReference? ExplanationImage,
         string? StarterWorld,
-        string? WowLine);
+        string? WowLine,
+        Dictionary<int, string> IncorrectAnswerRationale);
 
     private sealed record NormalizedSeedCollection(
         Guid CollectionId,

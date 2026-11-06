@@ -218,4 +218,13 @@ public sealed class ItemImageReviewRulesTests
         Hash(questionImage: Question with { LongDescription = "A rising line." }).Should().NotBe(Hash());
     }
 
+
+    [Fact]
+    public void OptionalRationalePreservesOldHashAndUsesDeterministicSemanticOrder()
+    {
+        string Hash(IReadOnlyDictionary<int, string>? reasons) => ItemImageReviewRules.ComputeContentHash("Q", "A", ["B", "C"], "E", null, null, null, reasons);
+        Hash(null).Should().Be(Hash(new Dictionary<int, string>()));
+        Hash(new Dictionary<int, string> { [1] = "C reason", [0] = "B reason" }).Should().Be(Hash(new Dictionary<int, string> { [0] = "B reason", [1] = "C reason" }));
+        Hash(new Dictionary<int, string> { [0] = "B reason" }).Should().NotBe(Hash(null));
+    }
 }

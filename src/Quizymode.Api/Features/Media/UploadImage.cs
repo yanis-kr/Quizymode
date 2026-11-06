@@ -158,7 +158,32 @@ public static class UploadImage
         }
 
         Stopwatch clock = Stopwatch.StartNew();
-        (byte[]? source, MediaProblem? readProblem) = await ReadSourceAsync(httpRequest, options.MaxSourceBytes, cancellationToken);
+        (MediaIngressAttempt? ingress, IResult? ingressError) = await MediaIngress.ReserveAsync(db, userId, options, timeProvider.GetUtcNow().UtcDateTime, cancellationToken);
+        if (ingressError is not null) return ingressError;
+        Stream originalBody = httpRequest.Body;
+        using BoundedIngressStream countedBody = new(originalBody, (long)options.MaxSourceBytes + EnvelopeAllowanceBytes);
+        using CancellationTokenSource readTimeout = CancellationTokenSource.CreateLinkedTokenSource(cancellationToken);
+        readTimeout.CancelAfter(options.IngressReadTimeout);
+        byte[]? source; MediaProblem? readProblem;
+        try
+        {
+            httpRequest.Body = countedBody;
+            (source, readProblem) = await ReadSourceAsync(httpRequest, options.MaxSourceBytes, readTimeout.Token);
+        }
+        catch (MediaIngressLimitException)
+        {
+            source = null; readProblem = MediaErrors.TooLarge(options.MaxSourceBytes);
+        }
+        catch (Exception ex) when (ex is OperationCanceledException or IOException)
+        {
+            if (ex is OperationCanceledException) httpRequest.HttpContext.Abort();
+            source = null; readProblem = MediaErrors.InvalidRequest;
+        }
+        finally
+        {
+            httpRequest.Body = originalBody;
+            await MediaIngress.FinishAsync(db, ingress!.Id, countedBody.ReceivedBytes, timeProvider.GetUtcNow().UtcDateTime);
+        }
         if (readProblem is not null)
         {
             logger.LogInformation("Media upload refused: Code={Code}", readProblem.Code);
@@ -289,6 +314,7 @@ public static class UploadImage
         }
 
         string boundary = HeaderUtilities.RemoveQuotes(contentType.Boundary).Value!;
+        if (boundary.Length > 128) return (null, MediaErrors.InvalidRequest);
         MultipartReader reader = new(boundary, request.Body);
         byte[]? file = null;
         try

@@ -348,6 +348,7 @@ const LearnModePage = () => {
       current
         ? reduceLearnRun(current, {
             type: "skip-unavailable",
+            reason: pictures.isBlocked(currentItem) ? "picture-unavailable" : "picture-inaccessible",
             itemId: currentItem.id,
             completedAt: new Date().toISOString(),
           })

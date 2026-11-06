@@ -437,7 +437,7 @@ describe("UploadToCollectionPage", () => {
     await user.click(screen.getByLabelText(/json array of items/i));
     await user.paste(
       JSON.stringify([
-        { question: "Q", correctAnswer: "A", incorrectAnswers: [" W1 ", "", "W2", "W3", "W4", "W5"] },
+        { question: "Q", correctAnswer: "A", incorrectAnswers: [" W1 ", "", "W2", "W3", "W4", "W5"], incorrectAnswerRationale: { 0: "First reason", 2: "Second reason", 5: "Omitted answer reason" } },
       ])
     );
     await user.click(screen.getByRole("button", { name: /upload and open collection/i }));
@@ -445,6 +445,7 @@ describe("UploadToCollectionPage", () => {
     await waitFor(() => expect(itemsApi.uploadToCollection).toHaveBeenCalledTimes(1));
     const payload = vi.mocked(itemsApi.uploadToCollection).mock.calls[0][0];
     expect(payload.items[0].incorrectAnswers).toEqual(["W1", "W2", "W3", "W4"]);
+    expect(payload.items[0].incorrectAnswerRationale).toEqual({ 0: "First reason", 1: "Second reason" });
   });
 
   it("asks for 1-4 incorrect answers in the prompt", async () => {

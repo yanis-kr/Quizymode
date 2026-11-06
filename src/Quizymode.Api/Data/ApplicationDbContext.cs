@@ -86,6 +86,8 @@ public sealed class ApplicationDbContext : DbContext
 
     public DbSet<LlmAttempt> LlmAttempts => Set<LlmAttempt>();
 
+    public DbSet<LlmModelFinding> LlmModelFindings => Set<LlmModelFinding>();
+
     public DbSet<FeaturedItem> FeaturedItems => Set<FeaturedItem>();
 
     public DbSet<ReviewQueueEntry> ReviewQueueEntries => Set<ReviewQueueEntry>();
@@ -99,6 +101,8 @@ public sealed class ApplicationDbContext : DbContext
     public DbSet<UserInterest> UserInterests => Set<UserInterest>();
 
     public DbSet<StudyPlan> StudyPlans => Set<StudyPlan>();
+
+    internal DbSet<MediaIngressAttempt> MediaIngressAttempts => Set<MediaIngressAttempt>();
 
     public DbSet<MediaUploadAttempt> MediaUploadAttempts => Set<MediaUploadAttempt>();
     public DbSet<MediaAdvisoryJob> MediaAdvisoryJobs => Set<MediaAdvisoryJob>();

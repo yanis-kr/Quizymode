@@ -37,4 +37,25 @@ public sealed class MediaAdmissionPostgresTests(PostgresContainerFixture fixture
         (await verify.MediaUploadClaims.CountAsync(x => x.State == "Processing" && x.LeaseUntil > now)).Should().Be(1);
         (await verify.MediaUploadAttempts.CountAsync()).Should().Be(1);
     }
+
+    [SkippableFact]
+    public async Task DistinctReplicasReserveOneTransportReadBeforeAnyDecode()
+    {
+        Skip.If(fixture.UnavailableReason is not null, fixture.UnavailableReason);
+        DateTime now = DateTime.UtcNow;
+        MediaOptions options = new() { MaxGlobalIngress = 1 };
+        TaskCompletionSource gate = new(TaskCreationOptions.RunContinuationsAsynchronously);
+        async Task<bool> Reserve(string owner)
+        {
+            await using var db = fixture.CreateDbContext(); await gate.Task;
+            var result = await MediaIngress.ReserveAsync(db, owner, options, now, CancellationToken.None);
+            if (result.Attempt is not null) return true;
+            ((IStatusCodeHttpResult)result.Error!).StatusCode.Should().Be(429); return false;
+        }
+        Task<bool> a = Reserve("ingress-a"), b = Reserve("ingress-b"); gate.SetResult();
+        (await Task.WhenAll(a, b)).Count(x => x).Should().Be(1);
+        await using var restarted = fixture.CreateDbContext();
+        (await restarted.MediaIngressAttempts.CountAsync(x => x.CompletedAt == null && x.LeaseUntil > now)).Should().Be(1);
+        (await MediaIngress.ReserveAsync(restarted, "ingress-c", options, now, CancellationToken.None)).Attempt.Should().BeNull();
+    }
 }

@@ -138,7 +138,7 @@ internal static class AddItemHandler
             string? contentHash = hasUpload
                 ? ItemImageReviewRules.ComputeContentHash(
                     request.Question, request.CorrectAnswer, request.IncorrectAnswers, request.Explanation,
-                    questionSpeech, questionPicture, explanationPicture)
+                    questionSpeech, questionPicture, explanationPicture, IncorrectAnswerRationaleHelper.Normalize(request.IncorrectAnswerRationale, request.IncorrectAnswers.Count))
                 : null;
             ImageReviewTransition transition = ItemImageReviewRules.Plan(null, 0, hasUpload, contentHash, null);
             if (transition.CreatesSubmission)
@@ -168,6 +168,9 @@ internal static class AddItemHandler
                     request.IncorrectAnswerSpeech,
                     request.IncorrectAnswers.Count,
                     500),
+                IncorrectAnswerRationale = IncorrectAnswerRationaleHelper.Normalize(
+                    request.IncorrectAnswerRationale,
+                    request.IncorrectAnswers.Count),
                 Explanation = request.Explanation,
                 FuzzySignature = fuzzySignature,
                 FuzzyBucket = fuzzyBucket,
@@ -307,7 +310,7 @@ internal static class AddItemHandler
                 item.GroupLabel,
                 ItemImageReferenceHelper.FromColumns(item.QuestionImageKey, item.QuestionImageAlt, item.QuestionImageAttribution, item.QuestionImageLongDescription, item.ImageRevision),
                 ItemImageReferenceHelper.FromColumns(item.ExplanationImageKey, item.ExplanationImageAlt, item.ExplanationImageAttribution, item.ExplanationImageLongDescription, item.ImageRevision),
-                ItemImageReviewRules.InfoOf(item));
+                ItemImageReviewRules.InfoOf(item), item.IncorrectAnswerRationale.Count > 0 ? item.IncorrectAnswerRationale : null);
 
     }
 }

@@ -8,9 +8,10 @@ export const mediaApi = {
     return (await apiClient.post<UploadedImage>("/media/images", body, { signal, headers: { "Content-Type": undefined, "Idempotency-Key": key } })).data;
   },
   preview: async (id: string, signal: AbortSignal) => (await apiClient.get<Blob>(`/media/images/${id}/content`, { signal, responseType: "blob" })).data,
-  content: async (itemId: string, slot: string, collectionId: string | undefined, signal: AbortSignal) => {
+  content: async (itemId: string, slot: string, collectionId: string | undefined, signal: AbortSignal, expectedRevision: number) => {
+    if (!Number.isSafeInteger(expectedRevision) || expectedRevision <= 0) throw new Error("Picture revision unavailable");
     const route = collectionId ? `/collections/${encodeURIComponent(collectionId)}/items/${encodeURIComponent(itemId)}/images/${slot}` : `/items/${encodeURIComponent(itemId)}/images/${slot}`;
-    return (await apiClient.get<Blob>(route, { signal, responseType: "blob" })).data;
+    return (await apiClient.get<Blob>(route, { signal, responseType: "blob", params: { expectedRevision } })).data;
   },
 };
 

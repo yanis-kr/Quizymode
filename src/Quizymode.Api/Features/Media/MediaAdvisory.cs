@@ -158,7 +158,7 @@ public static class MediaAdvisoryEndpoints
                 using MemoryStream bytes = new(); await content.Stream.CopyToAsync(bytes, ct); if (bytes.Length > MediaOptions.AbsoluteMaxOutputBytes) throw new InvalidOperationException("Picture too large."); if (Convert.ToHexStringLower(System.Security.Cryptography.SHA256.HashData(bytes.ToArray())) != asset.Sha256) throw new InvalidOperationException("Picture hash mismatch."); pictures.Add(bytes.ToArray());
             }
             if (!await db.MediaControls.AnyAsync(x => x.Id == 1 && x.AdvisoryEnabled, ct)) throw new InvalidOperationException("Disabled before dispatch.");
-            string context = JsonSerializer.Serialize(new { item.Question, item.CorrectAnswer, item.IncorrectAnswers, item.Explanation, item.QuestionSpeech, item.QuestionImageAlt, item.QuestionImageAttribution, item.QuestionImageLongDescription, item.ExplanationImageAlt, item.ExplanationImageAttribution, item.ExplanationImageLongDescription });
+            string context = JsonSerializer.Serialize(new { item.Question, item.CorrectAnswer, item.IncorrectAnswers, item.IncorrectAnswerRationale, item.Explanation, item.QuestionSpeech, item.QuestionImageAlt, item.QuestionImageAttribution, item.QuestionImageLongDescription, item.ExplanationImageAlt, item.ExplanationImageAttribution, item.ExplanationImageLongDescription });
             MediaAdvisoryResult result = await provider.AssessAsync(options.Model, context, pictures, ct);
             job.InputTokens = result.InputTokens; job.OutputTokens = result.OutputTokens;
             if (result.InputTokens is int inputTokens && result.OutputTokens is int outputTokens)

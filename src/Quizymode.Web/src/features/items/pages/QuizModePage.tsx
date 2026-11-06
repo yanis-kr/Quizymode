@@ -840,7 +840,7 @@ const QuizModePageContent = () => {
   }, [typedDraft, run, currentItem]);
 
   const handleTypedSubmit = (typed: string) => {
-    if (!run || !currentItem || pictureBlocked || run.mode !== "practice" || currentOutcome || typedDraft) return;
+    if (!run || !currentItem || pictureBlocked || currentSkipped || currentOutcome || typedDraft) return;
     const result = gradeTypedAnswer(typed, currentItem.correctAnswer);
     setTypedDraft({ runId: run.runId, itemId: currentItem.id, typed: typed.trim(), correct: result.correct });
   };
@@ -958,11 +958,12 @@ const QuizModePageContent = () => {
 
   /** Practice: leave a question whose picture will not load; it is not scored and the quiz moves on (#403). */
   const handleSkipUnavailable = () => {
-    if (!run || !currentItem || run.mode !== "practice" || currentOutcome) return;
+    if (!run || !currentItem || currentSkipped || currentOutcome) return;
     setRun((current) =>
       current
         ? reduceQuizRun(current, {
             type: "skip-unavailable",
+            reason: pictures.isBlocked(currentItem) ? "picture-unavailable" : "picture-inaccessible",
             itemId: currentItem.id,
             completedAt: new Date().toISOString(),
           })
@@ -981,7 +982,7 @@ const QuizModePageContent = () => {
     navigateToRunItem(index);
   };
 
-  const pictureTimerPaused = Boolean(run?.mode === "test" && run.startedAt && !run.submittedAt && currentItem && pictures.isBlocked(currentItem));
+  const pictureTimerPaused = Boolean(run?.mode === "test" && run.startedAt && !run.submittedAt && currentItem && !currentSkipped && pictures.isBlocked(currentItem));
   useEffect(() => {
     setRun(current => current ? reduceQuizRun(current, { type: "picture-pause", paused: pictureTimerPaused, at: new Date().toISOString() }) : current);
   }, [pictureTimerPaused]);
@@ -1465,6 +1466,7 @@ const QuizModePageContent = () => {
           onAnswer={handleAnswerSelect}
           onToggleFlag={handleToggleFlag}
           onSubmit={handleSubmitTest}
+          onSkip={handleSkipUnavailable}
           pictures={pictures}
           shell={{
             backContent: <></>,

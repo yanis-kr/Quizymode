@@ -19,6 +19,7 @@ import { useExtraKeywordAutocompleteSource } from "@/hooks/useExtraKeywordAutoco
 import {
   normalizeSpeechSupportInput,
   compactIncorrectAnswersWithSpeech,
+  compactIncorrectAnswerRationale,
 } from "@/utils/itemSpeech";
 
 const MIN_INCORRECT_ANSWER_FIELDS = 3;
@@ -46,6 +47,7 @@ const EditItemPage = () => {
     correctAnswerSpeech: {},
     incorrectAnswers: ["", "", ""],
     incorrectAnswerSpeech: {},
+    incorrectAnswerRationale: {},
     explanation: "",
     keywords: [] as KeywordRequest[],
     source: "",
@@ -103,6 +105,7 @@ const EditItemPage = () => {
         correctAnswerSpeech: itemData.correctAnswerSpeech ?? {},
         incorrectAnswers: padIncorrectAnswers(itemData.incorrectAnswers ?? []),
         incorrectAnswerSpeech: itemData.incorrectAnswerSpeech ?? {},
+        incorrectAnswerRationale: itemData.incorrectAnswerRationale ?? {},
         explanation: itemData.explanation || "",
         questionImage: itemData.questionImage?.key.startsWith("media:") ? { assetId: itemData.questionImage.key.slice(6), altText: itemData.questionImage.altText, attribution: itemData.questionImage.attribution, longDescription: itemData.questionImage.longDescription } : undefined,
         explanationImage: itemData.explanationImage?.key.startsWith("media:") ? { assetId: itemData.explanationImage.key.slice(6), altText: itemData.explanationImage.altText, attribution: itemData.explanationImage.attribution, longDescription: itemData.explanationImage.longDescription } : undefined,
@@ -204,6 +207,7 @@ const EditItemPage = () => {
       correctAnswerSpeech: normalizeSpeechSupportInput(formData.correctAnswerSpeech),
       incorrectAnswers: compacted.incorrectAnswers,
       incorrectAnswerSpeech: compacted.incorrectAnswerSpeech,
+      incorrectAnswerRationale: compactIncorrectAnswerRationale(formData.incorrectAnswers, formData.incorrectAnswerRationale),
       explanation: formData.explanation.trim(),
       expectedImageRevision: itemData?.imageReview?.revision,
       questionImage: formData.questionImage,
@@ -216,7 +220,7 @@ const EditItemPage = () => {
     };
 
     const uploaded = itemData?.questionImage?.key.startsWith("media:") || itemData?.explanationImage?.key.startsWith("media:");
-    const relevantChange = itemData && (data.question !== itemData.question || data.correctAnswer !== itemData.correctAnswer || JSON.stringify(data.incorrectAnswers) !== JSON.stringify(itemData.incorrectAnswers) || data.explanation !== (itemData.explanation ?? "") || JSON.stringify(data.questionSpeech ?? null) !== JSON.stringify(itemData.questionSpeech ?? null) || JSON.stringify(data.questionImage ?? null) !== JSON.stringify(itemData.questionImage?.key.startsWith("media:") ? { assetId: itemData.questionImage.key.slice(6), altText: itemData.questionImage.altText, attribution: itemData.questionImage.attribution, longDescription: itemData.questionImage.longDescription } : null) || JSON.stringify(data.explanationImage ?? null) !== JSON.stringify(itemData.explanationImage?.key.startsWith("media:") ? { assetId: itemData.explanationImage.key.slice(6), altText: itemData.explanationImage.altText, attribution: itemData.explanationImage.attribution, longDescription: itemData.explanationImage.longDescription } : null));
+    const relevantChange = itemData && (JSON.stringify(data.incorrectAnswerRationale ?? {}) !== JSON.stringify(itemData.incorrectAnswerRationale ?? {}) || data.question !== itemData.question || data.correctAnswer !== itemData.correctAnswer || JSON.stringify(data.incorrectAnswers) !== JSON.stringify(itemData.incorrectAnswers) || data.explanation !== (itemData.explanation ?? "") || JSON.stringify(data.questionSpeech ?? null) !== JSON.stringify(itemData.questionSpeech ?? null) || JSON.stringify(data.questionImage ?? null) !== JSON.stringify(itemData.questionImage?.key.startsWith("media:") ? { assetId: itemData.questionImage.key.slice(6), altText: itemData.questionImage.altText, attribution: itemData.questionImage.attribution, longDescription: itemData.questionImage.longDescription } : null) || JSON.stringify(data.explanationImage ?? null) !== JSON.stringify(itemData.explanationImage?.key.startsWith("media:") ? { assetId: itemData.explanationImage.key.slice(6), altText: itemData.explanationImage.altText, attribution: itemData.explanationImage.attribution, longDescription: itemData.explanationImage.longDescription } : null));
     if (uploaded && relevantChange && !window.confirm("These changes require fresh picture review. The item will be unavailable to other people, including through existing shares, until approved. Save changes?")) return;
     updateMutation.mutate(data);
   };

@@ -1,5 +1,6 @@
 import { beforeEach, describe, expect, it, vi } from "vitest";
 import { act, fireEvent, render, screen, waitFor } from "@testing-library/react";
+import userEvent from "@testing-library/user-event";
 import { MemoryRouter } from "react-router-dom";
 import { mediaApi } from "@/api/media";
 import { MediaIdentityContext } from "@/contexts/MediaIdentityContext";
@@ -13,7 +14,7 @@ describe("Uploaded item-bound picture grants", () => {
     render(<MemoryRouter><QuestionImage image={uploaded} itemId="item-1" collectionId="share-1" /></MemoryRouter>);
     await screen.findByText("Picture couldn't load");
     expect(mediaApi.content).toHaveBeenCalledTimes(1);
-    expect(mediaApi.content).toHaveBeenCalledWith("item-1", "question", "share-1", expect.any(AbortSignal));
+    expect(mediaApi.content).toHaveBeenCalledWith("item-1", "question", "share-1", expect.any(AbortSignal), 1);
     expect(screen.queryByRole("img")).not.toBeInTheDocument();
   });
   it("revokes grants across identity/revision changes and discards a late old fetch", async () => {
@@ -30,5 +31,16 @@ describe("Uploaded item-bound picture grants", () => {
     fireEvent.load(screen.getByRole("img"));
     expect(screen.getByText("Line rises from zero.")).toBeInTheDocument();
     unmount(); expect(URL.revokeObjectURL).toHaveBeenCalledWith("blob:normalized");
+  });
+  it.each([undefined, 0, -1])("fails closed without a positive DTO revision (%s)", async revision => {
+    render(<MemoryRouter><QuestionImage image={{ ...uploaded, revision }} itemId="item-1" /></MemoryRouter>);
+    expect(screen.getByText("Picture isn't available")).toBeInTheDocument(); expect(mediaApi.content).not.toHaveBeenCalled();
+  });
+  it("offers keyboard unscored Skip after the picture has loaded", async () => {
+    const onSkip = vi.fn(); vi.mocked(mediaApi.content).mockResolvedValue(new Blob(["normalized"]));
+    render(<MemoryRouter><QuestionImage image={uploaded} itemId="item-1" onSkip={onSkip} /></MemoryRouter>);
+    fireEvent.load(await screen.findByRole("img"));
+    const skip = screen.getByRole("button", { name: "Skip question (not scored)" }); skip.focus();
+    await userEvent.keyboard("{Enter}"); expect(onSkip).toHaveBeenCalledOnce();
   });
 });

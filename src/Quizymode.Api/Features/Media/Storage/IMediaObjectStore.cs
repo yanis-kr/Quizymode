@@ -3,8 +3,8 @@ using System.Text.RegularExpressions;
 namespace Quizymode.Api.Features.Media.Storage;
 
 /// <summary>
-/// Private object storage for normalized pictures. Deliberately has no delete: deletion and cleanup belong to a later
-/// slice (#405), so the API principal needs only put and get on <c>normalized/*</c>.
+/// Private object storage for normalized pictures. Cleanup uses scoped delete/list operations only when explicitly enabled;
+/// deployment permissions are verified separately from this interface.
 /// </summary>
 internal interface IMediaObjectStore
 {

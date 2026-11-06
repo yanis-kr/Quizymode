@@ -35,7 +35,8 @@ public static class UpdateItem
         string? GroupLabel = null,
         ImageSlotInput? QuestionImage = null,
         ImageSlotInput? ExplanationImage = null,
-        int? ExpectedImageRevision = null);
+        int? ExpectedImageRevision = null,
+        Dictionary<int, string>? IncorrectAnswerRationale = null);
 
     public sealed record Response(
         string Id,
@@ -53,7 +54,8 @@ public static class UpdateItem
         string? GroupLabel = null,
         ItemImageReference? QuestionImage = null,
         ItemImageReference? ExplanationImage = null,
-        ItemImageReviewInfo? ImageReview = null);
+        ItemImageReviewInfo? ImageReview = null,
+        Dictionary<int, string>? IncorrectAnswerRationale = null);
 
     public sealed class Validator : AbstractValidator<Request>
     {
@@ -104,6 +106,7 @@ public static class UpdateItem
                     .WithMessage("Each incorrect answer must not exceed 500 characters"));
 
             this.AddIncorrectAnswerSpeechRules(x => x.IncorrectAnswerSpeech, req => req.IncorrectAnswers?.Count ?? 0);
+            this.AddIncorrectAnswerRationaleRules(x => x.IncorrectAnswerRationale, req => req.IncorrectAnswers?.Count ?? 0);
 
             RuleFor(x => x.Explanation)
                 .MaximumLength(4000)
@@ -346,7 +349,7 @@ public static class UpdateItem
             string? contentHash = hasUpload
                 ? ItemImageReviewRules.ComputeContentHash(
                     request.Question, request.CorrectAnswer, request.IncorrectAnswers, request.Explanation,
-                    questionSpeech, questionPicture, explanationPicture)
+                    questionSpeech, questionPicture, explanationPicture, IncorrectAnswerRationaleHelper.Normalize(request.IncorrectAnswerRationale, request.IncorrectAnswers.Count))
                 : null;
             string? storedHash = hasUpload && item.ImageReviewState is not null
                 ? await db.ItemImageReviews.AsNoTracking()
@@ -392,6 +395,9 @@ public static class UpdateItem
                 request.IncorrectAnswerSpeech,
                 request.IncorrectAnswers.Count,
                 500);
+            item.IncorrectAnswerRationale = IncorrectAnswerRationaleHelper.Normalize(
+                request.IncorrectAnswerRationale,
+                request.IncorrectAnswers.Count);
             item.Explanation = request.Explanation;
             item.IsPrivate = effectiveIsPrivate;
             item.CategoryId = category.Id;
@@ -521,7 +527,8 @@ public static class UpdateItem
                 item.GroupLabel,
                 ItemImageReferenceHelper.FromColumns(item.QuestionImageKey, item.QuestionImageAlt, item.QuestionImageAttribution, item.QuestionImageLongDescription, item.ImageRevision),
                 ItemImageReferenceHelper.FromColumns(item.ExplanationImageKey, item.ExplanationImageAlt, item.ExplanationImageAttribution, item.ExplanationImageLongDescription, item.ImageRevision),
-                ItemImageReviewRules.InfoOf(item, rejectionReason));
+                ItemImageReviewRules.InfoOf(item, rejectionReason),
+                                item.IncorrectAnswerRationale.Count > 0 ? item.IncorrectAnswerRationale : null);
 
             return Result.Success(response);
         }

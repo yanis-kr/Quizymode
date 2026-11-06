@@ -36,7 +36,8 @@ public static class AddItem
         string? GroupLabel = null,
         ImageSlotInput? QuestionImage = null,
         ImageSlotInput? ExplanationImage = null,
-        Guid? CreateRequestId = null);
+        Guid? CreateRequestId = null,
+        Dictionary<int, string>? IncorrectAnswerRationale = null);
 
     public sealed record Response(
         string Id,
@@ -55,7 +56,8 @@ public static class AddItem
         string? GroupLabel = null,
         ItemImageReference? QuestionImage = null,
         ItemImageReference? ExplanationImage = null,
-        ItemImageReviewInfo? ImageReview = null);
+        ItemImageReviewInfo? ImageReview = null,
+        Dictionary<int, string>? IncorrectAnswerRationale = null);
 
     public sealed class Validator : AbstractValidator<Request>
     {
@@ -106,6 +108,7 @@ public static class AddItem
                     .WithMessage("Each incorrect answer must not exceed 500 characters"));
 
             this.AddIncorrectAnswerSpeechRules(x => x.IncorrectAnswerSpeech, req => req.IncorrectAnswers?.Count ?? 0);
+            this.AddIncorrectAnswerRationaleRules(x => x.IncorrectAnswerRationale, req => req.IncorrectAnswers?.Count ?? 0);
 
             RuleFor(x => x.Explanation)
                 .MaximumLength(4000)

@@ -41,3 +41,13 @@ internal sealed class MediaUploadAttemptConfiguration : IEntityTypeConfiguration
 {
     public void Configure(EntityTypeBuilder<MediaUploadAttempt> b) { b.HasKey(x => x.Id); b.Property(x => x.OwnerUserId).HasMaxLength(200); b.HasIndex(x => new { x.OwnerUserId, x.CreatedAt }); }
 }
+
+internal sealed class MediaIngressAttemptConfiguration : IEntityTypeConfiguration<MediaIngressAttempt>
+{
+    public void Configure(EntityTypeBuilder<MediaIngressAttempt> b)
+    {
+        b.HasKey(x => x.Id); b.Property(x => x.OwnerUserId).HasMaxLength(200);
+        b.HasIndex(x => new { x.OwnerUserId, x.CreatedAt });
+        b.HasIndex(x => new { x.CompletedAt, x.LeaseUntil });
+    }
+}

@@ -47,6 +47,7 @@ export interface QuizRunState {
    * neither correct, scored total nor missed. Optional in stored v3 snapshots (read as empty).
    */
   skipped: string[];
+  skippedReasons?: Record<string, "picture-unavailable" | "picture-inaccessible">;
   /** Test only: flagged item ids in roster order. Always empty in Practice. */
   flagged: string[];
   /** Test only: ISO time of Start test; null on the setup card and in Practice. */
@@ -102,7 +103,7 @@ export type QuizRunAction =
   /** `unavailableItemIds`: items whose picture was unavailable at submit; they become skipped (unanswered ones only). */
   | { type: "submit"; submittedAt: string; reason: TestSubmitReason; unavailableItemIds?: string[] }
   /** Practice: skip an unanswered item whose picture is unavailable (#403); it is not scored. */
-  | { type: "skip-unavailable"; itemId: string; completedAt: string }
+  | { type: "skip-unavailable"; itemId: string; completedAt: string; reason?: "picture-unavailable" | "picture-inaccessible" }
   | { type: "show-summary" }
   | { type: "review-mistakes" }
   | { type: "review-all" }
@@ -232,10 +233,11 @@ export function reduceQuizRun(run: QuizRunState, action: QuizRunAction): QuizRun
   }
 
   if (action.type === "skip-unavailable") {
-    if (run.mode !== "practice" || run.view !== "active" || !run.itemIds.includes(action.itemId)) return run;
+    if (run.view !== "active" || (run.mode === "test" && !isTestInProgress(run)) || !run.itemIds.includes(action.itemId)) return run;
     if (run.outcomes[action.itemId] || run.skipped.includes(action.itemId)) return run;
     const skipped = run.itemIds.filter((itemId) => itemId === action.itemId || run.skipped.includes(itemId));
-    const updated: QuizRunState = { ...run, skipped };
+    const updated: QuizRunState = { ...run, skipped, skippedReasons: { ...run.skippedReasons, [action.itemId]: action.reason ?? "picture-unavailable" } };
+    if (run.mode === "test") return updated;
     return { ...updated, completedAt: summarizeQuizRun(updated).isComplete ? action.completedAt : null };
   }
 
@@ -244,7 +246,7 @@ export function reduceQuizRun(run: QuizRunState, action: QuizRunAction): QuizRun
   }
 
   if (action.type === "answer") {
-    if (!run.itemIds.includes(action.itemId)) return run;
+    if (!run.itemIds.includes(action.itemId) || run.skipped.includes(action.itemId)) return run;
 
     if (run.mode === "test") {
       // Test: the last answer before submit counts; answers at or after the deadline are ignored.
@@ -431,8 +433,8 @@ export function restoreQuizRun(
     return null;
   }
   const skipped = expectedItemIds.filter((id) => rawSkipped.includes(id));
-  // Test skips are only recorded at submit.
-  if (expectedMode === "test" && skipped.length > 0 && testFields.submittedAt === null) return null;
+  const rawReasons = candidate.skippedReasons;
+  if (rawReasons !== undefined && (!rawReasons || typeof rawReasons !== "object" || Object.entries(rawReasons).some(([id, reason]) => !skipped.includes(id) || !["picture-unavailable", "picture-inaccessible"].includes(String(reason))))) return null;
 
   const completedAt = candidate.completedAt;
   if (completedAt !== null && (typeof completedAt !== "string" || Number.isNaN(Date.parse(completedAt)))) {
@@ -448,6 +450,7 @@ export function restoreQuizRun(
     outcomes,
     mode: expectedMode,
     skipped,
+    skippedReasons: rawReasons as QuizRunState["skippedReasons"],
     ...testFields,
     ...(candidate.picturePausedAt !== undefined ? { picturePausedAt: typeof candidate.picturePausedAt === "string" && !Number.isNaN(Date.parse(candidate.picturePausedAt)) ? candidate.picturePausedAt : null } : {}),
     ...(candidate.picturePausedMs !== undefined ? { picturePausedMs: typeof candidate.picturePausedMs === "number" && Number.isFinite(candidate.picturePausedMs) && candidate.picturePausedMs >= 0 ? candidate.picturePausedMs : 0 } : {}),

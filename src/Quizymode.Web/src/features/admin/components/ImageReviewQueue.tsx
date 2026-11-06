@@ -153,7 +153,7 @@ function PictureSlot({
     let cancelled = false;
     let objectUrl: string | null = null;
     adminApi
-      .fetchItemImageBlob(itemId, slot)
+      .fetchItemImageBlob(itemId, slot, image?.revision ?? 0)
       .then((data) => {
         if (cancelled) return;
         objectUrl = URL.createObjectURL(data);
@@ -166,7 +166,7 @@ function PictureSlot({
       cancelled = true;
       if (objectUrl) URL.revokeObjectURL(objectUrl);
     };
-  }, [itemId, slot, isUploaded, attempt]);
+  }, [itemId, slot, isUploaded, image?.revision, attempt]);
 
   const load: SlotLoad = isUploaded ? blob.status : "none";
   useEffect(() => {
@@ -311,6 +311,10 @@ function ImageReviewCard({
           <p className="mt-1 text-sm text-gray-500">Picture revision {revision}</p>
         </div>
 
+        <div className="text-sm text-gray-700">
+          <p>Explanation: {item.explanation}</p>
+          {item.incorrectAnswers.map((answer, index) => <p key={index}>Incorrect answer: {answer}{item.incorrectAnswerRationale?.[index] ? ` — ${item.incorrectAnswerRationale[index]}` : ""}</p>)}
+        </div>
         <PictureAdvisory itemId={item.id} revision={revision} />
         <div className="grid grid-cols-2 gap-2 sm:gap-4">
           <PictureSlot itemId={item.id} slot="question" image={item.questionImage} onLoadChange={handleSlotLoad} />

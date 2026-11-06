@@ -4847,6 +4847,61 @@
         }
       }
     },
+    "/admin/llm-model-findings": {
+      "get": {
+        "tags": [
+          "Admin"
+        ],
+        "summary": "List open LLM model findings (Admin only)",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Quizymode.Api.Features.LlmModelAudit.LlmModelAuditAdmin.FindingsResponse"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          }
+        }
+      }
+    },
+    "/admin/llm-model-audit/run": {
+      "post": {
+        "tags": [
+          "Admin"
+        ],
+        "summary": "Run the LLM model-list audit now; at most once per cooldown (Admin only)",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Quizymode.Api.Features.LlmModelAudit.LlmModelAuditAdmin.RunResponse"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "429": {
+            "description": "Too Many Requests"
+          }
+        }
+      }
+    },
     "/media/images/{id}/content": {
       "get": {
         "tags": [
@@ -4900,7 +4955,7 @@
           "Media"
         ],
         "summary": "Download an item's uploaded question or explanation picture",
-        "description": "slot is 'question' or 'explanation'. The creator and admins can read any state; everyone else, including anonymous callers, only an Approved picture of an item they can see. Everything else, including curated pictures, is 404. Responses are private and no-store.",
+        "description": "slot is 'question' or 'explanation'. The creator and admins can read any state; everyone else, including anonymous callers, only an Approved picture of an item they can see. Everything else, including curated pictures, is 404. Optional positive expectedRevision binds delivery to the current semantic revision; mismatch is 404 and invalid input is 400. Omitted query retains legacy current-slot delivery. Responses are private and no-store.",
         "parameters": [
           {
             "name": "id",
@@ -4917,6 +4972,13 @@
             "schema": {
               "$ref": "#/components/schemas/System.String"
             }
+          },
+          {
+            "name": "expectedRevision",
+            "in": "query",
+            "schema": {
+              "$ref": "#/components/schemas/System.NullableOfSystem.Int32"
+            }
           }
         ],
         "responses": {
@@ -4929,6 +4991,9 @@
                 }
               }
             }
+          },
+          "400": {
+            "description": "Bad Request"
           },
           "404": {
             "description": "Not Found"
@@ -4952,7 +5017,7 @@
           "Media"
         ],
         "summary": "Download an uploaded picture of an item through a collection that holds it",
-        "description": "Allowed when the caller can open the collection (public, share link, or owner), the item is in it, and the picture is Approved (or the caller created the item). Everything else is 404. Responses are private and no-store.",
+        "description": "Allowed when the caller can open the collection (public, share link, or owner), the item is in it, and the picture is Approved (or the caller created the item). Everything else is 404. Optional positive expectedRevision binds delivery to the current semantic revision; mismatch is 404 and invalid input is 400. Omitted query retains legacy current-slot delivery. Responses are private and no-store.",
         "parameters": [
           {
             "name": "collectionId",
@@ -4977,6 +5042,13 @@
             "schema": {
               "$ref": "#/components/schemas/System.String"
             }
+          },
+          {
+            "name": "expectedRevision",
+            "in": "query",
+            "schema": {
+              "$ref": "#/components/schemas/System.NullableOfSystem.Int32"
+            }
           }
         ],
         "responses": {
@@ -4989,6 +5061,9 @@
                 }
               }
             }
+          },
+          "400": {
+            "description": "Bad Request"
           },
           "404": {
             "description": "Not Found"
@@ -13610,6 +13685,16 @@
                 "$ref": "#/components/schemas/System.NullableOfSystem.Guid"
               }
             ]
+          },
+          "incorrectAnswerRationale": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/components/schemas/System.Collections.Generic.DictionaryOfSystem.Int32AndSystem.String"
+              }
+            ]
           }
         }
       },
@@ -13740,6 +13825,16 @@
                 "$ref": "#/components/schemas/Quizymode.Api.Shared.Helpers.ItemImageReviewInfo"
               }
             ]
+          },
+          "incorrectAnswerRationale": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/components/schemas/System.Collections.Generic.DictionaryOfSystem.Int32AndSystem.String"
+              }
+            ]
           }
         }
       },
@@ -13848,6 +13943,16 @@
           },
           "explanationImage": {
             "description": "Not supported; omit or send null. A non-null value is rejected with 400 (curated pictures are added through seed data)."
+          },
+          "incorrectAnswerRationale": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/components/schemas/System.Collections.Generic.DictionaryOfSystem.Int32AndSystem.String"
+              }
+            ]
           }
         }
       },
@@ -14052,6 +14157,16 @@
                 "$ref": "#/components/schemas/System.Collections.Generic.ListOfSystem.String"
               }
             ]
+          },
+          "incorrectAnswerRationale": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/components/schemas/System.Collections.Generic.DictionaryOfSystem.Int32AndSystem.String"
+              }
+            ]
           }
         }
       },
@@ -14227,6 +14342,16 @@
               },
               {
                 "$ref": "#/components/schemas/Quizymode.Api.Shared.Helpers.ItemImageReviewInfo"
+              }
+            ]
+          },
+          "incorrectAnswerRationale": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/components/schemas/System.Collections.Generic.DictionaryOfSystem.Int32AndSystem.String"
               }
             ]
           }
@@ -14492,6 +14617,16 @@
                 "$ref": "#/components/schemas/Quizymode.Api.Shared.Helpers.ItemImageReviewInfo"
               }
             ]
+          },
+          "incorrectAnswerRationale": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/components/schemas/System.Collections.Generic.DictionaryOfSystem.Int32AndSystem.String"
+              }
+            ]
           }
         }
       },
@@ -14570,6 +14705,16 @@
               },
               {
                 "$ref": "#/components/schemas/System.NullableOfSystem.Int64"
+              }
+            ]
+          },
+          "incorrectAnswerRationale": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/components/schemas/System.Collections.Generic.DictionaryOfSystem.Int32AndSystem.String"
               }
             ]
           }
@@ -14879,6 +15024,16 @@
                 "$ref": "#/components/schemas/Quizymode.Api.Shared.Models.ItemImageReference"
               }
             ]
+          },
+          "incorrectAnswerRationale": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/components/schemas/System.Collections.Generic.DictionaryOfSystem.Int32AndSystem.String"
+              }
+            ]
           }
         }
       },
@@ -15002,6 +15157,16 @@
                 "$ref": "#/components/schemas/Quizymode.Api.Shared.Models.ItemImageReference"
               }
             ]
+          },
+          "incorrectAnswerRationale": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/components/schemas/System.Collections.Generic.DictionaryOfSystem.Int32AndSystem.String"
+              }
+            ]
           }
         }
       },
@@ -15111,6 +15276,16 @@
               },
               {
                 "$ref": "#/components/schemas/Quizymode.Api.Shared.Models.ItemImageReference"
+              }
+            ]
+          },
+          "incorrectAnswerRationale": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/components/schemas/System.Collections.Generic.DictionaryOfSystem.Int32AndSystem.String"
               }
             ]
           }
@@ -15311,6 +15486,16 @@
                 "$ref": "#/components/schemas/System.NullableOfSystem.Int32"
               }
             ]
+          },
+          "incorrectAnswerRationale": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/components/schemas/System.Collections.Generic.DictionaryOfSystem.Int32AndSystem.String"
+              }
+            ]
           }
         }
       },
@@ -15429,6 +15614,16 @@
               },
               {
                 "$ref": "#/components/schemas/Quizymode.Api.Shared.Helpers.ItemImageReviewInfo"
+              }
+            ]
+          },
+          "incorrectAnswerRationale": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/components/schemas/System.Collections.Generic.DictionaryOfSystem.Int32AndSystem.String"
               }
             ]
           }
@@ -15654,6 +15849,67 @@
         "properties": {
           "keywords": {
             "$ref": "#/components/schemas/System.Collections.Generic.ListOfQuizymode.Api.Features.Keywords.GetKeywords.KeywordResponse"
+          }
+        }
+      },
+      "Quizymode.Api.Features.LlmModelAudit.LlmModelAuditAdmin.FindingResponse": {
+        "required": [
+          "id",
+          "vendor",
+          "model",
+          "kind",
+          "firstSeenUtc",
+          "lastSeenUtc"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "$ref": "#/components/schemas/System.Guid"
+          },
+          "vendor": {
+            "$ref": "#/components/schemas/System.String"
+          },
+          "model": {
+            "$ref": "#/components/schemas/System.String"
+          },
+          "kind": {
+            "$ref": "#/components/schemas/System.String"
+          },
+          "firstSeenUtc": {
+            "$ref": "#/components/schemas/System.DateTime"
+          },
+          "lastSeenUtc": {
+            "$ref": "#/components/schemas/System.DateTime"
+          }
+        }
+      },
+      "Quizymode.Api.Features.LlmModelAudit.LlmModelAuditAdmin.FindingsResponse": {
+        "required": [
+          "findings"
+        ],
+        "type": "object",
+        "properties": {
+          "findings": {
+            "$ref": "#/components/schemas/System.Collections.Generic.ListOfQuizymode.Api.Features.LlmModelAudit.LlmModelAuditAdmin.FindingResponse"
+          }
+        }
+      },
+      "Quizymode.Api.Features.LlmModelAudit.LlmModelAuditAdmin.RunResponse": {
+        "required": [
+          "newFindings",
+          "resolved",
+          "emailSent"
+        ],
+        "type": "object",
+        "properties": {
+          "newFindings": {
+            "$ref": "#/components/schemas/System.Int32"
+          },
+          "resolved": {
+            "$ref": "#/components/schemas/System.Int32"
+          },
+          "emailSent": {
+            "$ref": "#/components/schemas/System.Boolean"
           }
         }
       },
@@ -16607,8 +16863,19 @@
                 "$ref": "#/components/schemas/System.Collections.Generic.ListOfSystem.Guid"
               }
             ]
+          },
+          "questionStyle": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/components/schemas/System.String"
+              }
+            ]
           }
-        }
+        },
+        "description": "Question style (#368): `Recall` (default when null) or `ClinicalScenario`."
       },
       "Quizymode.Api.Features.StudyGuideDocuments.GenerateStudyGuideSections.Response": {
         "required": [
@@ -18282,6 +18549,12 @@
           "$ref": "#/components/schemas/Quizymode.Api.Shared.Models.ItemSpeechSupport"
         }
       },
+      "System.Collections.Generic.DictionaryOfSystem.Int32AndSystem.String": {
+        "type": "object",
+        "additionalProperties": {
+          "$ref": "#/components/schemas/System.String"
+        }
+      },
       "System.Collections.Generic.DictionaryOfSystem.StringAndSystem.String": {
         "type": "object",
         "additionalProperties": {
@@ -18832,6 +19105,12 @@
         "type": "array",
         "items": {
           "$ref": "#/components/schemas/Quizymode.Api.Features.Keywords.GetKeywords.KeywordResponse"
+        }
+      },
+      "System.Collections.Generic.ListOfQuizymode.Api.Features.LlmModelAudit.LlmModelAuditAdmin.FindingResponse": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/Quizymode.Api.Features.LlmModelAudit.LlmModelAuditAdmin.FindingResponse"
         }
       },
       "System.Collections.Generic.ListOfQuizymode.Api.Features.Starter.StarterPool.StarterItemResponse": {

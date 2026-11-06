@@ -30,7 +30,7 @@ internal sealed class MediaCleanupWorker(IServiceScopeFactory scopes, IOptions<M
         DateTime abandoned = now.AddDays(-options.UnattachedRetentionDays);
         DateTime withdrawn = now.AddDays(-options.WithdrawnRetentionDays);
         DateTime rejected = now.AddDays(-options.RejectedRetentionDays);
-        List<Guid> candidates = await db.MediaAssets.AsNoTracking().Where(a => (owner == null || a.OwnerUserId == owner) && a.PurgedAt == null && !db.MediaUploadClaims.Any(c => c.AssetId == a.Id && c.State == "Processing" && c.LeaseUntil > now) && (a.DeleteRetryAt == null || a.DeleteRetryAt <= now) && a.CreatedAt < abandoned && (a.DeletedAt != null || (!db.Items.Any(i => (i.QuestionImageAssetId == a.Id || i.ExplanationImageAssetId == a.Id) && i.ImageReviewState != ItemImageReviewState.Rejected) && !db.ItemImageReviews.Any(r => r.Decision == null && (r.QuestionAssetId == a.Id || r.ExplanationAssetId == a.Id) && db.Items.Any(i => i.Id == r.ItemId && i.ImageRevision == r.Revision))))).OrderBy(a => a.CreatedAt).Take(50).Select(a => a.Id).ToListAsync(ct);
+        List<Guid> candidates = await db.MediaAssets.AsNoTracking().Where(a => (owner == null || a.OwnerUserId == owner) && a.PurgedAt == null && !db.MediaUploadClaims.Any(c => c.AssetId == a.Id && c.State == "Processing" && c.LeaseUntil > now) && (a.DeleteRetryAt == null || a.DeleteRetryAt <= now) && a.CreatedAt < abandoned && (a.DeletedAt != null || (!db.Items.Any(i => (i.QuestionImageAssetId == a.Id || i.ExplanationImageAssetId == a.Id) && i.ImageReviewState != ItemImageReviewState.Rejected && i.ImageReviewState != ItemImageReviewState.Withdrawn) && !db.ItemImageReviews.Any(r => r.Decision == null && (r.QuestionAssetId == a.Id || r.ExplanationAssetId == a.Id) && db.Items.Any(i => i.Id == r.ItemId && i.ImageRevision == r.Revision && i.ImageReviewState != ItemImageReviewState.Withdrawn && (i.QuestionImageAssetId == a.Id || i.ExplanationImageAssetId == a.Id)))))).OrderBy(a => a.CreatedAt).Take(50).Select(a => a.Id).ToListAsync(ct);
         int deleted = 0;
         foreach (Guid id in candidates)
         {
@@ -40,10 +40,17 @@ internal sealed class MediaCleanupWorker(IServiceScopeFactory scopes, IOptions<M
                 asset = await db.MediaAssets.SingleOrDefaultAsync(a => a.Id == id && a.PurgedAt == null, ct);
                 if (asset is null || await db.MediaUploadClaims.AnyAsync(c => c.AssetId == id && c.State == "Processing" && c.LeaseUntil > now, ct)) continue;
                 List<Item> references = await db.Items.Where(i => i.QuestionImageAssetId == id || i.ExplanationImageAssetId == id).ToListAsync(ct);
-                bool noLiveReferences = references.Count == 0 && !await db.ItemImageReviews.AnyAsync(r => r.Decision == null && (r.QuestionAssetId == id || r.ExplanationAssetId == id), ct);
-                bool expiredRejected = references.Count > 0 && references.All(i => i.ImageReviewState == ItemImageReviewState.Rejected) && !await db.ItemImageReviews.AnyAsync(r => (r.QuestionAssetId == id || r.ExplanationAssetId == id) && (r.DecidedAt == null || r.DecidedAt > rejected) && r.Decision != "Superseded", ct);
-                if (asset.DeletedAt is not null ? asset.DeleteAttempts == 0 && asset.DeletedAt > withdrawn : !noLiveReferences && !expiredRejected) continue;
-                if (expiredRejected) await MediaRevocation.ApplyAsync(db, asset, "media-retention", "Expired rejected picture", now, ct);
+                bool currentUndecided = await db.ItemImageReviews.AnyAsync(r => r.Decision == null && (r.QuestionAssetId == id || r.ExplanationAssetId == id) && db.Items.Any(i => i.Id == r.ItemId && i.ImageRevision == r.Revision && i.ImageReviewState != ItemImageReviewState.Withdrawn && (i.QuestionImageAssetId == id || i.ExplanationImageAssetId == id)), ct);
+                bool liveReferences = references.Any(i => i.ImageReviewState != ItemImageReviewState.Rejected && i.ImageReviewState != ItemImageReviewState.Withdrawn);
+                bool rejectedDue = true;
+                foreach (Item reference in references.Where(i => i.ImageReviewState == ItemImageReviewState.Rejected))
+                {
+                    // Only this current rejected submission determines its clock; withdrawal audits of siblings do not.
+                    if (!await db.ItemImageReviews.AnyAsync(r => r.ItemId == reference.Id && r.Revision == reference.ImageRevision && r.Decision == "Rejected" && r.DecidedAt != null && r.DecidedAt <= rejected && (r.QuestionAssetId == id || r.ExplanationAssetId == id), ct)) rejectedDue = false;
+                }
+                bool eligible = !currentUndecided && !liveReferences && rejectedDue;
+                if (asset.DeletedAt is not null ? asset.DeleteAttempts == 0 && asset.DeletedAt > withdrawn : !eligible) continue;
+                if (references.Any(i => i.ImageReviewState == ItemImageReviewState.Rejected)) await MediaRevocation.ApplyAsync(db, asset, "media-retention", "Expired rejected picture", now, ct);
                 asset.DeletedAt ??= now; asset.DeleteAttempts++;
                 // Commit the revocation BEFORE any destructive storage operation. Attach/approval share this lock.
                 await db.SaveChangesAsync(ct); if (transaction is not null) await transaction.CommitAsync(ct);
@@ -94,6 +101,7 @@ internal sealed class MediaCleanupWorker(IServiceScopeFactory scopes, IOptions<M
         }
         await db.MediaUploadClaims.Where(x => (owner == null || x.OwnerUserId == owner) && x.CreatedAt < now.AddDays(-30) && (x.State != "Processing" || x.LeaseUntil < now)).ExecuteDeleteAsync(ct);
         await db.MediaUploadAttempts.Where(x => (owner == null || x.OwnerUserId == owner) && x.CreatedAt < now.AddDays(-30)).ExecuteDeleteAsync(ct);
+        await db.MediaIngressAttempts.Where(x => (owner == null || x.OwnerUserId == owner) && x.CreatedAt < now.AddDays(-30) && (x.CompletedAt != null || x.LeaseUntil < now)).ExecuteDeleteAsync(ct);
         if (owner is null) await db.MediaReports.Where(x => x.CreatedAt < now.AddDays(-30)).ExecuteDeleteAsync(ct);
         await db.SaveChangesAsync(ct);
         return deleted;

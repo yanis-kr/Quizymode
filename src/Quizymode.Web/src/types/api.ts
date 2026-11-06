@@ -76,6 +76,8 @@ export interface ItemResponse {
   correctAnswerSpeech?: ItemSpeechSupport | null;
   incorrectAnswers: string[];
   incorrectAnswerSpeech?: Record<number, ItemSpeechSupport> | null;
+  /** Optional short "why wrong" text per incorrect answer index, max 200 chars (#367). */
+  incorrectAnswerRationale?: Record<number, string> | null;
   explanation: string;
   createdAt: string;
   createdBy?: string | null;
@@ -224,6 +226,8 @@ export interface CreateItemRequest {
   correctAnswerSpeech?: ItemSpeechSupport | null;
   incorrectAnswers: string[];
   incorrectAnswerSpeech?: Record<number, ItemSpeechSupport> | null;
+  /** Optional short "why wrong" text per incorrect answer index, max 200 chars (#367). */
+  incorrectAnswerRationale?: Record<number, string> | null;
   explanation: string;
   keywords?: KeywordRequest[];
   source?: string;
@@ -246,6 +250,7 @@ export interface UpdateItemRequest {
   correctAnswerSpeech?: ItemSpeechSupport | null;
   incorrectAnswers?: string[];
   incorrectAnswerSpeech?: Record<number, ItemSpeechSupport> | null;
+  incorrectAnswerRationale?: Record<number, string> | null;
   explanation?: string;
   keywords?: KeywordRequest[];
   source?: string;

@@ -966,6 +966,9 @@ public sealed class ItemImageReviewHttpTests : ItemTestFixture, IAsyncLifetime
             body.Should().BeEmpty();
             response.Content.Headers.ContentType.Should().BeNull();
         }
+        using HttpResponseMessage snapshot = await SendRawAsync(HttpMethod.Get, $"/items/{item.Id}/images/question?expectedRevision={item.ImageRevision}", token: TokenOf(caller));
+        snapshot.StatusCode.Should().Be(allowed ? HttpStatusCode.OK : HttpStatusCode.NotFound, "positive snapshot binding must preserve the exact route authorization");
+
     }
 
     [Theory]
@@ -986,6 +989,9 @@ public sealed class ItemImageReviewHttpTests : ItemTestFixture, IAsyncLifetime
         using HttpResponseMessage response = await SendRawAsync(HttpMethod.Get, $"/items/{item.Id}/images/question", token: TokenOf(caller));
 
         response.StatusCode.Should().Be(allowed ? HttpStatusCode.OK : HttpStatusCode.NotFound);
+        using HttpResponseMessage snapshot = await SendRawAsync(HttpMethod.Get, $"/items/{item.Id}/images/question?expectedRevision={item.ImageRevision}", token: TokenOf(caller));
+        snapshot.StatusCode.Should().Be(allowed ? HttpStatusCode.OK : HttpStatusCode.NotFound, "positive snapshot binding must preserve the exact route authorization");
+
     }
 
     [Theory]
@@ -1094,6 +1100,9 @@ public sealed class ItemImageReviewHttpTests : ItemTestFixture, IAsyncLifetime
         {
             (await response.Content.ReadAsByteArrayAsync()).Should().BeEmpty();
         }
+        using HttpResponseMessage snapshot = await SendRawAsync(HttpMethod.Get, $"/collections/{collection.Id}/items/{item.Id}/images/question?expectedRevision={item.ImageRevision}", token: TokenOf(caller));
+        snapshot.StatusCode.Should().Be(allowed ? HttpStatusCode.OK : HttpStatusCode.NotFound, "positive snapshot binding must preserve the exact route authorization");
+
     }
 
     [Fact]
@@ -1429,4 +1438,46 @@ public sealed class ItemImageReviewHttpTests : ItemTestFixture, IAsyncLifetime
         (await SendAsync(HttpMethod.Post, "/items", body.Replace("Which flag?", "Different content?"), OwnerToken)).Status.Should().Be(HttpStatusCode.Conflict);
     }
 
+
+    [Theory]
+    [InlineData(false)]
+    [InlineData(true)]
+    public async Task SnapshotDeliveryNeverSubstitutesLaterApprovedRevision(bool replacement)
+    {
+        MediaAsset first = await AssetAsync(), second = replacement ? await AssetAsync() : first;
+        Guid id = await CreateAsync(Body(questionImage: Pic(first)));
+        await DecideAsync(id, "approve", 1);
+        Collection collection = VisibilitySeed.AddCollection(DbContext, Owner, true);
+        Item existing = await DbContext.Items.SingleAsync(x => x.Id == id);
+        VisibilitySeed.Link(DbContext, collection, existing); await DbContext.SaveChangesAsync();
+        string direct = $"/items/{id}/images/question", contextual = $"/collections/{collection.Id}/items/{id}/images/question";
+        foreach (string route in new[] { direct, contextual })
+            (await SendRawAsync(HttpMethod.Get, route + "?expectedRevision=1", token: OwnerToken)).StatusCode.Should().Be(HttpStatusCode.OK);
+        var edited = await SendAsync(HttpMethod.Put, $"/items/{id}", Body(question: "New context?", questionImage: Pic(second)), OwnerToken);
+        edited.Status.Should().Be(HttpStatusCode.OK, edited.Body);
+        await DecideAsync(id, "approve", 2);
+        foreach (string route in new[] { direct, contextual })
+        {
+            (await SendRawAsync(HttpMethod.Get, route + "?expectedRevision=1", token: OwnerToken)).StatusCode.Should().Be(HttpStatusCode.NotFound);
+            (await SendRawAsync(HttpMethod.Get, route + "?expectedRevision=1", token: AdminToken)).StatusCode.Should().Be(HttpStatusCode.NotFound);
+            (await SendRawAsync(HttpMethod.Get, route + "?expectedRevision=2", token: OwnerToken)).StatusCode.Should().Be(HttpStatusCode.OK);
+            (await SendRawAsync(HttpMethod.Get, route, token: OwnerToken)).StatusCode.Should().Be(HttpStatusCode.OK, "legacy omitted revision remains explicit current GET");
+            foreach (string invalid in new[] { "0", "-1", "bad", "" })
+                (await SendRawAsync(HttpMethod.Get, route + "?expectedRevision=" + invalid, token: OwnerToken)).StatusCode.Should().Be(HttpStatusCode.BadRequest);
+        }
+    }
+
+    [Fact]
+    public async Task RationaleEditResubmitsPictureButUnchangedRationaleMetadataEditDoesNot()
+    {
+        MediaAsset asset = await AssetAsync();
+        Guid id = await CreateAsync(Body(questionImage: Pic(asset), extra: ",\"incorrectAnswerRationale\":{\"0\":\"A different country\"}"));
+        await DecideAsync(id, "approve", 1);
+        var same = await SendAsync(HttpMethod.Put, $"/items/{id}", Body(questionImage: Pic(asset), extra: ",\"incorrectAnswerRationale\":{\"0\":\"A different country\"},\"source\":\"metadata only\""), OwnerToken);
+        same.Status.Should().Be(HttpStatusCode.OK, same.Body);
+        (await ItemAsync(id)).ImageRevision.Should().Be(1);
+        var changed = await SendAsync(HttpMethod.Put, $"/items/{id}", Body(questionImage: Pic(asset), extra: ",\"incorrectAnswerRationale\":{\"0\":\"Revised reasoning\"}"), OwnerToken);
+        changed.Status.Should().Be(HttpStatusCode.OK, changed.Body);
+        Item saved = await ItemAsync(id); saved.ImageRevision.Should().Be(2); saved.ImageReviewState.Should().Be(ItemImageReviewState.PendingReview);
+    }
 }
