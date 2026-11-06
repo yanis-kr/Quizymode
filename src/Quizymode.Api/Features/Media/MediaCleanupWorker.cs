@@ -30,7 +30,18 @@ internal sealed class MediaCleanupWorker(IServiceScopeFactory scopes, IOptions<M
         DateTime abandoned = now.AddDays(-options.UnattachedRetentionDays);
         DateTime withdrawn = now.AddDays(-options.WithdrawnRetentionDays);
         DateTime rejected = now.AddDays(-options.RejectedRetentionDays);
-        List<Guid> candidates = await db.MediaAssets.AsNoTracking().Where(a => (owner == null || a.OwnerUserId == owner) && a.PurgedAt == null && !db.MediaUploadClaims.Any(c => c.AssetId == a.Id && c.State == "Processing" && c.LeaseUntil > now) && (a.DeleteRetryAt == null || a.DeleteRetryAt <= now) && a.CreatedAt < abandoned && (a.DeletedAt != null || (!db.Items.Any(i => (i.QuestionImageAssetId == a.Id || i.ExplanationImageAssetId == a.Id) && i.ImageReviewState != ItemImageReviewState.Rejected && i.ImageReviewState != ItemImageReviewState.Withdrawn) && !db.ItemImageReviews.Any(r => r.Decision == null && (r.QuestionAssetId == a.Id || r.ExplanationAssetId == a.Id) && db.Items.Any(i => i.Id == r.ItemId && i.ImageRevision == r.Revision && i.ImageReviewState != ItemImageReviewState.Withdrawn && (i.QuestionImageAssetId == a.Id || i.ExplanationImageAssetId == a.Id)))))).OrderBy(a => a.CreatedAt).Take(50).Select(a => a.Id).ToListAsync(ct);
+        List<Guid> candidates = await db.MediaAssets.AsNoTracking()
+            .Where(a => (owner == null || a.OwnerUserId == owner) && a.PurgedAt == null
+                && !db.MediaUploadClaims.Any(c => c.AssetId == a.Id && c.State == "Processing" && c.LeaseUntil > now)
+                && (a.DeleteRetryAt == null || a.DeleteRetryAt <= now) && a.CreatedAt < abandoned
+                && (a.DeletedAt != null
+                    ? a.DeleteAttempts > 0 || a.DeletedAt <= withdrawn
+                    : !db.Items.Any(i => (i.QuestionImageAssetId == a.Id || i.ExplanationImageAssetId == a.Id) && i.ImageReviewState != ItemImageReviewState.Rejected && i.ImageReviewState != ItemImageReviewState.Withdrawn)
+                        && !db.ItemImageReviews.Any(r => r.Decision == null && (r.QuestionAssetId == a.Id || r.ExplanationAssetId == a.Id) && db.Items.Any(i => i.Id == r.ItemId && i.ImageRevision == r.Revision && i.ImageReviewState != ItemImageReviewState.Withdrawn && (i.QuestionImageAssetId == a.Id || i.ExplanationImageAssetId == a.Id)))
+                        && !db.Items.Any(i => (i.QuestionImageAssetId == a.Id || i.ExplanationImageAssetId == a.Id) && i.ImageReviewState == ItemImageReviewState.Rejected
+                            && !db.ItemImageReviews.Any(r => r.ItemId == i.Id && r.Revision == i.ImageRevision && r.Decision == "Rejected" && r.DecidedAt != null && r.DecidedAt <= rejected && (r.QuestionAssetId == a.Id || r.ExplanationAssetId == a.Id)))))
+            // Apply due-proof before the batch bound; protected rows must not starve later eligible assets.
+            .OrderBy(a => a.CreatedAt).Take(50).Select(a => a.Id).ToListAsync(ct);
         int deleted = 0;
         foreach (Guid id in candidates)
         {

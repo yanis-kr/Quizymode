@@ -214,4 +214,52 @@ public sealed class MediaLifecycleTests : DatabaseTestFixture
         (await MediaCleanupWorker.RunOnceAsync(restarted, store, new MediaOptions { CleanupOwnerUserId = "owner" }, now.AddDays(7), CancellationToken.None)).Should().Be(1);
         (await restarted.MediaAssets.SingleAsync(x => x.Id == withdrawn.Id)).DeletedAt.Should().Be(original); deletes.Should().Be(2);
     }
+
+    [Theory]
+    [InlineData("missing-current-decision")]
+    [InlineData("recent-current-rejection")]
+    [InlineData("young-direct-tombstone")]
+    public async Task DueCandidatesBeyondFiftyBlockedRowsArePurgedAcrossRestart(string blockedKind)
+    {
+        DateTime now = DateTime.UtcNow;
+        var category = VisibilitySeed.AddCategory(DbContext);
+        FakeMediaObjectStore store = new();
+        List<Guid> blockedIds = [];
+        for (int index = 0; index < 50; index++)
+        {
+            MediaAsset asset = PictureSeed.AddAsset(DbContext, "owner"); asset.CreatedAt = now.AddDays(-12);
+            blockedIds.Add(asset.Id); store.Objects[asset.ObjectKey!] = [1];
+            if (blockedKind == "young-direct-tombstone") asset.DeletedAt = now.AddDays(-1);
+            else
+            {
+                Item item = PictureSeed.AddPictureItem(DbContext, category, "owner", true, ItemImageReviewState.Rejected, asset);
+                ItemImageReview review = DbContext.ItemImageReviews.Local.Single(x => x.ItemId == item.Id);
+                if (blockedKind == "missing-current-decision") DbContext.ItemImageReviews.Remove(review);
+                else review.DecidedAt = now.AddDays(-1);
+            }
+        }
+        List<Guid> protectedIds = [];
+        foreach (ItemImageReviewState state in new[] { ItemImageReviewState.Approved, ItemImageReviewState.PendingReview })
+        {
+            MediaAsset asset = PictureSeed.AddAsset(DbContext, "owner"); asset.CreatedAt = now.AddDays(-13); protectedIds.Add(asset.Id); store.Objects[asset.ObjectKey!] = [2];
+            PictureSeed.AddPictureItem(DbContext, category, "another-owner", true, state, asset);
+        }
+        MediaAsset foreign = PictureSeed.AddAsset(DbContext, "another-owner"); foreign.CreatedAt = now.AddDays(-13); protectedIds.Add(foreign.Id); store.Objects[foreign.ObjectKey!] = [3];
+        MediaAsset due = PictureSeed.AddAsset(DbContext, "owner"); due.CreatedAt = now.AddDays(-9); store.Objects[due.ObjectKey!] = [4];
+        MediaAsset dueWithdrawal = PictureSeed.AddAsset(DbContext, "owner"); dueWithdrawal.CreatedAt = now.AddDays(-8); dueWithdrawal.DeletedAt = now.AddDays(-8); store.Objects[dueWithdrawal.ObjectKey!] = [5];
+        await DbContext.SaveChangesAsync();
+        var audits = await DbContext.ItemImageReviews.AsNoTracking().OrderBy(x => x.Id).Select(x => new { x.Id, x.ItemId, x.Revision, x.Decision, x.DecidedAt }).ToListAsync();
+        MediaOptions options = new() { CleanupOwnerUserId = "owner" };
+        (await MediaCleanupWorker.RunOnceAsync(DbContext, store, options, now, CancellationToken.None)).Should().Be(2, "blocked rows must not fill the fifty-row batch");
+        store.Objects.Should().NotContainKey(due.ObjectKey!).And.NotContainKey(dueWithdrawal.ObjectKey!);
+        await using var restarted = CreateDbContext();
+        MediaAsset nextDue = PictureSeed.AddAsset(restarted, "owner"); nextDue.CreatedAt = now.AddDays(-8); store.Objects[nextDue.ObjectKey!] = [6]; await restarted.SaveChangesAsync();
+        (await MediaCleanupWorker.RunOnceAsync(restarted, store, options, now.AddMinutes(1), CancellationToken.None)).Should().Be(1);
+        store.Objects.Should().NotContainKey(nextDue.ObjectKey!);
+        (await restarted.MediaAssets.AsNoTracking().Where(x => blockedIds.Contains(x.Id)).ToListAsync()).Should().HaveCount(50).And.OnlyContain(x => x.PurgedAt == null && x.DeleteAttempts == 0 && x.State == MediaAssetState.Ready && (blockedKind == "young-direct-tombstone" ? x.DeletedAt == now.AddDays(-1) : x.DeletedAt == null));
+        (await restarted.MediaAssets.CountAsync(x => protectedIds.Contains(x.Id) && x.PurgedAt == null && x.DeletedAt == null)).Should().Be(3);
+        (await restarted.ItemImageReviews.AsNoTracking().OrderBy(x => x.Id).Select(x => new { x.Id, x.ItemId, x.Revision, x.Decision, x.DecidedAt }).ToListAsync()).Should().BeEquivalentTo(audits);
+        if (blockedKind != "young-direct-tombstone") (await restarted.Items.CountAsync(x => x.QuestionImageAssetId != null && blockedIds.Contains(x.QuestionImageAssetId.Value) && x.ImageReviewState == ItemImageReviewState.Rejected && x.ImageRevision == 1)).Should().Be(50);
+        foreach (MediaAsset asset in await restarted.MediaAssets.Where(x => blockedIds.Contains(x.Id) || protectedIds.Contains(x.Id)).ToListAsync()) store.Objects.Should().ContainKey(asset.ObjectKey!);
+    }
 }
