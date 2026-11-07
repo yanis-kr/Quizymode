@@ -22,7 +22,7 @@ const INDIGO_DARK = { 50: "sky-950", 100: "sky-900", 200: "sky-800", 300: "sky-7
   600: "oklch(55% 0.15 242)", 700: "sky-700", 800: "sky-800", 900: "sky-900", 950: "sky-950" };
 
 function raw(family, shade) {
-  const match = themeCss.match(new RegExp(`--color-${family}-${shade}:\s*([^;]+);`));
+  const match = themeCss.match(new RegExp(`--color-${family}-${shade}:\\s*([^;]+);`));
   if (!match) throw new Error(`Missing --color-${family}-${shade}`);
   return match[1].trim();
 }
