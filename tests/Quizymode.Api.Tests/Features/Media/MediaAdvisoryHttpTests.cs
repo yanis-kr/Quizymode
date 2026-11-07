@@ -121,6 +121,33 @@ public sealed class MediaAdvisoryHttpTests : DatabaseTestFixture
     }
 
     [Fact]
+    public async Task CallBudgetExhaustion_Returns429WithoutDispatch_AndLeavesTheItemPending()
+    {
+        Item firstItem = await SeedPendingAsync(); Item secondItem = await SeedPendingAsync();
+        MediaAdvisoryOptions options = Enabled(); options.DailyCallBudget = 1; options.OwnerDailyCallBudget = 1;
+        ProviderHandler provider = new(); await using Scenario s = await StartAsync(options, provider);
+        using HttpResponseMessage first = await PostAsync(s, firstItem.Id, s.AdminToken); first.StatusCode.Should().Be(HttpStatusCode.OK);
+        using HttpResponseMessage exhausted = await PostAsync(s, secondItem.Id, s.AdminToken);
+        exhausted.StatusCode.Should().Be((HttpStatusCode)429);
+        (await JsonAsync(exhausted)).GetProperty("title").GetString().Should().Be("Media.AdvisoryBudget");
+        provider.Calls.Should().Be(1); (await DbContext.MediaAdvisoryJobs.CountAsync()).Should().Be(1);
+        await AssertStillPendingAsync(firstItem.Id); await AssertStillPendingAsync(secondItem.Id);
+    }
+
+    [Theory]
+    [InlineData(HttpStatusCode.InternalServerError)]
+    [InlineData(HttpStatusCode.TooManyRequests)]
+    [InlineData(HttpStatusCode.BadGateway)]
+    public async Task ProviderOutage_MarksTheJobUnavailable_AndTheItemStaysPendingForManualReview(HttpStatusCode status)
+    {
+        Item item = await SeedPendingAsync(); ProviderHandler provider = new() { Status = status };
+        await using Scenario s = await StartAsync(Enabled(), provider);
+        using HttpResponseMessage response = await PostAsync(s, item.Id, s.AdminToken); response.StatusCode.Should().Be(HttpStatusCode.OK);
+        JsonElement job = await JsonAsync(response); job.GetProperty("state").GetString().Should().Be("Unavailable"); job.GetProperty("resultJson").ValueKind.Should().Be(JsonValueKind.Null);
+        provider.Calls.Should().Be(1); await AssertStillPendingAsync(item.Id);
+    }
+
+    [Fact]
     public async Task RevisionChangedDuringProviderCallMakesResultStaleAndRefreshCannotExposeIt()
     {
         Item item = await SeedPendingAsync();

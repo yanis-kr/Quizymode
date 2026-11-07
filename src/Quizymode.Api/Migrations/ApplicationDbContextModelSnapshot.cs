@@ -1211,7 +1211,7 @@ namespace Quizymode.Api.Migrations
 
                             t.HasCheckConstraint("CK_Items_ExplanationImage_Asset", "(\"ExplanationImageAssetId\" IS NOT NULL AND \"ExplanationImageKey\" = 'media:' || replace(\"ExplanationImageAssetId\"::text, '-', '')) OR (\"ExplanationImageAssetId\" IS NULL AND (\"ExplanationImageKey\" IS NULL OR \"ExplanationImageKey\" NOT LIKE 'media:%'))");
 
-                            t.HasCheckConstraint("CK_Items_ImageReviewState", "\"ImageReviewState\" IS NULL OR \"ImageReviewState\" IN ('PendingReview', 'Approved', 'Rejected', 'Withdrawn')");
+                            t.HasCheckConstraint("CK_Items_ImageReviewState", "\"ImageReviewState\" IS NULL OR \"ImageReviewState\" IN ('PendingReview', 'Approved', 'Rejected', 'Withdrawn', 'Processing', 'Failed')");
 
                             t.HasCheckConstraint("CK_Items_ImageReviewState_Assets", "(\"ImageReviewState\" IS NULL) = (\"QuestionImageAssetId\" IS NULL AND \"ExplanationImageAssetId\" IS NULL)");
 

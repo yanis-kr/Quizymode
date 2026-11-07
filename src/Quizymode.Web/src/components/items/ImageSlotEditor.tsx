@@ -37,7 +37,7 @@ export function ImageSlotEditor({ label, value, onChange, onBusy }: Props) {
     <legend>{label} (optional)</legend>
     <p className="text-xs text-gray-600">JPEG, PNG or still WebP, up to 2 MiB. We optimize pictures and remove metadata. Do not include student or personal information. <a href="https://github.com/yanis-kr/Quizymode/blob/main/docs/picture-policy.md" className="underline">Picture policy</a></p>
     <label className="block text-sm"><input type="checkbox" checked={rights} onChange={e => setRights(e.target.checked)} /> I own this picture or have permission to use it.</label>
-    <label htmlFor={`${id}-file`} className="block text-sm">Choose or replace {label.toLowerCase()}</label>
+    <label htmlFor={`${id}-file`} className="block text-sm">{value?.assetId && !value.remove ? "Replace" : "Add picture"}<span className="sr-only"> ({label.toLowerCase()})</span></label>
     <input ref={picker} id={`${id}-file`} type="file" accept="image/jpeg,image/png,image/webp" disabled={!rights || busy} onChange={e => {
       const file = e.target.files?.[0]; e.target.value = "";
       if (!file) return;
@@ -48,7 +48,8 @@ export function ImageSlotEditor({ label, value, onChange, onBusy }: Props) {
     {preview && value?.assetId && <img src={preview} alt="Optimized picture preview" className="max-h-48 w-full bg-slate-100 object-contain" />}
     {value?.assetId && !value.remove && <>
       <label className="block text-sm" htmlFor={`${id}-alt`}>Short description (required, avoid answer hints)</label>
-      <input id={`${id}-alt`} required maxLength={300} value={value.altText ?? ""} onChange={e => onChange({ ...value, altText: e.target.value })} className="w-full rounded border p-2" />
+      <p id={`${id}-alt-help`} className="text-xs text-gray-600">Describe the visible evidence, such as colors, pattern and labels, without giving the answer. Do not name the country or the thing being identified.</p>
+      <input id={`${id}-alt`} aria-describedby={`${id}-alt-help`} required maxLength={300} value={value.altText ?? ""} onChange={e => onChange({ ...value, altText: e.target.value })} className="w-full rounded border p-2" />
       <label className="block text-sm" htmlFor={`${id}-long`}>Long description (optional, up to 2000 characters)</label>
       <textarea id={`${id}-long`} maxLength={2000} value={value.longDescription ?? ""} onChange={e => onChange({ ...value, longDescription: e.target.value })} className="w-full rounded border p-2" />
       <label className="block text-sm" htmlFor={`${id}-credit`}>Attribution (optional)</label>

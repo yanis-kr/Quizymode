@@ -42,6 +42,9 @@ internal static class MediaAdmission
         int reserved = await db.MediaUploadClaims.CountAsync(x => x.Id != id && x.OwnerUserId == owner && x.State == "Processing" && x.LeaseUntil > now, ct);
         if (hourly >= options.MaxUploadsPerHour || daily >= options.MaxUploadsPerDay || pending >= options.MaxPendingReviewItems || retained + (reserved + 1L) * options.MaxOutputBytes > options.MaxRetainedBytes)
             return (null, Results.Problem(statusCode: 429, title: pending >= options.MaxPendingReviewItems ? "Media.PendingReviewQuota" : retained + (reserved + 1L) * options.MaxOutputBytes > options.MaxRetainedBytes ? "Media.StorageQuota" : "Media.UploadQuota", detail: "Picture allowance reached. Resolve pending reviews or remove unused pictures, or retry after the upload window resets."));
+        // Global daily ceiling (AC 3.28.2); counted under the same advisory lock that commits this attempt, so concurrent requests cannot overshoot it.
+        if (await db.MediaUploadAttempts.CountAsync(x => x.CreatedAt > now.AddDays(-1), ct) >= options.MaxUploadsGlobalPerDay)
+            return (null, MediaErrors.GlobalCeiling.ToResult());
         long globalBytes = await db.MediaAssets.Where(x => x.PurgedAt == null).SumAsync(x => (long)x.Bytes, ct);
         int globalReserved = await db.MediaUploadClaims.CountAsync(x => x.Id != id && x.State == "Processing" && x.LeaseUntil > now, ct);
         if (globalReserved >= options.MaxGlobalUploads) return (null, Results.Problem(statusCode: 429, title: "Media.GlobalBusy", detail: "Picture processing is busy. Retry shortly."));

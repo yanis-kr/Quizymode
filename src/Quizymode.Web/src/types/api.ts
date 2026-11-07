@@ -45,7 +45,7 @@ export interface ItemImageReference {
   attribution?: string | null;
 }
 
-export type ImageReviewState = "PendingReview" | "Approved" | "Rejected" | "Withdrawn";
+export type ImageReviewState = "PendingReview" | "Approved" | "Rejected" | "Withdrawn" | "Processing" | "Failed";
 
 /** Picture review state of an item (AC 3.25.2, 3.26.5); returned to the creator and admins only. */
 export interface ItemImageReviewInfo {

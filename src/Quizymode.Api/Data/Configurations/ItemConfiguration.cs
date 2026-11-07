@@ -238,7 +238,7 @@ internal sealed class ItemConfiguration : IEntityTypeConfiguration<Item>
 
         builder.ToTable(t => t.HasCheckConstraint(
             "CK_Items_ImageReviewState",
-            "\"ImageReviewState\" IS NULL OR \"ImageReviewState\" IN ('PendingReview', 'Approved', 'Rejected', 'Withdrawn')"));
+            "\"ImageReviewState\" IS NULL OR \"ImageReviewState\" IN ('PendingReview', 'Approved', 'Rejected', 'Withdrawn', 'Processing', 'Failed')"));
 
         // A review state exists exactly when at least one picture slot holds an upload (#400)
         builder.ToTable(t => t.HasCheckConstraint(

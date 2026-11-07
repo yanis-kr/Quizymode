@@ -392,6 +392,26 @@ public sealed class ItemImageReviewHttpTests : ItemTestFixture, IAsyncLifetime
     }
 
     [Fact]
+    public async Task Duplicate_AnotherUsersPrivateHash_DoesNotRevealExistence()
+    {
+        string sha = PictureSeed.Sha('e');
+        MediaAsset owners = await AssetAsync(sha: sha);
+        await CreateAsync(Body(isPrivate: true, questionImage: Pic(owners)));
+        MediaAsset sameBytes = await AssetAsync(owner: _otherId.ToString(), sha: sha);
+        MediaAsset differentBytes = await AssetAsync(owner: _otherId.ToString());
+
+        (HttpStatusCode collides, string collidesBody) = await SendAsync(
+            HttpMethod.Post, "/items", Body(isPrivate: true, questionImage: Pic(sameBytes)), OtherToken);
+        (HttpStatusCode control, string controlBody) = await SendAsync(
+            HttpMethod.Post, "/items", Body(question: "Which other flag?", isPrivate: true, questionImage: Pic(differentBytes)), OtherToken);
+
+        collides.Should().Be(HttpStatusCode.Created, collidesBody);
+        control.Should().Be(collides, "the same response as a picture nobody else has");
+        collidesBody.Should().NotContain("Duplicate");
+        controlBody.Should().NotContain("Duplicate");
+    }
+
+    [Fact]
     public async Task Duplicate_ExplanationPictureIsNotPartOfTheIdentity()
     {
         string sha = PictureSeed.Sha('e');
@@ -1270,6 +1290,7 @@ public sealed class ItemImageReviewHttpTests : ItemTestFixture, IAsyncLifetime
         exported.Select(e => e.GetProperty("question").GetString()).Should().NotContain(pending.Question);
         JsonElement picture = exported.Single(e => e.GetProperty("question").GetString() == approved.Question);
         picture.GetProperty("questionImage").ValueKind.Should().Be(JsonValueKind.Null);
+        picture.GetProperty("omittedPictures").EnumerateArray().Should().NotBeEmpty("AC 3.27.4 lists foreign picture loss in the omittedPictures manifest");
         exported.Single(e => e.GetProperty("question").GetString() == "Curated?").GetProperty("questionImage").GetProperty("key").GetString()
             .Should().Be("curated:flags/fr");
         body.Should().NotContain("media:");

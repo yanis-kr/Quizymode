@@ -162,14 +162,6 @@ public static class UploadImage
             return MediaErrors.Disabled.ToResult();
         }
 
-        MediaProblem? quotaProblem = await MediaQuota.CheckBeforeUploadAsync(
-            db, userId, options, timeProvider.GetUtcNow().UtcDateTime, cancellationToken);
-        if (quotaProblem is not null)
-        {
-            logger.LogInformation("Media upload refused: Code={Code}", quotaProblem.Code);
-            return quotaProblem.ToResult();
-        }
-
         Stopwatch clock = Stopwatch.StartNew();
         (MediaIngressAttempt? ingress, IResult? ingressError) = await MediaIngress.ReserveAsync(db, userId, options, timeProvider.GetUtcNow().UtcDateTime, cancellationToken);
         if (ingressError is not null) return ingressError;
@@ -242,14 +234,6 @@ public static class UploadImage
         if (previousAttempt is not null) { db.MediaAssets.Remove(previousAttempt); await db.SaveChangesAsync(cancellationToken); }
         db.MediaAssets.Add(asset);
         await db.SaveChangesAsync(cancellationToken);
-
-        MediaProblem? raceProblem = await MediaQuota.CheckAfterInsertAsync(db, asset, options, CancellationToken.None);
-        if (raceProblem is not null)
-        {
-            await db.MediaAssets.Where(x => x.Id == asset.Id).ExecuteDeleteAsync(CancellationToken.None);
-            logger.LogInformation("Media upload refused after insert: Code={Code}", raceProblem.Code);
-            return raceProblem.ToResult();
-        }
 
         // From here the row exists, so the outcome (Ready or Failed) is always recorded, even if the client disconnects.
         string key = MediaObjectKey.Build(asset.Id, image.Sha256);

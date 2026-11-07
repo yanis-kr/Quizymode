@@ -9,6 +9,7 @@ import { Navigate } from "react-router-dom";
 import LoadingSpinner from "@/components/LoadingSpinner";
 import ErrorMessage from "@/components/ErrorMessage";
 import { ItemForm, type ItemFormValues } from "@/components/items/ItemForm";
+import { ConfirmDialog } from "@/components/items/ConfirmDialog";
 import { type TopicScopeFieldsHandle } from "@/components/items/ItemTopicScopeFields";
 import { isTopicComplete, TOPIC_REQUIRED_MESSAGE } from "@/features/topics/topicScope";
 import { useTaxonomy } from "@/features/topics/useTaxonomy";
@@ -87,6 +88,7 @@ const EditItemPage = () => {
   const [topicBlocked, setTopicBlocked] = useState(false);
   const topicScopeRef = useRef<TopicScopeFieldsHandle>(null);
   const [savedAsPrivate, setSavedAsPrivate] = useState(false);
+  const [pendingReviewSave, setPendingReviewSave] = useState<Record<string, unknown> | null>(null);
   // #290: the server sends a non-admin owner's edit of a public item back to private (re-review).
   const willBecomePrivate = !isAdmin && itemData?.isPrivate === false;
 
@@ -221,7 +223,10 @@ const EditItemPage = () => {
 
     const uploaded = itemData?.questionImage?.key.startsWith("media:") || itemData?.explanationImage?.key.startsWith("media:");
     const relevantChange = itemData && (JSON.stringify(data.incorrectAnswerRationale ?? {}) !== JSON.stringify(itemData.incorrectAnswerRationale ?? {}) || data.question !== itemData.question || data.correctAnswer !== itemData.correctAnswer || JSON.stringify(data.incorrectAnswers) !== JSON.stringify(itemData.incorrectAnswers) || data.explanation !== (itemData.explanation ?? "") || JSON.stringify(data.questionSpeech ?? null) !== JSON.stringify(itemData.questionSpeech ?? null) || JSON.stringify(data.questionImage ?? null) !== JSON.stringify(itemData.questionImage?.key.startsWith("media:") ? { assetId: itemData.questionImage.key.slice(6), altText: itemData.questionImage.altText, attribution: itemData.questionImage.attribution, longDescription: itemData.questionImage.longDescription } : null) || JSON.stringify(data.explanationImage ?? null) !== JSON.stringify(itemData.explanationImage?.key.startsWith("media:") ? { assetId: itemData.explanationImage.key.slice(6), altText: itemData.explanationImage.altText, attribution: itemData.explanationImage.attribution, longDescription: itemData.explanationImage.longDescription } : null));
-    if (uploaded && relevantChange && !window.confirm("These changes require fresh picture review. The item will be unavailable to other people, including through existing shares, until approved. Save changes?")) return;
+    if (uploaded && relevantChange) {
+      setPendingReviewSave(data);
+      return;
+    }
     updateMutation.mutate(data);
   };
 
@@ -360,6 +365,19 @@ const EditItemPage = () => {
           }
           topicScopeRef={topicScopeRef}
         />
+        {pendingReviewSave && (
+          <ConfirmDialog
+            title="Save changes for fresh picture review?"
+            message="These changes require fresh picture review. The item will be unavailable to other people, including through existing shares, until approved. Save changes?"
+            confirmLabel="Save changes"
+            onCancel={() => setPendingReviewSave(null)}
+            onConfirm={() => {
+              const data = pendingReviewSave;
+              setPendingReviewSave(null);
+              updateMutation.mutate(data);
+            }}
+          />
+        )}
       </div>
     </div>
   );

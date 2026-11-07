@@ -78,20 +78,23 @@ internal sealed class MediaOptions
     /// <summary>Kill switch: false makes uploads answer 503 Media.Disabled while reads keep working (AC 3.28).</summary>
     public bool UploadsEnabled { get; set; } = true;
 
-    /// <summary>Uploads one account may attempt in any rolling 24 hours (failed attempts count).</summary>
-    public int MaxUploadsPerUserPerDay { get; set; } = 20;
-
-    /// <summary>Normalized bytes one account may retain (20 MiB).</summary>
-    public long MaxRetainedBytesPerUser { get; set; } = 20L * 1024 * 1024;
-
-    /// <summary>Items of one account that may await picture review at once.</summary>
-    public int MaxPendingReviewsPerUser { get; set; } = 20;
-
-    /// <summary>Global ceiling on uploads in any rolling 24 hours, across all accounts.</summary>
+    /// <summary>Global ceiling on upload admissions in any rolling 24 hours, across all accounts (AC 3.28.2).</summary>
     public int MaxUploadsGlobalPerDay { get; set; } = 5000;
 
-    /// <summary>Global ceiling on retained normalized bytes (2 GiB).</summary>
-    public long MaxRetainedBytesGlobal { get; set; } = 2L * 1024 * 1024 * 1024;
+    // Deprecated #405 option names. They are aliases for the MediaAdmission/MediaIngress options, so existing
+    // Media__MaxUploadsPerUserPerDay-style settings keep working and cannot diverge from the enforced limits.
+
+    /// <summary>Deprecated alias for <see cref="MaxUploadsPerDay"/>.</summary>
+    public int MaxUploadsPerUserPerDay { get => MaxUploadsPerDay; set => MaxUploadsPerDay = value; }
+
+    /// <summary>Deprecated alias for <see cref="MaxRetainedBytes"/>.</summary>
+    public long MaxRetainedBytesPerUser { get => MaxRetainedBytes; set => MaxRetainedBytes = value; }
+
+    /// <summary>Deprecated alias for <see cref="MaxPendingReviewItems"/>.</summary>
+    public int MaxPendingReviewsPerUser { get => MaxPendingReviewItems; set => MaxPendingReviewItems = value; }
+
+    /// <summary>Deprecated alias for <see cref="MaxGlobalRetainedBytes"/>.</summary>
+    public long MaxRetainedBytesGlobal { get => MaxGlobalRetainedBytes; set => MaxGlobalRetainedBytes = value; }
 
     /// <summary>Returns a description of every invalid value (empty when valid).</summary>
     public IReadOnlyList<string> Validate()
@@ -120,11 +123,7 @@ internal sealed class MediaOptions
         Require(SemaphoreWaitTimeout >= TimeSpan.Zero && SemaphoreWaitTimeout <= TimeSpan.FromSeconds(15), nameof(SemaphoreWaitTimeout));
         Require(ProcessingBudget > TimeSpan.Zero && ProcessingBudget <= TimeSpan.FromSeconds(30), nameof(ProcessingBudget));
         Require(StorageWriteTimeout > TimeSpan.Zero && StorageWriteTimeout <= TimeSpan.FromSeconds(45), nameof(StorageWriteTimeout));
-        Require(MaxUploadsPerUserPerDay > 0, nameof(MaxUploadsPerUserPerDay));
-        Require(MaxRetainedBytesPerUser > 0, nameof(MaxRetainedBytesPerUser));
-        Require(MaxPendingReviewsPerUser > 0, nameof(MaxPendingReviewsPerUser));
         Require(MaxUploadsGlobalPerDay > 0, nameof(MaxUploadsGlobalPerDay));
-        Require(MaxRetainedBytesGlobal > 0, nameof(MaxRetainedBytesGlobal));
         return errors;
 
         void Require(bool condition, string name)
