@@ -303,6 +303,27 @@ export interface SetImageReviewRequest {
   reason?: string;
 }
 
+/** POST /admin/items/image-review/bulk (AC 3.26.4): up to 25 items, each with the revision the reviewer saw. */
+export interface BulkImageReviewRequest {
+  decision: "approve" | "reject";
+  items: { id: string; expectedRevision: number }[];
+  reason?: string;
+}
+
+export interface BulkImageReviewOutcome {
+  id: string;
+  applied: boolean;
+  state?: string | null;
+  revision?: number | null;
+  errorCode?: string | null;
+}
+
+export interface BulkImageReviewResponse {
+  applied: number;
+  failed: number;
+  results: BulkImageReviewOutcome[];
+}
+
 /**
  * A session's outcome is decided by its FIRST hit, so the three values are
  * mutually exclusive: "converted" means it started anonymous and then signed in.
@@ -1018,6 +1039,11 @@ export const adminApi = {
       `/admin/items/${id}/image-review`,
       request
     );
+    return response.data;
+  },
+
+  setImageReviewBulk: async (request: BulkImageReviewRequest): Promise<BulkImageReviewResponse> => {
+    const response = await apiClient.post<BulkImageReviewResponse>("/admin/items/image-review/bulk", request);
     return response.data;
   },
 

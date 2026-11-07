@@ -8,7 +8,7 @@ import ErrorMessage from "@/components/ErrorMessage";
 import { PronunciationHint } from "@/components/items/PronunciationHint";
 import { QuestionImage } from "@/components/study/QuestionImage";
 import { getIndexedSpeech } from "@/utils/itemSpeech";
-import { ImageReviewQueue } from "../components/ImageReviewQueue";
+import { ImageReviewBulkQueue } from "../components/ImageReviewBulkQueue";
 import { useImageReviewQueue } from "../hooks/useImageReviewQueue";
 import type { ItemImageReference, ItemSpeechSupport } from "@/types/api";
 
@@ -102,7 +102,7 @@ const ReviewBoardPage = () => {
         aria-labelledby={`review-board-tab-${activeTab}`}
       >
         {activeTab === "pictures" ? (
-          <ImageReviewQueue />
+          <ImageReviewBulkQueue />
         ) : isLoading ? (
           <LoadingSpinner />
         ) : error ? (

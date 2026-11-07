@@ -50,6 +50,7 @@ public sealed class ItemImageReviewHttpTests : ItemTestFixture, IAsyncLifetime
                 services.AddScoped<IValidator<AddItem.Request>, AddItem.Validator>();
                 services.AddScoped<IValidator<UpdateItem.Request>, UpdateItem.Validator>();
                 services.AddScoped<IValidator<SetItemImageReview.Request>, SetItemImageReview.Validator>();
+                services.AddScoped<IValidator<BulkSetItemImageReview.Request>, BulkSetItemImageReview.Validator>();
                 services.AddSingleton<ISimHashService>(SimHashService);
                 services.AddSingleton(TaxonomyRegistry);
                 services.AddScoped<ITaxonomyItemCategoryResolver>(sp =>
@@ -65,6 +66,7 @@ public sealed class ItemImageReviewHttpTests : ItemTestFixture, IAsyncLifetime
                 new ExportItems.Endpoint().MapEndpoint(app);
                 new GetCollectionById.Endpoint().MapEndpoint(app);
                 new SetItemImageReview.Endpoint().MapEndpoint(app);
+                new BulkSetItemImageReview.Endpoint().MapEndpoint(app);
                 new ApproveItem.Endpoint().MapEndpoint(app);
                 new SetItemVisibility.Endpoint().MapEndpoint(app);
                 new GetItemImageContent.Endpoint().MapEndpoint(app);
@@ -1417,6 +1419,7 @@ public sealed class ItemImageReviewHttpTests : ItemTestFixture, IAsyncLifetime
         review.GetProperty("state").GetString().Should().Be("Rejected");
         review.GetProperty("reason").GetString().Should().Be("Wrong subject");
     }
+
     [Fact]
     public async Task WithdrawalRevokesEveryReferenceAndOldDeliveryAndCannotReattach()
     {
@@ -1434,6 +1437,7 @@ public sealed class ItemImageReviewHttpTests : ItemTestFixture, IAsyncLifetime
         (await SendAsync(HttpMethod.Get, $"/items/{second.Id}/images/question", token: OwnerToken)).Status.Should().Be(HttpStatusCode.NotFound);
         (await SendAsync(HttpMethod.Post, "/items", Body(question: "Cannot reuse?", questionImage: Pic(asset)), OwnerToken)).Status.Should().Be(HttpStatusCode.BadRequest);
     }
+
     [Fact]
     public async Task ReportsRequireVisibleExactRevisionAndDoNotWithdrawAutomatically()
     {
@@ -1446,6 +1450,7 @@ public sealed class ItemImageReviewHttpTests : ItemTestFixture, IAsyncLifetime
         (await ItemAsync(item.Id)).ImageReviewState.Should().Be(ItemImageReviewState.Approved);
         (await SendAsync(HttpMethod.Post, $"/items/{item.Id}/image-reports", report.Replace(":1", ":99"))).Status.Should().Be(HttpStatusCode.NotFound);
     }
+
     [Fact]
     public async Task LostSuccessCreateRetryUsesOneItemAndOneSubmission()
     {
@@ -1500,5 +1505,64 @@ public sealed class ItemImageReviewHttpTests : ItemTestFixture, IAsyncLifetime
         var changed = await SendAsync(HttpMethod.Put, $"/items/{id}", Body(questionImage: Pic(asset), extra: ",\"incorrectAnswerRationale\":{\"0\":\"Revised reasoning\"}"), OwnerToken);
         changed.Status.Should().Be(HttpStatusCode.OK, changed.Body);
         Item saved = await ItemAsync(id); saved.ImageRevision.Should().Be(2); saved.ImageReviewState.Should().Be(ItemImageReviewState.PendingReview);
+    }
+
+    [Fact]
+    public async Task Bulk_ApprovesThePendingItems_AndReportsAStaleOneWithoutBlockingTheRest()
+    {
+        Item a = await SeedPictureItemAsync(ItemImageReviewState.PendingReview);
+        Item b = await SeedPictureItemAsync(ItemImageReviewState.PendingReview);
+        Item c = await SeedPictureItemAsync(ItemImageReviewState.PendingReview);
+        string body = $"{{\"decision\":\"approve\",\"items\":[{{\"id\":\"{a.Id}\",\"expectedRevision\":1}},{{\"id\":\"{b.Id}\",\"expectedRevision\":1}},{{\"id\":\"{c.Id}\",\"expectedRevision\":7}}]}}";
+
+        (HttpStatusCode status, string response) = await SendAsync(HttpMethod.Post, "/admin/items/image-review/bulk", body, AdminToken);
+
+        status.Should().Be(HttpStatusCode.OK, response);
+        JsonElement result = Json(response);
+        result.GetProperty("applied").GetInt32().Should().Be(2);
+        result.GetProperty("failed").GetInt32().Should().Be(1);
+        JsonElement results = result.GetProperty("results");
+        results[0].GetProperty("applied").GetBoolean().Should().BeTrue();
+        results[1].GetProperty("applied").GetBoolean().Should().BeTrue();
+        results[2].GetProperty("applied").GetBoolean().Should().BeFalse();
+        results[2].GetProperty("errorCode").GetString().Should().Be("Item.ImageReviewStale");
+        (await ItemAsync(a.Id)).ImageReviewState.Should().Be(ItemImageReviewState.Approved);
+        (await ItemAsync(b.Id)).ImageReviewState.Should().Be(ItemImageReviewState.Approved);
+        (await ItemAsync(c.Id)).ImageReviewState.Should().Be(ItemImageReviewState.PendingReview);
+    }
+
+    [Fact]
+    public async Task Bulk_RejectWithoutAReason_Is400_AndChangesNothing()
+    {
+        Item a = await SeedPictureItemAsync(ItemImageReviewState.PendingReview);
+        string body = $"{{\"decision\":\"reject\",\"items\":[{{\"id\":\"{a.Id}\",\"expectedRevision\":1}}]}}";
+
+        (HttpStatusCode status, string response) = await SendAsync(HttpMethod.Post, "/admin/items/image-review/bulk", body, AdminToken);
+
+        status.Should().Be(HttpStatusCode.BadRequest, response);
+        (await ItemAsync(a.Id)).ImageReviewState.Should().Be(ItemImageReviewState.PendingReview);
+    }
+
+    [Fact]
+    public async Task Bulk_MoreThan25Items_Is400()
+    {
+        string items = string.Join(",", Enumerable.Range(0, 26).Select(_ => $"{{\"id\":\"{Guid.NewGuid()}\",\"expectedRevision\":1}}"));
+
+        (HttpStatusCode status, string response) = await SendAsync(
+            HttpMethod.Post, "/admin/items/image-review/bulk", $"{{\"decision\":\"approve\",\"items\":[{items}]}}", AdminToken);
+
+        status.Should().Be(HttpStatusCode.BadRequest, response);
+    }
+
+    [Fact]
+    public async Task Bulk_IsAdminOnly()
+    {
+        Item a = await SeedPictureItemAsync(ItemImageReviewState.PendingReview);
+        string body = $"{{\"decision\":\"approve\",\"items\":[{{\"id\":\"{a.Id}\",\"expectedRevision\":1}}]}}";
+
+        (HttpStatusCode status, _) = await SendAsync(HttpMethod.Post, "/admin/items/image-review/bulk", body, OwnerToken);
+
+        status.Should().BeOneOf(HttpStatusCode.Forbidden, HttpStatusCode.Unauthorized);
+        (await ItemAsync(a.Id)).ImageReviewState.Should().Be(ItemImageReviewState.PendingReview);
     }
 }
