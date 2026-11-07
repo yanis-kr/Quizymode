@@ -135,6 +135,10 @@ namespace Quizymode.Api.Migrations
                         .HasMaxLength(16)
                         .HasColumnType("character varying(16)");
 
+                    b.Property<string>("City")
+                        .HasMaxLength(100)
+                        .HasColumnType("character varying(100)");
+
                     b.Property<string>("ClickIdPlatform")
                         .HasMaxLength(32)
                         .HasColumnType("character varying(32)");
@@ -169,6 +173,10 @@ namespace Quizymode.Api.Migrations
                     b.Property<string>("ReferrerHost")
                         .HasMaxLength(255)
                         .HasColumnType("character varying(255)");
+
+                    b.Property<string>("Region")
+                        .HasMaxLength(100)
+                        .HasColumnType("character varying(100)");
 
                     b.Property<string>("SessionId")
                         .IsRequired()
@@ -820,6 +828,11 @@ namespace Quizymode.Api.Migrations
 
                     b.Property<Guid>("GenerationId")
                         .HasColumnType("uuid");
+
+                    b.Property<string>("IncorrectAnswerRationaleJson")
+                        .IsRequired()
+                        .HasMaxLength(2000)
+                        .HasColumnType("character varying(2000)");
 
                     b.Property<string>("IncorrectAnswersJson")
                         .IsRequired()
@@ -2419,6 +2432,11 @@ namespace Quizymode.Api.Migrations
                         .IsRequired()
                         .HasMaxLength(10)
                         .HasColumnType("character varying(10)");
+
+                    b.Property<bool>("IsPrimarySource")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("boolean")
+                        .HasDefaultValue(false);
 
                     b.Property<string>("KeywordsJson")
                         .HasMaxLength(2000)

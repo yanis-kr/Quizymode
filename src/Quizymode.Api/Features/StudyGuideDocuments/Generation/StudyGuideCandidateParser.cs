@@ -1,6 +1,8 @@
 using System.Text.Json;
+using System.Text.RegularExpressions;
 using Quizymode.Api.Features.StudyGuideDocuments.Extraction;
 using Quizymode.Api.Services;
+using Quizymode.Api.Shared.Helpers;
 
 namespace Quizymode.Api.Features.StudyGuideDocuments.Generation;
 
@@ -10,7 +12,8 @@ internal sealed record ParsedCandidate(
     List<string> IncorrectAnswers,
     string Explanation,
     string SourceQuote,
-    int? Page);
+    int? Page,
+    Dictionary<int, string>? IncorrectAnswerRationale = null);
 
 /// <summary><see cref="ReturnedCount"/> questions came back; <see cref="Kept"/> passed every check.</summary>
 internal sealed record CandidateParseResult(bool IsValidJson, int ReturnedCount, List<ParsedCandidate> Kept)
@@ -29,7 +32,32 @@ internal sealed record CandidateParseResult(bool IsValidJson, int ReturnedCount,
 /// </summary>
 internal static class StudyGuideCandidateParser
 {
-    public static CandidateParseResult Parse(string rawText, string sectionText, int maxQuestions, ITextModerationService moderation)
+    private static readonly Regex ClinicalPatientCue = new(
+        @"\b(client|clients|patient|patients|resident|residents|child|children|infant|newborn|toddler|older adult|adult|woman|man)\b",
+        RegexOptions.IgnoreCase | RegexOptions.Compiled);
+
+    private static readonly Regex ClinicalActionCue = new(
+        @"\b(first|priority|priorities|initial|immediate|immediately|red flag|most urgent|urgent)\b",
+        RegexOptions.IgnoreCase | RegexOptions.Compiled);
+
+    /// <summary>
+    /// AC 6.6.34: a clinical-style question is at most two sentences, describes a client or patient, and asks a priority,
+    /// first-action or red-flag question. The processor drops recall-style questions returned under the clinical request.
+    /// </summary>
+    internal static bool IsClinicalStyle(string question)
+    {
+        int sentences = question.Split(['.', '?', '!'], StringSplitOptions.RemoveEmptyEntries | StringSplitOptions.TrimEntries).Length;
+        return sentences is >= 1 and <= 2 &&
+            ClinicalPatientCue.IsMatch(question) &&
+            ClinicalActionCue.IsMatch(question);
+    }
+
+    public static CandidateParseResult Parse(
+        string rawText,
+        string sectionText,
+        int maxQuestions,
+        ITextModerationService moderation,
+        bool clinicalScenario = false)
     {
         List<JsonElement> elements;
         try
@@ -81,7 +109,16 @@ internal static class StudyGuideCandidateParser
                 continue;
             }
 
+            if (clinicalScenario && !IsClinicalStyle(candidate.Question))
+            {
+                continue;
+            }
+
             List<string?> values = [candidate.Question, candidate.CorrectAnswer, candidate.Explanation, candidate.SourceQuote];
+            if (candidate.IncorrectAnswerRationale is not null)
+            {
+                values.AddRange(candidate.IncorrectAnswerRationale.Values);
+            }
             values.AddRange(candidate.IncorrectAnswers);
             if (moderation.Evaluate(values.ToArray()).Outcome == TextModerationOutcome.Blocked)
             {
@@ -155,7 +192,44 @@ internal static class StudyGuideCandidateParser
             ? pageNumber
             : null;
 
-        return new ParsedCandidate(question, correctAnswer, incorrect, explanation, sourceQuote, page);
+        return new ParsedCandidate(
+            question,
+            correctAnswer,
+            incorrect,
+            explanation,
+            sourceQuote,
+            page,
+            ReadRationale(element, incorrect));
+    }
+
+    /// <summary>
+    /// Optional "why this option is wrong" text (#485). Keys are incorrect answer texts (matched case-insensitively); an
+    /// unmatched key or a non-string value is ignored, and the rest of the question is kept.
+    /// </summary>
+    private static Dictionary<int, string> ReadRationale(JsonElement element, List<string> incorrect)
+    {
+        Dictionary<int, string> rationale = [];
+        if (!element.TryGetProperty("incorrectAnswerRationale", out JsonElement rationaleElement) ||
+            rationaleElement.ValueKind != JsonValueKind.Object)
+        {
+            return rationale;
+        }
+
+        foreach (JsonProperty property in rationaleElement.EnumerateObject())
+        {
+            if (property.Value.ValueKind != JsonValueKind.String)
+            {
+                continue;
+            }
+
+            int index = incorrect.FindIndex(answer => string.Equals(answer, property.Name.Trim(), StringComparison.OrdinalIgnoreCase));
+            if (index >= 0)
+            {
+                rationale[index] = (property.Value.GetString() ?? string.Empty).Trim();
+            }
+        }
+
+        return IncorrectAnswerRationaleHelper.Normalize(rationale, incorrect.Count);
     }
 
     private static string GetString(JsonElement element, string property) =>

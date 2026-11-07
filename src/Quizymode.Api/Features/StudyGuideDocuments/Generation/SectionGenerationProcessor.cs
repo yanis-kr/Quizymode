@@ -64,8 +64,9 @@ internal sealed class SectionGenerationProcessor(
         List<string> skipped = configuredRoute.Except(route).ToList();
         if (skipped.Count > 0)
         {
-            // A missing key is not a vendor outage, so it gets its own line for every generation it affects.
-            _logger.LogWarning(
+            // A missing optional key is a configuration state, not an outage, and repeats on every generation,
+            // so it is Debug (#490). The Warning for a route with no keyed vendor at all stays below.
+            _logger.LogDebug(
                 "StudyGuideGeneration: {GenerationId} skipped vendor(s) without a key in the {Tier} route: {Vendors}.",
                 generation.Id,
                 generation.Tier,
@@ -133,7 +134,7 @@ internal sealed class SectionGenerationProcessor(
             CandidateParseResult? parsed = null;
             if (outcome == LlmAttemptOutcome.Success)
             {
-                parsed = StudyGuideCandidateParser.Parse(result.Content ?? string.Empty, sourceText, maxQuestions, _moderation);
+                parsed = StudyGuideCandidateParser.Parse(result.Content ?? string.Empty, sourceText, maxQuestions, _moderation, clinicalScenario);
                 if (!parsed.IsValidJson)
                 {
                     outcome = LlmAttemptOutcome.InvalidJson;
@@ -213,6 +214,7 @@ internal sealed class SectionGenerationProcessor(
             Question = candidate.Question,
             CorrectAnswer = candidate.CorrectAnswer,
             IncorrectAnswersJson = JsonSerializer.Serialize(candidate.IncorrectAnswers, AnswerJsonOptions),
+            IncorrectAnswerRationaleJson = JsonSerializer.Serialize(candidate.IncorrectAnswerRationale ?? [], AnswerJsonOptions),
             Explanation = candidate.Explanation,
             SourceQuote = candidate.SourceQuote,
             Page = candidate.Page
@@ -220,8 +222,9 @@ internal sealed class SectionGenerationProcessor(
 
         await _db.SaveChangesAsync(cancellationToken);
         _logger.LogInformation(
-            "StudyGuideGeneration: {GenerationId} completed by {Vendor} ({Model}) with {Kept} question(s), {Dropped} dropped.",
+            "StudyGuideGeneration: {GenerationId} ({Mode}) completed by {Vendor} ({Model}) with {Kept} question(s), {Dropped} dropped.",
             generation.Id,
+            generation.Mode,
             vendor,
             model,
             parsed.Kept.Count,
