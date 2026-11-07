@@ -106,7 +106,7 @@ function renderSummary(result, root) {
     lines.push("| Viewport | Shot | Attempts | Last error |");
     lines.push("| --- | --- | --- | --- |");
     for (const shot of result.failed) {
-      const error = (shot.error ?? "").replace(/\|/g, "\\|");
+      const error = (shot.error ?? "").replace(/\\/g, "\\\\").replace(/\|/g, "\\|").replace(/\r?\n/g, " ");
       lines.push(`| ${shot.viewport} | ${shot.slug} | ${shot.attempts} | ${error} |`);
     }
     lines.push("");
