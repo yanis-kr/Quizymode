@@ -107,7 +107,7 @@ function CatalogLanes({ countsByCategory, featuredSets, publicCollections }: Cat
                   </div>
                   <div className="flex items-center justify-between gap-2">
                     <h3 className="text-sm font-semibold text-white">{category.name}</h3>
-                    <ArrowRightIcon className="h-4 w-4 shrink-0 text-sky-ink transition group-hover:translate-x-1" />
+                    <ArrowRightIcon className="h-4 w-4 shrink-0 text-sky-300 transition group-hover:translate-x-1" />
                   </div>
                 </div>
               </Link>
@@ -158,7 +158,7 @@ function CatalogLanes({ countsByCategory, featuredSets, publicCollections }: Cat
                     </div>
                     <div className="flex items-center justify-between gap-2">
                       <h3 className="text-sm font-semibold text-white">{set.displayName}</h3>
-                      <ArrowRightIcon className="h-4 w-4 shrink-0 text-sky-ink transition group-hover:translate-x-1" />
+                      <ArrowRightIcon className="h-4 w-4 shrink-0 text-sky-300 transition group-hover:translate-x-1" />
                     </div>
                   </div>
                 </Link>
@@ -206,7 +206,7 @@ function CatalogLanes({ countsByCategory, featuredSets, publicCollections }: Cat
                   <div>
                     <div className="flex items-center justify-between gap-2">
                       <h3 className="text-sm font-semibold text-white">{collection.name}</h3>
-                      <ArrowRightIcon className="h-4 w-4 shrink-0 text-sky-ink transition group-hover:translate-x-1" />
+                      <ArrowRightIcon className="h-4 w-4 shrink-0 text-sky-300 transition group-hover:translate-x-1" />
                     </div>
                     {collection.description && (
                       <p className="mt-0.5 text-xs text-[#cbd5e1] line-clamp-2">

@@ -170,10 +170,10 @@ const IdeasPage = () => {
 
       <div className="bg-panel-deep text-on-panel">
         <div className="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8">
-          <section className="overflow-hidden rounded-[36px] border border-on-panel/10 bg-[linear-gradient(135deg,rgba(15,23,42,0.97)_0%,rgba(6,78,59,0.18)_50%,rgba(2,6,23,0.98)_100%)] shadow-2xl shadow-slate-950/30">
+          <section className="overflow-hidden rounded-[36px] border border-on-panel/10 bg-[linear-gradient(135deg,var(--color-panel)_0%,rgba(16,185,129,0.14)_50%,var(--color-panel-deep)_100%)] shadow-2xl shadow-slate-950/30">
             <div className="grid gap-8 px-6 py-8 lg:grid-cols-[minmax(0,1.25fr)_minmax(20rem,0.9fr)] lg:px-8 lg:py-9">
               <div>
-                <div className="inline-flex items-center gap-2 rounded-full border border-emerald-500/30 bg-emerald-950/50 px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.24em] text-emerald-400">
+                <div className="inline-flex items-center gap-2 rounded-full border border-emerald-500/30 bg-emerald-500/10 px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.24em] text-emerald-ink">
                   <LightBulbIcon className="h-4 w-4" aria-hidden />
                   Ideas board
                 </div>

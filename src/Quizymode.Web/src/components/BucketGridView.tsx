@@ -67,12 +67,12 @@ export function BucketGridView({
                 <div className="flex items-start justify-between gap-3">
                   <div className="flex items-center gap-2 flex-wrap">
                     {bucket.eyebrow ? (
-                      <span className="rounded-full border border-white/16 bg-panel-deep/40 px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.18em] text-sky-ink backdrop-blur">
+                      <span className="rounded-full border border-white/16 bg-slate-950/40 px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.18em] text-sky-200 backdrop-blur">
                         {bucket.eyebrow}
                       </span>
                     ) : null}
                     {bucket.isPrivate === true && (
-                      <span className="rounded-full bg-purple-500/20 px-3 py-1 text-[11px] font-semibold text-purple-ink backdrop-blur">
+                      <span className="rounded-full bg-purple-500/20 px-3 py-1 text-[11px] font-semibold text-purple-200 backdrop-blur">
                         Private
                       </span>
                     )}
@@ -100,7 +100,7 @@ export function BucketGridView({
                   ) : null}
                   {bucket.averageRating != null && (
                     <div className="flex items-center gap-1.5 text-sm text-[#f1f5f9]">
-                      <StarIconSolid className="h-4 w-4 text-yellow-ink" />
+                      <StarIconSolid className="h-4 w-4 text-yellow-300" />
                       <span className="font-medium">
                         {bucket.averageRating.toFixed(1)}
                       </span>
