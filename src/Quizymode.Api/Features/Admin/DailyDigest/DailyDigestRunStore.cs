@@ -91,7 +91,7 @@ internal sealed class DailyDigestRunStore(ApplicationDbContext db, TimeProvider 
         {
             // An expired lease means the process died mid-send. It becomes a failed attempt; one resend is allowed.
             int expired = await db.DailyDigestRuns
-                .Where(run => run.Id == existing.Id && run.ClaimToken == existing.ClaimToken && run.Status == DailyDigestRunStatus.Sending)
+                .Where(run => run.Id == existing.Id && run.ClaimToken == existing.ClaimToken && run.Status == DailyDigestRunStatus.Sending && run.LeaseUntilUtc < now)
                 .ExecuteUpdateAsync(
                     set => set
                         .SetProperty(run => run.Status, DailyDigestRunStatus.Failed)

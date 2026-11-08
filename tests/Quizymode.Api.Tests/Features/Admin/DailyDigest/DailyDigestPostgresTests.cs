@@ -110,6 +110,35 @@ public sealed class DailyDigestPostgresTests(PostgresContainerFixture fixture, I
     }
 
     [SkippableFact]
+    public async Task ARenewedSendingLease_IsNotTakenOver()
+    {
+        Skip.If(fixture.UnavailableReason is not null, fixture.UnavailableReason);
+        await ResetAsync();
+        DateOnly day = new(2026, 11, 6);
+        FakeClock clock = new(Due);
+        await using ApplicationDbContext db = fixture.CreateDbContext();
+        DailyDigestRunStore store = new(db, clock);
+        DailyDigestRunStore.Claim? claim = await store.TryClaimAsync(day, Due, Due.AddDays(1), "America/Chicago", Due.AddDays(1), CancellationToken.None);
+        claim.Should().NotBeNull();
+
+        // The clock is past the original lease, but the owner renewed it: the row must not be taken over.
+        clock.UtcNow = Due.AddHours(1);
+        await using (ApplicationDbContext other = fixture.CreateDbContext())
+        {
+            await other.DailyDigestRuns.Where(run => run.Id == claim!.Id)
+                .ExecuteUpdateAsync(set => set.SetProperty(run => run.LeaseUntilUtc, Due.AddHours(3)));
+        }
+
+        (await store.TryClaimAsync(day, Due, Due.AddDays(1), "America/Chicago", Due.AddDays(1), CancellationToken.None)).Should().BeNull();
+        await using (ApplicationDbContext check = fixture.CreateDbContext())
+        {
+            DailyDigestRun row = await check.DailyDigestRuns.AsNoTracking().SingleAsync(run => run.Id == claim!.Id);
+            row.Status.Should().Be(DailyDigestRunStatus.Sending);
+            row.ClaimToken.Should().Be(claim!.Token);
+        }
+    }
+
+    [SkippableFact]
     public async Task Compose_OverA180DayProdSizedHistory_FinishesWithinTheBudget()
     {
         Skip.If(fixture.UnavailableReason is not null, fixture.UnavailableReason);
