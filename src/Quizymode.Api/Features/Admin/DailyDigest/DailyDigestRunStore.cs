@@ -65,15 +65,9 @@ internal sealed class DailyDigestRunStore(ApplicationDbContext db, TimeProvider 
             CreatedUtc = now
         };
 
-        db.DailyDigestRuns.Add(row);
-        try
+        if (await InsertScheduledIfAbsentAsync(row, cancellationToken))
         {
-            await db.SaveChangesAsync(cancellationToken);
             return new Claim(row.Id, token, reportDate, false, null, 0);
-        }
-        catch (DbUpdateException)
-        {
-            db.Entry(row).State = EntityState.Detached;
         }
 
         DailyDigestRun? existing = await FindScheduledAsync(reportDate, cancellationToken);
@@ -338,6 +332,41 @@ internal sealed class DailyDigestRunStore(ApplicationDbContext db, TimeProvider 
                 db.ChangeTracker.Clear();
             }
         }
+    }
+
+    /// <summary>
+    /// Inserts a scheduled row unless one already exists for the report date. ON CONFLICT avoids the unique violation that
+    /// EF would log at Error before the caller takes over the existing row (same pattern as #350).
+    /// </summary>
+    private async Task<bool> InsertScheduledIfAbsentAsync(DailyDigestRun row, CancellationToken cancellationToken)
+    {
+        if (!db.Database.IsNpgsql())
+        {
+            db.DailyDigestRuns.Add(row);
+            try
+            {
+                await db.SaveChangesAsync(cancellationToken);
+                return true;
+            }
+            catch (DbUpdateException)
+            {
+                db.Entry(row).State = EntityState.Detached;
+                return false;
+            }
+        }
+
+        int inserted = await db.Database.ExecuteSqlInterpolatedAsync(
+            $"""
+            INSERT INTO "DailyDigestRuns" ("Id", "Kind", "ReportDate", "TimeZone", "WindowStartUtc", "WindowEndUtc", "Status",
+                "Attempts", "InterruptedResendUsed", "ClaimToken", "LeaseUntilUtc", "NextAttemptUtc", "ComputedUtc", "SentUtc",
+                "LastError", "SummaryJson", "RequestedByUserId", "CreatedUtc")
+            VALUES ({row.Id}, {row.Kind}, {row.ReportDate}, {row.TimeZone}, {row.WindowStartUtc}, {row.WindowEndUtc}, {row.Status},
+                {row.Attempts}, {row.InterruptedResendUsed}, {row.ClaimToken}, {row.LeaseUntilUtc}, {row.NextAttemptUtc}, {row.ComputedUtc}, {row.SentUtc},
+                {row.LastError}, CAST({row.SummaryJson} AS jsonb), {row.RequestedByUserId}, {row.CreatedUtc})
+            ON CONFLICT ("ReportDate") WHERE "Kind" = 'Scheduled' DO NOTHING
+            """,
+            cancellationToken);
+        return inserted == 1;
     }
 
     private Task<DailyDigestRun?> FindScheduledAsync(DateOnly reportDate, CancellationToken cancellationToken) =>
