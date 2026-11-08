@@ -72,7 +72,8 @@ import {
   type QuizRunState,
 } from "@/features/items/quiz/quizRun";
 import { gradeTypedAnswer, isTypeable } from "@/features/items/quiz/typedAnswer";
-import { recordGuestCompletion } from "@/features/guestHistory/guestHistoryStorage";
+import { isGuestEligible, recordGuestCompletion } from "@/features/guestHistory/guestHistoryStorage";
+import { addLocalReviewItems } from "@/features/learningLoop/localReviewList";
 import { recordAuthenticatedCompletion } from "@/features/studySessions/recordStudySession";
 
 const TEST_RESTORE_NOTICE = "We could not restore your earlier test, so we started a new one.";
@@ -754,12 +755,17 @@ const QuizModePageContent = () => {
     if (run.mode === "test") trackTestQuestionsAnswered(run);
     trackQuizRunCompleted(snapshot);
     // Browser-local guest history (AC 3.6.13): only runs started and completed anonymously; upserted by run ID.
-    recordGuestCompletion(snapshot, {
+    const guestEligibility = {
       isAuthenticated,
       isAuthLoading,
       runIdentityKey: run.identityKey,
       currentIdentityKey: identityKey,
-    });
+    };
+    recordGuestCompletion(snapshot, guestEligibility);
+    // Browser-local review list (AC 3.14.14): a guest's missed questions join the list in this browser.
+    if (isGuestEligible(guestEligibility) && snapshot.missedItemIds.length > 0) {
+      addLocalReviewItems(snapshot.missedItemIds);
+    }
     // Authenticated history (AC 3.6.14): only runs started and completed under the same signed-in identity.
     if (isAuthenticated && !isAuthLoading && run.identityKey === identityKey) {
       void recordAuthenticatedCompletion(snapshot);

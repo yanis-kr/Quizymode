@@ -23,13 +23,16 @@ export function GameMisses({ runId, misses }: GameMissesProps) {
   if (misses.length === 0) return null;
 
   const done: boolean = review.attempted && review.failed === 0;
-  let label = "Add misses to Review";
+  // Guests save to this browser (AC 3.14.14); signed-in players add to their account queue (AC 3.20.9).
+  let label = review.isGuest ? "Save misses for review" : "Add misses to Review";
   if (review.isPending) label = "Adding...";
   else if (review.failed > 0) label = "Try again";
-  else if (done && review.added > 0) label = "Added";
+  else if (done && review.added > 0) label = review.isGuest ? "Saved" : "Added";
   else if (done) label = "Can't add";
 
-  const status: string = review.attempted && !review.isPending ? describeAddResult(review.added, review.unavailable, review.failed) : "";
+  const status: string = review.attempted && !review.isPending
+    ? describeAddResult(review.added, review.unavailable, review.failed, review.isGuest)
+    : "";
   const isError: boolean = review.failed > 0 || (review.attempted && review.added === 0);
   const disabled: boolean = review.isPending || done;
 

@@ -34,14 +34,31 @@ describe("useAddMissesToReview", () => {
     vi.mocked(reviewQueueApi.enqueue).mockResolvedValue({ itemId: "x", intervalDays: 1, dueAt: "" });
   });
 
-  it("is only available to signed-in users once auth has settled", () => {
-    mockAuth.isAuthenticated = false;
-    expect(setup("run-1", ["a"]).result.current.canAdd).toBe(false);
+  it("is available once auth has settled, for guests too (AC 3.14.14)", () => {
     mockAuth.isAuthenticated = true;
     mockAuth.isLoading = true;
     expect(setup("run-1", ["a"]).result.current.canAdd).toBe(false);
     mockAuth.isLoading = false;
     expect(setup("run-1", ["a"]).result.current.canAdd).toBe(true);
+    expect(setup("run-1", ["a"]).result.current.isGuest).toBe(false);
+    mockAuth.isAuthenticated = false;
+    expect(setup("run-1", ["a"]).result.current.canAdd).toBe(true);
+    expect(setup("run-1", ["a"]).result.current.isGuest).toBe(true);
+  });
+
+  it("saves a guest's misses in this browser and makes no API call (AC 3.14.14)", async () => {
+    window.localStorage.clear();
+    mockAuth.isAuthenticated = false;
+    const ids = ["00000000-0000-4000-8000-00000000000a", "00000000-0000-4000-8000-00000000000b"];
+    const { result } = setup("run-guest", ids);
+    await act(async () => {
+      await result.current.addAll();
+    });
+    expect(reviewQueueApi.enqueue).not.toHaveBeenCalled();
+    expect(result.current.added).toBe(2);
+    expect(describeAddResult(2, 0, 0, true)).toBe("Saved 2 for review in this browser.");
+    const stored = JSON.parse(window.localStorage.getItem("quizymode.review.v1") ?? "{}");
+    expect(stored.items.map((entry: { itemId: string }) => entry.itemId)).toEqual(ids);
   });
 
   it("queues each unique id once, one after another, and refreshes the review queue", async () => {

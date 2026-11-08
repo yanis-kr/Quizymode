@@ -35,7 +35,7 @@ export const SIGNUP_PROMPT_COPY: Record<AuthReason, SignupPromptCopy> = {
   },
   "review-later": {
     heading: "Keep reviewing these cards",
-    body: "Create a free account to add cards you're still learning to a Review queue that brings them back over the next days.",
+    body: "Saved in this browser. Sign in to get spaced reminders.",
     cta: "Create a free account",
   },
   "track-progress": {
