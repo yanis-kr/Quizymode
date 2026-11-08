@@ -58,6 +58,8 @@ The daily LLM model-list audit (#480) and the daily maintainer digest (#509) ema
 | `APP_DailyDigest__SendAtLocalTime` | local due time, `HH:mm` (default `08:00`) |
 | `APP_DailyDigest__AdminBaseUrl` | base URL for the links in the email; without it the links are left out |
 
+The older `APP_Llm__ModelAudit__AdminAddress`, `APP_Llm__ModelAudit__From` and `APP_Llm__ModelAudit__Smtp__*` names are no longer read (the sender moved to the shared `Email` section in #509). Set the `APP_Email__*` names instead and remove the old ones from the container.
+
 Without the SMTP variables the audit still records findings and shows the admin banner (the email is retried on each run once the settings exist), and the digest rows are recorded as `Failed` / `NotConfigured` and retried hourly.
 
 The digest needs time-zone data in the container image (the startup log line `DailyDigest: enabled, timezone America/Chicago, next due ...` proves it). With an unknown zone it logs one error and never sends. After the deployment is active, as an admin call `GET /admin/daily-digest/preview`, then `POST /admin/daily-digest/test-send`, and the next morning check a `Sent` row in `DailyDigestRuns` and the `DailyDigest: sent` log line. The same page, `/admin`, has a "Daily digest" card with Preview, Send test email and Send digest now.
