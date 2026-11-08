@@ -50,11 +50,15 @@ internal sealed class SmtpEmailSender(IOptions<EmailOptions> options, ILogger<Sm
                 Timeout = SmtpTimeoutMilliseconds
             };
             using MailMessage message = new(config.From!, config.AdminAddress!, subject, body);
-            await client.SendMailAsync(message, cancellationToken);
+            // SmtpClient.Timeout does not apply to SendMailAsync, so the bound is enforced here; shutdown still propagates.
+            using CancellationTokenSource sendTimeout = CancellationTokenSource.CreateLinkedTokenSource(cancellationToken);
+            sendTimeout.CancelAfter(SmtpTimeoutMilliseconds);
+            await client.SendMailAsync(message, sendTimeout.Token);
             return true;
         }
-        catch (Exception ex) when (ex is not OperationCanceledException)
+        catch (Exception ex) when (ex is not OperationCanceledException || !cancellationToken.IsCancellationRequested)
         {
+            // A send timeout surfaces as OperationCanceledException without the caller token cancelled: a failed send, not shutdown.
             // Type only: the message can echo addresses or server banners.
             logger.LogWarning("Email: sending the notification email failed ({ExceptionType})", ex.GetType().Name);
             return false;
