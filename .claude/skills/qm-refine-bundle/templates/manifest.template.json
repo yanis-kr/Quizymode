@@ -1,0 +1,68 @@
+{
+  "schemaVersion": 1,
+  "bundleId": "REPLACED-BY-new",
+  "title": "Short bundle title",
+  "createdAt": "",
+  "repo": { "nameWithOwner": "yanis-kr/Quizymode", "defaultBranch": "main" },
+  "source": { "baseBranch": "main", "commit": "0000000000000000000000000000000000000000", "capturedAt": "" },
+  "releaseMode": "auto-merge-deploy",
+  "branches": { "release": "release/REPLACED-BY-new", "issuePrefix": "bundle/REPLACED-BY-new/" },
+  "versionBump": "minor",
+  "issues": [
+    {
+      "number": 0,
+      "title": "Issue title",
+      "order": 1,
+      "snapshot": { "state": "OPEN", "updatedAt": "", "bodySha256": "" },
+      "risk": "low",
+      "ux": false,
+      "migration": false,
+      "dependsOn": [],
+      "scope": {
+        "summary": "What will change, in one or two sentences.",
+        "paths": ["src/Quizymode.Web/src/features/Example/**"],
+        "exclusions": ["Anything explicitly out of scope"]
+      },
+      "acceptanceCriteria": [
+        { "id": "AC1", "text": "Observable, testable behavior", "evidence": "test" }
+      ],
+      "validation": ["npm test -- --run Example", "screenshot desktop + mobile on prod"]
+    }
+  ],
+  "excluded": [
+    { "number": 0, "reason": "duplicate of #N | stale | already done | externally blocked | too risky" }
+  ],
+  "policies": {
+    "blockedIssue": "defer-and-continue",
+    "partialRelease": "ship-completed-independent",
+    "sourceDrift": "proceed-unless-overlap"
+  },
+  "authorization": {
+    "mergeToMain": true,
+    "migrations": "none",
+    "infraChanges": "none",
+    "infraAllowed": [],
+    "prodDataWrites": "test-data-only",
+    "prodReadQueries": true,
+    "rollback": "rollback-workflow",
+    "closeIssues": true,
+    "paidServices": false
+  },
+  "limits": {
+    "maxAttemptsPerIssue": 3,
+    "maxCiRuns": 4,
+    "maxWallClockHours": 8,
+    "lockStaleMinutes": 240
+  },
+  "releaseGates": [
+    "Each issue: its validation commands pass and every AC has evidence",
+    "Combined release branch: dotnet test; npm run lint; npm run build; npm run test:coverage",
+    "verify-openapi.ps1 -Configuration Release passes when the API surface changed",
+    "Reviewer final pass on the combined diff has no CONFIRMED findings",
+    "Release PR required checks green: build-test-publish, CodeQL, automation-contract"
+  ],
+  "postDeploy": {
+    "checks": ["Deploy workflow run for the merge SHA concluded success", "node scripts/wait-for-production-ready.js --expected-build-version <QuizymodeVersion> succeeds", "Each AC verified on prod with evidence"],
+    "rollbackTrigger": "Deploy workflow failed after the container went live, the readiness check fails, or a core page no longer loads"
+  }
+}
