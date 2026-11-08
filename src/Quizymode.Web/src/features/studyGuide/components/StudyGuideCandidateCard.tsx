@@ -1,7 +1,7 @@
 import * as React from "react";
 import { Link } from "react-router-dom";
 import type { StudyGuideCandidate } from "@/api/studyGuideDocuments";
-import { validateCandidateEdit, type CandidateEdit } from "../studyGuideDocumentSchema";
+import { validateCandidateEdit, type CandidateEdit, type SimilarityFlag } from "../studyGuideDocumentSchema";
 import { formatSourceLocation } from "../studyGuideSections";
 
 interface StudyGuideCandidateCardProps {
@@ -17,6 +17,10 @@ interface StudyGuideCandidateCardProps {
   disabled?: boolean;
   /** Not saved, but its section was auto-saved: the question is already among the user's items (or was skipped). */
   alreadyHandled?: boolean;
+  /** Similar-question flag from the server (#369); the card offers Keep both (default) or Skip. */
+  flag?: SimilarityFlag;
+  skipped?: boolean;
+  onSkipChange?: (candidateId: string, skip: boolean) => void;
 }
 
 function toEdit(candidate: StudyGuideCandidate, edit?: CandidateEdit): CandidateEdit {
@@ -40,6 +44,9 @@ export function StudyGuideCandidateCard({
   onSaveEdit,
   disabled = false,
   alreadyHandled = false,
+  flag,
+  skipped = false,
+  onSkipChange,
 }: StudyGuideCandidateCardProps) {
   const [draft, setDraft] = React.useState<CandidateEdit | null>(null);
   const [error, setError] = React.useState<string | null>(null);
@@ -226,6 +233,53 @@ export function StudyGuideCandidateCard({
               <blockquote className="border-l-2 border-indigo-200 pl-3 text-xs italic text-gray-600">
                 From your guide, {formatSourceLocation(candidate, sectionLabel)}: “{candidate.sourceQuote}”
               </blockquote>
+            )}
+            {flag && !candidate.accepted && !alreadyHandled && (
+              <div
+                className="rounded-md border border-amber-300 bg-amber-50 p-3 text-xs text-amber-900"
+                data-testid={`similar-${candidate.id}`}
+              >
+                <p className="font-semibold">Similar to: {flag.similarTo.question}</p>
+                {flag.conflict && (
+                  <div className="mt-1" data-testid={`conflict-${candidate.id}`}>
+                    <p className="font-medium">The answers disagree. Nothing is chosen for you:</p>
+                    <ul className="list-disc pl-5">
+                      {flag.conflict.answers.map((entry, entryIndex) => (
+                        <li key={entryIndex}>
+                          {entry.answer}
+                          {" ("}
+                          {entry.source || "another saved question"}
+                          {entry.page != null ? `, page ${entry.page}` : ""}
+                          {")"}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                )}
+                <fieldset className="mt-2 flex flex-wrap gap-4">
+                  <legend className="sr-only">What to do with question {number}</legend>
+                  <label className="flex min-h-11 items-center gap-2">
+                    <input
+                      type="radio"
+                      name={`${idPrefix}-similar`}
+                      checked={!skipped}
+                      disabled={disabled}
+                      onChange={() => onSkipChange?.(candidate.id, false)}
+                    />
+                    Keep both
+                  </label>
+                  <label className="flex min-h-11 items-center gap-2">
+                    <input
+                      type="radio"
+                      name={`${idPrefix}-similar`}
+                      checked={skipped}
+                      disabled={disabled}
+                      onChange={() => onSkipChange?.(candidate.id, true)}
+                    />
+                    Skip
+                  </label>
+                </fieldset>
+              </div>
             )}
             {!candidate.accepted && !alreadyHandled && (
               <button

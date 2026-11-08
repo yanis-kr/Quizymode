@@ -151,3 +151,32 @@ export function validateCandidateEdit(edit: CandidateEdit): string | null {
   const result = candidateEditSchema.safeParse(edit);
   return result.success ? null : (result.error.issues[0]?.message ?? "Invalid question.");
 }
+
+/** POST /study-guides/documents/{id}/similar-check response (#369). Mirrors CheckStudyGuideSimilarity.Response. */
+export const similarityFlagSchema = z.object({
+  candidateId: z.string(),
+  similarTo: z.object({
+    kind: z.enum(["item", "candidate"]),
+    itemId: z.string().nullish(),
+    candidateId: z.string().nullish(),
+    question: z.string(),
+    correctAnswer: z.string(),
+    similarity: z.number(),
+  }),
+  conflict: z
+    .object({
+      answers: z.array(
+        z.object({
+          answer: z.string(),
+          source: z.string(),
+          page: z.number().nullish(),
+          origin: z.enum(["this", "other"]),
+        })
+      ),
+    })
+    .nullish(),
+});
+
+export const similarityCheckResponseSchema = z.object({ flags: z.array(similarityFlagSchema) });
+
+export type SimilarityFlag = z.infer<typeof similarityFlagSchema>;

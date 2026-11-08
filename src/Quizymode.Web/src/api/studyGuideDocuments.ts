@@ -143,6 +143,8 @@ export interface AcceptStudyGuideCandidate {
 }
 
 export interface AcceptStudyGuideCandidatesResponse {
+  /** Candidates left out because the user chose Skip on a similar-question flag (#369). */
+  skippedCount?: number;
   collectionId: string;
   createdCount: number;
   duplicateCount: number;
@@ -239,7 +241,9 @@ export const studyGuideDocumentsApi = {
     candidates: AcceptStudyGuideCandidate[],
     collectionName?: string,
     /** Admin only: save as public items (the collection stays private). Sent only when true. */
-    publish?: boolean
+    publish?: boolean,
+    /** Candidates to leave out (Skip on a similar-question flag). Omitted means Keep both. */
+    skipCandidateIds?: string[]
   ): Promise<AcceptStudyGuideCandidatesResponse> => {
     const response = await apiClient.post<AcceptStudyGuideCandidatesResponse>(
       `${documentPath(id)}/accept`,
@@ -247,8 +251,15 @@ export const studyGuideDocumentsApi = {
         candidates,
         ...(collectionName ? { collectionName } : {}),
         ...(publish ? { publish: true } : {}),
+        ...(skipCandidateIds && skipCandidateIds.length > 0 ? { skipCandidateIds } : {}),
       }
     );
+    return response.data;
+  },
+
+  /** Read-only similar-question check (POST /study-guides/documents/{id}/similar-check, #369). Validate with Zod at the call site. */
+  similarCheck: async (id: string, candidateIds: string[]): Promise<unknown> => {
+    const response = await apiClient.post<unknown>(`${documentPath(id)}/similar-check`, { candidateIds });
     return response.data;
   },
 };
