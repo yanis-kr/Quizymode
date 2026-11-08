@@ -63,14 +63,15 @@ public sealed class DailyDigestServiceTests : DatabaseTestFixture
     {
         await SeedActivityAsync();
 
+        // At 07:59 the previous day (Nov 6) is not due yet; only the still-undelivered day before it (Nov 5) is.
         await TickAsync(Due.AddMinutes(-1));
-        _email.Calls.Should().Be(0);
+        _email.Sent.Should().NotContain(mail => mail.Subject.Contains("Fri Nov 6"));
 
         await TickAsync(Due);
         await TickAsync(Due.AddMinutes(10));
 
-        _email.Sent.Should().HaveCount(1);
-        _email.Sent[0].Subject.Should().StartWith("Quizymode daily - Fri Nov 6: 1 session");
+        _email.Sent.Should().ContainSingle(mail => mail.Subject.Contains("Fri Nov 6"))
+            .Which.Subject.Should().StartWith("Quizymode daily - Fri Nov 6: 1 session");
         (await ScheduledRowAsync(ReportDay)).Status.Should().Be(DailyDigestRunStatus.Sent);
     }
 

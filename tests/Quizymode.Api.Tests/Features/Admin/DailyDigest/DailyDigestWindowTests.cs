@@ -65,9 +65,9 @@ public sealed class DailyDigestWindowTests
     }
 
     [Fact]
-    public void DueReportDate_At0759Local_IsNull_AndAt0800Local_IsYesterday()
+    public void DueReportDate_At0759Local_IsTheDayBeforeYesterday_AndAt0800Local_IsYesterday()
     {
-        DailyDigestWindow.DueReportDate(Utc(2026, 11, 7, 13, 59), Chicago, EightAm).Should().BeNull();
+        DailyDigestWindow.DueReportDate(Utc(2026, 11, 7, 13, 59), Chicago, EightAm).Should().Be(new DateOnly(2026, 11, 5));
         DailyDigestWindow.DueReportDate(Utc(2026, 11, 7, 14, 0), Chicago, EightAm).Should().Be(new DateOnly(2026, 11, 6));
         DailyDigestWindow.DueReportDate(Utc(2026, 11, 7, 20, 0), Chicago, EightAm).Should().Be(new DateOnly(2026, 11, 6));
     }
