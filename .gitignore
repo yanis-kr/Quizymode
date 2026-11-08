@@ -379,6 +379,9 @@ playwright/.auth/
 # Claude Code local settings (machine-specific, may contain sensitive data)
 .claude/settings.local.json
 
+# Release bundle manifests, approvals and execution state (qm-refine-bundle / qm-implement-bundle)
+/.qm/
+
 # Local infrastructure snapshots (AWS config exports etc.) — keep locally, not in repo
 .artifacts/
 
