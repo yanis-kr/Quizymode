@@ -212,7 +212,7 @@ public static class GetAnalyticsOverview
         return points;
     }
 
-    private static async Task<List<ReleaseMarker>> BuildReleaseMarkersAsync(
+    internal static async Task<List<ReleaseMarker>> BuildReleaseMarkersAsync(
         ApplicationDbContext db,
         DateTime windowStart,
         DateTime windowEndExclusive,
