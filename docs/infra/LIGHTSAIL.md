@@ -26,17 +26,18 @@ The API stores uploaded pictures in the private bucket `quizymode-media-prod` (s
 
 | Variable | Value |
 | --- | --- |
-| `Media__Storage__Provider` | `S3` |
-| `Media__S3__BucketName` | `quizymode-media-prod` |
-| `Media__S3__Region` | `us-east-1` |
-| `Media__S3__AccessKeyId` | the access key id printed by `aws iam create-access-key` |
-| `Media__S3__SecretAccessKey` | the secret printed by `aws iam create-access-key` (never commit, paste in chat or log it) |
+| `APP_Media__Storage__Provider` | `S3` |
+| `APP_Media__S3__BucketName` | `quizymode-media-prod` |
+| `APP_Media__S3__Region` | `us-east-1` |
+| `APP_Media__S3__AccessKeyId` | the access key id printed by `aws iam create-access-key` |
+| `APP_Media__S3__SecretAccessKey` | the secret printed by `aws iam create-access-key` (never commit, paste in chat or log it) |
 
 Notes:
 
-- Without `Media__Storage__Provider=S3` the app uses `None`: media endpoints answer 503 and nothing is written (the default, safe state). A bucket name of `quizymode-web`, or `S3` with no bucket, is refused and logged as an error.
-- The names are namespaced (`Media__S3__...`) on purpose, so no `AWS_*` variable is needed and the SDK default credential chain is not involved.
-- To rotate the keys: `aws iam create-access-key --user-name quizymode-api-media` for a second key, set the new values in a new deployment, then `aws iam delete-access-key --user-name quizymode-api-media --access-key-id <old id>`.
+- The app only reads environment variables with the `APP_` prefix (`StartupExtensions.cs`). An unprefixed `Media__*` variable is silently ignored, so storage stays on `None` and media endpoints answer 503 (the default, safe state). A bucket name of `quizymode-web`, or `S3` with no bucket, is refused and logged as an error.
+- The upload kill switch is the `MediaControls` row (Id 1), not an environment variable. `MediaOptions` has no `UploadsEnabled` property, so `APP_Media__UploadsEnabled` is ignored. With no row, uploads are on by default. Turn them off or on from Admin → Review Board → Pictures → emergency controls, which writes the row. Do not add an `UploadsEnabled` env var; it has no effect.
+- The names are namespaced (`APP_Media__S3__...`) on purpose, so no `AWS_*` variable is needed and the SDK default credential chain is not involved.
+- To rotate the keys: `aws iam create-access-key --user-name quizymode-api-media` for a second key, set the new values (`APP_Media__S3__*`) in a new deployment, then `aws iam delete-access-key --user-name quizymode-api-media --access-key-id <old id>`.
 - After the deployment is active, check `/health`, then upload a small PNG as a signed-in user (`POST /media/images`, multipart field `file`), download it with `GET /media/images/{id}/content` using the same bearer token, and run the `head-object` and unauthenticated `curl` checks from S3_CLOUDFRONT.md.
 - Memory: decoding is limited to 16 megapixels and one decode at a time per instance (AC 3.24.9); the SkiaSharp native library is bundled in the image, nothing is installed on the host.
 
@@ -57,3 +58,27 @@ The daily LLM model-list audit emails the admin through SMTP (the SES SMTP endpo
 Without the SMTP variables the audit still records findings and shows the admin banner; the email is retried on each run once the settings exist.
 
 The first audit run happens 24 hours after the API boots, then every 24 hours, so an instance that restarts more often than that may never run the audit on its own. Use `POST /admin/llm-model-audit/run` to run it on demand.
+
+## Daily maintainer digest settings (#509, AC 15)
+
+The daily digest emails the admin one plain-text summary each morning. It uses the shared `Email` SMTP settings (the same `APP_Email__*` variables as the LLM audit, which must be set first) plus the `DailyDigest` section. Add these in a **new deployment**, keeping every existing variable (see the media section above for why). The SMTP password is a secret; never commit it, paste it in chat or log it.
+
+| Variable | Value and purpose |
+| --- | --- |
+| `APP_DailyDigest__Enabled` | `true` turns the scheduler on. Default `false`. Preview, test send and ad hoc send work either way. |
+| `APP_DailyDigest__TimeZone` | IANA zone that defines the digest's calendar day. Default `America/Chicago`. |
+| `APP_DailyDigest__SendAtLocalTime` | Local `HH:mm` when the digest becomes due. Default `08:00` (14:00 UTC in CST, 13:00 UTC in CDT). |
+| `APP_DailyDigest__AdminBaseUrl` | Base URL for the admin links in the email. Without it the links are left out. |
+| `APP_Email__AdminAddress` | The single recipient. |
+| `APP_Email__From` | The SES-verified sender address. |
+| `APP_Email__Smtp__Host` / `__Port` / `__UserName` | SES SMTP endpoint, port (default 587), and user name. |
+| `APP_Email__Smtp__Password` | The SES SMTP password (secret). |
+
+Notes:
+
+- The scheduler polls every 10 minutes, first poll 2 minutes after boot. A send is logged as `DailyDigest: sent {ReportDate}`, a failure as `DailyDigest: send failed {ReportDate} {Attempt} {ErrorType}`. Startup logs `DailyDigest: enabled, timezone {Tz}, next due {Utc}`.
+- An unknown time zone or an invalid `SendAtLocalTime` logs one error, never sends, and `GET /admin/daily-digest/runs` reports `enabled=false` with `disabledReason`.
+- Each local day has at most one scheduled row in `DailyDigestRuns`. Check the row for the day (expected `Sent`) when verifying a run. Rows go `Failed` with `SmtpError` or `NotConfigured` and retry; days that go stale become `Missed` and are listed in the next email.
+- After a restart or a re-enable only the most recent due day is sent. No backfill burst.
+- To test without waiting: `GET /admin/daily-digest/preview?date=YYYY-MM-DD` sends nothing; the test send and ad hoc send endpoints are in `DailyDigestAdmin.cs`.
+- The full behavior and acceptance criteria are in `docs/AC.md` section 15.
