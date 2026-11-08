@@ -24,9 +24,12 @@ internal static partial class StartupExtensions
             ?? new DatabaseOptions();
         string connectionString = PostgreSqlConnectionStringDefaults.Apply(rawConnectionString, databaseOptions);
 
-        builder.Services.AddDbContext<ApplicationDbContext>(options =>
+        builder.Services.AddHttpContextAccessor();
+        builder.Services.AddSingleton<Shared.DbConnectionFailureLogger>();
+        builder.Services.AddDbContext<ApplicationDbContext>((serviceProvider, options) =>
         {
             options.UseNpgsql(connectionString);
+            options.AddInterceptors(serviceProvider.GetRequiredService<Shared.DbConnectionFailureLogger>());
             
             // Suppress pending model changes warning to allow migrations to run
             // This is needed when model snapshot and configuration are temporarily out of sync during migrations
