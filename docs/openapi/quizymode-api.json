@@ -6132,6 +6132,56 @@
         }
       }
     },
+    "/study-guides/documents/{id}/similar-check": {
+      "post": {
+        "tags": [
+          "StudyGuideDocuments"
+        ],
+        "summary": "Flag generated questions that are similar to an existing item in the same category or to another selected question",
+        "description": "Owner only; other users get 404. Read-only.",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "$ref": "#/components/schemas/System.Guid"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Quizymode.Api.Features.StudyGuideDocuments.CheckStudyGuideSimilarity.Request"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Quizymode.Api.Features.StudyGuideDocuments.CheckStudyGuideSimilarity.Response"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        }
+      }
+    },
     "/study-guides/documents": {
       "post": {
         "tags": [
@@ -18139,6 +18189,16 @@
           },
           "publish": {
             "$ref": "#/components/schemas/System.Boolean"
+          },
+          "skipCandidateIds": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/components/schemas/System.Collections.Generic.ListOfSystem.Guid"
+              }
+            ]
           }
         }
       },
@@ -18166,6 +18226,151 @@
           },
           "itemIds": {
             "$ref": "#/components/schemas/System.Collections.Generic.ListOfSystem.String"
+          },
+          "skippedCount": {
+            "$ref": "#/components/schemas/System.Int32"
+          }
+        }
+      },
+      "Quizymode.Api.Features.StudyGuideDocuments.CheckStudyGuideSimilarity.Conflict": {
+        "required": [
+          "answers"
+        ],
+        "type": "object",
+        "properties": {
+          "answers": {
+            "$ref": "#/components/schemas/System.Collections.Generic.ListOfQuizymode.Api.Features.StudyGuideDocuments.CheckStudyGuideSimilarity.ConflictAnswer"
+          }
+        }
+      },
+      "Quizymode.Api.Features.StudyGuideDocuments.CheckStudyGuideSimilarity.ConflictAnswer": {
+        "required": [
+          "answer",
+          "source",
+          "page",
+          "origin"
+        ],
+        "type": "object",
+        "properties": {
+          "answer": {
+            "$ref": "#/components/schemas/System.String"
+          },
+          "source": {
+            "$ref": "#/components/schemas/System.String"
+          },
+          "page": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/components/schemas/System.NullableOfSystem.Int32"
+              }
+            ]
+          },
+          "origin": {
+            "$ref": "#/components/schemas/System.String"
+          }
+        },
+        "description": "Origin: \"this\" (the flagged candidate) or \"other\" (the similar item or candidate). Page is null when unknown."
+      },
+      "Quizymode.Api.Features.StudyGuideDocuments.CheckStudyGuideSimilarity.Flag": {
+        "required": [
+          "candidateId",
+          "similarTo",
+          "conflict"
+        ],
+        "type": "object",
+        "properties": {
+          "candidateId": {
+            "$ref": "#/components/schemas/System.String"
+          },
+          "similarTo": {
+            "$ref": "#/components/schemas/Quizymode.Api.Features.StudyGuideDocuments.CheckStudyGuideSimilarity.SimilarTo"
+          },
+          "conflict": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/components/schemas/Quizymode.Api.Features.StudyGuideDocuments.CheckStudyGuideSimilarity.Conflict"
+              }
+            ]
+          }
+        }
+      },
+      "Quizymode.Api.Features.StudyGuideDocuments.CheckStudyGuideSimilarity.Request": {
+        "required": [
+          "candidateIds"
+        ],
+        "type": "object",
+        "properties": {
+          "candidateIds": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/components/schemas/System.Collections.Generic.ListOfSystem.Guid"
+              }
+            ]
+          }
+        }
+      },
+      "Quizymode.Api.Features.StudyGuideDocuments.CheckStudyGuideSimilarity.Response": {
+        "required": [
+          "flags"
+        ],
+        "type": "object",
+        "properties": {
+          "flags": {
+            "$ref": "#/components/schemas/System.Collections.Generic.ListOfQuizymode.Api.Features.StudyGuideDocuments.CheckStudyGuideSimilarity.Flag"
+          }
+        }
+      },
+      "Quizymode.Api.Features.StudyGuideDocuments.CheckStudyGuideSimilarity.SimilarTo": {
+        "required": [
+          "kind",
+          "itemId",
+          "candidateId",
+          "question",
+          "correctAnswer",
+          "similarity"
+        ],
+        "type": "object",
+        "properties": {
+          "kind": {
+            "$ref": "#/components/schemas/System.String"
+          },
+          "itemId": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/components/schemas/System.String"
+              }
+            ]
+          },
+          "candidateId": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/components/schemas/System.String"
+              }
+            ]
+          },
+          "question": {
+            "$ref": "#/components/schemas/System.String"
+          },
+          "correctAnswer": {
+            "$ref": "#/components/schemas/System.String"
+          },
+          "similarity": {
+            "$ref": "#/components/schemas/System.Double"
           }
         }
       },
@@ -20533,6 +20738,18 @@
         "type": "array",
         "items": {
           "$ref": "#/components/schemas/Quizymode.Api.Features.StudyGuideDocuments.AcceptStudyGuideCandidates.CandidateEdit"
+        }
+      },
+      "System.Collections.Generic.ListOfQuizymode.Api.Features.StudyGuideDocuments.CheckStudyGuideSimilarity.ConflictAnswer": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/Quizymode.Api.Features.StudyGuideDocuments.CheckStudyGuideSimilarity.ConflictAnswer"
+        }
+      },
+      "System.Collections.Generic.ListOfQuizymode.Api.Features.StudyGuideDocuments.CheckStudyGuideSimilarity.Flag": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/Quizymode.Api.Features.StudyGuideDocuments.CheckStudyGuideSimilarity.Flag"
         }
       },
       "System.Collections.Generic.ListOfQuizymode.Api.Features.StudyGuideDocuments.StudyGuideDocumentContracts.Candidate": {

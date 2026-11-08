@@ -39,6 +39,7 @@ import {
 import { StudyGuideSectionPicker, type QuestionStyle } from "../components/StudyGuideSectionPicker";
 import { StudyGuideCandidateCard } from "../components/StudyGuideCandidateCard";
 import { StudyGuideSteps } from "../components/StudyGuideSteps";
+import { useStudyGuideSimilarity } from "../useStudyGuideSimilarity";
 
 const FILE_TYPE_LABELS: Record<string, string> = {
   pdf: "PDF",
@@ -87,6 +88,7 @@ interface AcceptSummary {
   createdCount: number;
   duplicateCount: number;
   failedCount: number;
+  skippedCount: number;
 }
 
 const StudyGuideDocumentPage = () => {
@@ -110,6 +112,7 @@ const StudyGuideDocumentPage = () => {
   const [acceptSummary, setAcceptSummary] = React.useState<AcceptSummary | null>(null);
   const [collectionNameInput, setCollectionNameInput] = React.useState<string | null>(null);
   const [publish, setPublish] = React.useState(false);
+  const [skipped, setSkipped] = React.useState<Set<string>>(new Set());
   const [learnTarget, setLearnTarget] = React.useState<{ path: string; notice?: string } | null>(null);
   const [quickSlow, setQuickSlow] = React.useState(false);
   const pickerRef = React.useRef<HTMLDivElement>(null);
@@ -216,26 +219,38 @@ const StudyGuideDocumentPage = () => {
     },
   });
 
+  // Similar-question flags (#369) for the questions awaiting review; auto-saved sections are never checked.
+  const reviewCandidateIds = React.useMemo(
+    () =>
+      (document?.sections ?? [])
+        .filter((section) => section.status === "Generated" && !section.autoSave)
+        .flatMap((section) => section.candidates.filter((candidate) => !candidate.accepted).map((candidate) => candidate.id)),
+    [document]
+  );
+  const similarFlags = useStudyGuideSimilarity(id, reviewCandidateIds);
+
   const acceptMutation = useMutation({
     mutationFn: async ({
       candidates,
       collectionName,
       publish: publishItems,
+      skipCandidateIds = [],
     }: {
       candidates: AcceptStudyGuideCandidate[];
       collectionName?: string;
       publish?: boolean;
+      skipCandidateIds?: string[];
     }) => {
       const responses: AcceptStudyGuideCandidatesResponse[] = [];
       for (const batch of chunk(candidates, MAX_CANDIDATES_PER_ACCEPT)) {
         // Only the first batch can create the collection; later batches reuse it.
+        const batchName = responses.length === 0 ? collectionName : undefined;
+        const batchPublish = publishItems ? true : undefined; // every batch carries it, not just the first
+        const batchSkips = skipCandidateIds.filter((skipId) => batch.some((candidate) => candidate.id === skipId));
         responses.push(
-          await studyGuideDocumentsApi.accept(
-            id,
-            batch,
-            responses.length === 0 ? collectionName : undefined,
-            publishItems ? true : undefined // every batch carries it, not just the first
-          )
+          batchSkips.length > 0
+            ? await studyGuideDocumentsApi.accept(id, batch, batchName, batchPublish, batchSkips)
+            : await studyGuideDocumentsApi.accept(id, batch, batchName, batchPublish)
         );
       }
       return responses;
@@ -248,6 +263,7 @@ const StudyGuideDocumentPage = () => {
         createdCount: responses.reduce((sum, response) => sum + response.createdCount, 0),
         duplicateCount: responses.reduce((sum, response) => sum + response.duplicateCount, 0),
         failedCount: responses.reduce((sum, response) => sum + response.failedCount, 0),
+        skippedCount: responses.reduce((sum, response) => sum + (response.skippedCount ?? 0), 0),
       });
       setAcceptError(null);
       void queryClient.invalidateQueries({ queryKey });
@@ -340,6 +356,15 @@ const StudyGuideDocumentPage = () => {
     });
   };
 
+  const setSkip = (candidateId: string, skip: boolean) => {
+    setSkipped((current) => {
+      const next = new Set(current);
+      if (skip) next.add(candidateId);
+      else next.delete(candidateId);
+      return next;
+    });
+  };
+
   const saveEdit = (candidateId: string, edit: CandidateEdit) => {
     setEdits((current) => ({ ...current, [candidateId]: edit }));
   };
@@ -359,6 +384,9 @@ const StudyGuideDocumentPage = () => {
         }
       : { id: candidate.id };
   });
+
+  const skipCandidateIds = pendingCandidates.filter((candidate) => skipped.has(candidate.id)).map((candidate) => candidate.id);
+  const saveCount = acceptPayload.length - skipCandidateIds.length;
 
   const questionNumbers = new Map<string, number>();
   reviewSections
@@ -547,7 +575,8 @@ const StudyGuideDocumentPage = () => {
                 {acceptSummary.published ? "Published" : "Saved"} {acceptSummary.createdCount} question
                 {acceptSummary.createdCount === 1 ? "" : "s"}{" to your collection"}
                 {acceptSummary.duplicateCount > 0 ? ` (${acceptSummary.duplicateCount} already saved)` : ""}
-                {acceptSummary.failedCount > 0 ? ` · ${acceptSummary.failedCount} could not be saved` : ""}.
+                {acceptSummary.failedCount > 0 ? ` · ${acceptSummary.failedCount} could not be saved` : ""}
+                {acceptSummary.skippedCount > 0 ? ` · ${acceptSummary.skippedCount} skipped as similar` : ""}.
               </p>
               <div className="mt-3 flex flex-wrap gap-2">
                 <Link
@@ -616,6 +645,9 @@ const StudyGuideDocumentPage = () => {
                         onSaveEdit={saveEdit}
                         disabled={acceptMutation.isPending}
                         alreadyHandled={section.autoSave === "Saved" && !candidate.accepted}
+                        flag={section.autoSave ? undefined : similarFlags[candidate.id]}
+                        skipped={skipped.has(candidate.id)}
+                        onSkipChange={setSkip}
                       />
                     ))}
                 </ol>
@@ -677,17 +709,18 @@ const StudyGuideDocumentPage = () => {
           <div className="sticky bottom-0 flex flex-wrap items-center gap-3 border-t border-gray-200 bg-surface/95 py-3">
             <button
               type="button"
-              disabled={acceptPayload.length === 0 || acceptMutation.isPending}
+              disabled={saveCount === 0 || acceptMutation.isPending}
               onClick={() =>
                 acceptMutation.mutate({
                   candidates: acceptPayload,
                   collectionName: needsCollectionName ? collectionNameValue.trim() || undefined : undefined,
                   publish: isAdmin && publish,
+                  skipCandidateIds,
                 })
               }
               className="rounded-md bg-indigo-600 px-4 py-2 text-sm font-medium text-white hover:bg-indigo-700 disabled:opacity-50"
             >
-              {acceptMutation.isPending ? "Saving…" : `Save ${acceptPayload.length} selected`}
+              {acceptMutation.isPending ? "Saving…" : `Save ${saveCount} selected`}
             </button>
             <span className="text-xs text-gray-500">
               {isAdmin && publish ? "Questions are published as public items." : "Questions are saved as your private items."}

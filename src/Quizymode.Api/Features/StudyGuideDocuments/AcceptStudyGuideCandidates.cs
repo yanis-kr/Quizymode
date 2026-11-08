@@ -34,14 +34,15 @@ public static class AcceptStudyGuideCandidates
         List<string>? IncorrectAnswers,
         string? Explanation);
 
-    public sealed record Request(List<CandidateEdit>? Candidates, string? CollectionName = null, bool Publish = false);
+    public sealed record Request(List<CandidateEdit>? Candidates, string? CollectionName = null, bool Publish = false, List<Guid>? SkipCandidateIds = null);
 
     public sealed record Response(
         string CollectionId,
         int CreatedCount,
         int DuplicateCount,
         int FailedCount,
-        List<string> ItemIds);
+        List<string> ItemIds,
+        int SkippedCount = 0);
 
     public sealed class Validator : AbstractValidator<Request>
     {
@@ -282,6 +283,8 @@ public static class AcceptStudyGuideCandidates
         Dictionary<Guid, CandidateEdit> edits = (request.Candidates ?? [])
             .GroupBy(edit => edit.Id)
             .ToDictionary(group => group.Key, group => group.Last());
+        // Candidates the user chose to Skip (#369) are neither saved nor counted as failed; null or empty means Keep both.
+        HashSet<Guid> skipped = (request.SkipCandidateIds ?? []).Where(edits.ContainsKey).ToHashSet();
         List<Guid> candidateIds = edits.Keys.ToList();
 
         var sectionsByGeneration = (await db.StudyGuideSections
@@ -310,6 +313,7 @@ public static class AcceptStudyGuideCandidates
             .ToHashSet();
 
         int duplicateCount = alreadyAccepted.Count;
+        int skippedCount = 0;
         List<(GenerationCandidate Candidate, AddItemsBulk.ItemRequest Item)> pending = [];
         HashSet<string> seenQuestions = new(StringComparer.OrdinalIgnoreCase);
         List<string> invalid = [];
@@ -319,6 +323,12 @@ public static class AcceptStudyGuideCandidates
         {
             if (alreadyAccepted.Contains(candidate.Id))
             {
+                continue;
+            }
+
+            if (skipped.Contains(candidate.Id))
+            {
+                skippedCount++;
                 continue;
             }
 
@@ -459,7 +469,7 @@ public static class AcceptStudyGuideCandidates
             if (createdIds.Count == 0 && document.CollectionId is null)
             {
                 await db.SaveChangesAsync(cancellationToken);
-                return Result.Success<Response?>(new Response(string.Empty, 0, duplicateCount, failedCount, []));
+                return Result.Success<Response?>(new Response(string.Empty, 0, duplicateCount, failedCount, [], skippedCount));
             }
         }
 
@@ -496,7 +506,8 @@ public static class AcceptStudyGuideCandidates
             createdCount,
             duplicateCount,
             failedCount,
-            createdIds.Select(itemId => itemId.ToString()).ToList()));
+            createdIds.Select(itemId => itemId.ToString()).ToList(),
+            skippedCount));
     }
 
     /// <summary>The document's collection if it still exists and is owned by the user; otherwise a new one.</summary>

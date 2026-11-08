@@ -23,6 +23,7 @@ vi.mock("@/api/studyGuideDocuments", () => ({
     generate: vi.fn(),
     accept: vi.fn(),
     setPrimarySource: vi.fn(),
+    similarCheck: vi.fn(),
   },
 }));
 
@@ -464,6 +465,80 @@ describe("StudyGuideDocumentPage", () => {
       "href",
       "/collections/col-9"
     );
+  });
+
+  describe("similar-question flags (#369)", () => {
+    const flaggedDocument = () =>
+      makeDocument({
+        sections: [
+          section(0, { status: "Generated", candidates: [candidate("c1"), candidate("c2", { index: 1 })] }),
+          section(1),
+        ],
+      });
+
+    const withFlags = () =>
+      vi.mocked(studyGuideDocumentsApi.similarCheck).mockResolvedValue({
+        flags: [
+          {
+            candidateId: "c1",
+            similarTo: { kind: "item", itemId: "i9", question: "What is the powerhouse of the cell?", correctAnswer: "Mitochondria", similarity: 0.8 },
+            conflict: {
+              answers: [
+                { answer: "Right c1", source: "Biology Unit 3", page: 14, origin: "this" },
+                { answer: "Mitochondria", source: "Old notes", page: null, origin: "other" },
+              ],
+            },
+          },
+        ],
+      });
+
+    it("shows Similar to with Keep both selected by default, the conflicting answers with page, and sends no skip list", async () => {
+      vi.mocked(studyGuideDocumentsApi.get).mockResolvedValue(flaggedDocument());
+      withFlags();
+      vi.mocked(studyGuideDocumentsApi.accept).mockResolvedValue({
+        collectionId: "col-9", createdCount: 2, duplicateCount: 0, failedCount: 0, itemIds: ["i1", "i2"],
+      });
+
+      renderPage();
+
+      expect(await screen.findByText(/Similar to: What is the powerhouse of the cell\?/)).toBeInTheDocument();
+      expect(studyGuideDocumentsApi.similarCheck).toHaveBeenCalledWith("doc-1", ["c1", "c2"]);
+      expect(screen.getByRole("radio", { name: "Keep both" })).toBeChecked();
+      expect(screen.getByRole("radio", { name: "Skip" })).not.toBeChecked();
+      const conflict = screen.getByTestId("conflict-c1");
+      expect(conflict).toHaveTextContent("Right c1 (Biology Unit 3, page 14)");
+      expect(conflict).toHaveTextContent("Mitochondria (Old notes)");
+
+      fireEvent.change(await screen.findByLabelText("Collection name"), { target: { value: "Bio" } });
+      fireEvent.click(screen.getByRole("button", { name: "Save 2 selected" }));
+      await waitFor(() =>
+        expect(studyGuideDocumentsApi.accept).toHaveBeenCalledWith("doc-1", [{ id: "c1" }, { id: "c2" }], "Bio", undefined)
+      );
+    });
+
+    it("sends the skipped candidate id in SkipCandidateIds when Skip is chosen", async () => {
+      vi.mocked(studyGuideDocumentsApi.get).mockResolvedValue(flaggedDocument());
+      withFlags();
+      vi.mocked(studyGuideDocumentsApi.accept).mockResolvedValue({
+        collectionId: "col-9", createdCount: 1, duplicateCount: 0, failedCount: 0, itemIds: ["i2"], skippedCount: 1,
+      });
+
+      renderPage();
+
+      fireEvent.click(await screen.findByRole("radio", { name: "Skip" }));
+      fireEvent.click(screen.getByRole("button", { name: "Save 1 selected" }));
+
+      await waitFor(() =>
+        expect(studyGuideDocumentsApi.accept).toHaveBeenCalledWith(
+          "doc-1",
+          [{ id: "c1" }, { id: "c2" }],
+          "Biology Unit 3",
+          undefined,
+          ["c1"]
+        )
+      );
+      expect(await screen.findByText(/1 skipped as similar/i)).toBeInTheDocument();
+    });
   });
 
   it("shows a not-found message for a missing document", async () => {
