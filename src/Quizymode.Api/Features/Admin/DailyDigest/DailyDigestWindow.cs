@@ -41,11 +41,23 @@ internal static class DailyDigestWindow
     internal static DateOnly LocalDate(DateTime utc, TimeZoneInfo zone) =>
         DateOnly.FromDateTime(TimeZoneInfo.ConvertTimeFromUtc(DateTime.SpecifyKind(utc, DateTimeKind.Utc), zone));
 
-    /// <summary>The report date that is due now (local yesterday once its due time has passed); null before that.</summary>
+    /// <summary>
+    /// The report date that is due now: the most recent local day whose due time has passed and whose stale time has not.
+    /// Between local midnight and the send time that is the day before yesterday, so no gap exists; null when none.
+    /// </summary>
     internal static DateOnly? DueReportDate(DateTime nowUtc, TimeZoneInfo zone, TimeOnly sendAt)
     {
-        DateOnly candidate = LocalDate(nowUtc, zone).AddDays(-1);
-        return nowUtc >= DueUtc(candidate, zone, sendAt) && nowUtc < StaleUtc(candidate, zone, sendAt) ? candidate : null;
+        DateOnly yesterday = LocalDate(nowUtc, zone).AddDays(-1);
+        for (int back = 0; back < 2; back++)
+        {
+            DateOnly candidate = yesterday.AddDays(-back);
+            if (nowUtc >= DueUtc(candidate, zone, sendAt) && nowUtc < StaleUtc(candidate, zone, sendAt))
+            {
+                return candidate;
+            }
+        }
+
+        return null;
     }
 
     /// <summary>The next moment a digest becomes due, strictly after <paramref name="nowUtc"/>.</summary>

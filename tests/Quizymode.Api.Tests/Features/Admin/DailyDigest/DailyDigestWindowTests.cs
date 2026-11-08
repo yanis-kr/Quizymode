@@ -73,6 +73,15 @@ public sealed class DailyDigestWindowTests
     }
 
     [Fact]
+    public void DueReportDate_AfterLocalMidnightBeforeSendTime_StillCoversTheUndeliveredDay()
+    {
+        // D = Nov 6. D+2 00:30 CST is Nov 8 06:30 UTC: D is still due. D+2 08:00 CST is Nov 8 14:00 UTC: D is stale, D+1 is due.
+        DailyDigestWindow.DueReportDate(Utc(2026, 11, 8, 6, 30), Chicago, EightAm).Should().Be(new DateOnly(2026, 11, 6));
+        DailyDigestWindow.DueReportDate(Utc(2026, 11, 8, 13, 59), Chicago, EightAm).Should().Be(new DateOnly(2026, 11, 6));
+        DailyDigestWindow.DueReportDate(Utc(2026, 11, 8, 14, 0), Chicago, EightAm).Should().Be(new DateOnly(2026, 11, 7));
+    }
+
+    [Fact]
     public void LocalDate_UsesTheZone_NotUtc()
     {
         // 05:30 UTC on Nov 8 is 23:30 CST on Nov 7.
