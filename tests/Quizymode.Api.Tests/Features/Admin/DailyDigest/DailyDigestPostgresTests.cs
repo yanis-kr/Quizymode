@@ -12,6 +12,14 @@ namespace Quizymode.Api.Tests.Features.Admin.DailyDigest;
 
 /// <summary>#509 AC 19 on real PostgreSQL: the migration, the filtered unique index and concurrent claims. Requires Docker.</summary>
 [Trait("Category", "Postgres")]
+/// <summary>
+/// Runs in its own non-parallel collection so the timing budget test does not measure CPU and Docker
+/// contention from the other PostgreSQL-backed test classes, each of which starts its own container.
+/// </summary>
+[CollectionDefinition("DailyDigestTiming", DisableParallelization = true)]
+public sealed class DailyDigestTimingCollectionDefinition { }
+
+[Collection("DailyDigestTiming")]
 public sealed class DailyDigestPostgresTests(PostgresContainerFixture fixture, ITestOutputHelper output) : IClassFixture<PostgresContainerFixture>
 {
     private static readonly DateTime Due = new(2026, 11, 7, 14, 0, 0, DateTimeKind.Utc);
