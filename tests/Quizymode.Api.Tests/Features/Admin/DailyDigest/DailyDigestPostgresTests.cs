@@ -10,8 +10,6 @@ using Xunit.Abstractions;
 
 namespace Quizymode.Api.Tests.Features.Admin.DailyDigest;
 
-/// <summary>#509 AC 19 on real PostgreSQL: the migration, the filtered unique index and concurrent claims. Requires Docker.</summary>
-[Trait("Category", "Postgres")]
 /// <summary>
 /// Runs in its own non-parallel collection so the timing budget test does not measure CPU and Docker
 /// contention from the other PostgreSQL-backed test classes, each of which starts its own container.
@@ -19,6 +17,8 @@ namespace Quizymode.Api.Tests.Features.Admin.DailyDigest;
 [CollectionDefinition("DailyDigestTiming", DisableParallelization = true)]
 public sealed class DailyDigestTimingCollectionDefinition { }
 
+/// <summary>#509 AC 19 on real PostgreSQL: the migration, the filtered unique index and concurrent claims. Requires Docker.</summary>
+[Trait("Category", "Postgres")]
 [Collection("DailyDigestTiming")]
 public sealed class DailyDigestPostgresTests(PostgresContainerFixture fixture, ITestOutputHelper output) : IClassFixture<PostgresContainerFixture>
 {
