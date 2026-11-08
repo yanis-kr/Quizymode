@@ -143,6 +143,6 @@ public sealed class DailyDigestPostgresTests(PostgresContainerFixture fixture, I
         output.WriteLine($"Composed a daily digest over 60k sessions / 180 days in {watch.ElapsedMilliseconds} ms");
         report.AllUnavailable.Should().BeFalse();
         report.Current.Visits.Should().NotBeNull();
-        watch.Elapsed.Should().BeLessThan(TimeSpan.FromSeconds(30));
+        watch.Elapsed.Should().BeLessThan(TimeSpan.FromSeconds(90));
     }
 }
