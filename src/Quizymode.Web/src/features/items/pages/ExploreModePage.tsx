@@ -25,6 +25,7 @@ import { ScopeSecondaryBar } from "@/components/ScopeSecondaryBar";
 import { ScopePathHeader } from "@/components/ScopePathHeader";
 import type { ViewMode } from "@/components/ModeSwitcher";
 import { reviewQueueApi } from "@/api/learningLoop";
+import { addLocalReviewItems } from "@/features/learningLoop/localReviewList";
 import { FlashcardsDeckSummary } from "@/features/items/flashcards/FlashcardsDeckSummary";
 import {
   anchorFirst,
@@ -483,8 +484,12 @@ const ExploreModePage = () => {
         flashcardsEventContext(collectionId, category)
       );
     }
-    // Got it never touches the review queue; guests keep an in-session pile only.
-    if (grade === "still-learning" && isAuthenticated) startEnqueue(graded.id);
+    // Got it never touches the review queue. Still learning: signed in goes to the account queue; a guest's card joins
+    // the browser-local review list (AC 3.14.9).
+    if (grade === "still-learning") {
+      if (isAuthenticated) startEnqueue(graded.id);
+      else addLocalReviewItems([graded.id]);
+    }
   };
 
   // Calculate current index based on itemId if present

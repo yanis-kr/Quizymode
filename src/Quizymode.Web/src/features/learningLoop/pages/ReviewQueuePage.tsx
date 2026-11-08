@@ -10,6 +10,7 @@ import { FixedSetQuiz } from "../FixedSetQuiz";
 import { BossFightHeader } from "../BossFightHeader";
 import { BOSS_FIGHT_MIN_DUE, BossFightOutcome, type BossFollowUp } from "../BossFightOutcome";
 import { useReviewAnswers } from "../useReviewAnswers";
+import { GuestReviewView } from "./GuestReviewView";
 
 export const REVIEW_QUEUE_QUERY_KEY = ["review-queue"] as const;
 
@@ -24,7 +25,7 @@ const BOSS_FLASH_MS = 800;
  * With 5 or more due the learner can start a boss fight (#358): the same quiz and saves, with HP that drops on correct
  * first answers.
  */
-const ReviewQueuePage = () => {
+const SignedInReviewQueue = () => {
   const { userId } = useAuth();
   const { tally, recordAnswer, settlePending, resetTally } = useReviewAnswers();
 
@@ -250,6 +251,13 @@ const ReviewQueuePage = () => {
       </div>
     </>
   );
+};
+
+/** `/review` for signed-in learners (REVIEW-001) and, for anonymous visitors, the browser-only list (AC 3.14.15). */
+const ReviewQueuePage = () => {
+  const { isAuthenticated, isLoading } = useAuth();
+  if (isLoading) return <LoadingSpinner />;
+  return isAuthenticated ? <SignedInReviewQueue /> : <GuestReviewView />;
 };
 
 export default ReviewQueuePage;

@@ -405,7 +405,7 @@ describe("SwipeBlitzPage", () => {
       expect(heading).toHaveFocus();
       expect(screen.getByText("2 of 3 right")).toBeInTheDocument();
       expect(screen.getByText("New best!")).toBeInTheDocument();
-      expect(screen.getByRole("status")).toHaveTextContent("Time's up. Score 2. New best!");
+      expect(screen.getAllByRole("status")[0]).toHaveTextContent("Time's up. Score 2. New best!");
       expect(screen.getByRole("link", { name: "Back to games" })).toHaveAttribute("href", "/games/science");
       expect(trackedEvents("game_started")).toHaveLength(1);
       const completed = trackedEvents("game_completed");

@@ -5,6 +5,7 @@ import { INTERESTS_QUERY_KEY } from "@/features/interests/useInterests";
 import { claimLocalInterests } from "@/features/learningLoop/claimLocalInterests";
 import { claimLocalStudyPlans } from "@/features/studyPlans/claimLocalStudyPlans";
 import { claimLocalBookmarks } from "@/features/collections/claimLocalBookmarks";
+import { claimLocalReviewList } from "@/features/learningLoop/claimLocalReviewList";
 import { claimGuestProgress, type ClaimGuestProgressResult } from "./claimGuestProgress";
 
 /**
@@ -41,11 +42,13 @@ export function GuestProgressClaim() {
       .catch(() => undefined);
     // Test-date plans made while anonymous (#364) are claimed in their own chain; plans refetch once both claims settle
     // (guest runs imported by run() count towards a plan's activity).
-    // Browser-local collection bookmarks (#503, AC 1.15.4) replay in the same pass; the bookmark lists refetch after it.
+    // Browser-local collection bookmarks (#503, AC 1.15.4) and the browser-local review list (AC 3.14.16) replay in the
+    // same pass; their lists refetch after it.
     // eslint-disable-next-line react-hooks/set-state-in-effect
-    void Promise.allSettled([run(), claimLocalStudyPlans(), claimLocalBookmarks()]).then(() => {
+    void Promise.allSettled([run(), claimLocalStudyPlans(), claimLocalBookmarks(), claimLocalReviewList()]).then(() => {
       void queryClient.invalidateQueries({ queryKey: ["study-plans"] });
       void queryClient.invalidateQueries({ queryKey: ["collections"] });
+      void queryClient.invalidateQueries({ queryKey: ["review-queue"] });
     });
   }, [isAuthenticated, isLoading, run, queryClient, userId]);
 

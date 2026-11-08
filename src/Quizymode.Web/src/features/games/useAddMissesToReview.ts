@@ -2,9 +2,14 @@ import { useCallback, useEffect, useRef, useState } from "react";
 import { useQueryClient } from "@tanstack/react-query";
 import { reviewQueueApi } from "@/api/learningLoop";
 import { useAuth } from "@/contexts/AuthContext";
+import { addLocalReviewItems } from "@/features/learningLoop/localReviewList";
 
 /** Status line for the Add misses to Review control (AC 3.20.9). */
-export function describeAddResult(added: number, unavailable: number, failed: number): string {
+export function describeAddResult(added: number, unavailable: number, failed: number, guest: boolean = false): string {
+  if (guest) {
+    if (failed > 0) return `Couldn't save ${failed} in this browser.`;
+    return added > 0 ? `Saved ${added} for review in this browser.` : "";
+  }
   const cantAdd: string = unavailable > 0 ? ` ${unavailable} can't be added.` : "";
   if (failed > 0) {
     return added > 0
@@ -22,8 +27,10 @@ export function describeAddResult(added: number, unavailable: number, failed: nu
 type AddOutcome = "added" | "unavailable" | "failed";
 
 export interface AddMissesToReview {
-  /** Signed in and auth settled; guests never get the control. */
+  /** Auth settled. Guests get the control too; their misses are saved in this browser (AC 3.14.14). */
   canAdd: boolean;
+  /** True for an anonymous visitor: adds go to the browser-local review list, not the API. */
+  isGuest: boolean;
   isPending: boolean;
   added: number;
   unavailable: number;
@@ -72,6 +79,13 @@ export function useAddMissesToReview(runId: string, itemIds: readonly string[]):
     const next: Record<string, AddOutcome> = { ...(outcomes.runId === runId ? outcomes.byId : {}) };
     let addedAny = false;
     try {
+      if (!isAuthenticated) {
+        // Anonymous visitors: one local write, no API call (AC 3.14.14).
+        const saved: boolean = addLocalReviewItems(toTry);
+        for (const id of toTry) next[id] = saved ? "added" : "failed";
+        if (mounted.current) setOutcomes({ runId, byId: next });
+        return;
+      }
       for (const id of toTry) {
         if (!mounted.current) return;
         try {
@@ -89,10 +103,11 @@ export function useAddMissesToReview(runId: string, itemIds: readonly string[]):
       inFlight.current = false;
       if (mounted.current) setPendingRunId(null);
     }
-  }, [itemIds, outcomes, queryClient, runId]);
+  }, [isAuthenticated, itemIds, outcomes, queryClient, runId]);
 
   return {
-    canAdd: isAuthenticated && !isLoading,
+    canAdd: !isLoading,
+    isGuest: !isAuthenticated,
     isPending: pendingRunId === runId,
     added: count("added"),
     unavailable: count("unavailable"),

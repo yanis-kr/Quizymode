@@ -154,6 +154,8 @@ function App() {
         <Route path="/study-guide/import" element={<RedirectWithSearch to="/create/notes" />} />
         <Route path="/items/upload" element={<RedirectWithSearch to="/create/import" />} />
         <Route path="/items/bulk-create" element={<RedirectWithSearch to="/create/import" />} />
+        {/* /review is public: the page shows the browser-only list to guests and the account queue to signed-in users (AC 3.14.15). */}
+        <Route path="/review" element={<ReviewQueuePage />} />
         <Route element={<RequireAuthRoute />}>
           <Route path="/create/notes" element={<StudyGuideUploadPage />} />
           <Route path="/create/question" element={<CreateItemPage />} />
@@ -161,7 +163,6 @@ function App() {
           <Route path="/items/:id/edit" element={<EditItemPage />} />
           <Route path="/study-guides/documents" element={<StudyGuideDocumentsPage />} />
           <Route path="/study-guides/documents/:id" element={<StudyGuideDocumentPage />} />
-          <Route path="/review" element={<ReviewQueuePage />} />
         </Route>
         <Route path="/items/:id/comments" element={<ItemCommentsPage />} />
         <Route path="/items/:id" element={<ItemDetailPage />} />

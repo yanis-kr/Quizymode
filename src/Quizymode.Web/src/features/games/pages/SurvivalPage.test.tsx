@@ -334,7 +334,7 @@ describe("SurvivalPage", () => {
       expect(screen.getByText("Streak 2")).toBeInTheDocument();
       expect(screen.getByText("2 of 5 right")).toBeInTheDocument();
       expect(screen.getByText("New best!")).toBeInTheDocument();
-      expect(screen.getByRole("status")).toHaveTextContent("Game over. Streak 2. New best!");
+      expect(screen.getAllByRole("status")[0]).toHaveTextContent("Game over. Streak 2. New best!");
       expect(within(screen.getByRole("region", { name: "Misses" })).getAllByRole("listitem")).toHaveLength(3);
       expect(screen.queryByRole("button", { name: "Add misses to Review" })).toBeNull();
       expect(screen.getByRole("link", { name: "Back to games" })).toHaveAttribute("href", "/games/science");
@@ -444,7 +444,7 @@ describe("SurvivalPage", () => {
       writeSurvivalGhostIfBetter(ghostKey, [0]);
       await playToResults(2);
       expect(screen.getByText(/^1 answer ahead of your ghost at 0:0\d\.$/)).toBeInTheDocument();
-      expect(screen.getByRole("status")).toHaveTextContent(/Game over\. Streak 2\..*1 answer ahead of your ghost at 0:0\d\.$/);
+      expect(screen.getAllByRole("status")[0]).toHaveTextContent(/Game over\. Streak 2\..*1 answer ahead of your ghost at 0:0\d\.$/);
       expect(readGhost(ghostKey)).toHaveLength(2);
     });
 
