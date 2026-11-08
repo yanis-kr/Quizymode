@@ -310,27 +310,21 @@ internal sealed class DailyDigestRunStore(ApplicationDbContext db, TimeProvider 
             }
 
             (DateTime start, DateTime end) = DailyDigestWindow.ForDate(day, zone);
-            db.DailyDigestRuns.Add(new DailyDigestRun
-            {
-                Id = Guid.NewGuid(),
-                Kind = DailyDigestRunKind.Scheduled,
-                ReportDate = day,
-                TimeZone = zone.Id,
-                WindowStartUtc = start,
-                WindowEndUtc = end,
-                Status = DailyDigestRunStatus.Missed,
-                ClaimToken = Guid.NewGuid(),
-                CreatedUtc = now
-            });
-            try
-            {
-                await db.SaveChangesAsync(cancellationToken);
-            }
-            catch (DbUpdateException)
-            {
-                // Another instance recorded it.
-                db.ChangeTracker.Clear();
-            }
+            // A row that another instance already wrote for this day is left alone (ON CONFLICT, no logged error).
+            await InsertScheduledIfAbsentAsync(
+                new DailyDigestRun
+                {
+                    Id = Guid.NewGuid(),
+                    Kind = DailyDigestRunKind.Scheduled,
+                    ReportDate = day,
+                    TimeZone = zone.Id,
+                    WindowStartUtc = start,
+                    WindowEndUtc = end,
+                    Status = DailyDigestRunStatus.Missed,
+                    ClaimToken = Guid.NewGuid(),
+                    CreatedUtc = now
+                },
+                cancellationToken);
         }
     }
 
