@@ -539,6 +539,20 @@ describe("StudyGuideDocumentPage", () => {
       );
       expect(await screen.findByText(/1 skipped as similar/i)).toBeInTheDocument();
     });
+
+    it("reports candidates linked to existing questions instead of created (#241)", async () => {
+      vi.mocked(studyGuideDocumentsApi.get).mockResolvedValue(flaggedDocument());
+      withFlags();
+      vi.mocked(studyGuideDocumentsApi.accept).mockResolvedValue({
+        collectionId: "col-9", createdCount: 1, duplicateCount: 0, failedCount: 0, itemIds: ["i2"], linkedCount: 1,
+      });
+
+      renderPage();
+
+      fireEvent.click(await screen.findByRole("button", { name: "Save 2 selected" }));
+
+      expect(await screen.findByText(/1 linked to existing questions/i)).toBeInTheDocument();
+    });
   });
 
   it("shows a not-found message for a missing document", async () => {

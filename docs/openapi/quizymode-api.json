@@ -18229,6 +18229,9 @@
           },
           "skippedCount": {
             "$ref": "#/components/schemas/System.Int32"
+          },
+          "linkedCount": {
+            "$ref": "#/components/schemas/System.Int32"
           }
         }
       },

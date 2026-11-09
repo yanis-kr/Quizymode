@@ -89,6 +89,7 @@ interface AcceptSummary {
   duplicateCount: number;
   failedCount: number;
   skippedCount: number;
+  linkedCount: number;
 }
 
 const StudyGuideDocumentPage = () => {
@@ -264,6 +265,7 @@ const StudyGuideDocumentPage = () => {
         duplicateCount: responses.reduce((sum, response) => sum + response.duplicateCount, 0),
         failedCount: responses.reduce((sum, response) => sum + response.failedCount, 0),
         skippedCount: responses.reduce((sum, response) => sum + (response.skippedCount ?? 0), 0),
+        linkedCount: responses.reduce((sum, response) => sum + (response.linkedCount ?? 0), 0),
       });
       setAcceptError(null);
       void queryClient.invalidateQueries({ queryKey });
@@ -576,7 +578,8 @@ const StudyGuideDocumentPage = () => {
                 {acceptSummary.createdCount === 1 ? "" : "s"}{" to your collection"}
                 {acceptSummary.duplicateCount > 0 ? ` (${acceptSummary.duplicateCount} already saved)` : ""}
                 {acceptSummary.failedCount > 0 ? ` · ${acceptSummary.failedCount} could not be saved` : ""}
-                {acceptSummary.skippedCount > 0 ? ` · ${acceptSummary.skippedCount} skipped as similar` : ""}.
+                {acceptSummary.skippedCount > 0 ? ` · ${acceptSummary.skippedCount} skipped as similar` : ""}
+                {acceptSummary.linkedCount > 0 ? ` · ${acceptSummary.linkedCount} linked to existing questions` : ""}.
               </p>
               <div className="mt-3 flex flex-wrap gap-2">
                 <Link

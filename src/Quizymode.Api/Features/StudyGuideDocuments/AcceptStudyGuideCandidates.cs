@@ -5,10 +5,12 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Storage;
 using Microsoft.Extensions.Logging.Abstractions;
 using Microsoft.Extensions.Options;
+using Npgsql;
 using Quizymode.Api.Data;
 using Quizymode.Api.Features.Items.AddBulk;
 using Quizymode.Api.Services;
 using Quizymode.Api.Services.Taxonomy;
+using Quizymode.Api.Shared.Helpers;
 using Quizymode.Api.Shared.Kernel;
 using Quizymode.Api.Shared.Models;
 using Quizymode.Api.Shared.Options;
@@ -42,7 +44,8 @@ public static class AcceptStudyGuideCandidates
         int DuplicateCount,
         int FailedCount,
         List<string> ItemIds,
-        int SkippedCount = 0);
+        int SkippedCount = 0,
+        int LinkedCount = 0);
 
     public sealed class Validator : AbstractValidator<Request>
     {
@@ -319,6 +322,13 @@ public static class AcceptStudyGuideCandidates
         List<string> invalid = [];
         AddItemsBulk.ItemRequestValidator itemValidator = new();
 
+        // Unedited, not-skipped, not-yet-saved candidates that match a public item are linked instead of created (#241).
+        List<GenerationCandidate> linkable = candidates
+            .Where(c => !alreadyAccepted.Contains(c.Id) && !skipped.Contains(c.Id) && !IsEdited(c, edits[c.Id]))
+            .ToList();
+        Dictionary<Guid, Guid> publicLinks = await FindPublicLinkTargetsAsync(db, document.CategoryName, linkable, cancellationToken);
+        List<(GenerationCandidate Candidate, Guid ItemId)> linked = [];
+
         foreach (GenerationCandidate candidate in candidates.OrderBy(c => sectionsByGeneration[c.GenerationId].Index).ThenBy(c => c.Index))
         {
             if (alreadyAccepted.Contains(candidate.Id))
@@ -373,6 +383,12 @@ public static class AcceptStudyGuideCandidates
                 }
 
                 invalid.Add($"\"{Truncate(question, 60)}\": {itemValidation.Errors[0].ErrorMessage}");
+                continue;
+            }
+
+            if (publicLinks.TryGetValue(candidate.Id, out Guid linkedItemId))
+            {
+                linked.Add((candidate, linkedItemId));
                 continue;
             }
 
@@ -455,6 +471,17 @@ public static class AcceptStudyGuideCandidates
             }
         }
 
+        foreach ((GenerationCandidate candidate, Guid itemId) in linked)
+        {
+            db.StudyGuideAcceptedCandidates.Add(new StudyGuideAcceptedCandidate
+            {
+                DocumentId = document.Id,
+                CandidateId = candidate.Id,
+                ItemId = itemId,
+                AcceptedUtc = nowUtc
+            });
+        }
+
         if (lenient)
         {
             List<StudyGuideSection> toMark = await db.StudyGuideSections
@@ -466,21 +493,23 @@ public static class AcceptStudyGuideCandidates
             }
 
             // Nothing was saved and there is no collection yet: do not create an empty one.
-            if (createdIds.Count == 0 && document.CollectionId is null)
+            if (createdIds.Count == 0 && linked.Count == 0 && document.CollectionId is null)
             {
                 await db.SaveChangesAsync(cancellationToken);
                 return Result.Success<Response?>(new Response(string.Empty, 0, duplicateCount, failedCount, [], skippedCount));
             }
         }
 
+        // Created and linked items both join the collection.
+        List<Guid> collectionItemIds = createdIds.Concat(linked.Select(entry => entry.ItemId)).Distinct().ToList();
         Collection collection = await EnsureCollectionAsync(db, document, userId, collectionName, nowUtc, cancellationToken);
         HashSet<Guid> inCollection = (await db.CollectionItems
                 .AsNoTracking()
-                .Where(ci => ci.CollectionId == collection.Id && createdIds.Contains(ci.ItemId))
+                .Where(ci => ci.CollectionId == collection.Id && collectionItemIds.Contains(ci.ItemId))
                 .Select(ci => ci.ItemId)
                 .ToListAsync(cancellationToken))
             .ToHashSet();
-        foreach (Guid itemId in createdIds.Where(itemId => !inCollection.Contains(itemId)))
+        foreach (Guid itemId in collectionItemIds.Where(itemId => !inCollection.Contains(itemId)))
         {
             db.CollectionItems.Add(new CollectionItem
             {
@@ -491,7 +520,7 @@ public static class AcceptStudyGuideCandidates
             });
         }
 
-        if (createdIds.Count > 0)
+        if (collectionItemIds.Count > 0)
         {
             collection.UpdatedAt = nowUtc;
         }
@@ -507,7 +536,82 @@ public static class AcceptStudyGuideCandidates
             duplicateCount,
             failedCount,
             createdIds.Select(itemId => itemId.ToString()).ToList(),
-            skippedCount));
+            skippedCount,
+            linked.Count));
+    }
+
+    private sealed record PublicLinkRow(long Idx, Guid ItemId, float Similarity);
+
+    /// <summary>
+    /// Maps each linkable candidate to a public, picture-eligible item in the same category whose question is similar
+    /// (pg_trgm similarity &gt;= 0.6, the #369 rule). Private items of other users are never considered (#241).
+    /// </summary>
+    internal static async Task<Dictionary<Guid, Guid>> FindPublicLinkTargetsAsync(
+        ApplicationDbContext db,
+        string category,
+        IReadOnlyList<GenerationCandidate> candidates,
+        CancellationToken cancellationToken)
+    {
+        if (candidates.Count == 0 || !db.Database.IsNpgsql())
+        {
+            return [];
+        }
+
+        string[] texts = candidates.Select(candidate => ItemSimHashInput.Normalize(candidate.Question)).ToArray();
+        string sql = $"""
+            SELECT q.idx AS "Idx", i."Id" AS "ItemId", similarity(lower(btrim(i."Question")), q.txt) AS "Similarity"
+            FROM unnest(@Texts) WITH ORDINALITY AS q(txt, idx)
+            CROSS JOIN "Items" i
+            JOIN "Categories" c ON c."Id" = i."CategoryId"
+            WHERE c."Name" = @Category
+                AND i."IsPrivate" = false AND {ItemVisibility.MediaEligibleSql("i")}
+                AND similarity(lower(btrim(i."Question")), q.txt) >= @Threshold
+            ORDER BY q.idx, "Similarity" DESC, i."Id"
+            """;
+        List<PublicLinkRow> rows = await db.Database
+            .SqlQueryRaw<PublicLinkRow>(
+                sql,
+                new NpgsqlParameter("Texts", texts),
+                new NpgsqlParameter("Category", category),
+                new NpgsqlParameter("Threshold", (float)CheckStudyGuideSimilarity.Threshold))
+            .ToListAsync(cancellationToken);
+
+        Dictionary<Guid, Guid> targets = [];
+        foreach (PublicLinkRow row in rows)
+        {
+            // Rows are ordered best match first per candidate, so the first row for a candidate wins.
+            targets.TryAdd(candidates[(int)row.Idx - 1].Id, row.ItemId);
+        }
+
+        return targets;
+    }
+
+    /// <summary>True when the user changed any field of a candidate; edited candidates are always saved as new items (#241).</summary>
+    internal static bool IsEdited(GenerationCandidate candidate, CandidateEdit edit)
+    {
+        if (edit.Question is not null && edit.Question.Trim() != candidate.Question.Trim())
+        {
+            return true;
+        }
+
+        if (edit.CorrectAnswer is not null && edit.CorrectAnswer.Trim() != candidate.CorrectAnswer.Trim())
+        {
+            return true;
+        }
+
+        if (edit.Explanation is not null && edit.Explanation.Trim() != candidate.Explanation.Trim())
+        {
+            return true;
+        }
+
+        if (edit.IncorrectAnswers is not null)
+        {
+            List<string> original = GetStudyGuideDocument.ReadAnswers(candidate.IncorrectAnswersJson);
+            return !edit.IncorrectAnswers.Select(answer => answer.Trim())
+                .SequenceEqual(original.Select(answer => answer.Trim()), StringComparer.Ordinal);
+        }
+
+        return false;
     }
 
     /// <summary>The document's collection if it still exists and is owned by the user; otherwise a new one.</summary>
