@@ -303,6 +303,27 @@ public sealed class StudyGuideAcceptTests : StudyGuideDocumentFixture
     }
 
     [Fact]
+    public void Explanation_PastedParagraphTitleIsShortenedToOneLine()
+    {
+        string paragraph = "Photosynthesis converts light energy into chemical energy.\nChlorophyll in chloroplasts absorbs light, splitting water and releasing oxygen. The Calvin cycle uses ATP and NADPH to fix carbon dioxide in";
+
+        string explanation = AcceptStudyGuideCandidates.BuildExplanation("Base.", paragraph, "Section 1");
+
+        explanation.Should().StartWith("Base.\n\nFrom \"");
+        explanation.Should().EndWith("…\", Section 1");
+        explanation.Should().NotContain("\n\nFrom \"Photosynthesis converts light energy into chemical energy.\nChlorophyll");
+        explanation.Split('\n').Should().HaveCount(3, "only the blank line and the source line may break the text");
+        explanation.Should().NotContain("carbon dioxide in");
+    }
+
+    [Fact]
+    public void Explanation_ShortTitleIsKeptWhole()
+    {
+        AcceptStudyGuideCandidates.BuildExplanation("Base.", "Water   cycle\nnotes", "p. 2")
+            .Should().Be("Base.\n\nFrom \"Water cycle notes\", p. 2");
+    }
+
+    [Fact]
     public async Task Cleanup_DeletesExpiredDocumentsButKeepsOnesWithSavedQuestionsWithoutText()
     {
         StudyGuideDocumentContracts.Document saved = await GeneratedDocumentAsync();
