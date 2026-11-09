@@ -33,7 +33,7 @@ export function ImageSlotEditor({ label, value, onChange, onBusy }: Props) {
       setMessage(mediaUploadErrorMessage(error));
     } finally { if (request.current === abort) { setBusy(false); onBusy(retryFile.current !== null); } }
   };
-  return <fieldset className="space-y-2 rounded border border-gray-200 p-3">
+  return <fieldset className="min-w-0 max-w-full space-y-2 rounded border border-gray-200 p-3">
     <legend>{label} (optional)</legend>
     <p className="text-xs text-gray-600">JPEG, PNG or still WebP, up to 2 MiB. We optimize pictures and remove metadata. Do not include student or personal information. <a href="https://github.com/yanis-kr/Quizymode/blob/main/docs/picture-policy.md" className="underline">Picture policy</a></p>
     <label className="block text-sm"><input type="checkbox" checked={rights} onChange={e => setRights(e.target.checked)} /> I own this picture or have permission to use it.</label>
