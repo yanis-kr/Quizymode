@@ -243,13 +243,18 @@ public sealed class StudyGuideSimilarityPostgresTests(PostgresContainerFixture f
         (await CheckStudyGuideSimilarity.HandleAsync(documentId, ids, db, "intruder", CancellationToken.None)).Should().BeNull();
     }
 
-    private async Task<Result<AcceptStudyGuideCandidates.Response?>> AcceptAsync(string userId, Guid documentId, List<Guid> ids, List<Guid>? skip)
+    private async Task<Result<AcceptStudyGuideCandidates.Response?>> AcceptAsync(
+        string userId,
+        Guid documentId,
+        List<Guid> ids,
+        List<Guid>? skip,
+        List<AcceptStudyGuideCandidates.CandidateEdit>? edits = null)
     {
         await using ApplicationDbContext db = fixture.CreateDbContext();
         return await AcceptStudyGuideCandidates.HandleAsync(
             documentId,
             new AcceptStudyGuideCandidates.Request(
-                ids.Select(id => new AcceptStudyGuideCandidates.CandidateEdit(id, null, null, null, null)).ToList(),
+                edits ?? ids.Select(id => new AcceptStudyGuideCandidates.CandidateEdit(id, null, null, null, null)).ToList(),
                 SkipCandidateIds: skip),
             db,
             StudyGuideTestData.User(userId).Object,
@@ -297,5 +302,66 @@ public sealed class StudyGuideSimilarityPostgresTests(PostgresContainerFixture f
         result.IsSuccess.Should().BeTrue(result.IsFailure ? result.Error.Description : null);
         result.Value!.CreatedCount.Should().Be(2);
         result.Value.SkippedCount.Should().Be(0);
+    }
+
+    [SkippableFact]
+    public async Task Accept_UneditedCandidateMatchingAPublicItem_IsLinkedNotCreated()
+    {
+        Skip.If(fixture.UnavailableReason is not null, fixture.UnavailableReason);
+        string userId = Guid.NewGuid().ToString();
+        string tag = Guid.NewGuid().ToString("N");
+        string question = $"Which city is the capital of France {tag}?";
+        Guid publicItemId = await SeedItemAsync("geography", "someone-else", isPrivate: false, question, "Paris");
+        (Guid documentId, List<Guid> ids) = await SeedDocumentAsync(userId, (question, "Paris", 1));
+
+        Result<AcceptStudyGuideCandidates.Response?> result = await AcceptAsync(userId, documentId, ids, null);
+
+        result.IsSuccess.Should().BeTrue(result.IsFailure ? result.Error.Description : null);
+        result.Value!.CreatedCount.Should().Be(0, "the candidate links the public item instead");
+        result.Value.LinkedCount.Should().Be(1);
+        result.Value.ItemIds.Should().BeEmpty();
+        await using ApplicationDbContext db = fixture.CreateDbContext();
+        (await db.StudyGuideAcceptedCandidates.Where(a => a.DocumentId == documentId).Select(a => a.ItemId).SingleAsync())
+            .Should().Be(publicItemId);
+        (await db.CollectionItems.AnyAsync(ci => ci.CollectionId == Guid.Parse(result.Value.CollectionId) && ci.ItemId == publicItemId))
+            .Should().BeTrue("the linked item joins the study guide's collection");
+    }
+
+    [SkippableFact]
+    public async Task Accept_AnotherUsersPrivateItem_IsNeverLinked()
+    {
+        Skip.If(fixture.UnavailableReason is not null, fixture.UnavailableReason);
+        string userId = Guid.NewGuid().ToString();
+        string tag = Guid.NewGuid().ToString("N");
+        string question = $"Which city is the capital of Spain {tag}?";
+        await SeedItemAsync("geography", "other-user-" + Guid.NewGuid(), isPrivate: true, question, "Madrid");
+        (Guid documentId, List<Guid> ids) = await SeedDocumentAsync(userId, (question, "Madrid", 1));
+
+        Result<AcceptStudyGuideCandidates.Response?> result = await AcceptAsync(userId, documentId, ids, null);
+
+        result.IsSuccess.Should().BeTrue(result.IsFailure ? result.Error.Description : null);
+        result.Value!.LinkedCount.Should().Be(0);
+        result.Value.CreatedCount.Should().Be(1, "the other user's private item is never revealed or linked");
+    }
+
+    [SkippableFact]
+    public async Task Accept_EditedCandidateMatchingAPublicItem_IsCreatedNotLinked()
+    {
+        Skip.If(fixture.UnavailableReason is not null, fixture.UnavailableReason);
+        string userId = Guid.NewGuid().ToString();
+        string tag = Guid.NewGuid().ToString("N");
+        string question = $"Which city is the capital of Italy {tag}?";
+        await SeedItemAsync("geography", "someone-else", isPrivate: false, question, "Rome");
+        (Guid documentId, List<Guid> ids) = await SeedDocumentAsync(userId, (question, "Rome", 1));
+        List<AcceptStudyGuideCandidates.CandidateEdit> edits =
+        [
+            new AcceptStudyGuideCandidates.CandidateEdit(ids[0], question, "Rome (edited)", null, null)
+        ];
+
+        Result<AcceptStudyGuideCandidates.Response?> result = await AcceptAsync(userId, documentId, ids, null, edits);
+
+        result.IsSuccess.Should().BeTrue(result.IsFailure ? result.Error.Description : null);
+        result.Value!.LinkedCount.Should().Be(0, "edited candidates are always saved as new items");
+        result.Value.CreatedCount.Should().Be(1);
     }
 }

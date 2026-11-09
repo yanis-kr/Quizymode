@@ -145,6 +145,8 @@ export interface AcceptStudyGuideCandidate {
 export interface AcceptStudyGuideCandidatesResponse {
   /** Candidates left out because the user chose Skip on a similar-question flag (#369). */
   skippedCount?: number;
+  /** Candidates that matched a visible public item and were linked into the collection instead of created (#241). */
+  linkedCount?: number;
   collectionId: string;
   createdCount: number;
   duplicateCount: number;
