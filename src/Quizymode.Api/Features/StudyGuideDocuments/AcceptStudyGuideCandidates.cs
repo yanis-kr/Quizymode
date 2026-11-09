@@ -683,10 +683,26 @@ public static class AcceptStudyGuideCandidates
 
     internal static string BuildExplanation(string explanation, string title, string label)
     {
-        string suffix = $"\n\nFrom \"{title}\", {label}";
+        string suffix = $"\n\nFrom \"{SourceLabel(title)}\", {label}";
         int room = MaxExplanationLength - suffix.Length;
         string body = explanation.Length <= room ? explanation : explanation[..Math.Max(0, room)].TrimEnd();
         return body.Length == 0 ? suffix.TrimStart('\n') : body + suffix;
+    }
+
+    // Titles are often pasted paragraphs. Keep the source label to one short line.
+    internal const int MaxSourceLabelLength = 60;
+
+    internal static string SourceLabel(string title)
+    {
+        string collapsed = string.Join(' ', title.Split((char[]?)null, StringSplitOptions.RemoveEmptyEntries));
+        if (collapsed.Length <= MaxSourceLabelLength)
+        {
+            return collapsed;
+        }
+
+        int cut = collapsed.LastIndexOf(' ', MaxSourceLabelLength - 1);
+        string head = cut > 0 ? collapsed[..cut] : collapsed[..(MaxSourceLabelLength - 1)];
+        return head.TrimEnd(' ', ',', ';', ':', '.') + "…";
     }
 
     private static string Truncate(string value, int maxLength) =>
