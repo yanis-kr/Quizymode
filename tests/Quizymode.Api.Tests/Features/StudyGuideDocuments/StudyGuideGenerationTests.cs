@@ -339,10 +339,39 @@ public sealed class StudyGuideGenerationTests : DatabaseTestFixture
 
         SectionGeneration completed = await ClaimAndProcessAsync(generation, handler);
 
-        Attempts().Select(a => a.Outcome).Should().Equal(LlmAttemptOutcome.LowQuoteYield, LlmAttemptOutcome.Success);
+        // #527: Gemini gets one corrective retry (also low yield) before the job fails over.
+        Attempts().Select(a => a.Outcome).Should().Equal(
+            LlmAttemptOutcome.LowQuoteYield,
+            LlmAttemptOutcome.LowQuoteYield,
+            LlmAttemptOutcome.Success);
         completed.Vendor.Should().Be(LlmVendors.OpenRouter);
         completed.Candidates.Should().HaveCount(3);
         completed.DroppedCount.Should().Be(1);
+    }
+
+    [Fact]
+    public async Task Processor_LowQuoteYieldRetriesTheSameVendorOnce()
+    {
+        SectionGeneration generation = await QueueAsync();
+        int geminiCalls = 0;
+        FakeVendorHandler handler = new((vendor, _) =>
+        {
+            if (vendor != LlmVendors.Gemini)
+            {
+                return FakeVendorHandler.Completion(StudyGuideTestData.QuestionsJson());
+            }
+
+            geminiCalls++;
+            return geminiCalls == 1
+                ? FakeVendorHandler.Completion(StudyGuideTestData.QuestionsJson(supported: 1, unsupported: 3))
+                : FakeVendorHandler.Completion(StudyGuideTestData.QuestionsJson(supported: 4, unsupported: 0));
+        });
+
+        SectionGeneration completed = await ClaimAndProcessAsync(generation, handler);
+
+        geminiCalls.Should().Be(2);
+        Attempts().Select(a => a.Outcome).Should().Equal(LlmAttemptOutcome.LowQuoteYield, LlmAttemptOutcome.Success);
+        completed.Vendor.Should().Be(LlmVendors.Gemini);
     }
 
     [Fact]
@@ -355,7 +384,8 @@ public sealed class StudyGuideGenerationTests : DatabaseTestFixture
 
         SectionGeneration completed = await ClaimAndProcessAsync(generation, handler);
 
-        Attempts().Should().HaveCount(3).And.OnlyContain(a => a.Outcome == LlmAttemptOutcome.LowQuoteYield);
+        // #527: each keyed vendor gets a corrective retry, so 3 vendors x 2 passes.
+        Attempts().Should().HaveCount(6).And.OnlyContain(a => a.Outcome == LlmAttemptOutcome.LowQuoteYield);
         completed.Status.Should().Be(SectionGenerationStatus.Completed);
         completed.Vendor.Should().Be(LlmVendors.OpenAI);
         completed.Candidates.Should().HaveCount(2);
