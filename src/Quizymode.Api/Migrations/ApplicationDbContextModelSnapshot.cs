@@ -545,6 +545,37 @@ namespace Quizymode.Api.Migrations
                     b.ToTable("CollectionItems", (string)null);
                 });
 
+            modelBuilder.Entity("Quizymode.Api.Shared.Models.CollectionKeywordMember", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uuid");
+
+                    b.Property<DateTime>("AddedAt")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<Guid>("CategoryId")
+                        .HasColumnType("uuid");
+
+                    b.Property<Guid>("Keyword1Id")
+                        .HasColumnType("uuid");
+
+                    b.Property<Guid?>("Keyword2Id")
+                        .HasColumnType("uuid");
+
+                    b.Property<Guid>("ParentId")
+                        .HasColumnType("uuid");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("ParentId", "CategoryId", "Keyword1Id", "Keyword2Id")
+                        .IsUnique();
+
+                    NpgsqlIndexBuilderExtensions.AreNullsDistinct(b.HasIndex("ParentId", "CategoryId", "Keyword1Id", "Keyword2Id"), false);
+
+                    b.ToTable("CollectionKeywordMembers", (string)null);
+                });
+
             modelBuilder.Entity("Quizymode.Api.Shared.Models.CollectionRating", b =>
                 {
                     b.Property<Guid>("Id")
@@ -3003,6 +3034,15 @@ namespace Quizymode.Api.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
+                    b.HasOne("Quizymode.Api.Shared.Models.Collection", null)
+                        .WithMany()
+                        .HasForeignKey("ParentId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
+            modelBuilder.Entity("Quizymode.Api.Shared.Models.CollectionKeywordMember", b =>
+                {
                     b.HasOne("Quizymode.Api.Shared.Models.Collection", null)
                         .WithMany()
                         .HasForeignKey("ParentId")

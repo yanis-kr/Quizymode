@@ -3245,6 +3245,132 @@
         }
       }
     },
+    "/collections/{collectionId}/topics": {
+      "post": {
+        "tags": [
+          "Collections"
+        ],
+        "summary": "Add a topic to a collection",
+        "description": "Adds a public taxonomy path to a collection. Body: { \"categoryId\": \"<guid>\", \"keyword1Id\": \"<guid>\", \"keyword2Id\": \"<guid>\" | null }.",
+        "parameters": [
+          {
+            "name": "collectionId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "$ref": "#/components/schemas/System.Guid"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Quizymode.Api.Features.Collections.CollectionTopicMembers.AddRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "201": {
+            "description": "Created",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Quizymode.Api.Features.Collections.CollectionTopicMembers.TopicMemberResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        }
+      },
+      "get": {
+        "tags": [
+          "Collections"
+        ],
+        "summary": "List the topics of a collection",
+        "description": "Lists topic members with whether each path still exists and the number of questions the caller can see on it.",
+        "parameters": [
+          {
+            "name": "collectionId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "$ref": "#/components/schemas/System.Guid"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/System.Collections.Generic.ListOfQuizymode.Api.Features.Collections.CollectionTopicMembers.TopicMemberResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        }
+      }
+    },
+    "/collections/{collectionId}/topics/{memberId}": {
+      "delete": {
+        "tags": [
+          "Collections"
+        ],
+        "summary": "Remove a topic from a collection",
+        "description": "Removes a topic member. The taxonomy path itself is not changed.",
+        "parameters": [
+          {
+            "name": "collectionId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "$ref": "#/components/schemas/System.Guid"
+            }
+          },
+          {
+            "name": "memberId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "$ref": "#/components/schemas/System.Guid"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        }
+      }
+    },
     "/collections/{id}": {
       "delete": {
         "tags": [
@@ -13524,6 +13650,74 @@
           }
         }
       },
+      "Quizymode.Api.Features.Collections.CollectionTopicMembers.AddRequest": {
+        "required": [
+          "categoryId",
+          "keyword1Id",
+          "keyword2Id"
+        ],
+        "type": "object",
+        "properties": {
+          "categoryId": {
+            "$ref": "#/components/schemas/System.Guid"
+          },
+          "keyword1Id": {
+            "$ref": "#/components/schemas/System.Guid"
+          },
+          "keyword2Id": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/components/schemas/System.NullableOfSystem.Guid"
+              }
+            ]
+          }
+        }
+      },
+      "Quizymode.Api.Features.Collections.CollectionTopicMembers.TopicMemberResponse": {
+        "required": [
+          "id",
+          "categoryId",
+          "keyword1Id",
+          "keyword2Id",
+          "isRemoved",
+          "visibleItemCount",
+          "exceedsWarningThreshold"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "$ref": "#/components/schemas/System.String"
+          },
+          "categoryId": {
+            "$ref": "#/components/schemas/System.Guid"
+          },
+          "keyword1Id": {
+            "$ref": "#/components/schemas/System.Guid"
+          },
+          "keyword2Id": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/components/schemas/System.NullableOfSystem.Guid"
+              }
+            ]
+          },
+          "isRemoved": {
+            "$ref": "#/components/schemas/System.Boolean"
+          },
+          "visibleItemCount": {
+            "$ref": "#/components/schemas/System.Int32"
+          },
+          "exceedsWarningThreshold": {
+            "$ref": "#/components/schemas/System.Boolean"
+          }
+        }
+      },
       "Quizymode.Api.Features.Collections.DiscoverCollections.CollectionDiscoverItem": {
         "required": [
           "id",
@@ -20677,6 +20871,12 @@
         "type": "array",
         "items": {
           "$ref": "#/components/schemas/Quizymode.Api.Features.Categories.GetCategories.CategoryResponse"
+        }
+      },
+      "System.Collections.Generic.ListOfQuizymode.Api.Features.Collections.CollectionTopicMembers.TopicMemberResponse": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/Quizymode.Api.Features.Collections.CollectionTopicMembers.TopicMemberResponse"
         }
       },
       "System.Collections.Generic.ListOfQuizymode.Api.Features.Collections.DiscoverCollections.CollectionDiscoverItem": {

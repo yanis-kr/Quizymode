@@ -117,6 +117,16 @@ public static class DeleteCollection
                 db.CollectionCollectionMembers.RemoveRange(nestedLinks);
             }
 
+            // Topic members of this collection (#553).
+            List<CollectionKeywordMember> topicLinks = await db.CollectionKeywordMembers
+                .Where(m => m.ParentId == collectionId)
+                .ToListAsync(cancellationToken);
+
+            if (topicLinks.Count > 0)
+            {
+                db.CollectionKeywordMembers.RemoveRange(topicLinks);
+            }
+
             db.Collections.Remove(collection);
             await db.SaveChangesAsync(cancellationToken);
 

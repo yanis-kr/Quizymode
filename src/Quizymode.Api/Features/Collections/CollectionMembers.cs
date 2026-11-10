@@ -166,7 +166,8 @@ public static class CollectionMembers
 
         int itemRows = await db.CollectionItems.CountAsync(ci => ci.CollectionId == parent.Id, cancellationToken);
         int childRows = await db.CollectionCollectionMembers.CountAsync(m => m.ParentId == parent.Id, cancellationToken);
-        if (itemRows + childRows >= MaxMembershipRows)
+        int topicRows = await db.CollectionKeywordMembers.CountAsync(m => m.ParentId == parent.Id, cancellationToken);
+        if (itemRows + childRows + topicRows >= MaxMembershipRows)
         {
             return Result.Failure<CollectionMemberResponse>(
                 Error.Validation("CollectionMembers.TooManyRows", $"A collection can hold at most {MaxMembershipRows} members."));
