@@ -18,7 +18,8 @@ public static class GetCollectionById
         DateTime CreatedAt,
         int ItemCount,
         bool IsPublic,
-        bool IsDiscoverable);
+        bool IsDiscoverable,
+        int HiddenCollectionCount);
 
     public sealed class Endpoint : IEndpoint
     {
@@ -85,6 +86,9 @@ public static class GetCollectionById
                     && i.ImageReviewState != ItemImageReviewState.Approved),
                 cancellationToken);
 
+            // Direct child links the caller cannot open (#554). Counts links only: no names, ids, questions or descendants.
+            int hiddenCollectionCount = await CountHiddenChildLinksAsync(db, id, viewerId, cancellationToken);
+
             Response response = new(
                 collection.Id.ToString(),
                 collection.Name,
@@ -93,7 +97,8 @@ public static class GetCollectionById
                 collection.CreatedAt,
                 itemCount,
                 collection.IsPublic,
-                collection.IsDiscoverable);
+                collection.IsDiscoverable,
+                hiddenCollectionCount);
 
             return Result.Success(response);
         }
@@ -125,6 +130,19 @@ public static class GetCollectionById
             return false;
 
         return collection.CreatedBy == userContext.UserId;
+    }
+
+    /// <summary>
+    /// Direct child links of <paramref name="parentId"/> whose child is private and not owned by the viewer (#554).
+    /// One count query. Hidden descendants are never visited, because only direct links are counted.
+    /// </summary>
+    internal static Task<int> CountHiddenChildLinksAsync(ApplicationDbContext db, Guid parentId, string? viewerId, CancellationToken cancellationToken)
+    {
+        string callerId = viewerId ?? string.Empty;
+        bool hasCaller = callerId.Length > 0;
+        return db.CollectionCollectionMembers.CountAsync(m => m.ParentId == parentId
+            && db.Collections.Any(c => c.Id == m.ChildId && !c.IsPublic && !(hasCaller && c.CreatedBy == callerId)),
+            cancellationToken);
     }
 
     public sealed class FeatureRegistration : IFeatureRegistration
