@@ -31,7 +31,7 @@
     <!-- Media storage and image normalization (#399) -->
     <PackageVersion Include="AWSSDK.S3" Version="4.0.104.11" />
     <PackageVersion Include="SkiaSharp" Version="3.119.4" />
-    <PackageVersion Include="SkiaSharp.NativeAssets.Linux.NoDependencies" Version="3.119.4" />
+    <PackageVersion Include="SkiaSharp.NativeAssets.Linux.NoDependencies" Version="4.155.0" />
     <!-- Service Defaults -->
     <PackageVersion Include="Microsoft.Extensions.Http.Resilience" Version="10.11.0" />
     <PackageVersion Include="Microsoft.Extensions.ServiceDiscovery" Version="10.11.0" />
