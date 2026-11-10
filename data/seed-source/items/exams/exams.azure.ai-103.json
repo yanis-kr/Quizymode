@@ -1,0 +1,1056 @@
+[
+  {
+    "itemId": "8c11e7f9-2cf5-4462-b318-57ecc97eeda9",
+    "seedId": "59da904d-bbaf-4791-ab8a-65a1e1667335",
+    "category": "exams",
+    "navigationKeyword1": "azure",
+    "navigationKeyword2": "ai-103",
+    "question": "A team has no data residency limits and wants access to all new models at the lowest price. Which deployment type fits?",
+    "correctAnswer": "Global Standard",
+    "incorrectAnswers": [
+      "Regional Provisioned",
+      "Regional Standard",
+      "Developer"
+    ],
+    "explanation": "Global deployments give access to all new models at the lowest price, using Azure's global infrastructure.",
+    "keywords": [
+      "ai-103",
+      "deployment-types",
+      "foundry-models"
+    ],
+    "source": "https://azure.microsoft.com/en-us/blog/enterprise-trust-in-azure-openai-service-strengthened-with-data-zones/"
+  },
+  {
+    "itemId": "d5adceba-5801-476e-b9e9-714f2eb14da9",
+    "seedId": "56472886-2c58-47cb-8264-b8dd1bc94870",
+    "category": "exams",
+    "navigationKeyword1": "azure",
+    "navigationKeyword2": "ai-103",
+    "question": "An EU company must keep inference processing inside the EU but wants pay-per-token billing. Which deployment type fits?",
+    "correctAnswer": "Data Zone Standard",
+    "incorrectAnswers": [
+      "Global Standard",
+      "Global Provisioned",
+      "Developer"
+    ],
+    "explanation": "Data Zones let customers process and store data within a geographic boundary such as the EU, and are available for Standard (pay-as-you-go) deployments.",
+    "keywords": [
+      "ai-103",
+      "deployment-types",
+      "data-residency"
+    ],
+    "source": "https://azure.microsoft.com/en-us/blog/announcing-the-availability-of-azure-openai-data-zones-and-latest-updates-from-azure-ai/"
+  },
+  {
+    "itemId": "2630cd22-8618-4182-8eab-d1cdbeb4b0ee",
+    "seedId": "0aae0ec9-0bfc-4d77-a5c6-38f77335a07b",
+    "category": "exams",
+    "navigationKeyword1": "azure",
+    "navigationKeyword2": "ai-103",
+    "question": "You must summarize millions of documents overnight and cost matters more than speed. Which deployment type is designed for this?",
+    "correctAnswer": "Global Batch",
+    "incorrectAnswers": [
+      "Global Standard",
+      "Regional Provisioned",
+      "Developer"
+    ],
+    "explanation": "The Batch API for global deployments returns completions within 24 hours at a 50% discount on Global Standard pricing.",
+    "keywords": [
+      "ai-103",
+      "deployment-types",
+      "batch"
+    ],
+    "source": "https://azure.microsoft.com/en-us/pricing/details/cognitive-services/openai-service/"
+  },
+  {
+    "itemId": "5ce5f2ae-7b9b-4bcf-a135-cc6cb50fe1f8",
+    "seedId": "3959b4d7-b5c5-41c3-8a0c-8599122cc60a",
+    "category": "exams",
+    "navigationKeyword1": "azure",
+    "navigationKeyword2": "ai-103",
+    "question": "Which deployment offering is reserved per PTU and gives predictable performance backed by a latency SLA?",
+    "correctAnswer": "Provisioned deployments",
+    "incorrectAnswers": [
+      "Standard deployments",
+      "Batch deployments",
+      "Developer deployments"
+    ],
+    "explanation": "The Provisioned offering is reserved in PTUs and provides predictable performance, with a latency SLA for consistent token generation.",
+    "keywords": [
+      "ai-103",
+      "deployment-types",
+      "ptu"
+    ],
+    "source": "https://azure.microsoft.com/en-us/blog/accelerate-scale-with-azure-openai-service-provisioned-offering/"
+  },
+  {
+    "itemId": "e890d266-ab0b-43a5-bb4c-98454a5232f3",
+    "seedId": "b2d17e4a-0c0a-436e-bcf7-b3823725a844",
+    "category": "exams",
+    "navigationKeyword1": "azure",
+    "navigationKeyword2": "ai-103",
+    "question": "A latency-critical app keeps hitting 429 errors on a Standard deployment. Besides requesting more quota, what upgrade is recommended?",
+    "correctAnswer": "Move to provisioned throughput (PTU)",
+    "incorrectAnswers": [
+      "Switch to a Developer deployment",
+      "Switch to Global Batch",
+      "Lower the max_tokens setting only"
+    ],
+    "explanation": "For latency-critical or high-volume workloads, PTU provides dedicated resources, guaranteed capacity, and predictable latency.",
+    "keywords": [
+      "ai-103",
+      "quotas",
+      "rate-limits"
+    ],
+    "source": "https://learn.microsoft.com/en-us/azure/foundry/openai/quotas-limits"
+  },
+  {
+    "itemId": "94373826-1c93-4e1f-8da0-28c45e5ca5f3",
+    "seedId": "2d80d561-1d91-4bfc-87d7-db10dad0f404",
+    "category": "exams",
+    "navigationKeyword1": "azure",
+    "navigationKeyword2": "ai-103",
+    "question": "To authenticate to a Foundry Tools resource with Microsoft Entra ID, what must the resource have?",
+    "correctAnswer": "A custom subdomain endpoint",
+    "incorrectAnswers": [
+      "A regional endpoint",
+      "A Free (F0) pricing tier",
+      "An attached Key Vault"
+    ],
+    "explanation": "Entra authentication always needs the resource's custom subdomain name. Regional endpoints don't support Entra authentication.",
+    "keywords": [
+      "ai-103",
+      "security",
+      "entra-id"
+    ],
+    "source": "https://learn.microsoft.com/en-us/azure/ai-services/authentication"
+  },
+  {
+    "itemId": "86285d1a-a45d-4729-a03c-e593864b36d1",
+    "seedId": "1f7fd2ef-662a-4009-b324-7e7fdc205d6d",
+    "category": "exams",
+    "navigationKeyword1": "azure",
+    "navigationKeyword2": "ai-103",
+    "question": "Which built-in role is assigned to a service principal so it can call a Foundry Tools resource with Entra tokens?",
+    "correctAnswer": "Cognitive Services User",
+    "incorrectAnswers": [
+      "Reader",
+      "Storage Blob Data Reader",
+      "Key Vault Secrets User"
+    ],
+    "explanation": "The documented flow assigns the Cognitive Services User role, scoped to the resource, to the service principal.",
+    "keywords": [
+      "ai-103",
+      "security",
+      "rbac"
+    ],
+    "source": "https://learn.microsoft.com/en-us/azure/ai-services/authentication"
+  },
+  {
+    "itemId": "61c8e1d6-7216-484e-8247-915f0cd482db",
+    "seedId": "d39e880a-395d-448f-af5f-a6b46a5bab85",
+    "category": "exams",
+    "navigationKeyword1": "azure",
+    "navigationKeyword2": "ai-103",
+    "question": "An app on an Azure VM must call a Foundry resource without storing any credentials. What should it use?",
+    "correctAnswer": "A managed identity",
+    "incorrectAnswers": [
+      "A resource key in app settings",
+      "A shared access signature",
+      "A hard-coded bearer token"
+    ],
+    "explanation": "Managed identities use Microsoft Entra credentials for Azure-hosted apps, so you avoid storing credentials in the application.",
+    "keywords": [
+      "ai-103",
+      "security",
+      "managed-identity",
+      "keyless"
+    ],
+    "source": "https://learn.microsoft.com/en-us/azure/ai-services/authentication"
+  },
+  {
+    "itemId": "fde38d25-26da-476c-83d4-2f35ce631669",
+    "seedId": "7af8d74e-85a1-448c-b0fe-a9b5b2088ea0",
+    "category": "exams",
+    "navigationKeyword1": "azure",
+    "navigationKeyword2": "ai-103",
+    "question": "In a Foundry guardrail, which intervention points apply only to agents, not to model deployments?",
+    "correctAnswer": "Tool call and tool response",
+    "incorrectAnswers": [
+      "User input and output",
+      "Output only",
+      "User input only"
+    ],
+    "explanation": "Models support user input and output. Agents add tool call and tool response intervention points (preview).",
+    "keywords": [
+      "ai-103",
+      "guardrails",
+      "agents"
+    ],
+    "source": "https://learn.microsoft.com/en-us/azure/foundry/guardrails/guardrails-overview"
+  },
+  {
+    "itemId": "bddc01cd-21ac-455e-854d-89269e6f0cff",
+    "seedId": "f1385265-0bfb-4b30-96e5-dffe799723f3",
+    "category": "exams",
+    "navigationKeyword1": "azure",
+    "navigationKeyword2": "ai-103",
+    "question": "A guardrail sets the Violence blocking level to High. What does that block?",
+    "correctAnswer": "Low, medium, and high severity content",
+    "incorrectAnswers": [
+      "Only high severity content",
+      "Only medium and high severity",
+      "Nothing, it only annotates"
+    ],
+    "explanation": "High is the most restrictive level and blocks low-, medium-, and high-severity content. Low blocks only high severity.",
+    "keywords": [
+      "ai-103",
+      "guardrails",
+      "content-filter"
+    ],
+    "source": "https://learn.microsoft.com/en-us/azure/foundry/guardrails/guardrails-overview"
+  },
+  {
+    "itemId": "6c102563-7308-452a-8bb5-2c53c84ef41d",
+    "seedId": "ea0e35bb-63bf-4c2b-95e8-4ec980730151",
+    "category": "exams",
+    "navigationKeyword1": "azure",
+    "navigationKeyword2": "ai-103",
+    "question": "A model deployment uses a strict guardrail, but its agent is assigned a looser custom guardrail. Which applies to the agent?",
+    "correctAnswer": "The agent's own guardrail",
+    "incorrectAnswers": [
+      "The model's guardrail",
+      "Whichever is stricter",
+      "Both combined"
+    ],
+    "explanation": "Risks in an agent are detected based on the guardrail assigned to the agent. It fully overrides the model's guardrail.",
+    "keywords": [
+      "ai-103",
+      "guardrails",
+      "agents"
+    ],
+    "source": "https://learn.microsoft.com/en-us/azure/foundry/guardrails/guardrails-overview"
+  },
+  {
+    "itemId": "8a0fc0e0-bb70-41c8-becd-3593955f968d",
+    "seedId": "b14a53cf-ed34-4176-bd12-1759959435a0",
+    "category": "exams",
+    "navigationKeyword1": "azure",
+    "navigationKeyword2": "ai-103",
+    "question": "How do LLM-as-a-judge evaluators in Foundry score agent outputs?",
+    "correctAnswer": "A language model applies a grading rubric",
+    "incorrectAnswers": [
+      "They count output tokens only",
+      "They compute BLEU scores only",
+      "They rely on end-user ratings"
+    ],
+    "explanation": "You configure a prompt and grading rubric, and the evaluator uses a language model to apply that rubric to the agent's outputs.",
+    "keywords": [
+      "ai-103",
+      "evaluation",
+      "observability"
+    ],
+    "source": "https://techcommunity.microsoft.com/blog/azure-ai-foundry-blog/generally-available-evaluations-monitoring-and-tracing-in-microsoft-foundry/4502760"
+  },
+  {
+    "itemId": "ca4c4602-44f9-4e1f-ae99-898de63ab6f7",
+    "seedId": "60f9da66-45c3-4c19-8127-26093ca8de28",
+    "category": "exams",
+    "navigationKeyword1": "azure",
+    "navigationKeyword2": "ai-103",
+    "question": "After deployment, which practice evaluates a sampled share of live production traffic for quality and safety?",
+    "correctAnswer": "Continuous evaluation",
+    "incorrectAnswers": [
+      "Base model benchmarking",
+      "Scheduled red teaming",
+      "Pre-production dataset testing"
+    ],
+    "explanation": "Production monitoring continuously evaluates sampled live traffic and surfaces quality and safety trends over time.",
+    "keywords": [
+      "ai-103",
+      "evaluation",
+      "monitoring"
+    ],
+    "source": "https://techcommunity.microsoft.com/blog/azure-ai-foundry-blog/generally-available-evaluations-monitoring-and-tracing-in-microsoft-foundry/4502760"
+  },
+  {
+    "itemId": "c94f4ef2-d7e9-4eba-aad8-4201403a259f",
+    "seedId": "a467894c-2add-4879-a573-f9bd6d9a8ba5",
+    "category": "exams",
+    "navigationKeyword1": "azure",
+    "navigationKeyword2": "ai-103",
+    "question": "Which open standard is Foundry tracing built on?",
+    "correctAnswer": "OpenTelemetry",
+    "incorrectAnswers": [
+      "OpenAPI",
+      "OAuth 2.0",
+      "CloudEvents"
+    ],
+    "explanation": "Foundry provides OpenTelemetry-based distributed tracing that follows each request through the whole agent system.",
+    "keywords": [
+      "ai-103",
+      "tracing",
+      "observability"
+    ],
+    "source": "https://techcommunity.microsoft.com/blog/azure-ai-foundry-blog/generally-available-evaluations-monitoring-and-tracing-in-microsoft-foundry/4502760"
+  },
+  {
+    "itemId": "50a54225-0adc-4fc7-93d2-808cee1c3d84",
+    "seedId": "9800139e-de18-4589-8f7d-71d6b0e700df",
+    "category": "exams",
+    "navigationKeyword1": "azure",
+    "navigationKeyword2": "ai-103",
+    "question": "Before release, you want automated adversarial attacks to find safety weaknesses. Which Foundry capability does this?",
+    "correctAnswer": "AI red teaming agent",
+    "incorrectAnswers": [
+      "Model benchmarks",
+      "Cluster analysis",
+      "Continuous evaluation"
+    ],
+    "explanation": "The AI red teaming agent simulates adversarial probing of model and app endpoints, built on Microsoft's open-source PyRIT toolkit.",
+    "keywords": [
+      "ai-103",
+      "red-teaming",
+      "responsible-ai"
+    ],
+    "source": "https://devblogs.microsoft.com/foundry/ai-red-teaming-agent-preview/"
+  },
+  {
+    "itemId": "04cd331a-b431-4d35-abc5-81c55a5da91b",
+    "seedId": "162310c9-5a63-447a-9160-803b31bdbcef",
+    "category": "exams",
+    "navigationKeyword1": "azure",
+    "navigationKeyword2": "ai-103",
+    "question": "You want an agent defined only by instructions, a model, and tools, with no code or containers to manage. Which agent type fits?",
+    "correctAnswer": "Prompt agent",
+    "incorrectAnswers": [
+      "Hosted agent",
+      "Ephemeral agent",
+      "Voice Live session"
+    ],
+    "explanation": "Prompt agents are defined entirely through configuration, and Foundry runs them with no application code or infrastructure.",
+    "keywords": [
+      "ai-103",
+      "agents",
+      "foundry-agent-service"
+    ],
+    "source": "https://learn.microsoft.com/en-us/azure/foundry/agents/overview"
+  },
+  {
+    "itemId": "1aef8c5a-882b-440e-af09-87b78341f2d5",
+    "seedId": "d86f6f85-127d-4574-9ecb-9df73c700867",
+    "category": "exams",
+    "navigationKeyword1": "azure",
+    "navigationKeyword2": "ai-103",
+    "question": "Your team built an agent in LangGraph and wants Foundry to run it with a managed endpoint and scaling. Which agent type fits?",
+    "correctAnswer": "Hosted agent",
+    "incorrectAnswers": [
+      "Prompt agent",
+      "Voice-based prompt agent",
+      "Ephemeral agent"
+    ],
+    "explanation": "Hosted agents let you deploy custom-code agents built with LangGraph or other frameworks into a fully managed runtime.",
+    "keywords": [
+      "ai-103",
+      "agents",
+      "hosted-agents"
+    ],
+    "source": "https://techcommunity.microsoft.com/blog/azure-ai-foundry-blog/foundry-agent-service-at-ignite-2025-simple-to-build-powerful-to-deploy-trusted-/4469788"
+  },
+  {
+    "itemId": "3e69ef05-b43e-4b50-9c2e-d4e1a8f0c478",
+    "seedId": "675afd75-eca6-400d-805f-78cac367b64d",
+    "category": "exams",
+    "navigationKeyword1": "azure",
+    "navigationKeyword2": "ai-103",
+    "question": "What is an ephemeral agent in Foundry?",
+    "correctAnswer": "An agent defined in app code that calls the Responses API",
+    "incorrectAnswers": [
+      "A prompt agent that expires after 24 hours",
+      "A hosted agent without identity",
+      "An agent run only in the playground"
+    ],
+    "explanation": "When you call the Responses API directly, the agent's instructions, tools, and model live in your code, not as a saved Foundry resource.",
+    "keywords": [
+      "ai-103",
+      "agents",
+      "responses-api"
+    ],
+    "source": "https://learn.microsoft.com/en-us/azure/foundry/agents/overview"
+  },
+  {
+    "itemId": "424af5a5-ce4a-47da-9b8a-ca4298e755e6",
+    "seedId": "824d6f0a-7dd7-4b62-ad42-87dd25346966",
+    "category": "exams",
+    "navigationKeyword1": "azure",
+    "navigationKeyword2": "ai-103",
+    "question": "What does a Foundry toolbox provide to agents?",
+    "correctAnswer": "A bundle of tools exposed as one MCP endpoint",
+    "incorrectAnswers": [
+      "A private model catalog",
+      "A vector index for memory",
+      "A container registry"
+    ],
+    "explanation": "A toolbox bundles tools and skills that an agent reaches through a single Model Context Protocol (MCP) endpoint.",
+    "keywords": [
+      "ai-103",
+      "agents",
+      "tools",
+      "mcp"
+    ],
+    "source": "https://devblogs.microsoft.com/foundry/whats-new-in-microsoft-foundry-may-2026/"
+  },
+  {
+    "itemId": "ef18a520-6c4d-40c6-b8ca-9d683f01ab10",
+    "seedId": "f6a0a6b4-fdc6-4d46-ba56-ad702b460572",
+    "category": "exams",
+    "navigationKeyword1": "azure",
+    "navigationKeyword2": "ai-103",
+    "question": "An agent must call a remote MCP server using the signed-in user's own permissions. Which auth option supports this?",
+    "correctAnswer": "OAuth identity passthrough (On-Behalf-Of)",
+    "incorrectAnswers": [
+      "Key-based access",
+      "Unauthenticated access",
+      "Anonymous shared key"
+    ],
+    "explanation": "OAuth identity passthrough (On-Behalf-Of) lets the tool call act with the user's identity, unlike keys or the agent's own identity.",
+    "keywords": [
+      "ai-103",
+      "agents",
+      "mcp",
+      "security"
+    ],
+    "source": "https://learn.microsoft.com/en-us/azure/foundry/agents/overview"
+  },
+  {
+    "itemId": "86589aaa-9b69-4ee6-8ba6-1be78c08f34c",
+    "seedId": "d24e5c5c-82e7-4382-9c74-6be11c15ee17",
+    "category": "exams",
+    "navigationKeyword1": "azure",
+    "navigationKeyword2": "ai-103",
+    "question": "Which protocol does Foundry Agent Service support for agent-to-agent communication?",
+    "correctAnswer": "A2A",
+    "incorrectAnswers": [
+      "gRPC streaming",
+      "SOAP",
+      "AMQP"
+    ],
+    "explanation": "Foundry agents support A2A, a standard protocol for agent-to-agent communication; A2A v1.0 is generally available.",
+    "keywords": [
+      "ai-103",
+      "agents",
+      "multi-agent"
+    ],
+    "source": "https://techcommunity.microsoft.com/blog/azure-ai-foundry-blog/a2a-endpoints-and-a2a-tool-in-microsoft-foundry-agents/4557115"
+  },
+  {
+    "itemId": "ea39cd40-fb91-4d93-a8db-6fbacf534754",
+    "seedId": "346fc1e2-d80f-4eb6-a2a6-f63ce188fe9e",
+    "category": "exams",
+    "navigationKeyword1": "azure",
+    "navigationKeyword2": "ai-103",
+    "question": "For end-to-end network isolation of Foundry agents, which database can a team bring as its own resource?",
+    "correctAnswer": "Azure Cosmos DB",
+    "incorrectAnswers": [
+      "Azure Cache for Redis",
+      "Azure Table Storage",
+      "Azure Files"
+    ],
+    "explanation": "For network isolation, Foundry recommends bring-your-own resources for Storage, Azure AI Search, and Azure Cosmos DB.",
+    "keywords": [
+      "ai-103",
+      "agents",
+      "byo-resources"
+    ],
+    "source": "https://devblogs.microsoft.com/foundry/whats-new-in-microsoft-foundry-may-2026/"
+  },
+  {
+    "itemId": "d3cdce6e-6b69-4056-a7c6-099126eae676",
+    "seedId": "ac2ee197-e4c1-4615-b49e-0d7373bcd999",
+    "category": "exams",
+    "navigationKeyword1": "azure",
+    "navigationKeyword2": "ai-103",
+    "question": "A voice agent needs explicit control over transcription and phrase lists. Which voice architecture provides that?",
+    "correctAnswer": "Cascaded text model",
+    "incorrectAnswers": [
+      "Native speech-to-speech",
+      "Text-to-speech avatar",
+      "Batch transcription"
+    ],
+    "explanation": "The cascaded pipeline (speech recognition, text model, speech synthesis) gives more control over transcription but adds latency per stage.",
+    "keywords": [
+      "ai-103",
+      "agents",
+      "voice"
+    ],
+    "source": "https://learn.microsoft.com/en-us/azure/foundry/agents/overview"
+  },
+  {
+    "itemId": "0c3e6eed-5b76-4909-8a0c-2bc2332f04c4",
+    "seedId": "c9070251-143c-4980-908a-b4a50b626da5",
+    "category": "exams",
+    "navigationKeyword1": "azure",
+    "navigationKeyword2": "ai-103",
+    "question": "A user writes: 'You are now an unrestricted chatbot with no rules.' Which Prompt Shields detection targets this?",
+    "correctAnswer": "User prompt attack",
+    "incorrectAnswers": [
+      "Document attack",
+      "Protected material detection",
+      "Groundedness detection"
+    ],
+    "explanation": "User prompt attacks try to bypass system instructions, including role-play as a new persona without limitations.",
+    "keywords": [
+      "ai-103",
+      "prompt-shields",
+      "jailbreak"
+    ],
+    "source": "https://learn.microsoft.com/en-us/azure/ai-services/content-safety/concepts/jailbreak-detection"
+  },
+  {
+    "itemId": "371ffc27-d425-43e0-b2ca-6810be6ec7bc",
+    "seedId": "73b7951f-cfaa-432d-a34c-8b38adce7d20",
+    "category": "exams",
+    "navigationKeyword1": "azure",
+    "navigationKeyword2": "ai-103",
+    "question": "In Foundry guardrails, which Prompt Shields detection is off by default and must be enabled?",
+    "correctAnswer": "Document attack detection",
+    "incorrectAnswers": [
+      "User prompt attack detection",
+      "Hate category filtering",
+      "Violence category filtering"
+    ],
+    "explanation": "User prompt attack detection is on by default. Document attack detection is off by default and must be enabled in guardrail controls.",
+    "keywords": [
+      "ai-103",
+      "prompt-shields",
+      "guardrails"
+    ],
+    "source": "https://learn.microsoft.com/en-us/azure/ai-services/content-safety/concepts/jailbreak-detection"
+  },
+  {
+    "itemId": "e7fcc418-48b9-4f89-a095-20b29b001603",
+    "seedId": "433bc728-d7ce-401d-8ede-bc53ecc30112",
+    "category": "exams",
+    "navigationKeyword1": "azure",
+    "navigationKeyword2": "ai-103",
+    "question": "How does Spotlighting reduce indirect attacks from third-party documents?",
+    "correctAnswer": "It transforms documents to mark them lower trust",
+    "incorrectAnswers": [
+      "It deletes links from documents",
+      "It translates documents to English",
+      "It blocks all uploaded files"
+    ],
+    "explanation": "Spotlighting transforms untrusted content before it reaches the model, so external inputs are treated as lower trust than user or system prompts.",
+    "keywords": [
+      "ai-103",
+      "prompt-shields",
+      "spotlighting"
+    ],
+    "source": "https://techcommunity.microsoft.com/blog/-/better-detecting-cross-prompt-injection-attacks-introducing/4458404"
+  },
+  {
+    "itemId": "1c58cf37-d313-4300-a5ee-95f0ee3d8828",
+    "seedId": "3bb2f87d-fda2-474d-a9d7-2caa9fe1ec57",
+    "category": "exams",
+    "navigationKeyword1": "azure",
+    "navigationKeyword2": "ai-103",
+    "question": "Which Content Safety capability flags agent tool use that is misaligned or premature for the user's request?",
+    "correctAnswer": "Task adherence",
+    "incorrectAnswers": [
+      "Prompt Shields",
+      "Protected material detection",
+      "Custom categories"
+    ],
+    "explanation": "The task adherence API detects when tool use by AI agents is misaligned, unintended, or premature in the user interaction.",
+    "keywords": [
+      "ai-103",
+      "content-safety",
+      "agents"
+    ],
+    "source": "https://learn.microsoft.com/en-us/azure/ai-services/content-safety/overview"
+  },
+  {
+    "itemId": "e8c8b433-b61e-42d4-a1b8-08d453afa640",
+    "seedId": "654f6a5b-3fdb-4d1a-805d-c8efce8ea91c",
+    "category": "exams",
+    "navigationKeyword1": "azure",
+    "navigationKeyword2": "ai-103",
+    "question": "Which Content Safety feature checks whether an LLM's answer is supported by the source material the user provided?",
+    "correctAnswer": "Groundedness detection",
+    "incorrectAnswers": [
+      "Prompt Shields",
+      "Protected material detection",
+      "Analyze text"
+    ],
+    "explanation": "Groundedness detection identifies and corrects ungrounded generative AI outputs by checking them against the provided source materials.",
+    "keywords": [
+      "ai-103",
+      "content-safety",
+      "groundedness"
+    ],
+    "source": "https://azure.microsoft.com/en-us/products/ai-services/ai-content-safety"
+  },
+  {
+    "itemId": "0ff331b4-6a00-420a-a986-d6b0f3510e1c",
+    "seedId": "ccfd2bcb-8da9-447b-b100-3802a31fc885",
+    "category": "exams",
+    "navigationKeyword1": "azure",
+    "navigationKeyword2": "ai-103",
+    "question": "Your model might reproduce song lyrics or published articles. Which Content Safety feature scans for this?",
+    "correctAnswer": "Protected material text detection",
+    "incorrectAnswers": [
+      "Groundedness detection",
+      "Prompt Shields",
+      "Custom categories (standard)"
+    ],
+    "explanation": "Protected material detection identifies and blocks known text content, such as lyrics, articles, and recipes, in AI-generated output.",
+    "keywords": [
+      "ai-103",
+      "content-safety",
+      "protected-material"
+    ],
+    "source": "https://azure.microsoft.com/en-us/products/ai-services/ai-content-safety"
+  },
+  {
+    "itemId": "5607388b-2a5c-4eeb-9d11-a1bfca02a56e",
+    "seedId": "8db857d7-02cf-42a8-b96a-c385ee75708e",
+    "category": "exams",
+    "navigationKeyword1": "azure",
+    "navigationKeyword2": "ai-103",
+    "question": "Which harm categories does Content Safety monitor in user- and AI-generated text and images?",
+    "correctAnswer": "Hate, sexual, violence, and self-harm",
+    "incorrectAnswers": [
+      "Nudity, weapons, drugs, and gore",
+      "Spam, fraud, malware, and phishing",
+      "Profanity, insults, threats, and bias"
+    ],
+    "explanation": "Content Safety detects harmful content across text and images in four harm categories: hate, sexual, violence, and self-harm.",
+    "keywords": [
+      "ai-103",
+      "content-safety",
+      "image-moderation"
+    ],
+    "source": "https://azure.microsoft.com/en-us/products/ai-services/ai-content-safety"
+  },
+  {
+    "itemId": "ba80d3ca-27ac-494b-9181-d736b603b969",
+    "seedId": "ee91213a-5762-4110-8a75-c955bb723800",
+    "category": "exams",
+    "navigationKeyword1": "azure",
+    "navigationKeyword2": "ai-103",
+    "question": "For an image edit with a mask, how does the mask mark the area the model should change?",
+    "correctAnswer": "Fully transparent pixels",
+    "incorrectAnswers": [
+      "Solid black pixels",
+      "Solid white pixels",
+      "A red outline"
+    ],
+    "explanation": "The mask defines the edit area with fully transparent pixels (alpha of zero) and must be a PNG with the same size as the input image.",
+    "keywords": [
+      "ai-103",
+      "image-generation",
+      "inpainting"
+    ],
+    "source": "https://learn.microsoft.com/en-us/azure/foundry/openai/how-to/dall-e"
+  },
+  {
+    "itemId": "67a71896-99d0-4596-b0c7-41c6b639bb64",
+    "seedId": "1153f6d2-5a4a-4ba8-9d14-5d9f9637387f",
+    "category": "exams",
+    "navigationKeyword1": "azure",
+    "navigationKeyword2": "ai-103",
+    "question": "What format does the Image Edit API accept for its request body?",
+    "correctAnswer": "Multipart form data",
+    "incorrectAnswers": [
+      "JSON only",
+      "XML",
+      "Base-64 text in a query string"
+    ],
+    "explanation": "The Image Edit API takes multipart/form data, not JSON, and accepts PNG or JPG input images under 50 MB.",
+    "keywords": [
+      "ai-103",
+      "image-generation",
+      "image-editing"
+    ],
+    "source": "https://learn.microsoft.com/en-us/azure/foundry/openai/how-to/dall-e"
+  },
+  {
+    "itemId": "6770bf9d-7ebb-499e-a024-8808c3b26423",
+    "seedId": "b4c5f0fd-a018-464b-b107-b0cb622c225d",
+    "category": "exams",
+    "navigationKeyword1": "azure",
+    "navigationKeyword2": "ai-103",
+    "question": "How many images can a single image generation API call return?",
+    "correctAnswer": "Between 1 and 10",
+    "incorrectAnswers": [
+      "Exactly 1",
+      "Up to 4",
+      "Up to 50"
+    ],
+    "explanation": "The n parameter allows one to 10 images per call, with a default of 1.",
+    "keywords": [
+      "ai-103",
+      "image-generation",
+      "parameters"
+    ],
+    "source": "https://learn.microsoft.com/en-us/azure/foundry/openai/how-to/dall-e"
+  },
+  {
+    "itemId": "318fad1b-d60e-4635-b2ae-36e449b2c2f0",
+    "seedId": "971b718f-0886-4537-9d8c-5a136e37703b",
+    "category": "exams",
+    "navigationKeyword1": "azure",
+    "navigationKeyword2": "ai-103",
+    "question": "A prompt for an image is classified as harmful. What does the image API do?",
+    "correctAnswer": "It doesn't generate an image",
+    "incorrectAnswers": [
+      "It generates a blurred image",
+      "It generates and flags the image",
+      "It retries with a safer prompt"
+    ],
+    "explanation": "The Image APIs include a moderation filter. If the prompt is recognized as harmful, no image is generated and an error is returned.",
+    "keywords": [
+      "ai-103",
+      "image-generation",
+      "content-filter"
+    ],
+    "source": "https://learn.microsoft.com/en-us/azure/foundry/openai/how-to/dall-e"
+  },
+  {
+    "itemId": "58cf7a2e-d05b-402c-9c9d-dc465ca4f49e",
+    "seedId": "66d4e929-c9be-490f-bb66-4230ec3c824c",
+    "category": "exams",
+    "navigationKeyword1": "azure",
+    "navigationKeyword2": "ai-103",
+    "question": "In 2026, which model family should new image generation deployments use since dall-e-3 was retired?",
+    "correctAnswer": "gpt-image series",
+    "incorrectAnswers": [
+      "dall-e-2",
+      "Sora",
+      "Florence"
+    ],
+    "explanation": "dall-e-3 was retired on March 4, 2026, and the docs direct you to use a gpt-image series model instead.",
+    "keywords": [
+      "ai-103",
+      "image-generation",
+      "models"
+    ],
+    "source": "https://learn.microsoft.com/en-us/azure/foundry/openai/how-to/dall-e"
+  },
+  {
+    "itemId": "8acc3f26-0333-4e7e-ac91-8ff88331ae26",
+    "seedId": "dbf9ffb3-2c96-4c78-a982-d87fedc0dfd8",
+    "category": "exams",
+    "navigationKeyword1": "azure",
+    "navigationKeyword2": "ai-103",
+    "question": "A support app must detect and redact personal data in chat transcripts before storing them. Which Language feature fits?",
+    "correctAnswer": "PII detection",
+    "incorrectAnswers": [
+      "Entity linking",
+      "Key phrase extraction",
+      "Language detection"
+    ],
+    "explanation": "PII detection finds personal data so it can be redacted before it is stored or retrieved in application workflows.",
+    "keywords": [
+      "ai-103",
+      "language",
+      "pii"
+    ],
+    "source": "https://azure.microsoft.com/en-us/products/ai-services/ai-language"
+  },
+  {
+    "itemId": "d8819395-23ad-4efc-b875-9de92bde7730",
+    "seedId": "d6dc75f3-3fd1-49e8-9235-dd8e123fd515",
+    "category": "exams",
+    "navigationKeyword1": "azure",
+    "navigationKeyword2": "ai-103",
+    "question": "Which summarization approach writes new sentences instead of copying key sentences from the document?",
+    "correctAnswer": "Abstractive summarization",
+    "incorrectAnswers": [
+      "Extractive summarization",
+      "Key phrase extraction",
+      "Entity linking"
+    ],
+    "explanation": "Abstractive summarization generates new concise sentences, while extractive summarization selects existing key sentences.",
+    "keywords": [
+      "ai-103",
+      "language",
+      "summarization"
+    ],
+    "source": "https://learn.microsoft.com/en-us/azure/ai-services/language-service/overview"
+  },
+  {
+    "itemId": "06e2a9f6-b5a1-434a-baea-bdf574ca4266",
+    "seedId": "162ca712-a14f-4746-8396-3488fa723177",
+    "category": "exams",
+    "navigationKeyword1": "azure",
+    "navigationKeyword2": "ai-103",
+    "question": "Which Language feature disambiguates entities and returns links to Wikipedia?",
+    "correctAnswer": "Entity linking",
+    "incorrectAnswers": [
+      "Prebuilt NER",
+      "Custom NER",
+      "Text analytics for health"
+    ],
+    "explanation": "Entity linking disambiguates the identity of entities found in text and returns links to Wikipedia.",
+    "keywords": [
+      "ai-103",
+      "language",
+      "entity-linking"
+    ],
+    "source": "https://learn.microsoft.com/en-us/azure/ai-services/language-service/overview"
+  },
+  {
+    "itemId": "333438c8-2a77-4e74-8cda-451c47ef4189",
+    "seedId": "4b9fb214-0a81-4bd6-b765-2fc63d614b34",
+    "category": "exams",
+    "navigationKeyword1": "azure",
+    "navigationKeyword2": "ai-103",
+    "question": "Speech recognition struggles with industry jargon and background noise. What does the service suggest?",
+    "correctAnswer": "Train a custom speech model",
+    "incorrectAnswers": [
+      "Switch to text to speech",
+      "Use pronunciation assessment",
+      "Use language identification"
+    ],
+    "explanation": "When audio has ambient noise or domain jargon, you can train custom speech models with acoustic, language, and pronunciation data.",
+    "keywords": [
+      "ai-103",
+      "speech",
+      "custom-speech"
+    ],
+    "source": "https://learn.microsoft.com/en-us/azure/ai-services/speech-service/overview"
+  },
+  {
+    "itemId": "0304d5b3-1796-4d1b-a327-fab5954b284a",
+    "seedId": "95784d5d-7e1e-47d3-832a-c8a9a5a6bbe0",
+    "category": "exams",
+    "navigationKeyword1": "azure",
+    "navigationKeyword2": "ai-103",
+    "question": "Which markup lets you fine-tune pitch, pronunciation, and speaking rate for synthesized speech?",
+    "correctAnswer": "SSML",
+    "incorrectAnswers": [
+      "SRGS",
+      "VoiceXML",
+      "WebVTT"
+    ],
+    "explanation": "Speech Synthesis Markup Language (SSML) gives control over synthesized speech such as rate, pitch, volume, prosody, and pronunciation.",
+    "keywords": [
+      "ai-103",
+      "speech",
+      "text-to-speech"
+    ],
+    "source": "https://github.com/Azure-Samples/Cognitive-Speech-TTS/wiki/How-to-use-SSML"
+  },
+  {
+    "itemId": "b75c0759-8ebf-4b25-97ad-4607d7a67496",
+    "seedId": "2d950b0d-fcba-4d26-bf88-5f9e5125fd7f",
+    "category": "exams",
+    "navigationKeyword1": "azure",
+    "navigationKeyword2": "ai-103",
+    "question": "You need to translate a single document and get it back directly, without a Blob storage account. Which option fits?",
+    "correctAnswer": "Synchronous document translation",
+    "incorrectAnswers": [
+      "Asynchronous batch translation",
+      "Custom Translator training",
+      "Text translation with a dynamic dictionary"
+    ],
+    "explanation": "Synchronous document translation sends the source document in the request and returns the translated document in the response, with no storage needed.",
+    "keywords": [
+      "ai-103",
+      "translator",
+      "document-translation"
+    ],
+    "source": "https://techcommunity.microsoft.com/blog/azure-ai-foundry-blog/azure-ai-translator-announces-synchronous-document-translation/4052759"
+  },
+  {
+    "itemId": "2ca59baa-ead2-4de3-a2e9-6bb24ab306fb",
+    "seedId": "7e8a9039-4766-46ba-b455-d8406e4a2bea",
+    "category": "exams",
+    "navigationKeyword1": "azure",
+    "navigationKeyword2": "ai-103",
+    "question": "How does Azure AI Search merge results in a hybrid query?",
+    "correctAnswer": "Reciprocal Rank Fusion (RRF)",
+    "incorrectAnswers": [
+      "BM25 only",
+      "Cosine similarity only",
+      "Alphabetical merge"
+    ],
+    "explanation": "Hybrid search runs keyword and vector retrieval, then uses Reciprocal Rank Fusion (RRF) to produce a single result set.",
+    "keywords": [
+      "ai-103",
+      "ai-search",
+      "hybrid-search"
+    ],
+    "source": "https://techcommunity.microsoft.com/blog/azure-ai-foundry-blog/azure-ai-search-outperforming-vector-search-with-hybrid-retrieval-and-reranking/3929167"
+  },
+  {
+    "itemId": "9bb66f40-9bdc-4f2d-8a9a-40db71aa196b",
+    "seedId": "134b5e23-c76b-41d2-a1a9-4ea3c5d814ad",
+    "category": "exams",
+    "navigationKeyword1": "azure",
+    "navigationKeyword2": "ai-103",
+    "question": "How many top results from the initial ranking does the semantic ranker rerank?",
+    "correctAnswer": "50",
+    "incorrectAnswers": [
+      "10",
+      "100",
+      "1,000"
+    ],
+    "explanation": "The semantic ranker is a second-stage reranker that ranks the top 50 results from the first-stage (L1) retrieval.",
+    "keywords": [
+      "ai-103",
+      "ai-search",
+      "semantic-ranker"
+    ],
+    "source": "https://techcommunity.microsoft.com/blog/azure-ai-foundry-blog/azure-ai-search-outperforming-vector-search-with-hybrid-retrieval-and-reranking/3929167"
+  },
+  {
+    "itemId": "241c7916-e696-49b1-ad6c-91ce32260096",
+    "seedId": "d57255f6-8e0d-49b3-aadf-01fce74eeba9",
+    "category": "exams",
+    "navigationKeyword1": "azure",
+    "navigationKeyword2": "ai-103",
+    "question": "In a search skillset, how do you add your own code, such as a document classifier, to the enrichment pipeline?",
+    "correctAnswer": "Use a custom skill",
+    "incorrectAnswers": [
+      "Use a synonym map",
+      "Use a scoring profile",
+      "Use a field mapping"
+    ],
+    "explanation": "Custom Web API skills let a skillset call your own code when built-in skills don't provide the logic you need.",
+    "keywords": [
+      "ai-103",
+      "ai-search",
+      "skillsets"
+    ],
+    "source": "https://github.com/Azure-Samples/azure-search-power-skills"
+  },
+  {
+    "itemId": "ed8a0936-b401-4541-9889-bad0fd155ab5",
+    "seedId": "3f5defd4-2d33-42e7-bbb4-5cfea43e78b7",
+    "category": "exams",
+    "navigationKeyword1": "azure",
+    "navigationKeyword2": "ai-103",
+    "question": "How does agentic retrieval in Azure AI Search handle a complex question?",
+    "correctAnswer": "An LLM splits it into subqueries run in parallel",
+    "incorrectAnswers": [
+      "It runs one keyword query only",
+      "It sends the full index to the LLM",
+      "It asks the user to rephrase"
+    ],
+    "explanation": "The LLM breaks compound questions into focused subqueries, and each subquery runs simultaneously over text and vector fields.",
+    "keywords": [
+      "ai-103",
+      "ai-search",
+      "agentic-retrieval",
+      "rag"
+    ],
+    "source": "https://techcommunity.microsoft.com/blog/azure-ai-foundry-blog/introducing-agentic-retrieval-in-azure-ai-search/4414677"
+  },
+  {
+    "itemId": "48d898af-698d-4ed9-9cb4-071a0592e0e6",
+    "seedId": "535304f0-3d83-419d-9226-677e0ac9ef3f",
+    "category": "exams",
+    "navigationKeyword1": "azure",
+    "navigationKeyword2": "ai-103",
+    "question": "Which approach lets Azure AI Search chunk content and generate embeddings itself during indexing?",
+    "correctAnswer": "Integrated vectorization",
+    "incorrectAnswers": [
+      "Push API only",
+      "Semantic ranking",
+      "Synonym maps"
+    ],
+    "explanation": "As part of the indexing pipeline, integrated vectorization splits documents into chunks and creates embeddings automatically.",
+    "keywords": [
+      "ai-103",
+      "ai-search",
+      "vector-search"
+    ],
+    "source": "https://techcommunity.microsoft.com/blog/azure-ai-foundry-blog/integrated-vectorization-with-azure-openai-for-azure-ai-search-now-generally-ava/4206836"
+  },
+  {
+    "itemId": "8405fbc3-b191-44df-9527-8c87b940bd6f",
+    "seedId": "f352977b-c0ad-4ed4-a979-be31c5aa029c",
+    "category": "exams",
+    "navigationKeyword1": "azure",
+    "navigationKeyword2": "ai-103",
+    "question": "Which Document Intelligence custom model type is best for documents with a fixed, static layout?",
+    "correctAnswer": "Custom template",
+    "incorrectAnswers": [
+      "Custom neural",
+      "Custom classifier",
+      "prebuilt-read"
+    ],
+    "explanation": "Custom template models extract data from static layouts, while custom neural models handle mixed-type documents.",
+    "keywords": [
+      "ai-103",
+      "document-intelligence",
+      "custom-models"
+    ],
+    "source": "https://learn.microsoft.com/en-us/azure/ai-services/document-intelligence/overview"
+  },
+  {
+    "itemId": "5f287bcf-9d90-475c-8708-5c8d94f282ae",
+    "seedId": "65f9db19-e6fd-4cd4-9a0e-675208bebed9",
+    "category": "exams",
+    "navigationKeyword1": "azure",
+    "navigationKeyword2": "ai-103",
+    "question": "Mixed incoming files must be identified as invoices, contracts, or forms before extraction. Which Document Intelligence model does this?",
+    "correctAnswer": "Custom classifier",
+    "incorrectAnswers": [
+      "Custom neural",
+      "Layout",
+      "Read"
+    ],
+    "explanation": "A custom classification model identifies the document type so each upload can be routed to the right extraction model.",
+    "keywords": [
+      "ai-103",
+      "document-intelligence",
+      "classification"
+    ],
+    "source": "https://techcommunity.microsoft.com/blog/azure-ai-foundry-blog/azure-ai-document-intelligence-new-capabilities-including-classification-are-now/3887375"
+  },
+  {
+    "itemId": "10468f33-07cc-49b2-8e15-ce1f04bd8cbe",
+    "seedId": "14ba418e-525a-4a09-8678-55b1104566a7",
+    "category": "exams",
+    "navigationKeyword1": "azure",
+    "navigationKeyword2": "ai-103",
+    "question": "For a RAG search index, which output format does Content Understanding offer for extracted content?",
+    "correctAnswer": "Markdown",
+    "incorrectAnswers": [
+      "CSV",
+      "XML",
+      "Plain HTML"
+    ],
+    "explanation": "Content Understanding can generate layout-aware Markdown with headers and sections to improve retrieval, or structured JSON.",
+    "keywords": [
+      "ai-103",
+      "content-understanding",
+      "rag"
+    ],
+    "source": "https://devblogs.microsoft.com/foundry/azure-content-understanding-is-now-generally-available/"
+  },
+  {
+    "itemId": "ac2b6956-2b55-49d6-a6d4-941965c9d8e2",
+    "seedId": "a04d63c3-0a42-4075-89b8-40af03527ea0",
+    "category": "exams",
+    "navigationKeyword1": "azure",
+    "navigationKeyword2": "ai-103",
+    "question": "In Content Understanding, which field method creates a value freely, such as a summary of an audio call?",
+    "correctAnswer": "Generate",
+    "incorrectAnswers": [
+      "Extract",
+      "Classify",
+      "Segment"
+    ],
+    "explanation": "Fields can use Extract (values as they appear), Classify (from set categories), or Generate (freely produced values like summaries).",
+    "keywords": [
+      "ai-103",
+      "content-understanding",
+      "field-extraction"
+    ],
+    "source": "https://learn.microsoft.com/en-us/azure/ai-services/content-understanding/overview"
+  }
+]

@@ -17,6 +17,7 @@ exams:
         sap-c02: Arch pro
         soa-c02: SysOps admin
         aif-c01: AI basics
+        mla-c02: ML engineer
     aws-topics:
       description: AWS service and domain tags for exam items
       keywords:
@@ -81,6 +82,7 @@ exams:
         az-305: Arch design
         dp-900: Data basics
         ai-900: AI basics
+        ai-103: AI apps and agents
     gcp:
       description: GCP certs
       keywords:
@@ -90,6 +92,12 @@ exams:
         pde: Data engineer
         pcne: Cloud network
         pcai: GenAI engineer
+        genai-leader: Gen AI leader
+    anthropic:
+      description: Claude certs
+      keywords:
+        general-anthropic: Claude certs
+        ccar-f: Architect foundations
     comptia:
       description: CompTIA certs
       keywords:
@@ -249,6 +257,7 @@ tech:
         deep-learning: Neural nets
         nlp: Language AI
         computer-vision: Image AI
+        genai-facts: Genai facts and history
     genai-for-devs:
       description: AI for developers
       keywords:

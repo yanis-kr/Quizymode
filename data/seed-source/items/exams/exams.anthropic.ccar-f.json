@@ -1,0 +1,1002 @@
+[
+  {
+    "itemId": "efb833fe-65e6-41c2-b3ed-ec55f8907a61",
+    "seedId": "c0550aad-45d7-496b-ad52-bd126f3a65f6",
+    "category": "exams",
+    "navigationKeyword1": "anthropic",
+    "navigationKeyword2": "ccar-f",
+    "question": "A system runs LLM calls through predefined code paths instead of letting the model direct its own steps. What is it called?",
+    "correctAnswer": "A workflow",
+    "incorrectAnswers": [
+      "An autonomous agent",
+      "An augmented LLM",
+      "An agent team"
+    ],
+    "explanation": "Workflows orchestrate LLMs and tools through predefined code paths, while agents dynamically direct their own process and tool use.",
+    "keywords": [
+      "anthropic-ccar-f",
+      "agentic-architecture"
+    ],
+    "source": "https://www.anthropic.com/engineering/building-effective-agents"
+  },
+  {
+    "itemId": "b56c258b-6fba-4770-99f9-12965d2de373",
+    "seedId": "c37a9849-c0ee-461a-9a08-a9405fdc53ee",
+    "category": "exams",
+    "navigationKeyword1": "anthropic",
+    "navigationKeyword2": "ccar-f",
+    "question": "Which pattern fits a coding change whose subtasks can't be known until the input is seen?",
+    "correctAnswer": "Orchestrator-workers",
+    "incorrectAnswers": [
+      "Prompt chaining",
+      "Routing",
+      "Parallelization by sectioning"
+    ],
+    "explanation": "In orchestrator-workers, a central LLM breaks the task down at runtime and delegates pieces to workers. Sectioning uses subtasks defined in advance.",
+    "keywords": [
+      "anthropic-ccar-f",
+      "agentic-architecture"
+    ],
+    "source": "https://www.anthropic.com/engineering/building-effective-agents"
+  },
+  {
+    "itemId": "42860673-d893-4532-92da-2268e087d0c4",
+    "seedId": "64655802-7dc3-4eb9-b46b-ae43e33802da",
+    "category": "exams",
+    "navigationKeyword1": "anthropic",
+    "navigationKeyword2": "ccar-f",
+    "question": "A team runs the same security-review prompt several times and compares the results for confidence. Which pattern is this?",
+    "correctAnswer": "Parallelization by voting",
+    "incorrectAnswers": [
+      "Prompt chaining",
+      "Evaluator-optimizer",
+      "Routing"
+    ],
+    "explanation": "Voting runs the same task several times to get diverse outputs, which raises confidence in the final answer.",
+    "keywords": [
+      "anthropic-ccar-f",
+      "agentic-architecture"
+    ],
+    "source": "https://www.anthropic.com/engineering/building-effective-agents"
+  },
+  {
+    "itemId": "85dc4ab8-9f1a-4cb0-ba04-f46e8942e804",
+    "seedId": "4b67d30c-ef5a-4422-a32e-3eea430a3fb1",
+    "category": "exams",
+    "navigationKeyword1": "anthropic",
+    "navigationKeyword2": "ccar-f",
+    "question": "When is the evaluator-optimizer pattern the best fit?",
+    "correctAnswer": "When clear criteria exist and refinement measurably helps",
+    "incorrectAnswers": [
+      "When subtasks must be discovered at runtime",
+      "When inputs fall into distinct categories",
+      "When independent subtasks can run at once"
+    ],
+    "explanation": "One LLM generates and another evaluates in a loop, which pays off only when the evaluation criteria are clear and iteration improves results.",
+    "keywords": [
+      "anthropic-ccar-f",
+      "agentic-architecture"
+    ],
+    "source": "https://www.anthropic.com/engineering/building-effective-agents"
+  },
+  {
+    "itemId": "9fa75b5c-c384-4b9d-aad5-0affbd7b2e01",
+    "seedId": "335170c3-3b27-4588-98c4-d4d7ce6e4971",
+    "category": "exams",
+    "navigationKeyword1": "anthropic",
+    "navigationKeyword2": "ccar-f",
+    "question": "An agent kept making mistakes with relative file paths. Which tool change fixed the problem?",
+    "correctAnswer": "Requiring absolute file paths",
+    "incorrectAnswers": [
+      "Adding a path-checking subagent",
+      "Raising the tool's timeout",
+      "Listing path rules in the system prompt"
+    ],
+    "explanation": "Changing the tool's arguments so mistakes are harder to make (poka-yoke) worked: with absolute paths required, the model used them flawlessly.",
+    "keywords": [
+      "anthropic-ccar-f",
+      "agentic-architecture"
+    ],
+    "source": "https://www.anthropic.com/engineering/building-effective-agents"
+  },
+  {
+    "itemId": "f0d9f451-2cb5-4690-9c99-73a7ee53b9d0",
+    "seedId": "fbbc1dda-a919-4703-8761-50d7ceb5c9ef",
+    "category": "exams",
+    "navigationKeyword1": "anthropic",
+    "navigationKeyword2": "ccar-f",
+    "question": "What is the recommended starting point before adopting an agent framework?",
+    "correctAnswer": "Calling LLM APIs directly",
+    "incorrectAnswers": [
+      "Choosing the framework with most integrations",
+      "Building a multi-agent system first",
+      "Fine-tuning a model for the task"
+    ],
+    "explanation": "Many agent patterns take only a few lines of code, and frameworks can hide the prompts and responses that you need to debug.",
+    "keywords": [
+      "anthropic-ccar-f",
+      "agentic-architecture"
+    ],
+    "source": "https://www.anthropic.com/engineering/building-effective-agents"
+  },
+  {
+    "itemId": "85e91d07-86da-4326-ae72-4b50b2e83d0b",
+    "seedId": "67276daa-73df-4c92-b445-146ec9de25f9",
+    "category": "exams",
+    "navigationKeyword1": "anthropic",
+    "navigationKeyword2": "ccar-f",
+    "question": "Compared with chat, roughly how many times more tokens did multi-agent research runs use?",
+    "correctAnswer": "About 15 times",
+    "incorrectAnswers": [
+      "About 2 times",
+      "About 4 times",
+      "About 50 times"
+    ],
+    "explanation": "Single agents used about 4 times the tokens of chat, and multi-agent systems about 15 times, so the approach suits high-value tasks.",
+    "keywords": [
+      "anthropic-ccar-f",
+      "agentic-architecture"
+    ],
+    "source": "https://www.anthropic.com/engineering/multi-agent-research-system"
+  },
+  {
+    "itemId": "a4a2b5d1-aa66-4f5e-b6f7-86deeffd1f04",
+    "seedId": "a94d6a66-ea80-456a-83f8-c0d41cf06429",
+    "category": "exams",
+    "navigationKeyword1": "anthropic",
+    "navigationKeyword2": "ccar-f",
+    "question": "A lead agent gave subagents vague one-line tasks and they duplicated work. What should each delegation include?",
+    "correctAnswer": "Objective, output format, tools, boundaries",
+    "incorrectAnswers": [
+      "A topic, a deadline and a model name",
+      "The lead agent's full transcript so far",
+      "A token budget and a retry count limit"
+    ],
+    "explanation": "Each subagent needs a clear objective, an output format, guidance on tools and sources, and boundaries so work doesn't overlap.",
+    "keywords": [
+      "anthropic-ccar-f",
+      "agentic-architecture"
+    ],
+    "source": "https://www.anthropic.com/engineering/multi-agent-research-system"
+  },
+  {
+    "itemId": "081341c3-9244-440e-bc34-2fd7a14d6106",
+    "seedId": "d80681cd-167a-4e84-9bc9-bcf05f2750e9",
+    "category": "exams",
+    "navigationKeyword1": "anthropic",
+    "navigationKeyword2": "ccar-f",
+    "question": "Why did a long-running lead research agent save its plan to external memory?",
+    "correctAnswer": "Context past 200,000 tokens gets truncated",
+    "incorrectAnswers": [
+      "Subagents bill memory reads at a lower rate",
+      "Human reviewers must approve every plan",
+      "Plans cannot be stored in the system prompt"
+    ],
+    "explanation": "Once the context grows beyond about 200,000 tokens it is truncated, so saving the plan keeps it available.",
+    "keywords": [
+      "anthropic-ccar-f",
+      "agentic-architecture"
+    ],
+    "source": "https://www.anthropic.com/engineering/multi-agent-research-system"
+  },
+  {
+    "itemId": "0cda1c55-5fd3-4c22-9e69-98acdcc9b447",
+    "seedId": "ce219afb-da79-4cb4-a153-9c9f80a02b46",
+    "category": "exams",
+    "navigationKeyword1": "anthropic",
+    "navigationKeyword2": "ccar-f",
+    "question": "What does each Claude Code subagent run in?",
+    "correctAnswer": "Its own context window",
+    "incorrectAnswers": [
+      "The main conversation's context",
+      "A context shared by all subagents",
+      "The parent's context in read-only mode"
+    ],
+    "explanation": "Each subagent has its own context window, system prompt, tool access and permissions, and only its summary returns to the main conversation.",
+    "keywords": [
+      "anthropic-ccar-f",
+      "agentic-architecture"
+    ],
+    "source": "https://code.claude.com/docs/en/sub-agents"
+  },
+  {
+    "itemId": "efc0a631-d9cc-482f-a3e5-63eec76f4d3e",
+    "seedId": "0961ed7d-d872-4089-ac8d-0d5b92deafd0",
+    "category": "exams",
+    "navigationKeyword1": "anthropic",
+    "navigationKeyword2": "ccar-f",
+    "question": "You want Claude Code's built-in tools, agent loop and context management inside your own Python app. What do you use?",
+    "correctAnswer": "The Claude Agent SDK",
+    "incorrectAnswers": [
+      "The Client SDK with your own tool loop",
+      "Managed Agents in a hosted sandbox",
+      "The Claude Code CLI in interactive mode"
+    ],
+    "explanation": "The Agent SDK is a library that gives you the same tools, agent loop and context management that power Claude Code, in Python or TypeScript.",
+    "keywords": [
+      "anthropic-ccar-f",
+      "agentic-architecture"
+    ],
+    "source": "https://code.claude.com/docs/en/agent-sdk/overview"
+  },
+  {
+    "itemId": "6979481f-526d-4f44-a022-3a247142c8f2",
+    "seedId": "f7e7c6b0-4e61-40e0-aa74-16b8d58ed7b3",
+    "category": "exams",
+    "navigationKeyword1": "anthropic",
+    "navigationKeyword2": "ccar-f",
+    "question": "In the Messages API, what stop_reason signals that your code must run a client tool?",
+    "correctAnswer": "tool_use",
+    "incorrectAnswers": [
+      "end_turn",
+      "pause_turn",
+      "max_tokens"
+    ],
+    "explanation": "For client tools, Claude responds with stop_reason tool_use and one or more tool_use blocks. Your code runs them and returns tool_result blocks.",
+    "keywords": [
+      "anthropic-ccar-f",
+      "agentic-architecture"
+    ],
+    "source": "https://platform.claude.com/docs/en/agents-and-tools/tool-use/overview"
+  },
+  {
+    "itemId": "3f33be5f-cff8-47f4-b905-d41d61abb789",
+    "seedId": "fa85c265-c557-4d74-b6c9-c935f8d161a1",
+    "category": "exams",
+    "navigationKeyword1": "anthropic",
+    "navigationKeyword2": "ccar-f",
+    "question": "A project subagent and a user subagent share a name. Which one does Claude Code use?",
+    "correctAnswer": "The project subagent",
+    "incorrectAnswers": [
+      "The user subagent",
+      "The most recently edited one",
+      "Neither, startup fails"
+    ],
+    "explanation": "Project subagents in .claude/agents/ have higher priority than user subagents in ~/.claude/agents/, so the project definition wins.",
+    "keywords": [
+      "anthropic-ccar-f",
+      "agentic-architecture"
+    ],
+    "source": "https://code.claude.com/docs/en/sub-agents"
+  },
+  {
+    "itemId": "be81edea-fbad-4ea7-a79b-48b17cba3e4d",
+    "seedId": "4f24ab7d-f9ef-4415-bd17-449bd555a6ba",
+    "category": "exams",
+    "navigationKeyword1": "anthropic",
+    "navigationKeyword2": "ccar-f",
+    "question": "Which factor is described as by far the most important for tool-use performance?",
+    "correctAnswer": "Detailed tool descriptions",
+    "incorrectAnswers": [
+      "Short tool names",
+      "Many input examples",
+      "Fewer required parameters"
+    ],
+    "explanation": "Descriptions should explain what the tool does, when to use it, what each parameter means and its limits, ideally in at least 3 to 4 sentences.",
+    "keywords": [
+      "anthropic-ccar-f",
+      "tool-design-mcp"
+    ],
+    "source": "https://platform.claude.com/docs/en/agents-and-tools/tool-use/define-tools"
+  },
+  {
+    "itemId": "2b2255bc-78e0-4cd5-ad92-bcd53ccf99bd",
+    "seedId": "20941035-e668-4145-8330-f59df3db13fc",
+    "category": "exams",
+    "navigationKeyword1": "anthropic",
+    "navigationKeyword2": "ccar-f",
+    "question": "Instead of separate create_pr, review_pr and merge_pr tools, what design is recommended?",
+    "correctAnswer": "One tool with an action parameter",
+    "incorrectAnswers": [
+      "Three tools with longer descriptions",
+      "A subagent for each operation",
+      "A separate MCP server per tool"
+    ],
+    "explanation": "Consolidating related operations into fewer tools reduces selection ambiguity and makes the tool surface easier to navigate.",
+    "keywords": [
+      "anthropic-ccar-f",
+      "tool-design-mcp"
+    ],
+    "source": "https://platform.claude.com/docs/en/agents-and-tools/tool-use/define-tools"
+  },
+  {
+    "itemId": "3814d9b6-67e9-421a-b317-5184b6fb04ed",
+    "seedId": "84ea0274-936e-4f56-8f75-ce4e788733e8",
+    "category": "exams",
+    "navigationKeyword1": "anthropic",
+    "navigationKeyword2": "ccar-f",
+    "question": "Why does a search_contacts tool usually beat a list_contacts tool for an agent?",
+    "correctAnswer": "It avoids flooding context with irrelevant records",
+    "incorrectAnswers": [
+      "Agents cannot paginate list results",
+      "List tools always need extra auth",
+      "Search tools skip the permission prompt"
+    ],
+    "explanation": "Agents have limited context, so a targeted search returns only relevant records instead of dumping every contact.",
+    "keywords": [
+      "anthropic-ccar-f",
+      "tool-design-mcp"
+    ],
+    "source": "https://www.anthropic.com/engineering/writing-tools-for-agents"
+  },
+  {
+    "itemId": "72cd8667-ccc4-475e-8111-36aacafd35aa",
+    "seedId": "36c7f255-f3f9-4730-86f1-9e6b8d353c1c",
+    "category": "exams",
+    "navigationKeyword1": "anthropic",
+    "navigationKeyword2": "ccar-f",
+    "question": "Which tool error message gives Claude the best chance to recover?",
+    "correctAnswer": "Rate limit exceeded. Retry after 60 seconds.",
+    "incorrectAnswers": [
+      "failed",
+      "Error code 0x80004005",
+      "Unexpected exception in handler"
+    ],
+    "explanation": "Instructive errors say what went wrong and what to try next, so Claude can adapt without guessing.",
+    "keywords": [
+      "anthropic-ccar-f",
+      "tool-design-mcp"
+    ],
+    "source": "https://platform.claude.com/docs/en/agents-and-tools/tool-use/handle-tool-calls"
+  },
+  {
+    "itemId": "e2040fc2-687a-4155-b45c-a0417bc7d75e",
+    "seedId": "ac5ce892-e127-413f-b770-9f7db9d568e9",
+    "category": "exams",
+    "navigationKeyword1": "anthropic",
+    "navigationKeyword2": "ccar-f",
+    "question": "A tool call is missing a required parameter and you return an is_error result. What does Claude usually do?",
+    "correctAnswer": "Retry 2 to 3 times with corrections",
+    "incorrectAnswers": [
+      "End the conversation with an error",
+      "Stop calling tools for the session",
+      "Ask the API to repair the input"
+    ],
+    "explanation": "Claude treats the error as feedback and retries the call with the missing information filled in a few times before apologizing to the user.",
+    "keywords": [
+      "anthropic-ccar-f",
+      "tool-design-mcp"
+    ],
+    "source": "https://platform.claude.com/docs/en/agents-and-tools/tool-use/handle-tool-calls"
+  },
+  {
+    "itemId": "63351a67-0bf2-4a0f-870d-f028cb66120b",
+    "seedId": "36aa06d7-4060-4a79-a17e-c0f8364cb14f",
+    "category": "exams",
+    "navigationKeyword1": "anthropic",
+    "navigationKeyword2": "ccar-f",
+    "question": "A tool returns webpage text that may contain hidden instructions. Where should that content go?",
+    "correctAnswer": "Inside the tool_result block",
+    "incorrectAnswers": [
+      "In the system prompt",
+      "In a plain user text block",
+      "In the tool description"
+    ],
+    "explanation": "Tool output from outside sources is untrusted. Keeping it in tool_result blocks helps guard against indirect prompt injection.",
+    "keywords": [
+      "anthropic-ccar-f",
+      "tool-design-mcp"
+    ],
+    "source": "https://platform.claude.com/docs/en/agents-and-tools/tool-use/handle-tool-calls"
+  },
+  {
+    "itemId": "1e43b4aa-5c4c-4f17-a406-69a99364c017",
+    "seedId": "a15a951a-ca2d-49c7-b242-2b09f6e6501a",
+    "category": "exams",
+    "navigationKeyword1": "anthropic",
+    "navigationKeyword2": "ccar-f",
+    "question": "An MCP host connects to three servers. How many MCP clients does it create?",
+    "correctAnswer": "Three, one per server",
+    "incorrectAnswers": [
+      "One shared client",
+      "Six, one per direction",
+      "One per tool exposed"
+    ],
+    "explanation": "The host creates one MCP client for each server, and each client keeps a dedicated connection to its server.",
+    "keywords": [
+      "anthropic-ccar-f",
+      "tool-design-mcp"
+    ],
+    "source": "https://modelcontextprotocol.io/docs/learn/architecture"
+  },
+  {
+    "itemId": "b74419c7-5a43-4379-b1fa-1faac9e9df71",
+    "seedId": "75731702-3be3-4765-b37e-68f5b7495690",
+    "category": "exams",
+    "navigationKeyword1": "anthropic",
+    "navigationKeyword2": "ccar-f",
+    "question": "Which message format does the MCP data layer use?",
+    "correctAnswer": "JSON-RPC 2.0",
+    "incorrectAnswers": [
+      "GraphQL",
+      "Protocol Buffers over gRPC",
+      "REST with OpenAPI"
+    ],
+    "explanation": "The data layer is a JSON-RPC 2.0 based protocol, and the same message format is used across every transport.",
+    "keywords": [
+      "anthropic-ccar-f",
+      "tool-design-mcp"
+    ],
+    "source": "https://modelcontextprotocol.io/docs/learn/architecture"
+  },
+  {
+    "itemId": "85e4e76c-1010-4ce7-b7bc-17776cc05e8e",
+    "seedId": "51f8dde6-905d-4cfd-a623-7c20311ffd59",
+    "category": "exams",
+    "navigationKeyword1": "anthropic",
+    "navigationKeyword2": "ccar-f",
+    "question": "In MCP, which server feature is model-controlled, meaning the model decides when to call it?",
+    "correctAnswer": "Tools",
+    "incorrectAnswers": [
+      "Resources",
+      "Prompts",
+      "Elicitation"
+    ],
+    "explanation": "Tools are model-controlled. Resources are application-controlled and prompts are user-controlled.",
+    "keywords": [
+      "anthropic-ccar-f",
+      "tool-design-mcp"
+    ],
+    "source": "https://modelcontextprotocol.io/docs/learn/server-concepts"
+  },
+  {
+    "itemId": "86921a97-48bf-4374-bc9b-4adbef7e1257",
+    "seedId": "2108546f-1a9c-4b68-bf81-2184e9e98c00",
+    "category": "exams",
+    "navigationKeyword1": "anthropic",
+    "navigationKeyword2": "ccar-f",
+    "question": "Which MCP primitive is user-controlled and often exposed as a slash command?",
+    "correctAnswer": "Prompts",
+    "incorrectAnswers": [
+      "Tools",
+      "Resources",
+      "Notifications"
+    ],
+    "explanation": "Prompts are reusable templates that require explicit user invocation, often surfaced through slash commands or command palettes.",
+    "keywords": [
+      "anthropic-ccar-f",
+      "tool-design-mcp"
+    ],
+    "source": "https://modelcontextprotocol.io/docs/learn/server-concepts"
+  },
+  {
+    "itemId": "850b469f-6adc-40ac-b0a1-fa83a55b0c08",
+    "seedId": "c0f93718-3627-4578-849e-d962fbf7a711",
+    "category": "exams",
+    "navigationKeyword1": "anthropic",
+    "navigationKeyword2": "ccar-f",
+    "question": "Which Claude Code settings source has the highest precedence?",
+    "correctAnswer": "Managed settings",
+    "incorrectAnswers": [
+      "The --settings command-line flag",
+      "Project local settings",
+      "User settings"
+    ],
+    "explanation": "Managed settings from the organization sit at the top. Nothing in personal files or --settings overrides a managed key.",
+    "keywords": [
+      "anthropic-ccar-f",
+      "claude-code-config"
+    ],
+    "source": "https://code.claude.com/docs/en/settings"
+  },
+  {
+    "itemId": "b6013900-0c29-419f-9edf-521bccd3e49e",
+    "seedId": "e8c705b2-e56f-4999-bb00-31541290b727",
+    "category": "exams",
+    "navigationKeyword1": "anthropic",
+    "navigationKeyword2": "ccar-f",
+    "question": "Where should you put personal Claude Code overrides for one project that teammates should not get?",
+    "correctAnswer": ".claude/settings.local.json",
+    "incorrectAnswers": [
+      ".claude/settings.json",
+      "~/.claude/settings.json",
+      ".mcp.json"
+    ],
+    "explanation": "The project local file applies only to you in that project and is kept out of git, while .claude/settings.json is shared with the team.",
+    "keywords": [
+      "anthropic-ccar-f",
+      "claude-code-config"
+    ],
+    "source": "https://code.claude.com/docs/en/settings"
+  },
+  {
+    "itemId": "51199392-7254-412a-a096-dc8213ec9fe6",
+    "seedId": "6cb46e91-d1af-49af-8456-8d34ddc71ab7",
+    "category": "exams",
+    "navigationKeyword1": "anthropic",
+    "navigationKeyword2": "ccar-f",
+    "question": "A deny rule Bash(aws *) and an allow rule Bash(aws s3 ls) both match a command. What happens?",
+    "correctAnswer": "The command is denied",
+    "incorrectAnswers": [
+      "It runs, as the narrower rule wins",
+      "Claude Code prompts the user",
+      "The last file loaded decides"
+    ],
+    "explanation": "Rules are checked deny, then ask, then allow. The first match wins and specificity does not change the order.",
+    "keywords": [
+      "anthropic-ccar-f",
+      "claude-code-config"
+    ],
+    "source": "https://code.claude.com/docs/en/permissions"
+  },
+  {
+    "itemId": "c19b3f90-705c-4e7e-9222-8b2c04f4f21c",
+    "seedId": "44ac9025-523b-4561-88bc-63497f62e24a",
+    "category": "exams",
+    "navigationKeyword1": "anthropic",
+    "navigationKeyword2": "ccar-f",
+    "question": "Which permission rule allows every tool from an MCP server named github?",
+    "correctAnswer": "mcp__github__*",
+    "incorrectAnswers": [
+      "mcp__*",
+      "github__*",
+      "Bash(github *)"
+    ],
+    "explanation": "MCP rules use the mcp__<server>__ prefix. An unanchored glob like mcp__* is skipped and approves nothing.",
+    "keywords": [
+      "anthropic-ccar-f",
+      "claude-code-config"
+    ],
+    "source": "https://code.claude.com/docs/en/permissions"
+  },
+  {
+    "itemId": "14b9f38e-2fd4-4a6c-a98e-1d1fe1a030c1",
+    "seedId": "ca3557c2-7d1f-4355-9449-bb0071caa685",
+    "category": "exams",
+    "navigationKeyword1": "anthropic",
+    "navigationKeyword2": "ccar-f",
+    "question": "You must guarantee Claude Code never runs a certain action. What should you use instead of a CLAUDE.md rule?",
+    "correctAnswer": "A PreToolUse hook",
+    "incorrectAnswers": [
+      "A longer CLAUDE.md instruction",
+      "An auto memory note",
+      "A CLAUDE.local.md entry"
+    ],
+    "explanation": "CLAUDE.md and memory are treated as context, not enforced configuration. A PreToolUse hook can block an action regardless of what Claude decides.",
+    "keywords": [
+      "anthropic-ccar-f",
+      "claude-code-config"
+    ],
+    "source": "https://code.claude.com/docs/en/memory"
+  },
+  {
+    "itemId": "389c71ad-b691-4862-a57b-43cbd0a5b73c",
+    "seedId": "044e7167-4eb3-4fe0-a171-3d4aaf4461ff",
+    "category": "exams",
+    "navigationKeyword1": "anthropic",
+    "navigationKeyword2": "ccar-f",
+    "question": "A PreToolUse hook exits with code 2. What happens?",
+    "correctAnswer": "The call is blocked, stderr given as reason",
+    "incorrectAnswers": [
+      "The tool runs and stderr is only logged",
+      "The whole Claude Code session ends",
+      "The user is asked to approve the call"
+    ],
+    "explanation": "Exit code 2 blocks the action, and the hook's stderr is fed back as the reason.",
+    "keywords": [
+      "anthropic-ccar-f",
+      "claude-code-config"
+    ],
+    "source": "https://code.claude.com/docs/en/hooks"
+  },
+  {
+    "itemId": "c9a8cff3-64b9-4ad4-b337-05199094d85f",
+    "seedId": "eeada1b5-5f0e-4665-a63a-3e4a033acd75",
+    "category": "exams",
+    "navigationKeyword1": "anthropic",
+    "navigationKeyword2": "ccar-f",
+    "question": "When does the full body of a Claude Code skill load into context?",
+    "correctAnswer": "Only when the skill is invoked",
+    "incorrectAnswers": [
+      "At every session start",
+      "Whenever CLAUDE.md loads",
+      "After each compaction"
+    ],
+    "explanation": "Only skill descriptions sit in context by default, so long reference material costs almost nothing until the skill is used.",
+    "keywords": [
+      "anthropic-ccar-f",
+      "claude-code-config"
+    ],
+    "source": "https://code.claude.com/docs/en/skills"
+  },
+  {
+    "itemId": "2a602922-9a52-4405-b459-246e5e6cd3fc",
+    "seedId": "04a2b3e4-f109-47a9-af70-c106f0ed780d",
+    "category": "exams",
+    "navigationKeyword1": "anthropic",
+    "navigationKeyword2": "ccar-f",
+    "question": "Which file holds project-scoped MCP servers that the team shares through version control?",
+    "correctAnswer": ".mcp.json at the project root",
+    "incorrectAnswers": [
+      "~/.claude.json",
+      ".claude/settings.local.json",
+      "~/.claude/mcp.json"
+    ],
+    "explanation": "Project scope stores servers in .mcp.json so they can be committed. Local and user scopes are stored in ~/.claude.json.",
+    "keywords": [
+      "anthropic-ccar-f",
+      "claude-code-config"
+    ],
+    "source": "https://code.claude.com/docs/en/mcp"
+  },
+  {
+    "itemId": "a73fa09f-aed5-45c3-8e9a-f4c597b0e454",
+    "seedId": "fa67c783-bb36-4d70-9a01-2c236c17d5a3",
+    "category": "exams",
+    "navigationKeyword1": "anthropic",
+    "navigationKeyword2": "ccar-f",
+    "question": "Which flag runs Claude Code non-interactively, for example in a CI script?",
+    "correctAnswer": "-p",
+    "incorrectAnswers": [
+      "--continue",
+      "--verbose",
+      "--resume"
+    ],
+    "explanation": "Adding -p (or --print) runs a prompt without the interactive interface and prints the result.",
+    "keywords": [
+      "anthropic-ccar-f",
+      "claude-code-config"
+    ],
+    "source": "https://code.claude.com/docs/en/headless"
+  },
+  {
+    "itemId": "bf175c7b-0050-4245-a683-6bcb2db8eaec",
+    "seedId": "363374b1-86b5-4de7-9c90-72024a8f3bb5",
+    "category": "exams",
+    "navigationKeyword1": "anthropic",
+    "navigationKeyword2": "ccar-f",
+    "question": "Which two frontmatter fields are required in a Claude Code subagent file?",
+    "correctAnswer": "name and description",
+    "incorrectAnswers": [
+      "name and tools",
+      "description and model",
+      "name and model"
+    ],
+    "explanation": "Only name and description are required. Fields such as tools and model are optional; omitting tools inherits the available tools.",
+    "keywords": [
+      "anthropic-ccar-f",
+      "claude-code-config"
+    ],
+    "source": "https://code.claude.com/docs/en/sub-agents"
+  },
+  {
+    "itemId": "713fa656-e3bb-4cbb-a027-c6b0b321d7c2",
+    "seedId": "47aa88a7-b163-46c2-b830-8faa1843f4c2",
+    "category": "exams",
+    "navigationKeyword1": "anthropic",
+    "navigationKeyword2": "ccar-f",
+    "question": "How many examples does prompting guidance suggest including for best results?",
+    "correctAnswer": "3 to 5",
+    "incorrectAnswers": [
+      "Exactly 1",
+      "10 to 20",
+      "At least 50"
+    ],
+    "explanation": "A few relevant, diverse examples, wrapped in example tags, steer output format and tone most reliably.",
+    "keywords": [
+      "anthropic-ccar-f",
+      "prompt-engineering"
+    ],
+    "source": "https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/claude-prompting-best-practices"
+  },
+  {
+    "itemId": "9dfcc04b-f254-416a-a11b-c03cc5f0621e",
+    "seedId": "7680e8fb-4553-4eb1-aa29-e9509825a85e",
+    "category": "exams",
+    "navigationKeyword1": "anthropic",
+    "navigationKeyword2": "ccar-f",
+    "question": "A prompt includes a 30,000-token report. Where should the question go?",
+    "correctAnswer": "At the end, after the report",
+    "incorrectAnswers": [
+      "At the very start, before the report",
+      "In a separate later request",
+      "Repeated inside every section"
+    ],
+    "explanation": "Long documents belong near the top. Putting the query at the end improved response quality by up to 30 percent in tests.",
+    "keywords": [
+      "anthropic-ccar-f",
+      "prompt-engineering"
+    ],
+    "source": "https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/claude-prompting-best-practices"
+  },
+  {
+    "itemId": "d605bdd7-e55c-42c0-b499-113943b2e52b",
+    "seedId": "aadd3708-ea1b-4cab-bc24-016739664b65",
+    "category": "exams",
+    "navigationKeyword1": "anthropic",
+    "navigationKeyword2": "ccar-f",
+    "question": "Why wrap prompt parts in tags such as <instructions>, <context> and <input>?",
+    "correctAnswer": "So Claude parses mixed content clearly",
+    "incorrectAnswers": [
+      "To switch on structured outputs mode",
+      "To lower the input token price",
+      "To trigger extended thinking mode"
+    ],
+    "explanation": "Tagging each type of content keeps instructions, context, examples and inputs clearly separated, which reduces misinterpretation.",
+    "keywords": [
+      "anthropic-ccar-f",
+      "prompt-engineering"
+    ],
+    "source": "https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/claude-prompting-best-practices"
+  },
+  {
+    "itemId": "8de5218f-4297-4c01-a623-5aa20d8c6a3f",
+    "seedId": "04adce55-b041-40fa-9c8d-be0e16850271",
+    "category": "exams",
+    "navigationKeyword1": "anthropic",
+    "navigationKeyword2": "ccar-f",
+    "question": "Prefilling the last assistant turn is unsupported on newer Claude models. What replaces it for forcing a JSON shape?",
+    "correctAnswer": "Structured outputs",
+    "incorrectAnswers": [
+      "A higher temperature",
+      "A stop sequence of '}'",
+      "A longer system prompt"
+    ],
+    "explanation": "Structured outputs constrain the response to a given schema, which covers the main reason people used prefill for formatting.",
+    "keywords": [
+      "anthropic-ccar-f",
+      "prompt-engineering"
+    ],
+    "source": "https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/claude-prompting-best-practices"
+  },
+  {
+    "itemId": "008b908c-397e-49e0-ac00-3c175a7868fd",
+    "seedId": "59dd80c1-6df7-4f7e-baa4-022efca24aaa",
+    "category": "exams",
+    "navigationKeyword1": "anthropic",
+    "navigationKeyword2": "ccar-f",
+    "question": "Why explain the reason behind an instruction, not just state it?",
+    "correctAnswer": "It tells Claude more about your goals",
+    "incorrectAnswers": [
+      "It disables default safety behavior",
+      "It lets Claude skip the system prompt",
+      "It reduces the output token count"
+    ],
+    "explanation": "Context or motivation behind an instruction helps Claude understand the goal and give a more targeted response.",
+    "keywords": [
+      "anthropic-ccar-f",
+      "prompt-engineering"
+    ],
+    "source": "https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/claude-prompting-best-practices"
+  },
+  {
+    "itemId": "0757dbaa-8794-4897-aacd-c185a945e081",
+    "seedId": "1adfccf0-726b-4ff2-b66e-494e82d204ef",
+    "category": "exams",
+    "navigationKeyword1": "anthropic",
+    "navigationKeyword2": "ccar-f",
+    "question": "In a structured-output JSON schema, what must additionalProperties be set to on objects?",
+    "correctAnswer": "false",
+    "incorrectAnswers": [
+      "true",
+      "An empty object",
+      "It must be omitted"
+    ],
+    "explanation": "Structured outputs reject additionalProperties set to anything other than false.",
+    "keywords": [
+      "anthropic-ccar-f",
+      "prompt-engineering"
+    ],
+    "source": "https://platform.claude.com/docs/en/build-with-claude/structured-outputs"
+  },
+  {
+    "itemId": "faf3acbc-6b8b-4600-94ed-d5c33d9e5827",
+    "seedId": "42f5db83-cfc1-4433-8e80-8a3a8f8497a0",
+    "category": "exams",
+    "navigationKeyword1": "anthropic",
+    "navigationKeyword2": "ccar-f",
+    "question": "A structured-output response ends with stop_reason max_tokens. What is the risk?",
+    "correctAnswer": "Truncated JSON that may not match the schema",
+    "incorrectAnswers": [
+      "A 400 error from the API instead of output",
+      "The schema is ignored for later requests",
+      "The response is not billed at all"
+    ],
+    "explanation": "Hitting the token limit can cut the output short. The fix is to retry with a higher max_tokens value.",
+    "keywords": [
+      "anthropic-ccar-f",
+      "prompt-engineering"
+    ],
+    "source": "https://platform.claude.com/docs/en/build-with-claude/structured-outputs"
+  },
+  {
+    "itemId": "ca28dbbb-70be-431d-ab4e-d6c930b0a475",
+    "seedId": "d1979cb2-bffb-4849-8025-823daeedb2f4",
+    "category": "exams",
+    "navigationKeyword1": "anthropic",
+    "navigationKeyword2": "ccar-f",
+    "question": "Which JSON Schema feature is not supported by structured outputs?",
+    "correctAnswer": "Minimum and maximum limits",
+    "incorrectAnswers": [
+      "enum value lists",
+      "required field lists",
+      "anyOf union types"
+    ],
+    "explanation": "Numerical constraints such as minimum, maximum and multipleOf are unsupported, while enum, required and anyOf are supported.",
+    "keywords": [
+      "anthropic-ccar-f",
+      "prompt-engineering"
+    ],
+    "source": "https://platform.claude.com/docs/en/build-with-claude/structured-outputs"
+  },
+  {
+    "itemId": "07d2194b-e149-46bf-ba5b-fb54a21a7121",
+    "seedId": "79774b7b-ed6c-4b38-ac34-63c109c14b0c",
+    "category": "exams",
+    "navigationKeyword1": "anthropic",
+    "navigationKeyword2": "ccar-f",
+    "question": "What does tool_choice set to any tell Claude?",
+    "correctAnswer": "It must call some tool, of its choosing",
+    "incorrectAnswers": [
+      "It may answer without calling a tool",
+      "It must call one tool you name",
+      "It may not call any of the tools"
+    ],
+    "explanation": "auto lets Claude decide, any requires some tool, tool forces a named tool, and none blocks tool use.",
+    "keywords": [
+      "anthropic-ccar-f",
+      "prompt-engineering"
+    ],
+    "source": "https://platform.claude.com/docs/en/agents-and-tools/tool-use/define-tools"
+  },
+  {
+    "itemId": "ef7499f9-e81a-4af0-b5f9-a837c3e8b227",
+    "seedId": "7321c0ff-dbce-4b16-9c4e-17dc13ed8b79",
+    "category": "exams",
+    "navigationKeyword1": "anthropic",
+    "navigationKeyword2": "ccar-f",
+    "question": "How do you make a Claude Code CLI run return output that matches a specific JSON Schema?",
+    "correctAnswer": "Use --output-format json with --json-schema",
+    "incorrectAnswers": [
+      "Use --output-format stream-json alone",
+      "Put the schema in --append-system-prompt",
+      "Set a schema key with --settings"
+    ],
+    "explanation": "With --json-schema the structured result appears in the structured_output field of the JSON response.",
+    "keywords": [
+      "anthropic-ccar-f",
+      "prompt-engineering"
+    ],
+    "source": "https://code.claude.com/docs/en/headless"
+  },
+  {
+    "itemId": "0d376067-dc78-4826-9c14-2b3698d555bf",
+    "seedId": "3d0f7bc3-ad60-4ab4-8ad3-db823fc56121",
+    "category": "exams",
+    "navigationKeyword1": "anthropic",
+    "navigationKeyword2": "ccar-f",
+    "question": "What happens if the input alone is larger than the model's context window?",
+    "correctAnswer": "The API returns a 400 'prompt is too long' error",
+    "incorrectAnswers": [
+      "The oldest turns are silently dropped",
+      "Output stops with model_context_window_exceeded",
+      "Compaction runs automatically"
+    ],
+    "explanation": "When input already exceeds the window, the request is rejected with an invalid_request_error on every model.",
+    "keywords": [
+      "anthropic-ccar-f",
+      "context-management"
+    ],
+    "source": "https://platform.claude.com/docs/en/build-with-claude/context-windows"
+  },
+  {
+    "itemId": "5ad94f1f-f7f9-4d06-9901-64e874e889ab",
+    "seedId": "ff7e83ac-ecf5-4f7e-a34d-21e79e6e498a",
+    "category": "exams",
+    "navigationKeyword1": "anthropic",
+    "navigationKeyword2": "ccar-f",
+    "question": "With thinking on, what must you send back alongside a tool result?",
+    "correctAnswer": "The unmodified thinking block and signature",
+    "incorrectAnswers": [
+      "Only the final text block of the turn",
+      "A short summary of the thinking",
+      "Nothing, since thinking is always dropped"
+    ],
+    "explanation": "The thinking block that came with the tool request must be returned unchanged. The API checks its signature and errors if it was modified.",
+    "keywords": [
+      "anthropic-ccar-f",
+      "context-management"
+    ],
+    "source": "https://platform.claude.com/docs/en/build-with-claude/context-windows"
+  },
+  {
+    "itemId": "d2177db3-e465-477b-b80c-7dc98720c9c4",
+    "seedId": "d7bc3c3d-ddf6-4c3f-ade1-158e00917411",
+    "category": "exams",
+    "navigationKeyword1": "anthropic",
+    "navigationKeyword2": "ccar-f",
+    "question": "What is the default lifetime of a prompt cache entry?",
+    "correctAnswer": "5 minutes",
+    "incorrectAnswers": [
+      "1 minute",
+      "1 hour",
+      "24 hours"
+    ],
+    "explanation": "The cache lasts 5 minutes by default and is refreshed at no cost each time it is used. A 1-hour option costs more to write.",
+    "keywords": [
+      "anthropic-ccar-f",
+      "context-management"
+    ],
+    "source": "https://platform.claude.com/docs/en/build-with-claude/prompt-caching"
+  },
+  {
+    "itemId": "6d682a18-0057-48e0-b5ba-27b4d1b6cbf6",
+    "seedId": "b8502a2a-257e-4e94-8d3b-929129dc1ce7",
+    "category": "exams",
+    "navigationKeyword1": "anthropic",
+    "navigationKeyword2": "ccar-f",
+    "question": "Which change invalidates the entire prompt cache, not just the message blocks?",
+    "correctAnswer": "Editing a tool definition",
+    "incorrectAnswers": [
+      "Changing tool_choice",
+      "Adding an image to a message",
+      "Appending a new user message"
+    ],
+    "explanation": "Tools sit first in the cache prefix, so changing their names, descriptions or parameters invalidates everything after them.",
+    "keywords": [
+      "anthropic-ccar-f",
+      "context-management"
+    ],
+    "source": "https://platform.claude.com/docs/en/build-with-claude/prompt-caching"
+  },
+  {
+    "itemId": "8497de7d-8a11-4f01-a794-d9b1540b993a",
+    "seedId": "394049de-2332-4971-9585-7ce0b5fc0276",
+    "category": "exams",
+    "navigationKeyword1": "anthropic",
+    "navigationKeyword2": "ccar-f",
+    "question": "What term describes a model's recall getting worse as more tokens fill its context?",
+    "correctAnswer": "Context rot",
+    "incorrectAnswers": [
+      "Context drift",
+      "Attention collapse",
+      "Token decay"
+    ],
+    "explanation": "As the window grows, the model's ability to recall information from it declines, so context should be treated as a finite resource.",
+    "keywords": [
+      "anthropic-ccar-f",
+      "context-management"
+    ],
+    "source": "https://www.anthropic.com/engineering/effective-context-engineering-for-ai-agents"
+  },
+  {
+    "itemId": "362a5f15-8262-494d-95c9-c988a7838f1d",
+    "seedId": "d8b11b33-91bd-4312-9e5c-33d7887d1a67",
+    "category": "exams",
+    "navigationKeyword1": "anthropic",
+    "navigationKeyword2": "ccar-f",
+    "question": "An agent keeps file paths and stored queries, then loads data with tools only when needed. What is this called?",
+    "correctAnswer": "Just-in-time context retrieval",
+    "incorrectAnswers": [
+      "Context compaction",
+      "Tool result clearing",
+      "Upfront retrieval"
+    ],
+    "explanation": "Instead of preloading everything, the agent holds lightweight identifiers and pulls data into context at runtime.",
+    "keywords": [
+      "anthropic-ccar-f",
+      "context-management"
+    ],
+    "source": "https://www.anthropic.com/engineering/effective-context-engineering-for-ai-agents"
+  },
+  {
+    "itemId": "1cc62f9d-dd0f-4166-a62e-dbcfb2c3ee93",
+    "seedId": "161cb5df-f21f-49a7-9aa4-682ad7cb3568",
+    "category": "exams",
+    "navigationKeyword1": "anthropic",
+    "navigationKeyword2": "ccar-f",
+    "question": "In a sub-agent architecture for long tasks, what should each sub-agent return to the lead agent?",
+    "correctAnswer": "A condensed summary of its work",
+    "incorrectAnswers": [
+      "Its full raw transcript",
+      "Every tool result it received",
+      "Only a pass or fail flag"
+    ],
+    "explanation": "Sub-agents may explore extensively in clean context windows but return a distilled summary, often 1,000 to 2,000 tokens.",
+    "keywords": [
+      "anthropic-ccar-f",
+      "context-management"
+    ],
+    "source": "https://www.anthropic.com/engineering/effective-context-engineering-for-ai-agents"
+  }
+]

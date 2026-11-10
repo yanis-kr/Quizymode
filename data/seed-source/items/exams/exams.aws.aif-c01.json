@@ -1,6 +1,7 @@
 [
   {
     "itemId": "5efe3bb9-c19d-43e9-a6f2-db4379153b90",
+    "seedId": "22ebb3e8-8751-4486-bdb7-3d804b4318f1",
     "category": "exams",
     "navigationKeyword1": "aws",
     "navigationKeyword2": "aif-c01",
@@ -21,6 +22,7 @@
   },
   {
     "itemId": "df28866d-89ff-49e8-911a-253e3727c2c0",
+    "seedId": "0fd85dfb-d24e-48fd-9924-e20928a92a6f",
     "category": "exams",
     "navigationKeyword1": "aws",
     "navigationKeyword2": "aif-c01",
@@ -41,6 +43,7 @@
   },
   {
     "itemId": "396d7719-2322-4dd6-9679-dc3a36cbcd08",
+    "seedId": "2d730fb4-5a7e-49f4-95d3-b77214f4747d",
     "category": "exams",
     "navigationKeyword1": "aws",
     "navigationKeyword2": "aif-c01",
@@ -61,6 +64,7 @@
   },
   {
     "itemId": "94e9de36-3e45-4a58-97fb-3a0ee1c037fe",
+    "seedId": "030f4e2f-5195-4f99-803d-13a14e17697f",
     "category": "exams",
     "navigationKeyword1": "aws",
     "navigationKeyword2": "aif-c01",
@@ -81,6 +85,7 @@
   },
   {
     "itemId": "a413b5db-c1f8-46c4-a5ea-5c1cb48a6a69",
+    "seedId": "25426308-5150-4ef6-9f2f-cb669b62078a",
     "category": "exams",
     "navigationKeyword1": "aws",
     "navigationKeyword2": "aif-c01",
@@ -101,6 +106,7 @@
   },
   {
     "itemId": "a4619a79-23a1-4d22-81c9-0dbbd41aad81",
+    "seedId": "8582bb57-2a8e-463e-8083-b371cce3f177",
     "category": "exams",
     "navigationKeyword1": "aws",
     "navigationKeyword2": "aif-c01",
@@ -121,6 +127,7 @@
   },
   {
     "itemId": "ad5c9031-96bc-4d19-98ca-36a75685d190",
+    "seedId": "9bc8fc74-17cf-4283-88e5-edd751c65e6b",
     "category": "exams",
     "navigationKeyword1": "aws",
     "navigationKeyword2": "aif-c01",
@@ -141,6 +148,7 @@
   },
   {
     "itemId": "7b2af294-345f-4a88-bc6c-242bd87f4a10",
+    "seedId": "836e73a5-e8ea-4d40-bbe6-676983104594",
     "category": "exams",
     "navigationKeyword1": "aws",
     "navigationKeyword2": "aif-c01",
@@ -148,7 +156,7 @@
     "correctAnswer": "Amazon Polly",
     "incorrectAnswers": [
       "Amazon Comprehend",
-      "Amazon CloudTrail",
+      "AWS CloudTrail",
       "Amazon SQS"
     ],
     "explanation": "Amazon Polly is AWS's text-to-speech service.",
@@ -161,6 +169,7 @@
   },
   {
     "itemId": "81d8642a-a2f6-4092-8621-fede3d0d2a58",
+    "seedId": "3bb3d041-40f4-4b54-8f96-10d20df1fc05",
     "category": "exams",
     "navigationKeyword1": "aws",
     "navigationKeyword2": "aif-c01",
@@ -181,6 +190,7 @@
   },
   {
     "itemId": "eccf0efc-142d-4323-8488-6f9537596447",
+    "seedId": "421ef9d5-c1a1-48ae-b384-91c9a278d8cb",
     "category": "exams",
     "navigationKeyword1": "aws",
     "navigationKeyword2": "aif-c01",
@@ -201,6 +211,7 @@
   },
   {
     "itemId": "22b69b39-2e97-42ab-adfa-26b0e5fb055a",
+    "seedId": "83483042-679c-4fe1-a8fa-02765633f173",
     "category": "exams",
     "navigationKeyword1": "aws",
     "navigationKeyword2": "aif-c01",
@@ -221,6 +232,7 @@
   },
   {
     "itemId": "49ba5585-1e28-4065-b6f6-cd28261970df",
+    "seedId": "1b9852c8-9473-4a75-b18a-afc7ca6a7f8b",
     "category": "exams",
     "navigationKeyword1": "aws",
     "navigationKeyword2": "aif-c01",
@@ -238,5 +250,803 @@
       "aws-services"
     ],
     "source": "https://aws.amazon.com/bedrock/"
+  },
+  {
+    "itemId": "4dc8c5b4-e3ed-4e4a-9fe4-ec547093a18a",
+    "seedId": "92ad3c6d-72b8-4237-981c-88031621bcc0",
+    "category": "exams",
+    "navigationKeyword1": "aws",
+    "navigationKeyword2": "aif-c01",
+    "question": "A team has past house sales with final prices and wants to predict prices for new listings. Which learning approach fits?",
+    "correctAnswer": "Supervised learning",
+    "incorrectAnswers": [
+      "Unsupervised learning",
+      "Reinforcement learning",
+      "Dimensionality reduction"
+    ],
+    "explanation": "The training data pairs inputs with known output labels (prices), which is supervised learning. Predicting a number is a regression task.",
+    "keywords": [
+      "aws-aif-c01",
+      "aws-ai",
+      "ml-fundamentals"
+    ],
+    "source": "https://aws.amazon.com/compare/the-difference-between-machine-learning-supervised-and-unsupervised/"
+  },
+  {
+    "itemId": "de33d73f-40ad-42b8-a45f-47651c7eb932",
+    "seedId": "8d65e185-0439-4682-ae57-ce434839ba71",
+    "category": "exams",
+    "navigationKeyword1": "aws",
+    "navigationKeyword2": "aif-c01",
+    "question": "A model scores very well on training data but poorly on new test data. What is the most likely problem?",
+    "correctAnswer": "Overfitting",
+    "incorrectAnswers": [
+      "Underfitting",
+      "Class imbalance",
+      "Low learning rate"
+    ],
+    "explanation": "An overfit model learns the training data too closely, including noise, so it fails to generalize. A large train-test accuracy gap is the classic sign.",
+    "keywords": [
+      "aws-aif-c01",
+      "aws-ai",
+      "ml-fundamentals"
+    ],
+    "source": "https://aws.amazon.com/what-is/overfitting/"
+  },
+  {
+    "itemId": "acf44cab-d23e-4ce2-8076-1f2f0ed7488f",
+    "seedId": "0b6a38d5-2444-46a1-8f90-fd43f77365ee",
+    "category": "exams",
+    "navigationKeyword1": "aws",
+    "navigationKeyword2": "aif-c01",
+    "question": "Which technique halts training before a model starts learning noise in the data?",
+    "correctAnswer": "Early stopping",
+    "incorrectAnswers": [
+      "Data augmentation",
+      "Feature scaling",
+      "Batch inference"
+    ],
+    "explanation": "Early stopping pauses training at the point where further training would make the model fit noise. It is one way to reduce overfitting.",
+    "keywords": [
+      "aws-aif-c01",
+      "aws-ai",
+      "ml-fundamentals"
+    ],
+    "source": "https://aws.amazon.com/what-is/overfitting/"
+  },
+  {
+    "itemId": "f9e86ce1-5479-4069-b6e9-3d9c3da9dc04",
+    "seedId": "8d690e0e-1931-48ef-a32a-a0d84e13bcf2",
+    "category": "exams",
+    "navigationKeyword1": "aws",
+    "navigationKeyword2": "aif-c01",
+    "question": "In reinforcement learning, what is the positive, negative, or zero value an agent receives after an action?",
+    "correctAnswer": "Reward",
+    "incorrectAnswers": [
+      "Label",
+      "Embedding",
+      "Hyperparameter"
+    ],
+    "explanation": "The reward is the feedback signal for an action. The agent learns by trial and error to maximize it.",
+    "keywords": [
+      "aws-aif-c01",
+      "aws-ai",
+      "ml-fundamentals"
+    ],
+    "source": "https://aws.amazon.com/what-is/reinforcement-learning/"
+  },
+  {
+    "itemId": "49fbf4ad-d142-486f-8086-4960a6d1e787",
+    "seedId": "b804a8d6-1799-426a-a160-305160f3f7c7",
+    "category": "exams",
+    "navigationKeyword1": "aws",
+    "navigationKeyword2": "aif-c01",
+    "question": "Requests have payloads up to 1 GB and take up to an hour, with near real-time needs. Which SageMaker AI inference option fits?",
+    "correctAnswer": "Asynchronous inference",
+    "incorrectAnswers": [
+      "Real-time inference",
+      "Serverless Inference",
+      "SageMaker Neo"
+    ],
+    "explanation": "Asynchronous inference queues requests and is built for large payloads and long processing times. Real-time and serverless endpoints target short, interactive requests.",
+    "keywords": [
+      "aws-aif-c01",
+      "aws-ai",
+      "ml-fundamentals"
+    ],
+    "source": "https://docs.aws.amazon.com/sagemaker/latest/dg/deploy-model.html"
+  },
+  {
+    "itemId": "5678adee-fbd3-4ac0-84e8-9d0329a025be",
+    "seedId": "860332d5-9d64-4e1b-95f5-2076553eec4c",
+    "category": "exams",
+    "navigationKeyword1": "aws",
+    "navigationKeyword2": "aif-c01",
+    "question": "A model gets bursts of traffic with idle periods in between and can tolerate cold starts. Which SageMaker AI inference option fits best?",
+    "correctAnswer": "Serverless Inference",
+    "incorrectAnswers": [
+      "Real-time inference",
+      "Asynchronous inference",
+      "Provisioned Throughput"
+    ],
+    "explanation": "Serverless Inference needs no infrastructure management and scales with traffic, which suits spiky workloads that can accept cold starts.",
+    "keywords": [
+      "aws-aif-c01",
+      "aws-ai",
+      "ml-fundamentals"
+    ],
+    "source": "https://docs.aws.amazon.com/sagemaker/latest/dg/deploy-model.html"
+  },
+  {
+    "itemId": "920eec57-bebb-4daf-9a9c-7f3ab20c1808",
+    "seedId": "9d28904f-5739-4dfb-ae2c-945af41fa3c0",
+    "category": "exams",
+    "navigationKeyword1": "aws",
+    "navigationKeyword2": "aif-c01",
+    "question": "A business analyst wants to predict customer churn from their own data without writing code. Which tool fits?",
+    "correctAnswer": "Amazon SageMaker Canvas",
+    "incorrectAnswers": [
+      "Amazon SageMaker Clarify",
+      "Amazon Augmented AI",
+      "Amazon SageMaker Model Monitor"
+    ],
+    "explanation": "SageMaker Canvas lets users build models and generate predictions with no code. Churn prediction is one of its listed use cases.",
+    "keywords": [
+      "aws-aif-c01",
+      "aws-ai",
+      "ml-fundamentals"
+    ],
+    "source": "https://docs.aws.amazon.com/sagemaker/latest/dg/canvas.html"
+  },
+  {
+    "itemId": "4a7f702a-eda7-4d91-bf19-6a5c60c178f4",
+    "seedId": "5e4a9752-c87e-4e64-8e7e-8deb4f5b00cb",
+    "category": "exams",
+    "navigationKeyword1": "aws",
+    "navigationKeyword2": "aif-c01",
+    "question": "You want more predictable, less creative model output. How should you change temperature?",
+    "correctAnswer": "Lower it",
+    "incorrectAnswers": [
+      "Raise it",
+      "Set it equal to Top K",
+      "Remove the stop sequence"
+    ],
+    "explanation": "A lower temperature steepens the next-token distribution, so the model favors high-probability tokens and responds more deterministically.",
+    "keywords": [
+      "aws-aif-c01",
+      "aws-ai",
+      "genai-fundamentals"
+    ],
+    "source": "https://docs.aws.amazon.com/bedrock/latest/userguide/inference-parameters.html"
+  },
+  {
+    "itemId": "cc956e57-1215-4279-bb2b-acde555b77d7",
+    "seedId": "858e2a33-b81d-476d-adf0-7052d180930e",
+    "category": "exams",
+    "navigationKeyword1": "aws",
+    "navigationKeyword2": "aif-c01",
+    "question": "What does setting Top K to 50 do during text generation?",
+    "correctAnswer": "Samples from the 50 likeliest tokens",
+    "incorrectAnswers": [
+      "Caps the response at 50 tokens",
+      "Keeps the top 50% of probability",
+      "Stops after 50 sentences"
+    ],
+    "explanation": "Top K is the number of most-likely candidates the model considers for the next token. Top P, not Top K, works with a share of probability.",
+    "keywords": [
+      "aws-aif-c01",
+      "aws-ai",
+      "genai-fundamentals"
+    ],
+    "source": "https://docs.aws.amazon.com/bedrock/latest/userguide/inference-parameters.html"
+  },
+  {
+    "itemId": "f3e6d89c-26bd-4a66-b217-51c501bd4cf0",
+    "seedId": "03287496-aa9d-4a3f-8c5e-e83371935f0e",
+    "category": "exams",
+    "navigationKeyword1": "aws",
+    "navigationKeyword2": "aif-c01",
+    "question": "Foundation models are typically pretrained on what kind of data?",
+    "correctAnswer": "Broad, mostly unlabeled data",
+    "incorrectAnswers": [
+      "Small hand-labeled datasets",
+      "Only structured tabular data",
+      "Rewards from a game environment"
+    ],
+    "explanation": "Foundation models train on massive, generalized, unlabeled data using self-supervised learning, where the model generates its own labels from the input.",
+    "keywords": [
+      "aws-aif-c01",
+      "aws-ai",
+      "genai-fundamentals"
+    ],
+    "source": "https://aws.amazon.com/what-is/foundation-models/"
+  },
+  {
+    "itemId": "906e3d4d-2313-4af3-8a9a-5e4910ece081",
+    "seedId": "b1de0498-0d83-49ff-b3ee-c856bf97d3ba",
+    "category": "exams",
+    "navigationKeyword1": "aws",
+    "navigationKeyword2": "aif-c01",
+    "question": "Why can transformer models train much faster on GPUs than older recurrent networks?",
+    "correctAnswer": "They process whole sequences in parallel",
+    "incorrectAnswers": [
+      "They have far fewer parameters",
+      "They skip tokenization",
+      "They read one word at a time"
+    ],
+    "explanation": "Recurrent networks process inputs step by step. Transformers handle entire sequences at once, which suits parallel GPU training.",
+    "keywords": [
+      "aws-aif-c01",
+      "aws-ai",
+      "genai-fundamentals"
+    ],
+    "source": "https://aws.amazon.com/what-is/large-language-model/"
+  },
+  {
+    "itemId": "518c7e32-79fc-470a-9de5-000d1487855d",
+    "seedId": "cf2f69b7-5430-4f7c-a1e2-40a20a27889a",
+    "category": "exams",
+    "navigationKeyword1": "aws",
+    "navigationKeyword2": "aif-c01",
+    "question": "In machine learning, what are embeddings?",
+    "correctAnswer": "Numerical vectors representing objects",
+    "incorrectAnswers": [
+      "Compressed copies of model weights",
+      "Labels added by human annotators",
+      "Rules that block harmful output"
+    ],
+    "explanation": "Embeddings are multi-dimensional numerical representations of real-world objects, such as words, that let models measure how similar items are.",
+    "keywords": [
+      "aws-aif-c01",
+      "aws-ai",
+      "genai-fundamentals"
+    ],
+    "source": "https://aws.amazon.com/what-is/embeddings-in-machine-learning/"
+  },
+  {
+    "itemId": "8b8e42ae-a676-4f5e-8db6-9b7d3c1dc405",
+    "seedId": "3a4f7b4f-a456-4bbe-b76c-9322fcdadf44",
+    "category": "exams",
+    "navigationKeyword1": "aws",
+    "navigationKeyword2": "aif-c01",
+    "question": "Which generative model type creates data by making controlled random changes to a sample and then reversing them?",
+    "correctAnswer": "Diffusion model",
+    "incorrectAnswers": [
+      "Generative adversarial network",
+      "Variational autoencoder",
+      "Decision tree"
+    ],
+    "explanation": "Diffusion models add noise step by step and learn the reverse process that removes it, producing a new sample.",
+    "keywords": [
+      "aws-aif-c01",
+      "aws-ai",
+      "genai-fundamentals"
+    ],
+    "source": "https://aws.amazon.com/what-is/generative-ai/"
+  },
+  {
+    "itemId": "85a55843-083e-4f17-9aab-f2ff15b8495b",
+    "seedId": "ee6a2142-09e1-401f-8277-ceb2e5a60c1a",
+    "category": "exams",
+    "navigationKeyword1": "aws",
+    "navigationKeyword2": "aif-c01",
+    "question": "You customized a foundation model in Amazon Bedrock. What must you purchase before you can use it?",
+    "correctAnswer": "Provisioned Throughput",
+    "incorrectAnswers": [
+      "A batch inference job",
+      "A Guardrails version",
+      "Reserved EC2 Instances"
+    ],
+    "explanation": "Bedrock requires Provisioned Throughput to run inference on a customized model. It is billed hourly based on model units.",
+    "keywords": [
+      "aws-aif-c01",
+      "aws-ai",
+      "genai-fundamentals"
+    ],
+    "source": "https://docs.aws.amazon.com/bedrock/latest/userguide/prov-throughput.html"
+  },
+  {
+    "itemId": "b552af71-e58a-465d-909b-6f645372aaa8",
+    "seedId": "69f73084-69e7-4309-ac98-729aa129852c",
+    "category": "exams",
+    "navigationKeyword1": "aws",
+    "navigationKeyword2": "aif-c01",
+    "question": "Which commitment terms can you choose for Amazon Bedrock Provisioned Throughput?",
+    "correctAnswer": "None, 1 month, or 6 months",
+    "incorrectAnswers": [
+      "1 year or 3 years",
+      "Hourly, daily, or weekly",
+      "Only 12 months"
+    ],
+    "explanation": "Provisioned Throughput offers no commitment, a 1-month term, or a 6-month term. Longer commitments get a lower hourly price.",
+    "keywords": [
+      "aws-aif-c01",
+      "aws-ai",
+      "genai-fundamentals"
+    ],
+    "source": "https://docs.aws.amazon.com/bedrock/latest/userguide/prov-throughput.html"
+  },
+  {
+    "itemId": "36b3e354-d7c0-4a2f-8fa8-1f5d76302684",
+    "seedId": "908b2bd7-3f31-4fea-aa97-0b31eef67c6d",
+    "category": "exams",
+    "navigationKeyword1": "aws",
+    "navigationKeyword2": "aif-c01",
+    "question": "You need to run thousands of prompts overnight, read from and written to Amazon S3. Which Bedrock option fits?",
+    "correctAnswer": "Batch inference",
+    "incorrectAnswers": [
+      "Provisioned Throughput",
+      "Response streaming",
+      "Model invocation logging"
+    ],
+    "explanation": "Batch inference processes many prompts asynchronously from input files in S3 and writes the responses back to S3.",
+    "keywords": [
+      "aws-aif-c01",
+      "aws-ai",
+      "genai-fundamentals"
+    ],
+    "source": "https://docs.aws.amazon.com/bedrock/latest/userguide/batch-inference.html"
+  },
+  {
+    "itemId": "91cd278c-9567-49b1-9ca2-1614717bc6ae",
+    "seedId": "8bce7ad6-ef95-42ad-97bb-55aab5727652",
+    "category": "exams",
+    "navigationKeyword1": "aws",
+    "navigationKeyword2": "aif-c01",
+    "question": "A chatbot must answer from company documents that change weekly, without retraining the model. Which approach fits?",
+    "correctAnswer": "Retrieval Augmented Generation",
+    "incorrectAnswers": [
+      "Continued pretraining",
+      "Supervised fine-tuning",
+      "Model distillation"
+    ],
+    "explanation": "RAG retrieves relevant data at query time and adds it to the prompt, so the model can use fresh information without retraining.",
+    "keywords": [
+      "aws-aif-c01",
+      "aws-ai",
+      "foundation-models"
+    ],
+    "source": "https://aws.amazon.com/what-is/retrieval-augmented-generation/"
+  },
+  {
+    "itemId": "95da3eed-3f2c-4d5e-8ffc-a44c46a5d09d",
+    "seedId": "52e280a5-6898-494e-856a-ea1106a00e7d",
+    "category": "exams",
+    "navigationKeyword1": "aws",
+    "navigationKeyword2": "aif-c01",
+    "question": "In a typical RAG pipeline, where are document embeddings stored so relevant content can be retrieved?",
+    "correctAnswer": "A vector database",
+    "incorrectAnswers": [
+      "The model's weights",
+      "The prompt template",
+      "A guardrail policy"
+    ],
+    "explanation": "An embedding model converts documents into vectors stored in a vector database. The query is also embedded and matched against it.",
+    "keywords": [
+      "aws-aif-c01",
+      "aws-ai",
+      "foundation-models"
+    ],
+    "source": "https://aws.amazon.com/what-is/retrieval-augmented-generation/"
+  },
+  {
+    "itemId": "dae0764b-9744-4b6d-8d84-0012e6c423f1",
+    "seedId": "053bc7ab-285a-4e5e-a7e4-7a96060a640e",
+    "category": "exams",
+    "navigationKeyword1": "aws",
+    "navigationKeyword2": "aif-c01",
+    "question": "What lets users of an Amazon Bedrock knowledge base check which document an answer came from?",
+    "correctAnswer": "Citations in the response",
+    "incorrectAnswers": [
+      "Stop sequences",
+      "Provisioned Throughput",
+      "Word filters"
+    ],
+    "explanation": "Knowledge Bases can include citations in generated responses so the original data source can be referenced and accuracy checked.",
+    "keywords": [
+      "aws-aif-c01",
+      "aws-ai",
+      "foundation-models"
+    ],
+    "source": "https://docs.aws.amazon.com/bedrock/latest/userguide/knowledge-base.html"
+  },
+  {
+    "itemId": "06728a40-8447-4af8-8f74-cd2ddd0c650e",
+    "seedId": "151ea4d1-fd71-4255-bf55-8455494f4288",
+    "category": "exams",
+    "navigationKeyword1": "aws",
+    "navigationKeyword2": "aif-c01",
+    "question": "In Amazon Bedrock Agents, which component defines the actions the agent can perform, such as calling company APIs?",
+    "correctAnswer": "Action group",
+    "incorrectAnswers": [
+      "Knowledge base",
+      "Guardrail",
+      "Inference profile"
+    ],
+    "explanation": "An agent needs at least one action group or knowledge base. Action groups define the actions; knowledge bases supply information.",
+    "keywords": [
+      "aws-aif-c01",
+      "aws-ai",
+      "foundation-models"
+    ],
+    "source": "https://docs.aws.amazon.com/bedrock/latest/userguide/agents.html"
+  },
+  {
+    "itemId": "453a6f50-035e-42be-9d58-44fc2dec0a7b",
+    "seedId": "306d8a55-1c3c-489d-aa00-f2759611a45c",
+    "category": "exams",
+    "navigationKeyword1": "aws",
+    "navigationKeyword2": "aif-c01",
+    "question": "Which Bedrock customization method trains a model on labeled input-output examples?",
+    "correctAnswer": "Supervised fine-tuning",
+    "incorrectAnswers": [
+      "Few-shot prompting",
+      "Reinforcement fine-tuning",
+      "Retrieval Augmented Generation"
+    ],
+    "explanation": "Supervised fine-tuning uses labeled examples so the model learns which outputs to produce for certain inputs, adjusting its parameters.",
+    "keywords": [
+      "aws-aif-c01",
+      "aws-ai",
+      "foundation-models"
+    ],
+    "source": "https://docs.aws.amazon.com/bedrock/latest/userguide/custom-models.html"
+  },
+  {
+    "itemId": "d07e4acf-e74c-47b6-8677-e3af796a11d6",
+    "seedId": "726256db-16ae-4d36-a0a8-067e8875c433",
+    "category": "exams",
+    "navigationKeyword1": "aws",
+    "navigationKeyword2": "aif-c01",
+    "question": "Which customization method transfers knowledge from a large teacher model to a smaller, cheaper student model?",
+    "correctAnswer": "Distillation",
+    "incorrectAnswers": [
+      "Supervised fine-tuning",
+      "Continued pretraining",
+      "Prompt chaining"
+    ],
+    "explanation": "Distillation generates responses from a teacher model and uses them to fine-tune a smaller, faster student model.",
+    "keywords": [
+      "aws-aif-c01",
+      "aws-ai",
+      "foundation-models"
+    ],
+    "source": "https://docs.aws.amazon.com/bedrock/latest/userguide/custom-models.html"
+  },
+  {
+    "itemId": "7b9eeab4-ac4d-4389-9d99-7e6796e0edef",
+    "seedId": "22d8db1b-a930-42c3-aa97-361637e3e24a",
+    "category": "exams",
+    "navigationKeyword1": "aws",
+    "navigationKeyword2": "aif-c01",
+    "question": "Which Bedrock customization method uses reward functions to score responses instead of labeled pairs?",
+    "correctAnswer": "Reinforcement fine-tuning",
+    "incorrectAnswers": [
+      "Supervised fine-tuning",
+      "Distillation",
+      "Few-shot prompting"
+    ],
+    "explanation": "Reinforcement fine-tuning learns iteratively from feedback scores produced by reward functions, which can be defined in AWS Lambda.",
+    "keywords": [
+      "aws-aif-c01",
+      "aws-ai",
+      "foundation-models"
+    ],
+    "source": "https://docs.aws.amazon.com/bedrock/latest/userguide/custom-models.html"
+  },
+  {
+    "itemId": "b848daf5-a127-45f8-a383-b18162f1e760",
+    "seedId": "2d9e20da-9732-4ca9-9634-195fbd57ecaf",
+    "category": "exams",
+    "navigationKeyword1": "aws",
+    "navigationKeyword2": "aif-c01",
+    "question": "A prompt shows two headlines with their sentiment labels, then asks for the label of a third. What technique is this?",
+    "correctAnswer": "Few-shot prompting",
+    "incorrectAnswers": [
+      "Zero-shot prompting",
+      "Fine-tuning",
+      "Prompt injection"
+    ],
+    "explanation": "Including paired example inputs and outputs in the prompt is few-shot prompting, also called in-context learning.",
+    "keywords": [
+      "aws-aif-c01",
+      "aws-ai",
+      "foundation-models"
+    ],
+    "source": "https://docs.aws.amazon.com/bedrock/latest/userguide/prompt-engineering-guidelines.html"
+  },
+  {
+    "itemId": "ccf05644-3bf2-4462-b852-48249fc6a746",
+    "seedId": "fe871a2c-2720-4987-9b2f-af7a99529839",
+    "category": "exams",
+    "navigationKeyword1": "aws",
+    "navigationKeyword2": "aif-c01",
+    "question": "Which Bedrock evaluation type uses a second LLM to score each response and explain the score?",
+    "correctAnswer": "LLM-as-a-judge evaluation",
+    "incorrectAnswers": [
+      "Human worker evaluation",
+      "Built-in dataset evaluation",
+      "Contextual grounding check"
+    ],
+    "explanation": "Judge-model evaluation jobs use a second LLM to score the responses and provide an explanation for each one.",
+    "keywords": [
+      "aws-aif-c01",
+      "aws-ai",
+      "foundation-models"
+    ],
+    "source": "https://docs.aws.amazon.com/bedrock/latest/userguide/evaluation.html"
+  },
+  {
+    "itemId": "d23e6a9f-70bb-430e-98f2-8078c4a3de06",
+    "seedId": "10ef2874-c1c7-42f1-822f-12691c2f6448",
+    "category": "exams",
+    "navigationKeyword1": "aws",
+    "navigationKeyword2": "aif-c01",
+    "question": "In Bedrock automatic evaluation, which metric measures accuracy for text summarization?",
+    "correctAnswer": "BERTScore",
+    "incorrectAnswers": [
+      "NLP-F1",
+      "Word error rate",
+      "Real world knowledge score"
+    ],
+    "explanation": "Summarization accuracy is computed with BERTScore. NLP-F1 is used for question answering accuracy.",
+    "keywords": [
+      "aws-aif-c01",
+      "aws-ai",
+      "foundation-models"
+    ],
+    "source": "https://docs.aws.amazon.com/bedrock/latest/userguide/model-evaluation-tasks.html"
+  },
+  {
+    "itemId": "4d963382-d457-4f1a-927f-ff0074feac1c",
+    "seedId": "2b1c519b-5d41-41b1-813b-2e44e613e5ae",
+    "category": "exams",
+    "navigationKeyword1": "aws",
+    "navigationKeyword2": "aif-c01",
+    "question": "Which SageMaker AI feature offers pretrained open-source models you can fine-tune and deploy from Studio?",
+    "correctAnswer": "SageMaker JumpStart",
+    "incorrectAnswers": [
+      "SageMaker Canvas",
+      "SageMaker Model Cards",
+      "SageMaker Clarify"
+    ],
+    "explanation": "JumpStart provides pretrained models, solution templates, and example notebooks, with fine-tune, deploy, and evaluate workflows.",
+    "keywords": [
+      "aws-aif-c01",
+      "aws-ai",
+      "foundation-models"
+    ],
+    "source": "https://docs.aws.amazon.com/sagemaker/latest/dg/studio-jumpstart.html"
+  },
+  {
+    "itemId": "0a2df676-7395-41c1-982b-b49398e6f2b0",
+    "seedId": "9d7f3aa5-d522-4992-a61b-002744e4e5f9",
+    "category": "exams",
+    "navigationKeyword1": "aws",
+    "navigationKeyword2": "aif-c01",
+    "question": "A banking chatbot must refuse questions seeking investment advice. Which Bedrock Guardrails policy fits best?",
+    "correctAnswer": "Denied topics",
+    "incorrectAnswers": [
+      "Word filters",
+      "Contextual grounding checks",
+      "Sensitive information filters"
+    ],
+    "explanation": "Denied topics let you define subjects that are undesirable for your application and block them in queries or responses.",
+    "keywords": [
+      "aws-aif-c01",
+      "aws-ai",
+      "responsible-ai"
+    ],
+    "source": "https://docs.aws.amazon.com/bedrock/latest/userguide/guardrails.html"
+  },
+  {
+    "itemId": "f30c3c31-a438-440e-bd66-9133255ec057",
+    "seedId": "6eeca150-4a49-487e-9358-d718bf5cda3e",
+    "category": "exams",
+    "navigationKeyword1": "aws",
+    "navigationKeyword2": "aif-c01",
+    "question": "Which Bedrock Guardrails check flags RAG answers that are not supported by the retrieved source?",
+    "correctAnswer": "Contextual grounding check",
+    "incorrectAnswers": [
+      "Content filter",
+      "Denied topic",
+      "Word filter"
+    ],
+    "explanation": "Contextual grounding checks detect responses that are not grounded in the source or are irrelevant to the query, a common sign of hallucination.",
+    "keywords": [
+      "aws-aif-c01",
+      "aws-ai",
+      "responsible-ai"
+    ],
+    "source": "https://docs.aws.amazon.com/bedrock/latest/userguide/guardrails.html"
+  },
+  {
+    "itemId": "5375b653-2b63-4bfe-ae89-6097c2961c20",
+    "seedId": "a5c9ec34-a754-4d0d-9373-0186578ec345",
+    "category": "exams",
+    "navigationKeyword1": "aws",
+    "navigationKeyword2": "aif-c01",
+    "question": "Which SageMaker AI capability detects bias in training data and explains predictions using feature attributions?",
+    "correctAnswer": "SageMaker Clarify",
+    "incorrectAnswers": [
+      "SageMaker Canvas",
+      "SageMaker JumpStart",
+      "Amazon Augmented AI"
+    ],
+    "explanation": "Clarify computes pre-training and post-training bias metrics and uses Shapley values to explain how features affect predictions.",
+    "keywords": [
+      "aws-aif-c01",
+      "aws-ai",
+      "responsible-ai"
+    ],
+    "source": "https://docs.aws.amazon.com/sagemaker/latest/dg/clarify-configure-processing-jobs.html"
+  },
+  {
+    "itemId": "c87330b6-3336-4677-a9ab-d173b1a3befc",
+    "seedId": "8afacd95-1fb5-4948-92f2-bb6b56421eb7",
+    "category": "exams",
+    "navigationKeyword1": "aws",
+    "navigationKeyword2": "aif-c01",
+    "question": "Which AWS service sends low-confidence ML predictions to people for review?",
+    "correctAnswer": "Amazon Augmented AI",
+    "incorrectAnswers": [
+      "SageMaker Clarify",
+      "Amazon Comprehend",
+      "SageMaker Model Monitor"
+    ],
+    "explanation": "Amazon Augmented AI (A2I) builds human review workflows for low-confidence or sampled predictions from services like Textract and Rekognition.",
+    "keywords": [
+      "aws-aif-c01",
+      "aws-ai",
+      "responsible-ai"
+    ],
+    "source": "https://docs.aws.amazon.com/sagemaker/latest/dg/a2i-use-augmented-ai-a2i-human-review-loops.html"
+  },
+  {
+    "itemId": "3a6d67e2-31d5-4169-9a17-d0ad7911f7a2",
+    "seedId": "9131313d-8cfa-4761-926b-f3fd8a9f0a8d",
+    "category": "exams",
+    "navigationKeyword1": "aws",
+    "navigationKeyword2": "aif-c01",
+    "question": "Which responsible AI dimension means producing correct outputs even with unexpected or adversarial inputs?",
+    "correctAnswer": "Veracity and robustness",
+    "incorrectAnswers": [
+      "Controllability",
+      "Transparency",
+      "Fairness"
+    ],
+    "explanation": "Veracity and robustness is about correct system outputs under unexpected or adversarial inputs. Controllability is about monitoring and steering behavior.",
+    "keywords": [
+      "aws-aif-c01",
+      "aws-ai",
+      "responsible-ai"
+    ],
+    "source": "https://aws.amazon.com/ai/responsible-ai/"
+  },
+  {
+    "itemId": "fe27e56b-84fb-4a7d-9c39-ccb576b3c01b",
+    "seedId": "6f6275d3-531d-4864-a16b-f3ac4492627e",
+    "category": "exams",
+    "navigationKeyword1": "aws",
+    "navigationKeyword2": "aif-c01",
+    "question": "Can foundation model providers on Amazon Bedrock see customers' prompts and completions?",
+    "correctAnswer": "No, they have no access",
+    "incorrectAnswers": [
+      "Yes, for model training",
+      "Only for open-weight models",
+      "Only if logging is enabled"
+    ],
+    "explanation": "Bedrock deploys models into accounts owned by the Bedrock team. Model providers have no access to them, so they cannot see logs, prompts, or completions.",
+    "keywords": [
+      "aws-aif-c01",
+      "aws-ai",
+      "ai-security"
+    ],
+    "source": "https://docs.aws.amazon.com/bedrock/latest/userguide/data-protection.html"
+  },
+  {
+    "itemId": "3dbcd99b-c0fe-4b61-81e7-c05cb2e0c833",
+    "seedId": "75ea0afd-5735-44e1-9137-4e940e5c91dc",
+    "category": "exams",
+    "navigationKeyword1": "aws",
+    "navigationKeyword2": "aif-c01",
+    "question": "How can an application in a VPC reach Amazon Bedrock without traffic going over the internet?",
+    "correctAnswer": "An interface VPC endpoint",
+    "incorrectAnswers": [
+      "An internet gateway",
+      "A NAT gateway",
+      "A public subnet route"
+    ],
+    "explanation": "An interface VPC endpoint powered by AWS PrivateLink creates a private connection between your VPC and Bedrock.",
+    "keywords": [
+      "aws-aif-c01",
+      "aws-ai",
+      "ai-security"
+    ],
+    "source": "https://docs.aws.amazon.com/bedrock/latest/userguide/usingVPC.html"
+  },
+  {
+    "itemId": "3e54881e-578f-42f3-84fd-cb42c52787bf",
+    "seedId": "98f441c5-1d9e-47f6-b3f7-849806e52365",
+    "category": "exams",
+    "navigationKeyword1": "aws",
+    "navigationKeyword2": "aif-c01",
+    "question": "Which destinations does Amazon Bedrock model invocation logging support?",
+    "correctAnswer": "CloudWatch Logs and Amazon S3",
+    "incorrectAnswers": [
+      "Amazon SQS and Amazon SNS",
+      "AWS Config and Security Hub",
+      "Kinesis and DynamoDB"
+    ],
+    "explanation": "Invocation logging can publish request and response data to CloudWatch Logs, Amazon S3, or both. It is disabled by default.",
+    "keywords": [
+      "aws-aif-c01",
+      "aws-ai",
+      "ai-security"
+    ],
+    "source": "https://docs.aws.amazon.com/bedrock/latest/userguide/model-invocation-logging.html"
+  },
+  {
+    "itemId": "672bf56a-1c09-4467-bf28-2add77a2a28e",
+    "seedId": "372c34ae-1708-44e4-a2d7-ec7053331e8a",
+    "category": "exams",
+    "navigationKeyword1": "aws",
+    "navigationKeyword2": "aif-c01",
+    "question": "An auditor asks for AWS SOC and ISO compliance reports. Where can you download them on demand?",
+    "correctAnswer": "AWS Artifact",
+    "incorrectAnswers": [
+      "AWS Config",
+      "Amazon Inspector",
+      "AWS Trusted Advisor"
+    ],
+    "explanation": "AWS Artifact provides free, on-demand downloads of AWS security and compliance documents such as SOC, ISO, and PCI reports.",
+    "keywords": [
+      "aws-aif-c01",
+      "aws-ai",
+      "ai-security"
+    ],
+    "source": "https://docs.aws.amazon.com/artifact/latest/ug/what-is-aws-artifact.html"
+  },
+  {
+    "itemId": "e31dde5a-de2f-48f5-9035-16d1d6d2c126",
+    "seedId": "d4fc46fa-dc63-4d05-ae81-a3af7461fa9b",
+    "category": "exams",
+    "navigationKeyword1": "aws",
+    "navigationKeyword2": "aif-c01",
+    "question": "Under the AWS shared responsibility model, who manages encryption options for data an AI app stores in AWS?",
+    "correctAnswer": "The customer",
+    "incorrectAnswers": [
+      "AWS",
+      "The model provider",
+      "AWS and the model provider jointly"
+    ],
+    "explanation": "AWS secures the cloud infrastructure. Customers are responsible for their data, including encryption options and IAM permissions.",
+    "keywords": [
+      "aws-aif-c01",
+      "aws-ai",
+      "ai-security"
+    ],
+    "source": "https://aws.amazon.com/compliance/shared-responsibility-model/"
+  },
+  {
+    "itemId": "0a275639-b2ae-4949-bd11-5ad516fa9760",
+    "seedId": "b09108be-20b7-4adb-b465-83d9bd923f2b",
+    "category": "exams",
+    "navigationKeyword1": "aws",
+    "navigationKeyword2": "aif-c01",
+    "question": "Which SageMaker AI feature records a model's intended uses and risk rating in one place for audits?",
+    "correctAnswer": "SageMaker Model Cards",
+    "incorrectAnswers": [
+      "SageMaker JumpStart",
+      "SageMaker Canvas",
+      "Amazon Augmented AI"
+    ],
+    "explanation": "Model Cards document model details such as intended use, risk rating, and evaluation results to support governance and audits.",
+    "keywords": [
+      "aws-aif-c01",
+      "aws-ai",
+      "ai-security"
+    ],
+    "source": "https://docs.aws.amazon.com/sagemaker/latest/dg/model-cards.html"
   }
 ]

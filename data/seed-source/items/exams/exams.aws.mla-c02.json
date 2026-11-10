@@ -1,0 +1,1060 @@
+[
+  {
+    "itemId": "4b5917cd-9032-4c1e-b589-a827c18b1311",
+    "seedId": "f9ade01d-1294-49fb-9acc-16ade6540803",
+    "category": "exams",
+    "navigationKeyword1": "aws",
+    "navigationKeyword2": "mla-c02",
+    "question": "A fraud model needs the latest customer features in milliseconds at request time. Which Feature Store component fits?",
+    "correctAnswer": "The online store",
+    "incorrectAnswers": [
+      "The offline store",
+      "A Glue Data Catalog table",
+      "An Athena workgroup"
+    ],
+    "explanation": "The online store keeps only the latest record per identifier and is built for low-millisecond reads for real-time predictions.",
+    "keywords": [
+      "aws-mla-c02",
+      "data-preparation",
+      "feature-store"
+    ],
+    "source": "https://docs.aws.amazon.com/sagemaker/latest/dg/feature-store.html"
+  },
+  {
+    "itemId": "357c0353-6bea-4bb5-9034-540491162a6a",
+    "seedId": "1b585426-5b3f-4851-90fd-077329b1f069",
+    "category": "exams",
+    "navigationKeyword1": "aws",
+    "navigationKeyword2": "mla-c02",
+    "question": "In which file format does the Feature Store offline store save feature data in S3?",
+    "correctAnswer": "Parquet",
+    "incorrectAnswers": [
+      "CSV",
+      "JSON Lines",
+      "RecordIO-protobuf"
+    ],
+    "explanation": "Offline store data is written to your S3 bucket in Parquet format for efficient storage and querying.",
+    "keywords": [
+      "aws-mla-c02",
+      "data-preparation",
+      "feature-store"
+    ],
+    "source": "https://docs.aws.amazon.com/sagemaker/latest/dg/feature-store.html"
+  },
+  {
+    "itemId": "26c4631b-fa27-49dd-9431-c46ac38c6457",
+    "seedId": "50ae4193-e65e-4d3c-9c50-5a2e656ef67e",
+    "category": "exams",
+    "navigationKeyword1": "aws",
+    "navigationKeyword2": "mla-c02",
+    "question": "Which synchronous API call pushes fresh streaming feature values into a feature group?",
+    "correctAnswer": "PutRecord",
+    "incorrectAnswers": [
+      "PutObject",
+      "IngestBatch",
+      "CreateFeatureGroup"
+    ],
+    "explanation": "Streaming ingestion uses the synchronous PutRecord call, so new values can be published as soon as an update is detected.",
+    "keywords": [
+      "aws-mla-c02",
+      "data-preparation",
+      "feature-store"
+    ],
+    "source": "https://docs.aws.amazon.com/sagemaker/latest/dg/feature-store.html"
+  },
+  {
+    "itemId": "91f5f2c6-31bc-4473-907d-644791536ce5",
+    "seedId": "1ca430e9-b18f-449e-9e8d-0e10e52825bc",
+    "category": "exams",
+    "navigationKeyword1": "aws",
+    "navigationKeyword2": "mla-c02",
+    "question": "Why use point-in-time queries on the offline store when building a training set?",
+    "correctAnswer": "To avoid feature leakage",
+    "incorrectAnswers": [
+      "To lower online read latency",
+      "To compress old partitions",
+      "To enforce schema evolution"
+    ],
+    "explanation": "Point-in-time queries return each feature's value as of a historical moment, so future data does not leak into training.",
+    "keywords": [
+      "aws-mla-c02",
+      "data-preparation",
+      "feature-store"
+    ],
+    "source": "https://aws.amazon.com/sagemaker/ai/feature-store/"
+  },
+  {
+    "itemId": "2b7df61d-2483-49b2-8e92-3d3eb38d8cbd",
+    "seedId": "04e714bf-1542-47e2-8771-5a0a81b9510b",
+    "category": "exams",
+    "navigationKeyword1": "aws",
+    "navigationKeyword2": "mla-c02",
+    "question": "Which service gives Feature Store row- and column-level access control?",
+    "correctAnswer": "AWS Lake Formation",
+    "incorrectAnswers": [
+      "Amazon Macie",
+      "AWS Config",
+      "Amazon Inspector"
+    ],
+    "explanation": "Feature Store can use AWS Lake Formation to apply fine-grained, row- and column-level permissions.",
+    "keywords": [
+      "aws-mla-c02",
+      "data-preparation",
+      "feature-store",
+      "security"
+    ],
+    "source": "https://aws.amazon.com/sagemaker/ai/feature-store/"
+  },
+  {
+    "itemId": "73c18d2e-c65f-4dc5-99ea-b5170eadc768",
+    "seedId": "cc1b95f6-bb14-4dda-a06f-8b262b72cfbe",
+    "category": "exams",
+    "navigationKeyword1": "aws",
+    "navigationKeyword2": "mla-c02",
+    "question": "An analyst must clean and normalize data visually with no code and no clusters. Which service fits?",
+    "correctAnswer": "AWS Glue DataBrew",
+    "incorrectAnswers": [
+      "Amazon EMR",
+      "AWS Glue Spark jobs",
+      "Amazon Kinesis Data Analytics"
+    ],
+    "explanation": "DataBrew is a serverless, visual data preparation tool with over 250 ready-made transformations.",
+    "keywords": [
+      "aws-mla-c02",
+      "data-preparation",
+      "data-tools"
+    ],
+    "source": "https://docs.aws.amazon.com/databrew/latest/dg/what-is.html"
+  },
+  {
+    "itemId": "3346f91d-d582-4ffe-bfd7-928d11527b90",
+    "seedId": "e91a555f-f6a7-4c6d-b182-40ba609a924e",
+    "category": "exams",
+    "navigationKeyword1": "aws",
+    "navigationKeyword2": "mla-c02",
+    "question": "Which Data Wrangler feature flags class imbalance and possible data leakage before training?",
+    "correctAnswer": "The data quality and insights report",
+    "incorrectAnswers": [
+      "The bias drift monitor",
+      "The Debugger rule report",
+      "The feature attribution baseline"
+    ],
+    "explanation": "The data quality and insights report checks missing values, duplicates and data types, and flags anomalies like class imbalance and leakage.",
+    "keywords": [
+      "aws-mla-c02",
+      "data-preparation",
+      "data-tools"
+    ],
+    "source": "https://aws.amazon.com/sagemaker/ai/data-wrangler/"
+  },
+  {
+    "itemId": "80e21cff-b9e5-4065-b6c6-c6975742dcfa",
+    "seedId": "989d0a59-b810-471b-926b-f034f21d959c",
+    "category": "exams",
+    "navigationKeyword1": "aws",
+    "navigationKeyword2": "mla-c02",
+    "question": "A tabular dataset has too few minority-class rows. Which rebalancing option offered in Data Wrangler creates synthetic samples?",
+    "correctAnswer": "SMOTE",
+    "incorrectAnswers": [
+      "Random undersampling",
+      "Stratified K-fold",
+      "Min-max scaling"
+    ],
+    "explanation": "SMOTE synthesizes new minority-class examples, unlike undersampling, which drops majority rows.",
+    "keywords": [
+      "aws-mla-c02",
+      "data-preparation",
+      "bias"
+    ],
+    "source": "https://aws.amazon.com/sagemaker/ai/clarify/"
+  },
+  {
+    "itemId": "ab1ee1f8-8d7b-460f-82c1-1dc702b7a803",
+    "seedId": "f7c33d84-c7d0-4739-9648-d64b36f46262",
+    "category": "exams",
+    "navigationKeyword1": "aws",
+    "navigationKeyword2": "mla-c02",
+    "question": "Your S3 dataset is larger than the training instance's disk. Which input mode lets the script read it as local files on demand?",
+    "correctAnswer": "Fast file mode",
+    "incorrectAnswers": [
+      "File mode",
+      "Augmented manifest mode",
+      "EFS mode"
+    ],
+    "explanation": "Fast file mode exposes S3 objects through a POSIX file interface and streams them as the script reads, so the data need not fit on disk.",
+    "keywords": [
+      "aws-mla-c02",
+      "data-preparation",
+      "training-input"
+    ],
+    "source": "https://docs.aws.amazon.com/sagemaker/latest/dg/model-access-training-data.html"
+  },
+  {
+    "itemId": "81980a6b-8ade-442f-8337-dda243b320fa",
+    "seedId": "e1e48659-7535-47ab-90cb-43ecc8be8811",
+    "category": "exams",
+    "navigationKeyword1": "aws",
+    "navigationKeyword2": "mla-c02",
+    "question": "What must a training job have configured to read data from Amazon FSx for Lustre?",
+    "correctAnswer": "A VPC connection",
+    "incorrectAnswers": [
+      "An augmented manifest",
+      "Pipe mode enabled",
+      "A Glue crawler"
+    ],
+    "explanation": "To mount FSx for Lustre, the training job must connect to a VPC with a subnet in the file system's Availability Zone.",
+    "keywords": [
+      "aws-mla-c02",
+      "data-preparation",
+      "training-input"
+    ],
+    "source": "https://docs.aws.amazon.com/sagemaker/latest/dg/model-access-training-data.html"
+  },
+  {
+    "itemId": "6e1e8be2-7d3d-4e76-91bc-6d6c6c817266",
+    "seedId": "79f90089-158e-471e-92ba-0863bf10d582",
+    "category": "exams",
+    "navigationKeyword1": "aws",
+    "navigationKeyword2": "mla-c02",
+    "question": "For distributed XGBoost CPU training, which S3 data distribution gives each of n instances about 1/n of the files?",
+    "correctAnswer": "ShardedByS3Key",
+    "incorrectAnswers": [
+      "FullyReplicated",
+      "ShuffleByKey",
+      "PartitionByPrefix"
+    ],
+    "explanation": "With ShardedByS3Key, the input files are split across instances so each gets roughly 1/n of them.",
+    "keywords": [
+      "aws-mla-c02",
+      "data-preparation",
+      "training-input"
+    ],
+    "source": "https://docs.aws.amazon.com/sagemaker/latest/dg/xgboost.html"
+  },
+  {
+    "itemId": "b1b435f9-0c46-4fef-8b3d-e9bb9798d58d",
+    "seedId": "575aa6ea-8160-4a00-a890-fb8c953c9889",
+    "category": "exams",
+    "navigationKeyword1": "aws",
+    "navigationKeyword2": "mla-c02",
+    "question": "What does Ground Truth automated data labeling use machine learning to decide?",
+    "correctAnswer": "Which items need human labels",
+    "incorrectAnswers": [
+      "Which workforce costs least",
+      "Which label schema to use",
+      "Which images to delete"
+    ],
+    "explanation": "Automated data labeling uses ML to decide which data must go to humans, cutting labeling time and effort.",
+    "keywords": [
+      "aws-mla-c02",
+      "data-preparation",
+      "labeling"
+    ],
+    "source": "https://docs.aws.amazon.com/sagemaker/latest/dg/sms.html"
+  },
+  {
+    "itemId": "dad79d02-98c3-45f8-a29f-3618399432e6",
+    "seedId": "cac98579-8437-4fdb-aec0-d0f5ffb5a5a6",
+    "category": "exams",
+    "navigationKeyword1": "aws",
+    "navigationKeyword2": "mla-c02",
+    "question": "Which tuning strategy treats hyperparameter search as a regression problem to pick the next trial?",
+    "correctAnswer": "Bayesian optimization",
+    "incorrectAnswers": [
+      "Random search",
+      "Grid search",
+      "Hyperband"
+    ],
+    "explanation": "Bayesian optimization uses regression over past results to choose promising values, balancing exploration and exploitation.",
+    "keywords": [
+      "aws-mla-c02",
+      "model-development",
+      "tuning"
+    ],
+    "source": "https://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-how-it-works.html"
+  },
+  {
+    "itemId": "685324f2-360e-475f-bd5b-20fe87fb8b6b",
+    "seedId": "fffe1f5f-72b3-4aa2-9167-30c865e78c08",
+    "category": "exams",
+    "navigationKeyword1": "aws",
+    "navigationKeyword2": "mla-c02",
+    "question": "A neural network reports accuracy after every epoch. Which tuning strategy reallocates epochs and stops weak trials?",
+    "correctAnswer": "Hyperband",
+    "incorrectAnswers": [
+      "Grid search",
+      "Random search",
+      "Bayesian optimization"
+    ],
+    "explanation": "Hyperband uses intermediate results to move resources to promising configurations and stop underperformers, so it suits iterative algorithms.",
+    "keywords": [
+      "aws-mla-c02",
+      "model-development",
+      "tuning"
+    ],
+    "source": "https://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-how-it-works.html"
+  },
+  {
+    "itemId": "55871213-825b-4ee5-acfd-9b3878d0f71c",
+    "seedId": "6a7f31db-c20a-45db-995d-f678c3bf25d0",
+    "category": "exams",
+    "navigationKeyword1": "aws",
+    "navigationKeyword2": "mla-c02",
+    "question": "Managed spot training can cut training cost by up to what amount versus on-demand?",
+    "correctAnswer": "90%",
+    "incorrectAnswers": [
+      "50%",
+      "70%",
+      "30%"
+    ],
+    "explanation": "Using managed EC2 Spot capacity can reduce training cost by up to 90% compared with on-demand instances.",
+    "keywords": [
+      "aws-mla-c02",
+      "model-development",
+      "cost"
+    ],
+    "source": "https://docs.aws.amazon.com/sagemaker/latest/dg/model-managed-spot-training.html"
+  },
+  {
+    "itemId": "839d55b2-4d8f-48f8-9ddd-97da2685bdc3",
+    "seedId": "d28ddbd8-0d73-4da3-aec6-04a651b057a8",
+    "category": "exams",
+    "navigationKeyword1": "aws",
+    "navigationKeyword2": "mla-c02",
+    "question": "For a managed spot training job, how must MaxWaitTimeInSeconds relate to MaxRuntimeInSeconds?",
+    "correctAnswer": "It must be larger",
+    "incorrectAnswers": [
+      "It must be equal",
+      "It must be smaller",
+      "It must be under 3600"
+    ],
+    "explanation": "MaxWaitTimeInSeconds covers both run time and time waiting for Spot capacity, so it must exceed MaxRuntimeInSeconds.",
+    "keywords": [
+      "aws-mla-c02",
+      "model-development",
+      "cost"
+    ],
+    "source": "https://docs.aws.amazon.com/sagemaker/latest/dg/model-managed-spot-training.html"
+  },
+  {
+    "itemId": "cb9530e6-4113-4d36-be80-befb638b9ca4",
+    "seedId": "feeb028f-fafd-4fc7-8603-5c10a25eb834",
+    "category": "exams",
+    "navigationKeyword1": "aws",
+    "navigationKeyword2": "mla-c02",
+    "question": "You have prompts but no labeled answers, and you can score outputs with a Lambda function. Which Bedrock customization fits?",
+    "correctAnswer": "Reinforcement fine-tuning",
+    "incorrectAnswers": [
+      "Supervised fine-tuning",
+      "Provisioned Throughput",
+      "Prompt caching"
+    ],
+    "explanation": "Reinforcement fine-tuning learns from reward-function scores instead of labeled input-output pairs.",
+    "keywords": [
+      "aws-mla-c02",
+      "model-development",
+      "bedrock",
+      "fine-tuning"
+    ],
+    "source": "https://docs.aws.amazon.com/bedrock/latest/userguide/custom-models.html"
+  },
+  {
+    "itemId": "fbcec11f-ec28-4206-9ef8-9e3df29df084",
+    "seedId": "d3e0ca8b-970a-4d5c-87fa-38f25dbd4385",
+    "category": "exams",
+    "navigationKeyword1": "aws",
+    "navigationKeyword2": "mla-c02",
+    "question": "In Bedrock model distillation, which model gets fine-tuned?",
+    "correctAnswer": "The smaller student model",
+    "incorrectAnswers": [
+      "The larger teacher model",
+      "Both models equally",
+      "An embeddings model"
+    ],
+    "explanation": "The teacher generates responses to your prompts, and those responses are used to fine-tune the smaller, cheaper student.",
+    "keywords": [
+      "aws-mla-c02",
+      "model-development",
+      "bedrock",
+      "fine-tuning"
+    ],
+    "source": "https://docs.aws.amazon.com/bedrock/latest/userguide/custom-models.html"
+  },
+  {
+    "itemId": "5f802326-a076-4bd1-9a60-93527ec6be9a",
+    "seedId": "934d9b33-2ac6-488c-86dd-68559d378723",
+    "category": "exams",
+    "navigationKeyword1": "aws",
+    "navigationKeyword2": "mla-c02",
+    "question": "Which metrics does SageMaker Clarify use to automatically evaluate foundation models?",
+    "correctAnswer": "Accuracy, robustness and toxicity",
+    "incorrectAnswers": [
+      "Latency, throughput and cost",
+      "Precision, recall and AUC only",
+      "BLEU, CIDEr and METEOR only"
+    ],
+    "explanation": "Clarify's automatic FM evaluation scores models on accuracy, robustness and toxicity for your use case.",
+    "keywords": [
+      "aws-mla-c02",
+      "model-development",
+      "evaluation"
+    ],
+    "source": "https://aws.amazon.com/sagemaker/ai/clarify/"
+  },
+  {
+    "itemId": "65414d24-40b3-4bab-8b08-e2abb6814420",
+    "seedId": "441f6e97-734c-4412-a66e-e07ddb749f68",
+    "category": "exams",
+    "navigationKeyword1": "aws",
+    "navigationKeyword2": "mla-c02",
+    "question": "You need to judge two foundation models on brand voice. Which Bedrock evaluation type fits?",
+    "correctAnswer": "Human evaluation",
+    "incorrectAnswers": [
+      "Automatic evaluation",
+      "Contextual grounding check",
+      "Invocation logging"
+    ],
+    "explanation": "Automatic evaluation uses predefined metrics, while human evaluation covers subjective criteria such as friendliness or brand voice.",
+    "keywords": [
+      "aws-mla-c02",
+      "model-development",
+      "evaluation",
+      "bedrock"
+    ],
+    "source": "https://aws.amazon.com/bedrock/faqs/"
+  },
+  {
+    "itemId": "e4afb1de-0348-43f3-8de5-452455d15b50",
+    "seedId": "bc87cd7e-44cf-4590-9866-da4eeefdc65f",
+    "category": "exams",
+    "navigationKeyword1": "aws",
+    "navigationKeyword2": "mla-c02",
+    "question": "Which Clarify analysis explains how much each feature contributed to a prediction?",
+    "correctAnswer": "Shapley value feature attributions",
+    "incorrectAnswers": [
+      "Pre-training bias metrics",
+      "Data quality constraints",
+      "Confusion matrix baselines"
+    ],
+    "explanation": "Clarify computes Shapley values to show each feature's impact on predictions, which requires a trained model.",
+    "keywords": [
+      "aws-mla-c02",
+      "model-development",
+      "explainability"
+    ],
+    "source": "https://docs.aws.amazon.com/sagemaker/latest/dg/clarify-configure-processing-jobs.html"
+  },
+  {
+    "itemId": "bcb3fb6c-8619-4a0f-9f74-c242bc9a2e49",
+    "seedId": "ab428377-950f-411a-8183-a5464a9e614e",
+    "category": "exams",
+    "navigationKeyword1": "aws",
+    "navigationKeyword2": "mla-c02",
+    "question": "In SageMaker Python SDK V3, which class replaces the framework-specific estimators from V2?",
+    "correctAnswer": "ModelTrainer",
+    "incorrectAnswers": [
+      "ModelBuilder",
+      "TrainingQueue",
+      "InferenceSpec"
+    ],
+    "explanation": "V3 provides one ModelTrainer class that covers training for multiple frameworks and custom containers.",
+    "keywords": [
+      "aws-mla-c02",
+      "model-development",
+      "python-sdk"
+    ],
+    "source": "https://sagemaker.readthedocs.io/en/stable/training/index.html"
+  },
+  {
+    "itemId": "a04dd79e-7a39-45c8-84d8-94a209e3447f",
+    "seedId": "b30da8fd-3d85-447d-b78e-e0390263efe3",
+    "category": "exams",
+    "navigationKeyword1": "aws",
+    "navigationKeyword2": "mla-c02",
+    "question": "In SDK V3 training, how does a training script receive all hyperparameters as one JSON string?",
+    "correctAnswer": "The SM_HPS environment variable",
+    "incorrectAnswers": [
+      "The SM_CHANNELS file",
+      "The hyperparameters.yaml mount",
+      "The SM_MODEL_DIR variable"
+    ],
+    "explanation": "Hyperparameters are passed as command-line arguments and also as a JSON string in SM_HPS.",
+    "keywords": [
+      "aws-mla-c02",
+      "model-development",
+      "python-sdk"
+    ],
+    "source": "https://sagemaker.readthedocs.io/en/stable/training/index.html"
+  },
+  {
+    "itemId": "7199f08f-6e6a-4213-92ff-64761491cf21",
+    "seedId": "ca8aca67-44ed-4ebd-bf0f-94ab8d68ce78",
+    "category": "exams",
+    "navigationKeyword1": "aws",
+    "navigationKeyword2": "mla-c02",
+    "question": "With SDK V3 instance_preferences, how is the training instance type chosen?",
+    "correctAnswer": "First listed type with capacity",
+    "incorrectAnswers": [
+      "Cheapest listed type",
+      "Fastest benchmarked type",
+      "Random listed type"
+    ],
+    "explanation": "You list up to 5 candidate types, and the job launches on the first one with available capacity.",
+    "keywords": [
+      "aws-mla-c02",
+      "model-development",
+      "python-sdk"
+    ],
+    "source": "https://sagemaker.readthedocs.io/en/stable/training/index.html"
+  },
+  {
+    "itemId": "696bf91d-1f76-49e1-8821-c09c11f628f4",
+    "seedId": "b623b4a4-e893-43c8-94bf-a290d7bac7e3",
+    "category": "exams",
+    "navigationKeyword1": "aws",
+    "navigationKeyword2": "mla-c02",
+    "question": "Requests carry 500 MB payloads and take 20 minutes each. Which SageMaker inference option fits?",
+    "correctAnswer": "Asynchronous inference",
+    "incorrectAnswers": [
+      "Real-time inference",
+      "Serverless inference",
+      "Multi-model endpoint"
+    ],
+    "explanation": "Asynchronous inference handles payloads up to 1 GB and processing up to one hour, queuing requests.",
+    "keywords": [
+      "aws-mla-c02",
+      "deployment",
+      "inference"
+    ],
+    "source": "https://docs.aws.amazon.com/sagemaker/latest/dg/async-inference.html"
+  },
+  {
+    "itemId": "d1cc1f43-8536-4a05-abca-d54776163981",
+    "seedId": "1f218e87-9312-490a-aa45-81e8e31dda02",
+    "category": "exams",
+    "navigationKeyword1": "aws",
+    "navigationKeyword2": "mla-c02",
+    "question": "Hundreds of small models use the same framework and get uneven traffic. Which hosting option cuts cost most?",
+    "correctAnswer": "A multi-model endpoint",
+    "incorrectAnswers": [
+      "One endpoint per model",
+      "A serverless endpoint per model",
+      "An inference pipeline"
+    ],
+    "explanation": "Multi-model endpoints share one container and fleet, loading models from S3 on demand to raise utilization.",
+    "keywords": [
+      "aws-mla-c02",
+      "deployment",
+      "inference"
+    ],
+    "source": "https://docs.aws.amazon.com/sagemaker/latest/dg/multi-model-endpoints.html"
+  },
+  {
+    "itemId": "ed303b4c-7e8a-4e75-89a6-faf5d30dedf1",
+    "seedId": "96e1ce62-2289-4b7e-a532-508bda4f6fed",
+    "category": "exams",
+    "navigationKeyword1": "aws",
+    "navigationKeyword2": "mla-c02",
+    "question": "Which blue/green traffic shifting mode moves traffic in more than two evenly spaced steps?",
+    "correctAnswer": "Linear",
+    "incorrectAnswers": [
+      "Canary",
+      "All at once",
+      "Shadow testing"
+    ],
+    "explanation": "Canary shifts in two steps, while linear shifting moves traffic in n linearly spaced steps.",
+    "keywords": [
+      "aws-mla-c02",
+      "deployment",
+      "mlops"
+    ],
+    "source": "https://docs.aws.amazon.com/sagemaker/latest/dg/deployment-guardrails.html"
+  },
+  {
+    "itemId": "c92ee3c5-fcdd-4dbb-9507-71cc68fd6e41",
+    "seedId": "2d841494-334d-4e0e-afe4-b0b12248a142",
+    "category": "exams",
+    "navigationKeyword1": "aws",
+    "navigationKeyword2": "mla-c02",
+    "question": "In a SageMaker shadow test, which responses are returned to the calling application?",
+    "correctAnswer": "Only the production variant's",
+    "incorrectAnswers": [
+      "Only the shadow variant's",
+      "Both, merged",
+      "Whichever is faster"
+    ],
+    "explanation": "The shadow gets a copy of live traffic, but only production responses go back. Shadow responses can be logged for comparison.",
+    "keywords": [
+      "aws-mla-c02",
+      "deployment",
+      "mlops"
+    ],
+    "source": "https://docs.aws.amazon.com/sagemaker/latest/dg/shadow-tests.html"
+  },
+  {
+    "itemId": "8de59032-a425-4752-9560-61ea370ef6ed",
+    "seedId": "10f8dfba-dd54-449d-87bd-3365f25e1d77",
+    "category": "exams",
+    "navigationKeyword1": "aws",
+    "navigationKeyword2": "mla-c02",
+    "question": "Which Python decorator lets you turn an existing function into a SageMaker Pipelines step?",
+    "correctAnswer": "@step",
+    "incorrectAnswers": [
+      "@pipeline",
+      "@remote_job",
+      "@task"
+    ],
+    "explanation": "SageMaker Pipelines can reuse existing ML code and automate it with a single @step decorator.",
+    "keywords": [
+      "aws-mla-c02",
+      "deployment",
+      "pipelines"
+    ],
+    "source": "https://aws.amazon.com/sagemaker/ai/pipelines/"
+  },
+  {
+    "itemId": "02f3539c-8cd3-4bb4-9a13-65b455ced535",
+    "seedId": "e6777983-6781-40ce-8c9c-51c6e1377f1f",
+    "category": "exams",
+    "navigationKeyword1": "aws",
+    "navigationKeyword2": "mla-c02",
+    "question": "In a SageMaker pipeline, which step type routes execution based on a metric threshold such as validation accuracy?",
+    "correctAnswer": "ConditionStep",
+    "incorrectAnswers": [
+      "ModelStep",
+      "ProcessingStep",
+      "TuningStep"
+    ],
+    "explanation": "A ConditionStep evaluates a condition and runs its if_steps or else_steps branch.",
+    "keywords": [
+      "aws-mla-c02",
+      "deployment",
+      "pipelines"
+    ],
+    "source": "https://sagemaker.readthedocs.io/en/stable/ml_ops/index.html"
+  },
+  {
+    "itemId": "aa923b5f-6216-47b2-b84c-7c5d0cc1e703",
+    "seedId": "ffb743a4-779f-4888-9c60-fcd76f70ae8d",
+    "category": "exams",
+    "navigationKeyword1": "aws",
+    "navigationKeyword2": "mla-c02",
+    "question": "In SageMaker Python SDK V3, which single class builds and deploys models across frameworks?",
+    "correctAnswer": "ModelBuilder",
+    "incorrectAnswers": [
+      "ModelTrainer",
+      "EndpointConfig",
+      "Predictor"
+    ],
+    "explanation": "ModelBuilder replaces multiple framework-specific model classes, and its deploy() returns an Endpoint.",
+    "keywords": [
+      "aws-mla-c02",
+      "deployment",
+      "python-sdk"
+    ],
+    "source": "https://sagemaker.readthedocs.io/en/stable/inference/index.html"
+  },
+  {
+    "itemId": "fd938028-ff1f-4afc-b420-56931c181cc4",
+    "seedId": "ba0e6372-b875-4cf7-b080-ec5b178c25b6",
+    "category": "exams",
+    "navigationKeyword1": "aws",
+    "navigationKeyword2": "mla-c02",
+    "question": "Which SDK V3 ModelBuilder mode runs inference in your Python process with no containers or AWS resources?",
+    "correctAnswer": "Mode.IN_PROCESS",
+    "incorrectAnswers": [
+      "Mode.LOCAL_CONTAINER",
+      "Mode.SAGEMAKER_ENDPOINT",
+      "Mode.SERVERLESS"
+    ],
+    "explanation": "IN_PROCESS mode runs inference entirely in your Python process, while LOCAL_CONTAINER uses Docker.",
+    "keywords": [
+      "aws-mla-c02",
+      "deployment",
+      "python-sdk"
+    ],
+    "source": "https://sagemaker.readthedocs.io/en/stable/inference/index.html"
+  },
+  {
+    "itemId": "f99ee51f-0b64-4c2b-8cbf-96b0a50ebc02",
+    "seedId": "b26ffc01-0896-4f22-b5d8-89c269526058",
+    "category": "exams",
+    "navigationKeyword1": "aws",
+    "navigationKeyword2": "mla-c02",
+    "question": "When writing a custom InferenceSpec in SDK V3, which two methods do you implement?",
+    "correctAnswer": "load() and invoke()",
+    "incorrectAnswers": [
+      "fit() and predict()",
+      "model_fn() and train()",
+      "build() and serve()"
+    ],
+    "explanation": "load() deserializes the model from its directory, and invoke() runs predictions.",
+    "keywords": [
+      "aws-mla-c02",
+      "deployment",
+      "python-sdk"
+    ],
+    "source": "https://sagemaker.readthedocs.io/en/stable/inference/index.html"
+  },
+  {
+    "itemId": "dba19de5-caf7-422a-8568-3f0cd8236a1c",
+    "seedId": "f73d68be-88c6-4968-a37f-a19abdf90a68",
+    "category": "exams",
+    "navigationKeyword1": "aws",
+    "navigationKeyword2": "mla-c02",
+    "question": "You fine-tuned Nova Lite in Bedrock and want pay-per-use inference with no provisioned compute. What do you create?",
+    "correctAnswer": "A custom model deployment",
+    "incorrectAnswers": [
+      "A Provisioned Throughput",
+      "A SageMaker real-time endpoint",
+      "A cross-Region inference profile"
+    ],
+    "explanation": "A custom model deployment gives supported customized models on-demand, pay-per-use inference. You call it with the deployment ARN as the modelId.",
+    "keywords": [
+      "aws-mla-c02",
+      "deployment",
+      "bedrock"
+    ],
+    "source": "https://docs.aws.amazon.com/bedrock/latest/userguide/deploy-custom-model-on-demand.html"
+  },
+  {
+    "itemId": "36a481ad-c3c5-417e-b462-3c1f3b3a3c14",
+    "seedId": "0388db9d-20e8-40ce-95d1-9df4d34ee934",
+    "category": "exams",
+    "navigationKeyword1": "aws",
+    "navigationKeyword2": "mla-c02",
+    "question": "Which AgentCore capability handles authentication and access control when agents call MCP servers, APIs and Lambda functions?",
+    "correctAnswer": "Gateway",
+    "incorrectAnswers": [
+      "Observability",
+      "Evaluations",
+      "Memory"
+    ],
+    "explanation": "AgentCore Gateway manages auth for agent tool connections so you can focus on what the agent does.",
+    "keywords": [
+      "aws-mla-c02",
+      "deployment",
+      "agents",
+      "bedrock"
+    ],
+    "source": "https://aws.amazon.com/bedrock/agentcore/"
+  },
+  {
+    "itemId": "49a63bbe-c0b6-4dfc-9b8a-fd60de35423c",
+    "seedId": "815e34c0-309a-4423-a39c-fec91e3c3dc2",
+    "category": "exams",
+    "navigationKeyword1": "aws",
+    "navigationKeyword2": "mla-c02",
+    "question": "Which Model Monitor type needs Ground Truth labels merged with captured predictions?",
+    "correctAnswer": "Model quality",
+    "incorrectAnswers": [
+      "Data quality",
+      "Feature attribution drift",
+      "Bias drift only"
+    ],
+    "explanation": "Model quality monitoring compares predictions with actual labels stored in S3, so it needs Ground Truth labels.",
+    "keywords": [
+      "aws-mla-c02",
+      "monitoring",
+      "model-monitor"
+    ],
+    "source": "https://docs.aws.amazon.com/sagemaker/latest/dg/model-monitor-model-quality.html"
+  },
+  {
+    "itemId": "c96f9d08-3198-4071-9ebe-477c6b9eed9e",
+    "seedId": "c26e2fd6-eeb0-43fd-9951-579af77c310c",
+    "category": "exams",
+    "navigationKeyword1": "aws",
+    "navigationKeyword2": "mla-c02",
+    "question": "In Model Monitor, what does the baseline job create from the training dataset?",
+    "correctAnswer": "Statistics and suggested constraints",
+    "incorrectAnswers": [
+      "A shadow endpoint",
+      "A new model version",
+      "A CloudTrail trail"
+    ],
+    "explanation": "The baseline computes metrics and suggests constraints. Later data outside those constraints is reported as a violation.",
+    "keywords": [
+      "aws-mla-c02",
+      "monitoring",
+      "model-monitor"
+    ],
+    "source": "https://docs.aws.amazon.com/sagemaker/latest/dg/model-monitor.html"
+  },
+  {
+    "itemId": "d9b6f00f-f211-4c78-ad5d-ce0d472e5593",
+    "seedId": "9c5ecb51-6c04-42e0-9933-603af93b12bf",
+    "category": "exams",
+    "navigationKeyword1": "aws",
+    "navigationKeyword2": "mla-c02",
+    "question": "With network isolation enabled, how does a training job still get its S3 data?",
+    "correctAnswer": "SageMaker copies it outside the container",
+    "incorrectAnswers": [
+      "The container calls S3 directly",
+      "Through a NAT gateway",
+      "Through an S3 interface endpoint in the container"
+    ],
+    "explanation": "Isolated containers make no outbound calls, even to S3. SageMaker handles S3 transfers with the execution role.",
+    "keywords": [
+      "aws-mla-c02",
+      "security",
+      "networking"
+    ],
+    "source": "https://docs.aws.amazon.com/sagemaker/latest/dg/mkt-algo-model-internet-free.html"
+  },
+  {
+    "itemId": "edde7f45-8aea-4eb5-9ab6-eb8a219c6f46",
+    "seedId": "908ae1a9-5649-4041-b679-901f5c3a799b",
+    "category": "exams",
+    "navigationKeyword1": "aws",
+    "navigationKeyword2": "mla-c02",
+    "question": "What is the default state of Bedrock model invocation logging in an account?",
+    "correctAnswer": "Disabled",
+    "incorrectAnswers": [
+      "Enabled to CloudWatch Logs",
+      "Enabled to S3",
+      "Enabled for errors only"
+    ],
+    "explanation": "Invocation logging is off by default. You enable it and choose CloudWatch Logs, S3, or both.",
+    "keywords": [
+      "aws-mla-c02",
+      "monitoring",
+      "bedrock"
+    ],
+    "source": "https://docs.aws.amazon.com/bedrock/latest/userguide/model-invocation-logging.html"
+  },
+  {
+    "itemId": "57a5824f-35f5-4992-83aa-d6c54b10298a",
+    "seedId": "f6f74547-7d54-4b9b-95d4-38e0cf731ca3",
+    "category": "exams",
+    "navigationKeyword1": "aws",
+    "navigationKeyword2": "mla-c02",
+    "question": "Can third-party model providers read customer prompts sent to their models in Bedrock?",
+    "correctAnswer": "No, they cannot access them",
+    "incorrectAnswers": [
+      "Yes, for abuse checks",
+      "Yes, if logging is on",
+      "Only for fine-tuned models"
+    ],
+    "explanation": "Models run in Bedrock-owned deployment accounts that providers cannot access, so they never see prompts or completions.",
+    "keywords": [
+      "aws-mla-c02",
+      "security",
+      "bedrock"
+    ],
+    "source": "https://docs.aws.amazon.com/bedrock/latest/userguide/data-protection.html"
+  },
+  {
+    "itemId": "b68b818f-bb20-4d30-a6b9-35d675178c58",
+    "seedId": "1ed6cba4-f6ca-409d-9793-c0d5fb038ce6",
+    "category": "exams",
+    "navigationKeyword1": "aws",
+    "navigationKeyword2": "mla-c02",
+    "question": "Is customer content sent to Bedrock used to improve the base foundation models?",
+    "correctAnswer": "No",
+    "incorrectAnswers": [
+      "Yes, after anonymization",
+      "Only on the free tier",
+      "Only for Amazon models"
+    ],
+    "explanation": "Bedrock does not use your content to improve base models and does not share it with model providers.",
+    "keywords": [
+      "aws-mla-c02",
+      "security",
+      "bedrock"
+    ],
+    "source": "https://aws.amazon.com/bedrock/faqs/"
+  },
+  {
+    "itemId": "4cccda37-fd02-49b8-95da-4fcada0e50b8",
+    "seedId": "86d1b42f-b47e-43f4-aa8c-af5d85053541",
+    "category": "exams",
+    "navigationKeyword1": "aws",
+    "navigationKeyword2": "mla-c02",
+    "question": "A team wants VPC-to-Bedrock traffic to avoid the public internet. What should they use?",
+    "correctAnswer": "AWS PrivateLink",
+    "incorrectAnswers": [
+      "AWS Direct Connect only",
+      "An internet gateway",
+      "Amazon CloudFront"
+    ],
+    "explanation": "AWS PrivateLink gives private connectivity from your VPC to Bedrock without exposing traffic to the internet.",
+    "keywords": [
+      "aws-mla-c02",
+      "security",
+      "bedrock",
+      "networking"
+    ],
+    "source": "https://aws.amazon.com/bedrock/faqs/"
+  },
+  {
+    "itemId": "6abe1b0c-798e-4c7a-8bd1-8a567f78d976",
+    "seedId": "5621df09-d6b0-49ff-a67f-3a750bd24426",
+    "category": "exams",
+    "navigationKeyword1": "aws",
+    "navigationKeyword2": "mla-c02",
+    "question": "A RAG chatbot must flag answers not supported by the retrieved documents. Which guardrail policy fits?",
+    "correctAnswer": "Contextual grounding check",
+    "incorrectAnswers": [
+      "Word filter",
+      "Denied topics",
+      "Content filter"
+    ],
+    "explanation": "Contextual grounding checks detect responses that are ungrounded in the source or irrelevant to the query.",
+    "keywords": [
+      "aws-mla-c02",
+      "security",
+      "guardrails"
+    ],
+    "source": "https://docs.aws.amazon.com/bedrock/latest/userguide/guardrails.html"
+  },
+  {
+    "itemId": "c6b56552-7292-40d9-8aee-79a3df430a3f",
+    "seedId": "35f254a0-0a0c-43e3-b5d7-ed3de7d92241",
+    "category": "exams",
+    "navigationKeyword1": "aws",
+    "navigationKeyword2": "mla-c02",
+    "question": "How can you apply a Bedrock guardrail to a self-hosted model's output?",
+    "correctAnswer": "Call the ApplyGuardrail API",
+    "incorrectAnswers": [
+      "Attach it to a VPC endpoint",
+      "Enable invocation logging",
+      "Import the model to Bedrock first"
+    ],
+    "explanation": "ApplyGuardrail evaluates content against a guardrail without invoking a model, so it works for self-hosted or third-party models.",
+    "keywords": [
+      "aws-mla-c02",
+      "security",
+      "guardrails"
+    ],
+    "source": "https://aws.amazon.com/bedrock/guardrails/"
+  },
+  {
+    "itemId": "af960c62-4c51-48c1-90d0-a2fb7b934a2b",
+    "seedId": "a3060d07-19c4-411e-9592-1c65f6afc04e",
+    "category": "exams",
+    "navigationKeyword1": "aws",
+    "navigationKeyword2": "mla-c02",
+    "question": "Which service can alert through CloudWatch when a production model's feature importance shifts?",
+    "correctAnswer": "SageMaker Clarify with Model Monitor",
+    "incorrectAnswers": [
+      "AWS Config",
+      "Amazon GuardDuty",
+      "AWS Trusted Advisor"
+    ],
+    "explanation": "Clarify integrates with Model Monitor to track feature attribution drift and raise CloudWatch alerts.",
+    "keywords": [
+      "aws-mla-c02",
+      "monitoring",
+      "explainability"
+    ],
+    "source": "https://aws.amazon.com/sagemaker/ai/clarify/"
+  },
+  {
+    "itemId": "bd048be9-8da8-478f-9a41-8c4ea2f60a57",
+    "seedId": "081f433a-0969-4aa0-a659-dc8151c0207c",
+    "category": "exams",
+    "navigationKeyword1": "aws",
+    "navigationKeyword2": "mla-c02",
+    "question": "In SageMaker ML lineage tracking, what is an Association?",
+    "correctAnswer": "A directed edge linking two entities",
+    "incorrectAnswers": [
+      "A group of related entities",
+      "A URI-addressable dataset",
+      "A job or transformation"
+    ],
+    "explanation": "Associations are the edges of the lineage graph. Contexts group entities, Artifacts are data, and Actions are jobs.",
+    "keywords": [
+      "aws-mla-c02",
+      "monitoring",
+      "lineage"
+    ],
+    "source": "https://sagemaker.readthedocs.io/en/stable/ml_ops/lineage.html"
+  },
+  {
+    "itemId": "7d11ab54-40be-4d75-8b44-ca566c93d28a",
+    "seedId": "4270f0a8-70fc-4dc7-bdbf-a3696572bdcc",
+    "category": "exams",
+    "navigationKeyword1": "aws",
+    "navigationKeyword2": "mla-c02",
+    "question": "By default, which catalog indexes Feature Store feature groups so they can be queried with Athena?",
+    "correctAnswer": "AWS Glue Data Catalog",
+    "incorrectAnswers": [
+      "Amazon DataZone catalog",
+      "AWS Service Catalog",
+      "Amazon Kendra index"
+    ],
+    "explanation": "Feature Store uses the AWS Glue Data Catalog by default, so offline feature data can be discovered and queried with Athena.",
+    "keywords": [
+      "aws-mla-c02",
+      "data-preparation",
+      "feature-store"
+    ],
+    "source": "https://aws.amazon.com/sagemaker/ai/feature-store/"
+  },
+  {
+    "itemId": "f08b378b-bfdf-4ded-a05a-02499e07db2e",
+    "seedId": "28ade7a0-a982-42f2-aeee-c8314b034ac4",
+    "category": "exams",
+    "navigationKeyword1": "aws",
+    "navigationKeyword2": "mla-c02",
+    "question": "Which agent frameworks can you deploy on Amazon Bedrock AgentCore?",
+    "correctAnswer": "Any, such as LangChain or Strands",
+    "incorrectAnswers": [
+      "Only Bedrock Agents",
+      "Only the Strands Agents SDK",
+      "Only frameworks using Nova models"
+    ],
+    "explanation": "AgentCore is built to work with your stack: LangChain, OpenAI Agents SDK, Claude Agent SDK, Strands or your own, with any model.",
+    "keywords": [
+      "aws-mla-c02",
+      "deployment",
+      "agents",
+      "bedrock"
+    ],
+    "source": "https://aws.amazon.com/bedrock/agentcore/"
+  },
+  {
+    "itemId": "40c94518-ba13-4163-b583-5c50b2663c54",
+    "seedId": "fb296282-5c3c-45d1-bec3-20593ba05e77",
+    "category": "exams",
+    "navigationKeyword1": "aws",
+    "navigationKeyword2": "mla-c02",
+    "question": "Besides Amazon S3, which source can a managed Bedrock knowledge base connect to directly?",
+    "correctAnswer": "Microsoft SharePoint",
+    "incorrectAnswers": [
+      "Amazon SQS",
+      "Amazon ElastiCache",
+      "AWS Step Functions"
+    ],
+    "explanation": "Managed knowledge bases connect to sources such as S3, SharePoint, Confluence, Google Drive, OneDrive and a web crawler.",
+    "keywords": [
+      "aws-mla-c02",
+      "deployment",
+      "rag",
+      "bedrock"
+    ],
+    "source": "https://aws.amazon.com/bedrock/knowledge-bases/"
+  },
+  {
+    "itemId": "dd7d46b4-9a70-4ebd-aa72-b53d997f8f86",
+    "seedId": "3a199f44-2705-4787-b505-febb312753c7",
+    "category": "exams",
+    "navigationKeyword1": "aws",
+    "navigationKeyword2": "mla-c02",
+    "question": "How many configurable safeguard policies does Amazon Bedrock Guardrails provide?",
+    "correctAnswer": "Six",
+    "incorrectAnswers": [
+      "Four",
+      "Five",
+      "Eight"
+    ],
+    "explanation": "The six policies are content filters, denied topics, word filters, sensitive information filters, contextual grounding and Automated Reasoning checks.",
+    "keywords": [
+      "aws-mla-c02",
+      "security",
+      "guardrails"
+    ],
+    "source": "https://aws.amazon.com/bedrock/guardrails/"
+  }
+]
