@@ -59,6 +59,33 @@ public sealed class DeleteItemTests : DatabaseTestFixture
     }
 
     [Fact]
+    public async Task HandleAsync_ItemInCollections_RemovesOrphanMemberships()
+    {
+        Item item = await CreateItemWithCategoryAsync(
+            Guid.NewGuid(), "geography", "What is the capital of Spain?", "Madrid",
+            new List<string> { "Lisbon" }, "", false, _userContextMock.Object.UserId!);
+
+        Item otherItem = await CreateItemWithCategoryAsync(
+            Guid.NewGuid(), "geography", "What is the capital of Italy?", "Rome",
+            new List<string> { "Milan" }, "", false, _userContextMock.Object.UserId!);
+
+        Guid collectionA = Guid.NewGuid();
+        Guid collectionB = Guid.NewGuid();
+        DbContext.CollectionItems.AddRange(
+            new CollectionItem { CollectionId = collectionA, ItemId = item.Id },
+            new CollectionItem { CollectionId = collectionB, ItemId = item.Id },
+            new CollectionItem { CollectionId = collectionA, ItemId = otherItem.Id });
+        await DbContext.SaveChangesAsync();
+
+        Result result = await DeleteItemHandler.HandleAsync(
+            item.Id.ToString(), DbContext, _userContextMock.Object, _auditServiceMock.Object, CancellationToken.None);
+
+        result.IsSuccess.Should().BeTrue();
+        (await DbContext.CollectionItems.CountAsync(ci => ci.ItemId == item.Id)).Should().Be(0);
+        (await DbContext.CollectionItems.CountAsync(ci => ci.CollectionId == collectionA)).Should().Be(1);
+    }
+
+    [Fact]
     public async Task HandleAsync_NonOwnerPublicItem_ReturnsForbiddenAndKeepsItem()
     {
         Item item = await CreateItemWithCategoryAsync(
