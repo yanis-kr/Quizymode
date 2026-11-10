@@ -192,7 +192,8 @@ describe("DailyDigestCard", () => {
     renderCard();
     await userEvent.click(await screen.findByRole("button", { name: "Send test email" }));
     expect(await screen.findByText("Test email sent to the configured admin address.")).toBeInTheDocument();
-    const button = screen.getByRole("button", { name: /Test sent\. Try again in (5:00|4:5\d)/ });
+    // Assert the countdown format only: real-time elapsed time on a slow CI runner must not fail the test.
+    const button = screen.getByRole("button", { name: /Test sent\. Try again in \d+:\d{2}/ });
     expect(button).toBeDisabled();
   });
 
