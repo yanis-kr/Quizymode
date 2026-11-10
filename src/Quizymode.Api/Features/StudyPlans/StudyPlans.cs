@@ -260,13 +260,11 @@ public static class StudyPlans
             .ToHashSet();
         List<Guid> availableList = availableIds.ToList();
 
-        Dictionary<Guid, int> counts = availableList.Count == 0
+        // Same lead total as GetCollectionById and the collection cards (#555 part 2b, AC 1.16c.3): nested and live-topic content included.
+        Dictionary<Guid, CollectionCardCounts.Counts> cardCounts = availableList.Count == 0
             ? []
-            : await ItemVisibility.EligibleCollectionItems(db, userId).AsNoTracking()
-                .Where(ci => availableList.Contains(ci.CollectionId))
-                .GroupBy(ci => ci.CollectionId)
-                .Select(g => new { CollectionId = g.Key, Count = g.Count() })
-                .ToDictionaryAsync(x => x.CollectionId, x => x.Count, cancellationToken);
+            : await CollectionCardCounts.ForCollectionsAsync(db, availableList, userId, cancellationToken);
+        Dictionary<Guid, int> counts = cardCounts.ToDictionary(kv => kv.Key, kv => kv.Value.ItemCount);
 
         DateTime earliest = plans.Min(p => p.CreatedAt).AddDays(-ActivityLookbackDays);
         var sessions = await db.StudySessions.AsNoTracking()
