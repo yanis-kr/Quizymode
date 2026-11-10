@@ -26,6 +26,12 @@ public static class CollectionMembers
 
     public sealed record CollectionMemberResponse(string Id, Guid ParentId, Guid ChildId, DateTime AddedAt);
 
+    /// <summary>A child collection the caller can open. <paramref name="HiddenFromOthers"/> is true for the owner's own private child (#554).</summary>
+    public sealed record ChildCollection(string Id, string Name, bool IsPublic, bool HiddenFromOthers, DateTime AddedAt);
+
+    /// <summary>Accessible children only. Inaccessible children are a count, with no name, id or order (#554).</summary>
+    public sealed record ChildrenResponse(List<ChildCollection> Children, int HiddenCollectionCount);
+
     public sealed class AddRequestValidator : AbstractValidator<AddRequest>
     {
         public AddRequestValidator()
@@ -40,6 +46,13 @@ public static class CollectionMembers
     {
         public void MapEndpoint(IEndpointRouteBuilder app)
         {
+            app.MapGet("collections/{collectionId:guid}/collections", ChildrenHandler)
+                .WithTags("Collections")
+                .WithSummary("List the accessible child collections")
+                .WithDescription("Lists child collections the caller can open, plus a count of child links they cannot open. Hidden children have no name, id or order.")
+                .Produces<ChildrenResponse>(StatusCodes.Status200OK)
+                .Produces(StatusCodes.Status404NotFound);
+
             app.MapPost("collections/{collectionId:guid}/collections", AddHandler)
                 .WithTags("Collections")
                 .WithSummary("Add a collection to a collection")
@@ -60,6 +73,22 @@ public static class CollectionMembers
                 .Produces(StatusCodes.Status401Unauthorized)
                 .Produces(StatusCodes.Status403Forbidden)
                 .Produces(StatusCodes.Status404NotFound);
+        }
+
+        private static async Task<IResult> ChildrenHandler(
+            Guid collectionId,
+            ApplicationDbContext db,
+            IUserContext userContext,
+            ILogger<Endpoint> logger,
+            CancellationToken cancellationToken)
+        {
+            Result<ChildrenResponse> result = await HandleChildrenAsync(collectionId, db, userContext, cancellationToken);
+
+            return result.Match(
+                value => Results.Ok(value),
+                failure => failure.Error.Type == ErrorType.NotFound
+                    ? Results.NotFound()
+                    : CustomResults.Problem(result, logger));
         }
 
         private static async Task<IResult> AddHandler(
@@ -114,6 +143,52 @@ public static class CollectionMembers
         {
             services.AddScoped<IValidator<AddRequest>, AddRequestValidator>();
         }
+    }
+
+    /// <summary>
+    /// Children of a collection the caller can open (the parent must be accessible), plus the hidden-link count (#554).
+    /// Children are listed only when the child is public or owned by the caller, in the same rule the resolver uses.
+    /// </summary>
+    public static async Task<Result<ChildrenResponse>> HandleChildrenAsync(
+        Guid parentId,
+        ApplicationDbContext db,
+        IUserContext userContext,
+        CancellationToken cancellationToken)
+    {
+        Collection? parent = await db.Collections.FirstOrDefaultAsync(c => c.Id == parentId, cancellationToken);
+        if (parent is null || !GetCollectionById.CanAccess(parent, userContext))
+        {
+            return Result.Failure<ChildrenResponse>(
+                Error.NotFound("Collection.NotFound", $"Collection with id {parentId} not found"));
+        }
+
+        string? viewerId = userContext.IsAuthenticated ? userContext.UserId : null;
+        string callerId = viewerId ?? string.Empty;
+        bool hasCaller = callerId.Length > 0;
+
+        var rows = await db.CollectionCollectionMembers
+            .Where(m => m.ParentId == parentId)
+            .Join(
+                db.Collections.Where(c => c.IsPublic || (hasCaller && c.CreatedBy == callerId)),
+                m => m.ChildId,
+                c => c.Id,
+                (m, c) => new { c.Id, c.Name, c.IsPublic, c.CreatedBy, m.AddedAt })
+            .OrderBy(x => x.Name)
+            .ToListAsync(cancellationToken);
+
+        // Ids are formatted here, not in SQL, so the string form matches the other collection responses.
+        List<ChildCollection> children = rows
+            .Select(x => new ChildCollection(
+                x.Id.ToString(),
+                x.Name,
+                x.IsPublic,
+                !x.IsPublic && hasCaller && x.CreatedBy == callerId,
+                x.AddedAt))
+            .ToList();
+
+        int hidden = await GetCollectionById.CountHiddenChildLinksAsync(db, parentId, viewerId, cancellationToken);
+
+        return Result.Success(new ChildrenResponse(children, hidden));
     }
 
     public static async Task<Result<CollectionMemberResponse>> HandleAddAsync(

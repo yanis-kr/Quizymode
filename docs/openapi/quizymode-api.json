@@ -3152,6 +3152,38 @@
       }
     },
     "/collections/{collectionId}/collections": {
+      "get": {
+        "tags": [
+          "Collections"
+        ],
+        "summary": "List the accessible child collections",
+        "description": "Lists child collections the caller can open, plus a count of child links they cannot open. Hidden children have no name, id or order.",
+        "parameters": [
+          {
+            "name": "collectionId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "$ref": "#/components/schemas/System.Guid"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Quizymode.Api.Features.Collections.CollectionMembers.ChildrenResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        }
+      },
       "post": {
         "tags": [
           "Collections"
@@ -13627,6 +13659,50 @@
           }
         }
       },
+      "Quizymode.Api.Features.Collections.CollectionMembers.ChildCollection": {
+        "required": [
+          "id",
+          "name",
+          "isPublic",
+          "hiddenFromOthers",
+          "addedAt"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "$ref": "#/components/schemas/System.String"
+          },
+          "name": {
+            "$ref": "#/components/schemas/System.String"
+          },
+          "isPublic": {
+            "$ref": "#/components/schemas/System.Boolean"
+          },
+          "hiddenFromOthers": {
+            "$ref": "#/components/schemas/System.Boolean"
+          },
+          "addedAt": {
+            "$ref": "#/components/schemas/System.DateTime"
+          }
+        },
+        "description": "A child collection the caller can open. HiddenFromOthers is true for the owner's own private child (#554)."
+      },
+      "Quizymode.Api.Features.Collections.CollectionMembers.ChildrenResponse": {
+        "required": [
+          "children",
+          "hiddenCollectionCount"
+        ],
+        "type": "object",
+        "properties": {
+          "children": {
+            "$ref": "#/components/schemas/System.Collections.Generic.ListOfQuizymode.Api.Features.Collections.CollectionMembers.ChildCollection"
+          },
+          "hiddenCollectionCount": {
+            "$ref": "#/components/schemas/System.Int32"
+          }
+        },
+        "description": "Accessible children only. Inaccessible children are a count, with no name, id or order (#554)."
+      },
       "Quizymode.Api.Features.Collections.CollectionMembers.CollectionMemberResponse": {
         "required": [
           "id",
@@ -13859,7 +13935,8 @@
           "createdAt",
           "itemCount",
           "isPublic",
-          "isDiscoverable"
+          "isDiscoverable",
+          "hiddenCollectionCount"
         ],
         "type": "object",
         "properties": {
@@ -13893,6 +13970,9 @@
           },
           "isDiscoverable": {
             "$ref": "#/components/schemas/System.Boolean"
+          },
+          "hiddenCollectionCount": {
+            "$ref": "#/components/schemas/System.Int32"
           }
         }
       },
@@ -20871,6 +20951,12 @@
         "type": "array",
         "items": {
           "$ref": "#/components/schemas/Quizymode.Api.Features.Categories.GetCategories.CategoryResponse"
+        }
+      },
+      "System.Collections.Generic.ListOfQuizymode.Api.Features.Collections.CollectionMembers.ChildCollection": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/Quizymode.Api.Features.Collections.CollectionMembers.ChildCollection"
         }
       },
       "System.Collections.Generic.ListOfQuizymode.Api.Features.Collections.CollectionTopicMembers.TopicMemberResponse": {

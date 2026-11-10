@@ -390,6 +390,13 @@ Anonymous visitors can bookmark public collections without an account. The list 
 - **AC 1.16.5** [User] **When** I call `DELETE /collections/{P}/collections/{C}`, **then** the API returns **204** and P's items no longer include C's items (a missing link returns **404**). Deleting a collection removes its links on both sides (Invariant C4). Reads use a fixed depth of 3 and a visited set, so a cycle in the data returns **200**.
 - **AC 1.16.6** Safety limits (#549): a collection holds at most **500** membership rows (items, child collections and topic members). Adding a member that would exceed this returns **400**. Items are not capped by this change. The 50-collection read cap and the `incomplete` marker are not implemented yet (#554).
 
+### AC 1.16a Placeholders for hidden child collections (#554, part 1)
+
+- **AC 1.16.7** [Anonymous | User (non-owner)] **Given** P is public and holds a private child C owned by someone else, **when** I view P, **then** C is not listed: `GET /collections/{P}` returns `hiddenCollectionCount` = 1, and `GET /collections/{P}/collections` returns no entry for C (no name, id or order). Its items are absent from P's list and `itemCount`. Only direct links are counted; C's own children are never counted.
+- **AC 1.16.8** [User (owner)] **Given** I own the private child C of P, **when** I view P's children, **then** C is listed with `hiddenFromOthers = true` and `hiddenCollectionCount` does not include it.
+- **AC 1.16.9** [User | Anonymous] **Given** P is private and I am not its owner, **when** I call `GET /collections/{P}/collections`, **then** the API returns **404**.
+- Not yet in this change (#554 part 2): `memberCount` and the distinct viewer-visible totals on the list cards (`GET /collections`, Discover, bookmarks), and the rule that Discover's card counts are distinct. Until then these list counts keep their existing direct-only meaning.
+
 ### AC 1.17 Topic members (#553)
 
 - **AC 1.17.1** [User] **Given** I own collection P and a public taxonomy path (category, keyword 1, optional keyword 2 under it), **when** I call `POST /collections/{P}/topics` with `{ "categoryId", "keyword1Id", "keyword2Id" | null }`, **then** the API returns **201** and the path is a member of P. Adding the same path again returns **201** with the existing member (idempotent).
