@@ -24,6 +24,8 @@ public sealed class ApplicationDbContext : DbContext
 
     public DbSet<CollectionItem> CollectionItems => Set<CollectionItem>();
 
+    public DbSet<CollectionCollectionMember> CollectionCollectionMembers => Set<CollectionCollectionMember>();
+
     public DbSet<CollectionBookmark> CollectionBookmarks => Set<CollectionBookmark>();
 
     public DbSet<CollectionShare> CollectionShares => Set<CollectionShare>();

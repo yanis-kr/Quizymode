@@ -600,7 +600,9 @@ internal sealed class ItemQueryBuilder
 
         // Membership is a subquery, so the item query stays one SQL statement (no id list loaded into memory).
         // An empty collection yields an empty subquery, so no separate branch is needed.
-        IQueryable<Guid> memberItemIds = CollectionScope.DirectMemberItemIds(_db, request.CollectionId.Value);
+        // Direct items plus items of accessible nested collections (#552); a private child hidden from the viewer contributes nothing.
+        string? viewerId = _userContext.IsAuthenticated ? _userContext.UserId : null;
+        IQueryable<Guid> memberItemIds = CollectionScope.AccessibleMemberItemIds(_db, request.CollectionId.Value, viewerId);
 
         // Filter to items in the collection
         // Note: Visibility filter is already applied before this, so only visible items will be included

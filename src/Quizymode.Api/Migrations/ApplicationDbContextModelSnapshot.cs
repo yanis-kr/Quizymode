@@ -490,6 +490,37 @@ namespace Quizymode.Api.Migrations
                     b.ToTable("CollectionBookmarks");
                 });
 
+            modelBuilder.Entity("Quizymode.Api.Shared.Models.CollectionCollectionMember", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uuid");
+
+                    b.Property<DateTime>("AddedAt")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<Guid>("ChildId")
+                        .HasColumnType("uuid");
+
+                    b.Property<Guid>("ParentId")
+                        .HasColumnType("uuid");
+
+                    b.Property<int>("SortOrder")
+                        .HasColumnType("integer");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("ChildId");
+
+                    b.HasIndex("ParentId", "ChildId")
+                        .IsUnique();
+
+                    b.ToTable("CollectionCollectionMembers", null, t =>
+                        {
+                            t.HasCheckConstraint("CK_CollectionCollectionMembers_NoSelf", "\"ParentId\" <> \"ChildId\"");
+                        });
+                });
+
             modelBuilder.Entity("Quizymode.Api.Shared.Models.CollectionItem", b =>
                 {
                     b.Property<Guid>("Id")
@@ -2962,6 +2993,21 @@ namespace Quizymode.Api.Migrations
                         .IsUnique();
 
                     b.ToTable("UserSettings", (string)null);
+                });
+
+            modelBuilder.Entity("Quizymode.Api.Shared.Models.CollectionCollectionMember", b =>
+                {
+                    b.HasOne("Quizymode.Api.Shared.Models.Collection", null)
+                        .WithMany()
+                        .HasForeignKey("ChildId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("Quizymode.Api.Shared.Models.Collection", null)
+                        .WithMany()
+                        .HasForeignKey("ParentId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
                 });
 
             modelBuilder.Entity("Quizymode.Api.Shared.Models.FeaturedItem", b =>
