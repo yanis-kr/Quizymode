@@ -22,6 +22,9 @@ public static class CollectionMembers
     /// <summary>Membership rows (item rows plus child collections) per collection (#549 safety limit).</summary>
     public const int MaxMembershipRows = 500;
 
+    /// <summary>Collections (the root included) one read resolves at most; beyond this the response is marked incomplete (AC 1.16.6).</summary>
+    public const int MaxReadCollections = 50;
+
     public sealed record AddRequest(Guid ChildCollectionId);
 
     public sealed record CollectionMemberResponse(string Id, Guid ParentId, Guid ChildId, DateTime AddedAt);

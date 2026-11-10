@@ -13981,6 +13981,19 @@
           },
           "hiddenCollectionCount": {
             "$ref": "#/components/schemas/System.Int32"
+          },
+          "incomplete": {
+            "$ref": "#/components/schemas/System.Boolean"
+          },
+          "incompleteReason": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/components/schemas/System.String"
+              }
+            ]
           }
         }
       },
@@ -16042,6 +16055,19 @@
           },
           "totalPages": {
             "$ref": "#/components/schemas/System.Int32"
+          },
+          "incomplete": {
+            "$ref": "#/components/schemas/System.Boolean"
+          },
+          "incompleteReason": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/components/schemas/System.String"
+              }
+            ]
           }
         }
       },

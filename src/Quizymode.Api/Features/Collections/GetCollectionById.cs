@@ -19,7 +19,9 @@ public static class GetCollectionById
         int ItemCount,
         bool IsPublic,
         bool IsDiscoverable,
-        int HiddenCollectionCount);
+        int HiddenCollectionCount,
+        bool Incomplete = false,
+        string? IncompleteReason = null);
 
     public sealed class Endpoint : IEndpoint
     {
@@ -82,6 +84,9 @@ public static class GetCollectionById
             // Direct child links the caller cannot open (#554). Counts links only: no names, ids, questions or descendants.
             int hiddenCollectionCount = await CountHiddenChildLinksAsync(db, id, viewerId, cancellationToken);
 
+            // Nested content beyond the read cap is left out of the reads; say so (AC 1.16.6).
+            bool incomplete = await CollectionScope.IsIncompleteAsync(db, id, viewerId, cancellationToken);
+
             Response response = new(
                 collection.Id.ToString(),
                 collection.Name,
@@ -91,7 +96,9 @@ public static class GetCollectionById
                 itemCount,
                 collection.IsPublic,
                 collection.IsDiscoverable,
-                hiddenCollectionCount);
+                hiddenCollectionCount,
+                incomplete,
+                incomplete ? "CollectionLimit" : null);
 
             return Result.Success(response);
         }
