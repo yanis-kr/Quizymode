@@ -53,9 +53,25 @@ internal static class CollectionScope
     {
         IQueryable<Guid> collectionIds = AccessibleCollectionIds(db, rootId, viewerId);
 
-        return db.CollectionItems
+        IQueryable<Guid> directAndNested = db.CollectionItems
             .Where(ci => collectionIds.Contains(ci.CollectionId))
-            .Select(ci => ci.ItemId)
-            .Distinct();
+            .Select(ci => ci.ItemId);
+
+        // Topic members (#553): visible questions on a path that is still live and that an accessible collection holds.
+        // Visibility is the item's own (public and media-eligible, or the caller's own), so another user's private match never
+        // appears, and the owner sees only their own. Path liveness is checked against KeywordRelations at each level.
+        IQueryable<Guid> topicItems = db.Items
+            .Where(ItemVisibility.VisibleTo(viewerId))
+            .Where(i => db.CollectionKeywordMembers.Any(m =>
+                collectionIds.Contains(m.ParentId)
+                && m.CategoryId == i.CategoryId
+                && m.Keyword1Id == i.NavigationKeywordId1
+                && (m.Keyword2Id == null || m.Keyword2Id == i.NavigationKeywordId2)
+                && db.KeywordRelations.Any(r => r.CategoryId == m.CategoryId && r.ParentKeywordId == null && r.ChildKeywordId == m.Keyword1Id)
+                && (m.Keyword2Id == null
+                    || db.KeywordRelations.Any(r => r.CategoryId == m.CategoryId && r.ParentKeywordId == m.Keyword1Id && r.ChildKeywordId == m.Keyword2Id))))
+            .Select(i => i.Id);
+
+        return directAndNested.Union(topicItems);
     }
 }
