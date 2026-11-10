@@ -571,7 +571,7 @@ internal sealed class ItemQueryBuilder
     /// Applies collection filtering to the query. Requires authentication and verifies
     /// that the user owns the collection (or is admin) before filtering items.
     /// Returns validation error if collection doesn't exist or user doesn't have access.
-    /// Loads all item IDs in the collection first, then filters the main query to those IDs.
+    /// Filters the main query to the collection's members with a subquery (one SQL statement).
     /// This approach ensures visibility rules (already applied) are respected.
     /// </summary>
     private async Task<Result<IQueryable<Item>>> ApplyCollectionFilterAsync(
@@ -598,21 +598,13 @@ internal sealed class ItemQueryBuilder
                 Error.NotFound("Collection.NotFound", "Collection not found"));
         }
 
-        List<Guid> itemIdsInCollection = await _db.CollectionItems
-            .Where(ci => ci.CollectionId == request.CollectionId.Value)
-            .Select(ci => ci.ItemId)
-            .ToListAsync(_cancellationToken);
-
-        if (itemIdsInCollection.Count == 0)
-        {
-            // No items in collection, return empty result
-            query = query.Where(i => false);
-            return Result.Success(query);
-        }
+        // Membership is a subquery, so the item query stays one SQL statement (no id list loaded into memory).
+        // An empty collection yields an empty subquery, so no separate branch is needed.
+        IQueryable<Guid> memberItemIds = CollectionScope.DirectMemberItemIds(_db, request.CollectionId.Value);
 
         // Filter to items in the collection
         // Note: Visibility filter is already applied before this, so only visible items will be included
-        query = query.Where(i => itemIdsInCollection.Contains(i.Id));
+        query = query.Where(i => memberItemIds.Contains(i.Id));
 
         return Result.Success(query);
     }

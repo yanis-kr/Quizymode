@@ -111,6 +111,53 @@ public sealed class GetItemsTests : ItemTestFixture
     }
 
     [Fact]
+    public async Task HandleAsync_WithCollectionId_ExcludesItemsOnlyInOtherCollections()
+    {
+        // Arrange
+        Item memberItem = await CreateItemWithCategoryAsync("geography", "Q1", "A1", new List<string>(), "", isPrivate: false, createdBy: "test");
+        Item otherItem = await CreateItemWithCategoryAsync("geography", "Q2", "A2", new List<string>(), "", isPrivate: false, createdBy: "test");
+
+        Collection target = new Collection { Id = Guid.NewGuid(), Name = "Target", CreatedBy = "test", CreatedAt = DateTime.UtcNow };
+        Collection other = new Collection { Id = Guid.NewGuid(), Name = "Other", CreatedBy = "test", CreatedAt = DateTime.UtcNow };
+        DbContext.Collections.AddRange(target, other);
+        await DbContext.SaveChangesAsync();
+
+        DbContext.CollectionItems.AddRange(
+            new CollectionItem { Id = Guid.NewGuid(), CollectionId = target.Id, ItemId = memberItem.Id },
+            new CollectionItem { Id = Guid.NewGuid(), CollectionId = other.Id, ItemId = otherItem.Id });
+        await DbContext.SaveChangesAsync();
+
+        GetItems.QueryRequest request = new(Category: null, IsPrivate: null, Keywords: null, CollectionId: target.Id, IsRandom: null, Page: 1, PageSize: 10);
+
+        // Act
+        Result<GetItems.Response> result = await GetItemsHandler.HandleAsync(request, DbContext, _userContextMock.Object, CancellationToken.None);
+
+        // Assert
+        result.IsSuccess.Should().BeTrue();
+        result.Value.Items.Should().ContainSingle().Which.Id.Should().Be(memberItem.Id.ToString());
+    }
+
+    [Fact]
+    public async Task HandleAsync_WithCollectionId_EmptyCollection_ReturnsNoItems()
+    {
+        // Arrange
+        await CreateItemWithCategoryAsync("geography", "Q1", "A1", new List<string>(), "", isPrivate: false, createdBy: "test");
+
+        Collection empty = new Collection { Id = Guid.NewGuid(), Name = "Empty", CreatedBy = "test", CreatedAt = DateTime.UtcNow };
+        DbContext.Collections.Add(empty);
+        await DbContext.SaveChangesAsync();
+
+        GetItems.QueryRequest request = new(Category: null, IsPrivate: null, Keywords: null, CollectionId: empty.Id, IsRandom: null, Page: 1, PageSize: 10);
+
+        // Act
+        Result<GetItems.Response> result = await GetItemsHandler.HandleAsync(request, DbContext, _userContextMock.Object, CancellationToken.None);
+
+        // Assert
+        result.IsSuccess.Should().BeTrue();
+        result.Value.Items.Should().BeEmpty();
+    }
+
+    [Fact]
     public async Task HandleAsync_WithCollectionId_CollectionNotFound_ReturnsNotFound()
     {
         // Arrange
