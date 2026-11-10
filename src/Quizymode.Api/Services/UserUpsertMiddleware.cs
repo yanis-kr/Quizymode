@@ -247,6 +247,7 @@ internal sealed class UserUpsertMiddleware
                 // Lock the row for update - other requests block until this commits
                 var lockedUser = await db.Users
                     .FromSqlInterpolated($"SELECT * FROM \"Users\" WHERE \"Subject\" = {subject} FOR UPDATE")
+                    .Where(u => u.Subject == subject)
                     .AsTracking()
                     .FirstOrDefaultAsync(context.RequestAborted);
 
@@ -284,6 +285,7 @@ internal sealed class UserUpsertMiddleware
                         // Lock the row so we can update it (SELECT FOR UPDATE by primary key)
                         await db.Users
                             .FromSqlInterpolated($"SELECT * FROM \"Users\" WHERE \"Id\" = {existingByEmail.Id} FOR UPDATE")
+                            .Where(u => u.Id == existingByEmail.Id)
                             .AsTracking()
                             .FirstOrDefaultAsync(context.RequestAborted);
                         existingByEmail = await db.Users.FindAsync(new object[] { existingByEmail.Id }, context.RequestAborted);
