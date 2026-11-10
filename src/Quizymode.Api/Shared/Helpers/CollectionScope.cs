@@ -49,12 +49,33 @@ internal static class CollectionScope
     }
 
     /// <summary>
+    /// The accessible collections read by one resolution, capped at <see cref="CollectionMembers.MaxReadCollections"/> (AC 1.16.6).
+    /// The cap is applied in SQL (ordered by id, so the same cap is chosen every time), so the caller's query stays one statement.
+    /// </summary>
+    public static IQueryable<Guid> CappedCollectionIds(ApplicationDbContext db, Guid rootId, string? viewerId) =>
+        CapOrder(AccessibleCollectionIds(db, rootId, viewerId), rootId)
+            .Take(CollectionMembers.MaxReadCollections);
+
+    /// <summary>The root always comes first, then the rest by id, so the cap never drops the collection being read.</summary>
+    private static IOrderedQueryable<Guid> CapOrder(IQueryable<Guid> ids, Guid rootId) =>
+        ids.OrderBy(id => id == rootId ? 0 : 1).ThenBy(id => id);
+
+    /// <summary>
+    /// True when the resolution from <paramref name="rootId"/> reaches more accessible collections than the read cap, so some
+    /// nested content is left out and the response must say so (<c>incomplete</c>, AC 1.16.6).
+    /// </summary>
+    public static Task<bool> IsIncompleteAsync(ApplicationDbContext db, Guid rootId, string? viewerId, CancellationToken cancellationToken) =>
+        CapOrder(AccessibleCollectionIds(db, rootId, viewerId), rootId)
+            .Skip(CollectionMembers.MaxReadCollections)
+            .AnyAsync(cancellationToken);
+
+    /// <summary>
     /// Item ids of every accessible member of <paramref name="rootId"/>: its direct items and the items of accessible nested
-    /// collections, as a distinct set.
+    /// collections, as a distinct set. Nested collections beyond the read cap are not included.
     /// </summary>
     public static IQueryable<Guid> AccessibleMemberItemIds(ApplicationDbContext db, Guid rootId, string? viewerId)
     {
-        IQueryable<Guid> collectionIds = AccessibleCollectionIds(db, rootId, viewerId);
+        IQueryable<Guid> collectionIds = CappedCollectionIds(db, rootId, viewerId);
 
         IQueryable<Guid> directAndNested = db.CollectionItems
             .Where(ci => collectionIds.Contains(ci.CollectionId))

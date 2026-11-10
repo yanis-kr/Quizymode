@@ -67,12 +67,19 @@ internal static class GetItemsHandler
                         : null))
                 .ToList();
 
+            // A collection read that reaches past the nested-collection cap says so, instead of silently dropping content (AC 1.16.6).
+            string? viewerId = userContext.IsAuthenticated ? userContext.UserId : null;
+            bool incomplete = request.CollectionId is Guid collectionId
+                && await CollectionScope.IsIncompleteAsync(db, collectionId, viewerId, cancellationToken);
+
             GetItems.Response response = new GetItems.Response(
                 itemResponses,
                 totalCount,
                 request.Page,
                 request.PageSize,
-                (int)Math.Ceiling((double)totalCount / request.PageSize));
+                (int)Math.Ceiling((double)totalCount / request.PageSize),
+                incomplete,
+                incomplete ? "CollectionLimit" : null);
 
             return Result.Success(response);
         }

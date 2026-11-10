@@ -242,4 +242,26 @@ public sealed class CollectionMembersTests : ItemTestFixture
         forOther.Value.Items.Should().BeEmpty();
         forOwner.Value.Items.Should().ContainSingle().Which.Id.Should().Be(childItem.Id.ToString());
     }
+
+    [Fact]
+    public async Task HandleRemoveAsync_ThenParentRead_OmitsTheChildsItems()
+    {
+        Collection parent = await CreateCollectionAsync(Owner, isPublic: true);
+        Collection child = await CreateCollectionAsync(Owner, isPublic: true);
+        Item childItem = await CreateItemWithCategoryAsync("geography", "Q1", "A1", new List<string>(), "", isPrivate: false, createdBy: Owner);
+        DbContext.CollectionItems.Add(new CollectionItem { Id = Guid.NewGuid(), CollectionId = child.Id, ItemId = childItem.Id });
+        await DbContext.SaveChangesAsync();
+        (await AddAsync(parent, child, Owner)).IsSuccess.Should().BeTrue();
+
+        GetItems.QueryRequest request = new(Category: null, IsPrivate: null, Keywords: null, CollectionId: parent.Id, IsRandom: null, Page: 1, PageSize: 10);
+        Result<GetItems.Response> before = await GetItemsHandler.HandleAsync(request, DbContext, UserContext(Owner).Object, CancellationToken.None);
+        before.Value.Items.Should().ContainSingle();
+
+        Result removed = await CollectionMembers.HandleRemoveAsync(parent.Id, child.Id, DbContext, UserContext(Owner).Object, CancellationToken.None);
+        Result<GetItems.Response> after = await GetItemsHandler.HandleAsync(request, DbContext, UserContext(Owner).Object, CancellationToken.None);
+
+        removed.IsSuccess.Should().BeTrue();
+        after.IsSuccess.Should().BeTrue();
+        after.Value.Items.Should().BeEmpty();
+    }
 }

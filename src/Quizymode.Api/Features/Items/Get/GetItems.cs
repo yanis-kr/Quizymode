@@ -39,7 +39,9 @@ public static class GetItems
         int TotalCount,
         int Page,
         int PageSize,
-        int TotalPages);
+        int TotalPages,
+        bool Incomplete = false,
+        string? IncompleteReason = null);
 
     public sealed record ItemResponse(
         string Id,
