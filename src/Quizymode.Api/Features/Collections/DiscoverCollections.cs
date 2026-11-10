@@ -20,7 +20,8 @@ public static class DiscoverCollections
         string CreatedBy,
         DateTime CreatedAt,
         int ItemCount,
-        bool IsBookmarked);
+        bool IsBookmarked,
+        int MemberCount);
 
     public sealed class Endpoint : IEndpoint
     {
@@ -171,13 +172,12 @@ public static class DiscoverCollections
                 .OrderByDescending(c => c.CreatedAt)
                 .ToListAsync(cancellationToken);
 
-            var itemCounts = await ItemVisibility.EligibleCollectionItems(db, userContext.IsAuthenticated ? userContext.UserId : null)
-                .Where(ci => collectionIds.Contains(ci.CollectionId))
-                .GroupBy(ci => ci.CollectionId)
-                .Select(g => new { CollectionId = g.Key, Count = g.Count() })
-                .ToListAsync(cancellationToken);
-
-            var countMap = itemCounts.ToDictionary(x => x.CollectionId, x => x.Count);
+            // One statement for the page (#554): lead question total and visible members per collection, for this viewer.
+            Dictionary<Guid, CollectionCardCounts.Counts> countMap = await CollectionCardCounts.ForCollectionsAsync(
+                db,
+                collectionIds,
+                userContext.IsAuthenticated ? userContext.UserId : null,
+                cancellationToken);
 
             HashSet<Guid>? bookmarkedIds = null;
             if (userContext.IsAuthenticated && !string.IsNullOrEmpty(userContext.UserId))
@@ -197,8 +197,9 @@ public static class DiscoverCollections
                     c.Description,
                     c.CreatedBy,
                     c.CreatedAt,
-                    countMap.GetValueOrDefault(c.Id, 0),
-                    bookmarkedIds?.Contains(c.Id) ?? false))
+                    countMap.TryGetValue(c.Id, out CollectionCardCounts.Counts? cardCounts) ? cardCounts.ItemCount : 0,
+                    bookmarkedIds?.Contains(c.Id) ?? false,
+                    cardCounts?.MemberCount ?? 0))
                 .ToList();
 
             return Result.Success(new Response(items, totalCount));

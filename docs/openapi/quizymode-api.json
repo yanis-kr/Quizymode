@@ -13802,7 +13802,8 @@
           "createdBy",
           "createdAt",
           "itemCount",
-          "isBookmarked"
+          "isBookmarked",
+          "memberCount"
         ],
         "type": "object",
         "properties": {
@@ -13833,6 +13834,9 @@
           },
           "isBookmarked": {
             "$ref": "#/components/schemas/System.Boolean"
+          },
+          "memberCount": {
+            "$ref": "#/components/schemas/System.Int32"
           }
         }
       },
@@ -13857,7 +13861,8 @@
           "name",
           "createdBy",
           "createdAt",
-          "itemCount"
+          "itemCount",
+          "memberCount"
         ],
         "type": "object",
         "properties": {
@@ -13874,6 +13879,9 @@
             "$ref": "#/components/schemas/System.DateTime"
           },
           "itemCount": {
+            "$ref": "#/components/schemas/System.Int32"
+          },
+          "memberCount": {
             "$ref": "#/components/schemas/System.Int32"
           }
         }
@@ -14017,7 +14025,8 @@
           "createdAt",
           "itemCount",
           "isPublic",
-          "isDiscoverable"
+          "isDiscoverable",
+          "memberCount"
         ],
         "type": "object",
         "properties": {
@@ -14048,8 +14057,12 @@
           },
           "isDiscoverable": {
             "$ref": "#/components/schemas/System.Boolean"
+          },
+          "memberCount": {
+            "$ref": "#/components/schemas/System.Int32"
           }
-        }
+        },
+        "description": "ItemCount: distinct visible questions across direct, nested and topic content (#554). MemberCount: visible direct members."
       },
       "Quizymode.Api.Features.Collections.GetCollections.Response": {
         "required": [

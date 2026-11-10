@@ -188,7 +188,7 @@ Terms used in this document with a specific meaning:
 
 **API**
 
-- **AC 1.3.1** [Owner] **Given** I am authenticated, **when** I call `GET /collections`, **then** the API returns only collections where I am the owner (`CreatedBy` = current user), ordered by creation date (newest first).
+- **AC 1.3.1** [Owner] **Given** I am authenticated, **when** I call `GET /collections`, **then** the API returns only collections where I am the owner (`CreatedBy` = current user), ordered by creation date (newest first). Each collection carries `itemCount` and `memberCount` as defined in AC 1.16b.
 - **AC 1.3.2** [Anonymous] **Given** I am not authenticated, **when** I call `GET /collections`, **then** the API returns 401.
 
 **UI**
@@ -205,7 +205,7 @@ Terms used in this document with a specific meaning:
 
 **API**
 
-- **AC 1.4.1** [Anyone] **Given** the collection has `IsPublic = true`, **when** anyone (authenticated or anonymous) calls `GET /collections/{id}`, **then** the API returns the collection (name, description, owner, item count, `isPublic`, `isDiscoverable`) and no login is required, whether or not the collection is listed in Discover. `GET /collections` (AC 1.3.1) returns `isPublic` and `isDiscoverable` per collection too.
+- **AC 1.4.1** [Anyone] **Given** the collection has `IsPublic = true`, **when** anyone (authenticated or anonymous) calls `GET /collections/{id}`, **then** the API returns the collection (name, description, owner, `itemCount` as defined in AC 1.16b.1, `isPublic`, `isDiscoverable`) and no login is required, whether or not the collection is listed in Discover. `GET /collections` (AC 1.3.1) returns `isPublic` and `isDiscoverable` per collection too.
 - **AC 1.4.2** [Authenticated (non-owner)] **Given** the collection has `IsPublic = false` and I am not the owner, **when** I call `GET /collections/{id}`, **then** the API returns 404 (existence not revealed).
 - **AC 1.4.3** [Anonymous] **Given** the collection has `IsPublic = false`, **when** I call `GET /collections/{id}` (anonymous), **then** the API returns 404.
 - **AC 1.4.4** [Owner] **Given** I am the owner, **when** I call `GET /collections/{id}`, **then** the API returns the collection regardless of IsPublic.
@@ -213,7 +213,7 @@ Terms used in this document with a specific meaning:
 
 **UI**
 
-- **AC 1.4.6** [Anyone] **Given** I have access to the collection (per API rules), **when** I open `/collections/{id}`, **then** I see the collection name, description, item count, and (for owner) edit/delete controls. "Owner" is decided by comparing the collection's `createdBy` with my internal user id from `GET /users/me`, never with the sign-in token's `sub` (they differ); the same rule applies to owner-only controls on items, comments, and the My Collections list (#207); `GET /collections/{id}` returns **collection metadata only**. The list of items in the collection is loaded via a separate items API (see AC 1.5). When access is denied per API, I see an appropriate error (e.g. not found).
+- **AC 1.4.6** [Anyone] **Given** I have access to the collection (per API rules), **when** I open `/collections/{id}`, **then** I see the collection name, description, item count (the lead total of AC 1.16b.1), and (for owner) edit/delete controls. "Owner" is decided by comparing the collection's `createdBy` with my internal user id from `GET /users/me`, never with the sign-in token's `sub` (they differ); the same rule applies to owner-only controls on items, comments, and the My Collections list (#207); `GET /collections/{id}` returns **collection metadata only**. The list of items in the collection is loaded via a separate items API (see AC 1.5). When access is denied per API, I see an appropriate error (e.g. not found).
 
 ---
 
@@ -291,7 +291,7 @@ Terms used in this document with a specific meaning:
 
 **API**
 
-- **AC 1.9.1** [Anyone] **Given** collections exist with `IsPublic = true` and `IsDiscoverable = true`, **when** anyone calls `GET /collections/discover` with optional `q`, `page`, `pageSize`, **then** the API returns matching public, discoverable collections paginated; if `q` is set, the collection's **name** or **description** must match (case-insensitive contains); if authenticated, bookmark state can be returned per collection.
+- **AC 1.9.1** [Anyone] **Given** collections exist with `IsPublic = true` and `IsDiscoverable = true`, **when** anyone calls `GET /collections/discover` with optional `q`, `page`, `pageSize`, **then** the API returns matching public, discoverable collections paginated; if `q` is set, the collection's **name** or **description** must match (case-insensitive contains); if authenticated, bookmark state can be returned per collection. Each result carries `itemCount` and `memberCount` (AC 1.16b); `q` never matches nested collection names or topic or question text (AC 1.16b.5).
 - **AC 1.9.1a** [Anyone] **Given** I call `GET /collections/discover` with optional `category` (category name), optional `keywords` (comma-separated, 0–2 **navigation** keyword names, requires `category`), and optional `tags` (comma-separated item tag names, AND semantics on item keywords), **then** only public collections that contain **at least one item** satisfying **all** supplied item filters are included; when `q` is also set, the collection must match **both** the text filter and the item filters. Unknown category (for filters) yields no matches; unknown tag name yields no matches; `keywords` without `category` returns **400**.
 - **AC 1.9.1b** [Anyone] **Given** I pass `category` and one or two `keywords`, **when** the path is not valid for that category (same rules as item navigation), **then** the API returns **400** with a validation-style error.
 - **AC 1.9.2** [Anyone] **Given** a collection has `IsPublic = false`, or `IsPublic = true` with `IsDiscoverable = false` (link only), **when** discover is queried (with or without text or item filters), **then** that collection does not appear in the response; it is still reachable by ID per AC 1.4.1.
@@ -314,7 +314,7 @@ Terms used in this document with a specific meaning:
 - **AC 1.10.2** [Authenticated (non-owner)] **Given** I am authenticated and can access the collection (e.g. via discover or by opening `/collections/{id}` when public) and I am not the owner, **when** I call bookmark/unbookmark, **then** the API records or removes my bookmark and returns success. **Given** the collection is private and I am not the owner (including an admin), **when** I call `POST /collections/{id}/bookmark`, **then** the API returns the same 404 as a missing id and writes no bookmark row; removing a bookmark I already hold on such a collection (`DELETE /collections/{id}/bookmark`) still returns 204 and deletes my row. Behavior change (#289): bookmarking a private collection previously returned 204 and wrote a row.
 - **AC 1.10.3** [Admin (non-owner)] Same as Authenticated (non-owner) (AC 1.10.2).
 - **AC 1.10.4** [Anonymous] **Given** I am not authenticated, **when** I call bookmark or unbookmark, **then** the API returns 401.
-- **AC 1.10.6** [Authenticated] **Given** I bookmarked a collection that is now private and I am not its owner (bookmark written before #289, or the owner later made it private), **when** I call `GET /collections/bookmarks`, **then** that collection is omitted from the list (its name, creator and item count are not revealed); my bookmark row is kept and can still be removed with `DELETE /collections/{id}/bookmark`. Private collections I own, and public ones, are listed (#298).
+- **AC 1.10.6** [Authenticated] **Given** I bookmarked a collection that is now private and I am not its owner (bookmark written before #289, or the owner later made it private), **when** I call `GET /collections/bookmarks`, **then** that collection is omitted from the list (its name, creator and item count are not revealed); my bookmark row is kept and can still be removed with `DELETE /collections/{id}/bookmark`. Private collections I own, and public ones, are listed (#298). Each listed collection carries the same `itemCount` and `memberCount` as the list cards (AC 1.16b).
 
 **UI**
 
@@ -388,14 +388,20 @@ Anonymous visitors can bookmark public collections without an account. The list 
 - **AC 1.16.3** [User] **Given** the chain of links from a top collection to the deepest member would exceed 3 links, **when** I add the child, **then** the API returns **400** and writes nothing. A chain of exactly 3 links is allowed.
 - **AC 1.16.4** [User | Anonymous] **Given** P is public and the child C is private and owned by someone else, **when** another user views P, **then** C's items are absent from P's item list (`GET /items?collectionId=P`) and from `itemCount`. **Given** I am C's owner, **then** they are included. **When** I add someone else's private child, **then** the API returns **404**. **When** a non-owner adds to a private P, **then** the API returns **404**; to a public P, **403** (Invariant C5).
 - **AC 1.16.5** [User] **When** I call `DELETE /collections/{P}/collections/{C}`, **then** the API returns **204** and P's items no longer include C's items (a missing link returns **404**). Deleting a collection removes its links on both sides (Invariant C4). Reads use a fixed depth of 3 and a visited set, so a cycle in the data returns **200**.
-- **AC 1.16.6** Safety limits (#549): a collection holds at most **500** membership rows (items, child collections and topic members). Adding a member that would exceed this returns **400**. Items are not capped by this change. The 50-collection read cap and the `incomplete` marker are not implemented yet (#554).
+- **AC 1.16.6** Safety limits (#549): a collection holds at most **500** membership rows (items, child collections and topic members). Adding a member that would exceed this returns **400**. Items are not capped by this change. The 50-collection read cap and the `incomplete` marker are not implemented yet; they are carried to #555.
 
 ### AC 1.16a Placeholders for hidden child collections (#554, part 1)
 
 - **AC 1.16.7** [Anonymous | User (non-owner)] **Given** P is public and holds a private child C owned by someone else, **when** I view P, **then** C is not listed: `GET /collections/{P}` returns `hiddenCollectionCount` = 1, and `GET /collections/{P}/collections` returns no entry for C (no name, id or order). Its items are absent from P's list and `itemCount`. Only direct links are counted; C's own children are never counted.
 - **AC 1.16.8** [User (owner)] **Given** I own the private child C of P, **when** I view P's children, **then** C is listed with `hiddenFromOthers = true` and `hiddenCollectionCount` does not include it.
 - **AC 1.16.9** [User | Anonymous] **Given** P is private and I am not its owner, **when** I call `GET /collections/{P}/collections`, **then** the API returns **404**.
-- Not yet in this change (#554 part 2): `memberCount` and the distinct viewer-visible totals on the list cards (`GET /collections`, Discover, bookmarks), and the rule that Discover's card counts are distinct. Until then these list counts keep their existing direct-only meaning.
+### AC 1.16b Card counts (#554, part 2)
+
+- **AC 1.16b.1** [Anyone] **Given** I can open collection P, **when** P's `itemCount` is returned (detail, list card, Discover, bookmarks), **then** it is the number of **distinct** questions visible to me across P's direct questions, the direct questions of its accessible nested collections (AC 1.16, depth 3), and the visible questions on live topic paths held by P or those collections (AC 1.17). A question reached by several routes counts once.
+- **AC 1.16b.2** [Anyone] **Given** I can open P, **when** P's `memberCount` is returned, **then** it counts P's own visible direct members only: direct questions I may see, visible child links (never a hidden placeholder), and live topic paths. Nested content is not added. It is the secondary label beside the lead total.
+- **AC 1.16b.3** Questions hidden from me by media eligibility (AC 3.25) and orphan membership rows (no question row) are excluded from both counts. A hidden child collection contributes nothing to either count, and its questions are not counted through P.
+- **AC 1.16b.4** Lists (`GET /collections`, `GET /collections/discover`, `GET /collections/bookmarks`) compute the counts for the whole page in a fixed number of SQL queries (at most the nesting depth plus three), not one query per card. A test counts SQL commands for two page sizes and expects the same count.
+- **AC 1.16b.5** [Anyone] **Given** I search Discover with `q`, **then** only the collection's name and description match. Nested collection names, topic paths and question text never match. The Discover category and keyword filters (AC 1.9.1a) use direct questions only.
 
 ### AC 1.17 Topic members (#553)
 

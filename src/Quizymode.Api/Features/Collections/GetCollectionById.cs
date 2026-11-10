@@ -72,19 +72,12 @@ public static class GetCollectionById
                     Error.NotFound("Collection.NotFound", "Collection not found"));
             }
 
+            // Lead total: distinct visible questions across direct, nested and topic content, counted the same way as the list cards (#554).
             // Items with unapproved uploaded pictures count only for their creator (#400).
-            // Distinct items of the collection and its accessible nested collections (#552, deduplicated by item id).
-            // Membership rows with no item row still count, as before; items hidden by media eligibility do not.
             string? viewerId = userContext.IsAuthenticated ? userContext.UserId : null;
-            string callerId = viewerId ?? string.Empty;
-            bool hasCaller = callerId.Length > 0;
-            IQueryable<Guid> memberItemIds = CollectionScope.AccessibleMemberItemIds(db, id, viewerId);
-            int itemCount = await memberItemIds.CountAsync(
-                itemId => !db.Items.Any(i => i.Id == itemId
-                    && !(hasCaller && i.CreatedBy == callerId)
-                    && i.ImageReviewState != null
-                    && i.ImageReviewState != ItemImageReviewState.Approved),
-                cancellationToken);
+            Dictionary<Guid, CollectionCardCounts.Counts> counts =
+                await CollectionCardCounts.ForCollectionsAsync(db, [id], viewerId, cancellationToken);
+            int itemCount = counts.TryGetValue(id, out CollectionCardCounts.Counts? cardCounts) ? cardCounts.ItemCount : 0;
 
             // Direct child links the caller cannot open (#554). Counts links only: no names, ids, questions or descendants.
             int hiddenCollectionCount = await CountHiddenChildLinksAsync(db, id, viewerId, cancellationToken);
