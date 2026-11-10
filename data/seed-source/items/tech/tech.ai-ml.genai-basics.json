@@ -1,0 +1,502 @@
+[
+  {
+    "itemId": "11498d92-965d-4ebf-9102-20acc2faeb30",
+    "seedId": "c1333f54-82a0-49eb-90ed-daa541d73b28",
+    "category": "tech",
+    "navigationKeyword1": "ai-ml",
+    "navigationKeyword2": "genai-basics",
+    "question": "When a chatbot answers your question, the trained model is doing what?",
+    "correctAnswer": "Inference: using the trained model to generate a response",
+    "incorrectAnswers": [
+      "Training: updating its weights from your message",
+      "Pretraining: reading a new batch of web text",
+      "Labeling: tagging your message for a dataset"
+    ],
+    "explanation": "Inference is the process of running an already trained model on an input prompt to produce a response. Training happens earlier and is what sets the model's weights.",
+    "keywords": [
+      "inference",
+      "training",
+      "llm-basics"
+    ],
+    "source": "https://developers.google.com/machine-learning/glossary/generative"
+  },
+  {
+    "itemId": "7851d827-a395-4c7f-9fe5-c08a43dce211",
+    "seedId": "3c9f3475-4fd9-4686-b374-8f98b0d1c743",
+    "category": "tech",
+    "navigationKeyword1": "ai-ml",
+    "navigationKeyword2": "genai-basics",
+    "question": "In the analogy of a model going to school, what matches a graduate applying their knowledge on the job?",
+    "correctAnswer": "Inference",
+    "incorrectAnswers": [
+      "Training",
+      "Data labeling",
+      "Tokenization"
+    ],
+    "explanation": "Training is the schooling phase where the model learns from data. Inference is the deployed model applying what it learned to new inputs, and it cannot happen without training first.",
+    "keywords": [
+      "inference",
+      "training"
+    ],
+    "source": "https://blogs.nvidia.com/blog/difference-deep-learning-training-inference-ai/"
+  },
+  {
+    "itemId": "5d0be2ea-586f-46b1-8b1b-37c836d67f30",
+    "seedId": "5ba1f19a-ba0d-4c01-ae53-6d08445c114f",
+    "category": "tech",
+    "navigationKeyword1": "ai-ml",
+    "navigationKeyword2": "genai-basics",
+    "question": "Which of these can a single token be for a language model?",
+    "correctAnswer": "A whole word, part of a word, a character or a byte",
+    "incorrectAnswers": [
+      "Always exactly one whole word",
+      "Always exactly one full sentence",
+      "Always a fixed block of eight letters"
+    ],
+    "explanation": "Tokens are the smallest units a language model works with. Depending on the tokenizer, a token can be a word, a subword, a single character or even a byte.",
+    "keywords": [
+      "tokens",
+      "llm-basics"
+    ],
+    "source": "https://platform.claude.com/docs/en/resources/glossary"
+  },
+  {
+    "itemId": "9d002cc8-15b4-4c9a-91d2-1bb77db0c473",
+    "seedId": "e224acc9-b75c-4689-9375-21e12778e706",
+    "category": "tech",
+    "navigationKeyword1": "ai-ml",
+    "navigationKeyword2": "genai-basics",
+    "question": "Why must text be split into tokens before a model can use it?",
+    "correctAnswer": "Models only process numbers, so text is mapped to numeric IDs",
+    "incorrectAnswers": [
+      "Tokens encrypt the text so it stays private",
+      "Splitting removes spelling and grammar errors",
+      "Tokens shrink the text so it downloads faster"
+    ],
+    "explanation": "A neural network works on numbers, not letters. A tokenizer breaks text into pieces and turns each piece into a number the model can process.",
+    "keywords": [
+      "tokens",
+      "tokenizer"
+    ],
+    "source": "https://huggingface.co/learn/llm-course/chapter2/4"
+  },
+  {
+    "itemId": "020b3302-b41a-4486-af94-d33d21e59fad",
+    "seedId": "fa250122-8d7a-43f2-85e4-1001b9454ee0",
+    "category": "tech",
+    "navigationKeyword1": "ai-ml",
+    "navigationKeyword2": "genai-basics",
+    "question": "Many tokenizers keep common words whole but split rare words into smaller pieces. What does this gain?",
+    "correctAnswer": "Good coverage with a small vocabulary and almost no unknown tokens",
+    "incorrectAnswers": [
+      "Every word gets its own unique token ID",
+      "Text always becomes one token per character",
+      "The model no longer needs any vocabulary at all"
+    ],
+    "explanation": "Subword tokenizers sit between word-level and character-level splitting. Rare words can be built from known pieces, so the vocabulary stays small and unknown tokens are rare.",
+    "keywords": [
+      "tokens",
+      "tokenizer"
+    ],
+    "source": "https://huggingface.co/learn/llm-course/chapter2/4"
+  },
+  {
+    "itemId": "0a455aaa-101a-488d-859a-a167673b2c6e",
+    "seedId": "e376426c-f47c-4d56-9015-040c3216cbc2",
+    "category": "tech",
+    "navigationKeyword1": "ai-ml",
+    "navigationKeyword2": "genai-basics",
+    "question": "What is a main downside of splitting text into single characters instead of words?",
+    "correctAnswer": "The model has to process much longer sequences",
+    "incorrectAnswers": [
+      "The vocabulary grows to hundreds of thousands of entries",
+      "Many words turn into unknown tokens",
+      "Rare words can no longer be represented"
+    ],
+    "explanation": "Every word can be built from characters, so the vocabulary is small and unknown tokens are rare. The trade-off is that each text turns into far more tokens.",
+    "keywords": [
+      "tokens",
+      "tokenizer"
+    ],
+    "source": "https://huggingface.co/learn/llm-course/chapter2/4"
+  },
+  {
+    "itemId": "6b850c4b-9094-4fd5-8367-d08080f2e8a7",
+    "seedId": "21f17536-f4bc-4d22-a1c4-bc93f56ce2f0",
+    "category": "tech",
+    "navigationKeyword1": "ai-ml",
+    "navigationKeyword2": "genai-basics",
+    "question": "What is a language model's context window?",
+    "correctAnswer": "The text it can reference while generating, like a working memory",
+    "incorrectAnswers": [
+      "The full set of data it was trained on",
+      "The date range its knowledge covers",
+      "The number of users it can serve at once"
+    ],
+    "explanation": "The context window is the amount of text the model can look at while it writes a response. It is separate from the much larger body of data used to train the model.",
+    "keywords": [
+      "context-window",
+      "llm-basics"
+    ],
+    "source": "https://platform.claude.com/docs/en/resources/glossary"
+  },
+  {
+    "itemId": "e6884e9b-3fb9-4fa6-b1ca-8b523a591ce5",
+    "seedId": "a073b8ee-980d-4768-b740-64cfd6f63650",
+    "category": "tech",
+    "navigationKeyword1": "ai-ml",
+    "navigationKeyword2": "genai-basics",
+    "question": "In a chat request, which of these count toward the context window?",
+    "correctAnswer": "The system prompt, the conversation so far, and the model's reply",
+    "incorrectAnswers": [
+      "Only the user's newest message",
+      "Only the system prompt",
+      "Only the reply the model generates"
+    ],
+    "explanation": "Everything in the request uses context space: the system prompt, all previous messages and the new message. The output the model generates for that turn counts too.",
+    "keywords": [
+      "context-window",
+      "tokens"
+    ],
+    "source": "https://platform.claude.com/docs/en/build-with-claude/context-windows"
+  },
+  {
+    "itemId": "6e030aca-71c4-46f3-8b5d-8f9e60ca0180",
+    "seedId": "dbcc1d63-da42-4559-9a60-792359e0630d",
+    "category": "tech",
+    "navigationKeyword1": "ai-ml",
+    "navigationKeyword2": "genai-basics",
+    "question": "What tends to happen as you pack more and more tokens into a model's context?",
+    "correctAnswer": "Accuracy and recall start to degrade",
+    "incorrectAnswers": [
+      "Accuracy keeps improving without limit",
+      "The model retrains itself on the new text",
+      "Responses become fully deterministic"
+    ],
+    "explanation": "More context is not automatically better. As the token count grows, the model's accuracy and recall degrade, an effect known as context rot, so what you put in context matters.",
+    "keywords": [
+      "context-window",
+      "context-rot"
+    ],
+    "source": "https://platform.claude.com/docs/en/build-with-claude/context-windows"
+  },
+  {
+    "itemId": "3aba27e4-648c-4d71-a094-47ca00a339b7",
+    "seedId": "be278f8a-daad-4a17-aac5-bbc694330ba0",
+    "category": "tech",
+    "navigationKeyword1": "ai-ml",
+    "navigationKeyword2": "genai-basics",
+    "question": "What does the temperature setting control in a generative model?",
+    "correctAnswer": "How random the model's output is",
+    "incorrectAnswers": [
+      "The maximum length of the response",
+      "How quickly tokens are produced",
+      "How many documents are retrieved"
+    ],
+    "explanation": "Temperature is a setting that controls the degree of randomness in the model's output. Higher values give more varied text and lower values give more predictable text.",
+    "keywords": [
+      "temperature",
+      "sampling"
+    ],
+    "source": "https://developers.google.com/machine-learning/glossary/generative"
+  },
+  {
+    "itemId": "414790af-728f-4e57-95f5-7bde2954a43d",
+    "seedId": "3aa5d3f9-66d8-4ecd-b6b1-59a22e14e4cf",
+    "category": "tech",
+    "navigationKeyword1": "ai-ml",
+    "navigationKeyword2": "genai-basics",
+    "question": "For which task is a low temperature usually the better choice?",
+    "correctAnswer": "Writing precise technical documentation",
+    "incorrectAnswers": [
+      "Brainstorming names for a new product",
+      "Writing a fantasy short story",
+      "Generating many different slogan ideas"
+    ],
+    "explanation": "Low temperature makes the most likely tokens even more likely, so output is more predictable. That suits tasks that need precision, while high temperature suits creative work.",
+    "keywords": [
+      "temperature",
+      "sampling"
+    ],
+    "source": "https://www.ibm.com/think/topics/llm-temperature"
+  },
+  {
+    "itemId": "3a34f358-3fa1-474c-88e6-4f37db480754",
+    "seedId": "f4aaeec4-5cd8-4662-b7cb-75a079796937",
+    "category": "tech",
+    "navigationKeyword1": "ai-ml",
+    "navigationKeyword2": "genai-basics",
+    "question": "If you send the same prompt twice with temperature set to 0, will you always get identical output?",
+    "correctAnswer": "Not necessarily; outputs can still differ between calls",
+    "incorrectAnswers": [
+      "Yes, temperature 0 guarantees identical output",
+      "Only if the prompt is shorter than 100 tokens",
+      "Only if both calls come from the same user"
+    ],
+    "explanation": "Temperature 0 makes the model stick to the most likely answers, but API results are still not fully deterministic. Identical inputs can produce different outputs across calls.",
+    "keywords": [
+      "temperature",
+      "non-determinism"
+    ],
+    "source": "https://platform.claude.com/docs/en/resources/glossary"
+  },
+  {
+    "itemId": "2d09b235-135b-4348-b872-87047957bf0b",
+    "seedId": "aa31f37c-c7e6-4959-83f4-a0bbf528d8ff",
+    "category": "tech",
+    "navigationKeyword1": "ai-ml",
+    "navigationKeyword2": "genai-basics",
+    "question": "What does it mean when an AI model hallucinates?",
+    "correctAnswer": "It gives plausible-sounding output that is factually wrong",
+    "incorrectAnswers": [
+      "It refuses to answer a harmless question",
+      "It stops responding partway through",
+      "It repeats its training data word for word"
+    ],
+    "explanation": "A hallucination is output that sounds believable but is false, irrelevant or made up. The confident tone is what makes it easy to miss.",
+    "keywords": [
+      "hallucination",
+      "llm-basics"
+    ],
+    "source": "https://www.ibm.com/think/topics/ai-hallucinations"
+  },
+  {
+    "itemId": "e9887413-45e8-4a28-a96a-a56eabe26165",
+    "seedId": "428be234-ce16-4f95-aaf4-d99543a2adf7",
+    "category": "tech",
+    "navigationKeyword1": "ai-ml",
+    "navigationKeyword2": "genai-basics",
+    "question": "Why can a language model state something false in a confident tone?",
+    "correctAnswer": "It is built to produce plausible text, not to check facts",
+    "incorrectAnswers": [
+      "It deliberately lies to save computing power",
+      "It reads from a corrupted database at runtime",
+      "Its temperature is set too low"
+    ],
+    "explanation": "Language models are optimized to produce text that sounds right. Nothing in that goal guarantees accuracy, and gaps or errors in training data can also become wrong answers.",
+    "keywords": [
+      "hallucination"
+    ],
+    "source": "https://www.ibm.com/think/topics/ai-hallucinations"
+  },
+  {
+    "itemId": "8d06db30-eded-4b4b-87e9-d49a9f2a318b",
+    "seedId": "04c2f2e4-8268-4c84-aab1-63af06d208b6",
+    "category": "tech",
+    "navigationKeyword1": "ai-ml",
+    "navigationKeyword2": "genai-basics",
+    "question": "Which approach helps reduce hallucinations?",
+    "correctAnswer": "Grounding answers in a curated knowledge base with citations",
+    "incorrectAnswers": [
+      "Raising the temperature as high as possible",
+      "Removing all instructions from the prompt",
+      "Asking the model for much longer answers"
+    ],
+    "explanation": "Retrieval-augmented generation limits answers to trusted material, often with citations. Clear prompt rules, such as telling the model to say when it does not know, also help.",
+    "keywords": [
+      "hallucination",
+      "rag"
+    ],
+    "source": "https://www.ibm.com/think/topics/ai-hallucinations"
+  },
+  {
+    "itemId": "eda50fb8-9a22-4bad-9ad0-b77b46d81a96",
+    "seedId": "eb0227e3-f07a-4d4a-a255-f7e1b68643a9",
+    "category": "tech",
+    "navigationKeyword1": "ai-ml",
+    "navigationKeyword2": "genai-basics",
+    "question": "What does retrieval-augmented generation (RAG) add before a model answers?",
+    "correctAnswer": "It pulls relevant outside documents into the prompt",
+    "incorrectAnswers": [
+      "It retrains the model on the user's question",
+      "It doubles the model's number of parameters",
+      "It translates the question into another language"
+    ],
+    "explanation": "RAG finds relevant material from a knowledge base outside the model's training data and adds it to the prompt. The model then answers using both the question and that material.",
+    "keywords": [
+      "rag",
+      "retrieval"
+    ],
+    "source": "https://aws.amazon.com/what-is/retrieval-augmented-generation/"
+  },
+  {
+    "itemId": "e1290f88-7877-4b07-93cc-19eee3b9ed1b",
+    "seedId": "f05e2c41-78a4-4659-a6d4-1502547b85fd",
+    "category": "tech",
+    "navigationKeyword1": "ai-ml",
+    "navigationKeyword2": "genai-basics",
+    "question": "A company wants its chatbot to know this week's policy changes. Why is RAG often picked over retraining?",
+    "correctAnswer": "It adds new information without the cost of retraining",
+    "incorrectAnswers": [
+      "It permanently rewrites the model's weights",
+      "It works without storing the new documents anywhere",
+      "It makes the model's context window unlimited"
+    ],
+    "explanation": "With RAG, new documents are stored and retrieved at question time. That is a cheaper way to give a model fresh information than retraining it.",
+    "keywords": [
+      "rag",
+      "retrieval"
+    ],
+    "source": "https://aws.amazon.com/what-is/retrieval-augmented-generation/"
+  },
+  {
+    "itemId": "a49d47b7-b7ed-4435-98ca-968b75132ee1",
+    "seedId": "808bac26-7100-4e70-b503-ddd787d976ba",
+    "category": "tech",
+    "navigationKeyword1": "ai-ml",
+    "navigationKeyword2": "genai-basics",
+    "question": "How does fine-tuning differ from simply writing a better prompt?",
+    "correctAnswer": "Fine-tuning trains the model further and updates its parameters",
+    "incorrectAnswers": [
+      "Fine-tuning only changes the wording of the prompt",
+      "Fine-tuning swaps the model's tokenizer for a new one",
+      "Fine-tuning attaches a search engine at answer time"
+    ],
+    "explanation": "Fine-tuning is a second, task-specific training pass on a pretrained model that refines its parameters. A prompt only changes the input; the model itself stays the same.",
+    "keywords": [
+      "fine-tuning",
+      "prompting"
+    ],
+    "source": "https://developers.google.com/machine-learning/glossary/generative"
+  },
+  {
+    "itemId": "4160bf7c-c58c-4978-ace4-a90eb358b2cc",
+    "seedId": "f7c70993-bc90-4e60-8e3d-c0daf111e661",
+    "category": "tech",
+    "navigationKeyword1": "ai-ml",
+    "navigationKeyword2": "genai-basics",
+    "question": "What is catastrophic forgetting in fine-tuning?",
+    "correctAnswer": "Fine-tuning causes the model to lose some core knowledge",
+    "incorrectAnswers": [
+      "The model deletes the fine-tuning data after training",
+      "The model forgets earlier messages in a chat",
+      "The model refuses to answer questions on old topics"
+    ],
+    "explanation": "Training a model hard on a narrow new dataset can destabilize what it learned before. Using parameter-efficient methods or a smaller learning rate makes this less likely.",
+    "keywords": [
+      "fine-tuning",
+      "training"
+    ],
+    "source": "https://www.ibm.com/think/topics/fine-tuning"
+  },
+  {
+    "itemId": "24452978-0e20-4c9f-be3c-2a2b1bbaee71",
+    "seedId": "8995fafc-3537-4668-b858-3b1ae987fb98",
+    "category": "tech",
+    "navigationKeyword1": "ai-ml",
+    "navigationKeyword2": "genai-basics",
+    "question": "What is an embedding in machine learning?",
+    "correctAnswer": "A list of numbers that represents an item and its meaning",
+    "incorrectAnswers": [
+      "A short text summary of a document",
+      "A password that unlocks a model's weights",
+      "A picture inserted inside a prompt"
+    ],
+    "explanation": "Embeddings turn things like words or images into numeric vectors. Related items end up with similar vectors, which lets software compare meaning and find similar content.",
+    "keywords": [
+      "embeddings",
+      "vectors"
+    ],
+    "source": "https://aws.amazon.com/what-is/embeddings-in-machine-learning/"
+  },
+  {
+    "itemId": "c6bbb92c-e8ae-497b-a742-9bdc8b742aca",
+    "seedId": "6ec180da-a108-4593-a116-1fc39b5a4ef0",
+    "category": "tech",
+    "navigationKeyword1": "ai-ml",
+    "navigationKeyword2": "genai-basics",
+    "question": "How does a diffusion model generate a new image?",
+    "correctAnswer": "It starts from random noise and removes it step by step",
+    "incorrectAnswers": [
+      "It stitches together pieces of stored photos",
+      "It writes the image one pixel row at a time from a caption",
+      "It sharpens a blurry copy of an existing image"
+    ],
+    "explanation": "During training, the model learns to reverse a process that slowly adds noise to images. To generate, it begins with pure noise and denoises it until a new image appears.",
+    "keywords": [
+      "diffusion",
+      "image-generation"
+    ],
+    "source": "https://www.ibm.com/think/topics/diffusion-models"
+  },
+  {
+    "itemId": "9a31e4c0-6962-4ac9-aad9-cd81dcdf8f9e",
+    "seedId": "fce1fbbe-57b1-4c71-adb8-a23eb214b4aa",
+    "category": "tech",
+    "navigationKeyword1": "ai-ml",
+    "navigationKeyword2": "genai-basics",
+    "question": "How do generative models differ from traditional classification models?",
+    "correctAnswer": "They create new content instead of only assigning labels",
+    "incorrectAnswers": [
+      "They only sort existing data into categories",
+      "They can only work with numbers, never text",
+      "They need no training data at all"
+    ],
+    "explanation": "A classifier predicts a label from features, such as spam or not spam. A generative model works the other way, producing new content like text or images.",
+    "keywords": [
+      "generative-ai",
+      "llm-basics"
+    ],
+    "source": "https://aws.amazon.com/what-is/generative-ai/"
+  },
+  {
+    "itemId": "e26d098e-2fbb-41a5-af63-388768bc81c8",
+    "seedId": "64395c9a-4344-47bb-905e-d054ea6d2455",
+    "category": "tech",
+    "navigationKeyword1": "ai-ml",
+    "navigationKeyword2": "genai-basics",
+    "question": "What does a model's reliable knowledge cutoff tell you?",
+    "correctAnswer": "The date through which its knowledge is most complete and reliable",
+    "incorrectAnswers": [
+      "The date the model will be retired",
+      "The last date it was updated with a security patch",
+      "The date its context window was last increased"
+    ],
+    "explanation": "A model learns from data collected up to a point in time. Its reliable knowledge cutoff marks the date through which that knowledge is most extensive, so later events may be missing.",
+    "keywords": [
+      "knowledge-cutoff",
+      "llm-basics"
+    ],
+    "source": "https://platform.claude.com/docs/en/models/overview"
+  },
+  {
+    "itemId": "abca7891-3e14-43b8-85eb-28ce0ff942dc",
+    "seedId": "35b8b141-304d-4dc9-acba-89bf3d63277e",
+    "category": "tech",
+    "navigationKeyword1": "ai-ml",
+    "navigationKeyword2": "genai-basics",
+    "question": "What is the difference between a model's parameters and its hyperparameters?",
+    "correctAnswer": "Parameters are learned in training; hyperparameters are set by people",
+    "incorrectAnswers": [
+      "Parameters are set by people; hyperparameters are learned",
+      "Both are learned automatically during inference",
+      "Parameters only exist in image models"
+    ],
+    "explanation": "Parameters are the weights and biases a model learns during training. Hyperparameters, such as how long to train, are settings people adjust between training runs.",
+    "keywords": [
+      "parameters",
+      "training"
+    ],
+    "source": "https://developers.google.com/machine-learning/glossary/fundamentals"
+  },
+  {
+    "itemId": "d68a054d-f103-427a-b033-1bebda41ca11",
+    "seedId": "d1ec409d-94f2-4546-af70-0dbcc9fecc4b",
+    "category": "tech",
+    "navigationKeyword1": "ai-ml",
+    "navigationKeyword2": "genai-basics",
+    "question": "Right after pretraining, why is a language model not yet a good assistant?",
+    "correctAnswer": "It learned to predict the next word, not to follow instructions",
+    "incorrectAnswers": [
+      "It has not yet been given any parameters",
+      "It cannot read text until it is fine-tuned",
+      "Its context window is still set to zero"
+    ],
+    "explanation": "Pretraining teaches a model to predict the next word from a huge amount of text. Extra steps such as fine-tuning and RLHF are used to make it follow instructions and answer helpfully.",
+    "keywords": [
+      "pretraining",
+      "fine-tuning"
+    ],
+    "source": "https://platform.claude.com/docs/en/resources/glossary"
+  }
+]

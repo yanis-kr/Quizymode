@@ -1,192 +1,7 @@
 [
   {
-    "itemId": "90098c87-ec29-4eca-bdcc-4ef046b6e400",
-    "category": "tech",
-    "navigationKeyword1": "ai-ml",
-    "navigationKeyword2": "llms",
-    "question": "What is the usual next-token objective when training many large language models?",
-    "correctAnswer": "Predict the next token given prior tokens in the sequence",
-    "incorrectAnswers": [
-      "Predict only the first token of a document",
-      "Predict the sum of all token IDs",
-      "Predict a single fixed label for every input"
-    ],
-    "explanation": "Autoregressive language models are trained to estimate conditional probabilities of the next token given the preceding context.",
-    "keywords": [
-      "ai-ml",
-      "llms"
-    ],
-    "source": "https://arxiv.org/abs/2005.14165"
-  },
-  {
-    "itemId": "4b763260-7fe7-4190-b02d-f0575ab8d9fb",
-    "category": "tech",
-    "navigationKeyword1": "ai-ml",
-    "navigationKeyword2": "llms",
-    "question": "Which architecture introduced scaled dot-product self-attention as the core building block for many modern LLMs?",
-    "correctAnswer": "The Transformer",
-    "incorrectAnswers": [
-      "A pure recurrent neural network",
-      "A decision tree ensemble",
-      "A support vector machine"
-    ],
-    "explanation": "The Transformer model relies on attention to relate all positions to each other in parallel rather than sequential recurrence.",
-    "keywords": [
-      "ai-ml",
-      "transformer"
-    ],
-    "source": "https://arxiv.org/abs/1706.03762"
-  },
-  {
-    "itemId": "6bc41ca6-89c2-4c24-8a1e-b1d6e8f2eb08",
-    "category": "tech",
-    "navigationKeyword1": "ai-ml",
-    "navigationKeyword2": "llms",
-    "question": "What does the context window of an LLM limit?",
-    "correctAnswer": "How many tokens the model can attend to in one forward pass",
-    "incorrectAnswers": [
-      "How many users can log in at once",
-      "The size of the training dataset on disk",
-      "The number of programming languages it knows"
-    ],
-    "explanation": "Attention and memory are computed over a bounded number of tokens, so longer prompts and outputs must fit within that window.",
-    "keywords": [
-      "ai-ml",
-      "context-window"
-    ],
-    "source": "https://www.ibm.com/topics/context-window"
-  },
-  {
-    "itemId": "df280155-0537-4de5-97be-e0ef14d76cc4",
-    "category": "tech",
-    "navigationKeyword1": "ai-ml",
-    "navigationKeyword2": "llms",
-    "question": "Compared with only prompting, what does supervised fine-tuning on labeled examples change?",
-    "correctAnswer": "The model weights to better match the target task or style",
-    "incorrectAnswers": [
-      "Only the font size of the output",
-      "The operating system scheduler",
-      "The physical CPU temperature"
-    ],
-    "explanation": "Fine-tuning updates parameters using task-specific data so behavior shifts beyond what fixed prompts alone can achieve.",
-    "keywords": [
-      "ai-ml",
-      "fine-tuning"
-    ],
-    "source": "https://huggingface.co/docs/transformers/training"
-  },
-  {
-    "itemId": "3b176527-c8fd-4fd3-9fd0-312c735b9991",
-    "category": "tech",
-    "navigationKeyword1": "ai-ml",
-    "navigationKeyword2": "llms",
-    "question": "At decoding time, raising the softmax temperature typically does what to token sampling?",
-    "correctAnswer": "Makes the distribution flatter so outputs become more random",
-    "incorrectAnswers": [
-      "Forces the model to repeat one token forever",
-      "Removes all randomness from sampling",
-      "Disables the vocabulary"
-    ],
-    "explanation": "Higher temperature scales logits before softmax, spreading probability mass and increasing diversity of sampled tokens.",
-    "keywords": [
-      "ai-ml",
-      "sampling"
-    ],
-    "source": "https://en.wikipedia.org/wiki/Softmax_function"
-  },
-  {
-    "itemId": "43223986-9ad7-4a85-8711-fe6b68ef307d",
-    "category": "tech",
-    "navigationKeyword1": "ai-ml",
-    "navigationKeyword2": "llms",
-    "question": "In retrieval-augmented generation, what extra step happens before the model writes an answer?",
-    "correctAnswer": "Relevant documents or passages are retrieved from a store and conditioned as context",
-    "incorrectAnswers": [
-      "The model deletes its weights",
-      "The prompt is encrypted with AES only",
-      "Training always restarts from zero"
-    ],
-    "explanation": "RAG grounds answers by fetching external text so the model can cite or reason over fresher or private knowledge sources.",
-    "keywords": [
-      "ai-ml",
-      "rag"
-    ],
-    "source": "https://arxiv.org/abs/2005.11401"
-  },
-  {
-    "itemId": "e7e8eb01-8ae0-467a-b5e4-927c6a653c69",
-    "category": "tech",
-    "navigationKeyword1": "ai-ml",
-    "navigationKeyword2": "llms",
-    "question": "ChatGPT reads and writes text in small chunks called what?",
-    "correctAnswer": "Tokens",
-    "incorrectAnswers": [
-      "Pixels",
-      "Syllables",
-      "Bytes"
-    ],
-    "explanation": "AI chatbots split text into chunks called tokens. In English, one token is about 4 characters, or roughly three-quarters of a word.",
-    "keywords": [],
-    "source": "https://help.openai.com/en/articles/4936856-what-are-tokens-and-how-to-count-them",
-    "starterWorld": "genai",
-    "wowLine": "In English, one token is about 4 characters, or roughly three-quarters of a word."
-  },
-  {
-    "itemId": "57724bac-d46e-46b3-a036-ec6ec520f08a",
-    "category": "tech",
-    "navigationKeyword1": "ai-ml",
-    "navigationKeyword2": "llms",
-    "question": "A \"7B\" AI model has 7 billion of what?",
-    "correctAnswer": "Parameters",
-    "incorrectAnswers": [
-      "Users",
-      "Web pages",
-      "Languages"
-    ],
-    "explanation": "Parameters are the numbers a model learns during training. At 16-bit precision each takes 2 bytes, so 7 billion parameters need about 14 GB of memory.",
-    "keywords": [],
-    "source": "https://huggingface.co/docs/transformers/en/llm_tutorial_optimization",
-    "starterWorld": "genai",
-    "wowLine": "Stored at 16-bit precision, 7 billion parameters take about 14 GB of memory just to load."
-  },
-  {
-    "itemId": "41a6951c-712a-4e2f-a875-6a39e13a4810",
-    "category": "tech",
-    "navigationKeyword1": "ai-ml",
-    "navigationKeyword2": "llms",
-    "question": "When a chatbot confidently states something false, it is called what?",
-    "correctAnswer": "A hallucination",
-    "incorrectAnswers": [
-      "A reboot",
-      "A firewall",
-      "A cache hit"
-    ],
-    "explanation": "Language models predict likely words rather than look facts up, so they can produce fluent statements that are wrong.",
-    "keywords": [],
-    "source": "https://en.wikipedia.org/wiki/Hallucination_(artificial_intelligence)",
-    "starterWorld": "genai",
-    "wowLine": "Chatbots predict likely words instead of looking facts up, so they can sound sure and still be wrong."
-  },
-  {
-    "itemId": "94937873-ae1e-40ec-b1d3-492bfd68afc3",
-    "category": "tech",
-    "navigationKeyword1": "ai-ml",
-    "navigationKeyword2": "llms",
-    "question": "What does the T in GPT stand for?",
-    "correctAnswer": "Transformer",
-    "incorrectAnswers": [
-      "Tensor",
-      "Translator",
-      "Token"
-    ],
-    "explanation": "GPT stands for Generative Pre-trained Transformer. The Transformer design comes from the 2017 paper Attention Is All You Need.",
-    "keywords": [],
-    "source": "https://arxiv.org/abs/1706.03762",
-    "starterWorld": "genai",
-    "wowLine": "The Transformer design was introduced in a 2017 Google paper titled \"Attention Is All You Need\"."
-  },
-  {
     "itemId": "f5ce94c5-fd5a-4806-b363-86fa96c0a4c6",
+    "seedId": "53eda7f7-1a16-4799-bb49-78a13579b9b1",
     "category": "tech",
     "navigationKeyword1": "ai-ml",
     "navigationKeyword2": "llms",
@@ -198,49 +13,269 @@
       "Local logic map"
     ],
     "explanation": "An LLM is a language model with a very large number of parameters, trained on huge amounts of text. GPT-3 had 175 billion parameters.",
-    "keywords": [],
+    "keywords": [
+      "ai-ml",
+      "llms"
+    ],
     "source": "https://arxiv.org/abs/2005.14165",
     "starterWorld": "genai",
     "wowLine": "The 2020 model GPT-3 had 175 billion parameters, far more than any earlier language model."
   },
   {
-    "itemId": "d13327a4-7cda-4227-86d2-b94baf19a83d",
+    "itemId": "94937873-ae1e-40ec-b1d3-492bfd68afc3",
+    "seedId": "55e9d89b-6085-442c-a3d2-de6a5e063353",
     "category": "tech",
     "navigationKeyword1": "ai-ml",
     "navigationKeyword2": "llms",
-    "question": "How much text an AI model can consider at once is called its what?",
-    "correctAnswer": "Context window",
+    "question": "What does the T in GPT stand for?",
+    "correctAnswer": "Transformer",
     "incorrectAnswers": [
-      "Screen size",
-      "Memory card",
-      "Chat history"
+      "Tensor",
+      "Translator",
+      "Token"
     ],
-    "explanation": "The context window is measured in tokens and covers your prompt, any documents you add and the reply. Some models accept about 200,000 tokens.",
-    "keywords": [],
-    "source": "https://docs.anthropic.com/en/docs/build-with-claude/context-windows",
+    "explanation": "GPT stands for generative pre-trained transformer. The Transformer is the neural network design that most modern chatbots are built on.",
+    "keywords": [
+      "ai-ml",
+      "gpt",
+      "transformer"
+    ],
+    "source": "https://en.wikipedia.org/wiki/Generative_pre-trained_transformer",
     "starterWorld": "genai",
-    "wowLine": "Some models can take in about 200,000 tokens at once, roughly the length of a long novel."
+    "wowLine": "OpenAI released the very first GPT model in 2018, four years before ChatGPT."
   },
   {
-    "itemId": "017a87a1-fd3e-4420-9057-9e74791dae4c",
+    "itemId": "90098c87-ec29-4eca-bdcc-4ef046b6e400",
+    "seedId": "264ea1fb-08c3-4874-9735-2e1b6047624e",
     "category": "tech",
     "navigationKeyword1": "ai-ml",
     "navigationKeyword2": "llms",
-    "question": "Turning an AI's temperature setting up makes its answers more what?",
-    "correctAnswer": "Varied",
+    "question": "During pre-training, what task does a language model practise over and over on huge amounts of text?",
+    "correctAnswer": "Predicting the next word",
     "incorrectAnswers": [
-      "Accurate",
-      "Polite",
-      "Short"
+      "Translating each sentence",
+      "Counting words per page",
+      "Sorting pages by topic"
     ],
-    "explanation": "Temperature controls randomness when the model picks each next token. Low values give focused, repeatable answers and high values give more variety.",
-    "keywords": [],
-    "source": "https://platform.openai.com/docs/api-reference/chat/create",
+    "explanation": "The model reads text and keeps guessing which word comes next, adjusting itself when it is wrong. Repeated across billions of sentences, this teaches it grammar, facts and style.",
+    "keywords": [
+      "ai-ml",
+      "pre-training"
+    ],
+    "source": "https://huggingface.co/learn/llm-course/chapter1/4"
+  },
+  {
+    "itemId": "0d044beb-060b-41fd-a5f9-90c2954cfaf0",
+    "seedId": "4c09e38f-99ce-4281-8b25-6eac87246f54",
+    "category": "tech",
+    "navigationKeyword1": "ai-ml",
+    "navigationKeyword2": "llms",
+    "question": "Why can a language model be pre-trained on billions of web pages without people labelling them?",
+    "correctAnswer": "The text itself supplies the answers",
+    "incorrectAnswers": [
+      "Search engines label the pages",
+      "Only pre-labelled pages are used",
+      "Volunteers tag each page"
+    ],
+    "explanation": "In self-supervised learning the target comes from the input: hide the next word and ask the model to guess it. No human labelling is needed, which makes training on huge text collections possible.",
+    "keywords": [
+      "ai-ml",
+      "pre-training",
+      "self-supervised"
+    ],
+    "source": "https://huggingface.co/learn/llm-course/chapter1/4"
+  },
+  {
+    "itemId": "57724bac-d46e-46b3-a036-ec6ec520f08a",
+    "seedId": "72bc4401-06eb-4223-a737-845da8418b55",
+    "category": "tech",
+    "navigationKeyword1": "ai-ml",
+    "navigationKeyword2": "llms",
+    "question": "An AI model is described as \"7B\". What does it have 7 billion of?",
+    "correctAnswer": "Parameters",
+    "incorrectAnswers": [
+      "Training documents",
+      "Vocabulary words",
+      "Bytes of storage"
+    ],
+    "explanation": "Parameters are the numbers a model adjusts during training to store what it has learned. At 16-bit precision each takes 2 bytes, so a 7B model needs about 14 GB of memory just to load.",
+    "keywords": [
+      "ai-ml",
+      "parameters",
+      "model-size"
+    ],
+    "source": "https://huggingface.co/docs/transformers/en/llm_tutorial_optimization",
     "starterWorld": "genai",
-    "wowLine": "At temperature 0 a model gives nearly the same answer every time. Higher settings add variety."
+    "wowLine": "Stored at 16-bit precision, 7 billion parameters take about 14 GB of memory just to load."
+  },
+  {
+    "itemId": "df280155-0537-4de5-97be-e0ef14d76cc4",
+    "seedId": "b59c48b3-f9dc-463c-a6f4-def34da5905f",
+    "category": "tech",
+    "navigationKeyword1": "ai-ml",
+    "navigationKeyword2": "llms",
+    "question": "A company takes a pre-trained model and trains it further on its own support chats. What is this called?",
+    "correctAnswer": "Fine-tuning",
+    "incorrectAnswers": [
+      "Pre-training",
+      "Prompt engineering",
+      "Tokenization"
+    ],
+    "explanation": "Fine-tuning continues training an already pre-trained model on a smaller, focused dataset. It needs far less data, compute and time than training a model from scratch.",
+    "keywords": [
+      "ai-ml",
+      "fine-tuning"
+    ],
+    "source": "https://huggingface.co/docs/transformers/training"
+  },
+  {
+    "itemId": "540b8241-3682-4900-b293-835d441fdf0a",
+    "seedId": "e10e10ef-5ffd-4144-b563-e5bf727a618f",
+    "category": "tech",
+    "navigationKeyword1": "ai-ml",
+    "navigationKeyword2": "llms",
+    "question": "Many model families come in a \"base\" version and a \"chat\" version. How is the chat version usually made?",
+    "correctAnswer": "By fine-tuning the base model for dialogue",
+    "incorrectAnswers": [
+      "By training a new model only on chats",
+      "By shrinking the base model to run faster",
+      "By connecting the base model to search"
+    ],
+    "explanation": "A base model is good at continuing text but not at holding a conversation. Chat versions, such as Llama 2-Chat, start from the base model and are fine-tuned specifically for dialogue.",
+    "keywords": [
+      "ai-ml",
+      "fine-tuning",
+      "chat-models"
+    ],
+    "source": "https://arxiv.org/abs/2307.09288"
+  },
+  {
+    "itemId": "07eb8f61-0f51-4f8a-9bf5-2b0d524b0a05",
+    "seedId": "e72429a8-daf1-4024-9008-65abc1f7d743",
+    "category": "tech",
+    "navigationKeyword1": "ai-ml",
+    "navigationKeyword2": "llms",
+    "question": "In reinforcement learning from human feedback (RLHF), what do the human reviewers mainly do?",
+    "correctAnswer": "Rank the model's answers from best to worst",
+    "incorrectAnswers": [
+      "Write the model's code by hand",
+      "Label every word in the training text",
+      "Type live replies for users"
+    ],
+    "explanation": "The rankings train a separate reward model that scores answers the way people would. The chatbot is then tuned to produce answers that earn higher scores.",
+    "keywords": [
+      "ai-ml",
+      "rlhf",
+      "alignment"
+    ],
+    "source": "https://huggingface.co/blog/rlhf"
+  },
+  {
+    "itemId": "ff03df0f-4e60-490d-b908-b05aa99c448e",
+    "seedId": "04a04140-79b0-49bf-b5fc-178fe7a29ef0",
+    "category": "tech",
+    "navigationKeyword1": "ai-ml",
+    "navigationKeyword2": "llms",
+    "question": "You show a chatbot three worked examples of a task in your prompt, and it then does a fourth correctly. What changed inside the model?",
+    "correctAnswer": "Nothing; it learned from the prompt",
+    "incorrectAnswers": [
+      "It retrained itself on the examples",
+      "It saved the examples into its weights",
+      "It downloaded a task-specific add-on"
+    ],
+    "explanation": "This is called few-shot or in-context learning. A 2020 study showed a large model could pick up new tasks from examples in the prompt alone, with no fine-tuning or weight updates.",
+    "keywords": [
+      "ai-ml",
+      "in-context-learning",
+      "few-shot"
+    ],
+    "source": "https://arxiv.org/abs/2005.14165"
+  },
+  {
+    "itemId": "41a6951c-712a-4e2f-a875-6a39e13a4810",
+    "seedId": "3006854d-ef94-4384-8fec-e7608f2198c2",
+    "category": "tech",
+    "navigationKeyword1": "ai-ml",
+    "navigationKeyword2": "llms",
+    "question": "When a chatbot confidently states something false as if it were fact, what is this called?",
+    "correctAnswer": "Hallucination",
+    "incorrectAnswers": [
+      "Jailbreak",
+      "Prompt injection",
+      "Overfitting"
+    ],
+    "explanation": "A hallucination is AI output that contains false or misleading information presented as fact. It is one of the main reasons to double-check important chatbot answers.",
+    "keywords": [
+      "ai-ml",
+      "hallucination"
+    ],
+    "source": "https://en.wikipedia.org/wiki/Hallucination_(artificial_intelligence)",
+    "starterWorld": "genai",
+    "wowLine": "Chatbots predict likely words instead of looking facts up, so they can sound sure and still be wrong."
+  },
+  {
+    "itemId": "877697dc-286e-408d-869d-f475330b97cf",
+    "seedId": "a04466a2-512e-4873-a77e-63c8b5071048",
+    "category": "tech",
+    "navigationKeyword1": "ai-ml",
+    "navigationKeyword2": "llms",
+    "question": "A model that can take in a photo and answer a text question about it is described as what?",
+    "correctAnswer": "Multimodal",
+    "incorrectAnswers": [
+      "Multilingual",
+      "Multithreaded",
+      "Multi-agent"
+    ],
+    "explanation": "Multimodal models can process or generate more than one type of data, such as text, images or audio. Many recent large language models work this way.",
+    "keywords": [
+      "ai-ml",
+      "multimodal"
+    ],
+    "source": "https://en.wikipedia.org/wiki/Large_language_model"
+  },
+  {
+    "itemId": "ff7518fb-7235-44ea-8979-48f12d327252",
+    "seedId": "1acbeea5-6ce1-43d9-91f3-621180cca16d",
+    "category": "tech",
+    "navigationKeyword1": "ai-ml",
+    "navigationKeyword2": "llms",
+    "question": "What do \"reasoning\" models do differently from standard chatbots before giving a final answer?",
+    "correctAnswer": "Work through several steps first",
+    "incorrectAnswers": [
+      "Ask a human expert to check",
+      "Switch to a bigger model",
+      "Look the answer up in a table"
+    ],
+    "explanation": "Reasoning models are trained to tackle multi-step problems by working through them before answering. The trade-off is that they often use far more computing power per answer.",
+    "keywords": [
+      "ai-ml",
+      "reasoning-models"
+    ],
+    "source": "https://en.wikipedia.org/wiki/Reasoning_language_model"
+  },
+  {
+    "itemId": "2600990d-b72c-421d-a151-95f88584a633",
+    "seedId": "da12ab24-018f-4069-b933-f24683d257f3",
+    "category": "tech",
+    "navigationKeyword1": "ai-ml",
+    "navigationKeyword2": "llms",
+    "question": "What does it mean when a company releases an \"open-weight\" model?",
+    "correctAnswer": "Its trained parameters can be downloaded",
+    "incorrectAnswers": [
+      "Its training data is fully published",
+      "It can only be used in a web browser",
+      "Its answers are checked by the public"
+    ],
+    "explanation": "Open weights are a model's publicly released learned parameters, so people can run it on their own hardware. Unlike fully open-source AI, the training data and code are often not shared.",
+    "keywords": [
+      "ai-ml",
+      "open-weight"
+    ],
+    "source": "https://en.wikipedia.org/wiki/Open-weight_model"
   },
   {
     "itemId": "8c6adcb5-a5e2-41e4-9002-40ed2bab01bf",
+    "seedId": "aaa61a01-aab6-4b1f-a36c-e31c0afbe2de",
     "category": "tech",
     "navigationKeyword1": "ai-ml",
     "navigationKeyword2": "llms",
@@ -251,8 +286,11 @@
       "Meta",
       "Apple"
     ],
-    "explanation": "OpenAI released ChatGPT as a free research preview on 30 November 2022.",
-    "keywords": [],
+    "explanation": "OpenAI released ChatGPT on 30 November 2022. It reached about 100 million monthly users roughly two months later.",
+    "keywords": [
+      "ai-ml",
+      "chatgpt"
+    ],
     "source": "https://en.wikipedia.org/wiki/ChatGPT",
     "starterWorld": "genai",
     "wowLine": "ChatGPT reached an estimated 100 million users within about two months of launch."

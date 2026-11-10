@@ -1,86 +1,24 @@
 [
   {
-    "itemId": "0c341957-d71a-4c2b-b758-b0a66a1b3123",
-    "seedId": "4c24da0c-ccf7-403c-b920-d2553daa1a6a",
-    "category": "tech",
-    "navigationKeyword1": "ai-ml",
-    "navigationKeyword2": "genai-facts",
-    "question": "In what month and year did NIST release version 1.0 of its AI Risk Management Framework?",
-    "correctAnswer": "January 2023",
-    "incorrectAnswers": [
-      "October 2021",
-      "June 2022",
-      "March 2024"
-    ],
-    "explanation": "NIST released AI RMF 1.0 on January 26, 2023, as a framework intended for voluntary use.",
-    "keywords": [
-      "genai",
-      "ai-safety",
-      "ai-policy"
-    ],
-    "source": "https://www.nist.gov/itl/ai-risk-management-framework"
-  },
-  {
-    "itemId": "6d899468-b3bf-48bf-8fd4-f555a5f93ceb",
-    "seedId": "57831eb0-1bb6-4155-84a7-94451b9699ab",
-    "category": "tech",
-    "navigationKeyword1": "ai-ml",
-    "navigationKeyword2": "genai-facts",
-    "question": "NIST's Generative AI Profile (NIST AI 600-1), a companion to its AI risk framework, came out in which year?",
-    "correctAnswer": "2024",
-    "incorrectAnswers": [
-      "2021",
-      "2022",
-      "2025"
-    ],
-    "explanation": "The Generative AI Profile was released on July 26, 2024, to apply the AI RMF to generative AI.",
-    "keywords": [
-      "genai",
-      "ai-safety",
-      "ai-policy"
-    ],
-    "source": "https://www.nist.gov/itl/ai-risk-management-framework"
-  },
-  {
-    "itemId": "8a8bf66f-1f72-45fb-b32e-fa26c6c079e5",
-    "seedId": "d49f5486-3fc4-497f-87ed-337183fd051d",
-    "category": "tech",
-    "navigationKeyword1": "ai-ml",
-    "navigationKeyword2": "genai-facts",
-    "question": "Which of the four NIST AI RMF core functions is described as cross-cutting across the other three?",
-    "correctAnswer": "Govern",
-    "incorrectAnswers": [
-      "Map",
-      "Measure",
-      "Manage"
-    ],
-    "explanation": "The core has four functions: govern, map, measure and manage. Govern is infused throughout and supports the other three.",
-    "keywords": [
-      "ai-safety",
-      "ai-policy"
-    ],
-    "source": "https://airc.nist.gov/airmf-resources/airmf/5-sec-core/"
-  },
-  {
     "itemId": "449a9589-939c-4e53-9874-fa6fe2ab95b4",
     "seedId": "25aab318-ea8d-4a98-9083-e48ae0da0d6f",
     "category": "tech",
     "navigationKeyword1": "ai-ml",
     "navigationKeyword2": "genai-facts",
-    "question": "Which AI pioneer shared the 2024 Nobel Prize in Physics with John Hopfield?",
+    "question": "In 2024, which AI pioneer shared the Nobel Prize in Physics for work that made neural networks learn?",
     "correctAnswer": "Geoffrey Hinton",
     "incorrectAnswers": [
       "Yann LeCun",
       "Yoshua Bengio",
       "Demis Hassabis"
     ],
-    "explanation": "The 2024 physics prize went to John Hopfield and Geoffrey Hinton, both known for early neural network research.",
+    "explanation": "Geoffrey Hinton and John Hopfield won for foundational discoveries that enable machine learning with artificial neural networks.",
     "keywords": [
       "genai",
       "ai-history",
       "awards"
     ],
-    "source": "https://en.wikipedia.org/wiki/Nobel_Prize_in_Physics"
+    "source": "https://en.wikipedia.org/wiki/Geoffrey_Hinton"
   },
   {
     "itemId": "8dfbd4a1-bf82-41be-9515-7da61a8a8210",
@@ -88,14 +26,14 @@
     "category": "tech",
     "navigationKeyword1": "ai-ml",
     "navigationKeyword2": "genai-facts",
-    "question": "The 2018 Turing Award went to Bengio, Hinton and LeCun for breakthroughs in what area?",
+    "question": "The 2018 Turing Award, often called computing's Nobel Prize, honored Bengio, Hinton and LeCun for what?",
     "correctAnswer": "Deep neural networks",
     "incorrectAnswers": [
       "Public-key cryptography",
       "Relational databases",
       "Compiler optimization"
     ],
-    "explanation": "They were honored for conceptual and engineering breakthroughs that made deep neural networks a critical part of computing.",
+    "explanation": "They were honored for breakthroughs that made deep neural networks a critical part of computing, the foundation of today's AI boom.",
     "keywords": [
       "ai-history",
       "awards",
@@ -109,14 +47,14 @@
     "category": "tech",
     "navigationKeyword1": "ai-ml",
     "navigationKeyword2": "genai-facts",
-    "question": "Demis Hassabis and John Jumper shared half of the 2024 Nobel Prize in Chemistry for what AI work?",
-    "correctAnswer": "Protein structure prediction",
+    "question": "Demis Hassabis and John Jumper shared the 2024 Nobel Prize in Chemistry for an AI that does what?",
+    "correctAnswer": "Predicts protein shapes",
     "incorrectAnswers": [
-      "Battery materials discovery",
-      "Automated DNA sequencing",
-      "Global weather forecasting"
+      "Designs new batteries",
+      "Reads DNA sequences",
+      "Forecasts global weather"
     ],
-    "explanation": "AlphaFold predicts the 3D shape of a protein from its amino acid sequence. David Baker received the other half for protein design.",
+    "explanation": "Their AlphaFold system predicts a protein's 3D shape from its building blocks, a task that once took scientists years per protein.",
     "keywords": [
       "ai-history",
       "awards",
@@ -130,14 +68,14 @@
     "category": "tech",
     "navigationKeyword1": "ai-ml",
     "navigationKeyword2": "genai-facts",
-    "question": "What open standard did Anthropic release in November 2024 to connect AI assistants to data sources and tools?",
+    "question": "Which open standard, released in late 2024, lets AI assistants plug into outside tools and data in one common way?",
     "correctAnswer": "Model Context Protocol",
     "incorrectAnswers": [
       "Language Server Protocol",
       "OpenAPI Specification",
       "Agent Communication Language"
     ],
-    "explanation": "MCP was open-sourced on November 25, 2024, to replace one-off integrations with a single protocol for two-way connections.",
+    "explanation": "The Model Context Protocol replaces one-off custom integrations with a single shared protocol for connecting AI to data and tools.",
     "keywords": [
       "genai",
       "mcp",
@@ -151,14 +89,14 @@
     "category": "tech",
     "navigationKeyword1": "ai-ml",
     "navigationKeyword2": "genai-facts",
-    "question": "In the Claude 3 family launched in March 2024, which model sat at the lowest capability tier?",
+    "question": "In the Claude 3 model family launched in March 2024, which model was the smallest and fastest?",
     "correctAnswer": "Claude 3 Haiku",
     "incorrectAnswers": [
       "Claude 3 Sonnet",
       "Claude 3 Opus",
       "Claude 3 Instant"
     ],
-    "explanation": "The family was announced on March 4, 2024, as Haiku, Sonnet and Opus in ascending order of capability.",
+    "explanation": "The family was named Haiku, Sonnet and Opus, from smallest and fastest to most capable.",
     "keywords": [
       "genai",
       "model-releases"
@@ -166,168 +104,24 @@
     "source": "https://www.anthropic.com/news/claude-3-family"
   },
   {
-    "itemId": "937f9565-eebc-4f97-a355-1f8b927e36b4",
-    "seedId": "43bd97fa-d041-4c3d-aa08-9beb04f8e8a1",
-    "category": "tech",
-    "navigationKeyword1": "ai-ml",
-    "navigationKeyword2": "genai-facts",
-    "question": "AI Safety Levels (ASL), introduced in a September 2023 scaling policy, were modeled on which existing standard?",
-    "correctAnswer": "U.S. biosafety level standards",
-    "incorrectAnswers": [
-      "Nuclear reactor safety classes",
-      "Aviation software assurance levels",
-      "SAE driving automation levels"
-    ],
-    "explanation": "The ASL framework borrows the idea of graded containment levels from biosafety level (BSL) standards for handling dangerous pathogens.",
-    "keywords": [
-      "ai-safety",
-      "ai-policy"
-    ],
-    "source": "https://www.anthropic.com/news/anthropics-responsible-scaling-policy"
-  },
-  {
-    "itemId": "c0242170-b34a-4cef-987b-645fcbc1cc86",
-    "seedId": "55714798-3df3-4b87-9f99-b874d56a4a06",
-    "category": "tech",
-    "navigationKeyword1": "ai-ml",
-    "navigationKeyword2": "genai-facts",
-    "question": "Which of these does NOT count toward an LLM's context window during an API request?",
-    "correctAnswer": "The model's original training corpus",
-    "incorrectAnswers": [
-      "The system prompt",
-      "Tool definitions sent with the request",
-      "The response the model is generating"
-    ],
-    "explanation": "The context window is the model's working memory for a request, including its own output. The training data is separate.",
-    "keywords": [
-      "genai",
-      "context-window",
-      "tokens"
-    ],
-    "source": "https://platform.claude.com/docs/en/build-with-claude/context-windows"
-  },
-  {
-    "itemId": "89f07867-920b-4a3a-ab81-c859a9efc63c",
-    "seedId": "bb4d4752-dd8d-4fb0-93f5-5651cea441ed",
-    "category": "tech",
-    "navigationKeyword1": "ai-ml",
-    "navigationKeyword2": "genai-facts",
-    "question": "As a context window fills with more tokens, a model's accuracy and recall tend to drop. What is this called?",
-    "correctAnswer": "Context rot",
-    "incorrectAnswers": [
-      "Catastrophic forgetting",
-      "Model collapse",
-      "Overfitting"
-    ],
-    "explanation": "More context is not automatically better: accuracy and recall degrade as token count grows, so curating context matters.",
-    "keywords": [
-      "genai",
-      "context-window"
-    ],
-    "source": "https://platform.claude.com/docs/en/build-with-claude/context-windows"
-  },
-  {
     "itemId": "bc2ca51a-1636-46bb-a93f-d88f27caa453",
     "seedId": "8b07e6ad-84a4-41d9-ab94-ce010e622af6",
     "category": "tech",
     "navigationKeyword1": "ai-ml",
     "navigationKeyword2": "genai-facts",
-    "question": "On what date did the EU AI Act enter into force?",
-    "correctAnswer": "1 August 2024",
+    "question": "The EU AI Act, described as the world's first comprehensive AI law, entered into force in which year?",
+    "correctAnswer": "2024",
     "incorrectAnswers": [
-      "1 January 2024",
-      "2 February 2025",
-      "2 August 2026"
+      "2019",
+      "2021",
+      "2026"
     ],
-    "explanation": "The Act entered into force on 1 August 2024. Its rules then phase in over later dates, starting with prohibitions in February 2025.",
+    "explanation": "The Act entered into force on 1 August 2024. Its rules then phase in over the following years.",
     "keywords": [
       "ai-policy",
       "eu-ai-act"
     ],
     "source": "https://digital-strategy.ec.europa.eu/en/policies/regulatory-framework-ai"
-  },
-  {
-    "itemId": "78a4acc3-ed4d-4af2-a055-3fdd68ef3c73",
-    "seedId": "e750c324-4a19-4a47-9a1f-148bfed92d1f",
-    "category": "tech",
-    "navigationKeyword1": "ai-ml",
-    "navigationKeyword2": "genai-facts",
-    "question": "Under the EU AI Act's risk tiers, where does a typical email spam filter fall?",
-    "correctAnswer": "Minimal or no risk",
-    "incorrectAnswers": [
-      "High risk",
-      "Unacceptable risk",
-      "Transparency risk"
-    ],
-    "explanation": "Most AI systems in use, such as spam filters, are minimal or no risk and face no specific rules under the Act.",
-    "keywords": [
-      "ai-policy",
-      "eu-ai-act"
-    ],
-    "source": "https://digital-strategy.ec.europa.eu/en/policies/regulatory-framework-ai"
-  },
-  {
-    "itemId": "17c30b27-6f12-4ff8-9f2c-7867938f6817",
-    "seedId": "219cb463-9a7f-4922-a846-707c0a5e5617",
-    "category": "tech",
-    "navigationKeyword1": "ai-ml",
-    "navigationKeyword2": "genai-facts",
-    "question": "A chatbot summarizing a webpage obeys hidden instructions planted in that page. What is this attack called?",
-    "correctAnswer": "Indirect prompt injection",
-    "incorrectAnswers": [
-      "Direct prompt injection",
-      "Training data poisoning",
-      "Model inversion"
-    ],
-    "explanation": "Indirect injection comes from external content the model reads, not from the user. Prompt injection tops a widely used 2025 list of LLM app risks.",
-    "keywords": [
-      "ai-safety",
-      "prompt-injection",
-      "security"
-    ],
-    "source": "https://genai.owasp.org/llmrisk/llm01-prompt-injection/"
-  },
-  {
-    "itemId": "27861413-a1f9-4f35-a6a8-34710c8b8fb7",
-    "seedId": "c685e8c0-018b-4002-89ce-2fa803b4e391",
-    "category": "tech",
-    "navigationKeyword1": "ai-ml",
-    "navigationKeyword2": "genai-facts",
-    "question": "What was the size of the largest Llama 3.1 model Meta released in July 2024?",
-    "correctAnswer": "405 billion parameters",
-    "incorrectAnswers": [
-      "70 billion parameters",
-      "175 billion parameters",
-      "1 trillion parameters"
-    ],
-    "explanation": "Llama 3.1 405B was released on July 23, 2024, with a 128K-token context length.",
-    "keywords": [
-      "genai",
-      "open-weights",
-      "model-releases"
-    ],
-    "source": "https://ai.meta.com/blog/meta-llama-3-1/"
-  },
-  {
-    "itemId": "24f6d3f6-f8af-4da1-aa2b-563b286c8d69",
-    "seedId": "b30ca353-94af-4718-9738-0550ffb6a9a0",
-    "category": "tech",
-    "navigationKeyword1": "ai-ml",
-    "navigationKeyword2": "genai-facts",
-    "question": "In February 2024, Gemini 1.5 Pro was previewed with an experimental context window of how many tokens?",
-    "correctAnswer": "1 million",
-    "incorrectAnswers": [
-      "32,000",
-      "100,000",
-      "256,000"
-    ],
-    "explanation": "Its standard window was 128,000 tokens, with an experimental 1 million token window offered in private preview.",
-    "keywords": [
-      "genai",
-      "context-window",
-      "model-releases"
-    ],
-    "source": "https://blog.google/technology/ai/google-gemini-next-generation-model-february-2024/"
   },
   {
     "itemId": "30d950d9-df4a-4b74-82d8-8b93927baee9",
@@ -335,14 +129,14 @@
     "category": "tech",
     "navigationKeyword1": "ai-ml",
     "navigationKeyword2": "genai-facts",
-    "question": "What was the final score when AlphaGo played Go champion Lee Sedol in Seoul in March 2016?",
+    "question": "In March 2016, AlphaGo played world Go champion Lee Sedol in a five-game match. What was the result?",
     "correctAnswer": "AlphaGo won 4-1",
     "incorrectAnswers": [
       "AlphaGo won 5-0",
       "AlphaGo won 3-2",
       "Lee Sedol won 3-2"
     ],
-    "explanation": "AlphaGo beat Lee Sedol 4-1 in a match watched by over 200 million people worldwide.",
+    "explanation": "AlphaGo won 4-1 in a match watched by over 200 million people.",
     "keywords": [
       "ai-history",
       "alphago"
@@ -355,14 +149,14 @@
     "category": "tech",
     "navigationKeyword1": "ai-ml",
     "navigationKeyword2": "genai-facts",
-    "question": "AlphaGo's famous, highly improbable 'Move 37' came in which game of its 2016 match with Lee Sedol?",
-    "correctAnswer": "Game two",
+    "question": "Why did AlphaGo's 'Move 37' against Lee Sedol become famous?",
+    "correctAnswer": "It looked like a mistake but helped win",
     "incorrectAnswers": [
-      "Game one",
-      "Game four",
-      "Game five"
+      "It broke the official rules of Go",
+      "It was copied from a human master",
+      "It ended the game in record time"
     ],
-    "explanation": "Move 37 in game two looked like a mistake to many experts but helped AlphaGo win that game.",
+    "explanation": "Experts first thought the unusual move in game two was an error, but it proved decisive and showed AI could find creative strategies.",
     "keywords": [
       "ai-history",
       "alphago"
@@ -370,230 +164,25 @@
     "source": "https://deepmind.google/research/breakthroughs/alphago/"
   },
   {
-    "itemId": "b61bb49d-c4c9-4206-a8b3-18f936f0cce0",
-    "seedId": "738c6a57-9639-426b-b22c-2ff3b933a7f1",
+    "itemId": "24f6d3f6-f8af-4da1-aa2b-563b286c8d69",
+    "seedId": "b30ca353-94af-4718-9738-0550ffb6a9a0",
     "category": "tech",
     "navigationKeyword1": "ai-ml",
     "navigationKeyword2": "genai-facts",
-    "question": "Mixtral 8x7B has 8 experts of about 7B each. Why is its total about 47B parameters, not 56B?",
-    "correctAnswer": "Only feed-forward layers are separate experts; attention is shared",
+    "question": "In early 2024, Gemini 1.5 Pro was tested with a context window of up to how many tokens?",
+    "correctAnswer": "1 million",
     "incorrectAnswers": [
-      "Two experts are pruned after training",
-      "Weights are stored at 4-bit precision",
-      "The router discards the smallest expert"
+      "32,000",
+      "100,000",
+      "256,000"
     ],
-    "explanation": "In a mixture-of-experts transformer, the experts replace only the feed-forward layers, while attention and other layers are shared.",
+    "explanation": "A million tokens is roughly an hour of video or over 700,000 words that the model can consider at once. Its standard window was 128,000 tokens.",
     "keywords": [
-      "mixture-of-experts",
-      "open-weights"
+      "genai",
+      "context-window",
+      "model-releases"
     ],
-    "source": "https://huggingface.co/blog/moe"
-  },
-  {
-    "itemId": "6b418417-af75-4b86-94f4-619ceac67a95",
-    "seedId": "92ede315-38d0-4628-8e38-68bd78eed8c0",
-    "category": "tech",
-    "navigationKeyword1": "ai-ml",
-    "navigationKeyword2": "genai-facts",
-    "question": "Why does a mixture-of-experts model still need lots of memory even though only a few experts run per token?",
-    "correctAnswer": "All expert parameters must be loaded into memory",
-    "incorrectAnswers": [
-      "Each expert keeps a copy of its training data",
-      "The router stores every token it has seen",
-      "Experts must run at full 32-bit precision"
-    ],
-    "explanation": "Only some experts compute for each token, which speeds inference, but every expert's weights still have to sit in memory.",
-    "keywords": [
-      "mixture-of-experts",
-      "inference"
-    ],
-    "source": "https://huggingface.co/blog/moe"
-  },
-  {
-    "itemId": "07b04377-cc8b-4858-8661-6538aacdd7e4",
-    "seedId": "b67ff2b7-4a89-4e6b-bae9-be2ecf5b5639",
-    "category": "tech",
-    "navigationKeyword1": "ai-ml",
-    "navigationKeyword2": "genai-facts",
-    "question": "Why can byte-level BPE, used by GPT-2, tokenize any text without an 'unknown' token?",
-    "correctAnswer": "Its base vocabulary is all 256 possible byte values",
-    "incorrectAnswers": [
-      "It stores every Unicode character as a token",
-      "It falls back to whole-word tokens",
-      "It drops characters it has not seen"
-    ],
-    "explanation": "Any text is a sequence of bytes, so starting from 256 byte tokens covers everything. GPT-2's vocabulary has 50,257 tokens.",
-    "keywords": [
-      "tokens",
-      "tokenization"
-    ],
-    "source": "https://huggingface.co/docs/transformers/tokenizer_summary"
-  },
-  {
-    "itemId": "0540614f-27a0-47ee-9d67-c75cbd5e677c",
-    "seedId": "6830dab7-ccf4-4508-aea5-4aa96fc33607",
-    "category": "tech",
-    "navigationKeyword1": "ai-ml",
-    "navigationKeyword2": "genai-facts",
-    "question": "Content Credentials, likened to a 'nutrition label' for digital content, mainly show what?",
-    "correctAnswer": "Where the content came from and how it was edited",
-    "incorrectAnswers": [
-      "How much energy was used to create it",
-      "The licensing price set by its owner",
-      "Whether the file contains malware"
-    ],
-    "explanation": "The open provenance standard behind Content Credentials lets people check a piece of content's origin and edit history.",
-    "keywords": [
-      "ai-safety",
-      "content-provenance",
-      "deepfakes"
-    ],
-    "source": "https://c2pa.org/"
-  },
-  {
-    "itemId": "66666528-95c4-4f9b-b4f1-1e75dda4fda5",
-    "seedId": "f24aa8df-061b-4510-89f7-12fef9201865",
-    "category": "tech",
-    "navigationKeyword1": "ai-ml",
-    "navigationKeyword2": "genai-facts",
-    "question": "At its public release, Stable Diffusion was expected to use about how much GPU memory?",
-    "correctAnswer": "About 7 GB of VRAM",
-    "incorrectAnswers": [
-      "About 24 GB of VRAM",
-      "About 80 GB of VRAM",
-      "About 1 GB of VRAM"
-    ],
-    "explanation": "Final memory use at release was expected to be about 6.9 GB of VRAM, with NVIDIA chips recommended.",
-    "keywords": [
-      "image-generation",
-      "open-weights",
-      "diffusion"
-    ],
-    "source": "https://stability.ai/news-updates/stable-diffusion-public-release"
-  },
-  {
-    "itemId": "a838b008-fc86-4bb8-b755-b3387f42a4a2",
-    "seedId": "a040daf5-dfc1-48ba-bfcd-59d551483e71",
-    "category": "tech",
-    "navigationKeyword1": "ai-ml",
-    "navigationKeyword2": "genai-facts",
-    "question": "How does a Transformer link two distant words in a sentence, compared with a recurrent network?",
-    "correctAnswer": "In a few constant steps via self-attention",
-    "incorrectAnswers": [
-      "By passing information word by word in order",
-      "By stacking convolutions over wider windows",
-      "By looking both words up in a fixed dictionary"
-    ],
-    "explanation": "Recurrent networks need many sequential steps to connect distant words. Self-attention relates any two words in one step.",
-    "keywords": [
-      "transformers",
-      "attention",
-      "ai-history"
-    ],
-    "source": "https://research.google/blog/transformer-a-novel-neural-network-architecture-for-language-understanding/"
-  },
-  {
-    "itemId": "9964048e-dabe-4c81-b668-04ab3b4e6857",
-    "seedId": "35b5cbb3-a510-4187-8baf-d36d575104bb",
-    "category": "tech",
-    "navigationKeyword1": "ai-ml",
-    "navigationKeyword2": "genai-facts",
-    "question": "In a well-trained word embedding, the vector for king minus man plus woman lands closest to which word?",
-    "correctAnswer": "Queen",
-    "incorrectAnswers": [
-      "Prince",
-      "Princess",
-      "Kingdom"
-    ],
-    "explanation": "Embedding dimensions capture meaning, so vector arithmetic can express relationships such as royalty and gender.",
-    "keywords": [
-      "embeddings",
-      "vectors"
-    ],
-    "source": "https://www.ibm.com/think/topics/vector-embedding"
-  },
-  {
-    "itemId": "aec9cc36-e8a5-4ced-b3fa-7dda70360f70",
-    "seedId": "4e378e9d-880e-430f-849d-c575d45e296f",
-    "category": "tech",
-    "navigationKeyword1": "ai-ml",
-    "navigationKeyword2": "genai-facts",
-    "question": "Cosine similarity, a common way to compare two embeddings, ranges between which values?",
-    "correctAnswer": "-1 and 1",
-    "incorrectAnswers": [
-      "0 and 1",
-      "0 and infinity",
-      "-100 and 100"
-    ],
-    "explanation": "It is the cosine of the angle between two vectors: 1 means same direction, 0 unrelated, and -1 opposite.",
-    "keywords": [
-      "embeddings",
-      "vectors",
-      "similarity"
-    ],
-    "source": "https://www.ibm.com/think/topics/vector-embedding"
-  },
-  {
-    "itemId": "86d5e25b-3f50-4007-9338-2eed49fb04a7",
-    "seedId": "97c4bfae-b87f-47f9-9116-63d9e104b149",
-    "category": "tech",
-    "navigationKeyword1": "ai-ml",
-    "navigationKeyword2": "genai-facts",
-    "question": "Under what license were DeepSeek-R1's code and model weights released?",
-    "correctAnswer": "MIT License",
-    "incorrectAnswers": [
-      "GPL-3.0",
-      "CC BY-NC 4.0",
-      "Llama Community License"
-    ],
-    "explanation": "The MIT License allows commercial use and modification, including distilling the model into other models.",
-    "keywords": [
-      "open-weights",
-      "model-releases",
-      "deepseek"
-    ],
-    "source": "https://github.com/deepseek-ai/DeepSeek-R1"
-  },
-  {
-    "itemId": "ab17b834-a020-49bd-a4bb-1a67f127623a",
-    "seedId": "0c5954fc-f657-4fb1-9d50-92b8f4fc0419",
-    "category": "tech",
-    "navigationKeyword1": "ai-ml",
-    "navigationKeyword2": "genai-facts",
-    "question": "DeepSeek-R1 has 671B total parameters. About how many are active for each token?",
-    "correctAnswer": "37 billion",
-    "incorrectAnswers": [
-      "7 billion",
-      "175 billion",
-      "671 billion"
-    ],
-    "explanation": "It is a mixture-of-experts model, so only about 37B of its 671B parameters are activated per token.",
-    "keywords": [
-      "mixture-of-experts",
-      "deepseek"
-    ],
-    "source": "https://github.com/deepseek-ai/DeepSeek-R1"
-  },
-  {
-    "itemId": "475d00b4-a6e7-445e-93e3-c2782fa640df",
-    "seedId": "c2eabdcb-ea8b-49ff-b3a9-62e8bdf5bf54",
-    "category": "tech",
-    "navigationKeyword1": "ai-ml",
-    "navigationKeyword2": "genai-facts",
-    "question": "How did DeepSeek-R1-Zero develop its reasoning skills?",
-    "correctAnswer": "Reinforcement learning with no supervised fine-tuning first",
-    "incorrectAnswers": [
-      "Supervised fine-tuning on human-written proofs only",
-      "Pretraining only on synthetic math textbooks",
-      "Retrieval from a curated database of solutions"
-    ],
-    "explanation": "R1-Zero applied reinforcement learning directly to the base model, skipping the usual supervised fine-tuning step.",
-    "keywords": [
-      "reinforcement-learning",
-      "reasoning",
-      "deepseek"
-    ],
-    "source": "https://github.com/deepseek-ai/DeepSeek-R1"
+    "source": "https://blog.google/technology/ai/google-gemini-next-generation-model-february-2024/"
   },
   {
     "itemId": "f6b98855-c351-4cae-ab04-1b11014f2aa7",
@@ -601,14 +190,14 @@
     "category": "tech",
     "navigationKeyword1": "ai-ml",
     "navigationKeyword2": "genai-facts",
-    "question": "How many parameters did GPT-3, described in a 2020 paper, have?",
+    "question": "GPT-3, unveiled in 2020, was famous for its size. About how many parameters did it have?",
     "correctAnswer": "175 billion",
     "incorrectAnswers": [
       "1.5 billion",
       "13 billion",
       "540 billion"
     ],
-    "explanation": "GPT-3 is a 175-billion-parameter autoregressive model shown to do many tasks from text prompts alone, without weight updates.",
+    "explanation": "With 175 billion parameters, GPT-3 could do many tasks from just a few examples in a text prompt, without extra training.",
     "keywords": [
       "genai",
       "gpt",
@@ -622,14 +211,14 @@
     "category": "tech",
     "navigationKeyword1": "ai-ml",
     "navigationKeyword2": "genai-facts",
-    "question": "Which surprising result was reported for InstructGPT, an instruction-following model from 2022?",
-    "correctAnswer": "A 1.3B model tuned with feedback beat 175B GPT-3 with raters",
+    "question": "In a 2022 study, what made a small 1.3B model preferred by people over the 175B GPT-3?",
+    "correctAnswer": "Fine-tuning it with human feedback",
     "incorrectAnswers": [
-      "Feedback tuning made GPT-3 measurably less truthful",
-      "A 175B base model beat every tuned model with raters",
-      "Feedback tuning only helped models above 100B parameters"
+      "Training it on more web text",
+      "Giving it a larger vocabulary",
+      "Running it on faster hardware"
     ],
-    "explanation": "Fine-tuning with demonstrations and RLHF made a much smaller model preferred by human raters, showing size alone does not ensure following intent.",
+    "explanation": "InstructGPT was tuned on human-written examples and human rankings of its answers. This approach, RLHF, later helped shape ChatGPT.",
     "keywords": [
       "rlhf",
       "alignment",
@@ -638,185 +227,25 @@
     "source": "https://arxiv.org/abs/2203.02155"
   },
   {
-    "itemId": "82a2fba7-ca25-4d7b-b931-7378a2fdb377",
-    "seedId": "fb60b06a-44f5-48a1-8622-a2df882b5030",
+    "itemId": "a838b008-fc86-4bb8-b755-b3387f42a4a2",
+    "seedId": "a040daf5-dfc1-48ba-bfcd-59d551483e71",
     "category": "tech",
     "navigationKeyword1": "ai-ml",
     "navigationKeyword2": "genai-facts",
-    "question": "Latent diffusion models cut compute costs by running the diffusion process where?",
-    "correctAnswer": "In the compressed latent space of a pretrained autoencoder",
+    "question": "Which neural network design, introduced in a 2017 paper called 'Attention Is All You Need', powers most modern chatbots?",
+    "correctAnswer": "The Transformer",
     "incorrectAnswers": [
-      "Directly on full-resolution pixels",
-      "On a sequence of text tokens",
-      "Inside a GAN discriminator"
+      "The recurrent network",
+      "The convolutional network",
+      "The decision tree"
     ],
-    "explanation": "Working in a smaller latent space instead of pixel space reduces training and inference cost while keeping image quality high.",
+    "explanation": "The Transformer relies on attention instead of reading text word by word. The T in GPT stands for Transformer.",
     "keywords": [
-      "diffusion",
-      "image-generation"
+      "transformers",
+      "attention",
+      "ai-history"
     ],
-    "source": "https://arxiv.org/abs/2112.10752"
-  },
-  {
-    "itemId": "5d2017c1-d5b5-4a8c-98ef-b2ffbd385334",
-    "seedId": "ff7d1bd8-4e3d-4619-9c50-b08427544d7b",
-    "category": "tech",
-    "navigationKeyword1": "ai-ml",
-    "navigationKeyword2": "genai-facts",
-    "question": "In Constitutional AI (2022), how do humans mainly guide the model's harmlessness training?",
-    "correctAnswer": "Through a short list of written principles",
-    "incorrectAnswers": [
-      "By labeling thousands of harmful outputs",
-      "By writing every response by hand",
-      "By blocking keywords with a filter"
-    ],
-    "explanation": "The model critiques and revises its own answers against the principles, and AI feedback replaces human harm labels in the RL phase.",
-    "keywords": [
-      "alignment",
-      "ai-safety"
-    ],
-    "source": "https://arxiv.org/abs/2212.08073"
-  },
-  {
-    "itemId": "d4724470-ca09-49c6-a047-49e7307869b9",
-    "seedId": "b0d90951-b409-4123-8b58-c7cd7070ecf3",
-    "category": "tech",
-    "navigationKeyword1": "ai-ml",
-    "navigationKeyword2": "genai-facts",
-    "question": "Compared with fully fine-tuning GPT-3 175B, LoRA cut the number of trainable parameters by about how much?",
-    "correctAnswer": "10,000 times",
-    "incorrectAnswers": [
-      "10 times",
-      "100 times",
-      "1 million times"
-    ],
-    "explanation": "LoRA freezes the pretrained weights and trains small low-rank matrices added to each layer, also cutting GPU memory needs about 3 times.",
-    "keywords": [
-      "fine-tuning",
-      "lora"
-    ],
-    "source": "https://arxiv.org/abs/2106.09685"
-  },
-  {
-    "itemId": "40d25500-8a9d-40a2-8490-7a985a448e45",
-    "seedId": "d93ff673-dfec-4537-87e8-c73cde554504",
-    "category": "tech",
-    "navigationKeyword1": "ai-ml",
-    "navigationKeyword2": "genai-facts",
-    "question": "For compute-optimal training, if you double a model's size, what should happen to its training tokens?",
-    "correctAnswer": "They should also double",
-    "incorrectAnswers": [
-      "They should stay the same",
-      "They should be halved",
-      "They should grow tenfold"
-    ],
-    "explanation": "The study found model size and training tokens should scale equally for compute-optimal training. Chinchilla (70B) used four times Gopher's data.",
-    "keywords": [
-      "scaling-laws",
-      "training"
-    ],
-    "source": "https://arxiv.org/abs/2203.15556"
-  },
-  {
-    "itemId": "75d84836-db2d-4e60-82da-05bf0a70d608",
-    "seedId": "96165a3d-e7fa-454c-9941-a7f38f3a3c66",
-    "category": "tech",
-    "navigationKeyword1": "ai-ml",
-    "navigationKeyword2": "genai-facts",
-    "question": "The MMLU benchmark tests language models across about how many tasks or subjects?",
-    "correctAnswer": "57",
-    "incorrectAnswers": [
-      "12",
-      "26",
-      "204"
-    ],
-    "explanation": "MMLU covers 57 tasks, including elementary math, US history, computer science and law.",
-    "keywords": [
-      "benchmarks",
-      "evaluation"
-    ],
-    "source": "https://arxiv.org/abs/2009.03300"
-  },
-  {
-    "itemId": "33156524-fdc3-46c8-995b-4d4341ac5d43",
-    "seedId": "9187a3c6-0607-425f-9820-7d448d74c48a",
-    "category": "tech",
-    "navigationKeyword1": "ai-ml",
-    "navigationKeyword2": "genai-facts",
-    "question": "What does the HumanEval benchmark check when a model writes code from a docstring?",
-    "correctAnswer": "Whether the code is functionally correct",
-    "incorrectAnswers": [
-      "How closely it matches a reference solution's text",
-      "How fast the code runs",
-      "How readable reviewers find it"
-    ],
-    "explanation": "HumanEval measures functional correctness: whether programs written from docstrings actually work, not how they look.",
-    "keywords": [
-      "benchmarks",
-      "code-generation"
-    ],
-    "source": "https://arxiv.org/abs/2107.03374"
-  },
-  {
-    "itemId": "1c00dea9-af5b-4966-841e-64800cb62741",
-    "seedId": "fb490cf6-5f21-4ffd-9c69-7b8f974bf812",
-    "category": "tech",
-    "navigationKeyword1": "ai-ml",
-    "navigationKeyword2": "genai-facts",
-    "question": "The GSM8K benchmark, released in 2021, consists mainly of what kind of problems?",
-    "correctAnswer": "Grade school math word problems",
-    "incorrectAnswers": [
-      "Olympiad-level proofs",
-      "Graduate physics questions",
-      "Multiple-choice trivia questions"
-    ],
-    "explanation": "GSM8K has about 8,500 linguistically diverse grade school math word problems that need multi-step reasoning.",
-    "keywords": [
-      "benchmarks",
-      "reasoning"
-    ],
-    "source": "https://arxiv.org/abs/2110.14168"
-  },
-  {
-    "itemId": "544e8fd5-902a-4c6b-b210-722bd762abb4",
-    "seedId": "e903b5f7-3d04-4573-8d75-80cd68dbbce9",
-    "category": "tech",
-    "navigationKeyword1": "ai-ml",
-    "navigationKeyword2": "genai-facts",
-    "question": "What does a model have to do to solve a task in the SWE-bench benchmark?",
-    "correctAnswer": "Resolve a real GitHub issue in a Python repository",
-    "incorrectAnswers": [
-      "Answer a multiple-choice coding quiz",
-      "Translate code between two languages",
-      "Write a function from a short docstring"
-    ],
-    "explanation": "SWE-bench has 2,294 tasks built from real GitHub issues and their fixes across 12 popular Python projects.",
-    "keywords": [
-      "benchmarks",
-      "code-generation",
-      "ai-agents"
-    ],
-    "source": "https://arxiv.org/abs/2310.06770"
-  },
-  {
-    "itemId": "3204f3d9-d00c-46da-89ff-f36aa7044ded",
-    "seedId": "03818f38-9294-4064-a58c-d7b40f20abcc",
-    "category": "tech",
-    "navigationKeyword1": "ai-ml",
-    "navigationKeyword2": "genai-facts",
-    "question": "The 13B version of Meta's original LLaMA (2023) beat which much larger model on most benchmarks?",
-    "correctAnswer": "GPT-3 (175B)",
-    "incorrectAnswers": [
-      "GPT-4",
-      "PaLM (540B)",
-      "Chinchilla (70B)"
-    ],
-    "explanation": "LLaMA-13B outperformed GPT-3 on most benchmarks while being trained only on publicly available data.",
-    "keywords": [
-      "open-weights",
-      "model-releases"
-    ],
-    "source": "https://arxiv.org/abs/2302.13971"
+    "source": "https://arxiv.org/abs/1706.03762"
   },
   {
     "itemId": "d39aa9f3-06f5-4e05-92cc-a34e2c54f427",
@@ -824,163 +253,20 @@
     "category": "tech",
     "navigationKeyword1": "ai-ml",
     "navigationKeyword2": "genai-facts",
-    "question": "In a generative adversarial network (GAN), what is the discriminator's job?",
-    "correctAnswer": "Judging whether a sample is real or generated",
+    "question": "In a generative adversarial network (GAN), first proposed in 2014, what is the discriminator's job?",
+    "correctAnswer": "Telling real samples from generated ones",
     "incorrectAnswers": [
       "Producing new samples from random noise",
-      "Compressing images into latent codes",
-      "Labeling training images by class"
+      "Compressing images into small codes",
+      "Labeling training images by category"
     ],
-    "explanation": "A GAN trains two models against each other: a generator makes samples and a discriminator tries to tell them from real data.",
+    "explanation": "Two networks compete: a generator makes fakes and a discriminator tries to catch them, so both keep improving.",
     "keywords": [
       "gans",
       "image-generation",
       "ai-history"
     ],
-    "source": "https://arxiv.org/abs/1406.2661"
-  },
-  {
-    "itemId": "38bb65f3-0d73-4348-8db9-43ec89be3f30",
-    "seedId": "e7bede4c-bc33-42ce-b8de-4e1b7c073b7c",
-    "category": "tech",
-    "navigationKeyword1": "ai-ml",
-    "navigationKeyword2": "genai-facts",
-    "question": "The Vision Transformer (2020) fed images to a standard Transformer as what?",
-    "correctAnswer": "Sequences of image patches",
-    "incorrectAnswers": [
-      "Individual pixels one at a time",
-      "Text captions describing the image",
-      "Frequency spectra of the image"
-    ],
-    "explanation": "The Vision Transformer splits an image into patches and processes them like words, without convolutional layers.",
-    "keywords": [
-      "transformers",
-      "computer-vision"
-    ],
-    "source": "https://arxiv.org/abs/2010.11929"
-  },
-  {
-    "itemId": "69a3cc97-362b-4030-ab73-3342dc551831",
-    "seedId": "83391568-0612-45d9-a53f-ce9681e682f8",
-    "category": "tech",
-    "navigationKeyword1": "ai-ml",
-    "navigationKeyword2": "genai-facts",
-    "question": "What task did CLIP learn from roughly 400 million image-text pairs?",
-    "correctAnswer": "Predicting which caption goes with which image",
-    "incorrectAnswers": [
-      "Predicting the next pixel in an image",
-      "Filling in missing words in captions",
-      "Drawing bounding boxes around objects"
-    ],
-    "explanation": "This simple matching task let CLIP match ResNet-50's ImageNet accuracy zero-shot, without using ImageNet's training examples.",
-    "keywords": [
-      "multimodal",
-      "embeddings"
-    ],
-    "source": "https://arxiv.org/abs/2103.00020"
-  },
-  {
-    "itemId": "86cfd6c8-820d-49df-920c-2df605491120",
-    "seedId": "1e9dc2ca-fdc2-4f0f-8b1f-6dabf0e4c546",
-    "category": "tech",
-    "navigationKeyword1": "ai-ml",
-    "navigationKeyword2": "genai-facts",
-    "question": "In early chain-of-thought prompting results (2022), how many worked examples helped a 540B model set a GSM8K record?",
-    "correctAnswer": "Eight",
-    "incorrectAnswers": [
-      "One",
-      "100",
-      "1,000"
-    ],
-    "explanation": "With just eight chain-of-thought exemplars, the model beat the previous best, a fine-tuned GPT-3 with a verifier.",
-    "keywords": [
-      "prompting",
-      "reasoning",
-      "benchmarks"
-    ],
-    "source": "https://arxiv.org/abs/2201.11903"
-  },
-  {
-    "itemId": "44cec243-e44b-4a3e-8bce-c78311f39a95",
-    "seedId": "3711a296-93da-45c6-82d3-e0efb7301d47",
-    "category": "tech",
-    "navigationKeyword1": "ai-ml",
-    "navigationKeyword2": "genai-facts",
-    "question": "In the original 2020 retrieval-augmented generation (RAG) models, what served as non-parametric memory?",
-    "correctAnswer": "A dense vector index of Wikipedia",
-    "incorrectAnswers": [
-      "The model's own weights",
-      "A SQL database of facts",
-      "Live web search results"
-    ],
-    "explanation": "RAG paired a pretrained seq2seq model with a neural retriever over a dense vector index of Wikipedia.",
-    "keywords": [
-      "rag",
-      "embeddings"
-    ],
-    "source": "https://arxiv.org/abs/2005.11401"
-  },
-  {
-    "itemId": "06b374a3-280f-4630-a802-0f3dd6b66cea",
-    "seedId": "00e6f2a2-485a-4e10-80f5-5944fb59d352",
-    "category": "tech",
-    "navigationKeyword1": "ai-ml",
-    "navigationKeyword2": "genai-facts",
-    "question": "What does Direct Preference Optimization (2023) remove compared with standard RLHF?",
-    "correctAnswer": "A separate reward model and the RL loop",
-    "incorrectAnswers": [
-      "The need for human preference data",
-      "The pretraining stage",
-      "The tokenizer"
-    ],
-    "explanation": "DPO trains directly on preference pairs with a simple classification loss, so no reward model or RL sampling is needed.",
-    "keywords": [
-      "alignment",
-      "rlhf",
-      "fine-tuning"
-    ],
-    "source": "https://arxiv.org/abs/2305.18290"
-  },
-  {
-    "itemId": "241dfd1e-24b0-44d7-a7e3-56ced10b06da",
-    "seedId": "0ff89198-312f-404d-8e36-4c0f54b7b85e",
-    "category": "tech",
-    "navigationKeyword1": "ai-ml",
-    "navigationKeyword2": "genai-facts",
-    "question": "What did BERT (2018) do differently from earlier left-to-right language models?",
-    "correctAnswer": "Used context from both left and right in every layer",
-    "incorrectAnswers": [
-      "Read text only from right to left",
-      "Worked on single characters instead of words",
-      "Relied on recurrent layers instead of attention"
-    ],
-    "explanation": "BERT stands for Bidirectional Encoder Representations from Transformers. It conditions jointly on left and right context.",
-    "keywords": [
-      "transformers",
-      "ai-history"
-    ],
-    "source": "https://arxiv.org/abs/1810.04805"
-  },
-  {
-    "itemId": "3369aa10-fde1-4009-9517-ab1dca88822a",
-    "seedId": "72adb807-c17f-4dc4-b9c0-392b6b5ff976",
-    "category": "tech",
-    "navigationKeyword1": "ai-ml",
-    "navigationKeyword2": "genai-facts",
-    "question": "QLoRA (2023) made it possible to fine-tune a 65B-parameter model on what hardware?",
-    "correctAnswer": "A single 48 GB GPU",
-    "incorrectAnswers": [
-      "A single 12 GB GPU",
-      "Eight 80 GB GPUs",
-      "A 16-node TPU pod"
-    ],
-    "explanation": "QLoRA backpropagates through a frozen 4-bit quantized model (using the NF4 data type) into small LoRA adapters.",
-    "keywords": [
-      "fine-tuning",
-      "quantization",
-      "lora"
-    ],
-    "source": "https://arxiv.org/abs/2305.14314"
+    "source": "https://en.wikipedia.org/wiki/Generative_adversarial_network"
   },
   {
     "itemId": "be661486-9b45-43c1-997b-a1bd5de35139",
@@ -988,14 +274,14 @@
     "category": "tech",
     "navigationKeyword1": "ai-ml",
     "navigationKeyword2": "genai-facts",
-    "question": "When GPT-4 was introduced in March 2023, where did its simulated bar exam score fall?",
+    "question": "When GPT-4 was introduced in March 2023, where did its score on a simulated bar exam fall?",
     "correctAnswer": "Top 10% of test takers",
     "incorrectAnswers": [
       "Bottom 10% of test takers",
       "Around the median",
       "Top 1% of test takers"
     ],
-    "explanation": "The report listed the bar exam among benchmarks where GPT-4 showed human-level performance.",
+    "explanation": "It scored around the top 10% of test takers, a big jump that made headlines about AI passing professional exams.",
     "keywords": [
       "gpt",
       "benchmarks",
@@ -1004,24 +290,307 @@
     "source": "https://arxiv.org/abs/2303.08774"
   },
   {
-    "itemId": "4b2ea4d6-61cd-42dc-a24b-4c25faf0cb9e",
-    "seedId": "5e82dcc2-5429-4408-a0e6-514a09ec9a1a",
+    "itemId": "86d5e25b-3f50-4007-9338-2eed49fb04a7",
+    "seedId": "97c4bfae-b87f-47f9-9116-63d9e104b149",
     "category": "tech",
     "navigationKeyword1": "ai-ml",
     "navigationKeyword2": "genai-facts",
-    "question": "In the 2017 study that helped pioneer RLHF, how did humans give feedback?",
-    "correctAnswer": "By choosing the better of two short behavior clips",
+    "question": "The code and weights of DeepSeek-R1, an open reasoning model, were released under which license?",
+    "correctAnswer": "MIT License",
     "incorrectAnswers": [
-      "By writing reward functions in code",
-      "By scoring every action from 1 to 10",
-      "By demonstrating each task by hand"
+      "GPL-3.0",
+      "CC BY-NC 4.0",
+      "Llama Community License"
     ],
-    "explanation": "Non-experts compared pairs of trajectory segments, and feedback was needed on less than 1% of the agent's interactions.",
+    "explanation": "The permissive MIT License lets anyone use, modify and build on the model, even commercially.",
     "keywords": [
-      "rlhf",
-      "ai-history",
-      "reinforcement-learning"
+      "open-weights",
+      "model-releases",
+      "deepseek"
     ],
-    "source": "https://arxiv.org/abs/1706.03741"
+    "source": "https://github.com/deepseek-ai/DeepSeek-R1"
+  },
+  {
+    "itemId": "3204f3d9-d00c-46da-89ff-f36aa7044ded",
+    "seedId": "03818f38-9294-4064-a58c-d7b40f20abcc",
+    "category": "tech",
+    "navigationKeyword1": "ai-ml",
+    "navigationKeyword2": "genai-facts",
+    "question": "Meta's first LLaMA model (2023) showed that a 13B model could beat which much larger model on most benchmarks?",
+    "correctAnswer": "GPT-3 (175B)",
+    "incorrectAnswers": [
+      "GPT-4",
+      "PaLM (540B)",
+      "Chinchilla (70B)"
+    ],
+    "explanation": "LLaMA-13B outperformed the 175B GPT-3 while trained only on public data, showing smaller models could be very capable.",
+    "keywords": [
+      "open-weights",
+      "model-releases"
+    ],
+    "source": "https://arxiv.org/abs/2302.13971"
+  },
+  {
+    "itemId": "5d2017c1-d5b5-4a8c-98ef-b2ffbd385334",
+    "seedId": "ff7d1bd8-4e3d-4619-9c50-b08427544d7b",
+    "category": "tech",
+    "navigationKeyword1": "ai-ml",
+    "navigationKeyword2": "genai-facts",
+    "question": "In the 2022 'Constitutional AI' method, what mainly guides the model toward harmless behavior?",
+    "correctAnswer": "Through a short list of written principles",
+    "incorrectAnswers": [
+      "By labeling thousands of harmful outputs",
+      "By writing every response by hand",
+      "By blocking keywords with a filter"
+    ],
+    "explanation": "The AI critiques and revises its own answers against a list of written principles, with no human labels for harmful outputs.",
+    "keywords": [
+      "alignment",
+      "ai-safety"
+    ],
+    "source": "https://arxiv.org/abs/2212.08073"
+  },
+  {
+    "itemId": "66666528-95c4-4f9b-b4f1-1e75dda4fda5",
+    "seedId": "f24aa8df-061b-4510-89f7-12fef9201865",
+    "category": "tech",
+    "navigationKeyword1": "ai-ml",
+    "navigationKeyword2": "genai-facts",
+    "question": "What made the public release of the Stable Diffusion image generator stand out?",
+    "correctAnswer": "Anyone could download its model weights",
+    "incorrectAnswers": [
+      "It only worked inside a paid app",
+      "It made videos instead of images",
+      "It needed a supercomputer to run"
+    ],
+    "explanation": "Its weights were posted publicly and it needed only about 7 GB of graphics card memory, so people could run it on their own computers.",
+    "keywords": [
+      "image-generation",
+      "open-weights",
+      "ai-history"
+    ],
+    "source": "https://stability.ai/news-updates/stable-diffusion-public-release"
+  },
+  {
+    "itemId": "5b1d57a2-664d-4c05-ae6b-99625affafe2",
+    "seedId": "c6a66ef5-d061-46f7-b737-66a9d5d8e844",
+    "category": "tech",
+    "navigationKeyword1": "ai-ml",
+    "navigationKeyword2": "genai-facts",
+    "question": "In 1950, Alan Turing proposed a test of machine intelligence. What did he originally call it?",
+    "correctAnswer": "The imitation game",
+    "incorrectAnswers": [
+      "The thinking contest",
+      "The logic trial",
+      "The mind challenge"
+    ],
+    "explanation": "In the Turing test, a machine passes if a person chatting with it cannot reliably tell it from a human.",
+    "keywords": [
+      "ai-history",
+      "turing-test"
+    ],
+    "source": "https://en.wikipedia.org/wiki/Turing_test"
+  },
+  {
+    "itemId": "335e7c5a-8f63-452a-b6ff-107cfb3a8d18",
+    "seedId": "171a1ee3-00ac-4ca6-ad5c-e3221a2765c3",
+    "category": "tech",
+    "navigationKeyword1": "ai-ml",
+    "navigationKeyword2": "genai-facts",
+    "question": "The 1956 summer workshop often called the birth of AI as a field was held at which college?",
+    "correctAnswer": "Dartmouth College",
+    "incorrectAnswers": [
+      "Harvard University",
+      "Stanford University",
+      "Caltech"
+    ],
+    "explanation": "John McCarthy, Marvin Minsky, Nathaniel Rochester and Claude Shannon organized it. McCarthy chose the name 'artificial intelligence'.",
+    "keywords": [
+      "ai-history",
+      "dartmouth"
+    ],
+    "source": "https://en.wikipedia.org/wiki/Dartmouth_workshop"
+  },
+  {
+    "itemId": "ce1f906e-c4ee-4bbb-afd1-bf34df2a7688",
+    "seedId": "87dc83ea-3562-4dae-b571-a1484e4b3aa1",
+    "category": "tech",
+    "navigationKeyword1": "ai-ml",
+    "navigationKeyword2": "genai-facts",
+    "question": "ELIZA, an early 1960s chatbot built at MIT, was best known for imitating what kind of person?",
+    "correctAnswer": "A psychotherapist",
+    "incorrectAnswers": [
+      "A travel agent",
+      "A chess coach",
+      "A news reporter"
+    ],
+    "explanation": "Its DOCTOR script turned users' statements back into questions. People read real understanding into it, now called the ELIZA effect.",
+    "keywords": [
+      "ai-history",
+      "chatbots"
+    ],
+    "source": "https://en.wikipedia.org/wiki/ELIZA"
+  },
+  {
+    "itemId": "5e742168-d078-40e9-b153-947895bcc7e6",
+    "seedId": "d6ba412f-044d-4231-82fc-96668ea7939c",
+    "category": "tech",
+    "navigationKeyword1": "ai-ml",
+    "navigationKeyword2": "genai-facts",
+    "question": "In 1997, IBM's Deep Blue became famous for beating world champion Garry Kasparov at which game?",
+    "correctAnswer": "Chess",
+    "incorrectAnswers": [
+      "Go",
+      "Checkers",
+      "Poker"
+    ],
+    "explanation": "Deep Blue won their 1997 rematch 3.5 to 2.5, a landmark moment for computers taking on top human players.",
+    "keywords": [
+      "ai-history",
+      "games"
+    ],
+    "source": "https://en.wikipedia.org/wiki/Deep_Blue_(chess_computer)"
+  },
+  {
+    "itemId": "14b9d323-752b-48ad-b823-d04dc57977b5",
+    "seedId": "0195b004-3fe3-4f94-8c00-d01f6dc86a10",
+    "category": "tech",
+    "navigationKeyword1": "ai-ml",
+    "navigationKeyword2": "genai-facts",
+    "question": "In 2011, IBM's Watson beat two human champions on which TV show?",
+    "correctAnswer": "Jeopardy!",
+    "incorrectAnswers": [
+      "Who Wants to Be a Millionaire?",
+      "Wheel of Fortune",
+      "The Price Is Right"
+    ],
+    "explanation": "Watson beat Ken Jennings and Brad Rutter, showing a computer could answer tricky natural-language quiz clues.",
+    "keywords": [
+      "ai-history",
+      "games"
+    ],
+    "source": "https://en.wikipedia.org/wiki/IBM_Watson"
+  },
+  {
+    "itemId": "c1e6331e-165a-4bf7-9d32-749549517ff5",
+    "seedId": "04e8e195-fcd3-4d6e-aa07-c20a8080f7f3",
+    "category": "tech",
+    "navigationKeyword1": "ai-ml",
+    "navigationKeyword2": "genai-facts",
+    "question": "AlexNet won a major image recognition contest in 2012. What hardware helped it train fast?",
+    "correctAnswer": "Gaming graphics cards (GPUs)",
+    "incorrectAnswers": [
+      "A quantum computer",
+      "A cluster of smartphones",
+      "Custom chess chips"
+    ],
+    "explanation": "It was trained on two Nvidia graphics cards, split across both because it did not fit on one. Graphics chips are now central to training AI.",
+    "keywords": [
+      "ai-history",
+      "deep-learning",
+      "gpus"
+    ],
+    "source": "https://en.wikipedia.org/wiki/AlexNet"
+  },
+  {
+    "itemId": "4190b2b1-be43-4844-901c-aa290ab2d85e",
+    "seedId": "4fc17680-03e8-4547-a15c-4372ed08ed2f",
+    "category": "tech",
+    "navigationKeyword1": "ai-ml",
+    "navigationKeyword2": "genai-facts",
+    "question": "When GPT-2 was announced in 2019, why did OpenAI at first hold back the full model?",
+    "correctAnswer": "Fear it could be misused for fake text",
+    "incorrectAnswers": [
+      "It was too slow to run online",
+      "Its training data was lost",
+      "It failed most language tests"
+    ],
+    "explanation": "OpenAI worried about spam and fake reviews, so it released the model in stages and published the full version in November 2019.",
+    "keywords": [
+      "ai-history",
+      "gpt",
+      "ai-safety"
+    ],
+    "source": "https://en.wikipedia.org/wiki/GPT-2"
+  },
+  {
+    "itemId": "e8372392-eaf5-4b98-98a5-52512cd2274f",
+    "seedId": "a825e3b4-7755-4504-acb0-0cabf87243ef",
+    "category": "tech",
+    "navigationKeyword1": "ai-ml",
+    "navigationKeyword2": "genai-facts",
+    "question": "DALL-E, revealed in January 2021, creates images from text. Its name blends a Pixar robot with which artist?",
+    "correctAnswer": "Salvador Dali",
+    "incorrectAnswers": [
+      "Pablo Picasso",
+      "Claude Monet",
+      "Andy Warhol"
+    ],
+    "explanation": "The name combines WALL-E and the surrealist painter Salvador Dali, fitting a model that turns text prompts into pictures.",
+    "keywords": [
+      "ai-history",
+      "image-generation"
+    ],
+    "source": "https://en.wikipedia.org/wiki/DALL-E"
+  },
+  {
+    "itemId": "9e2ff094-142a-4d22-96bd-1cfb50b05e3c",
+    "seedId": "e15274eb-8d4b-4698-b851-b33a8bb591ca",
+    "category": "tech",
+    "navigationKeyword1": "ai-ml",
+    "navigationKeyword2": "genai-facts",
+    "question": "ChatGPT was released to the public in which month and year?",
+    "correctAnswer": "November 2022",
+    "incorrectAnswers": [
+      "March 2021",
+      "June 2022",
+      "March 2023"
+    ],
+    "explanation": "ChatGPT launched on November 30, 2022, and gained one million users in its first five days.",
+    "keywords": [
+      "ai-history",
+      "chatgpt"
+    ],
+    "source": "https://en.wikipedia.org/wiki/ChatGPT"
+  },
+  {
+    "itemId": "0e12ac6d-0903-40c1-a222-14bdb5981467",
+    "seedId": "5e9f117d-3dcd-4f54-89a5-4216cc038f8b",
+    "category": "tech",
+    "navigationKeyword1": "ai-ml",
+    "navigationKeyword2": "genai-facts",
+    "question": "About how long did ChatGPT take to reach 100 million monthly users after launch?",
+    "correctAnswer": "About two months",
+    "incorrectAnswers": [
+      "About two weeks",
+      "About one year",
+      "About three years"
+    ],
+    "explanation": "It reached 100 million monthly users about two months after its November 2022 launch.",
+    "keywords": [
+      "ai-history",
+      "chatgpt"
+    ],
+    "source": "https://en.wikipedia.org/wiki/ChatGPT"
+  },
+  {
+    "itemId": "5d60c6f4-9e95-4f5d-ac09-33decc98ff3b",
+    "seedId": "4af68db7-9d46-49c2-a4e7-46962e8cd42d",
+    "category": "tech",
+    "navigationKeyword1": "ai-ml",
+    "navigationKeyword2": "genai-facts",
+    "question": "OpenAI's Sora, first previewed in February 2024, generates what from text prompts?",
+    "correctAnswer": "Short video clips",
+    "incorrectAnswers": [
+      "Song lyrics",
+      "3D game levels",
+      "Computer code"
+    ],
+    "explanation": "Sora is a text-to-video model. It can create short clips from a description and extend existing videos.",
+    "keywords": [
+      "ai-history",
+      "video-generation"
+    ],
+    "source": "https://en.wikipedia.org/wiki/Sora_(text-to-video_model)"
   }
 ]

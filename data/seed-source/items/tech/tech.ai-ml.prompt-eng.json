@@ -1,116 +1,335 @@
 [
   {
     "itemId": "f7c274f3-933b-4048-a172-513b00d6df2b",
+    "seedId": "0a3987ba-d5cc-4068-bec7-702f7dfd1909",
     "category": "tech",
     "navigationKeyword1": "ai-ml",
     "navigationKeyword2": "prompt-eng",
-    "question": "What does few-shot prompting provide inside the prompt?",
-    "correctAnswer": "A small set of input\u2013output examples before the real task",
+    "question": "In few-shot prompting, what do you add to the prompt before the real task?",
+    "correctAnswer": "A few worked examples of input and output",
     "incorrectAnswers": [
-      "Only a random number seed",
-      "A database backup file",
-      "Compiled binary machine code"
+      "A short list of words the model must avoid",
+      "A summary of the model's training data",
+      "A note on how many answers to generate"
     ],
-    "explanation": "Showing a few demonstrations teaches the desired pattern without updating model weights, which is the core idea of few-shot prompting.",
+    "explanation": "A few examples let the model pick up the pattern you want straight from the prompt. This is called in-context learning, and it needs no retraining.",
     "keywords": [
       "ai-ml",
-      "few-shot"
+      "few-shot",
+      "examples"
     ],
     "source": "https://en.wikipedia.org/wiki/Prompt_engineering"
   },
   {
     "itemId": "4015491d-2d45-453b-9de0-e18cad7ced6e",
+    "seedId": "2f429091-850c-4add-ac3d-ea4bc957cfa8",
     "category": "tech",
     "navigationKeyword1": "ai-ml",
     "navigationKeyword2": "prompt-eng",
-    "question": "Chain-of-thought prompting mainly improves performance by asking the model to do what?",
-    "correctAnswer": "Show intermediate reasoning steps before the final answer",
+    "question": "Chain-of-thought prompting helps a model with hard reasoning problems by getting it to do what?",
+    "correctAnswer": "Write out intermediate steps before answering",
     "incorrectAnswers": [
-      "Skip all reasoning and guess",
-      "Output only a single digit with no words",
-      "Translate the prompt to another language first"
+      "Answer first, then list its sources",
+      "Rewrite the question in simpler words",
+      "Give several answers and pick the shortest"
     ],
-    "explanation": "Explicitly eliciting step-by-step reasoning helps models decompose problems, especially for arithmetic and logic tasks.",
+    "explanation": "Working through a problem as a series of intermediate steps greatly improves large models on multi-step tasks such as math word problems.",
     "keywords": [
       "ai-ml",
-      "chain-of-thought"
+      "chain-of-thought",
+      "reasoning"
     ],
     "source": "https://arxiv.org/abs/2201.11903"
   },
   {
     "itemId": "ee9a84bd-6a85-411b-9047-a597ea0d3395",
+    "seedId": "24168483-1c9b-480e-92c9-b0436d4e5f6c",
     "category": "tech",
     "navigationKeyword1": "ai-ml",
     "navigationKeyword2": "prompt-eng",
-    "question": "Why is specifying the desired output format (for example JSON keys) often helpful?",
-    "correctAnswer": "It reduces ambiguity so parsers and downstream tools get consistent structure",
+    "question": "You need a model's reply to load into a spreadsheet every time. What is the most direct prompt change?",
+    "correctAnswer": "Spell out the exact output format you want",
     "incorrectAnswers": [
-      "It increases model size on disk",
-      "It disables all safety filters",
-      "It guarantees factual correctness"
+      "Ask the model to be as creative as it can",
+      "Make the prompt as short as possible",
+      "Repeat the same question several times"
     ],
-    "explanation": "Clear format instructions steer token generation toward machine-readable layouts and cut rework from vague prose.",
+    "explanation": "Models follow format instructions, such as a table, a list or JSON with named fields. You can even start the output yourself so the model completes it in the same structure.",
     "keywords": [
       "ai-ml",
-      "prompt-structure"
+      "output-format"
     ],
-    "source": "https://ai.google.dev/gemini-api/docs/prompting-strategies"
+    "source": "https://aistudio.google.com/docs/prompting-strategies"
   },
   {
     "itemId": "fc26810b-41a8-4f08-91b1-f26f1f1b4cb4",
+    "seedId": "7b755390-cb52-4078-819e-b4084792f39c",
     "category": "tech",
     "navigationKeyword1": "ai-ml",
     "navigationKeyword2": "prompt-eng",
-    "question": "What is a common risk when a prompt asks the model for facts without verification?",
-    "correctAnswer": "Confident but incorrect statements that do not match real sources",
+    "question": "What is a 'hallucination' in a language model's answer?",
+    "correctAnswer": "A fluent, confident claim that is actually false",
     "incorrectAnswers": [
-      "The model always refuses to answer",
-      "The prompt file becomes too small to save",
-      "The GPU always overheats"
+      "A refusal to answer a harmless question",
+      "A reply cut off before it is finished",
+      "An answer written in the wrong language"
     ],
-    "explanation": "Language models can produce plausible-sounding errors, so prompts for factual tasks should pair with retrieval or human review when stakes are high.",
+    "explanation": "Models can produce text that sounds natural and sure of itself but is factually wrong. For important facts, check the answer or give the model trusted documents to work from.",
     "keywords": [
       "ai-ml",
+      "hallucination",
       "reliability"
     ],
     "source": "https://en.wikipedia.org/wiki/Large_language_model"
   },
   {
     "itemId": "976f26be-f13f-4a09-ab47-b82504e3d191",
+    "seedId": "7e0026b5-40a5-4b04-b858-1abde6ec60aa",
     "category": "tech",
     "navigationKeyword1": "ai-ml",
     "navigationKeyword2": "prompt-eng",
-    "question": "In systems that separate system and user messages, what is the usual role of the system message?",
-    "correctAnswer": "Set stable rules, persona limits, and safety or style constraints",
+    "question": "In a chat with an AI model, what is the system message usually for?",
+    "correctAnswer": "Telling the model how to behave for the whole chat",
     "incorrectAnswers": [
-      "Store the entire training dataset",
-      "Replace the need for any user input",
-      "Execute shell commands on the server"
+      "Holding the user's latest question",
+      "Storing the model's previous replies",
+      "Reporting errors back to the user"
     ],
-    "explanation": "The system layer carries persistent instructions so each user turn inherits the same behavioral boundaries.",
+    "explanation": "Chats are made of user, assistant and system messages. The system message, usually placed first, gives standing directions such as a persona or tone that apply to every turn.",
     "keywords": [
       "ai-ml",
-      "chat-prompts"
+      "system-prompt",
+      "chat-roles"
     ],
     "source": "https://huggingface.co/docs/transformers/chat_templating"
   },
   {
     "itemId": "11713501-690e-40a7-b773-a717747dfac1",
+    "seedId": "cabb1fe3-2e7d-46e8-9a15-00aaf3fe2261",
     "category": "tech",
     "navigationKeyword1": "ai-ml",
     "navigationKeyword2": "prompt-eng",
-    "question": "What does zero-shot prompting mean?",
-    "correctAnswer": "The model gets instructions and input but no solved examples in the prompt",
+    "question": "A prompt says 'Classify this review as positive or negative' and gives no examples. What kind of prompt is this?",
+    "correctAnswer": "Zero-shot",
     "incorrectAnswers": [
-      "The model has zero parameters",
-      "The prompt must be empty",
-      "Training used zero examples globally"
+      "Few-shot",
+      "Chain-of-thought",
+      "Fine-tuned"
     ],
-    "explanation": "Zero-shot means the task is described directly without demonstration pairs, relying on prior pretraining to generalize.",
+    "explanation": "A prompt with no examples is called zero-shot; adding a few examples makes it few-shot. Zero-shot relies entirely on what the model already learned.",
     "keywords": [
       "ai-ml",
       "zero-shot"
     ],
-    "source": "https://en.wikipedia.org/wiki/Prompt_engineering"
+    "source": "https://aistudio.google.com/docs/prompting-strategies"
+  },
+  {
+    "itemId": "e6ab4298-6dbe-4548-bb52-4d68658da1bf",
+    "seedId": "b1e149f7-7d49-432c-96f1-2475bf630e21",
+    "category": "tech",
+    "navigationKeyword1": "ai-ml",
+    "navigationKeyword2": "prompt-eng",
+    "question": "Which short phrase, added before a model's answer, sharply improved its math word-problem scores in a 2022 study?",
+    "correctAnswer": "\"Let's think step by step\"",
+    "incorrectAnswers": [
+      "\"Answer as briefly as you can\"",
+      "\"You are a world-class expert\"",
+      "\"Double-check your final number\""
+    ],
+    "explanation": "Adding this one phrase lifted one model's accuracy on a math benchmark from about 18% to 79%, with no examples needed. It nudges the model to reason before it answers.",
+    "keywords": [
+      "ai-ml",
+      "chain-of-thought",
+      "zero-shot"
+    ],
+    "source": "https://arxiv.org/abs/2205.11916"
+  },
+  {
+    "itemId": "8d349520-ebe2-4809-99a2-612ff28b2c78",
+    "seedId": "469de25d-ae80-4372-a141-f32f83fe90c7",
+    "category": "tech",
+    "navigationKeyword1": "ai-ml",
+    "navigationKeyword2": "prompt-eng",
+    "question": "Where does a role such as 'You are a patient math tutor' usually go to shape a model's tone for a whole app?",
+    "correctAnswer": "In the system prompt",
+    "incorrectAnswers": [
+      "In the last user message",
+      "In the model's first reply",
+      "In the conversation title"
+    ],
+    "explanation": "Setting a role in the system prompt focuses the model's behavior and tone. Even a single sentence makes a noticeable difference.",
+    "keywords": [
+      "ai-ml",
+      "role-prompting",
+      "system-prompt"
+    ],
+    "source": "https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/claude-prompting-best-practices"
+  },
+  {
+    "itemId": "b4492ca5-bfff-41f3-ae3c-ffbe6a17ce61",
+    "seedId": "ffd2761f-3aaa-4b1f-8eb8-71dfdc23d552",
+    "category": "tech",
+    "navigationKeyword1": "ai-ml",
+    "navigationKeyword2": "prompt-eng",
+    "question": "Why might 'The reply will be read aloud, so never use ellipses' work better than just 'NEVER use ellipses'?",
+    "correctAnswer": "The reason helps the model grasp the real goal",
+    "incorrectAnswers": [
+      "Capital letters confuse most models",
+      "Longer prompts always get better answers",
+      "Models ignore rules written as commands"
+    ],
+    "explanation": "Explaining why an instruction matters gives the model more context about your goal. It can then generalize, for example avoiding other things a speech engine cannot pronounce.",
+    "keywords": [
+      "ai-ml",
+      "context",
+      "instructions"
+    ],
+    "source": "https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/claude-prompting-best-practices"
+  },
+  {
+    "itemId": "0fcb1c67-9d4b-494f-9588-4b3b5f72d2da",
+    "seedId": "5dfa037c-d774-43fd-be67-de1f230cf363",
+    "category": "tech",
+    "navigationKeyword1": "ai-ml",
+    "navigationKeyword2": "prompt-eng",
+    "question": "You want a reply in plain paragraphs, not bullet points. Which instruction tends to work best?",
+    "correctAnswer": "\"Write your answer as flowing prose paragraphs.\"",
+    "incorrectAnswers": [
+      "\"Do not use bullet points or lists.\"",
+      "\"Never use any markdown at all.\"",
+      "\"Avoid formatting your answer.\""
+    ],
+    "explanation": "Telling a model what to do usually steers it better than telling it what not to do. A positive description of the target gives it something concrete to aim for.",
+    "keywords": [
+      "ai-ml",
+      "instructions",
+      "output-format"
+    ],
+    "source": "https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/claude-prompting-best-practices"
+  },
+  {
+    "itemId": "d6d294aa-ef99-450c-96af-5a910fbb613a",
+    "seedId": "818b9b44-3ccc-490c-9131-98591120b682",
+    "category": "tech",
+    "navigationKeyword1": "ai-ml",
+    "navigationKeyword2": "prompt-eng",
+    "question": "Your prompt mixes instructions, a pasted document and examples. Why wrap each part in tags like <document>?",
+    "correctAnswer": "So the model can tell the parts apart",
+    "incorrectAnswers": [
+      "So the model reads the prompt faster",
+      "So the reply comes back as a web page",
+      "So the document is hidden from the model"
+    ],
+    "explanation": "Labeling each kind of content with its own tag makes a complex prompt unambiguous. The model is less likely to mistake a pasted document for instructions.",
+    "keywords": [
+      "ai-ml",
+      "xml-tags",
+      "prompt-structure"
+    ],
+    "source": "https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/claude-prompting-best-practices"
+  },
+  {
+    "itemId": "b7f29f47-bf95-4d65-a6e5-dd4f9067d099",
+    "seedId": "00dae8a5-39b0-4b32-b570-00af49a0b743",
+    "category": "tech",
+    "navigationKeyword1": "ai-ml",
+    "navigationKeyword2": "prompt-eng",
+    "question": "When asking a question about a long pasted report, where is the question usually best placed?",
+    "correctAnswer": "At the end, after the report",
+    "incorrectAnswers": [
+      "At the start, before the report",
+      "In the middle of the report",
+      "In a separate, earlier chat"
+    ],
+    "explanation": "Putting long documents near the top and the question at the end tends to improve answers. In tests this lifted response quality by up to 30 percent on complex inputs.",
+    "keywords": [
+      "ai-ml",
+      "long-context",
+      "prompt-structure"
+    ],
+    "source": "https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/claude-prompting-best-practices"
+  },
+  {
+    "itemId": "6c8b4495-c244-4bfc-8072-7ec1c6728724",
+    "seedId": "4b0f440e-86f6-4f0f-9267-bf71a82dc115",
+    "category": "tech",
+    "navigationKeyword1": "ai-ml",
+    "navigationKeyword2": "prompt-eng",
+    "question": "An app's developer instructions and a user's message conflict. Which does the model generally prioritize?",
+    "correctAnswer": "The developer instructions",
+    "incorrectAnswers": [
+      "The user's message",
+      "Whichever is longer",
+      "Whichever came last"
+    ],
+    "explanation": "Developer messages set the app's rules and are ranked ahead of user messages. User messages supply the input those rules are applied to.",
+    "keywords": [
+      "ai-ml",
+      "chat-roles",
+      "system-prompt"
+    ],
+    "source": "https://developers.openai.com/api/docs/guides/prompt-engineering"
+  },
+  {
+    "itemId": "753dbc6a-cc6c-42fb-8c8f-a64d7f65d400",
+    "seedId": "4f162965-cfe0-4196-b498-0bec97b05954",
+    "category": "tech",
+    "navigationKeyword1": "ai-ml",
+    "navigationKeyword2": "prompt-eng",
+    "question": "A single prompt with ten instructions keeps giving messy results. What is a common fix?",
+    "correctAnswer": "Split it into a chain of smaller prompts",
+    "incorrectAnswers": [
+      "Merge the instructions into one sentence",
+      "Ask for a longer answer each time",
+      "Run the same prompt again until it works"
+    ],
+    "explanation": "Complex tasks often work better as one prompt per step, with each output fed into the next prompt. This is called prompt chaining.",
+    "keywords": [
+      "ai-ml",
+      "prompt-chaining"
+    ],
+    "source": "https://aistudio.google.com/docs/prompting-strategies"
+  },
+  {
+    "itemId": "3572d033-80eb-475f-8bc8-41ca8f14b054",
+    "seedId": "5d977be8-d1dc-4c40-9759-19e590e6f082",
+    "category": "tech",
+    "navigationKeyword1": "ai-ml",
+    "navigationKeyword2": "prompt-eng",
+    "question": "An AI assistant reads a web page with hidden text saying 'ignore your rules'. What is this attack called?",
+    "correctAnswer": "Prompt injection",
+    "incorrectAnswers": [
+      "Model distillation",
+      "Data augmentation",
+      "Prompt chaining"
+    ],
+    "explanation": "Prompt injection uses harmless-looking input to make a model behave in unintended ways. In the indirect form, the hostile instructions hide inside content the model retrieves, such as a web page.",
+    "keywords": [
+      "ai-ml",
+      "prompt-injection",
+      "ai-safety"
+    ],
+    "source": "https://en.wikipedia.org/wiki/Prompt_injection"
+  },
+  {
+    "itemId": "7ad5aedb-22f3-465d-92c9-be4dda879b9d",
+    "seedId": "ba76dfad-9a60-4e5c-be04-2389f6fc76cc",
+    "category": "tech",
+    "navigationKeyword1": "ai-ml",
+    "navigationKeyword2": "prompt-eng",
+    "question": "When a model learns a new task from examples in the prompt, what happens to the model itself?",
+    "correctAnswer": "Nothing; its weights stay the same",
+    "incorrectAnswers": [
+      "It is retrained on the examples",
+      "It saves the examples for all users",
+      "Its weights are adjusted slightly"
+    ],
+    "explanation": "Few-shot tasks are given purely as text, with no gradient updates or fine-tuning. The model adapts only for that prompt, and the effect disappears afterward.",
+    "keywords": [
+      "ai-ml",
+      "in-context-learning",
+      "few-shot"
+    ],
+    "source": "https://arxiv.org/abs/2005.14165"
   }
 ]
