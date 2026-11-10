@@ -12,7 +12,7 @@ using Xunit;
 namespace Quizymode.Api.Tests.Features.StudyPlans;
 
 /// <summary>#364: test-date plan rules at the handler level, with an injected clock for the date window.</summary>
-public sealed class StudyPlansTests : DatabaseTestFixture
+public sealed class StudyPlansTests : ItemTestFixture
 {
     private sealed class FixedTimeProvider(DateTimeOffset now) : TimeProvider
     {
@@ -239,9 +239,11 @@ public sealed class StudyPlansTests : DatabaseTestFixture
     public async Task List_ReportsItemCount_AndOnlyTheCallersPlans()
     {
         Collection collection = await AddCollectionAsync("owner");
+        Item first = await CreateItemWithCategoryAsync("geography", "Q1", "A", new List<string>(), "", isPrivate: false, createdBy: "owner");
+        Item second = await CreateItemWithCategoryAsync("geography", "Q2", "A", new List<string>(), "", isPrivate: false, createdBy: "owner");
         DbContext.CollectionItems.AddRange(
-            new CollectionItem { Id = Guid.NewGuid(), CollectionId = collection.Id, ItemId = Guid.NewGuid(), AddedAt = Now },
-            new CollectionItem { Id = Guid.NewGuid(), CollectionId = collection.Id, ItemId = Guid.NewGuid(), AddedAt = Now });
+            new CollectionItem { Id = Guid.NewGuid(), CollectionId = collection.Id, ItemId = first.Id, AddedAt = Now },
+            new CollectionItem { Id = Guid.NewGuid(), CollectionId = collection.Id, ItemId = second.Id, AddedAt = Now });
         await DbContext.SaveChangesAsync();
         await PutAsync("user-a", collection.Id, Date(4));
         await PutAsync("user-b", collection.Id, Date(6));
@@ -251,6 +253,30 @@ public sealed class StudyPlansTests : DatabaseTestFixture
         response.Plans.Should().ContainSingle();
         response.Plans[0].ItemCount.Should().Be(2);
         response.Plans[0].TestDate.Should().Be(Date(4));
+    }
+
+    [Fact]
+    public async Task List_ItemCount_MatchesGetCollectionById_IncludingNestedContent()
+    {
+        // AC 1.16c.3: a plan's item count is the same lead total the collection itself reports.
+        Collection parent = await AddCollectionAsync("owner", name: "Parent");
+        Collection child = await AddCollectionAsync("owner", name: "Child");
+        Item direct = await CreateItemWithCategoryAsync("geography", "Direct", "A", new List<string>(), "", isPrivate: false, createdBy: "owner");
+        Item nested = await CreateItemWithCategoryAsync("geography", "Nested", "A", new List<string>(), "", isPrivate: false, createdBy: "owner");
+        DbContext.CollectionItems.AddRange(
+            new CollectionItem { Id = Guid.NewGuid(), CollectionId = parent.Id, ItemId = direct.Id, AddedAt = Now },
+            new CollectionItem { Id = Guid.NewGuid(), CollectionId = child.Id, ItemId = nested.Id, AddedAt = Now });
+        DbContext.CollectionCollectionMembers.Add(new CollectionCollectionMember { Id = Guid.NewGuid(), ParentId = parent.Id, ChildId = child.Id });
+        await DbContext.SaveChangesAsync();
+        await PutAsync("owner", parent.Id, Date(4));
+
+        Plans.ListResponse plans = await ListAsync("owner");
+        Result<Quizymode.Api.Features.Collections.GetCollectionById.Response> collection =
+            await Quizymode.Api.Features.Collections.GetCollectionById.HandleAsync(parent.Id, DbContext, LearningLoopTestData.User("owner"), CancellationToken.None);
+
+        plans.Plans.Should().ContainSingle();
+        plans.Plans[0].ItemCount.Should().Be(2);
+        collection.Value.ItemCount.Should().Be(plans.Plans[0].ItemCount);
     }
 
     [Fact]
