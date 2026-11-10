@@ -294,5 +294,62 @@
     "source": "https://en.wikipedia.org/wiki/ChatGPT",
     "starterWorld": "genai",
     "wowLine": "ChatGPT reached an estimated 100 million users within about two months of launch."
+  },
+  {
+    "itemId": "e7e8eb01-8ae0-467a-b5e4-927c6a653c69",
+    "seedId": "0f02ab57-f4a5-4195-89c7-076e81c305a0",
+    "category": "tech",
+    "navigationKeyword1": "ai-ml",
+    "navigationKeyword2": "llms",
+    "question": "ChatGPT reads and writes text in small chunks called what?",
+    "correctAnswer": "Tokens",
+    "incorrectAnswers": [
+      "Pixels",
+      "Syllables",
+      "Bytes"
+    ],
+    "explanation": "AI chatbots split text into chunks called tokens. In English, one token is about 4 characters, or roughly three-quarters of a word.",
+    "keywords": [],
+    "source": "https://help.openai.com/en/articles/4936856-what-are-tokens-and-how-to-count-them",
+    "starterWorld": "genai",
+    "wowLine": "In English, one token is about 4 characters, or roughly three-quarters of a word."
+  },
+  {
+    "itemId": "d13327a4-7cda-4227-86d2-b94baf19a83d",
+    "seedId": "1739e9cc-a47c-4486-91a4-a8c8c1b67c58",
+    "category": "tech",
+    "navigationKeyword1": "ai-ml",
+    "navigationKeyword2": "llms",
+    "question": "How much text an AI model can consider at once is called its what?",
+    "correctAnswer": "Context window",
+    "incorrectAnswers": [
+      "Screen size",
+      "Memory card",
+      "Chat history"
+    ],
+    "explanation": "The context window is measured in tokens and covers your prompt, any documents you add and the reply. Some models accept about 200,000 tokens.",
+    "keywords": [],
+    "source": "https://docs.anthropic.com/en/docs/build-with-claude/context-windows",
+    "starterWorld": "genai",
+    "wowLine": "Some models can take in about 200,000 tokens at once, roughly the length of a long novel."
+  },
+  {
+    "itemId": "017a87a1-fd3e-4420-9057-9e74791dae4c",
+    "seedId": "f3d0ea0d-a66f-4d78-9235-be43979c3052",
+    "category": "tech",
+    "navigationKeyword1": "ai-ml",
+    "navigationKeyword2": "llms",
+    "question": "Turning an AI's temperature setting up makes its answers more what?",
+    "correctAnswer": "Varied",
+    "incorrectAnswers": [
+      "Accurate",
+      "Polite",
+      "Short"
+    ],
+    "explanation": "Temperature controls randomness when the model picks each next token. Low values give focused, repeatable answers and high values give more variety.",
+    "keywords": [],
+    "source": "https://platform.openai.com/docs/api-reference/chat/create",
+    "starterWorld": "genai",
+    "wowLine": "At temperature 0 a model gives nearly the same answer every time. Higher settings add variety."
   }
 ]
