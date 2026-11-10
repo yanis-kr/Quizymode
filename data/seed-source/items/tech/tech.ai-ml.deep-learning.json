@@ -1,93 +1,102 @@
 [
   {
     "itemId": "94af8f14-f982-4f1a-8f99-3e44b48efb97",
+    "seedId": "63c6f3a4-cddb-4f83-bb64-8396909cc712",
     "category": "tech",
     "navigationKeyword1": "ai-ml",
     "navigationKeyword2": "deep-learning",
-    "question": "What does backpropagation compute efficiently for a feedforward neural network?",
-    "correctAnswer": "Gradients of the loss with respect to each weight using the chain rule",
+    "question": "After a neural network makes a wrong prediction, what does backpropagation work out?",
+    "correctAnswer": "How much each weight contributed to the error",
     "incorrectAnswers": [
-      "Only the final accuracy percentage",
-      "The exact optimal weights without iteration",
-      "A random permutation of layers"
+      "Which training examples should be deleted",
+      "How many layers the network should add",
+      "Which input features to ignore next time"
     ],
-    "explanation": "Backprop applies the chain rule layer by layer so gradient descent can update weights toward lower loss.",
+    "explanation": "Backpropagation sends the error backward from the output layer to the input layer, using the chain rule to get a gradient for every weight. Those gradients tell the training step which way to nudge each weight.",
     "keywords": [
       "ai-ml",
-      "backpropagation"
+      "backpropagation",
+      "training"
     ],
     "source": "https://en.wikipedia.org/wiki/Backpropagation"
   },
   {
     "itemId": "0976d70d-9d6a-4a68-9ae7-cb7b77ce836b",
+    "seedId": "21aabddb-901d-4462-995e-5af94c4a1bc7",
     "category": "tech",
     "navigationKeyword1": "ai-ml",
     "navigationKeyword2": "deep-learning",
-    "question": "Why is ReLU often preferred over a saturating sigmoid in deep hidden layers?",
-    "correctAnswer": "It reduces vanishing gradients for positive activations and is cheap to compute",
+    "question": "Why is ReLU, which outputs max(0, x), a popular default activation in deep networks instead of sigmoid?",
+    "correctAnswer": "It is cheap to compute and suffers less from vanishing gradients",
     "incorrectAnswers": [
-      "It always outputs values between 0 and 1",
-      "It removes the need for any training data",
-      "It guarantees convex loss surfaces"
+      "It keeps every output between 0 and 1 for easy reading",
+      "It makes the network's loss surface perfectly smooth",
+      "It lets the network train without any labeled examples"
     ],
-    "explanation": "ReLU passes positive values linearly and has a simple derivative, helping deeper networks train compared with flat sigmoid tails.",
+    "explanation": "Sigmoid flattens out at both ends, so its gradients shrink and deep layers learn slowly. ReLU stays steep for positive inputs and needs only a simple comparison to compute.",
     "keywords": [
       "ai-ml",
-      "activation-functions"
+      "activation-functions",
+      "relu"
     ],
-    "source": "https://pytorch.org/docs/stable/generated/torch.nn.ReLU.html"
+    "source": "https://en.wikipedia.org/wiki/Rectifier_(neural_networks)"
   },
   {
     "itemId": "b1e9333e-2bca-4048-a4fe-514a1081c1e1",
+    "seedId": "246d3528-57cc-4659-a006-0992dec3bb6c",
     "category": "tech",
     "navigationKeyword1": "ai-ml",
     "navigationKeyword2": "deep-learning",
-    "question": "What is the main role of convolutional layers in image models?",
-    "correctAnswer": "Apply local filters across the image to detect patterns at many positions",
+    "question": "A convolutional layer slides the same small filter across a whole image. What does this let it do?",
+    "correctAnswer": "Spot the same pattern wherever it appears in the image",
     "incorrectAnswers": [
-      "Sort pixels alphabetically",
-      "Encrypt the image with a password",
-      "Replace every pixel with the global mean"
+      "Store a separate copy of the image for every class",
+      "Compress the image into a single color value",
+      "Sort the pixels from brightest to darkest"
     ],
-    "explanation": "Convolution shares weights across space so small motifs like edges are detected regardless of where they appear.",
+    "explanation": "Each filter uses one shared set of weights at every position. A filter that detects an edge in one corner detects the same edge anywhere else, which saves parameters.",
     "keywords": [
       "ai-ml",
-      "cnn"
+      "cnn",
+      "computer-vision"
     ],
-    "source": "https://www.tensorflow.org/tutorials/images/intro_to_cnns"
+    "source": "https://en.wikipedia.org/wiki/Convolutional_neural_network"
   },
   {
     "itemId": "74fce50c-8980-4622-8480-bd65a2a356e8",
+    "seedId": "329637e4-9454-4845-b04b-759840291e3c",
     "category": "tech",
     "navigationKeyword1": "ai-ml",
     "navigationKeyword2": "deep-learning",
-    "question": "Why is dropout applied during training?",
-    "correctAnswer": "Randomly disable units so the network does not rely on specific co-adaptations",
+    "question": "During training, dropout randomly switches off some neurons at each step. What problem does this help prevent?",
+    "correctAnswer": "Overfitting to the training data",
     "incorrectAnswers": [
-      "To increase the number of parameters",
-      "To freeze all weights permanently",
-      "To convert the model into a decision tree"
+      "Running out of GPU memory",
+      "Training data with missing labels",
+      "Predictions that take too long"
     ],
-    "explanation": "Dropout acts as regularization by sampling thinner subnetworks each step, which reduces overfitting on the training set.",
+    "explanation": "Because any neuron might vanish, the network cannot rely on a few neurons co-adapting to memorize the training set. Dropout is normally turned off when the trained model is used.",
     "keywords": [
       "ai-ml",
-      "dropout"
+      "dropout",
+      "regularization"
     ],
     "source": "https://en.wikipedia.org/wiki/Dropout_(neural_networks)"
   },
   {
     "itemId": "e46fa40e-1267-4b42-93d1-8e4f4b6fd7b4",
+    "seedId": "699602c8-20fa-405c-bc6d-9d084ff73eff",
     "category": "tech",
     "navigationKeyword1": "ai-ml",
     "navigationKeyword2": "deep-learning",
-    "question": "What does batch normalization typically normalize in each mini-batch?",
-    "correctAnswer": "Activations using running mean and variance estimates across layers",
+    "question": "During training, what does a batch normalization layer use to rescale its inputs?",
+    "correctAnswer": "The mean and variance of the current batch",
     "incorrectAnswers": [
-      "Only the loss value to zero",
-      "The entire dataset label distribution",
-      "Hardware clock speeds"
+      "The largest value seen in the whole dataset",
+      "The average of the network's weights",
+      "The loss value from the previous step"
     ],
-    "explanation": "Batch norm stabilizes activations by standardizing and scaling, which helps training deeper networks converge faster.",
+    "explanation": "In training, batch norm standardizes each batch using that batch's own mean and variance. It also keeps moving averages of these statistics, which it uses instead when the model makes predictions.",
     "keywords": [
       "ai-ml",
       "batch-norm"
@@ -96,21 +105,271 @@
   },
   {
     "itemId": "a4299f79-ca57-499f-9f10-4d347b0543e8",
+    "seedId": "1023f219-cfda-436f-9a9d-44b4576d15f6",
     "category": "tech",
     "navigationKeyword1": "ai-ml",
     "navigationKeyword2": "deep-learning",
-    "question": "In basic gradient descent, what quantity updates each weight?",
-    "correctAnswer": "The negative gradient of the loss scaled by a learning rate",
+    "question": "In gradient descent, which way does each training step move the weights?",
+    "correctAnswer": "Against the gradient, by a step set by the learning rate",
     "incorrectAnswers": [
-      "The raw input pixel values only",
-      "A fixed random number unrelated to loss",
-      "The softmax of labels only"
+      "Along the gradient, by a step set by the batch size",
+      "Toward random values, by a step set by the epoch count",
+      "Toward zero, by a step set by the number of layers"
     ],
-    "explanation": "Weights move opposite the gradient direction so each step reduces the loss function in differentiable models.",
+    "explanation": "The gradient points uphill on the loss, so stepping the opposite way lowers the loss. The learning rate controls how big each step is.",
     "keywords": [
       "ai-ml",
-      "gradient-descent"
+      "gradient-descent",
+      "learning-rate"
     ],
     "source": "https://en.wikipedia.org/wiki/Gradient_descent"
+  },
+  {
+    "itemId": "826b7bac-b10c-44f6-a817-17cb66a23461",
+    "seedId": "85def34f-799d-429d-958c-04e5fdb3250a",
+    "category": "tech",
+    "navigationKeyword1": "ai-ml",
+    "navigationKeyword2": "deep-learning",
+    "question": "Before its activation function, what does a single artificial neuron compute from its inputs?",
+    "correctAnswer": "A weighted sum of the inputs plus a bias",
+    "incorrectAnswers": [
+      "The largest input, ignoring the others",
+      "The product of all inputs multiplied together",
+      "A count of how many inputs are positive"
+    ],
+    "explanation": "Each input is multiplied by its own weight, the results are added up, and a bias is added. Training adjusts those weights and biases.",
+    "keywords": [
+      "ai-ml",
+      "neurons",
+      "neural-networks"
+    ],
+    "source": "https://developers.google.com/machine-learning/crash-course/neural-networks/nodes-hidden-layers"
+  },
+  {
+    "itemId": "e3352431-702a-4892-a017-2a4ef230a50b",
+    "seedId": "8213bcc2-00e1-4f2e-b724-3667f043d087",
+    "category": "tech",
+    "navigationKeyword1": "ai-ml",
+    "navigationKeyword2": "deep-learning",
+    "question": "In a neural network diagram, what are the layers between the input layer and the output layer called?",
+    "correctAnswer": "Hidden layers",
+    "incorrectAnswers": [
+      "Embedding layers",
+      "Feedback layers",
+      "Pooling layers"
+    ],
+    "explanation": "Hidden layers sit between the raw inputs and the final prediction. Their neurons transform the data step by step, and their values are not shown directly as inputs or outputs.",
+    "keywords": [
+      "ai-ml",
+      "hidden-layers",
+      "neural-networks"
+    ],
+    "source": "https://developers.google.com/machine-learning/crash-course/neural-networks/nodes-hidden-layers"
+  },
+  {
+    "itemId": "6d369e30-1727-42ff-9c8a-40c0e80c5fe8",
+    "seedId": "736dae2e-1a19-435e-91f9-e6df7554954b",
+    "category": "tech",
+    "navigationKeyword1": "ai-ml",
+    "navigationKeyword2": "deep-learning",
+    "question": "What does the word \"deep\" in deep learning refer to?",
+    "correctAnswer": "The many layers that transform the data",
+    "incorrectAnswers": [
+      "The very large amount of training data",
+      "The long time the training takes",
+      "The hidden meaning the model discovers"
+    ],
+    "explanation": "\"Deep\" describes how many layers the data passes through. Modern networks range from a few layers to thousands.",
+    "keywords": [
+      "ai-ml",
+      "deep-learning",
+      "layers"
+    ],
+    "source": "https://en.wikipedia.org/wiki/Deep_learning"
+  },
+  {
+    "itemId": "749e4d64-7ad1-47a6-8232-8d8a1559a645",
+    "seedId": "91aedcee-e679-4fa9-b8bb-05a49045216a",
+    "category": "tech",
+    "navigationKeyword1": "ai-ml",
+    "navigationKeyword2": "deep-learning",
+    "question": "In a deep network that recognizes faces, what do the earliest layers usually learn to detect?",
+    "correctAnswer": "Simple patterns such as lines and edges",
+    "incorrectAnswers": [
+      "Whole faces of specific people",
+      "Facial expressions such as smiles",
+      "The name of the person shown"
+    ],
+    "explanation": "Each layer builds on the one before it. Early layers find simple lines and edges, middle layers combine them into parts, and later layers recognize whole objects such as faces.",
+    "keywords": [
+      "ai-ml",
+      "feature-learning",
+      "layers"
+    ],
+    "source": "https://en.wikipedia.org/wiki/Deep_learning"
+  },
+  {
+    "itemId": "6bf40ec8-23f4-4f94-93e0-88e3dcdd6dcd",
+    "seedId": "f19a9785-e7a6-4774-aa7a-2d750b71faac",
+    "category": "tech",
+    "navigationKeyword1": "ai-ml",
+    "navigationKeyword2": "deep-learning",
+    "question": "Compared with older machine learning, what job does deep learning take over from human experts?",
+    "correctAnswer": "Designing the features the model looks at",
+    "incorrectAnswers": [
+      "Collecting and labeling the training data",
+      "Choosing how many layers the model has",
+      "Deciding which problem the model solves"
+    ],
+    "explanation": "Older methods relied on people hand-crafting features, such as edge detectors. Deep networks learn useful features directly from the data, though people still choose settings like the number of layers.",
+    "keywords": [
+      "ai-ml",
+      "feature-learning"
+    ],
+    "source": "https://en.wikipedia.org/wiki/Deep_learning"
+  },
+  {
+    "itemId": "0e25a4fd-b047-40dd-9f52-45d81c5ea9b8",
+    "seedId": "b3a3f469-74e5-4899-ab33-75878af64af9",
+    "category": "tech",
+    "navigationKeyword1": "ai-ml",
+    "navigationKeyword2": "deep-learning",
+    "question": "What happens if you stack many layers but leave out nonlinear activation functions?",
+    "correctAnswer": "The network can only model straight-line relationships",
+    "incorrectAnswers": [
+      "The network trains faster and becomes more accurate",
+      "The network can only output values between 0 and 1",
+      "The network stops being able to use a bias"
+    ],
+    "explanation": "Linear operations stacked on linear operations are still linear, so the extra layers add nothing. Nonlinear activations let the network capture curved, complex patterns.",
+    "keywords": [
+      "ai-ml",
+      "activation-functions"
+    ],
+    "source": "https://developers.google.com/machine-learning/crash-course/neural-networks/activation-functions"
+  },
+  {
+    "itemId": "791e20bf-13a3-49bb-ad65-59b251cdd463",
+    "seedId": "be61059b-7a9f-463d-a26f-f132f0a71d9a",
+    "category": "tech",
+    "navigationKeyword1": "ai-ml",
+    "navigationKeyword2": "deep-learning",
+    "question": "While training, loss keeps falling on the training data but starts rising on validation data. What is most likely happening?",
+    "correctAnswer": "The model is overfitting",
+    "incorrectAnswers": [
+      "The model is underfitting",
+      "The learning rate is too small",
+      "The validation data is mislabeled"
+    ],
+    "explanation": "When the two loss curves split apart like this, the model is memorizing the training set instead of learning patterns that work on new data.",
+    "keywords": [
+      "ai-ml",
+      "overfitting",
+      "validation"
+    ],
+    "source": "https://developers.google.com/machine-learning/crash-course/overfitting/overfitting"
+  },
+  {
+    "itemId": "38e685d8-7e40-44ba-b0a1-2f42eaed8027",
+    "seedId": "74d32430-1e5a-4a80-aebd-5c73ee531d82",
+    "category": "tech",
+    "navigationKeyword1": "ai-ml",
+    "navigationKeyword2": "deep-learning",
+    "question": "What is the typical result of setting the learning rate far too high?",
+    "correctAnswer": "The loss bounces around and never settles",
+    "incorrectAnswers": [
+      "The loss drops smoothly but very slowly",
+      "The model memorizes the data in one step",
+      "The network removes its own unused layers"
+    ],
+    "explanation": "A huge step size makes each update overshoot the low point of the loss, so training never converges. A rate that is too small has the opposite problem: it needs far too many steps.",
+    "keywords": [
+      "ai-ml",
+      "learning-rate",
+      "hyperparameters"
+    ],
+    "source": "https://developers.google.com/machine-learning/crash-course/linear-regression/hyperparameters"
+  },
+  {
+    "itemId": "5192872b-f1a3-430b-a8a4-38fbb48e1a1f",
+    "seedId": "7708f66a-438e-489c-9868-46f0e7c98cb1",
+    "category": "tech",
+    "navigationKeyword1": "ai-ml",
+    "navigationKeyword2": "deep-learning",
+    "question": "A training log says \"Epoch 3 of 10\". What does one epoch mean?",
+    "correctAnswer": "One full pass through every training example",
+    "incorrectAnswers": [
+      "One weight update using a single batch",
+      "One check of the model on test data",
+      "One layer added to the network"
+    ],
+    "explanation": "After one epoch, the model has seen each training example once. Training usually runs for several epochs, with many weight updates inside each one.",
+    "keywords": [
+      "ai-ml",
+      "epoch",
+      "hyperparameters"
+    ],
+    "source": "https://developers.google.com/machine-learning/crash-course/linear-regression/hyperparameters"
+  },
+  {
+    "itemId": "0afafc50-a4ba-41b6-9cf6-7b8b28c69998",
+    "seedId": "78d4ed53-5523-405a-a1b1-390513cdcd36",
+    "category": "tech",
+    "navigationKeyword1": "ai-ml",
+    "navigationKeyword2": "deep-learning",
+    "question": "In a very deep network, the layers closest to the input barely change during training. What is this problem called?",
+    "correctAnswer": "Vanishing gradients",
+    "incorrectAnswers": [
+      "Exploding gradients",
+      "Data leakage",
+      "Class imbalance"
+    ],
+    "explanation": "The error signal shrinks as it is passed back through many layers, so early layers get tiny updates and learn slowly or not at all. ReLU activations help reduce it.",
+    "keywords": [
+      "ai-ml",
+      "vanishing-gradients"
+    ],
+    "source": "https://developers.google.com/machine-learning/crash-course/neural-networks/backpropagation"
+  },
+  {
+    "itemId": "7246f96e-660b-45eb-808a-0edaa22c4760",
+    "seedId": "44e5222b-584a-48a2-8dba-f162bb37e8d1",
+    "category": "tech",
+    "navigationKeyword1": "ai-ml",
+    "navigationKeyword2": "deep-learning",
+    "question": "You have only 2,000 photos of cats and dogs. Why start from a network already trained on millions of images?",
+    "correctAnswer": "It reuses visual features it has already learned",
+    "incorrectAnswers": [
+      "It already contains your photos in its training set",
+      "It needs no further training of any kind",
+      "It automatically labels your photos for you"
+    ],
+    "explanation": "This is transfer learning. A model trained on a large, general image set already detects useful visual features, so you only train a small new classifier on top instead of starting from scratch.",
+    "keywords": [
+      "ai-ml",
+      "transfer-learning"
+    ],
+    "source": "https://www.tensorflow.org/tutorials/images/transfer_learning"
+  },
+  {
+    "itemId": "23a5954a-0bee-47af-a44f-b2831ed3605f",
+    "seedId": "31814b2d-9094-48e0-9519-23b2dddb6526",
+    "category": "tech",
+    "navigationKeyword1": "ai-ml",
+    "navigationKeyword2": "deep-learning",
+    "question": "With early stopping, what signal tells you to halt training?",
+    "correctAnswer": "Error on held-out validation data starts to rise",
+    "incorrectAnswers": [
+      "Error on the training data reaches exactly zero",
+      "The planned number of epochs is half finished",
+      "The weights stop changing between steps"
+    ],
+    "explanation": "Validation error stands in for performance on unseen data. When it starts climbing, more training is fitting the training set at the cost of generalization, so stopping then helps avoid overfitting.",
+    "keywords": [
+      "ai-ml",
+      "early-stopping",
+      "overfitting"
+    ],
+    "source": "https://en.wikipedia.org/wiki/Early_stopping"
   }
 ]

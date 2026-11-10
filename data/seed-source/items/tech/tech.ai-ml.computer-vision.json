@@ -1,74 +1,79 @@
 [
   {
     "itemId": "66450e9f-6bc6-4856-8577-dc3f314977a0",
+    "seedId": "3b22d447-057d-472a-a6d0-a6cc9a9a6fa2",
     "category": "tech",
     "navigationKeyword1": "ai-ml",
     "navigationKeyword2": "computer-vision",
-    "question": "What is the main output of a single-label image classification model?",
-    "correctAnswer": "A predicted class label for the whole image",
+    "question": "A photo app sorts each picture into one group, such as \"cat\" or \"dog\". Which computer vision task is this?",
+    "correctAnswer": "Image classification",
     "incorrectAnswers": [
-      "A 3D mesh of the scene",
-      "The camera serial number",
-      "A list of every pixel\u2019s exact color name"
+      "Object detection",
+      "Image segmentation",
+      "Optical character recognition"
     ],
-    "explanation": "Classification assigns one or more categories to describe the dominant content of the image.",
+    "explanation": "Image classification puts a whole image into one of a set of predefined classes. It says what the picture shows, but not where in the picture it is.",
     "keywords": [
       "ai-ml",
       "classification"
     ],
-    "source": "https://en.wikipedia.org/wiki/Computer_vision"
+    "source": "https://www.ibm.com/think/topics/computer-vision"
   },
   {
     "itemId": "431df98d-d7eb-4ef3-bf30-42eb74bed5cd",
+    "seedId": "cdcc8dc9-0597-4d01-9384-b31c982162af",
     "category": "tech",
     "navigationKeyword1": "ai-ml",
     "navigationKeyword2": "computer-vision",
-    "question": "Compared with classification only, what does object detection add?",
-    "correctAnswer": "Bounding boxes and class labels for multiple objects in one image",
+    "question": "What does object detection add on top of simply naming what is in an image?",
+    "correctAnswer": "Where each object is, marked with a box",
     "incorrectAnswers": [
-      "Only a single label with no locations",
-      "Only resizing the image to 1\u00d71 pixels",
-      "Only changing the color balance"
+      "A sharper, higher-resolution copy of the image",
+      "A caption describing the mood of the scene",
+      "The camera settings used to take the photo"
     ],
-    "explanation": "Detection localizes instances so systems can count and track objects, not just name the scene.",
+    "explanation": "Object detection combines classification with localization: it names each object and draws a bounding box around it. That lets a system count objects or follow them, not just label the scene.",
     "keywords": [
       "ai-ml",
       "object-detection"
     ],
-    "source": "https://arxiv.org/abs/1504.08083"
+    "source": "https://www.ibm.com/think/topics/computer-vision"
   },
   {
     "itemId": "baf21f37-32be-44b9-ab87-b02eafc32600",
+    "seedId": "aa404059-8402-4cb0-9137-87b38c8b1166",
     "category": "tech",
     "navigationKeyword1": "ai-ml",
     "navigationKeyword2": "computer-vision",
-    "question": "What does Intersection over Union measure between two boxes?",
-    "correctAnswer": "Overlap between predicted and ground-truth regions divided by their union area",
+    "question": "When grading an object detector, what does the \"intersection over union\" score check?",
+    "correctAnswer": "How well a predicted box overlaps the correct box",
     "incorrectAnswers": [
-      "Only the width of the wider box",
-      "The sum of all pixel intensities",
-      "The frame rate of the camera"
+      "How quickly the model processes each frame",
+      "How many objects the model finds per image",
+      "How bright the image is inside each box"
     ],
-    "explanation": "IoU is a standard overlap score for comparing localization quality in detection and segmentation tasks.",
+    "explanation": "The score is the overlapping area of the two boxes divided by their combined area. A detection usually counts as correct only when the label is right and this overlap passes a set threshold.",
     "keywords": [
       "ai-ml",
-      "iou"
+      "iou",
+      "object-detection"
     ],
-    "source": "https://en.wikipedia.org/wiki/Jaccard_index"
+    "source": "https://en.wikipedia.org/wiki/Object_detection"
   },
   {
     "itemId": "7866bde4-bcb8-4981-81e1-1c0c2f839463",
+    "seedId": "0c83309f-5370-4166-a286-db9931901f16",
     "category": "tech",
     "navigationKeyword1": "ai-ml",
     "navigationKeyword2": "computer-vision",
-    "question": "Why is data augmentation (random crops, flips, color jitter) used during training?",
-    "correctAnswer": "To simulate variation so the model generalizes beyond the exact training pixels",
+    "question": "Why might a team randomly flip, rotate and crop its training photos before training an image model?",
+    "correctAnswer": "To add realistic variety so the model copes with new photos",
     "incorrectAnswers": [
-      "To delete half the dataset permanently",
-      "To convert labels into images",
-      "To reduce RAM to zero"
+      "To shrink the dataset so training finishes sooner",
+      "To hide the labels so the model has to guess",
+      "To make every photo look exactly the same"
     ],
-    "explanation": "Augmentations increase effective diversity without new labels, which reduces overfitting on limited photos.",
+    "explanation": "This is called data augmentation. Small random but realistic changes make the training set more varied without collecting new photos, and they are applied only during training.",
     "keywords": [
       "ai-ml",
       "augmentation"
@@ -77,40 +82,207 @@
   },
   {
     "itemId": "a4c60115-b4c3-4419-8571-414ca29664a5",
+    "seedId": "141d5b3f-18d9-457b-8bbe-9de3303e61e7",
     "category": "tech",
     "navigationKeyword1": "ai-ml",
     "navigationKeyword2": "computer-vision",
-    "question": "What does transfer learning in vision usually mean?",
-    "correctAnswer": "Start from weights trained on a large dataset and fine-tune on a smaller target task",
+    "question": "A team has only about 120 photos of each insect type. What common approach helps them still build a good classifier?",
+    "correctAnswer": "Fine-tune a model already trained on a huge image set",
     "incorrectAnswers": [
-      "Train only from random noise",
-      "Copy pixels without any neural network",
-      "Disable gradients entirely"
+      "Train a brand-new model from random starting weights",
+      "Train only on the photos' file names and dates",
+      "Shrink every photo to a single pixel first"
     ],
-    "explanation": "Pretrained features capture generic edges and textures, so fine-tuning needs less labeled data than training from scratch.",
+    "explanation": "This is transfer learning. Very few people train a vision network from scratch, because that needs a very large dataset; reusing a network pretrained on millions of images lets a small dataset go much further.",
     "keywords": [
       "ai-ml",
       "transfer-learning"
     ],
-    "source": "https://pytorch.org/tutorials/beginner/transfer_learning_tutorial.html"
+    "source": "https://docs.pytorch.org/tutorials/beginner/transfer_learning_tutorial.html"
   },
   {
     "itemId": "88b414ab-dc8c-4479-87f8-0eb71f5c5973",
+    "seedId": "14469f37-0cba-47d6-9c19-11642199d03e",
     "category": "tech",
     "navigationKeyword1": "ai-ml",
     "navigationKeyword2": "computer-vision",
-    "question": "For a standard RGB image tensor, what do the three channels usually represent?",
-    "correctAnswer": "Red, green, and blue intensity values per pixel",
+    "question": "In a typical color photo, each pixel is stored as three numbers. What do those three numbers describe?",
+    "correctAnswer": "How much red, green and blue light it has",
     "incorrectAnswers": [
-      "Past, present, and future time steps",
-      "Three different languages",
-      "Three separate loss functions"
+      "Its brightness, contrast and sharpness",
+      "Its width, height and depth on screen",
+      "Its hue, shadow and focus level"
     ],
-    "explanation": "Color images stack per-channel intensities so the network can learn color-dependent patterns.",
+    "explanation": "Colors on screens are made by mixing red, green and blue light. Each of the three values is commonly stored with 8 bits, giving a whole number from 0 to 255.",
     "keywords": [
       "ai-ml",
-      "images"
+      "images",
+      "rgb"
     ],
     "source": "https://en.wikipedia.org/wiki/RGB_color_model"
+  },
+  {
+    "itemId": "765d4fb4-7dc3-4de7-b1b9-3dcfd18a4647",
+    "seedId": "641375f7-1fea-45e0-a79e-6cbad570ebb7",
+    "category": "tech",
+    "navigationKeyword1": "ai-ml",
+    "navigationKeyword2": "computer-vision",
+    "question": "When a computer \"looks\" at a digital photo, what is it actually working with?",
+    "correctAnswer": "A grid of pixels, each stored as numbers",
+    "incorrectAnswers": [
+      "A list of the objects the photo contains",
+      "A text description saved by the camera",
+      "A set of curved lines and filled shapes"
+    ],
+    "explanation": "A digital image has a fixed number of rows and columns of pixels, stored as an array of small whole numbers. Each number records brightness or color at one point, so image AI starts from numbers, not objects.",
+    "keywords": [
+      "ai-ml",
+      "images",
+      "pixels"
+    ],
+    "source": "https://en.wikipedia.org/wiki/Digital_image"
+  },
+  {
+    "itemId": "a79338c8-38ee-4a99-ab70-807a9e527cb5",
+    "seedId": "9fb21dda-32d8-406c-b4d7-3a62a24b23ae",
+    "category": "tech",
+    "navigationKeyword1": "ai-ml",
+    "navigationKeyword2": "computer-vision",
+    "question": "Why does an image classifier usually need a large, varied set of labelled photos?",
+    "correctAnswer": "Small or narrow datasets rarely show reliable patterns",
+    "incorrectAnswers": [
+      "Labels make the photos smaller to store",
+      "Large datasets remove the need for any testing",
+      "Varied photos let the model run without a computer chip"
+    ],
+    "explanation": "A label is the correct answer the model learns to predict, such as \"tulip\". Most models cannot find reliable patterns in a small dataset, and a big dataset still needs variety to cover real-world cases.",
+    "keywords": [
+      "ai-ml",
+      "labelled-data",
+      "training-data"
+    ],
+    "source": "https://developers.google.com/machine-learning/intro-to-ml/supervised"
+  },
+  {
+    "itemId": "ffe3befd-33d6-4f3e-916b-1f56675f057f",
+    "seedId": "1c09f364-d5d6-4161-afc8-61868b790f46",
+    "category": "tech",
+    "navigationKeyword1": "ai-ml",
+    "navigationKeyword2": "computer-vision",
+    "question": "A famous research dataset has over 14 million labelled images. How were most of those labels created?",
+    "correctAnswer": "Crowd workers labelled them by hand online",
+    "incorrectAnswers": [
+      "A computer program labelled them automatically",
+      "They were copied from each image's file name",
+      "Photographers tagged them when taking the shots"
+    ],
+    "explanation": "The ImageNet project crowdsourced its annotation, using paid online workers to say which objects appeared in each image. It shows how much human effort sits behind the labelled data that image AI learns from.",
+    "keywords": [
+      "ai-ml",
+      "imagenet",
+      "labelled-data"
+    ],
+    "source": "https://en.wikipedia.org/wiki/ImageNet"
+  },
+  {
+    "itemId": "19b2e7e3-50e4-41b5-af71-4247955b35dd",
+    "seedId": "f39d246b-6598-44b9-8590-144b9cc36da6",
+    "category": "tech",
+    "navigationKeyword1": "ai-ml",
+    "navigationKeyword2": "computer-vision",
+    "question": "In 2012, what type of model won a major image recognition contest by a margin of more than 10 percentage points?",
+    "correctAnswer": "A convolutional neural network",
+    "incorrectAnswers": [
+      "A decision tree",
+      "A hand-written rule system",
+      "A large language model"
+    ],
+    "explanation": "The network known as AlexNet reached a 15.3% top-5 error in the 2012 ImageNet challenge, more than 10.8 points better than the runner-up. The result drew wide attention to deep learning for images.",
+    "keywords": [
+      "ai-ml",
+      "imagenet",
+      "cnn"
+    ],
+    "source": "https://en.wikipedia.org/wiki/ImageNet"
+  },
+  {
+    "itemId": "123e3bd3-af72-44e5-b744-54673b0c6451",
+    "seedId": "dff46d6b-9fbd-42c3-8210-e33bad1c4139",
+    "category": "tech",
+    "navigationKeyword1": "ai-ml",
+    "navigationKeyword2": "computer-vision",
+    "question": "In a convolutional neural network for images, what do the first layers typically react to?",
+    "correctAnswer": "Simple features such as edges and color blobs",
+    "incorrectAnswers": [
+      "Whole objects such as faces and cars",
+      "The photo's file name and capture date",
+      "Full sentences describing the scene"
+    ],
+    "explanation": "Small filters slide across the image and fire on simple patterns like edges. Deeper layers combine these over wider areas to recognize larger, more complex shapes.",
+    "keywords": [
+      "ai-ml",
+      "cnn"
+    ],
+    "source": "https://en.wikipedia.org/wiki/Convolutional_neural_network"
+  },
+  {
+    "itemId": "f2a2934c-7ac9-4957-9b9b-4468ac0a25fa",
+    "seedId": "3cf069d2-ae3c-4d4f-b05d-83c4396b9f4c",
+    "category": "tech",
+    "navigationKeyword1": "ai-ml",
+    "navigationKeyword2": "computer-vision",
+    "question": "Compared with drawing a box around each object, what does image segmentation give you?",
+    "correctAnswer": "The exact outline of objects, pixel by pixel",
+    "incorrectAnswers": [
+      "One label that describes the whole photo",
+      "A sharper version of the original photo",
+      "A written caption for each object found"
+    ],
+    "explanation": "Segmentation is a more precise, pixel-level version of object detection. Tracing exact shapes is useful in tasks like outlining a tumor in a medical scan.",
+    "keywords": [
+      "ai-ml",
+      "segmentation"
+    ],
+    "source": "https://www.ibm.com/think/topics/computer-vision"
+  },
+  {
+    "itemId": "0b7d0b7d-6e0b-4e24-ae34-b84264a64cfe",
+    "seedId": "dbbbf4aa-c154-4a6a-8c08-a1f2bb009aa5",
+    "category": "tech",
+    "navigationKeyword1": "ai-ml",
+    "navigationKeyword2": "computer-vision",
+    "question": "A phone app reads the text on a photographed receipt so you can copy it. What is this technology called?",
+    "correctAnswer": "Optical character recognition",
+    "incorrectAnswers": [
+      "Facial recognition",
+      "Image segmentation",
+      "Data augmentation"
+    ],
+    "explanation": "Optical character recognition (OCR) turns images of printed or handwritten text into machine-readable text. It is also used to read passports, license plates and scanned documents.",
+    "keywords": [
+      "ai-ml",
+      "ocr"
+    ],
+    "source": "https://en.wikipedia.org/wiki/Optical_character_recognition"
+  },
+  {
+    "itemId": "5c00211a-1175-4c3f-a8ea-cb43607a74fe",
+    "seedId": "1900d078-8238-48f0-86d2-cd01613eec92",
+    "category": "tech",
+    "navigationKeyword1": "ai-ml",
+    "navigationKeyword2": "computer-vision",
+    "question": "What is the difference between face detection and face recognition?",
+    "correctAnswer": "Detection finds a face; recognition works out whose it is",
+    "incorrectAnswers": [
+      "Detection works the person out; recognition only finds the face",
+      "Detection works only on video; recognition only on photos",
+      "Detection needs color images; recognition needs black and white"
+    ],
+    "explanation": "A recognition system first detects the face to separate it from the background. It then turns the face into features and matches them against a database of known faces.",
+    "keywords": [
+      "ai-ml",
+      "face-recognition"
+    ],
+    "source": "https://en.wikipedia.org/wiki/Facial_recognition_system"
   }
 ]

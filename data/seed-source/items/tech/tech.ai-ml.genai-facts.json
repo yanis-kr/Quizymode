@@ -1,0 +1,596 @@
+[
+  {
+    "itemId": "449a9589-939c-4e53-9874-fa6fe2ab95b4",
+    "seedId": "25aab318-ea8d-4a98-9083-e48ae0da0d6f",
+    "category": "tech",
+    "navigationKeyword1": "ai-ml",
+    "navigationKeyword2": "genai-facts",
+    "question": "In 2024, which AI pioneer shared the Nobel Prize in Physics for work that made neural networks learn?",
+    "correctAnswer": "Geoffrey Hinton",
+    "incorrectAnswers": [
+      "Yann LeCun",
+      "Yoshua Bengio",
+      "Demis Hassabis"
+    ],
+    "explanation": "Geoffrey Hinton and John Hopfield won for foundational discoveries that enable machine learning with artificial neural networks.",
+    "keywords": [
+      "genai",
+      "ai-history",
+      "awards"
+    ],
+    "source": "https://en.wikipedia.org/wiki/Geoffrey_Hinton"
+  },
+  {
+    "itemId": "8dfbd4a1-bf82-41be-9515-7da61a8a8210",
+    "seedId": "578659cf-59d2-4776-b85c-2a603a7bf95c",
+    "category": "tech",
+    "navigationKeyword1": "ai-ml",
+    "navigationKeyword2": "genai-facts",
+    "question": "The 2018 Turing Award, often called computing's Nobel Prize, honored Bengio, Hinton and LeCun for what?",
+    "correctAnswer": "Deep neural networks",
+    "incorrectAnswers": [
+      "Public-key cryptography",
+      "Relational databases",
+      "Compiler optimization"
+    ],
+    "explanation": "They were honored for breakthroughs that made deep neural networks a critical part of computing, the foundation of today's AI boom.",
+    "keywords": [
+      "ai-history",
+      "awards",
+      "deep-learning"
+    ],
+    "source": "https://en.wikipedia.org/wiki/Turing_Award"
+  },
+  {
+    "itemId": "110fe241-e6c4-4b66-a959-802e488f501a",
+    "seedId": "2115d56c-bc70-4b95-ab27-cbcce802dc07",
+    "category": "tech",
+    "navigationKeyword1": "ai-ml",
+    "navigationKeyword2": "genai-facts",
+    "question": "Demis Hassabis and John Jumper shared the 2024 Nobel Prize in Chemistry for an AI that does what?",
+    "correctAnswer": "Predicts protein shapes",
+    "incorrectAnswers": [
+      "Designs new batteries",
+      "Reads DNA sequences",
+      "Forecasts global weather"
+    ],
+    "explanation": "Their AlphaFold system predicts a protein's 3D shape from its building blocks, a task that once took scientists years per protein.",
+    "keywords": [
+      "ai-history",
+      "awards",
+      "alphafold"
+    ],
+    "source": "https://en.wikipedia.org/wiki/AlphaFold"
+  },
+  {
+    "itemId": "f18bff6a-07d6-417b-bb2a-df7406e5c567",
+    "seedId": "bdb59db8-d5f2-45b2-bbdd-61e4dde50b23",
+    "category": "tech",
+    "navigationKeyword1": "ai-ml",
+    "navigationKeyword2": "genai-facts",
+    "question": "Which open standard, released in late 2024, lets AI assistants plug into outside tools and data in one common way?",
+    "correctAnswer": "Model Context Protocol",
+    "incorrectAnswers": [
+      "Language Server Protocol",
+      "OpenAPI Specification",
+      "Agent Communication Language"
+    ],
+    "explanation": "The Model Context Protocol replaces one-off custom integrations with a single shared protocol for connecting AI to data and tools.",
+    "keywords": [
+      "genai",
+      "mcp",
+      "ai-agents"
+    ],
+    "source": "https://www.anthropic.com/news/model-context-protocol"
+  },
+  {
+    "itemId": "c51e10a6-bae1-4761-96e6-753babbe6ada",
+    "seedId": "4c872d43-5b14-4a62-8781-e521011b05c3",
+    "category": "tech",
+    "navigationKeyword1": "ai-ml",
+    "navigationKeyword2": "genai-facts",
+    "question": "In the Claude 3 model family launched in March 2024, which model was the smallest and fastest?",
+    "correctAnswer": "Claude 3 Haiku",
+    "incorrectAnswers": [
+      "Claude 3 Sonnet",
+      "Claude 3 Opus",
+      "Claude 3 Instant"
+    ],
+    "explanation": "The family was named Haiku, Sonnet and Opus, from smallest and fastest to most capable.",
+    "keywords": [
+      "genai",
+      "model-releases"
+    ],
+    "source": "https://www.anthropic.com/news/claude-3-family"
+  },
+  {
+    "itemId": "bc2ca51a-1636-46bb-a93f-d88f27caa453",
+    "seedId": "8b07e6ad-84a4-41d9-ab94-ce010e622af6",
+    "category": "tech",
+    "navigationKeyword1": "ai-ml",
+    "navigationKeyword2": "genai-facts",
+    "question": "The EU AI Act, described as the world's first comprehensive AI law, entered into force in which year?",
+    "correctAnswer": "2024",
+    "incorrectAnswers": [
+      "2019",
+      "2021",
+      "2026"
+    ],
+    "explanation": "The Act entered into force on 1 August 2024. Its rules then phase in over the following years.",
+    "keywords": [
+      "ai-policy",
+      "eu-ai-act"
+    ],
+    "source": "https://digital-strategy.ec.europa.eu/en/policies/regulatory-framework-ai"
+  },
+  {
+    "itemId": "30d950d9-df4a-4b74-82d8-8b93927baee9",
+    "seedId": "4d6712ea-749e-4001-831a-8f88ba8298f4",
+    "category": "tech",
+    "navigationKeyword1": "ai-ml",
+    "navigationKeyword2": "genai-facts",
+    "question": "In March 2016, AlphaGo played world Go champion Lee Sedol in a five-game match. What was the result?",
+    "correctAnswer": "AlphaGo won 4-1",
+    "incorrectAnswers": [
+      "AlphaGo won 5-0",
+      "AlphaGo won 3-2",
+      "Lee Sedol won 3-2"
+    ],
+    "explanation": "AlphaGo won 4-1 in a match watched by over 200 million people.",
+    "keywords": [
+      "ai-history",
+      "alphago"
+    ],
+    "source": "https://deepmind.google/research/breakthroughs/alphago/"
+  },
+  {
+    "itemId": "3b0260e4-3327-463a-a18c-1e40cd26b798",
+    "seedId": "ac495e4b-7ad2-4138-8402-23a5824620a2",
+    "category": "tech",
+    "navigationKeyword1": "ai-ml",
+    "navigationKeyword2": "genai-facts",
+    "question": "Why did AlphaGo's 'Move 37' against Lee Sedol become famous?",
+    "correctAnswer": "It looked like a mistake but helped win",
+    "incorrectAnswers": [
+      "It broke the official rules of Go",
+      "It was copied from a human master",
+      "It ended the game in record time"
+    ],
+    "explanation": "Experts first thought the unusual move in game two was an error, but it proved decisive and showed AI could find creative strategies.",
+    "keywords": [
+      "ai-history",
+      "alphago"
+    ],
+    "source": "https://deepmind.google/research/breakthroughs/alphago/"
+  },
+  {
+    "itemId": "24f6d3f6-f8af-4da1-aa2b-563b286c8d69",
+    "seedId": "b30ca353-94af-4718-9738-0550ffb6a9a0",
+    "category": "tech",
+    "navigationKeyword1": "ai-ml",
+    "navigationKeyword2": "genai-facts",
+    "question": "In early 2024, Gemini 1.5 Pro was tested with a context window of up to how many tokens?",
+    "correctAnswer": "1 million",
+    "incorrectAnswers": [
+      "32,000",
+      "100,000",
+      "256,000"
+    ],
+    "explanation": "A million tokens is roughly an hour of video or over 700,000 words that the model can consider at once. Its standard window was 128,000 tokens.",
+    "keywords": [
+      "genai",
+      "context-window",
+      "model-releases"
+    ],
+    "source": "https://blog.google/technology/ai/google-gemini-next-generation-model-february-2024/"
+  },
+  {
+    "itemId": "f6b98855-c351-4cae-ab04-1b11014f2aa7",
+    "seedId": "b4d3d357-fb28-4322-b72c-23d535ae4912",
+    "category": "tech",
+    "navigationKeyword1": "ai-ml",
+    "navigationKeyword2": "genai-facts",
+    "question": "GPT-3, unveiled in 2020, was famous for its size. About how many parameters did it have?",
+    "correctAnswer": "175 billion",
+    "incorrectAnswers": [
+      "1.5 billion",
+      "13 billion",
+      "540 billion"
+    ],
+    "explanation": "With 175 billion parameters, GPT-3 could do many tasks from just a few examples in a text prompt, without extra training.",
+    "keywords": [
+      "genai",
+      "gpt",
+      "model-releases"
+    ],
+    "source": "https://arxiv.org/abs/2005.14165"
+  },
+  {
+    "itemId": "6440fefc-852c-46d4-be5b-c6a67db3744f",
+    "seedId": "4cf416ac-3509-44ca-b211-8a306a5d1dd0",
+    "category": "tech",
+    "navigationKeyword1": "ai-ml",
+    "navigationKeyword2": "genai-facts",
+    "question": "In a 2022 study, what made a small 1.3B model preferred by people over the 175B GPT-3?",
+    "correctAnswer": "Fine-tuning it with human feedback",
+    "incorrectAnswers": [
+      "Training it on more web text",
+      "Giving it a larger vocabulary",
+      "Running it on faster hardware"
+    ],
+    "explanation": "InstructGPT was tuned on human-written examples and human rankings of its answers. This approach, RLHF, later helped shape ChatGPT.",
+    "keywords": [
+      "rlhf",
+      "alignment",
+      "gpt"
+    ],
+    "source": "https://arxiv.org/abs/2203.02155"
+  },
+  {
+    "itemId": "a838b008-fc86-4bb8-b755-b3387f42a4a2",
+    "seedId": "a040daf5-dfc1-48ba-bfcd-59d551483e71",
+    "category": "tech",
+    "navigationKeyword1": "ai-ml",
+    "navigationKeyword2": "genai-facts",
+    "question": "Which neural network design, introduced in a 2017 paper called 'Attention Is All You Need', powers most modern chatbots?",
+    "correctAnswer": "The Transformer",
+    "incorrectAnswers": [
+      "The recurrent network",
+      "The convolutional network",
+      "The decision tree"
+    ],
+    "explanation": "The Transformer relies on attention instead of reading text word by word. The T in GPT stands for Transformer.",
+    "keywords": [
+      "transformers",
+      "attention",
+      "ai-history"
+    ],
+    "source": "https://arxiv.org/abs/1706.03762"
+  },
+  {
+    "itemId": "d39aa9f3-06f5-4e05-92cc-a34e2c54f427",
+    "seedId": "cce571d2-6363-4e28-b6ce-43db9250728e",
+    "category": "tech",
+    "navigationKeyword1": "ai-ml",
+    "navigationKeyword2": "genai-facts",
+    "question": "In a generative adversarial network (GAN), first proposed in 2014, what is the discriminator's job?",
+    "correctAnswer": "Telling real samples from generated ones",
+    "incorrectAnswers": [
+      "Producing new samples from random noise",
+      "Compressing images into small codes",
+      "Labeling training images by category"
+    ],
+    "explanation": "Two networks compete: a generator makes fakes and a discriminator tries to catch them, so both keep improving.",
+    "keywords": [
+      "gans",
+      "image-generation",
+      "ai-history"
+    ],
+    "source": "https://en.wikipedia.org/wiki/Generative_adversarial_network"
+  },
+  {
+    "itemId": "be661486-9b45-43c1-997b-a1bd5de35139",
+    "seedId": "4343ba06-f0b1-45fb-a443-2dd898ecb7b2",
+    "category": "tech",
+    "navigationKeyword1": "ai-ml",
+    "navigationKeyword2": "genai-facts",
+    "question": "When GPT-4 was introduced in March 2023, where did its score on a simulated bar exam fall?",
+    "correctAnswer": "Top 10% of test takers",
+    "incorrectAnswers": [
+      "Bottom 10% of test takers",
+      "Around the median",
+      "Top 1% of test takers"
+    ],
+    "explanation": "It scored around the top 10% of test takers, a big jump that made headlines about AI passing professional exams.",
+    "keywords": [
+      "gpt",
+      "benchmarks",
+      "model-releases"
+    ],
+    "source": "https://arxiv.org/abs/2303.08774"
+  },
+  {
+    "itemId": "86d5e25b-3f50-4007-9338-2eed49fb04a7",
+    "seedId": "97c4bfae-b87f-47f9-9116-63d9e104b149",
+    "category": "tech",
+    "navigationKeyword1": "ai-ml",
+    "navigationKeyword2": "genai-facts",
+    "question": "The code and weights of DeepSeek-R1, an open reasoning model, were released under which license?",
+    "correctAnswer": "MIT License",
+    "incorrectAnswers": [
+      "GPL-3.0",
+      "CC BY-NC 4.0",
+      "Llama Community License"
+    ],
+    "explanation": "The permissive MIT License lets anyone use, modify and build on the model, even commercially.",
+    "keywords": [
+      "open-weights",
+      "model-releases",
+      "deepseek"
+    ],
+    "source": "https://github.com/deepseek-ai/DeepSeek-R1"
+  },
+  {
+    "itemId": "3204f3d9-d00c-46da-89ff-f36aa7044ded",
+    "seedId": "03818f38-9294-4064-a58c-d7b40f20abcc",
+    "category": "tech",
+    "navigationKeyword1": "ai-ml",
+    "navigationKeyword2": "genai-facts",
+    "question": "Meta's first LLaMA model (2023) showed that a 13B model could beat which much larger model on most benchmarks?",
+    "correctAnswer": "GPT-3 (175B)",
+    "incorrectAnswers": [
+      "GPT-4",
+      "PaLM (540B)",
+      "Chinchilla (70B)"
+    ],
+    "explanation": "LLaMA-13B outperformed the 175B GPT-3 while trained only on public data, showing smaller models could be very capable.",
+    "keywords": [
+      "open-weights",
+      "model-releases"
+    ],
+    "source": "https://arxiv.org/abs/2302.13971"
+  },
+  {
+    "itemId": "5d2017c1-d5b5-4a8c-98ef-b2ffbd385334",
+    "seedId": "ff7d1bd8-4e3d-4619-9c50-b08427544d7b",
+    "category": "tech",
+    "navigationKeyword1": "ai-ml",
+    "navigationKeyword2": "genai-facts",
+    "question": "In the 2022 'Constitutional AI' method, what mainly guides the model toward harmless behavior?",
+    "correctAnswer": "Through a short list of written principles",
+    "incorrectAnswers": [
+      "By labeling thousands of harmful outputs",
+      "By writing every response by hand",
+      "By blocking keywords with a filter"
+    ],
+    "explanation": "The AI critiques and revises its own answers against a list of written principles, with no human labels for harmful outputs.",
+    "keywords": [
+      "alignment",
+      "ai-safety"
+    ],
+    "source": "https://arxiv.org/abs/2212.08073"
+  },
+  {
+    "itemId": "66666528-95c4-4f9b-b4f1-1e75dda4fda5",
+    "seedId": "f24aa8df-061b-4510-89f7-12fef9201865",
+    "category": "tech",
+    "navigationKeyword1": "ai-ml",
+    "navigationKeyword2": "genai-facts",
+    "question": "What made the public release of the Stable Diffusion image generator stand out?",
+    "correctAnswer": "Anyone could download its model weights",
+    "incorrectAnswers": [
+      "It only worked inside a paid app",
+      "It made videos instead of images",
+      "It needed a supercomputer to run"
+    ],
+    "explanation": "Its weights were posted publicly and it needed only about 7 GB of graphics card memory, so people could run it on their own computers.",
+    "keywords": [
+      "image-generation",
+      "open-weights",
+      "ai-history"
+    ],
+    "source": "https://stability.ai/news-updates/stable-diffusion-public-release"
+  },
+  {
+    "itemId": "5b1d57a2-664d-4c05-ae6b-99625affafe2",
+    "seedId": "c6a66ef5-d061-46f7-b737-66a9d5d8e844",
+    "category": "tech",
+    "navigationKeyword1": "ai-ml",
+    "navigationKeyword2": "genai-facts",
+    "question": "In 1950, Alan Turing proposed a test of machine intelligence. What did he originally call it?",
+    "correctAnswer": "The imitation game",
+    "incorrectAnswers": [
+      "The thinking contest",
+      "The logic trial",
+      "The mind challenge"
+    ],
+    "explanation": "In the Turing test, a machine passes if a person chatting with it cannot reliably tell it from a human.",
+    "keywords": [
+      "ai-history",
+      "turing-test"
+    ],
+    "source": "https://en.wikipedia.org/wiki/Turing_test"
+  },
+  {
+    "itemId": "335e7c5a-8f63-452a-b6ff-107cfb3a8d18",
+    "seedId": "171a1ee3-00ac-4ca6-ad5c-e3221a2765c3",
+    "category": "tech",
+    "navigationKeyword1": "ai-ml",
+    "navigationKeyword2": "genai-facts",
+    "question": "The 1956 summer workshop often called the birth of AI as a field was held at which college?",
+    "correctAnswer": "Dartmouth College",
+    "incorrectAnswers": [
+      "Harvard University",
+      "Stanford University",
+      "Caltech"
+    ],
+    "explanation": "John McCarthy, Marvin Minsky, Nathaniel Rochester and Claude Shannon organized it. McCarthy chose the name 'artificial intelligence'.",
+    "keywords": [
+      "ai-history",
+      "dartmouth"
+    ],
+    "source": "https://en.wikipedia.org/wiki/Dartmouth_workshop"
+  },
+  {
+    "itemId": "ce1f906e-c4ee-4bbb-afd1-bf34df2a7688",
+    "seedId": "87dc83ea-3562-4dae-b571-a1484e4b3aa1",
+    "category": "tech",
+    "navigationKeyword1": "ai-ml",
+    "navigationKeyword2": "genai-facts",
+    "question": "ELIZA, an early 1960s chatbot built at MIT, was best known for imitating what kind of person?",
+    "correctAnswer": "A psychotherapist",
+    "incorrectAnswers": [
+      "A travel agent",
+      "A chess coach",
+      "A news reporter"
+    ],
+    "explanation": "Its DOCTOR script turned users' statements back into questions. People read real understanding into it, now called the ELIZA effect.",
+    "keywords": [
+      "ai-history",
+      "chatbots"
+    ],
+    "source": "https://en.wikipedia.org/wiki/ELIZA"
+  },
+  {
+    "itemId": "5e742168-d078-40e9-b153-947895bcc7e6",
+    "seedId": "d6ba412f-044d-4231-82fc-96668ea7939c",
+    "category": "tech",
+    "navigationKeyword1": "ai-ml",
+    "navigationKeyword2": "genai-facts",
+    "question": "In 1997, IBM's Deep Blue became famous for beating world champion Garry Kasparov at which game?",
+    "correctAnswer": "Chess",
+    "incorrectAnswers": [
+      "Go",
+      "Checkers",
+      "Poker"
+    ],
+    "explanation": "Deep Blue won their 1997 rematch 3.5 to 2.5, a landmark moment for computers taking on top human players.",
+    "keywords": [
+      "ai-history",
+      "games"
+    ],
+    "source": "https://en.wikipedia.org/wiki/Deep_Blue_(chess_computer)"
+  },
+  {
+    "itemId": "14b9d323-752b-48ad-b823-d04dc57977b5",
+    "seedId": "0195b004-3fe3-4f94-8c00-d01f6dc86a10",
+    "category": "tech",
+    "navigationKeyword1": "ai-ml",
+    "navigationKeyword2": "genai-facts",
+    "question": "In 2011, IBM's Watson beat two human champions on which TV show?",
+    "correctAnswer": "Jeopardy!",
+    "incorrectAnswers": [
+      "Who Wants to Be a Millionaire?",
+      "Wheel of Fortune",
+      "The Price Is Right"
+    ],
+    "explanation": "Watson beat Ken Jennings and Brad Rutter, showing a computer could answer tricky natural-language quiz clues.",
+    "keywords": [
+      "ai-history",
+      "games"
+    ],
+    "source": "https://en.wikipedia.org/wiki/IBM_Watson"
+  },
+  {
+    "itemId": "c1e6331e-165a-4bf7-9d32-749549517ff5",
+    "seedId": "04e8e195-fcd3-4d6e-aa07-c20a8080f7f3",
+    "category": "tech",
+    "navigationKeyword1": "ai-ml",
+    "navigationKeyword2": "genai-facts",
+    "question": "AlexNet won a major image recognition contest in 2012. What hardware helped it train fast?",
+    "correctAnswer": "Gaming graphics cards (GPUs)",
+    "incorrectAnswers": [
+      "A quantum computer",
+      "A cluster of smartphones",
+      "Custom chess chips"
+    ],
+    "explanation": "It was trained on two Nvidia graphics cards, split across both because it did not fit on one. Graphics chips are now central to training AI.",
+    "keywords": [
+      "ai-history",
+      "deep-learning",
+      "gpus"
+    ],
+    "source": "https://en.wikipedia.org/wiki/AlexNet"
+  },
+  {
+    "itemId": "4190b2b1-be43-4844-901c-aa290ab2d85e",
+    "seedId": "4fc17680-03e8-4547-a15c-4372ed08ed2f",
+    "category": "tech",
+    "navigationKeyword1": "ai-ml",
+    "navigationKeyword2": "genai-facts",
+    "question": "When GPT-2 was announced in 2019, why did OpenAI at first hold back the full model?",
+    "correctAnswer": "Fear it could be misused for fake text",
+    "incorrectAnswers": [
+      "It was too slow to run online",
+      "Its training data was lost",
+      "It failed most language tests"
+    ],
+    "explanation": "OpenAI worried about spam and fake reviews, so it released the model in stages and published the full version in November 2019.",
+    "keywords": [
+      "ai-history",
+      "gpt",
+      "ai-safety"
+    ],
+    "source": "https://en.wikipedia.org/wiki/GPT-2"
+  },
+  {
+    "itemId": "e8372392-eaf5-4b98-98a5-52512cd2274f",
+    "seedId": "a825e3b4-7755-4504-acb0-0cabf87243ef",
+    "category": "tech",
+    "navigationKeyword1": "ai-ml",
+    "navigationKeyword2": "genai-facts",
+    "question": "DALL-E, revealed in January 2021, creates images from text. Its name blends a Pixar robot with which artist?",
+    "correctAnswer": "Salvador Dali",
+    "incorrectAnswers": [
+      "Pablo Picasso",
+      "Claude Monet",
+      "Andy Warhol"
+    ],
+    "explanation": "The name combines WALL-E and the surrealist painter Salvador Dali, fitting a model that turns text prompts into pictures.",
+    "keywords": [
+      "ai-history",
+      "image-generation"
+    ],
+    "source": "https://en.wikipedia.org/wiki/DALL-E"
+  },
+  {
+    "itemId": "9e2ff094-142a-4d22-96bd-1cfb50b05e3c",
+    "seedId": "e15274eb-8d4b-4698-b851-b33a8bb591ca",
+    "category": "tech",
+    "navigationKeyword1": "ai-ml",
+    "navigationKeyword2": "genai-facts",
+    "question": "ChatGPT was released to the public in which month and year?",
+    "correctAnswer": "November 2022",
+    "incorrectAnswers": [
+      "March 2021",
+      "June 2022",
+      "March 2023"
+    ],
+    "explanation": "ChatGPT launched on November 30, 2022, and gained one million users in its first five days.",
+    "keywords": [
+      "ai-history",
+      "chatgpt"
+    ],
+    "source": "https://en.wikipedia.org/wiki/ChatGPT"
+  },
+  {
+    "itemId": "0e12ac6d-0903-40c1-a222-14bdb5981467",
+    "seedId": "5e9f117d-3dcd-4f54-89a5-4216cc038f8b",
+    "category": "tech",
+    "navigationKeyword1": "ai-ml",
+    "navigationKeyword2": "genai-facts",
+    "question": "About how long did ChatGPT take to reach 100 million monthly users after launch?",
+    "correctAnswer": "About two months",
+    "incorrectAnswers": [
+      "About two weeks",
+      "About one year",
+      "About three years"
+    ],
+    "explanation": "It reached 100 million monthly users about two months after its November 2022 launch.",
+    "keywords": [
+      "ai-history",
+      "chatgpt"
+    ],
+    "source": "https://en.wikipedia.org/wiki/ChatGPT"
+  },
+  {
+    "itemId": "5d60c6f4-9e95-4f5d-ac09-33decc98ff3b",
+    "seedId": "4af68db7-9d46-49c2-a4e7-46962e8cd42d",
+    "category": "tech",
+    "navigationKeyword1": "ai-ml",
+    "navigationKeyword2": "genai-facts",
+    "question": "OpenAI's Sora, first previewed in February 2024, generates what from text prompts?",
+    "correctAnswer": "Short video clips",
+    "incorrectAnswers": [
+      "Song lyrics",
+      "3D game levels",
+      "Computer code"
+    ],
+    "explanation": "Sora is a text-to-video model. It can create short clips from a description and extend existing videos.",
+    "keywords": [
+      "ai-history",
+      "video-generation"
+    ],
+    "source": "https://en.wikipedia.org/wiki/Sora_(text-to-video_model)"
+  }
+]

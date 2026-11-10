@@ -1,116 +1,359 @@
 [
   {
     "itemId": "db4e6d55-d52a-4557-b963-a18fc7f670ea",
+    "seedId": "22d4f258-7c84-4321-9960-41a5d95cfc84",
     "category": "tech",
     "navigationKeyword1": "ai-ml",
     "navigationKeyword2": "ml-basics",
-    "question": "In supervised learning, what kind of data does the algorithm use during training?",
-    "correctAnswer": "Input examples paired with known target outputs",
+    "question": "A model learns to spot spam from thousands of emails already tagged spam or not spam. What kind of learning is this?",
+    "correctAnswer": "Supervised learning",
     "incorrectAnswers": [
-      "Only inputs with no labels",
-      "Only outputs with no inputs",
-      "Random noise without structure"
+      "Unsupervised learning",
+      "Reinforcement learning",
+      "Generative learning"
     ],
-    "explanation": "Supervised learning fits a mapping from inputs to outputs using labeled examples so errors can be measured against the targets.",
+    "explanation": "Supervised learning trains on example inputs paired with their correct outputs, here emails paired with spam or not-spam tags, so it can predict the tag for new emails.",
     "keywords": [
       "ai-ml",
-      "supervised-learning"
+      "supervised-learning",
+      "labels"
     ],
-    "source": "https://scikit-learn.org/stable/supervised_learning.html"
+    "source": "https://en.wikipedia.org/wiki/Supervised_learning"
   },
   {
     "itemId": "f7f4b515-eb78-469e-8e2d-a21f8312d711",
+    "seedId": "93ac06c7-3555-4bcb-923d-4c9f05fca5c2",
     "category": "tech",
     "navigationKeyword1": "ai-ml",
     "navigationKeyword2": "ml-basics",
-    "question": "When a model overfits, what pattern do you usually see between training performance and test performance?",
-    "correctAnswer": "Strong training performance but weaker generalization to new data",
+    "question": "A model scores almost perfectly on its training data but does poorly on new data. What is the most likely problem?",
+    "correctAnswer": "Overfitting",
     "incorrectAnswers": [
-      "Weak training and strong test performance",
-      "Identical training and test errors always",
-      "Both training and test error rise together in every case"
+      "Underfitting",
+      "Too little memory",
+      "Slow inference"
     ],
-    "explanation": "Overfitting means the model fits training noise, so training metrics look good while performance on held-out data gets worse.",
+    "explanation": "An overfit model has memorized details and noise in its training data instead of the general pattern, so its gains do not carry over to unseen data.",
     "keywords": [
       "ai-ml",
-      "overfitting"
+      "overfitting",
+      "generalization"
     ],
     "source": "https://en.wikipedia.org/wiki/Overfitting"
   },
   {
     "itemId": "ec01fdec-9d52-4fce-b786-a5003e7e1b8b",
+    "seedId": "eeeddc0f-1868-4f71-9bf9-586666d751fb",
     "category": "tech",
     "navigationKeyword1": "ai-ml",
     "navigationKeyword2": "ml-basics",
-    "question": "Why is a separate test set held out and used only at the end?",
-    "correctAnswer": "To estimate generalization without tuning choices leaking into the estimate",
+    "question": "Why should a team avoid tuning their model over and over based on test set scores?",
+    "correctAnswer": "The test set stops being a fair check on new data",
     "incorrectAnswers": [
-      "To train the model faster",
-      "To store backup copies of weights",
-      "To replace the need for validation data"
+      "The test set becomes too large to process",
+      "The model forgets its training data",
+      "The training set gets smaller each time"
     ],
-    "explanation": "If you repeatedly adjust the model using the test scores, those scores stop being an unbiased read on generalization.",
+    "explanation": "The test set is meant as a final check on data the model has not influenced. Validation and test sets wear out with repeated use, so scores become less trustworthy as a guide to real performance.",
     "keywords": [
       "ai-ml",
-      "evaluation"
+      "evaluation",
+      "test-set"
     ],
-    "source": "https://developers.google.com/machine-learning/glossary#test-set"
-  },
-  {
-    "itemId": "fe962c6c-7029-4527-bbba-37a4140e9c2b",
-    "category": "tech",
-    "navigationKeyword1": "ai-ml",
-    "navigationKeyword2": "ml-basics",
-    "question": "In classification, what does cross-entropy loss compare?",
-    "correctAnswer": "Predicted probability distribution to the true class distribution",
-    "incorrectAnswers": [
-      "Only two scalar numbers with no probabilities",
-      "Feature vectors directly without labels",
-      "Training time to inference time"
-    ],
-    "explanation": "Cross-entropy measures how far predicted probabilities are from the target distribution, with lower values meaning better alignment.",
-    "keywords": [
-      "ai-ml",
-      "loss-functions"
-    ],
-    "source": "https://en.wikipedia.org/wiki/Cross-entropy"
+    "source": "https://developers.google.com/machine-learning/crash-course/overfitting/dividing-datasets"
   },
   {
     "itemId": "70aba5b2-e61e-4892-888c-20f4e3993fa0",
+    "seedId": "fc571325-2196-4aee-a949-998f4302ada6",
     "category": "tech",
     "navigationKeyword1": "ai-ml",
     "navigationKeyword2": "ml-basics",
-    "question": "In the bias\u2013variance view, what does high variance often suggest about the model?",
-    "correctAnswer": "It is sensitive to small changes in the training sample",
+    "question": "A model's predictions change a lot when it is retrained on a slightly different sample of data. What does this suggest?",
+    "correctAnswer": "High variance",
     "incorrectAnswers": [
-      "It always predicts the majority class",
-      "It cannot fit the training data at all",
-      "It ignores all features"
+      "High bias",
+      "Low variance",
+      "Class imbalance"
     ],
-    "explanation": "High variance means estimates swing when training data changes, which is typical of overly complex models relative to data size.",
+    "explanation": "Variance is error from sensitivity to small changes in the training set. High variance often comes from modeling random noise, which is a sign of overfitting.",
     "keywords": [
       "ai-ml",
-      "bias-variance"
+      "bias-variance",
+      "overfitting"
     ],
-    "source": "https://scikit-learn.org/stable/auto_examples/model_selection/plot_underfitting_overfitting.html"
+    "source": "https://en.wikipedia.org/wiki/Bias%E2%80%93variance_tradeoff"
   },
   {
     "itemId": "0b48dfb6-d0a3-4c0f-8915-3c12a60d7676",
+    "seedId": "980385ed-c826-4302-bc4b-1c92925dfd9e",
     "category": "tech",
     "navigationKeyword1": "ai-ml",
     "navigationKeyword2": "ml-basics",
-    "question": "What does k-fold cross-validation primarily help you estimate?",
-    "correctAnswer": "How well the model generalizes when data is limited",
+    "question": "With only a small dataset, why might you use k-fold cross-validation instead of one fixed train/validation split?",
+    "correctAnswer": "Every example gets used for both training and validation",
     "incorrectAnswers": [
-      "The exact runtime on production hardware",
-      "Whether the dataset has duplicate rows",
-      "The optimal number of CPU cores"
+      "It trains the final model much faster",
+      "It removes the need for any labels",
+      "It adds new examples to the dataset"
     ],
-    "explanation": "K-fold rotates which fold is validation so performance is averaged across splits, giving a more stable estimate with small datasets.",
+    "explanation": "The data is split into k folds; each fold takes a turn as validation while the rest train the model, and the scores are averaged. This gives a steadier estimate without wasting scarce data on a single held-out set.",
     "keywords": [
       "ai-ml",
-      "cross-validation"
+      "cross-validation",
+      "evaluation"
     ],
     "source": "https://scikit-learn.org/stable/modules/cross_validation.html"
+  },
+  {
+    "itemId": "c2a1d638-f048-4ae4-8e1e-34af38b34a86",
+    "seedId": "7ed5848f-6e26-408b-abe0-69e613976127",
+    "category": "tech",
+    "navigationKeyword1": "ai-ml",
+    "navigationKeyword2": "ml-basics",
+    "question": "A model groups a year of weather readings by temperature, and the groups turn out to match the seasons. No labels were given. What kind of learning is this?",
+    "correctAnswer": "Unsupervised learning",
+    "incorrectAnswers": [
+      "Supervised learning",
+      "Reinforcement learning",
+      "Transfer learning"
+    ],
+    "explanation": "Unsupervised learning looks for meaningful patterns in data that has no correct answers attached. Grouping similar examples like this is called clustering.",
+    "keywords": [
+      "ai-ml",
+      "unsupervised-learning",
+      "clustering"
+    ],
+    "source": "https://developers.google.com/machine-learning/intro-to-ml/what-is-ml"
+  },
+  {
+    "itemId": "03f7b856-3075-4aff-9eac-f3fb3f7fe03a",
+    "seedId": "58012526-db32-4ed2-892c-b6426c88944c",
+    "category": "tech",
+    "navigationKeyword1": "ai-ml",
+    "navigationKeyword2": "ml-basics",
+    "question": "A robot learns to walk by trying moves and receiving a reward when it stays upright. What kind of learning is this?",
+    "correctAnswer": "Reinforcement learning",
+    "incorrectAnswers": [
+      "Supervised learning",
+      "Unsupervised learning",
+      "Self-supervised learning"
+    ],
+    "explanation": "In reinforcement learning, an agent takes actions in an environment and learns from the rewards or penalties that follow, aiming to maximize its total reward.",
+    "keywords": [
+      "ai-ml",
+      "reinforcement-learning",
+      "rewards"
+    ],
+    "source": "https://en.wikipedia.org/wiki/Reinforcement_learning"
+  },
+  {
+    "itemId": "651e9146-36d2-489c-9ead-f5b8e15bfd75",
+    "seedId": "9ed5ea28-1a91-4299-8072-a0aa5069b6d2",
+    "category": "tech",
+    "navigationKeyword1": "ai-ml",
+    "navigationKeyword2": "ml-basics",
+    "question": "A model predicts a home's sale price from its size, location and number of bedrooms. In this setup, what is the sale price?",
+    "correctAnswer": "The label",
+    "incorrectAnswers": [
+      "A feature",
+      "A hyperparameter",
+      "The loss"
+    ],
+    "explanation": "The label is the answer the model is trying to predict. Features are the input values, like size and location, that the model uses to make that prediction.",
+    "keywords": [
+      "ai-ml",
+      "features",
+      "labels"
+    ],
+    "source": "https://developers.google.com/machine-learning/intro-to-ml/supervised"
+  },
+  {
+    "itemId": "04d9dc55-f7f3-47ef-a50f-986f7695445b",
+    "seedId": "daa65138-191e-4dc4-b85d-b4f7ef5c2f52",
+    "category": "tech",
+    "navigationKeyword1": "ai-ml",
+    "navigationKeyword2": "ml-basics",
+    "question": "After a model has been trained and evaluated, what is it called when the model makes predictions on new, unlabeled examples?",
+    "correctAnswer": "Inference",
+    "incorrectAnswers": [
+      "Training",
+      "Validation",
+      "Labeling"
+    ],
+    "explanation": "Once evaluation results look good, the trained model is used to predict answers for examples that do not have labels. Those predictions are called inferences.",
+    "keywords": [
+      "ai-ml",
+      "inference",
+      "ml-workflow"
+    ],
+    "source": "https://developers.google.com/machine-learning/intro-to-ml/supervised"
+  },
+  {
+    "itemId": "9fda6853-7ad9-4367-bc60-ed6db0fe4101",
+    "seedId": "f739d5e0-9efb-4e6d-9921-64896db57b45",
+    "category": "tech",
+    "navigationKeyword1": "ai-ml",
+    "navigationKeyword2": "ml-basics",
+    "question": "Which task is a regression problem rather than a classification problem?",
+    "correctAnswer": "Predicting tomorrow's temperature in degrees",
+    "incorrectAnswers": [
+      "Deciding if a photo shows a cat",
+      "Sorting emails into spam or not spam",
+      "Labeling a review as positive or negative"
+    ],
+    "explanation": "Classification assigns each input to one of a set of categories, while regression predicts a real-valued number, such as a temperature.",
+    "keywords": [
+      "ai-ml",
+      "regression",
+      "classification"
+    ],
+    "source": "https://en.wikipedia.org/wiki/Statistical_classification"
+  },
+  {
+    "itemId": "1617bf1e-10b5-4e80-96c9-887ebc30b9f1",
+    "seedId": "d13e39d1-de71-4ccd-8e92-e952ba34e82f",
+    "category": "tech",
+    "navigationKeyword1": "ai-ml",
+    "navigationKeyword2": "ml-basics",
+    "question": "Which of these is set by a person before training, rather than learned by the model?",
+    "correctAnswer": "The learning rate",
+    "incorrectAnswers": [
+      "The model's weights",
+      "The model's bias values",
+      "The model's predictions"
+    ],
+    "explanation": "Hyperparameters such as learning rate, batch size and number of epochs are chosen to control training. Parameters such as weights and bias are calculated by the model as it trains.",
+    "keywords": [
+      "ai-ml",
+      "hyperparameters",
+      "parameters"
+    ],
+    "source": "https://developers.google.com/machine-learning/crash-course/linear-regression/hyperparameters"
+  },
+  {
+    "itemId": "9c6d4209-014c-43cd-8f59-9392395ee79f",
+    "seedId": "5ab06d65-5c7b-4283-8ff9-7128d40864b6",
+    "category": "tech",
+    "navigationKeyword1": "ai-ml",
+    "navigationKeyword2": "ml-basics",
+    "question": "During training, the loss keeps jumping up and down and never settles. Which setting is the most likely cause?",
+    "correctAnswer": "A learning rate that is too high",
+    "incorrectAnswers": [
+      "A learning rate that is too low",
+      "A test set that is too small",
+      "Too few features in the data"
+    ],
+    "explanation": "The learning rate sets how big each update step is. Too large a step overshoots, so the loss bounces around instead of converging; too small a step just makes training slow.",
+    "keywords": [
+      "ai-ml",
+      "learning-rate",
+      "training"
+    ],
+    "source": "https://developers.google.com/machine-learning/crash-course/linear-regression/hyperparameters"
+  },
+  {
+    "itemId": "b3845dbc-6821-4ca7-84b7-eb1491cac8bc",
+    "seedId": "758c35d5-fec6-41c6-b939-5b7b49db5f32",
+    "category": "tech",
+    "navigationKeyword1": "ai-ml",
+    "navigationKeyword2": "ml-basics",
+    "question": "How does gradient descent reduce a model's error during training?",
+    "correctAnswer": "It takes repeated small steps in the downhill direction of the loss",
+    "incorrectAnswers": [
+      "It tries every possible weight value once",
+      "It deletes the examples the model gets wrong",
+      "It doubles the training data each round"
+    ],
+    "explanation": "Gradient descent repeatedly moves the model's parameters opposite to the gradient, the direction in which the loss rises fastest, so the loss shrinks step by step.",
+    "keywords": [
+      "ai-ml",
+      "gradient-descent",
+      "loss"
+    ],
+    "source": "https://en.wikipedia.org/wiki/Gradient_descent"
+  },
+  {
+    "itemId": "92db6cb7-05b3-48fc-8abd-a1b0eb10f8d4",
+    "seedId": "625acb76-ddd1-4e0e-a1cb-4f1bd45e373c",
+    "category": "tech",
+    "navigationKeyword1": "ai-ml",
+    "navigationKeyword2": "ml-basics",
+    "question": "Only 1% of transactions in a dataset are fraud. A model that labels every transaction as not fraud scores 99% accuracy. What does this show?",
+    "correctAnswer": "Accuracy can be misleading on imbalanced data",
+    "incorrectAnswers": [
+      "The model is ready for production",
+      "Fraud cases should be removed from the data",
+      "Accuracy is the best metric for fraud"
+    ],
+    "explanation": "When one class is rare, a model can score high accuracy by always predicting the common class while catching nothing useful. Metrics like precision and recall give a truer picture.",
+    "keywords": [
+      "ai-ml",
+      "imbalanced-data",
+      "accuracy"
+    ],
+    "source": "https://developers.google.com/machine-learning/crash-course/classification/accuracy-precision-recall"
+  },
+  {
+    "itemId": "81567698-a00d-4f5e-ad90-e5e6aebc8030",
+    "seedId": "6ced59e0-7d8e-47cd-aa57-f03c457ab447",
+    "category": "tech",
+    "navigationKeyword1": "ai-ml",
+    "navigationKeyword2": "ml-basics",
+    "question": "A disease screening tool must miss as few sick patients as possible. Which metric should the team focus on most?",
+    "correctAnswer": "Recall",
+    "incorrectAnswers": [
+      "Precision",
+      "Accuracy",
+      "Learning rate"
+    ],
+    "explanation": "Recall is the share of actual positives the model correctly finds, so a high recall means few sick patients are missed. Precision instead measures how many flagged cases are truly positive.",
+    "keywords": [
+      "ai-ml",
+      "recall",
+      "precision"
+    ],
+    "source": "https://developers.google.com/machine-learning/crash-course/classification/accuracy-precision-recall"
+  },
+  {
+    "itemId": "2921d0fe-3449-4edb-9cc5-eefe457288c6",
+    "seedId": "a840c5ee-5c0e-4c1c-a8a5-85df649d2b40",
+    "category": "tech",
+    "navigationKeyword1": "ai-ml",
+    "navigationKeyword2": "ml-basics",
+    "question": "A team scales or selects features using the whole dataset before splitting off the test set. What is the likely result?",
+    "correctAnswer": "Test scores look better than real-world results",
+    "incorrectAnswers": [
+      "Test scores look worse than real-world results",
+      "The model cannot be trained at all",
+      "The test set becomes larger"
+    ],
+    "explanation": "This is data leakage: information from the test data seeps into the model building. It produces overly optimistic scores and weaker performance on truly new data.",
+    "keywords": [
+      "ai-ml",
+      "data-leakage",
+      "evaluation"
+    ],
+    "source": "https://scikit-learn.org/stable/common_pitfalls.html"
+  },
+  {
+    "itemId": "770f8b91-d6c5-4b80-a7bb-1e3d0378244f",
+    "seedId": "9241464c-2f4f-457f-9876-424187bc54da",
+    "category": "tech",
+    "navigationKeyword1": "ai-ml",
+    "navigationKeyword2": "ml-basics",
+    "question": "Before running k-means clustering on customer data, what must you usually decide in advance?",
+    "correctAnswer": "How many clusters to create",
+    "incorrectAnswers": [
+      "Which label each customer has",
+      "How many epochs to train for",
+      "Which customers to leave out"
+    ],
+    "explanation": "K-means splits unlabeled data into a fixed number of groups, and it needs that number of clusters to be specified up front.",
+    "keywords": [
+      "ai-ml",
+      "clustering",
+      "k-means"
+    ],
+    "source": "https://scikit-learn.org/stable/modules/clustering.html"
   }
 ]

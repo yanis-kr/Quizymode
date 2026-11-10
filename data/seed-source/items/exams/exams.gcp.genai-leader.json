@@ -1,0 +1,1051 @@
+[
+  {
+    "itemId": "b699420a-75b8-48a7-a9a3-525967536360",
+    "seedId": "068ba608-1413-4fe8-9ec6-baa94a2b465f",
+    "category": "exams",
+    "navigationKeyword1": "gcp",
+    "navigationKeyword2": "genai-leader",
+    "question": "A model learns from past sales records labeled with actual prices to predict future house prices. Which type of ML is this?",
+    "correctAnswer": "Supervised learning",
+    "incorrectAnswers": [
+      "Unsupervised learning",
+      "Reinforcement learning",
+      "Clustering"
+    ],
+    "explanation": "The training data includes the correct answers (prices), which is what defines supervised learning. Predicting a number is a regression task.",
+    "keywords": [
+      "gcp-genai-leader",
+      "ml-basics",
+      "supervised-learning"
+    ],
+    "source": "https://developers.google.com/machine-learning/intro-to-ml/what-is-ml"
+  },
+  {
+    "itemId": "bffeea26-67fb-474e-84a3-79db501a7fab",
+    "seedId": "bbd23adb-defb-49aa-a1f1-d37a559308d5",
+    "category": "exams",
+    "navigationKeyword1": "gcp",
+    "navigationKeyword2": "genai-leader",
+    "question": "A retailer groups customers into segments without defining the categories in advance. Which technique is this?",
+    "correctAnswer": "Clustering",
+    "incorrectAnswers": [
+      "Regression",
+      "Binary classification",
+      "Instruction tuning"
+    ],
+    "explanation": "Clustering is an unsupervised technique that groups similar data points. The categories are not predefined; you interpret the clusters afterward.",
+    "keywords": [
+      "gcp-genai-leader",
+      "ml-basics",
+      "unsupervised-learning"
+    ],
+    "source": "https://developers.google.com/machine-learning/intro-to-ml/what-is-ml"
+  },
+  {
+    "itemId": "53fe7267-cf00-46f5-9b31-611d8d9d2635",
+    "seedId": "6cd443b7-f40b-4dbe-99fe-c482c49c54e1",
+    "category": "exams",
+    "navigationKeyword1": "gcp",
+    "navigationKeyword2": "genai-leader",
+    "question": "Which type of ML produces a policy by learning from rewards and penalties for actions taken in an environment?",
+    "correctAnswer": "Reinforcement learning",
+    "incorrectAnswers": [
+      "Supervised learning",
+      "Clustering",
+      "Distillation"
+    ],
+    "explanation": "Reinforcement learning learns through rewards and penalties and produces a policy for maximizing reward, as in training AlphaGo.",
+    "keywords": [
+      "gcp-genai-leader",
+      "ml-basics",
+      "reinforcement-learning"
+    ],
+    "source": "https://developers.google.com/machine-learning/intro-to-ml/what-is-ml"
+  },
+  {
+    "itemId": "6b3e2290-67a1-4f42-af02-bac4b64fae18",
+    "seedId": "7afc6b96-d5e1-45be-9c2b-ece2863f7a14",
+    "category": "exams",
+    "navigationKeyword1": "gcp",
+    "navigationKeyword2": "genai-leader",
+    "question": "What do we call a very large pretrained model, trained on diverse data, that can serve as a base for many customized tasks?",
+    "correctAnswer": "Foundation model",
+    "incorrectAnswers": [
+      "Student model",
+      "Task-specific model",
+      "Rule-based model"
+    ],
+    "explanation": "A foundation model is pretrained on an enormous, diverse training set and can respond to many kinds of requests or be customized further.",
+    "keywords": [
+      "gcp-genai-leader",
+      "foundation-models",
+      "genai-fundamentals"
+    ],
+    "source": "https://developers.google.com/machine-learning/glossary/generative"
+  },
+  {
+    "itemId": "e39f2224-2ce1-4bb6-a41a-583ac0cbd114",
+    "seedId": "2a2d5657-f6aa-4e20-9b3f-9b00819c5769",
+    "category": "exams",
+    "navigationKeyword1": "gcp",
+    "navigationKeyword2": "genai-leader",
+    "question": "A team trains a smaller model to mimic a large model's predictions so it runs faster and cheaper. What is this technique?",
+    "correctAnswer": "Distillation",
+    "incorrectAnswers": [
+      "Grounding",
+      "Prompt chaining",
+      "Instruction tuning"
+    ],
+    "explanation": "Distillation trains a smaller student model to imitate a larger teacher. The student is faster and uses less memory, but is usually somewhat less accurate.",
+    "keywords": [
+      "gcp-genai-leader",
+      "distillation",
+      "genai-fundamentals"
+    ],
+    "source": "https://developers.google.com/machine-learning/glossary/generative"
+  },
+  {
+    "itemId": "53b23049-9016-464c-9d69-07c5da204852",
+    "seedId": "405bd15b-9e40-4a90-b1f2-55708e56950f",
+    "category": "exams",
+    "navigationKeyword1": "gcp",
+    "navigationKeyword2": "genai-leader",
+    "question": "A chatbot confidently states a product feature that does not exist. What is this failure called?",
+    "correctAnswer": "Hallucination",
+    "incorrectAnswers": [
+      "Overfitting",
+      "Data drift",
+      "Prompt injection"
+    ],
+    "explanation": "A hallucination is plausible-seeming but factually incorrect output that asserts something about the real world.",
+    "keywords": [
+      "gcp-genai-leader",
+      "hallucinations",
+      "genai-limitations"
+    ],
+    "source": "https://developers.google.com/machine-learning/glossary/generative"
+  },
+  {
+    "itemId": "35f1ec42-2c27-4699-8cf4-7d03b32dbb39",
+    "seedId": "1a01c479-8bb1-43e9-981d-ca0683feee10",
+    "category": "exams",
+    "navigationKeyword1": "gcp",
+    "navigationKeyword2": "genai-leader",
+    "question": "Users rate chatbot answers with thumbs up or down, and that feedback is used to improve the model. Which technique does this describe?",
+    "correctAnswer": "Reinforcement learning from human feedback",
+    "incorrectAnswers": [
+      "Zero-shot prompting",
+      "Model distillation",
+      "Retrieval-augmented generation"
+    ],
+    "explanation": "RLHF uses feedback from human raters, such as thumbs up or down ratings, to improve the quality of a model's responses.",
+    "keywords": [
+      "gcp-genai-leader",
+      "rlhf",
+      "genai-fundamentals"
+    ],
+    "source": "https://developers.google.com/machine-learning/glossary/generative"
+  },
+  {
+    "itemId": "fd4176f8-5649-4820-9be9-c4380db8a2f6",
+    "seedId": "249c3aee-b027-4169-8e0d-d88032db260d",
+    "category": "exams",
+    "navigationKeyword1": "gcp",
+    "navigationKeyword2": "genai-leader",
+    "question": "Which prompting technique asks an LLM to explain its reasoning step by step before answering?",
+    "correctAnswer": "Chain-of-thought prompting",
+    "incorrectAnswers": [
+      "Zero-shot prompting",
+      "Prompt-based learning",
+      "Role-free prompting"
+    ],
+    "explanation": "Chain-of-thought prompting encourages the model to show its reasoning step by step, which can improve accuracy and lets users check the steps.",
+    "keywords": [
+      "gcp-genai-leader",
+      "prompting",
+      "chain-of-thought"
+    ],
+    "source": "https://developers.google.com/machine-learning/glossary/generative"
+  },
+  {
+    "itemId": "9eb5736a-24be-44ef-bbbc-a78ae8f0b221",
+    "seedId": "b076249f-fc3e-4c8a-b377-045eddb9db03",
+    "category": "exams",
+    "navigationKeyword1": "gcp",
+    "navigationKeyword2": "genai-leader",
+    "question": "Compared with zero-shot prompting, what is the usual tradeoff of few-shot prompting?",
+    "correctAnswer": "Better results, but a longer prompt",
+    "incorrectAnswers": [
+      "Shorter prompts, but worse results",
+      "No examples needed, but slower output",
+      "Better results, but model retraining"
+    ],
+    "explanation": "Few-shot prompts include several examples of the desired response. They usually beat zero-shot prompts but make the prompt longer.",
+    "keywords": [
+      "gcp-genai-leader",
+      "prompting",
+      "few-shot"
+    ],
+    "source": "https://developers.google.com/machine-learning/glossary/generative"
+  },
+  {
+    "itemId": "31b6a219-8fb3-45cf-84c1-5d06d4f851f5",
+    "seedId": "86cea777-f326-46a8-af5b-0b0ed065a9b0",
+    "category": "exams",
+    "navigationKeyword1": "gcp",
+    "navigationKeyword2": "genai-leader",
+    "question": "Which tuning method freezes a model's pretrained weights and trains only a small set of added weights?",
+    "correctAnswer": "LoRA",
+    "incorrectAnswers": [
+      "Full fine-tuning",
+      "Distillation",
+      "Chain-of-thought"
+    ],
+    "explanation": "LoRA is a parameter-efficient method that freezes the original weights and inserts a small set of trainable weights, so it trains faster and is cheaper to serve.",
+    "keywords": [
+      "gcp-genai-leader",
+      "tuning",
+      "parameter-efficient"
+    ],
+    "source": "https://developers.google.com/machine-learning/glossary/generative"
+  },
+  {
+    "itemId": "232ae8f6-073e-4ab2-b491-b80a63dc96b4",
+    "seedId": "ac9e6c5c-dcdd-49e5-8ac0-2fd4b5b8c58e",
+    "category": "exams",
+    "navigationKeyword1": "gcp",
+    "navigationKeyword2": "genai-leader",
+    "question": "What key advantage did the Transformer architecture, introduced in 2017, have over recurrent neural networks?",
+    "correctAnswer": "It processes all words in parallel",
+    "incorrectAnswers": [
+      "It processes words strictly in order",
+      "It needs no training data at all",
+      "It removes the need for attention"
+    ],
+    "explanation": "RNNs process words one at a time. The Transformer uses self-attention to process all words in parallel, which suits GPUs and TPUs and speeds up training.",
+    "keywords": [
+      "gcp-genai-leader",
+      "transformers",
+      "genai-history"
+    ],
+    "source": "https://research.google/blog/transformer-a-novel-neural-network-architecture-for-language-understanding/"
+  },
+  {
+    "itemId": "69801659-6406-42dd-bc2d-7bae2f8d55d1",
+    "seedId": "ca76232e-2c50-40df-bc93-1a939da568c4",
+    "category": "exams",
+    "navigationKeyword1": "gcp",
+    "navigationKeyword2": "genai-leader",
+    "question": "When Gemini 1.0 launched in December 2023, which size was designed for on-device tasks?",
+    "correctAnswer": "Gemini Nano",
+    "incorrectAnswers": [
+      "Gemini Ultra",
+      "Gemini Pro",
+      "Gemini Flash"
+    ],
+    "explanation": "Gemini 1.0 came in three sizes: Ultra for highly complex tasks, Pro for a wide range of tasks, and Nano for on-device tasks.",
+    "keywords": [
+      "gcp-genai-leader",
+      "gemini",
+      "genai-history"
+    ],
+    "source": "https://blog.google/technology/ai/google-gemini-ai/"
+  },
+  {
+    "itemId": "da1202ab-57d9-4bbe-ae46-9e1cf25e72a2",
+    "seedId": "9569cf12-b827-4e52-ac17-23136efe759d",
+    "category": "exams",
+    "navigationKeyword1": "gcp",
+    "navigationKeyword2": "genai-leader",
+    "question": "What is the purpose of SynthID?",
+    "correctAnswer": "Watermarking AI-generated content so it can be identified",
+    "incorrectAnswers": [
+      "Blocking harmful prompts before they reach a model",
+      "Compressing generated video for faster streaming",
+      "Translating generated audio into other languages"
+    ],
+    "explanation": "SynthID adds watermarks that are imperceptible to people but detectable by its technology, helping people identify AI-generated or AI-altered content.",
+    "keywords": [
+      "gcp-genai-leader",
+      "synthid",
+      "responsible-ai"
+    ],
+    "source": "https://deepmind.google/models/synthid/"
+  },
+  {
+    "itemId": "1c0826b2-4d1c-472d-8df3-b81037ef57b0",
+    "seedId": "63a00335-4a69-4401-aa3c-92431738c97d",
+    "category": "exams",
+    "navigationKeyword1": "gcp",
+    "navigationKeyword2": "genai-leader",
+    "question": "How does SynthID embed a watermark in AI-generated text?",
+    "correctAnswer": "It adjusts the probability scores for each next word",
+    "incorrectAnswers": [
+      "It inserts hidden Unicode characters",
+      "It appends a signature line to the text",
+      "It stores a copy of the text in a registry"
+    ],
+    "explanation": "For text, SynthID adjusts the probability scores the model uses to choose each next word, embedding a watermark without noticeably changing quality.",
+    "keywords": [
+      "gcp-genai-leader",
+      "synthid",
+      "responsible-ai"
+    ],
+    "source": "https://deepmind.google/models/synthid/"
+  },
+  {
+    "itemId": "415213b1-8d1d-4db4-80ed-5301d31e2b2f",
+    "seedId": "d65f6d83-c93e-4c1b-ae90-cfc5a8a81934",
+    "category": "exams",
+    "navigationKeyword1": "gcp",
+    "navigationKeyword2": "genai-leader",
+    "question": "Besides video, what does Veo 3 generate natively?",
+    "correctAnswer": "Sound effects, ambient noise and dialogue",
+    "incorrectAnswers": [
+      "Editable 3D models of each scene",
+      "Subtitles in every supported language",
+      "Shot lists and production scripts"
+    ],
+    "explanation": "Veo 3 generates audio natively along with the video, including sound effects, ambient noise and dialogue.",
+    "keywords": [
+      "gcp-genai-leader",
+      "veo",
+      "multimodal"
+    ],
+    "source": "https://deepmind.google/models/veo/"
+  },
+  {
+    "itemId": "ff666231-19ea-45df-af8d-76ba8001d3a1",
+    "seedId": "ce4b2b71-b926-456b-83ff-52ccebfcad54",
+    "category": "exams",
+    "navigationKeyword1": "gcp",
+    "navigationKeyword2": "genai-leader",
+    "question": "Which Google Cloud model library lets teams discover, test, customize and deploy models from Google and its partners?",
+    "correctAnswer": "Model Garden",
+    "incorrectAnswers": [
+      "Memory Bank",
+      "RAG Engine",
+      "Agent Gallery"
+    ],
+    "explanation": "Model Garden is an AI/ML model library for discovering, testing, customizing and deploying models and assets from Google and partners.",
+    "keywords": [
+      "gcp-genai-leader",
+      "model-garden",
+      "gcp-offerings"
+    ],
+    "source": "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/model-garden/explore-models"
+  },
+  {
+    "itemId": "49f8b8af-6a4b-4d7e-a8c3-c57c53581571",
+    "seedId": "cd1d9419-9e22-4d10-9918-194b58eb2521",
+    "category": "exams",
+    "navigationKeyword1": "gcp",
+    "navigationKeyword2": "genai-leader",
+    "question": "What is Gemma?",
+    "correctAnswer": "A family of lightweight open models built from Gemini research",
+    "incorrectAnswers": [
+      "A closed model available only through a paid API",
+      "Google's video generation model for filmmakers",
+      "A custom chip generation for training models"
+    ],
+    "explanation": "Gemma models are lightweight, open models built from the same research and technology used to create Gemini. They can run on your own hardware.",
+    "keywords": [
+      "gcp-genai-leader",
+      "gemma",
+      "open-models"
+    ],
+    "source": "https://ai.google.dev/gemma/docs"
+  },
+  {
+    "itemId": "103a6912-3c1e-430f-bba6-859a620d7afc",
+    "seedId": "e183de39-077e-48c6-88f4-a0d61b61eac6",
+    "category": "exams",
+    "navigationKeyword1": "gcp",
+    "navigationKeyword2": "genai-leader",
+    "question": "A company wants an open model to check gen AI inputs and outputs against its safety policies. Which Gemma variant fits?",
+    "correctAnswer": "ShieldGemma 2",
+    "incorrectAnswers": [
+      "EmbeddingGemma 2",
+      "Gemma 4",
+      "MedGemma"
+    ],
+    "explanation": "ShieldGemma 2 evaluates the safety of generative AI inputs and outputs against defined policies.",
+    "keywords": [
+      "gcp-genai-leader",
+      "gemma",
+      "safety"
+    ],
+    "source": "https://ai.google.dev/gemma/docs"
+  },
+  {
+    "itemId": "8a3060a5-8ace-4871-af94-8bd2c0b490d7",
+    "seedId": "dc984524-6d22-4dc2-a155-79075e5865e7",
+    "category": "exams",
+    "navigationKeyword1": "gcp",
+    "navigationKeyword2": "genai-leader",
+    "question": "A chatbot must answer questions about recent public news. Which grounding option fits best?",
+    "correctAnswer": "Grounding with Google Search",
+    "incorrectAnswers": [
+      "Grounding with Google Maps",
+      "Supervised fine-tuning on old articles",
+      "Grounding on an internal Elasticsearch index"
+    ],
+    "explanation": "Grounding with Google Search connects the model to world knowledge using results from Google's search engine, which suits recent public information.",
+    "keywords": [
+      "gcp-genai-leader",
+      "grounding",
+      "gcp-offerings"
+    ],
+    "source": "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/grounding/overview"
+  },
+  {
+    "itemId": "9493075e-48bd-49a8-ad84-305aef4e69c7",
+    "seedId": "16ae5a4e-9514-4640-b852-477fce480dc0",
+    "category": "exams",
+    "navigationKeyword1": "gcp",
+    "navigationKeyword2": "genai-leader",
+    "question": "Besides reducing hallucinations, what business benefit does grounding provide?",
+    "correctAnswer": "Auditability through links to sources",
+    "incorrectAnswers": [
+      "Lower costs for model training",
+      "Automatic translation of answers",
+      "Fewer tokens in every prompt"
+    ],
+    "explanation": "Grounding anchors responses to data sources and provides grounding support, links to sources that make answers auditable.",
+    "keywords": [
+      "gcp-genai-leader",
+      "grounding",
+      "hallucinations"
+    ],
+    "source": "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/grounding/overview"
+  },
+  {
+    "itemId": "661b6999-84cb-4678-9e5c-1408627ce7d9",
+    "seedId": "7a8701ee-f794-4cd6-a9b2-eb0e174c12fe",
+    "category": "exams",
+    "navigationKeyword1": "gcp",
+    "navigationKeyword2": "genai-leader",
+    "question": "Does Google use a Google Cloud customer's data to train its AI models?",
+    "correctAnswer": "Not without the customer's prior permission",
+    "incorrectAnswers": [
+      "Yes, for all preview models",
+      "Yes, after 30 days of storage",
+      "Only for prompts sent to global endpoints"
+    ],
+    "explanation": "Google states it won't use customer data to train or fine-tune any AI/ML models without prior permission or instruction. This is part of the training restriction in the Service Terms.",
+    "keywords": [
+      "gcp-genai-leader",
+      "data-governance",
+      "privacy"
+    ],
+    "source": "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/data-governance"
+  },
+  {
+    "itemId": "0f79e529-bd4d-4e10-b12d-9f804c6afadf",
+    "seedId": "697f0441-e871-4331-a98a-0368c7ac2ee5",
+    "category": "exams",
+    "navigationKeyword1": "gcp",
+    "navigationKeyword2": "genai-leader",
+    "question": "Which Google Cloud product combines intranet search, an AI assistant and an agent platform across a company's data sources?",
+    "correctAnswer": "Gemini Enterprise",
+    "incorrectAnswers": [
+      "Model Garden",
+      "Agent Development Kit",
+      "RAG Engine"
+    ],
+    "explanation": "Gemini Enterprise is an intranet search tool, AI assistant and agentic platform with a single multimodal search interface over enterprise data.",
+    "keywords": [
+      "gcp-genai-leader",
+      "gemini-enterprise",
+      "gcp-offerings"
+    ],
+    "source": "https://docs.cloud.google.com/gemini/enterprise/docs/overview"
+  },
+  {
+    "itemId": "1041b869-da5e-4c6a-a6c4-6c654b1557d2",
+    "seedId": "372b2239-aba8-47ba-b7d4-45c29982b6f2",
+    "category": "exams",
+    "navigationKeyword1": "gcp",
+    "navigationKeyword2": "genai-leader",
+    "question": "An employee searches company files through Gemini Enterprise. Which results can they see?",
+    "correctAnswer": "Only content they are permitted to access",
+    "incorrectAnswers": [
+      "Every document in all connected systems",
+      "Only content from the public web",
+      "Only documents they created themselves"
+    ],
+    "explanation": "Gemini Enterprise provides permissions-aware search and enforces access-controlled results, backed by SSO and user-level access.",
+    "keywords": [
+      "gcp-genai-leader",
+      "gemini-enterprise",
+      "security"
+    ],
+    "source": "https://docs.cloud.google.com/gemini/enterprise/docs/overview"
+  },
+  {
+    "itemId": "89351751-ef39-4488-b16b-c41888b0aaaa",
+    "seedId": "0e7c1c65-4764-4e25-abd6-490034af2200",
+    "category": "exams",
+    "navigationKeyword1": "gcp",
+    "navigationKeyword2": "genai-leader",
+    "question": "What are Tensor Processing Units (TPUs)?",
+    "correctAnswer": "Google's custom chips for accelerating ML workloads",
+    "incorrectAnswers": [
+      "General-purpose CPUs for web servers",
+      "Third-party GPUs rented by the hour",
+      "Storage appliances for training data"
+    ],
+    "explanation": "TPUs are Google's custom-developed application-specific integrated circuits (ASICs), designed for the large matrix operations common in machine learning.",
+    "keywords": [
+      "gcp-genai-leader",
+      "tpu",
+      "infrastructure"
+    ],
+    "source": "https://docs.cloud.google.com/tpu/docs/intro-to-tpu"
+  },
+  {
+    "itemId": "4569aa58-7d06-4da1-808b-e5833e3fceb9",
+    "seedId": "74cfe53f-cc7c-4f75-af4c-3fbae64057ed",
+    "category": "exams",
+    "navigationKeyword1": "gcp",
+    "navigationKeyword2": "genai-leader",
+    "question": "A team wants an open-source, model-agnostic framework to build and deploy multi-agent applications. Which fits?",
+    "correctAnswer": "Agent Development Kit (ADK)",
+    "incorrectAnswers": [
+      "Model Garden",
+      "RAG Engine",
+      "SynthID"
+    ],
+    "explanation": "ADK is an open-source framework for building, debugging and deploying AI agents. It works with Gemini and other models and supports multi-agent orchestration.",
+    "keywords": [
+      "gcp-genai-leader",
+      "agents",
+      "adk"
+    ],
+    "source": "https://adk.dev/"
+  },
+  {
+    "itemId": "25426381-9bf1-43c3-b4eb-47d46290f933",
+    "seedId": "a367e766-ef64-40db-ab23-87ffb2c47a28",
+    "category": "exams",
+    "navigationKeyword1": "gcp",
+    "navigationKeyword2": "genai-leader",
+    "question": "In Google Cloud's managed agent runtime, what does Memory Bank store?",
+    "correctAnswer": "Long-term information such as user preferences",
+    "incorrectAnswers": [
+      "Model weights for each deployed agent",
+      "Billing records for each agent session",
+      "Safety filter thresholds for each project"
+    ],
+    "explanation": "Memory Bank stores and retrieves long-term information, such as user preferences and facts from sessions, to personalize agent interactions.",
+    "keywords": [
+      "gcp-genai-leader",
+      "agents",
+      "memory"
+    ],
+    "source": "https://docs.cloud.google.com/agent-builder/agent-engine/overview"
+  },
+  {
+    "itemId": "73e46978-4b02-46f2-9ba5-0875d62f97e6",
+    "seedId": "91e6234b-4902-449c-b3a1-988cd7a0200c",
+    "category": "exams",
+    "navigationKeyword1": "gcp",
+    "navigationKeyword2": "genai-leader",
+    "question": "Which minimal-code conversational agent builder represents the evolution of Dialogflow CX?",
+    "correctAnswer": "CX Agent Studio",
+    "incorrectAnswers": [
+      "Agent Gallery",
+      "Model Garden",
+      "Memory Bank"
+    ],
+    "explanation": "Customer Experience Agent Studio (CX Agent Studio) is a minimal-code conversational agent builder. Google describes it as the evolution of Dialogflow CX.",
+    "keywords": [
+      "gcp-genai-leader",
+      "customer-engagement",
+      "agents"
+    ],
+    "source": "https://docs.cloud.google.com/customer-engagement-ai/conversational-agents/ps"
+  },
+  {
+    "itemId": "6df9f57d-8001-4e30-96a2-142907976cd0",
+    "seedId": "892e5cc6-e5ba-49c5-b946-9465eb5c218e",
+    "category": "exams",
+    "navigationKeyword1": "gcp",
+    "navigationKeyword2": "genai-leader",
+    "question": "How does Google Workspace describe its use of customer data with Gemini?",
+    "correctAnswer": "It is not used to train Gemini models or for ads",
+    "incorrectAnswers": [
+      "It trains Gemini models after anonymization",
+      "It is shared with partners for ad targeting",
+      "It is used to train models in paid plans only"
+    ],
+    "explanation": "Workspace states that customer data is not used to train Gemini models or for ads targeting, and Gemini retrieves only content the user can access.",
+    "keywords": [
+      "gcp-genai-leader",
+      "workspace",
+      "privacy"
+    ],
+    "source": "https://workspace.google.com/solutions/ai/"
+  },
+  {
+    "itemId": "12183708-6d71-4e06-834d-e1b42240d4c0",
+    "seedId": "9cb943bf-36c0-4196-bb5e-7d132bccc59f",
+    "category": "exams",
+    "navigationKeyword1": "gcp",
+    "navigationKeyword2": "genai-leader",
+    "question": "In a RAG pipeline, which step comes right after splitting the source data into chunks?",
+    "correctAnswer": "Embedding the chunks as vectors",
+    "incorrectAnswers": [
+      "Generating the final answer",
+      "Retrieving results for a query",
+      "Ingesting files from storage"
+    ],
+    "explanation": "The RAG process runs ingestion, chunking, embedding, indexing, retrieval and generation. Chunks are converted into vectors before they are indexed.",
+    "keywords": [
+      "gcp-genai-leader",
+      "rag",
+      "rag-engine"
+    ],
+    "source": "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/rag-engine/rag-overview"
+  },
+  {
+    "itemId": "40369673-c243-4549-a815-cac27cf026a5",
+    "seedId": "ff98484d-b573-4f40-8d7d-4863e1ab874f",
+    "category": "exams",
+    "navigationKeyword1": "gcp",
+    "navigationKeyword2": "genai-leader",
+    "question": "Two embedding vectors are very close together. What does that indicate?",
+    "correctAnswer": "The source items are very similar",
+    "incorrectAnswers": [
+      "The source items are identical copies",
+      "The vectors have different dimensions",
+      "The model failed to encode them"
+    ],
+    "explanation": "The distance between embedding vectors reflects how similar the items are. Closer vectors mean more similar items, which powers semantic search and recommendations.",
+    "keywords": [
+      "gcp-genai-leader",
+      "embeddings",
+      "semantic-search"
+    ],
+    "source": "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/embeddings"
+  },
+  {
+    "itemId": "c01d6d46-cd1a-43e8-a1f9-eb1ccc9c5f35",
+    "seedId": "296565f0-8f60-42de-a208-c99e671ad96a",
+    "category": "exams",
+    "navigationKeyword1": "gcp",
+    "navigationKeyword2": "genai-leader",
+    "question": "Which content filters for Gemini on Google Cloud cannot be adjusted by customers?",
+    "correctAnswer": "Child sexual abuse material and PII",
+    "incorrectAnswers": [
+      "Hate speech and harassment",
+      "Sexually explicit and dangerous content",
+      "Harassment and dangerous content"
+    ],
+    "explanation": "Hate speech, harassment, sexually explicit and dangerous content filters are configurable. Filters for CSAM and personally identifiable information are not.",
+    "keywords": [
+      "gcp-genai-leader",
+      "safety-filters",
+      "responsible-ai"
+    ],
+    "source": "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/multimodal/configure-safety-filters"
+  },
+  {
+    "itemId": "b36ce11c-a547-4b3a-80a3-6e88ec525a96",
+    "seedId": "7e4a7545-439d-4437-92ee-8d75f7bf1c44",
+    "category": "exams",
+    "navigationKeyword1": "gcp",
+    "navigationKeyword2": "genai-leader",
+    "question": "As of 2026, how long is the Google Cloud Generative AI Leader exam?",
+    "correctAnswer": "90 minutes",
+    "incorrectAnswers": [
+      "60 minutes",
+      "120 minutes",
+      "180 minutes"
+    ],
+    "explanation": "The exam lasts 90 minutes and has 50 to 60 multiple-choice questions. It has no prerequisites and is aimed at any job role.",
+    "keywords": [
+      "gcp-genai-leader",
+      "exam-facts"
+    ],
+    "source": "https://cloud.google.com/learn/certification/generative-ai-leader"
+  },
+  {
+    "itemId": "b59a11d7-52ba-45c1-8cd3-3078b02283d8",
+    "seedId": "3ef42e28-60ee-40fd-ae33-e8e8b6bd2cbc",
+    "category": "exams",
+    "navigationKeyword1": "gcp",
+    "navigationKeyword2": "genai-leader",
+    "question": "According to Google's prompting guidance, what risk comes from adding too many few-shot examples?",
+    "correctAnswer": "The model may overfit to the examples",
+    "incorrectAnswers": [
+      "The prompt stops being multimodal",
+      "The temperature resets to zero",
+      "Safety filters are switched off"
+    ],
+    "explanation": "Few-shot examples help the model pick up format and patterns, but too many can cause the model to overfit to them.",
+    "keywords": [
+      "gcp-genai-leader",
+      "prompting",
+      "few-shot"
+    ],
+    "source": "https://aistudio.google.com/docs/prompting-strategies"
+  },
+  {
+    "itemId": "bcd93a50-0860-4864-9077-73fb81a700d7",
+    "seedId": "d575ab64-611c-4f4f-8b6d-7bab1c84cc10",
+    "category": "exams",
+    "navigationKeyword1": "gcp",
+    "navigationKeyword2": "genai-leader",
+    "question": "A task has several distinct steps. What approach does Google recommend for prompting it?",
+    "correctAnswer": "Chain prompts so each output feeds the next",
+    "incorrectAnswers": [
+      "Put every step in one very long prompt",
+      "Raise temperature for each extra step",
+      "Remove all instructions and use examples"
+    ],
+    "explanation": "For multi-step tasks, make each step a prompt and chain them in sequence, so the output of one becomes the input to the next.",
+    "keywords": [
+      "gcp-genai-leader",
+      "prompting",
+      "prompt-chaining"
+    ],
+    "source": "https://aistudio.google.com/docs/prompting-strategies"
+  },
+  {
+    "itemId": "9af41cef-0319-436e-a801-faa9f4137366",
+    "seedId": "d76f7e3c-567e-40bb-82d7-224995193a91",
+    "category": "exams",
+    "navigationKeyword1": "gcp",
+    "navigationKeyword2": "genai-leader",
+    "question": "With very long context windows, what can many-shot in-context learning achieve?",
+    "correctAnswer": "Results similar to a fine-tuned model",
+    "incorrectAnswers": [
+      "Permanent changes to model weights",
+      "Unlimited output with no token cost",
+      "Removal of the need for any prompt"
+    ],
+    "explanation": "Scaling from a few examples to hundreds or thousands in the prompt can perform similarly to models fine-tuned for a specific task.",
+    "keywords": [
+      "gcp-genai-leader",
+      "long-context",
+      "in-context-learning"
+    ],
+    "source": "https://aistudio.google.com/docs/long-context"
+  },
+  {
+    "itemId": "316a0c0d-e00a-4c60-98a2-fecff9c449bd",
+    "seedId": "d05ecb39-1d8c-413c-9933-43a3966edf74",
+    "category": "exams",
+    "navigationKeyword1": "gcp",
+    "navigationKeyword2": "genai-leader",
+    "question": "In a very long prompt with many documents, where should the question usually go for best results?",
+    "correctAnswer": "At the end, after the documents",
+    "incorrectAnswers": [
+      "At the start, before the documents",
+      "Repeated between every document",
+      "In a separate follow-up request"
+    ],
+    "explanation": "Placing the query at the end of a long prompt generally improves performance.",
+    "keywords": [
+      "gcp-genai-leader",
+      "long-context",
+      "prompting"
+    ],
+    "source": "https://aistudio.google.com/docs/long-context"
+  },
+  {
+    "itemId": "7aa642e7-5de3-4407-9864-84ae3026f1b6",
+    "seedId": "95008f52-ff9a-4c8d-ac40-e1f2cbab8893",
+    "category": "exams",
+    "navigationKeyword1": "gcp",
+    "navigationKeyword2": "genai-leader",
+    "question": "An app sends the same large manual with every user question. Which feature can cut the repeated cost?",
+    "correctAnswer": "Context caching",
+    "incorrectAnswers": [
+      "Raising the temperature",
+      "Grounding with Google Maps",
+      "Supervised fine-tuning"
+    ],
+    "explanation": "Context caching stores frequently reused content, billed for storage per hour, and lowers per-request cost and latency for repeated queries.",
+    "keywords": [
+      "gcp-genai-leader",
+      "long-context",
+      "cost"
+    ],
+    "source": "https://aistudio.google.com/docs/long-context"
+  },
+  {
+    "itemId": "6c463704-debd-474b-9e51-6f93172653e2",
+    "seedId": "42e78c01-265e-4b94-b612-6d7e147ddb33",
+    "category": "exams",
+    "navigationKeyword1": "gcp",
+    "navigationKeyword2": "genai-leader",
+    "question": "A task needs consistent, factual answers rather than creative ones. How should temperature be adjusted?",
+    "correctAnswer": "Lower it",
+    "incorrectAnswers": [
+      "Raise it to the maximum",
+      "Set top-K as high as possible",
+      "Remove the output token limit"
+    ],
+    "explanation": "Temperature controls randomness. Low values suit less open-ended tasks, while high values produce more diverse or creative output.",
+    "keywords": [
+      "gcp-genai-leader",
+      "parameters",
+      "temperature"
+    ],
+    "source": "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/learn/prompts/adjust-parameter-values"
+  },
+  {
+    "itemId": "a42ed487-1d0e-43d5-b456-ccb160d35aa9",
+    "seedId": "3aa29e0e-c63e-490b-8bfa-5958f8ea41a2",
+    "category": "exams",
+    "navigationKeyword1": "gcp",
+    "navigationKeyword2": "genai-leader",
+    "question": "Next-token probabilities are 0.3, 0.2 and 0.1, and top-P is 0.5. Which tokens can be chosen?",
+    "correctAnswer": "Only the first two",
+    "incorrectAnswers": [
+      "Only the first one",
+      "All three tokens",
+      "Only the third one"
+    ],
+    "explanation": "Top-P adds tokens from most to least probable until their combined probability reaches the top-P value. Here 0.3 + 0.2 reaches 0.5, so the third token is excluded.",
+    "keywords": [
+      "gcp-genai-leader",
+      "parameters",
+      "top-p"
+    ],
+    "source": "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/learn/prompts/adjust-parameter-values"
+  },
+  {
+    "itemId": "1e9f992a-c95f-4b41-b151-a3c1bcfd5769",
+    "seedId": "0a73f61b-6a4d-4879-9330-27d560bddbbf",
+    "category": "exams",
+    "navigationKeyword1": "gcp",
+    "navigationKeyword2": "genai-leader",
+    "question": "Which tuning method learns from pairs of chosen and rejected responses to improve subjective qualities like tone?",
+    "correctAnswer": "Preference tuning",
+    "incorrectAnswers": [
+      "Supervised fine-tuning",
+      "Context caching",
+      "Distillation"
+    ],
+    "explanation": "Preference tuning learns from pairs of chosen and rejected responses and is best for subjective qualities such as helpfulness or conversational tone.",
+    "keywords": [
+      "gcp-genai-leader",
+      "tuning",
+      "preference-tuning"
+    ],
+    "source": "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/models/tune-models"
+  },
+  {
+    "itemId": "69188c86-6649-48a5-95a3-e9331188c2d3",
+    "seedId": "9d26295b-6518-4762-be88-eb3e13bb1bb7",
+    "category": "exams",
+    "navigationKeyword1": "gcp",
+    "navigationKeyword2": "genai-leader",
+    "question": "How can tuning a model lower inference cost and latency?",
+    "correctAnswer": "Prompts can drop long instructions and examples",
+    "incorrectAnswers": [
+      "Tuned models skip safety filtering",
+      "Tuned models no longer use tokens",
+      "Tuning removes the need for serving"
+    ],
+    "explanation": "Once a model is tuned for a task, prompts no longer need few-shot examples and long instructions, which reduces latency and cost.",
+    "keywords": [
+      "gcp-genai-leader",
+      "tuning",
+      "cost"
+    ],
+    "source": "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/models/tune-models"
+  },
+  {
+    "itemId": "36e47662-4304-45d1-96e3-212be01523ad",
+    "seedId": "aab03ff4-0100-4648-8157-1c52fa89b34d",
+    "category": "exams",
+    "navigationKeyword1": "gcp",
+    "navigationKeyword2": "genai-leader",
+    "question": "In the Gen AI evaluation service, what are adaptive rubrics?",
+    "correctAnswer": "Pass/fail tests generated for each prompt",
+    "incorrectAnswers": [
+      "One fixed score scale for all prompts",
+      "Human surveys sent to end users",
+      "Billing reports for evaluation runs"
+    ],
+    "explanation": "Adaptive rubrics are generated dynamically for each prompt, like unit tests. Each response gets a pass or fail verdict with a rationale.",
+    "keywords": [
+      "gcp-genai-leader",
+      "evaluation",
+      "rubrics"
+    ],
+    "source": "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/models/evaluation-overview"
+  },
+  {
+    "itemId": "2954d50b-38b9-4ebb-8956-cf82f63776cf",
+    "seedId": "5cf07fa5-3f96-4238-a8b9-274eb7e837f0",
+    "category": "exams",
+    "navigationKeyword1": "gcp",
+    "navigationKeyword2": "genai-leader",
+    "question": "Call containment rate and average handle time belong to which category of gen AI KPIs?",
+    "correctAnswer": "Business operational KPIs",
+    "incorrectAnswers": [
+      "Model quality KPIs",
+      "System quality KPIs",
+      "Adoption KPIs"
+    ],
+    "explanation": "Business operational KPIs measure the AI system's impact on business processes, such as containment rate and handle time in customer service.",
+    "keywords": [
+      "gcp-genai-leader",
+      "kpis",
+      "business-value"
+    ],
+    "source": "https://cloud.google.com/transform/gen-ai-kpis-measuring-ai-success-deep-dive"
+  },
+  {
+    "itemId": "50764c92-a19b-4bdb-8276-425e338f3172",
+    "seedId": "aa4ed6fb-ca56-47fb-a9b8-cf982684300b",
+    "category": "exams",
+    "navigationKeyword1": "gcp",
+    "navigationKeyword2": "genai-leader",
+    "question": "Active user percentage, frequency of use and thumbs up/down feedback measure what?",
+    "correctAnswer": "Adoption of the gen AI application",
+    "incorrectAnswers": [
+      "Model quality of the outputs",
+      "System uptime and latency",
+      "Direct financial return"
+    ],
+    "explanation": "Adoption KPIs measure how users engage with and accept a gen AI application, such as adoption rate, frequency of use and feedback.",
+    "keywords": [
+      "gcp-genai-leader",
+      "kpis",
+      "adoption"
+    ],
+    "source": "https://cloud.google.com/transform/gen-ai-kpis-measuring-ai-success-deep-dive"
+  },
+  {
+    "itemId": "b1013651-482e-4979-bd03-adb32f4c5e2c",
+    "seedId": "d6e458f4-c7d7-41f5-84a6-3705335bc318",
+    "category": "exams",
+    "navigationKeyword1": "gcp",
+    "navigationKeyword2": "genai-leader",
+    "question": "Uptime, error rate and model latency are examples of which gen AI KPI category?",
+    "correctAnswer": "System quality KPIs",
+    "incorrectAnswers": [
+      "Business value KPIs",
+      "Adoption KPIs",
+      "Model quality KPIs"
+    ],
+    "explanation": "System quality KPIs measure the operational health, performance and scale of the AI platform, including reliability and responsiveness.",
+    "keywords": [
+      "gcp-genai-leader",
+      "kpis",
+      "system-quality"
+    ],
+    "source": "https://cloud.google.com/transform/gen-ai-kpis-measuring-ai-success-deep-dive"
+  },
+  {
+    "itemId": "58961c33-047c-47fa-a8bc-ee6133b62ddb",
+    "seedId": "83afc18c-cc0e-48d7-978b-431bceecbed9",
+    "category": "exams",
+    "navigationKeyword1": "gcp",
+    "navigationKeyword2": "genai-leader",
+    "question": "Comparing two models head-to-head on the same prompts typically produces which result?",
+    "correctAnswer": "A win rate",
+    "incorrectAnswers": [
+      "A single uptime score",
+      "An adoption percentage",
+      "A cost per token"
+    ],
+    "explanation": "Pairwise evaluation compares two models' outputs and yields a win rate, while pointwise evaluation scores each output against a rubric.",
+    "keywords": [
+      "gcp-genai-leader",
+      "kpis",
+      "evaluation"
+    ],
+    "source": "https://cloud.google.com/transform/gen-ai-kpis-measuring-ai-success-deep-dive"
+  },
+  {
+    "itemId": "dece2f83-b09b-47da-ac5e-d62a47a48565",
+    "seedId": "8695a4f2-4006-4249-8a6b-2adac53d99fd",
+    "category": "exams",
+    "navigationKeyword1": "gcp",
+    "navigationKeyword2": "genai-leader",
+    "question": "A more engaging shopping chatbot raises cart size but also slows time-to-cart. What lesson does this show?",
+    "correctAnswer": "Improving one KPI can hurt another",
+    "incorrectAnswers": [
+      "Cart size is not a valid KPI",
+      "Engagement always lowers revenue",
+      "Chatbots cannot be measured"
+    ],
+    "explanation": "KPIs can trade off against each other, so interpreting changes needs context and industry expertise.",
+    "keywords": [
+      "gcp-genai-leader",
+      "kpis",
+      "business-value"
+    ],
+    "source": "https://cloud.google.com/transform/gen-ai-kpis-measuring-ai-success-deep-dive"
+  },
+  {
+    "itemId": "b19564d9-5382-494d-8bdd-5f57b064d2e2",
+    "seedId": "e3293b94-6ca1-4595-8308-1bc34e67335d",
+    "category": "exams",
+    "navigationKeyword1": "gcp",
+    "navigationKeyword2": "genai-leader",
+    "question": "Under Google's AI Principles, when does Google develop and deploy AI models?",
+    "correctAnswer": "When likely benefits substantially outweigh foreseeable risks",
+    "incorrectAnswers": [
+      "When a model beats every public benchmark",
+      "When competitors have released similar models",
+      "When no risks of any kind can be identified"
+    ],
+    "explanation": "The Bold innovation principle says Google develops and deploys models where the likely overall benefits substantially outweigh the foreseeable risks.",
+    "keywords": [
+      "gcp-genai-leader",
+      "ai-principles",
+      "responsible-ai"
+    ],
+    "source": "https://ai.google/responsibility/principles/"
+  },
+  {
+    "itemId": "027db7f2-367f-4b2d-b6e3-8cfef96230cf",
+    "seedId": "3174631f-29fe-4b7a-a508-72ef3e987f93",
+    "category": "exams",
+    "navigationKeyword1": "gcp",
+    "navigationKeyword2": "genai-leader",
+    "question": "Which of Google's AI Principles covers human oversight and testing to reduce unfair bias?",
+    "correctAnswer": "Responsible development and deployment",
+    "incorrectAnswers": [
+      "Bold innovation",
+      "Collaborative progress, together",
+      "Scientific excellence"
+    ],
+    "explanation": "Responsible development and deployment includes keeping human oversight in place and testing, monitoring and safeguarding systems to reduce harm and unfair bias.",
+    "keywords": [
+      "gcp-genai-leader",
+      "ai-principles",
+      "responsible-ai"
+    ],
+    "source": "https://ai.google/responsibility/principles/"
+  },
+  {
+    "itemId": "b26853f3-b749-49a6-9415-b2e251c57a11",
+    "seedId": "18ae8a27-2def-44cc-a238-75c9fe5f2a9d",
+    "category": "exams",
+    "navigationKeyword1": "gcp",
+    "navigationKeyword2": "genai-leader",
+    "question": "A security leader wants Google's conceptual framework for securing AI systems. What is it called?",
+    "correctAnswer": "Secure AI Framework (SAIF)",
+    "incorrectAnswers": [
+      "AI Principles Charter",
+      "Responsible AI Toolkit",
+      "Model Card Framework"
+    ],
+    "explanation": "SAIF is Google's conceptual framework to secure AI systems. It has six core elements, such as extending strong security foundations to the AI ecosystem.",
+    "keywords": [
+      "gcp-genai-leader",
+      "saif",
+      "security"
+    ],
+    "source": "https://safety.google/cybersecurity-advancements/saif/"
+  }
+]

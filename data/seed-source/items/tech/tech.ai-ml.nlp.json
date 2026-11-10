@@ -1,17 +1,18 @@
 [
   {
     "itemId": "bfc34c5a-3dce-4693-be69-abbbb601f038",
+    "seedId": "4b7eb6e1-fe72-4f08-938b-1d6c74c03bac",
     "category": "tech",
     "navigationKeyword1": "ai-ml",
     "navigationKeyword2": "nlp",
-    "question": "What does tokenization do to raw text before feeding a neural language model?",
-    "correctAnswer": "Splits text into tokens such as subwords or words according to a vocabulary",
+    "question": "Before a language model reads a sentence, what does tokenization do to it?",
+    "correctAnswer": "Breaks it into small pieces such as words or parts of words",
     "incorrectAnswers": [
-      "Deletes all punctuation without replacement",
-      "Translates text into binary images only",
-      "Sorts sentences alphabetically"
+      "Removes every word the model has not seen before",
+      "Translates it into English so the model can read it",
+      "Sorts its words by how often they appear in books"
     ],
-    "explanation": "Models operate on discrete token IDs, so text must be segmented and mapped to vocabulary entries consistently.",
+    "explanation": "Models work with a fixed vocabulary of tokens, each mapped to a number. Tokenization cuts text into those pieces, which can be whole words, parts of words or single characters.",
     "keywords": [
       "ai-ml",
       "tokenization"
@@ -19,18 +20,61 @@
     "source": "https://huggingface.co/docs/transformers/tokenizer_summary"
   },
   {
-    "itemId": "dbca73b8-d7be-484f-b45e-e5b32aeaa2cf",
+    "itemId": "11de6265-4052-4596-9f00-42a63034008a",
+    "seedId": "1914cf4e-48c4-4561-84f6-e8186a096262",
     "category": "tech",
     "navigationKeyword1": "ai-ml",
     "navigationKeyword2": "nlp",
-    "question": "What do dense word embeddings (for example Word2Vec-style vectors) represent?",
-    "correctAnswer": "Words as continuous vectors where similar meanings cluster closer",
+    "question": "A tokenizer has never seen the word 'annoyingly'. What does subword tokenization let the model do with it?",
+    "correctAnswer": "Split it into known pieces like 'annoy', 'ing' and 'ly'",
     "incorrectAnswers": [
-      "Only the alphabetical rank of letters",
-      "A fixed one-hot vector with no training",
-      "The exact page count of a book"
+      "Swap it for the closest word in its dictionary",
+      "Skip the word and carry on with the sentence",
+      "Ask the user to rephrase using simpler words"
     ],
-    "explanation": "Learned embeddings capture semantic similarity from co-occurrence patterns so downstream models can generalize.",
+    "explanation": "Subword tokenizers keep common words whole and break rare words into familiar parts. This keeps the vocabulary small while still letting the model handle words it never saw in training.",
+    "keywords": [
+      "ai-ml",
+      "tokenization",
+      "subwords"
+    ],
+    "source": "https://huggingface.co/docs/transformers/tokenizer_summary"
+  },
+  {
+    "itemId": "cccec1ea-b33a-42ec-8a53-bb58043c47a6",
+    "seedId": "e46f1b9e-c512-493c-90e5-f048eb0e013f",
+    "category": "tech",
+    "navigationKeyword1": "ai-ml",
+    "navigationKeyword2": "nlp",
+    "question": "As a rule of thumb, about how many characters of English text make up one token for a modern AI chatbot?",
+    "correctAnswer": "About 4",
+    "incorrectAnswers": [
+      "Exactly 1",
+      "About 20",
+      "About 100"
+    ],
+    "explanation": "A token is often a word or part of a word, about 4 characters on average. So 100 tokens is roughly 60 to 80 English words, which is why usage limits are counted in tokens.",
+    "keywords": [
+      "ai-ml",
+      "tokens",
+      "llm"
+    ],
+    "source": "https://aistudio.google.com/docs/tokens"
+  },
+  {
+    "itemId": "dbca73b8-d7be-484f-b45e-e5b32aeaa2cf",
+    "seedId": "f37a92a3-7778-4a09-a337-e015899748ba",
+    "category": "tech",
+    "navigationKeyword1": "ai-ml",
+    "navigationKeyword2": "nlp",
+    "question": "In plain terms, what is a word embedding?",
+    "correctAnswer": "A list of numbers that places similar words close together",
+    "incorrectAnswers": [
+      "A dictionary definition stored alongside each word",
+      "A count of how often a word appears in a text",
+      "A small picture the model draws for each word"
+    ],
+    "explanation": "Embeddings turn words into vectors of numbers learned from large amounts of text. Words used in similar ways end up with similar vectors, which lets models measure how alike words are in meaning.",
     "keywords": [
       "ai-ml",
       "embeddings"
@@ -38,18 +82,81 @@
     "source": "https://arxiv.org/abs/1301.3781"
   },
   {
-    "itemId": "48819843-98ee-412f-a07b-3e3d73c439c9",
+    "itemId": "82d1d986-1cba-45e8-9983-4247c28f4147",
+    "seedId": "6ad97bc1-ba2a-4e9c-98a7-b670f03d6392",
     "category": "tech",
     "navigationKeyword1": "ai-ml",
     "navigationKeyword2": "nlp",
-    "question": "What is the usual goal of named entity recognition?",
-    "correctAnswer": "Find spans of text that refer to entities like people, places, or organizations",
+    "question": "Take the embedding for 'brother', subtract 'man' and add 'woman'. Which word's embedding is the result closest to?",
+    "correctAnswer": "Sister",
     "incorrectAnswers": [
-      "Translate every sentence into French",
-      "Count only vowels in a document",
-      "Encrypt named files on disk"
+      "Mother",
+      "Brother",
+      "Daughter"
     ],
-    "explanation": "NER models label or extract spans so downstream systems can link facts to structured entities.",
+    "explanation": "Embedding arithmetic can capture relationships between words. Removing the 'man' part and adding the 'woman' part moves 'brother' close to 'sister'.",
+    "keywords": [
+      "ai-ml",
+      "embeddings",
+      "word2vec"
+    ],
+    "source": "https://en.wikipedia.org/wiki/Word2vec"
+  },
+  {
+    "itemId": "24b29a93-f174-4187-8f44-1052849a7aec",
+    "seedId": "79bb4f89-3d45-4933-a198-f0e802bbb75b",
+    "category": "tech",
+    "navigationKeyword1": "ai-ml",
+    "navigationKeyword2": "nlp",
+    "question": "Why is 'I am cooking bass' tricky for a computer but easy for a person?",
+    "correctAnswer": "'Bass' could mean a fish or an instrument",
+    "incorrectAnswers": [
+      "'Cooking' is too rare a word to recognize",
+      "The sentence has no ending punctuation",
+      "The sentence is too short to analyze"
+    ],
+    "explanation": "Many words have several meanings, and the right one depends on context and world knowledge, such as knowing that people cook fish. Picking the intended meaning is called word-sense disambiguation.",
+    "keywords": [
+      "ai-ml",
+      "ambiguity",
+      "word-sense"
+    ],
+    "source": "https://en.wikipedia.org/wiki/Word-sense_disambiguation"
+  },
+  {
+    "itemId": "4492faf7-f0b0-44d3-b096-469636fe5f2b",
+    "seedId": "5a820bcc-3119-419b-b58d-2bfc5d1f61f6",
+    "category": "tech",
+    "navigationKeyword1": "ai-ml",
+    "navigationKeyword2": "nlp",
+    "question": "A review says 'Great, my new phone died after one day.' Why might a sentiment analysis tool label it positive?",
+    "correctAnswer": "It misses the sarcasm and trusts 'great'",
+    "incorrectAnswers": [
+      "It reads only the final word of a review",
+      "It skips any sentence that has a number",
+      "It rates every short review as positive"
+    ],
+    "explanation": "Sentiment analysis tries to judge whether text such as a product review is positive, negative or neutral. Sarcasm, jokes and negation are hard for computers, even though people usually spot them easily.",
+    "keywords": [
+      "ai-ml",
+      "sentiment"
+    ],
+    "source": "https://en.wikipedia.org/wiki/Sentiment_analysis"
+  },
+  {
+    "itemId": "48819843-98ee-412f-a07b-3e3d73c439c9",
+    "seedId": "12d56637-63bd-40b7-91ea-60a67c3fc082",
+    "category": "tech",
+    "navigationKeyword1": "ai-ml",
+    "navigationKeyword2": "nlp",
+    "question": "A tool scans news articles and highlights 'Paris', 'Apple' and 'Angela Merkel'. Which NLP task is it doing?",
+    "correctAnswer": "Named entity recognition",
+    "incorrectAnswers": [
+      "Sentiment analysis",
+      "Part-of-speech tagging",
+      "Machine translation"
+    ],
+    "explanation": "Named entity recognition finds real-world things that have a name, such as people, places, organizations and products, and labels what type each one is.",
     "keywords": [
       "ai-ml",
       "ner"
@@ -57,60 +164,168 @@
     "source": "https://spacy.io/usage/linguistic-features#named-entities"
   },
   {
-    "itemId": "0f3845d2-f60f-4bd0-af77-a7372757a8b6",
-    "category": "tech",
-    "navigationKeyword1": "ai-ml",
-    "navigationKeyword2": "nlp",
-    "question": "What does the BLEU score primarily measure?",
-    "correctAnswer": "Overlap between machine-generated text and candidate reference translations",
-    "incorrectAnswers": [
-      "CPU temperature during inference",
-      "The number of layers in a neural network",
-      "Whether the model is open source"
-    ],
-    "explanation": "BLEU compares n-gram precision to reference translations to score machine translation quality.",
-    "keywords": [
-      "ai-ml",
-      "evaluation"
-    ],
-    "source": "https://en.wikipedia.org/wiki/BLEU"
-  },
-  {
-    "itemId": "f96861de-dfdf-4f8b-b29c-fc3ac557e357",
-    "category": "tech",
-    "navigationKeyword1": "ai-ml",
-    "navigationKeyword2": "nlp",
-    "question": "In a classic encoder\u2013decoder sequence model, what does the encoder produce?",
-    "correctAnswer": "A representation of the input sequence used by the decoder",
-    "incorrectAnswers": [
-      "Only the final accuracy percentage",
-      "A printed PDF report",
-      "The learning rate schedule"
-    ],
-    "explanation": "The encoder maps the input sequence to hidden states that the decoder conditions on to generate the output sequence.",
-    "keywords": [
-      "ai-ml",
-      "seq2seq"
-    ],
-    "source": "https://en.wikipedia.org/wiki/Encoder%E2%80%93decoder_model"
-  },
-  {
     "itemId": "ae06eceb-7453-4ba8-ac2b-79ca5c000803",
+    "seedId": "3bb88394-0343-454b-878a-a9a2fbc795bd",
     "category": "tech",
     "navigationKeyword1": "ai-ml",
     "navigationKeyword2": "nlp",
-    "question": "What does part-of-speech tagging assign to each token?",
-    "correctAnswer": "A grammatical category such as noun or verb",
+    "question": "In 'I will book a flight', how should a part-of-speech tagger label the word 'book'?",
+    "correctAnswer": "Verb",
     "incorrectAnswers": [
-      "A random number between 0 and 1",
-      "The author\u2019s birth year",
-      "A color code for fonts"
+      "Noun",
+      "Adjective",
+      "Proper noun"
     ],
-    "explanation": "POS tagging disambiguates word roles, which helps parsing, information extraction, and many downstream NLP tasks.",
+    "explanation": "Part-of-speech tagging gives each word a grammatical role such as noun, verb or adjective. Context matters: 'book' is a noun in 'read a book' but a verb here.",
     "keywords": [
       "ai-ml",
       "pos-tagging"
     ],
-    "source": "https://universaldependencies.org/"
+    "source": "https://universaldependencies.org/u/pos/"
+  },
+  {
+    "itemId": "aff88e8e-520d-4c4f-94e8-358f77b92708",
+    "seedId": "c7c0f922-4cb9-4bd5-a59b-565c366b1c79",
+    "category": "tech",
+    "navigationKeyword1": "ai-ml",
+    "navigationKeyword2": "nlp",
+    "question": "Which NLP step turns 'running', 'ran' and 'runs' into the base form 'run'?",
+    "correctAnswer": "Lemmatization",
+    "incorrectAnswers": [
+      "Tokenization",
+      "Named entity recognition",
+      "Sentiment analysis"
+    ],
+    "explanation": "Lemmatization maps each word to its base form, called the lemma. It often uses the word's part of speech to choose the right base form.",
+    "keywords": [
+      "ai-ml",
+      "lemmatization"
+    ],
+    "source": "https://spacy.io/usage/linguistic-features#lemmatization"
+  },
+  {
+    "itemId": "a0ab9fd8-185d-4760-a723-c8816eafb946",
+    "seedId": "efb3a8ae-87ac-4e4c-9464-114be2d088bd",
+    "category": "tech",
+    "navigationKeyword1": "ai-ml",
+    "navigationKeyword2": "nlp",
+    "question": "In 1954, after a computer translated about sixty Russian sentences into English, what did researchers predict?",
+    "correctAnswer": "Machine translation would be solved within a few years",
+    "incorrectAnswers": [
+      "Computers would never translate full sentences",
+      "Translation would need a century of research",
+      "Only Russian could be translated automatically"
+    ],
+    "explanation": "The Georgetown experiment sparked big optimism, but progress was far slower than predicted. A 1966 report led to sharp funding cuts, an early sign of how hard human language is for computers.",
+    "keywords": [
+      "ai-ml",
+      "nlp-history",
+      "translation"
+    ],
+    "source": "https://en.wikipedia.org/wiki/Natural_language_processing"
+  },
+  {
+    "itemId": "34c0deef-f74a-4f59-92d4-7e91c8b93429",
+    "seedId": "965347cd-fffc-4860-a562-21085d603f11",
+    "category": "tech",
+    "navigationKeyword1": "ai-ml",
+    "navigationKeyword2": "nlp",
+    "question": "How did the 1960s chatbot ELIZA give the impression that it understood users?",
+    "correctAnswer": "It matched keywords and turned them into questions",
+    "incorrectAnswers": [
+      "It searched a large library for matching answers",
+      "It ran a neural network trained on many books",
+      "A person secretly typed replies from another room"
+    ],
+    "explanation": "ELIZA, built at MIT in the mid-1960s, followed hand-written rules triggered by keywords. Its best-known script imitated a therapist by turning users' words back into questions, with no real understanding.",
+    "keywords": [
+      "ai-ml",
+      "chatbots",
+      "nlp-history"
+    ],
+    "source": "https://en.wikipedia.org/wiki/ELIZA"
+  },
+  {
+    "itemId": "a6464a2d-6e87-4d19-9c0d-b9f419baebbd",
+    "seedId": "a32113d5-df88-4f48-8035-4af0d337d067",
+    "category": "tech",
+    "navigationKeyword1": "ai-ml",
+    "navigationKeyword2": "nlp",
+    "question": "How does neural machine translation differ from older statistical systems built on short word sequences?",
+    "correctAnswer": "It models the whole sentence in one network",
+    "incorrectAnswers": [
+      "It looks up each word in a bilingual dictionary",
+      "It needs a human to approve every phrase",
+      "It works only between closely related languages"
+    ],
+    "explanation": "Neural translation uses a single network that considers an entire sentence, with attention choosing which words to focus on. Older statistical systems relied on short word sequences and lost wider context.",
+    "keywords": [
+      "ai-ml",
+      "translation"
+    ],
+    "source": "https://en.wikipedia.org/wiki/Neural_machine_translation"
+  },
+  {
+    "itemId": "0f3845d2-f60f-4bd0-af77-a7372757a8b6",
+    "seedId": "e90cf7cb-b672-400c-8388-e90900ec6a5b",
+    "category": "tech",
+    "navigationKeyword1": "ai-ml",
+    "navigationKeyword2": "nlp",
+    "question": "A translation system is scored by how closely its output matches professional human translations. Which metric works this way?",
+    "correctAnswer": "BLEU",
+    "incorrectAnswers": [
+      "Perplexity",
+      "Accuracy",
+      "Latency"
+    ],
+    "explanation": "BLEU gives a score from 0 to 1 based on how closely machine output matches human reference translations. A higher score does not guarantee a better translation, because it does not judge grammar or meaning directly.",
+    "keywords": [
+      "ai-ml",
+      "evaluation",
+      "translation"
+    ],
+    "source": "https://en.wikipedia.org/wiki/BLEU"
+  },
+  {
+    "itemId": "6fb93087-b2f4-4a8e-b4cb-9375596bd8a4",
+    "seedId": "260c667e-7ffe-4546-901a-72f4b3534ce7",
+    "category": "tech",
+    "navigationKeyword1": "ai-ml",
+    "navigationKeyword2": "nlp",
+    "question": "The 2017 Transformer design dropped step-by-step reading of words. What mechanism did it rely on instead?",
+    "correctAnswer": "Attention",
+    "incorrectAnswers": [
+      "Hand-written grammar rules",
+      "Word frequency counts",
+      "Dictionary lookups"
+    ],
+    "explanation": "The Transformer was based solely on attention, dispensing with the recurrence used by earlier sequence models. It was first tested on machine translation tasks.",
+    "keywords": [
+      "ai-ml",
+      "transformers",
+      "attention"
+    ],
+    "source": "https://arxiv.org/abs/1706.03762"
+  },
+  {
+    "itemId": "c47e0d25-1361-4c12-be8d-35861afdd0fd",
+    "seedId": "fd281b98-8f2e-4349-bdcc-94f4ab20a543",
+    "category": "tech",
+    "navigationKeyword1": "ai-ml",
+    "navigationKeyword2": "nlp",
+    "question": "Before being fine-tuned to follow instructions, what are most large language models trained to do?",
+    "correctAnswer": "Predict the next token in text",
+    "incorrectAnswers": [
+      "Label sentences as true or false",
+      "Translate between pairs of languages",
+      "Answer questions written by experts"
+    ],
+    "explanation": "Large language models are first pretrained on huge amounts of text by repeatedly predicting the next token. Fine-tuning afterward teaches them to follow instructions.",
+    "keywords": [
+      "ai-ml",
+      "llm",
+      "pretraining"
+    ],
+    "source": "https://en.wikipedia.org/wiki/Large_language_model"
   }
 ]
