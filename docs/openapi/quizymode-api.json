@@ -3151,6 +3151,100 @@
         }
       }
     },
+    "/collections/{collectionId}/collections": {
+      "post": {
+        "tags": [
+          "Collections"
+        ],
+        "summary": "Add a collection to a collection",
+        "description": "Makes a collection a member of another collection. Body: { \"childCollectionId\": \"<guid>\" }. Rejects cycles and depth over the cap with 400.",
+        "parameters": [
+          {
+            "name": "collectionId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "$ref": "#/components/schemas/System.Guid"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Quizymode.Api.Features.Collections.CollectionMembers.AddRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "201": {
+            "description": "Created",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Quizymode.Api.Features.Collections.CollectionMembers.CollectionMemberResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        }
+      }
+    },
+    "/collections/{collectionId}/collections/{childId}": {
+      "delete": {
+        "tags": [
+          "Collections"
+        ],
+        "summary": "Remove a collection from a collection",
+        "description": "Removes a nested collection from its parent. The child collection itself is not deleted.",
+        "parameters": [
+          {
+            "name": "collectionId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "$ref": "#/components/schemas/System.Guid"
+            }
+          },
+          {
+            "name": "childId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "$ref": "#/components/schemas/System.Guid"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        }
+      }
+    },
     "/collections/{id}": {
       "delete": {
         "tags": [
@@ -13389,6 +13483,40 @@
             "$ref": "#/components/schemas/System.Guid"
           },
           "itemId": {
+            "$ref": "#/components/schemas/System.Guid"
+          },
+          "addedAt": {
+            "$ref": "#/components/schemas/System.DateTime"
+          }
+        }
+      },
+      "Quizymode.Api.Features.Collections.CollectionMembers.AddRequest": {
+        "required": [
+          "childCollectionId"
+        ],
+        "type": "object",
+        "properties": {
+          "childCollectionId": {
+            "$ref": "#/components/schemas/System.Guid"
+          }
+        }
+      },
+      "Quizymode.Api.Features.Collections.CollectionMembers.CollectionMemberResponse": {
+        "required": [
+          "id",
+          "parentId",
+          "childId",
+          "addedAt"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "$ref": "#/components/schemas/System.String"
+          },
+          "parentId": {
+            "$ref": "#/components/schemas/System.Guid"
+          },
+          "childId": {
             "$ref": "#/components/schemas/System.Guid"
           },
           "addedAt": {

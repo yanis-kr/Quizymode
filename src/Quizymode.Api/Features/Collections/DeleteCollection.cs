@@ -107,6 +107,16 @@ public static class DeleteCollection
                 db.CollectionItems.RemoveRange(collectionItems);
             }
 
+            // Nested links on either side of this collection (#552): as a parent, and as a child of other collections.
+            List<CollectionCollectionMember> nestedLinks = await db.CollectionCollectionMembers
+                .Where(m => m.ParentId == collectionId || m.ChildId == collectionId)
+                .ToListAsync(cancellationToken);
+
+            if (nestedLinks.Count > 0)
+            {
+                db.CollectionCollectionMembers.RemoveRange(nestedLinks);
+            }
+
             db.Collections.Remove(collection);
             await db.SaveChangesAsync(cancellationToken);
 

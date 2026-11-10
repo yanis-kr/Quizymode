@@ -72,8 +72,18 @@ public static class GetCollectionById
             }
 
             // Items with unapproved uploaded pictures count only for their creator (#400).
-            int itemCount = await ItemVisibility.EligibleCollectionItems(db, userContext.IsAuthenticated ? userContext.UserId : null)
-                .CountAsync(ci => ci.CollectionId == id, cancellationToken);
+            // Distinct items of the collection and its accessible nested collections (#552, deduplicated by item id).
+            // Membership rows with no item row still count, as before; items hidden by media eligibility do not.
+            string? viewerId = userContext.IsAuthenticated ? userContext.UserId : null;
+            string callerId = viewerId ?? string.Empty;
+            bool hasCaller = callerId.Length > 0;
+            IQueryable<Guid> memberItemIds = CollectionScope.AccessibleMemberItemIds(db, id, viewerId);
+            int itemCount = await memberItemIds.CountAsync(
+                itemId => !db.Items.Any(i => i.Id == itemId
+                    && !(hasCaller && i.CreatedBy == callerId)
+                    && i.ImageReviewState != null
+                    && i.ImageReviewState != ItemImageReviewState.Approved),
+                cancellationToken);
 
             Response response = new(
                 collection.Id.ToString(),
