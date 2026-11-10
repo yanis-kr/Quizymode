@@ -16,9 +16,18 @@ internal sealed record ParsedCandidate(
     Dictionary<int, string>? IncorrectAnswerRationale = null);
 
 /// <summary><see cref="ReturnedCount"/> questions came back; <see cref="Kept"/> passed every check.</summary>
-internal sealed record CandidateParseResult(bool IsValidJson, int ReturnedCount, List<ParsedCandidate> Kept)
+internal sealed record CandidateParseResult(
+    bool IsValidJson,
+    int ReturnedCount,
+    List<ParsedCandidate> Kept,
+    Dictionary<string, int>? DropReasons = null)
 {
     public int DroppedCount => Math.Max(0, ReturnedCount - Kept.Count);
+
+    /// <summary>Dropped questions per reason (invalid, quote, duplicate, clinical-style, moderation) for the attempt log (#527).</summary>
+    public string DropSummary => DropReasons is null || DropReasons.Count == 0
+        ? "none"
+        : string.Join(", ", DropReasons.Select(pair => $"{pair.Key}={pair.Value}"));
 
     /// <summary>Fallback trigger: nothing kept, or fewer than half of the returned questions kept.</summary>
     public bool IsLowYield => Kept.Count == 0 || Kept.Count * 2 < ReturnedCount;
@@ -33,11 +42,11 @@ internal sealed record CandidateParseResult(bool IsValidJson, int ReturnedCount,
 internal static class StudyGuideCandidateParser
 {
     private static readonly Regex ClinicalPatientCue = new(
-        @"\b(client|clients|patient|patients|resident|residents|child|children|infant|newborn|toddler|older adult|adult|woman|man)\b",
+        @"\b(client|clients|patient|patients|person|individual|resident|residents|child|children|infant|newborn|toddler|adolescent|teen|teenager|pregnant|older adult|adult|woman|man)\b",
         RegexOptions.IgnoreCase | RegexOptions.Compiled);
 
     private static readonly Regex ClinicalActionCue = new(
-        @"\b(first|priority|priorities|initial|immediate|immediately|red flag|most urgent|urgent)\b",
+        @"\b(first|priority|priorities|initial|initially|immediate|immediately|red flag|most urgent|urgent|most appropriate|best|next|earliest|most important|highest)\b",
         RegexOptions.IgnoreCase | RegexOptions.Compiled);
 
     /// <summary>
@@ -89,28 +98,33 @@ internal static class StudyGuideCandidateParser
         HashSet<int> sectionPages = pageSegments.Where(segment => segment.Page.HasValue).Select(segment => segment.Page!.Value).ToHashSet();
 
         List<ParsedCandidate> kept = [];
+        Dictionary<string, int> drops = new(StringComparer.Ordinal);
         HashSet<string> seenQuestions = new(StringComparer.Ordinal);
         foreach (JsonElement element in elements.Take(Math.Clamp(maxQuestions, 1, 20)))
         {
             ParsedCandidate? candidate = ReadCandidate(element);
             if (candidate is null)
             {
+                Count(drops, "invalid");
                 continue;
             }
 
             if (!StudyGuideQuoteMatcher.IsSupported(candidate.SourceQuote, normalizedSource))
             {
+                Count(drops, "quote");
                 continue;
             }
 
             string questionKey = StudyGuideQuoteMatcher.Normalize(candidate.Question);
             if (!seenQuestions.Add(questionKey))
             {
+                Count(drops, "duplicate");
                 continue;
             }
 
             if (clinicalScenario && !IsClinicalStyle(candidate.Question))
             {
+                Count(drops, "clinical-style");
                 continue;
             }
 
@@ -122,14 +136,18 @@ internal static class StudyGuideCandidateParser
             values.AddRange(candidate.IncorrectAnswers);
             if (moderation.Evaluate(values.ToArray()).Outcome == TextModerationOutcome.Blocked)
             {
+                Count(drops, "moderation");
                 continue;
             }
 
             kept.Add(candidate with { Page = ResolvePage(candidate, pageSegments, sectionPages) });
         }
 
-        return new CandidateParseResult(true, elements.Count, kept);
+        return new CandidateParseResult(true, elements.Count, kept, drops);
     }
+
+    private static void Count(Dictionary<string, int> drops, string reason) =>
+        drops[reason] = drops.GetValueOrDefault(reason) + 1;
 
     private static int? ResolvePage(ParsedCandidate candidate, List<(int? Page, string Normalized)> segments, HashSet<int> sectionPages)
     {

@@ -29,6 +29,9 @@ public sealed class StudyGuideClinicalStyleTests
     [InlineData("Which type of precautions should the nurse implement?", false)]
     [InlineData("What is the normal range for adult body temperature?", false)]
     [InlineData("A client is admitted. The client is confused. The client has a fever. Which action should the nurse take first?", false)]
+    [InlineData("A pregnant person presents with bleeding. Which intervention is the most appropriate?", true)]
+    [InlineData("A teenager is admitted after an overdose. Which action is the best next step?", true)]
+    [InlineData("An individual reports dizziness. Which finding is most important to report?", true)]
     public void IsClinicalStyle_RequiresShortPatientScenarioAndActionQuestion(string question, bool expected)
     {
         StudyGuideCandidateParser.IsClinicalStyle(question).Should().Be(expected);
@@ -46,6 +49,19 @@ public sealed class StudyGuideClinicalStyleTests
 
         result.Kept.Should().ContainSingle().Which.Question.Should().Be(ClinicalQuestion);
         result.DroppedCount.Should().Be(1);
+    }
+
+    [Fact]
+    public void Parse_ClinicalScenario_CountsDropsByReason()
+    {
+        CandidateParseResult result = StudyGuideCandidateParser.Parse(
+            Json,
+            StudyGuideTestData.SectionText,
+            20,
+            StudyGuideTestData.Moderation(),
+            clinicalScenario: true);
+
+        result.DropSummary.Should().Be("clinical-style=1");
     }
 
     [Fact]

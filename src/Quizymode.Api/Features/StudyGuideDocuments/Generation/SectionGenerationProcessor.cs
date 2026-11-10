@@ -112,65 +112,91 @@ internal sealed class SectionGenerationProcessor(
             Math.Max(256, _options.MaxTokens),
             _options.Temperature);
 
+        // #527: a low-yield reply gets one corrective retry on the same vendor before the job fails over to the next vendor.
+        ChatCompletionRequest retryRequest = new(
+            request.SystemPrompt,
+            request.UserPrompt + "\n" + RetryNote(clinicalScenario),
+            request.MaxTokens,
+            request.Temperature);
+
         (string Vendor, string Model, ChatCompletionResult Result, CandidateParseResult Parsed)? best = null;
         foreach (string vendor in route)
         {
             string model = LlmProviderSettingsStore.ModelFor(settings, vendor);
-            generation.LeaseUntilUtc = Now().AddMinutes(Math.Max(1, _options.LeaseMinutes));
-            await _db.SaveChangesAsync(cancellationToken);
-
-            ChatCompletionResult result = await _chatClient.CompleteAsync(_vendors.Get(vendor), model, request, cancellationToken);
-            LlmAttemptOutcome outcome = result.Outcome;
-            if (outcome == LlmAttemptOutcome.RateLimited)
+            for (int pass = 1; pass <= 2; pass++)
             {
-                DateTimeOffset until = _cooldowns.Start(vendor, result.RetryAfter, result.DailyQuotaExhausted);
-                _logger.LogWarning(
-                    "StudyGuideGeneration: {Vendor} is rate-limited{Daily}; cooling down until {Until:u}.",
-                    vendor,
-                    result.DailyQuotaExhausted ? " (daily quota)" : string.Empty,
-                    until);
-            }
+                generation.LeaseUntilUtc = Now().AddMinutes(Math.Max(1, _options.LeaseMinutes));
+                await _db.SaveChangesAsync(cancellationToken);
 
-            CandidateParseResult? parsed = null;
-            if (outcome == LlmAttemptOutcome.Success)
-            {
-                parsed = StudyGuideCandidateParser.Parse(result.Content ?? string.Empty, sourceText, maxQuestions, _moderation, clinicalScenario);
-                if (!parsed.IsValidJson)
+                ChatCompletionResult result = await _chatClient.CompleteAsync(_vendors.Get(vendor), model, pass == 1 ? request : retryRequest, cancellationToken);
+                LlmAttemptOutcome outcome = result.Outcome;
+                if (outcome == LlmAttemptOutcome.RateLimited)
                 {
-                    outcome = LlmAttemptOutcome.InvalidJson;
+                    DateTimeOffset until = _cooldowns.Start(vendor, result.RetryAfter, result.DailyQuotaExhausted);
+                    _logger.LogWarning(
+                        "StudyGuideGeneration: {Vendor} is rate-limited{Daily}; cooling down until {Until:u}.",
+                        vendor,
+                        result.DailyQuotaExhausted ? " (daily quota)" : string.Empty,
+                        until);
                 }
-                else if (parsed.IsLowYield)
+
+                CandidateParseResult? parsed = null;
+                if (outcome == LlmAttemptOutcome.Success)
                 {
-                    outcome = LlmAttemptOutcome.LowQuoteYield;
-                    if (parsed.Kept.Count > 0 && (best is null || parsed.Kept.Count > best.Value.Parsed.Kept.Count))
+                    parsed = StudyGuideCandidateParser.Parse(result.Content ?? string.Empty, sourceText, maxQuestions, _moderation, clinicalScenario);
+                    if (!parsed.IsValidJson)
                     {
-                        best = (vendor, model, result, parsed);
+                        outcome = LlmAttemptOutcome.InvalidJson;
+                    }
+                    else if (parsed.IsLowYield)
+                    {
+                        outcome = LlmAttemptOutcome.LowQuoteYield;
+                        if (parsed.Kept.Count > 0 && (best is null || parsed.Kept.Count > best.Value.Parsed.Kept.Count))
+                        {
+                            best = (vendor, model, result, parsed);
+                        }
                     }
                 }
+
+                _db.LlmAttempts.Add(new LlmAttempt
+                {
+                    Id = Guid.NewGuid(),
+                    GenerationId = generation.Id,
+                    Vendor = vendor,
+                    Model = model,
+                    Outcome = outcome,
+                    InputTokens = result.InputTokens,
+                    OutputTokens = result.OutputTokens,
+                    DurationMs = result.DurationMs,
+                    HttpStatus = result.HttpStatus,
+                    CreatedUtc = Now()
+                });
+                LogAttempt(generation.Id, vendor, model, outcome, result);
+                if (parsed is not null)
+                {
+                    _logger.LogInformation(
+                        "StudyGuideGeneration: {GenerationId} pass {Pass} with {Vendor} returned {Returned} question(s), kept {Kept}; dropped: {Drops}.",
+                        generation.Id,
+                        pass,
+                        vendor,
+                        parsed.ReturnedCount,
+                        parsed.Kept.Count,
+                        parsed.DropSummary);
+                }
+
+                if (outcome == LlmAttemptOutcome.Success && parsed is not null)
+                {
+                    await CompleteAsync(generation, vendor, model, result, parsed, cancellationToken);
+                    return;
+                }
+
+                await _db.SaveChangesAsync(cancellationToken);
+
+                if (outcome != LlmAttemptOutcome.LowQuoteYield)
+                {
+                    break;
+                }
             }
-
-            _db.LlmAttempts.Add(new LlmAttempt
-            {
-                Id = Guid.NewGuid(),
-                GenerationId = generation.Id,
-                Vendor = vendor,
-                Model = model,
-                Outcome = outcome,
-                InputTokens = result.InputTokens,
-                OutputTokens = result.OutputTokens,
-                DurationMs = result.DurationMs,
-                HttpStatus = result.HttpStatus,
-                CreatedUtc = Now()
-            });
-            LogAttempt(generation.Id, vendor, model, outcome, result);
-
-            if (outcome == LlmAttemptOutcome.Success && parsed is not null)
-            {
-                await CompleteAsync(generation, vendor, model, result, parsed, cancellationToken);
-                return;
-            }
-
-            await _db.SaveChangesAsync(cancellationToken);
         }
 
         if (best is not null)
@@ -276,6 +302,11 @@ internal sealed class SectionGenerationProcessor(
             generation.Attempts,
             charges.Count);
     }
+
+    /// <summary>Corrective line for the one retry after a low-yield reply (#527): restates the rules the parser checks.</summary>
+    internal static string RetryNote(bool clinicalScenario) => clinicalScenario
+        ? "Your previous reply kept too few questions. Return questions that each describe one client or patient in at most two sentences, ask a priority, first-action or red-flag question, and copy an exact sourceQuote from the section text."
+        : "Your previous reply kept too few questions. Return questions that each copy an exact sourceQuote from the section text.";
 
     private DateTime Now() => _timeProvider.GetUtcNow().UtcDateTime;
 }
