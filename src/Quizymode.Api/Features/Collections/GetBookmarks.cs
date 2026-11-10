@@ -17,7 +17,8 @@ public static class GetBookmarks
         string Name,
         string CreatedBy,
         DateTime CreatedAt,
-        int ItemCount);
+        int ItemCount,
+        int MemberCount);
 
     public sealed class Endpoint : IEndpoint
     {
@@ -74,13 +75,8 @@ public static class GetBookmarks
                 .Where(c => bookmarks.Contains(c.Id) && (c.IsPublic || c.CreatedBy == userId))
                 .ToListAsync(cancellationToken);
 
-            var itemCounts = await ItemVisibility.EligibleCollectionItems(db, userId)
-                .Where(ci => bookmarks.Contains(ci.CollectionId))
-                .GroupBy(ci => ci.CollectionId)
-                .Select(g => new { CollectionId = g.Key, Count = g.Count() })
-                .ToListAsync(cancellationToken);
-
-            var countMap = itemCounts.ToDictionary(x => x.CollectionId, x => x.Count);
+            // One statement for the bookmark page (#554): same counts as the collection cards.
+            var countMap = await CollectionCardCounts.ForCollectionsAsync(db, bookmarks, userId, cancellationToken);
 
             var orderMap = bookmarks
                 .Select((id, index) => new { Id = id, Index = index })
@@ -93,7 +89,8 @@ public static class GetBookmarks
                     c.Name,
                     c.CreatedBy,
                     c.CreatedAt,
-                    countMap.GetValueOrDefault(c.Id, 0)))
+                    countMap.TryGetValue(c.Id, out CollectionCardCounts.Counts? cardCounts) ? cardCounts.ItemCount : 0,
+                    cardCounts?.MemberCount ?? 0))
                 .ToList();
 
             return Result.Success(new Response(items));

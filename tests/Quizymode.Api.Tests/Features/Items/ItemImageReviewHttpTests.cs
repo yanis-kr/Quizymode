@@ -1269,9 +1269,10 @@ public sealed class ItemImageReviewHttpTests : ItemTestFixture, IAsyncLifetime
             return Json(body).GetProperty("itemCount").GetInt32();
         }
 
-        (await CountAsync(null)).Should().Be(2, "the approved item and the dangling row; the pending item is hidden");
-        (await CountAsync(OtherToken)).Should().Be(2);
-        (await CountAsync(OwnerToken)).Should().Be(3);
+        // The dangling row has no item row, so it is an orphan and is not counted (AC 1.16b.3).
+        (await CountAsync(null)).Should().Be(1, "the approved item only; the pending item is hidden and the dangling row is an orphan");
+        (await CountAsync(OtherToken)).Should().Be(1);
+        (await CountAsync(OwnerToken)).Should().Be(2, "the approved item and the owner's pending item");
     }
 
     [Fact]

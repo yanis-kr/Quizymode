@@ -1,5 +1,7 @@
+using System.Linq.Expressions;
 using Quizymode.Api.Data;
 using Quizymode.Api.Features.Collections;
+using Quizymode.Api.Shared.Models;
 
 namespace Quizymode.Api.Shared.Helpers;
 
@@ -74,4 +76,10 @@ internal static class CollectionScope
 
         return directAndNested.Union(topicItems);
     }
+
+    /// <summary>A topic member whose path is still live in KeywordRelations (L1 root; L2 under its first keyword).</summary>
+    public static Expression<Func<CollectionKeywordMember, bool>> LivePath(ApplicationDbContext db) =>
+        m => db.KeywordRelations.Any(r => r.CategoryId == m.CategoryId && r.ParentKeywordId == null && r.ChildKeywordId == m.Keyword1Id)
+            && (m.Keyword2Id == null
+                || db.KeywordRelations.Any(r => r.CategoryId == m.CategoryId && r.ParentKeywordId == m.Keyword1Id && r.ChildKeywordId == m.Keyword2Id));
 }

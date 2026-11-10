@@ -18,6 +18,22 @@ public sealed class GetBookmarksTests : DatabaseTestFixture
         return ctx;
     }
 
+    private Item AddItem(string createdBy)
+    {
+        Item item = new()
+        {
+            Id = Guid.NewGuid(),
+            Question = $"Q-{Guid.NewGuid():N}",
+            CorrectAnswer = "A",
+            FuzzySignature = Guid.NewGuid().ToString("N"),
+            FuzzyBucket = 1,
+            CreatedBy = createdBy,
+            CreatedAt = DateTime.UtcNow
+        };
+        DbContext.Items.Add(item);
+        return item;
+    }
+
     [Fact]
     public async Task HandleAsync_ReturnsEmptyList_WhenNoBookmarks()
     {
@@ -88,10 +104,10 @@ public sealed class GetBookmarksTests : DatabaseTestFixture
             CreatedAt = DateTime.UtcNow
         });
 
+        // Three real questions. A membership row with no item row is an orphan and is not counted (#554).
+        Item[] questions = [AddItem(userId), AddItem(userId), AddItem(userId)];
         DbContext.CollectionItems.AddRange(
-            new CollectionItem { Id = Guid.NewGuid(), CollectionId = col.Id, ItemId = Guid.NewGuid(), AddedAt = DateTime.UtcNow },
-            new CollectionItem { Id = Guid.NewGuid(), CollectionId = col.Id, ItemId = Guid.NewGuid(), AddedAt = DateTime.UtcNow },
-            new CollectionItem { Id = Guid.NewGuid(), CollectionId = col.Id, ItemId = Guid.NewGuid(), AddedAt = DateTime.UtcNow });
+            questions.Select(q => new CollectionItem { Id = Guid.NewGuid(), CollectionId = col.Id, ItemId = q.Id, AddedAt = DateTime.UtcNow }));
 
         await DbContext.SaveChangesAsync();
 

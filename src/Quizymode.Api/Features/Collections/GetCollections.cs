@@ -12,7 +12,8 @@ public static class GetCollections
 {
     public sealed record Response(List<CollectionResponse> Collections);
 
-    public sealed record CollectionResponse(string Id, string Name, string? Description, DateTime CreatedAt, int ItemCount, bool IsPublic, bool IsDiscoverable);
+    /// <summary>ItemCount: distinct visible questions across direct, nested and topic content (#554). MemberCount: visible direct members.</summary>
+    public sealed record CollectionResponse(string Id, string Name, string? Description, DateTime CreatedAt, int ItemCount, bool IsPublic, bool IsDiscoverable, int MemberCount);
 
     public sealed class Endpoint : IEndpoint
     {
@@ -80,18 +81,14 @@ public static class GetCollections
                 await db.SaveChangesAsync(cancellationToken);
                 return Result.Success(new Response(new List<CollectionResponse>
                 {
-                    new(defaultCollection.Id.ToString(), defaultCollection.Name, defaultCollection.Description, defaultCollection.CreatedAt, 0, false, false)
+                    new(defaultCollection.Id.ToString(), defaultCollection.Name, defaultCollection.Description, defaultCollection.CreatedAt, 0, false, false, 0)
                 }));
             }
 
-            // Batch-load item counts with a single GROUP BY instead of a correlated subquery per collection
+            // One statement for the whole page (#554): distinct visible questions and visible direct members per collection.
             List<Guid> collectionIds = rawCollections.Select(c => c.Id).ToList();
-            // Items with unapproved uploaded pictures count only for their creator (#400).
-            Dictionary<Guid, int> itemCounts = await ItemVisibility.EligibleCollectionItems(db, userId)
-                .Where(ci => collectionIds.Contains(ci.CollectionId))
-                .GroupBy(ci => ci.CollectionId)
-                .Select(g => new { CollectionId = g.Key, Count = g.Count() })
-                .ToDictionaryAsync(x => x.CollectionId, x => x.Count, cancellationToken);
+            Dictionary<Guid, CollectionCardCounts.Counts> counts =
+                await CollectionCardCounts.ForCollectionsAsync(db, collectionIds, userId, cancellationToken);
 
             List<CollectionResponse> collections = rawCollections
                 .Select(c => new CollectionResponse(
@@ -99,9 +96,10 @@ public static class GetCollections
                     c.Name,
                     c.Description,
                     c.CreatedAt,
-                    itemCounts.GetValueOrDefault(c.Id),
+                    counts.TryGetValue(c.Id, out CollectionCardCounts.Counts? cardCounts) ? cardCounts.ItemCount : 0,
                     c.IsPublic,
-                    c.IsDiscoverable))
+                    c.IsDiscoverable,
+                    cardCounts?.MemberCount ?? 0))
                 .ToList();
 
             return Result.Success(new Response(collections));

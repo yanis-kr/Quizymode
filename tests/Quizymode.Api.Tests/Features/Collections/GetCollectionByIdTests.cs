@@ -26,6 +26,23 @@ public sealed class GetCollectionByIdTests : DatabaseTestFixture
         return c;
     }
 
+    private Item AddItem(string createdBy)
+    {
+        Item item = new()
+        {
+            Id = Guid.NewGuid(),
+            Question = $"Q-{Guid.NewGuid():N}",
+            CorrectAnswer = "A",
+            FuzzySignature = Guid.NewGuid().ToString("N"),
+            FuzzyBucket = 1,
+            CreatedBy = createdBy,
+            CreatedAt = DateTime.UtcNow
+        };
+        DbContext.Items.Add(item);
+        DbContext.SaveChanges();
+        return item;
+    }
+
     [Fact]
     public async Task HandleAsync_ReturnsCollection_WhenOwnerAccesses()
     {
@@ -92,10 +109,12 @@ public sealed class GetCollectionByIdTests : DatabaseTestFixture
         string userId = Guid.NewGuid().ToString();
         Collection col = AddCollection(userId);
 
-        // Add two collection items
+        // Two real questions. A membership row with no item row is an orphan and is not counted (#554).
+        Item first = AddItem(userId);
+        Item second = AddItem(userId);
         DbContext.CollectionItems.AddRange(
-            new CollectionItem { Id = Guid.NewGuid(), CollectionId = col.Id, ItemId = Guid.NewGuid(), AddedAt = DateTime.UtcNow },
-            new CollectionItem { Id = Guid.NewGuid(), CollectionId = col.Id, ItemId = Guid.NewGuid(), AddedAt = DateTime.UtcNow });
+            new CollectionItem { Id = Guid.NewGuid(), CollectionId = col.Id, ItemId = first.Id, AddedAt = DateTime.UtcNow },
+            new CollectionItem { Id = Guid.NewGuid(), CollectionId = col.Id, ItemId = second.Id, AddedAt = DateTime.UtcNow });
         await DbContext.SaveChangesAsync();
 
         Mock<IUserContext> ctx = new();
