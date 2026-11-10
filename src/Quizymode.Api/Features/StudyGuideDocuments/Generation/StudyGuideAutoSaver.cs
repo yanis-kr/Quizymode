@@ -52,6 +52,7 @@ internal sealed class StudyGuideAutoSaver(
                                                                        generation.Status == SectionGenerationStatus.Completed))
             .Select(section => section.DocumentId)
             .Distinct()
+            .OrderBy(documentId => documentId)
             .Take(Math.Clamp(_options.AutoSaveBatchSize, 1, 200))
             .ToListAsync(cancellationToken);
 
