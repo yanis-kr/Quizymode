@@ -39,6 +39,11 @@ internal static class DeleteItemHandler
                 return Result.Failure(accessError);
             }
 
+            // CollectionItems has no foreign key to Items, so memberships are removed explicitly in the same save.
+            List<CollectionItem> memberships = await db.CollectionItems
+                .Where(membership => membership.ItemId == itemGuid)
+                .ToListAsync(cancellationToken);
+            db.CollectionItems.RemoveRange(memberships);
             db.Items.Remove(item);
             await db.SaveChangesAsync(cancellationToken);
 
