@@ -1146,6 +1146,38 @@ public sealed class ItemImageReviewHttpTests : ItemTestFixture, IAsyncLifetime
     }
 
     [Fact]
+    public async Task CollectionRoute_NestedPublicChild_ServesItsPicture_ThroughTheParent()
+    {
+        Item picture = await SeedPictureItemAsync(ItemImageReviewState.Approved);
+        Collection parent = VisibilitySeed.AddCollection(DbContext, Owner, true);
+        Collection child = VisibilitySeed.AddCollection(DbContext, Owner, true);
+        VisibilitySeed.Link(DbContext, child, picture);
+        DbContext.CollectionCollectionMembers.Add(new CollectionCollectionMember { Id = Guid.NewGuid(), ParentId = parent.Id, ChildId = child.Id });
+        await DbContext.SaveChangesAsync();
+
+        (await SendRawAsync(HttpMethod.Get, $"/collections/{parent.Id}/items/{picture.Id}/images/question")).StatusCode.Should().Be(HttpStatusCode.OK);
+    }
+
+    [Theory]
+    [InlineData("anonymous", HttpStatusCode.NotFound)]
+    [InlineData("other", HttpStatusCode.NotFound)]
+    [InlineData("owner", HttpStatusCode.OK)]
+    public async Task CollectionRoute_HiddenPrivateChild_HidesItsPictureFromOthers_NotFromItsOwner(string caller, HttpStatusCode expected)
+    {
+        Item picture = await SeedPictureItemAsync(ItemImageReviewState.Approved);
+        Collection parent = VisibilitySeed.AddCollection(DbContext, Owner, true);
+        Collection hiddenChild = VisibilitySeed.AddCollection(DbContext, Owner, false);
+        VisibilitySeed.Link(DbContext, hiddenChild, picture);
+        DbContext.CollectionCollectionMembers.Add(new CollectionCollectionMember { Id = Guid.NewGuid(), ParentId = parent.Id, ChildId = hiddenChild.Id });
+        await DbContext.SaveChangesAsync();
+
+        using HttpResponseMessage response = await SendRawAsync(
+            HttpMethod.Get, $"/collections/{parent.Id}/items/{picture.Id}/images/question", token: TokenOf(caller));
+
+        response.StatusCode.Should().Be(expected);
+    }
+
+    [Fact]
     public async Task MediaContentRoute_IsUnchanged_OwnerOrAdminOnly_EvenForAnApprovedPublicPicture()
     {
         Item item = await SeedPictureItemAsync(ItemImageReviewState.Approved, isPrivate: false);

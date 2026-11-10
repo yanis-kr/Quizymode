@@ -42,7 +42,7 @@ public static class MediaLifecycleEndpoints
         if (request.CollectionId is Guid collectionId)
         {
             Collection? collection = await db.Collections.AsNoTracking().SingleOrDefaultAsync(x => x.Id == collectionId, ct);
-            allowed = collection is not null && GetCollectionById.CanAccess(collection, user) && await db.CollectionItems.AnyAsync(x => x.CollectionId == collectionId && x.ItemId == id, ct) && (creator || item?.ImageReviewState == ItemImageReviewState.Approved);
+            allowed = collection is not null && GetCollectionById.CanAccess(collection, user) && await CollectionScope.ContainsAsync(db, collectionId, id, user.UserId, ct) && (creator || item?.ImageReviewState == ItemImageReviewState.Approved);
         }
         Guid? assetId = request.Slot == "question" ? item?.QuestionImageAssetId : item?.ExplanationImageAssetId;
         if (!allowed || item is null || assetId is null || item.ImageRevision != request.ExpectedRevision || (!creator && !user.IsAdmin && item.ImageReviewState != ItemImageReviewState.Approved)) return Results.NotFound();

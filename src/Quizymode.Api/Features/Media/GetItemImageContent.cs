@@ -88,8 +88,7 @@ public static class GetItemImageContent
                 return Results.NotFound();
             }
 
-            bool inCollection = await db.CollectionItems.AnyAsync(
-                ci => ci.CollectionId == collectionId && ci.ItemId == itemId, cancellationToken);
+            bool inCollection = await CollectionScope.ContainsAsync(db, collectionId, itemId, userContext.UserId, cancellationToken);
             Item? item = inCollection ? await LoadItemAsync(db, itemId, cancellationToken) : null;
             if (item is null || !(IsCreator(item, userContext) || item.ImageReviewState == ItemImageReviewState.Approved))
             {
