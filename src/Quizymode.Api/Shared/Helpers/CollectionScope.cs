@@ -1,4 +1,5 @@
 using System.Linq.Expressions;
+using Microsoft.EntityFrameworkCore;
 using Quizymode.Api.Data;
 using Quizymode.Api.Features.Collections;
 using Quizymode.Api.Shared.Models;
@@ -76,6 +77,14 @@ internal static class CollectionScope
 
         return directAndNested.Union(topicItems);
     }
+
+    /// <summary>
+    /// Whether <paramref name="itemId"/> is an accessible member of <paramref name="collectionId"/>, counting nested and live
+    /// topic membership exactly as <see cref="AccessibleMemberItemIds"/> does. Used by picture delivery and reporting so they
+    /// cannot disagree with the roster.
+    /// </summary>
+    public static Task<bool> ContainsAsync(ApplicationDbContext db, Guid collectionId, Guid itemId, string? viewerId, CancellationToken cancellationToken) =>
+        AccessibleMemberItemIds(db, collectionId, viewerId).AnyAsync(id => id == itemId, cancellationToken);
 
     /// <summary>A topic member whose path is still live in KeywordRelations (L1 root; L2 under its first keyword).</summary>
     public static Expression<Func<CollectionKeywordMember, bool>> LivePath(ApplicationDbContext db) =>
