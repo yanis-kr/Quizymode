@@ -466,6 +466,19 @@ internal sealed class DatabaseSeederHostedService(
         string[] allFiles = Directory.GetFiles(resolvedCollectionsPath, "*.json", SearchOption.AllDirectories);
         Array.Sort(allFiles, StringComparer.OrdinalIgnoreCase);
 
+        // Every repo-managed collection in this run, so a link to a sibling file does not depend on file order (#556).
+        HashSet<Guid> payloadCollectionIds = [];
+        foreach (string jsonFile in allFiles)
+        {
+            PublicCollectionSeedData? header = JsonSerializer.Deserialize<PublicCollectionSeedData>(
+                await File.ReadAllTextAsync(jsonFile, cancellationToken),
+                new JsonSerializerOptions { PropertyNameCaseInsensitive = true });
+            if (header is not null && header.CollectionId != Guid.Empty)
+            {
+                payloadCollectionIds.Add(header.CollectionId);
+            }
+        }
+
         foreach (string jsonFile in allFiles)
         {
             string raw = await File.ReadAllTextAsync(jsonFile, cancellationToken);
@@ -479,11 +492,30 @@ internal sealed class DatabaseSeederHostedService(
                 continue;
             }
 
-            List<Guid> desiredItemIds = seedData.ItemIds.Distinct().ToList();
-            if (desiredItemIds.Count == 0)
+            List<Guid> desiredItemIds = (seedData.ItemIds ?? []).Distinct().ToList();
+            List<Guid> desiredChildIds = (seedData.CollectionIds ?? []).Distinct().ToList();
+            List<CollectionSeedLinks.KeywordPathName> desiredPaths = (seedData.KeywordPaths ?? [])
+                .Select(path => new CollectionSeedLinks.KeywordPathName(
+                    (path.Category ?? string.Empty).Trim(),
+                    (path.Keyword1 ?? string.Empty).Trim(),
+                    path.Keyword2?.Trim()))
+                .ToList();
+            if (desiredItemIds.Count == 0 && desiredChildIds.Count == 0 && desiredPaths.Count == 0)
             {
-                _logger.LogWarning("Collection seed file {FileName} had no itemIds.", Path.GetFileName(jsonFile));
+                _logger.LogWarning("Collection seed file {FileName} had no itemIds, collectionIds or keywordPaths.", Path.GetFileName(jsonFile));
                 continue;
+            }
+
+            // A file with only links is valid (#556). Child collections may come from this run's files or the database.
+            List<string> linkErrors = await CollectionSeedLinks.ValidateChildCollectionsAsync(
+                db, desiredChildIds, payloadCollectionIds, cancellationToken);
+            (List<CollectionSeedLinks.ResolvedTopic> resolvedTopics, List<string> topicErrors) =
+                await CollectionSeedLinks.ResolveTopicsAsync(db, desiredPaths, cancellationToken);
+            linkErrors.AddRange(topicErrors);
+            if (linkErrors.Count > 0)
+            {
+                throw new InvalidOperationException(
+                    $"Collection seed '{jsonFile}' has invalid links: {string.Join("; ", linkErrors)}");
             }
 
             HashSet<Guid> existingItemIds = (await db.Items
@@ -568,6 +600,10 @@ internal sealed class DatabaseSeederHostedService(
             {
                 await db.CollectionItems.AddRangeAsync(linksToAdd, cancellationToken);
             }
+
+            // Nested collections and topic paths reconcile as a diff, so a rerun changes nothing (#556).
+            CollectionSeedLinks.ReconcileChildLinks(db, seedData.CollectionId, desiredChildIds, DateTime.UtcNow);
+            CollectionSeedLinks.ReconcileTopicLinks(db, seedData.CollectionId, resolvedTopics, DateTime.UtcNow);
 
             await db.SaveChangesAsync(cancellationToken);
 
@@ -755,5 +791,20 @@ internal sealed class PublicCollectionSeedData
     public string? Description { get; set; }
 
     [JsonPropertyName("itemIds")]
-    public List<Guid> ItemIds { get; set; } = [];
+    public List<Guid>? ItemIds { get; set; }
+
+    /// <summary>Nested repo-managed collections this collection contains (#556).</summary>
+    [JsonPropertyName("collectionIds")]
+    public List<Guid>? CollectionIds { get; set; }
+
+    /// <summary>Topic paths this collection contains, by name (#556).</summary>
+    [JsonPropertyName("keywordPaths")]
+    public List<SeedKeywordPathData>? KeywordPaths { get; set; }
+}
+
+internal sealed class SeedKeywordPathData
+{
+    public string Category { get; set; } = string.Empty;
+    public string Keyword1 { get; set; } = string.Empty;
+    public string? Keyword2 { get; set; }
 }
