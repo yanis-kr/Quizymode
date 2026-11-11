@@ -4,6 +4,8 @@ Quizymode is a full-stack study and quiz application built for people who want t
 
 For a full walkthrough with screenshots, see the **[Live User Guide](https://yanis-kr.github.io/Quizymode/)** (desktop and mobile, Dark and Light, refreshed daily when the UI changes) or the markdown sources: [User Guide](./docs/user-guide/user-guide.md) · [Mobile User Guide](./docs/user-guide/user-guide.mobile.md).
 
+> **Try it:** [www.quizymode.com](https://www.quizymode.com/). You can browse categories and take quizzes without an account. Sign in to keep progress across devices.
+
 **Tech:** `.NET 10` Minimal API, React 19 SPA, AWS Cognito authentication, PostgreSQL.
 
 Production shape:
