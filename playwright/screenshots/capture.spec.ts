@@ -6,11 +6,24 @@ import { slugToFilename } from "../../scripts/generate-user-guide.js";
 import { screenshotRoot, writeViewportRecords } from "../../scripts/user-guide-capture-report.js";
 import { THEMES, shotDir } from "../../scripts/user-guide-themes.js";
 import { setAppTheme, type GuideTheme } from "./theme-switch";
+import {
+  STARTER_COLLECTION_IDS,
+  STARTER_QUESTION_STEM_BY_ID,
+  STARTER_WORLD_ITEM_IDS,
+} from "./starter-pool";
 
 const HOME_SAMPLE_COLLECTION_ID = "8f9b8c14-8d30-4d94-9b20-4c7bb7f7f511";
 const HOME_SAMPLE_COLLECTION_SLUG = "fun+trivia+facts";
 const HOME_SAMPLE_COLLECTION_DETAIL_PATH = `/collections/${HOME_SAMPLE_COLLECTION_ID}/${HOME_SAMPLE_COLLECTION_SLUG}`;
-const USER_GUIDE_COMMENT_TEXT = "Study tip: grouping capitals by continent makes them easier to remember — try Europe first, then expand to other regions.";
+const USER_GUIDE_COMMENT_TEXT = "Study tip: picture each tiny country on a map before you answer, then say its name out loud.";
+// Starter questions used by the single-question screens (#563). Each one is used by exactly one scenario.
+const ITEM_DETAIL_ITEM_ID = STARTER_WORLD_ITEM_IDS.places[0];
+const RATING_ITEM_ID = STARTER_WORLD_ITEM_IDS.places[1];
+const COMMENT_ITEM_ID = STARTER_WORLD_ITEM_IDS.places[2];
+// Flag starter questions for the list screens (the flags list is allowed to repeat its stem).
+const FLAG_BADGE_ITEM_IDS = STARTER_WORLD_ITEM_IDS.flags.slice(0, 3);
+const FLAG_ACTIVE_COLLECTION_ITEM_IDS = STARTER_WORLD_ITEM_IDS.flags.slice(3, 5);
+const FLAG_REMOVED_ITEM_ID = STARTER_WORLD_ITEM_IDS.flags[0];
 
 async function safeGoto(page: Page, url: string) {
   await page.goto(url, { waitUntil: "load", timeout: 20_000 });
@@ -570,39 +583,53 @@ async function closeManageCollectionsDialog(page: Page) {
   await page.waitForTimeout(300);
 }
 
-async function addFirstItemsToActiveCollection(page: Page, count: number) {
-  const addButtons = page.locator("button[title*='Add to ']");
-  const total = await addButtons.count();
-  let addedCount = 0;
+/** The row or card that links to a question, so a button is found by the question it belongs to, never by its position (#563). */
+function itemRowXPath(itemId: string, buttonTitlePart: string) {
+  return `xpath=//a[@href='/items/${itemId}']/ancestor::*[.//button[contains(@title,'${buttonTitlePart}')]][1]//button[contains(@title,'${buttonTitlePart}')][1]`;
+}
 
-  for (let index = 0; index < total && addedCount < count; index += 1) {
-    const button = addButtons.nth(index);
-    const enabled = await button.isEnabled().catch(() => false);
-    if (!enabled) {
-      continue;
+/** Clicks "Add to <collection>" on the row of one starter question. A missing row is not an error for the guide. */
+async function addStarterItemToActiveCollection(page: Page, itemId: string) {
+  await page.locator(itemRowXPath(itemId, "Add to ")).first().click().catch(() => {});
+  await page.waitForTimeout(500);
+}
+
+/** Clicks "Remove from <collection>" on the row of one starter question. */
+async function removeStarterItemFromActiveCollection(page: Page, itemId: string) {
+  await page.locator(itemRowXPath(itemId, "Remove from ")).first().click().catch(() => {});
+  await page.waitForTimeout(500);
+}
+
+// Each guide screenshot that shows question text names the item IDs it shows (#563). The last test checks that no
+// text-only screenshot repeats a question. Flag screens are not recorded: the nine flag questions share one stem by design.
+const guideQuestionItems = new Map<string, readonly string[]>();
+
+function recordGuideQuestions(slug: string, itemIds: readonly string[]) {
+  guideQuestionItems.set(slug, itemIds);
+}
+
+function findRepeatedGuideQuestion(): string | null {
+  const slugByItem = new Map<string, string>();
+  const slugByStem = new Map<string, string>();
+  for (const [slug, itemIds] of guideQuestionItems) {
+    for (const itemId of itemIds) {
+      const otherItem = slugByItem.get(itemId);
+      if (otherItem && otherItem !== slug) {
+        return `Question ${itemId} is shown in both ${otherItem} and ${slug}`;
+      }
+      slugByItem.set(itemId, slug);
+
+      const stem = STARTER_QUESTION_STEM_BY_ID[itemId];
+      const otherStem = stem ? slugByStem.get(stem) : undefined;
+      if (stem && otherStem && otherStem !== slug) {
+        return `Question stem "${stem}" is shown in both ${otherStem} and ${slug}`;
+      }
+      if (stem) {
+        slugByStem.set(stem, slug);
+      }
     }
-
-    await button.click().catch(() => {});
-    await page.waitForTimeout(500);
-    addedCount += 1;
   }
-
-  await waitForUiToSettle(page);
-}
-
-async function getCollectionHrefByName(page: Page, name: string) {
-  await safeGoto(page, "/collections");
-  await waitForCollectionsPageLoaded(page);
-
-  const card = page.locator(collectionCardXPath(name)).first();
-  const link = card.locator("a[href^='/collections/']").first();
-  return (await link.getAttribute("href").catch(() => null)) ?? HOME_SAMPLE_COLLECTION_DETAIL_PATH;
-}
-
-async function openCollectionByName(page: Page, name: string) {
-  const href = await getCollectionHrefByName(page, name);
-  await safeGoto(page, href);
-  await waitForCollectionDetailLoaded(page);
+  return null;
 }
 
 async function waitForCollectionDetailLoaded(page: Page) {
@@ -626,44 +653,28 @@ async function waitForCollectionQuizModeLoaded(page: Page) {
   ]);
 }
 
-async function getFirstCategoryItemDetailHref(page: Page) {
+/** Opens one starter question by its item ID (AC 2.3). */
+async function openStarterItem(page: Page, itemId: string) {
   await ensureSignedIn(page);
-  await safeGoto(page, "/categories/geography/capitals/world");
-  await ensureListMode(page);
-  await waitForCategoryItemsLoaded(page);
-
-  return (
-    (await page
-      .locator("a[title='View item details'][href^='/items/']")
-      .first()
-      .getAttribute("href")
-      .catch(() => null)) ??
-    null
-  );
-}
-
-async function openFirstCategoryItemDetail(page: Page) {
-  await ensureSignedIn(page);
-  await safeGoto(page, "/categories/geography/capitals/world");
-  await ensureListMode(page);
-  await waitForCategoryItemsLoaded(page);
-
-  const detailButton = page
-    .locator("a[title='View item details'][href^='/items/']")
-    .first();
-  if (await detailButton.isVisible().catch(() => false)) {
-    await detailButton.click().catch(() => {});
-    await page.waitForURL(/\/items\/[^/?#]+/, { timeout: 15_000 }).catch(() => {});
-  } else {
-    const href = await getFirstCategoryItemDetailHref(page);
-    await safeGoto(page, href ?? "/categories/geography/capitals/world");
-  }
-
+  await safeGoto(page, `/items/${itemId}`);
   await waitForAnyVisible(page, [
     "text=Item details",
     "text=Question",
     "button:has-text('Comments')",
   ]);
+}
+
+/** Opens a starter-world collection by its fixed ID (repo-managed public collection, #563). */
+async function openStarterCollection(page: Page, world: keyof typeof STARTER_COLLECTION_IDS) {
+  await safeGoto(page, `/collections/${STARTER_COLLECTION_IDS[world]}`);
+  await waitForCollectionDetailLoaded(page);
+}
+
+/** The flags list page: its nine starter flags share one question stem and differ only by image, so the list is allowed. */
+async function openFlagsList(page: Page) {
+  await safeGoto(page, "/categories/geography/flags/countries");
+  await ensureListMode(page);
+  await waitForCategoryItemsLoaded(page);
 }
 
 async function rateCurrentItemFiveStars(page: Page) {
@@ -809,7 +820,8 @@ test.describe("User guide screenshots", () => {
   });
 
   shotTest("collection-detail", async (page, testInfo) => {
-    await openCollectionByName(page, secondCollectionName);
+    recordGuideQuestions("collection-detail", STARTER_WORLD_ITEM_IDS.animals);
+    await openStarterCollection(page, "animals");
     await captureCurrentPage(page, testInfo, "collection-detail");
   });
 
@@ -843,57 +855,50 @@ test.describe("User guide screenshots", () => {
   });
 
   shotTest("mode-flashcards", async (page, testInfo) => {
-    await safeGoto(page, "/categories/geography/capitals/world");
+    recordGuideQuestions("mode-flashcards", STARTER_WORLD_ITEM_IDS.space);
+    await openStarterCollection(page, "space");
     await clickMode(page, "flashcards");
     await captureCurrentPage(page, testInfo, "mode-flashcards");
   });
 
   shotTest("mode-quiz", async (page, testInfo) => {
-    await safeGoto(page, "/categories/geography/capitals/world");
+    recordGuideQuestions("mode-quiz", STARTER_WORLD_ITEM_IDS.genai);
+    await openStarterCollection(page, "genai");
     await clickMode(page, "quiz");
     await captureCurrentPage(page, testInfo, "mode-quiz");
   });
 
   shotTest("items-add-to-collection", async (page, testInfo) => {
-    await safeGoto(page, "/categories/geography/capitals/world");
-    await ensureListMode(page);
-    await waitForCategoryItemsLoaded(page);
+    await openFlagsList(page);
     await captureCurrentPage(page, testInfo, "items-add-to-collection");
   });
 
   shotTest("items-collection-badges", async (page, testInfo) => {
-    await safeGoto(page, "/categories/geography/capitals/world");
-    await ensureListMode(page);
-    await waitForCategoryItemsLoaded(page);
-    await addFirstItemsToActiveCollection(page, 3);
+    await openFlagsList(page);
+    for (const itemId of FLAG_BADGE_ITEM_IDS) {
+      await addStarterItemToActiveCollection(page, itemId);
+    }
+    await waitForUiToSettle(page);
     await captureCurrentPage(page, testInfo, "items-collection-badges");
   });
 
   shotTest("items-collection-removed", async (page, testInfo) => {
-    await safeGoto(page, "/categories/geography/capitals/world");
-    await ensureListMode(page);
-    await waitForCategoryItemsLoaded(page);
-
-    let removeButtons = page.locator("button[title*='Remove from ']");
-    if ((await removeButtons.count()) === 0) {
-      await page.locator("button[title*='Add to ']").first().click().catch(() => {});
-      await waitForUiToSettle(page);
-      removeButtons = page.locator("button[title*='Remove from ']");
-    }
-
-    await removeButtons.first().click().catch(() => {});
+    await openFlagsList(page);
+    await addStarterItemToActiveCollection(page, FLAG_REMOVED_ITEM_ID);
+    await removeStarterItemFromActiveCollection(page, FLAG_REMOVED_ITEM_ID);
     await waitForUiToSettle(page);
     await captureCurrentPage(page, testInfo, "items-collection-removed");
   });
 
   shotTest("active-collection-selector", async (page, testInfo) => {
-    await safeGoto(page, "/categories/geography/capitals/world");
-    await ensureListMode(page);
-    await waitForCategoryItemsLoaded(page);
+    await openFlagsList(page);
     await ensureSecondCollectionIsActive(page, secondCollectionName);
     await captureCurrentPage(page, testInfo, "active-collection-selector");
     await closeManageCollectionsDialog(page);
-    await addFirstItemsToActiveCollection(page, 2);
+    for (const itemId of FLAG_ACTIVE_COLLECTION_ITEM_IDS) {
+      await addStarterItemToActiveCollection(page, itemId);
+    }
+    await waitForUiToSettle(page);
   });
 
   shotTest("collection-new", async (page, testInfo) => {
@@ -925,31 +930,36 @@ test.describe("User guide screenshots", () => {
   });
 
   shotTest("item-detail", async (page, testInfo) => {
-    await openFirstCategoryItemDetail(page);
+    recordGuideQuestions("item-detail", [ITEM_DETAIL_ITEM_ID]);
+    await openStarterItem(page, ITEM_DETAIL_ITEM_ID);
     await captureCurrentPage(page, testInfo, "item-detail");
   });
 
   shotTest("item-rating-five-stars", async (page, testInfo) => {
-    await openFirstCategoryItemDetail(page);
+    recordGuideQuestions("item-rating-five-stars", [RATING_ITEM_ID]);
+    await openStarterItem(page, RATING_ITEM_ID);
     await rateCurrentItemFiveStars(page);
     await captureCurrentPage(page, testInfo, "item-rating-five-stars");
   });
 
   shotTest("item-comment-added", async (page, testInfo) => {
-    await openFirstCategoryItemDetail(page);
+    recordGuideQuestions("item-comment-added", [COMMENT_ITEM_ID]);
+    await openStarterItem(page, COMMENT_ITEM_ID);
     await addCommentForCurrentItem(page, USER_GUIDE_COMMENT_TEXT);
     await waitForAnyVisible(page, ["[role='dialog']", `text=${USER_GUIDE_COMMENT_TEXT}`]);
     await captureCurrentPage(page, testInfo, "item-comment-added");
   });
 
   shotTest("collection-detail-flashcards", async (page, testInfo) => {
-    await openCollectionByName(page, secondCollectionName);
+    recordGuideQuestions("collection-detail-flashcards", STARTER_WORLD_ITEM_IDS.time);
+    await openStarterCollection(page, "time");
     await clickMode(page, "flashcards");
     await captureCurrentPage(page, testInfo, "collection-detail-flashcards");
   });
 
   shotTest("collection-detail-quiz", async (page, testInfo) => {
-    await openCollectionByName(page, secondCollectionName);
+    recordGuideQuestions("collection-detail-quiz", STARTER_WORLD_ITEM_IDS.body);
+    await openStarterCollection(page, "body");
     await clickMode(page, "quiz");
     await waitForCollectionQuizModeLoaded(page);
     await captureCurrentPage(page, testInfo, "collection-detail-quiz");
@@ -1002,5 +1012,10 @@ test.describe("User guide screenshots", () => {
     await waitForSelectValue(page, "#item-form-rank1", "capitals");
     await waitForSelectValue(page, "#item-form-rank2", "world");
     await captureCurrentPage(page, testInfo, "add-items-prepopulated");
+  });
+
+  // Runs last in the serial suite (#563): fails when two text-only screenshots show the same question.
+  test("guide question stems are not repeated across screenshots", () => {
+    expect(findRepeatedGuideQuestion() ?? "no repeated question").toBe("no repeated question");
   });
 });
