@@ -36,7 +36,9 @@ public static class GetKeywords
         double? AverageRating,
         int NavigationRank,
         string? Description = null,
-        int PrivateItemCount = 0);
+        int PrivateItemCount = 0,
+        // Keyword id for topic members (#558). Null for the synthetic "other" entry, which is not a real keyword.
+        Guid? Id = null);
 
     public sealed record Response(List<KeywordResponse> Keywords);
 
@@ -437,7 +439,8 @@ public static class GetKeywords
                 averageRatings.GetValueOrDefault(relation.KeywordId),
                 relation.NavigationRank,
                 relation.Description,
-                privateItemCounts.GetValueOrDefault(relation.KeywordId)))
+                privateItemCounts.GetValueOrDefault(relation.KeywordId),
+                relation.KeywordId))
             .ToList();
     }
 

@@ -57,6 +57,23 @@ export const collectionsApi = {
     return response.data;
   },
 
+  /** Owner only: nests an existing collection under this one (POST /collections/{id}/collections, #558). */
+  addChildCollection: async (collectionId: string, childCollectionId: string): Promise<void> => {
+    await apiClient.post(`/collections/${collectionId}/collections`, { childCollectionId });
+  },
+
+  /** Owner only: adds a public taxonomy path as a topic member (POST /collections/{id}/topics, #558). */
+  addTopic: async (
+    collectionId: string,
+    topic: { categoryId: string; keyword1Id: string; keyword2Id: string | null }
+  ): Promise<void> => {
+    await apiClient.post(`/collections/${collectionId}/topics`, {
+      categoryId: topic.categoryId,
+      keyword1Id: topic.keyword1Id,
+      keyword2Id: topic.keyword2Id,
+    });
+  },
+
   getAll: async (): Promise<CollectionsResponse> => {
     const response = await apiClient.get<CollectionsResponse>("/collections");
     return response.data;
