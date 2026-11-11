@@ -198,6 +198,23 @@ public sealed class CollectionTopicMembersTests : ItemTestFixture
     }
 
     [Fact]
+    public async Task List_ReturnsPathNamesAndAddedAt_ForDisplay()
+    {
+        Collection parent = await CreateCollectionAsync(Owner, isPublic: true);
+        var path = await CreatePathAsync();
+        (await AddTopicAsync(parent, path, Owner)).IsSuccess.Should().BeTrue();
+
+        Result<List<CollectionTopicMembers.TopicMemberResponse>> list =
+            await CollectionTopicMembers.HandleListAsync(parent.Id, DbContext, UserContext(Owner).Object, CancellationToken.None);
+
+        CollectionTopicMembers.TopicMemberResponse topic = list.Value.Should().ContainSingle().Subject;
+        topic.CategoryName.Should().StartWith("cat-");
+        topic.Keyword1Name.Should().StartWith("k1-");
+        topic.Keyword2Name.Should().StartWith("k2-");
+        topic.AddedAt.Should().BeAfter(DateTime.UtcNow.AddMinutes(-5));
+    }
+
+    [Fact]
     public async Task List_MoreThan500VisibleItems_IsFlaggedButNotTruncated()
     {
         Collection parent = await CreateCollectionAsync(Owner, isPublic: true);

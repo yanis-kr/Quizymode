@@ -29,11 +29,31 @@ export interface ChildCollectionsResponse {
   hiddenCollectionCount: number;
 }
 
+/** A taxonomy path member of a collection (GET /collections/{id}/topics), with live status and visible count (#553). */
+export interface TopicMember {
+  id: string;
+  categoryId: string;
+  keyword1Id: string;
+  keyword2Id: string | null;
+  categoryName: string;
+  keyword1Name: string;
+  keyword2Name: string | null;
+  isRemoved: boolean;
+  visibleItemCount: number;
+  exceedsWarningThreshold: boolean;
+  addedAt: string;
+}
+
 export const collectionsApi = {
   listChildCollections: async (collectionId: string): Promise<ChildCollectionsResponse> => {
     const response = await apiClient.get<ChildCollectionsResponse>(
       `/collections/${collectionId}/collections`
     );
+    return response.data;
+  },
+
+  listTopics: async (collectionId: string): Promise<TopicMember[]> => {
+    const response = await apiClient.get<TopicMember[]>(`/collections/${collectionId}/topics`);
     return response.data;
   },
 

@@ -28,9 +28,13 @@ public static class CollectionTopicMembers
         Guid CategoryId,
         Guid Keyword1Id,
         Guid? Keyword2Id,
+        string CategoryName,
+        string Keyword1Name,
+        string? Keyword2Name,
         bool IsRemoved,
         int VisibleItemCount,
-        bool ExceedsWarningThreshold);
+        bool ExceedsWarningThreshold,
+        DateTime AddedAt);
 
     public sealed class AddRequestValidator : AbstractValidator<AddRequest>
     {
@@ -319,14 +323,31 @@ public static class CollectionTopicMembers
         // A removed path resolves to nothing (same rule as the item resolver), so it counts 0.
         int visibleCount = isRemoved ? 0 : await TopicItems(db, member, viewerId).CountAsync(cancellationToken);
 
+        // Names are shown next to the path. A missing name falls back to an empty string, never to the id.
+        string categoryName = await db.Categories
+            .Where(c => c.Id == member.CategoryId)
+            .Select(c => c.Name)
+            .FirstOrDefaultAsync(cancellationToken) ?? string.Empty;
+        string keyword1Name = await db.Keywords
+            .Where(k => k.Id == member.Keyword1Id)
+            .Select(k => k.Name)
+            .FirstOrDefaultAsync(cancellationToken) ?? string.Empty;
+        string? keyword2Name = member.Keyword2Id is Guid keyword2Id
+            ? await db.Keywords.Where(k => k.Id == keyword2Id).Select(k => k.Name).FirstOrDefaultAsync(cancellationToken)
+            : null;
+
         return new TopicMemberResponse(
             member.Id.ToString(),
             member.CategoryId,
             member.Keyword1Id,
             member.Keyword2Id,
+            categoryName,
+            keyword1Name,
+            keyword2Name,
             isRemoved,
             visibleCount,
-            visibleCount > LargeTopicThreshold);
+            visibleCount > LargeTopicThreshold,
+            member.AddedAt);
     }
 
     /// <summary>Questions on this path that the viewer may see (owner's own private matches included, nobody else's).</summary>
