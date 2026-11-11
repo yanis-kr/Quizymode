@@ -39,27 +39,27 @@ internal static class ItemVisibility
     }
 
     /// <summary>
-    /// Roster rule for the items of a collection read (#589, AC 1.5.1, I3): the same as <see cref="EligibleFor"/>, and a private item
-    /// is listed only to the collection's owner (the owner's private items are listed to every viewer) and to the item's own creator
-    /// (AC 1.17: a viewer's own private matches). No other visitor sees another user's private item in the collection.
+    /// Membership-row rule for a collection read (#589, AC 1.5.1, I3, AC 1.17). A public item is listed through any membership row
+    /// it is in. A private item is listed through a row only to its own creator, or when the collection holding that row is owned
+    /// by the item's creator (the owner's private questions shared through their collection). The root's owner is not consulted,
+    /// so a creator's private items in an accessible nested collection they own are listed too, and a nested collection owned by
+    /// someone else never exposes a private item to other viewers.
     /// </summary>
-    public static Expression<Func<Item, bool>> CollectionRosterFor(ApplicationDbContext db, Guid collectionId, string? userId)
+    public static Expression<Func<CollectionItem, bool>> ListedInCollection(ApplicationDbContext db, string? userId)
     {
         string callerId = userId ?? string.Empty;
         bool hasCaller = callerId.Length > 0;
-        return i => ((hasCaller && i.CreatedBy == callerId)
-                || i.ImageReviewState == null
-                || i.ImageReviewState == ItemImageReviewState.Approved)
+        return ci => db.Items.Any(i => i.Id == ci.ItemId
             && (!i.IsPrivate
                 || (hasCaller && i.CreatedBy == callerId)
-                || db.Collections.Any(c => c.Id == collectionId && c.CreatedBy == i.CreatedBy));
+                || db.Collections.Any(c => c.Id == ci.CollectionId && c.CreatedBy == i.CreatedBy)));
     }
 
-    /// <summary>In-memory form of the private-item part of <see cref="CollectionRosterFor"/>.</summary>
-    public static bool IsListedInCollectionOf(bool isPrivate, string createdBy, string? ownerId, string? viewerId) =>
+    /// <summary>In-memory form of <see cref="ListedInCollection"/> for one row, given the owner of the collection that holds it.</summary>
+    public static bool IsListedInCollectionOf(bool isPrivate, string createdBy, string? holdingCollectionOwnerId, string? viewerId) =>
         !isPrivate
         || (!string.IsNullOrEmpty(viewerId) && createdBy == viewerId)
-        || createdBy == ownerId;
+        || createdBy == holdingCollectionOwnerId;
 
     /// <summary>
     /// Collection membership rows minus those whose item exists but is hidden from the caller by media eligibility; rows with no

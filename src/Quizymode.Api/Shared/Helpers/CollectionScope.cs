@@ -30,9 +30,10 @@ internal static class CollectionScope
     public const string DepthLimitReason = "DepthLimit";
 
     /// <summary>Item ids that are direct members of <paramref name="collectionId"/>, as a composable query.</summary>
-    public static IQueryable<Guid> DirectMemberItemIds(ApplicationDbContext db, Guid collectionId) =>
+    public static IQueryable<Guid> DirectMemberItemIds(ApplicationDbContext db, Guid collectionId, string? viewerId) =>
         db.CollectionItems
             .Where(ci => ci.CollectionId == collectionId)
+            .Where(ItemVisibility.ListedInCollection(db, viewerId))
             .Select(ci => ci.ItemId);
 
     /// <summary>
@@ -197,9 +198,11 @@ internal static class CollectionScope
     {
         IQueryable<Guid> collectionIds = CappedCollectionIds(db, rootId, viewerId);
 
+        // #589: a private item is listed through a row only to its creator or to the owner of the collection holding that row.
         IQueryable<Guid> directAndNested = db.CollectionItems
             .Where(ci => collectionIds.Contains(ci.CollectionId))
             .Where(ItemRowKept(db, rootId))
+            .Where(ItemVisibility.ListedInCollection(db, viewerId))
             .Select(ci => ci.ItemId);
 
         // Topic members (#553): visible questions on a path that is still live and that an accessible collection holds.
@@ -237,30 +240,15 @@ internal static class CollectionScope
     /// Otherwise it is <see cref="AccessibleMemberItemIds"/>. <see cref="ContainsAsync"/> always uses the full path.
     /// </summary>
     public static IQueryable<Guid> RosterItemIds(ApplicationDbContext db, Guid rootId, string? viewerId, bool hasStructure) =>
-        hasStructure ? AccessibleMemberItemIds(db, rootId, viewerId) : DirectMemberItemIds(db, rootId);
+        hasStructure ? AccessibleMemberItemIds(db, rootId, viewerId) : DirectMemberItemIds(db, rootId, viewerId);
 
     /// <summary>
     /// Whether <paramref name="itemId"/> is an accessible member of <paramref name="collectionId"/>, counting nested and live
     /// topic membership exactly as <see cref="AccessibleMemberItemIds"/> does. Used by picture delivery and reporting so they
     /// cannot disagree with the roster.
     /// </summary>
-    public static async Task<bool> ContainsAsync(ApplicationDbContext db, Guid collectionId, Guid itemId, string? viewerId, CancellationToken cancellationToken)
-    {
-        bool member = await AccessibleMemberItemIds(db, collectionId, viewerId).AnyAsync(id => id == itemId, cancellationToken);
-        if (!member)
-        {
-            return false;
-        }
-
-        // #589: a private item is listed only to the collection's owner or its own creator (AC 1.5.1, I3, AC 1.17).
-        string callerId = viewerId ?? string.Empty;
-        return await db.Items.AnyAsync(
-            i => i.Id == itemId
-                && (!i.IsPrivate
-                    || (callerId.Length > 0 && i.CreatedBy == callerId)
-                    || db.Collections.Any(c => c.Id == collectionId && c.CreatedBy == i.CreatedBy)),
-            cancellationToken);
-    }
+    public static Task<bool> ContainsAsync(ApplicationDbContext db, Guid collectionId, Guid itemId, string? viewerId, CancellationToken cancellationToken) =>
+        AccessibleMemberItemIds(db, collectionId, viewerId).AnyAsync(id => id == itemId, cancellationToken);
 
     /// <summary>A topic member whose path is still live in KeywordRelations (L1 root; L2 under its first keyword).</summary>
     public static Expression<Func<CollectionKeywordMember, bool>> LivePath(ApplicationDbContext db) =>
