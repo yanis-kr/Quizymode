@@ -134,7 +134,16 @@ public static class GetFeatured
                 sets.Add(new FeaturedSetDto(fi.Id, fi.DisplayName, fi.CategorySlug, fi.NavKeyword1, fi.NavKeyword2, stats?.Count ?? 0, stats?.LastMod, fi.SortOrder));
             }
 
-            // Build collection DTOs with lastModifiedAt
+            // Build collection DTOs with lastModifiedAt. Counts are the lead total for an anonymous viewer, as in GET /collections/{id} (#555).
+            List<Guid> featuredCollectionIds = collectionItems
+                .Where(fi => fi.CollectionId is not null)
+                .Select(fi => fi.CollectionId!.Value)
+                .Distinct()
+                .ToList();
+            Dictionary<Guid, CollectionCardCounts.Counts> leadCounts = featuredCollectionIds.Count == 0
+                ? []
+                : await CollectionCardCounts.ForCollectionsAsync(db, featuredCollectionIds, null, cancellationToken);
+
             List<FeaturedCollectionDto> collections = [];
             foreach (FeaturedItem fi in collectionItems)
             {
@@ -150,9 +159,7 @@ public static class GetFeatured
                     .Join(db.Items.AsNoTracking().Where(ItemVisibility.MediaEligible), ci => ci.ItemId, i => i.Id, (_, i) => (DateTime?)(i.UpdatedAt ?? i.CreatedAt))
                     .MaxAsync(cancellationToken);
 
-                int itemCount = await ItemVisibility.EligibleCollectionItems(db, null)
-                    .AsNoTracking()
-                    .CountAsync(ci => ci.CollectionId == fi.CollectionId.Value, cancellationToken);
+                int itemCount = leadCounts.TryGetValue(fi.CollectionId.Value, out CollectionCardCounts.Counts? counts) ? counts.ItemCount : 0;
 
                 string displayName = fi.DisplayName.Length > 0 ? fi.DisplayName : (fi.Collection?.Name ?? string.Empty);
                 string? description = fi.Collection?.Description;
