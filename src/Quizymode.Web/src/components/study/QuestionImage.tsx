@@ -39,7 +39,7 @@ const THUMB_BOX: Record<Exclude<QuestionImageSize, "lg">, string> = {
 };
 
 const LARGE_BOX =
-  "relative aspect-[3/2] w-full max-h-[30vh] overflow-hidden rounded-lg bg-slate-200 ring-1 ring-inset ring-gray-300 focus:outline-none sm:max-h-72";
+  "relative aspect-[3/2] w-full max-h-[30vh] overflow-hidden rounded-lg bg-slate-200 ring-1 ring-inset ring-gray-300 focus:outline-none sm:max-h-72 [@media(max-height:700px)]:max-h-[20vh]";
 const LARGE_ERROR_BOX =
   "relative w-full overflow-hidden rounded-lg bg-slate-100 ring-1 ring-inset ring-gray-300 focus:outline-none";
 
