@@ -33,10 +33,8 @@ interface BenefitCopy {
   body: string;
 }
 
-// Maps only #110's allowlisted reasons. Before PROGRESS-001 (#114) and
-// CLAIM-003 (#115) ship, save-progress copy must not claim a result is
-// saved, kept, synced or imported anywhere -- it says scores are not saved to
-// accounts yet and offers the account benefits that actually exist today.
+// Maps only #110's allowlisted reasons. Copy must only promise account
+// features the app provides today (#564).
 const BENEFIT_COPY: Record<AuthReason, BenefitCopy> = {
   "keep-collection": {
     heading: "Make your next study session yours.",
@@ -52,7 +50,7 @@ const BENEFIT_COPY: Record<AuthReason, BenefitCopy> = {
   },
   "save-progress": {
     heading: "Make your next quiz yours",
-    body: "Quiz scores are not saved to accounts yet. Create a free account to bookmark public collections and build private practice sets.",
+    body: "Create a free account to save your quiz runs, see your study streak and keep an activity calendar that is not tied to this browser.",
   },
   "review-later": {
     heading: "Keep reviewing these cards",
@@ -93,6 +91,11 @@ function describeConfirmError(err: unknown): string {
 }
 
 const SignUpPage = () => {
+  // A route change keeps the previous scroll offset; open the page at the top.
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   const navigate = useNavigate();
   const location = useLocation();
   const {
@@ -398,6 +401,15 @@ const SignUpPage = () => {
               <div className="text-sm text-red-800">{error}</div>
             </div>
           )}
+          <GoogleSignInSection
+            intent={intent}
+            showLegalHelper
+            disabled={isLoading}
+            googleFirst
+            onStartingChange={setIsGoogleStarting}
+            onError={(message) => (message ? showError(message) : clearError())}
+          />
+
           <div className="space-y-4">
             <div>
               <label htmlFor="username" className="block text-sm font-medium text-gray-700">
@@ -500,14 +512,6 @@ const SignUpPage = () => {
               {isLoading ? "Signing up..." : "Sign up"}
             </button>
           </div>
-
-          <GoogleSignInSection
-            intent={intent}
-            showLegalHelper
-            disabled={isLoading}
-            onStartingChange={setIsGoogleStarting}
-            onError={(message) => (message ? showError(message) : clearError())}
-          />
 
           <div className="text-center text-sm">
             <span className="text-gray-600">Already have an account? </span>

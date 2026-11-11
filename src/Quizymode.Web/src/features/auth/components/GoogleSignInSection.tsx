@@ -15,6 +15,8 @@ interface GoogleSignInSectionProps {
   onStartingChange?: (starting: boolean) => void;
   /** Called with a message to show in the page error region, or "" to clear it. */
   onError: (message: string) => void;
+  /** Puts the Google button above the divider, so it is the first control in a form. */
+  googleFirst?: boolean;
 }
 
 const START_FAILED_COPY =
@@ -69,6 +71,7 @@ function GoogleSignInSectionContent({
   disabled = false,
   onStartingChange,
   onError,
+  googleFirst = false,
 }: GoogleSignInSectionProps) {
   const { signInWithGoogle } = useAuth();
   const [isStarting, setIsStarting] = useState(false);
@@ -116,7 +119,7 @@ function GoogleSignInSectionContent({
 
   return (
     <div className="space-y-4">
-      {DIVIDER}
+      {!googleFirst && DIVIDER}
       {embedded ? (
         <InAppBrowserNotice />
       ) : (
@@ -139,6 +142,7 @@ function GoogleSignInSectionContent({
           {isStarting ? "Redirecting to Google…" : "Continue with Google"}
         </button>
       )}
+      {googleFirst && DIVIDER}
       <div role="status" className="sr-only">
         {isStarting ? "Redirecting to Google" : ""}
       </div>
