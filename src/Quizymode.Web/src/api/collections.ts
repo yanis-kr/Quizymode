@@ -30,10 +30,10 @@ export const collectionsApi = {
 
   getItems: async (
     collectionId: string, excludeQuestionPictures = false
-  ): Promise<{ items: ItemResponse[] }> => {
+  ): Promise<{ items: ItemResponse[]; totalCount?: number }> => {
     // Use GET /items?collectionId=X instead of GET /collections/{id}/items
     const response = await itemsApi.getAll(undefined, undefined, undefined, collectionId, undefined, 1, 1000, { excludeQuestionPictures });
-    return { items: response.items };
+    return { items: response.items, totalCount: response.totalCount };
   },
 
   create: async (

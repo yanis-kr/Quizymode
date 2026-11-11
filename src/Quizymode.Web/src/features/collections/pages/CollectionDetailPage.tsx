@@ -23,6 +23,7 @@ import { ShareCollectionButton } from "../components/ShareCollectionButton";
 import { CollectionExportControls } from "../components/CollectionExportControls";
 import { CollectionPrintView } from "../components/CollectionPrintView";
 import { PlanForTestButton } from "@/features/studyPlans/PlanForTestButton";
+import { filterCollectionItems } from "../utils/collectionItemSearch";
 
 const CollectionDetailPage = () => {
   const { id } = useParams<{ id: string }>();
@@ -119,12 +120,19 @@ const CollectionDetailPage = () => {
   const allItems = itemsData?.items || [];
   const { listenState: listenAllState, handleButton: handleListenAll, isSupported: ttsSupported } = useListenAll(allItems);
 
-  const totalCount = allItems.length;
+  // In-collection search (#555, AC 1.5.12) filters the loaded roster only; the header count stays unfiltered.
+  const [searchTerm, setSearchTerm] = useState("");
+  const searchActive = searchTerm.trim() !== "";
+  const filteredItems = useMemo(() => filterCollectionItems(allItems, searchTerm), [allItems, searchTerm]);
+  const rosterTotal = itemsData?.totalCount ?? allItems.length;
+  const isRosterTruncated = rosterTotal > allItems.length;
+
+  const totalCount = filteredItems.length;
   const totalPages = Math.max(1, Math.ceil(totalCount / pageSize));
   const paginatedItems = useMemo(() => {
     const start = (itemsPage - 1) * pageSize;
-    return allItems.slice(start, start + pageSize);
-  }, [allItems, itemsPage, pageSize]);
+    return filteredItems.slice(start, start + pageSize);
+  }, [filteredItems, itemsPage, pageSize]);
 
   useEffect(() => {
     if (itemsPage > totalPages && totalPages >= 1) {
@@ -464,6 +472,30 @@ const CollectionDetailPage = () => {
               </button>
             )}
           </div>
+          <div className="mb-2 space-y-1">
+            <label htmlFor="collection-item-search" className="sr-only">Search questions in this collection</label>
+            <input
+              id="collection-item-search"
+              type="search"
+              value={searchTerm}
+              onChange={(e) => {
+                setSearchTerm(e.target.value);
+                setItemsPage(1);
+              }}
+              placeholder="Search questions, answers and explanations"
+              className="w-full rounded-md border border-slate-300 bg-surface px-3 py-2 text-sm text-slate-900 placeholder:text-slate-500"
+            />
+            {isRosterTruncated && (
+              <p className="text-xs text-slate-500">
+                Search covers the first {allItems.length} of {rosterTotal} questions.
+              </p>
+            )}
+          </div>
+          {searchActive && filteredItems.length === 0 ? (
+            <div className="rounded-[28px] border border-dashed border-slate-300 bg-slate-50/90 py-8 text-center">
+              <p className="text-slate-700">No questions match &ldquo;{searchTerm.trim()}&rdquo;.</p>
+            </div>
+          ) : (
           <ItemListSection
             collectionId={id}
             items={paginatedItems}
@@ -513,6 +545,7 @@ const CollectionDetailPage = () => {
               </>
             )}
           />
+          )}
         </>
       )}
 
