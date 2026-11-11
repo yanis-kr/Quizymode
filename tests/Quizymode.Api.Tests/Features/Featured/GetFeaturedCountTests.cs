@@ -43,4 +43,34 @@ public sealed class GetFeaturedCountTests : ItemTestFixture
         GetFeatured.FeaturedCollectionDto card = result.Value.Collections.Single(c => c.CollectionId == parent.Id);
         card.ItemCount.Should().Be(2, "direct and nested questions count; another user's private question does not");
     }
+
+    [Fact]
+    public async Task Featured_LastModifiedAt_IncludesNestedContent()
+    {
+        Collection parent = new() { Id = Guid.NewGuid(), Name = "Capitals", CreatedBy = "owner", CreatedAt = DateTime.UtcNow, IsPublic = true };
+        Collection child = new() { Id = Guid.NewGuid(), Name = "Europe", CreatedBy = "owner", CreatedAt = DateTime.UtcNow, IsPublic = true };
+        DbContext.Collections.AddRange(parent, child);
+
+        Item direct = await CreateItemWithCategoryAsync("geography", "Direct", "A", new List<string>(), "", isPrivate: false, createdBy: "owner");
+        Item nested = await CreateItemWithCategoryAsync("geography", "Nested", "A", new List<string>(), "", isPrivate: false, createdBy: "owner");
+        DateTime older = new(2026, 1, 1, 0, 0, 0, DateTimeKind.Utc);
+        DateTime newer = new(2026, 6, 1, 0, 0, 0, DateTimeKind.Utc);
+        direct.UpdatedAt = older;
+        nested.UpdatedAt = newer;
+
+        DbContext.CollectionItems.AddRange(
+            new CollectionItem { Id = Guid.NewGuid(), CollectionId = parent.Id, ItemId = direct.Id },
+            new CollectionItem { Id = Guid.NewGuid(), CollectionId = child.Id, ItemId = nested.Id });
+        DbContext.CollectionCollectionMembers.Add(new CollectionCollectionMember { Id = Guid.NewGuid(), ParentId = parent.Id, ChildId = child.Id });
+        DbContext.FeaturedItems.Add(new FeaturedItem
+        {
+            Id = Guid.NewGuid(), Type = FeaturedItemType.Collection, DisplayName = "Capitals", CollectionId = parent.Id, SortOrder = 1, CreatedBy = "admin"
+        });
+        await DbContext.SaveChangesAsync();
+
+        Result<GetFeatured.Response> result = await GetFeatured.HandleAsync(DbContext, CancellationToken.None);
+
+        result.IsSuccess.Should().BeTrue();
+        result.Value.Collections.Single(c => c.CollectionId == parent.Id).LastModifiedAt.Should().Be(newer);
+    }
 }

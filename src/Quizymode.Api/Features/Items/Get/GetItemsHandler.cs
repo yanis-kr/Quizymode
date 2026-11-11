@@ -67,10 +67,11 @@ internal static class GetItemsHandler
                         : null))
                 .ToList();
 
-            // A collection read that reaches past the nested-collection cap says so, instead of silently dropping content (AC 1.16.6).
+            // A collection read cut by a safety limit says so, with the reason, instead of silently dropping content (AC 1.16.7).
             string? viewerId = userContext.IsAuthenticated ? userContext.UserId : null;
-            bool incomplete = request.CollectionId is Guid collectionId
-                && await CollectionScope.IsIncompleteAsync(db, collectionId, viewerId, cancellationToken);
+            string? incompleteReason = request.CollectionId is Guid collectionId && queryBuilder.CollectionHasStructure == true
+                ? await CollectionScope.IncompleteReasonAsync(db, collectionId, viewerId, cancellationToken)
+                : null;
 
             GetItems.Response response = new GetItems.Response(
                 itemResponses,
@@ -78,8 +79,8 @@ internal static class GetItemsHandler
                 request.Page,
                 request.PageSize,
                 (int)Math.Ceiling((double)totalCount / request.PageSize),
-                incomplete,
-                incomplete ? "CollectionLimit" : null);
+                incompleteReason is not null,
+                incompleteReason);
 
             return Result.Success(response);
         }
