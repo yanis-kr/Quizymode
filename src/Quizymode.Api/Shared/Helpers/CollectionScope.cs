@@ -244,8 +244,23 @@ internal static class CollectionScope
     /// topic membership exactly as <see cref="AccessibleMemberItemIds"/> does. Used by picture delivery and reporting so they
     /// cannot disagree with the roster.
     /// </summary>
-    public static Task<bool> ContainsAsync(ApplicationDbContext db, Guid collectionId, Guid itemId, string? viewerId, CancellationToken cancellationToken) =>
-        AccessibleMemberItemIds(db, collectionId, viewerId).AnyAsync(id => id == itemId, cancellationToken);
+    public static async Task<bool> ContainsAsync(ApplicationDbContext db, Guid collectionId, Guid itemId, string? viewerId, CancellationToken cancellationToken)
+    {
+        bool member = await AccessibleMemberItemIds(db, collectionId, viewerId).AnyAsync(id => id == itemId, cancellationToken);
+        if (!member)
+        {
+            return false;
+        }
+
+        // #589: a private item is listed only to the collection's owner or its own creator (AC 1.5.1, I3, AC 1.17).
+        string callerId = viewerId ?? string.Empty;
+        return await db.Items.AnyAsync(
+            i => i.Id == itemId
+                && (!i.IsPrivate
+                    || (callerId.Length > 0 && i.CreatedBy == callerId)
+                    || db.Collections.Any(c => c.Id == collectionId && c.CreatedBy == i.CreatedBy)),
+            cancellationToken);
+    }
 
     /// <summary>A topic member whose path is still live in KeywordRelations (L1 root; L2 under its first keyword).</summary>
     public static Expression<Func<CollectionKeywordMember, bool>> LivePath(ApplicationDbContext db) =>

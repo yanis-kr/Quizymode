@@ -39,6 +39,29 @@ internal static class ItemVisibility
     }
 
     /// <summary>
+    /// Roster rule for the items of a collection read (#589, AC 1.5.1, I3): the same as <see cref="EligibleFor"/>, and a private item
+    /// is listed only to the collection's owner (the owner's private items are listed to every viewer) and to the item's own creator
+    /// (AC 1.17: a viewer's own private matches). No other visitor sees another user's private item in the collection.
+    /// </summary>
+    public static Expression<Func<Item, bool>> CollectionRosterFor(ApplicationDbContext db, Guid collectionId, string? userId)
+    {
+        string callerId = userId ?? string.Empty;
+        bool hasCaller = callerId.Length > 0;
+        return i => ((hasCaller && i.CreatedBy == callerId)
+                || i.ImageReviewState == null
+                || i.ImageReviewState == ItemImageReviewState.Approved)
+            && (!i.IsPrivate
+                || (hasCaller && i.CreatedBy == callerId)
+                || db.Collections.Any(c => c.Id == collectionId && c.CreatedBy == i.CreatedBy));
+    }
+
+    /// <summary>In-memory form of the private-item part of <see cref="CollectionRosterFor"/>.</summary>
+    public static bool IsListedInCollectionOf(bool isPrivate, string createdBy, string? ownerId, string? viewerId) =>
+        !isPrivate
+        || (!string.IsNullOrEmpty(viewerId) && createdBy == viewerId)
+        || createdBy == ownerId;
+
+    /// <summary>
     /// Collection membership rows minus those whose item exists but is hidden from the caller by media eligibility; rows with no
     /// item row are kept, as before. Use for item counts of a collection.
     /// </summary>

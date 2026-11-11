@@ -72,7 +72,11 @@ internal sealed class ItemQueryBuilder
         bool skipVisibilityForCollection = request.CollectionId.HasValue;
         if (skipVisibilityForCollection)
         {
-            query = query.Where(ItemVisibility.EligibleFor(_userContext.IsAuthenticated ? _userContext.UserId : null));
+            // #589: private items of anyone but the collection's owner are not listed (AC 1.5.1, I3).
+            query = query.Where(ItemVisibility.CollectionRosterFor(
+                _db,
+                request.CollectionId!.Value,
+                _userContext.IsAuthenticated ? _userContext.UserId : null));
         }
 
         if (!skipVisibilityForCollection)

@@ -158,6 +158,7 @@ public static class GetFeatured
                 DateTime? lastMod = await db.Items
                     .AsNoTracking()
                     .Where(ItemVisibility.MediaEligible)
+                    .Where(i => !i.IsPrivate || db.Collections.Any(c => c.Id == fi.CollectionId!.Value && c.CreatedBy == i.CreatedBy))
                     .Where(i => memberIds.Contains(i.Id))
                     .Select(i => (DateTime?)(i.UpdatedAt ?? i.CreatedAt))
                     .MaxAsync(cancellationToken);
