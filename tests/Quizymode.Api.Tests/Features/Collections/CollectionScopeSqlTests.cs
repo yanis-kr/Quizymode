@@ -102,6 +102,23 @@ public sealed class CollectionScopeSqlTests : DatabaseTestFixture
         smallCommands.Count(c => c.Contains("CollectionCollectionMembers") && c.Contains("CollectionItems")).Should().BeGreaterThanOrEqualTo(2);
     }
 
+    /// <summary>
+    /// #593: the nested read's SQL text (all six commands) stays at most 2x the main-branch size, measured in characters. Main
+    /// (before #551) sent about 21.7k characters for this shape, so the budget is 43.4k.
+    /// </summary>
+    [Fact]
+    public async Task GetItemsByCollectionId_NestedSqlText_IsAtMostTwiceMain()
+    {
+        const int MainNestedSqlChars = 21_700;
+        Collection root = await SeedAsync(rootItems: 2, nestedItems: 1);
+
+        (IReadOnlyList<string> commands, GetItems.Response response) = await ReadAsync(root);
+
+        response.TotalCount.Should().Be(3);
+        int totalChars = commands.Sum(c => c.Length);
+        totalChars.Should().BeLessThanOrEqualTo(MainNestedSqlChars * 2, "nested SQL text: {0} characters across {1} commands ({2})", totalChars, commands.Count, string.Join(", ", commands.Select(c => c.Length)));
+    }
+
     [Fact]
     public async Task GetItemsByCollectionId_FlatRoot_TakesTheFastPath_AndReturnsTheDirectItems()
     {

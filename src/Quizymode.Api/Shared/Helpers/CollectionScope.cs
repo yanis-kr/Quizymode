@@ -66,19 +66,17 @@ internal static class CollectionScope
     // walk's frontier and the SQL grows linearly with the depth. The rank runs only after the cheap count says the parent is over 500 rows.
 
     /// <summary>Child links are ranked with the topic rows of their parent.</summary>
+    // A parent with at most 500 rows has every rank below 500, so the rank check alone decides. Dropping the total-count branch
+    // keeps the same rows and halves the SQL text of each predicate (#593).
     private static Expression<Func<CollectionCollectionMember, bool>> LinkKept(ApplicationDbContext db) =>
-        m => db.CollectionCollectionMembers.Count(o => o.ParentId == m.ParentId)
-                + db.CollectionKeywordMembers.Count(o => o.ParentId == m.ParentId) <= CollectionMembers.MaxMembershipRows
-            || db.CollectionCollectionMembers.Count(o => o.ParentId == m.ParentId
+        m => db.CollectionCollectionMembers.Count(o => o.ParentId == m.ParentId
                     && (o.AddedAt < m.AddedAt || (o.AddedAt == m.AddedAt && o.Id.CompareTo(m.Id) < 0)))
                 + db.CollectionKeywordMembers.Count(o => o.ParentId == m.ParentId
                     && (o.AddedAt < m.AddedAt || (o.AddedAt == m.AddedAt && o.Id.CompareTo(m.Id) < 0)))
                 < CollectionMembers.MaxMembershipRows;
 
     private static Expression<Func<CollectionKeywordMember, bool>> TopicKept(ApplicationDbContext db) =>
-        m => db.CollectionCollectionMembers.Count(o => o.ParentId == m.ParentId)
-                + db.CollectionKeywordMembers.Count(o => o.ParentId == m.ParentId) <= CollectionMembers.MaxMembershipRows
-            || db.CollectionCollectionMembers.Count(o => o.ParentId == m.ParentId
+        m => db.CollectionCollectionMembers.Count(o => o.ParentId == m.ParentId
                     && (o.AddedAt < m.AddedAt || (o.AddedAt == m.AddedAt && o.Id.CompareTo(m.Id) < 0)))
                 + db.CollectionKeywordMembers.Count(o => o.ParentId == m.ParentId
                     && (o.AddedAt < m.AddedAt || (o.AddedAt == m.AddedAt && o.Id.CompareTo(m.Id) < 0)))
@@ -87,9 +85,6 @@ internal static class CollectionScope
     /// <summary>Items of a nested collection fill the budget left after its child links and topic rows. The root's items are never cut.</summary>
     private static Expression<Func<CollectionItem, bool>> ItemRowKept(ApplicationDbContext db, Guid rootId) =>
         ci => ci.CollectionId == rootId
-            || db.CollectionItems.Count(o => o.CollectionId == ci.CollectionId)
-                + db.CollectionCollectionMembers.Count(o => o.ParentId == ci.CollectionId)
-                + db.CollectionKeywordMembers.Count(o => o.ParentId == ci.CollectionId) <= CollectionMembers.MaxMembershipRows
             || db.CollectionItems.Count(o => o.CollectionId == ci.CollectionId
                     && (o.AddedAt < ci.AddedAt || (o.AddedAt == ci.AddedAt && o.Id.CompareTo(ci.Id) < 0)))
                 < CollectionMembers.MaxMembershipRows
@@ -103,31 +98,34 @@ internal static class CollectionScope
     /// A link past its parent's membership-row budget is not followed.
     /// </summary>
     public static IQueryable<Guid> AccessibleCollectionIds(ApplicationDbContext db, Guid rootId, string? viewerId) =>
-        Walk(db, rootId, viewerId, out _);
+        Walk(db, rootId, viewerId);
 
-    private static IQueryable<Guid> Walk(ApplicationDbContext db, Guid rootId, string? viewerId, out IQueryable<Guid> lastLevel)
+    /// <summary>
+    /// Every collection reachable from the root in at most <see cref="CollectionMembers.MaxDepth"/> hops. Each hop is
+    /// root ∪ children(previous set), so the set at hop k is the union of the exact-depth sets 0..k. Each hop's SQL text
+    /// embeds the previous set once (not once per depth), which halves the walk's text against a union of exact levels (#593).
+    /// </summary>
+    private static IQueryable<Guid> Walk(ApplicationDbContext db, Guid rootId, string? viewerId)
     {
         Expression<Func<CollectionCollectionMember, bool>> visible = VisibleChildLink(db, viewerId);
         Expression<Func<CollectionCollectionMember, bool>> kept = LinkKept(db);
 
-        IQueryable<Guid> all = db.Collections.Where(c => c.Id == rootId).Select(c => c.Id);
-        IQueryable<Guid> level = all;
+        IQueryable<Guid> root = db.Collections.Where(c => c.Id == rootId).Select(c => c.Id);
+        IQueryable<Guid> reached = root;
 
         for (int depth = 1; depth <= CollectionMembers.MaxDepth; depth++)
         {
-            IQueryable<Guid> frontier = level;
-            IQueryable<Guid> next = db.CollectionCollectionMembers
+            IQueryable<Guid> frontier = reached;
+            IQueryable<Guid> children = db.CollectionCollectionMembers
                 .Where(m => frontier.Contains(m.ParentId))
                 .Where(visible)
                 .Where(kept)
                 .Select(m => m.ChildId);
 
-            all = all.Union(next);
-            level = next;
+            reached = root.Union(children);
         }
 
-        lastLevel = level;
-        return all;
+        return reached;
     }
 
     /// <summary>
@@ -149,7 +147,7 @@ internal static class CollectionScope
     /// </summary>
     public static async Task<string?> IncompleteReasonAsync(ApplicationDbContext db, Guid rootId, string? viewerId, CancellationToken cancellationToken)
     {
-        IQueryable<Guid> accessible = Walk(db, rootId, viewerId, out IQueryable<Guid> lastLevel);
+        IQueryable<Guid> accessible = Walk(db, rootId, viewerId);
         IOrderedQueryable<Guid> ordered = CapOrder(accessible, rootId);
         IQueryable<Guid> capped = ordered.Take(CollectionMembers.MaxReadCollections);
         Expression<Func<CollectionCollectionMember, bool>> visible = VisibleChildLink(db, viewerId);
@@ -162,8 +160,10 @@ internal static class CollectionScope
             {
                 CollectionLimit = ordered.Skip(CollectionMembers.MaxReadCollections).Any(),
                 RowLimit = capped.Any(isOverfull),
+                // A visible, kept link from a node reached within the walk whose child was not reached. Parents above the last level
+                // always reach their children, so this is the same as checking only the last level.
                 DepthLimit = db.CollectionCollectionMembers
-                    .Where(m => lastLevel.Contains(m.ParentId))
+                    .Where(m => accessible.Contains(m.ParentId))
                     .Where(visible)
                     .Where(kept)
                     .Any(m => !accessible.Contains(m.ChildId))
