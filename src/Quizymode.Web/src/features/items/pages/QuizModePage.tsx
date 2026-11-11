@@ -144,6 +144,7 @@ const QuizModePageContent = () => {
     target === "test" ? `${studySearch}${studySearch ? "&" : "?"}mode=test` : studySearch;
   const quizItemSearch = searchForMode(mode);
   const { isAuthenticated, isLoading: isAuthLoading, userId } = useAuth();
+  const [guestOptionsOpen, setGuestOptionsOpen] = useState(false);
   const identityKey = isAuthenticated ? `user:${userId ?? "unknown"}` : "guest";
   const previousIdentityKey = useRef(identityKey);
   /** Size of the saved run for this URL scope (AC 3.6.12); 10 when absent or when items come from the Categories list. */
@@ -1239,7 +1240,7 @@ const QuizModePageContent = () => {
 
   // AC 3.18.3: while a Test is running the List/Explore/Sets switch is hidden so the answer cannot be reached.
   const showScopeBar = !testInProgress;
-  const modeControls = (
+  const optionsRow = (
     <div className="flex w-full flex-wrap items-center gap-x-4 gap-y-2">
       <QuizModeToggle mode={mode} onChange={requestModeChange} />
       {!collectionId && (
@@ -1257,6 +1258,23 @@ const QuizModePageContent = () => {
           />
         </label>
       )}
+    </div>
+  );
+  // #567: signed-out visitors see the mode switch and quiz size behind one Options button (AC 3.18.12).
+  const modeControls = isAuthenticated ? (
+    optionsRow
+  ) : (
+    <div className="w-full">
+      <button
+        type="button"
+        aria-expanded={guestOptionsOpen}
+        aria-controls="quiz-guest-options"
+        onClick={() => setGuestOptionsOpen((open) => !open)}
+        className="min-h-[44px] rounded-md border border-gray-300 bg-white px-3 py-1.5 text-sm font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500"
+      >
+        Options
+      </button>
+      {guestOptionsOpen && <div id="quiz-guest-options" className="mt-2">{optionsRow}</div>}
     </div>
   );
   const studyFooter = collectionId ? (
