@@ -15,7 +15,28 @@ import type {
   CollectionBookmarkedByResponse,
 } from "@/types/api";
 
+/** A child collection the caller can open (GET /collections/{id}/collections). Hidden children have no name or id. */
+export interface ChildCollection {
+  id: string;
+  name: string;
+  isPublic: boolean;
+  hiddenFromOthers: boolean;
+  addedAt: string;
+}
+
+export interface ChildCollectionsResponse {
+  children: ChildCollection[];
+  hiddenCollectionCount: number;
+}
+
 export const collectionsApi = {
+  listChildCollections: async (collectionId: string): Promise<ChildCollectionsResponse> => {
+    const response = await apiClient.get<ChildCollectionsResponse>(
+      `/collections/${collectionId}/collections`
+    );
+    return response.data;
+  },
+
   getAll: async (): Promise<CollectionsResponse> => {
     const response = await apiClient.get<CollectionsResponse>("/collections");
     return response.data;

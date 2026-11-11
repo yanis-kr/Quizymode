@@ -19,6 +19,8 @@ import { useShowAnswers } from "@/hooks/useShowAnswers";
 import { useListenAll } from "@/hooks/useListenAll";
 import { SpeakerWaveIcon, PauseIcon } from "@heroicons/react/24/outline";
 import { CollectionVisibilityToggles } from "../components/CollectionVisibilityToggles";
+import { CollectionBreadcrumb, type CollectionTrailEntry } from "../components/CollectionBreadcrumb";
+import { ChildCollectionsSection } from "../components/ChildCollectionsSection";
 import { ShareCollectionButton } from "../components/ShareCollectionButton";
 import { CollectionExportControls } from "../components/CollectionExportControls";
 import { CollectionPrintView } from "../components/CollectionPrintView";
@@ -158,6 +160,17 @@ const CollectionDetailPage = () => {
 
   const fromFeatured = searchParams.get("from") === "featured";
 
+  // Breadcrumb trail for nested collections, passed as router state when drilling down (#559).
+  const routeTrail = (location.state as { trail?: CollectionTrailEntry[] } | null)?.trail;
+  const trail: CollectionTrailEntry[] = Array.isArray(routeTrail) ? routeTrail : [];
+  const { data: childCollections } = useQuery({
+    queryKey: ["collections", id, "children"],
+    queryFn: () => collectionsApi.listChildCollections(id as string),
+    enabled: Boolean(id),
+  });
+  const trailForChildren: CollectionTrailEntry[] =
+    id && collectionData ? [...trail, { id, name: collectionData.name }] : trail;
+
   const isLoading = isLoadingCollection || isLoadingItems;
   const error = collectionError || itemsError;
 
@@ -192,6 +205,16 @@ const CollectionDetailPage = () => {
           <ChevronLeftIcon className="h-4 w-4" />
           Back to Featured
         </Link>
+      )}
+      {collectionData && trail.length > 0 && (
+        <CollectionBreadcrumb trail={trail} currentName={collectionData.name} />
+      )}
+      {childCollections && (
+        <ChildCollectionsSection
+          children={childCollections.children}
+          hiddenCollectionCount={childCollections.hiddenCollectionCount}
+          trailForChildren={trailForChildren}
+        />
       )}
       {allItems.length > 0 && (
         <ScopeSecondaryBar
