@@ -57,7 +57,8 @@ internal static class CollectionCardCounts
         }
 
         // Accessible collections per root: the root plus its visible descendants within the depth limit.
-        Dictionary<Guid, HashSet<Guid>> reach = roots.ToDictionary(r => r, r => AccessibleFrom(r, visibleChildren));
+        // The read cap (AC 1.16.7) applies to every card too, so counts match the roster and the detail read: the root, then the rest by id.
+        Dictionary<Guid, HashSet<Guid>> reach = roots.ToDictionary(r => r, r => Capped(r, AccessibleFrom(r, visibleChildren)));
         List<Guid> allCollections = reach.Values.SelectMany(s => s).Distinct().ToList();
 
         // 2. Direct questions of every accessible collection that the viewer may see: public and media-eligible, or the viewer's own (#400).
@@ -126,6 +127,14 @@ internal static class CollectionCardCounts
 
         return result;
     }
+
+    /// <summary>The root first, then the rest by id, at most <see cref="CollectionMembers.MaxReadCollections"/> (same order as CollectionScope).</summary>
+    private static HashSet<Guid> Capped(Guid root, HashSet<Guid> accessible) =>
+        accessible
+            .OrderBy(id => id == root ? 0 : 1)
+            .ThenBy(id => id)
+            .Take(CollectionMembers.MaxReadCollections)
+            .ToHashSet();
 
     /// <summary>The root and its visible descendants, walked at most <see cref="CollectionMembers.MaxDepth"/> link levels.</summary>
     private static HashSet<Guid> AccessibleFrom(Guid root, Dictionary<Guid, List<Guid>> visibleChildren)

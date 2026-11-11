@@ -1337,7 +1337,8 @@ const QuizModePageContent = () => {
           </div>
           <div className="flex flex-wrap items-center gap-4">
             <div className="text-sm text-gray-600">
-              {collectionInfo.itemCount ?? items.length} items
+              {/* AC 1.5.9: the header counts the playable roster the quiz plays, the same list as the run (not the detail count). */}
+              {collectionLoading ? "Loading" : playableItems.length} items
             </div>
             {ratingData && (
               <div className="flex items-center gap-2">

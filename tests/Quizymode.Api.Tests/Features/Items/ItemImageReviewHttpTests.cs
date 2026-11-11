@@ -948,6 +948,28 @@ public sealed class ItemImageReviewHttpTests : ItemTestFixture, IAsyncLifetime
 
     // ---- delivery routes: authorization matrix (AC 3.25.5) -----------------------------------------------------------
 
+    [Fact]
+    public async Task CollectionRoute_ServesANestedApprovedPicture_AndRefusesAnItemOutsideTheCollection()
+    {
+        // AC 1.16c.1: a question in a nested public collection is an accessible member of the parent, so its approved picture is served there.
+        Item nested = await SeedPictureItemAsync(ItemImageReviewState.Approved);
+        Item outside = await SeedPictureItemAsync(ItemImageReviewState.Approved);
+        Collection parent = new() { Id = Guid.NewGuid(), Name = $"parent-{Guid.NewGuid():N}", CreatedBy = Owner, CreatedAt = DateTime.UtcNow, IsPublic = true };
+        Collection child = new() { Id = Guid.NewGuid(), Name = $"child-{Guid.NewGuid():N}", CreatedBy = Owner, CreatedAt = DateTime.UtcNow, IsPublic = true };
+        DbContext.Collections.AddRange(parent, child);
+        DbContext.CollectionCollectionMembers.Add(new CollectionCollectionMember { Id = Guid.NewGuid(), ParentId = parent.Id, ChildId = child.Id });
+        DbContext.CollectionItems.Add(new CollectionItem { Id = Guid.NewGuid(), CollectionId = child.Id, ItemId = nested.Id, AddedAt = DateTime.UtcNow });
+        await DbContext.SaveChangesAsync();
+
+        using HttpResponseMessage served = await SendRawAsync(HttpMethod.Get, $"/collections/{parent.Id}/items/{nested.Id}/images/question");
+        served.StatusCode.Should().Be(HttpStatusCode.OK);
+        MediaAsset asset = await DbContext.MediaAssets.AsNoTracking().SingleAsync(a => a.Id == nested.QuestionImageAssetId);
+        (await served.Content.ReadAsByteArrayAsync()).Should().Equal(_store.Objects[asset.ObjectKey!]);
+
+        using HttpResponseMessage notMember = await SendRawAsync(HttpMethod.Get, $"/collections/{parent.Id}/items/{outside.Id}/images/question");
+        notMember.StatusCode.Should().Be(HttpStatusCode.NotFound);
+    }
+
     public static TheoryData<string, string> ItemRouteMatrix()
     {
         TheoryData<string, string> data = [];
