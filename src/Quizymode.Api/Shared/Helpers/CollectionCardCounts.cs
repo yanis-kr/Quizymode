@@ -60,10 +60,11 @@ internal static class CollectionCardCounts
         Dictionary<Guid, HashSet<Guid>> reach = roots.ToDictionary(r => r, r => AccessibleFrom(r, visibleChildren));
         List<Guid> allCollections = reach.Values.SelectMany(s => s).Distinct().ToList();
 
-        // 2. Direct questions of every accessible collection that the viewer may see (creator, or media-eligible, #400).
+        // 2. Direct questions of every accessible collection that the viewer may see: public and media-eligible, or the viewer's own (#400).
+        // A private question of another user is never counted, even inside a public collection (AC 1.17, Invariant I5).
         List<CollectionItem> directRows = await db.CollectionItems
             .Where(ci => allCollections.Contains(ci.CollectionId))
-            .Where(ci => db.Items.Where(ItemVisibility.EligibleFor(viewerId)).Any(i => i.Id == ci.ItemId))
+            .Where(ci => db.Items.Where(ItemVisibility.VisibleTo(viewerId)).Any(i => i.Id == ci.ItemId))
             .ToListAsync(cancellationToken);
         Dictionary<Guid, List<Guid>> directItemsByCollection = directRows
             .GroupBy(ci => ci.CollectionId)

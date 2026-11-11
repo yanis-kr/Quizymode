@@ -240,6 +240,20 @@ public static class GlobalSearch
             }
         }
 
+        // A collection's count here is the lead total that GET /collections/{id} reports (#555 part 2b, AC 1.16c.3).
+        // The SQL still ranks by the direct count; only the number shown changes.
+        if (collections is not null && collections.Results.Count > 0)
+        {
+            string? viewerId = userContext.IsAuthenticated ? userContext.UserId : null;
+            Dictionary<Guid, CollectionCardCounts.Counts> leadCounts = await CollectionCardCounts.ForCollectionsAsync(
+                db, collections.Results.Select(c => c.Id).ToList(), viewerId, cancellationToken);
+            collections = new Group<CollectionResult>(
+                collections.Results
+                    .Select(c => c with { ItemCount = leadCounts.TryGetValue(c.Id, out CollectionCardCounts.Counts? counts) ? counts.ItemCount : 0 })
+                    .ToList(),
+                collections.HasMore);
+        }
+
         return Result.Success(new Response(q, new Groups(categories, subcategories, collections, items, mine)));
     }
 
