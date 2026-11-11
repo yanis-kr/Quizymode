@@ -578,6 +578,26 @@ describe("QuizModePage", () => {
     expect(screen.queryByText(legacy.question)).not.toBeInTheDocument();
   });
 
+  it("counts the playable roster in the collection quiz header, not the detail itemCount (#555, AC 1.5.9)", async () => {
+    // The detail says 3 (for example, a nested question), but only 1 playable item is in the roster the quiz plays.
+    vi.mocked(collectionsApi.getById).mockResolvedValueOnce({
+      id: "collection-1",
+      name: "Practice Set",
+      description: "Three questions",
+      itemCount: 3,
+      createdBy: "user-1",
+      createdAt: "2026-10-15T00:00:00Z",
+      isPublic: true,
+    } as Awaited<ReturnType<typeof collectionsApi.getById>>);
+    const legacy = { ...secondItem, id: "item-legacy", incorrectAnswers: ["  ", ""] };
+    vi.mocked(collectionsApi.getItems).mockResolvedValueOnce({ items: [legacy, item] });
+    renderPage("/quiz/collections/collection-1/practice+set");
+
+    expect(await screen.findByText("What is 2 + 2?")).toBeInTheDocument();
+    expect(screen.getByText("1 items")).toBeInTheDocument();
+    expect(screen.queryByText("3 items")).not.toBeInTheDocument();
+  });
+
   it("shows the empty state when every collection item is unplayable", async () => {
     // AC 3.6.17
     const legacy = { ...item, incorrectAnswers: [] };
