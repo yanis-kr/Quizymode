@@ -56,6 +56,21 @@ describe("AddToCollectionDialog", () => {
     expect(screen.getByRole("dialog", { name: "Add to collection" })).toBeInTheDocument();
   });
 
+  it("renders at the body, outside a transformed ancestor, so it is not clipped", () => {
+    const client = new QueryClient({ defaultOptions: { queries: { retry: false } } });
+    const { container } = render(
+      <QueryClientProvider client={client}>
+        <div style={{ transform: "translateZ(0)" }} data-testid="transformed">
+          <AddToCollectionDialog open onClose={vi.fn()} collectionId="current" ancestorIds={[]} />
+        </div>
+      </QueryClientProvider>
+    );
+
+    const dialog = screen.getByRole("dialog", { name: "Add to collection" });
+    expect(container.querySelector("[data-testid='transformed']")).not.toContainElement(dialog);
+    expect(document.body).toContainElement(dialog);
+  });
+
   it("closes on Escape", async () => {
     const { onClose } = renderDialog();
 

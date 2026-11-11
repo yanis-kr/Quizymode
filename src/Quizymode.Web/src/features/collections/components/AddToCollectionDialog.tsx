@@ -1,4 +1,5 @@
 import { useEffect, useMemo, useRef, useState, type KeyboardEvent as ReactKeyboardEvent } from "react";
+import { createPortal } from "react-dom";
 import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
 import { collectionsApi } from "@/api/collections";
 import { categoriesApi } from "@/api/categories";
@@ -71,7 +72,8 @@ export function AddToCollectionDialog({ open, onClose, collectionId, ancestorIds
 
   const activeTab = TABS.find((t) => t.id === tab) ?? TABS[0];
 
-  return (
+  // Portaled to the body so no transformed ancestor can clip the full-screen layer below sm.
+  return createPortal(
     <div className="fixed inset-0 z-50 flex items-stretch justify-center bg-slate-900/40 sm:items-center sm:p-4" role="presentation">
       <div
         ref={dialogRef}
@@ -123,7 +125,8 @@ export function AddToCollectionDialog({ open, onClose, collectionId, ancestorIds
           {tab === "collections" && <CollectionsPanel collectionId={collectionId} ancestorIds={ancestorIds} />}
         </div>
       </div>
-    </div>
+    </div>,
+    document.body
   );
 }
 
