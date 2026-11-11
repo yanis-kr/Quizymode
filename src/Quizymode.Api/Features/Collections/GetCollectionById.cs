@@ -84,8 +84,8 @@ public static class GetCollectionById
             // Direct child links the caller cannot open (#554). Counts links only: no names, ids, questions or descendants.
             int hiddenCollectionCount = await CountHiddenChildLinksAsync(db, id, viewerId, cancellationToken);
 
-            // Nested content beyond the read cap is left out of the reads; say so (AC 1.16.6).
-            bool incomplete = await CollectionScope.IsIncompleteAsync(db, id, viewerId, cancellationToken);
+            // Content left out by a safety limit is reported with its reason (AC 1.16.7).
+            string? incompleteReason = await CollectionScope.IncompleteReasonAsync(db, id, viewerId, cancellationToken);
 
             Response response = new(
                 collection.Id.ToString(),
@@ -97,8 +97,8 @@ public static class GetCollectionById
                 collection.IsPublic,
                 collection.IsDiscoverable,
                 hiddenCollectionCount,
-                incomplete,
-                incomplete ? "CollectionLimit" : null);
+                incompleteReason is not null,
+                incompleteReason);
 
             return Result.Success(response);
         }
@@ -138,11 +138,10 @@ public static class GetCollectionById
     /// </summary>
     internal static Task<int> CountHiddenChildLinksAsync(ApplicationDbContext db, Guid parentId, string? viewerId, CancellationToken cancellationToken)
     {
-        string callerId = viewerId ?? string.Empty;
-        bool hasCaller = callerId.Length > 0;
-        return db.CollectionCollectionMembers.CountAsync(m => m.ParentId == parentId
-            && db.Collections.Any(c => c.Id == m.ChildId && !c.IsPublic && !(hasCaller && c.CreatedBy == callerId)),
-            cancellationToken);
+        return db.CollectionCollectionMembers
+            .Where(m => m.ParentId == parentId)
+            .Where(CollectionScope.HiddenChildLink(db, viewerId))
+            .CountAsync(cancellationToken);
     }
 
     public sealed class FeatureRegistration : IFeatureRegistration

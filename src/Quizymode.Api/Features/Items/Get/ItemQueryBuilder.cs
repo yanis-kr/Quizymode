@@ -19,6 +19,12 @@ internal sealed class ItemQueryBuilder
     private readonly IUserContext _userContext;
     private readonly CancellationToken _cancellationToken;
 
+    /// <summary>
+    /// Set by <see cref="BuildQueryAsync"/> when it filtered by collection: false for a flat collection (no child links or topic rows),
+    /// which cannot be incomplete. Null when the request has no collection filter.
+    /// </summary>
+    public bool? CollectionHasStructure { get; private set; }
+
     public ItemQueryBuilder(
         ApplicationDbContext db,
         IUserContext userContext,
@@ -602,7 +608,10 @@ internal sealed class ItemQueryBuilder
         // An empty collection yields an empty subquery, so no separate branch is needed.
         // Direct items plus items of accessible nested collections (#552); a private child hidden from the viewer contributes nothing.
         string? viewerId = _userContext.IsAuthenticated ? _userContext.UserId : null;
-        IQueryable<Guid> memberItemIds = CollectionScope.AccessibleMemberItemIds(_db, request.CollectionId.Value, viewerId);
+        // A flat collection (no child links, no topic rows) skips the walk and the row budget.
+        bool hasStructure = await CollectionScope.HasStructureAsync(_db, request.CollectionId.Value, _cancellationToken);
+        CollectionHasStructure = hasStructure;
+        IQueryable<Guid> memberItemIds = CollectionScope.RosterItemIds(_db, request.CollectionId.Value, viewerId, hasStructure);
 
         // Filter to items in the collection
         // Note: Visibility filter is already applied before this, so only visible items will be included

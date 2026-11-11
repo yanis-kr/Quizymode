@@ -153,10 +153,13 @@ public static class GetFeatured
                     continue;
                 }
 
-                DateTime? lastMod = await db.CollectionItems
+                // Direct, nested and live-topic content, as the collection's roster reads it for an anonymous viewer (AC 1.16c.3).
+                IQueryable<Guid> memberIds = CollectionScope.AccessibleMemberItemIds(db, fi.CollectionId.Value, null);
+                DateTime? lastMod = await db.Items
                     .AsNoTracking()
-                    .Where(ci => ci.CollectionId == fi.CollectionId.Value)
-                    .Join(db.Items.AsNoTracking().Where(ItemVisibility.MediaEligible), ci => ci.ItemId, i => i.Id, (_, i) => (DateTime?)(i.UpdatedAt ?? i.CreatedAt))
+                    .Where(ItemVisibility.MediaEligible)
+                    .Where(i => memberIds.Contains(i.Id))
+                    .Select(i => (DateTime?)(i.UpdatedAt ?? i.CreatedAt))
                     .MaxAsync(cancellationToken);
 
                 int itemCount = leadCounts.TryGetValue(fi.CollectionId.Value, out CollectionCardCounts.Counts? counts) ? counts.ItemCount : 0;
