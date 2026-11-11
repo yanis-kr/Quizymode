@@ -252,6 +252,7 @@ Terms used in this document with a specific meaning:
 - **AC 1.6.7** [Authenticated] **Given** I call `POST /collections/{collectionId}/items/bulk`, **when** `itemIds` is omitted or null, is an empty array, or contains the empty GUID, **then** the API returns 400 with `ItemIds is required.` / `At least one ItemId is required.` / `All ItemIds must be valid GUIDs.`, adds nothing, and never exposes an internal exception message; body validation runs before the collection lookup and ownership check. Behavior change: an empty array and an array containing the empty GUID previously returned 200 (0 added / skipped) and now return 400 (#273).
 - **AC 1.6.8** [Authenticated] **Given** I call `POST /collections/{collectionId}/items`, **when** `itemId` is omitted or the empty GUID, **then** the API returns 400 `ItemId is required.` and adds nothing; validation runs before the lookup and ownership checks. Behavior change: this previously returned 404 (#281).
 - **AC 1.6.9** [Owner] **Given** I call `POST /collections/{collectionId}/items` or `/items/bulk` for my collection, **then** an item can be added only if it is public, created by me, or published by its creator through a public collection owned by that creator. Otherwise the single add returns the same 404 `Item.NotFound` as a missing item (checked before the idempotent already-in-collection result), and bulk add skips the item (counted in `skippedCount`, absent from `addedItemIds`). Collections owned by me or by a third party never make another user's private item addable, and admins get no exception (AC 1.6.3). Copies made earlier survive later revocation of the item's visibility (#285). An item whose uploaded pictures are not `Approved` can be added only by its creator (AC 3.25.7), even when it is public or published through a public collection; for anyone else the single add returns the same 404 and bulk add skips it.
+- **AC 1.6.10** [Owner] **Given** I am on a collection I own, **when** I choose "Remove from collection" on a question, **then** the confirmation says the question is not deleted and that only its link to this collection is removed. The question stays in other collections and in my questions. (#560)
 
 **UI**
 
@@ -285,6 +286,7 @@ Terms used in this document with a specific meaning:
 **UI**
 
 - **AC 1.8.3** [Owner] **Given** I am on the collection page as owner, **when** I delete the collection (with confirmation), **then** the UI calls the API and redirects or updates the list on success; errors are shown per API response.
+- **AC 1.8.4** [Owner] **Given** I delete a collection on the collections page, **then** the confirmation names the collection and says that its links to questions, topics and other collections are removed and that no questions, topics or other collections are deleted. The dialog no longer says "This action cannot be undone." (#560)
 
 ---
 
