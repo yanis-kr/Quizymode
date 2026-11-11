@@ -17,6 +17,7 @@ import {
   resendSignUpCode,
 } from "aws-amplify/auth";
 import { usersApi } from "@/api/users";
+import { devTestIdentity } from "@/api/devTestAuth";
 import {
   SignInSessionError,
   SignInStepRequiredError,
@@ -136,6 +137,17 @@ export const AuthProvider = ({ children }: AuthProviderProps) => {
 
   /** Returns true only when a verified, unexpired authenticated session was established. */
   const refreshAuth = useCallback(async (): Promise<boolean> => {
+    // AC 7.8.3: Development test sign-in (VITE_DEV_TEST_USER). Never reached in production builds.
+    const devIdentity = devTestIdentity();
+    if (devIdentity) {
+      setIsAuthenticated(true);
+      setUserId(devIdentity.userId);
+      setUsername(devIdentity.userId);
+      setEmail(null);
+      setIsAdmin(devIdentity.isAdmin);
+      return true;
+    }
+
     try {
       // Use forceRefresh to ensure we get fresh tokens if refresh token is available
       const session = await fetchAuthSession({ forceRefresh: false });

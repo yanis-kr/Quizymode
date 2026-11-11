@@ -2064,6 +2064,8 @@ Lets local runs and ephemeral E2E environments call signed-in endpoints without 
 
 - **AC 7.8.1** [Developer] **Given** the API runs in the Development environment, **when** a request sends `Authorization: DevTest <userId>` (optionally followed by `admin`), **then** the request is authenticated as `<userId>`, and the admin group is granted only when `admin` is present. The user id is letters, digits, `-` or `_`, at most 64 characters. Any other form of the header is not authenticated by this scheme. [verify: unit]
 - **AC 7.8.2** [Developer] **Given** the API runs in any environment other than Development, **then** the `DevTest` scheme is not registered at all. [verify: unit]
+- **AC 7.8.3** [Developer] **Given** a development build of the web app (Vite dev server) with `VITE_DEV_TEST_USER` set, **when** it calls the API, **then** every request sends `Authorization: DevTest <userId>` (plus `admin` when configured) instead of a Cognito bearer token, and the app treats that user as signed in. Production builds do not contain this path, because it is gated on Vite's development flag. The user id follows the same rule as AC 7.8.1. [verify: unit]
+- **AC 7.8.4** [Developer] **Given** the CI job `e2e` starts the API in Development and the web dev server with `VITE_DEV_TEST_USER=ci-user`, **when** `npx playwright test --project=e2e-ci` runs, **then** `GET /api/users/me` with the DevTest identity returns 200, and every API call the page makes carries that identity. Traces and screenshots of the run are uploaded as artifacts. The green run of that job is the evidence for AC 7.8.4 and for every signed-in AC covered by an `@e2e` test. [verify: e2e]
 
 ## AC 8. Performance characteristics
 

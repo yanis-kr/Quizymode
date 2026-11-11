@@ -366,3 +366,105 @@ jobs:
             SOURCE_REVISION_ID=${{ github.sha }}
           cache-from: type=gha
           cache-to: type=gha,mode=max
+
+  # AC 7.8.4: signed-in E2E on an ephemeral Development stack (Postgres service, API, Vite). No Cognito, no secrets.
+  e2e:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    permissions:
+      contents: read
+    services:
+      postgres:
+        image: postgres:16
+        env:
+          POSTGRES_USER: postgres
+          POSTGRES_PASSWORD: postgres
+          POSTGRES_DB: quizymode
+        ports:
+          - 5432:5432
+        options: >-
+          --health-cmd "pg_isready -U postgres"
+          --health-interval 5s
+          --health-timeout 5s
+          --health-retries 20
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v7
+
+      - name: Setup Node
+        uses: actions/setup-node@v7
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: |
+            package-lock.json
+            src/Quizymode.Web/package-lock.json
+
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v6
+        with:
+          dotnet-version: 10.0.x
+
+      - name: Install dependencies
+        run: |
+          npm ci
+          npm ci --prefix src/Quizymode.Web
+          npx playwright install --with-deps chromium
+
+      - name: Create HTTPS dev certificate (the Vite proxy targets https://localhost:8082)
+        run: dotnet dev-certs https
+
+      - name: Start API in Development (DevTest scheme on)
+        env:
+          ASPNETCORE_ENVIRONMENT: Development
+          ASPNETCORE_URLS: https://localhost:8082
+          APP_Authentication__Cognito__Authority: https://cognito-idp.us-east-1.amazonaws.com/us-east-1_CIDUMMY
+          APP_Authentication__Cognito__ClientId: ci-dummy
+        run: |
+          dotnet run --project src/Quizymode.Api/Quizymode.Api.csproj -c Debug > api.log 2>&1 &
+          for i in $(seq 1 90); do
+            if curl -sk https://localhost:8082/health | grep -q Healthy; then echo "API healthy"; exit 0; fi
+            sleep 2
+          done
+          echo "API did not become healthy"; tail -n 80 api.log; exit 1
+
+      - name: Start web dev server with the DevTest identity
+        env:
+          VITE_DEV_TEST_USER: ci-user
+          VITE_COGNITO_USER_POOL_ID: us-east-1_CIDUMMY
+          VITE_COGNITO_CLIENT_ID: ci-dummy
+          VITE_COGNITO_REGION: us-east-1
+        working-directory: src/Quizymode.Web
+        run: |
+          npm run dev -- --port 7000 --strictPort > vite.log 2>&1 &
+          for i in $(seq 1 60); do
+            if curl -s http://localhost:7000/ > /dev/null; then echo "web healthy"; exit 0; fi
+            sleep 2
+          done
+          echo "web server did not start"; tail -n 80 vite.log; exit 1
+
+      - name: Run E2E tests
+        env:
+          PLAYWRIGHT_BASE_URL: http://localhost:7000
+        run: npx playwright test --project=e2e-ci
+
+      - name: Upload traces and screenshots
+        if: always()
+        uses: actions/upload-artifact@v7
+        with:
+          name: e2e-ci-${{ github.run_number }}
+          path: |
+            playwright/test-results/**
+            playwright-report/**
+          if-no-files-found: warn
+          retention-days: 14
+
+      - name: Upload API and web logs
+        if: failure()
+        uses: actions/upload-artifact@v7
+        with:
+          name: e2e-ci-logs-${{ github.run_number }}
+          path: |
+            api.log
+            src/Quizymode.Web/vite.log
+          if-no-files-found: warn
