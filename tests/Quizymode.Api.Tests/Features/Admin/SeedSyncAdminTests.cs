@@ -379,6 +379,99 @@ public sealed class SeedSyncAdminTests : ItemTestFixture
 
     // --- #273: ValidateManifest must not throw on null lists ---
 
+    [Fact]
+    public async Task ApplyAsync_LinkOnlyCollection_IsAppliedAndRerunIsIdempotent()
+    {
+        await EnsureGeographyPublicWithNavAsync("seeder");
+
+        Guid itemId = Guid.Parse("12345678-1234-1234-1234-123456789013");
+        Guid childId = Guid.Parse("87654321-4321-4321-4321-210987654322");
+        Guid parentId = Guid.Parse("87654321-4321-4321-4321-210987654323");
+
+        SeedSyncAdmin.Request request = BuildRequest(
+            [BuildItem(itemId, "Which city is the capital of Hungary?", "Budapest", ["Debrecen", "Pecs"])],
+            [
+                new SeedSyncAdmin.SeedCollectionRequest(childId, "Child", null, [itemId]),
+                // Parent has no itemIds: only the nested collection link (#556).
+                new SeedSyncAdmin.SeedCollectionRequest(parentId, "Parent", null, CollectionIds: [childId])
+            ]);
+
+        (await _service.ApplyAsync(request, CancellationToken.None)).IsSuccess.Should().BeTrue();
+        DbContext.CollectionCollectionMembers.Count(m => m.ParentId == parentId && m.ChildId == childId).Should().Be(1);
+
+        int linksAfterFirstRun = DbContext.CollectionCollectionMembers.Count();
+        (await _service.ApplyAsync(request, CancellationToken.None)).IsSuccess.Should().BeTrue();
+        DbContext.CollectionCollectionMembers.Count().Should().Be(linksAfterFirstRun);
+    }
+
+    [Fact]
+    public async Task ApplyAsync_RepoManagedCollectionReferencingUserCollection_IsRejected()
+    {
+        Guid userCollectionId = Guid.NewGuid();
+        DbContext.Collections.Add(new Collection
+        {
+            Id = userCollectionId,
+            Name = "A user collection",
+            CreatedBy = "someone-else",
+            CreatedAt = DateTime.UtcNow,
+            IsPublic = true,
+            IsDiscoverable = false,
+            IsRepoManaged = false
+        });
+        await DbContext.SaveChangesAsync();
+
+        Guid parentId = Guid.NewGuid();
+        SeedSyncAdmin.Request request = BuildRequest(
+            [],
+            [new SeedSyncAdmin.SeedCollectionRequest(parentId, "Parent", null, CollectionIds: [userCollectionId])]);
+
+        Result<SeedSyncAdmin.ApplyResponse> result = await _service.ApplyAsync(request, CancellationToken.None);
+
+        result.IsFailure.Should().BeTrue();
+        result.Error.Code.Should().Be("Admin.CollectionSyncInvalidLinks");
+        DbContext.Collections.Any(c => c.Id == parentId).Should().BeFalse();
+    }
+
+    [Fact]
+    public async Task ApplyAsync_KeywordPathOnlyCollection_IsAppliedAndRerunIsIdempotent()
+    {
+        string suffix = Guid.NewGuid().ToString("N");
+        Category category = new()
+        {
+            Id = Guid.NewGuid(),
+            Name = $"seedlinks-{suffix}",
+            IsPrivate = false,
+            CreatedBy = "seeder",
+            CreatedAt = DateTime.UtcNow
+        };
+        Keyword k1 = new() { Id = Guid.NewGuid(), Name = $"sl1-{suffix}", IsPrivate = false, CreatedBy = "seeder", CreatedAt = DateTime.UtcNow };
+        Keyword k2 = new() { Id = Guid.NewGuid(), Name = $"sl2-{suffix}", IsPrivate = false, CreatedBy = "seeder", CreatedAt = DateTime.UtcNow };
+        DbContext.Categories.Add(category);
+        DbContext.Keywords.AddRange(k1, k2);
+        DbContext.KeywordRelations.AddRange(
+            new KeywordRelation { Id = Guid.NewGuid(), CategoryId = category.Id, ParentKeywordId = null, ChildKeywordId = k1.Id, SortOrder = 0 },
+            new KeywordRelation { Id = Guid.NewGuid(), CategoryId = category.Id, ParentKeywordId = k1.Id, ChildKeywordId = k2.Id, SortOrder = 0 });
+        await DbContext.SaveChangesAsync();
+
+        Guid parentId = Guid.NewGuid();
+        SeedSyncAdmin.Request request = BuildRequest(
+            [],
+            [
+                new SeedSyncAdmin.SeedCollectionRequest(
+                    parentId,
+                    "Topic parent",
+                    null,
+                    KeywordPaths: [new SeedSyncAdmin.SeedKeywordPathRequest(category.Name, k1.Name, k2.Name)])
+            ]);
+
+        (await _service.ApplyAsync(request, CancellationToken.None)).IsSuccess.Should().BeTrue();
+        DbContext.CollectionKeywordMembers.Where(m => m.ParentId == parentId).ToList().Should().ContainSingle()
+            .Which.Keyword2Id.Should().Be(k2.Id);
+
+        (await _service.ApplyAsync(request, CancellationToken.None)).IsSuccess.Should().BeTrue();
+        DbContext.CollectionKeywordMembers.Count(m => m.ParentId == parentId).Should().Be(1);
+    }
+
     private static SeedSyncAdmin.ManifestRequest Manifest(
         List<SeedSyncAdmin.SeedItemRequest>? items,
         List<SeedSyncAdmin.SeedCollectionRequest>? collections) =>

@@ -29,11 +29,20 @@ public static class SeedSyncAdmin
         string? WowLine = null,
         Dictionary<int, string>? IncorrectAnswerRationale = null);
 
+    /// <summary>
+    /// A repo-managed collection in a seed file (#556). Any of <c>itemIds</c>, <c>collectionIds</c> and <c>keywordPaths</c>
+    /// may be omitted; a file with only links is valid.
+    /// </summary>
     public sealed record SeedCollectionRequest(
         Guid CollectionId,
         string Name,
         string? Description,
-        List<Guid> ItemIds);
+        List<Guid>? ItemIds = null,
+        List<Guid>? CollectionIds = null,
+        List<SeedKeywordPathRequest>? KeywordPaths = null);
+
+    /// <summary>A topic path by name, for seed files: category, keyword 1 and an optional keyword 2.</summary>
+    public sealed record SeedKeywordPathRequest(string Category, string Keyword1, string? Keyword2 = null);
 
     public sealed record ManifestRequest(
         string SeedSet,
@@ -408,14 +417,37 @@ public static class SeedSyncAdmin
                 .When(x => x.Description is not null)
                 .WithMessage("Collection description must not exceed 1000 characters.");
 
+            // A collection with only nested collections or topic paths is valid (#556), so itemIds may be omitted then.
             RuleFor(x => x.ItemIds)
                 .NotNull()
-                .WithMessage("Collection itemIds are required.")
+                .When(x => !HasLinks(x))
+                .WithMessage("Collection itemIds are required.");
+
+            RuleFor(x => x.ItemIds)
                 .Must(itemIds => itemIds is null || itemIds.Count > 0)
-                .WithMessage("Collections must reference at least one item.")
+                .When(x => !HasLinks(x))
+                .WithMessage("Collections must reference at least one item.");
+
+            RuleFor(x => x.ItemIds)
                 .Must(itemIds => itemIds is null || itemIds.Distinct().Count() == itemIds.Count)
                 .WithMessage("Collection itemIds must be unique within a collection.");
+
+            RuleFor(x => x.CollectionIds)
+                .Must(ids => ids is null || ids.Distinct().Count() == ids.Count)
+                .WithMessage("Collection collectionIds must be unique within a collection.");
+
+            RuleFor(x => x.CollectionIds)
+                .Must(ids => ids is null || !ids.Contains(Guid.Empty))
+                .WithMessage("Collection collectionIds must be valid ids.");
+
+            RuleFor(x => x.KeywordPaths)
+                .Must(paths => paths is null || paths.All(p => !string.IsNullOrWhiteSpace(p.Category) && !string.IsNullOrWhiteSpace(p.Keyword1)))
+                .WithMessage("Each keyword path needs a category and keyword1.");
         }
+
+        private static bool HasLinks(SeedCollectionRequest collection) =>
+            (collection.CollectionIds?.Count ?? 0) > 0 || (collection.KeywordPaths?.Count ?? 0) > 0;
+
     }
 
     public sealed class Endpoint : IEndpoint

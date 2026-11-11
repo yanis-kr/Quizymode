@@ -427,6 +427,18 @@ internal sealed class SeedSyncAdminService(
         Dictionary<Guid, Collection> existingCollectionsById = existingCollections.ToDictionary(collection => collection.Id);
         List<PlannedSeedCollectionChange> collectionChanges = [];
 
+        // A repo-managed collection may link only to repo-managed collections: the ones in this payload, or existing repo-managed ones (#556).
+        List<string> linkErrors = await CollectionSeedLinks.ValidateChildCollectionsAsync(
+            db,
+            normalizedCollections.SelectMany(collection => collection.CollectionIds),
+            normalizedCollections.Select(collection => collection.CollectionId),
+            cancellationToken);
+        if (linkErrors.Count > 0)
+        {
+            return Result.Failure<SeedSyncPlan>(
+                Error.Validation("Admin.CollectionSyncInvalidLinks", string.Join("; ", linkErrors)));
+        }
+
         foreach (NormalizedSeedCollection normalizedCollection in normalizedCollections)
         {
             List<Guid> missingItemIds = normalizedCollection.ItemIds
@@ -441,10 +453,42 @@ internal sealed class SeedSyncAdminService(
                         $"Collection '{normalizedCollection.Name}' references missing itemIds: {string.Join(", ", missingItemIds)}"));
             }
 
+            (List<CollectionSeedLinks.ResolvedTopic> resolvedTopics, List<string> topicErrors) =
+                await CollectionSeedLinks.ResolveTopicsAsync(db, normalizedCollection.KeywordPaths, cancellationToken);
+            if (topicErrors.Count > 0)
+            {
+                return Result.Failure<SeedSyncPlan>(
+                    Error.Validation(
+                        "Admin.CollectionSyncInvalidKeywordPath",
+                        $"Collection '{normalizedCollection.Name}': {string.Join("; ", topicErrors)}"));
+            }
+
             existingCollectionsById.TryGetValue(normalizedCollection.CollectionId, out Collection? existingCollection);
             List<string> changedFields = existingCollection is null
                 ? []
-                : GetChangedFields(existingCollection, normalizedCollection);
+                : new List<string>(GetChangedFields(existingCollection, normalizedCollection));
+
+            if (existingCollection is not null)
+            {
+                HashSet<Guid> currentChildren = db.CollectionCollectionMembers
+                    .Where(m => m.ParentId == existingCollection.Id)
+                    .Select(m => m.ChildId)
+                    .ToHashSet();
+                if (!currentChildren.SetEquals(normalizedCollection.CollectionIds))
+                {
+                    changedFields.Add("collectionIds");
+                }
+
+                HashSet<CollectionSeedLinks.ResolvedTopic> currentTopics = db.CollectionKeywordMembers
+                    .Where(m => m.ParentId == existingCollection.Id)
+                    .AsEnumerable()
+                    .Select(m => new CollectionSeedLinks.ResolvedTopic(m.CategoryId, m.Keyword1Id, m.Keyword2Id))
+                    .ToHashSet();
+                if (!currentTopics.SetEquals(resolvedTopics))
+                {
+                    changedFields.Add("keywordPaths");
+                }
+            }
 
             collectionChanges.Add(new PlannedSeedCollectionChange(
                 normalizedCollection,
@@ -454,7 +498,8 @@ internal sealed class SeedSyncAdminService(
                     : changedFields.Count == 0
                         ? SeedSyncChangeKind.Unchanged
                         : SeedSyncChangeKind.Update,
-                changedFields));
+                changedFields,
+                resolvedTopics));
         }
 
         return Result.Success(new SeedSyncPlan(
@@ -728,6 +773,10 @@ internal sealed class SeedSyncAdminService(
         {
             db.CollectionItems.AddRange(linksToAdd);
         }
+
+        // Nested collections and topic paths are reconciled as a diff too, so a second run changes nothing (#556).
+        CollectionSeedLinks.ReconcileChildLinks(db, collection.Id, change.Collection.CollectionIds, utcNow);
+        CollectionSeedLinks.ReconcileTopicLinks(db, collection.Id, change.ResolvedTopics, utcNow);
     }
 
     private void ReconcileItemKeywords(
@@ -952,7 +1001,11 @@ internal sealed class SeedSyncAdminService(
             collection.CollectionId,
             name,
             description,
-            collection.ItemIds.Distinct().ToList());
+            (collection.ItemIds ?? []).Distinct().ToList(),
+            (collection.CollectionIds ?? []).Distinct().ToList(),
+            (collection.KeywordPaths ?? [])
+                .Select(path => new CollectionSeedLinks.KeywordPathName(path.Category.Trim(), path.Keyword1.Trim(), path.Keyword2?.Trim()))
+                .ToList());
     }
 
     private static List<string> NormalizeKeywords(
@@ -1224,7 +1277,9 @@ internal sealed class SeedSyncAdminService(
         Guid CollectionId,
         string Name,
         string? Description,
-        List<Guid> ItemIds);
+        List<Guid> ItemIds,
+        List<Guid> CollectionIds,
+        List<CollectionSeedLinks.KeywordPathName> KeywordPaths);
 
     private sealed record ResolvedNavigationPath(
         Category Category,
@@ -1242,7 +1297,8 @@ internal sealed class SeedSyncAdminService(
         NormalizedSeedCollection Collection,
         Collection? ExistingCollection,
         SeedSyncChangeKind ChangeKind,
-        List<string> ChangedFields);
+        List<string> ChangedFields,
+        List<CollectionSeedLinks.ResolvedTopic> ResolvedTopics);
 
     private sealed record SeedSyncPlan(
         string SeedSet,
