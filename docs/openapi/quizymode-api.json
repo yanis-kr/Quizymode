@@ -13758,9 +13758,13 @@
           "categoryId",
           "keyword1Id",
           "keyword2Id",
+          "categoryName",
+          "keyword1Name",
+          "keyword2Name",
           "isRemoved",
           "visibleItemCount",
-          "exceedsWarningThreshold"
+          "exceedsWarningThreshold",
+          "addedAt"
         ],
         "type": "object",
         "properties": {
@@ -13783,6 +13787,22 @@
               }
             ]
           },
+          "categoryName": {
+            "$ref": "#/components/schemas/System.String"
+          },
+          "keyword1Name": {
+            "$ref": "#/components/schemas/System.String"
+          },
+          "keyword2Name": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/components/schemas/System.String"
+              }
+            ]
+          },
           "isRemoved": {
             "$ref": "#/components/schemas/System.Boolean"
           },
@@ -13791,6 +13811,9 @@
           },
           "exceedsWarningThreshold": {
             "$ref": "#/components/schemas/System.Boolean"
+          },
+          "addedAt": {
+            "$ref": "#/components/schemas/System.DateTime"
           }
         }
       },

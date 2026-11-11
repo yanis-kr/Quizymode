@@ -21,6 +21,7 @@ import { SpeakerWaveIcon, PauseIcon } from "@heroicons/react/24/outline";
 import { CollectionVisibilityToggles } from "../components/CollectionVisibilityToggles";
 import { CollectionBreadcrumb, type CollectionTrailEntry } from "../components/CollectionBreadcrumb";
 import { ChildCollectionsSection } from "../components/ChildCollectionsSection";
+import { TopicMembersSection } from "../components/TopicMembersSection";
 import { ShareCollectionButton } from "../components/ShareCollectionButton";
 import { CollectionExportControls } from "../components/CollectionExportControls";
 import { CollectionPrintView } from "../components/CollectionPrintView";
@@ -168,6 +169,12 @@ const CollectionDetailPage = () => {
     queryFn: () => collectionsApi.listChildCollections(id as string),
     enabled: Boolean(id),
   });
+  // Topics the viewer may see; the API applies collection access and returns only the counts the viewer may see (#557).
+  const { data: topicMembers } = useQuery({
+    queryKey: ["collections", id, "topics"],
+    queryFn: () => collectionsApi.listTopics(id as string),
+    enabled: Boolean(id),
+  });
   const trailForChildren: CollectionTrailEntry[] =
     id && collectionData ? [...trail, { id, name: collectionData.name }] : trail;
 
@@ -216,6 +223,7 @@ const CollectionDetailPage = () => {
           trailForChildren={trailForChildren}
         />
       )}
+      {topicMembers && <TopicMembersSection topics={topicMembers} />}
       {allItems.length > 0 && (
         <ScopeSecondaryBar
           scopeType="collection"
@@ -443,6 +451,9 @@ const CollectionDetailPage = () => {
         </div>
       ) : (
         <>
+          <h2 id="questions-heading" className="mb-1 mt-2 text-sm font-semibold uppercase tracking-wide text-slate-500">
+            Questions
+          </h2>
           <div className="mb-1 flex items-center gap-2 py-1">
             <button
               type="button"
