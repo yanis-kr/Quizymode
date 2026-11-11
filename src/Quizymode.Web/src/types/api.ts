@@ -23,6 +23,8 @@ export interface NavKeywordResponse {
   description?: string | null;
   /** When > 0, show a "Private" badge (e.g. yellow) on the keyword set. */
   privateItemCount?: number;
+  /** Keyword id, needed to add a topic to a collection (#558). Null for the synthetic "other" entry. */
+  id?: string | null;
 }
 
 export interface KeywordsResponse {

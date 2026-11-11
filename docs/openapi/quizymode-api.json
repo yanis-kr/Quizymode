@@ -17638,6 +17638,16 @@
           },
           "privateItemCount": {
             "$ref": "#/components/schemas/System.Int32"
+          },
+          "id": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/components/schemas/System.NullableOfSystem.Guid"
+              }
+            ]
           }
         },
         "description": "Response DTO for a navigation keyword with aggregates."

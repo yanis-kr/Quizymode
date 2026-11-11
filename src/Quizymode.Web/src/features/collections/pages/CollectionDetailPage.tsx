@@ -22,6 +22,7 @@ import { CollectionVisibilityToggles } from "../components/CollectionVisibilityT
 import { CollectionBreadcrumb, type CollectionTrailEntry } from "../components/CollectionBreadcrumb";
 import { ChildCollectionsSection } from "../components/ChildCollectionsSection";
 import { TopicMembersSection } from "../components/TopicMembersSection";
+import { AddToCollectionDialog } from "../components/AddToCollectionDialog";
 import { ShareCollectionButton } from "../components/ShareCollectionButton";
 import { CollectionExportControls } from "../components/CollectionExportControls";
 import { CollectionPrintView } from "../components/CollectionPrintView";
@@ -177,6 +178,8 @@ const CollectionDetailPage = () => {
   });
   const trailForChildren: CollectionTrailEntry[] =
     id && collectionData ? [...trail, { id, name: collectionData.name }] : trail;
+  // "Add to collection" picker for the owner (#558). The trail gives the ancestors, used to block cycles and deep nesting.
+  const [addPickerOpen, setAddPickerOpen] = useState(false);
 
   const isLoading = isLoadingCollection || isLoadingItems;
   const error = collectionError || itemsError;
@@ -304,6 +307,23 @@ const CollectionDetailPage = () => {
           hideAnswers={hideAnswersOnPrint}
           onHideAnswersChange={setHideAnswersOnPrint}
         />
+      )}
+      {isOwner && id && (
+        <div>
+          <button
+            type="button"
+            onClick={() => setAddPickerOpen(true)}
+            className="inline-flex items-center rounded-md bg-indigo-600 px-3 py-2 text-sm font-medium text-white hover:bg-indigo-700"
+          >
+            Add to collection
+          </button>
+          <AddToCollectionDialog
+            open={addPickerOpen}
+            onClose={() => setAddPickerOpen(false)}
+            collectionId={id}
+            ancestorIds={trail.map((entry) => entry.id)}
+          />
+        </div>
       )}
       {isOwner && collectionData && (
         <div className="rounded-2xl border border-slate-200 bg-slate-50/90 p-4">
