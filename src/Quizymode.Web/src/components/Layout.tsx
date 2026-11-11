@@ -12,6 +12,7 @@ import LlmFindingsBanner from "@/components/LlmFindingsBanner";
 import { getUserGuideUrl } from "@/utils/userGuideLink";
 import { SEO } from "@/components/SEO";
 import FeedbackDialog from "@/features/feedback/components/FeedbackDialog";
+import { DONATION_URL, getDonationHost } from "@/utils/donationLink";
 import GlobalSearch from "@/features/search/GlobalSearch";
 import UserProfileModal from "./UserProfileModal";
 import { useApplyTheme } from "@/theme/useApplyTheme";
@@ -517,6 +518,17 @@ const LayoutContent = ({ children }: LayoutProps) => {
             >
               Terms
             </Link>
+            {DONATION_URL && (
+              <a
+                href={DONATION_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={`Support Quizymode (opens ${getDonationHost(DONATION_URL)} in a new tab)`}
+                className="inline-flex items-center justify-center rounded-md border border-on-panel/12 bg-on-panel/8 px-2.5 py-1.5 text-sm font-medium text-on-panel transition hover:border-sky-300/35 hover:bg-on-panel/12 hover:text-on-panel"
+              >
+                Support Quizymode
+              </a>
+            )}
           </div>
         </div>
       </footer>

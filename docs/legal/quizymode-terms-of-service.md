@@ -65,6 +65,8 @@ We may remove or restrict access to content, suspend features, or terminate acco
 
 Quizymode may change over time. We may add, remove, suspend, or modify features at any time. We do not guarantee that the service or any feature will always be available, uninterrupted, or error-free.
 
+Donations are voluntary. Any donation made through a link on Quizymode is non-refundable by Quizymode and grants no perks, features, or other benefits. The donation platform's own terms govern the payment.
+
 ## 10. Educational Use Disclaimer
 
 Quizymode is a study tool, not an authoritative source of truth. Content available through the service may be incomplete, inaccurate, biased, outdated, or inappropriate for your needs. You are responsible for verifying content before relying on it for academic, professional, certification, legal, medical, financial, or personal decisions.

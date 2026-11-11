@@ -69,6 +69,11 @@ describe("Layout", () => {
     expect(screen.getByRole("button", { name: "Search" })).toHaveAttribute("aria-haspopup", "dialog");
   });
 
+  it("renders no donation link while VITE_DONATION_URL is unset", () => {
+    renderLayout();
+    expect(screen.queryByRole("link", { name: /Support Quizymode/ })).not.toBeInTheDocument();
+  });
+
   it("shows a My Progress link to /progress only for signed-in users", () => {
     renderLayout();
     expect(screen.queryByRole("link", { name: "My Progress" })).not.toBeInTheDocument();
