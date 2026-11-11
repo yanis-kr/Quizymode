@@ -1146,6 +1146,7 @@ Test is a mode of Quiz, not a separate page. It is an honour-system simulation: 
   - `quiz_completed` is then sent with score and total.
   - Nothing is sent per answer change.
   - (This amends AC 5.4.9, 5.5.4 and 5.5.2.)
+- **AC 3.18.12** [Anonymous] **Given** I am signed out and open a quiz from **Explore next** or any quiz page, **when** the page renders, **then** the mode switch (**Practice** / **Test**) and **Quiz size** sit behind an **Options** button (`aria-expanded`, `aria-controls`) that is closed by default, so the first question and at least two answers are visible on the first screen at 390x660 (#567). Opening **Options** shows the same controls as before. Signed-in users see the controls unchanged.
 
 Verification: `quizRun`/`testRun` reducer, restore and selector unit tests; `QuizModePage.testmode.test.tsx` page tests (setup, deferred feedback, palette, Submit dialog, fake-timer countdown and auto-submit, reload after the deadline, restore rejection, mode switching, analytics order, Play again); 375 px Playwright spec `quiz-test-mode.spec.ts`.
 

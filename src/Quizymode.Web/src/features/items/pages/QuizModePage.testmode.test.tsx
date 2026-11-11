@@ -98,6 +98,14 @@ function renderPage(initialEntry: string) {
   return { ...result, rerenderPage: () => result.rerender(buildTree()) };
 }
 
+// AC 3.18.12: guests start with Options collapsed; open it so the mode switch and quiz size are reachable.
+async function renderPageWithOptions(initialEntry: string) {
+  const result = renderPage(initialEntry);
+  const toggle = await screen.findByRole("button", { name: "Options" }).catch(() => null);
+  if (toggle && toggle.getAttribute("aria-expanded") === "false") fireEvent.click(toggle);
+  return result;
+}
+
 const TEST_URL = `/quiz/collections/${COLLECTION_ID}/item/${GUID_1}?mode=test`;
 const PRACTICE_URL = `/quiz/collections/${COLLECTION_ID}/item/${GUID_1}`;
 
@@ -193,14 +201,14 @@ describe("QuizModePage Test mode (AC 3.18)", () => {
   it("keyboard-skips a loaded final picture as persisted unscored with no completion credit", async () => {
     const pictured = { ...item1, questionImage: { key: "curated:flags/fr", altText: "Flag" } };
     vi.mocked(collectionsApi.getItems).mockResolvedValue({ items: [pictured] } as Awaited<ReturnType<typeof collectionsApi.getItems>>);
-    const view = renderPage(TEST_URL); await startTest("custom-1");
+    const view = await renderPageWithOptions(TEST_URL); await startTest("custom-1");
     fireEvent.load(await screen.findByAltText("Flag"));
     const skip = screen.getByRole("button", { name: "Skip question (not scored)" }); skip.focus(); await userEvent.keyboard("{Enter}");
     await waitFor(() => expect(JSON.parse(sessionStorage.getItem("navigationContext_quiz")!).quizRun.skipped).toEqual([GUID_1]));
     const before = JSON.parse(sessionStorage.getItem("navigationContext_quiz")!).quizRun;
     expect(before.skippedReasons[GUID_1]).toBe("picture-inaccessible");
     expect(before.picturePausedAt).toBeNull();
-    view.unmount(); renderPage(TEST_URL);
+    view.unmount(); await renderPageWithOptions(TEST_URL);
     await screen.findByText("What is 2 + 2?");
     expect(screen.queryByRole("button", { name: "Skip question (not scored)" })).not.toBeInTheDocument();
     fireEvent.click(screen.getByRole("button", { name: "Submit test" }));
@@ -211,7 +219,7 @@ describe("QuizModePage Test mode (AC 3.18)", () => {
   });
 
   it("shows only the setup card before Start test and sends nothing", async () => {
-    renderPage(TEST_URL);
+    await renderPageWithOptions(TEST_URL);
 
     expect(await screen.findByRole("heading", { name: "Test mode" })).toBeInTheDocument();
     expect(screen.getByText("3 questions")).toBeInTheDocument();
@@ -225,7 +233,7 @@ describe("QuizModePage Test mode (AC 3.18)", () => {
   });
 
   it("blocks Start for an invalid custom limit and shows the exact message", async () => {
-    renderPage(TEST_URL);
+    await renderPageWithOptions(TEST_URL);
     await screen.findByRole("heading", { name: "Test mode" });
 
     fireEvent.change(screen.getByLabelText("Time limit"), { target: { value: "custom" } });
@@ -239,7 +247,7 @@ describe("QuizModePage Test mode (AC 3.18)", () => {
   });
 
   it("starts the test: sends quick_quiz_started once and hides every feedback surface", async () => {
-    renderPage(TEST_URL);
+    await renderPageWithOptions(TEST_URL);
     await startTest();
 
     expect(await screen.findByText("What is 2 + 2?")).toBeInTheDocument();
@@ -261,7 +269,7 @@ describe("QuizModePage Test mode (AC 3.18)", () => {
   });
 
   it("replaces an earlier answer, sends nothing per answer, and scores the final answer", async () => {
-    renderPage(TEST_URL);
+    await renderPageWithOptions(TEST_URL);
     await startTest();
     await screen.findByText("What is 2 + 2?");
 
@@ -277,7 +285,7 @@ describe("QuizModePage Test mode (AC 3.18)", () => {
   });
 
   it("toggles the flag and names palette entries with answered, flagged and current", async () => {
-    renderPage(TEST_URL);
+    await renderPageWithOptions(TEST_URL);
     await startTest();
     await screen.findByText("What is 2 + 2?");
 
@@ -299,7 +307,7 @@ describe("QuizModePage Test mode (AC 3.18)", () => {
   });
 
   it("opens the palette sheet on narrow screens and closes it with Escape, returning focus", async () => {
-    renderPage(TEST_URL);
+    await renderPageWithOptions(TEST_URL);
     await startTest();
     await screen.findByText("What is 2 + 2?");
 
@@ -319,7 +327,7 @@ describe("QuizModePage Test mode (AC 3.18)", () => {
   });
 
   it("confirms Submit with counts, focuses Return to test, closes with Escape and jumps to unanswered", async () => {
-    renderPage(TEST_URL);
+    await renderPageWithOptions(TEST_URL);
     await startTest();
     await screen.findByText("What is 2 + 2?");
     fireEvent.click(option("4"));
@@ -346,7 +354,7 @@ describe("QuizModePage Test mode (AC 3.18)", () => {
   });
 
   it("says all questions are answered when none are missing", async () => {
-    renderPage(TEST_URL);
+    await renderPageWithOptions(TEST_URL);
     await startTest();
     await screen.findByText("What is 2 + 2?");
     fireEvent.click(option("4"));
@@ -363,7 +371,7 @@ describe("QuizModePage Test mode (AC 3.18)", () => {
   });
 
   it("no key opens or confirms Submit; Enter only moves to the next question; F flags", async () => {
-    renderPage(TEST_URL);
+    await renderPageWithOptions(TEST_URL);
     await startTest();
     await screen.findByText("What is 2 + 2?");
 
@@ -387,7 +395,7 @@ describe("QuizModePage Test mode (AC 3.18)", () => {
     const listener = (event: Event) => published.push((event as CustomEvent<QuizCompletionSnapshot>).detail);
     window.addEventListener(QUIZ_COMPLETED_EVENT, listener);
     try {
-      renderPage(TEST_URL);
+      await renderPageWithOptions(TEST_URL);
       await startTest();
       await screen.findByText("What is 2 + 2?");
       fireEvent.click(option("4"));
@@ -447,7 +455,7 @@ describe("QuizModePage Test mode (AC 3.18)", () => {
   });
 
   it("Play again returns to the setup card with the same limit and cleared state", async () => {
-    renderPage(TEST_URL);
+    await renderPageWithOptions(TEST_URL);
     await startTest("custom-1");
     await screen.findByText("What is 2 + 2?");
     fireEvent.click(option("4"));
@@ -477,7 +485,7 @@ describe("QuizModePage Test mode (AC 3.18)", () => {
     });
 
     it("counts down from the stored start, styles and announces at 5:00 and 1:00, and auto-submits at zero", async () => {
-      renderPage(TEST_URL);
+      await renderPageWithOptions(TEST_URL);
       await startTest("custom-1");
       await screen.findByText("What is 2 + 2?");
       fireEvent.click(option("4"));
@@ -518,7 +526,7 @@ describe("QuizModePage Test mode (AC 3.18)", () => {
         outcomes: { [GUID_1]: { itemId: GUID_1, selectedAnswer: "4", isCorrect: true, inputMode: "choice" } },
         flagged: [GUID_2],
       });
-      renderPage(TEST_URL);
+      await renderPageWithOptions(TEST_URL);
 
       const timer = await screen.findByRole("timer");
       // 10 minutes limit, 4 minutes elapsed: 6:00 left, no announcement yet.
@@ -536,7 +544,7 @@ describe("QuizModePage Test mode (AC 3.18)", () => {
     });
 
     it("recalculates from the wall clock when the tab becomes visible again", async () => {
-      renderPage(TEST_URL);
+      await renderPageWithOptions(TEST_URL);
       await startTest("custom-1");
       await screen.findByText("What is 2 + 2?");
 
@@ -558,7 +566,7 @@ describe("QuizModePage Test mode (AC 3.18)", () => {
         timeLimitSec: 600,
         outcomes: { [GUID_2]: { itemId: GUID_2, selectedAnswer: "Paris", isCorrect: true, inputMode: "choice" } },
       });
-      renderPage(TEST_URL);
+      await renderPageWithOptions(TEST_URL);
 
       expect(await screen.findByRole("heading", { name: "Test complete" })).toBeInTheDocument();
       expect(screen.getByText("Time ran out. Your test was submitted automatically.")).toBeInTheDocument();
@@ -581,7 +589,7 @@ describe("QuizModePage Test mode (AC 3.18)", () => {
     run = reduceQuizRun(run, { type: "answer", itemId: GUID_1, selectedAnswer: "1", isCorrect: false, completedAt: new Date().toISOString() });
     run = reduceQuizRun(run, { type: "toggle-flag", itemId: GUID_1 });
     sessionStorage.setItem("navigationContext_quiz", JSON.stringify({ mode: "quiz", collectionId: COLLECTION_ID, quizRun: run }));
-    renderPage(TEST_URL);
+    await renderPageWithOptions(TEST_URL);
 
     expect(await screen.findByText("What is 2 + 2?")).toBeInTheDocument();
     expect(option("1")).toHaveAttribute("aria-pressed", "true");
@@ -603,7 +611,7 @@ describe("QuizModePage Test mode (AC 3.18)", () => {
       expect(run.completionEmitted).toBe(true);
       sessionStorage.setItem("navigationContext_quiz", JSON.stringify({ mode: "quiz", collectionId: COLLECTION_ID, quizRun: run }));
 
-      renderPage(TEST_URL);
+      await renderPageWithOptions(TEST_URL);
       expect(await screen.findByRole("heading", { name: "Test complete" })).toBeInTheDocument();
       expect(screen.getByText("1 / 3")).toBeInTheDocument();
       expect(screen.queryByText("We could not restore your earlier test, so we started a new one.")).not.toBeInTheDocument();
@@ -618,7 +626,7 @@ describe("QuizModePage Test mode (AC 3.18)", () => {
 
   it("starts a new run with a notice for a version 1 snapshot or a mode mismatch", async () => {
     storedRun({ startedAt: new Date().toISOString(), timeLimitSec: null, schemaVersion: 1 as never });
-    const { unmount } = renderPage(TEST_URL);
+    const { unmount } = await renderPageWithOptions(TEST_URL);
     expect(await screen.findByText("We could not restore your earlier test, so we started a new one.")).toBeInTheDocument();
     expect(await screen.findByRole("heading", { name: "Test mode" })).toBeInTheDocument();
     unmount();
@@ -632,13 +640,13 @@ describe("QuizModePage Test mode (AC 3.18)", () => {
         quizRun: createQuizRun({ kind: "collection", collectionId: COLLECTION_ID }, [GUID_1, GUID_2, GUID_3], IDENTITY),
       })
     );
-    renderPage(TEST_URL);
+    await renderPageWithOptions(TEST_URL);
     expect(await screen.findByText("We could not restore your earlier test, so we started a new one.")).toBeInTheDocument();
     expect(await screen.findByRole("heading", { name: "Test mode" })).toBeInTheDocument();
   });
 
   it("switches silently with no answers, and keeps mode=test across Next and Prev", async () => {
-    renderPage(PRACTICE_URL);
+    await renderPageWithOptions(PRACTICE_URL);
     await screen.findByText("What is 2 + 2?");
     expect(screen.getByRole("radio", { name: "Practice" })).toHaveAttribute("aria-checked", "true");
 
@@ -659,7 +667,7 @@ describe("QuizModePage Test mode (AC 3.18)", () => {
   });
 
   it("asks before leaving a run with answers: Keep current run, then Switch and restart", async () => {
-    renderPage(PRACTICE_URL);
+    await renderPageWithOptions(PRACTICE_URL);
     await screen.findByText("What is 2 + 2?");
     fireEvent.click(option("4"));
     expect(await screen.findByText(/Correct Answer: 4/)).toBeInTheDocument();
@@ -685,7 +693,7 @@ describe("QuizModePage Test mode (AC 3.18)", () => {
   });
 
   it("keeps Explore and List links free of mode=test", async () => {
-    renderPage(TEST_URL);
+    await renderPageWithOptions(TEST_URL);
     await screen.findByRole("heading", { name: "Test mode" });
     fireEvent.click(screen.getByRole("tab", { name: /Flashcards/i }));
     await waitFor(() => expect(screen.getByTestId("location").textContent).toMatch(/^\/explore\//));
@@ -695,7 +703,7 @@ describe("QuizModePage Test mode (AC 3.18)", () => {
   it("keeps mode=test when the quiz size changes on the setup card, and disables Quiz size once started", async () => {
     vi.mocked(itemsApi.getRandom).mockResolvedValue({ items: [item1, item2, item3] } as Awaited<ReturnType<typeof itemsApi.getRandom>>);
     vi.mocked(itemsApi.getById).mockResolvedValue(item1 as Awaited<ReturnType<typeof itemsApi.getById>>);
-    renderPage(`/quiz/item/${GUID_1}?mode=test`);
+    await renderPageWithOptions(`/quiz/item/${GUID_1}?mode=test`);
     await screen.findByRole("heading", { name: "Test mode" });
 
     const size = screen.getByLabelText("Quiz size:");
@@ -713,7 +721,7 @@ describe("QuizModePage Test mode (AC 3.18)", () => {
     vi.mocked(collectionsApi.getItems).mockResolvedValue({
       items: [{ ...item1, incorrectAnswers: [] }],
     } as Awaited<ReturnType<typeof collectionsApi.getItems>>);
-    renderPage(TEST_URL);
+    await renderPageWithOptions(TEST_URL);
 
     expect(await screen.findByText("No multiple-choice questions are available for Test here.")).toBeInTheDocument();
     expect(screen.queryByRole("button", { name: "Start test" })).not.toBeInTheDocument();
@@ -728,7 +736,7 @@ describe("QuizModePage Test mode (AC 3.18)", () => {
       question: `Question text ${index}`,
     }));
     vi.mocked(collectionsApi.getItems).mockResolvedValue({ items: many } as Awaited<ReturnType<typeof collectionsApi.getItems>>);
-    renderPage(`/quiz/collections/${COLLECTION_ID}?mode=test`);
+    await renderPageWithOptions(`/quiz/collections/${COLLECTION_ID}?mode=test`);
 
     expect(await screen.findByText("500 questions")).toBeInTheDocument();
     expect(screen.getByText("Your test will use 500 of 520.")).toBeInTheDocument();
@@ -738,7 +746,7 @@ describe("QuizModePage Test mode (AC 3.18)", () => {
     it.each([5, 10])("restores a started size-%i category Test without setup or a new roster", async (size) => {
       const startedAt = new Date(Date.now() - 60_000).toISOString();
       storeCategoryTest(size, startedAt);
-      renderPage(CATEGORY_TEST_URL);
+      await renderPageWithOptions(CATEGORY_TEST_URL);
 
       expect(await screen.findByText("Sized question 1")).toBeInTheDocument();
       expect(screen.queryByRole("heading", { name: "Test mode" })).not.toBeInTheDocument();
@@ -762,7 +770,7 @@ describe("QuizModePage Test mode (AC 3.18)", () => {
         "quiz_scope_items_from_categories",
         JSON.stringify({ items: [item1, item2, item3] })
       );
-      renderPage(CATEGORY_TEST_URL);
+      await renderPageWithOptions(CATEGORY_TEST_URL);
 
       expect(await screen.findByRole("heading", { name: "Test mode" })).toBeInTheDocument();
       expect(screen.getByLabelText("Quiz size:")).toHaveValue(10);
@@ -788,7 +796,7 @@ describe("QuizModePage Test mode (AC 3.18)", () => {
       storeCategoryTest(size, startedAt, "user:user-1");
       const before = sessionStorage.getItem("navigationContext_quiz");
       startLoading();
-      const { rerenderPage } = renderPage(CATEGORY_TEST_URL);
+      const { rerenderPage } = await renderPageWithOptions(CATEGORY_TEST_URL);
 
       expect(screen.getByRole("status")).toBeInTheDocument();
       expect(screen.queryByRole("heading", { name: "Test mode" })).not.toBeInTheDocument();
@@ -813,13 +821,15 @@ describe("QuizModePage Test mode (AC 3.18)", () => {
     it("still restores a guest size-5 Test after auth loading", async () => {
       storeCategoryTest(5, new Date(Date.now() - 60_000).toISOString());
       startLoading();
-      const { rerenderPage } = renderPage(CATEGORY_TEST_URL);
+      const { rerenderPage } = await renderPageWithOptions(CATEGORY_TEST_URL);
       expect(screen.getByRole("status")).toBeInTheDocument();
 
       settleAs(false);
       rerenderPage();
 
       expect(await screen.findByText("Sized question 1")).toBeInTheDocument();
+      // The guest Options toggle appears after auth settles (AC 3.18.12).
+      fireEvent.click(screen.getByRole("button", { name: "Options" }));
       expect(screen.getByLabelText("Quiz size:")).toHaveValue(5);
       expect(itemsApi.getRandom).not.toHaveBeenCalled();
     });
@@ -827,7 +837,7 @@ describe("QuizModePage Test mode (AC 3.18)", () => {
     it("does not restore a run saved by another user", async () => {
       storeCategoryTest(5, new Date(Date.now() - 60_000).toISOString(), "user:other");
       startLoading();
-      const { rerenderPage } = renderPage(CATEGORY_TEST_URL);
+      const { rerenderPage } = await renderPageWithOptions(CATEGORY_TEST_URL);
 
       settleAs(true, "user-1");
       rerenderPage();
@@ -844,10 +854,27 @@ describe("QuizModePage Test mode (AC 3.18)", () => {
     it("does not restore a saved user run for a settled guest", async () => {
       storeCategoryTest(5, new Date(Date.now() - 60_000).toISOString(), "user:user-1");
       settleAs(false);
-      renderPage(CATEGORY_TEST_URL);
+      await renderPageWithOptions(CATEGORY_TEST_URL);
 
       expect(await screen.findByRole("heading", { name: "Test mode" })).toBeInTheDocument();
       expect(screen.getByLabelText("Quiz size:")).toHaveValue(10);
     });
+  });
+});
+
+describe("guest quiz options (AC 3.18.12)", () => {
+  it("collapses the mode switch and quiz size behind Options for a signed-out visitor", async () => {
+    mockAuth.isAuthenticated = false;
+    mockAuth.isLoading = false;
+    renderPage(CATEGORY_TEST_URL);
+    const toggle = await screen.findByRole("button", { name: "Options" });
+    expect(toggle).toHaveAttribute("aria-expanded", "false");
+    expect(screen.queryByRole("radio", { name: "Test" })).not.toBeInTheDocument();
+    expect(screen.queryByLabelText("Quiz size:")).not.toBeInTheDocument();
+
+    fireEvent.click(toggle);
+    expect(toggle).toHaveAttribute("aria-expanded", "true");
+    expect(screen.getByRole("radio", { name: "Test" })).toBeInTheDocument();
+    expect(screen.getByLabelText("Quiz size:")).toBeInTheDocument();
   });
 });
