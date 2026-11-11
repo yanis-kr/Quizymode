@@ -614,7 +614,7 @@ const CollectionsPage = () => {
   });
 
   const handleDeleteCollection = (collectionId: string, collectionName: string) => {
-    if (window.confirm(`Are you sure you want to delete "${collectionName}"? This action cannot be undone.`)) {
+    if (window.confirm(`Delete "${collectionName}"? Its links to questions, topics and other collections are removed. No questions, topics or other collections are deleted.`)) {
       deleteMutation.mutate(collectionId);
     }
   };

@@ -149,7 +149,7 @@ const CollectionDetailPage = () => {
   const handleRemoveItem = (itemId: string) => {
     if (
       window.confirm(
-        "Are you sure you want to remove this item from the collection?"
+        "Remove this question from this collection? The question is not deleted. Only its link to this collection is removed; it stays in any other collection and in your questions."
       )
     ) {
       removeItemMutation.mutate(itemId);
