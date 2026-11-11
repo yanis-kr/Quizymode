@@ -335,6 +335,31 @@ public sealed class SearchQueryPostgresTests(PostgresContainerFixture fixture) :
     }
 
     [SkippableFact]
+    public async Task CollectionCardCount_IncludesNestedContent_LikeCollectionDetail()
+    {
+        // #555 part 2b, AC 1.16c.3: the count shown in search is the lead total GET /collections/{id} reports.
+        RequireDatabase();
+        string word = Word();
+        Item direct = await AddItemAsync($"{word} direct question", createdBy: "seed");
+        Item nested = await AddItemAsync($"{word} nested question", createdBy: "seed");
+        Collection parent = await AddCollectionAsync($"{word} parent", createdBy: "seed");
+        Collection child = await AddCollectionAsync($"{word} child", createdBy: "seed");
+        await using (ApplicationDbContext db = fixture.CreateDbContext())
+        {
+            db.CollectionItems.AddRange(
+                new CollectionItem { Id = Guid.NewGuid(), CollectionId = parent.Id, ItemId = direct.Id, AddedAt = DateTime.UtcNow },
+                new CollectionItem { Id = Guid.NewGuid(), CollectionId = child.Id, ItemId = nested.Id, AddedAt = DateTime.UtcNow });
+            db.CollectionCollectionMembers.Add(new CollectionCollectionMember { Id = Guid.NewGuid(), ParentId = parent.Id, ChildId = child.Id });
+            await db.SaveChangesAsync();
+        }
+
+        Result<GlobalSearch.Response> result = await SearchAsync($"{word} ", "collections");
+
+        GlobalSearch.CollectionResult collection = result.Value.Groups.Collections!.Results.Single(r => r.Id == parent.Id);
+        collection.ItemCount.Should().Be(2);
+    }
+
+    [SkippableFact]
     public async Task MineReturnsOnlyTheCallersOwnContent_AndOwnCollectionsLeaveThePublicGroup()
     {
         RequireDatabase();
