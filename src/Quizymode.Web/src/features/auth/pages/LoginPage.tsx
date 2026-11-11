@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useNavigate, useLocation, Link, Navigate } from "react-router-dom";
 import { useAuth } from "@/contexts/AuthContext";
 import { SEO } from "@/components/SEO";
@@ -12,6 +12,11 @@ import { FEEDBACK_LINK_LABEL, mapSignInError } from "@/features/auth/utils/signI
 import { GoogleSignInSection } from "@/features/auth/components/GoogleSignInSection";
 
 const LoginPage = () => {
+  // A route change keeps the previous scroll offset; open the page at the top.
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   const navigate = useNavigate();
   const location = useLocation();
   const { login, isAuthenticated, isLoading: authLoading } = useAuth();
@@ -83,6 +88,17 @@ const LoginPage = () => {
               </div>
             </div>
           )}
+          <GoogleSignInSection
+            intent={intent}
+            disabled={isLoading}
+            googleFirst
+            onStartingChange={setIsGoogleStarting}
+            onError={(message: string) => {
+              setFeedbackLink(false);
+              setError(message);
+            }}
+          />
+
           <div className="rounded-md shadow-sm -space-y-px">
             <div>
               <label htmlFor="email" className="sr-only">
@@ -127,16 +143,6 @@ const LoginPage = () => {
               {isLoading ? "Signing in..." : "Sign in"}
             </button>
           </div>
-
-          <GoogleSignInSection
-            intent={intent}
-            disabled={isLoading}
-            onStartingChange={setIsGoogleStarting}
-            onError={(message: string) => {
-              setFeedbackLink(false);
-              setError(message);
-            }}
-          />
 
           <div className="text-center text-sm">
             <span className="text-gray-600">Don't have an account? </span>
