@@ -4,6 +4,9 @@ This document describes the application's behavior as **acceptance criteria** in
 
 Criteria are grouped by **feature** (e.g. AC 1.10 Bookmarking collections). Each feature is split into **API** (HTTP, status codes, payloads, authorization) and **UI** (labels, screens, user-visible behavior) so backend and frontend concerns stay separate while related behavior stays together. Sub-items are numbered **AC section.subsection.id** and always state the **Actor** (see below).
 
+**Verification method tags.** Each AC names how it is verified, in brackets after its Actor, as `[verify: <method>]`. The methods are defined in AGENTS.md § Issue Closure Evidence:
+`unit` (a unit or integration test in CI), `e2e` (a Playwright test in CI with trace and screenshots), `api` (an HTTP call with status and body), `sql` (a read-only query), `anon-ui` (a browser check while signed out), and `signed-in-prod-ui` (a browser check on prod while signed in as the test account, the only method that needs a person to sign in). Adding a tag never changes AC wording. An AC without a tag has no method yet and cannot close an issue until one is added.
+
 ## Common API conventions
 
 Use these global contracts unless a specific AC explicitly defines a different behavior.
@@ -2054,6 +2057,13 @@ Upload a PDF, Word (`.docx`), PowerPoint (`.pptx`), or text / Markdown study gui
 - **AC 7.7.6** [Dev] Image decoding uses SkiaSharp 3.119.4 (MIT) with `SkiaSharp.NativeAssets.Linux.NoDependencies` 3.119.4 for the Ubuntu 24.04 (Noble) based `aspnet:10.0` image, glibc (confirmed from `/etc/os-release` in the built image; no font or system library install), and storage uses `AWSSDK.S3` 4.0.12 (Apache-2.0), all pinned centrally in `Directory.Packages.props`; Dependabot watches them. Decode memory is bounded by the limits of AC 3.24.3 and AC 3.24.9 (at most 16 megapixels, one decode at a time per instance). Measured in the built image with `--memory 512m` (the Lightsail nano size): a 4000x4000 PNG (750,003 B) normalized to 16,186 B in 438 ms, a 4000x4000 JPEG (141,781 B) to 14,784 B in 274 ms and a 5000x3200 PNG to 10,274 B in 535 ms, with a process high-water of about 250 MB including the test harness (idle API 137 MiB). A PNG whose compressed text and colour-profile chunks (zTXt, iTXt, iCCP) before the image data total over 32 KiB, or that has more than 64 ancillary chunks before it, is `400 Media.Unreadable` before any codec is created, because libpng inflates those chunks while reading the header.
 
 ---
+
+### AC 7.8 Development-only test authentication
+
+Lets local runs and ephemeral E2E environments call signed-in endpoints without a Cognito login. It is test tooling only and never reaches production.
+
+- **AC 7.8.1** [Developer] **Given** the API runs in the Development environment, **when** a request sends `Authorization: DevTest <userId>` (optionally followed by `admin`), **then** the request is authenticated as `<userId>`, and the admin group is granted only when `admin` is present. The user id is letters, digits, `-` or `_`, at most 64 characters. Any other form of the header is not authenticated by this scheme. [verify: unit]
+- **AC 7.8.2** [Developer] **Given** the API runs in any environment other than Development, **then** the `DevTest` scheme is not registered at all. [verify: unit]
 
 ## AC 8. Performance characteristics
 
