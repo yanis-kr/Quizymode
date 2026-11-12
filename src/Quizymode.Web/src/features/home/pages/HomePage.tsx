@@ -17,6 +17,7 @@ import { buildGamePath } from "@/features/games/gameScope";
 import { useInterests } from "@/features/interests/useInterests";
 import { TopicOnboardingPrompt } from "../TopicOnboardingPrompt";
 import { PersonalizedLanes } from "../PersonalizedLanes";
+import { ContinueStudyingCard } from "../ContinueStudyingCard";
 import {
   homeCategoryCards,
 } from "../homePageData";
@@ -335,6 +336,8 @@ const HomePage = () => {
                 </Link>
               </div>
             </section>
+
+            <ContinueStudyingCard />
 
             <GuestHistoryCard />
 

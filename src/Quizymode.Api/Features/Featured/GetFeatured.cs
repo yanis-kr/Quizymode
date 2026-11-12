@@ -158,6 +158,7 @@ public static class GetFeatured
                 DateTime? lastMod = await db.Items
                     .AsNoTracking()
                     .Where(ItemVisibility.MediaEligible)
+                    // memberIds already applies the per-row private rule (#589), so no root-owner check is repeated here.
                     .Where(i => memberIds.Contains(i.Id))
                     .Select(i => (DateTime?)(i.UpdatedAt ?? i.CreatedAt))
                     .MaxAsync(cancellationToken);

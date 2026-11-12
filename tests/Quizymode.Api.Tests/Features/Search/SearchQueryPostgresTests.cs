@@ -330,7 +330,7 @@ public sealed class SearchQueryPostgresTests(PostgresContainerFixture fixture) :
 
         result.Value.Groups.Items!.Results.Should().BeEmpty();
         GlobalSearch.CollectionResult collection = result.Value.Groups.Collections!.Results.Single(r => r.Id == publicCollection.Id);
-        collection.ItemCount.Should().Be(0, "private items are never counted");
+        collection.ItemCount.Should().Be(1, "the owner's private question is listed in their public collection, so the card counts it too (#589, I3)");
         result.Value.Groups.Mine.Should().BeNull();
     }
 

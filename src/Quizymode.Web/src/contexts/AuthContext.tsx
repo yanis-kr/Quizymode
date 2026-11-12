@@ -17,6 +17,7 @@ import {
   resendSignUpCode,
 } from "aws-amplify/auth";
 import { usersApi } from "@/api/users";
+import { devTestIdentity } from "@/api/devTestAuth";
 import {
   SignInSessionError,
   SignInStepRequiredError,
@@ -27,6 +28,7 @@ import {
 } from "@/features/legal/policyAcceptanceStorage";
 import { hasToken, setTokens, clearTokens } from "@/utils/tokenStorage";
 import { GUEST_IDENTITY_KEY, purgeLearnRunsExcept } from "@/features/items/learn/learnStorage";
+import { purgeSignedInResumeEntries } from "@/features/items/quiz/resumeStorage";
 import { authApi } from "@/api/auth";
 import { queryClient } from "@/api/queryClient";
 import { SEARCH_QUERY_ROOT } from "@/features/search/searchParams";
@@ -135,6 +137,17 @@ export const AuthProvider = ({ children }: AuthProviderProps) => {
 
   /** Returns true only when a verified, unexpired authenticated session was established. */
   const refreshAuth = useCallback(async (): Promise<boolean> => {
+    // AC 7.8.3: Development test sign-in (VITE_DEV_TEST_USER). Never reached in production builds.
+    const devIdentity = devTestIdentity();
+    if (devIdentity) {
+      setIsAuthenticated(true);
+      setUserId(devIdentity.userId);
+      setUsername(devIdentity.userId);
+      setEmail(null);
+      setIsAdmin(devIdentity.isAdmin);
+      return true;
+    }
+
     try {
       // Use forceRefresh to ensure we get fresh tokens if refresh token is available
       const session = await fetchAuthSession({ forceRefresh: false });
@@ -481,6 +494,8 @@ export const AuthProvider = ({ children }: AuthProviderProps) => {
       clearTokens();
       // Learn progress of the signed-in identity must not outlive the session (AC 3.17.8); purge before the redirect.
       purgeLearnRunsExcept(GUEST_IDENTITY_KEY);
+      // An unfinished signed-in Quiz/Test resume point is purged the same way (AC 3.6.24).
+      purgeSignedInResumeEntries();
       // Search results include the user's own content (`mine`); drop them before another user can sign in (AC 11).
       queryClient.removeQueries({ queryKey: [SEARCH_QUERY_ROOT] });
       // Suggestions include the user's own recent paths, and the taxonomy cache is keyed per user (AC 12.17).

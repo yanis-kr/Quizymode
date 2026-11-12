@@ -129,6 +129,25 @@ Do not close an issue or bug until its evidence is attached to the issue itself 
 - Never include secrets, tokens, connection strings, or real users' personal data in screenshots or pasted output — crop or redact first. This repo is public: admin-area screenshots are allowed, but redact real users' emails, names, user IDs, IP addresses, user agents, and free text they submitted (feedback, comments) before capturing. Test-account data does not need redaction.
 - If evidence for a criterion can't be produced (e.g. needs an admin session that isn't available), say so explicitly as BLOCKED/NOT RUN in the comment and leave the issue open or get the user's explicit OK to close.
 
+### Verification method per AC
+
+Every AC in `docs/AC.md` carries `[verify: <method>]`. The method decides what counts as its evidence, and an issue closes when every one of its ACs has evidence by its tagged method.
+
+| Method | Evidence that counts | Who runs it |
+| --- | --- | --- |
+| `unit` | Named test(s) and the CI run that passed them (link). | CI |
+| `e2e` | Named Playwright test, CI run link, and the trace and screenshot artifacts of that run. | CI |
+| `api` | HTTP request, status and body, against the environment named in the comment. | Agent |
+| `sql` | Read-only query (READ ONLY transaction) and its result. Never print secrets. | Agent |
+| `anon-ui` | Screenshot or page text of a signed-out browser session. | Agent |
+| `signed-in-prod-ui` | Screenshot on prod while signed in as the test account, with the tester's sign-in. | Owner signs in; agent checks |
+
+- **Signed-in ACs** are proven by a green CI run with the linked E2E test, its trace and screenshots (`e2e`). Prod does not need to repeat them.
+- **Prod verification is a smoke check** (version, `/health`, anonymous pages, and read-only SQL or curl where an AC needs it). It does not re-prove ACs already covered in CI.
+- **ACs that cannot move to `e2e` or `api` on prod** are listed in one checklist comment per batch, grouped by screen, with the exact steps and the expected result. The owner replies "verified" to close those issues.
+- **Wording:** a tag never changes what an AC says. Weakening an AC to make it verifiable is not allowed; if an AC is wrong, change it in a separate, reviewed change.
+- **Untagged ACs** have no method and block closure of their issue until tagged.
+
 ## Change Rules
 
 - Do not hand-edit generated OpenAPI unless the generation path is broken and you are explicitly repairing it.

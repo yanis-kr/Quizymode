@@ -30,6 +30,12 @@ This runbook covers two scenarios:
 | `APP_GitHubSeedSync__Token` | `GitHubSeedSync:Token` | GitHub PAT for API access (read-only, contents scope) |
 | `APP_Seed__Path` | `Seed:Path` | Seed data root (default in container: `data/seed-dev`) |
 
+**Prod seed-sync token record** (set on the Lightsail `api` container service; issue #612):
+- Token type: GitHub fine-grained PAT, read-only contents on `yanis-kr/Quizymode`.
+- Owner: `yanis-kr` (GitHub account that created the token).
+- Expiry: 2027-11-10 (set when the token was created; confirmed from GitHub token settings). Renew before it lapses. Without renewal, prod seed sync falls back to unauthenticated GitHub calls and hits the 60/hour rate limit.
+- Never record the token value here or in chat.
+
 **Agent/local variables** (see `AGENTS.md § Agent Environment Variables`):
 
 | Variable | Used for |

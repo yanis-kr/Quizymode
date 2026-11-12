@@ -4,6 +4,7 @@ import {
   useParams,
   useNavigate,
   useSearchParams,
+  useLocation,
   Link,
 } from "react-router-dom";
 import { useQuery, useQueryClient } from "@tanstack/react-query";
@@ -75,8 +76,21 @@ import { gradeTypedAnswer, isTypeable } from "@/features/items/quiz/typedAnswer"
 import { isGuestEligible, recordGuestCompletion } from "@/features/guestHistory/guestHistoryStorage";
 import { addLocalReviewItems } from "@/features/learningLoop/localReviewList";
 import { recordAuthenticatedCompletion } from "@/features/studySessions/recordStudySession";
+import {
+  isResumableRun,
+  itemFingerprint,
+  readResumeEntry,
+  removeResumeEntry,
+  writeResumeEntry,
+  type StoredResumeEntry,
+} from "@/features/items/quiz/resumeStorage";
+import { entryMatchesStudyUrl, prepareResume, RESUME_RECOVERY_NOTICE } from "@/features/items/quiz/resumeRestore";
+import { ResumeChoice } from "@/features/items/quiz/ResumeChoice";
 
 const TEST_RESTORE_NOTICE = "We could not restore your earlier test, so we started a new one.";
+/** AC 3.6.24: Resume was chosen but the saved run could not be restored on the page. */
+const RESUME_FAILED_NOTICE = "We could not resume your saved session, so a new run was started.";
+const QUIZ_CONTEXT_KEY = "navigationContext_quiz";
 
 /** Quiz item URL for the current scope; Prev/Next, the initial sync and the deep-link rewrite all share it. */
 function buildQuizItemPath(
@@ -97,7 +111,13 @@ function buildQuizItemPath(
   return `/quiz/item/${id}${scope.search}`;
 }
 
-const QuizModePageContent = () => {
+interface QuizModePageContentProps {
+  /** AC 3.6.24: the user chose Resume; a failed restore shows a notice instead of starting silently. */
+  resumeRequested?: boolean;
+  initialNotice?: string | null;
+}
+
+const QuizModePageContent = ({ resumeRequested = false, initialNotice = null }: QuizModePageContentProps) => {
   const { category: categorySlug, collectionId, itemId } = useParams();
   const [searchParams] = useSearchParams();
   const navigate = useNavigate();
@@ -171,7 +191,8 @@ const QuizModePageContent = () => {
   };
   const [currentIndex, setCurrentIndex] = useState(0);
   const [run, setRun] = useState<QuizRunState | null>(null);
-  const [runRestartNotice, setRunRestartNotice] = useState<string | null>(null);
+  const [runRestartNotice, setRunRestartNotice] = useState<string | null>(initialNotice);
+  const resumeRequestedRef = useRef(resumeRequested);
   /** Mode the user asked for while a run with answers exists; waits for the confirmation (AC 3.18.1). */
   const [pendingMode, setPendingMode] = useState<QuizRunMode | null>(null);
   /** Time limit kept for the setup card after Play again (AC 3.18.10). */
@@ -595,6 +616,8 @@ const QuizModePageContent = () => {
 
   useEffect(() => {
     if (isLoadingItems || availableItems.length === 0) return;
+    // A restored category run's scope holds the category name, so wait until the URL slug has been resolved.
+    if (categorySlug && !collectionId && !categoriesData?.categories && !categoriesError) return;
     if (pendingSwitchRef.current !== null && pendingSwitchRef.current !== mode) return;
     const roster = uniqueItemIds(availableItems);
     if (run && run.identityKey === identityKey && sameQuizScope(run.scope, runScope) && run.mode === mode) {
@@ -614,6 +637,7 @@ const QuizModePageContent = () => {
         const context = JSON.parse(raw);
         const restored = restoreQuizRun(context.quizRun, runScope, roster, identityKey, mode);
         if (restored) {
+          resumeRequestedRef.current = false;
           setRun(restored);
           return;
         }
@@ -629,10 +653,14 @@ const QuizModePageContent = () => {
     } catch {
       // Storage is an optional restoration aid; gameplay remains in memory.
     }
+    if (resumeRequestedRef.current) {
+      resumeRequestedRef.current = false;
+      setRunRestartNotice(RESUME_FAILED_NOTICE);
+    }
 
     if (pendingSwitchRef.current === mode) pendingSwitchRef.current = null;
     setRun(createQuizRun(runScope, roster, identityKey, mode));
-  }, [availableItems, identityKey, isLoadingItems, mode, run, runScope]);
+  }, [availableItems, categoriesData?.categories, categoriesError, categorySlug, collectionId, identityKey, isLoadingItems, mode, run, runScope]);
 
   // Persist the validated run for URL navigation, item details, comments, and reload restoration.
   useEffect(() => {
@@ -654,6 +682,57 @@ const QuizModePageContent = () => {
       // Storage failures must never block in-memory play.
     }
   }, [items, currentIndex, category, collectionId, run]);
+
+  // AC 3.6.24: keep this identity's unfinished run in localStorage so it survives closing the browser; a completed
+  // run removes its entry. A run with no answer yet never replaces a saved run.
+  useEffect(() => {
+    if (!run || items.length === 0 || run.identityKey !== identityKey) return;
+    if (!sameQuizScope(run.scope, runScope) || run.mode !== mode || items.length !== run.itemIds.length) return;
+    if (summarizeQuizRun(run).isComplete) {
+      removeResumeEntry(identityKey, run.runId);
+      return;
+    }
+    if (!isResumableRun(run)) return;
+    const shown = items[currentIndex] ?? items[0];
+    const label = collectionId
+      ? collectionInfo?.name ?? "Collection quiz"
+      : [category ?? "All topics", ...navigationKeywords].join(" › ") +
+        (filterKeywords.length > 0 ? ` · ${filterKeywords.join(", ")}` : "");
+    const startParams = new URLSearchParams(quizItemSearch);
+    if (!collectionId && quizSize !== 10) startParams.set("size", String(quizSize));
+    const startSearch = startParams.toString() ? `?${startParams.toString()}` : "";
+    const startPath = collectionId
+      ? `${buildCollectionStudyPath("quiz", collectionId, collectionInfo?.name)}${startSearch}`
+      : category
+        ? `/quiz/${categoryNameToSlug(category)}${startSearch}`
+        : `/quiz${startSearch}`;
+    writeResumeEntry({
+      identityKey,
+      label,
+      resumePath: buildQuizItemPath(
+        { collectionId, collectionName: collectionInfo?.name, category, search: quizItemSearch },
+        shown.id
+      ),
+      startPath,
+      currentIndex: items[currentIndex] ? currentIndex : 0,
+      run,
+      fingerprints: Object.fromEntries(items.map((item) => [item.id, itemFingerprint(item)])),
+    });
+  }, [
+    run,
+    items,
+    currentIndex,
+    identityKey,
+    runScope,
+    mode,
+    collectionId,
+    collectionInfo?.name,
+    category,
+    navigationKeywords,
+    filterKeywords,
+    quizItemSearch,
+    quizSize,
+  ]);
 
   // AC 3.6.17 (#275): a deep link to an id outside the playable roster shows the first playable
   // item, so replace the URL (no history entry) with the item actually shown.
@@ -1608,12 +1687,157 @@ const QuizModePageContent = () => {
   );
 };
 
+function readSessionRunId(): string | null {
+  try {
+    const raw = sessionStorage.getItem(QUIZ_CONTEXT_KEY);
+    if (!raw) return null;
+    const runId: unknown = (JSON.parse(raw) as { quizRun?: { runId?: unknown } } | null)?.quizRun?.runId;
+    return typeof runId === "string" ? runId : null;
+  } catch {
+    return null;
+  }
+}
+
+function clearSessionRun(runId: string): void {
+  if (readSessionRunId() !== runId) return;
+  try {
+    sessionStorage.removeItem(QUIZ_CONTEXT_KEY);
+  } catch {
+    // Storage is optional.
+  }
+}
+
+type GatePhase =
+  | { kind: "choice"; entry: StoredResumeEntry }
+  | { kind: "resuming"; entry: StoredResumeEntry }
+  /** `waitForPath`: the page mounts only once the router shows this pathname (navigation runs in a transition). */
+  | { kind: "ready"; resumeRequested: boolean; notice: string | null; waitForPath: string | null };
+
+function samePathname(left: string, right: string): boolean {
+  if (left === right) return true;
+  try {
+    return decodeURI(left) === decodeURI(right);
+  } catch {
+    return false;
+  }
+}
+
+function pathnameOf(path: string): string {
+  try {
+    return new URL(path, "http://quizymode.local").pathname;
+  } catch {
+    return path;
+  }
+}
+
+/**
+ * AC 3.6.24: when this identity has a saved unfinished run for the URL's scope and mode, and this tab is not already
+ * playing it (a same-tab reload restores silently, AC 3.6.12), the page asks Resume or Start over before playing.
+ * The home card's Resume passes location state `{ quizResume: "resume" }` so the page resumes without asking again.
+ * Runs only after auth has settled, and only ever reads this identity's entry.
+ */
+const QuizResumeGate = () => {
+  const { category: categorySlug, collectionId } = useParams();
+  const [searchParams] = useSearchParams();
+  const location = useLocation();
+  const navigate = useNavigate();
+  const { isAuthenticated, userId } = useAuth();
+  const identityKey = isAuthenticated ? `user:${userId ?? "unknown"}` : "guest";
+  const [phase, setPhase] = useState<GatePhase>(() => {
+    const ready: GatePhase = { kind: "ready", resumeRequested: false, notice: null, waitForPath: null };
+    const entry = readResumeEntry(identityKey);
+    if (!entry || readSessionRunId() === entry.run.runId) return ready;
+    const hasCategoryScope = !!categorySlug && !collectionId;
+    const { navigationKeywords, filterKeywords } = getStudyScopeKeywords(searchParams, hasCategoryScope);
+    const matches = entryMatchesStudyUrl(entry, {
+      collectionId,
+      categorySlug: hasCategoryScope ? categorySlug : undefined,
+      mode: searchParams.get("mode") === "test" ? "test" : "practice",
+      navigationKeywords,
+      filterKeywords,
+      size: parseSizeParam(searchParams.get("size")),
+    });
+    if (!matches) return ready;
+    const requested = (location.state as { quizResume?: unknown } | null)?.quizResume === "resume";
+    return requested ? { kind: "resuming", entry } : { kind: "choice", entry };
+  });
+  const mounted = useRef(true);
+  useEffect(() => {
+    mounted.current = true;
+    return () => {
+      mounted.current = false;
+    };
+  }, []);
+
+  const startedResume = useRef(false);
+  const resume = async (entry: StoredResumeEntry) => {
+    if (startedResume.current) return;
+    startedResume.current = true;
+    setPhase({ kind: "resuming", entry });
+    const context = await prepareResume(entry, {
+      getById: (id) => itemsApi.getById(id),
+      getCollectionItems: (id) => collectionsApi.getItems(id),
+    });
+    if (!mounted.current) return;
+    if (!context) {
+      // Changed, deleted or inaccessible questions: start fresh in the same scope and mode, never fabricate results.
+      removeResumeEntry(identityKey, entry.run.runId);
+      clearSessionRun(entry.run.runId);
+      navigate(entry.startPath, { replace: true });
+      setPhase({ kind: "ready", resumeRequested: false, notice: RESUME_RECOVERY_NOTICE, waitForPath: pathnameOf(entry.startPath) });
+      return;
+    }
+    try {
+      sessionStorage.setItem(QUIZ_CONTEXT_KEY, JSON.stringify(context));
+      sessionStorage.removeItem("quiz_scope_items_from_categories");
+    } catch {
+      // The page then cannot restore and says so (resumeRequested).
+    }
+    navigate(entry.resumePath, { replace: true });
+    setPhase({ kind: "ready", resumeRequested: true, notice: null, waitForPath: pathnameOf(entry.resumePath) });
+  };
+
+  const startOver = (entry: StoredResumeEntry) => {
+    // The abandoned run is discarded unfinished: no completion snapshot, and completed history is untouched.
+    removeResumeEntry(identityKey, entry.run.runId);
+    clearSessionRun(entry.run.runId);
+    navigate(entry.startPath, { replace: true });
+    setPhase({ kind: "ready", resumeRequested: false, notice: null, waitForPath: pathnameOf(entry.startPath) });
+  };
+
+  const autoResumeEntry = phase.kind === "resuming" && !startedResume.current ? phase.entry : null;
+  useEffect(() => {
+    if (autoResumeEntry) void resume(autoResumeEntry);
+    // resume only reads refs and stable values; startedResume guards StrictMode's second run.
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [autoResumeEntry]);
+
+  if (phase.kind === "ready" && phase.waitForPath !== null && samePathname(location.pathname, phase.waitForPath)) {
+    setPhase({ ...phase, waitForPath: null });
+  }
+  if (phase.kind === "resuming" || (phase.kind === "ready" && phase.waitForPath !== null)) return <LoadingSpinner />;
+  if (phase.kind === "choice") {
+    return (
+      <div className="px-4 py-4 sm:py-6">
+        <ResumeChoice
+          variant="page"
+          entry={phase.entry}
+          onResume={() => void resume(phase.entry)}
+          onStartOver={() => startOver(phase.entry)}
+        />
+      </div>
+    );
+  }
+  return <QuizModePageContent resumeRequested={phase.resumeRequested} initialNotice={phase.notice} />;
+};
+
 // Auth must settle before saved-run restore reads the identity key; otherwise a
 // signed-in reload is treated as "guest" and its run is lost (#393).
 const QuizModePage = () => {
   const { isLoading } = useAuth();
   if (isLoading) return <LoadingSpinner />;
-  return <QuizModePageContent />;
+  return <QuizResumeGate />;
 };
+
 
 export default QuizModePage;

@@ -3,6 +3,7 @@ import type { AxiosInstance, InternalAxiosRequestConfig } from "axios";
 import { getToken, clearTokens, isTokenExpired } from "@/utils/tokenStorage";
 import { fetchAuthSession } from "aws-amplify/auth";
 import { setTokens } from "@/utils/tokenStorage";
+import { devTestAuthorization } from "./devTestAuth";
 
 // In dev, always use "/api" so Vite proxies to the backend (avoids CORS and SSL cert issues).
 // In production, use VITE_API_URL from env (e.g. .env.production).
@@ -64,6 +65,13 @@ const refreshTokens = async (): Promise<void> => {
 // ID tokens have the correct audience claim for API validation
 apiClient.interceptors.request.use(
   async (config: InternalAxiosRequestConfig) => {
+    // AC 7.8.3: Development builds with VITE_DEV_TEST_USER send the DevTest identity instead of a Cognito token.
+    const devAuthorization = devTestAuthorization();
+    if (devAuthorization && config.headers) {
+      config.headers.Authorization = devAuthorization;
+      return config;
+    }
+
     let token = getToken();
 
     // Check if token is expired or about to expire
