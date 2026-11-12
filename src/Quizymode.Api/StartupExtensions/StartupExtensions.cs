@@ -55,6 +55,8 @@ internal static partial class StartupExtensions
 
         // Add authentication before custom services so middleware and IUserContext work
         builder.AddAuthenticationServices();
+        // AC 7.8: registers the DevTest scheme only when the environment is Development.
+        builder.AddDevelopmentTestAuthentication();
 
         builder.AddCustomServices();
         

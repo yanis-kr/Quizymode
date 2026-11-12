@@ -28,6 +28,18 @@ export default defineConfig({
   },
   projects: [
     {
+      // AC 7.8.4: CI E2E against the Development stack with the DevTest identity. No Cognito login, no secrets.
+      // Traces and screenshots are kept for every test so a green run is its own evidence.
+      name: "e2e-ci",
+      testMatch: "**/e2e-ci/**/*.spec.ts",
+      use: {
+        ...devices["Desktop Chrome"],
+        viewport: { width: 1280, height: 900 },
+        trace: "on",
+        screenshot: "on",
+      },
+    },
+    {
       name: "auth-setup",
       testMatch: "**/auth.setup.ts",
       use: { ...devices["Desktop Chrome"] },
