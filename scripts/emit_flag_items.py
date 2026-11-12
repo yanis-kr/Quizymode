@@ -1,9 +1,14 @@
-"""Emit the geography > flags > countries picture items (#407 PR 2).
+"""Emit the geography > flags picture items (#407 PR 2, issue #617).
 
-Reads scripts/flag_country_data.py (names, regions, designs) and data/curated-media/flags/manifest.json
-(Commons provenance), then writes data/seed-source/items/geography/geography.flags.countries.NNN.json in
-100-item chunks. Items that are not flag pictures (the hand-written flag trivia that predates this set) are
-read from the existing files, keep their itemId, and stay first.
+Reads scripts/flag_country_data.py (names, regions, designs, starter wow lines, kept countries),
+scripts/flag_explanations.json (per-flag explanation and fact source) and
+data/curated-media/flags/manifest.json (picture provenance check), then writes:
+
+- geography.flags.countries.json: the KEPT_COUNTRIES flags (navigationKeyword2 "countries");
+- geography.flags.mixed.NNN.json: every other flag (navigationKeyword2 "mixed"), in 100-item chunks.
+
+Sets of 100 items or fewer use a single unsuffixed file, per AGENTS.md. The hand-written trivia items that
+used to sit in these files are not emitted, so running the script removes them from the source tree.
 
 Deterministic: item IDs are uuid5 over a fixed namespace and the iso2 code, and wrong answers are chosen with
 a fixed hash order, so running the script twice produces identical files.
@@ -23,7 +28,7 @@ from pathlib import Path
 SCRIPTS_DIR = Path(__file__).resolve().parent
 sys.path.insert(0, str(SCRIPTS_DIR))
 
-from flag_country_data import COUNTRIES, EXTRA_EXPLANATION, SIMILAR_GROUPS, STARTER  # noqa: E402
+from flag_country_data import COUNTRIES, KEPT_COUNTRIES, SIMILAR_GROUPS, STARTER  # noqa: E402
 from seed_source_common import (  # noqa: E402
     ROOT,
     SOURCE_ITEMS_ROOT,
@@ -34,9 +39,11 @@ from seed_source_common import (  # noqa: E402
 FLAG_NAMESPACE = uuid.UUID("5e6f1c1a-4b7d-4a3e-9d2c-407f1a9c0de1")
 QUESTION = "Which country's flag is this?"
 SCOPE_DIR = SOURCE_ITEMS_ROOT / "geography"
-CHUNK_PREFIX = "geography.flags.countries"
+KEPT_PREFIX = "geography.flags.countries"
+MIXED_PREFIX = "geography.flags.mixed"
 CHUNK_SIZE = 100
 MANIFEST_PATH = ROOT / "data" / "curated-media" / "flags" / "manifest.json"
+EXPLANATIONS_PATH = SCRIPTS_DIR / "flag_explanations.json"
 WRONG_ANSWER_COUNT = 3
 
 
@@ -66,50 +73,45 @@ def choose_wrong_answers(iso2: str, region: str, regions: dict[str, str]) -> lis
     return (chosen + rest)[:WRONG_ANSWER_COUNT]
 
 
-def load_non_picture_items() -> list[dict]:
-    kept: list[dict] = []
-    for path in sorted(SCOPE_DIR.glob(f"{CHUNK_PREFIX}*.json")):
-        for item in json.loads(path.read_text(encoding="utf-8")):
-            if "questionImage" not in item:
-                kept.append(item)
-    return kept
-
-
 def build_flag_items() -> list[dict]:
+    """Kept countries first, then the moved flags; each group sorted by country name."""
     manifest = json.loads(MANIFEST_PATH.read_text(encoding="utf-8"))
     by_iso = {entry["iso2"]: entry for entry in manifest["entries"]}
+    explanations = json.loads(EXPLANATIONS_PATH.read_text(encoding="utf-8"))
     names = {row[0]: row[1] for row in COUNTRIES}
     regions = {row[0]: row[2] for row in COUNTRIES}
 
     unknown_starter = set(STARTER) - set(names)
     if unknown_starter:
         raise SystemExit(f"STARTER has unknown iso2 codes: {sorted(unknown_starter)}")
+    unknown_kept = KEPT_COUNTRIES - set(names)
+    if unknown_kept:
+        raise SystemExit(f"KEPT_COUNTRIES has unknown iso2 codes: {sorted(unknown_kept)}")
 
-    items: list[dict] = []
+    kept: list[dict] = []
+    moved: list[dict] = []
     for iso2, name, region, _commons_file, design in sorted(COUNTRIES, key=lambda row: row[1].casefold()):
         entry = by_iso.get(iso2)
         if entry is None or entry["country"] != name or entry["region"] != region:
             raise SystemExit(f"{iso2}: manifest entry is missing or does not match flag_country_data.py")
-        if not entry.get("sourcePageUrl"):
-            raise SystemExit(f"{iso2}: manifest entry has no sourcePageUrl; run build_flag_images.mjs first")
         if answer_in_alt_text(name, design):
             raise SystemExit(f"{iso2}: design text must not contain the country name")
+        fact = explanations.get(iso2)
+        if fact is None or fact["name"] != name or not fact["explanation"] or not fact["source"]:
+            raise SystemExit(f"{iso2}: flag_explanations.json entry is missing, mismatched or incomplete")
 
-        explanation = f"This is the flag of {name}. {design}"
-        if iso2 in EXTRA_EXPLANATION:
-            explanation = f"{explanation} {EXTRA_EXPLANATION[iso2]}"
-
+        is_kept = iso2 in KEPT_COUNTRIES
         item = {
             "itemId": item_id_for(iso2),
             "category": "geography",
             "navigationKeyword1": "flags",
-            "navigationKeyword2": "countries",
+            "navigationKeyword2": "countries" if is_kept else "mixed",
             "question": QUESTION,
             "correctAnswer": name,
             "incorrectAnswers": [names[code] for code in choose_wrong_answers(iso2, region, regions)],
-            "explanation": explanation,
+            "explanation": fact["explanation"],
             "keywords": [region],
-            "source": entry["sourcePageUrl"],
+            "source": fact["source"],
             "questionImage": {"key": f"curated:flags/{iso2}", "altText": design},
         }
         if iso2 in STARTER:
@@ -117,25 +119,37 @@ def build_flag_items() -> list[dict]:
             if len(wow_line) > 140 or any(len(a) > 30 for a in [name, *item["incorrectAnswers"]]):
                 raise SystemExit(f"{iso2}: starter wowLine must be <= 140 chars and every answer <= 30 chars")
             item["starterWorld"] = "flags"
-            item["wowLine"] = STARTER[iso2]
-        items.append(item)
-    return items
+            item["wowLine"] = wow_line
+        (kept if is_kept else moved).append(item)
+    return kept + moved
+
+
+def write_scope(prefix: str, items: list[dict]) -> list[str]:
+    if len(items) <= CHUNK_SIZE:
+        path = SCOPE_DIR / f"{prefix}.json"
+        write_json(path, items)
+        return [path.name]
+    names = []
+    for number, start in enumerate(range(0, len(items), CHUNK_SIZE), start=1):
+        path = SCOPE_DIR / f"{prefix}.{number:03d}.json"
+        write_json(path, items[start : start + CHUNK_SIZE])
+        names.append(path.name)
+    return names
 
 
 def main() -> int:
-    existing = load_non_picture_items()
     flags = build_flag_items()
-    all_items = existing + flags
+    kept = [item for item in flags if item["navigationKeyword2"] == "countries"]
+    moved = [item for item in flags if item["navigationKeyword2"] == "mixed"]
+    if len(kept) != len(KEPT_COUNTRIES):
+        raise SystemExit(f"expected {len(KEPT_COUNTRIES)} kept flags, built {len(kept)}")
 
-    for stale in SCOPE_DIR.glob(f"{CHUNK_PREFIX}*.json"):
+    for stale in [*SCOPE_DIR.glob(f"{KEPT_PREFIX}*.json"), *SCOPE_DIR.glob(f"{MIXED_PREFIX}*.json")]:
         stale.unlink()
 
-    chunks = [all_items[i : i + CHUNK_SIZE] for i in range(0, len(all_items), CHUNK_SIZE)]
-    for number, chunk in enumerate(chunks, start=1):
-        write_json(SCOPE_DIR / f"{CHUNK_PREFIX}.{number:03d}.json", chunk)
-
+    written = write_scope(KEPT_PREFIX, kept) + write_scope(MIXED_PREFIX, moved)
     assert re.fullmatch(r"[0-9a-f-]{36}", flags[0]["itemId"])
-    print(f"Wrote {len(all_items)} items ({len(existing)} existing, {len(flags)} flag pictures) in {len(chunks)} chunks.")
+    print(f"Wrote {len(kept)} countries and {len(moved)} mixed flags to {', '.join(written)}.")
     return 0
 
 
