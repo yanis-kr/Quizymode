@@ -115,4 +115,84 @@ describe("AddToCollectionDialog", () => {
     await waitFor(() => expect(within(row).getByText(/nest deeper than 3 levels/i)).toBeInTheDocument());
     expect(within(row).getByRole("button", { name: "Add" })).toBeDisabled();
   });
+
+  describe("opened directly, with no breadcrumb (#558)", () => {
+    // My collections: top > middle > current (current sits 2 links below top), and a chain a > b > c.
+    const links: Record<string, { id: string; hiddenFromOthers?: boolean }[]> = {
+      top: [{ id: "middle" }],
+      middle: [{ id: "current", hiddenFromOthers: true }],
+      current: [],
+      a: [{ id: "b" }],
+      b: [{ id: "c" }],
+      c: [],
+      solo: [],
+    };
+
+    beforeEach(() => {
+      mocks.getAll.mockResolvedValue({
+        collections: ["top", "middle", "current", "a", "solo"].map((id) => ({ id, name: `Col ${id}` })),
+      });
+      mocks.listChildCollections.mockImplementation(async (id: string) => ({
+        children: (links[id] ?? []).map((child) => ({
+          id: child.id,
+          name: child.id,
+          isPublic: !child.hiddenFromOthers,
+          hiddenFromOthers: Boolean(child.hiddenFromOthers),
+          addedAt: "",
+        })),
+        hiddenCollectionCount: 0,
+      }));
+    });
+
+    async function rowFor(name: string) {
+      return (await screen.findByText(name)).closest("li") as HTMLElement;
+    }
+
+    it("disables a too-deep candidate using the real ancestry, not the breadcrumb", async () => {
+      renderDialog({ ancestorIds: [] });
+      await userEvent.click(screen.getByRole("tab", { name: "Collections" }));
+
+      // current is 2 links deep; a has 2 links below it: 2 + 1 + 2 = 5 > 3.
+      const deepRow = await rowFor("Col a");
+      await waitFor(() => expect(within(deepRow).getByText("Would nest deeper than 3 levels.")).toBeInTheDocument());
+      expect(within(deepRow).getByRole("button", { name: "Add" })).toBeDisabled();
+
+      // solo has nothing below it: 2 + 1 + 0 = 3, allowed.
+      const soloRow = await rowFor("Col solo");
+      await waitFor(() => expect(within(soloRow).getByRole("button", { name: "Add" })).toBeEnabled());
+      expect(within(soloRow).queryByText(/nest deeper|cycle/i)).not.toBeInTheDocument();
+    });
+
+    it("disables the real ancestors as cycles, counting my own private child links", async () => {
+      renderDialog({ ancestorIds: [] });
+      await userEvent.click(screen.getByRole("tab", { name: "Collections" }));
+
+      for (const name of ["Col top", "Col middle"]) {
+        const row = await rowFor(name);
+        await waitFor(() =>
+          expect(
+            within(row).getByText("Would create a cycle: this collection is already above the current one.")
+          ).toBeInTheDocument()
+        );
+        expect(within(row).getByRole("button", { name: "Add" })).toBeDisabled();
+      }
+      expect(mocks.addChildCollection).not.toHaveBeenCalled();
+    });
+
+    it("shows the API error when the server still rejects the link", async () => {
+      const error = Object.assign(new Error("Request failed"), {
+        response: { status: 400, data: { detail: "Collections can nest at most 3 levels deep." } },
+      });
+      mocks.addChildCollection.mockRejectedValue(error);
+      renderDialog({ ancestorIds: [] });
+      await userEvent.click(screen.getByRole("tab", { name: "Collections" }));
+
+      const soloRow = await rowFor("Col solo");
+      const button = within(soloRow).getByRole("button", { name: "Add" });
+      await waitFor(() => expect(button).toBeEnabled());
+      await userEvent.click(button);
+
+      expect(await screen.findByRole("alert")).toHaveTextContent("Collections can nest at most 3 levels deep.");
+    });
+  });
 });

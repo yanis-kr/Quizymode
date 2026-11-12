@@ -5,6 +5,7 @@ import { collectionsApi } from "@/api/collections";
 import { categoriesApi } from "@/api/categories";
 import { keywordsApi } from "@/api/keywords";
 import { searchApi } from "@/api/search";
+import { getApiErrorMessage } from "@/utils/apiError";
 
 /** The deepest a collection may nest: root is level 0, so a member may sit at most this many levels below it (AC 1.16.5). */
 export const MAX_NESTING_DEPTH = 3;
@@ -21,7 +22,10 @@ interface AddToCollectionDialogProps {
   open: boolean;
   onClose: () => void;
   collectionId: string;
-  /** Ids of the collections above this one, root first. Empty for a root collection. */
+  /**
+   * Ids from the breadcrumb, root first, when the page was reached by drilling down. Optional extra: the dialog reads
+   * the real ancestry from the collection links itself, so a directly opened collection is checked the same way.
+   */
   ancestorIds: string[];
 }
 
@@ -316,76 +320,146 @@ function CollectionsPanel({ collectionId, ancestorIds }: { collectionId: string;
     queryKey: ["add-to-collection", "mine-collections"],
     queryFn: () => collectionsApi.getAll(),
   });
+  const ownedIds = useMemo(() => (data?.collections ?? []).map((c) => c.id), [data]);
   const candidates = useMemo(
     () => (data?.collections ?? []).filter((c) => c.id !== collectionId),
     [data, collectionId]
   );
 
-  // Height of each candidate's subtree (1 = no nested collections), read to MAX_NESTING_DEPTH levels.
-  const { data: heights } = useQuery({
-    queryKey: ["add-to-collection", "heights", collectionId, candidates.map((c) => c.id).join(",")],
-    queryFn: async () => {
-      const result: Record<string, number> = {};
-      for (const c of candidates) {
-        result[c.id] = await subtreeHeight(c.id, MAX_NESTING_DEPTH);
-      }
-      return result;
-    },
-    enabled: candidates.length > 0,
+  // The nesting state comes from the real links, not from how the page was opened (#558): the parents of this
+  // collection are read from the children of every collection I own, and each candidate's subtree is walked down.
+  const { data: nesting, isPending: nestingPending } = useQuery({
+    queryKey: ["add-to-collection", "nesting", collectionId, ownedIds.join(",")],
+    queryFn: () => readNesting(collectionId, ownedIds, candidates.map((c) => c.id)),
+    enabled: data !== undefined,
   });
 
-  const depth = ancestorIds.length;
   const add = useMutation({
     mutationFn: (childId: string) => collectionsApi.addChildCollection(collectionId, childId),
     onSuccess: invalidate,
   });
 
-  if (candidates.length === 0) {
+  if (data !== undefined && candidates.length === 0) {
     return <p className="text-sm text-slate-500">You have no other collections to nest here.</p>;
   }
 
+  // The breadcrumb, when there is one, is a real path to this collection, so it only adds to what the links show.
+  const linksAbove = Math.max(nesting?.linksAbove ?? 0, ancestorIds.length);
+  const above = new Set([...(nesting?.ancestors ?? []), ...ancestorIds]);
+
   return (
-    <ul className="space-y-2">
-      {candidates.map((c) => {
-        const cycle = ancestorIds.includes(c.id);
-        const height = heights?.[c.id] ?? 1;
-        const tooDeep = !cycle && depth + height > MAX_NESTING_DEPTH;
-        const reason = cycle
-          ? "Would create a cycle: this collection is already above the current one."
-          : tooDeep
-            ? `Would nest deeper than ${MAX_NESTING_DEPTH} levels.`
-            : null;
-        return (
-          <li key={c.id} className="rounded-md border border-slate-200 p-2">
-            <div className="flex min-w-0 flex-wrap items-center justify-between gap-2">
-              <span className="min-w-0 break-words text-sm font-medium text-slate-900">{c.name}</span>
-              <button
-                type="button"
-                onClick={() => add.mutate(c.id)}
-                disabled={Boolean(reason) || add.isPending}
-                aria-describedby={reason ? `reason-${c.id}` : undefined}
-                className="rounded-md border border-slate-300 px-2 py-1 text-sm disabled:opacity-50"
-              >
-                Add
-              </button>
-            </div>
-            {reason && (
-              <p id={`reason-${c.id}`} className="mt-1 text-xs text-amber-800">
-                {reason}
-              </p>
-            )}
-          </li>
-        );
-      })}
-    </ul>
+    <div>
+      {add.isError && (
+        <p role="alert" className="mb-2 rounded-md bg-red-50 p-2 text-sm text-red-800">
+          Could not add the collection. {getApiErrorMessage(add.error)}
+        </p>
+      )}
+      <ul className="space-y-2">
+        {candidates.map((c) => {
+          const walk = nesting?.walks[c.id];
+          const cycle = above.has(c.id) || Boolean(walk?.reachesCurrent);
+          // Links above this collection, plus the new link, plus the links below the candidate (AC 1.16.5).
+          const tooDeep = !cycle && walk !== undefined && linksAbove + 1 + walk.linksBelow > MAX_NESTING_DEPTH;
+          const reason = cycle
+            ? "Would create a cycle: this collection is already above the current one."
+            : tooDeep
+              ? `Would nest deeper than ${MAX_NESTING_DEPTH} levels.`
+              : null;
+          return (
+            <li key={c.id} className="rounded-md border border-slate-200 p-2">
+              <div className="flex min-w-0 flex-wrap items-center justify-between gap-2">
+                <span className="min-w-0 break-words text-sm font-medium text-slate-900">{c.name}</span>
+                <button
+                  type="button"
+                  onClick={() => add.mutate(c.id)}
+                  disabled={Boolean(reason) || nestingPending || add.isPending}
+                  aria-describedby={reason ? `reason-${c.id}` : undefined}
+                  className="rounded-md border border-slate-300 px-2 py-1 text-sm disabled:opacity-50"
+                >
+                  Add
+                </button>
+              </div>
+              {reason && (
+                <p id={`reason-${c.id}`} className="mt-1 text-xs text-amber-800">
+                  {reason}
+                </p>
+              )}
+            </li>
+          );
+        })}
+      </ul>
+    </div>
   );
 }
 
-async function subtreeHeight(collectionId: string, remaining: number): Promise<number> {
-  if (remaining <= 1) return 1;
-  const response = await collectionsApi.listChildCollections(collectionId);
-  const visible = response.children.filter((child) => !child.hiddenFromOthers);
-  if (visible.length === 0) return 1;
-  const heights = await Promise.all(visible.map((child) => subtreeHeight(child.id, remaining - 1)));
-  return 1 + Math.max(...heights);
+interface Nesting {
+  /** Longest chain of links above the current collection, capped at MAX_NESTING_DEPTH + 1. */
+  linksAbove: number;
+  /** Every collection found above the current one. */
+  ancestors: string[];
+  /** Per candidate: links below it (capped) and whether its subtree already contains the current collection. */
+  walks: Record<string, { linksBelow: number; reachesCurrent: boolean }>;
+}
+
+/**
+ * Reads the nesting around the current collection the same way the API guard does (CollectionMembers.WalkUp/WalkDown),
+ * bounded by MAX_NESTING_DEPTH + 1 levels and a visited set. My own private children are counted too: they are real links.
+ * A child the API hides from me (another user's private collection) still counts as one level below its parent.
+ */
+async function readNesting(currentId: string, ownedIds: string[], candidateIds: string[]): Promise<Nesting> {
+  const cache = new Map<string, Promise<{ ids: string[]; hidden: number }>>();
+  const childrenOf = (id: string) => {
+    let entry = cache.get(id);
+    if (!entry) {
+      entry = collectionsApi
+        .listChildCollections(id)
+        .then((r) => ({ ids: r.children.map((child) => child.id), hidden: r.hiddenCollectionCount }));
+      cache.set(id, entry);
+    }
+    return entry;
+  };
+
+  // Parents of each collection, from the children of every collection I own. A parent owned by someone else is not
+  // listed to me; the API guard still rejects a link that is too deep because of it, and the dialog shows that error.
+  const parentsOf = new Map<string, string[]>();
+  await Promise.all(
+    ownedIds.map(async (parentId) => {
+      for (const childId of (await childrenOf(parentId)).ids) {
+        parentsOf.set(childId, [...(parentsOf.get(childId) ?? []), parentId]);
+      }
+    })
+  );
+
+  const ancestors = new Set<string>([currentId]);
+  let frontier = [currentId];
+  let linksAbove = 0;
+  for (let level = 1; level <= MAX_NESTING_DEPTH + 1 && frontier.length > 0; level++) {
+    const next = frontier.flatMap((id) => parentsOf.get(id) ?? []).filter((id) => !ancestors.has(id) && ancestors.add(id));
+    if (next.length > 0) linksAbove = level;
+    frontier = next;
+  }
+  ancestors.delete(currentId);
+
+  const walks: Nesting["walks"] = {};
+  await Promise.all(
+    candidateIds.map(async (candidateId) => {
+      const seen = new Set<string>([candidateId]);
+      let down = [candidateId];
+      let linksBelow = 0;
+      let reachesCurrent = false;
+      for (let level = 1; level <= MAX_NESTING_DEPTH + 1 && down.length > 0; level++) {
+        const lists = await Promise.all(down.map(childrenOf));
+        const next = lists.flatMap((l) => l.ids).filter((id) => !seen.has(id) && seen.add(id));
+        if (next.includes(currentId)) {
+          reachesCurrent = true;
+          break;
+        }
+        if (next.length > 0 || lists.some((l) => l.hidden > 0)) linksBelow = level;
+        down = next;
+      }
+      walks[candidateId] = { linksBelow, reachesCurrent };
+    })
+  );
+
+  return { linksAbove, ancestors: [...ancestors], walks };
 }
