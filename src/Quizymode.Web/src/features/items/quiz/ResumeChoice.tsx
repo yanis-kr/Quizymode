@@ -42,11 +42,7 @@ export function ResumeChoice({ entry, onResume, onStartOver, variant, busy = fal
           type="button"
           onClick={onStartOver}
           disabled={busy}
-          className={
-            home
-              ? "inline-flex min-h-[44px] items-center justify-center rounded-md border border-on-panel/20 bg-transparent px-4 py-2 text-sm font-semibold text-on-panel hover:bg-on-panel/10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-200 disabled:opacity-60"
-              : "inline-flex min-h-[44px] items-center justify-center rounded-md border border-gray-300 bg-white px-4 py-2 text-sm font-semibold text-gray-700 hover:bg-gray-50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500 disabled:opacity-60"
-          }
+          className="inline-flex min-h-[44px] items-center justify-center rounded-md border border-on-panel/20 bg-transparent px-4 py-2 text-sm font-semibold text-on-panel hover:bg-on-panel/10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-200 disabled:opacity-60"
         >
           Start over
         </button>
