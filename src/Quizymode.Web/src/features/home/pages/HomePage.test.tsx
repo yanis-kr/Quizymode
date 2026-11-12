@@ -81,7 +81,7 @@ describe("HomePage", () => {
     );
 
     await waitFor(() => {
-      expect(document.title).toMatch(/^Quizymode(?: \| Quizymode)?$/);
+      expect(document.title).toBe("Quizymode – Smart Flashcards & Learning Quizzes");
       expect(document.querySelector('meta[name="description"]')).toHaveAttribute(
         "content",
         expect.stringMatching(/five-question quiz with no account needed/i)

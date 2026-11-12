@@ -65,6 +65,8 @@ describe("result share builders", () => {
     const global = buildGlobalShare({ correct: 2, total: 3, origin: ORIGIN });
     expect(global.text).toBe("I scored 2/3 on a Quizymode quiz. Try this quiz!");
     expect(global.url).toBe(`${ORIGIN}/quiz?utm_source=share&utm_medium=share&utm_campaign=quiz_result&utm_content=global`);
+    const starter = buildGlobalShare({ correct: 4, total: 5, origin: ORIGIN, path: "/start" });
+    expect(starter.url).toBe(`${ORIGIN}/start?utm_source=share&utm_medium=share&utm_campaign=quiz_result&utm_content=global`);
   });
 
   it("builds the daily grid in roster order", () => {

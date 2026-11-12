@@ -1512,7 +1512,7 @@ const QuizModePageContent = () => {
               stats={stats}
               typedAnswer={typedAnswerControls}
               questionPicture={{
-                ...pictures.controlsFor(currentItem, isPracticeActive && !currentSkipped ? handleSkipUnavailable : undefined),
+                ...pictures.controlsFor(currentItem, isPracticeActive && !currentSkipped && !currentOutcome ? handleSkipUnavailable : undefined),
                 blocked: pictureBlocked,
               }}
             />
