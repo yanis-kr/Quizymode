@@ -33,7 +33,7 @@ This runbook covers two scenarios:
 **Prod seed-sync token record** (set on the Lightsail `api` container service; issue #612):
 - Token type: GitHub fine-grained PAT, read-only contents on `yanis-kr/Quizymode`.
 - Owner: `yanis-kr` (GitHub account that created the token).
-- Expiry: one year from creation, approximately 2027-11-12 (token created 2026-11-12). Confirm the exact date in GitHub settings (Developer settings → Fine-grained tokens) and renew before it lapses. Without renewal, prod seed sync falls back to unauthenticated GitHub calls and hits the 60/hour rate limit.
+- Expiry: 2027-11-10 (set when the token was created; confirmed from GitHub token settings). Renew before it lapses. Without renewal, prod seed sync falls back to unauthenticated GitHub calls and hits the 60/hour rate limit.
 - Never record the token value here or in chat.
 
 **Agent/local variables** (see `AGENTS.md § Agent Environment Variables`):
