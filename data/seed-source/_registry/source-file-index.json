@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-11-03T17:01:37.805423+00:00",
-  "totalItems": 13844,
+  "generatedAt": "2026-11-12T14:23:44.875923+00:00",
+  "totalItems": 14190,
   "files": [
     {
       "path": "data/seed-source/items/business/business.accounting.audit.json",
@@ -1083,6 +1083,14 @@
       "modifiedAt": "2026-04-05T10:34:42-05:00"
     },
     {
+      "path": "data/seed-source/items/exams/exams.anthropic.ccar-f.json",
+      "category": "exams",
+      "nav1": "anthropic",
+      "nav2": "ccar-f",
+      "itemCount": 50,
+      "modifiedAt": "2026-11-10T07:32:21-06:00"
+    },
+    {
       "path": "data/seed-source/items/exams/exams.ap.biology.json",
       "category": "exams",
       "nav1": "ap",
@@ -1151,7 +1159,7 @@
       "category": "exams",
       "nav1": "aws",
       "nav2": "aif-c01",
-      "itemCount": 12,
+      "itemCount": 50,
       "modifiedAt": "2026-04-05T10:34:42-05:00"
     },
     {
@@ -1169,6 +1177,14 @@
       "nav2": "dva-c02",
       "itemCount": 12,
       "modifiedAt": "2026-04-05T10:34:42-05:00"
+    },
+    {
+      "path": "data/seed-source/items/exams/exams.aws.mla-c02.json",
+      "category": "exams",
+      "nav1": "aws",
+      "nav2": "mla-c02",
+      "itemCount": 50,
+      "modifiedAt": "2026-11-10T07:32:21-06:00"
     },
     {
       "path": "data/seed-source/items/exams/exams.aws.saa-c03.001.json",
@@ -1241,6 +1257,14 @@
       "nav2": "soa-c02",
       "itemCount": 12,
       "modifiedAt": "2026-04-05T10:34:42-05:00"
+    },
+    {
+      "path": "data/seed-source/items/exams/exams.azure.ai-103.json",
+      "category": "exams",
+      "nav1": "azure",
+      "nav2": "ai-103",
+      "itemCount": 50,
+      "modifiedAt": "2026-11-10T07:32:21-06:00"
     },
     {
       "path": "data/seed-source/items/exams/exams.azure.ai-900.json",
@@ -1449,6 +1473,14 @@
       "nav2": "ace",
       "itemCount": 10,
       "modifiedAt": "2026-04-05T10:34:42-05:00"
+    },
+    {
+      "path": "data/seed-source/items/exams/exams.gcp.genai-leader.json",
+      "category": "exams",
+      "nav1": "gcp",
+      "nav2": "genai-leader",
+      "itemCount": 50,
+      "modifiedAt": "2026-11-10T07:32:21-06:00"
     },
     {
       "path": "data/seed-source/items/exams/exams.gcp.pca.json",
@@ -5727,7 +5759,7 @@
       "category": "tech",
       "nav1": "ai-ml",
       "nav2": "computer-vision",
-      "itemCount": 6,
+      "itemCount": 14,
       "modifiedAt": "2026-04-05T10:34:42-05:00"
     },
     {
@@ -5735,15 +5767,31 @@
       "category": "tech",
       "nav1": "ai-ml",
       "nav2": "deep-learning",
-      "itemCount": 6,
+      "itemCount": 18,
       "modifiedAt": "2026-04-05T10:34:42-05:00"
+    },
+    {
+      "path": "data/seed-source/items/tech/tech.ai-ml.genai-basics.json",
+      "category": "tech",
+      "nav1": "ai-ml",
+      "nav2": "genai-basics",
+      "itemCount": 25,
+      "modifiedAt": "2026-11-10T07:32:21-06:00"
+    },
+    {
+      "path": "data/seed-source/items/tech/tech.ai-ml.genai-facts.json",
+      "category": "tech",
+      "nav1": "ai-ml",
+      "nav2": "genai-facts",
+      "itemCount": 29,
+      "modifiedAt": "2026-11-10T07:32:21-06:00"
     },
     {
       "path": "data/seed-source/items/tech/tech.ai-ml.llms.json",
       "category": "tech",
       "nav1": "ai-ml",
       "nav2": "llms",
-      "itemCount": 14,
+      "itemCount": 17,
       "modifiedAt": "2026-11-03T17:01:37.805423+00:00"
     },
     {
@@ -5751,7 +5799,7 @@
       "category": "tech",
       "nav1": "ai-ml",
       "nav2": "ml-basics",
-      "itemCount": 6,
+      "itemCount": 17,
       "modifiedAt": "2026-04-05T10:34:42-05:00"
     },
     {
@@ -5759,7 +5807,7 @@
       "category": "tech",
       "nav1": "ai-ml",
       "nav2": "nlp",
-      "itemCount": 6,
+      "itemCount": 16,
       "modifiedAt": "2026-04-05T10:34:42-05:00"
     },
     {
@@ -5767,7 +5815,7 @@
       "category": "tech",
       "nav1": "ai-ml",
       "nav2": "prompt-eng",
-      "itemCount": 6,
+      "itemCount": 16,
       "modifiedAt": "2026-04-05T10:34:42-05:00"
     },
     {
