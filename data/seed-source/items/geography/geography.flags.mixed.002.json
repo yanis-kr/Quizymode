@@ -1,0 +1,618 @@
+[
+  {
+    "itemId": "35ff3079-4fb9-5b77-93fd-b8c11b35fb06",
+    "category": "geography",
+    "navigationKeyword1": "flags",
+    "navigationKeyword2": "mixed",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Seychelles",
+    "incorrectAnswers": [
+      "Cameroon",
+      "Madagascar",
+      "Cabo Verde"
+    ],
+    "explanation": "Blue represents the sea and sky, yellow the sun, red the people's struggle, white social justice and green the land. The flag was adopted in 1996, when the country moved to a new constitution.",
+    "keywords": [
+      "africa"
+    ],
+    "source": "https://en.wikipedia.org/wiki/Flag_of_Seychelles",
+    "questionImage": {
+      "key": "curated:flags/sc",
+      "altText": "Five oblique bands of blue, yellow, red, white and green radiating from the lower left corner."
+    }
+  },
+  {
+    "itemId": "b29cd4fe-5daf-5e00-8c1e-92fef81f2023",
+    "category": "geography",
+    "navigationKeyword1": "flags",
+    "navigationKeyword2": "mixed",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Sierra Leone",
+    "incorrectAnswers": [
+      "Gabon",
+      "Gambia",
+      "Uganda"
+    ],
+    "explanation": "Green stands for agriculture and forests, white for unity and blue for the Atlantic Ocean. The Portuguese name Serra Leoa means Lion Mountains.",
+    "keywords": [
+      "africa"
+    ],
+    "source": "https://en.wikipedia.org/wiki/Flag_of_Sierra_Leone",
+    "questionImage": {
+      "key": "curated:flags/sl",
+      "altText": "Three equal horizontal stripes of green, white and blue."
+    }
+  },
+  {
+    "itemId": "5478e120-f57a-53d2-8968-95f2b90aebcc",
+    "category": "geography",
+    "navigationKeyword1": "flags",
+    "navigationKeyword2": "mixed",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Slovakia",
+    "incorrectAnswers": [
+      "Slovenia",
+      "Serbia",
+      "Russia"
+    ],
+    "explanation": "The double cross on three hills represents the Tatra Mountains and the country's Christian heritage.",
+    "keywords": [
+      "europe"
+    ],
+    "source": "https://en.wikipedia.org/wiki/Flag_of_Slovakia",
+    "questionImage": {
+      "key": "curated:flags/sk",
+      "altText": "Three equal horizontal stripes of white, blue and red, with a coat of arms showing a double cross on three hills left of centre."
+    }
+  },
+  {
+    "itemId": "776149f5-e1a0-5f6a-bbb0-8271fad3881b",
+    "category": "geography",
+    "navigationKeyword1": "flags",
+    "navigationKeyword2": "mixed",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Slovenia",
+    "incorrectAnswers": [
+      "Russia",
+      "Slovakia",
+      "Serbia"
+    ],
+    "explanation": "Triglav, the country's highest mountain, appears on the coat of arms and is a national symbol. The flag was adopted at independence in 1991.",
+    "keywords": [
+      "europe"
+    ],
+    "source": "https://en.wikipedia.org/wiki/Flag_of_Slovenia",
+    "questionImage": {
+      "key": "curated:flags/si",
+      "altText": "Three equal horizontal stripes of white, blue and red, with a shield showing a mountain, wavy lines and three stars at the upper left."
+    }
+  },
+  {
+    "itemId": "0499d9b7-ce5d-5d70-b742-bced74235637",
+    "category": "geography",
+    "navigationKeyword1": "flags",
+    "navigationKeyword2": "mixed",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Solomon Islands",
+    "incorrectAnswers": [
+      "Samoa",
+      "Nauru",
+      "New Zealand"
+    ],
+    "explanation": "The five stars represent the country's five main island groups. The flag was adopted at independence from Britain in 1978.",
+    "keywords": [
+      "oceania"
+    ],
+    "source": "https://en.wikipedia.org/wiki/Flag_of_the_Solomon_Islands",
+    "questionImage": {
+      "key": "curated:flags/sb",
+      "altText": "A yellow diagonal stripe runs from the lower left to the upper right, between a blue triangle with five white stars at the upper left and a green triangle at the lower right."
+    }
+  },
+  {
+    "itemId": "ccd8769e-71d0-5a5b-ae53-c0adf41fd81c",
+    "category": "geography",
+    "navigationKeyword1": "flags",
+    "navigationKeyword2": "mixed",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Somalia",
+    "incorrectAnswers": [
+      "Republic of the Congo",
+      "Gambia",
+      "Egypt"
+    ],
+    "explanation": "The five points of the star represent the five regions of Somali-populated areas. The light blue is a shade associated with the United Nations flag.",
+    "keywords": [
+      "africa"
+    ],
+    "source": "https://en.wikipedia.org/wiki/Flag_of_Somalia",
+    "questionImage": {
+      "key": "curated:flags/so",
+      "altText": "A light blue field with a white five-pointed star at the centre."
+    }
+  },
+  {
+    "itemId": "08e55be4-be9c-5d97-b58a-a7f9c37b04ca",
+    "category": "geography",
+    "navigationKeyword1": "flags",
+    "navigationKeyword2": "mixed",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "South Sudan",
+    "incorrectAnswers": [
+      "Libya",
+      "Kenya",
+      "Malawi"
+    ],
+    "explanation": "The star represents the unity of the country's people. The flag was adopted at independence from Sudan on 9 July 2011.",
+    "keywords": [
+      "africa"
+    ],
+    "source": "https://en.wikipedia.org/wiki/Flag_of_South_Sudan",
+    "questionImage": {
+      "key": "curated:flags/ss",
+      "altText": "Horizontal stripes of black, red and green separated by thin white stripes, with a blue triangle at the left holding a yellow star."
+    }
+  },
+  {
+    "itemId": "3b153a3f-3c71-58a2-855b-1499a4a25e6a",
+    "category": "geography",
+    "navigationKeyword1": "flags",
+    "navigationKeyword2": "mixed",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Sri Lanka",
+    "incorrectAnswers": [
+      "Mongolia",
+      "Tajikistan",
+      "Georgia"
+    ],
+    "explanation": "The lion holds a sword, and the four Bo leaves at the corners are a symbol of Buddhism, the religion of most of the population. The flag was adopted in 1972 when the country became a republic.",
+    "keywords": [
+      "asia"
+    ],
+    "source": "https://en.wikipedia.org/wiki/Flag_of_Sri_Lanka",
+    "questionImage": {
+      "key": "curated:flags/lk",
+      "altText": "A maroon panel holding a golden lion with a sword, bordered in yellow, beside two vertical stripes of green and orange at the left."
+    }
+  },
+  {
+    "itemId": "aef27a30-9872-5bf0-bf01-de26bb91c416",
+    "category": "geography",
+    "navigationKeyword1": "flags",
+    "navigationKeyword2": "mixed",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Sudan",
+    "incorrectAnswers": [
+      "Egypt",
+      "Sierra Leone",
+      "Lesotho"
+    ],
+    "explanation": "The colours are Pan-Arab, reflecting the country's Arab cultural links. Sudan became independent in 1956.",
+    "keywords": [
+      "africa"
+    ],
+    "source": "https://en.wikipedia.org/wiki/Flag_of_Sudan",
+    "questionImage": {
+      "key": "curated:flags/sd",
+      "altText": "Three equal horizontal stripes of red, white and black with a green triangle at the left."
+    }
+  },
+  {
+    "itemId": "aded4499-d939-50f8-a4d6-809246e116cf",
+    "category": "geography",
+    "navigationKeyword1": "flags",
+    "navigationKeyword2": "mixed",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Suriname",
+    "incorrectAnswers": [
+      "Uruguay",
+      "Ecuador",
+      "Argentina"
+    ],
+    "explanation": "The yellow star represents the golden future of the country and the unity of its many communities. Suriname is the only Dutch-speaking country in South America.",
+    "keywords": [
+      "south-america"
+    ],
+    "source": "https://en.wikipedia.org/wiki/Flag_of_Suriname",
+    "questionImage": {
+      "key": "curated:flags/sr",
+      "altText": "Horizontal stripes of green, white, a wide red stripe, white and green, with a yellow five-pointed star at the centre."
+    }
+  },
+  {
+    "itemId": "21fe9541-e86b-5849-abb6-add74525ba9d",
+    "category": "geography",
+    "navigationKeyword1": "flags",
+    "navigationKeyword2": "mixed",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Syria",
+    "incorrectAnswers": [
+      "Iraq",
+      "Jordan",
+      "Yemen"
+    ],
+    "explanation": "Green, white and black are Pan-Arab colours. The 2025 flag replaces the earlier red, white and black design that had two green stars.",
+    "keywords": [
+      "asia"
+    ],
+    "source": "https://en.wikipedia.org/wiki/Flag_of_Syria",
+    "questionImage": {
+      "key": "curated:flags/sy",
+      "altText": "Three equal horizontal bands of green, white and black, with three red five-pointed stars in the white band."
+    }
+  },
+  {
+    "itemId": "715e43e0-8a79-5f6f-9e87-265bba5eb716",
+    "category": "geography",
+    "navigationKeyword1": "flags",
+    "navigationKeyword2": "mixed",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "S\u00e3o Tom\u00e9 and Pr\u00edncipe",
+    "incorrectAnswers": [
+      "Somalia",
+      "Democratic Republic of the Congo",
+      "Gabon"
+    ],
+    "explanation": "The two black stars represent the two main islands of the country. The country became independent from Portugal in 1975.",
+    "keywords": [
+      "africa"
+    ],
+    "source": "https://en.wikipedia.org/wiki/Flag_of_S\u00e3o_Tom\u00e9_and_Pr\u00edncipe",
+    "questionImage": {
+      "key": "curated:flags/st",
+      "altText": "Horizontal stripes of green, yellow and green, with a red triangle at the left and two black five-pointed stars in the yellow stripe."
+    }
+  },
+  {
+    "itemId": "45cd0e35-7748-5304-bb6e-fd8df07fe57d",
+    "category": "geography",
+    "navigationKeyword1": "flags",
+    "navigationKeyword2": "mixed",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Tajikistan",
+    "incorrectAnswers": [
+      "South Korea",
+      "United Arab Emirates",
+      "Brunei"
+    ],
+    "explanation": "The crown above the emblem is a symbol of statehood. The flag was adopted at independence from the Soviet Union in 1991.",
+    "keywords": [
+      "asia"
+    ],
+    "source": "https://en.wikipedia.org/wiki/Flag_of_Tajikistan",
+    "questionImage": {
+      "key": "curated:flags/tj",
+      "altText": "Horizontal bands of red, a wide white band and green, with a golden crown beneath an arc of seven golden stars at the centre."
+    }
+  },
+  {
+    "itemId": "4e039e49-6201-5cf9-b493-48edc3e908eb",
+    "category": "geography",
+    "navigationKeyword1": "flags",
+    "navigationKeyword2": "mixed",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Tanzania",
+    "incorrectAnswers": [
+      "Democratic Republic of the Congo",
+      "Namibia",
+      "Republic of the Congo"
+    ],
+    "explanation": "Green represents agriculture, black the people and blue the Indian Ocean and the lakes. The flag was adopted in 1964, when Tanganyika and Zanzibar united.",
+    "keywords": [
+      "africa"
+    ],
+    "source": "https://en.wikipedia.org/wiki/Flag_of_Tanzania",
+    "questionImage": {
+      "key": "curated:flags/tz",
+      "altText": "A black diagonal band edged in yellow runs from the lower left to the upper right, between a green triangle at the upper left and a blue triangle at the lower right."
+    }
+  },
+  {
+    "itemId": "c3d634a9-48c8-5068-9b09-26cbd4bf0330",
+    "category": "geography",
+    "navigationKeyword1": "flags",
+    "navigationKeyword2": "mixed",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Timor-Leste",
+    "incorrectAnswers": [
+      "Laos",
+      "Armenia",
+      "Cambodia"
+    ],
+    "explanation": "The flag was adopted at independence in 2002, the first new country of the 21st century. The star symbolises the nation's future.",
+    "keywords": [
+      "asia"
+    ],
+    "source": "https://en.wikipedia.org/wiki/Flag_of_East_Timor",
+    "questionImage": {
+      "key": "curated:flags/tl",
+      "altText": "A red field with a yellow triangle at the left that holds a black triangle with a white star."
+    }
+  },
+  {
+    "itemId": "552edeae-961b-5180-835d-43000b9d952e",
+    "category": "geography",
+    "navigationKeyword1": "flags",
+    "navigationKeyword2": "mixed",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Togo",
+    "incorrectAnswers": [
+      "Burundi",
+      "Benin",
+      "Nigeria"
+    ],
+    "explanation": "The white star represents hope, and the green and yellow stand for the land and the country's resources. The flag was adopted at independence from France in 1960.",
+    "keywords": [
+      "africa"
+    ],
+    "source": "https://en.wikipedia.org/wiki/Flag_of_Togo",
+    "questionImage": {
+      "key": "curated:flags/tg",
+      "altText": "Five horizontal stripes alternating green and yellow, with a red square at the upper left holding a white five-pointed star."
+    }
+  },
+  {
+    "itemId": "a95f2b2b-e262-56ae-a39a-ac2d4c0defc2",
+    "category": "geography",
+    "navigationKeyword1": "flags",
+    "navigationKeyword2": "mixed",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Tonga",
+    "incorrectAnswers": [
+      "Samoa",
+      "New Zealand",
+      "Fiji"
+    ],
+    "explanation": "The red cross represents the Christian faith of the Tongan people. Tonga is the only Pacific island nation that was never colonised.",
+    "keywords": [
+      "oceania"
+    ],
+    "source": "https://en.wikipedia.org/wiki/Flag_of_Tonga",
+    "questionImage": {
+      "key": "curated:flags/to",
+      "altText": "A red field with a white rectangle at the upper left holding a red cross."
+    }
+  },
+  {
+    "itemId": "970d8026-5366-5ca8-a5ff-648a9ba5453d",
+    "category": "geography",
+    "navigationKeyword1": "flags",
+    "navigationKeyword2": "mixed",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Trinidad and Tobago",
+    "incorrectAnswers": [
+      "Jamaica",
+      "Saint Kitts and Nevis",
+      "Saint Lucia"
+    ],
+    "explanation": "Red represents the energy and courage of the people, black the unity of the country, and white the sea and sunlight. The flag was adopted at independence in 1962.",
+    "keywords": [
+      "north-america"
+    ],
+    "source": "https://en.wikipedia.org/wiki/Flag_of_Trinidad_and_Tobago",
+    "questionImage": {
+      "key": "curated:flags/tt",
+      "altText": "A red field crossed by a black diagonal band edged in white, from the upper left to the lower right."
+    }
+  },
+  {
+    "itemId": "f215dcb2-0097-576d-87bc-c635dfdf9ff1",
+    "category": "geography",
+    "navigationKeyword1": "flags",
+    "navigationKeyword2": "mixed",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Tunisia",
+    "incorrectAnswers": [
+      "Liberia",
+      "Togo",
+      "Algeria"
+    ],
+    "explanation": "The red colour stands for the blood of the independence struggle. The crescent and star are Islamic symbols. Tunisia became independent from France in 1956.",
+    "keywords": [
+      "africa"
+    ],
+    "source": "https://en.wikipedia.org/wiki/Flag_of_Tunisia",
+    "questionImage": {
+      "key": "curated:flags/tn",
+      "altText": "A red field with a white disc at the centre holding a red crescent and a red five-pointed star."
+    }
+  },
+  {
+    "itemId": "efcb3f95-92e1-596f-8bf7-537536c2fd45",
+    "category": "geography",
+    "navigationKeyword1": "flags",
+    "navigationKeyword2": "mixed",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Turkmenistan",
+    "incorrectAnswers": [
+      "Myanmar",
+      "South Korea",
+      "Bahrain"
+    ],
+    "explanation": "The carpet ornament refers to the traditional Turkmen rugs, which are part of the country's cultural heritage. The crescent and stars represent Islam and the country's aspirations.",
+    "keywords": [
+      "asia"
+    ],
+    "source": "https://en.wikipedia.org/wiki/Flag_of_Turkmenistan",
+    "questionImage": {
+      "key": "curated:flags/tm",
+      "altText": "A dark green field with a vertical red band of carpet patterns at the left and a white crescent with five white stars at the upper left."
+    }
+  },
+  {
+    "itemId": "855a8d41-c1b3-59db-8030-1f6eaf6a0e42",
+    "category": "geography",
+    "navigationKeyword1": "flags",
+    "navigationKeyword2": "mixed",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Tuvalu",
+    "incorrectAnswers": [
+      "Australia",
+      "New Zealand",
+      "Fiji"
+    ],
+    "explanation": "The nine stars represent the country's nine islands. The Union Jack recalls Tuvalu's British colonial origins, and the flag was adopted at independence in 1978.",
+    "keywords": [
+      "oceania"
+    ],
+    "source": "https://en.wikipedia.org/wiki/Flag_of_Tuvalu",
+    "questionImage": {
+      "key": "curated:flags/tv",
+      "altText": "A light blue field with a union jack at the upper left and nine yellow stars at the right."
+    }
+  },
+  {
+    "itemId": "1af7992c-2de5-546d-a6b3-d6aee3b42da6",
+    "category": "geography",
+    "navigationKeyword1": "flags",
+    "navigationKeyword2": "mixed",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Uganda",
+    "incorrectAnswers": [
+      "Nigeria",
+      "Sierra Leone",
+      "Benin"
+    ],
+    "explanation": "The grey crowned crane is the national bird and a symbol of peace. The black, yellow and red colours represent the people, the sun and the country's African heritage.",
+    "keywords": [
+      "africa"
+    ],
+    "source": "https://en.wikipedia.org/wiki/Flag_of_Uganda",
+    "questionImage": {
+      "key": "curated:flags/ug",
+      "altText": "Six horizontal stripes of black, yellow, red, black, yellow and red, with a white disc at the centre holding a grey crowned bird."
+    }
+  },
+  {
+    "itemId": "af978ce3-346c-59b9-95ae-80faccd13ad3",
+    "category": "geography",
+    "navigationKeyword1": "flags",
+    "navigationKeyword2": "mixed",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Uzbekistan",
+    "incorrectAnswers": [
+      "Syria",
+      "Malaysia",
+      "Tajikistan"
+    ],
+    "explanation": "The crescent and stars are Islamic symbols. The flag was adopted at independence from the Soviet Union in 1991.",
+    "keywords": [
+      "asia"
+    ],
+    "source": "https://en.wikipedia.org/wiki/Flag_of_Uzbekistan",
+    "questionImage": {
+      "key": "curated:flags/uz",
+      "altText": "Horizontal bands of light blue, white and green separated by thin red lines, with a white crescent and twelve white stars at the upper left."
+    }
+  },
+  {
+    "itemId": "53ecb9fd-5a63-566d-a4cd-9ab57d0290d2",
+    "category": "geography",
+    "navigationKeyword1": "flags",
+    "navigationKeyword2": "mixed",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Vanuatu",
+    "incorrectAnswers": [
+      "Marshall Islands",
+      "Tuvalu",
+      "Nauru"
+    ],
+    "explanation": "The Y shape represents the country's island chain. Black stands for the people, yellow for the sun, green for the forests and red for the blood of independence.",
+    "keywords": [
+      "oceania"
+    ],
+    "source": "https://en.wikipedia.org/wiki/Flag_of_Vanuatu",
+    "questionImage": {
+      "key": "curated:flags/vu",
+      "altText": "A red band above a green band, with a black triangle at the left edged in yellow, holding a yellow ring and crossed leaves, and a yellow sideways Y shape."
+    }
+  },
+  {
+    "itemId": "13671082-0f11-51b5-a08d-a09395aaab6f",
+    "category": "geography",
+    "navigationKeyword1": "flags",
+    "navigationKeyword2": "mixed",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Vatican City",
+    "incorrectAnswers": [
+      "North Macedonia",
+      "Monaco",
+      "Portugal"
+    ],
+    "explanation": "The crossed keys represent the keys of Saint Peter, and the papal tiara symbolises the authority of the Pope. The flag is a yellow and white design used since 1929.",
+    "keywords": [
+      "europe"
+    ],
+    "source": "https://en.wikipedia.org/wiki/Flag_of_Vatican_City",
+    "questionImage": {
+      "key": "curated:flags/va",
+      "altText": "A square flag with a yellow vertical band at the left and a white band at the right holding crossed keys beneath a triple crown."
+    }
+  },
+  {
+    "itemId": "12970acd-5c9c-52b1-8527-c18fe6264844",
+    "category": "geography",
+    "navigationKeyword1": "flags",
+    "navigationKeyword2": "mixed",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Yemen",
+    "incorrectAnswers": [
+      "Syria",
+      "Jordan",
+      "Iraq"
+    ],
+    "explanation": "Red represents the blood of the martyrs, white the bright future and black the dark past. The colours are Pan-Arab and were adopted in 1990, when North and South Yemen united.",
+    "keywords": [
+      "asia"
+    ],
+    "source": "https://en.wikipedia.org/wiki/Flag_of_Yemen",
+    "questionImage": {
+      "key": "curated:flags/ye",
+      "altText": "Three equal horizontal stripes of red, white and black."
+    }
+  },
+  {
+    "itemId": "4d4e0336-3431-5e46-88fb-4c4880cbf2c0",
+    "category": "geography",
+    "navigationKeyword1": "flags",
+    "navigationKeyword2": "mixed",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Zambia",
+    "incorrectAnswers": [
+      "Burundi",
+      "Botswana",
+      "Cameroon"
+    ],
+    "explanation": "The eagle represents freedom and the country's national identity, and green stands for agriculture. The flag was adopted at independence from Britain on 24 October 1964.",
+    "keywords": [
+      "africa"
+    ],
+    "source": "https://en.wikipedia.org/wiki/Flag_of_Zambia",
+    "questionImage": {
+      "key": "curated:flags/zm",
+      "altText": "A green field with three short vertical stripes of red, black and orange at the lower right and an orange eagle above them."
+    }
+  },
+  {
+    "itemId": "4414ca00-2072-5f24-a751-e09bb08869d9",
+    "category": "geography",
+    "navigationKeyword1": "flags",
+    "navigationKeyword2": "mixed",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Zimbabwe",
+    "incorrectAnswers": [
+      "Guinea",
+      "Republic of the Congo",
+      "Comoros"
+    ],
+    "explanation": "The bird is based on a soapstone carving found in the Great Zimbabwe ruins, the ancient city that gave the country its name. The star represents hope and the Zimbabwean nation.",
+    "keywords": [
+      "africa"
+    ],
+    "source": "https://en.wikipedia.org/wiki/Flag_of_Zimbabwe",
+    "questionImage": {
+      "key": "curated:flags/zw",
+      "altText": "Seven horizontal stripes of green, yellow, red, black, red, yellow and green, with a white triangle at the left holding a red star and a yellow bird."
+    }
+  }
+]

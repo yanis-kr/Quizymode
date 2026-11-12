@@ -15,15 +15,20 @@ sys.path.insert(0, str(SCRIPTS_DIR))
 
 import emit_flag_items  # noqa: E402
 import seed_source_common as common  # noqa: E402
-from flag_country_data import COUNTRIES, EXTRA_EXPLANATION  # noqa: E402
+from flag_country_data import COUNTRIES, KEPT_COUNTRIES, STARTER  # noqa: E402
 
 MANIFEST = json.loads(emit_flag_items.MANIFEST_PATH.read_text(encoding="utf-8"))
 REGIONS = {"africa", "asia", "europe", "north-america", "south-america", "oceania"}
 
 
+def flag_files() -> list[Path]:
+    # Sorted by name: countries.json sorts before mixed.NNN.json, matching build_flag_items() order.
+    return sorted([*emit_flag_items.SCOPE_DIR.glob("geography.flags.countries*.json"), *emit_flag_items.SCOPE_DIR.glob("geography.flags.mixed*.json")])
+
+
 def load_emitted_flag_items() -> list[dict]:
     items: list[dict] = []
-    for path in sorted(emit_flag_items.SCOPE_DIR.glob("geography.flags.countries.*.json")):
+    for path in flag_files():
         items.extend(item for item in json.loads(path.read_text(encoding="utf-8")) if "questionImage" in item)
     return items
 
@@ -95,26 +100,42 @@ class FlagSetTests(unittest.TestCase):
             alt = item["questionImage"]["altText"]
             self.assertFalse(common.answer_in_alt_text(answer, alt), answer)
             self.assertLessEqual(len(alt), common.QUESTION_IMAGE_ALT_MAX)
-            self.assertTrue(item["source"].startswith("https://commons.wikimedia.org/wiki/File:"))
+            self.assertTrue(item["source"].startswith(("https://en.wikipedia.org/wiki/Flag_of_", "https://www.britannica.com/topic/flag-of-")), answer)
             self.assertIn(item["questionImage"]["key"].removeprefix("curated:flags/"), names)
+            self.assertTrue(item["explanation"].strip(), answer)
+            self.assertNotIn("This is the flag of", item["explanation"], answer)
 
-    def test_contested_flags_mention_the_other_flag(self) -> None:
+    def test_countries_and_mixed_split_by_the_kept_list(self) -> None:
+        by_file = {path.name: json.loads(path.read_text(encoding="utf-8")) for path in flag_files()}
+        countries = by_file["geography.flags.countries.json"]
+        mixed = [item for name, items in by_file.items() if "mixed" in name for item in items]
+        self.assertEqual(67, len(KEPT_COUNTRIES))
+        self.assertEqual(67, len(countries))
+        self.assertEqual(128, len(mixed))
+        self.assertTrue(all(item["navigationKeyword2"] == "countries" for item in countries))
+        self.assertTrue(all(item["navigationKeyword2"] == "mixed" for item in mixed))
+        self.assertEqual({"United States", "Türkiye", "Japan", "Switzerland", "Canada"} - {item["correctAnswer"] for item in countries}, set())
+
+    def test_no_trivia_items_remain_in_the_flags_scope(self) -> None:
+        for path in flag_files():
+            for item in json.loads(path.read_text(encoding="utf-8")):
+                self.assertIn("questionImage", item, path.name)
+                self.assertEqual("Which country's flag is this?", item["question"])
+
+    def test_starter_pool_flags_are_well_known_countries(self) -> None:
+        starters = {item["correctAnswer"] for item in load_emitted_flag_items() if "starterWorld" in item}
+        self.assertEqual({"Nepal", "Switzerland", "Brazil", "Canada", "Denmark", "India", "Japan", "United States"}, starters)
+        self.assertEqual({"np", "ch", "br", "ca", "dk", "in", "jp", "us"}, set(STARTER))
+
+    def test_contested_flags_explain_the_pictured_flag(self) -> None:
         by_answer = {item["correctAnswer"]: item for item in load_emitted_flag_items()}
         afghanistan = by_answer["Afghanistan"]["explanation"]
-        self.assertIn("black, red and green", afghanistan)
+        self.assertIn("2013", afghanistan)
         self.assertIn("Taliban", afghanistan)
-        self.assertIn("Shahada", afghanistan)
+        self.assertIn("mihrab", afghanistan)
         syria = by_answer["Syria"]["explanation"]
         self.assertIn("2025", syria)
         self.assertIn("two green stars", syria)
-        self.assertEqual({"af", "sy"}, set(EXTRA_EXPLANATION))
-
-    def test_existing_trivia_items_keep_their_ids(self) -> None:
-        path = emit_flag_items.SCOPE_DIR / "geography.flags.countries.001.json"
-        first = json.loads(path.read_text(encoding="utf-8"))
-        self.assertEqual("3f50c714-5763-4739-9e3b-bb2db846eec2", first[0]["itemId"])
-        self.assertEqual("9e2eb19e-66fe-4f36-9ea1-a519d3b01aa9", first[10]["itemId"])
-        self.assertNotIn("questionImage", first[10])
 
 
 if __name__ == "__main__":

@@ -256,17 +256,6 @@ SIMILAR_GROUPS: list[list[str]] = [
 ]
 
 # Contested flags (owner decisions). Extra sentence appended to the explanation.
-EXTRA_EXPLANATION: dict[str, str] = {
-    "af": (
-        "This black, red and green tricolour is the flag of the former Islamic Republic of Afghanistan, "
-        "which is still used at the United Nations. Inside the country, the Taliban flies a white flag "
-        "bearing the Shahada, the Islamic declaration of faith."
-    ),
-    "sy": (
-        "This is the flag adopted in 2025 after the fall of the Assad government in December 2024. "
-        "It replaces the earlier red, white and black flag with two green stars."
-    ),
-}
 
 # Starter quiz (#462): well-known flags that open the home "Play a 5-question quiz" run, with the one-line "wow"
 # fact shown after the answer (max 140 characters). iso2 -> wowLine. Each fact's source is the URL in the comment.
@@ -285,10 +274,79 @@ STARTER: dict[str, str] = {
     "ch": "Switzerland's is one of only two square national flags. The other belongs to Vatican City.",
     # Denmark - https://en.wikipedia.org/wiki/Flag_of_Denmark
     "dk": "Denmark's Dannebrog holds the Guinness record as the oldest national flag in continuous use, since 1625.",
-    # Mozambique - https://en.wikipedia.org/wiki/Flag_of_Mozambique
-    "mz": "Mozambique's is the only national flag with a modern firearm on it: an AK-47.",
+    # United States - https://en.wikipedia.org/wiki/Flag_of_the_United_States
+    "us": "The current 50-star design has been used since July 4, 1960, after Hawaii became a state.",
     # India - https://en.wikipedia.org/wiki/Flag_of_India
     "in": "The blue wheel in the middle of India's flag, the Ashoka Chakra, has 24 spokes.",
-    # Bhutan - https://en.wikipedia.org/wiki/Flag_of_Bhutan
-    "bt": "Bhutan's flag shows a dragon. Its local name means 'Land of the Thunder Dragon'.",
 }
+
+# Countries kept in geography > flags > countries (issue #617). Every other flag goes to geography > flags > mixed.
+KEPT_COUNTRIES: frozenset[str] = frozenset({
+    "ae",
+    "ar",
+    "at",
+    "au",
+    "bd",
+    "be",
+    "br",
+    "ca",
+    "ch",
+    "cl",
+    "cn",
+    "co",
+    "cu",
+    "cz",
+    "de",
+    "dk",
+    "eg",
+    "es",
+    "et",
+    "fi",
+    "fr",
+    "gb",
+    "gh",
+    "gr",
+    "hr",
+    "hu",
+    "id",
+    "ie",
+    "il",
+    "in",
+    "iq",
+    "ir",
+    "is",
+    "it",
+    "jm",
+    "jp",
+    "ke",
+    "kp",
+    "kr",
+    "ma",
+    "mx",
+    "my",
+    "ng",
+    "nl",
+    "no",
+    "np",
+    "nz",
+    "pe",
+    "ph",
+    "pk",
+    "pl",
+    "pt",
+    "qa",
+    "ro",
+    "ru",
+    "sa",
+    "se",
+    "sg",
+    "sn",
+    "th",
+    "tr",
+    "ua",
+    "us",
+    "uy",
+    "ve",
+    "vn",
+    "za",
+})

@@ -1,0 +1,1492 @@
+[
+  {
+    "itemId": "e75f24ea-36d1-5803-a9de-ec91bfc81f9f",
+    "category": "geography",
+    "navigationKeyword1": "flags",
+    "navigationKeyword2": "countries",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Argentina",
+    "incorrectAnswers": [
+      "Uruguay",
+      "Chile",
+      "Ecuador"
+    ],
+    "explanation": "The Sun of May is named after the May Revolution of 1810, which began the independence movement. General Manuel Belgrano created the flag in 1812.",
+    "keywords": [
+      "south-america"
+    ],
+    "source": "https://en.wikipedia.org/wiki/Flag_of_Argentina",
+    "questionImage": {
+      "key": "curated:flags/ar",
+      "altText": "Three equal horizontal stripes of light blue, white and light blue, with a golden sun with a face at the centre."
+    }
+  },
+  {
+    "itemId": "e22433a6-998e-5004-9ff4-10602f99b967",
+    "category": "geography",
+    "navigationKeyword1": "flags",
+    "navigationKeyword2": "countries",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Australia",
+    "incorrectAnswers": [
+      "Tuvalu",
+      "Fiji",
+      "New Zealand"
+    ],
+    "explanation": "The Union Jack recalls the country's British colonial origins, and the Commonwealth Star's seven points represent the six original states and the territories. The flag was adopted at federation in 1901.",
+    "keywords": [
+      "oceania"
+    ],
+    "source": "https://en.wikipedia.org/wiki/Flag_of_Australia",
+    "questionImage": {
+      "key": "curated:flags/au",
+      "altText": "A blue field with a union jack at the upper left, a large white seven-pointed star below it and five white stars at the right."
+    }
+  },
+  {
+    "itemId": "c1c5b0e5-f2c3-5979-9adc-1e393d5dd61b",
+    "category": "geography",
+    "navigationKeyword1": "flags",
+    "navigationKeyword2": "countries",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Austria",
+    "incorrectAnswers": [
+      "Germany",
+      "Belgium",
+      "Bosnia and Herzegovina"
+    ],
+    "explanation": "According to legend, the red and white colours date from 1191, when Duke Leopold V's white tunic was stained red except where his sword belt covered it.",
+    "keywords": [
+      "europe"
+    ],
+    "source": "https://en.wikipedia.org/wiki/Flag_of_Austria",
+    "questionImage": {
+      "key": "curated:flags/at",
+      "altText": "Three equal horizontal stripes of red, white and red."
+    }
+  },
+  {
+    "itemId": "2f8347f1-0226-5909-aaf4-fad4b1a058d2",
+    "category": "geography",
+    "navigationKeyword1": "flags",
+    "navigationKeyword2": "countries",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Bangladesh",
+    "incorrectAnswers": [
+      "South Korea",
+      "Japan",
+      "Kazakhstan"
+    ],
+    "explanation": "The red disc is said to represent the sun rising over green land and the blood of those who died in the 1971 independence war. The flag was adopted that same year.",
+    "keywords": [
+      "asia"
+    ],
+    "source": "https://en.wikipedia.org/wiki/Flag_of_Bangladesh",
+    "questionImage": {
+      "key": "curated:flags/bd",
+      "altText": "A dark green field with a red disc set slightly toward the left."
+    }
+  },
+  {
+    "itemId": "e9f37f2d-8ce1-566f-8d91-ccb26050bab0",
+    "category": "geography",
+    "navigationKeyword1": "flags",
+    "navigationKeyword2": "countries",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Belgium",
+    "incorrectAnswers": [
+      "Austria",
+      "Germany",
+      "Russia"
+    ],
+    "explanation": "The vertical tricolour was adopted in 1831, the year after Belgium became independent from the Netherlands in 1830. Its colours are linked to the historic arms of the region of Brabant.",
+    "keywords": [
+      "europe"
+    ],
+    "source": "https://en.wikipedia.org/wiki/Flag_of_Belgium",
+    "questionImage": {
+      "key": "curated:flags/be",
+      "altText": "Three equal vertical stripes of black, yellow and red."
+    }
+  },
+  {
+    "itemId": "d039f82e-8338-53bd-b39f-92a9210034c2",
+    "category": "geography",
+    "navigationKeyword1": "flags",
+    "navigationKeyword2": "countries",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Brazil",
+    "incorrectAnswers": [
+      "Chile",
+      "Ecuador",
+      "Venezuela"
+    ],
+    "explanation": "The stars show the night sky over Rio de Janeiro on 15 November 1889, when the republic was proclaimed. The motto Ordem e Progresso (Order and Progress) is taken from positivist philosophy.",
+    "keywords": [
+      "south-america"
+    ],
+    "source": "https://en.wikipedia.org/wiki/Flag_of_Brazil",
+    "questionImage": {
+      "key": "curated:flags/br",
+      "altText": "A green field with a large yellow diamond holding a blue disc with white stars and a curved white banner."
+    },
+    "starterWorld": "flags",
+    "wowLine": "The stars show the sky over Rio de Janeiro on 15 November 1889, the day Brazil became a republic."
+  },
+  {
+    "itemId": "fd2b8567-91ce-58b6-a122-fc8f0cf89eb0",
+    "category": "geography",
+    "navigationKeyword1": "flags",
+    "navigationKeyword2": "countries",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Canada",
+    "incorrectAnswers": [
+      "Dominican Republic",
+      "Panama",
+      "Costa Rica"
+    ],
+    "explanation": "The red maple leaf is a symbol of Canada, which has long used the maple as a national emblem. The flag's width-to-length ratio is 1 to 2, and it was adopted in 1965 after a parliamentary debate on the design.",
+    "keywords": [
+      "north-america"
+    ],
+    "source": "https://www.britannica.com/topic/flag-of-Canada",
+    "questionImage": {
+      "key": "curated:flags/ca",
+      "altText": "Red bands at the left and right with a white square between them holding a red leaf with eleven points."
+    },
+    "starterWorld": "flags",
+    "wowLine": "The red maple leaf on Canada's flag has 11 points."
+  },
+  {
+    "itemId": "2125af24-e85a-591a-8114-d454d6de98de",
+    "category": "geography",
+    "navigationKeyword1": "flags",
+    "navigationKeyword2": "countries",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Chile",
+    "incorrectAnswers": [
+      "Ecuador",
+      "Suriname",
+      "Peru"
+    ],
+    "explanation": "The lone white star represents the sky above the country and its independence. Red stands for the blood of patriots, white for the snow of the Andes and blue for the sky.",
+    "keywords": [
+      "south-america"
+    ],
+    "source": "https://en.wikipedia.org/wiki/Flag_of_Chile",
+    "questionImage": {
+      "key": "curated:flags/cl",
+      "altText": "Two equal horizontal bands, white above and red below, with a blue square at the upper left holding a white five-pointed star."
+    }
+  },
+  {
+    "itemId": "9c97ac57-3734-5110-8b1b-b65a67ad9b77",
+    "category": "geography",
+    "navigationKeyword1": "flags",
+    "navigationKeyword2": "countries",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "China",
+    "incorrectAnswers": [
+      "Vietnam",
+      "T\u00fcrkiye",
+      "Singapore"
+    ],
+    "explanation": "The large star represents the Communist Party, and the four small stars represent the social classes that the party claims to lead. The flag was adopted when the People's Republic was founded in 1949.",
+    "keywords": [
+      "asia"
+    ],
+    "source": "https://en.wikipedia.org/wiki/Flag_of_China",
+    "questionImage": {
+      "key": "curated:flags/cn",
+      "altText": "A red field with one large yellow five-pointed star and four smaller yellow stars in an arc at the upper left."
+    }
+  },
+  {
+    "itemId": "3c271ded-d734-525e-8b96-5514ba190e5b",
+    "category": "geography",
+    "navigationKeyword1": "flags",
+    "navigationKeyword2": "countries",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Colombia",
+    "incorrectAnswers": [
+      "Venezuela",
+      "Ecuador",
+      "Bolivia"
+    ],
+    "explanation": "The colours were proposed by Francisco de Miranda in 1806 and recalled in the flag of Gran Colombia. Yellow represents sovereignty, blue the seas and red the blood of independence heroes.",
+    "keywords": [
+      "south-america"
+    ],
+    "source": "https://en.wikipedia.org/wiki/Flag_of_Colombia",
+    "questionImage": {
+      "key": "curated:flags/co",
+      "altText": "Three horizontal stripes of yellow, blue and red, with the yellow stripe twice as tall as each of the others."
+    }
+  },
+  {
+    "itemId": "2cbab382-c149-5e2d-b5ff-68f7ec092cc8",
+    "category": "geography",
+    "navigationKeyword1": "flags",
+    "navigationKeyword2": "countries",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Croatia",
+    "incorrectAnswers": [
+      "France",
+      "Switzerland",
+      "Spain"
+    ],
+    "explanation": "The red and white checkerboard pattern comes from medieval Croatian coats of arms. It is one of the oldest heraldic designs in the region.",
+    "keywords": [
+      "europe"
+    ],
+    "source": "https://en.wikipedia.org/wiki/Flag_of_Croatia",
+    "questionImage": {
+      "key": "curated:flags/hr",
+      "altText": "Three equal horizontal stripes of red, white and blue, with a red and white chequered shield under a crown at the centre."
+    }
+  },
+  {
+    "itemId": "81aab275-1b77-505f-af37-f0f191601970",
+    "category": "geography",
+    "navigationKeyword1": "flags",
+    "navigationKeyword2": "countries",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Cuba",
+    "incorrectAnswers": [
+      "Panama",
+      "Costa Rica",
+      "Dominican Republic"
+    ],
+    "explanation": "The white star represents independence, and the red triangle symbolises liberty, equality and fraternity. The flag was adopted by the new republic in 1902.",
+    "keywords": [
+      "north-america"
+    ],
+    "source": "https://en.wikipedia.org/wiki/Flag_of_Cuba",
+    "questionImage": {
+      "key": "curated:flags/cu",
+      "altText": "Five horizontal stripes alternating blue and white, with a red triangle at the left holding a white five-pointed star."
+    }
+  },
+  {
+    "itemId": "65231a33-c43c-5ecb-87f3-5fa009416b74",
+    "category": "geography",
+    "navigationKeyword1": "flags",
+    "navigationKeyword2": "countries",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Czechia",
+    "incorrectAnswers": [
+      "Poland",
+      "Portugal",
+      "Romania"
+    ],
+    "explanation": "Red and white are the historic colours of Bohemia, and the blue triangle is a traditional element of Czech heraldry. The country was known as the Czech Republic until 2016.",
+    "keywords": [
+      "europe"
+    ],
+    "source": "https://en.wikipedia.org/wiki/Flag_of_the_Czech_Republic",
+    "questionImage": {
+      "key": "curated:flags/cz",
+      "altText": "Two equal horizontal bands, white above and red below, with a blue triangle at the left."
+    }
+  },
+  {
+    "itemId": "6c3ff42f-fd1b-537f-b0b6-ebadb8645043",
+    "category": "geography",
+    "navigationKeyword1": "flags",
+    "navigationKeyword2": "countries",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Denmark",
+    "incorrectAnswers": [
+      "Finland",
+      "Norway",
+      "Sweden"
+    ],
+    "explanation": "Dannebrog, the red flag with a white cross, is one of the oldest continuously used national flags in the world. According to legend, it fell from the sky during a battle in 1219 and gave the Danes victory.",
+    "keywords": [
+      "europe"
+    ],
+    "source": "https://en.wikipedia.org/wiki/Flag_of_Denmark",
+    "questionImage": {
+      "key": "curated:flags/dk",
+      "altText": "A red field with a white cross that extends to the edges, set toward the left."
+    },
+    "starterWorld": "flags",
+    "wowLine": "Denmark's Dannebrog holds the Guinness record as the oldest national flag in continuous use, since 1625."
+  },
+  {
+    "itemId": "f47f616a-42b8-5d96-bacc-a314da544daa",
+    "category": "geography",
+    "navigationKeyword1": "flags",
+    "navigationKeyword2": "countries",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Egypt",
+    "incorrectAnswers": [
+      "Sudan",
+      "Liberia",
+      "Angola"
+    ],
+    "explanation": "The golden eagle is based on the eagle of Saladin, the 12th-century Muslim leader who fought the Crusaders. The red, white and black colours are Pan-Arab.",
+    "keywords": [
+      "africa"
+    ],
+    "source": "https://en.wikipedia.org/wiki/Flag_of_Egypt",
+    "questionImage": {
+      "key": "curated:flags/eg",
+      "altText": "Three equal horizontal bands of red, white and black, with a golden eagle emblem at the centre."
+    }
+  },
+  {
+    "itemId": "e64bb034-d0f3-5bd3-a1b4-02e28572fbc0",
+    "category": "geography",
+    "navigationKeyword1": "flags",
+    "navigationKeyword2": "countries",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Ethiopia",
+    "incorrectAnswers": [
+      "Cameroon",
+      "Guinea",
+      "Senegal"
+    ],
+    "explanation": "The blue disc represents peace and hope, and the flag's colours are Pan-African. Ethiopia was one of the few African states never fully colonised, apart from a brief Italian occupation from 1936 to 1941.",
+    "keywords": [
+      "africa"
+    ],
+    "source": "https://en.wikipedia.org/wiki/Flag_of_Ethiopia",
+    "questionImage": {
+      "key": "curated:flags/et",
+      "altText": "Three equal horizontal stripes of green, yellow and red, with a blue disc at the centre bearing a yellow star with rays."
+    }
+  },
+  {
+    "itemId": "350bf5ae-544f-572b-87ae-1befd2bde8ad",
+    "category": "geography",
+    "navigationKeyword1": "flags",
+    "navigationKeyword2": "countries",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Finland",
+    "incorrectAnswers": [
+      "Denmark",
+      "Iceland",
+      "Sweden"
+    ],
+    "explanation": "The blue cross symbolises the country's many lakes, and the white field stands for the snow of its winters. Finland's flag was adopted in 1918 and follows the Nordic cross pattern.",
+    "keywords": [
+      "europe"
+    ],
+    "source": "https://en.wikipedia.org/wiki/Flag_of_Finland",
+    "questionImage": {
+      "key": "curated:flags/fi",
+      "altText": "A white field with a blue cross that extends to the edges, set toward the left."
+    }
+  },
+  {
+    "itemId": "2c485d85-5742-55c7-a4e4-f5feb038f408",
+    "category": "geography",
+    "navigationKeyword1": "flags",
+    "navigationKeyword2": "countries",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "France",
+    "incorrectAnswers": [
+      "Luxembourg",
+      "Russia",
+      "Netherlands"
+    ],
+    "explanation": "The blue and red are the colours of Paris, and the white represents the royal house. The tricolour was adopted during the French Revolution in 1789.",
+    "keywords": [
+      "europe"
+    ],
+    "source": "https://en.wikipedia.org/wiki/Flag_of_France",
+    "questionImage": {
+      "key": "curated:flags/fr",
+      "altText": "Three equal vertical stripes of blue, white and red."
+    }
+  },
+  {
+    "itemId": "a65241ce-455b-5de5-947d-0404cf40fe37",
+    "category": "geography",
+    "navigationKeyword1": "flags",
+    "navigationKeyword2": "countries",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Germany",
+    "incorrectAnswers": [
+      "Belgium",
+      "Austria",
+      "Switzerland"
+    ],
+    "explanation": "The black, red and gold colours come from the uniforms of the L\u00fctzow Free Corps in 1813, which fought against Napoleon. The colours became the national flag in 1848.",
+    "keywords": [
+      "europe"
+    ],
+    "source": "https://en.wikipedia.org/wiki/Flag_of_Germany",
+    "questionImage": {
+      "key": "curated:flags/de",
+      "altText": "Three equal horizontal stripes of black, red and gold."
+    }
+  },
+  {
+    "itemId": "6792f52b-aa99-5c14-bb67-3491bc55a775",
+    "category": "geography",
+    "navigationKeyword1": "flags",
+    "navigationKeyword2": "countries",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Ghana",
+    "incorrectAnswers": [
+      "Guinea",
+      "Cameroon",
+      "Ethiopia"
+    ],
+    "explanation": "The black star represents the African liberation movement. Ghana was the first sub-Saharan African country to gain independence from colonial rule, in 1957.",
+    "keywords": [
+      "africa"
+    ],
+    "source": "https://en.wikipedia.org/wiki/Flag_of_Ghana",
+    "questionImage": {
+      "key": "curated:flags/gh",
+      "altText": "Three equal horizontal stripes of red, yellow and green, with a black five-pointed star in the yellow stripe."
+    }
+  },
+  {
+    "itemId": "074ab447-aa50-5dce-a18b-707cc3d623eb",
+    "category": "geography",
+    "navigationKeyword1": "flags",
+    "navigationKeyword2": "countries",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Greece",
+    "incorrectAnswers": [
+      "Malta",
+      "Poland",
+      "Spain"
+    ],
+    "explanation": "The cross represents the Greek Orthodox Church, which has been central to Greek national identity. The blue and white colours recall the sea and the country's independence struggle.",
+    "keywords": [
+      "europe"
+    ],
+    "source": "https://en.wikipedia.org/wiki/Flag_of_Greece",
+    "questionImage": {
+      "key": "curated:flags/gr",
+      "altText": "Nine horizontal stripes alternating blue and white, with a blue square at the upper left holding a white cross."
+    }
+  },
+  {
+    "itemId": "eb11f7dd-05dc-5623-ad29-787a4409303e",
+    "category": "geography",
+    "navigationKeyword1": "flags",
+    "navigationKeyword2": "countries",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Hungary",
+    "incorrectAnswers": [
+      "Lithuania",
+      "Bulgaria",
+      "Spain"
+    ],
+    "explanation": "Red, white and green were adopted as national colours during the 1848 revolution against Habsburg rule. The coat of arms shows the Holy Crown of Saint Stephen, the symbol of the Hungarian state.",
+    "keywords": [
+      "europe"
+    ],
+    "source": "https://en.wikipedia.org/wiki/Flag_of_Hungary",
+    "questionImage": {
+      "key": "curated:flags/hu",
+      "altText": "Three equal horizontal stripes of red, white and green."
+    }
+  },
+  {
+    "itemId": "c44dfbc9-a1bd-58e4-bf11-0be94de64888",
+    "category": "geography",
+    "navigationKeyword1": "flags",
+    "navigationKeyword2": "countries",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Iceland",
+    "incorrectAnswers": [
+      "Norway",
+      "Finland",
+      "Sweden"
+    ],
+    "explanation": "Red stands for fire, white for ice and blue for the sea and sky. The flag became Iceland's national flag in 1944, when the country became a republic.",
+    "keywords": [
+      "europe"
+    ],
+    "source": "https://en.wikipedia.org/wiki/Flag_of_Iceland",
+    "questionImage": {
+      "key": "curated:flags/is",
+      "altText": "A blue field with a red cross edged in white that extends to the edges, set toward the left."
+    }
+  },
+  {
+    "itemId": "8e5d6692-4fdf-5899-b30e-61412b42f24f",
+    "category": "geography",
+    "navigationKeyword1": "flags",
+    "navigationKeyword2": "countries",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "India",
+    "incorrectAnswers": [
+      "Myanmar",
+      "Japan",
+      "Uzbekistan"
+    ],
+    "explanation": "The Ashoka Chakra, a wheel with 24 spokes, is taken from the Lion Capital of Ashoka and represents the Dharma (law). The flag was adopted in its current form on 22 July 1947.",
+    "keywords": [
+      "asia"
+    ],
+    "source": "https://en.wikipedia.org/wiki/Flag_of_India",
+    "questionImage": {
+      "key": "curated:flags/in",
+      "altText": "Three equal horizontal bands of saffron, white and green, with a navy blue wheel of 24 spokes at the centre."
+    },
+    "starterWorld": "flags",
+    "wowLine": "The blue wheel in the middle of India's flag, the Ashoka Chakra, has 24 spokes."
+  },
+  {
+    "itemId": "98359d6e-e46c-5831-96e5-62438f97378f",
+    "category": "geography",
+    "navigationKeyword1": "flags",
+    "navigationKeyword2": "countries",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Indonesia",
+    "incorrectAnswers": [
+      "Turkmenistan",
+      "Timor-Leste",
+      "Kyrgyzstan"
+    ],
+    "explanation": "Red and white come from the Majapahit kingdom of the 13th to 16th centuries. The flag was first raised on 17 August 1945, the day Indonesia declared independence.",
+    "keywords": [
+      "asia"
+    ],
+    "source": "https://en.wikipedia.org/wiki/Flag_of_Indonesia",
+    "questionImage": {
+      "key": "curated:flags/id",
+      "altText": "Two equal horizontal bands, red above and white below."
+    }
+  },
+  {
+    "itemId": "b7972d5c-61d3-5d82-a708-c193d5d1d687",
+    "category": "geography",
+    "navigationKeyword1": "flags",
+    "navigationKeyword2": "countries",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Iran",
+    "incorrectAnswers": [
+      "China",
+      "Mongolia",
+      "Malaysia"
+    ],
+    "explanation": "The red emblem repeats the word Allah in stylised Arabic script, reflecting the country's Islamic identity. Green stands for Islam, white for peace and red for courage.",
+    "keywords": [
+      "asia"
+    ],
+    "source": "https://en.wikipedia.org/wiki/Flag_of_Iran",
+    "questionImage": {
+      "key": "curated:flags/ir",
+      "altText": "Three equal horizontal bands of green, white and red, with a red emblem at the centre and white script along the edges of the green and red bands."
+    }
+  },
+  {
+    "itemId": "253a01a6-097e-5ce7-a95d-73d01cfc3b7b",
+    "category": "geography",
+    "navigationKeyword1": "flags",
+    "navigationKeyword2": "countries",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Iraq",
+    "incorrectAnswers": [
+      "Syria",
+      "Yemen",
+      "Jordan"
+    ],
+    "explanation": "The current flag, adopted in 2008, has the words Allahu Akbar (God is greatest) written in green Kufic script. The red, white and black colours are Pan-Arab.",
+    "keywords": [
+      "asia"
+    ],
+    "source": "https://en.wikipedia.org/wiki/Flag_of_Iraq",
+    "questionImage": {
+      "key": "curated:flags/iq",
+      "altText": "Three equal horizontal bands of red, white and black, with green Arabic script in the white band."
+    }
+  },
+  {
+    "itemId": "f4c6c90a-4fb5-514e-b272-c6889d0ea2df",
+    "category": "geography",
+    "navigationKeyword1": "flags",
+    "navigationKeyword2": "countries",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Ireland",
+    "incorrectAnswers": [
+      "Italy",
+      "Poland",
+      "Serbia"
+    ],
+    "explanation": "Green represents the Gaelic tradition, orange the Protestant community associated with William of Orange, and white the peace between them. The tricolour was first raised in 1848.",
+    "keywords": [
+      "europe"
+    ],
+    "source": "https://en.wikipedia.org/wiki/Flag_of_Ireland",
+    "questionImage": {
+      "key": "curated:flags/ie",
+      "altText": "Three equal vertical stripes of green, white and orange."
+    }
+  },
+  {
+    "itemId": "65e04a50-9092-50a5-8162-ede1de81c65e",
+    "category": "geography",
+    "navigationKeyword1": "flags",
+    "navigationKeyword2": "countries",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Israel",
+    "incorrectAnswers": [
+      "China",
+      "Malaysia",
+      "Vietnam"
+    ],
+    "explanation": "The blue stripes are said to recall the tallit, a Jewish prayer shawl, and the Star of David represents Jewish identity. The flag was adopted by the provisional government in 1948.",
+    "keywords": [
+      "asia"
+    ],
+    "source": "https://en.wikipedia.org/wiki/Flag_of_Israel",
+    "questionImage": {
+      "key": "curated:flags/il",
+      "altText": "A white field with a blue stripe near the top and bottom edges and a blue six-pointed star at the centre."
+    }
+  },
+  {
+    "itemId": "a8cd9093-33a3-5287-a16f-6bcb96412c00",
+    "category": "geography",
+    "navigationKeyword1": "flags",
+    "navigationKeyword2": "countries",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Italy",
+    "incorrectAnswers": [
+      "Ireland",
+      "Poland",
+      "Latvia"
+    ],
+    "explanation": "The tricolour has roots in the 1797 Cisalpine Republic, a Napoleonic state. The flag was adopted as the national flag of the Kingdom of Italy in 1861.",
+    "keywords": [
+      "europe"
+    ],
+    "source": "https://en.wikipedia.org/wiki/Flag_of_Italy",
+    "questionImage": {
+      "key": "curated:flags/it",
+      "altText": "Three equal vertical stripes of green, white and red."
+    }
+  },
+  {
+    "itemId": "2ac1ad50-a8b1-51d6-bd58-67104059e5a5",
+    "category": "geography",
+    "navigationKeyword1": "flags",
+    "navigationKeyword2": "countries",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Jamaica",
+    "incorrectAnswers": [
+      "Trinidad and Tobago",
+      "Saint Lucia",
+      "Saint Kitts and Nevis"
+    ],
+    "explanation": "Green represents hope and agriculture, black the hardships and creativity of the people, and gold the sun and the country's natural wealth. The flag was adopted at independence in 1962.",
+    "keywords": [
+      "north-america"
+    ],
+    "source": "https://en.wikipedia.org/wiki/Flag_of_Jamaica",
+    "questionImage": {
+      "key": "curated:flags/jm",
+      "altText": "A gold diagonal cross divides the flag into green triangles at the top and bottom and black triangles at the left and right."
+    }
+  },
+  {
+    "itemId": "d79ea5ac-d73f-51ba-bf07-dc40663ef653",
+    "category": "geography",
+    "navigationKeyword1": "flags",
+    "navigationKeyword2": "countries",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Japan",
+    "incorrectAnswers": [
+      "South Korea",
+      "Bangladesh",
+      "Palestine"
+    ],
+    "explanation": "The red disc represents the sun, connected to Amaterasu, the sun goddess of Shinto. Japan's width-to-length ratio is 2 to 3, and the Diet formally adopted the flag as the national flag on August 13, 1999, together with the national anthem.",
+    "keywords": [
+      "asia"
+    ],
+    "source": "https://www.britannica.com/topic/flag-of-Japan",
+    "questionImage": {
+      "key": "curated:flags/jp",
+      "altText": "A white field with a red disc at the centre."
+    },
+    "starterWorld": "flags",
+    "wowLine": "In Japan this flag is called the Hinomaru, which means 'circle of the sun'."
+  },
+  {
+    "itemId": "0d2c133f-7970-582c-9c2e-91984fae66ba",
+    "category": "geography",
+    "navigationKeyword1": "flags",
+    "navigationKeyword2": "countries",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Kenya",
+    "incorrectAnswers": [
+      "Malawi",
+      "Libya",
+      "South Sudan"
+    ],
+    "explanation": "Black represents the people, red the blood of the independence struggle and green the land. White stands for peace, and the shield and spears represent the country's defence.",
+    "keywords": [
+      "africa"
+    ],
+    "source": "https://en.wikipedia.org/wiki/Flag_of_Kenya",
+    "questionImage": {
+      "key": "curated:flags/ke",
+      "altText": "Horizontal black, red and green stripes separated by thin white stripes, with a red, black and white shield over two crossed white spears at the centre."
+    }
+  },
+  {
+    "itemId": "dfe95a77-5cd2-5a0d-ad48-cbd7fd15855a",
+    "category": "geography",
+    "navigationKeyword1": "flags",
+    "navigationKeyword2": "countries",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Malaysia",
+    "incorrectAnswers": [
+      "Pakistan",
+      "Yemen",
+      "Syria"
+    ],
+    "explanation": "The 14 points of the star represent the 13 states and the federal government.",
+    "keywords": [
+      "asia"
+    ],
+    "source": "https://en.wikipedia.org/wiki/Flag_of_Malaysia",
+    "questionImage": {
+      "key": "curated:flags/my",
+      "altText": "Fourteen horizontal stripes alternating red and white, with a blue rectangle at the upper left holding a yellow crescent and a yellow star with many points."
+    }
+  },
+  {
+    "itemId": "221872df-d254-57f7-9151-e992d70e54fd",
+    "category": "geography",
+    "navigationKeyword1": "flags",
+    "navigationKeyword2": "countries",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Mexico",
+    "incorrectAnswers": [
+      "Dominica",
+      "Saint Vincent and the Grenadines",
+      "Canada"
+    ],
+    "explanation": "The eagle on a cactus is based on the Aztec legend of the founding of Tenochtitlan, where an eagle was seen eating a serpent on a prickly pear cactus. This is the national emblem on the flag.",
+    "keywords": [
+      "north-america"
+    ],
+    "source": "https://en.wikipedia.org/wiki/Flag_of_Mexico",
+    "questionImage": {
+      "key": "curated:flags/mx",
+      "altText": "Three equal vertical stripes of green, white and red, with a coat of arms showing an eagle on a cactus holding a snake in the white stripe."
+    }
+  },
+  {
+    "itemId": "4450d533-38c2-55e0-91d1-6913dc8411cd",
+    "category": "geography",
+    "navigationKeyword1": "flags",
+    "navigationKeyword2": "countries",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Morocco",
+    "incorrectAnswers": [
+      "Botswana",
+      "Rwanda",
+      "South Africa"
+    ],
+    "explanation": "The red represents the blood of the country's martyrs, and the green star is the Seal of Solomon, a symbol of wisdom and protection. The country is a kingdom with a long royal history.",
+    "keywords": [
+      "africa"
+    ],
+    "source": "https://en.wikipedia.org/wiki/Flag_of_Morocco",
+    "questionImage": {
+      "key": "curated:flags/ma",
+      "altText": "A red field with a green outlined five-pointed star at the centre."
+    }
+  },
+  {
+    "itemId": "81504ef0-e453-550e-ac87-bc64b8eeacd2",
+    "category": "geography",
+    "navigationKeyword1": "flags",
+    "navigationKeyword2": "countries",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Nepal",
+    "incorrectAnswers": [
+      "Uzbekistan",
+      "Bhutan",
+      "Cambodia"
+    ],
+    "explanation": "The flag is the only non-rectangular national flag in the world. The moon and sun represent the calm and fierce sides of Nepal's people, and crimson is the colour of the national flower, the rhododendron.",
+    "keywords": [
+      "asia"
+    ],
+    "source": "https://en.wikipedia.org/wiki/Flag_of_Nepal",
+    "questionImage": {
+      "key": "curated:flags/np",
+      "altText": "Two stacked triangular pennants, crimson with a blue border, the upper holding a white crescent and the lower a white sun-like symbol."
+    },
+    "starterWorld": "flags",
+    "wowLine": "Nepal's is the only national flag that isn't a rectangle or a square."
+  },
+  {
+    "itemId": "e1ad99c3-45f7-5fdb-9458-374bf5e91e4e",
+    "category": "geography",
+    "navigationKeyword1": "flags",
+    "navigationKeyword2": "countries",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Netherlands",
+    "incorrectAnswers": [
+      "Luxembourg",
+      "Russia",
+      "France"
+    ],
+    "explanation": "The original flag was orange, referring to the House of Orange-Nassau, and the red, white and blue tricolour replaced it over time.",
+    "keywords": [
+      "europe"
+    ],
+    "source": "https://en.wikipedia.org/wiki/Flag_of_Netherlands",
+    "questionImage": {
+      "key": "curated:flags/nl",
+      "altText": "Three equal horizontal stripes of red, white and blue."
+    }
+  },
+  {
+    "itemId": "238dcfe5-1cbd-5e36-b795-4fe25979cf2b",
+    "category": "geography",
+    "navigationKeyword1": "flags",
+    "navigationKeyword2": "countries",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "New Zealand",
+    "incorrectAnswers": [
+      "Australia",
+      "Tuvalu",
+      "Fiji"
+    ],
+    "explanation": "The four red stars are the Southern Cross constellation, which has guided navigators across the Pacific for centuries. The Union Jack recalls the country's British colonial origins.",
+    "keywords": [
+      "oceania"
+    ],
+    "source": "https://en.wikipedia.org/wiki/Flag_of_New_Zealand",
+    "questionImage": {
+      "key": "curated:flags/nz",
+      "altText": "A blue field with a union jack at the upper left and four red five-pointed stars edged in white at the right."
+    }
+  },
+  {
+    "itemId": "26d3f305-a92c-5dd8-8167-1e9074c5d30a",
+    "category": "geography",
+    "navigationKeyword1": "flags",
+    "navigationKeyword2": "countries",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Nigeria",
+    "incorrectAnswers": [
+      "Niger",
+      "C\u00f4te d'Ivoire",
+      "Gambia"
+    ],
+    "explanation": "Green stands for agriculture and the country's natural wealth, and white for peace and unity. The flag was designed by Michael Taiwo Akinkunmi and first raised at independence in 1960.",
+    "keywords": [
+      "africa"
+    ],
+    "source": "https://en.wikipedia.org/wiki/Flag_of_Nigeria",
+    "questionImage": {
+      "key": "curated:flags/ng",
+      "altText": "Three equal vertical stripes of green, white and green."
+    }
+  },
+  {
+    "itemId": "94ebe8ac-f6f9-55a6-af06-811a7192a815",
+    "category": "geography",
+    "navigationKeyword1": "flags",
+    "navigationKeyword2": "countries",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "North Korea",
+    "incorrectAnswers": [
+      "Tajikistan",
+      "Indonesia",
+      "Nepal"
+    ],
+    "explanation": "The red star represents the revolution and the Workers' Party, and the flag was adopted in 1948 when the country was founded. The blue stands for peace.",
+    "keywords": [
+      "asia"
+    ],
+    "source": "https://en.wikipedia.org/wiki/Flag_of_North_Korea",
+    "questionImage": {
+      "key": "curated:flags/kp",
+      "altText": "A wide red band edged in white between narrow blue bands at the top and bottom, with a white disc at the left holding a red five-pointed star."
+    }
+  },
+  {
+    "itemId": "dc41006e-0c15-538b-b27f-543d6ec1878e",
+    "category": "geography",
+    "navigationKeyword1": "flags",
+    "navigationKeyword2": "countries",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Norway",
+    "incorrectAnswers": [
+      "Iceland",
+      "Sweden",
+      "Finland"
+    ],
+    "explanation": "Norway's flag was adopted in 1821, and 17 May is celebrated as the country's national day. The Nordic cross is shared with the other Scandinavian countries.",
+    "keywords": [
+      "europe"
+    ],
+    "source": "https://en.wikipedia.org/wiki/Flag_of_Norway",
+    "questionImage": {
+      "key": "curated:flags/no",
+      "altText": "A red field with a blue cross edged in white that extends to the edges, set toward the left."
+    }
+  },
+  {
+    "itemId": "b367cd5e-114a-5286-8c0d-8d072a87fae4",
+    "category": "geography",
+    "navigationKeyword1": "flags",
+    "navigationKeyword2": "countries",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Pakistan",
+    "incorrectAnswers": [
+      "T\u00fcrkiye",
+      "Tajikistan",
+      "Turkmenistan"
+    ],
+    "explanation": "The crescent stands for progress and the star for light and knowledge. The white stripe represents religious minorities, and the green stands for Islam.",
+    "keywords": [
+      "asia"
+    ],
+    "source": "https://en.wikipedia.org/wiki/Flag_of_Pakistan",
+    "questionImage": {
+      "key": "curated:flags/pk",
+      "altText": "A dark green field with a white vertical band at the left, and a white crescent and star on the green."
+    }
+  },
+  {
+    "itemId": "c6a5bea3-5707-5bb3-aa5d-da9c17ebcbe1",
+    "category": "geography",
+    "navigationKeyword1": "flags",
+    "navigationKeyword2": "countries",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Peru",
+    "incorrectAnswers": [
+      "Paraguay",
+      "Uruguay",
+      "Colombia"
+    ],
+    "explanation": "The vicu\u00f1a in the coat of arms is a native Andean animal, and the cinchona tree refers to the country's historic quinine production. The flag was adopted in 1825.",
+    "keywords": [
+      "south-america"
+    ],
+    "source": "https://en.wikipedia.org/wiki/Flag_of_Peru",
+    "questionImage": {
+      "key": "curated:flags/pe",
+      "altText": "Three equal vertical stripes of red, white and red."
+    }
+  },
+  {
+    "itemId": "557e449b-d911-5b9a-9766-4d80510ad270",
+    "category": "geography",
+    "navigationKeyword1": "flags",
+    "navigationKeyword2": "countries",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Philippines",
+    "incorrectAnswers": [
+      "Saudi Arabia",
+      "Iraq",
+      "Indonesia"
+    ],
+    "explanation": "The sun has eight rays, representing the eight provinces that revolted against Spanish rule in 1896. The three stars stand for the main island groups of Luzon, Visayas and Mindanao.",
+    "keywords": [
+      "asia"
+    ],
+    "source": "https://en.wikipedia.org/wiki/Flag_of_Philippines",
+    "questionImage": {
+      "key": "curated:flags/ph",
+      "altText": "Horizontal bands of blue above and red below, with a white triangle at the left holding a golden sun with eight rays and three golden stars."
+    }
+  },
+  {
+    "itemId": "30126035-bf96-5a8f-88ce-c009b9aca5d4",
+    "category": "geography",
+    "navigationKeyword1": "flags",
+    "navigationKeyword2": "countries",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Poland",
+    "incorrectAnswers": [
+      "Czechia",
+      "Monaco",
+      "Montenegro"
+    ],
+    "explanation": "The white and red colours come from the coat of arms, a white eagle on a red field. Poland's flag has been in use since the 18th century.",
+    "keywords": [
+      "europe"
+    ],
+    "source": "https://en.wikipedia.org/wiki/Flag_of_Poland",
+    "questionImage": {
+      "key": "curated:flags/pl",
+      "altText": "Two equal horizontal bands, white above and red below."
+    }
+  },
+  {
+    "itemId": "bac0c833-c118-5c2e-8b54-a412a9676ea8",
+    "category": "geography",
+    "navigationKeyword1": "flags",
+    "navigationKeyword2": "countries",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Portugal",
+    "incorrectAnswers": [
+      "Slovakia",
+      "North Macedonia",
+      "Bosnia and Herzegovina"
+    ],
+    "explanation": "The armillary sphere is a symbol of the Age of Discovery, when Portuguese explorers reached Asia and Brazil. The shield represents the country's independence and its historic kings.",
+    "keywords": [
+      "europe"
+    ],
+    "source": "https://en.wikipedia.org/wiki/Flag_of_Portugal",
+    "questionImage": {
+      "key": "curated:flags/pt",
+      "altText": "A green vertical band at the left and a larger red field at the right, with a yellow armillary sphere and a shield on the dividing line."
+    }
+  },
+  {
+    "itemId": "c760da39-e25a-5112-acbf-ee8708aff635",
+    "category": "geography",
+    "navigationKeyword1": "flags",
+    "navigationKeyword2": "countries",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Qatar",
+    "incorrectAnswers": [
+      "Bahrain",
+      "Bhutan",
+      "Tajikistan"
+    ],
+    "explanation": "Qatar gained independence from Britain in 1971, and the flag has been used since then.",
+    "keywords": [
+      "asia"
+    ],
+    "source": "https://en.wikipedia.org/wiki/Flag_of_Qatar",
+    "questionImage": {
+      "key": "curated:flags/qa",
+      "altText": "A white band at the left and a maroon field at the right, separated by a serrated edge of nine white points."
+    }
+  },
+  {
+    "itemId": "1d6dd822-19cc-539c-b69e-1275f7ad7887",
+    "category": "geography",
+    "navigationKeyword1": "flags",
+    "navigationKeyword2": "countries",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Romania",
+    "incorrectAnswers": [
+      "Andorra",
+      "Moldova",
+      "Poland"
+    ],
+    "explanation": "The blue, yellow and red tricolour was first adopted during the 1848 revolutions.",
+    "keywords": [
+      "europe"
+    ],
+    "source": "https://en.wikipedia.org/wiki/Flag_of_Romania",
+    "questionImage": {
+      "key": "curated:flags/ro",
+      "altText": "Three equal vertical stripes of blue, yellow and red."
+    }
+  },
+  {
+    "itemId": "9e02850d-6f40-5064-bb7d-f396e9d3cfbd",
+    "category": "geography",
+    "navigationKeyword1": "flags",
+    "navigationKeyword2": "countries",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Russia",
+    "incorrectAnswers": [
+      "Luxembourg",
+      "Slovenia",
+      "Netherlands"
+    ],
+    "explanation": "The white, blue and red tricolour was introduced by Peter the Great in 1699, based on the Dutch flag. The colours are said to represent nobility, the sky and courage.",
+    "keywords": [
+      "europe"
+    ],
+    "source": "https://en.wikipedia.org/wiki/Flag_of_Russia",
+    "questionImage": {
+      "key": "curated:flags/ru",
+      "altText": "Three equal horizontal stripes of white, blue and red."
+    }
+  },
+  {
+    "itemId": "fb219bf5-7d8f-5601-ad3b-cb78e2043c84",
+    "category": "geography",
+    "navigationKeyword1": "flags",
+    "navigationKeyword2": "countries",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Saudi Arabia",
+    "incorrectAnswers": [
+      "Palestine",
+      "Laos",
+      "Yemen"
+    ],
+    "explanation": "The Shahada, the Islamic declaration of faith, is written in Arabic on the flag. The flag was adopted in 1932 when the Kingdom of Saudi Arabia was unified.",
+    "keywords": [
+      "asia"
+    ],
+    "source": "https://en.wikipedia.org/wiki/Flag_of_Saudi_Arabia",
+    "questionImage": {
+      "key": "curated:flags/sa",
+      "altText": "A green field with white Arabic script above a horizontal white sword."
+    }
+  },
+  {
+    "itemId": "5291da9f-fb65-509d-b67d-5e4433a19bc0",
+    "category": "geography",
+    "navigationKeyword1": "flags",
+    "navigationKeyword2": "countries",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Senegal",
+    "incorrectAnswers": [
+      "Ghana",
+      "Mali",
+      "Cameroon"
+    ],
+    "explanation": "The green star represents unity and hope. The Pan-African colours of green, yellow and red were chosen to symbolise African unity, and the flag was adopted at independence in 1960.",
+    "keywords": [
+      "africa"
+    ],
+    "source": "https://en.wikipedia.org/wiki/Flag_of_Senegal",
+    "questionImage": {
+      "key": "curated:flags/sn",
+      "altText": "Three equal vertical stripes of green, yellow and red, with a green five-pointed star at the centre."
+    }
+  },
+  {
+    "itemId": "46af8a88-4465-57cf-bec2-3e93b8152b54",
+    "category": "geography",
+    "navigationKeyword1": "flags",
+    "navigationKeyword2": "countries",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Singapore",
+    "incorrectAnswers": [
+      "Vietnam",
+      "T\u00fcrkiye",
+      "China"
+    ],
+    "explanation": "The crescent represents a young nation, and the five stars represent democracy, peace, progress, justice and equality. The flag was adopted in 1959 when Singapore gained self-government.",
+    "keywords": [
+      "asia"
+    ],
+    "source": "https://en.wikipedia.org/wiki/Flag_of_Singapore",
+    "questionImage": {
+      "key": "curated:flags/sg",
+      "altText": "Two equal horizontal bands, red above and white below, with a white crescent and a ring of five white stars at the upper left."
+    }
+  },
+  {
+    "itemId": "eb950348-596a-5697-b5af-76184252da3d",
+    "category": "geography",
+    "navigationKeyword1": "flags",
+    "navigationKeyword2": "countries",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "South Africa",
+    "incorrectAnswers": [
+      "Eritrea",
+      "Sudan",
+      "Eswatini"
+    ],
+    "explanation": "The Y shape represents the convergence of diverse cultures and paths within the country. The flag was adopted in 1994, when apartheid ended and the first democratic elections were held.",
+    "keywords": [
+      "africa"
+    ],
+    "source": "https://en.wikipedia.org/wiki/Flag_of_South_Africa",
+    "questionImage": {
+      "key": "curated:flags/za",
+      "altText": "A green Y shape edged in white and yellow divides the flag into a red band above, a blue band below and a black triangle at the left."
+    }
+  },
+  {
+    "itemId": "980a9a20-7c91-52c8-b120-0a9ede92cfdc",
+    "category": "geography",
+    "navigationKeyword1": "flags",
+    "navigationKeyword2": "countries",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "South Korea",
+    "incorrectAnswers": [
+      "Japan",
+      "Bangladesh",
+      "North Korea"
+    ],
+    "explanation": "The taegeuk symbolises the balance of opposing forces, and the four trigrams come from the I Ching. The flag was adopted as the national flag in 1948.",
+    "keywords": [
+      "asia"
+    ],
+    "source": "https://en.wikipedia.org/wiki/Flag_of_South_Korea",
+    "questionImage": {
+      "key": "curated:flags/kr",
+      "altText": "A white field with a red and blue swirling circle at the centre and a black symbol of three bars, solid or broken, in each corner."
+    }
+  },
+  {
+    "itemId": "211a4364-9603-5c59-8163-3e4e61e34dc8",
+    "category": "geography",
+    "navigationKeyword1": "flags",
+    "navigationKeyword2": "countries",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Spain",
+    "incorrectAnswers": [
+      "Andorra",
+      "United Kingdom",
+      "Czechia"
+    ],
+    "explanation": "The red and yellow were adopted in 1785 during the reign of Charles III. The flag was formally adopted in 1981, after the restoration of democracy.",
+    "keywords": [
+      "europe"
+    ],
+    "source": "https://en.wikipedia.org/wiki/Flag_of_Spain",
+    "questionImage": {
+      "key": "curated:flags/es",
+      "altText": "Horizontal bands of red, a wide yellow band and red, with a coat of arms left of centre on the yellow band."
+    }
+  },
+  {
+    "itemId": "9b91da7e-e952-58bd-8feb-003929e1c377",
+    "category": "geography",
+    "navigationKeyword1": "flags",
+    "navigationKeyword2": "countries",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Sweden",
+    "incorrectAnswers": [
+      "Denmark",
+      "Finland",
+      "Iceland"
+    ],
+    "explanation": "The Nordic cross design is shared with its Nordic neighbours, reflecting the region's shared history.",
+    "keywords": [
+      "europe"
+    ],
+    "source": "https://en.wikipedia.org/wiki/Flag_of_Sweden",
+    "questionImage": {
+      "key": "curated:flags/se",
+      "altText": "A blue field with a yellow cross that extends to the edges, set toward the left."
+    }
+  },
+  {
+    "itemId": "f7f1a513-0233-5b0b-b347-5bb68197b2be",
+    "category": "geography",
+    "navigationKeyword1": "flags",
+    "navigationKeyword2": "countries",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Switzerland",
+    "incorrectAnswers": [
+      "North Macedonia",
+      "Sweden",
+      "Albania"
+    ],
+    "explanation": "The square shape follows heraldic tradition, while the civil ensign at sea is rectangular. The national land flag was legally established on December 12, 1889, after the 1848 constitution recognised a square red army flag with a white cross.",
+    "keywords": [
+      "europe"
+    ],
+    "source": "https://www.britannica.com/topic/flag-of-Switzerland",
+    "questionImage": {
+      "key": "curated:flags/ch",
+      "altText": "A square red field with a white cross at the centre."
+    },
+    "starterWorld": "flags",
+    "wowLine": "Switzerland's is one of only two square national flags. The other belongs to Vatican City."
+  },
+  {
+    "itemId": "88a675cc-c8e3-56b8-a4e5-53733f610df8",
+    "category": "geography",
+    "navigationKeyword1": "flags",
+    "navigationKeyword2": "countries",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Thailand",
+    "incorrectAnswers": [
+      "Laos",
+      "T\u00fcrkiye",
+      "Turkmenistan"
+    ],
+    "explanation": "Blue represents the monarchy, red the nation and white religion. The flag was adopted in 1917, under King Vajiravudh, and its colour scheme is still used today.",
+    "keywords": [
+      "asia"
+    ],
+    "source": "https://en.wikipedia.org/wiki/Flag_of_Thailand",
+    "questionImage": {
+      "key": "curated:flags/th",
+      "altText": "Five horizontal bands of red, white, a wide blue band, white and red."
+    }
+  },
+  {
+    "itemId": "7fc7b177-be11-5145-b189-059bdff7dc5f",
+    "category": "geography",
+    "navigationKeyword1": "flags",
+    "navigationKeyword2": "countries",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "T\u00fcrkiye",
+    "incorrectAnswers": [
+      "Singapore",
+      "Vietnam",
+      "Pakistan"
+    ],
+    "explanation": "The crescent and star are associated with the Ottoman Empire and Islam, and the red represents the blood of martyrs. The flag was officially standardised in 1936.",
+    "keywords": [
+      "asia"
+    ],
+    "source": "https://en.wikipedia.org/wiki/Flag_of_Turkey",
+    "questionImage": {
+      "key": "curated:flags/tr",
+      "altText": "A red field with a white crescent and a white five-pointed star left of centre."
+    }
+  },
+  {
+    "itemId": "91e95d2f-502c-5540-b7f6-e4a0d1275d69",
+    "category": "geography",
+    "navigationKeyword1": "flags",
+    "navigationKeyword2": "countries",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Ukraine",
+    "incorrectAnswers": [
+      "Austria",
+      "Czechia",
+      "Hungary"
+    ],
+    "explanation": "Blue represents the sky and yellow the wheat fields of the country. The flag was readopted in 1992 after independence from the Soviet Union.",
+    "keywords": [
+      "europe"
+    ],
+    "source": "https://en.wikipedia.org/wiki/Flag_of_Ukraine",
+    "questionImage": {
+      "key": "curated:flags/ua",
+      "altText": "Two equal horizontal bands, blue above and yellow below."
+    }
+  },
+  {
+    "itemId": "1dd4628a-37f5-5383-8559-f361939d80ae",
+    "category": "geography",
+    "navigationKeyword1": "flags",
+    "navigationKeyword2": "countries",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "United Arab Emirates",
+    "incorrectAnswers": [
+      "Syria",
+      "Palestine",
+      "Jordan"
+    ],
+    "explanation": "The colours are Pan-Arab, and the flag was adopted in 1971 when the seven emirates united and gained independence from Britain.",
+    "keywords": [
+      "asia"
+    ],
+    "source": "https://en.wikipedia.org/wiki/Flag_of_the_United_Arab_Emirates",
+    "questionImage": {
+      "key": "curated:flags/ae",
+      "altText": "A vertical red band at the left and, to its right, three equal horizontal stripes of green, white and black."
+    }
+  },
+  {
+    "itemId": "f481cbc1-360e-5a63-b8ee-77e00e6bb8aa",
+    "category": "geography",
+    "navigationKeyword1": "flags",
+    "navigationKeyword2": "countries",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "United Kingdom",
+    "incorrectAnswers": [
+      "Norway",
+      "Vatican City",
+      "Montenegro"
+    ],
+    "explanation": "The Union Jack combines the crosses of Saint George (England), Saint Andrew (Scotland) and Saint Patrick (Ireland). Wales is not included, as it was part of England at the time of the first Union in 1707.",
+    "keywords": [
+      "europe"
+    ],
+    "source": "https://en.wikipedia.org/wiki/Flag_of_the_United_Kingdom",
+    "questionImage": {
+      "key": "curated:flags/gb",
+      "altText": "A blue field with a red upright cross edged in white and red diagonal crosses edged in white."
+    }
+  },
+  {
+    "itemId": "16a7dafe-c714-5273-b81b-8fc007a39545",
+    "category": "geography",
+    "navigationKeyword1": "flags",
+    "navigationKeyword2": "countries",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "United States",
+    "incorrectAnswers": [
+      "Antigua and Barbuda",
+      "Costa Rica",
+      "Cuba"
+    ],
+    "explanation": "The 50 stars stand for the 50 states, and the 13 stripes stand for the original 13 colonies. The width-to-length ratio is 10 to 19, specified in a 1959 executive order.",
+    "keywords": [
+      "north-america"
+    ],
+    "source": "https://www.britannica.com/topic/flag-of-the-United-States-of-America",
+    "questionImage": {
+      "key": "curated:flags/us",
+      "altText": "Thirteen horizontal stripes alternating red and white, with a blue rectangle at the upper left holding fifty white five-pointed stars."
+    },
+    "starterWorld": "flags",
+    "wowLine": "The current 50-star design has been used since July 4, 1960, after Hawaii became a state."
+  },
+  {
+    "itemId": "1c8ba016-07e4-594d-9b75-993a37591446",
+    "category": "geography",
+    "navigationKeyword1": "flags",
+    "navigationKeyword2": "countries",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Uruguay",
+    "incorrectAnswers": [
+      "Argentina",
+      "Bolivia",
+      "Paraguay"
+    ],
+    "explanation": "The Sun of May is named after the May Revolution of 1810 in Argentina, which began the independence movement of the River Plate region.",
+    "keywords": [
+      "south-america"
+    ],
+    "source": "https://en.wikipedia.org/wiki/Flag_of_Uruguay",
+    "questionImage": {
+      "key": "curated:flags/uy",
+      "altText": "Nine horizontal stripes alternating white and blue, with a white square at the upper left holding a golden sun with a face."
+    }
+  },
+  {
+    "itemId": "3f0a2247-759e-5789-b5fd-97013315b729",
+    "category": "geography",
+    "navigationKeyword1": "flags",
+    "navigationKeyword2": "countries",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Venezuela",
+    "incorrectAnswers": [
+      "Ecuador",
+      "Colombia",
+      "Chile"
+    ],
+    "explanation": "The eight stars represent the eight provinces that declared independence from Spain in 1811. Yellow represents the wealth of the country, blue the Caribbean and red the blood of the heroes.",
+    "keywords": [
+      "south-america"
+    ],
+    "source": "https://en.wikipedia.org/wiki/Flag_of_Venezuela",
+    "questionImage": {
+      "key": "curated:flags/ve",
+      "altText": "Three equal horizontal stripes of yellow, blue and red, with an arc of eight white stars in the blue stripe."
+    }
+  },
+  {
+    "itemId": "419f7bb4-1b5e-536c-af16-969a54bf7a68",
+    "category": "geography",
+    "navigationKeyword1": "flags",
+    "navigationKeyword2": "countries",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Vietnam",
+    "incorrectAnswers": [
+      "T\u00fcrkiye",
+      "Singapore",
+      "China"
+    ],
+    "explanation": "The yellow star on red is a symbol of the revolution and of the unity of the Vietnamese people.",
+    "keywords": [
+      "asia"
+    ],
+    "source": "https://en.wikipedia.org/wiki/Flag_of_Vietnam",
+    "questionImage": {
+      "key": "curated:flags/vn",
+      "altText": "A red field with a large yellow five-pointed star at the centre."
+    }
+  }
+]
