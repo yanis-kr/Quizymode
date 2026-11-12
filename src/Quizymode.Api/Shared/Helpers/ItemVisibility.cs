@@ -39,6 +39,29 @@ internal static class ItemVisibility
     }
 
     /// <summary>
+    /// Membership-row rule for a collection read (#589, AC 1.5.1, I3, AC 1.17). A public item is listed through any membership row
+    /// it is in. A private item is listed through a row only to its own creator, or when the collection holding that row is owned
+    /// by the item's creator (the owner's private questions shared through their collection). The root's owner is not consulted,
+    /// so a creator's private items in an accessible nested collection they own are listed too, and a nested collection owned by
+    /// someone else never exposes a private item to other viewers.
+    /// </summary>
+    public static Expression<Func<CollectionItem, bool>> ListedInCollection(ApplicationDbContext db, string? userId)
+    {
+        string callerId = userId ?? string.Empty;
+        bool hasCaller = callerId.Length > 0;
+        return ci => db.Items.Any(i => i.Id == ci.ItemId
+            && (!i.IsPrivate
+                || (hasCaller && i.CreatedBy == callerId)
+                || db.Collections.Any(c => c.Id == ci.CollectionId && c.CreatedBy == i.CreatedBy)));
+    }
+
+    /// <summary>In-memory form of <see cref="ListedInCollection"/> for one row, given the owner of the collection that holds it.</summary>
+    public static bool IsListedInCollectionOf(bool isPrivate, string createdBy, string? holdingCollectionOwnerId, string? viewerId) =>
+        !isPrivate
+        || (!string.IsNullOrEmpty(viewerId) && createdBy == viewerId)
+        || createdBy == holdingCollectionOwnerId;
+
+    /// <summary>
     /// Collection membership rows minus those whose item exists but is hidden from the caller by media eligibility; rows with no
     /// item row are kept, as before. Use for item counts of a collection.
     /// </summary>

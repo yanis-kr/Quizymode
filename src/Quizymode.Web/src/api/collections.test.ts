@@ -27,6 +27,31 @@ vi.mock("./items", () => ({
 describe("collectionsApi", () => {
   beforeEach(() => vi.clearAllMocks());
 
+  it("getItems pages through the whole roster past the 1000-row page cap (#588)", async () => {
+    const page = (start: number, count: number) =>
+      Array.from({ length: count }, (_, i) => ({ id: String(start + i) }));
+    mockItemsGetAll
+      .mockResolvedValueOnce({ items: page(0, 1000), totalCount: 1200 })
+      .mockResolvedValueOnce({ items: page(1000, 200), totalCount: 1200 });
+
+    const result = await collectionsApi.getItems("c1");
+
+    expect(result.items).toHaveLength(1200);
+    expect(result.totalCount).toBe(1200);
+    expect(mockItemsGetAll).toHaveBeenCalledTimes(2);
+    expect(mockItemsGetAll).toHaveBeenNthCalledWith(1, undefined, undefined, undefined, "c1", undefined, 1, 1000, { excludeQuestionPictures: false });
+    expect(mockItemsGetAll).toHaveBeenNthCalledWith(2, undefined, undefined, undefined, "c1", undefined, 2, 1000, { excludeQuestionPictures: false });
+  });
+
+  it("getItems stops after one page when the roster fits", async () => {
+    mockItemsGetAll.mockResolvedValueOnce({ items: [{ id: "a" }], totalCount: 1 });
+
+    const result = await collectionsApi.getItems("c1");
+
+    expect(result.items).toHaveLength(1);
+    expect(mockItemsGetAll).toHaveBeenCalledTimes(1);
+  });
+
   it("getAll calls GET /collections", async () => {
     const data = { collections: [] };
     mockGet.mockResolvedValueOnce({ data });

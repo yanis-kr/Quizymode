@@ -37,12 +37,19 @@ internal static class CollectionCardCounts
         Dictionary<Guid, CollectionScope.Resolution> reach = resolved.Roots;
         List<Guid> allCollections = reach.Values.SelectMany(r => r.Collections).Distinct().ToList();
 
-        // 2. Direct questions of every accessible collection that the viewer may see: public and media-eligible, or the viewer's own (#400).
-        // A private question of another user is never counted, even inside a public collection (AC 1.17, Invariant I5).
-        List<DirectRow> directRows = await db.CollectionItems
-            .Where(ci => allCollections.Contains(ci.CollectionId))
-            .Where(ci => db.Items.Where(ItemVisibility.VisibleTo(viewerId)).Any(i => i.Id == ci.ItemId))
-            .Select(ci => new DirectRow(ci.Id, ci.CollectionId, ci.ItemId))
+        // The owner of every accessible collection: a private question is counted through a row only when its creator owns the
+        // collection holding that row (#589, AC 1.5.1, I3), the same rule as the roster (ItemVisibility.ListedInCollection).
+        Dictionary<Guid, string> owners = await db.Collections
+            .Where(c => allCollections.Contains(c.Id))
+            .ToDictionaryAsync(c => c.Id, c => c.CreatedBy, cancellationToken);
+
+        // 2. Direct questions of every accessible collection that the viewer may see: media-eligible, or the viewer's own (#400).
+        // Private questions are filtered per row below, by the owner of the holding collection.
+        List<DirectRow> directRows = await (
+                from ci in db.CollectionItems
+                join i in db.Items.Where(ItemVisibility.EligibleFor(viewerId)) on ci.ItemId equals i.Id
+                where allCollections.Contains(ci.CollectionId)
+                select new DirectRow(ci.Id, ci.CollectionId, ci.ItemId, i.IsPrivate, i.CreatedBy))
             .ToListAsync(cancellationToken);
         Dictionary<Guid, List<DirectRow>> directByCollection = directRows
             .GroupBy(r => r.CollectionId)
@@ -82,9 +89,11 @@ internal static class CollectionCardCounts
         {
             CollectionScope.Resolution resolution = reach[root];
             HashSet<Guid> collections = resolution.Collections;
-
-            List<Guid> keptDirect = collections
+            List<DirectRow> cardDirect = collections
                 .SelectMany(c => directByCollection.GetValueOrDefault(c) ?? [])
+                .Where(r => ItemVisibility.IsListedInCollectionOf(r.IsPrivate, r.CreatedBy, owners.GetValueOrDefault(r.CollectionId), viewerId))
+                .ToList();
+            List<Guid> keptDirect = cardDirect
                 .Where(r => !resolved.Budget.IsItemRowDropped(root, r.CollectionId, r.RowId))
                 .Select(r => r.ItemId)
                 .ToList();
@@ -95,7 +104,8 @@ internal static class CollectionCardCounts
                 .Distinct()
                 .Count();
 
-            int memberCount = (directByCollection.GetValueOrDefault(root)?.Count ?? 0)
+            int memberCount = (directByCollection.GetValueOrDefault(root)?
+                    .Count(r => ItemVisibility.IsListedInCollectionOf(r.IsPrivate, r.CreatedBy, owners.GetValueOrDefault(r.CollectionId), viewerId)) ?? 0)
                 + resolution.ChildLinkCount
                 + cardTopics.Count(t => t.ParentId == root);
 
@@ -105,5 +115,5 @@ internal static class CollectionCardCounts
         return result;
     }
 
-    private sealed record DirectRow(Guid RowId, Guid CollectionId, Guid ItemId);
+    private sealed record DirectRow(Guid RowId, Guid CollectionId, Guid ItemId, bool IsPrivate, string CreatedBy);
 }

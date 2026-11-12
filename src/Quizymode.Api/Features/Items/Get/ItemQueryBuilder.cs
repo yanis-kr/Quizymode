@@ -72,6 +72,7 @@ internal sealed class ItemQueryBuilder
         bool skipVisibilityForCollection = request.CollectionId.HasValue;
         if (skipVisibilityForCollection)
         {
+            // Media eligibility only here; the private-item rule is per membership row (#589, ItemVisibility.ListedInCollection).
             query = query.Where(ItemVisibility.EligibleFor(_userContext.IsAuthenticated ? _userContext.UserId : null));
         }
 

@@ -128,15 +128,8 @@ describe("CollectionDetailPage in-collection search (#555, AC 1.5.12)", () => {
     expect(screen.getByText("Gas we breathe")).toBeInTheDocument();
   });
 
-  it("notes when the search covers only the loaded part of a larger roster", async () => {
+  it("shows no truncation notice for a larger roster (#588)", async () => {
     mockRoster([makeItem("1", "Cell powerhouse", "Mitochondria")], 1200);
-    renderPage();
-    await screen.findByTestId("item-list");
-
-    expect(screen.getByText("Search covers the first 1 of 1200 questions.")).toBeInTheDocument();
-  });
-
-  it("omits the truncation notice when the whole roster is loaded", async () => {
     renderPage();
     await screen.findByTestId("item-list");
 

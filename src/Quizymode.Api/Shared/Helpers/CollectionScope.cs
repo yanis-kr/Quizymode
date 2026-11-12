@@ -30,9 +30,10 @@ internal static class CollectionScope
     public const string DepthLimitReason = "DepthLimit";
 
     /// <summary>Item ids that are direct members of <paramref name="collectionId"/>, as a composable query.</summary>
-    public static IQueryable<Guid> DirectMemberItemIds(ApplicationDbContext db, Guid collectionId) =>
+    public static IQueryable<Guid> DirectMemberItemIds(ApplicationDbContext db, Guid collectionId, string? viewerId) =>
         db.CollectionItems
             .Where(ci => ci.CollectionId == collectionId)
+            .Where(ItemVisibility.ListedInCollection(db, viewerId))
             .Select(ci => ci.ItemId);
 
     /// <summary>
@@ -197,9 +198,11 @@ internal static class CollectionScope
     {
         IQueryable<Guid> collectionIds = CappedCollectionIds(db, rootId, viewerId);
 
+        // #589: a private item is listed through a row only to its creator or to the owner of the collection holding that row.
         IQueryable<Guid> directAndNested = db.CollectionItems
             .Where(ci => collectionIds.Contains(ci.CollectionId))
             .Where(ItemRowKept(db, rootId))
+            .Where(ItemVisibility.ListedInCollection(db, viewerId))
             .Select(ci => ci.ItemId);
 
         // Topic members (#553): visible questions on a path that is still live and that an accessible collection holds.
@@ -237,7 +240,7 @@ internal static class CollectionScope
     /// Otherwise it is <see cref="AccessibleMemberItemIds"/>. <see cref="ContainsAsync"/> always uses the full path.
     /// </summary>
     public static IQueryable<Guid> RosterItemIds(ApplicationDbContext db, Guid rootId, string? viewerId, bool hasStructure) =>
-        hasStructure ? AccessibleMemberItemIds(db, rootId, viewerId) : DirectMemberItemIds(db, rootId);
+        hasStructure ? AccessibleMemberItemIds(db, rootId, viewerId) : DirectMemberItemIds(db, rootId, viewerId);
 
     /// <summary>
     /// Whether <paramref name="itemId"/> is an accessible member of <paramref name="collectionId"/>, counting nested and live

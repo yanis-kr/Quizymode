@@ -128,8 +128,6 @@ const CollectionDetailPage = () => {
   const [searchTerm, setSearchTerm] = useState("");
   const searchActive = searchTerm.trim() !== "";
   const filteredItems = useMemo(() => filterCollectionItems(allItems, searchTerm), [allItems, searchTerm]);
-  const rosterTotal = itemsData?.totalCount ?? allItems.length;
-  const isRosterTruncated = rosterTotal > allItems.length;
 
   const totalCount = filteredItems.length;
   const totalPages = Math.max(1, Math.ceil(totalCount / pageSize));
@@ -539,11 +537,6 @@ const CollectionDetailPage = () => {
               placeholder="Search questions, answers and explanations"
               className="w-full rounded-md border border-slate-300 bg-surface px-3 py-2 text-sm text-slate-900 placeholder:text-slate-500"
             />
-            {isRosterTruncated && (
-              <p className="text-xs text-slate-500">
-                Search covers the first {allItems.length} of {rosterTotal} questions.
-              </p>
-            )}
           </div>
           {searchActive && filteredItems.length === 0 ? (
             <div className="rounded-[28px] border border-dashed border-slate-300 bg-slate-50/90 py-8 text-center">
