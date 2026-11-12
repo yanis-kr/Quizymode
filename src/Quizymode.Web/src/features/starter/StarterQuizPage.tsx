@@ -136,7 +136,7 @@ const StarterQuizPage = () => {
             endExtras={(finished) => <StarterEndCards run={run} runId={finished.runId} />}
             share={(finished) => {
               const summary = summarizeQuizRun(finished);
-              return buildGlobalShare({ correct: summary.correct, total: summary.scoredTotal, origin: window.location.origin });
+              return buildGlobalShare({ correct: summary.correct, total: summary.scoredTotal, origin: window.location.origin, path: "/start" });
             }}
           />
         ) : (

@@ -217,6 +217,20 @@ describe("QuizModePage keyboard shortcuts", () => {
       expect(screen.getByText(/Score: [01] \/ 1 correct/)).toBeInTheDocument();
     });
 
+    it("does not offer Skip for a picture question once it has been answered", async () => {
+      vi.mocked(collectionsApi.getItems).mockResolvedValue({ items: [pictureItem, secondItem] } as never);
+      vi.mocked(itemsApi.getById).mockResolvedValue(pictureItem as never);
+      renderPageWithEntries([START]);
+      await screen.findByText("What is 2 + 2?");
+      await screen.findByText("1 of 2");
+      fireEvent.load(await screen.findByAltText("Four stripes"));
+      expect(screen.getByRole("button", { name: "Skip question (not scored)" })).toBeInTheDocument();
+
+      press({ key: "1", code: "Digit1" });
+      expect(screen.getByText(/Score: [01] \/ 1 correct/)).toBeInTheDocument();
+      expect(screen.queryByRole("button", { name: "Skip question (not scored)" })).not.toBeInTheDocument();
+    });
+
     it("does nothing on 1, A or F while the zoom is open, so no answer is recorded", async () => {
       vi.mocked(collectionsApi.getItems).mockResolvedValue({ items: [pictureItem, secondItem] } as never);
       vi.mocked(itemsApi.getById).mockResolvedValue(pictureItem as never);

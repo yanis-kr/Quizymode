@@ -284,7 +284,6 @@ const HomePage = () => {
   return (
     <>
       <SEO
-        title="Quizymode"
         description="Play a free five-question quiz with no account needed, then browse Quizymode categories, featured sets, and public collections."
         canonical="https://www.quizymode.com"
         structuredData={{
