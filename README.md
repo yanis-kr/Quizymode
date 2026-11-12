@@ -6,6 +6,8 @@ For a full walkthrough with screenshots, see the **[Live User Guide](https://yan
 
 > **Try it:** [www.quizymode.com](https://www.quizymode.com/). You can browse categories and take quizzes without an account. Sign in to keep progress across devices.
 
+![Quizymode home page as a guest on www.quizymode.com](docs/images/guest-home.jpg)
+
 **Tech:** `.NET 10` Minimal API, React 19 SPA, AWS Cognito authentication, PostgreSQL.
 
 Production shape:
