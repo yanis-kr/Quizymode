@@ -1,0 +1,11 @@
+{
+  "collectionId": "13a16730-649b-4adc-a2b3-fee79a5a8393",
+  "name": "GenAI Exams",
+  "description": "Generative AI certification prep: AWS AIF-C01, Azure AI-103, Google Gen AI Leader and Anthropic Claude Architect (CCAR-F), with each exam's topic.",
+  "keywordPaths": [
+    { "category": "exams", "keyword1": "aws", "keyword2": "aif-c01" },
+    { "category": "exams", "keyword1": "azure", "keyword2": "ai-103" },
+    { "category": "exams", "keyword1": "gcp", "keyword2": "genai-leader" },
+    { "category": "exams", "keyword1": "anthropic", "keyword2": "ccar-f" }
+  ]
+}
