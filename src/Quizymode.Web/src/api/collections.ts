@@ -89,9 +89,21 @@ export const collectionsApi = {
   getItems: async (
     collectionId: string, excludeQuestionPictures = false
   ): Promise<{ items: ItemResponse[]; totalCount?: number }> => {
-    // Use GET /items?collectionId=X instead of GET /collections/{id}/items
-    const response = await itemsApi.getAll(undefined, undefined, undefined, collectionId, undefined, 1, 1000, { excludeQuestionPictures });
-    return { items: response.items, totalCount: response.totalCount };
+    // Use GET /items?collectionId=X instead of GET /collections/{id}/items.
+    // The API caps one page at 1000 rows, so page through the whole roster (#588).
+    const pageSize = 1000;
+    const maxPages = 100;
+    const items: ItemResponse[] = [];
+    let totalCount: number | undefined;
+    for (let page = 1; page <= maxPages; page += 1) {
+      const response = await itemsApi.getAll(undefined, undefined, undefined, collectionId, undefined, page, pageSize, { excludeQuestionPictures });
+      items.push(...response.items);
+      totalCount = response.totalCount;
+      if (response.items.length < pageSize || (totalCount !== undefined && items.length >= totalCount)) {
+        break;
+      }
+    }
+    return { items, totalCount };
   },
 
   create: async (
