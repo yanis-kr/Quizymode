@@ -2,7 +2,7 @@
  * AC 7.8.4: signed-in E2E through the Development DevTest identity (CI job `e2e`).
  * The Vite dev server runs with VITE_DEV_TEST_USER=ci-user; the API runs in Development with the DevTest scheme.
  */
-import { test, expect } from "@playwright/test";
+import { test, expect } from "../fixtures";
 
 const DEV_TEST_HEADER = "DevTest ci-user";
 

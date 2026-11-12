@@ -421,7 +421,7 @@ jobs:
           APP_Authentication__Cognito__Authority: https://cognito-idp.us-east-1.amazonaws.com/us-east-1_CIDUMMY
           APP_Authentication__Cognito__ClientId: ci-dummy
         run: |
-          dotnet run --project src/Quizymode.Api/Quizymode.Api.csproj -c Debug > api.log 2>&1 &
+          dotnet run --no-launch-profile --project src/Quizymode.Api/Quizymode.Api.csproj -c Debug > api.log 2>&1 &
           for i in $(seq 1 90); do
             if curl -sk https://localhost:8082/health | grep -q Healthy; then echo "API healthy"; exit 0; fi
             sleep 2
