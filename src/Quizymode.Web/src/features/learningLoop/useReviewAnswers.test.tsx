@@ -65,6 +65,37 @@ describe("useReviewAnswers", () => {
     expect(invalidate).toHaveBeenCalledTimes(1);
   });
 
+  it("does not count a 404 (item no longer in the queue, e.g. Play again after graduating) as a failure", async () => {
+    const notInQueue = Object.assign(new Error("Request failed with status code 404"), {
+      isAxiosError: true,
+      response: { status: 404, data: {} },
+    });
+    vi.mocked(reviewQueueApi.answer).mockRejectedValue(notInQueue);
+    const { result, invalidate } = setup();
+
+    await act(async () => {
+      await result.current.recordAnswer("a", true);
+    });
+
+    expect(result.current.tally).toEqual({ forward: 0, reset: 0, graduated: 0, failed: 0 });
+    expect(invalidate).toHaveBeenCalledTimes(1);
+  });
+
+  it("still counts a 500 as a failure", async () => {
+    const serverError = Object.assign(new Error("Request failed with status code 500"), {
+      isAxiosError: true,
+      response: { status: 500, data: {} },
+    });
+    vi.mocked(reviewQueueApi.answer).mockRejectedValue(serverError);
+    const { result } = setup();
+
+    await act(async () => {
+      await result.current.recordAnswer("a", true);
+    });
+
+    expect(result.current.tally.failed).toBe(1);
+  });
+
   it("settlePending waits for saves that are still running", async () => {
     let finish: (value: ReturnType<typeof applied>) => void = () => {};
     vi.mocked(reviewQueueApi.answer).mockReturnValue(new Promise((resolve) => (finish = resolve)));
