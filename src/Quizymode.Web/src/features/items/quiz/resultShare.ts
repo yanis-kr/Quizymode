@@ -59,12 +59,12 @@ export function buildCategoryShare(args: { correct: number; total: number; categ
   };
 }
 
-export function buildGlobalShare(args: { correct: number; total: number; origin: string }): ResultShareDescriptor {
-  const { correct, total, origin } = args;
+export function buildGlobalShare(args: { correct: number; total: number; origin: string; path?: "/quiz" | "/start" }): ResultShareDescriptor {
+  const { correct, total, origin, path = "/quiz" } = args;
   return {
     kind: "global",
     text: `I scored ${correct}/${total} on a Quizymode quiz. Try this quiz!`,
-    url: withUtm(`${origin}/quiz`, "global"),
+    url: withUtm(`${origin}${path}`, "global"),
   };
 }
 
