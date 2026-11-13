@@ -1,5 +1,6 @@
 import { useRef, useState } from "react";
 import { useQueryClient } from "@tanstack/react-query";
+import { isAxiosError } from "axios";
 import { reviewQueueApi } from "@/api/learningLoop";
 
 export const REVIEW_QUEUE_SUMMARY_KEY = ["review-queue", "summary"] as const;
@@ -33,8 +34,12 @@ export function useReviewAnswers() {
         forward: current.forward + (isCorrect && !response.graduated ? 1 : 0),
         reset: current.reset + (isCorrect ? 0 : 1),
       }));
-    } catch {
-      setTally((current) => ({ ...current, failed: current.failed + 1 }));
+    } catch (error) {
+      // 404: the item is not in the review queue (for example it graduated earlier, as on Play again).
+      // Nothing is left to save, so it is not a failure.
+      if (!(isAxiosError(error) && error.response?.status === 404)) {
+        setTally((current) => ({ ...current, failed: current.failed + 1 }));
+      }
     }
     void queryClient.invalidateQueries({ queryKey: REVIEW_QUEUE_SUMMARY_KEY });
   };
