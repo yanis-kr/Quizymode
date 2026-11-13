@@ -202,6 +202,14 @@ const AdminOverviewPanel = () => {
             })}
           </div>
 
+          {data.excluded && (
+            <p className="text-xs text-slate-600" data-testid="overview-excluded">
+              Excluded from these numbers (sessions, same window): maintainer {data.excluded.maintainer}, automated{" "}
+              {data.excluded.automated}, known bots {data.excluded.knownBot}
+              {data.excluded.internalUnsplit > 0 ? `, internal (unsplit) ${data.excluded.internalUnsplit}` : ""}.
+            </p>
+          )}
+
           <div className="rounded-lg bg-surface p-4 shadow">
             <DailyChart data={data} />
           </div>

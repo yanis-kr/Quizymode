@@ -69,10 +69,14 @@ internal static partial class DailySummaryBuilder
         ProblemsSection? problems = await Section("problems", logger, () =>
             BuildProblemsAsync(db, startUtc, endExclusiveUtc, cancellationToken));
 
-        return new DaySummary(visits, accounts, quizzes, sources, problems);
+        LocationsSection? locations = !includeSources || sessions is null
+            ? null
+            : await Section("locations", logger, () => BuildLocationsAsync(db, sessions, cancellationToken));
+
+        return new DaySummary(visits, accounts, quizzes, sources, problems, locations);
     }
 
-    /// <summary>Raw rows in the window including bot and internal traffic, for the data check (M16).</summary>
+    /// <summary>Raw rows in the window including bot and internal traffic, for the data check (M16), and the excluded sessions per class.</summary>
     internal static async Task<DigestHealth> BuildHealthAsync(
         ApplicationDbContext db,
         DateTime startUtc,
@@ -83,7 +87,8 @@ internal static partial class DailySummaryBuilder
             .CountAsync(pageView => pageView.CreatedUtc >= startUtc && pageView.CreatedUtc < endExclusiveUtc, cancellationToken);
         int events = await db.AnalyticsEvents.AsNoTracking()
             .CountAsync(analyticsEvent => analyticsEvent.OccurredUtc >= startUtc && analyticsEvent.OccurredUtc < endExclusiveUtc, cancellationToken);
-        return new DigestHealth(pageViews, events);
+        ExcludedSessionCounts excluded = await CountExcludedAsync(db, startUtc, endExclusiveUtc, cancellationToken);
+        return new DigestHealth(pageViews, events, excluded);
     }
 
     internal static async Task<T?> Section<T>(string name, ILogger logger, Func<Task<T>> build)
@@ -134,8 +139,7 @@ internal static partial class DailySummaryBuilder
         CancellationToken cancellationToken)
     {
         SessionStats stats = Summarize(sessions);
-        int newAccounts = await db.Users.AsNoTracking()
-            .CountAsync(user => !user.IsInternal && user.CreatedAt >= startUtc && user.CreatedAt < endExclusiveUtc, cancellationToken);
+        int newAccounts = (await LoadNewAccountsAsync(db, startUtc, endExclusiveUtc, cancellationToken)).Count;
         return new AccountsSection(stats.ActiveAccounts, newAccounts, stats.AnonymousSessions, stats.ConvertedSessions, stats.AuthenticatedSessions);
     }
 
@@ -287,31 +291,54 @@ internal static partial class DailySummaryBuilder
     private static string SafeToken(string? value, Regex pattern) =>
         value is not null && pattern.IsMatch(value) ? value : "other";
 
-    /// <summary>The printable source of a session: utm_source, else referrer host, else channel; anything unsafe becomes "other".</summary>
+    /// <summary>Label of sessions with no tag and no external referrer (also sessions without an attribution row).</summary>
+    internal const string DirectLabel = "Direct / unknown";
+
+    private const int TopRows = 10;
+
+    /// <summary>
+    /// The printable source of a session: utm_source, else referrer host, else the channel, else "Direct / unknown".
+    /// LinkedIn and Medium are named; anything unsafe becomes "other".
+    /// </summary>
     internal static string SourceKey(string? utmSource, string? referrerHost, string? channel)
     {
-        if (!string.IsNullOrWhiteSpace(utmSource))
-        {
-            return SafeToken(utmSource.Trim().ToLowerInvariant(), SafeTokenPattern());
-        }
-
-        if (!string.IsNullOrWhiteSpace(referrerHost))
-        {
-            return SafeToken(referrerHost.Trim().ToLowerInvariant(), SafeHostPattern());
-        }
-
-        return string.IsNullOrWhiteSpace(channel) ? "unknown" : SafeToken(channel.Trim().ToLowerInvariant(), SafeTokenPattern());
-    }
-
-    internal static bool IsLinkedIn(string? utmSource, string? referrerHost)
-    {
+        string source = utmSource?.Trim().ToLowerInvariant() ?? string.Empty;
         string host = referrerHost?.Trim().ToLowerInvariant() ?? string.Empty;
-        return host.Contains("linkedin", StringComparison.Ordinal)
-            || host == "lnkd.in"
-            || string.Equals(utmSource?.Trim(), "linkedin", StringComparison.OrdinalIgnoreCase);
+
+        if (source == "linkedin" || (source.Length == 0 && IsLinkedInHost(host)))
+        {
+            return "LinkedIn";
+        }
+
+        if (source == "medium" || (source.Length == 0 && IsMediumHost(host)))
+        {
+            return "Medium";
+        }
+
+        if (source.Length > 0)
+        {
+            return SafeToken(source, SafeTokenPattern());
+        }
+
+        if (host.Length > 0)
+        {
+            return SafeToken(host, SafeHostPattern());
+        }
+
+        string channelName = channel?.Trim().ToLowerInvariant() ?? string.Empty;
+        return channelName switch
+        {
+            "" or "direct" or "unknown" => DirectLabel,
+            "shared-link" => "Shared link",
+            _ => SafeToken(channelName, SafeTokenPattern())
+        };
     }
 
-    private sealed record SourceSession(string Key, bool IsLinkedIn);
+    private static bool IsLinkedInHost(string host) =>
+        host.Contains("linkedin", StringComparison.Ordinal) || host == "lnkd.in";
+
+    private static bool IsMediumHost(string host) =>
+        host == "medium.com" || host.EndsWith(".medium.com", StringComparison.Ordinal);
 
     private static async Task<SourcesSection> BuildSourcesAsync(
         ApplicationDbContext db,
@@ -321,7 +348,7 @@ internal static partial class DailySummaryBuilder
         DateTime endExclusiveUtc,
         CancellationToken cancellationToken)
     {
-        Dictionary<string, SourceSession> bySession = new(StringComparer.Ordinal);
+        Dictionary<string, string> bySession = new(StringComparer.Ordinal);
         List<string> sessionIds = sessions.Select(session => session.SessionId).ToList();
         for (int offset = 0; offset < sessionIds.Count; offset += SessionIdChunk)
         {
@@ -332,22 +359,18 @@ internal static partial class DailySummaryBuilder
                 .ToListAsync(cancellationToken);
             foreach (var row in rows)
             {
-                bySession[row.SessionId] = new SourceSession(
-                    SourceKey(row.UtmSource, row.ReferrerHost, row.Channel),
-                    IsLinkedIn(row.UtmSource, row.ReferrerHost));
+                bySession[row.SessionId] = SourceKey(row.UtmSource, row.ReferrerHost, row.Channel);
             }
         }
 
-        // Sessions without a first-hit attribution row are "unknown".
-        SourceSession Resolve(string sessionId) =>
-            bySession.TryGetValue(sessionId, out SourceSession? found) ? found : new SourceSession("unknown", false);
+        // Sessions without a first-hit attribution row are "Direct / unknown".
+        string Resolve(string sessionId) => bySession.TryGetValue(sessionId, out string? found) ? found : DirectLabel;
 
-        // Accounts created in the window, attributed to the source of the account's earliest linked session.
-        List<Guid> newUserIds = await db.Users.AsNoTracking()
-            .Where(user => !user.IsInternal && user.CreatedAt >= startUtc && user.CreatedAt < endExclusiveUtc)
+        // Accounts created in the window (maintainer and automated first sessions excluded), attributed to the source of the account's earliest linked session.
+        List<Guid> newUserIds = (await LoadNewAccountsAsync(db, startUtc, endExclusiveUtc, cancellationToken))
             .Select(user => user.Id)
-            .ToListAsync(cancellationToken);
-        List<SourceSession> signupSources = [];
+            .ToList();
+        List<string> signupSources = [];
         if (newUserIds.Count > 0)
         {
             var linked = await db.AnalyticsSessions.AsNoTracking()
@@ -357,17 +380,17 @@ internal static partial class DailySummaryBuilder
             signupSources = linked
                 .GroupBy(row => row.UserId)
                 .Select(group => group.OrderBy(row => row.FirstSeenUtc).First())
-                .Select(row => new SourceSession(SourceKey(row.UtmSource, row.ReferrerHost, row.Channel), IsLinkedIn(row.UtmSource, row.ReferrerHost)))
+                .Select(row => SourceKey(row.UtmSource, row.ReferrerHost, row.Channel))
                 .ToList();
         }
 
-        List<(SourceSession Source, SessionClassifier.ClassifiedSession Session)> pairs = sessions
+        List<(string Source, SessionClassifier.ClassifiedSession Session)> pairs = sessions
             .Select(session => (Resolve(session.SessionId), session))
             .ToList();
 
-        SourceRow Row(string name, IEnumerable<(SourceSession Source, SessionClassifier.ClassifiedSession Session)> members, int newAccounts)
+        SourceRow Row(string name, IEnumerable<(string Source, SessionClassifier.ClassifiedSession Session)> members, int newAccounts)
         {
-            List<(SourceSession Source, SessionClassifier.ClassifiedSession Session)> list = members.ToList();
+            List<(string Source, SessionClassifier.ClassifiedSession Session)> list = members.ToList();
             HashSet<string> memberIds = list.Select(pair => pair.Session.SessionId).ToHashSet(StringComparer.Ordinal);
             return new SourceRow(
                 name,
@@ -378,16 +401,87 @@ internal static partial class DailySummaryBuilder
                 newAccounts);
         }
 
-        List<SourceRow> top = pairs
-            .Where(pair => !pair.Source.IsLinkedIn)
-            .GroupBy(pair => pair.Source.Key, StringComparer.Ordinal)
-            .Select(group => Row(group.Key, group, signupSources.Count(source => !source.IsLinkedIn && source.Key == group.Key)))
+        List<SourceRow> ordered = pairs
+            .GroupBy(pair => pair.Source, StringComparer.Ordinal)
+            .Select(group => Row(group.Key, group, signupSources.Count(source => source == group.Key)))
             .OrderByDescending(row => row.Sessions)
             .ThenBy(row => row.Name, StringComparer.Ordinal)
-            .Take(3)
             .ToList();
-        SourceRow linkedIn = Row("LinkedIn", pairs.Where(pair => pair.Source.IsLinkedIn), signupSources.Count(source => source.IsLinkedIn));
-        return new SourcesSection(top, linkedIn);
+
+        // The top rows plus one "Other" row, so the table always adds up to the session total.
+        List<SourceRow> top = ordered.Take(TopRows).ToList();
+        List<SourceRow> rest = ordered.Skip(TopRows).ToList();
+        SourceRow? other = rest.Count == 0
+            ? null
+            : new SourceRow(
+                "Other",
+                rest.Sum(row => row.Sessions),
+                rest.Sum(row => row.EngagedSessions),
+                rest.Sum(row => row.QuizStarts),
+                rest.Sum(row => row.ConvertedSessions),
+                rest.Sum(row => row.NewAccounts));
+        return new SourcesSection(top, other);
+    }
+
+    private static string? CleanLocation(string? value)
+    {
+        if (string.IsNullOrWhiteSpace(value))
+        {
+            return null;
+        }
+
+        string trimmed = value.Trim();
+        // "Local" is what the geolocation service returns for private and loopback addresses; it is never a place.
+        return trimmed.Equals("Local", StringComparison.OrdinalIgnoreCase) || trimmed.Equals("unknown", StringComparison.OrdinalIgnoreCase)
+            ? null
+            : CleanText(trimmed, 40);
+    }
+
+    /// <summary>Top countries and regions of the window's sessions, with Other and Unknown buckets (#573).</summary>
+    private static async Task<LocationsSection> BuildLocationsAsync(
+        ApplicationDbContext db,
+        List<SessionClassifier.ClassifiedSession> sessions,
+        CancellationToken cancellationToken)
+    {
+        Dictionary<string, (string? Country, string? Region)> bySession = new(StringComparer.Ordinal);
+        List<string> sessionIds = sessions.Select(session => session.SessionId).ToList();
+        for (int offset = 0; offset < sessionIds.Count; offset += SessionIdChunk)
+        {
+            List<string> chunk = sessionIds.Skip(offset).Take(SessionIdChunk).ToList();
+            var rows = await db.AnalyticsSessions.AsNoTracking()
+                .Where(session => chunk.Contains(session.SessionId))
+                .Select(session => new { session.SessionId, session.Country, session.Region })
+                .ToListAsync(cancellationToken);
+            foreach (var row in rows)
+            {
+                bySession[row.SessionId] = (CleanLocation(row.Country), CleanLocation(row.Region));
+            }
+        }
+
+        List<(string? Country, string? Region)> places = sessionIds
+            .Select(sessionId => bySession.TryGetValue(sessionId, out (string? Country, string? Region) place) ? place : (null, null))
+            .ToList();
+
+        LocationBreakdown countries = Breakdown(places.Select(place => place.Country));
+        LocationBreakdown regions = Breakdown(places.Select(place =>
+            place.Region is null ? null : place.Country is null ? place.Region : $"{place.Region}, {place.Country}"));
+        return new LocationsSection(countries, regions);
+    }
+
+    internal static LocationBreakdown Breakdown(IEnumerable<string?> labels)
+    {
+        List<string?> all = labels.ToList();
+        List<LocationRow> ordered = all
+            .Where(label => label is not null)
+            .GroupBy(label => label!, StringComparer.Ordinal)
+            .Select(group => new LocationRow(group.Key, group.Count()))
+            .OrderByDescending(row => row.Sessions)
+            .ThenBy(row => row.Name, StringComparer.Ordinal)
+            .ToList();
+        return new LocationBreakdown(
+            ordered.Take(TopRows).ToList(),
+            ordered.Skip(TopRows).Sum(row => row.Sessions),
+            all.Count(label => label is null));
     }
 
     private static async Task<ProblemsSection> BuildProblemsAsync(
@@ -398,17 +492,56 @@ internal static partial class DailySummaryBuilder
     {
         GetClientErrors.WindowCounts errors = await GetClientErrors.CountForWindowAsync(db, startUtc, endExclusiveUtc, cancellationToken);
 
-        var feedback = await db.FeedbackSubmissions.AsNoTracking()
-            .Where(submission => submission.CreatedAt >= startUtc && submission.CreatedAt < endExclusiveUtc
-                && (submission.UserId == null || !db.Users.Any(user => user.Id == submission.UserId && user.IsInternal)))
+        // Feedback is filtered by session class as well as by the user flag (#573): maintainer, automated and bot sessions are excluded.
+        var submissions = await db.FeedbackSubmissions.AsNoTracking()
+            .Where(submission => submission.CreatedAt >= startUtc && submission.CreatedAt < endExclusiveUtc)
+            .Select(submission => new { submission.Type, submission.UserId, submission.SessionId })
+            .ToListAsync(cancellationToken);
+
+        List<string> feedbackSessionIds = submissions
+            .Where(submission => submission.SessionId != null)
+            .Select(submission => submission.SessionId!)
+            .Distinct(StringComparer.Ordinal)
+            .ToList();
+        List<Guid> feedbackUserIds = submissions
+            .Where(submission => submission.UserId != null)
+            .Select(submission => submission.UserId!.Value)
+            .Distinct()
+            .ToList();
+        HashSet<string> excludedSessions = [];
+        if (feedbackSessionIds.Count > 0)
+        {
+            excludedSessions.UnionWith(await InternalTrafficFilter.AllInternalSessionIds(db)
+                .Where(sessionId => feedbackSessionIds.Contains(sessionId))
+                .ToListAsync(cancellationToken));
+            excludedSessions.UnionWith(await db.PageViews.AsNoTracking()
+                .Where(pageView => pageView.IsBot && feedbackSessionIds.Contains(pageView.SessionId))
+                .Select(pageView => pageView.SessionId)
+                .Distinct()
+                .ToListAsync(cancellationToken));
+        }
+
+        HashSet<Guid> internalUsers = feedbackUserIds.Count == 0
+            ? []
+            : (await db.Users.AsNoTracking()
+                    .Where(user => user.IsInternal && feedbackUserIds.Contains(user.Id))
+                    .Select(user => user.Id)
+                    .ToListAsync(cancellationToken))
+                .ToHashSet();
+
+        var feedback = submissions
+            .Where(submission => (submission.UserId is null || !internalUsers.Contains(submission.UserId.Value))
+                && (submission.SessionId is null || !excludedSessions.Contains(submission.SessionId)))
             .GroupBy(submission => submission.Type)
             .Select(group => new { Type = group.Key, Count = group.Count() })
-            .ToListAsync(cancellationToken);
+            .ToList();
         int problemReports = feedback.Where(row => row.Type == "reportIssue").Sum(row => row.Count);
         int otherFeedback = feedback.Where(row => row.Type != "reportIssue").Sum(row => row.Count);
 
+        // Unclassified (older) picture reports count as audience; maintainer, automated and bot reports do not.
         int pictureReports = await db.MediaReports.AsNoTracking()
-            .CountAsync(report => report.CreatedAt >= startUtc && report.CreatedAt < endExclusiveUtc, cancellationToken);
+            .CountAsync(report => report.CreatedAt >= startUtc && report.CreatedAt < endExclusiveUtc
+                && (report.TrafficClass == null || report.TrafficClass == TrafficClassifier.Audience), cancellationToken);
 
         return new ProblemsSection(errors.Reports, errors.Sessions, errors.SignedInUsers, errors.NewGroups, problemReports, otherFeedback, pictureReports);
     }

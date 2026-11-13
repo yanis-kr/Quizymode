@@ -164,6 +164,7 @@ const DailyDigestCard = () => {
   });
 
   const [showPreview, setShowPreview] = useState(false);
+  const [previewTab, setPreviewTab] = useState<"text" | "html">("text");
   const preview = useMutation<DailyDigestPreview, unknown, void>({ mutationFn: () => dailyDigestApi.getPreview() });
   const [testMessage, setTestMessage] = useState<{ text: string; error: boolean } | null>(null);
   const [localCooldownEnd, setLocalCooldownEnd] = useState<number | null>(null);
@@ -287,6 +288,7 @@ const DailyDigestCard = () => {
             disabled={preview.isPending}
             onClick={() => {
               setShowPreview(true);
+              setPreviewTab("text");
               preview.mutate();
             }}
           >
@@ -336,13 +338,45 @@ const DailyDigestCard = () => {
                     </button>
                   </div>
                   <p className="mt-1 text-sm text-gray-600">Subject: {preview.data.subject}</p>
-                  <pre
-                    tabIndex={0}
-                    aria-label="Digest preview text"
-                    className="mt-2 max-h-96 overflow-auto whitespace-pre rounded-md bg-slate-50 p-3 font-mono text-xs text-gray-900"
-                  >
-                    {preview.data.textBody}
-                  </pre>
+                  <div role="tablist" aria-label="Preview format" className="mt-2 flex gap-2">
+                    {(["text", "html"] as const).map((tab) => (
+                      <button
+                        key={tab}
+                        type="button"
+                        role="tab"
+                        id={`daily-digest-tab-${tab}`}
+                        aria-selected={previewTab === tab}
+                        aria-controls={`daily-digest-panel-${tab}`}
+                        className={`rounded-full px-3 py-1 text-sm font-medium focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500 ${
+                          previewTab === tab ? "bg-indigo-600 text-white" : "border border-gray-300 bg-surface text-gray-700 hover:bg-gray-50"
+                        }`}
+                        onClick={() => setPreviewTab(tab)}
+                      >
+                        {tab === "text" ? "Text" : "HTML"}
+                      </button>
+                    ))}
+                  </div>
+                  {previewTab === "text" ? (
+                    <div role="tabpanel" id="daily-digest-panel-text" aria-labelledby="daily-digest-tab-text">
+                      <pre
+                        tabIndex={0}
+                        aria-label="Digest preview text"
+                        className="mt-2 max-h-96 overflow-auto whitespace-pre rounded-md bg-slate-50 p-3 font-mono text-xs text-gray-900"
+                      >
+                        {preview.data.textBody}
+                      </pre>
+                    </div>
+                  ) : (
+                    <div role="tabpanel" id="daily-digest-panel-html" aria-labelledby="daily-digest-tab-html">
+                      {/* Fully sandboxed (no scripts, no same-origin) and rendered from srcDoc: the email HTML never touches this page's DOM. */}
+                      <iframe
+                        title="Digest preview HTML"
+                        sandbox=""
+                        srcDoc={preview.data.htmlBody}
+                        className="mt-2 h-96 w-full max-w-full rounded-md border border-gray-200 bg-white"
+                      />
+                    </div>
+                  )}
                 </>
               )
             )}

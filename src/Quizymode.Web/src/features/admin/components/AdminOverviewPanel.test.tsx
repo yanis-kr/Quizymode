@@ -103,6 +103,28 @@ describe("AdminOverviewPanel", () => {
     expect(screen.getByRole("link", { name: /ideas awaiting moderation/i })).toHaveAttribute("href", "/admin/ideas");
   });
 
+  it("shows the excluded sessions per traffic class for the same window", async () => {
+    mockAdminApi.getAnalyticsOverview.mockResolvedValue({
+      ...populated,
+      excluded: { maintainer: 2, automated: 3, knownBot: 4, internalUnsplit: 0, total: 9 },
+    });
+    renderPanel();
+
+    const line = await screen.findByTestId("overview-excluded");
+    expect(line).toHaveTextContent("maintainer 2, automated 3, known bots 4");
+    expect(line).not.toHaveTextContent("unsplit");
+  });
+
+  it("shows internal (unsplit) sessions when there are any", async () => {
+    mockAdminApi.getAnalyticsOverview.mockResolvedValue({
+      ...populated,
+      excluded: { maintainer: 0, automated: 0, knownBot: 0, internalUnsplit: 5, total: 5 },
+    });
+    renderPanel();
+
+    expect(await screen.findByTestId("overview-excluded")).toHaveTextContent("internal (unsplit) 5");
+  });
+
   it("omits the oldest-submitted line when no pictures are waiting", async () => {
     mockAdminApi.getAnalyticsOverview.mockResolvedValue({
       ...populated,

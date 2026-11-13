@@ -54,7 +54,14 @@ public static class MediaLifecycleEndpoints
         string abuse = Convert.ToHexStringLower(System.Security.Cryptography.HMACSHA256.HashData(Convert.FromHexString(reportControl.ReportSalt), System.Text.Encoding.UTF8.GetBytes(now.ToString("yyyy-MM-dd") + ":" + (user.UserId ?? context.Connection.RemoteIpAddress?.ToString() ?? "anonymous"))));
         if (await db.MediaReports.AnyAsync(x => x.AbuseKey == abuse && x.ItemId == id && x.Revision == request.ExpectedRevision && x.Slot == request.Slot, ct)) return Results.Accepted();
         if (await db.MediaReports.CountAsync(x => x.AbuseKey == abuse && x.CreatedAt > now.AddDays(-1), ct) >= 10) return Results.StatusCode(429);
-        db.MediaReports.Add(new MediaReport { Id = Guid.NewGuid(), ItemId = id, AssetId = assetId.Value, Revision = request.ExpectedRevision, Slot = request.Slot, Category = request.Category, AbuseKey = abuse, CreatedAt = now });
+        // Traffic class (#573): the E2E token and bot user agents are detected; the anonymous internal-browser marker is not sent on this call.
+        bool reporterIsMaintainer = user.IsAdmin;
+        if (!reporterIsMaintainer && Guid.TryParse(user.UserId, out Guid reporterId))
+        {
+            reporterIsMaintainer = await db.Users.AsNoTracking().AnyAsync(x => x.Id == reporterId && x.IsInternal, ct);
+        }
+        string trafficClass = TrafficClassifier.Classify(RequestMetadataHelper.GetUserAgent(context), reporterIsMaintainer);
+        db.MediaReports.Add(new MediaReport { Id = Guid.NewGuid(), ItemId = id, AssetId = assetId.Value, Revision = request.ExpectedRevision, Slot = request.Slot, Category = request.Category, AbuseKey = abuse, CreatedAt = now, TrafficClass = trafficClass });
         await db.SaveChangesAsync(ct); if (transaction is not null) await transaction.CommitAsync(ct);
         MediaMetrics.Reports.Add(1, new KeyValuePair<string, object?>("category", request.Category));
         return Results.Accepted();

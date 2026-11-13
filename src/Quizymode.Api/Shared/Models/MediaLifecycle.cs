@@ -25,6 +25,9 @@ public sealed class MediaReport
     public string AbuseKey { get; set; } = string.Empty;
     public DateTime CreatedAt { get; set; }
     public DateTime? ResolvedAt { get; set; }
+
+    /// <summary>Write-time traffic class (#573); null (legacy) counts as audience. Anonymous marked browsers cannot be detected here.</summary>
+    public string? TrafficClass { get; set; }
 }
 
 /// <summary>Independent durable emergency switches; withdrawal is never switchable.</summary>

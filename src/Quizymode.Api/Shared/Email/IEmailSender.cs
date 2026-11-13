@@ -9,8 +9,11 @@ internal interface IEmailSender
     /// <summary>True when every setting needed to send is present.</summary>
     bool IsConfigured { get; }
 
-    /// <summary>Sends a plain-text email to the configured admin address. Returns false when not configured or the send failed; never throws.</summary>
-    Task<bool> SendToAdminAsync(string subject, string body, CancellationToken cancellationToken);
+    /// <summary>
+    /// Sends an email to the configured admin address: plain text, or multipart/alternative (text/plain then text/html)
+    /// when <paramref name="htmlBody"/> is given. Returns false when not configured or the send failed; never throws.
+    /// </summary>
+    Task<bool> SendToAdminAsync(string subject, string body, CancellationToken cancellationToken, string? htmlBody = null);
 }
 
 /// <summary>Used when SMTP is not configured (dev, tests): sends nothing and reports failure so callers keep their work un-notified.</summary>
@@ -18,7 +21,7 @@ internal sealed class NoOpEmailSender(ILogger<NoOpEmailSender> logger) : IEmailS
 {
     public bool IsConfigured => false;
 
-    public Task<bool> SendToAdminAsync(string subject, string body, CancellationToken cancellationToken)
+    public Task<bool> SendToAdminAsync(string subject, string body, CancellationToken cancellationToken, string? htmlBody = null)
     {
         logger.LogWarning("Email: not configured; notification not sent");
         return Task.FromResult(false);
@@ -32,7 +35,19 @@ internal sealed class SmtpEmailSender(IOptions<EmailOptions> options, ILogger<Sm
 
     public bool IsConfigured => options.Value.IsComplete;
 
-    public async Task<bool> SendToAdminAsync(string subject, string body, CancellationToken cancellationToken)
+    /// <summary>The message to send: plain text, plus an HTML alternative view (multipart/alternative) when HTML is given.</summary>
+    internal static MailMessage BuildMessage(string from, string to, string subject, string body, string? htmlBody)
+    {
+        MailMessage message = new(from, to, subject, body);
+        if (!string.IsNullOrEmpty(htmlBody))
+        {
+            message.AlternateViews.Add(AlternateView.CreateAlternateViewFromString(htmlBody, System.Text.Encoding.UTF8, "text/html"));
+        }
+
+        return message;
+    }
+
+    public async Task<bool> SendToAdminAsync(string subject, string body, CancellationToken cancellationToken, string? htmlBody = null)
     {
         EmailOptions config = options.Value;
         if (!config.IsComplete)
@@ -49,7 +64,7 @@ internal sealed class SmtpEmailSender(IOptions<EmailOptions> options, ILogger<Sm
                 Credentials = new NetworkCredential(config.Smtp.UserName, config.Smtp.Password),
                 Timeout = SmtpTimeoutMilliseconds
             };
-            using MailMessage message = new(config.From!, config.AdminAddress!, subject, body);
+            using MailMessage message = BuildMessage(config.From!, config.AdminAddress!, subject, body, htmlBody);
             // SmtpClient.Timeout does not apply to SendMailAsync, so the bound is enforced here; shutdown still propagates.
             using CancellationTokenSource sendTimeout = CancellationTokenSource.CreateLinkedTokenSource(cancellationToken);
             sendTimeout.CancelAfter(SmtpTimeoutMilliseconds);

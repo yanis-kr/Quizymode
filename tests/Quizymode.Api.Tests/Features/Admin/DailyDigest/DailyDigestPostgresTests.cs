@@ -73,7 +73,7 @@ public sealed class DailyDigestPostgresTests(PostgresContainerFixture fixture, I
         {
             await using ApplicationDbContext db = fixture.CreateDbContext();
             DailyDigestService service = new(
-                new DailyDigestComposer(db, clock, NullLogger<DailyDigestComposer>.Instance),
+                new DailyDigestComposer(db, clock, NullLogger<DailyDigestComposer>.Instance, new DateOnly(2026, 1, 1)),
                 new DailyDigestRunStore(db, clock),
                 email,
                 Microsoft.Extensions.Options.Options.Create(new DailyDigestOptions { Enabled = true }),

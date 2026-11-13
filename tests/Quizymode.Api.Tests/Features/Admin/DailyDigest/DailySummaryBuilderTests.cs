@@ -240,12 +240,12 @@ public sealed class DailySummaryBuilderTests : DatabaseTestFixture
 
         DaySummary day = await BuildAsync();
 
-        day.Sources!.LinkedIn.Sessions.Should().Be(1);
-        day.Sources.Top.Select(row => row.Name).Should().Equal("google.com");
+        day.Sources!.Top.Single(row => row.Name == "LinkedIn").Sessions.Should().Be(1);
+        day.Sources.Top.Select(row => row.Name).Should().BeEquivalentTo(["LinkedIn", "google.com"]);
     }
 
     [Fact]
-    public async Task Sources_LinkedInLineIsPresentWithZeros_AndUnsafeUtmValuesPrintAsOther()
+    public async Task Sources_ZeroRowsAreOmitted_AndUnsafeUtmValuesPrintAsOther()
     {
         DbContext.AnalyticsSessions.Add(Session("a", Mid, "v1", utmSource: "bob@example.com\nBcc: x"));
         DbContext.PageViews.Add(Hit("a", Mid));
@@ -253,8 +253,8 @@ public sealed class DailySummaryBuilderTests : DatabaseTestFixture
 
         DaySummary day = await BuildAsync();
 
-        day.Sources!.LinkedIn.Should().Be(new SourceRow("LinkedIn", 0, 0, 0, 0, 0));
-        day.Sources.Top.Single().Name.Should().Be("other");
+        day.Sources!.Top.Single().Name.Should().Be("other");
+        day.Sources.Other.Should().BeNull();
     }
 
     [Fact]

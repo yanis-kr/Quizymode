@@ -14,7 +14,9 @@ internal sealed class AttributionClassifier : IAttributionClassifier
     private static readonly string[] SocialHosts =
     [
         "reddit", "facebook", "instagram", "x.com", "t.co", "linkedin",
-        "youtube", "tiktok", "pinterest", "discord", "news.ycombinator.com"
+        "youtube", "tiktok", "pinterest", "discord", "news.ycombinator.com",
+        // "linkedin" does not match the lnkd.in short link, and Medium posts are social referrals (#573).
+        "lnkd.in", "medium.com"
     ];
 
     private static readonly string[] PaidUtmMediums =
@@ -36,7 +38,9 @@ internal sealed class AttributionClassifier : IAttributionClassifier
         bool hasAnyUtmTag = utmSource is not null || utmMedium is not null || utmCampaign is not null
             || utmContent is not null || utmTerm is not null;
 
-        string channel = ClassifyChannel(clickIdPlatform, utmMedium, hasAnyUtmTag, referrerHost);
+        bool onlyContentTag = utmContent is not null
+            && utmSource is null && utmMedium is null && utmCampaign is null && utmTerm is null;
+        string channel = ClassifyChannel(clickIdPlatform, utmSource, utmMedium, onlyContentTag, hasAnyUtmTag, referrerHost);
 
         return new AttributionResult(
             referrerHost,
@@ -119,7 +123,9 @@ internal sealed class AttributionClassifier : IAttributionClassifier
 
     private static string ClassifyChannel(
         string? clickIdPlatform,
+        string? utmSource,
         string? utmMedium,
+        bool onlyContentTag,
         bool hasAnyUtmTag,
         string? referrerHost)
     {
@@ -136,7 +142,16 @@ internal sealed class AttributionClassifier : IAttributionClassifier
             return "email";
         }
 
-        // (3) campaign: any other utm_* tag present.
+        // (3) shared-link: the product's own share links (utm_source and utm_medium both "share") and links whose only
+        // tag is utm_content. Neither is a paid or email campaign (#573).
+        bool isOwnShareLink = string.Equals(utmSource, "share", StringComparison.OrdinalIgnoreCase)
+            && string.Equals(utmMedium, "share", StringComparison.OrdinalIgnoreCase);
+        if (isOwnShareLink || onlyContentTag)
+        {
+            return "shared-link";
+        }
+
+        // (4) campaign: any other utm_* tag present.
         if (hasAnyUtmTag)
         {
             return "campaign";

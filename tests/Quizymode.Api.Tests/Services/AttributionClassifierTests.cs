@@ -257,4 +257,42 @@ public sealed class AttributionClassifierTests
     {
         _classifier.ClassifyDeviceClass(userAgent).Should().Be("desktop");
     }
+
+    [Theory]
+    [InlineData("https://lnkd.in/abc123")]
+    [InlineData("https://www.linkedin.com/feed/")]
+    [InlineData("https://medium.com/@someone/post")]
+    [InlineData("https://blog.medium.com/post")]
+    public void Classify_LinkedInShortLinkAndMediumReferrers_AreSocial(string referrer)
+    {
+        _classifier.Classify(new AttributionRequest(ReferrerUrl: referrer, RequestHost: "www.quizymode.com")).Channel.Should().Be("social");
+    }
+
+    [Fact]
+    public void Classify_OnlyUtmContent_IsASharedLink_NotACampaign()
+    {
+        AttributionResult result = _classifier.Classify(new AttributionRequest(
+            ReferrerUrl: null, RequestHost: "www.quizymode.com", UtmContent: "category"));
+
+        result.Channel.Should().Be("shared-link");
+        result.UtmContent.Should().Be("category");
+    }
+
+    [Fact]
+    public void Classify_TheProductsOwnShareLink_IsASharedLink()
+    {
+        AttributionResult result = _classifier.Classify(new AttributionRequest(
+            ReferrerUrl: null, RequestHost: "www.quizymode.com",
+            UtmSource: "share", UtmMedium: "share", UtmCampaign: "quiz_result", UtmContent: "daily"));
+
+        result.Channel.Should().Be("shared-link");
+    }
+
+    [Fact]
+    public void Classify_UtmContentWithAnotherTag_StaysACampaign_AndMediumOnlyDecidesPaidAndEmail()
+    {
+        _classifier.Classify(new AttributionRequest(null, "www.quizymode.com", UtmSource: "linkedin", UtmMedium: "social", UtmContent: "x")).Channel.Should().Be("campaign");
+        _classifier.Classify(new AttributionRequest(null, "www.quizymode.com", UtmMedium: "cpc", UtmContent: "x")).Channel.Should().Be("paid");
+        _classifier.Classify(new AttributionRequest(null, "www.quizymode.com", UtmMedium: "email", UtmContent: "x")).Channel.Should().Be("email");
+    }
 }

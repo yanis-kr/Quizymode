@@ -38,6 +38,8 @@ export const dailyDigestPreviewSchema = z.object({
   windowEndUtc: z.string(),
   subject: z.string(),
   textBody: z.string(),
+  /** The HTML alternative of the email (#573); shown in a sandboxed iframe, never injected into the page. */
+  htmlBody: z.string(),
 });
 
 const testSendSchema = z.object({ subject: z.string() });

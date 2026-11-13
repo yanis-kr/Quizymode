@@ -1,3 +1,5 @@
+using Quizymode.Api.Services;
+
 namespace Quizymode.Api.Features.Admin.DailyDigest;
 
 /// <summary>
@@ -23,7 +25,7 @@ internal sealed record DigestReport(
 
     /// <summary>True when every section of the current window failed, so there is nothing worth sending.</summary>
     public bool AllUnavailable => Current.Visits is null && Current.Accounts is null && Current.Quizzes is null
-        && Current.Sources is null && Current.Problems is null && Waiting is null && Health is null;
+        && Current.Sources is null && Current.Problems is null && Current.Locations is null && Waiting is null && Health is null;
 }
 
 internal sealed record DaySummary(
@@ -31,7 +33,8 @@ internal sealed record DaySummary(
     AccountsSection? Accounts,
     QuizSection? Quizzes,
     SourcesSection? Sources,
-    ProblemsSection? Problems);
+    ProblemsSection? Problems,
+    LocationsSection? Locations = null);
 
 internal sealed record VisitsSection(
     int PageViews,
@@ -56,7 +59,15 @@ internal sealed record QuizSection(int Starts, int Completed, int Participants, 
 
 internal sealed record SourceRow(string Name, int Sessions, int EngagedSessions, int QuizStarts, int ConvertedSessions, int NewAccounts);
 
-internal sealed record SourcesSection(List<SourceRow> Top, SourceRow LinkedIn);
+/// <summary>Sources by sessions, top rows first; <paramref name="Other"/> sums the rest so the table adds up (#573).</summary>
+internal sealed record SourcesSection(List<SourceRow> Top, SourceRow? Other = null);
+
+internal sealed record LocationRow(string Name, int Sessions);
+
+/// <summary>Top places by sessions, then the sessions of every other place and of sessions with no known place.</summary>
+internal sealed record LocationBreakdown(List<LocationRow> Top, int Other, int Unknown);
+
+internal sealed record LocationsSection(LocationBreakdown Countries, LocationBreakdown Regions);
 
 internal sealed record ProblemsSection(
     int ErrorReports,
@@ -75,10 +86,12 @@ internal sealed record WaitingSection(
     int? OldestPictureAgeDays,
     int NewFeedback);
 
-internal sealed record DigestHealth(int RawPageViews, int RawEvents);
+/// <param name="Excluded">Sessions excluded from the window per traffic class (#573); null in digests persisted before it existed.</param>
+internal sealed record DigestHealth(int RawPageViews, int RawEvents, ExcludedSessionCounts? Excluded = null);
 
 /// <summary>
 /// Averages of the comparison windows. <see cref="Label"/> is "7-day avg" for a daily digest or "previous window" for
 /// an ad hoc window. A value is null when no comparison window had it.
 /// </summary>
-internal sealed record BaselineSummary(string Label, int Days, int ExpectedDays, Dictionary<string, double?> Averages);
+/// <remarks><c>RulesChangedOn</c> is set when the comparison would have spanned the traffic-rules change, so earlier days were left out (#573).</remarks>
+internal sealed record BaselineSummary(string Label, int Days, int ExpectedDays, Dictionary<string, double?> Averages, DateOnly? RulesChangedOn = null);

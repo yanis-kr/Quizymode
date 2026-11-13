@@ -167,6 +167,7 @@ describe("DailyDigestCard", () => {
       windowEndUtc: "",
       subject: "Quizymode daily - Fri Nov 6",
       textBody: "VISITS  yesterday\n  Sessions 4",
+      htmlBody: "<p>Sessions 4</p>",
     });
     renderCard();
     await userEvent.click(await screen.findByRole("button", { name: "Preview" }));
@@ -176,6 +177,34 @@ describe("DailyDigestCard", () => {
     expect(screen.getByText("Subject: Quizymode daily - Fri Nov 6")).toBeInTheDocument();
     await userEvent.click(screen.getByRole("button", { name: "Close preview" }));
     expect(screen.queryByLabelText("Digest preview text")).not.toBeInTheDocument();
+  });
+
+  it("shows the Text tab first and the HTML tab in a sandboxed iframe, never as injected markup", async () => {
+    mockApi.getRuns.mockResolvedValue(runs());
+    mockApi.getPreview.mockResolvedValue({
+      reportDate: "2026-11-06",
+      windowStartUtc: "",
+      windowEndUtc: "",
+      subject: "Quizymode daily (America/Chicago, 2026-11-06)",
+      textBody: "Summary\n  4 sessions",
+      htmlBody: "<p>4 sessions</p><script>window.__pwned = true</script>",
+    });
+    renderCard();
+    await userEvent.click(await screen.findByRole("button", { name: "Preview" }));
+    expect(await screen.findByLabelText("Digest preview text")).toBeInTheDocument();
+    expect(screen.getByRole("tab", { name: "Text" })).toHaveAttribute("aria-selected", "true");
+    expect(screen.queryByTitle("Digest preview HTML")).not.toBeInTheDocument();
+
+    await userEvent.click(screen.getByRole("tab", { name: "HTML" }));
+    const frame = screen.getByTitle("Digest preview HTML");
+    expect(frame.tagName).toBe("IFRAME");
+    expect(frame).toHaveAttribute("sandbox", "");
+    expect(frame).toHaveAttribute("srcdoc", "<p>4 sessions</p><script>window.__pwned = true</script>");
+    expect((window as unknown as { __pwned?: boolean }).__pwned).toBeUndefined();
+    expect(document.querySelector("script")).toBeNull();
+
+    await userEvent.click(screen.getByRole("tab", { name: "Text" }));
+    expect(screen.queryByTitle("Digest preview HTML")).not.toBeInTheDocument();
   });
 
   it("shows a friendly message when the preview is rejected", async () => {

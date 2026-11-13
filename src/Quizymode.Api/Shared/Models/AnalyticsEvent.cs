@@ -51,6 +51,9 @@ public sealed class AnalyticsEvent
     /// <summary>Set at write time for admins, users flagged internal, and browsers sending the internal marker.</summary>
     public bool IsInternal { get; set; }
 
+    /// <summary>Write-time traffic class (#573); null for rows written before it existed.</summary>
+    public string? TrafficClass { get; set; }
+
     /// <summary>Assigned by the server; client clocks are not trusted.</summary>
     public DateTime OccurredUtc { get; set; } = DateTime.UtcNow;
 }

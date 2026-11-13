@@ -49,6 +49,17 @@ public sealed class ReportClientErrorTests : DatabaseTestFixture
     }
 
     [Fact]
+    public async Task HandleAsync_WithTheE2ETokenInTheUserAgent_StoresTheErrorAsInternal()
+    {
+        await Report(new ReportClientError.Request("window", "boom", "TypeError", Path: "/", SessionId: "e2e-session"), ChromeDesktop + " QuizymodeE2E/run-9");
+        await Report(new ReportClientError.Request("window", "boom", "TypeError", Path: "/", SessionId: "real-session"));
+
+        Dictionary<string, ClientError> bySession = await DbContext.ClientErrors.ToDictionaryAsync(error => error.SessionId);
+        bySession["e2e-session"].IsInternal.Should().BeTrue();
+        bySession["real-session"].IsInternal.Should().BeFalse();
+    }
+
+    [Fact]
     public async Task HandleAsync_StoresBoundaryErrorWithComponentStackPathVersionAndSession()
     {
         ReportClientError.Response response = await Report(Valid(path: "/categories/science?token=secret#frag"));

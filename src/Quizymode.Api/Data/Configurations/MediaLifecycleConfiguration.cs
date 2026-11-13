@@ -15,7 +15,7 @@ internal sealed class MediaReportConfiguration : IEntityTypeConfiguration<MediaR
 {
     public void Configure(EntityTypeBuilder<MediaReport> b)
     {
-        b.HasKey(x => x.Id); b.Property(x => x.AbuseKey).HasMaxLength(64); b.Property(x => x.Category).HasMaxLength(40); b.Property(x => x.Slot).HasMaxLength(20);
+        b.HasKey(x => x.Id); b.Property(x => x.AbuseKey).HasMaxLength(64); b.Property(x => x.Category).HasMaxLength(40); b.Property(x => x.Slot).HasMaxLength(20); b.Property(x => x.TrafficClass).HasMaxLength(16);
         b.HasIndex(x => new { x.AbuseKey, x.CreatedAt }); b.HasIndex(x => new { x.ResolvedAt, x.CreatedAt });
     }
 }

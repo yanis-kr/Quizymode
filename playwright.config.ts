@@ -1,4 +1,8 @@
 import { defineConfig, devices } from "@playwright/test";
+import { e2eUserAgent } from "./playwright/e2eUserAgent";
+
+// Every project sets use.userAgent to the device user agent plus a QuizymodeE2E/<run id> token, so the API classifies the
+// hits as automated traffic (#573). Keep it in every project, including auth-setup and the screenshot projects.
 
 // Defaults to the local dev server. Production is an explicit opt-in
 // (PLAYWRIGHT_BASE_URL=https://www.quizymode.com) because authenticated runs add real prod DB load (#333).
@@ -34,6 +38,7 @@ export default defineConfig({
       testMatch: "**/e2e-ci/**/*.spec.ts",
       use: {
         ...devices["Desktop Chrome"],
+        userAgent: e2eUserAgent(devices["Desktop Chrome"]),
         viewport: { width: 1280, height: 900 },
         trace: "on",
         screenshot: "on",
@@ -42,7 +47,7 @@ export default defineConfig({
     {
       name: "auth-setup",
       testMatch: "**/auth.setup.ts",
-      use: { ...devices["Desktop Chrome"] },
+      use: { ...devices["Desktop Chrome"], userAgent: e2eUserAgent(devices["Desktop Chrome"]) },
     },
     {
       name: "screenshots",
@@ -50,6 +55,7 @@ export default defineConfig({
       dependencies: ["auth-setup"],
       use: {
         ...devices["Desktop Chrome"],
+        userAgent: e2eUserAgent(devices["Desktop Chrome"]),
         storageState: "playwright/.auth/user.json",
         viewport: { width: 1280, height: 900 },
       },
@@ -60,6 +66,7 @@ export default defineConfig({
       dependencies: ["auth-setup"],
       use: {
         ...devices["Pixel 5"],
+        userAgent: e2eUserAgent(devices["Pixel 5"]),
         storageState: "playwright/.auth/user.json",
       },
     },
@@ -70,6 +77,7 @@ export default defineConfig({
       dependencies: ["auth-setup"],
       use: {
         ...devices["Desktop Chrome"],
+        userAgent: e2eUserAgent(devices["Desktop Chrome"]),
         storageState: "playwright/.auth/user.json",
         viewport: { width: 1280, height: 900 },
         screenshot: "on",
@@ -81,6 +89,7 @@ export default defineConfig({
       dependencies: ["auth-setup"],
       use: {
         ...devices["Desktop Chrome"],
+        userAgent: e2eUserAgent(devices["Desktop Chrome"]),
         storageState: "playwright/.auth/user.json",
         viewport: { width: 1280, height: 900 },
         screenshot: "on",

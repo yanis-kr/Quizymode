@@ -53,6 +53,9 @@ internal sealed class AnalyticsEventConfiguration : IEntityTypeConfiguration<Ana
             .IsRequired()
             .HasDefaultValue(false);
 
+        builder.Property(analyticsEvent => analyticsEvent.TrafficClass)
+            .HasMaxLength(16);
+
         builder.Property(analyticsEvent => analyticsEvent.OccurredUtc)
             .IsRequired();
 
