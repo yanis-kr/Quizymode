@@ -2,7 +2,7 @@ import { useEffect, useMemo, useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useQuery, useQueryClient } from "@tanstack/react-query";
 import { SEO } from "@/components/SEO";
-import { starterApi } from "@/api/starter";
+import { starterApi, type StarterPoolEntry } from "@/api/starter";
 import { useAuth } from "@/contexts/AuthContext";
 import { HOME_SAMPLE_COLLECTION_ID, HOME_SAMPLE_COLLECTION_NAME } from "@/features/home/homePageData";
 import { createAnalyticsId, trackEventOnce } from "@/features/analytics/analyticsEvents";
@@ -14,6 +14,7 @@ import { FixedSetQuiz } from "@/features/learningLoop/FixedSetQuiz";
 import { buildCollectionStudyPath } from "@/utils/collectionPath";
 import { composeStarterRun, STARTER_RUN_SIZE } from "./composeStarterRun";
 import { readStarterSeen, markStarterSeen } from "./starterSeen";
+import { clearStoredStarterRun, readStoredStarterRun, writeStoredStarterRun, type StoredStarterRun } from "./starterRunStorage";
 import { StarterEndCards } from "./StarterEndCards";
 
 export const STARTER_POOL_QUERY_KEY = ["starter-pool"] as const;
@@ -33,7 +34,9 @@ const StarterQuizPage = () => {
   const queryClient = useQueryClient();
   const { isAuthenticated, isLoading: isAuthLoading, userId } = useAuth();
   const identityKey = isAuthenticated ? `user:${userId ?? "unknown"}` : "guest";
-  const [nonce, setNonce] = useState<string>(() => createAnalyticsId());
+  // A run saved in this tab (AC 3.0.32) is restored on mount, so a reload keeps the same five questions.
+  const [storedRun] = useState<StoredStarterRun | null>(() => readStoredStarterRun());
+  const [nonce, setNonce] = useState<string>(() => storedRun?.nonce ?? createAnalyticsId());
   const [stillLoading, setStillLoading] = useState(false);
   const fallenBack = useRef(false);
 
@@ -45,10 +48,20 @@ const StarterQuizPage = () => {
   });
 
   // Reads the seen list when the run is composed, so a new run avoids what the last one showed.
-  const run = useMemo(
-    () => (query.data ? composeStarterRun(query.data.items, readStarterSeen(), nonce) : null),
-    [query.data, nonce],
-  );
+  const run = useMemo((): StarterPoolEntry[] | null => {
+    if (!query.data) return null;
+    if (storedRun && nonce === storedRun.nonce) {
+      const byId = new Map(query.data.items.map((entry) => [entry.item.id, entry] as const));
+      const restored = storedRun.itemIds.map((id) => byId.get(id)).filter((entry): entry is StarterPoolEntry => Boolean(entry));
+      if (restored.length === STARTER_RUN_SIZE) return restored;
+    }
+    return composeStarterRun(query.data.items, readStarterSeen(), nonce);
+  }, [query.data, nonce, storedRun]);
+
+  useEffect(() => {
+    if (!run || run.length < STARTER_RUN_SIZE) return;
+    writeStoredStarterRun({ nonce, itemIds: run.map((entry) => entry.item.id) });
+  }, [run, nonce]);
 
   const fallbackNeeded = query.isError || (run !== null && run.length < STARTER_RUN_SIZE);
   useEffect(() => {
@@ -78,6 +91,8 @@ const StarterQuizPage = () => {
   );
 
   const handleComplete = (finished: QuizRunState) => {
+    // A finished run is not restored on reload; the next visit composes a fresh five.
+    clearStoredStarterRun();
     const summary = summarizeQuizRun(finished);
     if (summary.scoredTotal === 0) return;
     const snapshot: QuizCompletionSnapshot = {

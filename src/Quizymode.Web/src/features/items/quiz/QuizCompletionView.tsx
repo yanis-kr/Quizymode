@@ -232,7 +232,7 @@ export function QuizCompletionView({
           </Link>
         )}
       </div>
-      {isStarter && endExtras}
+      {/* Starter: Review mistakes sits above the Explore next cards so it is reachable on a phone without scrolling past them (AC 3.0.33). */}
       {isStarter && summary.missedItemIds.length > 0 && (
         <div className="mt-4">
           <button type="button" onClick={onReviewMistakes} className="rounded-md border border-indigo-600 px-4 py-2 font-semibold text-indigo-ink hover:bg-indigo-50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500 focus-visible:ring-offset-2">
@@ -240,6 +240,7 @@ export function QuizCompletionView({
           </button>
         </div>
       )}
+      {isStarter && endExtras}
       {/* Shown only after the run is complete (never mid-quiz), only to anonymous visitors (AC 4.2.10). */}
       <SignupPrompt reason="save-progress" className="mt-6" />
     </section>

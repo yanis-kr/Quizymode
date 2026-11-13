@@ -14,6 +14,7 @@ import {
 } from "@/features/guestHistory/guestHistoryStorage";
 import StarterQuizPage from "./StarterQuizPage";
 import { readStarterSeen } from "./starterSeen";
+import { STARTER_RUN_STORAGE_KEY as STORAGE_KEY } from "./starterRunStorage";
 import { fullPool } from "./starterTestUtils";
 
 const auth = vi.hoisted(() => ({ value: { isAuthenticated: false, isLoading: false, userId: null as string | null } }));
@@ -75,6 +76,7 @@ describe("StarterQuizPage", () => {
   beforeEach(() => {
     vi.clearAllMocks();
     installMemoryLocalStorage();
+    window.sessionStorage.clear();
     resetGuestHistoryMemoryForTests();
     auth.value = { isAuthenticated: false, isLoading: false, userId: null };
     vi.mocked(starterApi.getPool).mockResolvedValue({ version: "v1", items: pool });
@@ -260,5 +262,39 @@ describe("StarterQuizPage", () => {
 
     expect(await screen.findByText("Question 1 of 5")).toBeInTheDocument();
     expect(screen.queryByText(/mystery/)).not.toBeInTheDocument();
+  });
+
+  it("restores the same five questions after a reload in this tab (AC 3.0.32)", async () => {
+    const first = renderPage();
+    expect(await screen.findByText("Question 1 of 5")).toBeInTheDocument();
+    const firstQuestion = (await screen.findByText(/^Question (flags|genai|space|animals|food|time|body|places) \d+$/)).textContent;
+    const firstIds = JSON.parse(window.sessionStorage.getItem(STORAGE_KEY) ?? "{}").itemIds;
+    first.unmount();
+
+    renderPage();
+    expect(await screen.findByText("Question 1 of 5")).toBeInTheDocument();
+    expect((await screen.findByText(/^Question (flags|genai|space|animals|food|time|body|places) \d+$/)).textContent).toBe(firstQuestion);
+    expect(JSON.parse(window.sessionStorage.getItem(STORAGE_KEY) ?? "{}").itemIds).toEqual(firstIds);
+  });
+
+  it("forgets the saved run when it completes, so the next visit composes a fresh five", async () => {
+    renderPage();
+    await finishRun();
+    expect(window.sessionStorage.getItem(STORAGE_KEY)).toBeNull();
+  });
+
+  it("puts Review mistakes above the Explore next cards on the results screen (AC 3.0.33)", async () => {
+    renderPage();
+    await answer(false);
+    fireEvent.click(await screen.findByRole("button", { name: "Next" }));
+    for (let question = 2; question <= 5; question += 1) {
+      await answer(true);
+      fireEvent.click(await screen.findByRole("button", { name: question === 5 ? "See my score" : "Next" }));
+    }
+    await screen.findByRole("heading", { name: "Quiz complete" });
+
+    const review = screen.getByRole("button", { name: "Review mistakes" });
+    const explore = screen.getByRole("heading", { name: "Explore next" });
+    expect(review.compareDocumentPosition(explore) & Node.DOCUMENT_POSITION_FOLLOWING).toBeTruthy();
   });
 });
