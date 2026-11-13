@@ -155,6 +155,26 @@ curl -s -o /dev/null -w "%{http_code}\n" https://quizymode-media-prod.s3.amazona
 
 After the first real upload (see LIGHTSAIL.md), `aws s3api head-object --bucket quizymode-media-prod --key <objectKey>` should show `ServerSideEncryption: AES256`, and an unauthenticated `curl` of the same object URL must answer 403.
 
+### CloudFront picture delivery (#405, AC 3.25.6 and 7.7.7 to 7.7.8)
+
+Resources that exist in production (created 2026-11-12, owner-approved):
+
+- Distribution `E1YN0DZTTFI4QC`, domain `ddrhdjampvqr4.cloudfront.net`, price class 100, origin `quizymode-media-prod.s3.us-east-1.amazonaws.com` through origin access control `E2ESOI5OOWPD8K`, viewer protocol `https-only`, managed CachingOptimized policy, trusted key group `8cb5b6e3-610d-4134-ba7f-f2bc19014106`.
+- Public key `K2U4E72VB469U1` (in that key group). Its private key is in the Lightsail environment only, as `Media__Delivery__PrivateKeyBase64`.
+- Response headers policy `2364fdd6-b5c4-4ddf-90e9-0a0247acb237` (CORS for `https://www.quizymode.com`, `https://quizymode.com`, `http://localhost:7000`; `nosniff`; `Content-Security-Policy: default-src 'none'; sandbox`).
+- Bucket policy statement `AllowCloudFrontOacRead`, allowing only that distribution ARN to read `normalized/*`. The two deny statements stay.
+
+Setting it up in the Lightsail environment (never print the key):
+
+```bash
+# base64 of the PEM, one line, no newlines; set the value from a file, not from the command line
+base64 -w0 cf-private.pem > cf-private.b64   # then delete cf-private.pem and cf-private.b64 after the variable is set
+```
+
+Set `Media__Delivery__Mode=CloudFront` together with the other four variables in one new deployment (LIGHTSAIL.md table). Roll back by setting the mode to `Proxy` and deploying again; no data changes.
+
+Test with a signed URL against any object under `normalized/`: unsigned returns 403; a signed URL returns 200 `image/webp`; the same URL after its `Expires` returns 403.
+
 ### Accepted deviations
 
 One principal (the API IAM user) both writes and reads `normalized/*`, using long-lived access keys, because the Lightsail container has no IAM role. The keys live in the Lightsail deployment environment, which the deploy role can read and the deploy workflow copies to the runner's temporary `env.json`. See AC 7.7.3 and AC 3.24.10 for the full list.

@@ -1,4 +1,5 @@
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Options;
 using Quizymode.Api.Data;
 using Quizymode.Api.Features.Collections;
 using Quizymode.Api.Features.Media.Storage;
@@ -30,6 +31,7 @@ public static class GetItemImageContent
                     "only an Approved picture of an item they can see. Everything else, including curated pictures, is 404. Optional positive expectedRevision binds delivery to the current semantic revision; mismatch is 404 and invalid input is 400. Omitted query retains legacy current-slot delivery. Responses are private and no-store.")
                 .AllowAnonymous()
                 .Produces<byte[]>(StatusCodes.Status200OK, MediaObjectKey.ContentType)
+                .Produces(StatusCodes.Status302Found)
                 .Produces(StatusCodes.Status400BadRequest)
                 .Produces(StatusCodes.Status404NotFound)
                 .ProducesProblem(StatusCodes.Status503ServiceUnavailable);
@@ -42,6 +44,7 @@ public static class GetItemImageContent
                     "(or the caller created the item). Everything else is 404. Optional positive expectedRevision binds delivery to the current semantic revision; mismatch is 404 and invalid input is 400. Omitted query retains legacy current-slot delivery. Responses are private and no-store.")
                 .AllowAnonymous()
                 .Produces<byte[]>(StatusCodes.Status200OK, MediaObjectKey.ContentType)
+                .Produces(StatusCodes.Status302Found)
                 .Produces(StatusCodes.Status400BadRequest)
                 .Produces(StatusCodes.Status404NotFound)
                 .ProducesProblem(StatusCodes.Status503ServiceUnavailable);
@@ -55,6 +58,7 @@ public static class GetItemImageContent
             ApplicationDbContext db,
             IUserContext userContext,
             IMediaObjectStore store,
+            IOptions<MediaOptions> mediaOptions,
             ILoggerFactory loggerFactory,
             CancellationToken cancellationToken)
         {
@@ -66,7 +70,7 @@ public static class GetItemImageContent
             }
 
             if (expectedRevision.HasValue && item.ImageRevision != expectedRevision.Value) return Results.NotFound();
-            return await DeliverAsync(db, item, slot, store, loggerFactory, cancellationToken);
+            return await DeliverAsync(db, item, slot, store, mediaOptions, loggerFactory, cancellationToken);
         }
 
         private static async Task<IResult> CollectionHandler(
@@ -78,6 +82,7 @@ public static class GetItemImageContent
             ApplicationDbContext db,
             IUserContext userContext,
             IMediaObjectStore store,
+            IOptions<MediaOptions> mediaOptions,
             ILoggerFactory loggerFactory,
             CancellationToken cancellationToken)
         {
@@ -96,7 +101,7 @@ public static class GetItemImageContent
             }
 
             if (expectedRevision.HasValue && item.ImageRevision != expectedRevision.Value) return Results.NotFound();
-            return await DeliverAsync(db, item, slot, store, loggerFactory, cancellationToken);
+            return await DeliverAsync(db, item, slot, store, mediaOptions, loggerFactory, cancellationToken);
         }
 
         private static Task<Item?> LoadItemAsync(ApplicationDbContext db, Guid id, CancellationToken cancellationToken) =>
@@ -116,10 +121,13 @@ public static class GetItemImageContent
             Item item,
             string slot,
             IMediaObjectStore store,
+            IOptions<MediaOptions> mediaOptions,
             ILoggerFactory loggerFactory,
             CancellationToken cancellationToken)
         {
             if (await db.MediaControls.AnyAsync(x => x.Id == 1 && !x.DeliveryEnabled, cancellationToken)) return Results.NotFound();
+            // Unknown delivery modes and incomplete CloudFront settings fail closed: never silently fall back.
+            if (!CloudFrontPictureDelivery.IsKnownMode(mediaOptions)) return MediaErrors.StorageUnavailable.ToResult();
 
             Guid? assetId = slot switch
             {
@@ -138,6 +146,14 @@ public static class GetItemImageContent
             if (asset?.ObjectKey is null)
             {
                 return Results.NotFound();
+            }
+
+            if (CloudFrontPictureDelivery.IsCloudFrontMode(mediaOptions))
+            {
+                // The gate above already ran; the URL is valid for a short window only (#405).
+                CloudFrontUrlSigner? signer = CloudFrontPictureDelivery.SignerFor(mediaOptions);
+                if (signer is null) return MediaErrors.StorageUnavailable.ToResult();
+                return new PrivateRedirectResult(signer.SignedUrl(asset.ObjectKey, DateTimeOffset.UtcNow));
             }
 
             if (!store.IsAvailable)

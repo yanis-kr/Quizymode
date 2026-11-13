@@ -5528,6 +5528,9 @@
               }
             }
           },
+          "302": {
+            "description": "Found"
+          },
           "400": {
             "description": "Bad Request"
           },
@@ -5597,6 +5600,9 @@
                 }
               }
             }
+          },
+          "302": {
+            "description": "Found"
           },
           "400": {
             "description": "Bad Request"
