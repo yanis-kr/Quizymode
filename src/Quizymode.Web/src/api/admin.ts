@@ -256,6 +256,15 @@ export interface AnalyticsOverviewResponse {
     /** When the oldest pending picture submission was made; null when none. */
     oldestPictureSubmittedAt?: string | null;
   };
+  /** Sessions with a hit in the current window that the report excludes, per traffic class (#573). */
+  excluded?: {
+    maintainer: number;
+    automated: number;
+    knownBot: number;
+    /** Rows written before traffic classes existed that only carry the legacy internal flag. */
+    internalUnsplit: number;
+    total: number;
+  };
 }
 
 export type ImageReviewQueueState = "PendingReview" | "Approved" | "Rejected" | "Withdrawn";

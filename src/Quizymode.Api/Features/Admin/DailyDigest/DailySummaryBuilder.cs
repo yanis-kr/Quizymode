@@ -8,7 +8,7 @@ namespace Quizymode.Api.Features.Admin.DailyDigest;
 /// <summary>
 /// Explicit-bounds session and visitor numbers shared by the admin Overview and the daily digest (#509), so the two
 /// can never disagree for the same window. All windows are half-open: <c>start &lt;= time &lt; endExclusive</c>.
-/// Bots and internal sessions are always excluded.
+/// Bots, maintainer and automated sessions are always excluded (traffic classes, #573).
 /// </summary>
 internal static partial class DailySummaryBuilder
 {
@@ -29,12 +29,70 @@ internal static partial class DailySummaryBuilder
         DateTime endExclusiveUtc,
         CancellationToken cancellationToken)
     {
-        IQueryable<PageView> scope = db.PageViews
+        IQueryable<PageView> window = db.PageViews
             .AsNoTracking()
-            .Where(pageView => pageView.CreatedUtc >= startUtc && pageView.CreatedUtc < endExclusiveUtc && !pageView.IsBot);
+            .Where(pageView => pageView.CreatedUtc >= startUtc && pageView.CreatedUtc < endExclusiveUtc);
+
+        // A session takes the highest-precedence class among its hits (#573), so one bot hit excludes the whole session.
+        IQueryable<string> botSessionIds = window.Where(pageView => pageView.IsBot).Select(pageView => pageView.SessionId).Distinct();
+        IQueryable<PageView> scope = window
+            .Where(pageView => !botSessionIds.Any(sessionId => sessionId == pageView.SessionId && pageView.SessionId != null));
         scope = InternalTrafficFilter.ExcludeInternalSessions(db, scope);
 
         return await SessionClassifier.ClassifyAsync(scope, cancellationToken);
+    }
+
+    /// <summary>Sessions excluded from the same window as <see cref="ClassifyWindowAsync"/>, by traffic class.</summary>
+    internal static Task<ExcludedSessionCounts> CountExcludedAsync(
+        ApplicationDbContext db,
+        DateTime startUtc,
+        DateTime endExclusiveUtc,
+        CancellationToken cancellationToken) =>
+        TrafficExclusions.CountAsync(db, startUtc, endExclusiveUtc, cancellationToken);
+
+    /// <summary>
+    /// Accounts created in the window that count as new accounts (#573): not flagged internal, and whose first linked session
+    /// is not a maintainer or automated session. An account with no linked session counts unless it is flagged.
+    /// </summary>
+    internal static async Task<List<(Guid Id, DateTime CreatedAt)>> LoadNewAccountsAsync(
+        ApplicationDbContext db,
+        DateTime startUtc,
+        DateTime endExclusiveUtc,
+        CancellationToken cancellationToken)
+    {
+        var users = (await db.Users.AsNoTracking()
+                .Where(user => !user.IsInternal && user.CreatedAt >= startUtc && user.CreatedAt < endExclusiveUtc)
+                .Select(user => new { user.Id, user.CreatedAt })
+                .ToListAsync(cancellationToken))
+            .Select(user => (user.Id, user.CreatedAt))
+            .ToList();
+        if (users.Count == 0)
+        {
+            return users;
+        }
+
+        List<Guid> userIds = users.Select(user => user.Id).ToList();
+        var linked = await db.AnalyticsSessions.AsNoTracking()
+            .Where(session => session.UserId != null && userIds.Contains(session.UserId.Value))
+            .Select(session => new { session.UserId, session.SessionId, session.FirstSeenUtc })
+            .ToListAsync(cancellationToken);
+        Dictionary<Guid, string> firstSessionByUser = linked
+            .GroupBy(row => row.UserId!.Value)
+            .ToDictionary(group => group.Key, group => group.OrderBy(row => row.FirstSeenUtc).First().SessionId);
+        if (firstSessionByUser.Count == 0)
+        {
+            return users;
+        }
+
+        List<string> firstSessionIds = firstSessionByUser.Values.Distinct(StringComparer.Ordinal).ToList();
+        HashSet<string> excluded = (await InternalTrafficFilter.AllInternalSessionIds(db)
+                .Where(sessionId => firstSessionIds.Contains(sessionId))
+                .ToListAsync(cancellationToken))
+            .ToHashSet(StringComparer.Ordinal);
+
+        return users
+            .Where(user => !firstSessionByUser.TryGetValue(user.Id, out string? sessionId) || !excluded.Contains(sessionId))
+            .ToList();
     }
 
     internal static SessionStats Summarize(List<SessionClassifier.ClassifiedSession> sessions)

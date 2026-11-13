@@ -25,7 +25,7 @@ public sealed class DailyDigestServiceTests : DatabaseTestFixture
     {
         ApplicationDbContext context = db ?? DbContext;
         return new DailyDigestService(
-            new DailyDigestComposer(context, _clock, NullLogger<DailyDigestComposer>.Instance),
+            new DailyDigestComposer(context, _clock, NullLogger<DailyDigestComposer>.Instance, new DateOnly(2026, 1, 1)),
             new DailyDigestRunStore(context, _clock),
             _email,
             Microsoft.Extensions.Options.Options.Create(options ?? Options()),
@@ -65,13 +65,13 @@ public sealed class DailyDigestServiceTests : DatabaseTestFixture
 
         // At 07:59 the previous day (Nov 6) is not due yet; only the still-undelivered day before it (Nov 5) is.
         await TickAsync(Due.AddMinutes(-1));
-        _email.Sent.Should().NotContain(mail => mail.Subject.Contains("Fri Nov 6"));
+        _email.Sent.Should().NotContain(mail => mail.Subject.Contains("2026-11-06"));
 
         await TickAsync(Due);
         await TickAsync(Due.AddMinutes(10));
 
-        _email.Sent.Should().ContainSingle(mail => mail.Subject.Contains("Fri Nov 6"))
-            .Which.Subject.Should().StartWith("Quizymode daily - Fri Nov 6: 1 session");
+        _email.Sent.Should().ContainSingle(mail => mail.Subject.Contains("2026-11-06"))
+            .Which.Subject.Should().StartWith("Quizymode daily (America/Chicago, 2026-11-06): 1 session");
         (await ScheduledRowAsync(ReportDay)).Status.Should().Be(DailyDigestRunStatus.Sent);
     }
 
@@ -243,7 +243,7 @@ public sealed class DailyDigestServiceTests : DatabaseTestFixture
         row.Status.Should().Be(DailyDigestRunStatus.Failed);
         row.Attempts.Should().Be(1);
         // Only the digest that is due now (Nov 7) goes out; the stale Nov 6 one is not retried.
-        _email.Sent.Should().ContainSingle().Which.Subject.Should().Contain("Sat Nov 7");
+        _email.Sent.Should().ContainSingle().Which.Subject.Should().Contain("2026-11-07");
     }
 
     [Fact]
@@ -266,7 +266,8 @@ public sealed class DailyDigestServiceTests : DatabaseTestFixture
         (await ScheduledRowAsync(new DateOnly(2026, 11, 8))).Status.Should().Be(DailyDigestRunStatus.Missed);
         (await ScheduledRowAsync(new DateOnly(2026, 11, 9))).Status.Should().Be(DailyDigestRunStatus.Missed);
         (await ScheduledRowAsync(new DateOnly(2026, 11, 10))).Status.Should().Be(DailyDigestRunStatus.Sent);
-        _email.Sent.Should().ContainSingle().Which.Body.Should().Contain("Previous digests not sent: 2026-11-08 missed, 2026-11-09 missed");
+        System.Text.RegularExpressions.Regex.Replace(_email.Sent.Should().ContainSingle().Which.Body, @"\s+", " ")
+            .Should().Contain("Previous digests not sent: 2026-11-08 missed, 2026-11-09 missed");
     }
 
     [Fact]
@@ -303,7 +304,7 @@ public sealed class DailyDigestServiceTests : DatabaseTestFixture
         await TickAsync(Due);
 
         _email.Sent.Should().ContainSingle();
-        _email.Sent[0].Body.Should().Contain("PROBLEMS" + Environment.NewLine + "  unavailable");
+        _email.Sent[0].Body.Should().Contain("Unavailable: needs your attention.");
         _email.Sent[0].Body.Should().Contain("Sessions ");
     }
 
@@ -367,7 +368,7 @@ public sealed class DailyDigestServiceTests : DatabaseTestFixture
 
         report.Baseline!.Days.Should().Be(3);
         report.Baseline.Averages["sessions"].Should().BeApproximately(2.0, 0.0001);
-        Service(fresh).Render(report).Body.Should().Contain("average of 3 days");
+        Service(fresh).Render(report).Body.Should().Contain("Average of 3 days");
 
         await using ApplicationDbContext none = CreateDbContext();
         await none.PageViews.ExecuteDeleteAsync();
@@ -466,7 +467,7 @@ public sealed class DailyDigestServiceTests : DatabaseTestFixture
         _clock.UtcNow = End;
 
         await using ApplicationDbContext fresh = CreateDbContext();
-        DailyDigestComposer composer = new(fresh, _clock, NullLogger<DailyDigestComposer>.Instance);
+        DailyDigestComposer composer = new(fresh, _clock, NullLogger<DailyDigestComposer>.Instance, new DateOnly(2026, 1, 1));
         DigestReport day = await composer.ComposeWindowAsync(Start, Start.AddHours(24), chicago, CancellationToken.None);
         DigestReport shortWindow = await composer.ComposeWindowAsync(Start, Start.AddHours(23), chicago, CancellationToken.None);
 

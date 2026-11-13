@@ -51,6 +51,9 @@ internal sealed class PageViewConfiguration : IEntityTypeConfiguration<PageView>
             .IsRequired()
             .HasDefaultValue(false);
 
+        builder.Property(pageView => pageView.TrafficClass)
+            .HasMaxLength(16);
+
         builder.Property(pageView => pageView.Area)
             .HasMaxLength(32);
 

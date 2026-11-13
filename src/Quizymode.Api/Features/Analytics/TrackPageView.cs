@@ -136,13 +136,15 @@ public static class TrackPageView
 
         string? userAgent = RequestMetadataHelper.GetUserAgent(httpContext);
 
-        bool isInternal = userContext.IsAdmin || request.InternalBrowser == true;
-        if (!isInternal && userId.HasValue)
+        bool isMaintainer = userContext.IsAdmin || request.InternalBrowser == true;
+        if (!isMaintainer && userId.HasValue)
         {
-            isInternal = await db.Users
+            isMaintainer = await db.Users
                 .AsNoTracking()
                 .AnyAsync(user => user.Id == userId.Value && user.IsInternal, cancellationToken);
         }
+
+        string trafficClass = TrafficClassifier.Classify(userAgent, isMaintainer);
 
         PageHitClassifier.Classification classification = PageHitClassifier.Classify(normalizedPath, normalizedQueryString);
 
@@ -158,7 +160,9 @@ public static class TrackPageView
             Url = url,
             UserAgent = userAgent,
             IsBot = BotUserAgentDetector.IsBot(userAgent),
-            IsInternal = isInternal,
+            // IsInternal stays the legacy flag every report already filters on: maintainer or automated.
+            IsInternal = TrafficClassifier.IsInternalClass(trafficClass),
+            TrafficClass = trafficClass,
             CreatedUtc = DateTime.UtcNow
         };
 

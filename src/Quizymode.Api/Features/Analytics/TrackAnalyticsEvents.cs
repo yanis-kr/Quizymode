@@ -236,13 +236,15 @@ public static partial class TrackAnalyticsEvents
         bool isBot = BotUserAgentDetector.IsBot(userAgent);
         DateTime occurredUtc = DateTime.UtcNow;
 
-        bool isInternal = userContext.IsAdmin || request.InternalBrowser == true;
-        if (!isInternal && userId.HasValue)
+        bool isMaintainer = userContext.IsAdmin || request.InternalBrowser == true;
+        if (!isMaintainer && userId.HasValue)
         {
-            isInternal = await db.Users
+            isMaintainer = await db.Users
                 .AsNoTracking()
                 .AnyAsync(user => user.Id == userId.Value && user.IsInternal, cancellationToken);
         }
+
+        string trafficClass = TrafficClassifier.Classify(userAgent, isMaintainer);
 
         List<AnalyticsEvent> candidates = request.Events!
             .Select(item => new AnalyticsEvent
@@ -264,7 +266,8 @@ public static partial class TrackAnalyticsEvents
                 DedupeKey = BuildDedupeKey(item),
                 UserAgent = userAgent,
                 IsBot = isBot,
-                IsInternal = isInternal,
+                IsInternal = TrafficClassifier.IsInternalClass(trafficClass),
+                TrafficClass = trafficClass,
                 OccurredUtc = occurredUtc
             })
             .ToList();

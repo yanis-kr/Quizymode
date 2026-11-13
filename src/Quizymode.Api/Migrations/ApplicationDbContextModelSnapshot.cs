@@ -91,6 +91,10 @@ namespace Quizymode.Api.Migrations
                     b.Property<int?>("Total")
                         .HasColumnType("integer");
 
+                    b.Property<string>("TrafficClass")
+                        .HasMaxLength(16)
+                        .HasColumnType("character varying(16)");
+
                     b.Property<string>("UserAgent")
                         .HasMaxLength(512)
                         .HasColumnType("character varying(512)");
@@ -1965,6 +1969,10 @@ namespace Quizymode.Api.Migrations
                         .HasMaxLength(20)
                         .HasColumnType("character varying(20)");
 
+                    b.Property<string>("TrafficClass")
+                        .HasMaxLength(16)
+                        .HasColumnType("character varying(16)");
+
                     b.HasKey("Id");
 
                     b.HasIndex("AbuseKey", "CreatedAt");
@@ -2100,6 +2108,10 @@ namespace Quizymode.Api.Migrations
                         .IsRequired()
                         .HasMaxLength(128)
                         .HasColumnType("character varying(128)");
+
+                    b.Property<string>("TrafficClass")
+                        .HasMaxLength(16)
+                        .HasColumnType("character varying(16)");
 
                     b.Property<string>("Url")
                         .IsRequired()

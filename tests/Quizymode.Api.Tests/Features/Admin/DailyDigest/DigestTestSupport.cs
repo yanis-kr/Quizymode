@@ -24,9 +24,11 @@ internal sealed class RecordingEmailSender : IEmailSender
 
     public List<(string Subject, string Body)> Sent { get; } = [];
 
+    public List<string?> SentHtml { get; } = [];
+
     public int Calls { get; private set; }
 
-    public Task<bool> SendToAdminAsync(string subject, string body, CancellationToken cancellationToken)
+    public Task<bool> SendToAdminAsync(string subject, string body, CancellationToken cancellationToken, string? htmlBody = null)
     {
         lock (_gate)
         {
@@ -37,6 +39,7 @@ internal sealed class RecordingEmailSender : IEmailSender
             }
 
             Sent.Add((subject, body));
+            SentHtml.Add(htmlBody);
             return Task.FromResult(true);
         }
     }
@@ -55,7 +58,8 @@ internal static class DigestSeed
         Guid? userId = null,
         bool isBot = false,
         bool isInternal = false,
-        bool itemStep = false) => new()
+        bool itemStep = false,
+        string? trafficClass = null) => new()
     {
         Id = Guid.NewGuid(),
         SessionId = sessionId,
@@ -69,6 +73,7 @@ internal static class DigestSeed
         IsBot = isBot,
         IsInternal = isInternal,
         IsItemStep = itemStep,
+        TrafficClass = trafficClass,
         CreatedUtc = createdUtc
     };
 
@@ -80,7 +85,9 @@ internal static class DigestSeed
         string? referrerHost = null,
         string? utmSource = null,
         Guid? userId = null,
-        string? appVersion = null) => new()
+        string? appVersion = null,
+        string? country = null,
+        string? region = null) => new()
     {
         Id = Guid.NewGuid(),
         SessionId = sessionId,
@@ -93,6 +100,8 @@ internal static class DigestSeed
         Channel = channel,
         DeviceClass = "desktop",
         AppVersion = appVersion,
+        Country = country,
+        Region = region,
         CreatedUtc = firstSeenUtc
     };
 

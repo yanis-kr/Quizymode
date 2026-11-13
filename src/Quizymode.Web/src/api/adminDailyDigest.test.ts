@@ -31,7 +31,7 @@ describe("dailyDigestApi", () => {
 
   it("getPreview calls GET /admin/daily-digest/preview and passes the date when given", async () => {
     mockGet.mockResolvedValue({
-      data: { reportDate: "2026-11-06", windowStartUtc: "a", windowEndUtc: "b", subject: "s", textBody: "t" },
+      data: { reportDate: "2026-11-06", windowStartUtc: "a", windowEndUtc: "b", subject: "s", textBody: "t", htmlBody: "<p>t</p>" },
     });
     await dailyDigestApi.getPreview();
     await dailyDigestApi.getPreview("2026-11-06");

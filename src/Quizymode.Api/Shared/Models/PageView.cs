@@ -29,6 +29,12 @@ public sealed class PageView
     public bool IsInternal { get; set; }
 
     /// <summary>
+    /// Write-time traffic class (audience, maintainer, automated, known_bot; #573). Null for rows written before it existed:
+    /// reports read those through <c>IsBot</c> (known_bot) and <c>IsInternal</c> (internal, unsplit).
+    /// </summary>
+    public string? TrafficClass { get; set; }
+
+    /// <summary>
     /// Feature area from <c>PageHitClassifier</c> (home, browse, quiz, flashcards, ...; ANALYTICS-004).
     /// Null only for historical rows not yet reached by the classification backfill.
     /// </summary>

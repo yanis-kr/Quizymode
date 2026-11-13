@@ -40,7 +40,7 @@ internal sealed class CountingEmailSender : IEmailSender
 
     public List<string> Bodies { get; } = [];
 
-    public Task<bool> SendToAdminAsync(string subject, string body, CancellationToken cancellationToken)
+    public Task<bool> SendToAdminAsync(string subject, string body, CancellationToken cancellationToken, string? htmlBody = null)
     {
         if (!Configured)
         {

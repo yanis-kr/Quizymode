@@ -23,7 +23,7 @@ internal static class DailyDigestAdmin
     /// <summary>Tolerated client clock skew for "to" in the ad hoc window.</summary>
     internal static readonly TimeSpan FutureTolerance = TimeSpan.FromMinutes(2);
 
-    public sealed record PreviewResponse(DateOnly ReportDate, DateTime WindowStartUtc, DateTime WindowEndUtc, DigestReport Summary, string Subject, string TextBody);
+    public sealed record PreviewResponse(DateOnly ReportDate, DateTime WindowStartUtc, DateTime WindowEndUtc, DigestReport Summary, string Subject, string TextBody, string HtmlBody);
 
     public sealed record TestSendResponse(string Subject);
 
@@ -138,7 +138,7 @@ internal static class DailyDigestAdmin
 
             DigestReport report = await service.PreviewAsync(day, zone, cancellationToken);
             DailyDigestService.Rendered message = service.Render(report);
-            return Results.Ok(new PreviewResponse(day, report.StartUtc, report.EndUtc, report, message.Subject, message.Body));
+            return Results.Ok(new PreviewResponse(day, report.StartUtc, report.EndUtc, report, message.Subject, message.Body, message.Html));
         }
 
         private static async Task<IResult> TestSendHandler(

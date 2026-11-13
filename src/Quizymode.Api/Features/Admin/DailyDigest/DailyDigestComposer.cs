@@ -10,9 +10,16 @@ namespace Quizymode.Api.Features.Admin.DailyDigest;
 internal sealed partial class DailyDigestComposer(
     ApplicationDbContext db,
     TimeProvider timeProvider,
-    ILogger<DailyDigestComposer> logger)
+    ILogger<DailyDigestComposer> logger,
+    DateOnly? rulesChangedOn = null)
 {
     internal const int BaselineDays = 7;
+
+    /// <summary>
+    /// First local day counted under the traffic classes (#573). Comparison days before it were counted by older rules, so they
+    /// are left out of the average, the same way days before the earliest retained page hit are.
+    /// </summary>
+    internal static readonly DateOnly RulesChangedOn = new(2026, 11, 13);
 
     private sealed record EarliestHit(DateTime? Utc);
 
@@ -69,8 +76,16 @@ internal sealed partial class DailyDigestComposer(
             EarliestHit? earliest = await Section("retention", async () =>
                 new EarliestHit(await db.PageViews.AsNoTracking().MinAsync(pageView => (DateTime?)pageView.CreatedUtc, cancellationToken)));
             List<DaySummary> days = [];
+            bool rulesCutoff = false;
             foreach ((DateTime start, DateTime end) in baselineWindows)
             {
+                // Days that began before the traffic rules changed were counted differently, so they are left out too.
+                if (DailyDigestWindow.LocalDate(start, zone) < (rulesChangedOn ?? RulesChangedOn))
+                {
+                    rulesCutoff = true;
+                    continue;
+                }
+
                 // Days that began before the earliest retained page hit are left out of the average.
                 if (earliest?.Utc is { } first && first <= start)
                 {
@@ -78,7 +93,7 @@ internal sealed partial class DailyDigestComposer(
                 }
             }
 
-            baseline = new BaselineSummary(baselineLabel, days.Count, expectedBaselineDays, Average(days));
+            baseline = new BaselineSummary(baselineLabel, days.Count, expectedBaselineDays, Average(days), rulesCutoff ? rulesChangedOn ?? RulesChangedOn : null);
         }
 
         WaitingSection? waiting = await Section("waiting", () => WaitingAsync(cancellationToken));

@@ -61,7 +61,8 @@ public static class GetAnalyticsOverview
         Kpis Previous,
         List<DailyPoint> Daily,
         List<ReleaseMarker> ReleaseMarkers,
-        WorkQueue WorkQueue);
+        WorkQueue WorkQueue,
+        ExcludedSessionCounts Excluded);
 
     public sealed class Endpoint : IEndpoint
     {
@@ -70,7 +71,7 @@ public static class GetAnalyticsOverview
             app.MapGet("admin/analytics/overview", Handler)
                 .WithTags("Admin")
                 .WithSummary("Get the admin overview with KPIs, daily trends, release markers, and work queue counts (Admin only)")
-                .WithDescription("days must be 7, 30, or 90. Returns KPIs for the window and the previous window of equal length, a zero-filled UTC daily series, release markers (first UTC day each app version appeared), and moderation work-queue counts. Bot and internal traffic is always excluded.")
+                .WithDescription("days must be 7, 30, or 90. Returns KPIs for the window and the previous window of equal length, a zero-filled UTC daily series, release markers (first UTC day each app version appeared), and moderation work-queue counts. Bot, maintainer and automated traffic is always excluded and counted per class in the excluded field.")
                 .RequireAuthorization("Admin")
                 .Produces<Response>(StatusCodes.Status200OK)
                 .ProducesProblem(StatusCodes.Status400BadRequest);
@@ -108,11 +109,10 @@ public static class GetAnalyticsOverview
         List<SessionClassifier.ClassifiedSession> current = await DailySummaryBuilder.ClassifyWindowAsync(db, windowStart, windowEndExclusive, cancellationToken);
         List<SessionClassifier.ClassifiedSession> previous = await DailySummaryBuilder.ClassifyWindowAsync(db, previousStart, windowStart, cancellationToken);
 
-        List<DateTime> signupTimes = await db.Users
-            .AsNoTracking()
-            .Where(user => !user.IsInternal && user.CreatedAt >= previousStart && user.CreatedAt < windowEndExclusive)
+        List<DateTime> signupTimes = (await DailySummaryBuilder.LoadNewAccountsAsync(db, previousStart, windowEndExclusive, cancellationToken))
             .Select(user => user.CreatedAt)
-            .ToListAsync(cancellationToken);
+            .ToList();
+        ExcludedSessionCounts excluded = await DailySummaryBuilder.CountExcludedAsync(db, windowStart, windowEndExclusive, cancellationToken);
 
         // Cohort rows are all-time and independent of the window, so load them once for both windows.
         List<VisitorCohortReport.CohortRow> cohortRows = await VisitorCohortReport.LoadRowsAsync(
@@ -157,7 +157,8 @@ public static class GetAnalyticsOverview
             previousKpis,
             daily,
             markers,
-            workQueue));
+            workQueue,
+            excluded));
     }
 
     internal static Kpis BuildKpis(

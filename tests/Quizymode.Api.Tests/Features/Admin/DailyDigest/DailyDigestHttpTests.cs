@@ -83,8 +83,8 @@ public sealed class DailyDigestHttpTests : DatabaseTestFixture, IAsyncLifetime
         response.StatusCode.Should().Be(HttpStatusCode.OK);
         using JsonDocument body = JsonDocument.Parse(await response.Content.ReadAsStringAsync());
         body.RootElement.GetProperty("reportDate").GetString().Should().Be(LocalToday.AddDays(-1).ToString("yyyy-MM-dd"));
-        body.RootElement.GetProperty("textBody").GetString().Should().Contain("Quizymode daily digest for");
-        body.RootElement.GetProperty("subject").GetString().Should().StartWith("Quizymode daily - ");
+        body.RootElement.GetProperty("textBody").GetString().Should().Contain("Quizymode daily | ");
+        body.RootElement.GetProperty("subject").GetString().Should().StartWith("Quizymode daily (America/Chicago, ");
         _email.Calls.Should().Be(0);
         (await DbContext.DailyDigestRuns.CountAsync()).Should().Be(0);
     }
@@ -146,7 +146,7 @@ public sealed class DailyDigestHttpTests : DatabaseTestFixture, IAsyncLifetime
         first.StatusCode.Should().Be(HttpStatusCode.OK);
         second.StatusCode.Should().Be(HttpStatusCode.TooManyRequests);
         second.Headers.RetryAfter.Should().NotBeNull();
-        _email.Sent.Should().ContainSingle().Which.Subject.Should().StartWith("[TEST] Quizymode daily - ");
+        _email.Sent.Should().ContainSingle().Which.Subject.Should().StartWith("[TEST] Quizymode daily (America/Chicago, ");
         (await DbContext.DailyDigestRuns.CountAsync()).Should().Be(0);
         (await DbContext.Audits.CountAsync(audit => audit.Action == AuditAction.DailyDigestTestSent)).Should().Be(1);
     }

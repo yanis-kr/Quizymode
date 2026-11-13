@@ -1351,7 +1351,7 @@
           "Admin"
         ],
         "summary": "Get the admin overview with KPIs, daily trends, release markers, and work queue counts (Admin only)",
-        "description": "days must be 7, 30, or 90. Returns KPIs for the window and the previous window of equal length, a zero-filled UTC daily series, release markers (first UTC day each app version appeared), and moderation work-queue counts. Bot and internal traffic is always excluded.",
+        "description": "days must be 7, 30, or 90. Returns KPIs for the window and the previous window of equal length, a zero-filled UTC daily series, release markers (first UTC day each app version appeared), and moderation work-queue counts. Bot, maintainer and automated traffic is always excluded and counted per class in the excluded field.",
         "parameters": [
           {
             "name": "days",
@@ -8717,6 +8717,16 @@
           },
           "averages": {
             "$ref": "#/components/schemas/System.Collections.Generic.DictionaryOfSystem.StringAndSystem.NullableOfSystem.Double"
+          },
+          "rulesChangedOn": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/components/schemas/System.NullableOfSystem.DateOnly"
+              }
+            ]
           }
         },
         "description": "Averages of the comparison windows. string BaselineSummary.Label is \"7-day avg\" for a daily digest or \"previous window\" for\nan ad hoc window. A value is null when no comparison window had it."
@@ -8728,7 +8738,8 @@
           "windowEndUtc",
           "summary",
           "subject",
-          "textBody"
+          "textBody",
+          "htmlBody"
         ],
         "type": "object",
         "properties": {
@@ -8748,6 +8759,9 @@
             "$ref": "#/components/schemas/System.String"
           },
           "textBody": {
+            "$ref": "#/components/schemas/System.String"
+          },
+          "htmlBody": {
             "$ref": "#/components/schemas/System.String"
           }
         }
@@ -8988,6 +9002,16 @@
                 "$ref": "#/components/schemas/Quizymode.Api.Features.Admin.DailyDigest.ProblemsSection"
               }
             ]
+          },
+          "locations": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/components/schemas/Quizymode.Api.Features.Admin.DailyDigest.LocationsSection"
+              }
+            ]
           }
         }
       },
@@ -9003,6 +9027,17 @@
           },
           "rawEvents": {
             "$ref": "#/components/schemas/System.Int32"
+          },
+          "excluded": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "description": "Sessions excluded from the window per traffic class (#573); null in digests persisted before it existed.",
+                "$ref": "#/components/schemas/Quizymode.Api.Services.ExcludedSessionCounts"
+              }
+            ]
           }
         }
       },
@@ -9093,6 +9128,56 @@
           }
         },
         "description": "Aggregate-only digest numbers (#509). A null section means \"unavailable\" (the query failed), which is different from zero.\nThe whole report is persisted as JSON so every send attempt renders identical text."
+      },
+      "Quizymode.Api.Features.Admin.DailyDigest.LocationBreakdown": {
+        "required": [
+          "top",
+          "other",
+          "unknown"
+        ],
+        "type": "object",
+        "properties": {
+          "top": {
+            "$ref": "#/components/schemas/System.Collections.Generic.ListOfQuizymode.Api.Features.Admin.DailyDigest.LocationRow"
+          },
+          "other": {
+            "$ref": "#/components/schemas/System.Int32"
+          },
+          "unknown": {
+            "$ref": "#/components/schemas/System.Int32"
+          }
+        },
+        "description": "Top places by sessions, then the sessions of every other place and of sessions with no known place."
+      },
+      "Quizymode.Api.Features.Admin.DailyDigest.LocationRow": {
+        "required": [
+          "name",
+          "sessions"
+        ],
+        "type": "object",
+        "properties": {
+          "name": {
+            "$ref": "#/components/schemas/System.String"
+          },
+          "sessions": {
+            "$ref": "#/components/schemas/System.Int32"
+          }
+        }
+      },
+      "Quizymode.Api.Features.Admin.DailyDigest.LocationsSection": {
+        "required": [
+          "countries",
+          "regions"
+        ],
+        "type": "object",
+        "properties": {
+          "countries": {
+            "$ref": "#/components/schemas/Quizymode.Api.Features.Admin.DailyDigest.LocationBreakdown"
+          },
+          "regions": {
+            "$ref": "#/components/schemas/Quizymode.Api.Features.Admin.DailyDigest.LocationBreakdown"
+          }
+        }
       },
       "Quizymode.Api.Features.Admin.DailyDigest.ProblemsSection": {
         "required": [
@@ -9185,18 +9270,25 @@
       },
       "Quizymode.Api.Features.Admin.DailyDigest.SourcesSection": {
         "required": [
-          "top",
-          "linkedIn"
+          "top"
         ],
         "type": "object",
         "properties": {
           "top": {
             "$ref": "#/components/schemas/System.Collections.Generic.ListOfQuizymode.Api.Features.Admin.DailyDigest.SourceRow"
           },
-          "linkedIn": {
-            "$ref": "#/components/schemas/Quizymode.Api.Features.Admin.DailyDigest.SourceRow"
+          "other": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/components/schemas/Quizymode.Api.Features.Admin.DailyDigest.SourceRow"
+              }
+            ]
           }
-        }
+        },
+        "description": "Sources by sessions, top rows first; Other sums the rest so the table adds up (#573)."
       },
       "Quizymode.Api.Features.Admin.DailyDigest.TopicCount": {
         "required": [
@@ -9577,7 +9669,8 @@
           "previous",
           "daily",
           "releaseMarkers",
-          "workQueue"
+          "workQueue",
+          "excluded"
         ],
         "type": "object",
         "properties": {
@@ -9604,6 +9697,9 @@
           },
           "workQueue": {
             "$ref": "#/components/schemas/Quizymode.Api.Features.Admin.GetAnalyticsOverview.WorkQueue"
+          },
+          "excluded": {
+            "$ref": "#/components/schemas/Quizymode.Api.Services.ExcludedSessionCounts"
           }
         }
       },
@@ -20310,6 +20406,37 @@
         },
         "description": "Response DTO containing the updated setting information."
       },
+      "Quizymode.Api.Services.ExcludedSessionCounts": {
+        "required": [
+          "maintainer",
+          "automated",
+          "knownBot",
+          "internalUnsplit"
+        ],
+        "type": "object",
+        "properties": {
+          "maintainer": {
+            "description": "Admin, flagged user, marked browser, or a session excluded only through a shared visitor id.",
+            "$ref": "#/components/schemas/System.Int32"
+          },
+          "automated": {
+            "description": "Sessions carrying the E2E user-agent token.",
+            "$ref": "#/components/schemas/System.Int32"
+          },
+          "knownBot": {
+            "description": "Crawlers and headless default user agents.",
+            "$ref": "#/components/schemas/System.Int32"
+          },
+          "internalUnsplit": {
+            "description": "Rows written before traffic classes existed that only carry the legacy internal flag.",
+            "$ref": "#/components/schemas/System.Int32"
+          },
+          "total": {
+            "$ref": "#/components/schemas/System.Int32"
+          }
+        },
+        "description": "Sessions excluded from a window's reports, by traffic class (#573). Counts are sessions, never hits."
+      },
       "Quizymode.Api.Services.VisitorCohortReport.Response": {
         "required": [
           "newVisitorSessions",
@@ -20765,6 +20892,12 @@
         "type": "array",
         "items": {
           "$ref": "#/components/schemas/Quizymode.Api.Features.Admin.DailyDigest.DailyDigestAdmin.RunResponse"
+        }
+      },
+      "System.Collections.Generic.ListOfQuizymode.Api.Features.Admin.DailyDigest.LocationRow": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/Quizymode.Api.Features.Admin.DailyDigest.LocationRow"
         }
       },
       "System.Collections.Generic.ListOfQuizymode.Api.Features.Admin.DailyDigest.SourceRow": {

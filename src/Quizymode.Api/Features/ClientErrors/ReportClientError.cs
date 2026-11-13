@@ -305,6 +305,9 @@ public static partial class ReportClientError
                 .AnyAsync(user => user.Id == userId.Value && user.IsInternal, cancellationToken);
         }
 
+        // An E2E run's errors are excluded like its page hits (#573).
+        isInternal = isInternal || TrafficClassifier.HasE2EToken(userAgent);
+
         ClientError row = new()
         {
             Id = Guid.NewGuid(),

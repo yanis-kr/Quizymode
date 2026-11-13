@@ -21,7 +21,7 @@ internal sealed class DailyDigestService(
 
     internal sealed record Schedule(TimeZoneInfo Zone, TimeOnly SendAt);
 
-    internal sealed record Rendered(string Subject, string Body);
+    internal sealed record Rendered(string Subject, string Body, string Html);
 
     /// <summary>The configured schedule, or the reason it is unusable.</summary>
     internal static bool TryGetSchedule(DailyDigestOptions config, out Schedule? schedule, out string? reason)
@@ -51,7 +51,10 @@ internal sealed class DailyDigestService(
         JsonSerializer.Deserialize<DigestReport>(json, Json) ?? throw new InvalidOperationException("Empty digest summary.");
 
     internal Rendered Render(DigestReport report, bool testSend = false, bool interruptedResend = false) =>
-        new(DailyDigestRenderer.Subject(report, testSend, interruptedResend), DailyDigestRenderer.Body(report, options.Value.AdminBaseUrl));
+        new(
+            DailyDigestRenderer.Subject(report, testSend, interruptedResend),
+            DailyDigestRenderer.Body(report, options.Value.AdminBaseUrl),
+            DailyDigestRenderer.Html(report, options.Value.AdminBaseUrl));
 
     /// <summary>One scheduler tick: records missed days, then sends the digest that is due, if any.</summary>
     internal async Task TickAsync(CancellationToken cancellationToken)
@@ -140,7 +143,7 @@ internal sealed class DailyDigestService(
 
         int attempt = claim.Attempts + 1;
         Rendered message = Render(report, interruptedResend: claim.InterruptedResend);
-        bool sent = await email.SendToAdminAsync(message.Subject, message.Body, cancellationToken);
+        bool sent = await email.SendToAdminAsync(message.Subject, message.Body, cancellationToken, message.Html);
         if (sent)
         {
             if (!await store.CompleteSentAsync(claim, cancellationToken))
@@ -200,7 +203,7 @@ internal sealed class DailyDigestService(
         await store.PersistSummaryAsync(claim, Serialize(report), cancellationToken);
         await store.BeginSendAsync(claim, cancellationToken);
         Rendered message = Render(report);
-        if (await email.SendToAdminAsync(message.Subject, message.Body, cancellationToken))
+        if (await email.SendToAdminAsync(message.Subject, message.Body, cancellationToken, message.Html))
         {
             await store.CompleteSentAsync(claim, cancellationToken);
             logger.LogInformation("DailyDigest: ad hoc sent");
@@ -216,7 +219,7 @@ internal sealed class DailyDigestService(
         composer.ComposeDailyAsync(reportDate, zone, cancellationToken);
 
     internal Task<bool> SendTestAsync(Rendered message, CancellationToken cancellationToken) =>
-        email.SendToAdminAsync(message.Subject, message.Body, cancellationToken);
+        email.SendToAdminAsync(message.Subject, message.Body, cancellationToken, message.Html);
 
     internal bool EmailConfigured => email.IsConfigured;
 }
