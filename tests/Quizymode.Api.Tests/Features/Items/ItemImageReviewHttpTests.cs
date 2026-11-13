@@ -1506,6 +1506,26 @@ public sealed class ItemImageReviewHttpTests : ItemTestFixture, IAsyncLifetime
         (await SendAsync(HttpMethod.Post, $"/items/{item.Id}/image-reports", report.Replace(":1", ":99"))).Status.Should().Be(HttpStatusCode.NotFound);
     }
 
+    [Theory]
+    [InlineData("Mozilla/5.0 (Windows NT 10.0; Win64; x64) Chrome/126.0 Safari/537.36", null, "audience")]
+    [InlineData("Mozilla/5.0 (Windows NT 10.0; Win64; x64) Chrome/126.0 Safari/537.36 QuizymodeE2E/run-7", null, "automated")]
+    [InlineData("Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)", null, "known_bot")]
+    [InlineData("Mozilla/5.0 (Windows NT 10.0; Win64; x64) Chrome/126.0 Safari/537.36", "admin", "maintainer")]
+    public async Task ReportStoresTheTrafficClassOfTheReporter(string userAgent, string? caller, string expectedClass)
+    {
+        // The anonymous internal-browser marker is not sent on this call, so a marked anonymous browser is stored as audience (AC 5.3.29).
+        Item item = await SeedPictureItemAsync(ItemImageReviewState.Approved);
+        using StringContent content = new("{\"slot\":\"question\",\"category\":\"privacy\",\"expectedRevision\":1}", Encoding.UTF8, "application/json");
+        using HttpRequestMessage request = JwtHttpTestHost.Request(HttpMethod.Post, $"/items/{item.Id}/image-reports", caller is null ? null : TokenOf(caller), content);
+        request.Headers.TryAddWithoutValidation("User-Agent", userAgent);
+
+        using HttpResponseMessage response = await _host.Client.SendAsync(request);
+
+        response.StatusCode.Should().Be(HttpStatusCode.Accepted);
+        await using ApplicationDbContext db = CreateDbContext();
+        (await db.MediaReports.SingleAsync()).TrafficClass.Should().Be(expectedClass);
+    }
+
     [Fact]
     public async Task LostSuccessCreateRetryUsesOneItemAndOneSubmission()
     {
