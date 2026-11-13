@@ -238,7 +238,7 @@ export function FixedSetQuiz({
         onAnswerSelect={handleAnswer}
         stats={{ total: summary.answered, correct: summary.correct }}
         questionPicture={{
-          ...pictures.controlsFor(item, isSkipped ? undefined : handleSkipUnavailable),
+          ...pictures.controlsFor(item, handled ? undefined : handleSkipUnavailable),
           blocked: pictureBlocked,
         }}
         {...(isWow

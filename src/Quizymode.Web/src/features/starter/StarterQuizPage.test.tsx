@@ -20,6 +20,8 @@ import { fullPool } from "./starterTestUtils";
 const auth = vi.hoisted(() => ({ value: { isAuthenticated: false, isLoading: false, userId: null as string | null } }));
 
 vi.mock("@/contexts/AuthContext", () => ({ useAuth: () => auth.value }));
+// Starter flag pictures use placeholder keys; resolve them so the picture loads in the Skip test.
+vi.mock("@/media/curatedImages", () => ({ resolveCuratedImage: () => "/assets/m/flag.webp" }));
 vi.mock("@/api/starter", async (importOriginal) => ({
   ...(await importOriginal<typeof import("@/api/starter")>()),
   starterApi: { getPool: vi.fn() },
@@ -296,5 +298,16 @@ describe("StarterQuizPage", () => {
     const review = screen.getByRole("button", { name: "Review mistakes" });
     const explore = screen.getByRole("heading", { name: "Explore next" });
     expect(review.compareDocumentPosition(explore) & Node.DOCUMENT_POSITION_FOLLOWING).toBeTruthy();
+  });
+
+  it("does not offer Skip on a picture question once it is answered (AC 3.21.10)", async () => {
+    vi.mocked(starterApi.getPool).mockResolvedValue({ version: "v1", items: fullPool(3) });
+    renderPage();
+    expect(await screen.findByText("Question 1 of 5")).toBeInTheDocument();
+    fireEvent.load(await screen.findByAltText("flag"));
+    expect(screen.getByRole("button", { name: "Skip question (not scored)" })).toBeInTheDocument();
+
+    await answer(true);
+    expect(screen.queryByRole("button", { name: "Skip question (not scored)" })).not.toBeInTheDocument();
   });
 });
