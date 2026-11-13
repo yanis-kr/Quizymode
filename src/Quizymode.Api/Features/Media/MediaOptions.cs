@@ -42,6 +42,8 @@ internal sealed class MediaOptions
 
     public S3Settings S3 { get; set; } = new();
 
+    public DeliverySettings Delivery { get; set; } = new();
+
     /// <summary>Largest accepted original file.</summary>
     public int MaxSourceBytes { get; set; } = DefaultMaxSourceBytes;
 
