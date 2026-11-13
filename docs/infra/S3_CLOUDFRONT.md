@@ -118,17 +118,24 @@ aws iam put-user-policy --user-name quizymode-api-media --policy-name quizymode-
 aws iam create-access-key --user-name quizymode-api-media
 ```
 
-`api-media-policy.json` (put and get on `normalized/*` only: no list, no delete, no ACLs):
+`api-media-policy.json` (put, get and delete on `normalized/*`; list on the bucket only under the `normalized/` prefix; no ACLs, no `s3:*`):
 
 ```json
 {
   "Version": "2012-10-17",
   "Statement": [
     {
-      "Sid": "PutGetNormalizedPictures",
+      "Sid": "PutGetDeleteNormalizedPictures",
       "Effect": "Allow",
-      "Action": ["s3:PutObject", "s3:GetObject"],
+      "Action": ["s3:PutObject", "s3:GetObject", "s3:DeleteObject"],
       "Resource": "arn:aws:s3:::quizymode-media-prod/normalized/*"
+    },
+    {
+      "Sid": "ListNormalizedPrefixOnly",
+      "Effect": "Allow",
+      "Action": "s3:ListBucket",
+      "Resource": "arn:aws:s3:::quizymode-media-prod",
+      "Condition": { "StringLike": { "s3:prefix": ["normalized/*"] } }
     }
   ]
 }
