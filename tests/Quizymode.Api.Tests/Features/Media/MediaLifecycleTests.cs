@@ -2,6 +2,7 @@ using FluentAssertions;
 using Microsoft.AspNetCore.Http;
 using Microsoft.EntityFrameworkCore;
 using Quizymode.Api.Features.Media;
+using Quizymode.Api.Features.Media.Storage;
 using Quizymode.Api.Shared.Models;
 using Quizymode.Api.Tests.TestFixtures;
 using Xunit;
@@ -51,6 +52,50 @@ public sealed class MediaLifecycleTests : DatabaseTestFixture
         int count = await MediaCleanupWorker.RunOnceAsync(DbContext, store, new MediaOptions { CleanupOwnerUserId = "test-owner" }, now, CancellationToken.None);
         count.Should().Be(1); store.Objects.Should().NotContainKey(owned.ObjectKey!); store.Objects.Should().ContainKey(foreign.ObjectKey!);
         owned.PurgedAt.Should().NotBeNull(); foreign.DeletedAt.Should().BeNull();
+    }
+    [Fact]
+    public async Task OrphanObjectPastRetentionIsDeletedOnlyInAllOwnersModeAndFreshOnesAreKept()
+    {
+        DateTime now = DateTime.UtcNow;
+        string oldKey = MediaObjectKey.Build(Guid.NewGuid(), new string('a', 64));
+        string freshKey = MediaObjectKey.Build(Guid.NewGuid(), new string('b', 64));
+        FakeMediaObjectStore store = new();
+        store.Objects[oldKey] = [1]; store.LastModified[oldKey] = now.AddDays(-30);
+        store.Objects[freshKey] = [2]; store.LastModified[freshKey] = now.AddHours(-1);
+        await MediaCleanupWorker.RunOnceAsync(DbContext, store, new MediaOptions(), now, CancellationToken.None);
+        store.Objects.Should().NotContainKey(oldKey);
+        store.Objects.Should().ContainKey(freshKey);
+    }
+    [Fact]
+    public async Task OwnerScopedCleanupNeverDeletesUnknownObjects()
+    {
+        DateTime now = DateTime.UtcNow;
+        string oldKey = MediaObjectKey.Build(Guid.NewGuid(), new string('c', 64));
+        FakeMediaObjectStore store = new();
+        store.Objects[oldKey] = [3]; store.LastModified[oldKey] = now.AddDays(-30);
+        await MediaCleanupWorker.RunOnceAsync(DbContext, store, new MediaOptions { CleanupOwnerUserId = "test-owner" }, now, CancellationToken.None);
+        store.Objects.Should().ContainKey(oldKey);
+    }
+    [Fact]
+    public async Task ReadyAssetWhoseObjectIsMissingIsWithdrawnDuringReconciliation()
+    {
+        DateTime now = DateTime.UtcNow;
+        MediaAsset missing = PictureSeed.AddAsset(DbContext, "test-owner");
+        await DbContext.SaveChangesAsync();
+        FakeMediaObjectStore store = new();
+        await MediaCleanupWorker.RunOnceAsync(DbContext, store, new MediaOptions { CleanupOwnerUserId = "test-owner" }, now, CancellationToken.None);
+        missing.DeletedAt.Should().NotBeNull();
+    }
+    [Fact]
+    public async Task ReadyAssetWithPresentObjectStaysLiveDuringReconciliation()
+    {
+        DateTime now = DateTime.UtcNow;
+        MediaAsset present = PictureSeed.AddAsset(DbContext, "test-owner");
+        await DbContext.SaveChangesAsync();
+        FakeMediaObjectStore store = new(); store.Objects[present.ObjectKey!] = [4];
+        await MediaCleanupWorker.RunOnceAsync(DbContext, store, new MediaOptions { CleanupOwnerUserId = "test-owner" }, now, CancellationToken.None);
+        present.DeletedAt.Should().BeNull();
+        store.Objects.Should().ContainKey(present.ObjectKey!);
     }
     [Fact]
     public async Task AdvisoryCostReservationsSurviveRestartAndAmbiguousFailureWithoutCallingProvider()
