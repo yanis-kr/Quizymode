@@ -195,6 +195,26 @@ public sealed class DailyDigestRendererTests
     }
 
     [Fact]
+    public void EmptyAudience_WithRawHits_ShowsZeros_AndNoWarning()
+    {
+        // Every hit that day was excluded (for example, maintainer activity): zeros are shown, and no warning.
+        DaySummary empty = new(
+            new VisitsSection(0, 0, 0, 0, 0, 0, 0, 0),
+            new AccountsSection(0, 0, 0, 0, 0),
+            new QuizSection(0, 0, 0, []),
+            new SourcesSection([]),
+            new ProblemsSection(0, 0, 0, 0, 0, 0, 0),
+            new LocationsSection(new LocationBreakdown([], 0, 0), new LocationBreakdown([], 0, 0)));
+        string body = DailyDigestRenderer.Body(
+            Report(current: empty, health: new DigestHealth(50, 20, new ExcludedSessionCounts(3, 0, 0, 0))),
+            null);
+
+        body.Should().NotContain("WARNING");
+        Flat(body).Should().Contain("No reliability issues.");
+        Flat(body).Should().Contain("audience 0");
+    }
+
+    [Fact]
     public void Footer_HasRawCounts_ExcludedPerClass_UtcWindow_TimezoneRulesNoteAndPreviousDigests()
     {
         DigestReport report = Report(

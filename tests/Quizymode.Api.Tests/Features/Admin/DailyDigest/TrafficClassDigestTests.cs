@@ -209,6 +209,39 @@ public sealed class TrafficClassDigestTests : DatabaseTestFixture
         (await BuildAsync()).Accounts!.NewAccounts.Should().Be(2);
     }
 
+    [Fact]
+    public async Task SignedInOrdinaryUser_WritesAudienceAndIsNotInternal()
+    {
+        Guid ordinary = Guid.NewGuid();
+        _userContext.SetupGet(context => context.IsAuthenticated).Returns(true);
+        _userContext.SetupGet(context => context.UserId).Returns(ordinary.ToString());
+        await TrackHitAsync(ChromeUa, "signed-in");
+
+        PageView hit = await DbContext.PageViews.SingleAsync();
+        hit.TrafficClass.Should().Be(TrafficClassifier.Audience);
+        hit.IsInternal.Should().BeFalse();
+        hit.IsAuthenticated.Should().BeTrue();
+    }
+
+    [Fact]
+    public async Task SignedInOrdinaryUser_IsCountedOnceInTheDigest()
+    {
+        Guid ordinary = Guid.NewGuid();
+        DbContext.Users.Add(new User { Id = ordinary, Subject = "ordinary", CreatedAt = new DateTime(2026, 1, 1, 0, 0, 0, DateTimeKind.Utc) });
+        DbContext.AnalyticsSessions.Add(Session("signed", Mid, userId: ordinary));
+        DbContext.PageViews.AddRange(
+            Hit("signed", Mid, userId: ordinary, trafficClass: TrafficClassifier.Audience),
+            Hit("signed", Mid.AddMinutes(1), userId: ordinary, trafficClass: TrafficClassifier.Audience));
+        await DbContext.SaveChangesAsync();
+
+        DaySummary day = await BuildAsync();
+
+        day.Visits!.Sessions.Should().Be(1);
+        day.Visits.PageViews.Should().Be(2);
+        day.Accounts!.ActiveAccounts.Should().Be(1);
+        day.Accounts.AuthenticatedSessions.Should().Be(1);
+    }
+
     // Feedback and picture reports
 
     [Fact]
