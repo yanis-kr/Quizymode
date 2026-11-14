@@ -30,6 +30,31 @@ jobs:
         shell: powershell
         run: .\scripts\automation\Run-Tests.ps1
 
+  # AC 7.10.3: a PR cannot add or edit an AC without a verification method and, for e2e and signed-in-prod-ui, a test.
+  ac-gate:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v7
+        with:
+          fetch-depth: 0
+
+      - name: Setup Node
+        uses: actions/setup-node@v7
+        with:
+          node-version: 22
+
+      - name: Test the validation scripts
+        run: node --test scripts/tests/ac-validation.test.mjs
+
+      - name: Check the ACs this PR adds or edits
+        if: github.event_name == 'pull_request'
+        env:
+          BASE_REF: ${{ github.base_ref }}
+        run: node scripts/validation/ac-gate.mjs --changed "origin/$BASE_REF"
+
   cognito-presignup:
     runs-on: ubuntu-latest
     permissions:
