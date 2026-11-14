@@ -6,6 +6,11 @@ on:
       - main
   pull_request:
 
+# A new push to a pull request cancels the run for its previous commit. Runs on main are never cancelled.
+concurrency:
+  group: ci-${{ github.event.pull_request.number || github.sha }}
+  cancel-in-progress: ${{ github.event_name == 'pull_request' }}
+
 env:
   REGISTRY: ghcr.io
   IMAGE_NAME: quizymode
@@ -79,13 +84,11 @@ jobs:
       - name: Test Pre sign-up Lambda
         run: npm test
 
-  build-test-publish:
+  # Web build, bundle checks and lint. Runs next to frontend-tests so neither waits for the other.
+  frontend:
     runs-on: ubuntu-latest
     permissions:
       contents: read
-      issues: write
-      packages: write
-      pull-requests: write
     steps:
       - name: Checkout
         uses: actions/checkout@v7
@@ -103,14 +106,6 @@ jobs:
           node-version: 22
           cache: npm
           cache-dependency-path: src/Quizymode.Web/package-lock.json
-
-      - name: Setup .NET
-        uses: actions/setup-dotnet@v6
-        with:
-          dotnet-version: 10.0.x
-
-      - name: Restore dependencies
-        run: dotnet restore Quizymode.sln
 
       - name: Build web app
         working-directory: src/Quizymode.Web
@@ -140,9 +135,111 @@ jobs:
         working-directory: src/Quizymode.Web
         run: npm run lint
 
+  frontend-tests:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v7
+
+      - name: Setup Node
+        uses: actions/setup-node@v7
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: src/Quizymode.Web/package-lock.json
+
+      - name: Install dependencies
+        working-directory: src/Quizymode.Web
+        run: npm ci
+
       - name: Run frontend tests with coverage
         working-directory: src/Quizymode.Web
         run: npm run test:coverage
+
+      - name: Upload frontend coverage summary
+        uses: actions/upload-artifact@v7
+        with:
+          name: frontend-coverage
+          path: src/Quizymode.Web/coverage/coverage-summary.json
+          if-no-files-found: error
+          retention-days: 7
+
+  backend-tests:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v7
+
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v6
+        with:
+          dotnet-version: 10.0.x
+
+      - name: Restore dependencies
+        run: dotnet restore Quizymode.sln
+
+      - name: Run architecture tests
+        run: |
+          dotnet test tests/Quizymode.Api.Tests/Quizymode.Api.Tests.csproj \
+            --no-restore \
+            --verbosity normal \
+            --filter "FullyQualifiedName~Architecture" \
+            --logger "trx;LogFileName=architecture-tests.trx" \
+            --results-directory TestResults/architecture
+
+      - name: Pre-pull Postgres test image
+        # Testcontainers-backed tests (Category=Postgres) need this image; retry around registry rate limits.
+        run: |
+          for attempt in 1 2 3 4 5; do
+            docker pull postgres:17-alpine && exit 0
+            echo "Pull attempt $attempt failed; retrying in $((attempt * 15))s"
+            sleep $((attempt * 15))
+          done
+          exit 1
+
+      - name: Run backend tests with coverage
+        run: dotnet test Quizymode.sln --no-restore --verbosity normal --collect:"XPlat Code Coverage" --settings tests/Quizymode.Api.Tests/coverlet.runsettings --results-directory TestResults/coverage
+
+      # Both paths are listed so the artifact keeps the coverage/ and architecture/ folders.
+      - name: Upload coverage and architecture results
+        uses: actions/upload-artifact@v7
+        with:
+          name: backend-test-results
+          path: |
+            TestResults/coverage/**/coverage.cobertura.xml
+            TestResults/architecture/architecture-tests.trx
+          if-no-files-found: error
+          retention-days: 7
+
+  # Release build of the API: OpenAPI artifact check, then the container image. On main the image is pushed as
+  # :<sha> here, in parallel with the tests; build-test-publish moves :latest only after every job passed, and
+  # Deploy only starts when the whole workflow succeeded.
+  api-image:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      issues: write
+      packages: write
+      pull-requests: write
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v7
+
+      - name: Read app version
+        id: app_version
+        shell: bash
+        run: |
+          APP_VERSION="$(grep -oPm1 '(?<=<QuizymodeVersion>)[^<]+' Directory.Build.props)"
+          echo "app_version=${APP_VERSION}" >> "${GITHUB_OUTPUT}"
+
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v6
+        with:
+          dotnet-version: 10.0.x
 
       - name: Verify OpenAPI artifact is in sync (warning mode)
         id: verify_openapi
@@ -261,32 +358,76 @@ jobs:
               console.log(`Skipping OpenAPI drift comment cleanup: ${error.message}`);
             }
 
-      - name: Run architecture tests
+      - name: Docker metadata
+        id: meta
         run: |
-          dotnet test tests/Quizymode.Api.Tests/Quizymode.Api.Tests.csproj \
-            --no-restore \
-            --verbosity normal \
-            --filter "FullyQualifiedName~Architecture" \
-            --logger "trx;LogFileName=architecture-tests.trx" \
-            --results-directory TestResults/architecture
+          IMAGE_ID="${REGISTRY}/${GITHUB_REPOSITORY_OWNER,,}/${IMAGE_NAME}"
+          echo "image=${IMAGE_ID}" >> "${GITHUB_OUTPUT}"
 
-      - name: Pre-pull Postgres test image
-        # Testcontainers-backed tests (Category=Postgres) need this image; retry around registry rate limits.
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v4
+
+      - name: Login to GitHub Container Registry
+        if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+        uses: docker/login-action@v4
+        with:
+          registry: ${{ env.REGISTRY }}
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+
+      # No layer cache: every change set bumps Directory.Build.props, which invalidates the restore layer, so the
+      # GitHub Actions cache never hit and exporting it cost about 3 minutes per main build.
+      - name: Build image (pushed as :<sha> on main only)
+        uses: docker/build-push-action@v7
+        with:
+          context: .
+          file: ./src/Quizymode.Api/Dockerfile
+          push: ${{ github.event_name == 'push' && github.ref == 'refs/heads/main' }}
+          tags: ${{ steps.meta.outputs.image }}:${{ github.event_name == 'push' && github.sha || format('ci-{0}', github.run_number) }}
+          build-args: |
+            APP_VERSION=${{ steps.app_version.outputs.app_version }}
+            SOURCE_REVISION_ID=${{ github.sha }}
+
+  # Required check. Passes only when every build and test job passed (a skipped job would otherwise count as
+  # green), then posts the coverage summary and, on main, moves :latest to the image api-image pushed.
+  build-test-publish:
+    needs: [frontend, frontend-tests, backend-tests, api-image]
+    if: always()
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      issues: write
+      packages: write
+      pull-requests: write
+    steps:
+      - name: Require every build and test job to pass
+        env:
+          RESULTS: ${{ join(needs.*.result, ' ') }}
         run: |
-          for attempt in 1 2 3 4 5; do
-            docker pull postgres:17-alpine && exit 0
-            echo "Pull attempt $attempt failed; retrying in $((attempt * 15))s"
-            sleep $((attempt * 15))
+          echo "Job results: ${RESULTS}"
+          for result in ${RESULTS}; do
+            [ "${result}" = "success" ] || exit 1
           done
-          exit 1
 
-      - name: Run backend tests with coverage
-        run: dotnet test Quizymode.sln --no-restore --verbosity normal --collect:"XPlat Code Coverage" --settings tests/Quizymode.Api.Tests/coverlet.runsettings --results-directory TestResults/coverage
+      - name: Checkout
+        uses: actions/checkout@v7
+
+      - name: Download backend coverage and architecture results
+        uses: actions/download-artifact@v8
+        with:
+          name: backend-test-results
+          path: TestResults
+
+      - name: Download frontend coverage summary
+        uses: actions/download-artifact@v8
+        with:
+          name: frontend-coverage
+          path: frontend-coverage
 
       - name: Summarize coverage
         id: summarize_coverage
         shell: pwsh
-        run: ./scripts/summarize-coverage.ps1 -ResultsDirectory TestResults/coverage -MarkdownOutputPath coverage-summary.md -JsonOutputPath coverage-summary.json -FrontendCoverageJsonPath src/Quizymode.Web/coverage/coverage-summary.json -ArchitectureResultsPath TestResults/architecture/architecture-tests.trx
+        run: ./scripts/summarize-coverage.ps1 -ResultsDirectory TestResults/coverage -MarkdownOutputPath coverage-summary.md -JsonOutputPath coverage-summary.json -FrontendCoverageJsonPath frontend-coverage/coverage-summary.json -ArchitectureResultsPath TestResults/architecture/architecture-tests.trx
 
       - name: Comment on coverage summary
         if: github.event_name == 'pull_request'
@@ -347,15 +488,6 @@ jobs:
               console.log(`Skipping coverage summary comment: ${error.message}`);
             }
 
-      - name: Docker metadata
-        id: meta
-        run: |
-          IMAGE_ID="${REGISTRY}/${GITHUB_REPOSITORY_OWNER,,}/${IMAGE_NAME}"
-          echo "image=${IMAGE_ID}" >> "${GITHUB_OUTPUT}"
-
-      - name: Set up Docker Buildx
-        uses: docker/setup-buildx-action@v4
-
       - name: Login to GitHub Container Registry
         if: github.event_name == 'push' && github.ref == 'refs/heads/main'
         uses: docker/login-action@v4
@@ -364,33 +496,11 @@ jobs:
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Build image (no push)
-        if: github.event_name != 'push' || github.ref != 'refs/heads/main'
-        uses: docker/build-push-action@v7
-        with:
-          context: .
-          file: ./src/Quizymode.Api/Dockerfile
-          push: false
-          tags: ${{ steps.meta.outputs.image }}:ci-${{ github.run_number }}
-          build-args: |
-            APP_VERSION=${{ steps.app_version.outputs.app_version }}
-            SOURCE_REVISION_ID=${{ github.sha }}
-
-      - name: Build and push image
+      - name: Tag the tested image as latest
         if: github.event_name == 'push' && github.ref == 'refs/heads/main'
-        uses: docker/build-push-action@v7
-        with:
-          context: .
-          file: ./src/Quizymode.Api/Dockerfile
-          push: true
-          tags: |
-            ${{ steps.meta.outputs.image }}:${{ github.sha }}
-            ${{ steps.meta.outputs.image }}:latest
-          build-args: |
-            APP_VERSION=${{ steps.app_version.outputs.app_version }}
-            SOURCE_REVISION_ID=${{ github.sha }}
-          cache-from: type=gha
-          cache-to: type=gha,mode=max
+        run: |
+          IMAGE_ID="${REGISTRY}/${GITHUB_REPOSITORY_OWNER,,}/${IMAGE_NAME}"
+          docker buildx imagetools create --tag "${IMAGE_ID}:latest" "${IMAGE_ID}:${GITHUB_SHA}"
 
   # AC 7.8.4: signed-in E2E on an ephemeral Development stack (Postgres service, API, Vite). No Cognito, no secrets.
   e2e:

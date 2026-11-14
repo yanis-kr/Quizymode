@@ -1,13 +1,35 @@
 # GitHub Actions Deployment
 
-CI (`ci.yml`) builds, tests, and pushes the Docker image to GHCR on every merge to `main`.
+CI (`ci.yml`) builds and tests every pull request and every push to `main`. On `main` it also pushes the Docker image to GHCR.
 A separate deploy workflow (`deploy.yml`) then deploys the container to LightSail and the UI to S3/CloudFront.
+
+## CI jobs
+
+The jobs run in parallel. A new push to a pull request cancels the run for its previous commit; runs on `main` are never cancelled.
+
+| Job | What it does |
+|---|---|
+| `frontend` | Web build, curated image and manifest checks, source map artifact, lint |
+| `frontend-tests` | Vitest with coverage |
+| `backend-tests` | Architecture tests, then all backend tests with coverage |
+| `api-image` | Release build with the OpenAPI drift check, then the Docker image. On `main` it pushes `:<sha>` |
+| `build-test-publish` | Required check. Fails unless the four jobs above passed, posts the coverage comment, and on `main` moves `:latest` to the pushed `:<sha>` |
+| `automation-contract`, `ac-gate`, `cognito-presignup`, `e2e` | Independent checks |
+
+Rules to keep when editing the workflow:
+
+- Branch protection requires `build-test-publish`, `automation-contract` and `CodeQL` by name. `build-test-publish` runs with `if: always()` and checks each needed job's result, because GitHub counts a skipped required job as passed.
+- A new build or test job must be added to the `needs` list of `build-test-publish`, or it will not block a merge.
+- On `main` the image is pushed as `:<sha>` before the tests finish. That is safe because Deploy starts only when the whole CI run succeeded, and `:latest` moves only after every job passed. An image tag for a commit whose CI failed can exist in GHCR; it is never deployed by the pipeline.
+- The image build uses no layer cache. Every change set bumps `Directory.Build.props`, which invalidates the restore layer, so the cache never hit while exporting it took about 3 minutes and filled the 10 GB Actions cache.
 
 ## How it works
 
 1. **CI completes** on `main` → image pushed to `ghcr.io/yanis-kr/quizymode:<sha>`
 2. **`deploy-container` job** — reads env vars from the currently active LightSail deployment, then creates a new deployment with the updated image. Waits up to 10 minutes for `ACTIVE` state.
-3. **`deploy-ui` job** — rebuilds the frontend and syncs to S3 with per-type cache headers, then invalidates CloudFront.
+3. **`build-ui` job** — runs at the same time as `deploy-container`: builds the frontend and uploads it as the `web-dist` artifact (source maps go to a separate artifact and are never deployed).
+4. **`deploy-ui` job** — after both jobs above succeed, downloads `web-dist`, syncs it to S3 with per-type cache headers, then invalidates CloudFront. It waits for the container so the new UI never calls the previous API.
+5. **`prod-verify` job** — signed-in checks on the deployed site (AC 7.10.5).
 
 ## AWS OIDC setup (one-time)
 
