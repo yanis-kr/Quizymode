@@ -18,6 +18,9 @@ namespace Quizymode.Api.Tests.Features.Media;
 [Trait("Category", "Postgres")]
 public sealed class MediaAdvisoryPostgresTests(PostgresContainerFixture fixture) : IClassFixture<PostgresContainerFixture>
 {
+    private const string AdminSubject = "race-admin";
+    private const string AdminEmail = "admin@example.test";
+
     private sealed class UnavailableProvider : HttpMessageHandler
     {
         protected override Task<HttpResponseMessage> SendAsync(HttpRequestMessage request, CancellationToken ct) =>
@@ -32,6 +35,10 @@ public sealed class MediaAdvisoryPostgresTests(PostgresContainerFixture fixture)
         await using (ApplicationDbContext seed = fixture.CreateDbContext())
         {
             seed.MediaControls.Add(new MediaControl { AdvisoryEnabled = true });
+            // The admin exists before the calls start. Otherwise the test host creates the user row on the first
+            // request, the four concurrent calls each try to insert it, and the losers return 500 before they
+            // reach the budget check this test is about.
+            seed.Users.Add(new User { Id = Guid.NewGuid(), Subject = AdminSubject, Email = AdminEmail, Name = AdminSubject });
             Category category = VisibilitySeed.AddCategory(seed);
             for (int i = 0; i < 4; i++)
             {
@@ -51,7 +58,7 @@ public sealed class MediaAdvisoryPostgresTests(PostgresContainerFixture fixture)
             services.AddSingleton<IMediaObjectStore>(new FakeMediaObjectStore());
             services.AddSingleton(new GeminiMediaAdvisory(providerHttp, config));
         }, app => new MediaAdvisoryEndpoints.Endpoint().MapEndpoint(app));
-        string admin = host.CreateToken("race-admin", "admin@example.test", ["Admins"]);
+        string admin = host.CreateToken(AdminSubject, AdminEmail, ["Admins"]);
 
         HttpResponseMessage[] responses = await Task.WhenAll(itemIds.Select(id => host.Client.SendAsync(
             JwtHttpTestHost.Request(HttpMethod.Post, $"/admin/items/{id}/image-advisory", admin, JsonContent.Create(new { expectedRevision = 1 })))));
