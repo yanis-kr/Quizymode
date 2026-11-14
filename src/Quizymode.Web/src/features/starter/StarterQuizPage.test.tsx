@@ -12,6 +12,7 @@ import {
   readGuestHistory,
   resetGuestHistoryMemoryForTests,
 } from "@/features/guestHistory/guestHistoryStorage";
+import { readLocalReviewList } from "@/features/learningLoop/localReviewList";
 import StarterQuizPage from "./StarterQuizPage";
 import { readStarterSeen } from "./starterSeen";
 import { STARTER_RUN_STORAGE_KEY as STORAGE_KEY } from "./starterRunStorage";
@@ -45,9 +46,8 @@ function LocationDisplay() {
   return <div data-testid="location">{`${location.pathname}${location.search}`}</div>;
 }
 
-function renderPage() {
-  const queryClient = new QueryClient({ defaultOptions: { queries: { retry: false } } });
-  return render(
+function pageTree(queryClient: QueryClient) {
+  return (
     <HelmetProvider>
       <QueryClientProvider client={queryClient}>
         <MemoryRouter initialEntries={["/start"]}>
@@ -57,8 +57,14 @@ function renderPage() {
           </Routes>
         </MemoryRouter>
       </QueryClientProvider>
-    </HelmetProvider>,
+    </HelmetProvider>
   );
+}
+
+function renderPage() {
+  const queryClient = new QueryClient({ defaultOptions: { queries: { retry: false } } });
+  const view = render(pageTree(queryClient));
+  return { ...view, rerenderPage: () => view.rerender(pageTree(queryClient)) };
 }
 
 async function answer(correct: boolean) {
@@ -310,5 +316,43 @@ describe("StarterQuizPage", () => {
 
     await answer(true);
     expect(screen.queryByRole("button", { name: "Skip question (not scored)" })).not.toBeInTheDocument();
+  });
+
+  async function playRun(missQuestion: number | null) {
+    await screen.findByText("Question 1 of 5");
+    for (let question = 1; question <= 5; question += 1) {
+      await answer(question !== missQuestion);
+      fireEvent.click(await screen.findByRole("button", { name: question === 5 ? "See my score" : "Next" }));
+    }
+    await screen.findByRole("heading", { name: "Quiz complete" });
+  }
+
+  it("guest misses join the browser review list (AC 3.14.14)", async () => {
+    renderPage();
+    await playRun(2);
+    expect(readLocalReviewList()).toHaveLength(1);
+  });
+
+  it("a clean guest run adds nothing to the browser review list", async () => {
+    renderPage();
+    await playRun(null);
+    expect(readLocalReviewList()).toEqual([]);
+  });
+
+  it("signed in: misses do not use the browser review list", async () => {
+    auth.value = { isAuthenticated: true, isLoading: false, userId: "user-1" };
+    renderPage();
+    await playRun(2);
+    expect(readLocalReviewList()).toEqual([]);
+  });
+
+  it("a sign-in during the run does not write the guest list", async () => {
+    const view = renderPage();
+    await screen.findByText("Question 1 of 5");
+    await answer(false);
+    auth.value = { isAuthenticated: true, isLoading: false, userId: "user-1" };
+    view.rerenderPage();
+    await playRun(2);
+    expect(readLocalReviewList()).toEqual([]);
   });
 });

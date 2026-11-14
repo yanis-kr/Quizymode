@@ -6,6 +6,7 @@ import { dailyQuizApi } from "@/api/learningLoop";
 import { saveStudySession } from "@/features/studySessions/recordStudySession";
 import { trackEventOnce } from "@/features/analytics/analyticsEvents";
 import DailyQuizPage from "./DailyQuizPage";
+import { readLocalReviewList } from "../localReviewList";
 import { readDailyCompletions, utcToday } from "../localLearningState";
 import { renderWithProviders, testItem } from "../learningLoopTestUtils";
 
@@ -92,6 +93,72 @@ describe("DailyQuizPage", () => {
       expect(saveStudySession).toHaveBeenCalledWith(expect.objectContaining({ source: null, correct: 1, total: 2, missedItemIds: ["a"] })),
     );
     expect(readDailyCompletions()).toEqual([]);
+  });
+
+  describe("guest review list (AC 3.14.14)", () => {
+    const guidItems = [testItem("00000000-0000-4000-8000-000000000001"), testItem("00000000-0000-4000-8000-000000000002")];
+
+    async function answerGuidItems(correctFirst: boolean) {
+      for (const [index, item] of guidItems.entries()) {
+        const answer = index === 0 && !correctFirst ? item.incorrectAnswers[0] : item.correctAnswer;
+        fireEvent.click(await screen.findByRole("button", { name: new RegExp(answer) }));
+        fireEvent.click(screen.getByRole("button", { name: index === guidItems.length - 1 ? "See my score" : "Next" }));
+      }
+    }
+
+    it("a guest's misses from the counted run join the browser review list", async () => {
+      vi.mocked(dailyQuizApi.get).mockResolvedValue({ date: "2026-10-18", items: guidItems, completion: null, streak: null });
+      renderWithProviders(<DailyQuizPage />);
+      await answerGuidItems(false);
+
+      await screen.findByText(/Counted for today/);
+      expect(readLocalReviewList().map((entry) => entry.itemId)).toEqual([guidItems[0]!.id]);
+    });
+
+    it("a practice run (already counted today) does not write to the list", async () => {
+      vi.mocked(dailyQuizApi.get).mockResolvedValue({ date: "2026-10-18", items: guidItems, completion: null, streak: null });
+      renderWithProviders(<DailyQuizPage />);
+      await answerGuidItems(true);
+      await screen.findByText(/Counted for today/);
+      expect(readLocalReviewList()).toEqual([]);
+
+      fireEvent.click(screen.getByRole("button", { name: "Practice again" }));
+      await answerGuidItems(false);
+      await screen.findByText(/Practice run/);
+      expect(readLocalReviewList()).toEqual([]);
+    });
+
+    it("signed in: the browser list is not used", async () => {
+      auth.value = { isAuthenticated: true, isLoading: false, userId: "user-1" };
+      vi.mocked(dailyQuizApi.get).mockResolvedValue({ date: "2026-10-18", items: guidItems, completion: null, streak: 0 });
+      vi.mocked(dailyQuizApi.complete).mockResolvedValue({
+        created: true,
+        streak: 1,
+        completion: { correct: 1, total: 2, completedAt: "2026-10-18T10:00:00Z" },
+      });
+      renderWithProviders(<DailyQuizPage />);
+      await answerGuidItems(false);
+
+      await screen.findByText(/Counted for today/);
+      expect(readLocalReviewList()).toEqual([]);
+    });
+
+    it("a sign-in during the run does not write the guest list", async () => {
+      vi.mocked(dailyQuizApi.get).mockResolvedValue({ date: "2026-10-18", items: guidItems, completion: null, streak: null });
+      const view = renderWithProviders(<DailyQuizPage />);
+      fireEvent.click(await screen.findByRole("button", { name: new RegExp(guidItems[0]!.incorrectAnswers[0]!) }));
+      auth.value = { isAuthenticated: true, isLoading: false, userId: "user-1" };
+      vi.mocked(dailyQuizApi.complete).mockResolvedValue({
+        created: true,
+        streak: 1,
+        completion: { correct: 1, total: 2, completedAt: "2026-10-18T10:00:00Z" },
+      });
+      view.rerender(<DailyQuizPage />);
+      await answerGuidItems(false);
+
+      await screen.findByText(/Counted for today/);
+      expect(readLocalReviewList()).toEqual([]);
+    });
   });
 
   it("shows the done state when today is already counted and lets the learner practice", async () => {

@@ -100,7 +100,7 @@ describe("SignUpPage", () => {
     ["keep-collection", /bookmark this collection/i],
     ["create-content", /create private items/i],
     ["join-discussion", /join the discussion/i],
-    ["save-progress", /study streak and keep an activity calendar/i],
+    ["save-progress", /streak and quiz results follow you to every device/i],
     ["review-later", /review queue that brings them back/i],
     ["track-progress", /study streak and keep an activity calendar/i],
   ])("renders truthful copy for reason=%s", (reason, expectedText) => {
@@ -115,9 +115,9 @@ describe("SignUpPage", () => {
 
   it("save-progress copy promises only shipped account features", () => {
     renderPage("/signup?reason=save-progress");
-    expect(screen.getByRole("heading", { name: "Make your next quiz yours" })).toBeInTheDocument();
+    expect(screen.getByRole("heading", { name: "Keep your streak and results" })).toBeInTheDocument();
     expect(screen.queryByText(/quiz scores are not saved to accounts yet/i)).not.toBeInTheDocument();
-    expect(screen.getByText(/save your quiz runs/i)).toBeInTheDocument();
+    expect(screen.getByText(/streak and quiz results follow you to every device/i)).toBeInTheDocument();
   });
 
   it("toggles password visibility", () => {

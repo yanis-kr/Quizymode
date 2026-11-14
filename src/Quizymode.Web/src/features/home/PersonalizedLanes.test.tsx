@@ -11,6 +11,7 @@ import { clearGuestHistory } from "@/features/guestHistory/guestHistoryStorage";
 import { readLocalStudyPlans, upsertLocalStudyPlan } from "@/features/studyPlans/localStudyPlans";
 import { addLocalDays } from "@/features/studyPlans/studyPlanSteps";
 import type { FeaturedSetDto } from "@/api/featured";
+import { addLocalReviewItems } from "@/features/learningLoop/localReviewList";
 import { PersonalizedLanes } from "./PersonalizedLanes";
 import { readLocalInterests, recordLocalDailyCompletion, utcToday, writeLocalInterests } from "@/features/learningLoop/localLearningState";
 import { renderWithProviders } from "@/features/learningLoop/learningLoopTestUtils";
@@ -126,6 +127,38 @@ describe("PersonalizedLanes", () => {
     const card = await screen.findByRole("link", { name: /A new quiz is ready\./ });
     expect(card).toHaveTextContent("Play");
     expect(card).not.toHaveTextContent("streak");
+  });
+
+  it("guest: shows a Review mistakes card with the saved count, singular for one, and no due wording (#650)", () => {
+    addLocalReviewItems(["00000000-0000-4000-8000-000000000001"]);
+    const view = renderLanes([]);
+    const card = screen.getByRole("link", { name: /Review mistakes/ });
+    expect(card).toHaveAttribute("href", "/review");
+    expect(card).toHaveTextContent("1 question saved in this browser");
+    expect(card).toHaveTextContent("Review");
+    expect(card).not.toHaveTextContent(/due/i);
+    view.unmount();
+
+    addLocalReviewItems(["00000000-0000-4000-8000-000000000002", "00000000-0000-4000-8000-000000000003"]);
+    renderLanes([]);
+    expect(screen.getByRole("link", { name: /Review mistakes/ })).toHaveTextContent("3 questions saved in this browser");
+  });
+
+  it("guest: no Review mistakes card when the browser list is empty", () => {
+    renderLanes([]);
+    expect(screen.queryByRole("link", { name: /Review mistakes/ })).not.toBeInTheDocument();
+  });
+
+  it("signed in: the browser list does not produce the guest card", async () => {
+    auth.value = { isAuthenticated: true, isLoading: false, userId: "user-1" };
+    addLocalReviewItems(["00000000-0000-4000-8000-000000000001"]);
+    vi.mocked(interestsApi.get).mockResolvedValue([]);
+    vi.mocked(reviewQueueApi.getSummary).mockResolvedValue({ dueCount: 0, totalCount: 0, nextDueAt: null });
+    vi.mocked(dailyQuizApi.get).mockResolvedValue({ date: utcToday(), items: [], completion: null, streak: 0 });
+    vi.mocked(studySessionsApi.list).mockResolvedValue([]);
+    renderLanes([]);
+    await screen.findByRole("link", { name: /Daily quiz/ });
+    expect(screen.queryByText(/saved in this browser/)).not.toBeInTheDocument();
   });
 
   it("signed in: review card, Continue from saved sessions, and topics saved to the account", async () => {

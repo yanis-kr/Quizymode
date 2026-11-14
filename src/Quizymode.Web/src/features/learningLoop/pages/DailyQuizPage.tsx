@@ -8,6 +8,8 @@ import { dailyQuizApi } from "@/api/learningLoop";
 import { saveStudySession } from "@/features/studySessions/recordStudySession";
 import { summarizeQuizRun, type QuizRunState } from "@/features/items/quiz/quizRun";
 import { buildDailyShare } from "@/features/items/quiz/resultShare";
+import { isGuestEligible } from "@/features/guestHistory/guestHistoryStorage";
+import { addLocalReviewItems } from "../localReviewList";
 import { DailyCountdown } from "../DailyCountdown";
 import { DailyExploreNext } from "../DailyExploreNext";
 import { FixedSetQuiz } from "../FixedSetQuiz";
@@ -82,6 +84,18 @@ const DailyQuizPage = () => {
         ...(summary.skipped > 0 ? { skipped: summary.skipped } : {}),
       });
       setCountState({ status: "counted", streak: computeStreak(next.map((entry) => entry.date), data.date) });
+      // Browser-local review list (AC 3.14.14): misses from the counted run, only when the run stayed anonymous.
+      if (
+        summary.missedItemIds.length > 0 &&
+        isGuestEligible({
+          isAuthenticated,
+          isAuthLoading,
+          runIdentityKey: run.identityKey,
+          currentIdentityKey: identityKey,
+        })
+      ) {
+        addLocalReviewItems(summary.missedItemIds);
+      }
       return;
     }
 
