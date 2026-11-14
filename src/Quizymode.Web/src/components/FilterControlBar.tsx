@@ -3,8 +3,9 @@ import type { ReactNode } from "react";
  * Compact control bar that replaces the inline FilterSection header.
  * Shows a filter trigger button (with active badge) and optional secondary actions.
  */
-import { FunnelIcon, EyeIcon, EyeSlashIcon, SpeakerWaveIcon, PauseIcon } from "@heroicons/react/24/outline";
+import { FunnelIcon, SpeakerWaveIcon, PauseIcon } from "@heroicons/react/24/outline";
 import type { ListenAllState } from "@/hooks/useListenAll";
+import { ShowAnswersToggle } from "@/components/ShowAnswersToggle";
 
 interface SortOptionItem {
   value: string;
@@ -24,6 +25,8 @@ interface FilterControlBarProps {
   /** When provided, renders a compact "Show / Hide answers" toggle after the filter button. */
   showAnswers?: boolean;
   onToggleShowAnswers?: () => void;
+  /** Disables the toggle while a signed-in visitor's saved setting loads. */
+  showAnswersDisabled?: boolean;
   /** When provided, renders a "Listen All / Pause / Resume" TTS button. */
   listenAllState?: ListenAllState;
   onListenAll?: () => void;
@@ -40,6 +43,7 @@ export function FilterControlBar({
   sortOptions,
   showAnswers,
   onToggleShowAnswers,
+  showAnswersDisabled,
   listenAllState,
   onListenAll,
 }: FilterControlBarProps) {
@@ -67,23 +71,11 @@ export function FilterControlBar({
       </button>
 
       {onToggleShowAnswers != null && (
-        <button
-          type="button"
-          onClick={onToggleShowAnswers}
-          title={showAnswers ? "Hide answers" : "Show answers"}
-          className={`inline-flex items-center gap-1 rounded-lg border px-2.5 py-1.5 text-sm font-medium transition ${
-            showAnswers
-              ? "border-green-300 bg-green-50 text-green-700 hover:bg-green-100"
-              : "border-gray-200 bg-surface text-gray-500 hover:bg-gray-50"
-          }`}
-        >
-          {showAnswers ? (
-            <EyeSlashIcon className="h-4 w-4 shrink-0" />
-          ) : (
-            <EyeIcon className="h-4 w-4 shrink-0" />
-          )}
-          <span className="hidden sm:inline">{showAnswers ? "Hide answers" : "Show answers"}</span>
-        </button>
+        <ShowAnswersToggle
+          showAnswers={showAnswers ?? false}
+          onToggle={onToggleShowAnswers}
+          disabled={showAnswersDisabled}
+        />
       )}
 
       {onListenAll != null && listenAllState != null && (
@@ -92,12 +84,14 @@ export function FilterControlBar({
           onClick={onListenAll}
           title={
             listenAllState === "idle"
-              ? "Listen to all items (TTS)"
+              ? showAnswers === false
+                ? "Listen to all questions (answers hidden)"
+                : "Listen to all items (TTS)"
               : listenAllState === "playing"
               ? "Pause"
               : "Resume"
           }
-          className={`inline-flex items-center gap-1 rounded-lg border px-2.5 py-1.5 text-sm font-medium transition ${
+          className={`inline-flex min-h-[44px] items-center gap-1 rounded-lg border px-2.5 py-1.5 text-sm font-medium transition ${
             listenAllState !== "idle"
               ? "border-indigo-300 bg-indigo-50 text-indigo-ink hover:bg-indigo-100"
               : "border-gray-200 bg-surface text-gray-500 hover:bg-gray-50"

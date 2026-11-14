@@ -27,9 +27,13 @@ interface QuizCompletionViewProps {
   /** The run's own analytics context for the share event. */
   analyticsContext?: StudyEventContext;
   /** Starter quiz results (#462, AC 3.0.28): one-line score, "Another random five", and `endExtras` instead of browse. */
-  variant?: "default" | "starter";
-  /** Starter results: the explore-next cards and the explore-all link, shown under Share result. */
+  variant?: "default" | "starter" | "daily";
+  /** Starter and Daily results: the explore-next tiles (starter: with the explore-all link), shown under the actions. */
   endExtras?: ReactNode;
+  /** Daily results: the streak and save-status row under the score. */
+  statusExtras?: ReactNode;
+  /** Daily results: the countdown to the next daily quiz, shown under the main actions. */
+  countdown?: ReactNode;
 }
 
 export function QuizCompletionView({
@@ -45,8 +49,11 @@ export function QuizCompletionView({
   analyticsContext,
   variant = "default",
   endExtras,
+  statusExtras,
+  countdown,
 }: QuizCompletionViewProps) {
   const isStarter = variant === "starter";
+  const isDaily = variant === "daily";
   const headingRef = useRef<HTMLHeadingElement>(null);
   const summary = summarizeQuizRun(run);
 
@@ -151,6 +158,80 @@ export function QuizCompletionView({
           </p>
         )}
         <div className="mt-5">{backButton}</div>
+      </section>
+    );
+  }
+
+  if (isDaily) {
+    const missed = summary.missedItemIds.length;
+    const showShare = Boolean(share) && summary.scoredTotal > 0;
+    return (
+      <section className="mx-auto max-w-3xl rounded-lg bg-surface p-4 text-center shadow sm:p-6">
+        <h2 ref={headingRef} tabIndex={-1} className="text-2xl font-bold text-gray-900 focus:outline-none">
+          Daily quiz complete
+        </h2>
+        {tier && <p className="mt-2 text-lg font-semibold text-gray-800">{tier.label}</p>}
+        {summary.scoredTotal === 0 ? (
+          <p className="mt-3 text-xl font-semibold text-gray-800">No questions were scored</p>
+        ) : (
+          <>
+            <p className="mt-3 text-3xl font-bold text-indigo-ink">{summary.correct} / {summary.scoredTotal}</p>
+            <p className="mt-1 text-gray-700">
+              {summary.percentage}% correct · {missed} missed
+            </p>
+          </>
+        )}
+        {summary.skipped > 0 && (
+          <p className="mt-1 text-sm text-gray-600">
+            {summary.skipped === 1
+              ? "1 question skipped because the picture was unavailable. Not scored."
+              : `${summary.skipped} questions skipped because the picture was unavailable. Not scored.`}
+          </p>
+        )}
+        {statusExtras}
+        <div className="mt-5 flex flex-col justify-center gap-3 sm:flex-row sm:flex-wrap">
+          {missed > 0 && (
+            <button
+              type="button"
+              onClick={onReviewMistakes}
+              className="min-h-[44px] w-full rounded-md bg-indigo-600 px-4 py-2 font-semibold text-white hover:bg-indigo-700 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500 focus-visible:ring-offset-2 sm:w-auto"
+            >
+              Review mistakes
+            </button>
+          )}
+          {share && showShare && (
+            <ShareResultButton
+              descriptor={share}
+              runId={run.runId}
+              score={summary.correct}
+              total={summary.scoredTotal}
+              context={analyticsContext ?? { contextType: "quiz" }}
+              emphasized={missed === 0}
+            />
+          )}
+        </div>
+        {countdown}
+        {endExtras}
+        <div className="mt-4 flex flex-col items-center">
+          <button
+            type="button"
+            onClick={onPlayAgain}
+            className="inline-flex min-h-[44px] items-center px-3 text-sm font-semibold text-indigo-ink underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500"
+          >
+            Practice again
+          </button>
+          <p className="text-xs text-gray-500">Doesn't change today's score.</p>
+        </div>
+        <div className="mt-2">
+          <Link
+            to={browsePath}
+            className="inline-flex min-h-[44px] items-center justify-center rounded-md border border-gray-300 px-4 py-2 font-semibold text-gray-700 hover:bg-gray-50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500 focus-visible:ring-offset-2"
+          >
+            {browseLabel}
+          </Link>
+        </div>
+        {/* Shown only after the run is complete (never mid-quiz), only to anonymous visitors (AC 4.2.10). */}
+        <SignupPrompt reason="save-progress" className="mt-6" />
       </section>
     );
   }

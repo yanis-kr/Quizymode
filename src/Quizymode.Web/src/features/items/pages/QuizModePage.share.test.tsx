@@ -161,7 +161,7 @@ async function finishRunAndOpenShare() {
   fireEvent.click(screen.getByRole("button", { name: /^next$/i }));
   await screen.findByText("What is the capital of France?");
   fireEvent.click(screen.getByRole("button", { name: /^[A-D]\. Rome$/ }));
-  fireEvent.click(await screen.findByRole("button", { name: /view results/i }));
+  fireEvent.click(await screen.findByRole("button", { name: /see my score/i }));
   fireEvent.click(await screen.findByRole("button", { name: "Share result" }));
 }
 

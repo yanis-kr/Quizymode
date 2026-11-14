@@ -6,10 +6,11 @@ import { starterApi, type StarterPoolEntry } from "@/api/starter";
 import { useAuth } from "@/contexts/AuthContext";
 import { HOME_SAMPLE_COLLECTION_ID, HOME_SAMPLE_COLLECTION_NAME } from "@/features/home/homePageData";
 import { createAnalyticsId, trackEventOnce } from "@/features/analytics/analyticsEvents";
-import { recordGuestCompletion } from "@/features/guestHistory/guestHistoryStorage";
+import { isGuestEligible, recordGuestCompletion } from "@/features/guestHistory/guestHistoryStorage";
 import { recordAuthenticatedCompletion } from "@/features/studySessions/recordStudySession";
 import { summarizeQuizRun, type QuizCompletionSnapshot, type QuizRunState } from "@/features/items/quiz/quizRun";
 import { buildGlobalShare } from "@/features/items/quiz/resultShare";
+import { addLocalReviewItems } from "@/features/learningLoop/localReviewList";
 import { FixedSetQuiz } from "@/features/learningLoop/FixedSetQuiz";
 import { buildCollectionStudyPath } from "@/utils/collectionPath";
 import { composeStarterRun, STARTER_RUN_SIZE } from "./composeStarterRun";
@@ -104,12 +105,17 @@ const StarterQuizPage = () => {
       missedItemIds: summary.missedItemIds,
     };
     // Same rules as the main quiz (AC 3.6.13/3.6.14), with no practice link because the mix is random.
-    recordGuestCompletion(snapshot, {
+    const guestEligibility = {
       isAuthenticated,
       isAuthLoading,
       runIdentityKey: finished.identityKey,
       currentIdentityKey: identityKey,
-    });
+    };
+    recordGuestCompletion(snapshot, guestEligibility);
+    // Browser-local review list (AC 3.14.14): a guest's misses join it, only for a run that stayed anonymous.
+    if (isGuestEligible(guestEligibility) && snapshot.missedItemIds.length > 0) {
+      addLocalReviewItems(snapshot.missedItemIds);
+    }
     if (isAuthenticated && !isAuthLoading && finished.identityKey === identityKey) {
       void recordAuthenticatedCompletion(snapshot).then(() => queryClient.invalidateQueries({ queryKey: ["review-queue"] }));
     }

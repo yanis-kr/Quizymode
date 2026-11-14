@@ -255,7 +255,9 @@ describe("QuizModePage Test mode (AC 3.18)", () => {
 
     fireEvent.click(option("4"));
     expect(option("4")).toHaveAttribute("aria-pressed", "true");
-    expect(screen.queryByText(/Correct Answer/)).not.toBeInTheDocument();
+    // A Test shows no feedback card and no "Answer:" line before submit.
+    expect(screen.queryByTestId("answer-feedback-card")).not.toBeInTheDocument();
+    expect(screen.queryByText(/Answer: /)).not.toBeInTheDocument();
     expect(screen.queryByText(/Score:/)).not.toBeInTheDocument();
     expect(screen.queryByText("Basic arithmetic.")).not.toBeInTheDocument();
     expect(screen.queryByTitle("View item details")).not.toBeInTheDocument();
@@ -670,14 +672,14 @@ describe("QuizModePage Test mode (AC 3.18)", () => {
     await renderPageWithOptions(PRACTICE_URL);
     await screen.findByText("What is 2 + 2?");
     fireEvent.click(option("4"));
-    expect(await screen.findByText(/Correct Answer: 4/)).toBeInTheDocument();
+    expect(await screen.findByTestId("answer-feedback-card")).toHaveTextContent("Answer: 4");
 
     fireEvent.click(screen.getByRole("radio", { name: "Test" }));
     const dialog = screen.getByRole("dialog", { name: "Switch to Test?" });
     expect(within(dialog).getByRole("button", { name: "Keep current run" })).toHaveFocus();
     fireEvent.keyDown(dialog, { key: "Escape" });
     expect(screen.queryByRole("dialog")).not.toBeInTheDocument();
-    expect(screen.getByText(/Correct Answer: 4/)).toBeInTheDocument();
+    expect(screen.getByTestId("answer-feedback-card")).toHaveTextContent("Answer: 4");
     expect(screen.getByTestId("location")).not.toHaveTextContent("mode=test");
 
     fireEvent.click(screen.getByRole("radio", { name: "Test" }));

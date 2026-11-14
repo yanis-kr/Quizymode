@@ -33,11 +33,11 @@ function press(init: KeyboardEventInit) {
   });
 }
 
-function renderQuiz(count = 2) {
+function renderQuiz(count = 2, overrides: Record<string, unknown> = {}) {
   return render(
     <MemoryRouter>
       <FixedSetQuiz
-        items={Array.from({ length: count }, (_, i) => makeItem(`i${i + 1}`))}
+        items={Array.from({ length: count }, (_, i) => ({ ...makeItem(`i${i + 1}`), ...overrides }))}
         identityKey="anon"
         analytics={{ contextType: "daily" }}
         browsePath="/"
@@ -141,5 +141,93 @@ describe("FixedSetQuiz keyboard shortcuts", () => {
   it("gives every option aria-keyshortcuts", () => {
     renderQuiz();
     expect(optionButtons().map((b) => b.getAttribute("aria-keyshortcuts"))).toEqual(["1 A", "2 B", "3 C", "4 D"]);
+  });
+});
+
+const answer = (text: string) => fireEvent.click(optionButtons().find((b) => b.textContent?.includes(text))!);
+
+describe("FixedSetQuiz answer feedback card (#648)", () => {
+  beforeEach(() => {
+    installMemoryLocalStorage();
+    resetStudyHotkeysPreferenceForTests();
+  });
+
+  it("mounts one polite live region before answering and puts the card inside it", () => {
+    renderQuiz(2, { explanation: "Because." });
+    const regions = screen.getAllByRole("status");
+    expect(regions).toHaveLength(1);
+    expect(regions[0]).toBeEmptyDOMElement();
+    answer("Right");
+    expect(screen.getAllByRole("status")).toHaveLength(1);
+    expect(screen.getByRole("status")).toContainElement(screen.getByTestId("answer-feedback-card"));
+  });
+
+  it("correct answer: Correct!, the answer and the fact; options are replaced by the card", () => {
+    renderQuiz(2, { explanation: "Because." });
+    answer("Right");
+    const card = screen.getByTestId("answer-feedback-card");
+    expect(card).toHaveTextContent("Correct!");
+    expect(card).toHaveTextContent("Answer: Right i1");
+    expect(card).toHaveTextContent("Did you know?");
+    expect(card).toHaveTextContent("Because.");
+    expect(card).not.toHaveTextContent("You picked");
+    expect(optionButtons()).toHaveLength(0);
+  });
+
+  it("incorrect answer: Not quite., what was picked and the reason", () => {
+    renderQuiz(2, { explanation: "Because.", incorrectAnswerRationale: { 0: "w1 is a decoy." } });
+    answer("w1");
+    const card = screen.getByTestId("answer-feedback-card");
+    expect(card).toHaveTextContent("Not quite.");
+    expect(card).toHaveTextContent("You picked: w1");
+    expect(screen.getByTestId("option-rationale")).toHaveTextContent("w1 is a decoy.");
+  });
+
+  it("no explanation: no 'Did you know?' label and no empty fact", () => {
+    renderQuiz(2);
+    answer("Right");
+    expect(screen.getByTestId("answer-feedback-card")).toHaveTextContent("Answer: Right i1");
+    expect(screen.queryByText("Did you know?")).toBeNull();
+  });
+
+  it("has exactly one Next button while the card shows, and Next moves on and focuses the question line", async () => {
+    renderQuiz(2);
+    answer("Right");
+    expect(screen.getAllByRole("button", { name: "Next" })).toHaveLength(1);
+    const next = screen.getByRole("button", { name: "Next" });
+    expect(screen.getByTestId("answer-feedback-card")).toContainElement(next);
+    await waitFor(() => expect(next).toHaveFocus());
+    fireEvent.click(next);
+    expect(screen.getByText("Question 2 of 2")).toBeInTheDocument();
+    await waitFor(() => expect(screen.getByText("Question 2 of 2")).toHaveFocus());
+    expect(screen.queryByTestId("answer-feedback-card")).toBeNull();
+  });
+
+  it("last question: the card says See my score and opens the results", () => {
+    renderQuiz(1);
+    answer("Right");
+    expect(screen.queryByRole("button", { name: "Next" })).toBeNull();
+    expect(screen.queryByRole("button", { name: "View results" })).toBeNull();
+    fireEvent.click(screen.getByRole("button", { name: "See my score" }));
+    expect(screen.getByRole("heading", { name: "Quiz complete" })).toBeInTheDocument();
+  });
+
+  it("keeps Previous below the card and it still goes back", () => {
+    renderQuiz(2);
+    answer("Right");
+    fireEvent.click(screen.getByRole("button", { name: "Next" }));
+    answer("Right");
+    const card = screen.getByTestId("answer-feedback-card");
+    const previous = screen.getByRole("button", { name: "Previous" });
+    expect(card.contains(previous)).toBe(false);
+    fireEvent.click(previous);
+    expect(screen.getByText("Question 1 of 2")).toBeInTheDocument();
+  });
+
+  it("is not click-to-advance outside the starter", () => {
+    renderQuiz(2, { explanation: "Because." });
+    answer("Right");
+    fireEvent.click(screen.getByText("Because."));
+    expect(screen.getByText("Question 1 of 2")).toBeInTheDocument();
   });
 });

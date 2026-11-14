@@ -75,7 +75,7 @@ test.describe("guest history return card", () => {
       await page.locator('button[type="button"]').filter({ hasText: /^\s*A\./ }).first().click();
       if (index < 4) await page.getByRole("button", { name: /^next$/i }).click();
     }
-    await expect(page.getByRole("button", { name: /view results/i })).toBeVisible();
+    await expect(page.getByRole("button", { name: /see my score/i })).toBeVisible();
 
     await page.goto("/");
     await page.reload();

@@ -3,7 +3,7 @@ import { composeStarterRun, pickExploreWorlds } from "./composeStarterRun";
 import { fullPool, poolEntry } from "./starterTestUtils";
 
 describe("composeStarterRun", () => {
-  it("opens with a flag that has a picture, includes Gen AI, and uses five distinct worlds", () => {
+  it("opens with a flag that has a picture, includes Gen AI, and uses at least four distinct worlds", () => {
     const pool = fullPool();
     for (let seed = 0; seed < 25; seed += 1) {
       const run = composeStarterRun(pool, [], `seed-${seed}`);
@@ -11,6 +11,31 @@ describe("composeStarterRun", () => {
       expect(run[0]?.world).toBe("flags");
       expect(run[0]?.item.questionImage).toBeTruthy();
       expect(run.some((entry) => entry.world === "genai")).toBe(true);
+      expect(new Set(run.map((entry) => entry.world)).size).toBeGreaterThanOrEqual(4);
+    }
+  });
+
+  it("includes two picture questions when the pool allows, keeps Gen AI and a flag first, and leaves three explore worlds", () => {
+    const pool = fullPool();
+    for (let seed = 0; seed < 25; seed += 1) {
+      const run = composeStarterRun(pool, [], `pic-${seed}`);
+      expect(run).toHaveLength(5);
+      expect(run.filter((entry) => entry.item.questionImage)).toHaveLength(2);
+      expect(run[0]?.world).toBe("flags");
+      expect(run.some((entry) => entry.world === "genai")).toBe(true);
+      expect(new Set(run.map((entry) => entry.item.id)).size).toBe(5);
+      expect(pickExploreWorlds(run)).toHaveLength(3);
+    }
+  });
+
+  it("keeps a run with only one picture item unchanged", () => {
+    const pool = fullPool().map((entry, index) =>
+      entry.world === "flags" && index > 0 ? { ...entry, item: { ...entry.item, questionImage: undefined } } : entry,
+    );
+    expect(pool.filter((entry) => entry.item.questionImage)).toHaveLength(1);
+    for (let seed = 0; seed < 10; seed += 1) {
+      const run = composeStarterRun(pool, [], `one-${seed}`);
+      expect(run.filter((entry) => entry.item.questionImage)).toHaveLength(1);
       expect(new Set(run.map((entry) => entry.world)).size).toBe(5);
     }
   });

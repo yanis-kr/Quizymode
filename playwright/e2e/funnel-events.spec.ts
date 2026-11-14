@@ -33,12 +33,12 @@ test.describe("anonymous quiz to signup-prompt funnel", () => {
       await expect(page.locator("h3", { hasText: "Question" })).toBeVisible({ timeout: 10_000 });
       // Any option works: the funnel only cares that the run is completed.
       await page.locator('button[type="button"]').filter({ hasText: /^\s*A\./ }).first().click();
-      await expect(page.getByText(/correct answer:/i)).toBeVisible();
+      await expect(page.getByTestId("answer-feedback-card")).toBeVisible();
       if (index < 4) {
         await page.getByRole("button", { name: /^next$/i }).click();
       }
     }
-    await page.getByRole("button", { name: /view results/i }).click();
+    await page.getByRole("button", { name: /see my score/i }).click();
 
     const prompt = page.getByTestId("signup-prompt");
     await expect(prompt).toBeVisible();

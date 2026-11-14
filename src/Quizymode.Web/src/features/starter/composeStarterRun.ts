@@ -22,7 +22,7 @@ function seededRandom(seed: string): () => number {
 
 /**
  * Composes a five-question starter run from the pool (#462, AC 3.0.2): question 1 is a flag with a picture when one
- * exists, one question is Gen AI, and the rest come from other distinct worlds. Items never shown before come first,
+ * exists, one question is Gen AI, and the rest come from other distinct worlds; when the pool allows, a second picture question replaces the last other-world pick. Items never shown before come first,
  * then the least recently shown. Worlds the web app does not know are skipped. Returns [] when fewer than five usable
  * items exist, so the caller can fall back to the legacy quick quiz.
  */
@@ -78,6 +78,22 @@ export function composeStarterRun(pool: StarterPoolEntry[], seenIds: string[], s
       if (chosen.length >= STARTER_RUN_SIZE) break;
       take(entry);
     }
+  }
+
+  // Pictures (#650): when fewer than two picked items have one, the last other-world pick (never the Gen AI pick and
+  // never the opening flag) is swapped for the best remaining picture item, so a run can show two picture questions.
+  const hasPicture = (entry: StarterPoolEntry): boolean => Boolean(entry.item.questionImage);
+  if (chosen.length === STARTER_RUN_SIZE && chosen.filter(hasPicture).length < 2) {
+    const extraPicture = bestOf(usable.filter((entry) => hasPicture(entry) && !chosen.includes(entry)));
+    let replaceAt = -1;
+    for (let i = chosen.length - 1; i > 0; i -= 1) {
+      if (chosen[i]!.world !== "genai" && !hasPicture(chosen[i]!)) {
+        replaceAt = i;
+        break;
+      }
+    }
+    // Never swap in an item shown more recently than the one it replaces, so unseen items keep priority.
+    if (extraPicture && replaceAt > 0 && rankOf(extraPicture) <= rankOf(chosen[replaceAt]!)) chosen[replaceAt] = extraPicture;
   }
 
   // The first pick stays first (the flag hook); the rest are shuffled so Gen AI is not always second.
