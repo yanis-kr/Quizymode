@@ -165,7 +165,7 @@ The controller never changes these settings. Configure branch protection so mach
 - Require exact PR checks `build-test-publish` and `automation-contract`.
 - Require strict up-to-date branches, conversation resolution, and normal merge permissions; prohibit force pushes and branch deletion.
 - Set required human approving reviews to zero. The fresh final-review agent and exact-SHA evidence remain controller gates rather than GitHub review approvals.
-- Do not make deployment jobs PR-required; `Deploy` runs after successful CI on `main` and contains `deploy-container` followed by `deploy-ui`.
+- Do not make deployment jobs PR-required; `Deploy` runs after successful CI on `main` and contains `deploy-container` followed by `deploy-ui` (`build-ui` runs beside `deploy-container`).
 - Do not configure a human approval gate on the production environment; deployment and rollback must remain unattended.
 - Keep the existing deployment concurrency group (`deploy`, `cancel-in-progress: false`) from PR #120.
 

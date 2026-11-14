@@ -78,11 +78,11 @@ jobs:
           echo "Timed out after 10 minutes"
           exit 1
 
-  deploy-ui:
-    needs: deploy-container
+  # Builds the web app while the container deploys, so deploy-ui only has to sync it.
+  build-ui:
+    if: ${{ github.event.workflow_run.conclusion == 'success' }}
     runs-on: ubuntu-latest
     permissions:
-      id-token: write
       contents: read
     steps:
       - name: Checkout
@@ -113,6 +113,32 @@ jobs:
           path: src/Quizymode.Web/dist/**/*.map
           if-no-files-found: warn
           retention-days: 90
+
+      # include-hidden-files keeps dist/.well-known, which upload-artifact drops by default.
+      - name: Upload web build for deploy-ui
+        uses: actions/upload-artifact@v7
+        with:
+          name: web-dist
+          path: |
+            src/Quizymode.Web/dist
+            !src/Quizymode.Web/dist/**/*.map
+          include-hidden-files: true
+          if-no-files-found: error
+          retention-days: 7
+
+  # Runs after the container is ACTIVE so the new UI never calls the previous API.
+  deploy-ui:
+    needs: [deploy-container, build-ui]
+    runs-on: ubuntu-latest
+    permissions:
+      id-token: write
+      contents: read
+    steps:
+      - name: Download web build
+        uses: actions/download-artifact@v8
+        with:
+          name: web-dist
+          path: src/Quizymode.Web/dist
 
       - name: Configure AWS credentials
         uses: aws-actions/configure-aws-credentials@v6
