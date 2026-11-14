@@ -73,7 +73,8 @@ export function isComplete(rows) {
 }
 
 export function renderComment(issue, rows, meta) {
-  const cell = (text) => String(text).replace(/\|/g, "\\|");
+  // Backslashes first, so an input that already holds "\|" cannot end up as an unescaped pipe.
+  const cell = (text) => String(text).replace(/\\/g, "\\\\").replace(/\|/g, "\\|");
   const lines = [
     "## Acceptance Evidence",
     "",

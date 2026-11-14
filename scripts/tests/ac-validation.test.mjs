@@ -116,3 +116,8 @@ test("evidenceRows: unit ACs point at the CI run when one is given, and a fully 
   assert.match(comment, /\| AC 9\.3\.1 \| e2e \| PASSED \|/);
   assert.match(comment, /Every AC of this issue has evidence/);
 });
+
+test("renderComment escapes backslashes before pipes in table cells", () => {
+  const comment = renderComment(1, [{ id: "9.9.9", method: "e2e", result: "PASSED", detail: String.raw`a\|b | c` }], {});
+  assert.ok(comment.includes(String.raw`a\\\|b \| c`));
+});
