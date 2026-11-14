@@ -25,6 +25,8 @@ internal sealed class MediaOptions
     public int MaxUploadsPerHour { get; set; } = 20;
     public int MaxUploadsPerDay { get; set; } = 20;
     public int MaxPendingReviewItems { get; set; } = 20;
+    /// <summary>Picture reports one reporter may file per UTC day (AC 3.27.10).</summary>
+    public int MaxReportsPerDay { get; set; } = 10;
     public long MaxRetainedBytes { get; set; } = 20 * 1024 * 1024;
     public long MaxGlobalRetainedBytes { get; set; } = 1024L * 1024 * 1024;
     public int MaxGlobalUploads { get; set; } = 8;
@@ -105,6 +107,7 @@ internal sealed class MediaOptions
         Require(MaxUploadsPerHour > 0 && MaxUploadsPerHour <= 20, nameof(MaxUploadsPerHour));
         Require(MaxUploadsPerDay > 0 && MaxUploadsPerDay <= 20, nameof(MaxUploadsPerDay));
         Require(MaxPendingReviewItems > 0 && MaxPendingReviewItems <= 20, nameof(MaxPendingReviewItems));
+        Require(MaxReportsPerDay > 0 && MaxReportsPerDay <= 100, nameof(MaxReportsPerDay));
         Require(MaxRetainedBytes > 0 && MaxRetainedBytes <= 20 * 1024 * 1024, nameof(MaxRetainedBytes));
         Require(MaxGlobalRetainedBytes > 0, nameof(MaxGlobalRetainedBytes));
         Require(MaxGlobalIngress > 0 && MaxGlobalIngress <= 20, nameof(MaxGlobalIngress));

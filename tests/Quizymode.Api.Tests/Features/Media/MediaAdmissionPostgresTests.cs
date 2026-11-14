@@ -25,7 +25,7 @@ public sealed class MediaAdmissionPostgresTests(PostgresContainerFixture fixture
             var result = await MediaAdmission.ReserveAsync(db, owner, "fresh-key", [1], options, now, CancellationToken.None);
             if (result.Claim is not null) { result.Error.Should().BeNull(); return true; }
             ((IStatusCodeHttpResult)result.Error!).StatusCode.Should().Be(429);
-            ((Microsoft.AspNetCore.Http.HttpResults.ProblemHttpResult)result.Error).ProblemDetails.Title.Should().Be("Media.GlobalBusy");
+            ((MediaProblemResult)result.Error).Problem.Code.Should().Be("Media.GlobalBusy");
             return false;
         }
         Task<bool> first = AdmitAsync("owner-a");

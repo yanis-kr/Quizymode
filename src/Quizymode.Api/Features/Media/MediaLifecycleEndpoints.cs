@@ -17,7 +17,12 @@ public static class MediaLifecycleEndpoints
     {
         public void MapEndpoint(IEndpointRouteBuilder app)
         {
-            app.MapPost("items/{id:guid}/image-reports", ReportAsync).WithTags("Media").AllowAnonymous();
+            app.MapPost("items/{id:guid}/image-reports", ReportAsync).WithTags("Media").AllowAnonymous().RequireRateLimiting("media-reports")
+                .WithSummary("Report an item's uploaded picture")
+                .Produces(StatusCodes.Status202Accepted)
+                .Produces(StatusCodes.Status400BadRequest)
+                .Produces(StatusCodes.Status404NotFound)
+                .ProducesProblem(StatusCodes.Status429TooManyRequests);
             app.MapGet("admin/media/reports", async (ApplicationDbContext db, IUserContext user, CancellationToken ct) =>
                 !user.IsAdmin ? Results.Forbid() : Results.Ok(await db.MediaReports.AsNoTracking().Where(x => x.ResolvedAt == null).OrderBy(x => x.CreatedAt).Take(100).Select(x => new { x.Id, x.ItemId, x.AssetId, x.Revision, x.Slot, x.Category, x.CreatedAt }).ToListAsync(ct))).WithTags("Admin").RequireAuthorization();
             app.MapPost("admin/media/reports/{id:guid}/dismiss", async (Guid id, ApplicationDbContext db, IUserContext user, CancellationToken ct) =>
@@ -26,14 +31,20 @@ public static class MediaLifecycleEndpoints
                 int changed = await db.MediaReports.Where(x => x.Id == id && x.ResolvedAt == null).ExecuteUpdateAsync(set => set.SetProperty(x => x.ResolvedAt, DateTime.UtcNow), ct);
                 return changed == 0 ? Results.NotFound() : Results.Ok();
             }).WithTags("Admin").RequireAuthorization();
-            app.MapPost("admin/media/{assetId:guid}/withdraw", WithdrawAsync).WithTags("Admin").RequireAuthorization();
+            app.MapPost("admin/media/{assetId:guid}/withdraw", WithdrawAsync).WithTags("Admin").RequireAuthorization()
+                .WithSummary("Withdraw an uploaded picture everywhere it is used (Admin only)")
+                .Produces(StatusCodes.Status200OK)
+                .Produces(StatusCodes.Status400BadRequest)
+                .Produces(StatusCodes.Status403Forbidden)
+                .Produces(StatusCodes.Status404NotFound)
+                .ProducesProblem(StatusCodes.Status409Conflict);
             app.MapGet("admin/media/controls", async (ApplicationDbContext db, IUserContext user, CancellationToken ct) =>
                 !user.IsAdmin ? Results.Forbid() : Results.Ok(ToControls(await db.MediaControls.AsNoTracking().SingleOrDefaultAsync(x => x.Id == 1, ct) ?? new MediaControl()))).WithTags("Admin").RequireAuthorization();
             app.MapPut("admin/media/controls", ControlsAsync).WithTags("Admin").RequireAuthorization();
         }
     }
     private static ControlRequest ToControls(MediaControl value) => new(value.UploadsEnabled, value.DeliveryEnabled, value.AdvisoryEnabled);
-    private static async Task<IResult> ReportAsync(Guid id, ReportRequest request, HttpContext context, ApplicationDbContext db, IUserContext user, CancellationToken ct)
+    private static async Task<IResult> ReportAsync(Guid id, ReportRequest request, HttpContext context, ApplicationDbContext db, IUserContext user, IOptions<MediaOptions> mediaOptions, CancellationToken ct)
     {
         if (!Categories.Contains(request.Category) || request.Slot is not ("question" or "explanation")) return Results.BadRequest();
         Item? item = await db.Items.AsNoTracking().SingleOrDefaultAsync(x => x.Id == id, ct);
@@ -53,7 +64,8 @@ public static class MediaLifecycleEndpoints
         if (reportControl is null) { reportControl = new MediaControl(); db.MediaControls.Add(reportControl); }
         string abuse = Convert.ToHexStringLower(System.Security.Cryptography.HMACSHA256.HashData(Convert.FromHexString(reportControl.ReportSalt), System.Text.Encoding.UTF8.GetBytes(now.ToString("yyyy-MM-dd") + ":" + (user.UserId ?? context.Connection.RemoteIpAddress?.ToString() ?? "anonymous"))));
         if (await db.MediaReports.AnyAsync(x => x.AbuseKey == abuse && x.ItemId == id && x.Revision == request.ExpectedRevision && x.Slot == request.Slot, ct)) return Results.Accepted();
-        if (await db.MediaReports.CountAsync(x => x.AbuseKey == abuse && x.CreatedAt > now.AddDays(-1), ct) >= 10) return Results.StatusCode(429);
+        if (await db.MediaReports.CountAsync(x => x.AbuseKey == abuse && x.CreatedAt > now.AddDays(-1), ct) >= mediaOptions.Value.MaxReportsPerDay)
+            return MediaErrors.Quota("Media.ReportQuota", "Picture report allowance reached. Try again after the daily window resets.", MediaErrors.SecondsToNextUtcDay(now)).ToResult();
         // Traffic class (#573): the E2E token and bot user agents are detected; the anonymous internal-browser marker is not sent on this call.
         bool reporterIsMaintainer = user.IsAdmin;
         if (!reporterIsMaintainer && Guid.TryParse(user.UserId, out Guid reporterId))
@@ -66,22 +78,26 @@ public static class MediaLifecycleEndpoints
         MediaMetrics.Reports.Add(1, new KeyValuePair<string, object?>("category", request.Category));
         return Results.Accepted();
     }
-    private static async Task<IResult> WithdrawAsync(Guid assetId, WithdrawRequest request, ApplicationDbContext db, IUserContext user, CancellationToken ct)
+    private static void CountWithdrawal(string outcome) => MediaMetrics.Withdrawals.Add(1, new KeyValuePair<string, object?>("outcome", outcome));
+
+    private static async Task<IResult> WithdrawAsync(Guid assetId, WithdrawRequest request, ApplicationDbContext db, IUserContext user, ILoggerFactory loggerFactory, CancellationToken ct)
     {
         if (!user.IsAdmin) return Results.Forbid();
         if (!Categories.Contains(request.Category)) return Results.BadRequest();
         await using var transaction = await ItemImageSubmission.BeginAsync(db, ct);
         Item? item = await db.Items.AsNoTracking().SingleOrDefaultAsync(x => x.Id == request.ItemId, ct);
-        if (item is null || (item.QuestionImageAssetId != assetId && item.ExplanationImageAssetId != assetId)) return Results.NotFound();
+        if (item is null || (item.QuestionImageAssetId != assetId && item.ExplanationImageAssetId != assetId)) { CountWithdrawal("notfound"); return Results.NotFound(); }
         MediaAsset? asset = await db.MediaAssets.SingleOrDefaultAsync(x => x.Id == assetId, ct);
-        if (asset is null) return Results.NotFound();
+        if (asset is null) { CountWithdrawal("notfound"); return Results.NotFound(); }
         if (asset.DeletedAt is not null) return Results.Ok(new { state = "Withdrawn" });
-        if (item.ImageRevision != request.ExpectedRevision) return Results.Problem(statusCode: 409, title: "Item.ImageReviewStale", detail: "Pictures changed. Reload before withdrawing.");
+        if (item.ImageRevision != request.ExpectedRevision) { CountWithdrawal("stale"); return Results.Problem(statusCode: 409, title: "Item.ImageReviewStale", detail: "Pictures changed. Reload before withdrawing."); }
         DateTime now = DateTime.UtcNow;
         int affectedItems = await MediaRevocation.ApplyAsync(db, asset, user.UserId!, request.Category, now, ct);
         await db.MediaReports.Where(x => x.AssetId == assetId && x.ResolvedAt == null).ExecuteUpdateAsync(s => s.SetProperty(x => x.ResolvedAt, now), ct);
         await db.SaveChangesAsync(ct); if (transaction is not null) await transaction.CommitAsync(ct);
-        MediaMetrics.Withdrawals.Add(1); return Results.Ok(new { state = "Withdrawn", affectedItems });
+        CountWithdrawal("ok");
+        loggerFactory.CreateLogger("Quizymode.Api.Features.Media.MediaWithdrawal").LogInformation("Media withdrawn: AssetId={AssetId}, AffectedItems={AffectedItems}, Category={Category}", assetId, affectedItems, request.Category);
+        return Results.Ok(new { state = "Withdrawn", affectedItems });
     }
     private static async Task<IResult> ControlsAsync(ControlRequest request, ApplicationDbContext db, IUserContext user, CancellationToken ct)
     {

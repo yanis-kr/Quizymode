@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { mediaUploadErrorMessage } from "./media";
+import { mediaUploadErrorMessage, pictureReportErrorMessage } from "./media";
 const error = (title: string, retryAfter?: string) => ({ isAxiosError: true, response: { status: 429, data: { title, detail: "internal details must not appear" }, headers: { "retry-after": retryAfter } } });
 describe("Picture error recovery", () => {
   it("distinguishes pending, retained storage and global busy allowance", () => {
@@ -11,5 +11,20 @@ describe("Picture error recovery", () => {
   it("explains pixel limits and unsupported formats without filenames or generated answer hints", () => {
     expect(mediaUploadErrorMessage(error("Media.TooManyPixels"))).toMatch(/16 million pixels and 8192/);
     expect(mediaUploadErrorMessage(error("Media.Animated"))).toMatch(/still JPEG, PNG or WebP/);
+  });
+});
+describe("Picture report errors", () => {
+  it("explains the daily report allowance on a 429 using Retry-After", () => {
+    expect(pictureReportErrorMessage(error("Media.ReportQuota", "7200"))).toMatch(/maximum number of picture reports.*about 2 hours/);
+    expect(pictureReportErrorMessage(error("Media.ReportQuota"))).toMatch(/too many picture reports/);
+    expect(pictureReportErrorMessage(error("Media.ReportQuota", "7200"))).not.toMatch(/internal details/);
+  });
+  it("uses a short-window message for a 429 that is not the daily report allowance", () => {
+    const message = pictureReportErrorMessage(error("Too Many Requests", "600"));
+    expect(message).toBe("Too many reports in a short time. Try again in a few minutes.");
+    expect(message).not.toMatch(/today/);
+  });
+  it("uses a generic message for other failures", () => {
+    expect(pictureReportErrorMessage(new Error("network"))).toMatch(/could not be sent/);
   });
 });

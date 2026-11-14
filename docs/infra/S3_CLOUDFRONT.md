@@ -155,11 +155,11 @@ curl -s -o /dev/null -w "%{http_code}\n" https://quizymode-media-prod.s3.amazona
 
 After the first real upload (see LIGHTSAIL.md), `aws s3api head-object --bucket quizymode-media-prod --key <objectKey>` should show `ServerSideEncryption: AES256`, and an unauthenticated `curl` of the same object URL must answer 403.
 
-### CloudFront picture delivery (#405, AC 3.25.6 and 7.7.7 to 7.7.8)
+### CloudFront picture delivery (#405, AC 3.25.13, 3.25.14 and 7.7.7 to 7.7.8)
 
 Resources that exist in production (created 2026-11-12, owner-approved):
 
-- Distribution `E1YN0DZTTFI4QC`, domain `ddrhdjampvqr4.cloudfront.net`, price class 100, origin `quizymode-media-prod.s3.us-east-1.amazonaws.com` through origin access control `E2ESOI5OOWPD8K`, viewer protocol `https-only`, managed CachingOptimized policy, trusted key group `8cb5b6e3-610d-4134-ba7f-f2bc19014106`.
+- Distribution `E1YN0DZTTFI4QC`, domain `ddrhdjampvqr4.cloudfront.net`, price class 100, origin `quizymode-media-prod.s3.us-east-1.amazonaws.com` through origin access control `E2ESOI5OOWPD8K`, viewer protocol `https-only`, cache policy to be switched from CachingOptimized to the managed CachingDisabled policy `4135ea2d-6df8-44a3-9df3-4b5a84be39ad` before CloudFront mode is enabled (owner decision 2026-11-13; pictures are private and withdrawable, so nothing is cached at the edge), trusted key group `8cb5b6e3-610d-4134-ba7f-f2bc19014106`.
 - Public key `K2U4E72VB469U1` (in that key group). Its private key is in the Lightsail environment only, as `Media__Delivery__PrivateKeyBase64`.
 - Response headers policy `2364fdd6-b5c4-4ddf-90e9-0a0247acb237` (CORS for `https://www.quizymode.com`, `https://quizymode.com`, `http://localhost:7000`; `nosniff`; `Content-Security-Policy: default-src 'none'; sandbox`).
 - Bucket policy statement `AllowCloudFrontOacRead`, allowing only that distribution ARN to read `normalized/*`. The two deny statements stay.

@@ -152,7 +152,8 @@ public static class GetItemImageContent
             {
                 // The gate above already ran; the URL is valid for a short window only (#405).
                 CloudFrontUrlSigner? signer = CloudFrontPictureDelivery.SignerFor(mediaOptions);
-                if (signer is null) return MediaErrors.StorageUnavailable.ToResult();
+                if (signer is null) { MediaMetrics.Delivered("cloudfront", "error"); return MediaErrors.StorageUnavailable.ToResult(); }
+                MediaMetrics.Delivered("cloudfront", "ok");
                 return new PrivateRedirectResult(signer.SignedUrl(asset.ObjectKey, DateTimeOffset.UtcNow));
             }
 
@@ -170,12 +171,14 @@ public static class GetItemImageContent
             catch (MediaStorageException ex)
             {
                 logger.LogError(ex, "Media storage read failed: AssetId={AssetId}", asset.Id);
+                MediaMetrics.Delivered("proxy", "error");
                 return MediaErrors.StorageFailed.ToResult();
             }
 
             if (content is null)
             {
                 logger.LogWarning("Ready media asset has no readable object: AssetId={AssetId}", asset.Id);
+                MediaMetrics.Delivered("proxy", "not_found");
                 return Results.NotFound();
             }
 

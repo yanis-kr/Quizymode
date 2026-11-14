@@ -71,12 +71,14 @@ public static class GetImageContent
             catch (MediaStorageException ex)
             {
                 logger.LogError(ex, "Media storage read failed: AssetId={AssetId}", asset.Id);
+                MediaMetrics.Delivered("proxy", "error");
                 return MediaErrors.StorageFailed.ToResult();
             }
 
             if (content is null)
             {
                 logger.LogWarning("Ready media asset has no readable object: AssetId={AssetId}", asset.Id);
+                MediaMetrics.Delivered("proxy", "not_found");
                 return Results.NotFound();
             }
 
@@ -104,6 +106,8 @@ public static class GetImageContent
                 }
 
                 await content.Stream.CopyToAsync(response.Body, httpContext.RequestAborted);
+                MediaMetrics.Delivered("proxy", "ok");
+                if (content.Length > 0) MediaMetrics.DeliveredBytes.Add(content.Length);
             }
         }
     }

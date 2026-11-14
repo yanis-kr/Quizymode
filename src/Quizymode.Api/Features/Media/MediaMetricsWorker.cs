@@ -19,7 +19,8 @@ internal sealed class MediaMetricsWorker(IServiceScopeFactory scopes, ILogger<Me
                 DateTime? oldest = await db.ItemImageReviews.Where(x => x.Decision == null && db.Items.Any(i => i.Id == x.ItemId && i.ImageRevision == x.Revision && i.ImageReviewState == ItemImageReviewState.PendingReview)).Select(x => (DateTime?)x.SubmittedAt).MinAsync(ct);
                 long retained = await db.MediaAssets.Where(x => x.PurgedAt == null).SumAsync(x => (long)x.Bytes, ct);
                 int retries = await db.MediaAssets.CountAsync(x => x.PurgedAt == null && x.DeleteRetryAt != null, ct);
-                MediaMetrics.Snapshot(pending, oldest is null ? 0 : (now - oldest.Value).TotalSeconds, retained, retries);
+                int backlog = await db.MediaAssets.CountAsync(x => x.DeletedAt != null && x.PurgedAt == null, ct);
+                MediaMetrics.Snapshot(pending, oldest is null ? 0 : (now - oldest.Value).TotalSeconds, retained, retries, backlog);
             }
             catch (Exception ex) when (!ct.IsCancellationRequested) { logger.LogWarning("Media metrics snapshot unavailable: {FailureType}", ex.GetType().Name); }
         } while (await timer.WaitForNextTickAsync(ct));

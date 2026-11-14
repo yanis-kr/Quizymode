@@ -38,3 +38,31 @@ groups:
         annotations:
           summary: Picture reports need human triage
           description: Inspect current revisions; reports do not automatically remove content.
+      - alert: QuizymodeMediaStorageWriteFailures
+        expr: sum(increase(quizymode_media_uploads_total{outcome="Media.StorageFailed"}[15m])) >= 3
+        for: 5m
+        labels: { severity: warning }
+        annotations:
+          summary: Picture uploads are failing to reach storage
+          description: Inspect the media bucket permissions and S3 availability; uploads answer 503 Media.StorageFailed.
+      - alert: QuizymodeMediaDeliveryErrors
+        expr: sum(increase(quizymode_media_deliveries_total{outcome="error"}[15m])) >= 5
+        for: 5m
+        labels: { severity: warning }
+        annotations:
+          summary: Picture delivery is failing
+          description: Inspect storage reads (proxy) or the CloudFront signing settings (cloudfront); readers see a missing picture.
+      - alert: QuizymodeMediaCleanupBacklog
+        expr: quizymode_media_cleanup_backlog > 50
+        for: 6h
+        labels: { severity: warning }
+        annotations:
+          summary: Withdrawn pictures are not being purged
+          description: Check that the cleanup worker is enabled and scoped, and the delete retry backlog; follow docs/infra/MEDIA_OPERATIONS.md.
+      - alert: QuizymodeMediaWithdrawal
+        expr: sum(increase(quizymode_media_withdrawals_total{outcome="ok"}[15m])) > 0
+        for: 1m
+        labels: { severity: info }
+        annotations:
+          summary: A picture was withdrawn
+          description: Verify the prior delivery grant is gone within 300 seconds (AC 3.25.14).

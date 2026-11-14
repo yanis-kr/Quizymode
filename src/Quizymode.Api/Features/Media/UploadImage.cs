@@ -81,7 +81,7 @@ public static class UploadImage
                 return CustomResults.Unauthorized();
             }
 
-            return await HandleAsync(
+            IResult result = await HandleAsync(
                 httpRequest,
                 db,
                 userContext.UserId,
@@ -91,6 +91,8 @@ public static class UploadImage
                 timeProvider,
                 loggerFactory.CreateLogger(LoggerCategory),
                 cancellationToken);
+            MediaMetrics.UploadRefused(result);
+            return result;
         }
     }
 

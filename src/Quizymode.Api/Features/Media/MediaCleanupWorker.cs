@@ -17,14 +17,15 @@ internal sealed class MediaCleanupWorker(IServiceScopeFactory scopes, IOptions<M
             try
             {
                 if (options.Value.CleanupEnabled && store.IsAvailable && (environment.IsDevelopment() || environment.IsEnvironment("Testing") || options.Value.CleanupAllOwnersApproved || !string.IsNullOrWhiteSpace(options.Value.CleanupOwnerUserId)))
-                { using IServiceScope scope = scopes.CreateScope(); await RunOnceAsync(scope.ServiceProvider.GetRequiredService<ApplicationDbContext>(), store, options.Value, DateTime.UtcNow, stoppingToken); }
+                { using IServiceScope scope = scopes.CreateScope(); await RunOnceAsync(scope.ServiceProvider.GetRequiredService<ApplicationDbContext>(), store, options.Value, DateTime.UtcNow, stoppingToken, logger); }
             }
             catch (Exception ex) when (!stoppingToken.IsCancellationRequested) { logger.LogError(ex, "Media cleanup failed; retained tombstones will retry."); MediaMetrics.Cleanup.Add(1, new KeyValuePair<string, object?>("outcome", "failure")); }
             if (!await timer.WaitForNextTickAsync(stoppingToken)) break;
         }
     }
 
-    internal static async Task<int> RunOnceAsync(ApplicationDbContext db, IMediaObjectStore store, MediaOptions options, DateTime now, CancellationToken ct)
+    /// <summary>One run. Logs a single content-free summary line (counts only, never keys, URLs or ids) so a quiet run is visible.</summary>
+    internal static async Task<int> RunOnceAsync(ApplicationDbContext db, IMediaObjectStore store, MediaOptions options, DateTime now, CancellationToken ct, ILogger? logger = null)
     {
         string? owner = options.CleanupOwnerUserId;
         DateTime abandoned = now.AddDays(-options.UnattachedRetentionDays);
@@ -42,7 +43,7 @@ internal sealed class MediaCleanupWorker(IServiceScopeFactory scopes, IOptions<M
                             && !db.ItemImageReviews.Any(r => r.ItemId == i.Id && r.Revision == i.ImageRevision && r.Decision == "Rejected" && r.DecidedAt != null && r.DecidedAt <= rejected && (r.QuestionAssetId == a.Id || r.ExplanationAssetId == a.Id)))))
             // Apply due-proof before the batch bound; protected rows must not starve later eligible assets.
             .OrderBy(a => a.CreatedAt).Take(50).Select(a => a.Id).ToListAsync(ct);
-        int deleted = 0;
+        int deleted = 0, retried = 0, orphans = 0, missing = 0;
         foreach (Guid id in candidates)
         {
             MediaAsset? asset;
@@ -73,7 +74,7 @@ internal sealed class MediaCleanupWorker(IServiceScopeFactory scopes, IOptions<M
                 asset.PurgedAt = now; asset.DeleteRetryAt = null; deleted++;
                 MediaMetrics.Cleanup.Add(1, new KeyValuePair<string, object?>("outcome", "deleted"));
             }
-            catch (MediaStorageException) { asset.DeleteRetryAt = now.AddMinutes(Math.Min(1440, 15 * Math.Pow(2, Math.Min(asset.DeleteAttempts, 6)))); MediaMetrics.Cleanup.Add(1, new KeyValuePair<string, object?>("outcome", "retry")); }
+            catch (MediaStorageException) { retried++; asset.DeleteRetryAt = now.AddMinutes(Math.Min(1440, 15 * Math.Pow(2, Math.Min(asset.DeleteAttempts, 6)))); MediaMetrics.Cleanup.Add(1, new KeyValuePair<string, object?>("outcome", "retry")); }
             await db.SaveChangesAsync(ct);
         }
         // Persist pagination across restarts. Unknown-owner orphans are never deleted in owner-scoped mode.
@@ -91,7 +92,7 @@ internal sealed class MediaCleanupWorker(IServiceScopeFactory scopes, IOptions<M
                 MediaObjectKey.EnsureValid(entry.Key);
                 Guid objectId = Guid.ParseExact(entry.Key.Split('/')[2], "N");
                 if (!await db.MediaAssets.AnyAsync(a => a.Id == objectId, ct))
-                { await store.DeleteAsync(entry.Key, ct); MediaMetrics.Cleanup.Add(1, new KeyValuePair<string, object?>("outcome", "orphan")); }
+                { await store.DeleteAsync(entry.Key, ct); orphans++; MediaMetrics.Cleanup.Add(1, new KeyValuePair<string, object?>("outcome", "orphan")); }
             }
         control.CleanupCursor = page.ContinuationToken;
         // Rotate verification by UpdatedAt so a bounded run eventually checks every live asset.
@@ -105,7 +106,7 @@ internal sealed class MediaCleanupWorker(IServiceScopeFactory scopes, IOptions<M
             if (content is null)
             {
                 await MediaRevocation.ApplyAsync(db, live, "media-reconciliation", "Normalized object unavailable", now, ct);
-                MediaMetrics.Cleanup.Add(1, new KeyValuePair<string, object?>("outcome", "missing"));
+                missing++; MediaMetrics.Cleanup.Add(1, new KeyValuePair<string, object?>("outcome", "missing"));
             }
             else live.UpdatedAt = now;
             await db.SaveChangesAsync(ct); if (verification is not null) await verification.CommitAsync(ct);
@@ -115,6 +116,7 @@ internal sealed class MediaCleanupWorker(IServiceScopeFactory scopes, IOptions<M
         await db.MediaIngressAttempts.Where(x => (owner == null || x.OwnerUserId == owner) && x.CreatedAt < now.AddDays(-30) && (x.CompletedAt != null || x.LeaseUntil < now)).ExecuteDeleteAsync(ct);
         if (owner is null) await db.MediaReports.Where(x => x.CreatedAt < now.AddDays(-30)).ExecuteDeleteAsync(ct);
         await db.SaveChangesAsync(ct);
+        logger?.LogInformation("Media cleanup run: Deleted={Deleted}, Retried={Retried}, Orphans={Orphans}, Missing={Missing}, Verified={Verified}, Candidates={Candidates}", deleted, retried, orphans, missing, verifyIds.Count, candidates.Count);
         return deleted;
     }
 }

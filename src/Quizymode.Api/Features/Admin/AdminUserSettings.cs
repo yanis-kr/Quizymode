@@ -32,6 +32,11 @@ public static class AdminUserSettings
                 .Must(request => StudyGuideSettingKeys.Validate(request.Key ?? string.Empty, request.Value) is null)
                 .WithName("Value")
                 .WithMessage(request => StudyGuideSettingKeys.Validate(request.Key ?? string.Empty, request.Value) ?? string.Empty);
+
+            RuleFor(x => x)
+                .Must(request => MediaSettingKeys.Validate(request.Key ?? string.Empty, request.Value) is null)
+                .WithName("Value")
+                .WithMessage(request => MediaSettingKeys.Validate(request.Key ?? string.Empty, request.Value) ?? string.Empty);
         }
     }
 
@@ -150,8 +155,8 @@ public static class AdminUserSettings
             }
 
             // Study guide keys are stored with their canonical casing so quota lookups find them.
-            string key = StudyGuideSettingKeys.Canonicalize(request.Key);
-            string value = StudyGuideSettingKeys.AdminOnly.Contains(key) ? request.Value.Trim() : request.Value;
+            string key = MediaSettingKeys.Canonicalize(StudyGuideSettingKeys.Canonicalize(request.Key));
+            string value = StudyGuideSettingKeys.AdminOnly.Contains(key) || MediaSettingKeys.AdminOnly.Contains(key) ? request.Value.Trim() : request.Value;
 
             UserSetting? existing = await db.UserSettings
                 .FirstOrDefaultAsync(us => us.UserId == userId && us.Key == key, cancellationToken);

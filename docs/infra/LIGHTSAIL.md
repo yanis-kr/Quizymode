@@ -31,7 +31,7 @@ The API stores uploaded pictures in the private bucket `quizymode-media-prod` (s
 | `Media__S3__Region` | `us-east-1` |
 | `Media__S3__AccessKeyId` | the access key id printed by `aws iam create-access-key` |
 | `Media__S3__SecretAccessKey` | the secret printed by `aws iam create-access-key` (never commit, paste in chat or log it) |
-| `Media__Delivery__Mode` | `CloudFront` to deliver pictures by signed CloudFront redirect (AC 3.25.6); `Proxy` (or unset) streams bytes through the API |
+| `Media__Delivery__Mode` | `CloudFront` to deliver pictures by signed CloudFront redirect (AC 3.25.13); `Proxy` (or unset) streams bytes through the API |
 | `Media__Delivery__CloudFrontDomain` | `ddrhdjampvqr4.cloudfront.net` (no scheme) |
 | `Media__Delivery__KeyPairId` | the CloudFront public key id `K2U4E72VB469U1` |
 | `Media__Delivery__PrivateKeyBase64` | base64 of the PEM private key (secret; see AC 7.7.8 and S3_CLOUDFRONT.md) |

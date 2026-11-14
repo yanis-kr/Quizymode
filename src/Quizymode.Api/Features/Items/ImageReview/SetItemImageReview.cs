@@ -202,6 +202,7 @@ public static class SetItemImageReview
                 await transaction.CommitAsync(cancellationToken);
             }
 
+            Features.Media.MediaMetrics.Reviews.Add(1, new KeyValuePair<string, object?>("decision", approve ? "approve" : "reject"));
             Item decidedItem = (await db.Items.AsNoTracking().FirstOrDefaultAsync(i => i.Id == id, cancellationToken))!;
             return Result.Success(await BuildResponseAsync(db, decidedItem, cancellationToken));
         }
