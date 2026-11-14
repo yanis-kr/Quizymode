@@ -57,7 +57,8 @@ public sealed class MediaAdvisoryPostgresTests(PostgresContainerFixture fixture)
             JwtHttpTestHost.Request(HttpMethod.Post, $"/admin/items/{id}/image-advisory", admin, JsonContent.Create(new { expectedRevision = 1 })))));
 
         responses.Count(r => r.StatusCode == HttpStatusCode.OK).Should().Be(1, "only one call fits the daily budget");
-        responses.Count(r => r.StatusCode == HttpStatusCode.TooManyRequests).Should().Be(3);
+        string statuses = string.Join(",", responses.Select(r => (int)r.StatusCode));
+        responses.Count(r => r.StatusCode == HttpStatusCode.TooManyRequests).Should().Be(3, $"every rejected call must be 429; statuses were [{statuses}]");
         foreach (HttpResponseMessage response in responses.Where(r => r.StatusCode == HttpStatusCode.TooManyRequests))
         {
             response.Headers.RetryAfter.Should().NotBeNull();
