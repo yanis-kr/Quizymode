@@ -35,6 +35,8 @@ export function mediaUploadErrorMessage(error: unknown): string {
     "Media.GlobalStorageQuota": "Picture storage allowance reached. Retry after maintenance.",
     "Media.UploadQuota": "Upload allowance reached. Wait for the upload window to reset before retrying.",
     "Media.GlobalBusy": "Picture processing is busy. Retry shortly.",
+    "Media.CapacityReached": "Picture uploads are at capacity right now. Try again later.",
+    "Media.Disabled": "Picture uploads are temporarily turned off.",
     "Media.UploadInProgress": "This upload is still processing. Retry shortly with the same picture.",
     "Media.RequestKeyReused": "Choose the picture again to start a new upload.",
     "Media.RetryLimit": "Choose the picture again to start a new upload.",
@@ -43,4 +45,14 @@ export function mediaUploadErrorMessage(error: unknown): string {
   const message = code && messages[code] ? messages[code] : error.response?.status === 413 ? messages["Media.TooLarge"] : error.response?.status === 429 ? "Upload allowance reached. Wait before retrying." : "Picture could not upload. Check your connection and retry.";
   const retryAfter = Number(error.response?.headers?.["retry-after"]);
   return Number.isFinite(retryAfter) && retryAfter > 0 && retryAfter <= 86400 ? `${message} Retry after ${Math.ceil(retryAfter)} seconds.` : message;
+}
+
+/** Reporting a picture: a 429 means the daily report allowance was reached; anything else is a generic retry message. */
+export function pictureReportErrorMessage(error: unknown): string {
+  if (isAxiosError(error) && error.response?.status === 429) {
+    const retryAfter = Number(error.response.headers?.["retry-after"]);
+    const hours = Number.isFinite(retryAfter) && retryAfter > 0 ? Math.max(1, Math.ceil(retryAfter / 3600)) : null;
+    return hours ? `You have sent the maximum number of picture reports for today. Try again in about ${hours} hour${hours === 1 ? "" : "s"}.` : "You have sent too many picture reports. Please try again later.";
+  }
+  return "Report could not be sent. The picture may have changed. Reload and retry later.";
 }

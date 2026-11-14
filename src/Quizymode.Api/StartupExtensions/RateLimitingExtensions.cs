@@ -144,6 +144,11 @@ internal static partial class StartupExtensions
                     });
             });
 
+            // Picture reports (#635): anonymous allowed, so a per-instance burst limit sits in front of the durable daily
+            // allowance (Media:MaxReportsPerDay). Keyed on the server-trusted client IP or the signed-in user.
+            options.AddPolicy("media-reports", httpContext => RateLimitPartition.GetFixedWindowLimiter(
+                GetAuthenticatedOrTrustedIpPartitionKey(httpContext), static _ => new FixedWindowRateLimiterOptions { PermitLimit = 20, Window = TimeSpan.FromMinutes(10), QueueLimit = 0, AutoReplenishment = true }));
+
             options.AddPolicy("media-reads", httpContext => RateLimitPartition.GetFixedWindowLimiter(
                 GetAuthenticatedOrTrustedIpPartitionKey(httpContext), static _ => new FixedWindowRateLimiterOptions { PermitLimit = 120, Window = TimeSpan.FromMinutes(1), QueueLimit = 0, AutoReplenishment = true }));
 
@@ -279,6 +284,11 @@ internal static partial class StartupExtensions
         if (path.EndsWith("/client-errors", StringComparison.OrdinalIgnoreCase))
         {
             return "Too many error reports. Please slow down.";
+        }
+
+        if (path.EndsWith("/image-reports", StringComparison.OrdinalIgnoreCase))
+        {
+            return "Too many picture reports. Please wait a few minutes and try again.";
         }
 
         if (path.EndsWith("/study-guides/documents", StringComparison.OrdinalIgnoreCase))

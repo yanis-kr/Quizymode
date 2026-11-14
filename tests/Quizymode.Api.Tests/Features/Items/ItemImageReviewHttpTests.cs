@@ -1506,6 +1506,44 @@ public sealed class ItemImageReviewHttpTests : ItemTestFixture, IAsyncLifetime
         (await SendAsync(HttpMethod.Post, $"/items/{item.Id}/image-reports", report.Replace(":1", ":99"))).Status.Should().Be(HttpStatusCode.NotFound);
     }
 
+    [Fact]
+    public async Task Report_OverDailyAllowance_Returns429ProblemWithRetryAfter()
+    {
+        string report = "{\"slot\":\"question\",\"category\":\"privacy\",\"expectedRevision\":1}";
+        for (int i = 0; i < 10; i++)
+        {
+            Item item = await SeedPictureItemAsync(ItemImageReviewState.Approved);
+            (await SendAsync(HttpMethod.Post, $"/items/{item.Id}/image-reports", report)).Status.Should().Be(HttpStatusCode.Accepted);
+        }
+
+        Item eleventh = await SeedPictureItemAsync(ItemImageReviewState.Approved);
+        using StringContent content = new(report, Encoding.UTF8, "application/json");
+        using HttpRequestMessage request = JwtHttpTestHost.Request(HttpMethod.Post, $"/items/{eleventh.Id}/image-reports", null, content);
+        using HttpResponseMessage response = await _host.Client.SendAsync(request);
+
+        response.StatusCode.Should().Be(HttpStatusCode.TooManyRequests);
+        response.Headers.RetryAfter!.Delta!.Value.TotalSeconds.Should().BeInRange(1, 86_400);
+        string body = await response.Content.ReadAsStringAsync();
+        Json(body).GetProperty("title").GetString().Should().Be("Media.ReportQuota");
+        await using ApplicationDbContext db = CreateDbContext();
+        (await db.MediaReports.CountAsync()).Should().Be(10);
+    }
+
+    [Fact]
+    public async Task WithdrawnItemCannotBeApprovedUntilANewPictureIsSubmitted()
+    {
+        MediaAsset asset = await AssetAsync();
+        Item item = await SeedPictureItemAsync(ItemImageReviewState.Approved, question: asset);
+        string withdraw = $"{{\"itemId\":\"{item.Id}\",\"expectedRevision\":1,\"category\":\"privacy\"}}";
+        (await SendAsync(HttpMethod.Post, $"/admin/media/{asset.Id}/withdraw", withdraw, AdminToken)).Status.Should().Be(HttpStatusCode.OK);
+
+        (HttpStatusCode status, string body) = await SendAsync(
+            HttpMethod.Put, $"/admin/items/{item.Id}/image-review", "{\"decision\":\"approve\",\"expectedRevision\":2}", AdminToken);
+
+        status.Should().Be(HttpStatusCode.Conflict, body);
+        (await ItemAsync(item.Id)).ImageReviewState.Should().Be(ItemImageReviewState.Withdrawn);
+    }
+
     [Theory]
     [InlineData("Mozilla/5.0 (Windows NT 10.0; Win64; x64) Chrome/126.0 Safari/537.36", null, "audience")]
     [InlineData("Mozilla/5.0 (Windows NT 10.0; Win64; x64) Chrome/126.0 Safari/537.36 QuizymodeE2E/run-7", null, "automated")]

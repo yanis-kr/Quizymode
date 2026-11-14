@@ -5680,6 +5680,7 @@
         "tags": [
           "Media"
         ],
+        "summary": "Report an item's uploaded picture",
         "parameters": [
           {
             "name": "id",
@@ -5701,8 +5702,24 @@
           "required": true
         },
         "responses": {
-          "200": {
-            "description": "OK"
+          "202": {
+            "description": "Accepted"
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "404": {
+            "description": "Not Found"
+          },
+          "429": {
+            "description": "Too Many Requests",
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails"
+                }
+              }
+            }
           }
         }
       }
@@ -5746,6 +5763,7 @@
         "tags": [
           "Admin"
         ],
+        "summary": "Withdraw an uploaded picture everywhere it is used (Admin only)",
         "parameters": [
           {
             "name": "assetId",
@@ -5769,6 +5787,25 @@
         "responses": {
           "200": {
             "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          },
+          "409": {
+            "description": "Conflict",
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails"
+                }
+              }
+            }
           }
         }
       }
