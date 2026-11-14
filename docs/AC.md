@@ -2100,7 +2100,7 @@ Operators watch picture pipeline health in Grafana Cloud (stack `yaniskr`). The 
 - **AC 7.9.4** [Owner] [verify: api] The media log lines carry only identifiers, byte counts, dimensions, timings and cleanup counters. No EXIF, OCR text, user prose, bearer or signed URL, or picture bytes appear in a log line. Evidence: a Loki sample of 34 production media lines from 2026-11-13 recorded on #637, with the query `{service_name=~".+"} |~ "(?i)media"`.
 - **AC 7.9.5** [Dev] [verify: unit] With the durable switch `MediaControls.UploadsEnabled` off, an upload answers `503 Media.Disabled`. The same holds for the options switch `Media:UploadsEnabled=false`. The durable path is `MediaIngress.cs` and `MediaAdmission.cs`, and the tests are `DurableUploadSwitchOffReturns503Disabled` and `Upload_KillSwitchOff_Returns503Disabled`.
 
-### AC 7.10 AC verification gate, prod verification and generated evidence
+### AC 7.10 AC verification gate, prod verification and generated evidence (#655)
 
 Tooling that keeps an issue from shipping without a way to prove its ACs, and that produces the Acceptance Evidence from test reports. Scripts live in `scripts/validation/`; the signed-in prod checks live in `playwright/prod-verify/`.
 

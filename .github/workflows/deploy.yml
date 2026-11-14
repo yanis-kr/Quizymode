@@ -246,9 +246,12 @@ jobs:
           npx playwright install --with-deps chromium
 
       - name: Wait for the deployed version
+        env:
+          HEAD_SHA: ${{ github.event.workflow_run.head_sha }}
         run: |
+          # The site reports "<version>+sha.<7-char commit>" in its quizymode-build-version meta tag.
           VERSION=$(grep -oP '(?<=<QuizymodeVersion>)[^<]+' Directory.Build.props)
-          node scripts/wait-for-production-ready.js --expected-build-version "$VERSION"
+          node scripts/wait-for-production-ready.js --expected-build-version "${VERSION}+sha.${HEAD_SHA:0:7}"
 
       - name: Run prod verification
         env:
