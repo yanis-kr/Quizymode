@@ -8,8 +8,10 @@
  * When a role has no saved sign-in (its credentials were not set, see auth.setup.ts) the test is skipped, and the
  * evidence generator reports it as BLOCKED. A skipped test is never evidence.
  *
- * Rules for specs in this folder: they run against production, so keep them few and short, read-only where
- * possible, and never delete data. Anything a spec creates must be private test data and named in the AC evidence.
+ * Rules for specs in this folder: they run against production, so keep them few and short. A `*.spec.ts` file runs
+ * after every deploy and must be read-only. A spec that writes is named `*.write.spec.ts`; it runs only in the
+ * `prod-checklist` project, started by hand, creates only private data owned by the test accounts, deletes it at the
+ * end, and never deletes anything it did not create.
  */
 import fs from "fs";
 import path from "path";

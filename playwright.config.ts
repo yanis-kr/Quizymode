@@ -61,6 +61,8 @@ export default defineConfig({
       // Screenshots are the evidence. Traces stay off: a trace records request headers, which carry the bearer token.
       name: "prod-verify",
       testMatch: "**/prod-verify/**/*.spec.ts",
+      // *.write.spec.ts files write to production; they run only in prod-checklist, started by hand.
+      testIgnore: "**/*.write.spec.ts",
       dependencies: ["prod-auth-setup"],
       timeout: 45_000,
       use: {
@@ -71,6 +73,25 @@ export default defineConfig({
         screenshot: "on",
         actionTimeout: 10_000,
         navigationTimeout: 15_000,
+      },
+    },
+    {
+      // AC 3.29: release checklists that write to production (test-owned data, deleted at the end). Never part of a
+      // deploy; started by hand through the "Prod release checklist" workflow. Traces stay off for the same reason
+      // as prod-verify.
+      name: "prod-checklist",
+      testMatch: "**/prod-verify/**/*.write.spec.ts",
+      dependencies: ["prod-auth-setup"],
+      timeout: 300_000,
+      expect: { timeout: 10_000 },
+      use: {
+        ...devices["Desktop Chrome"],
+        userAgent: e2eUserAgent(devices["Desktop Chrome"]),
+        viewport: { width: 1280, height: 900 },
+        trace: "off",
+        screenshot: "on",
+        actionTimeout: 10_000,
+        navigationTimeout: 30_000,
       },
     },
     {
