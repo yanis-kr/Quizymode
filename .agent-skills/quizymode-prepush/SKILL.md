@@ -72,6 +72,17 @@ npm test -- --run
 
 A passing frontend build alone is not enough. Always run the frontend tests too when frontend source changed.
 
+### Repo-scanning tests (run even when no `.cs` file changed)
+
+Some backend tests read files outside `src/`, so a change with no `.cs` file can still fail `dotnet test` in CI. Run the matching filter when these paths changed:
+
+- Any file under `playwright/`: `dotnet test tests/Quizymode.Api.Tests --filter "FullyQualifiedName~PlaywrightInternalMarkerTests"`. Every Playwright file must take `test` from `playwright/fixtures.ts`, never from `@playwright/test`.
+- `docs/AC.md`, `playwright/e2e-ci/`, `playwright/prod-verify/` or `scripts/validation/`: `node --test scripts/tests/ac-validation.test.mjs` and `node scripts/validation/ac-gate.mjs --changed origin/main`.
+
+### After the PR is open
+
+A green local run is not the end. Once CI has run, check the PR for findings that have no job log: the `CodeQL` check, open code-scanning alerts for the PR (`gh api "repos/{owner}/{repo}/code-scanning/alerts?ref=refs/pull/<n>/merge&state=open"`), and review comments (`gh api repos/{owner}/{repo}/pulls/<n>/comments`). Fix each one and reply on its thread with the fixing commit.
+
 ### Cognito Pre sign-up Lambda
 
 If any file under `infra/cognito-presignup/` changed, run (Node 22):

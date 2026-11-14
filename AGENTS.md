@@ -106,6 +106,10 @@ Before pushing, run the repo pre-push verification workflow.
 
 If available, invoke the `quizymode-prepush` skill (`$quizymode-prepush`). Otherwise, follow the same workflow from the repo-managed skill at [`.agent-skills/quizymode-prepush/SKILL.md`](./.agent-skills/quizymode-prepush/SKILL.md).
 
+### PR findings
+
+`main` requires the `CodeQL` check, so a new code-scanning alert blocks the merge. A PR is not ready while it has an open code-scanning alert it introduced or an unanswered review comment (including bot findings). Fix each one, add a test where one fits, and reply on the thread with the fixing commit. Do not dismiss an alert or resolve a thread without a fix unless the owner says so. The commands are in the pre-push skill, § After the PR is open.
+
 ## Batched / Epic Issue Workflow
 
 To move through the backlog faster, related small/medium issues are bundled into a single `epic`-labeled GitHub issue and implemented together as one branch → one PR → one production deploy, instead of one PR per issue.
@@ -140,13 +144,17 @@ Every AC in `docs/AC.md` carries `[verify: <method>]`. The method decides what c
 | `api` | HTTP request, status and body, against the environment named in the comment. | Agent |
 | `sql` | Read-only query (READ ONLY transaction) and its result. Never print secrets. | Agent |
 | `anon-ui` | Screenshot or page text of a signed-out browser session. | Agent |
-| `signed-in-prod-ui` | Screenshot on prod while signed in as the test account, with the tester's sign-in. | Owner signs in; agent checks |
+| `signed-in-prod-ui` | Named Playwright test under `playwright/prod-verify/`, the Deploy run that passed it, and its screenshots (artifact `prod-verify-<sha>`). | Deploy workflow job `prod-verify` |
 
 - **Signed-in ACs** are proven by a green CI run with the linked E2E test, its trace and screenshots (`e2e`). Prod does not need to repeat them.
 - **Prod verification is a smoke check** (version, `/health`, anonymous pages, and read-only SQL or curl where an AC needs it). It does not re-prove ACs already covered in CI.
-- **ACs that cannot move to `e2e` or `api` on prod** are listed in one checklist comment per batch, grouped by screen, with the exact steps and the expected result. The owner replies "verified" to close those issues.
+- **ACs that only exist on a deployed site** (Cognito, media storage, email, real data) are `signed-in-prod-ui`. The coder writes a spec in `playwright/prod-verify/` with `asUser`, `asAdmin` or `asAnon` from `roles.ts`. The Deploy job `prod-verify` signs in as the test user and the test admin from repository secrets and runs it after every deploy. Agents never type or read those credentials and do not start the prod sign-in themselves; they read the job's report. A skipped test is `BLOCKED`, not evidence.
+- **Test titles carry the AC id.** An `e2e` or `signed-in-prod-ui` test has `AC <id>` in its title (for example `AC 7.8.4 the API accepts ...`). This is what links a test to its AC.
+- **The AC gate** (`node scripts/validation/ac-gate.mjs`, AC 7.10) enforces the two rules above. CI runs it on the ACs a PR adds or edits. Run it with `--issues <n,n>` before a release: an issue that fails does not ship.
+- **Evidence is generated**, not written by hand, for test-based methods: `node scripts/validation/ac-evidence.mjs --issues <n,n> --report <results.json> --run-url <CI run>` writes the `Acceptance Evidence` comment per issue from the Playwright reports of the CI `e2e` job and the Deploy `prod-verify` job. Add `api`, `sql` and `anon-ui` evidence to the same comment by hand. Close an issue only when the script reports it complete or the remaining rows have that evidence.
+- **A subjective check no test can make** (visual polish, wording) goes into one checklist comment per batch, grouped by screen, with the exact steps and the expected result. The owner replies "verified" to close those issues. This is the exception, not the default.
 - **Wording:** a tag never changes what an AC says. Weakening an AC to make it verifiable is not allowed; if an AC is wrong, change it in a separate, reviewed change.
-- **Untagged ACs** have no method and block closure of their issue until tagged.
+- **Untagged ACs** have no method and block closure of their issue until tagged. Tag the ACs an issue touches when the issue is refined; an issue is not `status:ready` until each of its ACs has a method.
 
 ## Change Rules
 

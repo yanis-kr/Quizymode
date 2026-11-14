@@ -50,6 +50,30 @@ export default defineConfig({
       use: { ...devices["Desktop Chrome"], userAgent: e2eUserAgent(devices["Desktop Chrome"]) },
     },
     {
+      // AC 7.10.4: saves one signed-in browser state per role (user, admin) from environment variables.
+      name: "prod-auth-setup",
+      testMatch: "**/prod-verify/auth.setup.ts",
+      timeout: 60_000,
+      use: { ...devices["Desktop Chrome"], userAgent: e2eUserAgent(devices["Desktop Chrome"]) },
+    },
+    {
+      // AC 7.10.5: signed-in checks for ACs that only exist on a deployed site (`signed-in-prod-ui`).
+      // Screenshots are the evidence. Traces stay off: a trace records request headers, which carry the bearer token.
+      name: "prod-verify",
+      testMatch: "**/prod-verify/**/*.spec.ts",
+      dependencies: ["prod-auth-setup"],
+      timeout: 45_000,
+      use: {
+        ...devices["Desktop Chrome"],
+        userAgent: e2eUserAgent(devices["Desktop Chrome"]),
+        viewport: { width: 1280, height: 900 },
+        trace: "off",
+        screenshot: "on",
+        actionTimeout: 10_000,
+        navigationTimeout: 15_000,
+      },
+    },
+    {
       name: "screenshots",
       testMatch: "**/capture.spec.ts",
       dependencies: ["auth-setup"],

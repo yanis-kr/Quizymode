@@ -190,3 +190,57 @@ jobs:
           aws cloudfront create-invalidation \
             --distribution-id EH1DS9REH8KR5 \
             --paths "/*"
+
+  # AC 7.10.5: signed-in checks on the deployed site. The report and screenshots are the evidence for
+  # `signed-in-prod-ui` ACs. continue-on-error keeps a failed check from marking the deploy itself as failed;
+  # the failure is still visible on this job and in the report.
+  prod-verify:
+    needs: deploy-ui
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    continue-on-error: true
+    permissions:
+      contents: read
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v7
+        with:
+          ref: ${{ github.event.workflow_run.head_sha }}
+
+      - name: Setup Node
+        uses: actions/setup-node@v7
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: package-lock.json
+
+      - name: Install Playwright
+        run: |
+          npm ci
+          npx playwright install --with-deps chromium
+
+      - name: Wait for the deployed version
+        run: |
+          VERSION=$(grep -oP '(?<=<QuizymodeVersion>)[^<]+' Directory.Build.props)
+          node scripts/wait-for-production-ready.js --expected-build-version "$VERSION"
+
+      - name: Run prod verification
+        env:
+          PLAYWRIGHT_BASE_URL: https://www.quizymode.com
+          TEST_USER_EMAIL: ${{ secrets.TEST_USER_EMAIL }}
+          TEST_USER_PASSWORD: ${{ secrets.TEST_USER_PASSWORD }}
+          TEST_ADMIN_EMAIL: ${{ secrets.TEST_ADMIN_EMAIL }}
+          TEST_ADMIN_PASSWORD: ${{ secrets.TEST_ADMIN_PASSWORD }}
+        run: npx playwright test --project=prod-verify
+
+      # playwright/.auth/ (the saved sign-ins) is deliberately not uploaded.
+      - name: Upload report and screenshots
+        if: always()
+        uses: actions/upload-artifact@v7
+        with:
+          name: prod-verify-${{ github.event.workflow_run.head_sha }}
+          path: |
+            playwright/test-results/**
+            playwright-report/**
+          if-no-files-found: warn
+          retention-days: 30

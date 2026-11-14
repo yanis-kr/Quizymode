@@ -24,9 +24,9 @@ Read AGENTS.md and the section headers of `docs/AC.md` before starting.
 
 ## Preflight (run start, before any issue is picked)
 
-- Open https://www.quizymode.com/ in the browser the run uses for prod and check whether the page shows the test account as signed in (read the page text; never read or print a token).
-- If it is not signed in, ask the user once, now, while they are present: "Please sign in to the test account on prod in this browser, then reply 'signed in'." Never type or read passwords, and never sign in for the user. If the user cannot sign in now, mark every `signed-in-prod-ui` AC of this run as deferred to the batch checklist (§ Release step 5). The run continues with the other ACs.
-- Record the result in `<scratch>/state.json` as `prodSignedIn: true | false`, with the time.
+- Signed-in prod checks need no browser sign-in. The Deploy job `prod-verify` signs in as the test user and the test admin from repository secrets (AGENTS.md § Verification method per AC). Never type or read passwords, and never start the prod sign-in from the run.
+- Check that the secrets exist, by name only: `gh secret list --json name -q '.[].name'` should show `TEST_USER_EMAIL`, `TEST_USER_PASSWORD`, `TEST_ADMIN_EMAIL`, `TEST_ADMIN_PASSWORD`. If the admin pair is missing, tell the user once; admin `signed-in-prod-ui` ACs will report BLOCKED until it is added. The run continues.
+- Record the result in `<scratch>/state.json` as `prodVerifySecrets: { user: true | false, admin: true | false }`, with the time.
 
 Run one autopilot at a time. A second window merging to main makes every open release PR stale (main requires up-to-date branches) and costs a full CI re-run. If `<scratch>/state.json` from another live session exists, stop and report it.
 
@@ -45,7 +45,7 @@ Never without an explicit user yes in chat:
 
 - Deleting prod data, including test items and test study guides.
 - Changing account settings, roles, or billing; messages or emails outside issue and PR comments.
-- Typing real passwords into prod login. If not signed in, the AC is BLOCKED, not passed.
+- Typing real passwords into prod login, or starting the `prod-verify` sign-in from the run. The Deploy job does it. A skipped prod check is BLOCKED, not passed.
 - Bypassing CAPTCHAs, `--admin`, `--no-verify`, force-push, or destructive git on the user's uncommitted work.
 
 ## Decision policy
@@ -67,7 +67,11 @@ The reviewer, not the decision agent, confirms that AC wording was not weakened.
    - small: one vertical slice or one screen, no migration, no auth change, no new endpoint.
    - medium: new endpoint, several slices, or new visible surface.
    - high: migration, auth or security, data backfill, or cross-cutting change.
-   - Verification method per AC: tag each AC `[verify: <method>]` (AGENTS.md § Verification method per AC). The method decides the evidence. For any signed-in AC, the coder writes the Playwright E2E test in the same change, using the dev test sign-in (AC 7.8, `Authorization: DevTest <userId>`). The issue's evidence for that AC is the green CI run that holds the test, with its trace and screenshots. An untagged AC blocks the issue until it is tagged.
+   - Verification method per AC: tag each AC `[verify: <method>]` (AGENTS.md § Verification method per AC). The method decides the evidence. For any signed-in AC, the coder writes the Playwright test in the same change, with `AC <id>` in the test title:
+     - `e2e` (default): a spec in `playwright/e2e-ci/`, using the dev test sign-in (AC 7.8, `Authorization: DevTest <userId>`, plus `admin` for admin ACs).
+     - `signed-in-prod-ui` (only when the behavior exists only on a deployed site): a spec in `playwright/prod-verify/` using `asUser`, `asAdmin` or `asAnon`. Read-only where possible, never deletes data.
+
+     An untagged AC blocks the issue until it is tagged.
 3. Build two lane queues for the whole run, not just the next batch:
    - Prefer one frontend lane and one backend lane, so only one lane compiles .NET. If the backlog does not split that way, fill both lanes and rely on the .NET mutex (§ Local resources).
    - Put related issues (same feature area, same files) in the same lane, in order, so they stack instead of conflicting.
@@ -125,16 +129,30 @@ The integrator is the only writer of release state. At most one release is in fl
 4. Bump `QuizymodeVersion` once (MINOR if any shipped issue is a feature, else PATCH) and align `src/Quizymode.Web/package.json`.
 5. If any API surface changed, regenerate OpenAPI with `.\scripts\verify-openapi.ps1 -Configuration Release`. Never resolve that file by hand.
 6. Light local check, under the .NET mutex: `npm run build`; `dotnet build` (skip if step 5 already built); the filtered tests of every shipped issue, in one `dotnet test --filter` and one `npm test -- --run` invocation; the high-risk scans from `quizymode-prepush` (constructor signature changes, removed UI text). Do not run the full suites or coverage here. CI is the full run.
+
+   Then the AC gate: `node scripts/validation/ac-gate.mjs --issues <every shipped issue>`. If an issue fails (an AC with no method, or an `e2e` or `signed-in-prod-ui` AC with no test), revert its merge from the release branch, put it back at the front of its lane's queue with the gate output, and release the rest. An issue that fails the gate does not ship.
 7. One reviewer pass on `git diff origin/main...release/<batch-id>` in a fresh context, covering code and that no AC wording was weakened. Confirmed findings are fixed on the release branch.
 8. Push and open one PR with `Refs #n` for each shipped issue (not `Closes`, so merging does not close them before evidence exists). Steps 7 and 8 may run in the opposite order to start CI sooner; a reviewer fix is then one more push.
 
 ## Release
 
-1. Watch CI on the PR in the background, 45 minute timeout per run. On a red run: read `gh run view <run> --log-failed`, fix on the release branch, push. At most two fix pushes; after that drop the offending issue from the release branch if it is identifiable, otherwise mark the batch `environmental` and stop merging. On timeout, rerun once.
+1. Watch CI on the PR in the background, 45 minute timeout per run. A red PR has three sources, and a failed job log shows only the first, so read all three before fixing:
+   - Failed jobs: `gh run view <run> --log-failed`.
+   - Code scanning: the required `CodeQL` check fails on a new alert and has no job log. List the PR's alerts with `gh api "repos/{owner}/{repo}/code-scanning/alerts?ref=refs/pull/<n>/merge&state=open"` (rule, path, line).
+   - Review comments: `gh api repos/{owner}/{repo}/pulls/<n>/comments` (bots such as `github-advanced-security[bot]` post findings here).
+
+   Fix on the release branch with a test where one fits, push, and reply on each review thread with the fixing commit. Do not dismiss an alert or resolve a thread without a fix; a finding the run believes is a false positive is a big decision (§ Decision policy) and parks the issue that introduced it. Alerts that already exist on main are not this release's to fix; list them in the final report.
+
+   At most two fix pushes; after that drop the offending issue from the release branch if it is identifiable, otherwise mark the batch `environmental` and stop merging. On timeout, rerun once.
 2. If main moved, merge `origin/main` into the release branch and wait for green again. This should not happen with one autopilot running.
 3. Merge the PR. In the background, watch CI on main and then Deploy. Run postDeploy checks (`node scripts/wait-for-production-ready.js --expected-build-version <version>`).
-4. Prod verification is a smoke check, not a re-test. Check the deployed version and `/health` (`node scripts/wait-for-production-ready.js --expected-build-version <version>`), the anonymous pages of the batch's screens, and read-only SQL or curl where an AC needs prod data. Do not re-verify ACs that the CI run already proved (`unit`, `e2e`, `api` tests in CI). Attach one Acceptance Evidence comment per issue with the smoke output, and the CI run link for its tests. Include that issue's decision-log entries in the same comment.
-5. Close the issues whose every AC has evidence by its tagged method. `signed-in-prod-ui` ACs that could not move to `e2e` go into one checklist comment per batch, grouped by screen, with the exact steps and expected result per item. The owner replies "verified" to close those issues; the run does not close them on its own. Other shipped issues: file a follow-up per AGENTS.md, keep the original open, and comment why.
+4. Prod verification is a smoke check, not a re-test. Check the deployed version and `/health` (`node scripts/wait-for-production-ready.js --expected-build-version <version>`), the anonymous pages of the batch's screens, and read-only SQL or curl where an AC needs prod data. Do not re-verify ACs that the CI run already proved (`unit`, `e2e`, `api` tests in CI).
+5. Evidence is generated, then completed:
+   - Download the two reports: `gh run download <CI run on main> -n e2e-ci-<run number> -D <scratch>/reports/ci` and `gh run download <Deploy run> -n prod-verify-<sha> -D <scratch>/reports/prod`.
+   - Run `node scripts/validation/ac-evidence.mjs --issues <shipped issues> --report <scratch>/reports/ci/playwright-report/results.json --report <scratch>/reports/prod/playwright-report/results.json --run-url <CI run URL> --env "CI e2e and prod-verify after deploy of <version>" --out <scratch>/evidence`.
+   - For each issue, append the `api`, `sql` and `anon-ui` evidence from step 4 and that issue's decision-log entries to `<scratch>/evidence/issue-<n>.md`, then post it as the Acceptance Evidence comment.
+   - Close an issue only when the script marked it complete, or every remaining `NOT RUN` row now has its appended evidence. `FAILED` or `BLOCKED` rows keep the issue open: a `FAILED` row gets a follow-up issue per AGENTS.md, a `BLOCKED` row names what is missing (usually a secret).
+   - Subjective checks no test can make go into one checklist comment per batch, grouped by screen, with the exact steps and expected result per item. The owner replies "verified" to close those issues; the run does not close them on its own.
 6. If a prod health check fails after deploy: stop, record it, and report. Do not start further merges. Lanes may finish the issue they are on, then stop.
 
 After merge, prod verification always finishes, even past the deadline.
@@ -192,6 +210,7 @@ Memory: `Get-CimInstance Win32_OperatingSystem | Select-Object FreePhysicalMemor
 - Parked for a big decision: one question each.
 - Prod test data created (what, where, and that it still needs deleting).
 - Branches and PRs left open, worktrees with uncommitted work, and why.
+- Open code-scanning alerts on main (number, rule, file), from `gh api "repos/{owner}/{repo}/code-scanning/alerts?state=open"`.
 - Free space on C:, and whether disk-hygiene cleanup ran.
 
 ## Settled defaults

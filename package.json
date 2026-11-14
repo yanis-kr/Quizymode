@@ -1,6 +1,10 @@
 {
   "type": "module",
   "scripts": {
+    "ac:gate": "node scripts/validation/ac-gate.mjs",
+    "ac:evidence": "node scripts/validation/ac-evidence.mjs",
+    "ac:test": "node --test scripts/tests/ac-validation.test.mjs",
+    "verify:prod": "playwright test --project=prod-verify",
     "screenshots:desktop": "playwright test --project=screenshots",
     "screenshots:mobile": "playwright test --project=screenshots-mobile",
     "screenshots:all": "playwright test --project=screenshots --project=screenshots-mobile",
