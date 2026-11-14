@@ -1,4 +1,4 @@
-# Provisioning candidate only. Verify actual exporter names, datasource and notification routing before applying.
+# Provisioned in Grafana Cloud (stack yaniskr) on 2026-11-13 for #637: folder "Quizymode", group "quizymode-media", uids qm-media-1 to qm-media-9 (same order as below). Datasource grafanacloud-prom. Notifications route by label service=quizymode to the email contact point quizymode-support (support@quizymode.com). Re-apply through the Grafana API or UI if these expressions change.
 groups:
   - name: quizymode-media
     interval: 1m
