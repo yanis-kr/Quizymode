@@ -106,6 +106,10 @@ Before pushing, run the repo pre-push verification workflow.
 
 If available, invoke the `quizymode-prepush` skill (`$quizymode-prepush`). Otherwise, follow the same workflow from the repo-managed skill at [`.agent-skills/quizymode-prepush/SKILL.md`](./.agent-skills/quizymode-prepush/SKILL.md).
 
+### PR findings
+
+`main` requires the `CodeQL` check, so a new code-scanning alert blocks the merge. A PR is not ready while it has an open code-scanning alert it introduced or an unanswered review comment (including bot findings). Fix each one, add a test where one fits, and reply on the thread with the fixing commit. Do not dismiss an alert or resolve a thread without a fix unless the owner says so. The commands are in the pre-push skill, § After the PR is open.
+
 ## Batched / Epic Issue Workflow
 
 To move through the backlog faster, related small/medium issues are bundled into a single `epic`-labeled GitHub issue and implemented together as one branch → one PR → one production deploy, instead of one PR per issue.

@@ -136,7 +136,14 @@ The integrator is the only writer of release state. At most one release is in fl
 
 ## Release
 
-1. Watch CI on the PR in the background, 45 minute timeout per run. On a red run: read `gh run view <run> --log-failed`, fix on the release branch, push. At most two fix pushes; after that drop the offending issue from the release branch if it is identifiable, otherwise mark the batch `environmental` and stop merging. On timeout, rerun once.
+1. Watch CI on the PR in the background, 45 minute timeout per run. A red PR has three sources, and a failed job log shows only the first, so read all three before fixing:
+   - Failed jobs: `gh run view <run> --log-failed`.
+   - Code scanning: the required `CodeQL` check fails on a new alert and has no job log. List the PR's alerts with `gh api "repos/{owner}/{repo}/code-scanning/alerts?ref=refs/pull/<n>/merge&state=open"` (rule, path, line).
+   - Review comments: `gh api repos/{owner}/{repo}/pulls/<n>/comments` (bots such as `github-advanced-security[bot]` post findings here).
+
+   Fix on the release branch with a test where one fits, push, and reply on each review thread with the fixing commit. Do not dismiss an alert or resolve a thread without a fix; a finding the run believes is a false positive is a big decision (§ Decision policy) and parks the issue that introduced it. Alerts that already exist on main are not this release's to fix; list them in the final report.
+
+   At most two fix pushes; after that drop the offending issue from the release branch if it is identifiable, otherwise mark the batch `environmental` and stop merging. On timeout, rerun once.
 2. If main moved, merge `origin/main` into the release branch and wait for green again. This should not happen with one autopilot running.
 3. Merge the PR. In the background, watch CI on main and then Deploy. Run postDeploy checks (`node scripts/wait-for-production-ready.js --expected-build-version <version>`).
 4. Prod verification is a smoke check, not a re-test. Check the deployed version and `/health` (`node scripts/wait-for-production-ready.js --expected-build-version <version>`), the anonymous pages of the batch's screens, and read-only SQL or curl where an AC needs prod data. Do not re-verify ACs that the CI run already proved (`unit`, `e2e`, `api` tests in CI).
@@ -203,6 +210,7 @@ Memory: `Get-CimInstance Win32_OperatingSystem | Select-Object FreePhysicalMemor
 - Parked for a big decision: one question each.
 - Prod test data created (what, where, and that it still needs deleting).
 - Branches and PRs left open, worktrees with uncommitted work, and why.
+- Open code-scanning alerts on main (number, rule, file), from `gh api "repos/{owner}/{repo}/code-scanning/alerts?state=open"`.
 - Free space on C:, and whether disk-hygiene cleanup ran.
 
 ## Settled defaults
