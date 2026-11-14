@@ -16,9 +16,9 @@ namespace Quizymode.Api.Tests.Features.LearningLoop;
 /// consecutive dates, written as a markdown table. It is skipped unless BOTH <c>QM_AGENT_SUPADB_CS</c> (a .NET connection string)
 /// and <c>QM_RUN_PROD_DRYRUN=1</c> are set, so a plain <c>dotnet test</c> never touches a remote database.
 ///
-/// Safety: the connection string is read inside this process and never logged, printed, or put in a message. The session is forced
-/// read-only (startup option <c>default_transaction_read_only=on</c>) and <c>SHOW default_transaction_read_only</c> must return
-/// <c>on</c> before anything else runs. The context is built without migrations or EnsureCreated, and <c>DryRunAsync</c> never saves.
+/// Safety: the connection string is read inside this process and never logged, printed, or put in a message. Everything runs in one explicit transaction
+/// that is set READ ONLY as its first statement (this also holds behind a transaction-mode pooler, which ignores session options);
+/// <c>SHOW transaction_read_only</c> must return <c>on</c> before anything else runs, and the transaction is rolled back. The context is built without migrations or EnsureCreated, and <c>DryRunAsync</c> never saves.
 /// Optional: <c>QM_DRYRUN_START</c> (yyyy-MM-dd, default tomorrow UTC) and <c>QM_DRYRUN_OUT</c> (output path, default a temp file).
 /// The output holds item text and categories only, no user data.
 /// </summary>
@@ -44,21 +44,29 @@ public sealed class DailyQuizProdDryRunTests
 
         try
         {
-            NpgsqlConnectionStringBuilder builder = new(connectionString!) { Options = "-c default_transaction_read_only=on" };
-            await using NpgsqlDataSource dataSource = NpgsqlDataSource.Create(builder.ConnectionString);
+            // A transaction-mode pooler (Supabase) ignores session options, so the read-only guard is the transaction itself:
+            // one connection, one explicit transaction, SET TRANSACTION READ ONLY as its first statement, rolled back at the end.
+            await using NpgsqlConnection connection = new(connectionString!);
+            await connection.OpenAsync();
+            await using NpgsqlTransaction transaction = await connection.BeginTransactionAsync();
 
-            await using (NpgsqlConnection connection = await dataSource.OpenConnectionAsync())
-            await using (NpgsqlCommand command = new("SHOW default_transaction_read_only", connection))
+            await using (NpgsqlCommand setReadOnly = new("SET TRANSACTION READ ONLY", connection, transaction))
             {
-                string? readOnly = (string?)await command.ExecuteScalarAsync();
-                readOnly.Should().Be("on", "the dry run must never use a writable session");
+                await setReadOnly.ExecuteNonQueryAsync();
+            }
+
+            await using (NpgsqlCommand show = new("SHOW transaction_read_only", connection, transaction))
+            {
+                string? readOnly = (string?)await show.ExecuteScalarAsync();
+                readOnly.Should().Be("on", "the dry run must never use a writable transaction");
             }
 
             DbContextOptions<ApplicationDbContext> options = new DbContextOptionsBuilder<ApplicationDbContext>()
-                .UseNpgsql(dataSource)
+                .UseNpgsql(connection)
                 .UseQueryTrackingBehavior(QueryTrackingBehavior.NoTracking)
                 .Options;
             await using ApplicationDbContext db = new(options);
+            await db.Database.UseTransactionAsync(transaction);
 
             selections = await Daily.DryRunAsync(db, start, Days, CancellationToken.None, logger);
 
@@ -74,6 +82,7 @@ public sealed class DailyQuizProdDryRunTests
                     i.QuestionImageKey != null))
                 .ToListAsync();
             facts = rows.ToDictionary(r => r.Id);
+            await transaction.RollbackAsync();
         }
         catch (Exception ex) when (ex is NpgsqlException or InvalidOperationException or ArgumentException or TimeoutException)
         {
