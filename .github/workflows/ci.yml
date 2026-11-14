@@ -150,9 +150,11 @@ jobs:
           cache: npm
           cache-dependency-path: src/Quizymode.Web/package-lock.json
 
+      # The root install is needed too: playwrightUserAgent.test.ts loads the repo-root playwright.config.ts.
       - name: Install dependencies
-        working-directory: src/Quizymode.Web
-        run: npm ci
+        run: |
+          npm ci
+          npm ci --prefix src/Quizymode.Web
 
       - name: Run frontend tests with coverage
         working-directory: src/Quizymode.Web
