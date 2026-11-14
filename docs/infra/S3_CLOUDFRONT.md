@@ -155,25 +155,19 @@ curl -s -o /dev/null -w "%{http_code}\n" https://quizymode-media-prod.s3.amazona
 
 After the first real upload (see LIGHTSAIL.md), `aws s3api head-object --bucket quizymode-media-prod --key <objectKey>` should show `ServerSideEncryption: AES256`, and an unauthenticated `curl` of the same object URL must answer 403.
 
-### CloudFront picture delivery (#405, AC 3.25.13, 3.25.14 and 7.7.7 to 7.7.8)
+### CloudFront picture delivery (decommissioned 2026-11-13, #405, AC 7.7.7)
 
-Resources that exist in production (created 2026-11-12, owner-approved):
+Production delivers pictures through the API (`Media__Delivery__Mode=Proxy`). The CloudFront picture distribution was disabled and then deleted on 2026-11-13 by owner decision: a withdrawal takes effect immediately only in Proxy mode, while a CloudFront URL stays valid for up to its lifetime (AC 3.25.14).
 
-- Distribution `E1YN0DZTTFI4QC`, domain `ddrhdjampvqr4.cloudfront.net`, price class 100, origin `quizymode-media-prod.s3.us-east-1.amazonaws.com` through origin access control `E2ESOI5OOWPD8K`, viewer protocol `https-only`, cache policy to be switched from CachingOptimized to the managed CachingDisabled policy `4135ea2d-6df8-44a3-9df3-4b5a84be39ad` before CloudFront mode is enabled (owner decision 2026-11-13; pictures are private and withdrawable, so nothing is cached at the edge), trusted key group `8cb5b6e3-610d-4134-ba7f-f2bc19014106`.
-- Public key `K2U4E72VB469U1` (in that key group). Its private key is in the Lightsail environment only, as `Media__Delivery__PrivateKeyBase64`.
-- Response headers policy `2364fdd6-b5c4-4ddf-90e9-0a0247acb237` (CORS for `https://www.quizymode.com`, `https://quizymode.com`, `http://localhost:7000`; `nosniff`; `Content-Security-Policy: default-src 'none'; sandbox`).
-- Bucket policy statement `AllowCloudFrontOacRead`, allowing only that distribution ARN to read `normalized/*`. The two deny statements stay.
+What was removed:
 
-Setting it up in the Lightsail environment (never print the key):
+- Distribution `E1YN0DZTTFI4QC` (disabled, then deleted). Its origin access control and response headers policy are unused and can be deleted in the console.
+- Trusted key group `qm-media-key-group` (deleted) and its public key.
+- The CloudFront private key: not set in the Lightsail environment (checked by variable name on 2026-11-13).
 
-```bash
-# base64 of the PEM, one line, no newlines; set the value from a file, not from the command line
-base64 -w0 cf-private.pem > cf-private.b64   # then delete cf-private.pem and cf-private.b64 after the variable is set
-```
+The web app's distribution `EH1DS9REH8KR5` is unaffected. Bucket policy statement `AllowCloudFrontOacRead` must be removed with the origin access control if it still exists; the two deny statements stay.
 
-Set `Media__Delivery__Mode=CloudFront` together with the other four variables in one new deployment (LIGHTSAIL.md table). Roll back by setting the mode to `Proxy` and deploying again; no data changes.
-
-Test with a signed URL against any object under `normalized/`: unsigned returns 403; a signed URL returns 200 `image/webp`; the same URL after its `Expires` returns 403.
+To re-enable CloudFront later, a new owner decision and a new AC are required. The code path (`Media__Delivery__Mode=CloudFront`) answers `503 Media.StorageUnavailable` until its settings are complete, so it cannot be enabled by accident.
 
 ### Accepted deviations
 

@@ -29,6 +29,14 @@ it("leaves a stale report unavailable without unbound or asset fallback", async 
   await screen.findByText("Picture couldn't load"); expect(screen.queryByRole("img")).not.toBeInTheDocument();
   expect(mediaApi.content).toHaveBeenCalledExactlyOnceWith("item-1", "question", undefined, expect.any(AbortSignal), 7);
 });
+it("shows withdraw and dismiss as clickable buttons with a pointer cursor", async () => {
+  await showReport(report.revision);
+  for (const name of ["Withdraw picture everywhere", "Reviewed: no withdrawal"]) {
+    const button = screen.getByRole("button", { name });
+    expect(button).toHaveClass("cursor-pointer");
+    expect(button).toHaveClass("rounded", "border", "px-3");
+  }
+});
 it.each([undefined, 0, -1])("fails closed without a valid report revision %s", async revision => {
   await showReport(revision); await waitFor(() => expect(screen.getByText("Picture isn't available")).toBeInTheDocument());
   expect(mediaApi.content).not.toHaveBeenCalled();
