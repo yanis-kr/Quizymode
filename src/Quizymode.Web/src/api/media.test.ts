@@ -19,6 +19,11 @@ describe("Picture report errors", () => {
     expect(pictureReportErrorMessage(error("Media.ReportQuota"))).toMatch(/too many picture reports/);
     expect(pictureReportErrorMessage(error("Media.ReportQuota", "7200"))).not.toMatch(/internal details/);
   });
+  it("uses a short-window message for a 429 that is not the daily report allowance", () => {
+    const message = pictureReportErrorMessage(error("Too Many Requests", "600"));
+    expect(message).toBe("Too many reports in a short time. Try again in a few minutes.");
+    expect(message).not.toMatch(/today/);
+  });
   it("uses a generic message for other failures", () => {
     expect(pictureReportErrorMessage(new Error("network"))).toMatch(/could not be sent/);
   });

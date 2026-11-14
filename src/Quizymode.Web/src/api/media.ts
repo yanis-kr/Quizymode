@@ -47,9 +47,11 @@ export function mediaUploadErrorMessage(error: unknown): string {
   return Number.isFinite(retryAfter) && retryAfter > 0 && retryAfter <= 86400 ? `${message} Retry after ${Math.ceil(retryAfter)} seconds.` : message;
 }
 
-/** Reporting a picture: a 429 means the daily report allowance was reached; anything else is a generic retry message. */
+/** Reporting a picture: only Media.ReportQuota is the daily allowance; any other 429 is the short-window burst or generic limit. */
 export function pictureReportErrorMessage(error: unknown): string {
   if (isAxiosError(error) && error.response?.status === 429) {
+    const code = error.response.data?.title as string | undefined;
+    if (code !== "Media.ReportQuota") return "Too many reports in a short time. Try again in a few minutes.";
     const retryAfter = Number(error.response.headers?.["retry-after"]);
     const hours = Number.isFinite(retryAfter) && retryAfter > 0 ? Math.max(1, Math.ceil(retryAfter / 3600)) : null;
     return hours ? `You have sent the maximum number of picture reports for today. Try again in about ${hours} hour${hours === 1 ? "" : "s"}.` : "You have sent too many picture reports. Please try again later.";
