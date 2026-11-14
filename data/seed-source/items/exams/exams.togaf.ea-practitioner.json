@@ -1,143 +1,339 @@
 [
   {
-    "itemId": "82b4d115-e788-4d77-9863-25c3f4f4ce50",
+    "itemId": "fbb80d0b-b530-4c2a-a99b-98b80a7b81b3",
     "category": "exams",
     "navigationKeyword1": "togaf",
     "navigationKeyword2": "ea-practitioner",
-    "question": "In TOGAF, which phase produces a detailed plan for implementing the architecture?",
-    "correctAnswer": "Phase F: Migration Planning",
+    "question": "A CFO wants a 20% run-cost cut this year. The CIO wants a platform replacement that cuts cost over three years but needs upfront investment. The sponsor wants a product launch in six months. In Phase A, what is the best next action?",
+    "correctAnswer": "Document each concern and the conflicts between them, then take the trade-offs to the sponsor for a scope decision before approving the Architecture Vision",
     "incorrectAnswers": [
-      "Phase A: Architecture Vision",
-      "Phase C: Information Systems Architectures",
-      "Phase H: Architecture Change Management"
+      "Approve the CIO's platform plan, since it has the largest long-term value, and address the CFO later in Phase G",
+      "Build the full target architecture for all three concerns, then present options at a later review",
+      "Ask the CFO to make the cut, with the sponsor's agreement, and proceed without further analysis"
     ],
-    "explanation": "The Open Group says Phase F results in a detailed plan for the implementation of the architecture.",
+    "explanation": "Phase A is where conflicting concerns are surfaced and resolved at the scope level. Choosing the CIO's plan first would fix scope before the sponsor has agreed the trade-offs. Building the full target first is premature, because the scope is not yet decided.",
     "keywords": [
       "togaf",
       "ea-practitioner",
-      "migration-planning"
+      "stakeholders",
+      "architecture-vision",
+      "conflict"
     ],
-    "source": "https://www.opengroup.org/soa/source-book/togaf/p4.htm"
+    "source": "https://pubs.opengroup.org/togaf-standard/adm/index.html"
   },
   {
-    "itemId": "003d3f4c-1f62-4f6d-ab47-2880ab4bb67b",
+    "itemId": "8364bf83-19ef-4bb7-8e1c-31996a2c6aa5",
     "category": "exams",
     "navigationKeyword1": "togaf",
     "navigationKeyword2": "ea-practitioner",
-    "question": "What is the primary purpose of Phase G in the ADM?",
-    "correctAnswer": "Implementation governance and ensuring conformance with the architecture",
+    "question": "A sponsor wants a 90-day proof of value for one business unit. A team proposes covering the whole enterprise in the first iteration to avoid rework later. What is the best approach?",
+    "correctAnswer": "Set the scope in the Architecture Vision to the one unit, and record the enterprise-wide items as later iterations",
     "incorrectAnswers": [
-      "Defining the architecture framework",
-      "Modeling only business capabilities",
-      "Creating the initial statement of architecture work"
+      "Expand the scope to the enterprise to avoid rework later",
+      "Start Phase B for all units and reduce the detail in each",
+      "Skip the Architecture Vision and start Phase D for the unit"
     ],
-    "explanation": "The Open Group says Phase G involves architects in implementation governance to improve implementation quality and ensure conformance with the architecture.",
+    "explanation": "A bounded scope agreed with the sponsor is what makes a time-boxed proof of value achievable. Recording enterprise-wide items for later iterations keeps the rework risk visible without widening the scope now.",
     "keywords": [
       "togaf",
       "ea-practitioner",
-      "implementation-governance"
+      "architecture-vision",
+      "scope"
     ],
-    "source": "https://www.opengroup.org/soa/source-book/togaf/p4.htm"
+    "source": "https://pubs.opengroup.org/togaf-standard/adm/index.html"
   },
   {
-    "itemId": "8b877c23-6aeb-4c3a-8b82-b198fb742599",
+    "itemId": "2128166a-6c24-43ae-a2d0-f4b9a88f9875",
     "category": "exams",
     "navigationKeyword1": "togaf",
     "navigationKeyword2": "ea-practitioner",
-    "question": "Which phase is concerned with establishing scope, key stakeholders, concerns, and business requirements for the initiative?",
-    "correctAnswer": "Phase A: Architecture Vision",
+    "question": "During Phase C, a regulator introduces new data residency rules. Phase D work has already started. What is the best action?",
+    "correctAnswer": "Raise the change through requirements management, assess its impact on Phases B to D, and iterate back to the affected phase with stakeholder approval",
     "incorrectAnswers": [
-      "Phase D: Technology Architecture",
-      "Phase G: Implementation Governance",
-      "Preliminary Phase only"
+      "Finish Phase D as planned and raise a change request in Phase H",
+      "Add the rules to Phase D as hosting constraints only, without revisiting Phase C",
+      "Pause all Phase D work until the full baseline has been documented again"
     ],
-    "explanation": "The Open Group says Phase A captures scope and identifies key stakeholders, concerns, and business requirements.",
+    "explanation": "Residency affects data placement, so the Data Architecture must be revisited. Treating it as a hosting-only constraint is tempting but leaves Phase C wrong. Deferring it to Phase H builds a known non-compliance.",
     "keywords": [
       "togaf",
       "ea-practitioner",
-      "architecture-vision"
+      "requirements-change",
+      "iteration"
     ],
-    "source": "https://www.opengroup.org/soa/source-book/togaf/p4.htm"
+    "source": "https://pubs.opengroup.org/togaf-standard/adm/index.html"
   },
   {
-    "itemId": "7c70a02b-eb30-4be7-8dad-0a2782163f82",
+    "itemId": "4dd974ed-c0df-479c-8029-e1a4f84ca62a",
     "category": "exams",
     "navigationKeyword1": "togaf",
     "navigationKeyword2": "ea-practitioner",
-    "question": "What does The Open Group say TOGAF Practitioner strengthens compared with Foundation-level capability?",
-    "correctAnswer": "Application and analysis of the TOGAF Standard in real architecture work",
+    "question": "Gap analysis shows the target needs a customer-data platform. It depends on an identity service that is scheduled after the target date. What is the best next step?",
+    "correctAnswer": "Record the dependency and agree with stakeholders to bring the identity service forward or adjust the target timing",
     "incorrectAnswers": [
-      "Only memorization of glossary terms",
-      "Only knowledge of exam logistics",
-      "Only awareness that the TOGAF Library exists"
+      "Deliver the platform with a temporary local identity store and plan to migrate later",
+      "Move the customer-data platform into a later transition architecture without consulting the sponsor",
+      "Raise the issue at the Phase G compliance review when the platform project starts"
     ],
-    "explanation": "The Open Group's competency comparison says Practitioner focuses on application and analysis of the TOGAF Standard in real architecture work.",
+    "explanation": "The dependency must be explicit and the sequence agreed. A temporary identity store is tempting but adds unplanned technical debt. Moving the platform without the sponsor changes the target unilaterally.",
     "keywords": [
       "togaf",
       "ea-practitioner",
-      "competency"
+      "gap-analysis",
+      "dependencies"
     ],
-    "source": "https://help.opengroup.org/hc/en-us/articles/32127597178258-TOGAF-Enterprise-Architecture-Foundation-vs-Practitioner-Competency-Comparison"
+    "source": "https://pubs.opengroup.org/togaf-standard/adm/index.html"
   },
   {
-    "itemId": "c353bda3-78d1-4f2d-b0cb-0407780dee75",
+    "itemId": "0b8a458c-ddd9-40c8-a64a-845e00044965",
     "category": "exams",
     "navigationKeyword1": "togaf",
     "navigationKeyword2": "ea-practitioner",
-    "question": "According to The Open Group benefits matrix, what does TOGAF Practitioner enable an enterprise architect to do better?",
-    "correctAnswer": "Apply the ADM end-to-end and support transformation and governance activities",
+    "question": "Twelve work packages have been identified, but funding covers four in the next year. Stakeholders want early business value. In migration planning, what is the best approach?",
+    "correctAnswer": "Prioritize the work packages by business value, dependency and risk, and define a transition architecture for each funding increment",
     "incorrectAnswers": [
-      "Replace all project management processes",
-      "Skip stakeholder analysis in favor of technical modeling",
-      "Use only one fixed architecture viewpoint"
+      "Fund the four packages with the highest individual business value",
+      "Fund the four packages with the lowest cost and risk to show early progress",
+      "Fund the foundational infrastructure packages first, then deliver business value later"
     ],
-    "explanation": "The Open Group says Practitioner strengthens the ability to apply the ADM end-to-end and supports transformation and governance activities.",
+    "explanation": "Highest value alone is tempting, but it ignores dependencies, so value may not actually be delivered. Combining value, dependency and risk into defined transitions gives credible increments.",
     "keywords": [
       "togaf",
       "ea-practitioner",
-      "adm"
+      "work-packages",
+      "transition-architecture"
     ],
-    "source": "https://help.opengroup.org/hc/en-us/articles/32127520103186-Role-Based-Benefits-Matrix-TOGAF-Enterprise-Architecture-Practitioner"
+    "source": "https://pubs.opengroup.org/togaf-standard/adm/index.html"
   },
   {
-    "itemId": "b368c3d5-3f60-4e0e-8956-a732a40ebd5d",
+    "itemId": "75ead0cd-f7f5-479a-a3d2-18cc169642a4",
     "category": "exams",
     "navigationKeyword1": "togaf",
     "navigationKeyword2": "ea-practitioner",
-    "question": "Which TOGAF phases are explicitly linked by The Open Group to plateau, gap, and work package modeling when used with ArchiMate?",
-    "correctAnswer": "Phase E and Phase F",
+    "question": "Migration planning reveals that the plan depends on a legacy system scheduled for retirement, and the skills risk is high. What is the best action?",
+    "correctAnswer": "Assess the implementation factors and risks, add a contingency transition architecture, and agree mitigations with the risk owners",
     "incorrectAnswers": [
-      "Phase B and Phase C",
-      "Phase A and Phase H",
-      "Preliminary and Phase G"
+      "Extend the legacy system's life to the end of the program and remove the dependency risk",
+      "Bring in contractors to cover the skills gap and keep the plan unchanged",
+      "Record both risks in the risk register and review them at the next Phase G checkpoint"
     ],
-    "explanation": "The Open Group says ArchiMate supports TOGAF Phase E and Phase F with plateau, gap, and work package modeling.",
+    "explanation": "Logging the risks is tempting, but it does not change the plan. Extending the legacy system or adding contractors addresses one risk each, without assessment. An explicit factor assessment and a contingency transition deal with both.",
     "keywords": [
       "togaf",
       "ea-practitioner",
-      "phase-e",
-      "phase-f"
+      "migration-planning",
+      "risk"
     ],
-    "source": "https://help.opengroup.org/hc/en-us/articles/32115987894930-How-the-ArchiMate-Language-and-the-TOGAF-Standard-Complement-Each-Other"
+    "source": "https://pubs.opengroup.org/togaf-standard/adm-techniques/chap06.html"
   },
   {
-    "itemId": "8799e0ef-b3aa-4056-acad-aa22e6deac44",
+    "itemId": "497b7eac-cf87-433e-b2fb-71f92a4d7e32",
     "category": "exams",
     "navigationKeyword1": "togaf",
     "navigationKeyword2": "ea-practitioner",
-    "question": "Why would a TOGAF practitioner use The Open Group's template deliverables?",
-    "correctAnswer": "To structure architecture work products and align them with guidance in the standard",
+    "question": "A project team wants to deploy a service that breaks an approved data principle. The deadline is next week. What is the best course?",
+    "correctAnswer": "Submit the deviation to the Architecture Board with the business justification and options, and record the decision in the Governance Log",
     "incorrectAnswers": [
-      "To replace all stakeholder interviews",
-      "To avoid creating any architecture artifacts",
-      "To bypass governance reviews"
+      "As lead architect, grant a time-limited dispensation yourself and inform the Board afterward",
+      "Ask the Architecture Board to amend the data principle so that the service complies",
+      "Delay the deployment until the service can be redesigned to comply with the principle"
     ],
-    "explanation": "The Open Group says its template deliverables help structure architecture work products and ensure alignment with the standard.",
+    "explanation": "Dispensations are the Board's decision, so granting one yourself is the tempting but wrong shortcut. Amending a principle for one project weakens it. Delaying ignores a real business need without a governed decision.",
     "keywords": [
       "togaf",
       "ea-practitioner",
-      "deliverables"
+      "compliance",
+      "governance"
     ],
-    "source": "https://help.opengroup.org/hc/en-us/articles/21726647171730-Are-There-Any-Template-Deliverables-for-the-TOGAF-Standard"
+    "source": "https://pubs.opengroup.org/togaf-standard/adm/index.html"
+  },
+  {
+    "itemId": "49394858-21ed-4e4b-9fe4-2e38763a95ee",
+    "category": "exams",
+    "navigationKeyword1": "togaf",
+    "navigationKeyword2": "ea-practitioner",
+    "question": "Option A delivers 70% of the expected benefit at half the cost using a standard product. Option B is fully customized, delivers 100% of the benefit, but is delayed by eighteen months. Stakeholders value early benefit. What is the best recommendation?",
+    "correctAnswer": "Recommend option A, with a defined path to evolve it, and show the sponsor the value and risk trade-off",
+    "incorrectAnswers": [
+      "Recommend option B, since its full benefit justifies the delay",
+      "Present both options without a recommendation",
+      "Choose option A but customize it to avoid lock-in"
+    ],
+    "explanation": "The stakeholders' value criteria favor early benefit, and option A meets most of it at lower cost and risk. A recommendation with an evolution path and an explicit trade-off is more useful than a neutral list.",
+    "keywords": [
+      "togaf",
+      "ea-practitioner",
+      "business-value",
+      "trade-offs"
+    ],
+    "source": "https://www.opengroup.org/togaf/10thedition"
+  },
+  {
+    "itemId": "c7171c4a-5012-4665-8722-b9fd571624e0",
+    "category": "exams",
+    "navigationKeyword1": "togaf",
+    "navigationKeyword2": "ea-practitioner",
+    "question": "A readiness assessment shows that one business unit has low readiness for a planned transformation (weak sponsorship, low skills). The program wants to keep its schedule. What is the best action?",
+    "correctAnswer": "Treat the readiness factors as risks, plan mitigating actions, and reflect them in the sequencing of work packages",
+    "incorrectAnswers": [
+      "Keep the schedule and rely on training at go-live to close the gap",
+      "Remove the business unit from the program scope",
+      "Replace the unit's sponsor before continuing the architecture work"
+    ],
+    "explanation": "Business Transformation Readiness Assessment findings should shape migration planning. Training at go-live is tempting, but it is too late to fix weak sponsorship. Removing the unit or its sponsor goes beyond the architect's remit.",
+    "keywords": [
+      "togaf",
+      "ea-practitioner",
+      "architecture-principles",
+      "governance"
+    ],
+    "source": "https://www.opengroup.org/togaf/10thedition"
+  },
+  {
+    "itemId": "616d71b4-f859-4c75-8cb0-138558d4c523",
+    "category": "exams",
+    "navigationKeyword1": "togaf",
+    "navigationKeyword2": "ea-practitioner",
+    "question": "Two stakeholders give conflicting requirements for the same component: one wants faster response times, the other full security logging. What is the best approach?",
+    "correctAnswer": "Prioritize the requirements against the business drivers with both stakeholders, and record the trade-off and agreed resolution in requirements management",
+    "incorrectAnswers": [
+      "Adopt the security requirement, because compliance risk outweighs performance",
+      "Ask the sponsor to choose between the two requirements",
+      "Design asynchronous logging so both are met and close the conflict without stakeholder review"
+    ],
+    "explanation": "A technical compromise is tempting, but it may not satisfy either party and leaves the decision untraced. Going straight to the sponsor skips the analysis that should come first.",
+    "keywords": [
+      "togaf",
+      "ea-practitioner",
+      "requirements-management",
+      "conflict"
+    ],
+    "source": "https://pubs.opengroup.org/togaf-standard/adm/index.html"
+  },
+  {
+    "itemId": "a845b74f-fba8-4ae4-994b-e89150ac132a",
+    "category": "exams",
+    "navigationKeyword1": "togaf",
+    "navigationKeyword2": "ea-practitioner",
+    "question": "A three-year program must show business value after the first year, before the target is reached. What is the best action?",
+    "correctAnswer": "Define transition architectures with measurable business value at each state, and confirm them with stakeholders",
+    "incorrectAnswers": [
+      "Run a quick-win project outside the architecture to deliver year-one value",
+      "Define one transition architecture at the midpoint and measure benefits at the end",
+      "Reduce the target scope so that it can be reached within one year"
+    ],
+    "explanation": "A quick win outside the architecture is tempting, but it creates divergence and rework. Measured transitions deliver early value along the planned path.",
+    "keywords": [
+      "togaf",
+      "ea-practitioner",
+      "transition-architecture",
+      "business-value"
+    ],
+    "source": "https://pubs.opengroup.org/togaf-standard/adm/chap10.html"
+  },
+  {
+    "itemId": "d383732d-a5c5-45e1-9833-cf0f0b0c3e5f",
+    "category": "exams",
+    "navigationKeyword1": "togaf",
+    "navigationKeyword2": "ea-practitioner",
+    "question": "A business-critical legacy system cannot be retired until a regulator approves its replacement. What is the best action?",
+    "correctAnswer": "Plan a coexistence transition architecture, with a retirement gate tied to the regulatory approval",
+    "incorrectAnswers": [
+      "Keep the replacement out of the plan until the regulator approves it",
+      "Retire the legacy system on schedule and run the replacement under a provisional arrangement",
+      "Plan the cut-over for the expected approval date and treat a delay as a risk"
+    ],
+    "explanation": "Planning on an expected date is tempting, but it makes the plan depend on a decision the enterprise does not control. A coexistence state with an explicit gate makes the dependency manageable.",
+    "keywords": [
+      "togaf",
+      "ea-practitioner",
+      "migration-planning",
+      "transition-architecture"
+    ],
+    "source": "https://pubs.opengroup.org/togaf-standard/adm/chap10.html"
+  },
+  {
+    "itemId": "e7bb9cf6-8a36-4e84-9d1b-70f83d3b6172",
+    "category": "exams",
+    "navigationKeyword1": "togaf",
+    "navigationKeyword2": "ea-practitioner",
+    "question": "A product team changes its API design weekly, while the Architecture Board meets monthly. What is the best approach?",
+    "correctAnswer": "Agree architecture guardrails and conformance checks the team applies continuously, with Board review for exceptions",
+    "incorrectAnswers": [
+      "Batch the weekly changes for review at each monthly Board meeting",
+      "Delegate full architecture authority to the product team's lead",
+      "Hold weekly Board meetings for this team"
+    ],
+    "explanation": "Monthly batching is tempting, but reviews then lag delivery and lose value. Guardrails keep conformance continuous, while the Board's time goes to exceptions.",
+    "keywords": [
+      "togaf",
+      "ea-practitioner",
+      "governance",
+      "agile"
+    ],
+    "source": "https://pubs.opengroup.org/togaf-standard/adm/index.html"
+  },
+  {
+    "itemId": "41d0ebd2-14ac-4822-b1c8-fda64c18ef12",
+    "category": "exams",
+    "navigationKeyword1": "togaf",
+    "navigationKeyword2": "ea-practitioner",
+    "question": "Gap analysis identifies a capability gap that business owners consider unimportant, but a regulator requires it. What is the best action?",
+    "correctAnswer": "Treat the regulatory requirement as a constraint, record the rationale, and agree its timing with the business owners",
+    "incorrectAnswers": [
+      "Prioritize the gap below business-valued items, as the owners requested",
+      "Address it immediately ahead of all other work packages",
+      "Escalate the disagreement to the Architecture Board for a ruling"
+    ],
+    "explanation": "Escalating is tempting, but there is nothing to rule on. A regulation is a constraint, so only its sequencing is open to agreement.",
+    "keywords": [
+      "togaf",
+      "ea-practitioner",
+      "gap-analysis",
+      "requirements"
+    ],
+    "source": "https://pubs.opengroup.org/togaf-standard/adm/index.html"
+  },
+  {
+    "itemId": "b11357c3-1e9b-4d54-84d5-b30e31081e4a",
+    "category": "exams",
+    "navigationKeyword1": "togaf",
+    "navigationKeyword2": "ea-practitioner",
+    "question": "The benefits case for a shared services program depends on reuse, but only one team uses the services. What is the best next action?",
+    "correctAnswer": "Review benefit realization, identify what blocks the other teams, and set up reuse incentives and governance",
+    "incorrectAnswers": [
+      "Mandate reuse through an architecture principle and compliance checks",
+      "Revise the benefits case to reflect single-team use",
+      "Expand the services' features so that they are more attractive to other teams"
+    ],
+    "explanation": "A mandate is tempting, but it does not remove the blockers. Revising the case accepts failure, and adding features guesses at the cause without analysis.",
+    "keywords": [
+      "togaf",
+      "ea-practitioner",
+      "business-value",
+      "reuse"
+    ],
+    "source": "https://www.opengroup.org/togaf/10thedition"
+  },
+  {
+    "itemId": "b7d33445-1453-41fc-bd49-eb4ebf28e893",
+    "category": "exams",
+    "navigationKeyword1": "togaf",
+    "navigationKeyword2": "ea-practitioner",
+    "question": "A major vendor announces a change that affects the target technology while Phase G work is underway. What is the best course?",
+    "correctAnswer": "Assess the change through architecture change management, evaluate its impact on contracts and work packages, and decide with the Architecture Board",
+    "incorrectAnswers": [
+      "Let the implementation project absorb the change within its own scope",
+      "Pause all implementation until a new target technology architecture is agreed",
+      "Ask the project to re-plan around the vendor's roadmap and update the contract"
+    ],
+    "explanation": "Leaving it to the project is tempting, but it may break conformance with the architecture unnoticed. Pausing everything is premature before the impact is assessed.",
+    "keywords": [
+      "togaf",
+      "ea-practitioner",
+      "change-management",
+      "governance"
+    ],
+    "source": "https://pubs.opengroup.org/togaf-standard/adm/index.html"
   }
 ]

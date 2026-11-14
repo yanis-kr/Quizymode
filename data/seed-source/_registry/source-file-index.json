@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-11-12T20:37:09.862757+00:00",
-  "totalItems": 14179,
+  "generatedAt": "2026-11-14T06:15:04.429019+00:00",
+  "totalItems": 14234,
   "files": [
     {
       "path": "data/seed-source/items/business/business.accounting.audit.json",
@@ -1623,24 +1623,24 @@
       "category": "exams",
       "nav1": "togaf",
       "nav2": "ea-foundation",
-      "itemCount": 7,
-      "modifiedAt": "2026-04-05T10:34:42-05:00"
+      "itemCount": 40,
+      "modifiedAt": "2026-11-14T06:15:04.429019+00:00"
     },
     {
       "path": "data/seed-source/items/exams/exams.togaf.ea-practitioner.json",
       "category": "exams",
       "nav1": "togaf",
       "nav2": "ea-practitioner",
-      "itemCount": 7,
-      "modifiedAt": "2026-04-05T10:34:42-05:00"
+      "itemCount": 16,
+      "modifiedAt": "2026-11-14T06:15:04.429019+00:00"
     },
     {
       "path": "data/seed-source/items/exams/exams.togaf.general-togaf.json",
       "category": "exams",
       "nav1": "togaf",
       "nav2": "general-togaf",
-      "itemCount": 7,
-      "modifiedAt": "2026-04-05T10:34:42-05:00"
+      "itemCount": 20,
+      "modifiedAt": "2026-11-14T06:15:04.429019+00:00"
     },
     {
       "path": "data/seed-source/items/geography/geography.capitals.africa.json",
