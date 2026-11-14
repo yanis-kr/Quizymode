@@ -2,6 +2,22 @@
 
 This guide explains how to configure OpenTelemetry and logging to send telemetry data from your QuizyMode API to Grafana Cloud.
 
+## Current production configuration (authoritative, updated 2026-11-13, #637)
+
+The production API exports telemetry with the `Grafana.OpenTelemetry` `UseGrafana()` pipeline. The exporter is chosen from these container variables (names only; values are secrets or identifiers kept in the Lightsail deployment):
+
+| Variable | Purpose |
+|---|---|
+| `GRAFANA_CLOUD_ZONE` | Stack zone, `prod-us-east-3` for the production stack |
+| `GRAFANA_CLOUD_INSTANCE_ID` | Stack instance id (numeric) |
+| `GRAFANA_CLOUD_API_KEY` | Access policy token with metrics, logs and traces write scopes (secret) |
+
+When all three are present the SDK uses the Grafana Cloud exporter. When any is missing it falls back to a local agent exporter, and no telemetry reaches Grafana Cloud. The OTLP gateway for this zone is `https://otlp-gateway-prod-us-east-3.grafana.net/otlp` (no `/tempo` or other suffix). The older `GrafanaCloud:InstanceId` and `APP_GrafanaCloud__*` names and the `us-central-0` gateway in the sections below are legacy and do not apply to the current stack.
+
+Dashboards and alert rules: see `infra/grafana/media-dashboard.json` and `infra/grafana/media-alerts.rules.yml`, and `docs/infra/MEDIA_OPERATIONS.md`. Admin pages do not query Grafana; they link out to dashboards (see #641).
+
+Verification after a deploy: the `quizymode_media_pending` series appears in the `grafanacloud-prom` datasource, and API traces appear in `grafanacloud-traces`.
+
 ## Prerequisites
 
 - A Grafana Cloud account (free tier available at https://grafana.com/auth/sign-up/)
