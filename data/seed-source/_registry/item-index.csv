@@ -2228,27 +2228,82 @@ a07bab15-c05c-4ccf-94e4-b6a5959d932b,exams,sat,writing,Which sentence most conci
 be3a653d-24db-4342-96d5-29dc7b523973,exams,sat,writing,"Which transition best completes the sentence: ""The",data/seed-source/items/exams/exams.sat.writing.json
 77a67669-c645-4a44-ad6e-f369a3cfbc52,exams,sat,writing,Which version correctly fixes the sentence boundar,data/seed-source/items/exams/exams.sat.writing.json
 98827f6c-7070-4b0e-941a-8b5bf6a20fd3,exams,sat,writing,Which word choice is most appropriate for a formal,data/seed-source/items/exams/exams.sat.writing.json
-6b4be6c3-4fa7-4287-8e82-e541d3e2f915,exams,togaf,ea-foundation,What central role does Requirements Management pla,data/seed-source/items/exams/exams.togaf.ea-foundation.json
-fffcfc70-b36d-4953-8c27-42476944fdf7,exams,togaf,ea-foundation,What is the core method at the heart of TOGAF?,data/seed-source/items/exams/exams.togaf.ea-foundation.json
-5afe75a6-d829-4d2c-bcff-60c303c60f94,exams,togaf,ea-foundation,What is the main purpose of Phase A in the TOGAF A,data/seed-source/items/exams/exams.togaf.ea-foundation.json
+a2ea8c60-b37d-45dd-946b-22888b19297f,exams,togaf,ea-foundation,A solution implements every feature of the archite,data/seed-source/items/exams/exams.togaf.ea-foundation.json
+929737e1-54ac-47ad-ad94-99b326da892c,exams,togaf,ea-foundation,"After implementation, a new regulation requires a ",data/seed-source/items/exams/exams.togaf.ea-foundation.json
+4b49db92-4022-4364-a64a-0337b5c79fc5,exams,togaf,ea-foundation,An architect has identified risks such as a skills,data/seed-source/items/exams/exams.togaf.ea-foundation.json
+76cb1d60-9049-418a-a58f-cf901100a56d,exams,togaf,ea-foundation,An architect is developing a detailed target busin,data/seed-source/items/exams/exams.togaf.ea-foundation.json
+12456a7a-8473-40d1-ad24-f96746f10330,exams,togaf,ea-foundation,An architect needs a grid showing which applicatio,data/seed-source/items/exams/exams.togaf.ea-foundation.json
+c21a180f-c58d-4517-89e3-e467b45e2f7f,exams,togaf,ea-foundation,An architect needs to check a solution against arc,data/seed-source/items/exams/exams.togaf.ea-foundation.json
+3f9b55c0-04d0-4737-9e08-78de89680478,exams,togaf,ea-foundation,An architect needs to define the application and d,data/seed-source/items/exams/exams.togaf.ea-foundation.json
+421e3183-324d-48b7-a6f9-7c71fd2ad62b,exams,togaf,ea-foundation,"Business units have run autonomously for years, an",data/seed-source/items/exams/exams.togaf.ea-foundation.json
+2e3ff422-b0cc-48b5-b395-d914b0924bdf,exams,togaf,ea-foundation,"In TOGAF, what is a stakeholder concern?",data/seed-source/items/exams/exams.togaf.ea-foundation.json
+7aeac815-2fb3-4709-90e4-a35aefcf5d91,exams,togaf,ea-foundation,"In the architecture levels used by TOGAF, which ar",data/seed-source/items/exams/exams.togaf.ea-foundation.json
+36150a24-5eba-41cd-abe1-d71d2c42719a,exams,togaf,ea-foundation,In which phase are candidate work packages and tra,data/seed-source/items/exams/exams.togaf.ea-foundation.json
+4323aca5-67a4-4111-bd1a-49487f690f5a,exams,togaf,ea-foundation,The Architecture Content Framework describes archi,data/seed-source/items/exams/exams.togaf.ea-foundation.json
+ce14515e-4838-4337-8903-2a2f71acfe53,exams,togaf,ea-foundation,What does an architecture contract agree between t,data/seed-source/items/exams/exams.togaf.ea-foundation.json
+96a621a6-53d2-46bb-be1f-5e098f58b6ed,exams,togaf,ea-foundation,What does an architecture description consist of i,data/seed-source/items/exams/exams.togaf.ea-foundation.json
+e028d1b4-eef3-499d-9b62-3881797988d7,exams,togaf,ea-foundation,What is a business scenario used for in the ADM?,data/seed-source/items/exams/exams.togaf.ea-foundation.json
+0c97776b-b378-4078-9b29-0578bd697505,exams,togaf,ea-foundation,What is the defining characteristic of the ADM cyc,data/seed-source/items/exams/exams.togaf.ea-foundation.json
+5afe75a6-d829-4d2c-bcff-60c303c60f94,exams,togaf,ea-foundation,What is the main purpose of Phase A in the ADM?,data/seed-source/items/exams/exams.togaf.ea-foundation.json
+a6dc078e-c06d-4e99-b007-b028d886b79e,exams,togaf,ea-foundation,What is the purpose of a catalog in the Architectu,data/seed-source/items/exams/exams.togaf.ea-foundation.json
+2719f258-c14a-4abb-9b9c-e366bd33dadf,exams,togaf,ea-foundation,What is the purpose of gap analysis in the ADM?,data/seed-source/items/exams/exams.togaf.ea-foundation.json
 e2e92ee2-84bd-47b5-8ed4-31effe270681,exams,togaf,ea-foundation,What is the purpose of the TOGAF Preliminary Phase,data/seed-source/items/exams/exams.togaf.ea-foundation.json
-4c59ab85-f9b6-40c3-8a0e-2a0d8145201c,exams,togaf,ea-foundation,Which ADM phase covers Information Systems Archite,data/seed-source/items/exams/exams.togaf.ea-foundation.json
-1cef181d-0e9c-4bf1-8a13-d38a8be168f4,exams,togaf,ea-foundation,Which ADM phase is focused on Business Architectur,data/seed-source/items/exams/exams.togaf.ea-foundation.json
-d2525bdd-e811-45e1-a195-635edf7e8649,exams,togaf,ea-foundation,Which ADM phase is focused on Technology Architect,data/seed-source/items/exams/exams.togaf.ea-foundation.json
-c353bda3-78d1-4f2d-b0cb-0407780dee75,exams,togaf,ea-practitioner,"According to The Open Group benefits matrix, what ",data/seed-source/items/exams/exams.togaf.ea-practitioner.json
-82b4d115-e788-4d77-9863-25c3f4f4ce50,exams,togaf,ea-practitioner,"In TOGAF, which phase produces a detailed plan for",data/seed-source/items/exams/exams.togaf.ea-practitioner.json
-7c70a02b-eb30-4be7-8dad-0a2782163f82,exams,togaf,ea-practitioner,What does The Open Group say TOGAF Practitioner st,data/seed-source/items/exams/exams.togaf.ea-practitioner.json
-003d3f4c-1f62-4f6d-ab47-2880ab4bb67b,exams,togaf,ea-practitioner,What is the primary purpose of Phase G in the ADM?,data/seed-source/items/exams/exams.togaf.ea-practitioner.json
-b368c3d5-3f60-4e0e-8956-a732a40ebd5d,exams,togaf,ea-practitioner,Which TOGAF phases are explicitly linked by The Op,data/seed-source/items/exams/exams.togaf.ea-practitioner.json
-8b877c23-6aeb-4c3a-8b82-b198fb742599,exams,togaf,ea-practitioner,"Which phase is concerned with establishing scope, ",data/seed-source/items/exams/exams.togaf.ea-practitioner.json
-8799e0ef-b3aa-4056-acad-aa22e6deac44,exams,togaf,ea-practitioner,Why would a TOGAF practitioner use The Open Group',data/seed-source/items/exams/exams.togaf.ea-practitioner.json
-7430965e-2add-44b2-9db3-abde978998b7,exams,togaf,general-togaf,How many questions are on the TOGAF Enterprise Arc,data/seed-source/items/exams/exams.togaf.general-togaf.json
-0c4f7507-9442-4cd8-ae7c-9090263b2754,exams,togaf,general-togaf,"If a candidate passes Part 2 but not Part 1, do th",data/seed-source/items/exams/exams.togaf.general-togaf.json
-7f867746-7052-4140-a769-5a0ff1370f64,exams,togaf,general-togaf,Is the TOGAF Enterprise Architecture Part 2 exam o,data/seed-source/items/exams/exams.togaf.general-togaf.json
-cc02ec46-87c3-4950-afdf-184a495afc6c,exams,togaf,general-togaf,What format is used for the TOGAF Enterprise Archi,data/seed-source/items/exams/exams.togaf.general-togaf.json
-77c0f577-4a15-49b2-8209-895f8dfc7bb1,exams,togaf,general-togaf,What is the exam number for the TOGAF Enterprise A,data/seed-source/items/exams/exams.togaf.general-togaf.json
-81a82c80-3b31-4375-906a-510b8e5dd49f,exams,togaf,general-togaf,What is the exam number for the TOGAF Enterprise A,data/seed-source/items/exams/exams.togaf.general-togaf.json
-1f555bfd-818b-42ad-9b59-8cce48a00afd,exams,togaf,general-togaf,What is the passing score for the TOGAF Enterprise,data/seed-source/items/exams/exams.togaf.general-togaf.json
+ae0eaaa7-1471-4000-adef-e3eec0d2740a,exams,togaf,ea-foundation,Where does Requirements Management sit in the ADM?,data/seed-source/items/exams/exams.togaf.ea-foundation.json
+993704aa-6491-439a-88be-a1e6c7306fb5,exams,togaf,ea-foundation,Which ADM phases make up the Transition Planning i,data/seed-source/items/exams/exams.togaf.ea-foundation.json
+7ce88c73-d5bf-4d05-bf5d-c646a0b22a99,exams,togaf,ea-foundation,"Which Phase A deliverable defines the scope, appro",data/seed-source/items/exams/exams.togaf.ea-foundation.json
+cbdcf76a-6ed9-4691-a109-b08fe60ebed1,exams,togaf,ea-foundation,Which Phase C artifact shows the relationships bet,data/seed-source/items/exams/exams.togaf.ea-foundation.json
+fc564568-d576-49eb-8fd2-e9158e2aa59d,exams,togaf,ea-foundation,Which artifact is most suitable for showing the in,data/seed-source/items/exams/exams.togaf.ea-foundation.json
+147f2913-d615-4d3d-82d0-aad95e5ce502,exams,togaf,ea-foundation,Which best describes how the ADM uses the Architec,data/seed-source/items/exams/exams.togaf.ea-foundation.json
+fe6c9a9d-21ad-43e9-91b7-31cd33eadffa,exams,togaf,ea-foundation,Which characteristic of architecture governance me,data/seed-source/items/exams/exams.togaf.ea-foundation.json
+3c38d10a-4772-4bd5-be57-dd42142282f7,exams,togaf,ea-foundation,Which description best defines an architecture vie,data/seed-source/items/exams/exams.togaf.ea-foundation.json
+66514286-596b-4296-9f65-a9ca17502d5e,exams,togaf,ea-foundation,Which four architecture domains does the TOGAF ADM,data/seed-source/items/exams/exams.togaf.ea-foundation.json
+4eb6ff29-aff1-4a64-9aac-c7717f8764ae,exams,togaf,ea-foundation,Which part of the Architecture Repository records ,data/seed-source/items/exams/exams.togaf.ea-foundation.json
+5e0b63ed-d124-472c-835c-e4f284607132,exams,togaf,ea-foundation,Which phase consolidates the roadmap components fr,data/seed-source/items/exams/exams.togaf.ea-foundation.json
+aa234e5f-d907-478d-853a-a46d50cf21da,exams,togaf,ea-foundation,Which phase defines the technology platform and in,data/seed-source/items/exams/exams.togaf.ea-foundation.json
+f4e33388-4011-4fa4-8eaf-f863f4ddda00,exams,togaf,ea-foundation,Which phase ensures that implementation projects c,data/seed-source/items/exams/exams.togaf.ea-foundation.json
+7b5351fd-1893-48d4-a683-f4a15a16b481,exams,togaf,ea-foundation,Which phase manages changes to the architecture af,data/seed-source/items/exams/exams.togaf.ea-foundation.json
+4a0ad11a-c78e-4501-9cfb-2832aa6de538,exams,togaf,ea-foundation,"Which phase prioritizes work packages by cost, ben",data/seed-source/items/exams/exams.togaf.ea-foundation.json
+e5e4a089-e876-4dcb-96b0-41f7c429c01f,exams,togaf,ea-foundation,Which statement describes a target architecture?,data/seed-source/items/exams/exams.togaf.ea-foundation.json
+1c5e58dc-77b9-4139-acf8-1d795c21d05f,exams,togaf,ea-foundation,Which technique plans implementation by focusing o,data/seed-source/items/exams/exams.togaf.ea-foundation.json
+e5671ff4-0c49-4efb-867c-b7e2d1fec64b,exams,togaf,ea-foundation,Which technique plots stakeholders by their power ,data/seed-source/items/exams/exams.togaf.ea-foundation.json
+2a8e60b9-663c-4084-91de-103c253a6d4a,exams,togaf,ea-foundation,"Which term describes a reusable, product-independe",data/seed-source/items/exams/exams.togaf.ea-foundation.json
+38fb0765-1cf5-4f94-bedb-bc07cd20beb8,exams,togaf,ea-foundation,Why is the ADM often applied in short iterations w,data/seed-source/items/exams/exams.togaf.ea-foundation.json
+fbb80d0b-b530-4c2a-a99b-98b80a7b81b3,exams,togaf,ea-practitioner,A CFO wants a 20% run-cost cut this year. The CIO ,data/seed-source/items/exams/exams.togaf.ea-practitioner.json
+d383732d-a5c5-45e1-9833-cf0f0b0c3e5f,exams,togaf,ea-practitioner,A business-critical legacy system cannot be retire,data/seed-source/items/exams/exams.togaf.ea-practitioner.json
+b7d33445-1453-41fc-bd49-eb4ebf28e893,exams,togaf,ea-practitioner,A major vendor announces a change that affects the,data/seed-source/items/exams/exams.togaf.ea-practitioner.json
+e7bb9cf6-8a36-4e84-9d1b-70f83d3b6172,exams,togaf,ea-practitioner,"A product team changes its API design weekly, whil",data/seed-source/items/exams/exams.togaf.ea-practitioner.json
+497b7eac-cf87-433e-b2fb-71f92a4d7e32,exams,togaf,ea-practitioner,A project team wants to deploy a service that brea,data/seed-source/items/exams/exams.togaf.ea-practitioner.json
+c7171c4a-5012-4665-8722-b9fd571624e0,exams,togaf,ea-practitioner,A readiness assessment shows that one business uni,data/seed-source/items/exams/exams.togaf.ea-practitioner.json
+8364bf83-19ef-4bb7-8e1c-31996a2c6aa5,exams,togaf,ea-practitioner,A sponsor wants a 90-day proof of value for one bu,data/seed-source/items/exams/exams.togaf.ea-practitioner.json
+a845b74f-fba8-4ae4-994b-e89150ac132a,exams,togaf,ea-practitioner,A three-year program must show business value afte,data/seed-source/items/exams/exams.togaf.ea-practitioner.json
+2128166a-6c24-43ae-a2d0-f4b9a88f9875,exams,togaf,ea-practitioner,"During Phase C, a regulator introduces new data re",data/seed-source/items/exams/exams.togaf.ea-practitioner.json
+41d0ebd2-14ac-4822-b1c8-fda64c18ef12,exams,togaf,ea-practitioner,Gap analysis identifies a capability gap that busi,data/seed-source/items/exams/exams.togaf.ea-practitioner.json
+4dd974ed-c0df-479c-8029-e1a4f84ca62a,exams,togaf,ea-practitioner,Gap analysis shows the target needs a customer-dat,data/seed-source/items/exams/exams.togaf.ea-practitioner.json
+75ead0cd-f7f5-479a-a3d2-18cc169642a4,exams,togaf,ea-practitioner,Migration planning reveals that the plan depends o,data/seed-source/items/exams/exams.togaf.ea-practitioner.json
+49394858-21ed-4e4b-9fe4-2e38763a95ee,exams,togaf,ea-practitioner,Option A delivers 70% of the expected benefit at h,data/seed-source/items/exams/exams.togaf.ea-practitioner.json
+b11357c3-1e9b-4d54-84d5-b30e31081e4a,exams,togaf,ea-practitioner,The benefits case for a shared services program de,data/seed-source/items/exams/exams.togaf.ea-practitioner.json
+0b8a458c-ddd9-40c8-a64a-845e00044965,exams,togaf,ea-practitioner,"Twelve work packages have been identified, but fun",data/seed-source/items/exams/exams.togaf.ea-practitioner.json
+616d71b4-f859-4c75-8cb0-138558d4c523,exams,togaf,ea-practitioner,Two stakeholders give conflicting requirements for,data/seed-source/items/exams/exams.togaf.ea-practitioner.json
+7fd57234-4723-464e-92ef-62337632fcb0,exams,togaf,general-togaf,A principle states that every enterprise applicati,data/seed-source/items/exams/exams.togaf.general-togaf.json
+fb633ffa-fe4c-4c2a-89e3-cb5a5b7afdd2,exams,togaf,general-togaf,A solution team uses a database platform that is n,data/seed-source/items/exams/exams.togaf.general-togaf.json
+7fa2fee0-f56a-47fd-b51e-c89951556011,exams,togaf,general-togaf,A team creates a diagram showing business capabili,data/seed-source/items/exams/exams.togaf.general-togaf.json
+dbe7c5de-f857-4a37-aab2-0a9bad6a7840,exams,togaf,general-togaf,"An architecture principle has a statement, a ratio",data/seed-source/items/exams/exams.togaf.general-togaf.json
+70cabcb8-7e79-452c-a424-c4bef1497ffa,exams,togaf,general-togaf,An enterprise wants to reuse a generic service pat,data/seed-source/items/exams/exams.togaf.general-togaf.json
+619256a7-ae61-45d1-9361-4e7e1573c8c0,exams,togaf,general-togaf,"In TOGAF Business Architecture, what does a value ",data/seed-source/items/exams/exams.togaf.general-togaf.json
+0108439f-132d-4f1c-82af-349886aadcf3,exams,togaf,general-togaf,"In TOGAF risk management, what is the risk that re",data/seed-source/items/exams/exams.togaf.general-togaf.json
+d5abc835-42a5-4b3c-a440-1dd6ba95675a,exams,togaf,general-togaf,"In the Architecture Continuum, which order runs fr",data/seed-source/items/exams/exams.togaf.general-togaf.json
+f9e35b37-d4ee-47a7-9601-19f856e19bda,exams,togaf,general-togaf,"In the TOGAF Standard, 10th Edition, what is the r",data/seed-source/items/exams/exams.togaf.general-togaf.json
+c94bc17a-ec58-4943-869b-9578b185e18a,exams,togaf,general-togaf,The Architecture Board accepts a non-compliant des,data/seed-source/items/exams/exams.togaf.general-togaf.json
+51c1dc54-280d-4880-a2ea-e92dde46c279,exams,togaf,general-togaf,What does an Architecture Capability establish in ,data/seed-source/items/exams/exams.togaf.general-togaf.json
+5f2e816b-04e8-43ab-9638-3607d7f0d638,exams,togaf,general-togaf,Which ADM technique defines the degree to which in,data/seed-source/items/exams/exams.togaf.general-togaf.json
+e8a8d4f4-8c33-4c0c-bf42-4aa1f5a0b943,exams,togaf,general-togaf,Which Architecture Repository area holds advisory ,data/seed-source/items/exams/exams.togaf.general-togaf.json
+ea5edb9c-d04d-407a-850e-7a2e49f69d1b,exams,togaf,general-togaf,Which activity is a typical responsibility of the ,data/seed-source/items/exams/exams.togaf.general-togaf.json
+5284831a-9c7a-4aeb-af9a-e4e3b1d49a60,exams,togaf,general-togaf,"Which deliverable gives the quantitative, measurab",data/seed-source/items/exams/exams.togaf.general-togaf.json
+de8a8133-959c-40b9-9439-0b83457b4fdf,exams,togaf,general-togaf,Which description best fits a deliverable in the A,data/seed-source/items/exams/exams.togaf.general-togaf.json
+d9b32d86-00ba-46a9-beae-6a5d8f7395d2,exams,togaf,general-togaf,Which description best fits an architecture patter,data/seed-source/items/exams/exams.togaf.general-togaf.json
+1d4df15a-cb96-47d2-806d-2b212b87a35a,exams,togaf,general-togaf,Which statement about architecture principles is m,data/seed-source/items/exams/exams.togaf.general-togaf.json
+ede347c7-720b-43b5-83fc-d82295d4a2a2,exams,togaf,general-togaf,Why does TOGAF expect an organization to tailor th,data/seed-source/items/exams/exams.togaf.general-togaf.json
+f544ba6e-6e05-4849-b0c2-6ffa9c9063b0,exams,togaf,general-togaf,Why might an enterprise split its architecture int,data/seed-source/items/exams/exams.togaf.general-togaf.json
 96af9152-4487-4602-9c8a-d2ab763f5c2e,geography,capitals,africa,What is the national capital of Algeria?,data/seed-source/items/geography/geography.capitals.africa.json
 7d63f721-c669-4863-bac0-6b6f9aefc6de,geography,capitals,africa,What is the national capital of Angola?,data/seed-source/items/geography/geography.capitals.africa.json
 61291007-cf5b-47b3-b4ff-4999f930fa2b,geography,capitals,africa,What is the national capital of Egypt?,data/seed-source/items/geography/geography.capitals.africa.json

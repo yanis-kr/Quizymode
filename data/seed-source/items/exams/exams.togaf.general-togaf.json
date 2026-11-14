@@ -1,142 +1,418 @@
 [
   {
-    "itemId": "77c0f577-4a15-49b2-8209-895f8dfc7bb1",
+    "itemId": "dbe7c5de-f857-4a37-aab2-0a9bad6a7840",
     "category": "exams",
     "navigationKeyword1": "togaf",
     "navigationKeyword2": "general-togaf",
-    "question": "What is the exam number for the TOGAF Enterprise Architecture Part 1 exam?",
-    "correctAnswer": "OGEA-101",
+    "question": "An architecture principle has a statement, a rationale and implications. Which part explains the benefit that justifies the principle?",
+    "correctAnswer": "Rationale",
     "incorrectAnswers": [
-      "OGEA-102",
-      "OG0-091",
-      "X2202"
+      "Implications",
+      "Statement",
+      "Compliance checklist"
     ],
-    "explanation": "The Open Group identifies the TOGAF Enterprise Architecture Part 1 exam as OGEA-101.",
+    "explanation": "The rationale explains why the principle matters and what benefit it gives the enterprise. The statement says what the principle is, and the implications say what must change to follow it.",
     "keywords": [
       "togaf",
       "general-togaf",
-      "test-prep"
+      "architecture-principles"
     ],
-    "source": "https://help.opengroup.org/hc/en-us/articles/32158230604050-What-Is-the-Exam-Plan-for-the-OGEA-101-TOGAF-Enterprise-Architecture-Part-1-Exam"
+    "source": "https://www.opengroup.org/togaf/10thedition"
   },
   {
-    "itemId": "7430965e-2add-44b2-9db3-abde978998b7",
+    "itemId": "e8a8d4f4-8c33-4c0c-bf42-4aa1f5a0b943",
     "category": "exams",
     "navigationKeyword1": "togaf",
     "navigationKeyword2": "general-togaf",
-    "question": "How many questions are on the TOGAF Enterprise Architecture Part 1 exam?",
-    "correctAnswer": "40 multiple-choice questions",
+    "question": "Which Architecture Repository area holds advisory reference models, patterns and templates that projects may adopt but are not required to?",
+    "correctAnswer": "Reference Library",
     "incorrectAnswers": [
-      "8 scenario questions",
-      "60 multiple-choice questions",
-      "20 essay questions"
+      "Standards Information Base",
+      "Governance Log",
+      "Architecture Landscape"
     ],
-    "explanation": "The Open Group says the Part 1 exam consists of 40 multiple-choice questions.",
+    "explanation": "The Reference Library holds optional guidance. The Standards Information Base holds the standards that new architectures must comply with. The Architecture Landscape shows deployed and planned building blocks.",
     "keywords": [
       "togaf",
       "general-togaf",
-      "test-prep"
+      "repository",
+      "reference-library"
     ],
-    "source": "https://help.opengroup.org/hc/en-us/articles/32158230604050-What-Is-the-Exam-Plan-for-the-OGEA-101-TOGAF-Enterprise-Architecture-Part-1-Exam"
+    "source": "https://www.opengroup.org/togaf/10thedition"
   },
   {
-    "itemId": "1f555bfd-818b-42ad-9b59-8cce48a00afd",
+    "itemId": "70cabcb8-7e79-452c-a424-c4bef1497ffa",
     "category": "exams",
     "navigationKeyword1": "togaf",
     "navigationKeyword2": "general-togaf",
-    "question": "What is the passing score for the TOGAF Enterprise Architecture Part 1 exam?",
-    "correctAnswer": "60%",
+    "question": "An enterprise wants to reuse a generic service pattern from its common assets and tailor it for one business unit. Which part of the Enterprise Continuum holds that generic pattern?",
+    "correctAnswer": "Architecture Continuum",
     "incorrectAnswers": [
-      "50%",
-      "70%",
-      "75%"
+      "Solutions Continuum",
+      "Standards Information Base",
+      "Governance Log"
     ],
-    "explanation": "The Open Group says candidates need at least 60% to pass Part 1.",
+    "explanation": "Generic, reusable architecture assets sit in the Architecture Continuum. The Solutions Continuum holds the implementation-level products and solutions that realize those architectures.",
     "keywords": [
       "togaf",
       "general-togaf",
-      "test-prep"
+      "enterprise-continuum"
     ],
-    "source": "https://help.opengroup.org/hc/en-us/articles/32158230604050-What-Is-the-Exam-Plan-for-the-OGEA-101-TOGAF-Enterprise-Architecture-Part-1-Exam"
+    "source": "https://www.opengroup.org/togaf/10thedition"
   },
   {
-    "itemId": "81a82c80-3b31-4375-906a-510b8e5dd49f",
+    "itemId": "d9b32d86-00ba-46a9-beae-6a5d8f7395d2",
     "category": "exams",
     "navigationKeyword1": "togaf",
     "navigationKeyword2": "general-togaf",
-    "question": "What is the exam number for the TOGAF Enterprise Architecture Part 2 exam?",
-    "correctAnswer": "OGEA-102",
+    "question": "Which description best fits an architecture pattern in TOGAF?",
+    "correctAnswer": "A proven idea for solving a recurring problem in a given context, with its known trade-offs",
     "incorrectAnswers": [
-      "OGEA-101",
-      "OG0-092",
-      "B227"
+      "A Solution Building Block that names a specific product",
+      "A mandatory standard held in the Standards Information Base",
+      "An Industry Architecture that applies to a whole market sector"
     ],
-    "explanation": "The Open Group identifies the TOGAF Enterprise Architecture Part 2 exam as OGEA-102.",
+    "explanation": "A pattern captures a reusable solution approach and the context in which it works. It is advisory, it is not tied to a product, and it is narrower than an industry architecture.",
     "keywords": [
       "togaf",
       "general-togaf",
-      "test-prep"
+      "building-blocks",
+      "abb"
     ],
-    "source": "https://staging.certification.opengroup.org/togaf%C2%AE%C2%A0enterprise-architecture%C2%A0part-2-exam"
+    "source": "https://www.opengroup.org/togaf/10thedition"
   },
   {
-    "itemId": "cc02ec46-87c3-4950-afdf-184a495afc6c",
+    "itemId": "de8a8133-959c-40b9-9439-0b83457b4fdf",
     "category": "exams",
     "navigationKeyword1": "togaf",
     "navigationKeyword2": "general-togaf",
-    "question": "What format is used for the TOGAF Enterprise Architecture Part 2 exam?",
-    "correctAnswer": "8 scenario-based complex multiple-choice questions with gradient scoring",
+    "question": "Which description best fits a deliverable in the Architecture Content Framework?",
+    "correctAnswer": "A formal work product that is reviewed and agreed with stakeholders",
     "incorrectAnswers": [
-      "40 simple multiple-choice questions only",
-      "A lab exam with simulations",
-      "An oral panel interview"
+      "A single model, matrix or diagram that is reused across other outputs",
+      "A vendor product selected for implementation",
+      "A decision record kept by the Architecture Board"
     ],
-    "explanation": "The Open Group describes Part 2 as a scenario-based, complex multiple-choice exam with 8 questions and gradient scoring.",
+    "explanation": "A deliverable is a contractual, formally reviewed output such as an agreed architecture document. An artifact is a single architecture work product, such as a catalog, matrix or diagram, that can appear in several deliverables.",
     "keywords": [
       "togaf",
       "general-togaf",
-      "test-prep"
+      "deliverables",
+      "artifacts"
     ],
-    "source": "https://www.opengroup.org/certifications/togaf-portfolio-faq"
+    "source": "https://www.opengroup.org/togaf/10thedition"
   },
   {
-    "itemId": "7f867746-7052-4140-a769-5a0ff1370f64",
+    "itemId": "ea5edb9c-d04d-407a-850e-7a2e49f69d1b",
     "category": "exams",
     "navigationKeyword1": "togaf",
     "navigationKeyword2": "general-togaf",
-    "question": "Is the TOGAF Enterprise Architecture Part 2 exam open book?",
-    "correctAnswer": "Yes, it includes built-in electronic reference material",
+    "question": "Which activity is a typical responsibility of the Architecture Board?",
+    "correctAnswer": "Ensuring consistency between sub-architectures and resolving architecture issues escalated by projects",
     "incorrectAnswers": [
-      "No, it is fully closed book",
-      "Only paper books are allowed",
-      "Only personal notes are allowed"
+      "Producing the Implementation and Migration Plan for each program",
+      "Approving project funding within the investment portfolio",
+      "Writing the Architecture Definition Document for each project"
     ],
-    "explanation": "The Open Group says Part 2 includes open-book reference material available electronically within the exam.",
+    "explanation": "The Board provides oversight. It keeps sub-architectures consistent, enforces compliance and decides escalated issues. Architects produce the plans and documents, and portfolio governance approves the funding.",
     "keywords": [
       "togaf",
       "general-togaf",
-      "test-prep"
+      "architecture-board",
+      "governance"
     ],
-    "source": "https://help.opengroup.org/hc/en-us/articles/32109993154066-What-Open-Book-Is-Provided-With-the-TOGAF-Enterprise-Architecture-Part-2-Exam"
+    "source": "https://www.opengroup.org/togaf/10thedition"
   },
   {
-    "itemId": "0c4f7507-9442-4cd8-ae7c-9090263b2754",
+    "itemId": "d5abc835-42a5-4b3c-a440-1dd6ba95675a",
     "category": "exams",
     "navigationKeyword1": "togaf",
     "navigationKeyword2": "general-togaf",
-    "question": "If a candidate passes Part 2 but not Part 1, do they qualify for TOGAF Enterprise Architecture Practitioner?",
-    "correctAnswer": "No, both Part 1 and Part 2 must be passed",
+    "question": "In the Architecture Continuum, which order runs from the most generic architectures to the most specific?",
+    "correctAnswer": "Foundation, Common Systems, Industry, Organization-Specific",
     "incorrectAnswers": [
-      "Yes, Part 2 alone is enough",
-      "Yes, but only for one year",
-      "Only if they took accredited training"
+      "Foundation, Industry, Common Systems, Organization-Specific",
+      "Common Systems, Foundation, Industry, Organization-Specific",
+      "Organization-Specific, Industry, Common Systems, Foundation"
     ],
-    "explanation": "The Open Group says Part 2 alone is not sufficient; both parts must be passed for certifications that require two exams.",
+    "explanation": "The continuum moves from generic Foundation architectures, through Common Systems and Industry architectures, to architectures specific to one organization. The last option is the same sequence reversed, from specific to generic.",
     "keywords": [
       "togaf",
       "general-togaf",
-      "test-prep"
+      "views",
+      "stakeholders"
     ],
-    "source": "https://help.opengroup.org/hc/en-us/articles/23988947385362-Can-I-Get-Certified-If-I-Passed-Part-2-but-Not-Part-1"
+    "source": "https://www.opengroup.org/togaf/10thedition"
+  },
+  {
+    "itemId": "7fa2fee0-f56a-47fd-b51e-c89951556011",
+    "category": "exams",
+    "navigationKeyword1": "togaf",
+    "navigationKeyword2": "general-togaf",
+    "question": "A team creates a diagram showing business capabilities mapped to organization units. Which term describes that diagram?",
+    "correctAnswer": "An architecture view",
+    "incorrectAnswers": [
+      "An architecture viewpoint",
+      "An architecture principle",
+      "An architecture contract"
+    ],
+    "explanation": "A view is an instance: the actual diagram for a set of stakeholders. A viewpoint defines the conventions and modeling method used to create views of that kind.",
+    "keywords": [
+      "togaf",
+      "general-togaf",
+      "views",
+      "viewpoints"
+    ],
+    "source": "https://www.opengroup.org/togaf/10thedition"
+  },
+  {
+    "itemId": "f544ba6e-6e05-4849-b0c2-6ffa9c9063b0",
+    "category": "exams",
+    "navigationKeyword1": "togaf",
+    "navigationKeyword2": "general-togaf",
+    "question": "Why might an enterprise split its architecture into segment architectures rather than keep one enterprise-wide architecture?",
+    "correctAnswer": "To manage scope, ownership and change for one part of the enterprise while staying aligned to the enterprise architecture",
+    "incorrectAnswers": [
+      "To remove the need for a common architecture vision",
+      "To avoid architecture governance in each segment",
+      "To let each segment choose its own architecture method"
+    ],
+    "explanation": "Segment architectures partition the architecture so that teams can manage a bounded scope, while still conforming to the enterprise-wide framework and principles.",
+    "keywords": [
+      "togaf",
+      "general-togaf",
+      "architecture-levels",
+      "partitioning"
+    ],
+    "source": "https://www.opengroup.org/togaf/10thedition"
+  },
+  {
+    "itemId": "fb633ffa-fe4c-4c2a-89e3-cb5a5b7afdd2",
+    "category": "exams",
+    "navigationKeyword1": "togaf",
+    "navigationKeyword2": "general-togaf",
+    "question": "A solution team uses a database platform that is not on the approved list. What is the correct first step in architecture compliance?",
+    "correctAnswer": "Assess the design against the requirements and standards, and record the deviation for Architecture Board review",
+    "incorrectAnswers": [
+      "Approve the platform now and update the standard later",
+      "Remove the project from the portfolio",
+      "Ask the vendor to waive the standard for the team"
+    ],
+    "explanation": "Compliance starts with an assessment against the approved standards. Any deviation is recorded and decided through governance, not settled informally by the delivery team.",
+    "keywords": [
+      "togaf",
+      "general-togaf",
+      "compliance",
+      "governance"
+    ],
+    "source": "https://www.opengroup.org/togaf/10thedition"
+  },
+  {
+    "itemId": "0108439f-132d-4f1c-82af-349886aadcf3",
+    "category": "exams",
+    "navigationKeyword1": "togaf",
+    "navigationKeyword2": "general-togaf",
+    "question": "In TOGAF risk management, what is the risk that remains after the planned mitigation actions have been applied?",
+    "correctAnswer": "Residual risk",
+    "incorrectAnswers": [
+      "Initial risk",
+      "Inherent risk",
+      "Transition risk"
+    ],
+    "explanation": "TOGAF classifies risk as initial, before mitigation, and residual, after mitigation. Residual risk is what must be accepted or monitored.",
+    "keywords": [
+      "togaf",
+      "general-togaf",
+      "repository",
+      "reuse"
+    ],
+    "source": "https://www.opengroup.org/togaf/10thedition"
+  },
+  {
+    "itemId": "c94bc17a-ec58-4943-869b-9578b185e18a",
+    "category": "exams",
+    "navigationKeyword1": "togaf",
+    "navigationKeyword2": "general-togaf",
+    "question": "The Architecture Board accepts a non-compliant design for a limited period, with conditions and a date for returning to compliance. What does TOGAF call this?",
+    "correctAnswer": "A dispensation",
+    "incorrectAnswers": [
+      "An architecture contract",
+      "A change request",
+      "A compliance assessment"
+    ],
+    "explanation": "A dispensation is a time-bound, governed permission to deviate. A contract sets the expected conformance, a change request changes the architecture, and an assessment only measures compliance.",
+    "keywords": [
+      "togaf",
+      "general-togaf",
+      "governance",
+      "architecture-capability"
+    ],
+    "source": "https://www.opengroup.org/togaf/10thedition"
+  },
+  {
+    "itemId": "51c1dc54-280d-4880-a2ea-e92dde46c279",
+    "category": "exams",
+    "navigationKeyword1": "togaf",
+    "navigationKeyword2": "general-togaf",
+    "question": "What does an Architecture Capability establish in an organization?",
+    "correctAnswer": "The governance, roles, processes, skills and tools needed to run architecture work consistently",
+    "incorrectAnswers": [
+      "A single target architecture for the whole enterprise",
+      "A vendor-neutral product catalog",
+      "The approved budget for each project"
+    ],
+    "explanation": "The Architecture Capability Framework covers the organizational structures, processes, skills and tools needed to perform architecture work repeatedly and well.",
+    "keywords": [
+      "togaf",
+      "general-togaf",
+      "architecture-capability"
+    ],
+    "source": "https://www.opengroup.org/togaf/10thedition"
+  },
+  {
+    "itemId": "ede347c7-720b-43b5-83fc-d82295d4a2a2",
+    "category": "exams",
+    "navigationKeyword1": "togaf",
+    "navigationKeyword2": "general-togaf",
+    "question": "Why does TOGAF expect an organization to tailor the ADM?",
+    "correctAnswer": "Because the ADM is a method to adapt to the organization's context, scope and governance needs",
+    "incorrectAnswers": [
+      "Because the ADM must be applied in full for every project to be conformant",
+      "Because tailoring is allowed only in Phase A",
+      "Because tailoring removes the need for an architecture vision"
+    ],
+    "explanation": "The TOGAF Standard describes the ADM as a framework to adapt. Tailoring changes the depth, scope and sequence of the work to fit the organization, and it should be documented.",
+    "keywords": [
+      "togaf",
+      "general-togaf",
+      "adm",
+      "tailoring"
+    ],
+    "source": "https://www.opengroup.org/togaf/10thedition"
+  },
+  {
+    "itemId": "619256a7-ae61-45d1-9361-4e7e1573c8c0",
+    "category": "exams",
+    "navigationKeyword1": "togaf",
+    "navigationKeyword2": "general-togaf",
+    "question": "In TOGAF Business Architecture, what does a value stream represent?",
+    "correctAnswer": "An end-to-end set of value-adding stages that creates a result for a stakeholder",
+    "incorrectAnswers": [
+      "A map of business capabilities grouped by organization unit",
+      "The detailed sequence of tasks performed in one business process",
+      "The flow of data between application components"
+    ],
+    "explanation": "A value stream shows how value is delivered, stage by stage, to a stakeholder. Capability maps show what the business can do, and process models show detailed task flow.",
+    "keywords": [
+      "togaf",
+      "general-togaf",
+      "business-value",
+      "decisions"
+    ],
+    "source": "https://www.opengroup.org/togaf/10thedition"
+  },
+  {
+    "itemId": "5284831a-9c7a-4aeb-af9a-e4e3b1d49a60",
+    "category": "exams",
+    "navigationKeyword1": "togaf",
+    "navigationKeyword2": "general-togaf",
+    "question": "Which deliverable gives the quantitative, measurable statements that an implementation must meet to comply with the architecture?",
+    "correctAnswer": "Architecture Requirements Specification",
+    "incorrectAnswers": [
+      "Architecture Definition Document",
+      "Architecture Vision",
+      "Statement of Architecture Work"
+    ],
+    "explanation": "The Architecture Requirements Specification is the quantitative companion to the Architecture Definition Document, which gives the qualitative view of the architecture.",
+    "keywords": [
+      "togaf",
+      "general-togaf",
+      "requirements",
+      "requirements-management"
+    ],
+    "source": "https://pubs.opengroup.org/togaf-standard/adm/index.html"
+  },
+  {
+    "itemId": "7fd57234-4723-464e-92ef-62337632fcb0",
+    "category": "exams",
+    "navigationKeyword1": "togaf",
+    "navigationKeyword2": "general-togaf",
+    "question": "A principle states that every enterprise application must store customer data in the shared customer data store. Which type of principle is this?",
+    "correctAnswer": "Data principle",
+    "incorrectAnswers": [
+      "Business principle",
+      "Technology principle",
+      "Governance principle"
+    ],
+    "explanation": "The principle governs how data is stored and shared, so it is a data principle. Business principles describe business behavior, and technology principles govern infrastructure and platform choices.",
+    "keywords": [
+      "togaf",
+      "general-togaf",
+      "architecture-principles",
+      "data-principle"
+    ],
+    "source": "https://www.opengroup.org/togaf/10thedition"
+  },
+  {
+    "itemId": "1d4df15a-cb96-47d2-806d-2b212b87a35a",
+    "category": "exams",
+    "navigationKeyword1": "togaf",
+    "navigationKeyword2": "general-togaf",
+    "question": "Which statement about architecture principles is most accurate?",
+    "correctAnswer": "They guide decisions and are worded clearly enough that they can be applied and tested",
+    "incorrectAnswers": [
+      "They are fixed for the life of the enterprise and must not change",
+      "They replace technical standards entirely",
+      "They are written only after solutions are implemented"
+    ],
+    "explanation": "Good principles are stable but not frozen. They should be specific enough that a design can be checked against them, and they can be revised through governance.",
+    "keywords": [
+      "togaf",
+      "general-togaf",
+      "architecture-principles"
+    ],
+    "source": "https://www.opengroup.org/togaf/10thedition"
+  },
+  {
+    "itemId": "f9e35b37-d4ee-47a7-9601-19f856e19bda",
+    "category": "exams",
+    "navigationKeyword1": "togaf",
+    "navigationKeyword2": "general-togaf",
+    "question": "In the TOGAF Standard, 10th Edition, what is the role of the TOGAF Series Guides?",
+    "correctAnswer": "They give guidance on applying the Fundamental Content in specific contexts and can be updated more often",
+    "incorrectAnswers": [
+      "They replace the ADM for agile organizations",
+      "They are mandatory parts of the Fundamental Content",
+      "They define the vendor products that each architecture domain must use"
+    ],
+    "explanation": "TOGAF 10 separates the stable Fundamental Content from the Series Guides. The guides are advisory guidance on how to apply the fundamental content in particular situations.",
+    "keywords": [
+      "togaf",
+      "general-togaf",
+      "togaf-standard",
+      "framework"
+    ],
+    "source": "https://www.opengroup.org/togaf/10thedition"
+  },
+  {
+    "itemId": "5f2e816b-04e8-43ab-9638-3607d7f0d638",
+    "category": "exams",
+    "navigationKeyword1": "togaf",
+    "navigationKeyword2": "general-togaf",
+    "question": "Which ADM technique defines the degree to which information and services are to be shared between systems and organizations?",
+    "correctAnswer": "Interoperability Requirements",
+    "incorrectAnswers": [
+      "Gap Analysis",
+      "Business Transformation Readiness Assessment",
+      "Stakeholder Management"
+    ],
+    "explanation": "The interoperability technique sets how much information and service sharing is required. Gap analysis compares baseline and target, and readiness assessment evaluates the ability to change.",
+    "keywords": [
+      "togaf",
+      "general-togaf",
+      "baseline",
+      "target-architecture"
+    ],
+    "source": "https://www.opengroup.org/togaf/10thedition"
   }
 ]

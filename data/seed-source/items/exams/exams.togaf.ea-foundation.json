@@ -1,142 +1,841 @@
 [
   {
-    "itemId": "fffcfc70-b36d-4953-8c27-42476944fdf7",
-    "category": "exams",
-    "navigationKeyword1": "togaf",
-    "navigationKeyword2": "ea-foundation",
-    "question": "What is the core method at the heart of TOGAF?",
-    "correctAnswer": "The Architecture Development Method (ADM)",
-    "incorrectAnswers": [
-      "The Zachman matrix",
-      "The ITIL service lifecycle",
-      "The ArchiMate metamodel"
-    ],
-    "explanation": "The Open Group says the TOGAF Architecture Development Method forms the core of TOGAF.",
-    "keywords": [
-      "togaf",
-      "ea-foundation",
-      "adm"
-    ],
-    "source": "https://www.opengroup.org/architecture/togaf7-doc/arch/p2/p2_intro.htm"
-  },
-  {
     "itemId": "e2e92ee2-84bd-47b5-8ed4-31effe270681",
     "category": "exams",
     "navigationKeyword1": "togaf",
     "navigationKeyword2": "ea-foundation",
     "question": "What is the purpose of the TOGAF Preliminary Phase?",
-    "correctAnswer": "To define where, what, why, who, and how architecture work will be done and establish the architecture capability",
+    "correctAnswer": "To set up the architecture framework, principles and scope of the architecture work",
     "incorrectAnswers": [
-      "To finalize the migration roadmap",
-      "To govern solution delivery only",
-      "To produce the Technology Architecture"
+      "To produce the detailed Technology Architecture for the first project",
+      "To approve the migration roadmap for all work packages",
+      "To govern solution delivery against the approved architecture"
     ],
-    "explanation": "The Open Group describes the Preliminary Phase as defining where, what, why, who, and how architecture is done and establishing the framework needed for new architecture work.",
+    "explanation": "The Preliminary Phase prepares the organization for architecture work. It defines the framework, principles and scope, and it establishes the architecture capability before any ADM cycle starts.",
     "keywords": [
       "togaf",
       "ea-foundation",
       "preliminary-phase"
     ],
-    "source": "https://www.opengroup.org/soa/source-book/togaf/p4.htm"
+    "source": "https://pubs.opengroup.org/togaf-standard/adm/index.html"
   },
   {
     "itemId": "5afe75a6-d829-4d2c-bcff-60c303c60f94",
     "category": "exams",
     "navigationKeyword1": "togaf",
     "navigationKeyword2": "ea-foundation",
-    "question": "What is the main purpose of Phase A in the TOGAF ADM?",
+    "question": "What is the main purpose of Phase A in the ADM?",
     "correctAnswer": "To establish the architecture project and create the Architecture Vision",
     "incorrectAnswers": [
-      "To define detailed technology standards",
-      "To run implementation governance reviews",
-      "To retire the architecture repository"
+      "To define the detailed technology standards for the project",
+      "To set the migration order for approved work packages",
+      "To verify that delivered solutions conform to the architecture"
     ],
-    "explanation": "The Open Group says Phase A is concerned with establishing the architecture project, obtaining approval to proceed, and creating a compelling Architecture Vision.",
+    "explanation": "Phase A confirms the scope and stakeholders of the architecture project, obtains approval to proceed, and produces the Architecture Vision that the later phases build on.",
     "keywords": [
       "togaf",
       "ea-foundation",
-      "phase-a"
+      "phase-a",
+      "architecture-vision"
     ],
-    "source": "https://www.opengroup.org/soa/source-book/togaf/p4.htm"
+    "source": "https://pubs.opengroup.org/togaf-standard/adm/index.html"
   },
   {
-    "itemId": "1cef181d-0e9c-4bf1-8a13-d38a8be168f4",
+    "itemId": "66514286-596b-4296-9f65-a9ca17502d5e",
     "category": "exams",
     "navigationKeyword1": "togaf",
     "navigationKeyword2": "ea-foundation",
-    "question": "Which ADM phase is focused on Business Architecture?",
-    "correctAnswer": "Phase B",
+    "question": "Which four architecture domains does the TOGAF ADM cover?",
+    "correctAnswer": "Business, Data, Application and Technology",
     "incorrectAnswers": [
-      "Phase C",
-      "Phase F",
-      "Phase H"
+      "Business, Security, Operations and Technology",
+      "Strategy, Data, Application and Infrastructure",
+      "Business, Data, Integration and Hosting"
     ],
-    "explanation": "The Open Group lists Phase B as the Business Architecture phase.",
+    "explanation": "The TOGAF Standard organizes architecture work into Business, Data, Application and Technology architectures. Security and operations are cross-cutting concerns, not separate domains.",
     "keywords": [
       "togaf",
       "ea-foundation",
-      "phase-b"
+      "architecture-domains",
+      "concepts"
     ],
-    "source": "https://www.opengroup.org/soa/source-book/togaf/p4.htm"
+    "source": "https://pubs.opengroup.org/togaf-standard/adm/index.html"
   },
   {
-    "itemId": "4c59ab85-f9b6-40c3-8a0e-2a0d8145201c",
+    "itemId": "3c38d10a-4772-4bd5-be57-dd42142282f7",
     "category": "exams",
     "navigationKeyword1": "togaf",
     "navigationKeyword2": "ea-foundation",
-    "question": "Which ADM phase covers Information Systems Architectures, including Applications and Data?",
-    "correctAnswer": "Phase C",
+    "question": "Which description best defines an architecture view?",
+    "correctAnswer": "A representation of part of the architecture that addresses specific stakeholder concerns",
     "incorrectAnswers": [
-      "Phase A",
-      "Phase D",
-      "Phase G"
+      "A complete list of every application and server in the enterprise",
+      "A list of approved vendor products for each domain",
+      "A formal approval record kept by the Architecture Board"
     ],
-    "explanation": "The Open Group lists Phase C as Information Systems Architectures, covering Applications and Data.",
+    "explanation": "A view is a selective representation of the architecture, built to address the concerns of particular stakeholders.",
     "keywords": [
       "togaf",
       "ea-foundation",
-      "phase-c"
+      "views",
+      "concepts"
     ],
-    "source": "https://www.opengroup.org/soa/source-book/togaf/p4.htm"
+    "source": "https://www.opengroup.org/togaf/10thedition"
   },
   {
-    "itemId": "d2525bdd-e811-45e1-a195-635edf7e8649",
+    "itemId": "2e3ff422-b0cc-48b5-b395-d914b0924bdf",
     "category": "exams",
     "navigationKeyword1": "togaf",
     "navigationKeyword2": "ea-foundation",
-    "question": "Which ADM phase is focused on Technology Architecture?",
-    "correctAnswer": "Phase D",
+    "question": "In TOGAF, what is a stakeholder concern?",
+    "correctAnswer": "An interest in the architecture that affects whether it is acceptable to that stakeholder",
     "incorrectAnswers": [
-      "Phase B",
-      "Phase E",
-      "Phase H"
+      "A risk that the project will exceed its budget",
+      "A requirement that the solution must meet by a fixed date",
+      "A sign-off obligation recorded in the governance log"
     ],
-    "explanation": "The Open Group lists Phase D as the Technology Architecture phase.",
+    "explanation": "Concerns are interests a stakeholder has in the architecture. They drive the views and the requirements, but a concern is not itself a requirement or a risk.",
     "keywords": [
       "togaf",
       "ea-foundation",
-      "phase-d"
+      "stakeholders",
+      "concerns"
     ],
-    "source": "https://www.opengroup.org/soa/source-book/togaf/p4.htm"
+    "source": "https://www.opengroup.org/togaf/10thedition"
   },
   {
-    "itemId": "6b4be6c3-4fa7-4287-8e82-e541d3e2f915",
+    "itemId": "2a8e60b9-663c-4084-91de-103c253a6d4a",
     "category": "exams",
     "navigationKeyword1": "togaf",
     "navigationKeyword2": "ea-foundation",
-    "question": "What central role does Requirements Management play in TOGAF?",
-    "correctAnswer": "It sits at the center of the ADM and supports all phases",
+    "question": "Which term describes a reusable, product-independent building block that defines required functionality?",
+    "correctAnswer": "Architecture Building Block",
     "incorrectAnswers": [
-      "It is used only in Phase A",
-      "It applies only after implementation starts",
-      "It replaces architecture governance"
+      "Solution Building Block",
+      "Work Package",
+      "Architecture Contract"
     ],
-    "explanation": "The Open Group blog notes that Requirements Management plays a central role in TOGAF's architecture work.",
+    "explanation": "An Architecture Building Block defines what is needed without naming a product. A Solution Building Block names the products that implement it.",
     "keywords": [
       "togaf",
       "ea-foundation",
+      "building-blocks",
+      "abb"
+    ],
+    "source": "https://www.opengroup.org/togaf/10thedition"
+  },
+  {
+    "itemId": "4eb6ff29-aff1-4a64-9aac-c7717f8764ae",
+    "category": "exams",
+    "navigationKeyword1": "togaf",
+    "navigationKeyword2": "ea-foundation",
+    "question": "Which part of the Architecture Repository records the decisions made in architecture governance and their rationale?",
+    "correctAnswer": "Governance Log",
+    "incorrectAnswers": [
+      "Standards Information Base",
+      "Reference Library",
+      "Architecture Landscape"
+    ],
+    "explanation": "The Governance Log records architecture decisions and the reasons for them. The Standards Information Base holds the standards that apply, and the Architecture Landscape holds the current deployed architectures.",
+    "keywords": [
+      "togaf",
+      "ea-foundation",
+      "repository",
+      "governance-log"
+    ],
+    "source": "https://www.opengroup.org/togaf/10thedition"
+  },
+  {
+    "itemId": "7aeac815-2fb3-4709-90e4-a35aefcf5d91",
+    "category": "exams",
+    "navigationKeyword1": "togaf",
+    "navigationKeyword2": "ea-foundation",
+    "question": "In the architecture levels used by TOGAF, which architecture typically addresses a single business capability in more depth?",
+    "correctAnswer": "Capability architecture",
+    "incorrectAnswers": [
+      "Strategic architecture",
+      "Transition architecture",
+      "Baseline architecture"
+    ],
+    "explanation": "Architecture levels are strategic, segment and capability. A capability architecture is the most focused of these and addresses one business capability. Transition and baseline architectures describe states of change, not levels of scope.",
+    "keywords": [
+      "togaf",
+      "ea-foundation",
+      "architecture-levels",
+      "capability"
+    ],
+    "source": "https://www.opengroup.org/togaf/10thedition"
+  },
+  {
+    "itemId": "e5e4a089-e876-4dcb-96b0-41f7c429c01f",
+    "category": "exams",
+    "navigationKeyword1": "togaf",
+    "navigationKeyword2": "ea-foundation",
+    "question": "Which statement describes a target architecture?",
+    "correctAnswer": "The desired future state of an architecture that the enterprise plans to reach",
+    "incorrectAnswers": [
+      "The current state of the architecture, as deployed today",
+      "An intermediate state reached during the migration",
+      "The contract that implementers sign with the architect"
+    ],
+    "explanation": "The baseline is the current state. The target is the desired future state. Transition architectures are the intermediate states between them.",
+    "keywords": [
+      "togaf",
+      "ea-foundation",
+      "target-architecture",
+      "baseline"
+    ],
+    "source": "https://www.opengroup.org/togaf/10thedition"
+  },
+  {
+    "itemId": "96a621a6-53d2-46bb-be1f-5e098f58b6ed",
+    "category": "exams",
+    "navigationKeyword1": "togaf",
+    "navigationKeyword2": "ea-foundation",
+    "question": "What does an architecture description consist of in TOGAF?",
+    "correctAnswer": "A collection of artifacts that documents an architecture for its stakeholders",
+    "incorrectAnswers": [
+      "A single model of the target state",
+      "The full contents of the Architecture Repository",
+      "The set of viewpoints the enterprise has approved"
+    ],
+    "explanation": "An architecture description is a set of work products, such as views and models, for one architecture. The repository holds many architectures, and viewpoints only define how views are built.",
+    "keywords": [
+      "togaf",
+      "ea-foundation",
+      "architecture-description",
+      "concepts"
+    ],
+    "source": "https://www.opengroup.org/togaf/10thedition"
+  },
+  {
+    "itemId": "7ce88c73-d5bf-4d05-bf5d-c646a0b22a99",
+    "category": "exams",
+    "navigationKeyword1": "togaf",
+    "navigationKeyword2": "ea-foundation",
+    "question": "Which Phase A deliverable defines the scope, approach, schedule and resources of the architecture project and is signed off by the sponsor?",
+    "correctAnswer": "Statement of Architecture Work",
+    "incorrectAnswers": [
+      "Architecture Vision",
+      "Request for Architecture Work",
+      "Architecture Definition Document"
+    ],
+    "explanation": "The Statement of Architecture Work is the agreement on how the project will run. The Request for Architecture Work is the sponsor's input to Phase A, and the Vision describes the target at a high level.",
+    "keywords": [
+      "togaf",
+      "ea-foundation",
+      "preliminary-phase",
+      "adm"
+    ],
+    "source": "https://pubs.opengroup.org/togaf-standard/adm/index.html"
+  },
+  {
+    "itemId": "147f2913-d615-4d3d-82d0-aad95e5ce502",
+    "category": "exams",
+    "navigationKeyword1": "togaf",
+    "navigationKeyword2": "ea-foundation",
+    "question": "Which best describes how the ADM uses the Architecture Repository?",
+    "correctAnswer": "Each phase reads from and writes to the Architecture Repository, so reusable assets feed later iterations",
+    "incorrectAnswers": [
+      "The repository is used only in Phase H",
+      "The repository sits outside the ADM and is never updated by it",
+      "The repository holds only the final approved target architecture"
+    ],
+    "explanation": "The repository is used throughout the ADM. Phases read reusable assets from it and add outputs back, so each iteration builds on earlier work.",
+    "keywords": [
+      "togaf",
+      "ea-foundation",
+      "repository",
+      "adm"
+    ],
+    "source": "https://pubs.opengroup.org/togaf-standard/adm/index.html"
+  },
+  {
+    "itemId": "5e0b63ed-d124-472c-835c-e4f284607132",
+    "category": "exams",
+    "navigationKeyword1": "togaf",
+    "navigationKeyword2": "ea-foundation",
+    "question": "Which phase consolidates the roadmap components from Phases B to D into an initial complete Architecture Roadmap, which Phase F then finalizes?",
+    "correctAnswer": "Phase E: Opportunities and Solutions",
+    "incorrectAnswers": [
+      "Phase D: Technology Architecture",
+      "Phase G: Implementation Governance",
+      "Phase A: Architecture Vision"
+    ],
+    "explanation": "Phases B to D each produce roadmap components. Phase E consolidates them with the work packages and transition architectures, and Phase F sequences and finalizes the roadmap.",
+    "keywords": [
+      "togaf",
+      "ea-foundation",
+      "phase-e",
+      "roadmap"
+    ],
+    "source": "https://pubs.opengroup.org/togaf-standard/adm/index.html"
+  },
+  {
+    "itemId": "76cb1d60-9049-418a-a58f-cf901100a56d",
+    "category": "exams",
+    "navigationKeyword1": "togaf",
+    "navigationKeyword2": "ea-foundation",
+    "question": "An architect is developing a detailed target business capability map, value stream map and organization map. Which ADM phase is this work in?",
+    "correctAnswer": "Phase B: Business Architecture",
+    "incorrectAnswers": [
+      "Phase A: Architecture Vision",
+      "Phase C: Information Systems Architectures",
+      "Phase E: Opportunities and Solutions"
+    ],
+    "explanation": "Phase B develops the detailed baseline and target business architecture. Phase A uses these models only at a high level to support the Vision.",
+    "keywords": [
+      "togaf",
+      "ea-foundation",
+      "phase-b",
+      "business-architecture"
+    ],
+    "source": "https://pubs.opengroup.org/togaf-standard/adm/index.html"
+  },
+  {
+    "itemId": "3f9b55c0-04d0-4737-9e08-78de89680478",
+    "category": "exams",
+    "navigationKeyword1": "togaf",
+    "navigationKeyword2": "ea-foundation",
+    "question": "An architect needs to define the application and data models before choosing technology. Which ADM phase covers this work?",
+    "correctAnswer": "Phase C: Information Systems Architectures",
+    "incorrectAnswers": [
+      "Phase B: Business Architecture",
+      "Phase D: Technology Architecture",
+      "Phase E: Opportunities and Solutions"
+    ],
+    "explanation": "Phase C covers the information systems architectures, which are the data and application architectures. Technology is addressed in Phase D, after these are defined.",
+    "keywords": [
+      "togaf",
+      "ea-foundation",
+      "phase-c",
+      "information-systems"
+    ],
+    "source": "https://pubs.opengroup.org/togaf-standard/adm/index.html"
+  },
+  {
+    "itemId": "aa234e5f-d907-478d-853a-a46d50cf21da",
+    "category": "exams",
+    "navigationKeyword1": "togaf",
+    "navigationKeyword2": "ea-foundation",
+    "question": "Which phase defines the technology platform and infrastructure needed to host the target applications?",
+    "correctAnswer": "Phase D: Technology Architecture",
+    "incorrectAnswers": [
+      "Phase C: Information Systems Architectures",
+      "Phase E: Opportunities and Solutions",
+      "Phase F: Migration Planning"
+    ],
+    "explanation": "Phase D defines the baseline and target technology architecture, which provides the platform that hosts the applications defined in Phase C.",
+    "keywords": [
+      "togaf",
+      "ea-foundation",
+      "phase-d",
+      "technology-architecture"
+    ],
+    "source": "https://pubs.opengroup.org/togaf-standard/adm/index.html"
+  },
+  {
+    "itemId": "36150a24-5eba-41cd-abe1-d71d2c42719a",
+    "category": "exams",
+    "navigationKeyword1": "togaf",
+    "navigationKeyword2": "ea-foundation",
+    "question": "In which phase are candidate work packages and transition architectures identified by consolidating gaps?",
+    "correctAnswer": "Phase E: Opportunities and Solutions",
+    "incorrectAnswers": [
+      "Phase C: Information Systems Architectures",
+      "Phase F: Migration Planning",
+      "Phase G: Implementation Governance"
+    ],
+    "explanation": "Phase E consolidates the gaps found earlier, identifies implementation approaches, and groups the work into work packages and transition architectures. Phase F then sequences and plans them.",
+    "keywords": [
+      "togaf",
+      "ea-foundation",
+      "phase-e",
+      "work-packages"
+    ],
+    "source": "https://pubs.opengroup.org/togaf-standard/adm/index.html"
+  },
+  {
+    "itemId": "4a0ad11a-c78e-4501-9cfb-2832aa6de538",
+    "category": "exams",
+    "navigationKeyword1": "togaf",
+    "navigationKeyword2": "ea-foundation",
+    "question": "Which phase prioritizes work packages by cost, benefit and risk, and finalizes the implementation and migration plan?",
+    "correctAnswer": "Phase F: Migration Planning",
+    "incorrectAnswers": [
+      "Phase E: Opportunities and Solutions",
+      "Phase G: Implementation Governance",
+      "Phase H: Architecture Change Management"
+    ],
+    "explanation": "Phase F sequences and prioritizes the work packages and transition architectures, assesses cost, benefit and risk, and produces the Implementation and Migration Plan.",
+    "keywords": [
+      "togaf",
+      "ea-foundation",
+      "phase-f",
+      "migration-planning"
+    ],
+    "source": "https://pubs.opengroup.org/togaf-standard/adm/chap10.html"
+  },
+  {
+    "itemId": "f4e33388-4011-4fa4-8eaf-f863f4ddda00",
+    "category": "exams",
+    "navigationKeyword1": "togaf",
+    "navigationKeyword2": "ea-foundation",
+    "question": "Which phase ensures that implementation projects conform to the target architecture and its architecture contracts?",
+    "correctAnswer": "Phase G: Implementation Governance",
+    "incorrectAnswers": [
+      "Phase F: Migration Planning",
+      "Phase H: Architecture Change Management",
+      "Phase D: Technology Architecture"
+    ],
+    "explanation": "Phase G governs implementation. It checks that projects conform to the target architecture and the architecture contracts agreed with the implementers.",
+    "keywords": [
+      "togaf",
+      "ea-foundation",
+      "phase-g",
+      "implementation-governance"
+    ],
+    "source": "https://pubs.opengroup.org/togaf-standard/adm/index.html"
+  },
+  {
+    "itemId": "7b5351fd-1893-48d4-a683-f4a15a16b481",
+    "category": "exams",
+    "navigationKeyword1": "togaf",
+    "navigationKeyword2": "ea-foundation",
+    "question": "Which phase manages changes to the architecture after it has been deployed, such as new requirements or technology shifts?",
+    "correctAnswer": "Phase H: Architecture Change Management",
+    "incorrectAnswers": [
+      "Phase A: Architecture Vision",
+      "Phase E: Opportunities and Solutions",
+      "The Preliminary Phase"
+    ],
+    "explanation": "Phase H evaluates and manages changes to the architecture and the framework, so that the architecture stays fit for purpose after implementation.",
+    "keywords": [
+      "togaf",
+      "ea-foundation",
+      "phase-h",
+      "change-management"
+    ],
+    "source": "https://pubs.opengroup.org/togaf-standard/adm/index.html"
+  },
+  {
+    "itemId": "0c97776b-b378-4078-9b29-0578bd697505",
+    "category": "exams",
+    "navigationKeyword1": "togaf",
+    "navigationKeyword2": "ea-foundation",
+    "question": "What is the defining characteristic of the ADM cycle?",
+    "correctAnswer": "Architecture is iterated, and earlier phases can be revisited as requirements and context change",
+    "incorrectAnswers": [
+      "Phases must be completed once, strictly in order from A to H",
+      "Phase H is skipped for small projects",
+      "Only Phase A and Phase G are mandatory"
+    ],
+    "explanation": "The ADM is iterative. Earlier phases can be revisited when requirements change, and the depth of each phase can be tailored.",
+    "keywords": [
+      "togaf",
+      "ea-foundation",
+      "adm",
+      "iteration"
+    ],
+    "source": "https://pubs.opengroup.org/togaf-standard/adm/index.html"
+  },
+  {
+    "itemId": "ae0eaaa7-1471-4000-adef-e3eec0d2740a",
+    "category": "exams",
+    "navigationKeyword1": "togaf",
+    "navigationKeyword2": "ea-foundation",
+    "question": "Where does Requirements Management sit in the ADM?",
+    "correctAnswer": "At the center of the ADM, running throughout all phases",
+    "incorrectAnswers": [
+      "Only in Phase A, to set the scope",
+      "Only in Phase G, to check conformance",
+      "Only after Phase H, to store change records"
+    ],
+    "explanation": "Requirements Management is central to the ADM. Requirements are identified, stored and managed through every phase, not confined to one phase.",
+    "keywords": [
+      "togaf",
+      "ea-foundation",
+      "requirements-management",
+      "adm"
+    ],
+    "source": "https://pubs.opengroup.org/togaf-standard/adm/index.html"
+  },
+  {
+    "itemId": "e5671ff4-0c49-4efb-867c-b7e2d1fec64b",
+    "category": "exams",
+    "navigationKeyword1": "togaf",
+    "navigationKeyword2": "ea-foundation",
+    "question": "Which technique plots stakeholders by their power and their interest in the architecture?",
+    "correctAnswer": "A stakeholder map",
+    "incorrectAnswers": [
+      "A risk register ranking likelihood against impact",
+      "A gap table comparing baseline and target",
+      "A capability heat map of business functions"
+    ],
+    "explanation": "A stakeholder map classifies stakeholders by power and interest so that engagement can be planned for each group.",
+    "keywords": [
+      "togaf",
+      "ea-foundation",
+      "stakeholder-management",
+      "techniques"
+    ],
+    "source": "https://pubs.opengroup.org/togaf-standard/adm/index.html"
+  },
+  {
+    "itemId": "2719f258-c14a-4abb-9b9c-e366bd33dadf",
+    "category": "exams",
+    "navigationKeyword1": "togaf",
+    "navigationKeyword2": "ea-foundation",
+    "question": "What is the purpose of gap analysis in the ADM?",
+    "correctAnswer": "To compare the baseline and target architectures to find what is missing or must change",
+    "incorrectAnswers": [
+      "To test whether a solution meets its performance targets",
+      "To rank projects by budget",
+      "To list every stakeholder in the enterprise"
+    ],
+    "explanation": "Gap analysis compares the baseline with the target. The resulting gaps drive the work packages and transition architectures.",
+    "keywords": [
+      "togaf",
+      "ea-foundation",
+      "gap-analysis",
+      "techniques"
+    ],
+    "source": "https://pubs.opengroup.org/togaf-standard/adm/index.html"
+  },
+  {
+    "itemId": "e028d1b4-eef3-499d-9b62-3881797988d7",
+    "category": "exams",
+    "navigationKeyword1": "togaf",
+    "navigationKeyword2": "ea-foundation",
+    "question": "What is a business scenario used for in the ADM?",
+    "correctAnswer": "Eliciting and validating business requirements with the people who run the business processes",
+    "incorrectAnswers": [
+      "Testing software against performance benchmarks",
+      "Designing the database schema for the data architecture",
+      "Estimating the detailed cost of a project"
+    ],
+    "explanation": "Business scenarios describe how business processes are used and what they need. They help elicit and validate requirements with business stakeholders.",
+    "keywords": [
+      "togaf",
+      "ea-foundation",
+      "business-scenarios",
+      "techniques"
+    ],
+    "source": "https://pubs.opengroup.org/togaf-standard/adm/index.html"
+  },
+  {
+    "itemId": "4b49db92-4022-4364-a64a-0337b5c79fc5",
+    "category": "exams",
+    "navigationKeyword1": "togaf",
+    "navigationKeyword2": "ea-foundation",
+    "question": "An architect has identified risks such as a skills shortage and a tight deadline. Which migration planning technique assesses these implementation factors and their effect on the plan?",
+    "correctAnswer": "Implementation Factor Assessment and Deduction Matrix",
+    "incorrectAnswers": [
+      "Gap Analysis",
+      "Capability-Based Planning",
+      "Architecture Compliance Assessment"
+    ],
+    "explanation": "The Implementation Factor Assessment and Deduction Matrix is a migration planning technique. It assesses the implementation factors, such as skills and timing, and the effects they have on the planned work.",
+    "keywords": [
+      "togaf",
+      "ea-foundation",
+      "migration-planning",
+      "techniques"
+    ],
+    "source": "https://pubs.opengroup.org/togaf-standard/adm-techniques/chap06.html"
+  },
+  {
+    "itemId": "1c5e58dc-77b9-4139-acf8-1d795c21d05f",
+    "category": "exams",
+    "navigationKeyword1": "togaf",
+    "navigationKeyword2": "ea-foundation",
+    "question": "Which technique plans implementation by focusing on business capabilities and the level each capability must reach?",
+    "correctAnswer": "Capability-Based Planning",
+    "incorrectAnswers": [
+      "Business Scenarios",
+      "Gap Analysis",
+      "Architecture Compliance Assessment"
+    ],
+    "explanation": "Capability-Based Planning links the implementation to business capabilities and the required target levels, which helps decide what to build and when.",
+    "keywords": [
+      "togaf",
+      "ea-foundation",
+      "capability-based-planning",
+      "techniques"
+    ],
+    "source": "https://pubs.opengroup.org/togaf-standard/adm/index.html"
+  },
+  {
+    "itemId": "c21a180f-c58d-4517-89e3-e467b45e2f7f",
+    "category": "exams",
+    "navigationKeyword1": "togaf",
+    "navigationKeyword2": "ea-foundation",
+    "question": "An architect needs to check a solution against architecture requirements in a structured way. Which technique supports this?",
+    "correctAnswer": "Architecture compliance assessment",
+    "incorrectAnswers": [
+      "Stakeholder Management",
+      "Risk Management",
+      "Business Scenarios"
+    ],
+    "explanation": "The architecture compliance technique gives a structured checklist of requirements against which a design is assessed for conformance.",
+    "keywords": [
+      "togaf",
+      "ea-foundation",
+      "compliance",
+      "techniques"
+    ],
+    "source": "https://pubs.opengroup.org/togaf-standard/adm/index.html"
+  },
+  {
+    "itemId": "421e3183-324d-48b7-a6f9-7c71fd2ad62b",
+    "category": "exams",
+    "navigationKeyword1": "togaf",
+    "navigationKeyword2": "ea-foundation",
+    "question": "Business units have run autonomously for years, and nobody agrees what the current landscape is. Which development approach does TOGAF suggest?",
+    "correctAnswer": "Baseline First, assessing the current landscape to find problem areas before elaborating the target",
+    "incorrectAnswers": [
+      "Target First, describing the baseline only as far as gap analysis needs",
+      "Skip Phases B to D and plan work packages directly in Phase E",
+      "Develop transition architectures first and derive the baseline and target from them"
+    ],
+    "explanation": "TOGAF suggests Baseline First when the baseline is complex, unclear or not agreed. Target First is tempting, but it suits a target that has been agreed at a high level, which is not the case here.",
+    "keywords": [
+      "togaf",
+      "ea-foundation",
+      "iteration",
       "requirements-management"
     ],
-    "source": "https://blog.opengroup.org/2011/12/16/how-to-manage-requirements-within-the-enterprise-architecture-using-the-togaf-and-sabsa-frameworks-2/"
+    "source": "https://pubs.opengroup.org/togaf-standard/adm/index.html"
+  },
+  {
+    "itemId": "38fb0765-1cf5-4f94-bedb-bc07cd20beb8",
+    "category": "exams",
+    "navigationKeyword1": "togaf",
+    "navigationKeyword2": "ea-foundation",
+    "question": "Why is the ADM often applied in short iterations when delivery is agile?",
+    "correctAnswer": "To keep the architecture aligned with delivery feedback while still meeting governance needs",
+    "incorrectAnswers": [
+      "So each sprint produces a complete enterprise target architecture",
+      "So architecture governance can be replaced by team self-certification",
+      "So Phases B to D can be skipped once the Architecture Vision is approved"
+    ],
+    "explanation": "Iteration lets the architecture evolve with feedback, while governance and the architecture domains still apply. It does not mean a full enterprise target in every sprint.",
+    "keywords": [
+      "togaf",
+      "ea-foundation",
+      "agile",
+      "applying-adm"
+    ],
+    "source": "https://pubs.opengroup.org/togaf-standard/adm/index.html"
+  },
+  {
+    "itemId": "929737e1-54ac-47ad-ad94-99b326da892c",
+    "category": "exams",
+    "navigationKeyword1": "togaf",
+    "navigationKeyword2": "ea-foundation",
+    "question": "After implementation, a new regulation requires a fundamental change to how customer data is held across many systems. How does Phase H treat this change?",
+    "correctAnswer": "As a re-architecting change that needs a new ADM cycle",
+    "incorrectAnswers": [
+      "As a simplification change handled by normal change management",
+      "As an incremental change handled within the current architecture",
+      "As an implementation issue handled only by the Phase G project"
+    ],
+    "explanation": "TOGAF classifies changes as simplification, incremental or re-architecting. A fundamental, cross-system change needs a new ADM cycle, usually triggered by a Request for Architecture Work.",
+    "keywords": [
+      "togaf",
+      "ea-foundation",
+      "change-management",
+      "applying-adm"
+    ],
+    "source": "https://pubs.opengroup.org/togaf-standard/adm/index.html"
+  },
+  {
+    "itemId": "993704aa-6491-439a-88be-a1e6c7306fb5",
+    "category": "exams",
+    "navigationKeyword1": "togaf",
+    "navigationKeyword2": "ea-foundation",
+    "question": "Which ADM phases make up the Transition Planning iteration cycle?",
+    "correctAnswer": "Phase E and Phase F",
+    "incorrectAnswers": [
+      "Phases B, C and D",
+      "Phase G and Phase H",
+      "The Preliminary Phase and Phase A"
+    ],
+    "explanation": "TOGAF groups the phases into four iteration cycles: Architecture Capability (Preliminary and A), Architecture Development (B to D), Transition Planning (E and F) and Architecture Governance (G and H).",
+    "keywords": [
+      "togaf",
+      "ea-foundation",
+      "applying-adm",
+      "segments"
+    ],
+    "source": "https://pubs.opengroup.org/togaf-standard/adm/index.html"
+  },
+  {
+    "itemId": "fe6c9a9d-21ad-43e9-91b7-31cd33eadffa",
+    "category": "exams",
+    "navigationKeyword1": "togaf",
+    "navigationKeyword2": "ea-foundation",
+    "question": "Which characteristic of architecture governance means that all actions and the decision support behind them are available for inspection by authorized parties?",
+    "correctAnswer": "Transparency",
+    "incorrectAnswers": [
+      "Accountability",
+      "Independence",
+      "Discipline"
+    ],
+    "explanation": "TOGAF lists discipline, transparency, independence, accountability, responsibility and fairness. Transparency means decisions and their basis can be inspected, while accountability concerns who answers for actions.",
+    "keywords": [
+      "togaf",
+      "ea-foundation",
+      "implementation-governance",
+      "compliance"
+    ],
+    "source": "https://pubs.opengroup.org/togaf-standard/adm/index.html"
+  },
+  {
+    "itemId": "ce14515e-4838-4337-8903-2a2f71acfe53",
+    "category": "exams",
+    "navigationKeyword1": "togaf",
+    "navigationKeyword2": "ea-foundation",
+    "question": "What does an architecture contract agree between the parties?",
+    "correctAnswer": "The architecture requirements and conformance expectations the implementers commit to",
+    "incorrectAnswers": [
+      "The commercial price and license terms of the solution",
+      "The project schedule and milestone payments",
+      "The vendor support levels for the operations team"
+    ],
+    "explanation": "An architecture contract is an agreement between the architect and implementers on the architecture requirements and how conformance is checked.",
+    "keywords": [
+      "togaf",
+      "ea-foundation",
+      "architecture-contract",
+      "governance"
+    ],
+    "source": "https://pubs.opengroup.org/togaf-standard/adm/index.html"
+  },
+  {
+    "itemId": "a2ea8c60-b37d-45dd-946b-22888b19297f",
+    "category": "exams",
+    "navigationKeyword1": "togaf",
+    "navigationKeyword2": "ea-foundation",
+    "question": "A solution implements every feature of the architecture specification as specified, and also adds features the specification does not cover. Which compliance level applies?",
+    "correctAnswer": "Conformant",
+    "incorrectAnswers": [
+      "Fully Conformant",
+      "Compliant",
+      "Consistent"
+    ],
+    "explanation": "Conformant means everything in the specification is implemented correctly and extra features exist. Fully Conformant has no extras, and Compliant means some specified features are not yet implemented.",
+    "keywords": [
+      "togaf",
+      "ea-foundation",
+      "change-management",
+      "governance"
+    ],
+    "source": "https://pubs.opengroup.org/togaf-standard/adm/index.html"
+  },
+  {
+    "itemId": "4323aca5-67a4-4111-bd1a-49487f690f5a",
+    "category": "exams",
+    "navigationKeyword1": "togaf",
+    "navigationKeyword2": "ea-foundation",
+    "question": "The Architecture Content Framework describes architecture content at three levels: deliverable, artifact and which other one?",
+    "correctAnswer": "Building block",
+    "incorrectAnswers": [
+      "Viewpoint",
+      "Principle",
+      "Stakeholder"
+    ],
+    "explanation": "The Architecture Content Framework structures content as deliverables, artifacts and building blocks.",
+    "keywords": [
+      "togaf",
+      "ea-foundation",
+      "architecture-content",
+      "framework"
+    ],
+    "source": "https://www.opengroup.org/togaf/10thedition"
+  },
+  {
+    "itemId": "a6dc078e-c06d-4e99-b007-b028d886b79e",
+    "category": "exams",
+    "navigationKeyword1": "togaf",
+    "navigationKeyword2": "ea-foundation",
+    "question": "What is the purpose of a catalog in the Architecture Content Framework?",
+    "correctAnswer": "To list architecture entities of one type, such as applications or organization units, for reuse and analysis",
+    "incorrectAnswers": [
+      "To record the approval of each stakeholder",
+      "To define the project schedule",
+      "To store the purchase orders for technology"
+    ],
+    "explanation": "A catalog lists one type of architecture entity so that it can be reused, reviewed and analyzed. Matrices and diagrams then show the relationships between entities.",
+    "keywords": [
+      "togaf",
+      "ea-foundation",
+      "catalogs",
+      "architecture-content"
+    ],
+    "source": "https://www.opengroup.org/togaf/10thedition"
+  },
+  {
+    "itemId": "12456a7a-8473-40d1-ad24-f96746f10330",
+    "category": "exams",
+    "navigationKeyword1": "togaf",
+    "navigationKeyword2": "ea-foundation",
+    "question": "An architect needs a grid showing which applications support which business functions, so that unsupported functions stand out. Which artifact type fits best?",
+    "correctAnswer": "A matrix, such as the Application/Function matrix",
+    "incorrectAnswers": [
+      "A catalog, such as the Application Portfolio catalog",
+      "A diagram, such as the Application Communication diagram",
+      "A deliverable, such as the Architecture Definition Document"
+    ],
+    "explanation": "Matrices show relationships between two entity types in a grid. Catalogs list one entity type, and diagrams show structure or flow.",
+    "keywords": [
+      "togaf",
+      "ea-foundation",
+      "matrices",
+      "architecture-content"
+    ],
+    "source": "https://www.opengroup.org/togaf/10thedition"
+  },
+  {
+    "itemId": "fc564568-d576-49eb-8fd2-e9158e2aa59d",
+    "category": "exams",
+    "navigationKeyword1": "togaf",
+    "navigationKeyword2": "ea-foundation",
+    "question": "Which artifact is most suitable for showing the interactions and dependencies between application components?",
+    "correctAnswer": "Application Communication diagram",
+    "incorrectAnswers": [
+      "Application and User Location diagram",
+      "Application Portfolio catalog",
+      "Application/Organization matrix"
+    ],
+    "explanation": "The Application Communication diagram shows how components exchange information. The location diagram shows where users and applications are, the catalog lists applications, and the matrix maps them to organization units.",
+    "keywords": [
+      "togaf",
+      "ea-foundation",
+      "diagrams",
+      "architecture-content"
+    ],
+    "source": "https://www.opengroup.org/togaf/10thedition"
+  },
+  {
+    "itemId": "cbdcf76a-6ed9-4691-a109-b08fe60ebed1",
+    "category": "exams",
+    "navigationKeyword1": "togaf",
+    "navigationKeyword2": "ea-foundation",
+    "question": "Which Phase C artifact shows the relationships between data entities, independent of how they are physically stored?",
+    "correctAnswer": "Logical Data diagram",
+    "incorrectAnswers": [
+      "Data Dissemination diagram",
+      "Data Lifecycle diagram",
+      "Data Security diagram"
+    ],
+    "explanation": "The Logical Data diagram models entities and their relationships. Dissemination maps data to services and applications, lifecycle shows changes of state, and security shows who can access the data.",
+    "keywords": [
+      "togaf",
+      "ea-foundation",
+      "data-architecture",
+      "logical-data-model"
+    ],
+    "source": "https://www.opengroup.org/togaf/10thedition"
   }
 ]
