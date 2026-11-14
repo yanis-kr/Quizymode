@@ -115,7 +115,7 @@ describe("SignUpPage", () => {
 
   it("save-progress copy promises only shipped account features", () => {
     renderPage("/signup?reason=save-progress");
-    expect(screen.getByRole("heading", { name: "Keep your streak and results" })).toBeInTheDocument();
+    expect(screen.getByRole("heading", { name: "Save your streak and results from now on" })).toBeInTheDocument();
     expect(screen.queryByText(/quiz scores are not saved to accounts yet/i)).not.toBeInTheDocument();
     expect(screen.getByText(/streak and quiz results follow you to every device/i)).toBeInTheDocument();
   });

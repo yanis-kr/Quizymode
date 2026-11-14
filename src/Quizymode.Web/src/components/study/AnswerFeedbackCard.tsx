@@ -19,6 +19,8 @@ interface AnswerFeedbackCardProps {
   isLast: boolean;
   /** Primary action; without it the card shows no button (nothing to advance to). */
   onNext?: (() => void) | undefined;
+  /** Shown where Next would be when there is nothing to advance to (for example "1 question left. Use Previous to answer it."); it takes focus. */
+  noNextHint?: string | undefined;
   /** Starter only: a click or tap anywhere on the card advances. Clicks from a button or link inside never do. */
   advanceOnCardClick?: boolean;
 }
@@ -36,9 +38,11 @@ export function AnswerFeedbackCard({
   fact,
   isLast,
   onNext,
+  noNextHint,
   advanceOnCardClick = false,
 }: AnswerFeedbackCardProps) {
   const nextRef = useRef<HTMLButtonElement>(null);
+  const hintRef = useRef<HTMLParagraphElement>(null);
   const { isSupported } = useSpeech();
   const hasNext = onNext !== undefined;
   const rationale = isCorrect
@@ -51,6 +55,14 @@ export function AnswerFeedbackCard({
     const frame = requestAnimationFrame(() => nextRef.current?.focus());
     return () => cancelAnimationFrame(frame);
   }, [hasNext]);
+
+  // No Next: focus the hint so focus never drops to the page body (the hint is inside the live region).
+  const hasHint = !hasNext && Boolean(noNextHint);
+  useEffect(() => {
+    if (!hasHint) return;
+    const frame = requestAnimationFrame(() => hintRef.current?.focus());
+    return () => cancelAnimationFrame(frame);
+  }, [hasHint]);
 
   const handleCardClick = (event: MouseEvent<HTMLDivElement>) => {
     if (!advanceOnCardClick || !onNext) return;
@@ -119,6 +131,11 @@ export function AnswerFeedbackCard({
         slot="explanation"
         className="mt-3 max-h-48 rounded-lg bg-surface sm:max-h-72"
       />
+      {hasHint && (
+        <p ref={hintRef} tabIndex={-1} data-testid="answer-card-hint" className="mt-3 text-sm font-semibold text-gray-800 focus:outline-none">
+          {noNextHint}
+        </p>
+      )}
       {hasNext && (
         <div className="mt-3 flex">
           <button

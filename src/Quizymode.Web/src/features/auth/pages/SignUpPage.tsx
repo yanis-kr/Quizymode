@@ -49,7 +49,7 @@ const BENEFIT_COPY: Record<AuthReason, BenefitCopy> = {
     body: "Create a free account to join the discussion where it's available.",
   },
   "save-progress": {
-    heading: "Keep your streak and results",
+    heading: "Save your streak and results from now on",
     body: "Create a free account and your streak and quiz results follow you to every device from now on. Right now they're saved only in this browser.",
   },
   "review-later": {

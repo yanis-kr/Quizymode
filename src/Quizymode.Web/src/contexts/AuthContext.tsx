@@ -145,6 +145,8 @@ export const AuthProvider = ({ children }: AuthProviderProps) => {
       setUsername(devIdentity.userId);
       setEmail(null);
       setIsAdmin(devIdentity.isAdmin);
+      // This branch returns before the try/finally below, so auth must be marked settled here or isLoading stays true.
+      setIsLoading(false);
       return true;
     }
 

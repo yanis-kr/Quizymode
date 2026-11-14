@@ -465,6 +465,10 @@ describe("QuizModePage", () => {
       expect(screen.getByTestId("answer-feedback-card")).toHaveTextContent("Correct!");
       expect(buttonsNamed(/^next$/i)).toHaveLength(0);
       expect(buttonsNamed(/see my score/i)).toHaveLength(0);
+      // The card says why there is no button, with the real count, and takes focus so it is not lost to the body.
+      const hint = screen.getByTestId("answer-card-hint");
+      expect(hint).toHaveTextContent("1 question left. Use Previous to answer it.");
+      await waitFor(() => expect(hint).toHaveFocus());
       // Previous leads back to the open question, and answering it completes the run.
       await user.click(screen.getByRole("button", { name: /^previous$/i }));
       expect(await screen.findByText("What is 2 + 2?")).toBeInTheDocument();

@@ -27,6 +27,11 @@ export function useListenAll<T extends ListenItem>(items: T[], isAnswerAudible?:
   const stateRef = useRef<ListenAllState>("idle");
   const timerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
   const speakNextRef = useRef<() => void>(() => {});
+  // Read through a ref at the moment the answer would be spoken, so turning answers off mid-item takes effect at once.
+  const isAnswerAudibleRef = useRef(isAnswerAudible);
+  useEffect(() => {
+    isAnswerAudibleRef.current = isAnswerAudible;
+  }, [isAnswerAudible]);
 
   const clearTimer = useCallback(() => {
     if (timerRef.current !== null) {
@@ -75,7 +80,11 @@ export function useListenAll<T extends ListenItem>(items: T[], isAnswerAudible?:
     const lastQuestionUtterance = questionUtterances[questionUtterances.length - 1];
     lastQuestionUtterance.onend = () => {
       if (stateRef.current !== "playing") return;
-      if (isAnswerAudible && !isAnswerAudible(item)) {
+      const answerHidden = () => {
+        const audible = isAnswerAudibleRef.current;
+        return audible !== undefined && !audible(item);
+      };
+      if (answerHidden()) {
         indexRef.current = idx + 1;
         timerRef.current = setTimeout(() => speakNextRef.current(), 800);
         return;
@@ -83,6 +92,11 @@ export function useListenAll<T extends ListenItem>(items: T[], isAnswerAudible?:
       // 2-second pause between question and answer
       timerRef.current = setTimeout(() => {
         if (stateRef.current !== "playing") return;
+        if (answerHidden()) {
+          indexRef.current = idx + 1;
+          timerRef.current = setTimeout(() => speakNextRef.current(), 800);
+          return;
+        }
         const answerUtterances = createSpeechUtterances({
           text: item.correctAnswer,
           pronunciation: item.correctAnswerSpeech?.pronunciation,

@@ -67,4 +67,22 @@ describe("useListenAll", () => {
     expect(spoken.map((u) => u.text)).toEqual(["Q1", "Q2", "A2"]);
     expect(spoken.some((u) => u.text === "A1")).toBe(false);
   });
+
+  it("hiding answers during the pause after the question skips that answer", () => {
+    let audible = true;
+    const { result, rerender } = renderHook(() => useListenAll(items, () => audible));
+    act(() => result.current.handleButton());
+    finishLastUtterance();
+    // The question is done and the 2-second pause is running; the visitor turns Show answers off.
+    audible = false;
+    rerender();
+    act(() => {
+      vi.advanceTimersByTime(2000);
+    });
+    expect(spoken.some((u) => u.text === "A1")).toBe(false);
+    act(() => {
+      vi.advanceTimersByTime(800);
+    });
+    expect(spoken.map((u) => u.text)).toEqual(["Q1", "Q2"]);
+  });
 });

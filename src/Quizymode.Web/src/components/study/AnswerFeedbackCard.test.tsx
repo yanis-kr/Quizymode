@@ -115,4 +115,17 @@ describe("AnswerFeedbackCard", () => {
       expect(onNext).toHaveBeenCalledTimes(1);
     });
   });
+
+  it("without Next, shows the hint where the button would be and focuses it", async () => {
+    renderCard({ onNext: undefined, noNextHint: "3 questions left. Use Previous to answer them." });
+    const hint = screen.getByTestId("answer-card-hint");
+    expect(hint).toHaveTextContent("3 questions left. Use Previous to answer them.");
+    expect(screen.queryByRole("button", { name: /next|see my score/i })).not.toBeInTheDocument();
+    await waitFor(() => expect(hint).toHaveFocus());
+  });
+
+  it("with Next, the hint is not shown", () => {
+    renderCard({ noNextHint: "x" });
+    expect(screen.queryByTestId("answer-card-hint")).not.toBeInTheDocument();
+  });
 });

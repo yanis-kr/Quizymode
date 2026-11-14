@@ -7,7 +7,7 @@ import { studySessionsApi } from "@/api/studySessions";
 import { readGuestHistory, readGuestRunSummary } from "@/features/guestHistory/guestHistoryStorage";
 import { buildGuestPracticePath } from "@/features/guestHistory/guestHistoryLinks";
 import { homeCategoryCards } from "@/features/home/homePageData";
-import { rankPersonalizedHome, type ActivityRun } from "@/features/home/personalization";
+import { CATEGORY_FALLBACK_ID_PREFIX, rankPersonalizedHome, type ActivityRun } from "@/features/home/personalization";
 import { useInterests, useLocalVersion } from "@/features/interests/useInterests";
 import { topicParts } from "@/features/interests/topicPaths";
 import type { ExploreNextTile } from "@/components/study/ExploreNextTiles";
@@ -26,12 +26,18 @@ export function exploreNextPath(set: FeaturedSetDto): string {
   return `${path}${path.includes("?") ? "&" : "?"}size=5`;
 }
 
+/**
+ * A featured set has a real item count: the tile says how many questions it will play (at most 5) and offers "Play 5" only
+ * when it has five. A category-level fallback card has no known count, so it shows no count line and "Play quiz".
+ */
 function toTile(set: FeaturedSetDto): ExploreNextTile {
+  const isFallback = set.id.startsWith(CATEGORY_FALLBACK_ID_PREFIX);
+  const playable = Math.min(set.itemCount, 5);
   return {
     id: set.id,
     label: set.displayName,
-    copy: "5 questions",
-    cta: "Play 5",
+    ...(isFallback ? {} : { copy: `${playable} ${playable === 1 ? "question" : "questions"}` }),
+    cta: !isFallback && playable === 5 ? "Play 5" : "Play quiz",
     to: exploreNextPath(set),
   };
 }
@@ -79,7 +85,8 @@ export function useExploreNextSets(limit = 3): { tiles: ExploreNextTile[]; isLoa
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [signedIn, isAuthLoading, sessionsQuery.data, localVersion]);
 
-  const featuredSets = featuredQuery.data?.sets;
+  // A set with no questions would land on "No items found", so it is never offered.
+  const featuredSets = useMemo(() => featuredQuery.data?.sets.filter((set) => set.itemCount > 0), [featuredQuery.data]);
   const tiles = useMemo(() => {
     if (!featuredSets) return [];
     const ranked = rankPersonalizedHome({

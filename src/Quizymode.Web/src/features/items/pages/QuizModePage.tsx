@@ -1180,7 +1180,7 @@ const QuizModePageContent = ({ resumeRequested = false, initialNotice = null }: 
     !isTestRun && run?.view === "active" && currentOutcome && currentOutcome.inputMode !== "typed" ? currentOutcome : undefined;
   // "See my score" is keyed on the run being complete, not on the last index: Practice allows skipping ahead (AC 3.6.9), so
   // the last question can be answered while earlier ones are not. Then there is nothing to advance to and the card has no
-  // button; Previous (and the palette keys) lead back to the open questions.
+  // button; the card says how many are left and Previous leads back to them.
   const cardCompletesRun = Boolean(runSummary?.isComplete);
   const advanceFromCard = () => {
     if (cardCompletesRun) {
@@ -1656,6 +1656,11 @@ const QuizModePageContent = ({ resumeRequested = false, initialNotice = null }: 
                     fact={currentItem.explanation ?? ""}
                     isLast={cardCompletesRun}
                     onNext={cardCompletesRun || hasNextQuestion ? advanceFromCard : undefined}
+                    noNextHint={
+                      runSummary && runSummary.notAnswered > 0
+                        ? `${runSummary.notAnswered} ${runSummary.notAnswered === 1 ? "question left. Use Previous to answer it." : "questions left. Use Previous to answer them."}`
+                        : undefined
+                    }
                   />
                 ) : null
               }

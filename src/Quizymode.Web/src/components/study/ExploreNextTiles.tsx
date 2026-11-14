@@ -6,7 +6,8 @@ export interface ExploreNextTile {
   /** Decorative; hidden from assistive technology. */
   emoji?: string;
   label: string;
-  copy: string;
+  /** Omitted when unknown: no count line is shown rather than a wrong one. */
+  copy?: string;
   cta: string;
   to: string;
 }
@@ -54,7 +55,7 @@ export function ExploreNextTiles({ heading, tiles, loading = false, onSelect, fo
                     </span>
                   )}
                   <span className="mt-1 block font-semibold text-gray-900">{tile.label}</span>
-                  <span className="mt-0.5 block text-sm text-gray-600">{tile.copy}</span>
+                  {tile.copy && <span className="mt-0.5 block text-sm text-gray-600">{tile.copy}</span>}
                   <span className="mt-2 block text-sm font-semibold text-indigo-ink">{tile.cta}</span>
                 </Link>
               </li>

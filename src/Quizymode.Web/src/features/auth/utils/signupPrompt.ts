@@ -13,7 +13,7 @@ export interface SignupPromptCopy {
 
 export const SIGNUP_PROMPT_COPY: Record<AuthReason, SignupPromptCopy> = {
   "save-progress": {
-    heading: "Keep your streak and results",
+    heading: "Save your streak and results from now on",
     body: "Create a free account and your streak and quiz results follow you to every device from now on. Right now they're saved only in this browser.",
     cta: "Create a free account",
   },

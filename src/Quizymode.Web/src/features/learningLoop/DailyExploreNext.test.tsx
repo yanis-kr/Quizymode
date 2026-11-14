@@ -121,4 +121,30 @@ describe("DailyExploreNext (#649)", () => {
     await waitFor(() => expect(screen.queryAllByTestId("explore-next-skeleton")).toHaveLength(0));
     expect(container).toBeEmptyDOMElement();
   });
+
+  it("never offers a set with no questions and shows the real count for a short set", async () => {
+    const sets = [
+      { ...set("e1", "Empty Set", "science", "space", null, 1), itemCount: 0 },
+      { ...set("s1", "Short Set", "science", "physics", null, 2), itemCount: 3 },
+      { ...set("o1", "One Set", "science", "chemistry", null, 3), itemCount: 1 },
+      set("f1", "Full Set", "science", "biology", null, 4),
+    ];
+    vi.mocked(featuredApi.get).mockResolvedValue({ sets, collections: [] } as unknown as Awaited<ReturnType<typeof featuredApi.get>>);
+    renderWithProviders(<DailyExploreNext />);
+
+    expect(await screen.findByRole("link", { name: /Short Set/ })).toHaveTextContent("3 questions");
+    expect(screen.getByRole("link", { name: /Short Set/ })).toHaveTextContent("Play quiz");
+    expect(screen.getByRole("link", { name: /One Set/ })).toHaveTextContent("1 question");
+    expect(screen.getByRole("link", { name: /Full Set/ })).toHaveTextContent("5 questions");
+    expect(screen.getByRole("link", { name: /Full Set/ })).toHaveTextContent("Play 5");
+    expect(screen.queryByRole("link", { name: /Empty Set/ })).toBeNull();
+  });
+
+  it("a category-level fallback card claims no question count", async () => {
+    writeLocalInterests(["languages"]);
+    renderWithProviders(<DailyExploreNext />);
+    const link = await screen.findByRole("link", { name: /Explore/ });
+    expect(link).not.toHaveTextContent(/\d+ questions?/);
+    expect(link).toHaveTextContent("Play quiz");
+  });
 });
