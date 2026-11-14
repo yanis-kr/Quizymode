@@ -5,8 +5,25 @@ import type { ItemResponse } from "@/types/api";
 import ItemListSection from "./ItemListSection";
 
 vi.mock("./ItemListCard", () => ({
-  default: ({ item }: { item: ItemResponse }) => (
-    <div data-testid="item-card">{item.question}</div>
+  default: ({
+    item,
+    showAnswer,
+    revealed,
+    onToggleReveal,
+  }: {
+    item: ItemResponse;
+    showAnswer?: boolean;
+    revealed?: boolean;
+    onToggleReveal?: () => void;
+  }) => (
+    <div data-testid="item-card" data-show-answer={String(showAnswer)} data-revealed={String(revealed)}>
+      {item.question}
+      {onToggleReveal && (
+        <button type="button" onClick={onToggleReveal}>
+          reveal {item.id}
+        </button>
+      )}
+    </div>
   ),
 }));
 
@@ -67,5 +84,31 @@ describe("ItemListSection", () => {
 
     expect(screen.queryByRole("button", { name: "Previous" })).not.toBeInTheDocument();
     expect(screen.queryByRole("button", { name: "Next" })).not.toBeInTheDocument();
+  });
+
+  it("passes the page toggle and each card's own reveal state down", async () => {
+    const user = userEvent.setup();
+    const onToggleReveal = vi.fn();
+    render(
+      <ItemListSection
+        items={[buildItem("1", "First question"), buildItem("2", "Second question")]}
+        totalCount={2}
+        page={1}
+        totalPages={1}
+        onPrevPage={vi.fn()}
+        onNextPage={vi.fn()}
+        showAnswers={false}
+        revealedIds={new Set(["2"])}
+        onToggleReveal={onToggleReveal}
+      />
+    );
+
+    const cards = screen.getAllByTestId("item-card");
+    expect(cards[0]).toHaveAttribute("data-show-answer", "false");
+    expect(cards[0]).toHaveAttribute("data-revealed", "false");
+    expect(cards[1]).toHaveAttribute("data-revealed", "true");
+
+    await user.click(screen.getByRole("button", { name: "reveal 1" }));
+    expect(onToggleReveal).toHaveBeenCalledWith("1");
   });
 });

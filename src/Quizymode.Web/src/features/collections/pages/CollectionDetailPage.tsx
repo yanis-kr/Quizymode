@@ -10,12 +10,15 @@ import ItemListSection from "@/components/ItemListSection";
 import ItemCollectionsModal from "@/components/ItemCollectionsModal";
 import { ItemCollectionControls } from "@/components/ItemCollectionControls";
 import { ScopeSecondaryBar } from "@/components/ScopeSecondaryBar";
-import { EyeIcon, EyeSlashIcon, MinusIcon, StarIcon, BookmarkIcon, XMarkIcon, ChevronLeftIcon } from "@heroicons/react/24/outline";
+import { EyeIcon, MinusIcon, StarIcon, BookmarkIcon, XMarkIcon, ChevronLeftIcon } from "@heroicons/react/24/outline";
 import { StarIcon as StarIconSolid } from "@heroicons/react/24/solid";
 import { buildCategoryPath, categoryNameToSlug } from "@/utils/categorySlug";
 import { buildCollectionPath, buildCollectionStudyPath } from "@/utils/collectionPath";
 import { usePageSize, PAGE_SIZE_OPTIONS } from "@/hooks/usePageSize";
-import { useShowAnswers } from "@/hooks/useShowAnswers";
+import { useAnswerVisibility } from "@/hooks/useAnswerVisibility";
+import { ShowAnswersToggle } from "@/components/ShowAnswersToggle";
+import { ScopeLandingHeader } from "@/components/ScopeLandingHeader";
+import { isGameEligible, GAME_MIN_ITEMS } from "@/features/games/gameRoster";
 import { useListenAll } from "@/hooks/useListenAll";
 import { SpeakerWaveIcon, PauseIcon } from "@heroicons/react/24/outline";
 import { CollectionVisibilityToggles } from "../components/CollectionVisibilityToggles";
@@ -44,7 +47,14 @@ const CollectionDetailPage = () => {
   const { pageSize, updatePageSize } = usePageSize();
   const showAnswersParam = searchParams.get("showAnswers");
   const showAnswersOverride = showAnswersParam === "true" ? true : showAnswersParam === "false" ? false : undefined;
-  const { showAnswers, toggleShowAnswers } = useShowAnswers(showAnswersOverride);
+  const {
+    showAll: showAnswers,
+    toggleAll: toggleShowAnswers,
+    isReady: answersReady,
+    revealedIds,
+    toggleItem: toggleRevealedItem,
+    isAnswerVisible,
+  } = useAnswerVisibility(showAnswersOverride, itemsPage);
   const [showDetails, setShowDetails] = useState(false);
   const [hideAnswersOnPrint, setHideAnswersOnPrint] = useState(false);
   const [printing, setPrinting] = useState(false);
@@ -122,7 +132,7 @@ const CollectionDetailPage = () => {
     enabled: !!id && isOwner,
   });
   const allItems = itemsData?.items || [];
-  const { listenState: listenAllState, handleButton: handleListenAll, isSupported: ttsSupported } = useListenAll(allItems);
+  const { listenState: listenAllState, handleButton: handleListenAll, isSupported: ttsSupported } = useListenAll(allItems, (item) => isAnswerVisible(item.id));
 
   // In-collection search (#555, AC 1.5.12) filters the loaded roster only; the header count stays unfiltered.
   const [searchTerm, setSearchTerm] = useState("");
@@ -225,6 +235,19 @@ const CollectionDetailPage = () => {
         />
       )}
       {topicMembers && <TopicMembersSection topics={topicMembers} />}
+      {id && collectionData && (
+        <ScopeLandingHeader
+          variant="collection"
+          title={collectionData.name}
+          description={collectionData.description?.trim() || null}
+          count={allItems.length}
+          countState="ready"
+          games={allItems.filter(isGameEligible).length >= GAME_MIN_ITEMS ? "available" : "unavailable"}
+          quizHref={() => buildCollectionStudyPath("quiz", id, collectionData.name)}
+          flashcardsHref={buildCollectionStudyPath("explore", id, collectionData.name)}
+          gamesHref={buildCollectionStudyPath("games", id, collectionData.name)}
+        />
+      )}
       {allItems.length > 0 && (
         <ScopeSecondaryBar
           scopeType="collection"
@@ -473,37 +496,21 @@ const CollectionDetailPage = () => {
             Questions
           </h2>
           <div className="mb-1 flex items-center gap-2 py-1">
-            <button
-              type="button"
-              onClick={toggleShowAnswers}
-              title={showAnswers ? "Hide answers" : "Show answers"}
-              className={`inline-flex items-center gap-1 rounded-lg border px-2.5 py-1.5 text-sm font-medium transition ${
-                showAnswers
-                  ? "border-green-300 bg-green-50 text-green-700 hover:bg-green-100"
-                  : "border-gray-200 bg-surface text-gray-500 hover:bg-gray-50"
-              }`}
-            >
-              {showAnswers ? (
-                <EyeSlashIcon className="h-4 w-4 shrink-0" />
-              ) : (
-                <EyeIcon className="h-4 w-4 shrink-0" />
-              )}
-              <span className="hidden sm:inline">
-                {showAnswers ? "Hide answers" : "Show answers"}
-              </span>
-            </button>
+            <ShowAnswersToggle showAnswers={showAnswers} onToggle={toggleShowAnswers} disabled={!answersReady} />
             {ttsSupported && (
               <button
                 type="button"
                 onClick={handleListenAll}
                 title={
                   listenAllState === "idle"
-                    ? "Listen to all items (TTS)"
+                    ? !showAnswers
+                      ? "Listen to all questions (answers hidden)"
+                      : "Listen to all items (TTS)"
                     : listenAllState === "playing"
                     ? "Pause"
                     : "Resume"
                 }
-                className={`inline-flex items-center gap-1 rounded-lg border px-2.5 py-1.5 text-sm font-medium transition ${
+                className={`inline-flex min-h-[44px] items-center gap-1 rounded-lg border px-2.5 py-1.5 text-sm font-medium transition ${
                   listenAllState !== "idle"
                     ? "border-indigo-300 bg-indigo-50 text-indigo-ink hover:bg-indigo-100"
                     : "border-gray-200 bg-surface text-gray-500 hover:bg-gray-50"
@@ -554,6 +561,8 @@ const CollectionDetailPage = () => {
             showRatingsAndComments
             returnUrl={collectionReturnUrl}
             showAnswers={showAnswers}
+            revealedIds={revealedIds}
+            onToggleReveal={toggleRevealedItem}
             onKeywordClick={(keywordName, item) => {
               if (!item?.category) return;
               const path = buildCategoryPath(

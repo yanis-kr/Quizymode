@@ -17,6 +17,7 @@ import LoadingSpinner from "@/components/LoadingSpinner";
 import ErrorMessage from "@/components/ErrorMessage";
 import { CommentsDrawer } from "@/components/CommentsDrawer";
 import { StudyShell } from "@/components/study/StudyShell";
+import { AnswerFeedbackCard } from "@/components/study/AnswerFeedbackCard";
 import { QuizRenderer, type TypedAnswerControls } from "@/components/study/QuizRenderer";
 import ItemCollectionsModal from "@/components/ItemCollectionsModal";
 import {
@@ -200,6 +201,9 @@ const QuizModePageContent = ({ resumeRequested = false, initialNotice = null }: 
   /** Mode requested by the switch handler until the URL catches up; keeps a stale-mode run from being recreated. */
   const pendingSwitchRef = useRef<QuizRunMode | null>(null);
   const completionPublishedRunIds = useRef(new Set<string>());
+  // After the answer card's Next the card (and its focused button) unmounts; focus moves to the next question's heading.
+  const questionHeadingRef = useRef<HTMLHeadingElement>(null);
+  const focusQuestionAfterNext = useRef(false);
   /** Quiz uses random N items (default 10); changing this refetches items */
   const [initialQuizSize] = useState<number>(() => parseSizeParam(searchParams.get("size")) ?? readSavedQuizSize());
   const [quizSize, setQuizSize] = useState<number>(initialQuizSize);
@@ -1170,6 +1174,28 @@ const QuizModePageContent = ({ resumeRequested = false, initialNotice = null }: 
           continueLabel: hasNextQuestion ? "Next question" : "Finish",
         }
       : undefined;
+  // The shared answer card (#648) shows for a recorded multiple-choice answer in Practice. Typed answers keep their panel
+  // (AC 3.6.19) and a Test shows nothing until submit (it renders TestRunView, never this path).
+  const choiceCardOutcome =
+    !isTestRun && run?.view === "active" && currentOutcome && currentOutcome.inputMode !== "typed" ? currentOutcome : undefined;
+  // "See my score" is keyed on the run being complete, not on the last index: Practice allows skipping ahead (AC 3.6.9), so
+  // the last question can be answered while earlier ones are not. Then there is nothing to advance to and the card has no
+  // button; the card says how many are left and Previous leads back to them.
+  const cardCompletesRun = Boolean(runSummary?.isComplete);
+  const advanceFromCard = () => {
+    if (cardCompletesRun) {
+      setRun((current) => (current ? reduceQuizRun(current, { type: "show-summary" }) : current));
+    } else if (hasNextQuestion) {
+      focusQuestionAfterNext.current = true;
+      handleNext();
+    }
+  };
+  useEffect(() => {
+    if (!focusQuestionAfterNext.current) return;
+    focusQuestionAfterNext.current = false;
+    const frame = requestAnimationFrame(() => questionHeadingRef.current?.focus());
+    return () => cancelAnimationFrame(frame);
+  }, [currentItem?.id]);
   const { isHelpOpen, openHelp, closeHelp } = useStudyHotkeys({
     enabled: true,
     letter: isQuestionActive && !isTypedAnswering && (isTestRun || !showAnswer) ? (index) => options[index] !== undefined && handleAnswerSelect(options[index]) : undefined,
@@ -1188,6 +1214,8 @@ const QuizModePageContent = ({ resumeRequested = false, initialNotice = null }: 
               handleTypedContinue();
             } else if (runSummary?.isComplete) {
               setRun((current) => (current ? reduceQuizRun(current, { type: "show-summary" }) : current));
+            } else if (choiceCardOutcome) {
+              advanceFromCard();
             } else if (hasNextQuestion) {
               handleNext();
             }
@@ -1595,6 +1623,7 @@ const QuizModePageContent = ({ resumeRequested = false, initialNotice = null }: 
         onNext={handleNext}
         isPrevDisabled={currentIndex === 0}
         isNextDisabled={currentIndex >= items.length - 1}
+        hideBottomNext={Boolean(choiceCardOutcome)}
         currentItem={currentItem ?? undefined}
         navigationContext={navigationContext}
         onOpenComments={(id) => setCommentsDrawerItemId(id)}
@@ -1615,12 +1644,34 @@ const QuizModePageContent = ({ resumeRequested = false, initialNotice = null }: 
               onAnswerSelect={handleAnswerSelect}
               stats={stats}
               typedAnswer={typedAnswerControls}
+              // Always passed (null before answering) so the single live region is mounted before the card arrives.
+              // A typed answer keeps its own panel and answer box: QuizRenderer ignores the card then (AC 3.6.19).
+              answerPanel={
+                choiceCardOutcome ? (
+                  <AnswerFeedbackCard
+                    key={currentItem.id}
+                    item={currentItem}
+                    selectedAnswer={choiceCardOutcome.selectedAnswer}
+                    isCorrect={choiceCardOutcome.isCorrect}
+                    fact={currentItem.explanation ?? ""}
+                    isLast={cardCompletesRun}
+                    onNext={cardCompletesRun || hasNextQuestion ? advanceFromCard : undefined}
+                    noNextHint={
+                      runSummary && runSummary.notAnswered > 0
+                        ? `${runSummary.notAnswered} ${runSummary.notAnswered === 1 ? "question left. Use Previous to answer it." : "questions left. Use Previous to answer them."}`
+                        : undefined
+                    }
+                  />
+                ) : null
+              }
+              showScoreWithPanel
+              questionHeadingRef={questionHeadingRef}
               questionPicture={{
                 ...pictures.controlsFor(currentItem, isPracticeActive && !currentSkipped && !currentOutcome ? handleSkipUnavailable : undefined),
                 blocked: pictureBlocked,
               }}
             />
-            {runSummary?.isComplete && (
+            {runSummary?.isComplete && !choiceCardOutcome && (
               <div role="status" className="mt-4 rounded-lg border border-indigo-200 bg-indigo-50 p-4 text-center">
                 <p className="font-semibold text-indigo-950">
                   {runSummary.skipped > 0 ? "You finished every question." : "You answered every question."}

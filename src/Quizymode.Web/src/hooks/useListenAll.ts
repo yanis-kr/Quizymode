@@ -15,8 +15,11 @@ export type ListenAllState = "idle" | "playing" | "paused";
  * Sequences TTS playback of all items: speaks the question, pauses 2 seconds,
  * then speaks the answer, then moves on to the next item.
  * Supports pause/resume. Cancels cleanly on unmount.
+ *
+ * `isAnswerAudible` (#647): items for which it returns false are read as the question only, so hidden answers are
+ * never spoken. Omitted means every answer is spoken.
  */
-export function useListenAll(items: ListenItem[]) {
+export function useListenAll<T extends ListenItem>(items: T[], isAnswerAudible?: (item: T) => boolean) {
   const [listenState, setListenState] = useState<ListenAllState>("idle");
   const [currentIndex, setCurrentIndex] = useState(0);
 
@@ -24,6 +27,11 @@ export function useListenAll(items: ListenItem[]) {
   const stateRef = useRef<ListenAllState>("idle");
   const timerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
   const speakNextRef = useRef<() => void>(() => {});
+  // Read through a ref at the moment the answer would be spoken, so turning answers off mid-item takes effect at once.
+  const isAnswerAudibleRef = useRef(isAnswerAudible);
+  useEffect(() => {
+    isAnswerAudibleRef.current = isAnswerAudible;
+  }, [isAnswerAudible]);
 
   const clearTimer = useCallback(() => {
     if (timerRef.current !== null) {
@@ -72,9 +80,23 @@ export function useListenAll(items: ListenItem[]) {
     const lastQuestionUtterance = questionUtterances[questionUtterances.length - 1];
     lastQuestionUtterance.onend = () => {
       if (stateRef.current !== "playing") return;
+      const answerHidden = () => {
+        const audible = isAnswerAudibleRef.current;
+        return audible !== undefined && !audible(item);
+      };
+      if (answerHidden()) {
+        indexRef.current = idx + 1;
+        timerRef.current = setTimeout(() => speakNextRef.current(), 800);
+        return;
+      }
       // 2-second pause between question and answer
       timerRef.current = setTimeout(() => {
         if (stateRef.current !== "playing") return;
+        if (answerHidden()) {
+          indexRef.current = idx + 1;
+          timerRef.current = setTimeout(() => speakNextRef.current(), 800);
+          return;
+        }
         const answerUtterances = createSpeechUtterances({
           text: item.correctAnswer,
           pronunciation: item.correctAnswerSpeech?.pronunciation,

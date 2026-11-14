@@ -20,6 +20,8 @@ import { DAILY_QUIZ_QUERY_KEY } from "@/features/learningLoop/pages/DailyQuizPag
 import { StudyPlanTodayCard } from "@/features/studyPlans/StudyPlanTodayCard";
 import { useStudyPlanActions, useStudyPlans } from "@/features/studyPlans/useStudyPlans";
 import { MAX_LANE_PLANS, daysUntil } from "@/features/studyPlans/studyPlanSteps";
+import { readLocalReviewList } from "@/features/learningLoop/localReviewList";
+import { useDailyCountdown } from "@/hooks/useDailyCountdown";
 import { homeCategoryCards } from "./homePageData";
 import { MAX_INTERESTS } from "@/features/learningLoop/localLearningState";
 import {
@@ -178,6 +180,10 @@ export function PersonalizedLanes({ featuredSets, focused = false }: { featuredS
   const dailyDone = signedIn ? Boolean(dailyQuery.data?.completion) : localDaily.some((entry) => entry.date === today);
   const streak = signedIn ? dailyQuery.data?.streak ?? 0 : computeStreak(localDaily.map((entry) => entry.date), today);
   const review = signedIn ? reviewQuery.data : undefined;
+  // Guest review list (AC 3.14.14): read on each render; localVersion re-renders when the list changes.
+  const guestReviewCount = signedIn ? 0 : readLocalReviewList().length;
+  const countdown = useDailyCountdown(signedIn ? dailyQuery.data?.date : undefined);
+  const dailyReady = dailyDone && countdown.isReady;
 
   if (isAuthLoading) return null;
 
@@ -213,11 +219,15 @@ export function PersonalizedLanes({ featuredSets, focused = false }: { featuredS
             <span>
               <span className="block text-sm font-semibold text-on-panel">Daily quiz</span>
               <span className="block text-xs text-on-panel">
-                {dailyDone ? "Done for today. New set at midnight UTC." : "Five new questions, same for everyone today."}
+                {dailyReady
+                  ? "A new quiz is ready."
+                  : dailyDone
+                    ? `Done for today. Next quiz in ${countdown.text}.`
+                    : "Five new questions, same for everyone today."}
               </span>
             </span>
             <span className="shrink-0 text-xs font-semibold text-amber-ink">
-              {streak > 0 ? `🔥 ${streak}-day streak` : dailyDone ? "✓ Done" : "Play"}
+              {dailyReady ? "Play" : streak > 0 ? `🔥 ${streak}-day streak` : dailyDone ? "✓ Done" : "Play"}
             </span>
           </Link>
           {review && review.totalCount > 0 && (
@@ -234,6 +244,20 @@ export function PersonalizedLanes({ featuredSets, focused = false }: { featuredS
                 </span>
               </span>
               <span className="shrink-0 text-xs font-semibold text-sky-ink">{review.dueCount > 0 ? "Review" : "Later"}</span>
+            </Link>
+          )}
+          {!signedIn && guestReviewCount > 0 && (
+            <Link
+              to="/review"
+              className="flex items-center justify-between gap-3 rounded-[18px] border border-white/10 bg-gradient-to-br from-indigo-500/20 to-sky-500/10 p-3 hover:border-sky-300/60 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-200"
+            >
+              <span>
+                <span className="block text-sm font-semibold text-on-panel">Review mistakes</span>
+                <span className="block text-xs text-on-panel">
+                  {guestReviewCount} {guestReviewCount === 1 ? "question" : "questions"} saved in this browser
+                </span>
+              </span>
+              <span className="shrink-0 text-xs font-semibold text-sky-ink">Review</span>
             </Link>
           )}
         </div>

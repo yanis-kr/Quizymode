@@ -31,8 +31,11 @@ export const SEO = ({
   noindex = false,
   structuredData,
 }: SEOProps) => {
+  // Callers that already carry the suffix must not get it twice.
   const pageTitle = title
-    ? `${title} | Quizymode`
+    ? title.endsWith(" | Quizymode")
+      ? title
+      : `${title} | Quizymode`
     : DEFAULT_TITLE;
   const pageDescription = description || DEFAULT_DESCRIPTION;
   const pageUrl = canonical || DEFAULT_URL;

@@ -15,7 +15,10 @@ import { ScopePathHeader } from "@/components/ScopePathHeader";
 import { BucketGridView } from "@/components/BucketGridView";
 import { useAuth } from "@/contexts/AuthContext";
 import { usePageSize } from "@/hooks/usePageSize";
-import { useShowAnswers } from "@/hooks/useShowAnswers";
+import { useAnswerVisibility } from "@/hooks/useAnswerVisibility";
+import { useScopeLanding } from "@/hooks/useScopeLanding";
+import { ScopeLandingHeader } from "@/components/ScopeLandingHeader";
+import { buildScopeStudyHref, withQuizSize } from "@/utils/scopeStudyHref";
 import { useListenAll } from "@/hooks/useListenAll";
 import { SEO } from "@/components/SEO";
 import {
@@ -89,7 +92,14 @@ const CategoriesPage = () => {
   const pageSize = searchParams.has("pagesize") ? pageSizeFromUrl : userPageSize;
   const showAnswersParam = searchParams.get("showAnswers");
   const showAnswersOverride = showAnswersParam === "true" ? true : showAnswersParam === "false" ? false : undefined;
-  const { showAnswers, toggleShowAnswers } = useShowAnswers(showAnswersOverride);
+  const {
+    showAll: showAnswers,
+    toggleAll: toggleShowAnswers,
+    isReady: answersReady,
+    revealedIds,
+    toggleItem: toggleRevealedItem,
+    isAnswerVisible,
+  } = useAnswerVisibility(showAnswersOverride, itemsPage);
   const view = viewFromUrl === "items" ? "items" : "sets";
   const navigate = useNavigate();
   const location = useLocation();
@@ -553,7 +563,33 @@ const CategoriesPage = () => {
     ? Math.ceil(scopeFilteredItems.length / pageSize) || 1
     : itemsData?.totalPages ?? 1;
 
-  const { listenState: listenAllState, handleButton: handleListenAll, isSupported: ttsSupported } = useListenAll(scopeFilteredItems);
+  const { listenState: listenAllState, handleButton: handleListenAll, isSupported: ttsSupported } = useListenAll(scopeFilteredItems, (item) => isAnswerVisible(item.id));
+
+  const showLanding = !!categoryName && !isAllCategoriesSlug(categorySlugParam);
+  const landing = useScopeLanding({
+    categoryName,
+    categorySlug: categorySlugParam,
+    nav: pathKeywordsFromUrl,
+    keywordDescriptions: breadcrumbKeywordDescriptionsData?.keywords,
+    categoryDescription: currentCategoryMeta?.description,
+    enabled: showLanding,
+  });
+  const landingCategorySlug = categoryName ? categoryNameToSlug(categoryName) : "";
+  const landingHeader = showLanding ? (
+    <ScopeLandingHeader
+      title={landing.title}
+      description={landing.description}
+      count={landing.count}
+      countState={landing.countState}
+      games={landing.games}
+      quizHref={(size) => {
+        const href = buildScopeStudyHref("quiz", landingCategorySlug, pathKeywordsFromUrl);
+        return size === undefined ? href : withQuizSize(href, size);
+      }}
+      flashcardsHref={buildScopeStudyHref("explore", landingCategorySlug, pathKeywordsFromUrl)}
+      gamesHref={buildScopeStudyHref("games", landingCategorySlug, pathKeywordsFromUrl)}
+    />
+  ) : null;
 
   /** All unique keyword names across loaded items, for the in-memory keyword search combobox. */
   const allItemKeywords = useMemo(() => {
@@ -905,7 +941,7 @@ const CategoriesPage = () => {
     return (
       <>
         <SEO
-          title={categoryName ? `${categoryName} Category` : "All categories"}
+          title={showLanding ? landing.title : "All categories"}
           description={categoryName ? (currentCategoryMeta?.description ?? `Browse items in the ${categoryName} category on Quizymode.`) : "Browse items across all categories on Quizymode."}
           canonical={`https://www.quizymode.com${scopePath}`}
         />
@@ -929,6 +965,7 @@ const CategoriesPage = () => {
           ) : null}
 
           <section className="rounded-[30px] border border-on-panel/10 bg-surface/95 p-3 shadow-2xl shadow-slate-950/20 backdrop-blur sm:p-5">
+            {landingHeader}
             <ScopeSecondaryBar
               scopeType="category"
               activeMode="list"
@@ -982,6 +1019,7 @@ const CategoriesPage = () => {
               onOpenFilters={() => setShowFilters(true)}
               showAnswers={showAnswers}
               onToggleShowAnswers={toggleShowAnswers}
+              showAnswersDisabled={!answersReady}
               listenAllState={ttsSupported ? listenAllState : undefined}
               onListenAll={ttsSupported ? handleListenAll : undefined}
               middleSlot={
@@ -1165,7 +1203,7 @@ const CategoriesPage = () => {
                   }}
                 />
               }
-              count={scopeTotalCount}
+              count={showLanding ? null : scopeTotalCount}
               hint="Browse items in this scope."
               endSlot={
                 <div className="flex items-center gap-1.5">
@@ -1204,6 +1242,8 @@ const CategoriesPage = () => {
                 showRatingsAndComments
                 returnUrl={listItemsReturnUrl}
                 showAnswers={showAnswers}
+                revealedIds={revealedIds}
+                onToggleReveal={toggleRevealedItem}
                 onKeywordClick={(keywordName) => {
                   const isSelected = filterKeywordsFromQuery.some(
                     (k) => k.toLowerCase() === keywordName.toLowerCase()
@@ -1261,7 +1301,7 @@ const CategoriesPage = () => {
     return (
       <>
         <SEO
-          title={`${categoryName} - Sets`}
+          title={landing.title}
           description={currentCategoryMeta?.description ?? `Browse sets in the ${categoryName} category on Quizymode.`}
           canonical={`https://www.quizymode.com${scopePathWithNav}${filterKeywordsFromQuery.length > 0 ? `?keywords=${filterKeywordsFromQuery.map(encodeURIComponent).join(",")}` : ""}`}
         />
@@ -1276,6 +1316,7 @@ const CategoriesPage = () => {
             </Link>
           )}
           <section className="rounded-[30px] border border-on-panel/10 bg-surface/95 p-3 shadow-2xl shadow-slate-950/20 backdrop-blur sm:p-5">
+            {landingHeader}
             <ScopeSecondaryBar
               scopeType="category"
               activeMode="sets"
@@ -1505,7 +1546,7 @@ const CategoriesPage = () => {
                   onNavigate={navigateToSets}
                 />
               }
-              count={setsScopeCount}
+              count={showLanding ? null : setsScopeCount}
               hint={
                 keywordsFromUrl.length === 0 && currentCategoryMeta?.description
                   ? currentCategoryMeta.description

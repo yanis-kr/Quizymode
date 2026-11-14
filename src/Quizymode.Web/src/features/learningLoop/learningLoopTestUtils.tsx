@@ -22,11 +22,14 @@ export function testItem(id: string, question = `Question ${id}`): ItemResponse 
 
 export function renderWithProviders(ui: ReactElement) {
   const queryClient = new QueryClient({ defaultOptions: { queries: { retry: false }, mutations: { retry: false } } });
-  return render(
+  const wrap = (node: ReactElement) => (
     <HelmetProvider>
       <QueryClientProvider client={queryClient}>
-        <MemoryRouter>{ui}</MemoryRouter>
+        <MemoryRouter>{node}</MemoryRouter>
       </QueryClientProvider>
-    </HelmetProvider>,
+    </HelmetProvider>
   );
+  const view = render(wrap(ui));
+  // Re-renders inside the same providers (for example after the mocked auth state changes).
+  return { ...view, rerender: (next: ReactElement) => view.rerender(wrap(next)) };
 }

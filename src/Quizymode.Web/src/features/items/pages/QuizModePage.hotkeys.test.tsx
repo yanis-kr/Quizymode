@@ -210,7 +210,7 @@ describe("QuizModePage keyboard shortcuts", () => {
       press({ key: "1", code: "Digit1" });
       press({ key: "b", code: "KeyB" });
       expect(screen.getByText(/Score: 0 \/ 0 correct/)).toBeInTheDocument();
-      expect(screen.queryByText(/Correct Answer:/)).not.toBeInTheDocument();
+      expect(screen.queryByTestId("answer-feedback-card")).not.toBeInTheDocument();
 
       fireEvent.load(await screen.findByAltText("Four stripes"));
       press({ key: "1", code: "Digit1" });
@@ -245,7 +245,7 @@ describe("QuizModePage keyboard shortcuts", () => {
       press({ key: "f", code: "KeyF" });
 
       expect(screen.getByText(/Score: 0 \/ 0 correct/)).toBeInTheDocument();
-      expect(screen.queryByText(/Correct Answer:/)).not.toBeInTheDocument();
+      expect(screen.queryByTestId("answer-feedback-card")).not.toBeInTheDocument();
       expect(screen.getByRole("dialog")).toBeInTheDocument();
     });
 
@@ -265,7 +265,7 @@ describe("QuizModePage keyboard shortcuts", () => {
       expect(await screen.findByText("What is 2 + 2?")).toBeInTheDocument();
       expect(screen.getByText(/Score: 0 \/ 0 correct/)).toBeInTheDocument();
       press({ key: "1", code: "Digit1" });
-      expect(await screen.findByText("You finished every question.")).toBeInTheDocument();
+      expect(await screen.findByRole("button", { name: "See my score" })).toBeInTheDocument();
     });
   });
 

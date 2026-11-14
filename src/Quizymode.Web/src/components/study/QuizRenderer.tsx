@@ -2,7 +2,7 @@
  * Renders a single item in Quiz mode: question, answer options, feedback.
  */
 import { CheckCircleIcon, XCircleIcon } from "@heroicons/react/24/solid";
-import { useEffect, useRef, useState, type ReactNode } from "react";
+import { useEffect, useRef, useState, type ReactNode, type RefObject } from "react";
 import type { ItemResponse } from "@/types/api";
 import { SpeakButton } from "@/components/SpeakButton";
 import { useSpeech } from "@/hooks/useSpeech";
@@ -142,10 +142,16 @@ export interface QuizRendererProps {
   /** Gate for the question picture (#403). Omit only where the item can never have one. */
   questionPicture?: QuestionPictureControls;
   /**
-   * Wow feedback (#462): when defined, a polite live region renders the node (null until answered) and, once answered,
-   * replaces the options, the blue answer box and the score line. Leave undefined for the standard feedback.
+   * Answer feedback card (#462, #648): when defined, a polite live region renders the node (null until answered) and,
+   * once answered, replaces the options and the blue answer box. Pass it (null before answering) for every choice item
+   * so the region is mounted before its content arrives. Ignored while a typed answer is in progress (AC 3.6.19): the
+   * typed panel and the answer box stay as they are. Leave undefined for the standard feedback.
    */
   answerPanel?: ReactNode;
+  /** With `answerPanel`: keep the "Score:" strip under the card (the Quiz page does; fixed sets do not). */
+  showScoreWithPanel?: boolean;
+  /** Focus target for the question heading, so focus can move to the next question after the card's Next. */
+  questionHeadingRef?: RefObject<HTMLHeadingElement | null>;
 }
 
 export function QuizRenderer({
@@ -159,18 +165,27 @@ export function QuizRenderer({
   typedAnswer,
   questionPicture,
   answerPanel,
+  showScoreWithPanel = false,
+  questionHeadingRef,
 }: QuizRendererProps) {
   const { isSupported } = useSpeech();
   const pictureBlocked = questionPicture?.blocked ?? false;
   const typedActive = typedAnswer !== undefined && (typedAnswer.enabled || typedAnswer.result !== null);
-  const hasPanel = answerPanel !== undefined;
+  // A typed answer keeps its own panel and the blue answer box, so the card never replaces it.
+  const hasPanel = answerPanel !== undefined && !typedActive;
   const panelShowing = hasPanel && showAnswer;
 
   return (
     <div className="space-y-3">
       <div>
         <div className="flex items-center gap-1.5 mb-1">
-          <h3 className="text-base font-medium text-gray-900">Question</h3>
+          <h3
+            ref={questionHeadingRef}
+            tabIndex={questionHeadingRef ? -1 : undefined}
+            className="text-base font-medium text-gray-900 focus:outline-none"
+          >
+            Question
+          </h3>
           <SpeakButton
             text={item.question}
             speech={item.questionSpeech}
@@ -335,7 +350,7 @@ export function QuizRenderer({
         </div>
       )}
 
-      {revealFeedback && !hasPanel && (
+      {revealFeedback && (!hasPanel || showScoreWithPanel) && (
         <div className="px-3 py-2 bg-gray-50 rounded-lg">
           <div className="text-sm text-gray-600">
             Score: {stats.correct} / {stats.total} correct

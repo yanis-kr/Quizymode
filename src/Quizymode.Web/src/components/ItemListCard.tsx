@@ -26,6 +26,10 @@ interface ItemListCardProps {
    * undefined the answer is shown without any highlight (legacy/default behaviour).
    */
   showAnswer?: boolean;
+  /** Per-item reveal (#647): when the page toggle is off, shows this one answer without a highlight. */
+  revealed?: boolean;
+  /** When provided and the page toggle is off, renders the "Show answer" / "Hide answer" button. */
+  onToggleReveal?: () => void;
 }
 
 const ItemListCard = ({
@@ -37,8 +41,13 @@ const ItemListCard = ({
   returnUrl,
   collectionId,
   showAnswer,
+  revealed = false,
+  onToggleReveal,
 }: ItemListCardProps) => {
   const { isSupported } = useSpeech();
+  const answerVisible = showAnswer !== false || revealed;
+  const showRevealButton = showAnswer === false && onToggleReveal !== undefined;
+  const answerRegionId = `answer-${item.id}`;
 
   return (
     <div className="bg-surface shadow rounded-lg p-6">
@@ -46,7 +55,7 @@ const ItemListCard = ({
         <div className="flex items-start gap-3">
           <QuestionImage collectionId={collectionId} itemId={item.id} image={item.questionImage} size="sm" />
           <div className="flex-1">
-            <h3 className="text-lg font-medium text-gray-900"><ForeignPhraseText text={item.question} /></h3>
+            <h3 id={`q-${item.id}`} className="text-lg font-medium text-gray-900"><ForeignPhraseText text={item.question} /></h3>
             <PronunciationHint text={item.question} speech={item.questionSpeech} />
           </div>
           <SpeakButton
@@ -66,7 +75,8 @@ const ItemListCard = ({
           </div>
           {actions && <div className="flex flex-wrap items-center justify-end gap-1 sm:gap-2">{actions}</div>}
         </div>
-        {showAnswer !== false && (
+        <div id={answerRegionId}>
+        {answerVisible && (
           <div className="flex items-start gap-2">
             <div
               className={`flex-1 text-sm ${
@@ -102,6 +112,19 @@ const ItemListCard = ({
               label="Read answer aloud"
             />
           </div>
+        )}
+        </div>
+        {showRevealButton && (
+          <button
+            type="button"
+            onClick={onToggleReveal}
+            aria-expanded={revealed}
+            aria-controls={answerRegionId}
+            aria-describedby={`q-${item.id}`}
+            className="inline-flex min-h-[44px] items-center rounded-md border border-indigo-300 px-3 text-sm font-semibold text-indigo-ink hover:bg-indigo-50 focus-visible:ring-2 focus-visible:ring-indigo-500"
+          >
+            {revealed ? "Hide answer" : "Show answer"}
+          </button>
         )}
 
         <KeywordsAndCollectionsSection

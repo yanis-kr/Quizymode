@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import type { StarterPoolEntry } from "@/api/starter";
 import { trackEventOnce } from "@/features/analytics/analyticsEvents";
+import { ExploreNextTiles, type ExploreNextTile } from "@/components/study/ExploreNextTiles";
 import { pickExploreWorlds } from "./composeStarterRun";
 import { getStarterWorld } from "./starterWorlds";
 
@@ -25,38 +26,28 @@ export function StarterEndCards({ run, runId }: StarterEndCardsProps) {
       contextId: world ? `next:${world}` : "starter",
     });
 
+  const tiles: ExploreNextTile[] = [];
+  for (const id of worlds) {
+    const world = getStarterWorld(id);
+    if (world) tiles.push({ id, emoji: world.emoji, label: world.label, copy: world.copy, cta: world.cta, to: world.target });
+  }
+
   return (
-    <div className="mt-6 text-left">
-      <h3 className="text-base font-semibold text-gray-900">Explore next</h3>
-      <ul className="mt-2 grid grid-cols-1 gap-3 sm:grid-cols-3">
-        {worlds.map((id, index) => {
-          const world = getStarterWorld(id);
-          if (!world) return null;
-          return (
-            <li key={id}>
-              <Link
-                to={world.target}
-                onClick={() => track(index + 1, id)}
-                className="block h-full min-h-[44px] rounded-lg border border-gray-200 bg-surface p-4 text-left hover:border-indigo-400 hover:bg-indigo-50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500"
-              >
-                <span aria-hidden="true" className="text-2xl">{world.emoji}</span>
-                <span className="mt-1 block font-semibold text-gray-900">{world.label}</span>
-                <span className="mt-0.5 block text-sm text-gray-600">{world.copy}</span>
-                <span className="mt-2 block text-sm font-semibold text-indigo-ink">{world.cta}</span>
-              </Link>
-            </li>
-          );
-        })}
-      </ul>
-      <div className="mt-3 text-center">
-        <Link
-          to="/categories"
-          onClick={() => track(5, null)}
-          className="inline-block rounded-md border border-gray-300 px-4 py-2 font-semibold text-gray-700 hover:bg-gray-50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500 focus-visible:ring-offset-2"
-        >
-          Explore all topics
-        </Link>
-      </div>
-    </div>
+    <ExploreNextTiles
+      heading="Explore next"
+      tiles={tiles}
+      onSelect={(position, id) => track(position, id)}
+      footer={
+        <div className="mt-3 text-center">
+          <Link
+            to="/categories"
+            onClick={() => track(5, null)}
+            className="inline-block rounded-md border border-gray-300 px-4 py-2 font-semibold text-gray-700 hover:bg-gray-50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500 focus-visible:ring-offset-2"
+          >
+            Explore all topics
+          </Link>
+        </div>
+      }
+    />
   );
 }

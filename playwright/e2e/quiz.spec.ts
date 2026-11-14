@@ -61,10 +61,11 @@ test(
     await waitForPicturesSettled(page);
     await firstOption.click();
 
-    // After answering, "Correct Answer:" text and explanation panel should appear
-    await expect(page.getByText(/correct answer/i)).toBeVisible({
-      timeout: 3_000,
-    });
+    // After answering, the shared feedback card shows the verdict and "Answer: ..." (#648).
+    const feedbackCard = page.getByTestId("answer-feedback-card");
+    await expect(feedbackCard).toBeVisible({ timeout: 3_000 });
+    await expect(feedbackCard).toContainText(/Correct!|Not quite\./);
+    await expect(feedbackCard).toContainText("Answer:");
   }
 );
 
@@ -198,13 +199,15 @@ test.describe("anonymous collection completion", () => {
       expect(wrongAnswer).toBeTruthy();
       await waitForPicturesSettled(page);
       await page.getByRole("button", { name: new RegExp(wrongAnswer, "i") }).click();
-      await expect(page.getByText(/correct answer:/i)).toBeVisible();
+      const feedbackCard = page.getByTestId("answer-feedback-card");
+      await expect(feedbackCard).toContainText("Not quite.");
+      await expect(feedbackCard).toContainText("You picked:");
       if (index < 4) {
         await page.getByRole("button", { name: /^next$/i }).click();
       }
     }
 
-    await page.getByRole("button", { name: /view results/i }).click();
+    await page.getByRole("button", { name: /see my score/i }).click();
     await expect(page.getByRole("heading", { name: /quiz complete/i })).toBeFocused();
     await expect(page.getByText("0 / 5")).toBeVisible();
 
@@ -227,10 +230,12 @@ test(
 
     await waitForPicturesSettled(page);
     await page.keyboard.press("1");
-    await expect(page.getByText(/correct answer/i)).toBeVisible({ timeout: 3_000 });
+    const feedbackCard = page.getByTestId("answer-feedback-card");
+    await expect(feedbackCard).toBeVisible({ timeout: 3_000 });
 
+    // The card's Next button is focused, so Enter advances exactly once.
     await page.keyboard.press("Enter");
-    await expect(page.getByText(/correct answer/i)).toBeHidden({ timeout: 3_000 });
+    await expect(feedbackCard).toBeHidden({ timeout: 3_000 });
   }
 );
 
@@ -248,13 +253,13 @@ test(
     await page.getByRole("button", { name: "Close" }).click();
 
     await page.keyboard.press("1");
-    await expect(page.getByText(/correct answer/i)).toBeHidden();
+    await expect(page.getByTestId("answer-feedback-card")).toBeHidden();
 
     await page.reload();
     await page.waitForLoadState("networkidle");
     await expect(page.getByText("Question")).toBeVisible({ timeout: 3_000 });
     await page.keyboard.press("1");
-    await expect(page.getByText(/correct answer/i)).toBeHidden();
+    await expect(page.getByTestId("answer-feedback-card")).toBeHidden();
 
     // Restore the default so later tests are unaffected.
     await page.getByRole("button", { name: "Keyboard shortcuts" }).click();

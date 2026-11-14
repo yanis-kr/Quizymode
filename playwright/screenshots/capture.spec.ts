@@ -25,6 +25,14 @@ const FLAG_BADGE_ITEM_IDS = STARTER_WORLD_ITEM_IDS.flags.slice(0, 3);
 const FLAG_ACTIVE_COLLECTION_ITEM_IDS = STARTER_WORLD_ITEM_IDS.flags.slice(3, 5);
 const FLAG_REMOVED_ITEM_ID = STARTER_WORLD_ITEM_IDS.flags[0];
 
+/**
+ * List answers are hidden by default (#647). Guide shots of list pages that are meant to show answers opt in with the
+ * ?showAnswers=true URL override, which also survives the mode-tab navigation.
+ */
+function withShowAnswers(url: string): string {
+  return `${url}${url.includes("?") ? "&" : "?"}showAnswers=true`;
+}
+
 async function safeGoto(page: Page, url: string) {
   await page.goto(url, { waitUntil: "load", timeout: 20_000 });
   await waitForUiToSettle(page);
@@ -473,7 +481,7 @@ async function openCollectionDetail(page: Page, preferOwned = false) {
     ? await ensureOwnedCollectionDetailPath(page)
     : await getAnyCollectionDetailPath(page);
 
-  await safeGoto(page, href ?? HOME_SAMPLE_COLLECTION_DETAIL_PATH);
+  await safeGoto(page, withShowAnswers(href ?? HOME_SAMPLE_COLLECTION_DETAIL_PATH));
 }
 
 async function ensureListMode(page: Page) {
@@ -666,13 +674,13 @@ async function openStarterItem(page: Page, itemId: string) {
 
 /** Opens a starter-world collection by its fixed ID (repo-managed public collection, #563). */
 async function openStarterCollection(page: Page, world: keyof typeof STARTER_COLLECTION_IDS) {
-  await safeGoto(page, `/collections/${STARTER_COLLECTION_IDS[world]}`);
+  await safeGoto(page, withShowAnswers(`/collections/${STARTER_COLLECTION_IDS[world]}`));
   await waitForCollectionDetailLoaded(page);
 }
 
 /** The flags list page: its nine starter flags share one question stem and differ only by image, so the list is allowed. */
 async function openFlagsList(page: Page) {
-  await safeGoto(page, "/categories/geography/flags/countries");
+  await safeGoto(page, withShowAnswers("/categories/geography/flags/countries"));
   await ensureListMode(page);
   await waitForCategoryItemsLoaded(page);
 }
@@ -739,7 +747,7 @@ async function openScopedAddItemsPage(page: Page) {
 }
 
 async function applyKeywordFilterWithResults(page: Page) {
-  await safeGoto(page, "/categories/geography/capitals/world");
+  await safeGoto(page, withShowAnswers("/categories/geography/capitals/world"));
   await ensureListMode(page);
   await waitForCategoryItemsLoaded(page);
 

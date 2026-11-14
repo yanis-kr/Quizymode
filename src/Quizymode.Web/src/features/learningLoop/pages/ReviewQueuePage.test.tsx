@@ -62,7 +62,7 @@ describe("ReviewQueuePage", () => {
 
     renderWithProviders(<ReviewQueuePage />);
     fireEvent.click(await screen.findByRole("button", { name: /Right a/ }));
-    fireEvent.click(await screen.findByRole("button", { name: "View results" }));
+    fireEvent.click(await screen.findByRole("button", { name: "See my score" }));
 
     expect(screen.getByRole("heading", { name: "Quiz complete" })).toBeInTheDocument();
     expect(screen.queryByRole("button", { name: /share/i })).toBeNull();
@@ -188,7 +188,7 @@ describe("ReviewQueuePage", () => {
       expect(screen.queryByRole("meter")).toBeNull();
       expect(await screen.findByText(/^Next boss arrives .*2026/)).toBeInTheDocument();
 
-      fireEvent.click(screen.getByRole("button", { name: "View results" }));
+      fireEvent.click(screen.getByRole("button", { name: "See my score" }));
       expect(screen.getByRole("heading", { name: "Quiz complete" })).toBeInTheDocument();
       expect(screen.getByRole("heading", { name: "Boss defeated!" })).toBeInTheDocument();
     });
@@ -292,7 +292,7 @@ describe("ReviewQueuePage", () => {
       ids.forEach((id, index) => answer(id, false, index === ids.length - 1));
       expect(await screen.findByRole("heading", { name: "The boss escaped with 5 HP" })).toBeInTheDocument();
 
-      fireEvent.click(screen.getByRole("button", { name: "View results" }));
+      fireEvent.click(screen.getByRole("button", { name: "See my score" }));
       fireEvent.click(screen.getByRole("button", { name: "Play again" }));
       fireEvent.click(await screen.findByRole("button", { name: /Right a/ }));
 
