@@ -18,6 +18,9 @@ interface ItemListSectionProps {
   collectionId?: string;
   /** See ItemListCard.showAnswer. When false all answers are hidden; when true shown with green highlight. */
   showAnswers?: boolean;
+  /** Ids whose answer was revealed one by one (only used while showAnswers is false). */
+  revealedIds?: ReadonlySet<string>;
+  onToggleReveal?: (itemId: string) => void;
 }
 
 const ItemListSection = ({
@@ -34,6 +37,8 @@ const ItemListSection = ({
   returnUrl,
   collectionId,
   showAnswers,
+  revealedIds,
+  onToggleReveal,
 }: ItemListSectionProps) => {
   if (items.length === 0) {
     return null;
@@ -62,6 +67,8 @@ const ItemListSection = ({
             returnUrl={returnUrl}
             collectionId={collectionId}
             showAnswer={showAnswers}
+            revealed={revealedIds?.has(item.id) ?? false}
+            onToggleReveal={onToggleReveal ? () => onToggleReveal(item.id) : undefined}
           />
         ))}
       </div>

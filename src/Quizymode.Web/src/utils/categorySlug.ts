@@ -110,3 +110,13 @@ export function parseKeywordSegment(segment: string): string {
     return segment;
   }
 }
+
+/**
+ * Display name for a category given either its stored name ("Trivia") or a URL slug ("trivia", "act-math").
+ * A value that already has capital letters is returned as is, so a stored name is never re-cased (#650).
+ */
+export function categoryDisplayName(slugOrName: string): string {
+  const trimmed = slugOrName.trim();
+  if (/[A-Z]/.test(trimmed)) return trimmed;
+  return categorySlugToName(trimmed);
+}

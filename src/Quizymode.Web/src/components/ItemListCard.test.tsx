@@ -1,4 +1,4 @@
-import { render, screen } from "@testing-library/react";
+import { fireEvent, render, screen } from "@testing-library/react";
 import { describe, expect, it, vi } from "vitest";
 import ItemListCard from "./ItemListCard";
 import type { ItemResponse } from "@/types/api";
@@ -75,5 +75,42 @@ describe("ItemListCard", () => {
 
     expect(screen.queryByText(/Answer:/)).not.toBeInTheDocument();
     expect(screen.queryByText(/Explanation:/)).not.toBeInTheDocument();
+  });
+
+  it("shows the answer without a reveal button when showAnswer is unset", () => {
+    render(<ItemListCard item={buildItem()} />);
+
+    expect(screen.getByText(/Answer:/)).toBeInTheDocument();
+    expect(screen.queryByRole("button", { name: /show answer/i })).not.toBeInTheDocument();
+  });
+
+  it("keeps the answer out of the DOM and offers a Show answer button when hidden", () => {
+    render(<ItemListCard item={buildItem()} showAnswer={false} onToggleReveal={vi.fn()} />);
+
+    expect(screen.queryByText(/Seize the day/)).not.toBeInTheDocument();
+    const button = screen.getByRole("button", { name: "Show answer" });
+    expect(button).toHaveAttribute("aria-expanded", "false");
+    expect(button).toHaveAttribute("aria-controls", "answer-item-1");
+    expect(button).toHaveAttribute("aria-describedby", "q-item-1");
+    expect(document.getElementById("answer-item-1")).toBeEmptyDOMElement();
+  });
+
+  it("reveals the answer without a highlight and reads Hide answer when revealed", () => {
+    const onToggle = vi.fn();
+    render(<ItemListCard item={buildItem()} showAnswer={false} revealed onToggleReveal={onToggle} />);
+
+    expect(screen.getByText(/Seize the day/)).toBeInTheDocument();
+    expect(document.querySelector(".bg-green-100")).toBeNull();
+    const button = screen.getByRole("button", { name: "Hide answer" });
+    expect(button).toHaveAttribute("aria-expanded", "true");
+    fireEvent.click(button);
+    expect(onToggle).toHaveBeenCalledTimes(1);
+  });
+
+  it("hides the per-item button while the page toggle is on", () => {
+    render(<ItemListCard item={buildItem()} showAnswer onToggleReveal={vi.fn()} />);
+
+    expect(screen.getByText(/Seize the day/)).toBeInTheDocument();
+    expect(screen.queryByRole("button", { name: /show answer|hide answer/i })).not.toBeInTheDocument();
   });
 });
