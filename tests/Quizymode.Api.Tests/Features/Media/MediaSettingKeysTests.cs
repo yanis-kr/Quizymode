@@ -1,4 +1,10 @@
+using System.Net;
+using System.Net.Http.Json;
 using FluentAssertions;
+using FluentValidation;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.DependencyInjection;
+using Quizymode.Api.Data;
 using Quizymode.Api.Features.Admin;
 using Quizymode.Api.Features.UserSettings;
 using Quizymode.Api.Shared.Models;
@@ -39,6 +45,26 @@ public sealed class MediaSettingKeysTests : DatabaseTestFixture
 
         validation.IsValid.Should().BeFalse();
         validation.Errors.Should().Contain(error => error.ErrorMessage == "This setting can only be changed by an admin.");
+    }
+
+    [Theory]
+    [InlineData("MediaUploadsPerDay")]
+    [InlineData("mediauploadsperday")]
+    public async Task UserSettingsPut_RefusesMediaOverrideKeyWith400AndWritesNothing(string key)
+    {
+        await using JwtHttpTestHost host = await JwtHttpTestHost.StartAsync(
+            CreateDbContext,
+            services => services.AddScoped<IValidator<UpdateUserSetting.Request>, UpdateUserSetting.Validator>(),
+            app => new UpdateUserSetting.Endpoint().MapEndpoint(app));
+        string token = host.CreateToken("fixture-media-user", "media-user@example.test");
+
+        using HttpResponseMessage response = await host.Client.SendAsync(
+            JwtHttpTestHost.Request(HttpMethod.Put, "/users/settings", token, JsonContent.Create(new { key, value = "200" })));
+
+        response.StatusCode.Should().Be(HttpStatusCode.BadRequest);
+        (await response.Content.ReadAsStringAsync()).Should().Contain("This setting can only be changed by an admin.");
+        await using ApplicationDbContext verify = CreateDbContext();
+        (await verify.UserSettings.AsNoTracking().Where(s => s.Key.ToLower() == "mediauploadsperday").CountAsync()).Should().Be(0);
     }
 
     [Fact]
