@@ -12,15 +12,24 @@ internal static class MediaIngress
     internal static async Task<(MediaIngressAttempt? Attempt, IResult? Error)> ReserveAsync(ApplicationDbContext db, string owner, MediaOptions options, DateTime now, CancellationToken ct)
     {
         await using var transaction = await ItemImageSubmission.BeginAsync(db, ct);
-        if (await db.MediaControls.AnyAsync(x => x.Id == 1 && !x.UploadsEnabled, ct)) return (null, MediaErrors.StorageUnavailable.ToResult());
+        if (await db.MediaControls.AnyAsync(x => x.Id == 1 && !x.UploadsEnabled, ct)) return (null, MediaErrors.Disabled.ToResult());
         int hourly = await db.MediaIngressAttempts.CountAsync(x => x.OwnerUserId == owner && x.CreatedAt > now.AddHours(-1), ct);
         int daily = await db.MediaIngressAttempts.CountAsync(x => x.OwnerUserId == owner && x.CreatedAt > now.AddDays(-1), ct);
         long reserved = await db.MediaIngressAttempts.Where(x => x.OwnerUserId == owner && x.CreatedAt > now.AddDays(-1)).SumAsync(x => x.ReservedBytes, ct);
         long bytes = (long)options.MaxSourceBytes + 64 * 1024;
-        if (hourly >= options.MaxUploadsPerHour || daily >= options.MaxUploadsPerDay || reserved + bytes > options.MaxIngressBytesPerDay)
-            return (null, Results.Problem(statusCode: 429, title: "Media.UploadQuota", detail: "Transport allowance reached. Wait for the upload window to reset."));
+        Dictionary<string, long> overrides = await MediaSettingKeys.LoadAsync(db, owner, ct);
+        int hourlyLimit = MediaSettingKeys.Count(overrides, MediaSettingKeys.UploadsPerHour, options.MaxUploadsPerHour);
+        int dailyLimit = MediaSettingKeys.Count(overrides, MediaSettingKeys.UploadsPerDay, options.MaxUploadsPerDay);
+        bool bytesFull = reserved + bytes > options.MaxIngressBytesPerDay;
+        if (hourly >= hourlyLimit || daily >= dailyLimit || bytesFull)
+        {
+            int wait = 0;
+            if (hourly >= hourlyLimit) wait = Math.Max(wait, await MediaErrors.WindowRetryAsync(db.MediaIngressAttempts.Where(x => x.OwnerUserId == owner && x.CreatedAt > now.AddHours(-1)).Select(x => x.CreatedAt), hourly, hourlyLimit, TimeSpan.FromHours(1), now, ct));
+            if (daily >= dailyLimit || bytesFull) wait = Math.Max(wait, await MediaErrors.WindowRetryAsync(db.MediaIngressAttempts.Where(x => x.OwnerUserId == owner && x.CreatedAt > now.AddDays(-1)).Select(x => x.CreatedAt), daily, bytesFull ? daily : dailyLimit, TimeSpan.FromDays(1), now, ct));
+            return (null, MediaErrors.Quota("Media.UploadQuota", "Transport allowance reached. Wait for the upload window to reset.", wait).ToResult());
+        }
         if (await db.MediaIngressAttempts.CountAsync(x => x.CompletedAt == null && x.LeaseUntil > now, ct) >= options.MaxGlobalIngress)
-            return (null, Results.Problem(statusCode: 429, title: "Media.GlobalBusy", detail: "Picture transport is busy. Retry shortly."));
+            return (null, MediaErrors.Quota("Media.GlobalBusy", "Picture transport is busy. Retry shortly.", MediaErrors.GlobalBusySeconds).ToResult());
         MediaIngressAttempt attempt = new() { Id = Guid.NewGuid(), OwnerUserId = owner, CreatedAt = now, LeaseUntil = now.Add(options.IngressReadTimeout).AddSeconds(30), ReservedBytes = bytes };
         db.MediaIngressAttempts.Add(attempt);
         await db.SaveChangesAsync(ct); if (transaction is not null) await transaction.CommitAsync(ct);

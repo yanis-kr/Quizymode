@@ -17,7 +17,7 @@ internal static class MediaAdmission
         string id = Hash(owner + ":" + key); string digest = Convert.ToHexStringLower(SHA256.HashData(source));
         await using IDbContextTransaction? transaction = await ItemImageSubmission.BeginAsync(db, ct);
         MediaControl? control = await db.MediaControls.AsNoTracking().SingleOrDefaultAsync(x => x.Id == 1, ct);
-        if (control?.UploadsEnabled == false) return (null, MediaErrors.StorageUnavailable.ToResult());
+        if (control?.UploadsEnabled == false) return (null, MediaErrors.Disabled.ToResult());
         MediaUploadClaim? prior = await db.MediaUploadClaims.SingleOrDefaultAsync(x => x.Id == id, ct);
         bool isNew = prior is null;
         if (prior is not null)
@@ -35,20 +35,34 @@ internal static class MediaAdmission
         }
         // Every decode admission, including an expired/failed claim retry, rechecks current owner capacity.
         // Completed replays above need no new reservation and therefore remain available at the limit.
+        Dictionary<string, long> overrides = await MediaSettingKeys.LoadAsync(db, owner, ct);
+        int hourlyLimit = MediaSettingKeys.Count(overrides, MediaSettingKeys.UploadsPerHour, options.MaxUploadsPerHour);
+        int dailyLimit = MediaSettingKeys.Count(overrides, MediaSettingKeys.UploadsPerDay, options.MaxUploadsPerDay);
+        int pendingLimit = MediaSettingKeys.Count(overrides, MediaSettingKeys.PendingReviewItems, options.MaxPendingReviewItems);
+        long retainedLimit = MediaSettingKeys.Bytes(overrides, MediaSettingKeys.RetainedBytes, options.MaxRetainedBytes);
         int hourly = await db.MediaUploadAttempts.CountAsync(x => x.OwnerUserId == owner && x.CreatedAt > now.AddHours(-1), ct);
         int daily = await db.MediaUploadAttempts.CountAsync(x => x.OwnerUserId == owner && x.CreatedAt > now.AddDays(-1), ct);
         int pending = await db.Items.CountAsync(x => x.CreatedBy == owner && x.ImageReviewState == ItemImageReviewState.PendingReview, ct);
         long retained = await db.MediaAssets.Where(x => x.OwnerUserId == owner && x.PurgedAt == null).SumAsync(x => (long)x.Bytes, ct);
         int reserved = await db.MediaUploadClaims.CountAsync(x => x.Id != id && x.OwnerUserId == owner && x.State == "Processing" && x.LeaseUntil > now, ct);
-        if (hourly >= options.MaxUploadsPerHour || daily >= options.MaxUploadsPerDay || pending >= options.MaxPendingReviewItems || retained + (reserved + 1L) * options.MaxOutputBytes > options.MaxRetainedBytes)
-            return (null, Results.Problem(statusCode: 429, title: pending >= options.MaxPendingReviewItems ? "Media.PendingReviewQuota" : retained + (reserved + 1L) * options.MaxOutputBytes > options.MaxRetainedBytes ? "Media.StorageQuota" : "Media.UploadQuota", detail: "Picture allowance reached. Resolve pending reviews or remove unused pictures, or retry after the upload window resets."));
+        bool storageFull = retained + (reserved + 1L) * options.MaxOutputBytes > retainedLimit;
+        if (hourly >= hourlyLimit || daily >= dailyLimit || pending >= pendingLimit || storageFull)
+        {
+            const string detail = "Picture allowance reached. Resolve pending reviews or remove unused pictures, or retry after the upload window resets.";
+            if (pending >= pendingLimit) return (null, MediaErrors.Quota("Media.PendingReviewQuota", detail, MediaErrors.QuotaHintSeconds).ToResult());
+            if (storageFull) return (null, MediaErrors.Quota("Media.StorageQuota", detail, MediaErrors.QuotaHintSeconds).ToResult());
+            int wait = 0;
+            if (hourly >= hourlyLimit) wait = Math.Max(wait, await MediaErrors.WindowRetryAsync(db.MediaUploadAttempts.Where(x => x.OwnerUserId == owner && x.CreatedAt > now.AddHours(-1)).Select(x => x.CreatedAt), hourly, hourlyLimit, TimeSpan.FromHours(1), now, ct));
+            if (daily >= dailyLimit) wait = Math.Max(wait, await MediaErrors.WindowRetryAsync(db.MediaUploadAttempts.Where(x => x.OwnerUserId == owner && x.CreatedAt > now.AddDays(-1)).Select(x => x.CreatedAt), daily, dailyLimit, TimeSpan.FromDays(1), now, ct));
+            return (null, MediaErrors.Quota("Media.UploadQuota", detail, wait).ToResult());
+        }
         // Global daily ceiling (AC 3.28.2); counted under the same advisory lock that commits this attempt, so concurrent requests cannot overshoot it.
         if (await db.MediaUploadAttempts.CountAsync(x => x.CreatedAt > now.AddDays(-1), ct) >= options.MaxUploadsGlobalPerDay)
             return (null, MediaErrors.GlobalCeiling.ToResult());
         long globalBytes = await db.MediaAssets.Where(x => x.PurgedAt == null).SumAsync(x => (long)x.Bytes, ct);
         int globalReserved = await db.MediaUploadClaims.CountAsync(x => x.Id != id && x.State == "Processing" && x.LeaseUntil > now, ct);
-        if (globalReserved >= options.MaxGlobalUploads) return (null, Results.Problem(statusCode: 429, title: "Media.GlobalBusy", detail: "Picture processing is busy. Retry shortly."));
-        if (globalBytes + (globalReserved + 1L) * options.MaxOutputBytes > options.MaxGlobalRetainedBytes) return (null, Results.Problem(statusCode: 429, title: "Media.GlobalStorageQuota", detail: "Picture storage allowance reached. Retry after maintenance."));
+        if (globalReserved >= options.MaxGlobalUploads) return (null, MediaErrors.Quota("Media.GlobalBusy", "Picture processing is busy. Retry shortly.", MediaErrors.GlobalBusySeconds).ToResult());
+        if (globalBytes + (globalReserved + 1L) * options.MaxOutputBytes > options.MaxGlobalRetainedBytes) return (null, MediaErrors.Quota("Media.GlobalStorageQuota", "Picture storage allowance reached. Retry after maintenance.", MediaErrors.QuotaHintSeconds).ToResult());
         if (!isNew)
         {
             prior.Attempts++;

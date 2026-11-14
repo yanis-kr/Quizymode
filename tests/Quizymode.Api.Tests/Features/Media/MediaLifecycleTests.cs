@@ -176,7 +176,7 @@ public sealed class MediaLifecycleTests : DatabaseTestFixture
         var refused = await MediaAdmission.ReserveAsync(restarted, "owner-b", "request-b", [2], options, now, CancellationToken.None);
         refused.Claim.Should().BeNull();
         ((IStatusCodeHttpResult)refused.Error!).StatusCode.Should().Be(429);
-        ((Microsoft.AspNetCore.Http.HttpResults.ProblemHttpResult)refused.Error).ProblemDetails.Title.Should().Be("Media.GlobalBusy");
+        ((MediaProblemResult)refused.Error).Problem.Code.Should().Be("Media.GlobalBusy");
         (await restarted.MediaUploadClaims.CountAsync(x => x.State == "Processing" && x.LeaseUntil > now)).Should().Be(1);
         (await restarted.MediaUploadAttempts.CountAsync()).Should().Be(retryExpired ? 2 : 1, "refused work creates no attempt or extra active reservation");
     }

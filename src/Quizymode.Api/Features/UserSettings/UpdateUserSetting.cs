@@ -43,6 +43,11 @@ public static class UpdateUserSetting
                 .Must(key => key is null || !StudyGuideSettingKeys.AdminOnly.Contains(key))
                 .WithMessage("This setting can only be changed by an admin.");
 
+            // Picture quota overrides are admin-only (AC 3.28.7); a user must not raise their own upload allowance.
+            RuleFor(x => x.Key)
+                .Must(key => key is null || !MediaSettingKeys.AdminOnly.Contains(key))
+                .WithMessage("This setting can only be changed by an admin.");
+
             // Setting value must be provided and not exceed database constraint
             RuleFor(x => x.Value)
                 .NotNull()

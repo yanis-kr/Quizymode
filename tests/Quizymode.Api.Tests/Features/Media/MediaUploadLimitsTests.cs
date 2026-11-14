@@ -8,6 +8,7 @@ using Microsoft.Extensions.Options;
 using Quizymode.Api.Data;
 using Quizymode.Api.Features.Media;
 using Quizymode.Api.Features.Media.Storage;
+using Quizymode.Api.Shared.Helpers;
 using Quizymode.Api.Shared.Models;
 using Quizymode.Api.Tests.TestFixtures;
 using SkiaSharp;
@@ -237,6 +238,114 @@ public sealed class MediaUploadLimitsTests : DatabaseTestFixture
         foreach (HttpResponseMessage response in responses)
         {
             response.Dispose();
+        }
+    }
+
+    private async Task SetOverrideAsync(string owner, string key, string value)
+    {
+        await using ApplicationDbContext db = CreateDbContext();
+        Guid userId = Guid.Parse(owner);
+        UserSetting? existing = await db.UserSettings.SingleOrDefaultAsync(x => x.UserId == userId && x.Key == key);
+        if (existing is null)
+        {
+            db.UserSettings.Add(new UserSetting { UserId = userId, Key = key, Value = value, CreatedAt = DateTime.UtcNow, UpdatedAt = DateTime.UtcNow });
+        }
+        else
+        {
+            existing.Value = value;
+        }
+
+        await db.SaveChangesAsync();
+    }
+
+    [Fact]
+    public async Task Upload_AdminOverrideRaisesAndZeroBlocksDailyLimit()
+    {
+        MediaOptions options = new() { MaxUploadsPerDay = 1 };
+        await using JwtHttpTestHost host = await StartAsync(options);
+        string owner = await OwnerIdAsync(host, options, "owner");
+        await SeedAttemptsAsync(owner, 1, TimeSpan.FromMinutes(90));
+        string token = host.CreateToken("owner", "o@example.com");
+
+        using HttpResponseMessage defaultLimit = await host.Client.SendAsync(Upload(token));
+        await SetOverrideAsync(owner, MediaSettingKeys.UploadsPerDay, "3");
+        using HttpResponseMessage raised = await host.Client.SendAsync(Upload(token));
+        await SetOverrideAsync(owner, MediaSettingKeys.UploadsPerDay, "0");
+        using HttpResponseMessage blocked = await host.Client.SendAsync(Upload(token));
+        await SetOverrideAsync(owner, MediaSettingKeys.UploadsPerDay, "");
+        using HttpResponseMessage cleared = await host.Client.SendAsync(Upload(token));
+
+        defaultLimit.StatusCode.Should().Be(HttpStatusCode.TooManyRequests);
+        raised.StatusCode.Should().Be(HttpStatusCode.Created);
+        blocked.StatusCode.Should().Be(HttpStatusCode.TooManyRequests);
+        cleared.StatusCode.Should().Be(HttpStatusCode.TooManyRequests, "an empty override falls back to the configured limit");
+    }
+
+    [Fact]
+    public async Task Upload_AdminOverrideNeverLiftsTheGlobalCeiling()
+    {
+        MediaOptions options = new() { MaxUploadsGlobalPerDay = 1 };
+        await using JwtHttpTestHost host = await StartAsync(options);
+        string owner = await OwnerIdAsync(host, options, "owner");
+        await SetOverrideAsync(owner, MediaSettingKeys.UploadsPerDay, "200");
+        await SeedAttemptsAsync("someone-else", 1, TimeSpan.FromMinutes(90));
+
+        using HttpResponseMessage response = await host.Client.SendAsync(Upload(host.CreateToken("owner", "o@example.com")));
+
+        response.StatusCode.Should().Be(HttpStatusCode.TooManyRequests);
+        (await response.Content.ReadAsStringAsync()).Should().Contain("Media.CapacityReached");
+    }
+
+    [Theory]
+    [InlineData("hourly")]
+    [InlineData("daily")]
+    [InlineData("pending")]
+    [InlineData("storage")]
+    [InlineData("global")]
+    [InlineData("globalstorage")]
+    public async Task Upload_429CarriesRetryAfter(string scenario)
+    {
+        MediaOptions options = scenario switch
+        {
+            "hourly" => new() { MaxUploadsPerHour = 2 },
+            "daily" => new() { MaxUploadsPerDay = 2 },
+            "pending" => new() { MaxPendingReviewItems = 1 },
+            "storage" => new() { MaxRetainedBytes = 150_000 },
+            "global" => new() { MaxUploadsGlobalPerDay = 1 },
+            _ => new() { MaxGlobalRetainedBytes = 150_000 }
+        };
+        await using JwtHttpTestHost host = await StartAsync(options);
+        string owner = await OwnerIdAsync(host, options, "owner");
+        switch (scenario)
+        {
+            case "hourly": await SeedAttemptsAsync(owner, 2, TimeSpan.FromMinutes(10)); break;
+            case "daily": await SeedAttemptsAsync(owner, 2, TimeSpan.FromMinutes(90)); break;
+            case "global": await SeedAttemptsAsync("someone-else", 1, TimeSpan.FromMinutes(90)); break;
+            case "storage" or "globalstorage": await SeedAssetsAsync(owner, 2, bytes: 100_000); break;
+            case "pending":
+                await using (ApplicationDbContext db = CreateDbContext())
+                {
+                    Category category = new() { Id = Guid.NewGuid(), Name = "geography", IsPrivate = false, CreatedBy = owner };
+                    db.Categories.Add(category);
+                    MediaAsset asset = PictureSeed.AddAsset(db, owner);
+                    PictureSeed.AddPictureItem(db, category, owner, true, ItemImageReviewState.PendingReview, asset);
+                    await db.SaveChangesAsync();
+                }
+
+                break;
+        }
+
+        using HttpResponseMessage response = await host.Client.SendAsync(Upload(host.CreateToken("owner", "o@example.com")));
+
+        response.StatusCode.Should().Be(HttpStatusCode.TooManyRequests);
+        response.Headers.RetryAfter.Should().NotBeNull();
+        double seconds = response.Headers.RetryAfter!.Delta!.Value.TotalSeconds;
+        switch (scenario)
+        {
+            case "hourly": seconds.Should().BeInRange(2900, 3050, "the oldest attempt (10 minutes ago) leaves the hour window in about 50 minutes"); break;
+            case "daily": seconds.Should().BeInRange(80_800, 81_050, "the oldest attempt (90 minutes ago) leaves the day window in about 22.5 hours"); break;
+            case "global": seconds.Should().Be(3600); break;
+            default: seconds.Should().Be(900); break;
         }
     }
 }

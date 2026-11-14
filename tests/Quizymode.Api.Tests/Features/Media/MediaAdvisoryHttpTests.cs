@@ -12,6 +12,7 @@ using Microsoft.Extensions.Options;
 using Quizymode.Api.Data;
 using Quizymode.Api.Features.Media;
 using Quizymode.Api.Features.Media.Storage;
+using Quizymode.Api.Shared.Helpers;
 using Quizymode.Api.Shared.Models;
 using Quizymode.Api.Tests.TestFixtures;
 using Xunit;
@@ -132,6 +133,51 @@ public sealed class MediaAdvisoryHttpTests : DatabaseTestFixture
         (await JsonAsync(exhausted)).GetProperty("title").GetString().Should().Be("Media.AdvisoryBudget");
         provider.Calls.Should().Be(1); (await DbContext.MediaAdvisoryJobs.CountAsync()).Should().Be(1);
         await AssertStillPendingAsync(firstItem.Id); await AssertStillPendingAsync(secondItem.Id);
+    }
+
+    [Theory]
+    [InlineData("calls")]
+    [InlineData("cost")]
+    public async Task Advisory_429CarriesRetryAfter(string budget)
+    {
+        Item firstItem = await SeedPendingAsync(); Item secondItem = await SeedPendingAsync();
+        MediaAdvisoryOptions options = Enabled();
+        if (budget == "calls") { options.DailyCallBudget = 1; options.OwnerDailyCallBudget = 1; } else options.OwnerDailyReservationBudgetUsd = .05m;
+        await using Scenario s = await StartAsync(options, new ProviderHandler());
+        using HttpResponseMessage first = await PostAsync(s, firstItem.Id, s.AdminToken); first.StatusCode.Should().Be(HttpStatusCode.OK);
+
+        using HttpResponseMessage exhausted = await PostAsync(s, secondItem.Id, s.AdminToken);
+
+        exhausted.StatusCode.Should().Be((HttpStatusCode)429);
+        double seconds = exhausted.Headers.RetryAfter!.Delta!.Value.TotalSeconds;
+        seconds.Should().BeInRange(1, 86_400, "the allowance resets at the next UTC midnight");
+        (seconds - MediaErrors.SecondsToNextUtcDay(DateTime.UtcNow)).Should().BeInRange(-5, 5);
+    }
+
+    [Fact]
+    public async Task AdvisoryOwnerOverrideAdmitsASecondCallAndZeroBlocksTheFirst()
+    {
+        Item firstItem = await SeedPendingAsync(); Item secondItem = await SeedPendingAsync();
+        Guid owner = Guid.NewGuid();
+        DbContext.Users.Add(new User { Id = owner, Subject = "override-owner" });
+        await DbContext.SaveChangesAsync();
+        await DbContext.Items.ExecuteUpdateAsync(x => x.SetProperty(i => i.CreatedBy, owner.ToString()));
+        MediaAdvisoryOptions options = Enabled(); options.OwnerDailyCallBudget = 1; options.OwnerDailyReservationBudgetUsd = 1m;
+        await using Scenario s = await StartAsync(options, new ProviderHandler());
+        DbContext.UserSettings.Add(new UserSetting { UserId = owner, Key = MediaSettingKeys.AdvisoryOwnerDailyCalls, Value = "2", CreatedAt = DateTime.UtcNow, UpdatedAt = DateTime.UtcNow });
+        await DbContext.SaveChangesAsync();
+
+        using HttpResponseMessage first = await PostAsync(s, firstItem.Id, s.AdminToken);
+        using HttpResponseMessage second = await PostAsync(s, secondItem.Id, s.AdminToken);
+
+        first.StatusCode.Should().Be(HttpStatusCode.OK);
+        second.StatusCode.Should().Be(HttpStatusCode.OK, "the admin override raises the owner allowance above the configured 1");
+        DbContext.UserSettings.Single(x => x.UserId == owner).Value = "0";
+        await DbContext.SaveChangesAsync();
+        Item third = await SeedPendingAsync();
+        await DbContext.Items.Where(x => x.Id == third.Id).ExecuteUpdateAsync(x => x.SetProperty(i => i.CreatedBy, owner.ToString()));
+        using HttpResponseMessage blocked = await PostAsync(s, third.Id, s.AdminToken);
+        blocked.StatusCode.Should().Be((HttpStatusCode)429);
     }
 
     [Theory]
