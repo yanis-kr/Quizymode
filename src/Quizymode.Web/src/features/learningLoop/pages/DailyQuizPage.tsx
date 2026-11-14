@@ -8,6 +8,8 @@ import { dailyQuizApi } from "@/api/learningLoop";
 import { saveStudySession } from "@/features/studySessions/recordStudySession";
 import { summarizeQuizRun, type QuizRunState } from "@/features/items/quiz/quizRun";
 import { buildDailyShare } from "@/features/items/quiz/resultShare";
+import { DailyCountdown } from "../DailyCountdown";
+import { DailyExploreNext } from "../DailyExploreNext";
 import { FixedSetQuiz } from "../FixedSetQuiz";
 import { computeStreak, readDailyCompletions, recordLocalDailyCompletion } from "../localLearningState";
 
@@ -52,6 +54,15 @@ const DailyQuizPage = () => {
     : data
       ? computeStreak(localCompletions.map((entry) => entry.date), data.date)
       : 0;
+
+  const resultsStreak = countState.status === "counted" ? countState.streak : streak;
+
+  // Zero on the countdown: the button (never a timer) resets to the start state and fetches the new set.
+  const playTodaysQuiz = () => {
+    setStarted(false);
+    setCountState({ status: "idle" });
+    void queryClient.invalidateQueries({ queryKey: DAILY_QUIZ_QUERY_KEY });
+  };
 
   const handleComplete = async (run: QuizRunState) => {
     if (!data) return;
@@ -99,7 +110,7 @@ const DailyQuizPage = () => {
   return (
     <>
       <SEO
-        title="Daily Quiz | Quizymode"
+        title="Daily quiz"
         description="Five new questions every day. Keep your streak going with Quizymode's free daily quiz."
         canonical="https://www.quizymode.com/daily"
       />
@@ -107,20 +118,31 @@ const DailyQuizPage = () => {
         <header className="mb-4">
           <h1 className="text-2xl font-bold text-gray-900">Daily quiz</h1>
           <p className="mt-1 text-sm text-gray-600">
-            The same five questions for everyone today. A new set starts at midnight UTC.
-            {data && <span className="ml-1 font-medium text-gray-800">({data.date})</span>}
+            The same five questions for everyone today.
           </p>
-          {data && streak > 0 && (
+          {data && streak > 0 && !started && (
             <p className="mt-2 inline-flex rounded-full bg-amber-100 px-3 py-1 text-sm font-semibold text-amber-900">
               🔥 {streakLabel(streak)}
             </p>
           )}
           {!isAuthenticated && !isAuthLoading && (
             <p className="mt-2 text-xs text-gray-500">
-              Your streak is saved in this browser only. <Link to="/signup" className="font-semibold text-indigo-ink underline">Sign up</Link> to keep it on every device.
+              Your streak is saved in this browser only. <Link to="/signup?reason=save-progress&returnTo=/daily" className="font-semibold text-indigo-ink underline">Sign up</Link> to keep it on every device.
             </p>
           )}
         </header>
+
+        {/* Permanently mounted so a result is announced when its text arrives. */}
+        <div aria-live="polite" className={`text-sm ${countState.status === "idle" ? "" : "mb-3"}`}>
+          {countState.status === "saving" && <p className="text-gray-600">Saving your result…</p>}
+          {countState.status === "counted" && (
+            <p className="font-semibold text-emerald-800">Counted for today · {streakLabel(countState.streak)}</p>
+          )}
+          {countState.status === "practice" && <p className="text-gray-700">Practice run: today's result was already counted.</p>}
+          {countState.status === "failed" && (
+            <p role="alert" className="text-red-700">Your result could not be saved. Your score below is still correct.</p>
+          )}
+        </div>
 
         {(isAuthLoading || query.isLoading) && <LoadingSpinner />}
 
@@ -153,29 +175,26 @@ const DailyQuizPage = () => {
                   : `${todaysResult.skipped} questions skipped because the picture was unavailable. Not scored.`}
               </p>
             )}
-            <p className="mt-1 text-sm text-emerald-800">Come back tomorrow for a new set. You can practice today's questions again; it won't change your score.</p>
+            <DailyCountdown
+              quizDate={data.date}
+              onPlayToday={playTodaysQuiz}
+              variant="inline"
+              trailing="You can practice today's questions again; it won't change your score."
+            />
             <button
               type="button"
               onClick={() => setStarted(true)}
-              className="mt-3 rounded-md border border-emerald-700 px-4 py-2 text-sm font-semibold text-emerald-900 hover:bg-emerald-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-600"
+              className="mt-3 min-h-[44px] rounded-md border border-emerald-700 px-4 py-2 text-sm font-semibold text-emerald-900 hover:bg-emerald-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-600"
             >
               Practice again
             </button>
           </div>
         )}
 
+        {data && data.items.length > 0 && todaysResult && !started && <DailyExploreNext />}
+
         {data && data.items.length > 0 && (!todaysResult || started) && (
           <>
-            <div aria-live="polite" className="mb-3 text-sm">
-              {countState.status === "saving" && <p className="text-gray-600">Saving your result…</p>}
-              {countState.status === "counted" && (
-                <p className="font-semibold text-emerald-800">Counted for today · {streakLabel(countState.streak)}</p>
-              )}
-              {countState.status === "practice" && <p className="text-gray-700">Practice run: today's result was already counted.</p>}
-              {countState.status === "failed" && (
-                <p role="alert" className="text-red-700">Your result could not be saved. Your score below is still correct.</p>
-              )}
-            </div>
             <FixedSetQuiz
               key={`${data.date}:${identityKey}`}
               items={data.items}
@@ -183,6 +202,19 @@ const DailyQuizPage = () => {
               analytics={{ contextType: "daily", contextId: data.date }}
               browsePath="/categories"
               browseLabel="Browse categories"
+              resultsVariant="daily"
+              endExtras={() => <DailyExploreNext />}
+              resultsStatus={
+                <div className="mt-3 flex flex-wrap items-center justify-center gap-x-3 gap-y-1">
+                  {resultsStreak > 0 && (
+                    <p className="inline-flex rounded-full bg-amber-100 px-3 py-1 text-sm font-semibold text-amber-900">
+                      🔥 {streakLabel(resultsStreak)}
+                    </p>
+                  )}
+                  {!isAuthenticated && <p className="text-xs text-gray-500">Saved in this browser.</p>}
+                </div>
+              }
+              resultsCountdown={<DailyCountdown quizDate={data.date} onPlayToday={playTodaysQuiz} variant="panel" />}
               onComplete={(run) => void handleComplete(run)}
               share={(run) =>
                 buildDailyShare({

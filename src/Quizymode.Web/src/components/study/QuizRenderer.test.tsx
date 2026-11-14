@@ -124,4 +124,65 @@ describe("QuizRenderer", () => {
     const html = document.body.innerHTML;
     expect(html).not.toMatch(/bg-green|bg-red|border-green|border-red/);
   });
+
+  describe("answerPanel (#648)", () => {
+    const base = {
+      item: mockItem,
+      options: ["3", "4", "5", "6"],
+      onAnswerSelect: () => {},
+      stats: { total: 1, correct: 1 },
+    };
+
+    it("mounts one polite live region before answering, with options visible", () => {
+      render(<QuizRenderer {...base} selectedAnswer={null} showAnswer={false} answerPanel={null} />);
+      expect(screen.getAllByRole("status")).toHaveLength(1);
+      expect(screen.getByRole("status")).toBeEmptyDOMElement();
+      expect(screen.getByRole("group", { name: "Answer options" })).toBeInTheDocument();
+    });
+
+    it("replaces the options and the blue answer box with the panel, and keeps the score strip only when asked", () => {
+      const { rerender } = render(
+        <QuizRenderer {...base} selectedAnswer="4" showAnswer answerPanel={<p>CARD</p>} />
+      );
+      expect(screen.getByRole("status")).toHaveTextContent("CARD");
+      expect(screen.queryByRole("group", { name: "Answer options" })).not.toBeInTheDocument();
+      expect(screen.queryByText(/Correct Answer:/)).not.toBeInTheDocument();
+      expect(screen.queryByText(/Score:/)).not.toBeInTheDocument();
+
+      rerender(<QuizRenderer {...base} selectedAnswer="4" showAnswer answerPanel={<p>CARD</p>} showScoreWithPanel />);
+      expect(screen.getByText(/Score: 1 \/ 1 correct/)).toBeInTheDocument();
+      expect(screen.getByText(/Score:/).closest("[aria-live]")).toBeNull();
+    });
+
+    it("ignores the panel while a typed answer is active and keeps the typed panel and answer box", () => {
+      render(
+        <QuizRenderer
+          {...base}
+          selectedAnswer={null}
+          showAnswer
+          answerPanel={<p>CARD</p>}
+          typedAnswer={{
+            isTypeable: true,
+            enabled: true,
+            onEnabledChange: () => {},
+            result: { typed: "5", correct: false, locked: false },
+            onSubmit: () => {},
+            onOverride: () => {},
+            onContinue: () => {},
+            continueLabel: "Next question",
+          }}
+        />
+      );
+      expect(screen.queryByText("CARD")).not.toBeInTheDocument();
+      expect(screen.getByLabelText("Type your answer")).toBeInTheDocument();
+      expect(screen.getByText(/Correct Answer: 4/)).toBeInTheDocument();
+    });
+
+    it("applies the focus ref to the question heading", () => {
+      const ref = { current: null as HTMLHeadingElement | null };
+      render(<QuizRenderer {...base} selectedAnswer={null} showAnswer={false} questionHeadingRef={ref} />);
+      expect(ref.current).toBe(screen.getByRole("heading", { name: "Question" }));
+      expect(ref.current).toHaveAttribute("tabindex", "-1");
+    });
+  });
 });

@@ -20,6 +20,7 @@ import { DAILY_QUIZ_QUERY_KEY } from "@/features/learningLoop/pages/DailyQuizPag
 import { StudyPlanTodayCard } from "@/features/studyPlans/StudyPlanTodayCard";
 import { useStudyPlanActions, useStudyPlans } from "@/features/studyPlans/useStudyPlans";
 import { MAX_LANE_PLANS, daysUntil } from "@/features/studyPlans/studyPlanSteps";
+import { useDailyCountdown } from "@/hooks/useDailyCountdown";
 import { homeCategoryCards } from "./homePageData";
 import { MAX_INTERESTS } from "@/features/learningLoop/localLearningState";
 import {
@@ -178,6 +179,8 @@ export function PersonalizedLanes({ featuredSets, focused = false }: { featuredS
   const dailyDone = signedIn ? Boolean(dailyQuery.data?.completion) : localDaily.some((entry) => entry.date === today);
   const streak = signedIn ? dailyQuery.data?.streak ?? 0 : computeStreak(localDaily.map((entry) => entry.date), today);
   const review = signedIn ? reviewQuery.data : undefined;
+  const countdown = useDailyCountdown(signedIn ? dailyQuery.data?.date : undefined);
+  const dailyReady = dailyDone && countdown.isReady;
 
   if (isAuthLoading) return null;
 
@@ -213,11 +216,15 @@ export function PersonalizedLanes({ featuredSets, focused = false }: { featuredS
             <span>
               <span className="block text-sm font-semibold text-on-panel">Daily quiz</span>
               <span className="block text-xs text-on-panel">
-                {dailyDone ? "Done for today. New set at midnight UTC." : "Five new questions, same for everyone today."}
+                {dailyReady
+                  ? "A new quiz is ready."
+                  : dailyDone
+                    ? `Done for today. Next quiz in ${countdown.text}.`
+                    : "Five new questions, same for everyone today."}
               </span>
             </span>
             <span className="shrink-0 text-xs font-semibold text-amber-ink">
-              {streak > 0 ? `🔥 ${streak}-day streak` : dailyDone ? "✓ Done" : "Play"}
+              {dailyReady ? "Play" : streak > 0 ? `🔥 ${streak}-day streak` : dailyDone ? "✓ Done" : "Play"}
             </span>
           </Link>
           {review && review.totalCount > 0 && (

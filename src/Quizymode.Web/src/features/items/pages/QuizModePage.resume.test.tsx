@@ -96,10 +96,6 @@ function option(text: string): HTMLElement {
   return screen.getByRole("button", { name: new RegExp(`^[A-D]\\. ${text}$`) });
 }
 
-function optionOrder(): string[] {
-  return screen.getAllByRole("button", { name: /^[A-D]\. / }).map((button) => button.textContent ?? "");
-}
-
 /** Simulates closing and reopening the browser: the tab's sessionStorage is gone, localStorage stays. */
 function restartBrowser(unmount: () => void) {
   unmount();
@@ -170,7 +166,6 @@ describe("QuizModePage resume or start over (AC 3.6.24, #602)", () => {
   it("reload in the same tab restores silently, and the run is also saved in localStorage", async () => {
     const first = renderAt(PRACTICE_URL);
     await screen.findByText("What is 2 + 2?");
-    const order = optionOrder();
     fireEvent.click(option("4"));
     await waitFor(() => expect(readResumeEntry("guest")?.run.outcomes[GUID_1]?.selectedAnswer).toBe("4"));
     expect(readResumeEntry("guest")?.label).toBe("Exam");
@@ -179,14 +174,13 @@ describe("QuizModePage resume or start over (AC 3.6.24, #602)", () => {
     renderAt(PRACTICE_URL);
     await screen.findByText("What is 2 + 2?");
     expect(screen.queryByText("Pick up where you left off?")).not.toBeInTheDocument();
-    expect(optionOrder()).toEqual(order);
-    expect(option("4")).toBeDisabled();
+    // The options are replaced by the card once answered, so the restored answer is checked through the card.
+    expect(screen.getByTestId("answer-feedback-card")).toHaveTextContent("Answer: 4");
   });
 
   it("after a browser restart the page offers Resume, which restores roster, option order and answers", async () => {
     const first = renderAt(PRACTICE_URL);
     await screen.findByText("What is 2 + 2?");
-    const order = optionOrder();
     fireEvent.click(option("4"));
     await waitFor(() => expect(readResumeEntry("guest")).not.toBeNull());
     const savedRunId = readResumeEntry("guest")!.run.runId;
@@ -199,8 +193,7 @@ describe("QuizModePage resume or start over (AC 3.6.24, #602)", () => {
     fireEvent.click(screen.getByRole("button", { name: "Resume" }));
 
     expect(await screen.findByText("What is 2 + 2?")).toBeInTheDocument();
-    expect(optionOrder()).toEqual(order);
-    expect(option("4")).toBeDisabled();
+    expect(screen.getByTestId("answer-feedback-card")).toHaveTextContent("Answer: 4");
     expect(screen.queryByRole("alert")).not.toBeInTheDocument();
     const stored = JSON.parse(sessionStorage.getItem("navigationContext_quiz")!) as { quizRun: QuizRunState };
     expect(stored.quizRun.runId).toBe(savedRunId);
@@ -365,7 +358,7 @@ describe("QuizModePage resume or start over (AC 3.6.24, #602)", () => {
       throw new Error("QuotaExceededError");
     });
     fireEvent.click(option("4"));
-    expect(option("4")).toBeDisabled();
+    expect(screen.getByTestId("answer-feedback-card")).toHaveTextContent("Answer: 4");
     expect(screen.queryByText("Pick up where you left off?")).not.toBeInTheDocument();
   });
 
@@ -381,7 +374,7 @@ describe("QuizModePage resume or start over (AC 3.6.24, #602)", () => {
 
     expect(await screen.findByText("What is 2 + 2?")).toBeInTheDocument();
     expect(screen.queryByText("Pick up where you left off?")).not.toBeInTheDocument();
-    expect(option("4")).toBeDisabled();
+    expect(screen.getByTestId("answer-feedback-card")).toHaveTextContent("Answer: 4");
   });
 
   it("the home card's Start over opens a fresh run and removes the saved one", async () => {

@@ -82,6 +82,52 @@ describe("PersonalizedLanes", () => {
     expect(screen.getByRole("link", { name: /Daily quiz/ })).toHaveTextContent("1-day streak");
   });
 
+  it("done state shows the time to the next quiz as a duration, never UTC or midnight (#649)", () => {
+    recordLocalDailyCompletion({ date: utcToday(), correct: 3, total: 5 });
+
+    renderLanes([]);
+
+    const card = screen.getByRole("link", { name: /Daily quiz/ });
+    expect(card).toHaveTextContent(/Done for today\. Next quiz in (\d+ h( \d+ min)?|\d+ min|less than a minute)\./);
+    expect(card).not.toHaveTextContent(/UTC|midnight/i);
+    expect(card.querySelector("[aria-live]")).toBeNull();
+  });
+
+  it("done state without a streak shows the Done chip", async () => {
+    auth.value = { isAuthenticated: true, isLoading: false, userId: "user-1" };
+    vi.mocked(reviewQueueApi.getSummary).mockResolvedValue({ dueCount: 0, totalCount: 0, nextDueAt: null });
+    vi.mocked(dailyQuizApi.get).mockResolvedValue({
+      date: utcToday(),
+      items: [],
+      completion: { correct: 3, total: 5, completedAt: new Date().toISOString() },
+      streak: 0,
+    });
+
+    renderLanes([]);
+
+    const card = await screen.findByRole("link", { name: /Daily quiz.*Done for today/ });
+    expect(card).toHaveTextContent("Next quiz in");
+    expect(card).toHaveTextContent("✓ Done");
+  });
+
+  it("at zero the card says a new quiz is ready and offers Play (#649)", async () => {
+    auth.value = { isAuthenticated: true, isLoading: false, userId: "user-1" };
+    vi.mocked(reviewQueueApi.getSummary).mockResolvedValue({ dueCount: 0, totalCount: 0, nextDueAt: null });
+    // The stored quiz date is long past, so its reset moment has already gone by.
+    vi.mocked(dailyQuizApi.get).mockResolvedValue({
+      date: "2026-10-18",
+      items: [],
+      completion: { correct: 3, total: 5, completedAt: "2026-10-18T10:00:00Z" },
+      streak: 4,
+    });
+
+    renderLanes([]);
+
+    const card = await screen.findByRole("link", { name: /A new quiz is ready\./ });
+    expect(card).toHaveTextContent("Play");
+    expect(card).not.toHaveTextContent("streak");
+  });
+
   it("signed in: review card, Continue from saved sessions, and topics saved to the account", async () => {
     auth.value = { isAuthenticated: true, isLoading: false, userId: "user-1" };
     vi.mocked(interestsApi.get).mockResolvedValue(["history"]);

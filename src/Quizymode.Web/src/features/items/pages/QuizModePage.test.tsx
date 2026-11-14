@@ -320,18 +320,21 @@ describe("QuizModePage", () => {
 
     expect(await screen.findByText("What is 2 + 2?")).toBeInTheDocument();
     await user.click(screen.getByRole("button", { name: /4/i }));
-    expect(screen.getByText(/Correct Answer: 4/i)).toBeInTheDocument();
+    expect(screen.getByTestId("answer-feedback-card")).toHaveTextContent("Correct!");
+    expect(screen.getByTestId("answer-feedback-card")).toHaveTextContent("Answer: 4");
     expect(screen.getByText(/Score: 1 \/ 1 correct/i)).toBeInTheDocument();
 
     await user.click(screen.getByRole("button", { name: /^next$/i }));
     expect(await screen.findByText("What is the capital of France?")).toBeInTheDocument();
     await user.click(screen.getByRole("button", { name: /Rome/i }));
 
-    expect(screen.getByText(/You answered every question/i)).toBeInTheDocument();
+    // The run is complete, so the card's primary action is "See my score" (the old results box is not shown with it).
+    expect(screen.getByRole("button", { name: "See my score" })).toBeInTheDocument();
+    expect(screen.queryByText(/You answered every question/i)).not.toBeInTheDocument();
     await waitFor(() => expect(completions).toHaveLength(1));
     expect(completions[0]).toMatchObject({ correct: 1, total: 2, missedItemIds: ["item-2"] });
 
-    await user.click(screen.getByRole("button", { name: /view results/i }));
+    await user.click(screen.getByRole("button", { name: /see my score/i }));
     expect(screen.getByRole("heading", { name: /quiz complete/i })).toHaveFocus();
     expect(screen.getByText("1 / 2")).toBeInTheDocument();
     expect(screen.getByText(/50% correct · 1 missed/i)).toBeInTheDocument();
@@ -362,6 +365,127 @@ describe("QuizModePage", () => {
     window.removeEventListener(QUIZ_COMPLETED_EVENT, onComplete);
   });
 
+  describe("answer feedback card (#648)", () => {
+    const PRACTICE = "/quiz/collections/collection-1/practice+set/item/item-1";
+    const buttonsNamed = (name: RegExp) => screen.queryAllByRole("button", { name });
+
+    it("correct answer: one live region holds the card, exactly one Next, Score strip stays below, options are gone", async () => {
+      const user = userEvent.setup({ delay: null });
+      renderPage(PRACTICE);
+      expect(await screen.findByText("What is 2 + 2?")).toBeInTheDocument();
+      // The live region is mounted before the answer arrives.
+      const region = screen.getAllByRole("status").find((node) => node.getAttribute("aria-live") === "polite");
+      expect(region).toBeDefined();
+      expect(region).toBeEmptyDOMElement();
+
+      await user.click(screen.getByRole("button", { name: /^[A-D]\. 4$/ }));
+      const card = screen.getByTestId("answer-feedback-card");
+      expect(card).toHaveTextContent("Correct!");
+      expect(card).toHaveTextContent("Answer: 4");
+      expect(card).toHaveTextContent("Did you know?");
+      expect(card).toHaveTextContent("Basic arithmetic.");
+      expect(region).toContainElement(card);
+      expect(buttonsNamed(/^next$/i)).toHaveLength(1);
+      expect(card).toContainElement(buttonsNamed(/^next$/i)[0]);
+      expect(buttonsNamed(/^[A-D]\. /)).toHaveLength(0);
+      const score = screen.getByText(/Score: 1 \/ 1 correct/);
+      expect(card.compareDocumentPosition(score) & Node.DOCUMENT_POSITION_FOLLOWING).toBeTruthy();
+      expect(score.closest("[aria-live]")).toBeNull();
+    });
+
+    it("incorrect answer: Not quite, what was picked and the reason for that option", async () => {
+      const user = userEvent.setup({ delay: null });
+      vi.mocked(collectionsApi.getItems).mockResolvedValue({
+        items: [{ ...item, incorrectAnswerRationale: { 0: "1 is the loneliest number." } }, secondItem],
+      } as Awaited<ReturnType<typeof collectionsApi.getItems>>);
+      renderPage(PRACTICE);
+      await screen.findByText("What is 2 + 2?");
+
+      await user.click(screen.getByRole("button", { name: /^[A-D]\. 1$/ }));
+      const card = screen.getByTestId("answer-feedback-card");
+      expect(card).toHaveTextContent("Not quite.");
+      expect(card).toHaveTextContent("You picked: 1");
+      expect(screen.getByTestId("option-rationale")).toHaveTextContent("1 is the loneliest number.");
+    });
+
+    it("no explanation: no 'Did you know?' label", async () => {
+      const user = userEvent.setup({ delay: null });
+      vi.mocked(collectionsApi.getItems).mockResolvedValue({
+        items: [{ ...item, explanation: "" }, secondItem],
+      } as Awaited<ReturnType<typeof collectionsApi.getItems>>);
+      renderPage(PRACTICE);
+      await screen.findByText("What is 2 + 2?");
+
+      await user.click(screen.getByRole("button", { name: /^[A-D]\. 4$/ }));
+      expect(screen.getByTestId("answer-feedback-card")).toHaveTextContent("Answer: 4");
+      expect(screen.queryByText("Did you know?")).not.toBeInTheDocument();
+    });
+
+    it("Next moves to the next question and focuses its heading, never the page body", async () => {
+      const user = userEvent.setup({ delay: null });
+      renderPage(PRACTICE);
+      await screen.findByText("What is 2 + 2?");
+
+      await user.click(screen.getByRole("button", { name: /^[A-D]\. 4$/ }));
+      const next = screen.getByRole("button", { name: /^next$/i });
+      await waitFor(() => expect(next).toHaveFocus());
+      await user.click(next);
+
+      expect(await screen.findByText("What is the capital of France?")).toBeInTheDocument();
+      await waitFor(() => expect(screen.getByRole("heading", { name: "Question" })).toHaveFocus());
+      expect(screen.queryByTestId("answer-feedback-card")).not.toBeInTheDocument();
+      // Before answering, the bottom Next is back and there is still exactly one.
+      expect(buttonsNamed(/^next$/i)).toHaveLength(1);
+    });
+
+    it("last question with every question answered: See my score (not Next) opens the results", async () => {
+      const user = userEvent.setup({ delay: null });
+      renderPage(PRACTICE);
+      await screen.findByText("What is 2 + 2?");
+      await user.click(screen.getByRole("button", { name: /^[A-D]\. 4$/ }));
+      await user.click(screen.getByRole("button", { name: /^next$/i }));
+      await screen.findByText("What is the capital of France?");
+      await user.click(screen.getByRole("button", { name: /^[A-D]\. Paris$/ }));
+
+      expect(buttonsNamed(/^next$/i)).toHaveLength(0);
+      expect(screen.queryByText(/You answered every question/)).not.toBeInTheDocument();
+      await user.click(screen.getByRole("button", { name: "See my score" }));
+      expect(screen.getByRole("heading", { name: /quiz complete/i })).toHaveFocus();
+    });
+
+    it("last index but the run is not complete (an earlier question was skipped): the card has no Next and no See my score", async () => {
+      const user = userEvent.setup({ delay: null });
+      renderPage(PRACTICE);
+      await screen.findByText("What is 2 + 2?");
+      // Practice lets the learner move on without answering.
+      await user.click(screen.getByRole("button", { name: /^next$/i }));
+      await screen.findByText("What is the capital of France?");
+      await user.click(screen.getByRole("button", { name: /^[A-D]\. Paris$/ }));
+
+      expect(screen.getByTestId("answer-feedback-card")).toHaveTextContent("Correct!");
+      expect(buttonsNamed(/^next$/i)).toHaveLength(0);
+      expect(buttonsNamed(/see my score/i)).toHaveLength(0);
+      // Previous leads back to the open question, and answering it completes the run.
+      await user.click(screen.getByRole("button", { name: /^previous$/i }));
+      expect(await screen.findByText("What is 2 + 2?")).toBeInTheDocument();
+      await user.click(screen.getByRole("button", { name: /^[A-D]\. 4$/ }));
+      expect(screen.getByRole("button", { name: "See my score" })).toBeInTheDocument();
+    });
+
+    it("Enter on the focused card button advances exactly once", async () => {
+      const user = userEvent.setup({ delay: null });
+      renderPage(PRACTICE);
+      await screen.findByText("What is 2 + 2?");
+      await user.click(screen.getByRole("button", { name: /^[A-D]\. 4$/ }));
+      await waitFor(() => expect(screen.getByRole("button", { name: /^next$/i })).toHaveFocus());
+
+      await user.keyboard("{Enter}");
+
+      expect(await screen.findByText("What is the capital of France?")).toBeInTheDocument();
+      expect(screen.getByText("2 of 2")).toBeInTheDocument();
+    });
+  });
+
   it("records one anonymous completion in browser-local guest history and a replay adds one more", async () => {
     mockAuth.isAuthenticated = false;
     mockAuth.userId = undefined;
@@ -380,7 +504,7 @@ describe("QuizModePage", () => {
     // Remounting the completed run (reload restore) must not duplicate it.
     view.unmount();
     renderPage("/quiz/collections/collection-1/practice+set/item/item-2");
-    await user.click(await screen.findByRole("button", { name: /view results/i }));
+    await user.click(await screen.findByRole("button", { name: /see my score/i }));
     expect(readGuestHistory()).toHaveLength(1);
 
     await user.click(screen.getByRole("button", { name: /play again/i }));
@@ -397,7 +521,7 @@ describe("QuizModePage", () => {
     await user.click(await screen.findByRole("button", { name: /4/i }));
     await user.click(screen.getByRole("button", { name: /^next$/i }));
     await user.click(await screen.findByRole("button", { name: /Rome/i }));
-    expect(await screen.findByText(/You answered every question/i)).toBeInTheDocument();
+    expect(await screen.findByRole("button", { name: "See my score" })).toBeInTheDocument();
     expect(localStorage.getItem(GUEST_HISTORY_STORAGE_KEY)).toBeNull();
   });
 
@@ -411,8 +535,8 @@ describe("QuizModePage", () => {
     await user.click(screen.getByRole("button", { name: /^previous$/i }));
 
     expect(await screen.findByText("What is 2 + 2?")).toBeInTheDocument();
-    expect(screen.getByText(/Correct Answer: 4/i)).toBeInTheDocument();
-    expect(screen.getByRole("button", { name: /4/i })).toBeDisabled();
+    expect(screen.getByTestId("answer-feedback-card")).toHaveTextContent("Answer: 4");
+    expect(screen.queryByRole("button", { name: /^[A-D]\. 4$/ })).not.toBeInTheDocument();
     expect(screen.getByText(/Score: 1 \/ 2 correct/i)).toBeInTheDocument();
   });
 
@@ -421,12 +545,12 @@ describe("QuizModePage", () => {
     const firstRender = renderPage("/quiz/collections/collection-1/practice+set/item/item-1");
 
     await user.click(await screen.findByRole("button", { name: /4/i }));
-    expect(screen.getByText(/Correct Answer: 4/i)).toBeInTheDocument();
+    expect(screen.getByTestId("answer-feedback-card")).toHaveTextContent("Answer: 4");
     firstRender.unmount();
 
     renderPage("/quiz/collections/collection-1/practice+set/item/item-1");
-    expect(await screen.findByText(/Correct Answer: 4/i)).toBeInTheDocument();
-    expect(screen.getByRole("button", { name: /4/i })).toBeDisabled();
+    expect(await screen.findByTestId("answer-feedback-card")).toHaveTextContent("Answer: 4");
+    expect(screen.queryByRole("button", { name: /^[A-D]\. 4$/ })).not.toBeInTheDocument();
     expect(screen.getByText(/Score: 1 \/ 1 correct/i)).toBeInTheDocument();
   });
 
@@ -464,8 +588,8 @@ describe("QuizModePage", () => {
 
     expect(await screen.findByText("Sized question item-1")).toBeInTheDocument();
     expect(screen.getByLabelText("Quiz size:")).toHaveValue(5);
-    expect(screen.getByText(/Correct Answer: 4/i)).toBeInTheDocument();
-    expect(screen.getByRole("button", { name: /^[A-D]\. 4$/ })).toBeDisabled();
+    expect(screen.getByTestId("answer-feedback-card")).toHaveTextContent("Answer: 4");
+    expect(screen.queryByRole("button", { name: /^[A-D]\. 4$/ })).not.toBeInTheDocument();
     expect(itemsApi.getRandom).not.toHaveBeenCalled();
   });
 
@@ -493,8 +617,8 @@ describe("QuizModePage", () => {
 
     expect(await screen.findByText("Sized question item-1")).toBeInTheDocument();
     expect(screen.getByLabelText("Quiz size:")).toHaveValue(5);
-    expect(screen.getByText(/Correct Answer: 4/i)).toBeInTheDocument();
-    expect(screen.getByRole("button", { name: /^[A-D]\. 4$/ })).toBeDisabled();
+    expect(screen.getByTestId("answer-feedback-card")).toHaveTextContent("Answer: 4");
+    expect(screen.queryByRole("button", { name: /^[A-D]\. 4$/ })).not.toBeInTheDocument();
     expect(itemsApi.getRandom).not.toHaveBeenCalled();
 
     // A real size change after the restore still starts a new random set (AC 3.6.5).
@@ -520,8 +644,8 @@ describe("QuizModePage", () => {
 
     renderPage("/quiz/exams/item/item-1?nav=act,math&keywords=act,math,algebra");
     await user.click(await screen.findByRole("button", { name: /4/i }));
-    expect(screen.getByText(/You answered every question/i)).toBeInTheDocument();
-    await user.click(screen.getByRole("button", { name: /view results/i }));
+    expect(screen.getByTestId("answer-feedback-card")).toHaveTextContent("Correct!");
+    await user.click(screen.getByRole("button", { name: /see my score/i }));
     expect(screen.getByText("1 / 1")).toBeInTheDocument();
     expect(screen.queryByRole("button", { name: /review mistakes/i })).not.toBeInTheDocument();
   });
@@ -537,7 +661,9 @@ describe("QuizModePage", () => {
     });
 
     expect(screen.getByText(/Score: 0 \/ 1 correct/i)).toBeInTheDocument();
-    expect(wrongAnswer).toBeDisabled();
+    // The options are replaced by the card, which reports the first (wrong) answer only.
+    expect(screen.queryByRole("button", { name: /^[A-D]\. / })).not.toBeInTheDocument();
+    expect(screen.getByTestId("answer-feedback-card")).toHaveTextContent("Not quite.");
     // AC 5.5.2: the first call carries the scored (wrong) answer. The deferred tracker's own
     // key-based dedupe (verified in analyticsEvents.test.tsx) drops any later call for the same item.
     expect(mockTrackEventDeferredOnce.mock.calls[0][1]).toMatchObject({

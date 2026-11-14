@@ -52,6 +52,8 @@ export interface StudyShellProps {
   hideItemDetailsLink?: boolean;
   /** Opens the keyboard shortcuts dialog; shows the Shortcuts hint beside the details link. */
   onOpenShortcuts?: () => void;
+  /** Hides the bottom Next button (not the header chevron) while the answer card shows its own Next. */
+  hideBottomNext?: boolean;
   /** Footer (back to collection / categories) */
   footerContent?: ReactNode;
   /** Sign-up prompt when not authenticated */
@@ -80,6 +82,7 @@ export function StudyShell({
   isAuthenticated,
   showRatingsAndCollections = true,
   hideItemDetailsLink = false,
+  hideBottomNext = false,
   footerContent,
   signUpPrompt,
   onOpenShortcuts,
@@ -218,14 +221,16 @@ export function StudyShell({
             >
               Previous
             </button>
-            <button
-              type="button"
-              onClick={onNext}
-              disabled={isNextDisabled}
-              className="px-4 py-2 bg-indigo-600 text-white rounded-md hover:bg-indigo-700 disabled:opacity-50 disabled:cursor-not-allowed"
-            >
-              {nextLabel}
-            </button>
+            {!hideBottomNext && (
+              <button
+                type="button"
+                onClick={onNext}
+                disabled={isNextDisabled}
+                className="px-4 py-2 bg-indigo-600 text-white rounded-md hover:bg-indigo-700 disabled:opacity-50 disabled:cursor-not-allowed"
+              >
+                {nextLabel}
+              </button>
+            )}
           </div>
         </div>
 

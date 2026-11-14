@@ -94,7 +94,7 @@ export function ShareResultButton({ descriptor, runId, score, total, context, em
         ref={triggerRef}
         type="button"
         onClick={() => setIsOpen(true)}
-        className={`inline-flex items-center justify-center gap-1.5 rounded-md px-4 py-2 font-semibold focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500 focus-visible:ring-offset-2 ${triggerClass}`}
+        className={`inline-flex min-h-[44px] items-center justify-center gap-1.5 rounded-md px-4 py-2 font-semibold focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500 focus-visible:ring-offset-2 ${triggerClass}`}
       >
         <ShareIcon className="h-4 w-4" aria-hidden="true" />
         Share result

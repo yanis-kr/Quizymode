@@ -7,7 +7,7 @@ import { StudyHotkeysHint } from "@/components/study/StudyHotkeysHint";
 import { QuizRenderer } from "@/components/study/QuizRenderer";
 import { useQuestionPictureStatuses } from "@/components/study/pictureGate";
 import { usePreloadNextPicture } from "@/components/study/preloadPicture";
-import { WowCard } from "@/features/starter/WowCard";
+import { AnswerFeedbackCard } from "@/components/study/AnswerFeedbackCard";
 import { QuizCompletionView } from "@/features/items/quiz/QuizCompletionView";
 import type { ResultShareDescriptor } from "@/features/items/quiz/resultShare";
 import {
@@ -43,15 +43,22 @@ export interface FixedSetQuizProps {
   /** Builds the Share result descriptor for the finished run; omitted for the review queue (no Share). */
   share?: (run: QuizRunState) => ResultShareDescriptor | null;
   /**
-   * Starter quiz (#462): answer feedback is a short wow card (verdict, answer, one fact from `wowLines` by item id)
-   * instead of the option list and explanation, Previous is hidden, and the results screen uses the starter layout.
+   * Starter quiz (#462): the feedback card's fact is the short line from `wowLines` (by item id) instead of the
+   * explanation, the card advances on tap anywhere, Previous is hidden, and the results screen uses the starter layout.
+   * Every other run (daily, review) shows the same card with the item's explanation as the fact (#648).
    */
   feedback?: "wow";
   wowLines?: Record<string, string>;
   /** Called once per item the first time its question is shown. */
   onQuestionShown?: (item: ItemResponse) => void;
-  /** Starter results: the "explore next" content shown under the score. */
+  /** "daily" renders the Daily result layout (#649); the starter layout comes from `feedback="wow"`. */
+  resultsVariant?: "daily";
+  /** Starter and Daily results: the "explore next" content shown under the score. */
   endExtras?: (run: QuizRunState) => ReactNode;
+  /** Daily results: the streak and save-status row under the score. */
+  resultsStatus?: ReactNode;
+  /** Daily results: the countdown to the next daily quiz. */
+  resultsCountdown?: ReactNode;
   /** Starter results: replaces the local reset behind the primary "Another random five" button. */
   onRestart?: (run: QuizRunState) => void;
 }
@@ -81,7 +88,10 @@ export function FixedSetQuiz({
   feedback,
   wowLines,
   onQuestionShown,
+  resultsVariant,
   endExtras,
+  resultsStatus,
+  resultsCountdown,
   onRestart,
 }: FixedSetQuizProps) {
   const [run, setRun] = useState<QuizRunState>(() => newRun(items, identityKey));
@@ -204,8 +214,9 @@ export function FixedSetQuiz({
           setRun(newRun(items, identityKey));
           setIndex(0);
         }}
-        {...(isWow ? { variant: "starter" as const } : {})}
-        {...(isWow && endExtras ? { endExtras: endExtras(run) } : {})}
+        {...(isWow ? { variant: "starter" as const } : resultsVariant ? { variant: resultsVariant } : {})}
+        {...((isWow || resultsVariant) && endExtras ? { endExtras: endExtras(run) } : {})}
+        {...(resultsVariant ? { statusExtras: resultsStatus, countdown: resultsCountdown } : {})}
         share={run.view === "summary" ? share?.(run) : null}
         analyticsContext={context}
       />
@@ -241,39 +252,40 @@ export function FixedSetQuiz({
           ...pictures.controlsFor(item, handled ? undefined : handleSkipUnavailable),
           blocked: pictureBlocked,
         }}
-        {...(isWow
-          ? {
-              answerPanel: outcome ? (
-                <WowCard
-                  key={item.id}
-                  isCorrect={outcome.isCorrect}
-                  selectedAnswer={outcome.selectedAnswer}
-                  correctAnswer={item.correctAnswer}
-                  wowLine={wowLines?.[item.id] ?? ""}
-                  isLast={isLast}
-                  onNext={advance}
-                />
-              ) : null,
-            }
-          : {})}
+        // Always passed (null before answering) so the single live region is mounted before the card arrives.
+        answerPanel={
+          outcome ? (
+            <AnswerFeedbackCard
+              key={item.id}
+              item={item}
+              selectedAnswer={outcome.selectedAnswer}
+              isCorrect={outcome.isCorrect}
+              fact={isWow ? wowLines?.[item.id] ?? "" : item.explanation ?? ""}
+              isLast={summary.isComplete}
+              onNext={summary.isComplete || canGoNext ? advance : undefined}
+              advanceOnCardClick={isWow}
+            />
+          ) : null
+        }
       />
-      {/* Wow mode: the card holds Next. Only a last question skipped for its picture still needs a way to the score. */}
+      {/* The card holds Next (or "See my score"), so the bottom row keeps only Previous while it shows. Wow mode has no
+          Previous; only a last question skipped for its picture still needs a way to the score. */}
       {isWow && !(summary.isComplete && !outcome) ? null : (
-      <div className="mt-4 flex items-center justify-between gap-3">
+      <div className="mt-4 flex flex-col-reverse items-stretch justify-between gap-3 sm:flex-row sm:items-center">
         <button
           type="button"
           onClick={() => goTo(index - 1)}
           disabled={index === 0}
           hidden={isWow}
-          className="rounded-md border border-gray-300 px-4 py-2 text-sm font-semibold text-gray-700 hover:bg-gray-50 disabled:cursor-not-allowed disabled:opacity-50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500"
+          className="min-h-[44px] w-full rounded-md border border-gray-300 px-4 py-2 text-sm font-semibold text-gray-700 hover:bg-gray-50 disabled:cursor-not-allowed disabled:opacity-50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500 sm:w-auto"
         >
           Previous
         </button>
-        {summary.isComplete ? (
+        {outcome ? null : summary.isComplete ? (
           <button
             type="button"
             onClick={() => setRun((current) => reduceQuizRun(current, { type: "show-summary" }))}
-            className="rounded-md bg-indigo-600 px-4 py-2 text-sm font-semibold text-white hover:bg-indigo-700 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500 focus-visible:ring-offset-2"
+            className="min-h-[44px] w-full rounded-md bg-indigo-600 px-4 py-2 text-sm font-semibold text-white hover:bg-indigo-700 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500 focus-visible:ring-offset-2 sm:w-auto"
           >
             View results
           </button>
@@ -282,7 +294,7 @@ export function FixedSetQuiz({
             type="button"
             onClick={() => goTo(index + 1)}
             disabled={isLast || !handled}
-            className="rounded-md bg-indigo-600 px-4 py-2 text-sm font-semibold text-white hover:bg-indigo-700 disabled:cursor-not-allowed disabled:opacity-50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500 focus-visible:ring-offset-2"
+            className="min-h-[44px] w-full rounded-md bg-indigo-600 px-4 py-2 text-sm font-semibold text-white hover:bg-indigo-700 disabled:cursor-not-allowed disabled:opacity-50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500 focus-visible:ring-offset-2 sm:w-auto"
           >
             Next
           </button>

@@ -250,3 +250,78 @@ describe("QuizCompletionView unavailable pictures (#403)", () => {
     expect(screen.getByTestId("explanation-image")).toBeInTheDocument();
   });
 });
+
+describe("QuizCompletionView daily variant (#649)", () => {
+  beforeEach(() => {
+    confetti.mockReset();
+    resetCelebrationsForTests();
+    setMatchMedia(vi.fn().mockReturnValue({ matches: false }));
+  });
+
+  function dailyUi(run: QuizRunState, onPlayAgain = () => {}, onReviewMistakes = () => {}) {
+    return (
+      <MemoryRouter>
+        <QuizCompletionView
+          run={run}
+          items={items}
+          browsePath="/categories"
+          browseLabel="Browse categories"
+          variant="daily"
+          onReviewMistakes={onReviewMistakes}
+          onBackToResults={() => {}}
+          onPlayAgain={onPlayAgain}
+          share={share}
+          statusExtras={<p>STATUS</p>}
+          countdown={<p>COUNTDOWN</p>}
+          endExtras={<p>TILES</p>}
+        />
+      </MemoryRouter>
+    );
+  }
+
+  it("orders score, status, Review mistakes, Share, countdown, tiles, Practice again, Browse", () => {
+    render(dailyUi(runWith(3, 5)));
+    expect(screen.getByRole("heading", { name: "Daily quiz complete" })).toBeInTheDocument();
+    expect(screen.getByText("3 / 5")).toBeInTheDocument();
+    const order = [
+      screen.getByText("3 / 5"),
+      screen.getByText("STATUS"),
+      screen.getByRole("button", { name: "Review mistakes" }),
+      screen.getByRole("button", { name: "Share result" }),
+      screen.getByText("COUNTDOWN"),
+      screen.getByText("TILES"),
+      screen.getByRole("button", { name: "Practice again" }),
+      screen.getByRole("link", { name: "Browse categories" }),
+    ];
+    order.slice(1).forEach((node, index) => {
+      expect(order[index].compareDocumentPosition(node) & Node.DOCUMENT_POSITION_FOLLOWING).toBeTruthy();
+    });
+  });
+
+  it("makes Review mistakes the primary action and Practice again a secondary text link-style button", () => {
+    render(dailyUi(runWith(3, 5)));
+    expect(screen.getByRole("button", { name: "Review mistakes" })).toHaveClass("bg-indigo-600");
+    expect(screen.getByRole("button", { name: "Share result" })).not.toHaveClass("bg-indigo-600");
+    const practice = screen.getByRole("button", { name: "Practice again" });
+    expect(practice).toHaveClass("underline");
+    expect(practice).not.toHaveClass("bg-indigo-600");
+    expect(screen.getByText("Doesn't change today's score.")).toBeInTheDocument();
+    expect(screen.queryByRole("button", { name: "Play again" })).toBeNull();
+  });
+
+  it("perfect score: no Review mistakes, Share is the emphasized primary", () => {
+    render(dailyUi(runWith(5, 5)));
+    expect(screen.queryByRole("button", { name: "Review mistakes" })).toBeNull();
+    expect(screen.getByRole("button", { name: "Share result" })).toHaveClass("bg-indigo-600");
+  });
+
+  it("Practice again replays and Review mistakes opens the review", () => {
+    const onPlayAgain = vi.fn();
+    const onReview = vi.fn();
+    render(dailyUi(runWith(3, 5), onPlayAgain, onReview));
+    screen.getByRole("button", { name: "Practice again" }).click();
+    screen.getByRole("button", { name: "Review mistakes" }).click();
+    expect(onPlayAgain).toHaveBeenCalledTimes(1);
+    expect(onReview).toHaveBeenCalledTimes(1);
+  });
+});

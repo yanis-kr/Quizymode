@@ -156,6 +156,29 @@ describe("QuizModePage Type answer (AC 3.6.19)", () => {
     expect(questionAnswered()).toEqual([expect.objectContaining({ itemId: GUID_2, isCorrect: true })]);
   });
 
+  it("typed answers keep the typed panel and the answer box and never show the feedback card (AC 3.6.19, #648)", async () => {
+    renderPage(START);
+    await screen.findByText("Capital of France?");
+
+    fireEvent.click(screen.getByLabelText("Type answer"));
+    typeAndCheck("Rome");
+
+    expect(screen.getByRole("status")).toHaveTextContent("Incorrect. Accepted answer: Paris");
+    expect(screen.getByText(/Correct Answer: Paris/)).toBeInTheDocument();
+    expect(screen.queryByTestId("answer-feedback-card")).not.toBeInTheDocument();
+    expect(screen.getByText(/Score: /)).toBeInTheDocument();
+  });
+
+  it("a multiple-choice answer on a typeable item shows the card instead of the answer box", async () => {
+    renderPage(START);
+    await screen.findByText("Capital of France?");
+
+    fireEvent.click(screen.getByRole("button", { name: /Paris/ }));
+
+    expect(screen.getByTestId("answer-feedback-card")).toHaveTextContent("Correct!");
+    expect(screen.queryByText(/Correct Answer: /)).not.toBeInTheDocument();
+  });
+
   it("submits on Enter and reports an incorrect answer with the accepted answer before it locks", async () => {
     renderPage(START);
     await screen.findByText("Capital of France?");

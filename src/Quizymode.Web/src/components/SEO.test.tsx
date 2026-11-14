@@ -43,4 +43,21 @@ describe("SEO", () => {
     expect(document.head.querySelector('meta[property="og:image:width"]')).toBeNull();
     expect(document.head.querySelector('meta[property="og:image:type"]')).toBeNull();
   });
+
+  it("appends the site suffix once, even when the title already carries it", async () => {
+    const { unmount } = render(
+      <HelmetProvider>
+        <SEO title="Daily quiz | Quizymode" />
+      </HelmetProvider>
+    );
+    await waitFor(() => expect(document.title).toBe("Daily quiz | Quizymode"));
+    unmount();
+
+    render(
+      <HelmetProvider>
+        <SEO title="Daily quiz" />
+      </HelmetProvider>
+    );
+    await waitFor(() => expect(document.title).toBe("Daily quiz | Quizymode"));
+  });
 });

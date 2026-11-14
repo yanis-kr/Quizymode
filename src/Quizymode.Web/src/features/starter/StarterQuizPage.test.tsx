@@ -101,14 +101,15 @@ describe("StarterQuizPage", () => {
     renderPage();
     await answer(true);
 
-    const card = await screen.findByTestId("wow-card");
+    const card = await screen.findByTestId("answer-feedback-card");
     expect(card).toHaveTextContent("Correct!");
     expect(card).toHaveTextContent("Answer: Right flags");
     expect(card).toHaveTextContent("Did you know?");
     expect(card).toHaveTextContent("Wow flags");
     expect(card.closest("[aria-live='polite']")).toHaveAttribute("role", "status");
     expect(screen.queryByRole("group", { name: "Answer options" })).not.toBeInTheDocument();
-    expect(screen.queryByText(/Correct Answer:/)).not.toBeInTheDocument();
+    // Exactly one "Answer:" line: the card's. A leftover blue "Correct Answer:" box would make it two.
+    expect((document.body.textContent ?? "").match(/Answer: /g)).toHaveLength(1);
     expect(screen.queryByRole("button", { name: "Previous" })).not.toBeInTheDocument();
 
     const next = screen.getByRole("button", { name: "Next" });
@@ -117,14 +118,14 @@ describe("StarterQuizPage", () => {
 
     expect(await screen.findByText("Question 2 of 5")).toBeInTheDocument();
     expect(screen.queryByText("Question 3 of 5")).not.toBeInTheDocument();
-    expect(screen.queryByTestId("wow-card")).not.toBeInTheDocument();
+    expect(screen.queryByTestId("answer-feedback-card")).not.toBeInTheDocument();
   });
 
   it("explains a wrong answer and advances when the card itself is tapped", async () => {
     renderPage();
     await answer(false);
 
-    const card = await screen.findByTestId("wow-card");
+    const card = await screen.findByTestId("answer-feedback-card");
     expect(card).toHaveTextContent("Not quite.");
     expect(card).toHaveTextContent("You picked: Wrong flags");
     fireEvent.click(card);
