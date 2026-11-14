@@ -3900,7 +3900,7 @@
           "Admin"
         ],
         "summary": "Remove an item from a day's daily quiz (Admin only)",
-        "description": "Marks the item excluded for that date and fills its slot with the next eligible item in seed order. Completions already recorded keep their streak credit.",
+        "description": "Marks the item excluded for that date and fills its slot (position 0 picture, 1 geography or history, 2 science or nature, 3 trivia, 4 wildcard) with the top seed-ranked eligible item of that same slot. Completions already recorded keep their streak credit.",
         "parameters": [
           {
             "name": "date",
