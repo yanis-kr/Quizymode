@@ -1,6 +1,7 @@
 using FluentAssertions;
 using Microsoft.AspNetCore.Http;
 using Microsoft.EntityFrameworkCore;
+using Quizymode.Api.Data;
 using Quizymode.Api.Features.Media;
 using Quizymode.Api.Features.Media.Storage;
 using Quizymode.Api.Shared.Models;
@@ -306,5 +307,87 @@ public sealed class MediaLifecycleTests : DatabaseTestFixture
         (await restarted.ItemImageReviews.AsNoTracking().OrderBy(x => x.Id).Select(x => new { x.Id, x.ItemId, x.Revision, x.Decision, x.DecidedAt }).ToListAsync()).Should().BeEquivalentTo(audits);
         if (blockedKind != "young-direct-tombstone") (await restarted.Items.CountAsync(x => x.QuestionImageAssetId != null && blockedIds.Contains(x.QuestionImageAssetId.Value) && x.ImageReviewState == ItemImageReviewState.Rejected && x.ImageRevision == 1)).Should().Be(50);
         foreach (MediaAsset asset in await restarted.MediaAssets.Where(x => blockedIds.Contains(x.Id) || protectedIds.Contains(x.Id)).ToListAsync()) store.Objects.Should().ContainKey(asset.ObjectKey!);
+    }
+
+    [Fact]
+    public async Task WithdrawnAssetWhoseObjectIsAlreadyMissingIsPurgedWithoutRetry()
+    {
+        DateTime now = DateTime.UtcNow;
+        MediaAsset asset = PictureSeed.AddAsset(DbContext, "owner"); asset.CreatedAt = now.AddDays(-10); asset.DeletedAt = now.AddDays(-8);
+        await DbContext.SaveChangesAsync();
+        FakeMediaObjectStore store = new();
+
+        (await MediaCleanupWorker.RunOnceAsync(DbContext, store, new MediaOptions { CleanupOwnerUserId = "owner" }, now, CancellationToken.None)).Should().Be(1);
+
+        await using ApplicationDbContext verify = CreateDbContext();
+        MediaAsset purged = await verify.MediaAssets.AsNoTracking().SingleAsync(x => x.Id == asset.Id);
+        purged.PurgedAt.Should().NotBeNull();
+        purged.DeleteRetryAt.Should().BeNull();
+    }
+
+    [Fact]
+    public async Task DeletedItemPictureIs404AtOnceAndPurgedAfterUnattachedRetention()
+    {
+        DateTime now = DateTime.UtcNow;
+        Category category = VisibilitySeed.AddCategory(DbContext);
+        MediaAsset asset = PictureSeed.AddAsset(DbContext, "owner"); asset.CreatedAt = now.AddDays(-1);
+        Item item = PictureSeed.AddPictureItem(DbContext, category, "owner", true, ItemImageReviewState.Approved, asset);
+        await DbContext.SaveChangesAsync();
+        DbContext.ItemImageReviews.RemoveRange(DbContext.ItemImageReviews.Where(x => x.ItemId == item.Id));
+        DbContext.Items.Remove(item);
+        await DbContext.SaveChangesAsync();
+        FakeMediaObjectStore store = new(); store.Objects[asset.ObjectKey!] = [1];
+        MediaOptions options = new() { CleanupOwnerUserId = "owner" };
+
+        (await DbContext.Items.AnyAsync(x => x.Id == item.Id)).Should().BeFalse("the item endpoint answers 404 once the item row is gone");
+        (await MediaCleanupWorker.RunOnceAsync(DbContext, store, options, now, CancellationToken.None)).Should().Be(0);
+        store.Objects.Should().ContainKey(asset.ObjectKey!);
+        (await MediaCleanupWorker.RunOnceAsync(DbContext, store, options, now.AddDays(8), CancellationToken.None)).Should().Be(1);
+        store.Objects.Should().NotContainKey(asset.ObjectKey!);
+    }
+
+    [Fact]
+    public async Task AssetSharedByDeletedAndLiveItemIsKept()
+    {
+        DateTime now = DateTime.UtcNow;
+        Category category = VisibilitySeed.AddCategory(DbContext);
+        MediaAsset asset = PictureSeed.AddAsset(DbContext, "owner"); asset.CreatedAt = now.AddDays(-10);
+        Item deleted = PictureSeed.AddPictureItem(DbContext, category, "owner", true, ItemImageReviewState.Approved, asset);
+        PictureSeed.AddPictureItem(DbContext, category, "owner", true, ItemImageReviewState.Approved, asset);
+        await DbContext.SaveChangesAsync();
+        DbContext.ItemImageReviews.RemoveRange(DbContext.ItemImageReviews.Where(x => x.ItemId == deleted.Id));
+        DbContext.Items.Remove(deleted);
+        await DbContext.SaveChangesAsync();
+        FakeMediaObjectStore store = new(); store.Objects[asset.ObjectKey!] = [1];
+
+        (await MediaCleanupWorker.RunOnceAsync(DbContext, store, new MediaOptions { CleanupOwnerUserId = "owner" }, now.AddDays(8), CancellationToken.None)).Should().Be(0);
+
+        store.Objects.Should().ContainKey(asset.ObjectKey!);
+        (await DbContext.MediaAssets.AsNoTracking().SingleAsync(x => x.Id == asset.Id)).PurgedAt.Should().BeNull();
+    }
+
+    private sealed class LineLogger : Microsoft.Extensions.Logging.ILogger
+    {
+        public List<string> Lines { get; } = [];
+        public IDisposable? BeginScope<TState>(TState state) where TState : notnull => null;
+        public bool IsEnabled(Microsoft.Extensions.Logging.LogLevel logLevel) => true;
+        public void Log<TState>(Microsoft.Extensions.Logging.LogLevel logLevel, Microsoft.Extensions.Logging.EventId eventId, TState state, Exception? exception, Func<TState, Exception?, string> formatter) => Lines.Add(formatter(state, exception));
+    }
+
+    [Fact]
+    public async Task CleanupRunLogsCountsWithoutKeysOrUrls()
+    {
+        DateTime now = DateTime.UtcNow;
+        MediaAsset asset = PictureSeed.AddAsset(DbContext, "owner"); asset.CreatedAt = now.AddDays(-10); asset.DeletedAt = now.AddDays(-8);
+        MediaAsset live = PictureSeed.AddAsset(DbContext, "owner");
+        await DbContext.SaveChangesAsync();
+        FakeMediaObjectStore store = new(); store.Objects[asset.ObjectKey!] = [1]; store.Objects[live.ObjectKey!] = [2];
+        LineLogger logger = new();
+
+        await MediaCleanupWorker.RunOnceAsync(DbContext, store, new MediaOptions { CleanupOwnerUserId = "owner" }, now, CancellationToken.None, logger);
+
+        string line = logger.Lines.Should().ContainSingle().Subject;
+        line.Should().Be("Media cleanup run: Deleted=1, Retried=0, Orphans=0, Missing=0, Verified=1, Candidates=1");
+        line.Should().NotContain(asset.ObjectKey!).And.NotContain("http").And.NotContain(asset.Id.ToString());
     }
 }
