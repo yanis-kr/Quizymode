@@ -284,7 +284,7 @@ describe("DailyQuizPage", () => {
     expect(await screen.findByRole("alert", undefined, { timeout: 4000 })).toHaveTextContent("Today's quiz could not be loaded.");
   });
 
-  it("shares the emoji grid in roster order and reports a daily share", async () => {
+  it("AC 3.34.1 shares date, score, green and grey squares, streak and the /daily link, with no question or answer text and reports a daily share", async () => {
     const writeText = vi.fn().mockResolvedValue(undefined);
     Object.defineProperty(navigator, "clipboard", { value: { writeText }, configurable: true, writable: true });
     vi.mocked(dailyQuizApi.get).mockResolvedValue({ date: "2026-10-18", items, completion: null, streak: null });
@@ -294,8 +294,9 @@ describe("DailyQuizPage", () => {
     fireEvent.click(await screen.findByRole("button", { name: "Share result" }));
     fireEvent.click(screen.getByRole("button", { name: "Copy" }));
 
-    const expected = `Quizymode Daily 2026-10-18 1/2\n\u{1F7E9}\u{1F7E5}\n${window.location.origin}/daily?utm_source=share&utm_medium=share&utm_campaign=quiz_result&utm_content=daily`;
+    const expected = `Quizymode Daily 2026-10-18 1/2\n\u{1F7E9}⬜\n\u{1F525} 1-day streak\n${window.location.origin}/daily?utm_source=share&utm_medium=share&utm_campaign=quiz_result&utm_content=daily`;
     await waitFor(() => expect(writeText).toHaveBeenCalledWith(expected));
+    expect(writeText.mock.calls[0]![0]).not.toMatch(/Question|Right|Wrong/);
     expect(screen.getByRole("button", { name: "Show QR code" })).toBeInTheDocument();
     await waitFor(() =>
       expect(trackEventOnce).toHaveBeenCalledWith(

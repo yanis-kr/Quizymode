@@ -68,15 +68,25 @@ export function buildGlobalShare(args: { correct: number; total: number; origin:
   };
 }
 
-/** Wordle-style grid: one square per question in roster order, with no question text. */
-export function buildDailyShare(args: { date: string; results: Array<boolean | null>; origin: string }): ResultShareDescriptor {
-  const { date, results, origin } = args;
+/**
+ * Spoiler-free daily result (#674): date, score, one square per question in roster order (green correct, grey missed or
+ * skipped), the streak when there is one, and the /daily link added by `shareCopyText`. Never any question or answer text.
+ */
+export function buildDailyShare(args: {
+  date: string;
+  results: Array<boolean | null>;
+  streak?: number;
+  origin: string;
+}): ResultShareDescriptor {
+  const { date, results, streak = 0, origin } = args;
   const correct = results.filter((result) => result === true).length;
   // null marks a question skipped for an unavailable picture (#403): a grey square, outside the score.
-  const grid = results.map((result) => (result === null ? "\u2B1C" : result ? "\u{1F7E9}" : "\u{1F7E5}")).join("");
+  const grid = results.map((result) => (result === true ? "\u{1F7E9}" : "⬜")).join("");
+  const lines = [`Quizymode Daily ${date} ${correct}/${results.filter((result) => result !== null).length}`, grid];
+  if (streak > 0) lines.push(`\u{1F525} ${streak}-day streak`);
   return {
     kind: "daily",
-    text: `Quizymode Daily ${date} ${correct}/${results.filter((result) => result !== null).length}\n${grid}`,
+    text: lines.join("\n"),
     url: withUtm(`${origin}/daily`, "daily"),
   };
 }
