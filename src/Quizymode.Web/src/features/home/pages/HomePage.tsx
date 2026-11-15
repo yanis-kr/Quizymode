@@ -11,6 +11,8 @@ import type { CollectionDiscoverItem } from "@/types/api";
 import { useAuth } from "@/contexts/AuthContext";
 import { buildCollectionPath } from "@/utils/collectionPath";
 import { buildCategoryPath } from "@/utils/categorySlug";
+import { categorySetKey, collectionSetKey } from "@/features/progress/knownItems";
+import { useKnownCount } from "@/features/progress/useKnownCount";
 import { getCategoryThemeBySlug } from "@/features/categories/categoryThemes";
 import { GuestHistoryCard } from "@/features/guestHistory/GuestHistoryCard";
 import { buildGamePath } from "@/features/games/gameScope";
@@ -18,6 +20,8 @@ import { useInterests } from "@/features/interests/useInterests";
 import { TopicOnboardingPrompt } from "../TopicOnboardingPrompt";
 import { PersonalizedLanes } from "../PersonalizedLanes";
 import { ContinueStudyingCard } from "../ContinueStudyingCard";
+import { NextUpCard } from "../NextUpCard";
+import { useNextUp } from "../useNextUp";
 import {
   homeCategoryCards,
 } from "../homePageData";
@@ -59,6 +63,24 @@ interface CatalogLanesProps {
   countsByCategory: Map<string, number>;
   featuredSets: FeaturedSetDto[];
   publicCollections: CollectionDiscoverItem[];
+}
+
+/** Guest-local "N of M known" line on a Home tile, or a completed state (#672). Hidden for signed-in users and unplayed sets. */
+function TileProgress({ setKey, total }: { setKey: string; total: number }) {
+  const { isAuthenticated } = useAuth();
+  const known = useKnownCount(setKey, !isAuthenticated);
+  if (known === null || known <= 0 || total <= 0) return null;
+  const shown = Math.min(known, total);
+  const complete = shown >= total;
+  return (
+    <p
+      className={`text-[11px] font-semibold ${complete ? "text-emerald-300" : "text-white/90"}`}
+      data-testid="tile-progress"
+      data-complete={complete}
+    >
+      {complete ? `Completed: all ${total} known` : `${shown} of ${total} known`}
+    </p>
+  );
 }
 
 /** The catalog browse lanes; shown directly on the full Home and inside "Explore all topics" on the focused Home. */
@@ -118,22 +140,45 @@ function CatalogLanes({ countsByCategory, featuredSets, publicCollections }: Cat
       </section>
 
       {/* ── Featured Sets lane ── */}
-      {featuredSets.length > 0 && (
-        <section className="rounded-[24px] border border-white/10 bg-panel-deep/70 p-2 sm:p-3 shadow-xl shadow-slate-950/25">
+      <section className="rounded-[24px] border border-white/10 bg-panel-deep/70 p-2 sm:p-3 shadow-xl shadow-slate-950/25">
           <div className="mb-1.5 flex items-center justify-between gap-3">
             <div className="text-xs font-semibold uppercase tracking-[0.22em] text-sky-ink">
               Featured Sets
             </div>
-            <Link
-              to="/featured"
-              className="flex items-center gap-1 text-xs font-semibold text-sky-400 transition hover:text-sky-ink"
-            >
-              Show all
-              <ArrowRightIcon className="h-3 w-3" />
-            </Link>
+            {featuredSets.length > 0 && (
+              <Link
+                to="/featured"
+                className="flex items-center gap-1 text-xs font-semibold text-sky-400 transition hover:text-sky-ink"
+              >
+                Show all
+                <ArrowRightIcon className="h-3 w-3" />
+              </Link>
+            )}
           </div>
 
           <div className="flex gap-2.5 overflow-x-auto pb-1 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
+            <Link
+              to="/categories/languages?keywords=idioms,funny&view=items"
+              className="group relative min-h-[44px] min-w-0 shrink-0 basis-[calc(50%-0.3125rem)] overflow-hidden rounded-[18px] border border-white/10 bg-panel/90 transition duration-200 hover:-translate-y-0.5 hover:border-sky-300/50 md:basis-[calc((100%-0.833rem)/3)] xl:basis-[calc((100%-1.875rem)/4)]"
+            >
+              <img
+                src={getCategoryThemeBySlug("languages").image}
+                alt=""
+                className="absolute inset-0 h-full w-full object-cover transition duration-500 group-hover:scale-105"
+              />
+              <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(2,6,23,0.05)_0%,rgba(2,6,23,0.78)_100%)]" />
+              <div className="relative flex h-full min-h-[80px] flex-col justify-between p-3 sm:min-h-[96px]">
+                <div className="flex justify-end">
+                  <span className="rounded-full border border-white/20 bg-black/55 px-2 py-0.5 text-[10px] font-semibold text-white backdrop-blur-sm">
+                    languages
+                  </span>
+                </div>
+                <div className="flex items-center justify-between gap-2">
+                  <h3 className="text-sm font-semibold text-white">Fun expressions</h3>
+                  <ArrowRightIcon className="h-4 w-4 shrink-0 text-sky-300 transition group-hover:translate-x-1" />
+                </div>
+              </div>
+            </Link>
             {featuredSets.map((set) => {
               const keywords = [set.navKeyword1, set.navKeyword2].filter(Boolean) as string[];
               const path = buildCategoryPath(set.categorySlug, keywords);
@@ -161,13 +206,13 @@ function CatalogLanes({ countsByCategory, featuredSets, publicCollections }: Cat
                       <h3 className="text-sm font-semibold text-white">{set.displayName}</h3>
                       <ArrowRightIcon className="h-4 w-4 shrink-0 text-sky-300 transition group-hover:translate-x-1" />
                     </div>
+                    <TileProgress setKey={categorySetKey(set.categorySlug, keywords)} total={set.itemCount} />
                   </div>
                 </Link>
               );
             })}
           </div>
         </section>
-      )}
 
       {/* ── Recently Added Collections lane ── */}
       {publicCollections.length > 0 && (
@@ -214,6 +259,7 @@ function CatalogLanes({ countsByCategory, featuredSets, publicCollections }: Cat
                         {collection.description}
                       </p>
                     )}
+                    <TileProgress setKey={collectionSetKey(collection.id)} total={collection.itemCount} />
                   </div>
                 </div>
               </Link>
@@ -247,6 +293,8 @@ const HomePage = () => {
             ? "focused"
             : "full";
   const focused = layout === "focused";
+  // A visitor with a completed quiz gets one Next up card instead of the first-visit hero (#670, AC 3.31).
+  const nextUp = useNextUp();
   const firstTopic = interests.find(isTopicPath);
   const { data: categoriesData } = useQuery({
     queryKey: ["home", "categories"],
@@ -312,6 +360,9 @@ const HomePage = () => {
           <div className="relative mx-auto max-w-7xl px-1.5 py-2 sm:px-6 lg:px-8 flex flex-col gap-2">
 
             {/* ── Hero card ── */}
+            {nextUp ? (
+              <NextUpCard choice={nextUp} />
+            ) : (
             <section className="rounded-[24px] border border-on-panel/12 bg-on-panel/8 p-2 shadow-2xl shadow-slate-950/30 backdrop-blur sm:flex sm:items-center sm:justify-between sm:gap-6 sm:px-5 sm:py-3">
               <div className="max-w-3xl">
                 <h1 className="text-xl font-semibold tracking-tight text-on-panel sm:text-2xl lg:text-[1.65rem] lg:leading-snug">
@@ -325,7 +376,7 @@ const HomePage = () => {
                 )}
                 {(!focused || !isAuthenticated) && <p className="mt-1 text-xs font-semibold text-sky-ink">No account needed.</p>}
               </div>
-              <div className="mt-3 flex shrink-0 items-center sm:mt-0">
+              <div className="mt-3 flex shrink-0 flex-col items-stretch gap-2 sm:mt-0 sm:flex-row sm:items-center">
                 <Link
                   to="/start"
                   className="inline-flex w-full items-center justify-center gap-2 rounded-full bg-[linear-gradient(135deg,#38bdf8_0%,#2563eb_100%)] px-6 py-2.5 text-sm font-semibold text-white shadow-lg shadow-sky-500/30 transition hover:scale-[1.02] hover:shadow-sky-400/40 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-200 focus-visible:ring-offset-2 focus-visible:ring-offset-slate-950 sm:w-auto"
@@ -333,8 +384,17 @@ const HomePage = () => {
                   Play a 5-question quiz
                   <ArrowRightIcon className="h-4 w-4" />
                 </Link>
+                {/* Always visible, including on the focused Home where the catalog lanes are collapsed (#675, AC 3.35.2). */}
+                <Link
+                  to="/games"
+                  className="inline-flex w-full items-center justify-center gap-2 rounded-full border border-on-panel/25 bg-on-panel/10 px-6 py-2.5 text-sm font-semibold text-on-panel transition hover:bg-on-panel/15 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-200 focus-visible:ring-offset-2 focus-visible:ring-offset-slate-950 sm:w-auto"
+                >
+                  Play a game
+                  <ArrowRightIcon className="h-4 w-4" />
+                </Link>
               </div>
             </section>
+            )}
 
             <ContinueStudyingCard />
 

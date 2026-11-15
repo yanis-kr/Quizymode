@@ -13,9 +13,11 @@ import { addLocalReviewItems } from "../localReviewList";
 import { DailyCountdown } from "../DailyCountdown";
 import { DailyExploreNext } from "../DailyExploreNext";
 import { FixedSetQuiz } from "../FixedSetQuiz";
+import { StreakMilestoneCelebration } from "../StreakMilestoneCelebration";
 import { computeStreak, readDailyCompletions, recordLocalDailyCompletion } from "../localLearningState";
 
-export const DAILY_QUIZ_QUERY_KEY = ["daily-quiz"] as const;
+import { DAILY_QUIZ_QUERY_KEY } from "../dailyQuizQueryKey";
+export { DAILY_QUIZ_QUERY_KEY };
 
 type CountState =
   | { status: "idle" }
@@ -225,6 +227,7 @@ const DailyQuizPage = () => {
                       🔥 {streakLabel(resultsStreak)}
                     </p>
                   )}
+                  {countState.status === "counted" && <StreakMilestoneCelebration streak={countState.streak} />}
                   {!isAuthenticated && <p className="text-xs text-gray-500">Saved in this browser.</p>}
                 </div>
               }
@@ -234,6 +237,7 @@ const DailyQuizPage = () => {
                 buildDailyShare({
                   date: data.date,
                   results: run.itemIds.map((id) => (run.skipped.includes(id) ? null : run.outcomes[id]?.isCorrect === true)),
+                  streak: resultsStreak,
                   origin: window.location.origin,
                 })
               }

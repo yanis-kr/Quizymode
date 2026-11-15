@@ -17,6 +17,8 @@ interface QuizCompletionViewProps {
   items: ItemResponse[];
   browsePath: string;
   browseLabel: string;
+  /** Games hub for the set just played (#675, AC 3.35.3); omitted hides the offer. */
+  gamesPath?: string;
   onReviewMistakes: () => void;
   /** Test only: lists every question in roster order (AC 3.18.8). */
   onReviewAll?: () => void;
@@ -41,6 +43,7 @@ export function QuizCompletionView({
   items,
   browsePath,
   browseLabel,
+  gamesPath,
   onReviewMistakes,
   onReviewAll,
   onBackToResults,
@@ -306,6 +309,11 @@ export function QuizCompletionView({
             context={analyticsContext ?? { contextType: "quiz" }}
             emphasized={isPerfect}
           />
+        )}
+        {!isStarter && gamesPath && (
+          <Link to={gamesPath} className="rounded-md border border-gray-300 px-4 py-2 font-semibold text-gray-700 hover:bg-gray-50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500 focus-visible:ring-offset-2">
+            Play a game with this set
+          </Link>
         )}
         {!isStarter && (
           <Link to={browsePath} className="rounded-md border border-gray-300 px-4 py-2 font-semibold text-gray-700 hover:bg-gray-50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500 focus-visible:ring-offset-2">

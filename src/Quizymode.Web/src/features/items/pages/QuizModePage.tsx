@@ -35,6 +35,7 @@ import { StarIcon as StarIconSolid } from "@heroicons/react/24/solid";
 import type { CollectionRatingResponse } from "@/types/api";
 import { getCategoryScopeModeConfig } from "@/features/categories/utils/categoryScopeMode";
 import { getStudyScopeKeywords, parseSizeParam } from "@/features/items/utils/studyScopeParams";
+import { buildGamePath } from "@/features/games/gameScope";
 import { QuizCompletionView } from "@/features/items/quiz/QuizCompletionView";
 import { useStudyHotkeys } from "@/components/study/useStudyHotkeys";
 import { useQuestionPictureStatuses } from "@/components/study/pictureGate";
@@ -75,6 +76,7 @@ import {
 } from "@/features/items/quiz/quizRun";
 import { gradeTypedAnswer, isTypeable } from "@/features/items/quiz/typedAnswer";
 import { isGuestEligible, recordGuestCompletion } from "@/features/guestHistory/guestHistoryStorage";
+import { recordKnownItems } from "@/features/progress/knownItems";
 import { addLocalReviewItems } from "@/features/learningLoop/localReviewList";
 import { recordAuthenticatedCompletion } from "@/features/studySessions/recordStudySession";
 import {
@@ -846,6 +848,8 @@ const QuizModePageContent = ({ resumeRequested = false, initialNotice = null }: 
       currentIdentityKey: identityKey,
     };
     recordGuestCompletion(snapshot, guestEligibility);
+    // Browser-local per-set progress (AC 3.33.2): guests only, never sent to the server.
+    if (isGuestEligible(guestEligibility)) recordKnownItems(snapshot);
     // Browser-local review list (AC 3.14.14): a guest's missed questions join the list in this browser.
     if (isGuestEligible(guestEligibility) && snapshot.missedItemIds.length > 0) {
       addLocalReviewItems(snapshot.missedItemIds);
@@ -1312,6 +1316,19 @@ const QuizModePageContent = ({ resumeRequested = false, initialNotice = null }: 
     ? buildCollectionPath(collectionId, collectionInfo?.name)
     : null;
 
+  // The set just played: its collection, else its category scope, else the hub (#675, AC 3.35.3).
+  const gamesPath = collectionId
+    ? buildGamePath({ kind: "collection", collectionId, collectionName: collectionInfo?.name })
+    : category
+      ? buildGamePath({
+          kind: "category",
+          category,
+          navigationKeywords,
+          filterKeywords,
+          search: filterKeywords.length > 0 ? `?keywords=${filterKeywords.join(",")}` : "",
+        })
+      : "/games";
+
   if (run.view !== "active") {
     return (
       <div className="py-4 sm:py-6">
@@ -1320,6 +1337,7 @@ const QuizModePageContent = ({ resumeRequested = false, initialNotice = null }: 
           items={items}
           browsePath={collectionListPath ?? categoryScopePath}
           browseLabel={collectionListPath ? "Back to collection" : "Browse topic"}
+          gamesPath={gamesPath}
           onReviewMistakes={() => setRun((current) => current ? reduceQuizRun(current, { type: "review-mistakes" }) : current)}
           onReviewAll={() => setRun((current) => current ? reduceQuizRun(current, { type: "review-all" }) : current)}
           onBackToResults={() => setRun((current) => current ? reduceQuizRun(current, { type: "show-summary" }) : current)}

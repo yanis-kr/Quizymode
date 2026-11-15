@@ -7,7 +7,7 @@ import { saveStudySession } from "@/features/studySessions/recordStudySession";
 import { trackEventOnce } from "@/features/analytics/analyticsEvents";
 import DailyQuizPage from "./DailyQuizPage";
 import { readLocalReviewList } from "../localReviewList";
-import { readDailyCompletions, utcToday } from "../localLearningState";
+import { readDailyCompletions, recordLocalDailyCompletion, utcToday } from "../localLearningState";
 import { renderWithProviders, testItem } from "../learningLoopTestUtils";
 
 const auth = vi.hoisted(() => ({ value: { isAuthenticated: false, isLoading: false, userId: null as string | null } }));
@@ -72,6 +72,17 @@ describe("DailyQuizPage", () => {
       expect.objectContaining({ name: "quiz_completed", contextType: "daily", contextId: "2026-10-18", score: 1, total: 2 }),
     );
     expect(screen.getByRole("heading", { name: "Daily quiz complete" })).toBeInTheDocument();
+  });
+
+  it("celebrates reaching a 3-day streak on the result screen (AC 3.32.2)", async () => {
+    recordLocalDailyCompletion({ date: "2026-10-16", correct: 1, total: 2 });
+    recordLocalDailyCompletion({ date: "2026-10-17", correct: 1, total: 2 });
+    vi.mocked(dailyQuizApi.get).mockResolvedValue({ date: "2026-10-18", items, completion: null, streak: null });
+
+    renderWithProviders(<DailyQuizPage />);
+    await answerAll(["a"]);
+
+    expect(await screen.findByText(/3-day streak milestone/)).toBeInTheDocument();
   });
 
   it("signed in: records the completion, then saves the run so misses reach the review queue", async () => {
@@ -284,7 +295,7 @@ describe("DailyQuizPage", () => {
     expect(await screen.findByRole("alert", undefined, { timeout: 4000 })).toHaveTextContent("Today's quiz could not be loaded.");
   });
 
-  it("shares the emoji grid in roster order and reports a daily share", async () => {
+  it("AC 3.34.1 shares date, score, green and grey squares, streak and the /daily link, with no question or answer text and reports a daily share", async () => {
     const writeText = vi.fn().mockResolvedValue(undefined);
     Object.defineProperty(navigator, "clipboard", { value: { writeText }, configurable: true, writable: true });
     vi.mocked(dailyQuizApi.get).mockResolvedValue({ date: "2026-10-18", items, completion: null, streak: null });
@@ -294,8 +305,9 @@ describe("DailyQuizPage", () => {
     fireEvent.click(await screen.findByRole("button", { name: "Share result" }));
     fireEvent.click(screen.getByRole("button", { name: "Copy" }));
 
-    const expected = `Quizymode Daily 2026-10-18 1/2\n\u{1F7E9}\u{1F7E5}\n${window.location.origin}/daily?utm_source=share&utm_medium=share&utm_campaign=quiz_result&utm_content=daily`;
+    const expected = `Quizymode Daily 2026-10-18 1/2\n\u{1F7E9}⬜\n\u{1F525} 1-day streak\n${window.location.origin}/daily?utm_source=share&utm_medium=share&utm_campaign=quiz_result&utm_content=daily`;
     await waitFor(() => expect(writeText).toHaveBeenCalledWith(expected));
+    expect(writeText.mock.calls[0]![0]).not.toMatch(/Question|Right|Wrong/);
     expect(screen.getByRole("button", { name: "Show QR code" })).toBeInTheDocument();
     await waitFor(() =>
       expect(trackEventOnce).toHaveBeenCalledWith(

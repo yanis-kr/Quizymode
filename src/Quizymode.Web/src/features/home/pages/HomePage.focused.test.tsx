@@ -232,4 +232,12 @@ describe("HomePage personalized layout (#382)", () => {
     expect(card.compareDocumentPosition(screen.getByRole("link", { name: /Daily quiz/ })) & Node.DOCUMENT_POSITION_FOLLOWING).toBeTruthy();
     expect(headingOrder()).toEqual(["Today", "For you"]);
   });
+
+  it("AC 3.0.36 keeps the Fun expressions card inside Explore all topics", async () => {
+    writeLocalInterests(["science"]);
+    renderWithProviders(<HomePage />);
+
+    const details = exploreSummary().closest("details")!;
+    expect(await within(details).findByRole("link", { name: /Fun expressions/ })).toBeInTheDocument();
+  });
 });

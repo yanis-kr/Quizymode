@@ -64,6 +64,7 @@ describe("quizRun", () => {
       correct: 1,
       total: 2,
       missedItemIds: ["b"],
+      correctItemIds: ["a"],
     });
     expect(Object.isFrozen(toCompletionSnapshot(run))).toBe(true);
     expect(Object.isFrozen(toCompletionSnapshot(run)?.scope)).toBe(true);

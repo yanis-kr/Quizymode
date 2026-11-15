@@ -5,6 +5,9 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { MemoryRouter } from "react-router-dom";
 import { HelmetProvider } from "react-helmet-async";
 import { USER_GUIDE_URL } from "@/utils/userGuideLink";
+import { dailyQuizApi } from "@/api/learningLoop";
+import { installMemoryLocalStorage } from "@/test/memoryStorage";
+import { recordLocalDailyCompletion, utcToday } from "@/features/learningLoop/localLearningState";
 import Layout from "./Layout";
 
 const authState = vi.hoisted(() => ({ isAuthenticated: false }));
@@ -24,6 +27,11 @@ vi.mock("@/api/users", () => ({
     getCurrent: vi.fn(),
     getPolicyAcceptanceStatus: vi.fn(),
   },
+}));
+
+vi.mock("@/api/learningLoop", async (importOriginal) => ({
+  ...(await importOriginal<typeof import("@/api/learningLoop")>()),
+  dailyQuizApi: { get: vi.fn() },
 }));
 
 vi.mock("./UserProfileModal", () => ({
@@ -62,6 +70,26 @@ describe("Layout", () => {
   beforeEach(() => {
     vi.clearAllMocks();
     authState.isAuthenticated = false;
+    installMemoryLocalStorage();
+  });
+
+  it("shows no streak chip before the first daily quiz (AC 3.32.1)", () => {
+    renderLayout();
+    expect(screen.queryByTestId("streak-chip")).not.toBeInTheDocument();
+  });
+
+  it("shows the guest's browser streak in the header on any page (AC 3.32.1)", () => {
+    recordLocalDailyCompletion({ date: utcToday(), correct: 3, total: 5 });
+    renderLayout(["/categories"]);
+    expect(screen.getByTestId("streak-chip")).toHaveAccessibleName("1-day streak");
+    expect(screen.getByTestId("streak-chip")).toHaveAttribute("href", "/daily");
+  });
+
+  it("shows the signed-in user's server streak in the header (AC 3.32.1)", async () => {
+    authState.isAuthenticated = true;
+    vi.mocked(dailyQuizApi.get).mockResolvedValue({ date: utcToday(), items: [], completion: null, streak: 5 });
+    renderLayout(["/collections"]);
+    expect(await screen.findByTestId("streak-chip")).toHaveAccessibleName("5-day streak");
   });
 
   it("renders the search trigger in the header and titles /search as Search", () => {
@@ -86,6 +114,13 @@ describe("Layout", () => {
     expect(screen.getAllByRole("link", { name: "Create" })[0]).toHaveAttribute("href", "/create");
     expect(screen.queryByRole("link", { name: "Add Items" })).not.toBeInTheDocument();
     expect(screen.queryByRole("link", { name: "Generate Quiz" })).not.toBeInTheDocument();
+  });
+
+  it("links anonymous visitors to /games from the navigation, desktop and mobile (AC 3.35.1)", async () => {
+    renderLayout();
+    expect(screen.getByRole("link", { name: "Games" })).toHaveAttribute("href", "/games");
+    await userEvent.click(screen.getByRole("button", { name: "Open main menu" }));
+    expect(screen.getAllByRole("link", { name: "Games" })).toHaveLength(2);
   });
 
   it("hides the Create nav link from anonymous users", () => {

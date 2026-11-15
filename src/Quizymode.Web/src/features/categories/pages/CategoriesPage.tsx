@@ -12,8 +12,16 @@ import ItemCollectionsModal from "@/components/ItemCollectionsModal";
 import { ItemCollectionControls } from "@/components/ItemCollectionControls";
 import { ScopeSecondaryBar } from "@/components/ScopeSecondaryBar";
 import { ScopePathHeader } from "@/components/ScopePathHeader";
+import { ActiveFilterChips } from "../components/ActiveFilterChips";
+import {
+  buildActiveFilterChips,
+  removeActiveFilterChip,
+  type ActiveFilterChip,
+} from "../utils/activeFilterChips";
 import { BucketGridView } from "@/components/BucketGridView";
 import { useAuth } from "@/contexts/AuthContext";
+import { categorySetKey } from "@/features/progress/knownItems";
+import { useKnownCount } from "@/features/progress/useKnownCount";
 import { usePageSize } from "@/hooks/usePageSize";
 import { useAnswerVisibility } from "@/hooks/useAnswerVisibility";
 import { useScopeLanding } from "@/hooks/useScopeLanding";
@@ -575,11 +583,16 @@ const CategoriesPage = () => {
     enabled: showLanding,
   });
   const landingCategorySlug = categoryName ? categoryNameToSlug(categoryName) : "";
+  const knownCount = useKnownCount(
+    showLanding && landingCategorySlug ? categorySetKey(landingCategorySlug, pathKeywordsFromUrl) : null,
+    !isAuthenticated,
+  );
   const landingHeader = showLanding ? (
     <ScopeLandingHeader
       title={landing.title}
       description={landing.description}
       count={landing.count}
+      knownCount={knownCount ?? undefined}
       countState={landing.countState}
       games={landing.games}
       quizHref={(size) => {
@@ -726,6 +739,33 @@ const CategoriesPage = () => {
       else p.delete("keywords");
     }
     navigate(`${path}?${p.toString()}`);
+  };
+
+  const activeFilterChips = useMemo(
+    () =>
+      isAllCategoriesSlug(categorySlugParam)
+        ? buildActiveFilterChips([], itemTagKeywords)
+        : buildActiveFilterChips(pathKeywordsFromUrl, itemTagKeywords),
+    [categorySlugParam, pathKeywordsFromUrl, itemTagKeywords]
+  );
+  const activeFilterDisplayNames = useMemo(() => {
+    const names: Record<string, string> = {};
+    const descriptions = breadcrumbKeywordDescriptionsData?.keywords ?? [];
+    pathKeywordsFromUrl.forEach((kw, i) => {
+      const description = descriptions[i]?.description;
+      if (description) names[kw.toLowerCase()] = description;
+    });
+    return names;
+  }, [breadcrumbKeywordDescriptionsData?.keywords, pathKeywordsFromUrl]);
+  const handleRemoveActiveFilter = (chip: ActiveFilterChip) => {
+    const pathKws = isAllCategoriesSlug(categorySlugParam) ? [] : pathKeywordsFromUrl;
+    const next = removeActiveFilterChip(pathKws, itemTagKeywords, chip);
+    navigateToItems(
+      buildCategoryPath(categorySlugParam ?? getAllCategoriesSlug(), next.pathKeywords),
+      true,
+      undefined,
+      next.tagKeywords
+    );
   };
 
   const dedupeKeywords = (kws: string[]) => {
@@ -1225,9 +1265,28 @@ const CategoriesPage = () => {
               }
             />
 
+            <ActiveFilterChips
+              chips={activeFilterChips}
+              displayNames={activeFilterDisplayNames}
+              onRemove={handleRemoveActiveFilter}
+            />
+
             {scopeDisplayItems.length === 0 ? (
               <div className="py-12 text-center">
-                <p className="text-gray-500">No items found.</p>
+                {itemTagKeywords.length > 0 ? (
+                  <>
+                    <p className="text-gray-500">No items match all filters</p>
+                    <button
+                      type="button"
+                      onClick={() => navigateToItems(scopePathWithNav, true, undefined, [])}
+                      className="mt-3 inline-flex min-h-[44px] items-center rounded-md bg-indigo-600 px-4 py-2 text-sm font-medium text-white hover:bg-indigo-700"
+                    >
+                      Clear tag filters
+                    </button>
+                  </>
+                ) : (
+                  <p className="text-gray-500">No items found.</p>
+                )}
               </div>
             ) : (
               <ItemListSection
@@ -1245,6 +1304,13 @@ const CategoriesPage = () => {
                 revealedIds={revealedIds}
                 onToggleReveal={toggleRevealedItem}
                 onKeywordClick={(keywordName) => {
+                  const lowerName = keywordName.toLowerCase();
+                  if (
+                    !isAllCategoriesSlug(categorySlugParam) &&
+                    pathKeywordsFromUrl.some((k) => k.toLowerCase() === lowerName)
+                  ) {
+                    return;
+                  }
                   const isSelected = filterKeywordsFromQuery.some(
                     (k) => k.toLowerCase() === keywordName.toLowerCase()
                   );
@@ -1260,7 +1326,10 @@ const CategoriesPage = () => {
                     newFilterKeywords
                   );
                 }}
-                selectedKeywords={itemTagKeywords}
+                selectedKeywords={[
+                  ...(isAllCategoriesSlug(categorySlugParam) ? [] : pathKeywordsFromUrl),
+                  ...itemTagKeywords,
+                ]}
                 renderActions={(item) => (
                   <>
                     <Link

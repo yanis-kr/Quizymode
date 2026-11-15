@@ -2822,19 +2822,25 @@
   </url>
   <url>
     <loc>https://www.quizymode.com/categories/languages</loc>
-    <lastmod>2026-04-30</lastmod>
+    <lastmod>2026-11-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://www.quizymode.com/categories/languages/arabic</loc>
-    <lastmod>2026-04-30</lastmod>
+    <lastmod>2026-11-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://www.quizymode.com/categories/languages/arabic/core</loc>
     <lastmod>2026-04-30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.quizymode.com/categories/languages/arabic/idioms</loc>
+    <lastmod>2026-11-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -2870,13 +2876,19 @@
   </url>
   <url>
     <loc>https://www.quizymode.com/categories/languages/chinese</loc>
-    <lastmod>2026-04-30</lastmod>
+    <lastmod>2026-11-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://www.quizymode.com/categories/languages/chinese/core</loc>
     <lastmod>2026-04-30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.quizymode.com/categories/languages/chinese/idioms</loc>
+    <lastmod>2026-11-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -2954,7 +2966,7 @@
   </url>
   <url>
     <loc>https://www.quizymode.com/categories/languages/french</loc>
-    <lastmod>2026-04-30</lastmod>
+    <lastmod>2026-11-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -2978,7 +2990,7 @@
   </url>
   <url>
     <loc>https://www.quizymode.com/categories/languages/french/idioms</loc>
-    <lastmod>2026-04-30</lastmod>
+    <lastmod>2026-11-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -3014,7 +3026,7 @@
   </url>
   <url>
     <loc>https://www.quizymode.com/categories/languages/german</loc>
-    <lastmod>2026-04-30</lastmod>
+    <lastmod>2026-11-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -3039,6 +3051,12 @@
   <url>
     <loc>https://www.quizymode.com/categories/languages/german/grammar</loc>
     <lastmod>2026-04-30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.quizymode.com/categories/languages/german/idioms</loc>
+    <lastmod>2026-11-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -3068,7 +3086,7 @@
   </url>
   <url>
     <loc>https://www.quizymode.com/categories/languages/italian</loc>
-    <lastmod>2026-04-30</lastmod>
+    <lastmod>2026-11-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -3086,7 +3104,7 @@
   </url>
   <url>
     <loc>https://www.quizymode.com/categories/languages/italian/idioms</loc>
-    <lastmod>2026-04-30</lastmod>
+    <lastmod>2026-11-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -3098,7 +3116,7 @@
   </url>
   <url>
     <loc>https://www.quizymode.com/categories/languages/japanese</loc>
-    <lastmod>2026-04-30</lastmod>
+    <lastmod>2026-11-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -3116,7 +3134,7 @@
   </url>
   <url>
     <loc>https://www.quizymode.com/categories/languages/japanese/idioms</loc>
-    <lastmod>2026-04-30</lastmod>
+    <lastmod>2026-11-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -3158,7 +3176,7 @@
   </url>
   <url>
     <loc>https://www.quizymode.com/categories/languages/latvian</loc>
-    <lastmod>2026-04-30</lastmod>
+    <lastmod>2026-11-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -3176,7 +3194,7 @@
   </url>
   <url>
     <loc>https://www.quizymode.com/categories/languages/latvian/idioms</loc>
-    <lastmod>2026-04-30</lastmod>
+    <lastmod>2026-11-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -3200,7 +3218,7 @@
   </url>
   <url>
     <loc>https://www.quizymode.com/categories/languages/romanian</loc>
-    <lastmod>2026-04-30</lastmod>
+    <lastmod>2026-11-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -3218,7 +3236,7 @@
   </url>
   <url>
     <loc>https://www.quizymode.com/categories/languages/romanian/idioms</loc>
-    <lastmod>2026-04-30</lastmod>
+    <lastmod>2026-11-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -3230,7 +3248,7 @@
   </url>
   <url>
     <loc>https://www.quizymode.com/categories/languages/russian</loc>
-    <lastmod>2026-04-30</lastmod>
+    <lastmod>2026-11-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -3248,7 +3266,7 @@
   </url>
   <url>
     <loc>https://www.quizymode.com/categories/languages/russian/idioms</loc>
-    <lastmod>2026-04-30</lastmod>
+    <lastmod>2026-11-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -3260,7 +3278,7 @@
   </url>
   <url>
     <loc>https://www.quizymode.com/categories/languages/spanish</loc>
-    <lastmod>2026-04-30</lastmod>
+    <lastmod>2026-11-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -3284,7 +3302,7 @@
   </url>
   <url>
     <loc>https://www.quizymode.com/categories/languages/spanish/idioms</loc>
-    <lastmod>2026-04-30</lastmod>
+    <lastmod>2026-11-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>

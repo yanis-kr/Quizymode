@@ -336,6 +336,19 @@ def load_public_collections(collections_root: Path = SOURCE_COLLECTIONS_ROOT) ->
     return collections
 
 
+def validate_funny_keyword(item: SourceItem) -> list[str]:
+    """AC 3.36.2: only primary languages/idioms items may carry `funny`; idiom-practice items never do."""
+    keywords = [k.lower() for k in (item.keywords or [])]
+    if "funny" not in keywords:
+        return []
+    if item.category != "languages" or item.navigation_keyword2 != "idioms" or "idiom-practice" in keywords:
+        return [
+            f"{item.path} item {item.index}: keyword 'funny' is only allowed on primary idioms items "
+            f"(languages/<language>/idioms, never idiom-practice)."
+        ]
+    return []
+
+
 def validate_source(
     items: list[SourceItem],
     collections: list[PublicCollection],
@@ -373,6 +386,7 @@ def validate_source(
         errors.extend(validate_question_image(item))
         errors.extend(validate_explanation_image(item))
         errors.extend(validate_starter_fields(item))
+        errors.extend(validate_funny_keyword(item))
 
         existing_id = seen_item_ids.get(item.item_id)
         if existing_id is not None:
