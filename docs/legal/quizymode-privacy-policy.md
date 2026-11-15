@@ -65,6 +65,8 @@ We may disclose information:
 - when required by law, legal process, or a good-faith belief that disclosure is necessary to protect rights, safety, or the service; or
 - in connection with a reorganization, sale, financing, or transfer of all or part of the service or its assets.
 
+The "Support Quizymode" link, when shown, is a plain link to a hosted donation page. Quizymode does not embed any donation script, iframe, or cookie. Clicking it leaves Quizymode, and the donation platform's own privacy policy applies to anything you share with that platform, including any donation.
+
 We do not sell personal information, and the current app does not use third-party advertising cookies.
 
 ## 6. AI-Assisted Workflows

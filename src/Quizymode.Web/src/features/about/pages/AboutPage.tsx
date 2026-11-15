@@ -1,7 +1,9 @@
 import { SEO } from "@/components/SEO";
 import { USER_GUIDE_URL } from "@/utils/userGuideLink";
+import { getDonationUrl, getDonationHost } from "@/utils/donationLink";
 
 const AboutPage = () => {
+  const donationUrl = getDonationUrl();
   return (
     <>
       <SEO
@@ -49,6 +51,23 @@ const AboutPage = () => {
             Quizymode today — a study app, a content tool, and a useful engineering sandbox
           </a>
         </p>
+
+        {donationUrl && (
+          <p className="mt-4 text-sm text-slate-600">
+            Quizymode is free to use. If it helps you study, you can support its development with a
+            donation on{" "}
+            <a
+              href={donationUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label={`Support Quizymode (opens ${getDonationHost(donationUrl)} in a new tab)`}
+              className="font-medium text-indigo-ink underline underline-offset-2 hover:text-indigo-ink"
+            >
+              {getDonationHost(donationUrl)}
+            </a>
+            . Donations are voluntary, non-refundable by Quizymode, and do not grant extra features. Donations are not tax-deductible.
+          </p>
+        )}
 
         <p className="mt-2 text-xs text-slate-400">
           Version {__APP_VERSION__} &middot; Build {__BUILD_LABEL__} &middot; Deployed{" "}
