@@ -31,6 +31,8 @@ interface QuestionImageProps {
   onSkip?: () => void;
   /** Enlarge button (lg only; default true for lg). */
   showEnlarge?: boolean;
+  /** True when the item's picture review state is Withdrawn: the picture can never load, so say so and offer no Retry. */
+  withdrawn?: boolean;
 }
 
 const THUMB_BOX: Record<Exclude<QuestionImageSize, "lg">, string> = {
@@ -59,6 +61,7 @@ export function QuestionImage({
   onStatusChange,
   onSkip,
   showEnlarge,
+  withdrawn,
   itemId,
   collectionId,
 }: QuestionImageProps) {
@@ -78,6 +81,7 @@ export function QuestionImage({
       onStatusChange={onStatusChange}
       onSkip={onSkip}
       showEnlarge={showEnlarge ?? size === "lg"}
+      withdrawn={withdrawn === true}
     />
   );
 }
@@ -90,6 +94,7 @@ function QuestionImageBox({
   onStatusChange,
   onSkip,
   showEnlarge,
+  withdrawn,
   itemId,
   collectionId,
 }: {
@@ -102,11 +107,12 @@ function QuestionImageBox({
   onStatusChange?: (status: PictureStatus) => void;
   onSkip?: () => void;
   showEnlarge: boolean;
+  withdrawn: boolean;
 }) {
   const uploaded = image.key.startsWith("media:");
   const [blobUrl, setBlobUrl] = useState<string | null>(null);
   const url = uploaded ? blobUrl : resolveCuratedImage(image.key);
-  const isUnknown = (uploaded && (!itemId || !Number.isSafeInteger(image.revision) || (image.revision ?? 0) <= 0)) || (!uploaded && url === null);
+  const isUnknown = withdrawn || (uploaded && (!itemId || !Number.isSafeInteger(image.revision) || (image.revision ?? 0) <= 0)) || (!uploaded && url === null);
   const [status, setStatus] = useState<PictureStatus>(isUnknown ? "unknown" : "loading");
   const [attempt, setAttempt] = useState(0);
   const [zoomOpen, setZoomOpen] = useState(false);
@@ -158,7 +164,9 @@ function QuestionImageBox({
 
   const showsProblem = status === "error" || status === "stuck" || status === "unknown";
   const message =
-    status === "unknown"
+    withdrawn
+      ? "This picture was withdrawn"
+      : status === "unknown"
       ? "Picture isn't available"
       : status === "stuck"
         ? "Picture is taking too long to load"
@@ -216,7 +224,9 @@ function QuestionImageBox({
               {message}
             </p>
             {isQuestion && (
-              <p className="text-xs text-gray-600">Answers are off until the picture shows. You can retry or skip this question.</p>
+              <p className="text-xs text-gray-600">
+                {withdrawn ? "Answers are off while the picture is withdrawn. You can skip this question." : "Answers are off until the picture shows. You can retry or skip this question."}
+              </p>
             )}
             <div className="flex w-full flex-col items-stretch justify-center gap-2 sm:w-auto sm:flex-row">
               {status !== "unknown" && (
@@ -248,22 +258,24 @@ function QuestionImageBox({
   if (!isLarge) return box;
   return (
     <div className={`relative mx-auto w-full max-w-md ${className}`.trim()}>
-      {box}
+      <div className="relative">
+        {box}
+        {canZoom && (
+          <button
+            ref={enlargeRef}
+            type="button"
+            aria-label="Enlarge picture"
+            aria-haspopup="dialog"
+            onClick={() => setZoomOpen(true)}
+            className="absolute bottom-2 right-2 flex h-11 w-11 items-center justify-center rounded-full bg-surface/90 text-slate-800 shadow ring-1 ring-slate-300 hover:bg-surface focus:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500 focus-visible:ring-offset-2 print:hidden"
+          >
+            <MagnifyingGlassPlusIcon className="h-5 w-5" aria-hidden="true" />
+          </button>
+        )}
+      </div>
       {status === "loaded" && isQuestion && onSkip && <button type="button" onClick={onSkip} data-testid="question-image-skip" className={`${buttonClass} mt-2`}>Skip question (not scored)</button>}
-      {uploaded && itemId && (image.revision ?? 0) > 0 && <PictureReportButton itemId={itemId} slot={slot} revision={image.revision!} collectionId={collectionId} />}
+      {!withdrawn && uploaded && itemId && (image.revision ?? 0) > 0 && <PictureReportButton itemId={itemId} slot={slot} revision={image.revision!} collectionId={collectionId} />}
       {image.longDescription && <details className="mt-2 text-sm"><summary>Picture description</summary><p className="whitespace-pre-wrap">{image.longDescription}</p></details>}
-      {canZoom && (
-        <button
-          ref={enlargeRef}
-          type="button"
-          aria-label="Enlarge picture"
-          aria-haspopup="dialog"
-          onClick={() => setZoomOpen(true)}
-          className="absolute bottom-2 right-2 flex h-11 w-11 items-center justify-center rounded-full bg-surface/90 text-slate-800 shadow ring-1 ring-slate-300 hover:bg-surface focus:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500 focus-visible:ring-offset-2 print:hidden"
-        >
-          <MagnifyingGlassPlusIcon className="h-5 w-5" aria-hidden="true" />
-        </button>
-      )}
       {zoomOpen && url !== null && (
         <ImageZoomDialog url={url} altText={image.altText} onClose={() => setZoomOpen(false)} returnFocusRef={enlargeRef} />
       )}

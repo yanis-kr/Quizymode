@@ -198,6 +198,7 @@ export function QuizRenderer({
         <QuestionImage
           key={item.id}
           itemId={item.id} image={item.questionImage}
+          withdrawn={item.imageReview?.state === "Withdrawn"}
           className="mt-3"
           onStatusChange={questionPicture?.onStatusChange}
           onSkip={questionPicture?.onSkip}
