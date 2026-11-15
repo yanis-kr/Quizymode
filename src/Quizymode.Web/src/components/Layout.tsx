@@ -14,6 +14,7 @@ import { SEO } from "@/components/SEO";
 import FeedbackDialog from "@/features/feedback/components/FeedbackDialog";
 import GlobalSearch from "@/features/search/GlobalSearch";
 import UserProfileModal from "./UserProfileModal";
+import { useStreak } from "@/features/learningLoop/useStreak";
 import { useApplyTheme } from "@/theme/useApplyTheme";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 
@@ -140,6 +141,7 @@ function getFallbackTitle(pathname: string): string | undefined {
 const LayoutContent = ({ children }: LayoutProps) => {
   const { isAuthenticated, logout, username, email, isAdmin } = useAuth();
   useApplyTheme();
+  const { streak } = useStreak();
   const navigate = useNavigate();
   const location = useLocation();
   const [showProfileModal, setShowProfileModal] = useState(false);
@@ -237,6 +239,16 @@ const LayoutContent = ({ children }: LayoutProps) => {
               >
                 Quizymode
               </Link>
+              {streak >= 1 && (
+                <Link
+                  to="/daily"
+                  data-testid="streak-chip"
+                  aria-label={`${streak}-day streak`}
+                  className="ml-2 flex items-center self-center rounded-full bg-amber-100 px-2.5 py-1 text-sm font-semibold text-amber-900 hover:bg-amber-200"
+                >
+                  <span aria-hidden="true">🔥 {streak}</span>
+                </Link>
+              )}
               <div className="hidden lg:ml-6 lg:flex lg:space-x-5 xl:space-x-8">
                 <Link
                   to="/categories"

@@ -197,6 +197,9 @@ export function PersonalizedLanes({ featuredSets, focused = false }: { featuredS
     <>
       <section className={laneClass} aria-labelledby="home-today-heading">
         <h2 id="home-today-heading" className={`${eyebrowClass} mb-1.5`}>Today</h2>
+        {!dailyDone && streak >= 1 && (
+          <p className="mb-1.5 text-sm font-semibold text-amber-700">Play today to keep your {streak}-day streak</p>
+        )}
         <div className="grid gap-2 sm:grid-cols-2">
           {shownPlans.map((plan) => (
             <StudyPlanTodayCard
