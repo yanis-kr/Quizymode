@@ -1952,7 +1952,7 @@ The ideas board is a public-facing product planning surface at `/ideas`. It show
 
 ### AC 5.14 Admin: Operations dashboards (Grafana links) (#641)
 
-- **AC 5.14.1** [Admin] [verify: unit] **Given** `VITE_GRAFANA_URL` (non-secret, build-time) is set and I open the Admin Dashboard (`/admin`), **then** an **Operations dashboards** section links to each provisioned Grafana dashboard (today **Pictures (media)**, `<VITE_GRAFANA_URL>/d/quizymode-media`, source `infra/grafana/media-dashboard.json`); when the variable is unset or empty the section is not rendered. The app holds no Grafana token and adds no Grafana API endpoint (#641). (frontend test: AdminDashboardPage "AC 5.14.1")
+- **AC 5.14.1** [Admin] [verify: unit] **Given** `VITE_GRAFANA_URL` (non-secret, build-time) is set and I open the Admin Dashboard (`/admin`), **then** an **Operations dashboards** section links to each provisioned Grafana dashboard (today **Pictures (media)**, `<VITE_GRAFANA_URL>/d/quizymode-media`, source `infra/grafana/media-dashboard.json`; the production build sets it to the Quizymode Grafana stack); when the variable is unset or empty the section is not rendered. The app holds no Grafana token and adds no Grafana API endpoint (#641). (frontend test: AdminDashboardPage "AC 5.14.1")
 - **AC 5.14.2** [Admin] [verify: unit] **Given** the Operations dashboards links, **then** each opens in a new tab with `target="_blank"` and `rel="noopener noreferrer"`. (frontend test: AdminDashboardPage "AC 5.14.1" links test)
 - **AC 5.14.3** [Anyone] [verify: e2e] **Given** I am not an admin, **when** I open `/admin`, **then** I am redirected home and no Operations dashboards section or Grafana link is shown. (e2e: playwright/e2e-ci/admin-grafana-links.spec.ts "AC 5.14.3")
 
