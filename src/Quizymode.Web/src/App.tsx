@@ -8,6 +8,7 @@ import QuizModePage from "./features/items/pages/QuizModePage";
 import LearnModePage from "./features/items/pages/LearnModePage";
 import LoginPage from "./features/auth/pages/LoginPage";
 import SignUpPage from "./features/auth/pages/SignUpPage";
+import ResetPasswordPage from "./features/auth/pages/ResetPasswordPage";
 import AuthCallbackPage from "./features/auth/pages/AuthCallbackPage";
 import ItemDetailPage from "./features/items/pages/ItemDetailPage";
 import CollectionsPage from "./features/collections/pages/CollectionsPage";
@@ -143,6 +144,7 @@ function App() {
         <Route path="/progress" element={<ProgressPage />} />
         <Route path="/login" element={<LoginPage />} />
         <Route path="/signup" element={<SignUpPage />} />
+        <Route path="/reset-password" element={<ResetPasswordPage />} />
         <Route path="/auth/callback" element={<AuthCallbackPage />} />
         <Route path="/create" element={<CreateHubPage />} />
         {/* Legacy create URLs (AC 2.2.5): outside RequireAuthRoute so anonymous return-to uses the new path. */}

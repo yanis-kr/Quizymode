@@ -33,14 +33,14 @@ describe("mapSignInError", () => {
     }
   );
 
-  it("maps CONFIRM_SIGN_UP and RESET_PASSWORD steps, with a Feedback link", () => {
+  it("maps CONFIRM_SIGN_UP (Feedback link) and RESET_PASSWORD (no Feedback link; the login page links to the reset page)", () => {
     const confirm = mapSignInError(new SignInStepRequiredError("CONFIRM_SIGN_UP"));
     expect(confirm.code).toBe("unconfirmed");
     expect(confirm.linkToFeedback).toBe(true);
 
     const reset = mapSignInError(new SignInStepRequiredError("RESET_PASSWORD"));
     expect(reset.code).toBe("reset-required");
-    expect(reset.linkToFeedback).toBe(true);
+    expect(reset.linkToFeedback).toBe(false);
   });
 
   it("maps any other step to the unsupported-step copy", () => {
