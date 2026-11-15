@@ -1,6 +1,7 @@
 using Microsoft.EntityFrameworkCore;
 using Quizymode.Api.Data;
 using Quizymode.Api.Features.Items.Get;
+using Quizymode.Api.Features.Progress;
 using Quizymode.Api.Services;
 using Quizymode.Api.Shared.Helpers;
 using Quizymode.Api.Shared.Http;
@@ -331,6 +332,10 @@ public static class ReviewQueue
         {
             return new AnswerResponse(itemId, false, false, IntervalDays[entry.IntervalIndex], DateTime.SpecifyKind(entry.DueAt, DateTimeKind.Utc));
         }
+
+        // #685: a due review answer also updates the item's known flag, committed with the queue change.
+        await UserItemProgressWriter.StageAsync(
+            db, userId, isCorrect ? [itemId] : [], isCorrect ? [] : [itemId], nowUtc, cancellationToken);
 
         if (isCorrect && entry.IntervalIndex >= IntervalDays.Length - 1)
         {

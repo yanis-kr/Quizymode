@@ -9,6 +9,15 @@ import { summaryFromCompletionSnapshot } from "@/features/guestHistory/guestHist
 export function toRecordRequest(snapshot: QuizCompletionSnapshot): RecordStudySessionRequest | null {
   const summary = summaryFromCompletionSnapshot(snapshot);
   if (!summary) return null;
+  const correctItemIds = [...(snapshot.correctItemIds ?? [])];
+  // Only a consistent list is sent: the server rejects ids that exceed the score or overlap the misses.
+  const missed = new Set(summary.missedItemIds);
+  const sendCorrectIds =
+    correctItemIds.length > 0 &&
+    correctItemIds.length <= summary.correct &&
+    correctItemIds.length <= 1000 &&
+    new Set(correctItemIds).size === correctItemIds.length &&
+    !correctItemIds.some((id) => missed.has(id));
   return {
     runId: summary.runId,
     completedAt: summary.completedAt,
@@ -17,6 +26,7 @@ export function toRecordRequest(snapshot: QuizCompletionSnapshot): RecordStudySe
     source: summary.source,
     missedItemIds: summary.missedItemIds,
     mode: summary.mode,
+    ...(sendCorrectIds ? { correctItemIds } : {}),
   };
 }
 

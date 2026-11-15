@@ -66,10 +66,9 @@ interface CatalogLanesProps {
   publicCollections: CollectionDiscoverItem[];
 }
 
-/** Guest-local "N of M known" line on a Home tile, or a completed state (#672). Hidden for signed-in users and unplayed sets. */
+/** "N of M known" line on a Home tile, or a completed state (#672 guests, #685 signed-in). Hidden for unplayed sets. */
 function TileProgress({ setKey, total }: { setKey: string; total: number }) {
-  const { isAuthenticated } = useAuth();
-  const known = useKnownCount(setKey, !isAuthenticated);
+  const known = useKnownCount(setKey);
   if (known === null || known <= 0 || total <= 0) return null;
   const shown = Math.min(known, total);
   const complete = shown >= total;

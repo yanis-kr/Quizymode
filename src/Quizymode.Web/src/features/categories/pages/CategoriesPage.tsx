@@ -585,7 +585,6 @@ const CategoriesPage = () => {
   const landingCategorySlug = categoryName ? categoryNameToSlug(categoryName) : "";
   const knownCount = useKnownCount(
     showLanding && landingCategorySlug ? categorySetKey(landingCategorySlug, pathKeywordsFromUrl) : null,
-    !isAuthenticated,
   );
   const landingHeader = showLanding ? (
     <ScopeLandingHeader

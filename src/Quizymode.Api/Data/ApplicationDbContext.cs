@@ -97,6 +97,8 @@ public sealed class ApplicationDbContext : DbContext
 
     public DbSet<ReviewQueueEntry> ReviewQueueEntries => Set<ReviewQueueEntry>();
 
+    public DbSet<UserItemProgress> UserItemProgress => Set<UserItemProgress>();
+
     public DbSet<DailyQuizSet> DailyQuizSets => Set<DailyQuizSet>();
 
     public DbSet<DailyQuizItem> DailyQuizItems => Set<DailyQuizItem>();
