@@ -60,6 +60,26 @@ Big decisions are not delegated. They are asked upfront with one question each a
 
 The reviewer, not the decision agent, confirms that AC wording was not weakened.
 
+## Model routing
+
+Fable window: open. If Fable is unavailable or the window has ended, use Opus for every Fable row.
+
+Fable is scarce: only the two rows below. Pass `model:` on every Agent call, because frontmatter cannot vary by rating.
+
+| Step | Model |
+|---|---|
+| Integrator reviewer on the batch diff (§ Integrator, step 7) | fable |
+| Reviewer on the plan, `high` issues | fable |
+| Architect; reviewer on the diff (`high`); coder on `high`; `qm-decision-maker` | opus |
+| CI triage before the second fix push, when the cause is unclear (§ Release, step 1) | opus |
+| Coder on `small` and `medium`, tester, ux-designer | sonnet |
+| Reporter | haiku |
+
+- At most two Fable/Opus agents at once, at most one of them Fable. The integrator reviewer goes first.
+- Tell each agent not to spawn agents.
+- If a model cannot be selected, fall back fable to opus and record it. Never claim a model you did not get.
+- Record the model with each agent outcome in the checkpoint and `<scratch>/decisions.md`.
+
 ## Pick and split
 
 1. `gh issue list --state open --limit 200`. Skip `status:deferred`, `owner:human`, issues blocked by an open issue, issues the user named as owned by another window, and any issue that already has an open PR or a remote `feat/<issue>-*` branch this run did not create.
@@ -114,7 +134,7 @@ For each issue in the lane's queue:
    - medium: architect, coder, tester. Add ux-designer only when there is a new visible surface.
    - high: architect, ux-designer when user-visible, reviewer on the plan, coder, tester, reviewer on the diff.
 
-   Only one coder writes in a worktree at a time. Tell each agent not to ask the user and not to re-read files the orchestrator already summarised for it.
+   Models per § Model routing. Only one coder writes in a worktree at a time. Tell each agent not to ask the user, not to spawn agents, and not to re-read files the orchestrator already summarised for it.
 3. Filtered checks only: `npm test -- --run <pattern>`, `dotnet test --filter "FullyQualifiedName~<slice>"` (exclude `Category=Postgres` unless the issue is about that code), a targeted `npm run lint -- <paths>`. Take the .NET mutex for any dotnet command.
 4. Write the AC text as a fragment at `<scratch>/ac/<issue>.md` (section heading and the AC lines it adds or changes).
 5. Commit on the branch, push it, report ready with the test output, and write the checkpoint.
@@ -134,7 +154,7 @@ The integrator is the only writer of release state. At most one release is in fl
 6. Light local check, under the .NET mutex: `npm run build`; `dotnet build` (skip if step 5 already built); the filtered tests of every shipped issue, in one `dotnet test --filter` and one `npm test -- --run` invocation; the high-risk scans from `quizymode-prepush` (constructor signature changes, removed UI text). Do not run the full suites or coverage here. CI is the full run.
 
    Then the AC gate: `node scripts/validation/ac-gate.mjs --issues <every shipped issue>`. If an issue fails (an AC with no method, or an `e2e` or `signed-in-prod-ui` AC with no test), revert its merge from the release branch, put it back at the front of its lane's queue with the gate output, and release the rest. An issue that fails the gate does not ship.
-7. One reviewer pass on `git diff origin/main...release/<batch-id>` in a fresh context, covering code and that no AC wording was weakened. Confirmed findings are fixed on the release branch.
+7. One reviewer pass (Fable, § Model routing) on `git diff origin/main...release/<batch-id>` in a fresh context, covering code and that no AC wording was weakened. Confirmed findings are fixed on the release branch.
 8. Push and open one PR with `Refs #n` for each shipped issue (not `Closes`, so merging does not close them before evidence exists). Steps 7 and 8 may run in the opposite order to start CI sooner; a reviewer fix is then one more push.
 
 ## Release
@@ -146,7 +166,7 @@ The integrator is the only writer of release state. At most one release is in fl
 
    Fix on the release branch with a test where one fits, push, and reply on each review thread with the fixing commit. Do not dismiss an alert or resolve a thread without a fix; a finding the run believes is a false positive is a big decision (§ Decision policy) and parks the issue that introduced it. Alerts that already exist on main are not this release's to fix; list them in the final report.
 
-   At most two fix pushes; after that drop the offending issue from the release branch if it is identifiable, otherwise mark the batch `environmental` and stop merging. On timeout, rerun once.
+   At most two fix pushes. If the first fix push is still red and the cause is unclear, give the three sources to an Opus agent before the second. After two, drop the offending issue from the release branch if it is identifiable, otherwise mark the batch `environmental` and stop merging. On timeout, rerun once.
 2. If main moved, merge `origin/main` into the release branch and wait for green again. This should not happen with one autopilot running.
 3. Merge the PR. In the background, watch CI on main and then Deploy. Run postDeploy checks (`node scripts/wait-for-production-ready.js --expected-build-version <version>+sha.<first 7 chars of the merge commit>`; the live build string carries the sha suffix, and a bare version never matches).
 4. Prod verification is a smoke check, not a re-test. Check the deployed version and `/health` (`node scripts/wait-for-production-ready.js --expected-build-version <version>+sha.<7-char merge sha>`), the anonymous pages of the batch's screens, and read-only SQL or curl where an AC needs prod data. Do not re-verify ACs that the CI run already proved (`unit`, `e2e`, `api` tests in CI).
@@ -185,11 +205,11 @@ Stop the whole run only when the next step needs the user alone, the deadline ar
 
 ## Checkpoints (required at every issue boundary)
 
-After each issue finishes or stops, write `<scratch>/checkpoints/<issue>.json` with: issue, status (ready, shipped, verified, closed, parked, blocked, or abandoned), branch, PR number, decisions made for it, the next step, and the time. Also refresh `<scratch>/state.json`, which lists both lane queues, the open batch, the release in flight, and the deadline.
+After each issue finishes or stops, write `<scratch>/checkpoints/<issue>.json` with: issue, status (ready, shipped, verified, closed, parked, blocked, or abandoned), branch, PR number, decisions made for it, the models its agents ran on, the next step, and the time. Also refresh `<scratch>/state.json`, which lists both lane queues, the open batch, the release in flight, and the deadline.
 
 On start, if `<scratch>/state.json` exists and is unfinished, resume from it instead of picking issues again. This lets the run continue in a fresh session after `/compact` or a restart.
 
-Keep `<scratch>/decisions.md`, one entry per decision made without the user: issue, question, decision, reason, and the Opus agent's outcome.
+Keep `<scratch>/decisions.md`, one entry per decision made without the user: issue, question, decision, reason, and the decision agent's outcome and model.
 
 ## Status block
 
@@ -215,6 +235,7 @@ Memory: `Get-CimInstance Win32_OperatingSystem | Select-Object FreePhysicalMemor
 - Branches and PRs left open, worktrees with uncommitted work, and why.
 - Open code-scanning alerts on main (number, rule, file), from `gh api "repos/{owner}/{repo}/code-scanning/alerts?state=open"`.
 - Free space on C:, and whether disk-hygiene cleanup ran.
+- Models used: role, model, count, and any fallback. Name only models actually obtained.
 
 ## Settled defaults
 
