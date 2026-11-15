@@ -89,6 +89,10 @@ describe("HomePage", () => {
     });
   });
 
+  it("shows a Play a game tile linking to /games (AC 3.35.2)", () => {
+    renderPage();
+    expect(screen.getByRole("link", { name: "Play a game" })).toHaveAttribute("href", "/games");
+  });
   it("clips the decorative hero shapes so they cannot cause horizontal page scroll", () => {
     renderPage();
 

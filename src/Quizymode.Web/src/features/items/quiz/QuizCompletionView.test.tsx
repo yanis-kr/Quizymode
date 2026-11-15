@@ -77,6 +77,26 @@ describe("QuizCompletionView tier, share and confetti", () => {
     expect(screen.getByText(label)).toBeInTheDocument();
   });
 
+  it("offers a game for the set just played on the end screen (AC 3.35.3)", () => {
+    const { rerender } = render(
+      <MemoryRouter>
+        <QuizCompletionView
+          run={runWith(3, 5)}
+          items={items}
+          browsePath="/x"
+          browseLabel="Browse"
+          gamesPath="/games/collections/c1/my-set"
+          onReviewMistakes={() => {}}
+          onBackToResults={() => {}}
+          onPlayAgain={() => {}}
+        />
+      </MemoryRouter>
+    );
+    expect(screen.getByRole("link", { name: "Play a game with this set" })).toHaveAttribute("href", "/games/collections/c1/my-set");
+    rerender(ui(runWith(3, 5)));
+    expect(screen.queryByRole("link", { name: "Play a game with this set" })).not.toBeInTheDocument();
+  });
+
   it("shows Share result after Play again, and none without a descriptor or in the review view", () => {
     const first = render(ui(runWith(2, 5)));
     const labels = screen.getAllByRole("button").map((b) => b.textContent?.trim());
