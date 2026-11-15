@@ -63,6 +63,8 @@ The reviewer, not the decision agent, confirms that AC wording was not weakened.
 ## Pick and split
 
 1. `gh issue list --state open --limit 200`. Skip `status:deferred`, `owner:human`, issues blocked by an open issue, issues the user named as owned by another window, and any issue that already has an open PR or a remote `feat/<issue>-*` branch this run did not create.
+   - Shipped, awaiting evidence: an open issue named as `Refs #<n>` in a merged PR is not new work. Find these with `gh pr list --state merged --limit 40 --json number,body,mergedAt` and match `Refs #<n>`. Never re-implement them. Send each one to the evidence pass (§ Release, step 5) against the latest CI run on main and the Deploy run of that version, before any implementation starts. Closed issues stay closed; an issue that fails the pass gets a follow-up, not a re-implementation.
+   - The backlog label filter is a convenience, not the whole backlog: an open `owner:agent` or bug issue that is small and has testable ACs but lacks `status:ready` is listed in the opening message for the user to confirm, and is picked only with that confirmation or when the user names it.
 2. Rate each issue:
    - small: one vertical slice or one screen, no migration, no auth change, no new endpoint.
    - medium: new endpoint, several slices, or new visible surface.
@@ -77,6 +79,7 @@ The reviewer, not the decision agent, confirms that AC wording was not weakened.
    - Put related issues (same feature area, same files) in the same lane, in order, so they stack instead of conflicting.
    - Put the shortest and safest issues first so the first batch closes quickly.
 4. A batch is one release. Target 6 to 8 issues. Close a batch when any of these is true: it has 8 ready issues; it has at least 4 ready issues and no release is in flight; 90 minutes have passed since its first issue became ready; the deadline rule says so.
+   - Small backlog: if fewer than 4 issues are pickable, do not wait for 6 to 8. Make one batch of what there is and close it when every issue in it is ready. A release costs about 17 minutes of CI and deploy (measured on runs of 2026-11-14), which is cheaper than idling for a fuller batch. Run these coder-only when rated small.
 
 ## Hot files
 
