@@ -141,6 +141,8 @@ const StarterQuizPage = () => {
         noindex
       />
       <div className="mx-auto max-w-3xl px-3 py-4 sm:px-6">
+        {/* The page's one h1 (AC 3.0.2a); visually hidden so the quiz layout is unchanged. */}
+        <h1 className="sr-only">Play a 5-question quiz</h1>
         {run && run.length >= STARTER_RUN_SIZE && !isAuthLoading ? (
           <FixedSetQuiz
             key={`${nonce}:${identityKey}`}
