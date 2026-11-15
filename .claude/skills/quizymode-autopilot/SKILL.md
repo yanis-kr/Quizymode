@@ -64,7 +64,7 @@ The reviewer, not the decision agent, confirms that AC wording was not weakened.
 
 1. `gh issue list --state open --limit 200`. Skip `status:deferred`, `owner:human`, issues blocked by an open issue, issues the user named as owned by another window, and any issue that already has an open PR or a remote `feat/<issue>-*` branch this run did not create.
    - Shipped, awaiting evidence: an open issue named as `Refs #<n>` in a merged PR is not new work. Find these with `gh pr list --state merged --limit 40 --json number,body,mergedAt` and match `Refs #<n>`. Never re-implement them. Send each one to the evidence pass (§ Release, step 5) against the latest CI run on main and the Deploy run of that version, before any implementation starts. Closed issues stay closed; an issue that fails the pass gets a follow-up, not a re-implementation.
-   - The backlog label filter is a convenience, not the whole backlog: an open `owner:agent` or bug issue that is small and has testable ACs but lacks `status:ready` is listed in the opening message for the user to confirm, and is picked only with that confirmation or when the user names it.
+   - The backlog label filter is a convenience, not the whole backlog: an open `owner:agent` or bug issue that is small and has draft ACs with verify methods but lacks `status:ready` is listed in the opening message for the user to confirm, and is picked only with that confirmation or when the user names it.
 2. Rate each issue:
    - small: one vertical slice or one screen, no migration, no auth change, no new endpoint.
    - medium: new endpoint, several slices, or new visible surface.

@@ -5,7 +5,7 @@ import os from "node:os";
 import path from "node:path";
 import test from "node:test";
 import { acIdsInTitle, findAcTests, parseAcMarkdown, parseIssueList } from "../validation/ac-lib.mjs";
-import { checkAcs } from "../validation/ac-gate.mjs";
+import { checkAcs, issuesWithoutAcs } from "../validation/ac-gate.mjs";
 import { evidenceRows, flattenReport, isComplete, renderComment } from "../validation/ac-evidence.mjs";
 
 const SAMPLE = `
@@ -120,4 +120,11 @@ test("evidenceRows: unit ACs point at the CI run when one is given, and a fully 
 test("renderComment escapes backslashes before pipes in table cells", () => {
   const comment = renderComment(1, [{ id: "9.9.9", method: "e2e", result: "PASSED", detail: String.raw`a\|b | c` }], {});
   assert.ok(comment.includes(String.raw`a\\\|b \| c`));
+});
+
+test("issuesWithoutAcs reports issues no AC names, except those declared no-ac", () => {
+  const scope = parseAcMarkdown(SAMPLE);
+  assert.deepEqual(issuesWithoutAcs(scope, [900, 903, 904]), [903, 904]);
+  assert.deepEqual(issuesWithoutAcs(scope, [900, 903, 904], [903]), [904]);
+  assert.deepEqual(issuesWithoutAcs(scope, [900], [900]), []);
 });

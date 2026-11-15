@@ -4,6 +4,7 @@
 //
 //   node scripts/validation/ac-gate.mjs --changed origin/main   ACs added or edited since the merge base (CI on PRs)
 //   node scripts/validation/ac-gate.mjs --issues 645,646        ACs that belong to these issues (release batch)
+//                                       [--no-ac 647]           issues with no behavior change need no AC (AC 7.10.9)
 //   node scripts/validation/ac-gate.mjs --all                   every AC (report only; most old ACs are untagged)
 //   --json prints the result as JSON. Exit code 1 when any AC in scope fails.
 import fs from "node:fs";
@@ -34,6 +35,11 @@ export function checkAcs(acs, testsByMethod) {
   });
 }
 
+/** Issues in `issues` that no AC in `scope` names and that are not declared `noAc` (no behavior change). */
+export function issuesWithoutAcs(scope, issues, noAc = []) {
+  return issues.filter((n) => !noAc.includes(n) && !scope.some((ac) => ac.issues.includes(n)));
+}
+
 /** AC ids on lines added or edited in docs/AC.md between the merge base with `base` and the working tree. */
 export function changedAcIds(base, cwd) {
   const git = (args) => execFileSync("git", args, { cwd, encoding: "utf8", maxBuffer: 64 * 1024 * 1024 });
@@ -62,9 +68,13 @@ function main() {
     const issues = parseIssueList(args.issues);
     scope = all.filter((ac) => ac.issues.some((n) => issues.includes(n)));
     scopeLabel = `ACs of issues ${issues.map((n) => `#${n}`).join(", ")}`;
-    const missing = issues.filter((n) => !scope.some((ac) => ac.issues.includes(n)));
+    const noAc = args["no-ac"] ? parseIssueList(args["no-ac"]) : [];
+    const missing = issuesWithoutAcs(scope, issues, noAc);
     if (missing.length > 0) {
-      console.error(`No AC in ${AC_PATH} names ${missing.map((n) => `#${n}`).join(", ")}. Add "(#<issue>)" to its ACs.`);
+      console.error(
+        `No AC in ${AC_PATH} names ${missing.map((n) => `#${n}`).join(", ")}. Add "(#<issue>)" to its ACs, ` +
+          `or pass --no-ac <n,n> for an issue with no behavior change (content, chore, epic).`,
+      );
       process.exit(1);
     }
   } else if (args.all) {
