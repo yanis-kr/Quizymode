@@ -5,6 +5,8 @@ interface ImportMetaEnv {
   readonly VITE_COGNITO_DOMAIN?: string;
   /** Google sign-in is enabled only when this is exactly "true" and VITE_COGNITO_DOMAIN is set. */
   readonly VITE_GOOGLE_SIGNIN_ENABLED?: string;
+  /** Non-secret Grafana base URL for the admin "Operations dashboards" links; the section is hidden when unset. */
+  readonly VITE_GRAFANA_URL?: string;
 }
 
 declare const __APP_VERSION__: string;

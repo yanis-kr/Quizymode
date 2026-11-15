@@ -33,8 +33,8 @@ describe("QuestionImage", () => {
     expect(box.className).toMatch(/aspect-\[3\/2\]|aspect-3\/2/);
     expect(box.className).toContain("w-full");
     expect(box.className).not.toMatch(/(?:^|\s)(?:min-)?w-\[\d+px\]/);
-    expect(box.parentElement?.className).toContain("max-w-md");
-    expect(box.parentElement?.className).toContain("w-full");
+    expect(box.parentElement?.parentElement?.className).toContain("max-w-md");
+    expect(box.parentElement?.parentElement?.className).toContain("w-full");
     expect(screen.getByAltText(image.altText).className).toContain("object-contain");
   });
 

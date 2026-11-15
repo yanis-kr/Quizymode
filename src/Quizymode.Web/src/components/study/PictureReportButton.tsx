@@ -9,7 +9,7 @@ export function PictureReportButton({ itemId, slot, revision, collectionId }: { 
   const button = useRef<HTMLButtonElement>(null); const dialog = useRef<HTMLDivElement>(null); const id = useId();
   useFocusTrap(dialog);
   const close = () => { setOpen(false); button.current?.focus(); };
-  return <><button ref={button} type="button" className="mt-2 text-xs underline print:hidden" aria-haspopup="dialog" onClick={() => { setMessage(""); setOpen(true); }}>Report picture</button>
+  return <><button ref={button} type="button" className="mt-2 inline-block max-w-full py-2 text-xs underline print:hidden" aria-haspopup="dialog" onClick={() => { setMessage(""); setOpen(true); }}>Report picture</button>
     {open && createPortal(<div className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 p-4" onKeyDown={e => { if (e.key === "Escape") { e.stopPropagation(); close(); } }}>
       <div ref={dialog} role="dialog" aria-modal="true" aria-labelledby={`${id}-title`} className="w-full max-w-md space-y-4 rounded bg-surface p-5 text-gray-900">
         <h2 id={`${id}-title`} className="text-lg font-semibold">Report picture</h2><p className="text-sm">Choose the concern. Reports go to a human reviewer and do not automatically remove the picture. No contact information is needed.</p>
