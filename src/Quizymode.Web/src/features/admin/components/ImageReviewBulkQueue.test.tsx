@@ -182,4 +182,12 @@ describe("ImageReviewBulkQueue", () => {
     expect(grid.className).toContain("md:grid-cols-5");
     expect(within(grid).getAllByRole("listitem")).toHaveLength(2);
   });
+
+  it("keeps the decision panel in the page flow so it never covers a tile's question text (AC 3.166.4)", async () => {
+    mockAdminApi.getImageReviewQueue.mockResolvedValue(queue([row("a"), row("b")]));
+    renderQueue();
+    await screen.findByText("2 picture submissions waiting for review");
+    const panel = screen.getByLabelText(/Reason for rejection/).parentElement!;
+    expect(panel.className).not.toMatch(/sticky|fixed/);
+  });
 });
