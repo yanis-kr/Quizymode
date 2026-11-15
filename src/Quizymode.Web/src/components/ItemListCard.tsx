@@ -195,7 +195,9 @@ const KeywordsAndCollectionsSection = ({
               key={keyword.id}
               keyword={keyword}
               onClick={onKeywordClick}
-              isSelected={selectedKeywords?.includes(keyword.name) ?? false}
+              isSelected={
+                selectedKeywords?.some((k) => k.toLowerCase() === keyword.name.toLowerCase()) ?? false
+              }
             />
           ))}
         </>
@@ -246,6 +248,7 @@ const KeywordChip = ({
     return (
       <button
         onClick={() => onClick(keyword.name)}
+        aria-pressed={isSelected}
         className={`${baseClass} ${
           isSelected
             ? "bg-indigo-600 text-white"

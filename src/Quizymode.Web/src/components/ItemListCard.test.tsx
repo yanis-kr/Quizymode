@@ -114,3 +114,24 @@ describe("ItemListCard", () => {
     expect(screen.queryByRole("button", { name: /show answer|hide answer/i })).not.toBeInTheDocument();
   });
 });
+
+describe("ItemListCard keyword chips (#664)", () => {
+  it("AC 3.5.10 marks keywords selected case-insensitively with aria-pressed", () => {
+    render(
+      <ItemListCard
+        item={buildItem({
+          keywords: [
+            { id: "k1", name: "funny", isPrivate: false },
+            { id: "k2", name: "idioms", isPrivate: false },
+          ] as ItemResponse["keywords"],
+        })}
+        onKeywordClick={vi.fn()}
+        selectedKeywords={["Funny"]}
+        showAnswer
+      />
+    );
+
+    expect(screen.getByRole("button", { name: "funny" })).toHaveAttribute("aria-pressed", "true");
+    expect(screen.getByRole("button", { name: "idioms" })).toHaveAttribute("aria-pressed", "false");
+  });
+});
