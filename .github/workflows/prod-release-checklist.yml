@@ -1,0 +1,55 @@
+name: Prod release checklist
+
+# AC 3.29 (#638): release checklists that WRITE to production. Started by hand only, never by a deploy.
+# Each run signs in as the test user and the test admin, creates test-owned data (one uploaded picture, one private
+# item, one link-only collection), has the admin approve and withdraw the picture, and deletes the item and the
+# collection at the end. It uses 1 of the test user's 20 daily uploads.
+on:
+  workflow_dispatch:
+
+concurrency:
+  group: prod-release-checklist
+  cancel-in-progress: false
+
+jobs:
+  checklist:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    permissions:
+      contents: read
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v7
+
+      - name: Setup Node
+        uses: actions/setup-node@v7
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: package-lock.json
+
+      - name: Install Playwright
+        run: |
+          npm ci
+          npx playwright install --with-deps chromium
+
+      - name: Run the release checklist on production
+        env:
+          PLAYWRIGHT_BASE_URL: https://www.quizymode.com
+          TEST_USER_EMAIL: ${{ secrets.TEST_USER_EMAIL }}
+          TEST_USER_PASSWORD: ${{ secrets.TEST_USER_PASSWORD }}
+          TEST_ADMIN_EMAIL: ${{ secrets.TEST_ADMIN_EMAIL }}
+          TEST_ADMIN_PASSWORD: ${{ secrets.TEST_ADMIN_PASSWORD }}
+        run: npx playwright test --project=prod-checklist
+
+      # playwright/.auth/ (the saved sign-ins) is deliberately not uploaded.
+      - name: Upload report and screenshots
+        if: always()
+        uses: actions/upload-artifact@v7
+        with:
+          name: prod-release-checklist-${{ github.run_number }}
+          path: |
+            playwright/test-results/**
+            playwright-report/**
+          if-no-files-found: warn
+          retention-days: 30
