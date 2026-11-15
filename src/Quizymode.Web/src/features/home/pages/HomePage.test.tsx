@@ -177,3 +177,16 @@ describe("HomePage", () => {
     expect(screen.getByText("7 items")).toBeInTheDocument();
   });
 });
+
+describe("HomePage Fun expressions card (#664)", () => {
+  it("AC 3.0.36 shows the Fun expressions card for a guest even when there are no featured sets", async () => {
+    vi.mocked(categoriesApi.getAll).mockResolvedValue({ categories: [] });
+    vi.mocked(collectionsApi.discover).mockResolvedValue({ items: [] } as never);
+    vi.mocked(featuredApi.get).mockResolvedValue({ sets: [], collections: [] });
+
+    renderPage();
+
+    const link = await screen.findByRole("link", { name: /Fun expressions/ });
+    expect(link).toHaveAttribute("href", "/categories/languages?keywords=idioms,funny&view=items");
+  });
+});
