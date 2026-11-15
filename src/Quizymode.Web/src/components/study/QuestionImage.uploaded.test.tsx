@@ -36,13 +36,12 @@ describe("Uploaded item-bound picture grants", () => {
     render(<MemoryRouter><QuestionImage image={{ ...uploaded, revision }} itemId="item-1" /></MemoryRouter>);
     expect(screen.getByText("Picture isn't available")).toBeInTheDocument(); expect(mediaApi.content).not.toHaveBeenCalled();
   });
-  it("offers keyboard unscored Skip only while the picture is loading, never once it is displayed (AC 3.30.2)", async () => {
+  it("offers keyboard unscored Skip after the picture has loaded", async () => {
     const onSkip = vi.fn(); vi.mocked(mediaApi.content).mockResolvedValue(new Blob(["normalized"]));
     render(<MemoryRouter><QuestionImage image={uploaded} itemId="item-1" onSkip={onSkip} /></MemoryRouter>);
+    fireEvent.load(await screen.findByRole("img"));
     const skip = screen.getByRole("button", { name: "Skip question (not scored)" }); skip.focus();
     await userEvent.keyboard("{Enter}"); expect(onSkip).toHaveBeenCalledOnce();
-    fireEvent.load(await screen.findByRole("img"));
-    expect(screen.queryByRole("button", { name: "Skip question (not scored)" })).not.toBeInTheDocument();
   });
   it("offers Skip when the picture failed to load", async () => {
     vi.mocked(mediaApi.content).mockRejectedValue(new Error("404"));

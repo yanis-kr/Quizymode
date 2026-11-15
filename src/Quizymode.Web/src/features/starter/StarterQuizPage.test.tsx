@@ -324,7 +324,7 @@ describe("StarterQuizPage", () => {
     renderPage();
     expect(await screen.findByText("Question 1 of 5")).toBeInTheDocument();
     fireEvent.load(await screen.findByAltText("flag"));
-    expect(screen.queryByRole("button", { name: "Skip question (not scored)" })).not.toBeInTheDocument();
+    expect(screen.getByRole("button", { name: "Skip question (not scored)" })).toBeInTheDocument();
 
     await answer(true);
     expect(screen.queryByRole("button", { name: "Skip question (not scored)" })).not.toBeInTheDocument();

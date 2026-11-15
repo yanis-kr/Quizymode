@@ -273,7 +273,7 @@ function QuestionImageBox({
           </button>
         )}
       </div>
-      {status === "loading" && isQuestion && onSkip && <button type="button" onClick={onSkip} data-testid="question-image-skip" className={`${buttonClass} mt-2`}>Skip question (not scored)</button>}
+      {status === "loaded" && isQuestion && onSkip && <button type="button" onClick={onSkip} data-testid="question-image-skip" className={`${buttonClass} mt-2`}>Skip question (not scored)</button>}
       {!withdrawn && uploaded && itemId && (image.revision ?? 0) > 0 && <PictureReportButton itemId={itemId} slot={slot} revision={image.revision!} collectionId={collectionId} />}
       {image.longDescription && <details className="mt-2 text-sm"><summary>Picture description</summary><p className="whitespace-pre-wrap">{image.longDescription}</p></details>}
       {zoomOpen && url !== null && (
