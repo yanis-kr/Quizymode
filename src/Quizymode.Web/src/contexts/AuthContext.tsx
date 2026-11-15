@@ -503,6 +503,8 @@ export const AuthProvider = ({ children }: AuthProviderProps) => {
       // Suggestions include the user's own recent paths, and the taxonomy cache is keyed per user (AC 12.17).
       queryClient.removeQueries({ queryKey: [TAXONOMY_QUERY_ROOT] });
       queryClient.removeQueries({ queryKey: [TOPIC_SUGGEST_QUERY_ROOT] });
+      // Account set progress belongs to the signed-in user; drop it so the next user never sees it.
+      queryClient.removeQueries({ queryKey: ["set-progress"] });
       await signOut();
       clearAuthState();
     } catch (error) {
