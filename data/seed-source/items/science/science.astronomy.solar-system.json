@@ -100,7 +100,7 @@
     "navigationKeyword1": "astronomy",
     "navigationKeyword2": "solar-system",
     "question": "Why do planets stay in orbit around the Sun?",
-    "correctAnswer": "Gravity provides the centripetal force for curved paths",
+    "correctAnswer": "Gravity bends their paths into orbits",
     "incorrectAnswers": [
       "Magnetism alone holds them",
       "Friction with space air",
@@ -180,7 +180,7 @@
     "navigationKeyword1": "astronomy",
     "navigationKeyword2": "solar-system",
     "question": "What is the Oort cloud (conceptual)?",
-    "correctAnswer": "A distant spherical reservoir of cometary bodies",
+    "correctAnswer": "A distant shell of icy comet bodies",
     "incorrectAnswers": [
       "A ring inside Mercury\u2019s orbit",
       "A storm on Jupiter",
@@ -199,7 +199,7 @@
     "navigationKeyword1": "astronomy",
     "navigationKeyword2": "solar-system",
     "question": "Why does Venus appear very bright from Earth?",
-    "correctAnswer": "It is close to Earth and its clouds reflect lots of sunlight",
+    "correctAnswer": "It is near and its clouds reflect light",
     "incorrectAnswers": [
       "It emits its own light like a star",
       "It is the largest planet",
@@ -336,5 +336,81 @@
       "rotation"
     ],
     "source": "https://science.nasa.gov/mercury/facts/"
+  },
+  {
+    "itemId": "a65d77a3-6e51-45d5-8caf-513f131442f5",
+    "category": "science",
+    "navigationKeyword1": "astronomy",
+    "navigationKeyword2": "solar-system",
+    "question": "Which planet is the hottest in the solar system, even though it is not the closest to the Sun?",
+    "correctAnswer": "Venus",
+    "incorrectAnswers": [
+      "Mercury",
+      "Mars",
+      "Jupiter"
+    ],
+    "explanation": "Venus's thick carbon dioxide atmosphere traps heat, keeping its surface near 465 degrees Celsius, hotter than Mercury.",
+    "keywords": [
+      "solar-system",
+      "planets"
+    ],
+    "source": "https://science.nasa.gov/venus/"
+  },
+  {
+    "itemId": "ce845478-0771-4d42-89d6-9ceacf7587f2",
+    "category": "science",
+    "navigationKeyword1": "astronomy",
+    "navigationKeyword2": "solar-system",
+    "question": "Which planet spins tilted on its side, with an axis angled about 98 degrees?",
+    "correctAnswer": "Uranus",
+    "incorrectAnswers": [
+      "Neptune",
+      "Saturn",
+      "Jupiter"
+    ],
+    "explanation": "Uranus rotates on its side, so its poles take turns pointing almost straight at the Sun during its 84-year orbit.",
+    "keywords": [
+      "solar-system",
+      "planets"
+    ],
+    "source": "https://science.nasa.gov/uranus/"
+  },
+  {
+    "itemId": "b9d25153-4a22-4315-9bcf-c5801781a71b",
+    "category": "science",
+    "navigationKeyword1": "astronomy",
+    "navigationKeyword2": "solar-system",
+    "question": "Which planet has the fastest winds in the solar system, over 2,000 km/h?",
+    "correctAnswer": "Neptune",
+    "incorrectAnswers": [
+      "Jupiter",
+      "Saturn",
+      "Mars"
+    ],
+    "explanation": "Neptune's winds are supersonic, reaching more than 2,000 km/h, the fastest measured on any planet.",
+    "keywords": [
+      "solar-system",
+      "planets"
+    ],
+    "source": "https://science.nasa.gov/neptune/"
+  },
+  {
+    "itemId": "3955e31d-9687-4072-8727-1c32236c1c98",
+    "category": "science",
+    "navigationKeyword1": "astronomy",
+    "navigationKeyword2": "solar-system",
+    "question": "Titan, the only moon with a thick atmosphere, orbits which planet?",
+    "correctAnswer": "Saturn",
+    "incorrectAnswers": [
+      "Jupiter",
+      "Neptune",
+      "Uranus"
+    ],
+    "explanation": "Titan is Saturn's largest moon, and its nitrogen-rich atmosphere is denser than Earth's.",
+    "keywords": [
+      "solar-system",
+      "planets"
+    ],
+    "source": "https://science.nasa.gov/saturn/moons/titan/"
   }
 ]

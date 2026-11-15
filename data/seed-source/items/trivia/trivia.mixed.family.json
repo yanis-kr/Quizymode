@@ -173,11 +173,11 @@
     "navigationKeyword1": "mixed",
     "navigationKeyword2": "family",
     "question": "What is the difference between a hippo and a zippo?",
-    "correctAnswer": "One is really heavy, and the other is a little lighter.",
+    "correctAnswer": "One is heavy, the other is lighter.",
     "incorrectAnswers": [
       "One swims, and the other zips.",
-      "One has teeth, and the other has pockets.",
-      "One lives in water, and the other lives in luggage."
+      "One has teeth, the other has pockets.",
+      "One lives in water, one in luggage."
     ],
     "explanation": "A Zippo is a lighter, and 'a little lighter' also compares weight.",
     "keywords": [
@@ -908,7 +908,7 @@
     "navigationKeyword1": "mixed",
     "navigationKeyword2": "family",
     "question": "Why did the zipper get hired as a mediator?",
-    "correctAnswer": "It knew how to bring both sides together.",
+    "correctAnswer": "It could bring both sides together.",
     "incorrectAnswers": [
       "It had a fast closing argument.",
       "It never split the difference.",
