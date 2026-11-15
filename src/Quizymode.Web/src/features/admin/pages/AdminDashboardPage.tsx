@@ -5,7 +5,16 @@ import { adminApi } from '@/api/admin';
 import AdminOverviewPanel from '../components/AdminOverviewPanel';
 import DailyDigestCard from '../components/DailyDigestCard';
 
+/** Provisioned Grafana dashboards (#641); the uid is the one in infra/grafana/<file>.json. */
+const GRAFANA_DASHBOARDS = [
+  { uid: 'quizymode-media', title: 'Pictures (media)', description: 'Review queue, uploads, and release checks for uploaded pictures' },
+];
+
+/** Non-secret build-time base URL; empty or unset hides the section. */
+const grafanaBaseUrl = (): string => (import.meta.env.VITE_GRAFANA_URL ?? '').trim().replace(/\/+$/, '');
+
 const AdminDashboardPage = () => {
+  const grafanaUrl = grafanaBaseUrl();
   const { isAuthenticated, isAdmin } = useAuth();
   const feedbackSummary = useQuery({
     queryKey: ['admin', 'feedback-new-count'],
@@ -169,6 +178,27 @@ const AdminDashboardPage = () => {
           </p>
         </Link>
       </div>
+      {grafanaUrl && (
+        <section className="mt-8" aria-labelledby="operations-dashboards-heading">
+          <h2 id="operations-dashboards-heading" className="text-xl font-semibold text-gray-900 mb-3">
+            Operations dashboards
+          </h2>
+          <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
+            {GRAFANA_DASHBOARDS.map((dashboard) => (
+              <a
+                key={dashboard.uid}
+                href={`${grafanaUrl}/d/${dashboard.uid}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="bg-surface shadow rounded-lg p-6 hover:shadow-lg transition-shadow cursor-pointer"
+              >
+                <h3 className="text-lg font-medium text-gray-900 mb-2">{dashboard.title}</h3>
+                <p className="text-sm text-gray-500">{dashboard.description}</p>
+              </a>
+            ))}
+          </div>
+        </section>
+      )}
     </div>
   );
 };

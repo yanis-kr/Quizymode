@@ -1,4 +1,4 @@
-import { describe, expect, it, vi } from "vitest";
+import { afterEach, describe, expect, it, vi } from "vitest";
 import { render, screen } from "@testing-library/react";
 import { MemoryRouter, Routes, Route } from "react-router-dom";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
@@ -38,6 +38,31 @@ function renderPage(initialEntry = "/admin") {
 }
 
 describe("AdminDashboardPage", () => {
+  afterEach(() => {
+    vi.unstubAllEnvs();
+  });
+
+  it("AC 5.14.1 AC 5.14.2 shows Operations dashboards links that open in a new tab with rel noopener noreferrer", () => {
+    vi.stubEnv("VITE_GRAFANA_URL", "https://grafana.example.test/");
+    mockUseAuth.mockReturnValue({ isAuthenticated: true, isAdmin: true });
+    renderPage();
+
+    expect(screen.getByRole("heading", { name: "Operations dashboards" })).toBeInTheDocument();
+    const link = screen.getByRole("link", { name: /pictures \(media\)/i });
+    expect(link).toHaveAttribute("href", "https://grafana.example.test/d/quizymode-media");
+    expect(link).toHaveAttribute("target", "_blank");
+    expect(link).toHaveAttribute("rel", "noopener noreferrer");
+  });
+
+  it("AC 5.14.1 hides Operations dashboards when VITE_GRAFANA_URL is unset", () => {
+    vi.stubEnv("VITE_GRAFANA_URL", "");
+    mockUseAuth.mockReturnValue({ isAuthenticated: true, isAdmin: true });
+    renderPage();
+
+    expect(screen.getByRole("heading", { name: /admin dashboard/i })).toBeInTheDocument();
+    expect(screen.queryByRole("heading", { name: "Operations dashboards" })).not.toBeInTheDocument();
+  });
+
   it("renders admin tools for admin users", () => {
     mockUseAuth.mockReturnValue({ isAuthenticated: true, isAdmin: true });
     renderPage();
