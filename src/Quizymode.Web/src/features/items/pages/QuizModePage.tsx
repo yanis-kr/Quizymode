@@ -75,6 +75,7 @@ import {
 } from "@/features/items/quiz/quizRun";
 import { gradeTypedAnswer, isTypeable } from "@/features/items/quiz/typedAnswer";
 import { isGuestEligible, recordGuestCompletion } from "@/features/guestHistory/guestHistoryStorage";
+import { recordKnownItems } from "@/features/progress/knownItems";
 import { addLocalReviewItems } from "@/features/learningLoop/localReviewList";
 import { recordAuthenticatedCompletion } from "@/features/studySessions/recordStudySession";
 import {
@@ -846,6 +847,8 @@ const QuizModePageContent = ({ resumeRequested = false, initialNotice = null }: 
       currentIdentityKey: identityKey,
     };
     recordGuestCompletion(snapshot, guestEligibility);
+    // Browser-local per-set progress (AC 3.33.2): guests only, never sent to the server.
+    if (isGuestEligible(guestEligibility)) recordKnownItems(snapshot);
     // Browser-local review list (AC 3.14.14): a guest's missed questions join the list in this browser.
     if (isGuestEligible(guestEligibility) && snapshot.missedItemIds.length > 0) {
       addLocalReviewItems(snapshot.missedItemIds);

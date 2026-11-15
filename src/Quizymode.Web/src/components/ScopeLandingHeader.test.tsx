@@ -124,4 +124,18 @@ describe("ScopeLandingHeader (#646)", () => {
     renderHeader({ variant: "collection", count: 40 });
     expect(linkNames()).toEqual(["Play quiz (40)", "Flashcards", "Games"]);
   });
+  it("AC 3.33.1 shows 'N of M known' when a known count is given and hides it otherwise", () => {
+    const { unmount } = renderHeader({ knownCount: 12, count: 197 });
+    expect(screen.getByTestId("set-progress")).toHaveTextContent("12 of 197 known");
+    expect(screen.getByTestId("set-progress")).toHaveAttribute("data-complete", "false");
+    unmount();
+    renderHeader({ count: 197 });
+    expect(screen.queryByTestId("set-progress")).toBeNull();
+  });
+
+  it("AC 3.33.3 shows a completed state when every item is known", () => {
+    renderHeader({ knownCount: 33, count: 33 });
+    expect(screen.getByTestId("set-progress")).toHaveAttribute("data-complete", "true");
+    expect(screen.getByTestId("set-progress")).toHaveTextContent("Completed");
+  });
 });

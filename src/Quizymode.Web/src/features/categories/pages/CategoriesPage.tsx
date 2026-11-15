@@ -14,6 +14,8 @@ import { ScopeSecondaryBar } from "@/components/ScopeSecondaryBar";
 import { ScopePathHeader } from "@/components/ScopePathHeader";
 import { BucketGridView } from "@/components/BucketGridView";
 import { useAuth } from "@/contexts/AuthContext";
+import { categorySetKey } from "@/features/progress/knownItems";
+import { useKnownCount } from "@/features/progress/useKnownCount";
 import { usePageSize } from "@/hooks/usePageSize";
 import { useAnswerVisibility } from "@/hooks/useAnswerVisibility";
 import { useScopeLanding } from "@/hooks/useScopeLanding";
@@ -575,11 +577,16 @@ const CategoriesPage = () => {
     enabled: showLanding,
   });
   const landingCategorySlug = categoryName ? categoryNameToSlug(categoryName) : "";
+  const knownCount = useKnownCount(
+    showLanding && landingCategorySlug ? categorySetKey(landingCategorySlug, pathKeywordsFromUrl) : null,
+    !isAuthenticated,
+  );
   const landingHeader = showLanding ? (
     <ScopeLandingHeader
       title={landing.title}
       description={landing.description}
       count={landing.count}
+      knownCount={knownCount ?? undefined}
       countState={landing.countState}
       games={landing.games}
       quizHref={(size) => {
