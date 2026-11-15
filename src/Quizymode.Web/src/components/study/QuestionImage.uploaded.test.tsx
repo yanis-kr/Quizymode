@@ -36,7 +36,7 @@ describe("Uploaded item-bound picture grants", () => {
     render(<MemoryRouter><QuestionImage image={{ ...uploaded, revision }} itemId="item-1" /></MemoryRouter>);
     expect(screen.getByText("Picture isn't available")).toBeInTheDocument(); expect(mediaApi.content).not.toHaveBeenCalled();
   });
-  it("offers keyboard unscored Skip only while the picture is loading, never once it is displayed (AC 3.166.2)", async () => {
+  it("offers keyboard unscored Skip only while the picture is loading, never once it is displayed (AC 3.30.2)", async () => {
     const onSkip = vi.fn(); vi.mocked(mediaApi.content).mockResolvedValue(new Blob(["normalized"]));
     render(<MemoryRouter><QuestionImage image={uploaded} itemId="item-1" onSkip={onSkip} /></MemoryRouter>);
     const skip = screen.getByRole("button", { name: "Skip question (not scored)" }); skip.focus();
@@ -51,14 +51,14 @@ describe("Uploaded item-bound picture grants", () => {
     expect(screen.getAllByRole("button", { name: "Skip question (not scored)" })).toHaveLength(1);
     expect(screen.getByRole("button", { name: "Retry loading picture" })).toBeInTheDocument();
   });
-  it("says a withdrawn picture was withdrawn, with no Retry, no fetch and no report link (AC 3.166.3)", () => {
+  it("says a withdrawn picture was withdrawn, with no Retry, no fetch and no report link (AC 3.30.3)", () => {
     render(<MemoryRouter><QuestionImage image={uploaded} itemId="item-1" withdrawn onSkip={vi.fn()} /></MemoryRouter>);
     expect(screen.getByText("This picture was withdrawn")).toBeInTheDocument();
     expect(screen.queryByRole("button", { name: "Retry loading picture" })).not.toBeInTheDocument();
     expect(screen.queryByRole("button", { name: "Report picture" })).not.toBeInTheDocument();
     expect(mediaApi.content).not.toHaveBeenCalled();
   });
-  it("keeps the zoom button over the picture and the Report picture link below it so they cannot overlap (AC 3.166.1)", async () => {
+  it("keeps the zoom button over the picture and the Report picture link below it so they cannot overlap (AC 3.30.1)", async () => {
     vi.mocked(mediaApi.content).mockResolvedValue(new Blob(["normalized"]));
     render(<MemoryRouter><QuestionImage image={uploaded} itemId="item-1" /></MemoryRouter>);
     fireEvent.load(await screen.findByRole("img"));

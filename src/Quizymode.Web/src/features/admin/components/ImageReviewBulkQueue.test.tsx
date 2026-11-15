@@ -183,11 +183,31 @@ describe("ImageReviewBulkQueue", () => {
     expect(within(grid).getAllByRole("listitem")).toHaveLength(2);
   });
 
-  it("keeps the decision panel in the page flow so it never covers a tile's question text (AC 3.166.4)", async () => {
+  it("keeps the decision panel in the page flow so it never covers a tile's question text (AC 3.30.4)", async () => {
     mockAdminApi.getImageReviewQueue.mockResolvedValue(queue([row("a"), row("b")]));
     renderQueue();
     await screen.findByText("2 picture submissions waiting for review");
     const panel = screen.getByLabelText(/Reason for rejection/).parentElement!;
     expect(panel.className).not.toMatch(/sticky|fixed/);
+  });
+  it("shows a loading placeholder, then the picture; a failed fetch shows a message with Retry (AC 3.30.5)", async () => {
+    let resolveBlob: (b: Blob) => void = () => {};
+    mockAdminApi.fetchItemImageBlob.mockReturnValueOnce(new Promise<Blob>((resolve) => { resolveBlob = resolve; }));
+    mockAdminApi.getImageReviewQueue.mockResolvedValue(queue([row("a")]));
+    renderQueue();
+    expect(await screen.findByLabelText("Loading picture")).toBeInTheDocument();
+    resolveBlob(new Blob(["x"], { type: "image/webp" }));
+    await waitFor(() => expect(screen.queryByLabelText("Loading picture")).not.toBeInTheDocument());
+
+  });
+
+  it("offers Retry when the picture fetch fails (AC 3.30.5)", async () => {
+    mockAdminApi.fetchItemImageBlob.mockRejectedValueOnce(new Error("boom"));
+    mockAdminApi.getImageReviewQueue.mockResolvedValue(queue([row("a")]));
+    renderQueue();
+    expect(await screen.findByText("Picture could not be loaded")).toBeInTheDocument();
+    await userEvent.click(screen.getByRole("button", { name: "Retry" }));
+    await waitFor(() => expect(mockAdminApi.fetchItemImageBlob).toHaveBeenCalledTimes(2));
+    await waitFor(() => expect(screen.queryByText("Picture could not be loaded")).not.toBeInTheDocument());
   });
 });
