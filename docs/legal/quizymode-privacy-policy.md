@@ -1,6 +1,6 @@
 # Privacy Policy
 
-**Effective date:** November 8, 2026
+**Effective date:** November 15, 2026
 
 ## 1. Overview
 
@@ -12,6 +12,7 @@ We may collect the following categories of information:
 
 - **Account information:** email address, username, display name, and account metadata. Password handling is managed by AWS Cognito; Quizymode does not directly store your plain-text password. If you choose **Continue with Google**, see "Signing in with Google" below.
 - **Content you create or submit:** items, collections, study guides, comments, feedback submissions, and similar material you enter into the service.
+- **Study history and progress (signed-in accounts):** when you finish a quiz while signed in, we store a private record linked to your account: the finish time, your score and question count, the collection or topic, and the IDs of the questions you missed. We also store, for each question, only whether your latest scored answer was correct, so we can show how many questions of a set you know. Questions you missed or review enter your private review queue. We do not store question text or the answers you choose, and this history is visible only to you. Quiz history older than 365 days is deleted when you save a later quiz.
 - **Usage and technical information:** page paths, query strings, session identifiers, authentication state, timestamps, browser user-agent strings (used to filter out automated traffic), and IP addresses associated with requests or page-view analytics.
 - **Product engagement events:** a limited set of in-app events, such as starting or finishing a quiz and viewing or using sign-up prompts, recorded with the session identifier, your account when you are signed in, the app page, a coarse context (for example the quiz's category or collection), and for quizzes an anonymous run identifier, your score, and the number of questions. We do not record question text, the answers you choose, your email address, or free-form content in these events. We use them mainly in aggregate to understand where people engage or leave.
 - **Diagnostic error reports:** when the app crashes or hits an error in your browser, it sends us a short report: the error name and message, a technical stack trace, the app page (without its query string), the app version, the session identifier, the visitor identifier described below (unless your browser signals Global Privacy Control), whether this is an internal test browser, your account when you are signed in, and the browser user-agent with a coarse device type (desktop, mobile, or tablet). Before a report is stored we strip query strings, email addresses, and access tokens from it. We use these reports only to find and fix bugs, send at most a few per browser tab, and delete them after 90 days.
@@ -64,6 +65,8 @@ We may disclose information:
 - to these providers as needed to operate the service;
 - when required by law, legal process, or a good-faith belief that disclosure is necessary to protect rights, safety, or the service; or
 - in connection with a reorganization, sale, financing, or transfer of all or part of the service or its assets.
+
+The "Support Quizymode" link, when shown, is a plain link to a hosted donation page. Quizymode does not embed any donation script, iframe, or cookie. Clicking it leaves Quizymode, and the donation platform's own privacy policy applies to anything you share with that platform, including any donation.
 
 We do not sell personal information, and the current app does not use third-party advertising cookies.
 

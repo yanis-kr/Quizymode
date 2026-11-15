@@ -14,7 +14,7 @@ const auth = vi.hoisted(() => ({ value: { isAuthenticated: false, isLoading: fal
 
 vi.mock("@/contexts/AuthContext", () => ({ useAuth: () => auth.value }));
 vi.mock("@/api/learningLoop", () => ({
-  dailyQuizApi: { get: vi.fn(), complete: vi.fn() },
+  dailyQuizApi: { get: vi.fn(), complete: vi.fn(), archive: vi.fn().mockResolvedValue({ days: [] }) },
   interestsApi: { get: vi.fn().mockResolvedValue([]), popularCategories: vi.fn().mockResolvedValue([]) },
 }));
 vi.mock("@/api/studySessions", () => ({ studySessionsApi: { list: vi.fn().mockResolvedValue([]) } }));

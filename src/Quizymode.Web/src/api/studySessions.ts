@@ -15,6 +15,8 @@ export interface RecordStudySessionRequest {
   total: number;
   source: StudySessionSource | null;
   missedItemIds: string[];
+  /** Optional (#685): items answered correctly, so the account can show per-set progress. Quiz runs only. */
+  correctItemIds?: string[];
   /** Optional; omitted by old clients and treated as "quiz" by the server. */
   mode?: "quiz" | "learn";
 }
@@ -70,7 +72,21 @@ export interface ImportGuestStudySessionsResponse {
   rejectedRunIds: string[];
 }
 
+export interface SetProgressResponse {
+  scopes: { scope: string; knownCount: number }[];
+}
+
+export const MAX_SET_PROGRESS_SCOPES = 12;
+
 export const studySessionsApi = {
+  /** Known-item counts per set key for the signed-in user (#685). At most 12 scopes per call. */
+  getSetProgress: async (scopes: string[]): Promise<SetProgressResponse> => {
+    const response = await apiClient.get<SetProgressResponse>("/users/me/set-progress", {
+      params: { scopes: scopes.join(",") },
+    });
+    return response.data;
+  },
+
   record: async (request: RecordStudySessionRequest): Promise<RecordStudySessionResponse> => {
     const response = await apiClient.post<RecordStudySessionResponse>("/study-sessions", request);
     return response.data;

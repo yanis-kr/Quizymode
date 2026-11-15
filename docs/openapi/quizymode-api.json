@@ -3799,7 +3799,16 @@
           "DailyQuiz"
         ],
         "summary": "Get today's daily quiz",
-        "description": "Today's (UTC) global set of up to 5 public items. Signed-in callers also get their completion for the day and streak.",
+        "description": "Today's (UTC) global set of up to 5 public items. Signed-in callers also get their completion for the day and streak. With date=yyyy-MM-dd (one of the 7 days before today, never before 2026-11-15) the stored set of that day is returned for archive play: other dates return 400, a day without a stored set 404, and nothing is created.",
+        "parameters": [
+          {
+            "name": "date",
+            "in": "query",
+            "schema": {
+              "$ref": "#/components/schemas/System.String"
+            }
+          }
+        ],
         "responses": {
           "200": {
             "description": "OK",
@@ -3807,6 +3816,33 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/Quizymode.Api.Features.DailyQuiz.DailyQuiz.DailyQuizResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        }
+      }
+    },
+    "/daily-quiz/archive": {
+      "get": {
+        "tags": [
+          "DailyQuiz"
+        ],
+        "summary": "List the stored daily quiz sets of the last 7 days",
+        "description": "Stored sets for the 7 UTC days before today (never before 2026-11-15), newest first. Past sets are never created. Signed-in callers also get their completion per date.",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Quizymode.Api.Features.DailyQuiz.DailyQuiz.ArchiveResponse"
                 }
               }
             }
@@ -6028,6 +6064,42 @@
                 }
               }
             }
+          }
+        }
+      }
+    },
+    "/users/me/set-progress": {
+      "get": {
+        "tags": [
+          "Users"
+        ],
+        "summary": "Get the current user's known-item counts per set",
+        "description": "scopes is a comma-separated list of at most 12 set keys: s/{categorySlug}[/{keyword}[/{keyword}]] or c/{collectionId}. Returns, per scope, how many items the caller currently knows (answered correctly last in a live quiz or a review) that are still visible to the caller; deleted or no longer visible items do not count. Private to the caller and never cached. Requires authentication.",
+        "parameters": [
+          {
+            "name": "scopes",
+            "in": "query",
+            "schema": {
+              "$ref": "#/components/schemas/System.String"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Quizymode.Api.Features.Progress.GetSetProgress.Response"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "401": {
+            "description": "Unauthorized"
           }
         }
       }
@@ -14593,6 +14665,46 @@
           }
         }
       },
+      "Quizymode.Api.Features.DailyQuiz.DailyQuiz.ArchiveEntryDto": {
+        "required": [
+          "date",
+          "total",
+          "completion"
+        ],
+        "type": "object",
+        "properties": {
+          "date": {
+            "description": "The archived UTC date, yyyy-MM-dd.",
+            "$ref": "#/components/schemas/System.String"
+          },
+          "total": {
+            "description": "The number of active items in that day's stored set.",
+            "$ref": "#/components/schemas/System.Int32"
+          },
+          "completion": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "description": "The caller's completion for that date; always null for anonymous callers.",
+                "$ref": "#/components/schemas/Quizymode.Api.Features.DailyQuiz.DailyQuiz.CompletionDto"
+              }
+            ]
+          }
+        }
+      },
+      "Quizymode.Api.Features.DailyQuiz.DailyQuiz.ArchiveResponse": {
+        "required": [
+          "days"
+        ],
+        "type": "object",
+        "properties": {
+          "days": {
+            "$ref": "#/components/schemas/System.Collections.Generic.ListOfQuizymode.Api.Features.DailyQuiz.DailyQuiz.ArchiveEntryDto"
+          }
+        }
+      },
       "Quizymode.Api.Features.DailyQuiz.DailyQuiz.CompleteRequest": {
         "required": [
           "date",
@@ -18051,6 +18163,32 @@
           }
         }
       },
+      "Quizymode.Api.Features.Progress.GetSetProgress.Response": {
+        "required": [
+          "scopes"
+        ],
+        "type": "object",
+        "properties": {
+          "scopes": {
+            "$ref": "#/components/schemas/System.Collections.Generic.ListOfQuizymode.Api.Features.Progress.GetSetProgress.ScopeProgress"
+          }
+        }
+      },
+      "Quizymode.Api.Features.Progress.GetSetProgress.ScopeProgress": {
+        "required": [
+          "scope",
+          "knownCount"
+        ],
+        "type": "object",
+        "properties": {
+          "scope": {
+            "$ref": "#/components/schemas/System.String"
+          },
+          "knownCount": {
+            "$ref": "#/components/schemas/System.Int32"
+          }
+        }
+      },
       "Quizymode.Api.Features.Ratings.AddOrUpdateRating.Request": {
         "required": [
           "stars"
@@ -19811,6 +19949,16 @@
                 "$ref": "#/components/schemas/System.String"
               }
             ]
+          },
+          "correctItemIds": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/components/schemas/System.Collections.Generic.ListOfSystem.Guid"
+              }
+            ]
           }
         }
       },
@@ -21249,6 +21397,12 @@
           "$ref": "#/components/schemas/Quizymode.Api.Features.DailyQuiz.DailyQuiz.AdminItemDto"
         }
       },
+      "System.Collections.Generic.ListOfQuizymode.Api.Features.DailyQuiz.DailyQuiz.ArchiveEntryDto": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/Quizymode.Api.Features.DailyQuiz.DailyQuiz.ArchiveEntryDto"
+        }
+      },
       "System.Collections.Generic.ListOfQuizymode.Api.Features.Featured.GetFeatured.FeaturedCollectionDto": {
         "type": "array",
         "items": {
@@ -21391,6 +21545,12 @@
         "type": "array",
         "items": {
           "$ref": "#/components/schemas/Quizymode.Api.Features.Personalization.GetTopicActivity.TopicDto"
+        }
+      },
+      "System.Collections.Generic.ListOfQuizymode.Api.Features.Progress.GetSetProgress.ScopeProgress": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/Quizymode.Api.Features.Progress.GetSetProgress.ScopeProgress"
         }
       },
       "System.Collections.Generic.ListOfQuizymode.Api.Features.Starter.StarterPool.StarterItemResponse": {

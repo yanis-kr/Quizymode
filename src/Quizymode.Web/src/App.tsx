@@ -8,6 +8,7 @@ import QuizModePage from "./features/items/pages/QuizModePage";
 import LearnModePage from "./features/items/pages/LearnModePage";
 import LoginPage from "./features/auth/pages/LoginPage";
 import SignUpPage from "./features/auth/pages/SignUpPage";
+import ResetPasswordPage from "./features/auth/pages/ResetPasswordPage";
 import AuthCallbackPage from "./features/auth/pages/AuthCallbackPage";
 import ItemDetailPage from "./features/items/pages/ItemDetailPage";
 import CollectionsPage from "./features/collections/pages/CollectionsPage";
@@ -20,6 +21,7 @@ import { LazyRoute } from "./components/LazyRoute";
 import { lazyPage } from "./utils/lazyPage";
 import FeaturedPage from "./features/featured/pages/FeaturedPage";
 import DailyQuizPage from "./features/learningLoop/pages/DailyQuizPage";
+import DailyArchivePage from "./features/learningLoop/pages/DailyArchivePage";
 import StarterQuizPage from "./features/starter/StarterQuizPage";
 
 // Route-level code splitting (PERF-001): anonymous landing/study pages stay eager; admin, authoring,
@@ -139,10 +141,12 @@ function App() {
         <Route path="/games/sort-it/:category?" element={<SortItPage />} />
         <Route path="/games/:category?" element={<GamesHubPage />} />
         <Route path="/daily" element={<DailyQuizPage />} />
+        <Route path="/daily/archive" element={<DailyArchivePage />} />
         <Route path="/start" element={<StarterQuizPage />} />
         <Route path="/progress" element={<ProgressPage />} />
         <Route path="/login" element={<LoginPage />} />
         <Route path="/signup" element={<SignUpPage />} />
+        <Route path="/reset-password" element={<ResetPasswordPage />} />
         <Route path="/auth/callback" element={<AuthCallbackPage />} />
         <Route path="/create" element={<CreateHubPage />} />
         {/* Legacy create URLs (AC 2.2.5): outside RequireAuthRoute so anonymous return-to uses the new path. */}
