@@ -18,6 +18,8 @@ import { useInterests } from "@/features/interests/useInterests";
 import { TopicOnboardingPrompt } from "../TopicOnboardingPrompt";
 import { PersonalizedLanes } from "../PersonalizedLanes";
 import { ContinueStudyingCard } from "../ContinueStudyingCard";
+import { NextUpCard } from "../NextUpCard";
+import { useNextUp } from "../useNextUp";
 import {
   homeCategoryCards,
 } from "../homePageData";
@@ -269,6 +271,8 @@ const HomePage = () => {
             ? "focused"
             : "full";
   const focused = layout === "focused";
+  // A visitor with a completed quiz gets one Next up card instead of the first-visit hero (#670, AC 3.31).
+  const nextUp = useNextUp();
   const firstTopic = interests.find(isTopicPath);
   const { data: categoriesData } = useQuery({
     queryKey: ["home", "categories"],
@@ -334,6 +338,9 @@ const HomePage = () => {
           <div className="relative mx-auto max-w-7xl px-1.5 py-2 sm:px-6 lg:px-8 flex flex-col gap-2">
 
             {/* ── Hero card ── */}
+            {nextUp ? (
+              <NextUpCard choice={nextUp} />
+            ) : (
             <section className="rounded-[24px] border border-on-panel/12 bg-on-panel/8 p-2 shadow-2xl shadow-slate-950/30 backdrop-blur sm:flex sm:items-center sm:justify-between sm:gap-6 sm:px-5 sm:py-3">
               <div className="max-w-3xl">
                 <h1 className="text-xl font-semibold tracking-tight text-on-panel sm:text-2xl lg:text-[1.65rem] lg:leading-snug">
@@ -365,6 +372,7 @@ const HomePage = () => {
                 </Link>
               </div>
             </section>
+            )}
 
             <ContinueStudyingCard />
 

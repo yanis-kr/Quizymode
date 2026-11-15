@@ -90,6 +90,7 @@ export function GuestHistoryCard() {
   const { summaries, clear } = useGuestHistory();
   const [clearFailed, setClearFailed] = useState(false);
   const [clearedNotice, setClearedNotice] = useState(false);
+  const [infoOpen, setInfoOpen] = useState(false);
 
   if (isAuthenticated || isLoading) return null;
   const latest = summaries[0];
@@ -139,11 +140,22 @@ export function GuestHistoryCard() {
         </button>
       </div>
       <SourceActions summary={latest} />
-      <p className="mt-2 text-[11px] leading-4 text-slate-400">
-        Saved in this browser only — not in an account or on other devices. Keeps your last{" "}
-        {GUEST_HISTORY_MAX_SUMMARIES} results for up to {GUEST_HISTORY_RETENTION_DAYS} days; clearing browser data
-        removes it.
-      </p>
+      <button
+        type="button"
+        aria-expanded={infoOpen}
+        aria-controls="guest-history-info"
+        onClick={() => setInfoOpen((open) => !open)}
+        className="mt-2 rounded-full px-1 py-1 text-[11px] font-medium text-on-panel-muted underline underline-offset-2 hover:text-on-panel focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-200"
+      >
+        Where is this saved?
+      </button>
+      {infoOpen && (
+        <p id="guest-history-info" className="mt-1 text-[11px] leading-4 text-slate-400">
+          Saved in this browser only — not in an account or on other devices. Keeps your last{" "}
+          {GUEST_HISTORY_MAX_SUMMARIES} results for up to {GUEST_HISTORY_RETENTION_DAYS} days; clearing browser data
+          removes it.
+        </p>
+      )}
       {clearFailed && (
         <p className="mt-1 text-xs text-amber-ink" role="alert">
           Guest history could not be cleared in this browser. Try clearing site data in your browser settings.

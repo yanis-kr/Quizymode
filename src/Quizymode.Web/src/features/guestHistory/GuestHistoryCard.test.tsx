@@ -86,6 +86,12 @@ describe("GuestHistoryCard", () => {
     expect(screen.getByRole("heading", { name: /your last quiz/i })).toBeInTheDocument();
     expect(screen.getByText(/4 \/ 5 correct/)).toBeInTheDocument();
     expect(screen.getByText(/1 missed/)).toBeInTheDocument();
+    // AC 3.31.3: the storage disclaimer sits behind an info link, not inline.
+    expect(screen.queryByText(/saved in this browser only/i)).not.toBeInTheDocument();
+    const info = screen.getByRole("button", { name: /where is this saved/i });
+    expect(info).toHaveAttribute("aria-expanded", "false");
+    await userEvent.click(info);
+    expect(info).toHaveAttribute("aria-expanded", "true");
     expect(screen.getByText(/saved in this browser only/i)).toBeInTheDocument();
     expect(screen.queryByText(/resume/i)).not.toBeInTheDocument();
     expect(await screen.findByText("Fun Trivia Facts")).toBeInTheDocument();
