@@ -1400,6 +1400,7 @@ One uploaded picture is taken through its whole life by `playwright/mediaRelease
 
 - **AC 3.36.1** [Anyone] [verify: sql] After the production seed sync, `GET /api/items?category=languages&keywords=idioms,funny` returns every agreed funny-expression item exactly once, and a second sync does not change the count.
 - **AC 3.36.2** [Anyone] [verify: unit] Only primary `idioms` items in the repo-managed seed source (`data/seed-source/items/languages/`) carry the ordinary keyword `funny`; and `idiom-practice` items never do (enforced by `scripts/validate_seed_source.py`).
+- **AC 3.36.3** [Anyone] [verify: unit] Every funny-expression item's question shows the English literal meaning and asks what the expression means: "What does the <Language> idiom '...' (literally: \"...\") mean?" (enforced by scripts/seed_source_common.py validate_funny_keyword and its tests).
 
 ### AC 3.27 Answer rationale per option (#367)
 

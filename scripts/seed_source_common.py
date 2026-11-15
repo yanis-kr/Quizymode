@@ -346,6 +346,12 @@ def validate_funny_keyword(item: SourceItem) -> list[str]:
             f"{item.path} item {item.index}: keyword 'funny' is only allowed on primary idioms items "
             f"(languages/<language>/idioms, never idiom-practice)."
         ]
+    question: str = item.question or ""
+    if '(literally: "' not in question or not question.endswith("mean?"):
+        return [
+            f"{item.path} item {item.index}: 'funny' items must use the question pattern "
+            f"What does the <Language> idiom '...' (literally: \"...\") mean?"
+        ]
     return []
 
 
