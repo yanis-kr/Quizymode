@@ -15,7 +15,15 @@ using Xunit;
 
 namespace Quizymode.Api.Tests.Features.Media;
 
+/// <summary>
+/// The media meter is static and shared by every test in the process. This collection runs on its own, so the
+/// measurements a test here captures come only from that test.
+/// </summary>
+[CollectionDefinition("MediaMetrics", DisableParallelization = true)]
+public sealed class MediaMetricsCollectionDefinition { }
+
 /// <summary>AC 3.28.10: media metrics use small fixed label sets, and media logs never carry URLs, keys or picture data.</summary>
+[Collection("MediaMetrics")]
 public sealed class MediaMetricsTests : DatabaseTestFixture
 {
     private sealed record Measurement(string Instrument, long Value, Dictionary<string, string?> Tags);
@@ -84,6 +92,19 @@ public sealed class MediaMetricsTests : DatabaseTestFixture
         return listener;
     }
 
+    /// <summary>Returns the measurements once one matches, or what has arrived after 10 seconds so the assertions report what is missing.</summary>
+    private static async Task<Measurement[]> SnapshotWhenAsync(List<Measurement> sink, Func<Measurement, bool> arrived)
+    {
+        DateTime deadline = DateTime.UtcNow.AddSeconds(10);
+        while (true)
+        {
+            Measurement[] snapshot;
+            lock (sink) { snapshot = [.. sink]; }
+            if (snapshot.Any(arrived) || DateTime.UtcNow >= deadline) return snapshot;
+            await Task.Delay(20);
+        }
+    }
+
     [Fact]
     public async Task UploadsAndDeliveries_AreCountedWithBoundedLabelsAndNoIds()
     {
@@ -101,8 +122,9 @@ public sealed class MediaMetricsTests : DatabaseTestFixture
 
         created.StatusCode.Should().Be(HttpStatusCode.Created);
         refused.StatusCode.Should().Be(HttpStatusCode.BadRequest);
-        Measurement[] snapshot;
-        lock (seen) { snapshot = [.. seen]; }
+        // The server records a delivery after it has written the body, so the client can finish reading first.
+        // Wait for the last delivery measurement instead of reading the list straight away.
+        Measurement[] snapshot = await SnapshotWhenAsync(seen, m => m.Instrument == "quizymode.media.delivered_bytes" && m.Value == expectedBytes);
         snapshot.Should().Contain(m => m.Instrument == "quizymode.media.uploads" && m.Tags["outcome"] == "ready");
         snapshot.Should().Contain(m => m.Instrument == "quizymode.media.uploads" && m.Tags["outcome"] == "Media.UnsupportedFormat");
         snapshot.Should().Contain(m => m.Instrument == "quizymode.media.deliveries" && m.Tags["mode"] == "proxy" && m.Tags["outcome"] == "ok");
