@@ -30,6 +30,7 @@ Helper (prints JSON, except `brief` and `status`, which print text): `node "${CL
 - Read-only on GitHub and code. Allowed writes: files under `.qm/bundles/<id>/` only. No branches, no issue comments, no labels.
 - Analyze `origin/main`, not the current checkout (it may be a dirty feature branch): `git fetch origin main`, then `git grep -n <pattern> origin/main -- <path>` and `git show origin/main:<path>`.
 - Follow AGENTS.md and CLAUDE.md. Never print secret values.
+- Size and queue: record a size (`xs|s|m|l`) for every issue in the manifest, matching its `size:` label if it has one; do not bundle an `l` issue (it must be split first). Item-data fixes (only `data/seed-source/items/**` and `_registry/**`) are the smallest kind: list them first, with no version bump and no AC edit (AGENTS.md exemption, AC 7.11.5). If 8 or more non-epic `status:ready` issues are already open, say the queue is full in the brief. This phase still writes nothing to GitHub.
 - Fable window: open. If Fable is unavailable or the window has ended, use `opus` for the step 8 review. Never claim a model you did not get.
 
 ## Steps

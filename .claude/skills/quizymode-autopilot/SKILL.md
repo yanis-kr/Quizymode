@@ -97,7 +97,8 @@ Fable is scarce: only the two rows below. Pass `model:` on every Agent call, bec
 3. Build two lane queues for the whole run, not just the next batch:
    - Prefer one frontend lane and one backend lane, so only one lane compiles .NET. If the backlog does not split that way, fill both lanes and rely on the .NET mutex (§ Local resources).
    - Put related issues (same feature area, same files) in the same lane, in order, so they stack instead of conflicting.
-   - Put the shortest and safest issues first so the first batch closes quickly.
+   - Put the shortest and safest issues first so the first batch closes quickly. Order by the `size:` label, `size:xs` then `size:s` then `size:m`, within a priority; an unlabeled issue counts as `size:m`, and a `size:l` issue is not picked until it has been split.
+   - Item-data fixes (`data/seed-source/items/**` and `_registry/**` only) are the cheapest issues: no version bump, no `docs/AC.md` edit, no build or deploy (AGENTS.md § exemption, AC 7.11.5). Put them first. They ship by seed-sync at the merge SHA, which needs the owner's confirmation unless the issue records approval.
 4. A batch is one release. Target 6 to 8 issues. Close a batch when any of these is true: it has 8 ready issues; it has at least 4 ready issues and no release is in flight; 90 minutes have passed since its first issue became ready; the deadline rule says so.
    - Small backlog: if fewer than 4 issues are pickable, do not wait for 6 to 8. Make one batch of what there is and close it when every issue in it is ready. A release costs about 17 minutes of CI and deploy (measured on runs of 2026-11-14), which is cheaper than idling for a fuller batch. Run these coder-only when rated small.
 
@@ -149,7 +150,7 @@ The integrator is the only writer of release state. At most one release is in fl
 1. In the release worktree: `git fetch origin main`, `git switch -c release/<batch-id> origin/main`.
 2. Merge each ready lane branch in planned order. If one conflicts, skip it, record it as blocked (it goes to the front of its lane's queue for a rebase), and release the rest.
 3. Place each AC fragment into its feature section of `docs/AC.md`. Do not add chunk-named headings.
-4. Bump `QuizymodeVersion` once (MINOR if any shipped issue is a feature, else PATCH) and align `src/Quizymode.Web/package.json`.
+4. Bump `QuizymodeVersion` once (MINOR if any shipped issue is a feature, else PATCH) and align `src/Quizymode.Web/package.json`. Skip the bump and the `docs/AC.md` edit when every shipped issue is item-data-only (see Pick and split step 3); any other change in the batch bumps as usual.
 5. If any API surface changed, regenerate OpenAPI with `.\scripts\verify-openapi.ps1 -Configuration Release`. Never resolve that file by hand.
 6. Light local check, under the .NET mutex: `npm run build`; `dotnet build` (skip if step 5 already built); the filtered tests of every shipped issue, in one `dotnet test --filter` and one `npm test -- --run` invocation; the high-risk scans from `quizymode-prepush` (constructor signature changes, removed UI text). Do not run the full suites or coverage here. CI is the full run.
 
