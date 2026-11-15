@@ -69,12 +69,18 @@ describe("result share builders", () => {
     expect(starter.url).toBe(`${ORIGIN}/start?utm_source=share&utm_medium=share&utm_campaign=quiz_result&utm_content=global`);
   });
 
-  it("builds the daily grid in roster order", () => {
-    const share = buildDailyShare({ date: "2026-10-20", results: [true, false, true, true], origin: ORIGIN });
-    expect(share.text).toBe("Quizymode Daily 2026-10-20 3/4\n\u{1F7E9}\u{1F7E5}\u{1F7E9}\u{1F7E9}");
+  it("AC 3.34.1 builds the spoiler-free daily text: date, score, green and grey squares, streak and /daily link", () => {
+    const share = buildDailyShare({ date: "2026-10-20", results: [true, false, true, null], streak: 4, origin: ORIGIN });
+    expect(share.text).toBe("Quizymode Daily 2026-10-20 2/3\n\u{1F7E9}⬜\u{1F7E9}⬜\n\u{1F525} 4-day streak");
     expect(shareCopyText(share)).toBe(
       `${share.text}\n${ORIGIN}/daily?utm_source=share&utm_medium=share&utm_campaign=quiz_result&utm_content=daily`
     );
+    expect(share.text).not.toContain("\u{1F7E5}");
+  });
+
+  it("AC 3.34.1 omits the streak line when there is no streak", () => {
+    const share = buildDailyShare({ date: "2026-10-20", results: [true], origin: ORIGIN });
+    expect(share.text).toBe("Quizymode Daily 2026-10-20 1/1\n\u{1F7E9}");
   });
 
   it("picks the builder from the run scope", () => {

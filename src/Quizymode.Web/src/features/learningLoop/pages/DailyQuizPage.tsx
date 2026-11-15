@@ -234,6 +234,7 @@ const DailyQuizPage = () => {
                 buildDailyShare({
                   date: data.date,
                   results: run.itemIds.map((id) => (run.skipped.includes(id) ? null : run.outcomes[id]?.isCorrect === true)),
+                  streak: resultsStreak,
                   origin: window.location.origin,
                 })
               }
