@@ -256,6 +256,12 @@ const LayoutContent = ({ children }: LayoutProps) => {
                 >
                   Collections
                 </Link>
+                <Link
+                  to="/games"
+                  className={desktopNavLinkClass(isPathActive("/games"))}
+                >
+                  Games
+                </Link>
                 {isAuthenticated && (
                   <>
                     <Link
@@ -368,6 +374,13 @@ const LayoutContent = ({ children }: LayoutProps) => {
                 onClick={closeMobileMenu}
               >
                 Collections
+              </Link>
+              <Link
+                to="/games"
+                className={mobileNavLinkClass(isPathActive("/games"))}
+                onClick={closeMobileMenu}
+              >
+                Games
               </Link>
               {isAuthenticated && (
                 <>

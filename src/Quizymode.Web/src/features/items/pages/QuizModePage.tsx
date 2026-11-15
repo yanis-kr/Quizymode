@@ -35,6 +35,7 @@ import { StarIcon as StarIconSolid } from "@heroicons/react/24/solid";
 import type { CollectionRatingResponse } from "@/types/api";
 import { getCategoryScopeModeConfig } from "@/features/categories/utils/categoryScopeMode";
 import { getStudyScopeKeywords, parseSizeParam } from "@/features/items/utils/studyScopeParams";
+import { buildGamePath } from "@/features/games/gameScope";
 import { QuizCompletionView } from "@/features/items/quiz/QuizCompletionView";
 import { useStudyHotkeys } from "@/components/study/useStudyHotkeys";
 import { useQuestionPictureStatuses } from "@/components/study/pictureGate";
@@ -1312,6 +1313,19 @@ const QuizModePageContent = ({ resumeRequested = false, initialNotice = null }: 
     ? buildCollectionPath(collectionId, collectionInfo?.name)
     : null;
 
+  // The set just played: its collection, else its category scope, else the hub (#675, AC 3.35.3).
+  const gamesPath = collectionId
+    ? buildGamePath({ kind: "collection", collectionId, collectionName: collectionInfo?.name })
+    : category
+      ? buildGamePath({
+          kind: "category",
+          category,
+          navigationKeywords,
+          filterKeywords,
+          search: filterKeywords.length > 0 ? `?keywords=${filterKeywords.join(",")}` : "",
+        })
+      : "/games";
+
   if (run.view !== "active") {
     return (
       <div className="py-4 sm:py-6">
@@ -1320,6 +1334,7 @@ const QuizModePageContent = ({ resumeRequested = false, initialNotice = null }: 
           items={items}
           browsePath={collectionListPath ?? categoryScopePath}
           browseLabel={collectionListPath ? "Back to collection" : "Browse topic"}
+          gamesPath={gamesPath}
           onReviewMistakes={() => setRun((current) => current ? reduceQuizRun(current, { type: "review-mistakes" }) : current)}
           onReviewAll={() => setRun((current) => current ? reduceQuizRun(current, { type: "review-all" }) : current)}
           onBackToResults={() => setRun((current) => current ? reduceQuizRun(current, { type: "show-summary" }) : current)}

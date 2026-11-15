@@ -347,12 +347,20 @@ const HomePage = () => {
                 )}
                 {(!focused || !isAuthenticated) && <p className="mt-1 text-xs font-semibold text-sky-ink">No account needed.</p>}
               </div>
-              <div className="mt-3 flex shrink-0 items-center sm:mt-0">
+              <div className="mt-3 flex shrink-0 flex-col items-stretch gap-2 sm:mt-0 sm:flex-row sm:items-center">
                 <Link
                   to="/start"
                   className="inline-flex w-full items-center justify-center gap-2 rounded-full bg-[linear-gradient(135deg,#38bdf8_0%,#2563eb_100%)] px-6 py-2.5 text-sm font-semibold text-white shadow-lg shadow-sky-500/30 transition hover:scale-[1.02] hover:shadow-sky-400/40 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-200 focus-visible:ring-offset-2 focus-visible:ring-offset-slate-950 sm:w-auto"
                 >
                   Play a 5-question quiz
+                  <ArrowRightIcon className="h-4 w-4" />
+                </Link>
+                {/* Always visible, including on the focused Home where the catalog lanes are collapsed (#675, AC 3.35.2). */}
+                <Link
+                  to="/games"
+                  className="inline-flex w-full items-center justify-center gap-2 rounded-full border border-on-panel/25 bg-on-panel/10 px-6 py-2.5 text-sm font-semibold text-on-panel transition hover:bg-on-panel/15 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-200 focus-visible:ring-offset-2 focus-visible:ring-offset-slate-950 sm:w-auto"
+                >
+                  Play a game
                   <ArrowRightIcon className="h-4 w-4" />
                 </Link>
               </div>

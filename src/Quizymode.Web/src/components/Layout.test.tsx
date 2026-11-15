@@ -88,6 +88,13 @@ describe("Layout", () => {
     expect(screen.queryByRole("link", { name: "Generate Quiz" })).not.toBeInTheDocument();
   });
 
+  it("links anonymous visitors to /games from the navigation, desktop and mobile (AC 3.35.1)", async () => {
+    renderLayout();
+    expect(screen.getByRole("link", { name: "Games" })).toHaveAttribute("href", "/games");
+    await userEvent.click(screen.getByRole("button", { name: "Open main menu" }));
+    expect(screen.getAllByRole("link", { name: "Games" })).toHaveLength(2);
+  });
+
   it("hides the Create nav link from anonymous users", () => {
     renderLayout();
     expect(screen.queryByRole("link", { name: "Create" })).not.toBeInTheDocument();
