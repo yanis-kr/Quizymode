@@ -25,6 +25,7 @@ jobs:
     outputs:
       web: ${{ steps.scope.outputs.web }}
       api: ${{ steps.scope.outputs.api }}
+      apiTests: ${{ steps.scope.outputs.apiTests }}
       any: ${{ steps.scope.outputs.any }}
     steps:
       - name: Checkout
@@ -212,7 +213,7 @@ jobs:
 
   backend-tests:
     needs: changes
-    if: needs.changes.outputs.api == 'true'
+    if: needs.changes.outputs.api == 'true' || needs.changes.outputs.apiTests == 'true'
     runs-on: ubuntu-latest
     permissions:
       contents: read

@@ -114,9 +114,10 @@ If available, invoke the `quizymode-prepush` skill (`$quizymode-prepush`). Other
 
 To move through the backlog faster, related small/medium issues are bundled into a single `epic`-labeled GitHub issue and implemented together as one branch → one PR → one production deploy, instead of one PR per issue.
 
-- An epic issue's body has a checklist of sub-issue numbers (`- [ ] #124`) and lives under the same `area:` label as its sub-issues.
+- An epic issue's body has a checklist of its sub-issues and lives under the same `area:` label as its sub-issues. A sub-issue is plain text in the checklist until it is about to be refined; file it then and replace the text with `- [ ] #124`. Do not file sub-issues ahead of need.
 - When asked to work an epic, implement every unchecked sub-issue on one branch/worktree, running the normal specialist pipeline (architect → ux-designer → reviewer → coder → tester → reviewer final pass) across the combined scope.
 - Validate each sub-issue locally and capture evidence per sub-issue (see § Issue Closure Evidence), but hold that evidence locally or in the PR description — do not attach it to the sub-issues yet, since they are not done until production confirms them.
+- Bundles execute through `qm-implement-bundle` or `quizymode-autopilot` with two path-disjoint lanes, integrator-only version/AC/OpenAPI edits, filtered per-issue tests, and full gates once per release.
 - Open exactly one PR for the whole epic. Do not merge or deploy without explicit user go-ahead, same as any other change.
 - After merge and production deploy: verify each sub-issue in prod, then attach the evidence to each individual sub-issue and close it, then close the epic once every sub-issue is closed.
 - If production reveals a defect in scope, file a **new** issue referencing the epic by number. Do not reopen a closed sub-issue to absorb a post-deploy regression.
@@ -171,6 +172,7 @@ Every AC in `docs/AC.md` carries `[verify: <method>]`. The method decides what c
 - If code changes affect application behavior, keep `docs/AC.md` up to date in the same change.
 - The canonical app semantic version lives in `Directory.Build.props` as `QuizymodeVersion`. For every completed change set, bump it locally and choose the bump type intentionally: `PATCH` for fixes/internal polish without new capabilities, `MINOR` for backward-compatible features or noticeable user-visible improvements, and `MAJOR` for breaking changes or major contract/workflow shifts.
 - Keep `src/Quizymode.Web/package.json` and any surfaced version displays aligned with `QuizymodeVersion` when you bump the version.
+- **Exemption (owner decision 2026-11-15, #688):** a change set that touches only `data/seed-source/items/**` and `data/seed-source/_registry/**` (item content fixes) does not bump `QuizymodeVersion` and does not edit `docs/AC.md`. CI runs the API tests and skips build and deploy for it (AC 7.11.5). Release it with `ac-gate.mjs --issues <n> --no-ac <n>`. The change reaches prod only through an admin seed-sync run at the merge SHA (preview first). That is a prod database write: it needs the owner's confirmation unless the issue records approval. Any other file in the change set removes the exemption.
 - After each completed change, include a short commit title suggestion in the final response.
 
 ## Agent Environment Variables

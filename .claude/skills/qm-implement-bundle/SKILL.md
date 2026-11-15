@@ -11,6 +11,9 @@ disallowed-tools:
 allowed-tools:
   - Bash(node *bundle.mjs *)
   - Bash(git -C C:/Projects/Quizymode-wt-bundle-* *)
+  - Bash(git -C C:/Projects/Quizymode-wt-lane-* *)
+  - Bash(git -C C:/Projects/Quizymode-wt-release *)
+  - Bash(cmd /c mklink /J *)
   - Bash(git fetch *)
   - Bash(git branch *)
   - Bash(git worktree remove *)
@@ -81,8 +84,8 @@ Full detail, commands, and the reconcile table are in [references/playbook.md](r
 1. **Verify.** `git fetch origin main`, then `BUNDLE state-init $bundle_id` (add `--take-over` for `resume`). It checks the manifest hash against the approval, repo identity, source commit, the lock, and one-bundle-at-a-time, and it reports source drift. Then `BUNDLE verify $bundle_id --gh` for issue changes since refinement. Rejection: report the reason in two lines and stop.
 2. **Reconcile** existing progress with Git and GitHub (playbook § Reconcile) so nothing is redone or duplicated.
 3. **Handle drift** per `policies.sourceDrift` and closed or edited issues (playbook § Drift).
-4. **Prepare** the release worktree and branch (playbook § Branches). Never work in the user's main checkout.
-5. **Per issue, in `order`**, skipping ones already `integrated` or later: check dependencies, branch, plan, implement, validate every AC with real evidence, merge into the release branch (playbook § Per-issue loop).
+4. **Prepare** the persistent lane and release worktrees (playbook § Branches). Never work in the user's main checkout.
+5. **Per issue**, in lanes when `BUNDLE lanes` reports disjoint paths (playbook § Lanes), in `order` within a lane, skipping ones already `integrated` or later: check dependencies, branch, plan, implement, validate every AC with real evidence, merge into the release branch (playbook § Per-issue loop).
 6. **Integrate**: one version bump, AC.md and OpenAPI consistency, all `releaseGates` on the combined branch, one reviewer final pass on the combined diff (playbook § Integration).
 7. **Release** per `releaseMode`: one PR from the release branch, green required checks, then for `auto-merge-deploy` run `BUNDLE merge-gate $bundle_id --pr <n>` and merge only on exit 0, watch CI on main and Deploy, verify prod, publish evidence, close issues, roll back on the trigger (playbook § Release).
 8. **Finish**: set phase `done`, `done_partial`, or `blocked_terminal`, then reply with the final report.
