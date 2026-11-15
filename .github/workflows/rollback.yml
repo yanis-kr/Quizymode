@@ -4,7 +4,7 @@ on:
   workflow_dispatch:
     inputs:
       previous_sha:
-        description: Previously deployed main SHA to restore
+        description: Main SHA whose API image to restore (CI builds an API image only for commits that change the API)
         required: true
         type: string
       failed_sha:

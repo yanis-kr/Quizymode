@@ -16,6 +16,44 @@ env:
   IMAGE_NAME: quizymode
 
 jobs:
+  # AC 7.11.1: decides which parts of the app this change touches so the jobs below can skip unrelated work.
+  # Required checks still report (a skipped job counts as passed), so this is job-level gating, never workflow `paths:`.
+  changes:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    outputs:
+      web: ${{ steps.scope.outputs.web }}
+      api: ${{ steps.scope.outputs.api }}
+      any: ${{ steps.scope.outputs.any }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v7
+        with:
+          fetch-depth: 0
+
+      - name: Classify changed files
+        id: scope
+        env:
+          EVENT_NAME: ${{ github.event_name }}
+          BASE_REF: ${{ github.base_ref }}
+          PUSH_BEFORE: ${{ github.event.before }}
+        run: |
+          if [ "${EVENT_NAME}" = "pull_request" ]; then
+            BASE="$(git merge-base "origin/${BASE_REF}" HEAD || true)"
+          else
+            BASE="${PUSH_BEFORE}"
+          fi
+          node scripts/ci/classify-changes.mjs "${BASE}" HEAD | tee change-scope.json
+
+      - name: Upload change scope for Deploy
+        if: github.event_name == 'push'
+        uses: actions/upload-artifact@v7
+        with:
+          name: change-scope
+          path: change-scope.json
+          retention-days: 7
+
   automation-contract:
     runs-on: windows-latest
     permissions:
@@ -52,7 +90,7 @@ jobs:
           node-version: 22
 
       - name: Test the validation scripts
-        run: node --test scripts/tests/ac-validation.test.mjs
+        run: node --test scripts/tests/ac-validation.test.mjs scripts/tests/classify-changes.test.mjs
 
       - name: Check the ACs this PR adds or edits
         if: github.event_name == 'pull_request'
@@ -86,6 +124,8 @@ jobs:
 
   # Web build, bundle checks and lint. Runs next to frontend-tests so neither waits for the other.
   frontend:
+    needs: changes
+    if: needs.changes.outputs.web == 'true'
     runs-on: ubuntu-latest
     permissions:
       contents: read
@@ -136,6 +176,8 @@ jobs:
         run: npm run lint
 
   frontend-tests:
+    needs: changes
+    if: needs.changes.outputs.web == 'true'
     runs-on: ubuntu-latest
     permissions:
       contents: read
@@ -169,6 +211,8 @@ jobs:
           retention-days: 7
 
   backend-tests:
+    needs: changes
+    if: needs.changes.outputs.api == 'true'
     runs-on: ubuntu-latest
     permissions:
       contents: read
@@ -221,6 +265,8 @@ jobs:
   # :<sha> here, in parallel with the tests; build-test-publish moves :latest only after every job passed, and
   # Deploy only starts when the whole workflow succeeded.
   api-image:
+    needs: changes
+    if: needs.changes.outputs.api == 'true'
     runs-on: ubuntu-latest
     permissions:
       contents: read
@@ -393,7 +439,7 @@ jobs:
   # Required check. Passes only when every build and test job passed (a skipped job would otherwise count as
   # green), then posts the coverage summary and, on main, moves :latest to the image api-image pushed.
   build-test-publish:
-    needs: [frontend, frontend-tests, backend-tests, api-image]
+    needs: [changes, frontend, frontend-tests, backend-tests, api-image]
     if: always()
     runs-on: ubuntu-latest
     permissions:
@@ -402,37 +448,46 @@ jobs:
       packages: write
       pull-requests: write
     steps:
+      # A job skipped because this change cannot affect it is fine; a failed or cancelled job, or a failed
+      # classifier (which would also make every gated job skip), is not.
       - name: Require every build and test job to pass
         env:
+          CHANGES: ${{ needs.changes.result }}
           RESULTS: ${{ join(needs.*.result, ' ') }}
+          RAN_FRONTEND: ${{ needs.changes.outputs.web }}
+          RAN_BACKEND: ${{ needs.changes.outputs.api }}
         run: |
-          echo "Job results: ${RESULTS}"
+          echo "Job results: ${RESULTS} (web=${RAN_FRONTEND} api=${RAN_BACKEND})"
+          [ "${CHANGES}" = "success" ] || exit 1
           for result in ${RESULTS}; do
-            [ "${result}" = "success" ] || exit 1
+            [ "${result}" = "success" ] || [ "${result}" = "skipped" ] || exit 1
           done
 
       - name: Checkout
         uses: actions/checkout@v7
 
       - name: Download backend coverage and architecture results
+        if: needs.backend-tests.result == 'success'
         uses: actions/download-artifact@v8
         with:
           name: backend-test-results
           path: TestResults
 
       - name: Download frontend coverage summary
+        if: needs.frontend-tests.result == 'success'
         uses: actions/download-artifact@v8
         with:
           name: frontend-coverage
           path: frontend-coverage
 
       - name: Summarize coverage
+        if: needs.backend-tests.result == 'success' && needs.frontend-tests.result == 'success'
         id: summarize_coverage
         shell: pwsh
         run: ./scripts/summarize-coverage.ps1 -ResultsDirectory TestResults/coverage -MarkdownOutputPath coverage-summary.md -JsonOutputPath coverage-summary.json -FrontendCoverageJsonPath frontend-coverage/coverage-summary.json -ArchitectureResultsPath TestResults/architecture/architecture-tests.trx
 
       - name: Comment on coverage summary
-        if: github.event_name == 'pull_request'
+        if: github.event_name == 'pull_request' && steps.summarize_coverage.outcome == 'success'
         continue-on-error: true
         uses: actions/github-script@v9
         env:
@@ -491,7 +546,7 @@ jobs:
             }
 
       - name: Login to GitHub Container Registry
-        if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+        if: github.event_name == 'push' && github.ref == 'refs/heads/main' && needs.api-image.result == 'success'
         uses: docker/login-action@v4
         with:
           registry: ${{ env.REGISTRY }}
@@ -499,13 +554,15 @@ jobs:
           password: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Tag the tested image as latest
-        if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+        if: github.event_name == 'push' && github.ref == 'refs/heads/main' && needs.api-image.result == 'success'
         run: |
           IMAGE_ID="${REGISTRY}/${GITHUB_REPOSITORY_OWNER,,}/${IMAGE_NAME}"
           docker buildx imagetools create --tag "${IMAGE_ID}:latest" "${IMAGE_ID}:${GITHUB_SHA}"
 
   # AC 7.8.4: signed-in E2E on an ephemeral Development stack (Postgres service, API, Vite). No Cognito, no secrets.
   e2e:
+    needs: changes
+    if: needs.changes.outputs.any == 'true'
     runs-on: ubuntu-latest
     timeout-minutes: 25
     permissions:
