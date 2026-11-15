@@ -65,6 +65,9 @@ public sealed class LearningLoopHttpTests : DatabaseTestFixture, IAsyncLifetime
         (await SendAsync(HttpMethod.Get, "/admin/daily-quiz", null)).Should().Be(HttpStatusCode.Unauthorized);
 
         (await SendAsync(HttpMethod.Get, "/daily-quiz", null)).Should().Be(HttpStatusCode.OK);
+        (await SendAsync(HttpMethod.Get, "/daily-quiz/archive", null)).Should().Be(HttpStatusCode.OK);
+        (await SendAsync(HttpMethod.Get, $"/daily-quiz?date={today}", null)).Should().Be(HttpStatusCode.BadRequest, "archive dates are before today");
+        (await SendAsync(HttpMethod.Get, "/daily-quiz?date=2020-01-01", null)).Should().Be(HttpStatusCode.BadRequest);
         (await SendAsync(HttpMethod.Get, "/home/popular-categories", null)).Should().Be(HttpStatusCode.OK);
 
         (await SendAsync(HttpMethod.Get, "/review-queue", member)).Should().Be(HttpStatusCode.OK);

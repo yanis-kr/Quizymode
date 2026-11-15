@@ -30,6 +30,9 @@ public static class DailyQuiz
     public const int SetSize = 5;
     public const int RepeatWindowDays = 30;
     public const int MaxAdminDaysAhead = 7;
+    public const int ArchiveDays = 7;
+    /// <summary>#677: the first curated set; earlier stored sets are never served by the archive.</summary>
+    public static readonly DateOnly ArchiveStartDate = new(2026, 11, 15);
     private const int MaxStreakLookbackDays = 400;
     private const string LoggerCategory = "Quizymode.DailyQuiz";
 
@@ -72,6 +75,13 @@ public static class DailyQuiz
         CompletionDto? Completion,
         int? Streak);
 
+    /// <param name="Date">The archived UTC date, yyyy-MM-dd.</param>
+    /// <param name="Total">The number of active items in that day's stored set.</param>
+    /// <param name="Completion">The caller's completion for that date; always null for anonymous callers.</param>
+    public sealed record ArchiveEntryDto(string Date, int Total, CompletionDto? Completion);
+
+    public sealed record ArchiveResponse(List<ArchiveEntryDto> Days);
+
     // Skipped: questions skipped because their picture was unavailable (#403); they are not scored. Defaults to 0.
     public sealed record CompleteRequest(string Date, int Correct, int Total, int Skipped = 0);
 
@@ -99,9 +109,18 @@ public static class DailyQuiz
             app.MapGet("daily-quiz", GetHandler)
                 .WithTags("DailyQuiz")
                 .WithSummary("Get today's daily quiz")
-                .WithDescription("Today's (UTC) global set of up to 5 public items. Signed-in callers also get their completion for the day and streak.")
+                .WithDescription("Today's (UTC) global set of up to 5 public items. Signed-in callers also get their completion for the day and streak. With date=yyyy-MM-dd (one of the 7 days before today, never before 2026-11-15) the stored set of that day is returned for archive play: other dates return 400, a day without a stored set 404, and nothing is created.")
                 .AllowAnonymous()
-                .Produces<DailyQuizResponse>(StatusCodes.Status200OK);
+                .Produces<DailyQuizResponse>(StatusCodes.Status200OK)
+                .Produces(StatusCodes.Status400BadRequest)
+                .Produces(StatusCodes.Status404NotFound);
+
+            app.MapGet("daily-quiz/archive", ArchiveHandler)
+                .WithTags("DailyQuiz")
+                .WithSummary("List the stored daily quiz sets of the last 7 days")
+                .WithDescription("Stored sets for the 7 UTC days before today (never before 2026-11-15), newest first. Past sets are never created. Signed-in callers also get their completion per date.")
+                .AllowAnonymous()
+                .Produces<ArchiveResponse>(StatusCodes.Status200OK);
 
             app.MapPost("daily-quiz/completions", CompleteHandler)
                 .WithTags("DailyQuiz")
@@ -132,12 +151,27 @@ public static class DailyQuiz
                 .Produces(StatusCodes.Status409Conflict);
         }
 
+        private static async Task<IResult> ArchiveHandler(
+            ApplicationDbContext db,
+            IUserContext userContext,
+            CancellationToken cancellationToken)
+        {
+            return Results.Ok(await ListArchiveAsync(db, userContext, DateTime.UtcNow, cancellationToken));
+        }
+
         private static async Task<IResult> GetHandler(
             ApplicationDbContext db,
             IUserContext userContext,
             ILoggerFactory loggerFactory,
-            CancellationToken cancellationToken)
+            CancellationToken cancellationToken,
+            string? date = null)
         {
+            if (date is not null)
+            {
+                Result<DailyQuizResponse> archived = await GetArchiveDayAsync(date, db, userContext, DateTime.UtcNow, cancellationToken);
+                return archived.Match(Results.Ok, _ => CustomResults.Problem(archived));
+            }
+
             return Results.Ok(await GetAsync(db, userContext, DateTime.UtcNow, cancellationToken, loggerFactory.CreateLogger(LoggerCategory)));
         }
 
@@ -197,6 +231,92 @@ public static class DailyQuiz
     {
         DateOnly today = DateOnly.FromDateTime(nowUtc);
         List<DailyQuizItem> set = await EnsureSetAsync(db, today, cancellationToken, logger);
+        return await BuildResponseAsync(db, userContext, today, today, set, cancellationToken);
+    }
+
+    /// <summary>#677: the stored set of one of the last 7 days. Never creates a set; archive play never writes a completion.</summary>
+    public static async Task<Result<DailyQuizResponse>> GetArchiveDayAsync(
+        string dateText,
+        ApplicationDbContext db,
+        IUserContext userContext,
+        DateTime nowUtc,
+        CancellationToken cancellationToken)
+    {
+        DateOnly today = DateOnly.FromDateTime(nowUtc);
+        (DateOnly from, DateOnly to) = ArchiveWindow(today);
+        if (!TryParseDate(dateText, out DateOnly date) || date < from || date > to)
+        {
+            return Result.Failure<DailyQuizResponse>(
+                Error.Validation("DailyQuiz.InvalidArchiveDate", "Only the stored daily quizzes of the last 7 days (UTC, not before 2026-11-15) can be played from the archive."));
+        }
+
+        if (!await db.DailyQuizSets.AsNoTracking().AnyAsync(s => s.Date == date, cancellationToken))
+        {
+            return Result.Failure<DailyQuizResponse>(
+                Error.NotFound("DailyQuiz.ArchiveSetNotFound", "No daily quiz was stored for that date."));
+        }
+
+        List<DailyQuizItem> set = await db.DailyQuizItems.AsNoTracking().Where(d => d.Date == date).ToListAsync(cancellationToken);
+        return Result.Success(await BuildResponseAsync(db, userContext, date, today, set, cancellationToken));
+    }
+
+    public static async Task<ArchiveResponse> ListArchiveAsync(
+        ApplicationDbContext db,
+        IUserContext userContext,
+        DateTime nowUtc,
+        CancellationToken cancellationToken)
+    {
+        DateOnly today = DateOnly.FromDateTime(nowUtc);
+        (DateOnly from, DateOnly to) = ArchiveWindow(today);
+        if (from > to)
+        {
+            return new ArchiveResponse(new List<ArchiveEntryDto>());
+        }
+
+        List<DateOnly> dates = await db.DailyQuizSets.AsNoTracking()
+            .Where(s => s.Date >= from && s.Date <= to)
+            .Select(s => s.Date)
+            .ToListAsync(cancellationToken);
+        Dictionary<DateOnly, int> totals = (await db.DailyQuizItems.AsNoTracking()
+                .Where(d => d.Date >= from && d.Date <= to && d.ExcludedAt == null)
+                .Select(d => d.Date)
+                .ToListAsync(cancellationToken))
+            .GroupBy(d => d)
+            .ToDictionary(g => g.Key, g => g.Count());
+        Dictionary<DateOnly, DailyQuizCompletion> completions = new();
+        if (userContext.IsAuthenticated && !string.IsNullOrEmpty(userContext.UserId))
+        {
+            string userId = userContext.UserId;
+            completions = await db.DailyQuizCompletions.AsNoTracking()
+                .Where(c => c.UserId == userId && c.Date >= from && c.Date <= to)
+                .ToDictionaryAsync(c => c.Date, cancellationToken);
+        }
+
+        List<ArchiveEntryDto> days = dates
+            .Where(d => totals.GetValueOrDefault(d) > 0)
+            .OrderByDescending(d => d)
+            .Select(d => new ArchiveEntryDto(
+                FormatDate(d),
+                totals[d],
+                completions.TryGetValue(d, out DailyQuizCompletion? c) ? ToDto(c) : null))
+            .ToList();
+        return new ArchiveResponse(days);
+    }
+
+    private static (DateOnly From, DateOnly To) ArchiveWindow(DateOnly today)
+    {
+        DateOnly from = today.AddDays(-ArchiveDays);
+        return (from < ArchiveStartDate ? ArchiveStartDate : from, today.AddDays(-1));
+    }
+
+    private static async Task<DailyQuizResponse> BuildResponseAsync(
+        ApplicationDbContext db,
+        IUserContext userContext,
+        DateOnly date,
+        DateOnly today,
+        List<DailyQuizItem> set,
+        CancellationToken cancellationToken)
+    {
         List<Guid> ids = set.Where(s => s.ExcludedAt is null).OrderBy(s => s.Position).Select(s => s.ItemId).ToList();
 
         Dictionary<Guid, Item> items = await db.Items.AsNoTracking()
@@ -216,12 +336,12 @@ public static class DailyQuiz
         if (userContext.IsAuthenticated && !string.IsNullOrEmpty(userContext.UserId))
         {
             List<DailyQuizCompletion> recent = await LoadRecentCompletionsAsync(db, userContext.UserId, today, cancellationToken);
-            DailyQuizCompletion? todays = recent.FirstOrDefault(c => c.Date == today);
-            completion = todays is null ? null : ToDto(todays);
+            DailyQuizCompletion? match = recent.FirstOrDefault(c => c.Date == date);
+            completion = match is null ? null : ToDto(match);
             streak = ComputeStreak(recent.Select(c => c.Date), today);
         }
 
-        return new DailyQuizResponse(FormatDate(today), responses, completion, streak);
+        return new DailyQuizResponse(FormatDate(date), responses, completion, streak);
     }
 
     public static async Task<Result<CompleteResponse>> CompleteAsync(

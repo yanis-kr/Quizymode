@@ -115,6 +115,68 @@ public sealed class DailyQuizTests : DatabaseTestFixture
         DbContext.DailyQuizSets.Count().Should().Be(1);
     }
 
+    private static readonly DateTime ArchiveNow = new(2026, 11, 20, 15, 0, 0, DateTimeKind.Utc);
+
+    [Fact]
+    public async Task Archive_ServesOnlyStoredDaysFromLastSevenDays_AndCreatesNothing()
+    {
+        await SeedPublicItemsAsync(40);
+        await GetAsync(now: ArchiveNow.AddDays(-2));
+        int setsBefore = DbContext.DailyQuizSets.Count();
+
+        Result<Daily.DailyQuizResponse> stored = await Daily.GetArchiveDayAsync("2026-11-18", DbContext, LearningLoopTestData.User(null), ArchiveNow, CancellationToken.None);
+        Result<Daily.DailyQuizResponse> notStored = await Daily.GetArchiveDayAsync("2026-11-17", DbContext, LearningLoopTestData.User(null), ArchiveNow, CancellationToken.None);
+        Result<Daily.DailyQuizResponse> today = await Daily.GetArchiveDayAsync("2026-11-20", DbContext, LearningLoopTestData.User(null), ArchiveNow, CancellationToken.None);
+        Result<Daily.DailyQuizResponse> future = await Daily.GetArchiveDayAsync("2026-11-21", DbContext, LearningLoopTestData.User(null), ArchiveNow, CancellationToken.None);
+        Result<Daily.DailyQuizResponse> tooOld = await Daily.GetArchiveDayAsync("2026-11-12", DbContext, LearningLoopTestData.User(null), ArchiveNow.AddDays(3), CancellationToken.None);
+        Result<Daily.DailyQuizResponse> garbage = await Daily.GetArchiveDayAsync("nope", DbContext, LearningLoopTestData.User(null), ArchiveNow, CancellationToken.None);
+
+        stored.IsSuccess.Should().BeTrue();
+        stored.Value.Items.Should().HaveCount(Daily.SetSize);
+        notStored.Error.Type.Should().Be(ErrorType.NotFound);
+        today.Error.Type.Should().Be(ErrorType.Validation);
+        future.Error.Type.Should().Be(ErrorType.Validation);
+        tooOld.Error.Type.Should().Be(ErrorType.Validation);
+        garbage.Error.Type.Should().Be(ErrorType.Validation);
+        DbContext.DailyQuizSets.Count().Should().Be(setsBefore, "the archive never creates a set");
+        DbContext.DailyQuizCompletions.Count().Should().Be(0, "serving an archive day never writes a completion");
+    }
+
+    [Fact]
+    public async Task ArchiveList_ShowsStoredSetsNewestFirst_WithCompletionForSignedInCallers_AndHidesPreStartDates()
+    {
+        await SeedPublicItemsAsync(60);
+        await GetAsync(now: new DateTime(2026, 11, 14, 9, 0, 0, DateTimeKind.Utc));
+        await GetAsync(now: new DateTime(2026, 11, 16, 9, 0, 0, DateTimeKind.Utc));
+        await GetAsync(now: new DateTime(2026, 11, 18, 9, 0, 0, DateTimeKind.Utc));
+        DbContext.DailyQuizCompletions.Add(new DailyQuizCompletion { UserId = "user-a", Date = new DateOnly(2026, 11, 16), Correct = 3, Total = 5 });
+        await DbContext.SaveChangesAsync();
+        DateTime now = new(2026, 11, 20, 9, 0, 0, DateTimeKind.Utc);
+
+        Daily.ArchiveResponse anonymous = await Daily.ListArchiveAsync(DbContext, LearningLoopTestData.User(null), now, CancellationToken.None);
+        Daily.ArchiveResponse signedIn = await Daily.ListArchiveAsync(DbContext, LearningLoopTestData.User("user-a"), now, CancellationToken.None);
+        Daily.ArchiveResponse beforeStart = await Daily.ListArchiveAsync(DbContext, LearningLoopTestData.User(null), new DateTime(2026, 11, 15, 9, 0, 0, DateTimeKind.Utc), CancellationToken.None);
+
+        anonymous.Days.Select(d => d.Date).Should().Equal("2026-11-18", "2026-11-16");
+        anonymous.Days.Should().OnlyContain(d => d.Completion == null && d.Total == Daily.SetSize);
+        signedIn.Days.Single(d => d.Date == "2026-11-16").Completion!.Correct.Should().Be(3);
+        signedIn.Days.Single(d => d.Date == "2026-11-18").Completion.Should().BeNull();
+        beforeStart.Days.Should().BeEmpty("2026-11-14 is before the curated start and the window ends yesterday");
+    }
+
+    [Fact]
+    public async Task Archive_KeepsExcludedItemsExcluded()
+    {
+        await SeedPublicItemsAsync(40);
+        Daily.DailyQuizResponse day = await GetAsync(now: ArchiveNow.AddDays(-2));
+        Guid removed = Guid.Parse(day.Items[1].Id);
+        await Daily.ExcludeAsync("2026-11-18", removed, DbContext, "admin-1", ArchiveNow.AddDays(-2), CancellationToken.None);
+
+        Result<Daily.DailyQuizResponse> archived = await Daily.GetArchiveDayAsync("2026-11-18", DbContext, LearningLoopTestData.User(null), ArchiveNow, CancellationToken.None);
+
+        archived.Value.Items.Select(i => i.Id).Should().NotContain(removed.ToString());
+    }
+
     [Fact]
     public async Task Complete_IsIdempotent_AndStreakCountsConsecutiveDays()
     {

@@ -49,6 +49,18 @@ export interface DailyQuizResponse {
   streak: number | null;
 }
 
+/** #677: one stored set of the last 7 days. */
+export interface DailyArchiveEntry {
+  date: string;
+  total: number;
+  /** Signed-in callers only. */
+  completion: DailyQuizCompletion | null;
+}
+
+export interface DailyArchiveResponse {
+  days: DailyArchiveEntry[];
+}
+
 export interface CompleteDailyQuizResponse {
   created: boolean;
   streak: number;
@@ -83,6 +95,9 @@ export const reviewQueueApi = {
 
 export const dailyQuizApi = {
   get: async (): Promise<DailyQuizResponse> => (await apiClient.get<DailyQuizResponse>("/daily-quiz")).data,
+  archive: async (): Promise<DailyArchiveResponse> => (await apiClient.get<DailyArchiveResponse>("/daily-quiz/archive")).data,
+  getArchiveDay: async (date: string): Promise<DailyQuizResponse> =>
+    (await apiClient.get<DailyQuizResponse>("/daily-quiz", { params: { date } })).data,
   complete: async (date: string, correct: number, total: number, skipped = 0): Promise<CompleteDailyQuizResponse> =>
     (await apiClient.post<CompleteDailyQuizResponse>("/daily-quiz/completions", { date, correct, total, skipped })).data,
   adminGet: async (date?: string): Promise<AdminDailyQuizDay> =>
