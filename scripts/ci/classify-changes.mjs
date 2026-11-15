@@ -16,16 +16,21 @@ const WEB_PREFIXES = ["src/Quizymode.Web/", "playwright/"];
 const WEB_FILES = ["package.json", "package-lock.json", "playwright.config.ts"];
 const API_PREFIXES = ["src/Quizymode.Api", "src/Quizymode.Taxonomy/", "tests/"];
 const API_FILES = ["Directory.Packages.props", "global.json", ".dockerignore", "Quizymode.sln"];
+// Item content that prod seed sync reads from GitHub. The API image does not contain it, so a change here needs the
+// API tests (several read it) but no build or deploy. `data/seed-source/collections/` stays full scope: the startup
+// seeder reads it.
+const ITEM_DATA_PREFIXES = ["data/seed-source/items/", "data/seed-source/_registry/"];
 const SHARED_PREFIXES = [".github/workflows/", "data/"];
 // A change to these files that only touches the version line is a release bump, not a code change.
 const VERSION_ONLY_FILES = [
   "Directory.Build.props", "src/Quizymode.Web/package.json", "src/Quizymode.Web/package-lock.json",
 ];
 
-const everything = () => ({ web: true, api: true, any: true });
+const everything = () => ({ web: true, api: true, apiTests: true, any: true });
 
 export function classifyFile(file) {
   const startsWith = (list) => list.some((p) => file.startsWith(p));
+  if (startsWith(ITEM_DATA_PREFIXES)) return { web: false, api: false, apiTests: true };
   if (startsWith(SHARED_PREFIXES)) return { web: true, api: true };
   if (startsWith(API_PREFIXES_UNDER_DOCS)) return { web: false, api: true };
   if (startsWith(NONE_PREFIXES) || NONE_FILES.includes(file)) return { web: false, api: false };
@@ -39,13 +44,16 @@ export function classifyFile(file) {
 // files: [{ path, versionOnly }]
 export function classify(files) {
   const scope = { web: false, api: false };
+  let testsOnly = false;
   for (const f of files) {
     if (f.versionOnly) continue;
     const c = classifyFile(f.path);
     scope.web ||= c.web;
     scope.api ||= c.api;
+    testsOnly ||= Boolean(c.apiTests);
   }
-  return { ...scope, any: scope.web || scope.api };
+  // apiTests: the API tests must run. True whenever api is set, and for item-data-only changes (no build, no deploy).
+  return { ...scope, apiTests: scope.api || testsOnly, any: scope.web || scope.api };
 }
 
 // True when every changed line of a unified diff (-U0) is a version line.
@@ -81,7 +89,7 @@ function main() {
   }
   console.log(JSON.stringify(scope));
   if (process.env.GITHUB_OUTPUT) {
-    appendFileSync(process.env.GITHUB_OUTPUT, `web=${scope.web}\napi=${scope.api}\nany=${scope.any}\n`);
+    appendFileSync(process.env.GITHUB_OUTPUT, `web=${scope.web}\napi=${scope.api}\napiTests=${scope.apiTests}\nany=${scope.any}\n`);
   }
 }
 

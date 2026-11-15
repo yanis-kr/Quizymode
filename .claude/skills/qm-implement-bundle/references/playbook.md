@@ -56,7 +56,7 @@ A failure inside an attempt goes back to step 3. Only validated issues are merge
 ## Integration
 
 1. Partial release: if any issue is not `integrated` and `partialRelease` is `all-or-nothing`, phase `blocked_terminal` and stop. Otherwise the release ships only integrated issues; deferred ones stay open with a comment saying why (posted at the end).
-2. On the release branch, once: bump `QuizymodeVersion` in `Directory.Build.props` per `versionBump` (raise to `minor` if any shipped issue is a feature), align `src/Quizymode.Web/package.json`, make `docs/AC.md` consistent across issues, regenerate OpenAPI with `.\scripts\verify-openapi.ps1 -Configuration Release` when any API surface changed.
+2. On the release branch, once: skip the bump and the `docs/AC.md` edit when every shipped issue changes only `data/seed-source/items/**` and `_registry/**` (AGENTS.md exemption, AC 7.11.5; gate those issues with `--no-ac`); otherwise bump `QuizymodeVersion` in `Directory.Build.props` per `versionBump` (raise to `minor` if any shipped issue is a feature), align `src/Quizymode.Web/package.json`, make `docs/AC.md` consistent across issues, regenerate OpenAPI with `.\scripts\verify-openapi.ps1 -Configuration Release` when any API surface changed.
 3. Run every `releaseGates` check on the combined branch (`dotnet test`, `npm run lint`, `npm run build`, `npm run test:coverage`, plus the pre-push workflow in `.agent-skills/quizymode-prepush/SKILL.md`).
 4. Reviewer final pass on `git diff origin/main...release/<id>` in a fresh context. CONFIRMED findings are fixed (counts as an attempt on the affected issue) and gates re-run.
 5. Phase `validating` then continue.

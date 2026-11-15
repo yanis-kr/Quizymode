@@ -6,24 +6,40 @@ const f = (path, versionOnly = false) => ({ path, versionOnly });
 
 test("skills, prompts and docs change neither web nor api", () => {
   const s = classify([f(".claude/skills/qm-research/SKILL.md"), f("AGENTS.md"), f("docs/AC.md"), f("docs/user-guide/a.md")]);
-  assert.deepEqual(s, { web: false, api: false, any: false });
+  assert.deepEqual(s, { web: false, api: false, apiTests: false, any: false });
 });
 test("web-only change", () => {
-  assert.deepEqual(classify([f("src/Quizymode.Web/src/App.tsx"), f("playwright/e2e-ci/a.spec.ts")]), { web: true, api: false, any: true });
+  assert.deepEqual(classify([f("src/Quizymode.Web/src/App.tsx"), f("playwright/e2e-ci/a.spec.ts")]), { web: true, api: false, apiTests: false, any: true });
 });
 test("api-only change, including tests and openapi", () => {
-  assert.deepEqual(classify([f("src/Quizymode.Api/Features/X.cs"), f("tests/Quizymode.Api.Tests/X.cs"), f("docs/openapi/quizymode-api.json")]), { web: false, api: true, any: true });
+  assert.deepEqual(classify([f("src/Quizymode.Api/Features/X.cs"), f("tests/Quizymode.Api.Tests/X.cs"), f("docs/openapi/quizymode-api.json")]), { web: false, api: true, apiTests: true, any: true });
 });
 test("workflow and data changes run both", () => {
   assert.equal(classifyFile(".github/workflows/ci.yml").web, true);
   assert.equal(classifyFile("data/seed-dev/a.json").api, true);
 });
+test("item-data-only changes run the API tests but build and deploy nothing", () => {
+  const items = [f("data/seed-source/items/exams/exams.aws.saa-c03.json"), f("data/seed-source/_registry/item-index.csv"), f("data/seed-source/_registry/source-file-index.json")];
+  assert.deepEqual(classify(items), { web: false, api: false, apiTests: true, any: false });
+  assert.deepEqual(classify([...items, f("Directory.Build.props", true), f("docs/AC.md")]), { web: false, api: false, apiTests: true, any: false });
+});
+test("item data next to any other data or code keeps the full scope", () => {
+  const item = f("data/seed-source/items/exams/a.json");
+  assert.deepEqual(classify([item, f("data/seed-source/collections/public/genai-exams.json")]), { web: true, api: true, apiTests: true, any: true });
+  assert.deepEqual(classify([item, f("data/seed-dev/a.json")]), { web: true, api: true, apiTests: true, any: true });
+  assert.deepEqual(classify([item, f("src/Quizymode.Web/src/App.tsx")]), { web: true, api: false, apiTests: true, any: true });
+  assert.deepEqual(classify([item, f("src/Quizymode.Api/Features/X.cs")]), { web: false, api: true, apiTests: true, any: true });
+});
+test("collections seed files and the seed-source root keep the full scope", () => {
+  assert.deepEqual(classifyFile("data/seed-source/collections/public/a.json"), { web: true, api: true });
+  assert.deepEqual(classifyFile("data/seed-source/README.md"), { web: true, api: true });
+});
 test("unknown paths fail safe to both", () => {
   assert.deepEqual(classifyFile("infra/x.tf"), { web: true, api: true });
 });
 test("a version-only bump is ignored; a real props change is api", () => {
-  assert.deepEqual(classify([f("Directory.Build.props", true), f("src/Quizymode.Web/package.json", true), f("docs/AC.md")]), { web: false, api: false, any: false });
-  assert.deepEqual(classify([f("Directory.Build.props", false)]), { web: false, api: true, any: true });
+  assert.deepEqual(classify([f("Directory.Build.props", true), f("src/Quizymode.Web/package.json", true), f("docs/AC.md")]), { web: false, api: false, apiTests: false, any: false });
+  assert.deepEqual(classify([f("Directory.Build.props", false)]), { web: false, api: true, apiTests: true, any: true });
 });
 test("isVersionOnlyDiff", () => {
   assert.equal(isVersionOnlyDiff("-  <QuizymodeVersion>1.0.0</QuizymodeVersion>\n+  <QuizymodeVersion>1.0.1</QuizymodeVersion>"), true);
@@ -50,6 +66,8 @@ test("workflow gating: CI jobs are gated by the change scope", () => {
     assert.match(block, /needs: changes/, job);
     assert.ok(block.includes(`needs.changes.outputs.${flag} == 'true'`), job);
   }
+  assert.match(jobBlock(ci, "backend-tests"), /needs\.changes\.outputs\.apiTests == 'true'/);
+  assert.doesNotMatch(jobBlock(ci, "api-image"), /apiTests/);
   for (const job of ["automation-contract", "ac-gate", "cognito-presignup"]) {
     assert.doesNotMatch(jobBlock(ci, job), /needs\.changes/, `${job} always runs`);
   }
