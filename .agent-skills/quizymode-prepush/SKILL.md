@@ -121,6 +121,10 @@ rg "removed-text|removed-link" src/Quizymode.Web/src -g "*.test.*"
 
 When a variable is declared inside an early-return `if` block in a React component, confirm it is not referenced outside that block. If it is referenced by sibling branches or later JSX, hoist it to component scope before the first return.
 
+## Lane Mode
+
+When working on a lane or issue branch of a bundle (not a normal single PR), run the filtered equivalents of the checks above: `dotnet test --filter "FullyQualifiedName~<slice>"`, `npm test -- --run <pattern>`, `npm run lint -- <paths>`. The full `dotnet test`, full `npm test -- --run`, and coverage run once on the release branch and in CI. Unchanged for a normal single PR.
+
 ## Completion Rules
 
 - Update `docs/AC.md` in the same change when behavior, authorization, contract intent, or other user-visible logic changes.

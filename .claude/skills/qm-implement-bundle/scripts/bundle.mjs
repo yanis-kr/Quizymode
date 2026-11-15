@@ -192,6 +192,50 @@ function overlaps(paths, files) {
   const res = paths.map(globToRegex);
   return files.filter((f) => res.some((r) => r.test(f)));
 }
+// Conservative glob-vs-glob overlap: compare the literal directory prefix (segments before the first wildcard).
+const LANE_IGNORED = new Set(["docs/AC.md", "docs/openapi/quizymode-api.json"]);
+const normGlob = (g) => g.replaceAll(String.fromCharCode(92), "/").replace(/\/$/, "");
+function globPrefix(g) {
+  const out = [];
+  for (const sg of normGlob(g).split("/")) { if (/[*?]/.test(sg)) break; out.push(sg); }
+  return out;
+}
+function pathsOverlap(a, b) {
+  if (!a.length || !b.length) return true; // no declared scope: assume overlap
+  const fa = a.filter((x) => !LANE_IGNORED.has(normGlob(x)));
+  const fb = b.filter((x) => !LANE_IGNORED.has(normGlob(x)));
+  for (const x of fa) for (const y of fb) {
+    const px = globPrefix(x), py = globPrefix(y);
+    const n = Math.min(px.length, py.length);
+    if (px.slice(0, n).join("/") === py.slice(0, n).join("/")) return true;
+  }
+  return false;
+}
+function planLanes(m, st) {
+  const todo = [...m.issues].sort((x, y) => x.order - y.order).filter((i) => !["integrated", "released", "verified", "closed", "deferred", "skipped_already_done"].includes(st?.issues?.[String(i.number)]?.status));
+  const laneOf = new Map();
+  const reasons = [];
+  const groups = []; // each group is an array of issues that must share a lane
+  for (const it of todo) {
+    const linked = [];
+    for (const g of groups) {
+      const why = g.find((o) => {
+        if (it.dependsOn.includes(o.number) || o.dependsOn.includes(it.number)) { reasons.push(`#${it.number} and #${o.number}: dependsOn link`); return true; }
+        if (it.migration && o.migration) { reasons.push(`#${it.number} and #${o.number}: both migrations`); return true; }
+        if (pathsOverlap(it.scope.paths, o.scope.paths)) { reasons.push(`#${it.number} and #${o.number}: scope.paths overlap`); return true; }
+        return false;
+      });
+      if (why) linked.push(g);
+    }
+    const merged = [it, ...linked.flat()];
+    for (const g of linked) groups.splice(groups.indexOf(g), 1);
+    groups.push(merged.sort((x, y) => x.order - y.order));
+  }
+  const laneA = [], laneB = [];
+  for (const g of groups.sort((x, y) => y.length - x.length)) (laneA.length <= laneB.length ? laneA : laneB).push(...g);
+  const byOrder = (x, y) => x.order - y.order;
+  return { laneA: laneA.sort(byOrder).map((i) => i.number), laneB: laneB.sort(byOrder).map((i) => i.number), reasons };
+}
 function safeJson(p) { try { return JSON.parse(fs.readFileSync(p, "utf8")); } catch { return null; } }
 
 function verifyAll(id, p) {
@@ -384,9 +428,16 @@ switch (cmd) {
     it.status = status;
     if (typeof opts.branch === "string") it.branch = opts.branch;
     if (typeof opts.commit === "string") it.commit = opts.commit;
+    if (opts.lane !== undefined) { if (opts.lane !== "a" && opts.lane !== "b") die(1, "--lane must be a or b"); it.lane = opts.lane; }
     if (typeof opts.note === "string") it.notes.push(`${now()} ${opts.note}`);
     saveState(p, st, { event: "issue", issue: Number(num), status, note: opts.note });
     ok({ bundleId: id, issue: Number(num), ...it });
+  }
+  case "lanes": {
+    const p = bundlePaths(id);
+    const m = loadValidManifest(p, id);
+    const st = fs.existsSync(p.state) ? loadState(p) : null;
+    ok(planLanes(m, st));
   }
   case "attempt": {
     const p = bundlePaths(id);
@@ -571,7 +622,7 @@ switch (cmd) {
     process.stdout.write(`Usage: node bundle.mjs <command> <bundleId> [options]
 Refine:  new, snapshot <n...>, check, hash, brief (text), approve --hash <prefix> --user-reply "<text containing approve <prefix>>"
 Execute: verify [--gh] [--no-git], state-init [--take-over] (prints holder), then with --holder <h>:
-         checkpoint, issue <n> <status> [--note --branch --commit], attempt <n>, ci-run,
+         checkpoint, issue <n> <status> [--note --branch --commit --lane a|b], lanes (read-only: split issues into two path-disjoint lanes), attempt <n>, ci-run,
          phase <phase> [--pr --previous-main-sha --merge-sha --deploy-run --note], merge-gate --pr <n>,
          blocker --kind k --note t [--issue n], decision --file f [--issue n], release-lock
 Anyone:  status (text), list, cancel [--note]
