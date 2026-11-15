@@ -10,7 +10,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 import seed_source_common as common  # noqa: E402
 
 
-GOOD_QUESTION = "What does the French idiom 'x' (literally: \"to tell salads\") mean?"
+GOOD_QUESTION = "What does the French idiom 'x' (literally: \"to tell salads\") actually mean?"
 
 
 def make_item(keyword2: str, keywords: list[str], question: str = GOOD_QUESTION) -> common.SourceItem:
@@ -39,7 +39,7 @@ class FunnyKeywordTests(unittest.TestCase):
         self.assertEqual(len(common.validate_funny_keyword(make_item("vocabulary", ["funny"]))), 1)
 
     def test_funny_question_must_show_literal_and_ask_mean(self) -> None:
-        for bad in ("What does the French idiom 'x' most naturally mean?", "What does the French idiom 'x' (literally: \"y\") express?"):
+        for bad in ("What does the French idiom 'x' most naturally mean?", "What does the French idiom 'x' (literally: \"y\") mean?", "What does the French idiom 'x' (literally: \"y\") express?"):
             self.assertEqual(len(common.validate_funny_keyword(make_item("idioms", ["funny"], bad))), 1)
 
     def test_items_without_funny_are_ignored(self) -> None:

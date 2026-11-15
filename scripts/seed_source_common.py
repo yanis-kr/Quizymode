@@ -347,10 +347,10 @@ def validate_funny_keyword(item: SourceItem) -> list[str]:
             f"(languages/<language>/idioms, never idiom-practice)."
         ]
     question: str = item.question or ""
-    if '(literally: "' not in question or not question.endswith("mean?"):
+    if '(literally: "' not in question or not question.endswith("actually mean?"):
         return [
             f"{item.path} item {item.index}: 'funny' items must use the question pattern "
-            f"What does the <Language> idiom '...' (literally: \"...\") mean?"
+            f"What does the <Language> idiom '...' (literally: \"...\") actually mean?"
         ]
     return []
 
