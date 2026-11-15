@@ -11,8 +11,44 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
-  deploy-container:
+  # AC 7.11.2: reads the change scope CI computed for this commit. A missing or unreadable scope deploys everything.
+  scope:
     if: ${{ github.event.workflow_run.conclusion == 'success' }}
+    runs-on: ubuntu-latest
+    permissions:
+      actions: read
+      contents: read
+    outputs:
+      web: ${{ steps.read.outputs.web }}
+      api: ${{ steps.read.outputs.api }}
+    steps:
+      - name: Download change scope
+        id: download
+        continue-on-error: true
+        uses: actions/download-artifact@v8
+        with:
+          name: change-scope
+          run-id: ${{ github.event.workflow_run.id }}
+          github-token: ${{ github.token }}
+
+      - name: Read change scope
+        id: read
+        run: |
+          WEB=true
+          API=true
+          if [ "${{ steps.download.outcome }}" = "success" ] && [ -f change-scope.json ]; then
+            WEB="$(jq -r '.web // true' change-scope.json)"
+            API="$(jq -r '.api // true' change-scope.json)"
+          else
+            echo "No change scope found; deploying everything."
+          fi
+          echo "web=${WEB}" >> "${GITHUB_OUTPUT}"
+          echo "api=${API}" >> "${GITHUB_OUTPUT}"
+          echo "Deploying: web=${WEB} api=${API}"
+
+  deploy-container:
+    needs: scope
+    if: ${{ github.event.workflow_run.conclusion == 'success' && needs.scope.outputs.api == 'true' }}
     runs-on: ubuntu-latest
     permissions:
       id-token: write
@@ -80,7 +116,8 @@ jobs:
 
   # Builds the web app while the container deploys, so deploy-ui only has to sync it.
   build-ui:
-    if: ${{ github.event.workflow_run.conclusion == 'success' }}
+    needs: scope
+    if: ${{ github.event.workflow_run.conclusion == 'success' && needs.scope.outputs.web == 'true' }}
     runs-on: ubuntu-latest
     permissions:
       contents: read
@@ -128,7 +165,9 @@ jobs:
 
   # Runs after the container is ACTIVE so the new UI never calls the previous API.
   deploy-ui:
-    needs: [deploy-container, build-ui]
+    needs: [scope, deploy-container, build-ui]
+    # deploy-container may be skipped (web-only change); it must not have failed.
+    if: ${{ !cancelled() && needs.scope.outputs.web == 'true' && needs.build-ui.result == 'success' && contains(fromJSON('["success","skipped"]'), needs.deploy-container.result) }}
     runs-on: ubuntu-latest
     permissions:
       id-token: write
@@ -221,7 +260,9 @@ jobs:
   # `signed-in-prod-ui` ACs. continue-on-error keeps a failed check from marking the deploy itself as failed;
   # the failure is still visible on this job and in the report.
   prod-verify:
-    needs: deploy-ui
+    needs: [scope, deploy-container, deploy-ui]
+    # Nothing deployed (skills or docs only) means nothing to verify.
+    if: ${{ !cancelled() && (needs.scope.outputs.web == 'true' || needs.scope.outputs.api == 'true') && contains(fromJSON('["success","skipped"]'), needs.deploy-container.result) && contains(fromJSON('["success","skipped"]'), needs.deploy-ui.result) }}
     runs-on: ubuntu-latest
     timeout-minutes: 30
     continue-on-error: true
@@ -245,11 +286,13 @@ jobs:
           npm ci
           npx playwright install --with-deps chromium
 
+      # The site reports "<version>+sha.<7-char commit>" in its quizymode-build-version meta tag, so the wait only
+      # applies when this deploy shipped the web build. An API-only deploy already waited for ACTIVE in deploy-container.
       - name: Wait for the deployed version
+        if: ${{ needs.scope.outputs.web == 'true' }}
         env:
           HEAD_SHA: ${{ github.event.workflow_run.head_sha }}
         run: |
-          # The site reports "<version>+sha.<7-char commit>" in its quizymode-build-version meta tag.
           VERSION=$(grep -oP '(?<=<QuizymodeVersion>)[^<]+' Directory.Build.props)
           node scripts/wait-for-production-ready.js --expected-build-version "${VERSION}+sha.${HEAD_SHA:0:7}"
 
