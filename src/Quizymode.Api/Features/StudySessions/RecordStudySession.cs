@@ -1,6 +1,7 @@
 using FluentValidation;
 using Microsoft.EntityFrameworkCore;
 using Quizymode.Api.Data;
+using Quizymode.Api.Features.Progress;
 using Quizymode.Api.Services;
 using Quizymode.Api.Shared.Http;
 using Quizymode.Api.Shared.Kernel;
@@ -35,7 +36,8 @@ public static class RecordStudySession
         int Total,
         SourceDto? Source,
         List<Guid>? MissedItemIds,
-        string? Mode = null);
+        string? Mode = null,
+        List<Guid>? CorrectItemIds = null);
 
     public sealed record SessionDto(
         Guid Id,
@@ -85,10 +87,22 @@ public static class RecordStudySession
             RuleFor(x => x.Source!).SetValidator(new SourceValidator()).When(x => x.Source is not null);
             RuleFor(x => x.MissedItemIds).Must((request, ids) => MissedValid(request, ids))
                 .WithMessage("MissedItemIds must be unique, at most 200, and no more than Total - Correct");
+            RuleFor(x => x.CorrectItemIds).Must((request, ids) => CorrectValid(request, ids))
+                .WithMessage("CorrectItemIds must be unique, at most 1000, no more than Correct, and not overlap MissedItemIds");
         }
 
         internal static bool IsPlausibleTimestamp(DateTime value) =>
             value <= DateTime.UtcNow.AddMinutes(5) && value >= DateTime.UtcNow.AddDays(-RetentionDays);
+
+        private static bool CorrectValid(Request request, List<Guid>? ids)
+        {
+            if (ids is null || ids.Count == 0) return true;
+            return ids.Count <= MaxTotal &&
+                   ids.Count <= request.Correct &&
+                   ids.Distinct().Count() == ids.Count &&
+                   ids.All(id => id != Guid.Empty) &&
+                   !ids.Intersect(request.MissedItemIds ?? new List<Guid>()).Any();
+        }
 
         private static bool MissedValid(Request request, List<Guid>? ids)
         {
@@ -179,6 +193,14 @@ public static class RecordStudySession
             }
 
             db.StudySessions.Add(entity);
+            if (origin == StudySessionOrigins.Quiz && entity.Mode == StudySessionModes.Quiz)
+            {
+                // #685: known/missed flags commit with the session row (one SaveChanges), and only for a newly created
+                // session, so a retry of the same run never changes progress. Guest imports are unverified and Learn cards are self-revealed,
+                // so neither writes anything.
+                await UserItemProgressWriter.StageAsync(
+                    db, userId, request.CorrectItemIds ?? new List<Guid>(), request.MissedItemIds ?? new List<Guid>(), DateTime.UtcNow, cancellationToken);
+            }
             try
             {
                 await db.SaveChangesAsync(cancellationToken);

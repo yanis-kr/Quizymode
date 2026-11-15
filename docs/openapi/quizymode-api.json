@@ -6032,6 +6032,42 @@
         }
       }
     },
+    "/users/me/set-progress": {
+      "get": {
+        "tags": [
+          "Users"
+        ],
+        "summary": "Get the current user's known-item counts per set",
+        "description": "scopes is a comma-separated list of at most 12 set keys: s/{categorySlug}[/{keyword}[/{keyword}]] or c/{collectionId}. Returns, per scope, how many items the caller currently knows (answered correctly last in a live quiz or a review) that are still visible to the caller; deleted or no longer visible items do not count. Private to the caller and never cached. Requires authentication.",
+        "parameters": [
+          {
+            "name": "scopes",
+            "in": "query",
+            "schema": {
+              "$ref": "#/components/schemas/System.String"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Quizymode.Api.Features.Progress.GetSetProgress.Response"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "401": {
+            "description": "Unauthorized"
+          }
+        }
+      }
+    },
     "/ratings/{itemId}": {
       "post": {
         "tags": [
@@ -18051,6 +18087,32 @@
           }
         }
       },
+      "Quizymode.Api.Features.Progress.GetSetProgress.Response": {
+        "required": [
+          "scopes"
+        ],
+        "type": "object",
+        "properties": {
+          "scopes": {
+            "$ref": "#/components/schemas/System.Collections.Generic.ListOfQuizymode.Api.Features.Progress.GetSetProgress.ScopeProgress"
+          }
+        }
+      },
+      "Quizymode.Api.Features.Progress.GetSetProgress.ScopeProgress": {
+        "required": [
+          "scope",
+          "knownCount"
+        ],
+        "type": "object",
+        "properties": {
+          "scope": {
+            "$ref": "#/components/schemas/System.String"
+          },
+          "knownCount": {
+            "$ref": "#/components/schemas/System.Int32"
+          }
+        }
+      },
       "Quizymode.Api.Features.Ratings.AddOrUpdateRating.Request": {
         "required": [
           "stars"
@@ -19811,6 +19873,16 @@
                 "$ref": "#/components/schemas/System.String"
               }
             ]
+          },
+          "correctItemIds": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/components/schemas/System.Collections.Generic.ListOfSystem.Guid"
+              }
+            ]
           }
         }
       },
@@ -21391,6 +21463,12 @@
         "type": "array",
         "items": {
           "$ref": "#/components/schemas/Quizymode.Api.Features.Personalization.GetTopicActivity.TopicDto"
+        }
+      },
+      "System.Collections.Generic.ListOfQuizymode.Api.Features.Progress.GetSetProgress.ScopeProgress": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/Quizymode.Api.Features.Progress.GetSetProgress.ScopeProgress"
         }
       },
       "System.Collections.Generic.ListOfQuizymode.Api.Features.Starter.StarterPool.StarterItemResponse": {

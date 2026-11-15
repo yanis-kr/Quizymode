@@ -30,6 +30,18 @@ describe("recordAuthenticatedCompletion", () => {
     });
   });
 
+  it("sends correctItemIds only when they are consistent with the score and the misses (#685)", () => {
+    const a = "22222222-2222-4222-8222-222222222222";
+    const b = "33333333-3333-4333-8333-333333333333";
+    const withCorrect = { ...snapshot, correctItemIds: [a, b] } as unknown as QuizCompletionSnapshot;
+    expect(toRecordRequest(withCorrect)?.correctItemIds).toEqual([a, b]);
+    expect(toRecordRequest(snapshot)).not.toHaveProperty("correctItemIds");
+    const tooMany = { ...snapshot, correct: 1, correctItemIds: [a, b] } as unknown as QuizCompletionSnapshot;
+    expect(toRecordRequest(tooMany)).not.toHaveProperty("correctItemIds");
+    const overlapping = { ...snapshot, correctItemIds: [missed] } as unknown as QuizCompletionSnapshot;
+    expect(toRecordRequest(overlapping)).not.toHaveProperty("correctItemIds");
+  });
+
   it("sends mode learn for a learn snapshot", () => {
     expect(toRecordRequest({ ...snapshot, mode: "learn" })?.mode).toBe("learn");
   });

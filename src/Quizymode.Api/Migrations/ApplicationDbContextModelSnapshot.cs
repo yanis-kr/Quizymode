@@ -2955,6 +2955,29 @@ namespace Quizymode.Api.Migrations
                     b.ToTable("UserInterests", (string)null);
                 });
 
+            modelBuilder.Entity("Quizymode.Api.Shared.Models.UserItemProgress", b =>
+                {
+                    b.Property<string>("UserId")
+                        .HasMaxLength(100)
+                        .HasColumnType("character varying(100)");
+
+                    b.Property<Guid>("ItemId")
+                        .HasColumnType("uuid");
+
+                    b.Property<bool>("IsKnown")
+                        .HasColumnType("boolean");
+
+                    b.Property<DateTime?>("LastCorrectAt")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<DateTime>("UpdatedAt")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.HasKey("UserId", "ItemId");
+
+                    b.ToTable("UserItemProgress", (string)null);
+                });
+
             modelBuilder.Entity("Quizymode.Api.Shared.Models.UserPolicyAcceptance", b =>
                 {
                     b.Property<Guid>("Id")

@@ -40,7 +40,7 @@ const CollectionDetailPage = () => {
   const view = searchParams.get("view") || "list";
   const itemId = searchParams.get("item") || null;
   const { isAuthenticated } = useAuth();
-  const knownCount = useKnownCount(id ? collectionSetKey(id) : null, !isAuthenticated);
+  const knownCount = useKnownCount(id ? collectionSetKey(id) : null);
   const currentUserId = useCurrentUserId();
   const queryClient = useQueryClient();
   const navigate = useNavigate();
