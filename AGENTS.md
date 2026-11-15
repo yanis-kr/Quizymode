@@ -155,7 +155,8 @@ Every AC in `docs/AC.md` carries `[verify: <method>]`. The method decides what c
 - **Evidence is generated**, not written by hand, for test-based methods: `node scripts/validation/ac-evidence.mjs --issues <n,n> --report <results.json> --run-url <CI run>` writes the `Acceptance Evidence` comment per issue from the Playwright reports of the CI `e2e` job and the Deploy `prod-verify` job. Add `api`, `sql` and `anon-ui` evidence to the same comment by hand. Close an issue only when the script reports it complete or the remaining rows have that evidence.
 - **A subjective check no test can make** (visual polish, wording) goes into one checklist comment per batch, grouped by screen, with the exact steps and the expected result. The owner replies "verified" to close those issues. This is the exception, not the default.
 - **Wording:** a tag never changes what an AC says. Weakening an AC to make it verifiable is not allowed; if an AC is wrong, change it in a separate, reviewed change.
-- **Untagged ACs** have no method and block closure of their issue until tagged. Tag the ACs an issue touches when the issue is refined; an issue is not `status:ready` until each of its ACs has a method.
+- **Untagged ACs** have no method and block closure of their issue until tagged. Tag the ACs an issue touches when the issue is refined.
+- **ACs at refinement, not at filing.** An issue may be filed without ACs. Before it gets `status:ready`, its body must list draft ACs, each with an intended `[verify: <method>]`, or state `No behavior change (content/chore/epic)`. Canonical ACs are written to `docs/AC.md` in the implementing PR with `(#<issue>)`; issue-body drafts are not the source of truth. Release-gate an issue with no behavior change with `ac-gate.mjs --issues <n,n> --no-ac <n>` (AC 7.10.9).
 
 ## Change Rules
 

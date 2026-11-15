@@ -17,7 +17,7 @@ Your job for the issue you are handed:
    - Data/schema/migration impact — call out any EF Core migration that will be needed, and whether it's additive or requires reconciliation with already-applied history.
    - OpenAPI surface impact — flag if the API surface changes (the checked-in artifact under `docs/openapi/` must then be regenerated via `scripts/verify-openapi.ps1`, never hand-edited).
    - Risks: anything ambiguous in the issue, anything that could affect auth/authorization, anything that touches `docs/AC.md`-documented behavior.
-   - A concrete, testable list of acceptance criteria — not vague restatements of the issue title. Each criterion must be checkable by a specific test, HTTP call, or manual verification step a tester can actually perform.
+   - A concrete, testable list of acceptance criteria — not vague restatements of the issue title. Each criterion must be checkable by a specific test, HTTP call, or manual verification step a tester can actually perform. Each criterion names its verify method (`unit`, `e2e`, `api`, `sql`, `anon-ui`, `signed-in-prod-ui`; see AGENTS.md § Verification method per AC), or the plan states `No behavior change` for a content, chore or epic issue.
 4. If a dependency is genuinely blocking (e.g. the issue needs a shared contract, library, or prior PR that does not exist yet), say so plainly and stop — do not invent a workaround that produces an incompatible parallel implementation.
 
 Hand your plan to the reviewer specialist before any code is written. Do not write code yourself.
