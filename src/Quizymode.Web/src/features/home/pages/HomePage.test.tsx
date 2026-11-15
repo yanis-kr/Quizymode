@@ -1,5 +1,5 @@
 import { beforeEach, describe, expect, it, vi } from "vitest";
-import { render, screen, waitFor } from "@testing-library/react";
+import { render, screen, waitFor, within } from "@testing-library/react";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { MemoryRouter } from "react-router-dom";
 import { HelmetProvider } from "react-helmet-async";
@@ -190,7 +190,23 @@ describe("HomePage Fun expressions card (#664)", () => {
 
     renderPage();
 
-    const link = await screen.findByRole("link", { name: /Fun expressions/ });
+    const links = await screen.findAllByRole("link", { name: /Fun expressions/ });
+    expect(links.length).toBeGreaterThanOrEqual(2);
+    for (const link of links) {
+      expect(link).toHaveAttribute("href", "/categories/languages?keywords=idioms,funny&view=items");
+    }
+  });
+
+  it("AC 3.0.36 shows the Fun expressions entry in the first-visit hero", () => {
+    vi.mocked(categoriesApi.getAll).mockResolvedValue({ categories: [] });
+    vi.mocked(collectionsApi.discover).mockResolvedValue({ items: [] } as never);
+    vi.mocked(featuredApi.get).mockResolvedValue({ sets: [], collections: [] });
+
+    renderPage();
+
+    const hero = screen.getByRole("heading", { level: 1 }).closest("section")!;
+    const link = within(hero).getByRole("link", { name: "Fun expressions" });
     expect(link).toHaveAttribute("href", "/categories/languages?keywords=idioms,funny&view=items");
+    expect(link.className).toContain("min-h-[44px]");
   });
 });

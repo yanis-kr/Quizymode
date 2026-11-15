@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import { ArrowRightIcon } from "@heroicons/react/24/outline";
 import { describeNextUp } from "./useNextUp";
 import type { NextUpChoice } from "./nextUp";
+import { FunExpressionsLink } from "./FunExpressionsLink";
 
 /** Replaces the first-visit hero for a visitor who has completed a quiz (AC 3.31.1). */
 export function NextUpCard({ choice }: { choice: NextUpChoice }) {
@@ -35,6 +36,7 @@ export function NextUpCard({ choice }: { choice: NextUpChoice }) {
           Play a game
           <ArrowRightIcon className="h-4 w-4" aria-hidden="true" />
         </Link>
+        <FunExpressionsLink />
       </div>
     </section>
   );

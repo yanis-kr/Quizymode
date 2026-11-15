@@ -21,6 +21,7 @@ import { TopicOnboardingPrompt } from "../TopicOnboardingPrompt";
 import { PersonalizedLanes } from "../PersonalizedLanes";
 import { ContinueStudyingCard } from "../ContinueStudyingCard";
 import { NextUpCard } from "../NextUpCard";
+import { FunExpressionsLink } from "../FunExpressionsLink";
 import { useNextUp } from "../useNextUp";
 import {
   homeCategoryCards,
@@ -392,6 +393,7 @@ const HomePage = () => {
                   Play a game
                   <ArrowRightIcon className="h-4 w-4" />
                 </Link>
+                <FunExpressionsLink />
               </div>
             </section>
             )}

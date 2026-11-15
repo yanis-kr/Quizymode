@@ -82,6 +82,16 @@ describe("HomePage Next up (#670, AC 3.31)", () => {
     expect(screen.queryByRole("heading", { name: /learn something new in five questions/i })).not.toBeInTheDocument();
   });
 
+  it("AC 3.0.36 shows the Fun expressions entry inside the Next up card", () => {
+    completeQuiz();
+    renderPage();
+    const card = screen.getByTestId("next-up-card");
+    expect(within(card).getByRole("link", { name: "Fun expressions" })).toHaveAttribute(
+      "href",
+      "/categories/languages?keywords=idioms,funny&view=items",
+    );
+  });
+
   it("AC 3.31.2 moves to saved mistakes once the Daily is done, then to the last topic", () => {
     completeQuiz();
     recordLocalDailyCompletion({ date: utcToday(), correct: 3, total: 5 });
