@@ -189,7 +189,8 @@
     "keywords": [
       "french",
       "raconter-des-salades",
-      "nonsense"
+      "nonsense",
+      "funny"
     ],
     "source": "https://www.wordreference.com/fren/raconter%20des%20salades"
   },
@@ -229,7 +230,8 @@
     "keywords": [
       "french",
       "avoir-un-poil-dans-la-main",
-      "lazy"
+      "lazy",
+      "funny"
     ],
     "source": "https://www.wordreference.com/fren/avoir%20un%20poil%20dans%20la%20main"
   },
@@ -2019,5 +2021,65 @@
       "idiom-practice"
     ],
     "source": "https://www.wordreference.com/fren/tirer%20les%20vers%20du%20nez"
+  },
+  {
+    "itemId": "1f245f4f-10ea-488e-90f0-56ad09cf8d7c",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "idioms",
+    "question": "What does the French idiom '{{fr-FR|Avoir la banane||a-VWAR la ba-NAN}}' most naturally mean?",
+    "correctAnswer": "Be grinning and in a great mood.",
+    "incorrectAnswers": [
+      "Be very hungry.",
+      "Be slipping on something.",
+      "Be ready to leave."
+    ],
+    "explanation": "This idiom is used in everyday french for the idea 'Be grinning and in a great mood.'. Word-to-word: \"to have the banana.\" The banana stands for the wide curved smile on the person's face. Example: \"Il a la banane depuis qu'il a gagné.\" (He has been beaming since he won.)",
+    "keywords": [
+      "french",
+      "be-happy",
+      "funny"
+    ],
+    "source": "https://www.completefrance.com/living-in-france/11-french-fruit-and-vegetable-phrases-and-idioms-8308216"
+  },
+  {
+    "itemId": "f407b1af-44b8-460d-8eed-6d190d8af54b",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "idioms",
+    "question": "What does the French idiom '{{fr-FR|Avoir un cœur d'artichaut||a-VWAR un KUR dar-tee-SHO}}' most naturally mean?",
+    "correctAnswer": "Fall in love easily.",
+    "incorrectAnswers": [
+      "Be cold and unfriendly.",
+      "Be very generous.",
+      "Be afraid of commitment."
+    ],
+    "explanation": "This idiom is used in everyday french for the idea 'Fall in love easily.'. Word-to-word: \"to have an artichoke heart.\" An artichoke has a leaf for everyone, just as this person has a bit of heart for many people. Example: \"Il tombe amoureux tous les mois : il a un cœur d'artichaut.\" (He falls in love every month: he has an artichoke heart.)",
+    "keywords": [
+      "french",
+      "fall-in-love-easily",
+      "funny"
+    ],
+    "source": "https://www.expressio.fr/expressions/avoir-un-coeur-d-artichaut"
+  },
+  {
+    "itemId": "8482331d-c67c-4a05-96c5-08cde7f8e80c",
+    "category": "languages",
+    "navigationKeyword1": "french",
+    "navigationKeyword2": "idioms",
+    "question": "What does the French idiom '{{fr-FR|Rouler quelqu'un dans la farine||roo-LAY kel-KUN dahn la fa-REEN}}' most naturally mean?",
+    "correctAnswer": "Fool or cheat someone.",
+    "incorrectAnswers": [
+      "Help someone cook.",
+      "Make someone very angry.",
+      "Surprise someone with a gift."
+    ],
+    "explanation": "This idiom is used in everyday french for the idea 'Fool or cheat someone.'. Word-to-word: \"to roll someone in the flour.\" A person rolled in flour is covered up and cannot see what is happening. Example: \"Le vendeur m'a roulé dans la farine.\" (The seller fooled me.)",
+    "keywords": [
+      "french",
+      "fool-someone",
+      "funny"
+    ],
+    "source": "https://www.lawlessfrench.com/expressions/rouler-dans-la-farine/"
   }
 ]

@@ -4112,6 +4112,7 @@ e7b8d4b1-c1cd-4cf3-8a69-0286c3edebc2,languages,arabic,core,What does 'شكرا' 
 aece5a88-7dd5-49c7-afb6-45c5121711fc,languages,arabic,core,What does 'ماء' (ma') mean?,data/seed-source/items/languages/languages.arabic.core.json
 55e95ff7-dae9-4d42-8298-c6929fb306e6,languages,arabic,core,What does 'مرحبا' (marhaban) often mean?,data/seed-source/items/languages/languages.arabic.core.json
 d70e8d11-1848-4d5a-a720-388dc1c89d95,languages,arabic,core,What does 'نعم' (na'am) often mean?,data/seed-source/items/languages/languages.arabic.core.json
+4983e8cc-3cad-4568-bbd8-2e7ac965874d,languages,arabic,idioms,What does the Arabic idiom '{{ar-SA|القرد في عين أ,data/seed-source/items/languages/languages.arabic.idioms.json
 85d6a3eb-03be-c924-82cf-1c1631ef1236,languages,bulgarian,core,Choose the Bulgarian word for 'July'.,data/seed-source/items/languages/languages.bulgarian.core.001.json
 ab3856c4-ddf7-e6be-169c-fbea546925eb,languages,bulgarian,core,Choose the Bulgarian word for 'March'.,data/seed-source/items/languages/languages.bulgarian.core.001.json
 c1a54fdd-a6cc-7638-2cc8-b5767adabc94,languages,bulgarian,core,Choose the Bulgarian word for 'November'.,data/seed-source/items/languages/languages.bulgarian.core.001.json
@@ -4748,6 +4749,8 @@ f92fde2e-e99f-4a37-8378-346f35a3356c,languages,chinese,core,What does '是' (sh�
 96680d43-1589-4954-9604-65fd6938209b,languages,chinese,core,What does '谢谢' (xièxie) mean?,data/seed-source/items/languages/languages.chinese.core.json
 6590fdb0-5a3f-4689-be24-91bd576a4b9d,languages,chinese,core,What is a common neutral measure word for many eve,data/seed-source/items/languages/languages.chinese.core.json
 a3999239-02a7-4ebb-b851-ec02b315f14e,languages,chinese,core,Why do tones matter in Mandarin for words like 'mā,data/seed-source/items/languages/languages.chinese.core.json
+066e910e-1f59-4bd4-bc0e-3e63d2588ab6,languages,chinese,idioms,What does the Chinese idiom '{{zh-CN|炒冷饭|chǎo lěng,data/seed-source/items/languages/languages.chinese.idioms.json
+e9ba4782-3cfe-46f7-93c2-ecb58b2e50b2,languages,chinese,idioms,What does the Chinese idiom '{{zh-CN|画蛇添足|huà shé ,data/seed-source/items/languages/languages.chinese.idioms.json
 13e2a859-0e69-4d41-8856-a4d66569447c,languages,english,conversation,"If you did not hear a question, what is a polite f",data/seed-source/items/languages/languages.english.conversation.json
 56913daa-fa00-491c-bba6-b6bfa50593c9,languages,english,conversation,"If you need a moment to think, which filler is neu",data/seed-source/items/languages/languages.english.conversation.json
 2bab5d77-035b-4073-81d3-3c1a76168e48,languages,english,conversation,"In a short phone call, what is a clear opening?",data/seed-source/items/languages/languages.english.conversation.json
@@ -5417,6 +5420,9 @@ e938c84b-2c78-44bd-a093-3d338c1520fa,languages,french,idioms,What does the Frenc
 b881922f-56f1-4b63-9faa-4781b3b5858d,languages,french,idioms,What does the French idiom 'se creuser la tête' mo,data/seed-source/items/languages/languages.french.idioms.json
 ff5d083f-c2bb-4d00-b158-1eec71b7b18a,languages,french,idioms,What does the French idiom 'se mettre le doigt dan,data/seed-source/items/languages/languages.french.idioms.json
 c68ee450-62a4-473d-85c4-3d97035db088,languages,french,idioms,What does the French idiom 'tirer les vers du nez',data/seed-source/items/languages/languages.french.idioms.json
+1f245f4f-10ea-488e-90f0-56ad09cf8d7c,languages,french,idioms,What does the French idiom '{{fr-FR|Avoir la banan,data/seed-source/items/languages/languages.french.idioms.json
+f407b1af-44b8-460d-8eed-6d190d8af54b,languages,french,idioms,What does the French idiom '{{fr-FR|Avoir un cœur ,data/seed-source/items/languages/languages.french.idioms.json
+8482331d-c67c-4a05-96c5-08cde7f8e80c,languages,french,idioms,What does the French idiom '{{fr-FR|Rouler quelqu',data/seed-source/items/languages/languages.french.idioms.json
 e4f6bf80-c6a3-4a13-b48b-a6a92445b649,languages,french,idioms,What does the French idiom 'être serrés comme des ,data/seed-source/items/languages/languages.french.idioms.json
 ab81d1f3-f16f-4b48-92ac-87be23ce000b,languages,french,idioms,"When French speakers say ""C'est la vie,"" what tone",data/seed-source/items/languages/languages.french.idioms.json
 35f286eb-bbe8-4a88-a088-33e6ce6dacbf,languages,french,idioms,Which English meaning best matches the French idio,data/seed-source/items/languages/languages.french.idioms.json
@@ -6039,6 +6045,8 @@ c206b33c-7629-4f38-beb3-6a2bc495975a,languages,german,grammar,"You want to say "
 59442fc9-5825-47c8-bca3-de2b470c8893,languages,german,grammar,"You want to say ""my bag"" in German. What beginner ",data/seed-source/items/languages/languages.german.grammar.json
 0019dc85-9a9a-442a-8b30-d37fd9fa578e,languages,german,grammar,"You want to say a phrase like ""the good book"" in G",data/seed-source/items/languages/languages.german.grammar.json
 f84480e8-b280-4a85-9555-21ba5f87f2a0,languages,german,grammar,You want to say a phrase with German prepositions ,data/seed-source/items/languages/languages.german.grammar.json
+75515f32-7235-48f1-897d-49a1a4ecb40a,languages,german,idioms,"What does the German idiom '{{de-DE|Ich glaub, mei",data/seed-source/items/languages/languages.german.idioms.json
+f5c7e0c0-1f7d-4a24-aafa-675c9076e8cc,languages,german,idioms,What does the German idiom '{{de-DE|Tomaten auf de,data/seed-source/items/languages/languages.german.idioms.json
 d1e9be85-9348-4088-a859-bbeddd3c1ce6,languages,german,listening,'{{de-DE|Bett||BETT}}' and 'Beet' differ by vowel ,data/seed-source/items/languages/languages.german.listening.json
 45970639-7487-40ab-a7ec-639240d293fe,languages,german,listening,At the ends of words like 'Tag' and '{{de-DE|Abend,data/seed-source/items/languages/languages.german.listening.json
 b717d7cf-d063-458d-ac57-b2ca3d016009,languages,german,listening,"In many German compound nouns, which syllable is o",data/seed-source/items/languages/languages.german.listening.json
@@ -6592,6 +6600,7 @@ ef2118cb-65f4-481c-b39d-fd19d475ad1f,languages,italian,grammar,"You want to say 
 09f5221e-77ef-4523-9f4b-caaf8619f2f2,languages,italian,idioms,What does the Italian idiom '{{it-IT|Avere l'acqua,data/seed-source/items/languages/languages.italian.idioms.json
 7fc47fac-34b1-43a9-83e7-a5bcb58866ae,languages,italian,idioms,What does the Italian idiom '{{it-IT|Avere la bott,data/seed-source/items/languages/languages.italian.idioms.json
 8af18eb1-7675-4ce4-8233-008969c768d1,languages,italian,idioms,What does the Italian idiom '{{it-IT|Avere la coda,data/seed-source/items/languages/languages.italian.idioms.json
+b4a76b1c-f0ff-4597-9935-82b470a337ba,languages,italian,idioms,What does the Italian idiom '{{it-IT|Avere la puzz,data/seed-source/items/languages/languages.italian.idioms.json
 609a1312-f241-4adb-9fb0-604b252868aa,languages,italian,idioms,What does the Italian idiom '{{it-IT|Avere le mani,data/seed-source/items/languages/languages.italian.idioms.json
 92705dce-f7b5-466a-858b-756bd0395340,languages,italian,idioms,What does the Italian idiom '{{it-IT|Cadere dalle ,data/seed-source/items/languages/languages.italian.idioms.json
 cf28fc61-5c2a-4cbd-b195-90139a80082e,languages,italian,idioms,What does the Italian idiom '{{it-IT|Cercare il pe,data/seed-source/items/languages/languages.italian.idioms.json
@@ -7242,6 +7251,7 @@ d7aaedd0-2700-4381-8d7f-cf42d15383e9,languages,japanese,idioms,What does the Jap
 bd903815-8a0c-4a7e-8b5c-d91a69e09b5f,languages,japanese,idioms,What does the Japanese idiom '{{ja-JP|花より団子|hana y,data/seed-source/items/languages/languages.japanese.idioms.json
 d3402616-2228-44aa-8cb6-bc43835a7122,languages,japanese,idioms,What does the Japanese idiom '{{ja-JP|足が出る|ashi ga,data/seed-source/items/languages/languages.japanese.idioms.json
 40883127-3782-4d7d-8250-52378c0b9680,languages,japanese,idioms,What does the Japanese idiom '{{ja-JP|郷に入っては郷に従え|g,data/seed-source/items/languages/languages.japanese.idioms.json
+977b0ed8-f07b-4be7-a987-2a4e1d5cd496,languages,japanese,idioms,What does the Japanese idiom '{{ja-JP|雀の涙|suzume n,data/seed-source/items/languages/languages.japanese.idioms.json
 72fa3233-01ca-4389-a2a9-6535fd2635c8,languages,japanese,idioms,What does the Japanese idiom '{{ja-JP|雲をつかむような話|ku,data/seed-source/items/languages/languages.japanese.idioms.json
 48e43076-3db3-4514-aa97-d7d72cdecd96,languages,japanese,idioms,What does the Japanese idiom '{{ja-JP|頭が上がらない|atam,data/seed-source/items/languages/languages.japanese.idioms.json
 2e026ccb-7095-438b-9713-c6565263ec19,languages,japanese,idioms,What does the Japanese idiom '{{ja-JP|顔が広い|kao ga ,data/seed-source/items/languages/languages.japanese.idioms.json
@@ -8720,6 +8730,7 @@ d8b55e96-3500-4ad5-b0d1-072239784d9e,languages,romanian,grammar,"You want to say
 d3e0e380-4493-4cd4-a4de-8c97e387894b,languages,romanian,grammar,"You want to say a pattern like ""I want him to come",data/seed-source/items/languages/languages.romanian.grammar.json
 6bfc0eab-c3b4-4190-9ce2-b861097b6484,languages,romanian,grammar,You want to show there is more than one thing in R,data/seed-source/items/languages/languages.romanian.grammar.json
 d0224fab-0e1a-46f4-9e1a-6ca267677853,languages,romanian,idioms,What does the Romanian idiom '{{ro-RO|A avea ac de,data/seed-source/items/languages/languages.romanian.idioms.json
+10173836-a9a7-4880-af97-6191389f54df,languages,romanian,idioms,What does the Romanian idiom '{{ro-RO|A avea musca,data/seed-source/items/languages/languages.romanian.idioms.json
 e946fbe1-bfeb-4b20-99be-21431d01447d,languages,romanian,idioms,What does the Romanian idiom '{{ro-RO|A avea mână ,data/seed-source/items/languages/languages.romanian.idioms.json
 326fbbf8-3713-42bf-83e3-5cfe0da2ec68,languages,romanian,idioms,What does the Romanian idiom '{{ro-RO|A avea papag,data/seed-source/items/languages/languages.romanian.idioms.json
 15ac6ea0-0128-41b2-bf2b-134c8952d3e1,languages,romanian,idioms,What does the Romanian idiom '{{ro-RO|A avea pitic,data/seed-source/items/languages/languages.romanian.idioms.json
@@ -8744,11 +8755,14 @@ de3ef2f7-ce4a-48c8-bdfa-92bec44bbcb8,languages,romanian,idioms,What does the Rom
 e0b3aa37-2f4f-4200-9814-b606f96a886b,languages,romanian,idioms,What does the Romanian idiom '{{ro-RO|A pune deget,data/seed-source/items/languages/languages.romanian.idioms.json
 5d1a0cae-a0f2-48c6-8425-5f427f408c30,languages,romanian,idioms,What does the Romanian idiom '{{ro-RO|A pune paie ,data/seed-source/items/languages/languages.romanian.idioms.json
 ff1c218c-da70-4054-bd0a-46a3a241a0de,languages,romanian,idioms,What does the Romanian idiom '{{ro-RO|A scoate cas,data/seed-source/items/languages/languages.romanian.idioms.json
+b83621b2-8904-43c1-a7c5-db0a0c581835,languages,romanian,idioms,What does the Romanian idiom '{{ro-RO|A se uita ca,data/seed-source/items/languages/languages.romanian.idioms.json
 7f7f64e5-f4fd-483d-955e-d53dd17adef7,languages,romanian,idioms,What does the Romanian idiom '{{ro-RO|A spăla puti,data/seed-source/items/languages/languages.romanian.idioms.json
 db2b1f60-7965-479e-bf12-cc8b71593fc6,languages,romanian,idioms,What does the Romanian idiom '{{ro-RO|A tăia frunz,data/seed-source/items/languages/languages.romanian.idioms.json
 332f31ba-9191-470e-bcff-26af78bbab6a,languages,romanian,idioms,What does the Romanian idiom '{{ro-RO|A umbla cu c,data/seed-source/items/languages/languages.romanian.idioms.json
+674defb4-a290-4ae5-b2ec-6f4b1d58b7be,languages,romanian,idioms,What does the Romanian idiom '{{ro-RO|A vinde gogo,data/seed-source/items/languages/languages.romanian.idioms.json
 c30bab57-a480-4e62-b3a7-2e5fdfad9f7e,languages,romanian,idioms,What does the Romanian idiom '{{ro-RO|A înghiți gă,data/seed-source/items/languages/languages.romanian.idioms.json
 0388252a-f0a0-4ad8-a13c-af30ccbd818c,languages,romanian,idioms,What does the Romanian idiom '{{ro-RO|A-i sări muș,data/seed-source/items/languages/languages.romanian.idioms.json
+0e9cbb95-d0ed-4aa6-9a4b-df59e2424bb6,languages,romanian,idioms,What does the Romanian idiom '{{ro-RO|La Paștele c,data/seed-source/items/languages/languages.romanian.idioms.json
 143557c7-9d03-4f27-a324-01cfb23e7d10,languages,romanian,idioms,What literal image does the Romanian idiom '{{ro-R,data/seed-source/items/languages/languages.romanian.idioms.json
 5caf868b-ca7f-447a-be46-5771d8e9f35f,languages,romanian,idioms,What literal image does the Romanian idiom '{{ro-R,data/seed-source/items/languages/languages.romanian.idioms.json
 d72665f5-d5a7-4e5c-8a69-af9ad3c99aee,languages,romanian,idioms,What literal image does the Romanian idiom '{{ro-R,data/seed-source/items/languages/languages.romanian.idioms.json
@@ -9366,6 +9380,7 @@ ec0c32ae-7fb3-4cb9-9eeb-acba9e004d48,languages,russian,idioms,What does the Russ
 6962605d-d8c4-4183-8594-92b3e19b744c,languages,russian,idioms,What does the Russian idiom '{{ru-RU|Как две капли,data/seed-source/items/languages/languages.russian.idioms.json
 2488ccae-beb2-4ad8-a346-36a910dceb0f,languages,russian,idioms,What does the Russian idiom '{{ru-RU|Как снег на г,data/seed-source/items/languages/languages.russian.idioms.json
 169f87c7-7e49-4b59-a62e-c849349a6ef0,languages,russian,idioms,What does the Russian idiom '{{ru-RU|Кот наплакал|,data/seed-source/items/languages/languages.russian.idioms.json
+68478c17-590e-49ec-bce5-28a956c81b43,languages,russian,idioms,What does the Russian idiom '{{ru-RU|Медведь на ух,data/seed-source/items/languages/languages.russian.idioms.json
 693259f0-b447-499c-b14f-e870cd52677e,languages,russian,idioms,What does the Russian idiom '{{ru-RU|Медвежья услу,data/seed-source/items/languages/languages.russian.idioms.json
 c0556afb-07f9-444d-8aa7-7ea8642f0af5,languages,russian,idioms,What does the Russian idiom '{{ru-RU|Не в своей та,data/seed-source/items/languages/languages.russian.idioms.json
 23e30b4c-d9f6-4819-a66a-e0e82770a0e8,languages,russian,idioms,What does the Russian idiom '{{ru-RU|Ни рыба ни мя,data/seed-source/items/languages/languages.russian.idioms.json
@@ -9375,6 +9390,7 @@ f9601e0a-a9b0-4f9a-b8de-91c5f86b81fd,languages,russian,idioms,What does the Russ
 79beb2ba-1f2d-4b5c-aa9d-1a9eb37f82d7,languages,russian,idioms,What does the Russian idiom '{{ru-RU|Семь пятниц н,data/seed-source/items/languages/languages.russian.idioms.json
 13eb6541-30ea-4fc6-8d65-feda89b5f725,languages,russian,idioms,What does the Russian idiom '{{ru-RU|Сесть в лужу|,data/seed-source/items/languages/languages.russian.idioms.json
 5673aa3a-c0fc-4aa1-bc64-10b9f88d4d5d,languages,russian,idioms,What does the Russian idiom '{{ru-RU|Сидеть сложа ,data/seed-source/items/languages/languages.russian.idioms.json
+427d6dc7-6ecc-40c8-8a9a-ae8d18e99ee3,languages,russian,idioms,What does the Russian idiom '{{ru-RU|Собаку съел|s,data/seed-source/items/languages/languages.russian.idioms.json
 b2e49ddb-3be8-40dc-8cb2-28df996827bb,languages,russian,idioms,What does the Russian idiom '{{ru-RU|Считать ворон,data/seed-source/items/languages/languages.russian.idioms.json
 1829eea9-6090-4d7f-9bb5-ab361a423275,languages,russian,idioms,What does the Russian idiom '{{ru-RU|Через пень-ко,data/seed-source/items/languages/languages.russian.idioms.json
 b46aadae-26d7-418c-8e62-a3a3ecea84ab,languages,russian,idioms,What does the Russian idiom '{{ru-RU|Яблоку негде ,data/seed-source/items/languages/languages.russian.idioms.json
@@ -10030,6 +10046,7 @@ c85883e5-3870-432a-b02a-bcac907f91be,languages,spanish,idioms,What does the Span
 5fc1b12f-8d68-409a-9694-9142ee4744de,languages,spanish,idioms,What does the Spanish idiom 'tener la mosca detrás,data/seed-source/items/languages/languages.spanish.idioms.json
 540a6f1d-c2b8-4514-a1a5-ea8e10b156d6,languages,spanish,idioms,What does the Spanish idiom 'tener la sartén por e,data/seed-source/items/languages/languages.spanish.idioms.json
 318d4674-cbd9-48ad-a1aa-969ec86434f0,languages,spanish,idioms,What does the Spanish idiom 'tirar la casa por la ,data/seed-source/items/languages/languages.spanish.idioms.json
+c57c2f9d-4eec-47fd-9dd6-4f94bb7cc25c,languages,spanish,idioms,What does the Spanish idiom '{{es-ES|Como un pulpo,data/seed-source/items/languages/languages.spanish.idioms.json
 4a69d28b-e707-47b8-8f6e-0d125351f404,languages,spanish,idioms,"What idea does the saying ""Más vale tarde que nunc",data/seed-source/items/languages/languages.spanish.idioms.json
 5460272e-d194-45c4-8a5a-7cc8c752e8b6,languages,spanish,idioms,Which English meaning best matches the Spanish idi,data/seed-source/items/languages/languages.spanish.idioms.json
 15e11b58-38e1-4c71-b610-47129cfd773c,languages,spanish,idioms,Which English meaning best matches the Spanish idi,data/seed-source/items/languages/languages.spanish.idioms.json
