@@ -15,6 +15,8 @@ export interface ScopeLandingHeaderProps {
   flashcardsHref: string;
   gamesHref: string;
   browseHref?: string;
+  /** Guest-local known-item count (#672); undefined hides the progress line (signed-in users, unknown set). */
+  knownCount?: number;
 }
 
 type Action =
@@ -43,12 +45,27 @@ function buildActions(props: ScopeLandingHeaderProps): Action[] {
   return actions;
 }
 
+/** "N of M known" line, or a completed state when every item is known (#672). */
+export function SetProgress({ known, total, className = "mt-1 text-xs" }: { known: number; total: number; className?: string }) {
+  const shown = Math.min(known, total);
+  const complete = total > 0 && shown >= total;
+  return complete ? (
+    <p className={`${className} font-semibold text-emerald-700`} data-testid="set-progress" data-complete="true">
+      Completed: all {total.toLocaleString()} known
+    </p>
+  ) : (
+    <p className={`${className} text-gray-600`} data-testid="set-progress" data-complete="false">
+      {shown.toLocaleString()} of {total.toLocaleString()} known
+    </p>
+  );
+}
+
 /**
  * Landing header of a set (category scope or collection): one h1, a one-line description, the question count and
  * the Play buttons (#646). Rendered above the mode tabs; the tabs stay as they are.
  */
 export function ScopeLandingHeader(props: ScopeLandingHeaderProps) {
-  const { title, description, count, countState, variant = "scope", browseHref = "/categories" } = props;
+  const { title, description, count, countState, variant = "scope", browseHref = "/categories", knownCount } = props;
   const isEmpty = countState === "ready" && count === 0;
   const actions = isEmpty || countState === "loading" ? [] : buildActions(props);
   const firstSpansTwo = actions.length % 2 === 1;
@@ -63,6 +80,9 @@ export function ScopeLandingHeader(props: ScopeLandingHeaderProps) {
         <p className="mt-1 text-xs text-gray-500">
           {count.toLocaleString()} {count === 1 ? "question" : "questions"}
         </p>
+      )}
+      {countState === "ready" && count !== undefined && count > 0 && knownCount !== undefined && (
+        <SetProgress known={knownCount} total={count} />
       )}
       {countState === "error" && <p className="mt-1 text-xs text-gray-500">Could not load the question count.</p>}
       {isEmpty ? (

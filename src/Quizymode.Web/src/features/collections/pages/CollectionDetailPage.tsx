@@ -18,6 +18,8 @@ import { usePageSize, PAGE_SIZE_OPTIONS } from "@/hooks/usePageSize";
 import { useAnswerVisibility } from "@/hooks/useAnswerVisibility";
 import { ShowAnswersToggle } from "@/components/ShowAnswersToggle";
 import { ScopeLandingHeader } from "@/components/ScopeLandingHeader";
+import { collectionSetKey } from "@/features/progress/knownItems";
+import { useKnownCount } from "@/features/progress/useKnownCount";
 import { isGameEligible, GAME_MIN_ITEMS } from "@/features/games/gameRoster";
 import { useListenAll } from "@/hooks/useListenAll";
 import { SpeakerWaveIcon, PauseIcon } from "@heroicons/react/24/outline";
@@ -38,6 +40,7 @@ const CollectionDetailPage = () => {
   const view = searchParams.get("view") || "list";
   const itemId = searchParams.get("item") || null;
   const { isAuthenticated } = useAuth();
+  const knownCount = useKnownCount(id ? collectionSetKey(id) : null, !isAuthenticated);
   const currentUserId = useCurrentUserId();
   const queryClient = useQueryClient();
   const navigate = useNavigate();
@@ -241,6 +244,7 @@ const CollectionDetailPage = () => {
           title={collectionData.name}
           description={collectionData.description?.trim() || null}
           count={allItems.length}
+          knownCount={knownCount ?? undefined}
           countState="ready"
           games={allItems.filter(isGameEligible).length >= GAME_MIN_ITEMS ? "available" : "unavailable"}
           quizHref={() => buildCollectionStudyPath("quiz", id, collectionData.name)}

@@ -91,6 +91,8 @@ export interface QuizCompletionSnapshot {
   readonly correct: number;
   readonly total: number;
   readonly missedItemIds: readonly string[];
+  /** Items answered correctly in the run; used for browser-local per-set progress (#672). Optional. */
+  readonly correctItemIds?: readonly string[];
   /** Defaults to "quiz" when omitted (issue #306). */
   readonly mode?: StudySessionMode;
 }
@@ -569,6 +571,9 @@ export function toCompletionSnapshot(run: QuizRunState): QuizCompletionSnapshot 
     correct: summary.correct,
     total: summary.scoredTotal,
     missedItemIds: Object.freeze([...summary.missedItemIds]),
+    correctItemIds: Object.freeze(
+      run.itemIds.filter((itemId) => run.outcomes[itemId]?.isCorrect === true),
+    ),
   });
 }
 

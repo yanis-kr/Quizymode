@@ -11,6 +11,8 @@ import type { CollectionDiscoverItem } from "@/types/api";
 import { useAuth } from "@/contexts/AuthContext";
 import { buildCollectionPath } from "@/utils/collectionPath";
 import { buildCategoryPath } from "@/utils/categorySlug";
+import { categorySetKey, collectionSetKey } from "@/features/progress/knownItems";
+import { useKnownCount } from "@/features/progress/useKnownCount";
 import { getCategoryThemeBySlug } from "@/features/categories/categoryThemes";
 import { GuestHistoryCard } from "@/features/guestHistory/GuestHistoryCard";
 import { buildGamePath } from "@/features/games/gameScope";
@@ -61,6 +63,24 @@ interface CatalogLanesProps {
   countsByCategory: Map<string, number>;
   featuredSets: FeaturedSetDto[];
   publicCollections: CollectionDiscoverItem[];
+}
+
+/** Guest-local "N of M known" line on a Home tile, or a completed state (#672). Hidden for signed-in users and unplayed sets. */
+function TileProgress({ setKey, total }: { setKey: string; total: number }) {
+  const { isAuthenticated } = useAuth();
+  const known = useKnownCount(setKey, !isAuthenticated);
+  if (known === null || known <= 0 || total <= 0) return null;
+  const shown = Math.min(known, total);
+  const complete = shown >= total;
+  return (
+    <p
+      className={`text-[11px] font-semibold ${complete ? "text-emerald-300" : "text-white/90"}`}
+      data-testid="tile-progress"
+      data-complete={complete}
+    >
+      {complete ? `Completed: all ${total} known` : `${shown} of ${total} known`}
+    </p>
+  );
 }
 
 /** The catalog browse lanes; shown directly on the full Home and inside "Explore all topics" on the focused Home. */
@@ -186,6 +206,7 @@ function CatalogLanes({ countsByCategory, featuredSets, publicCollections }: Cat
                       <h3 className="text-sm font-semibold text-white">{set.displayName}</h3>
                       <ArrowRightIcon className="h-4 w-4 shrink-0 text-sky-300 transition group-hover:translate-x-1" />
                     </div>
+                    <TileProgress setKey={categorySetKey(set.categorySlug, keywords)} total={set.itemCount} />
                   </div>
                 </Link>
               );
@@ -238,6 +259,7 @@ function CatalogLanes({ countsByCategory, featuredSets, publicCollections }: Cat
                         {collection.description}
                       </p>
                     )}
+                    <TileProgress setKey={collectionSetKey(collection.id)} total={collection.itemCount} />
                   </div>
                 </div>
               </Link>
