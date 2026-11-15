@@ -83,6 +83,27 @@ describe("PersonalizedLanes", () => {
     expect(screen.getByRole("link", { name: /Daily quiz/ })).toHaveTextContent("1-day streak");
   });
 
+  it("shows 'Play today to keep your N-day streak' when today is not played and the streak is 1 or more (AC 3.32.3)", () => {
+    recordLocalDailyCompletion({ date: new Date(Date.now() - 86_400_000).toISOString().slice(0, 10), correct: 3, total: 5 });
+
+    renderLanes([]);
+
+    expect(screen.getByText("Play today to keep your 1-day streak")).toBeInTheDocument();
+  });
+
+  it("hides the keep-your-streak line once today is played or when there is no streak (AC 3.32.3)", () => {
+    renderLanes([]);
+    expect(screen.queryByText(/Play today to keep your/)).not.toBeInTheDocument();
+  });
+
+  it("hides the keep-your-streak line once today is played (AC 3.32.3)", () => {
+    recordLocalDailyCompletion({ date: utcToday(), correct: 3, total: 5 });
+
+    renderLanes([]);
+
+    expect(screen.queryByText(/Play today to keep your/)).not.toBeInTheDocument();
+  });
+
   it("done state shows the time to the next quiz as a duration, never UTC or midnight (#649)", () => {
     recordLocalDailyCompletion({ date: utcToday(), correct: 3, total: 5 });
 
@@ -184,7 +205,7 @@ describe("PersonalizedLanes", () => {
 
     expect(await screen.findByRole("link", { name: /Review mistakes/ })).toHaveTextContent("4 questions due");
     expect(await screen.findByRole("heading", { name: "Continue" })).toBeInTheDocument();
-    expect(await screen.findByText(/5-day streak/)).toBeInTheDocument();
+    expect(await screen.findByText("Play today to keep your 5-day streak")).toBeInTheDocument();
     expect(screen.getByRole("link", { name: "History" })).toBeInTheDocument();
 
     fireEvent.click(screen.getByRole("button", { name: "Change topics" }));
