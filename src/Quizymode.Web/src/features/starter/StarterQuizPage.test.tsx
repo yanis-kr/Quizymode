@@ -90,6 +90,18 @@ describe("StarterQuizPage", () => {
     vi.mocked(starterApi.getPool).mockResolvedValue({ version: "v1", items: pool });
   });
 
+  it("AC 3.0.2a has exactly one h1 while loading, on the question view, and on the results view", async () => {
+    renderPage();
+    expect(screen.getAllByRole("heading", { level: 1 })).toHaveLength(1);
+
+    await screen.findByText("Question 1 of 5");
+    expect(screen.getAllByRole("heading", { level: 1 })).toHaveLength(1);
+    expect(screen.getByRole("heading", { level: 1 })).toHaveTextContent("Play a 5-question quiz");
+
+    await finishRun();
+    expect(screen.getAllByRole("heading", { level: 1 })).toHaveLength(1);
+  });
+
   it("shows a loading status, then five questions starting with a flag", async () => {
     renderPage();
     expect(screen.getByRole("status")).toHaveTextContent("Loading your quiz");
