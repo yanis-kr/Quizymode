@@ -1,0 +1,42 @@
+[
+  {
+    "itemId": "f5c7e0c0-1f7d-4a24-aafa-675c9076e8cc",
+    "category": "languages",
+    "navigationKeyword1": "german",
+    "navigationKeyword2": "idioms",
+    "question": "What does the German idiom '{{de-DE|Tomaten auf den Augen haben||to-MAH-ten owf dayn OW-gen HA-ben}}' most naturally mean?",
+    "correctAnswer": "Fail to notice something obvious.",
+    "incorrectAnswers": [
+      "Be very tired after a long day.",
+      "Cook for too many people.",
+      "Dream about food."
+    ],
+    "explanation": "This idiom is used in everyday german for the idea 'Fail to notice something obvious.'. Word-to-word: \"to have tomatoes on the eyes.\" Someone with tomatoes on their eyes cannot see what is right in front of them. Example: \"Hast du Tomaten auf den Augen? Der Schlüssel liegt doch direkt vor dir.\" (Are you blind? The key is right in front of you.)",
+    "keywords": [
+      "german",
+      "fail-to-see-the-obvious",
+      "funny"
+    ],
+    "source": "https://blog.ted.com/40-idioms-that-cant-be-translated-literally/"
+  },
+  {
+    "itemId": "75515f32-7235-48f1-897d-49a1a4ecb40a",
+    "category": "languages",
+    "navigationKeyword1": "german",
+    "navigationKeyword2": "idioms",
+    "question": "What does the German idiom '{{de-DE|Ich glaub, mein Schwein pfeift||ikh GLOWP mine SHVINE PFIFFT}}' most naturally mean?",
+    "correctAnswer": "Express disbelief or astonishment.",
+    "incorrectAnswers": [
+      "Say you are very hungry.",
+      "Warn someone of danger.",
+      "Say you are in a good mood."
+    ],
+    "explanation": "This idiom is used in everyday german for the idea 'Express disbelief or astonishment.'. Word-to-word: \"I think my pig is whistling.\" A whistling pig is impossible, so the phrase reacts to news that is hard to believe. Example: \"Ich glaub, mein Schwein pfeift! Du hast schon wieder gewonnen?\" (I can't believe it! You won again?)",
+    "keywords": [
+      "german",
+      "disbelief",
+      "funny"
+    ],
+    "source": "https://www.thelocal.de/20220822/german-phrase-of-the-day-ich-glaub-mein-schwein-pfeift"
+  }
+]

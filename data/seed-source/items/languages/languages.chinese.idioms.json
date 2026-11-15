@@ -1,0 +1,42 @@
+[
+  {
+    "itemId": "e9ba4782-3cfe-46f7-93c2-ecb58b2e50b2",
+    "category": "languages",
+    "navigationKeyword1": "chinese",
+    "navigationKeyword2": "idioms",
+    "question": "What does the Chinese idiom '{{zh-CN|画蛇添足|huà shé tiān zú|hwah shuh tyen dzoo}}' most naturally mean?",
+    "correctAnswer": "Ruin something by adding unnecessary extras.",
+    "incorrectAnswers": [
+      "Finish a job with great skill.",
+      "Copy someone else's work.",
+      "Draw something too slowly."
+    ],
+    "explanation": "This idiom is used in everyday chinese for the idea 'Ruin something by adding unnecessary extras.'. Word-to-word: \"draw a snake and add feet.\" In the old story, a man who drew feet on his snake lost the contest, because snakes have no feet. Example: \"这个设计已经很好了，再加装饰就是画蛇添足。\" (The design was already good; adding decoration would only spoil it.)",
+    "keywords": [
+      "chinese",
+      "overdo-it",
+      "funny"
+    ],
+    "source": "https://en.5000yan.com/chinese-idioms/adding-legs-snake.html"
+  },
+  {
+    "itemId": "066e910e-1f59-4bd4-bc0e-3e63d2588ab6",
+    "category": "languages",
+    "navigationKeyword1": "chinese",
+    "navigationKeyword2": "idioms",
+    "question": "What does the Chinese idiom '{{zh-CN|炒冷饭|chǎo lěng fàn|chow lung fahn}}' most naturally mean?",
+    "correctAnswer": "Rehash old material with nothing new.",
+    "incorrectAnswers": [
+      "Cook a quick meal.",
+      "Waste food.",
+      "Save money on meals."
+    ],
+    "explanation": "This idiom is used in everyday chinese for the idea 'Rehash old material with nothing new.'. Word-to-word: \"to stir-fry cold rice.\" Fried leftover rice is the same old food served again. Example: \"这部电影只是炒冷饭，没有新意。\" (This film just rehashes old stuff and has nothing new.)",
+    "keywords": [
+      "chinese",
+      "rehash-old-material",
+      "funny"
+    ],
+    "source": "https://en.wiktionary.org/wiki/炒冷飯"
+  }
+]
