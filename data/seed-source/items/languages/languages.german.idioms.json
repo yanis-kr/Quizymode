@@ -4,14 +4,14 @@
     "category": "languages",
     "navigationKeyword1": "german",
     "navigationKeyword2": "idioms",
-    "question": "What does the German idiom '{{de-DE|Tomaten auf den Augen haben||to-MAH-ten owf dayn OW-gen HA-ben}}' most naturally mean?",
+    "question": "What does the German idiom '{{de-DE|Tomaten auf den Augen haben||to-MAH-ten owf dayn OW-gen HA-ben}}' (literally: \"to have tomatoes on the eyes\") actually mean?",
     "correctAnswer": "Fail to notice something obvious.",
     "incorrectAnswers": [
-      "Be very tired after a long day.",
       "Cook for too many people.",
-      "Dream about food."
+      "Be too tired to think straight.",
+      "Ignore advice on purpose."
     ],
-    "explanation": "This idiom is used in everyday german for the idea 'Fail to notice something obvious.'. Word-to-word: \"to have tomatoes on the eyes.\" Someone with tomatoes on their eyes cannot see what is right in front of them. Example: \"Hast du Tomaten auf den Augen? Der Schlüssel liegt doch direkt vor dir.\" (Are you blind? The key is right in front of you.)",
+    "explanation": "This idiom is used in everyday German for the idea 'Fail to notice something obvious.' Word-to-word: \"to have tomatoes on the eyes.\" Someone with tomatoes on their eyes cannot see what is right in front of them. Example: \"Hast du Tomaten auf den Augen? Der Schlüssel liegt doch direkt vor dir.\" (Are you blind? The key is right in front of you.)",
     "keywords": [
       "german",
       "fail-to-see-the-obvious",
@@ -24,14 +24,14 @@
     "category": "languages",
     "navigationKeyword1": "german",
     "navigationKeyword2": "idioms",
-    "question": "What does the German idiom '{{de-DE|Ich glaub, mein Schwein pfeift||ikh GLOWP mine SHVINE PFIFFT}}' most naturally mean?",
+    "question": "What does the German idiom '{{de-DE|Ich glaub, mein Schwein pfeift||ikh GLOWP mine SHVINE PFIFFT}}' (literally: \"I think my pig is whistling\") actually mean?",
     "correctAnswer": "Express disbelief or astonishment.",
     "incorrectAnswers": [
       "Say you are very hungry.",
-      "Warn someone of danger.",
-      "Say you are in a good mood."
+      "Complain that something is unfair.",
+      "Announce that you are leaving."
     ],
-    "explanation": "This idiom is used in everyday german for the idea 'Express disbelief or astonishment.'. Word-to-word: \"I think my pig is whistling.\" A whistling pig is impossible, so the phrase reacts to news that is hard to believe. Example: \"Ich glaub, mein Schwein pfeift! Du hast schon wieder gewonnen?\" (I can't believe it! You won again?)",
+    "explanation": "This idiom is used in everyday German for the idea 'Express disbelief or astonishment.' Word-to-word: \"I think my pig is whistling.\" A whistling pig is impossible, so the phrase reacts to news that is hard to believe. Example: \"Ich glaub, mein Schwein pfeift! Du hast schon wieder gewonnen?\" (I can't believe it! You won again?)",
     "keywords": [
       "german",
       "disbelief",
