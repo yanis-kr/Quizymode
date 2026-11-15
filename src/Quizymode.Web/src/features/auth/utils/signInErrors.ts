@@ -19,7 +19,7 @@ export const SIGN_IN_ERROR_COPY: Record<SignInErrorCode, string> = {
   "incorrect-credentials": "Incorrect email or password.",
   "too-many-attempts": "Too many sign-in attempts. Wait a few minutes and try again.",
   unconfirmed: `This account hasn't been confirmed yet. Please contact us through the ${FEEDBACK_LINK_LABEL} and we'll help you finish setting it up.`,
-  "reset-required": `This account needs a password reset before you can sign in. Please contact us through the ${FEEDBACK_LINK_LABEL}.`,
+  "reset-required": "This account needs a password reset before you can sign in.",
   "unsupported-step": `This account needs a sign-in step this app doesn't support yet. Please contact us through the ${FEEDBACK_LINK_LABEL}.`,
   network: "We couldn't reach the sign-in service. Check your connection and try again.",
   generic: "Sign-in failed. Please try again.",

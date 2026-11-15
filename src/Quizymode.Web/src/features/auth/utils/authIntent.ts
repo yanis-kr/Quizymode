@@ -12,6 +12,7 @@ import { parseInAppUrl } from "@/utils/safeInAppPath";
 
 export const LOGIN_PATH = "/login";
 export const SIGNUP_PATH = "/signup";
+export const RESET_PASSWORD_PATH = "/reset-password";
 const DEFAULT_RETURN_TO = "/";
 
 export const AUTH_REASONS = [
@@ -50,6 +51,7 @@ function isAuthReturnDestination(pathname: string): boolean {
   return (
     normalized === LOGIN_PATH ||
     normalized === SIGNUP_PATH ||
+    normalized === RESET_PASSWORD_PATH ||
     normalized === "/auth" ||
     normalized.startsWith("/auth/")
   );

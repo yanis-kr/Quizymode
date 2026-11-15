@@ -1,5 +1,5 @@
 import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
-import { fireEvent, render, screen, waitFor } from "@testing-library/react";
+import { fireEvent, render, screen, waitFor, within } from "@testing-library/react";
 import { MemoryRouter } from "react-router-dom";
 import { HelmetProvider } from "react-helmet-async";
 import LoginPage from "./LoginPage";
@@ -183,6 +183,29 @@ describe("LoginPage", () => {
     renderPage();
     const link = screen.getByRole("link", { name: /sign up/i });
     expect(link).toHaveAttribute("href", "/signup");
+  });
+
+  it("shows Forgot password? linking to /reset-password and preserving returnTo (AC 4.6.13)", () => {
+    renderPage("/login?returnTo=%2Fitems%2Fadd&reason=create-content");
+    const link = screen.getByRole("link", { name: "Forgot password?" });
+    expect(link.getAttribute("href")).toContain("/reset-password?");
+    expect(link.getAttribute("href")).toContain("returnTo=%2Fitems%2Fadd");
+  });
+
+  it("links to a plain /reset-password when there is no intent to carry (AC 4.6.13)", () => {
+    renderPage();
+    expect(screen.getByRole("link", { name: "Forgot password?" })).toHaveAttribute("href", "/reset-password");
+  });
+
+  it("links a RESET_PASSWORD sign-in step to the reset page (AC 4.6.16)", async () => {
+    mockLogin.mockRejectedValueOnce(new SignInStepRequiredError("RESET_PASSWORD"));
+    renderPage("/login?returnTo=%2Fitems%2Fadd");
+    fireEvent.change(screen.getByPlaceholderText(/email/i), { target: { value: "a@b.co" } });
+    fireEvent.change(screen.getByPlaceholderText(/password/i), { target: { value: "x" } });
+    fireEvent.click(screen.getByRole("button", { name: /sign in/i }));
+    const alert = await screen.findByRole("alert");
+    const link = within(alert).getByRole("link", { name: "Reset your password" });
+    expect(link.getAttribute("href")).toContain("/reset-password?returnTo=%2Fitems%2Fadd");
   });
 
   it("redirects already-authenticated visitors to the validated returnTo once loading settles", () => {

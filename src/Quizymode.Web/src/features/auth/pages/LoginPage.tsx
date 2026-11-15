@@ -3,6 +3,7 @@ import { useNavigate, useLocation, Link, Navigate } from "react-router-dom";
 import { useAuth } from "@/contexts/AuthContext";
 import { SEO } from "@/components/SEO";
 import {
+  RESET_PASSWORD_PATH,
   SIGNUP_PATH,
   buildAuthIntentQuery,
   parseAuthIntent,
@@ -24,11 +25,13 @@ const LoginPage = () => {
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
   const [feedbackLink, setFeedbackLink] = useState(false);
+  const [resetLink, setResetLink] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
   const [isGoogleStarting, setIsGoogleStarting] = useState(false);
 
   const intent = parseAuthIntent(location.search);
   const signupHref = `${SIGNUP_PATH}${buildAuthIntentQuery(intent)}`;
+  const resetHref = `${RESET_PASSWORD_PATH}${buildAuthIntentQuery(intent)}`;
 
   // Already-authenticated visitors follow the same validated-destination
   // rule, once initial auth loading has settled.
@@ -40,6 +43,7 @@ const LoginPage = () => {
     e.preventDefault();
     setError("");
     setFeedbackLink(false);
+    setResetLink(false);
     setIsLoading(true);
 
     try {
@@ -53,6 +57,7 @@ const LoginPage = () => {
       const mapped = mapSignInError(err);
       setError(mapped.text);
       setFeedbackLink(mapped.linkToFeedback);
+      setResetLink(mapped.code === "reset-required");
     } finally {
       setIsLoading(false);
     }
@@ -84,6 +89,14 @@ const LoginPage = () => {
                   </>
                 ) : (
                   error
+                )}
+                {resetLink && (
+                  <>
+                    {" "}
+                    <Link to={resetHref} className="font-medium underline">
+                      Reset your password
+                    </Link>
+                  </>
                 )}
               </div>
             </div>
@@ -142,6 +155,15 @@ const LoginPage = () => {
             >
               {isLoading ? "Signing in..." : "Sign in"}
             </button>
+          </div>
+
+          <div className="text-center text-sm">
+            <Link
+              to={resetHref}
+              className="font-medium text-indigo-ink hover:text-indigo-500"
+            >
+              Forgot password?
+            </Link>
           </div>
 
           <div className="text-center text-sm">
