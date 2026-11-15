@@ -48,7 +48,7 @@ test("workflow gating: CI jobs are gated by the change scope", () => {
   for (const [job, flag] of [["frontend", "web"], ["frontend-tests", "web"], ["backend-tests", "api"], ["api-image", "api"], ["e2e", "any"]]) {
     const block = jobBlock(ci, job);
     assert.match(block, /needs: changes/, job);
-    assert.match(block, new RegExp(`needs\.changes\.outputs\.${flag} == 'true'`), job);
+    assert.ok(block.includes(`needs.changes.outputs.${flag} == 'true'`), job);
   }
   for (const job of ["automation-contract", "ac-gate", "cognito-presignup"]) {
     assert.doesNotMatch(jobBlock(ci, job), /needs\.changes/, `${job} always runs`);
