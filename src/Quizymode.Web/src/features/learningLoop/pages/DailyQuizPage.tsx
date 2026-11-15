@@ -12,6 +12,7 @@ import { isGuestEligible } from "@/features/guestHistory/guestHistoryStorage";
 import { addLocalReviewItems } from "../localReviewList";
 import { DailyCountdown } from "../DailyCountdown";
 import { DailyExploreNext } from "../DailyExploreNext";
+import { DailyArchiveLink } from "../DailyArchiveLink";
 import { FixedSetQuiz } from "../FixedSetQuiz";
 import { StreakMilestoneCelebration } from "../StreakMilestoneCelebration";
 import { computeStreak, readDailyCompletions, recordLocalDailyCompletion } from "../localLearningState";
@@ -159,6 +160,8 @@ const DailyQuizPage = () => {
             <p role="alert" className="text-red-700">Your result could not be saved. Your score below is still correct.</p>
           )}
         </div>
+
+        {!isAuthLoading && <DailyArchiveLink identityKey={identityKey} />}
 
         {(isAuthLoading || query.isLoading) && <LoadingSpinner />}
 

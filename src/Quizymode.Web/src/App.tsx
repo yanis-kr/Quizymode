@@ -21,6 +21,7 @@ import { LazyRoute } from "./components/LazyRoute";
 import { lazyPage } from "./utils/lazyPage";
 import FeaturedPage from "./features/featured/pages/FeaturedPage";
 import DailyQuizPage from "./features/learningLoop/pages/DailyQuizPage";
+import DailyArchivePage from "./features/learningLoop/pages/DailyArchivePage";
 import StarterQuizPage from "./features/starter/StarterQuizPage";
 
 // Route-level code splitting (PERF-001): anonymous landing/study pages stay eager; admin, authoring,
@@ -140,6 +141,7 @@ function App() {
         <Route path="/games/sort-it/:category?" element={<SortItPage />} />
         <Route path="/games/:category?" element={<GamesHubPage />} />
         <Route path="/daily" element={<DailyQuizPage />} />
+        <Route path="/daily/archive" element={<DailyArchivePage />} />
         <Route path="/start" element={<StarterQuizPage />} />
         <Route path="/progress" element={<ProgressPage />} />
         <Route path="/login" element={<LoginPage />} />
