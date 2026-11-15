@@ -77,6 +77,7 @@ export function ExploreRenderer({
           <QuestionImage
             key={item.id}
             itemId={item.id} image={item.questionImage}
+          withdrawn={item.imageReview?.state === "Withdrawn"}
             onStatusChange={questionPicture?.onStatusChange}
             onSkip={questionPicture?.onSkip}
           />

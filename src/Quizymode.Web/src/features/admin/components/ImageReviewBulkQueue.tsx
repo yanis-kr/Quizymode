@@ -328,7 +328,7 @@ export function ImageReviewBulkQueue() {
             <p className="mt-4 text-sm text-gray-500">Showing the oldest {items.length} of {total}. Decide these to load the next ones.</p>
           ) : null}
 
-          <div className="sticky bottom-0 mt-4 space-y-2 rounded-lg border border-gray-200 bg-surface p-3 shadow">
+          <div className="mt-4 space-y-2 rounded-lg border border-gray-200 bg-surface p-3 shadow">
             <label htmlFor="bulk-reject-reason" className="block text-sm font-medium text-gray-700">
               Reason for rejection (required to reject; shown to the owner)
             </label>
