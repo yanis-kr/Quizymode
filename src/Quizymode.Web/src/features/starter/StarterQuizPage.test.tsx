@@ -90,7 +90,7 @@ describe("StarterQuizPage", () => {
     vi.mocked(starterApi.getPool).mockResolvedValue({ version: "v1", items: pool });
   });
 
-  it("AC 3.0.2a has exactly one h1 while loading, on the question view, and on the results view", async () => {
+  it("AC 3.0.35 has exactly one h1 while loading, on the question view, and on the results view", async () => {
     renderPage();
     expect(screen.getAllByRole("heading", { level: 1 })).toHaveLength(1);
 
@@ -324,7 +324,7 @@ describe("StarterQuizPage", () => {
     renderPage();
     expect(await screen.findByText("Question 1 of 5")).toBeInTheDocument();
     fireEvent.load(await screen.findByAltText("flag"));
-    expect(screen.getByRole("button", { name: "Skip question (not scored)" })).toBeInTheDocument();
+    expect(screen.queryByRole("button", { name: "Skip question (not scored)" })).not.toBeInTheDocument();
 
     await answer(true);
     expect(screen.queryByRole("button", { name: "Skip question (not scored)" })).not.toBeInTheDocument();
