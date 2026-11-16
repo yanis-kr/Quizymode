@@ -7,7 +7,7 @@ import { pathToFileURL } from "node:url";
 
 const NONE_PREFIXES = [
   ".claude/", ".codex/", ".agent-skills/", "scripts/automation/", "scripts/validation/", "scripts/tests/",
-  "scripts/ci/", "docs/",
+  "scripts/ci/", "scripts/release/", "docs/",
 ];
 const NONE_FILES = ["AGENTS.md", "CLAUDE.md", "README.md", "LICENSE.txt", ".gitignore", ".gitattributes"];
 // Documents under docs/ that the backend reads or that describe its contract.

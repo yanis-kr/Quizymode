@@ -73,6 +73,8 @@ A failure inside an attempt goes back to step 3. Only validated issues are merge
 
 ## Release
 
+Steps 3 to 5 below are driven by `node scripts/release/release.mjs`: `wait-pr --pr <n>` (step 3, until `ok`), `ship --pr <n> --issues <n,n>` (merge and deploy check, run again until `deployed`), and `evidence --issues <n,n> --report ... --run-url ... --out ...` (then `--close` only after the evidence comments are posted). Each prints one JSON line with `class`; exit 3 means the same failure as last time, and a `deploy` class writes `.qm/release-halt.json`. `BUNDLE merge-gate` still gates the merge.
+
 1. `BUNDLE checkpoint <id>`; `BUNDLE ci-run <id>`; `git push -u origin release/<id>`.
 2. PR (only if none exists): `gh pr create --base main --head release/<id> --title "release(<id>): <title> (<version>)" --body <file>`. Body lists each issue as `Refs #n` (not `Closes`, so merge does not close issues before evidence), the shipped/deferred table, and the gate results. Phase `release_pr_open --pr <n>`.
 3. Run `gh pr checks <n> --watch` (and later `gh run watch`) in the background; while waiting, lanes may implement the next approved bundle's issues on branches (no second release PR while one is in flight; all gates unchanged). On failure: read the failing job log (`gh run view <run> --log-failed`), fix on the release branch, re-run the filtered tests for the files the fix touched, `BUNDLE ci-run`, push. Exit 3 from `ci-run`: phase `blocked_terminal`. When green: phase `ci_green`.
