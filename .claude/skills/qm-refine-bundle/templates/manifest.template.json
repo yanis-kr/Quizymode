@@ -14,6 +14,7 @@
       "title": "Issue title",
       "order": 1,
       "snapshot": { "state": "OPEN", "updatedAt": "", "bodySha256": "" },
+      "size": "s",
       "risk": "low",
       "ux": false,
       "migration": false,

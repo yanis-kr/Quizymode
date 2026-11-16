@@ -140,6 +140,7 @@ function validateManifest(m, id) {
     req(it?.snapshot && typeof it.snapshot.updatedAt === "string" && /^[0-9a-f]{64}$/.test(it.snapshot.bodySha256 ?? ""), `${tag}: snapshot.updatedAt and snapshot.bodySha256 required`);
     req(Array.isArray(it?.scope?.paths), `${tag}: scope.paths must be an array (empty means any change on main overlaps this issue)`);
     req(["low", "medium", "high"].includes(it?.risk), `${tag}: risk must be low, medium or high`);
+    req(it?.size === undefined || ["xs", "s", "m", "l"].includes(it.size), `${tag}: size must be xs, s, m or l when set`);
     req(typeof it?.ux === "boolean" && typeof it?.migration === "boolean", `${tag}: ux and migration must be booleans`);
     req(Array.isArray(it?.validation), `${tag}: validation must be an array`);
     req(Array.isArray(it?.acceptanceCriteria) && it.acceptanceCriteria.length > 0, `${tag}: at least one acceptance criterion required`);
@@ -305,6 +306,83 @@ function checkApprovalStillValid(p, st) {
   const ap = fs.existsSync(p.approval) ? safeJson(p.approval) : null;
   if (hash !== st.manifestSha256) die(2, "manifest.json changed during execution; stop. It no longer matches the approved revision.");
   if (!ap || ap.status !== "approved" || ap.manifestSha256 !== hash) die(2, "Approval is missing, revoked, or for another revision; stop.");
+}
+
+// ---------- packets and handbacks ----------
+// One routing source for every role. Role defaults are fixed: architect, reviewer and qm-decision-maker use opus;
+// coder, tester and ux-designer use sonnet; reporter uses haiku. Facts can only escalate coder and tester to opus
+// (risk high, a migration, size l, or attempt 2 or later). An unknown fact counts as the risky value.
+const ROLE_DEFAULT = { architect: "opus", reviewer: "opus", "qm-decision-maker": "opus", coder: "sonnet", tester: "sonnet", "ux-designer": "sonnet", reporter: "haiku" };
+const ESCALATES = new Set(["coder", "tester"]);
+function roleModel(role, { size, risk, migration, attempt }) {
+  if (!Object.hasOwn(ROLE_DEFAULT, role)) throw new Error(`unknown role: ${role}`);
+  if (!ESCALATES.has(role)) return ROLE_DEFAULT[role];
+  const risky = risk === "high" || risk === "unknown" || migration !== false || size === "l" || size === "unknown" || Number(attempt) >= 2;
+  return risky ? "opus" : ROLE_DEFAULT[role];
+}
+function modelsFor(facts) {
+  return Object.fromEntries(Object.keys(ROLE_DEFAULT).map((role) => [role, roleModel(role, facts)]));
+}
+// The attempt never drops below the attempts recorded in state.json; --attempt can only raise it.
+function attemptFrom(recorded, requested) {
+  const req = requested === undefined ? 1 : Number(requested);
+  if (!Number.isInteger(req) || req < 1) die(1, "--attempt must be a positive integer");
+  return Math.max(1, req, Number(recorded ?? 0));
+}
+function packetChecks(paths, issue, extra) {
+  const norm = paths.map((x) => x.replaceAll(String.fromCharCode(92), "/"));
+  const has = (pre) => norm.filter((x) => x.startsWith(pre));
+  const out = [];
+  const web = has("src/Quizymode.Web/").map((x) => x.replace(/\/\*\*.*$/, ""));
+  if (web.length) out.push(`npx vitest related --run ${web.join(" ")}`, `eslint ${web.join(" ")}`);
+  const feats = new Set(has("src/Quizymode.Api/Features/").map((x) => x.split("/")[3]).filter((x) => x && !/[*?]/.test(x)));
+  if (feats.size) out.push(`dotnet test --filter "(${[...feats].map((f) => `FullyQualifiedName~Features.${f}`).join("|")}|FullyQualifiedName~Architecture)&Category!=Postgres"`);
+  else if (has("src/Quizymode.Api").length) out.push('dotnet test --filter "FullyQualifiedName~Architecture&Category!=Postgres"');
+  if (has("scripts/").length || has(".claude/").length) out.push("node --test scripts/tests/");
+  out.push(`node scripts/validation/ac-gate.mjs --issues ${issue}`);
+  for (const v of extra ?? []) if (!out.includes(v)) out.push(v);
+  return out;
+}
+function acSliceFor(issue) {
+  const here = path.dirname(fileURLToPath(import.meta.url));
+  const script = path.resolve(here, "..", "..", "..", "..", "scripts", "validation", "ac-slice.mjs");
+  const args = [script, "--issue", String(issue), "--max-lines", "80"];
+  if (typeof opts["ac-file"] === "string") args.push("--file", path.resolve(String(opts["ac-file"])));
+  return sh("node", args, true) ?? `(no ACs in docs/AC.md carry (#${issue}) yet)`;
+}
+function renderPacket(p) {
+  const L = [`# Work packet: #${p.issue} ${p.title}`, "", `attempt: ${p.attempt} of ${p.maxAttempts}`, `facts (${p.factSource}): size ${p.size}, risk ${p.risk}, migration ${p.migration}`, "", "## Goal", p.goal, ""];
+  L.push("## Models by role (dispatch each agent with its role's model)", ...Object.entries(p.models).map(([r, m]) => `- ${r}: ${m}`), "");
+  L.push("## Acceptance criteria", ...p.acs.map((a) => `- ${a.id} [verify: ${a.evidence}] ${a.text}`), "");
+  L.push("## Exclusions", ...(p.exclusions.length ? p.exclusions.map((x) => `- ${x}`) : ["- (none)"]), "");
+  L.push("## scope.paths", ...(p.paths.length ? p.paths.map((x) => `- ${x}`) : ["- (unknown: none declared; find files by Grep and say what you checked)"]), "");
+  L.push("## dependsOn", p.dependsOn.length ? p.dependsOn.map((d) => (typeof d === "number" ? `#${d}` : d.external)).join(", ") : "(none)", "");
+  L.push("## Checks to run (filtered only)", ...p.checks.map((c) => `- \`${c}\``), "");
+  L.push("## AC slice (from docs/AC.md; do not open the whole file)", "```", p.acSlice, "```", "");
+  L.push("## Handback", `Your final reply ends with the handback JSON in one fenced json block, in this shape. The orchestrator saves it to \`${p.handbackPattern}\` with \`bundle.mjs handback-save --issue ${p.issue} --role <role> --file <json file>\`. The handback is your claim. It is not test evidence: the filtered command output, \`ac-gate\` and CI are.`,
+    "```json", '{"status":"done|failed|blocked","filesChanged":[],"commands":[{"command":"","exitCode":0}],"acEvidence":{"<AC id>":"<file path>"},"questions":[]}', "```", "");
+  return L.join("\n");
+}
+function writePacket(p) {
+  const dir = typeof opts["packets-dir"] === "string" ? path.resolve(String(opts["packets-dir"])) : path.join(mainCheckoutRoot(), ".qm", "packets");
+  const hbDir = typeof opts["handbacks-dir"] === "string" ? path.resolve(String(opts["handbacks-dir"])) : path.join(mainCheckoutRoot(), ".qm", "handbacks");
+  p.handbackPattern = path.join(hbDir, `${p.issue}-<role>.json`).replaceAll(String.fromCharCode(92), "/");
+  fs.mkdirSync(dir, { recursive: true });
+  const file = path.join(dir, `${p.issue}.md`);
+  fs.writeFileSync(file, renderPacket(p), "utf8");
+  ok({ packet: file, issue: p.issue, models: p.models, attempt: p.attempt });
+}
+function validateHandback(h) {
+  const e = [];
+  if (!h || typeof h !== "object" || Array.isArray(h)) return ["handback must be a JSON object"];
+  if (!["done", "failed", "blocked"].includes(h.status)) e.push("status must be done, failed or blocked");
+  if (!Array.isArray(h.filesChanged) || h.filesChanged.some((x) => typeof x !== "string")) e.push("filesChanged must be an array of strings");
+  if (!Array.isArray(h.commands) || h.commands.some((c) => !c || typeof c.command !== "string" || !Number.isInteger(c.exitCode))) e.push("commands must be an array of { command, exitCode }");
+  if (!h.acEvidence || typeof h.acEvidence !== "object" || Array.isArray(h.acEvidence) || Object.values(h.acEvidence).some((v) => typeof v !== "string")) e.push("acEvidence must be an object of AC id to file path");
+  else if (h.status === "done" && !Object.keys(h.acEvidence).length) e.push("acEvidence must name at least one AC when status is done");
+  if (!Array.isArray(h.questions)) e.push("questions must be an array");
+  if (h.status === "done" && Array.isArray(h.commands) && h.commands.some((c) => c && Number.isInteger(c.exitCode) && c.exitCode !== 0)) e.push("a done handback cannot include a command with a nonzero exitCode");
+  return e;
 }
 
 // ---------- commands ----------
@@ -618,6 +696,73 @@ switch (cmd) {
     writeJsonAtomic(p.manifest, m);
     ok({ bundleId: id, manifest: p.manifest, note: "Fill in issues/policies, then run check." });
   }
+  case "packet": {
+    // packet <bundleId> <issue>  |  packet --from-issue <n> [--issue-json <file>]
+    if (opts["from-issue"] !== undefined) {
+      const n = Number(opts["from-issue"]);
+      if (!Number.isInteger(n) || n <= 0) die(1, "--from-issue needs an issue number");
+      const raw = typeof opts["issue-json"] === "string" ? fs.readFileSync(String(opts["issue-json"]), "utf8") : sh("gh", ["issue", "view", String(n), "--json", "title,body,labels"], true);
+      if (!raw) die(1, `gh could not read issue #${n}`);
+      const j = JSON.parse(raw);
+      const labels = (j.labels ?? []).map((l) => (typeof l === "string" ? l : l.name));
+      const label = (d) => labels.find((l) => l.startsWith(`${d}:`))?.slice(d.length + 1);
+      const body = String(j.body ?? "");
+      const acs = [...body.matchAll(/^\s*-\s+AC\s*\(draft\)\s*\[verify:\s*([^\]]+)\]\s*(.+)$/gm)].map((m, i) => ({ id: `AC${i + 1}`, text: m[2].trim(), evidence: m[1].trim() }));
+      if (!acs.length) die(2, `Issue #${n} has no "AC (draft) [verify: ...]" lines; refine it first.`);
+      const exclusions = [...body.matchAll(/^\s*Out of scope:\s*(.+)$/gim)].map((m) => m[1].trim());
+      // Facts come from labels only. A missing fact is "unknown", which routes coder and tester to opus; it is never read as verified false.
+      const risk = labels.includes("risk:high") || labels.includes("area:auth") ? "high" : labels.includes("risk:low") ? "low" : labels.includes("risk:medium") ? "medium" : "unknown";
+      const migration = labels.includes("area:db") ? true : "unknown";
+      const sizeLabel = label("size");
+      const size = ["xs", "s", "m", "l"].includes(sizeLabel) ? sizeLabel : "unknown";
+      const attempt = attemptFrom(undefined, opts.attempt);
+      writePacket({ issue: n, title: j.title, goal: j.title, acs, exclusions, paths: [], scopeKnown: false, dependsOn: [], checks: packetChecks([], n), acSlice: acSliceFor(n),
+        size, risk, migration, attempt, maxAttempts: 2, factSource: "issue labels and body, not checked against the manifest or code", models: modelsFor({ size, risk, migration, attempt }) });
+    }
+    const p = bundlePaths(id);
+    const m = loadValidManifest(p, id);
+    const hash = sha256File(p.manifest);
+    const ap = fs.existsSync(p.approval) ? safeJson(p.approval) : null;
+    if (!ap || ap.status !== "approved" || ap.manifestSha256 !== hash) die(2, "Bundle manifest is not approved at its current revision; packets come only from an approved manifest.");
+    const num = Number(positional[1]);
+    const it = m.issues.find((x) => x.number === num);
+    if (!it) die(2, `Issue #${positional[1] ?? ""} is not in bundle '${id}'. Scope cannot be expanded.`);
+    const st = fs.existsSync(p.state) ? safeJson(p.state) : null;
+    const attempt = attemptFrom(st?.issues?.[String(num)]?.attempts, opts.attempt);
+    const size = it.size ?? "unknown";
+    const extra = it.validation.filter((v) => /^(npm|npx|dotnet|node|eslint) /.test(v) && !/test:coverage/.test(v) && v !== "dotnet test");
+    writePacket({ issue: num, title: it.title, goal: it.scope.summary ?? it.title, acs: it.acceptanceCriteria, exclusions: it.scope.exclusions ?? [], paths: it.scope.paths, scopeKnown: it.scope.paths.length > 0, dependsOn: it.dependsOn,
+      checks: packetChecks(it.scope.paths, num, extra), acSlice: acSliceFor(num), size, risk: it.risk, migration: it.migration,
+      attempt, maxAttempts: m.limits.maxAttemptsPerIssue, factSource: "approved manifest", models: modelsFor({ size, risk: it.risk, migration: it.migration, attempt }) });
+  }
+  case "handback-check": {
+    const file = positional[0];
+    if (!file) die(1, "Usage: handback-check <file>");
+    let h;
+    try { h = JSON.parse(fs.readFileSync(path.resolve(file), "utf8")); } catch (e) { die(2, `Cannot read handback JSON: ${e.message}`); }
+    const errors = validateHandback(h);
+    if (errors.length) die(2, "Handback is invalid", { errors });
+    ok({ file: path.resolve(file), status: h.status });
+  }
+  case "handback-save": {
+    // handback-save --issue <n> --role <role> --file <json>: saves a specialist's reply JSON as its claim.
+    const issue = Number(opts.issue);
+    const role = typeof opts.role === "string" ? opts.role : "";
+    if (!Number.isInteger(issue) || issue <= 0) die(1, "handback-save needs --issue <n>");
+    if (!Object.hasOwn(ROLE_DEFAULT, role)) die(1, `--role must be one of: ${Object.keys(ROLE_DEFAULT).join(", ")}`);
+    if (typeof opts.file !== "string") die(1, "handback-save needs --file <json file with the handback>");
+    let h;
+    try { h = JSON.parse(fs.readFileSync(path.resolve(opts.file), "utf8")); } catch (e) { die(2, `Cannot read handback JSON: ${e.message}`); }
+    const errors = validateHandback(h);
+    const root = path.resolve(typeof opts["repo-root"] === "string" ? opts["repo-root"] : ".");
+    if (h && typeof h.acEvidence === "object" && h.acEvidence) for (const [ac, f] of Object.entries(h.acEvidence)) if (typeof f === "string" && !fs.existsSync(path.resolve(root, f))) errors.push(`acEvidence ${ac} points to a missing file: ${f}`);
+    if (errors.length) die(2, "Handback is invalid", { errors });
+    const dir = typeof opts["handbacks-dir"] === "string" ? path.resolve(String(opts["handbacks-dir"])) : path.join(mainCheckoutRoot(), ".qm", "handbacks");
+    fs.mkdirSync(dir, { recursive: true });
+    const file = path.join(dir, `${issue}-${role}.json`);
+    writeJsonAtomic(file, { ...h, issue, role, claimed: true, savedAt: new Date().toISOString() });
+    ok({ saved: file, status: h.status, claimed: true, note: "Recorded as the agent's claim. Verification is the AC gate and CI." });
+  }
   default:
     process.stdout.write(`Usage: node bundle.mjs <command> <bundleId> [options]
 Refine:  new, snapshot <n...>, check, hash, brief (text), approve --hash <prefix> --user-reply "<text containing approve <prefix>>"
@@ -625,6 +770,7 @@ Execute: verify [--gh] [--no-git], state-init [--take-over] (prints holder), the
          checkpoint, issue <n> <status> [--note --branch --commit --lane a|b], lanes (read-only: split issues into two path-disjoint lanes), attempt <n>, ci-run,
          phase <phase> [--pr --previous-main-sha --merge-sha --deploy-run --note], merge-gate --pr <n>,
          blocker --kind k --note t [--issue n], decision --file f [--issue n], release-lock
+Packets: packet <bundleId> <issue> | packet --from-issue <n> (writes .qm/packets/<n>.md); handback-check <file>; handback-save --issue <n> --role <role> --file <json> (.qm/handbacks/<n>-<role>.json, recorded as a claim)
 Anyone:  status (text), list, cancel [--note]
 Global:  --bundles-dir <dir> (default <main checkout>/.qm/bundles); --key=value also accepted
 `);
