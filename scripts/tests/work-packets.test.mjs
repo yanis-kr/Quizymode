@@ -5,7 +5,7 @@ import fs from "node:fs";
 import os from "node:os";
 import path from "node:path";
 import { createHash } from "node:crypto";
-import { spawnSync } from "node:child_process";
+import { execFileSync, spawnSync } from "node:child_process";
 import { fileURLToPath } from "node:url";
 import { sliceAc, render } from "../validation/ac-slice.mjs";
 import { buildLedger, formatLedger, issueLine } from "../automation/usage-ledger.mjs";
@@ -193,6 +193,54 @@ test("AC handback-check rejects a done handback with a failing command; handback
   assert.equal(missing.status, 2);
   assert.match(missing.stdout, /missing file/);
   assert.equal(save(good, "wizard").status, 1);
+});
+
+test("AC 7.13.4 planning roles may finish done with empty acEvidence only under strict rules, and handback-save checks the tree", () => {
+  const dir = tmp();
+  const repoDir = path.join(dir, "repo");
+  fs.mkdirSync(repoDir);
+  const git = (...args) => execFileSync("git", ["-C", repoDir, "-c", "user.email=t@example.com", "-c", "user.name=t", ...args], { encoding: "utf8" });
+  git("init", "-q");
+  fs.writeFileSync(path.join(repoDir, "tracked.txt"), "v1\n");
+  git("add", "tracked.txt");
+  git("commit", "-q", "-m", "init");
+  fs.writeFileSync(path.join(repoDir, "plan.md"), "plan\n"); // untracked deliverable, as .qm files are
+  const plan = { status: "done", filesChanged: [], commands: [], acEvidence: {}, questions: [], deliverable: "plan.md" };
+  const f = path.join(dir, "h.json");
+  const hb = path.join(dir, "hb");
+  const check = (h, role) => {
+    fs.writeFileSync(f, JSON.stringify(h));
+    return run(role ? ["handback-check", f, "--role", role] : ["handback-check", f]);
+  };
+  const save = (h, role) => {
+    fs.writeFileSync(f, JSON.stringify(h));
+    return spawnSync("node", [BUNDLE, "handback-save", "test-bundle", "--issue", "21", "--role", role, "--file", f, "--handbacks-dir", hb, "--repo-root", repoDir], { encoding: "utf8" });
+  };
+  // Positive: a read-only role with no files changed, a deliverable and no failing command.
+  for (const role of ["architect", "reviewer", "ux-designer", "qm-decision-maker"]) assert.equal(check(plan, role).status, 0, role);
+  // Negative: no role given keeps the strict rule.
+  const strict = check(plan);
+  assert.equal(strict.status, 2);
+  assert.match(strict.stdout, /acEvidence must name at least one AC/);
+  // Negative: filesChanged, a missing deliverable, a failing command, a non-string deliverable, or an implementation role.
+  assert.equal(check({ ...plan, filesChanged: ["a.mjs"] }, "architect").status, 2);
+  assert.equal(check({ ...plan, deliverable: undefined }, "architect").status, 2);
+  assert.equal(check({ ...plan, commands: [{ command: "node --test", exitCode: 1 }] }, "architect").status, 2);
+  assert.equal(check({ ...plan, deliverable: 7 }, "architect").status, 2);
+  assert.equal(check(plan, "tester").status, 2);
+  assert.equal(check(plan, "coder").status, 2);
+  // handback-save: a clean tracked tree and an existing deliverable are saved as a claim.
+  const saved = save(plan, "architect");
+  assert.equal(saved.status, 0, saved.stdout);
+  assert.equal(JSON.parse(fs.readFileSync(path.join(hb, "21-architect.json"), "utf8")).claimed, true);
+  // Role spoofing: an implementation role cannot use the planning rule to skip evidence.
+  assert.equal(save(plan, "coder").status, 2);
+  assert.match(save({ ...plan, deliverable: "missing.md" }, "architect").stdout, /planning deliverable is missing/);
+  // A tracked-file change means the planning role was not read-only.
+  fs.writeFileSync(path.join(repoDir, "tracked.txt"), "v2\n");
+  const dirty = save(plan, "architect");
+  assert.equal(dirty.status, 2);
+  assert.match(dirty.stdout, /tracked files changed/);
 });
 
 const SECRET_TEXT = "SECRET-MESSAGE-TEXT-xyz";
