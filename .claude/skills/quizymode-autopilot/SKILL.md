@@ -62,29 +62,29 @@ The reviewer, not the decision agent, confirms that AC wording was not weakened.
 
 ## Model routing
 
-Fable window: open. If Fable is unavailable or the window has ended, use Opus for every Fable row.
+Fable is not used. Every row that named Fable uses Opus.
 
-Fable is scarce: only the two rows below. Pass `model:` on every Agent call, because frontmatter cannot vary by rating.
+Pass `model:` on every Agent call, because frontmatter cannot vary by rating.
 
 | Step | Model |
 |---|---|
-| Integrator reviewer on the batch diff (§ Integrator, step 7) | fable |
-| Reviewer on the plan, `high` issues | fable |
+| Integrator reviewer on the batch diff (§ Integrator, step 7) | opus |
+| Reviewer on the plan, `high` issues | opus |
 | Architect; reviewer on the diff (`high`); coder on `high`; `qm-decision-maker` | opus |
 | CI triage before the second fix push, when the cause is unclear (§ Release, step 1) | opus |
 | Coder on `small` and `medium`, tester, ux-designer | sonnet |
 | Reporter | haiku |
 
-- At most two Fable/Opus agents at once, at most one of them Fable. The integrator reviewer goes first.
+- At most two Opus agents at once. The integrator reviewer goes first.
 - Tell each agent not to spawn agents.
-- If a model cannot be selected, fall back fable to opus and record it. Never claim a model you did not get.
+- If a model cannot be selected, say so and record it. Never claim a model you did not get.
 - Record the model with each agent outcome in the checkpoint and `<scratch>/decisions.md`.
 
 ## Pick and split
 
 1. `gh issue list --state open --limit 200`. Skip `status:deferred`, `owner:human`, issues blocked by an open issue, issues the user named as owned by another window, and any issue that already has an open PR or a remote `feat/<issue>-*` branch this run did not create.
    - Shipped, awaiting evidence: an open issue named as `Refs #<n>` in a merged PR is not new work. Find these with `gh pr list --state merged --limit 40 --json number,body,mergedAt` and match `Refs #<n>`. Never re-implement them. Send each one to the evidence pass (§ Release, step 5) against the latest CI run on main and the Deploy run of that version, before any implementation starts. Closed issues stay closed; an issue that fails the pass gets a follow-up, not a re-implementation.
-   - The backlog label filter is a convenience, not the whole backlog: an open `owner:agent` or bug issue that is small and has draft ACs with verify methods but lacks `status:ready` is listed in the opening message for the user to confirm, and is picked only with that confirmation or when the user names it.
+   - The backlog label filter is a convenience, not the whole backlog: an open `owner:agent` or `type:bug` issue that is small and has draft ACs with verify methods but lacks `status:ready` is listed in the opening message for the user to confirm, and is picked only with that confirmation or when the user names it.
 2. Rate each issue:
    - small: one vertical slice or one screen, no migration, no auth change, no new endpoint.
    - medium: new endpoint, several slices, or new visible surface.
@@ -97,7 +97,7 @@ Fable is scarce: only the two rows below. Pass `model:` on every Agent call, bec
 3. Build two lane queues for the whole run, not just the next batch:
    - Prefer one frontend lane and one backend lane, so only one lane compiles .NET. If the backlog does not split that way, fill both lanes and rely on the .NET mutex (§ Local resources).
    - Put related issues (same feature area, same files) in the same lane, in order, so they stack instead of conflicting.
-   - Put the shortest and safest issues first so the first batch closes quickly. Order by the `size:` label, `size:xs` then `size:s` then `size:m`, within a priority; an unlabeled issue counts as `size:m`, and a `size:l` issue is not picked until it has been split.
+   - Put the shortest and safest issues first so the first batch closes quickly. Order by the `size:` label, `size:xs` then `size:s` then `size:m`, within a `priority:` label (`priority:high` first); an unlabeled issue counts as `size:m`, and a `size:l` issue is not picked until it has been split.
    - Item-data fixes (`data/seed-source/items/**` and `_registry/**` only) are the cheapest issues: no version bump, no `docs/AC.md` edit, no build or deploy (AGENTS.md § exemption, AC 7.11.5). Put them first. They ship by seed-sync at the merge SHA, which needs the owner's confirmation unless the issue records approval.
 4. A batch is one release. Target 6 to 8 issues. Close a batch when any of these is true: it has 8 ready issues; it has at least 4 ready issues and no release is in flight; 90 minutes have passed since its first issue became ready; the deadline rule says so.
    - Small backlog: if fewer than 4 issues are pickable, do not wait for 6 to 8. Make one batch of what there is and close it when every issue in it is ready. A release costs about 17 minutes of CI and deploy (measured on runs of 2026-11-14), which is cheaper than idling for a fuller batch. Run these coder-only when rated small.
@@ -155,7 +155,7 @@ The integrator is the only writer of release state. At most one release is in fl
 6. Light local check, under the .NET mutex: `npm run build`; `dotnet build` (skip if step 5 already built); the filtered tests of every shipped issue, in one `dotnet test --filter` and one `npm test -- --run` invocation; the high-risk scans from `quizymode-prepush` (constructor signature changes, removed UI text). Do not run the full suites or coverage here. CI is the full run.
 
    Then the AC gate: `node scripts/validation/ac-gate.mjs --issues <every shipped issue>`. If an issue fails (an AC with no method, or an `e2e` or `signed-in-prod-ui` AC with no test), revert its merge from the release branch, put it back at the front of its lane's queue with the gate output, and release the rest. An issue that fails the gate does not ship.
-7. One reviewer pass (Fable, § Model routing) on `git diff origin/main...release/<batch-id>` in a fresh context, covering code and that no AC wording was weakened. Confirmed findings are fixed on the release branch.
+7. One reviewer pass (Opus, § Model routing) on `git diff origin/main...release/<batch-id>` in a fresh context, covering code and that no AC wording was weakened. Confirmed findings are fixed on the release branch.
 8. Push and open one PR with `Refs #n` for each shipped issue (not `Closes`, so merging does not close them before evidence exists). Steps 7 and 8 may run in the opposite order to start CI sooner; a reviewer fix is then one more push.
 
 ## Release
