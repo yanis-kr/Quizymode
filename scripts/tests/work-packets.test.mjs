@@ -195,7 +195,7 @@ test("AC handback-check rejects a done handback with a failing command; handback
   assert.equal(save(good, "wizard").status, 1);
 });
 
-test("AC 7.13.4 planning roles may finish done with empty acEvidence only under strict rules, and handback-save checks the tree", () => {
+test("AC 7.13.4 planning roles may finish done with empty acEvidence only under strict rules, and a dirty shared tree does not block them", () => {
   const dir = tmp();
   const repoDir = path.join(dir, "repo");
   fs.mkdirSync(repoDir);
@@ -236,11 +236,15 @@ test("AC 7.13.4 planning roles may finish done with empty acEvidence only under 
   // Role spoofing: an implementation role cannot use the planning rule to skip evidence.
   assert.equal(save(plan, "coder").status, 2);
   assert.match(save({ ...plan, deliverable: "missing.md" }, "architect").stdout, /planning deliverable is missing/);
-  // A tracked-file change means the planning role was not read-only.
+  // Regression: the shared worktree is dirty because the coder changed a tracked file after the architect ran.
+  // The architect's claim is still valid, so it is saved; the tree state does not say which agent wrote the change.
   fs.writeFileSync(path.join(repoDir, "tracked.txt"), "v2\n");
-  const dirty = save(plan, "architect");
-  assert.equal(dirty.status, 2);
-  assert.match(dirty.stdout, /tracked files changed/);
+  const afterCoder = save(plan, "architect");
+  assert.equal(afterCoder.status, 0, afterCoder.stdout);
+  assert.equal(JSON.parse(fs.readFileSync(path.join(hb, "21-architect.json"), "utf8")).claimed, true);
+  // The coder and tester still need evidence, even with a dirty tree.
+  assert.equal(save(plan, "tester").status, 2);
+  assert.equal(save({ ...plan, commands: [{ command: "node --test", exitCode: 1 }] }, "architect").status, 2);
 });
 
 const SECRET_TEXT = "SECRET-MESSAGE-TEXT-xyz";

@@ -444,7 +444,9 @@ function writePacket(p) {
   ok({ packet: file, issue: p.issue, models: p.models, attempt: p.attempt });
 }
 // Read-only roles plan or review and write no files. They may finish "done" with an empty acEvidence, but only with
-// no filesChanged and a deliverable file, and handback-save checks that the tracked tree is clean (AC 7.13.4).
+// no filesChanged and an existing deliverable file. The role comes from the orchestrator, and the specialist has
+// read-only permissions. A git-status check would only show that the shared worktree is dirty, not which agent
+// changed it, so it is not used (AC 7.13.4).
 const PLANNING_ROLES = new Set(["architect", "reviewer", "ux-designer", "qm-decision-maker"]);
 function isPlanningDone(h, role) {
   return PLANNING_ROLES.has(role) && h.status === "done" && Array.isArray(h.filesChanged) && h.filesChanged.length === 0
@@ -845,13 +847,9 @@ switch (cmd) {
     const errors = validateHandback(h, role);
     const root = path.resolve(typeof opts["repo-root"] === "string" ? opts["repo-root"] : ".");
     if (h && typeof h.acEvidence === "object" && h.acEvidence) for (const [ac, f] of Object.entries(h.acEvidence)) if (typeof f === "string" && !fs.existsSync(path.resolve(root, f))) errors.push(`acEvidence ${ac} points to a missing file: ${f}`);
-    if (h && isPlanningDone(h, role) && !Object.keys(h.acEvidence ?? {}).length) {
-      // Role spoofing guard: a planning claim is only believed when the tracked tree shows no change since the run.
-      if (!fs.existsSync(path.resolve(root, h.deliverable))) errors.push(`planning deliverable is missing: ${h.deliverable}`);
-      const dirty = sh("git", ["-C", root, "status", "--porcelain", "--untracked-files=no"], true);
-      if (dirty === null) errors.push("planning handback refused: cannot read git status to confirm the tree is unchanged");
-      else if (dirty) errors.push(`planning handback refused: tracked files changed, so ${role} was not read-only: ${dirty.split("\n")[0]}`);
-    }
+    // A planning claim with no acEvidence must name a deliverable that exists. The role is set by the orchestrator, so the
+    // other checks (no filesChanged, no failing command) are the guard against a coder or tester using the planning rule.
+    if (h && isPlanningDone(h, role) && !fs.existsSync(path.resolve(root, h.deliverable))) errors.push(`planning deliverable is missing: ${h.deliverable}`);
     if (errors.length) die(2, "Handback is invalid", { errors });
     const dir = typeof opts["handbacks-dir"] === "string" ? path.resolve(String(opts["handbacks-dir"])) : path.join(mainCheckoutRoot(), ".qm", "handbacks");
     fs.mkdirSync(dir, { recursive: true });
