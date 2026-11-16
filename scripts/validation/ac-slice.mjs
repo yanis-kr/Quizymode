@@ -4,12 +4,14 @@
 //   --id <prefix>    ACs whose id is the prefix or starts with "<prefix>." (7.10 matches 7.10.1, not 7.1)
 //   --heading <t>    the section whose heading contains t (case-insensitive), up to the next heading of the same or higher level
 //   --headings       the heading outline only
+//   --invariant <id>    one bullet of "Global invariants": its "Invariant <id>" line and sub-lines
+//   --invariants-index  one line per invariant (id and title), no body
 //   --max-lines <n>  cut the output after n lines (default 200) and say how many were cut
 //   --file <path>    AC file (default docs/AC.md in the repo containing this script)
 import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
-import { parseAcMarkdown, parseArgs } from "./ac-lib.mjs";
+import { parseAcMarkdown, parseArgs, parseInvariants } from "./ac-lib.mjs";
 
 const HEADING = /^(#{2,4})\s/;
 const AC_LINE = /^\s*[-*]\s+\*\*AC \d+(?:\.\d+)+\*\*/;
@@ -17,6 +19,8 @@ const AC_LINE = /^\s*[-*]\s+\*\*AC \d+(?:\.\d+)+\*\*/;
 /** Returns the slice as an array of lines. `args` uses the CLI flag names. */
 export function sliceAc(markdown, args) {
   const lines = markdown.split(/\r?\n/);
+  if (args["invariants-index"]) return parseInvariants(markdown).map((inv) => `${inv.id} – ${inv.title}`);
+  if (args.invariant !== undefined) return parseInvariants(markdown).find((inv) => inv.id === String(args.invariant))?.lines ?? [];
   if (args.headings) return lines.filter((l) => HEADING.test(l));
 
   if (args.heading !== undefined) {
@@ -69,8 +73,8 @@ export function render(lines, maxLines) {
 if (process.argv[1] && path.resolve(process.argv[1]) === fileURLToPath(import.meta.url)) {
   const args = parseArgs(process.argv.slice(2));
   const file = typeof args.file === "string" ? args.file : path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..", "..", "docs", "AC.md");
-  if (args.issue === undefined && args.id === undefined && args.heading === undefined && !args.headings) {
-    console.error("Usage: ac-slice.mjs (--issue <n> | --id <prefix> | --heading <text> | --headings) [--max-lines <n>] [--file <path>]");
+  if (args.issue === undefined && args.id === undefined && args.heading === undefined && !args.headings && args.invariant === undefined && !args["invariants-index"]) {
+    console.error("Usage: ac-slice.mjs (--issue <n> | --id <prefix> | --heading <text> | --headings | --invariant <id> | --invariants-index) [--max-lines <n>] [--file <path>]");
     process.exit(1);
   }
   const maxLines = args["max-lines"] === undefined ? 200 : Number(args["max-lines"]);

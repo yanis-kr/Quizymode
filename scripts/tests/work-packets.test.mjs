@@ -294,3 +294,165 @@ test("AC every agent names the packet input and handback output, and no skill re
     assert.deepEqual(bad, [], `${f} tells an agent to read docs/AC.md`);
   }
 });
+
+// ---------- #740: related ACs, invariants, common API conventions ----------
+const REL_AC = `# AC
+## Common API conventions
+- Conventions line: every list endpoint pages.
+## Global invariants
+### Collections
+- **Invariant C5 – Collection write access (#289)**
+  - Owner only, admins are non-owners.
+  - Second sub-line.
+- **Invariant V1 – Private collection access**
+  - Private means owner only.
+## 1. Collections
+### AC 1.6 Sharing (#20)
+- **AC 1.6.1** [Dev] [verify: api] Owner shares (#20).
+- **AC 1.6.2** [Dev] [verify: api] Owner unshares.
+## 2. Heading with no ACs
+## 3. Elsewhere
+- **AC 3.1.1** [Dev] [verify: unit] Misplaced but related.
+`;
+
+function relPacket(dir, { paths, relatedAcs, number = 20 } = {}) {
+  const id = writeBundle(path.join(dir, "bundles"), { size: "s" });
+  const mf = path.join(dir, "bundles", id, "manifest.json");
+  const m = JSON.parse(fs.readFileSync(mf, "utf8"));
+  if (paths) m.issues[0].scope.paths = paths;
+  if (relatedAcs) m.issues[0].relatedAcs = relatedAcs;
+  m.issues[0].number = number;
+  fs.writeFileSync(mf, JSON.stringify(m, null, 2));
+  const sha = createHash("sha256").update(fs.readFileSync(mf)).digest("hex");
+  fs.writeFileSync(path.join(dir, "bundles", id, "approval.json"), JSON.stringify({ status: "approved", manifestSha256: sha }));
+  const acFile = path.join(dir, "AC.md");
+  fs.writeFileSync(acFile, REL_AC);
+  const common = ["--bundles-dir", path.join(dir, "bundles"), "--packets-dir", path.join(dir, "packets"), "--handbacks-dir", path.join(dir, "hb"), "--ac-file", acFile, "--no-git"];
+  return {
+    id, acFile, common,
+    check: () => run(["check", id, ...common]),
+    packet: () => run(["packet", id, String(number), ...common]),
+    text: () => fs.readFileSync(path.join(dir, "packets", `${number}.md`), "utf8"),
+  };
+}
+
+test("AC 7.13.9 ac-slice --invariant prints one invariant with its sub-lines, an unknown id is No match, the index has no bodies", () => {
+  const out = sliceAc(REL_AC, { invariant: "C5" });
+  assert.equal(out.length, 3);
+  assert.match(out[0], /Invariant C5 – Collection write access/);
+  assert.match(out[2], /Second sub-line/);
+  assert.deepEqual(sliceAc(REL_AC, { invariant: "ZZ9" }), []);
+  const index = sliceAc(REL_AC, { "invariants-index": true });
+  assert.deepEqual(index, ["C5 – Collection write access (#289)", "V1 – Private collection access"]);
+  const cli = (...a) => spawnSync("node", [path.join(repo, "scripts", "validation", "ac-slice.mjs"), ...a], { encoding: "utf8" });
+  const dir = tmp();
+  const file = path.join(dir, "AC.md");
+  fs.writeFileSync(file, REL_AC);
+  const none = cli("--invariant", "ZZ9", "--file", file);
+  assert.equal(none.status, 2);
+  assert.match(none.stderr, /No match/);
+  assert.doesNotMatch(cli("--invariants-index", "--file", file).stdout, /owner only/i);
+  assert.match(cli("--invariant", "V1").stdout, /Invariant V1/);
+});
+
+test("AC 7.13.10 bundle check rejects an unresolved relatedAcs entry naming issue and entry, and passes without relatedAcs", () => {
+  assert.equal(relPacket(tmp(), {}).check().status, 0);
+  const good = relPacket(tmp(), { relatedAcs: { ids: ["1.6"], invariants: ["C5"], headings: ["Common API conventions"] } });
+  assert.equal(good.check().status, 0, good.check().stdout);
+  for (const [bad, entry] of [[{ ids: ["9.9"] }, "9.9"], [{ invariants: ["Z9"] }, "Z9"], [{ headings: ["No such heading"] }, "No such heading"]]) {
+    const r = relPacket(tmp(), { relatedAcs: bad }).check();
+    assert.equal(r.status, 2);
+    assert.match(r.stdout, /issue #20/);
+    assert.ok(r.stdout.includes(entry), r.stdout);
+  }
+});
+
+test("AC 7.13.11 packet Related ACs lists the issue slice, then id slices, then invariants, without duplicates, and fails on a vanished reference", () => {
+  const t = relPacket(tmp(), { relatedAcs: { ids: ["1.6", "3.1.1"], invariants: ["V1", "C5", "V1"], headings: [] } });
+  assert.equal(t.packet().status, 0);
+  const text = t.text();
+  const at = (s) => text.indexOf(s);
+  assert.ok(at("Owner shares") > 0 && at("Owner shares") < at("Owner unshares"));
+  assert.ok(at("Owner unshares") < at("Misplaced but related"));
+  assert.ok(at("Misplaced but related") < at("Private means owner only"));
+  assert.ok(at("Private means owner only") < at("Owner only, admins are non-owners"));
+  assert.equal(text.split("Owner shares (#20)").length - 1, 1);
+  assert.equal(text.split("Private means owner only").length - 1, 1);
+  const gone = relPacket(tmp(), { relatedAcs: { ids: ["1.6"] } });
+  fs.writeFileSync(gone.acFile, REL_AC.replace("**AC 1.6.1**", "**AC 1.7.1**").replace("**AC 1.6.2**", "**AC 1.7.2**"));
+  const r = gone.packet();
+  assert.equal(r.status, 2);
+  assert.match(r.stdout, /id '1\.6'/);
+});
+
+test("AC 7.13.12 every packet has the invariant index; API scope adds Common API conventions, web and scripts scope does not", () => {
+  const api = relPacket(tmp(), { paths: ["src/Quizymode.Api/Features/Study/**", "scripts/validation/**"] });
+  assert.equal(api.packet().status, 0);
+  assert.match(api.text(), /C5 – Collection write access \(#289\)/);
+  assert.match(api.text(), /Common API conventions/);
+  assert.match(api.text(), /every list endpoint pages/);
+  const web = relPacket(tmp(), { paths: ["src/Quizymode.Web/src/**", "scripts/validation/**"] });
+  assert.equal(web.packet().status, 0);
+  assert.match(web.text(), /V1 – Private collection access/);
+  assert.doesNotMatch(web.text(), /Common API conventions|every list endpoint pages/);
+});
+
+test("AC 7.13.13 packet --from-issue reads a Related ACs line, and says not refined without it", () => {
+  const dir = tmp();
+  const acFile = path.join(dir, "AC.md");
+  fs.writeFileSync(acFile, REL_AC);
+  const from = (body) => {
+    const json = path.join(dir, "issue.json");
+    fs.writeFileSync(json, JSON.stringify({ title: "T", body, labels: [] }));
+    const r = run(["packet", "--from-issue", "5", "--issue-json", json, "--packets-dir", path.join(dir, "p"), "--handbacks-dir", path.join(dir, "h"), "--ac-file", acFile]);
+    return { r, text: r.status === 0 ? fs.readFileSync(path.join(dir, "p", "5.md"), "utf8") : "" };
+  };
+  const withLine = from("- AC (draft) [verify: unit] Does a thing\nRelated ACs: 1.6, C5\n");
+  assert.equal(withLine.r.status, 0, withLine.r.stdout);
+  assert.match(withLine.text, /Owner shares/);
+  assert.match(withLine.text, /Invariant C5/);
+  assert.doesNotMatch(withLine.text, /not refined/);
+  const without = from("- AC (draft) [verify: unit] Does a thing\n");
+  assert.equal(without.r.status, 0);
+  assert.match(without.text, /related ACs: not refined/);
+  assert.equal(from("- AC (draft) [verify: unit] x\nRelated ACs: 9.9\n").r.status, 2);
+});
+
+test("AC 7.13.14 architect.md names acRefsAdded, handback-check validates its type, and the refine skill mentions relatedAcs in steps 3 and 8", () => {
+  const architect = fs.readFileSync(path.join(repo, ".claude", "agents", "architect.md"), "utf8");
+  assert.match(architect, /acRefsAdded/);
+  assert.match(architect, /input is a packet path/i);
+  const dir = tmp();
+  const hb = (extra) => {
+    const f = path.join(dir, "hb.json");
+    fs.writeFileSync(f, JSON.stringify({ status: "done", filesChanged: [], commands: [], acEvidence: { "7.1": "x" }, questions: [], ...extra }));
+    return run(["handback-check", f]);
+  };
+  assert.equal(hb({}).status, 0);
+  assert.equal(hb({ acRefsAdded: ["7.1", "C5"] }).status, 0);
+  for (const bad of ["C5", [1], { a: 1 }]) {
+    const r = hb({ acRefsAdded: bad });
+    assert.equal(r.status, 2);
+    assert.match(r.stdout, /acRefsAdded/);
+  }
+  const skill = fs.readFileSync(path.join(repo, ".claude", "skills", "qm-refine-bundle", "SKILL.md"), "utf8").split(/\r?\n/);
+  assert.match(skill.find((l) => /^3\. /.test(l)), /relatedAcs/);
+  assert.match(skill.find((l) => /^8\. /.test(l)), /relatedAcs/);
+  assert.ok(skill.some((l) => l.includes("ac-slice.mjs *")));
+});
+
+test("AC 7.13.11 fixture: an invariant carrying an issue number but no AC line stays out of --issue and is included by relatedAcs", () => {
+  assert.equal(sliceAc(REL_AC, { issue: "289" }).length, 0);
+  const t = relPacket(tmp(), { number: 289, relatedAcs: { invariants: ["C5"] } });
+  assert.equal(t.packet().status, 0, t.packet().stdout);
+  assert.match(t.text(), /Invariant C5 – Collection write access/);
+});
+
+test("AC 7.13.11 fixture: a heading followed by a misplaced AC, the id reference finds what the heading reference cannot", () => {
+  assert.equal(sliceAc(REL_AC, { heading: "Heading with no ACs" }).some((l) => l.includes("Misplaced but related")), false);
+  assert.equal(sliceAc(REL_AC, { id: "3.1.1" }).some((l) => l.includes("Misplaced but related")), true);
+  const t = relPacket(tmp(), { relatedAcs: { ids: ["3.1.1"], headings: ["Heading with no ACs"] } });
+  assert.equal(t.packet().status, 0);
+  assert.match(t.text(), /Misplaced but related/);
+  assert.match(t.text(), /Related headings .*Heading with no ACs/);
+});
