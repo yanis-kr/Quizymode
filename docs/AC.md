@@ -2208,6 +2208,7 @@ Tooling that keeps an issue from shipping without a way to prove its ACs, and th
 - **AC 7.11.15** [Dev tooling] [verify: unit] (#718) **Given** any driver command prints output, **then** no value of an environment variable whose name contains PASSWORD, SECRET, TOKEN or KEY, nor `QM_AGENT_SUPADB_CS`, appears in it, and every GitHub call goes through one wrapper that refuses to run unmocked under the test runner. (tests: `release-driver.test.mjs`)
 - **AC 7.11.16** [Dev tooling] [verify: unit] (#718) **Given** `wait-pr` or `ship` runs while `.qm/release-halt.json` or the automation release lock file exists, **then** it refuses with class `gate` and names the file. (tests: `release-driver.test.mjs`)
 - **AC 7.11.17** [Dev tooling] [verify: unit] (#718) **Given** a change touches only `scripts/release/**`, **then** `classify-changes` marks it neither web nor api, because `scripts/release/` is listed in its no-build prefixes. (tests: `release-driver.test.mjs`, `classify-changes.test.mjs`)
+- **AC 7.11.18** [Dev tooling] [verify: unit] (#730) **Given** Deploy reads the change scope, **then** the `change-scope` artifact is downloaded outside the checkout and read from there, so the scope reader's checkout cannot delete it. A missing artifact still deploys everything. (tests: `deploy-scope-artifact.test.mjs`, `deploy-workflow.test.mjs`)
 
 ## AC 8. Performance characteristics
 
