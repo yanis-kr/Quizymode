@@ -109,11 +109,14 @@ function main() {
   const acs = parseAcMarkdown(fs.readFileSync(path.join(root, "docs/AC.md"), "utf8"));
   const tests = reports.flatMap((file) => flattenReport(JSON.parse(fs.readFileSync(file, "utf8"))));
   const runUrl = typeof args["run-url"] === "string" ? args["run-url"] : "";
-  let commit = "";
-  try {
-    commit = execFileSync("git", ["rev-parse", "HEAD"], { cwd: root, encoding: "utf8" }).trim();
-  } catch {
-    // Not a git checkout; the comment says "not stated".
+  // The commit the CI run built (--commit, set by the release driver) wins over the local HEAD, which may be another branch.
+  let commit = typeof args.commit === "string" ? args.commit : "";
+  if (!commit) {
+    try {
+      commit = execFileSync("git", ["rev-parse", "HEAD"], { cwd: root, encoding: "utf8" }).trim();
+    } catch {
+      // Not a git checkout; the comment says "not stated".
+    }
   }
   const outDir = path.resolve(typeof args.out === "string" ? args.out : ".artifacts/evidence");
   fs.mkdirSync(outDir, { recursive: true });

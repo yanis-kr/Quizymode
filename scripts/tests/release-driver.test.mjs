@@ -293,9 +293,10 @@ function cli(argv, deps) {
   }
 }
 
+const REPO_VIEW = JSON.stringify({ nameWithOwner: "yanis-kr/Quizymode" });
 const runView = (over = {}) => JSON.stringify({
   status: "completed", conclusion: "success", headSha: SHA,
-  jobs: [{ name: "automation-contract", conclusion: "success" }, { name: "e2e", conclusion: "skipped" }],
+  jobs: [{ name: "ac-gate", conclusion: "success" }, { name: "automation-contract", conclusion: "success" }, { name: "e2e", conclusion: "skipped" }],
   ...over,
 });
 
@@ -307,7 +308,7 @@ const passingReport = (root) => {
 
 test("AC7: unit-only issue closes on a verified green CI run on the release commit, with no Playwright report", () => {
   const root = fixtureRoot();
-  const deps = fakeGh({ "run view 77": runView(), "issue close": "" });
+  const deps = fakeGh({ "repo view": REPO_VIEW, "run view 77": runView(), "issue close": "" });
   const { exit, json } = cli(["evidence", "--issues", "9002", "--run-url", RUN_URL, "--sha", SHA, "--root", root, "--out", root, "--close"], deps);
   assert.equal(exit, 0);
   assert.equal(json.class, "complete");
@@ -319,7 +320,7 @@ test("AC7: unit-only issue closes on a verified green CI run on the release comm
 
 test("AC7: mixed issue stays open with its e2e row NOT RUN even when the unit row is covered by a verified run", () => {
   const root = fixtureRoot();
-  const deps = fakeGh({ "run view 77": runView(), "issue close": "" });
+  const deps = fakeGh({ "repo view": REPO_VIEW, "run view 77": runView(), "issue close": "" });
   const { exit, json } = cli(["evidence", "--issues", "9003", "--run-url", RUN_URL, "--sha", SHA, "--root", root, "--out", root, "--close"], deps);
   assert.equal(exit, 2);
   assert.equal(json.class, "open");
@@ -339,12 +340,16 @@ test("AC7: missing CI reference and no report returns a clear incomplete result,
 
 test("AC7: a CI run that failed, or ran on another commit, is not accepted as unit evidence", () => {
   const root = fixtureRoot();
+  const ackOnly = [{ name: "ac-gate", conclusion: "success" }];
   for (const [name, body, reason] of [
     ["failed", runView({ conclusion: "failure" }), /is completed\/failure, not success/],
     ["other commit", runView({ headSha: "b".repeat(40) }), /not the release commit/],
-    ["job failed", runView({ jobs: [{ name: "automation-contract", conclusion: "success" }, { name: "frontend-tests", conclusion: "failure" }] }), /unsuccessful jobs: frontend-tests/],
+    ["job failed", runView({ jobs: [...ackOnly, { name: "frontend-tests", conclusion: "failure" }] }), /unsuccessful jobs: frontend-tests/],
+    ["ac-gate skipped", runView({ jobs: [{ name: "ac-gate", conclusion: "skipped" }] }), /no passing ac-gate job \(skipped\)/],
+    ["ac-gate absent", runView({ jobs: [{ name: "automation-contract", conclusion: "success" }] }), /no passing ac-gate job \(not in the run\)/],
+    ["automation-contract only", runView({ jobs: [{ name: "automation-contract", conclusion: "success" }] }), /no passing ac-gate job/],
   ]) {
-    const deps = fakeGh({ "run view 77": body, "issue close": "" });
+    const deps = fakeGh({ "repo view": REPO_VIEW, "run view 77": body, "issue close": "" });
     const { exit, json } = cli(["evidence", "--issues", "9002", "--run-url", RUN_URL, "--sha", SHA, "--root", root, "--out", root, "--close"], deps);
     assert.equal(exit, 2, name);
     assert.equal(json.class, "open", name);
@@ -360,6 +365,37 @@ test("AC7: an arbitrary URL is not accepted as CI evidence", () => {
   const { json } = cli(["evidence", "--issues", "9002", "--run-url", "https://example.com/anything", "--sha", SHA, "--root", root, "--out", root], deps);
   assert.match(json.detail, /not a GitHub Actions run URL/);
   assert.equal(deps.calls.length, 0);
+});
+
+test("AC7: a run URL from another repository, even with the same run id, is rejected", () => {
+  const root = fixtureRoot();
+  const deps = fakeGh({ "repo view": REPO_VIEW, "run view 77": runView(), "issue close": "" });
+  const { json } = cli(["evidence", "--issues", "9002", "--run-url", "https://github.com/someone/fork/actions/runs/77", "--sha", SHA, "--root", root, "--out", root], deps);
+  assert.match(json.detail, /run belongs to someone\/fork, not yanis-kr\/Quizymode/);
+  assert.ok(!deps.calls.some((c) => c.startsWith("run view")));
+});
+
+test("AC7: a short --sha prefix matches the run's commit, and the comment names the built commit, not the local HEAD", () => {
+  const root = fixtureRoot();
+  const deps = fakeGh({ "repo view": REPO_VIEW, "run view 77": runView(), "issue close": "" });
+  const { exit } = cli(["evidence", "--issues", "9002", "--run-url", RUN_URL, "--sha", "aaaaaaa", "--root", root, "--out", root], deps);
+  assert.equal(exit, 0);
+  const comment = fs.readFileSync(path.join(root, "issue-9002.md"), "utf8");
+  assert.match(comment, new RegExp(`- Commit: ${SHA}`));
+});
+
+test("AC7: a release commit that differs from the run's commit is refused even with a matching prefix length", () => {
+  const root = fixtureRoot();
+  const deps = fakeGh({ "repo view": REPO_VIEW, "run view 77": runView(), "issue close": "" });
+  const { json } = cli(["evidence", "--issues", "9002", "--run-url", RUN_URL, "--sha", "bbbbbbb", "--root", root, "--out", root], deps);
+  assert.match(json.detail, /not the release commit bbbbbbb/);
+});
+
+test("AC7: a release commit given as a non-hex or too-short value is refused, not matched", () => {
+  const root = fixtureRoot();
+  const deps = fakeGh({ "repo view": REPO_VIEW, "run view 77": runView(), "issue close": "" });
+  const { json } = cli(["evidence", "--issues", "9002", "--run-url", RUN_URL, "--sha", "aaa", "--root", root, "--out", root], deps);
+  assert.match(json.detail, /not the release commit aaa/);
 });
 
 test("AC7: existing Playwright path still closes an issue whose e2e row passes, with no CI run", () => {
