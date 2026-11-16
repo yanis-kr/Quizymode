@@ -31,20 +31,38 @@ jobs:
           run-id: ${{ github.event.workflow_run.id }}
           github-token: ${{ github.token }}
 
+      # Only the reader script is needed; it is tested in scripts/tests/read-change-scope.test.mjs.
+      - name: Check out the scope reader
+        uses: actions/checkout@v7
+        with:
+          ref: ${{ github.event.workflow_run.head_sha }}
+          sparse-checkout: scripts/ci
+          persist-credentials: false
+
       - name: Read change scope
         id: read
+        env:
+          SHA: ${{ github.event.workflow_run.head_sha }}
+          DOWNLOADED: ${{ steps.download.outcome }}
         run: |
-          WEB=true
-          API=true
-          if [ "${{ steps.download.outcome }}" = "success" ] && [ -f change-scope.json ]; then
-            WEB="$(jq -r '.web // true' change-scope.json)"
-            API="$(jq -r '.api // true' change-scope.json)"
+          FILE=""
+          if [ "$DOWNLOADED" = "success" ] && [ -f change-scope.json ]; then
+            FILE=change-scope.json
           else
             echo "No change scope found; deploying everything."
           fi
+          # Prints "web=<bool> api=<bool>"; only an explicit false turns a flag off.
+          read -r WEB_KV API_KV <<< "$(node scripts/ci/read-change-scope.mjs "$FILE")"
+          WEB="${WEB_KV#web=}"
+          API="${API_KV#api=}"
           echo "web=${WEB}" >> "${GITHUB_OUTPUT}"
           echo "api=${API}" >> "${GITHUB_OUTPUT}"
           echo "Deploying: web=${WEB} api=${API}"
+          if [ "$WEB" = "false" ] && [ "$API" = "false" ]; then
+            echo "Nothing to deploy for ${SHA}" >> "${GITHUB_STEP_SUMMARY}"
+          else
+            echo "Scope for ${SHA}: web=${WEB} api=${API}" >> "${GITHUB_STEP_SUMMARY}"
+          fi
 
   deploy-container:
     needs: scope
@@ -53,12 +71,25 @@ jobs:
     permissions:
       id-token: write
       contents: read
+      packages: read
     steps:
       - name: Configure AWS credentials
         uses: aws-actions/configure-aws-credentials@v6
         with:
           role-to-assume: ${{ secrets.AWS_DEPLOY_ROLE_ARN }}
           aws-region: us-east-1
+
+      # AC 7.11.8: fail in seconds when CI built no image for this commit, instead of waiting for Lightsail to time out.
+      - name: Check the API image exists
+        env:
+          IMAGE: ghcr.io/yanis-kr/quizymode:${{ github.event.workflow_run.head_sha }}
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          echo "$GH_TOKEN" | docker login ghcr.io -u "${{ github.repository_owner }}" --password-stdin >/dev/null
+          if ! docker manifest inspect "$IMAGE" >/dev/null 2>&1; then
+            echo "::error::No API image $IMAGE on GHCR. CI built none for this commit, so the deployment is not started."
+            exit 1
+          fi
 
       - name: Fetch environment variables from active deployment
         run: |

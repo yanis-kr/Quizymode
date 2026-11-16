@@ -91,7 +91,7 @@ jobs:
           node-version: 22
 
       - name: Test the validation scripts
-        run: node --test scripts/tests/ac-validation.test.mjs scripts/tests/classify-changes.test.mjs
+        run: node --test "scripts/tests/*.test.mjs"
 
       - name: Check the ACs this PR adds or edits
         if: github.event_name == 'pull_request'
