@@ -26,7 +26,7 @@ Rules to keep when editing the workflow:
 ## How it works
 
 1. **CI completes** on `main` → image pushed to `ghcr.io/yanis-kr/quizymode:<sha>`
-2. **`deploy-container` job** — reads env vars from the currently active LightSail deployment, then creates a new deployment with the updated image. Waits up to 10 minutes for `ACTIVE` state.
+2. **`deploy-container` job** — reads env vars from the currently active LightSail deployment, then creates a new deployment with the updated image. Waits up to 10 minutes for `ACTIVE` state. If the wait fails, a best-effort step prints the last 100 lines of the `api` container log (log lines only, never settings).
 3. **`build-ui` job** — runs at the same time as `deploy-container`: builds the frontend and uploads it as the `web-dist` artifact (source maps go to a separate artifact and are never deployed).
 4. **`deploy-ui` job** — after both jobs above succeed, downloads `web-dist`, syncs it to S3 with per-type cache headers, then invalidates CloudFront. It waits for the container so the new UI never calls the previous API.
 5. **`prod-verify` job** — signed-in checks on the deployed site (AC 7.10.5).

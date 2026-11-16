@@ -114,6 +114,18 @@ jobs:
           echo "Timed out after 10 minutes"
           exit 1
 
+      # Log lines only (never environment or deployment settings). Best effort: must not mask the original failure.
+      - name: Show recent API container logs
+        if: failure()
+        continue-on-error: true
+        run: |
+          aws lightsail get-container-log \
+            --service-name container-service-1 \
+            --container-name api \
+            --output json \
+            | jq -r '.logEvents[]? | "\(.createdAt) \(.message)"' \
+            | tail -n 100 || true
+
   # Builds the web app while the container deploys, so deploy-ui only has to sync it.
   build-ui:
     needs: scope
