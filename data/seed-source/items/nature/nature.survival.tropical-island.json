@@ -130,5 +130,575 @@
       "water",
       "desalination"
     ]
+  },
+  {
+    "itemId": "d29f43ab-5a36-5f7a-9107-d39848c8a630",
+    "category": "nature",
+    "navigationKeyword1": "survival",
+    "navigationKeyword2": "tropical-island",
+    "question": "Rain runs off a dirty roof. Which part should you discard first?",
+    "correctAnswer": "The first runoff",
+    "incorrectAnswers": [
+      "The final runoff",
+      "Only cloudy water",
+      "None of it"
+    ],
+    "explanation": "The first flow washes off the most roof dirt, germs and chemicals. Later rainwater still needs appropriate treatment before drinking.",
+    "keywords": [
+      "tropical-island-survival",
+      "nature-outdoors"
+    ],
+    "source": "https://www.cdc.gov/drinking-water/about/collecting-rainwater-and-your-health-an-overview.html"
+  },
+  {
+    "itemId": "533994bd-8651-5aed-8140-4b58769484ca",
+    "category": "nature",
+    "navigationKeyword1": "survival",
+    "navigationKeyword2": "tropical-island",
+    "question": "You find freshwater contaminated by fuel. Will boiling make it drinkable?",
+    "correctAnswer": "No; find another source",
+    "incorrectAnswers": [
+      "Yes, after 10 minutes",
+      "Yes, if filtered first",
+      "Yes, once it looks clear"
+    ],
+    "explanation": "Boiling kills germs but cannot make fuel- or chemical-contaminated water safe. Find a different water source.",
+    "keywords": [
+      "tropical-island-survival",
+      "nature-outdoors"
+    ],
+    "source": "https://www.cdc.gov/water-emergency/about/"
+  },
+  {
+    "itemId": "de5231fc-fb28-59d0-8d60-5d1da2c175c2",
+    "category": "nature",
+    "navigationKeyword1": "survival",
+    "navigationKeyword2": "tropical-island",
+    "question": "The sea suddenly retreats, exposing fish and reef. What should you do?",
+    "correctAnswer": "Run to higher ground",
+    "incorrectAnswers": [
+      "Collect stranded fish",
+      "Wait for the tide",
+      "Move closer to watch"
+    ],
+    "explanation": "Sudden sea retreat is a natural tsunami warning. Move inland or uphill without waiting for an official alert.",
+    "keywords": [
+      "tropical-island-survival",
+      "nature-outdoors"
+    ],
+    "source": "https://tsunami.ioc.unesco.org/en/what-do"
+  },
+  {
+    "itemId": "2f35f66c-5a33-577d-a9c4-c1baf28f0378",
+    "category": "nature",
+    "navigationKeyword1": "survival",
+    "navigationKeyword2": "tropical-island",
+    "question": "A long, strong earthquake shakes your beach. What should you do next?",
+    "correctAnswer": "Evacuate to high ground",
+    "incorrectAnswers": [
+      "Check for a siren",
+      "Wait for a large wave",
+      "Inspect the shoreline"
+    ],
+    "explanation": "A nearby earthquake can generate a tsunami that arrives within minutes. Once shaking stops, head uphill or inland.",
+    "keywords": [
+      "tropical-island-survival",
+      "nature-outdoors"
+    ],
+    "source": "https://tsunami.ioc.unesco.org/en/what-do"
+  },
+  {
+    "itemId": "2e273f14-1bca-5ca9-922e-e6de6291e8ce",
+    "category": "nature",
+    "navigationKeyword1": "survival",
+    "navigationKeyword2": "tropical-island",
+    "question": "Can a three-foot shorebreak wave cause a serious spinal injury?",
+    "correctAnswer": "Yes, even small surf can",
+    "incorrectAnswers": [
+      "Only during a cyclone",
+      "Only in deep water",
+      "No, it is too small"
+    ],
+    "explanation": "Hawaii reports an average wave height of just three feet in shorebreak-related spinal injuries; waves can drive people into sand or rock.",
+    "keywords": [
+      "tropical-island-survival",
+      "nature-outdoors"
+    ],
+    "source": "https://oceansafety.hawaii.gov/ocean-hazards-dangerous-shorebreak/"
+  },
+  {
+    "itemId": "d6ba1e30-5cb5-530d-8239-d0a52cc32bb7",
+    "category": "nature",
+    "navigationKeyword1": "survival",
+    "navigationKeyword2": "tropical-island",
+    "question": "A thunderstorm has passed. How long after the last thunder should you wait under solid shelter?",
+    "correctAnswer": "At least 30 minutes",
+    "incorrectAnswers": [
+      "Until the rain stops",
+      "Five minutes",
+      "Until clouds disappear"
+    ],
+    "explanation": "The Red Cross advises remaining under cover for 30 minutes after the last thunder or flash of lightning.",
+    "keywords": [
+      "tropical-island-survival",
+      "nature-outdoors"
+    ],
+    "source": "https://www.redcross.org/take-a-class/resources/learn-first-aid/lightning-strike-injury"
+  },
+  {
+    "itemId": "90453d6b-13d4-51ff-bb39-f905fb6df586",
+    "category": "nature",
+    "navigationKeyword1": "survival",
+    "navigationKeyword2": "tropical-island",
+    "question": "A cyclone's violent winds suddenly stop. Does that mean it is over?",
+    "correctAnswer": "No; it may be the eye",
+    "incorrectAnswers": [
+      "Yes; the storm has passed",
+      "Yes, if the sky is blue",
+      "Yes, after five minutes"
+    ],
+    "explanation": "The cyclone eye can be calm, but the opposite eyewall may bring severe winds back. Stay sheltered.",
+    "keywords": [
+      "tropical-island-survival",
+      "nature-outdoors"
+    ],
+    "source": "https://weather.metoffice.gov.uk/learn-about/met-office-for-schools/other-content/other-resources/extreme-weather"
+  },
+  {
+    "itemId": "176db77f-5186-5ac6-8249-201f69bd82cd",
+    "category": "nature",
+    "navigationKeyword1": "survival",
+    "navigationKeyword2": "tropical-island",
+    "question": "You catch a large reef barracuda. Will cooking remove ciguatera toxin?",
+    "correctAnswer": "No; heat won't remove it",
+    "incorrectAnswers": [
+      "Yes, if boiled",
+      "Yes, if grilled",
+      "Yes, if smoked"
+    ],
+    "explanation": "Ciguatoxin survives cooking, freezing and smoking. Barracuda and other large predatory reef fish are high-risk foods.",
+    "keywords": [
+      "tropical-island-survival",
+      "nature-outdoors"
+    ],
+    "source": "https://www.cdc.gov/yellow-book/hcp/environmental-hazards-risks/food-poisoning-from-marine-toxins.html"
+  },
+  {
+    "itemId": "1f621c6d-1233-507d-a278-a8f8ff790974",
+    "category": "nature",
+    "navigationKeyword1": "survival",
+    "navigationKeyword2": "tropical-island",
+    "question": "Can you detect ciguatera in reef fish by smelling or tasting it?",
+    "correctAnswer": "No; it can seem normal",
+    "incorrectAnswers": [
+      "Yes, it smells metallic",
+      "Yes, flesh turns blue",
+      "Yes, it tastes bitter"
+    ],
+    "explanation": "A ciguatera-contaminated fish can have normal appearance, taste and smell. Sensory checks cannot establish safety.",
+    "keywords": [
+      "tropical-island-survival",
+      "nature-outdoors"
+    ],
+    "source": "https://www.cdc.gov/yellow-book/hcp/environmental-hazards-risks/food-poisoning-from-marine-toxins.html"
+  },
+  {
+    "itemId": "7b0b31d3-da9d-5ec4-be50-1e8d1087efca",
+    "category": "nature",
+    "navigationKeyword1": "survival",
+    "navigationKeyword2": "tropical-island",
+    "question": "After eating reef fish, cold water feels burning hot. What poisoning might explain it?",
+    "correctAnswer": "Ciguatera",
+    "incorrectAnswers": [
+      "Salmonella",
+      "Heat exhaustion",
+      "Food allergy"
+    ],
+    "explanation": "Ciguatera can cause temperature-sensation reversal and other neurological symptoms. Suspected poisoning needs medical assessment.",
+    "keywords": [
+      "tropical-island-survival",
+      "nature-outdoors"
+    ],
+    "source": "https://www.cdc.gov/yellow-book/hcp/environmental-hazards-risks/food-poisoning-from-marine-toxins.html"
+  },
+  {
+    "itemId": "21f3a200-172d-51f1-80f6-a51461dca6e9",
+    "category": "nature",
+    "navigationKeyword1": "survival",
+    "navigationKeyword2": "tropical-island",
+    "question": "You find unripe ackee fruit in the Caribbean. Does cooking make it safe?",
+    "correctAnswer": "No; the toxin survives heat",
+    "incorrectAnswers": [
+      "Yes, after boiling",
+      "Yes, after roasting",
+      "Yes, after drying"
+    ],
+    "explanation": "Unripe ackee contains heat-stable hypoglycin A. Poisoning can cause dangerous low blood sugar, seizures or coma.",
+    "keywords": [
+      "tropical-island-survival",
+      "nature-outdoors"
+    ],
+    "source": "https://www.cdc.gov/yellow-book/hcp/environmental-hazards-risks/poisonings-envenomations-and-toxic-exposures-during-travel.html"
+  },
+  {
+    "itemId": "07ad30f7-29ad-59d3-b38f-37f76298c1c6",
+    "category": "nature",
+    "navigationKeyword1": "survival",
+    "navigationKeyword2": "tropical-island",
+    "question": "You're caught in rain beside a manchineel tree. Is sheltering beneath it safe?",
+    "correctAnswer": "No; runoff can burn skin",
+    "incorrectAnswers": [
+      "Yes; the leaves protect you",
+      "Yes, unless fruit falls",
+      "Only if you wear a hat"
+    ],
+    "explanation": "Rainwater dripping through a manchineel can carry caustic sap that causes blistering. Avoid sheltering beneath it.",
+    "keywords": [
+      "tropical-island-survival",
+      "nature-outdoors"
+    ],
+    "source": "https://doe.ky/terrestrial/dangerous-plants/"
+  },
+  {
+    "itemId": "8258a135-07e4-5259-a060-903ad92c917e",
+    "category": "nature",
+    "navigationKeyword1": "survival",
+    "navigationKeyword2": "tropical-island",
+    "question": "You burn wood from a manchineel tree. What's the unexpected danger?",
+    "correctAnswer": "Smoke can injure your eyes",
+    "incorrectAnswers": [
+      "The wood explodes",
+      "The flames burn blue",
+      "It releases chlorine gas"
+    ],
+    "explanation": "Manchineel smoke can irritate or injure eyes, with reports of temporary blindness. Never use its wood for a fire.",
+    "keywords": [
+      "tropical-island-survival",
+      "nature-outdoors"
+    ],
+    "source": "https://doe.ky/terrestrial/dangerous-plants/"
+  },
+  {
+    "itemId": "0884b1fa-df6b-5948-8350-ccb8f71a6a3a",
+    "category": "nature",
+    "navigationKeyword1": "survival",
+    "navigationKeyword2": "tropical-island",
+    "question": "You find a beautiful living cone shell. Why is picking it up dangerous?",
+    "correctAnswer": "It has a venomous harpoon",
+    "incorrectAnswers": [
+      "Its shell is electrified",
+      "It releases acid",
+      "It bursts when touched"
+    ],
+    "explanation": "A live cone snail can inject venom through a harpoon-like tooth. Some species cause serious paralysis; never handle one.",
+    "keywords": [
+      "tropical-island-survival",
+      "nature-outdoors"
+    ],
+    "source": "https://australian.museum/learn/animals/molluscs/cone-shells-conus/"
+  },
+  {
+    "itemId": "39110f59-e88e-5f08-af69-3c6cdfca0997",
+    "category": "nature",
+    "navigationKeyword1": "survival",
+    "navigationKeyword2": "tropical-island",
+    "question": "A blue-ringed octopus bites you, but you barely feel it. Are you safe?",
+    "correctAnswer": "No; paralysis may follow",
+    "incorrectAnswers": [
+      "Yes; painless means harmless",
+      "Yes, without bleeding",
+      "Yes, if it was small"
+    ],
+    "explanation": "Its bite can be almost unfelt, yet venom may paralyze the breathing muscles within minutes. Seek emergency care.",
+    "keywords": [
+      "tropical-island-survival",
+      "nature-outdoors"
+    ],
+    "source": "https://australian.museum/learn/animals/molluscs/blue-lined-octopus/"
+  },
+  {
+    "itemId": "9c41e5c2-5d1d-5fd4-8461-542abb859113",
+    "category": "nature",
+    "navigationKeyword1": "survival",
+    "navigationKeyword2": "tropical-island",
+    "question": "What looks like a rock but may inject powerful venom if stepped on?",
+    "correctAnswer": "Stonefish",
+    "incorrectAnswers": [
+      "Sea cucumber",
+      "Giant clam",
+      "Hermit crab"
+    ],
+    "explanation": "Reef stonefish camouflage themselves as rocks or coral and have venom-delivering spines on their backs.",
+    "keywords": [
+      "tropical-island-survival",
+      "nature-outdoors"
+    ],
+    "source": "https://australian.museum/learn/animals/fishes/reef-stonefish-synanceia-verrucosa-bloch-schneider-1801/"
+  },
+  {
+    "itemId": "58601a90-4a4b-51ae-b6ba-fa80d8aa215a",
+    "category": "nature",
+    "navigationKeyword1": "survival",
+    "navigationKeyword2": "tropical-island",
+    "question": "You're wading through sandy water where stingrays live. How should you walk?",
+    "correctAnswer": "Shuffle your feet",
+    "incorrectAnswers": [
+      "Take giant steps",
+      "Jump repeatedly",
+      "Walk on tiptoes"
+    ],
+    "explanation": "The 'stingray shuffle' sends vibrations through sand, which may warn buried rays and reduce accidental stepping injuries.",
+    "keywords": [
+      "tropical-island-survival",
+      "nature-outdoors"
+    ],
+    "source": "https://dan.org/health-medicine/health-resource/dive-medical-reference-books/hazardous-marine-life/traumatic-injuries-and-complications/"
+  },
+  {
+    "itemId": "a162bdaa-bf2e-5ac4-817a-e9767d20abd6",
+    "category": "nature",
+    "navigationKeyword1": "survival",
+    "navigationKeyword2": "tropical-island",
+    "question": "A stingray barb is deeply embedded in someone's leg. What should you avoid?",
+    "correctAnswer": "Pulling it out yourself",
+    "incorrectAnswers": [
+      "Calling for medical help",
+      "Controlling bleeding",
+      "Keeping them still"
+    ],
+    "explanation": "Deeply impaled stingray barbs should be removed in a medical setting: pulling one out can worsen internal damage or bleeding.",
+    "keywords": [
+      "tropical-island-survival",
+      "nature-outdoors"
+    ],
+    "source": "https://dan.org/alert-diver/article/marine-envenomations-vertebrates/"
+  },
+  {
+    "itemId": "793df6f4-9326-5d41-9f5f-281e87809a5e",
+    "category": "nature",
+    "navigationKeyword1": "survival",
+    "navigationKeyword2": "tropical-island",
+    "question": "After a suspected box jellyfish sting in northern Australia, which liquid helps stop further stinging?",
+    "correctAnswer": "Vinegar",
+    "incorrectAnswers": [
+      "Freshwater",
+      "Alcohol",
+      "Urine"
+    ],
+    "explanation": "Australian guidance recommends vinegar on suspected box-jellyfish tentacles, after getting out of the water and addressing emergency breathing or CPR needs. Species and regional guidance differ.",
+    "keywords": [
+      "tropical-island-survival",
+      "nature-outdoors"
+    ],
+    "source": "https://nt.gov.au/wellbeing/emergencies-injuries-and-accidents/bites-and-stings/box-jellyfish"
+  },
+  {
+    "itemId": "2e8c569b-05ff-5b8c-ad77-182bacad5e07",
+    "category": "nature",
+    "navigationKeyword1": "survival",
+    "navigationKeyword2": "tropical-island",
+    "question": "A tiny jellyfish sting barely hurts. Half an hour later, severe body pain starts. What could it be?",
+    "correctAnswer": "Irukandji syndrome",
+    "incorrectAnswers": [
+      "Sunburn",
+      "Ordinary muscle fatigue",
+      "Mild dehydration"
+    ],
+    "explanation": "Irukandji stings can initially seem minor, followed 5–40 minutes later by severe pain and potentially dangerous heart symptoms. Seek emergency care.",
+    "keywords": [
+      "tropical-island-survival",
+      "nature-outdoors"
+    ],
+    "source": "https://lifesaving.com.au/safety-info/marine-stingers"
+  },
+  {
+    "itemId": "0c327e33-7887-50b9-ad3f-fc9c388ef449",
+    "category": "nature",
+    "navigationKeyword1": "survival",
+    "navigationKeyword2": "tropical-island",
+    "question": "A stony patch of fire coral looks safe to grab. What may happen if you touch it?",
+    "correctAnswer": "Stinging cells inject venom",
+    "incorrectAnswers": [
+      "It releases sand",
+      "It instantly crumbles",
+      "It becomes slippery"
+    ],
+    "explanation": "Fire coral has microscopic stinging structures that can cause burning pain and a rash, even when growing on rocks.",
+    "keywords": [
+      "tropical-island-survival",
+      "nature-outdoors"
+    ],
+    "source": "https://dan.org/health-medicine/health-resources/diseases-conditions/fire-coral/"
+  },
+  {
+    "itemId": "c9762e77-ba52-5d87-81c6-f6dff5a4be91",
+    "category": "nature",
+    "navigationKeyword1": "survival",
+    "navigationKeyword2": "tropical-island",
+    "question": "A sea urchin spine breaks deep in your foot. Should you dig it out yourself?",
+    "correctAnswer": "No; get medical help",
+    "incorrectAnswers": [
+      "Yes, with a knife",
+      "Yes, using sand",
+      "Yes, by squeezing hard"
+    ],
+    "explanation": "Sea urchin spines are brittle and can fragment. Medical professionals should handle deeply embedded spines.",
+    "keywords": [
+      "tropical-island-survival",
+      "nature-outdoors"
+    ],
+    "source": "https://dan.org/health-medicine/health-resources/diseases-conditions/sea-urchins/"
+  },
+  {
+    "itemId": "9e0bf43a-cf96-5c56-91b8-264f39246124",
+    "category": "nature",
+    "navigationKeyword1": "survival",
+    "navigationKeyword2": "tropical-island",
+    "question": "A lionfish spine punctures your hand. What can help reduce the pain?",
+    "correctAnswer": "Hot, non-scalding water",
+    "incorrectAnswers": [
+      "Ice directly on the wound",
+      "Rubbing with sand",
+      "Sealing it with glue"
+    ],
+    "explanation": "Divers Alert Network recommends hot-water immersion, avoiding burns, plus professional medical evaluation after a lionfish sting.",
+    "keywords": [
+      "tropical-island-survival",
+      "nature-outdoors"
+    ],
+    "source": "https://dan.org/safety-prevention/diver-safety/psa/lionfish-awareness/"
+  },
+  {
+    "itemId": "8f82a1d0-9074-50e9-9fa8-a47f031f0edf",
+    "category": "nature",
+    "navigationKeyword1": "survival",
+    "navigationKeyword2": "tropical-island",
+    "question": "A small cut is exposed to warm coastal seawater. What serious infection risk exists?",
+    "correctAnswer": "Vibrio infection",
+    "incorrectAnswers": [
+      "Malaria",
+      "Altitude sickness",
+      "Carbon monoxide poisoning"
+    ],
+    "explanation": "Vibrio bacteria live naturally in coastal water and can infect open wounds. Some infections worsen rapidly and require urgent treatment.",
+    "keywords": [
+      "tropical-island-survival",
+      "nature-outdoors"
+    ],
+    "source": "https://www.cdc.gov/vibrio/prevention/index.html"
+  },
+  {
+    "itemId": "c6b804e8-caa1-50d2-8c44-6ff09fe50011",
+    "category": "nature",
+    "navigationKeyword1": "survival",
+    "navigationKeyword2": "tropical-island",
+    "question": "Someone is confused and overheated but still sweating. Could it be heatstroke?",
+    "correctAnswer": "Yes; it's an emergency",
+    "incorrectAnswers": [
+      "No; sweating rules it out",
+      "Only if sweating stops",
+      "Only if they collapse"
+    ],
+    "explanation": "Heatstroke can occur with heavy sweating. Confusion plus overheating is an emergency requiring rapid cooling and help.",
+    "keywords": [
+      "tropical-island-survival",
+      "nature-outdoors"
+    ],
+    "source": "https://www.cdc.gov/niosh/heat-stress/about/illnesses.html"
+  },
+  {
+    "itemId": "0a6de3c5-69aa-5c4e-8869-dc75ec0f1249",
+    "category": "nature",
+    "navigationKeyword1": "survival",
+    "navigationKeyword2": "tropical-island",
+    "question": "You avoid mosquitoes only after sunset. Which tropical illness can still spread by daytime bites?",
+    "correctAnswer": "Dengue",
+    "incorrectAnswers": [
+      "Rabies",
+      "Cholera",
+      "Tetanus"
+    ],
+    "explanation": "Aedes mosquitoes that transmit dengue are active during daylight, including early morning and late afternoon.",
+    "keywords": [
+      "tropical-island-survival",
+      "nature-outdoors"
+    ],
+    "source": "https://www.who.int/news-room/fact-sheets/detail/dengue-and-severe-dengue"
+  },
+  {
+    "itemId": "1aedbe1c-4d95-5ff7-98d1-58c0dcd9ca87",
+    "category": "nature",
+    "navigationKeyword1": "survival",
+    "navigationKeyword2": "tropical-island",
+    "question": "Which pain reliever is generally preferred over ibuprofen when dengue is suspected?",
+    "correctAnswer": "Acetaminophen",
+    "incorrectAnswers": [
+      "Aspirin",
+      "Naproxen",
+      "Diclofenac"
+    ],
+    "explanation": "CDC recommends acetaminophen (paracetamol) for dengue symptoms; aspirin and ibuprofen can increase bleeding risk. Seek medical advice.",
+    "keywords": [
+      "tropical-island-survival",
+      "nature-outdoors"
+    ],
+    "source": "https://www.cdc.gov/dengue/treatment/"
+  },
+  {
+    "itemId": "cf547434-ac17-5bc7-aa64-ae2d73bf9215",
+    "category": "nature",
+    "navigationKeyword1": "survival",
+    "navigationKeyword2": "tropical-island",
+    "question": "Do saltwater crocodiles stay in rivers and avoid the open sea?",
+    "correctAnswer": "No; they use coastal waters",
+    "incorrectAnswers": [
+      "Yes; they avoid the sea",
+      "Yes; only rivers are risky",
+      "Yes; if the tide is low"
+    ],
+    "explanation": "In northern Australia, saltwater crocodiles inhabit marine parks and coastal waters. Enter water only in designated safe areas.",
+    "keywords": [
+      "tropical-island-survival",
+      "nature-outdoors"
+    ],
+    "source": "https://nt.gov.au/parks/find-a-park/limmen-bight-marine-park"
+  },
+  {
+    "itemId": "8ea2a581-1f89-573b-bded-cbd5201fdc8c",
+    "category": "nature",
+    "navigationKeyword1": "survival",
+    "navigationKeyword2": "tropical-island",
+    "question": "You see dolphins while swimming. Does that mean sharks are absent?",
+    "correctAnswer": "No; both may hunt nearby",
+    "incorrectAnswers": [
+      "Yes; dolphins repel sharks",
+      "Yes; if dolphins jump",
+      "Only if many dolphins appear"
+    ],
+    "explanation": "Dolphins and sharks may eat the same prey. Dolphin sightings never guarantee that the water is shark-free.",
+    "keywords": [
+      "tropical-island-survival",
+      "nature-outdoors"
+    ],
+    "source": "https://www.floridamuseum.ufl.edu/shark-attacks/reduce-risk/how-to-avoid-a-shark-attack/"
+  },
+  {
+    "itemId": "9a9e9179-ca1d-5362-8847-33d35b682e88",
+    "category": "nature",
+    "navigationKeyword1": "survival",
+    "navigationKeyword2": "tropical-island",
+    "question": "A shark approaches you underwater. What is the safer response?",
+    "correctAnswer": "Keep it in sight and retreat",
+    "incorrectAnswers": [
+      "Splash loudly to scare it",
+      "Turn your back and sprint",
+      "Float facedown, motionless"
+    ],
+    "explanation": "Florida Museum guidance advises maintaining eye contact, slowly backing away and exiting the water if possible.",
+    "keywords": [
+      "tropical-island-survival",
+      "nature-outdoors"
+    ],
+    "source": "https://www.floridamuseum.ufl.edu/shark-attacks/reduce-risk/quick-tips/"
   }
 ]
