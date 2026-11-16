@@ -63,7 +63,7 @@ public sealed class PageHitClassifierTests
         { "/admin", "", "admin", null, null, null, false },
         { "/admin/page-views", "", "admin", null, null, null, false },
         { "/about", "", "info", null, null, null, false },
-        { "/ideas", "", "community", null, null, null, false },
+        { "/ideas", "", "other", null, null, null, false },
         { "/roadmap", "", "community", null, null, null, false },
         { "/feedback", "", "community", null, null, null, false },
         { "/privacy", "", "info", null, null, null, false },

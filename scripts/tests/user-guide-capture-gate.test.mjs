@@ -6,7 +6,7 @@ import assert from "node:assert/strict";
 import { evaluateCapture } from "../evaluate-user-guide-capture.js";
 import { KEY_PAGE_SLUGS, MAX_FAILED_SHARE, THEMES, listShots, shotStatus } from "../user-guide-capture-report.js";
 
-const OTHER_SLUGS = ["featured", "about", "feedback", "ideas", "keyword-filter", "item-detail"];
+const OTHER_SLUGS = ["featured", "about", "feedback", "keyword-filter", "item-detail"];
 
 /** failed: { slug: [themes that failed] }. Every other theme/slug is captured. */
 function records(failed = {}, extra = OTHER_SLUGS) {

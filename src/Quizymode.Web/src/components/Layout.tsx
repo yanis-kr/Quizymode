@@ -116,10 +116,6 @@ function getFallbackTitle(pathname: string): string | undefined {
     return "About";
   }
 
-  if (pathname === "/ideas") {
-    return "Ideas";
-  }
-
   if (pathname === "/roadmap") {
     return "Roadmap";
   }
@@ -185,8 +181,7 @@ const LayoutContent = ({ children }: LayoutProps) => {
     location.pathname === "/categories" ||
     location.pathname === "/collections" ||
     location.pathname === "/featured" ||
-    location.pathname === "/create" ||
-    location.pathname === "/ideas";
+    location.pathname === "/create";
 
   const isPathActive = (basePath: string) => {
     const path = location.pathname;
@@ -526,12 +521,6 @@ const LayoutContent = ({ children }: LayoutProps) => {
             >
               Feedback
             </button>
-            <Link
-              to="/ideas"
-              className="inline-flex items-center justify-center rounded-md border border-on-panel/12 bg-on-panel/8 px-2.5 py-1.5 text-sm font-medium text-on-panel transition hover:border-sky-300/35 hover:bg-on-panel/12 hover:text-on-panel"
-            >
-              Ideas
-            </Link>
             <Link
               to="/privacy"
               className="inline-flex items-center justify-center rounded-md border border-on-panel/12 bg-on-panel/8 px-2.5 py-1.5 text-sm font-medium text-on-panel transition hover:border-sky-300/35 hover:bg-on-panel/12 hover:text-on-panel"

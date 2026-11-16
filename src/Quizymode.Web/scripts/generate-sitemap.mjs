@@ -118,7 +118,6 @@ const staticPaths = [
   { path: "/categories", changefreq: "weekly", priority: 0.9, srcPaths: [`${WEB_SRC}/features/categories`] },
   { path: "/collections", changefreq: "weekly", priority: 0.8, srcPaths: [`${WEB_SRC}/features/collections`] },
   { path: "/about", changefreq: "monthly", priority: 0.7, srcPaths: [`${WEB_SRC}/features/about`] },
-  { path: "/ideas", changefreq: "weekly", priority: 0.8, srcPaths: [`${WEB_SRC}/features/ideas`] },
   { path: "/roadmap", changefreq: "monthly", priority: 0.6, srcPaths: [`${WEB_SRC}/features/roadmap`] },
   { path: "/feedback", changefreq: "monthly", priority: 0.6, srcPaths: [`${WEB_SRC}/features/feedback`] },
   { path: "/privacy", changefreq: "yearly", priority: 0.3, srcPaths: [`${WEB_SRC}/features/legal`] },

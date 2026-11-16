@@ -130,7 +130,6 @@ Current container env vars (values stored in LightSail, not in GitHub):
 - `APP_GrafanaCloud__LokiEndpoint`
 - `APP_GrafanaCloud__OtlpEndpoint`
 - `APP_GrafanaCloud__OtlpInstanceId`
-- `APP_Turnstile__Enabled` (`true` in prod) and `APP_Turnstile__SecretKey` (Cloudflare secret; the public site key is `VITE_TURNSTILE_SITE_KEY` in `src/Quizymode.Web/.env.production`)
 - `ASPNETCORE_ENVIRONMENT`
 
 ## Related docs

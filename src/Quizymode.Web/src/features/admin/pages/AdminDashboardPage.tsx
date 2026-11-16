@@ -168,15 +168,6 @@ const AdminDashboardPage = () => {
           </h3>
           <p className="text-sm text-gray-500">Read and triage bug reports and requests</p>
         </Link>
-        <Link
-          to="/admin/ideas"
-          className="bg-surface shadow rounded-lg p-6 hover:shadow-lg transition-shadow cursor-pointer"
-        >
-          <h3 className="text-lg font-medium text-gray-900 mb-2">Ideas Moderation</h3>
-          <p className="text-sm text-gray-500">
-            Review submissions, publish strong ideas, and manage roadmap status
-          </p>
-        </Link>
       </div>
       {grafanaUrl && (
         <section className="mt-8" aria-labelledby="operations-dashboards-heading">

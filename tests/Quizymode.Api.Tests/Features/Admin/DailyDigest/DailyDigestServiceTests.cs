@@ -311,7 +311,7 @@ public sealed class DailyDigestServiceTests : DatabaseTestFixture
     [Fact]
     public async Task EverySectionFailing_SendsNothing_AndTheRunIsFailedComputeFailed()
     {
-        foreach (string table in new[] { "PageViews", "AnalyticsEvents", "ClientErrors", "AnalyticsSessions", "FeedbackSubmissions", "MediaReports", "Items", "Keywords", "Ideas", "ItemImageReviews" })
+        foreach (string table in new[] { "PageViews", "AnalyticsEvents", "ClientErrors", "AnalyticsSessions", "FeedbackSubmissions", "MediaReports", "Items", "Keywords", "ItemImageReviews" })
         {
             await DbContext.Database.ExecuteSqlRawAsync($"DROP TABLE IF EXISTS \"{table}\"");
         }

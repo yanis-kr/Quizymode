@@ -81,7 +81,6 @@ internal sealed record ProblemsSection(
 internal sealed record WaitingSection(
     int ItemsToReview,
     int PrivateKeywords,
-    int Ideas,
     int Pictures,
     int? OldestPictureAgeDays,
     int NewFeedback);

@@ -841,10 +841,6 @@ test.describe("User guide screenshots", () => {
     await capture(page, testInfo, "feedback", "/feedback");
   });
 
-  shotTest("ideas", async (page, testInfo) => {
-    await capture(page, testInfo, "ideas", "/ideas");
-  });
-
   shotTest("nav-geography", async (page, testInfo) => {
     await capture(page, testInfo, "nav-geography", "/categories/geography");
   });

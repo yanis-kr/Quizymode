@@ -5,10 +5,10 @@ using Quizymode.Api.Shared.Options;
 
 namespace Quizymode.Api.Services;
 
-internal sealed partial class IdeaTextModerationService(
+internal sealed partial class TextModerationService(
     IWebHostEnvironment environment,
-    IOptions<IdeaAbuseProtectionOptions> options,
-    ILogger<IdeaTextModerationService> logger) : ITextModerationService
+    IOptions<TextModerationOptions> options,
+    ILogger<TextModerationService> logger) : ITextModerationService
 {
     private static readonly string[] DefaultBlockedTerms =
     [
@@ -30,8 +30,8 @@ internal sealed partial class IdeaTextModerationService(
     ];
 
     private readonly string _contentRootPath = environment.ContentRootPath;
-    private readonly IdeaAbuseProtectionOptions _options = options.Value;
-    private readonly ILogger<IdeaTextModerationService> _logger = logger;
+    private readonly TextModerationOptions _options = options.Value;
+    private readonly ILogger<TextModerationService> _logger = logger;
     private volatile ModerationTerms? _cachedTerms;
 
     public TextModerationResult Evaluate(params string?[] values)
@@ -94,7 +94,7 @@ internal sealed partial class IdeaTextModerationService(
         }
         catch (Exception ex)
         {
-            _logger.LogWarning(ex, "Failed to load idea moderation terms from {Path}. Falling back to defaults.", resolvedPath);
+            _logger.LogWarning(ex, "Failed to load text moderation terms from {Path}. Falling back to defaults.", resolvedPath);
         }
 
         _cachedTerms = new ModerationTerms(

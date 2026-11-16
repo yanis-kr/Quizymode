@@ -57,13 +57,8 @@
   <ItemGroup>
     <!-- #337: source folder is "Data" (capital D) but runtime reads lowercase "data/..." (case-sensitive on Linux).
          Link pins the output/publish path to lowercase, same pattern as the taxonomy files below. -->
-    <None Remove="Data\ideas\ideas_seed.sql" />
-    <None Include="Data\ideas\ideas_seed.sql" Link="data\ideas\ideas_seed.sql">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-    </None>
-    <Content Remove="Data\moderation\idea-moderation-terms.json" />
-    <None Include="Data\moderation\idea-moderation-terms.json" Link="data\moderation\idea-moderation-terms.json">
+    <Content Remove="Data\moderation\text-moderation-terms.json" />
+    <None Include="Data\moderation\text-moderation-terms.json" Link="data\moderation\text-moderation-terms.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
     </None>

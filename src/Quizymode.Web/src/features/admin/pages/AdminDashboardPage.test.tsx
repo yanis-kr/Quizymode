@@ -74,7 +74,7 @@ describe("AdminDashboardPage", () => {
     expect(screen.getByRole("link", { name: /manage keywords/i })).toBeInTheDocument();
     expect(screen.getByRole("link", { name: /seed sync/i })).toBeInTheDocument();
     expect(screen.getByRole("link", { name: /usage analytics/i })).toBeInTheDocument();
-    expect(screen.getByRole("link", { name: /ideas moderation/i })).toBeInTheDocument();
+    expect(screen.queryByRole("link", { name: /ideas moderation/i })).not.toBeInTheDocument();
     expect(screen.getByRole("link", { name: /ai providers/i })).toHaveAttribute("href", "/admin/ai-providers");
     expect(screen.getByRole("link", { name: /^import/i })).toHaveAttribute("href", "/admin/import");
   });
@@ -112,16 +112,6 @@ describe("AdminDashboardPage", () => {
     expect(screen.getByRole("link", { name: /users.*activity/i })).toHaveAttribute(
       "href",
       "/admin/user-settings"
-    );
-  });
-
-  it("renders ideas moderation link with correct href", () => {
-    mockUseAuth.mockReturnValue({ isAuthenticated: true, isAdmin: true });
-    renderPage();
-
-    expect(screen.getByRole("link", { name: /ideas moderation/i })).toHaveAttribute(
-      "href",
-      "/admin/ideas"
     );
   });
 
