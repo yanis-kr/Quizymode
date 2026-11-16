@@ -81,9 +81,9 @@ describe("App route splitting", () => {
     expect(lazyNames).toEqual(
       expect.arrayContaining([
         "AdminDashboardPage", "AdminSeedSyncPage", "AdminKeywordsPage", "AdminUserSettingsPage",
-        "PageViewAnalyticsPage", "AdminClientErrorsPage", "AdminFeaturedPage", "AdminIdeasPage",
+        "PageViewAnalyticsPage", "AdminClientErrorsPage", "AdminFeaturedPage",
         "CreateHubPage", "CreateImportPage", "AdminImportPage", "CreateItemPage", "EditItemPage",
-        "StudyGuideUploadPage", "IdeasPage", "RoadmapPage", "FeedbackPage",
+        "StudyGuideUploadPage", "RoadmapPage", "FeedbackPage",
         "AboutPage", "PrivacyPolicyPage", "TermsOfServicePage", "SearchPage",
       ])
     );

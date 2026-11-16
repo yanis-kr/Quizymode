@@ -202,6 +202,52 @@ public sealed class SetProgressTests : DatabaseTestFixture, IAsyncLifetime
     }
 
     [Fact]
+    public async Task B6_CollectionScope_CountsRosterKnownItems_AndInaccessibleCollectionReturnsZero()
+    {
+        (_, Item a, Item b, Item c) = await SeedSetAsync();
+        (await PostSessionAsync("run-1", [a.Id, c.Id], [b.Id])).Should().Be(HttpStatusCode.Created);
+
+        Collection shared = new() { Id = Guid.NewGuid(), Name = "Shared", CreatedBy = "owner", IsPublic = true };
+        Collection hidden = new() { Id = Guid.NewGuid(), Name = "Hidden", CreatedBy = "owner", IsPublic = false };
+        DbContext.Collections.AddRange(shared, hidden);
+        foreach (Collection collection in new[] { shared, hidden })
+        {
+            DbContext.CollectionItems.AddRange(
+                new CollectionItem { Id = Guid.NewGuid(), CollectionId = collection.Id, ItemId = a.Id },
+                new CollectionItem { Id = Guid.NewGuid(), CollectionId = collection.Id, ItemId = b.Id });
+        }
+        await DbContext.SaveChangesAsync();
+
+        // Only A is both in the roster and known (B was missed, C is not in the collection).
+        (await KnownAsync($"c/{shared.Id}")).Should().Be(1);
+        // AC 3.33.5: a collection I cannot open (private, owned by someone else) and an unknown id count 0, with no error.
+        (await KnownAsync($"c/{hidden.Id}")).Should().Be(0);
+        (await KnownAsync($"c/{Guid.NewGuid()}")).Should().Be(0);
+
+        // Several scope kinds in one call keep their order.
+        using HttpResponseMessage mixed = await SendAsync(HttpMethod.Get, $"/users/me/set-progress?scopes=c/{shared.Id},s/geo,c/{hidden.Id}", Token());
+        GetSetProgress.Response? body = await mixed.Content.ReadFromJsonAsync<GetSetProgress.Response>();
+        body!.Scopes.Select(s => s.KnownCount).Should().Equal(1, 2, 0);
+    }
+
+    [Fact]
+    public async Task B7_KeywordPathScope_CountsOnlyItemsUnderThatKeyword()
+    {
+        (Category category, Item a, Item b, Item c) = await SeedSetAsync();
+        Keyword europe = new() { Id = Guid.NewGuid(), Name = "Europe", Slug = "europe", CreatedBy = "seed" };
+        DbContext.Keywords.Add(europe);
+        DbContext.KeywordRelations.Add(new KeywordRelation { Id = Guid.NewGuid(), CategoryId = category.Id, ParentKeywordId = null, ChildKeywordId = europe.Id });
+        a.NavigationKeywordId1 = europe.Id;
+        b.NavigationKeywordId1 = europe.Id;
+        await DbContext.SaveChangesAsync();
+        (await PostSessionAsync("run-1", [a.Id, c.Id], [b.Id])).Should().Be(HttpStatusCode.Created);
+
+        (await KnownAsync("s/geo/europe")).Should().Be(1);
+        (await KnownAsync("s/geo")).Should().Be(2);
+        (await KnownAsync("s/geo/asia")).Should().Be(0);
+    }
+
+    [Fact]
     public async Task B5_SqlCommandCount_DoesNotDependOnKnownItemCount()
     {
         Category category = await LearningLoopTestData.AddCategoryAsync(DbContext, "Geo");

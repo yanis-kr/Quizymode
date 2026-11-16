@@ -211,8 +211,3 @@ The Create Item form lets you write a single quiz item from scratch. Fill in the
 
 ![Feedback](https://yanis-kr.github.io/Quizymode/assets/dark/desktop/31.feedback.png "Feedback")
 
-### Ideas
-
-The **Ideas** board at `/ideas` is a public product planning surface where anyone can browse feature requests and improvement proposals. Ideas are grouped by lifecycle status (Proposed, Planned, In Progress, Shipped, Archived). Signed-in users can submit new ideas, rate published ones, and follow discussion threads. New submissions go through moderation before appearing publicly on the board.
-
-![Ideas](https://yanis-kr.github.io/Quizymode/assets/dark/desktop/32.ideas.png "Ideas")

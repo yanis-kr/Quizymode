@@ -46,7 +46,6 @@ const populated = {
   workQueue: {
     itemsAwaitingReview: 4,
     pendingPrivateKeywords: 2,
-    ideasAwaitingModeration: 1,
     newClientErrorGroups: 3,
     picturesAwaitingReview: 5,
     oldestPictureSubmittedAt: new Date(Date.now() - 3 * 24 * 3600 * 1000).toISOString(),
@@ -100,7 +99,7 @@ describe("AdminOverviewPanel", () => {
     expect(pictures).toHaveTextContent("5");
     expect(pictures).toHaveTextContent("Oldest submitted 3 days ago");
     expect(screen.getByRole("link", { name: /pending private keywords/i })).toHaveAttribute("href", "/admin/keyword-review");
-    expect(screen.getByRole("link", { name: /ideas awaiting moderation/i })).toHaveAttribute("href", "/admin/ideas");
+    expect(screen.queryByRole("link", { name: /ideas awaiting moderation/i })).not.toBeInTheDocument();
   });
 
   it("shows the excluded sessions per traffic class for the same window", async () => {

@@ -40,7 +40,7 @@ const DailyArchivePage = () => {
   const handleComplete = (run: QuizRunState) => {
     if (isAuthenticated || !selected) return;
     const summary = summarizeQuizRun(run);
-    recordArchiveResult({ date: selected, correct: summary.correct, total: summary.total });
+    recordArchiveResult({ date: selected, correct: summary.correct, total: summary.scoredTotal });
     setLocalResults(readArchiveResults());
   };
 

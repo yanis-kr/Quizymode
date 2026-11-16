@@ -56,7 +56,7 @@
   },
   "releaseGates": [
     "Each issue: its validation commands pass and every AC has evidence",
-    "Combined release branch: dotnet test; npm run lint; npm run build; npm run test:coverage",
+    "Combined release branch: npm run build; filtered tests of every shipped issue; ac-gate --issues. Full suites run in CI on the release PR.",
     "verify-openapi.ps1 -Configuration Release passes when the API surface changed",
     "Reviewer final pass on the combined diff has no CONFIRMED findings",
     "Release PR required checks green: build-test-publish, CodeQL, automation-contract"

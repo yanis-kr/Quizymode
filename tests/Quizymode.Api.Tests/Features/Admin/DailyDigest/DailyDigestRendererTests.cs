@@ -30,7 +30,7 @@ public sealed class DailyDigestRendererTests
         new DateTime(2026, 11, 10, 6, 0, 0, DateTimeKind.Utc),
         current ?? Day(),
         baseline,
-        waiting ?? new WaitingSection(0, 0, 0, 0, null, 0),
+        waiting ?? new WaitingSection(0, 0, 0, null, 0),
         health ?? new DigestHealth(264, 90, new ExcludedSessionCounts(2, 3, 4, 0)),
         previous ?? [],
         null,
@@ -88,7 +88,7 @@ public sealed class DailyDigestRendererTests
                 locations: new LocationsSection(
                     new LocationBreakdown([new LocationRow("United States of America and surrounding territories", 17)], 0, 0),
                     new LocationBreakdown([new LocationRow("A region with an extraordinarily long name, US", 9)], 0, 0))),
-            new WaitingSection(2, 1, 3, 4, 6, 5),
+            new WaitingSection(2, 1, 4, 6, 5),
             baseline: Baseline(rulesChanged: new DateOnly(2026, 11, 8)),
             previous: ["2026-11-07 missed", "2026-11-08 failed"]);
 
@@ -160,14 +160,14 @@ public sealed class DailyDigestRendererTests
 
         DigestReport busy = Report(
             Day(problems: new ProblemsSection(6, 3, 1, 2, 1, 1, 2)),
-            new WaitingSection(0, 0, 0, 4, 6, 9));
+            new WaitingSection(0, 0, 4, 6, 9));
         string text = DailyDigestRenderer.Body(busy, AdminUrl);
 
         text.Should().NotContain("Nothing needs attention today.");
         text.Should().Contain("Pictures waiting: 4 (oldest 6 d)");
         text.Should().Contain("Open feedback backlog now: 9").And.Contain("New feedback yesterday: 2");
         text.Should().Contain("Front-end error reports: 6 in 3 sessions").And.Contain("Picture reports: 2");
-        text.Should().NotContain("Items to review").And.NotContain("Private keywords").And.NotContain("Ideas to moderate");
+        text.Should().NotContain("Items to review").And.NotContain("Private keywords");
         text.Should().Contain($"{AdminUrl}/admin/feedback").And.Contain($"{AdminUrl}/admin/client-errors");
     }
 

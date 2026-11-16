@@ -107,7 +107,6 @@ const isOnPublicRoute = (): boolean => {
     "/signup",
     "/explore",
     "/quiz",
-    "/ideas",
     "/about",
     "/roadmap",
     "/feedback",

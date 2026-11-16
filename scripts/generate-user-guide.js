@@ -74,7 +74,6 @@ export const baseDescriptions = {
   "item-detail": `Clicking the **eye icon** on a list card opens the item detail page. This page shows extra information that is not visible in the regular list, flashcard, or quiz views, such as the full answer block, incorrect options, explanation, source, visibility, created metadata, keywords, and collections.`,
   "item-rating-five-stars": `On the item detail page, signed-in users can rate an item by clicking one of the five stars. The rating saves immediately; clicking the same star again removes your rating. The row also shows the current average rating and total rating count.`,
   "item-comment-added": `From the item detail page, the **Comments** button opens a drawer where you can read existing discussion and post your own note without losing your place. After you type a comment and click **Post Comment**, it appears in the thread immediately with your name and timestamp.`,
-  ideas: `The **Ideas** board at \`/ideas\` is a public product planning surface where anyone can browse feature requests and improvement proposals. Ideas are grouped by lifecycle status (Proposed, Planned, In Progress, Shipped, Archived). Signed-in users can submit new ideas, rate published ones, and follow discussion threads. New submissions go through moderation before appearing publicly on the board.`,
   "collections-mine": `The **My Collections** tab shows all collections you own once the page finishes loading. Each card displays the collection name, description, item count, and sharing state, along with icon actions to edit it, make it active, copy its link, or delete it. You can also create a new collection from this tab.`,
   "collection-detail": `Clicking a collection card opens that collection's study page. The page keeps **Collections** as the active navigation area and shows mode tabs for **List**, **Flashcards**, and **Quiz** so you can study the same collection in different ways. Owners can also remove items or manage which collection is currently active from here.`,
   "collection-detail-flashcards": `Collections support the same **Flashcards** mode as category pages. Each item in the collection is presented as a flip card: answer first, then question and explanation when flipped.`,
@@ -118,7 +117,6 @@ export const mobileDescriptionOverrides = {
   "add-items": `The Add Items hub keeps the same branching workflow on mobile, but the scope controls, notices, and action buttons stack into a single-column layout. This makes the create options easier to scan on a phone.`,
   "add-items-prepopulated": `When Add Items opens from a scoped category on mobile, the same category and keyword selections are pre-filled. The difference is mostly layout: the scope controls and compliance notice stack for narrow screens.`,
   "add-new-item": `The Create Item form becomes a long, single-column form on mobile, with fields and actions stacked top to bottom. This keeps every required input accessible without shrinking the form controls.`,
-  ideas: `The Ideas board on mobile stacks status groups and idea cards into a single-column scroll view. The submit and rating actions remain accessible, but the layout shifts from a wide grid to a more focused vertical feed.`,
 };
 
 export const sections = [
@@ -173,7 +171,7 @@ export const sections = [
   },
   {
     title: "Other Pages",
-    slugs: ["about", "feedback", "ideas"],
+    slugs: ["about", "feedback"],
   },
 ];
 

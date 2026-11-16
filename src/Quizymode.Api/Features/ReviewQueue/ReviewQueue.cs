@@ -324,6 +324,27 @@ public static class ReviewQueue
         DateTime nowUtc,
         CancellationToken cancellationToken)
     {
+        try
+        {
+            return await AnswerOnceAsync(db, userId, itemId, isCorrect, nowUtc, cancellationToken);
+        }
+        catch (DbUpdateException)
+        {
+            // #694: a concurrent first-time write of this item's UserItemProgress row won the primary key; re-read and
+            // update that row instead of failing. A second conflict propagates.
+            db.ChangeTracker.Clear();
+            return await AnswerOnceAsync(db, userId, itemId, isCorrect, nowUtc, cancellationToken);
+        }
+    }
+
+    private static async Task<AnswerResponse?> AnswerOnceAsync(
+        ApplicationDbContext db,
+        string userId,
+        Guid itemId,
+        bool isCorrect,
+        DateTime nowUtc,
+        CancellationToken cancellationToken)
+    {
         ReviewQueueEntry? entry = await db.ReviewQueueEntries
             .FirstOrDefaultAsync(e => e.UserId == userId && e.ItemId == itemId, cancellationToken);
         if (entry is null) return null;

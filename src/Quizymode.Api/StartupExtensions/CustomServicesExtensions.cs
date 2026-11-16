@@ -22,8 +22,7 @@ internal static partial class StartupExtensions
         builder.Services.Configure<CategoryOptions>(builder.Configuration.GetSection(CategoryOptions.SectionName));
         builder.Services.Configure<TaxonomyOptions>(builder.Configuration.GetSection(TaxonomyOptions.SectionName));
         builder.Services.Configure<GitHubSeedSyncOptions>(builder.Configuration.GetSection(GitHubSeedSyncOptions.SectionName));
-        builder.Services.Configure<IdeaAbuseProtectionOptions>(builder.Configuration.GetSection(IdeaAbuseProtectionOptions.SectionName));
-        builder.Services.Configure<TurnstileOptions>(builder.Configuration.GetSection(TurnstileOptions.SectionName));
+        builder.Services.Configure<TextModerationOptions>(builder.Configuration.GetSection(TextModerationOptions.SectionName));
         builder.Services.Configure<AuditLogsOptions>(builder.Configuration.GetSection(AuditLogsOptions.SectionName));
         builder.Services.AddSingleton<ITaxonomyRegistry, TaxonomyRegistry>();
         // Global search (#319): in-memory topic index plus lazily refreshed public item counts.
@@ -40,9 +39,8 @@ internal static partial class StartupExtensions
         builder.Services.AddSingleton<ISimHashService, SimHashService>();
         builder.Services.AddHttpClient<IGitHubSeedSource, GitHubSeedSource>();
         builder.Services.AddHttpClient("ipgeolocation");
-        builder.Services.AddHttpClient<ITurnstileVerificationService, TurnstileVerificationService>();
         builder.Services.AddSingleton<IIpGeolocationService, IpGeolocationService>();
-        builder.Services.AddSingleton<ITextModerationService, IdeaTextModerationService>();
+        builder.Services.AddSingleton<ITextModerationService, TextModerationService>();
         // Stateless classification logic, safe to share across requests.
         builder.Services.AddSingleton<IAttributionClassifier, AttributionClassifier>();
         builder.Services.AddHttpContextAccessor();

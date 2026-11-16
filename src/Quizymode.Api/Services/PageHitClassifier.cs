@@ -93,7 +93,6 @@ public static class PageHitClassifier
             case "login":
             case "signup":
                 return segments.Length == 1 ? Unscoped(AreaAuth) : Unscoped(AreaOther);
-            case "ideas":
             case "roadmap":
             case "feedback":
                 return segments.Length == 1 ? Unscoped(AreaCommunity) : Unscoped(AreaOther);

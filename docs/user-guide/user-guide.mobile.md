@@ -211,8 +211,3 @@ The Create Item form becomes a long, single-column form on mobile, with fields a
 
 ![Feedback](https://yanis-kr.github.io/Quizymode/assets/dark/mobile/31.feedback.png "Feedback")
 
-### Ideas
-
-The Ideas board on mobile stacks status groups and idea cards into a single-column scroll view. The submit and rating actions remain accessible, but the layout shifts from a wide grid to a more focused vertical feed.
-
-![Ideas](https://yanis-kr.github.io/Quizymode/assets/dark/mobile/32.ideas.png "Ideas")

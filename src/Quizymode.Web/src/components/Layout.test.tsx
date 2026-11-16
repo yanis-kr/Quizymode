@@ -206,13 +206,10 @@ describe("Layout", () => {
     expect(screen.getAllByRole("link", { name: "Sign In" })).toHaveLength(2);
   });
 
-  it("shows the ideas footer link instead of the old map action", () => {
+  it("has no Ideas footer link and no old map action", () => {
     renderLayout();
 
-    expect(screen.getByRole("link", { name: "Ideas" })).toHaveAttribute(
-      "href",
-      "/ideas"
-    );
+    expect(screen.queryByRole("link", { name: "Ideas" })).not.toBeInTheDocument();
     expect(screen.queryByRole("button", { name: "Map" })).not.toBeInTheDocument();
   });
 

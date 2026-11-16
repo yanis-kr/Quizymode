@@ -60,6 +60,8 @@ If any `.cs` file changed, run:
 dotnet test
 ```
 
+On an issue branch inside a batch, run the filtered form; the full commands apply only to a standalone single-change PR.
+
 ### Frontend
 
 If any file under `src/Quizymode.Web/src/` changed, run both:
@@ -69,6 +71,8 @@ cd src/Quizymode.Web
 npm run build
 npm test -- --run
 ```
+
+On an issue branch inside a batch, run the filtered form; the full commands apply only to a standalone single-change PR.
 
 A passing frontend build alone is not enough. Always run the frontend tests too when frontend source changed.
 

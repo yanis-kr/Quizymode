@@ -153,7 +153,7 @@ const AuditLogsPage = () => {
     <div className="px-4 py-6 sm:px-0">
       <h1 className="text-3xl font-bold text-gray-900 mb-2">Audit Logs</h1>
       <p className="text-gray-600 text-sm mb-6">
-        View system audit logs with detailed information about user actions, item operations, idea moderation, and system events. Filter by event type and browse paginated results.
+        View system audit logs with detailed information about user actions, item operations, and system events. Filter by event type and browse paginated results.
       </p>
 
       {/* Filters */}

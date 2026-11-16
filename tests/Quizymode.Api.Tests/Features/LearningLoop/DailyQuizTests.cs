@@ -165,6 +165,26 @@ public sealed class DailyQuizTests : DatabaseTestFixture
     }
 
     [Fact]
+    public async Task ArchiveList_CountsOnlyPublicEligibleItems_AndOmitsDaysWithNothingPlayable()
+    {
+        await SeedPublicItemsAsync(60);
+        Daily.DailyQuizResponse partial = await GetAsync(now: new DateTime(2026, 11, 16, 9, 0, 0, DateTimeKind.Utc));
+        Daily.DailyQuizResponse emptied = await GetAsync(now: new DateTime(2026, 11, 18, 9, 0, 0, DateTimeKind.Utc));
+        // One item of the first day went private; every item of the second day did.
+        List<Guid> hidden = emptied.Items.Select(i => Guid.Parse(i.Id)).Append(Guid.Parse(partial.Items[0].Id)).ToList();
+        List<Item> toHide = DbContext.Items.Where(i => hidden.Contains(i.Id)).ToList();
+        foreach (Item item in toHide) item.IsPrivate = true;
+        await DbContext.SaveChangesAsync();
+        DateTime now = new(2026, 11, 20, 9, 0, 0, DateTimeKind.Utc);
+
+        Daily.ArchiveResponse archive = await Daily.ListArchiveAsync(DbContext, LearningLoopTestData.User(null), now, CancellationToken.None);
+
+        int expectedPartial = partial.Items.Count(i => !emptied.Items.Any(e => e.Id == i.Id)) - 1;
+        archive.Days.Select(d => d.Date).Should().Equal("2026-11-16");
+        archive.Days.Single().Total.Should().Be(expectedPartial);
+    }
+
+    [Fact]
     public async Task Archive_KeepsExcludedItemsExcluded()
     {
         await SeedPublicItemsAsync(40);
