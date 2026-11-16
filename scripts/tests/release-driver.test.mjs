@@ -3,7 +3,7 @@ import assert from "node:assert/strict";
 import fs from "node:fs";
 import os from "node:os";
 import path from "node:path";
-import { execFileSync, spawnSync } from "node:child_process";
+
 import { fileURLToPath } from "node:url";
 import { classifyFile } from "../ci/classify-changes.mjs";
 import { deployFor, emit, evidence, main, paths, redact, refusal, ship, waitPr, gh } from "../release/release.mjs";
@@ -257,34 +257,120 @@ test("AC5: without --close nothing is closed even when every row is complete", (
   assert.equal(r.ok, true);
 });
 
-// AC 7.11.19
+// AC 7.11.19: integration tests through the real CLI path (main -> evidence -> ac-evidence.mjs), with only gh doubled.
 const repoRoot = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "../..");
+const SHA = "a".repeat(40);
+const RUN_URL = "https://github.com/yanis-kr/Quizymode/actions/runs/77";
+const AC_FIXTURE = [
+  "## 9.1 Fixture (#9001)",
+  "- **AC 9.1.1** [Dev tooling] [verify: unit] (#9002) **Given** a unit-only rule, **then** it holds.",
+  "- **AC 9.1.2** [Dev tooling] [verify: e2e] (#9003) **Given** an e2e rule, **then** it holds.",
+  "- **AC 9.1.3** [Dev tooling] [verify: unit] (#9003) **Given** a unit rule on the mixed issue, **then** it holds.",
+  "- **AC 9.1.4** [Dev tooling] [verify: e2e] (#9004) **Given** an e2e-only rule, **then** it holds.",
+  "",
+].join("\n");
 
-test("AC7: evidence refuses a unit-only release with no report and never calls ac-evidence", () => {
-  const deps = fakeGh({});
-  deps.runEvidence = () => { throw new Error("ac-evidence must not run without a report"); };
-  const r = evidence({ issues: [718], reports: [], close: true, root: tempRoot(), deps });
-  assert.equal(r.ok, false);
-  assert.equal(r.class, "usage");
-  assert.match(r.detail, /--report/);
-  assert.equal(deps.calls.length, 0);
-});
-
-test("AC7: ac-evidence run without --report exits 2 with its usage line (real argv)", () => {
-  const res = spawnSync("node", ["scripts/validation/ac-evidence.mjs", "--issues", "718"], { cwd: repoRoot, encoding: "utf8" });
-  assert.equal(res.status, 2);
-  assert.match(res.stderr, /Usage: ac-evidence\.mjs/);
-});
-
-test("AC7: evidence with a Playwright report runs ac-evidence through the real argv and writes the issue comment", () => {
+// A throwaway repo root holding a fixture docs/AC.md and a copy of the validation scripts, so ac-evidence.mjs
+// runs for real against known ACs.
+function fixtureRoot() {
   const root = tempRoot();
-  const report = path.join(root, "results.json");
-  fs.writeFileSync(report, JSON.stringify({ suites: [] }));
-  const deps = fakeGh({});
-  const r = evidence({ issues: [718], reports: [report], out: root, root: repoRoot, deps });
-  assert.ok(["open", "complete"].includes(r.class), `unexpected class ${r.class}: ${r.detail}`);
-  assert.ok(fs.existsSync(path.join(root, "issue-718.md")));
+  fs.mkdirSync(path.join(root, "docs"), { recursive: true });
+  fs.writeFileSync(path.join(root, "docs", "AC.md"), AC_FIXTURE);
+  fs.cpSync(path.join(repoRoot, "scripts", "validation"), path.join(root, "scripts", "validation"), { recursive: true });
+  return root;
+}
+
+// Runs the real CLI entry (main) and returns its exit code and the one JSON line it prints.
+function cli(argv, deps) {
+  const lines = [];
+  const log = console.log;
+  console.log = (line) => lines.push(String(line));
+  try {
+    const exit = main(argv, deps);
+    return { exit, json: JSON.parse(lines.at(-1)) };
+  } finally {
+    console.log = log;
+  }
+}
+
+const runView = (over = {}) => JSON.stringify({
+  status: "completed", conclusion: "success", headSha: SHA,
+  jobs: [{ name: "automation-contract", conclusion: "success" }, { name: "e2e", conclusion: "skipped" }],
+  ...over,
+});
+
+const passingReport = (root) => {
+  const file = path.join(root, "results.json");
+  fs.writeFileSync(file, JSON.stringify({ suites: [{ specs: [{ title: "AC 9.1.4 holds", file: "x.spec.ts", tests: [{ status: "expected", projectName: "chromium" }] }] }] }));
+  return file;
+};
+
+test("AC7: unit-only issue closes on a verified green CI run on the release commit, with no Playwright report", () => {
+  const root = fixtureRoot();
+  const deps = fakeGh({ "run view 77": runView(), "issue close": "" });
+  const { exit, json } = cli(["evidence", "--issues", "9002", "--run-url", RUN_URL, "--sha", SHA, "--root", root, "--out", root, "--close"], deps);
+  assert.equal(exit, 0);
+  assert.equal(json.class, "complete");
+  assert.ok(deps.calls.includes("issue close 9002 --reason completed"));
+  const comment = fs.readFileSync(path.join(root, "issue-9002.md"), "utf8");
+  assert.match(comment, /\| AC 9\.1\.1 \| unit \| SEE CI \|/);
+  assert.match(comment, /Playwright reports: none \(unit-only ACs are covered by the CI run\)/);
+});
+
+test("AC7: mixed issue stays open with its e2e row NOT RUN even when the unit row is covered by a verified run", () => {
+  const root = fixtureRoot();
+  const deps = fakeGh({ "run view 77": runView(), "issue close": "" });
+  const { exit, json } = cli(["evidence", "--issues", "9003", "--run-url", RUN_URL, "--sha", SHA, "--root", root, "--out", root, "--close"], deps);
+  assert.equal(exit, 2);
+  assert.equal(json.class, "open");
+  assert.match(json.detail, /AC 9\.1\.2: NOT RUN/);
+  assert.ok(!deps.calls.some((c) => c.startsWith("issue close")));
+});
+
+test("AC7: missing CI reference and no report returns a clear incomplete result, not a crash", () => {
+  const root = fixtureRoot();
+  const deps = fakeGh({ "issue close": "" });
+  const { exit, json } = cli(["evidence", "--issues", "9002", "--root", root, "--out", root, "--close"], deps);
+  assert.equal(exit, 2);
+  assert.equal(json.class, "open");
+  assert.match(json.detail, /incomplete: no Playwright report and no accepted CI run; left open: #9002: AC 9\.1\.1: NOT RUN/);
   assert.equal(deps.calls.length, 0);
+});
+
+test("AC7: a CI run that failed, or ran on another commit, is not accepted as unit evidence", () => {
+  const root = fixtureRoot();
+  for (const [name, body, reason] of [
+    ["failed", runView({ conclusion: "failure" }), /is completed\/failure, not success/],
+    ["other commit", runView({ headSha: "b".repeat(40) }), /not the release commit/],
+    ["job failed", runView({ jobs: [{ name: "automation-contract", conclusion: "success" }, { name: "frontend-tests", conclusion: "failure" }] }), /unsuccessful jobs: frontend-tests/],
+  ]) {
+    const deps = fakeGh({ "run view 77": body, "issue close": "" });
+    const { exit, json } = cli(["evidence", "--issues", "9002", "--run-url", RUN_URL, "--sha", SHA, "--root", root, "--out", root, "--close"], deps);
+    assert.equal(exit, 2, name);
+    assert.equal(json.class, "open", name);
+    assert.match(json.detail, /CI run not accepted: /, name);
+    assert.match(json.detail, reason, name);
+    assert.ok(!deps.calls.some((c) => c.startsWith("issue close")), name);
+  }
+});
+
+test("AC7: an arbitrary URL is not accepted as CI evidence", () => {
+  const root = fixtureRoot();
+  const deps = fakeGh({});
+  const { json } = cli(["evidence", "--issues", "9002", "--run-url", "https://example.com/anything", "--sha", SHA, "--root", root, "--out", root], deps);
+  assert.match(json.detail, /not a GitHub Actions run URL/);
+  assert.equal(deps.calls.length, 0);
+});
+
+test("AC7: existing Playwright path still closes an issue whose e2e row passes, with no CI run", () => {
+  const root = fixtureRoot();
+  const deps = fakeGh({ "issue close": "" });
+  const { exit, json } = cli(["evidence", "--issues", "9004", "--report", passingReport(root), "--root", root, "--out", root, "--close"], deps);
+  assert.equal(exit, 0);
+  assert.equal(json.class, "complete");
+  assert.ok(deps.calls.includes("issue close 9004 --reason completed"));
+  const comment = fs.readFileSync(path.join(root, "issue-9004.md"), "utf8");
+  assert.match(comment, /Playwright reports: 1/);
 });
 
 // AC 7.11.15

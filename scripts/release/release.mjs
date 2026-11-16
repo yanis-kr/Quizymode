@@ -246,16 +246,53 @@ export function ship({ pr, issues = [], root, deps = {} }) {
   return deployStage({ pr, sha, p, deps });
 }
 
-/** Closes each issue only when ac-evidence reports all its rows complete (AC 7.11.17). */
-export function evidence({ issues, reports, runUrl, env, out, post, close, root, deps = {} }) {
-  // ac-evidence.mjs reads Playwright JSON only and exits 2 without --report (AC 7.11.19).
-  // A unit-only release has no Playwright report, so refuse here with the required input named.
-  if (!reports || reports.length === 0) {
-    return result("evidence", false, "usage", "no Playwright report: ac-evidence needs --report <results.json>; unit-only issues have none", "pass the Playwright JSON of a run that covered these issues, or post unit evidence by hand", 2);
+// The CI job that runs every scripts/tests file; a unit AC is evidenced only by a run where it passed (AC 7.11.19).
+export const REQUIRED_CI_JOB = "automation-contract";
+
+function headSha(root, deps) {
+  if (deps.headSha !== undefined) return deps.headSha;
+  try {
+    return execFileSync("git", ["rev-parse", "HEAD"], { cwd: root, encoding: "utf8" }).trim();
+  } catch {
+    return "";
+  }
+}
+
+/** A CI run counts as unit evidence only when GitHub reports it completed green on the release commit (AC 7.11.19). */
+export function verifyCiRun(runUrl, sha, deps = {}) {
+  const match = /\/actions\/runs\/(\d+)/.exec(runUrl);
+  if (!match) return { ok: false, reason: `not a GitHub Actions run URL: ${runUrl}` };
+  const id = match[1];
+  let run;
+  try {
+    run = ghJson(["run", "view", id, "--json", "status,conclusion,headSha,jobs"], deps);
+  } catch (error) {
+    return { ok: false, reason: `could not read run ${id}: ${String(error.message).slice(0, 120)}` };
+  }
+  if (!run) return { ok: false, reason: `run ${id} not found` };
+  if (run.status !== "completed" || run.conclusion !== "success") return { ok: false, reason: `run ${id} is ${run.status}/${run.conclusion}, not success` };
+  if (!sha || run.headSha !== sha) return { ok: false, reason: `run ${id} built ${run.headSha}, not the release commit ${sha || "(unknown)"}` };
+  const jobs = run.jobs ?? [];
+  if (!jobs.some((job) => job.name === REQUIRED_CI_JOB && job.conclusion === "success")) {
+    return { ok: false, reason: `run ${id} has no successful ${REQUIRED_CI_JOB} job` };
+  }
+  const failed = jobs.filter((job) => job.conclusion !== "success" && job.conclusion !== "skipped").map((job) => job.name);
+  if (failed.length) return { ok: false, reason: `run ${id} has unsuccessful jobs: ${failed.join(", ")}` };
+  return { ok: true, reason: "" };
+}
+
+/** Closes each issue only when ac-evidence reports all its rows complete (AC 7.11.17). Reports are optional (AC 7.11.19). */
+export function evidence({ issues, reports = [], runUrl, sha, env, out, post, close, root, deps = {} }) {
+  let verifiedRun = "";
+  let runNote = "";
+  if (runUrl) {
+    const check = verifyCiRun(runUrl, sha ?? headSha(root, deps), deps);
+    if (check.ok) verifiedRun = runUrl;
+    else runNote = check.reason;
   }
   const args = ["scripts/validation/ac-evidence.mjs", "--issues", issues.join(",")];
   for (const r of reports) args.push("--report", r);
-  if (runUrl) args.push("--run-url", runUrl);
+  if (verifiedRun) args.push("--run-url", verifiedRun);
   if (env) args.push("--env", env);
   if (out) args.push("--out", out);
   if (post) args.push("--post");
@@ -275,7 +312,9 @@ export function evidence({ issues, reports, runUrl, env, out, post, close, root,
     }
   }
   if (open.length) {
-    return result("evidence", false, "open", `left open: ${open.join(" | ")}`, "fix or document the open rows, then run evidence again", 2);
+    const why = !reports.length && !verifiedRun ? "no Playwright report and no accepted CI run; " : "";
+    const notAccepted = runNote ? ` | CI run not accepted: ${runNote}` : "";
+    return result("evidence", false, "open", `incomplete: ${why}left open: ${open.join(" | ")}${notAccepted}`, "pass --run-url of a green CI run on the release commit, or --report for Playwright ACs, then run evidence again", 2);
   }
   const detail = close ? `closed ${closed.map((n) => `#${n}`).join(", ")}` : "all rows complete; nothing closed (no --close)";
   return result("evidence", true, "complete", detail, "post the evidence comments if --post was not used", 0);
@@ -341,7 +380,7 @@ function run(command, f, deps) {
       break;
     case "evidence":
       if (!issues.length) r = result("evidence", false, "usage", "missing --issues", "", 2);
-      else r = evidence({ issues, reports: f.report, runUrl: f["run-url"], env: f.env, out: f.out, post: f.post, close: f.close, root, deps });
+      else r = evidence({ issues, reports: f.report, runUrl: f["run-url"], sha: f.sha, env: f.env, out: f.out, post: f.post, close: f.close, root, deps });
       break;
     case "status":
       r = status({ root, deps });
