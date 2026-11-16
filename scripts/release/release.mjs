@@ -248,6 +248,11 @@ export function ship({ pr, issues = [], root, deps = {} }) {
 
 /** Closes each issue only when ac-evidence reports all its rows complete (AC 7.11.17). */
 export function evidence({ issues, reports, runUrl, env, out, post, close, root, deps = {} }) {
+  // ac-evidence.mjs reads Playwright JSON only and exits 2 without --report (AC 7.11.19).
+  // A unit-only release has no Playwright report, so refuse here with the required input named.
+  if (!reports || reports.length === 0) {
+    return result("evidence", false, "usage", "no Playwright report: ac-evidence needs --report <results.json>; unit-only issues have none", "pass the Playwright JSON of a run that covered these issues, or post unit evidence by hand", 2);
+  }
   const args = ["scripts/validation/ac-evidence.mjs", "--issues", issues.join(",")];
   for (const r of reports) args.push("--report", r);
   if (runUrl) args.push("--run-url", runUrl);

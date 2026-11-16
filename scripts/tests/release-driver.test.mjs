@@ -3,6 +3,8 @@ import assert from "node:assert/strict";
 import fs from "node:fs";
 import os from "node:os";
 import path from "node:path";
+import { execFileSync, spawnSync } from "node:child_process";
+import { fileURLToPath } from "node:url";
 import { classifyFile } from "../ci/classify-changes.mjs";
 import { deployFor, emit, evidence, main, paths, redact, refusal, ship, waitPr, gh } from "../release/release.mjs";
 
@@ -253,6 +255,36 @@ test("AC5: without --close nothing is closed even when every row is complete", (
   const r = evidence({ issues: [718], reports: ["r.json"], close: false, root: tempRoot(), deps });
   assert.equal(deps.calls.length, 0);
   assert.equal(r.ok, true);
+});
+
+// AC 7.11.19
+const repoRoot = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "../..");
+
+test("AC7: evidence refuses a unit-only release with no report and never calls ac-evidence", () => {
+  const deps = fakeGh({});
+  deps.runEvidence = () => { throw new Error("ac-evidence must not run without a report"); };
+  const r = evidence({ issues: [718], reports: [], close: true, root: tempRoot(), deps });
+  assert.equal(r.ok, false);
+  assert.equal(r.class, "usage");
+  assert.match(r.detail, /--report/);
+  assert.equal(deps.calls.length, 0);
+});
+
+test("AC7: ac-evidence run without --report exits 2 with its usage line (real argv)", () => {
+  const res = spawnSync("node", ["scripts/validation/ac-evidence.mjs", "--issues", "718"], { cwd: repoRoot, encoding: "utf8" });
+  assert.equal(res.status, 2);
+  assert.match(res.stderr, /Usage: ac-evidence\.mjs/);
+});
+
+test("AC7: evidence with a Playwright report runs ac-evidence through the real argv and writes the issue comment", () => {
+  const root = tempRoot();
+  const report = path.join(root, "results.json");
+  fs.writeFileSync(report, JSON.stringify({ suites: [] }));
+  const deps = fakeGh({});
+  const r = evidence({ issues: [718], reports: [report], out: root, root: repoRoot, deps });
+  assert.ok(["open", "complete"].includes(r.class), `unexpected class ${r.class}: ${r.detail}`);
+  assert.ok(fs.existsSync(path.join(root, "issue-718.md")));
+  assert.equal(deps.calls.length, 0);
 });
 
 // AC 7.11.15
