@@ -326,6 +326,19 @@ Without that fallback, reloading non-root routes returns the S3 `AccessDenied` X
 
 Grafana Cloud setup is documented in [docs/infra/GRAFANA_CLOUD_SETUP.md](./docs/infra/GRAFANA_CLOUD_SETUP.md).
 
+## Issue Labels
+
+Issues use `<dimension>:<value>` labels. A dimension with a default needs a label only when its value differs from the default; a missing label means the default. Full taxonomy and inference rules: [.claude/skills/qm-refine-bundle/references/labels.md](./.claude/skills/qm-refine-bundle/references/labels.md).
+
+| Dimension | Default | Label only when |
+|---|---|---|
+| `owner:` | `agent` | the next action needs a human (`owner:human`) |
+| `priority:` | `med` | `high` or `low` |
+| `refiner-model:` | `opus` | refined by another model (e.g. `refiner-model:sonnet`) |
+| `executor-model:` | `haiku` | implemented by another model (e.g. `executor-model:fable`) |
+| `status:` | none | always set when refined (`ready`, `needs-refinement`, `blocked`, `deferred`) |
+| `type:`, `size:`, `area:` | none | always required for ready issues |
+
 ## Documentation Map
 
 - [docs/AC.md](./docs/AC.md): canonical behavior and contract reference

@@ -112,7 +112,7 @@ If available, invoke the `quizymode-prepush` skill (`$quizymode-prepush`). Other
 
 ## Batched / Epic Issue Workflow
 
-To move through the backlog faster, related small/medium issues are bundled into a single `epic`-labeled GitHub issue and implemented together as one branch → one PR → one production deploy, instead of one PR per issue.
+To move through the backlog faster, related small/medium issues are bundled into a single `type:epic`-labeled GitHub issue and implemented together as one branch → one PR → one production deploy, instead of one PR per issue.
 
 - An epic issue's body has a checklist of its sub-issues and lives under the same `area:` label as its sub-issues. A sub-issue is plain text in the checklist until it is about to be refined; file it then and replace the text with `- [ ] #124`. Do not file sub-issues ahead of need.
 - When asked to work an epic, implement every unchecked sub-issue on one branch/worktree, running the normal specialist pipeline (architect → ux-designer → reviewer → coder → tester → reviewer final pass) across the combined scope.
