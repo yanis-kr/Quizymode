@@ -248,7 +248,6 @@ export interface AnalyticsOverviewResponse {
   workQueue: {
     itemsAwaitingReview: number;
     pendingPrivateKeywords: number;
-    ideasAwaitingModeration: number;
     /** Front-end error groups first seen in the window (OBS-001). */
     newClientErrorGroups: number;
     /** Items whose uploaded pictures await a decision (#401). */

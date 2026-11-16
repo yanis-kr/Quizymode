@@ -167,47 +167,6 @@ internal static partial class StartupExtensions
                     });
             });
 
-            options.AddPolicy("ideas-create", httpContext =>
-            {
-                string partitionKey = GetAuthenticatedOrIpPartitionKey(httpContext);
-                return RateLimitPartition.GetFixedWindowLimiter(
-                    partitionKey,
-                    static _ => new FixedWindowRateLimiterOptions
-                    {
-                        PermitLimit = 2,
-                        Window = TimeSpan.FromMinutes(10),
-                        QueueLimit = 0,
-                        AutoReplenishment = true
-                    });
-            });
-
-            options.AddPolicy("ideas-comments", httpContext =>
-            {
-                string partitionKey = GetAuthenticatedOrIpPartitionKey(httpContext);
-                return RateLimitPartition.GetFixedWindowLimiter(
-                    partitionKey,
-                    static _ => new FixedWindowRateLimiterOptions
-                    {
-                        PermitLimit = 10,
-                        Window = TimeSpan.FromMinutes(10),
-                        QueueLimit = 0,
-                        AutoReplenishment = true
-                    });
-            });
-
-            options.AddPolicy("ideas-ratings", httpContext =>
-            {
-                string partitionKey = GetAuthenticatedOrIpPartitionKey(httpContext);
-                return RateLimitPartition.GetFixedWindowLimiter(
-                    partitionKey,
-                    static _ => new FixedWindowRateLimiterOptions
-                    {
-                        PermitLimit = 60,
-                        Window = TimeSpan.FromMinutes(10),
-                        QueueLimit = 0,
-                        AutoReplenishment = true
-                    });
-            });
         });
 
         return builder;
@@ -294,21 +253,6 @@ internal static partial class StartupExtensions
         if (path.EndsWith("/study-guides/documents", StringComparison.OrdinalIgnoreCase))
         {
             return "Too many study guide uploads. Please wait a while and try again.";
-        }
-
-        if (path.Contains("/ideas/", StringComparison.OrdinalIgnoreCase) && path.EndsWith("/comments", StringComparison.OrdinalIgnoreCase))
-        {
-            return "Too many idea comments. Please wait a few minutes and try again.";
-        }
-
-        if (path.Contains("/ideas/", StringComparison.OrdinalIgnoreCase) && path.EndsWith("/rating", StringComparison.OrdinalIgnoreCase))
-        {
-            return "Too many idea ratings. Please slow down and try again shortly.";
-        }
-
-        if (path.EndsWith("/ideas", StringComparison.OrdinalIgnoreCase))
-        {
-            return "Too many idea submissions. Please wait a few minutes and try again.";
         }
 
         return "Too many feedback submissions. Please wait a few minutes and try again.";

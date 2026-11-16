@@ -227,7 +227,6 @@ const AdminOverviewPanel = () => {
               }
             />
             <WorkQueueLink to="/admin/keyword-review" label="Pending private keywords" count={data.workQueue.pendingPrivateKeywords} />
-            <WorkQueueLink to="/admin/ideas" label="Ideas awaiting moderation" count={data.workQueue.ideasAwaitingModeration} />
             <WorkQueueLink to="/admin/client-errors" label="New front-end error groups" count={data.workQueue.newClientErrorGroups} />
           </div>
         </>

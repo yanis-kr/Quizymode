@@ -122,19 +122,6 @@ public sealed class GetAnalyticsOverviewTests : DatabaseTestFixture, IAsyncLifet
     }
 
     [Fact]
-    public async Task Overview_CountsWorkQueueIdeas()
-    {
-        DbContext.Ideas.Add(new Idea { Id = Guid.NewGuid(), Title = "t", Problem = "p", ProposedChange = "c", CreatedBy = "u" });
-        await DbContext.SaveChangesAsync();
-
-        Result<GetAnalyticsOverview.Response> result = await Run();
-
-        result.Value.WorkQueue.IdeasAwaitingModeration.Should().Be(1);
-        result.Value.WorkQueue.ItemsAwaitingReview.Should().Be(0);
-        result.Value.WorkQueue.NewClientErrorGroups.Should().Be(0);
-    }
-
-    [Fact]
     public async Task Overview_CountsNewClientErrorGroupsExcludingInternalAndBots()
     {
         // The client-error report windows on the real clock, so these rows are dated relative to it.

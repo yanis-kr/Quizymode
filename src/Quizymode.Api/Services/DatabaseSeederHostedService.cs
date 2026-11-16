@@ -24,7 +24,6 @@ internal sealed class DatabaseSeederHostedService(
     private const string SeedItemsFolderName = "items";
     private const string SeedCollectionsFolderName = "collections";
     private const string SeederUserId = "seeder";
-    private const string IdeasSeedRelativePath = "data/ideas/ideas_seed.sql";
 
     private readonly ILogger<DatabaseSeederHostedService> _logger = logger;
     private readonly IServiceProvider _serviceProvider = serviceProvider;
@@ -44,16 +43,15 @@ internal sealed class DatabaseSeederHostedService(
 
             // #329: the local dev seed (selection.json items, Science ratings, seed-dev collections) is a
             // Development-only convenience. Production items and collections come from admin seed sync.
-            // #336: the curated ideas and default featured sets are dev-only too, so an admin's delete sticks in prod.
+            // #336: the default featured sets are dev-only too, so an admin's delete sticks in prod.
             if (!_environment.IsDevelopment())
             {
                 _logger.LogInformation(
-                    "Skipping local dev seed (ideas, featured sets, seed items, ratings, collections) in {Environment} environment.",
+                    "Skipping local dev seed (featured sets, seed items, ratings, collections) in {Environment} environment.",
                     _environment.EnvironmentName);
                 return;
             }
 
-            await SeedIdeasAsync(db, cancellationToken);
             await EnsureFeaturedSetsAsync(db, cancellationToken);
 
             if (string.IsNullOrWhiteSpace(_seedOptions.Path))
@@ -658,73 +656,6 @@ internal sealed class DatabaseSeederHostedService(
         }
 
         _logger.LogInformation("Taxonomy seed SQL applied.");
-    }
-
-    /// <summary>#337: content root first, then the assembly base directory (mirrors TaxonomyYamlLoader); null when neither has the file.</summary>
-    internal static string? ResolveIdeasSeedPath(string contentRootPath, string baseDirectory)
-    {
-        foreach (string root in new[] { contentRootPath, baseDirectory })
-        {
-            if (string.IsNullOrWhiteSpace(root))
-            {
-                continue;
-            }
-
-            string candidate = Path.Combine(root, IdeasSeedRelativePath);
-            if (File.Exists(candidate))
-            {
-                return candidate;
-            }
-        }
-
-        return null;
-    }
-
-    private async Task SeedIdeasAsync(ApplicationDbContext db, CancellationToken cancellationToken)
-    {
-        string? sqlPath = ResolveIdeasSeedPath(_environment.ContentRootPath, AppContext.BaseDirectory);
-        if (sqlPath is null)
-        {
-            _logger.LogWarning(
-                "Ideas seed SQL not found under {ContentRoot} or {BaseDirectory} ({RelativePath}). Skipping ideas seed.",
-                _environment.ContentRootPath,
-                AppContext.BaseDirectory,
-                IdeasSeedRelativePath);
-            return;
-        }
-
-        string sql = await File.ReadAllTextAsync(sqlPath, cancellationToken);
-        if (string.IsNullOrWhiteSpace(sql))
-        {
-            _logger.LogWarning("Ideas seed SQL at {Path} was empty. Skipping ideas seed.", sqlPath);
-            return;
-        }
-
-        DbConnection connection = db.Database.GetDbConnection();
-        bool shouldClose = connection.State != ConnectionState.Open;
-        if (shouldClose)
-        {
-            await db.Database.OpenConnectionAsync(cancellationToken);
-        }
-
-        try
-        {
-            await using DbTransaction transaction = await connection.BeginTransactionAsync(cancellationToken);
-            await using DbCommand command = connection.CreateCommand();
-            command.Transaction = transaction;
-            command.CommandText = sql;
-            await command.ExecuteNonQueryAsync(cancellationToken);
-            await transaction.CommitAsync(cancellationToken);
-        }
-        finally
-        {
-            if (shouldClose)
-            {
-                await db.Database.CloseConnectionAsync();
-            }
-        }
-
-        _logger.LogInformation("Ideas seed SQL applied.");
     }
 
     private static string? ResolveSeedItemsPath(string resolvedSeedRoot)

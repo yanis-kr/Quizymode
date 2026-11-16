@@ -10,7 +10,6 @@ internal static class WorkQueueBuilder
     internal sealed record Counts(
         int ItemsAwaitingReview,
         int PendingPrivateKeywords,
-        int IdeasAwaitingModeration,
         int PicturesAwaitingReview,
         DateTime? OldestPictureSubmittedAt);
 
@@ -31,7 +30,6 @@ internal static class WorkQueueBuilder
                 keyword => keyword.IsPrivate && keyword.IsReviewPending
                     && db.ItemKeywords.Any(itemKeyword => itemKeyword.KeywordId == keyword.Id),
                 cancellationToken),
-            await db.Ideas.CountAsync(idea => idea.ModerationState == IdeaModerationState.PendingReview, cancellationToken),
             picturesAwaiting,
             oldestPictureSubmittedAt);
     }

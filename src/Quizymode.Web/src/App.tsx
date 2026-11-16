@@ -44,14 +44,12 @@ const EditItemPage = lazyPage(() => import("./features/items/pages/EditItemPage"
 const AboutPage = lazyPage(() => import("./features/about/pages/AboutPage"));
 const RoadmapPage = lazyPage(() => import("./features/roadmap/pages/RoadmapPage"));
 const FeedbackPage = lazyPage(() => import("./features/feedback/pages/FeedbackPage"));
-const IdeasPage = lazyPage(() => import("./features/ideas/pages/IdeasPage"));
 const StudyGuideUploadPage = lazyPage(() => import("./features/studyGuide/pages/StudyGuideUploadPage"));
 const StudyGuideDocumentsPage = lazyPage(() => import("./features/studyGuide/pages/StudyGuideDocumentsPage"));
 const StudyGuideDocumentPage = lazyPage(() => import("./features/studyGuide/pages/StudyGuideDocumentPage"));
 const PrivacyPolicyPage = lazyPage(() => import("./features/legal/pages/PrivacyPolicyPage"));
 const TermsOfServicePage = lazyPage(() => import("./features/legal/pages/TermsOfServicePage"));
 const AdminFeedbackPage = lazyPage(() => import("./features/admin/pages/AdminFeedbackPage"));
-const AdminIdeasPage = lazyPage(() => import("./features/admin/pages/AdminIdeasPage"));
 const AdminFeaturedPage = lazyPage(() => import("./features/admin/pages/AdminFeaturedPage"));
 const AdminAiProvidersPage = lazyPage(() => import("./features/admin/pages/AdminAiProvidersPage"));
 const AdminDailyQuizPage = lazyPage(() => import("./features/admin/pages/AdminDailyQuizPage"));
@@ -188,14 +186,12 @@ function App() {
           <Route path="/admin/page-views" element={<PageViewAnalyticsPage />} />
           <Route path="/admin/client-errors" element={<AdminClientErrorsPage />} />
           <Route path="/admin/feedback" element={<AdminFeedbackPage />} />
-          <Route path="/admin/ideas" element={<AdminIdeasPage />} />
           <Route path="/admin/featured" element={<AdminFeaturedPage />} />
           <Route path="/admin/ai-providers" element={<AdminAiProvidersPage />} />
           <Route path="/admin/daily-quiz" element={<AdminDailyQuizPage />} />
           <Route path="/admin/import" element={<AdminImportPage />} />
         </Route>
         <Route path="/about" element={<AboutPage />} />
-        <Route path="/ideas" element={<IdeasPage />} />
         <Route path="/roadmap" element={<RoadmapPage />} />
         <Route path="/feedback" element={<FeedbackPage />} />
         <Route path="/privacy" element={<PrivacyPolicyPage />} />

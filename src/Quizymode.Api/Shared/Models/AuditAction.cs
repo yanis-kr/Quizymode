@@ -2,7 +2,8 @@ namespace Quizymode.Api.Shared.Models;
 
 /// <summary>
 /// Persisted as an int: never remove or reorder members. <see cref="LoginFailed"/> is no longer written (#235) and is
-/// kept for historical rows and the audit-log filter.
+/// kept for historical rows and the audit-log filter. The <c>Idea*</c> members are no longer written (#689) and are kept
+/// for the same reason.
 /// </summary>
 public enum AuditAction
 {

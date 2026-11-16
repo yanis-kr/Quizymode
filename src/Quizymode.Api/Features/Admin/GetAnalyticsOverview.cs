@@ -48,7 +48,6 @@ public static class GetAnalyticsOverview
     public sealed record WorkQueue(
         int ItemsAwaitingReview,
         int PendingPrivateKeywords,
-        int IdeasAwaitingModeration,
         int NewClientErrorGroups,
         int PicturesAwaitingReview = 0,
         DateTime? OldestPictureSubmittedAt = null);
@@ -144,7 +143,6 @@ public static class GetAnalyticsOverview
         WorkQueue workQueue = new(
             queue.ItemsAwaitingReview,
             queue.PendingPrivateKeywords,
-            queue.IdeasAwaitingModeration,
             clientErrors.IsSuccess ? clientErrors.Value.NewGroups : 0,
             queue.PicturesAwaitingReview,
             queue.OldestPictureSubmittedAt);

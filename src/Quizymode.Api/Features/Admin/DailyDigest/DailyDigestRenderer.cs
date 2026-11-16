@@ -249,7 +249,6 @@ internal static class DailyDigestRenderer
         {
             AddIfPositive(lines, "Items to review", w.ItemsToReview);
             AddIfPositive(lines, "Private keywords to review", w.PrivateKeywords);
-            AddIfPositive(lines, "Ideas to moderate", w.Ideas);
             if (w.Pictures > 0)
             {
                 string oldest = w.OldestPictureAgeDays is { } days ? $" (oldest {days} d)" : string.Empty;

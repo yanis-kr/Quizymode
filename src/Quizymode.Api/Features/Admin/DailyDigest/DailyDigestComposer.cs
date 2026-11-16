@@ -175,7 +175,6 @@ internal sealed partial class DailyDigestComposer(
         return new WaitingSection(
             counts.ItemsAwaitingReview,
             counts.PendingPrivateKeywords,
-            counts.IdeasAwaitingModeration,
             counts.PicturesAwaitingReview,
             oldestDays,
             newFeedback);
