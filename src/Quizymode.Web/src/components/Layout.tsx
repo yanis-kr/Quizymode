@@ -271,6 +271,17 @@ const LayoutContent = ({ children }: LayoutProps) => {
                 >
                   Games
                 </Link>
+                {donationUrl && (
+                  <a
+                    href={donationUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={`Support on ${getDonationHost(donationUrl)} (opens in a new tab)`}
+                    className={desktopNavLinkClass(false)}
+                  >
+                    Support
+                  </a>
+                )}
                 {isAuthenticated && (
                   <>
                     <Link
@@ -391,6 +402,18 @@ const LayoutContent = ({ children }: LayoutProps) => {
               >
                 Games
               </Link>
+              {donationUrl && (
+                <a
+                  href={donationUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={`Support on ${getDonationHost(donationUrl)} (opens in a new tab)`}
+                  className={mobileNavLinkClass(false)}
+                  onClick={closeMobileMenu}
+                >
+                  Support
+                </a>
+              )}
               {isAuthenticated && (
                 <>
                   <Link

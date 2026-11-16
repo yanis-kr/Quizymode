@@ -24,8 +24,12 @@ vi.mock("@/features/feedback/components/FeedbackDialog", () => ({ default: () =>
 const DONATION_URL = "https://ko-fi.com/example";
 
 function renderShell(): void {
+  renderShellWithUnmount();
+}
+
+function renderShellWithUnmount(): { unmount: () => void } {
   const queryClient = new QueryClient({ defaultOptions: { queries: { retry: false } } });
-  render(
+  return render(
     <HelmetProvider>
       <QueryClientProvider client={queryClient}>
         <MemoryRouter initialEntries={["/about"]}>
@@ -74,6 +78,21 @@ describe("donation link rendering (#497)", () => {
       expect(link).toHaveAttribute("rel", "noopener noreferrer");
       expect(link).toHaveAttribute("aria-label", "Support Quizymode (opens ko-fi.com in a new tab)");
     }
+  });
+
+  it("A5: the top navigation shows an external Support link naming the host when set, and omits it when unset (#497 AC-10)", () => {
+    vi.stubEnv("VITE_DONATION_URL", DONATION_URL);
+    const { unmount } = renderShellWithUnmount();
+    const navLink = screen.getByRole("link", { name: "Support on ko-fi.com (opens in a new tab)" });
+    expect(navLink).toHaveTextContent("Support");
+    expect(navLink).toHaveAttribute("href", DONATION_URL);
+    expect(navLink).toHaveAttribute("target", "_blank");
+    expect(navLink).toHaveAttribute("rel", "noopener noreferrer");
+    expect(screen.queryByRole("link", { name: /Ideas/ })).not.toBeInTheDocument();
+    unmount();
+    vi.stubEnv("VITE_DONATION_URL", "");
+    renderShell();
+    expect(screen.queryByRole("link", { name: /^Support on / })).not.toBeInTheDocument();
   });
 
   it.each(["http://ko-fi.com/example", "javascript:alert(1)", "not a url"])(
