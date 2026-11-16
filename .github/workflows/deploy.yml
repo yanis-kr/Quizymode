@@ -28,6 +28,8 @@ jobs:
         uses: actions/download-artifact@v8
         with:
           name: change-scope
+          # Outside the checkout: actions/checkout below cleans untracked files, which deleted a workspace copy.
+          path: ${{ runner.temp }}/change-scope
           run-id: ${{ github.event.workflow_run.id }}
           github-token: ${{ github.token }}
 
@@ -44,10 +46,11 @@ jobs:
         env:
           SHA: ${{ github.event.workflow_run.head_sha }}
           DOWNLOADED: ${{ steps.download.outcome }}
+          SCOPE_FILE: ${{ runner.temp }}/change-scope/change-scope.json
         run: |
           FILE=""
-          if [ "$DOWNLOADED" = "success" ] && [ -f change-scope.json ]; then
-            FILE=change-scope.json
+          if [ "$DOWNLOADED" = "success" ] && [ -f "$SCOPE_FILE" ]; then
+            FILE="$SCOPE_FILE"
           else
             echo "No change scope found; deploying everything."
           fi
