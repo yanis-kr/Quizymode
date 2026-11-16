@@ -99,8 +99,8 @@ test("AC bundle packet writes ACs, exclusions, paths, checks and model, and reje
   const { r, file } = packet(dir, 20, [], { size: "s" });
   assert.equal(r.status, 0, r.stdout + r.stderr);
   const text = fs.readFileSync(file, "utf8");
-  assert.match(text, /- coder: haiku/);
-  assert.match(text, /- architect: haiku/);
+  assert.match(text, /- coder: sonnet\. Why:/);
+  assert.match(text, /- architect: sonnet\. Why:/);
   assert.match(text, /AC1 \[verify: unit\] Observable behavior/);
   assert.match(text, /Not the other thing/);
   assert.match(text, /src\/Quizymode\.Web\/src\/features\/Example\/\*\*/);
@@ -113,28 +113,25 @@ test("AC bundle packet writes ACs, exclusions, paths, checks and model, and reje
   assert.match(bad.r.stdout, /not in bundle/);
 });
 
-test("AC packet models: haiku by default, sonnet or opus only on a complexity criterion (AC 7.13.3)", () => {
+test("AC packet models: haiku by default, sonnet and opus only on a scored criterion (AC 7.13.3)", () => {
   const roles = (bundleOpts, extra = []) => {
     const dir = tmp();
     const { r, file } = packet(dir, 20, extra, bundleOpts);
     assert.equal(r.status, 0, r.stdout);
-    return Object.fromEntries([...fs.readFileSync(file, "utf8").matchAll(/^- (\S+): (\w+)$/gm)].map((m) => [m[1], m[2]]));
+    return Object.fromEntries([...fs.readFileSync(file, "utf8").matchAll(/^- (\S+): (\w+)\. Why:/gm)].map((m) => [m[1], m[2]]));
   };
-  // Default fixture (risk low, no migration, size s, attempt 1): every role is haiku.
-  assert.deepEqual(roles({ size: "s" }), { architect: "haiku", reviewer: "haiku", "qm-decision-maker": "haiku", coder: "haiku", tester: "haiku", "ux-designer": "haiku", reporter: "haiku" });
-  assert.equal(roles({ size: "xs" }).coder, "haiku");
-  // sonnet: size m, risk medium, a migration not stated as false, or attempt 2.
-  assert.equal(roles({ size: "m" }).coder, "sonnet");
-  assert.equal(roles({ size: "s", risk: "medium" }).tester, "sonnet");
-  assert.equal(roles({ size: "s" }, ["--attempt", "2"]).coder, "sonnet");
-  // opus: risk high, a migration, size l, or attempt 3.
-  assert.equal(roles({ size: "s", risk: "high" }).coder, "opus");
+  // The manifest carries no ambiguity, novelty or reasoning, so they are unknown and assessed by sonnet.
+  assert.deepEqual(roles({ size: "s" }), { architect: "sonnet", reviewer: "sonnet", "qm-decision-maker": "sonnet", coder: "sonnet", tester: "sonnet", "ux-designer": "sonnet", reporter: "haiku" });
   assert.equal(roles({ size: "s", risk: "high" }).architect, "opus");
-  assert.equal(roles({ size: "s", migration: true }).tester, "opus");
-  assert.equal(roles({ size: "l" }).coder, "opus");
-  assert.equal(roles({ size: "s" }, ["--attempt", "3"]).coder, "opus");
-  // reporter is always haiku.
-  assert.equal(roles({ size: "l", risk: "high" }).reporter, "haiku");
+  assert.equal(roles({ size: "s", risk: "high" }).coder, "sonnet");
+  assert.equal(roles({ size: "s", migration: true }).coder, "opus");
+  assert.equal(roles({ size: "s" }, ["--failure", "reasoning"]).coder, "opus");
+  assert.equal(roles({ size: "s" }, ["--failure", "environment"]).coder, "sonnet");
+  assert.equal(roles({ size: "s" }, ["--attempt", "2"]).coder, "sonnet");
+  assert.equal(roles({ size: "l" }).coder, "sonnet");
+  assert.equal(roles({ size: "s", risk: "high" }).reporter, "haiku");
+  const bad = packet(tmp(), 20, ["--failure", "bogus"], { size: "s" });
+  assert.equal(bad.r.status, 1);
 });
 
 test("AC manifest size must be xs, s, m or l, and --attempt cannot be below one", () => {
@@ -177,8 +174,8 @@ test("AC 7.13.2 packet --from-issue reads checkbox ACs, an explicit body risk, a
   const low = from(`${checkboxes}Impact 3 · Effort 1 (size S) · Risk Low · Confidence High.\nMigration: none\n`, ["size:s"]);
   assert.match(low.text, /risk low \(issue body\)/);
   assert.match(low.text, /migration false/);
-  assert.match(low.text, /- coder: haiku/);
-  assert.match(low.text, /- tester: haiku/);
+  assert.match(low.text, /- coder: sonnet\. Why:/);
+  assert.match(low.text, /- tester: sonnet. Why:/);
   // Low risk alone is not enough: a migration nobody stated stays unknown, and unknown escalates coder and tester.
   const lowNoMigration = from(`${checkboxes}Risk Low\n`, ["size:s"]);
   assert.match(lowNoMigration.text, /migration unknown/);
@@ -194,6 +191,23 @@ test("AC 7.13.2 packet --from-issue reads checkbox ACs, an explicit body risk, a
   assert.match(from("- [ ] Thing [verify: unit]\nRisk: to be decided\n", ["size:s"]).text, /risk unknown/);
   // No marker at all is still refused.
   assert.equal(from("- [ ] no marker here\n").r.status, 2);
+});
+
+// AC 7.13.3: every dispatch record names the role, the model it ran on, and the reason, copied from the packet.
+test("AC 7.13.3 handback-save records the dispatch model and reason from the packet", () => {
+  const dir = tmp();
+  const { r, file } = packet(dir, 20, [], { size: "s" });
+  assert.equal(r.status, 0, r.stdout);
+  fs.writeFileSync(path.join(dir, "plan.md"), "plan\n");
+  const f = path.join(dir, "h.json");
+  const hb = path.join(dir, "hb-out");
+  fs.writeFileSync(f, JSON.stringify({ status: "done", filesChanged: [], commands: [], acEvidence: { AC1: "plan.md" }, questions: [] }));
+  const saved = spawnSync("node", [BUNDLE, "handback-save", "test-bundle", "--issue", "20", "--role", "coder", "--file", f, "--handbacks-dir", hb, "--repo-root", dir, "--packets-dir", path.dirname(file)], { encoding: "utf8" });
+  assert.equal(saved.status, 0, saved.stdout);
+  const claim = JSON.parse(fs.readFileSync(path.join(hb, "20-coder.json"), "utf8"));
+  assert.equal(claim.dispatch.role, "coder");
+  assert.equal(claim.dispatch.model, "sonnet");
+  assert.match(claim.dispatch.reason, /ambiguity unknown/);
 });
 
 test("AC handback-check accepts a valid handback and names the missing field", () => {

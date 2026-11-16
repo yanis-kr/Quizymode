@@ -64,7 +64,7 @@ The reviewer, not the decision agent, confirms that AC wording was not weakened.
 
 Fable is not used. Every row that named Fable uses Opus.
 
-Dispatch each agent with its packet path and the model its role has in the packet (`bundle.mjs packet` sets every role's model through one routing function; never choose one by hand, and never downgrade a role). Unclear-cause CI triage uses opus. At most two Opus agents at once. Tell each agent not to spawn agents. Record the model each agent actually got in the checkpoint; never claim one you did not get.
+Dispatch each agent with its packet path and the model its role has in the packet (`bundle.mjs packet` sets every role's model through the shared policy in `scripts/automation/model-policy.mjs`; never choose one by hand, and never downgrade a role). Haiku is the default. Sonnet is the normal escalation for substantive engineering. Opus only where deeper reasoning pays (AC 7.13.3). Unclear-cause CI triage uses sonnet, and opus only if sonnet cannot find the cause. At most two Opus agents at once. Tell each agent not to spawn agents. Record the model each agent actually got in the checkpoint; never claim one you did not get.
 
 ## Pick and split
 
@@ -141,7 +141,7 @@ The integrator is the only writer of release state. At most one release is in fl
 6. Light local check, under the .NET mutex: `npm run build`; `dotnet build` (skip if step 5 already built); the filtered tests of every shipped issue, in one `dotnet test --filter` and one `npm test -- --run` invocation; the high-risk scans from `quizymode-prepush` (constructor signature changes, removed UI text). Do not run the full suites or coverage here. CI is the full run.
 
    Then the AC gate: `node scripts/validation/ac-gate.mjs --issues <every shipped issue>`. If an issue fails (an AC with no method, or an `e2e` or `signed-in-prod-ui` AC with no test), revert its merge from the release branch, put it back at the front of its lane's queue with the gate output, and release the rest. An issue that fails the gate does not ship.
-7. One reviewer pass (opus, § Model routing) on `git diff origin/main...release/<batch-id>` in a fresh context, covering code and that no AC wording was weakened. Confirmed findings are fixed on the release branch.
+7. One reviewer pass (the reviewer's model from the batch's packet, § Model routing; opus only when the batch is high complexity) on `git diff origin/main...release/<batch-id>` in a fresh context, covering code and that no AC wording was weakened. Confirmed findings are fixed on the release branch.
 8. Push and open one PR with `Refs #n` for each shipped issue (not `Closes`, so merging does not close them before evidence exists). Steps 7 and 8 may run in the opposite order to start CI sooner; a reviewer fix is then one more push.
 
 ## Release
