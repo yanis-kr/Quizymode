@@ -192,7 +192,12 @@ After merge, prod verification always finishes, even past the deadline.
 2. Delete local branches that are merged (`git branch -d`). Use `-D` only for an abandoned branch the run itself created and whose PR is closed.
 3. Leave the three persistent worktrees in place, each on a detached `origin/main`, unless it has uncommitted work (then leave it as is and report it).
 4. Run `Get-PSDrive C`. If free space is below 15 GB: remove the lane and release worktrees that are clean (junction first with `rmdir`, then `git worktree remove`, then `git worktree prune`), and apply the disk-hygiene rule in the user's CLAUDE.md (remove stale task output older than 24 hours and not growing; ask before NuGet, Docker, `.cache` or `.claude`).
-5. Never remove a worktree, branch, or folder the run did not create (other agent windows, `.claude/worktrees/*`, the user's checkout).
+5. End-of-run disk pass (always, not only below 15 GB), because bin, obj and node_modules cost about 2 GB per worktree:
+   - Remove every worktree the run created beyond the three persistent ones once its branch is merged and the PR closed (junction first with `rmdir`, then `git worktree remove`, then `git worktree prune`), and delete its local branch.
+   - In each persistent worktree that is clean, run `dotnet build-server shutdown` once, so no build server holds files open.
+   - Run `git worktree list` and report any registered worktree whose branch is merged or whose folder is missing, with its size, as a candidate for the user to remove. Do not remove ones the run did not create.
+   - Report free space on C: before and after, and the size of `.claude/worktrees` and `%LOCALAPPDATA%\Temp\claude`.
+6. Never remove a worktree, branch, or folder the run did not create (other agent windows, `.claude/worktrees/*`, the user's checkout).
 
 ## Stop conditions
 
