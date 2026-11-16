@@ -20,4 +20,4 @@ Rules, in order of priority:
 
 If you are re-entering after a conflict-resolution rebase, re-read the current diff against the new base before continuing — do not assume your prior changes still apply cleanly.
 
-Your input is a packet path. Read the packet, then only files under its `scope.paths` and files you find by Grep from them. Get AC text with `node scripts/validation/ac-slice.mjs --issue <n>`; do not open `docs/AC.md`. End by writing the handback file `.qm/handbacks/<issue>-coder.json` (shape and check: `bundle.mjs handback-check`, see the packet).
+Your input is a packet path. Read the packet, then only files under its `scope.paths` and files you find by Grep from them. Get AC text with `node scripts/validation/ac-slice.mjs --issue <n>`; do not open `docs/AC.md`. End your final reply with the handback JSON in one fenced `json` block (shape in the packet). The orchestrator saves it with `bundle.mjs handback-save`; do not write the handback file yourself.

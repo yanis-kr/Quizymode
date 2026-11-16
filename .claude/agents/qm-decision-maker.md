@@ -40,4 +40,4 @@ Reply with only this JSON (no prose before or after):
 
 `acImpact: "weakens"` is never allowed with `proceed`; if that is the only option, the outcome is `defer`.
 
-Your input is a packet path. Read the packet, then only files under its `scope.paths` and files you find by Grep from them. Get AC text with `node scripts/validation/ac-slice.mjs --issue <n>`; do not open `docs/AC.md`. End by writing the handback file `.qm/handbacks/<issue>-qm-decision-maker.json` (shape and check: `bundle.mjs handback-check`, see the packet).
+Your input is a packet path. Read the packet, then only files under its `scope.paths` and files you find by Grep from them. Get AC text with `node scripts/validation/ac-slice.mjs --issue <n>`; do not open `docs/AC.md`. End your final reply with the handback JSON in one fenced `json` block (shape in the packet). The orchestrator saves it with `bundle.mjs handback-save`; do not write the handback file yourself.

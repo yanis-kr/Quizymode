@@ -64,7 +64,7 @@ The reviewer, not the decision agent, confirms that AC wording was not weakened.
 
 Fable is not used. Every row that named Fable uses Opus.
 
-Dispatch every agent with its packet path and the packet's `model` (`bundle.mjs packet --from-issue <n>` derives it; never choose one by hand). Fixed: integrator reviewer, `qm-decision-maker` and unclear-cause CI triage use opus, reporter uses haiku. At most two Opus agents at once. Tell each agent not to spawn agents. Record the model each agent actually got in the checkpoint; never claim one you did not get.
+Dispatch each agent with its packet path and the model its role has in the packet (`bundle.mjs packet` sets every role's model through one routing function; never choose one by hand, and never downgrade a role). Unclear-cause CI triage uses opus. At most two Opus agents at once. Tell each agent not to spawn agents. Record the model each agent actually got in the checkpoint; never claim one you did not get.
 
 ## Pick and split
 
@@ -121,7 +121,7 @@ For each issue in the lane's queue:
    - medium: architect, coder, tester. Add ux-designer only when there is a new visible surface.
    - high: architect, ux-designer when user-visible, reviewer on the plan, coder, tester, reviewer on the diff.
 
-   Write each issue's packet and dispatch with its path and `model` (§ Model routing). Only one coder writes in a worktree at a time. Tell each agent not to ask the user, not to spawn agents, and not to re-read files the orchestrator already summarised for it.
+   Write each issue's packet and dispatch each role with the packet path and that role's model (§ Model routing). Only one coder writes in a worktree at a time. Tell each agent not to ask the user, not to spawn agents, and not to re-read files the orchestrator already summarised for it.
 3. Filtered checks only: `npm test -- --run <pattern>`, `dotnet test --filter "FullyQualifiedName~<slice>"` (exclude `Category=Postgres` unless the issue is about that code), a targeted `npm run lint -- <paths>`. Take the .NET mutex for any dotnet command.
 4. Write the AC text as a fragment at `<scratch>/ac/<issue>.md` (section heading and the AC lines it adds or changes).
 5. Commit on the branch, push it, report ready with the test output, and write the checkpoint.

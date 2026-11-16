@@ -99,7 +99,8 @@ test("AC bundle packet writes ACs, exclusions, paths, checks and model, and reje
   const { r, file } = packet(dir, 20, [], { size: "s" });
   assert.equal(r.status, 0, r.stdout + r.stderr);
   const text = fs.readFileSync(file, "utf8");
-  assert.match(text, /model: sonnet/);
+  assert.match(text, /- coder: sonnet/);
+  assert.match(text, /- architect: opus/);
   assert.match(text, /AC1 \[verify: unit\] Observable behavior/);
   assert.match(text, /Not the other thing/);
   assert.match(text, /src\/Quizymode\.Web\/src\/features\/Example\/\*\*/);
@@ -112,18 +113,31 @@ test("AC bundle packet writes ACs, exclusions, paths, checks and model, and reje
   assert.match(bad.r.stdout, /not in bundle/);
 });
 
-test("AC packet model is sonnet for xs/s/m, opus for risk high or migration, one tier up on attempt 2", () => {
-  const model = (bundleOpts, extra = []) => {
+test("AC packet models: each role has its own default, and facts only escalate coder and tester", () => {
+  const roles = (bundleOpts, extra = []) => {
     const dir = tmp();
     const { r, file } = packet(dir, 20, extra, bundleOpts);
     assert.equal(r.status, 0, r.stdout);
-    return /model: (\w+)/.exec(fs.readFileSync(file, "utf8"))[1];
+    return Object.fromEntries([...fs.readFileSync(file, "utf8").matchAll(/^- (\S+): (\w+)$/gm)].map((m) => [m[1], m[2]]));
   };
-  for (const size of ["xs", "s", "m"]) assert.equal(model({ size }), "sonnet");
-  assert.equal(model({ size: "s", risk: "high" }), "opus");
-  assert.equal(model({ size: "s", migration: true }), "opus");
-  assert.equal(model({ size: "s" }, ["--attempt", "2"]), "opus");
-  assert.equal(model({ size: "s", risk: "high" }, ["--attempt", "2"]), "opus");
+  assert.deepEqual(roles({ size: "s" }), { architect: "opus", reviewer: "opus", "qm-decision-maker": "opus", coder: "sonnet", tester: "sonnet", "ux-designer": "sonnet", reporter: "haiku" });
+  for (const size of ["xs", "m"]) assert.equal(roles({ size }).coder, "sonnet");
+  assert.equal(roles({ size: "s", risk: "high" }).coder, "opus");
+  assert.equal(roles({ size: "s", risk: "high" }).tester, "opus");
+  assert.equal(roles({ size: "s", migration: true }).coder, "opus");
+  assert.equal(roles({ size: "s" }, ["--attempt", "2"]).coder, "opus");
+  assert.equal(roles({ size: "l" }).coder, "opus");
+  const hi = roles({ size: "s", risk: "high" });
+  assert.equal(hi.architect, "opus");
+  assert.equal(hi.reporter, "haiku");
+  assert.equal(hi["ux-designer"], "sonnet");
+});
+
+test("AC manifest size must be xs, s, m or l, and --attempt cannot be below one", () => {
+  const bad = packet(tmp(), 20, [], { size: "huge" });
+  assert.equal(bad.r.status, 2);
+  assert.match(bad.r.stdout, /size must be xs, s, m or l/);
+  assert.equal(packet(tmp(), 20, ["--attempt", "0"], { size: "s" }).r.status, 1);
 });
 
 test("AC packet --from-issue builds a packet from the draft ACs and labels", () => {
@@ -133,7 +147,8 @@ test("AC packet --from-issue builds a packet from the draft ACs and labels", () 
   const r = run(["packet", "--from-issue", "5", "--issue-json", json, "--packets-dir", path.join(dir, "p"), "--handbacks-dir", path.join(dir, "h"), "--ac-file", path.join(dir, "none.md")]);
   assert.equal(r.status, 0, r.stdout + r.stderr);
   const text = fs.readFileSync(path.join(dir, "p", "5.md"), "utf8");
-  assert.match(text, /model: sonnet/);
+  assert.match(text, /- coder: opus/);
+  assert.match(text, /risk unknown/);
   assert.match(text, /It works\./);
   assert.match(text, /hooks/);
 });
@@ -153,6 +168,31 @@ test("AC handback-check accepts a valid handback and names the missing field", (
     assert.equal(r.status, 2, field);
     assert.match(r.stdout, new RegExp(field), field);
   }
+});
+
+test("AC handback-check rejects a done handback with a failing command; handback-save records a claim and checks evidence paths", () => {
+  const dir = tmp();
+  const f = path.join(dir, "h.json");
+  const hb = path.join(dir, "hb");
+  const base = { status: "done", filesChanged: [], commands: [{ command: "node --test", exitCode: 1 }], acEvidence: { AC1: "scripts/tests/work-packets.test.mjs" }, questions: [] };
+  fs.writeFileSync(f, JSON.stringify(base));
+  const failing = run(["handback-check", f]);
+  assert.equal(failing.status, 2);
+  assert.match(failing.stdout, /nonzero exitCode/);
+  const save = (h, role = "tester") => {
+    fs.writeFileSync(f, JSON.stringify(h));
+    return spawnSync("node", [BUNDLE, "handback-save", "test-bundle", "--issue", "20", "--role", role, "--file", f, "--handbacks-dir", hb, "--repo-root", repo], { encoding: "utf8" });
+  };
+  const good = { ...base, commands: [{ command: "node --test", exitCode: 0 }] };
+  const saved = save(good);
+  assert.equal(saved.status, 0, saved.stdout);
+  const rec = JSON.parse(fs.readFileSync(path.join(hb, "20-tester.json"), "utf8"));
+  assert.equal(rec.claimed, true);
+  assert.equal(rec.role, "tester");
+  const missing = save({ ...good, acEvidence: { AC1: "no/such/file.txt" } });
+  assert.equal(missing.status, 2);
+  assert.match(missing.stdout, /missing file/);
+  assert.equal(save(good, "wizard").status, 1);
 });
 
 const SECRET_TEXT = "SECRET-MESSAGE-TEXT-xyz";
@@ -205,12 +245,46 @@ test("AC usage-ledger CLI appends one issue line", () => {
   assert.equal(JSON.parse(lines[0]).issue, 719);
 });
 
+test("AC usage-ledger refuses a session already counted for another issue and reports orchestration overhead", () => {
+  const root = tmp();
+  writeTranscripts(root);
+  const led = tmp();
+  const cli = (args) => spawnSync("node", [path.join(repo, "scripts", "automation", "usage-ledger.mjs"), "--root", root, "--ledger-dir", led, ...args], { encoding: "utf8" });
+  assert.equal(cli(["--issue", "719", "--sessions", "s1", "--size", "s"]).status, 0);
+  const again = cli(["--issue", "720", "--sessions", "s1"]);
+  assert.equal(again.status, 2);
+  assert.match(again.stderr, /already count toward issue #719/);
+  assert.equal(cli(["--issue", "721", "--sessions", "nope"]).status, 2);
+  const since = cli(["--since", "2026-11-01"]);
+  assert.match(since.stdout, /Orchestration overhead \(sessions on no issue line\): 0 session/);
+  assert.match(since.stdout, /not subscription cost or billed amounts/);
+});
+
+test("AC packet check selection follows the scope paths: an API feature gets its filtered dotnet test, scripts get node --test", () => {
+  const dir = tmp();
+  const id = writeBundle(path.join(dir, "bundles"), { size: "s" });
+  const mf = path.join(dir, "bundles", id, "manifest.json");
+  const m = JSON.parse(fs.readFileSync(mf, "utf8"));
+  m.issues[0].scope.paths = ["src/Quizymode.Api/Features/Study/**", "scripts/validation/**"];
+  fs.writeFileSync(mf, JSON.stringify(m, null, 2));
+  const sha = createHash("sha256").update(fs.readFileSync(mf)).digest("hex");
+  fs.writeFileSync(path.join(dir, "bundles", id, "approval.json"), JSON.stringify({ status: "approved", manifestSha256: sha }));
+  const acFile = path.join(dir, "AC.md");
+  fs.writeFileSync(acFile, AC_FIXTURE);
+  const r = run(["packet", id, "20", "--bundles-dir", path.join(dir, "bundles"), "--packets-dir", path.join(dir, "packets"), "--handbacks-dir", path.join(dir, "hb"), "--ac-file", acFile, "--no-git"]);
+  assert.equal(r.status, 0, r.stdout);
+  const text = fs.readFileSync(path.join(dir, "packets", "20.md"), "utf8");
+  assert.match(text, /dotnet test --filter "\(FullyQualifiedName~Features\.Study\|FullyQualifiedName~Architecture\)&Category!=Postgres"/);
+  assert.doesNotMatch(text, /vitest related/);
+  assert.match(text, /node --test scripts\/tests\//);
+});
+
 test("AC every agent names the packet input and handback output, and no skill reads docs/AC.md whole", () => {
   const agentsDir = path.join(repo, ".claude", "agents");
   for (const f of fs.readdirSync(agentsDir).filter((x) => x.endsWith(".md"))) {
     const text = fs.readFileSync(path.join(agentsDir, f), "utf8");
     assert.match(text, /input is a packet path/i, f);
-    assert.match(text, /\.qm\/handbacks\//, f);
+    assert.match(text, /handback-save/, f);
   }
   const skills = path.join(repo, ".claude", "skills");
   const walk = (d) => fs.readdirSync(d, { withFileTypes: true }).flatMap((e) => (e.isDirectory() ? walk(path.join(d, e.name)) : e.name.endsWith(".md") ? [path.join(d, e.name)] : []));
