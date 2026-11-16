@@ -153,6 +153,45 @@ test("AC packet --from-issue builds a packet from the draft ACs and labels", () 
   assert.match(text, /hooks/);
 });
 
+// AC 7.13.2 (checkbox ACs and body risk): from-issue reads normal checkbox ACs and an explicit Risk line, and never reads missing risk as low.
+test("AC 7.13.2 packet --from-issue reads checkbox ACs, an explicit body risk, and keeps missing risk unknown", () => {
+  const dir = tmp();
+  const from = (body, labels = []) => {
+    const json = path.join(dir, `issue-${Math.random().toString(36).slice(2)}.json`);
+    fs.writeFileSync(json, JSON.stringify({ title: "Copy", labels: labels.map((name) => ({ name })), body }));
+    const packets = path.join(dir, "p");
+    const r = run(["packet", "--from-issue", "5", "--issue-json", json, "--packets-dir", packets, "--handbacks-dir", path.join(dir, "h"), "--ac-file", path.join(dir, "none.md")]);
+    return { r, text: r.status === 0 ? fs.readFileSync(path.join(packets, "5.md"), "utf8") : "" };
+  };
+  const checkboxes = "## Acceptance\n- [ ] Shows the Why label on exams items [verify: unit]\n- [x] Hides the count [verify: unit]\n- A note without a marker\n";
+  const cb = from(checkboxes, ["size:s"]);
+  assert.equal(cb.r.status, 0, cb.r.stdout);
+  assert.match(cb.text, /Shows the Why label on exams items/);
+  assert.match(cb.text, /Hides the count/);
+  assert.doesNotMatch(cb.text, /A note without a marker/);
+  // Explicit "Risk Low" and "Migration: none" in the body are captured, and route coder and tester to sonnet at size s.
+  const low = from(`${checkboxes}Impact 3 · Effort 1 (size S) · Risk Low · Confidence High.\nMigration: none\n`, ["size:s"]);
+  assert.match(low.text, /risk low \(issue body\)/);
+  assert.match(low.text, /migration false/);
+  assert.match(low.text, /- coder: sonnet/);
+  assert.match(low.text, /- tester: sonnet/);
+  // Low risk alone is not enough: a migration nobody stated stays unknown, and unknown escalates coder and tester.
+  const lowNoMigration = from(`${checkboxes}Risk Low\n`, ["size:s"]);
+  assert.match(lowNoMigration.text, /migration unknown/);
+  assert.match(lowNoMigration.text, /- coder: opus/);
+  // No label and no body risk: unknown, which escalates. Unknown is never read as low.
+  const unknown = from(checkboxes, ["size:s"]);
+  assert.match(unknown.text, /risk unknown \(unknown\)/);
+  assert.match(unknown.text, /- coder: opus/);
+  // A risk label beats a body statement.
+  const labelWins = from(`${checkboxes}Risk Low\n`, ["size:s", "risk:high"]);
+  assert.match(labelWins.text, /risk high \(risk label\)/);
+  // A body that says only "risk" with no level stays unknown.
+  assert.match(from("- [ ] Thing [verify: unit]\nRisk: to be decided\n", ["size:s"]).text, /risk unknown/);
+  // No marker at all is still refused.
+  assert.equal(from("- [ ] no marker here\n").r.status, 2);
+});
+
 test("AC handback-check accepts a valid handback and names the missing field", () => {
   const dir = tmp();
   const valid = { status: "done", filesChanged: ["a.mjs"], commands: [{ command: "node --test", exitCode: 0 }], acEvidence: { AC1: "scripts/tests/x.test.mjs" }, questions: [] };
@@ -231,6 +270,23 @@ test("AC usage-ledger counts each message id once, splits main and subagent, lis
   const printed = formatLedger(l) + JSON.stringify(issueLine(719, "s", l));
   assert.ok(!printed.includes(SECRET_TEXT) && !printed.includes(SECRET_CMD));
   assert.equal(issueLine(719, "s", l).turns, 3);
+});
+
+// AC 7.13.5 (window): --until bounds a batch at both ends, so one batch is measured on its own.
+test("AC 7.13.5 usage-ledger --until measures one batch window, not the cumulative one", () => {
+  const root = tmp();
+  writeTranscripts(root);
+  // Fixture: main messages at 10:00 and 10:30 (opus), one subagent message at 10:10 (sonnet). Window 10:05 to 10:20 holds only the subagent.
+  const l = buildLedger([root], { since: "2026-11-10T10:05:00Z", until: "2026-11-10T10:20:00Z" });
+  assert.equal(l.messages, 1);
+  assert.equal(l.byModel["claude-sonnet-5-5 | subagent"].turns, 1);
+  assert.equal(l.byModel["claude-opus-5-5 | main"], undefined);
+  const cli = spawnSync("node", [path.join(repo, "scripts", "automation", "usage-ledger.mjs"), "--root", root, "--since", "2026-11-10T10:05:00Z", "--until", "2026-11-10T10:20:00Z"], { encoding: "utf8" });
+  assert.equal(cli.status, 0, cli.stderr);
+  assert.match(cli.stdout, /Window: 2026-11-10T10:05:00Z to 2026-11-10T10:20:00Z/);
+  const bad = spawnSync("node", [path.join(repo, "scripts", "automation", "usage-ledger.mjs"), "--root", root, "--since", "not-a-date"], { encoding: "utf8" });
+  assert.equal(bad.status, 1);
+  assert.match(bad.stderr, /--since is not a date/);
 });
 
 test("AC usage-ledger CLI appends one issue line", () => {

@@ -370,6 +370,20 @@ function checkApprovalStillValid(p, st) {
 }
 
 // ---------- packets and handbacks ----------
+// Draft ACs from an issue body: "- AC (draft) [verify: m] text" or a checkbox line "- [ ] text [verify: m]" (or "- [x]").
+// Any bullet with a [verify: ...] marker counts; a bullet without one is not an AC.
+function draftAcs(body) {
+  const out = [];
+  // Spaces and tabs only: \s would let a match run into the next line.
+  for (const m of String(body).matchAll(/^[ \t]*-[ \t]+(?:\[[ xX]\][ \t]+)?(.*?)[ \t]*\[verify:[ \t]*([^\]]+)\][ \t]*(.*)$/gm)) {
+    const before = m[1].replace(/^AC\s*\(draft\)\s*/i, "").trim();
+    const text = (before || m[3].trim());
+    if (!text) continue;
+    out.push({ id: `AC${out.length + 1}`, text, evidence: m[2].trim() });
+  }
+  return out;
+}
+
 // One routing source for every role. Role defaults are fixed: architect, reviewer and qm-decision-maker use opus;
 // coder, tester and ux-designer use sonnet; reporter uses haiku. Facts can only escalate coder and tester to opus
 // (risk high, a migration, size l, or attempt 2 or later). An unknown fact counts as the risky value.
@@ -412,7 +426,7 @@ function acSliceFor(issue) {
   return sh("node", args, true) ?? `(no ACs in docs/AC.md carry (#${issue}) yet)`;
 }
 function renderPacket(p) {
-  const L = [`# Work packet: #${p.issue} ${p.title}`, "", `attempt: ${p.attempt} of ${p.maxAttempts}`, `facts (${p.factSource}): size ${p.size}, risk ${p.risk}, migration ${p.migration}`, "", "## Goal", p.goal, ""];
+  const L = [`# Work packet: #${p.issue} ${p.title}`, "", `attempt: ${p.attempt} of ${p.maxAttempts}`, `facts (${p.factSource}): size ${p.size}, risk ${p.risk}${p.riskSource ? ` (${p.riskSource})` : ""}, migration ${p.migration}`, "", "## Goal", p.goal, ""];
   L.push("## Models by role (dispatch each agent with its role's model)", ...Object.entries(p.models).map(([r, m]) => `- ${r}: ${m}`), "");
   L.push("## Acceptance criteria", ...p.acs.map((a) => `- ${a.id} [verify: ${a.evidence}] ${a.text}`), "");
   L.push("## Exclusions", ...(p.exclusions.length ? p.exclusions.map((x) => `- ${x}`) : ["- (none)"]), "");
@@ -779,12 +793,21 @@ switch (cmd) {
       const labels = (j.labels ?? []).map((l) => (typeof l === "string" ? l : l.name));
       const label = (d) => labels.find((l) => l.startsWith(`${d}:`))?.slice(d.length + 1);
       const body = String(j.body ?? "");
-      const acs = [...body.matchAll(/^\s*-\s+AC\s*\(draft\)\s*\[verify:\s*([^\]]+)\]\s*(.+)$/gm)].map((m, i) => ({ id: `AC${i + 1}`, text: m[2].trim(), evidence: m[1].trim() }));
-      if (!acs.length) die(2, `Issue #${n} has no "AC (draft) [verify: ...]" lines; refine it first.`);
+      const acs = draftAcs(body);
+      if (!acs.length) die(2, `Issue #${n} has no AC lines with a [verify: ...] marker (checkbox or "AC (draft)"); refine it first.`);
       const exclusions = [...body.matchAll(/^\s*Out of scope:\s*(.+)$/gim)].map((m) => m[1].trim());
       // Facts come from labels only. A missing fact is "unknown", which routes coder and tester to opus; it is never read as verified false.
-      const risk = labels.includes("risk:high") || labels.includes("area:auth") ? "high" : labels.includes("risk:low") ? "low" : labels.includes("risk:medium") ? "medium" : "unknown";
-      const migration = labels.includes("area:db") ? true : "unknown";
+      // A risk label wins. Without one, an explicit "Risk Low" (or Medium/High) in the body counts as stated, and anything
+      // else is unknown, which escalates. Unknown is never read as low.
+      const labelRisk = labels.includes("risk:high") || labels.includes("area:auth") ? "high" : labels.includes("risk:low") ? "low" : labels.includes("risk:medium") ? "medium" : null;
+      const bodyRisk = /\bRisk\s*[:-]?\s*(low|medium|high)\b/i.exec(body)?.[1].toLowerCase() ?? null;
+      const risk = labelRisk ?? bodyRisk ?? "unknown";
+      const riskSource = labelRisk ? "risk label" : bodyRisk ? "issue body" : "unknown";
+      // A db label means a migration. Otherwise only an explicit "Migration: none|yes" or "no migration" in the body counts.
+      // An absent statement stays unknown, which escalates; it is never read as no migration.
+      const bodyMigration = /\bno migrations?\b|\bMigration\s*[:-]?\s*(none|no)\b/i.test(body) ? false
+        : /\bMigration\s*[:-]?\s*yes\b/i.test(body) ? true : "unknown";
+      const migration = labels.includes("area:db") ? true : bodyMigration;
       const sizeLabel = label("size");
       const size = ["xs", "s", "m", "l"].includes(sizeLabel) ? sizeLabel : "unknown";
       const attempt = attemptFrom(undefined, opts.attempt);
@@ -794,7 +817,7 @@ switch (cmd) {
       const unknown = refs.filter((x) => !relatedRefs.ids.includes(x) && !relatedRefs.invariants.includes(x));
       if (unknown.length) die(2, `Related ACs line has entries that are neither an AC id nor an invariant id: ${unknown.join(", ")}`);
       writePacket({ relatedRefs, relatedNote: relLine ? null : "related ACs: not refined",  issue: n, title: j.title, goal: j.title, acs, exclusions, paths: [], scopeKnown: false, dependsOn: [], checks: packetChecks([], n), acSlice: acSliceFor(n),
-        size, risk, migration, attempt, maxAttempts: 2, factSource: "issue labels and body, not checked against the manifest or code", models: modelsFor({ size, risk, migration, attempt }) });
+        size, risk, riskSource, migration, attempt, maxAttempts: 2, factSource: "issue labels and body, not checked against the manifest or code", models: modelsFor({ size, risk, migration, attempt }) });
     }
     const p = bundlePaths(id);
     const m = loadValidManifest(p, id);
