@@ -2,15 +2,18 @@ using Microsoft.AspNetCore.WebUtilities;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Primitives;
 using Quizymode.Api.Data;
+using Quizymode.Api.Services.Startup;
 using Quizymode.Api.Shared.Models;
 
 namespace Quizymode.Api.Services;
 
 /// <summary>
-/// Startup hosted service that backfills <see cref="AnalyticsSession"/> rows for
+/// Background service that backfills <see cref="AnalyticsSession"/> rows for
 /// <see cref="PageView"/> session ids that predate the TRAFFIC-122 session table. Runs in batches of
 /// <see cref="BatchSize"/> and is idempotent by construction: it only ever selects session ids with
 /// no corresponding row, so a repeat run (including a re-deploy) inserts nothing once caught up.
+/// It runs after the startup gate opens plus <see cref="StartupDelay"/>, never on the startup path (#732): the query scans
+/// the whole PageViews table on every boot even when nothing is missing.
 /// </summary>
 /// <remarks>
 /// Historical page hits never recorded a referrer, so every backfilled row has <c>ReferrerHost =
@@ -21,14 +24,25 @@ namespace Quizymode.Api.Services;
 /// </remarks>
 internal sealed class AnalyticsSessionBackfill(
     IServiceProvider serviceProvider,
-    ILogger<AnalyticsSessionBackfill> logger) : IHostedService
+    StartupGate startupGate,
+    TimeProvider timeProvider,
+    ILogger<AnalyticsSessionBackfill> logger) : BackgroundService
 {
     private const int BatchSize = 5000;
+
+    internal static readonly TimeSpan StartupDelay = TimeSpan.FromMinutes(2);
 
     private readonly IServiceProvider _serviceProvider = serviceProvider;
     private readonly ILogger<AnalyticsSessionBackfill> _logger = logger;
 
-    public async Task StartAsync(CancellationToken cancellationToken)
+    protected override async Task ExecuteAsync(CancellationToken stoppingToken)
+    {
+        await StartupGate.WaitThenDelayAsync(startupGate, StartupDelay, timeProvider, stoppingToken);
+        await RunAsync(stoppingToken);
+    }
+
+    /// <summary>One backfill pass (all batches). Best-effort: failures are logged and retried on the next boot.</summary>
+    internal async Task RunAsync(CancellationToken cancellationToken)
     {
         try
         {
@@ -57,12 +71,10 @@ internal sealed class AnalyticsSessionBackfill(
         }
         catch (Exception ex)
         {
-            // Best-effort: a failed backfill must never block API startup. It will retry on the next deploy.
+            // Best-effort: a failed backfill must never affect the API. It will retry on the next deploy.
             _logger.LogError(ex, "AnalyticsSessionBackfill: backfill run failed.");
         }
     }
-
-    public Task StopAsync(CancellationToken cancellationToken) => Task.CompletedTask;
 
     private static async Task<int> RunBatchAsync(
         ApplicationDbContext db,

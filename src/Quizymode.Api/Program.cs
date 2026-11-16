@@ -4,6 +4,6 @@ var builder = WebApplication.CreateBuilder(args);
 builder.ConfigureServices();
 var app = builder.Build();
 
-await app.InitializeApplicationAsync();
+// Migrations and seeding run in StartupGateService after Kestrel binds, so /health answers while they work (#732).
 app.ConfigurePipeline();
 await app.RunAsync();

@@ -47,6 +47,31 @@ internal sealed class S3MediaObjectStore(IAmazonS3 client, string bucketName) : 
         }
     }
 
+    public async Task<bool> ExistsAsync(string key, CancellationToken cancellationToken)
+    {
+        MediaObjectKey.EnsureValid(key);
+        try
+        {
+            // HEAD: no object bytes are transferred.
+            await client.GetObjectMetadataAsync(
+                new GetObjectMetadataRequest { BucketName = bucketName, Key = key },
+                cancellationToken);
+            return true;
+        }
+        catch (AmazonS3Exception ex) when (
+            ex.StatusCode is HttpStatusCode.NotFound or HttpStatusCode.Forbidden
+            || ex.ErrorCode is "NoSuchKey" or "NotFound" or "AccessDenied")
+        {
+            // A HEAD has no body, so a missing key and an unreadable key are only told apart by the status; both mean "not usable".
+            return false;
+        }
+        catch (Exception ex) when (ex is AmazonServiceException or AmazonClientException)
+        {
+            string code = (ex as AmazonServiceException)?.ErrorCode ?? ex.GetType().Name;
+            throw new MediaStorageException($"S3 HeadObject failed ({code}).", ex);
+        }
+    }
+
     public async Task<MediaObjectContent?> OpenReadAsync(string key, CancellationToken cancellationToken)
     {
         MediaObjectKey.EnsureValid(key);

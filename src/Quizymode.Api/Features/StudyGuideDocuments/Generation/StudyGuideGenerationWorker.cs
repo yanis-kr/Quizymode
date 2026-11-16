@@ -1,5 +1,6 @@
 using Microsoft.Extensions.Options;
 using Quizymode.Api.Shared.Options;
+using Quizymode.Api.Services.Startup;
 
 namespace Quizymode.Api.Features.StudyGuideDocuments.Generation;
 
@@ -13,12 +14,17 @@ internal sealed class StudyGuideGenerationWorker(
     IServiceScopeFactory scopeFactory,
     ILlmVendorRegistry vendors,
     IOptions<StudyGuideGenerationOptions> options,
-    ILogger<StudyGuideGenerationWorker> logger) : BackgroundService
+    ILogger<StudyGuideGenerationWorker> logger,
+    StartupGate? startupGate = null,
+    TimeProvider? timeProvider = null) : BackgroundService
 {
     private readonly IServiceScopeFactory _scopeFactory = scopeFactory;
     private readonly ILlmVendorRegistry _vendors = vendors;
     private readonly StudyGuideGenerationOptions _options = options.Value;
     private readonly ILogger<StudyGuideGenerationWorker> _logger = logger;
+
+    /// <summary>Wait after the startup gate opens before the first queue poll (#732).</summary>
+    internal static readonly TimeSpan StartupDelay = TimeSpan.FromSeconds(30);
 
     protected override async Task ExecuteAsync(CancellationToken stoppingToken)
     {
@@ -34,7 +40,16 @@ internal sealed class StudyGuideGenerationWorker(
             return;
         }
 
-        using PeriodicTimer timer = new(TimeSpan.FromSeconds(Math.Clamp(_options.PollIntervalSeconds, 1, 3600)));
+        try
+        {
+            await StartupGate.WaitThenDelayAsync(startupGate, StartupDelay, timeProvider, stoppingToken);
+        }
+        catch (OperationCanceledException) when (stoppingToken.IsCancellationRequested)
+        {
+            return;
+        }
+
+        using PeriodicTimer timer = new(TimeSpan.FromSeconds(Math.Clamp(_options.PollIntervalSeconds, 1, 3600)), timeProvider ?? TimeProvider.System);
         try
         {
             do

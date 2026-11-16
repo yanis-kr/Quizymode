@@ -24,7 +24,7 @@ public sealed class AnalyticsSessionBackfillTests : DatabaseTestFixture
         services.AddSingleton<IAttributionClassifier, AttributionClassifier>();
         ServiceProvider provider = services.BuildServiceProvider();
 
-        return new AnalyticsSessionBackfill(provider, NullLogger<AnalyticsSessionBackfill>.Instance);
+        return new AnalyticsSessionBackfill(provider, new Quizymode.Api.Services.Startup.StartupGate(), TimeProvider.System, NullLogger<AnalyticsSessionBackfill>.Instance);
     }
 
     [Fact]
@@ -39,7 +39,7 @@ public sealed class AnalyticsSessionBackfillTests : DatabaseTestFixture
         await DbContext.SaveChangesAsync();
         DbContext.ChangeTracker.Clear();
 
-        await BuildBackfillService().StartAsync(CancellationToken.None);
+        await BuildBackfillService().RunAsync(CancellationToken.None);
 
         AnalyticsSession session = await DbContext.AnalyticsSessions.SingleAsync(s => s.SessionId == "session-backfill");
         session.FirstSeenUtc.Should().BeCloseTo(earliest, TimeSpan.FromSeconds(1));
@@ -62,7 +62,7 @@ public sealed class AnalyticsSessionBackfillTests : DatabaseTestFixture
         await DbContext.SaveChangesAsync();
         DbContext.ChangeTracker.Clear();
 
-        await BuildBackfillService().StartAsync(CancellationToken.None);
+        await BuildBackfillService().RunAsync(CancellationToken.None);
 
         AnalyticsSession session = await DbContext.AnalyticsSessions.SingleAsync(s => s.SessionId == "session-no-ua");
         session.DeviceClass.Should().Be("unknown");
@@ -77,10 +77,10 @@ public sealed class AnalyticsSessionBackfillTests : DatabaseTestFixture
         await DbContext.SaveChangesAsync();
         DbContext.ChangeTracker.Clear();
 
-        await BuildBackfillService().StartAsync(CancellationToken.None);
+        await BuildBackfillService().RunAsync(CancellationToken.None);
         int countAfterFirstRun = await DbContext.AnalyticsSessions.CountAsync();
 
-        await BuildBackfillService().StartAsync(CancellationToken.None);
+        await BuildBackfillService().RunAsync(CancellationToken.None);
         int countAfterSecondRun = await DbContext.AnalyticsSessions.CountAsync();
 
         countAfterFirstRun.Should().Be(1);
@@ -106,7 +106,7 @@ public sealed class AnalyticsSessionBackfillTests : DatabaseTestFixture
         await DbContext.SaveChangesAsync();
         DbContext.ChangeTracker.Clear();
 
-        await BuildBackfillService().StartAsync(CancellationToken.None);
+        await BuildBackfillService().RunAsync(CancellationToken.None);
 
         AnalyticsSession session = await DbContext.AnalyticsSessions.SingleAsync(s => s.SessionId == "session-existing");
         session.LandingPath.Should().Be("/already-captured");
