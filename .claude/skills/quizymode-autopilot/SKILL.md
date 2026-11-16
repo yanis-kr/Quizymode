@@ -109,7 +109,7 @@ Serialised, never edited by two lanes in the same batch: EF migrations and the m
 - All migration issues go to one lane. A second migration issue in the same batch branches from the first one's branch, so the snapshot stays linear.
 - Lanes declare touched files after planning. If the two lanes overlap on any file, move the later issue into the other lane's queue behind the issue it overlaps, instead of resolving at merge.
 
-Integrator-only, never edited or committed by a lane: `Directory.Build.props`, `src/Quizymode.Web/package.json` version, `docs/AC.md`, `docs/openapi/quizymode-api.json`. OpenAPI is generated, so the integrator regenerates it once per release. A lane that needs it locally may generate it but must not stage it.
+Integrator-only, never edited or committed by a lane: `Directory.Build.props`, `src/Quizymode.Web/package.json` version, `docs/AC.md`, `docs/openapi/quizymode-api.json`. OpenAPI is generated, so the integrator regenerates it once per release. A lane that needs it locally may generate it but must not stage it. Lanes write AC text to `.qm/ac-fragments/<issue>.md` instead; while a batch is active, a session that is not the integrator pushes issue branches only (no PR to main, no version bump, no AC.md or OpenAPI edits), and the integrator assigns AC ids and the single version and checks `gh pr list --base main --state open` before opening the release PR.
 
 ## Local resources
 
