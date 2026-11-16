@@ -65,6 +65,29 @@ describe("AnswerFeedbackCard", () => {
     expect(screen.queryByTestId("option-rationale")).toBeNull();
   });
 
+  it("factLabel replaces only the label: same element and classes, same text otherwise (#713)", () => {
+    const { unmount } = renderCard();
+    const defaultCard = screen.getByTestId("answer-feedback-card");
+    const defaultLabel = screen.getByText("Did you know?");
+    const defaultText = defaultCard.textContent ?? "";
+    const defaultLabelTag = defaultLabel.tagName;
+    const defaultLabelClass = defaultLabel.className;
+    unmount();
+
+    renderCard({ factLabel: "Why" });
+    const card = screen.getByTestId("answer-feedback-card");
+    const label = screen.getByText("Why");
+    expect(screen.queryByText("Did you know?")).toBeNull();
+    expect(label.tagName).toBe(defaultLabelTag);
+    expect(label.className).toBe(defaultLabelClass);
+    expect(card.textContent).toBe(defaultText.replace("Did you know?", "Why"));
+  });
+
+  it("omits a custom label too when there is no fact", () => {
+    renderCard({ fact: "", factLabel: "Why" });
+    expect(screen.queryByText("Why")).toBeNull();
+  });
+
   it("omits the label and block when there is no fact", () => {
     renderCard({ fact: "" });
     expect(screen.queryByText("Did you know?")).toBeNull();

@@ -15,6 +15,8 @@ interface AnswerFeedbackCardProps {
   isCorrect: boolean;
   /** The "Did you know?" fact; the label and block are omitted when empty. */
   fact?: string | undefined;
+  /** Label above the fact. Defaults to "Did you know?"; /quiz passes "Why" for exams and tech items (#713). */
+  factLabel?: string | undefined;
   /** "See my score" instead of "Next". */
   isLast: boolean;
   /** Primary action; without it the card shows no button (nothing to advance to). */
@@ -27,7 +29,7 @@ interface AnswerFeedbackCardProps {
 
 /**
  * The single answer-feedback card shared by /start, /daily, /review and /quiz choice answers (#648): the verdict, what the
- * learner picked on a miss (with the reason it is wrong), the correct answer, one fact under "Did you know?" and the
+ * learner picked on a miss (with the reason it is wrong), the correct answer, one fact under "Did you know?" (or the given factLabel, such as "Why") and the
  * explanation picture. Rendered inside the quiz's one polite live region. The real Next button is focused one frame later
  * so Enter advances exactly once (the study hotkeys ignore events from a focused button).
  */
@@ -36,6 +38,7 @@ export function AnswerFeedbackCard({
   selectedAnswer,
   isCorrect,
   fact,
+  factLabel = "Did you know?",
   isLast,
   onNext,
   noNextHint,
@@ -117,7 +120,7 @@ export function AnswerFeedbackCard({
       />
       {fact && (
         <div className="mt-2">
-          <p className="text-xs font-semibold uppercase tracking-wide text-indigo-ink">Did you know?</p>
+          <p className="text-xs font-semibold uppercase tracking-wide text-indigo-ink">{factLabel}</p>
           <p className="mt-0.5 break-words text-sm text-gray-800">
             <ForeignPhraseText text={fact} linkify />
           </p>
