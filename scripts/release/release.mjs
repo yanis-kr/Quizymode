@@ -121,6 +121,7 @@ export function waitPr({ pr, root, deps = {} }) {
   const checks = normalizeChecks(view.statusCheckRollup);
   const failing = checks.filter((c) => c.failed).map((c) => c.name);
   const pending = checks.filter((c) => c.pending).map((c) => c.name);
+  if (!checks.length) pending.push("no checks reported yet");
 
   const found = findings(pr, deps);
   if (found.length) {
@@ -140,6 +141,11 @@ export function waitPr({ pr, root, deps = {} }) {
   }
   if (pending.length) {
     return result("wait-pr", false, "pending", `waiting for: ${pending.join(", ")}`, "run wait-pr again later", 0);
+  }
+  const cleared = readJson(p.state);
+  if (cleared?.lastFailure) {
+    const { lastFailure, ...rest } = cleared;
+    writeJson(p.state, rest);
   }
   return result("wait-pr", true, "ok", "all checks passed and there are no new findings", `run ship --pr ${pr}`, 0);
 }
@@ -162,8 +168,9 @@ function recordLedger(p, entry) {
 
 /**
  * Finds the Deploy run that the CI run on this SHA triggered (AC 7.11.13). An exact match on the triggering run id
- * is used when the API reports one. The live API does not, so otherwise the earliest workflow_run-triggered Deploy
- * on this SHA that was created after the CI run started is taken.
+ * is used when the API reports one. The live API does not, so otherwise the latest workflow_run-triggered Deploy on
+ * this SHA created after the CI run started is taken: a re-run of Deploy supersedes an earlier attempt, and the deploy
+ * concurrency group runs them one at a time.
  */
 export function deployFor(sha, ciRun, deps = {}) {
   const runs = ghJson(["api", `repos/{owner}/{repo}/actions/workflows/deploy.yml/runs?head_sha=${sha}`], deps)?.workflow_runs ?? [];
@@ -173,7 +180,7 @@ export function deployFor(sha, ciRun, deps = {}) {
   const started = Date.parse(ciRun.createdAt ?? "") || 0;
   return triggered
     .filter((r) => Date.parse(r.created_at ?? "") >= started)
-    .sort((a, b) => Date.parse(a.created_at) - Date.parse(b.created_at))[0];
+    .sort((a, b) => Date.parse(b.created_at) - Date.parse(a.created_at))[0];
 }
 
 function deployStage({ pr, sha, p, deps }) {
@@ -214,17 +221,20 @@ export function ship({ pr, issues = [], root, deps = {} }) {
   const blocked = refusal(p);
   if (blocked) return result("ship", false, "gate", blocked, "resolve the halt or wait for the lock to clear", 2);
 
-  const view = ghJson(["pr", "view", String(pr), "--json", "state,statusCheckRollup,mergeCommit"], deps) ?? {};
+  const view = ghJson(["pr", "view", String(pr), "--json", "state,statusCheckRollup,mergeCommit,headRefOid"], deps) ?? {};
   if (view.state !== "MERGED") {
     const checks = normalizeChecks(view.statusCheckRollup);
     const failing = checks.filter((c) => c.failed).map((c) => c.name);
     const pending = checks.filter((c) => c.pending).map((c) => c.name);
+    if (!checks.length) pending.push("no checks reported yet");
     if (failing.length) return result("ship", false, "gate", `refusing to merge: failing checks ${failing.join(", ")}`, "fix the PR first", 2);
     if (pending.length) return result("ship", false, "gate", `refusing to merge: pending checks ${pending.join(", ")}`, "wait for the checks", 2);
     if (!issues.length) return result("ship", false, "gate", "refusing to merge: pass --issues so ac-gate can check them", "rerun with --issues", 2);
     const gate = deps.acGate ? deps.acGate(issues) : defaultAcGate(issues, root);
     if (!gate.ok) return result("ship", false, "gate", `refusing to merge: ac-gate rejected the issues: ${gate.detail}`, "fix the ACs", 2);
-    gh(["pr", "merge", String(pr), "--merge"], deps);
+    if (!view.headRefOid) return result("ship", false, "gate", "refusing to merge: the PR head commit is unknown", "check the PR by hand", 2);
+    // Pinned to the head that was checked, so a push that lands during ac-gate cannot merge unverified.
+    gh(["pr", "merge", String(pr), "--merge", "--match-head-commit", view.headRefOid], deps);
     const after = ghJson(["pr", "view", String(pr), "--json", "state,mergeCommit"], deps) ?? {};
     const sha = after.mergeCommit?.oid;
     if (!sha) return result("ship", false, "verify", "merged, but no merge commit was reported", "check the PR by hand", 2);
@@ -295,14 +305,22 @@ export function parseFlags(argv) {
 
 export function emit(r, env = process.env) {
   const { exit, ...line } = r;
-  console.log(redact(JSON.stringify(line), env));
+  const clean = Object.fromEntries(Object.entries(line).map(([k, v]) => [k, typeof v === "string" ? redact(v, env) : v]));
+  console.log(redact(JSON.stringify(clean), env));
   return exit;
 }
 
 /** Runs one command and returns its exit code. */
 export function main(argv = process.argv.slice(2), deps = {}) {
   const [command, ...rest] = argv;
-  const f = parseFlags(rest);
+  try {
+    return run(command, parseFlags(rest), deps);
+  } catch (error) {
+    return emit(result(command ?? "usage", false, "error", String(error.message).slice(0, 300), "check the output above and retry", 2));
+  }
+}
+
+function run(command, f, deps) {
   const root = f.root ?? process.cwd();
   const issues = f.issues ? f.issues.split(",").map((n) => Number(n.trim())).filter(Boolean) : [];
   const pr = f.pr !== undefined ? Number(f.pr) : undefined;

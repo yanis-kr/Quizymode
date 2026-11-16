@@ -4,7 +4,7 @@ import fs from "node:fs";
 import os from "node:os";
 import path from "node:path";
 import { classifyFile } from "../ci/classify-changes.mjs";
-import { deployFor, evidence, paths, redact, refusal, ship, waitPr, gh } from "../release/release.mjs";
+import { deployFor, emit, evidence, main, paths, redact, refusal, ship, waitPr, gh } from "../release/release.mjs";
 
 // A fake gh: routes each call by its argument list and records every call so tests can assert what was not run.
 function fakeGh(routes) {
@@ -166,12 +166,12 @@ test("AC3: ship merges with --merge only when every gate passes", () => {
     },
     "pr view 7": () => (merged
       ? { state: "MERGED", mergeCommit: { oid: "deadbeef00" } }
-      : { state: "OPEN", statusCheckRollup: green() }),
+      : { state: "OPEN", statusCheckRollup: green(), headRefOid: "headsha" }),
   });
   deps.acGate = () => ({ ok: true, detail: "" });
   const r = ship({ pr: 7, issues: [718], root: tempRoot(), deps });
   assert.equal(r.class, "merged");
-  assert.ok(deps.calls.includes("pr merge 7 --merge"));
+  assert.ok(deps.calls.includes("pr merge 7 --merge --match-head-commit headsha"));
   assert.ok(!deps.calls.some((c) => c.includes("--admin") || c.includes("--auto")));
 });
 
@@ -184,10 +184,10 @@ test("AC4: an exact triggering-run match wins over the time-based choice", () =>
   assert.equal(deployFor("sha1", ciRun, fakeGh({ "deploy.yml/runs": { workflow_runs: [other, mine] } })).id, 601);
 });
 
-test("AC4: without a reported trigger id, the earliest Deploy created after the CI run started is taken", () => {
+test("AC4: without a reported trigger id, the latest Deploy created after the CI run started is taken", () => {
   const early = { id: 610, event: "workflow_run", head_sha: "sha1", created_at: "2026-11-16T10:30:00Z" };
   const late = { id: 611, event: "workflow_run", head_sha: "sha1", created_at: "2026-11-16T10:50:00Z" };
-  assert.equal(deployFor("sha1", ciRun, fakeGh({ "deploy.yml/runs": { workflow_runs: [late, early] } })).id, 610);
+  assert.equal(deployFor("sha1", ciRun, fakeGh({ "deploy.yml/runs": { workflow_runs: [early, late] } })).id, 611);
 });
 
 test("AC4: a Deploy created before the CI run started, or on another SHA, is never chosen", () => {
@@ -290,4 +290,64 @@ test("AC7: no refusal when neither the halt file nor the lock exists", () => {
 // AC 7.11.17
 test("AC8: scripts/release/release.mjs is outside the web and api scope", () => {
   assert.deepEqual(classifyFile("scripts/release/release.mjs"), { web: false, api: false });
+});
+
+// Review fixes on the release branch
+test("review: an empty check list is pending, so wait-pr is not ok and ship does not merge", () => {
+  const root = tempRoot();
+  const wait = fakeGh({ ...noFindings, "pr view 7": { statusCheckRollup: [], headRefOid: "abc" } });
+  assert.equal(waitPr({ pr: 7, root, deps: wait }).class, "pending");
+  const merge = fakeGh({ "pr view 7": { state: "OPEN", statusCheckRollup: [], headRefOid: "abc" } });
+  const r = ship({ pr: 7, issues: [718], root, deps: merge });
+  assert.equal(r.class, "gate");
+  assert.ok(!merge.calls.some((c) => c.startsWith("pr merge")));
+});
+
+test("review: a green run clears the stored failure so a later repeat is not same-failure", () => {
+  const root = tempRoot();
+  const red1 = fakeGh({ ...noFindings, "pr view 7": { statusCheckRollup: red(["e2e"]), headRefOid: "abc" } });
+  waitPr({ pr: 7, root, deps: red1 });
+  const ok = fakeGh({ ...noFindings, "pr view 7": { statusCheckRollup: green(), headRefOid: "abc" } });
+  assert.equal(waitPr({ pr: 7, root, deps: ok }).class, "ok");
+  const red2 = fakeGh({ ...noFindings, "pr view 7": { statusCheckRollup: red(["e2e"]), headRefOid: "abd" } });
+  assert.equal(waitPr({ pr: 7, root, deps: red2 }).class, "test");
+});
+
+function captureLog(fn) {
+  const original = console.log;
+  let out = "";
+  console.log = (text) => {
+    out += String(text) + "\n";
+  };
+  try {
+    fn();
+  } finally {
+    console.log = original;
+  }
+  return out;
+}
+
+test("review: printed output redacts a secret that needs JSON escaping", () => {
+  const secret = 'quo"te\\back';
+  const env = { QM_X_TOKEN: secret };
+  const out = captureLog(() => emit({ step: "s", ok: true, class: "c", detail: "value " + secret + " here", next: "", exit: 0 }, env));
+  assert.ok(!out.includes(secret));
+  assert.ok(out.includes("***"));
+});
+
+test("review: an unexpected error prints one JSON line and exits 2", () => {
+  let code;
+  const out = captureLog(() => {
+    code = main(["ship", "--pr", "7"], { gh: () => { throw new Error("boom"); } });
+  });
+  assert.equal(code, 2);
+  const parsed = JSON.parse(out.trim());
+  assert.equal(parsed.class, "error");
+  assert.match(parsed.detail, /boom/);
+});
+
+test("review: the latest of two Deploy runs after CI start wins, regardless of listing order", () => {
+  const first = { id: 700, event: "workflow_run", head_sha: "sha1", created_at: "2026-11-16T10:30:00Z" };
+  const second = { id: 701, event: "workflow_run", head_sha: "sha1", created_at: "2026-11-16T10:45:00Z" };
+  assert.equal(deployFor("sha1", ciRun, fakeGh({ "deploy.yml/runs": { workflow_runs: [first, second] } })).id, 701);
 });
