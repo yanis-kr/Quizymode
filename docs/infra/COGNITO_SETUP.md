@@ -115,6 +115,42 @@ APP_Authentication__Cognito__Audience=63b38es9dto8m59337jguiqli3
    - Ensure that the `cognito:groups` claim is included in ID tokens
    - This is typically enabled by default when groups are assigned to users
 
+## Email sending (Amazon SES)
+
+Cognito sends the sign-up verification code and the password-reset code from `Quizymode <noreply@quizymode.com>` through Amazon SES in the same AWS account and region (`us-east-1`). The built-in Cognito sender (`COGNITO_DEFAULT`) is limited to 50 emails per day, so it is not used. Set up for #682.
+
+### One-time setup
+
+1. **SES domain identity** `quizymode.com` (region `us-east-1`) with Easy DKIM. The three DKIM CNAMEs live in Cloudflare (DNS only). `aws sesv2 get-email-identity --email-identity quizymode.com --region us-east-1` must show `DkimAttributes.Status=SUCCESS`.
+2. **Custom MAIL FROM domain** `mail.quizymode.com` (`BehaviorOnMxFailure=USE_DEFAULT_VALUE`), so the SPF check aligns with the `From` domain for DMARC. Two Cloudflare records, both DNS only:
+
+   | Type | Name | Content | Priority |
+   |---|---|---|---|
+   | MX | `mail` | `feedback-smtp.us-east-1.amazonses.com` | 10 |
+   | TXT | `mail` | `v=spf1 include:amazonses.com ~all` | |
+
+   `MailFromAttributes.MailFromDomainStatus` must be `SUCCESS`.
+3. **SES production access** (leave the sandbox). Request it with `aws sesv2 put-account-details --production-access-enabled --mail-type TRANSACTIONAL --website-url https://www.quizymode.com --use-case-description "<transactional Cognito codes only, volume, bounce handling>"`. Without it SES only delivers to verified addresses. Check `aws sesv2 get-account --region us-east-1` shows `ProductionAccessEnabled=true`.
+4. **Point the user pool at SES.** `update-user-pool` resets every setting you leave out, so save the pool first and pass the whole configuration back:
+   - `aws cognito-idp describe-user-pool --user-pool-id us-east-1_LiJbvT212 --region us-east-1 --query UserPool > pool-before.json`
+   - Build an update payload from that file: copy `Policies`, `DeletionProtection`, `LambdaConfig` (keeps the Pre sign-up Lambda), `AutoVerifiedAttributes`, `VerificationMessageTemplate`, `UserAttributeUpdateSettings`, `MfaConfiguration`, `AdminCreateUserConfig`, `AccountRecoverySetting`, `UserPoolTags`, `UserPoolTier`, and set `EmailConfiguration` to `{"EmailSendingAccount":"DEVELOPER","SourceArn":"arn:aws:ses:us-east-1:<ACCOUNT_ID>:identity/quizymode.com","From":"Quizymode <noreply@quizymode.com>"}`.
+   - `aws cognito-idp update-user-pool --region us-east-1 --cli-input-json file://pool-update.json`, then `describe-user-pool` again and diff against `pool-before.json`: only `EmailConfiguration` may differ. Keep both files out of git (the account id is in the ARN).
+   - The IAM user running this needs `cognito-idp:UpdateUserPool`. Cognito uses its service-linked role to send, so no extra SES policy is needed for an identity in the same account.
+
+### Checks
+
+- Request a password reset on `https://www.quizymode.com/reset-password` for a test mailbox. The mail must arrive from `noreply@quizymode.com`.
+- In the received message headers (Gmail: Show original) `SPF`, `DKIM` and `DMARC` must all say `PASS`, and the `Return-Path` / `mailfrom` domain must be `mail.quizymode.com` (SPF aligned).
+
+### Rollback
+
+Run `update-user-pool` again with `EmailConfiguration` set to `{"EmailSendingAccount":"COGNITO_DEFAULT"}` and every other field passed back unchanged (same procedure as step 4).
+
+### Operations
+
+- Watch bounce and complaint rates on the SES console (account dashboard); AWS can pause sending above about 5% bounces or 0.1% complaints.
+- Every sign-up and reset email goes to an address the user typed, so bounces are expected to be rare. Request a quota increase before volume nears 50,000 per day.
+
 ## Google sign-in (AUTH-003)
 
 Design record: issue #118 (ADR comment "Google Sign-in (revised 2026-10-19)"). The SPA ships dark behind `VITE_GOOGLE_SIGNIN_ENABLED`; none of this is needed for the password flows. **Do the steps in order.** In particular the Pre sign-up Lambda (step 4) must be attached before Google is added to any app client (step 6 and 7), otherwise a Google user can be created next to an existing password account and has to be cleaned up by hand.
