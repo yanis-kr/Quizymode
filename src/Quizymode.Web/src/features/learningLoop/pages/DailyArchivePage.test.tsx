@@ -52,6 +52,24 @@ describe("DailyArchivePage", () => {
     expect(readArchiveResults()).toEqual([{ date: "2026-11-18", correct: 2, total: 2 }]);
   });
 
+  it("#694: a guest archive score excludes skipped questions, like the daily screen", async () => {
+    const brokenPicture = { key: "curated:flags/zz", altText: "Not bundled" };
+    const pictureItems = [{ ...testItem("a"), questionImage: brokenPicture }, testItem("b")];
+    vi.mocked(dailyQuizApi.archive).mockResolvedValue({ days: [{ date: "2026-11-18", total: 2, completion: null }] });
+    vi.mocked(dailyQuizApi.getArchiveDay).mockResolvedValue({ date: "2026-11-18", items: pictureItems, completion: null, streak: null });
+
+    renderWithProviders(<DailyArchivePage />);
+    fireEvent.click(await screen.findByRole("button", { name: "Play 2026-11-18" }));
+    fireEvent.click(await screen.findByRole("button", { name: "Skip question (not scored)" }));
+    fireEvent.click(await screen.findByRole("button", { name: /Right b/ }));
+    fireEvent.click(screen.getByRole("button", { name: "See my score" }));
+    await screen.findByText(/Quiz complete/i);
+
+    expect(readArchiveResults()).toEqual([{ date: "2026-11-18", correct: 1, total: 1 }]);
+    fireEvent.click(screen.getByRole("button", { name: "Back to the archive" }));
+    expect(await screen.findByText("Played: 1 / 1")).toBeInTheDocument();
+  });
+
   it("D3: guests see played or not played from this browser", async () => {
     window.localStorage.setItem(
       "quizymode.daily-archive.v1",
