@@ -1,6 +1,6 @@
 ---
 name: qm-research
-description: Research a Quizymode question and return a decision-ready recommendation without implementing anything. Gathers evidence cheaply (scripts, targeted reads, Haiku), sends only hard subquestions to Fable or Opus specialists with small fresh-context evidence packages, and reports which models did what. Use when the user runs /qm-research with a question such as "should we...", "what's the best way to...", or "why is X slow".
+description: Research a Quizymode question and return a decision-ready recommendation without implementing anything. Gathers evidence cheaply (scripts, targeted reads, Haiku), sends only hard subquestions to Opus specialists with small fresh-context evidence packages, and reports which models did what. Use when the user runs /qm-research with a question such as "should we...", "what's the best way to...", or "why is X slow".
 argument-hint: "<question>"
 disable-model-invocation: true
 model: sonnet
@@ -42,14 +42,14 @@ Never create agents just to fill roles.
 
 ## 4. Specialists
 
-- Hard reasoning goes to `model: fable`. Use `opus` only if fable is unavailable. Routine analysis goes to `sonnet`, retrieval to `haiku`. If the model you asked for cannot be selected, say so. Never claim a model you did not get.
+- Hard reasoning goes to `model: opus`. Do not use Fable. Routine analysis goes to `sonnet`, retrieval to `haiku`. If the model you asked for cannot be selected, say so. Never claim a model you did not get.
 - Always start a fresh agent (`general-purpose`, never `fork`). Give it only:
   - the exact subquestion and the decision it supports
   - the constraints and a compact system description
   - selected evidence excerpts plus paths or URLs for targeted follow-up
   - the output format below and the stopping condition
 - Keep each package to roughly 10-15k input tokens. That is a target, not a reason to leave out evidence the specialist needs.
-- At most **two** fable/opus specialists at a time. Tell each one not to spawn agents. Resume a specialist only to finish its original assignment.
+- At most **two** opus specialists at a time. Tell each one not to spawn agents. Resume a specialist only to finish its original assignment.
 
 Specialist output, 400-700 words, with extra material in a scratchpad file whose path it returns:
 
