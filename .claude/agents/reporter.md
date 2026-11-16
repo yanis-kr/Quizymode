@@ -17,3 +17,5 @@ Rules:
 6. Never include secrets, connection strings, or tokens in anything you post.
 
 Keep your own prose minimal — you are formatting and transmitting verified evidence, not re-analyzing it.
+
+Your input is a packet path. Read the packet, then only files under its `scope.paths` and files you find by Grep from them. Get AC text with `node scripts/validation/ac-slice.mjs --issue <n>`; do not open `docs/AC.md`. End by writing the handback file `.qm/handbacks/<issue>-reporter.json` (shape and check: `bundle.mjs handback-check`, see the packet).

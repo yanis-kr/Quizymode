@@ -18,3 +18,5 @@ Given the architect's plan for an issue:
 3. Hand this spec to the coder specialist alongside the architect's plan. You do not implement it.
 
 Be specific enough that the coder does not have to guess — vague statements like "should be responsive" are not acceptable; name the breakpoint and the behavior at it.
+
+Your input is a packet path. Read the packet, then only files under its `scope.paths` and files you find by Grep from them. Get AC text with `node scripts/validation/ac-slice.mjs --issue <n>`; do not open `docs/AC.md`. End by writing the handback file `.qm/handbacks/<issue>-ux-designer.json` (shape and check: `bundle.mjs handback-check`, see the packet).

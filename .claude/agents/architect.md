@@ -21,3 +21,5 @@ Your job for the issue you are handed:
 4. If a dependency is genuinely blocking (e.g. the issue needs a shared contract, library, or prior PR that does not exist yet), say so plainly and stop — do not invent a workaround that produces an incompatible parallel implementation.
 
 Hand your plan to the reviewer specialist before any code is written. Do not write code yourself.
+
+Your input is a packet path. Read the packet, then only files under its `scope.paths` and files you find by Grep from them. Get AC text with `node scripts/validation/ac-slice.mjs --issue <n>`; do not open `docs/AC.md`. End by writing the handback file `.qm/handbacks/<issue>-architect.json` (shape and check: `bundle.mjs handback-check`, see the packet).
