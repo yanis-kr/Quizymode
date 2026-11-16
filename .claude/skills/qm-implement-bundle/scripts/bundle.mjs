@@ -15,6 +15,7 @@ import { execFileSync } from "node:child_process";
 import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
+import { sliceAc } from "../../../../scripts/validation/ac-slice.mjs";
 
 const SCHEMA_VERSION = 1;
 const ID_RE = /^[a-z0-9][a-z0-9-]{2,47}$/;
@@ -91,6 +92,65 @@ function sha256Text(s) { return createHash("sha256").update(String(s ?? "").repl
 const now = () => new Date().toISOString();
 
 // ---------- manifest validation ----------
+// ---------- related ACs (#740) ----------
+function acMarkdown() {
+  const here = path.dirname(fileURLToPath(import.meta.url));
+  const file = typeof opts["ac-file"] === "string" ? path.resolve(String(opts["ac-file"])) : path.resolve(here, "..", "..", "..", "..", "docs", "AC.md");
+  return fs.existsSync(file) ? fs.readFileSync(file, "utf8") : "";
+}
+const REL_KINDS = [["ids", "id", "id"], ["invariants", "invariant", "invariant"], ["headings", "heading", "heading"]];
+function relatedAcsErrors(it, tag) {
+  if (it?.relatedAcs === undefined) return [];
+  const r = it.relatedAcs;
+  if (!r || typeof r !== "object" || Array.isArray(r)) return [`${tag}: relatedAcs must be an object { ids, invariants, headings }`];
+  const e = [];
+  let md;
+  for (const [key, arg, label] of REL_KINDS) {
+    if (r[key] === undefined) continue;
+    if (!Array.isArray(r[key]) || r[key].some((x) => typeof x !== "string" || !x)) { e.push(`${tag}: relatedAcs.${key} must be an array of non-empty strings`); continue; }
+    for (const entry of r[key]) {
+      md ??= acMarkdown();
+      if (!sliceAc(md, { [arg]: entry }).length) e.push(`${tag}: relatedAcs ${label} '${entry}' does not resolve in docs/AC.md`);
+    }
+  }
+  return e;
+}
+/** Lines of one slice, minus AC and invariant bullets (with their continuation lines) already in 'seen'. Headings stay only above new content. */
+function dedupeSlice(lines, seen) {
+  const out = [];
+  let heading = null;
+  let skipping = false;
+  for (const line of lines) {
+    if (/^#{2,4}\s/.test(line)) { heading = line; skipping = false; continue; }
+    if (/^\s*[-*]\s+\*\*(?:AC \d|Invariant )/.test(line)) {
+      const key = line.trim();
+      skipping = seen.has(key);
+      if (skipping) continue;
+      seen.add(key);
+    } else if (line.trim() === "") {
+      skipping = false;
+      if (!out.length) continue;
+    } else if (skipping) continue;
+    if (heading) { if (out.length) out.push(""); out.push(heading); heading = null; }
+    out.push(line);
+  }
+  return out;
+}
+/** Builds the "Related ACs" lines: issue slice, then each id slice, then each invariant. Exits 2 naming a reference that no longer resolves. */
+function relatedAcsFor(issueSlice, rel) {
+  const md = acMarkdown();
+  const seen = new Set();
+  const out = dedupeSlice(issueSlice.split("\n"), seen);
+  for (const [key, arg, label] of REL_KINDS.filter((k) => k[0] !== "headings")) {
+    for (const entry of rel?.[key] ?? []) {
+      const lines = sliceAc(md, { [arg]: entry });
+      if (!lines.length) die(2, `Related AC ${label} '${entry}' no longer resolves in docs/AC.md; refine the issue again.`);
+      const fresh = dedupeSlice(lines, seen);
+      if (fresh.length) out.push("", ...fresh);
+    }
+  }
+  return out;
+}
 function validateManifest(m, id) {
   const e = [];
   const req = (cond, msg) => { if (!cond) e.push(msg); };
@@ -144,6 +204,7 @@ function validateManifest(m, id) {
     req(typeof it?.ux === "boolean" && typeof it?.migration === "boolean", `${tag}: ux and migration must be booleans`);
     req(Array.isArray(it?.validation), `${tag}: validation must be an array`);
     req(Array.isArray(it?.acceptanceCriteria) && it.acceptanceCriteria.length > 0, `${tag}: at least one acceptance criterion required`);
+    e.push(...relatedAcsErrors(it, tag));
     for (const ac of it?.acceptanceCriteria ?? []) req(typeof ac?.id === "string" && typeof ac?.text === "string" && typeof ac?.evidence === "string", `${tag}: each AC needs id, text, evidence`);
     req(Array.isArray(it?.dependsOn), `${tag}: dependsOn must be an array`);
     if (it?.migration === true) req(a.migrations !== "none", `${tag}: needs a migration but authorization.migrations is 'none'`);
@@ -358,12 +419,22 @@ function renderPacket(p) {
   L.push("## scope.paths", ...(p.paths.length ? p.paths.map((x) => `- ${x}`) : ["- (unknown: none declared; find files by Grep and say what you checked)"]), "");
   L.push("## dependsOn", p.dependsOn.length ? p.dependsOn.map((d) => (typeof d === "number" ? `#${d}` : d.external)).join(", ") : "(none)", "");
   L.push("## Checks to run (filtered only)", ...p.checks.map((c) => `- \`${c}\``), "");
-  L.push("## AC slice (from docs/AC.md; do not open the whole file)", "```", p.acSlice, "```", "");
+  L.push("## Related ACs (from docs/AC.md; do not open the whole file)", "```", ...p.related, "```", "");
+  if (p.relatedNote) L.push(p.relatedNote, "");
+  if (p.relatedHeadings?.length) L.push(`Related headings (read with ac-slice.mjs --heading): ${p.relatedHeadings.join("; ")}`, "");
+  L.push("## Invariant index (read one with ac-slice.mjs --invariant <id>)", "```", ...p.invariantIndex, "```", "");
+  if (p.apiConventions) L.push("## Common API conventions", "```", ...p.apiConventions, "```", "");
   L.push("## Handback", `Your final reply ends with the handback JSON in one fenced json block, in this shape. The orchestrator saves it to \`${p.handbackPattern}\` with \`bundle.mjs handback-save --issue ${p.issue} --role <role> --file <json file>\`. The handback is your claim. It is not test evidence: the filtered command output, \`ac-gate\` and CI are.`,
-    "```json", '{"status":"done|failed|blocked","filesChanged":[],"commands":[{"command":"","exitCode":0}],"acEvidence":{"<AC id>":"<file path>"},"questions":[]}', "```", "");
+    "```json", '{"status":"done|failed|blocked","filesChanged":[],"commands":[{"command":"","exitCode":0}],"acEvidence":{"<AC id>":"<file path>"},"acRefsAdded":[],"questions":[]}', "```", "");
   return L.join("\n");
 }
 function writePacket(p) {
+  const md = acMarkdown();
+  p.invariantIndex = sliceAc(md, { "invariants-index": true });
+  const api = p.paths.some((x) => x.replaceAll(String.fromCharCode(92), "/").startsWith("src/Quizymode.Api/"));
+  p.apiConventions = api ? sliceAc(md, { heading: "Common API conventions" }) : null;
+  p.related = relatedAcsFor(p.acSlice, p.relatedRefs);
+  p.relatedHeadings = p.relatedRefs?.headings ?? [];
   const dir = typeof opts["packets-dir"] === "string" ? path.resolve(String(opts["packets-dir"])) : path.join(mainCheckoutRoot(), ".qm", "packets");
   const hbDir = typeof opts["handbacks-dir"] === "string" ? path.resolve(String(opts["handbacks-dir"])) : path.join(mainCheckoutRoot(), ".qm", "handbacks");
   p.handbackPattern = path.join(hbDir, `${p.issue}-<role>.json`).replaceAll(String.fromCharCode(92), "/");
@@ -381,6 +452,7 @@ function validateHandback(h) {
   if (!h.acEvidence || typeof h.acEvidence !== "object" || Array.isArray(h.acEvidence) || Object.values(h.acEvidence).some((v) => typeof v !== "string")) e.push("acEvidence must be an object of AC id to file path");
   else if (h.status === "done" && !Object.keys(h.acEvidence).length) e.push("acEvidence must name at least one AC when status is done");
   if (!Array.isArray(h.questions)) e.push("questions must be an array");
+  if (h.acRefsAdded !== undefined && (!Array.isArray(h.acRefsAdded) || h.acRefsAdded.some((x) => typeof x !== "string"))) e.push("acRefsAdded must be an array of strings");
   if (h.status === "done" && Array.isArray(h.commands) && h.commands.some((c) => c && Number.isInteger(c.exitCode) && c.exitCode !== 0)) e.push("a done handback cannot include a command with a nonzero exitCode");
   return e;
 }
@@ -716,7 +788,12 @@ switch (cmd) {
       const sizeLabel = label("size");
       const size = ["xs", "s", "m", "l"].includes(sizeLabel) ? sizeLabel : "unknown";
       const attempt = attemptFrom(undefined, opts.attempt);
-      writePacket({ issue: n, title: j.title, goal: j.title, acs, exclusions, paths: [], scopeKnown: false, dependsOn: [], checks: packetChecks([], n), acSlice: acSliceFor(n),
+      const relLine = /^\s*Related ACs:\s*(.+)$/im.exec(body);
+      const refs = relLine ? relLine[1].split(",").map((x) => x.trim()).filter(Boolean) : [];
+      const relatedRefs = { ids: refs.filter((x) => /^\d+(?:\.\d+)*$/.test(x)), invariants: refs.filter((x) => /^[A-Z]+\d+$/.test(x)), headings: [] };
+      const unknown = refs.filter((x) => !relatedRefs.ids.includes(x) && !relatedRefs.invariants.includes(x));
+      if (unknown.length) die(2, `Related ACs line has entries that are neither an AC id nor an invariant id: ${unknown.join(", ")}`);
+      writePacket({ relatedRefs, relatedNote: relLine ? null : "related ACs: not refined",  issue: n, title: j.title, goal: j.title, acs, exclusions, paths: [], scopeKnown: false, dependsOn: [], checks: packetChecks([], n), acSlice: acSliceFor(n),
         size, risk, migration, attempt, maxAttempts: 2, factSource: "issue labels and body, not checked against the manifest or code", models: modelsFor({ size, risk, migration, attempt }) });
     }
     const p = bundlePaths(id);
@@ -732,7 +809,7 @@ switch (cmd) {
     const size = it.size ?? "unknown";
     const extra = it.validation.filter((v) => /^(npm|npx|dotnet|node|eslint) /.test(v) && !/test:coverage/.test(v) && v !== "dotnet test");
     writePacket({ issue: num, title: it.title, goal: it.scope.summary ?? it.title, acs: it.acceptanceCriteria, exclusions: it.scope.exclusions ?? [], paths: it.scope.paths, scopeKnown: it.scope.paths.length > 0, dependsOn: it.dependsOn,
-      checks: packetChecks(it.scope.paths, num, extra), acSlice: acSliceFor(num), size, risk: it.risk, migration: it.migration,
+      relatedRefs: it.relatedAcs, checks: packetChecks(it.scope.paths, num, extra), acSlice: acSliceFor(num), size, risk: it.risk, migration: it.migration,
       attempt, maxAttempts: m.limits.maxAttemptsPerIssue, factSource: "approved manifest", models: modelsFor({ size, risk: it.risk, migration: it.migration, attempt }) });
   }
   case "handback-check": {
