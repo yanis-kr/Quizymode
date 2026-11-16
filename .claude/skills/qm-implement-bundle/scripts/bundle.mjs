@@ -384,16 +384,19 @@ function draftAcs(body) {
   return out;
 }
 
-// One routing source for every role. Role defaults are fixed: architect, reviewer and qm-decision-maker use opus;
-// coder, tester and ux-designer use sonnet; reporter uses haiku. Facts can only escalate coder and tester to opus
-// (risk high, a migration, size l, or attempt 2 or later). An unknown fact counts as the risky value.
-const ROLE_DEFAULT = { architect: "opus", reviewer: "opus", "qm-decision-maker": "opus", coder: "sonnet", tester: "sonnet", "ux-designer": "sonnet", reporter: "haiku" };
-const ESCALATES = new Set(["coder", "tester"]);
+// One routing source for every role. Haiku is the default for every role. A role moves up only on a complexity criterion:
+//   opus:   risk high, a migration, size l, or attempt 3 or later
+//   sonnet: risk medium, size m, a migration not stated as false (unknown), or attempt 2
+//   haiku:  everything else (risk low, size xs or s, no migration, attempt 1)
+// An unknown fact is not low, so it moves a role to sonnet; it does not move it to opus on its own. reporter is always haiku.
+const ROLE_DEFAULT = Object.fromEntries(["architect", "reviewer", "qm-decision-maker", "coder", "tester", "ux-designer", "reporter"].map((r) => [r, "haiku"]));
 function roleModel(role, { size, risk, migration, attempt }) {
   if (!Object.hasOwn(ROLE_DEFAULT, role)) throw new Error(`unknown role: ${role}`);
-  if (!ESCALATES.has(role)) return ROLE_DEFAULT[role];
-  const risky = risk === "high" || risk === "unknown" || migration !== false || size === "l" || size === "unknown" || Number(attempt) >= 2;
-  return risky ? "opus" : ROLE_DEFAULT[role];
+  if (role === "reporter") return "haiku";
+  const n = Number(attempt);
+  if (risk === "high" || migration === true || size === "l" || n >= 3) return "opus";
+  if (risk !== "low" || migration !== false || (size !== "xs" && size !== "s") || n >= 2) return "sonnet";
+  return "haiku";
 }
 function modelsFor(facts) {
   return Object.fromEntries(Object.keys(ROLE_DEFAULT).map((role) => [role, roleModel(role, facts)]));
@@ -796,7 +799,7 @@ switch (cmd) {
       const acs = draftAcs(body);
       if (!acs.length) die(2, `Issue #${n} has no AC lines with a [verify: ...] marker (checkbox or "AC (draft)"); refine it first.`);
       const exclusions = [...body.matchAll(/^\s*Out of scope:\s*(.+)$/gim)].map((m) => m[1].trim());
-      // Facts come from labels only. A missing fact is "unknown", which routes coder and tester to opus; it is never read as verified false.
+      // Facts come from labels only. A missing fact is "unknown", which moves coder and tester to sonnet; it is never read as verified false.
       // A risk label wins. Without one, an explicit "Risk Low" (or Medium/High) in the body counts as stated, and anything
       // else is unknown, which escalates. Unknown is never read as low.
       const labelRisk = labels.includes("risk:high") || labels.includes("area:auth") ? "high" : labels.includes("risk:low") ? "low" : labels.includes("risk:medium") ? "medium" : null;

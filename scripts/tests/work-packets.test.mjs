@@ -99,8 +99,8 @@ test("AC bundle packet writes ACs, exclusions, paths, checks and model, and reje
   const { r, file } = packet(dir, 20, [], { size: "s" });
   assert.equal(r.status, 0, r.stdout + r.stderr);
   const text = fs.readFileSync(file, "utf8");
-  assert.match(text, /- coder: sonnet/);
-  assert.match(text, /- architect: opus/);
+  assert.match(text, /- coder: haiku/);
+  assert.match(text, /- architect: haiku/);
   assert.match(text, /AC1 \[verify: unit\] Observable behavior/);
   assert.match(text, /Not the other thing/);
   assert.match(text, /src\/Quizymode\.Web\/src\/features\/Example\/\*\*/);
@@ -113,24 +113,28 @@ test("AC bundle packet writes ACs, exclusions, paths, checks and model, and reje
   assert.match(bad.r.stdout, /not in bundle/);
 });
 
-test("AC packet models: each role has its own default, and facts only escalate coder and tester", () => {
+test("AC packet models: haiku by default, sonnet or opus only on a complexity criterion (AC 7.13.3)", () => {
   const roles = (bundleOpts, extra = []) => {
     const dir = tmp();
     const { r, file } = packet(dir, 20, extra, bundleOpts);
     assert.equal(r.status, 0, r.stdout);
     return Object.fromEntries([...fs.readFileSync(file, "utf8").matchAll(/^- (\S+): (\w+)$/gm)].map((m) => [m[1], m[2]]));
   };
-  assert.deepEqual(roles({ size: "s" }), { architect: "opus", reviewer: "opus", "qm-decision-maker": "opus", coder: "sonnet", tester: "sonnet", "ux-designer": "sonnet", reporter: "haiku" });
-  for (const size of ["xs", "m"]) assert.equal(roles({ size }).coder, "sonnet");
+  // Default fixture (risk low, no migration, size s, attempt 1): every role is haiku.
+  assert.deepEqual(roles({ size: "s" }), { architect: "haiku", reviewer: "haiku", "qm-decision-maker": "haiku", coder: "haiku", tester: "haiku", "ux-designer": "haiku", reporter: "haiku" });
+  assert.equal(roles({ size: "xs" }).coder, "haiku");
+  // sonnet: size m, risk medium, a migration not stated as false, or attempt 2.
+  assert.equal(roles({ size: "m" }).coder, "sonnet");
+  assert.equal(roles({ size: "s", risk: "medium" }).tester, "sonnet");
+  assert.equal(roles({ size: "s" }, ["--attempt", "2"]).coder, "sonnet");
+  // opus: risk high, a migration, size l, or attempt 3.
   assert.equal(roles({ size: "s", risk: "high" }).coder, "opus");
-  assert.equal(roles({ size: "s", risk: "high" }).tester, "opus");
-  assert.equal(roles({ size: "s", migration: true }).coder, "opus");
-  assert.equal(roles({ size: "s" }, ["--attempt", "2"]).coder, "opus");
+  assert.equal(roles({ size: "s", risk: "high" }).architect, "opus");
+  assert.equal(roles({ size: "s", migration: true }).tester, "opus");
   assert.equal(roles({ size: "l" }).coder, "opus");
-  const hi = roles({ size: "s", risk: "high" });
-  assert.equal(hi.architect, "opus");
-  assert.equal(hi.reporter, "haiku");
-  assert.equal(hi["ux-designer"], "sonnet");
+  assert.equal(roles({ size: "s" }, ["--attempt", "3"]).coder, "opus");
+  // reporter is always haiku.
+  assert.equal(roles({ size: "l", risk: "high" }).reporter, "haiku");
 });
 
 test("AC manifest size must be xs, s, m or l, and --attempt cannot be below one", () => {
@@ -147,7 +151,7 @@ test("AC packet --from-issue builds a packet from the draft ACs and labels", () 
   const r = run(["packet", "--from-issue", "5", "--issue-json", json, "--packets-dir", path.join(dir, "p"), "--handbacks-dir", path.join(dir, "h"), "--ac-file", path.join(dir, "none.md")]);
   assert.equal(r.status, 0, r.stdout + r.stderr);
   const text = fs.readFileSync(path.join(dir, "p", "5.md"), "utf8");
-  assert.match(text, /- coder: opus/);
+  assert.match(text, /- coder: sonnet/);
   assert.match(text, /risk unknown/);
   assert.match(text, /It works\./);
   assert.match(text, /hooks/);
@@ -169,20 +173,20 @@ test("AC 7.13.2 packet --from-issue reads checkbox ACs, an explicit body risk, a
   assert.match(cb.text, /Shows the Why label on exams items/);
   assert.match(cb.text, /Hides the count/);
   assert.doesNotMatch(cb.text, /A note without a marker/);
-  // Explicit "Risk Low" and "Migration: none" in the body are captured, and route coder and tester to sonnet at size s.
+  // Explicit "Risk Low" and "Migration: none" in the body are captured, and route coder and tester to haiku at size s (risk low, no migration, attempt 1).
   const low = from(`${checkboxes}Impact 3 · Effort 1 (size S) · Risk Low · Confidence High.\nMigration: none\n`, ["size:s"]);
   assert.match(low.text, /risk low \(issue body\)/);
   assert.match(low.text, /migration false/);
-  assert.match(low.text, /- coder: sonnet/);
-  assert.match(low.text, /- tester: sonnet/);
+  assert.match(low.text, /- coder: haiku/);
+  assert.match(low.text, /- tester: haiku/);
   // Low risk alone is not enough: a migration nobody stated stays unknown, and unknown escalates coder and tester.
   const lowNoMigration = from(`${checkboxes}Risk Low\n`, ["size:s"]);
   assert.match(lowNoMigration.text, /migration unknown/);
-  assert.match(lowNoMigration.text, /- coder: opus/);
-  // No label and no body risk: unknown, which escalates. Unknown is never read as low.
+  assert.match(lowNoMigration.text, /- coder: sonnet/);
+  // No label and no body risk: unknown, which moves coder and tester to sonnet. Unknown is never read as low.
   const unknown = from(checkboxes, ["size:s"]);
   assert.match(unknown.text, /risk unknown \(unknown\)/);
-  assert.match(unknown.text, /- coder: opus/);
+  assert.match(unknown.text, /- coder: sonnet/);
   // A risk label beats a body statement.
   const labelWins = from(`${checkboxes}Risk Low\n`, ["size:s", "risk:high"]);
   assert.match(labelWins.text, /risk high \(risk label\)/);
