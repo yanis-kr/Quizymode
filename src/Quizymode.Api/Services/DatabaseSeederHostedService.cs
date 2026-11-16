@@ -11,6 +11,7 @@ using Quizymode.Api.Shared.Helpers;
 using Quizymode.Api.Shared.Models;
 using Quizymode.Api.Shared.Options;
 using Quizymode.Api.Services.Taxonomy;
+using Quizymode.Api.Services.Startup;
 
 namespace Quizymode.Api.Services;
 
@@ -19,7 +20,7 @@ internal sealed class DatabaseSeederHostedService(
     IServiceProvider serviceProvider,
     IWebHostEnvironment environment,
     IOptions<SeedOptions> seedOptions,
-    IOptions<TaxonomyOptions> taxonomyOptions) : IHostedService
+    IOptions<TaxonomyOptions> taxonomyOptions) : IStartupGateStep
 {
     private const string SeedItemsFolderName = "items";
     private const string SeedCollectionsFolderName = "collections";
@@ -31,14 +32,16 @@ internal sealed class DatabaseSeederHostedService(
     private readonly SeedOptions _seedOptions = seedOptions.Value;
     private readonly TaxonomyOptions _taxonomyOptions = taxonomyOptions.Value;
 
-    public async Task StartAsync(CancellationToken cancellationToken)
+    public string Name => "database-seed";
+
+    /// <summary>Taxonomy seed (skipped when unchanged) and, in Development only, the local dev seed. Migrations are applied once by the migration startup step before this runs (#732).</summary>
+    public async Task RunAsync(CancellationToken cancellationToken)
     {
         try
         {
             using IServiceScope scope = _serviceProvider.CreateScope();
             ApplicationDbContext db = scope.ServiceProvider.GetRequiredService<ApplicationDbContext>();
 
-            await db.Database.MigrateAsync(cancellationToken);
             await SeedCategoriesAndNavigationAsync(db, cancellationToken);
 
             // #329: the local dev seed (selection.json items, Science ratings, seed-dev collections) is a
@@ -143,6 +146,10 @@ internal sealed class DatabaseSeederHostedService(
                 _logger.LogInformation("Database seeding completed successfully with idempotent upserts.");
             }
         }
+        catch (OperationCanceledException) when (cancellationToken.IsCancellationRequested)
+        {
+            throw;
+        }
         catch (Exception ex)
         {
             _logger.LogError(ex, "Database seeding failed. Error: {ErrorMessage}", ex.Message);
@@ -154,8 +161,6 @@ internal sealed class DatabaseSeederHostedService(
             }
         }
     }
-
-    public Task StopAsync(CancellationToken cancellationToken) => Task.CompletedTask;
 
     internal static string? ResolveSeedPath(string configuredSeedPath, string contentRootPath)
     {
@@ -630,32 +635,7 @@ internal sealed class DatabaseSeederHostedService(
             throw;
         }
 
-        string sql = await File.ReadAllTextAsync(sqlPath, cancellationToken);
-        DbConnection connection = db.Database.GetDbConnection();
-        bool shouldClose = connection.State != ConnectionState.Open;
-        if (shouldClose)
-        {
-            await db.Database.OpenConnectionAsync(cancellationToken);
-        }
-
-        try
-        {
-            await using DbTransaction transaction = await connection.BeginTransactionAsync(cancellationToken);
-            await using DbCommand command = connection.CreateCommand();
-            command.Transaction = transaction;
-            command.CommandText = sql;
-            await command.ExecuteNonQueryAsync(cancellationToken);
-            await transaction.CommitAsync(cancellationToken);
-        }
-        finally
-        {
-            if (shouldClose)
-            {
-                await db.Database.CloseConnectionAsync();
-            }
-        }
-
-        _logger.LogInformation("Taxonomy seed SQL applied.");
+        await TaxonomySeedApplier.ApplyIfChangedAsync(db, sqlPath, _taxonomyOptions.ForceSeed, _logger, cancellationToken);
     }
 
     private static string? ResolveSeedItemsPath(string resolvedSeedRoot)

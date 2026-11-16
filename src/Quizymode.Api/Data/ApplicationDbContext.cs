@@ -111,6 +111,8 @@ public sealed class ApplicationDbContext : DbContext
     public DbSet<MediaReport> MediaReports => Set<MediaReport>();
     public DbSet<MediaControl> MediaControls => Set<MediaControl>();
 
+    public DbSet<TaxonomySeedState> TaxonomySeedStates => Set<TaxonomySeedState>();
+
     public DbSet<MediaAsset> MediaAssets => Set<MediaAsset>();
 
     public DbSet<ItemImageReview> ItemImageReviews => Set<ItemImageReview>();

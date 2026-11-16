@@ -22,6 +22,16 @@ internal interface IMediaObjectStore
 
     /// <summary>Opens the object, or returns null when it is missing or not readable by this principal. Other failures throw <see cref="MediaStorageException"/>.</summary>
     Task<MediaObjectContent?> OpenReadAsync(string key, CancellationToken cancellationToken);
+
+    /// <summary>
+    /// True when the object exists, without opening its content (a HEAD request on S3). Missing and not-readable both
+    /// answer false, like <see cref="OpenReadAsync"/>. The default falls back to opening and disposing the object.
+    /// </summary>
+    async Task<bool> ExistsAsync(string key, CancellationToken cancellationToken)
+    {
+        using MediaObjectContent? content = await OpenReadAsync(key, cancellationToken);
+        return content is not null;
+    }
 }
 
 internal enum PutOutcome

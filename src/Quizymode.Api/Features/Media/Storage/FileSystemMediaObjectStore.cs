@@ -32,6 +32,9 @@ internal sealed class FileSystemMediaObjectStore : IMediaObjectStore
         }
     }
 
+    public Task<bool> ExistsAsync(string key, CancellationToken cancellationToken) =>
+        Task.FromResult(File.Exists(ResolvePath(key)));
+
     public Task<MediaObjectContent?> OpenReadAsync(string key, CancellationToken cancellationToken)
     {
         string path = ResolvePath(key);

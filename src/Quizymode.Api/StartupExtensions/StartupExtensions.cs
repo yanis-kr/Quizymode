@@ -74,6 +74,9 @@ internal static partial class StartupExtensions
         // scheme is correctly identified as HTTPS even though Cloudflare forwards it as HTTP.
         app.UseForwardedHeaders();
 
+        // #732: 503 + Retry-After for everything except the probes until migrations and seeding are done.
+        app.UseMiddleware<Services.Startup.StartupGateMiddleware>();
+
         // #490: one access line per request (replaces the Hosting.Diagnostics start/finish pair).
         // Health probes are Verbose so the minimum level drops them. Query strings are never logged.
         app.UseSerilogRequestLogging(options =>
