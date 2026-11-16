@@ -277,10 +277,20 @@ public static class DailyQuiz
             .Where(s => s.Date >= from && s.Date <= to)
             .Select(s => s.Date)
             .ToListAsync(cancellationToken);
+        // #694: count only items that are still public-eligible (as BuildResponseAsync does), so a day whose items
+        // became private or were deleted shows the playable count, or no row when none remain.
+        List<Guid> eligibleItemIds = await db.Items.AsNoTracking()
+            .Where(ItemVisibility.PublicEligible)
+            .Where(i => db.DailyQuizItems.Any(d => d.ItemId == i.Id && d.Date >= from && d.Date <= to && d.ExcludedAt == null))
+            .Select(i => i.Id)
+            .ToListAsync(cancellationToken);
+        HashSet<Guid> eligible = eligibleItemIds.ToHashSet();
         Dictionary<DateOnly, int> totals = (await db.DailyQuizItems.AsNoTracking()
                 .Where(d => d.Date >= from && d.Date <= to && d.ExcludedAt == null)
-                .Select(d => d.Date)
+                .Select(d => new { d.Date, d.ItemId })
                 .ToListAsync(cancellationToken))
+            .Where(d => eligible.Contains(d.ItemId))
+            .Select(d => d.Date)
             .GroupBy(d => d)
             .ToDictionary(g => g.Key, g => g.Count());
         Dictionary<DateOnly, DailyQuizCompletion> completions = new();

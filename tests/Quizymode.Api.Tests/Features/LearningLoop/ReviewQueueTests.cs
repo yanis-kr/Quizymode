@@ -1,5 +1,7 @@
 using FluentAssertions;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Diagnostics;
+using Quizymode.Api.Data;
 using Quizymode.Api.Features.StudySessions;
 using Quizymode.Api.Shared.Models;
 using Quizymode.Api.Tests.TestFixtures;
@@ -208,6 +210,60 @@ public sealed class ReviewQueueTests : DatabaseTestFixture
         response.IntervalDays.Should().Be(expectedDays);
         Entry(item.Id).IntervalIndex.Should().Be(expectedIndex);
         Entry(item.Id).DueAt.Should().BeCloseTo(now.AddDays(expectedDays), TimeSpan.FromSeconds(1));
+    }
+
+    [Fact]
+    public async Task Answer_ConcurrentFirstProgressWrite_RetriesInsteadOfFailing()
+    {
+        DateTime now = DateTime.UtcNow;
+        Item item = await NewItemAsync();
+        DbContext.ReviewQueueEntries.Add(new ReviewQueueEntry
+        {
+            UserId = UserId, ItemId = item.Id, IntervalIndex = 1, DueAt = now.AddMinutes(-1), ItemVersionAt = item.CreatedAt,
+        });
+        await DbContext.SaveChangesAsync();
+
+        // A concurrent request commits the first UserItemProgress row for this item just before our save.
+        RacingProgressInterceptor racer = new(() =>
+        {
+            using ApplicationDbContext other = CreateDbContext();
+            other.UserItemProgress.Add(new UserItemProgress { UserId = UserId, ItemId = item.Id, IsKnown = false, UpdatedAt = now });
+            other.SaveChanges();
+        });
+        using ApplicationDbContext racing = CreateDbContext(racer);
+
+        Queue.AnswerResponse? response = await Queue.AnswerAsync(racing, UserId, item.Id, true, now, CancellationToken.None);
+
+        response!.Applied.Should().BeTrue();
+        racer.Fired.Should().BeTrue();
+        UserItemProgress progress = DbContext.UserItemProgress.AsNoTracking().Single(p => p.UserId == UserId && p.ItemId == item.Id);
+        progress.IsKnown.Should().BeTrue();
+        Entry(item.Id).IntervalIndex.Should().Be(2);
+    }
+
+    private sealed class RacingProgressInterceptor(Action race) : SaveChangesInterceptor
+    {
+        public bool Fired { get; private set; }
+
+        public override InterceptionResult<int> SavingChanges(DbContextEventData eventData, InterceptionResult<int> result)
+        {
+            Fire();
+            return result;
+        }
+
+        public override ValueTask<InterceptionResult<int>> SavingChangesAsync(
+            DbContextEventData eventData, InterceptionResult<int> result, CancellationToken cancellationToken = default)
+        {
+            Fire();
+            return ValueTask.FromResult(result);
+        }
+
+        private void Fire()
+        {
+            if (Fired) return;
+            Fired = true;
+            race();
+        }
     }
 
     [Fact]
