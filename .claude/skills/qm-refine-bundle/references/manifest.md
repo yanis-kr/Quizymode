@@ -24,7 +24,7 @@
 | `authorization.closeIssues` | Close each issue after its Acceptance Evidence comment is posted. |
 | `authorization.paidServices` | Must be `false`. (enforced) |
 | `limits` | `maxAttemptsPerIssue`, `maxCiRuns` (pushes to the release PR), `maxWallClockHours`, `lockStaleMinutes`. (enforced) |
-| `releaseGates[]` | Checks that must all pass before merge. Non-empty. (enforced) |
+| `releaseGates[]` | Checks that must all pass before merge. Non-empty. (enforced) The template's local-suite gate is the filtered form (build, filtered tests of shipped issues, `ac-gate --issues`; full suites run in CI on the release PR). Already-approved manifests keep their old gate. |
 | `postDeploy` | `checks[]` after merge and `rollbackTrigger`. |
 
 ## Approval
