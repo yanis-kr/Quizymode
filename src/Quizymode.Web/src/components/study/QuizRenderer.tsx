@@ -216,9 +216,6 @@ export function QuizRenderer({
           Type answer
         </label>
       )}
-      {typedAnswer && !showAnswer && !typedAnswer.isTypeable && (
-        <p className="text-sm text-gray-500">This answer is too long to type, so choose an option.</p>
-      )}
 
       {typedActive && typedAnswer && (
         <TypedAnswerPanel key={item.id} item={item} controls={typedAnswer} disabled={pictureBlocked} />

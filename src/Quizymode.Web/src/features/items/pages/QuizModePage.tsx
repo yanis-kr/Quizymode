@@ -24,7 +24,9 @@ import {
   categoryNameToSlug,
   findCategoryNameFromSlug,
   buildCategoryPath,
+  categoryDisplayName,
 } from "@/utils/categorySlug";
+import { rationaleLabel } from "@/components/study/answerFeedbackLabel";
 import { buildCollectionPath, buildCollectionStudyPath } from "@/utils/collectionPath";
 import { ExploreQuizBreadcrumb } from "@/components/ExploreQuizBreadcrumb";
 import { ScopeSecondaryBar } from "@/components/ScopeSecondaryBar";
@@ -456,30 +458,6 @@ const QuizModePageContent = ({ resumeRequested = false, initialNotice = null }: 
     enabled:
       !collectionId &&
       !storedItems &&
-      (!categorySlug || !!categoriesData?.categories),
-  });
-
-  const { data: scopeCountData } = useQuery({
-    queryKey: ["scopeCount", category, navigationKeywords, filterKeywords, identityKey],
-    queryFn: () =>
-      itemsApi.getAll(
-        category,
-        undefined,
-        filterKeywords.length > 0 ? filterKeywords : undefined,
-        undefined,
-        undefined,
-        1,
-        1,
-        {
-          navigationKeywords:
-            hasCategoryScope && navigationKeywords.length > 0
-              ? navigationKeywords
-              : undefined,
-        }
-      ),
-    enabled:
-      !collectionId &&
-      !!category &&
       (!categorySlug || !!categoriesData?.categories),
   });
 
@@ -1415,7 +1393,6 @@ const QuizModePageContent = ({ resumeRequested = false, initialNotice = null }: 
       ← Categories
     </Link>
   );
-  const studyDescription = !category || !!collectionId ? "Test your knowledge with interactive quizzes." : undefined;
 
   return (
     <div className="py-3 sm:py-4">
@@ -1524,14 +1501,12 @@ const QuizModePageContent = ({ resumeRequested = false, initialNotice = null }: 
             <ExploreQuizBreadcrumb
               mode="quiz"
               categorySlug={categoryNameToSlug(category)}
-              categoryDisplayName={category}
+              categoryDisplayName={categoryDisplayName(category)}
               keywords={navigationKeywords}
               keywordDescriptions={keywordDescriptions}
               onNavigate={(path) => navigate(path)}
             />
           }
-          count={scopeCountData?.totalCount ?? items.length}
-          hint="Test your knowledge with interactive quizzes."
         />
       )}
       {showDetails && collectionId && collectionInfo && (
@@ -1620,7 +1595,6 @@ const QuizModePageContent = ({ resumeRequested = false, initialNotice = null }: 
           pictures={pictures}
           shell={{
             backContent: <></>,
-            description: studyDescription,
             headerExtra: modeControls,
             navigationContext,
             onOpenComments: (id) => setCommentsDrawerItemId(id),
@@ -1633,7 +1607,6 @@ const QuizModePageContent = ({ resumeRequested = false, initialNotice = null }: 
       ) : (
       <StudyShell
         backContent={<></>}
-        description={studyDescription}
         headerExtra={modeControls}
         currentIndex={currentIndex}
         totalCount={items.length}
@@ -1672,6 +1645,7 @@ const QuizModePageContent = ({ resumeRequested = false, initialNotice = null }: 
                     selectedAnswer={choiceCardOutcome.selectedAnswer}
                     isCorrect={choiceCardOutcome.isCorrect}
                     fact={currentItem.explanation ?? ""}
+                    factLabel={rationaleLabel(currentItem.category)}
                     isLast={cardCompletesRun}
                     onNext={cardCompletesRun || hasNextQuestion ? advanceFromCard : undefined}
                     noNextHint={

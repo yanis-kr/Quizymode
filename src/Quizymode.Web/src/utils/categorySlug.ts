@@ -120,3 +120,25 @@ export function categoryDisplayName(slugOrName: string): string {
   if (/[A-Z]/.test(trimmed)) return trimmed;
   return categorySlugToName(trimmed);
 }
+
+// Keyword segments that are acronyms, shown in capitals (AC 3.6.4).
+const KEYWORD_ACRONYMS = new Set(["aws", "saa", "gcp", "sql", "api"]);
+
+/**
+ * Display name for a navigation keyword (URLs keep the raw keyword, #713):
+ * "saa-c03" -> "SAA-C03", "aws" -> "AWS", "act-math" -> "Act Math", "other" -> "Others".
+ * A letter-digit code such as "c03" is joined to the word before it with a dash, and is capitalised.
+ */
+export function keywordDisplayName(name: string): string {
+  if (name.toLowerCase() === "other") return "Others";
+  const parts = name.trim().toLowerCase().split("-").filter(Boolean);
+  let out = "";
+  parts.forEach((part, i) => {
+    const word = KEYWORD_ACRONYMS.has(part) || /\d/.test(part)
+      ? part.toUpperCase()
+      : part.charAt(0).toUpperCase() + part.slice(1);
+    const isCode = /^[A-Z]\d+$/.test(word) && i > 0 && /^[A-Z]+$/.test(out.split(/[ -]/).pop() ?? "");
+    out += i === 0 ? word : isCode ? `-${word}` : ` ${word}`;
+  });
+  return out || categoryDisplayName(name);
+}

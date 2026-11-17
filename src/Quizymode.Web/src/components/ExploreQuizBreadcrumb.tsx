@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { ChevronRightIcon } from "@heroicons/react/24/outline";
-import { buildCategoryPath } from "@/utils/categorySlug";
+import { buildCategoryPath, keywordDisplayName } from "@/utils/categorySlug";
 
 interface ExploreQuizBreadcrumbProps {
   mode: "explore" | "quiz";
@@ -10,11 +10,6 @@ interface ExploreQuizBreadcrumbProps {
   /** Optional descriptions for each keyword (same order as keywords). Shown as tooltip when present. */
   keywordDescriptions?: (string | null)[];
   onNavigate: (path: string) => void;
-}
-
-/** Display label for "other" keyword in breadcrumbs. */
-function breadcrumbLabel(kw: string): string {
-  return kw.toLowerCase() === "other" ? "Others" : kw;
 }
 
 /** Breadcrumb links go to the categories boxes view (sets view), not back into explore/quiz. */
@@ -31,14 +26,14 @@ export function ExploreQuizBreadcrumb({
   ];
   keywords.forEach((kw, i) => {
     segments.push({
-      label: breadcrumbLabel(kw),
+      label: keywordDisplayName(kw),
       path: buildCategoryPath(categorySlug, keywords.slice(0, i + 1)),
       description: keywordDescriptions?.[i] ?? undefined,
     });
   });
 
   return (
-    <nav className="flex items-center gap-1 text-xs text-gray-600 overflow-x-auto whitespace-nowrap">
+    <nav aria-label="Breadcrumb" className="flex items-center gap-1 text-xs text-gray-600 overflow-x-auto whitespace-nowrap">
       <Link to="/categories" className="text-indigo-ink hover:text-indigo-ink">
         Categories
       </Link>

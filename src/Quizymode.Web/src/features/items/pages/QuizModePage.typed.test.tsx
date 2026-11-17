@@ -210,7 +210,7 @@ describe("QuizModePage Type answer (AC 3.6.19)", () => {
     expect(questionAnswered()).toEqual([expect.objectContaining({ itemId: GUID_2, isCorrect: true })]);
   });
 
-  it("shows a note and stays multiple choice for a non-typeable item", async () => {
+  it("shows no note and stays multiple choice for a non-typeable item (#713)", async () => {
     renderPage(START);
     await screen.findByText("Capital of France?");
     fireEvent.click(screen.getByRole("button", { name: /^[A-D]\. Paris$/ }));
@@ -219,7 +219,7 @@ describe("QuizModePage Type answer (AC 3.6.19)", () => {
 
     expect(await screen.findByText("Name the sentence")).toBeInTheDocument();
     expect(screen.queryByLabelText("Type answer")).not.toBeInTheDocument();
-    expect(screen.getByText("This answer is too long to type, so choose an option.")).toBeInTheDocument();
+    expect(screen.queryByText(/too long to type/)).not.toBeInTheDocument();
     expect(screen.getByRole("button", { name: /^A\./ })).toBeInTheDocument();
   });
 

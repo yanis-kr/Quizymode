@@ -263,12 +263,11 @@ describe("QuizModePage", () => {
       "/quiz/exams/item/item-1?nav=act,math&keywords=act,math,algebra"
     );
 
-    expect(
-      await screen.findByText(/Test your knowledge with interactive quizzes/i)
-    ).toBeInTheDocument();
-    expect(screen.getByLabelText(/item count/i)).toHaveTextContent("(623)");
-    expect(screen.getByRole("button", { name: "act" })).toBeInTheDocument();
-    expect(screen.getByRole("button", { name: "math" })).toBeInTheDocument();
+    // Breadcrumb labels are display names; there is no tagline and no item count (#713).
+    expect(await screen.findByRole("button", { name: "Act" })).toBeInTheDocument();
+    expect(screen.getByRole("button", { name: "Math" })).toBeInTheDocument();
+    expect(screen.queryByText(/Test your knowledge with interactive quizzes/i)).not.toBeInTheDocument();
+    expect(screen.queryByLabelText(/item count/i)).not.toBeInTheDocument();
     expect(
       screen.queryByRole("button", { name: "algebra" })
     ).not.toBeInTheDocument();
@@ -286,19 +285,6 @@ describe("QuizModePage", () => {
       ])
     );
 
-    await waitFor(() =>
-      expect(itemsApi.getAll).toHaveBeenCalledWith(
-        "exams",
-        undefined,
-        ["algebra"],
-        undefined,
-        undefined,
-        1,
-        1,
-        { navigationKeywords: ["act", "math"] }
-      )
-    );
-
     await user.click(screen.getByRole("tab", { name: /list/i }));
 
     await waitFor(() =>
@@ -306,6 +292,22 @@ describe("QuizModePage", () => {
         "/categories/exams/act/math?view=items&keywords=algebra"
       )
     );
+  });
+
+  it("breadcrumb for exams/aws/saa-c03 uses display names, raw keyword paths and no item count (#713)", async () => {
+    renderPage("/quiz/exams/item/item-1?nav=aws,saa-c03");
+
+    expect(await screen.findByRole("button", { name: "Exams" })).toBeInTheDocument();
+    expect(screen.getByRole("button", { name: "AWS" })).toBeInTheDocument();
+    const leaf = screen.getByRole("button", { name: "SAA-C03" });
+    expect(leaf.closest("nav")?.textContent).toBe("CategoriesExamsAWSSAA-C03");
+    expect(leaf.closest("nav")).toHaveAttribute("aria-label", "Breadcrumb");
+    expect(screen.queryByLabelText(/item count/i)).not.toBeInTheDocument();
+    expect(screen.queryByText(/\(\d+\)/)).not.toBeInTheDocument();
+    expect(screen.queryByText(/Test your knowledge with interactive quizzes/i)).not.toBeInTheDocument();
+
+    fireEvent.click(leaf);
+    expect(navigateCalls).toContain("/categories/exams/aws/saa-c03");
   });
 
   it("locks first answers, completes a collection, reviews mistakes, and replays", async () => {
@@ -382,7 +384,9 @@ describe("QuizModePage", () => {
       const card = screen.getByTestId("answer-feedback-card");
       expect(card).toHaveTextContent("Correct!");
       expect(card).toHaveTextContent("Answer: 4");
-      expect(card).toHaveTextContent("Did you know?");
+      // The item is in "exams": its explanation is a rationale, labelled "Why" (#713).
+      expect(card).toHaveTextContent("Why");
+      expect(card).not.toHaveTextContent("Did you know?");
       expect(card).toHaveTextContent("Basic arithmetic.");
       expect(region).toContainElement(card);
       expect(buttonsNamed(/^next$/i)).toHaveLength(1);
@@ -408,6 +412,33 @@ describe("QuizModePage", () => {
       expect(screen.getByTestId("option-rationale")).toHaveTextContent("1 is the loneliest number.");
     });
 
+    it("an item outside exams and tech keeps the 'Did you know?' label (#713)", async () => {
+      const user = userEvent.setup({ delay: null });
+      vi.mocked(collectionsApi.getItems).mockResolvedValue({
+        items: [{ ...item, category: "geography" }, secondItem],
+      } as Awaited<ReturnType<typeof collectionsApi.getItems>>);
+      renderPage(PRACTICE);
+      await screen.findByText("What is 2 + 2?");
+
+      await user.click(screen.getByRole("button", { name: /^[A-D]\. 4$/ }));
+      const card = screen.getByTestId("answer-feedback-card");
+      expect(card).toHaveTextContent("Did you know?");
+      expect(card).not.toHaveTextContent(/\bWhy\b/);
+      expect(card).toHaveTextContent("Basic arithmetic.");
+    });
+
+    it("a tech item is labelled 'Why' (#713)", async () => {
+      const user = userEvent.setup({ delay: null });
+      vi.mocked(collectionsApi.getItems).mockResolvedValue({
+        items: [{ ...item, category: "tech" }, secondItem],
+      } as Awaited<ReturnType<typeof collectionsApi.getItems>>);
+      renderPage(PRACTICE);
+      await screen.findByText("What is 2 + 2?");
+
+      await user.click(screen.getByRole("button", { name: /^[A-D]\. 4$/ }));
+      expect(screen.getByTestId("answer-feedback-card")).toHaveTextContent("Why");
+    });
+
     it("no explanation: no 'Did you know?' label", async () => {
       const user = userEvent.setup({ delay: null });
       vi.mocked(collectionsApi.getItems).mockResolvedValue({
@@ -419,6 +450,7 @@ describe("QuizModePage", () => {
       await user.click(screen.getByRole("button", { name: /^[A-D]\. 4$/ }));
       expect(screen.getByTestId("answer-feedback-card")).toHaveTextContent("Answer: 4");
       expect(screen.queryByText("Did you know?")).not.toBeInTheDocument();
+      expect(screen.queryByText("Why")).not.toBeInTheDocument();
     });
 
     it("Next moves to the next question and focuses its heading, never the page body", async () => {

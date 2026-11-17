@@ -224,8 +224,9 @@ describe("ExploreModePage", () => {
       await screen.findByText(/Flashcards-style study mode for reviewing quiz items/i)
     ).toBeInTheDocument();
     expect(screen.getByLabelText(/item count/i)).toHaveTextContent("(1)");
-    expect(screen.getByRole("button", { name: "act" })).toBeInTheDocument();
-    expect(screen.getByRole("button", { name: "math" })).toBeInTheDocument();
+    // Breadcrumb labels are display names; the paths keep the raw keywords (#713).
+    expect(screen.getByRole("button", { name: "Act" })).toBeInTheDocument();
+    expect(screen.getByRole("button", { name: "Math" })).toBeInTheDocument();
     expect(
       screen.queryByRole("button", { name: "algebra" })
     ).not.toBeInTheDocument();

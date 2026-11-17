@@ -3,7 +3,7 @@ import { featuredApi } from "@/api/featured";
 import { gamesApi } from "@/api/games";
 import { itemsApi } from "@/api/items";
 import { GAME_MIN_ITEMS } from "@/features/games/gameRoster";
-import { categoryDisplayName } from "@/utils/categorySlug";
+import { categoryDisplayName, keywordDisplayName } from "@/utils/categorySlug";
 
 export type LandingLoadState = "loading" | "ready" | "error";
 export type LandingGamesState = "loading" | "available" | "unavailable";
@@ -31,11 +31,6 @@ export interface ScopeLanding {
 
 const sameText = (a: string | null | undefined, b: string | null | undefined): boolean =>
   (a ?? "").trim().toLowerCase() === (b ?? "").trim().toLowerCase();
-
-function keywordDisplayName(name: string): string {
-  if (name.toLowerCase() === "other") return "Others";
-  return categoryDisplayName(name);
-}
 
 /**
  * Data for the set landing header (#646). The count is the UNFILTERED scope count: a dedicated page-size-1 request
