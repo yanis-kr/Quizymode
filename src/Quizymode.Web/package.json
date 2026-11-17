@@ -1,7 +1,7 @@
 {
   "name": "quizymode-web",
   "private": true,
-  "version": "3.175.1",
+  "version": "3.176.1",
   "type": "module",
   "scripts": {
     "dev": "vite",
@@ -26,6 +26,7 @@
     "axios": "^1.21.1",
     "axios-retry": "^4.5.0",
     "canvas-confetti": "1.9.4",
+    "pdfjs-dist": "6.5.438",
     "postcss": "^8.5.32",
     "qrcode": "1.5.4",
     "react": "^19.3.1",

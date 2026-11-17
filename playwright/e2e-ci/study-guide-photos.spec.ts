@@ -66,3 +66,47 @@ test("AC 6.6.44 photos are read in the browser and no request goes to a host oth
   // Every request during recognition went to the app's own origin.
   expect([...hosts].filter((host) => host !== appHost), "third-party hosts contacted").toEqual([]);
 });
+
+/** A one-page PDF with a single line of text, built byte by byte so the xref offsets are exact. */
+function buildTextPdf(line: string): Buffer {
+  const content = `BT /F1 48 Tf 30 80 Td (${line}) Tj ET`;
+  const objects = [
+    "<< /Type /Catalog /Pages 2 0 R >>",
+    "<< /Type /Pages /Kids [3 0 R] /Count 1 >>",
+    "<< /Type /Page /Parent 2 0 R /MediaBox [0 0 600 200] /Contents 4 0 R /Resources << /Font << /F1 5 0 R >> >> >>",
+    `<< /Length ${content.length} >>\nstream\n${content}\nendstream`,
+    "<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica >>",
+  ];
+  let body = "%PDF-1.4\n";
+  const offsets: number[] = [];
+  objects.forEach((object, index) => {
+    offsets.push(body.length);
+    body += `${index + 1} 0 obj\n${object}\nendobj\n`;
+  });
+  const xrefAt = body.length;
+  body += `xref\n0 ${objects.length + 1}\n0000000000 65535 f \n`;
+  for (const offset of offsets) body += `${String(offset).padStart(10, "0")} 00000 n \n`;
+  body += `trailer\n<< /Size ${objects.length + 1} /Root 1 0 R >>\nstartxref\n${xrefAt}\n%%EOF\n`;
+  return Buffer.from(body, "latin1");
+}
+
+test("AC 6.6.51 reading a scanned PDF loads the pdf.js worker from /ocr/ and contacts no other host", async ({ page, baseURL }) => {
+  test.setTimeout(180_000);
+  await stubApi(page);
+  const appHost = new URL(baseURL ?? "http://localhost:7000").host;
+  const hosts = new Set<string>();
+  page.on("request", (request) => hosts.add(new URL(request.url()).host));
+
+  await page.goto("/create/notes");
+  await page.getByRole("tab", { name: "Photos or scan" }).click();
+  await page.locator("#study-guide-scan-pdf").setInputFiles({
+    name: "scan.pdf",
+    mimeType: "application/pdf",
+    buffer: buildTextPdf("Photosynthesis"),
+  });
+  await page.getByRole("button", { name: /^read 1 page$/i }).click();
+
+  const review = page.getByLabel("Recognized text (review and correct before you submit) *");
+  await expect(review).toHaveValue(/photosynthesis/i, { timeout: 150_000 });
+  expect([...hosts].filter((host) => host !== appHost), "third-party hosts contacted").toEqual([]);
+});
