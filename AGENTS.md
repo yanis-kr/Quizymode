@@ -218,3 +218,7 @@ These point at the local Postgres instance. The port may differ per machine and 
 - Prefer updating canonical files over adding new ones.
 - Verify code and contract changes, not just prose.
 - Keep outputs concise and decision-oriented.
+
+## Content quality ledger (#726)
+
+Seed reviews are recorded in `data/seed-source/_registry/quality/` and only count as evidence when the quote is in the cached source text. See `docs/content-quality.md`. Fetched source text is never committed (`.cache/content-quality/` is git-ignored).
