@@ -17,6 +17,7 @@ import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { sliceAc } from "../validation/ac-slice.mjs";
 import { ROLES, routeModel, classifyIssue, MODEL_ORDER } from "../automation/model-policy.mjs";
+import { readRun, writeRun, runFilePath } from "./autopilot-run.mjs";
 
 const SCHEMA_VERSION = 1;
 const ID_RE = /^[a-z0-9][a-z0-9-]{2,47}$/;
@@ -418,6 +419,30 @@ function saveState(p, st, event) {
   st.updatedAt = now();
   if (event) st.log.push({ at: st.updatedAt, ...event });
   writeJsonAtomic(p.state, st);
+  syncRunPhase(path.basename(p.dir), st.phase);
+}
+// Keeps .qm/autopilot/run.json in step with the bundle phase, so the hooks stop once the phase is terminal (#760).
+function syncRunPhase(bundleId, phase) {
+  const rf = runFilePath(qmDir());
+  const run = readRun(rf);
+  if (run && run.bundleId === bundleId) {
+    run.phase = phase;
+    writeRun(rf, run);
+  }
+}
+// Starts (or re-points) the run file for the session that holds the bundle lock (#760).
+function startRun(bundleId, holder, phase) {
+  writeRun(runFilePath(qmDir()), { bundleId, session: holder, phase, stopBlocks: 0, stalled: false, lastStateHash: null });
+}
+// Standing approval without an approved envelope ends the run here (#760 AC 7): one instruction line, phase blocked_terminal.
+function failStandingNoEnvelope(bundleId) {
+  const line = "No approved standing envelope. The owner runs once: node scripts/bundle/bundle.mjs envelope init, then envelope approve (with the owner's own reply).";
+  const rf = runFilePath(qmDir());
+  const run = readRun(rf) ?? { bundleId, session: holderId() ?? null, stopBlocks: 0, stalled: false };
+  run.phase = "blocked_terminal";
+  run.reason = line;
+  writeRun(rf, run);
+  die(2, line);
 }
 // The holder token comes from state-init output and is passed back with --holder on every executor call.
 function holderId() { return typeof opts.holder === "string" ? opts.holder : (process.env.CLAUDE_CODE_SESSION_ID || null); }
@@ -571,7 +596,7 @@ function approvedEnvelope(ep, eap) {
 function standingApproval(p, m, hash) {
   const ep = path.join(qmDir(), ENVELOPE_FILE);
   const eap = path.join(qmDir(), ENVELOPE_APPROVAL);
-  if (!fs.existsSync(ep) || !fs.existsSync(eap)) die(2, "No approved standing envelope. The owner approves it once: envelope init, then envelope approve.");
+  if (!fs.existsSync(ep) || !fs.existsSync(eap)) failStandingNoEnvelope(m.bundleId ?? path.basename(p.dir));
   const env = readJson(ep);
   const envErrors = validateEnvelope(env);
   if (envErrors.length) die(2, "Envelope is invalid", { errors: envErrors });
@@ -736,6 +761,7 @@ switch (cmd) {
       st.resumeCount = (st.resumeCount ?? 0) + 1;
       st.clockStart = now();
       saveState(p, st, { event: reopened ? "reopened" : foreign ? "taken-over" : "resumed", holder, previousHolder });
+      startRun(id, holder, st.phase);
       ok({ bundleId: id, holder, resumed: true, reopened, phase: st.phase, issues: st.issues, release: st.release, drift: r.drift, issueChanges: r.issues, warnings: r.warnings });
     }
     // one active bundle per checkout
@@ -757,6 +783,7 @@ switch (cmd) {
     st.log.push({ at: st.updatedAt, event: "initialized", holder, drift: r.drift.baseMoved });
     try { fs.writeFileSync(p.state, JSON.stringify(st, null, 2) + "\n", { encoding: "utf8", flag: "wx" }); }
     catch { die(4, "Another session created state.json at the same moment; re-run state-init."); }
+    startRun(id, holder, st.phase);
     ok({ bundleId: id, holder, resumed: false, phase: st.phase, issues: st.issues, drift: r.drift, issueChanges: r.issues, warnings: r.warnings, note: "Pass --holder <holder> to every later command." });
   }
   case "issue": {
@@ -986,6 +1013,21 @@ switch (cmd) {
     }
     process.stdout.write(lines.join("\n") + "\n");
     process.exit(0);
+  }
+  case "permissions": {
+    // Prints the allow rules a run needs, taken from the ship skill's allowed-tools list (#760 AC 5). Prints only; never writes settings.
+    const skill = path.join(path.dirname(fileURLToPath(import.meta.url)), "..", "..", ".claude", "skills", "qm-bundle-ship", "SKILL.md");
+    const text = fs.existsSync(skill) ? fs.readFileSync(skill, "utf8").replace(/\r\n/g, "\n") : "";
+    const fm = (text.match(/^---\n([\s\S]*?)\n---/) ?? [])[1] ?? "";
+    const rules = [];
+    let inList = false;
+    for (const line of fm.split("\n")) {
+      if (/^allowed-tools:\s*$/.test(line)) { inList = true; continue; }
+      if (inList && /^\s+-\s+/.test(line)) rules.push(line.replace(/^\s+-\s+/, "").trim());
+      else if (inList && line.trim() !== "") inList = false;
+    }
+    if (rules.length === 0) die(2, "No allowed-tools found in the ship skill; nothing to print.");
+    ok({ source: ".claude/skills/qm-bundle-ship/SKILL.md", allow: rules });
   }
   case "list": {
     const dir = bundlesDir();
