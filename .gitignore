@@ -407,3 +407,6 @@ scripts/generate_language_seed_expansion.py
 
 # Local media storage (Development/Testing FileSystem provider, #399)
 **/.media
+
+# graphify build output (regenerable)
+graphify-out/
