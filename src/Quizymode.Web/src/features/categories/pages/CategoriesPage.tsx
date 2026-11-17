@@ -747,6 +747,12 @@ const CategoriesPage = () => {
         : buildActiveFilterChips(pathKeywordsFromUrl, itemTagKeywords),
     [categorySlugParam, pathKeywordsFromUrl, itemTagKeywords]
   );
+  // Applied refinements only (URL state): tag chips after de-duplication against the path, plus type, search and rating.
+  const appliedRefinementCount =
+    activeFilterChips.filter((chip) => chip.kind === "tag").length +
+    (filterTypeFromUrl !== "all" ? 1 : 0) +
+    (scopeSearchFromUrl ? 1 : 0) +
+    (["ratingMin", "ratingMax", "ratingUnrated", "ratingOnlyUnrated"].some((k) => searchParams.has(k)) ? 1 : 0);
   const activeFilterDisplayNames = useMemo(() => {
     const names: Record<string, string> = {};
     const descriptions = breadcrumbKeywordDescriptionsData?.keywords ?? [];
@@ -1054,7 +1060,7 @@ const CategoriesPage = () => {
                 keywordsFromUrlOrQuery.length > 0 ||
                 hasActiveScopeFilters
               }
-              activeFilterCount={activeScopeFilters.size + filterKeywordsFromQuery.length}
+              activeFilterCount={appliedRefinementCount}
               onOpenFilters={() => setShowFilters(true)}
               showAnswers={showAnswers}
               onToggleShowAnswers={toggleShowAnswers}
@@ -1102,9 +1108,8 @@ const CategoriesPage = () => {
               }
               onClearAll={() => {
                 setFilterCategorySlug(categorySlugParam ?? getAllCategoriesSlug());
-                const q = searchParams.get("keywords");
-                const kws = q ? q.split(",").map((k) => k.trim()).filter(Boolean) : [];
-                setFilterKeywords(kws);
+                // Pending keywords go back to the navigation path, so a later Apply keeps the scope.
+                setFilterKeywords(isAllCategoriesSlug(categorySlugParam) ? [] : pathKeywordsFromUrl);
                 setScopeFilterType("all");
                 setScopeSearchText("");
                 setScopeRatingMin(null);
@@ -1112,12 +1117,17 @@ const CategoriesPage = () => {
                 setScopeRatingIncludeUnrated(false);
                 setScopeRatingOnlyUnrated(false);
                 setActiveScopeFilters(new Set());
-                // Clear all removes applied URL refinements (tags, search, type, rating) and keeps the navigation scope.
-                const clearedParams = new URLSearchParams();
-                clearedParams.set("view", activeView);
-                clearedParams.set("page", "1");
-                clearedParams.set("pagesize", pageSize.toString());
-                if (sortBy) clearedParams.set("sort", sortBy);
+                // Clear all removes applied URL refinements (tags, tag, search, type, rating) and keeps the navigation scope and other params.
+                const clearedParams = new URLSearchParams(searchParams);
+                stripEphemeralFilterParams(clearedParams);
+                clearedParams.delete("keywords");
+                clearedParams.delete("tag");
+                if (activeView === "sets") {
+                  clearedParams.delete("page");
+                  clearedParams.delete("pagesize");
+                } else {
+                  clearedParams.set("page", "1");
+                }
                 navigate(`${buildCategoryPath(categorySlugParam ?? getAllCategoriesSlug(), pathKeywordsFromUrl)}?${clearedParams.toString()}`);
               }}
             >
@@ -1444,7 +1454,7 @@ const CategoriesPage = () => {
                 keywordsFromUrlOrQuery.length > 0 ||
                 hasActiveScopeFilters
               }
-              activeFilterCount={activeScopeFilters.size + filterKeywordsFromQuery.length}
+              activeFilterCount={appliedRefinementCount}
               onOpenFilters={() => setShowFilters(true)}
               middleSlot={
                 isAuthenticated ? (
@@ -1494,9 +1504,8 @@ const CategoriesPage = () => {
               }
               onClearAll={() => {
                 setFilterCategorySlug(categorySlugParam ?? getAllCategoriesSlug());
-                const q = searchParams.get("keywords");
-                const kws = q ? q.split(",").map((k) => k.trim()).filter(Boolean) : [];
-                setFilterKeywords(kws);
+                // Pending keywords go back to the navigation path, so a later Apply keeps the scope.
+                setFilterKeywords(isAllCategoriesSlug(categorySlugParam) ? [] : pathKeywordsFromUrl);
                 setScopeFilterType("all");
                 setScopeSearchText("");
                 setScopeRatingMin(null);
@@ -1504,12 +1513,17 @@ const CategoriesPage = () => {
                 setScopeRatingIncludeUnrated(false);
                 setScopeRatingOnlyUnrated(false);
                 setActiveScopeFilters(new Set());
-                // Clear all removes applied URL refinements (tags, search, type, rating) and keeps the navigation scope.
-                const clearedParams = new URLSearchParams();
-                clearedParams.set("view", activeView);
-                clearedParams.set("page", "1");
-                clearedParams.set("pagesize", pageSize.toString());
-                if (sortBy) clearedParams.set("sort", sortBy);
+                // Clear all removes applied URL refinements (tags, tag, search, type, rating) and keeps the navigation scope and other params.
+                const clearedParams = new URLSearchParams(searchParams);
+                stripEphemeralFilterParams(clearedParams);
+                clearedParams.delete("keywords");
+                clearedParams.delete("tag");
+                if (activeView === "sets") {
+                  clearedParams.delete("page");
+                  clearedParams.delete("pagesize");
+                } else {
+                  clearedParams.set("page", "1");
+                }
                 navigate(`${buildCategoryPath(categorySlugParam ?? getAllCategoriesSlug(), pathKeywordsFromUrl)}?${clearedParams.toString()}`);
               }}
             >

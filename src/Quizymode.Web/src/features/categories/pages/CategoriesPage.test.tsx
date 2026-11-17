@@ -386,6 +386,8 @@ describe("Category filters (#707)", () => {
     const group = await screen.findByRole("group", { name: "Active filters" });
     const removeIdioms = within(group).getAllByRole("button", { name: "Remove filter idioms" });
     expect(removeIdioms).toHaveLength(1);
+    // The duplicate keyword is not counted twice: one tag chip, so the badge reads 1.
+    expect(screen.getByRole("button", { name: /^Filters/ }).textContent).toBe("Filters1");
   });
 
   it("AC 3.5.16 Clear all removes applied tag refinements and keeps the navigation scope", async () => {
@@ -394,6 +396,9 @@ describe("Category filters (#707)", () => {
     await screen.findByText("Q one");
     await user.click(screen.getByRole("button", { name: /^Filters/ }));
     await user.click(screen.getByRole("button", { name: "Clear all" }));
+    await waitFor(() => expect(currentUrl()).toBe("/categories/languages/german/idioms?view=items&page=1"));
+    // A later Apply keeps the navigation scope instead of turning the path into tag topics.
+    await user.click(screen.getByRole("button", { name: "Apply" }));
     await waitFor(() => expect(currentUrl()).toBe("/categories/languages/german/idioms?view=items&page=1"));
   });
 

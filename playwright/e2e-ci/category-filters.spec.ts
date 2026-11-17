@@ -59,7 +59,7 @@ test.describe("Category filters (#707)", () => {
   test("AC 3.5.12 the Filters control shows the refinement count and the active summary is visible without opening the dialog", async ({ page }) => {
     await openItems(page, "/categories/languages/german/idioms?view=items&keywords=funny");
     const trigger = page.getByRole("button", { name: /^Filters/ });
-    await expect(trigger).toContainText("1");
+    await expect(trigger).toHaveText("Filters1");
     await expect(activeFilters(page)).toBeVisible();
     await expect(activeFilters(page).getByRole("button", { name: "Remove filter funny" })).toBeVisible();
   });
@@ -67,7 +67,7 @@ test.describe("Category filters (#707)", () => {
   test("AC 3.5.14 removing a tag chip keeps the path, resets to page 1 and Back restores the previous URL", async ({ page }) => {
     await openItems(page, "/categories/languages/german/idioms?view=items&keywords=funny");
     await activeFilters(page).getByRole("button", { name: "Remove filter funny" }).click();
-    await expect(page).toHaveURL(/\/categories\/languages\/german\/idioms\?view=items&page=1(&pagesize=\d+)?$/);
+    await expect(page).toHaveURL(/\/categories\/languages\/german\/idioms\?view=items&page=1&pagesize=10$/);
     await page.goBack();
     await expect(page).toHaveURL(/\/categories\/languages\/german\/idioms\?view=items&keywords=funny$/);
   });
@@ -79,7 +79,7 @@ test.describe("Category filters (#707)", () => {
     expect(box?.height ?? 0).toBeGreaterThanOrEqual(44);
     await remove.focus();
     await page.keyboard.press("Enter");
-    await expect(page).toHaveURL(/\/categories\/languages\/german\/idioms\?view=items&page=1(&pagesize=\d+)?$/);
+    await expect(page).toHaveURL(/\/categories\/languages\/german\/idioms\?view=items&page=1&pagesize=10$/);
   });
 
   test("AC 3.5.18 a root category without tags shows no chip row and the items still render at 375 px and 1280 px", async ({ page }) => {
@@ -90,6 +90,12 @@ test.describe("Category filters (#707)", () => {
       await expect(activeFilters(page)).toHaveCount(0);
       await page.screenshot({ path: path.join(SHOT_DIR, `after-root-${width}.png`), fullPage: true });
     }
+    // Sets view: no chip row and the category heading still renders.
+    await page.setViewportSize({ width: 375, height: 812 });
+    await stubApi(page);
+    await page.goto("/categories/languages?view=sets");
+    await expect(page.getByRole("heading", { level: 1, name: "Languages" })).toBeVisible();
+    await expect(activeFilters(page)).toHaveCount(0);
     await page.setViewportSize({ width: 375, height: 812 });
     await openItems(page, "/categories/languages/german/idioms?view=items&keywords=funny");
     await page.screenshot({ path: path.join(SHOT_DIR, "after-chips-375.png"), fullPage: false });
