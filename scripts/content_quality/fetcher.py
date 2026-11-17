@@ -29,6 +29,8 @@ CACHE_TTL_DAYS = 90
 BASE_DOMAIN_DELAY_SEC = 1.0
 MAX_DOMAIN_DELAY_SEC = 60.0
 TIMEOUT_SEC = 20
+# Bump when fetch behaviour changes so cached entries from an older rule are fetched again.
+FETCHER_VERSION = 2
 TIER_ORDER = ("T1", "T2", "T3", "T4", "T5")
 
 Transport = Callable[[str], tuple[int, str]]
@@ -129,15 +131,30 @@ def write_entry(url: str, entry: dict[str, Any], cache_root: Path = CACHE_ROOT) 
 
 
 def is_fresh(entry: dict[str, Any], now: datetime) -> bool:
+    if entry.get("fetcherVersion") != FETCHER_VERSION:
+        return False
     fetched = datetime.fromisoformat(entry["fetchedAt"])
     return now - fetched < timedelta(days=CACHE_TTL_DAYS)
+
+
+class _SameHostRedirects(urllib.request.HTTPRedirectHandler):
+    """Follow redirects only within the same host. A redirect to another host is not followed, so robots.txt and the
+    per-domain delay still apply to every host we contact; it surfaces as an HTTP 3xx status (unfetchable)."""
+
+    def redirect_request(self, req, fp, code, msg, headers, newurl):  # type: ignore[override]
+        if urllib.parse.urlsplit(newurl).netloc != urllib.parse.urlsplit(req.full_url).netloc:
+            return None
+        return super().redirect_request(req, fp, code, msg, headers, newurl)
+
+
+_OPENER = urllib.request.build_opener(_SameHostRedirects)
 
 
 def default_transport(url: str) -> tuple[int, str]:
     """One GET with the generic client name. HTTP errors return their status; network errors raise OSError."""
     request = urllib.request.Request(url, headers={"User-Agent": USER_AGENT, "Accept": "text/html,application/json"})
     try:
-        with urllib.request.urlopen(request, timeout=TIMEOUT_SEC) as response:  # noqa: S310 - https source URLs only
+        with _OPENER.open(request, timeout=TIMEOUT_SEC) as response:  # noqa: S310 - https source URLs only
             raw = response.read(2_000_000)
             charset = response.headers.get_content_charset() or "utf-8"
             return response.status, raw.decode(charset, errors="replace")
@@ -193,6 +210,7 @@ def fetch_run(
     now = now or datetime.now(timezone.utc)
     domains: dict[str, _DomainState] = {}
     seen: set[str] = set()
+    paced_for: dict[str, Callable[[str], tuple[int, str]]] = {}
     for url in urls:
         if url in seen:
             summary.skipped_duplicate += 1
@@ -206,20 +224,26 @@ def fetch_run(
         parts = urllib.parse.urlsplit(url)
         domain = parts.netloc.lower()
         state = domains.setdefault(domain, _DomainState(delay=base_delay))
-        _wait_for_domain(state, sleep, clock)
-        entry = _fetch_one(url, parts, state, transport, now, summary)
-        state.last_request = clock()
+        if domain not in paced_for:
+            paced_for[domain] = _paced(transport, state, sleep, clock)
+        entry = _fetch_one(url, parts, state, paced_for[domain], now, summary)
         write_entry(url, entry, cache_root)
     summary.seconds = clock() - started
     return summary
 
 
-def _wait_for_domain(state: _DomainState, sleep: Callable[[float], None], clock: Callable[[], float]) -> None:
-    if state.last_request is None:
-        return
-    remaining = state.delay - (clock() - state.last_request)
-    if remaining > 0:
-        sleep(remaining)
+def _paced(transport: Transport, state: _DomainState, sleep: Callable[[float], None], clock: Callable[[], float]) -> Transport:
+    """Every request to the domain (robots.txt included) waits for the domain delay since the previous one."""
+
+    def paced(url: str) -> tuple[int, str]:
+        if state.last_request is not None:
+            remaining = state.delay - (clock() - state.last_request)
+            if remaining > 0:
+                sleep(remaining)
+        state.last_request = clock()
+        return transport(url)
+
+    return paced
 
 
 def _robots_allows(url: str, parts: urllib.parse.SplitResult, state: _DomainState, transport: Transport) -> str | None:
@@ -254,35 +278,33 @@ def _fetch_one(
     now: datetime,
     summary: FetchSummary,
 ) -> dict[str, Any]:
+    """Fetch one URL. robots.txt is checked against the URL actually requested (the API URL for Wikipedia)."""
     stamp = now.isoformat()
-    blocked = _robots_allows(url, parts, state, transport)
-    if blocked:
-        summary.unfetchable += 1
-        summary.count(blocked)
-        return {"url": url, "status": "unfetchable", "httpStatus": None, "reason": blocked, "fetchedAt": stamp}
     api = wikipedia_api_url(url)
     target = api or url
-    try:
-        status, body = transport(target)
-    except OSError as error:
+    target_parts = urllib.parse.urlsplit(target)
+
+    def unfetchable(reason: str, status: int | None = None) -> dict[str, Any]:
         summary.unfetchable += 1
-        reason = f"error:{type(error).__name__}"
         summary.count(reason)
-        return {"url": url, "status": "unfetchable", "httpStatus": None, "reason": reason, "fetchedAt": stamp}
-    if status == 429:
-        state.delay = min(state.delay * 2, MAX_DOMAIN_DELAY_SEC)
-        summary.unfetchable += 1
-        summary.count("429")
-        return {"url": url, "status": "unfetchable", "httpStatus": 429, "reason": "429", "fetchedAt": stamp}
-    if status != 200:
-        summary.unfetchable += 1
-        summary.count(f"http-{status}")
-        return {"url": url, "status": "unfetchable", "httpStatus": status, "reason": f"http-{status}", "fetchedAt": stamp}
-    text, revision = extract_text(body, "wikipedia" if api else "html")
+        return {"url": url, "status": "unfetchable", "httpStatus": status, "reason": reason,
+                "fetchedAt": stamp, "fetcherVersion": FETCHER_VERSION}
+
+    try:
+        blocked = _robots_allows(target, target_parts, state, transport)
+        if blocked:
+            return unfetchable(blocked)
+        status, body = transport(target)
+        if status == 429:
+            state.delay = min(state.delay * 2, MAX_DOMAIN_DELAY_SEC)
+            return unfetchable("429", 429)
+        if status != 200:
+            return unfetchable(f"http-{status}", status)
+        text, revision = extract_text(body, "wikipedia" if api else "html")
+    except Exception as error:  # one bad response must not stop the run; no retry
+        return unfetchable(f"error:{type(error).__name__}")
     if not text:
-        summary.unfetchable += 1
-        summary.count("no-text")
-        return {"url": url, "status": "unfetchable", "httpStatus": status, "reason": "no-text", "fetchedAt": stamp}
+        return unfetchable("no-text", status)
     summary.ok += 1
     entry = {
         "url": url,
@@ -291,6 +313,7 @@ def _fetch_one(
         "text": text,
         "textHash": text_hash(text),
         "fetchedAt": stamp,
+        "fetcherVersion": FETCHER_VERSION,
     }
     if revision:
         entry["revisionId"] = revision

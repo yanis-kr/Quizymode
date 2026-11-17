@@ -82,7 +82,7 @@ import {
 import { gradeTypedAnswer, isTypeable } from "@/features/items/quiz/typedAnswer";
 import { isGuestEligible, recordGuestCompletion } from "@/features/guestHistory/guestHistoryStorage";
 import { categorySetKey, readKnownIds, recordKnownItems } from "@/features/progress/knownItems";
-import { pickNextRound } from "@/features/learningLoop/nextRoundPick";
+import { pickNextRound, sampleRun } from "@/features/learningLoop/nextRoundPick";
 import { addLocalReviewItems } from "@/features/learningLoop/localReviewList";
 import { recordAuthenticatedCompletion } from "@/features/studySessions/recordStudySession";
 import {
@@ -501,6 +501,8 @@ const QuizModePageContent = ({ resumeRequested = false, initialNotice = null }: 
 
   // Use full list if available (when category/collection is present), otherwise use stored items or fetched items
   // Never use singleItemData when storedItems exists (restoring from sessionStorage)
+  // A collection Play 5 / Play 10 link carries ?size=N: start a run of N random playable members (#714 AC 3.6.29).
+  const collectionRunSize = collectionId ? parseSizeParam(searchParams.get("size")) : null;
   const playableItems = useMemo(() => {
     const loadedItems = collectionId
       ? collectionData?.items ?? []
@@ -512,15 +514,17 @@ const QuizModePageContent = ({ resumeRequested = false, initialNotice = null }: 
           quizSize,
         });
     const seen = new Set<string>();
-    return loadedItems.filter((item) => {
+    const playable = loadedItems.filter((item) => {
       if (!item.id || seen.has(item.id) || !isQuizPlayable(item)) return false;
       seen.add(item.id);
       return true;
     });
+    return collectionRunSize ? sampleRun(playable, collectionRunSize) : playable;
   }, [
     categorySlug,
     collectionData?.items,
     collectionId,
+    collectionRunSize,
     data?.items,
     filterKeywords,
     navigationKeywords,

@@ -14,6 +14,7 @@ sys.path.insert(0, str(SCRIPTS / "content_quality"))
 
 from fetcher import (  # noqa: E402
     fetch_run,
+    write_entry,
     is_bare_homepage,
     link_report,
     read_entry,
@@ -149,6 +150,31 @@ class FetcherTests(unittest.TestCase):
         self.assertEqual(entry["revisionId"], "12345")
         self.assertEqual(entry["text"], "x = ...")
 
+
+    def test_any_exception_is_recorded_as_unfetchable_and_the_run_continues(self) -> None:
+        bad, good = "https://odd.example.com/bad", "https://odd.example.com/good"
+        transport = Recorder({bad: ValueError("unexpected body"), good: (200, "<p>Still fetched.</p>")})
+        summary = fetch_run([bad, good], cache_root=self.cache, transport=transport, sleep=no_sleep, clock=fake_clock(), now=NOW)
+        self.assertEqual(read_entry(bad, self.cache)["reason"], "error:ValueError")
+        self.assertEqual(read_entry(good, self.cache)["status"], "ok")
+        self.assertEqual(summary.ok, 1)
+
+    def test_entries_from_an_older_fetcher_version_are_fetched_again(self) -> None:
+        page = "https://docs.example.com/versioned"
+        write_entry(page, {"url": page, "status": "ok", "text": "old", "fetchedAt": NOW.isoformat()}, self.cache)
+        transport = Recorder({page: (200, "<p>New text.</p>")})
+        fetch_run([page], cache_root=self.cache, transport=transport, sleep=no_sleep, clock=fake_clock(), now=NOW)
+        self.assertEqual(transport.calls.count(page), 1)
+        self.assertEqual(read_entry(page, self.cache)["text"], "New text.")
+
+    def test_wikipedia_robots_are_checked_for_the_api_url_actually_requested(self) -> None:
+        page = "https://en.wikipedia.org/wiki/Blocked_title"
+        api = wikipedia_api_url(page)
+        disallow = "User-agent: *" + chr(10) + "Disallow: /w/"
+        transport = Recorder({"https://en.wikipedia.org/robots.txt": (200, disallow), api: (200, "{}")})
+        fetch_run([page], cache_root=self.cache, transport=transport, sleep=no_sleep, clock=fake_clock(), now=NOW)
+        self.assertNotIn(api, transport.calls)
+        self.assertEqual(read_entry(page, self.cache)["reason"], "robots-disallowed")
 
 class TierAndReportTests(unittest.TestCase):
     def test_tier_follows_the_parent_domain_and_defaults_otherwise(self) -> None:

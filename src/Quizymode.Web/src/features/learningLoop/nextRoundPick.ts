@@ -14,3 +14,13 @@ export function pickNextRound<T extends { id: string }>(
   const knownUnplayed = unplayed.filter((item) => knownIds.has(item.id));
   return [...fresh, ...knownUnplayed].slice(0, size);
 }
+
+/** A random sample of `size` items (all of them when there are fewer). Used for collection Play 5 / Play 10 (#714). */
+export function sampleRun<T>(items: readonly T[], size: number, random: () => number = Math.random): T[] {
+  const sampled = [...items];
+  for (let i = sampled.length - 1; i > 0; i -= 1) {
+    const j = Math.floor(random() * (i + 1));
+    [sampled[i], sampled[j]] = [sampled[j], sampled[i]];
+  }
+  return sampled.slice(0, size);
+}
