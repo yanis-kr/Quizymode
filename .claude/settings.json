@@ -26,7 +26,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "node scripts/bundle/autopilot-hook.mjs ask",
+            "command": "node \"$CLAUDE_PROJECT_DIR/scripts/bundle/autopilot-hook.mjs\" ask",
             "timeout": 5
           }
         ]
@@ -37,7 +37,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "node scripts/bundle/autopilot-hook.mjs stop",
+            "command": "node \"$CLAUDE_PROJECT_DIR/scripts/bundle/autopilot-hook.mjs\" stop",
             "timeout": 5
           }
         ]

@@ -438,10 +438,14 @@ function startRun(bundleId, holder, phase) {
 function failStandingNoEnvelope(bundleId) {
   const line = "No approved standing envelope. The owner runs once: node scripts/bundle/bundle.mjs envelope init, then envelope approve (with the owner's own reply).";
   const rf = runFilePath(qmDir());
-  const run = readRun(rf) ?? { bundleId, session: holderId() ?? null, stopBlocks: 0, stalled: false };
-  run.phase = "blocked_terminal";
-  run.reason = line;
-  writeRun(rf, run);
+  const existing = readRun(rf);
+  // Another bundle's live run is not this command's to change: only this bundle's run file is ended here.
+  if (!existing || existing.bundleId === bundleId) {
+    const run = existing ?? { bundleId, session: holderId() ?? null, stopBlocks: 0, stalled: false };
+    run.phase = "blocked_terminal";
+    run.reason = line;
+    writeRun(rf, run);
+  }
   die(2, line);
 }
 // The holder token comes from state-init output and is passed back with --holder on every executor call.

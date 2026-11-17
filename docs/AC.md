@@ -2625,3 +2625,5 @@ A bundle run refines, approves under the standing envelope and ships with no que
 - **AC 7.18.5** [Dev tooling] [verify: unit] (#760) `bundle.mjs permissions` prints valid JSON whose `allow` list equals the `allowed-tools` entries of the ship skill, and writes no settings file.
 - **AC 7.18.6** [Dev tooling] [verify: unit] (#760) `scripts/automation/ask-audit.mjs` counts the AskUserQuestion calls and turn-ending questions of a fixture transcript.
 - **AC 7.18.7** [Dev tooling] [verify: unit] (#760) `bundle.mjs approve <id> --standing` with no approved envelope exits 2 with one instruction line naming how to create the envelope, and sets the run phase to blocked_terminal.
+- **AC 7.18.8** [Dev tooling] [verify: unit] (#760) The no-envelope stop in AC 7.18.7 changes only the run file of the bundle named in the command; another bundle's run file keeps its bundle id and phase.
+- **AC 7.18.9** [Dev tooling] [verify: unit] (#760) The committed `.claude/settings.json` runs both autopilot hooks through `"$CLAUDE_PROJECT_DIR/scripts/bundle/autopilot-hook.mjs"`, so they work from any working directory.

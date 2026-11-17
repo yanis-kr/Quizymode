@@ -148,3 +148,40 @@ test("AC7: approve --standing with no approved envelope exits 2 with one line an
   const run760 = JSON.parse(fs.readFileSync(path.join(qm, "autopilot", "run.json"), "utf8"));
   assert.equal(run760.phase, "blocked_terminal");
 });
+
+// AC 7.18.8: the no-envelope stop ends only this bundle's run. Another bundle's live run is left alone.
+test("AC 7.18.8: a failed standing approve does not change another bundle's run file", () => {
+  const qm = tmpQm();
+  const other = "b-20261117-other-live";
+  writeJson(path.join(qm, "autopilot", "run.json"), { bundleId: other, session: "sess-9", phase: "implementing", stopBlocks: 0, stalled: false, lastStateHash: null });
+  const dir = path.join(qm, "bundles", BID);
+  writeJson(path.join(dir, "manifest.json"), {
+    schemaVersion: 1, bundleId: BID, title: "t", createdAt: "2026-11-17T00:00:00Z",
+    repo: { nameWithOwner: "yanis-kr/Quizymode", defaultBranch: "main" },
+    source: { baseBranch: "main", commit: "a".repeat(40), capturedAt: "2026-11-17T00:00:00Z" },
+    releaseMode: "auto-merge-deploy", versionBump: "minor", excluded: [],
+    branches: { release: `release/${BID}`, issuePrefix: `bundle/${BID}/` },
+    authorization: { mergeToMain: true, migrations: "none", infraChanges: "none", infraAllowed: [], prodDataWrites: "none", prodReadQueries: true, rollback: "report-only", closeIssues: true, paidServices: false },
+    limits: { maxAttemptsPerIssue: 3, maxCiRuns: 4, maxWallClockHours: 8, lockStaleMinutes: 240 },
+    releaseGates: ["x"], policies: { partialRelease: "ship-completed-independent", blockedIssue: "defer-and-continue", sourceDrift: "proceed-unless-overlap" },
+    postDeploy: { checks: [], rollbackTrigger: "report-only" },
+    issues: [{ number: 101, title: "Issue 101", order: 101, snapshot: { state: "OPEN", updatedAt: "2026-11-17T00:00:00Z", bodySha256: "b".repeat(64) }, size: "s", risk: "low", ux: false, migration: false, dependsOn: [], areas: ["area:study"], scope: { summary: "s", paths: ["src/x/**"], exclusions: [] }, acceptanceCriteria: [{ id: "AC1", text: "observable", evidence: "unit" }], validation: [] }],
+  });
+  writeJson(path.join(dir, "review.json"), { openFindings: [] });
+  const r = run(["approve", BID, "--hash", sha(path.join(dir, "manifest.json")).slice(0, 12), "--standing", "--qm-dir", qm]);
+  assert.equal(r.status, 2, r.stdout);
+  const kept = JSON.parse(fs.readFileSync(path.join(qm, "autopilot", "run.json"), "utf8"));
+  assert.equal(kept.bundleId, other);
+  assert.equal(kept.phase, "implementing", "the other bundle's phase is untouched");
+});
+
+// AC 7.18.9: the hooks must not depend on the working directory, so the committed commands use $CLAUDE_PROJECT_DIR.
+test("AC 7.18.9: committed hook commands are anchored to $CLAUDE_PROJECT_DIR", () => {
+  const settings = JSON.parse(fs.readFileSync(path.join(repo, ".claude", "settings.json"), "utf8"));
+  const commands = [settings.hooks.PreToolUse, settings.hooks.Stop].flat().flatMap((e) => e.hooks.map((h) => h.command))
+    .filter((c) => c.includes("autopilot-hook.mjs"));
+  assert.equal(commands.length, 2);
+  for (const c of commands) {
+    assert.ok(c.includes('"$CLAUDE_PROJECT_DIR/scripts/bundle/autopilot-hook.mjs"'), c);
+  }
+});
