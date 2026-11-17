@@ -5,7 +5,7 @@ import fs from "node:fs";
 import os from "node:os";
 import path from "node:path";
 import { createHash } from "node:crypto";
-import { spawnSync } from "node:child_process";
+import { execFileSync, spawnSync } from "node:child_process";
 import { fileURLToPath } from "node:url";
 import { sliceAc, render } from "../validation/ac-slice.mjs";
 import { buildLedger, formatLedger, issueLine } from "../automation/usage-ledger.mjs";
@@ -99,8 +99,8 @@ test("AC bundle packet writes ACs, exclusions, paths, checks and model, and reje
   const { r, file } = packet(dir, 20, [], { size: "s" });
   assert.equal(r.status, 0, r.stdout + r.stderr);
   const text = fs.readFileSync(file, "utf8");
-  assert.match(text, /- coder: sonnet/);
-  assert.match(text, /- architect: opus/);
+  assert.match(text, /- coder: sonnet\. Why:/);
+  assert.match(text, /- architect: sonnet\. Why:/);
   assert.match(text, /AC1 \[verify: unit\] Observable behavior/);
   assert.match(text, /Not the other thing/);
   assert.match(text, /src\/Quizymode\.Web\/src\/features\/Example\/\*\*/);
@@ -113,24 +113,27 @@ test("AC bundle packet writes ACs, exclusions, paths, checks and model, and reje
   assert.match(bad.r.stdout, /not in bundle/);
 });
 
-test("AC packet models: each role has its own default, and facts only escalate coder and tester", () => {
+test("AC packet models: haiku by default, sonnet and opus only on a scored criterion (AC 7.13.3)", () => {
   const roles = (bundleOpts, extra = []) => {
     const dir = tmp();
     const { r, file } = packet(dir, 20, extra, bundleOpts);
     assert.equal(r.status, 0, r.stdout);
-    return Object.fromEntries([...fs.readFileSync(file, "utf8").matchAll(/^- (\S+): (\w+)$/gm)].map((m) => [m[1], m[2]]));
+    return Object.fromEntries([...fs.readFileSync(file, "utf8").matchAll(/^- (\S+): (\w+)\. Why:/gm)].map((m) => [m[1], m[2]]));
   };
-  assert.deepEqual(roles({ size: "s" }), { architect: "opus", reviewer: "opus", "qm-decision-maker": "opus", coder: "sonnet", tester: "sonnet", "ux-designer": "sonnet", reporter: "haiku" });
-  for (const size of ["xs", "m"]) assert.equal(roles({ size }).coder, "sonnet");
-  assert.equal(roles({ size: "s", risk: "high" }).coder, "opus");
-  assert.equal(roles({ size: "s", risk: "high" }).tester, "opus");
+  // The manifest carries no ambiguity, novelty or reasoning, so they are unknown and assessed by sonnet.
+  assert.deepEqual(roles({ size: "s" }), { architect: "sonnet", reviewer: "sonnet", "qm-decision-maker": "sonnet", coder: "sonnet", tester: "sonnet", "ux-designer": "sonnet", reporter: "haiku" });
+  assert.equal(roles({ size: "s", risk: "high" }).architect, "opus");
+  assert.equal(roles({ size: "s", risk: "high" }).coder, "sonnet");
   assert.equal(roles({ size: "s", migration: true }).coder, "opus");
-  assert.equal(roles({ size: "s" }, ["--attempt", "2"]).coder, "opus");
-  assert.equal(roles({ size: "l" }).coder, "opus");
-  const hi = roles({ size: "s", risk: "high" });
-  assert.equal(hi.architect, "opus");
-  assert.equal(hi.reporter, "haiku");
-  assert.equal(hi["ux-designer"], "sonnet");
+  assert.equal(roles({ size: "s" }, ["--failure", "reasoning", "--prior-model", "sonnet"]).coder, "opus");
+  assert.equal(roles({ size: "s" }, ["--failure", "reasoning", "--prior-model", "haiku"]).coder, "sonnet");
+  assert.equal(roles({ size: "s" }, ["--failure", "reasoning"]).coder, "sonnet");
+  assert.equal(roles({ size: "s" }, ["--failure", "environment"]).coder, "sonnet");
+  assert.equal(roles({ size: "s" }, ["--attempt", "2"]).coder, "sonnet");
+  assert.equal(roles({ size: "l" }).coder, "sonnet");
+  assert.equal(roles({ size: "s", risk: "high" }).reporter, "haiku");
+  const bad = packet(tmp(), 20, ["--failure", "bogus"], { size: "s" });
+  assert.equal(bad.r.status, 1);
 });
 
 test("AC manifest size must be xs, s, m or l, and --attempt cannot be below one", () => {
@@ -147,10 +150,66 @@ test("AC packet --from-issue builds a packet from the draft ACs and labels", () 
   const r = run(["packet", "--from-issue", "5", "--issue-json", json, "--packets-dir", path.join(dir, "p"), "--handbacks-dir", path.join(dir, "h"), "--ac-file", path.join(dir, "none.md")]);
   assert.equal(r.status, 0, r.stdout + r.stderr);
   const text = fs.readFileSync(path.join(dir, "p", "5.md"), "utf8");
-  assert.match(text, /- coder: opus/);
+  assert.match(text, /- coder: sonnet/);
   assert.match(text, /risk unknown/);
   assert.match(text, /It works\./);
   assert.match(text, /hooks/);
+});
+
+// AC 7.13.2 (checkbox ACs and body risk): from-issue reads normal checkbox ACs and an explicit Risk line, and never reads missing risk as low.
+test("AC 7.13.2 packet --from-issue reads checkbox ACs, an explicit body risk, and keeps missing risk unknown", () => {
+  const dir = tmp();
+  const from = (body, labels = []) => {
+    const json = path.join(dir, `issue-${Math.random().toString(36).slice(2)}.json`);
+    fs.writeFileSync(json, JSON.stringify({ title: "Copy", labels: labels.map((name) => ({ name })), body }));
+    const packets = path.join(dir, "p");
+    const r = run(["packet", "--from-issue", "5", "--issue-json", json, "--packets-dir", packets, "--handbacks-dir", path.join(dir, "h"), "--ac-file", path.join(dir, "none.md")]);
+    return { r, text: r.status === 0 ? fs.readFileSync(path.join(packets, "5.md"), "utf8") : "" };
+  };
+  const checkboxes = "## Acceptance\n- [ ] Shows the Why label on exams items [verify: unit]\n- [x] Hides the count [verify: unit]\n- A note without a marker\n";
+  const cb = from(checkboxes, ["size:s"]);
+  assert.equal(cb.r.status, 0, cb.r.stdout);
+  assert.match(cb.text, /Shows the Why label on exams items/);
+  assert.match(cb.text, /Hides the count/);
+  assert.doesNotMatch(cb.text, /A note without a marker/);
+  // Explicit "Risk Low" and "Migration: none" in the body are captured, and route coder and tester to haiku at size s (risk low, no migration, attempt 1).
+  const low = from(`${checkboxes}Impact 3 · Effort 1 (size S) · Risk Low · Confidence High.\nMigration: none\n`, ["size:s"]);
+  assert.match(low.text, /risk low \(issue body\)/);
+  assert.match(low.text, /migration false/);
+  assert.match(low.text, /- coder: sonnet\. Why:/);
+  assert.match(low.text, /- tester: sonnet. Why:/);
+  // Low risk alone is not enough: a migration nobody stated stays unknown, and unknown escalates coder and tester.
+  const lowNoMigration = from(`${checkboxes}Risk Low\n`, ["size:s"]);
+  assert.match(lowNoMigration.text, /migration unknown/);
+  assert.match(lowNoMigration.text, /- coder: sonnet/);
+  // No label and no body risk: unknown, which moves coder and tester to sonnet. Unknown is never read as low.
+  const unknown = from(checkboxes, ["size:s"]);
+  assert.match(unknown.text, /risk unknown \(unknown\)/);
+  assert.match(unknown.text, /- coder: sonnet/);
+  // A risk label beats a body statement.
+  const labelWins = from(`${checkboxes}Risk Low\n`, ["size:s", "risk:high"]);
+  assert.match(labelWins.text, /risk high \(risk label\)/);
+  // A body that says only "risk" with no level stays unknown.
+  assert.match(from("- [ ] Thing [verify: unit]\nRisk: to be decided\n", ["size:s"]).text, /risk unknown/);
+  // No marker at all is still refused.
+  assert.equal(from("- [ ] no marker here\n").r.status, 2);
+});
+
+// AC 7.13.3: every dispatch record names the role, the model it ran on, and the reason, copied from the packet.
+test("AC 7.13.3 handback-save records the dispatch model and reason from the packet", () => {
+  const dir = tmp();
+  const { r, file } = packet(dir, 20, [], { size: "s" });
+  assert.equal(r.status, 0, r.stdout);
+  fs.writeFileSync(path.join(dir, "plan.md"), "plan\n");
+  const f = path.join(dir, "h.json");
+  const hb = path.join(dir, "hb-out");
+  fs.writeFileSync(f, JSON.stringify({ status: "done", filesChanged: [], commands: [], acEvidence: { AC1: "plan.md" }, questions: [] }));
+  const saved = spawnSync("node", [BUNDLE, "handback-save", "test-bundle", "--issue", "20", "--role", "coder", "--file", f, "--handbacks-dir", hb, "--repo-root", dir, "--packets-dir", path.dirname(file)], { encoding: "utf8" });
+  assert.equal(saved.status, 0, saved.stdout);
+  const claim = JSON.parse(fs.readFileSync(path.join(hb, "20-coder.json"), "utf8"));
+  assert.equal(claim.dispatch.role, "coder");
+  assert.equal(claim.dispatch.model, "sonnet");
+  assert.match(claim.dispatch.reason, /ambiguity unknown/);
 });
 
 test("AC handback-check accepts a valid handback and names the missing field", () => {
@@ -195,6 +254,58 @@ test("AC handback-check rejects a done handback with a failing command; handback
   assert.equal(save(good, "wizard").status, 1);
 });
 
+test("AC 7.13.4 planning roles may finish done with empty acEvidence only under strict rules, and a dirty shared tree does not block them", () => {
+  const dir = tmp();
+  const repoDir = path.join(dir, "repo");
+  fs.mkdirSync(repoDir);
+  const git = (...args) => execFileSync("git", ["-C", repoDir, "-c", "user.email=t@example.com", "-c", "user.name=t", ...args], { encoding: "utf8" });
+  git("init", "-q");
+  fs.writeFileSync(path.join(repoDir, "tracked.txt"), "v1\n");
+  git("add", "tracked.txt");
+  git("commit", "-q", "-m", "init");
+  fs.writeFileSync(path.join(repoDir, "plan.md"), "plan\n"); // untracked deliverable, as .qm files are
+  const plan = { status: "done", filesChanged: [], commands: [], acEvidence: {}, questions: [], deliverable: "plan.md" };
+  const f = path.join(dir, "h.json");
+  const hb = path.join(dir, "hb");
+  const check = (h, role) => {
+    fs.writeFileSync(f, JSON.stringify(h));
+    return run(role ? ["handback-check", f, "--role", role] : ["handback-check", f]);
+  };
+  const save = (h, role) => {
+    fs.writeFileSync(f, JSON.stringify(h));
+    return spawnSync("node", [BUNDLE, "handback-save", "test-bundle", "--issue", "21", "--role", role, "--file", f, "--handbacks-dir", hb, "--repo-root", repoDir], { encoding: "utf8" });
+  };
+  // Positive: a read-only role with no files changed, a deliverable and no failing command.
+  for (const role of ["architect", "reviewer", "ux-designer", "qm-decision-maker"]) assert.equal(check(plan, role).status, 0, role);
+  // Negative: no role given keeps the strict rule.
+  const strict = check(plan);
+  assert.equal(strict.status, 2);
+  assert.match(strict.stdout, /acEvidence must name at least one AC/);
+  // Negative: filesChanged, a missing deliverable, a failing command, a non-string deliverable, or an implementation role.
+  assert.equal(check({ ...plan, filesChanged: ["a.mjs"] }, "architect").status, 2);
+  assert.equal(check({ ...plan, deliverable: undefined }, "architect").status, 2);
+  assert.equal(check({ ...plan, commands: [{ command: "node --test", exitCode: 1 }] }, "architect").status, 2);
+  assert.equal(check({ ...plan, deliverable: 7 }, "architect").status, 2);
+  assert.equal(check(plan, "tester").status, 2);
+  assert.equal(check(plan, "coder").status, 2);
+  // handback-save: a clean tracked tree and an existing deliverable are saved as a claim.
+  const saved = save(plan, "architect");
+  assert.equal(saved.status, 0, saved.stdout);
+  assert.equal(JSON.parse(fs.readFileSync(path.join(hb, "21-architect.json"), "utf8")).claimed, true);
+  // Role spoofing: an implementation role cannot use the planning rule to skip evidence.
+  assert.equal(save(plan, "coder").status, 2);
+  assert.match(save({ ...plan, deliverable: "missing.md" }, "architect").stdout, /planning deliverable is missing/);
+  // Regression: the shared worktree is dirty because the coder changed a tracked file after the architect ran.
+  // The architect's claim is still valid, so it is saved; the tree state does not say which agent wrote the change.
+  fs.writeFileSync(path.join(repoDir, "tracked.txt"), "v2\n");
+  const afterCoder = save(plan, "architect");
+  assert.equal(afterCoder.status, 0, afterCoder.stdout);
+  assert.equal(JSON.parse(fs.readFileSync(path.join(hb, "21-architect.json"), "utf8")).claimed, true);
+  // The coder and tester still need evidence, even with a dirty tree.
+  assert.equal(save(plan, "tester").status, 2);
+  assert.equal(save({ ...plan, commands: [{ command: "node --test", exitCode: 1 }] }, "architect").status, 2);
+});
+
 const SECRET_TEXT = "SECRET-MESSAGE-TEXT-xyz";
 const SECRET_CMD = "curl --header SECRET-COMMAND-abc";
 
@@ -231,6 +342,23 @@ test("AC usage-ledger counts each message id once, splits main and subagent, lis
   const printed = formatLedger(l) + JSON.stringify(issueLine(719, "s", l));
   assert.ok(!printed.includes(SECRET_TEXT) && !printed.includes(SECRET_CMD));
   assert.equal(issueLine(719, "s", l).turns, 3);
+});
+
+// AC 7.13.5 (window): --until bounds a batch at both ends, so one batch is measured on its own.
+test("AC 7.13.5 usage-ledger --until measures one batch window, not the cumulative one", () => {
+  const root = tmp();
+  writeTranscripts(root);
+  // Fixture: main messages at 10:00 and 10:30 (opus), one subagent message at 10:10 (sonnet). Window 10:05 to 10:20 holds only the subagent.
+  const l = buildLedger([root], { since: "2026-11-10T10:05:00Z", until: "2026-11-10T10:20:00Z" });
+  assert.equal(l.messages, 1);
+  assert.equal(l.byModel["claude-sonnet-5-5 | subagent"].turns, 1);
+  assert.equal(l.byModel["claude-opus-5-5 | main"], undefined);
+  const cli = spawnSync("node", [path.join(repo, "scripts", "automation", "usage-ledger.mjs"), "--root", root, "--since", "2026-11-10T10:05:00Z", "--until", "2026-11-10T10:20:00Z"], { encoding: "utf8" });
+  assert.equal(cli.status, 0, cli.stderr);
+  assert.match(cli.stdout, /Window: 2026-11-10T10:05:00Z to 2026-11-10T10:20:00Z/);
+  const bad = spawnSync("node", [path.join(repo, "scripts", "automation", "usage-ledger.mjs"), "--root", root, "--since", "not-a-date"], { encoding: "utf8" });
+  assert.equal(bad.status, 1);
+  assert.match(bad.stderr, /--since is not a date/);
 });
 
 test("AC usage-ledger CLI appends one issue line", () => {

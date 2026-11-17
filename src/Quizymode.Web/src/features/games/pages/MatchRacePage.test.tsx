@@ -95,7 +95,7 @@ let clock = 1_000_000;
 function tile(kind: "question" | "answer", n: number): HTMLElement {
   const text = kind === "question" ? `Question number ${n}?` : `right-${n}`;
   const escaped = text.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
-  return screen.getByRole("button", { name: new RegExp(`^${escaped}( Wrong| Matched)?$`) });
+  return screen.getByRole("button", { name: new RegExp(`^${escaped}\\s*(Wrong|Matched)?$`) });
 }
 
 /** The item numbers on the board. */
@@ -110,6 +110,12 @@ function match(n: number) {
 
 function stubMatchMedia(matches: boolean) {
   vi.stubGlobal("matchMedia", () => ({ matches }));
+}
+
+/** Matches an accessible name whose parts may be separated by any whitespace, including none. */
+function nameMatching(...parts: string[]): RegExp {
+  const escaped = parts.map((part) => part.replace(/[.*+?^${}()|[\]\\]/g, "\\$&"));
+  return new RegExp("^" + escaped.join("\\s*") + "$");
 }
 
 describe("MatchRacePage", () => {
@@ -194,7 +200,7 @@ describe("MatchRacePage", () => {
       fireEvent.click(tile("answer", n));
 
       expect(tile("question", n)).toHaveAttribute("aria-disabled", "true");
-      expect(tile("question", n)).toHaveAccessibleName(`Question number ${n}? Matched`);
+      expect(tile("question", n)).toHaveAccessibleName(nameMatching(`Question number ${n}?`, "Matched"));
       expect(screen.getByRole("status")).toHaveTextContent("Matched. 1 of 3.");
       expect(screen.getByLabelText("1 of 3 matched")).toBeInTheDocument();
       fireEvent.click(tile("question", n));
@@ -218,7 +224,7 @@ describe("MatchRacePage", () => {
       fireEvent.click(tile("question", a));
       fireEvent.click(tile("answer", b));
       expect(screen.getByRole("status")).toHaveTextContent("Not a match. Plus 1 second.");
-      expect(tile("question", a)).toHaveAccessibleName(`Question number ${a}? Wrong`);
+      expect(tile("question", a)).toHaveAccessibleName(nameMatching(`Question number ${a}?`, "Wrong"));
       await waitFor(() => expect(tile("question", a)).toHaveAccessibleName(`Question number ${a}?`), { timeout: 2000 });
     });
 

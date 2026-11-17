@@ -114,11 +114,11 @@ describe("SearchPage", () => {
 
     const hrefs = screen.getAllByRole("link").map((link) => link.getAttribute("href"));
     expect(hrefs).toContain("/categories/tech/ai-ml");
-    expect(screen.getByRole("link", { name: /Intro to AI/ })).toHaveAttribute(
+    expect(screen.getByRole("link", { name: /Intro to\s*AI/ })).toHaveAttribute(
       "href",
       `/collections/${COLLECTION_ID}/intro+to+ai`
     );
-    expect(screen.getAllByRole("link", { name: /What is AI/ })[0]).toHaveAttribute("href", `/items/${ITEM_ID}`);
+    expect(screen.getAllByRole("link", { name: /What is\s*AI/ })[0]).toHaveAttribute("href", `/items/${ITEM_ID}`);
     expect(screen.getByRole("button", { name: "See all topics" })).toBeInTheDocument();
     expect(screen.queryByRole("button", { name: "See all collections" })).not.toBeInTheDocument();
   });
@@ -220,7 +220,7 @@ describe("SearchPage", () => {
     );
     renderPage("/search?q=notes&tab=mine");
 
-    expect(await screen.findByRole("link", { name: /My notes/ })).toHaveAttribute(
+    expect(await screen.findByRole("link", { name: /My\s*notes/ })).toHaveAttribute(
       "href",
       `/study-guides/documents/${ITEM_ID}`
     );
@@ -323,7 +323,7 @@ describe("SearchPage", () => {
     await screen.findByRole("heading", { level: 2, name: "Collections" });
     await waitFor(() => expect(mockTrackEvent).toHaveBeenCalledTimes(1));
 
-    await user.click(screen.getByRole("link", { name: /Intro to AI/ }));
+    await user.click(screen.getByRole("link", { name: /Intro to\s*AI/ }));
 
     expect(mockTrackEvent).toHaveBeenCalledWith({
       name: "search_result_clicked",

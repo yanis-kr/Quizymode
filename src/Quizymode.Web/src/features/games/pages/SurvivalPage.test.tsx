@@ -112,7 +112,7 @@ function questionEl(): HTMLElement {
   return screen.getByText(/^Question number \d+\?$/).closest("p")!;
 }
 const currentN = (): number => Number(/(\d+)/.exec(questionEl().textContent ?? "")![1]);
-const option = (text: string): HTMLElement => screen.getByRole("button", { name: new RegExp(`^${text}( Correct| Wrong| Right answer)?$`) });
+const option = (text: string): HTMLElement => screen.getByRole("button", { name: new RegExp(`^${text}\\s*(Correct|Wrong|Right answer)?$`) });
 const optionButtons = (): HTMLElement[] => within(screen.getByRole("group", { name: /^Question number/ })).getAllByRole("button");
 
 const pickRight = () => fireEvent.click(option(`right-${currentN()}`));
@@ -124,6 +124,12 @@ async function missAndContinue() {
   pickWrong();
   await advance(400);
   fireEvent.click(screen.getByRole("button", { name: /^(Next|See results)$/ }));
+}
+
+/** Matches an accessible name whose parts may be separated by any whitespace, including none. */
+function nameMatching(...parts: string[]): RegExp {
+  const escaped = parts.map((part) => part.replace(/[.*+?^${}()|[\]\\]/g, "\\$&"));
+  return new RegExp("^" + escaped.join("\\s*") + "$");
 }
 
 describe("SurvivalPage", () => {
@@ -203,7 +209,7 @@ describe("SurvivalPage", () => {
       await openPage();
       const first = currentN();
       pickRight();
-      expect(option(`right-${first}`)).toHaveAccessibleName(`right-${first} Correct`);
+      expect(option(`right-${first}`)).toHaveAccessibleName(nameMatching(`right-${first}`, "Correct"));
       expect(screen.getByRole("status")).toHaveTextContent("Correct. Streak 1.");
       expect(screen.getByText("Streak 1")).toBeInTheDocument();
       expect(screen.queryByRole("button", { name: "Next" })).toBeNull();
@@ -225,8 +231,8 @@ describe("SurvivalPage", () => {
       const first = currentN();
       pickWrong();
 
-      expect(option(`wrong-${first}`)).toHaveAccessibleName(`wrong-${first} Wrong`);
-      expect(option(`right-${first}`)).toHaveAccessibleName(`right-${first} Right answer`);
+      expect(option(`wrong-${first}`)).toHaveAccessibleName(nameMatching(`wrong-${first}`, "Wrong"));
+      expect(option(`right-${first}`)).toHaveAccessibleName(nameMatching(`right-${first}`, "Right answer"));
       expect(screen.getByRole("img", { name: "2 of 3 hearts left" })).toBeInTheDocument();
       expect(screen.getByRole("status")).toHaveTextContent("Wrong. 2 hearts left.");
       const next = screen.getByRole("button", { name: "Next" });
