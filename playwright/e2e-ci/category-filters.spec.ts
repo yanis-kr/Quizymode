@@ -35,6 +35,8 @@ async function stubApi(page: Page): Promise<void> {
     if (pathname.endsWith("/api/items")) {
       return json({ items: [item], totalCount: 1, page: 1, pageSize: 20, totalPages: 1 });
     }
+    // The DevTest identity signs the page in, so the page-size hook reads settings; an empty map keeps the default.
+    if (pathname.endsWith("/api/users/settings")) return json({ settings: {} });
     if (pathname.endsWith("/api/keywords/item-tags")) return json({ names: [] });
     if (pathname.endsWith("/api/featured")) return json({ sets: [], collections: [] });
     if (pathname.endsWith("/api/games/roster")) return json({ items: [], scopes: [] });
@@ -43,7 +45,7 @@ async function stubApi(page: Page): Promise<void> {
     if (/^\/api\/ratings\/[^/]+$/.test(pathname)) return json({ stats: { count: 0, averageStars: null, itemId: null } });
     if (pathname.endsWith("/api/comments")) return json({ comments: [], totalCount: 0 });
     // Unknown endpoints get every list field empty so no page hook reads undefined.
-    return json({ keywords: [], names: [], sets: [], collections: [], items: [], categories: [], totalCount: 0, page: 1, pageSize: 20, totalPages: 0 });
+    return json({ settings: {}, keywords: [], names: [], sets: [], collections: [], items: [], categories: [], totalCount: 0, page: 1, pageSize: 20, totalPages: 0 });
   });
 }
 
