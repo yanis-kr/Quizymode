@@ -119,7 +119,7 @@ To move through the backlog faster, related small/medium issues are bundled into
 - Validate each sub-issue locally and capture evidence per sub-issue (see § Issue Closure Evidence), but hold that evidence locally or in the PR description — do not attach it to the sub-issues yet, since they are not done until production confirms them.
 - Bundles execute through `qm-bundle-ship` or `qm-bundle-autopilot` with two path-disjoint lanes, integrator-only version/AC/OpenAPI edits, filtered per-issue tests, and full gates once per release.
 - When a release batch or bundle is active, a session that is not the integrator pushes issue branches only. It does not open a PR to main, bump the version, or edit docs/AC.md or the OpenAPI file; it writes AC text to .qm/ac-fragments/<issue>.md. The integrator assigns AC ids and the single version at integration and checks `gh pr list --base main --state open` before opening the release PR.
-- Open exactly one PR for the whole epic. Do not merge or deploy without explicit user go-ahead, same as any other change.
+- Open exactly one PR for the whole epic. Do not merge or deploy without explicit user go-ahead, same as any other change, unless an approved bundle or the standing envelope authorises it.
 - After merge and production deploy: verify each sub-issue in prod, then attach the evidence to each individual sub-issue and close it, then close the epic once every sub-issue is closed.
 - If production reveals a defect in scope, file a **new** issue referencing the epic by number. Do not reopen a closed sub-issue to absorb a post-deploy regression.
 - Grouping principle for new epics: prefer bundling by shared functional area/feature (e.g. "same report family," "same screen") over hitting a specific issue count — 2–3 medium issues or 5–7 small ones are both fine as long as they're genuinely related.
@@ -209,7 +209,7 @@ These point at the local Postgres instance. The port may differ per machine and 
 - Never print secret values. Redact passwords, tokens, and connection strings from all output.
 - Treat `QM_AGENT_SUPADB_CS` as production-sensitive. Default to read-only queries unless the user explicitly authorizes writes.
 - Prefer local repro over production whenever feasible.
-- Do not execute writes against production without explicit user confirmation.
+- Do not execute writes against production without explicit user confirmation, unless the bundle's authorization block or the standing envelope grants the test-data writes it names.
 - Store database snapshots, audits, and generated SQL outside the repo.
 
 ## What Agents Should Optimize For

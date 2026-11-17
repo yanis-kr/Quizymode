@@ -2613,3 +2613,17 @@ An unattended bundle run asks the `qm-lead` agent, not the owner, when a questio
 - **AC 7.17.5** [Dev tooling] [verify: unit] (#759) `bundle.mjs precedent find` returns a stored precedent by issue, by area and as global, and no precedent for another issue or area. (tests: `lead-standing.test.mjs`)
 - **AC 7.17.6** [Dev tooling] [verify: unit] (#759) `.claude/agents/qm-lead.md` exists, has no Edit or Write tool and runs on opus, and the agent name it replaces is referenced in no tracked file. (tests: `lead-standing.test.mjs`, `model-policy.test.mjs`)
 - **AC 7.17.7** [Dev tooling] [verify: unit] (#759) After three `proceed-flagged` decisions on one issue, the next decision on that issue parks it with reason `needs-refinement`. (tests: `lead-standing.test.mjs`)
+
+### AC 7.18 Autopilot as refine, lead approval and ship (#760)
+
+A bundle run refines, approves under the standing envelope and ships with no question to the owner. Hooks and the run file apply only while a live run owns the session.
+
+- **AC 7.18.1** [Dev tooling] [verify: unit] (#760) With `.qm/autopilot/run.json` naming the session and a non-terminal phase, the PreToolUse hook denies `AskUserQuestion`; for another session, another tool, a terminal phase or no run file it allows the call.
+- **AC 7.18.2** [Dev tooling] [verify: unit] (#760) The Stop hook blocks while the run phase is not terminal, allows the stop at a terminal phase, and after three consecutive blocks with an unchanged bundle state allows it and marks the run stalled; a changed state resets the count.
+- **AC 7.18.3** [Dev tooling] [verify: unit] (#760) Both hooks produce no output when there is no run file, and the hook's own work finishes in under 200 ms.
+- **AC 7.18.4** [Dev tooling] [verify: unit] (#760) The autopilot skill contains none of the phrases "ask once", "for the user to confirm", "explicit user yes", and no heading starting with Lanes, Integrator, Release or Model routing.
+- **AC 7.18.5** [Dev tooling] [verify: unit] (#760) `bundle.mjs permissions` prints valid JSON whose `allow` list equals the `allowed-tools` entries of the ship skill, and writes no settings file.
+- **AC 7.18.6** [Dev tooling] [verify: unit] (#760) `scripts/automation/ask-audit.mjs` counts the AskUserQuestion calls and turn-ending questions of a fixture transcript.
+- **AC 7.18.7** [Dev tooling] [verify: unit] (#760) `bundle.mjs approve <id> --standing` with no approved envelope exits 2 with one instruction line naming how to create the envelope, and sets the run phase to blocked_terminal.
+- **AC 7.18.8** [Dev tooling] [verify: unit] (#760) The no-envelope stop in AC 7.18.7 changes only the run file of the bundle named in the command; another bundle's run file keeps its bundle id and phase.
+- **AC 7.18.9** [Dev tooling] [verify: unit] (#760) The committed `.claude/settings.json` runs both autopilot hooks through `"$CLAUDE_PROJECT_DIR/scripts/bundle/autopilot-hook.mjs"`, so they work from any working directory.
