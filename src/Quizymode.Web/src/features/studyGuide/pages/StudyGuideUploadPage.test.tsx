@@ -26,6 +26,15 @@ vi.mock("@/api/studyGuideDocuments", () => ({
   },
 }));
 
+vi.mock("../components/PhotoOcrPanel", async () => {
+  // The panel reads photos in a worker; these tests only need it to hand back recognized text.
+  const React = await import("react");
+  return {
+    default: ({ onRecognized }: { onRecognized: (text: string) => void }) =>
+      React.createElement("button", { type: "button", onClick: () => onRecognized("Recognized words") }, "Fake recognize"),
+  };
+});
+
 function DocumentRouteProbe() {
   const location = useLocation();
   return (
@@ -354,6 +363,31 @@ describe("StudyGuideUploadPage", () => {
     fireEvent.click(screen.getByRole("button", { name: /choose sections and review first/i }));
 
     expect(await screen.findByText(/looks like a scan/i)).toBeInTheDocument();
+  });
+
+  it("offers Photos or scan and submits the recognized text as pasted text (AC 6.6.43, AC 6.6.48)", async () => {
+    vi.mocked(studyGuideDocumentsApi.create).mockResolvedValue({
+      id: "doc-3",
+      isDuplicate: false,
+    } as Awaited<ReturnType<typeof studyGuideDocumentsApi.create>>);
+
+    renderPage();
+    fireEvent.click(await screen.findByRole("tab", { name: /photos or scan/i }));
+    expect(screen.getByRole("tab", { name: /photos or scan/i })).toHaveAttribute("aria-selected", "true");
+
+    fireEvent.click(screen.getByRole("button", { name: /fake recognize/i }));
+    const review = screen.getByLabelText(/recognized text \(review and correct before you submit\)/i);
+    expect(review).toHaveValue("Recognized words");
+    fireEvent.change(review, { target: { value: "Recognized words, corrected" } });
+
+    await fillTopic();
+    fireEvent.click(screen.getByRole("button", { name: /choose sections and review first/i }));
+
+    await waitFor(() =>
+      expect(studyGuideDocumentsApi.create).toHaveBeenCalledWith(
+        expect.objectContaining({ file: null, text: "Recognized words, corrected" })
+      )
+    );
   });
 
   it("shows the retired-upload notice above the normal form for ?id= links", async () => {
