@@ -37,7 +37,7 @@ import { StarIcon as StarIconSolid } from "@heroicons/react/24/solid";
 import type { CollectionRatingResponse } from "@/types/api";
 import { getCategoryScopeModeConfig } from "@/features/categories/utils/categoryScopeMode";
 import { getStudyScopeKeywords, parseSizeParam } from "@/features/items/utils/studyScopeParams";
-import { buildGamePath } from "@/features/games/gameScope";
+import { buildGamePath, gameScopeSearch } from "@/features/games/gameScope";
 import { QuizCompletionView } from "@/features/items/quiz/QuizCompletionView";
 import { useStudyHotkeys } from "@/components/study/useStudyHotkeys";
 import { useQuestionPictureStatuses } from "@/components/study/pictureGate";
@@ -1356,6 +1356,12 @@ const QuizModePageContent = ({ resumeRequested = false, initialNotice = null }: 
     : null;
 
   // The set just played: its collection, else its category scope, else the hub (#675, AC 3.35.3).
+  // Carry the same scope the quiz used: nav (when the quiz URL had it) and keywords (#768).
+  const gamesSearch = gameScopeSearch({
+    hasExplicitNav: hasCategoryScope && hasExplicitNavParam,
+    navigationKeywords,
+    keywords,
+  });
   const gamesPath = collectionId
     ? buildGamePath({ kind: "collection", collectionId, collectionName: collectionInfo?.name })
     : category
@@ -1364,7 +1370,7 @@ const QuizModePageContent = ({ resumeRequested = false, initialNotice = null }: 
           category,
           navigationKeywords,
           filterKeywords,
-          search: filterKeywords.length > 0 ? `?keywords=${filterKeywords.join(",")}` : "",
+          search: gamesSearch,
         })
       : "/games";
 
