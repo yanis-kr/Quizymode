@@ -5,7 +5,7 @@ Two repo skills ship several GitHub issues in one release, driven from the Claud
 - `/qm-bundle-refine` plans a bundle with you. It is the only phase that asks questions. It writes a manifest and records your approval of its exact SHA-256.
 - `/qm-bundle-ship <id>` executes the approved manifest without asking anything. It builds each issue on its own branch, merges them into one release branch, opens one PR to `main`, and (in the default `auto-merge-deploy` mode) merges it after all gates pass. That merge triggers `CI` on `main` and then `Deploy`: one production deploy for the whole bundle.
 
-Files: `.claude/skills/qm-bundle-refine/`, `.claude/skills/qm-bundle-ship/` (helper `scripts/bundle.mjs`, details in `references/playbook.md`), `.claude/agents/qm-decision-maker.md`. Bundle data lives in `.qm/bundles/<id>/` (gitignored): `manifest.json`, `approval.json`, `state.json`, `summary.md`.
+Files: `.claude/skills/qm-bundle-refine/`, `.claude/skills/qm-bundle-ship/` (helper `scripts/bundle.mjs`, details in `references/playbook.md`), `.claude/agents/qm-lead.md`. Bundle data lives in `.qm/bundles/<id>/` (gitignored): `manifest.json`, `approval.json`, `state.json`, `summary.md`.
 
 ## One-time host setup
 

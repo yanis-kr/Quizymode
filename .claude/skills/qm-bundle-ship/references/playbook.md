@@ -36,8 +36,8 @@ From `state-init`/`verify` output:
 
 - Issue closed since refinement: mark `skipped_already_done` with a note (check the closing PR); do not reopen.
 - `gh` could not read an issue (`issues.unreadable`, `stopForDrift: true`): `environmental` blocker, phase `blocked_terminal`; without GitHub access nothing can ship.
-- Issue body changed (`issues.changed`): ask `qm-decision-maker` whether the approved ACs still match. `proceed` keeps the approved ACs exactly; `defer` defers the issue. The new text never expands scope.
-- `origin/main` moved: with `stop-on-any`, phase `blocked_terminal` (kind `source-drift`). With `proceed-unless-overlap`, base the release branch on current `origin/main`; for each issue listed in `drift.overlapping`, ask `qm-decision-maker` whether the approved plan still holds, then follow its outcome.
+- Issue body changed (`issues.changed`): ask `qm-lead` whether the approved ACs still match. `proceed` keeps the approved ACs exactly; `park` parks the issue; `proceed-flagged` keeps them and flags the decision for review. The new text never expands scope.
+- `origin/main` moved: with `stop-on-any`, phase `blocked_terminal` (kind `source-drift`). With `proceed-unless-overlap`, base the release branch on current `origin/main`; for each issue listed in `drift.overlapping`, ask `qm-lead` whether the approved plan still holds, then follow its outcome.
 
 ## Per-issue loop
 

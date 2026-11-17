@@ -121,7 +121,7 @@ test("AC packet models: haiku by default, sonnet and opus only on a scored crite
     return Object.fromEntries([...fs.readFileSync(file, "utf8").matchAll(/^- (\S+): (\w+)\. Why:/gm)].map((m) => [m[1], m[2]]));
   };
   // The manifest carries no ambiguity, novelty or reasoning, so they are unknown and assessed by sonnet.
-  assert.deepEqual(roles({ size: "s" }), { architect: "sonnet", reviewer: "sonnet", "qm-decision-maker": "sonnet", coder: "sonnet", tester: "sonnet", "ux-designer": "sonnet", reporter: "haiku" });
+  assert.deepEqual(roles({ size: "s" }), { architect: "sonnet", reviewer: "sonnet", "qm-lead": "opus", coder: "sonnet", tester: "sonnet", "ux-designer": "sonnet", reporter: "haiku" });
   assert.equal(roles({ size: "s", risk: "high" }).architect, "opus");
   assert.equal(roles({ size: "s", risk: "high" }).coder, "sonnet");
   assert.equal(roles({ size: "s", migration: true }).coder, "opus");
@@ -276,7 +276,7 @@ test("AC 7.13.4 planning roles may finish done with empty acEvidence only under 
     return spawnSync("node", [BUNDLE, "handback-save", "test-bundle", "--issue", "21", "--role", role, "--file", f, "--handbacks-dir", hb, "--repo-root", repoDir], { encoding: "utf8" });
   };
   // Positive: a read-only role with no files changed, a deliverable and no failing command.
-  for (const role of ["architect", "reviewer", "ux-designer", "qm-decision-maker"]) assert.equal(check(plan, role).status, 0, role);
+  for (const role of ["architect", "reviewer", "ux-designer", "qm-lead"]) assert.equal(check(plan, role).status, 0, role);
   // Negative: no role given keeps the strict rule.
   const strict = check(plan);
   assert.equal(strict.status, 2);

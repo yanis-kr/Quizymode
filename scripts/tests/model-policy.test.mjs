@@ -26,8 +26,9 @@ describe("routing matrix (AC 7.13.3)", () => {
     }
   });
 
-  test("the decision-maker is never below sonnet", () => {
-    assert.equal(model("qm-decision-maker", SIMPLE), "sonnet");
+  test("the qm-lead is always opus, whatever the facts (AC 7.17.6)", () => {
+    assert.equal(model("qm-lead", SIMPLE), "opus");
+    assert.equal(model("qm-lead", {}), "opus");
   });
 
   test("medium complexity escalates to sonnet, and the reporter stays haiku", () => {
@@ -260,8 +261,8 @@ describe("packet to adapter dispatch (AC 7.13.3)", () => {
 });
 
 describe("direct invocation baselines (AC 7.13.3)", () => {
-  test("each agent file's model equals its baseline, and no agent defaults to opus", () => {
-    for (const role of ROLES.filter((r) => r !== "qm-decision-maker")) {
+  test("each agent file's model equals its baseline, and no agent but qm-lead defaults to opus", () => {
+    for (const role of ROLES.filter((r) => r !== "qm-lead")) {
       const file = path.join(repo, ".claude", "agents", `${role}.md`);
       const front = fs.readFileSync(file, "utf8").split("\n").slice(0, 10).join("\n");
       const declared = /^model:\s*(\w+)/m.exec(front)?.[1];
@@ -270,9 +271,9 @@ describe("direct invocation baselines (AC 7.13.3)", () => {
     }
   });
 
-  test("the qm-decision-maker agent file defaults to sonnet, never opus", () => {
-    const front = fs.readFileSync(path.join(repo, ".claude", "agents", "qm-decision-maker.md"), "utf8").split("\n").slice(0, 10).join("\n");
-    assert.equal(/^model:\s*(\w+)/m.exec(front)?.[1], "sonnet");
+  test("the qm-lead agent file is opus, the only agent that defaults to it (AC 7.17.6)", () => {
+    const front = fs.readFileSync(path.join(repo, ".claude", "agents", "qm-lead.md"), "utf8").split("\n").slice(0, 10).join("\n");
+    assert.equal(/^model:\s*(\w+)/m.exec(front)?.[1], "opus");
   });
 
   test("the adapter's baselines come from the same policy and are never opus", () => {
