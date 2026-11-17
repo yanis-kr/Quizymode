@@ -33,6 +33,8 @@ import { CollectionExportControls } from "../components/CollectionExportControls
 import { CollectionPrintView } from "../components/CollectionPrintView";
 import { PlanForTestButton } from "@/features/studyPlans/PlanForTestButton";
 import { filterCollectionItems } from "../utils/collectionItemSearch";
+import { withQuizSize } from "@/utils/scopeStudyHref";
+import { SEO } from "@/components/SEO";
 
 const CollectionDetailPage = () => {
   const { id } = useParams<{ id: string }>();
@@ -237,7 +239,8 @@ const CollectionDetailPage = () => {
           trailForChildren={trailForChildren}
         />
       )}
-      {topicMembers && <TopicMembersSection topics={topicMembers} />}
+      {/* #714 AC6: the tab title is the collection name. */}
+      {collectionData && <SEO title={collectionData.name} />}
       {id && collectionData && (
         <ScopeLandingHeader
           variant="collection"
@@ -247,11 +250,16 @@ const CollectionDetailPage = () => {
           knownCount={knownCount ?? undefined}
           countState="ready"
           games={allItems.filter(isGameEligible).length >= GAME_MIN_ITEMS ? "available" : "unavailable"}
-          quizHref={() => buildCollectionStudyPath("quiz", id, collectionData.name)}
+          quizHref={(size) => {
+            const href = buildCollectionStudyPath("quiz", id, collectionData.name);
+            return size === undefined ? href : withQuizSize(href, size);
+          }}
           flashcardsHref={buildCollectionStudyPath("explore", id, collectionData.name)}
           gamesHref={buildCollectionStudyPath("games", id, collectionData.name)}
         />
       )}
+      {/* #714: the topic members sit below the title and the play buttons (AC5). */}
+      {topicMembers && <TopicMembersSection topics={topicMembers} />}
       {allItems.length > 0 && (
         <ScopeSecondaryBar
           scopeType="collection"
