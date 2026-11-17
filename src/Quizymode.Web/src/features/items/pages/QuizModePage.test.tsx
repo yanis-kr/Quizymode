@@ -23,6 +23,7 @@ const { mockTrackEventOnce, mockTrackEventDeferredOnce, mockFlushDeferredAnalyti
 }));
 
 vi.mock("@/features/analytics/analyticsEvents", () => ({
+  trackEvent: vi.fn(),
   trackEventOnce: mockTrackEventOnce,
   trackEventDeferredOnce: mockTrackEventDeferredOnce,
   flushDeferredAnalyticsEvents: mockFlushDeferredAnalyticsEvents,
@@ -365,6 +366,43 @@ describe("QuizModePage", () => {
     expect(telemetry[2].runId).not.toBe(telemetry[0].runId);
 
     window.removeEventListener(QUIZ_COMPLETED_EVENT, onComplete);
+  });
+
+  it("AC 3.6.33 Next 5 draws unseen questions from the same scope and keeps the new run on screen (#711)", async () => {
+    const user = userEvent.setup({ delay: null });
+    const makeItem = (n: number) => ({
+      ...item,
+      id: `item-${n}`,
+      question: `Question ${n}`,
+      correctAnswer: "4",
+      incorrectAnswers: ["1", "2", "3"],
+    });
+    const firstFive = [1, 2, 3, 4, 5].map(makeItem);
+    const pool = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map(makeItem);
+    vi.mocked(itemsApi.getRandom)
+      .mockResolvedValueOnce({ items: firstFive } as Awaited<ReturnType<typeof itemsApi.getRandom>>)
+      .mockResolvedValue({ items: pool } as Awaited<ReturnType<typeof itemsApi.getRandom>>);
+
+    renderPage("/quiz/exams?size=5");
+    expect(await screen.findByText("Question 1")).toBeInTheDocument();
+
+    for (let n = 1; n <= 5; n += 1) {
+      await user.click(screen.getByRole("button", { name: /4/i }));
+      if (n < 5) {
+        await user.click(screen.getByRole("button", { name: /^next$/i }));
+        expect(await screen.findByText(`Question ${n + 1}`)).toBeInTheDocument();
+      }
+    }
+    await user.click(screen.getByRole("button", { name: /see my score/i }));
+    await user.click(screen.getByRole("button", { name: "Next 5 questions" }));
+
+    expect(await screen.findByText("Question 6")).toBeInTheDocument();
+    // The new run must survive the roster check: the page must not replace it with the first five again.
+    await act(async () => {});
+    expect(screen.getByText("Question 6")).toBeInTheDocument();
+    expect(screen.queryByText(/no longer available/i)).not.toBeInTheDocument();
+    expect(vi.mocked(itemsApi.getRandom).mock.calls[1]).toEqual(["exams", 50, undefined, { navigationKeywords: undefined }]);
+    expect(screen.getByTestId("location")).toHaveTextContent("item-6");
   });
 
   describe("answer feedback card (#648)", () => {

@@ -48,7 +48,10 @@ import { TestSetupCard } from "@/features/items/quiz/test/TestSetupCard";
 import { useTestCountdown } from "@/features/items/quiz/test/useTestCountdown";
 import { StudyHotkeysDialog } from "@/components/study/StudyHotkeysDialog";
 import { QUIZ_SHORTCUTS, TEST_SHORTCUTS } from "@/components/study/studyShortcuts";
-import { flushDeferredAnalyticsEvents } from "@/features/analytics/analyticsEvents";
+import { flushDeferredAnalyticsEvents, trackEvent } from "@/features/analytics/analyticsEvents";
+import type { ItemResponse } from "@/types/api";
+import { KeepGoing } from "@/features/learningLoop/KeepGoing";
+
 import { buildRunShare } from "@/features/items/quiz/resultShare";
 import {
   quizEventContext,
@@ -520,11 +523,16 @@ const QuizModePageContent = ({ resumeRequested = false, initialNotice = null }: 
     () => (mode === "test" ? playableItems.slice(0, TEST_MAX_QUESTIONS) : playableItems),
     [mode, playableItems],
   );
+  // Items drawn by "Next 5 / Next 10" (#711) are kept here so the new run can resolve them.
+  const [roundItems, setRoundItems] = useState<ItemResponse[]>([]);
+  // Set when a Next draw found no unseen question for this run: the run id and the distinct count found (#711).
+  const [roundExhausted, setRoundExhausted] = useState<{ runId: string; total: number } | null>(null);
+  const nextRoundPendingRef = useRef(false);
   const items = useMemo(() => {
     if (!run || !sameQuizScope(run.scope, runScope) || run.mode !== mode) return availableItems;
-    const byId = new Map(availableItems.map((item) => [item.id, item]));
+    const byId = new Map([...availableItems, ...roundItems].map((item) => [item.id, item]));
     return run.itemIds.map((id) => byId.get(id)).filter((item): item is (typeof availableItems)[number] => Boolean(item));
-  }, [availableItems, mode, run, runScope]);
+  }, [availableItems, mode, run, runScope, roundItems]);
 
   // Wait for the random roster (and, for a category link, the category name it depends on) so a
   // one-item run is never created and then replaced (#278). A categories error stops the wait.
@@ -605,7 +613,9 @@ const QuizModePageContent = ({ resumeRequested = false, initialNotice = null }: 
     if (pendingSwitchRef.current !== null && pendingSwitchRef.current !== mode) return;
     const roster = uniqueItemIds(availableItems);
     if (run && run.identityKey === identityKey && sameQuizScope(run.scope, runScope) && run.mode === mode) {
-      const allRunItemsStillAvailable = run.itemIds.every((id) => roster.includes(id));
+      // Questions drawn by Next 5 / Next 10 (#711) are valid for the run they start, so they count as available too.
+      const knownIds = new Set([...roster, ...roundItems.map((item) => item.id)]);
+      const allRunItemsStillAvailable = run.itemIds.every((id) => knownIds.has(id));
       if (allRunItemsStillAvailable || summarizeQuizRun(run).isComplete) return;
       // The API roster is authoritative; synchronously replace a now-invalid active run.
       // eslint-disable-next-line react-hooks/set-state-in-effect
@@ -644,7 +654,7 @@ const QuizModePageContent = ({ resumeRequested = false, initialNotice = null }: 
 
     if (pendingSwitchRef.current === mode) pendingSwitchRef.current = null;
     setRun(createQuizRun(runScope, roster, identityKey, mode));
-  }, [availableItems, categoriesData?.categories, categoriesError, categorySlug, collectionId, identityKey, isLoadingItems, mode, run, runScope]);
+  }, [availableItems, categoriesData?.categories, categoriesError, categorySlug, collectionId, identityKey, isLoadingItems, mode, roundItems, run, runScope]);
 
   // Persist the validated run for URL navigation, item details, comments, and reload restoration.
   useEffect(() => {
@@ -964,8 +974,59 @@ const QuizModePageContent = ({ resumeRequested = false, initialNotice = null }: 
     navigateToItem(target.id, replace);
   };
 
+  /**
+   * Next 5 / Next 10 (#711): a new practice run of questions the run just played does not include, from the same
+   * category scope. The pool is a larger random draw so the run can skip the played ones. When none are left the
+   * completion screen says so and offers Start over.
+   */
+  const NEXT_ROUND_POOL = 50;
+  // The full set path (category plus navigation keywords) that analytics and Keep going use.
+  const scopeKey = categorySlug ? [categorySlug, ...navigationKeywords].join("/") : "";
+  const handleNextRound = async () => {
+    if (!run || !category || nextRoundPendingRef.current) return;
+    const size = run.itemIds.length >= 10 ? 10 : 5;
+    const played = new Set(run.itemIds);
+    const runId = run.runId;
+    nextRoundPendingRef.current = true;
+    let pool: ItemResponse[];
+    try {
+      const response = await itemsApi.getRandom(
+        category,
+        NEXT_ROUND_POOL,
+        filterKeywords.length > 0 ? filterKeywords : undefined,
+        { navigationKeywords: hasCategoryScope && navigationKeywords.length > 0 ? navigationKeywords : undefined }
+      );
+      pool = response.items;
+    } catch {
+      // A failed draw is not an exhausted set: keep the completion screen so the learner can try again.
+      nextRoundPendingRef.current = false;
+      setRunRestartNotice("Could not load more questions. Try Next again.");
+      return;
+    }
+    nextRoundPendingRef.current = false;
+    const seen = new Set<string>();
+    const distinct = pool.filter((item) => {
+      if (!item.id || seen.has(item.id) || !isQuizPlayable(item)) return false;
+      seen.add(item.id);
+      return true;
+    });
+    const picked = distinct.filter((item) => !played.has(item.id)).slice(0, size);
+    trackEvent({ name: "next_step_clicked", runId, position: 1, contextType: "quiz", contextId: `next:same:${scopeKey || category}` });
+    if (picked.length === 0) {
+      setRoundExhausted({ runId, total: distinct.length });
+      return;
+    }
+    setRoundItems((current) => [...current, ...picked]);
+    const next = createQuizRun(run.scope, picked.map((item) => item.id), identityKey, run.mode);
+    setRun(next);
+    setRunRestartNotice(null);
+    setCurrentIndex(0);
+    navigateToItem(picked[0].id, true);
+  };
+
   const handlePlayAgain = () => {
     if (!run) return;
+    setRoundExhausted(null);
     const replay = createQuizRun(run.scope, run.itemIds, identityKey, run.mode);
     // AC 3.18.10: a Test returns to the setup card with the same time limit.
     setCarriedLimitSec(run.mode === "test" ? run.timeLimitSec : null);
@@ -1320,6 +1381,32 @@ const QuizModePageContent = ({ resumeRequested = false, initialNotice = null }: 
           onReviewAll={() => setRun((current) => current ? reduceQuizRun(current, { type: "review-all" }) : current)}
           onBackToResults={() => setRun((current) => current ? reduceQuizRun(current, { type: "show-summary" }) : current)}
           onPlayAgain={handlePlayAgain}
+          nextRound={
+            category && run.mode === "practice" && run.itemIds.length >= 5
+              ? {
+                  size: run.itemIds.length >= 10 ? 10 : 5,
+                  exhausted: roundExhausted?.runId === run.runId,
+                  total: roundExhausted?.runId === run.runId ? roundExhausted.total : 0,
+                  onNext: () => void handleNextRound(),
+                }
+              : null
+          }
+          keepGoing={
+            !collectionId && categorySlug ? (
+              <KeepGoing
+                scope={scopeKey}
+                onSelect={(position, id) =>
+                  trackEvent({
+                    name: "next_step_clicked",
+                    runId: run.runId,
+                    position,
+                    contextType: "quiz",
+                    contextId: id.startsWith("pace:") ? `next:pace:${scopeKey}` : `next:related:${scopeKey}`,
+                  })
+                }
+              />
+            ) : null
+          }
           share={
             run.view === "summary"
               ? buildRunShare({
