@@ -7,9 +7,12 @@ from pathlib import Path
 SCRIPTS = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(SCRIPTS))
 
+import json  # noqa: E402
+
 from lint_seed_source import (  # noqa: E402
     hard_violations,
     near_duplicates,
+    select_changed_items,
     soft_violations,
     violation_key,
 )
@@ -81,6 +84,39 @@ class SoftRuleTests(unittest.TestCase):
     def test_violation_key_is_item_and_rule(self) -> None:
         item = make_item()
         self.assertEqual(violation_key(item, "S3-short-explanation"), f"{item.item_id}|S3-short-explanation")
+
+
+class ChangedItemTests(unittest.TestCase):
+    """An edited file must not drag its untouched neighbours (with existing hard violations) into the check."""
+
+    def test_only_the_edited_item_is_checked(self) -> None:
+        clean_id = "00000000-0000-0000-0000-0000000000a1"
+        edited_id = "00000000-0000-0000-0000-0000000000a2"
+        bad_neighbour = {"itemId": clean_id, "question": "Old?", "correctAnswer": "x", "incorrectAnswers": ["x"], "explanation": "UPD260101 leftover marker text"}
+        base = [bad_neighbour, {"itemId": edited_id, "question": "Before?", "correctAnswer": "a", "incorrectAnswers": ["b"], "explanation": "Original explanation text here."}]
+        head = [bad_neighbour, {"itemId": edited_id, "question": "After?", "correctAnswer": "a", "incorrectAnswers": ["b"], "explanation": "Edited explanation text here."}]
+        path = SCRIPTS.parent / "data" / "seed-source" / "items" / "exams" / "exams.test.fixture.json"
+        items = [
+            make_item(item_id=clean_id, path=path, question="Old?", correct_answer="x", incorrect_answers=["x"], explanation="UPD260101 leftover marker text"),
+            make_item(item_id=edited_id, path=path, question="After?", correct_answer="a", incorrect_answers=["b"], explanation="Edited explanation text here."),
+        ]
+        rel = items[0].path.resolve().relative_to(SCRIPTS.parent).as_posix()
+        selected = select_changed_items(
+            items,
+            {rel},
+            base_text=lambda _rel: json.dumps(base),
+            head_text=lambda _rel: json.dumps(head),
+        )
+        self.assertEqual([i.item_id for i in selected], [edited_id])
+
+    def test_new_item_in_changed_file_is_checked(self) -> None:
+        path = SCRIPTS.parent / "data" / "seed-source" / "items" / "exams" / "exams.test.fixture.json"
+        new_id = "00000000-0000-0000-0000-0000000000a3"
+        item = make_item(item_id=new_id, path=path)
+        rel = item.path.resolve().relative_to(SCRIPTS.parent).as_posix()
+        head = [{"itemId": new_id, "question": "New?", "correctAnswer": "a", "incorrectAnswers": ["b"]}]
+        selected = select_changed_items([item], {rel}, base_text=lambda _rel: None, head_text=lambda _rel: json.dumps(head))
+        self.assertEqual([i.item_id for i in selected], [new_id])
 
 
 class NearDuplicateTests(unittest.TestCase):

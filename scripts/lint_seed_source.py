@@ -14,7 +14,7 @@ import sys
 import time
 from collections import Counter
 from pathlib import Path
-from typing import Iterable
+from typing import Callable, Iterable
 
 from seed_source_common import REGISTRY_ROOT, ROOT, SourceItem, load_source_items
 
@@ -124,6 +124,46 @@ def item_relative_path(item: SourceItem) -> str:
     return item.path.resolve().relative_to(ROOT).as_posix()
 
 
+def raw_items_by_id(text: str) -> dict[str, str]:
+    """itemId -> canonical JSON of the raw item, so an edit can be told apart from an untouched neighbour."""
+    return {
+        str(raw.get("itemId", "")).strip(): json.dumps(raw, sort_keys=True, ensure_ascii=False)
+        for raw in json.loads(text)
+    }
+
+
+def git_show(base: str, rel: str) -> str | None:
+    try:
+        return subprocess.run(
+            ["git", "show", f"{base}:{rel}"], cwd=ROOT, capture_output=True, text=True, check=True,
+        ).stdout
+    except (subprocess.CalledProcessError, FileNotFoundError):
+        return None
+
+
+def select_changed_items(
+    items: list[SourceItem],
+    changed_paths: set[str],
+    base_text: "Callable[[str], str | None]",
+    head_text: "Callable[[str], str]",
+) -> list[SourceItem]:
+    """Items in a changed file whose content differs from the base, or that are new. Untouched items are skipped."""
+    base_maps: dict[str, dict[str, str]] = {}
+    head_maps: dict[str, dict[str, str]] = {}
+    selected: list[SourceItem] = []
+    for item in items:
+        rel = item_relative_path(item)
+        if rel not in changed_paths:
+            continue
+        if rel not in head_maps:
+            head_maps[rel] = raw_items_by_id(head_text(rel))
+            base = base_text(rel)
+            base_maps[rel] = raw_items_by_id(base) if base else {}
+        if base_maps[rel].get(item.item_id) != head_maps[rel].get(item.item_id):
+            selected.append(item)
+    return selected
+
+
 def run(args: argparse.Namespace) -> int:
     started = time.monotonic()
     items = load_source_items()
@@ -147,7 +187,12 @@ def run(args: argparse.Namespace) -> int:
         if changed is None:
             print(f"WARNING: git diff against {args.base} failed; checking every item.", file=sys.stderr)
         else:
-            checked = [i for i in items if item_relative_path(i) in changed]
+            checked = select_changed_items(
+                items,
+                changed,
+                lambda rel: git_show(args.base, rel),
+                lambda rel: (ROOT / rel).read_text(encoding="utf-8"),
+            )
 
     hard = [(i, r) for i in checked for r in hard_violations(i)]
     soft_new = [
