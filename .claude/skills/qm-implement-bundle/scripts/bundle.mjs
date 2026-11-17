@@ -466,14 +466,28 @@ function writePacket(p) {
   fs.writeFileSync(file, renderPacket(p), "utf8");
   ok({ packet: file, issue: p.issue, models: p.models, attempt: p.attempt });
 }
-function validateHandback(h) {
+// Read-only roles plan or review and write no files. They may finish "done" with an empty acEvidence, but only with
+// no filesChanged and an existing deliverable file. The role comes from the orchestrator, and the specialist has
+// read-only permissions. A git-status check would only show that the shared worktree is dirty, not which agent
+// changed it, so it is not used (AC 7.13.4).
+const PLANNING_ROLES = new Set(["architect", "reviewer", "ux-designer", "qm-decision-maker"]);
+function isPlanningDone(h, role) {
+  return PLANNING_ROLES.has(role) && h.status === "done" && Array.isArray(h.filesChanged) && h.filesChanged.length === 0
+    && typeof h.deliverable === "string" && h.deliverable.length > 0;
+}
+function validateHandback(h, role = "") {
   const e = [];
   if (!h || typeof h !== "object" || Array.isArray(h)) return ["handback must be a JSON object"];
+  if (h.deliverable !== undefined && typeof h.deliverable !== "string") e.push("deliverable must be a file path");
   if (!["done", "failed", "blocked"].includes(h.status)) e.push("status must be done, failed or blocked");
   if (!Array.isArray(h.filesChanged) || h.filesChanged.some((x) => typeof x !== "string")) e.push("filesChanged must be an array of strings");
   if (!Array.isArray(h.commands) || h.commands.some((c) => !c || typeof c.command !== "string" || !Number.isInteger(c.exitCode))) e.push("commands must be an array of { command, exitCode }");
   if (!h.acEvidence || typeof h.acEvidence !== "object" || Array.isArray(h.acEvidence) || Object.values(h.acEvidence).some((v) => typeof v !== "string")) e.push("acEvidence must be an object of AC id to file path");
-  else if (h.status === "done" && !Object.keys(h.acEvidence).length) e.push("acEvidence must name at least one AC when status is done");
+  else if (h.status === "done" && !Object.keys(h.acEvidence).length && !isPlanningDone(h, role)) {
+    e.push(PLANNING_ROLES.has(role)
+      ? "a planning or review done handback needs filesChanged [] and a deliverable path, or acEvidence naming at least one AC"
+      : "acEvidence must name at least one AC when status is done");
+  }
   if (!Array.isArray(h.questions)) e.push("questions must be an array");
   if (h.acRefsAdded !== undefined && (!Array.isArray(h.acRefsAdded) || h.acRefsAdded.some((x) => typeof x !== "string"))) e.push("acRefsAdded must be an array of strings");
   if (h.status === "done" && Array.isArray(h.commands) && h.commands.some((c) => c && Number.isInteger(c.exitCode) && c.exitCode !== 0)) e.push("a done handback cannot include a command with a nonzero exitCode");
@@ -846,7 +860,7 @@ switch (cmd) {
     if (!file) die(1, "Usage: handback-check <file>");
     let h;
     try { h = JSON.parse(fs.readFileSync(path.resolve(file), "utf8")); } catch (e) { die(2, `Cannot read handback JSON: ${e.message}`); }
-    const errors = validateHandback(h);
+    const errors = validateHandback(h, typeof opts.role === "string" ? opts.role : "");
     if (errors.length) die(2, "Handback is invalid", { errors });
     ok({ file: path.resolve(file), status: h.status });
   }
@@ -859,9 +873,12 @@ switch (cmd) {
     if (typeof opts.file !== "string") die(1, "handback-save needs --file <json file with the handback>");
     let h;
     try { h = JSON.parse(fs.readFileSync(path.resolve(opts.file), "utf8")); } catch (e) { die(2, `Cannot read handback JSON: ${e.message}`); }
-    const errors = validateHandback(h);
+    const errors = validateHandback(h, role);
     const root = path.resolve(typeof opts["repo-root"] === "string" ? opts["repo-root"] : ".");
     if (h && typeof h.acEvidence === "object" && h.acEvidence) for (const [ac, f] of Object.entries(h.acEvidence)) if (typeof f === "string" && !fs.existsSync(path.resolve(root, f))) errors.push(`acEvidence ${ac} points to a missing file: ${f}`);
+    // A planning claim with no acEvidence must name a deliverable that exists. The role is set by the orchestrator, so the
+    // other checks (no filesChanged, no failing command) are the guard against a coder or tester using the planning rule.
+    if (h && isPlanningDone(h, role) && !fs.existsSync(path.resolve(root, h.deliverable))) errors.push(`planning deliverable is missing: ${h.deliverable}`);
     if (errors.length) die(2, "Handback is invalid", { errors });
     const dir = typeof opts["handbacks-dir"] === "string" ? path.resolve(String(opts["handbacks-dir"])) : path.join(mainCheckoutRoot(), ".qm", "handbacks");
     fs.mkdirSync(dir, { recursive: true });
