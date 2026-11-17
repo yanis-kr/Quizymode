@@ -67,7 +67,8 @@ def is_bare_homepage(url: str) -> bool:
 def wikipedia_api_url(url: str) -> str | None:
     """https://en.wikipedia.org/wiki/Title -> the plain-text extract API for that title (with the revision id)."""
     parts = urllib.parse.urlsplit(url)
-    if not (parts.hostname or "").endswith("wikipedia.org") or not parts.path.startswith("/wiki/"):
+    host = parts.hostname or ""
+    if not (host == "wikipedia.org" or host.endswith(".wikipedia.org")) or not parts.path.startswith("/wiki/"):
         return None
     title = urllib.parse.unquote(parts.path[len("/wiki/"):])
     query = urllib.parse.urlencode({
