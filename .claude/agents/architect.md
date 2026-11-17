@@ -2,7 +2,7 @@
 name: architect
 description: Reconciles a GitHub issue's requirements with the current Quizymode code before any implementation starts. Identifies dependencies, contracts, migrations, risks, and testable acceptance criteria. Use for the first step of the shared automation workflow's per-issue pipeline, before UX design or coding.
 tools: Read, Grep, Glob, Bash
-model: opus
+model: sonnet
 ---
 
 You are the architect specialist in Quizymode's shared autonomous workflow (see AGENTS.md and CLAUDE.md for repo-wide rules; `docs/AC.md` is the source of truth for existing behavior).

@@ -1,7 +1,8 @@
 #!/usr/bin/env node
 // Token ledger for agent runs. Reads Claude Code transcripts (never prints message text, command text or tool results;
 // it reads only usage, model, tool names, file paths of Read calls, agent type and timestamps).
-//   node scripts/automation/usage-ledger.mjs --since 2026-11-10 [--root <dir>]
+//   node scripts/automation/usage-ledger.mjs --since 2026-11-10 [--until 2026-11-16T22:00:00Z] [--root <dir>]
+//       --until bounds the window at both ends, so one batch is measured by its own start and end, not a cumulative window.
 //   node scripts/automation/usage-ledger.mjs --session <id[,id]>
 //   node scripts/automation/usage-ledger.mjs --issue 719 --sessions <id,id> [--size s] [--ledger-dir <dir>]
 //       appends one issue line to .qm/ledger/issues.jsonl. A session counts for one issue only; a session already
@@ -37,9 +38,10 @@ function listJsonl(dir) {
 
 const sumTokens = (u) => (u.input ?? 0) + (u.cacheRead ?? 0) + (u.cacheWrite ?? 0) + (u.output ?? 0);
 
-/** Reads transcripts and returns the aggregate. filters: { since?: date string, sessions?: string[] } */
+/** Reads transcripts and returns the aggregate. filters: { since?, until?: date strings, sessions?: string[] } */
 export function buildLedger(roots, filters = {}) {
   const sinceMs = filters.since ? Date.parse(filters.since) : null;
+  const untilMs = filters.until ? Date.parse(filters.until) : null;
   const sessionSet = filters.sessions?.length ? new Set(filters.sessions) : null;
   const messages = new Map(); // message id -> last entry seen (streamed entries repeat the id)
   const reads = new Map();
@@ -59,6 +61,7 @@ export function buildLedger(roots, filters = {}) {
         if (o.type !== "assistant" || !o.message) continue;
         const ts = Date.parse(o.timestamp);
         if (sinceMs !== null && !(ts >= sinceMs)) continue;
+        if (untilMs !== null && !(ts <= untilMs)) continue;
         const session = safe(o.sessionId, "unknown");
         if (sessionSet && !sessionSet.has(session)) continue;
         if (Number.isFinite(ts)) { first = first === null ? ts : Math.min(first, ts); last = last === null ? ts : Math.max(last, ts); }
@@ -162,7 +165,13 @@ if (process.argv[1] && path.resolve(process.argv[1]) === fileURLToPath(import.me
   const sessions = list(args.sessions ?? args.session);
   if (args.issue !== undefined && !sessions.length) { console.error("--issue needs --sessions <id,id>"); process.exit(1); }
   if (args.since === undefined && !sessions.length) { console.error("Usage: usage-ledger.mjs (--since <date> | --session <id>) [--root <dir>] | --issue <n> --sessions <id,id> [--size xs|s|m|l]"); process.exit(1); }
-  const ledger = buildLedger(roots, { since: typeof args.since === "string" ? args.since : undefined, sessions });
+  const since = typeof args.since === "string" ? args.since : undefined;
+  const until = typeof args.until === "string" ? args.until : undefined;
+  for (const [flag, value] of [["--since", since], ["--until", until]]) {
+    if (value !== undefined && !Number.isFinite(Date.parse(value))) { console.error(`${flag} is not a date: ${value}`); process.exit(1); }
+  }
+  const ledger = buildLedger(roots, { since, until, sessions });
+  if (since !== undefined || until !== undefined) console.log(`Window: ${since ?? "start"} to ${until ?? "now"} (a batch is measured by its own window)`);
   console.log(formatLedger(ledger));
 
   const file = ledgerFile(args);

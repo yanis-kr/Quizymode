@@ -16,6 +16,7 @@ import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { sliceAc } from "../../../../scripts/validation/ac-slice.mjs";
+import { ROLES, routeModel, classifyIssue, MODEL_ORDER } from "../../../../scripts/automation/model-policy.mjs";
 
 const SCHEMA_VERSION = 1;
 const ID_RE = /^[a-z0-9][a-z0-9-]{2,47}$/;
@@ -370,25 +371,47 @@ function checkApprovalStillValid(p, st) {
 }
 
 // ---------- packets and handbacks ----------
-// One routing source for every role. Role defaults are fixed: architect, reviewer and qm-decision-maker use opus;
-// coder, tester and ux-designer use sonnet; reporter uses haiku. Facts can only escalate coder and tester to opus
-// (risk high, a migration, size l, or attempt 2 or later). An unknown fact counts as the risky value.
-const ROLE_DEFAULT = { architect: "opus", reviewer: "opus", "qm-decision-maker": "opus", coder: "sonnet", tester: "sonnet", "ux-designer": "sonnet", reporter: "haiku" };
-const ESCALATES = new Set(["coder", "tester"]);
-function roleModel(role, { size, risk, migration, attempt }) {
-  if (!Object.hasOwn(ROLE_DEFAULT, role)) throw new Error(`unknown role: ${role}`);
-  if (!ESCALATES.has(role)) return ROLE_DEFAULT[role];
-  const risky = risk === "high" || risk === "unknown" || migration !== false || size === "l" || size === "unknown" || Number(attempt) >= 2;
-  return risky ? "opus" : ROLE_DEFAULT[role];
+// Draft ACs from an issue body: "- AC (draft) [verify: m] text" or a checkbox line "- [ ] text [verify: m]" (or "- [x]").
+// Any bullet with a [verify: ...] marker counts; a bullet without one is not an AC.
+function draftAcs(body) {
+  const out = [];
+  // Spaces and tabs only: \s would let a match run into the next line.
+  for (const m of String(body).matchAll(/^[ \t]*-[ \t]+(?:\[[ xX]\][ \t]+)?(.*?)[ \t]*\[verify:[ \t]*([^\]]+)\][ \t]*(.*)$/gm)) {
+    const before = m[1].replace(/^AC\s*\(draft\)\s*/i, "").trim();
+    const text = (before || m[3].trim());
+    if (!text) continue;
+    out.push({ id: `AC${out.length + 1}`, text, evidence: m[2].trim() });
+  }
+  return out;
 }
+
+// Routing is one shared policy (scripts/automation/model-policy.mjs, AC 7.13.3): haiku by default, sonnet and opus only on a
+// scored complexity criterion. Each packet line shows the role, its model and why.
+const ROLE_DEFAULT = Object.fromEntries(ROLES.map((r) => [r, routeModel(r, {}).model]));
 function modelsFor(facts) {
-  return Object.fromEntries(Object.keys(ROLE_DEFAULT).map((role) => [role, roleModel(role, facts)]));
+  return Object.fromEntries(ROLES.map((role) => [role, routeModel(role, facts)]));
 }
 // The attempt never drops below the attempts recorded in state.json; --attempt can only raise it.
 function attemptFrom(recorded, requested) {
   const req = requested === undefined ? 1 : Number(requested);
   if (!Number.isInteger(req) || req < 1) die(1, "--attempt must be a positive integer");
   return Math.max(1, req, Number(recorded ?? 0));
+}
+// Failure of an earlier attempt, for routing. Environment failures are fixed, not escalated; a reasoning failure is the
+// one way Sonnet is shown to be insufficient. Without a classification, a second attempt counts as medium complexity.
+const FAILURES = ["none", "environment", "unclassified", "reasoning"];
+function failureFrom(requested, attempt) {
+  if (requested !== undefined) {
+    if (!FAILURES.includes(requested)) die(1, `--failure must be one of: ${FAILURES.join(", ")}`);
+    return requested;
+  }
+  return Number(attempt) >= 2 ? "unclassified" : "none";
+}
+// The model that made the failed attempt, from --prior-model. A reasoning failure escalates one step from it.
+function priorModelFrom(requested) {
+  if (requested === undefined) return "unknown";
+  if (!MODEL_ORDER.includes(requested)) die(1, `--prior-model must be one of: ${MODEL_ORDER.join(", ")}`);
+  return requested;
 }
 function packetChecks(paths, issue, extra) {
   const norm = paths.map((x) => x.replaceAll(String.fromCharCode(92), "/"));
@@ -412,8 +435,8 @@ function acSliceFor(issue) {
   return sh("node", args, true) ?? `(no ACs in docs/AC.md carry (#${issue}) yet)`;
 }
 function renderPacket(p) {
-  const L = [`# Work packet: #${p.issue} ${p.title}`, "", `attempt: ${p.attempt} of ${p.maxAttempts}`, `facts (${p.factSource}): size ${p.size}, risk ${p.risk}, migration ${p.migration}`, "", "## Goal", p.goal, ""];
-  L.push("## Models by role (dispatch each agent with its role's model)", ...Object.entries(p.models).map(([r, m]) => `- ${r}: ${m}`), "");
+  const L = [`# Work packet: #${p.issue} ${p.title}`, "", `attempt: ${p.attempt} of ${p.maxAttempts}`, `facts (${p.factSource}): size ${p.size}, risk ${p.risk}${p.riskSource ? ` (${p.riskSource})` : ""}, migration ${p.migration}${p.migrationSource ? ` (${p.migrationSource})` : ""}`, ...(p.classification ? [`classification: ${p.classification}`] : []), "", "## Goal", p.goal, ""];
+  L.push("## Models by role (dispatch each agent with its role's model)", ...Object.entries(p.models).map(([r, m]) => `- ${r}: ${m.model}. Why: ${m.reason}`), "");
   L.push("## Acceptance criteria", ...p.acs.map((a) => `- ${a.id} [verify: ${a.evidence}] ${a.text}`), "");
   L.push("## Exclusions", ...(p.exclusions.length ? p.exclusions.map((x) => `- ${x}`) : ["- (none)"]), "");
   L.push("## scope.paths", ...(p.paths.length ? p.paths.map((x) => `- ${x}`) : ["- (unknown: none declared; find files by Grep and say what you checked)"]), "");
@@ -793,22 +816,28 @@ switch (cmd) {
       const labels = (j.labels ?? []).map((l) => (typeof l === "string" ? l : l.name));
       const label = (d) => labels.find((l) => l.startsWith(`${d}:`))?.slice(d.length + 1);
       const body = String(j.body ?? "");
-      const acs = [...body.matchAll(/^\s*-\s+AC\s*\(draft\)\s*\[verify:\s*([^\]]+)\]\s*(.+)$/gm)].map((m, i) => ({ id: `AC${i + 1}`, text: m[2].trim(), evidence: m[1].trim() }));
-      if (!acs.length) die(2, `Issue #${n} has no "AC (draft) [verify: ...]" lines; refine it first.`);
+      const acs = draftAcs(body);
+      if (!acs.length) die(2, `Issue #${n} has no AC lines with a [verify: ...] marker (checkbox or "AC (draft)"); refine it first.`);
       const exclusions = [...body.matchAll(/^\s*Out of scope:\s*(.+)$/gim)].map((m) => m[1].trim());
-      // Facts come from labels only. A missing fact is "unknown", which routes coder and tester to opus; it is never read as verified false.
-      const risk = labels.includes("risk:high") || labels.includes("area:auth") ? "high" : labels.includes("risk:low") ? "low" : labels.includes("risk:medium") ? "medium" : "unknown";
-      const migration = labels.includes("area:db") ? true : "unknown";
       const sizeLabel = label("size");
       const size = ["xs", "s", "m", "l"].includes(sizeLabel) ? sizeLabel : "unknown";
+      // Lightweight classification from labels, size, body and ACs (model-policy.mjs). Stated values win; a clearly simple
+      // issue gets inferred low values; anything else stays unknown, which scores medium and routes to sonnet.
+      const cls = classifyIssue({ title: j.title, body, labels, size, acCount: acs.length });
+      const { risk, migration, ambiguity, novelty, reasoning } = cls.facts;
+      const riskSource = cls.sources.risk;
+      const migrationSource = cls.sources.migration;
       const attempt = attemptFrom(undefined, opts.attempt);
+      const failure = failureFrom(opts.failure, attempt);
+      const priorModel = priorModelFrom(opts["prior-model"]);
       const relLine = /^\s*Related ACs:\s*(.+)$/im.exec(body);
       const refs = relLine ? relLine[1].split(",").map((x) => x.trim()).filter(Boolean) : [];
       const relatedRefs = { ids: refs.filter((x) => /^\d+(?:\.\d+)*$/.test(x)), invariants: refs.filter((x) => /^[A-Z]+\d+$/.test(x)), headings: [] };
       const unknown = refs.filter((x) => !relatedRefs.ids.includes(x) && !relatedRefs.invariants.includes(x));
       if (unknown.length) die(2, `Related ACs line has entries that are neither an AC id nor an invariant id: ${unknown.join(", ")}`);
       writePacket({ relatedRefs, relatedNote: relLine ? null : "related ACs: not refined",  issue: n, title: j.title, goal: j.title, acs, exclusions, paths: [], scopeKnown: false, dependsOn: [], checks: packetChecks([], n), acSlice: acSliceFor(n),
-        size, risk, migration, attempt, maxAttempts: 2, factSource: "issue labels and body, not checked against the manifest or code", models: modelsFor({ size, risk, migration, attempt }) });
+        size, risk, riskSource, migration, migrationSource, attempt, maxAttempts: 2, factSource: "issue labels and body, not checked against the manifest or code",
+        classification: cls.reason, models: modelsFor({ size, risk, migration, ambiguity, novelty, reasoning, failure, priorModel }) });
     }
     const p = bundlePaths(id);
     const m = loadValidManifest(p, id);
@@ -824,7 +853,7 @@ switch (cmd) {
     const extra = it.validation.filter((v) => /^(npm|npx|dotnet|node|eslint) /.test(v) && !/test:coverage/.test(v) && v !== "dotnet test");
     writePacket({ issue: num, title: it.title, goal: it.scope.summary ?? it.title, acs: it.acceptanceCriteria, exclusions: it.scope.exclusions ?? [], paths: it.scope.paths, scopeKnown: it.scope.paths.length > 0, dependsOn: it.dependsOn,
       relatedRefs: it.relatedAcs, checks: packetChecks(it.scope.paths, num, extra), acSlice: acSliceFor(num), size, risk: it.risk, migration: it.migration,
-      attempt, maxAttempts: m.limits.maxAttemptsPerIssue, factSource: "approved manifest", models: modelsFor({ size, risk: it.risk, migration: it.migration, attempt }) });
+      attempt, maxAttempts: m.limits.maxAttemptsPerIssue, factSource: "approved manifest", models: modelsFor({ size, risk: it.risk, migration: it.migration, failure: failureFrom(opts.failure, attempt), priorModel: priorModelFrom(opts["prior-model"]) }) });
   }
   case "handback-check": {
     const file = positional[0];
@@ -854,7 +883,12 @@ switch (cmd) {
     const dir = typeof opts["handbacks-dir"] === "string" ? path.resolve(String(opts["handbacks-dir"])) : path.join(mainCheckoutRoot(), ".qm", "handbacks");
     fs.mkdirSync(dir, { recursive: true });
     const file = path.join(dir, `${issue}-${role}.json`);
-    writeJsonAtomic(file, { ...h, issue, role, claimed: true, savedAt: new Date().toISOString() });
+    // Dispatch record (AC 7.13.3): the model this role ran on and why, copied from its packet line.
+    const packetsDir = typeof opts["packets-dir"] === "string" ? path.resolve(String(opts["packets-dir"])) : path.join(mainCheckoutRoot(), ".qm", "packets");
+    const packetFile = path.join(packetsDir, `${issue}.md`);
+    const line = fs.existsSync(packetFile) ? new RegExp(`^- ${role}: (\\w+)\\. Why: (.+)$`, "m").exec(fs.readFileSync(packetFile, "utf8")) : null;
+    const dispatch = line ? { role, issue, model: line[1], reason: line[2].trim() } : { role, issue, model: null, reason: "no packet line for this role" };
+    writeJsonAtomic(file, { ...h, issue, role, claimed: true, dispatch, savedAt: new Date().toISOString() });
     ok({ saved: file, status: h.status, claimed: true, note: "Recorded as the agent's claim. Verification is the AC gate and CI." });
   }
   default:

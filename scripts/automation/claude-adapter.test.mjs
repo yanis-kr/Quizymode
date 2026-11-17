@@ -30,17 +30,31 @@ function fakeExecSequence(results) {
 }
 
 describe("resolveModel", () => {
-  test("uses the primary model when available", () => {
+  test("uses the role baseline (sonnet, never opus) when no model is requested", () => {
     const { model, substituted } = resolveModel("architect", { availableModels: ["opus", "sonnet"] });
+    assert.equal(model, "sonnet");
+    assert.equal(substituted, false);
+  });
+
+  test("uses the requested model from the packet when it is available", () => {
+    const { model, substituted } = resolveModel("architect", { requested: "opus", availableModels: ["opus", "sonnet"] });
     assert.equal(model, "opus");
     assert.equal(substituted, false);
   });
 
-  test("falls back and records the substitution when primary is unavailable", () => {
-    const { model, substituted, reason } = resolveModel("architect", { availableModels: ["sonnet"] });
+  test("substitutes only a cheaper model, and records it", () => {
+    const { model, substituted, reason } = resolveModel("architect", { requested: "opus", availableModels: ["sonnet", "haiku"] });
     assert.equal(model, "sonnet");
     assert.equal(substituted, true);
     assert.match(reason, /opus/);
+    assert.match(reason, /cheaper/);
+  });
+
+  test("never substitutes a more expensive model: a missing haiku throws", () => {
+    assert.throws(
+      () => resolveModel("reporter", { availableModels: ["sonnet", "opus"] }),
+      (err) => err instanceof AdapterError && err.code === "MODEL_UNAVAILABLE",
+    );
   });
 
   test("rejects an unknown role", () => {
