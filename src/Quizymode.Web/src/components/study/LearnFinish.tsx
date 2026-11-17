@@ -1,4 +1,4 @@
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, type ReactNode } from "react";
 import { Link } from "react-router-dom";
 import { SignupPrompt } from "@/features/auth/components/SignupPrompt";
 
@@ -16,6 +16,8 @@ interface LearnFinishProps {
   saveState: "idle" | "saving" | "saved" | "failed";
   onLearnAgain: () => void;
   onRetrySave: () => void;
+  /** Keep going block (#711): the related-set tiles for a category scope; omitted for collections. */
+  keepGoing?: ReactNode;
 }
 
 /** Finish screen (AC 3.17.6, 3.17.9): mastered total, first-try score, Learn again and the browse link. */
@@ -31,6 +33,7 @@ export function LearnFinish({
   saveState,
   onLearnAgain,
   onRetrySave,
+  keepGoing,
 }: LearnFinishProps) {
   const headingRef = useRef<HTMLHeadingElement>(null);
   useEffect(() => {
@@ -85,6 +88,7 @@ export function LearnFinish({
           {browseLabel}
         </Link>
       </div>
+      {keepGoing && <div className="mt-6 text-left">{keepGoing}</div>}
       <SignupPrompt reason="save-progress" className="mt-6" />
     </section>
   );

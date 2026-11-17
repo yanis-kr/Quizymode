@@ -61,6 +61,11 @@ export function readKnownCount(setKey: string): number {
   return readDocument()[setKey]?.length ?? 0;
 }
 
+/** Known item IDs for a set in this browser (#711 Next 5 prefers unseen items). Never throws. */
+export function readKnownIds(setKey: string): ReadonlySet<string> {
+  return new Set(readDocument()[setKey] ?? []);
+}
+
 /**
  * Applies a completed quiz: correct answers become known, wrong answers stop being known. Only for anonymous runs
  * (the caller checks eligibility); storage failures are swallowed.

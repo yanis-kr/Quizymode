@@ -27,7 +27,8 @@ import {
 import { buildCollectionPath, buildCollectionStudyPath } from "@/utils/collectionPath";
 import { getCategoryScopeModeConfig } from "@/features/categories/utils/categoryScopeMode";
 import { getStudyScopeKeywords } from "@/features/items/utils/studyScopeParams";
-import { flushDeferredAnalyticsEvents } from "@/features/analytics/analyticsEvents";
+import { flushDeferredAnalyticsEvents, trackEvent } from "@/features/analytics/analyticsEvents";
+import { KeepGoing } from "@/features/learningLoop/KeepGoing";
 import { isQuizPlayable, sameQuizScope, type QuizRunScope } from "@/features/items/quiz/quizRun";
 import {
   LEARN_MAX_ITEMS,
@@ -557,6 +558,24 @@ const LearnModePage = () => {
             saveState={saveState}
             onLearnAgain={startNewRun}
             onRetrySave={() => saveSession(activeRun)}
+            keepGoing={
+              !collectionId && categorySlug ? (
+                <KeepGoing
+                  scope={[categorySlug, ...navigationKeywords].join("/")}
+                  onSelect={(position, id) =>
+                    trackEvent({
+                      name: "next_step_clicked",
+                      runId: activeRun.runId,
+                      position,
+                      contextType: "learn",
+                      contextId: id.startsWith("pace:")
+                        ? `next:pace:${[categorySlug, ...navigationKeywords].join("/")}`
+                        : `next:related:${[categorySlug, ...navigationKeywords].join("/")}`,
+                    })
+                  }
+                />
+              ) : null
+            }
           />
         </div>
         <StudyHotkeysDialog open={isHelpOpen} onClose={closeHelp} shortcuts={[]} />
