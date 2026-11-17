@@ -37,8 +37,13 @@ internal sealed class IpGeolocationService : IIpGeolocationService
         if (LoopbackAddresses.Contains(ipAddress))
             return local;
 
+        // The value comes from a client-controlled header (X-Forwarded-For). Reject anything that is not an IP address
+        // before it reaches the cache, the outbound lookup or the logs.
+        if (!IPAddress.TryParse(ipAddress, out IPAddress? parsed))
+            return null;
+
         // Private/link-local ranges → Local
-        if (IPAddress.TryParse(ipAddress, out IPAddress? parsed) && IsPrivate(parsed))
+        if (IsPrivate(parsed))
             return local;
 
         if (_cache.TryGetValue(ipAddress, out IpLocation? cached))
@@ -74,7 +79,7 @@ internal sealed class IpGeolocationService : IIpGeolocationService
         }
         catch (Exception ex)
         {
-            _logger.LogWarning(ex, "IP geolocation lookup failed for {IpAddress}", ipAddress);
+            _logger.LogWarning(ex, "IP geolocation lookup failed for {IpAddress}", parsed.ToString());
             _cache[ipAddress] = null;
             return null;
         }
