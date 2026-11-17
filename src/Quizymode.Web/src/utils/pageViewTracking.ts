@@ -7,6 +7,7 @@ const LAST_VIEW_STORAGE_KEY = "quizymode.analytics.last-view";
 export const INTERNAL_BROWSER_STORAGE_KEY = "quizymode.analytics.internal-browser";
 const DUPLICATE_WINDOW_MS = 1500;
 
+let fallbackCounter = 0;
 const fallbackSessionId = createSessionId();
 
 export function getPageViewSessionId(): string {
@@ -109,5 +110,12 @@ function createSessionId(): string {
     return crypto.randomUUID();
   }
 
-  return `${Date.now()}-${Math.random().toString(16).slice(2)}`;
+  if (typeof crypto !== "undefined" && typeof crypto.getRandomValues === "function") {
+    const bytes = new Uint8Array(16);
+    crypto.getRandomValues(bytes);
+    return Array.from(bytes, (byte) => byte.toString(16).padStart(2, "0")).join("");
+  }
+
+  fallbackCounter += 1;
+  return `${Date.now()}-${fallbackCounter}`;
 }
