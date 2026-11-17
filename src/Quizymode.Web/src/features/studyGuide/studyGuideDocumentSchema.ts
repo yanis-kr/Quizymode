@@ -5,7 +5,7 @@ import {
 } from "@/utils/incorrectAnswerRules";
 import { STUDY_GUIDE_UPLOAD_MAX_KEYWORDS, utf8ByteLength } from "./studyGuideUploadSchema";
 
-export type StudyGuideInputMode = "file" | "text";
+export type StudyGuideInputMode = "file" | "text" | "photos";
 
 export interface StudyGuideDocumentLimits {
   maxFileBytes: number;

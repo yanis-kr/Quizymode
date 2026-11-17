@@ -32,6 +32,7 @@ import {
   type StudyGuideInputMode,
 } from "../studyGuideDocumentSchema";
 import { readApiError } from "../studyGuideApiErrors";
+import PhotoOcrPanel from "../components/PhotoOcrPanel";
 
 const UNAVAILABLE_MESSAGE = "AI study guide upload is unavailable right now. Please try again later.";
 
@@ -80,6 +81,7 @@ function openQuickResult(navigate: ReturnType<typeof useNavigate>, response: Stu
 const TABS: Array<{ id: StudyGuideInputMode; label: string }> = [
   { id: "file", label: "Upload file" },
   { id: "text", label: "Paste text" },
+  { id: "photos", label: "Photos or scan" },
 ];
 
 const StudyGuideUploadPage = () => {
@@ -109,7 +111,7 @@ const StudyGuideUploadPage = () => {
   const errorRef = React.useRef<HTMLDivElement>(null);
   const inFlightRef = React.useRef(false);
   const topicAnalytics = useTopicSuggestionAnalytics();
-  const tabRefs = React.useRef<Record<StudyGuideInputMode, HTMLButtonElement | null>>({ file: null, text: null });
+  const tabRefs = React.useRef<Record<StudyGuideInputMode, HTMLButtonElement | null>>({ file: null, text: null, photos: null });
 
   const { data: config, isLoading: isLoadingConfig } = useQuery({
     queryKey: ["studyGuideDocuments", "config"],
@@ -192,7 +194,7 @@ const StudyGuideUploadPage = () => {
   const byteCount = utf8ByteLength(text);
   const textOverLimit = byteCount > limits.maxTextBytes;
   const fileOverLimit = !!file && file.size > limits.maxFileBytes;
-  const submitBlocked = mode === "text" ? textOverLimit : fileOverLimit;
+  const submitBlocked = mode === "file" ? fileOverLimit : textOverLimit;
 
   const chooseFile = (candidate: File | null) => {
     setFile(candidate);
@@ -204,7 +206,7 @@ const StudyGuideUploadPage = () => {
   };
 
   const suggestionText = composeNotesSuggestionText({
-    mode,
+    mode: mode === "file" ? "file" : "text",
     title,
     pastedText: text,
     fileName: file?.name ?? null,
@@ -224,9 +226,9 @@ const StudyGuideUploadPage = () => {
       return;
     }
     const form = {
-      mode,
+      mode: mode === "file" ? ("file" as const) : ("text" as const),
       file: mode === "file" ? file : null,
-      text: mode === "text" ? text : "",
+      text: mode === "file" ? "" : text,
       title,
       category: categoryName,
       navigationKeyword1: rank1Name,
@@ -258,7 +260,9 @@ const StudyGuideUploadPage = () => {
   const handleTabKeyDown = (event: React.KeyboardEvent<HTMLButtonElement>) => {
     if (event.key !== "ArrowRight" && event.key !== "ArrowLeft") return;
     event.preventDefault();
-    const next: StudyGuideInputMode = mode === "file" ? "text" : "file";
+    const index = TABS.findIndex((tab) => tab.id === mode);
+    const step = event.key === "ArrowRight" ? 1 : -1;
+    const next = TABS[(index + step + TABS.length) % TABS.length].id;
     setMode(next);
     tabRefs.current[next]?.focus();
   };
@@ -389,7 +393,7 @@ const StudyGuideUploadPage = () => {
                   <p id="study-guide-file-hint" className="mt-2 text-xs text-gray-500">
                     {limits.acceptedExtensions.join(", ")} · up to {formatBytes(limits.maxFileBytes)}
                     {config?.maxPages ? ` · up to ${config.maxPages} pages` : ""}. Scanned PDFs without selectable
-                    text are not supported yet.
+                    text are read on Photos or scan.
                   </p>
                   {file && (
                     <p
@@ -402,9 +406,24 @@ const StudyGuideUploadPage = () => {
                 </div>
               </div>
             ) : (
-              <div role="tabpanel" id="study-guide-panel-text" aria-labelledby="study-guide-tab-text" className="pt-4">
+              <div
+                role="tabpanel"
+                id={mode === "photos" ? "study-guide-panel-photos" : "study-guide-panel-text"}
+                aria-labelledby={mode === "photos" ? "study-guide-tab-photos" : "study-guide-tab-text"}
+                className="space-y-4 pt-4"
+              >
+                {mode === "photos" && (
+                  <PhotoOcrPanel
+                    disabled={isSubmitting}
+                    onRecognized={(recognized) =>
+                      setText((previous) => (previous.trim() ? `${previous.trimEnd()}
+
+${recognized}` : recognized))
+                    }
+                  />
+                )}
                 <label htmlFor="study-guide-upload-text" className="block text-sm font-medium text-gray-700 mb-1">
-                  Study guide text *
+                  {mode === "photos" ? "Recognized text (review and correct before you submit) *" : "Study guide text *"}
                 </label>
                 <textarea
                   id="study-guide-upload-text"
