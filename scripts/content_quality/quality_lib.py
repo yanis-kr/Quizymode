@@ -8,6 +8,7 @@ import hashlib
 import json
 import random
 import re
+from datetime import datetime, timedelta, timezone
 from pathlib import Path
 from typing import Any, Iterable
 
@@ -215,3 +216,66 @@ def pr_table(rows: list[dict[str, Any]], ids: set[str]) -> str:
             lines.append(f"| {row['itemId']} | {row['level']} | {row['status']} | {row['checker']} | {row.get('checkedAt') or ''} |")
     return "\n".join(lines)
 
+
+
+TIER_RISK = {"T1": 1, "T2": 2, "T3": 3, "T4": 4, "T5": 5}
+
+
+def _parse_checked(value: str | None) -> datetime | None:
+    if not value:
+        return None
+    try:
+        parsed = datetime.fromisoformat(value.replace("Z", "+00:00"))
+    except ValueError:
+        return None
+    return parsed if parsed.tzinfo else parsed.replace(tzinfo=timezone.utc)
+
+
+def risk_queue(
+    items: list[SourceItem],
+    rows: list[dict[str, Any]],
+    level: str,
+    budget: int,
+    tiers: dict[str, Any],
+    profiles: dict[str, Any],
+    now: datetime,
+    cache_root: Path = CACHE_ROOT,
+) -> list[tuple[SourceItem, str, int]]:
+    """Items needing review, highest risk first, with the reason and risk score (#724 D3, #769).
+
+    Risk = provenance tier of the cited source (an unfetchable or missing source counts as the unfetchable tier) x
+    profile stakes. A row is current when its hash, level and rubric version match, its profile's review interval has
+    not passed, and the cited source text has not changed since the row was written. Ties break on item id.
+    """
+    from fetcher import tier_for_url  # local import: fetcher imports this module
+
+    current = latest_by_key(rows)
+    scored: list[tuple[int, str, SourceItem, str]] = []
+    for item in items:
+        profile = profiles.get(item.category, profiles["default"])
+        row = current.get((item.item_id, level, RUBRIC_VERSION))
+        reason: str | None = None
+        if row is None:
+            reason = "no ledger row"
+        elif row["contentHash"] != content_hash(item):
+            reason = "content changed"
+        elif (checked := _parse_checked(row.get("checkedAt"))) is not None and (
+            now - checked > timedelta(days=profile["reviewIntervalDays"])
+        ):
+            reason = "review interval passed"
+        elif row.get("sourceUrl") and row.get("sourceTextHash"):
+            cached = read_cache(row["sourceUrl"], cache_root)
+            if cached is None or hashlib.sha256(cached.get("text", "").encode("utf-8")).hexdigest() != row["sourceTextHash"]:
+                reason = "source text changed"
+        if reason is None:
+            continue
+        # Not fetched yet: the domain tier. Fetched but unfetchable: the unfetchable tier.
+        cached = read_cache(item.source, cache_root) if item.source else None
+        if item.source and (cached is None or cached.get("status", "ok") == "ok"):
+            tier = tier_for_url(item.source, tiers)
+        else:
+            tier = tiers["unfetchableTier"]
+        score = TIER_RISK[tier] * profile["stakes"]
+        scored.append((-score, item.item_id, item, f"{reason}; source tier {tier}; profile {item.category if item.category in profiles else 'default'}"))
+    scored.sort(key=lambda entry: (entry[0], entry[1]))
+    return [(item, reason, -neg) for neg, _id, item, reason in scored[:budget]]
