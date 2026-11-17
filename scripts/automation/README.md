@@ -26,12 +26,12 @@ Model availability on this account (checked at build time, 2026-10-15): `claude 
 
 ## Role → model assignment
 
-The shared policy is `model-policy.mjs` (AC 7.13.3). A direct invocation with no packet runs on the role **baseline**, which is sonnet for every implementing and reviewing role and haiku for the reporter. A packet supplies each dispatch's model: haiku by default, sonnet for medium complexity, opus only for high reasoning, migration, or a reasoning failure. Opus is never a default.
+The shared policy is `model-policy.mjs` (AC 7.13.3). A direct invocation with no packet runs on the role **baseline**, which is sonnet for every implementing and reviewing role and haiku for the reporter. A packet supplies each dispatch's model: haiku by default for a clearly simple issue (classified from its labels, size, body and ACs, with no extra labels), sonnet for medium or unclear complexity, opus only for high complexity. A reasoning failure escalates one step from the model that failed (haiku to sonnet, sonnet to opus); the orchestrator passes `--prior-model`. Opus is never a default.
 
 | Role | Baseline | Opus only when |
 |---|---|---|
 | architect, reviewer | sonnet | complexity is high (high risk, migration, ambiguity, novelty or reasoning) |
-| coder | sonnet | reasoning high, a migration, or an earlier reasoning failure |
+| coder | sonnet | reasoning high, a migration, or a reasoning failure on sonnet |
 | tester, ux-designer | sonnet | never (capped at sonnet) |
 | reporter | haiku | never |
 

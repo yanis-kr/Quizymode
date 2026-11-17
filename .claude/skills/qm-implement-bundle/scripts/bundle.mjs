@@ -16,7 +16,7 @@ import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { sliceAc } from "../../../../scripts/validation/ac-slice.mjs";
-import { ROLES, routeModel } from "../../../../scripts/automation/model-policy.mjs";
+import { ROLES, routeModel, classifyIssue, MODEL_ORDER } from "../../../../scripts/automation/model-policy.mjs";
 
 const SCHEMA_VERSION = 1;
 const ID_RE = /^[a-z0-9][a-z0-9-]{2,47}$/;
@@ -400,13 +400,18 @@ function attemptFrom(recorded, requested) {
 // Failure of an earlier attempt, for routing. Environment failures are fixed, not escalated; a reasoning failure is the
 // one way Sonnet is shown to be insufficient. Without a classification, a second attempt counts as medium complexity.
 const FAILURES = ["none", "environment", "unclassified", "reasoning"];
-const FRONTEND_BLOCKERS = ["area:db", "area:auth", "area:api", "area:infra", "area:security"];
 function failureFrom(requested, attempt) {
   if (requested !== undefined) {
     if (!FAILURES.includes(requested)) die(1, `--failure must be one of: ${FAILURES.join(", ")}`);
     return requested;
   }
   return Number(attempt) >= 2 ? "unclassified" : "none";
+}
+// The model that made the failed attempt, from --prior-model. A reasoning failure escalates one step from it.
+function priorModelFrom(requested) {
+  if (requested === undefined) return "unknown";
+  if (!MODEL_ORDER.includes(requested)) die(1, `--prior-model must be one of: ${MODEL_ORDER.join(", ")}`);
+  return requested;
 }
 function packetChecks(paths, issue, extra) {
   const norm = paths.map((x) => x.replaceAll(String.fromCharCode(92), "/"));
@@ -430,7 +435,7 @@ function acSliceFor(issue) {
   return sh("node", args, true) ?? `(no ACs in docs/AC.md carry (#${issue}) yet)`;
 }
 function renderPacket(p) {
-  const L = [`# Work packet: #${p.issue} ${p.title}`, "", `attempt: ${p.attempt} of ${p.maxAttempts}`, `facts (${p.factSource}): size ${p.size}, risk ${p.risk}${p.riskSource ? ` (${p.riskSource})` : ""}, migration ${p.migration}${p.migrationSource ? ` (${p.migrationSource})` : ""}`, "", "## Goal", p.goal, ""];
+  const L = [`# Work packet: #${p.issue} ${p.title}`, "", `attempt: ${p.attempt} of ${p.maxAttempts}`, `facts (${p.factSource}): size ${p.size}, risk ${p.risk}${p.riskSource ? ` (${p.riskSource})` : ""}, migration ${p.migration}${p.migrationSource ? ` (${p.migrationSource})` : ""}`, ...(p.classification ? [`classification: ${p.classification}`] : []), "", "## Goal", p.goal, ""];
   L.push("## Models by role (dispatch each agent with its role's model)", ...Object.entries(p.models).map(([r, m]) => `- ${r}: ${m.model}. Why: ${m.reason}`), "");
   L.push("## Acceptance criteria", ...p.acs.map((a) => `- ${a.id} [verify: ${a.evidence}] ${a.text}`), "");
   L.push("## Exclusions", ...(p.exclusions.length ? p.exclusions.map((x) => `- ${x}`) : ["- (none)"]), "");
@@ -800,33 +805,17 @@ switch (cmd) {
       const acs = draftAcs(body);
       if (!acs.length) die(2, `Issue #${n} has no AC lines with a [verify: ...] marker (checkbox or "AC (draft)"); refine it first.`);
       const exclusions = [...body.matchAll(/^\s*Out of scope:\s*(.+)$/gim)].map((m) => m[1].trim());
-      // Facts come from labels only. A missing fact is "unknown", which moves coder and tester to sonnet; it is never read as verified false.
-      // A risk label wins. Without one, an explicit "Risk Low" (or Medium/High) in the body counts as stated, and anything
-      // else is unknown, which escalates. Unknown is never read as low.
-      const labelRisk = labels.includes("risk:high") || labels.includes("area:auth") ? "high" : labels.includes("risk:low") ? "low" : labels.includes("risk:medium") ? "medium" : null;
-      const bodyRisk = /\bRisk\s*[:-]?\s*(low|medium|high)\b/i.exec(body)?.[1].toLowerCase() ?? null;
-      const risk = labelRisk ?? bodyRisk ?? "unknown";
-      const riskSource = labelRisk ? "risk label" : bodyRisk ? "issue body" : "unknown";
-      // A db label means a migration. Otherwise only an explicit "Migration: none|yes" or "no migration" in the body counts.
-      // An absent statement stays unknown, which escalates; it is never read as no migration.
-      const bodyMigration = /\bno migrations?\b|\bMigration\s*[:-]?\s*(none|no)\b/i.test(body) ? false
-        : /\bMigration\s*[:-]?\s*yes\b/i.test(body) ? true : "unknown";
-      // A frontend-only issue (ux or study label, no db, auth, api, infra or security label) is classified as no migration,
-      // and the packet says so. Otherwise a migration nobody stated stays unknown.
-      const frontendOnly = !labels.some((l) => FRONTEND_BLOCKERS.includes(l)) && labels.some((l) => l === "area:ux" || l === "area:study");
-      const migration = labels.includes("area:db") ? true : bodyMigration !== "unknown" ? bodyMigration : frontendOnly ? false : "unknown";
-      const migrationSource = labels.includes("area:db") ? "area:db label" : bodyMigration !== "unknown" ? "issue body" : frontendOnly ? "frontend-only labels" : "unknown";
-      const bodyLevel = (name) => {
-        const m = new RegExp(`^\\s*${name}\\s*[:-]?\\s*(low|medium|high)\\b`, "im").exec(body);
-        return m ? m[1].toLowerCase() : "unknown";
-      };
-      const ambiguity = bodyLevel("Ambiguity");
-      const novelty = bodyLevel("Novelty");
-      const reasoning = bodyLevel("Reasoning");
       const sizeLabel = label("size");
       const size = ["xs", "s", "m", "l"].includes(sizeLabel) ? sizeLabel : "unknown";
+      // Lightweight classification from labels, size, body and ACs (model-policy.mjs). Stated values win; a clearly simple
+      // issue gets inferred low values; anything else stays unknown, which scores medium and routes to sonnet.
+      const cls = classifyIssue({ title: j.title, body, labels, size, acCount: acs.length });
+      const { risk, migration, ambiguity, novelty, reasoning } = cls.facts;
+      const riskSource = cls.sources.risk;
+      const migrationSource = cls.sources.migration;
       const attempt = attemptFrom(undefined, opts.attempt);
       const failure = failureFrom(opts.failure, attempt);
+      const priorModel = priorModelFrom(opts["prior-model"]);
       const relLine = /^\s*Related ACs:\s*(.+)$/im.exec(body);
       const refs = relLine ? relLine[1].split(",").map((x) => x.trim()).filter(Boolean) : [];
       const relatedRefs = { ids: refs.filter((x) => /^\d+(?:\.\d+)*$/.test(x)), invariants: refs.filter((x) => /^[A-Z]+\d+$/.test(x)), headings: [] };
@@ -834,7 +823,7 @@ switch (cmd) {
       if (unknown.length) die(2, `Related ACs line has entries that are neither an AC id nor an invariant id: ${unknown.join(", ")}`);
       writePacket({ relatedRefs, relatedNote: relLine ? null : "related ACs: not refined",  issue: n, title: j.title, goal: j.title, acs, exclusions, paths: [], scopeKnown: false, dependsOn: [], checks: packetChecks([], n), acSlice: acSliceFor(n),
         size, risk, riskSource, migration, migrationSource, attempt, maxAttempts: 2, factSource: "issue labels and body, not checked against the manifest or code",
-        models: modelsFor({ size, risk, migration, ambiguity, novelty, reasoning, failure }) });
+        classification: cls.reason, models: modelsFor({ size, risk, migration, ambiguity, novelty, reasoning, failure, priorModel }) });
     }
     const p = bundlePaths(id);
     const m = loadValidManifest(p, id);
@@ -850,7 +839,7 @@ switch (cmd) {
     const extra = it.validation.filter((v) => /^(npm|npx|dotnet|node|eslint) /.test(v) && !/test:coverage/.test(v) && v !== "dotnet test");
     writePacket({ issue: num, title: it.title, goal: it.scope.summary ?? it.title, acs: it.acceptanceCriteria, exclusions: it.scope.exclusions ?? [], paths: it.scope.paths, scopeKnown: it.scope.paths.length > 0, dependsOn: it.dependsOn,
       relatedRefs: it.relatedAcs, checks: packetChecks(it.scope.paths, num, extra), acSlice: acSliceFor(num), size, risk: it.risk, migration: it.migration,
-      attempt, maxAttempts: m.limits.maxAttemptsPerIssue, factSource: "approved manifest", models: modelsFor({ size, risk: it.risk, migration: it.migration, failure: failureFrom(opts.failure, attempt) }) });
+      attempt, maxAttempts: m.limits.maxAttemptsPerIssue, factSource: "approved manifest", models: modelsFor({ size, risk: it.risk, migration: it.migration, failure: failureFrom(opts.failure, attempt), priorModel: priorModelFrom(opts["prior-model"]) }) });
   }
   case "handback-check": {
     const file = positional[0];

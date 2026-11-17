@@ -125,7 +125,9 @@ test("AC packet models: haiku by default, sonnet and opus only on a scored crite
   assert.equal(roles({ size: "s", risk: "high" }).architect, "opus");
   assert.equal(roles({ size: "s", risk: "high" }).coder, "sonnet");
   assert.equal(roles({ size: "s", migration: true }).coder, "opus");
-  assert.equal(roles({ size: "s" }, ["--failure", "reasoning"]).coder, "opus");
+  assert.equal(roles({ size: "s" }, ["--failure", "reasoning", "--prior-model", "sonnet"]).coder, "opus");
+  assert.equal(roles({ size: "s" }, ["--failure", "reasoning", "--prior-model", "haiku"]).coder, "sonnet");
+  assert.equal(roles({ size: "s" }, ["--failure", "reasoning"]).coder, "sonnet");
   assert.equal(roles({ size: "s" }, ["--failure", "environment"]).coder, "sonnet");
   assert.equal(roles({ size: "s" }, ["--attempt", "2"]).coder, "sonnet");
   assert.equal(roles({ size: "l" }).coder, "sonnet");
