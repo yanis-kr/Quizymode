@@ -1122,7 +1122,7 @@ const CategoriesPage = () => {
                 stripEphemeralFilterParams(clearedParams);
                 clearedParams.delete("keywords");
                 clearedParams.delete("tag");
-                if (activeView === "sets") {
+                if ((activeView as string) === "sets") {
                   clearedParams.delete("page");
                   clearedParams.delete("pagesize");
                 } else {
@@ -1518,7 +1518,7 @@ const CategoriesPage = () => {
                 stripEphemeralFilterParams(clearedParams);
                 clearedParams.delete("keywords");
                 clearedParams.delete("tag");
-                if (activeView === "sets") {
+                if ((activeView as string) === "sets") {
                   clearedParams.delete("page");
                   clearedParams.delete("pagesize");
                 } else {
