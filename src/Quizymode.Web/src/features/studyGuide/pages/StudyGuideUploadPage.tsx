@@ -393,7 +393,7 @@ const StudyGuideUploadPage = () => {
                   <p id="study-guide-file-hint" className="mt-2 text-xs text-gray-500">
                     {limits.acceptedExtensions.join(", ")} · up to {formatBytes(limits.maxFileBytes)}
                     {config?.maxPages ? ` · up to ${config.maxPages} pages` : ""}. Scanned PDFs without selectable
-                    text are not supported yet.
+                    text are read on Photos or scan.
                   </p>
                   {file && (
                     <p
