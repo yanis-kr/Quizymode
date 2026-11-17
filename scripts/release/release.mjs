@@ -246,11 +246,74 @@ export function ship({ pr, issues = [], root, deps = {} }) {
   return deployStage({ pr, sha, p, deps });
 }
 
-/** Closes each issue only when ac-evidence reports all its rows complete (AC 7.11.17). */
-export function evidence({ issues, reports, runUrl, env, out, post, close, root, deps = {} }) {
+// The CI job that runs scripts/tests/*.test.mjs (ci.yml ac-gate). Pester (automation-contract) does not cover these tests.
+// Unit evidence needs this job to have passed, never skipped (AC 7.11.19).
+export const REQUIRED_CI_JOB = "ac-gate";
+
+function headSha(root, deps) {
+  if (deps.headSha !== undefined) return deps.headSha;
+  try {
+    return execFileSync("git", ["rev-parse", "HEAD"], { cwd: root, encoding: "utf8" }).trim();
+  } catch {
+    return "";
+  }
+}
+
+function expectedRepo(deps) {
+  if (deps.repo !== undefined) return deps.repo;
+  return ghJson(["repo", "view", "--json", "nameWithOwner"], deps)?.nameWithOwner ?? "";
+}
+
+/**
+ * A CI run counts as unit evidence only when it is a run of this repository, completed green, built the release
+ * commit (a full SHA, or a prefix of at least 7 hex digits), and its REQUIRED_CI_JOB passed. Returns { ok, reason, headSha }.
+ */
+export function verifyCiRun(runUrl, sha, deps = {}) {
+  const match = /^https:\/\/github\.com\/([A-Za-z0-9_.-]+\/[A-Za-z0-9_.-]+)\/actions\/runs\/(\d+)(?:[/?#].*)?$/.exec(runUrl);
+  if (!match) return { ok: false, reason: `not a GitHub Actions run URL: ${runUrl}` };
+  const [, repo, id] = match;
+  let run;
+  try {
+    const expected = expectedRepo(deps);
+    if (!expected) return { ok: false, reason: "could not determine this repository (gh repo view)" };
+    if (repo.toLowerCase() !== expected.toLowerCase()) return { ok: false, reason: `run belongs to ${repo}, not ${expected}` };
+    run = ghJson(["run", "view", id, "--json", "status,conclusion,headSha,jobs"], deps);
+  } catch (error) {
+    return { ok: false, reason: `could not read run ${id}: ${String(error.message).slice(0, 120)}` };
+  }
+  if (!run) return { ok: false, reason: `run ${id} not found` };
+  if (run.status !== "completed" || run.conclusion !== "success") return { ok: false, reason: `run ${id} is ${run.status}/${run.conclusion}, not success` };
+  const want = (sha ?? "").toLowerCase();
+  if (!/^[0-9a-f]{7,40}$/.test(want) || !String(run.headSha ?? "").toLowerCase().startsWith(want)) {
+    return { ok: false, reason: `run ${id} built ${run.headSha}, not the release commit ${sha || "(unknown)"}` };
+  }
+  const jobs = run.jobs ?? [];
+  const required = jobs.find((job) => job.name === REQUIRED_CI_JOB);
+  if (!required || required.conclusion !== "success") {
+    return { ok: false, reason: `run ${id} has no passing ${REQUIRED_CI_JOB} job (${required ? required.conclusion : "not in the run"})` };
+  }
+  const failed = jobs.filter((job) => job.conclusion !== "success" && job.conclusion !== "skipped").map((job) => job.name);
+  if (failed.length) return { ok: false, reason: `run ${id} has unsuccessful jobs: ${failed.join(", ")}` };
+  return { ok: true, reason: "", headSha: run.headSha };
+}
+
+/** Closes each issue only when ac-evidence reports all its rows complete (AC 7.11.17). Reports are optional (AC 7.11.19). */
+export function evidence({ issues, reports = [], runUrl, sha, env, out, post, close, root, deps = {} }) {
+  let verifiedRun = "";
+  let verifiedSha = "";
+  let runNote = "";
+  if (runUrl) {
+    const check = verifyCiRun(runUrl, sha ?? headSha(root, deps), deps);
+    if (check.ok) {
+      verifiedRun = runUrl;
+      verifiedSha = check.headSha;
+    } else {
+      runNote = check.reason;
+    }
+  }
   const args = ["scripts/validation/ac-evidence.mjs", "--issues", issues.join(",")];
   for (const r of reports) args.push("--report", r);
-  if (runUrl) args.push("--run-url", runUrl);
+  if (verifiedRun) args.push("--run-url", verifiedRun, "--commit", verifiedSha);
   if (env) args.push("--env", env);
   if (out) args.push("--out", out);
   if (post) args.push("--post");
@@ -270,7 +333,9 @@ export function evidence({ issues, reports, runUrl, env, out, post, close, root,
     }
   }
   if (open.length) {
-    return result("evidence", false, "open", `left open: ${open.join(" | ")}`, "fix or document the open rows, then run evidence again", 2);
+    const why = !reports.length && !verifiedRun ? "no Playwright report and no accepted CI run; " : "";
+    const notAccepted = runNote ? ` | CI run not accepted: ${runNote}` : "";
+    return result("evidence", false, "open", `incomplete: ${why}left open: ${open.join(" | ")}${notAccepted}`, "pass --run-url of a green CI run on the release commit, or --report for Playwright ACs, then run evidence again", 2);
   }
   const detail = close ? `closed ${closed.map((n) => `#${n}`).join(", ")}` : "all rows complete; nothing closed (no --close)";
   return result("evidence", true, "complete", detail, "post the evidence comments if --post was not used", 0);
@@ -336,7 +401,7 @@ function run(command, f, deps) {
       break;
     case "evidence":
       if (!issues.length) r = result("evidence", false, "usage", "missing --issues", "", 2);
-      else r = evidence({ issues, reports: f.report, runUrl: f["run-url"], env: f.env, out: f.out, post: f.post, close: f.close, root, deps });
+      else r = evidence({ issues, reports: f.report, runUrl: f["run-url"], sha: f.sha, env: f.env, out: f.out, post: f.post, close: f.close, root, deps });
       break;
     case "status":
       r = status({ root, deps });
