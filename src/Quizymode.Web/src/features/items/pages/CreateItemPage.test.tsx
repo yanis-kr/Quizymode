@@ -254,7 +254,10 @@ describe("CreateItemPage", () => {
     expect(vi.mocked(itemsApi.create).mock.calls[0][0].groupLabel).toBe("Tissue");
 
     // The label stays for the next question; clearing it omits the field.
+    // Saving collapses "More options", so reopen it before editing the label.
+    await user.click(screen.getByRole("button", { name: /more options/i }));
     const input = screen.getByLabelText(/group label \(optional\)/i);
+    expect(input).toBeVisible();
     expect(input).toHaveValue("  Tissue ");
     await user.clear(input);
     await user.type(getFieldControl("Question *"), "Second?");
