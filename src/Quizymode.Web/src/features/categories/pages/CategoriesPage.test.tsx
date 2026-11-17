@@ -316,3 +316,94 @@ describe("Active filters (#664)", () => {
     await waitFor(() => expect(currentUrl()).toBe("/categories/languages/german/idioms?view=items&page=1"));
   });
 });
+
+describe("Category filters (#707)", () => {
+  const START = "/categories/languages/german/idioms?view=items&keywords=funny";
+
+  function LocationProbe() {
+    const location = useLocation();
+    return <div data-testid="location">{`${location.pathname}${location.search}`}</div>;
+  }
+
+  function renderWithLocation(url: string) {
+    const queryClient = new QueryClient({ defaultOptions: { queries: { retry: false } } });
+    return render(
+      <HelmetProvider>
+        <QueryClientProvider client={queryClient}>
+          <MemoryRouter initialEntries={[url]}>
+            <LocationProbe />
+            <Routes>
+              <Route path="/categories/:category/:kw1/:kw2" element={<CategoriesPage />} />
+              <Route path="/categories/:category/:kw1" element={<CategoriesPage />} />
+              <Route path="/categories/:category" element={<CategoriesPage />} />
+            </Routes>
+          </MemoryRouter>
+        </QueryClientProvider>
+      </HelmetProvider>
+    );
+  }
+
+  const currentUrl = () => {
+    const url = new URL(screen.getByTestId("location").textContent ?? "", "http://x");
+    const parts = ["view", "page", "keywords"]
+      .filter((k) => url.searchParams.has(k))
+      .map((k) => `${k}=${url.searchParams.get(k)}`);
+    return `${url.pathname}?${parts.join("&")}`;
+  };
+
+  const itemWithKeywords = (keywords: string[]) =>
+    ({
+      ...(makeItem("1", "Q one", "Answer one") as object),
+      category: "Languages",
+      keywords: keywords.map((name, i) => ({ id: `k${i}`, name, isPrivate: false })),
+    }) as never;
+
+  beforeEach(() => {
+    vi.clearAllMocks();
+    installMemoryLocalStorage();
+    vi.mocked(categoriesApi.getAll).mockResolvedValue({
+      categories: [{ category: "Languages", count: 10, description: "Languages", averageRating: null }],
+    } as never);
+    vi.mocked(keywordsApi.getNavigationKeywords).mockResolvedValue({ keywords: [] } as never);
+    vi.mocked(keywordsApi.getKeywordDescriptions).mockResolvedValue({ keywords: [] } as never);
+    vi.mocked(keywordsApi.getItemTagKeywords).mockResolvedValue({ names: [] });
+    vi.mocked(featuredApi.get).mockResolvedValue({ sets: [], collections: [] });
+    vi.mocked(gamesApi.getRoster).mockResolvedValue({ items: [], scopes: [] } as never);
+    vi.mocked(itemsApi.getAll).mockImplementation(
+      async (_c, _p, _k, _col, _r, _page, pageSize) =>
+        ({
+          items: [itemWithKeywords(["german", "idioms", "funny"])],
+          totalCount: 1,
+          page: 1,
+          pageSize,
+          totalPages: 1,
+        }) as never
+    );
+  });
+
+  it("AC 3.5.13 shows a keyword that is both a topic and a tag once, as a topic chip", async () => {
+    renderWithLocation("/categories/languages/german/idioms?view=items&keywords=idioms,funny");
+    const group = await screen.findByRole("group", { name: "Active filters" });
+    const removeIdioms = within(group).getAllByRole("button", { name: "Remove filter idioms" });
+    expect(removeIdioms).toHaveLength(1);
+  });
+
+  it("AC 3.5.16 Clear all removes applied tag refinements and keeps the navigation scope", async () => {
+    const user = userEvent.setup({ delay: null });
+    renderWithLocation(START);
+    await screen.findByText("Q one");
+    await user.click(screen.getByRole("button", { name: /^Filters/ }));
+    await user.click(screen.getByRole("button", { name: "Clear all" }));
+    await waitFor(() => expect(currentUrl()).toBe("/categories/languages/german/idioms?view=items&page=1"));
+  });
+
+  it("AC 3.5.17 states that keyword suggestions come only from the loaded page", async () => {
+    const user = userEvent.setup({ delay: null });
+    renderWithLocation(START);
+    await screen.findByText("Q one");
+    await user.click(screen.getByRole("button", { name: /^Filters/ }));
+    expect(
+      screen.getByText("Suggestions come only from the items loaded on this page.")
+    ).toBeInTheDocument();
+  });
+});

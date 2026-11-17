@@ -1054,7 +1054,7 @@ const CategoriesPage = () => {
                 keywordsFromUrlOrQuery.length > 0 ||
                 hasActiveScopeFilters
               }
-              activeFilterCount={activeScopeFilters.size}
+              activeFilterCount={activeScopeFilters.size + filterKeywordsFromQuery.length}
               onOpenFilters={() => setShowFilters(true)}
               showAnswers={showAnswers}
               onToggleShowAnswers={toggleShowAnswers}
@@ -1112,6 +1112,13 @@ const CategoriesPage = () => {
                 setScopeRatingIncludeUnrated(false);
                 setScopeRatingOnlyUnrated(false);
                 setActiveScopeFilters(new Set());
+                // Clear all removes applied URL refinements (tags, search, type, rating) and keeps the navigation scope.
+                const clearedParams = new URLSearchParams();
+                clearedParams.set("view", activeView);
+                clearedParams.set("page", "1");
+                clearedParams.set("pagesize", pageSize.toString());
+                if (sortBy) clearedParams.set("sort", sortBy);
+                navigate(`${buildCategoryPath(categorySlugParam ?? getAllCategoriesSlug(), pathKeywordsFromUrl)}?${clearedParams.toString()}`);
               }}
             >
               <div className="space-y-4">
@@ -1135,6 +1142,9 @@ const CategoriesPage = () => {
                       )
                     }
                   />
+                  <p className="mt-1 text-xs text-gray-500" data-testid="keyword-suggestion-scope">
+                    Suggestions come only from the items loaded on this page.
+                  </p>
                   {filterKeywordsFromQuery.length > 0 && (
                     <div className="mt-2 flex flex-wrap gap-1.5">
                       {filterKeywordsFromQuery.map((kw) => (
@@ -1434,7 +1444,7 @@ const CategoriesPage = () => {
                 keywordsFromUrlOrQuery.length > 0 ||
                 hasActiveScopeFilters
               }
-              activeFilterCount={activeScopeFilters.size}
+              activeFilterCount={activeScopeFilters.size + filterKeywordsFromQuery.length}
               onOpenFilters={() => setShowFilters(true)}
               middleSlot={
                 isAuthenticated ? (
@@ -1494,6 +1504,13 @@ const CategoriesPage = () => {
                 setScopeRatingIncludeUnrated(false);
                 setScopeRatingOnlyUnrated(false);
                 setActiveScopeFilters(new Set());
+                // Clear all removes applied URL refinements (tags, search, type, rating) and keeps the navigation scope.
+                const clearedParams = new URLSearchParams();
+                clearedParams.set("view", activeView);
+                clearedParams.set("page", "1");
+                clearedParams.set("pagesize", pageSize.toString());
+                if (sortBy) clearedParams.set("sort", sortBy);
+                navigate(`${buildCategoryPath(categorySlugParam ?? getAllCategoriesSlug(), pathKeywordsFromUrl)}?${clearedParams.toString()}`);
               }}
             >
               <div className="space-y-4">
