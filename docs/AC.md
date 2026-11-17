@@ -2226,6 +2226,19 @@ On the Lightsail nano container (0.25 vCPU), boot work used to keep the CPU busy
 - **AC 7.12.11** [Owner] [verify: api] After a production deploy, `GET /health` on the API returns 200, the reported version matches the release, and the deploy finishes with no node replacement. The Lightsail health check allows 6 failed probes (`unhealthyThreshold` 6, about 60 s) before it replaces a node. (tests: `deploy-health-threshold.test.mjs` for the threshold; the rest is checked on prod after deploy)
 - **AC 7.12.12** [Anyone] [verify: anon-ui] After a deploy, the home page and the category navigation load for an anonymous visitor with no errors.
 
+### AC 7.15 Seed review ledger, evidence packets and verdict ingest (#726)
+
+Reviews are recorded per item, content hash, level and rubric version in `data/seed-source/_registry/quality/<category>.jsonl`. A verdict counts only when its quote is found in the cached source text. Code: `scripts/content_quality/`. Fetching sources, the link report and the source-tier config are a follow-up issue and are not in this AC set.
+
+- **AC 7.15.1** [Dev tooling] [verify: unit] `contentHash` is a SHA-256 over the canonical question, answers, explanation and source. It is stable across key order and whitespace, changes with any of those fields, and ignores keywords. (tests: `scripts/tests/test_content_quality.py`, `ContentHashTests`)
+- **AC 7.15.2** [Dev tooling] [verify: unit] `queue` omits an item whose ledger row matches its current hash, level and rubric version, and includes it again after a content change. (tests: `QueueTests`)
+- **AC 7.15.3** [Dev tooling] [verify: unit] An L1 packet has no explanation and no correct-answer marker; option order is shuffled with the seed recorded in the packet. (tests: `PacketTests.test_l1_...`)
+- **AC 7.15.4** [Dev tooling] [verify: unit] An L2 packet carries a passage of at most 800 tokens (about 600 words) from the cache, never the full page. (tests: `PacketTests.test_l2_...`)
+- **AC 7.15.5** [Dev tooling] [verify: unit] `ingest` rejects a verdict whose quote does not occur in the cached source text (whitespace-normalised) and accepts one that does. The committed fixture is `scripts/tests/fixtures/content_quality/cache/`. (tests: `IngestTests`)
+- **AC 7.15.6** [Dev tooling] [verify: unit] Fetched page text lives only in the git-ignored `.cache/content-quality/` directory (`.gitignore`). (tests: `RepoContractTests`)
+- **AC 7.15.7** [Dev tooling] [verify: unit] The legacy `factChecks` import adds `legacy-unverified` rows once, re-running adds nothing, and no item file changes. (tests: `LegacyAndCompactTests.test_legacy_import_is_idempotent`)
+- **AC 7.15.8** [Dev tooling] [verify: unit] `compact` keeps the latest row per item, level and rubric version. (tests: `LegacyAndCompactTests.test_compact_...`)
+
 ### AC 7.13 Agent work packets, AC slices and token ledger (#719)
 
 Agents used to rebuild context from `docs/AC.md` (about 800 KB) and from whole files on every run. A work packet gives each agent its own slice; the ledger measures what runs cost. Token counts from the ledger are estimates from transcript usage fields, not subscription costs.
