@@ -2199,6 +2199,16 @@ Tooling that keeps an issue from shipping without a way to prove its ACs, and th
 - **AC 7.11.6** [Dev tooling] [verify: unit] **Given** the Deploy workflow's wait for the new container deployment fails or times out, **then** a best-effort follow-up step prints the last 100 log lines of the `api` Lightsail container (log lines only, never environment or deployment settings) and cannot change the job outcome, so the original failure is still reported.
 - **AC 7.11.7** [Dev tooling] [verify: unit] (#717) **Given** Deploy reads the change scope, **then** `scripts/ci/read-change-scope.mjs` turns a flag off only for an explicit JSON `false`; a missing file, invalid JSON, a non-object value or a missing key gives `true`, so the job deploys everything. (tests: `read-change-scope.test.mjs`, `deploy-workflow.test.mjs`)
 
+### AC 7.14 Seed-source quality gate (#725)
+
+`scripts/lint_seed_source.py` checks item content deterministically. Hard rules fail the `seed-quality` CI job for any changed item. Soft rules are compared with the committed baseline `data/seed-source/_registry/quality/soft-baseline.json`, so only new or changed items with a new soft violation fail. Per-category thresholds come from `data/seed-source/_registry/quality/profiles.json`.
+
+- **AC 7.14.1** [Dev tooling] [verify: unit] Each hard rule (H1 duplicate option, H2 explanation echoing the key or question, H3 placeholder text, H4 `UPD<yymmdd>` marker) reports its item id and rule id, and a clean item reports none. (tests: `scripts/tests/test_seed_lint.py`, `HardRuleTests`)
+- **AC 7.14.2** [Dev tooling] [verify: unit] Each soft rule (S1 key longest by the profile margin, S2 absolute option, S3 short explanation, S4 key in stem) has a passing and a failing case. (tests: `SoftRuleTests`)
+- **AC 7.14.3** [Dev tooling] [verify: unit] `--changed-only` checks only items changed since the base ref and exits 1 when such an item has a hard violation or a soft violation not in the baseline. An untouched item with a baseline violation does not fail. `--update-baseline` only shrinks the baseline unless `--allow-growth` is passed. (tests: `scripts/tests/test_seed_lint.py` run in CI, and the changed-only run in the `seed-quality` job)
+- **AC 7.14.4** [Dev tooling] [verify: unit] Near-duplicate candidate pairs within one category are reported with both item ids and a similarity value, and never fail CI. (tests: `NearDuplicateTests`)
+- **AC 7.14.5** [Dev tooling] [verify: unit] The `seed-quality` job runs `validate_seed_source.py`, the changed-item lint and every `scripts/tests/test_*.py`. It does not gate `build-test-publish`, and an item-only change still skips the web build, image build and Deploy (AC 7.11.5). (tests: `classify-changes.test.mjs`, `workflow gating`)
+
 ### AC 7.12 Startup readiness gate (#732)
 
 On the Lightsail nano container (0.25 vCPU), boot work used to keep the CPU busy for 25 to 40 seconds before Kestrel listened, so the `/health` probe failed and the node was replaced. Slow startup work now runs in the background behind a one-way gate. Code: `Services/Startup/`, `StartupExtensions/StartupMigration.cs`, `Services/TaxonomySeedApplier.cs`.
