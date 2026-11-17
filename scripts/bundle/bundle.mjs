@@ -20,12 +20,27 @@ import { ROLES, routeModel, classifyIssue, MODEL_ORDER } from "../automation/mod
 
 const SCHEMA_VERSION = 1;
 const ID_RE = /^[a-z0-9][a-z0-9-]{2,47}$/;
-const ISSUE_STATUSES = ["pending", "in_progress", "implemented", "validated", "integrated", "released", "verified", "closed", "blocked", "deferred", "skipped_already_done", "failed"];
+const ISSUE_STATUSES = ["pending", "in_progress", "implemented", "validated", "integrated", "released", "verified", "closed", "blocked", "deferred", "parked", "skipped_already_done", "failed"];
+// Lead decisions (#759). "defer" is the legacy outcome: it is read as "park" from state.json, and rejected as new input.
+const DECISION_OUTCOMES = ["proceed", "proceed-flagged", "park"];
+const FLAGGED_LIMIT = 3; // the fourth flagged decision on one issue parks it as needs-refinement
+const ENVELOPE_FILE = "envelope.json";
+const ENVELOPE_APPROVAL = "envelope-approval.json";
+const SIZE_ORDER = ["xs", "s", "m", "l"];
+const ROLLBACK_ORDER = ["report-only", "rollback-workflow"];
+const INFRA_ORDER = ["none", "listed"];
+const PROD_WRITE_ORDER = ["none", "test-data-only"];
+const ENVELOPE_DEFAULTS = {
+  schemaVersion: SCHEMA_VERSION, mergeToMain: true, migrations: "additive-only", infraChanges: "none", prodDataWrites: "test-data-only",
+  deleteOwnTestData: true, seedSyncApply: false, prodReadQueries: true, rollback: "rollback-workflow", closeIssues: true, paidServices: false,
+  maxIssues: 8, maxSize: "m", excludeAreas: ["area:auth", "area:infra"],
+};
+const normalizeOutcome = (o) => (o === "defer" ? "park" : o);
 const PHASES = ["not_started", "preflight", "implementing", "integrating", "validating", "release_pr_open", "ci_green", "merged", "deployed", "verified", "done", "done_partial", "blocked_terminal", "cancelled"];
 const TERMINAL = new Set(["done", "done_partial", "blocked_terminal", "cancelled"]);
 const RELEASE_MODES = ["auto-merge-deploy", "release-pr-only"];
 const MIGRATIONS = ["none", "additive-only", "any-reviewed"];
-const BLOCKER_KINDS = ["environmental", "dependency", "check-failed", "product-deferred", "source-drift", "limit"];
+const BLOCKER_KINDS = ["environmental", "dependency", "check-failed", "product-deferred", "source-drift", "limit", "parked"];
 
 // ---------- args ----------
 const argv = process.argv.slice(2);
@@ -70,9 +85,14 @@ function mainCheckoutRoot() {
   if (!common) die(1, "Not inside a git repository; pass --bundles-dir.");
   return path.dirname(common);
 }
+// The local .qm folder (gitignored). --qm-dir points tests at a temp folder; the default is the main checkout's .qm.
+function qmDir() {
+  if (typeof opts["qm-dir"] === "string") return path.resolve(String(opts["qm-dir"]));
+  return path.join(mainCheckoutRoot(), ".qm");
+}
 function bundlesDir() {
   if (opts["bundles-dir"]) return path.resolve(String(opts["bundles-dir"]));
-  return path.join(mainCheckoutRoot(), ".qm", "bundles");
+  return path.join(qmDir(), "bundles");
 }
 function bundlePaths(id) {
   if (!id || !ID_RE.test(id)) die(1, `Invalid or missing bundle id '${id ?? ""}' (pattern ${ID_RE}).`);
@@ -173,6 +193,8 @@ function validateManifest(m, id) {
   req(typeof a.mergeToMain === "boolean", "authorization.mergeToMain must be boolean");
   req(MIGRATIONS.includes(a.migrations), `authorization.migrations must be one of ${MIGRATIONS.join(", ")}`);
   req(a.paidServices === false, "authorization.paidServices must be false (paid services are never authorized by a manifest)");
+  // Optional flags the standing envelope checks (#759). Absent means not requested.
+  for (const k of ["deleteOwnTestData", "seedSyncApply", "prodReadQueries", "closeIssues"]) req(a[k] === undefined || typeof a[k] === "boolean", `authorization.${k} must be boolean when set`);
   req(a.infraChanges === "none" || a.infraChanges === "listed", "authorization.infraChanges must be 'none' or 'listed'");
   if (a.infraChanges === "listed") req(Array.isArray(a.infraAllowed) && a.infraAllowed.length > 0, "authorization.infraAllowed must list operations when infraChanges is 'listed'");
   req(["none", "test-data-only"].includes(a.prodDataWrites), "authorization.prodDataWrites must be 'none' or 'test-data-only'");
@@ -208,6 +230,7 @@ function validateManifest(m, id) {
     e.push(...relatedAcsErrors(it, tag));
     for (const ac of it?.acceptanceCriteria ?? []) req(typeof ac?.id === "string" && typeof ac?.text === "string" && typeof ac?.evidence === "string", `${tag}: each AC needs id, text, evidence`);
     req(Array.isArray(it?.dependsOn), `${tag}: dependsOn must be an array`);
+    req(it?.areas === undefined || (Array.isArray(it.areas) && it.areas.every((x) => /^area:[a-z0-9-]+$/.test(x))), `${tag}: areas must be area:<name> labels when set`);
     if (it?.migration === true) req(a.migrations !== "none", `${tag}: needs a migration but authorization.migrations is 'none'`);
   }
   for (const it of m.issues ?? []) for (const d of it?.dependsOn ?? []) {
@@ -226,6 +249,51 @@ function validateManifest(m, id) {
   };
   for (const n of byNum.keys()) visit(n, []);
   return e;
+}
+
+// ---------- standing envelope (#759) ----------
+// The most a run may authorise without the owner. Its bytes are approved once (envelope approve); a standing bundle
+// approval must then fit inside it field by field.
+function validateEnvelope(e) {
+  const err = [];
+  const req = (cond, msg) => { if (!cond) err.push(msg); };
+  if (!e || typeof e !== "object" || Array.isArray(e)) return ["envelope is not an object"];
+  req(e.schemaVersion === SCHEMA_VERSION, `schemaVersion must be ${SCHEMA_VERSION}`);
+  for (const k of ["mergeToMain", "deleteOwnTestData", "seedSyncApply", "prodReadQueries", "closeIssues"]) req(typeof e[k] === "boolean", `${k} must be boolean`);
+  req(MIGRATIONS.includes(e.migrations), `migrations must be one of ${MIGRATIONS.join(", ")}`);
+  req(INFRA_ORDER.includes(e.infraChanges), `infraChanges must be one of ${INFRA_ORDER.join(", ")}`);
+  req(PROD_WRITE_ORDER.includes(e.prodDataWrites), `prodDataWrites must be one of ${PROD_WRITE_ORDER.join(", ")}`);
+  req(ROLLBACK_ORDER.includes(e.rollback), `rollback must be one of ${ROLLBACK_ORDER.join(", ")}`);
+  req(e.paidServices === false, "paidServices must be false (enforced)");
+  req(Number.isInteger(e.maxIssues) && e.maxIssues > 0, "maxIssues must be a positive integer");
+  req(SIZE_ORDER.includes(e.maxSize), `maxSize must be one of ${SIZE_ORDER.join(", ")}`);
+  req(Array.isArray(e.excludeAreas) && e.excludeAreas.every((x) => typeof x === "string"), "excludeAreas must be an array of strings");
+  return err;
+}
+/** Fields of the manifest that exceed the envelope. Empty when the bundle fits. An unknown size counts as l; issues without areas cannot prove they avoid excluded areas. */
+function envelopeViolations(env, m) {
+  const v = [];
+  const a = m.authorization ?? {};
+  if (a.mergeToMain === true && env.mergeToMain !== true) v.push("mergeToMain: the manifest merges to main; the envelope does not allow it");
+  if (MIGRATIONS.indexOf(a.migrations) > MIGRATIONS.indexOf(env.migrations)) v.push(`migrations: manifest ${a.migrations} exceeds envelope ${env.migrations}`);
+  if (INFRA_ORDER.indexOf(a.infraChanges) > INFRA_ORDER.indexOf(env.infraChanges)) v.push(`infraChanges: manifest ${a.infraChanges} exceeds envelope ${env.infraChanges}`);
+  if (PROD_WRITE_ORDER.indexOf(a.prodDataWrites) > PROD_WRITE_ORDER.indexOf(env.prodDataWrites)) v.push(`prodDataWrites: manifest ${a.prodDataWrites} exceeds envelope ${env.prodDataWrites}`);
+  if (a.deleteOwnTestData === true && env.deleteOwnTestData !== true) v.push("deleteOwnTestData: the manifest asks for it; the envelope does not allow it");
+  if (a.seedSyncApply === true && env.seedSyncApply !== true) v.push("seedSyncApply: the manifest asks for it; the envelope does not allow it");
+  if (a.prodReadQueries === true && env.prodReadQueries !== true) v.push("prodReadQueries: the manifest asks for it; the envelope does not allow it");
+  if (a.closeIssues === true && env.closeIssues !== true) v.push("closeIssues: the manifest asks for it; the envelope does not allow it");
+  if (ROLLBACK_ORDER.indexOf(a.rollback) > ROLLBACK_ORDER.indexOf(env.rollback)) v.push(`rollback: manifest ${a.rollback} exceeds envelope ${env.rollback}`);
+  if (a.paidServices !== false) v.push("paidServices: the manifest must not authorise paid services");
+  if (m.issues.length > env.maxIssues) v.push(`maxIssues: ${m.issues.length} issues exceed the envelope limit ${env.maxIssues}`);
+  for (const it of m.issues) {
+    const size = it.size ?? "l";
+    if (SIZE_ORDER.indexOf(size) > SIZE_ORDER.indexOf(env.maxSize)) v.push(`maxSize: #${it.number} is size ${size}; the envelope allows up to ${env.maxSize}`);
+    if (env.excludeAreas.length) {
+      if (!Array.isArray(it.areas)) v.push(`excludeAreas: #${it.number} has no areas recorded, so it cannot be shown to avoid ${env.excludeAreas.join(", ")}`);
+      else for (const x of it.areas.filter((y) => env.excludeAreas.includes(y))) v.push(`excludeAreas: #${it.number} is in ${x}`);
+    }
+  }
+  return v;
 }
 
 function loadValidManifest(p, id) {
@@ -275,7 +343,7 @@ function pathsOverlap(a, b) {
   return false;
 }
 function planLanes(m, st) {
-  const todo = [...m.issues].sort((x, y) => x.order - y.order).filter((i) => !["integrated", "released", "verified", "closed", "deferred", "skipped_already_done"].includes(st?.issues?.[String(i.number)]?.status));
+  const todo = [...m.issues].sort((x, y) => x.order - y.order).filter((i) => !["integrated", "released", "verified", "closed", "deferred", "parked", "skipped_already_done"].includes(st?.issues?.[String(i.number)]?.status));
   const laneOf = new Map();
   const reasons = [];
   const groups = []; // each group is an array of issues that must share a lane
@@ -470,7 +538,7 @@ function writePacket(p) {
 // no filesChanged and an existing deliverable file. The role comes from the orchestrator, and the specialist has
 // read-only permissions. A git-status check would only show that the shared worktree is dirty, not which agent
 // changed it, so it is not used (AC 7.13.4).
-const PLANNING_ROLES = new Set(["architect", "reviewer", "ux-designer", "qm-decision-maker"]);
+const PLANNING_ROLES = new Set(["architect", "reviewer", "ux-designer", "qm-lead"]);
 function isPlanningDone(h, role) {
   return PLANNING_ROLES.has(role) && h.status === "done" && Array.isArray(h.filesChanged) && h.filesChanged.length === 0
     && typeof h.deliverable === "string" && h.deliverable.length > 0;
@@ -492,6 +560,56 @@ function validateHandback(h, role = "") {
   if (h.acRefsAdded !== undefined && (!Array.isArray(h.acRefsAdded) || h.acRefsAdded.some((x) => typeof x !== "string"))) e.push("acRefsAdded must be an array of strings");
   if (h.status === "done" && Array.isArray(h.commands) && h.commands.some((c) => c && Number.isInteger(c.exitCode) && c.exitCode !== 0)) e.push("a done handback cannot include a command with a nonzero exitCode");
   return e;
+}
+
+// ---------- standing approval and envelope (#759) ----------
+function approvedEnvelope(ep, eap) {
+  const ea = safeJson(eap);
+  return Boolean(ea && ea.status === "approved" && ea.envelopeSha256 === sha256File(ep));
+}
+/** Checks a standing approval and returns the approval fields to write. Every failure exits 2 with the reason. */
+function standingApproval(p, m, hash) {
+  const ep = path.join(qmDir(), ENVELOPE_FILE);
+  const eap = path.join(qmDir(), ENVELOPE_APPROVAL);
+  if (!fs.existsSync(ep) || !fs.existsSync(eap)) die(2, "No approved standing envelope. The owner approves it once: envelope init, then envelope approve.");
+  const env = readJson(ep);
+  const envErrors = validateEnvelope(env);
+  if (envErrors.length) die(2, "Envelope is invalid", { errors: envErrors });
+  const ea = readJson(eap);
+  if (ea.status !== "approved") die(2, `Envelope approval status is '${ea.status}', not 'approved'.`);
+  const envHash = sha256File(ep);
+  if (ea.envelopeSha256 !== envHash) die(2, "The envelope changed after the owner approved it; the owner must approve the new bytes.", { approvedSha256: ea.envelopeSha256, currentSha256: envHash });
+  const violations = envelopeViolations(env, m);
+  if (violations.length) die(2, "Manifest exceeds the standing envelope. Remove the offending issues or ask the owner for a user approval.", { violations });
+  const review = safeJson(path.join(p.dir, "review.json"));
+  if (!review || !Array.isArray(review.openFindings)) die(2, "No manifest review record. Refine step 8 writes review.json with openFindings.");
+  if (review.openFindings.length) die(2, `The manifest review has ${review.openFindings.length} open finding(s); a standing approval needs none.`);
+  if (typeof opts["lead-decision"] !== "string") die(1, "--lead-decision <file> is required: the qm-lead decision JSON for this approval");
+  const decisionFile = path.resolve(String(opts["lead-decision"]));
+  const d = readJson(decisionFile);
+  if (d.outcome !== "proceed" || d.acImpact === "weakens") die(2, "The lead decision must be proceed (not park, and not weakens) to approve standing.");
+  return {
+    kind: "standing", approvedBy: `standing envelope ${envHash.slice(0, 12)}`, envelopeSha256: envHash,
+    leadDecision: { id: d.id ?? sha256File(decisionFile).slice(0, 16), outcome: d.outcome },
+  };
+}
+
+// ---------- decisions and precedents (#759) ----------
+/** Park or flag counts for the status report. Legacy "defer" entries count as parked. */
+function decisionsByOutcome(st) {
+  const out = { flagged: [], parked: [] };
+  for (const d of st.decisions ?? []) {
+    const applied = normalizeOutcome(d.appliedOutcome ?? d.outcome);
+    if (applied === "proceed-flagged") out.flagged.push(d);
+    else if (applied === "park") out.parked.push(d);
+  }
+  return out;
+}
+const PRECEDENT_SCOPES = ["issue", "area", "global"];
+function precedentFile() { return path.join(qmDir(), "lead", "precedents.jsonl"); }
+function readPrecedents() {
+  if (!fs.existsSync(precedentFile())) return [];
+  return fs.readFileSync(precedentFile(), "utf8").split(/\r?\n/).filter(Boolean).map((l) => JSON.parse(l));
 }
 
 // ---------- commands ----------
@@ -522,19 +640,58 @@ switch (cmd) {
   }
   case "approve": {
     const p = bundlePaths(id);
-    loadValidManifest(p, id);
+    const m = loadValidManifest(p, id);
     const hash = sha256File(p.manifest);
     const given = String(opts.hash ?? "");
     if (given.length < 8 || !hash.startsWith(given.toLowerCase())) die(2, "Hash given by the user does not match the current manifest. Show the new hash and ask again.", { currentSha256: hash });
-    const reply = opts["user-reply"];
-    if (typeof reply !== "string" || !reply.trim()) die(1, "--user-reply \"<verbatim user approval text>\" is required");
-    const replyHash = (reply.match(/\bapprove\s+([0-9a-f]{8,64})\b/i) ?? [])[1];
-    if (!replyHash || replyHash.toLowerCase() !== given.toLowerCase()) die(2, "The user's reply must itself contain 'approve <hash prefix>' matching --hash. An 'ok' to questions is not an approval.");
+    let approval;
+    if (opts.standing === true) {
+      // Standing approval (#759): no user reply. The manifest must fit the owner-approved envelope, with a clean review and a lead proceed.
+      approval = standingApproval(p, m, hash);
+    } else {
+      const reply = opts["user-reply"];
+      if (typeof reply !== "string" || !reply.trim()) die(1, "--user-reply \"<verbatim user approval text>\" is required");
+      const replyHash = (reply.match(/\bapprove\s+([0-9a-f]{8,64})\b/i) ?? [])[1];
+      if (!replyHash || replyHash.toLowerCase() !== given.toLowerCase()) die(2, "The user's reply must itself contain 'approve <hash prefix>' matching --hash. An 'ok' to questions is not an approval.");
+      approval = { approvedBy: "user, in the qm-bundle-refine session", userReply: opts["user-reply"] };
+    }
     const prev = fs.existsSync(p.approval) ? readJson(p.approval) : null;
     if (fs.existsSync(p.state)) die(2, "Execution already started for this bundle; create a new bundle id instead of re-approving a running one.");
     const history = prev ? [...(prev.history ?? []), { manifestSha256: prev.manifestSha256, approvedAt: prev.approvedAt, supersededAt: now() }] : [];
-    writeJsonAtomic(p.approval, { schemaVersion: SCHEMA_VERSION, bundleId: id, status: "approved", manifestSha256: hash, approvedAt: now(), approvedBy: "user, in the qm-bundle-refine session", userReply: opts["user-reply"], history });
-    ok({ bundleId: id, manifestSha256: hash, approved: true });
+    writeJsonAtomic(p.approval, { schemaVersion: SCHEMA_VERSION, bundleId: id, status: "approved", manifestSha256: hash, approvedAt: now(), ...approval, history });
+    ok({ bundleId: id, manifestSha256: hash, approved: true, kind: opts.standing === true ? "standing" : "user" });
+  }
+  case "envelope": {
+    // envelope init | show | approve --hash <prefix> --user-reply "<text containing approve <prefix>>"
+    const sub = positional[0];
+    const ep = path.join(qmDir(), ENVELOPE_FILE);
+    const eap = path.join(qmDir(), ENVELOPE_APPROVAL);
+    if (sub === "init") {
+      if (fs.existsSync(ep)) die(2, `${ep} already exists; refusing to overwrite the envelope.`);
+      fs.mkdirSync(qmDir(), { recursive: true });
+      writeJsonAtomic(ep, ENVELOPE_DEFAULTS);
+      ok({ envelope: ep, sha256: sha256File(ep), note: "Show the owner this file, then approve its hash: envelope approve --hash <prefix>." });
+    }
+    if (!fs.existsSync(ep)) die(2, `No envelope at ${ep}. Run: envelope init.`);
+    const envHash = sha256File(ep);
+    const env = readJson(ep);
+    const envErrors = validateEnvelope(env);
+    if (sub === "show") {
+      if (envErrors.length) die(2, "Envelope is invalid", { errors: envErrors });
+      ok({ envelope: env, sha256: envHash, approved: approvedEnvelope(ep, eap) });
+    }
+    if (sub === "approve") {
+      if (envErrors.length) die(2, "Envelope is invalid", { errors: envErrors });
+      const given = String(opts.hash ?? "");
+      if (given.length < 8 || !envHash.startsWith(given.toLowerCase())) die(2, "Hash given does not match the current envelope. Show the owner the envelope again.", { currentSha256: envHash });
+      const reply = opts["user-reply"];
+      if (typeof reply !== "string" || !reply.trim()) die(1, "--user-reply \"<verbatim owner approval text>\" is required");
+      const replyHash = (reply.match(/\bapprove\s+([0-9a-f]{8,64})\b/i) ?? [])[1];
+      if (!replyHash || replyHash.toLowerCase() !== given.toLowerCase()) die(2, "The owner's reply must contain 'approve <hash prefix>' matching --hash.");
+      writeJsonAtomic(eap, { schemaVersion: SCHEMA_VERSION, status: "approved", envelopeSha256: envHash, approvedAt: now(), userReply: reply, history: [] });
+      ok({ envelope: ep, sha256: envHash, approved: true });
+    }
+    die(1, "Usage: envelope init | show | approve --hash <prefix> --user-reply \"<text>\"");
   }
   case "verify": {
     const p = bundlePaths(id);
@@ -706,27 +863,69 @@ switch (cmd) {
     const m = loadValidManifest(p, id);
     const st = loadState(p);
     requireHolder(st, m);
-    if (typeof opts.file !== "string") die(1, "--file <decision.json> required (the qm-decision-maker result, saved verbatim)");
+    if (typeof opts.file !== "string") die(1, "--file <decision.json> required (the qm-lead result, saved verbatim)");
     const d = readJson(path.resolve(opts.file));
     const need = ["question", "decision", "rationale", "acImpact", "validationRequired", "outcome"];
     const missing = need.filter((k) => !(k in d));
     if (missing.length) die(1, `decision missing fields: ${missing.join(", ")}`);
-    if (!["proceed", "defer"].includes(d.outcome)) die(1, "decision.outcome must be 'proceed' or 'defer'");
+    if (!DECISION_OUTCOMES.includes(d.outcome)) die(1, `decision.outcome must be one of ${DECISION_OUTCOMES.join(", ")}`);
     if (!["none", "clarifies", "weakens"].includes(d.acImpact)) die(1, "decision.acImpact must be none, clarifies or weakens");
-    if (d.outcome === "defer" && !d.deferReason) die(1, "decision.deferReason is required when outcome is defer");
+    const parkReason = d.parkReason ?? d.deferReason;
+    if (d.outcome === "park" && !parkReason) die(1, "decision.parkReason is required when outcome is park");
     const issue = opts.issue ? String(opts.issue) : null;
     if (issue && !st.issues[issue]) die(2, `Issue #${issue} is not in bundle '${id}'.`);
-    const outcome = d.acImpact === "weakens" ? "defer" : d.outcome; // never proceed on weakened ACs
-    const reason = d.deferReason ?? "the only option would weaken an acceptance criterion";
-    st.decisions.push({ at: now(), issue: issue ? Number(issue) : null, ...d, appliedOutcome: outcome });
-    if (outcome === "defer" && issue) {
-      st.issues[issue].status = "deferred";
-      st.issues[issue].notes.push(`${now()} deferred by decision: ${reason}`);
-      st.blockers.push({ at: now(), kind: "product-deferred", issue: Number(issue), note: reason });
+    // Applied outcome: weakened ACs never proceed; a fourth flagged decision on one issue parks it as needs-refinement.
+    let outcome = d.outcome;
+    let reason = parkReason;
+    let reasonCode = null;
+    if (d.acImpact === "weakens") { outcome = "park"; reason ??= "the only option would weaken an acceptance criterion"; }
+    if (outcome === "proceed-flagged" && issue) {
+      const flagged = decisionsByOutcome(st).flagged.filter((x) => String(x.issue) === issue).length;
+      if (flagged >= FLAGGED_LIMIT) { outcome = "park"; reasonCode = "needs-refinement"; reason = `needs-refinement: more than ${FLAGGED_LIMIT} flagged decisions on this issue; refine the issue instead of guessing again`; }
     }
-    saveState(p, st, { event: "decision", issue, outcome });
-    if (d.acImpact === "weakens") die(2, "A decision may not weaken acceptance criteria; recorded as defer.", { appliedOutcome: outcome });
-    ok({ bundleId: id, decisions: st.decisions.length, outcome });
+    const decisionId = `d-${randomBytes(4).toString("hex")}`;
+    st.decisions.push({ ...d, id: decisionId, at: now(), issue: issue ? Number(issue) : null, appliedOutcome: outcome, ...(reasonCode ? { reasonCode } : {}) });
+    if (outcome === "park" && issue) {
+      st.issues[issue].status = "parked";
+      if (reasonCode) st.issues[issue].parkReason = reasonCode;
+      st.issues[issue].notes.push(`${now()} parked by decision ${decisionId}: ${reason}`);
+      st.blockers.push({ at: now(), kind: "parked", issue: Number(issue), note: reason });
+    }
+    saveState(p, st, { event: "decision", issue, outcome, id: decisionId });
+    if (d.acImpact === "weakens") die(2, "A decision may not weaken acceptance criteria; recorded as park.", { id: decisionId, appliedOutcome: outcome });
+    ok({ bundleId: id, id: decisionId, decisions: st.decisions.length, outcome, ...(reasonCode ? { reasonCode } : {}) });
+  }
+  case "precedent": {
+    // precedent add --question "..." --answer "..." --scope issue|area|global [--issue n] [--area area:x] [--source owner]
+    // precedent find [--issue n] [--area area:x]   (returns global precedents plus those matching the issue or area)
+    const sub = positional[0];
+    if (sub === "add") {
+      const q = opts.question, a = opts.answer, scope = opts.scope;
+      if (typeof q !== "string" || !q.trim() || typeof a !== "string" || !a.trim()) die(1, "precedent add needs --question and --answer");
+      if (!PRECEDENT_SCOPES.includes(scope)) die(1, `--scope must be one of ${PRECEDENT_SCOPES.join(", ")}`);
+      const rec = { id: `p-${randomBytes(4).toString("hex")}`, question: q.trim(), answer: a.trim(), scope, date: now().slice(0, 10), source: typeof opts.source === "string" ? opts.source : "owner" };
+      if (scope === "issue") {
+        const n = Number(opts.issue);
+        if (!Number.isInteger(n) || n <= 0) die(1, "--issue <n> is required for issue scope");
+        rec.issue = n;
+      }
+      if (scope === "area") {
+        if (typeof opts.area !== "string" || !/^area:[a-z0-9-]+$/.test(opts.area)) die(1, "--area area:<name> is required for area scope");
+        rec.area = opts.area;
+      }
+      fs.mkdirSync(path.dirname(precedentFile()), { recursive: true });
+      fs.appendFileSync(precedentFile(), JSON.stringify(rec) + "\n", "utf8");
+      ok({ precedent: rec.id, scope, file: precedentFile() });
+    }
+    if (sub === "find") {
+      const issue = opts.issue === undefined ? null : String(opts.issue);
+      const area = typeof opts.area === "string" ? opts.area : null;
+      const hits = readPrecedents().filter((r) => r.scope === "global"
+        || (r.scope === "issue" && issue !== null && String(r.issue) === issue)
+        || (r.scope === "area" && area !== null && r.area === area));
+      ok({ matches: hits.length, precedents: hits });
+    }
+    die(1, "Usage: precedent add --question <q> --answer <a> --scope issue|area|global [--issue n] [--area area:x] | precedent find [--issue n] [--area area:x]");
   }
   case "checkpoint": {
     // Call between steps: refuses to continue if cancelled/terminal, approval changed, wall clock exceeded, or lock lost.
@@ -777,6 +976,14 @@ switch (cmd) {
     if (st) for (const [n, it] of Object.entries(st.issues)) lines.push(`  #${n} ${it.status}${it.attempts ? ` (attempts ${it.attempts})` : ""}${it.notes.length ? ` - ${it.notes.at(-1)}` : ""}`);
     if (st?.blockers?.length) { lines.push("Blockers:"); for (const b of st.blockers) lines.push(`  [${b.kind}]${b.issue ? ` #${b.issue}` : ""} ${b.note}`); }
     if (st?.lock) lines.push(`Lock: ${st.lock.holder}, heartbeat ${st.lock.heartbeatAt}`);
+    if (st) {
+      // Flagged decisions ship and are listed for review; parked questions wait for the owner. Legacy "defer" counts as parked.
+      const by = decisionsByOutcome(st);
+      lines.push(`Flagged decisions (${by.flagged.length}):`);
+      for (const d of by.flagged) lines.push(`  ${d.issue ? `#${d.issue}` : "global"} ${d.question}: ${d.decision}`);
+      lines.push(`Parked questions (${by.parked.length}):`);
+      for (const d of by.parked) lines.push(`  ${d.issue ? `#${d.issue}` : "global"} ${d.question} (${d.parkReason ?? d.deferReason ?? "no reason recorded"})`);
+    }
     process.stdout.write(lines.join("\n") + "\n");
     process.exit(0);
   }
@@ -894,6 +1101,9 @@ switch (cmd) {
   default:
     process.stdout.write(`Usage: node bundle.mjs <command> <bundleId> [options]
 Refine:  new, snapshot <n...>, check, hash, brief (text), approve --hash <prefix> --user-reply "<text containing approve <prefix>>"
+         approve --hash <prefix> --standing --lead-decision <file>   (inside the owner's standing envelope; no user reply)
+Envelope: envelope init | show | approve --hash <prefix> --user-reply "<text containing approve <prefix>>"
+Lead:    precedent add --question q --answer a --scope issue|area|global [--issue n] [--area area:x]; precedent find [--issue n] [--area area:x]
 Execute: verify [--gh] [--no-git], state-init [--take-over] (prints holder), then with --holder <h>:
          checkpoint, issue <n> <status> [--note --branch --commit --lane a|b], lanes (read-only: split issues into two path-disjoint lanes), attempt <n>, ci-run,
          phase <phase> [--pr --previous-main-sha --merge-sha --deploy-run --note], merge-gate --pr <n>,

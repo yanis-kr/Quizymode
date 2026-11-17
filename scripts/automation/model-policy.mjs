@@ -23,14 +23,14 @@
 //   tester, ux-designer   haiku at level 0; sonnet otherwise; never opus
 //   coder                 haiku at level 0; sonnet at level 1; opus only for high reasoning, a migration, or a
 //                         reasoning failure on sonnet (or opus)
-//   architect, reviewer,
-//   qm-decision-maker     haiku at 0; sonnet at 1; opus at 2. The decision-maker is never below sonnet.
+//   architect, reviewer   haiku at 0; sonnet at 1; opus at 2.
+//   qm-lead               always opus (#759): it decides for an unattended run, so it is never routed below opus.
 //
 // classifyIssue() derives the facts from an issue's labels, body and acceptance criteria, without an extra agent or extra
 // labels. Only a clearly simple issue gets inferred low values; anything unclear stays unknown and scores medium.
 
 export const MODEL_ORDER = Object.freeze(["haiku", "sonnet", "opus"]);
-export const ROLES = Object.freeze(["architect", "reviewer", "qm-decision-maker", "coder", "tester", "ux-designer", "reporter"]);
+export const ROLES = Object.freeze(["architect", "reviewer", "qm-lead", "coder", "tester", "ux-designer", "reporter"]);
 
 const LEVEL = { low: 0, none: 0, environment: 0, medium: 1, unclassified: 1, unknown: 1, high: 2, reasoning: 2 };
 
@@ -86,9 +86,9 @@ export function routeModel(role, facts = {}) {
     if (hard) return pick("opus", `${hard.label} needs deeper reasoning`);
     return level === 0 ? pick("haiku") : pick("sonnet");
   }
-  // architect, reviewer, qm-decision-maker
+  if (role === "qm-lead") return pick("opus", "qm-lead is always opus");
+  // architect, reviewer
   const model = level === 0 ? "haiku" : level === 1 ? "sonnet" : "opus";
-  if (role === "qm-decision-maker" && model === "haiku") return pick("sonnet", "decisions are never below sonnet");
   return pick(model);
 }
 

@@ -23,6 +23,9 @@
 | `authorization.rollback` | `rollback-workflow` (dispatch `Rollback` with `previous_sha`/`failed_sha` on the trigger) or `report-only`. (enforced) |
 | `authorization.closeIssues` | Close each issue after its Acceptance Evidence comment is posted. |
 | `authorization.paidServices` | Must be `false`. (enforced) |
+| `authorization.deleteOwnTestData`, `seedSyncApply`, `prodReadQueries`, `closeIssues` | Optional booleans. A standing approval (`approve --standing`) refuses a `true` the envelope does not allow. (enforced for standing approvals) |
+| `issues[].areas` | Optional `area:<name>` labels. A standing approval needs them when the envelope excludes areas. (enforced for standing approvals) |
+| `review.json` (next to the manifest) | `{"openFindings": []}` from step 8. A standing approval needs it empty. (enforced for standing approvals) |
 | `limits` | `maxAttemptsPerIssue`, `maxCiRuns` (pushes to the release PR), `maxWallClockHours`, `lockStaleMinutes`. (enforced) |
 | `releaseGates[]` | Checks that must all pass before merge. Non-empty. (enforced) The template's local-suite gate is the filtered form (build, filtered tests of shipped issues, `ac-gate --issues`; full suites run in CI on the release PR). Already-approved manifests keep their old gate. |
 | `postDeploy` | `checks[]` after merge and `rollbackTrigger`. |
@@ -32,5 +35,7 @@
 `approval.json` stores `manifestSha256` (SHA-256 of the exact bytes of `manifest.json`), the user's verbatim reply, and the history of superseded approvals. Any edit to the manifest after approval makes `verify` reject it. The approval is a record written by Claude after the user's message; it is not a cryptographic signature.
 
 ## State
+
+A standing approval (`approve --standing --lead-decision <file>`, #759) writes the same file with `kind: "standing"`, the envelope hash (`.qm/envelope.json`, approved once with `envelope approve`) and the lead decision's id, and no user reply. It refuses any manifest field the envelope does not allow.
 
 `state.json` is separate and mutable. `state-init` creates it (exclusively) and prints a `holder` token; every executor command must pass it back with `--holder`. `checkpoint` re-checks the manifest hash and approval, the lock, and the wall clock (reset on each resume, not enforced after merge so verification and rollback always finish). `merge-gate` must pass before `gh pr merge`. Fields: `phase`, per-issue `status`/`attempts`/`branch`/`commit`/`notes`, `release` (`prNumber`, `previousMainSha`, `mergeSha`, `deployRunId`), `blockers[]`, `decisions[]`, `ciRuns`, `lock`, `log[]`. Only `bundle.mjs` writes it, so status names stay valid and issues outside the manifest are rejected.

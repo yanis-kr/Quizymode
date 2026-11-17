@@ -51,7 +51,7 @@ Never without an explicit user yes in chat:
 
 ## Decision policy
 
-Small decisions go to `qm-decision-maker` (Opus, read-only): implementation approach, which tests to add, file placement, AC wording that does not weaken an AC. Give it the question, the issue text, the relevant ACs, and the code it touches. Follow `proceed` and record the question, decision and rationale in `<scratch>/decisions.md`. Never follow `defer`; treat it as a big decision.
+Small decisions go to `qm-lead` (Opus, read-only): implementation approach, which tests to add, file placement, AC wording that does not weaken an AC. Give it the question, the issue text, the relevant ACs, and the code it touches. Follow `proceed` and record the question, decision and rationale in `<scratch>/decisions.md`. Never follow `defer`; treat it as a big decision.
 
 Version level is a rule, not a judgment: any new user-visible feature in a release means a MINOR bump; fixes and polish are PATCH.
 
