@@ -1142,6 +1142,9 @@ const CategoriesPage = () => {
                       )
                     }
                   />
+                  <p className="mt-1 text-xs text-gray-500" data-testid="keyword-suggestion-scope">
+                    Suggestions come only from the items loaded on this page.
+                  </p>
                   {filterKeywordsFromQuery.length > 0 && (
                     <div className="mt-2 flex flex-wrap gap-1.5">
                       {filterKeywordsFromQuery.map((kw) => (
