@@ -1,6 +1,7 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Options;
 using Quizymode.Api.Data;
+using Quizymode.Api.Services.Startup;
 using Quizymode.Api.Shared.Options;
 
 namespace Quizymode.Api.Services;
@@ -18,14 +19,22 @@ internal sealed class StudyGuideCleanupService : BackgroundService
 {
     private static readonly TimeSpan Interval = TimeSpan.FromHours(24);
 
+    internal static readonly TimeSpan StartupDelay = TimeSpan.FromMinutes(3);
+
     private readonly IServiceScopeFactory _scopeFactory;
+    private readonly StartupGate _startupGate;
+    private readonly TimeProvider _timeProvider;
     private readonly ILogger<StudyGuideCleanupService> _logger;
 
     public StudyGuideCleanupService(
         IServiceScopeFactory scopeFactory,
+        StartupGate startupGate,
+        TimeProvider timeProvider,
         ILogger<StudyGuideCleanupService> logger)
     {
         _scopeFactory = scopeFactory;
+        _startupGate = startupGate;
+        _timeProvider = timeProvider;
         _logger = logger;
     }
 
@@ -33,10 +42,12 @@ internal sealed class StudyGuideCleanupService : BackgroundService
 
     protected override async Task ExecuteAsync(CancellationToken stoppingToken)
     {
+        await StartupGate.WaitThenDelayAsync(_startupGate, StartupDelay, _timeProvider, stoppingToken);
+
         while (!stoppingToken.IsCancellationRequested)
         {
             await RunCleanupAsync(stoppingToken);
-            await Task.Delay(Interval, stoppingToken);
+            await Task.Delay(Interval, _timeProvider, stoppingToken);
         }
     }
 

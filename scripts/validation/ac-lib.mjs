@@ -46,6 +46,36 @@ export function parseAcMarkdown(markdown) {
   return acs;
 }
 
+const INVARIANT_LINE = /^\s*[-*]\s+\*\*Invariant ([A-Z]+\d+) [–-] (.+?)\*\*/;
+
+/**
+ * Parses the bullets of the "Global invariants" section: { id, title, lines }, where lines is the bullet plus its
+ * indented sub-lines. The section ends at the next "## " heading.
+ */
+export function parseInvariants(markdown) {
+  const out = [];
+  let inSection = false;
+  let current = null;
+  for (const raw of markdown.split(/\r?\n/)) {
+    if (/^##\s/.test(raw)) {
+      inSection = /^##\s+Global invariants\b/.test(raw);
+      current = null;
+      continue;
+    }
+    if (!inSection) continue;
+    const match = INVARIANT_LINE.exec(raw);
+    if (match) {
+      current = { id: match[1], title: match[2].trim(), lines: [raw] };
+      out.push(current);
+    } else if (current && /^\s+\S/.test(raw)) {
+      current.lines.push(raw);
+    } else {
+      current = null;
+    }
+  }
+  return out;
+}
+
 /** AC ids named in a test title, e.g. "AC 7.8.4 @e2e the API accepts ..." gives ["7.8.4"]. */
 export function acIdsInTitle(title) {
   return [...title.matchAll(AC_ID_IN_TITLE)].map((match) => match[1]);

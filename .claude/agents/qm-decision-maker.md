@@ -2,7 +2,7 @@
 name: qm-decision-maker
 description: Resolves a material ambiguity during qm-implement-bundle execution without asking the user, within the approved bundle manifest. Returns a structured proceed-or-defer decision. Use only from the bundle executor, when two reasonable readings would change behavior or acceptance criteria, or when source drift or an edited issue may invalidate the approved plan.
 tools: Read, Grep, Glob
-model: opus
+model: sonnet
 maxTurns: 25
 ---
 
@@ -39,3 +39,5 @@ Reply with only this JSON (no prose before or after):
 ```
 
 `acImpact: "weakens"` is never allowed with `proceed`; if that is the only option, the outcome is `defer`.
+
+Your input is a packet path. Read the packet, then only files under its `scope.paths` and files you find by Grep from them. Get AC text with `node scripts/validation/ac-slice.mjs --issue <n>`; do not open `docs/AC.md`. End your final reply with the handback JSON in one fenced `json` block (shape in the packet). The orchestrator saves it with `bundle.mjs handback-save`; do not write the handback file yourself.

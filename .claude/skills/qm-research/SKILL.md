@@ -19,7 +19,7 @@ You orchestrate. Aim for a practical, evidence-backed recommendation while keepi
 ## 1. Frame
 
 - State the desired outcome, the constraints, and the decisions to make.
-- Read the relevant project instructions first (`AGENTS.md`, `docs/AC.md`, the code) before assuming how the system works. Trust order: source code > `docs/openapi/quizymode-api.json` > `docs/AC.md` > `README.md` > other docs.
+- Read the relevant project instructions first (`AGENTS.md`, the code; for ACs use `node scripts/validation/ac-slice.mjs`, never open `docs/AC.md` whole) before assuming how the system works. Trust order: source code > `docs/openapi/quizymode-api.json` > `docs/AC.md` > `README.md` > other docs.
 - Ask a question only if its answer would change the recommendation and no available source can settle it. Otherwise state the assumption and continue.
 
 ## 2. Gather evidence cheaply

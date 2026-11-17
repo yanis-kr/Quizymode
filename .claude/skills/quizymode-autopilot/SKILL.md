@@ -20,7 +20,7 @@ A release has a fixed cost: CI on the PR, CI again on main, Deploy, prod verific
 - Answers to the upfront big-decision questions. If they are given, do not re-ask.
 - Optional: issues owned by another agent window. Skip those and their dependents.
 
-Read AGENTS.md and the section headers of `docs/AC.md` before starting.
+Read AGENTS.md and `node scripts/validation/ac-slice.mjs --headings` before starting. Never open `docs/AC.md` whole.
 
 ## Preflight (run start, before any issue is picked)
 
@@ -64,21 +64,7 @@ The reviewer, not the decision agent, confirms that AC wording was not weakened.
 
 Fable is not used. Every row that named Fable uses Opus.
 
-Pass `model:` on every Agent call, because frontmatter cannot vary by rating.
-
-| Step | Model |
-|---|---|
-| Integrator reviewer on the batch diff (§ Integrator, step 7) | opus |
-| Reviewer on the plan, `high` issues | opus |
-| Architect; reviewer on the diff (`high`); coder on `high`; `qm-decision-maker` | opus |
-| CI triage before the second fix push, when the cause is unclear (§ Release, step 1) | opus |
-| Coder on `small` and `medium`, tester, ux-designer | sonnet |
-| Reporter | haiku |
-
-- At most two Opus agents at once. The integrator reviewer goes first.
-- Tell each agent not to spawn agents.
-- If a model cannot be selected, say so and record it. Never claim a model you did not get.
-- Record the model with each agent outcome in the checkpoint and `<scratch>/decisions.md`.
+Dispatch each agent with its packet path and the model its role has in the packet (`bundle.mjs packet` sets every role's model through the shared policy in `scripts/automation/model-policy.mjs`; never choose one by hand, and never downgrade a role). Haiku is the default. Sonnet is the normal escalation for substantive engineering. Opus only where deeper reasoning pays (AC 7.13.3). Unclear-cause CI triage uses sonnet, and opus only if sonnet cannot find the cause. At most two Opus agents at once. Tell each agent not to spawn agents. Record the model each agent actually got in the checkpoint; never claim one you did not get.
 
 ## Pick and split
 
@@ -135,7 +121,7 @@ For each issue in the lane's queue:
    - medium: architect, coder, tester. Add ux-designer only when there is a new visible surface.
    - high: architect, ux-designer when user-visible, reviewer on the plan, coder, tester, reviewer on the diff.
 
-   Models per § Model routing. Only one coder writes in a worktree at a time. Tell each agent not to ask the user, not to spawn agents, and not to re-read files the orchestrator already summarised for it.
+   Write each issue's packet and dispatch each role with the packet path and that role's model (§ Model routing). Only one coder writes in a worktree at a time. Tell each agent not to ask the user, not to spawn agents, and not to re-read files the orchestrator already summarised for it.
 3. Filtered checks only: `npm test -- --run <pattern>`, `dotnet test --filter "FullyQualifiedName~<slice>"` (exclude `Category=Postgres` unless the issue is about that code), a targeted `npm run lint -- <paths>`. Take the .NET mutex for any dotnet command.
 4. Write the AC text as a fragment at `<scratch>/ac/<issue>.md` (section heading and the AC lines it adds or changes).
 5. Commit on the branch, push it, report ready with the test output, and write the checkpoint.
@@ -155,27 +141,23 @@ The integrator is the only writer of release state. At most one release is in fl
 6. Light local check, under the .NET mutex: `npm run build`; `dotnet build` (skip if step 5 already built); the filtered tests of every shipped issue, in one `dotnet test --filter` and one `npm test -- --run` invocation; the high-risk scans from `quizymode-prepush` (constructor signature changes, removed UI text). Do not run the full suites or coverage here. CI is the full run.
 
    Then the AC gate: `node scripts/validation/ac-gate.mjs --issues <every shipped issue>`. If an issue fails (an AC with no method, or an `e2e` or `signed-in-prod-ui` AC with no test), revert its merge from the release branch, put it back at the front of its lane's queue with the gate output, and release the rest. An issue that fails the gate does not ship.
-7. One reviewer pass (Opus, § Model routing) on `git diff origin/main...release/<batch-id>` in a fresh context, covering code and that no AC wording was weakened. Confirmed findings are fixed on the release branch.
+7. One reviewer pass (the reviewer's model from the batch's packet, § Model routing; opus only when the batch is high complexity) on `git diff origin/main...release/<batch-id>` in a fresh context, covering code and that no AC wording was weakened. Confirmed findings are fixed on the release branch.
 8. Push and open one PR with `Refs #n` for each shipped issue (not `Closes`, so merging does not close them before evidence exists). Steps 7 and 8 may run in the opposite order to start CI sooner; a reviewer fix is then one more push.
 
 ## Release
 
-1. Watch CI on the PR in the background, 45 minute timeout per run. A red PR has three sources, and a failed job log shows only the first, so read all three before fixing:
-   - Failed jobs: `gh run view <run> --log-failed`.
-   - Code scanning: the required `CodeQL` check fails on a new alert and has no job log. List the PR's alerts with `gh api "repos/{owner}/{repo}/code-scanning/alerts?ref=refs/pull/<n>/merge&state=open"` (rule, path, line).
-   - Review comments: `gh api repos/{owner}/{repo}/pulls/<n>/comments` (bots such as `github-advanced-security[bot]` post findings here).
+1. Run `node scripts/release/release.mjs wait-pr --pr <n>` until it reports `ok`. Its class says what to do: `finding` (open code-scanning alert the PR adds, or an unanswered review comment), `test` (failed checks, named in the output; read `gh run view <run> --log-failed`), `pending` (run again later). Exit 3 (`same-failure`) stops the run: read the logs before any further fix. Fix on the release branch with a test where one fits, push, and reply on each review thread with the fixing commit. Do not dismiss an alert or resolve a thread without a fix; a finding the run believes is a false positive is a big decision (§ Decision policy) and parks the issue that introduced it. Alerts that already exist on main are not this release's to fix; list them in the final report.
 
-   Fix on the release branch with a test where one fits, push, and reply on each review thread with the fixing commit. Do not dismiss an alert or resolve a thread without a fix; a finding the run believes is a false positive is a big decision (§ Decision policy) and parks the issue that introduced it. Alerts that already exist on main are not this release's to fix; list them in the final report.
-
-   At most two fix pushes. If the first fix push is still red and the cause is unclear, give the three sources to an Opus agent before the second. After two, drop the offending issue from the release branch if it is identifiable, otherwise mark the batch `environmental` and stop merging. On timeout, rerun once.
+   At most two fix pushes. If the first fix push is still red and the cause is unclear, give the output to an Opus agent before the second. After two, drop the offending issue from the release branch if it is identifiable, otherwise mark the batch `environmental` and stop merging. On timeout, rerun once.
 2. If main moved, merge `origin/main` into the release branch and wait for green again. This should not happen with one autopilot running.
-3. Merge the PR. In the background, watch CI on main and then Deploy. Run postDeploy checks (`node scripts/wait-for-production-ready.js --expected-build-version <version>+sha.<first 7 chars of the merge commit>`; the live build string carries the sha suffix, and a bare version never matches).
+3. Run `node scripts/release/release.mjs ship --pr <n> --issues <shipped issues>`. It refuses (class `gate`) on a failing or pending check, an ac-gate rejection, or a halt file; otherwise it merges with `--merge`. Run it again until it reports `deployed` or `nothing-to-deploy`. A `deploy` class means a deploy job failed: `.qm/release-halt.json` is written, releases stop, and the run reports it. Then run postDeploy checks (`node scripts/wait-for-production-ready.js --expected-build-version <version>+sha.<first 7 chars of the merge commit>`; the live build string carries the sha suffix, and a bare version never matches).
 4. Prod verification is a smoke check, not a re-test. Check the deployed version and `/health` (`node scripts/wait-for-production-ready.js --expected-build-version <version>+sha.<7-char merge sha>`), the anonymous pages of the batch's screens, and read-only SQL or curl where an AC needs prod data. Do not re-verify ACs that the CI run already proved (`unit`, `e2e`, `api` tests in CI).
 5. Evidence is generated, then completed:
    - Download the two reports: `gh run download <CI run on main> -n e2e-ci-<run number> -D <scratch>/reports/ci` and `gh run download <Deploy run> -n prod-verify-<sha> -D <scratch>/reports/prod`.
-   - Run `node scripts/validation/ac-evidence.mjs --issues <shipped issues> --report <scratch>/reports/ci/playwright-report/results.json --report <scratch>/reports/prod/playwright-report/results.json --run-url <CI run URL> --env "CI e2e and prod-verify after deploy of <version>" --out <scratch>/evidence`.
-   - For each issue, append the `api`, `sql` and `anon-ui` evidence from step 4 and that issue's decision-log entries to `<scratch>/evidence/issue-<n>.md`, then post it as the Acceptance Evidence comment.
-   - Close an issue only when the script marked it complete, or every remaining `NOT RUN` row now has its appended evidence. `FAILED` or `BLOCKED` rows keep the issue open: a `FAILED` row gets a follow-up issue per AGENTS.md, a `BLOCKED` row names what is missing (usually a secret).
+   - Run `node scripts/release/release.mjs evidence --issues <shipped issues> --report <scratch>/reports/ci/playwright-report/results.json --report <scratch>/reports/prod/playwright-report/results.json --run-url <CI run URL> --env "CI e2e and prod-verify after deploy of <version>" --out <scratch>/evidence`. It wraps `ac-evidence.mjs` and reports which issues have missing rows.
+   - For each issue, append the `api`, `sql` and `anon-ui` evidence from step 4 and that issue's decision-log entries to `<scratch>/evidence/issue-<n>.md`, then post it as the Acceptance Evidence comment (AGENTS.md § Issue Closure Evidence).
+   - Run `evidence` again with `--close` only after the comments are posted. It closes an issue only when every row is complete; an issue with missing rows stays open and the rows are listed.
+   - An issue with `FAILED` or `BLOCKED` rows stays open: a `FAILED` row gets a follow-up issue per AGENTS.md, a `BLOCKED` row names what is missing (usually a secret).
    - Subjective checks no test can make go into one checklist comment per batch, grouped by screen, with the exact steps and expected result per item. The owner replies "verified" to close those issues; the run does not close them on its own.
 6. If a prod health check fails after deploy: stop, record it, and report. Do not start further merges. Lanes may finish the issue they are on, then stop.
 
@@ -213,7 +195,7 @@ Stop the whole run only when the next step needs the user alone, the deadline ar
 
 After each issue finishes or stops, write `<scratch>/checkpoints/<issue>.json` with: issue, status (ready, shipped, verified, closed, parked, blocked, or abandoned), branch, PR number, decisions made for it, the models its agents ran on, the next step, and the time. Also refresh `<scratch>/state.json`, which lists both lane queues, the open batch, the release in flight, and the deadline.
 
-On start, if `<scratch>/state.json` exists and is unfinished, resume from it instead of picking issues again. This lets the run continue in a fresh session after `/compact` or a restart.
+On start, if `<scratch>/state.json` exists and is unfinished, resume from it instead of picking issues again. This lets the run continue in a fresh session after `/compact` or a restart. The orchestrator ends its session at each batch boundary (after the integrator step), and the next session resumes from `state.json`.
 
 Keep `<scratch>/decisions.md`, one entry per decision made without the user: issue, question, decision, reason, and the decision agent's outcome and model.
 

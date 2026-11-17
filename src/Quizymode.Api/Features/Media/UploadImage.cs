@@ -138,6 +138,8 @@ public static class UploadImage
                 provider.GetRequiredService<IHostEnvironment>(),
                 provider.GetRequiredService<ILoggerFactory>().CreateLogger("Quizymode.Api.Features.Media.Storage")));
             services.AddSingleton<ImageNormalizer>();
+            // The worker waits for the startup gate (#732); AddPostgreSqlServices registers the real instance first.
+            services.TryAddSingleton<Services.Startup.StartupGate>();
             services.AddHostedService<MediaCleanupWorker>();
             services.AddHostedService<MediaMetricsWorker>();
         }

@@ -1,17 +1,22 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Options;
 using Quizymode.Api.Data;
+using Quizymode.Api.Services.Startup;
 using Quizymode.Api.Features.Media.Storage;
 using Quizymode.Api.Shared.Helpers;
 using Quizymode.Api.Shared.Models;
 namespace Quizymode.Api.Features.Media;
 
 /// <summary>Ships dark. Production requires an explicit owner scope or separately approved general cleanup setting.</summary>
-internal sealed class MediaCleanupWorker(IServiceScopeFactory scopes, IOptions<MediaOptions> options, IMediaObjectStore store, IHostEnvironment environment, ILogger<MediaCleanupWorker> logger) : BackgroundService
+internal sealed class MediaCleanupWorker(IServiceScopeFactory scopes, IOptions<MediaOptions> options, IMediaObjectStore store, IHostEnvironment environment, StartupGate startupGate, TimeProvider timeProvider, ILogger<MediaCleanupWorker> logger) : BackgroundService
 {
+    /// <summary>Wait after the startup gate opens, so the first cleanup pass never competes with the first probes (#732).</summary>
+    internal static readonly TimeSpan StartupDelay = TimeSpan.FromMinutes(3);
+
     protected override async Task ExecuteAsync(CancellationToken stoppingToken)
     {
-        using PeriodicTimer timer = new(TimeSpan.FromMinutes(15));
+        await StartupGate.WaitThenDelayAsync(startupGate, StartupDelay, timeProvider, stoppingToken);
+        using PeriodicTimer timer = new(TimeSpan.FromMinutes(15), timeProvider);
         while (!stoppingToken.IsCancellationRequested)
         {
             try
@@ -102,8 +107,8 @@ internal sealed class MediaCleanupWorker(IServiceScopeFactory scopes, IOptions<M
             await using var verification = await ItemImageSubmission.BeginAsync(db, ct);
             MediaAsset? live = await db.MediaAssets.SingleOrDefaultAsync(a => a.Id == verifyId && a.DeletedAt == null, ct);
             if (live?.ObjectKey is null) continue;
-            using MediaObjectContent? content = await store.OpenReadAsync(live.ObjectKey, ct);
-            if (content is null)
+            bool exists = await store.ExistsAsync(live.ObjectKey, ct);
+            if (!exists)
             {
                 await MediaRevocation.ApplyAsync(db, live, "media-reconciliation", "Normalized object unavailable", now, ct);
                 missing++; MediaMetrics.Cleanup.Add(1, new KeyValuePair<string, object?>("outcome", "missing"));

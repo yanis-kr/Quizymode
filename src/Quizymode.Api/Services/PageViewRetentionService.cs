@@ -1,5 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 using Quizymode.Api.Data;
+using Quizymode.Api.Services.Startup;
 using Quizymode.Api.Shared.Models;
 
 namespace Quizymode.Api.Services;
@@ -20,6 +21,8 @@ namespace Quizymode.Api.Services;
 /// </summary>
 internal sealed class PageViewRetentionService(
     IServiceScopeFactory scopeFactory,
+    StartupGate startupGate,
+    TimeProvider timeProvider,
     ILogger<PageViewRetentionService> logger) : BackgroundService
 {
     /// <summary>Raw page hits (which carry IP address and user agent) are kept this many days.</summary>
@@ -39,6 +42,9 @@ internal sealed class PageViewRetentionService(
 
     private static readonly TimeSpan Interval = TimeSpan.FromHours(24);
 
+    /// <summary>Wait after the startup gate opens, so the first heavy rollup never competes with the first probes (#732).</summary>
+    internal static readonly TimeSpan StartupDelay = TimeSpan.FromMinutes(5);
+
     /// <summary>Configuration key that turns on the 180-day <see cref="AnalyticsEvent"/> prune; off unless set to true.</summary>
     public const string EventsPruningEnabledKey = "PageViewRetention:EventsPruningEnabled";
 
@@ -46,6 +52,8 @@ internal sealed class PageViewRetentionService(
 
     protected override async Task ExecuteAsync(CancellationToken stoppingToken)
     {
+        await StartupGate.WaitThenDelayAsync(startupGate, StartupDelay, timeProvider, stoppingToken);
+
         while (!stoppingToken.IsCancellationRequested)
         {
             try
@@ -70,7 +78,7 @@ internal sealed class PageViewRetentionService(
                 logger.LogError(ex, "PageViewRetention: error during maintenance run");
             }
 
-            await Task.Delay(Interval, stoppingToken);
+            await Task.Delay(Interval, timeProvider, stoppingToken);
         }
     }
 

@@ -1,5 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 using Quizymode.Api.Data;
+using Quizymode.Api.Services.Startup;
 
 namespace Quizymode.Api.Services;
 
@@ -9,18 +10,24 @@ namespace Quizymode.Api.Services;
 /// </summary>
 internal sealed class ClientErrorCleanupService(
     IServiceScopeFactory scopeFactory,
+    StartupGate startupGate,
+    TimeProvider timeProvider,
     ILogger<ClientErrorCleanupService> logger) : BackgroundService
 {
     public const int RetentionDays = 90;
 
     private static readonly TimeSpan Interval = TimeSpan.FromHours(24);
 
+    internal static readonly TimeSpan StartupDelay = TimeSpan.FromMinutes(4);
+
     protected override async Task ExecuteAsync(CancellationToken stoppingToken)
     {
+        await StartupGate.WaitThenDelayAsync(startupGate, StartupDelay, timeProvider, stoppingToken);
+
         while (!stoppingToken.IsCancellationRequested)
         {
             await RunCleanupAsync(stoppingToken);
-            await Task.Delay(Interval, stoppingToken);
+            await Task.Delay(Interval, timeProvider, stoppingToken);
         }
     }
 

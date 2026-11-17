@@ -15,6 +15,8 @@ import { execFileSync } from "node:child_process";
 import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
+import { sliceAc } from "../../../../scripts/validation/ac-slice.mjs";
+import { ROLES, routeModel, classifyIssue, MODEL_ORDER } from "../../../../scripts/automation/model-policy.mjs";
 
 const SCHEMA_VERSION = 1;
 const ID_RE = /^[a-z0-9][a-z0-9-]{2,47}$/;
@@ -91,6 +93,65 @@ function sha256Text(s) { return createHash("sha256").update(String(s ?? "").repl
 const now = () => new Date().toISOString();
 
 // ---------- manifest validation ----------
+// ---------- related ACs (#740) ----------
+function acMarkdown() {
+  const here = path.dirname(fileURLToPath(import.meta.url));
+  const file = typeof opts["ac-file"] === "string" ? path.resolve(String(opts["ac-file"])) : path.resolve(here, "..", "..", "..", "..", "docs", "AC.md");
+  return fs.existsSync(file) ? fs.readFileSync(file, "utf8") : "";
+}
+const REL_KINDS = [["ids", "id", "id"], ["invariants", "invariant", "invariant"], ["headings", "heading", "heading"]];
+function relatedAcsErrors(it, tag) {
+  if (it?.relatedAcs === undefined) return [];
+  const r = it.relatedAcs;
+  if (!r || typeof r !== "object" || Array.isArray(r)) return [`${tag}: relatedAcs must be an object { ids, invariants, headings }`];
+  const e = [];
+  let md;
+  for (const [key, arg, label] of REL_KINDS) {
+    if (r[key] === undefined) continue;
+    if (!Array.isArray(r[key]) || r[key].some((x) => typeof x !== "string" || !x)) { e.push(`${tag}: relatedAcs.${key} must be an array of non-empty strings`); continue; }
+    for (const entry of r[key]) {
+      md ??= acMarkdown();
+      if (!sliceAc(md, { [arg]: entry }).length) e.push(`${tag}: relatedAcs ${label} '${entry}' does not resolve in docs/AC.md`);
+    }
+  }
+  return e;
+}
+/** Lines of one slice, minus AC and invariant bullets (with their continuation lines) already in 'seen'. Headings stay only above new content. */
+function dedupeSlice(lines, seen) {
+  const out = [];
+  let heading = null;
+  let skipping = false;
+  for (const line of lines) {
+    if (/^#{2,4}\s/.test(line)) { heading = line; skipping = false; continue; }
+    if (/^\s*[-*]\s+\*\*(?:AC \d|Invariant )/.test(line)) {
+      const key = line.trim();
+      skipping = seen.has(key);
+      if (skipping) continue;
+      seen.add(key);
+    } else if (line.trim() === "") {
+      skipping = false;
+      if (!out.length) continue;
+    } else if (skipping) continue;
+    if (heading) { if (out.length) out.push(""); out.push(heading); heading = null; }
+    out.push(line);
+  }
+  return out;
+}
+/** Builds the "Related ACs" lines: issue slice, then each id slice, then each invariant. Exits 2 naming a reference that no longer resolves. */
+function relatedAcsFor(issueSlice, rel) {
+  const md = acMarkdown();
+  const seen = new Set();
+  const out = dedupeSlice(issueSlice.split("\n"), seen);
+  for (const [key, arg, label] of REL_KINDS.filter((k) => k[0] !== "headings")) {
+    for (const entry of rel?.[key] ?? []) {
+      const lines = sliceAc(md, { [arg]: entry });
+      if (!lines.length) die(2, `Related AC ${label} '${entry}' no longer resolves in docs/AC.md; refine the issue again.`);
+      const fresh = dedupeSlice(lines, seen);
+      if (fresh.length) out.push("", ...fresh);
+    }
+  }
+  return out;
+}
 function validateManifest(m, id) {
   const e = [];
   const req = (cond, msg) => { if (!cond) e.push(msg); };
@@ -140,9 +201,11 @@ function validateManifest(m, id) {
     req(it?.snapshot && typeof it.snapshot.updatedAt === "string" && /^[0-9a-f]{64}$/.test(it.snapshot.bodySha256 ?? ""), `${tag}: snapshot.updatedAt and snapshot.bodySha256 required`);
     req(Array.isArray(it?.scope?.paths), `${tag}: scope.paths must be an array (empty means any change on main overlaps this issue)`);
     req(["low", "medium", "high"].includes(it?.risk), `${tag}: risk must be low, medium or high`);
+    req(it?.size === undefined || ["xs", "s", "m", "l"].includes(it.size), `${tag}: size must be xs, s, m or l when set`);
     req(typeof it?.ux === "boolean" && typeof it?.migration === "boolean", `${tag}: ux and migration must be booleans`);
     req(Array.isArray(it?.validation), `${tag}: validation must be an array`);
     req(Array.isArray(it?.acceptanceCriteria) && it.acceptanceCriteria.length > 0, `${tag}: at least one acceptance criterion required`);
+    e.push(...relatedAcsErrors(it, tag));
     for (const ac of it?.acceptanceCriteria ?? []) req(typeof ac?.id === "string" && typeof ac?.text === "string" && typeof ac?.evidence === "string", `${tag}: each AC needs id, text, evidence`);
     req(Array.isArray(it?.dependsOn), `${tag}: dependsOn must be an array`);
     if (it?.migration === true) req(a.migrations !== "none", `${tag}: needs a migration but authorization.migrations is 'none'`);
@@ -305,6 +368,130 @@ function checkApprovalStillValid(p, st) {
   const ap = fs.existsSync(p.approval) ? safeJson(p.approval) : null;
   if (hash !== st.manifestSha256) die(2, "manifest.json changed during execution; stop. It no longer matches the approved revision.");
   if (!ap || ap.status !== "approved" || ap.manifestSha256 !== hash) die(2, "Approval is missing, revoked, or for another revision; stop.");
+}
+
+// ---------- packets and handbacks ----------
+// Draft ACs from an issue body: "- AC (draft) [verify: m] text" or a checkbox line "- [ ] text [verify: m]" (or "- [x]").
+// Any bullet with a [verify: ...] marker counts; a bullet without one is not an AC.
+function draftAcs(body) {
+  const out = [];
+  // Spaces and tabs only: \s would let a match run into the next line.
+  for (const m of String(body).matchAll(/^[ \t]*-[ \t]+(?:\[[ xX]\][ \t]+)?(.*?)[ \t]*\[verify:[ \t]*([^\]]+)\][ \t]*(.*)$/gm)) {
+    const before = m[1].replace(/^AC\s*\(draft\)\s*/i, "").trim();
+    const text = (before || m[3].trim());
+    if (!text) continue;
+    out.push({ id: `AC${out.length + 1}`, text, evidence: m[2].trim() });
+  }
+  return out;
+}
+
+// Routing is one shared policy (scripts/automation/model-policy.mjs, AC 7.13.3): haiku by default, sonnet and opus only on a
+// scored complexity criterion. Each packet line shows the role, its model and why.
+const ROLE_DEFAULT = Object.fromEntries(ROLES.map((r) => [r, routeModel(r, {}).model]));
+function modelsFor(facts) {
+  return Object.fromEntries(ROLES.map((role) => [role, routeModel(role, facts)]));
+}
+// The attempt never drops below the attempts recorded in state.json; --attempt can only raise it.
+function attemptFrom(recorded, requested) {
+  const req = requested === undefined ? 1 : Number(requested);
+  if (!Number.isInteger(req) || req < 1) die(1, "--attempt must be a positive integer");
+  return Math.max(1, req, Number(recorded ?? 0));
+}
+// Failure of an earlier attempt, for routing. Environment failures are fixed, not escalated; a reasoning failure is the
+// one way Sonnet is shown to be insufficient. Without a classification, a second attempt counts as medium complexity.
+const FAILURES = ["none", "environment", "unclassified", "reasoning"];
+function failureFrom(requested, attempt) {
+  if (requested !== undefined) {
+    if (!FAILURES.includes(requested)) die(1, `--failure must be one of: ${FAILURES.join(", ")}`);
+    return requested;
+  }
+  return Number(attempt) >= 2 ? "unclassified" : "none";
+}
+// The model that made the failed attempt, from --prior-model. A reasoning failure escalates one step from it.
+function priorModelFrom(requested) {
+  if (requested === undefined) return "unknown";
+  if (!MODEL_ORDER.includes(requested)) die(1, `--prior-model must be one of: ${MODEL_ORDER.join(", ")}`);
+  return requested;
+}
+function packetChecks(paths, issue, extra) {
+  const norm = paths.map((x) => x.replaceAll(String.fromCharCode(92), "/"));
+  const has = (pre) => norm.filter((x) => x.startsWith(pre));
+  const out = [];
+  const web = has("src/Quizymode.Web/").map((x) => x.replace(/\/\*\*.*$/, ""));
+  if (web.length) out.push(`npx vitest related --run ${web.join(" ")}`, `eslint ${web.join(" ")}`);
+  const feats = new Set(has("src/Quizymode.Api/Features/").map((x) => x.split("/")[3]).filter((x) => x && !/[*?]/.test(x)));
+  if (feats.size) out.push(`dotnet test --filter "(${[...feats].map((f) => `FullyQualifiedName~Features.${f}`).join("|")}|FullyQualifiedName~Architecture)&Category!=Postgres"`);
+  else if (has("src/Quizymode.Api").length) out.push('dotnet test --filter "FullyQualifiedName~Architecture&Category!=Postgres"');
+  if (has("scripts/").length || has(".claude/").length) out.push("node --test scripts/tests/");
+  out.push(`node scripts/validation/ac-gate.mjs --issues ${issue}`);
+  for (const v of extra ?? []) if (!out.includes(v)) out.push(v);
+  return out;
+}
+function acSliceFor(issue) {
+  const here = path.dirname(fileURLToPath(import.meta.url));
+  const script = path.resolve(here, "..", "..", "..", "..", "scripts", "validation", "ac-slice.mjs");
+  const args = [script, "--issue", String(issue), "--max-lines", "80"];
+  if (typeof opts["ac-file"] === "string") args.push("--file", path.resolve(String(opts["ac-file"])));
+  return sh("node", args, true) ?? `(no ACs in docs/AC.md carry (#${issue}) yet)`;
+}
+function renderPacket(p) {
+  const L = [`# Work packet: #${p.issue} ${p.title}`, "", `attempt: ${p.attempt} of ${p.maxAttempts}`, `facts (${p.factSource}): size ${p.size}, risk ${p.risk}${p.riskSource ? ` (${p.riskSource})` : ""}, migration ${p.migration}${p.migrationSource ? ` (${p.migrationSource})` : ""}`, ...(p.classification ? [`classification: ${p.classification}`] : []), "", "## Goal", p.goal, ""];
+  L.push("## Models by role (dispatch each agent with its role's model)", ...Object.entries(p.models).map(([r, m]) => `- ${r}: ${m.model}. Why: ${m.reason}`), "");
+  L.push("## Acceptance criteria", ...p.acs.map((a) => `- ${a.id} [verify: ${a.evidence}] ${a.text}`), "");
+  L.push("## Exclusions", ...(p.exclusions.length ? p.exclusions.map((x) => `- ${x}`) : ["- (none)"]), "");
+  L.push("## scope.paths", ...(p.paths.length ? p.paths.map((x) => `- ${x}`) : ["- (unknown: none declared; find files by Grep and say what you checked)"]), "");
+  L.push("## dependsOn", p.dependsOn.length ? p.dependsOn.map((d) => (typeof d === "number" ? `#${d}` : d.external)).join(", ") : "(none)", "");
+  L.push("## Checks to run (filtered only)", ...p.checks.map((c) => `- \`${c}\``), "");
+  L.push("## Related ACs (from docs/AC.md; do not open the whole file)", "```", ...p.related, "```", "");
+  if (p.relatedNote) L.push(p.relatedNote, "");
+  if (p.relatedHeadings?.length) L.push(`Related headings (read with ac-slice.mjs --heading): ${p.relatedHeadings.join("; ")}`, "");
+  L.push("## Invariant index (read one with ac-slice.mjs --invariant <id>)", "```", ...p.invariantIndex, "```", "");
+  if (p.apiConventions) L.push("## Common API conventions", "```", ...p.apiConventions, "```", "");
+  L.push("## Handback", `Your final reply ends with the handback JSON in one fenced json block, in this shape. The orchestrator saves it to \`${p.handbackPattern}\` with \`bundle.mjs handback-save --issue ${p.issue} --role <role> --file <json file>\`. The handback is your claim. It is not test evidence: the filtered command output, \`ac-gate\` and CI are.`,
+    "```json", '{"status":"done|failed|blocked","filesChanged":[],"commands":[{"command":"","exitCode":0}],"acEvidence":{"<AC id>":"<file path>"},"acRefsAdded":[],"questions":[]}', "```", "");
+  return L.join("\n");
+}
+function writePacket(p) {
+  const md = acMarkdown();
+  p.invariantIndex = sliceAc(md, { "invariants-index": true });
+  const api = p.paths.some((x) => x.replaceAll(String.fromCharCode(92), "/").startsWith("src/Quizymode.Api/"));
+  p.apiConventions = api ? sliceAc(md, { heading: "Common API conventions" }) : null;
+  p.related = relatedAcsFor(p.acSlice, p.relatedRefs);
+  p.relatedHeadings = p.relatedRefs?.headings ?? [];
+  const dir = typeof opts["packets-dir"] === "string" ? path.resolve(String(opts["packets-dir"])) : path.join(mainCheckoutRoot(), ".qm", "packets");
+  const hbDir = typeof opts["handbacks-dir"] === "string" ? path.resolve(String(opts["handbacks-dir"])) : path.join(mainCheckoutRoot(), ".qm", "handbacks");
+  p.handbackPattern = path.join(hbDir, `${p.issue}-<role>.json`).replaceAll(String.fromCharCode(92), "/");
+  fs.mkdirSync(dir, { recursive: true });
+  const file = path.join(dir, `${p.issue}.md`);
+  fs.writeFileSync(file, renderPacket(p), "utf8");
+  ok({ packet: file, issue: p.issue, models: p.models, attempt: p.attempt });
+}
+// Read-only roles plan or review and write no files. They may finish "done" with an empty acEvidence, but only with
+// no filesChanged and an existing deliverable file. The role comes from the orchestrator, and the specialist has
+// read-only permissions. A git-status check would only show that the shared worktree is dirty, not which agent
+// changed it, so it is not used (AC 7.13.4).
+const PLANNING_ROLES = new Set(["architect", "reviewer", "ux-designer", "qm-decision-maker"]);
+function isPlanningDone(h, role) {
+  return PLANNING_ROLES.has(role) && h.status === "done" && Array.isArray(h.filesChanged) && h.filesChanged.length === 0
+    && typeof h.deliverable === "string" && h.deliverable.length > 0;
+}
+function validateHandback(h, role = "") {
+  const e = [];
+  if (!h || typeof h !== "object" || Array.isArray(h)) return ["handback must be a JSON object"];
+  if (h.deliverable !== undefined && typeof h.deliverable !== "string") e.push("deliverable must be a file path");
+  if (!["done", "failed", "blocked"].includes(h.status)) e.push("status must be done, failed or blocked");
+  if (!Array.isArray(h.filesChanged) || h.filesChanged.some((x) => typeof x !== "string")) e.push("filesChanged must be an array of strings");
+  if (!Array.isArray(h.commands) || h.commands.some((c) => !c || typeof c.command !== "string" || !Number.isInteger(c.exitCode))) e.push("commands must be an array of { command, exitCode }");
+  if (!h.acEvidence || typeof h.acEvidence !== "object" || Array.isArray(h.acEvidence) || Object.values(h.acEvidence).some((v) => typeof v !== "string")) e.push("acEvidence must be an object of AC id to file path");
+  else if (h.status === "done" && !Object.keys(h.acEvidence).length && !isPlanningDone(h, role)) {
+    e.push(PLANNING_ROLES.has(role)
+      ? "a planning or review done handback needs filesChanged [] and a deliverable path, or acEvidence naming at least one AC"
+      : "acEvidence must name at least one AC when status is done");
+  }
+  if (!Array.isArray(h.questions)) e.push("questions must be an array");
+  if (h.acRefsAdded !== undefined && (!Array.isArray(h.acRefsAdded) || h.acRefsAdded.some((x) => typeof x !== "string"))) e.push("acRefsAdded must be an array of strings");
+  if (h.status === "done" && Array.isArray(h.commands) && h.commands.some((c) => c && Number.isInteger(c.exitCode) && c.exitCode !== 0)) e.push("a done handback cannot include a command with a nonzero exitCode");
+  return e;
 }
 
 // ---------- commands ----------
@@ -618,6 +805,92 @@ switch (cmd) {
     writeJsonAtomic(p.manifest, m);
     ok({ bundleId: id, manifest: p.manifest, note: "Fill in issues/policies, then run check." });
   }
+  case "packet": {
+    // packet <bundleId> <issue>  |  packet --from-issue <n> [--issue-json <file>]
+    if (opts["from-issue"] !== undefined) {
+      const n = Number(opts["from-issue"]);
+      if (!Number.isInteger(n) || n <= 0) die(1, "--from-issue needs an issue number");
+      const raw = typeof opts["issue-json"] === "string" ? fs.readFileSync(String(opts["issue-json"]), "utf8") : sh("gh", ["issue", "view", String(n), "--json", "title,body,labels"], true);
+      if (!raw) die(1, `gh could not read issue #${n}`);
+      const j = JSON.parse(raw);
+      const labels = (j.labels ?? []).map((l) => (typeof l === "string" ? l : l.name));
+      const label = (d) => labels.find((l) => l.startsWith(`${d}:`))?.slice(d.length + 1);
+      const body = String(j.body ?? "");
+      const acs = draftAcs(body);
+      if (!acs.length) die(2, `Issue #${n} has no AC lines with a [verify: ...] marker (checkbox or "AC (draft)"); refine it first.`);
+      const exclusions = [...body.matchAll(/^\s*Out of scope:\s*(.+)$/gim)].map((m) => m[1].trim());
+      const sizeLabel = label("size");
+      const size = ["xs", "s", "m", "l"].includes(sizeLabel) ? sizeLabel : "unknown";
+      // Lightweight classification from labels, size, body and ACs (model-policy.mjs). Stated values win; a clearly simple
+      // issue gets inferred low values; anything else stays unknown, which scores medium and routes to sonnet.
+      const cls = classifyIssue({ title: j.title, body, labels, size, acCount: acs.length });
+      const { risk, migration, ambiguity, novelty, reasoning } = cls.facts;
+      const riskSource = cls.sources.risk;
+      const migrationSource = cls.sources.migration;
+      const attempt = attemptFrom(undefined, opts.attempt);
+      const failure = failureFrom(opts.failure, attempt);
+      const priorModel = priorModelFrom(opts["prior-model"]);
+      const relLine = /^\s*Related ACs:\s*(.+)$/im.exec(body);
+      const refs = relLine ? relLine[1].split(",").map((x) => x.trim()).filter(Boolean) : [];
+      const relatedRefs = { ids: refs.filter((x) => /^\d+(?:\.\d+)*$/.test(x)), invariants: refs.filter((x) => /^[A-Z]+\d+$/.test(x)), headings: [] };
+      const unknown = refs.filter((x) => !relatedRefs.ids.includes(x) && !relatedRefs.invariants.includes(x));
+      if (unknown.length) die(2, `Related ACs line has entries that are neither an AC id nor an invariant id: ${unknown.join(", ")}`);
+      writePacket({ relatedRefs, relatedNote: relLine ? null : "related ACs: not refined",  issue: n, title: j.title, goal: j.title, acs, exclusions, paths: [], scopeKnown: false, dependsOn: [], checks: packetChecks([], n), acSlice: acSliceFor(n),
+        size, risk, riskSource, migration, migrationSource, attempt, maxAttempts: 2, factSource: "issue labels and body, not checked against the manifest or code",
+        classification: cls.reason, models: modelsFor({ size, risk, migration, ambiguity, novelty, reasoning, failure, priorModel }) });
+    }
+    const p = bundlePaths(id);
+    const m = loadValidManifest(p, id);
+    const hash = sha256File(p.manifest);
+    const ap = fs.existsSync(p.approval) ? safeJson(p.approval) : null;
+    if (!ap || ap.status !== "approved" || ap.manifestSha256 !== hash) die(2, "Bundle manifest is not approved at its current revision; packets come only from an approved manifest.");
+    const num = Number(positional[1]);
+    const it = m.issues.find((x) => x.number === num);
+    if (!it) die(2, `Issue #${positional[1] ?? ""} is not in bundle '${id}'. Scope cannot be expanded.`);
+    const st = fs.existsSync(p.state) ? safeJson(p.state) : null;
+    const attempt = attemptFrom(st?.issues?.[String(num)]?.attempts, opts.attempt);
+    const size = it.size ?? "unknown";
+    const extra = it.validation.filter((v) => /^(npm|npx|dotnet|node|eslint) /.test(v) && !/test:coverage/.test(v) && v !== "dotnet test");
+    writePacket({ issue: num, title: it.title, goal: it.scope.summary ?? it.title, acs: it.acceptanceCriteria, exclusions: it.scope.exclusions ?? [], paths: it.scope.paths, scopeKnown: it.scope.paths.length > 0, dependsOn: it.dependsOn,
+      relatedRefs: it.relatedAcs, checks: packetChecks(it.scope.paths, num, extra), acSlice: acSliceFor(num), size, risk: it.risk, migration: it.migration,
+      attempt, maxAttempts: m.limits.maxAttemptsPerIssue, factSource: "approved manifest", models: modelsFor({ size, risk: it.risk, migration: it.migration, failure: failureFrom(opts.failure, attempt), priorModel: priorModelFrom(opts["prior-model"]) }) });
+  }
+  case "handback-check": {
+    const file = positional[0];
+    if (!file) die(1, "Usage: handback-check <file>");
+    let h;
+    try { h = JSON.parse(fs.readFileSync(path.resolve(file), "utf8")); } catch (e) { die(2, `Cannot read handback JSON: ${e.message}`); }
+    const errors = validateHandback(h, typeof opts.role === "string" ? opts.role : "");
+    if (errors.length) die(2, "Handback is invalid", { errors });
+    ok({ file: path.resolve(file), status: h.status });
+  }
+  case "handback-save": {
+    // handback-save --issue <n> --role <role> --file <json>: saves a specialist's reply JSON as its claim.
+    const issue = Number(opts.issue);
+    const role = typeof opts.role === "string" ? opts.role : "";
+    if (!Number.isInteger(issue) || issue <= 0) die(1, "handback-save needs --issue <n>");
+    if (!Object.hasOwn(ROLE_DEFAULT, role)) die(1, `--role must be one of: ${Object.keys(ROLE_DEFAULT).join(", ")}`);
+    if (typeof opts.file !== "string") die(1, "handback-save needs --file <json file with the handback>");
+    let h;
+    try { h = JSON.parse(fs.readFileSync(path.resolve(opts.file), "utf8")); } catch (e) { die(2, `Cannot read handback JSON: ${e.message}`); }
+    const errors = validateHandback(h, role);
+    const root = path.resolve(typeof opts["repo-root"] === "string" ? opts["repo-root"] : ".");
+    if (h && typeof h.acEvidence === "object" && h.acEvidence) for (const [ac, f] of Object.entries(h.acEvidence)) if (typeof f === "string" && !fs.existsSync(path.resolve(root, f))) errors.push(`acEvidence ${ac} points to a missing file: ${f}`);
+    // A planning claim with no acEvidence must name a deliverable that exists. The role is set by the orchestrator, so the
+    // other checks (no filesChanged, no failing command) are the guard against a coder or tester using the planning rule.
+    if (h && isPlanningDone(h, role) && !fs.existsSync(path.resolve(root, h.deliverable))) errors.push(`planning deliverable is missing: ${h.deliverable}`);
+    if (errors.length) die(2, "Handback is invalid", { errors });
+    const dir = typeof opts["handbacks-dir"] === "string" ? path.resolve(String(opts["handbacks-dir"])) : path.join(mainCheckoutRoot(), ".qm", "handbacks");
+    fs.mkdirSync(dir, { recursive: true });
+    const file = path.join(dir, `${issue}-${role}.json`);
+    // Dispatch record (AC 7.13.3): the model this role ran on and why, copied from its packet line.
+    const packetsDir = typeof opts["packets-dir"] === "string" ? path.resolve(String(opts["packets-dir"])) : path.join(mainCheckoutRoot(), ".qm", "packets");
+    const packetFile = path.join(packetsDir, `${issue}.md`);
+    const line = fs.existsSync(packetFile) ? new RegExp(`^- ${role}: (\\w+)\\. Why: (.+)$`, "m").exec(fs.readFileSync(packetFile, "utf8")) : null;
+    const dispatch = line ? { role, issue, model: line[1], reason: line[2].trim() } : { role, issue, model: null, reason: "no packet line for this role" };
+    writeJsonAtomic(file, { ...h, issue, role, claimed: true, dispatch, savedAt: new Date().toISOString() });
+    ok({ saved: file, status: h.status, claimed: true, note: "Recorded as the agent's claim. Verification is the AC gate and CI." });
+  }
   default:
     process.stdout.write(`Usage: node bundle.mjs <command> <bundleId> [options]
 Refine:  new, snapshot <n...>, check, hash, brief (text), approve --hash <prefix> --user-reply "<text containing approve <prefix>>"
@@ -625,6 +898,7 @@ Execute: verify [--gh] [--no-git], state-init [--take-over] (prints holder), the
          checkpoint, issue <n> <status> [--note --branch --commit --lane a|b], lanes (read-only: split issues into two path-disjoint lanes), attempt <n>, ci-run,
          phase <phase> [--pr --previous-main-sha --merge-sha --deploy-run --note], merge-gate --pr <n>,
          blocker --kind k --note t [--issue n], decision --file f [--issue n], release-lock
+Packets: packet <bundleId> <issue> | packet --from-issue <n> (writes .qm/packets/<n>.md); handback-check <file>; handback-save --issue <n> --role <role> --file <json> (.qm/handbacks/<n>-<role>.json, recorded as a claim)
 Anyone:  status (text), list, cancel [--note]
 Global:  --bundles-dir <dir> (default <main checkout>/.qm/bundles); --key=value also accepted
 `);

@@ -13,7 +13,7 @@ Used by `qm-refine-bundle` to decide which labels to set on bundled and excluded
 | `priority:` | high, med, low | exactly 1 | ready issues |
 | `area:` | see below | 1 to 3 | ready issues |
 | `refiner-model:` | opus (default), or the model that refined the issue | 0 or 1 | only when it differs from the default |
-| `executor-model:` | haiku (default), or the model that implemented the work | 0 or 1 | only when it differs from the default |
+| `executor-model:` | haiku (default), or the highest tier that contributed, taken from the issue's `scripts/automation/usage-ledger.mjs` ledger line (`.qm/ledger/issues.jsonl`) | 0 or 1 | only when it differs from the default |
 | `resolution:` | superseded, duplicate, wontfix, invalid | 0 or 1 | closed issues only |
 
 Dependabot labels (`dependencies`, `javascript`, `github_actions`, `.NET`) are for PRs only and exempt.

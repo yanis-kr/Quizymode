@@ -172,7 +172,7 @@ internal static class DatabaseSeederStartHarness
                 Options.Create(new SeedOptions { Path = seedRoot }),
                 Options.Create(new TaxonomyOptions()));
 
-            await seeder.StartAsync(CancellationToken.None);
+            await seeder.RunAsync(CancellationToken.None);
             return (logs, sql);
         }
         finally

@@ -2690,6 +2690,24 @@ namespace Quizymode.Api.Migrations
                     b.ToTable("StudySessionMissedItems", (string)null);
                 });
 
+            modelBuilder.Entity("Quizymode.Api.Shared.Models.TaxonomySeedState", b =>
+                {
+                    b.Property<int>("Id")
+                        .HasColumnType("integer");
+
+                    b.Property<DateTime>("AppliedUtc")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<string>("Sha256")
+                        .IsRequired()
+                        .HasMaxLength(64)
+                        .HasColumnType("character varying(64)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("TaxonomySeedStates");
+                });
+
             modelBuilder.Entity("Quizymode.Api.Shared.Models.Upload", b =>
                 {
                     b.Property<Guid>("Id")

@@ -18,6 +18,7 @@
 import { execFile as execFileCb } from "node:child_process";
 import { promisify } from "node:util";
 import { SPECIALIST_ROLES, validateEvidence } from "./controller-contract.stub.mjs";
+import { baselineModel, chooseAvailable } from "./model-policy.mjs";
 
 const execFileAsync = promisify(execFileCb);
 
@@ -30,32 +31,27 @@ export class AdapterError extends Error {
   }
 }
 
-// Role -> model assignment. "primary" per the task's model policy; "fallback"
-// used (and recorded) when the primary model isn't available on this CLI/
-// account. Opus is reserved for architecture and independent review, Haiku
-// for narrow report formatting; everything else defaults to Sonnet.
-export const MODEL_ASSIGNMENTS = Object.freeze({
-  architect: { primary: "opus", fallback: "sonnet" },
-  "ux-designer": { primary: "sonnet", fallback: "sonnet" },
-  reviewer: { primary: "opus", fallback: "sonnet" },
-  coder: { primary: "sonnet", fallback: "sonnet" },
-  tester: { primary: "sonnet", fallback: "sonnet" },
-  reporter: { primary: "haiku", fallback: "sonnet" },
-});
+// Role -> baseline model: what a direct invocation with no packet gets. It comes from the shared policy
+// (model-policy.mjs, AC 7.13.3), so no role defaults to opus. A packet supplies the model for each dispatch.
+export const MODEL_ASSIGNMENTS = Object.freeze(
+  Object.fromEntries(SPECIALIST_ROLES.map((role) => [role, Object.freeze({ baseline: baselineModel(role) })])),
+);
 
-export function resolveModel(role, { availableModels } = {}) {
+/**
+ * Chooses the model for a dispatch. The requested model (from the packet) or the role baseline is used when available.
+ * When it is not, only a cheaper model may replace it, and the substitution is recorded. More expensive substitution
+ * never happens: with no cheaper model available this throws MODEL_UNAVAILABLE.
+ */
+export function resolveModel(role, { availableModels, requested } = {}) {
   if (!SPECIALIST_ROLES.includes(role)) {
     throw new AdapterError("UNKNOWN_ROLE", `No model assignment for role "${role}"`);
   }
-  const assignment = MODEL_ASSIGNMENTS[role];
-  if (!availableModels || availableModels.includes(assignment.primary)) {
-    return { model: assignment.primary, substituted: false };
+  const wanted = requested ?? MODEL_ASSIGNMENTS[role].baseline;
+  const chosen = chooseAvailable(wanted, availableModels);
+  if (chosen.unavailable) {
+    throw new AdapterError("MODEL_UNAVAILABLE", `"${wanted}" is not available for role "${role}", and no cheaper model is`, { role, wanted, availableModels });
   }
-  return {
-    model: assignment.fallback,
-    substituted: true,
-    reason: `"${assignment.primary}" not in availableModels; substituted "${assignment.fallback}"`,
-  };
+  return { model: chosen.model, substituted: chosen.substituted, reason: chosen.reason };
 }
 
 /**
@@ -143,7 +139,7 @@ export async function runSpecialist({
     );
   }
 
-  const resolved = model ? { model, substituted: false } : resolveModel(role, { availableModels });
+  const resolved = resolveModel(role, { availableModels, requested: model });
 
   const args = [
     "-p",
@@ -221,6 +217,8 @@ export async function runSpecialist({
     model: resolved.model,
     modelSubstituted: resolved.substituted,
     modelSubstitutionReason: resolved.reason,
+    // Dispatch record (AC 7.13.3): what ran, what was asked for, and why.
+    dispatch: { role, model: resolved.model, requested: model ?? MODEL_ASSIGNMENTS[role].baseline, substituted: resolved.substituted, reason: resolved.reason ?? null },
     sessionId: parsed.session_id ?? sessionId,
     attempts: attempt,
     result: parsed,

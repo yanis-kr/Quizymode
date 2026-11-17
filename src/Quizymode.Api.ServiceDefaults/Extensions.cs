@@ -129,17 +129,14 @@ public static class Extensions
 
     public static WebApplication MapDefaultEndpoints(this WebApplication app)
     {
-        // /health is required by the LightSail container service health check in all environments.
+        // /health is readiness: it runs every check, including the API's "startup-gate" check, and is what the
+        // LightSail container service probes in all environments. /alive is liveness: only checks tagged "live"
+        // (the always-healthy "self" check), so it answers while startup work is still running (#732).
         app.MapHealthChecks(HealthEndpointPath);
-
-        if (app.Environment.IsDevelopment())
+        app.MapHealthChecks(AlivenessEndpointPath, new HealthCheckOptions
         {
-            // Only health checks tagged with the "live" tag must pass for app to be considered alive
-            app.MapHealthChecks(AlivenessEndpointPath, new HealthCheckOptions
-            {
-                Predicate = r => r.Tags.Contains("live")
-            });
-        }
+            Predicate = r => r.Tags.Contains("live")
+        });
 
         return app;
     }

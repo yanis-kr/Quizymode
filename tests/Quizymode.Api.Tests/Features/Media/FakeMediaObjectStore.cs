@@ -22,6 +22,11 @@ internal sealed class FakeMediaObjectStore : IMediaObjectStore
     /// <summary>When set, <see cref="OpenReadAsync"/> returns null (missing or access denied) for every key.</summary>
     public bool ReadReturnsNull { get; set; }
 
+    /// <summary>How many times <see cref="OpenReadAsync"/> opened content; the cleanup verify loop must use <see cref="ExistsAsync"/> instead (#732).</summary>
+    public int OpenReadCalls { get; private set; }
+
+    public int ExistsCalls { get; private set; }
+
     public bool IsAvailable => Available;
     public Func<string, Task>? OnDelete { get; set; }
     public async Task DeleteAsync(string key, CancellationToken ct) { MediaObjectKey.EnsureValid(key); if (OnDelete is not null) await OnDelete(key); Objects.TryRemove(key, out _); }
@@ -43,8 +48,16 @@ internal sealed class FakeMediaObjectStore : IMediaObjectStore
         return Objects.TryAdd(key, content) ? PutOutcome.Created : PutOutcome.AlreadyExists;
     }
 
+    public Task<bool> ExistsAsync(string key, CancellationToken cancellationToken)
+    {
+        MediaObjectKey.EnsureValid(key);
+        ExistsCalls++;
+        return Task.FromResult(!ReadReturnsNull && Objects.ContainsKey(key));
+    }
+
     public Task<MediaObjectContent?> OpenReadAsync(string key, CancellationToken cancellationToken)
     {
+        OpenReadCalls++;
         MediaObjectKey.EnsureValid(key);
         if (ReadReturnsNull || !Objects.TryGetValue(key, out byte[]? content))
         {

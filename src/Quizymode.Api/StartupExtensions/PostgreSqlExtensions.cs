@@ -1,5 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 using Quizymode.Api.Data;
+using Quizymode.Api.Services.Startup;
 using Quizymode.Api.Shared.Options;
 
 namespace Quizymode.Api.StartupExtensions;
@@ -44,11 +45,22 @@ internal static partial class StartupExtensions
             }
         });
 
-        if (!isOpenApiGeneration)
+        // Slow startup work (migrations, taxonomy seed, dev seed) runs in the background behind this gate so Kestrel binds
+        // and /health answers straight away (#732). The OpenAPI build tool boots the app only to emit the contract, so it
+        // skips the work and gets an open gate.
+        StartupGate startupGate = new();
+        builder.Services.AddSingleton(startupGate);
+        if (isOpenApiGeneration)
         {
-            // Register DatabaseSeederHostedService for normal app startup. Skip it when the
-            // OpenAPI build tool boots the app solely to emit the contract document.
-            builder.Services.AddHostedService<Services.DatabaseSeederHostedService>();
+            startupGate.Open();
+        }
+        else
+        {
+            builder.Services.AddSingleton<IStartupMigrator, EfStartupMigrator>();
+            // Order matters: the single migration first, then the seed.
+            builder.Services.AddSingleton<IStartupGateStep, MigrationStartupStep>();
+            builder.Services.AddSingleton<IStartupGateStep, Services.DatabaseSeederHostedService>();
+            builder.Services.AddHostedService<StartupGateService>();
         }
 
         return builder;
