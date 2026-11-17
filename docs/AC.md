@@ -2501,6 +2501,16 @@ A public page at `/featured` shows Admin-curated Sets and Collections with modif
 
 ---
 
+## AC 16. Security hardening: CodeQL remediation (#752)
+
+**Design:** Narrow fixes for open CodeQL alerts on `main`. No behavior changes beyond those listed. Alert #15 (`cs/exposure-of-sensitive-information`, `LlmModelAuditService`) is dismissed as a false positive: the logged value is a Boolean and no address or digest content is written.
+
+- **AC 16.1** [Anyone] [verify: unit] **Given** explanation or other text contains `http://` or `https://` URLs, **then** only absolute http or https URLs become links (opening in a new tab with `rel="noopener noreferrer"`), and the link text is unchanged. Any other scheme (for example `javascript:`) and any HTML in the text render as plain text. (frontend tests: TextWithLinks.test.tsx)
+- **AC 16.2** [Anyone] [verify: unit] **Given** the browser has no `crypto.randomUUID`, **then** the page-view session id is built from `crypto.getRandomValues` (32 hex characters), and `Math.random` is never used for it. If no Web Crypto is available, a counter-based id is used. Session ids in browsers that support `randomUUID` are unchanged. (frontend tests: pageViewSessionId.test.ts)
+- **AC 16.3** [System] [verify: api] **Given** a client IP value that is not a parseable IP address (for example one containing control characters, or from a spoofed `X-Forwarded-For` header), **then** the geolocation service makes no outbound lookup, writes no cache entry, and writes the raw value to no log; it returns no location (`null`). Loopback names and private/link-local addresses still resolve to `Local`, and public addresses are still looked up and cached. Stored page-view and audit data are unchanged. (backend tests: IpGeolocationServiceTests)
+
+---
+
 ## Unclarities / questions for product owner
 
 - **Shareable link vs IsPublic**: Resolved — if a collection is **not** shared with others (IsPublic = false), only the owner can access it by ID or link. When **Shared with others** is on (IsPublic = true), anyone with the link (or who finds it by ID or via Discover) can view and quiz, and the collection appears in Discover. The UI uses the label **"Shared with others"** for this toggle. Users can search or enter a collection ID to open it (see AC 1.9.6).
