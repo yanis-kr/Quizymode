@@ -26,7 +26,7 @@ import { usePageSize } from "@/hooks/usePageSize";
 import { useAnswerVisibility } from "@/hooks/useAnswerVisibility";
 import { useScopeLanding } from "@/hooks/useScopeLanding";
 import { ScopeLandingHeader } from "@/components/ScopeLandingHeader";
-import { buildScopeStudyHref, withQuizSize } from "@/utils/scopeStudyHref";
+import { buildScopeStudyHref, withQuizSize, withTestMode } from "@/utils/scopeStudyHref";
 import { useListenAll } from "@/hooks/useListenAll";
 import { SEO } from "@/components/SEO";
 import {
@@ -600,6 +600,12 @@ const CategoriesPage = () => {
       }}
       flashcardsHref={buildScopeStudyHref("explore", landingCategorySlug, pathKeywordsFromUrl)}
       gamesHref={buildScopeStudyHref("games", landingCategorySlug, pathKeywordsFromUrl)}
+      unofficial={landingCategorySlug === "exams"}
+      examSimulationHref={
+        landingCategorySlug === "exams"
+          ? withTestMode(buildScopeStudyHref("quiz", landingCategorySlug, pathKeywordsFromUrl))
+          : undefined
+      }
     />
   ) : null;
 

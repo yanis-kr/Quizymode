@@ -3,6 +3,7 @@ import { render, screen, waitFor, within } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { MemoryRouter, Route, Routes } from "react-router-dom";
+import { HelmetProvider } from "react-helmet-async";
 import CollectionDetailPage from "./CollectionDetailPage";
 import { collectionsApi } from "@/api/collections";
 import { installMemoryLocalStorage } from "@/test/memoryStorage";
@@ -61,13 +62,15 @@ const PLAN_COLLECTION_ID = "00000000-0000-4000-8000-000000000001";
 function renderPage(id = "c1") {
   const queryClient = new QueryClient({ defaultOptions: { queries: { retry: false } } });
   return render(
-    <QueryClientProvider client={queryClient}>
-      <MemoryRouter initialEntries={[`/collections/${id}`]}>
-        <Routes>
-          <Route path="/collections/:id" element={<CollectionDetailPage />} />
-        </Routes>
-      </MemoryRouter>
-    </QueryClientProvider>
+    <HelmetProvider>
+      <QueryClientProvider client={queryClient}>
+        <MemoryRouter initialEntries={[`/collections/${id}`]}>
+          <Routes>
+            <Route path="/collections/:id" element={<CollectionDetailPage />} />
+          </Routes>
+        </MemoryRouter>
+      </QueryClientProvider>
+    </HelmetProvider>
   );
 }
 
@@ -174,5 +177,27 @@ describe("CollectionDetailPage export and print (#258)", () => {
     renderPage();
     await screen.findByText(/no items in this collection/i);
     expect(screen.queryByRole("button", { name: "Plan for a test" })).not.toBeInTheDocument();
+  });
+
+  it("AC 3.6.29 a collection with 10 or more questions offers Play 5, Play 10 and Play all (N)", async () => {
+    const ten = Array.from({ length: 10 }, (_, i) => ({
+      id: `t${i}`,
+      question: `T${i}`,
+      correctAnswer: "A",
+      incorrectAnswers: ["W"],
+      explanation: "",
+      collections: [],
+      keywords: [],
+    }));
+    vi.mocked(collectionsApi.getItems).mockResolvedValue({ items: ten } as never);
+    renderPage();
+    expect(await screen.findByRole("link", { name: "Play all (10)" })).toBeInTheDocument();
+    expect(screen.getByRole("link", { name: "Play 5" })).toHaveAttribute("href", expect.stringContaining("size=5"));
+    expect(screen.getByRole("link", { name: "Play 10" })).toHaveAttribute("href", expect.stringContaining("size=10"));
+  });
+
+  it("AC 3.6.30 the collection tab title is the collection name", async () => {
+    renderPage();
+    await waitFor(() => expect(document.title).toBe("Bio Set | Quizymode"));
   });
 });
