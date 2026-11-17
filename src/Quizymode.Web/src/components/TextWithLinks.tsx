@@ -10,7 +10,7 @@ const URL_SPLIT = /(https?:\/\/[^\s),]+)/g;
 function toSafeHttpUrl(candidate: string): string | null {
   try {
     const url = new URL(candidate);
-    return url.protocol === "http:" || url.protocol === "https:" ? candidate : null;
+    return url.protocol === "http:" || url.protocol === "https:" ? url.href : null;
   } catch {
     return null;
   }
