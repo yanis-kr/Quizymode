@@ -74,6 +74,32 @@ jobs:
         shell: powershell
         run: .\scripts\automation\Run-Tests.ps1
 
+  # #725: seed-source structure, changed-item quality lint and the Python tests. Standard library only, so no installs.
+  seed-quality:
+    runs-on: ubuntu-latest
+    if: github.event_name == 'pull_request'
+    permissions:
+      contents: read
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v7
+        with:
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Validate seed source structure
+        run: python scripts/validate_seed_source.py
+
+      - name: Lint changed seed items (hard rules and new soft violations)
+        run: python scripts/lint_seed_source.py --changed-only --base "origin/${{ github.base_ref }}"
+
+      - name: Run Python tests
+        run: python -m unittest discover -s scripts/tests -p "test_*.py"
+
   # AC 7.10.3: a PR cannot add or edit an AC without a verification method and, for e2e and signed-in-prod-ui, a test.
   ac-gate:
     runs-on: ubuntu-latest
