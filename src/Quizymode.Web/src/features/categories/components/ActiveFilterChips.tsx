@@ -1,6 +1,13 @@
 import { XMarkIcon } from "@heroicons/react/24/outline";
 import type { ActiveFilterChip } from "../utils/activeFilterChips";
 
+/**
+ * Chip colours use the theme tokens (indigo-50 surface, indigo-ink text) so both themes
+ * meet WCAG AA contrast. Fixed shades such as text-indigo-800 turned unreadable in dark mode (#707).
+ */
+export const ACTIVE_FILTER_CHIP_CLASS =
+  "inline-flex min-h-[44px] items-center gap-1.5 rounded-full bg-indigo-50 px-3 py-1 text-sm font-medium text-indigo-ink hover:bg-indigo-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500 focus-visible:ring-offset-2";
+
 interface ActiveFilterChipsProps {
   chips: ActiveFilterChip[];
   /** Optional display name per chip, keyed by lower-case keyword slug. */
@@ -22,7 +29,7 @@ export function ActiveFilterChips({ chips, displayNames, onRemove }: ActiveFilte
             aria-label={`Remove filter ${name}`}
             data-kind={chip.kind}
             onClick={() => onRemove(chip)}
-            className="inline-flex min-h-[44px] items-center gap-1.5 rounded-full bg-indigo-100 px-3 py-1 text-sm font-medium text-indigo-800 hover:bg-indigo-200"
+            className={ACTIVE_FILTER_CHIP_CLASS}
           >
             <span>{name}</span>
             <XMarkIcon className="h-4 w-4" aria-hidden="true" />
