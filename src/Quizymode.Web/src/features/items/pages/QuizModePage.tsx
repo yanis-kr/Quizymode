@@ -37,7 +37,7 @@ import { StarIcon as StarIconSolid } from "@heroicons/react/24/solid";
 import type { CollectionRatingResponse } from "@/types/api";
 import { getCategoryScopeModeConfig } from "@/features/categories/utils/categoryScopeMode";
 import { getStudyScopeKeywords, parseSizeParam } from "@/features/items/utils/studyScopeParams";
-import { buildGamePath } from "@/features/games/gameScope";
+import { buildGamePath, gameScopeSearch } from "@/features/games/gameScope";
 import { QuizCompletionView } from "@/features/items/quiz/QuizCompletionView";
 import { useStudyHotkeys } from "@/components/study/useStudyHotkeys";
 import { useQuestionPictureStatuses } from "@/components/study/pictureGate";
@@ -81,7 +81,8 @@ import {
 } from "@/features/items/quiz/quizRun";
 import { gradeTypedAnswer, isTypeable } from "@/features/items/quiz/typedAnswer";
 import { isGuestEligible, recordGuestCompletion } from "@/features/guestHistory/guestHistoryStorage";
-import { recordKnownItems } from "@/features/progress/knownItems";
+import { categorySetKey, readKnownIds, recordKnownItems } from "@/features/progress/knownItems";
+import { pickNextRound, sampleRun } from "@/features/learningLoop/nextRoundPick";
 import { addLocalReviewItems } from "@/features/learningLoop/localReviewList";
 import { recordAuthenticatedCompletion } from "@/features/studySessions/recordStudySession";
 import {
@@ -198,6 +199,15 @@ const QuizModePageContent = ({ resumeRequested = false, initialNotice = null }: 
     }
   };
   const [currentIndex, setCurrentIndex] = useState(0);
+  // A Keep-going tile or other link to a different set keeps this page mounted; start the new set at question 1
+  // (#711: the tile opened at "5 of 5"). Item, mode and size changes do not change this key.
+  const setKey = [categorySlug ?? "", collectionId ?? "", searchParams.get("nav") ?? "", searchParams.get("keywords") ?? ""].join("|");
+  const lastSetKey = useRef(setKey);
+  useEffect(() => {
+    if (lastSetKey.current === setKey) return;
+    lastSetKey.current = setKey;
+    setCurrentIndex(0);
+  }, [setKey]);
   const [run, setRun] = useState<QuizRunState | null>(null);
   const [runRestartNotice, setRunRestartNotice] = useState<string | null>(initialNotice);
   const resumeRequestedRef = useRef(resumeRequested);
@@ -491,6 +501,8 @@ const QuizModePageContent = ({ resumeRequested = false, initialNotice = null }: 
 
   // Use full list if available (when category/collection is present), otherwise use stored items or fetched items
   // Never use singleItemData when storedItems exists (restoring from sessionStorage)
+  // A collection Play 5 / Play 10 link carries ?size=N: start a run of N random playable members (#714 AC 3.6.29).
+  const collectionRunSize = collectionId ? parseSizeParam(searchParams.get("size")) : null;
   const playableItems = useMemo(() => {
     const loadedItems = collectionId
       ? collectionData?.items ?? []
@@ -502,15 +514,17 @@ const QuizModePageContent = ({ resumeRequested = false, initialNotice = null }: 
           quizSize,
         });
     const seen = new Set<string>();
-    return loadedItems.filter((item) => {
+    const playable = loadedItems.filter((item) => {
       if (!item.id || seen.has(item.id) || !isQuizPlayable(item)) return false;
       seen.add(item.id);
       return true;
     });
+    return collectionRunSize ? sampleRun(playable, collectionRunSize) : playable;
   }, [
     categorySlug,
     collectionData?.items,
     collectionId,
+    collectionRunSize,
     data?.items,
     filterKeywords,
     navigationKeywords,
@@ -1010,7 +1024,10 @@ const QuizModePageContent = ({ resumeRequested = false, initialNotice = null }: 
       seen.add(item.id);
       return true;
     });
-    const picked = distinct.filter((item) => !played.has(item.id)).slice(0, size);
+    // Unseen first (#711): items this browser has not marked known in this set. Known items fill in only when some
+    // unseen items remain; with none left the completion screen says "You have seen all N".
+    const knownIds = categorySlug ? readKnownIds(categorySetKey(categorySlug, navigationKeywords)) : new Set<string>();
+    const picked = pickNextRound(distinct, played, knownIds, size);
     trackEvent({ name: "next_step_clicked", runId, position: 1, contextType: "quiz", contextId: `next:same:${scopeKey || category}` });
     if (picked.length === 0) {
       setRoundExhausted({ runId, total: distinct.length });
@@ -1356,6 +1373,12 @@ const QuizModePageContent = ({ resumeRequested = false, initialNotice = null }: 
     : null;
 
   // The set just played: its collection, else its category scope, else the hub (#675, AC 3.35.3).
+  // Carry the same scope the quiz used: nav (when the quiz URL had it) and keywords (#768).
+  const gamesSearch = gameScopeSearch({
+    hasExplicitNav: hasCategoryScope && hasExplicitNavParam,
+    navigationKeywords,
+    keywords,
+  });
   const gamesPath = collectionId
     ? buildGamePath({ kind: "collection", collectionId, collectionName: collectionInfo?.name })
     : category
@@ -1364,7 +1387,7 @@ const QuizModePageContent = ({ resumeRequested = false, initialNotice = null }: 
           category,
           navigationKeywords,
           filterKeywords,
-          search: filterKeywords.length > 0 ? `?keywords=${filterKeywords.join(",")}` : "",
+          search: gamesSearch,
         })
       : "/games";
 

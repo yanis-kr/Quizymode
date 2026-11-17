@@ -120,9 +120,32 @@ describe("ScopeLandingHeader (#646)", () => {
     for (const link of screen.getAllByRole("link")) expect(link.className).toContain("min-h-[44px]");
   });
 
-  it("renders the collection variant with Play quiz (N) even for many questions", () => {
+  it("AC 3.6.29 gives a collection with 10 or more questions Play 5, Play 10 and Play all (N)", () => {
     renderHeader({ variant: "collection", count: 40 });
-    expect(linkNames()).toEqual(["Play quiz (40)", "Flashcards", "Games"]);
+    expect(linkNames()).toEqual(["Play 5", "Play 10", "Play all (40)", "Flashcards", "Games"]);
+    expect(screen.getByRole("link", { name: "Play 5" })).toHaveAttribute("href", expect.stringContaining("size=5"));
+    expect(screen.getByRole("link", { name: "Play 10" })).toHaveAttribute("href", expect.stringContaining("size=10"));
+    expect(screen.getByRole("link", { name: "Play all (40)" }).getAttribute("href")).not.toContain("size=");
+  });
+
+  it("AC 3.6.29 keeps one Play quiz (N) for a collection with fewer than 10 questions", () => {
+    renderHeader({ variant: "collection", count: 7 });
+    expect(linkNames()).toEqual(["Play quiz (7)", "Flashcards", "Games"]);
+  });
+
+  it("AC 3.6.25 AC 3.6.26 shows the unofficial-practice line and Exam simulation for an exam scope", () => {
+    renderHeader({ unofficial: true, examSimulationHref: "/quiz/exams?mode=test" });
+    expect(screen.getByText("Unofficial practice questions. Not affiliated with the exam provider.")).toBeInTheDocument();
+    expect(linkNames()).toEqual(["Play 5", "Play 10", "Exam simulation", "Flashcards", "Games"]);
+    expect(screen.getByRole("link", { name: "Exam simulation" })).toHaveAttribute("href", "/quiz/exams?mode=test");
+    expect(screen.getByText("Timed. Answers shown at the end.")).toBeInTheDocument();
+  });
+
+  it("AC 3.6.28 shows neither the unofficial line nor Exam simulation for a non-exam scope", () => {
+    renderHeader();
+    expect(screen.queryByText(/Unofficial practice questions/)).toBeNull();
+    expect(screen.queryByRole("link", { name: "Exam simulation" })).toBeNull();
+    expect(screen.queryByText("Timed. Answers shown at the end.")).toBeNull();
   });
   it("AC 3.33.1 shows 'N of M known' when a known count is given and hides it otherwise", () => {
     const { unmount } = renderHeader({ knownCount: 12, count: 197 });

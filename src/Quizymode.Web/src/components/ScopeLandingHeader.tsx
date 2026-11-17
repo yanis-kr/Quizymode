@@ -8,12 +8,16 @@ export interface ScopeLandingHeaderProps {
   count: number | undefined;
   countState: LandingLoadState;
   games: LandingGamesState;
-  /** "collection" has no Play 5 / Play 10: a collection quiz plays the whole collection. */
+  /** A collection with 10 or more questions gets Play 5, Play 10 and Play all (N) (#714). */
   variant?: "scope" | "collection";
   /** Quiz route; a size is added to the query for Play 5 / Play 10 only. */
   quizHref: (size?: number) => string;
   flashcardsHref: string;
   gamesHref: string;
+  /** Timed run (mode=test) for exam scopes; undefined hides the Exam simulation button (#714). */
+  examSimulationHref?: string;
+  /** Exam scopes show the unofficial-practice line (#714). */
+  unofficial?: boolean;
   browseHref?: string;
   /** Guest-local known-item count (#672); undefined hides the progress line (signed-in users, unknown set). */
   knownCount?: number;
@@ -23,21 +27,31 @@ type Action =
   | { kind: "link"; key: string; label: string; href: string; primary: boolean }
   | { kind: "skeleton"; key: string };
 
+/** Approved wording for exam scopes (#710 M1). */
+export const UNOFFICIAL_PRACTICE_LINE = "Unofficial practice questions. Not affiliated with the exam provider.";
+
 const BASE_LINK =
   "inline-flex min-h-[44px] items-center justify-center rounded-md px-4 text-sm font-semibold focus-visible:ring-2 focus-visible:ring-indigo-500";
 const PRIMARY_LINK = `${BASE_LINK} bg-indigo-600 text-white hover:bg-indigo-700`;
 const OUTLINE_LINK = `${BASE_LINK} border border-gray-300 text-gray-700 hover:bg-gray-50`;
 
 function buildActions(props: ScopeLandingHeaderProps): Action[] {
-  const { count, countState, games, variant = "scope", quizHref, flashcardsHref, gamesHref } = props;
+  const { count, countState, games, variant = "scope", quizHref, flashcardsHref, gamesHref, examSimulationHref } = props;
   const actions: Action[] = [];
   if (countState === "ready" && count !== undefined) {
-    if (variant === "collection" || count < 5) {
+    // Collections below 10 questions keep one Play quiz button (#714 AC4 starts at 10).
+    if (count < 5 || (variant === "collection" && count < 10)) {
       actions.push({ kind: "link", key: "play", label: `Play quiz (${count})`, href: quizHref(), primary: true });
     } else {
       actions.push({ kind: "link", key: "play5", label: "Play 5", href: quizHref(5), primary: true });
       if (count >= 10) actions.push({ kind: "link", key: "play10", label: "Play 10", href: quizHref(10), primary: false });
+      if (variant === "collection" && count >= 10) {
+        actions.push({ kind: "link", key: "playAll", label: `Play all (${count})`, href: quizHref(), primary: false });
+      }
     }
+  }
+  if (examSimulationHref) {
+    actions.push({ kind: "link", key: "exam", label: "Exam simulation", href: examSimulationHref, primary: false });
   }
   actions.push({ kind: "link", key: "flashcards", label: "Flashcards", href: flashcardsHref, primary: false });
   if (games === "available") actions.push({ kind: "link", key: "games", label: "Games", href: gamesHref, primary: false });
@@ -65,7 +79,7 @@ export function SetProgress({ known, total, className = "mt-1 text-xs" }: { know
  * the Play buttons (#646). Rendered above the mode tabs; the tabs stay as they are.
  */
 export function ScopeLandingHeader(props: ScopeLandingHeaderProps) {
-  const { title, description, count, countState, variant = "scope", browseHref = "/categories", knownCount } = props;
+  const { title, description, count, countState, variant = "scope", browseHref = "/categories", knownCount, unofficial, examSimulationHref } = props;
   const isEmpty = countState === "ready" && count === 0;
   const actions = isEmpty || countState === "loading" ? [] : buildActions(props);
   const firstSpansTwo = actions.length % 2 === 1;
@@ -76,6 +90,7 @@ export function ScopeLandingHeader(props: ScopeLandingHeaderProps) {
       {description ? (
         <p className="mt-1 line-clamp-2 text-sm text-gray-600 sm:line-clamp-none">{description}</p>
       ) : null}
+      {unofficial ? <p className="mt-1 text-xs text-gray-500">{UNOFFICIAL_PRACTICE_LINE}</p> : null}
       {countState === "ready" && count !== undefined && (
         <p className="mt-1 text-xs text-gray-500">
           {count.toLocaleString()} {count === 1 ? "question" : "questions"}
@@ -111,6 +126,9 @@ export function ScopeLandingHeader(props: ScopeLandingHeaderProps) {
           })}
         </div>
       )}
+      {!isEmpty && examSimulationHref ? (
+        <p className="mt-1 text-xs text-gray-500">Timed. Answers shown at the end.</p>
+      ) : null}
     </div>
   );
 }

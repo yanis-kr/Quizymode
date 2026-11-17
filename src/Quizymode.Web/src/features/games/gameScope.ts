@@ -13,6 +13,21 @@ export type GameScope =
     }
   | { kind: "global"; filterKeywords: readonly string[]; search?: string };
 
+/**
+ * Query string for the games link from a category quiz (#768). `nav` is included only when the quiz URL
+ * had it, so a keywords-only quiz keeps its keywords-only link, as before.
+ */
+export function gameScopeSearch(input: {
+  hasExplicitNav: boolean;
+  navigationKeywords: readonly string[];
+  keywords: readonly string[];
+}): string {
+  const parts: string[] = [];
+  if (input.hasExplicitNav) parts.push(`nav=${input.navigationKeywords.join(",")}`);
+  if (input.keywords.length > 0) parts.push(`keywords=${input.keywords.join(",")}`);
+  return parts.length > 0 ? `?${parts.join("&")}` : "";
+}
+
 /** Identifies a scope for best times; the raw query string is not part of it. */
 export function gameScopeKey(scope: GameScope): string {
   if (scope.kind === "topics") return `topics:${[...new Set(scope.topics)].sort().join(",")}`;

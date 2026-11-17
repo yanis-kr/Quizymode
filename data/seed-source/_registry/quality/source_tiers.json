@@ -1,0 +1,24 @@
+{
+  "defaultTier": "T4",
+  "unfetchableTier": "T5",
+  "tiers": {
+    "T1": "vendor or standards documentation",
+    "T2": "edited reference",
+    "T3": "Wikipedia",
+    "T4": "commercial blogs and other open web",
+    "T5": "dump repositories or unfetchable"
+  },
+  "domains": {
+    "docs.aws.amazon.com": "T1",
+    "aws.amazon.com": "T1",
+    "learn.microsoft.com": "T1",
+    "docs.microsoft.com": "T1",
+    "cloud.google.com": "T1",
+    "kubernetes.io": "T1",
+    "docs.oracle.com": "T1",
+    "developer.mozilla.org": "T2",
+    "wikipedia.org": "T3",
+    "github.com": "T5",
+    "raw.githubusercontent.com": "T5"
+  }
+}

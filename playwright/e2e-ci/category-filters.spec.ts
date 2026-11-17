@@ -106,3 +106,31 @@ test.describe("Category filters (#707)", () => {
     await page.screenshot({ path: path.join(SHOT_DIR, "after-chips-1280.png"), fullPage: false });
   });
 });
+
+/** WCAG contrast of the chip text against its background, computed in the page (canvas gives sRGB for any CSS colour). */
+const CONTRAST_IN_PAGE = `(() => {
+  const toRgb = (c) => { const x = document.createElement("canvas"); x.width = 1; x.height = 1; const g = x.getContext("2d"); g.fillStyle = c; g.fillRect(0, 0, 1, 1); const d = g.getImageData(0, 0, 1, 1).data; return { r: d[0], g: d[1], b: d[2] }; };
+  const lum = ({ r, g, b }) => { const f = (v) => { v /= 255; return v <= 0.03928 ? v / 12.92 : Math.pow((v + 0.055) / 1.055, 2.4); }; return 0.2126 * f(r) + 0.7152 * f(g) + 0.0722 * f(b); };
+  return (fg, bg) => { const a = lum(toRgb(fg)), b = lum(toRgb(bg)); return (Math.max(a, b) + 0.05) / (Math.min(a, b) + 0.05); };
+})()`;
+
+test.describe("Category filters (#707) in dark theme", () => {
+  test.use({ colorScheme: "dark" });
+
+  test("AC 3.5.19 active filter chips meet 4.5:1 contrast in dark theme (stubbed API) and save 375 px and 1280 px screenshots", async ({ page }) => {
+    test.setTimeout(60_000);
+    for (const [width, height] of [[375, 812], [1280, 900]] as const) {
+      await page.setViewportSize({ width, height });
+      await openItems(page, "/categories/languages/german/idioms?view=items&page=1&pagesize=10&keywords=funny");
+      const chip = activeFilters(page).getByRole("button", { name: /^Remove filter/ }).first();
+      await expect(chip).toBeVisible();
+      const ratio = await chip.evaluate((el, contrastSource) => {
+        const contrast = eval(contrastSource) as (fg: string, bg: string) => number;
+        const style = getComputedStyle(el);
+        return contrast(style.color, style.backgroundColor);
+      }, CONTRAST_IN_PAGE);
+      expect(ratio).toBeGreaterThanOrEqual(4.5);
+      await page.screenshot({ path: path.join(SHOT_DIR, `dark-chips-${width}.png`), fullPage: false });
+    }
+  });
+});

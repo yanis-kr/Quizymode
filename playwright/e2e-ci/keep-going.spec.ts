@@ -121,3 +121,25 @@ test("AC 3.6.31 finishing exams/aws/saa-c03 shows Keep going with two related ti
   await paceTile.click();
   await expect(page).toHaveURL(/\/quiz\/tech\?.*size=5/);
 });
+
+test("AC 3.6.38 a Keep going tile opens its new set at question 1, not at the last question of the finished run (#711)", async ({ page }) => {
+  test.setTimeout(60_000);
+  await stubApi(page);
+  await page.goto("/quiz/exams?nav=aws,saa-c03&size=5");
+
+  await expect(page.getByText("Question 1", { exact: true })).toBeVisible();
+  for (let n = 1; n <= 5; n += 1) {
+    await page.getByRole("button", { name: /4/i }).click();
+    if (n < 5) {
+      await page.getByRole("button", { name: /^next$/i }).click();
+      await expect(page.getByText(`Question ${n + 1}`, { exact: true })).toBeVisible();
+    }
+  }
+  await page.getByRole("button", { name: /see my score/i }).click();
+
+  const sapTile = page.getByTestId("keep-going").getByRole("link", { name: /AWS Solutions Architect Professional/ });
+  await sapTile.click();
+  await expect(page).toHaveURL(/\/quiz\/exams\?.*nav=aws%2Csap-c02/);
+  await expect(page.getByText("Question 1", { exact: true })).toBeVisible();
+  await expect(page.getByText("5 of 5")).toHaveCount(0);
+});

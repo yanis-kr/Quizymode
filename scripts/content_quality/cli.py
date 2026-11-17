@@ -10,6 +10,14 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 
+from datetime import datetime, timezone  # noqa: E402
+
+from fetcher import (  # noqa: E402
+    fetch_run,
+    link_report,
+    load_profiles,
+    load_tiers,
+)
 from quality_lib import (  # noqa: E402
     append_rows,
     compact,
@@ -19,8 +27,8 @@ from quality_lib import (  # noqa: E402
     load_fact_checks,
     packet,
     pr_table,
-    queue,
     read_rows,
+    risk_queue,
 )
 from seed_source_common import SOURCE_ITEMS_ROOT, load_source_items  # noqa: E402
 
@@ -28,8 +36,30 @@ from seed_source_common import SOURCE_ITEMS_ROOT, load_source_items  # noqa: E40
 def cmd_queue(args: argparse.Namespace) -> int:
     items = [i for i in load_source_items() if i.category == args.category]
     rows = read_rows(ledger_path(args.category))
-    for item in queue(items, rows, args.level, args.budget):
-        print(json.dumps({"itemId": item.item_id, "question": item.question}))
+    ranked = risk_queue(items, rows, args.level, args.budget, load_tiers(), load_profiles(), datetime.now(timezone.utc))
+    for item, reason, risk in ranked:
+        print(json.dumps({"itemId": item.item_id, "question": item.question, "risk": risk, "reason": reason}))
+    return 0
+
+
+def _category_items(category: str | None):
+    return [i for i in load_source_items() if category is None or i.category == category]
+
+
+def cmd_fetch(args: argparse.Namespace) -> int:
+    items = _category_items(args.category)
+    urls = [i.source for i in items if i.source]
+    if args.limit:
+        urls = urls[: args.limit]
+    summary = fetch_run(urls, base_delay=args.delay)
+    print(json.dumps(summary.as_dict(), sort_keys=True))
+    return 0
+
+
+def cmd_link_report(args: argparse.Namespace) -> int:
+    items = _category_items(args.category)
+    urls_by_item = {i.item_id: i.source for i in items if i.source}
+    print(json.dumps(link_report(urls_by_item, load_tiers()), indent=2, sort_keys=True))
     return 0
 
 
@@ -91,6 +121,16 @@ def build_parser() -> argparse.ArgumentParser:
     q.add_argument("--level", required=True)
     q.add_argument("--budget", type=int, default=25)
     q.set_defaults(func=cmd_queue)
+
+    f = sub.add_parser("fetch", help="fetch uncached source URLs once each, politely (robots.txt, per-domain delay)")
+    f.add_argument("--category")
+    f.add_argument("--limit", type=int, default=0)
+    f.add_argument("--delay", type=float, default=1.0)
+    f.set_defaults(func=cmd_fetch)
+
+    lr = sub.add_parser("link-report", help="status, tier and bare-homepage counts for cited source URLs")
+    lr.add_argument("--category")
+    lr.set_defaults(func=cmd_link_report)
 
     p = sub.add_parser("packets", help="JSONL packets for a level")
     p.add_argument("--category", required=True)

@@ -4,6 +4,7 @@ import { gamesApi } from "@/api/games";
 import { itemsApi } from "@/api/items";
 import { GAME_MIN_ITEMS } from "@/features/games/gameRoster";
 import { categoryDisplayName, keywordDisplayName } from "@/utils/categorySlug";
+import { promotedScopeDescription } from "@/utils/promotedScopes";
 
 export type LandingLoadState = "loading" | "ready" | "error";
 export type LandingGamesState = "loading" | "available" | "unavailable";
@@ -97,7 +98,9 @@ export function useScopeLanding(input: ScopeLandingInput): ScopeLanding {
       : categoryDisplayName(categoryName ?? categorySlug ?? ""));
 
   const keywordDescription = deepest?.description?.trim() || null;
-  const description = keywordDescription ?? (nav.length === 0 ? categoryDescription?.trim() || null : null);
+  // Promoted scopes get a hand-written one-sentence description first (#714); the taxonomy text is the fallback.
+  const promoted = categorySlug ? promotedScopeDescription([categorySlug, ...nav].join("/")) : null;
+  const description = promoted ?? keywordDescription ?? (nav.length === 0 ? categoryDescription?.trim() || null : null);
 
   const countState: LandingLoadState = countQuery.isError ? "error" : countQuery.isSuccess ? "ready" : "loading";
 
