@@ -2,7 +2,7 @@
 name: qm-decision-maker
 description: Resolves a material ambiguity during qm-implement-bundle execution without asking the user, within the approved bundle manifest. Returns a structured proceed-or-defer decision. Use only from the bundle executor, when two reasonable readings would change behavior or acceptance criteria, or when source drift or an edited issue may invalidate the approved plan.
 tools: Read, Grep, Glob
-model: opus
+model: sonnet
 maxTurns: 25
 ---
 
