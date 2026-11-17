@@ -792,6 +792,13 @@ Categories are **public only** (there is no private category). Users navigate by
 - **AC 3.5.9** [Anyone] [verify: unit] (#664) **Given** I remove a chip, **then** a removed path keyword keeps the earlier path and turns later path keywords into tags; a removed tag is dropped; the view stays `items`, `page=1`, and Back restores the previous scope. (frontend tests: activeFilterChips.test.ts, CategoriesPage.test.tsx "AC 3.5.9")
 - **AC 3.5.10** [Anyone] [verify: unit] (#664) **Given** item keyword chips in the items view, **then** keywords in the path or tags show selected (case-insensitive, `aria-pressed="true"`), and clicking a path keyword changes nothing. (frontend tests: ItemListCard.test.tsx, CategoriesPage.test.tsx "AC 3.5.10")
 - **AC 3.5.11** [Anyone] [verify: unit] (#664) **Given** tag filters leave no items, **then** I see "No items match all filters" and **Clear tag filters**, which keeps the path. (frontend test: CategoriesPage.test.tsx "AC 3.5.11")
+- **AC 3.5.12** [Anyone] [verify: e2e] (#707) **Given** I am on a category items view with refinements, **then** the **Filters** control shows the count of applied refinements (tags, search, item type, rating) and the active filter chips are visible near the results without opening the dialog. (e2e: playwright/e2e-ci/category-filters.spec.ts "AC 3.5.12")
+- **AC 3.5.13** [Anyone] [verify: unit] (#707) **Given** a keyword is both a navigation topic and a tag, **then** it appears once, as a topic chip, never as a tag chip too. (frontend test: CategoriesPage.test.tsx "AC 3.5.13")
+- **AC 3.5.14** [Anyone] [verify: e2e] (#707) **Given** I remove a tag chip, **then** the URL keeps the path, drops that tag, resets to page 1 and keeps the items view (the page size parameter stays as the app default); Back restores the previous URL. (e2e: category-filters.spec.ts "AC 3.5.14")
+- **AC 3.5.15** [Anyone] [verify: e2e] (#707) **Given** an active filter chip, **then** its remove control is labelled "Remove filter {name}", is at least 44 px tall, and removes the chip with the keyboard Enter key. (e2e: category-filters.spec.ts "AC 3.5.15")
+- **AC 3.5.16** [Anyone] [verify: unit] (#707) **Given** I have applied tag refinements, **when** I choose **Clear all** in the filter dialog, **then** the applied URL refinements are removed and the navigation scope is kept. (frontend test: CategoriesPage.test.tsx "AC 3.5.16")
+- **AC 3.5.17** [Anyone] [verify: unit] (#707) **Given** I open the keyword filter on an items view, **then** the dialog states that keyword suggestions come only from the items loaded on this page. (frontend test: CategoriesPage.test.tsx "AC 3.5.17")
+- **AC 3.5.18** [Anyone] [verify: e2e] (#707) **Given** a root category without tags, a sets view, or a two-level path with tags, **then** the layout works at 375 px and 1280 px with no chip row where no refinement applies, and the items still render (regression; screenshots saved in the e2e run). (e2e: category-filters.spec.ts "AC 3.5.18")
 
 ### AC 3.6 Flashcards and Quiz by category/keywords
 
@@ -2199,6 +2206,16 @@ Tooling that keeps an issue from shipping without a way to prove its ACs, and th
 - **AC 7.11.6** [Dev tooling] [verify: unit] **Given** the Deploy workflow's wait for the new container deployment fails or times out, **then** a best-effort follow-up step prints the last 100 log lines of the `api` Lightsail container (log lines only, never environment or deployment settings) and cannot change the job outcome, so the original failure is still reported.
 - **AC 7.11.7** [Dev tooling] [verify: unit] (#717) **Given** Deploy reads the change scope, **then** `scripts/ci/read-change-scope.mjs` turns a flag off only for an explicit JSON `false`; a missing file, invalid JSON, a non-object value or a missing key gives `true`, so the job deploys everything. (tests: `read-change-scope.test.mjs`, `deploy-workflow.test.mjs`)
 
+### AC 7.14 Seed-source quality gate (#725)
+
+`scripts/lint_seed_source.py` checks item content deterministically. Hard rules fail the `seed-quality` CI job for any changed item. Soft rules are compared with the committed baseline `data/seed-source/_registry/quality/soft-baseline.json`, so only new or changed items with a new soft violation fail. Per-category thresholds come from `data/seed-source/_registry/quality/profiles.json`.
+
+- **AC 7.14.1** [Dev tooling] [verify: unit] Each hard rule (H1 duplicate option, H2 explanation echoing the key or question, H3 placeholder text, H4 `UPD<yymmdd>` marker) reports its item id and rule id, and a clean item reports none. (tests: `scripts/tests/test_seed_lint.py`, `HardRuleTests`)
+- **AC 7.14.2** [Dev tooling] [verify: unit] Each soft rule (S1 key longest by the profile margin, S2 absolute option, S3 short explanation, S4 key in stem) has a passing and a failing case. (tests: `SoftRuleTests`)
+- **AC 7.14.3** [Dev tooling] [verify: unit] `--changed-only` checks only items changed since the base ref and exits 1 when such an item has a hard violation or a soft violation not in the baseline. An untouched item with a baseline violation does not fail. `--update-baseline` only shrinks the baseline unless `--allow-growth` is passed. (tests: `scripts/tests/test_seed_lint.py` run in CI, and the changed-only run in the `seed-quality` job)
+- **AC 7.14.4** [Dev tooling] [verify: unit] Near-duplicate candidate pairs within one category are reported with both item ids and a similarity value, and never fail CI. (tests: `NearDuplicateTests`)
+- **AC 7.14.5** [Dev tooling] [verify: unit] The `seed-quality` job runs `validate_seed_source.py`, the changed-item lint and every `scripts/tests/test_*.py`. It does not gate `build-test-publish`, and an item-only change still skips the web build, image build and Deploy (AC 7.11.5). (tests: `classify-changes.test.mjs`, `workflow gating`)
+
 ### AC 7.12 Startup readiness gate (#732)
 
 On the Lightsail nano container (0.25 vCPU), boot work used to keep the CPU busy for 25 to 40 seconds before Kestrel listened, so the `/health` probe failed and the node was replaced. Slow startup work now runs in the background behind a one-way gate. Code: `Services/Startup/`, `StartupExtensions/StartupMigration.cs`, `Services/TaxonomySeedApplier.cs`.
@@ -2215,6 +2232,19 @@ On the Lightsail nano container (0.25 vCPU), boot work used to keep the CPU busy
 - **AC 7.12.10** [Dev] [verify: unit] The media cleanup verify loop checks that each Ready object exists with `IMediaObjectStore.ExistsAsync` (a HEAD request on S3) and never opens object content. A missing object is still revoked. (tests: `MediaVerifyExistenceTests.VerifyLoop_UsesExistsAsync_AndNeverOpensContent`)
 - **AC 7.12.11** [Owner] [verify: api] After a production deploy, `GET /health` on the API returns 200, the reported version matches the release, and the deploy finishes with no node replacement. The Lightsail health check allows 6 failed probes (`unhealthyThreshold` 6, about 60 s) before it replaces a node. (tests: `deploy-health-threshold.test.mjs` for the threshold; the rest is checked on prod after deploy)
 - **AC 7.12.12** [Anyone] [verify: anon-ui] After a deploy, the home page and the category navigation load for an anonymous visitor with no errors.
+
+### AC 7.15 Seed review ledger, evidence packets and verdict ingest (#726)
+
+Reviews are recorded per item, content hash, level and rubric version in `data/seed-source/_registry/quality/<category>.jsonl`. A verdict counts only when its quote is found in the cached source text. Code: `scripts/content_quality/`. Fetching sources, the link report and the source-tier config are a follow-up issue and are not in this AC set.
+
+- **AC 7.15.1** [Dev tooling] [verify: unit] `contentHash` is a SHA-256 over the canonical question, answers, explanation and source. It is stable across key order and whitespace, changes with any of those fields, and ignores keywords. (tests: `scripts/tests/test_content_quality.py`, `ContentHashTests`)
+- **AC 7.15.2** [Dev tooling] [verify: unit] `queue` omits an item whose ledger row matches its current hash, level and rubric version, and includes it again after a content change. (tests: `QueueTests`)
+- **AC 7.15.3** [Dev tooling] [verify: unit] An L1 packet has no explanation and no correct-answer marker; option order is shuffled with the seed recorded in the packet. (tests: `PacketTests.test_l1_...`)
+- **AC 7.15.4** [Dev tooling] [verify: unit] An L2 packet carries a passage of at most 800 tokens (about 600 words) from the cache, never the full page. (tests: `PacketTests.test_l2_...`)
+- **AC 7.15.5** [Dev tooling] [verify: unit] `ingest` rejects a verdict whose quote does not occur in the cached source text (whitespace-normalised) and accepts one that does. The committed fixture is `scripts/tests/fixtures/content_quality/cache/`. (tests: `IngestTests`)
+- **AC 7.15.6** [Dev tooling] [verify: unit] Fetched page text lives only in the git-ignored `.cache/content-quality/` directory (`.gitignore`). (tests: `RepoContractTests`)
+- **AC 7.15.7** [Dev tooling] [verify: unit] The legacy `factChecks` import adds `legacy-unverified` rows once, re-running adds nothing, and no item file changes. (tests: `LegacyAndCompactTests.test_legacy_import_is_idempotent`)
+- **AC 7.15.8** [Dev tooling] [verify: unit] `compact` keeps the latest row per item, level and rubric version. (tests: `LegacyAndCompactTests.test_compact_...`)
 
 ### AC 7.13 Agent work packets, AC slices and token ledger (#719)
 

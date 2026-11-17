@@ -20,6 +20,7 @@ export function ActiveFilterChips({ chips, displayNames, onRemove }: ActiveFilte
             key={`${chip.kind}-${chip.keyword.toLowerCase()}`}
             type="button"
             aria-label={`Remove filter ${name}`}
+            data-kind={chip.kind}
             onClick={() => onRemove(chip)}
             className="inline-flex min-h-[44px] items-center gap-1.5 rounded-full bg-indigo-100 px-3 py-1 text-sm font-medium text-indigo-800 hover:bg-indigo-200"
           >
