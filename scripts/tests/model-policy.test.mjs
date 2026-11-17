@@ -182,7 +182,7 @@ describe("issue classification without extra labels (AC 7.13.3)", () => {
 // Packet to adapter. The packet's model lines are the input the orchestrator dispatches with: each role runs through
 // runSpecialist with that model, and the mocked CLI records the model it actually received. No real agent is spawned.
 describe("packet to adapter dispatch (AC 7.13.3)", () => {
-  const bundle = path.join(repo, ".claude", "skills", "qm-implement-bundle", "scripts", "bundle.mjs");
+  const bundle = path.join(repo, "scripts", "bundle", "bundle.mjs");
   const tmp = fs.mkdtempSync(path.join(os.tmpdir(), "qm-model-policy-"));
   after(() => fs.rmSync(tmp, { recursive: true, force: true }));
   const AC = "- [ ] The quiz screen shows the explanation. [verify: unit]\n- [ ] The label reads Why. [verify: unit]\n";

@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-// Bundle manifest/approval/state helper for the qm-refine-bundle and qm-implement-bundle skills.
+// Bundle manifest/approval/state helper for the qm-bundle-refine and qm-bundle-ship skills.
 // Deterministic, dependency-free (Node >= 18). Never prints secrets: it only reads git/gh metadata.
 //
 // Files per bundle (default <main-checkout>/.qm/bundles/<id>/, gitignored):
@@ -15,8 +15,8 @@ import { execFileSync } from "node:child_process";
 import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
-import { sliceAc } from "../../../../scripts/validation/ac-slice.mjs";
-import { ROLES, routeModel, classifyIssue, MODEL_ORDER } from "../../../../scripts/automation/model-policy.mjs";
+import { sliceAc } from "../validation/ac-slice.mjs";
+import { ROLES, routeModel, classifyIssue, MODEL_ORDER } from "../automation/model-policy.mjs";
 
 const SCHEMA_VERSION = 1;
 const ID_RE = /^[a-z0-9][a-z0-9-]{2,47}$/;
@@ -96,7 +96,7 @@ const now = () => new Date().toISOString();
 // ---------- related ACs (#740) ----------
 function acMarkdown() {
   const here = path.dirname(fileURLToPath(import.meta.url));
-  const file = typeof opts["ac-file"] === "string" ? path.resolve(String(opts["ac-file"])) : path.resolve(here, "..", "..", "..", "..", "docs", "AC.md");
+  const file = typeof opts["ac-file"] === "string" ? path.resolve(String(opts["ac-file"])) : path.resolve(here, "..", "..", "docs", "AC.md");
   return fs.existsSync(file) ? fs.readFileSync(file, "utf8") : "";
 }
 const REL_KINDS = [["ids", "id", "id"], ["invariants", "invariant", "invariant"], ["headings", "heading", "heading"]];
@@ -229,7 +229,7 @@ function validateManifest(m, id) {
 }
 
 function loadValidManifest(p, id) {
-  if (!fs.existsSync(p.manifest)) die(2, `No manifest for bundle '${id}' at ${p.manifest}. Run qm-refine-bundle first; never substitute another bundle.`);
+  if (!fs.existsSync(p.manifest)) die(2, `No manifest for bundle '${id}' at ${p.manifest}. Run qm-bundle-refine first; never substitute another bundle.`);
   const m = readJson(p.manifest);
   const errors = validateManifest(m, id);
   if (errors.length) die(2, "Manifest is invalid", { errors });
@@ -303,11 +303,11 @@ function safeJson(p) { try { return JSON.parse(fs.readFileSync(p, "utf8")); } ca
 
 function verifyAll(id, p) {
   const m = loadValidManifest(p, id);
-  if (!fs.existsSync(p.approval)) die(2, `Bundle '${id}' is not approved (no approval.json). Approve it in a qm-refine-bundle session.`);
+  if (!fs.existsSync(p.approval)) die(2, `Bundle '${id}' is not approved (no approval.json). Approve it in a qm-bundle-refine session.`);
   const ap = readJson(p.approval);
   const hash = sha256File(p.manifest);
   if (ap.status !== "approved") die(2, `Approval status is '${ap.status}', not 'approved'.`);
-  if (ap.manifestSha256 !== hash) die(2, "Manifest hash does not match the approved hash; the manifest changed after approval. Re-approve in qm-refine-bundle.", { approvedSha256: ap.manifestSha256, currentSha256: hash });
+  if (ap.manifestSha256 !== hash) die(2, "Manifest hash does not match the approved hash; the manifest changed after approval. Re-approve in qm-bundle-refine.", { approvedSha256: ap.manifestSha256, currentSha256: hash });
 
   const warnings = [];
   const drift = { baseMoved: false, changedFiles: [], overlapping: {} };
@@ -429,7 +429,7 @@ function packetChecks(paths, issue, extra) {
 }
 function acSliceFor(issue) {
   const here = path.dirname(fileURLToPath(import.meta.url));
-  const script = path.resolve(here, "..", "..", "..", "..", "scripts", "validation", "ac-slice.mjs");
+  const script = path.resolve(here, "..", "validation", "ac-slice.mjs");
   const args = [script, "--issue", String(issue), "--max-lines", "80"];
   if (typeof opts["ac-file"] === "string") args.push("--file", path.resolve(String(opts["ac-file"])));
   return sh("node", args, true) ?? `(no ACs in docs/AC.md carry (#${issue}) yet)`;
@@ -533,7 +533,7 @@ switch (cmd) {
     const prev = fs.existsSync(p.approval) ? readJson(p.approval) : null;
     if (fs.existsSync(p.state)) die(2, "Execution already started for this bundle; create a new bundle id instead of re-approving a running one.");
     const history = prev ? [...(prev.history ?? []), { manifestSha256: prev.manifestSha256, approvedAt: prev.approvedAt, supersededAt: now() }] : [];
-    writeJsonAtomic(p.approval, { schemaVersion: SCHEMA_VERSION, bundleId: id, status: "approved", manifestSha256: hash, approvedAt: now(), approvedBy: "user, in the qm-refine-bundle session", userReply: opts["user-reply"], history });
+    writeJsonAtomic(p.approval, { schemaVersion: SCHEMA_VERSION, bundleId: id, status: "approved", manifestSha256: hash, approvedAt: now(), approvedBy: "user, in the qm-bundle-refine session", userReply: opts["user-reply"], history });
     ok({ bundleId: id, manifestSha256: hash, approved: true });
   }
   case "verify": {
@@ -571,9 +571,9 @@ switch (cmd) {
       if (st.manifestSha256 !== r.hash) die(2, "state.json belongs to a different manifest revision; refusing to mix runs.");
       let reopened = false;
       if (st.phase === "blocked_terminal" && opts["take-over"] && st.phaseBeforeTerminal) { st.phase = st.phaseBeforeTerminal; reopened = true; }
-      else if (TERMINAL.has(st.phase)) die(2, `Bundle is in terminal phase '${st.phase}'. ${st.phase === "blocked_terminal" ? "Fix the blocker, then run: /qm-implement-bundle " + id + " resume" : "Nothing to resume."}`, { phase: st.phase });
+      else if (TERMINAL.has(st.phase)) die(2, `Bundle is in terminal phase '${st.phase}'. ${st.phase === "blocked_terminal" ? "Fix the blocker, then run: /qm-bundle-ship " + id + " resume" : "Nothing to resume."}`, { phase: st.phase });
       const foreign = st.lock && st.lock.holder !== holder && !lockIsStale(st.lock, m.limits.lockStaleMinutes);
-      if (foreign && !opts["take-over"]) die(4, `Bundle is locked by another session (${st.lock.holder}), heartbeat ${st.lock.heartbeatAt}. If that session is gone, the user can run: /qm-implement-bundle ${id} resume`);
+      if (foreign && !opts["take-over"]) die(4, `Bundle is locked by another session (${st.lock.holder}), heartbeat ${st.lock.heartbeatAt}. If that session is gone, the user can run: /qm-bundle-ship ${id} resume`);
       const previousHolder = st.lock?.holder ?? null;
       st.lock = { holder, acquiredAt: now(), heartbeatAt: now() };
       st.resumeCount = (st.resumeCount ?? 0) + 1;
@@ -792,7 +792,7 @@ switch (cmd) {
     const p = bundlePaths(id);
     if (fs.existsSync(p.manifest)) die(2, `Bundle '${id}' already exists; refusing to overwrite.`);
     const here = path.dirname(fileURLToPath(import.meta.url));
-    const tpl = path.resolve(here, "..", "..", "qm-refine-bundle", "templates", "manifest.template.json");
+    const tpl = path.resolve(here, "..", "..", "..", ".claude", "skills", "qm-bundle-refine", "templates", "manifest.template.json");
     const m = readJson(tpl);
     m.bundleId = id; m.createdAt = now();
     m.branches.release = `release/${id}`; m.branches.issuePrefix = `bundle/${id}/`;

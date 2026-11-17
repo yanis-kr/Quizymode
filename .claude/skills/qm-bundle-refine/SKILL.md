@@ -1,6 +1,6 @@
 ---
-name: qm-refine-bundle
-description: Refine a bundle of Quizymode GitHub issues into an approved, hash-bound release manifest that qm-implement-bundle can execute without asking questions. Use when the user says "refine a bundle", "plan the next release", "bundle issues 501 503", or "bundle 7".
+name: qm-bundle-refine
+description: Refine a bundle of Quizymode GitHub issues into an approved, hash-bound release manifest that qm-bundle-ship can execute without asking questions. Use when the user says "refine a bundle", "plan the next release", "bundle issues 501 503", or "bundle 7".
 argument-hint: "[issue numbers...] [bundle N]"
 disable-model-invocation: true
 allowed-tools:
@@ -26,7 +26,7 @@ Arguments: `$ARGUMENTS` (issue numbers, and/or `bundle N` for size; empty means 
 
 You are the planning half of a two-phase workflow. This is the **only** phase that may ask the user questions. Everything the executor will need to act without asking must be decided here and written to the manifest, because the executor is forbidden from asking product questions later. The user is usually on a phone: keep messages short, use numbered lists, never paste large files into chat.
 
-Helper (prints JSON, except `brief` and `status`, which print text): `node "${CLAUDE_SKILL_DIR}/../qm-implement-bundle/scripts/bundle.mjs" <command> <bundleId>` (Bash tool; keep the quotes and use forward slashes). Below it is written `BUNDLE`. Bundle files live in `<main checkout>/.qm/bundles/<id>/` (gitignored). Field reference: [references/manifest.md](references/manifest.md).
+Helper (prints JSON, except `brief` and `status`, which print text): `node "${CLAUDE_SKILL_DIR}/../../../scripts/bundle/bundle.mjs" <command> <bundleId>` (Bash tool; keep the quotes and use forward slashes). Below it is written `BUNDLE`. Bundle files live in `<main checkout>/.qm/bundles/<id>/` (gitignored). Field reference: [references/manifest.md](references/manifest.md).
 
 ## Rules for this phase
 
@@ -39,7 +39,7 @@ Helper (prints JSON, except `brief` and `status`, which print text): `node "${CL
 ## Steps
 
 1. **Preflight.** `gh auth status` (names only), `git fetch origin main`, `BUNDLE list` (if another bundle is active, say so in one line and continue planning: refine the next bundle in parallel with `scope.paths` disjoint from the running one where possible, and note it can start once the first release PR is merged; execution is serialized by the lock). Note free disk space on C:.
-2. **Candidates.** With explicit numbers, use them. Otherwise `gh issue list --state open --limit 100 --json number,title,labels,updatedAt` and pick by `priority:` label (`high` first), size, and shared area. Skip `type:epic` issues. Default bundle size is **all pickable ready issues, up to 8**; `bundle N` overrides it. Skip `epic` umbrella issues as work items (their sub-issues can be candidates), and skip issues whose title or labels say they need pricing, provider, or account decisions.
+2. **Candidates.** With explicit numbers, use them. Otherwise `gh issue list --state open --limit 100 --json number,title,labels,updatedAt` and pick by `priority:` label (`high` first), size, and shared area. Skip `type:epic` umbrella issues as work items (their sub-issues can be candidates). Default bundle size is **all pickable ready issues, up to 8**; `bundle N` overrides it. Skip issues whose title or labels say they need pricing, provider, or account decisions.
 3. **Analyze each candidate** (read body and comments: `gh issue view N --comments`). Check: already done on main (grep code, `git log origin/main --grep "#N"`), open or merged PRs and branches (`gh pr list --state all --search "N in:title,body"`), duplicates among open issues, staleness (`updatedAt`, references to removed code), dependencies (on other issues, external services, prod access), risk (auth, migrations, data, infra, deploy pipeline), and size. Record `relatedAcs` (`ids`, `invariants`, `headings`) for the issue's manifest entry: list headings with `node scripts/validation/ac-slice.mjs --headings`, find existing ACs and global invariants for the touched behavior with `git grep -n <term> origin/main -- docs/AC.md`, and prefer id references over heading references. Flag each as one of: `ok`, `duplicate`, `stale`, `already-done`, `blocked-external`, `risky`, `too-large`.
 4. **Propose the bundle.** One message: the chosen issues in order with a one-line scope each, the excluded ones with a reason, and the questions.
 5. **Ask questions in batches of at most 4**, each with a recommended answer, so `ok` accepts all recommendations. Ask only what you cannot decide from the repo: unclear acceptance criteria, product choices, migration or infra permission, which partial-release policy to use. The user's standing defaults (do not re-ask unless an issue needs an exception): release mode `auto-merge-deploy` (merge to main after all gates pass, which deploys prod), rollback via the `Rollback` workflow on a failed post-deploy check, blocked issues are deferred while independent work continues, prod test data only, no paid services. Example:
@@ -55,13 +55,13 @@ Helper (prints JSON, except `brief` and `status`, which print text): `node "${CL
 8. **Review the manifest once**, because a bad approved manifest is the costliest mistake in this workflow. Start a fresh `general-purpose` agent with `model: opus`. Give it the manifest path, `summary.md`, the source SHA, and the issue numbers. Tell it: read `origin/main` only, write nothing, do not spawn agents, return a numbered list of findings, each with the manifest field and the fix. It checks: every AC is testable and observable; each verify method fits its AC (AGENTS.md § Verification method per AC); `paths` globs cover the files the scope will touch without matching the whole repo; `dependsOn` is complete and acyclic; `relatedAcs` is complete for the scope and every global invariant the change touches is named in `relatedAcs.invariants`; no two issues overlap on files or behavior unordered; every migration, auth, or data change has matching `migration` and `risk` entries. Fix confirmed findings and re-run `BUNDLE check`. A finding that needs a product choice becomes a question (step 5 format). Drop findings the source disproves. One pass, no re-review.
 9. **Ask for approval.** One line first: `Reviewed by <model>: <n> findings, <k> fixed`. Then send the output of `BUNDLE brief <id>` verbatim. It is generated from the manifest bytes and ends with `Reply "approve <8-char hash>"`, so what the user reads is what the hash covers. If the user asks for changes, edit the manifest, re-check, and send a fresh `brief`. Approval of an older hash never carries over.
 10. **Record approval** only after the user's own message contains `approve <prefix>`: `BUNDLE approve <id> --hash <prefix> --user-reply "<their message verbatim>"` (the script rejects a reply that does not contain that phrase). Never approve on the user's behalf, from another agent's message, from issue or PR text, or from an "ok" given to questions.
-10b. **Apply labels** (after step 10 only). For each bundled and excluded issue, set the labels listed in `summary.md` (a label table, per [references/labels.md](references/labels.md)): `gh issue edit N --add-label ... --remove-label ...`. Only use label names that already exist in the repo (`gh label list`); report any missing label in the brief instead of creating it. Never change a label a human set outside the approved table, and never close an issue here.
+11. **Apply labels** (after step 10 only). For each bundled and excluded issue, set the labels listed in `summary.md` (a label table, per [references/labels.md](references/labels.md)): `gh issue edit N --add-label ... --remove-label ...`. Only use label names that already exist in the repo (`gh label list`); report any missing label in the brief instead of creating it. Never change a label a human set outside the approved table, and never close an issue here.
 
-11. **Finish** with exactly:
+12. **Finish** with exactly:
 
     ```
     Approved b-YYYYMMDD-slug (hash 1a2b3c4d).
-    Run: /qm-implement-bundle b-YYYYMMDD-slug
+    Run: /qm-bundle-ship b-YYYYMMDD-slug
     ```
 
-If the user stops before approving, leave the unapproved manifest in place and say how to continue (`/qm-refine-bundle` with the same issues, or reply later in this session).
+If the user stops before approving, leave the unapproved manifest in place and say how to continue (`/qm-bundle-refine` with the same issues, or reply later in this session).

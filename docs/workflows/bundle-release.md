@@ -2,10 +2,10 @@
 
 Two repo skills ship several GitHub issues in one release, driven from the Claude mobile app:
 
-- `/qm-refine-bundle` plans a bundle with you. It is the only phase that asks questions. It writes a manifest and records your approval of its exact SHA-256.
-- `/qm-implement-bundle <id>` executes the approved manifest without asking anything. It builds each issue on its own branch, merges them into one release branch, opens one PR to `main`, and (in the default `auto-merge-deploy` mode) merges it after all gates pass. That merge triggers `CI` on `main` and then `Deploy`: one production deploy for the whole bundle.
+- `/qm-bundle-refine` plans a bundle with you. It is the only phase that asks questions. It writes a manifest and records your approval of its exact SHA-256.
+- `/qm-bundle-ship <id>` executes the approved manifest without asking anything. It builds each issue on its own branch, merges them into one release branch, opens one PR to `main`, and (in the default `auto-merge-deploy` mode) merges it after all gates pass. That merge triggers `CI` on `main` and then `Deploy`: one production deploy for the whole bundle.
 
-Files: `.claude/skills/qm-refine-bundle/`, `.claude/skills/qm-implement-bundle/` (helper `scripts/bundle.mjs`, details in `references/playbook.md`), `.claude/agents/qm-decision-maker.md`. Bundle data lives in `.qm/bundles/<id>/` (gitignored): `manifest.json`, `approval.json`, `state.json`, `summary.md`.
+Files: `.claude/skills/qm-bundle-refine/`, `.claude/skills/qm-bundle-ship/` (helper `scripts/bundle.mjs`, details in `references/playbook.md`), `.claude/agents/qm-decision-maker.md`. Bundle data lives in `.qm/bundles/<id>/` (gitignored): `manifest.json`, `approval.json`, `state.json`, `summary.md`.
 
 ## One-time host setup
 
@@ -21,15 +21,15 @@ The executor needs the local toolchain (`dotnet`, Node, Docker for Testcontainer
 
 | Goal | Command | Plain-language fallback |
 |---|---|---|
-| Refine (discover, 5 issues) | `/qm-refine-bundle` | "Read .claude/skills/qm-refine-bundle/SKILL.md and follow it with no arguments." |
-| Refine chosen issues | `/qm-refine-bundle 501 503 505` | same, "with arguments 501 503 505" |
-| Refine a bigger bundle | `/qm-refine-bundle bundle 7` | same, "with arguments bundle 7" |
+| Refine (discover, up to 8 issues) | `/qm-bundle-refine` | "Read .claude/skills/qm-bundle-refine/SKILL.md and follow it with no arguments." |
+| Refine chosen issues | `/qm-bundle-refine 501 503 505` | same, "with arguments 501 503 505" |
+| Refine a bigger bundle | `/qm-bundle-refine bundle 7` | same, "with arguments bundle 7" |
 | Approve | reply `approve 1a2b3c4d` (hash prefix shown) | same |
-| Execute | `/qm-implement-bundle b-20261108-guest` | "Read .claude/skills/qm-implement-bundle/SKILL.md and follow it with bundle_id b-20261108-guest and no action." |
-| Status | `/qm-implement-bundle b-20261108-guest status` | "Run node .claude/skills/qm-implement-bundle/scripts/bundle.mjs status b-20261108-guest" |
-| Resume after a dropped session | `/qm-implement-bundle b-20261108-guest resume` | fallback as Execute, "with action resume" |
-| Cancel | stop the running turn, then `/qm-implement-bundle b-20261108-guest cancel` | "Run node .claude/skills/qm-implement-bundle/scripts/bundle.mjs cancel b-20261108-guest" |
-| List bundles | (none) | "Run node .claude/skills/qm-implement-bundle/scripts/bundle.mjs list" |
+| Execute | `/qm-bundle-ship b-20261108-guest` | "Read .claude/skills/qm-bundle-ship/SKILL.md and follow it with bundle_id b-20261108-guest and no action." |
+| Status | `/qm-bundle-ship b-20261108-guest status` | "Run node scripts/bundle/bundle.mjs status b-20261108-guest" |
+| Resume after a dropped session | `/qm-bundle-ship b-20261108-guest resume` | fallback as Execute, "with action resume" |
+| Cancel | stop the running turn, then `/qm-bundle-ship b-20261108-guest cancel` | "Run node scripts/bundle/bundle.mjs cancel b-20261108-guest" |
+| List bundles | (none) | "Run node scripts/bundle/bundle.mjs list" |
 
 Fallback notes: both skills set `disable-model-invocation: true`, so Claude does not load them from a plain request; the fallback phrases have Claude read the file directly. In that path `$bundle_id`, `$action`, `$ARGUMENTS` and `${CLAUDE_SKILL_DIR}` are not substituted (Claude reads them from your sentence; the skill folder is `C:\Projects\Quizymode\.claude\skills\<name>`), and the skill's `allowed-tools` and `disallowed-tools` do not apply, so expect more permission prompts.
 
@@ -43,7 +43,7 @@ A long run can end a turn early (context, a tool timeout). `/goal` re-prompts af
 /goal bundle b-20261108-guest reports a phase of done, done_partial, blocked_terminal or cancelled
 ```
 
-The executor ends every turn with a `Bundle <id>: phase ...` line for this. `/goal` alone shows the goal; `/goal clear` removes it. Without `/goal`, send `/qm-implement-bundle <id> resume` to pick up from `state.json`.
+The executor ends every turn with a `Bundle <id>: phase ...` line for this. `/goal` alone shows the goal; `/goal clear` removes it. Without `/goal`, send `/qm-bundle-ship <id> resume` to pick up from `state.json`.
 
 ## Example: refinement output feeding the executor
 
@@ -63,7 +63,7 @@ You reply `approve 9f2c41ab`. Claude records it and ends with:
 
 ```
 Approved b-20261108-guest (hash 9f2c41ab).
-Run: /qm-implement-bundle b-20261108-guest
+Run: /qm-bundle-ship b-20261108-guest
 ```
 
 The executor reads `.qm/bundles/b-20261108-guest/manifest.json` (abridged):
@@ -88,7 +88,7 @@ Bundle b-20261108-guest: done_partial
 Shipped: #503, #521 (PR #530, merge 4be1c2d0, deploy 1234567)
 Deferred/blocked: #492 - decision agent deferred: AC2 needs a retention period choice
 Needs you: choose session retention for #492
-Status: /qm-implement-bundle b-20261108-guest status
+Status: /qm-bundle-ship b-20261108-guest status
 ```
 
 ## Guarantees and limits

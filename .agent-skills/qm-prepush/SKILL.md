@@ -1,5 +1,5 @@
 ---
-name: quizymode-prepush
+name: qm-prepush
 description: Verify Quizymode work before push, including conditional checks, high-risk scans, and a markdown diff-to-main checklist.
 ---
 

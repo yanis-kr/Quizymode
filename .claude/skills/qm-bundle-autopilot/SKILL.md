@@ -1,5 +1,6 @@
 ---
-name: quizymode-autopilot
+name: qm-bundle-autopilot
+disable-model-invocation: true
 description: Process Quizymode GitHub issues autonomously within a time window the user gives. Picks issues, decides small questions with an Opus decision agent, implements in two lanes that each work a queue of issues, releases through one integrator (one version bump, one PR, one deploy per batch of 6 to 8 issues), verifies on prod, and stops at the deadline. Use when the user gives a goal (issues or the backlog) and a deadline, asks to keep going, or asks to close as many issues as possible.
 ---
 
@@ -138,7 +139,7 @@ The integrator is the only writer of release state. At most one release is in fl
 3. Place each AC fragment into its feature section of `docs/AC.md`. Do not add chunk-named headings.
 4. Bump `QuizymodeVersion` once (MINOR if any shipped issue is a feature, else PATCH) and align `src/Quizymode.Web/package.json`. Skip the bump and the `docs/AC.md` edit when every shipped issue is item-data-only (see Pick and split step 3); any other change in the batch bumps as usual.
 5. If any API surface changed, regenerate OpenAPI with `.\scripts\verify-openapi.ps1 -Configuration Release`. Never resolve that file by hand.
-6. Light local check, under the .NET mutex: `npm run build`; `dotnet build` (skip if step 5 already built); the filtered tests of every shipped issue, in one `dotnet test --filter` and one `npm test -- --run` invocation; the high-risk scans from `quizymode-prepush` (constructor signature changes, removed UI text). Do not run the full suites or coverage here. CI is the full run.
+6. Light local check, under the .NET mutex: `npm run build`; `dotnet build` (skip if step 5 already built); the filtered tests of every shipped issue, in one `dotnet test --filter` and one `npm test -- --run` invocation; the high-risk scans from `qm-prepush` (constructor signature changes, removed UI text). Do not run the full suites or coverage here. CI is the full run.
 
    Then the AC gate: `node scripts/validation/ac-gate.mjs --issues <every shipped issue>`. If an issue fails (an AC with no method, or an `e2e` or `signed-in-prod-ui` AC with no test), revert its merge from the release branch, put it back at the front of its lane's queue with the gate output, and release the rest. An issue that fails the gate does not ship.
 7. One reviewer pass (the reviewer's model from the batch's packet, § Model routing; opus only when the batch is high complexity) on `git diff origin/main...release/<batch-id>` in a fresh context, covering code and that no AC wording was weakened. Confirmed findings are fixed on the release branch.

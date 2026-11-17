@@ -1,6 +1,6 @@
 ---
-name: qm-implement-bundle
-description: Execute an approved Quizymode release bundle (from qm-refine-bundle) end to end without asking questions, or show its status, resume it, or cancel it. Only runs when the user invokes it with an explicit bundle id.
+name: qm-bundle-ship
+description: Execute an approved Quizymode release bundle (from qm-bundle-refine) end to end without asking questions, or show its status, resume it, or cancel it. Only runs when the user invokes it with an explicit bundle id.
 argument-hint: "<bundle-id> [status|resume|cancel]"
 arguments: [bundle_id, action]
 disable-model-invocation: true
@@ -10,7 +10,6 @@ disallowed-tools:
   - Bash(node *bundle.mjs new *)
 allowed-tools:
   - Bash(node *bundle.mjs *)
-  - Bash(git -C C:/Projects/Quizymode-wt-bundle-* *)
   - Bash(git -C C:/Projects/Quizymode-wt-lane-* *)
   - Bash(git -C C:/Projects/Quizymode-wt-release *)
   - Bash(cmd /c mklink /J *)
@@ -97,7 +96,7 @@ Bundle <id>: <phase>
 Shipped: #a, #b (PR #p, merge <sha8>, deploy <run>)
 Deferred/blocked: #c - <one-line factual reason>
 Needs you: <only environmental blockers or deferred decisions, one line each>
-Status: /qm-implement-bundle <id> status
+Status: /qm-bundle-ship <id> status
 ```
 
 End every turn of this run with one status line (`Bundle <id>: phase <phase>, <k>/<n> integrated`) so a `/goal` evaluator can see progress.

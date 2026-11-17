@@ -1,6 +1,6 @@
-# qm-implement-bundle playbook
+# qm-bundle-ship playbook
 
-Read with the manifest open (`<main checkout>/.qm/bundles/<id>/manifest.json`). `BUNDLE` = `node <skill dir>/scripts/bundle.mjs`. Repo rules from AGENTS.md and CLAUDE.md still apply; this file only adds what bundling changes.
+Read with the manifest open (`<main checkout>/.qm/bundles/<id>/manifest.json`). `BUNDLE` = `node <main checkout>/scripts/bundle/bundle.mjs`. Repo rules from AGENTS.md and CLAUDE.md still apply; this file only adds what bundling changes.
 
 ## Why the release is shaped this way
 
@@ -13,11 +13,9 @@ Read with the manifest open (`<main checkout>/.qm/bundles/<id>/manifest.json`). 
 - While a release batch or bundle is active, a session that is not the integrator pushes issue branches only. It does not open a PR to `main`, bump the version, or edit `docs/AC.md` or the OpenAPI file; it writes AC text to `.qm/ac-fragments/<issue>.md`. The integrator assigns AC ids and the single version at integration and checks `gh pr list --base main --state open` before opening the release PR.
 - Release branch `branches.release` (`release/<id>`), created from `source.commit` or the current `origin/main` (see Drift). Issue branches `bundle/<id>/<n>-<slug>` from the release branch tip.
 - Before creating anything: `git ls-remote --heads origin "release/<id>"`, `git branch --list "release/<id>" "bundle/<id>/*"`, `gh pr list --head release/<id> --state all --json number,state,url`. Reuse what exists; never create a second PR.
-- Worktrees: persistent, reused across bundles, never one per bundle: `C:\Projects\Quizymode-wt-lane-a`, `C:\Projects\Quizymode-wt-lane-b` (issue work) and `C:\Projects\Quizymode-wt-release` (release branch and integration). Create each only if missing (`git worktree list`), then `git switch` it to the needed branch (check free disk space first; if below 15 GB, record an `environmental` blocker and stop). Each gets a `node_modules` junction to the main checkout: `cmd /c mklink /J <worktree>\src\Quizymode.Web
-ode_modules C:\Projects\Quizymode\src\Quizymode.Web
-ode_modules`. Remove a junction only with `rmdir` (never a recursive delete), and never run `npm ci` in a worktree that has the junction. All code work happens in these worktrees; the user's main checkout is never touched.
+- Worktrees: persistent, reused across bundles, never one per bundle: `C:\Projects\Quizymode-wt-lane-a`, `C:\Projects\Quizymode-wt-lane-b` (issue work) and `C:\Projects\Quizymode-wt-release` (release branch and integration). Create each only if missing (`git worktree list`), then `git switch` it to the needed branch (check free disk space first; if below 15 GB, record an `environmental` blocker and stop). Each gets a `node_modules` junction to the main checkout: `cmd /c mklink /J <worktree>\src\Quizymode.Web\node_modules C:\Projects\Quizymode\src\Quizymode.Web\node_modules`. Remove a junction only with `rmdir` (never a recursive delete), and never run `npm ci` in a worktree that has the junction. All code work happens in these worktrees; the user's main checkout is never touched.
 - Note: `.claude/skills` may be untracked, so it may not exist inside the worktree. Always call `BUNDLE` by the absolute skill path. Bundle files are found through the git common dir, so they resolve from the worktree too.
-- Run git in the worktree as `git -C C:/Projects/Quizymode-wt-bundle-<id> <args>` rather than `cd ... &&` chains, so the pre-approved rule matches and the shell cwd does not matter.
+- Run git in the worktree as `git -C C:/Projects/Quizymode-wt-lane-a <args>` (or `-wt-lane-b`, `-wt-release`) rather than `cd ... &&` chains, so the pre-approved rule matches and the shell cwd does not matter.
 
 ## Reconcile (on every start, including resume)
 
