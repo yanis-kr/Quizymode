@@ -81,7 +81,8 @@ import {
 } from "@/features/items/quiz/quizRun";
 import { gradeTypedAnswer, isTypeable } from "@/features/items/quiz/typedAnswer";
 import { isGuestEligible, recordGuestCompletion } from "@/features/guestHistory/guestHistoryStorage";
-import { recordKnownItems } from "@/features/progress/knownItems";
+import { categorySetKey, readKnownIds, recordKnownItems } from "@/features/progress/knownItems";
+import { pickNextRound } from "@/features/learningLoop/nextRoundPick";
 import { addLocalReviewItems } from "@/features/learningLoop/localReviewList";
 import { recordAuthenticatedCompletion } from "@/features/studySessions/recordStudySession";
 import {
@@ -198,6 +199,15 @@ const QuizModePageContent = ({ resumeRequested = false, initialNotice = null }: 
     }
   };
   const [currentIndex, setCurrentIndex] = useState(0);
+  // A Keep-going tile or other link to a different set keeps this page mounted; start the new set at question 1
+  // (#711: the tile opened at "5 of 5"). Item, mode and size changes do not change this key.
+  const setKey = [categorySlug ?? "", collectionId ?? "", searchParams.get("nav") ?? "", searchParams.get("keywords") ?? ""].join("|");
+  const lastSetKey = useRef(setKey);
+  useEffect(() => {
+    if (lastSetKey.current === setKey) return;
+    lastSetKey.current = setKey;
+    setCurrentIndex(0);
+  }, [setKey]);
   const [run, setRun] = useState<QuizRunState | null>(null);
   const [runRestartNotice, setRunRestartNotice] = useState<string | null>(initialNotice);
   const resumeRequestedRef = useRef(resumeRequested);
@@ -1010,7 +1020,10 @@ const QuizModePageContent = ({ resumeRequested = false, initialNotice = null }: 
       seen.add(item.id);
       return true;
     });
-    const picked = distinct.filter((item) => !played.has(item.id)).slice(0, size);
+    // Unseen first (#711): items this browser has not marked known in this set. Known items fill in only when some
+    // unseen items remain; with none left the completion screen says "You have seen all N".
+    const knownIds = categorySlug ? readKnownIds(categorySetKey(categorySlug, navigationKeywords)) : new Set<string>();
+    const picked = pickNextRound(distinct, played, knownIds, size);
     trackEvent({ name: "next_step_clicked", runId, position: 1, contextType: "quiz", contextId: `next:same:${scopeKey || category}` });
     if (picked.length === 0) {
       setRoundExhausted({ runId, total: distinct.length });
