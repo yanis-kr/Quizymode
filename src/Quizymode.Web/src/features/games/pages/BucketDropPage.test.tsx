@@ -105,8 +105,8 @@ async function openPage(path?: string) {
 function questionN(): number {
   return Number(/(\d+)/.exec(screen.getByText(/^Question number \d+\?$/).textContent ?? "")![1]);
 }
-const bucket = (answer: string): HTMLElement => screen.getByRole("button", { name: new RegExp(`^\\d\\. ${answer}`) });
-const buckets = (): HTMLElement[] => screen.getAllByRole("button", { name: /^\d\. / });
+const bucket = (answer: string): HTMLElement => screen.getByRole("button", { name: new RegExp(`^\\d\\.\\s*${answer}`) });
+const buckets = (): HTMLElement[] => screen.getAllByRole("button", { name: /^\d\.\s*/ });
 const pickRight = () => fireEvent.click(bucket(`right-${questionN()}`));
 const pickWrong = () => fireEvent.click(bucket(`wrong-${questionN()}`));
 const lives = (n: number): HTMLElement => screen.getByRole("img", { name: `${n} of 3 lives left` });

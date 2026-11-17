@@ -114,7 +114,7 @@ function currentFact(): string {
 function groupOf(fact: string): string {
   return fact.split("-")[0].replace(/^./, (c) => c.toUpperCase());
 }
-const buckets = (): HTMLElement[] => screen.getAllByRole("button", { name: /^\d\. / });
+const buckets = (): HTMLElement[] => screen.getAllByRole("button", { name: /^\d\.\s*/ });
 const bucket = (label: string): HTMLElement => buckets().find((button) => button.getAttribute("title") === label)!;
 const pickRight = () => fireEvent.click(bucket(groupOf(currentFact())));
 const pickWrong = () => {
