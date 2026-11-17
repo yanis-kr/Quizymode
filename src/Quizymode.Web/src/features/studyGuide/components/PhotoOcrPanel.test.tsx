@@ -24,7 +24,7 @@ describe("PhotoOcrPanel (AC 6.6.43, 6.6.45, 6.6.46, 6.6.47)", () => {
   beforeEach(() => {
     recognize = vi.fn<(file: File) => Promise<string>>();
     cancel = vi.fn<() => void>();
-    vi.mocked(createPhotoRecognizer).mockReturnValue({ recognize, cancel });
+    vi.mocked(createPhotoRecognizer).mockReturnValue({ recognize, recognizeCanvas: vi.fn(), cancel });
   });
 
   it("shows the limits and the on-device note next to the chooser", () => {
@@ -79,7 +79,7 @@ describe("PhotoOcrPanel (AC 6.6.43, 6.6.45, 6.6.46, 6.6.47)", () => {
     fireEvent.click(await screen.findByRole("button", { name: /^cancel$/i }));
     finishSecond("Late text");
 
-    expect(await screen.findByText(/text from photos already read is kept/i)).toBeInTheDocument();
+    expect(await screen.findByText(/text already read is kept/i)).toBeInTheDocument();
     expect(cancel).toHaveBeenCalled();
     expect(onRecognized).toHaveBeenCalledWith("Kept text");
     expect(onRecognized).not.toHaveBeenCalledWith("Late text");

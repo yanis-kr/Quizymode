@@ -11,6 +11,8 @@ const OCR_ASSETS = {
 export interface PhotoRecognizer {
   /** Recognizes one photo in the browser. Rejects when the image cannot be decoded or the page takes too long. */
   recognize(file: File): Promise<string>;
+  /** Recognizes a page already rendered to a canvas (scanned PDF pages). */
+  recognizeCanvas(canvas: HTMLCanvasElement): Promise<string>;
   /** Stops any running recognition and frees the worker. */
   cancel(): void;
 }
@@ -79,8 +81,10 @@ export function createPhotoRecognizer(): PhotoRecognizer {
 
   return {
     async recognize(file: File): Promise<string> {
+      return this.recognizeCanvas(await decodePhotoToCanvas(file));
+    },
+    async recognizeCanvas(canvas: HTMLCanvasElement): Promise<string> {
       clearIdleTimer();
-      const canvas = await decodePhotoToCanvas(file);
       const runGeneration = generation;
       let timeoutId: number | undefined;
       const timeout = new Promise<never>((_resolve, reject) => {

@@ -390,6 +390,14 @@ describe("StudyGuideUploadPage", () => {
     );
   });
 
+  it("keeps the Upload file hint and points scanned PDFs to Photos or scan (AC 6.6.52)", async () => {
+    renderPage();
+    await screen.findByRole("tab", { name: /upload file/i });
+    const hint = document.getElementById("study-guide-file-hint");
+    expect(hint).toHaveTextContent(/scanned pdfs without selectable/i);
+    expect(hint).toHaveTextContent(/read on photos or scan/i);
+  });
+
   it("shows the retired-upload notice above the normal form for ?id= links", async () => {
     renderPage("/create/notes?id=u1");
 
