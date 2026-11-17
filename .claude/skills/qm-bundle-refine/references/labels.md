@@ -1,6 +1,6 @@
 # Issue label taxonomy
 
-Used by `qm-refine-bundle` to decide which labels to set on bundled and excluded issues. Format: `<dimension>:<value>`, lowercase, one `:`, no spaces, kebab-case values.
+Used by `qm-bundle-refine` to decide which labels to set on bundled and excluded issues. Format: `<dimension>:<value>`, lowercase, one `:`, no spaces, kebab-case values.
 
 ## Dimensions
 

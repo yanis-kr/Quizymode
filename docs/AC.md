@@ -2294,6 +2294,17 @@ Agents used to rebuild context from `docs/AC.md` (about 800 KB) and from whole f
 - **AC 7.11.18** [Dev tooling] [verify: unit] (#730) **Given** Deploy reads the change scope, **then** the `change-scope` artifact is downloaded outside the checkout and read from there, so the scope reader's checkout cannot delete it. A missing artifact still deploys everything. (tests: `deploy-scope-artifact.test.mjs`, `deploy-workflow.test.mjs`)
 - **AC 7.11.19** [Dev tooling] [verify: unit] (#718) **Given** `evidence` runs with no `--report` for a unit-only issue, **then** its unit-verified ACs are `SEE CI` only when `--run-url` is a GitHub Actions run of this repository that GitHub reports completed with conclusion success, built the release commit (`--sha`, a full SHA or a prefix of at least 7 hex digits; default local HEAD), and whose `ac-gate` job (the job that runs `scripts/tests/*.test.mjs`) passed, not skipped. The evidence comment names the commit the run built. Any other URL or repository, a failed run, a run on another commit, or a run whose `ac-gate` job is skipped or absent is rejected and named in the result. Every AC without a passing report row or an accepted run stays `NOT RUN`, so the issue stays open and nothing closes. Without a report or an accepted run, `evidence` returns class `open` with `incomplete:` in its detail, not a crash. The evidence comment states how many Playwright reports were used (`none` for a unit-only run). (tests: `release-driver.test.mjs`, `ac-validation.test.mjs`)
 
+### AC 7.16 Bundle skill layout and helper location (#758)
+
+The bundle skills were renamed so each name says what it does, and the helper moved out of a skill folder to `scripts/bundle/`. No behavior change.
+
+- **AC 7.16.1** [Dev tooling] [verify: unit] (#758) No tracked file names a pre-rename bundle skill (the four old names are listed in `bundle-layout.test.mjs`, which greps for them). The skills are `qm-bundle-refine`, `qm-bundle-ship`, `qm-bundle-autopilot` and `qm-prepush`, and the helper is `scripts/bundle/bundle.mjs`. (tests: bundle-layout.test.mjs)
+- **AC 7.16.2** [Dev tooling] [verify: unit] (#758) `node scripts/bundle/bundle.mjs list` runs from its new path and prints `"ok": true`. (tests: bundle-layout.test.mjs)
+- **AC 7.16.3** [Dev tooling] [verify: unit] (#758) A change that touches only `scripts/bundle/**` is classified neither web nor api by `classify-changes`, so it builds and deploys nothing. (tests: classify-changes.test.mjs)
+- **AC 7.16.4** [Dev tooling] [verify: unit] (#758) The playbook's `mklink /J` command is on one line and names `src\Quizymode.Web\node_modules` on both sides, and no `Quizymode-wt-bundle-` worktree path remains. (tests: bundle-layout.test.mjs)
+- **AC 7.16.5** [Dev tooling] [verify: unit] (#758) The refine skill numbers its steps 1 to 12, with label writes at step 11 and the finish at step 12, and step 2 states the epic rule once. The bundle release doc says discovery picks up to 8 issues. (tests: bundle-layout.test.mjs)
+- **AC 7.16.6** [Dev tooling] [verify: unit] (#758) The autopilot skill sets `disable-model-invocation: true`, so only the user starts it. (tests: bundle-layout.test.mjs)
+
 ## AC 8. Performance characteristics
 
 ### AC 8.1 Database query behaviour

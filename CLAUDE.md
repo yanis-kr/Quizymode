@@ -72,7 +72,7 @@ cd src/Quizymode.Web && npm test -- --run <pattern>
 
 Before considering any task done, always complete **all** of the following:
 
-1. Outside a release batch: **Run pre-push verification** — invoke the `quizymode-prepush` skill if available, or follow `.agent-skills/quizymode-prepush/SKILL.md` before pushing or reporting ready-to-push work.
+1. Outside a release batch: **Run pre-push verification** — invoke the `qm-prepush` skill if available, or follow `.agent-skills/qm-prepush/SKILL.md` before pushing or reporting ready-to-push work.
 2. Outside a release batch: **Update `docs/AC.md`** — add or revise ACs for any behavior, authorization, or user-visible logic that changed.
 3. Outside a release batch: **Bump `QuizymodeVersion`** in `Directory.Build.props` — PATCH for fixes/polish, MINOR for new features, MAJOR for breaking changes.
 4. Outside a release batch: **Align `src/Quizymode.Web/package.json`** `version` field to match `QuizymodeVersion`.

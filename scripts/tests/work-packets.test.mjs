@@ -11,7 +11,7 @@ import { sliceAc, render } from "../validation/ac-slice.mjs";
 import { buildLedger, formatLedger, issueLine } from "../automation/usage-ledger.mjs";
 
 const repo = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..", "..");
-const BUNDLE = path.join(repo, ".claude", "skills", "qm-implement-bundle", "scripts", "bundle.mjs");
+const BUNDLE = path.join(repo, "scripts", "bundle", "bundle.mjs");
 const tmp = () => fs.mkdtempSync(path.join(os.tmpdir(), "qm-719-"));
 const run = (args) => spawnSync("node", [BUNDLE, ...args], { encoding: "utf8" });
 
@@ -563,7 +563,7 @@ test("AC 7.13.14 architect.md names acRefsAdded, handback-check validates its ty
     assert.equal(r.status, 2);
     assert.match(r.stdout, /acRefsAdded/);
   }
-  const skill = fs.readFileSync(path.join(repo, ".claude", "skills", "qm-refine-bundle", "SKILL.md"), "utf8").split(/\r?\n/);
+  const skill = fs.readFileSync(path.join(repo, ".claude", "skills", "qm-bundle-refine", "SKILL.md"), "utf8").split(/\r?\n/);
   assert.match(skill.find((l) => /^3\. /.test(l)), /relatedAcs/);
   assert.match(skill.find((l) => /^8\. /.test(l)), /relatedAcs/);
   assert.ok(skill.some((l) => l.includes("ac-slice.mjs *")));

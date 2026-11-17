@@ -8,6 +8,10 @@ test("skills, prompts and docs change neither web nor api", () => {
   const s = classify([f(".claude/skills/qm-research/SKILL.md"), f("AGENTS.md"), f("docs/AC.md"), f("docs/user-guide/a.md")]);
   assert.deepEqual(s, { web: false, api: false, apiTests: false, any: false });
 });
+test("the bundle helper alone changes neither web nor api (AC 7.16.3)", () => {
+  assert.deepEqual(classify([f("scripts/bundle/bundle.mjs"), f("scripts/tests/work-packets.test.mjs")]), { web: false, api: false, apiTests: false, any: false });
+  assert.equal(classifyFile("scripts/bundle/bundle.mjs").web, false);
+});
 test("web-only change", () => {
   assert.deepEqual(classify([f("src/Quizymode.Web/src/App.tsx"), f("playwright/e2e-ci/a.spec.ts")]), { web: true, api: false, apiTests: false, any: true });
 });
