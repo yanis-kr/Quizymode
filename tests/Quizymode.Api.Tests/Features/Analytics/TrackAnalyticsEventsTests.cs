@@ -183,6 +183,23 @@ public sealed class TrackAnalyticsEventsTests : DatabaseTestFixture
     }
 
     [Fact]
+    public async Task HandleAsync_NextStepClicks_StoreOnePerTileAndPositionInARun()
+    {
+        const string relatedContext = "next:related:exams/aws/saa-c03";
+        TrackAnalyticsEvents.EventRequest relatedFirst = new(AnalyticsEventCatalog.NextStepClicked, "/quiz/exams", "quiz", relatedContext, RunId: "run-next", Position: 1);
+        TrackAnalyticsEvents.EventRequest relatedSecond = relatedFirst with { Position = 2 };
+        TrackAnalyticsEvents.EventRequest pace = new(AnalyticsEventCatalog.NextStepClicked, "/quiz/tech", "quiz", "next:pace:exams/aws/saa-c03", RunId: "run-next", Position: 3);
+        TrackAnalyticsEvents.EventRequest nextSame = new(AnalyticsEventCatalog.NextStepClicked, "/quiz/exams", "quiz", "next:same:exams/aws/saa-c03", RunId: "run-next", Position: 1);
+
+        TrackAnalyticsEvents.Response first = await Track("session-next", relatedFirst, relatedSecond, pace, nextSame);
+        TrackAnalyticsEvents.Response repeat = await Track("session-next", relatedFirst);
+
+        first.Should().Be(new TrackAnalyticsEvents.Response(4, 0), "each tile and button in the run is its own click");
+        repeat.Should().Be(new TrackAnalyticsEvents.Response(0, 1), "the same tile clicked again is a duplicate");
+        (await DbContext.AnalyticsEvents.CountAsync(e => e.EventName == AnalyticsEventCatalog.NextStepClicked)).Should().Be(4);
+    }
+
+    [Fact]
     public async Task HandleAsync_ClientEventIdDedupesImpressions_AndEventsWithoutIdsAreKept()
     {
         TrackAnalyticsEvents.EventRequest impression = new(

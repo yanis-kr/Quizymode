@@ -336,6 +336,12 @@ public static partial class TrackAnalyticsEvents
     {
         if (item.RunId is not null)
         {
+            // A Keep going or Next click is one per tile or button, so it keys on the tile, not the run alone.
+            if (item.Name == AnalyticsEventCatalog.NextStepClicked)
+            {
+                return $"{item.Name}:run:{item.RunId}:ctx:{item.ContextId}:pos:{item.Position}";
+            }
+
             return item.ItemId is null
                 ? $"{item.Name}:run:{item.RunId}"
                 : $"{item.Name}:run:{item.RunId}:item:{item.ItemId:N}";

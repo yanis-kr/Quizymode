@@ -36,6 +36,13 @@ interface QuizCompletionViewProps {
   statusExtras?: ReactNode;
   /** Daily results: the countdown to the next daily quiz, shown under the main actions. */
   countdown?: ReactNode;
+  /**
+   * Normal practice runs (#711): the primary "Next N questions" action. `exhausted` means no unseen questions are left
+   * in the scope, so the screen says so and offers Start over instead.
+   */
+  nextRound?: { size: number; exhausted: boolean; total: number; onNext: () => void } | null;
+  /** Normal runs (#711): the Keep going block, rendered under the actions. */
+  keepGoing?: ReactNode;
 }
 
 export function QuizCompletionView({
@@ -54,6 +61,8 @@ export function QuizCompletionView({
   endExtras,
   statusExtras,
   countdown,
+  nextRound,
+  keepGoing,
 }: QuizCompletionViewProps) {
   const isStarter = variant === "starter";
   const isDaily = variant === "daily";
@@ -279,6 +288,20 @@ export function QuizCompletionView({
         </p>
       )}
       <div className="mt-6 flex flex-col justify-center gap-3 sm:flex-row sm:flex-wrap">
+        {!isStarter && nextRound && !nextRound.exhausted && (
+          <button
+            type="button"
+            onClick={nextRound.onNext}
+            className="min-h-[44px] rounded-md bg-indigo-600 px-4 py-2 font-semibold text-white hover:bg-indigo-700 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500 focus-visible:ring-offset-2"
+          >
+            Next {nextRound.size} questions
+          </button>
+        )}
+        {!isStarter && nextRound?.exhausted && (
+          <p className="w-full text-sm text-gray-700" role="status">
+            You have seen all {nextRound.total}.
+          </p>
+        )}
         {isTest && onReviewAll && (
           <button type="button" onClick={onReviewAll} className="rounded-md border border-indigo-600 px-4 py-2 font-semibold text-indigo-ink hover:bg-indigo-50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500 focus-visible:ring-offset-2">
             Review all
@@ -298,7 +321,7 @@ export function QuizCompletionView({
               : "rounded-md bg-indigo-600 px-4 py-2 font-semibold text-white hover:bg-indigo-700 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500 focus-visible:ring-offset-2"
           }
         >
-          {isStarter ? "Another random five" : "Play again"}
+          {isStarter ? "Another random five" : nextRound ? (nextRound.exhausted ? "Start over" : "Play again (same questions)") : "Play again"}
         </button>
         {share && summary.scoredTotal > 0 && (
           <ShareResultButton
@@ -330,6 +353,7 @@ export function QuizCompletionView({
         </div>
       )}
       {isStarter && endExtras}
+      {!isStarter && keepGoing}
       {/* Shown only after the run is complete (never mid-quiz), only to anonymous visitors (AC 4.2.10). */}
       <SignupPrompt reason="save-progress" className="mt-6" />
     </section>
