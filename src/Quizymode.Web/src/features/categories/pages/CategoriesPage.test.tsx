@@ -386,6 +386,8 @@ describe("Category filters (#707)", () => {
     const group = await screen.findByRole("group", { name: "Active filters" });
     const removeIdioms = within(group).getAllByRole("button", { name: "Remove filter idioms" });
     expect(removeIdioms).toHaveLength(1);
+    // The duplicate keyword is the topic chip, not a tag chip.
+    expect(removeIdioms[0]).toHaveAttribute("data-kind", "nav");
     // The duplicate keyword is not counted twice: one tag chip, so the badge reads 1.
     expect(screen.getByRole("button", { name: /^Filters/ }).textContent).toBe("Filters1");
   });
@@ -400,6 +402,19 @@ describe("Category filters (#707)", () => {
     // A later Apply keeps the navigation scope instead of turning the path into tag topics.
     await user.click(screen.getByRole("button", { name: "Apply" }));
     await waitFor(() => expect(currentUrl()).toBe("/categories/languages/german/idioms?view=items&page=1"));
+  });
+
+  it("AC 3.5.16 Clear all also removes search, type and rating refinements from the URL", async () => {
+    const user = userEvent.setup({ delay: null });
+    renderWithLocation(`${START}&search=cats&filterType=question&ratingMin=3`);
+    // The search and rating refinements may hide the mocked item, so wait for the toolbar instead.
+    await user.click(await screen.findByRole("button", { name: /^Filters/ }));
+    await user.click(screen.getByRole("button", { name: "Clear all" }));
+    await waitFor(() => {
+      const search = new URL(screen.getByTestId("location").textContent ?? "", "http://x").search;
+      expect(search).not.toMatch(/search=|filterType=|ratingMin=|keywords=/);
+      expect(search).toMatch(/view=items/);
+    });
   });
 
   it("AC 3.5.17 states that keyword suggestions come only from the loaded page", async () => {
