@@ -94,3 +94,10 @@ Steps 3 to 5 below are driven by `node scripts/release/release.mjs`: `wait-pr --
 ## Terminal status
 
 When you cannot continue: set the phase (`blocked_terminal`, or leave `cancelled` as set by the user), make sure every blocker is recorded, and reply with the final report from SKILL.md. State what is done, what is not, and the single next action the user can take. Do not claim completion for anything not verified.
+
+## Release merge order (AC 7.19.12)
+
+1. Reviewer pass on the current release PR head: `release.mjs record-review --pr <n> --head <sha> --clean true`.
+2. Arm: `release.mjs ship --pr <n> --issues <n,n> --wait` (with `githubAutoMerge: true` in `.qm/envelope.json` it arms GitHub auto-merge; otherwise it merges on green through the driver).
+3. Before any fix push to the release PR: `release.mjs disarm --pr <n>`. Then push the fix, re-run the filtered tests, record a clean review of the new head, and arm again.
+4. The PR body lists the bundled issues as `Refs #n` only (AC 7.19.9); issues close only after the ship run validates them.

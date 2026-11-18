@@ -51,6 +51,7 @@ export function paths(root = process.cwd(), env = process.env) {
   return {
     halt: path.join(root, ".qm", "release-halt.json"),
     state: path.join(root, ".qm", "release-state.json"),
+    envelope: path.join(root, ".qm", "envelope.json"),
     ledger: path.join(root, ".qm", "ledger", "releases.jsonl"),
     lock: path.join(local, "Quizymode", "automation", "locks", "release.lock"),
   };
@@ -270,12 +271,17 @@ function deployStage({ pr, sha, p, deps }) {
     "run evidence --issues <n,n> with the CI and prod reports", 0);
 }
 
-export function ship({ pr, issues = [], root, deps = {} }) {
+export function ship({ pr, issues = [], root, deps = {}, githubAutoMerge = false }) {
   const p = paths(root, deps.env);
   const blocked = refusal(p);
   if (blocked) return result("ship", false, "gate", blocked, "resolve the halt or wait for the lock to clear", 2);
 
   const view = ghJson(["pr", "view", String(pr), "--json", "state,statusCheckRollup,mergeCommit,headRefOid"], deps) ?? {};
+  // githubAutoMerge (AC 7.19.11): GitHub merges once release-ready and the other required checks pass. The driver only arms.
+  if (githubAutoMerge && view.state !== "MERGED") {
+    const armed = arm({ pr, issues, root, deps });
+    return armed.ok ? result("ship", true, "armed", "auto-merge armed; GitHub merges when the required checks pass", "keep following with ship --wait", 0) : armed;
+  }
   if (view.state !== "MERGED") {
     const checks = normalizeChecks(view.statusCheckRollup);
     const failing = checks.filter((c) => c.failed).map((c) => c.name);
@@ -307,13 +313,13 @@ const WAIT_CONTINUE = /pending checks|no checks reported/;
  * its checks, the merge (or a merge GitHub already made) and the Deploy run. Returns exactly one result. Gives up with
  * class `timeout` after timeoutMin minutes; the release is then left as it is and nothing is halted.
  */
-export function shipWait({ pr, issues = [], root, deps = {}, timeoutMin = 90, intervalSec = 60 }) {
+export function shipWait({ pr, issues = [], root, deps = {}, timeoutMin = 90, intervalSec = 60, githubAutoMerge = false }) {
   const now = deps.now ?? Date.now;
   const sleep = deps.sleep ?? ((ms) => Atomics.wait(new Int32Array(new SharedArrayBuffer(4)), 0, 0, ms));
   const deadline = now() + timeoutMin * 60000;
   for (;;) {
-    const r = ship({ pr, issues, root, deps });
-    const waiting = r.class === "pending" || r.class === "merged" || (r.class === "gate" && WAIT_CONTINUE.test(r.detail));
+    const r = ship({ pr, issues, root, deps, githubAutoMerge });
+    const waiting = r.class === "pending" || r.class === "merged" || r.class === "armed" || (r.class === "gate" && WAIT_CONTINUE.test(r.detail));
     if (!waiting) return r;
     if (now() >= deadline) {
       return result("ship", false, "timeout", `gave up after ${timeoutMin} minutes: ${r.detail}`,
@@ -474,7 +480,10 @@ function run(command, f, deps) {
       break;
     case "ship":
       if (!pr) r = result("ship", false, "usage", "missing --pr", "", 2);
-      else r = f.wait === true || f.wait === "true" ? shipWait({ pr, issues, root, deps }) : ship({ pr, issues, root, deps });
+      else {
+        const githubAutoMerge = readJson(paths(root, deps.env).envelope)?.githubAutoMerge === true;
+        r = f.wait === true || f.wait === "true" ? shipWait({ pr, issues, root, deps, githubAutoMerge }) : ship({ pr, issues, root, deps, githubAutoMerge });
+      }
       break;
     case "evidence":
       if (!issues.length) r = result("evidence", false, "usage", "missing --issues", "", 2);
