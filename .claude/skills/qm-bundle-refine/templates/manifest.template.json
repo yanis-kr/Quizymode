@@ -21,13 +21,13 @@
       "dependsOn": [],
       "scope": {
         "summary": "What will change, in one or two sentences.",
-        "paths": ["src/Quizymode.Web/src/features/Example/**"],
+        "paths": ["app/src/features/Example/**"],
         "exclusions": ["Anything explicitly out of scope"]
       },
       "acceptanceCriteria": [
         { "id": "AC1", "text": "Observable, testable behavior", "evidence": "test" }
       ],
-      "validation": ["npm test -- --run Example", "npm run lint -- src/Quizymode.Web/src/features/example", "dotnet test --filter \"FullyQualifiedName~Example\"", "screenshot desktop + mobile on prod"]
+      "validation": ["npm test -- --run Example", "npm run lint -- app/src/features/example", "dotnet test --filter \"FullyQualifiedName~Example\"", "screenshot desktop + mobile on prod"]
     }
   ],
   "excluded": [

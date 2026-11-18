@@ -1,0 +1,68 @@
+{
+  "schemaVersion": 1,
+  "project": "Quizymode",
+  "repo": {
+    "defaultBranch": "main",
+    "requiredChecks": [
+      { "name": "build-test-publish", "workflow": "ci.yml" },
+      { "name": "automation-contract", "workflow": "ci.yml" },
+      { "name": "CodeQL", "external": true }
+    ]
+  },
+  "worktrees": {
+    "root": "C:/Projects",
+    "main": "Quizymode",
+    "laneA": "Quizymode-wt-lane-a",
+    "laneB": "Quizymode-wt-lane-b",
+    "release": "Quizymode-wt-release",
+    "nodeModulesJunction": "src/Quizymode.Web/node_modules"
+  },
+  "acFile": "docs/AC.md",
+  "integratorOnly": [
+    "docs/AC.md",
+    "docs/openapi/quizymode-api.json",
+    "Directory.Build.props",
+    "src/Quizymode.Web/package.json"
+  ],
+  "hotFiles": [
+    "src/Quizymode.Api/Migrations/",
+    "docs/quizymode_taxonomy.yaml"
+  ],
+  "version": {
+    "file": "Directory.Build.props",
+    "property": "QuizymodeVersion",
+    "mirrors": ["src/Quizymode.Web/package.json"],
+    "exemptPaths": ["data/seed-source/items/**", "data/seed-source/_registry/**"]
+  },
+  "checks": {
+    "web": {
+      "prefix": "src/Quizymode.Web/",
+      "commands": ["npx vitest related --run {paths}", "eslint {paths}"]
+    },
+    "api": {
+      "root": "src/Quizymode.Api",
+      "featuresPrefix": "src/Quizymode.Api/Features/",
+      "featureTerm": "FullyQualifiedName~Features.{feature}",
+      "featureCommand": "dotnet test --filter \"({features}|FullyQualifiedName~Architecture)&Category!=Postgres\"",
+      "fallbackCommand": "dotnet test --filter \"FullyQualifiedName~Architecture&Category!=Postgres\""
+    },
+    "scripts": {
+      "prefixes": ["scripts/", ".claude/"],
+      "command": "node --test scripts/tests/"
+    },
+    "acGate": {
+      "script": "scripts/validation/ac-gate.mjs",
+      "command": "node scripts/validation/ac-gate.mjs --issues {issue}"
+    }
+  },
+  "releaseWorkflows": {
+    "ci": "ci.yml",
+    "deploy": "deploy.yml",
+    "rollback": "rollback.yml"
+  },
+  "acceptanceMethods": ["unit", "e2e", "api", "sql", "anon-ui", "signed-in-prod-ui"],
+  "excludedModels": ["fable"],
+  "host": {
+    "minFreeDiskGb": 15
+  }
+}

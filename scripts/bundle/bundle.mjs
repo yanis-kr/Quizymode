@@ -114,10 +114,49 @@ function sha256Text(s) { return createHash("sha256").update(String(s ?? "").repl
 const now = () => new Date().toISOString();
 
 // ---------- manifest validation ----------
+// ---------- delivery profile (#762) ----------
+// Every project fact the helper needs lives in one tracked file, read from the checkout that holds this helper.
+const PROFILE_PATH = ".claude/delivery-profile.json";
+function repoRoot() { return path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..", ".."); }
+let profileCache = null;
+function profile() {
+  if (profileCache) return profileCache;
+  const file = path.join(repoRoot(), ...PROFILE_PATH.split("/"));
+  if (!fs.existsSync(file)) die(2, `Delivery profile missing: ${PROFILE_PATH}`);
+  profileCache = readJson(file);
+  return profileCache;
+}
+function escapeRe(s) { return String(s).replace(/[.*+?^${}()|[\]\-]/g, "\$&"); }
+/** Field-named problems with the profile against this checkout. Empty when every named path, workflow and required check exists. */
+function profileErrors() {
+  const root = repoRoot();
+  const pr = profile();
+  const errors = [];
+  const req = (cond, msg) => { if (!cond) errors.push(msg); };
+  const exists = (rel) => typeof rel === "string" && fs.existsSync(path.join(root, ...rel.split("/")));
+  req(pr.schemaVersion === 1, "schemaVersion: must be 1");
+  req(exists(pr.acFile), `acFile: ${pr.acFile} does not exist`);
+  (pr.integratorOnly ?? []).forEach((f, i) => req(exists(f), `integratorOnly[${i}]: ${f} does not exist`));
+  req(exists(pr.version?.file), `version.file: ${pr.version?.file} does not exist`);
+  (pr.version?.mirrors ?? []).forEach((f, i) => req(exists(f), `version.mirrors[${i}]: ${f} does not exist`));
+  for (const [k, wf] of Object.entries(pr.releaseWorkflows ?? {})) req(exists(`.github/workflows/${wf}`), `releaseWorkflows.${k}: .github/workflows/${wf} does not exist`);
+  (pr.repo?.requiredChecks ?? []).forEach((c, i) => {
+    if (c.external) return;
+    const file = path.join(root, ".github", "workflows", String(c.workflow));
+    if (!fs.existsSync(file)) { errors.push(`repo.requiredChecks[${i}]: workflow ${c.workflow} does not exist`); return; }
+    const jobs = new RegExp(`^  ${escapeRe(c.name)}:`, "m");
+    req(jobs.test(fs.readFileSync(file, "utf8")), `repo.requiredChecks[${i}]: job ${c.name} is not in ${c.workflow}`);
+  });
+  req(exists(pr.checks?.web?.prefix), `checks.web.prefix: ${pr.checks?.web?.prefix} does not exist`);
+  req(exists(pr.checks?.api?.root), `checks.api.root: ${pr.checks?.api?.root} does not exist`);
+  req(exists(pr.checks?.api?.featuresPrefix), `checks.api.featuresPrefix: ${pr.checks?.api?.featuresPrefix} does not exist`);
+  req(exists(pr.checks?.acGate?.script), `checks.acGate.script: ${pr.checks?.acGate?.script} does not exist`);
+  return errors;
+}
 // ---------- related ACs (#740) ----------
 function acMarkdown() {
   const here = path.dirname(fileURLToPath(import.meta.url));
-  const file = typeof opts["ac-file"] === "string" ? path.resolve(String(opts["ac-file"])) : path.resolve(here, "..", "..", "docs", "AC.md");
+  const file = typeof opts["ac-file"] === "string" ? path.resolve(String(opts["ac-file"])) : path.resolve(repoRoot(), profile().acFile);
   return fs.existsSync(file) ? fs.readFileSync(file, "utf8") : "";
 }
 const REL_KINDS = [["ids", "id", "id"], ["invariants", "invariant", "invariant"], ["headings", "heading", "heading"]];
@@ -132,7 +171,7 @@ function relatedAcsErrors(it, tag) {
     if (!Array.isArray(r[key]) || r[key].some((x) => typeof x !== "string" || !x)) { e.push(`${tag}: relatedAcs.${key} must be an array of non-empty strings`); continue; }
     for (const entry of r[key]) {
       md ??= acMarkdown();
-      if (!sliceAc(md, { [arg]: entry }).length) e.push(`${tag}: relatedAcs ${label} '${entry}' does not resolve in docs/AC.md`);
+      if (!sliceAc(md, { [arg]: entry }).length) e.push(`${tag}: relatedAcs ${label} '${entry}' does not resolve in ${profile().acFile}`);
     }
   }
   return e;
@@ -166,7 +205,7 @@ function relatedAcsFor(issueSlice, rel) {
   for (const [key, arg, label] of REL_KINDS.filter((k) => k[0] !== "headings")) {
     for (const entry of rel?.[key] ?? []) {
       const lines = sliceAc(md, { [arg]: entry });
-      if (!lines.length) die(2, `Related AC ${label} '${entry}' no longer resolves in docs/AC.md; refine the issue again.`);
+      if (!lines.length) die(2, `Related AC ${label} '${entry}' no longer resolves in ${profile().acFile}; refine the issue again.`);
       const fresh = dedupeSlice(lines, seen);
       if (fresh.length) out.push("", ...fresh);
     }
@@ -325,7 +364,7 @@ function overlaps(paths, files) {
   return files.filter((f) => res.some((r) => r.test(f)));
 }
 // Conservative glob-vs-glob overlap: compare the literal directory prefix (segments before the first wildcard).
-const LANE_IGNORED = new Set(["docs/AC.md", "docs/openapi/quizymode-api.json"]);
+function laneIgnored() { return new Set(profile().integratorOnly.map((g) => normGlob(g))); }
 const normGlob = (g) => g.replaceAll(String.fromCharCode(92), "/").replace(/\/$/, "");
 function globPrefix(g) {
   const out = [];
@@ -334,8 +373,9 @@ function globPrefix(g) {
 }
 function pathsOverlap(a, b) {
   if (!a.length || !b.length) return true; // no declared scope: assume overlap
-  const fa = a.filter((x) => !LANE_IGNORED.has(normGlob(x)));
-  const fb = b.filter((x) => !LANE_IGNORED.has(normGlob(x)));
+  const ignored = laneIgnored();
+  const fa = a.filter((x) => !ignored.has(normGlob(x)));
+  const fb = b.filter((x) => !ignored.has(normGlob(x)));
   for (const x of fa) for (const y of fb) {
     const px = globPrefix(x), py = globPrefix(y);
     const n = Math.min(px.length, py.length);
@@ -511,16 +551,18 @@ function priorModelFrom(requested) {
   return requested;
 }
 function packetChecks(paths, issue, extra) {
+  const pr = profile().checks;
   const norm = paths.map((x) => x.replaceAll(String.fromCharCode(92), "/"));
   const has = (pre) => norm.filter((x) => x.startsWith(pre));
   const out = [];
-  const web = has("src/Quizymode.Web/").map((x) => x.replace(/\/\*\*.*$/, ""));
-  if (web.length) out.push(`npx vitest related --run ${web.join(" ")}`, `eslint ${web.join(" ")}`);
-  const feats = new Set(has("src/Quizymode.Api/Features/").map((x) => x.split("/")[3]).filter((x) => x && !/[*?]/.test(x)));
-  if (feats.size) out.push(`dotnet test --filter "(${[...feats].map((f) => `FullyQualifiedName~Features.${f}`).join("|")}|FullyQualifiedName~Architecture)&Category!=Postgres"`);
-  else if (has("src/Quizymode.Api").length) out.push('dotnet test --filter "FullyQualifiedName~Architecture&Category!=Postgres"');
-  if (has("scripts/").length || has(".claude/").length) out.push("node --test scripts/tests/");
-  out.push(`node scripts/validation/ac-gate.mjs --issues ${issue}`);
+  const web = has(pr.web.prefix).map((x) => x.replace(/\/\*\*.*$/, ""));
+  if (web.length) for (const c of pr.web.commands) out.push(c.replaceAll("{paths}", web.join(" ")));
+  const depth = pr.api.featuresPrefix.split("/").filter(Boolean).length;
+  const feats = new Set(has(pr.api.featuresPrefix).map((x) => x.split("/")[depth]).filter((x) => x && !/[*?]/.test(x)));
+  if (feats.size) out.push(pr.api.featureCommand.replaceAll("{features}", [...feats].map((f) => pr.api.featureTerm.replaceAll("{feature}", f)).join("|")));
+  else if (has(pr.api.root).length) out.push(pr.api.fallbackCommand);
+  if (pr.scripts.prefixes.some((pre) => has(pre).length)) out.push(pr.scripts.command);
+  out.push(pr.acGate.command.replaceAll("{issue}", String(issue)));
   for (const v of extra ?? []) if (!out.includes(v)) out.push(v);
   return out;
 }
@@ -529,7 +571,7 @@ function acSliceFor(issue) {
   const script = path.resolve(here, "..", "validation", "ac-slice.mjs");
   const args = [script, "--issue", String(issue), "--max-lines", "80"];
   if (typeof opts["ac-file"] === "string") args.push("--file", path.resolve(String(opts["ac-file"])));
-  return sh("node", args, true) ?? `(no ACs in docs/AC.md carry (#${issue}) yet)`;
+  return sh("node", args, true) ?? `(no ACs in ${profile().acFile} carry (#${issue}) yet)`;
 }
 function renderPacket(p) {
   const L = [`# Work packet: #${p.issue} ${p.title}`, "", `attempt: ${p.attempt} of ${p.maxAttempts}`, `facts (${p.factSource}): size ${p.size}, risk ${p.risk}${p.riskSource ? ` (${p.riskSource})` : ""}, migration ${p.migration}${p.migrationSource ? ` (${p.migrationSource})` : ""}`, ...(p.classification ? [`classification: ${p.classification}`] : []), "", "## Goal", p.goal, ""];
@@ -539,7 +581,7 @@ function renderPacket(p) {
   L.push("## scope.paths", ...(p.paths.length ? p.paths.map((x) => `- ${x}`) : ["- (unknown: none declared; find files by Grep and say what you checked)"]), "");
   L.push("## dependsOn", p.dependsOn.length ? p.dependsOn.map((d) => (typeof d === "number" ? `#${d}` : d.external)).join(", ") : "(none)", "");
   L.push("## Checks to run (filtered only)", ...p.checks.map((c) => `- \`${c}\``), "");
-  L.push("## Related ACs (from docs/AC.md; do not open the whole file)", "```", ...p.related, "```", "");
+  L.push(`## Related ACs (from ${profile().acFile}; do not open the whole file)`, "```", ...p.related, "```", "");
   if (p.relatedNote) L.push(p.relatedNote, "");
   if (p.relatedHeadings?.length) L.push(`Related headings (read with ac-slice.mjs --heading): ${p.relatedHeadings.join("; ")}`, "");
   L.push("## Invariant index (read one with ac-slice.mjs --invariant <id>)", "```", ...p.invariantIndex, "```", "");
@@ -551,7 +593,7 @@ function renderPacket(p) {
 function writePacket(p) {
   const md = acMarkdown();
   p.invariantIndex = sliceAc(md, { "invariants-index": true });
-  const api = p.paths.some((x) => x.replaceAll(String.fromCharCode(92), "/").startsWith("src/Quizymode.Api/"));
+  const api = p.paths.some((x) => x.replaceAll(String.fromCharCode(92), "/").startsWith(`${profile().checks.api.root}/`));
   p.apiConventions = api ? sliceAc(md, { heading: "Common API conventions" }) : null;
   p.related = relatedAcsFor(p.acSlice, p.relatedRefs);
   p.relatedHeadings = p.relatedRefs?.headings ?? [];
@@ -651,8 +693,18 @@ switch (cmd) {
   }
   case "check": {
     const p = bundlePaths(id);
-    loadValidManifest(p, id);
+    const m = loadValidManifest(p, id);
+    const methods = [...profile().acceptanceMethods, "none"];
+    const bad = m.issues.flatMap((it) => it.acceptanceCriteria.filter((ac) => !methods.includes(ac.evidence)).map((ac) => `#${it.number} ${ac.id}: evidence '${ac.evidence}' is not a profile method or none`));
+    if (bad.length) die(2, "Acceptance evidence must be a profile method or none", { errors: bad });
     ok({ bundleId: id, manifestSha256: sha256File(p.manifest), valid: true });
+  }
+  case "profile": {
+    // profile check: exits 2 naming the field that does not match this checkout, 0 when it matches
+    if (positional[0] !== "check") die(1, "usage: bundle.mjs profile check");
+    const errors = profileErrors();
+    if (errors.length) die(2, "Delivery profile does not match this checkout", { errors });
+    ok({ profile: PROFILE_PATH, checked: true });
   }
   case "snapshot": {
     // node bundle.mjs snapshot 501 503 --repo owner/name  -> JSON snapshots to paste into the manifest
@@ -1045,7 +1097,7 @@ switch (cmd) {
     const p = bundlePaths(id);
     if (fs.existsSync(p.manifest)) die(2, `Bundle '${id}' already exists; refusing to overwrite.`);
     const here = path.dirname(fileURLToPath(import.meta.url));
-    const tpl = path.resolve(here, "..", "..", "..", ".claude", "skills", "qm-bundle-refine", "templates", "manifest.template.json");
+    const tpl = path.join(repoRoot(), ".claude", "skills", "qm-bundle-refine", "templates", "manifest.template.json");
     const m = readJson(tpl);
     m.bundleId = id; m.createdAt = now();
     m.branches.release = `release/${id}`; m.branches.issuePrefix = `bundle/${id}/`;
