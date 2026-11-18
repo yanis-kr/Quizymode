@@ -29,7 +29,7 @@ export async function runRotation({ inventory, only, apply, state, save, aws, ta
     return { rotated: [], planned: groups.flatMap((g) => g.entries.map((e) => e.name)) };
   }
 
-  const ctxFor = (entry) => ({ entry, aws, browser });
+  const ctxFor = (entry) => ({ entry, aws, browser, target });
   const rotated = [];
   for (const group of groups) {
     log(`group ${group.key}`);

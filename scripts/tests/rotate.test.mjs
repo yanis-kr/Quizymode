@@ -153,3 +153,14 @@ test("unknown --only names are rejected", async () => {
   await assert.rejects(runRotation({ ...h.base, apply: false, only: ["nope"] }), /unknown secret/);
   h.cleanup();
 });
+
+import { connectionParts, npgsqlValue, withPassword } from "../rotate/recipes/supabase-db.mjs";
+
+test("supabase-db recipe replaces only the password and quotes awkward characters", () => {
+  const cs = "Host=db.example.supabase.co;Port=5432;Database=postgres;Username=postgres;Password=OLDPASS;SSL Mode=Require";
+  assert.equal(withPassword(cs, "NEWPASS1234567890"), "Host=db.example.supabase.co;Port=5432;Database=postgres;Username=postgres;Password=NEWPASS1234567890;SSL Mode=Require");
+  assert.equal(npgsqlValue('a;b"c'), '"a;b""c"');
+  assert.match(withPassword(cs, "x;y-0123456789abc"), /Password="x;y-0123456789abc";SSL Mode/);
+  assert.throws(() => withPassword("Host=h;Username=u", "p"), /no Password/);
+  assert.deepEqual(connectionParts(cs), { host: "db.example.supabase.co", port: "5432", user: "postgres", db: "postgres" });
+});

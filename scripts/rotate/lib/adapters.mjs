@@ -30,9 +30,9 @@ export const awsIamKey = {
 
 /** Provider web page driven through a recipe (see scripts/rotate/recipes). */
 export const browser = {
-  async create({ entry, browser: session }) {
+  async create({ entry, browser: session, target }) {
     const recipe = await session.recipe(entry.provider);
-    return recipe.create(session.page(), entry);
+    return recipe.create(await session.page(), entry, { current: (key = "secret") => target.get(entry.params[key]) });
   },
   async check({ entry, browser: session }, values) {
     const recipe = await session.recipe(entry.provider);
@@ -40,7 +40,7 @@ export const browser = {
   },
   async revoke({ entry, browser: session }, oldRef) {
     const recipe = await session.recipe(entry.provider);
-    return recipe.revoke(session.page(), oldRef, entry);
+    return recipe.revoke(await session.page(), oldRef, entry);
   },
 };
 
