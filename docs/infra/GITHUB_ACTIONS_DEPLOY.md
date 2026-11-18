@@ -117,6 +117,8 @@ In the repo → **Settings → Secrets and variables → Actions**:
 
 The deploy workflow fetches env vars from the currently active deployment via `get-container-service-deployments`, so values configured in the LightSail console are preserved. Only the image tag changes.
 
+**Never print the environment.** It holds secrets and the repository is public. The workflows write it to a private temp file, mask secret-looking values with `::add-mask::`, discard the stdout of `create-container-service-deployment` (the CLI echoes the whole deployment) and print only a sanitized error line. A final `if: always()` step deletes the temp files. `scripts/ci/check-workflow-secret-output.mjs` enforces this in CI (AC 7.11.20). Before #779 (up to run 44226610307, 2026-11-18) every Deploy run that created a deployment printed the environment into its log; those values must be rotated (#781).
+
 Current container env vars (values stored in LightSail, not in GitHub):
 
 - `APP_Authentication__Cognito__ClientId`

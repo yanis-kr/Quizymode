@@ -94,31 +94,40 @@ jobs:
             exit 1
           fi
 
+      # The environment holds secrets. It goes to a private temp file and is never printed (AC 7.11.20).
       - name: Fetch environment variables from active deployment
         run: |
+          umask 077
           aws lightsail get-container-service-deployments \
             --service-name container-service-1 \
             --query 'deployments[?state==`ACTIVE`] | [0].containers.api.environment' \
             --output json > /tmp/env.json
 
           # Fall back to most recent deployment if none is currently ACTIVE
-          if [ "$(cat /tmp/env.json)" = "null" ]; then
+          if [ "$(jq -r 'type' /tmp/env.json)" = "null" ]; then
             aws lightsail get-container-service-deployments \
               --service-name container-service-1 \
               --query 'deployments[0].containers.api.environment' \
               --output json > /tmp/env.json
           fi
 
+          # Defence in depth: mask secret-looking values (by key name or length) in case one is ever printed.
+          jq -r 'to_entries[]? | select((.key | test("key|secret|password|token|connectionstring"; "i")) or ((.value | tostring | length) >= 20)) | .value' /tmp/env.json \
+            | while IFS= read -r value; do [ -n "$value" ] && echo "::add-mask::$value"; done
+
       - name: Create LightSail deployment
         env:
           IMAGE: ghcr.io/yanis-kr/quizymode:${{ github.event.workflow_run.head_sha }}
         run: |
+          umask 077
           CONTAINERS=$(jq -n \
             --arg image "$IMAGE" \
             --slurpfile env /tmp/env.json \
             '{api: {image: $image, environment: $env[0], ports: {"8080": "HTTP"}}}')
 
-          aws lightsail create-container-service-deployment \
+          # The CLI echoes the whole deployment, environment included: stdout is discarded and only a sanitized
+          # error line is printed (a parameter error can echo the --containers JSON, so raw stderr is never shown).
+          if ! aws lightsail create-container-service-deployment \
             --service-name container-service-1 \
             --containers "$CONTAINERS" \
             --public-endpoint '{
@@ -132,7 +141,11 @@ jobs:
                 "unhealthyThreshold": 6,
                 "healthyThreshold": 2
               }
-            }'
+            }' > /dev/null 2> /tmp/create-error.txt; then
+            sed -n 's/^\(An error occurred ([A-Za-z]*) when calling the [A-Za-z]* operation\).*/\1/p' /tmp/create-error.txt | head -n 1
+            echo "::error::create-container-service-deployment failed (details withheld: the CLI can echo the environment)."
+            exit 1
+          fi
 
       - name: Wait for deployment to become ACTIVE
         run: |
@@ -159,6 +172,10 @@ jobs:
             --output json \
             | jq -r '.logEvents[]? | "\(.createdAt) \(.message)"' \
             | tail -n 100 || true
+
+      - name: Remove temporary environment files
+        if: always()
+        run: rm -f /tmp/env.json /tmp/create-error.txt
 
   # Builds the web app while the container deploys, so deploy-ui only has to sync it.
   build-ui:
