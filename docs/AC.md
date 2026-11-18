@@ -720,6 +720,7 @@ Categories are **public only** (there is no private category). Users navigate by
 **UI**
 
 - **AC 3.1.3** [Anyone] **Given** I am on the Categories page at `/categories`, **when** the list loads, **then** I see all public categories per API; I can search by name and sort by name, number of items, or average rating; categories are paginated (e.g. 30 per page) and clicking a category opens the Sets view for that category (e.g. `/categories/{slug}`).
+- **AC 3.1.4** [Anyone] [verify: unit] (#787) **Given** I open `/categories/{slug}` for a slug that matches no category, **then** the page shows `That category does not exist.` (not `Category not found.`) and a `← Back to Categories` link to `/categories`. (tests: `CategoriesPage.test.tsx`, `AC 3.1.4`)
 
 ---
 
