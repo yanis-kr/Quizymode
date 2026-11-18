@@ -689,3 +689,20 @@ jobs:
             api.log
             src/Quizymode.Web/vite.log
           if-no-files-found: warn
+
+  release-ready:
+    name: release-ready
+    if: always()
+    needs: [build-test-publish, e2e, ac-gate, seed-quality, automation-contract]
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    permissions:
+      contents: read
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v7
+
+      - name: Require every release job to pass or skip (AC 7.18.1)
+        env:
+          NEEDS_JSON: ${{ toJSON(needs) }}
+        run: node scripts/release/release-ready.mjs
