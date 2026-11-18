@@ -45,16 +45,35 @@ jobs:
           role-to-assume: ${{ secrets.AWS_DEPLOY_ROLE_ARN }}
           aws-region: us-east-1
 
+      # The environment holds secrets. It goes to a private temp file and is never printed (AC 7.11.20).
       - name: Read current environment
         run: |
-          aws lightsail get-container-service-deployments +            --service-name container-service-1 +            --query 'deployments[0].containers.api.environment' +            --output json > /tmp/env.json
+          umask 077
+          aws lightsail get-container-service-deployments \
+            --service-name container-service-1 \
+            --query 'deployments[0].containers.api.environment' \
+            --output json > /tmp/env.json
+
+          # Defence in depth: mask secret-looking values (by key name or length) in case one is ever printed.
+          jq -r 'to_entries[]? | select((.key | test("key|secret|password|token|connectionstring"; "i")) or ((.value | tostring | length) >= 20)) | .value' /tmp/env.json \
+            | while IFS= read -r value; do [ -n "$value" ] && echo "::add-mask::$value"; done
 
       - name: Restore previous API image
         env:
           IMAGE: ghcr.io/yanis-kr/quizymode:${{ inputs.previous_sha }}
         run: |
-          CONTAINERS=$(jq -n +            --arg image "$IMAGE" +            --slurpfile env /tmp/env.json +            '{api: {image: $image, environment: $env[0], ports: {"8080": "HTTP"}}}')
-          aws lightsail create-container-service-deployment +            --service-name container-service-1 +            --containers "$CONTAINERS" +            --public-endpoint '{
+          umask 077
+          CONTAINERS=$(jq -n \
+            --arg image "$IMAGE" \
+            --slurpfile env /tmp/env.json \
+            '{api: {image: $image, environment: $env[0], ports: {"8080": "HTTP"}}}')
+
+          # The CLI echoes the whole deployment, environment included: stdout is discarded and only a sanitized
+          # error line is printed.
+          if ! aws lightsail create-container-service-deployment \
+            --service-name container-service-1 \
+            --containers "$CONTAINERS" \
+            --public-endpoint '{
               "containerName": "api",
               "containerPort": 8080,
               "healthCheck": {
@@ -65,18 +84,28 @@ jobs:
                 "unhealthyThreshold": 2,
                 "healthyThreshold": 2
               }
-            }'
+            }' > /dev/null 2> /tmp/create-error.txt; then
+            sed -n 's/^\(An error occurred ([A-Za-z]*) when calling the [A-Za-z]* operation\).*/\1/p' /tmp/create-error.txt | head -n 1
+            echo "::error::create-container-service-deployment failed (details withheld: the CLI can echo the environment)."
+            exit 1
+          fi
 
       - name: Wait for API rollback
         run: |
           for i in $(seq 1 40); do
-            STATE=$(aws lightsail get-container-service-deployments +              --service-name container-service-1 +              --query 'deployments[0].state' --output text)
+            STATE=$(aws lightsail get-container-service-deployments \
+              --service-name container-service-1 \
+              --query 'deployments[0].state' --output text)
             echo "[$i/40] state=$STATE"
             [ "$STATE" = "ACTIVE" ] && exit 0
             [ "$STATE" = "FAILED" ] && exit 1
             sleep 15
           done
           exit 1
+
+      - name: Remove temporary environment files
+        if: always()
+        run: rm -f /tmp/env.json /tmp/create-error.txt
 
   rollback-ui:
     needs: rollback-container
