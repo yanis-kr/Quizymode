@@ -4,18 +4,26 @@
   "repo": {
     "defaultBranch": "main",
     "requiredChecks": [
-      { "name": "build-test-publish", "workflow": "ci.yml" },
-      { "name": "automation-contract", "workflow": "ci.yml" },
-      { "name": "CodeQL", "external": true }
+      {
+        "name": "build-test-publish",
+        "workflow": "ci.yml"
+      },
+      {
+        "name": "automation-contract",
+        "workflow": "ci.yml"
+      },
+      {
+        "name": "CodeQL",
+        "external": true
+      }
     ]
   },
   "worktrees": {
-    "root": "C:/Projects",
     "main": "Quizymode",
     "laneA": "Quizymode-wt-lane-a",
     "laneB": "Quizymode-wt-lane-b",
     "release": "Quizymode-wt-release",
-    "nodeModulesJunction": "src/Quizymode.Web/node_modules"
+    "webApp": "src/Quizymode.Web"
   },
   "acFile": "docs/AC.md",
   "integratorOnly": [
@@ -31,13 +39,21 @@
   "version": {
     "file": "Directory.Build.props",
     "property": "QuizymodeVersion",
-    "mirrors": ["src/Quizymode.Web/package.json"],
-    "exemptPaths": ["data/seed-source/items/**", "data/seed-source/_registry/**"]
+    "mirrors": [
+      "src/Quizymode.Web/package.json"
+    ],
+    "exemptPaths": [
+      "data/seed-source/items/**",
+      "data/seed-source/_registry/**"
+    ]
   },
   "checks": {
     "web": {
       "prefix": "src/Quizymode.Web/",
-      "commands": ["npx vitest related --run {paths}", "eslint {paths}"]
+      "commands": [
+        "npx vitest related --run {paths}",
+        "eslint {paths}"
+      ]
     },
     "api": {
       "root": "src/Quizymode.Api",
@@ -47,7 +63,10 @@
       "fallbackCommand": "dotnet test --filter \"FullyQualifiedName~Architecture&Category!=Postgres\""
     },
     "scripts": {
-      "prefixes": ["scripts/", ".claude/"],
+      "prefixes": [
+        "scripts/",
+        ".claude/"
+      ],
       "command": "node --test scripts/tests/"
     },
     "acGate": {
@@ -60,8 +79,17 @@
     "deploy": "deploy.yml",
     "rollback": "rollback.yml"
   },
-  "acceptanceMethods": ["unit", "e2e", "api", "sql", "anon-ui", "signed-in-prod-ui"],
-  "excludedModels": ["fable"],
+  "acceptanceMethods": [
+    "unit",
+    "e2e",
+    "api",
+    "sql",
+    "anon-ui",
+    "signed-in-prod-ui"
+  ],
+  "excludedModels": [
+    "fable"
+  ],
   "host": {
     "minFreeDiskGb": 15
   }

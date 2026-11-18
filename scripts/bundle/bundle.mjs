@@ -11,7 +11,7 @@
 // Exit codes: 0 ok, 1 usage/IO error, 2 rejected (validation/approval/identity), 3 limit reached, 4 lock held.
 
 import { createHash, randomBytes } from "node:crypto";
-import { execFileSync } from "node:child_process";
+import { execFileSync, spawnSync } from "node:child_process";
 import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
@@ -114,6 +114,18 @@ function sha256Text(s) { return createHash("sha256").update(String(s ?? "").repl
 const now = () => new Date().toISOString();
 
 // ---------- manifest validation ----------
+// ---------- junctions (#762, AC 7.16.4) ----------
+function isLink(p) { try { return fs.lstatSync(p).isSymbolicLink(); } catch { return false; } }
+/** Path of the git worktree whose folder name is `name`, or null. Read from git, never assumed. */
+function worktreePathNamed(name) {
+  const out = sh("git", ["worktree", "list", "--porcelain"], true) ?? "";
+  for (const line of out.split(/\r?\n/)) {
+    if (!line.startsWith("worktree ")) continue;
+    const p = line.slice("worktree ".length);
+    if (path.basename(p) === name) return p;
+  }
+  return null;
+}
 // ---------- delivery profile (#762) ----------
 // Every project fact the helper needs lives in one tracked file, read from the checkout that holds this helper.
 const PROFILE_PATH = ".claude/delivery-profile.json";
@@ -150,6 +162,7 @@ function profileErrors() {
   req(exists(pr.checks?.web?.prefix), `checks.web.prefix: ${pr.checks?.web?.prefix} does not exist`);
   req(exists(pr.checks?.api?.root), `checks.api.root: ${pr.checks?.api?.root} does not exist`);
   req(exists(pr.checks?.api?.featuresPrefix), `checks.api.featuresPrefix: ${pr.checks?.api?.featuresPrefix} does not exist`);
+  req(exists(pr.worktrees?.webApp), `worktrees.webApp: ${pr.worktrees?.webApp} does not exist`);
   req(exists(pr.checks?.acGate?.script), `checks.acGate.script: ${pr.checks?.acGate?.script} does not exist`);
   return errors;
 }
@@ -705,6 +718,32 @@ switch (cmd) {
     const errors = profileErrors();
     if (errors.length) die(2, "Delivery profile does not match this checkout", { errors });
     ok({ profile: PROFILE_PATH, checked: true });
+  }
+  case "junction": {
+    // junction <laneA|laneB|release> [--remove]: builds the Windows junction from runtime paths (AC 7.16.4, #762).
+    // The main checkout comes from git, the lane from `git worktree list`, the web app from the profile. Never a recursive delete.
+    const lane = positional[0];
+    if (!lane || !profile().worktrees[lane] || !["laneA", "laneB", "release"].includes(lane)) die(1, "usage: bundle.mjs junction <laneA|laneB|release> [--remove]");
+    if (process.platform !== "win32") die(2, "junctions are created on Windows only");
+    const webApp = profile().worktrees.webApp;
+    const lanePath = worktreePathNamed(profile().worktrees[lane]);
+    if (!lanePath) die(2, `No git worktree named ${profile().worktrees[lane]}; create it first (git worktree add).`);
+    const mainRoot = mainCheckoutRoot();
+    const link = path.join(lanePath, webApp, "node_modules");
+    const target = path.join(mainRoot, webApp, "node_modules");
+    const command = `mklink /J "${link}" "${target}"`;
+    if (opts.remove) {
+      if (!fs.existsSync(link) && !isLink(link)) die(2, `Nothing to remove at ${link}`);
+      if (!isLink(link)) die(2, `Refusing to remove ${link}: it is not a junction. Never use a recursive delete.`);
+      const r = spawnSync("cmd.exe", ["/d", "/s", "/c", `"rmdir "${link}""`], { windowsVerbatimArguments: true, encoding: "utf8" });
+      if (r.status !== 0 || fs.existsSync(link)) die(2, "rmdir did not remove the junction", { stderr: r.stderr });
+      ok({ removed: link, target: "untouched" });
+    }
+    if (!fs.existsSync(target)) die(2, `Junction target is missing: ${target}`);
+    if (fs.existsSync(link) || isLink(link)) die(2, `${link} already exists; not replaced.`);
+    const r = spawnSync("cmd.exe", ["/d", "/s", "/c", `"mklink /J "${link}" "${target}""`], { windowsVerbatimArguments: true, encoding: "utf8" });
+    if (r.status !== 0 || !isLink(link)) die(2, "mklink /J failed", { stderr: r.stderr });
+    ok({ link, target, command });
   }
   case "snapshot": {
     // node bundle.mjs snapshot 501 503 --repo owner/name  -> JSON snapshots to paste into the manifest
