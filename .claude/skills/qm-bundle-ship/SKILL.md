@@ -89,6 +89,15 @@ Full detail, commands, and the reconcile table are in [references/playbook.md](r
 7. **Release** per `releaseMode`: one PR from the release branch, green required checks, then for `auto-merge-deploy` run `BUNDLE merge-gate $bundle_id --pr <n>` and merge only on exit 0, watch CI on main and Deploy, verify prod, publish evidence, close issues, roll back on the trigger (playbook § Release).
 8. **Finish**: set phase `done`, `done_partial`, or `blocked_terminal`, then reply with the final report.
 
+## Visible claims, scope returns and release PR (#761)
+
+- **Claim** each selected issue before step 2 with `scripts/bundle/claim.mjs` `claimIssues` (label `bundle:<id>` plus one claim comment, AC 7.19.6). A `refused` result means another bundle holds the issue: drop it from this run and report it. A `resumed` result means this run already holds it: continue without writing again (AC 7.19.7).
+- **Scope question** during step 5: record it with `BUNDLE blocker --kind product-deferred`, then call `returnToRefinement` (AC 7.19.8) to release the claim, set `needs-refinement`, and post the question once. Continue with issues that do not depend on it.
+- **Closure and evidence comments** go through `postOnce`, so a restarted run posts each at most once per issue and bundle.
+- **Release PR body**: build it with `scripts/release/prbody.mjs` `releasePrBody` (issues as `Refs #n`, exclusions with reasons). Run `assertNoClosingKeywords` on the body before creating or editing the PR (AC 7.19.9).
+- **Merge**: read `githubAutoMerge` from `.qm/envelope.json`. Run `release.mjs ship --pr <n> --issues <n,n> --wait` once. With `githubAutoMerge: true` it arms GitHub auto-merge and waits for the merge and Deploy; with `false` it merges on green through the driver (AC 7.19.10, 7.19.11). Do not call `gh pr merge` directly.
+- Order and fix pushes follow the playbook's "Release merge order" (AC 7.19.12).
+
 ## Final report (phone-sized)
 
 ```
