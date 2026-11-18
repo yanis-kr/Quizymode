@@ -138,7 +138,7 @@ function profile() {
   profileCache = readJson(file);
   return profileCache;
 }
-function escapeRe(s) { return String(s).replace(/[.*+?^${}()|[\]-]/g, "\$&"); }
+function escapeRe(s) { return String(s).replace(/[.*+?^${}()|[\]-]/g, "\\$&"); }
 /** Field-named problems with the profile against this checkout. Empty when every named path, workflow and required check exists. */
 function profileErrors() {
   const root = repoRoot();
