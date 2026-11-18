@@ -300,6 +300,29 @@ export function ship({ pr, issues = [], root, deps = {} }) {
   return deployStage({ pr, sha, p, deps });
 }
 
+const WAIT_CONTINUE = /pending checks|no checks reported/;
+
+/**
+ * `ship --wait` (AC 7.19.10): calls ship until it reaches a terminal class, so one invocation follows the PR through
+ * its checks, the merge (or a merge GitHub already made) and the Deploy run. Returns exactly one result. Gives up with
+ * class `timeout` after timeoutMin minutes; the release is then left as it is and nothing is halted.
+ */
+export function shipWait({ pr, issues = [], root, deps = {}, timeoutMin = 90, intervalSec = 60 }) {
+  const now = deps.now ?? Date.now;
+  const sleep = deps.sleep ?? ((ms) => Atomics.wait(new Int32Array(new SharedArrayBuffer(4)), 0, 0, ms));
+  const deadline = now() + timeoutMin * 60000;
+  for (;;) {
+    const r = ship({ pr, issues, root, deps });
+    const waiting = r.class === "pending" || r.class === "merged" || (r.class === "gate" && WAIT_CONTINUE.test(r.detail));
+    if (!waiting) return r;
+    if (now() >= deadline) {
+      return result("ship", false, "timeout", `gave up after ${timeoutMin} minutes: ${r.detail}`,
+        "run ship --wait again to keep following it; nothing was halted", 2);
+    }
+    sleep(intervalSec * 1000);
+  }
+}
+
 // The CI job that runs scripts/tests/*.test.mjs (ci.yml ac-gate). Pester (automation-contract) does not cover these tests.
 // Unit evidence needs this job to have passed, never skipped (AC 7.11.19).
 export const REQUIRED_CI_JOB = "ac-gate";
@@ -409,7 +432,7 @@ export function parseFlags(argv) {
     if (!arg.startsWith("--")) continue;
     const key = arg.slice(2);
     const next = argv[i + 1];
-    if (key === "close" || key === "post") {
+    if (key === "close" || key === "post" || key === "wait") {
       flags[key] = true;
     } else if (key === "report") {
       flags.report.push(next);
@@ -451,7 +474,7 @@ function run(command, f, deps) {
       break;
     case "ship":
       if (!pr) r = result("ship", false, "usage", "missing --pr", "", 2);
-      else r = ship({ pr, issues, root, deps });
+      else r = f.wait === true || f.wait === "true" ? shipWait({ pr, issues, root, deps }) : ship({ pr, issues, root, deps });
       break;
     case "evidence":
       if (!issues.length) r = result("evidence", false, "usage", "missing --issues", "", 2);
