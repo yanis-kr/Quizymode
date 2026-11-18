@@ -15,32 +15,28 @@ public sealed class RequestMetadataHelperTests
     }
 
     [Fact]
-    public void GetClientIpAddress_PrefersFirstForwardedForAddress()
+    public void GetClientIpAddress_IgnoresClientSentForwardedForAndRealIp()
     {
         DefaultHttpContext httpContext = new();
         httpContext.Request.Headers["X-Forwarded-For"] = "203.0.113.5, 203.0.113.6";
         httpContext.Request.Headers["X-Real-IP"] = "198.51.100.9";
         httpContext.Connection.RemoteIpAddress = IPAddress.Parse("192.0.2.10");
 
-        RequestMetadataHelper.GetClientIpAddress(httpContext).Should().Be("203.0.113.5");
+        RequestMetadataHelper.GetClientIpAddress(httpContext).Should().Be("192.0.2.10");
     }
 
     [Fact]
-    public void GetClientIpAddress_FallsBackToRealIpHeader()
+    public void GetClientIpAddress_UnwrapsIPv4MappedIPv6()
     {
         DefaultHttpContext httpContext = new();
-        httpContext.Request.Headers["X-Real-IP"] = "198.51.100.9";
-        httpContext.Connection.RemoteIpAddress = IPAddress.Parse("192.0.2.10");
-
-        RequestMetadataHelper.GetClientIpAddress(httpContext).Should().Be("198.51.100.9");
-    }
-
-    [Fact]
-    public void GetClientIpAddress_FallsBackToRemoteIpAddress()
-    {
-        DefaultHttpContext httpContext = new();
-        httpContext.Connection.RemoteIpAddress = IPAddress.Parse("192.0.2.10");
+        httpContext.Connection.RemoteIpAddress = IPAddress.Parse("::ffff:192.0.2.10");
 
         RequestMetadataHelper.GetClientIpAddress(httpContext).Should().Be("192.0.2.10");
+    }
+
+    [Fact]
+    public void GetClientIpAddress_ReturnsUnknown_WhenNoRemoteAddress()
+    {
+        RequestMetadataHelper.GetClientIpAddress(new DefaultHttpContext()).Should().Be("unknown");
     }
 }

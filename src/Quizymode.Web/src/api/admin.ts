@@ -601,6 +601,36 @@ export interface ConversionFunnelStep {
   conversionFromFirstPercent: number | null;
 }
 
+export interface SecondActivityBreakdown {
+  sameScope: number;
+  otherTopic: number;
+  sameTopicDifferentScope: number;
+  unknown: number;
+}
+
+export interface SecondActivityAreaResponse {
+  area: string;
+  qualifyingSessions: number;
+  secondStartedSessions: number;
+  second: SecondActivityBreakdown;
+  medianSecondsToFirstAnswer: number | null;
+}
+
+export interface SecondActivityResponse {
+  windowStartUtc: string;
+  windowEndUtc: string;
+  botsExcluded: boolean;
+  internalExcluded: boolean;
+  qualifyingSessions: number;
+  secondStartedSessions: number;
+  secondStartedPercent: number | null;
+  second: SecondActivityBreakdown;
+  medianSecondsToFirstAnswer: number | null;
+  ratesSuppressed: boolean;
+  note: string | null;
+  byEntryArea: SecondActivityAreaResponse[];
+}
+
 export interface ConversionFunnelResponse {
   windowStartUtc: string;
   windowEndUtc: string;
@@ -1280,6 +1310,23 @@ export const adminApi = {
 
     const response = await apiClient.get<ConversionFunnelResponse>(
       "/admin/analytics/funnel",
+      { params }
+    );
+    return response.data;
+  },
+
+  getSecondActivity: async (
+    days: number = 14,
+    includeBots: boolean = false,
+    includeInternal: boolean = false
+  ): Promise<SecondActivityResponse> => {
+    const params: Record<string, number | boolean> = { days, includeBots };
+    if (includeInternal) {
+      params.includeInternal = true;
+    }
+
+    const response = await apiClient.get<SecondActivityResponse>(
+      "/admin/analytics/second-activity",
       { params }
     );
     return response.data;
