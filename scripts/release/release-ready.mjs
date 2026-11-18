@@ -4,7 +4,7 @@
 //
 //   NEEDS_JSON='{"build-test-publish":{"result":"success"}, ...}' node scripts/release/release-ready.mjs
 
-export const RELEASE_READY_NEEDS = ["build-test-publish", "e2e", "ac-gate", "seed-quality", "automation-contract"];
+export const RELEASE_READY_NEEDS = ["changes", "build-test-publish", "e2e", "ac-gate", "seed-quality", "automation-contract"];
 const PASSING_RESULTS = ["success", "skipped"];
 
 /** Returns { ok, failing } for the `needs` object of the release-ready job. A missing job counts as failing. */

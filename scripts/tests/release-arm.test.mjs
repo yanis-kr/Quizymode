@@ -30,7 +30,7 @@ function tempRoot() {
   return fs.mkdtempSync(path.join(os.tmpdir(), "release-arm-"));
 }
 
-const allPass = { "build-test-publish": { result: "success" }, e2e: { result: "success" }, "ac-gate": { result: "success" }, "seed-quality": { result: "skipped" }, "automation-contract": { result: "success" } };
+const allPass = { changes: { result: "success" }, "build-test-publish": { result: "success" }, e2e: { result: "success" }, "ac-gate": { result: "success" }, "seed-quality": { result: "skipped" }, "automation-contract": { result: "success" } };
 
 test("AC 7.19.1: release-ready passes only when every needed job succeeded or was skipped", () => {
   assert.deepEqual(releaseReady(allPass), { ok: true, failing: [] });
@@ -41,7 +41,9 @@ test("AC 7.19.1: release-ready passes only when every needed job succeeded or wa
   assert.deepEqual(cancelled.failing, ["ac-gate"]);
   const missing = releaseReady({ ...allPass, "seed-quality": undefined });
   assert.deepEqual(missing.failing, ["seed-quality"]);
-  assert.equal(RELEASE_READY_NEEDS.length, 5);
+  assert.equal(RELEASE_READY_NEEDS.length, 6);
+  const brokenChanges = releaseReady({ ...allPass, changes: { result: "failure" } });
+  assert.deepEqual(brokenChanges.failing, ["changes"]);
 });
 
 test("AC 7.19.2: record-review stores the reviewed head and arm refuses a head it does not match", () => {

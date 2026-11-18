@@ -693,7 +693,7 @@ jobs:
   release-ready:
     name: release-ready
     if: always()
-    needs: [build-test-publish, e2e, ac-gate, seed-quality, automation-contract]
+    needs: [changes, build-test-publish, e2e, ac-gate, seed-quality, automation-contract]
     runs-on: ubuntu-latest
     timeout-minutes: 5
     permissions:
