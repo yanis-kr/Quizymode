@@ -117,7 +117,11 @@ export function waitPr({ pr, root, deps = {} }) {
   const blocked = refusal(p);
   if (blocked) return result("wait-pr", false, "gate", blocked, "resolve the halt or wait for the lock to clear", 2);
 
-  const view = ghJson(["pr", "view", String(pr), "--json", "statusCheckRollup,headRefOid"], deps) ?? {};
+  const view = ghJson(["pr", "view", String(pr), "--json", "statusCheckRollup,headRefOid,mergeStateStatus"], deps) ?? {};
+  if (view.mergeStateStatus === "BEHIND") {
+    return result("wait-pr", false, "behind", "the PR is behind main, so strict protection holds the merge",
+      "disarm if armed, merge origin/main into the release branch, run the filtered tests, push, then arm again", 2);
+  }
   const checks = normalizeChecks(view.statusCheckRollup);
   const failing = checks.filter((c) => c.failed).map((c) => c.name);
   const pending = checks.filter((c) => c.pending).map((c) => c.name);
@@ -148,6 +152,56 @@ export function waitPr({ pr, root, deps = {} }) {
     writeJson(p.state, rest);
   }
   return result("wait-pr", true, "ok", "all checks passed and there are no new findings", `run ship --pr ${pr}`, 0);
+}
+
+/**
+ * Records the reviewer pass for a PR head (AC 7.19.2). Arm refuses unless this was recorded clean for the same head.
+ */
+export function recordReview({ pr, head, clean, root, deps = {} }) {
+  const p = paths(root, deps.env);
+  if (!pr || !head) return result("record-review", false, "usage", "missing --pr or --head", "pass the PR number and the reviewed head SHA", 2);
+  const state = readJson(p.state) ?? {};
+  writeJson(p.state, { ...state, reviewer: { pr, headSha: head, clean: Boolean(clean), at: new Date().toISOString() } });
+  return result("record-review", true, "ok", `recorded reviewer pass for PR ${pr} at ${head.slice(0, 8)}: ${clean ? "clean" : "not clean"}`, "arm when clean", 0);
+}
+
+/**
+ * Arms GitHub auto-merge on a release PR only when every gate that needs no CI result passes (AC 7.19.3). GitHub then
+ * merges when the required checks, including release-ready, pass. Pinned to the reviewed head.
+ */
+export function arm({ pr, issues, root, deps = {} }) {
+  const p = paths(root, deps.env);
+  const blocked = refusal(p);
+  if (blocked) return result("arm", false, "gate", blocked, "resolve the halt or wait for the lock to clear", 2);
+  if (!issues.length) return result("arm", false, "gate", "refusing to arm: pass --issues so ac-gate can check them", "rerun with --issues", 2);
+  const view = ghJson(["pr", "view", String(pr), "--json", "headRefOid"], deps) ?? {};
+  const head = view.headRefOid ?? "";
+  if (!head) return result("arm", false, "gate", "refusing to arm: the PR head commit is unknown", "check the PR by hand", 2);
+  const state = readJson(p.state) ?? {};
+  const review = state.reviewer;
+  if (!review || review.pr !== pr || review.clean !== true) {
+    return result("arm", false, "gate", "the reviewer pass is not recorded as clean for this PR", "run the reviewer pass, then record-review --clean", 2);
+  }
+  if (review.headSha !== head) {
+    return result("arm", false, "gate", `the head is ${head.slice(0, 8)} but the reviewer pass covered ${String(review.headSha).slice(0, 8)}`, "review the new head, record it, then arm", 2);
+  }
+  const gate = deps.acGate ? deps.acGate(issues) : defaultAcGate(issues, root);
+  if (!gate.ok) return result("arm", false, "gate", `refusing to arm: ac-gate rejected the issues: ${gate.detail}`, "fix the ACs", 2);
+  gh(["pr", "merge", String(pr), "--auto", "--merge", "--match-head-commit", head], deps);
+  writeJson(p.state, { ...state, armed: { pr, headSha: head, at: new Date().toISOString() } });
+  return result("arm", true, "ok", "auto-merge armed; GitHub merges once the required checks pass", "run wait-pr to follow it", 0);
+}
+
+/** Turns auto-merge off (AC 7.19.4). Use before any fix push to the release PR. */
+export function disarm({ pr, root, deps = {} }) {
+  const p = paths(root, deps.env);
+  gh(["pr", "merge", String(pr), "--disable-auto"], deps);
+  const state = readJson(p.state) ?? {};
+  if (state.armed?.pr === pr) {
+    const { armed, ...rest } = state;
+    writeJson(p.state, rest);
+  }
+  return result("disarm", true, "ok", "auto-merge disarmed", "push the fix, record a clean review of the new head, then arm again", 0);
 }
 
 /** Runs ac-gate for the bundle's issues from the checkout root. Injected in tests. */
@@ -406,8 +460,19 @@ function run(command, f, deps) {
     case "status":
       r = status({ root, deps });
       break;
+    case "record-review":
+      r = recordReview({ pr, head: f.head, clean: f.clean === true || f.clean === "true", root, deps });
+      break;
+    case "arm":
+      if (!pr) r = result("arm", false, "usage", "missing --pr", "", 2);
+      else r = arm({ pr, issues, root, deps });
+      break;
+    case "disarm":
+      if (!pr) r = result("disarm", false, "usage", "missing --pr", "", 2);
+      else r = disarm({ pr, root, deps });
+      break;
     default:
-      r = result("usage", false, "usage", "commands: wait-pr, ship, evidence, status", "", 2);
+      r = result("usage", false, "usage", "commands: wait-pr, ship, evidence, status, record-review, arm, disarm", "", 2);
   }
   return emit(r);
 }

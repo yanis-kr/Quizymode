@@ -2642,3 +2642,12 @@ A bundle run refines, approves under the standing envelope and ships with no que
 - **AC 7.18.7** [Dev tooling] [verify: unit] (#760) `bundle.mjs approve <id> --standing` with no approved envelope exits 2 with one instruction line naming how to create the envelope, and sets the run phase to blocked_terminal.
 - **AC 7.18.8** [Dev tooling] [verify: unit] (#760) The no-envelope stop in AC 7.18.7 changes only the run file of the bundle named in the command; another bundle's run file keeps its bundle id and phase.
 - **AC 7.18.9** [Dev tooling] [verify: unit] (#760) The committed `.claude/settings.json` runs both autopilot hooks through `"$CLAUDE_PROJECT_DIR/scripts/bundle/autopilot-hook.mjs"`, so they work from any working directory.
+### AC 7.19 Release-ready gate, arm and disarm (#761)
+
+A release PR can merge on its own once one required check, `release-ready`, passes. The driver arms GitHub auto-merge only after the gates that need no CI result pass, and it disarms before a fix push.
+
+- **AC 7.19.1** [Dev tooling] [verify: unit] (#761) `release-ready` passes only when each of changes, build-test-publish, e2e, ac-gate, seed-quality and automation-contract ended success or skipped; a failed, cancelled or missing job fails it and is named. (tests: `release-arm.test.mjs`)
+- **AC 7.19.2** [Dev tooling] [verify: unit] (#761) `release.mjs record-review` stores the reviewed head; `arm` refuses a head that differs from it. (tests: `release-arm.test.mjs`)
+- **AC 7.19.3** [Dev tooling] [verify: unit] (#761) `arm` exits 2 with class `gate` when there is no clean reviewer pass, when the halt file exists, or when ac-gate fails. On a clean PR it runs `gh pr merge --auto --merge --match-head-commit <head>`. (tests: `release-arm.test.mjs`)
+- **AC 7.19.4** [Dev tooling] [verify: unit] (#761) `disarm` runs `gh pr merge --disable-auto` and clears the armed record. (tests: `release-arm.test.mjs`)
+- **AC 7.19.5** [Dev tooling] [verify: unit] (#761) `wait-pr` reports class `behind` when the PR's merge state is BEHIND, and not for a CLEAN PR. (tests: `release-arm.test.mjs`)

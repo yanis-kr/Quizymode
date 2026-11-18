@@ -413,3 +413,6 @@ graphify-out/
 
 # content-quality source cache (#726): fetched page text is never committed
 .cache/content-quality/
+
+# The release driver is source code, not build output (the rules above match any folder named release)
+!scripts/release/
