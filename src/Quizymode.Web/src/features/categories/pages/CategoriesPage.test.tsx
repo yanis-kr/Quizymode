@@ -315,6 +315,13 @@ describe("Active filters (#664)", () => {
     await user.click(screen.getByRole("button", { name: "Clear tag filters" }));
     await waitFor(() => expect(currentUrl()).toBe("/categories/languages/german/idioms?view=items&page=1"));
   });
+
+  it("AC 3.1.4 shows 'That category does not exist.' and a link back for an unknown category slug (#787)", async () => {
+    renderAt("/categories/no-such-category");
+    expect(await screen.findByText("That category does not exist.")).toBeInTheDocument();
+    expect(screen.queryByText("Category not found.")).not.toBeInTheDocument();
+    expect(screen.getByRole("link", { name: /Back to Categories/ })).toHaveAttribute("href", "/categories");
+  });
 });
 
 describe("Category filters (#707)", () => {
