@@ -1,4 +1,4 @@
-// AC 7.17.1 to 7.17.5 (#762): the delivery profile, its check, evidence methods, lanes, packet commands and the skill text.
+// AC 7.16.7 to 7.16.11 (#762): the delivery profile, its check, evidence methods, lanes, packet commands and the skill text.
 import test from "node:test";
 import assert from "node:assert/strict";
 import fs from "node:fs";
@@ -49,7 +49,7 @@ const issue = (number, paths, evidence = "unit") => ({
   validation: ["node --test scripts/tests/delivery-profile.test.mjs"],
 });
 
-test("AC 7.17.1 profile check exits 0 on this repo and names the field when a named path, workflow or check is missing", () => {
+test("AC 7.16.7 profile check exits 0 on this repo and names the field when a named path, workflow or check is missing", () => {
   const here = spawnSync("node", [path.join(repo, "scripts", "bundle", "bundle.mjs"), "profile", "check"], { encoding: "utf8", cwd: repo });
   assert.equal(here.status, 0, here.stdout + here.stderr);
   assert.equal(JSON.parse(here.stdout).ok, true);
@@ -67,7 +67,7 @@ test("AC 7.17.1 profile check exits 0 on this repo and names the field when a na
   assert.match(badWorkflow.stdout, /releaseWorkflows\.deploy/);
 });
 
-test("AC 7.17.2 check rejects an AC whose evidence is not a profile method or none", () => {
+test("AC 7.16.8 check rejects an AC whose evidence is not a profile method or none", () => {
   const root = fixture();
   const { bundles, id } = manifestWith(root, [issue(20, ["scripts/validation/**"], "unit")]);
   const good = spawnSync("node", [helper(root), "check", id, "--bundles-dir", bundles], { encoding: "utf8" });
@@ -80,7 +80,7 @@ test("AC 7.17.2 check rejects an AC whose evidence is not a profile method or no
   assert.match(bad.stdout, /evidence 'test' is not a profile method or none/);
 });
 
-test("AC 7.17.3 lanes treats integratorOnly paths as non-overlapping, and bundle.mjs has no literal docs/AC.md or Quizymode", () => {
+test("AC 7.16.9 lanes treats integratorOnly paths as non-overlapping, and bundle.mjs has no literal docs/AC.md or Quizymode", () => {
   assert.doesNotMatch(bundleSrc, /docs\/AC\.md/);
   assert.doesNotMatch(bundleSrc, /Quizymode/);
 
@@ -99,7 +99,7 @@ test("AC 7.17.3 lanes treats integratorOnly paths as non-overlapping, and bundle
   assert.ok(together.laneB.length === 0, `docs/AC.md overlap should keep both issues in one lane: ${joined.stdout}`);
 });
 
-test("AC 7.17.4 packet checks come from the profile and match the filtered commands", () => {
+test("AC 7.16.10 packet checks come from the profile and match the filtered commands", () => {
   const root = fixture();
   const { bundles, id } = manifestWith(root, [issue(20, ["src/Quizymode.Web/src/features/Example/**", "src/Quizymode.Api/Features/Study/**", "scripts/validation/**"])]);
   const packets = path.join(root, "packets");
@@ -113,7 +113,7 @@ test("AC 7.17.4 packet checks come from the profile and match the filtered comma
   assert.match(text, /node scripts\/validation\/ac-gate\.mjs --issues 20/);
 });
 
-test("AC 7.17.5 no bundle skill file names C:\\Projects, Quizymode.Api, Quizymode.Web or Directory.Build.props, except an allowed-tools block", () => {
+test("AC 7.16.11 no bundle skill file names C:\\Projects, Quizymode.Api, Quizymode.Web or Directory.Build.props, except an allowed-tools block", () => {
   const forbidden = [/C:[\\/]Projects/, /Quizymode\.Api/, /Quizymode\.Web/, /Directory\.Build\.props/];
   const hits = [];
   const walk = (dir) => {
