@@ -6,7 +6,7 @@ import os from "node:os";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { releaseReady, RELEASE_READY_NEEDS } from "../release/release-ready.mjs";
-import { arm, disarm, recordReview, waitPr } from "../release/release.mjs";
+import { arm, disarm, recordReview, shipWait, waitPr } from "../release/release.mjs";
 
 const HEAD = "b94b6a8e9d50404823d017103d05294fa3e8a05d";
 
@@ -116,4 +116,44 @@ test("AC 7.19.5: wait-pr does not report behind for a clean CLEAN PR", () => {
     "pulls/770/comments": [],
   });
   assert.equal(waitPr({ pr: 770, root, deps }).class, "ok");
+});
+
+const MERGE_SHA = "c0ffee00c0ffee00c0ffee00c0ffee00c0ffee00";
+
+function shipRoutes(deployStatuses) {
+  let polls = 0;
+  return fakeGh({
+    "pr view": { state: "MERGED", mergeCommit: { oid: MERGE_SHA }, headRefOid: MERGE_SHA, statusCheckRollup: [] },
+    "run list": [{ databaseId: 1, headSha: MERGE_SHA, status: "completed", conclusion: "success", createdAt: "2026-01-01T00:00:00Z" }],
+    "deploy.yml/runs": () => {
+      const status = deployStatuses[Math.min(polls, deployStatuses.length - 1)];
+      polls++;
+      return { workflow_runs: [{ id: 9, event: "workflow_run", head_sha: MERGE_SHA, status, conclusion: status === "completed" ? "success" : null, created_at: "2026-01-01T00:01:00Z", workflow_run: { id: 1 } }] };
+    },
+    "actions/runs/9/jobs": { jobs: [{ name: "deploy-ui", conclusion: "success" }, { name: "deploy-container", conclusion: "success" }] },
+  });
+}
+
+test("AC 7.19.10: ship --wait keeps polling while the Deploy run is in progress and returns deployed once it succeeds", () => {
+  const root = tempRoot();
+  const deps = shipRoutes(["in_progress", "in_progress", "completed"]);
+  let slept = 0;
+  deps.sleep = () => { slept++; };
+  deps.now = () => 0;
+  const r = shipWait({ pr: 770, issues: [], root, deps, timeoutMin: 90, intervalSec: 60 });
+  assert.equal(r.ok, true);
+  assert.equal(r.class, "deployed");
+  assert.equal(slept, 2, "slept between the two in-progress polls only");
+});
+
+test("AC 7.19.10: ship --wait returns timeout when the deadline passes before Deploy ends", () => {
+  const root = tempRoot();
+  const deps = shipRoutes(["in_progress"]);
+  let clock = 0;
+  deps.sleep = () => { clock += 60000; };
+  deps.now = () => clock;
+  const r = shipWait({ pr: 770, issues: [], root, deps, timeoutMin: 5, intervalSec: 60 });
+  assert.equal(r.ok, false);
+  assert.equal(r.class, "timeout");
+  assert.equal(r.exit, 2);
 });
