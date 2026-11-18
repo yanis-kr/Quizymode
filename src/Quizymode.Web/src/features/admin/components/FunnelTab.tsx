@@ -2,6 +2,7 @@ import { useQuery } from "@tanstack/react-query";
 import { adminApi } from "@/api/admin";
 import ErrorMessage from "@/components/ErrorMessage";
 import LoadingSpinner from "@/components/LoadingSpinner";
+import SecondActivityPanel from "./SecondActivityPanel";
 
 const STEP_LABELS: Record<string, string> = {
   quick_quiz_started: "Quick quiz started",
@@ -47,6 +48,7 @@ const FunnelTab = ({ days, includeBots, includeInternal = false }: FunnelTabProp
   const maxSessions = Math.max(1, ...data.steps.map((step) => step.sessions));
 
   return (
+    <>
     <section className="rounded-2xl border border-slate-200 bg-surface shadow-sm">
       <div className="border-b border-slate-200 px-5 py-4">
         <h2 className="text-lg font-semibold text-gray-900">Conversion Funnel</h2>
@@ -115,6 +117,8 @@ const FunnelTab = ({ days, includeBots, includeInternal = false }: FunnelTabProp
         </table>
       </div>
     </section>
+    <SecondActivityPanel days={days} includeBots={includeBots} includeInternal={includeInternal} />
+    </>
   );
 };
 
