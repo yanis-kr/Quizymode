@@ -36,7 +36,7 @@ internal static partial class StartupExtensions
             // Generous enough for a full study run plus signup flow; batches of up to 25 events count once.
             options.AddPolicy("analytics-events", httpContext =>
             {
-                string partitionKey = GetAuthenticatedOrIpPartitionKey(httpContext);
+                string partitionKey = GetAuthenticatedOrTrustedIpPartitionKey(httpContext);
                 return RateLimitPartition.GetFixedWindowLimiter(
                     partitionKey,
                     static _ => new FixedWindowRateLimiterOptions
@@ -101,7 +101,7 @@ internal static partial class StartupExtensions
 
             options.AddPolicy("feedback-submissions", httpContext =>
             {
-                string partitionKey = GetAuthenticatedOrIpPartitionKey(httpContext);
+                string partitionKey = GetAuthenticatedOrTrustedIpPartitionKey(httpContext);
                 return RateLimitPartition.GetFixedWindowLimiter(
                     partitionKey,
                     static _ => new FixedWindowRateLimiterOptions
@@ -170,32 +170,6 @@ internal static partial class StartupExtensions
         });
 
         return builder;
-    }
-
-    private static string GetAuthenticatedOrIpPartitionKey(HttpContext httpContext)
-    {
-        ClaimsPrincipal user = httpContext.User;
-        if (user.Identity?.IsAuthenticated == true)
-        {
-            string? subject = user.FindFirstValue("sub") ?? user.FindFirstValue(ClaimTypes.NameIdentifier);
-            if (!string.IsNullOrWhiteSpace(subject))
-            {
-                return $"user:{subject}";
-            }
-        }
-
-        string? forwardedFor = httpContext.Request.Headers["X-Forwarded-For"].FirstOrDefault();
-        if (!string.IsNullOrWhiteSpace(forwardedFor))
-        {
-            string[] ips = forwardedFor.Split(',', StringSplitOptions.RemoveEmptyEntries | StringSplitOptions.TrimEntries);
-            if (ips.Length > 0)
-            {
-                return $"ip:{ips[0]}";
-            }
-        }
-
-        string ipAddress = httpContext.Connection.RemoteIpAddress?.ToString() ?? "anonymous";
-        return $"ip:{ipAddress}";
     }
 
     /// <summary>

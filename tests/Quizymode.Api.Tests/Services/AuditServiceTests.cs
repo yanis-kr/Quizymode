@@ -95,11 +95,11 @@ public sealed class AuditServiceTests : DatabaseTestFixture
     }
 
     [Fact]
-    public async Task LogAsync_WithXForwardedForHeader_UsesForwardedIp()
+    public async Task LogAsync_WithXForwardedForHeader_IgnoresClientSentHeader()
     {
         // Arrange
         Guid userId = Guid.NewGuid();
-        SetupHttpContextWithHeaders("203.0.113.1", "192.168.1.1", null);
+        SetupHttpContextWithHeaders("203.0.113.1", "192.168.1.1", "192.0.2.10");
 
         // Act
         await _auditService.LogAsync(
@@ -110,7 +110,7 @@ public sealed class AuditServiceTests : DatabaseTestFixture
         // Assert
         Audit? audit = await DbContext.Audits.FirstOrDefaultAsync();
         audit.Should().NotBeNull();
-        audit!.IpAddress.Should().Be("203.0.113.1"); // Should use X-Forwarded-For (first IP)
+        audit!.IpAddress.Should().Be("192.0.2.10"); // AC 16.3.1: the observed address, never the client-sent header
     }
 
     [Fact]
@@ -133,11 +133,11 @@ public sealed class AuditServiceTests : DatabaseTestFixture
     }
 
     [Fact]
-    public async Task LogAsync_WithMultipleXForwardedFor_UsesFirstIp()
+    public async Task LogAsync_WithMultipleXForwardedFor_IgnoresClientSentList()
     {
         // Arrange
         Guid userId = Guid.NewGuid();
-        SetupHttpContextWithHeaders("203.0.113.1, 198.51.100.1, 192.168.1.1", null, null);
+        SetupHttpContextWithHeaders("203.0.113.1, 198.51.100.1, 192.168.1.1", null, "192.0.2.10");
 
         // Act
         await _auditService.LogAsync(
@@ -148,7 +148,7 @@ public sealed class AuditServiceTests : DatabaseTestFixture
         // Assert
         Audit? audit = await DbContext.Audits.FirstOrDefaultAsync();
         audit.Should().NotBeNull();
-        audit!.IpAddress.Should().Be("203.0.113.1"); // Should use first IP from comma-separated list
+        audit!.IpAddress.Should().Be("192.0.2.10"); // AC 16.3.1: client-sent list is ignored
     }
 
     [Fact]
