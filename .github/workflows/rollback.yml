@@ -45,18 +45,31 @@ jobs:
           role-to-assume: ${{ secrets.AWS_DEPLOY_ROLE_ARN }}
           aws-region: us-east-1
 
-      # The environment holds secrets. It goes to a private temp file and is never printed (AC 7.11.20).
-      - name: Read current environment
+      # Settings come from the checked-in file in the failed commit's tree, plus the SSM bootstrap pair read now (#785).
+      # Rollback restores the old image only; it never copies the active deployment's environment or old secrets.
+      - name: Check out the Lightsail settings file
+        uses: actions/checkout@v7
+        with:
+          ref: ${{ inputs.failed_sha }}
+          sparse-checkout: infra/lightsail
+          persist-credentials: false
+
+      - name: Build container environment
         run: |
           umask 077
-          aws lightsail get-container-service-deployments \
-            --service-name container-service-1 \
-            --query 'deployments[0].containers.api.environment' \
-            --output json > /tmp/env.json
-
-          # Defence in depth: mask secret-looking values (by key name or length) in case one is ever printed.
-          jq -r 'to_entries[]? | select((.key | test("key|secret|password|token|connectionstring"; "i")) or ((.value | tostring | length) >= 20)) | .value' /tmp/env.json \
-            | while IFS= read -r value; do [ -n "$value" ] && echo "::add-mask::$value"; done
+          ENV_FILE="$RUNNER_TEMP/env.json"
+          ACCESS_FILE="$RUNNER_TEMP/bootstrap-access"
+          SECRET_FILE="$RUNNER_TEMP/bootstrap-secret"
+          aws ssm get-parameter --name /quizymode/deploy/BootstrapAccessKeyId --with-decryption \
+            --query Parameter.Value --output text > "$ACCESS_FILE"
+          aws ssm get-parameter --name /quizymode/deploy/BootstrapSecretAccessKey --with-decryption \
+            --query Parameter.Value --output text > "$SECRET_FILE"
+          while IFS= read -r value; do [ -n "$value" ] && echo "::add-mask::$value"; done < "$ACCESS_FILE"
+          while IFS= read -r value; do [ -n "$value" ] && echo "::add-mask::$value"; done < "$SECRET_FILE"
+          jq --rawfile access "$ACCESS_FILE" --rawfile secret "$SECRET_FILE" \
+            '. + {APP_Config__Ssm__AccessKeyId: ($access | rtrimstr("\n")), APP_Config__Ssm__SecretAccessKey: ($secret | rtrimstr("\n"))}' \
+            infra/lightsail/env.prod.json > "$ENV_FILE"
+          rm -f "$ACCESS_FILE" "$SECRET_FILE"
 
       - name: Restore previous API image
         env:
@@ -65,7 +78,7 @@ jobs:
           umask 077
           CONTAINERS=$(jq -n \
             --arg image "$IMAGE" \
-            --slurpfile env /tmp/env.json \
+            --slurpfile env "$RUNNER_TEMP/env.json" \
             '{api: {image: $image, environment: $env[0], ports: {"8080": "HTTP"}}}')
 
           # The CLI echoes the whole deployment, environment included: stdout is discarded and only a sanitized
@@ -105,7 +118,7 @@ jobs:
 
       - name: Remove temporary environment files
         if: always()
-        run: rm -f /tmp/env.json /tmp/create-error.txt
+        run: rm -f "$RUNNER_TEMP/env.json" "$RUNNER_TEMP/bootstrap-access" "$RUNNER_TEMP/bootstrap-secret" /tmp/create-error.txt
 
   rollback-ui:
     needs: rollback-container
