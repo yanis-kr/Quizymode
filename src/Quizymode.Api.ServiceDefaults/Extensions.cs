@@ -66,6 +66,13 @@ public static class Extensions
             // Set OTLP protocol to http/protobuf as required by Grafana Cloud
             Environment.SetEnvironmentVariable("OTEL_EXPORTER_OTLP_PROTOCOL", "http/protobuf");
             
+            // The Grafana distribution also reads GRAFANA_CLOUD_API_KEY itself. Take that value from configuration (where
+            // SSM supplies it) so a rotated key reaches the exporter and no secret has to sit in a plain container variable.
+            if (!string.IsNullOrWhiteSpace(apiKey))
+            {
+                Environment.SetEnvironmentVariable("GRAFANA_CLOUD_API_KEY", apiKey);
+            }
+
             // Construct Basic auth header if credentials are provided
             if (!string.IsNullOrWhiteSpace(otlpInstanceId) && !string.IsNullOrWhiteSpace(apiKey))
             {
