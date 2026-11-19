@@ -1485,6 +1485,27 @@
         }
       }
     },
+    "/admin/config-sources": {
+      "get": {
+        "tags": [
+          "Admin"
+        ],
+        "summary": "Where each secret-looking configuration key comes from (Admin only)",
+        "description": "Lists key names and their source (ssm, environment or appsettings). Values are never returned.",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Quizymode.Api.Features.Admin.GetConfigSources.Response"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "/admin/analytics/content": {
       "get": {
         "tags": [
@@ -9640,6 +9661,32 @@
           },
           "count": {
             "$ref": "#/components/schemas/System.Int32"
+          }
+        }
+      },
+      "Quizymode.Api.Features.Admin.GetConfigSources.Response": {
+        "required": [
+          "keys"
+        ],
+        "type": "object",
+        "properties": {
+          "keys": {
+            "$ref": "#/components/schemas/System.Collections.Generic.IReadOnlyListOfQuizymode.Api.Features.Admin.GetConfigSources.SourceItem"
+          }
+        }
+      },
+      "Quizymode.Api.Features.Admin.GetConfigSources.SourceItem": {
+        "required": [
+          "key",
+          "source"
+        ],
+        "type": "object",
+        "properties": {
+          "key": {
+            "$ref": "#/components/schemas/System.String"
+          },
+          "source": {
+            "$ref": "#/components/schemas/System.String"
           }
         }
       },
@@ -20109,6 +20156,12 @@
         "type": "array",
         "items": {
           "$ref": "#/components/schemas/Quizymode.Api.Features.Users.RecordPolicyAcceptances.PolicyAcceptanceResponse"
+        }
+      },
+      "System.Collections.Generic.IReadOnlyListOfQuizymode.Api.Features.Admin.GetConfigSources.SourceItem": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/Quizymode.Api.Features.Admin.GetConfigSources.SourceItem"
         }
       },
       "System.Collections.Generic.IReadOnlyListOfQuizymode.Api.Features.Admin.GetDatabaseSize.TableSizeResponse": {
