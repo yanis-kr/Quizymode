@@ -48,4 +48,4 @@ Store a manual value with `aws ssm put-parameter --type SecureString --overwrite
 
 A recipe is `scripts/rotate/recipes/<provider>.mjs` exporting `create(page, entry)` (returns `{ values: { secret }, oldRef }`), `check(values, entry)` and `revoke(page, oldRef, entry)`. A recipe must not log, screenshot or return page text. Provider recipes are added one at a time, walked through once with the owner signed in; until a recipe exists the tool stops with "no recipe" for that secret and nothing changes. Record the date a recipe was last walked through at its top.
 
-Not covered yet: SES SMTP credential and the CloudFront signing key pair (add inventory entries when their SSM parameters exist).
+Cerebras has no recipe: its account has no API access yet (no payment method), so its key is not rotated until that changes. Not covered yet: SES SMTP credential and the CloudFront signing key pair (add inventory entries when their SSM parameters exist).

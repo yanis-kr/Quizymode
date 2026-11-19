@@ -170,11 +170,11 @@ import { httpCheck } from "../rotate/recipes/_lib.mjs";
 test("every browser entry in the inventory has a recipe file except the ones still to be walked", async () => {
   const { existsSync } = await import("node:fs");
   const missing = inventory.secrets.filter((s) => s.method === "browser" && !existsSync(new URL(`../rotate/recipes/${s.provider}.mjs`, import.meta.url))).map((s) => s.name);
-  assert.deepEqual(missing.sort(), ["cerebras", "gemini", "grafana-cloud"]);
+  assert.deepEqual(missing.sort(), ["cerebras"]);
 });
 
 test("provider recipes export create, check and revoke", async () => {
-  for (const p of ["groq", "openrouter", "openai", "github-pat", "supabase-db"]) {
+  for (const p of ["groq", "openrouter", "openai", "github-pat", "supabase-db", "gemini", "grafana"]) {
     const r = await import(`../rotate/recipes/${p}.mjs`);
     for (const fn of ["create", "check", "revoke"]) assert.equal(typeof r[fn], "function", `${p}.${fn}`);
   }
