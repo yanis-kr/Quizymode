@@ -164,3 +164,26 @@ test("supabase-db recipe replaces only the password and quotes awkward character
   assert.throws(() => withPassword("Host=h;Username=u", "p"), /no Password/);
   assert.deepEqual(connectionParts(cs), { host: "db.example.supabase.co", port: "5432", user: "postgres", db: "postgres" });
 });
+
+import { httpCheck } from "../rotate/recipes/_lib.mjs";
+
+test("every browser entry in the inventory has a recipe file except the ones still to be walked", async () => {
+  const { existsSync } = await import("node:fs");
+  const missing = inventory.secrets.filter((s) => s.method === "browser" && !existsSync(new URL(`../rotate/recipes/${s.provider}.mjs`, import.meta.url))).map((s) => s.name);
+  assert.deepEqual(missing.sort(), ["cerebras", "gemini", "grafana-cloud"]);
+});
+
+test("provider recipes export create, check and revoke", async () => {
+  for (const p of ["groq", "openrouter", "openai", "github-pat", "supabase-db"]) {
+    const r = await import(`../rotate/recipes/${p}.mjs`);
+    for (const fn of ["create", "check", "revoke"]) assert.equal(typeof r[fn], "function", `${p}.${fn}`);
+  }
+});
+
+test("httpCheck sends the key in a header only and reports ok or not", async () => {
+  let seen;
+  const fetchImpl = async (url, init) => { seen = { url, init }; return { ok: true }; };
+  assert.equal(await httpCheck("https://api.example/v1/models", { Authorization: `Bearer ${CANARY}` }, fetchImpl), true);
+  assert.ok(!seen.url.includes(CANARY));
+  assert.equal(await httpCheck("https://x", {}, async () => { throw new Error(CANARY); }), false);
+});
