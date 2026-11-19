@@ -113,26 +113,13 @@ In the repo → **Settings → Secrets and variables → Actions**:
 |---|---|
 | `AWS_DEPLOY_ROLE_ARN` | ARN of the role created above (e.g. `arn:aws:iam::123456789012:role/github-actions-quizymode-deploy`) |
 
-## LightSail configuration preserved across deployments
+## LightSail configuration comes from the repository and SSM
 
-The deploy workflow fetches env vars from the currently active deployment via `get-container-service-deployments`, so values configured in the LightSail console are preserved. Only the image tag changes.
+The deploy and rollback workflows build the container environment from the checked-in `infra/lightsail/env.prod.json` (non-secret settings, reviewed in the PR) plus the two SSM bootstrap values `APP_Config__Ssm__AccessKeyId` and `APP_Config__Ssm__SecretAccessKey`. Deploy reads the file from the commit it deploys. Rollback reads the file from the failed commit's tree, so it restores the old image and never old secrets. Neither workflow copies the environment of the active deployment (#785, AC 7.11.28). Secrets live in SSM under `/quizymode/prod/` (`docs/infra/SSM.md`).
 
 **Never print the environment.** It holds secrets and the repository is public. The workflows write it to a private temp file, mask secret-looking values with `::add-mask::`, discard the stdout of `create-container-service-deployment` (the CLI echoes the whole deployment) and print only a sanitized error line. A final `if: always()` step deletes the temp files. `scripts/ci/check-workflow-secret-output.mjs` enforces this in CI (AC 7.11.20). Before #779 (up to run 44226610307, 2026-11-18) every Deploy run that created a deployment printed the environment into its log; those values must be rotated (#781).
 
-Current container env vars (values stored in LightSail, not in GitHub):
-
-- `APP_Authentication__Cognito__ClientId`
-- `APP_Authentication__Cognito__Audience`
-- `APP_Authentication__Cognito__Authority`
-- `APP_ConnectionStrings__PostgreSQL`
-- `APP_Gemini__ApiKey` / `APP_Groq__ApiKey` / `APP_Cerebras__ApiKey` / `APP_OpenRouter__ApiKey` / `APP_OpenAI__ApiKey` (study-guide LLM vendors, #464; a vendor without a key is skipped). `APP_DeepSeek__*` is no longer read and can be removed. Optional: `APP_{Vendor}__BaseUrl`, `APP_{Vendor}__MaxTokens` (Groq defaults to 4000).
-- `APP_GrafanaCloud__ApiKey`
-- `APP_GrafanaCloud__Enabled`
-- `APP_GrafanaCloud__LokiInstanceId`
-- `APP_GrafanaCloud__LokiEndpoint`
-- `APP_GrafanaCloud__OtlpEndpoint`
-- `APP_GrafanaCloud__OtlpInstanceId`
-- `ASPNETCORE_ENVIRONMENT`
+Settings in the file: see `infra/lightsail/env.prod.json`. Secrets are never in the file; `scripts/tests/lightsail-env-file.test.mjs` fails if a secret-looking name is added. The admin notification address is the project support mailbox (`support@quizymode.com`); personal addresses must not be added to this public file.
 
 ## Related docs
 

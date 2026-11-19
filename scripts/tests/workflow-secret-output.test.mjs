@@ -92,7 +92,7 @@ test("the guard fails when the env file is not removed by an if: always() step",
 
 test("both workflows remove the temporary env file in an if: always() step", () => {
   for (const text of [deploy, rollback]) {
-    assert.match(text, /if: always\(\)\s+run: rm -f \/tmp\/env\.json/);
+    assert.match(text, /if: always\(\)\s+run: rm -f "\$RUNNER_TEMP\/env\.json"/);
   }
 });
 test("rollback.yml has real backslash continuations and no stray +", () => {
@@ -112,6 +112,7 @@ case "$AWS_STUB_MODE" in
   api-error) echo "An error occurred (InvalidInputException) when calling the CreateContainerServiceDeployment operation: bad input CANARY-SECRET-VALUE-0123456789" >&2; exit 254 ;;
   param-error) echo "Parameter validation failed: Invalid value CANARY-SECRET-VALUE-0123456789" >&2; exit 252 ;;
   env) printf '%s' "$AWS_STUB_ENV_JSON"; exit 0 ;;
+  ssm) case "$*" in *BootstrapAccessKeyId*) echo "CANARY-ACCESS-KEY-ID-0123456789" ;; *) echo "CANARY-SECRET-VALUE-0123456789" ;; esac; exit 0 ;;
 esac
 `;
     writeFileSync(join(dir, "aws"), stub);
@@ -126,6 +127,7 @@ esac
         AWS_STUB_MODE: awsMode,
         AWS_STUB_ENV_JSON: envJson ?? "",
         IMAGE: "ghcr.io/example/app:abc",
+        RUNNER_TEMP: dir,
       },
     });
     const log = `${result.stdout}\n${result.stderr}`;
@@ -166,15 +168,24 @@ for (const [label, yaml, stepName] of [
   });
 }
 
+// #785: the build step reads the two SSM bootstrap values, masks them and writes the file plus the pair. Neither value
+// may be printed; both must be masked.
 for (const [label, yaml, stepName] of [
-  ["deploy.yml", deploy, "Fetch environment variables from active deployment"],
-  ["rollback.yml", rollback, "Read current environment"],
+  ["deploy.yml", deploy, "Build container environment"],
+  ["rollback.yml", rollback, "Build container environment"],
 ]) {
-  test(`${label} fetch step masks secret-looking values and prints nothing else`, { skip: !canRun }, () => {
-    const out = runStep(stepRun(yaml, stepName), { awsMode: "env", envJson: CANARY_ENV });
+  test(`${label} build step masks the SSM bootstrap pair and prints nothing else`, { skip: !canRun }, () => {
+    const out = runStep(stepRun(yaml, stepName), { awsMode: "ssm", envJson: CANARY_ENV });
     assert.equal(out.status, 0, out.log);
     assert.doesNotMatch(out.visible, /CANARY/);
     assert.ok(out.masks.some((m) => m.includes("CANARY-SECRET-VALUE-0123456789")), "the secret value is masked");
-    assert.ok(!out.masks.some((m) => /Production|true/.test(m)), "short flags stay readable");
+    assert.ok(out.masks.some((m) => m.includes("CANARY-ACCESS-KEY-ID-0123456789")), "the access key id is masked");
   });
 }
+
+test("deploy.yml and rollback.yml never copy the active deployment's environment", () => {
+  for (const text of [deploy, rollback]) {
+    assert.doesNotMatch(text, /get-container-service-deployments[^\n]*\.containers\.api\.environment/);
+    assert.match(text, /infra\/lightsail\/env\.prod\.json/);
+  }
+});
