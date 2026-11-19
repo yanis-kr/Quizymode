@@ -39,6 +39,29 @@ describe("LlmFindingsBanner", () => {
     expect(screen.getByRole("link", { name: "Open AI providers" })).toHaveAttribute("href", "/admin/ai-providers");
   });
 
+  it("AC 13.11 shows the singular sentence for exactly one finding (#792)", async () => {
+    getModelFindings.mockResolvedValue({
+      findings: [{ id: "1", vendor: "OpenAI", model: "gpt-5-nano", kind: "ModelMissing", firstSeenUtc: "", lastSeenUtc: "" }],
+    });
+    renderBanner(true);
+
+    expect(await screen.findByText("A configured LLM model was not found in its vendor's model list.")).toBeInTheDocument();
+  });
+
+  it("AC 13.10 shows the plural sentence for two or more findings (#792)", async () => {
+    getModelFindings.mockResolvedValue({
+      findings: [
+        { id: "1", vendor: "OpenAI", model: "gpt-5-nano", kind: "ModelMissing", firstSeenUtc: "", lastSeenUtc: "" },
+        { id: "2", vendor: "Anthropic", model: "claude-x", kind: "ModelMissing", firstSeenUtc: "", lastSeenUtc: "" },
+      ],
+    });
+    renderBanner(true);
+
+    expect(
+      await screen.findByText("Some configured LLM models were not found in their vendors' model lists.")
+    ).toBeInTheDocument();
+  });
+
   it("is hidden when there are no findings", async () => {
     getModelFindings.mockResolvedValue({ findings: [] });
     renderBanner(true);

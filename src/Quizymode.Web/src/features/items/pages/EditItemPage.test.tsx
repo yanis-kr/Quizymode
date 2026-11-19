@@ -282,7 +282,7 @@ describe("EditItemPage", () => {
   it.each([
     [401, "Your session has expired. Please sign in again."],
     [403, "You can only edit your own items."],
-    [404, "This item no longer exists or you don't have access to it."],
+    [404, "This item no longer exists, or you do not have access to it."],
   ])("maps a %s save failure to a clear message without leaving the page (#286)", async (status, message) => {
     // AC 2.1.14
     const user = userEvent.setup({ delay: null });
