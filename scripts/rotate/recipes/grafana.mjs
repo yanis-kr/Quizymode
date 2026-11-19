@@ -38,9 +38,12 @@ export async function revoke(page, oldRef) {
   for (const name of names) {
     card = await policyCard(page);
     await card.getByText(/\d+ tokens?/).first().click();
-    const token = card.locator("div", { hasText: new RegExp(`^\\s*${name}\\b`) }).filter({ has: page.getByRole("button", { name: /^Delete$/ }) }).last();
-    await token.getByRole("button", { name: /^Delete$/ }).click();
-    await page.getByRole("button", { name: /^(delete|confirm|yes)/i }).last().click();
+    await page.waitForTimeout(2000);
+    const del = card.getByRole("button", { name: `Delete token ${name}`, exact: true });
+    if (!(await del.count())) throw new Error(`Grafana token ${name}: delete button not found`);
+    await del.click();
+    // The confirmation is an inline "Delete token" button, not a role=dialog.
+    await page.getByRole("button", { name: "Delete token", exact: true }).click();
     await page.waitForTimeout(2000);
   }
   await page.close();
