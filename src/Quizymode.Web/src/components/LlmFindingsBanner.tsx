@@ -29,7 +29,7 @@ export default function LlmFindingsBanner({ isAdmin }: LlmFindingsBannerProps) {
         <p className="font-semibold">
           {data.findings.length === 1
             ? "A configured LLM model was not found in its vendor's model list."
-            : "Configured LLM models were not found in their vendors' model lists."}
+            : "Some configured LLM models were not found in their vendors' model lists."}
         </p>
         <ul className="list-disc pl-5">
           {data.findings.map((finding) => (
