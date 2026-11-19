@@ -1,5 +1,6 @@
 using System.Reflection;
 using Microsoft.Extensions.Options;
+using Quizymode.Api.Shared.Configuration;
 using Quizymode.Api.Shared.Options;
 using Serilog;
 using Serilog.Sinks.Grafana.Loki;
@@ -67,6 +68,9 @@ internal static partial class StartupExtensions
                 .Enrich.FromLogContext()
                 // Never log the text a visitor searched for (GET /search?q=...).
                 .Enrich.With(SearchQueryLogRedactor.Instance)
+                // Any property named like a secret (ApiKey, Password, Token, ...) is masked, plus SecretString values.
+                .Enrich.With(SecretLogRedactor.Instance)
+                .Destructure.With(SecretLogRedactor.Instance)
                 .Enrich.WithProperty("Application", "QuizyMode")
                 .WriteTo.Console(theme: AnsiConsoleTheme.Code,
                                  outputTemplate: "[{Timestamp:HH:mm:ss} {Level:u3}] {Message:lj}{NewLine}{Exception}");

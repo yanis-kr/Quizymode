@@ -10,6 +10,7 @@ internal static partial class StartupExtensions
     {
         StartupLogger();
         builder.Configuration.AddEnvironmentVariables(prefix: "APP_");
+        builder.AddSsmConfiguration();
 
         builder.AddServiceDefaults();
         builder.AddLoggingServices();
