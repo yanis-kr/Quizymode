@@ -10,7 +10,7 @@ AWS Lightsail hosts the Quizymode API container in production.
 
 ## Operational Notes
 
-- Keep runtime configuration in Lightsail environment variables rather than checked-in appsettings files.
+- Keep runtime configuration in Lightsail environment variables rather than checked-in appsettings files. Secrets belong in SSM Parameter Store instead; see [SSM.md](./SSM.md) (runbook, helper scripts, cut-over and rollback).
 - Cognito and Grafana settings referenced by the API should be supplied through environment variables in the service configuration.
 - After deployment changes, verify API health, auth flows, and telemetry export from the running container.
 
