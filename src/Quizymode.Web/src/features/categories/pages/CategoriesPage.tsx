@@ -937,7 +937,7 @@ const CategoriesPage = () => {
     return (
       <div className="px-4 py-6">
         <div className="max-w-2xl mx-auto">
-          <p className="text-gray-600 mb-4">Category not found.</p>
+          <p className="text-gray-600 mb-4">That category does not exist.</p>
           <Link
             to="/categories"
             className="text-indigo-ink hover:text-indigo-ink"

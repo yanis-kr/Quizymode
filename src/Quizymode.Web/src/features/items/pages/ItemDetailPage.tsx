@@ -73,7 +73,7 @@ const ItemDetailPage = () => {
             ? "You can only delete your own items."
             : status === 404
               ? "This item no longer exists."
-              : "Failed to delete item."
+              : "Could not delete this item. Try again."
       );
     },
   });
