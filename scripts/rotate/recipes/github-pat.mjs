@@ -6,9 +6,12 @@ import { captureSecret, httpCheck } from "./_lib.mjs";
 export async function create(page) {
   await page.goto("https://github.com/settings/personal-access-tokens");
   await page.getByRole("link", { name: /Quizymode seeder/i }).first().click();
-  await page.getByRole("button", { name: /Regenerate token/i }).first().click();
-  const confirm = page.getByRole("button", { name: /^Regenerate token$/i }).last();
-  await confirm.click();
+  await page.waitForLoadState("domcontentloaded");
+  // Regenerate has its own page and needs GitHub sudo mode (confirm with the passkey first). Expiry defaults to 30 days; use 90.
+  await page.goto(page.url().replace(/\/regenerate$/, "") + "/regenerate");
+  await page.getByRole("button", { name: /days/ }).click();
+  await page.getByRole("menuitemradio", { name: /^90 days/ }).click();
+  await page.getByRole("button", { name: /^Regenerate token$/i }).click();
   const secret = await captureSecret(page, "github_pat_[A-Za-z0-9_]{30,}");
   await page.close();
   return { values: { secret }, oldRef: null };
