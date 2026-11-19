@@ -12,7 +12,7 @@ Production secrets live in AWS Systems Manager Parameter Store as `SecureString`
 
 ## Parameters the API reads
 
-Names only, taken from the options classes and `LlmVendors`. All are secret.
+Names only, taken from the options classes and `LlmVendors`. All are secret. The SMTP user name (an IAM access key id) is stored beside its password as `/quizymode/prod/Email/Smtp/UserName`, so both halves rotate together.
 
 | Parameter | Configuration key |
 |---|---|
@@ -24,7 +24,7 @@ Names only, taken from the options classes and `LlmVendors`. All are secret.
 | `/quizymode/prod/GrafanaCloud/ApiKey` | `GrafanaCloud:ApiKey` |
 | `/quizymode/prod/Gemini/ApiKey` | `Gemini:ApiKey` |
 | `/quizymode/prod/Groq/ApiKey` | `Groq:ApiKey` |
-| `/quizymode/prod/Cerebras/ApiKey` | `Cerebras:ApiKey` |
+| `/quizymode/prod/Cerebras/ApiKey` | `Cerebras:ApiKey` (not stored: the account has no key yet) |
 | `/quizymode/prod/OpenRouter/ApiKey` | `OpenRouter:ApiKey` |
 | `/quizymode/prod/OpenAI/ApiKey` | `OpenAI:ApiKey` |
 
@@ -76,8 +76,8 @@ One inline policy, read-only on the production path. Replace `<account>` with th
 Create an access key for this user in the IAM console (Security credentials) and save the pair to two private files, then store it under the deploy path:
 
 ```powershell
-.\scripts\ops\ssm-put-secret.ps1 -Name /quizymode/deploy/ApiConfig/AccessKeyId -FromFile C:\secure\id.txt
-.\scripts\ops\ssm-put-secret.ps1 -Name /quizymode/deploy/ApiConfig/SecretAccessKey -FromFile C:\secure\secret.txt
+.\scripts\ops\ssm-put-secret.ps1 -Name /quizymode/deploy/BootstrapAccessKeyId -FromFile C:\secure\id.txt
+.\scripts\ops\ssm-put-secret.ps1 -Name /quizymode/deploy/BootstrapSecretAccessKey -FromFile C:\secure\secret.txt
 Remove-Item C:\secure\id.txt, C:\secure\secret.txt
 ```
 
@@ -91,7 +91,9 @@ With the default AWS-managed key `alias/aws/ssm` it normally does not: the key p
 aws ssm get-parameters-by-path --path /quizymode/prod/ --recursive --with-decryption --query 'Parameters[].Name' --profile quizymode-api-config
 ```
 
-If this succeeds, no KMS statement is needed. If it fails with `AccessDeniedException` on KMS, add `kms:Decrypt` on the key `alias/aws/ssm` to the reader's policy and record that here. Result of the test: _not run yet (#784)_.
+If this succeeds, no KMS statement is needed. If it fails with `AccessDeniedException` on KMS, add `kms:Decrypt` on the key `alias/aws/ssm` to the reader's policy and record that here. Result of the test (2026-11-19, #784): the reader decrypts all parameters under `/quizymode/prod/` with the policy above and no KMS statement, and is denied on `/quizymode/deploy/*`. No `kms:Decrypt` statement is needed.
+
+**Do not create placeholder parameters.** The SSM source is added after the `APP_` environment variables, so a parameter wins over an environment value for the same key. A dummy value would silently replace a real one. Only store a parameter when its real value is in it.
 
 ## Cut-over and rollback
 
@@ -101,4 +103,8 @@ If this succeeds, no KMS statement is needed. If it fails with `AccessDeniedExce
 4. Keep the old environment values until the API has run on SSM for a while.
 5. Remove the old secret environment values only after that.
 
-**Rollback:** set `APP_Config__Ssm__Enabled=false` in the Lightsail console and deploy; the API goes back to the environment values, which are kept until step 5. If SSM is enabled and unreachable the API refuses to start rather than run without secrets.
+**State on 2026-11-19 (#784):** the container reads 11 keys from SSM (database, Media S3 pair, SMTP user and password, GitHub seed-sync token, Grafana, Gemini, Groq, OpenAI, OpenRouter) and those values are no longer container variables. Still plain variables: the Turnstile secret (the API does not read it) and non-secret settings. `GRAFANA_CLOUD_API_KEY` is set at startup from `GrafanaCloud:ApiKey` (AC 7.11.27), so it is not a container variable either.
+
+**Rollback:** because the old values were removed from the container, turning SSM off now also needs the values put back as `APP_` variables. Prefer fixing the SSM side (credentials, IAM, region) and redeploying.
+
+**Rollback (original text, valid before step 5):** set `APP_Config__Ssm__Enabled=false` in the Lightsail console and deploy; the API goes back to the environment values, which are kept until step 5. If SSM is enabled and unreachable the API refuses to start rather than run without secrets.
