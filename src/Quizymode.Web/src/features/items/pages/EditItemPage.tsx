@@ -236,7 +236,7 @@ const EditItemPage = () => {
     const status = err?.response?.status;
     if (status === 401) return "Your session has expired. Please sign in again.";
     if (status === 403) return "You can only edit your own items.";
-    if (status === 404) return "This item no longer exists or you don't have access to it.";
+    if (status === 404) return "This item no longer exists, or you do not have access to it.";
     if (!err?.response?.data) return err?.message ?? "Failed to update item.";
     const data = err.response.data;
     if (Array.isArray(data))
