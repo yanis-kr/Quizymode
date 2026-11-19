@@ -19,13 +19,16 @@ export async function create(page) {
 export const check = (values) => httpCheck("https://api.groq.com/openai/v1/models", { Authorization: `Bearer ${values.secret}` });
 
 export async function revoke(page, oldRef) {
-  await page.goto("https://console.groq.com/keys");
   for (const tail of oldRef.split(",").filter(Boolean)) {
+    // Reload for every key: the table re-renders after a delete. A key that is already gone is skipped, so a rerun is safe.
+    await page.goto("https://console.groq.com/keys");
+    await page.waitForTimeout(3000);
     const row = page.locator("tr", { hasText: tail }).first();
+    if ((await page.locator("tr", { hasText: tail }).count()) === 0) continue;
     await row.getByRole("button").last().click();
     await page.getByRole("button", { name: /delete|revoke/i }).last().click();
     await page.getByRole("button", { name: /^(delete|revoke|confirm)/i }).last().click();
-    await row.waitFor({ state: "detached", timeout: 15000 });
+    await page.waitForTimeout(3000);
   }
   await page.close();
 }
