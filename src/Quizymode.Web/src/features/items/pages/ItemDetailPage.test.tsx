@@ -199,7 +199,7 @@ describe("ItemDetailPage", () => {
       [401, "Your session has expired. Please sign in again."],
       [403, "You can only delete your own items."],
       [404, "This item no longer exists."],
-      [500, "Failed to delete item."],
+      [500, "Could not delete this item. Try again."],
     ])("shows a clear message for a %s delete failure and stays on the page", async (status, message) => {
       // AC 2.1.14
       authState.isAuthenticated = true;
