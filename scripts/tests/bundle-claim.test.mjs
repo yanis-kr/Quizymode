@@ -7,6 +7,7 @@ function fakeGitHub(issues) {
   const calls = [];
   const gh = (args) => {
     calls.push(args.join(" "));
+    if (args[0] === "label" && args[1] === "create") return "";
     const [, verb, numStr] = args;
     const issue = issues[numStr];
     if (args[0] !== "issue") throw new Error(`unexpected gh ${args.join(" ")}`);
@@ -95,4 +96,23 @@ test("AC 7.19.7: postOnce posts a closure comment once per issue and bundle", ()
   assert.equal(postOnce({ bundleId: "b-1", issue: 753, marker: "evidence", body: "evidence A", deps: { gh } }).result, "exists");
   assert.equal(issues[753].comments.length, 1);
   assert.equal(postOnce({ bundleId: "b-2", issue: 753, marker: "evidence", body: "evidence B", deps: { gh } }).result, "posted");
+});
+
+test("AC 7.19.15: the bundle label is created in the repo before any issue is labelled", () => {
+  const issues = { 753: issue() };
+  const { gh, calls } = fakeGitHub(issues);
+  claimIssues({ bundleId: "b-new", issues: [753], deps: { gh } });
+  const createAt = calls.findIndex((c) => c === "label create bundle:b-new --color 1D76DB --description Claimed by bundle b-new --force");
+  const editAt = calls.findIndex((c) => c.startsWith("issue edit 753 --add-label"));
+  assert.ok(createAt >= 0, "label create with --force is called");
+  assert.ok(createAt < editAt, "label is created before the issue is labelled");
+  assert.ok(issues[753].labels.includes("bundle:b-new"));
+});
+
+test("AC 7.19.15: creating an existing bundle label is idempotent (--force), so a second claim run still succeeds", () => {
+  const issues = { 753: issue({ labels: ["status:ready", "bundle:b-1"] }) };
+  const { gh, calls } = fakeGitHub(issues);
+  const r = claimIssues({ bundleId: "b-1", issues: [753], deps: { gh } });
+  assert.equal(r.results[0].result, "resumed");
+  assert.ok(calls.some((c) => c.startsWith("label create bundle:b-1") && c.endsWith("--force")));
 });

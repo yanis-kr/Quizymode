@@ -18,6 +18,7 @@ import { fileURLToPath } from "node:url";
 import { sliceAc } from "../validation/ac-slice.mjs";
 import { ROLES, routeModel, classifyIssue, MODEL_ORDER } from "../automation/model-policy.mjs";
 import { readRun, writeRun, runFilePath } from "./autopilot-run.mjs";
+import { checkUserReply } from "./approval-reply.mjs";
 
 const SCHEMA_VERSION = 1;
 const ID_RE = /^[a-z0-9][a-z0-9-]{2,47}$/;
@@ -769,11 +770,12 @@ switch (cmd) {
       // Standing approval (#759): no user reply. The manifest must fit the owner-approved envelope, with a clean review and a lead proceed.
       approval = standingApproval(p, m, hash);
     } else {
-      const reply = opts["user-reply"];
-      if (typeof reply !== "string" || !reply.trim()) die(1, "--user-reply \"<verbatim user approval text>\" is required");
-      const replyHash = (reply.match(/\bapprove\s+([0-9a-f]{8,64})\b/i) ?? [])[1];
-      if (!replyHash || replyHash.toLowerCase() !== given.toLowerCase()) die(2, "The user's reply must itself contain 'approve <hash prefix>' matching --hash. An 'ok' to questions is not an approval.");
-      approval = { approvedBy: "user, in the qm-bundle-refine session", userReply: opts["user-reply"] };
+      const check = checkUserReply({ reply: opts["user-reply"], given });
+      if (!check.ok) die(check.reason.startsWith("--user-reply") ? 1 : 2, check.reason);
+      approval = {
+        approvedBy: check.kind === "start-autopilot" ? "user, start autopilot" : "user, in the qm-bundle-refine session",
+        userReply: opts["user-reply"],
+      };
     }
     const prev = fs.existsSync(p.approval) ? readJson(p.approval) : null;
     if (fs.existsSync(p.state)) die(2, "Execution already started for this bundle; create a new bundle id instead of re-approving a running one.");
