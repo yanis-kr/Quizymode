@@ -571,6 +571,7 @@ Anonymous visitors can bookmark public collections without an account. The list 
 - **AC 2.5.12** [Authenticated] **Given** I am authenticated and in a study flow (Flashcards or Quiz), **when** I open comments for the current item, **then** the UI opens a **comments drawer** over the current view without navigating away; the drawer shows existing comments, allows me to add a new comment, and lets me edit or delete my own comments; closing the drawer returns me to my previous position in the study flow.
 - **AC 2.5.13** [Owner of comment] **Given** I own a comment, **when** I view it in the comments section or drawer, **then** I see edit and delete controls for that comment; editing opens an inline editor; deleting removes the comment from the list immediately.
 - **AC 2.5.14** [Anonymous] **Given** I am not authenticated, **when** I view the comments section, **then** I can read existing comments but the add-comment control is not offered (or is disabled with a sign-in prompt).
+- **AC 2.5.15** [Anyone] [verify: unit] (#822) **Given** loading the comments for an item fails, **when** the comments drawer shows its error state, **then** it says "Could not load comments. Try again." and not "Failed to load comments", and it keeps the "Try again" control that retries the load (tests: `CommentsDrawer.test.tsx`).
 
 ---
 
