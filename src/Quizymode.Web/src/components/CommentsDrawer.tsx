@@ -149,7 +149,7 @@ export function CommentsDrawer({
             <LoadingSpinner />
           ) : error ? (
             <ErrorMessage
-              message="Failed to load comments"
+              message="Could not load comments. Try again."
               onRetry={() => refetch()}
             />
           ) : (
