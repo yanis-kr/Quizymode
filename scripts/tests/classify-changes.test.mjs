@@ -25,7 +25,8 @@ test("workflow and data changes run both", () => {
 test("item-data-only changes run the API tests but build and deploy nothing", () => {
   const items = [f("data/seed-source/items/exams/exams.aws.saa-c03.json"), f("data/seed-source/_registry/item-index.csv"), f("data/seed-source/_registry/source-file-index.json")];
   assert.deepEqual(classify(items), { web: false, api: false, apiTests: true, any: false });
-  assert.deepEqual(classify([...items, f("Directory.Build.props", true), f("docs/AC.md")]), { web: false, api: false, apiTests: true, any: false });
+  // A version bump in the same merge still deploys (AC 7.11.30).
+  assert.deepEqual(classify([...items, f("Directory.Build.props", true), f("docs/AC.md")]), { web: true, api: true, apiTests: true, any: true });
 });
 test("item data next to any other data or code keeps the full scope", () => {
   const item = f("data/seed-source/items/exams/a.json");
@@ -41,8 +42,9 @@ test("collections seed files and the seed-source root keep the full scope", () =
 test("unknown paths fail safe to both", () => {
   assert.deepEqual(classifyFile("infra/x.tf"), { web: true, api: true });
 });
-test("a version-only bump is ignored; a real props change is api", () => {
-  assert.deepEqual(classify([f("Directory.Build.props", true), f("src/Quizymode.Web/package.json", true), f("docs/AC.md")]), { web: false, api: false, apiTests: false, any: false });
+test("AC 7.11.30: a version-only bump sets web and api, so Deploy ships the new version", () => {
+  assert.deepEqual(classify([f("Directory.Build.props", true)]), { web: true, api: true, apiTests: true, any: true });
+  assert.deepEqual(classify([f("src/Quizymode.Web/package.json", true), f("docs/AC.md")]), { web: true, api: true, apiTests: true, any: true });
   assert.deepEqual(classify([f("Directory.Build.props", false)]), { web: false, api: true, apiTests: true, any: true });
 });
 test("isVersionOnlyDiff", () => {

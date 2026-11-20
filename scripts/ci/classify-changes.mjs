@@ -21,7 +21,7 @@ const API_FILES = ["Directory.Packages.props", "global.json", ".dockerignore", "
 // seeder reads it.
 const ITEM_DATA_PREFIXES = ["data/seed-source/items/", "data/seed-source/_registry/"];
 const SHARED_PREFIXES = [".github/workflows/", "data/"];
-// A change to these files that only touches the version line is a release bump, not a code change.
+// A change to these files that only touches the version line is a release bump: it sets web and api (AC 7.11.30).
 const VERSION_ONLY_FILES = [
   "Directory.Build.props", "src/Quizymode.Web/package.json", "src/Quizymode.Web/package-lock.json",
 ];
@@ -46,7 +46,12 @@ export function classify(files) {
   const scope = { web: false, api: false };
   let testsOnly = false;
   for (const f of files) {
-    if (f.versionOnly) continue;
+    // A version-only bump still redeploys both, so prod reports the version main carries (AC 7.11.30).
+    if (f.versionOnly) {
+      scope.web = true;
+      scope.api = true;
+      continue;
+    }
     const c = classifyFile(f.path);
     scope.web ||= c.web;
     scope.api ||= c.api;
