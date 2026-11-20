@@ -21,6 +21,16 @@ function bundleLabelsOf(labels) {
 }
 
 /**
+ * Creates the bundle's claim label in the repo if it is missing (AC 7.19.15). `--force` makes it idempotent: an existing
+ * label is updated, not duplicated, so a restarted or second claim run never fails on it.
+ */
+export function ensureBundleLabel({ bundleId, deps = {} }) {
+  const label = `${BUNDLE_LABEL_PREFIX}${bundleId}`;
+  (deps.gh ?? ghDefault)(["label", "create", label, "--color", "1D76DB", "--description", `Claimed by bundle ${bundleId}`, "--force"]);
+  return label;
+}
+
+/**
  * Claims each issue for bundleId. Returns { ok, results } where each result is one of:
  *   claimed      the label and claim comment were added now
  *   resumed      this bundle already holds the claim; nothing was written
@@ -29,6 +39,7 @@ function bundleLabelsOf(labels) {
  */
 export function claimIssues({ bundleId, issues, deps = {} }) {
   const label = `${BUNDLE_LABEL_PREFIX}${bundleId}`;
+  ensureBundleLabel({ bundleId, deps });
   const results = [];
   for (const issue of issues) {
     const view = ghJson(["issue", "view", String(issue), "--json", "labels,comments,state"], deps) ?? {};
