@@ -467,7 +467,8 @@ jobs:
   # green), then posts the coverage summary and, on main, moves :latest to the image api-image pushed.
   build-test-publish:
     needs: [changes, frontend, frontend-tests, backend-tests, api-image]
-    if: always()
+    # Not always(): a run superseded by a newer push is cancelled, and its required checks should be skipped, not red.
+    if: ${{ !cancelled() }}
     runs-on: ubuntu-latest
     permissions:
       contents: read
@@ -692,7 +693,7 @@ jobs:
 
   release-ready:
     name: release-ready
-    if: always()
+    if: ${{ !cancelled() }}
     needs: [changes, build-test-publish, e2e, ac-gate, seed-quality, automation-contract]
     runs-on: ubuntu-latest
     timeout-minutes: 5
