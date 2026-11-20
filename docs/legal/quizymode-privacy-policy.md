@@ -74,6 +74,8 @@ We do not sell personal information, and the current app does not use third-part
 
 When you ask Quizymode to generate questions from a study guide you uploaded, the text of each section you choose is sent to a third-party AI provider, which returns draft questions. We send only the section text and our instructions; we do not send your name, email address, or account details. We clear the temporary generation copy once its questions are generated. Uploaded section text remains until the document expires, normally 30 days after its last activity, when cleanup removes the text.
 
+Photos and scanned PDFs are processed for text recognition locally in your browser. Original images are not uploaded to QuizyMode or sent to third-party OCR services. You can review and edit the recognized text before submitting it. Once submitted, the text is handled like other study-guide text and may be sent to third-party AI providers to generate questions. The same study-guide retention policy applies.
+
 Depending on availability, a section may be processed by one of these providers, tried in order until one succeeds:
 
 - **Google Gemini API** (Google). On Google's free tier, Google may use submitted content to improve its products, and human reviewers may read it.
