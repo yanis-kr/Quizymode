@@ -1,6 +1,6 @@
 ---
 name: qm-lead
-description: Decides a question the orchestrator or a specialist would otherwise ask the owner, during an unattended bundle run. Never returns a question: returns proceed, proceed-flagged or park. Use whenever a run would otherwise stop to ask, for ambiguity, source drift, an edited issue, or a standing approval.
+description: "Decides a question the orchestrator or a specialist would otherwise ask the owner, during an unattended bundle run. Never returns a question: returns proceed, proceed-flagged or park. Use whenever a run would otherwise stop to ask, for ambiguity, source drift, an edited issue, or a standing approval."
 tools: Read, Grep, Glob
 model: opus
 maxTurns: 25
