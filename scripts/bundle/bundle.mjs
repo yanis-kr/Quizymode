@@ -367,9 +367,12 @@ function originNameWithOwner() {
 }
 function globToRegex(g) {
   let p = g.replace(/\\/g, "/");
-  if (!/[*?]/.test(p)) p = p.replace(/\/$/, "") + "{DIR}"; // bare file or directory: match it and everything below
-  const s = p.replace(/[.+^$()|[\]]/g, "\\$&").replace(/\*\*\//g, "\u0001").replace(/\*\*/g, "\u0000").replace(/\*/g, "[^/]*").replace(/\?/g, "[^/]")
-    .replace(/\u0001/g, "(?:.*/)?").replace(/\u0000/g, ".*").replace("{DIR}", "(?:/.*)?");
+  // A bare file or directory matches itself and everything below it. Escape every regex metacharacter first,
+  // including braces and backslashes (CodeQL js/incomplete-sanitization), then add the wildcards and the suffix.
+  const bare = !/[*?]/.test(p);
+  if (bare) p = p.replace(/\/$/, "");
+  const s = p.replace(/[.+^$(){}|[\]\\]/g, "\\$&").replace(/\*\*\//g, "\u0001").replace(/\*\*/g, "\u0000").replace(/\*/g, "[^/]*").replace(/\?/g, "[^/]")
+    .replace(/\u0001/g, "(?:.*/)?").replace(/\u0000/g, ".*") + (bare ? "(?:/.*)?" : "");
   return new RegExp(`^${s}$`);
 }
 function overlaps(paths, files) {
@@ -1232,7 +1235,9 @@ switch (cmd) {
     // Dispatch record (AC 7.13.3): the model this role ran on and why, copied from its packet line.
     const packetsDir = typeof opts["packets-dir"] === "string" ? path.resolve(String(opts["packets-dir"])) : path.join(mainCheckoutRoot(), ".qm", "packets");
     const packetFile = path.join(packetsDir, `${issue}.md`);
-    const line = fs.existsSync(packetFile) ? new RegExp(`^- ${role}: (\\w+)\\. Why: (.+)$`, "m").exec(fs.readFileSync(packetFile, "utf8")) : null;
+    // The role comes from the command line: escape it so it matches literally (CodeQL js/regex-injection).
+    const roleRe = String(role).replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+    const line = fs.existsSync(packetFile) ? new RegExp(`^- ${roleRe}: (\\w+)\\. Why: (.+)$`, "m").exec(fs.readFileSync(packetFile, "utf8")) : null;
     const dispatch = line ? { role, issue, model: line[1], reason: line[2].trim() } : { role, issue, model: null, reason: "no packet line for this role" };
     writeJsonAtomic(file, { ...h, issue, role, claimed: true, dispatch, savedAt: new Date().toISOString() });
     ok({ saved: file, status: h.status, claimed: true, note: "Recorded as the agent's claim. Verification is the AC gate and CI." });
