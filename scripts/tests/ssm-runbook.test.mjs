@@ -5,7 +5,8 @@ import { tmpdir } from "node:os";
 import { join } from "node:path";
 import { spawnSync } from "node:child_process";
 
-const read = (p) => readFileSync(new URL(`../../${p}`, import.meta.url), "utf8");
+// Normalise line endings: a Windows checkout with autocrlf has CRLF, and the fence regex below expects LF.
+const read = (p) => readFileSync(new URL(`../../${p}`, import.meta.url), "utf8").replace(/\r\n/g, "\n");
 const doc = read("docs/infra/SSM.md");
 const CANARY = "CANARY-SSM-VALUE-0123456789";
 
