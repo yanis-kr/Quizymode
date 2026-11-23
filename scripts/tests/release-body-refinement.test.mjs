@@ -22,13 +22,13 @@ function fakeGh(issue) {
   return { gh, calls };
 }
 
-test("AC 7.19.8: a scope decision removes status:ready and the claim, adds needs-refinement and posts the question once", () => {
+test("AC 7.19.8: a scope decision removes status:ready and the claim, adds status:needs-refinement and posts the question once", () => {
   const issue = { labels: ["status:ready", "bundle:b-1"], comments: [{ body: CLAIM_MARKER("b-1") }] };
   const { gh } = fakeGh(issue);
   const first = returnToRefinement({ bundleId: "b-1", issue: 753, question: "Trust X-Forwarded-For from the first hop only?", deps: { gh } });
   assert.equal(first.result, "returned");
   assert.equal(first.comment, "posted");
-  assert.deepEqual(issue.labels.sort(), ["needs-refinement"]);
+  assert.deepEqual(issue.labels.sort(), ["status:needs-refinement"]);
   const again = returnToRefinement({ bundleId: "b-1", issue: 753, question: "same", deps: { gh } });
   assert.equal(again.comment, "exists");
   assert.equal(issue.comments.filter((c) => c.body.includes("Scope decision needed")).length, 1);

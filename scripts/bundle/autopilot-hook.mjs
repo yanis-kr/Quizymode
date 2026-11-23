@@ -8,6 +8,7 @@
 import fs from "node:fs";
 import path from "node:path";
 import { createHash } from "node:crypto";
+import { spawnSync } from "node:child_process";
 import { fileURLToPath } from "node:url";
 import { readRun, writeRun, runFilePath, isLiveRunFor, isWaiting, mainQmDir, STALL_AFTER_BLOCKS } from "./autopilot-run.mjs";
 
@@ -30,6 +31,13 @@ function stateHash(qmDir, bundleId) {
   const file = path.join(qmDir, "bundles", bundleId ?? "", "state.json");
   if (!bundleId || !fs.existsSync(file)) return "none";
   return createHash("sha256").update(fs.readFileSync(file)).digest("hex");
+}
+// Progress is a change to state.json or a move of any local branch (AC 7.19.22). Lane work commits between bundle
+// commands without touching state.json, so a branch move counts. Before this, a working run stalled after three blocks.
+function progressHash(qmDir, bundleId, cwd) {
+  const refs = spawnSync("git", ["for-each-ref", "--format=%(refname) %(objectname)", "refs/heads"], { cwd: cwd || process.cwd(), encoding: "utf8" });
+  const heads = refs.status === 0 ? refs.stdout : "";
+  return createHash("sha256").update(`${stateHash(qmDir, bundleId)}\n${heads}`).digest("hex");
 }
 
 export function main(argv = { mode, env: process.env, input: null, cwd: process.cwd() }) {
@@ -62,7 +70,7 @@ export function main(argv = { mode, env: process.env, input: null, cwd: process.
       writeRun(file, run);
       return { exit: 0 };
     }
-    const hash = stateHash(qmDir, run.bundleId);
+    const hash = progressHash(qmDir, run.bundleId, argv.cwd);
     const unchanged = run.lastStateHash === hash;
     run.stopBlocks = unchanged ? (run.stopBlocks ?? 0) + 1 : 1;
     run.lastStateHash = hash;

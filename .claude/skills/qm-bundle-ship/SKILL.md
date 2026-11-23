@@ -58,7 +58,7 @@ allowed-tools:
 
 Bundle id: `$bundle_id`. Action: `$action` (empty means execute).
 
-`BUNDLE` below means `node "${CLAUDE_SKILL_DIR}/scripts/bundle.mjs"` (Bash tool, any directory of this repo; quote the path and write it with forward slashes, because Git Bash drops unquoted backslashes). It prints JSON (except `status`, which prints text) and exits non-zero on rejection: 1 usage, 2 rejected, 3 limit reached, 4 lock held. `state-init` prints a `holder` token: pass `--holder <token>` to every later `BUNDLE` call in this run, or it is refused (when Claude Code exposes a session id the token is that id, so it stays the same across turns; if you lose it, run `state-init` again). Never run `BUNDLE approve` or `BUNDLE new` here; approval only happens in the refine session.
+`BUNDLE` below means `node "${CLAUDE_SKILL_DIR}/../../../scripts/bundle/bundle.mjs"` (Bash tool, any directory of this repo; quote the path and write it with forward slashes, because Git Bash drops unquoted backslashes). It prints JSON (except `status`, which prints text) and exits non-zero on rejection: 1 usage, 2 rejected, 3 limit reached, 4 lock held. `state-init` prints a `holder` token: pass `--holder <token>` to every later `BUNDLE` call in this run, or it is refused (when Claude Code exposes a session id the token is that id, so it stays the same across turns; if you lose it, run `state-init` again). Never run `BUNDLE approve` or `BUNDLE new` here; approval only happens in the refine session.
 
 ## Actions
 

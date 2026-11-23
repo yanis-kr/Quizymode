@@ -17,12 +17,13 @@ import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { sliceAc } from "../validation/ac-slice.mjs";
 import { ROLES, routeModel, classifyIssue, MODEL_ORDER } from "../automation/model-policy.mjs";
-import { readRun, writeRun, runFilePath } from "./autopilot-run.mjs";
+import { readRun, writeRun, runFilePath, STALL_AFTER_BLOCKS } from "./autopilot-run.mjs";
 import { checkUserReply } from "./approval-reply.mjs";
+import { ISSUE_STATUSES, transitionError, releaseSlotHolder, VALIDATION_KINDS, validationOutcome } from "./transitions.mjs";
+import { selectIssues, lockedIssues } from "./select.mjs";
 
 const SCHEMA_VERSION = 1;
 const ID_RE = /^[a-z0-9][a-z0-9-]{2,47}$/;
-const ISSUE_STATUSES = ["pending", "in_progress", "implemented", "validated", "integrated", "released", "verified", "closed", "blocked", "deferred", "parked", "skipped_already_done", "failed"];
 // Lead decisions (#759). "defer" is the legacy outcome: it is read as "park" from state.json, and rejected as new input.
 const DECISION_OUTCOMES = ["proceed", "proceed-flagged", "park"];
 const FLAGGED_LIMIT = 3; // the fourth flagged decision on one issue parks it as needs-refinement
@@ -896,6 +897,8 @@ switch (cmd) {
     if (!st.issues[num]) die(2, `Issue #${num} is not in bundle '${id}'. Scope cannot be expanded during execution.`);
     if (!ISSUE_STATUSES.includes(status)) die(1, `status must be one of ${ISSUE_STATUSES.join(", ")}`);
     const it = st.issues[num];
+    const badMove = transitionError(it.status, status);
+    if (badMove) die(2, badMove, { issue: Number(num), from: it.status, to: status });
     it.status = status;
     if (typeof opts.branch === "string") it.branch = opts.branch;
     if (typeof opts.commit === "string") it.commit = opts.commit;
@@ -945,6 +948,11 @@ switch (cmd) {
     const needs = { release_pr_open: "prNumber", ci_green: "prNumber", merged: "mergeSha", deployed: "deployRunId" };
     if (needs[phase] && !st.release[needs[phase]]) die(1, `phase ${phase} requires release.${needs[phase]} (pass --${Object.keys(map).find((k) => map[k] === needs[phase])}).`);
     if (phase === "merged" && !st.release.prNumber) die(1, "phase merged requires a recorded PR number.");
+    if (phase === "release_pr_open") {
+      // One release at a time (design A, F3): a second bundle may not open its release PR while another one holds the slot.
+      const holder = releaseSlotHolder(bundlesDir(), id);
+      if (holder) die(2, `Release slot is held by bundle '${holder.bundleId}' (phase ${holder.phase}). Wait until it is verified, done or blocked_terminal.`, { holder });
+    }
     if (TERMINAL.has(phase)) { st.phaseBeforeTerminal = st.phase; st.lock = null; }
     st.phase = phase;
     saveState(p, st, { event: "phase", phase, note: opts.note });
@@ -965,7 +973,10 @@ switch (cmd) {
     if (!pr || pr !== st.release.prNumber) errs.push(`--pr ${opts.pr ?? "(missing)"} is not the recorded release PR #${st.release.prNumber}`);
     const vals = Object.values(st.issues);
     if (!vals.some((i) => i.status === "integrated")) errs.push("no integrated issue to ship");
-    if (vals.some((i) => ["pending", "in_progress", "implemented", "validated"].includes(i.status))) errs.push("some issues are still in progress; finish or defer them first");
+    if (vals.some((i) => ["pending", "in_progress", "implemented"].includes(i.status))) errs.push("some issues are still in progress; finish or defer them first");
+    if (vals.some((i) => i.status === "validated")) errs.push("some issues are validated but not integrated; integrate them into the release branch first");
+    const holder = releaseSlotHolder(bundlesDir(), id);
+    if (holder) errs.push(`release slot is held by bundle '${holder.bundleId}' (phase ${holder.phase})`);
     if (m.policies.partialRelease === "all-or-nothing" && vals.some((i) => i.status !== "integrated" && i.status !== "skipped_already_done")) errs.push("partialRelease is all-or-nothing and not every issue is integrated");
     if (errs.length) die(2, "Merge gate closed", { errors: errs });
     saveState(p, st, { event: "merge-gate-open", pr });
@@ -1103,6 +1114,9 @@ switch (cmd) {
     if (st) for (const [n, it] of Object.entries(st.issues)) lines.push(`  #${n} ${it.status}${it.attempts ? ` (attempts ${it.attempts})` : ""}${it.notes.length ? ` - ${it.notes.at(-1)}` : ""}`);
     if (st?.blockers?.length) { lines.push("Blockers:"); for (const b of st.blockers) lines.push(`  [${b.kind}]${b.issue ? ` #${b.issue}` : ""} ${b.note}`); }
     if (st?.lock) lines.push(`Lock: ${st.lock.holder}, heartbeat ${st.lock.heartbeatAt}`);
+    // A stalled run stops the hooks (AC 7.19.22). Show it here so it is not silent.
+    const runFile = readRun(runFilePath(qmDir()));
+    if (runFile && runFile.bundleId === id && runFile.stalled) lines.push(`Run: stalled after ${STALL_AFTER_BLOCKS} blocks with no progress; the hooks have stopped. Resume the run or cancel it.`);
     if (st) {
       // Flagged decisions ship and are listed for review; parked questions wait for the owner. Legacy "defer" counts as parked.
       const by = decisionsByOutcome(st);
@@ -1113,6 +1127,67 @@ switch (cmd) {
     }
     process.stdout.write(lines.join("\n") + "\n");
     process.exit(0);
+  }
+  case "validation": {
+    // The validator's record of one issue's production check (design D.5, E). It writes state only: labels, comments
+    // and closing are the validator's own gh calls. A pass moves the issue to verified; close it next with `issue`.
+    const p = bundlePaths(id);
+    const m = loadValidManifest(p, id);
+    const st = loadState(p);
+    requireHolder(st, m);
+    if (!["deployed", "validating"].includes(st.phase)) die(2, `validation needs phase deployed or validating, not '${st.phase}'.`);
+    const num = String(opts.issue ?? "");
+    if (!st.issues[num]) die(2, `Issue #${num} is not in bundle '${id}'.`);
+    const it = st.issues[num];
+    if (it.status !== "released") die(2, `Issue #${num} is '${it.status}'; only released issues are validated.`);
+    const result = opts.result;
+    if (result !== "pass" && result !== "fail") die(1, "--result must be pass or fail");
+    const fixCycle = opts["fix-cycle"] === undefined ? 0 : Number(opts["fix-cycle"]);
+    if (!Number.isInteger(fixCycle) || fixCycle < 0) die(1, "--fix-cycle must be a whole number, 0 or more");
+    if (typeof opts.evidence !== "string" || !opts.evidence.trim()) die(1, "--evidence <url> is required (the posted evidence comment)");
+    let kind = null;
+    let outcome = "closable";
+    if (result === "fail") {
+      kind = String(opts.kind ?? "");
+      if (!VALIDATION_KINDS.includes(kind)) die(1, `--kind must be one of ${VALIDATION_KINDS.join(", ")}`);
+      outcome = validationOutcome(kind, fixCycle);
+    }
+    const next = result === "pass" ? "verified" : "validation_failed";
+    const badMove = transitionError(it.status, next);
+    if (badMove) die(2, badMove, { issue: Number(num) });
+    it.status = next;
+    it.validation = { result, kind, fixCycle, outcome, evidence: opts.evidence, at: now() };
+    saveState(p, st, { event: "validation", issue: Number(num), result, kind, outcome });
+    ok({ bundleId: id, issue: Number(num), status: next, outcome, fixCycle });
+  }
+  case "select": {
+    // Picks the next batch from the open status:ready issues (design B). Read-only: writes nothing and approves nothing.
+    // Input: --issues-file <json array> (a saved gh issue list, optionally with paths, dependsOn, migration), or gh when omitted.
+    let raw;
+    if (typeof opts["issues-file"] === "string") raw = readJson(path.resolve(String(opts["issues-file"])));
+    else {
+      const repo = originNameWithOwner();
+      if (!repo) die(2, "Cannot read the origin repo; pass --issues-file with a saved list.");
+      const out = sh("gh", ["issue", "list", "--repo", repo, "--state", "open", "--label", "status:ready", "--limit", "200", "--json", "number,title,labels,body"], true);
+      if (!out) die(2, "gh issue list failed (environmental); pass --issues-file with a saved list.");
+      raw = JSON.parse(out);
+    }
+    if (!Array.isArray(raw)) die(1, "the issues list must be a JSON array");
+    const candidates = raw.map((c) => ({
+      number: Number(c.number),
+      title: c.title,
+      labels: c.labels,
+      hasAcs: typeof c.hasAcs === "boolean" ? c.hasAcs : /acceptance criteria/i.test(c.body ?? ""),
+      paths: Array.isArray(c.paths) ? c.paths : [],
+      dependsOn: Array.isArray(c.dependsOn) ? c.dependsOn.map(Number) : [],
+      migration: Boolean(c.migration),
+    }));
+    const maxIssues = opts.max === undefined ? 8 : Number(opts.max);
+    if (!Number.isInteger(maxIssues) || maxIssues < 1) die(1, "--max must be a whole number, 1 or more");
+    const maxSize = String(opts["max-size"] ?? "m");
+    const excludeAreas = String(opts["exclude-areas"] ?? "auth,infra").split(",").map((a) => a.trim()).filter(Boolean).map((a) => `area:${a}`);
+    const locked = lockedIssues(bundlesDir());
+    ok({ ...selectIssues(candidates, { maxIssues, maxSize, excludeAreas, locked }), lockedByRunningBundles: [...locked].sort((a, b) => a - b) });
   }
   case "permissions": {
     // Prints the allow rules a run needs, taken from the ship skill's allowed-tools list (#760 AC 5). Prints only; never writes settings.
