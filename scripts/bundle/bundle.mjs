@@ -842,6 +842,8 @@ switch (cmd) {
     lines.push(`Blocked: ${m.policies.blockedIssue}. Partial: ${m.policies.partialRelease}. Drift: ${m.policies.sourceDrift}.`);
     lines.push(`Limits: ${m.limits.maxAttemptsPerIssue} tries/issue, ${m.limits.maxCiRuns} CI runs, ${m.limits.maxWallClockHours} h.`);
     lines.push(`Reply "approve ${hash.slice(0, 8)}" to approve this exact revision.`);
+    // Records the bytes the owner was shown, so a typed "start autopilot" (start-hook.mjs, AC 7.19.29) approves only these.
+    writeJsonAtomic(path.join(p.dir, "brief.json"), { schemaVersion: SCHEMA_VERSION, bundleId: id, manifestSha256: hash, shownAt: now() });
     process.stdout.write(lines.join("\n") + "\n");
     process.exit(0);
   }
