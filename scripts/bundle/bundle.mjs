@@ -21,6 +21,7 @@ import { readRun, writeRun, runFilePath, STALL_AFTER_BLOCKS } from "./autopilot-
 import { checkUserReply } from "./approval-reply.mjs";
 import { ISSUE_STATUSES, transitionError, releaseSlotHolder, VALIDATION_KINDS, validationOutcome } from "./transitions.mjs";
 import { selectIssues, lockedIssues } from "./select.mjs";
+import { openBlockers, resolveBlocker } from "./blockers.mjs";
 
 const SCHEMA_VERSION = 1;
 const ID_RE = /^[a-z0-9][a-z0-9-]{2,47}$/;
@@ -987,6 +988,15 @@ switch (cmd) {
     const m = loadValidManifest(p, id);
     const st = loadState(p);
     requireHolder(st, m);
+    if (opts.resolve !== undefined) {
+      // Resolving keeps the record as history; status shows only open blockers (AC 7.19.27).
+      const index = typeof opts.resolve === "string" ? Number(opts.resolve) : NaN;
+      const r = resolveBlocker(st.blockers, index, opts.note, now());
+      if (r.error) die(r.resolvedAt ? 2 : 1, r.error, r.resolvedAt ? { resolvedAt: r.resolvedAt } : {});
+      st.blockers = r.blockers;
+      saveState(p, st, { event: "blocker-resolved", index });
+      ok({ bundleId: id, resolved: index, open: openBlockers(st.blockers).length });
+    }
     const kind = String(opts.kind ?? "");
     if (!BLOCKER_KINDS.includes(kind)) die(1, `--kind must be one of ${BLOCKER_KINDS.join(", ")}`);
     if (typeof opts.note !== "string") die(1, "--note is required (factual description, no secrets)");
@@ -994,7 +1004,7 @@ switch (cmd) {
     if (issue && !st.issues[issue]) die(2, `Issue #${issue} is not in bundle '${id}'.`);
     st.blockers.push({ at: now(), kind, issue: issue ? Number(issue) : null, note: opts.note });
     saveState(p, st, { event: "blocker", kind, issue });
-    ok({ bundleId: id, blockers: st.blockers.length });
+    ok({ bundleId: id, blockers: openBlockers(st.blockers).length });
   }
   case "decision": {
     const p = bundlePaths(id);
@@ -1112,7 +1122,8 @@ switch (cmd) {
     lines.push(`Approval: ${ap ? `${ap.status}${ap.manifestSha256 === hash ? "" : " (STALE: manifest changed)"}` : "none"}; mode: ${m?.releaseMode ?? "?"}`);
     lines.push(`Phase: ${st?.phase ?? "not started"}${st?.release?.prNumber ? `; PR #${st.release.prNumber}` : ""}${st?.release?.mergeSha ? `; merged ${st.release.mergeSha.slice(0, 8)}` : ""}`);
     if (st) for (const [n, it] of Object.entries(st.issues)) lines.push(`  #${n} ${it.status}${it.attempts ? ` (attempts ${it.attempts})` : ""}${it.notes.length ? ` - ${it.notes.at(-1)}` : ""}`);
-    if (st?.blockers?.length) { lines.push("Blockers:"); for (const b of st.blockers) lines.push(`  [${b.kind}]${b.issue ? ` #${b.issue}` : ""} ${b.note}`); }
+    const open = openBlockers(st?.blockers ?? []);
+    if (open.length) { lines.push("Blockers (open; resolve with blocker --resolve <index>):"); for (const b of open) lines.push(`  [${b.index}] [${b.kind}]${b.issue ? ` #${b.issue}` : ""} ${b.note}`); }
     if (st?.lock) lines.push(`Lock: ${st.lock.holder}, heartbeat ${st.lock.heartbeatAt}`);
     // A stalled run stops the hooks (AC 7.19.22). Show it here so it is not silent.
     const runFile = readRun(runFilePath(qmDir()));
@@ -1326,7 +1337,7 @@ Lead:    precedent add --question q --answer a --scope issue|area|global [--issu
 Execute: verify [--gh] [--no-git], state-init [--take-over] (prints holder), then with --holder <h>:
          checkpoint, issue <n> <status> [--note --branch --commit --lane a|b], lanes (read-only: split issues into two path-disjoint lanes), attempt <n>, ci-run,
          phase <phase> [--pr --previous-main-sha --merge-sha --deploy-run --note], merge-gate --pr <n>,
-         blocker --kind k --note t [--issue n], decision --file f [--issue n], release-lock
+         blocker --kind k --note t [--issue n], blocker --resolve <index> --note t, decision --file f [--issue n], release-lock
 Packets: packet <bundleId> <issue> | packet --from-issue <n> (writes .qm/packets/<n>.md); handback-check <file>; handback-save --issue <n> --role <role> --file <json> (.qm/handbacks/<n>-<role>.json, recorded as a claim)
 Anyone:  status (text), list, cancel [--note]
 Global:  --bundles-dir <dir> (default <main checkout>/.qm/bundles); --key=value also accepted
