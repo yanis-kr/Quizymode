@@ -90,13 +90,13 @@ export function postOnce({ bundleId, issue, marker, body, deps = {} }) {
 
 /**
  * Returns a claimed issue to refinement when a scope decision is needed (AC 7.19.8). It removes status:ready, adds
- * needs-refinement, releases the bundle's claim label and posts the specific question once. The run continues with the
+ * status:needs-refinement, releases the bundle's claim label and posts the specific question once. The run continues with the
  * issues that do not depend on it.
  */
 export function returnToRefinement({ bundleId, issue, question, deps = {} }) {
   const gh = deps.gh ?? ghDefault;
   const label = `${BUNDLE_LABEL_PREFIX}${bundleId}`;
-  gh(["issue", "edit", String(issue), "--remove-label", "status:ready", "--add-label", "needs-refinement", "--remove-label", label]);
+  gh(["issue", "edit", String(issue), "--remove-label", "status:ready", "--add-label", "status:needs-refinement", "--remove-label", label]);
   const posted = postOnce({ bundleId, issue, marker: "refinement", body: `Scope decision needed before this issue can ship:\n\n${question}\n\nThe bundle released its claim. Refine the question, then mark the issue status:ready again.`, deps });
   return { issue, result: "returned", comment: posted.result };
 }
