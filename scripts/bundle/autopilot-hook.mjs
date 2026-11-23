@@ -9,7 +9,7 @@ import fs from "node:fs";
 import path from "node:path";
 import { createHash } from "node:crypto";
 import { fileURLToPath } from "node:url";
-import { readRun, writeRun, runFilePath, isLiveRunFor, mainQmDir, STALL_AFTER_BLOCKS } from "./autopilot-run.mjs";
+import { readRun, writeRun, runFilePath, isLiveRunFor, isWaiting, mainQmDir, STALL_AFTER_BLOCKS } from "./autopilot-run.mjs";
 
 const mode = process.argv[2];
 
@@ -56,6 +56,12 @@ export function main(argv = { mode, env: process.env, input: null, cwd: process.
   }
 
   if (argv.mode === "stop") {
+    // Waiting on CI or Deploy (AC 7.19.20): the turn may end; the PR monitor or the background watch resumes the run.
+    if (isWaiting(run)) {
+      run.stopBlocks = 0;
+      writeRun(file, run);
+      return { exit: 0 };
+    }
     const hash = stateHash(qmDir, run.bundleId);
     const unchanged = run.lastStateHash === hash;
     run.stopBlocks = unchanged ? (run.stopBlocks ?? 0) + 1 : 1;

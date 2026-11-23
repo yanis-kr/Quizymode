@@ -10,6 +10,10 @@ disallowed-tools:
   - Bash(node *bundle.mjs new *)
 allowed-tools:
   - Bash(node *bundle.mjs *)
+  - Bash(node *autopilot-run.mjs *)
+  - mcp__ccd_pr__get_status
+  - mcp__ccd_pr__bind_pr
+  - mcp__ccd_pr__set_monitor
   - Bash(git -C C:/Projects/Quizymode-wt-lane-* *)
   - Bash(git -C C:/Projects/Quizymode-wt-release *)
   - Bash(cmd /c mklink /J *)
