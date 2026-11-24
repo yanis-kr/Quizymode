@@ -59,6 +59,8 @@ A failure inside an attempt goes back to step 3. Only validated issues are merge
 
 - `BUNDLE lanes <id>` (read-only) splits the not-yet-integrated issues into `laneA` and `laneB`. Issues whose `scope.paths` do not overlap and have no `dependsOn` link run concurrently, one coder per lane worktree (`BUNDLE issue ... --lane a|b` records it). All `migration: true` issues go in one lane. When it reports overlap or dependency, those issues stay in one lane in `order`.
 - Only one `dotnet build`, `dotnet test`, or `verify-openapi.ps1` runs at a time across lanes . Take `BUNDLE mutex dotnet --acquire --holder <token>` before it and `BUNDLE mutex dotnet --release --holder <token>` after; exit 4 means another session holds it, so wait and retry (AC 7.19.32).
+- Rolling lanes (AC 7.19.34): after each issue, a lane asks `BUNDLE next <id> --lane a|b` for its next issue. It returns the lane's own in-progress issue first, otherwise the first pending issue whose dependencies are usable. A dependent stacked on an unintegrated branch starts from that branch. A dependent of a failed or parked issue is skipped with the reason.
+- If `BUNDLE state-init` or `BUNDLE select` exits 2 with `Autopilot is halted`, stop and report it. Two defect failures in one batch write `.qm/autopilot-halt.json`; only the owner removes that file, after reviewing the defects (AC 7.19.35).
 - Lanes never edit the version file (`version.file`), the `package.json` version, `docs/AC.md` (write an AC fragment to `.qm/ac-fragments/<n>.md` for the integrator instead), or `docs/openapi/quizymode-api.json`. Only the integrator does, in § Integration.
 - Lane branches merge into the release branch one at a time, in `order`, by the integrator.
 
