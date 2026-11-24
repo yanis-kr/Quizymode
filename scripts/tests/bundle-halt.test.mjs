@@ -1,12 +1,15 @@
 // Tests for #761 v2 design E (AC 7.19.35): two defect failures in one batch halt the next autopilot start. Temp folders only.
-import test from "node:test";
+import test, { after } from "node:test";
 import assert from "node:assert/strict";
 import fs from "node:fs";
 import os from "node:os";
 import path from "node:path";
 import { DEFECTS_TO_HALT, haltFile, haltNeeded, haltState, writeHalt } from "../bundle/halt.mjs";
 
-const tmp = () => fs.mkdtempSync(path.join(os.tmpdir(), "qm-halt-"));
+// Every temp folder is removed when the file's tests finish, so repeated runs do not leave qm-halt-* folders behind.
+const made = [];
+const tmp = () => { const d = fs.mkdtempSync(path.join(os.tmpdir(), "qm-halt-")); made.push(d); return d; };
+after(() => { for (const d of made) fs.rmSync(d, { recursive: true, force: true }); });
 
 // AC 7.19.35: one defect does not halt the autopilot; two in one batch do.
 test("AC 7.19.35: one defect does not halt, two defects in one batch do", () => {

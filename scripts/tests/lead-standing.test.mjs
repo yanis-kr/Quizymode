@@ -1,6 +1,6 @@
 // Tests for #759: the qm-lead agent, precedents, the standing envelope and decision outcomes in scripts/bundle/bundle.mjs.
 // Every test runs the helper against a temp --qm-dir, so no real .qm state is read or written.
-import test from "node:test";
+import test, { after } from "node:test";
 import assert from "node:assert/strict";
 import fs from "node:fs";
 import os from "node:os";
@@ -14,7 +14,10 @@ const BUNDLE = path.join(repo, "scripts", "bundle", "bundle.mjs");
 const BID = "b-20261117-lead";
 const SELF = "scripts/tests/lead-standing.test.mjs";
 
-const tmpQm = () => fs.mkdtempSync(path.join(os.tmpdir(), "qm-759-"));
+// Every temp --qm-dir is removed when the file's tests finish, so repeated runs do not leave qm-759-* folders behind.
+const madeQm = [];
+const tmpQm = () => { const d = fs.mkdtempSync(path.join(os.tmpdir(), "qm-759-")); madeQm.push(d); return d; };
+after(() => { for (const d of madeQm) fs.rmSync(d, { recursive: true, force: true }); });
 const run = (args) => spawnSync(process.execPath, [BUNDLE, ...args], { encoding: "utf8" });
 const json = (r) => JSON.parse(r.stdout);
 const sha = (file) => createHash("sha256").update(fs.readFileSync(file)).digest("hex");
@@ -65,7 +68,8 @@ function approvedEnvelope(qm, patch = {}) {
   assert.equal(r.status, 0, r.stdout);
   return h;
 }
-function reviewClean(qm) { writeJson(path.join(qm, "bundles", BID, "review.json"), { openFindings: [] }); }
+// A clean review by a fresh reviewer (AC 7.19.36): names a reviewer session that is not the approving session.
+function reviewClean(qm) { writeJson(path.join(qm, "bundles", BID, "review.json"), { openFindings: [], reviewer: { sessionId: "fresh-reviewer-session" } }); }
 function leadDecision(qm, patch = {}) {
   const file = path.join(qm, `lead-${Math.random().toString(16).slice(2)}.json`);
   writeJson(file, { id: "lead-proceed-1", question: "q", decision: "d", rationale: "r", evidence: [], assumptions: [], acImpact: "none", validationRequired: [], outcome: "proceed", ...patch });
