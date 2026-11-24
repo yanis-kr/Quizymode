@@ -22,6 +22,9 @@ import { checkUserReply } from "./approval-reply.mjs";
 import { ISSUE_STATUSES, transitionError, releaseSlotHolder, VALIDATION_KINDS, validationOutcome } from "./transitions.mjs";
 import { selectIssues, lockedIssues } from "./select.mjs";
 import { openBlockers, resolveBlocker } from "./blockers.mjs";
+import { effectivePaths, overlappingFiles, pathsOverlap, normGlob } from "./scope.mjs";
+import { MUTEX_NAMES, MUTEX_STALE_MINUTES, acquireMutex, releaseMutex } from "./mutex.mjs";
+import { planWorktrees, parseWorktreeList } from "./worktrees.mjs";
 
 const SCHEMA_VERSION = 1;
 const ID_RE = /^[a-z0-9][a-z0-9-]{2,47}$/;
@@ -118,6 +121,11 @@ const now = () => new Date().toISOString();
 
 // ---------- manifest validation ----------
 // ---------- junctions (#762, AC 7.16.4) ----------
+// Removes a junction with rmdir, which deletes only the link and never its target. Refuses when anything is still there.
+function removeJunction(link) {
+  const r = spawnSync("cmd.exe", ["/d", "/s", "/c", `"rmdir "${link}""`], { windowsVerbatimArguments: true, encoding: "utf8" });
+  if (r.status !== 0 || fs.existsSync(link) || isLink(link)) die(2, "rmdir did not remove the junction", { stderr: r.stderr });
+}
 function isLink(p) { try { return fs.lstatSync(p).isSymbolicLink(); } catch { return false; } }
 /** Path of the git worktree whose folder name is `name`, or null. Read from git, never assumed. */
 function worktreePathNamed(name) {
@@ -367,41 +375,9 @@ function originNameWithOwner() {
   const mm = url.replace(/\.git$/, "").match(/[:/]([^/:]+\/[^/]+)$/);
   return mm ? mm[1] : null;
 }
-function globToRegex(g) {
-  let p = g.replace(/\\/g, "/");
-  // A bare file or directory matches itself and everything below it. Escape every regex metacharacter first,
-  // including braces and backslashes (CodeQL js/incomplete-sanitization), then add the wildcards and the suffix.
-  const bare = !/[*?]/.test(p);
-  if (bare) p = p.replace(/\/$/, "");
-  const s = p.replace(/[.+^$(){}|[\]\\]/g, "\\$&").replace(/\*\*\//g, "\u0001").replace(/\*\*/g, "\u0000").replace(/\*/g, "[^/]*").replace(/\?/g, "[^/]")
-    .replace(/\u0001/g, "(?:.*/)?").replace(/\u0000/g, ".*") + (bare ? "(?:/.*)?" : "");
-  return new RegExp(`^${s}$`);
-}
-function overlaps(paths, files) {
-  if (!paths.length) return files; // no declared scope: every change counts
-  const res = paths.map(globToRegex);
-  return files.filter((f) => res.some((r) => r.test(f)));
-}
-// Conservative glob-vs-glob overlap: compare the literal directory prefix (segments before the first wildcard).
 function laneIgnored() { return new Set(profile().integratorOnly.map((g) => normGlob(g))); }
-const normGlob = (g) => g.replaceAll(String.fromCharCode(92), "/").replace(/\/$/, "");
-function globPrefix(g) {
-  const out = [];
-  for (const sg of normGlob(g).split("/")) { if (/[*?]/.test(sg)) break; out.push(sg); }
-  return out;
-}
-function pathsOverlap(a, b) {
-  if (!a.length || !b.length) return true; // no declared scope: assume overlap
-  const ignored = laneIgnored();
-  const fa = a.filter((x) => !ignored.has(normGlob(x)));
-  const fb = b.filter((x) => !ignored.has(normGlob(x)));
-  for (const x of fa) for (const y of fb) {
-    const px = globPrefix(x), py = globPrefix(y);
-    const n = Math.min(px.length, py.length);
-    if (px.slice(0, n).join("/") === py.slice(0, n).join("/")) return true;
-  }
-  return false;
-}
+// Path scope (scope.mjs, AC 7.19.31): an issue with no scope.paths uses the areaPaths of its area labels; with neither it is unknown.
+const areaPaths = () => profile().areaPaths ?? {};
 function planLanes(m, st) {
   const todo = [...m.issues].sort((x, y) => x.order - y.order).filter((i) => !["integrated", "released", "verified", "closed", "deferred", "parked", "skipped_already_done"].includes(st?.issues?.[String(i.number)]?.status));
   const laneOf = new Map();
@@ -413,7 +389,7 @@ function planLanes(m, st) {
       const why = g.find((o) => {
         if (it.dependsOn.includes(o.number) || o.dependsOn.includes(it.number)) { reasons.push(`#${it.number} and #${o.number}: dependsOn link`); return true; }
         if (it.migration && o.migration) { reasons.push(`#${it.number} and #${o.number}: both migrations`); return true; }
-        if (pathsOverlap(it.scope.paths, o.scope.paths)) { reasons.push(`#${it.number} and #${o.number}: scope.paths overlap`); return true; }
+        if (pathsOverlap(effectivePaths(it, areaPaths()).paths, effectivePaths(o, areaPaths()).paths, laneIgnored())) { reasons.push(`#${it.number} and #${o.number}: scope.paths overlap`); return true; }
         return false;
       });
       if (why) linked.push(g);
@@ -438,7 +414,7 @@ function verifyAll(id, p) {
   if (ap.manifestSha256 !== hash) die(2, "Manifest hash does not match the approved hash; the manifest changed after approval. Re-approve in qm-bundle-refine.", { approvedSha256: ap.manifestSha256, currentSha256: hash });
 
   const warnings = [];
-  const drift = { baseMoved: false, changedFiles: [], overlapping: {} };
+  const drift = { baseMoved: false, changedFiles: [], overlapping: {}, unknownScope: [] };
   const issues = { changed: [], closed: [] };
   if (!opts["no-git"]) {
     const repo = originNameWithOwner();
@@ -452,9 +428,12 @@ function verifyAll(id, p) {
       drift.currentBaseCommit = head;
       drift.changedFiles = (sh("git", ["diff", "--name-only", m.source.commit, head], true) ?? "").split(/\r?\n/).filter(Boolean);
       for (const it of m.issues) {
-        const hit = overlaps(it.scope.paths, drift.changedFiles);
+        const { paths } = effectivePaths(it, areaPaths());
+        if (!paths.length) { drift.unknownScope.push(it.number); continue; } // cannot be checked: reported below, never as drift
+        const hit = overlappingFiles(paths, drift.changedFiles);
         if (hit.length) drift.overlapping[it.number] = hit;
       }
+      if (drift.unknownScope.length) warnings.push(`Issues ${drift.unknownScope.map((n) => `#${n}`).join(", ")} have no scope.paths and no mapped area, so the base change cannot be checked against them. Declare scope.paths, or add an areaPaths entry in .claude/delivery-profile.json.`);
     }
   }
   if (opts.gh) {
@@ -741,15 +720,59 @@ switch (cmd) {
     if (opts.remove) {
       if (!fs.existsSync(link) && !isLink(link)) die(2, `Nothing to remove at ${link}`);
       if (!isLink(link)) die(2, `Refusing to remove ${link}: it is not a junction. Never use a recursive delete.`);
-      const r = spawnSync("cmd.exe", ["/d", "/s", "/c", `"rmdir "${link}""`], { windowsVerbatimArguments: true, encoding: "utf8" });
-      if (r.status !== 0 || fs.existsSync(link)) die(2, "rmdir did not remove the junction", { stderr: r.stderr });
+      removeJunction(link);
       ok({ removed: link, target: "untouched" });
     }
     if (!fs.existsSync(target)) die(2, `Junction target is missing: ${target}`);
+    // A dangling junction (its target folder is gone) is repaired: only the link is removed, never the target (AC 7.19.33).
+    if (isLink(link) && !fs.existsSync(link)) removeJunction(link);
     if (fs.existsSync(link) || isLink(link)) die(2, `${link} already exists; not replaced.`);
     const r = spawnSync("cmd.exe", ["/d", "/s", "/c", `"mklink /J "${link}" "${target}""`], { windowsVerbatimArguments: true, encoding: "utf8" });
     if (r.status !== 0 || !isLink(link)) die(2, "mklink /J failed", { stderr: r.stderr });
     ok({ link, target, command });
+  }
+  case "mutex": {
+    // mutex <dotnet|release-merge> --acquire|--release [--holder <token>]: one heavy command at a time across lanes (AC 7.19.32).
+    const name = positional[0];
+    const usage = `usage: bundle.mjs mutex <${MUTEX_NAMES.join("|")}> --acquire|--release [--holder <token>]`;
+    if (!MUTEX_NAMES.includes(name) || Boolean(opts.acquire) === Boolean(opts.release)) die(1, usage);
+    const holder = holderId();
+    if (!holder) die(1, "mutex needs --holder <token> (or CLAUDE_CODE_SESSION_ID)");
+    if (opts.acquire) {
+      const r = acquireMutex({ qmDir: qmDir(), name, holder });
+      if (!r.acquired) die(4, `Mutex '${name}' is held by ${r.holder.holder} (heartbeat ${r.holder.heartbeatAt}). Wait and retry; a lock with no heartbeat for ${MUTEX_STALE_MINUTES} minutes is taken over.`, { holder: r.holder });
+      ok({ mutex: name, acquired: true, takenOver: r.takenOver });
+    }
+    const r = releaseMutex({ qmDir: qmDir(), name, holder });
+    if (!r.released) die(2, r.reason);
+    ok({ mutex: name, released: true });
+  }
+  case "worktrees": {
+    // worktrees --ensure <bundle id>: creates the lane and release worktrees the profile names, creates release/<id> from
+    // origin/main when missing, then builds each junction (AC 7.19.33). A worktree on another branch is refused, never switched.
+    if (typeof opts.ensure !== "string") die(1, "usage: bundle.mjs worktrees --ensure <bundle id>");
+    const id = opts.ensure;
+    bundlePaths(id); // validates the id
+    const names = profile().worktrees;
+    const releaseBranch = `release/${id}`;
+    if (sh("git", ["rev-parse", "--verify", "--quiet", "origin/main"], true) === null) die(2, "origin/main is not present; run git fetch origin main first");
+    const existing = parseWorktreeList(sh("git", ["worktree", "list", "--porcelain"], true) ?? "");
+    const releaseBranchExists = sh("git", ["rev-parse", "--verify", "--quiet", `refs/heads/${releaseBranch}`], true) !== null;
+    const plan = planWorktrees({ names, existing, releaseBranch, releaseBranchExists });
+    if (plan.refusals.length) die(2, plan.refusals.join("; "), { refusals: plan.refusals });
+    const root = mainCheckoutRoot();
+    const created = [];
+    for (const a of plan.actions) {
+      const folder = path.join(path.dirname(root), a.name);
+      const r = spawnSync("git", ["worktree", "add", ...a.args.map((x) => (x === "{path}" ? folder : x))], { cwd: root, encoding: "utf8" });
+      if (r.status !== 0) die(2, `git worktree add failed for ${a.name}`, { stderr: (r.stderr ?? "").trim() });
+      created.push({ lane: a.lane, path: folder });
+    }
+    const junctions = ["laneA", "laneB", "release"].map((lane) => {
+      const r = spawnSync(process.execPath, [fileURLToPath(import.meta.url), "junction", lane], { cwd: root, encoding: "utf8" });
+      return { lane, ok: r.status === 0, detail: (r.stdout || r.stderr || "").trim().slice(0, 300) };
+    });
+    ok({ bundleId: id, releaseBranch, created, junctions });
   }
   case "snapshot": {
     // node bundle.mjs snapshot 501 503 --repo owner/name  -> JSON snapshots to paste into the manifest
@@ -1339,7 +1362,7 @@ Lead:    precedent add --question q --answer a --scope issue|area|global [--issu
 Execute: verify [--gh] [--no-git], state-init [--take-over] (prints holder), then with --holder <h>:
          checkpoint, issue <n> <status> [--note --branch --commit --lane a|b], lanes (read-only: split issues into two path-disjoint lanes), attempt <n>, ci-run,
          phase <phase> [--pr --previous-main-sha --merge-sha --deploy-run --note], merge-gate --pr <n>,
-         blocker --kind k --note t [--issue n], blocker --resolve <index> --note t, decision --file f [--issue n], release-lock
+         blocker --kind k --note t [--issue n], blocker --resolve <index> --note t, mutex <dotnet|release-merge> --acquire|--release --holder t, worktrees --ensure <id>, decision --file f [--issue n], release-lock
 Packets: packet <bundleId> <issue> | packet --from-issue <n> (writes .qm/packets/<n>.md); handback-check <file>; handback-save --issue <n> --role <role> --file <json> (.qm/handbacks/<n>-<role>.json, recorded as a claim)
 Anyone:  status (text), list, cancel [--note]
 Global:  --bundles-dir <dir> (default <main checkout>/.qm/bundles); --key=value also accepted

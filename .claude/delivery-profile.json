@@ -36,6 +36,12 @@
     "src/Quizymode.Api/Migrations/",
     "docs/quizymode_taxonomy.yaml"
   ],
+  "areaPaths": {
+    "area:admin": ["src/Quizymode.Web/src/features/admin/", "src/Quizymode.Api/Features/Admin/"],
+    "area:analytics": ["src/Quizymode.Web/src/features/analytics/", "src/Quizymode.Api/Features/Analytics/"],
+    "area:games": ["src/Quizymode.Web/src/features/games/", "src/Quizymode.Api/Features/Games/"],
+    "area:study-guides": ["src/Quizymode.Web/src/features/studyGuide/", "src/Quizymode.Api/Features/StudyGuideDocuments/"]
+  },
   "version": {
     "file": "Directory.Build.props",
     "property": "QuizymodeVersion",
