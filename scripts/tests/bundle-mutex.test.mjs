@@ -1,12 +1,15 @@
 // Tests for #761 gap 13 (AC 7.19.32): one heavy command at a time, with a stale takeover. Temp folders only.
-import test from "node:test";
+import test, { after } from "node:test";
 import assert from "node:assert/strict";
 import fs from "node:fs";
 import os from "node:os";
 import path from "node:path";
 import { acquireMutex, releaseMutex, mutexFile, MUTEX_STALE_MINUTES } from "../bundle/mutex.mjs";
 
-const tmp = () => fs.mkdtempSync(path.join(os.tmpdir(), "qm-mutex-"));
+// Every temp folder is removed when the file's tests finish, so repeated runs do not leave qm-mutex-* folders behind.
+const made = [];
+const tmp = () => { const d = fs.mkdtempSync(path.join(os.tmpdir(), "qm-mutex-")); made.push(d); return d; };
+after(() => { for (const d of made) fs.rmSync(d, { recursive: true, force: true }); });
 const T0 = Date.parse("2026-11-23T10:00:00Z");
 
 // AC 7.19.32: a second holder is refused while the first holds the mutex; the first holder may take it again to refresh.

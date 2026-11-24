@@ -25,7 +25,7 @@
 | `authorization.paidServices` | Must be `false`. (enforced) |
 | `authorization.deleteOwnTestData`, `seedSyncApply`, `prodReadQueries`, `closeIssues` | Optional booleans. A standing approval (`approve --standing`) refuses a `true` the envelope does not allow. (enforced for standing approvals) |
 | `issues[].areas` | Optional `area:<name>` labels. A standing approval needs them when the envelope excludes areas. (enforced for standing approvals) |
-| `review.json` (next to the manifest) | `{"openFindings": []}` from step 8. A standing approval needs it empty. (enforced for standing approvals) |
+| `review.json` (next to the manifest) | `{"openFindings": [], "reviewer": {"sessionId": "<the fresh reviewer's session id>"}}` from step 8. A standing approval needs `openFindings` empty and a `reviewer.sessionId` that is not the approving session. (enforced for standing approvals, AC 7.19.36) |
 | `limits` | `maxAttemptsPerIssue`, `maxCiRuns` (pushes to the release PR), `maxWallClockHours`, `lockStaleMinutes`. (enforced) |
 | `releaseGates[]` | Checks that must all pass before merge. Non-empty. (enforced) The template's local-suite gate is the filtered form (build, filtered tests of shipped issues, `ac-gate --issues`; full suites run in CI on the release PR). Already-approved manifests keep their old gate. |
 | `postDeploy` | `checks[]` after merge and `rollbackTrigger`. |

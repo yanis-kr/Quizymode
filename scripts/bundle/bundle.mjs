@@ -27,6 +27,7 @@ import { MUTEX_NAMES, MUTEX_STALE_MINUTES, acquireMutex, releaseMutex } from "./
 import { planWorktrees, parseWorktreeList } from "./worktrees.mjs";
 import { haltFile, haltNeeded, haltState, writeHalt } from "./halt.mjs";
 import { nextForLane } from "./rolling.mjs";
+import { reviewerProblem } from "./review.mjs";
 
 const SCHEMA_VERSION = 1;
 const ID_RE = /^[a-z0-9][a-z0-9-]{2,47}$/;
@@ -661,6 +662,8 @@ function standingApproval(p, m, hash) {
   const review = safeJson(path.join(p.dir, "review.json"));
   if (!review || !Array.isArray(review.openFindings)) die(2, "No manifest review record. Refine step 8 writes review.json with openFindings.");
   if (review.openFindings.length) die(2, `The manifest review has ${review.openFindings.length} open finding(s); a standing approval needs none.`);
+  const reviewer = reviewerProblem(review, holderId());
+  if (reviewer) die(2, reviewer);
   if (typeof opts["lead-decision"] !== "string") die(1, "--lead-decision <file> is required: the qm-lead decision JSON for this approval");
   const decisionFile = path.resolve(String(opts["lead-decision"]));
   const d = readJson(decisionFile);
