@@ -25,6 +25,8 @@ import { openBlockers, resolveBlocker } from "./blockers.mjs";
 import { effectivePaths, overlappingFiles, pathsOverlap, normGlob } from "./scope.mjs";
 import { MUTEX_NAMES, MUTEX_STALE_MINUTES, acquireMutex, releaseMutex } from "./mutex.mjs";
 import { planWorktrees, parseWorktreeList } from "./worktrees.mjs";
+import { haltFile, haltNeeded, haltState, writeHalt } from "./halt.mjs";
+import { nextForLane } from "./rolling.mjs";
 
 const SCHEMA_VERSION = 1;
 const ID_RE = /^[a-z0-9][a-z0-9-]{2,47}$/;
@@ -402,6 +404,12 @@ function planLanes(m, st) {
   for (const g of groups.sort((x, y) => y.length - x.length)) (laneA.length <= laneB.length ? laneA : laneB).push(...g);
   const byOrder = (x, y) => x.order - y.order;
   return { laneA: laneA.sort(byOrder).map((i) => i.number), laneB: laneB.sort(byOrder).map((i) => i.number), reasons };
+}
+/** A set halt file stops every new autopilot start until the owner removes it (design E). */
+function refuseIfHalted() {
+  const qm = path.dirname(bundlesDir());
+  const halt = haltState(qm);
+  if (halt) die(2, `Autopilot is halted: ${haltFile(qm)}. Review the defects, then remove that file to start again.`, { halt });
 }
 function safeJson(p) { try { return JSON.parse(fs.readFileSync(p, "utf8")); } catch { return null; } }
 
@@ -872,6 +880,7 @@ switch (cmd) {
   }
   case "state-init": {
     const p = bundlePaths(id);
+    refuseIfHalted();
     const r = verifyAll(id, p);
     const m = r.manifest;
     const holder = holderId() ?? `h-${randomBytes(6).toString("hex")}`;
@@ -932,6 +941,19 @@ switch (cmd) {
     if (typeof opts.note === "string") it.notes.push(`${now()} ${opts.note}`);
     saveState(p, st, { event: "issue", issue: Number(num), status, note: opts.note });
     ok({ bundleId: id, issue: Number(num), ...it });
+  }
+  case "next": {
+    // Rolling lanes (design C): the next issue this lane should work. Read-only; the lane records its start with `issue <n> in_progress --lane <a|b>`.
+    const lane = String(opts.lane ?? "");
+    if (lane !== "a" && lane !== "b") die(1, "next needs --lane a or --lane b");
+    const p = bundlePaths(id);
+    const m = loadValidManifest(p, id);
+    const st = fs.existsSync(p.state) ? loadState(p) : null;
+    const planned = planLanes(m, st);
+    const plannedLane = new Map([...planned.laneA.map((n) => [n, "a"]), ...planned.laneB.map((n) => [n, "b"])]);
+    const laneOf = (n) => st?.issues?.[String(n)]?.lane ?? plannedLane.get(n) ?? null;
+    const status = (n) => st?.issues?.[String(n)]?.status ?? "pending";
+    ok({ bundleId: id, lane, ...nextForLane({ issues: m.issues, status, laneOf, lane }) });
   }
   case "lanes": {
     const p = bundlePaths(id);
@@ -1194,11 +1216,20 @@ switch (cmd) {
     it.status = next;
     it.validation = { result, kind, fixCycle, outcome, evidence: opts.evidence, at: now() };
     saveState(p, st, { event: "validation", issue: Number(num), result, kind, outcome });
-    ok({ bundleId: id, issue: Number(num), status: next, outcome, fixCycle });
+    let halted = false;
+    if (result === "fail" && kind === "defect") {
+      const defects = Object.entries(st.issues).filter(([, v]) => v.validation?.result === "fail" && v.validation?.kind === "defect").map(([n]) => Number(n));
+      if (haltNeeded(defects.length)) {
+        writeHalt(path.dirname(bundlesDir()), { bundleId: id, defects, at: now(), note: "Two or more defect failures in one batch. Review them, then remove this file to allow the next autopilot start." });
+        halted = true;
+      }
+    }
+    ok({ bundleId: id, issue: Number(num), status: next, outcome, fixCycle, halted });
   }
   case "select": {
     // Picks the next batch from the open status:ready issues (design B). Read-only: writes nothing and approves nothing.
     // Input: --issues-file <json array> (a saved gh issue list, optionally with paths, dependsOn, migration), or gh when omitted.
+    refuseIfHalted();
     let raw;
     if (typeof opts["issues-file"] === "string") raw = readJson(path.resolve(String(opts["issues-file"])));
     else {
@@ -1360,7 +1391,7 @@ Refine:  new, snapshot <n...>, check, hash, brief (text), approve --hash <prefix
 Envelope: envelope init | show | approve --hash <prefix> --user-reply "<text containing approve <prefix>>"
 Lead:    precedent add --question q --answer a --scope issue|area|global [--issue n] [--area area:x]; precedent find [--issue n] [--area area:x]
 Execute: verify [--gh] [--no-git], state-init [--take-over] (prints holder), then with --holder <h>:
-         checkpoint, issue <n> <status> [--note --branch --commit --lane a|b], lanes (read-only: split issues into two path-disjoint lanes), attempt <n>, ci-run,
+         checkpoint, issue <n> <status> [--note --branch --commit --lane a|b], lanes (read-only: split issues into two path-disjoint lanes), next --lane a|b (read-only: the lane's next issue), attempt <n>, ci-run,
          phase <phase> [--pr --previous-main-sha --merge-sha --deploy-run --note], merge-gate --pr <n>,
          blocker --kind k --note t [--issue n], blocker --resolve <index> --note t, mutex <dotnet|release-merge> --acquire|--release --holder t, worktrees --ensure <id>, decision --file f [--issue n], release-lock
 Packets: packet <bundleId> <issue> | packet --from-issue <n> (writes .qm/packets/<n>.md); handback-check <file>; handback-save --issue <n> --role <role> --file <json> (.qm/handbacks/<n>-<role>.json, recorded as a claim)
