@@ -295,3 +295,14 @@ class PilotRunTests(unittest.TestCase):
         with patch.object(pilot_run, "read_cache", lambda url: pages.get(url)):
             self.assertEqual(pilot_run.choose_page(self._item(), list(pages)), "https://a.example/two")
             self.assertIsNone(pilot_run.choose_page(self._item(), ["https://a.example/three", "https://a.example/missing"]))
+
+    def test_own_cited_page_is_fetched_when_not_cached(self) -> None:
+        import pilot_run
+        item = self._item()
+        fetched: list[list[str]] = []
+        with patch.object(pilot_run, "eligible_source_url", lambda i, t, m: "https://a.example/cited"),                 patch.object(pilot_run, "read_cache", lambda url: None),                 patch.object(pilot_run, "fetch_run", lambda urls, base_delay: fetched.append(list(urls))):
+            self.assertEqual(pilot_run.fetch_own_sources([item], {}, "T1", 0), ["https://a.example/cited"])
+        self.assertEqual(fetched, [["https://a.example/cited"]])
+        with patch.object(pilot_run, "eligible_source_url", lambda i, t, m: "https://a.example/cited"),                 patch.object(pilot_run, "read_cache", lambda url: {"status": "ok", "text": "x"}),                 patch.object(pilot_run, "fetch_run", lambda urls, base_delay: fetched.append(list(urls))):
+            self.assertEqual(pilot_run.fetch_own_sources([item], {}, "T1", 0), [])
+        self.assertEqual(len(fetched), 1)

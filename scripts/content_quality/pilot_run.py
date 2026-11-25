@@ -49,6 +49,14 @@ def choose_page(item, candidates: list[str]) -> str | None:
     return best_url
 
 
+def fetch_own_sources(items: list, tiers: dict, minimum_tier: str, delay: float) -> list[str]:
+    """Fetch each item's own eligible cited page when it is not cached yet, so a cited page is never skipped for a guess."""
+    urls = sorted({u for u in (eligible_source_url(i, tiers, minimum_tier) for i in items) if u and read_cache(u) is None})
+    if urls:
+        fetch_run(urls, base_delay=delay)
+    return urls
+
+
 def suggest(items: list, tried: dict[str, list[str]], seed: str, model: str, minimum_tier: str, tiers: dict, delay: float) -> dict[str, list[str]]:
     """Blind source-finder calls (level S) for the given items; returns itemId -> eligible URLs now in the cache."""
     found: dict[str, list[str]] = {}
@@ -86,6 +94,7 @@ def main() -> int:
     minimum = profiles.get(args.category, profiles["default"]).get("minTier", "T1")
     chosen: dict[str, str | None] = {}
     tried: dict[str, list[str]] = {}
+    fetch_own_sources(items, tiers, minimum, args.delay)
     for item in items:
         own = eligible_source_url(item, tiers, minimum)
         tried[item.item_id] = [own] if own else []
