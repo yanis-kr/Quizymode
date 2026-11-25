@@ -2,6 +2,7 @@ using FluentAssertions;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Quizymode.Api.StartupExtensions;
@@ -9,43 +10,81 @@ using Xunit;
 
 namespace Quizymode.Api.Tests.StartupExtensions;
 
-/// <summary>AC 7.8: the DevTest scheme exists only in Development and parses only well-formed headers.</summary>
+/// <summary>
+/// AC 7.8: the DevTest scheme exists only in Development with the explicit Authentication:DevTest:Enabled opt-in
+/// (AC 7.8.5), and parses only well-formed headers.
+/// </summary>
 public sealed class DevelopmentTestAuthTests
 {
     [Fact]
-    public async Task ProductionEnvironment_DoesNotRegisterTheDevTestScheme()
+    public async Task ProductionEnvironment_WithoutTheFlag_DoesNotRegisterTheDevTestScheme()
     {
-        WebApplicationBuilder builder = WebApplication.CreateBuilder(new WebApplicationOptions
-        {
-            EnvironmentName = Environments.Production,
-            ContentRootPath = AppContext.BaseDirectory,
-        });
-        builder.Services.AddAuthentication();
+        IEnumerable<string> names = await RegisteredSchemesAsync(Environments.Production, enabled: null);
 
-        builder.AddDevelopmentTestAuthentication();
-
-        using ServiceProvider provider = builder.Services.BuildServiceProvider();
-        IAuthenticationSchemeProvider schemes = provider.GetRequiredService<IAuthenticationSchemeProvider>();
-        IEnumerable<string> names = (await schemes.GetAllSchemesAsync()).Select(scheme => scheme.Name);
         names.Should().NotContain(DevelopmentTestAuthExtensions.SchemeName);
     }
 
     [Fact]
-    public async Task DevelopmentEnvironment_RegistersTheDevTestScheme()
+    public async Task ProductionEnvironment_WithTheFlag_DoesNotRegisterTheDevTestScheme()
+    {
+        IEnumerable<string> names = await RegisteredSchemesAsync(Environments.Production, enabled: "true");
+
+        names.Should().NotContain(DevelopmentTestAuthExtensions.SchemeName);
+    }
+
+    [Theory]
+    [InlineData("Staging")]
+    [InlineData("Preview")]
+    public async Task OtherNonDevelopmentEnvironment_WithTheFlag_DoesNotRegisterTheDevTestScheme(string environment)
+    {
+        IEnumerable<string> names = await RegisteredSchemesAsync(environment, enabled: "true");
+
+        names.Should().NotContain(DevelopmentTestAuthExtensions.SchemeName);
+    }
+
+    [Theory]
+    [InlineData(null)]
+    [InlineData("false")]
+    [InlineData("")]
+    [InlineData("yes")]
+    public async Task DevelopmentEnvironment_WithoutTheFlag_DoesNotRegisterTheDevTestScheme(string? enabled)
+    {
+        IEnumerable<string> names = await RegisteredSchemesAsync(Environments.Development, enabled);
+
+        names.Should().NotContain(DevelopmentTestAuthExtensions.SchemeName);
+    }
+
+    [Fact]
+    public async Task DevelopmentEnvironment_WithTheFlag_RegistersTheDevTestScheme()
+    {
+        IEnumerable<string> names = await RegisteredSchemesAsync(Environments.Development, enabled: "true");
+
+        names.Should().Contain(DevelopmentTestAuthExtensions.SchemeName);
+    }
+
+    private static async Task<IEnumerable<string>> RegisteredSchemesAsync(string environment, string? enabled)
     {
         WebApplicationBuilder builder = WebApplication.CreateBuilder(new WebApplicationOptions
         {
-            EnvironmentName = Environments.Development,
+            EnvironmentName = environment,
             ContentRootPath = AppContext.BaseDirectory,
         });
+        // Clear the real environment so a flag set on the test machine cannot leak in.
+        builder.Configuration.Sources.Clear();
+        if (enabled is not null)
+        {
+            builder.Configuration.AddInMemoryCollection(new Dictionary<string, string?>
+            {
+                [DevelopmentTestAuthExtensions.EnabledConfigKey] = enabled,
+            });
+        }
         builder.Services.AddAuthentication();
 
         builder.AddDevelopmentTestAuthentication();
 
         using ServiceProvider provider = builder.Services.BuildServiceProvider();
         IAuthenticationSchemeProvider schemes = provider.GetRequiredService<IAuthenticationSchemeProvider>();
-        IEnumerable<string> names = (await schemes.GetAllSchemesAsync()).Select(scheme => scheme.Name);
-        names.Should().Contain(DevelopmentTestAuthExtensions.SchemeName);
+        return (await schemes.GetAllSchemesAsync()).Select(scheme => scheme.Name).ToList();
     }
 
     [Theory]
