@@ -6,6 +6,7 @@ import sys
 import tempfile
 import unittest
 from pathlib import Path
+from urllib.parse import urlparse
 from unittest.mock import patch
 
 SCRIPTS = Path(__file__).resolve().parents[1]
@@ -171,7 +172,7 @@ class SourceExpansionTests(unittest.TestCase):
     def test_eligible_urls_keep_only_tier_one_https_unique_and_cap_three(self) -> None:
         import source_expansion
         tiers = {"T1": ["docs.aws.amazon.com"]}
-        with patch.object(source_expansion, "tier_for_url", lambda url, _t: "T1" if "docs.aws.amazon.com" in url else "T5"):
+        with patch.object(source_expansion, "tier_for_url", lambda url, _t: "T1" if urlparse(url).hostname == "docs.aws.amazon.com" else "T5"):
             urls = [
                 "http://docs.aws.amazon.com/a", "https://docs.aws.amazon.com/a", "https://docs.aws.amazon.com/a",
                 "https://blog.example.com/x", "https://docs.aws.amazon.com/b", "https://docs.aws.amazon.com/c",
