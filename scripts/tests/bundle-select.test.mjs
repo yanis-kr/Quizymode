@@ -1,5 +1,5 @@
 // Tests for #761 v2 (AC 7.19.24): batch selection. Pure selection plus the `select` command on a saved issue list.
-import test from "node:test";
+import test, { after } from "node:test";
 import assert from "node:assert/strict";
 import fs from "node:fs";
 import os from "node:os";
@@ -8,9 +8,14 @@ import { spawnSync } from "node:child_process";
 import { fileURLToPath } from "node:url";
 import { selectIssues, lockedIssues } from "../bundle/select.mjs";
 
+// Temp folders this file makes are removed when the file ends, so %TEMP% does not collect qm-* folders (#761).
+const madeDirs = [];
+const mkTmp = (prefix) => { const d = fs.mkdtempSync(path.join(os.tmpdir(), prefix)); madeDirs.push(d); return d; };
+after(() => { for (const d of madeDirs) fs.rmSync(d, { recursive: true, force: true }); });
+
 const repo = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..", "..");
 const BUNDLE = path.join(repo, "scripts", "bundle", "bundle.mjs");
-const tmp = () => fs.mkdtempSync(path.join(os.tmpdir(), "qm-v2-select-"));
+const tmp = () => mkTmp("qm-v2-select-");
 const ready = (number, labels, extra = {}) => ({ number, labels: ["status:ready", ...labels], hasAcs: true, paths: [], ...extra });
 
 // AC 7.19.24: each excluded issue gets one reason; an eligible issue is never silently dropped.

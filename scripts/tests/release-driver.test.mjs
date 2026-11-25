@@ -1,4 +1,4 @@
-import test from "node:test";
+import test, { after } from "node:test";
 import assert from "node:assert/strict";
 import fs from "node:fs";
 import os from "node:os";
@@ -7,6 +7,11 @@ import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { classifyFile } from "../ci/classify-changes.mjs";
 import { deployFor, emit, evidence, main, paths, redact, refusal, ship, waitPr, gh } from "../release/release.mjs";
+
+// Temp folders this file makes are removed when the file ends, so %TEMP% does not collect qm-* folders (#761).
+const madeDirs = [];
+const mkTmp = (prefix) => { const d = fs.mkdtempSync(path.join(os.tmpdir(), prefix)); madeDirs.push(d); return d; };
+after(() => { for (const d of madeDirs) fs.rmSync(d, { recursive: true, force: true }); });
 
 // A fake gh: routes each call by its argument list and records every call so tests can assert what was not run.
 function fakeGh(routes) {
@@ -26,7 +31,7 @@ function fakeGh(routes) {
 }
 
 function tempRoot() {
-  return fs.mkdtempSync(path.join(os.tmpdir(), "release-driver-"));
+  return mkTmp("release-driver-");
 }
 
 const green = (names = ["build-test-publish", "CodeQL"]) =>

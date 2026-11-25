@@ -1,5 +1,5 @@
 // Tests for #760 AC 6: ask-audit counts AskUserQuestion calls and turn-ending questions in a transcript.
-import test from "node:test";
+import test, { after } from "node:test";
 import assert from "node:assert/strict";
 import fs from "node:fs";
 import os from "node:os";
@@ -7,6 +7,11 @@ import path from "node:path";
 import { spawnSync } from "node:child_process";
 import { fileURLToPath } from "node:url";
 import { auditTranscript } from "../automation/ask-audit.mjs";
+
+// Temp folders this file makes are removed when the file ends, so %TEMP% does not collect qm-* folders (#761).
+const madeDirs = [];
+const mkTmp = (prefix) => { const d = fs.mkdtempSync(path.join(os.tmpdir(), prefix)); madeDirs.push(d); return d; };
+after(() => { for (const d of madeDirs) fs.rmSync(d, { recursive: true, force: true }); });
 
 const repo = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..", "..");
 const AUDIT = path.join(repo, "scripts", "automation", "ask-audit.mjs");
@@ -33,7 +38,7 @@ test("AC6: counts AskUserQuestion calls and turn-ending questions for a fixture 
 });
 
 test("AC6: the CLI prints the same counts for a file", () => {
-  const dir = fs.mkdtempSync(path.join(os.tmpdir(), "audit-760-"));
+  const dir = mkTmp("audit-760-");
   const file = path.join(dir, "t.jsonl");
   fs.writeFileSync(file, [assistantTool("AskUserQuestion"), assistantText("Ready?"), ownerText("yes")].join("\n") + "\n");
   const r = spawnSync(process.execPath, [AUDIT, file], { encoding: "utf8" });

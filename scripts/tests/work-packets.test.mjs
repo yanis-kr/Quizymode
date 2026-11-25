@@ -1,5 +1,5 @@
 // Tests for #719: ac-slice.mjs, bundle.mjs packet/handback-check, usage-ledger.mjs and the agent/skill wiring.
-import test from "node:test";
+import test, { after } from "node:test";
 import assert from "node:assert/strict";
 import fs from "node:fs";
 import os from "node:os";
@@ -10,9 +10,14 @@ import { fileURLToPath } from "node:url";
 import { sliceAc, render } from "../validation/ac-slice.mjs";
 import { buildLedger, formatLedger, issueLine } from "../automation/usage-ledger.mjs";
 
+// Temp folders this file makes are removed when the file ends, so %TEMP% does not collect qm-* folders (#761).
+const madeDirs = [];
+const mkTmp = (prefix) => { const d = fs.mkdtempSync(path.join(os.tmpdir(), prefix)); madeDirs.push(d); return d; };
+after(() => { for (const d of madeDirs) fs.rmSync(d, { recursive: true, force: true }); });
+
 const repo = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..", "..");
 const BUNDLE = path.join(repo, "scripts", "bundle", "bundle.mjs");
-const tmp = () => fs.mkdtempSync(path.join(os.tmpdir(), "qm-719-"));
+const tmp = () => mkTmp("qm-719-");
 const run = (args) => spawnSync("node", [BUNDLE, ...args], { encoding: "utf8" });
 
 const AC_FIXTURE = `# AC

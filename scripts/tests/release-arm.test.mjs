@@ -1,5 +1,5 @@
 // Release-ready gate and arm/disarm (#761, AC 7.19.1 to 7.19.5). No GitHub calls: gh is a test double.
-import test from "node:test";
+import test, { after } from "node:test";
 import assert from "node:assert/strict";
 import fs from "node:fs";
 import os from "node:os";
@@ -7,6 +7,11 @@ import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { releaseReady, RELEASE_READY_NEEDS } from "../release/release-ready.mjs";
 import { arm, disarm, recordReview, shipWait, waitPr } from "../release/release.mjs";
+
+// Temp folders this file makes are removed when the file ends, so %TEMP% does not collect them (#761).
+const madeDirs = [];
+const mkTmp = (prefix) => { const d = fs.mkdtempSync(path.join(os.tmpdir(), prefix)); madeDirs.push(d); return d; };
+after(() => { for (const d of madeDirs) fs.rmSync(d, { recursive: true, force: true }); });
 
 const HEAD = "b94b6a8e9d50404823d017103d05294fa3e8a05d";
 
@@ -27,7 +32,7 @@ function fakeGh(routes) {
 }
 
 function tempRoot() {
-  return fs.mkdtempSync(path.join(os.tmpdir(), "release-arm-"));
+  return mkTmp("release-arm-");
 }
 
 const allPass = { changes: { result: "success" }, "build-test-publish": { result: "success" }, e2e: { result: "success" }, "ac-gate": { result: "success" }, "seed-quality": { result: "skipped" }, "automation-contract": { result: "success" } };
