@@ -1,13 +1,18 @@
 // Tests for #761 v2 (AC 7.19.21, 7.19.23, 7.19.25): the issue status table, the release slot and the validation outcomes.
 // Pure helpers only, plus temp folders for the bundle state files. No GitHub, no production.
-import test from "node:test";
+import test, { after } from "node:test";
 import assert from "node:assert/strict";
 import fs from "node:fs";
 import os from "node:os";
 import path from "node:path";
 import { ISSUE_STATUSES, ISSUE_TRANSITIONS, transitionError, releaseSlotHolder, RELEASE_SLOT_PHASES, validationOutcome, VALIDATION_KINDS } from "../bundle/transitions.mjs";
 
-const tmpDir = () => fs.mkdtempSync(path.join(os.tmpdir(), "qm-v2-trans-"));
+// Temp folders this file makes are removed when the file ends, so %TEMP% does not collect qm-* folders (#761).
+const madeDirs = [];
+const mkTmp = (prefix) => { const d = fs.mkdtempSync(path.join(os.tmpdir(), prefix)); madeDirs.push(d); return d; };
+after(() => { for (const d of madeDirs) fs.rmSync(d, { recursive: true, force: true }); });
+
+const tmpDir = () => mkTmp("qm-v2-trans-");
 function writeBundleState(dir, id, phase) {
   fs.mkdirSync(path.join(dir, id), { recursive: true });
   fs.writeFileSync(path.join(dir, id, "state.json"), JSON.stringify({ bundleId: id, phase, issues: {} }));

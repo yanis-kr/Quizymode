@@ -1,6 +1,6 @@
 // Tests for #761 v2 (AC 7.19.22): the stall rule counts a local branch move as progress, and a stalled run is shown by status.
 // Temp git repo and temp .qm folder only.
-import test from "node:test";
+import test, { after } from "node:test";
 import assert from "node:assert/strict";
 import fs from "node:fs";
 import os from "node:os";
@@ -10,6 +10,11 @@ import { fileURLToPath } from "node:url";
 import { main } from "../bundle/autopilot-hook.mjs";
 import { readRun, writeRun, runFilePath, STALL_AFTER_BLOCKS } from "../bundle/autopilot-run.mjs";
 
+// Temp folders this file makes are removed when the file ends, so %TEMP% does not collect qm-* folders (#761).
+const madeDirs = [];
+const mkTmp = (prefix) => { const d = fs.mkdtempSync(path.join(os.tmpdir(), prefix)); madeDirs.push(d); return d; };
+after(() => { for (const d of madeDirs) fs.rmSync(d, { recursive: true, force: true }); });
+
 const repoRoot = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..", "..");
 const BUNDLE = path.join(repoRoot, "scripts", "bundle", "bundle.mjs");
 const BID = "b-20261122-stall-test";
@@ -18,10 +23,10 @@ const SESSION = "sess-stall";
 const git = (cwd, args) => spawnSync("git", ["-c", "user.name=test", "-c", "user.email=test@example.com", ...args], { cwd, encoding: "utf8" });
 
 function setup() {
-  const repo = fs.mkdtempSync(path.join(os.tmpdir(), "qm-v2-stall-repo-"));
+  const repo = mkTmp("qm-v2-stall-repo-");
   git(repo, ["init", "-q"]);
   git(repo, ["commit", "-q", "--allow-empty", "-m", "init"]);
-  const qm = fs.mkdtempSync(path.join(os.tmpdir(), "qm-v2-stall-qm-"));
+  const qm = mkTmp("qm-v2-stall-qm-");
   fs.mkdirSync(path.join(qm, "bundles", BID), { recursive: true });
   fs.writeFileSync(path.join(qm, "bundles", BID, "state.json"), JSON.stringify({ bundleId: BID, phase: "implementing", issues: {} }));
   writeRun(runFilePath(qm), { bundleId: BID, session: SESSION, phase: "implementing", stopBlocks: 0, stalled: false, lastStateHash: null });

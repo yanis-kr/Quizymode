@@ -1,7 +1,7 @@
 // AC 7.19.26: a multi-issue rehearsal of one batch's life, on recorded gh output in a temp folder. No live GitHub,
 // no production. It walks selection, the release slot, the validation outcomes and the slot release, for three issues
 // across two bundles.
-import test from "node:test";
+import test, { after } from "node:test";
 import assert from "node:assert/strict";
 import fs from "node:fs";
 import os from "node:os";
@@ -10,6 +10,11 @@ import { spawnSync } from "node:child_process";
 import { fileURLToPath } from "node:url";
 import { lockedIssues } from "../bundle/select.mjs";
 import { transitionError, releaseSlotHolder, validationOutcome } from "../bundle/transitions.mjs";
+
+// Temp folders this file makes are removed when the file ends, so %TEMP% does not collect qm-* folders (#761).
+const madeDirs = [];
+const mkTmp = (prefix) => { const d = fs.mkdtempSync(path.join(os.tmpdir(), prefix)); madeDirs.push(d); return d; };
+after(() => { for (const d of madeDirs) fs.rmSync(d, { recursive: true, force: true }); });
 
 const repo = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..", "..");
 const BUNDLE = path.join(repo, "scripts", "bundle", "bundle.mjs");
@@ -29,7 +34,7 @@ function writeState(dir, id, phase, issues = {}) {
 const readState = (dir, id) => JSON.parse(fs.readFileSync(path.join(dir, id, "state.json"), "utf8"));
 
 test("AC 7.19.26: a three-issue batch goes from selection to a released slot, with two bundles", () => {
-  const dir = fs.mkdtempSync(path.join(os.tmpdir(), "qm-v2-rehearsal-"));
+  const dir = mkTmp("qm-v2-rehearsal-");
   const bundles = path.join(dir, "bundles");
   const A = "b-20261122-items-batch";
   const B = "b-20261122-study-batch";
