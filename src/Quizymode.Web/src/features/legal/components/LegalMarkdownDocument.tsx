@@ -1,6 +1,7 @@
 import { useMemo, type ReactNode } from "react";
 import { Link } from "react-router-dom";
 import { SEO } from "@/components/SEO";
+import { resolveLegalLinkTarget } from "./legalLinkTarget";
 
 interface LegalMarkdownDocumentProps {
   title: string;
@@ -219,19 +220,33 @@ function renderInline(text: string): ReactNode[] {
 
 function renderLink(label: string, href: string, key: number): ReactNode {
   const className = "font-medium text-indigo-ink hover:text-indigo-ink underline";
+  const target = resolveLegalLinkTarget(href);
 
-  if (href.startsWith("/")) {
+  // A destination outside the allowlist (#811) is never linked: the label shows as plain text.
+  if (target === null) {
+    return label;
+  }
+
+  if (target.kind === "internal") {
     return (
-      <Link key={`link-${key}`} to={href} className={className}>
+      <Link key={`link-${key}`} to={target.to} className={className}>
         {label}
       </Link>
+    );
+  }
+
+  if (target.kind === "mailto") {
+    return (
+      <a key={`link-${key}`} href={target.href} className={className}>
+        {label}
+      </a>
     );
   }
 
   return (
     <a
       key={`link-${key}`}
-      href={href}
+      href={target.href}
       className={className}
       target="_blank"
       rel="noreferrer"
