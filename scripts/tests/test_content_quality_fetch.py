@@ -21,7 +21,7 @@ from fetcher import (  # noqa: E402
     tier_for_url,
     wikipedia_api_url,
 )
-from quality_lib import content_hash, risk_queue  # noqa: E402
+from quality_lib import RUBRIC_VERSION, content_hash, risk_queue  # noqa: E402
 from seed_source_common import SourceItem  # noqa: E402
 
 TIERS = {
@@ -226,7 +226,7 @@ class RiskQueueTests(unittest.TestCase):
     def test_an_item_with_a_current_row_is_omitted_and_a_stale_one_is_queued_again(self) -> None:
         item = make_item("e3", "exams", None)
         current = {
-            "itemId": "e3", "contentHash": content_hash(item), "rubricVersion": "1", "level": "L1",
+            "itemId": "e3", "contentHash": content_hash(item), "rubricVersion": RUBRIC_VERSION, "level": "L1",
             "status": "lint-clean", "sourceUrl": None, "sourceTextHash": None, "checkedAt": NOW.isoformat(),
         }
         self.assertEqual(risk_queue([item], [current], "L1", 5, TIERS, PROFILES, NOW, cache_root=NO_CACHE), [])
@@ -243,7 +243,7 @@ class RiskQueueTests(unittest.TestCase):
             fetch_run([url], cache_root=cache, transport=transport, sleep=no_sleep, clock=fake_clock(), now=NOW)
             item = make_item("e4", "exams", url)
             row = {
-                "itemId": "e4", "contentHash": content_hash(item), "rubricVersion": "1", "level": "L1",
+                "itemId": "e4", "contentHash": content_hash(item), "rubricVersion": RUBRIC_VERSION, "level": "L1",
                 "status": "source-verified", "sourceUrl": url, "sourceTextHash": "0" * 64, "checkedAt": NOW.isoformat(),
             }
             queued = risk_queue([item], [row], "L1", 5, TIERS, PROFILES, NOW, cache_root=cache)
