@@ -5,6 +5,7 @@ from __future__ import annotations
 import argparse
 import json
 import re
+import shutil
 import subprocess
 import sys
 import tempfile
@@ -20,6 +21,10 @@ PROMPTS = {
     "L1": """You are the blind answer reviewer for multiple-choice exam questions. The packets contain no key or explanation. Answer each question independently using only the question and options. Do not search, browse, or use tools. Return only a JSON array with one object per packet, exactly these fields: itemId (string), answer (exact option text), multipleDefensibleAnswers (boolean), difficulty (easy|medium|hard). If more than one answer is defensible, set the boolean true. Do not add rationale or any other fields.
 
 Packets:\n""",
+    "S": """You are the source finder for multiple-choice exam questions. The packets contain only a question and options, with no key. For each question propose up to 3 pages of official vendor or standards-body documentation that would settle which option is correct, most specific page first. When a packet has triedUrls, those pages did not settle the question: propose different pages, never the same URL. Use only full https URLs you are confident exist; do not invent URLs and do not guess deep anchors. Do not search, browse, or use tools. Return only a JSON array with one object per packet, exactly these fields: itemId (string), urls (array of up to 3 strings).
+
+Packets:
+""",
     "L2": """You are the source-grounded reviewer. Review each item against its supplied key, explanation, and bounded passage. The passage is the only evidence source. Do not search, browse, or use tools. Determine whether the key and explanation are supported, whether another option is also defensible, and whether a correction is needed. For verdict source-verified, include a short verbatim quote that supports the key. For any finding that needs a content or answer change, return a verbatim quote from the passage. If the passage cannot support a decision, use verdict evidence-gap and quote null. Do not invent citations or quotes. Return only a JSON array with one object per packet and exactly these fields: itemId, verdict (source-verified|key-mismatch|ambiguous|content-fix|evidence-gap), flags (array of short strings), quote (string|null), proposedFix (string|null), requiresL3 (boolean). Do not include chain-of-thought or rationale.
 
 Packets:\n""",
@@ -43,8 +48,8 @@ def _validate_packets(level: str, packets: list[dict[str, Any]], budget: int) ->
     for packet in packets:
         if packet.get("level") != level:
             raise ValueError(f"packet {packet.get('itemId')} has the wrong level")
-        if level == "L1":
-            allowed = {"itemId", "level", "question", "options", "shuffleSeed"}
+        if level in {"L1", "S"}:
+            allowed = {"itemId", "level", "question", "options", "shuffleSeed"} | ({"triedUrls"} if level == "S" else set())
             if set(packet) - allowed or "correctAnswer" in packet or "explanation" in packet:
                 raise ValueError(f"L1 packet {packet.get('itemId')} contains key or explanation data")
         elif level == "L2":
@@ -86,7 +91,7 @@ def _run_call(level: str, model: str, packets: list[dict[str, Any]]) -> tuple[li
     prompt = PROMPTS[level] + json.dumps(packets, ensure_ascii=False, separators=(",", ":"))
     with tempfile.TemporaryDirectory(prefix="qm-content-review-") as temp_dir:
         result = subprocess.run(
-            ["codex", "exec", "--skip-git-repo-check", "--ephemeral", "--model", model, "--sandbox", "read-only", "--json", "-"],
+            [shutil.which("codex") or "codex", "exec", "--skip-git-repo-check", "--ephemeral", "--model", model, "--sandbox", "read-only", "--json", "-"],
             input=prompt,
             text=True,
             encoding="utf-8",
