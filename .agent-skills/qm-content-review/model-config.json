@@ -1,0 +1,10 @@
+{
+  "rubricVersion": "1",
+  "models": {
+    "L1": "gpt-6-luna",
+    "L2": "gpt-6-sol",
+    "L3": "gpt-6-sol"
+  },
+  "maxBatchSize": 25,
+  "sourcePassageMaxWords": 600
+}

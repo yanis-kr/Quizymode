@@ -20,8 +20,10 @@ from quality_lib import (  # noqa: E402
     ingest,
     legacy_rows,
     packet,
+    proposal_evidence_table,
     queue,
     read_rows,
+    validate_proposal,
 )
 from seed_source_common import SourceItem  # noqa: E402
 
@@ -80,6 +82,9 @@ class QueueTests(unittest.TestCase):
         row = {"itemId": ITEM_ID, "contentHash": content_hash(item), "rubricVersion": RUBRIC_VERSION, "level": "L1"}
         self.assertEqual(len(queue([item], [row], "L2", 10)), 1)
 
+    def test_zero_budget_starts_no_items(self) -> None:
+        self.assertEqual(queue([make_item()], [], "L1", 0), [])
+
 
 class PacketTests(unittest.TestCase):
     def test_l1_has_no_key_marker_or_explanation_and_records_seed(self) -> None:
@@ -99,11 +104,23 @@ class PacketTests(unittest.TestCase):
         body = packet(make_item(), "L2", "seed-1", cache_root=FIXTURE_CACHE)
         self.assertIn("passage", body)
         self.assertIn("subnet", body["passage"].lower())
+        self.assertEqual(body["correctAnswer"], make_item().correct_answer)
+        self.assertEqual(body["explanation"], make_item().explanation)
+
+    def test_l3_packet_uses_second_passage_and_structured_findings_only(self) -> None:
+        body = packet(
+            make_item(), "L3", "seed-1", cache_root=FIXTURE_CACHE,
+            source_url=FIXTURE_URL, second_source_url=FIXTURE_URL,
+            findings={"l1Answer": "A", "l2Verdict": "key-mismatch", "l2Reasoning": "private reasoning"},
+        )
+        self.assertIn("secondPassage", body)
+        self.assertNotIn("l2Reasoning", body["findings"])
+        self.assertEqual(body["findings"]["l2Verdict"], "key-mismatch")
 
 
 class IngestTests(unittest.TestCase):
     def test_rejects_quote_not_in_cache_and_accepts_one_in_cache(self) -> None:
-        item = make_item()
+        item = make_item(category="science")
         items = {item.item_id: item}
         good = {"itemId": ITEM_ID, "level": "L2", "status": "source-verified", "quote": "A subnet is a range of IP addresses in your VPC.", "sourceUrl": FIXTURE_URL, "checker": "owner"}
         bad = dict(good, quote="This sentence is not in the source at all.")
@@ -111,6 +128,39 @@ class IngestTests(unittest.TestCase):
         self.assertEqual(len(accepted), 1)
         self.assertEqual(len(rejected), 1)
         self.assertIn("quote not found", rejected[0])
+
+    def test_source_verified_requires_quote_and_exam_tier(self) -> None:
+        missing = {"itemId": ITEM_ID, "level": "L2", "status": "source-verified", "sourceUrl": FIXTURE_URL}
+        accepted, rejected = ingest([missing], {ITEM_ID: make_item()}, cache_root=FIXTURE_CACHE)
+        self.assertEqual(accepted, [])
+        self.assertIn("requires an L2/L3 quote", rejected[0])
+
+        low_tier = {
+            "itemId": ITEM_ID, "level": "L2", "status": "source-verified",
+            "quote": "A subnet is a range of IP addresses in your VPC.", "sourceUrl": FIXTURE_URL,
+        }
+        accepted, rejected = ingest([low_tier], {ITEM_ID: make_item()}, cache_root=FIXTURE_CACHE)
+        self.assertEqual(accepted, [])
+        self.assertIn("source tier", rejected[0])
+
+    def test_class_b_requires_quote_backed_l2_and_l3_support(self) -> None:
+        self.assertRaises(ValueError, validate_proposal, ITEM_ID, "B", [])
+        rows = [
+            {"itemId": ITEM_ID, "level": "L2", "quote": "quote", "sourceTextHash": "hash"},
+            {"itemId": ITEM_ID, "level": "L3", "quote": "quote", "sourceTextHash": "hash", "adjudication": "weak"},
+        ]
+        self.assertRaises(ValueError, validate_proposal, ITEM_ID, "B", rows)
+        rows[1]["adjudication"] = "supports-change"
+        validate_proposal(ITEM_ID, "B", rows)
+
+    def test_generated_proposal_table_includes_before_after_and_quote(self) -> None:
+        rows = [
+            {"itemId": ITEM_ID, "level": "L2", "rubricVersion": "1", "status": "flagged", "quote": "The key is wrong.", "sourceTextHash": "hash", "sourceUrl": FIXTURE_URL, "proposedFix": "Use option B."},
+            {"itemId": ITEM_ID, "level": "L3", "rubricVersion": "1", "status": "flagged", "quote": "Option B is correct.", "sourceTextHash": "hash2", "sourceUrl": "https://docs.example.test/second", "adjudication": "supports-change"},
+        ]
+        table = proposal_evidence_table(rows, [{"itemId": ITEM_ID, "changeClass": "B", "before": "A", "after": "B"}])
+        self.assertIn("| A | B |", table)
+        self.assertIn("Option B is correct.", table)
 
 
 class LegacyAndCompactTests(unittest.TestCase):

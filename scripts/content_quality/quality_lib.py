@@ -20,7 +20,7 @@ RUBRIC_VERSION = "1"
 PASSAGE_MAX_WORDS = 600  # about 800 tokens at 1.33 tokens per word
 PASSAGE_WINDOW_WORDS = 120
 LEVELS = ("L1", "L2", "L3", "owner", "legacy")
-STATUSES = ("unreviewed", "lint-clean", "blind-agree", "source-verified", "owner-verified", "flagged", "legacy-unverified")
+STATUSES = ("unreviewed", "unverified", "lint-clean", "blind-agree", "source-verified", "owner-verified", "flagged", "legacy-unverified")
 
 
 def _norm(text: str) -> str:
@@ -70,6 +70,10 @@ def latest_by_key(rows: Iterable[dict[str, Any]]) -> dict[tuple[str, str, str], 
 
 def queue(items: list[SourceItem], rows: list[dict[str, Any]], level: str, budget: int) -> list[SourceItem]:
     """Items with no ledger row at their current hash, level and rubric version. Rows at a stale hash re-queue."""
+    if budget < 0:
+        raise ValueError("budget must be zero or greater")
+    if budget == 0:
+        return []
     current = latest_by_key(rows)
     pending = []
     for item in items:
@@ -113,8 +117,18 @@ def best_passage(text: str, item: SourceItem) -> str:
     return " ".join(words[best_start:best_start + PASSAGE_MAX_WORDS])
 
 
-def packet(item: SourceItem, level: str, seed: str, cache_root: Path = CACHE_ROOT) -> dict[str, Any]:
-    """Level packets never carry the key marker or the explanation. L2 adds a passage from the cache only."""
+def packet(
+    item: SourceItem,
+    level: str,
+    seed: str,
+    cache_root: Path = CACHE_ROOT,
+    source_url: str | None = None,
+    findings: dict[str, Any] | None = None,
+    second_source_url: str | None = None,
+) -> dict[str, Any]:
+    """Build a level-specific review packet without labels or reviewer reasoning."""
+    if level not in {"L1", "L2", "L3"}:
+        raise ValueError(f"unsupported packet level: {level}")
     body: dict[str, Any] = {
         "itemId": item.item_id,
         "level": level,
@@ -122,16 +136,64 @@ def packet(item: SourceItem, level: str, seed: str, cache_root: Path = CACHE_ROO
         "options": shuffled_options(item, seed),
         "shuffleSeed": seed,
     }
-    if level == "L2" and item.source:
-        cached = read_cache(item.source, cache_root)
+    if level in {"L2", "L3"}:
+        body["correctAnswer"] = item.correct_answer
+        body["explanation"] = item.explanation or ""
+        review_source = source_url or item.source
+        cached = read_cache(review_source, cache_root) if review_source else None
         if cached:
             body["passage"] = best_passage(cached.get("text", ""), item)
-            body["sourceUrl"] = item.source
+            body["sourceUrl"] = review_source
+        if level == "L3":
+            body["findings"] = {
+                key: findings.get(key)
+                for key in ("l1Answer", "l1MultipleDefensible", "l2Verdict", "l2ProposedChange")
+            } if findings else {}
+            second_cached = read_cache(second_source_url, cache_root) if second_source_url else None
+            if second_cached:
+                body["secondPassage"] = best_passage(second_cached.get("text", ""), item)
+                body["secondSourceUrl"] = second_source_url
     return body
+
+
+def item_source_candidates(item: SourceItem) -> list[str]:
+    """Return the item source, legacy fact-check sources, and URLs embedded in its explanation."""
+    candidates: list[str] = []
+    if item.source:
+        candidates.append(item.source)
+    try:
+        raw_items = json.loads(item.path.read_text(encoding="utf-8"))
+        raw = raw_items[item.index]
+    except (OSError, IndexError, json.JSONDecodeError, TypeError):
+        raw = {}
+    for check in raw.get("factChecks", []) if isinstance(raw, dict) else []:
+        if isinstance(check, dict) and isinstance(check.get("source"), str):
+            candidates.append(check["source"])
+    candidates.extend(re.findall(r"https?://[^\s)\]>]+", item.explanation or ""))
+    return list(dict.fromkeys(url.rstrip(".,;") for url in candidates if url.startswith(("http://", "https://"))))
+
+
+def eligible_source_url(item: SourceItem, tiers: dict[str, Any], minimum_tier: str) -> str | None:
+    """Select the first cited source meeting a profile's minimum provenance tier."""
+    from fetcher import tier_for_url
+
+    tier_order = {f"T{n}": n for n in range(1, 6)}
+    maximum = tier_order.get(minimum_tier, 5)
+    for url in item_source_candidates(item):
+        if tier_order.get(tier_for_url(url, tiers), 99) <= maximum:
+            return url
+    return None
 
 
 def verify_quote(quote: str, source_text: str) -> bool:
     return bool(quote.strip()) and _norm(quote) in _norm(source_text)
+
+
+def cache_is_ok(cached: dict[str, Any] | None) -> bool:
+    if cached is None:
+        return False
+    status = cached.get("status", "ok")
+    return status == "ok" or isinstance(status, int) and 200 <= status < 300
 
 
 def ingest(verdicts: Iterable[dict[str, Any]], items: dict[str, SourceItem], cache_root: Path = CACHE_ROOT) -> tuple[list[dict[str, Any]], list[str]]:
@@ -148,10 +210,26 @@ def ingest(verdicts: Iterable[dict[str, Any]], items: dict[str, SourceItem], cac
             rejected.append(f"{item_id}: bad level or status")
             continue
         quote = verdict.get("quote")
-        if quote:
-            cached = read_cache(verdict.get("sourceUrl", ""), cache_root)
-            if not cached or not verify_quote(quote, cached.get("text", "")):
-                rejected.append(f"{item_id}: quote not found in cached source text")
+        source_url = verdict.get("sourceUrl")
+        cached = read_cache(source_url or "", cache_root) if source_url else None
+        if quote and (not cache_is_ok(cached) or not verify_quote(quote, cached.get("text", ""))):
+            rejected.append(f"{item_id}: quote not found in cached source text")
+            continue
+        if quote and item.category == "exams":
+            from fetcher import load_profiles, load_tiers, tier_for_url
+
+            profiles = load_profiles()
+            profile = profiles.get(item.category, profiles["default"])
+            minimum = profile.get("minTier", "T5")
+            tiers = load_tiers()
+            actual = tier_for_url(source_url or "", tiers)
+            tier_order = {f"T{n}": n for n in range(1, 6)}
+            if tier_order.get(actual, 99) > tier_order.get(minimum, 5):
+                rejected.append(f"{item_id}: source tier {actual} is below required {minimum}")
+                continue
+        if verdict["status"] == "source-verified":
+            if verdict["level"] not in {"L2", "L3"} or not quote:
+                rejected.append(f"{item_id}: source-verified requires an L2/L3 quote")
                 continue
         accepted.append({
             "itemId": item.item_id,
@@ -160,11 +238,22 @@ def ingest(verdicts: Iterable[dict[str, Any]], items: dict[str, SourceItem], cac
             "level": verdict["level"],
             "status": verdict["status"],
             "flags": verdict.get("flags", []),
-            "sourceUrl": verdict.get("sourceUrl"),
-            "sourceTextHash": hashlib.sha256((cached or {}).get("text", "").encode("utf-8")).hexdigest() if quote else None,
+            "sourceUrl": source_url,
+            "sourceTextHash": hashlib.sha256(cached.get("text", "").encode("utf-8")).hexdigest() if cache_is_ok(cached) else None,
             "quote": quote,
             "checkedAt": verdict.get("checkedAt"),
             "checker": verdict.get("checker", "unknown"),
+            "modelId": verdict.get("modelId"),
+            "callId": verdict.get("callId"),
+            "verdict": verdict.get("verdict"),
+            "answer": verdict.get("answer"),
+            "multipleDefensibleAnswers": verdict.get("multipleDefensibleAnswers"),
+            "difficulty": verdict.get("difficulty"),
+            "proposedFix": verdict.get("proposedFix"),
+            "adjudication": verdict.get("adjudication"),
+            "inputTokens": verdict.get("inputTokens"),
+            "outputTokens": verdict.get("outputTokens"),
+            "usageAvailable": verdict.get("inputTokens") is not None or verdict.get("outputTokens") is not None,
         })
     return accepted, rejected
 
@@ -209,11 +298,47 @@ def compact(rows: list[dict[str, Any]]) -> list[dict[str, Any]]:
     return sorted(latest_by_key(rows).values(), key=lambda r: (r["itemId"], r["level"], r["rubricVersion"]))
 
 
+def validate_proposal(item_id: str, change_class: str, rows: list[dict[str, Any]]) -> None:
+    """Require quote-backed L2 evidence and independent L3 support for exam class B changes."""
+    if change_class not in {"A", "B", "C"}:
+        raise ValueError("change class must be A, B or C")
+    by_level = {row.get("level"): row for row in rows if row.get("itemId") == item_id}
+    l2 = by_level.get("L2")
+    l3 = by_level.get("L3")
+    if not l2 or not l2.get("quote") or not l2.get("sourceTextHash"):
+        raise ValueError(f"{item_id}: class {change_class} requires quote-backed L2 evidence")
+    if change_class == "B" and (not l3 or l3.get("adjudication") != "supports-change" or not l3.get("quote") or not l3.get("sourceTextHash")):
+        raise ValueError(f"{item_id}: class B requires quote-backed L3 support")
+
+
 def pr_table(rows: list[dict[str, Any]], ids: set[str]) -> str:
     lines = ["| itemId | level | status | checker | checkedAt |", "| --- | --- | --- | --- | --- |"]
     for row in compact(rows):
         if row["itemId"] in ids:
             lines.append(f"| {row['itemId']} | {row['level']} | {row['status']} | {row['checker']} | {row.get('checkedAt') or ''} |")
+    return "\n".join(lines)
+
+
+def proposal_evidence_table(rows: list[dict[str, Any]], changes: list[dict[str, Any]]) -> str:
+    """Render a reviewable before/after evidence table after enforcing class gates."""
+    lines = [
+        "| itemId | class | before | after | levels | quote | source | finding |",
+        "| --- | --- | --- | --- | --- | --- | --- | --- |",
+    ]
+    latest = latest_by_key(rows)
+    for change in changes:
+        item_id = str(change["itemId"])
+        change_class = str(change["changeClass"])
+        validate_proposal(item_id, change_class, rows)
+        evidence = [row for row in latest.values() if row.get("itemId") == item_id and row.get("level") in {"L1", "L2", "L3"}]
+        by_level = {row.get("level"): row for row in evidence}
+        l2 = by_level.get("L2", {})
+        levels = ", ".join(f"{level}: {by_level[level].get('status', '')}" for level in ("L1", "L2", "L3") if level in by_level)
+        quote = l3.get("quote") if change_class == "B" and (l3 := by_level.get("L3")) else l2.get("quote")
+        source = l3.get("sourceUrl") if change_class == "B" else l2.get("sourceUrl")
+        finding = l2.get("proposedFix") or l2.get("verdict") or ""
+        values = [item_id, change_class, change.get("before", ""), change.get("after", ""), levels, quote or "", source or "", finding]
+        lines.append("| " + " | ".join(str(value).replace("|", "\\|").replace("\n", " ") for value in values) + " |")
     return "\n".join(lines)
 
 
@@ -248,6 +373,11 @@ def risk_queue(
     not passed, and the cited source text has not changed since the row was written. Ties break on item id.
     """
     from fetcher import tier_for_url  # local import: fetcher imports this module
+
+    if budget < 0:
+        raise ValueError("budget must be zero or greater")
+    if budget == 0:
+        return []
 
     current = latest_by_key(rows)
     scored: list[tuple[int, str, SourceItem, str]] = []

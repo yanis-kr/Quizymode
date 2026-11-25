@@ -1,0 +1,6 @@
+interface:
+  display_name: "Quizymode Content Review"
+  short_description: "Run budgeted, evidence-backed seed content reviews"
+  default_prompt: "Use $qm-content-review on <category or set> with an item budget of 25."
+policy:
+  allow_implicit_invocation: false
