@@ -41,6 +41,8 @@ interface TestRunViewProps {
   onToggleFlag: () => void;
   /** Called with the ids of questions whose picture is unavailable right now; they are left out of the score. */
   onSubmit: (unavailableItemIds: string[]) => void;
+  /** Collection run (#403): uploaded pictures load through the collection route. Defaults to the route's collection. */
+  collectionId?: string | undefined;
 }
 
 /**
@@ -61,6 +63,7 @@ export function TestRunView({
   onAnswer,
   onToggleFlag,
   onSubmit,
+  collectionId,
 }: TestRunViewProps) {
   const [submitOpen, setSubmitOpen] = useState(false);
   const currentItem = items[currentIndex];
@@ -112,6 +115,7 @@ export function TestRunView({
               selectedAnswer={selectedAnswer}
               showAnswer={false}
               revealFeedback={false}
+              collectionId={collectionId}
               onAnswerSelect={onAnswer}
               stats={{ total: palette.answered, correct: 0 }}
               questionPicture={{ ...pictures.controlsFor(currentItem, run.skipped.includes(currentItem.id) ? undefined : onSkip), blocked: run.skipped.includes(currentItem.id) || pictures.isBlocked(currentItem) }}

@@ -7,6 +7,9 @@ const SIZE_ORDER = ["xs", "s", "m", "l"];
 const PRIORITY_ORDER = { "priority:high": 0, "priority:med": 1, "priority:low": 2 };
 const HOLD_LABELS = ["status:deferred", "status:needs-refinement", "status:blocked"];
 const TERMINAL_PHASES = new Set(["done", "done_partial", "blocked_terminal", "cancelled"]);
+// Labels the validator applies (.claude/agents/validator.md); bundle-label-contract.test.mjs keeps the two in step.
+export const FAILURE_LABELS = ["parked", "validation-failed"];
+export const FIX_FORWARD_LABEL = "fix-forward";
 
 const labelNames = (c) => (c.labels ?? []).map((l) => (typeof l === "string" ? l : l.name));
 const sizeOf = (labels) => {
@@ -41,7 +44,7 @@ function exclusionReason(c, labels, { maxSize, excludeAreas, locked }) {
   if (hold) return `${hold} label`;
   if (labels.some((l) => l.startsWith("bundle:"))) return "already claimed by a bundle";
   if (locked.has(c.number)) return "in a running or validating bundle";
-  if ((labels.includes("parked") || labels.includes("validation-failed")) && !labels.includes("fix-forward")) return "parked or failed validation";
+  if (FAILURE_LABELS.some((f) => labels.includes(f)) && !labels.includes(FIX_FORWARD_LABEL)) return "parked or failed validation";
   if (c.hasAcs === false) return "no acceptance criteria";
   const size = sizeOf(labels);
   if (!size) return "no size label";

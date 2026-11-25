@@ -1,5 +1,5 @@
 // AC 7.16.7 to 7.16.11 (#762): the delivery profile, its check, evidence methods, lanes, packet commands and the skill text.
-import test from "node:test";
+import test, { after } from "node:test";
 import assert from "node:assert/strict";
 import fs from "node:fs";
 import os from "node:os";
@@ -8,13 +8,18 @@ import { spawnSync } from "node:child_process";
 import { createHash } from "node:crypto";
 import { fileURLToPath } from "node:url";
 
+// Temp folders this file makes are removed when the file ends, so %TEMP% does not collect qm-* folders (#761).
+const madeDirs = [];
+const mkTmp = (prefix) => { const d = fs.mkdtempSync(path.join(os.tmpdir(), prefix)); madeDirs.push(d); return d; };
+after(() => { for (const d of madeDirs) fs.rmSync(d, { recursive: true, force: true }); });
+
 const repo = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..", "..");
 const profileText = fs.readFileSync(path.join(repo, ".claude", "delivery-profile.json"), "utf8");
 const bundleSrc = fs.readFileSync(path.join(repo, "scripts", "bundle", "bundle.mjs"), "utf8");
 
 // A copy of the parts of the repo the helper reads, so bad profiles can be tested without touching the real one.
 function fixture(editProfile) {
-  const root = fs.mkdtempSync(path.join(os.tmpdir(), "qm-762-"));
+  const root = mkTmp("qm-762-");
   for (const rel of ["scripts", ".claude/skills/qm-bundle-refine/templates", "docs/AC.md", "docs/openapi/quizymode-api.json", "Directory.Build.props", "src/Quizymode.Web/package.json", ".github/workflows"]) {
     fs.cpSync(path.join(repo, rel), path.join(root, rel), { recursive: true });
   }

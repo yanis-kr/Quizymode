@@ -1,7 +1,11 @@
-import { fireEvent, render, screen } from "@testing-library/react";
+import { fireEvent, render, screen, waitFor } from "@testing-library/react";
+import { MemoryRouter } from "react-router-dom";
 import { describe, expect, it, vi } from "vitest";
 import ItemListCard from "./ItemListCard";
 import type { ItemResponse } from "@/types/api";
+import { mediaApi } from "@/api/media";
+
+vi.mock("@/api/media", () => ({ mediaApi: { content: vi.fn() } }));
 
 vi.mock("@/api/ratings", () => ({
   ratingsApi: {
@@ -133,5 +137,30 @@ describe("ItemListCard keyword chips (#664)", () => {
 
     expect(screen.getByRole("button", { name: "funny" })).toHaveAttribute("aria-pressed", "true");
     expect(screen.getByRole("button", { name: "idioms" })).toHaveAttribute("aria-pressed", "false");
+  });
+
+  it.each([
+    ["inside a collection", "col-1"],
+    ["outside a collection", undefined],
+  ])("requests uploaded thumbnails through the %s route (#403)", async (_name, collectionId) => {
+    vi.mocked(mediaApi.content).mockResolvedValue(new Blob(["img"], { type: "image/webp" }));
+    vi.stubGlobal("URL", { createObjectURL: vi.fn(() => "blob:x"), revokeObjectURL: vi.fn() });
+
+    render(
+      <MemoryRouter>
+        <ItemListCard
+          item={buildItem({
+            questionImage: { key: "media:11111111111111111111111111111111", altText: "Q picture", revision: 3 },
+            explanationImage: { key: "media:22222222222222222222222222222222", altText: "E picture", revision: 4 },
+          })}
+          showAnswer
+          collectionId={collectionId}
+        />
+      </MemoryRouter>
+    );
+
+    await waitFor(() => expect(mediaApi.content).toHaveBeenCalledTimes(2));
+    expect(mediaApi.content).toHaveBeenCalledWith("item-1", "question", collectionId, expect.any(AbortSignal), 3);
+    expect(mediaApi.content).toHaveBeenCalledWith("item-1", "explanation", collectionId, expect.any(AbortSignal), 4);
   });
 });

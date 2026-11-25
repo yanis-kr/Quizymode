@@ -30,8 +30,13 @@ vi.mock("../components/PhotoOcrPanel", async () => {
   // The panel reads photos in a worker; these tests only need it to hand back recognized text.
   const React = await import("react");
   return {
-    default: ({ onRecognized }: { onRecognized: (text: string) => void }) =>
-      React.createElement("button", { type: "button", onClick: () => onRecognized("Recognized words") }, "Fake recognize"),
+    default: ({ onRecognized, onBlockedChange, onReviewReady }: { onRecognized: (text: string) => void; onBlockedChange: (blocked: boolean) => void; onReviewReady?: () => void }) =>
+      React.createElement("div", null,
+        React.createElement("button", { type: "button", onClick: () => onRecognized("Recognized words") }, "Fake recognize"),
+        React.createElement("button", { type: "button", onClick: () => onRecognized("é".repeat(501)) }, "Fake oversized reading"),
+        React.createElement("button", { type: "button", onClick: () => onBlockedChange(true) }, "Fake running"),
+        React.createElement("button", { type: "button", onClick: () => onBlockedChange(false) }, "Fake idle"),
+        React.createElement("button", { type: "button", onClick: () => onReviewReady?.() }, "Fake review ready")),
   };
 });
 
@@ -375,7 +380,7 @@ describe("StudyGuideUploadPage", () => {
     fireEvent.click(await screen.findByRole("tab", { name: /photos or scan/i }));
     expect(screen.getByRole("tab", { name: /photos or scan/i })).toHaveAttribute("aria-selected", "true");
 
-    fireEvent.click(screen.getByRole("button", { name: /fake recognize/i }));
+    fireEvent.click(await screen.findByRole("button", { name: /fake recognize/i }));
     const review = screen.getByLabelText(/recognized text \(review and correct before you submit\)/i);
     expect(review).toHaveValue("Recognized words");
     fireEvent.change(review, { target: { value: "Recognized words, corrected" } });
@@ -396,6 +401,71 @@ describe("StudyGuideUploadPage", () => {
     const hint = document.getElementById("study-guide-file-hint");
     expect(hint).toHaveTextContent(/scanned pdfs without selectable/i);
     expect(hint).toHaveTextContent(/read on photos or scan/i);
+  });
+
+  it("keeps OCR text separate from pasted text and excludes it from topic suggestions", async () => {
+    renderPage();
+    fireEvent.click(await screen.findByRole("tab", { name: /paste text/i }));
+    fireEvent.change(screen.getByLabelText(/study guide text/i), { target: { value: "My pasted notes" } });
+    fireEvent.click(screen.getByRole("tab", { name: /photos or scan/i }));
+    fireEvent.click(await screen.findByRole("button", { name: /fake recognize/i }));
+    expect(screen.getByLabelText(/recognized text/i)).toHaveValue("Recognized words");
+    await new Promise((resolve) => setTimeout(resolve, 700));
+    expect(vi.mocked(taxonomyApi.suggest).mock.calls.some(([request]) => JSON.stringify(request).includes("Recognized words"))).toBe(false);
+    fireEvent.click(screen.getByRole("tab", { name: /paste text/i }));
+    expect(screen.getByLabelText(/study guide text/i)).toHaveValue("My pasted notes");
+  });
+
+  it("blocks both submission paths while OCR pages are unresolved", async () => {
+    renderPage();
+    fireEvent.click(await screen.findByRole("tab", { name: /photos or scan/i }));
+    fireEvent.click(await screen.findByRole("button", { name: /fake recognize/i }));
+    fireEvent.click(screen.getByRole("button", { name: /fake running/i }));
+    expect(screen.getByRole("button", { name: "Make a quiz" })).toBeDisabled();
+    expect(screen.getByRole("button", { name: "Choose sections and review first" })).toBeDisabled();
+    fireEvent.submit(screen.getByRole("button", { name: "Make a quiz" }).closest("form")!);
+    expect(studyGuideDocumentsApi.create).not.toHaveBeenCalled();
+  });
+
+  // AC 6.6.61: focus moves to the review textarea when reading finishes, even when the panel asks for it while the
+  // textarea is still disabled for the job (the same text read twice asks before the job releases the textarea).
+  it("moves focus to the review text once it is enabled when the panel asks for focus too early (AC 6.6.61)", async () => {
+    renderPage();
+    fireEvent.click(await screen.findByRole("tab", { name: /photos or scan/i }));
+    fireEvent.click(await screen.findByRole("button", { name: /fake recognize/i }));
+    const review = screen.getByLabelText(/recognized text \(review and correct before you submit\)/i);
+
+    fireEvent.click(screen.getByRole("button", { name: /fake running/i }));
+    expect(review).toBeDisabled();
+    fireEvent.click(screen.getByRole("button", { name: /fake review ready/i }));
+    // Let an animation frame run while the textarea is still disabled: a frame-based focus would be lost here.
+    await new Promise<void>((resolve) => window.requestAnimationFrame(() => resolve()));
+    expect(review).not.toHaveFocus();
+
+    fireEvent.click(screen.getByRole("button", { name: /fake idle/i }));
+    await waitFor(() => expect(review).toHaveFocus());
+  });
+
+  it("does not steal focus when reading is released without a review request", async () => {
+    renderPage();
+    fireEvent.click(await screen.findByRole("tab", { name: /photos or scan/i }));
+    fireEvent.click(await screen.findByRole("button", { name: /fake recognize/i }));
+    const review = screen.getByLabelText(/recognized text \(review and correct before you submit\)/i);
+
+    fireEvent.click(screen.getByRole("button", { name: /fake running/i }));
+    fireEvent.click(screen.getByRole("button", { name: /fake idle/i }));
+    expect(review).toBeEnabled();
+    expect(review).not.toHaveFocus();
+  });
+
+  it("counts UTF-8 OCR bytes and preserves text beyond the configured limit", async () => {
+    renderPage();
+    fireEvent.click(await screen.findByRole("tab", { name: /photos or scan/i }));
+    fireEvent.click(await screen.findByRole("button", { name: /fake oversized/i }));
+    expect(screen.getByLabelText(/recognized text/i)).toHaveValue("é".repeat(501));
+    expect(screen.getByText(/Text is 1,002 bytes; the limit is 1,000/)).toBeInTheDocument();
+    expect(screen.getByRole("button", { name: "Make a quiz" })).toBeDisabled();
+    expect(screen.getByRole("button", { name: "Choose sections and review first" })).toBeDisabled();
   });
 
   it("shows the retired-upload notice above the normal form for ?id= links", async () => {

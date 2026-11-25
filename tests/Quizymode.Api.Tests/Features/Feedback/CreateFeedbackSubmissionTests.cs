@@ -79,6 +79,43 @@ public sealed class CreateFeedbackSubmissionTests : DatabaseTestFixture
     }
 
     [Fact]
+    public async Task HandleAsync_UrlWithQueryAndFragment_StoresOnlySchemeHostAndPath()
+    {
+        Mock<IUserContext> userContextMock = new();
+        userContextMock.Setup(x => x.UserId).Returns((string?)null);
+
+        CreateFeedbackSubmission.Request request = new()
+        {
+            Type = CreateFeedbackSubmission.ReportIssueType,
+            CurrentUrl = "https://www.quizymode.com/study/abc?token=synthetic-secret&q=x#section=synthetic",
+            Details = "Broken page"
+        };
+
+        Result<CreateFeedbackSubmission.Response> result = await CreateFeedbackSubmission.HandleAsync(
+            request,
+            DbContext,
+            userContextMock.Object,
+            new DefaultHttpContext(),
+            CancellationToken.None);
+
+        result.IsSuccess.Should().BeTrue();
+        result.Value.CurrentUrl.Should().Be("https://www.quizymode.com/study/abc");
+        DbContext.FeedbackSubmissions.Single().PageUrl.Should().Be("https://www.quizymode.com/study/abc");
+    }
+
+    [Theory]
+    [InlineData("https://www.quizymode.com/categories/aws", "https://www.quizymode.com/categories/aws")]
+    [InlineData("  https://www.quizymode.com/collections  ", "https://www.quizymode.com/collections")]
+    [InlineData("https://www.quizymode.com/?utm_source=synthetic", "https://www.quizymode.com/")]
+    [InlineData("https://www.quizymode.com/a/b#frag", "https://www.quizymode.com/a/b")]
+    [InlineData("http://localhost:7000/collections?x=1", "http://localhost:7000/collections")]
+    [InlineData("https://user:pass@www.quizymode.com/a?x=1", "https://www.quizymode.com/a")]
+    public void MinimizePageUrl_RemovesQueryFragmentAndCredentials(string input, string expected)
+    {
+        CreateFeedbackSubmission.MinimizePageUrl(input.Trim()).Should().Be(expected);
+    }
+
+    [Fact]
     public void Validator_InvalidUrl_ReturnsValidationError()
     {
         CreateFeedbackSubmission.Validator validator = new();

@@ -25,13 +25,7 @@ internal sealed class BearerAuthOpenApiTransformer : IOpenApiDocumentTransformer
             Description = "JWT Authorization header using the Bearer scheme. Example: \"Bearer {token}\""
         };
 
-        // Add global security requirement
-        document.Security ??= new List<OpenApiSecurityRequirement>();
-        OpenApiSecurityRequirement securityRequirement = new();
-        securityRequirement.Add(
-            new OpenApiSecuritySchemeReference("Bearer", document),
-            new List<string>());
-        document.Security.Add(securityRequirement);
+        // Security requirements are set per operation by BearerSecurityOperationTransformer, not globally.
 
         return Task.CompletedTask;
     }

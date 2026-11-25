@@ -28,6 +28,8 @@ export interface ExploreRendererProps {
   onFlippedChange?: (flipped: boolean) => void;
   /** Gate for the question picture (#403): the grade buttons stay off until it shows. Flipping is never blocked. */
   questionPicture?: QuestionPictureControls;
+  /** Collection run (#403): uploaded pictures load through the collection route. Defaults to the route's collection. */
+  collectionId?: string | undefined;
 }
 
 const GRADE_OPTIONS: ReadonlyArray<{ grade: FlashcardGrade; label: string; shortcut: string }> = [
@@ -43,6 +45,7 @@ export function ExploreRenderer({
   isFlipped: controlledFlipped,
   onFlippedChange,
   questionPicture,
+  collectionId,
 }: ExploreRendererProps) {
   const pictureBlocked = questionPicture?.blocked ?? false;
   const [internalFlipped, setInternalFlipped] = useState(false);
@@ -77,6 +80,7 @@ export function ExploreRenderer({
           <QuestionImage
             key={item.id}
             itemId={item.id} image={item.questionImage}
+            collectionId={collectionId}
           withdrawn={item.imageReview?.state === "Withdrawn"}
             onStatusChange={questionPicture?.onStatusChange}
             onSkip={questionPicture?.onSkip}
@@ -193,6 +197,7 @@ export function ExploreRenderer({
                 <QuestionImage
                   key={`${item.id}-explanation`}
                   itemId={item.id} image={item.explanationImage}
+                  collectionId={collectionId}
                   slot="explanation"
                   className="mt-3 rounded-lg bg-surface"
                 />

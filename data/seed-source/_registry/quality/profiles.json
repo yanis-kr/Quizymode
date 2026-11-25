@@ -1,4 +1,4 @@
 {
   "default": { "longestMargin": 15, "minExplanation": 25, "stakes": 1, "minTier": "T4", "reviewIntervalDays": 365 },
-  "exams": { "longestMargin": 15, "minExplanation": 40, "stakes": 3, "minTier": "T2", "reviewIntervalDays": 180 }
+  "exams": { "longestMargin": 15, "minExplanation": 40, "stakes": 3, "minTier": "T1", "reviewIntervalDays": 180 }
 }

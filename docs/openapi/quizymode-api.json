@@ -36,7 +36,12 @@
           "400": {
             "description": "Bad Request"
           }
-        }
+        },
+        "security": [
+          {
+            "Bearer": [ ]
+          }
+        ]
       },
       "get": {
         "tags": [
@@ -54,7 +59,12 @@
               }
             }
           }
-        }
+        },
+        "security": [
+          {
+            "Bearer": [ ]
+          }
+        ]
       }
     },
     "/admin/feedback": {
@@ -138,7 +148,12 @@
               }
             }
           }
-        }
+        },
+        "security": [
+          {
+            "Bearer": [ ]
+          }
+        ]
       }
     },
     "/admin/feedback/{id}": {
@@ -178,7 +193,12 @@
               }
             }
           }
-        }
+        },
+        "security": [
+          {
+            "Bearer": [ ]
+          }
+        ]
       }
     },
     "/admin/feedback/{id}/status": {
@@ -238,7 +258,12 @@
               }
             }
           }
-        }
+        },
+        "security": [
+          {
+            "Bearer": [ ]
+          }
+        ]
       }
     },
     "/admin/llm-providers": {
@@ -264,7 +289,12 @@
           "403": {
             "description": "Forbidden"
           }
-        }
+        },
+        "security": [
+          {
+            "Bearer": [ ]
+          }
+        ]
       },
       "put": {
         "tags": [
@@ -301,7 +331,12 @@
           "403": {
             "description": "Forbidden"
           }
-        }
+        },
+        "security": [
+          {
+            "Bearer": [ ]
+          }
+        ]
       }
     },
     "/admin/llm-providers/attempts": {
@@ -336,7 +371,12 @@
           "403": {
             "description": "Forbidden"
           }
-        }
+        },
+        "security": [
+          {
+            "Bearer": [ ]
+          }
+        ]
       }
     },
     "/admin/llm-providers/usage": {
@@ -375,7 +415,12 @@
           "403": {
             "description": "Forbidden"
           }
-        }
+        },
+        "security": [
+          {
+            "Bearer": [ ]
+          }
+        ]
       }
     },
     "/admin/users/{id}/settings": {
@@ -411,7 +456,12 @@
           "404": {
             "description": "Not Found"
           }
-        }
+        },
+        "security": [
+          {
+            "Bearer": [ ]
+          }
+        ]
       },
       "put": {
         "tags": [
@@ -455,7 +505,12 @@
           "404": {
             "description": "Not Found"
           }
-        }
+        },
+        "security": [
+          {
+            "Bearer": [ ]
+          }
+        ]
       }
     },
     "/admin/users": {
@@ -548,7 +603,12 @@
               }
             }
           }
-        }
+        },
+        "security": [
+          {
+            "Bearer": [ ]
+          }
+        ]
       }
     },
     "/admin/users/{id}/page-view-history": {
@@ -631,7 +691,12 @@
           "404": {
             "description": "Not Found"
           }
-        }
+        },
+        "security": [
+          {
+            "Bearer": [ ]
+          }
+        ]
       }
     },
     "/admin/categories": {
@@ -664,7 +729,12 @@
           "400": {
             "description": "Bad Request"
           }
-        }
+        },
+        "security": [
+          {
+            "Bearer": [ ]
+          }
+        ]
       }
     },
     "/admin/category-keywords": {
@@ -701,7 +771,12 @@
           "404": {
             "description": "Not Found"
           }
-        }
+        },
+        "security": [
+          {
+            "Bearer": [ ]
+          }
+        ]
       }
     },
     "/admin/keywords": {
@@ -738,7 +813,12 @@
           "409": {
             "description": "Conflict"
           }
-        }
+        },
+        "security": [
+          {
+            "Bearer": [ ]
+          }
+        ]
       },
       "get": {
         "tags": [
@@ -780,7 +860,12 @@
               }
             }
           }
-        }
+        },
+        "security": [
+          {
+            "Bearer": [ ]
+          }
+        ]
       }
     },
     "/admin/daily-digest/preview": {
@@ -826,7 +911,12 @@
           "403": {
             "description": "Forbidden"
           }
-        }
+        },
+        "security": [
+          {
+            "Bearer": [ ]
+          }
+        ]
       }
     },
     "/admin/daily-digest/test-send": {
@@ -894,7 +984,12 @@
               }
             }
           }
-        }
+        },
+        "security": [
+          {
+            "Bearer": [ ]
+          }
+        ]
       }
     },
     "/admin/daily-digest/send-now": {
@@ -964,7 +1059,12 @@
               }
             }
           }
-        }
+        },
+        "security": [
+          {
+            "Bearer": [ ]
+          }
+        ]
       }
     },
     "/admin/daily-digest/runs": {
@@ -1010,7 +1110,12 @@
           "403": {
             "description": "Forbidden"
           }
-        }
+        },
+        "security": [
+          {
+            "Bearer": [ ]
+          }
+        ]
       }
     },
     "/admin/categories/{id}": {
@@ -1040,7 +1145,12 @@
           "409": {
             "description": "Conflict"
           }
-        }
+        },
+        "security": [
+          {
+            "Bearer": [ ]
+          }
+        ]
       },
       "put": {
         "tags": [
@@ -1084,7 +1194,12 @@
           "404": {
             "description": "Not Found"
           }
-        }
+        },
+        "security": [
+          {
+            "Bearer": [ ]
+          }
+        ]
       }
     },
     "/admin/category-keywords/{id}": {
@@ -1111,7 +1226,12 @@
           "404": {
             "description": "Not Found"
           }
-        }
+        },
+        "security": [
+          {
+            "Bearer": [ ]
+          }
+        ]
       },
       "put": {
         "tags": [
@@ -1156,7 +1276,12 @@
           "400": {
             "description": "Bad Request"
           }
-        }
+        },
+        "security": [
+          {
+            "Bearer": [ ]
+          }
+        ]
       }
     },
     "/admin/featured/{id}": {
@@ -1182,7 +1307,12 @@
           "404": {
             "description": "Not Found"
           }
-        }
+        },
+        "security": [
+          {
+            "Bearer": [ ]
+          }
+        ]
       },
       "patch": {
         "tags": [
@@ -1219,7 +1349,12 @@
           "404": {
             "description": "Not Found"
           }
-        }
+        },
+        "security": [
+          {
+            "Bearer": [ ]
+          }
+        ]
       }
     },
     "/admin/analytics/acquisition": {
@@ -1290,7 +1425,12 @@
               }
             }
           }
-        }
+        },
+        "security": [
+          {
+            "Bearer": [ ]
+          }
+        ]
       }
     },
     "/admin/analytics/overview": {
@@ -1331,7 +1471,12 @@
               }
             }
           }
-        }
+        },
+        "security": [
+          {
+            "Bearer": [ ]
+          }
+        ]
       }
     },
     "/admin/audit-logs": {
@@ -1384,7 +1529,12 @@
               }
             }
           }
-        }
+        },
+        "security": [
+          {
+            "Bearer": [ ]
+          }
+        ]
       }
     },
     "/admin/categories/{categoryId}/keywords-available": {
@@ -1418,7 +1568,12 @@
           "404": {
             "description": "Not Found"
           }
-        }
+        },
+        "security": [
+          {
+            "Bearer": [ ]
+          }
+        ]
       }
     },
     "/admin/client-errors": {
@@ -1482,7 +1637,12 @@
               }
             }
           }
-        }
+        },
+        "security": [
+          {
+            "Bearer": [ ]
+          }
+        ]
       }
     },
     "/admin/config-sources": {
@@ -1503,7 +1663,12 @@
               }
             }
           }
-        }
+        },
+        "security": [
+          {
+            "Bearer": [ ]
+          }
+        ]
       }
     },
     "/admin/analytics/content": {
@@ -1560,7 +1725,12 @@
               }
             }
           }
-        }
+        },
+        "security": [
+          {
+            "Bearer": [ ]
+          }
+        ]
       }
     },
     "/admin/analytics/funnel": {
@@ -1617,7 +1787,12 @@
               }
             }
           }
-        }
+        },
+        "security": [
+          {
+            "Bearer": [ ]
+          }
+        ]
       }
     },
     "/admin/database/size": {
@@ -1638,7 +1813,12 @@
               }
             }
           }
-        }
+        },
+        "security": [
+          {
+            "Bearer": [ ]
+          }
+        ]
       }
     },
     "/admin/analytics/learning": {
@@ -1709,7 +1889,12 @@
               }
             }
           }
-        }
+        },
+        "security": [
+          {
+            "Bearer": [ ]
+          }
+        ]
       }
     },
     "/admin/analytics/lifecycle": {
@@ -1750,7 +1935,12 @@
               }
             }
           }
-        }
+        },
+        "security": [
+          {
+            "Bearer": [ ]
+          }
+        ]
       }
     },
     "/admin/page-view-analytics": {
@@ -1845,7 +2035,12 @@
               }
             }
           }
-        }
+        },
+        "security": [
+          {
+            "Bearer": [ ]
+          }
+        ]
       }
     },
     "/admin/page-view-rollups": {
@@ -1886,7 +2081,12 @@
               }
             }
           }
-        }
+        },
+        "security": [
+          {
+            "Bearer": [ ]
+          }
+        ]
       }
     },
     "/admin/page-view-sessions/{sessionId}": {
@@ -1944,7 +2144,12 @@
               }
             }
           }
-        }
+        },
+        "security": [
+          {
+            "Bearer": [ ]
+          }
+        ]
       }
     },
     "/admin/page-view-sessions": {
@@ -2067,7 +2272,12 @@
               }
             }
           }
-        }
+        },
+        "security": [
+          {
+            "Bearer": [ ]
+          }
+        ]
       }
     },
     "/admin/keywords/pending": {
@@ -2088,7 +2298,12 @@
               }
             }
           }
-        }
+        },
+        "security": [
+          {
+            "Bearer": [ ]
+          }
+        ]
       }
     },
     "/admin/analytics/question-quality": {
@@ -2153,7 +2368,12 @@
               }
             }
           }
-        }
+        },
+        "security": [
+          {
+            "Bearer": [ ]
+          }
+        ]
       }
     },
     "/admin/analytics/second-activity": {
@@ -2210,7 +2430,12 @@
               }
             }
           }
-        }
+        },
+        "security": [
+          {
+            "Bearer": [ ]
+          }
+        ]
       }
     },
     "/admin/keywords/{id}/approve": {
@@ -2244,7 +2469,12 @@
           "404": {
             "description": "Not Found"
           }
-        }
+        },
+        "security": [
+          {
+            "Bearer": [ ]
+          }
+        ]
       }
     },
     "/admin/keywords/{id}/reject": {
@@ -2278,7 +2508,12 @@
           "404": {
             "description": "Not Found"
           }
-        }
+        },
+        "security": [
+          {
+            "Bearer": [ ]
+          }
+        ]
       }
     },
     "/admin/seed-sync/preview": {
@@ -2312,7 +2547,12 @@
           "400": {
             "description": "Bad Request"
           }
-        }
+        },
+        "security": [
+          {
+            "Bearer": [ ]
+          }
+        ]
       }
     },
     "/admin/seed-sync/apply": {
@@ -2346,7 +2586,12 @@
           "400": {
             "description": "Bad Request"
           }
-        }
+        },
+        "security": [
+          {
+            "Bearer": [ ]
+          }
+        ]
       }
     },
     "/admin/seed-sync/history": {
@@ -2386,7 +2631,12 @@
           "400": {
             "description": "Bad Request"
           }
-        }
+        },
+        "security": [
+          {
+            "Bearer": [ ]
+          }
+        ]
       }
     },
     "/admin/seed-sync/local/preview": {
@@ -2420,7 +2670,12 @@
           "400": {
             "description": "Bad Request"
           }
-        }
+        },
+        "security": [
+          {
+            "Bearer": [ ]
+          }
+        ]
       }
     },
     "/admin/seed-sync/local/apply": {
@@ -2454,7 +2709,12 @@
           "400": {
             "description": "Bad Request"
           }
-        }
+        },
+        "security": [
+          {
+            "Bearer": [ ]
+          }
+        ]
       }
     },
     "/admin/users/{id}/internal": {
@@ -2515,7 +2775,12 @@
               }
             }
           }
-        }
+        },
+        "security": [
+          {
+            "Bearer": [ ]
+          }
+        ]
       }
     },
     "/admin/keywords/{id}": {
@@ -2565,7 +2830,12 @@
           "409": {
             "description": "Conflict"
           }
-        }
+        },
+        "security": [
+          {
+            "Bearer": [ ]
+          }
+        ]
       }
     },
     "/analytics/events": {
@@ -2616,7 +2886,13 @@
               }
             }
           }
-        }
+        },
+        "security": [
+          { },
+          {
+            "Bearer": [ ]
+          }
+        ]
       }
     },
     "/analytics/page-views": {
@@ -2657,7 +2933,13 @@
               }
             }
           }
-        }
+        },
+        "security": [
+          { },
+          {
+            "Bearer": [ ]
+          }
+        ]
       }
     },
     "/categories": {
@@ -2687,7 +2969,13 @@
               }
             }
           }
-        }
+        },
+        "security": [
+          { },
+          {
+            "Bearer": [ ]
+          }
+        ]
       }
     },
     "/client-errors": {
@@ -2753,7 +3041,13 @@
               }
             }
           }
-        }
+        },
+        "security": [
+          { },
+          {
+            "Bearer": [ ]
+          }
+        ]
       }
     },
     "/collections": {
@@ -2786,7 +3080,12 @@
           "400": {
             "description": "Bad Request"
           }
-        }
+        },
+        "security": [
+          {
+            "Bearer": [ ]
+          }
+        ]
       },
       "get": {
         "tags": [
@@ -2804,7 +3103,12 @@
               }
             }
           }
-        }
+        },
+        "security": [
+          {
+            "Bearer": [ ]
+          }
+        ]
       }
     },
     "/collections/{id}/rating": {
@@ -2851,7 +3155,12 @@
           "404": {
             "description": "Not Found"
           }
-        }
+        },
+        "security": [
+          {
+            "Bearer": [ ]
+          }
+        ]
       },
       "get": {
         "tags": [
@@ -2882,7 +3191,13 @@
           "404": {
             "description": "Not Found"
           }
-        }
+        },
+        "security": [
+          { },
+          {
+            "Bearer": [ ]
+          }
+        ]
       }
     },
     "/collections/{id}/bookmark": {
@@ -2911,7 +3226,12 @@
           "404": {
             "description": "Not Found"
           }
-        }
+        },
+        "security": [
+          {
+            "Bearer": [ ]
+          }
+        ]
       },
       "delete": {
         "tags": [
@@ -2935,7 +3255,12 @@
           "404": {
             "description": "Not Found"
           }
-        }
+        },
+        "security": [
+          {
+            "Bearer": [ ]
+          }
+        ]
       }
     },
     "/collections/{collectionId}/items": {
@@ -2988,7 +3313,12 @@
           "404": {
             "description": "Not Found"
           }
-        }
+        },
+        "security": [
+          {
+            "Bearer": [ ]
+          }
+        ]
       }
     },
     "/collections/{collectionId}/items/bulk": {
@@ -3041,7 +3371,12 @@
           "404": {
             "description": "Not Found"
           }
-        }
+        },
+        "security": [
+          {
+            "Bearer": [ ]
+          }
+        ]
       }
     },
     "/collections/{collectionId}/items/{itemId}": {
@@ -3082,7 +3417,12 @@
           "404": {
             "description": "Not Found"
           }
-        }
+        },
+        "security": [
+          {
+            "Bearer": [ ]
+          }
+        ]
       }
     },
     "/collections/{collectionId}/collections": {
@@ -3116,7 +3456,13 @@
           "404": {
             "description": "Not Found"
           }
-        }
+        },
+        "security": [
+          { },
+          {
+            "Bearer": [ ]
+          }
+        ]
       },
       "post": {
         "tags": [
@@ -3167,7 +3513,12 @@
           "404": {
             "description": "Not Found"
           }
-        }
+        },
+        "security": [
+          {
+            "Bearer": [ ]
+          }
+        ]
       }
     },
     "/collections/{collectionId}/collections/{childId}": {
@@ -3208,7 +3559,12 @@
           "404": {
             "description": "Not Found"
           }
-        }
+        },
+        "security": [
+          {
+            "Bearer": [ ]
+          }
+        ]
       }
     },
     "/collections/{collectionId}/topics": {
@@ -3261,7 +3617,12 @@
           "404": {
             "description": "Not Found"
           }
-        }
+        },
+        "security": [
+          {
+            "Bearer": [ ]
+          }
+        ]
       },
       "get": {
         "tags": [
@@ -3293,7 +3654,13 @@
           "404": {
             "description": "Not Found"
           }
-        }
+        },
+        "security": [
+          { },
+          {
+            "Bearer": [ ]
+          }
+        ]
       }
     },
     "/collections/{collectionId}/topics/{memberId}": {
@@ -3334,7 +3701,12 @@
           "404": {
             "description": "Not Found"
           }
-        }
+        },
+        "security": [
+          {
+            "Bearer": [ ]
+          }
+        ]
       }
     },
     "/collections/{id}": {
@@ -3369,7 +3741,12 @@
           "404": {
             "description": "Not Found"
           }
-        }
+        },
+        "security": [
+          {
+            "Bearer": [ ]
+          }
+        ]
       },
       "get": {
         "tags": [
@@ -3401,7 +3778,13 @@
           "404": {
             "description": "Not Found"
           }
-        }
+        },
+        "security": [
+          { },
+          {
+            "Bearer": [ ]
+          }
+        ]
       },
       "put": {
         "tags": [
@@ -3451,7 +3834,12 @@
           "404": {
             "description": "Not Found"
           }
-        }
+        },
+        "security": [
+          {
+            "Bearer": [ ]
+          }
+        ]
       }
     },
     "/collections/discover": {
@@ -3519,7 +3907,13 @@
           "400": {
             "description": "Bad Request"
           }
-        }
+        },
+        "security": [
+          { },
+          {
+            "Bearer": [ ]
+          }
+        ]
       }
     },
     "/collections/bookmarks": {
@@ -3539,7 +3933,12 @@
               }
             }
           }
-        }
+        },
+        "security": [
+          {
+            "Bearer": [ ]
+          }
+        ]
       }
     },
     "/collections/{id}/bookmarks": {
@@ -3578,7 +3977,12 @@
           "404": {
             "description": "Not Found"
           }
-        }
+        },
+        "security": [
+          {
+            "Bearer": [ ]
+          }
+        ]
       }
     },
     "/comments": {
@@ -3614,7 +4018,12 @@
           "404": {
             "description": "Not Found"
           }
-        }
+        },
+        "security": [
+          {
+            "Bearer": [ ]
+          }
+        ]
       },
       "get": {
         "tags": [
@@ -3645,7 +4054,13 @@
           "404": {
             "description": "Not Found"
           }
-        }
+        },
+        "security": [
+          { },
+          {
+            "Bearer": [ ]
+          }
+        ]
       }
     },
     "/comments/{id}": {
@@ -3677,7 +4092,12 @@
           "400": {
             "description": "Bad Request"
           }
-        }
+        },
+        "security": [
+          {
+            "Bearer": [ ]
+          }
+        ]
       },
       "put": {
         "tags": [
@@ -3724,7 +4144,12 @@
           "404": {
             "description": "Not Found"
           }
-        }
+        },
+        "security": [
+          {
+            "Bearer": [ ]
+          }
+        ]
       }
     },
     "/daily-quiz": {
@@ -3760,7 +4185,13 @@
           "404": {
             "description": "Not Found"
           }
-        }
+        },
+        "security": [
+          { },
+          {
+            "Bearer": [ ]
+          }
+        ]
       }
     },
     "/daily-quiz/archive": {
@@ -3781,7 +4212,13 @@
               }
             }
           }
-        }
+        },
+        "security": [
+          { },
+          {
+            "Bearer": [ ]
+          }
+        ]
       }
     },
     "/daily-quiz/completions": {
@@ -3828,7 +4265,12 @@
           "401": {
             "description": "Unauthorized"
           }
-        }
+        },
+        "security": [
+          {
+            "Bearer": [ ]
+          }
+        ]
       }
     },
     "/admin/daily-quiz": {
@@ -3861,7 +4303,12 @@
           "400": {
             "description": "Bad Request"
           }
-        }
+        },
+        "security": [
+          {
+            "Bearer": [ ]
+          }
+        ]
       }
     },
     "/admin/daily-quiz/{date}/items/{itemId}/exclude": {
@@ -3909,7 +4356,12 @@
           "409": {
             "description": "Conflict"
           }
-        }
+        },
+        "security": [
+          {
+            "Bearer": [ ]
+          }
+        ]
       }
     },
     "/featured": {
@@ -3929,7 +4381,13 @@
               }
             }
           }
-        }
+        },
+        "security": [
+          { },
+          {
+            "Bearer": [ ]
+          }
+        ]
       }
     },
     "/feedback": {
@@ -3965,7 +4423,13 @@
           "429": {
             "description": "Too Many Requests"
           }
-        }
+        },
+        "security": [
+          { },
+          {
+            "Bearer": [ ]
+          }
+        ]
       }
     },
     "/games/roster": {
@@ -4012,7 +4476,13 @@
               }
             }
           }
-        }
+        },
+        "security": [
+          { },
+          {
+            "Bearer": [ ]
+          }
+        ]
       }
     },
     "/items": {
@@ -4051,7 +4521,12 @@
           "409": {
             "description": "Conflict"
           }
-        }
+        },
+        "security": [
+          {
+            "Bearer": [ ]
+          }
+        ]
       },
       "get": {
         "tags": [
@@ -4140,7 +4615,13 @@
           "400": {
             "description": "Bad Request"
           }
-        }
+        },
+        "security": [
+          { },
+          {
+            "Bearer": [ ]
+          }
+        ]
       }
     },
     "/items/bulk": {
@@ -4183,7 +4664,12 @@
           "403": {
             "description": "Forbidden"
           }
-        }
+        },
+        "security": [
+          {
+            "Bearer": [ ]
+          }
+        ]
       }
     },
     "/items/{id}": {
@@ -4215,7 +4701,12 @@
           "404": {
             "description": "Not Found"
           }
-        }
+        },
+        "security": [
+          {
+            "Bearer": [ ]
+          }
+        ]
       },
       "get": {
         "tags": [
@@ -4249,7 +4740,13 @@
           "400": {
             "description": "Bad Request"
           }
-        }
+        },
+        "security": [
+          { },
+          {
+            "Bearer": [ ]
+          }
+        ]
       },
       "put": {
         "tags": [
@@ -4305,7 +4802,12 @@
           "409": {
             "description": "Conflict"
           }
-        }
+        },
+        "security": [
+          {
+            "Bearer": [ ]
+          }
+        ]
       }
     },
     "/items/export": {
@@ -4351,7 +4853,12 @@
           "400": {
             "description": "Bad Request"
           }
-        }
+        },
+        "security": [
+          {
+            "Bearer": [ ]
+          }
+        ]
       }
     },
     "/admin/items/image-review/bulk": {
@@ -4391,7 +4898,12 @@
           "403": {
             "description": "Forbidden"
           }
-        }
+        },
+        "security": [
+          {
+            "Bearer": [ ]
+          }
+        ]
       }
     },
     "/admin/items/image-review": {
@@ -4446,7 +4958,12 @@
           "403": {
             "description": "Forbidden"
           }
-        }
+        },
+        "security": [
+          {
+            "Bearer": [ ]
+          }
+        ]
       }
     },
     "/admin/items/{id}/image-review": {
@@ -4502,7 +5019,12 @@
           "409": {
             "description": "Conflict"
           }
-        }
+        },
+        "security": [
+          {
+            "Bearer": [ ]
+          }
+        ]
       }
     },
     "/admin/items/{id}/approval": {
@@ -4539,7 +5061,12 @@
           "409": {
             "description": "Conflict"
           }
-        }
+        },
+        "security": [
+          {
+            "Bearer": [ ]
+          }
+        ]
       }
     },
     "/admin/items/review-board": {
@@ -4559,7 +5086,12 @@
               }
             }
           }
-        }
+        },
+        "security": [
+          {
+            "Bearer": [ ]
+          }
+        ]
       }
     },
     "/admin/items/{id}/rejection": {
@@ -4606,7 +5138,12 @@
           "400": {
             "description": "Bad Request"
           }
-        }
+        },
+        "security": [
+          {
+            "Bearer": [ ]
+          }
+        ]
       }
     },
     "/items/{id}/visibility": {
@@ -4656,7 +5193,12 @@
           "409": {
             "description": "Conflict"
           }
-        }
+        },
+        "security": [
+          {
+            "Bearer": [ ]
+          }
+        ]
       }
     },
     "/items/{id}/category": {
@@ -4709,7 +5251,12 @@
           "404": {
             "description": "Not Found"
           }
-        }
+        },
+        "security": [
+          {
+            "Bearer": [ ]
+          }
+        ]
       }
     },
     "/items/upload-to-collection": {
@@ -4746,7 +5293,12 @@
           "429": {
             "description": "Too Many Requests"
           }
-        }
+        },
+        "security": [
+          {
+            "Bearer": [ ]
+          }
+        ]
       }
     },
     "/keywords/item-tags": {
@@ -4783,7 +5335,13 @@
           "404": {
             "description": "Not Found"
           }
-        }
+        },
+        "security": [
+          { },
+          {
+            "Bearer": [ ]
+          }
+        ]
       }
     },
     "/keywords/descriptions": {
@@ -4827,7 +5385,13 @@
           "404": {
             "description": "Not Found"
           }
-        }
+        },
+        "security": [
+          { },
+          {
+            "Bearer": [ ]
+          }
+        ]
       }
     },
     "/keywords": {
@@ -4868,7 +5432,13 @@
           "400": {
             "description": "Bad Request"
           }
-        }
+        },
+        "security": [
+          { },
+          {
+            "Bearer": [ ]
+          }
+        ]
       }
     },
     "/admin/llm-model-findings": {
@@ -4894,7 +5464,12 @@
           "403": {
             "description": "Forbidden"
           }
-        }
+        },
+        "security": [
+          {
+            "Bearer": [ ]
+          }
+        ]
       }
     },
     "/admin/llm-model-audit/run": {
@@ -4923,7 +5498,12 @@
           "429": {
             "description": "Too Many Requests"
           }
-        }
+        },
+        "security": [
+          {
+            "Bearer": [ ]
+          }
+        ]
       }
     },
     "/media/images/{id}/content": {
@@ -4970,7 +5550,12 @@
               }
             }
           }
-        }
+        },
+        "security": [
+          {
+            "Bearer": [ ]
+          }
+        ]
       }
     },
     "/items/{id}/images/{slot}": {
@@ -5035,7 +5620,13 @@
               }
             }
           }
-        }
+        },
+        "security": [
+          { },
+          {
+            "Bearer": [ ]
+          }
+        ]
       }
     },
     "/collections/{collectionId}/items/{itemId}/images/{slot}": {
@@ -5108,7 +5699,13 @@
               }
             }
           }
-        }
+        },
+        "security": [
+          { },
+          {
+            "Bearer": [ ]
+          }
+        ]
       }
     },
     "/admin/items/{id}/image-advisory": {
@@ -5140,7 +5737,12 @@
           "200": {
             "description": "OK"
           }
-        }
+        },
+        "security": [
+          {
+            "Bearer": [ ]
+          }
+        ]
       },
       "get": {
         "tags": [
@@ -5160,7 +5762,12 @@
           "200": {
             "description": "OK"
           }
-        }
+        },
+        "security": [
+          {
+            "Bearer": [ ]
+          }
+        ]
       }
     },
     "/items/{id}/image-reports": {
@@ -5209,7 +5816,13 @@
               }
             }
           }
-        }
+        },
+        "security": [
+          { },
+          {
+            "Bearer": [ ]
+          }
+        ]
       }
     },
     "/admin/media/reports": {
@@ -5221,7 +5834,12 @@
           "200": {
             "description": "OK"
           }
-        }
+        },
+        "security": [
+          {
+            "Bearer": [ ]
+          }
+        ]
       }
     },
     "/admin/media/reports/{id}/dismiss": {
@@ -5243,7 +5861,12 @@
           "200": {
             "description": "OK"
           }
-        }
+        },
+        "security": [
+          {
+            "Bearer": [ ]
+          }
+        ]
       }
     },
     "/admin/media/{assetId}/withdraw": {
@@ -5295,7 +5918,12 @@
               }
             }
           }
-        }
+        },
+        "security": [
+          {
+            "Bearer": [ ]
+          }
+        ]
       }
     },
     "/admin/media/controls": {
@@ -5307,7 +5935,12 @@
           "200": {
             "description": "OK"
           }
-        }
+        },
+        "security": [
+          {
+            "Bearer": [ ]
+          }
+        ]
       },
       "put": {
         "tags": [
@@ -5327,7 +5960,12 @@
           "200": {
             "description": "OK"
           }
-        }
+        },
+        "security": [
+          {
+            "Bearer": [ ]
+          }
+        ]
       }
     },
     "/media/images": {
@@ -5413,7 +6051,12 @@
               }
             }
           }
-        }
+        },
+        "security": [
+          {
+            "Bearer": [ ]
+          }
+        ]
       }
     },
     "/users/me/topic-activity": {
@@ -5437,7 +6080,12 @@
           "401": {
             "description": "Unauthorized"
           }
-        }
+        },
+        "security": [
+          {
+            "Bearer": [ ]
+          }
+        ]
       }
     },
     "/users/me/interests": {
@@ -5461,7 +6109,12 @@
           "401": {
             "description": "Unauthorized"
           }
-        }
+        },
+        "security": [
+          {
+            "Bearer": [ ]
+          }
+        ]
       },
       "put": {
         "tags": [
@@ -5496,7 +6149,12 @@
           "401": {
             "description": "Unauthorized"
           }
-        }
+        },
+        "security": [
+          {
+            "Bearer": [ ]
+          }
+        ]
       }
     },
     "/home/popular-categories": {
@@ -5517,7 +6175,13 @@
               }
             }
           }
-        }
+        },
+        "security": [
+          { },
+          {
+            "Bearer": [ ]
+          }
+        ]
       }
     },
     "/users/me/set-progress": {
@@ -5553,7 +6217,12 @@
           "401": {
             "description": "Unauthorized"
           }
-        }
+        },
+        "security": [
+          {
+            "Bearer": [ ]
+          }
+        ]
       }
     },
     "/ratings/{itemId}": {
@@ -5600,7 +6269,12 @@
           "404": {
             "description": "Not Found"
           }
-        }
+        },
+        "security": [
+          {
+            "Bearer": [ ]
+          }
+        ]
       },
       "get": {
         "tags": [
@@ -5632,7 +6306,13 @@
           "404": {
             "description": "Not Found"
           }
-        }
+        },
+        "security": [
+          { },
+          {
+            "Bearer": [ ]
+          }
+        ]
       }
     },
     "/ratings/{itemId}/me": {
@@ -5669,7 +6349,12 @@
           "400": {
             "description": "Bad Request"
           }
-        }
+        },
+        "security": [
+          {
+            "Bearer": [ ]
+          }
+        ]
       }
     },
     "/review-queue": {
@@ -5693,7 +6378,12 @@
           "401": {
             "description": "Unauthorized"
           }
-        }
+        },
+        "security": [
+          {
+            "Bearer": [ ]
+          }
+        ]
       }
     },
     "/review-queue/summary": {
@@ -5717,7 +6407,12 @@
           "401": {
             "description": "Unauthorized"
           }
-        }
+        },
+        "security": [
+          {
+            "Bearer": [ ]
+          }
+        ]
       }
     },
     "/review-queue/{itemId}": {
@@ -5757,7 +6452,12 @@
           "429": {
             "description": "Too Many Requests"
           }
-        }
+        },
+        "security": [
+          {
+            "Bearer": [ ]
+          }
+        ]
       }
     },
     "/review-queue/{itemId}/answers": {
@@ -5804,7 +6504,12 @@
           "404": {
             "description": "Not Found"
           }
-        }
+        },
+        "security": [
+          {
+            "Bearer": [ ]
+          }
+        ]
       }
     },
     "/search": {
@@ -5875,7 +6580,13 @@
               }
             }
           }
-        }
+        },
+        "security": [
+          { },
+          {
+            "Bearer": [ ]
+          }
+        ]
       }
     },
     "/starter-pool": {
@@ -5896,7 +6607,13 @@
               }
             }
           }
-        }
+        },
+        "security": [
+          { },
+          {
+            "Bearer": [ ]
+          }
+        ]
       }
     },
     "/study-guides/documents/{id}/accept": {
@@ -5948,7 +6665,12 @@
           "404": {
             "description": "Not Found"
           }
-        }
+        },
+        "security": [
+          {
+            "Bearer": [ ]
+          }
+        ]
       }
     },
     "/study-guides/documents/{id}/similar-check": {
@@ -5998,7 +6720,12 @@
           "404": {
             "description": "Not Found"
           }
-        }
+        },
+        "security": [
+          {
+            "Bearer": [ ]
+          }
+        ]
       }
     },
     "/study-guides/documents": {
@@ -6109,7 +6836,12 @@
           "429": {
             "description": "Too Many Requests"
           }
-        }
+        },
+        "security": [
+          {
+            "Bearer": [ ]
+          }
+        ]
       },
       "get": {
         "tags": [
@@ -6130,7 +6862,12 @@
           "401": {
             "description": "Unauthorized"
           }
-        }
+        },
+        "security": [
+          {
+            "Bearer": [ ]
+          }
+        ]
       }
     },
     "/study-guides/documents/{id}/generate": {
@@ -6186,7 +6923,12 @@
           "503": {
             "description": "Service Unavailable"
           }
-        }
+        },
+        "security": [
+          {
+            "Bearer": [ ]
+          }
+        ]
       }
     },
     "/study-guides/documents/{id}": {
@@ -6223,7 +6965,12 @@
           "404": {
             "description": "Not Found"
           }
-        }
+        },
+        "security": [
+          {
+            "Bearer": [ ]
+          }
+        ]
       }
     },
     "/study-guides/documents/config": {
@@ -6247,7 +6994,12 @@
           "401": {
             "description": "Unauthorized"
           }
-        }
+        },
+        "security": [
+          {
+            "Bearer": [ ]
+          }
+        ]
       }
     },
     "/study-guides/documents/quick": {
@@ -6361,7 +7113,12 @@
           "503": {
             "description": "Service Unavailable"
           }
-        }
+        },
+        "security": [
+          {
+            "Bearer": [ ]
+          }
+        ]
       }
     },
     "/study-guides/documents/{id}/primary-source": {
@@ -6411,7 +7168,12 @@
           "404": {
             "description": "Not Found"
           }
-        }
+        },
+        "security": [
+          {
+            "Bearer": [ ]
+          }
+        ]
       }
     },
     "/study-plans": {
@@ -6435,7 +7197,12 @@
           "401": {
             "description": "Unauthorized"
           }
-        }
+        },
+        "security": [
+          {
+            "Bearer": [ ]
+          }
+        ]
       }
     },
     "/study-plans/{collectionId}": {
@@ -6485,7 +7252,12 @@
           "404": {
             "description": "Not Found"
           }
-        }
+        },
+        "security": [
+          {
+            "Bearer": [ ]
+          }
+        ]
       },
       "delete": {
         "tags": [
@@ -6510,7 +7282,12 @@
           "401": {
             "description": "Unauthorized"
           }
-        }
+        },
+        "security": [
+          {
+            "Bearer": [ ]
+          }
+        ]
       }
     },
     "/study-sessions/activity": {
@@ -6546,7 +7323,12 @@
           "401": {
             "description": "Unauthorized"
           }
-        }
+        },
+        "security": [
+          {
+            "Bearer": [ ]
+          }
+        ]
       }
     },
     "/study-sessions": {
@@ -6579,7 +7361,12 @@
           "401": {
             "description": "Unauthorized"
           }
-        }
+        },
+        "security": [
+          {
+            "Bearer": [ ]
+          }
+        ]
       },
       "post": {
         "tags": [
@@ -6624,7 +7411,12 @@
           "401": {
             "description": "Unauthorized"
           }
-        }
+        },
+        "security": [
+          {
+            "Bearer": [ ]
+          }
+        ]
       }
     },
     "/study-sessions/summary": {
@@ -6648,7 +7440,12 @@
           "401": {
             "description": "Unauthorized"
           }
-        }
+        },
+        "security": [
+          {
+            "Bearer": [ ]
+          }
+        ]
       }
     },
     "/study-sessions/import": {
@@ -6685,7 +7482,12 @@
           "401": {
             "description": "Unauthorized"
           }
-        }
+        },
+        "security": [
+          {
+            "Bearer": [ ]
+          }
+        ]
       }
     },
     "/taxonomy": {
@@ -6705,7 +7507,13 @@
               }
             }
           }
-        }
+        },
+        "security": [
+          { },
+          {
+            "Bearer": [ ]
+          }
+        ]
       }
     },
     "/taxonomy/suggest": {
@@ -6765,7 +7573,12 @@
               }
             }
           }
-        }
+        },
+        "security": [
+          {
+            "Bearer": [ ]
+          }
+        ]
       }
     },
     "/users/settings": {
@@ -6789,7 +7602,12 @@
           "401": {
             "description": "Unauthorized"
           }
-        }
+        },
+        "security": [
+          {
+            "Bearer": [ ]
+          }
+        ]
       },
       "put": {
         "tags": [
@@ -6824,7 +7642,12 @@
           "401": {
             "description": "Unauthorized"
           }
-        }
+        },
+        "security": [
+          {
+            "Bearer": [ ]
+          }
+        ]
       }
     },
     "/users/availability": {
@@ -6864,7 +7687,13 @@
           "400": {
             "description": "Bad Request"
           }
-        }
+        },
+        "security": [
+          { },
+          {
+            "Bearer": [ ]
+          }
+        ]
       }
     },
     "/users/me": {
@@ -6891,7 +7720,12 @@
           "404": {
             "description": "Not Found"
           }
-        }
+        },
+        "security": [
+          {
+            "Bearer": [ ]
+          }
+        ]
       },
       "put": {
         "tags": [
@@ -6928,7 +7762,12 @@
           "404": {
             "description": "Not Found"
           }
-        }
+        },
+        "security": [
+          {
+            "Bearer": [ ]
+          }
+        ]
       }
     },
     "/users/policy-acceptances/status": {
@@ -6952,7 +7791,12 @@
           "401": {
             "description": "Unauthorized"
           }
-        }
+        },
+        "security": [
+          {
+            "Bearer": [ ]
+          }
+        ]
       }
     },
     "/admin/users/{id}": {
@@ -6995,7 +7839,12 @@
           "404": {
             "description": "Not Found"
           }
-        }
+        },
+        "security": [
+          {
+            "Bearer": [ ]
+          }
+        ]
       }
     },
     "/auth/logout": {
@@ -7012,7 +7861,12 @@
           "401": {
             "description": "Unauthorized"
           }
-        }
+        },
+        "security": [
+          {
+            "Bearer": [ ]
+          }
+        ]
       }
     },
     "/users/policy-acceptances": {
@@ -7049,7 +7903,12 @@
           "401": {
             "description": "Unauthorized"
           }
-        }
+        },
+        "security": [
+          {
+            "Bearer": [ ]
+          }
+        ]
       }
     }
   },
@@ -20948,11 +21807,6 @@
       }
     }
   },
-  "security": [
-    {
-      "Bearer": [ ]
-    }
-  ],
   "tags": [
     {
       "name": "Admin"

@@ -1,6 +1,6 @@
 // Tests for #761 gap 1 (AC 7.19.29, 7.19.30): the owner's typed "start autopilot" approves the one bundle whose brief they were
 // shown, and nothing else. Temp folders only; no GitHub, no production.
-import test from "node:test";
+import test, { after } from "node:test";
 import assert from "node:assert/strict";
 import fs from "node:fs";
 import os from "node:os";
@@ -9,6 +9,11 @@ import { spawnSync } from "node:child_process";
 import { createHash } from "node:crypto";
 import { fileURLToPath } from "node:url";
 import { awaitingStart, decideStart } from "../bundle/start-hook.mjs";
+
+// Temp folders this file makes are removed when the file ends, so %TEMP% does not collect qm-* folders (#761).
+const madeDirs = [];
+const mkTmp = (prefix) => { const d = fs.mkdtempSync(path.join(os.tmpdir(), prefix)); madeDirs.push(d); return d; };
+after(() => { for (const d of madeDirs) fs.rmSync(d, { recursive: true, force: true }); });
 
 const HOOK = fileURLToPath(new URL("../bundle/start-hook.mjs", import.meta.url));
 const sha = (text) => createHash("sha256").update(text).digest("hex");
@@ -23,7 +28,7 @@ function makeBundle(bundlesDir, id, { manifest = `{"id":"${id}"}`, briefSha = sh
   if (state) fs.writeFileSync(path.join(dir, "state.json"), "{}");
   return sha(manifest);
 }
-const tmpBundles = () => fs.mkdtempSync(path.join(os.tmpdir(), "qm-start-"));
+const tmpBundles = () => mkTmp("qm-start-");
 
 // AC 7.19.29: only the owner's whole message counts; a sentence that quotes or negates the phrase approves nothing.
 test("AC 7.19.29: only a message that is exactly 'start autopilot' is a start", () => {
@@ -66,7 +71,7 @@ test("AC 7.19.29: a bundle waits only for the bytes the owner was shown", () => 
 
 // AC 7.19.30: the hook is silent for any other message, and reports refusals in additionalContext rather than approving.
 test("AC 7.19.30: the hook is silent for other messages and says why it did not approve", () => {
-  const cwd = fs.mkdtempSync(path.join(os.tmpdir(), "qm-hook-"));
+  const cwd = mkTmp("qm-hook-");
   const run = (prompt) => spawnSync(process.execPath, [HOOK], { input: JSON.stringify({ prompt }), encoding: "utf8", env: { ...process.env, CLAUDE_PROJECT_DIR: cwd } });
   assert.equal(run("what is next?").stdout, "", "other messages produce no output");
   const none = JSON.parse(run("start autopilot").stdout);
@@ -76,7 +81,7 @@ test("AC 7.19.30: the hook is silent for other messages and says why it did not 
 
 // AC 7.19.30: a hook input that is not JSON changes nothing and prints nothing.
 test("AC 7.19.30: a malformed hook input is ignored", () => {
-  const cwd = fs.mkdtempSync(path.join(os.tmpdir(), "qm-hook-"));
+  const cwd = mkTmp("qm-hook-");
   const r = spawnSync(process.execPath, [HOOK], { input: "not json", encoding: "utf8", env: { ...process.env, CLAUDE_PROJECT_DIR: cwd } });
   assert.equal(r.status, 0);
   assert.equal(r.stdout, "");

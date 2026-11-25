@@ -1,10 +1,15 @@
 // githubAutoMerge (AC 7.19.11): with the envelope flag true, ship arms GitHub auto-merge instead of merging itself.
-import test from "node:test";
+import test, { after } from "node:test";
 import assert from "node:assert/strict";
 import fs from "node:fs";
 import os from "node:os";
 import path from "node:path";
 import { recordReview, ship } from "../release/release.mjs";
+
+// Temp folders this file makes are removed when the file ends, so %TEMP% does not collect qm-* folders (#761).
+const madeDirs = [];
+const mkTmp = (prefix) => { const d = fs.mkdtempSync(path.join(os.tmpdir(), prefix)); madeDirs.push(d); return d; };
+after(() => { for (const d of madeDirs) fs.rmSync(d, { recursive: true, force: true }); });
 
 const HEAD = "b94b6a8e9d50404823d017103d05294fa3e8a05d";
 
@@ -26,7 +31,7 @@ function fakeGh(routes) {
 const openPending = { state: "OPEN", headRefOid: HEAD, statusCheckRollup: [{ name: "release-ready", status: "IN_PROGRESS", conclusion: "" }] };
 
 test("AC 7.19.11: githubAutoMerge true arms auto-merge on an open PR and never merges it directly", () => {
-  const root = fs.mkdtempSync(path.join(os.tmpdir(), "automerge-"));
+  const root = mkTmp("automerge-");
   recordReview({ pr: 770, head: HEAD, clean: true, root });
   const deps = fakeGh({ "pr view": openPending, "pr merge": "" });
   deps.acGate = () => ({ ok: true, detail: "" });
@@ -38,7 +43,7 @@ test("AC 7.19.11: githubAutoMerge true arms auto-merge on an open PR and never m
 });
 
 test("AC 7.19.11: githubAutoMerge false keeps the direct merge path (refused while checks are pending)", () => {
-  const root = fs.mkdtempSync(path.join(os.tmpdir(), "automerge-"));
+  const root = mkTmp("automerge-");
   const deps = fakeGh({ "pr view": openPending, "pr merge": "" });
   const r = ship({ pr: 770, issues: [761], root, deps, githubAutoMerge: false });
   assert.equal(r.ok, false);

@@ -1,10 +1,22 @@
-import test from "node:test";
+import test, { after } from "node:test";
 import assert from "node:assert/strict";
 import fs from "node:fs";
 import path from "node:path";
 import { execFileSync, spawnSync } from "node:child_process";
 import os from "node:os";
 import { fileURLToPath } from "node:url";
+
+// Temp folders this file makes are removed when the file ends, so %TEMP% does not collect qm-* folders (#761).
+const madeDirs = [];
+const mkTmp = (prefix) => { const d = fs.mkdtempSync(path.join(os.tmpdir(), prefix)); madeDirs.push(d); return d; };
+after(() => {
+  for (const d of madeDirs) {
+    // A leftover junction must be unlinked first so rmSync can never follow it into a real directory.
+    const link = path.join(d, "lane a", "src", "Quizymode.Web", "node_modules");
+    try { if (fs.lstatSync(link).isSymbolicLink()) fs.rmdirSync(link); } catch { /* no link left */ }
+    fs.rmSync(d, { recursive: true, force: true });
+  }
+});
 
 // AC 7.16.1 to 7.16.6: the bundle skill rename, the helper move and the documentation fixes.
 const repo = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..", "..");
@@ -31,7 +43,7 @@ test("the helper runs from scripts/bundle and lists bundles (AC 7.16.2)", () => 
 
 // AC 7.16.4 (amended by #762): BUNDLE junction builds the Windows junction from runtime paths; the playbook only names the command.
 test("AC 7.16.4 BUNDLE junction links the lane's web node_modules to the main checkout's, from runtime paths, outside C:\Projects with a space", { skip: process.platform !== "win32" }, () => {
-  const tmp = fs.mkdtempSync(path.join(os.tmpdir(), "qm 762 junction "));
+  const tmp = mkTmp("qm 762 junction ");
   const main = path.join(tmp, "main checkout");
   const lane = path.join(tmp, "lane a");
   const git = (cwd, args) => execFileSync("git", ["-c", "user.name=test", "-c", "user.email=test@example.invalid", ...args], { cwd, encoding: "utf8" });

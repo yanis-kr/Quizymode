@@ -1,0 +1,93 @@
+{
+  "combined": {
+    "complete": false,
+    "go": false,
+    "historicalWrongKeys": {
+      "caught": 210,
+      "rate": 0.546875,
+      "total": 384
+    },
+    "knownGoodFalseFlags": {
+      "count": 0,
+      "rate": 0.0,
+      "total": 157
+    },
+    "notRun": 325,
+    "seededErrorCatchRate": {
+      "caught": 0,
+      "rate": 0.0,
+      "total": 50
+    },
+    "sourceGaps": 55
+  },
+  "labels": {
+    "historical-wrong-key": 384,
+    "known-good": 157,
+    "seeded-wrong-key": 50
+  },
+  "levels": {
+    "L1": {
+      "calls": 24,
+      "flags": 434,
+      "historicalWrongKeys": {
+        "caught": 378,
+        "rate": 0.984375,
+        "total": 384
+      },
+      "items": 591,
+      "knownGoodFalseFlags": {
+        "count": 7,
+        "rate": 0.044585987261146494,
+        "total": 157
+      },
+      "notRun": 0,
+      "quoteBackedFindings": 0,
+      "seededErrors": {
+        "caught": 49,
+        "rate": 0.98,
+        "total": 50
+      },
+      "sourceGaps": null,
+      "usage": {
+        "available": true,
+        "inputTokens": 531183,
+        "outputTokens": 68716,
+        "unavailableCalls": 0
+      }
+    },
+    "L2": {
+      "calls": 11,
+      "flags": 210,
+      "historicalWrongKeys": {
+        "caught": 210,
+        "rate": 0.546875,
+        "total": 384
+      },
+      "items": 266,
+      "knownGoodFalseFlags": {
+        "count": 0,
+        "rate": 0.0,
+        "total": 157
+      },
+      "notRun": 325,
+      "quoteBackedFindings": 210,
+      "seededErrors": {
+        "caught": 0,
+        "rate": 0.0,
+        "total": 50
+      },
+      "sourceGaps": 55,
+      "usage": {
+        "available": true,
+        "inputTokens": 517757,
+        "outputTokens": 47939,
+        "unavailableCalls": 0
+      }
+    }
+  },
+  "models": {
+    "L1": "gpt-6-luna",
+    "L2": "gpt-6-sol"
+  },
+  "rubricVersion": "1"
+}

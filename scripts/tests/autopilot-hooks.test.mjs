@@ -1,6 +1,6 @@
 // Tests for #760: the autopilot hooks, the run file, the permissions output, the skill text and the no-envelope stop.
 // Every test uses a temp .qm folder (QM_DIR for the hook, --qm-dir for bundle.mjs), so no real .qm state is read or written.
-import test from "node:test";
+import test, { after } from "node:test";
 import assert from "node:assert/strict";
 import fs from "node:fs";
 import os from "node:os";
@@ -9,6 +9,11 @@ import { createHash } from "node:crypto";
 import { spawnSync } from "node:child_process";
 import { fileURLToPath } from "node:url";
 
+// Temp folders this file makes are removed when the file ends, so %TEMP% does not collect them (#761).
+const madeDirs = [];
+const mkTmp = (prefix) => { const d = fs.mkdtempSync(path.join(os.tmpdir(), prefix)); madeDirs.push(d); return d; };
+after(() => { for (const d of madeDirs) fs.rmSync(d, { recursive: true, force: true }); });
+
 const repo = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..", "..");
 const BUNDLE = path.join(repo, "scripts", "bundle", "bundle.mjs");
 const HOOK = path.join(repo, "scripts", "bundle", "autopilot-hook.mjs");
@@ -16,7 +21,7 @@ const SKILL = path.join(repo, ".claude", "skills", "qm-bundle-autopilot", "SKILL
 const SHIP_SKILL = path.join(repo, ".claude", "skills", "qm-bundle-ship", "SKILL.md");
 const BID = "b-20261117-autopilot-test";
 
-const tmpQm = () => fs.mkdtempSync(path.join(os.tmpdir(), "qm-760-"));
+const tmpQm = () => mkTmp("qm-760-");
 const writeJson = (file, obj) => { fs.mkdirSync(path.dirname(file), { recursive: true }); fs.writeFileSync(file, JSON.stringify(obj, null, 2) + "\n"); };
 const sha = (file) => createHash("sha256").update(fs.readFileSync(file)).digest("hex");
 const run = (args) => spawnSync(process.execPath, [BUNDLE, ...args], { encoding: "utf8" });

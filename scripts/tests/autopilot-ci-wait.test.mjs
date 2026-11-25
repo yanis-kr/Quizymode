@@ -1,6 +1,6 @@
 // Tests for #761 AC 7.19.20: a run that waits on CI or Deploy may end its turn without stalling, the wait expires,
 // and the ship playbook and skill use the PR monitor instead of foreground polling.
-import test from "node:test";
+import test, { after } from "node:test";
 import assert from "node:assert/strict";
 import fs from "node:fs";
 import os from "node:os";
@@ -8,6 +8,11 @@ import path from "node:path";
 import { spawnSync } from "node:child_process";
 import { fileURLToPath } from "node:url";
 import { isWaiting, WAIT_MAX_MINUTES, STALL_AFTER_BLOCKS } from "../bundle/autopilot-run.mjs";
+
+// Temp folders this file makes are removed when the file ends, so %TEMP% does not collect qm-* folders (#761).
+const madeDirs = [];
+const mkTmp = (prefix) => { const d = fs.mkdtempSync(path.join(os.tmpdir(), prefix)); madeDirs.push(d); return d; };
+after(() => { for (const d of madeDirs) fs.rmSync(d, { recursive: true, force: true }); });
 
 const repo = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..", "..");
 const HOOK = path.join(repo, "scripts", "bundle", "autopilot-hook.mjs");
@@ -17,7 +22,7 @@ const SHIP_SKILL = path.join(repo, ".claude", "skills", "qm-bundle-ship", "SKILL
 const SETTINGS = path.join(repo, ".claude", "settings.local.json");
 const BID = "b-20261120-ci-wait-test";
 
-const tmpQm = () => fs.mkdtempSync(path.join(os.tmpdir(), "qm-761-"));
+const tmpQm = () => mkTmp("qm-761-");
 const writeRun = (qm, patch = {}) => {
   const file = path.join(qm, "autopilot", "run.json");
   fs.mkdirSync(path.dirname(file), { recursive: true });
