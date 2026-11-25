@@ -23,6 +23,8 @@ interface LearnQuestionProps {
   headingRef?: Ref<HTMLHeadingElement>;
   /** Gate for the question picture (#403): answers stay off until it shows. */
   questionPicture?: QuestionPictureControls;
+  /** Collection run (#403): uploaded pictures load through the collection route. Defaults to the route's collection. */
+  collectionId?: string | undefined;
 }
 
 export function LearnQuestion({
@@ -33,6 +35,7 @@ export function LearnQuestion({
   onAnswerSelect,
   headingRef,
   questionPicture,
+  collectionId,
 }: LearnQuestionProps) {
   const { isSupported } = useSpeech();
   const pictureBlocked = questionPicture?.blocked ?? false;
@@ -56,6 +59,7 @@ export function LearnQuestion({
         <QuestionImage
           key={item.id}
           itemId={item.id} image={item.questionImage}
+          collectionId={collectionId}
           withdrawn={item.imageReview?.state === "Withdrawn"}
           className="mt-3"
           onStatusChange={questionPicture?.onStatusChange}

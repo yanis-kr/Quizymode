@@ -1404,6 +1404,7 @@ const QuizModePageContent = ({ resumeRequested = false, initialNotice = null }: 
           onReviewAll={() => setRun((current) => current ? reduceQuizRun(current, { type: "review-all" }) : current)}
           onBackToResults={() => setRun((current) => current ? reduceQuizRun(current, { type: "show-summary" }) : current)}
           onPlayAgain={handlePlayAgain}
+          collectionId={collectionId}
           nextRound={
             category && run.mode === "practice" && run.itemIds.length >= 5
               ? {
@@ -1703,6 +1704,7 @@ const QuizModePageContent = ({ resumeRequested = false, initialNotice = null }: 
           onSubmit={handleSubmitTest}
           onSkip={handleSkipUnavailable}
           pictures={pictures}
+          collectionId={collectionId}
           shell={{
             backContent: <></>,
             headerExtra: modeControls,
@@ -1757,6 +1759,7 @@ const QuizModePageContent = ({ resumeRequested = false, initialNotice = null }: 
                     fact={currentItem.explanation ?? ""}
                     factLabel={rationaleLabel(currentItem.category)}
                     isLast={cardCompletesRun}
+                    collectionId={collectionId}
                     onNext={cardCompletesRun || hasNextQuestion ? advanceFromCard : undefined}
                     noNextHint={
                       runSummary && runSummary.notAnswered > 0
@@ -1768,6 +1771,7 @@ const QuizModePageContent = ({ resumeRequested = false, initialNotice = null }: 
               }
               showScoreWithPanel
               questionHeadingRef={questionHeadingRef}
+              collectionId={collectionId}
               questionPicture={{
                 ...pictures.controlsFor(currentItem, isPracticeActive && !currentSkipped && !currentOutcome ? handleSkipUnavailable : undefined),
                 blocked: pictureBlocked,

@@ -43,6 +43,8 @@ interface QuizCompletionViewProps {
   nextRound?: { size: number; exhausted: boolean; total: number; onNext: () => void } | null;
   /** Normal runs (#711): the Keep going block, rendered under the actions. */
   keepGoing?: ReactNode;
+  /** Collection run (#403): uploaded pictures load through the collection route. Defaults to the route's collection. */
+  collectionId?: string | undefined;
 }
 
 export function QuizCompletionView({
@@ -63,6 +65,7 @@ export function QuizCompletionView({
   countdown,
   nextRound,
   keepGoing,
+  collectionId,
 }: QuizCompletionViewProps) {
   const isStarter = variant === "starter";
   const isDaily = variant === "daily";
@@ -129,7 +132,7 @@ export function QuizCompletionView({
                   </div>
                 )}
                 <div className="flex items-start gap-3">
-                  <QuestionImage itemId={item.id} image={item.questionImage} size="xs" />
+                  <QuestionImage collectionId={collectionId} itemId={item.id} image={item.questionImage} size="xs" />
                   <h3 className="min-w-0 font-semibold text-gray-900">{item.question}</h3>
                 </div>
                 {outcome && (
@@ -156,7 +159,7 @@ export function QuizCompletionView({
                 )}
                 {(item.explanation || item.explanationImage) && (
                   <div className="mt-2 flex items-start gap-3">
-                    <QuestionImage itemId={item.id} image={item.explanationImage} slot="explanation" size="sm" />
+                    <QuestionImage collectionId={collectionId} itemId={item.id} image={item.explanationImage} slot="explanation" size="sm" />
                     {item.explanation && <p className="min-w-0 text-sm text-gray-700">{item.explanation}</p>}
                   </div>
                 )}

@@ -675,6 +675,7 @@ const LearnModePage = () => {
             caption={caption}
             onContinue={handleNextRound}
             onStartOver={() => setConfirmingRestart(true)}
+            collectionId={collectionId}
           />
           {confirmingRestart && restartControl}
         </section>
@@ -715,6 +716,7 @@ const LearnModePage = () => {
             showAnswer={!!currentAttempt}
             onAnswerSelect={handleAnswer}
             headingRef={questionHeadingRef}
+            collectionId={collectionId}
             questionPicture={pictures.controlsFor(currentItem, currentAttempt ? undefined : handleSkipUnavailable)}
           />
         )}
@@ -729,6 +731,7 @@ const LearnModePage = () => {
           <QuestionImage
             key={`${currentItem.id}-explanation`}
             itemId={currentItem.id} image={currentItem.explanationImage}
+            collectionId={collectionId}
             slot="explanation"
             className="rounded-lg bg-surface"
           />

@@ -1034,6 +1034,7 @@ const ExploreModePage = () => {
               isFlipped={isFlipped}
               onFlippedChange={setIsFlipped}
               questionPicture={pictures.controlsFor(currentItem, handleNext)}
+              collectionId={collectionId}
             />
             <p role="status" aria-live="polite" className="min-h-5 text-sm text-gray-600">
               {enqueueStatus?.itemId === currentItem.id && (

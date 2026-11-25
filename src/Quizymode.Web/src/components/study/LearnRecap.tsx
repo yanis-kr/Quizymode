@@ -21,6 +21,8 @@ interface LearnRecapProps {
   caption?: string | null;
   onContinue: () => void;
   onStartOver: () => void;
+  /** Collection run (#403): uploaded pictures load through the collection route. Defaults to the route's collection. */
+  collectionId?: string | undefined;
 }
 
 const STATUS_TEXT: Record<LearnRecapStatus, string> = {
@@ -30,7 +32,7 @@ const STATUS_TEXT: Record<LearnRecapStatus, string> = {
 };
 
 /** Between-rounds recap (AC 3.17.6): the round's correct count and a text status for every item. */
-export function LearnRecap({ roundNumber, rows, mastered, total, caption, onContinue, onStartOver }: LearnRecapProps) {
+export function LearnRecap({ roundNumber, rows, mastered, total, caption, onContinue, onStartOver, collectionId }: LearnRecapProps) {
   const headingRef = useRef<HTMLHeadingElement>(null);
   useEffect(() => {
     headingRef.current?.focus();
@@ -55,7 +57,7 @@ export function LearnRecap({ roundNumber, rows, mastered, total, caption, onCont
             ) : (
               <CheckCircleIcon className="h-5 w-5 shrink-0 text-green-600" aria-hidden="true" />
             )}
-            <QuestionImage itemId={row.itemId} image={row.questionImage} size="xs" />
+            <QuestionImage collectionId={collectionId} itemId={row.itemId} image={row.questionImage} size="xs" />
             <span className="min-w-0 flex-1 truncate sm:whitespace-normal" title={row.question}>
               {row.question}
             </span>
