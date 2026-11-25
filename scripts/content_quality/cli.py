@@ -39,8 +39,18 @@ from quality_lib import (  # noqa: E402
 from seed_source_common import SOURCE_ITEMS_ROOT, load_source_items  # noqa: E402
 
 
-def cmd_queue(args: argparse.Namespace) -> int:
+def _scoped_items(args: argparse.Namespace):
+    """Items of the category, narrowed by --set-prefix (keep) and --exclude-prefix (drop) on the set file name (#727 pilot: non-AWS exams)."""
     items = [i for i in load_source_items() if i.category == args.category]
+    if getattr(args, "set_prefix", None):
+        items = [i for i in items if i.path.stem.startswith(args.set_prefix)]
+    if getattr(args, "exclude_prefix", None):
+        items = [i for i in items if not i.path.stem.startswith(args.exclude_prefix)]
+    return items
+
+
+def cmd_queue(args: argparse.Namespace) -> int:
+    items = _scoped_items(args)
     rows = read_rows(ledger_path(args.category))
     ranked = risk_queue(items, rows, args.level, args.budget, load_tiers(), load_profiles(), datetime.now(timezone.utc))
     for item, reason, risk in ranked:
@@ -81,7 +91,7 @@ def cmd_link_report(args: argparse.Namespace) -> int:
 
 
 def cmd_packets(args: argparse.Namespace) -> int:
-    items = [i for i in load_source_items() if i.category == args.category]
+    items = _scoped_items(args)
     rows = read_rows(ledger_path(args.category))
     tiers = load_tiers()
     profiles = load_profiles()
@@ -160,6 +170,8 @@ def build_parser() -> argparse.ArgumentParser:
     q.add_argument("--category", required=True)
     q.add_argument("--level", required=True)
     q.add_argument("--budget", type=int, default=25)
+    q.add_argument("--set-prefix")
+    q.add_argument("--exclude-prefix")
     q.set_defaults(func=cmd_queue)
 
     f = sub.add_parser("fetch", help="fetch uncached source URLs once each, politely (robots.txt, per-domain delay)")
@@ -179,6 +191,8 @@ def build_parser() -> argparse.ArgumentParser:
     p.add_argument("--level", required=True)
     p.add_argument("--seed", required=True)
     p.add_argument("--budget", type=int, default=25)
+    p.add_argument("--set-prefix")
+    p.add_argument("--exclude-prefix")
     p.set_defaults(func=cmd_packets)
 
     i = sub.add_parser("ingest", help="validate verdicts and append ledger rows")
