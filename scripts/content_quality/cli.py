@@ -21,14 +21,20 @@ from fetcher import (  # noqa: E402
 from quality_lib import (  # noqa: E402
     append_rows,
     compact,
+    cache_is_ok,
+    eligible_source_url,
     ingest,
+    item_source_candidates,
     ledger_path,
     legacy_rows,
     load_fact_checks,
     packet,
     pr_table,
+    proposal_evidence_table,
     read_rows,
+    read_cache,
     risk_queue,
+    validate_proposal,
 )
 from seed_source_common import SOURCE_ITEMS_ROOT, load_source_items  # noqa: E402
 
@@ -48,7 +54,18 @@ def _category_items(category: str | None):
 
 def cmd_fetch(args: argparse.Namespace) -> int:
     items = _category_items(args.category)
-    urls = [i.source for i in items if i.source]
+    item_ids = {line.strip() for line in args.item_ids.read_text(encoding="utf-8").splitlines() if line.strip()} if args.item_ids else None
+    if item_ids is not None:
+        items = [item for item in items if item.item_id in item_ids]
+    urls = [url for item in items for url in item_source_candidates(item)]
+    if args.eligible_only:
+        tiers = load_tiers()
+        profiles = load_profiles()
+        minimums = {category: profile.get("minTier", "T5") for category, profile in profiles.items()}
+        urls = [
+            url for item in items for url in item_source_candidates(item)
+            if eligible_source_url(item, tiers, minimums.get(item.category, minimums.get("default", "T5"))) == url
+        ]
     if args.limit:
         urls = urls[: args.limit]
     summary = fetch_run(urls, base_delay=args.delay)
@@ -65,8 +82,24 @@ def cmd_link_report(args: argparse.Namespace) -> int:
 
 def cmd_packets(args: argparse.Namespace) -> int:
     items = [i for i in load_source_items() if i.category == args.category]
-    for item in items[: args.limit]:
-        print(json.dumps(packet(item, args.level, args.seed)))
+    rows = read_rows(ledger_path(args.category))
+    tiers = load_tiers()
+    profiles = load_profiles()
+    ranked = risk_queue(items, rows, args.level, args.budget, tiers, profiles, datetime.now(timezone.utc))
+    gaps = 0
+    for item, _, _ in ranked:
+        source_url = None
+        if args.level in {"L2", "L3"}:
+            profile = profiles.get(item.category, profiles["default"])
+            source_url = eligible_source_url(item, tiers, profile.get("minTier", "T5"))
+            cached = read_cache(source_url) if source_url else None
+            if not cache_is_ok(cached):
+                print(f"SOURCE_GAP {item.item_id}: no cached eligible source", file=sys.stderr)
+                gaps += 1
+                continue
+        print(json.dumps(packet(item, args.level, args.seed, source_url=source_url)))
+    if gaps:
+        print(f"source gaps {gaps}; no packet was emitted for those items", file=sys.stderr)
     return 0
 
 
@@ -108,6 +141,13 @@ def cmd_compact(args: argparse.Namespace) -> int:
 
 def cmd_pr_table(args: argparse.Namespace) -> int:
     rows = read_rows(ledger_path(args.category))
+    if args.changes:
+        changes = [json.loads(line) for line in args.changes.read_text(encoding="utf-8").splitlines() if line.strip()]
+        print(proposal_evidence_table(rows, changes))
+        return 0
+    if args.change_class:
+        for item_id in args.ids:
+            validate_proposal(item_id, args.change_class, rows)
     print(pr_table(rows, set(args.ids)))
     return 0
 
@@ -126,6 +166,8 @@ def build_parser() -> argparse.ArgumentParser:
     f.add_argument("--category")
     f.add_argument("--limit", type=int, default=0)
     f.add_argument("--delay", type=float, default=1.0)
+    f.add_argument("--item-ids", type=Path)
+    f.add_argument("--eligible-only", action="store_true")
     f.set_defaults(func=cmd_fetch)
 
     lr = sub.add_parser("link-report", help="status, tier and bare-homepage counts for cited source URLs")
@@ -136,7 +178,7 @@ def build_parser() -> argparse.ArgumentParser:
     p.add_argument("--category", required=True)
     p.add_argument("--level", required=True)
     p.add_argument("--seed", required=True)
-    p.add_argument("--limit", type=int, default=25)
+    p.add_argument("--budget", type=int, default=25)
     p.set_defaults(func=cmd_packets)
 
     i = sub.add_parser("ingest", help="validate verdicts and append ledger rows")
@@ -151,6 +193,8 @@ def build_parser() -> argparse.ArgumentParser:
 
     t = sub.add_parser("pr-table", help="Markdown evidence table for item ids")
     t.add_argument("--category", required=True)
+    t.add_argument("--change-class", choices=("A", "B", "C"))
+    t.add_argument("--changes", type=Path, help="JSONL with itemId, changeClass, before and after")
     t.add_argument("ids", nargs="+")
     t.set_defaults(func=cmd_pr_table)
     return parser
