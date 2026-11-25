@@ -26,14 +26,14 @@
     "category": "exams",
     "navigationKeyword1": "azure",
     "navigationKeyword2": "ai-103",
-    "question": "An EU company must keep inference processing inside the EU but wants pay-per-token billing. Which deployment type fits?",
+    "question": "An EU company must keep inference processing within the Azure EU Data Boundary but wants pay-per-token billing. Which deployment type fits?",
     "correctAnswer": "Data Zone Standard",
     "incorrectAnswers": [
       "Global Standard",
       "Global Provisioned",
       "Developer"
     ],
-    "explanation": "Data Zones let customers process and store data within a geographic boundary such as the EU, and are available for Standard (pay-as-you-go) deployments.",
+    "explanation": "Data Zones keep data processing within a geographic boundary such as the Azure EU Data Boundary, and are available for Standard (pay-as-you-go) deployments.",
     "keywords": [
       "ai-103",
       "deployment-types",
@@ -54,7 +54,7 @@
       "Regional Provisioned",
       "Developer"
     ],
-    "explanation": "The Batch API for global deployments returns completions within 24 hours at a 50% discount on Global Standard pricing.",
+    "explanation": "The Batch API for global deployments targets completion within 24 hours at a 50% discount on Global Standard pricing, but it has no real-time SLA and may take longer.",
     "keywords": [
       "ai-103",
       "deployment-types",
