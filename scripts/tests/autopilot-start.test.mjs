@@ -8,7 +8,7 @@ import path from "node:path";
 import { spawnSync } from "node:child_process";
 import { createHash } from "node:crypto";
 import { fileURLToPath } from "node:url";
-import { awaitingStart, decideStart } from "../bundle/start-hook.mjs";
+import { awaitingStart, decideStart, approvedMessage } from "../bundle/start-hook.mjs";
 
 // Temp folders this file makes are removed when the file ends, so %TEMP% does not collect qm-* folders (#761).
 const madeDirs = [];
@@ -85,4 +85,14 @@ test("AC 7.19.30: a malformed hook input is ignored", () => {
   const r = spawnSync(process.execPath, [HOOK], { input: "not json", encoding: "utf8", env: { ...process.env, CLAUDE_PROJECT_DIR: cwd } });
   assert.equal(r.status, 0);
   assert.equal(r.stdout, "");
+});
+
+// AC 7.19.29: after approving, the hook tells the model to continue the autopilot run; /qm-bundle-ship is only the fallback.
+test("AC 7.19.29: the approval message continues the autopilot skill, with ship as the fallback", () => {
+  const msg = approvedMessage("b-1", "abcdef01");
+  assert.match(msg, /Bundle b-1 is approved \(manifest abcdef01\)/);
+  assert.match(msg, /Continue the qm-bundle-autopilot skill at its next step \(3\. Ship\) for b-1/);
+  assert.match(msg, /do not run approve again/);
+  assert.match(msg, /Only when no autopilot session is running, start the ship run with \/qm-bundle-ship b-1\./);
+  assert.ok(msg.indexOf("qm-bundle-autopilot") < msg.indexOf("/qm-bundle-ship"), "the autopilot step comes first");
 });

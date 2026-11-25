@@ -59,6 +59,11 @@ export function decideStart({ prompt, candidates }) {
   return { action: "approve", bundleId: only.bundleId, hash: only.manifestSha256.slice(0, 8) };
 }
 
+/** What the model is told after the hook approved a bundle: continue the autopilot run; ship directly only without one. */
+export function approvedMessage(bundleId, hash) {
+  return `Bundle ${bundleId} is approved (manifest ${hash}) by the owner's "start autopilot". Continue the qm-bundle-autopilot skill at its next step (3. Ship) for ${bundleId}; do not run approve again. Only when no autopilot session is running, start the ship run with /qm-bundle-ship ${bundleId}.`;
+}
+
 function emit(message) {
   process.stdout.write(JSON.stringify({ hookSpecificOutput: { hookEventName: "UserPromptSubmit", additionalContext: message } }) + "\n");
 }
@@ -73,7 +78,7 @@ function main() {
   if (decision.action === "none") { emit(decision.reason ?? ""); return; }
   const r = spawnSync(process.execPath, [BUNDLE, "approve", decision.bundleId, "--hash", decision.hash, "--user-reply", prompt.trim()], { cwd, encoding: "utf8" });
   if (r.status !== 0) { emit(`Bundle ${decision.bundleId} was not approved: ${(r.stdout || r.stderr || "").trim()}`); return; }
-  emit(`Bundle ${decision.bundleId} is approved (manifest ${decision.hash}) by the owner's "start autopilot". The ship run is next: /qm-bundle-ship ${decision.bundleId}.`);
+  emit(approvedMessage(decision.bundleId, decision.hash));
 }
 
 if (process.argv[1] && path.resolve(process.argv[1]) === fileURLToPath(import.meta.url)) main();

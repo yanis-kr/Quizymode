@@ -10,11 +10,12 @@ One run handles one bundle, from pick to report. The owner's only step is the st
 
 ## Input
 
-- Issue numbers, or nothing: pick every open `status:ready` and `owner:agent` issue, up to the envelope's `maxIssues`.
+- Issue numbers, or nothing: step 1 picks from the open `status:ready` issues with `bundle.mjs select`, up to the envelope's `maxIssues`.
 - The clock is `limits.maxWallClockHours` in the manifest. There is no separate deadline question.
 
 ## 1. Pick and refine
 
+- Pick the issues with `node scripts/bundle/bundle.mjs select` (AC 7.19.46). It reads the open `status:ready` issues and the limits in `.qm/envelope.json`, ranks `fix-forward` issues first, and returns the batch with a `checklist`. Print the checklist once and proceed; do not wait for a reply (design B.5). With issue numbers given, keep only those that `select` picked, and list the others with their exclusion reason. Exit 2 with `Autopilot is halted` ends the run.
 - Refine each issue as `/qm-bundle-refine` does, with the same manifest, `review.json` and `summary.md`.
 - Questions from refine go to `qm-lead` (`.claude/agents/qm-lead.md`), never to the owner. `qm-lead` answers from `docs/workflows/lead-brief.md` and recorded precedents, and returns `proceed`, `proceed-flagged` or `park`.
 - An issue without draft acceptance criteria is refined by `qm-lead` when it is `size:s` or smaller. Otherwise it is excluded with a reason.

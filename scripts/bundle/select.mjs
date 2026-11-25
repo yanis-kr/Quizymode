@@ -28,7 +28,7 @@ function globPrefix(g) {
 }
 // Conservative: two scopes overlap when their literal prefixes agree on the shorter length.
 export function scopesOverlap(a, b) {
-  if (!a.length || !b.length) return true; // no declared scope: it conflicts with everything (design B.4)
+  if (!a.length || !b.length) return true; // conservative for direct callers; pairConflicts handles unknown scope first (design B.4)
   for (const x of a) for (const y of b) {
     const px = globPrefix(x), py = globPrefix(y);
     const n = Math.min(px.length, py.length);
@@ -55,30 +55,35 @@ function exclusionReason(c, labels, { maxSize, excludeAreas, locked }) {
   return null;
 }
 
+// A fix-forward issue ranks first (design E, AC 7.19.45), then priority, size and the oldest number.
 function rankKey(c) {
+  const f = c.labels.includes(FIX_FORWARD_LABEL) ? 0 : 1;
   const p = PRIORITY_ORDER[c.labels.find((l) => l in PRIORITY_ORDER)] ?? 3;
   const s = SIZE_ORDER.indexOf(sizeOf(c.labels));
-  return [p, s, c.number];
+  return [f, p, s, c.number];
 }
 const byRank = (x, y) => {
   const a = rankKey(x), b = rankKey(y);
-  for (let i = 0; i < 3; i++) if (a[i] !== b[i]) return a[i] - b[i];
+  for (let i = 0; i < a.length; i++) if (a[i] !== b[i]) return a[i] - b[i];
   return 0;
 };
+const unknownScope = (c) => !(c.paths ?? []).length;
 
-// Pairwise conflicts among the picked issues (design B.3). Returns [{ a, b, reason }].
+// Pairwise conflicts among the picked issues (design B.3). Returns [{ a, b, reason }]. An unknown scope is not a path
+// conflict: that issue gets its own serial slot at the end of lane B instead (design B.4, AC 7.19.45).
 export function pairConflicts(picked) {
   const out = [];
   for (let i = 0; i < picked.length; i++) for (let j = i + 1; j < picked.length; j++) {
     const x = picked[i], y = picked[j];
     if ((x.dependsOn ?? []).includes(y.number) || (y.dependsOn ?? []).includes(x.number)) out.push({ a: x.number, b: y.number, reason: "dependsOn link" });
     else if (x.migration && y.migration) out.push({ a: x.number, b: y.number, reason: "both add a migration" });
-    else if (scopesOverlap(x.paths ?? [], y.paths ?? [])) out.push({ a: x.number, b: y.number, reason: "scope paths overlap or are unknown" });
+    else if (!unknownScope(x) && !unknownScope(y) && scopesOverlap(x.paths, y.paths)) out.push({ a: x.number, b: y.number, reason: "scope paths overlap" });
   }
   return out;
 }
 
 // Conflicting issues share a lane, in rank order (design B.3). Groups go to the lighter lane, biggest group first.
+// A group with an unknown-scope issue goes to lane B after the others, as a serial slot (design B.4).
 export function assignLanes(picked, conflicts) {
   const parent = new Map(picked.map((c) => [c.number, c.number]));
   const find = (n) => (parent.get(n) === n ? n : find(parent.get(n)));
@@ -90,10 +95,12 @@ export function assignLanes(picked, conflicts) {
     groups.get(root).push(c);
   }
   const lanes = { a: [], b: [] };
-  for (const g of [...groups.values()].sort((x, y) => y.length - x.length || x[0].number - y[0].number)) {
+  const all = [...groups.values()].sort((x, y) => y.length - x.length || x[0].number - y[0].number);
+  for (const g of all.filter((x) => !x.some(unknownScope))) {
     const lane = lanes.a.length <= lanes.b.length ? "a" : "b";
     lanes[lane].push(...g);
   }
+  for (const g of all.filter((x) => x.some(unknownScope))) lanes.b.push(...g);
   const laneOf = new Map();
   for (const [lane, list] of Object.entries(lanes)) for (const c of list) laneOf.set(c.number, lane);
   return { laneOf, groupSizes: [...groups.values()].map((g) => g.length) };
@@ -117,8 +124,23 @@ export function selectIssues(candidates, { maxIssues = 8, maxSize = "m", exclude
   const warnings = [];
   const biggest = Math.max(0, ...groupSizes);
   if (picked.length > 1 && biggest * 2 > picked.length) warnings.push(`one lane group holds ${biggest} of ${picked.length} issues; consider swapping the lowest-ranked member (design B.3)`);
-  const selected = picked.map((c, i) => ({ number: c.number, rank: i + 1, lane: laneOf.get(c.number), reason: [c.labels.find((l) => l in PRIORITY_ORDER), sizeOf(c.labels) && `size:${sizeOf(c.labels)}`].filter(Boolean).join(", ") || "no priority label" }));
+  const serial = picked.filter(unknownScope).map((c) => c.number);
+  if (serial.length) warnings.push(`unknown scope for ${serial.map((n) => `#${n}`).join(", ")}: each runs in a serial slot at the end of lane B; declare scope.paths or an areaPaths entry`);
+  const reasonOf = (c) => [c.labels.includes(FIX_FORWARD_LABEL) && FIX_FORWARD_LABEL, c.labels.find((l) => l in PRIORITY_ORDER), sizeOf(c.labels) && `size:${sizeOf(c.labels)}`].filter(Boolean).join(", ") || "no priority label";
+  const selected = picked.map((c, i) => ({ number: c.number, rank: i + 1, lane: laneOf.get(c.number), ...(unknownScope(c) ? { serial: true } : {}), reason: reasonOf(c) }));
   return { selected, excluded, conflicts, warnings };
+}
+
+// The checklist the autopilot prints once and then proceeds (design B.5): each pick with rank, lane and reason, then each
+// excluded issue with its one reason.
+export function checklistLines({ selected, excluded, warnings }) {
+  return [
+    `Selected (${selected.length}):`,
+    ...selected.map((s) => `  ${s.rank}. #${s.number} lane ${s.lane}${s.serial ? " (serial, unknown scope)" : ""} - ${s.reason}`),
+    `Excluded (${excluded.length}):`,
+    ...excluded.map((e) => `  #${e.number} - ${e.reason}`),
+    ...warnings.map((w) => `Warning: ${w}`),
+  ];
 }
 
 // Issue numbers held by bundles that are not terminal. Such an issue is excluded even when its label was lost (design B.1).

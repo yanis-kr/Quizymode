@@ -19,8 +19,11 @@ import { sliceAc } from "../validation/ac-slice.mjs";
 import { ROLES, routeModel, classifyIssue, MODEL_ORDER } from "../automation/model-policy.mjs";
 import { readRun, writeRun, runFilePath, STALL_AFTER_BLOCKS } from "./autopilot-run.mjs";
 import { checkUserReply } from "./approval-reply.mjs";
-import { ISSUE_STATUSES, transitionError, releaseSlotHolder, VALIDATION_KINDS, validationOutcome } from "./transitions.mjs";
-import { selectIssues, lockedIssues } from "./select.mjs";
+import { ISSUE_STATUSES, transitionError, releaseSlotHolder, VALIDATION_KINDS, validationOutcome, pastMerge } from "./transitions.mjs";
+import { failureLabelPlan, applyFailureLabels, fixCycleFrom, readComments, nextFixCycleMarker } from "./failure-labels.mjs";
+import { batchGateErrors, gatherGateFacts, gateRecordError } from "./batch-gate.mjs";
+import { assertNoClosingKeywords } from "../release/prbody.mjs";
+import { selectIssues, lockedIssues, checklistLines } from "./select.mjs";
 import { openBlockers, resolveBlocker } from "./blockers.mjs";
 import { effectivePaths, overlappingFiles, pathsOverlap, normGlob } from "./scope.mjs";
 import { MUTEX_NAMES, MUTEX_STALE_MINUTES, acquireMutex, releaseMutex } from "./mutex.mjs";
@@ -80,9 +83,14 @@ function ok(obj) {
   process.exit(0);
 }
 
+// Tests point QM_GH_STUB at a node script that stands in for gh (scripts/tests/fixtures/gh-stub.mjs). Unset in real runs.
+function command(file, args) {
+  return file === "gh" && process.env.QM_GH_STUB ? [process.execPath, [process.env.QM_GH_STUB, ...args]] : [file, args];
+}
 function sh(file, args, allowFail = false) {
   try {
-    return execFileSync(file, args, { encoding: "utf8", stdio: ["ignore", "pipe", "pipe"] }).trim();
+    const [bin, argv2] = command(file, args);
+    return execFileSync(bin, argv2, { encoding: "utf8", stdio: ["ignore", "pipe", "pipe"] }).trim();
   } catch (e) {
     if (allowFail) return null;
     throw e;
@@ -381,10 +389,13 @@ function originNameWithOwner() {
 function laneIgnored() { return new Set(profile().integratorOnly.map((g) => normGlob(g))); }
 // Path scope (scope.mjs, AC 7.19.31): an issue with no scope.paths uses the areaPaths of its area labels; with neither it is unknown.
 const areaPaths = () => profile().areaPaths ?? {};
+// An issue with unknown scope is not a path conflict: its group runs in a serial slot at the end of lane B (design B.4,
+// AC 7.19.45), so it no longer pulls every other issue into one lane. dependsOn and migration links still group it.
 function planLanes(m, st) {
   const todo = [...m.issues].sort((x, y) => x.order - y.order).filter((i) => !["integrated", "released", "verified", "closed", "deferred", "parked", "skipped_already_done"].includes(st?.issues?.[String(i.number)]?.status));
-  const laneOf = new Map();
   const reasons = [];
+  const pathsOf = (i) => effectivePaths(i, areaPaths()).paths;
+  const unknown = (i) => pathsOf(i).length === 0;
   const groups = []; // each group is an array of issues that must share a lane
   for (const it of todo) {
     const linked = [];
@@ -392,7 +403,7 @@ function planLanes(m, st) {
       const why = g.find((o) => {
         if (it.dependsOn.includes(o.number) || o.dependsOn.includes(it.number)) { reasons.push(`#${it.number} and #${o.number}: dependsOn link`); return true; }
         if (it.migration && o.migration) { reasons.push(`#${it.number} and #${o.number}: both migrations`); return true; }
-        if (pathsOverlap(effectivePaths(it, areaPaths()).paths, effectivePaths(o, areaPaths()).paths, laneIgnored())) { reasons.push(`#${it.number} and #${o.number}: scope.paths overlap`); return true; }
+        if (!unknown(it) && !unknown(o) && pathsOverlap(pathsOf(it), pathsOf(o), laneIgnored())) { reasons.push(`#${it.number} and #${o.number}: scope.paths overlap`); return true; }
         return false;
       });
       if (why) linked.push(g);
@@ -401,10 +412,17 @@ function planLanes(m, st) {
     for (const g of linked) groups.splice(groups.indexOf(g), 1);
     groups.push(merged.sort((x, y) => x.order - y.order));
   }
-  const laneA = [], laneB = [];
-  for (const g of groups.sort((x, y) => y.length - x.length)) (laneA.length <= laneB.length ? laneA : laneB).push(...g);
   const byOrder = (x, y) => x.order - y.order;
-  return { laneA: laneA.sort(byOrder).map((i) => i.number), laneB: laneB.sort(byOrder).map((i) => i.number), reasons };
+  const tail = groups.filter((g) => g.some(unknown)).flat().sort(byOrder);
+  for (const i of tail.filter(unknown)) reasons.push(`#${i.number}: unknown scope, serial slot at the end of lane B`);
+  const laneA = [], laneB = [];
+  for (const g of groups.filter((x) => !x.some(unknown)).sort((x, y) => y.length - x.length)) (laneA.length <= laneB.length ? laneA : laneB).push(...g);
+  return { laneA: laneA.sort(byOrder).map((i) => i.number), laneB: [...laneB.sort(byOrder), ...tail].map((i) => i.number), serialTail: tail.map((i) => i.number), reasons };
+}
+/** Issues in lane-queue order for `next`: a serial-tail issue comes after every other issue of its lane. */
+function laneQueue(issues, tail) {
+  const last = Math.max(0, ...issues.map((i) => i.order)) + 1;
+  return issues.map((i) => (tail.includes(i.number) ? { ...i, order: last + tail.indexOf(i.number) } : i));
 }
 /** A set halt file stops every new autopilot start until the owner removes it (design E). */
 function refuseIfHalted() {
@@ -413,6 +431,28 @@ function refuseIfHalted() {
   if (halt) die(2, `Autopilot is halted: ${haltFile(qm)}. Review the defects, then remove that file to start again.`, { halt });
 }
 function safeJson(p) { try { return JSON.parse(fs.readFileSync(p, "utf8")); } catch { return null; } }
+/** The commit the local release branch points at, or null. */
+function releaseHead(m) { return sh("git", ["rev-parse", "--verify", "--quiet", `refs/heads/${m.branches.release}`], true) || null; }
+/** The release PR's head commit and body from gh, or null when gh cannot read it. */
+function livePr(m, pr) {
+  const raw = sh("gh", ["pr", "view", String(pr), "--repo", m.repo.nameWithOwner, "--json", "headRefOid,body"], true);
+  return raw ? JSON.parse(raw) : null;
+}
+/** Runs gh and throws an Error carrying gh's stderr, so a caller can tell "already exists" from a real failure. */
+function ghThrow(args) {
+  try {
+    const [bin, argv2] = command("gh", args);
+    return execFileSync(bin, argv2, { encoding: "utf8", stdio: ["ignore", "pipe", "pipe"] }).trim();
+  } catch (e) {
+    throw new Error(String(e.stderr || e.message).trim());
+  }
+}
+/** Runs gh for the failure-label helpers; a failed call exits 2 as environmental. */
+function ghOrDie(args) {
+  const out = sh("gh", args, true);
+  if (out === null) die(2, `gh ${args.slice(0, 2).join(" ")} failed (environmental); retry once, then record an environmental blocker.`);
+  return out;
+}
 
 function verifyAll(id, p) {
   const m = loadValidManifest(p, id);
@@ -909,6 +949,7 @@ switch (cmd) {
       if (other === id || !fs.existsSync(sp)) continue;
       const os = safeJson(sp);
       if (!os) die(1, `Corrupt state file for bundle '${other}'; inspect ${sp}.`);
+      if (pastMerge(os)) continue; // the validator finishes it; the release slot still holds the next release (AC 7.19.41)
       if (!TERMINAL.has(os.phase) && os.lock && !lockIsStale(os.lock, m.limits.lockStaleMinutes)) die(4, `Another bundle '${other}' is active (phase ${os.phase}). One bundle at a time.`);
     }
     const st = {
@@ -956,7 +997,7 @@ switch (cmd) {
     const plannedLane = new Map([...planned.laneA.map((n) => [n, "a"]), ...planned.laneB.map((n) => [n, "b"])]);
     const laneOf = (n) => st?.issues?.[String(n)]?.lane ?? plannedLane.get(n) ?? null;
     const status = (n) => st?.issues?.[String(n)]?.status ?? "pending";
-    ok({ bundleId: id, lane, ...nextForLane({ issues: m.issues, status, laneOf, lane }) });
+    ok({ bundleId: id, lane, ...nextForLane({ issues: laneQueue(m.issues, planned.serialTail), status, laneOf, lane, serialTail: planned.serialTail }) });
   }
   case "lanes": {
     const p = bundlePaths(id);
@@ -1000,9 +1041,13 @@ switch (cmd) {
     if (needs[phase] && !st.release[needs[phase]]) die(1, `phase ${phase} requires release.${needs[phase]} (pass --${Object.keys(map).find((k) => map[k] === needs[phase])}).`);
     if (phase === "merged" && !st.release.prNumber) die(1, "phase merged requires a recorded PR number.");
     if (phase === "release_pr_open") {
+      refuseIfHalted(); // a halt stops new releases too (AC 7.19.35)
       // One release at a time (design A, F3): a second bundle may not open its release PR while another one holds the slot.
       const holder = releaseSlotHolder(bundlesDir(), id);
       if (holder) die(2, `Release slot is held by bundle '${holder.bundleId}' (phase ${holder.phase}). Wait until it is verified, done or blocked_terminal.`, { holder });
+      // The batch gate must have passed on this exact release head (AC 7.19.44).
+      const gateError = gateRecordError(st.batchGate, releaseHead(m));
+      if (gateError) die(2, `Batch gate: ${gateError}.`, { batchGate: st.batchGate ?? null });
     }
     if (TERMINAL.has(phase)) { st.phaseBeforeTerminal = st.phase; st.lock = null; }
     st.phase = phase;
@@ -1011,6 +1056,7 @@ switch (cmd) {
   }
   case "merge-gate": {
     // Run immediately before `gh pr merge`. Exit 0 means this exact PR may be merged now.
+    refuseIfHalted(); // a halt stops merges too (AC 7.19.35)
     const p = bundlePaths(id);
     const r = verifyAll(id, p);
     const m = r.manifest;
@@ -1029,6 +1075,12 @@ switch (cmd) {
     const holder = releaseSlotHolder(bundlesDir(), id);
     if (holder) errs.push(`release slot is held by bundle '${holder.bundleId}' (phase ${holder.phase})`);
     if (m.policies.partialRelease === "all-or-nothing" && vals.some((i) => i.status !== "integrated" && i.status !== "skipped_already_done")) errs.push("partialRelease is all-or-nothing and not every issue is integrated");
+    // The batch gate covers the PR head being merged, and the live PR body still closes nothing (AC 7.19.44).
+    const live = pr ? livePr(m, pr) : null;
+    if (pr && !live) errs.push(`gh could not read PR #${pr} (environmental)`);
+    const gateError = gateRecordError(st.batchGate, live?.headRefOid ?? null);
+    if (gateError) errs.push(`batch gate: ${gateError}`);
+    if (live) { try { assertNoClosingKeywords(String(live.body ?? "")); } catch (e) { errs.push(`pr body: ${e.message}`); } }
     if (errs.length) die(2, "Merge gate closed", { errors: errs });
     saveState(p, st, { event: "merge-gate-open", pr });
     ok({ bundleId: id, pr, mergeAllowed: true });
@@ -1133,7 +1185,7 @@ switch (cmd) {
     requireHolder(st, m);
     checkApprovalStillValid(p, st);
     const hours = (Date.now() - Date.parse(st.clockStart ?? st.createdAt)) / 3600000;
-    const postMerge = ["merged", "deployed", "verified"].includes(st.phase); // must always finish verification/rollback
+    const postMerge = pastMerge(st) || st.phase === "verified"; // must always finish verification/rollback (AC 7.19.41)
     if (hours > m.limits.maxWallClockHours && !postMerge) die(3, `Wall clock limit ${m.limits.maxWallClockHours}h exceeded (${hours.toFixed(1)}h). Record a 'limit' blocker and write the terminal status.`);
     saveState(p, st, null);
     ok({ bundleId: id, phase: st.phase, hoursUsed: Number(hours.toFixed(2)), ciRuns: st.ciRuns, postMerge });
@@ -1203,21 +1255,31 @@ switch (cmd) {
     if (it.status !== "released") die(2, `Issue #${num} is '${it.status}'; only released issues are validated.`);
     const result = opts.result;
     if (result !== "pass" && result !== "fail") die(1, "--result must be pass or fail");
-    const fixCycle = opts["fix-cycle"] === undefined ? 0 : Number(opts["fix-cycle"]);
-    if (!Number.isInteger(fixCycle) || fixCycle < 0) die(1, "--fix-cycle must be a whole number, 0 or more");
     if (typeof opts.evidence !== "string" || !opts.evidence.trim()) die(1, "--evidence <url> is required (the posted evidence comment)");
+    // The fix cycle is read from the issue's hidden marker comments unless --fix-cycle is given (AC 7.19.43).
+    let fixCycle;
+    if (opts["fix-cycle"] !== undefined) fixCycle = Number(opts["fix-cycle"]);
+    else if (result === "pass") fixCycle = 0;
+    else {
+      const commentsJson = typeof opts["comments-json"] === "string" ? fs.readFileSync(path.resolve(String(opts["comments-json"])), "utf8") : undefined;
+      fixCycle = fixCycleFrom(readComments({ issue: num, repo: m.repo.nameWithOwner, commentsJson, gh: ghOrDie }));
+    }
+    if (!Number.isInteger(fixCycle) || fixCycle < 0) die(1, "--fix-cycle must be a whole number, 0 or more");
+    // The result after the one environmental re-check: given with --recheck, or implied when the last outcome was recheck-once.
+    const recheck = opts.recheck === true || it.validation?.outcome === "recheck-once";
     let kind = null;
     let outcome = "closable";
     if (result === "fail") {
       kind = String(opts.kind ?? "");
       if (!VALIDATION_KINDS.includes(kind)) die(1, `--kind must be one of ${VALIDATION_KINDS.join(", ")}`);
-      outcome = validationOutcome(kind, fixCycle);
+      outcome = validationOutcome(kind, fixCycle, recheck);
     }
-    const next = result === "pass" ? "verified" : "validation_failed";
+    // recheck-once keeps the issue released, so the re-check result is recorded from the same status.
+    const next = result === "pass" ? "verified" : outcome === "recheck-once" ? "released" : "validation_failed";
     const badMove = transitionError(it.status, next);
     if (badMove) die(2, badMove, { issue: Number(num) });
     it.status = next;
-    it.validation = { result, kind, fixCycle, outcome, evidence: opts.evidence, at: now() };
+    it.validation = { result, kind, fixCycle, outcome, recheck, evidence: opts.evidence, at: now() };
     saveState(p, st, { event: "validation", issue: Number(num), result, kind, outcome });
     let halted = false;
     if (result === "fail" && kind === "defect") {
@@ -1227,7 +1289,72 @@ switch (cmd) {
         halted = true;
       }
     }
-    ok({ bundleId: id, issue: Number(num), status: next, outcome, fixCycle, halted });
+    ok({ bundleId: id, issue: Number(num), status: next, outcome, fixCycle, halted, next: `label-failure ${id} --issue ${num} --holder <token>` });
+  }
+  case "label-failure": {
+    // label-failure <id> --issue n --holder <token> [--dry-run]: applies the label plan for the outcome recorded by
+    // `validation` (AC 7.19.42). The kind and outcome come from state.json, never from the caller. Idempotent.
+    const p = bundlePaths(id);
+    const m = loadValidManifest(p, id);
+    const st = loadState(p);
+    requireHolder(st, m);
+    const num = String(opts.issue ?? "");
+    if (!st.issues[num]) die(2, `Issue #${num} is not in bundle '${id}'.`);
+    const v = st.issues[num].validation;
+    if (!v?.outcome) die(2, `Issue #${num} has no recorded validation; run bundle.mjs validation first.`);
+    const plan = failureLabelPlan(v.outcome, id);
+    const marker = nextFixCycleMarker(v.outcome, v.kind, v.fixCycle ?? 0);
+    if (opts["dry-run"]) ok({ bundleId: id, issue: Number(num), outcome: v.outcome, kind: v.kind, plan, marker, applied: false });
+    let r;
+    try { r = applyFailureLabels({ issue: num, plan, repo: m.repo.nameWithOwner, gh: ghThrow }); }
+    catch (e) { die(2, `gh failed while labelling #${num} (environmental): ${e.message.slice(0, 300)}. Run label-failure again; it is idempotent.`); }
+    st.issues[num].labels = { outcome: v.outcome, added: r.added, removed: r.removed, at: now() };
+    saveState(p, st, { event: "label-failure", issue: Number(num), outcome: v.outcome });
+    ok({ bundleId: id, issue: Number(num), outcome: v.outcome, kind: v.kind, plan, marker, applied: true, ...r });
+  }
+  case "batch-gate": {
+    // batch-gate <id> --holder <token> [--worktree <path>]: checks the release branch head before the release PR and
+    // records st.batchGate { head, ok, at } (AC 7.19.44). Exit 2 lists every problem. Full suites are CI's job.
+    const p = bundlePaths(id);
+    const m = loadValidManifest(p, id);
+    const st = loadState(p);
+    requireHolder(st, m);
+    const head = releaseHead(m);
+    if (!head) die(2, `Release branch ${m.branches.release} does not exist locally.`);
+    // ac-gate runs in the release worktree; a missing one is a gate error, never a fallback to the current folder.
+    const worktree = typeof opts.worktree === "string" ? path.resolve(opts.worktree) : worktreePathNamed(profile().worktrees.release);
+    const deps = {
+      worktree: () => {
+        if (!worktree || !fs.existsSync(worktree)) return null;
+        const wtHead = sh("git", ["-C", worktree, "rev-parse", "HEAD"], true);
+        const status = sh("git", ["-C", worktree, "status", "--porcelain"], true);
+        return { path: worktree, head: wtHead, dirty: status === null || status.length > 0 };
+      },
+      readFile: (ref, file) => sh("git", ["show", `${ref}:${file}`], true),
+      runAcGate: (issues) => {
+        const r = spawnSync(process.execPath, [path.join(worktree, ...profile().checks.acGate.script.split("/")), "--issues", issues.join(",")], { cwd: worktree, encoding: "utf8" });
+        return { ok: r.status === 0, detail: r.status === 0 ? "" : (r.stdout || r.stderr || "").trim().split(/\r?\n/).slice(-3).join(" ").slice(0, 300) };
+      },
+      isAncestor: (branch, release) => spawnSync("git", ["merge-base", "--is-ancestor", branch, release], { encoding: "utf8" }).status === 0,
+      // A failed gh read is a gate error; only an empty PR list (no PR yet) skips the body check.
+      pr: () => {
+        if (st.release.prNumber) {
+          const live = livePr(m, st.release.prNumber);
+          return live ? { body: String(live.body ?? "") } : { error: `gh could not read PR #${st.release.prNumber} (environmental)` };
+        }
+        const raw = sh("gh", ["pr", "list", "--repo", m.repo.nameWithOwner, "--head", m.branches.release, "--state", "open", "--json", "body"], true);
+        if (raw === null) return { error: "gh pr list failed (environmental), so the open PR body could not be checked" };
+        let list;
+        try { list = JSON.parse(raw || "[]"); } catch { return { error: "gh pr list printed something that is not JSON" }; }
+        return { body: list.length ? String(list[0].body ?? "") : null };
+      },
+    };
+    const facts = gatherGateFacts({ manifest: m, state: st, version: profile().version, head, deps });
+    const errors = batchGateErrors(facts);
+    st.batchGate = { head, ok: errors.length === 0, at: now(), issues: facts.integrated, errors };
+    saveState(p, st, { event: "batch-gate", head, ok: st.batchGate.ok });
+    if (errors.length) die(2, "Batch gate closed", { head, errors });
+    ok({ bundleId: id, head, issues: facts.integrated, version: facts.releaseVersion });
   }
   case "select": {
     // Picks the next batch from the open status:ready issues (design B). Read-only: writes nothing and approves nothing.
@@ -1243,21 +1370,33 @@ switch (cmd) {
       raw = JSON.parse(out);
     }
     if (!Array.isArray(raw)) die(1, "the issues list must be a JSON array");
-    const candidates = raw.map((c) => ({
-      number: Number(c.number),
-      title: c.title,
-      labels: c.labels,
-      hasAcs: typeof c.hasAcs === "boolean" ? c.hasAcs : /acceptance criteria/i.test(c.body ?? ""),
-      paths: Array.isArray(c.paths) ? c.paths : [],
-      dependsOn: Array.isArray(c.dependsOn) ? c.dependsOn.map(Number) : [],
-      migration: Boolean(c.migration),
-    }));
-    const maxIssues = opts.max === undefined ? 8 : Number(opts.max);
+    // Paths fall back to the area map, as in lane planning; with neither the scope is unknown (AC 7.19.31, 7.19.45).
+    const candidates = raw.map((c) => {
+      const areas = (c.labels ?? []).map((l) => (typeof l === "string" ? l : l.name)).filter((l) => /^area:/.test(l));
+      return {
+        number: Number(c.number),
+        title: c.title,
+        labels: c.labels,
+        hasAcs: typeof c.hasAcs === "boolean" ? c.hasAcs : /acceptance criteria/i.test(c.body ?? ""),
+        paths: effectivePaths({ scope: { paths: Array.isArray(c.paths) ? c.paths : [] }, areas }, areaPaths()).paths,
+        dependsOn: Array.isArray(c.dependsOn) ? c.dependsOn.map(Number) : [],
+        migration: Boolean(c.migration),
+      };
+    });
+    // Limits come from the envelope next to the bundles folder when it exists; flags still override (AC 7.19.45).
+    const envFile = path.join(path.dirname(bundlesDir()), ENVELOPE_FILE);
+    const env = fs.existsSync(envFile) ? readJson(envFile) : null;
+    if (env) { const envErrors = validateEnvelope(env); if (envErrors.length) die(2, "Envelope is invalid", { errors: envErrors }); }
+    const maxIssues = opts.max === undefined ? (env?.maxIssues ?? 8) : Number(opts.max);
     if (!Number.isInteger(maxIssues) || maxIssues < 1) die(1, "--max must be a whole number, 1 or more");
-    const maxSize = String(opts["max-size"] ?? "m");
-    const excludeAreas = String(opts["exclude-areas"] ?? "auth,infra").split(",").map((a) => a.trim()).filter(Boolean).map((a) => `area:${a}`);
+    const maxSize = String(opts["max-size"] ?? env?.maxSize ?? "m");
+    const excludeAreas = opts["exclude-areas"] === undefined && env
+      ? env.excludeAreas
+      : String(opts["exclude-areas"] ?? "auth,infra").split(",").map((a) => a.trim()).filter(Boolean).map((a) => (a.startsWith("area:") ? a : `area:${a}`));
     const locked = lockedIssues(bundlesDir());
-    ok({ ...selectIssues(candidates, { maxIssues, maxSize, excludeAreas, locked }), lockedByRunningBundles: [...locked].sort((a, b) => a - b) });
+    const picked = selectIssues(candidates, { maxIssues, maxSize, excludeAreas, locked });
+    const limits = { maxIssues, maxSize, excludeAreas, source: env ? envFile : "defaults" };
+    ok({ ...picked, limits, checklist: checklistLines(picked), lockedByRunningBundles: [...locked].sort((a, b) => a - b) });
   }
   case "permissions": {
     // Prints the allow rules a run needs, taken from the ship skill's allowed-tools list (#760 AC 5). Prints only; never writes settings.
@@ -1395,7 +1534,8 @@ Envelope: envelope init | show | approve --hash <prefix> --user-reply "<text con
 Lead:    precedent add --question q --answer a --scope issue|area|global [--issue n] [--area area:x]; precedent find [--issue n] [--area area:x]
 Execute: verify [--gh] [--no-git], state-init [--take-over] (prints holder), then with --holder <h>:
          checkpoint, issue <n> <status> [--note --branch --commit --lane a|b], lanes (read-only: split issues into two path-disjoint lanes), next --lane a|b (read-only: the lane's next issue), attempt <n>, ci-run,
-         phase <phase> [--pr --previous-main-sha --merge-sha --deploy-run --note], merge-gate --pr <n>,
+         phase <phase> [--pr --previous-main-sha --merge-sha --deploy-run --note], batch-gate [--worktree <path>], merge-gate --pr <n>,
+         validation --issue n --result pass|fail [--kind k] [--recheck] [--fix-cycle n | --comments-json f] --evidence url, label-failure --issue n [--dry-run],
          blocker --kind k --note t [--issue n], blocker --resolve <index> --note t, mutex <dotnet|release-merge> --acquire|--release --holder t, worktrees --ensure <id>, decision --file f [--issue n], release-lock
 Packets: packet <bundleId> <issue> | packet --from-issue <n> (writes .qm/packets/<n>.md); handback-check <file>; handback-save --issue <n> --role <role> --file <json> (.qm/handbacks/<n>-<role>.json, recorded as a claim)
 Anyone:  status (text), list, cancel [--note]

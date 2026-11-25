@@ -70,3 +70,18 @@ test("AC 7.19.34: a dependent waits for a pending dependency, and an empty lane 
   assert.equal(r.issue, null);
   assert.equal(r.reason, "no pending issue in this lane");
 });
+
+// AC 7.19.45: a serial-slot issue (unknown scope) waits until the other lane has no pending or in-progress issue.
+test("AC 7.19.45: a serial-slot issue waits for the other lane to finish", () => {
+  const rows = [
+    { number: 1, status: "in_progress", lane: "a" },
+    { number: 2, status: "integrated", lane: "b" },
+    { number: 3, status: "pending", lane: "b" },
+  ];
+  const busy = nextForLane({ ...fixture(rows), lane: "b", serialTail: [3] });
+  assert.equal(busy.issue, null);
+  assert.match(busy.reason, /serial slot: #3 waits until #1 in the other lane finish/);
+  rows[0].status = "implemented";
+  assert.equal(nextForLane({ ...fixture(rows), lane: "b", serialTail: [3] }).issue, 3);
+  assert.equal(nextForLane({ ...fixture(rows.map((r) => ({ ...r, status: r.number === 1 ? "pending" : r.status }))), lane: "b" }).issue, 3, "without a serial tail nothing waits");
+});
