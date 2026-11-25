@@ -102,6 +102,10 @@ const StudyGuideUploadPage = () => {
   const [lowConfidence, setLowConfidence] = React.useState(false);
   const ocrBlockedRef = React.useRef(false);
   const reviewRef = React.useRef<HTMLTextAreaElement>(null);
+  // Focus on the review textarea is requested when reading finishes, but the textarea is disabled until the OCR job
+  // releases it, and focus() on a disabled element does nothing. The request is kept until the textarea is enabled.
+  const reviewFocusPendingRef = React.useRef(false);
+  const [reviewFocusTick, setReviewFocusTick] = React.useState(0);
   const [title, setTitle] = React.useState("");
   const [categoryName, setCategoryName] = React.useState("");
   const [rank1Name, setRank1Name] = React.useState("");
@@ -192,6 +196,13 @@ const StudyGuideUploadPage = () => {
   React.useEffect(() => {
     if (formError) errorRef.current?.focus();
   }, [formError]);
+
+  React.useEffect(() => {
+    if (!reviewFocusPendingRef.current) return;
+    if (isSubmitting || (mode === "photos" && ocrBlocked)) return;
+    reviewFocusPendingRef.current = false;
+    reviewRef.current?.focus();
+  }, [reviewFocusTick, ocrBlocked, isSubmitting, mode]);
 
   if (!isAuthenticated) {
     return <Navigate to="/login" replace />;
@@ -435,7 +446,10 @@ const StudyGuideUploadPage = () => {
                         setOcrBlocked(blocked);
                       }}
                       onConfidenceChange={setLowConfidence}
-                      onReviewReady={() => window.requestAnimationFrame(() => reviewRef.current?.focus())}
+                      onReviewReady={() => {
+                        reviewFocusPendingRef.current = true;
+                        setReviewFocusTick((tick) => tick + 1);
+                      }}
                     />
                   </React.Suspense>
                 )}
