@@ -1,27 +1,38 @@
 import { createWorker, type Worker } from "tesseract.js";
 import { PHOTO_OCR_LIMITS } from "./photoOcrLimits";
 
-/** Assets are served from our own origin under /ocr/ (copied from tesseract.js and @tesseract.js-data/eng). */
 const OCR_ASSETS = {
   workerPath: "/ocr/worker.min.js",
   corePath: "/ocr/core/",
   langPath: "/ocr/lang/4.0.0",
-} as const;
+  cacheMethod: "none" as const,
+};
+
+export interface RecognitionResult {
+  text: string;
+  confidence: number;
+}
 
 export interface PhotoRecognizer {
-  /** Recognizes one photo in the browser. Rejects when the image cannot be decoded or the page takes too long. */
-  recognize(file: File): Promise<string>;
-  /** Recognizes a page already rendered to a canvas (scanned PDF pages). */
-  recognizeCanvas(canvas: HTMLCanvasElement): Promise<string>;
-  /** Stops any running recognition and frees the worker. */
+  recognize(file: File): Promise<RecognitionResult>;
+  recognizeCanvas(canvas: HTMLCanvasElement): Promise<RecognitionResult>;
+  recognizePage(
+    render: (signal: AbortSignal) => Promise<HTMLCanvasElement>,
+  ): Promise<RecognitionResult>;
   cancel(): void;
 }
 
-/** Scales a photo so its longest side is at most maxLongSide. The bitmap is closed before returning. */
-export async function decodePhotoToCanvas(file: File): Promise<HTMLCanvasElement> {
-  const bitmap = await createImageBitmap(file);
+export async function decodePhotoToCanvas(
+  file: File,
+): Promise<HTMLCanvasElement> {
+  const bitmap = await createImageBitmap(file, {
+    imageOrientation: "from-image",
+  });
   try {
-    const scale = Math.min(1, PHOTO_OCR_LIMITS.maxLongSide / Math.max(bitmap.width, bitmap.height));
+    const scale = Math.min(
+      1,
+      PHOTO_OCR_LIMITS.maxLongSide / Math.max(bitmap.width, bitmap.height),
+    );
     const canvas = document.createElement("canvas");
     canvas.width = Math.max(1, Math.round(bitmap.width * scale));
     canvas.height = Math.max(1, Math.round(bitmap.height * scale));
@@ -37,17 +48,13 @@ export async function decodePhotoToCanvas(file: File): Promise<HTMLCanvasElement
 export function createPhotoRecognizer(): PhotoRecognizer {
   let worker: Worker | null = null;
   let workerPromise: Promise<Worker> | null = null;
-  let idleTimer: number | null = null;
+  let idleTimer: number | undefined;
   let generation = 0;
-
-  const clearIdleTimer = () => {
-    if (idleTimer !== null) window.clearTimeout(idleTimer);
-    idleTimer = null;
-  };
+  let abortCurrent: (() => void) | null = null;
 
   const terminate = () => {
     generation += 1;
-    clearIdleTimer();
+    window.clearTimeout(idleTimer);
     const current = worker;
     worker = null;
     workerPromise = null;
@@ -58,8 +65,10 @@ export function createPhotoRecognizer(): PhotoRecognizer {
     if (worker) return Promise.resolve(worker);
     if (!workerPromise) {
       const startedAt = generation;
-      workerPromise = createWorker("eng", 1, { ...OCR_ASSETS, logger: () => undefined }).then((created) => {
-        // A cancel or timeout while the worker was starting terminates it straight away.
+      const pending = createWorker("eng", 1, {
+        ...OCR_ASSETS,
+        logger: () => undefined,
+      }).then((created) => {
         if (startedAt !== generation) {
           void created.terminate();
           throw new Error("Recognition was cancelled");
@@ -67,43 +76,91 @@ export function createPhotoRecognizer(): PhotoRecognizer {
         worker = created;
         return created;
       });
-      workerPromise.catch(() => {
-        workerPromise = null;
+      workerPromise = pending;
+      void pending.catch(() => {
+        if (workerPromise === pending) workerPromise = null;
       });
     }
     return workerPromise;
   };
 
-  const scheduleIdleTerminate = () => {
-    clearIdleTimer();
-    idleTimer = window.setTimeout(terminate, PHOTO_OCR_LIMITS.idleTerminateMs);
+  const recognizePage = async (
+    render: (signal: AbortSignal) => Promise<HTMLCanvasElement>,
+  ): Promise<RecognitionResult> => {
+    if (abortCurrent) throw new Error("A page is already being read");
+    window.clearTimeout(idleTimer);
+    const controller = new AbortController();
+    let canvas: HTMLCanvasElement | null = null;
+    let stopped = false;
+    let rejectStop: (error: Error) => void = () => undefined;
+    const stop = new Promise<never>((_resolve, reject) => {
+      rejectStop = reject;
+    });
+    const abort = (reason: string) => {
+      stopped = true;
+      controller.abort();
+      terminate();
+      rejectStop(new Error(reason));
+    };
+    abortCurrent = () => abort("Recognition was cancelled");
+    const timer = window.setTimeout(
+      () => abort("Recognition took too long"),
+      PHOTO_OCR_LIMITS.pageTimeoutMs,
+    );
+    const work = (async () => {
+      const rendered = await render(controller.signal);
+      if (stopped) {
+        rendered.width = 0;
+        rendered.height = 0;
+        throw new Error("Recognition was cancelled");
+      }
+      canvas = rendered;
+      const active = await getWorker();
+      if (stopped) throw new Error("Recognition was cancelled");
+      const result = await active.recognize(rendered);
+      return {
+        text: result.data.text.trim(),
+        confidence: result.data.confidence,
+      };
+    })();
+    try {
+      return await Promise.race([work, stop]);
+    } finally {
+      window.clearTimeout(timer);
+      abortCurrent = null;
+      if (canvas) {
+        const completedCanvas = canvas as HTMLCanvasElement;
+        completedCanvas.width = 0;
+        completedCanvas.height = 0;
+      }
+      if (!stopped)
+        idleTimer = window.setTimeout(
+          terminate,
+          PHOTO_OCR_LIMITS.idleTerminateMs,
+        );
+    }
   };
 
   return {
-    async recognize(file: File): Promise<string> {
-      return this.recognizeCanvas(await decodePhotoToCanvas(file));
-    },
-    async recognizeCanvas(canvas: HTMLCanvasElement): Promise<string> {
-      clearIdleTimer();
-      const runGeneration = generation;
-      let timeoutId: number | undefined;
-      const timeout = new Promise<never>((_resolve, reject) => {
-        timeoutId = window.setTimeout(() => {
-          if (runGeneration === generation) terminate();
-          reject(new Error("Recognition took too long"));
-        }, PHOTO_OCR_LIMITS.pageTimeoutMs);
-      });
-      try {
-        const active = await Promise.race([getWorker(), timeout]);
-        const result = await Promise.race([active.recognize(canvas), timeout]);
-        return result.data.text.trim();
-      } finally {
-        window.clearTimeout(timeoutId);
-        scheduleIdleTerminate();
-      }
-    },
+    recognize: (file) =>
+      recognizePage(async () => {
+        try {
+          return await decodePhotoToCanvas(file);
+        } catch (error) {
+          const failure = new Error(
+            error instanceof Error
+              ? error.message
+              : "Photo could not be decoded",
+          );
+          failure.name = "PhotoDecodeError";
+          throw failure;
+        }
+      }),
+    recognizeCanvas: (canvas) => recognizePage(async () => canvas),
+    recognizePage,
     cancel() {
-      terminate();
+      if (abortCurrent) abortCurrent();
+      else terminate();
     },
   };
 }
