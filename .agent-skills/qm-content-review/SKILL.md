@@ -12,7 +12,7 @@ This skill uses the Codex CLI models in `model-config.json` through the signed-i
 
 ## Review levels
 
-Read `references/rubric-v1.md` and `model-config.json`. Record the exact model ID, rubric version, call ID, and available input/output token counts for each run. Keep usage fields explicitly null when the CLI does not return them.
+Read `references/rubric-v2.md` and `model-config.json`. Record the exact model ID, rubric version, call ID, and available input/output token counts for each run. Keep usage fields explicitly null when the CLI does not return them.
 
 - **L1 blind answer:** batches of at most 25. Use only the generated question and shuffled choices. Do not expose the stored key, explanation, labels, expected answer, source, or prior findings. Record one selected option, ambiguity flag, and three-level difficulty.
 - **L2 source-grounded:** run for every exam item and for non-exam items flagged by lint or L1. Supply the stored key, explanation, and at most 600 words from a cached eligible source. For exams, the source must be T1 vendor or standards-body documentation. A `source-verified` verdict and every change finding require a quote from the supplied passage. If the cited source is unavailable or ineligible, select a suitable replacement and fetch it. If no eligible passage is available, record `unverified` with the evidence gap; do not infer a verdict.
@@ -26,7 +26,7 @@ Calibration labels and expected answers are stored separately from reviewer pack
 2. Fetch the eligible sources into the git-ignored cache with `cli.py fetch --item-ids <file> --eligible-only` (polite, cached, robots.txt honoured).
 3. Run the first 25-item smoke batch with `calibration_cli.py run-fixture --level L1 --budget 25 --output <results>`; inspect blind packet integrity, eligible-source coverage, exact model IDs, and measured usage before continuing. `--budget` is the total number of items the run may start, in calls of at most 25. Completed rows at the same content hash, level and rubric version are skipped, so an unchanged rerun makes zero calls. Continue only within available subscription quota.
 4. Run L2 for every fixture item with an eligible cached source, then regenerate the report with no model calls: `calibration_cli.py calibration-report`. It writes `calibration-report.json` with L1, L2 and combined results, the seeded-error catch rate, source gaps, items not yet run, and usage by level. A historical wrong key counts as caught only with a quote verified against cached source text. A known-good item is a false flag only when the workflow concludes that an answer or content fix is needed. A seeded label accepts only a row reviewed at the seeded content hash.
-5. `calibration_cli.py pilot-gate` exits 1 unless the report is complete, was produced at the current rubric version, has combined recall of at least 90% and a known-good false-flag rate below 20%. If it exits 1, revise and version the rubric, rerun calibration, and do not start the pilot.
+5. `calibration_cli.py pilot-gate` exits 1 unless the report is complete, was produced at the current rubric version, has combined recall of at least 85% (owner decision 2026-11-25, was 90%) and a known-good false-flag rate below 20%. If it exits 1, revise and version the rubric, rerun calibration, and do not start the pilot.
 
 ## Exam pilot
 

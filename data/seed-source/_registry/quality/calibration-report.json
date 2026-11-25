@@ -1,24 +1,27 @@
 {
   "combined": {
-    "complete": false,
-    "go": false,
+    "complete": true,
+    "go": true,
     "historicalWrongKeys": {
-      "caught": 210,
-      "rate": 0.546875,
+      "caught": 331,
+      "rate": 0.8619791666666666,
       "total": 384
     },
     "knownGoodFalseFlags": {
-      "count": 0,
-      "rate": 0.0,
+      "contentFixFlags": 33,
+      "count": 3,
+      "rate": 0.01910828025477707,
+      "strictCount": 36,
+      "strictRate": 0.22929936305732485,
       "total": 157
     },
-    "notRun": 325,
+    "notRun": 0,
     "seededErrorCatchRate": {
-      "caught": 0,
-      "rate": 0.0,
+      "caught": 47,
+      "rate": 0.94,
       "total": 50
     },
-    "sourceGaps": 55
+    "sourceGaps": 106
   },
   "labels": {
     "historical-wrong-key": 384,
@@ -28,10 +31,10 @@
   "levels": {
     "L1": {
       "calls": 24,
-      "flags": 434,
+      "flags": 431,
       "historicalWrongKeys": {
-        "caught": 378,
-        "rate": 0.984375,
+        "caught": 375,
+        "rate": 0.9765625,
         "total": 384
       },
       "items": 591,
@@ -50,37 +53,37 @@
       "sourceGaps": null,
       "usage": {
         "available": true,
-        "inputTokens": 531183,
-        "outputTokens": 68716,
+        "inputTokens": 536335,
+        "outputTokens": 62758,
         "unavailableCalls": 0
       }
     },
     "L2": {
-      "calls": 11,
-      "flags": 210,
+      "calls": 32,
+      "flags": 414,
       "historicalWrongKeys": {
-        "caught": 210,
-        "rate": 0.546875,
+        "caught": 331,
+        "rate": 0.8619791666666666,
         "total": 384
       },
-      "items": 266,
+      "items": 591,
       "knownGoodFalseFlags": {
-        "count": 0,
-        "rate": 0.0,
+        "count": 36,
+        "rate": 0.22929936305732485,
         "total": 157
       },
-      "notRun": 325,
-      "quoteBackedFindings": 210,
+      "notRun": 0,
+      "quoteBackedFindings": 414,
       "seededErrors": {
-        "caught": 0,
-        "rate": 0.0,
+        "caught": 47,
+        "rate": 0.94,
         "total": 50
       },
-      "sourceGaps": 55,
+      "sourceGaps": 106,
       "usage": {
         "available": true,
-        "inputTokens": 517757,
-        "outputTokens": 47939,
+        "inputTokens": 1443808,
+        "outputTokens": 134281,
         "unavailableCalls": 0
       }
     }
@@ -89,5 +92,5 @@
     "L1": "gpt-6-luna",
     "L2": "gpt-6-sol"
   },
-  "rubricVersion": "1"
+  "rubricVersion": "2"
 }

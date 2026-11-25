@@ -10,6 +10,9 @@ from typing import Any, Iterable
 POSITIVE_VERDICTS = {"key-mismatch", "wrong-key", "needs-fix", "content-error", "propose-fix", "content-fix", "ambiguous", "blind-answer-mismatch", "multiple-defensible-answers"}
 
 
+# Owner decision 2026-11-25 on #727: the go/no-go recall bar is 85% (was 90% in the issue). The false-flag bar stays under 20%.
+RECALL_BAR = 0.85
+
 def read_jsonl(path: Path) -> list[dict[str, Any]]:
     return [json.loads(line) for line in path.read_text(encoding="utf-8").splitlines() if line.strip()]
 
@@ -17,6 +20,19 @@ def read_jsonl(path: Path) -> list[dict[str, Any]]:
 def write_json(path: Path, value: dict[str, Any]) -> None:
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text(json.dumps(value, indent=2, sort_keys=True) + "\n", encoding="utf-8")
+
+
+# Owner decision 2026-11-25 on #727: a known-good item is a false flag only when L2 says the answer is wrong or ambiguous.
+# A `content-fix` verdict (wording or explanation edit) on a known-good item is reported separately as `contentFixFlags`.
+KEY_PROBLEM_VERDICTS = {"key-mismatch", "ambiguous"}
+
+
+def _key_problem(row: dict[str, Any] | None) -> bool:
+    if row is None:
+        return False
+    verdict = str(row.get("verdict", "")).strip().lower().replace("_", "-")
+    flags = {str(flag).strip().lower().replace("_", "-") for flag in row.get("flags", [])}
+    return verdict in KEY_PROBLEM_VERDICTS or bool(flags & KEY_PROBLEM_VERDICTS)
 
 
 def _positive(row: dict[str, Any] | None) -> bool:
@@ -98,7 +114,8 @@ def calibration_report(
         if _positive(row) and row.get("quote") and row.get("sourceTextHash")
     }
     combined_hist = len(hist & supported)
-    false_good = len(good & supported)
+    strict_false_good = len(good & supported)
+    false_good = len({i for i in good & supported if _key_problem(l2_by_id.get(i))})
     combined_seeded = len(seeded & supported)
     recall = _rate(combined_hist, len(hist))
     false_rate = _rate(false_good, len(good))
@@ -119,12 +136,12 @@ def calibration_report(
         "levels": {"L1": l1, "L2": l2},
         "combined": {
             "historicalWrongKeys": {"caught": combined_hist, "total": len(hist), "rate": recall},
-            "knownGoodFalseFlags": {"count": false_good, "total": len(good), "rate": false_rate},
+            "knownGoodFalseFlags": {"count": false_good, "total": len(good), "rate": false_rate, "contentFixFlags": strict_false_good - false_good, "strictCount": strict_false_good, "strictRate": _rate(strict_false_good, len(good))},
             "seededErrorCatchRate": {"caught": combined_seeded, "total": len(seeded), "rate": _rate(combined_seeded, len(seeded))},
             "sourceGaps": unavailable,
             "notRun": not_run,
             "complete": not_run == 0,
-            "go": not_run == 0 and recall is not None and false_rate is not None and recall >= 0.9 and false_rate < 0.2,
+            "go": not_run == 0 and recall is not None and false_rate is not None and recall >= RECALL_BAR and false_rate < 0.2,
         },
     }
 
@@ -172,8 +189,8 @@ def pilot_gate(report: dict[str, Any], rubric_version: str) -> list[str]:
         reasons.append(f"calibration is incomplete: {combined.get('notRun')} fixture items have no L2 result at their hash")
     recall = (combined.get("historicalWrongKeys") or {}).get("rate")
     false_rate = (combined.get("knownGoodFalseFlags") or {}).get("rate")
-    if recall is None or recall < 0.9:
-        reasons.append(f"historical wrong-key recall {recall} is below 0.90")
+    if recall is None or recall < RECALL_BAR:
+        reasons.append(f"historical wrong-key recall {recall} is below {RECALL_BAR:.2f}")
     if false_rate is None or false_rate >= 0.2:
         reasons.append(f"known-good false-flag rate {false_rate} is not below 0.20")
     if not combined.get("go") and not reasons:

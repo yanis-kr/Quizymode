@@ -24,6 +24,7 @@ from quality_lib import (  # noqa: E402
     ledger_path,
     packet,
     read_cache,
+    best_passage_scored,
     read_rows,
 )
 from normalize_reviews import normalize  # noqa: E402
@@ -96,11 +97,29 @@ def build_parser() -> argparse.ArgumentParser:
     return parser
 
 
+def choose_source(item, fixture_url, extras):
+    """The cached page whose best passage overlaps the question and every option most; the fixture page wins ties.
+
+    Source expansion (#727): extra eligible pages come from a blind model step, never from labels.
+    """
+    best_url, best_score = fixture_url, -1
+    for url in [u for u in [fixture_url, *extras] if u]:
+        cached = read_cache(url)
+        if not cache_is_ok(cached):
+            continue
+        score, _ = best_passage_scored(cached.get("text", ""), item)
+        if score > best_score:
+            best_url, best_score = url, score
+    return best_url
+
+
 def cmd_fixture_packets(args: argparse.Namespace) -> int:
     if args.budget < 0 or args.budget > MAX_BATCH:
         raise ValueError(f"budget must be between 0 and {MAX_BATCH}")
     item_rows = read_jsonl(args.items)
     ledger = read_rows(CALIBRATION_LEDGER)
+    extra_path = args.items.with_name("extra-sources.json")
+    extra_sources: dict[str, list[str]] = json.loads(extra_path.read_text(encoding="utf-8")) if extra_path.exists() else {}
     current = {(row.get("itemId"), row.get("level"), row.get("rubricVersion")): row for row in ledger}
     packets: list[dict] = []
     manifest: list[dict] = []
@@ -110,7 +129,8 @@ def cmd_fixture_packets(args: argparse.Namespace) -> int:
         item = source_item(row)
         row_hash = content_hash(item)
         prior = current.get((item.item_id, args.level, RUBRIC_VERSION))
-        if prior and prior.get("contentHash") == row_hash:
+        chosen = choose_source(item, row.get("sourceUrl"), extra_sources.get(item.item_id, [])) if args.level == "L2" else row.get("sourceUrl")
+        if prior and prior.get("contentHash") == row_hash and not (args.level == "L2" and extra_sources.get(item.item_id) and prior.get("sourceUrl") != chosen):
             cached = read_cache(prior.get("sourceUrl") or "") if prior.get("sourceUrl") else None
             old_hash = prior.get("sourceTextHash")
             current_hash = hashlib.sha256(cached.get("text", "").encode("utf-8")).hexdigest() if cache_is_ok(cached) else None
@@ -119,7 +139,7 @@ def cmd_fixture_packets(args: argparse.Namespace) -> int:
         if len(packets) >= args.budget:
             break
         considered += 1
-        source_url = row.get("sourceUrl")
+        source_url = chosen
         second_source_url = row.get("secondSourceUrl")
         if args.level in {"L2", "L3"}:
             cached = read_cache(source_url or "")

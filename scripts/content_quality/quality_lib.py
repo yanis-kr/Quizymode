@@ -16,7 +16,7 @@ from seed_source_common import REGISTRY_ROOT, ROOT, SourceItem
 
 QUALITY_ROOT = REGISTRY_ROOT / "quality"
 CACHE_ROOT = ROOT / ".cache" / "content-quality"
-RUBRIC_VERSION = "1"
+RUBRIC_VERSION = "2"
 PASSAGE_MAX_WORDS = 600  # about 800 tokens at 1.33 tokens per word
 PASSAGE_WINDOW_WORDS = 120
 LEVELS = ("L1", "L2", "L3", "owner", "legacy")
@@ -101,20 +101,30 @@ def read_cache(url: str, cache_root: Path = CACHE_ROOT) -> dict[str, Any] | None
     return json.loads(path.read_text(encoding="utf-8")) if path.exists() else None
 
 
-def best_passage(text: str, item: SourceItem) -> str:
-    """The window of words with the most overlap with the question and key, at most PASSAGE_MAX_WORDS."""
+def best_passage_scored(text: str, item: SourceItem) -> tuple[int, str]:
+    """The best window's overlap score and the passage built from it (at most PASSAGE_MAX_WORDS words)."""
     words = text.split()
-    if len(words) <= PASSAGE_MAX_WORDS:
-        return " ".join(words)
-    wanted = {w.lower().strip(".,;:()") for w in f"{item.question} {item.correct_answer}".split() if len(w) > 3}
-    best_start, best_score = 0, -1
+    wanted = {w.lower().strip(".,;:()") for w in f"{item.question} {' '.join([item.correct_answer, *item.incorrect_answers])}".split() if len(w) > 3}
     step = max(1, PASSAGE_WINDOW_WORDS // 2)
-    for start in range(0, len(words) - PASSAGE_WINDOW_WORDS + 1, step):
+    best_start, best_score = 0, -1
+    for start in range(0, max(1, len(words) - PASSAGE_WINDOW_WORDS + 1), step):
         window = words[start:start + PASSAGE_WINDOW_WORDS]
         score = sum(1 for w in window if w.lower().strip(".,;:()") in wanted)
         if score > best_score:
             best_start, best_score = start, score
-    return " ".join(words[best_start:best_start + PASSAGE_MAX_WORDS])
+    return max(best_score, 0), " ".join(words[best_start:best_start + PASSAGE_MAX_WORDS])
+
+
+def best_passage(text: str, item: SourceItem) -> str:
+    """The window of words with the most overlap with the question and every option, at most PASSAGE_MAX_WORDS.
+
+    Rubric 2 matches every option, not only the stored key: when the stored key is wrong, the passage that settles the item
+    names the true answer, which is one of the other options (#727 calibration, rubric 1).
+    """
+    words = text.split()
+    if len(words) <= PASSAGE_MAX_WORDS:
+        return " ".join(words)
+    return best_passage_scored(text, item)[1]
 
 
 def packet(

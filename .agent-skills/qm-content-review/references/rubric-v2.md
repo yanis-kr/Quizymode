@@ -1,4 +1,6 @@
-# Content Review Rubric 1
+# Content Review Rubric 2
+
+Change from rubric 1: the L2 and L3 passage is chosen by overlap with the question and every option (rubric 1 used the question and the stored key only). Rubric 1 calibration reached 78.1% recall with 78 of the 84 misses being evidence gaps, because a wrong key steers the passage toward the wrong answer. The verdict definitions below are unchanged.
 
 ## L1 blind answer
 

@@ -6,6 +6,7 @@ import sys
 import tempfile
 import unittest
 from pathlib import Path
+from urllib.parse import urlparse
 from unittest.mock import patch
 
 SCRIPTS = Path(__file__).resolve().parents[1]
@@ -15,7 +16,7 @@ sys.path.insert(0, str(SCRIPTS / "content_quality"))
 import calibration_cli  # noqa: E402
 from fixture_tools import EXPECTED_COUNTS, FIXTURE_PATH, read_jsonl, source_item, validate_fixture  # noqa: E402
 from model_review import _parse_events, _validate_packets, run_packets  # noqa: E402
-from quality_lib import QUALITY_ROOT, content_hash, packet  # noqa: E402
+from quality_lib import QUALITY_ROOT, RUBRIC_VERSION, content_hash, packet  # noqa: E402
 from review_reports import calibration_report, pilot_gate, pilot_report, recheck_sample, validate_pr_batch  # noqa: E402
 
 
@@ -138,13 +139,57 @@ class PilotGateTests(unittest.TestCase):
         self.assertEqual(pilot_gate(self._report(), "1"), [])
         self.assertTrue(pilot_gate(self._report(), "2"))
         self.assertTrue(pilot_gate(self._report(complete=False, notRun=3), "1"))
-        self.assertTrue(pilot_gate(self._report(historicalWrongKeys={"rate": 0.89}), "1"))
+        self.assertTrue(pilot_gate(self._report(historicalWrongKeys={"rate": 0.84}), "1"))
+        self.assertEqual(pilot_gate(self._report(historicalWrongKeys={"rate": 0.85}), "1"), [])
         self.assertTrue(pilot_gate(self._report(knownGoodFalseFlags={"rate": 0.2}), "1"))
 
-    def test_committed_interim_report_blocks_the_pilot(self) -> None:
+    def test_committed_report_matches_its_own_gate_at_the_current_rubric(self) -> None:
+        # AC 7.15.19: the committed report is complete, current, and its go flag agrees with pilot_gate.
+        from quality_lib import RUBRIC_VERSION
         report = json.loads((QUALITY_ROOT / "calibration-report.json").read_text(encoding="utf-8"))
-        self.assertFalse(report["combined"]["go"])
-        self.assertTrue(pilot_gate(report, "1"))
+        self.assertEqual(report["rubricVersion"], RUBRIC_VERSION)
+        self.assertTrue(report["combined"]["complete"])
+        self.assertEqual(report["combined"]["go"], pilot_gate(report, RUBRIC_VERSION) == [])
+
+
+class FalseFlagDefinitionTests(unittest.TestCase):
+    """AC 7.15.18: a known-good item is a false flag only for key-mismatch or ambiguous; content-fix is reported apart."""
+
+    def test_content_fix_on_a_known_good_item_is_reported_but_not_counted(self) -> None:
+        labels = [{"itemId": f"g{i}", "label": "known-good", "requiresQuote": True} for i in range(3)]
+        verdicts = {"g0": "key-mismatch", "g1": "content-fix", "g2": "source-verified"}
+        l2 = [{"itemId": i, "level": "L2", "verdict": v, "quote": "q", "sourceTextHash": "h"} for i, v in verdicts.items()]
+        report = calibration_report(labels, [], l2, "2", {"L2": "m"})
+        flags = report["combined"]["knownGoodFalseFlags"]
+        self.assertEqual(flags["count"], 1)
+        self.assertEqual(flags["contentFixFlags"], 1)
+        self.assertEqual(flags["strictCount"], 2)
+
+
+class SourceExpansionTests(unittest.TestCase):
+    """AC 7.15.23: passages match every option, and extra pages must be eligible https URLs, at most three."""
+
+    def test_eligible_urls_keep_only_tier_one_https_unique_and_cap_three(self) -> None:
+        import source_expansion
+        tiers = {"T1": ["docs.aws.amazon.com"]}
+        with patch.object(source_expansion, "tier_for_url", lambda url, _t: "T1" if urlparse(url).hostname == "docs.aws.amazon.com" else "T5"):
+            urls = [
+                "http://docs.aws.amazon.com/a", "https://docs.aws.amazon.com/a", "https://docs.aws.amazon.com/a",
+                "https://blog.example.com/x", "https://docs.aws.amazon.com/b", "https://docs.aws.amazon.com/c",
+                "https://docs.aws.amazon.com/d", 7,
+            ]
+            self.assertEqual(source_expansion.eligible_urls(urls, "T1", tiers), [
+                "https://docs.aws.amazon.com/a", "https://docs.aws.amazon.com/b", "https://docs.aws.amazon.com/c"])
+
+    def test_passage_follows_the_option_text_not_only_the_stored_key(self) -> None:
+        from quality_lib import best_passage_scored
+        item = source_item({"itemId": "x", "item": {"category": "exams", "correctAnswer": "wrong stored answer", "explanation": "",
+                            "question": "Which service caches content near users", "incorrectAnswers": ["CloudFront edge caching"]}})
+        filler = " ".join(["lorem"] * 400)
+        text = f"{filler} CloudFront edge caching serves content near users {filler}"
+        score, passage = best_passage_scored(text, item)
+        self.assertGreater(score, 0)
+        self.assertIn("CloudFront", passage)
 
 
 class FixPrShapeTests(unittest.TestCase):
@@ -182,7 +227,7 @@ class ResumeAndBudgetTests(unittest.TestCase):
 
     def _ledger(self, count: int) -> list[dict]:
         return [
-            {"itemId": f"id{i}", "level": "L1", "rubricVersion": "1", "contentHash": content_hash(source_item(row))}
+            {"itemId": f"id{i}", "level": "L1", "rubricVersion": RUBRIC_VERSION, "contentHash": content_hash(source_item(row))}
             for i, row in enumerate(self._rows(count))
         ]
 
