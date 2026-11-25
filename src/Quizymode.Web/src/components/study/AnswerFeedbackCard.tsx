@@ -25,6 +25,8 @@ interface AnswerFeedbackCardProps {
   noNextHint?: string | undefined;
   /** Starter only: a click or tap anywhere on the card advances. Clicks from a button or link inside never do. */
   advanceOnCardClick?: boolean;
+  /** Collection run (#403): uploaded pictures load through the collection route. Defaults to the route's collection. */
+  collectionId?: string | undefined;
 }
 
 /**
@@ -43,6 +45,7 @@ export function AnswerFeedbackCard({
   onNext,
   noNextHint,
   advanceOnCardClick = false,
+  collectionId,
 }: AnswerFeedbackCardProps) {
   const nextRef = useRef<HTMLButtonElement>(null);
   const hintRef = useRef<HTMLParagraphElement>(null);
@@ -130,6 +133,7 @@ export function AnswerFeedbackCard({
       <QuestionImage
         key={`${item.id}-explanation`}
         itemId={item.id}
+        collectionId={collectionId}
         image={item.explanationImage}
         slot="explanation"
         className="mt-3 max-h-48 rounded-lg bg-surface sm:max-h-72"

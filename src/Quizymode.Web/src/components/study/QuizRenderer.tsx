@@ -152,6 +152,8 @@ export interface QuizRendererProps {
   showScoreWithPanel?: boolean;
   /** Focus target for the question heading, so focus can move to the next question after the card's Next. */
   questionHeadingRef?: RefObject<HTMLHeadingElement | null>;
+  /** Collection run (#403): uploaded pictures load through the collection route. Defaults to the route's collection. */
+  collectionId?: string | undefined;
 }
 
 export function QuizRenderer({
@@ -167,6 +169,7 @@ export function QuizRenderer({
   answerPanel,
   showScoreWithPanel = false,
   questionHeadingRef,
+  collectionId,
 }: QuizRendererProps) {
   const { isSupported } = useSpeech();
   const pictureBlocked = questionPicture?.blocked ?? false;
@@ -198,6 +201,7 @@ export function QuizRenderer({
         <QuestionImage
           key={item.id}
           itemId={item.id} image={item.questionImage}
+          collectionId={collectionId}
           withdrawn={item.imageReview?.state === "Withdrawn"}
           className="mt-3"
           onStatusChange={questionPicture?.onStatusChange}
@@ -342,6 +346,7 @@ export function QuizRenderer({
           <QuestionImage
             key={`${item.id}-explanation`}
             itemId={item.id} image={item.explanationImage}
+            collectionId={collectionId}
             slot="explanation"
             className="mt-3 rounded-lg bg-surface"
           />
