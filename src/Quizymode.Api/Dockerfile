@@ -2,8 +2,8 @@
 
 # This stage is used when running from VS in fast mode (Default for Debug configuration)
 FROM mcr.microsoft.com/dotnet/aspnet:10.0 AS base
-# On Lightsail, APP_UID is not set,
-#USER $APP_UID
+# The base stage stays root so Visual Studio fast mode can mount and run the debug build. The release user is
+# set in the final stage as an explicit UID: APP_UID is not set on Lightsail, so USER $APP_UID cannot be used.
 WORKDIR /app
 EXPOSE 8080
 EXPOSE 8081
@@ -35,4 +35,7 @@ FROM base AS final
 WORKDIR /app
 COPY --from=publish /app/publish .
 ENV APP_SEED__PATH=data/seed-dev
+# Run as the image's non-root user app (UID/GID 1654, AC 7.11.32). Root owns /app and the files stay world-readable;
+# the API only reads them. Port 8080 is above 1024, so no extra capability is needed.
+USER 1654:1654
 ENTRYPOINT ["dotnet", "Quizymode.Api.dll"]
