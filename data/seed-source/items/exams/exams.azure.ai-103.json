@@ -195,14 +195,14 @@
     "category": "exams",
     "navigationKeyword1": "azure",
     "navigationKeyword2": "ai-103",
-    "question": "A guardrail sets the Violence blocking level to High. What does that block?",
+    "question": "A Foundry guardrail sets the Violence blocking level to High. What does that block?",
     "correctAnswer": "Low, medium, and high severity content",
     "incorrectAnswers": [
       "Only high severity content",
       "Only medium and high severity",
       "Nothing, it only annotates"
     ],
-    "explanation": "High is the most restrictive level and blocks low-, medium-, and high-severity content. Low blocks only high severity.",
+    "explanation": "In Foundry guardrails, High is the most restrictive blocking level and blocks low-, medium-, and high-severity content. Low blocks only high severity.",
     "keywords": [
       "ai-103",
       "guardrails",
