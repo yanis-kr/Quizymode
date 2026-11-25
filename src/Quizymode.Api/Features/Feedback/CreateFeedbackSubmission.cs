@@ -165,7 +165,7 @@ public static class CreateFeedbackSubmission
             }
 
             string normalizedType = NormalizeType(request.Type);
-            string currentUrl = request.CurrentUrl.Trim();
+            string currentUrl = MinimizePageUrl(request.CurrentUrl.Trim());
             string details = request.Details.Trim();
             string? email = NormalizeOptional(request.Email);
             string? additionalKeywords = normalizedType == RequestItemsType
@@ -210,6 +210,28 @@ public static class CreateFeedbackSubmission
             return Result.Failure<Response>(
                 Error.Problem("Feedback.CreateFailed", "Failed to create feedback submission.", ex));
         }
+    }
+
+    /// <summary>
+    /// Keeps only the scheme, host and path of a page URL so no query string, fragment or credentials are stored.
+    /// A value that is not an absolute URL is returned unchanged (the validator rejects those before this runs).
+    /// </summary>
+    internal static string MinimizePageUrl(string pageUrl)
+    {
+        if (!Uri.TryCreate(pageUrl, UriKind.Absolute, out Uri? uri))
+        {
+            return pageUrl;
+        }
+
+        UriBuilder builder = new(uri)
+        {
+            UserName = string.Empty,
+            Password = string.Empty,
+            Query = string.Empty,
+            Fragment = string.Empty
+        };
+
+        return builder.Uri.AbsoluteUri;
     }
 
     private static string NormalizeType(string type)
