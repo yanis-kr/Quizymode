@@ -7,6 +7,7 @@ import path from "node:path";
 import { spawnSync } from "node:child_process";
 import { fileURLToPath } from "node:url";
 import { selectIssues, lockedIssues } from "../bundle/select.mjs";
+import { approvedBundle, run, json } from "./fixtures/bundle-cli.mjs";
 
 // Temp folders this file makes are removed when the file ends, so %TEMP% does not collect qm-* folders (#761).
 const madeDirs = [];
@@ -80,14 +81,55 @@ test("AC 7.19.24: conflicting issues share a lane and disjoint ones split", () =
   assert.ok(r.conflicts.some((c) => c.a === 301 && c.b === 303));
 });
 
-// AC 7.19.24: an issue with no declared scope conflicts with everything, so it lands with the others in one lane.
-test("AC 7.19.24: an unknown scope conflicts with every other issue", () => {
+// AC 7.19.45: an issue with no scope does not pull the others into one lane: it gets a serial slot at the end of lane B.
+test("AC 7.19.45: an unknown scope runs in a serial slot at the end of lane B", () => {
   const r = selectIssues([
     ready(401, ["size:s", "priority:high"], { paths: ["src/a/**"] }),
     ready(402, ["size:s", "priority:med"], { paths: [] }),
+    ready(403, ["size:s", "priority:low"], { paths: ["src/b/**"] }),
   ]);
-  assert.equal(new Set(r.selected.map((s) => s.lane)).size, 1);
-  assert.match(r.conflicts[0].reason, /unknown/);
+  const by = Object.fromEntries(r.selected.map((s) => [s.number, s]));
+  assert.deepEqual(r.conflicts, [], "an unknown scope is not a path conflict");
+  assert.notEqual(by[401].lane, by[403].lane, "the known issues still split");
+  assert.equal(by[402].lane, "b");
+  assert.equal(by[402].serial, true);
+  assert.match(r.warnings.join("\n"), /unknown scope for #402/);
+});
+
+// AC 7.19.45: a fix-forward issue ranks ahead of a higher priority.
+test("AC 7.19.45: fix-forward ranks first", () => {
+  const r = selectIssues([
+    ready(501, ["size:xs", "priority:high"]),
+    ready(502, ["size:m", "priority:low", "validation-failed", "fix-forward"]),
+  ]);
+  assert.deepEqual(r.selected.map((s) => s.number), [502, 501]);
+  assert.match(r.selected[0].reason, /^fix-forward/);
+});
+
+// AC 7.19.45: the select command reads maxIssues, maxSize and excludeAreas from the envelope; flags override it.
+test("AC 7.19.45: select reads the envelope limits, and flags override them", () => {
+  const dir = tmp();
+  const bundles = path.join(dir, "bundles");
+  fs.mkdirSync(bundles, { recursive: true });
+  fs.writeFileSync(path.join(dir, "envelope.json"), JSON.stringify({
+    schemaVersion: 1, mergeToMain: true, migrations: "additive-only", infraChanges: "none", prodDataWrites: "test-data-only",
+    deleteOwnTestData: true, seedSyncApply: false, prodReadQueries: true, rollback: "rollback-workflow", closeIssues: true, paidServices: false,
+    maxIssues: 1, maxSize: "xs", excludeAreas: ["area:games"],
+  }));
+  const item = (number, labels) => ({ number, title: String(number), labels: ["status:ready", ...labels].map((name) => ({ name })), body: "## Acceptance criteria\n- x" });
+  const file = path.join(dir, "issues.json");
+  fs.writeFileSync(file, JSON.stringify([item(701, ["size:xs"]), item(702, ["size:xs"]), item(703, ["size:s"]), item(704, ["size:xs", "area:games"])]));
+  const sel = (...flags) => JSON.parse(spawnSync(process.execPath, [BUNDLE, "select", "--issues-file", file, "--bundles-dir", bundles, ...flags], { encoding: "utf8" }).stdout);
+  const env = sel();
+  assert.deepEqual(env.selected.map((s) => s.number), [701]);
+  const reason = Object.fromEntries(env.excluded.map((e) => [e.number, e.reason]));
+  assert.equal(reason[702], "rank 2: the batch holds 1");
+  assert.match(reason[703], /over the envelope maximum size:xs/);
+  assert.equal(reason[704], "area:games is excluded by the envelope");
+  assert.equal(env.limits.source, path.join(dir, "envelope.json"));
+  assert.ok(env.checklist.includes("  1. #701 lane b (serial, unknown scope) - size:xs"), env.checklist.join("\n"));
+  const flags = sel("--max", "8", "--max-size", "s", "--exclude-areas", "auth");
+  assert.deepEqual(flags.selected.map((s) => s.number).sort(), [701, 702, 703, 704]);
 });
 
 // AC 7.19.24: lockedIssues returns only the issues of bundles that are not terminal.
@@ -124,4 +166,35 @@ test("AC 7.19.24: the select command prints the batch from a saved issue list", 
   assert.equal(reason[602], "in a running or validating bundle");
   assert.equal(reason[603], "no acceptance criteria");
   assert.deepEqual(out.lockedByRunningBundles, [602]);
+});
+
+// AC 7.19.45: lane planning (`lanes`, `next`) treats unknown scope the same way: a serial slot after lane B's other issues.
+test("AC 7.19.45: lanes and next put an unknown-scope issue at the end of lane B", () => {
+  const qm = tmp();
+  const id = "b-20261125-serial-tail";
+  approvedBundle(qm, id, 801);
+  const file = path.join(qm, "bundles", id, "manifest.json");
+  const m = JSON.parse(fs.readFileSync(file, "utf8"));
+  const base = m.issues[0];
+  const issue = (number, order, paths) => ({ ...base, number, order, title: `Issue ${number}`, areas: [], scope: { ...base.scope, paths } });
+  m.issues = [issue(801, 1, []), issue(802, 2, ["src/a/**"]), issue(803, 3, ["src/b/**"]), issue(804, 4, ["src/c/**"])];
+  fs.writeFileSync(file, JSON.stringify(m, null, 2));
+  const lanes = json(run(["lanes", id, "--qm-dir", qm]));
+  assert.deepEqual(lanes.serialTail, [801]);
+  assert.equal(lanes.laneB.at(-1), 801, "the unknown-scope issue is last in lane B");
+  assert.equal(lanes.laneA.length + lanes.laneB.length, 4);
+  assert.ok(!lanes.laneA.includes(801));
+  assert.match(lanes.reasons.join("\n"), /#801: unknown scope, serial slot at the end of lane B/);
+  const next = json(run(["next", id, "--lane", "b", "--qm-dir", qm]));
+  assert.equal(next.issue, lanes.laneB[0], "lane B works its known issues before the serial slot");
+  assert.notEqual(next.issue, 801);
+  // The serial slot waits while lane A still has pending work, and starts once lane A is done.
+  const state = path.join(qm, "bundles", id, "state.json");
+  const put = (statuses) => fs.writeFileSync(state, JSON.stringify({ phase: "implementing", issues: Object.fromEntries(Object.entries(statuses).map(([n, [status, lane]]) => [n, { status, lane, notes: [] }])) }));
+  put({ 801: ["pending", "b"], 802: ["pending", "a"], 803: ["integrated", "b"], 804: ["in_progress", "a"] });
+  const waits = json(run(["next", id, "--lane", "b", "--qm-dir", qm]));
+  assert.equal(waits.issue, null);
+  assert.match(waits.reason, /serial slot: #801 waits until #802, #804/);
+  put({ 801: ["pending", "b"], 802: ["integrated", "a"], 803: ["integrated", "b"], 804: ["implemented", "a"] });
+  assert.equal(json(run(["next", id, "--lane", "b", "--qm-dir", qm])).issue, 801);
 });

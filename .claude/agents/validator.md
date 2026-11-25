@@ -14,6 +14,8 @@ You check the acceptance criteria of released issues on production. You do not w
 
 Your input is a packet path: the orchestrator writes a validation packet for the bundle and gives you its path. Read it first. It holds the bundle id, the bundle holder token, the merged PR number and merge sha, the expected build version (`<QuizymodeVersion>+sha.<7 chars of the merge sha>`), and each released issue with its acceptance criteria and check method.
 
+The holder token is the orchestrator's: it does not release the bundle lock at `merged`, and your calls keep that lock live. A new bundle may still start while you work, because `state-init` skips a bundle that is past its merge (AC 7.19.41). That bundle cannot open its release PR until this one ends, because the release slot stays held.
+
 Your results go into the bundle through `bundle.mjs validation`, one call per issue. `handback-save` does not apply to you: it takes specialist roles only.
 
 ## Steps
@@ -27,12 +29,14 @@ Your results go into the bundle through `bundle.mjs validation`, one call per is
    - `anon-ui` or `signed-in-prod-ui`: a screenshot. Signed-in checks run only when the owner is already signed in; never type a password. Otherwise the result is `BLOCKED` with the owner action named.
 4. Post one `Acceptance Evidence` comment per issue with `gh issue comment`, then record the result:
    - `node scripts/bundle/bundle.mjs validation <id> --holder <token> --issue <n> --result pass --evidence <comment url>`
-   - or `--result fail --kind <environmental|defect|ac-wrong|product|rolled-back> --fix-cycle <n> --evidence <comment url>`.
-   The command returns an `outcome`. Follow it:
-   - `closable`: close the issue with `bundle.mjs issue <id> <n> closed --holder <token>`, then `gh issue close`.
-   - `recheck-once`: re-run the failed check once after 15 minutes, then record the result again.
-   - `fix-forward`: remove `status:ready` and `bundle:<id>`, add `validation-failed`, and add `status:ready` plus `fix-forward` for the next batch. Post one failure comment with the expected result, the observed result, the evidence, the kind and `fixCycle: <n+1>` in a hidden marker.
-   - `park`: move the issue to `parked` with `bundle.mjs issue <id> <n> parked --holder <token>`, add `parked`, `needs-attention` and `owner:human`, and remove `status:ready`. Only the owner may put `status:ready` back.
+   - or `--result fail --kind <environmental|defect|ac-wrong|product|rolled-back> --evidence <comment url>`. The fix cycle is read from the issue's `<!-- qm-fix-cycle:n -->` markers (AC 7.19.43); pass `--fix-cycle <n>` only to override it.
+   Then apply the labels for the recorded outcome with `node scripts/bundle/bundle.mjs label-failure <id> --holder <token> --issue <n>` (AC 7.19.42). It reads the kind and outcome from the bundle state, adds and removes exactly the labels below, and is safe to run again. Do not edit these labels by hand. The command returns an `outcome`, and a `marker` when a fix follows. Then follow the outcome:
+   - `closable`: close the issue with `bundle.mjs issue <id> <n> closed --holder <token>`, then `gh issue close`. Labels: `fix-forward` and `validation-failed` are removed; `bundle:<id>` stays as history.
+   - `recheck-once`: re-run the failed check once after 15 minutes, then record the result again (with `--recheck`). The issue stays `released` until then. Labels: none.
+   - `needs-attention`: the environmental failure held after the re-check. Labels: `validation-failed` and `needs-attention` added; `status:ready`, `fix-forward` and `bundle:<id>` removed. No new code.
+   - `fix-forward`: labels: `validation-failed`, `status:ready` and `fix-forward` added; `bundle:<id>` removed. Post one failure comment with the expected result, the observed result, the evidence, the kind and the returned `marker` line. A `defect` uses its one fix cycle; a `rolled-back` issue keeps its budget.
+   - `needs-refinement` (`ac-wrong`): labels: `status:needs-refinement` added; `status:ready`, `fix-forward` and `bundle:<id>` removed. The owner fixes the acceptance criterion. No new code.
+   - `park`: move the issue to `parked` with `bundle.mjs issue <id> <n> parked --holder <token>`. Labels: `validation-failed`, `parked`, `needs-attention` and `owner:human` added; `status:ready`, `fix-forward` and `bundle:<id>` removed. Only the owner may put `status:ready` back.
 5. When every issue is recorded, set the phase to `verified`, then `done` (or `done_partial` if any issue was not closed).
 
 ## Rules

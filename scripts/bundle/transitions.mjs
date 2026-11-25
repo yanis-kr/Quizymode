@@ -32,6 +32,14 @@ export function transitionError(from, to) {
   return `issue status ${from} -> ${to} is not allowed (allowed: ${allowed.length ? allowed.join(", ") : "none, terminal"})`;
 }
 
+// A bundle past its merge no longer needs the orchestrator's one-active-bundle lock: the validator finishes it, and the release
+// slot still keeps the next bundle from releasing (AC 7.19.41). `validating` counts only once the merge sha is recorded,
+// because the integration step also uses it before the release PR.
+export function pastMerge(st) {
+  if (st?.phase === "merged" || st?.phase === "deployed") return true;
+  return st?.phase === "validating" && Boolean(st?.release?.mergeSha);
+}
+
 // Bundle phases that hold the release slot: one bundle at a time between its release PR opening and its validation ending (design A, F3).
 export const RELEASE_SLOT_PHASES = new Set(["release_pr_open", "ci_green", "merged", "deployed", "validating"]);
 
@@ -51,10 +59,16 @@ export function releaseSlotHolder(bundlesDir, bundleId) {
 
 export const VALIDATION_KINDS = ["environmental", "defect", "ac-wrong", "product", "rolled-back"];
 
-// What the validator does next with a failed issue (design E). A pass has no outcome here: it closes.
-export function validationOutcome(kind, fixCycle) {
-  if (kind === "environmental") return "recheck-once";
-  if (kind === "ac-wrong" || kind === "product") return "park";
-  if (kind === "defect" || kind === "rolled-back") return fixCycle === 0 ? "fix-forward" : "park";
+// Every outcome validationOutcome can return, plus "closable" for a pass. failure-labels.mjs maps each one to labels.
+export const VALIDATION_OUTCOMES = ["closable", "recheck-once", "needs-attention", "fix-forward", "needs-refinement", "park"];
+
+// What the validator does next with a failed issue (design E, AC 7.19.42). A pass has no outcome here: it closes.
+// recheck is true when this result is the one recorded after the single environmental re-check.
+export function validationOutcome(kind, fixCycle, recheck = false) {
+  if (kind === "environmental") return recheck ? "needs-attention" : "recheck-once";
+  if (kind === "ac-wrong") return "needs-refinement";
+  if (kind === "product") return "park";
+  if (kind === "rolled-back") return "fix-forward"; // a rollback reverts the whole release: it keeps the fix budget
+  if (kind === "defect") return fixCycle === 0 ? "fix-forward" : "park";
   return "park";
 }

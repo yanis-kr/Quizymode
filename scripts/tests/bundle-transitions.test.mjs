@@ -73,6 +73,13 @@ test("AC 7.19.25: the outcome follows the failure kind and the fix cycle", () =>
   assert.equal(validationOutcome("defect", 0), "fix-forward");
   assert.equal(validationOutcome("defect", 1), "park", "the second failure of one issue parks it");
   assert.equal(validationOutcome("rolled-back", 0), "fix-forward", "a rollback keeps the budget");
-  assert.equal(validationOutcome("ac-wrong", 0), "park");
+  assert.equal(validationOutcome("rolled-back", 1), "fix-forward", "a rollback never parks by itself");
+  assert.equal(validationOutcome("ac-wrong", 0), "needs-refinement");
   assert.equal(validationOutcome("product", 0), "park");
+});
+
+// AC 7.19.42: an environmental failure that holds after its one re-check needs attention, with no new code.
+test("AC 7.19.42: an environmental failure after the re-check is needs-attention", () => {
+  assert.equal(validationOutcome("environmental", 0, true), "needs-attention");
+  assert.equal(validationOutcome("defect", 0, true), "fix-forward", "the re-check flag only changes environmental");
 });

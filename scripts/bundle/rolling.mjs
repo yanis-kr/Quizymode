@@ -14,9 +14,12 @@ const UNINTEGRATED = new Set(["implemented", "validated"]);
  * @param status  (number) => issue status string
  * @param laneOf  (number) => "a" | "b" | null
  * @param lane    "a" | "b"
+ * @param serialTail  issue numbers in a serial slot (unknown scope, AC 7.19.45): each waits until the other lane has no
+ *                    pending or in-progress issue, so it never runs beside another issue
  * @returns { issue, stackOn, reason, skipped }
  */
-export function nextForLane({ issues, status, laneOf, lane }) {
+export function nextForLane({ issues, status, laneOf, lane, serialTail = [] }) {
+  const busy = issues.filter((i) => laneOf(i.number) !== lane && !serialTail.includes(i.number) && ["pending", "in_progress"].includes(status(i.number)));
   const mine = [...issues].sort((x, y) => x.order - y.order).filter((i) => laneOf(i.number) === lane);
   const skipped = [];
   const resume = mine.find((i) => status(i.number) === "in_progress");
@@ -31,6 +34,9 @@ export function nextForLane({ issues, status, laneOf, lane }) {
     }
     const waiting = deps.filter((d) => !USABLE.has(status(d)));
     if (waiting.length) continue; // an earlier dependency is still pending in this batch; it comes first in order
+    if (serialTail.includes(it.number) && busy.length) {
+      return { issue: null, stackOn: null, reason: `serial slot: #${it.number} waits until ${busy.map((i) => `#${i.number}`).join(", ")} in the other lane finish`, skipped };
+    }
     const stack = deps.filter((d) => UNINTEGRATED.has(status(d)));
     return {
       issue: it.number,

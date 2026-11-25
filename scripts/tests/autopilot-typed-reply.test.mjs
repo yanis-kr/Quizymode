@@ -29,3 +29,12 @@ test("AC 7.19.19: the autopilot skill documents the typed reply and stays owner-
   assert.match(skill, /`start autopilot`/);
   assert.match(skill, /--standing/, "the standing envelope path stays");
 });
+
+// AC 7.19.46: step 1 of the autopilot picks the batch with `bundle.mjs select` and prints its checklist, then proceeds.
+test("AC 7.19.46: the autopilot skill picks issues through bundle.mjs select and prints its checklist", () => {
+  const skill = fs.readFileSync(new URL("../../.claude/skills/qm-bundle-autopilot/SKILL.md", import.meta.url), "utf8");
+  const step1 = skill.slice(skill.indexOf("## 1. Pick and refine"), skill.indexOf("## 2. Approve"));
+  assert.match(step1, /`node scripts\/bundle\/bundle\.mjs select`/);
+  assert.match(step1, /Print the checklist once and proceed/);
+  assert.ok(step1.indexOf("bundle.mjs select") < step1.indexOf("Refine each issue"), "select comes before refine");
+});

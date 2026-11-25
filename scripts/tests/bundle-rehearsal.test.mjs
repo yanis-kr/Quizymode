@@ -10,6 +10,7 @@ import { spawnSync } from "node:child_process";
 import { fileURLToPath } from "node:url";
 import { lockedIssues } from "../bundle/select.mjs";
 import { transitionError, releaseSlotHolder, validationOutcome } from "../bundle/transitions.mjs";
+import { approvedBundle, startBundle, patchState, run, json } from "./fixtures/bundle-cli.mjs";
 
 // Temp folders this file makes are removed when the file ends, so %TEMP% does not collect qm-* folders (#761).
 const madeDirs = [];
@@ -50,8 +51,8 @@ test("AC 7.19.26: a three-issue batch goes from selection to a released slot, wi
   assert.equal(sel.status, 0, sel.stdout + sel.stderr);
   const picked = JSON.parse(sel.stdout);
   assert.deepEqual(picked.selected.map((s) => s.number), [701, 703, 702]);
-  // The recorded list carries no scope paths, so every pair is an unknown scope and conflicts: one lane takes all three.
-  assert.equal(new Set(picked.selected.map((s) => s.lane)).size, 1, "no scope paths in the list, so one lane");
+  // The recorded list carries no scope paths and no mapped area, so each issue is unknown scope: serial slots at the end of lane B.
+  assert.deepEqual(picked.selected.map((s) => s.lane), ["b", "b", "b"], "no scope paths in the list, so all in lane B");
   assert.equal(picked.excluded.find((e) => e.number === 704).reason, "in a running or validating bundle");
 
   // 2. Bundle A claims the release slot once its PR is open; bundle B cannot open a second release PR now.
@@ -80,4 +81,44 @@ test("AC 7.19.26: a three-issue batch goes from selection to a released slot, wi
 
   // 5. Locks: A is finished so its issues are free; B still holds 704.
   assert.deepEqual([...lockedIssues(bundles)], [704]);
+});
+
+// AC 7.19.41: a bundle past its merge hands over to the validator. Through the real CLI: a second bundle may start while the
+// first is validating, the first bundle's wall-clock limit cannot stop its validator, and the release slot still refuses
+// the second bundle's release PR.
+test("AC 7.19.41: bundle 2 starts while bundle 1 validates, but the release slot still holds its release PR", () => {
+  const qm = mkTmp("qm-v2-handoff-");
+  const first = "b-20261125-first-batch";
+  const second = "b-20261125-second-batch";
+  approvedBundle(qm, first, 801);
+  approvedBundle(qm, second, 802);
+  const h1 = startBundle(qm, first, "holder-first");
+
+  // Before its merge bundle 1 is active, so bundle 2 is refused (one active bundle per checkout).
+  const early = run(["state-init", second, "--no-git", "--holder", "holder-second", "--qm-dir", qm]);
+  assert.equal(early.status, 4, early.stdout);
+  assert.match(json(early).error, /Another bundle 'b-20261125-first-batch' is active/);
+
+  // Pre-merge `validating` (the integration step) still blocks: only a recorded merge hands over.
+  patchState(qm, first, (st) => { st.phase = "validating"; });
+  assert.equal(run(["state-init", second, "--no-git", "--holder", "holder-second", "--qm-dir", qm]).status, 4);
+
+  // Bundle 1 merged and its validator is working: the lock is still live (same holder token), the clock is past its limit.
+  patchState(qm, first, (st) => {
+    st.phase = "validating";
+    st.release.prNumber = 900;
+    st.release.mergeSha = "c".repeat(40);
+    st.clockStart = new Date(Date.now() - 20 * 3600000).toISOString();
+  });
+  const cp = run(["checkpoint", first, "--holder", h1, "--qm-dir", qm]);
+  assert.equal(cp.status, 0, cp.stdout);
+  assert.equal(json(cp).postMerge, true, "the wall-clock limit does not stop the validator");
+
+  const h2 = startBundle(qm, second, "holder-second");
+  assert.equal(h2, "holder-second");
+
+  // Bundle 2 reaches its release PR: the slot is bundle 1's until its validation ends.
+  const open = run(["phase", second, "release_pr_open", "--pr", "901", "--holder", h2, "--qm-dir", qm]);
+  assert.equal(open.status, 2, open.stdout);
+  assert.match(json(open).error, /Release slot is held by bundle 'b-20261125-first-batch' \(phase validating\)/);
 });
