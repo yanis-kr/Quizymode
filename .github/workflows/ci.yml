@@ -452,16 +452,36 @@ jobs:
 
       # No layer cache: every change set bumps Directory.Build.props, which invalidates the restore layer, so the
       # GitHub Actions cache never hit and exporting it cost about 3 minutes per main build.
-      - name: Build image (pushed as :<sha> on main only)
+      # The image is loaded into the runner's Docker, checked, and only then pushed, so an image that runs as
+      # root never reaches GHCR (AC 7.11.32).
+      - name: Build image and load it into the runner's Docker
         uses: docker/build-push-action@v7
         with:
           context: .
           file: ./src/Quizymode.Api/Dockerfile
-          push: ${{ github.event_name == 'push' && github.ref == 'refs/heads/main' }}
+          load: true
+          push: false
           tags: ${{ steps.meta.outputs.image }}:${{ github.event_name == 'push' && github.sha || format('ci-{0}', github.run_number) }}
           build-args: |
             APP_VERSION=${{ steps.app_version.outputs.app_version }}
             SOURCE_REVISION_ID=${{ github.sha }}
+
+      - name: Check the image runs as non-root UID 1654
+        env:
+          IMAGE: ${{ steps.meta.outputs.image }}:${{ github.event_name == 'push' && github.sha || format('ci-{0}', github.run_number) }}
+        run: |
+          RUNTIME_UID="$(docker run --rm --entrypoint id "$IMAGE" -u)"
+          echo "Image user id: ${RUNTIME_UID}"
+          if [ "$RUNTIME_UID" != "1654" ]; then
+            echo "::error::The API image runs as UID ${RUNTIME_UID}; it must run as the non-root user 1654."
+            exit 1
+          fi
+
+      - name: Push image as :<sha>
+        if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+        env:
+          IMAGE: ${{ steps.meta.outputs.image }}:${{ github.sha }}
+        run: docker push "$IMAGE"
 
   # Required check. Passes only when every build and test job passed (a skipped job would otherwise count as
   # green), then posts the coverage summary and, on main, moves :latest to the image api-image pushed.
