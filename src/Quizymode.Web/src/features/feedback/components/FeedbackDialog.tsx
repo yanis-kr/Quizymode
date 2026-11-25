@@ -5,6 +5,7 @@ import { useMutation } from "@tanstack/react-query";
 import { XMarkIcon } from "@heroicons/react/24/outline";
 import { feedbackApi } from "@/api/feedback";
 import { feedbackTypeMap, feedbackTypeOptions } from "../feedbackTypes";
+import { minimizePageUrl } from "../feedbackPageUrl";
 import type { FeedbackType } from "@/types/api";
 
 interface FeedbackDialogProps {
@@ -56,7 +57,7 @@ const FeedbackDialog = ({
     // eslint-disable-next-line react-hooks/set-state-in-effect
     setType(initialType);
     // eslint-disable-next-line react-hooks/set-state-in-effect
-    setCurrentUrl(window.location.href);
+    setCurrentUrl(minimizePageUrl(window.location.href));
     // eslint-disable-next-line react-hooks/set-state-in-effect
     setEmail(defaultEmail ?? "");
     // eslint-disable-next-line react-hooks/set-state-in-effect
