@@ -275,3 +275,23 @@ class ResumeAndBudgetTests(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
+
+
+class PilotRunTests(unittest.TestCase):
+    """AC 7.15.24: the pilot picks the cached page that matches the question and options; uncached pages never win."""
+
+    def _item(self):
+        return source_item({"itemId": "p", "item": {"category": "exams", "correctAnswer": "alpha", "explanation": "",
+                            "question": "Which feature caches content near users", "incorrectAnswers": ["edge caching network"]}})
+
+    def test_choose_page_prefers_the_page_that_mentions_the_options_and_skips_uncached(self) -> None:
+        import pilot_run
+        filler = " ".join(["lorem"] * 300)
+        pages = {
+            "https://a.example/one": {"status": "ok", "text": f"{filler} unrelated topic {filler}"},
+            "https://a.example/two": {"status": "ok", "text": f"{filler} edge caching network caches content near users {filler}"},
+            "https://a.example/three": {"status": "unfetchable", "text": ""},
+        }
+        with patch.object(pilot_run, "read_cache", lambda url: pages.get(url)):
+            self.assertEqual(pilot_run.choose_page(self._item(), list(pages)), "https://a.example/two")
+            self.assertIsNone(pilot_run.choose_page(self._item(), ["https://a.example/three", "https://a.example/missing"]))
