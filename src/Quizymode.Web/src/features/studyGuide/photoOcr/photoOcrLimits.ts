@@ -8,8 +8,34 @@ export const PHOTO_OCR_LIMITS = {
 } as const;
 
 export const PHOTO_OCR_ACCEPT = "image/jpeg,image/png,image/heic,image/heif";
+export const OCR_FILE_ACCEPT = `${PHOTO_OCR_ACCEPT},application/pdf,.pdf`;
+export const PDF_PAGE_LIMIT = 20;
 
-const SUPPORTED_TYPES = new Set(["image/jpeg", "image/png", "image/heic", "image/heif"]);
+export function isPdf(file: File): boolean {
+  return file.type === "application/pdf" || /\.pdf$/i.test(file.name);
+}
+
+export function validateOcrSelection(
+  files: readonly File[],
+  maxFileBytes: number,
+): string | null {
+  const pdfs = files.filter(isPdf);
+  if (pdfs.length && (pdfs.length > 1 || files.length > 1))
+    return "Choose photos or one PDF at a time.";
+  if (pdfs.length) {
+    return pdfs[0].size > maxFileBytes
+      ? `This PDF is ${pdfs[0].size.toLocaleString()} bytes; the limit is ${maxFileBytes.toLocaleString()}.`
+      : null;
+  }
+  return validatePhotoSelection(files);
+}
+
+const SUPPORTED_TYPES = new Set([
+  "image/jpeg",
+  "image/png",
+  "image/heic",
+  "image/heif",
+]);
 
 /** Returns a message for the first problem with the selection, or null when every photo may be recognized. */
 export function validatePhotoSelection(files: readonly File[]): string | null {
@@ -18,7 +44,10 @@ export function validatePhotoSelection(files: readonly File[]): string | null {
     return `Choose up to ${PHOTO_OCR_LIMITS.maxImages} photos at a time. You chose ${files.length}.`;
   }
   for (const file of files) {
-    if (file.type && !SUPPORTED_TYPES.has(file.type)) {
+    if (
+      (!file.type && !/\.(jpe?g|png|heic|heif)$/i.test(file.name)) ||
+      (file.type && !SUPPORTED_TYPES.has(file.type))
+    ) {
       return `${file.name} is not a JPEG or PNG photo. Only JPEG and PNG photos are supported.`;
     }
     if (file.size > PHOTO_OCR_LIMITS.maxImageBytes) {

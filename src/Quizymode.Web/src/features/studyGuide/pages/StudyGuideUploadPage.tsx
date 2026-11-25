@@ -32,7 +32,7 @@ import {
   type StudyGuideInputMode,
 } from "../studyGuideDocumentSchema";
 import { readApiError } from "../studyGuideApiErrors";
-import PhotoOcrPanel from "../components/PhotoOcrPanel";
+const PhotoOcrPanel = React.lazy(() => import("../components/PhotoOcrPanel"));
 
 const UNAVAILABLE_MESSAGE = "AI study guide upload is unavailable right now. Please try again later.";
 
@@ -96,6 +96,12 @@ const StudyGuideUploadPage = () => {
   const [file, setFile] = React.useState<File | null>(null);
   const [isDragging, setIsDragging] = React.useState(false);
   const [text, setText] = React.useState("");
+  const [photoText, setPhotoText] = React.useState("");
+  const [photoTextEdited, setPhotoTextEdited] = React.useState(false);
+  const [ocrBlocked, setOcrBlocked] = React.useState(false);
+  const [lowConfidence, setLowConfidence] = React.useState(false);
+  const ocrBlockedRef = React.useRef(false);
+  const reviewRef = React.useRef<HTMLTextAreaElement>(null);
   const [title, setTitle] = React.useState("");
   const [categoryName, setCategoryName] = React.useState("");
   const [rank1Name, setRank1Name] = React.useState("");
@@ -191,10 +197,11 @@ const StudyGuideUploadPage = () => {
     return <Navigate to="/login" replace />;
   }
 
-  const byteCount = utf8ByteLength(text);
+  const draftText = mode === "photos" ? photoText : text;
+  const byteCount = utf8ByteLength(draftText);
   const textOverLimit = byteCount > limits.maxTextBytes;
   const fileOverLimit = !!file && file.size > limits.maxFileBytes;
-  const submitBlocked = mode === "file" ? fileOverLimit : textOverLimit;
+  const submitBlocked = mode === "file" ? fileOverLimit : textOverLimit || (mode === "photos" && ocrBlocked);
 
   const chooseFile = (candidate: File | null) => {
     setFile(candidate);
@@ -208,7 +215,7 @@ const StudyGuideUploadPage = () => {
   const suggestionText = composeNotesSuggestionText({
     mode: mode === "file" ? "file" : "text",
     title,
-    pastedText: text,
+    pastedText: mode === "photos" ? "" : text,
     fileName: file?.name ?? null,
     fileSample: fileSample && fileSample.file === file ? fileSample.text : "",
   });
@@ -217,7 +224,7 @@ const StudyGuideUploadPage = () => {
 
   const submit = (quick: boolean) => {
     // Both buttons stay focusable while a request runs, so a second click is ignored here rather than disabled.
-    if (inFlightRef.current || isSubmitting) return;
+    if (inFlightRef.current || isSubmitting || (mode === "photos" && ocrBlockedRef.current)) return;
     setFormError(null);
     setTopicBlocked(false);
     if (!isTopicComplete({ category: categoryName, rank1: rank1Name, rank2: rank2Name })) {
@@ -228,7 +235,7 @@ const StudyGuideUploadPage = () => {
     const form = {
       mode: mode === "file" ? ("file" as const) : ("text" as const),
       file: mode === "file" ? file : null,
-      text: mode === "file" ? "" : text,
+      text: mode === "file" ? "" : draftText,
       title,
       category: categoryName,
       navigationKeyword1: rank1Name,
@@ -345,7 +352,7 @@ const StudyGuideUploadPage = () => {
                   }}
                   onKeyDown={handleTabKeyDown}
                   disabled={isSubmitting}
-                  className={`-mb-px border-b-2 px-4 py-2 text-sm font-medium ${
+                  className={`-mb-px min-h-11 min-w-11 border-b-2 px-3 py-2 text-sm font-medium ${
                     mode === tab.id
                       ? "border-indigo-600 text-indigo-ink"
                       : "border-transparent text-gray-500 hover:text-gray-700"
@@ -413,34 +420,53 @@ const StudyGuideUploadPage = () => {
                 className="space-y-4 pt-4"
               >
                 {mode === "photos" && (
-                  <PhotoOcrPanel
-                    disabled={isSubmitting}
-                    onRecognized={(recognized) =>
-                      setText((previous) => (previous.trim() ? `${previous.trimEnd()}
-
-${recognized}` : recognized))
-                    }
-                  />
+                  <React.Suspense fallback={<p role="status">Loading photo reading…</p>}>
+                    <PhotoOcrPanel
+                      disabled={isSubmitting}
+                      maxFileBytes={limits.maxFileBytes}
+                      text={photoText}
+                      hasEditedText={photoTextEdited}
+                      onRecognized={(recognized) => {
+                        setPhotoText(recognized);
+                        setPhotoTextEdited(false);
+                      }}
+                      onBlockedChange={(blocked) => {
+                        ocrBlockedRef.current = blocked;
+                        setOcrBlocked(blocked);
+                      }}
+                      onConfidenceChange={setLowConfidence}
+                      onReviewReady={() => window.requestAnimationFrame(() => reviewRef.current?.focus())}
+                    />
+                  </React.Suspense>
                 )}
                 <label htmlFor="study-guide-upload-text" className="block text-sm font-medium text-gray-700 mb-1">
                   {mode === "photos" ? "Recognized text (review and correct before you submit) *" : "Study guide text *"}
                 </label>
+                {mode === "photos" && lowConfidence && <p id="study-guide-ocr-confidence" className="text-sm text-amber-800">Some words may be wrong. Check the text before you continue.</p>}
                 <textarea
                   id="study-guide-upload-text"
-                  value={text}
-                  onChange={(event) => setText(event.target.value)}
+                  ref={reviewRef}
+                  value={draftText}
+                  onChange={(event) => {
+                    if (mode === "photos") {
+                      setPhotoText(event.target.value);
+                      setPhotoTextEdited(true);
+                    } else {
+                      setText(event.target.value);
+                    }
+                  }}
                   rows={12}
                   className="w-full rounded-md border border-gray-300 px-3 py-2 text-sm text-gray-900"
                   placeholder="Paste your notes, a chapter summary, or a study guide…"
-                  aria-describedby="study-guide-upload-counter"
-                  disabled={isSubmitting}
+                  aria-describedby={lowConfidence && mode === "photos" ? "study-guide-upload-counter study-guide-ocr-confidence" : "study-guide-upload-counter"}
+                  disabled={isSubmitting || (mode === "photos" && ocrBlocked)}
                 />
                 <p
                   id="study-guide-upload-counter"
                   className={`mt-1 text-xs ${textOverLimit ? "text-red-600 font-medium" : "text-gray-500"}`}
                 >
                   {byteCount.toLocaleString()} / {limits.maxTextBytes.toLocaleString()} bytes
-                  {textOverLimit ? " — too long" : ""}
+                  {textOverLimit ? (mode === "photos" ? ` — Text is ${byteCount.toLocaleString()} bytes; the limit is ${limits.maxTextBytes.toLocaleString()}.` : " — too long") : ""}
                 </p>
               </div>
             )}
