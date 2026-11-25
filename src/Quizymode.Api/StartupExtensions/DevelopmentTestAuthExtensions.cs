@@ -10,13 +10,16 @@ namespace Quizymode.Api.StartupExtensions;
 /// <summary>
 /// Development-only test authentication (AC 7.8). Lets local runs and ephemeral E2E environments call
 /// signed-in endpoints without a Cognito login. The scheme is registered only when the host environment is
-/// Development; in any other environment it does not exist, so a token of this form is just an invalid JWT.
+/// Development AND configuration <c>Authentication:DevTest:Enabled</c> is true (env var
+/// <c>Authentication__DevTest__Enabled=true</c>, #808). Otherwise it does not exist, so a token of this form is just
+/// an invalid JWT. Non-Development environments never register it, even with the flag set.
 /// Header form: <c>Authorization: DevTest &lt;userId&gt;</c>, or <c>Authorization: DevTest &lt;userId&gt; admin</c>
 /// to also carry the admin group claim.
 /// </summary>
 internal static class DevelopmentTestAuthExtensions
 {
     internal const string SchemeName = "DevTest";
+    internal const string EnabledConfigKey = "Authentication:DevTest:Enabled";
 
     private const string HeaderPrefix = SchemeName + " ";
     private const string AdminGroup = "admin";
@@ -24,7 +27,10 @@ internal static class DevelopmentTestAuthExtensions
 
     public static WebApplicationBuilder AddDevelopmentTestAuthentication(this WebApplicationBuilder builder)
     {
-        if (!builder.Environment.IsDevelopment())
+        // #808: Development alone is not enough; the flag must be an explicit "true". Unset, empty or any other
+        // value leaves the scheme unregistered.
+        bool optedIn = bool.TryParse(builder.Configuration[EnabledConfigKey], out bool enabled) && enabled;
+        if (!builder.Environment.IsDevelopment() || !optedIn)
         {
             return builder;
         }

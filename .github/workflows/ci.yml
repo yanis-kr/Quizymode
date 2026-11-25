@@ -639,6 +639,8 @@ jobs:
       - name: Start API in Development (DevTest scheme on)
         env:
           ASPNETCORE_ENVIRONMENT: Development
+          # AC 7.8.5: the DevTest scheme needs this explicit opt-in on top of Development.
+          Authentication__DevTest__Enabled: "true"
           ASPNETCORE_URLS: https://localhost:8082
           APP_Authentication__Cognito__Authority: https://cognito-idp.us-east-1.amazonaws.com/us-east-1_CIDUMMY
           APP_Authentication__Cognito__ClientId: ci-dummy
