@@ -11,6 +11,7 @@ internal static partial class StartupExtensions
         builder.Services.AddOpenApi(options =>
         {
             options.AddDocumentTransformer<BearerAuthOpenApiTransformer>();
+            options.AddOperationTransformer<BearerSecurityOperationTransformer>();
             // Use full type name for schema IDs so "Request"/"Response" from different endpoints don't collide.
             // For generic types, Type.FullName embeds assembly-qualified names of type args (including Version=x.y.z),
             // which changes every release. Build a clean, version-stable name recursively instead.
