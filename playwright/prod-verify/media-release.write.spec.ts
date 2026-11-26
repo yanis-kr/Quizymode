@@ -20,13 +20,14 @@ import {
   createPrivateItem,
   identityFromPage,
   newChecklistData,
+  recordUploadedAssets,
   shareThroughLink,
   uploadPicture,
   withdrawPicture,
 } from "../mediaReleaseFlow";
 import { ROLE_STATE_FILES, asUser, expect } from "./roles";
 
-asUser("AC 3.29.1, AC 3.29.2, AC 3.29.3, AC 3.29.4, AC 3.29.5, AC 3.29.6, AC 3.29.7, AC 3.29.8 an uploaded picture goes from upload to review, approval, shared link, withdrawal and deletion on production", async ({ page, browser }, testInfo) => {
+asUser("AC 3.29.1, AC 3.29.2, AC 3.29.3, AC 3.29.4, AC 3.29.5, AC 3.29.6, AC 3.29.7, AC 3.29.8, AC 3.29.17 an uploaded picture goes from upload to review, approval, shared link, withdrawal and deletion on production", async ({ page, browser }, testInfo) => {
   asUser.setTimeout(300_000);
   asUser.skip(!fs.existsSync(ROLE_STATE_FILES.admin), "BLOCKED: no saved admin sign-in; set the admin test account variables");
 
@@ -68,7 +69,15 @@ asUser("AC 3.29.1, AC 3.29.2, AC 3.29.3, AC 3.29.4, AC 3.29.5, AC 3.29.6, AC 3.2
     await withdrawPicture(owner, admin, data);
     await checkOwnerScreenAfterWithdrawal(page, testInfo, data);
   } finally {
-    await cleanup(owner, data);
-    await adminContext.close();
+    // Each cleanup step runs even when the one before it throws.
+    try {
+      await cleanup(owner, data);
+    } finally {
+      try {
+        await recordUploadedAssets(testInfo, data);
+      } finally {
+        await adminContext.close();
+      }
+    }
   }
 });
