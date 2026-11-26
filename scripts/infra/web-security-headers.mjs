@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 // Builds the CloudFront response headers policy for the production web app (#811, AC 4.6.21 to 4.6.23).
 //
-//   node scripts/infra/web-security-headers.mjs [--mode report-only|enforce] [--out <file>]
+//   node scripts/infra/web-security-headers.mjs [--mode report-only|enforce] [--function] [--out <file>]
 //
 // Reads src/Quizymode.Web/index.html (inline script hashes) and .env.production (API and Cognito origins), prints
 // the policy JSON for `aws cloudfront create-response-headers-policy|update-response-headers-policy`. See
@@ -91,16 +91,33 @@ export function buildPolicy({ html, env, mode = "report-only" }) {
   };
 }
 
+/** Source of a CloudFront viewer-response Function (cloudfront-js-2.0) that adds Permissions-Policy and the report-only CSP (#862). */
+export function buildHeadersFunction({ html, env }) {
+  const csp = buildCsp({ html, env });
+  return [
+    "function handler(event) {",
+    "  var response = event.response;",
+    "  var headers = response.headers;",
+    `  headers["permissions-policy"] = { value: ${JSON.stringify(PERMISSIONS_POLICY)} };`,
+    `  headers["content-security-policy-report-only"] = { value: ${JSON.stringify(csp)} };`,
+    "  return response;",
+    "}",
+    "",
+  ].join("\n");
+}
+
 function main(argv) {
   const get = (flag) => { const i = argv.indexOf(flag); return i >= 0 ? argv[i + 1] : undefined; };
   const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..", "..");
   const web = path.join(root, "src", "Quizymode.Web");
   const html = fs.readFileSync(path.join(web, "index.html"), "utf8");
   const env = parseEnv(fs.readFileSync(path.join(web, ".env.production"), "utf8"));
-  const json = JSON.stringify(buildPolicy({ html, env, mode: get("--mode") ?? "report-only" }), null, 2);
   const out = get("--out");
-  if (out) fs.writeFileSync(out, json + "\n");
-  else process.stdout.write(json + "\n");
+  const text = argv.includes("--function")
+    ? buildHeadersFunction({ html, env })
+    : JSON.stringify(buildPolicy({ html, env, mode: get("--mode") ?? "report-only" }), null, 2) + "\n";
+  if (out) fs.writeFileSync(out, text);
+  else process.stdout.write(text);
 }
 
 if (process.argv[1] && path.resolve(process.argv[1]) === fileURLToPath(import.meta.url)) main(process.argv.slice(2));
