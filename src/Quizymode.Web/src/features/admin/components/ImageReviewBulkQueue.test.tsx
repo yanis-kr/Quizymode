@@ -210,4 +210,71 @@ describe("ImageReviewBulkQueue", () => {
     await waitFor(() => expect(mockAdminApi.fetchItemImageBlob).toHaveBeenCalledTimes(2));
     await waitFor(() => expect(screen.queryByText("Picture could not be loaded")).not.toBeInTheDocument());
   });
+
+  it("enlarges a picture in a dialog that Esc, the close button and the backdrop dismiss, returning focus (AC 3.26.3)", async () => {
+    const user = userEvent.setup();
+    mockAdminApi.getImageReviewQueue.mockResolvedValue(queue([row("a")]));
+    renderQueue();
+    const enlarge = await screen.findByRole("button", { name: "Enlarge question picture" });
+
+    await user.click(enlarge);
+    const dialog = screen.getByRole("dialog", { name: "Question picture" });
+    expect(within(dialog).getByRole("button", { name: "Close picture" })).toHaveFocus();
+    await user.keyboard("{Escape}");
+    expect(screen.queryByRole("dialog")).not.toBeInTheDocument();
+    expect(enlarge).toHaveFocus();
+
+    await user.click(enlarge);
+    await user.click(screen.getByRole("button", { name: "Close picture" }));
+    expect(screen.queryByRole("dialog")).not.toBeInTheDocument();
+
+    await user.click(enlarge);
+    await user.click(screen.getByRole("dialog").parentElement!);
+    expect(screen.queryByRole("dialog")).not.toBeInTheDocument();
+  });
+
+  it("revokes the picture's object URL when the tile goes away (AC 3.26.3)", async () => {
+    mockAdminApi.getImageReviewQueue.mockResolvedValue(queue([row("a")]));
+    const { unmount } = renderQueue();
+    await screen.findByRole("button", { name: "Enlarge question picture" });
+    unmount();
+    expect(URL.revokeObjectURL).toHaveBeenCalledWith("blob:test-url");
+  });
+
+  it("disables both actions while saving and labels the saving one (AC 3.26.3)", async () => {
+    const user = userEvent.setup();
+    mockAdminApi.getImageReviewQueue.mockResolvedValue(queue([row("a")]));
+    mockAdminApi.setImageReviewBulk.mockReturnValue(new Promise(() => {}));
+    renderQueue();
+    await screen.findByText("1 picture submission waiting for review");
+
+    await user.click(screen.getByRole("checkbox", { name: "Select picture for: Question a" }));
+    await user.type(screen.getByLabelText(/Reason for rejection/), "Blurry");
+    await user.click(screen.getByRole("button", { name: "Approve selected (1)" }));
+
+    expect(await screen.findByRole("button", { name: "Approving..." })).toBeDisabled();
+    expect(screen.getByRole("button", { name: "Reject selected (1)" })).toBeDisabled();
+  });
+
+  it("keeps the selection and says so when the decisions cannot be saved (AC 3.26.4)", async () => {
+    const user = userEvent.setup();
+    mockAdminApi.getImageReviewQueue.mockResolvedValue(queue([row("a")]));
+    mockAdminApi.setImageReviewBulk.mockRejectedValue(new Error("down"));
+    renderQueue();
+    await screen.findByText("1 picture submission waiting for review");
+
+    await user.click(screen.getByRole("checkbox", { name: "Select picture for: Question a" }));
+    await user.click(screen.getByRole("button", { name: "Approve selected (1)" }));
+
+    expect(await screen.findByText("Could not save the decisions. Your selection is kept; try again.")).toBeInTheDocument();
+    expect(screen.getByRole("checkbox", { name: "Select picture for: Question a" })).toBeChecked();
+  });
+
+  it("retries loading the queue from the error state (AC 3.26.3)", async () => {
+    const user = userEvent.setup();
+    mockAdminApi.getImageReviewQueue.mockRejectedValueOnce(new Error("down")).mockResolvedValue(queue([], 0));
+    renderQueue();
+    await user.click(await screen.findByRole("button", { name: "Try again" }));
+    expect(await screen.findByText("No pictures waiting for review")).toBeInTheDocument();
+  });
 });

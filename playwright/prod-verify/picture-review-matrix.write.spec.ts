@@ -59,8 +59,15 @@ asUser("AC 3.29.11, AC 3.29.12, AC 3.29.13, AC 3.29.14, AC 3.29.15, AC 3.29.16 a
     await editQuestion(owner, data);
     await removePictureInEditor(page, testInfo, owner, data);
   } finally {
-    await cleanup(owner, data);
-    await recordUploadedAssets(testInfo, data);
-    await adminContext.close();
+    // Each cleanup step runs even when the one before it throws.
+    try {
+      await cleanup(owner, data);
+    } finally {
+      try {
+        await recordUploadedAssets(testInfo, data);
+      } finally {
+        await adminContext.close();
+      }
+    }
   }
 });

@@ -1,6 +1,8 @@
 using System.Net;
+using System.Net.Http.Json;
 using System.Text.Json;
 using FluentAssertions;
+using FluentValidation;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging.Abstractions;
@@ -160,8 +162,15 @@ public sealed class PictureEligibilityPostgresHttpTests(PostgresContainerFixture
     {
         RequireDatabase();
         DateTime now = DateTime.UtcNow;
-        string userId = Guid.NewGuid().ToString();
-        string otherUser = Guid.NewGuid().ToString();
+        await using JwtHttpTestHost host = await JwtHttpTestHost.StartAsync(
+            () => fixture.CreateDbContext(),
+            services => services.AddScoped<IValidator<CheckStudyGuideSimilarity.Request>, CheckStudyGuideSimilarity.Validator>(),
+            app => new CheckStudyGuideSimilarity.Endpoint().MapEndpoint(app),
+            useUserUpsertMiddleware: true);
+        (string token, Guid callerId) = await SeedUserAsync(host);
+        (string otherToken, Guid otherId) = await SeedUserAsync(host);
+        string userId = callerId.ToString();
+        string otherUser = otherId.ToString();
         string categoryName = $"cat-{Guid.NewGuid():N}";
         string question = $"Which flag shows a red maple leaf on white {Guid.NewGuid():N}?";
         Guid documentId = Guid.NewGuid();
@@ -213,18 +222,29 @@ public sealed class PictureEligibilityPostgresHttpTests(PostgresContainerFixture
             await db.SaveChangesAsync();
         }
 
-        async Task<CheckStudyGuideSimilarity.Response> CheckAsync()
+        async Task<(HttpStatusCode Status, JsonElement Body)> CheckAsync(string callerToken)
         {
-            await using ApplicationDbContext db = fixture.CreateDbContext();
-            CheckStudyGuideSimilarity.Response? response = await CheckStudyGuideSimilarity.HandleAsync(documentId, [candidateId], db, userId, CancellationToken.None);
-            response.Should().NotBeNull();
-            return response!;
+            using HttpRequestMessage request = JwtHttpTestHost.Request(
+                HttpMethod.Post,
+                $"/study-guides/documents/{documentId}/similar-check",
+                callerToken,
+                JsonContent.Create(new { candidateIds = new[] { candidateId } }));
+            using HttpResponseMessage response = await host.Client.SendAsync(request);
+            string body = await response.Content.ReadAsStringAsync();
+            return (response.StatusCode, body.Length == 0 ? default : JsonDocument.Parse(body).RootElement.Clone());
         }
 
-        (await CheckAsync()).Flags.Should().BeEmpty("another user's unapproved picture item is not visible to the caller");
+        static List<JsonElement> Flags(JsonElement body) => body.GetProperty("flags").EnumerateArray().ToList();
+
+        (HttpStatusCode status, JsonElement body) = await CheckAsync(token);
+        status.Should().Be(HttpStatusCode.OK);
+        Flags(body).Should().BeEmpty("another user's unapproved picture item is not visible to the caller");
+        (await CheckAsync(otherToken)).Status.Should().Be(HttpStatusCode.NotFound, "the document belongs to the caller only");
 
         await ApproveAsync(hidden.Id);
 
-        (await CheckAsync()).Flags.Should().ContainSingle().Which.SimilarTo.ItemId.Should().Be(hidden.Id.ToString());
+        (status, body) = await CheckAsync(token);
+        status.Should().Be(HttpStatusCode.OK);
+        Flags(body).Should().ContainSingle().Which.GetProperty("similarTo").GetProperty("itemId").GetString().Should().Be(hidden.Id.ToString());
     }
 }

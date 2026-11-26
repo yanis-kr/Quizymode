@@ -301,7 +301,11 @@ public sealed class PictureEligibilityRoutesHttpTests : ItemTestFixture, IAsyncL
             (await StatusAsync(HttpMethod.Get, $"/ratings/{_pending.Id}", token)).Should().Be(HttpStatusCode.OK);
         }
 
+        string other = _otherId.ToString();
         (await DbContext.Comments.CountAsync(c => c.ItemId == _pending.Id)).Should().Be(2, "only the creator and the admin wrote");
+        (await DbContext.Ratings.CountAsync(r => r.ItemId == _pending.Id)).Should().Be(2, "only the creator and the admin rated");
+        (await DbContext.Comments.AnyAsync(c => c.CreatedBy == other)).Should().BeFalse("the refused POST /comments wrote nothing");
+        (await DbContext.Ratings.AnyAsync(r => r.CreatedBy == other)).Should().BeFalse("the refused POST /ratings wrote nothing");
     }
 
     private int CountOf(JsonElement body, Collection collection) => body.GetProperty("items").EnumerateArray()

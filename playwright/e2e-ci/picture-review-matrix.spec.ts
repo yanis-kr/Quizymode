@@ -39,7 +39,11 @@ test("AC 3.29.11, AC 3.29.12, AC 3.29.13, AC 3.29.14, AC 3.29.15, AC 3.29.16 @e2
     await editQuestion(owner, data);
     await removePictureInEditor(page, testInfo, owner, data);
   } finally {
-    await cleanup(owner, data);
-    await recordUploadedAssets(testInfo, data);
+    // Recording the upload ids runs even when cleanup throws.
+    try {
+      await cleanup(owner, data);
+    } finally {
+      await recordUploadedAssets(testInfo, data);
+    }
   }
 });
