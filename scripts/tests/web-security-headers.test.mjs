@@ -82,3 +82,12 @@ test("AC 4.6.23: the SPA rewrite Function maps extensionless paths to /index.htm
   assert.equal(run("/ocr/lang/4.0.0/eng.traineddata.gz"), "/ocr/lang/4.0.0/eng.traineddata.gz");
   assert.equal(run("/index.html"), "/index.html");
 });
+
+// AC 4.6.23: enforce mode makes the headers Function send the enforcing CSP, never both headers; unknown modes are refused.
+test("AC 4.6.23: the headers Function enforces the CSP in enforce mode", () => {
+  const code = buildHeadersFunction({ html, env, mode: "enforce" });
+  assert.match(code, /headers\["content-security-policy"\] = \{ value: "default-src 'self'/);
+  assert.ok(!code.includes("content-security-policy-report-only"));
+  assert.match(code, /headers\["permissions-policy"\]/);
+  assert.throws(() => buildHeadersFunction({ html, env, mode: "maybe" }), /mode must be/);
+});
