@@ -456,13 +456,13 @@
       "Azure Table Storage",
       "Azure Files"
     ],
-    "explanation": "For network isolation, Foundry recommends bring-your-own resources for Storage, Azure AI Search, and Azure Cosmos DB.",
+    "explanation": "For a Standard Agent setup with end-to-end virtual network isolation, you must bring your own Azure Storage, Foundry IQ (Azure AI Search), and Azure Cosmos DB resources.",
     "keywords": [
       "ai-103",
       "agents",
       "byo-resources"
     ],
-    "source": "https://devblogs.microsoft.com/foundry/whats-new-in-microsoft-foundry-may-2026/"
+    "source": "https://learn.microsoft.com/en-us/azure/foundry/agents/how-to/virtual-networks"
   },
   {
     "itemId": "d3cdce6e-6b69-4056-a7c6-099126eae676",

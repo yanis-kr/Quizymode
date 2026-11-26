@@ -354,7 +354,7 @@
       "gemma",
       "open-models"
     ],
-    "source": "https://ai.google.dev/gemma/docs"
+    "source": "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/open-models/use-gemma"
   },
   {
     "itemId": "103a6912-3c1e-430f-bba6-859a620d7afc",
@@ -363,19 +363,19 @@
     "navigationKeyword1": "gcp",
     "navigationKeyword2": "genai-leader",
     "question": "A company wants an open model to check gen AI inputs and outputs against its safety policies. Which Gemma variant fits?",
-    "correctAnswer": "ShieldGemma 2",
+    "correctAnswer": "ShieldGemma",
     "incorrectAnswers": [
-      "EmbeddingGemma 2",
+      "EmbeddingGemma",
       "Gemma 4",
       "MedGemma"
     ],
-    "explanation": "ShieldGemma 2 evaluates the safety of generative AI inputs and outputs against defined policies.",
+    "explanation": "ShieldGemma is a set of instruction-tuned open models that evaluate the safety of prompt inputs and output responses against defined safety policies.",
     "keywords": [
       "gcp-genai-leader",
       "gemma",
       "safety"
     ],
-    "source": "https://ai.google.dev/gemma/docs"
+    "source": "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/open-models/use-gemma"
   },
   {
     "itemId": "8a3060a5-8ace-4871-af94-8bd2c0b490d7",
