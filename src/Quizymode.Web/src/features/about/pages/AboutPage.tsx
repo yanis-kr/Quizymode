@@ -1,5 +1,6 @@
 import { SEO } from "@/components/SEO";
 import { AboutHero } from "../AboutHero";
+import { AboutHookQuestion } from "../AboutHookQuestion";
 import { AboutLearnWays } from "../AboutLearnWays";
 import { AboutNotesToQuiz } from "../AboutNotesToQuiz";
 import { AboutHabit } from "../AboutHabit";
@@ -8,12 +9,13 @@ import { AboutBuilt } from "../AboutBuilt";
 import { AboutStory } from "../AboutStory";
 import { ABOUT_CANONICAL, ABOUT_SEO_DESCRIPTION, ABOUT_SEO_TITLE } from "../aboutSeo";
 
-/** `/about` (#883): text-first sections in page order; a lazy route chunk (AC 8.2.1). */
+/** `/about` (#883, #884): text-first sections in page order; a lazy route chunk (AC 8.2.1). */
 const AboutPage = () => (
   <>
     <SEO title={ABOUT_SEO_TITLE} description={ABOUT_SEO_DESCRIPTION} canonical={ABOUT_CANONICAL} />
     <div className="mx-auto max-w-2xl px-2 py-4 sm:px-4">
       <AboutHero />
+      <AboutHookQuestion />
       <AboutLearnWays />
       <AboutNotesToQuiz />
       <AboutHabit />

@@ -35,6 +35,9 @@ export interface StarterPool {
   items: StarterPoolEntry[];
 }
 
+/** React Query key for the pool, shared by `/start` and the About hook (#884) so both use one cached copy. */
+export const STARTER_POOL_QUERY_KEY = ["starter-pool"] as const;
+
 export const starterApi = {
   /** Throws when the request fails or the body does not match the contract. */
   getPool: async (): Promise<StarterPool> => {

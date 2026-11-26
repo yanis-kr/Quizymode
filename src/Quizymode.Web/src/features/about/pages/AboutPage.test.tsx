@@ -1,5 +1,6 @@
 /**
- * About page copy, structure and links (#883). The AC ids in the test names are the ids in docs/AC.md.
+ * About page copy, structure and links (#883, #884). The AC ids in the test names are the ids in docs/AC.md.
+ * The starter pool request fails here, so the hook shows its static fallback question.
  */
 import fs from "node:fs";
 import path from "node:path";
@@ -13,6 +14,10 @@ import { ABOUT_CANONICAL, ABOUT_SEO_DESCRIPTION, ABOUT_SEO_TITLE } from "../abou
 import { GITHUB_REPO_URL, LINKEDIN_URL, MEDIUM_STORY_URL } from "@/utils/projectLinks";
 import { USER_GUIDE_URL } from "@/utils/userGuideLink";
 
+vi.mock("@/api/starter", async (importOriginal) => ({
+  ...(await importOriginal<typeof import("@/api/starter")>()),
+  starterApi: { getPool: vi.fn(() => Promise.reject(new Error("offline"))) },
+}));
 vi.mock("@/contexts/AuthContext", () => ({
   useAuth: () => ({ isAuthenticated: false, isLoading: false, logout: vi.fn(), username: null, email: null, isAdmin: false }),
 }));
@@ -22,6 +27,7 @@ const SOUNDS_FAKE_ID = "3c85dfe2-4365-406d-8056-d30bc451dd20";
 const REPO_ROOT = path.resolve(process.cwd(), "..", "..");
 
 const SECTION_HEADINGS = [
+  "Here's one. Nobody is keeping score.",
   "Same questions, five moods.",
   "Hand over your notes. Get a quiz back.",
   "Small habits, no guilt trips.",
@@ -93,14 +99,14 @@ describe("AboutPage (#883)", () => {
     expect(h2s).toEqual(SECTION_HEADINGS);
     const h3s = Array.from(container.querySelectorAll("h3"));
     expect(h3s).toHaveLength(3);
-    const built = screen.getByRole("region", { name: SECTION_HEADINGS[4] });
+    const built = screen.getByRole("region", { name: SECTION_HEADINGS[5] });
     for (const h3 of h3s) expect(built).toContainElement(h3);
     expect(container.querySelectorAll("h4, h5, h6")).toHaveLength(0);
   });
 
   it("AC 3.0.40 the notes section states sign-in, limits, on-device reading and review, with no overclaim", () => {
     renderAbout();
-    const section = screen.getByRole("region", { name: SECTION_HEADINGS[1] });
+    const section = screen.getByRole("region", { name: SECTION_HEADINGS[2] });
     const text = section.textContent ?? "";
     expect(text).toContain("Sign-in required.");
     expect(text).toContain("Daily and monthly limits apply.");
@@ -115,7 +121,7 @@ describe("AboutPage (#883)", () => {
 
   it("AC 3.0.41 names the five games and links the mode cards and CTAs to public routes", () => {
     renderAbout();
-    const learn = screen.getByRole("region", { name: SECTION_HEADINGS[0] });
+    const learn = screen.getByRole("region", { name: SECTION_HEADINGS[1] });
     for (const game of ["Match Race", "Swipe Blitz", "Survival", "Bucket Drop", "Sort It"]) {
       expect(learn).toHaveTextContent(game);
     }
@@ -135,9 +141,11 @@ describe("AboutPage (#883)", () => {
     vi.stubEnv("VITE_DONATION_URL", "https://ko-fi.com/example");
     const { unmount } = render(
       <HelmetProvider>
-        <MemoryRouter>
-          <AboutPage />
-        </MemoryRouter>
+        <QueryClientProvider client={new QueryClient()}>
+          <MemoryRouter>
+            <AboutPage />
+          </MemoryRouter>
+        </QueryClientProvider>
       </HelmetProvider>
     );
     const link = screen.getByRole("link", { name: "Support Quizymode (opens ko-fi.com in a new tab)" });
@@ -189,8 +197,10 @@ describe("AboutPage (#883)", () => {
     expect(linkByName("Send feedback")).toHaveAttribute("href", "/feedback");
   });
 
-  it("AC 3.0.46 the copy has no owner markers, banned words or invented numbers", () => {
+  it("AC 3.0.46 the copy has no owner markers, banned words or invented numbers", async () => {
     const container = renderAbout();
+    // The static fallback question is part of the page copy (AC 3.0.55).
+    await screen.findByTestId("about-hook-question");
     const text = staticCopy(container);
     expect(text).not.toContain("[OWNER");
     for (const word of BANNED_WORDS) expect(text.toLowerCase()).not.toContain(word);
@@ -201,7 +211,7 @@ describe("AboutPage (#883)", () => {
 
   it("AC 3.0.47 How it's built is text only, with three blocks, five guard rails, the stack line and the GitHub link", () => {
     renderAbout();
-    const built = screen.getByRole("region", { name: SECTION_HEADINGS[4] });
+    const built = screen.getByRole("region", { name: SECTION_HEADINGS[5] });
     const blocks = within(built).getAllByRole("heading", { level: 3 }).map((h) => h.textContent);
     expect(blocks).toEqual([
       "The spec is the boss.",
