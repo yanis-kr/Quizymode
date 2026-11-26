@@ -295,6 +295,10 @@ jobs:
     needs: changes
     if: needs.changes.outputs.api == 'true'
     runs-on: ubuntu-latest
+    env:
+      # The Trivy image scan is report-only for its first rollout. Set to "true" after reading the first report so
+      # unignored fixed HIGH/CRITICAL findings fail this job (AC 7.11.33; docs/infra/GITHUB_ACTIONS_DEPLOY.md).
+      TRIVY_ENFORCE: "false"
     permissions:
       contents: read
       issues: write
@@ -482,6 +486,99 @@ jobs:
         env:
           IMAGE: ${{ steps.meta.outputs.image }}:${{ github.sha }}
         run: docker push "$IMAGE"
+
+      # What the scan below looks at: the registry digest of the pushed image on main, or the local image ID on a
+      # pull request. A digest names the exact bytes that Deploy later runs, so the scan cannot drift to a
+      # different build of the same tag (AC 7.11.33).
+      - name: Resolve the image to scan
+        id: scan_target
+        env:
+          IMAGE: ${{ steps.meta.outputs.image }}:${{ github.event_name == 'push' && github.sha || format('ci-{0}', github.run_number) }}
+          REPOSITORY: ${{ steps.meta.outputs.image }}
+          PUSHED: ${{ github.event_name == 'push' && github.ref == 'refs/heads/main' }}
+        run: |
+          IMAGE_ID="$(docker image inspect --format '{{.Id}}' "$IMAGE")"
+          if [ "$PUSHED" = "true" ]; then
+            DIGEST_REF="$(docker image inspect --format '{{range .RepoDigests}}{{println .}}{{end}}' "$IMAGE" | grep -m1 "^${REPOSITORY}@sha256:")" || true
+            if [ -z "$DIGEST_REF" ]; then
+              echo "::error::The pushed API image has no registry digest on the runner; it cannot be scanned by digest."
+              exit 1
+            fi
+            echo "ref=${DIGEST_REF}" >> "${GITHUB_OUTPUT}"
+            echo "kind=Registry digest" >> "${GITHUB_OUTPUT}"
+            echo "id=${DIGEST_REF#*@}" >> "${GITHUB_OUTPUT}"
+          else
+            echo "ref=${IMAGE}" >> "${GITHUB_OUTPUT}"
+            echo "kind=Local image ID (pull request build, not pushed)" >> "${GITHUB_OUTPUT}"
+            echo "id=${IMAGE_ID}" >> "${GITHUB_OUTPUT}"
+          fi
+
+      # Vulnerabilities (OS packages and application dependencies) and image configuration, fixed HIGH and CRITICAL
+      # findings only. Report-only until TRIVY_ENFORCE is "true"; runs after the push so report-only mode never
+      # blocks the registry (AC 7.11.33). Approved exceptions live in .trivyignore.
+      - name: Scan the API image with Trivy
+        id: trivy_scan
+        continue-on-error: ${{ env.TRIVY_ENFORCE != 'true' }}
+        uses: aquasecurity/trivy-action@ed142fd0673e97e23eac54620cfb913e5ce36c25 # v0.36.0
+        with:
+          image-ref: ${{ steps.scan_target.outputs.ref }}
+          version: v0.70.0
+          scanners: vuln,misconfig
+          vuln-type: os,library
+          ignore-unfixed: true
+          severity: HIGH,CRITICAL
+          trivyignores: .trivyignore
+          format: table
+          output: trivy-report.txt
+          exit-code: ${{ env.TRIVY_ENFORCE == 'true' && '1' || '0' }}
+          hide-progress: true
+
+      # Evidence only: the image reference, scanner version, vulnerability database timestamps and the report.
+      # No registry credentials or scanner configuration are printed.
+      - name: Record the scan in the job summary
+        if: always() && steps.scan_target.outcome == 'success'
+        env:
+          SCAN_KIND: ${{ steps.scan_target.outputs.kind }}
+          SCAN_ID: ${{ steps.scan_target.outputs.id }}
+          SCAN_OUTCOME: ${{ steps.trivy_scan.outcome }}
+          ENFORCE: ${{ env.TRIVY_ENFORCE }}
+        run: |
+          TRIVY_VERSION_JSON="$(trivy version --format json 2>/dev/null || echo '{}')"
+          SCANNER_VERSION="$(echo "$TRIVY_VERSION_JSON" | jq -r '.Version // "unknown"')"
+          DB_UPDATED_AT="$(echo "$TRIVY_VERSION_JSON" | jq -r '.VulnerabilityDB.UpdatedAt // "unknown"')"
+          DB_DOWNLOADED_AT="$(echo "$TRIVY_VERSION_JSON" | jq -r '.VulnerabilityDB.DownloadedAt // "unknown"')"
+          {
+            echo "### API image scan (Trivy)"
+            echo
+            echo "| Item | Value |"
+            echo "|---|---|"
+            echo "| ${SCAN_KIND} | \`${SCAN_ID}\` |"
+            echo "| Trivy version | ${SCANNER_VERSION} |"
+            echo "| Vulnerability DB updated at | ${DB_UPDATED_AT} |"
+            echo "| Vulnerability DB downloaded at | ${DB_DOWNLOADED_AT} |"
+            echo "| Scope | OS packages, application dependencies, image configuration; fixed HIGH and CRITICAL |"
+            echo "| Mode | $([ "$ENFORCE" = "true" ] && echo 'enforced (findings fail the job)' || echo 'report-only (TRIVY_ENFORCE is not true)') |"
+            echo "| Scan step outcome | ${SCAN_OUTCOME} |"
+            echo
+            if [ -s trivy-report.txt ]; then
+              echo "<details><summary>Findings</summary>"
+              echo
+              printf '%s\n' '```'
+              head -n 300 trivy-report.txt
+              printf '%s\n' '```'
+              echo "</details>"
+            else
+              echo "No unignored fixed HIGH or CRITICAL findings were reported."
+            fi
+          } >> "${GITHUB_STEP_SUMMARY}"
+
+      - name: Upload the Trivy report
+        if: always() && hashFiles('trivy-report.txt') != ''
+        uses: actions/upload-artifact@v7
+        with:
+          name: api-image-trivy-report
+          path: trivy-report.txt
+          retention-days: 14
 
   # Required check. Passes only when every build and test job passed (a skipped job would otherwise count as
   # green), then posts the coverage summary and, on main, moves :latest to the image api-image pushed.

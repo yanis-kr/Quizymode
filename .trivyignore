@@ -1,0 +1,13 @@
+# Approved exceptions for the Trivy scan of the release API image (AC 7.11.33, #817).
+# Read by the "Scan the API image with Trivy" step in .github/workflows/ci.yml.
+#
+# Every exception is two parts, in this order:
+#   1. one comment line that gives the reason, the person who approved it and the review date
+#   2. one line with the finding ID and its expiry:  <CVE-or-misconfig-ID> exp:YYYY-MM-DD
+# Trivy stops ignoring the finding after the expiry date, so the exception comes back for review.
+#
+# Example (keep it commented out):
+#   # Not reachable: the vulnerable parser is never called by the API. Approved by <owner> 2026-12-01.
+#   CVE-2099-00000 exp:2027-03-01
+#
+# No exceptions are approved yet.
