@@ -4,7 +4,7 @@ import assert from "node:assert/strict";
 import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
-import { buildCsp, buildPolicy, inlineScriptHashes, parseEnv } from "../infra/web-security-headers.mjs";
+import { buildCsp, buildHeadersFunction, buildPolicy, inlineScriptHashes, parseEnv } from "../infra/web-security-headers.mjs";
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..", "..");
 const html = fs.readFileSync(path.join(root, "src", "Quizymode.Web", "index.html"), "utf8");
@@ -59,4 +59,26 @@ test("AC 4.6.23: nosniff, DENY, referrer policy, HSTS and a camera-preserving Pe
 
 test("a missing API origin fails loudly instead of building a policy that blocks the API", () => {
   assert.throws(() => buildCsp({ html, env: { ...env, VITE_API_URL: "" } }), /VITE_API_URL/);
+});
+
+// AC 4.6.23: the viewer-response Function carries the Permissions-Policy and the report-only CSP, and never an enforcing CSP.
+test("AC 4.6.23: the headers Function adds Permissions-Policy and a report-only CSP", () => {
+  const code = buildHeadersFunction({ html, env });
+  assert.match(code, /headers\["permissions-policy"\] = \{ value: "camera=\(self\)/);
+  assert.match(code, /headers\["content-security-policy-report-only"\]/);
+  assert.ok(!/headers\["content-security-policy"\]/.test(code));
+  assert.ok(code.includes(buildCsp({ html, env })));
+  assert.doesNotThrow(() => new Function("event", `${code}; return handler(event);`)({ response: { headers: {} } }));
+});
+
+// AC 4.6.23: the viewer-request Function serves extensionless paths as /index.html and leaves file paths alone.
+test("AC 4.6.23: the SPA rewrite Function maps extensionless paths to /index.html only", () => {
+  const code = fs.readFileSync(path.join(root, "scripts", "infra", "cloudfront", "spa-rewrite.js"), "utf8");
+  const run = (uri) => new Function("event", `${code}; return handler(event);`)({ request: { uri } }).uri;
+  assert.equal(run("/"), "/index.html");
+  assert.equal(run("/create/notes"), "/index.html");
+  assert.equal(run("/categories"), "/index.html");
+  assert.equal(run("/assets/app-abc123.js"), "/assets/app-abc123.js");
+  assert.equal(run("/ocr/lang/4.0.0/eng.traineddata.gz"), "/ocr/lang/4.0.0/eng.traineddata.gz");
+  assert.equal(run("/index.html"), "/index.html");
 });
