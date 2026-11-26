@@ -40,7 +40,8 @@ async function stubApi(page: Page): Promise<void> {
 async function openPhotosTab(page: Page): Promise<void> {
   await stubApi(page);
   await page.goto("/create/notes");
-  await page.getByRole("tab", { name: "Photos or scan" }).click();
+  // The first WebKit load compiles the page on the dev server, so the tab can take longer than the 3 s action default.
+  await page.getByRole("tab", { name: "Photos or scan" }).click({ timeout: 45_000 });
   await expect(page.locator("#study-guide-photos")).toBeAttached();
 }
 
