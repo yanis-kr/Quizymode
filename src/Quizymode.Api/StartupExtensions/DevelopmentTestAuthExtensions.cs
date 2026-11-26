@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Options;
+using Quizymode.Api.Services;
 
 namespace Quizymode.Api.StartupExtensions;
 
@@ -22,7 +23,8 @@ internal static class DevelopmentTestAuthExtensions
     internal const string EnabledConfigKey = "Authentication:DevTest:Enabled";
 
     private const string HeaderPrefix = SchemeName + " ";
-    private const string AdminGroup = "admin";
+    // Header keyword for "also carry the admin group". The claim it produces uses the allowlisted group name (AC 4.1.4).
+    private const string AdminHeaderKeyword = "admin";
     private const int MaxUserIdLength = 64;
 
     public static WebApplicationBuilder AddDevelopmentTestAuthentication(this WebApplicationBuilder builder)
@@ -76,7 +78,7 @@ internal static class DevelopmentTestAuthExtensions
 
         if (parts.Length == 2)
         {
-            if (!string.Equals(parts[1], AdminGroup, StringComparison.Ordinal))
+            if (!string.Equals(parts[1], AdminHeaderKeyword, StringComparison.Ordinal))
             {
                 return false;
             }
@@ -92,7 +94,8 @@ internal static class DevelopmentTestAuthExtensions
         IOptionsMonitor<AuthenticationSchemeOptions> options,
         ILoggerFactory loggerFactory,
         UrlEncoder encoder,
-        IWebHostEnvironment environment)
+        IWebHostEnvironment environment,
+        IConfiguration configuration)
         : AuthenticationHandler<AuthenticationSchemeOptions>(options, loggerFactory, encoder)
     {
         protected override Task<AuthenticateResult> HandleAuthenticateAsync()
@@ -116,7 +119,12 @@ internal static class DevelopmentTestAuthExtensions
             ];
             if (isAdmin)
             {
-                claims.Add(new Claim("cognito:groups", AdminGroup));
+                // First allowlisted group, so the dev admin matches the same list the Admin policy uses.
+                string? adminGroup = AdminGroups.Resolve(configuration).FirstOrDefault();
+                if (adminGroup is not null)
+                {
+                    claims.Add(new Claim(AdminGroups.GroupsClaimType, adminGroup));
+                }
             }
 
             var identity = new ClaimsIdentity(claims, SchemeName);

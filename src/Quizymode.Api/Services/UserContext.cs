@@ -11,10 +11,14 @@ public interface IUserContext
     bool IsAdmin { get; }
 }
 
-internal sealed class UserContext(IHttpContextAccessor httpContextAccessor, ILogger<UserContext> logger) : IUserContext
+internal sealed class UserContext(
+    IHttpContextAccessor httpContextAccessor,
+    ILogger<UserContext> logger,
+    IConfiguration configuration) : IUserContext
 {
     private readonly IHttpContextAccessor _httpContextAccessor = httpContextAccessor;
     private readonly ILogger<UserContext> _logger = logger;
+    private readonly IReadOnlyList<string> _adminGroups = AdminGroups.Resolve(configuration);
 
     public bool IsAuthenticated
     {
@@ -58,23 +62,8 @@ internal sealed class UserContext(IHttpContextAccessor httpContextAccessor, ILog
         }
     }
 
-    public bool IsAdmin
-    {
-        get
-        {
-            ClaimsPrincipal? user = _httpContextAccessor.HttpContext?.User;
-            if (user is null)
-            {
-                return false;
-            }
-
-            // Cognito can emit groups in "cognito:groups" claim
-            // Check for any group starting with "admin" (case-insensitive)
-            IEnumerable<Claim> groupClaims = user.FindAll("cognito:groups");
-            return groupClaims.Any(c => 
-                c.Value.StartsWith("admin", StringComparison.OrdinalIgnoreCase));
-        }
-    }
+    // AC 4.1.4: admin = a "cognito:groups" value exactly equal to an allowlisted name (default "Admins").
+    public bool IsAdmin => AdminGroups.IsAdmin(_httpContextAccessor.HttpContext?.User, _adminGroups);
 }
 
 

@@ -11,7 +11,7 @@ The application is configured to use AWS Cognito User Pool for authentication an
 - **User Pool ID**: `us-east-1_LiJbvT212`
 - **Authority**: `https://cognito-idp.us-east-1.amazonaws.com/us-east-1_LiJbvT212`
 - **SPA Client ID**: `63b38es9dto8m59337jguiqli3`
-- **Admin Group**: Any group starting with "admin" (case-insensitive, e.g., "Admin", "admin", "Administrators")
+- **Admin Group**: The group named exactly `Admins` (case-sensitive). The allowlist is configurable via `Authentication:AdminGroups` (default `Admins`; an empty value means nobody is admin)
 
 ## Configuration Methods
 
@@ -106,10 +106,10 @@ APP_Authentication__Cognito__Audience=63b38es9dto8m59337jguiqli3
 
 2. **User Pool Groups**:
 
-   - Create a group in your Cognito User Pool with a name starting with "admin" (case-insensitive)
-   - Examples: `Admin`, `admin`, `Administrators`, `admin-users`
+   - Create a group in your Cognito User Pool named exactly `Admins` (case-sensitive)
+   - Not admin (no exact match): `Admin`, `admin`, `admins`, `Administrators`, `admin-users`
    - Add users who should have admin access to this group
-   - The application checks for any group name starting with "admin" (case-insensitive)
+   - The application checks for a group name exactly equal to an allowlisted name (default `Admins`, case-sensitive)
 
 3. **Token Configuration**:
    - Ensure that the `cognito:groups` claim is included in ID tokens
@@ -421,12 +421,12 @@ curl -X POST https://cognito-idp.us-east-1.amazonaws.com/oauth2/token \
 
 ## Admin Endpoints
 
-Endpoints that require admin access (users in any group starting with "admin", case-insensitive):
+Endpoints that require admin access (users in an allowlisted group, default `Admins`, case-sensitive):
 
 - `POST /items/bulk` - Bulk create items (admin only; 401 anonymous, 403 non-admin)
 - `PUT /items/{id}/visibility` - Set item visibility
 
-These endpoints use the `RequireAuthorization("Admin")` policy, which checks for the `cognito:groups` claim containing any group name starting with "admin" (case-insensitive).
+These endpoints use the `RequireAuthorization("Admin")` policy, which checks for the `cognito:groups` claim containing a group name exactly equal to an allowlisted name (default `Admins`, case-sensitive).
 
 ## Troubleshooting
 
@@ -439,9 +439,9 @@ These endpoints use the `RequireAuthorization("Admin")` policy, which checks for
 
 ### Admin Access Not Working
 
-1. Verify the user is assigned to a group in Cognito with a name starting with "admin" (case-insensitive)
+1. Verify the user is assigned to the `Admins` group in Cognito (exact, case-sensitive match)
 2. Ensure the `cognito:groups` claim is included in the ID token
-3. Check that the group name starts with "admin" (e.g., "Admin", "admin", "Administrators" - all work)
+3. Check that the group name is exactly `Admins` ("admin", "Admin" and "Administrators" do not work)
 
 ### Environment Variables Not Loading
 
