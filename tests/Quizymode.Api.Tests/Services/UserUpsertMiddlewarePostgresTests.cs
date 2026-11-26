@@ -10,6 +10,8 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Npgsql;
 using Quizymode.Api.Data;
+using Quizymode.Api.Features.Items.Export;
+using Quizymode.Api.Features.Items.Get;
 using Quizymode.Api.Services;
 using Quizymode.Api.Shared.Models;
 using Quizymode.Api.Tests.TestFixtures;
@@ -131,9 +133,18 @@ public sealed class UserUpsertMiddlewarePostgresTests(PostgresContainerFixture f
         JwtHttpTestHost host = await JwtHttpTestHost.StartAsync(
             () => fixture.CreateDbContext(interceptors),
             services => services.AddSingleton<ILoggerProvider>(logs),
-            app => app.MapGet("/test/whoami", (IUserContext userContext) =>
-                    Results.Ok(new { isAuthenticated = userContext.IsAuthenticated, userId = userContext.UserId }))
-                .RequireAuthorization(),
+            app =>
+            {
+                static IResult WhoAmIResult(IUserContext userContext) =>
+                    Results.Ok(new { isAuthenticated = userContext.IsAuthenticated, userId = userContext.UserId });
+                app.MapGet("/test/whoami", WhoAmIResult).RequireAuthorization();
+                app.MapGet("/test/public", WhoAmIResult);
+                app.MapGet("/test/anonymous", WhoAmIResult).RequireAuthorization().AllowAnonymous();
+                app.MapGet("/test/admin", () => Results.Ok()).RequireAuthorization("Admin");
+                app.MapGet("/test/is-admin", (IUserContext userContext) => Results.Ok(userContext.IsAdmin));
+                new GetItems.Endpoint().MapEndpoint(app);
+                new ExportItems.Endpoint().MapEndpoint(app);
+            },
             useUserUpsertMiddleware: true);
         return new Scenario { Host = host, Logs = logs };
     }
@@ -148,6 +159,20 @@ public sealed class UserUpsertMiddlewarePostgresTests(PostgresContainerFixture f
         body.Should().NotBeNull();
         body!.IsAuthenticated.Should().BeTrue();
         return body;
+    }
+
+    private static async Task<HttpResponseMessage> GetAsync(
+        Scenario scenario, string path, string subject, string email, object? emailVerified, string? name = null)
+    {
+        string token = scenario.Host.CreateToken(subject, email, emailVerified: emailVerified, name: name);
+        using HttpRequestMessage request = JwtHttpTestHost.Request(HttpMethod.Get, path, token);
+        return await scenario.Host.Client.SendAsync(request);
+    }
+
+    private static async Task AssertRefusedAsync(Scenario scenario, string subject, string email, object? emailVerified)
+    {
+        using HttpResponseMessage response = await GetAsync(scenario, "/test/whoami", subject, email, emailVerified);
+        response.StatusCode.Should().Be(System.Net.HttpStatusCode.Forbidden);
     }
 
     private static void AssertNoUpsertFailure(Scenario scenario) =>
@@ -215,9 +240,8 @@ public sealed class UserUpsertMiddlewarePostgresTests(PostgresContainerFixture f
         int userCreatedBefore = await CountUserCreatedAuditsAsync();
         await using Scenario scenario = await StartAsync();
 
-        WhoAmI who = await WhoAmIAsync(scenario, subjectB, requestEmail, emailVerified);
+        await AssertRefusedAsync(scenario, subjectB, requestEmail, emailVerified);
 
-        who.UserId.Should().BeNull();
         User? after = await UserByIdAsync(seeded.Id);
         after.Should().NotBeNull();
         after!.Subject.Should().Be(subjectA);
@@ -337,10 +361,9 @@ public sealed class UserUpsertMiddlewarePostgresTests(PostgresContainerFixture f
         await using Scenario scenario = await StartAsync(interceptor);
         (int Collections, int Settings) before = await CountsAsync();
 
-        WhoAmI who = await WhoAmIAsync(scenario, subjectB, email, emailVerified: false);
+        await AssertRefusedAsync(scenario, subjectB, email, false);
 
         interceptor.Fired.Should().BeTrue();
-        who.UserId.Should().BeNull();
         User row = (await UsersByEmailAsync(email)).Should().ContainSingle().Subject;
         row.Id.Should().Be(winnerId);
         row.Subject.Should().Be(subjectA);
@@ -356,6 +379,235 @@ public sealed class UserUpsertMiddlewarePostgresTests(PostgresContainerFixture f
         AssertNoUpsertFailure(scenario);
         CapturedLog warning = scenario.UpsertLogs.Should().ContainSingle(e => e.Level == LogLevel.Warning).Subject;
         warning.Message.Should().Contain("after duplicate key").And.Contain(subjectB).And.NotContain(email);
+    }
+
+    // ---- AC 4.1.8 / 4.1.9: no request runs as signed in without a user id ----
+
+    /// <summary>Fails every attempt to save a new user row, as a database error during resolution would.</summary>
+    private sealed class FailingUserInsertInterceptor : SaveChangesInterceptor
+    {
+        public override ValueTask<InterceptionResult<int>> SavingChangesAsync(
+            DbContextEventData eventData,
+            InterceptionResult<int> result,
+            CancellationToken cancellationToken = default)
+        {
+            if (eventData.Context!.ChangeTracker.Entries<User>().Any(e => e.State == EntityState.Added))
+            {
+                throw new InvalidOperationException("simulated database failure");
+            }
+
+            return ValueTask.FromResult(result);
+        }
+    }
+
+    /// <summary>Commits another user with the same name just before the first new user is saved.</summary>
+    private sealed class NameRaceInterceptor(PostgresContainerFixture fixture, string name) : SaveChangesInterceptor
+    {
+        private int _fired;
+
+        public override async ValueTask<InterceptionResult<int>> SavingChangesAsync(
+            DbContextEventData eventData,
+            InterceptionResult<int> result,
+            CancellationToken cancellationToken = default)
+        {
+            bool addingUser = eventData.Context!.ChangeTracker.Entries<User>().Any(e => e.State == EntityState.Added);
+            if (addingUser && Interlocked.Exchange(ref _fired, 1) == 0)
+            {
+                await using ApplicationDbContext db = fixture.CreateDbContext();
+                db.Users.Add(new User
+                {
+                    Id = Guid.NewGuid(), Subject = NewSubject(), Email = NewEmail(), Name = name,
+                    LastLogin = PastUtc, CreatedAt = PastUtc
+                });
+                await db.SaveChangesAsync(cancellationToken);
+            }
+
+            return result;
+        }
+    }
+
+    private static async Task<WhoAmI> ReadWhoAmIAsync(HttpResponseMessage response)
+    {
+        response.StatusCode.Should().Be(System.Net.HttpStatusCode.OK);
+        WhoAmI? body = await response.Content.ReadFromJsonAsync<WhoAmI>(new JsonSerializerOptions(JsonSerializerDefaults.Web));
+        return body!;
+    }
+
+    [SkippableTheory]
+    [InlineData("/test/public")]
+    [InlineData("/test/anonymous")]
+    public async Task AC_4_1_8_RefusedIdentity_IsAnonymousOnPublicEndpoints(string path)
+    {
+        string email = NewEmail();
+        await SeedUserAsync(NewSubject(), email);
+        await using Scenario scenario = await StartAsync();
+
+        using HttpResponseMessage response = await GetAsync(scenario, path, NewSubject(), email, emailVerified: false);
+
+        WhoAmI who = await ReadWhoAmIAsync(response);
+        who.IsAuthenticated.Should().BeFalse();
+        who.UserId.Should().BeNull();
+    }
+
+    [SkippableFact]
+    public async Task AC_4_1_8_ResolutionFailure_Returns503WithRetryAfter_OnSignedInEndpoint()
+    {
+        await using Scenario scenario = await StartAsync(new FailingUserInsertInterceptor());
+
+        using HttpResponseMessage response = await GetAsync(scenario, "/test/whoami", NewSubject(), NewEmail(), true);
+
+        response.StatusCode.Should().Be(System.Net.HttpStatusCode.ServiceUnavailable);
+        response.Headers.RetryAfter.Should().NotBeNull();
+    }
+
+    [SkippableFact]
+    public async Task AC_4_1_8_ResolutionFailure_IsAnonymousOnPublicEndpoint()
+    {
+        await using Scenario scenario = await StartAsync(new FailingUserInsertInterceptor());
+
+        using HttpResponseMessage response = await GetAsync(scenario, "/test/public", NewSubject(), NewEmail(), true);
+
+        WhoAmI who = await ReadWhoAmIAsync(response);
+        who.IsAuthenticated.Should().BeFalse();
+    }
+
+    [SkippableTheory]
+    [InlineData(false)]
+    [InlineData(true)]
+    public async Task AC_4_1_9_NewUser_NameAlreadyUsed_IsCreatedWithSuffix(bool differentCase)
+    {
+        string taken = "Sam Taken " + Guid.NewGuid().ToString("N");
+        await SeedUserAsync(NewSubject(), NewEmail(), taken, DateTime.UtcNow);
+        string claim = differentCase ? taken.ToUpperInvariant() : taken;
+        await using Scenario scenario = await StartAsync();
+
+        WhoAmI who = await WhoAmIAsync(scenario, NewSubject(), NewEmail(), emailVerified: true, name: claim);
+
+        User? row = await UserByIdAsync(Guid.Parse(who.UserId!));
+        row!.Name.Should().StartWith(claim + "-").And.HaveLength(claim.Length + 7);
+        AssertNoUpsertFailure(scenario);
+    }
+
+    [SkippableTheory]
+    [InlineData(201)]
+    [InlineData(2048)]
+    public async Task AC_4_1_9_NewUser_NameTooLong_IsCreatedWithShortenedName(int length)
+    {
+        string claim = (Guid.NewGuid().ToString("N") + new string('x', length))[..length];
+        await using Scenario scenario = await StartAsync();
+
+        WhoAmI who = await WhoAmIAsync(scenario, NewSubject(), NewEmail(), emailVerified: true, name: claim);
+
+        User? row = await UserByIdAsync(Guid.Parse(who.UserId!));
+        row!.Name.Should().Be(claim[..UserUpsertMiddleware.MaxNameLength]);
+        AssertNoUpsertFailure(scenario);
+    }
+
+    [SkippableFact]
+    public async Task AC_4_1_9_ExistingUserWithDefaultName_TakenNameClaim_IsSuffixed()
+    {
+        string taken = "Lee Taken " + Guid.NewGuid().ToString("N");
+        await SeedUserAsync(NewSubject(), NewEmail(), taken, DateTime.UtcNow);
+        string subject = NewSubject();
+        string email = NewEmail();
+        User seeded = await SeedUserAsync(subject, email, subject, PastUtc);
+        await using Scenario scenario = await StartAsync();
+
+        WhoAmI who = await WhoAmIAsync(scenario, subject, email, emailVerified: true, name: taken);
+
+        who.UserId.Should().Be(seeded.Id.ToString());
+        User? row = await UserByIdAsync(seeded.Id);
+        row!.Name.Should().StartWith(taken + "-");
+        row.LastLogin.Should().BeAfter(PastUtc);
+        AssertNoUpsertFailure(scenario);
+    }
+
+    [SkippableFact]
+    public async Task AC_4_1_9_NewUser_TakenNameThatLowersDifferentlyInTheDatabase_IsSuffixed()
+    {
+        string taken = "\u0130lker " + Guid.NewGuid().ToString("N");
+        await SeedUserAsync(NewSubject(), NewEmail(), taken, DateTime.UtcNow);
+        await using Scenario scenario = await StartAsync();
+
+        WhoAmI who = await WhoAmIAsync(scenario, NewSubject(), NewEmail(), emailVerified: true, name: taken);
+
+        User? row = await UserByIdAsync(Guid.Parse(who.UserId!));
+        row!.Name.Should().StartWith(taken + "-");
+        AssertNoUpsertFailure(scenario);
+    }
+
+    [SkippableFact]
+    public async Task AC_4_1_9_NewUser_NameTakenBetweenCheckAndSave_IsRetriedWithSuffix()
+    {
+        string name = "Race Name " + Guid.NewGuid().ToString("N");
+        NameRaceInterceptor interceptor = new(fixture, name);
+        await using Scenario scenario = await StartAsync(interceptor);
+
+        WhoAmI who = await WhoAmIAsync(scenario, NewSubject(), NewEmail(), emailVerified: true, name: name);
+
+        User? row = await UserByIdAsync(Guid.Parse(who.UserId!));
+        row!.Name.Should().StartWith(name + "-");
+        AssertNoUpsertFailure(scenario);
+    }
+
+    [SkippableFact]
+    public async Task AC_4_1_8_TokenWithoutSubject_IsForbiddenOnSignedInEndpoint()
+    {
+        await using Scenario scenario = await StartAsync();
+        string token = scenario.Host.CreateToken(NewSubject(), NewEmail(), omitSubject: true);
+        using HttpRequestMessage request = JwtHttpTestHost.Request(HttpMethod.Get, "/test/whoami", token);
+
+        using HttpResponseMessage response = await scenario.Host.Client.SendAsync(request);
+
+        response.StatusCode.Should().Be(System.Net.HttpStatusCode.Forbidden);
+    }
+
+    [SkippableFact]
+    public async Task AC_4_1_8_UnresolvedAdmin_IsRefusedByAdminEndpoint_AndNotAdminElsewhere()
+    {
+        string email = NewEmail();
+        await SeedUserAsync(NewSubject(), email);
+        await using Scenario scenario = await StartAsync();
+        string token = scenario.Host.CreateToken(NewSubject(), email, ["Admins"], emailVerified: false);
+
+        using HttpRequestMessage adminRequest = JwtHttpTestHost.Request(HttpMethod.Get, "/test/admin", token);
+        using HttpResponseMessage adminResponse = await scenario.Host.Client.SendAsync(adminRequest);
+        using HttpRequestMessage publicRequest = JwtHttpTestHost.Request(HttpMethod.Get, "/test/is-admin", token);
+        using HttpResponseMessage publicResponse = await scenario.Host.Client.SendAsync(publicRequest);
+
+        adminResponse.StatusCode.Should().Be(System.Net.HttpStatusCode.Forbidden);
+        (await publicResponse.Content.ReadAsStringAsync()).Should().Be("false");
+    }
+
+    [SkippableFact]
+    public async Task AC_4_1_8_UnresolvedUser_GetsNoPrivateItemFromTheRealItemRoutes()
+    {
+        string email = NewEmail();
+        User owner = await SeedUserAsync(NewSubject(), email);
+        string secret = "secret " + Guid.NewGuid().ToString("N");
+        string categoryName = "c" + Guid.NewGuid().ToString("N")[..20];
+        await using (ApplicationDbContext db = fixture.CreateDbContext())
+        {
+            Category category = new() { Id = Guid.NewGuid(), Name = categoryName, CreatedBy = owner.Id.ToString(), CreatedAt = DateTime.UtcNow };
+            db.Categories.Add(category);
+            db.Items.Add(new Item
+            {
+                Id = Guid.NewGuid(), IsPrivate = true, Question = secret, CorrectAnswer = "a", IncorrectAnswers = ["b"],
+                Explanation = string.Empty, FuzzySignature = "A", FuzzyBucket = 1, CreatedBy = owner.Id.ToString(),
+                CreatedAt = DateTime.UtcNow, CategoryId = category.Id
+            });
+            await db.SaveChangesAsync();
+        }
+
+        await using Scenario scenario = await StartAsync();
+        string subject = NewSubject();
+
+        using HttpResponseMessage list = await GetAsync(scenario, $"/items?category={categoryName}", subject, email, false);
+        using HttpResponseMessage export = await GetAsync(scenario, $"/items/export?category={categoryName}", subject, email, false);
+
+        list.StatusCode.Should().Be(System.Net.HttpStatusCode.OK);
+        (await list.Content.ReadAsStringAsync()).Should().NotContain(secret);
+        export.StatusCode.Should().Be(System.Net.HttpStatusCode.Forbidden);
     }
 
     // ---- #328 cheap path: unchanged, recent logins take no transaction, row lock or write ----
@@ -605,8 +857,7 @@ public sealed class UserUpsertMiddlewarePostgresTests(PostgresContainerFixture f
                     return endpointThrows
                         ? throw new InvalidOperationException("downstream failure")
                         : Results.Ok();
-                })
-                .RequireAuthorization(),
+                }),
             useUserUpsertMiddleware: true);
         string token = host.CreateToken(NewSubject(), NewEmail(), omitSubject: true);
         using HttpRequestMessage request = JwtHttpTestHost.Request(HttpMethod.Get, "/test/count", token);

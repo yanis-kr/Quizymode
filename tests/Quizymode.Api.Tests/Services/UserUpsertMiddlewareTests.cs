@@ -118,6 +118,32 @@ public sealed class UserUpsertMiddlewareTests : DatabaseTestFixture
     }
 
     [Fact]
+    public async Task AC_4_1_8_AbortedRequest_WithoutUser_Returns499_AndSkipsTheHandler()
+    {
+        bool nextCalled = false;
+        UserUpsertMiddleware middleware = BuildMiddleware(next: _ =>
+        {
+            nextCalled = true;
+            return Task.CompletedTask;
+        });
+        HttpContext context = BuildHttpContext(sub: Guid.NewGuid().ToString(), email: "gone@example.com");
+        context.RequestAborted = new CancellationToken(canceled: true);
+
+        await middleware.InvokeAsync(context);
+
+        context.Response.StatusCode.Should().Be(StatusCodes.Status499ClientClosedRequest);
+        nextCalled.Should().BeFalse();
+    }
+
+    [Fact]
+    public void AC_4_1_9_DefaultCollectionName_DoesNotSplitASurrogatePair()
+    {
+        (string name, _) = DefaultCollectionFactory.BuildMetadata("ab\U0001F600cd");
+
+        name.Should().Be("ab's Collection");
+    }
+
+    [Fact]
     public async Task InvokeAsync_SetsUserIdViaFallback_WhenUserExistsButForUpdateFails()
     {
         // The middleware's FOR UPDATE SQL fails on SQLite.

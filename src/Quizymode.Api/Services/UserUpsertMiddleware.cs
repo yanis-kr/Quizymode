@@ -1,9 +1,11 @@
 using System.Collections.Concurrent;
 using System.Security.Claims;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Storage;
 using Npgsql;
 using Quizymode.Api.Data;
+using Quizymode.Api.Shared.Http;
 using Quizymode.Api.Shared.Models;
 
 namespace Quizymode.Api.Services;
@@ -20,6 +22,16 @@ internal sealed class UserUpsertMiddleware
     // Limit concurrent database operations per user to reduce contention
     // Even with database locking, reducing concurrent requests helps performance
     private const int MaxConcurrentPerUser = 3;
+
+    /// <summary>Length of the Users.Name column.</summary>
+    internal const int MaxNameLength = 200;
+
+    private const int NameSuffixLength = 6;
+    private const int MaxNameAttempts = 5;
+    private const int RetryAfterSeconds = 5;
+
+    /// <summary>Marks a request whose identity was refused (not a temporary failure).</summary>
+    private const string IdentityRefusedItem = "UserIdentityRefused";
 
     private static bool TryGetPostgresException(Exception? ex, out PostgresException? pg)
     {
@@ -45,6 +57,15 @@ internal sealed class UserUpsertMiddleware
 
         return pg.SqlState == PostgresErrorCodes.UniqueViolation
             && pg.ConstraintName == "IX_Users_Email";
+    }
+
+    private static bool IsDuplicateUsersName(DbUpdateException ex)
+    {
+        if (!TryGetPostgresException(ex, out PostgresException? pg) || pg is null)
+            return false;
+
+        return pg.SqlState == PostgresErrorCodes.UniqueViolation
+            && pg.ConstraintName == "IX_Users_Name";
     }
 
     private static async Task TryRollbackCurrentTransactionAsync(
@@ -134,40 +155,157 @@ internal sealed class UserUpsertMiddleware
         {
             try
             {
-                await ResolveUserAsync(context);
+                await ResolveUserRetryingNameRaceAsync(context);
             }
             catch (Exception ex)
             {
-                // Log the error but don't fail the request
                 _logger.LogError(ex, "User upsert failed: {Message}", ex.Message);
-                // Fallback: if user already exists in DB, set UserId so read-only endpoints (e.g. GET users/settings) still work
-                string? subject = context.User.FindFirstValue("sub") ?? context.User.FindFirstValue(ClaimTypes.NameIdentifier);
-                if (!string.IsNullOrWhiteSpace(subject))
+            }
+
+            if (!context.Items.ContainsKey("UserId"))
+            {
+                await TryResolveExistingUserAsync(context);
+            }
+
+            // AC 4.1.8: no request runs as signed in without a user id.
+            if (!context.Items.ContainsKey("UserId"))
+            {
+                if (context.RequestAborted.IsCancellationRequested)
                 {
-                    try
-                    {
-                        var db = context.RequestServices.GetRequiredService<ApplicationDbContext>();
-                        var existingUser = await db.Users
-                            .AsNoTracking()
-                            .Where(u => u.Subject == subject)
-                            .Select(u => u.Id)
-                            .FirstOrDefaultAsync(context.RequestAborted);
-                        if (existingUser != default)
-                        {
-                            context.Items["UserId"] = existingUser.ToString();
-                            _logger.LogDebug("Set UserId from fallback lookup after upsert failure for subject {Subject}", subject);
-                        }
-                    }
-                    catch (Exception fallbackEx)
-                    {
-                        _logger.LogWarning(fallbackEx, "Fallback user lookup failed for subject {Subject}", subject);
-                    }
+                    // The client has gone: not a server failure, and the handler must not run.
+                    context.Response.StatusCode = StatusCodes.Status499ClientClosedRequest;
+                    return;
                 }
+
+                if (RequiresSignedInUser(context))
+                {
+                    await RejectUnresolvedUserAsync(context);
+                    return;
+                }
+
+                context.User = new ClaimsPrincipal(new ClaimsIdentity());
             }
         }
 
         // Single downstream call, outside every try, so a downstream exception can never re-run the pipeline.
         await _next(context);
+    }
+
+    /// <summary>
+    /// Runs the upsert, once more if a concurrent request saved the same name after it was found free; the second
+    /// attempt sees that row and adds a suffix (AC 4.1.9).
+    /// </summary>
+    private async Task ResolveUserRetryingNameRaceAsync(HttpContext context)
+    {
+        try
+        {
+            await ResolveUserAsync(context);
+        }
+        catch (DbUpdateException ex) when (IsDuplicateUsersName(ex))
+        {
+            context.RequestServices.GetRequiredService<ApplicationDbContext>().ChangeTracker.Clear();
+            await ResolveUserAsync(context);
+        }
+    }
+
+    /// <summary>
+    /// If the user already exists, sets UserId so a failed or skipped upsert does not sign the caller out
+    /// (e.g. GET users/settings still works).
+    /// </summary>
+    private async Task TryResolveExistingUserAsync(HttpContext context)
+    {
+        string? subject = context.User.FindFirstValue("sub") ?? context.User.FindFirstValue(ClaimTypes.NameIdentifier);
+        if (string.IsNullOrWhiteSpace(subject) || context.Items.ContainsKey(IdentityRefusedItem))
+        {
+            return;
+        }
+
+        try
+        {
+            ApplicationDbContext db = context.RequestServices.GetRequiredService<ApplicationDbContext>();
+            Guid existingUser = await db.Users
+                .AsNoTracking()
+                .Where(u => u.Subject == subject)
+                .Select(u => u.Id)
+                .FirstOrDefaultAsync(context.RequestAborted);
+            if (existingUser != default)
+            {
+                context.Items["UserId"] = existingUser.ToString();
+                _logger.LogDebug("Set UserId from fallback lookup for subject {Subject}", subject);
+            }
+        }
+        catch (Exception fallbackEx)
+        {
+            _logger.LogWarning(fallbackEx, "Fallback user lookup failed for subject {Subject}", subject);
+        }
+    }
+
+    private static bool RequiresSignedInUser(HttpContext context)
+    {
+        Endpoint? endpoint = context.GetEndpoint();
+        return endpoint?.Metadata.GetMetadata<IAuthorizeData>() is not null
+            && endpoint.Metadata.GetMetadata<IAllowAnonymous>() is null;
+    }
+
+    /// <summary>403 when the identity was refused; 503 with Retry-After when resolution may succeed later.</summary>
+    private static Task RejectUnresolvedUserAsync(HttpContext context)
+    {
+        if (context.Items.ContainsKey(IdentityRefusedItem))
+        {
+            return CustomResults
+                .Forbidden("This sign-in could not be linked to an account. Verify your email address, then sign in again.")
+                .ExecuteAsync(context);
+        }
+
+        context.Response.Headers.RetryAfter = RetryAfterSeconds.ToString(System.Globalization.CultureInfo.InvariantCulture);
+        return Results.Problem(
+                title: "Service Unavailable",
+                detail: "Your account could not be loaded. Please try again in a moment.",
+                type: "https://tools.ietf.org/html/rfc7231#section-6.6.4",
+                statusCode: StatusCodes.Status503ServiceUnavailable)
+            .ExecuteAsync(context);
+    }
+
+    /// <summary>
+    /// A display name that fits the column and is not another user's (ignoring case): the claim itself, or the claim
+    /// with a short random suffix. Names are unique, so an unchanged duplicate would stop the user row being saved.
+    /// </summary>
+    private static async Task<string> ResolveAvailableNameAsync(
+        ApplicationDbContext db,
+        string name,
+        Guid userId,
+        CancellationToken cancellationToken)
+    {
+        string candidate = Truncate(name, MaxNameLength);
+        for (int attempt = 0; attempt < MaxNameAttempts; attempt++)
+        {
+            string lowered = candidate.ToLowerInvariant();
+            bool taken = await db.Users.AnyAsync(
+                // The exact match matters: .NET and the database lower-case some letters differently (U+0130).
+                u => u.Id != userId && u.Name != null && (u.Name == candidate || u.Name.ToLower() == lowered),
+                cancellationToken);
+            if (!taken)
+            {
+                return candidate;
+            }
+
+            string suffix = Guid.NewGuid().ToString("N")[..NameSuffixLength];
+            candidate = $"{Truncate(name, MaxNameLength - NameSuffixLength - 1)}-{suffix}";
+        }
+
+        return Guid.NewGuid().ToString("N");
+    }
+
+    /// <summary>Cuts to at most <paramref name="maxLength"/> characters without splitting a surrogate pair.</summary>
+    private static string Truncate(string value, int maxLength)
+    {
+        if (value.Length <= maxLength)
+        {
+            return value;
+        }
+
+        int length = char.IsHighSurrogate(value[maxLength - 1]) ? maxLength - 1 : maxLength;
+        return value[..length];
     }
 
     /// <summary>Resolves the signed-in user and publishes HttpContext.Items["UserId"]. Never invokes the next delegate.</summary>
@@ -183,6 +321,7 @@ internal sealed class UserUpsertMiddleware
             // Claim types only: claim values can hold email and name (#476).
             _logger.LogWarning("User is authenticated but no subject claim found. Available claim types: {ClaimTypes}",
                 string.Join(", ", user.Claims.Select(c => c.Type).Distinct()));
+            context.Items[IdentityRefusedItem] = true;
             return;
         }
 
@@ -311,7 +450,7 @@ internal sealed class UserUpsertMiddleware
                         existingByEmail.Subject = subject;
                         existingByEmail.Email = email;
                         if (string.IsNullOrWhiteSpace(existingByEmail.Name) || existingByEmail.Name == existingByEmail.Subject)
-                            existingByEmail.Name = name;
+                            existingByEmail.Name = await ResolveAvailableNameAsync(db, name, existingByEmail.Id, context.RequestAborted);
                         existingByEmail.LastLogin = DateTime.UtcNow;
                         await db.SaveChangesAsync(context.RequestAborted);
                         userId = existingByEmail.Id;
@@ -322,12 +461,13 @@ internal sealed class UserUpsertMiddleware
                 else
                 {
                     // Truly new user: create user, default collection, and set it as active
+                    Guid newUserId = Guid.NewGuid();
                     var userEntity = new User
                     {
-                        Id = Guid.NewGuid(),
+                        Id = newUserId,
                         Subject = subject,
                         Email = email,
-                        Name = name,
+                        Name = await ResolveAvailableNameAsync(db, name, newUserId, context.RequestAborted),
                         CreatedAt = DateTime.UtcNow,
                         LastLogin = DateTime.UtcNow
                     };
@@ -336,7 +476,7 @@ internal sealed class UserUpsertMiddleware
 
                     Collection defaultCollection = DefaultCollectionFactory.Create(
                         userEntity.Id.ToString(),
-                        displayName);
+                        displayName is null ? null : Truncate(displayName, MaxNameLength));
                     db.Collections.Add(defaultCollection);
 
                     var activeCollectionSetting = new UserSetting
@@ -425,7 +565,8 @@ internal sealed class UserUpsertMiddleware
                 lockedUser.Email = email;
                 if (string.IsNullOrWhiteSpace(lockedUser.Name) || lockedUser.Name == lockedUser.Subject)
                 {
-                    lockedUser.Name = name; // Update Name from claims only if user hasn't customized it
+                    // Update Name from claims only if user hasn't customized it
+                    lockedUser.Name = await ResolveAvailableNameAsync(db, name, lockedUser.Id, context.RequestAborted);
                 }
                 
                 // Always update LastLogin to track user activity
@@ -459,6 +600,10 @@ internal sealed class UserUpsertMiddleware
             if (userResolved)
             {
                 context.Items["UserId"] = userId.ToString();
+            }
+            else
+            {
+                context.Items[IdentityRefusedItem] = true;
             }
         }
         catch

@@ -35,6 +35,11 @@ internal static class DefaultCollectionFactory
         }
 
         int prefixLength = Math.Min(3, trimmedDisplayName.Length);
+        if (char.IsHighSurrogate(trimmedDisplayName[prefixLength - 1]))
+        {
+            prefixLength--;
+        }
+
         string prefix = trimmedDisplayName[..prefixLength];
 
         return ($"{prefix}'s Collection", $"{trimmedDisplayName} default collection");
