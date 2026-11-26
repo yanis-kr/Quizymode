@@ -40,6 +40,7 @@ export function isUsableHookEntry(entry: StarterPoolEntry): boolean {
   if (item.questionImage) return false;
   const optionCount = 1 + item.incorrectAnswers.length;
   if (optionCount < 2 || optionCount > 4) return false;
+  if (new Set([item.correctAnswer, ...item.incorrectAnswers]).size !== optionCount) return false;
   return httpUrl(item.source) !== null && item.question.trim().length > 0;
 }
 

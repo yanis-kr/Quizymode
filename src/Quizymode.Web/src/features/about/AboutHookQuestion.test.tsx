@@ -143,6 +143,8 @@ describe("AboutHookQuestion (#884)", () => {
     expect(isUsableHookEntry(fiveOptions)).toBe(false);
     expect(isUsableHookEntry(noSource)).toBe(false);
     expect(isUsableHookEntry(badSource)).toBe(false);
+    const duplicate = entry("dup", { correctAnswer: "Same", incorrectAnswers: ["Same", "Other"] });
+    expect(isUsableHookEntry(duplicate)).toBe(false);
     expect(isUsableHookEntry(entry("ok"))).toBe(true);
     const ids = hookQuestionsFrom([picture, twoOptions, fiveOptions, noSource, badSource]).map((q) => q.id);
     expect(ids).toEqual(["two"]);
