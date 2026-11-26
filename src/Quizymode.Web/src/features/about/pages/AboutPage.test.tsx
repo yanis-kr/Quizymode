@@ -268,7 +268,7 @@ describe("AboutPage (#883)", () => {
     expect(document.head.querySelector('link[rel="canonical"]')?.getAttribute("href")).toBe(ABOUT_CANONICAL);
     expect(ABOUT_CANONICAL).toBe("https://www.quizymode.com/about");
     const llms = fs.readFileSync(path.join(process.cwd(), "public", "llms.txt"), "utf8");
-    const aboutLines = llms.split(/\r?\n/).filter((line) => line.includes("https://www.quizymode.com/about"));
+    const aboutLines = llms.split(/\r?\n/).filter((line) => /^- \[About\]\(https:\/\/www\.quizymode\.com\/about\):/.test(line));
     expect(aboutLines).toHaveLength(1);
     expect(aboutLines[0]).toMatch(/how one engineer builds it/);
   });
