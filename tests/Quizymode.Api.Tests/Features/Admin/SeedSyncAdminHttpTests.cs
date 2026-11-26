@@ -99,8 +99,7 @@ public sealed class SeedSyncAdminHttpTests : DatabaseTestFixture, IAsyncLifetime
                 new SeedSyncAdmin.ManifestRequest("data/seed-source/items/geography", [item], [collection]),
                 new SeedSyncAdmin.SourceContext(
                     "quizymode", "quizymode", "main", "abc123", "items", 1, "collections", 1),
-                BranchTaxonomyYaml: null,
-                BranchTaxonomySql: null)));
+                BranchTaxonomyYaml: null)));
         }
     }
 }

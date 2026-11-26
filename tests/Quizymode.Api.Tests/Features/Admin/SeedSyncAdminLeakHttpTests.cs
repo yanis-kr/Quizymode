@@ -99,8 +99,7 @@ public sealed class SeedSyncAdminLeakHttpTests : DatabaseTestFixture
             return Task.FromResult(Result.Success(new LoadedGitHubSeedManifest(
                 manifest,
                 new SeedSyncAdmin.SourceContext("quizymode", "quizymode", "main", "abc123", "items", 1, "collections", 0),
-                BranchTaxonomyYaml: null,
-                BranchTaxonomySql: null)));
+                BranchTaxonomyYaml: null)));
         }
     }
 }

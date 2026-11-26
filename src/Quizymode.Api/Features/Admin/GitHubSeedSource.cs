@@ -1,3 +1,4 @@
+using System.Net;
 using System.Net.Http.Headers;
 using System.Text.Json;
 using Microsoft.Extensions.Options;
@@ -27,6 +28,19 @@ internal sealed class GitHubSeedSource(
             string owner = request.RepositoryOwner.Trim();
             string repo = request.RepositoryName.Trim();
             string gitRef = request.GitRef.Trim();
+
+            if (!string.Equals(owner, _options.AllowedRepositoryOwner, StringComparison.OrdinalIgnoreCase)
+                || !string.Equals(repo, _options.AllowedRepositoryName, StringComparison.OrdinalIgnoreCase))
+            {
+                return Result.Failure<LoadedGitHubSeedManifest>(
+                    Error.Validation(
+                        "Admin.SeedSyncRepositoryNotAllowed",
+                        $"Seed sync reads only from {_options.AllowedRepositoryOwner}/{_options.AllowedRepositoryName}."));
+            }
+
+            // The configured spelling, so the repository part of every URL comes from configuration.
+            owner = _options.AllowedRepositoryOwner;
+            repo = _options.AllowedRepositoryName;
 
             ConfigureApiHeaders();
 
@@ -119,10 +133,14 @@ internal sealed class GitHubSeedSource(
                 NextFileOffset: isComplete ? 0 : nextFileOffset,
                 IsComplete: isComplete);
 
-            string? branchTaxonomyYaml = await FetchRawFileAsync(owner, repo, resolvedSha, _options.TaxonomyYamlPath, cancellationToken);
-            string? branchTaxonomySql = await FetchRawFileAsync(owner, repo, resolvedSha, _options.TaxonomySeedSqlPath, cancellationToken);
+            Result<string?> taxonomyResult = await FetchOptionalRawFileAsync(
+                owner, repo, resolvedSha, _options.TaxonomyYamlPath, cancellationToken);
+            if (taxonomyResult.IsFailure)
+            {
+                return Result.Failure<LoadedGitHubSeedManifest>(taxonomyResult.Error!);
+            }
 
-            return Result.Success(new LoadedGitHubSeedManifest(manifest, sourceContext, branchTaxonomyYaml, branchTaxonomySql));
+            return Result.Success(new LoadedGitHubSeedManifest(manifest, sourceContext, taxonomyResult.Value));
         }
         catch (Exception ex)
         {
@@ -188,7 +206,7 @@ internal sealed class GitHubSeedSource(
         string indexPath,
         CancellationToken cancellationToken)
     {
-        string rawUrl = $"{_options.RawBaseUrl.TrimEnd('/')}/{repositoryOwner}/{repositoryName}/{resolvedCommitSha}/{indexPath}";
+        Uri rawUrl = BuildRawUrl(repositoryOwner, repositoryName, resolvedCommitSha, indexPath);
         using HttpResponseMessage response = await _httpClient.GetAsync(rawUrl, cancellationToken);
 
         if (!response.IsSuccessStatusCode)
@@ -213,8 +231,42 @@ internal sealed class GitHubSeedSource(
                     $"Source file index '{indexPath}' contained no files."));
         }
 
+        SourceFileEntry? outside = index.Files.FirstOrDefault(file => !IsAllowedSourcePath(file.Path));
+        if (outside is not null)
+        {
+            return Result.Failure<SourceFileIndex>(
+                Error.Validation(
+                    "Admin.SeedSyncSourceFilePathNotAllowed",
+                    $"Source file index '{indexPath}' lists a path outside '{_options.SourceFilesRoot}': '{outside.Path}'."));
+        }
+
         return Result.Success(index);
     }
+
+    /// <summary>
+    /// The URL of one file at the resolved commit. <see cref="Uri"/> collapses <c>..</c> segments, percent-encoded ones
+    /// too, so the result is checked to still lie under that repository and commit.
+    /// </summary>
+    private Uri BuildRawUrl(string repositoryOwner, string repositoryName, string resolvedCommitSha, string filePath)
+    {
+        string root = $"{_options.RawBaseUrl.TrimEnd('/')}/{repositoryOwner}/{repositoryName}/{resolvedCommitSha}/";
+        Uri url = new(root + filePath);
+        if (!url.AbsolutePath.StartsWith(new Uri(root).AbsolutePath, StringComparison.Ordinal))
+        {
+            throw new InvalidOperationException($"Source path '{filePath}' leaves the repository at the resolved commit.");
+        }
+
+        return url;
+    }
+
+    /// <summary>
+    /// Paths named by the source (the index and the collection tree) must stay under the seed directory.
+    /// </summary>
+    private bool IsAllowedSourcePath(string? path) =>
+        path is not null
+        && path.StartsWith(_options.SourceFilesRoot, StringComparison.Ordinal)
+        && path.IndexOfAny(['\\', '%', '?', '#']) < 0
+        && !path.Split('/').Any(segment => segment.Trim() is "." or "..");
 
     private async Task<Result<HashSet<string>>> GetChangedSourceFilesAsync(
         string repositoryOwner,
@@ -258,7 +310,7 @@ internal sealed class GitHubSeedSource(
         string filePath,
         CancellationToken cancellationToken)
     {
-        string rawUrl = $"{_options.RawBaseUrl.TrimEnd('/')}/{repositoryOwner}/{repositoryName}/{resolvedCommitSha}/{filePath}";
+        Uri rawUrl = BuildRawUrl(repositoryOwner, repositoryName, resolvedCommitSha, filePath);
         using HttpResponseMessage response = await _httpClient.GetAsync(rawUrl, cancellationToken);
 
         if (!response.IsSuccessStatusCode)
@@ -310,7 +362,7 @@ internal sealed class GitHubSeedSource(
 
         foreach (string collectionPath in collectionPaths)
         {
-            string rawUrl = $"{_options.RawBaseUrl.TrimEnd('/')}/{repositoryOwner}/{repositoryName}/{resolvedCommitSha}/{collectionPath}";
+            Uri rawUrl = BuildRawUrl(repositoryOwner, repositoryName, resolvedCommitSha, collectionPath);
             using HttpResponseMessage response = await _httpClient.GetAsync(rawUrl, cancellationToken);
 
             if (!response.IsSuccessStatusCode)
@@ -384,21 +436,43 @@ internal sealed class GitHubSeedSource(
             .OrderBy(path => path, StringComparer.OrdinalIgnoreCase)
             .ToList();
 
+        string? outside = paths.FirstOrDefault(path => !IsAllowedSourcePath(path));
+        if (outside is not null)
+        {
+            return Result.Failure<List<string>>(
+                Error.Validation(
+                    "Admin.SeedSyncSourceFilePathNotAllowed",
+                    $"The collection tree lists a path outside '{_options.SourceFilesRoot}': '{outside}'."));
+        }
+
         return Result.Success(paths);
     }
 
-    private async Task<string?> FetchRawFileAsync(
+    /// <summary>Null when the commit has no such file. Any other failure fails the sync rather than skipping the file.</summary>
+    private async Task<Result<string?>> FetchOptionalRawFileAsync(
         string repositoryOwner,
         string repositoryName,
         string resolvedCommitSha,
         string filePath,
         CancellationToken cancellationToken)
     {
-        string rawUrl = $"{_options.RawBaseUrl.TrimEnd('/')}/{repositoryOwner}/{repositoryName}/{resolvedCommitSha}/{filePath}";
+        Uri rawUrl = BuildRawUrl(repositoryOwner, repositoryName, resolvedCommitSha, filePath);
         using HttpResponseMessage response = await _httpClient.GetAsync(rawUrl, cancellationToken);
+        if (response.StatusCode == HttpStatusCode.NotFound)
+        {
+            return Result.Success<string?>(null);
+        }
+
         if (!response.IsSuccessStatusCode)
-            return null;
-        return await response.Content.ReadAsStringAsync(cancellationToken);
+        {
+            string description = await BuildErrorDescriptionAsync(response, cancellationToken);
+            return Result.Failure<string?>(
+                Error.Problem(
+                    "Admin.SeedSyncTaxonomyFetchFailed",
+                    $"Unable to fetch '{filePath}' at '{resolvedCommitSha}': {description}"));
+        }
+
+        return Result.Success<string?>(await response.Content.ReadAsStringAsync(cancellationToken));
     }
 
     private static async Task<string> BuildErrorDescriptionAsync(
