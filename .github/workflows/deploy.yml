@@ -6,14 +6,28 @@ on:
     types: [completed]
     branches: [main]
 
+# AC 7.11.34: concurrency applies before any job condition, and a new run cancels the pending one in its group. Only a
+# run that passes the same gate as `scope` joins the "deploy" group it shares with Rollback.
 concurrency:
-  group: deploy
+  group: >-
+    ${{ (github.event.workflow_run.conclusion == 'success'
+    && github.event.workflow_run.event == 'push'
+    && github.event.workflow_run.head_branch == 'main'
+    && github.event.workflow_run.head_repository.full_name == github.repository)
+    && 'deploy' || format('deploy-ignored-{0}', github.run_id) }}
   cancel-in-progress: false
 
 jobs:
   # AC 7.11.2: reads the change scope CI computed for this commit. A missing or unreadable scope deploys everything.
   scope:
-    if: ${{ github.event.workflow_run.conclusion == 'success' }}
+    # AC 7.11.34: workflow_run fires for pull requests too, including a fork's branch named main, and runs with this
+    # repository's secrets. Only a successful CI run for a push to this repository's main may deploy. Every other job
+    # depends on this one, so they are all skipped with it.
+    if: >-
+      ${{ github.event.workflow_run.conclusion == 'success'
+      && github.event.workflow_run.event == 'push'
+      && github.event.workflow_run.head_branch == 'main'
+      && github.event.workflow_run.head_repository.full_name == github.repository }}
     runs-on: ubuntu-latest
     permissions:
       actions: read
@@ -237,7 +251,7 @@ jobs:
   deploy-ui:
     needs: [scope, deploy-container, build-ui]
     # deploy-container may be skipped (web-only change); it must not have failed.
-    if: ${{ !cancelled() && needs.scope.outputs.web == 'true' && needs.build-ui.result == 'success' && contains(fromJSON('["success","skipped"]'), needs.deploy-container.result) }}
+    if: ${{ !cancelled() && needs.scope.result == 'success' && needs.scope.outputs.web == 'true' && needs.build-ui.result == 'success' && contains(fromJSON('["success","skipped"]'), needs.deploy-container.result) }}
     runs-on: ubuntu-latest
     permissions:
       id-token: write
@@ -332,7 +346,7 @@ jobs:
   prod-verify:
     needs: [scope, deploy-container, deploy-ui]
     # Nothing deployed (skills or docs only) means nothing to verify.
-    if: ${{ !cancelled() && (needs.scope.outputs.web == 'true' || needs.scope.outputs.api == 'true') && contains(fromJSON('["success","skipped"]'), needs.deploy-container.result) && contains(fromJSON('["success","skipped"]'), needs.deploy-ui.result) }}
+    if: ${{ !cancelled() && needs.scope.result == 'success' && (needs.scope.outputs.web == 'true' || needs.scope.outputs.api == 'true') && contains(fromJSON('["success","skipped"]'), needs.deploy-container.result) && contains(fromJSON('["success","skipped"]'), needs.deploy-ui.result) }}
     runs-on: ubuntu-latest
     timeout-minutes: 30
     continue-on-error: true

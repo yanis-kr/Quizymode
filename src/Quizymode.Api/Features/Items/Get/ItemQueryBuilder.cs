@@ -125,7 +125,7 @@ internal sealed class ItemQueryBuilder
     /// - If IsPrivate=false: only global (non-private) items are returned
     /// Public items whose uploaded pictures are not Approved are excluded for everyone but their creator (#400).
     /// - If IsPrivate=null (all items):
-    ///   - Anonymous users: only global items
+    ///   - Anonymous users, and any caller without a user id: only global items
     ///   - Authenticated users: global items + their own private items
     /// This ensures users can only see items they have permission to view.
     /// </summary>
@@ -149,14 +149,8 @@ internal sealed class ItemQueryBuilder
         }
         else
         {
-            if (!_userContext.IsAuthenticated)
-            {
-                query = query.Where(ItemVisibility.PublicEligible);
-            }
-            else if (!string.IsNullOrEmpty(_userContext.UserId))
-            {
-                query = query.Where(ItemVisibility.VisibleTo(_userContext.UserId));
-            }
+            // Always filtered: a caller without a user id sees what an anonymous caller sees (AC 4.1.8).
+            query = query.Where(ItemVisibility.VisibleTo(_userContext.IsAuthenticated ? _userContext.UserId : null));
         }
 
         return Result.Success(query);
