@@ -1,5 +1,7 @@
 import { Link } from "react-router-dom";
-import type { LandingGamesState, LandingLoadState } from "@/hooks/useScopeLanding";
+import type { LandingLoadState } from "@/hooks/useScopeLanding";
+
+export type LandingGamesState = "loading" | "available" | "unavailable";
 
 export interface ScopeLandingHeaderProps {
   title: string;
@@ -7,19 +9,28 @@ export interface ScopeLandingHeaderProps {
   /** Unfiltered number of questions in the scope. */
   count: number | undefined;
   countState: LandingLoadState;
-  games: LandingGamesState;
-  /** A collection with 10 or more questions gets Play 5, Play 10 and Play all (N) (#714). */
+  /**
+   * A collection with 10 or more questions gets Play 5, Play 10 and Play all (N) (#714), plus Flashcards and Games.
+   * A category scope offers those two in the mode tabs only (#896).
+   */
   variant?: "scope" | "collection";
   /** Quiz route; a size is added to the query for Play 5 / Play 10 only. */
   quizHref: (size?: number) => string;
-  flashcardsHref: string;
-  gamesHref: string;
+  /** Collection variant only. */
+  flashcardsHref?: string;
+  /** Collection variant only. */
+  gamesHref?: string;
+  /** Collection variant only. */
+  games?: LandingGamesState;
   /** Timed run (mode=test) for exam scopes; undefined hides the Exam simulation button (#714). */
   examSimulationHref?: string;
   /** Exam scopes show the unofficial-practice line (#714). */
   unofficial?: boolean;
   browseHref?: string;
-  /** Guest-local known-item count (#672); undefined hides the progress line (signed-in users, unknown set). */
+  /**
+   * Known-item count (#672, #685); undefined hides the progress line (unknown set, loading or failed). A category
+   * scope also hides it while nothing is known (#896).
+   */
   knownCount?: number;
 }
 
@@ -53,9 +64,11 @@ function buildActions(props: ScopeLandingHeaderProps): Action[] {
   if (examSimulationHref) {
     actions.push({ kind: "link", key: "exam", label: "Exam simulation", href: examSimulationHref, primary: false });
   }
-  actions.push({ kind: "link", key: "flashcards", label: "Flashcards", href: flashcardsHref, primary: false });
-  if (games === "available") actions.push({ kind: "link", key: "games", label: "Games", href: gamesHref, primary: false });
-  else if (games === "loading") actions.push({ kind: "skeleton", key: "games" });
+  if (variant === "collection") {
+    if (flashcardsHref) actions.push({ kind: "link", key: "flashcards", label: "Flashcards", href: flashcardsHref, primary: false });
+    if (games === "available" && gamesHref) actions.push({ kind: "link", key: "games", label: "Games", href: gamesHref, primary: false });
+    else if (games === "loading") actions.push({ kind: "skeleton", key: "games" });
+  }
   return actions;
 }
 
@@ -83,6 +96,10 @@ export function ScopeLandingHeader(props: ScopeLandingHeaderProps) {
   const isEmpty = countState === "ready" && count === 0;
   const actions = isEmpty || countState === "loading" ? [] : buildActions(props);
   const firstSpansTwo = actions.length % 2 === 1;
+  const showKnown = knownCount !== undefined && (variant === "collection" || knownCount > 0);
+  // A category scope whose count failed has no buttons unless it is an exam scope; the group is then left out.
+  const showActionGroup = countState === "loading" || actions.length > 0;
+  const loadingSlots = variant === "collection" ? [0, 1, 2, 3] : [0, 1];
 
   return (
     <div className="pb-3" aria-busy={countState === "loading"} data-testid="scope-landing-header" data-variant={variant}>
@@ -96,7 +113,7 @@ export function ScopeLandingHeader(props: ScopeLandingHeaderProps) {
           {count.toLocaleString()} {count === 1 ? "question" : "questions"}
         </p>
       )}
-      {countState === "ready" && count !== undefined && count > 0 && knownCount !== undefined && (
+      {countState === "ready" && count !== undefined && count > 0 && showKnown && (
         <SetProgress known={knownCount} total={count} />
       )}
       {countState === "error" && <p className="mt-1 text-xs text-gray-500">Could not load the question count.</p>}
@@ -107,10 +124,10 @@ export function ScopeLandingHeader(props: ScopeLandingHeaderProps) {
             Browse categories
           </Link>
         </div>
-      ) : (
+      ) : showActionGroup ? (
         <div role="group" aria-label="Play this set" className="mt-3 grid grid-cols-2 gap-2 sm:flex sm:flex-wrap">
           {countState === "loading" &&
-            [0, 1, 2, 3].map((i) => (
+            loadingSlots.map((i) => (
               <div key={i} aria-hidden="true" className="h-11 animate-pulse rounded-md bg-gray-100 sm:w-28" />
             ))}
           {actions.map((action, index) => {
@@ -125,7 +142,7 @@ export function ScopeLandingHeader(props: ScopeLandingHeaderProps) {
             );
           })}
         </div>
-      )}
+      ) : null}
       {!isEmpty && examSimulationHref ? (
         <p className="mt-1 text-xs text-gray-500">Timed. Answers shown at the end.</p>
       ) : null}

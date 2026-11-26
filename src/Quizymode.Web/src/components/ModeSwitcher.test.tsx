@@ -171,7 +171,9 @@ describe("ModeSwitcher", () => {
     );
 
     expect(scrollIntoView).toHaveBeenCalledWith({ inline: "nearest", block: "nearest" });
-    expect(screen.getByTestId("mode-switcher-edge-cue")).toBeInTheDocument();
+    // AC 3.17.12: the cue fades from the theme surface, so it is not a white block on the dark theme (#896).
+    expect(screen.getByTestId("mode-switcher-edge-cue")).toHaveClass("from-surface");
+    expect(screen.getByTestId("mode-switcher-edge-cue")).not.toHaveClass("from-white");
     unmount();
 
     client.mockReturnValue(400);

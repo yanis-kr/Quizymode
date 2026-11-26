@@ -63,6 +63,7 @@ const SwipeBlitzPage = lazyPage(() => import("./features/games/pages/SwipeBlitzP
 const SurvivalPage = lazyPage(() => import("./features/games/pages/SurvivalPage"));
 const BucketDropPage = lazyPage(() => import("./features/games/pages/BucketDropPage"));
 const SortItPage = lazyPage(() => import("./features/games/pages/SortItPage"));
+const NotFoundPage = lazyPage(() => import("./features/notFound/pages/NotFoundPage"));
 
 function App() {
   const location = useLocation();
@@ -198,6 +199,7 @@ function App() {
         <Route path="/privacy-policy" element={<PrivacyPolicyPage />} />
         <Route path="/terms" element={<TermsOfServicePage />} />
         <Route path="/terms-of-service" element={<TermsOfServicePage />} />
+        <Route path="*" element={<NotFoundPage />} />
       </Routes>
       </LazyRoute>
     </Layout>

@@ -20,6 +20,7 @@ type PassThroughShellProps = Pick<
   | "onOpenComments"
   | "onOpenManageCollections"
   | "isAuthenticated"
+  | "hideArrows"
   | "onOpenShortcuts"
   | "footerContent"
 >;

@@ -1484,7 +1484,7 @@ const QuizModePageContent = ({ resumeRequested = false, initialNotice = null }: 
         aria-expanded={guestOptionsOpen}
         aria-controls="quiz-guest-options"
         onClick={() => setGuestOptionsOpen((open) => !open)}
-        className="min-h-[44px] rounded-md border border-gray-300 bg-white px-3 py-1.5 text-sm font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500"
+        className="min-h-[44px] rounded-md border border-gray-300 bg-surface px-3 py-1.5 text-sm font-medium text-gray-900 hover:bg-gray-50 focus:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500"
       >
         Options
       </button>
@@ -1712,6 +1712,7 @@ const QuizModePageContent = ({ resumeRequested = false, initialNotice = null }: 
             onOpenComments: (id) => setCommentsDrawerItemId(id),
             onOpenManageCollections: (id) => setSelectedItemForCollections(id),
             isAuthenticated,
+            hideArrows: !isAuthenticated,
             onOpenShortcuts: openHelp,
             footerContent: studyFooter,
           }}
@@ -1727,6 +1728,8 @@ const QuizModePageContent = ({ resumeRequested = false, initialNotice = null }: 
         isPrevDisabled={currentIndex === 0}
         isNextDisabled={currentIndex >= items.length - 1}
         hideBottomNext={Boolean(choiceCardOutcome)}
+        // #897: signed-out visitors keep one set of Previous and Next, at the bottom (AC 3.6.42).
+        hideArrows={!isAuthenticated}
         currentItem={currentItem ?? undefined}
         navigationContext={navigationContext}
         onOpenComments={(id) => setCommentsDrawerItemId(id)}

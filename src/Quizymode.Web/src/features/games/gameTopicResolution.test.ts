@@ -7,10 +7,14 @@ describe("game topic precedence and identity", () => {
     expect(resolveGameTopics(true, true, "error", ["history"])).toEqual({ mode: "explicit" });
     expect(resolveGameTopics(false, true, "loading", ["history"])).toEqual({ mode: "all" });
   });
-  it("waits, reports errors, and asks before playing globally", () => {
+  it("waits and reports errors without falling back to all topics", () => {
     expect(resolveGameTopics(false, false, "loading", [])).toEqual({ mode: "loading" });
     expect(resolveGameTopics(false, false, "error", [])).toEqual({ mode: "error" });
-    expect(resolveGameTopics(false, false, "ready", [])).toEqual({ mode: "choose" });
+  });
+  it("AC 3.20.29 plays all topics by default when the load succeeded with no usable topic", () => {
+    expect(resolveGameTopics(false, false, "ready", [])).toEqual({ mode: "all", byDefault: true });
+    expect(resolveGameTopics(false, false, "ready", ["not a topic path"])).toEqual({ mode: "all", byDefault: true });
+    expect(resolveGameTopics(false, true, "ready", [])).toEqual({ mode: "all" });
   });
   it("preserves every saved refinement and canonicalizes only the record key order", () => {
     expect(resolveGameTopics(false, false, "ready", ["languages/french/core", "science"])).toEqual({ mode: "topics", topics: ["languages/french/core", "science"] });

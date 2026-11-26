@@ -86,6 +86,33 @@ describe("StudyShell", () => {
     );
   });
 
+  it.each([false, true])("AC 3.6.42 AC 3.6.44 header arrows follow hideArrows=%s; counter and bottom buttons stay", (hideArrows) => {
+    render(
+      <MemoryRouter>
+        <StudyShell
+          currentIndex={1}
+          totalCount={3}
+          onPrev={() => {}}
+          onNext={() => {}}
+          isPrevDisabled={false}
+          isNextDisabled={false}
+          hideArrows={hideArrows}
+          currentItem={item}
+          onOpenComments={() => {}}
+          onOpenManageCollections={() => {}}
+          isAuthenticated={false}
+        >
+          <div>Body</div>
+        </StudyShell>
+      </MemoryRouter>
+    );
+
+    expect(screen.queryAllByTitle(/^(Previous|Next) item$/)).toHaveLength(hideArrows ? 0 : 2);
+    expect(screen.getByText("2 of 3")).toBeInTheDocument();
+    expect(screen.getByRole("button", { name: "Previous" })).toBeEnabled();
+    expect(screen.getByRole("button", { name: "Next" })).toBeEnabled();
+  });
+
   it("labels Next as Finish on the button and the chevron, and shows the round label", () => {
     render(
       <MemoryRouter>

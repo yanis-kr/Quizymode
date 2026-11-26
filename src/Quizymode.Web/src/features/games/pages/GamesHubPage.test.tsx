@@ -1,5 +1,5 @@
 import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
-import { cleanup, fireEvent, render, screen, waitFor } from "@testing-library/react";
+import { cleanup, fireEvent, render, screen, waitFor, within } from "@testing-library/react";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { MemoryRouter, Route, Routes, useLocation } from "react-router-dom";
 import GamesHubPage from "./GamesHubPage";
@@ -281,18 +281,40 @@ describe("GamesHubPage", () => {
       await screen.findByRole("heading", { name: "Games" });
       expect(gamesApi.getRoster).toHaveBeenCalledWith(["science", "history"], 200);
       expect(screen.getByText("My topics: Science, History")).toBeInTheDocument();
+      expect(screen.getByRole("link", { name: "Play My topics" })).toBeInTheDocument();
+      expect(screen.getByRole("link", { name: "All topics" })).toBeInTheDocument();
       fireEvent.click(screen.getByRole("button", { name: "Change topics" }));
       expect(await screen.findByRole("dialog", { name: "My topics" })).toBeInTheDocument();
     });
 
-    it("waits for a deliberate all-topics choice when no topics are saved", async () => {
+    it("AC 3.20.29 shows the games at once from all topics when no topics are saved", async () => {
       renderPage("/games");
-      expect(await screen.findByRole("heading", { name: "Choose topics for your games" })).toBeInTheDocument();
-      expect(gamesApi.getRoster).not.toHaveBeenCalled();
-      fireEvent.click(screen.getByRole("link", { name: "Play all topics" }));
       await screen.findByRole("heading", { name: "Games" });
       expect(gamesApi.getRoster).toHaveBeenCalledWith([], 200);
-      expect(screen.getByTestId("location")).toHaveTextContent("/games?all=1");
+      expect(screen.getByRole("link", { name: "Play Match Race" })).toHaveAttribute("href", "/games/match-race");
+      expect(screen.queryByRole("link", { name: "Play all topics" })).toBeNull();
+      expect(screen.queryByText("No topics chosen")).toBeNull();
+    });
+
+    it("AC 3.20.30 shows All topics with only Change topics and no note by default", async () => {
+      renderPage("/games");
+      await screen.findByRole("heading", { name: "Games" });
+      const bar = screen.getByRole("region", { name: "Game topics" });
+      expect(bar.textContent).toBe("All topicsChange topics");
+      expect(within(bar).getAllByRole("button")).toHaveLength(1);
+      expect(within(bar).queryAllByRole("link")).toHaveLength(0);
+      fireEvent.click(within(bar).getByRole("button", { name: "Change topics" }));
+      expect(await screen.findByRole("dialog", { name: "My topics" })).toBeInTheDocument();
+    });
+
+    it.each(["/games?all=1", "/games/science"])("AC 3.20.30 keeps the full bar on %s", async (path) => {
+      renderPage(path);
+      await screen.findByRole("heading", { name: "Games" });
+      const bar = screen.getByRole("region", { name: "Game topics" });
+      expect(within(bar).getByRole("button", { name: "Change topics" })).toBeInTheDocument();
+      expect(within(bar).getByRole("link", { name: "Play My topics" })).toBeInTheDocument();
+      expect(within(bar).getByRole("link", { name: "All topics" })).toBeInTheDocument();
+      expect(bar.querySelector("p.text-xs")).not.toBeNull();
     });
 
     it("retains the topics bar when the selected roster fails", async () => {
@@ -309,6 +331,7 @@ describe("GamesHubPage", () => {
       vi.mocked(interestsApi.get).mockRejectedValue(new Error("down"));
       renderPage("/games");
       expect(await screen.findByText("My topics unavailable")).toBeInTheDocument();
+      expect(screen.getByRole("button", { name: "Retry topics" })).toBeInTheDocument();
       expect(gamesApi.getRoster).not.toHaveBeenCalled();
       fireEvent.click(screen.getByRole("button", { name: "Change topics" }));
       expect(await screen.findByRole("dialog", { name: "My topics" })).toBeInTheDocument();

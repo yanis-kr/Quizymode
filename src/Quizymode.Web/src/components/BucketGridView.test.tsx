@@ -39,6 +39,25 @@ describe("BucketGridView", () => {
     expect(screen.getByText("First category")).toBeInTheDocument();
   });
 
+  it.each([undefined, "/images/theme.png"])(
+    "AC 3.4.7 shows the name once when the description repeats it (background %s)",
+    (backgroundImage) => {
+      render(
+        <BucketGridView
+          buckets={[
+            { id: "capitals", label: "capitals", itemCount: 3, description: " Capitals ", backgroundImage },
+            { id: "flags", label: "flags", itemCount: 4, description: "Flags of the world", backgroundImage },
+          ]}
+          onOpenBucket={() => {}}
+        />
+      );
+      expect(screen.getAllByText(/capitals/i)).toHaveLength(1);
+      expect(screen.getByRole("button", { name: /capitals/ })).not.toHaveAttribute("title");
+      expect(screen.getByText("Flags of the world")).toBeInTheDocument();
+      expect(screen.getByRole("button", { name: /flags/ })).toHaveAttribute("title", "Flags of the world");
+    }
+  );
+
   it("renders Private badge when a bucket is private", () => {
     render(
       <BucketGridView buckets={mockBuckets} onOpenBucket={() => {}} />

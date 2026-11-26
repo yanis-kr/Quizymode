@@ -583,6 +583,9 @@ const CategoriesPage = () => {
     enabled: showLanding,
   });
   const landingCategorySlug = categoryName ? categoryNameToSlug(categoryName) : "";
+  const landingShowsCategoryDescription =
+    showLanding &&
+    landing.description?.trim().toLowerCase() === currentCategoryMeta?.description?.trim().toLowerCase();
   const knownCount = useKnownCount(
     showLanding && landingCategorySlug ? categorySetKey(landingCategorySlug, pathKeywordsFromUrl) : null,
   );
@@ -593,13 +596,10 @@ const CategoriesPage = () => {
       count={landing.count}
       knownCount={knownCount ?? undefined}
       countState={landing.countState}
-      games={landing.games}
       quizHref={(size) => {
         const href = buildScopeStudyHref("quiz", landingCategorySlug, pathKeywordsFromUrl);
         return size === undefined ? href : withQuizSize(href, size);
       }}
-      flashcardsHref={buildScopeStudyHref("explore", landingCategorySlug, pathKeywordsFromUrl)}
-      gamesHref={buildScopeStudyHref("games", landingCategorySlug, pathKeywordsFromUrl)}
       unofficial={landingCategorySlug === "exams"}
       examSimulationHref={
         landingCategorySlug === "exams"
@@ -1653,7 +1653,8 @@ const CategoriesPage = () => {
               }
               count={showLanding ? null : setsScopeCount}
               hint={
-                keywordsFromUrl.length === 0 && currentCategoryMeta?.description
+                // The landing header above already shows the description: never print it twice (AC 3.4.6).
+                keywordsFromUrl.length === 0 && currentCategoryMeta?.description && !landingShowsCategoryDescription
                   ? currentCategoryMeta.description
                   : "Browse subtopics in this scope."
               }

@@ -862,6 +862,126 @@ describe("QuizModePage Test mode (AC 3.18)", () => {
       expect(screen.getByLabelText("Quiz size:")).toHaveValue(10);
     });
   });
+
+  describe("quiz navigation without header arrows for signed-out visitors (#897)", () => {
+    const next = () => screen.getByRole("button", { name: "Next" });
+    const previous = () => screen.getByRole("button", { name: "Previous" });
+    const expectCounter = async (text: string) => expect(await screen.findByText(text)).toBeInTheDocument();
+    const expectNoArrows = () => {
+      expect(screen.queryByTitle("Previous item")).toBeNull();
+      expect(screen.queryByTitle("Next item")).toBeNull();
+    };
+
+    it("AC 3.6.42 keeps the counter and the shortcuts and details icons in Practice", async () => {
+      renderPage(PRACTICE_URL);
+      await expectCounter("1 of 3");
+      expectNoArrows();
+      expect(screen.getByRole("button", { name: "Keyboard shortcuts" })).toBeInTheDocument();
+      expect(screen.getByTitle("View item details")).toBeInTheDocument();
+    });
+
+    it.each([`/quiz/exams/item/${GUID_1}`, `/quiz/item/${GUID_1}`])(
+      "AC 3.6.42 shows no header arrows on %s",
+      async (url) => {
+        vi.mocked(itemsApi.getById).mockResolvedValue(item1 as Awaited<ReturnType<typeof itemsApi.getById>>);
+        renderPage(url);
+        await screen.findByText("What is 2 + 2?");
+        expect(screen.getByText(/^1 of \d+$/)).toBeInTheDocument();
+        expectNoArrows();
+      },
+    );
+
+    it("AC 3.6.43 moves on and back from an unanswered question with the buttons and the arrow keys", async () => {
+      renderPage(PRACTICE_URL);
+      await expectCounter("1 of 3");
+      expect(previous()).toBeDisabled();
+      fireEvent.click(next());
+      await expectCounter("2 of 3");
+      fireEvent.click(previous());
+      await expectCounter("1 of 3");
+      fireEvent.keyDown(document.body, { key: "ArrowRight" });
+      await expectCounter("2 of 3");
+      fireEvent.keyDown(document.body, { key: "ArrowLeft" });
+      await expectCounter("1 of 3");
+    });
+
+    it("AC 3.6.43 offers the card's Next after an answer, then See my score on a completed run", async () => {
+      renderPage(PRACTICE_URL);
+      await expectCounter("1 of 3");
+      fireEvent.click(option("4"));
+      fireEvent.click(next());
+      await expectCounter("2 of 3");
+      fireEvent.click(option("Paris"));
+      fireEvent.click(next());
+      await expectCounter("3 of 3");
+      fireEvent.click(option("Jupiter"));
+      expect(screen.getByRole("button", { name: "See my score" })).toBeEnabled();
+      // Going back on a completed run: the card still finishes it.
+      fireEvent.click(previous());
+      await expectCounter("2 of 3");
+      expectNoArrows();
+      fireEvent.click(screen.getByRole("button", { name: "See my score" }));
+      await waitFor(() => expect(screen.queryByText("2 of 3")).toBeNull());
+    });
+
+    it("AC 3.6.43 explains what is left on an answered last question and keeps Previous", async () => {
+      renderPage(PRACTICE_URL);
+      await expectCounter("1 of 3");
+      fireEvent.click(next());
+      await expectCounter("2 of 3");
+      fireEvent.click(next());
+      await expectCounter("3 of 3");
+      expect(next()).toBeDisabled();
+      fireEvent.click(option("Jupiter"));
+      expect(screen.getByText("2 questions left. Use Previous to answer them.")).toBeInTheDocument();
+      fireEvent.click(previous());
+      await expectCounter("2 of 3");
+    });
+
+    it("AC 3.6.43 moves on from a skipped question", async () => {
+      const pictured = { ...item1, questionImage: { key: "curated:flags/fr", altText: "Flag" } };
+      vi.mocked(collectionsApi.getItems).mockResolvedValue({ items: [pictured, item2, item3] } as Awaited<ReturnType<typeof collectionsApi.getItems>>);
+      renderPage(PRACTICE_URL);
+      await expectCounter("1 of 3");
+      fireEvent.load(await screen.findByAltText("Flag"));
+      fireEvent.click(screen.getByRole("button", { name: "Skip question (not scored)" }));
+      await expectCounter("2 of 3");
+      fireEvent.click(previous());
+      await expectCounter("1 of 3");
+      expectNoArrows();
+      fireEvent.click(next());
+      await expectCounter("2 of 3");
+    });
+
+    it("AC 3.6.43 moves through a Test with the bottom buttons and can submit on the last question", async () => {
+      renderPage(TEST_URL);
+      await startTest();
+      await expectCounter("1 of 3");
+      expectNoArrows();
+      fireEvent.click(option("4"));
+      fireEvent.click(next());
+      await expectCounter("2 of 3");
+      fireEvent.click(previous());
+      await expectCounter("1 of 3");
+      fireEvent.click(next());
+      await expectCounter("2 of 3");
+      fireEvent.click(next());
+      await expectCounter("3 of 3");
+      expect(next()).toBeDisabled();
+      expect(screen.getByRole("button", { name: "Submit test" })).toBeEnabled();
+    });
+
+    it.each(["practice", "test"])("AC 3.6.44 keeps both header arrows for a signed-in user in %s", async (mode) => {
+      mockAuth.isAuthenticated = true;
+      mockAuth.userId = "user-1";
+      renderPage(mode === "test" ? TEST_URL : PRACTICE_URL);
+      if (mode === "test") await startTest();
+      await expectCounter("1 of 3");
+      expect(screen.getByTitle("Previous item")).toBeDisabled();
+      fireEvent.click(screen.getByTitle("Next item"));
+      await expectCounter("2 of 3");
+    });
+  });
 });
 
 describe("guest quiz options (AC 3.18.12)", () => {
