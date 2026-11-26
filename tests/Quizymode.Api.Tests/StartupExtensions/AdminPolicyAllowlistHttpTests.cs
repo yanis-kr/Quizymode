@@ -63,6 +63,7 @@ public sealed class AdminPolicyAllowlistHttpTests : DatabaseTestFixture
     [Theory]
     [InlineData("admin")]
     [InlineData("admins")]
+    [InlineData("ADMINS")]
     [InlineData("Administrators")]
     [InlineData("AdminsX")]
     [InlineData("us-east-1_LiJbvT212_Google")]

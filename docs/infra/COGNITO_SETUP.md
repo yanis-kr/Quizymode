@@ -107,7 +107,7 @@ APP_Authentication__Cognito__Audience=63b38es9dto8m59337jguiqli3
 2. **User Pool Groups**:
 
    - Create a group in your Cognito User Pool named exactly `Admins` (case-sensitive)
-   - Examples: `Admin`, `admin`, `Administrators`, `admin-users`
+   - Not admin (no exact match): `Admin`, `admin`, `admins`, `Administrators`, `admin-users`
    - Add users who should have admin access to this group
    - The application checks for a group name exactly equal to an allowlisted name (default `Admins`, case-sensitive)
 

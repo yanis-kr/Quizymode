@@ -47,6 +47,7 @@ public sealed class AdminGroupsTests
     [InlineData("Admins", true)]
     [InlineData("admin", false)]
     [InlineData("admins", false)]
+    [InlineData("ADMINS", false)]
     [InlineData("Administrators", false)]
     [InlineData("AdminsX", false)]
     [InlineData("us-east-1_LiJbvT212_Google", false)]
