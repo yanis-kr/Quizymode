@@ -1,9 +1,10 @@
 name: Prod release checklist
 
 # AC 3.29 (#638): release checklists that WRITE to production. Started by hand only, never by a deploy.
-# Each run signs in as the test user and the test admin, creates test-owned data (one uploaded picture, one private
-# item, one link-only collection), has the admin approve and withdraw the picture, and deletes the item and the
-# collection at the end. It uses 1 of the test user's 20 daily uploads.
+# Each run signs in as the test user and the test admin, creates test-owned data (the release checklist and the review
+# matrix, each with one private item and one link-only collection), and deletes the items and collections at the end.
+# It uses 3 of the test user's 20 daily uploads; those pictures stay private and unreferenced, and their ids are in the
+# report.
 on:
   workflow_dispatch:
 

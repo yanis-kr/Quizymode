@@ -16,6 +16,7 @@ import {
   expectPicture,
   identityFromPage,
   newChecklistData,
+  recordUploadedAssets,
   shareThroughLink,
   testPicture,
   uploadPicture,
@@ -25,7 +26,7 @@ import {
 
 const ADMIN_AUTHORIZATION = "DevTest ci-admin admin";
 
-test("AC 3.29.1, AC 3.29.2, AC 3.29.3, AC 3.29.4, AC 3.29.5, AC 3.29.6, AC 3.29.7, AC 3.29.8 @e2e an uploaded picture goes from upload to review, approval, shared link, withdrawal and deletion", async ({ page }, testInfo) => {
+test("AC 3.29.1, AC 3.29.2, AC 3.29.3, AC 3.29.4, AC 3.29.5, AC 3.29.6, AC 3.29.7, AC 3.29.8, AC 3.29.17 @e2e an uploaded picture goes from upload to review, approval, shared link, withdrawal and deletion", async ({ page }, testInfo) => {
   test.setTimeout(180_000);
   const owner = await identityFromPage(page);
   expect(owner.authorization).toBe("DevTest ci-user");
@@ -43,7 +44,11 @@ test("AC 3.29.1, AC 3.29.2, AC 3.29.3, AC 3.29.4, AC 3.29.5, AC 3.29.6, AC 3.29.
     await withdrawPicture(owner, admin, data);
     await checkOwnerScreenAfterWithdrawal(page, testInfo, data);
   } finally {
-    await cleanup(owner, data);
+    try {
+      await cleanup(owner, data);
+    } finally {
+      await recordUploadedAssets(testInfo, data);
+    }
   }
 });
 
