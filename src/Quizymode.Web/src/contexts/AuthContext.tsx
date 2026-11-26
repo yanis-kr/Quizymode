@@ -18,6 +18,7 @@ import {
 } from "aws-amplify/auth";
 import { usersApi } from "@/api/users";
 import { devTestIdentity } from "@/api/devTestAuth";
+import { isAdminGroups } from "@/features/auth/utils/adminGroups";
 import {
   SignInSessionError,
   SignInStepRequiredError,
@@ -204,9 +205,7 @@ export const AuthProvider = ({ children }: AuthProviderProps) => {
               };
 
               const groups = extractGroups(refreshedPayload);
-              let isUserAdmin = groups.some((g: string) =>
-                g.toLowerCase().startsWith("admin")
-              );
+              let isUserAdmin = isAdminGroups(groups);
               
               if (refreshedSession.tokens.idToken) {
                 const idTokenValue = refreshedSession.tokens.idToken;
@@ -221,9 +220,7 @@ export const AuthProvider = ({ children }: AuthProviderProps) => {
                 
                 if (!isUserAdmin) {
                   const idGroups = extractGroups(idPayload);
-                  isUserAdmin = idGroups.some((g: string) =>
-                    g.toLowerCase().startsWith("admin")
-                  );
+                  isUserAdmin = isAdminGroups(idGroups);
                 }
               }
               
@@ -268,9 +265,7 @@ export const AuthProvider = ({ children }: AuthProviderProps) => {
 
         // Check for admin group in access token
         const groups = extractGroups(payload);
-        let isUserAdmin = groups.some((g: string) =>
-          g.toLowerCase().startsWith("admin")
-        );
+        let isUserAdmin = isAdminGroups(groups);
 
         // Store tokens
         const idToken = session.tokens.idToken?.toString() || null;
@@ -313,9 +308,7 @@ export const AuthProvider = ({ children }: AuthProviderProps) => {
                 
                 if (!isUserAdmin) {
                   const idGroups = extractGroups(refreshedIdPayload);
-                  isUserAdmin = idGroups.some((g: string) =>
-                    g.toLowerCase().startsWith("admin")
-                  );
+                  isUserAdmin = isAdminGroups(idGroups);
                 }
               } else {
                 // No ID token after refresh - clear auth state
@@ -338,9 +331,7 @@ export const AuthProvider = ({ children }: AuthProviderProps) => {
             // Check for admin group in ID token if not found in access token
             if (!isUserAdmin) {
               const idGroups = extractGroups(idPayload);
-              isUserAdmin = idGroups.some((g: string) =>
-                g.toLowerCase().startsWith("admin")
-              );
+              isUserAdmin = isAdminGroups(idGroups);
             }
           }
         }

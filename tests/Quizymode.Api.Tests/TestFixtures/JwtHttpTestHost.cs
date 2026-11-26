@@ -50,7 +50,8 @@ internal sealed class JwtHttpTestHost : IAsyncDisposable
         Action<IServiceCollection> configureServices,
         Action<IEndpointRouteBuilder> mapEndpoints,
         bool useUserUpsertMiddleware = false,
-        bool useRateLimiting = false)
+        bool useRateLimiting = false,
+        IReadOnlyDictionary<string, string?>? extraConfiguration = null)
     {
         SymmetricSecurityKey signingKey = new(RandomNumberGenerator.GetBytes(32));
 
@@ -61,6 +62,10 @@ internal sealed class JwtHttpTestHost : IAsyncDisposable
             ["Authentication:Cognito:Authority"] = Issuer,
             ["Authentication:Cognito:ClientId"] = ClientId
         });
+        if (extraConfiguration is not null)
+        {
+            builder.Configuration.AddInMemoryCollection(extraConfiguration);
+        }
 
         builder.AddAuthenticationServices();
         builder.Services.PostConfigure<JwtBearerOptions>(JwtBearerDefaults.AuthenticationScheme, options =>

@@ -96,7 +96,7 @@ async function signIn(page: Page, options: { admin?: boolean } = {}): Promise<vo
     iss: "https://cognito-idp.us-east-1.amazonaws.com/us-east-1_e2e",
     iat: now,
     exp: now + 3 * 60 * 60,
-    ...(options.admin ? { "cognito:groups": ["admin"] } : {}),
+    ...(options.admin ? { "cognito:groups": ["Admins"] } : {}),
   };
   const accessToken = fakeJwt({ ...common, token_use: "access", client_id: clientId, scope: "aws.cognito.signin.user.admin" });
   const idToken = fakeJwt({ ...common, token_use: "id", aud: clientId, email: "e2e-topic@example.test", email_verified: true });

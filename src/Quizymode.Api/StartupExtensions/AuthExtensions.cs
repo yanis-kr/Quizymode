@@ -1,7 +1,7 @@
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
+using Quizymode.Api.Services;
 using Quizymode.Api.Shared.Http;
-using System.Security.Claims;
 
 namespace Quizymode.Api.StartupExtensions;
 
@@ -114,24 +114,17 @@ internal static partial class StartupExtensions
                 };
             });
 
+        IReadOnlyList<string> adminGroups = AdminGroups.Resolve(builder.Configuration);
         builder.Services.AddAuthorization(options =>
         {
-            // Admin policy based on Cognito group claim
-            // Checks for any group starting with "admin" (case-insensitive)
+            // Admin policy based on the Cognito group claim (AC 4.1.4): a group exactly equal to an allowlisted name
+            // (default "Admins", case-sensitive); an empty allowlist fails closed.
             options.AddPolicy("Admin", policy =>
             {
                 policy.RequireAuthenticatedUser();
                 policy.RequireAssertion(context =>
-                {
-                    if (!context.User.Identity?.IsAuthenticated ?? true)
-                    {
-                        return false;
-                    }
-
-                    IEnumerable<Claim> groupClaims = context.User.FindAll("cognito:groups");
-                    return groupClaims.Any(c => 
-                        c.Value.StartsWith("admin", StringComparison.OrdinalIgnoreCase));
-                });
+                    context.User.Identity?.IsAuthenticated == true
+                    && AdminGroups.IsAdmin(context.User, adminGroups));
             });
         });
 
