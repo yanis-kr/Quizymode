@@ -1,5 +1,3 @@
-using System.Data;
-using System.Data.Common;
 using System.Diagnostics;
 using FluentValidation.Results;
 using Microsoft.EntityFrameworkCore;
@@ -41,9 +39,10 @@ internal sealed class SeedSyncAdminService(
                 return Result.Failure<SeedSyncAdmin.PreviewResponse>(loadResult.Error!);
             }
 
-            ITaxonomyRegistry? branchRegistry = await BuildBranchRegistryAsync(loadResult.Value!, cancellationToken);
-            Result<SeedSyncAdmin.PreviewResponse> result = await PreviewManifestAsync(
-                loadResult.Value!.Manifest, loadResult.Value.SourceContext, cancellationToken, branchRegistry);
+            LoadedGitHubSeedManifest loaded = loadResult.Value!;
+            Result<SeedSyncAdmin.PreviewResponse> result = string.IsNullOrWhiteSpace(loaded.BranchTaxonomyYaml)
+                ? await PreviewManifestAsync(loaded.Manifest, loaded.SourceContext, cancellationToken)
+                : await PreviewWithSourceTaxonomyAsync(loaded, loaded.BranchTaxonomyYaml, cancellationToken);
             sw.Stop();
 
             return result.IsSuccess
@@ -91,9 +90,11 @@ internal sealed class SeedSyncAdminService(
             return Result.Failure<SeedSyncAdmin.ApplyResponse>(loadResult.Error!);
         }
 
-        ITaxonomyRegistry? branchRegistry = await BuildBranchRegistryAsync(loadResult.Value!, cancellationToken);
         Result<SeedSyncAdmin.ApplyResponse> result = await ApplyManifestAsync(
-            loadResult.Value!.Manifest, loadResult.Value.SourceContext, cancellationToken, taxonomyOverride: branchRegistry);
+            loadResult.Value!.Manifest,
+            loadResult.Value.SourceContext,
+            cancellationToken,
+            sourceTaxonomyYaml: loadResult.Value.BranchTaxonomyYaml);
         sw.Stop();
 
         return result.IsSuccess
@@ -144,21 +145,12 @@ internal sealed class SeedSyncAdminService(
         SeedSyncAdmin.SourceContext sourceContext,
         CancellationToken cancellationToken,
         bool recordHistory = true,
-        ITaxonomyRegistry? taxonomyOverride = null)
+        string? sourceTaxonomyYaml = null)
     {
         IDbContextTransaction? transaction = null;
 
         try
         {
-            Result<SeedSyncPlan> planResult = await BuildPlanAsync(manifest, cancellationToken, taxonomyOverride ?? taxonomyRegistry);
-            if (planResult.IsFailure)
-            {
-                return Result.Failure<SeedSyncAdmin.ApplyResponse>(planResult.Error!);
-            }
-
-            SeedSyncPlan plan = planResult.Value!;
-            Dictionary<string, Keyword> publicKeywordMap = await LoadOrCreatePublicKeywordsAsync(plan, cancellationToken);
-
             if (db.Database.IsRelational())
             {
                 try
@@ -169,6 +161,21 @@ internal sealed class SeedSyncAdminService(
                 {
                 }
             }
+
+            // The source taxonomy is written in the same transaction, so a failed sync leaves it unchanged too.
+            ITaxonomyRegistry registry = string.IsNullOrWhiteSpace(sourceTaxonomyYaml)
+                ? taxonomyRegistry
+                : await SyncSourceTaxonomyAsync(sourceTaxonomyYaml, cancellationToken);
+
+            Result<SeedSyncPlan> planResult = await BuildPlanAsync(manifest, cancellationToken, registry);
+            if (planResult.IsFailure)
+            {
+                await TryRollbackAsync(transaction, cancellationToken);
+                return Result.Failure<SeedSyncAdmin.ApplyResponse>(planResult.Error!);
+            }
+
+            SeedSyncPlan plan = planResult.Value!;
+            Dictionary<string, Keyword> publicKeywordMap = await LoadOrCreatePublicKeywordsAsync(plan, cancellationToken);
 
             DateTime utcNow = DateTime.UtcNow;
             SeedSyncRun? historyRun = recordHistory
@@ -589,40 +596,34 @@ internal sealed class SeedSyncAdminService(
         return Result.Success(resolved);
     }
 
-    private async Task<ITaxonomyRegistry?> BuildBranchRegistryAsync(
+    /// <summary>
+    /// A preview has to plan against the source taxonomy, which may add paths the database does not have yet. The rows
+    /// are written inside a transaction that is always rolled back.
+    /// </summary>
+    private async Task<Result<SeedSyncAdmin.PreviewResponse>> PreviewWithSourceTaxonomyAsync(
         LoadedGitHubSeedManifest loaded,
+        string taxonomyYaml,
         CancellationToken cancellationToken)
     {
-        if (string.IsNullOrWhiteSpace(loaded.BranchTaxonomyYaml) || string.IsNullOrWhiteSpace(loaded.BranchTaxonomySql))
-            return null;
-
-        await ApplyBranchTaxonomySqlAsync(loaded.BranchTaxonomySql, cancellationToken);
-
-        IReadOnlyDictionary<string, TaxonomyCategoryDefinition> parsed = TaxonomyYamlParser.LoadFromString(loaded.BranchTaxonomyYaml);
-        return new TaxonomyRegistry(parsed);
-    }
-
-    private async Task ApplyBranchTaxonomySqlAsync(string sql, CancellationToken cancellationToken)
-    {
-        DbConnection connection = db.Database.GetDbConnection();
-        bool shouldClose = connection.State != ConnectionState.Open;
-        if (shouldClose)
-            await db.Database.OpenConnectionAsync(cancellationToken);
-
+        await using IDbContextTransaction transaction = await db.Database.BeginTransactionAsync(cancellationToken);
         try
         {
-            await using DbTransaction transaction = await connection.BeginTransactionAsync(cancellationToken);
-            await using DbCommand command = connection.CreateCommand();
-            command.Transaction = transaction;
-            command.CommandText = sql;
-            await command.ExecuteNonQueryAsync(cancellationToken);
-            await transaction.CommitAsync(cancellationToken);
+            ITaxonomyRegistry registry = await SyncSourceTaxonomyAsync(taxonomyYaml, cancellationToken);
+            return await PreviewManifestAsync(loaded.Manifest, loaded.SourceContext, cancellationToken, registry);
         }
         finally
         {
-            if (shouldClose)
-                await db.Database.CloseConnectionAsync();
+            await transaction.RollbackAsync(CancellationToken.None);
+            db.ChangeTracker.Clear();
         }
+    }
+
+    /// <summary>Upserts the taxonomy parsed from the source YAML. SQL text from the repository is never executed.</summary>
+    private async Task<ITaxonomyRegistry> SyncSourceTaxonomyAsync(string yaml, CancellationToken cancellationToken)
+    {
+        IReadOnlyDictionary<string, TaxonomyCategoryDefinition> categories = TaxonomyYamlParser.LoadFromString(yaml);
+        await TaxonomyDatabaseSync.ApplyAsync(db, categories, cancellationToken);
+        return new TaxonomyRegistry(categories);
     }
 
     private async Task<Dictionary<string, Keyword>> LoadOrCreatePublicKeywordsAsync(
