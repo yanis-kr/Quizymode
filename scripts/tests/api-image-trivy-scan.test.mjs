@@ -44,6 +44,7 @@ test("AC 7.11.33: the scan covers OS packages, dependencies and configuration at
   assert.match(block, /ignore-unfixed: true/);
   assert.match(block, /severity: HIGH,CRITICAL/);
   assert.match(block, /trivyignores: \.trivyignore/);
+  assert.match(block, /TRIVY_IMAGE_CONFIG_SCANNERS: misconfig/);
 });
 
 test("AC 7.11.33: the scan target is the registry digest on main and the image ID on pull requests", () => {
@@ -53,17 +54,23 @@ test("AC 7.11.33: the scan target is the registry digest on main and the image I
 });
 
 test("AC 7.11.33: the job summary records the digest or image ID and the scanner DB timestamp", () => {
-  assert.match(block, /trivy version --format json/);
+  assert.match(block, /trivy version .*--format json/);
   assert.match(block, /VulnerabilityDB\.UpdatedAt/);
   assert.match(block, /Vulnerability DB updated at/);
   assert.match(block, /\$\{SCAN_ID\}/);
   assert.match(block, /GITHUB_STEP_SUMMARY/);
+  assert.match(block, /cache-dir: \$\{\{ github\.workspace \}\}\/\.cache\/trivy/);
+  assert.match(block, /trivy version --cache-dir "\$\{GITHUB_WORKSPACE\}\/\.cache\/trivy" --format json/);
 });
 
 test("AC 7.11.33: the first rollout is report-only and one value turns on enforcement", () => {
   assert.match(block, /^ {6}TRIVY_ENFORCE: "false"$/m);
   assert.match(block, /continue-on-error: \$\{\{ env\.TRIVY_ENFORCE != 'true' \}\}/);
   assert.match(block, /exit-code: \$\{\{ env\.TRIVY_ENFORCE == 'true' && '1' \|\| '0' \}\}/);
+  const target = block.slice(block.indexOf("id: scan_target"), block.indexOf("aquasecurity/trivy-action@"));
+  assert.match(target, /continue-on-error: \$\{\{ env\.TRIVY_ENFORCE != 'true' \}\}/);
+  assert.match(block, /if: steps\.scan_target\.outcome == 'success'/);
+  assert.match(block, /::warning::The API image scan was skipped/);
   assert.equal((workflow.match(/TRIVY_ENFORCE: "/g) ?? []).length, 1, "the switch is defined once");
 });
 

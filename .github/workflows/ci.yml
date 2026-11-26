@@ -492,6 +492,7 @@ jobs:
       # different build of the same tag (AC 7.11.33).
       - name: Resolve the image to scan
         id: scan_target
+        continue-on-error: ${{ env.TRIVY_ENFORCE != 'true' }}
         env:
           IMAGE: ${{ steps.meta.outputs.image }}:${{ github.event_name == 'push' && github.sha || format('ci-{0}', github.run_number) }}
           REPOSITORY: ${{ steps.meta.outputs.image }}
@@ -519,9 +520,15 @@ jobs:
       - name: Scan the API image with Trivy
         id: trivy_scan
         continue-on-error: ${{ env.TRIVY_ENFORCE != 'true' }}
+        if: steps.scan_target.outcome == 'success'
         uses: aquasecurity/trivy-action@ed142fd0673e97e23eac54620cfb913e5ce36c25 # v0.36.0
+        env:
+          # vuln/misconfig above: misconfig alone only reads IaC files inside the image. This turns on the checks
+          # of the image configuration (user, history, healthcheck).
+          TRIVY_IMAGE_CONFIG_SCANNERS: misconfig
         with:
           image-ref: ${{ steps.scan_target.outputs.ref }}
+          cache-dir: ${{ github.workspace }}/.cache/trivy
           version: v0.70.0
           scanners: vuln,misconfig
           vuln-type: os,library
@@ -533,6 +540,10 @@ jobs:
           exit-code: ${{ env.TRIVY_ENFORCE == 'true' && '1' || '0' }}
           hide-progress: true
 
+      - name: Warn that the image scan was skipped
+        if: steps.scan_target.outcome == 'failure'
+        run: echo "::warning::The API image scan was skipped because the image to scan could not be resolved (report-only mode)."
+
       # Evidence only: the image reference, scanner version, vulnerability database timestamps and the report.
       # No registry credentials or scanner configuration are printed.
       - name: Record the scan in the job summary
@@ -543,7 +554,7 @@ jobs:
           SCAN_OUTCOME: ${{ steps.trivy_scan.outcome }}
           ENFORCE: ${{ env.TRIVY_ENFORCE }}
         run: |
-          TRIVY_VERSION_JSON="$(trivy version --format json 2>/dev/null || echo '{}')"
+          TRIVY_VERSION_JSON="$(trivy version --cache-dir "${GITHUB_WORKSPACE}/.cache/trivy" --format json 2>/dev/null || echo '{}')"
           SCANNER_VERSION="$(echo "$TRIVY_VERSION_JSON" | jq -r '.Version // "unknown"')"
           DB_UPDATED_AT="$(echo "$TRIVY_VERSION_JSON" | jq -r '.VulnerabilityDB.UpdatedAt // "unknown"')"
           DB_DOWNLOADED_AT="$(echo "$TRIVY_VERSION_JSON" | jq -r '.VulnerabilityDB.DownloadedAt // "unknown"')"
