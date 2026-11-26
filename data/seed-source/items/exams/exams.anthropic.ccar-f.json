@@ -432,12 +432,12 @@
       "Prompts",
       "Elicitation"
     ],
-    "explanation": "Tools are model-controlled. Resources are application-controlled and prompts are user-controlled.",
+    "explanation": "Tools are model-controlled: the language model can discover and invoke them automatically based on its context.",
     "keywords": [
       "anthropic-ccar-f",
       "tool-design-mcp"
     ],
-    "source": "https://modelcontextprotocol.io/docs/learn/server-concepts"
+    "source": "https://modelcontextprotocol.io/specification/2025-06-18/server/tools"
   },
   {
     "itemId": "86921a97-48bf-4374-bc9b-4adbef7e1257",
@@ -725,19 +725,19 @@
     "category": "exams",
     "navigationKeyword1": "anthropic",
     "navigationKeyword2": "ccar-f",
-    "question": "Prefilling the last assistant turn is unsupported on newer Claude models. What replaces it for forcing a JSON shape?",
+    "question": "Prefilling the last assistant turn is incompatible with JSON outputs. Which feature provides a JSON-shaped response instead?",
     "correctAnswer": "Structured outputs",
     "incorrectAnswers": [
       "A higher temperature",
       "A stop sequence of '}'",
       "A longer system prompt"
     ],
-    "explanation": "Structured outputs constrain the response to a given schema, which covers the main reason people used prefill for formatting.",
+    "explanation": "Structured outputs constrain the response to a given schema, which is how you get JSON-shaped output when prefilling is not an option.",
     "keywords": [
       "anthropic-ccar-f",
       "prompt-engineering"
     ],
-    "source": "https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/claude-prompting-best-practices"
+    "source": "https://platform.claude.com/docs/en/build-with-claude/structured-outputs"
   },
   {
     "itemId": "008b908c-397e-49e0-ac00-3c175a7868fd",

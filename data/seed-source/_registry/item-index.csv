@@ -832,7 +832,7 @@ ef7499f9-e81a-4af0-b5f9-a837c3e8b227,exams,anthropic,ccar-f,How do you make a Cl
 1cc62f9d-dd0f-4166-a62e-dbcfb2c3ee93,exams,anthropic,ccar-f,"In a sub-agent architecture for long tasks, what s",data/seed-source/items/exams/exams.anthropic.ccar-f.json
 6979481f-526d-4f44-a022-3a247142c8f2,exams,anthropic,ccar-f,"In the Messages API, what stop_reason signals that",data/seed-source/items/exams/exams.anthropic.ccar-f.json
 2b2255bc-78e0-4cd5-ad92-bcd53ccf99bd,exams,anthropic,ccar-f,"Instead of separate create_pr, review_pr and merge",data/seed-source/items/exams/exams.anthropic.ccar-f.json
-8de5218f-4297-4c01-a623-5aa20d8c6a3f,exams,anthropic,ccar-f,Prefilling the last assistant turn is unsupported ,data/seed-source/items/exams/exams.anthropic.ccar-f.json
+8de5218f-4297-4c01-a623-5aa20d8c6a3f,exams,anthropic,ccar-f,Prefilling the last assistant turn is incompatible,data/seed-source/items/exams/exams.anthropic.ccar-f.json
 0cda1c55-5fd3-4c22-9e69-98acdcc9b447,exams,anthropic,ccar-f,What does each Claude Code subagent run in?,data/seed-source/items/exams/exams.anthropic.ccar-f.json
 07d2194b-e149-46bf-ba5b-fb54a21a7121,exams,anthropic,ccar-f,What does tool_choice set to any tell Claude?,data/seed-source/items/exams/exams.anthropic.ccar-f.json
 0d376067-dc78-4826-9c14-2b3698d555bf,exams,anthropic,ccar-f,What happens if the input alone is larger than the,data/seed-source/items/exams/exams.anthropic.ccar-f.json

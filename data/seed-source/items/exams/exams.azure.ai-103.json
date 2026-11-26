@@ -435,13 +435,13 @@
       "SOAP",
       "AMQP"
     ],
-    "explanation": "Foundry agents support A2A, a standard protocol for agent-to-agent communication; A2A v1.0 is generally available.",
+    "explanation": "Foundry agents support A2A, a standard protocol for agent-to-agent communication, so an agent can be exposed as an A2A endpoint.",
     "keywords": [
       "ai-103",
       "agents",
       "multi-agent"
     ],
-    "source": "https://techcommunity.microsoft.com/blog/azure-ai-foundry-blog/a2a-endpoints-and-a2a-tool-in-microsoft-foundry-agents/4557115"
+    "source": "https://learn.microsoft.com/en-us/azure/ai-foundry/agents/how-to/tools/agent-to-agent"
   },
   {
     "itemId": "ea39cd40-fb91-4d93-a8db-6fbacf534754",
