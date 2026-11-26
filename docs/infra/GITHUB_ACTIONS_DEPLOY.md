@@ -12,7 +12,7 @@ The jobs run in parallel. A new push to a pull request cancels the run for its p
 | `frontend` | Web build, curated image and manifest checks, source map artifact, lint |
 | `frontend-tests` | Vitest with coverage |
 | `backend-tests` | Architecture tests, then all backend tests with coverage |
-| `api-image` | Release build with the OpenAPI drift check, then the Docker image. On `main` it pushes `:<sha>` |
+| `api-image` | Release build with the OpenAPI drift check, then the Docker image. On `main` it pushes `:<sha>`, then scans the image with Trivy (see below) |
 | `build-test-publish` | Required check. Fails unless the four jobs above passed, posts the coverage comment, and on `main` moves `:latest` to the pushed `:<sha>` |
 | `automation-contract`, `ac-gate`, `cognito-presignup`, `e2e` | Independent checks |
 
@@ -22,6 +22,16 @@ Rules to keep when editing the workflow:
 - A new build or test job must be added to the `needs` list of `build-test-publish`, or it will not block a merge.
 - On `main` the image is pushed as `:<sha>` before the tests finish. That is safe because Deploy starts only when the whole CI run succeeded, and `:latest` moves only after every job passed. An image tag for a commit whose CI failed can exist in GHCR; it is never deployed by the pipeline.
 - The image build uses no layer cache. Every change set bumps `Directory.Build.props`, which invalidates the restore layer, so the cache never hit while exporting it took about 3 minutes and filled the 10 GB Actions cache.
+
+## Image vulnerability scan (Trivy)
+
+The `api-image` job scans the final API image after the non-root check and the push (AC 7.11.33, #817).
+
+- **Target.** On `main` the scan uses the registry digest of the pushed `:<sha>` image, so it covers the exact artifact Deploy runs. On a pull request it scans the loaded local image and records its image ID.
+- **Scope.** Vulnerabilities in OS packages and application dependencies (`--scanners vuln,misconfig`), and misconfiguration of the image configuration (`TRIVY_IMAGE_CONFIG_SCANNERS: misconfig`; the `misconfig` scanner by itself only reads infrastructure-as-code files inside the image, which the scan also covers). Fixed HIGH and CRITICAL findings only (`--ignore-unfixed`). Trivy and its action are pinned (action by commit SHA); bump both together in `ci.yml`.
+- **Reading results.** Open the run's job summary: the table shows the digest or image ID, the Trivy version, the vulnerability database `UpdatedAt` and `DownloadedAt` times, and the findings. The full report is the `api-image-trivy-report` artifact (14 days). Nothing about registry credentials or scanner settings is printed. There is no SARIF upload, so no `security-events` permission is needed.
+- **Exceptions.** Add an entry to `.trivyignore` at the repository root: one comment line (reason, approver, review date), then `<CVE-or-ID> exp:YYYY-MM-DD`. Trivy stops ignoring the entry after the expiry date.
+- **Report-only first.** `TRIVY_ENFORCE: "false"` in the `api-image` job `env` keeps the scan from failing the job. After reading the first report and fixing or excepting what it lists, change the value to `"true"`. Then unignored fixed HIGH/CRITICAL findings fail `api-image`, which fails `build-test-publish`, so `:latest` does not move and Deploy does not start. The `:<sha>` tag is already pushed by then, as it is for any other failing job.
 
 ## How it works
 
