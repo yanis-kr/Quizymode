@@ -1,6 +1,8 @@
 /**
  * Media release checklist (AC 3.29, #638): one uploaded picture taken through its whole life.
  * upload -> private item -> pending review -> approved -> shared link -> withdrawn -> deleted.
+ * The picture review matrix (AC 3.29.11 to 3.29.16, #891) reuses these steps for rejected, replaced, stale-decision,
+ * edited and removed pictures (playwright/prod-verify/picture-review-matrix.write.spec.ts, playwright/e2e-ci/picture-review-matrix.spec.ts).
  *
  * The same steps run in two places:
  *   - playwright/e2e-ci/media-release.spec.ts        Development stack, DevTest identities (every PR)
@@ -150,6 +152,8 @@ export interface ChecklistData {
   itemId?: string;
   collectionId?: string;
   revision?: number;
+  /** The second upload of the picture review matrix (AC 3.29.12). */
+  replacementAssetId?: string;
 }
 
 export function newChecklistData(): ChecklistData {
@@ -179,21 +183,25 @@ export async function uploadPicture(owner: Identity, data: ChecklistData): Promi
   });
 }
 
+/** The text fields of the checklist item, shared by POST /items and PUT /items/{id}. */
+function itemFields(data: ChecklistData) {
+  return {
+    category: "exams",
+    navigationKeyword1: "general",
+    navigationKeyword2: "mixed",
+    isPrivate: true,
+    question: data.question,
+    correctAnswer: "The striped test card",
+    incorrectAnswers: ["A photograph", "A map"],
+    explanation: "Created by the media release checklist. It is deleted when the run ends.",
+  };
+}
+
 /** AC 3.29.2: an item with an uploaded picture starts private and waiting for review. */
 export async function createPrivateItem(owner: Identity, data: ChecklistData): Promise<void> {
   await test.step("create a private item with the picture", async () => {
     const result = await call(owner, "POST", "/items", {
-      json: {
-        category: "exams",
-        navigationKeyword1: "general",
-        navigationKeyword2: "mixed",
-        isPrivate: true,
-        question: data.question,
-        correctAnswer: "The striped test card",
-        incorrectAnswers: ["A photograph", "A map"],
-        explanation: "Created by the media release checklist. It is deleted when the run ends.",
-        questionImage: { assetId: data.assetId, altText: data.altText },
-      },
+      json: { ...itemFields(data), questionImage: { assetId: data.assetId, altText: data.altText } },
     });
     expect(result.status, `create item status (${result.json?.title ?? JSON.stringify(result.json)?.slice(0, 300)})`).toBeLessThan(300);
     expect(result.json.isPrivate).toBe(true);
@@ -368,4 +376,139 @@ export async function checkOwnerScreenAfterWithdrawal(page: Page, testInfo: Test
     expect(decoded, "no decoded picture after withdrawal").toBe(0);
     await capture(page, testInfo, "study-after-withdrawal");
   });
+}
+
+// ---- Picture review matrix (AC 3.29.11 to 3.29.16, #891): rejected, replaced picture, stale decision, edit, removal ----
+
+/** The owner's current picture review of the item. */
+async function currentReview(owner: Identity, data: ChecklistData): Promise<{ state: string; revision: number; reason?: string } | null> {
+  const item = await call(owner, "GET", `/items/${data.itemId}`);
+  expect(item.status, "creator reads the item").toBe(200);
+  return item.json.imageReview ?? null;
+}
+
+/** PUT /items/{id} as the owner with the checklist fields plus `changes`; returns the saved picture review. */
+async function saveItem(owner: Identity, data: ChecklistData, changes: Record<string, unknown>, label: string) {
+  const result = await call(owner, "PUT", `/items/${data.itemId}`, {
+    json: { ...itemFields(data), expectedImageRevision: data.revision, ...changes },
+  });
+  expect(result.status, `${label} status (${result.json?.title ?? JSON.stringify(result.json)?.slice(0, 300)})`).toBeLessThan(300);
+  return result.json.imageReview ?? null;
+}
+
+/**
+ * AC 3.29.11: an admin rejects the pending picture with a reason. The creator sees Rejected and the reason, the admin
+ * still reads the picture on the item route, a signed-out visitor gets 404 on both routes, and the admin gets 404 on the
+ * collection route because the admin did not create the item.
+ */
+export async function rejectPicture(owner: Identity, admin: Identity, data: ChecklistData, reason: string): Promise<void> {
+  await test.step("admin rejects the picture with a reason", async () => {
+    const rejected = await call(admin, "PUT", `/admin/items/${data.itemId}/image-review`, {
+      json: { decision: "reject", expectedRevision: data.revision, reason },
+    });
+    expect(rejected.status, `reject status (${rejected.json?.title ?? ""})`).toBe(200);
+    expect(rejected.json.imageReview.state).toBe("Rejected");
+
+    const review = await currentReview(owner, data);
+    expect(review?.state, "creator sees Rejected").toBe("Rejected");
+    expect(review?.reason, "creator sees the rejection reason").toBe(reason);
+
+    const visitor = anonymous(owner);
+    await expectPicture(admin, picturePath(data.itemId!), 200, "admin reads the rejected picture on the item route");
+    await expectPicture(visitor, picturePath(data.itemId!), 404, "visitor is refused the rejected picture on the item route");
+    await expectPicture(visitor, sharedPicturePath(data), 404, "visitor is refused the rejected picture through the shared link");
+    await expectPicture(admin, sharedPicturePath(data), 404, "admin, not the creator, is refused the rejected picture through the shared link");
+  });
+}
+
+/** AC 3.29.12: the owner uploads a second picture and puts it on the item; it waits for review at the next revision. */
+export async function replacePicture(owner: Identity, data: ChecklistData): Promise<void> {
+  await test.step("owner replaces the picture with a new upload", async () => {
+    const upload = await call(owner, "POST", "/media/images", {
+      multipart: { file: { name: "picture", mimeType: "image/png", buffer: generatedPicture() } },
+      headers: { "Idempotency-Key": `checklist-${data.runId}-replacement` },
+    });
+    expect(upload.status, `second upload status (${upload.json?.title ?? ""})`).toBeLessThan(300);
+    expect(upload.json.id, "the second upload is a new asset").not.toBe(data.assetId);
+    data.replacementAssetId = upload.json.id;
+
+    const previous = data.revision!;
+    const review = await saveItem(owner, data, { questionImage: { assetId: upload.json.id, altText: data.altText } }, "replace picture");
+    expect(review?.state, "a replaced picture waits for review").toBe("PendingReview");
+    expect(review?.revision, "a replaced picture is the next revision").toBe(previous + 1);
+    data.revision = review.revision;
+
+    await expectPicture(anonymous(owner), sharedPicturePath(data), 404, "visitor is refused the replaced picture through the shared link");
+  });
+}
+
+/**
+ * AC 3.29.13: a decision naming an old revision is refused with 409 Item.ImageReviewStale and the current revision;
+ * approving the current revision works, and the visitor's picture request is bound to that revision.
+ */
+export async function staleDecision(owner: Identity, admin: Identity, data: ChecklistData, oldRevision: number): Promise<void> {
+  await test.step("a decision for the old revision is stale; the current one is approved", async () => {
+    const stale = await call(admin, "PUT", `/admin/items/${data.itemId}/image-review`, {
+      json: { decision: "approve", expectedRevision: oldRevision },
+    });
+    expect(stale.status, "a decision for the old revision is refused").toBe(409);
+    expect(stale.json?.title).toBe("Item.ImageReviewStale");
+    expect(stale.json?.currentRevision, "the refusal names the current revision").toBe(data.revision);
+
+    const approved = await call(admin, "PUT", `/admin/items/${data.itemId}/image-review`, {
+      json: { decision: "approve", expectedRevision: data.revision },
+    });
+    expect(approved.status, `approve status (${approved.json?.title ?? ""})`).toBe(200);
+    expect(approved.json.imageReview.state).toBe("Approved");
+
+    const visitor = anonymous(owner);
+    await expectPicture(visitor, `${sharedPicturePath(data)}?expectedRevision=${data.revision}`, 200, "visitor reads the approved picture at the current revision");
+    await expectPicture(visitor, `${sharedPicturePath(data)}?expectedRevision=${oldRevision}`, 404, "visitor is refused the picture at the old revision");
+  });
+}
+
+/** AC 3.29.14: editing the question text sends an approved picture back to review and hides it from the visitor. */
+export async function editQuestion(owner: Identity, data: ChecklistData): Promise<void> {
+  await test.step("owner edits the question text", async () => {
+    const previous = data.revision!;
+    data.question = `${data.question} (edited)`;
+    const review = await saveItem(owner, data, {}, "edit question");
+    expect(review?.state, "an edited item waits for review again").toBe("PendingReview");
+    expect(review?.revision).toBe(previous + 1);
+    data.revision = review.revision;
+
+    await expectPicture(anonymous(owner), sharedPicturePath(data), 404, "visitor is refused the picture after the edit");
+  });
+}
+
+/**
+ * AC 3.29.15: the owner removes the picture on the edit page. "Remove picture" asks through the browser's native confirm
+ * dialog, which blocks the page until it is answered, so it is accepted here; saving then asks again in the page.
+ */
+export async function removePictureInEditor(page: Page, testInfo: TestInfo, owner: Identity, data: ChecklistData): Promise<void> {
+  await test.step("owner removes the picture in the editor and saves", async () => {
+    await page.goto(`/items/${data.itemId}/edit`, { timeout: 30_000 });
+    const slot = page.getByRole("group", { name: /Question picture/ });
+    await expect(slot.getByRole("button", { name: "Remove picture" })).toBeVisible({ timeout: 20_000 });
+    page.once("dialog", (dialog) => void dialog.accept());
+    await slot.getByRole("button", { name: "Remove picture" }).click();
+    await expect(slot.getByLabel(/^Add picture/)).toBeAttached({ timeout: 10_000 });
+    await page.getByRole("button", { name: "Save", exact: true }).click();
+    // Removing an uploaded picture is a relevant change, so the in-page confirmation of AC 3.25.11 opens.
+    const confirm = page.getByRole("dialog", { name: /fresh picture review/ });
+    await expect(confirm).toBeVisible({ timeout: 10_000 });
+    await confirm.getByRole("button", { name: "Save changes" }).click();
+    await expect.poll(async () => (await currentReview(owner, data))?.state ?? null, { timeout: 20_000 }).toBeNull();
+
+    await page.goto(`/items/${data.itemId}/edit`, { timeout: 30_000 });
+    await expect(page.getByRole("group", { name: /Question picture/ }).getByLabel(/^Add picture/)).toBeAttached({ timeout: 20_000 });
+    await capture(page, testInfo, "editor-after-picture-removed");
+  });
+}
+
+/** AC 3.29.16: both uploads stay private and unreferenced (AC 3.27.7); their ids go into the report. */
+export async function recordUploadedAssets(testInfo: TestInfo, data: ChecklistData): Promise<void> {
+  const ids = [data.assetId, data.replacementAssetId].filter((id): id is string => !!id);
+  testInfo.annotations.push({ type: "uploaded-assets", description: ids.join(", ") || "none" });
+  await testInfo.attach("uploaded-assets", { body: JSON.stringify({ assetIds: ids }, null, 2), contentType: "application/json" });
 }

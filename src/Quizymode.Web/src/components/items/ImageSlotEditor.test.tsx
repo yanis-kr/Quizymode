@@ -88,4 +88,10 @@ describe("Normalized authoring state", () => {
     await waitFor(() => expect(screen.getByTestId("state")).toHaveTextContent("asset-q|asset-e"));
     expect(within(question).getByLabelText(/^Replace/)).toBeInTheDocument(); expect(within(explanation).getByLabelText(/^Replace/)).toBeInTheDocument();
   });
+  it("lets the slot shrink inside a narrow card (AC 3.25.12, min-w-0 on the fieldset)", () => {
+    render(<Harness />);
+    const slot = screen.getByRole("group", { name: /Question picture/ });
+    expect(slot.tagName).toBe("FIELDSET");
+    expect(slot).toHaveClass("min-w-0", "max-w-full");
+  });
 });

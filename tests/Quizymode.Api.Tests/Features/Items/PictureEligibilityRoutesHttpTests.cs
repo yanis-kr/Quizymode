@@ -3,9 +3,14 @@ using System.Net.Http.Json;
 using System.Text.Json;
 using FluentAssertions;
 using FluentValidation;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using Quizymode.Api.Features.Collections;
+using Quizymode.Api.Features.Comments;
+using Quizymode.Api.Features.Featured;
 using Quizymode.Api.Features.Keywords;
+using Quizymode.Api.Features.Progress;
+using Quizymode.Api.Features.Ratings;
 using Quizymode.Api.Features.Taxonomy;
 using Plans = Quizymode.Api.Features.StudyPlans.StudyPlans;
 using Quizymode.Api.Shared.Models;
@@ -17,6 +22,8 @@ namespace Quizymode.Api.Tests.Features.Items;
 /// <summary>
 /// #400 (AC 3.25.10; the games route is covered in GameRosterHttpTests): the taxonomy, keyword, discover, bookmark and study-plan count routes over real HTTP with the production JWT
 /// pipeline. An item whose uploaded pictures are not Approved is omitted for a non-owner and still counted for its creator.
+/// #890 (AC 3.25.16 to 3.25.18): featured sets and collections, set progress, and comments and ratings on the same seed. Global search and
+/// study-guide similarity need PostgreSQL and live in PictureEligibilityPostgresHttpTests.
 /// </summary>
 public sealed class PictureEligibilityRoutesHttpTests : ItemTestFixture, IAsyncLifetime
 {
@@ -38,6 +45,9 @@ public sealed class PictureEligibilityRoutesHttpTests : ItemTestFixture, IAsyncL
                 services.AddSingleton(TaxonomyRegistry);
                 services.AddSingleton(TimeProvider.System);
                 services.AddScoped<IValidator<Plans.UpsertRequest>, Plans.UpsertValidator>();
+                services.AddMemoryCache();
+                services.AddScoped<IValidator<AddComment.Request>, AddComment.Validator>();
+                services.AddScoped<IValidator<AddOrUpdateRating.Request>, AddOrUpdateRating.Validator>();
             },
             app =>
             {
@@ -46,6 +56,12 @@ public sealed class PictureEligibilityRoutesHttpTests : ItemTestFixture, IAsyncL
                 new DiscoverCollections.Endpoint().MapEndpoint(app);
                 new GetBookmarks.Endpoint().MapEndpoint(app);
                 new Plans.Endpoint().MapEndpoint(app);
+                new GetFeatured.Endpoint().MapEndpoint(app);
+                new GetSetProgress.Endpoint().MapEndpoint(app);
+                new GetComments.Endpoint().MapEndpoint(app);
+                new AddComment.Endpoint().MapEndpoint(app);
+                new GetRatings.Endpoint().MapEndpoint(app);
+                new AddOrUpdateRating.Endpoint().MapEndpoint(app);
             });
 
         _ownerId = Guid.NewGuid();
@@ -194,6 +210,102 @@ public sealed class PictureEligibilityRoutesHttpTests : ItemTestFixture, IAsyncL
         PlanCount(owner).Should().Be(4);
 
         static int PlanCount(JsonElement body) => body.GetProperty("plans").EnumerateArray().Single().GetProperty("itemCount").GetInt32();
+    }
+
+    private string AdminToken => _host.CreateToken("admin-sub", "admin@example.com", ["Admins"]);
+
+    private async Task SetPendingStateAsync(ItemImageReviewState state)
+    {
+        _pending.ImageReviewState = state;
+        await DbContext.SaveChangesAsync();
+    }
+
+    private async Task<HttpStatusCode> StatusAsync(HttpMethod method, string url, string? token, object? body = null)
+    {
+        using HttpRequestMessage request = JwtHttpTestHost.Request(method, url, token, body is null ? null : JsonContent.Create(body));
+        using HttpResponseMessage response = await _host.Client.SendAsync(request);
+        return response.StatusCode;
+    }
+
+    [Theory]
+    [InlineData(ItemImageReviewState.PendingReview)]
+    [InlineData(ItemImageReviewState.Rejected)]
+    public async Task Featured_SetAndCollectionCounts_OmitUnapprovedPictureItems_UntilApproved(ItemImageReviewState state)
+    {
+        await SetPendingStateAsync(state);
+        FeaturedItem set = new() { Id = Guid.NewGuid(), Type = FeaturedItemType.Set, DisplayName = "set", CategorySlug = "trivia", NavKeyword1 = "general", CreatedBy = "admin" };
+        FeaturedItem collection = new() { Id = Guid.NewGuid(), Type = FeaturedItemType.Collection, DisplayName = "col", CollectionId = _mixedCollection.Id, CreatedBy = "admin" };
+        DbContext.FeaturedItems.AddRange(set, collection);
+        await DbContext.SaveChangesAsync();
+
+        JsonElement anonymous = await GetAsync("/featured", null);
+        JsonElement owner = await GetAsync("/featured", OwnerToken);
+
+        Counts(anonymous).Should().Be((3, 3), "the unapproved picture item is hidden from other people");
+        Counts(owner).Should().Be((3, 3), "featured cards are the anonymous view, the same for everyone");
+
+        await SetPendingStateAsync(ItemImageReviewState.Approved);
+        Counts(await GetAsync("/featured", null)).Should().Be((4, 4));
+
+        (int Set, int Collection) Counts(JsonElement body) => (
+            body.GetProperty("sets").EnumerateArray().Single(s => s.GetProperty("id").GetString() == set.Id.ToString()).GetProperty("itemCount").GetInt32(),
+            body.GetProperty("collections").EnumerateArray().Single(c => c.GetProperty("id").GetString() == collection.Id.ToString()).GetProperty("itemCount").GetInt32());
+    }
+
+    [Theory]
+    [InlineData(ItemImageReviewState.PendingReview)]
+    [InlineData(ItemImageReviewState.Rejected)]
+    public async Task SetProgress_CollectionAndCategoryScopes_DoNotCountUnapprovedPictureItems_ForANonOwner_ButDoForTheCreator(ItemImageReviewState state)
+    {
+        await SetPendingStateAsync(state);
+        List<Guid> itemIds = await DbContext.Items.Where(i => i.CategoryId == _category.Id).Select(i => i.Id).ToListAsync();
+        foreach (string userId in new[] { Owner, _otherId.ToString() })
+        {
+            DbContext.UserItemProgress.AddRange(itemIds.Select(id => new UserItemProgress { UserId = userId, ItemId = id, IsKnown = true, LastCorrectAt = DateTime.UtcNow }));
+        }
+
+        await DbContext.SaveChangesAsync();
+        string url = $"/users/me/set-progress?scopes=c/{_mixedCollection.Id},s/trivia,s/trivia/general";
+
+        Known(await GetAsync(url, OtherToken)).Should().Equal(3, 3, 3);
+        Known(await GetAsync(url, OwnerToken)).Should().Equal(4, 4, 4);
+
+        static List<int> Known(JsonElement body) => body.GetProperty("scopes").EnumerateArray().Select(s => s.GetProperty("knownCount").GetInt32()).ToList();
+    }
+
+    [Theory]
+    [InlineData(ItemImageReviewState.PendingReview)]
+    [InlineData(ItemImageReviewState.Rejected)]
+    public async Task CommentsAndRatings_OnAnUnapprovedPictureItem_Are404ForANonOwner_LikeAMissingItem_ButWorkForTheCreatorAndAdmins(ItemImageReviewState state)
+    {
+        await SetPendingStateAsync(state);
+        Guid missing = Guid.NewGuid();
+        object comment = new { itemId = _pending.Id, text = "Nice" };
+        object rating = new { stars = 4 };
+
+        foreach (Guid id in new[] { _pending.Id, missing })
+        {
+            (await StatusAsync(HttpMethod.Get, $"/comments?itemId={id}", null)).Should().Be(HttpStatusCode.NotFound);
+            (await StatusAsync(HttpMethod.Get, $"/comments?itemId={id}", OtherToken)).Should().Be(HttpStatusCode.NotFound);
+            (await StatusAsync(HttpMethod.Post, "/comments", OtherToken, new { itemId = id, text = "Nice" })).Should().Be(HttpStatusCode.NotFound);
+            (await StatusAsync(HttpMethod.Get, $"/ratings/{id}", null)).Should().Be(HttpStatusCode.NotFound);
+            (await StatusAsync(HttpMethod.Get, $"/ratings/{id}", OtherToken)).Should().Be(HttpStatusCode.NotFound);
+            (await StatusAsync(HttpMethod.Post, $"/ratings/{id}", OtherToken, rating)).Should().Be(HttpStatusCode.NotFound);
+        }
+
+        foreach (string token in new[] { OwnerToken, AdminToken })
+        {
+            (await StatusAsync(HttpMethod.Post, "/comments", token, comment)).Should().Be(HttpStatusCode.Created);
+            (await StatusAsync(HttpMethod.Get, $"/comments?itemId={_pending.Id}", token)).Should().Be(HttpStatusCode.OK);
+            (await StatusAsync(HttpMethod.Post, $"/ratings/{_pending.Id}", token, rating)).Should().Be(HttpStatusCode.OK);
+            (await StatusAsync(HttpMethod.Get, $"/ratings/{_pending.Id}", token)).Should().Be(HttpStatusCode.OK);
+        }
+
+        string other = _otherId.ToString();
+        (await DbContext.Comments.CountAsync(c => c.ItemId == _pending.Id)).Should().Be(2, "only the creator and the admin wrote");
+        (await DbContext.Ratings.CountAsync(r => r.ItemId == _pending.Id)).Should().Be(2, "only the creator and the admin rated");
+        (await DbContext.Comments.AnyAsync(c => c.CreatedBy == other)).Should().BeFalse("the refused POST /comments wrote nothing");
+        (await DbContext.Ratings.AnyAsync(r => r.CreatedBy == other)).Should().BeFalse("the refused POST /ratings wrote nothing");
     }
 
     private int CountOf(JsonElement body, Collection collection) => body.GetProperty("items").EnumerateArray()

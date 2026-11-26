@@ -78,6 +78,17 @@ describe("ReviewBoardPage", () => {
     expect(await screen.findByText("No items pending review.")).toBeInTheDocument();
   });
 
+  it("moves to the last tab with End and back to the first with Home (AC 3.26.3)", async () => {
+    vi.mocked(adminApi.getReviewBoardItems).mockResolvedValue({ items: [] });
+    renderPage();
+
+    await userEvent.click(await screen.findByRole("tab", { name: "Items" }));
+    await userEvent.keyboard("{End}");
+    await waitFor(() => expect(screen.getByRole("tab", { name: /^Pictures/ })).toHaveAttribute("aria-selected", "true"));
+    await userEvent.keyboard("{Home}");
+    await waitFor(() => expect(screen.getByRole("tab", { name: "Items" })).toHaveAttribute("aria-selected", "true"));
+  });
+
   it("opens straight to the Pictures tab for ?tab=pictures", async () => {
     vi.mocked(adminApi.getReviewBoardItems).mockResolvedValue({ items: [] });
     renderPage("/admin/review-board?tab=pictures");
