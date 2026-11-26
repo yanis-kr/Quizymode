@@ -57,7 +57,7 @@
       "google-cloud-architecture",
       "solution-design"
     ],
-    "source": "https://cloud.google.com/storage"
+    "source": "https://docs.cloud.google.com/storage/docs/introduction"
   },
   {
     "itemId": "f663e02e-126e-4408-9ca7-11a943c525ba",
@@ -157,7 +157,7 @@
       "google-cloud-architecture",
       "solution-design"
     ],
-    "source": "https://cloud.google.com/bigquery"
+    "source": "https://docs.cloud.google.com/bigquery/docs/introduction"
   },
   {
     "itemId": "84762a68-d245-4f71-afb2-998da250711c",
@@ -197,6 +197,6 @@
       "google-cloud-architecture",
       "solution-design"
     ],
-    "source": "https://cloud.google.com/run"
+    "source": "https://docs.cloud.google.com/run/docs/overview/what-is-cloud-run"
   }
 ]

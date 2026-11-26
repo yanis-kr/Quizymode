@@ -1,0 +1,423 @@
+{
+ "issue": 866,
+ "reviewedOn": "2026-11-26",
+ "method": "Opus reviewer read the official vendor page for each item; quotes spot-checked against the live pages. Verdict fix = edited in the same change.",
+ "items": [
+  {
+   "itemId": "027db7f2-367f-4b2d-b6e3-8cfef96230cf",
+   "verdict": "verified",
+   "sourceUrl": "https://ai.google/responsibility/principles/",
+   "quote": "Implementing appropriate human oversight, due diligence, and feedback mechanisms ... Employing rigorous design, testing, monitoring, and safeguards to mitigate unintended or harmful outcomes",
+   "problem": "",
+   "proposedFix": ""
+  },
+  {
+   "itemId": "0f79e529-bd4d-4e10-b12d-9f804c6afadf",
+   "verdict": "verified",
+   "sourceUrl": "https://docs.cloud.google.com/gemini/enterprise/docs/overview",
+   "quote": "Gemini Enterprise is an intranet search, AI assistant, and agentic platform.",
+   "problem": "",
+   "proposedFix": ""
+  },
+  {
+   "itemId": "1041b869-da5e-4c6a-a6c4-6c654b1557d2",
+   "verdict": "verified",
+   "sourceUrl": "https://docs.cloud.google.com/gemini/enterprise/docs/overview",
+   "quote": "Enforce access-controlled search results and generative answers at scale. ... Built-in trust through SSO and user-level access.",
+   "problem": "",
+   "proposedFix": ""
+  },
+  {
+   "itemId": "2954d50b-38b9-4ebb-8956-cf82f63776cf",
+   "verdict": "verified",
+   "sourceUrl": "https://cloud.google.com/transform/gen-ai-kpis-measuring-ai-success-deep-dive",
+   "quote": "Business operational KPIs ... Call and chat containment rates ... Average handle time: The amount of time both human and AI agents spend to resolve a customer inquiry.",
+   "problem": "",
+   "proposedFix": ""
+  },
+  {
+   "itemId": "31b6a219-8fb3-45cf-84c1-5d06d4f851f5",
+   "verdict": "verified",
+   "sourceUrl": "https://developers.google.com/machine-learning/glossary/generative",
+   "quote": "\"freezes\" the model's pre-trained weights (such that they can no longer be modified) ... inserts a small set of trainable weights into the model",
+   "problem": "",
+   "proposedFix": ""
+  },
+  {
+   "itemId": "35f1ec42-2c27-4699-8cf4-7d03b32dbb39",
+   "verdict": "verified",
+   "sourceUrl": "https://developers.google.com/machine-learning/glossary/generative",
+   "quote": "Using feedback from human raters to improve the quality of a model's responses.",
+   "problem": "",
+   "proposedFix": ""
+  },
+  {
+   "itemId": "50764c92-a19b-4bdb-8276-425e338f3172",
+   "verdict": "verified",
+   "sourceUrl": "https://cloud.google.com/transform/gen-ai-kpis-measuring-ai-success-deep-dive",
+   "quote": "Adoption rate: The percentage of active users for a new AI application or tool.",
+   "problem": "",
+   "proposedFix": ""
+  },
+  {
+   "itemId": "58961c33-047c-47fa-a8bc-ee6133b62ddb",
+   "verdict": "verified",
+   "sourceUrl": "https://cloud.google.com/transform/gen-ai-kpis-measuring-ai-success-deep-dive",
+   "quote": "Pairwise metrics involve comparing the responses of two models and picking the better one to create a win rate.",
+   "problem": "",
+   "proposedFix": ""
+  },
+  {
+   "itemId": "7aa642e7-5de3-4407-9864-84ae3026f1b6",
+   "verdict": "verified",
+   "sourceUrl": "https://aistudio.google.com/docs/long-context",
+   "quote": "Now, you can cache the files the user uploads and pay to store them on a per hour basis.",
+   "problem": "",
+   "proposedFix": ""
+  },
+  {
+   "itemId": "9af41cef-0319-436e-a801-faa9f4137366",
+   "verdict": "verified",
+   "sourceUrl": "https://aistudio.google.com/docs/long-context",
+   "quote": "This many-shot approach has also been shown to perform similarly to models which were fine-tuned for a specific task.",
+   "problem": "",
+   "proposedFix": ""
+  },
+  {
+   "itemId": "b26853f3-b749-49a6-9415-b2e251c57a11",
+   "verdict": "verified",
+   "sourceUrl": "https://safety.google/cybersecurity-advancements/saif/",
+   "quote": "the Secure AI Framework (SAIF), a conceptual framework to secure AI systems.",
+   "problem": "",
+   "proposedFix": ""
+  },
+  {
+   "itemId": "b59a11d7-52ba-45c1-8cd3-3078b02283d8",
+   "verdict": "verified",
+   "sourceUrl": "https://aistudio.google.com/docs/prompting-strategies",
+   "quote": "if you include too many examples, the model may start to overfit the response to the examples.",
+   "problem": "",
+   "proposedFix": ""
+  },
+  {
+   "itemId": "bcd93a50-0860-4864-9077-73fb81a700d7",
+   "verdict": "verified",
+   "sourceUrl": "https://aistudio.google.com/docs/prompting-strategies",
+   "quote": "In this sequential chain of prompts, the output of one prompt in the sequence becomes the input of the next prompt.",
+   "problem": "",
+   "proposedFix": ""
+  },
+  {
+   "itemId": "c01d6d46-cd1a-43e8-a1f9-eb1ccc9c5f35",
+   "verdict": "verified",
+   "sourceUrl": "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/multimodal/configure-safety-filters",
+   "quote": "Non-configurable safety filters ... block child sexual abuse material (CSAM) and personally identifiable information (PII).",
+   "problem": "",
+   "proposedFix": ""
+  },
+  {
+   "itemId": "103a6912-3c1e-430f-bba6-859a620d7afc",
+   "verdict": "fix",
+   "sourceUrl": "https://gemma.ai/models/shieldgemma/",
+   "quote": "ShieldGemma 2 is a 4B parameter model built to label images for safety.",
+   "problem": "ShieldGemma 2 is an image-only safety classifier (Vertex docs: 'Checks the safety of synthetic and natural images'). The general capability in the question and explanation, evaluating prompt inputs and output responses against defined safety policies, is how the docs describe the ShieldGemma family ('Evaluate the safety of prompt input and output responses against a set of defined safety policies'), not ShieldGemma 2 specifically. As written, the explanation misdescribes ShieldGemma 2. Also, gemma.ai lists two EmbeddingGemma versions, so the 'EmbeddingGemma 2' distractor may be a real model name; it is still wrong for this task.",
+   "proposedFix": "Option A (keep answer): question 'A company wants an open model to check generated and natural images against its safety policies. Which Gemma variant fits?' correctAnswer 'ShieldGemma 2'; explanation 'ShieldGemma 2 is a 4B model built to label images for safety, used as an input filter for vision language models or an output filter for image generation.' Option B (keep question): correctAnswer 'ShieldGemma'; explanation 'ShieldGemma is a set of instruction-tuned open models that evaluate the safety of prompt inputs and output responses against defined safety policies.' Distractors: 'EmbeddingGemma', 'Gemma 4', 'MedGemma'."
+  },
+  {
+   "itemId": "1c0826b2-4d1c-472d-8df3-b81037ef57b0",
+   "verdict": "verified",
+   "sourceUrl": "https://deepmind.google/models/synthid/",
+   "quote": "SynthID adjusts these probability scores to generate a watermark. It's not noticeable to the human eye, and doesn't affect the quality of the output.",
+   "problem": "",
+   "proposedFix": ""
+  },
+  {
+   "itemId": "232ae8f6-073e-4ab2-b491-b80a63dc96b4",
+   "verdict": "verified",
+   "sourceUrl": "https://research.google/blog/transformer-a-novel-neural-network-architecture-for-language-understanding/",
+   "quote": "modern fast computing devices such as TPUs and GPUs, which excel at parallel and not sequential processing.",
+   "problem": "",
+   "proposedFix": ""
+  },
+  {
+   "itemId": "415213b1-8d1d-4db4-80ed-5301d31e2b2f",
+   "verdict": "verified",
+   "sourceUrl": "https://deepmind.google/models/veo/",
+   "quote": "Veo 3 lets you add sound effects, ambient noise, and even dialogue to your creations â€“ generating all audio natively.",
+   "problem": "",
+   "proposedFix": ""
+  },
+  {
+   "itemId": "49f8b8af-6a4b-4d7e-a8c3-c57c53581571",
+   "verdict": "verified",
+   "sourceUrl": "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/open-models/use-gemma",
+   "quote": "Gemma is a set of lightweight, generative artificial intelligence (AI) open models. ... Gemma models are based on Gemini models",
+   "problem": "",
+   "proposedFix": "Optional: cited source ai.google.dev/gemma/docs now redirects to gemma.ai, which does not carry this definition; consider citing the Vertex AI 'use-gemma' page instead (also says 'available to run in your applications and on your hardware')."
+  },
+  {
+   "itemId": "69801659-6406-42dd-bc2d-7bae2f8d55d1",
+   "verdict": "verified",
+   "sourceUrl": "https://blog.google/technology/ai/google-gemini-ai/",
+   "quote": "Gemini Nano: our most efficient model for on-device tasks.",
+   "problem": "",
+   "proposedFix": ""
+  },
+  {
+   "itemId": "6df9f57d-8001-4e30-96a2-142907976cd0",
+   "verdict": "verified",
+   "sourceUrl": "https://workspace.google.com/solutions/ai/",
+   "quote": "Your data is your data, and it's not used to train Gemini models or for ads targeting.",
+   "problem": "",
+   "proposedFix": ""
+  },
+  {
+   "itemId": "da1202ab-57d9-4bbe-ae46-9e1cf25e72a2",
+   "verdict": "verified",
+   "sourceUrl": "https://deepmind.google/models/synthid/",
+   "quote": "imperceptible to humans â€“ but can be detected by SynthID's technology",
+   "problem": "",
+   "proposedFix": ""
+  },
+  {
+   "itemId": "008b908c-397e-49e0-ac00-3c175a7868fd",
+   "verdict": "verified",
+   "sourceUrl": "https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/claude-prompting-best-practices",
+   "quote": "Providing context or motivation behind your instructions ... can give Claude more information about your goals and help it deliver more targeted responses.",
+   "problem": "",
+   "proposedFix": ""
+  },
+  {
+   "itemId": "07d2194b-e149-46bf-ba5b-fb54a21a7121",
+   "verdict": "verified",
+   "sourceUrl": "https://platform.claude.com/docs/en/agents-and-tools/tool-use/define-tools",
+   "quote": "`any` tells Claude that it must use one of the provided tools, but doesn't force a particular tool.",
+   "problem": "Time-sensitive note only: the same page says any and tool return a 400 error on Claude Fable 5.2, Mythos 5.2, Opus 5.5, Sonnet 5.5, Fable 5.1 and Mythos 5.1, and with manual extended thinking. The definition in the item is still correct.",
+   "proposedFix": "Optional: add to explanation 'Some current models and manual extended thinking reject any and tool with an error.'"
+  },
+  {
+   "itemId": "0d376067-dc78-4826-9c14-2b3698d555bf",
+   "verdict": "verified",
+   "sourceUrl": "https://platform.claude.com/docs/en/build-with-claude/context-windows",
+   "quote": "If the input alone already exceeds the model's context window, the API returns a 400 `invalid_request_error` (\"prompt is too long\") on every model.",
+   "problem": "",
+   "proposedFix": ""
+  },
+  {
+   "itemId": "14b9f38e-2fd4-4a6c-a98e-1d1fe1a030c1",
+   "verdict": "verified",
+   "sourceUrl": "https://code.claude.com/docs/en/memory",
+   "quote": "Claude treats CLAUDE.md files and auto memory as context. They aren't enforced configuration. To block an action regardless of what Claude decides, use a PreToolUse hook instead.",
+   "problem": "",
+   "proposedFix": ""
+  },
+  {
+   "itemId": "3814d9b6-67e9-421a-b317-5184b6fb04ed",
+   "verdict": "verified",
+   "sourceUrl": "https://www.anthropic.com/engineering/writing-tools-for-agents",
+   "quote": "In the address book case, you might choose to implement a `search_contacts` or `message_contact` tool instead of a `list_contacts` tool.",
+   "problem": "",
+   "proposedFix": ""
+  },
+  {
+   "itemId": "389c71ad-b691-4862-a57b-43cbd0a5b73c",
+   "verdict": "verified",
+   "sourceUrl": "https://code.claude.com/docs/en/hooks",
+   "quote": "a `PreToolUse` hook blocks the tool call ... The message that comes with the block is your hook's stderr.",
+   "problem": "Minor nuance: if the hook also prints JSON with a blocking decision, that decision's reason is used instead of stderr. Not a defect for this item.",
+   "proposedFix": ""
+  },
+  {
+   "itemId": "3f33be5f-cff8-47f4-b905-d41d61abb789",
+   "verdict": "verified",
+   "sourceUrl": "https://code.claude.com/docs/en/sub-agents",
+   "quote": "When multiple subagents share the same name, Claude Code uses the one from the higher-priority location.",
+   "problem": "Priority table: .claude/agents/ (project) is priority 3, ~/.claude/agents/ (user) is priority 4, so project wins. Managed settings and --agents CLI rank higher still, which the item does not contradict.",
+   "proposedFix": ""
+  },
+  {
+   "itemId": "72cd8667-ccc4-475e-8111-36aacafd35aa",
+   "verdict": "verified",
+   "sourceUrl": "https://platform.claude.com/docs/en/agents-and-tools/tool-use/handle-tool-calls",
+   "quote": "Write instructive error messages. Instead of generic errors such as \"failed\", include what went wrong and what Claude should try next",
+   "problem": "",
+   "proposedFix": ""
+  },
+  {
+   "itemId": "8497de7d-8a11-4f01-a794-d9b1540b993a",
+   "verdict": "verified",
+   "sourceUrl": "https://platform.claude.com/docs/en/build-with-claude/context-windows",
+   "quote": "As token count grows, accuracy and recall degrade, a phenomenon known as *context rot*.",
+   "problem": "Cited source (effective-context-engineering article) also supports the finite-resource claim: 'Context, therefore, must be treated as a finite resource with diminishing marginal returns.' Consider citing the context-windows page for the term.",
+   "proposedFix": "Optional: change citedSource to https://platform.claude.com/docs/en/build-with-claude/context-windows"
+  },
+  {
+   "itemId": "9dfcc04b-f254-416a-a11b-c03cc5f0621e",
+   "verdict": "verified",
+   "sourceUrl": "https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/claude-prompting-best-practices",
+   "quote": "Queries at the end can improve response quality by up to 30 percent in tests, especially with complex, multidocument inputs.",
+   "problem": "Page also says: 'Place your long documents and inputs near the top of your prompt, above your query' for 20k+ token inputs, so 30,000 tokens fits.",
+   "proposedFix": ""
+  },
+  {
+   "itemId": "bf175c7b-0050-4245-a683-6bcb2db8eaec",
+   "verdict": "verified",
+   "sourceUrl": "https://code.claude.com/docs/en/sub-agents",
+   "quote": "Only `name` and `description` are required.",
+   "problem": "Page also states tools 'Inherits every tool available to subagents if omitted', matching the explanation.",
+   "proposedFix": ""
+  },
+  {
+   "itemId": "d605bdd7-e55c-42c0-b499-113943b2e52b",
+   "verdict": "verified",
+   "sourceUrl": "https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/claude-prompting-best-practices",
+   "quote": "XML tags help Claude parse complex prompts unambiguously ... Wrapping each type of content in its own tag ... reduces misinterpretation.",
+   "problem": "",
+   "proposedFix": ""
+  },
+  {
+   "itemId": "efb833fe-65e6-41c2-b3ed-ec55f8907a61",
+   "verdict": "verified",
+   "sourceUrl": "https://www.anthropic.com/engineering/building-effective-agents",
+   "quote": "Workflows are systems where LLMs and tools are orchestrated through predefined code paths.",
+   "problem": "",
+   "proposedFix": ""
+  },
+  {
+   "itemId": "67a71896-99d0-4596-b0c7-41c6b639bb64",
+   "verdict": "verified",
+   "sourceUrl": "https://learn.microsoft.com/en-us/azure/foundry/openai/how-to/dall-e",
+   "quote": "The Image Edit API takes multipart/form data, not JSON data.",
+   "problem": "",
+   "proposedFix": ""
+  },
+  {
+   "itemId": "86285d1a-a45d-4729-a03c-e593864b36d1",
+   "verdict": "verified",
+   "sourceUrl": "https://learn.microsoft.com/en-us/azure/ai-services/authentication",
+   "quote": "The last step is to assign the \"Cognitive Services User\" role to the service principal (scoped to the resource).",
+   "problem": "",
+   "proposedFix": ""
+  },
+  {
+   "itemId": "ea39cd40-fb91-4d93-a8db-6fbacf534754",
+   "verdict": "fix",
+   "sourceUrl": "https://learn.microsoft.com/en-us/azure/foundry/agents/how-to/virtual-networks",
+   "quote": "you must bring your own Storage, Foundry IQ, and Azure Cosmos DB resources to create a Standard Agent with end-to-end virtual network isolation.",
+   "problem": "Correct answer (Azure Cosmos DB) is right, but the explanation says Foundry 'recommends' BYO resources; official docs say BYO is required ('must') for end-to-end VNet isolation of a Standard Agent setup. Azure AI Search is now branded Foundry IQ in these docs. The cited source is a devblogs.microsoft.com blog, not official documentation.",
+   "proposedFix": "Explanation: 'For a Standard Agent setup with end-to-end virtual network isolation, you must bring your own Azure Storage, Foundry IQ (Azure AI Search), and Azure Cosmos DB resources.' Replace citedSource with https://learn.microsoft.com/en-us/azure/foundry/agents/how-to/virtual-networks."
+  },
+  {
+   "itemId": "ed36ed9c-d2dd-40a2-ab7f-dd6577e5e85e",
+   "verdict": "fix",
+   "sourceUrl": "https://learn.microsoft.com/en-us/azure/ai-services/what-are-ai-services",
+   "quote": "Foundry Tools help developers and organizations rapidly create intelligent, cutting-edge, market-ready, and responsible applications with out-of-the-box and prebuilt and customizable APIs and models.",
+   "problem": "The cited page (same URL) is now titled 'What are Foundry Tools?'; the product family formerly called Azure AI services is now named Foundry Tools (Speech, Language, Vision, Document Intelligence, etc.). The answer 'Azure AI services' uses the outdated name. Wrong answers are clearly wrong. Naming is time-sensitive; AI-900 study material may still use the old name.",
+   "proposedFix": "Correct answer: 'Foundry Tools (formerly Azure AI services)'. Explanation: 'Foundry Tools, formerly Azure AI services, is the family of prebuilt and customizable AI APIs, including Speech, Language, Vision, and Document Intelligence.'"
+  },
+  {
+   "itemId": "2822b355-588c-4adf-8d95-700722a246ff",
+   "verdict": "verified",
+   "sourceUrl": "https://learn.microsoft.com/en-us/entra/fundamentals/what-is-entra",
+   "quote": "It's a cloud-based identity and access management service that provides authentication, policy enforcement, and protection for users, devices, apps, and resources.",
+   "problem": "",
+   "proposedFix": ""
+  },
+  {
+   "itemId": "fe1eb148-4c00-4fcb-a6a2-93ae1e1e7ccb",
+   "verdict": "verified",
+   "sourceUrl": "https://learn.microsoft.com/en-us/azure/storage/blobs/storage-blobs-introduction",
+   "quote": "Azure Blob Storage is Microsoft's object storage solution for the cloud. Blob Storage is optimized for storing massive amounts of unstructured data.",
+   "problem": "",
+   "proposedFix": ""
+  },
+  {
+   "itemId": "6719a6b9-9dda-4b98-8fcb-4ee631f915b3",
+   "verdict": "verified",
+   "sourceUrl": "https://learn.microsoft.com/en-us/azure/reliability/regions-overview",
+   "quote": "Each region is a set of physical facilities that include datacenters and networking infrastructure.",
+   "problem": "",
+   "proposedFix": ""
+  },
+  {
+   "itemId": "7b379c2f-48d3-457d-b9e7-8b5bffef223b",
+   "verdict": "verified",
+   "sourceUrl": "https://learn.microsoft.com/en-us/entra/fundamentals/what-is-entra",
+   "quote": "It's a cloud-based identity and access management service that provides authentication, policy enforcement, and protection for users, devices, apps, and resources.",
+   "problem": "",
+   "proposedFix": ""
+  },
+  {
+   "itemId": "665bfa69-cc25-4d8a-9366-5049915ab0d1",
+   "verdict": "verified",
+   "sourceUrl": "https://learn.microsoft.com/en-us/azure/storage/blobs/storage-blobs-introduction",
+   "quote": "Azure Blob Storage is Microsoft's object storage solution for the cloud. Blob Storage is optimized for storing massive amounts of unstructured data.",
+   "problem": "",
+   "proposedFix": ""
+  },
+  {
+   "itemId": "defa2ebb-cadd-4a8e-847e-a760658232df",
+   "verdict": "verified",
+   "sourceUrl": "https://docs.cloud.google.com/storage/docs/introduction",
+   "quote": "Cloud Storage is a scalable and managed storage service offered by Google Cloud that lets you store data as objects",
+   "problem": "",
+   "proposedFix": ""
+  },
+  {
+   "itemId": "8591537c-d2b6-452f-8526-6d1d3d434570",
+   "verdict": "verified",
+   "sourceUrl": "https://docs.cloud.google.com/storage/docs/introduction",
+   "quote": "Cloud Storage is a scalable and managed storage service offered by Google Cloud that lets you store data as objects",
+   "problem": "",
+   "proposedFix": ""
+  },
+  {
+   "itemId": "88cba894-3d18-48e9-9063-4dece33212ff",
+   "verdict": "verified",
+   "sourceUrl": "https://docs.cloud.google.com/bigquery/docs/introduction",
+   "quote": "a fully managed serverless data warehouse",
+   "problem": "",
+   "proposedFix": ""
+  },
+  {
+   "itemId": "9cd9386c-460c-425b-9153-e2e16ef1a5c4",
+   "verdict": "verified",
+   "sourceUrl": "https://docs.cloud.google.com/run/docs/overview/what-is-cloud-run",
+   "quote": "Cloud Run is a fully managed application platform for running your code, function, or container",
+   "problem": "",
+   "proposedFix": ""
+  },
+  {
+   "itemId": "88f23dd0-8d67-4c8d-9c6e-089ceedd4432",
+   "verdict": "verified",
+   "sourceUrl": "https://docs.cloud.google.com/bigquery/docs/introduction",
+   "quote": "BigQuery is a fully managed, AI-ready data platform that helps you manage and analyze your data.",
+   "problem": "",
+   "proposedFix": ""
+  },
+  {
+   "itemId": "a2d2d002-c4a5-446f-b6ee-79f3faf21020",
+   "verdict": "verified",
+   "sourceUrl": "https://docs.cloud.google.com/run/docs/overview/what-is-cloud-run",
+   "quote": "Cloud Run is a fully managed application platform for running your code, function, or container",
+   "problem": "",
+   "proposedFix": ""
+  },
+  {
+   "itemId": "04592e23-4ef8-439a-b4e6-a13b2b5a3f89",
+   "verdict": "verified",
+   "sourceUrl": "https://docs.cloud.google.com/dns/docs/overview",
+   "quote": "DNS is a hierarchical distributed database that lets you store IP addresses and other data and look them up by name.",
+   "problem": "",
+   "proposedFix": ""
+  },
+  {
+   "itemId": "ecf04d71-0586-4e4a-9bd7-2cfdec81000a",
+   "verdict": "verified",
+   "sourceUrl": "https://docs.cloud.google.com/bigquery/docs/introduction",
+   "quote": "a fully managed serverless data warehouse",
+   "problem": "",
+   "proposedFix": ""
+  }
+ ]
+}
