@@ -27,6 +27,8 @@ export interface StudyShellProps {
   roundLabel?: string;
   isPrevDisabled: boolean;
   isNextDisabled: boolean;
+  /** Leaves the arrow buttons out of the header stripe; the bottom buttons and keyboard arrows stay (AC 3.6.42). */
+  hideArrows?: boolean;
   currentItem: ItemResponse | undefined;
   /** Body: ExploreRenderer or QuizRenderer output */
   children: ReactNode;
@@ -73,6 +75,7 @@ export function StudyShell({
   roundLabel,
   isPrevDisabled,
   isNextDisabled,
+  hideArrows = false,
   currentItem,
   children,
   navigationContext,
@@ -117,15 +120,17 @@ export function StudyShell({
               {headerExtra ?? null}
             </div>
             <div className="flex items-center space-x-1 flex-shrink-0">
-              <button
-                type="button"
-                onClick={onPrev}
-                disabled={isPrevDisabled}
-                className="p-1 text-gray-600 hover:text-gray-900 disabled:text-gray-300 disabled:cursor-not-allowed"
-                title="Previous item"
-              >
-                <ChevronLeftIcon className="h-5 w-5" />
-              </button>
+              {!hideArrows && (
+                <button
+                  type="button"
+                  onClick={onPrev}
+                  disabled={isPrevDisabled}
+                  className="p-1 text-gray-600 hover:text-gray-900 disabled:text-gray-300 disabled:cursor-not-allowed"
+                  title="Previous item"
+                >
+                  <ChevronLeftIcon className="h-5 w-5" />
+                </button>
+              )}
               <span
                 className="text-sm text-gray-500 min-w-[72px] text-center"
                 aria-label={roundLabel ? `${currentIndex + 1} of ${totalCount}, ${roundLabel} round` : undefined}
@@ -137,15 +142,17 @@ export function StudyShell({
                   {roundLabel}
                 </span>
               )}
-              <button
-                type="button"
-                onClick={onNext}
-                disabled={isNextDisabled}
-                className="p-1 text-gray-600 hover:text-gray-900 disabled:text-gray-300 disabled:cursor-not-allowed"
-                title={nextLabel === "Next" ? "Next item" : nextLabel}
-              >
-                <ChevronRightIcon className="h-5 w-5" />
-              </button>
+              {!hideArrows && (
+                <button
+                  type="button"
+                  onClick={onNext}
+                  disabled={isNextDisabled}
+                  className="p-1 text-gray-600 hover:text-gray-900 disabled:text-gray-300 disabled:cursor-not-allowed"
+                  title={nextLabel === "Next" ? "Next item" : nextLabel}
+                >
+                  <ChevronRightIcon className="h-5 w-5" />
+                </button>
+              )}
             </div>
             <div className="flex-1 basis-auto min-[400px]:basis-0 flex items-center justify-end gap-1">
               {onOpenShortcuts && <StudyHotkeysHint onClick={onOpenShortcuts} />}

@@ -46,7 +46,7 @@ export function useGameRoster() {
   const candidate = resolveGameTopics(explicitScope, allTopics, authSettled ? preferences.status : "loading", preferences.interests);
   const snapshotKey = `${identityKey}|${location.key}|${location.pathname}|${search}`;
   const [snapshot, setSnapshot] = useState<{ key: string; value: GameTopicResolution } | null>(null);
-  // Lock only a playable choice. The empty/error prompt must still respond to Retry or choosing topics.
+  // Lock only a playable choice. The error prompt must still respond to Retry or choosing topics.
   const ready = candidate.mode === "explicit" || candidate.mode === "all" || candidate.mode === "topics";
   if (authSettled && ready && snapshot?.key !== snapshotKey) setSnapshot({ key: snapshotKey, value: candidate });
   const resolution = snapshot?.key === snapshotKey ? snapshot.value : candidate;
@@ -166,7 +166,7 @@ export function useGameRoster() {
     scope,
     runIdentityKey: snapshotKey,
     topicBar: createElement(GameTopicsBar, { scope, resolution, unavailable: (rosterData?.scopes ?? []).filter(entry => entry.status === "empty").map(entry => entry.scope) }),
-    topicPrompt: resolution.mode === "choose" || resolution.mode === "error" ? createElement(GameTopicsPrompt, { mode: resolution.mode, onRetry: preferences.retry }) : null,
+    topicPrompt: resolution.mode === "error" ? createElement(GameTopicsPrompt, { onRetry: preferences.retry }) : null,
     title,
     pool,
     /** The roster before the short-text game pool rules; Sort It builds its own pool from it. */

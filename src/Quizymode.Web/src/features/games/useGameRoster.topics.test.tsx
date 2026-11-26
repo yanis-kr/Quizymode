@@ -18,7 +18,10 @@ vi.mock("@/api/learningLoop", () => ({ interestsApi: { get: vi.fn(), replace: vi
 
 function setup(path = "/games") {
   const client = new QueryClient({ defaultOptions: { queries: { retry: false } } });
-  const wrapper = ({ children }: { children: ReactNode }) => <QueryClientProvider client={client}><MemoryRouter initialEntries={[path]}><Routes><Route path="/games/:category?" element={children} /></Routes></MemoryRouter></QueryClientProvider>;
+  const wrapper = ({ children }: { children: ReactNode }) => <QueryClientProvider client={client}><MemoryRouter initialEntries={[path]}><Routes>
+    {["match-race", "swipe-blitz", "survival", "bucket-drop", "sort-it"].map((game) => <Route key={game} path={`/games/${game}`} element={children} />)}
+    <Route path="/games/:category?" element={children} />
+  </Routes></MemoryRouter></QueryClientProvider>;
   return renderHook(() => useGameRoster(), { wrapper });
 }
 
@@ -51,11 +54,38 @@ describe("game roster topic snapshot", () => {
     await waitFor(() => expect(gamesApi.getRoster).toHaveBeenLastCalledWith(["languages/german"], 200));
   });
 
-  it("never fetches globally before the visitor chooses", async () => {
+  it.each(["/games", "/games/match-race", "/games/swipe-blitz", "/games/survival", "/games/bucket-drop", "/games/sort-it"])(
+    "AC 3.20.29 starts %s with all topics when none are saved",
+    async (path) => {
+      const current = setup(path);
+      await waitFor(() => expect(gamesApi.getRoster).toHaveBeenCalledWith([], 200));
+      expect(gamesApi.getRoster).toHaveBeenCalledTimes(1);
+      expect(current.result.current.topicPrompt).toBeNull();
+      expect(current.result.current.scope).toEqual({ kind: "global", filterKeywords: [], search: "" });
+    },
+  );
+
+  it("AC 3.20.29 starts a signed-in account with no topics once the load succeeds", async () => {
+    auth.value = { isAuthenticated: true, isLoading: false, userId: "user-1" };
+    let resolve!: (value: never[]) => void;
+    vi.mocked(interestsApi.get).mockReturnValue(new Promise((resolvePromise) => { resolve = resolvePromise; }));
     const current = setup();
-    await waitFor(() => expect(current.result.current.topicPrompt).not.toBeNull());
+    await waitFor(() => expect(interestsApi.get).toHaveBeenCalled());
     expect(gamesApi.getRoster).not.toHaveBeenCalled();
-    expect(current.result.current.isPending).toBe(false);
+    await act(async () => { resolve([]); });
+    await waitFor(() => expect(gamesApi.getRoster).toHaveBeenCalledWith([], 200));
+    expect(current.result.current.topicPrompt).toBeNull();
+  });
+
+  it("AC 3.20.30 keeps a default visit on all topics after topics are saved and uses them next visit", async () => {
+    const current = setup();
+    await waitFor(() => expect(gamesApi.getRoster).toHaveBeenCalledTimes(1));
+    act(() => { writeLocalInterests(["languages/german"]); });
+    expect(current.result.current.scope).toMatchObject({ kind: "global" });
+    expect(gamesApi.getRoster).toHaveBeenCalledTimes(1);
+    current.unmount();
+    setup();
+    await waitFor(() => expect(gamesApi.getRoster).toHaveBeenLastCalledWith(["languages/german"], 200));
   });
 
   it("waits for account topics and does not broaden on a load error", async () => {
@@ -67,7 +97,7 @@ describe("game roster topic snapshot", () => {
     expect(gamesApi.getRoster).not.toHaveBeenCalled();
     expect(current.result.current.isPending).toBe(true);
     await act(async () => { reject(new Error("offline")); });
-    await waitFor(() => expect(current.result.current.topicPrompt?.props.mode).toBe("error"));
+    await waitFor(() => expect(current.result.current.topicPrompt).not.toBeNull());
     expect(gamesApi.getRoster).not.toHaveBeenCalled();
   });
 

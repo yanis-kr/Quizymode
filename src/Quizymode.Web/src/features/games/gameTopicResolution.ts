@@ -2,9 +2,11 @@ import { isTopicPath, mergeTopics } from "@/features/interests/topicPaths";
 import type { InterestsStatus } from "@/features/interests/useInterests";
 
 export type GameTopicResolution =
-  | { mode: "explicit" | "all" }
+  | { mode: "explicit" }
+  /** `byDefault`: no topics are chosen and the URL names no scope, so the visit plays everything (AC 3.20.29). */
+  | { mode: "all"; byDefault?: boolean }
   | { mode: "topics"; topics: string[] }
-  | { mode: "choose" | "loading" | "error" };
+  | { mode: "loading" | "error" };
 
 /** Activity-derived defaults can be added by #385; inference must never broaden an explicit preference. */
 export function resolveGameTopics(explicit: boolean, all: boolean, status: InterestsStatus, interests: string[]): GameTopicResolution {
@@ -13,5 +15,5 @@ export function resolveGameTopics(explicit: boolean, all: boolean, status: Inter
   if (status === "loading") return { mode: "loading" };
   if (status === "error") return { mode: "error" };
   const topics = mergeTopics([], interests.filter(isTopicPath));
-  return topics.length ? { mode: "topics", topics } : { mode: "choose" };
+  return topics.length ? { mode: "topics", topics } : { mode: "all", byDefault: true };
 }

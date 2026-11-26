@@ -94,7 +94,7 @@ export function ModeSwitcher({
         <div
           data-testid="mode-switcher-edge-cue"
           aria-hidden="true"
-          className="pointer-events-none sticky right-0 -ml-8 h-7 w-8 shrink-0 bg-gradient-to-l from-white to-transparent"
+          className="pointer-events-none sticky right-0 -ml-8 h-7 w-8 shrink-0 bg-gradient-to-l from-surface to-transparent"
         />
       )}
     </div>

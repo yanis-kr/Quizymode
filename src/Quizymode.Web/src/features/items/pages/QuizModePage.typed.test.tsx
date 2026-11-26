@@ -215,7 +215,7 @@ describe("QuizModePage Type answer (AC 3.6.19)", () => {
     await screen.findByText("Capital of France?");
     fireEvent.click(screen.getByRole("button", { name: /^[A-D]\. Paris$/ }));
     expect(storedOutcomes()[GUID_2]).toMatchObject({ isCorrect: true, inputMode: "choice" });
-    fireEvent.click(screen.getByTitle("Next item"));
+    fireEvent.click(screen.getByRole("button", { name: "Next" }));
 
     expect(await screen.findByText("Name the sentence")).toBeInTheDocument();
     expect(screen.queryByLabelText("Type answer")).not.toBeInTheDocument();
@@ -229,7 +229,7 @@ describe("QuizModePage Type answer (AC 3.6.19)", () => {
 
     fireEvent.click(screen.getByLabelText("Type answer"));
     typeAndCheck("Rome");
-    fireEvent.click(screen.getByTitle("Next item"));
+    fireEvent.click(screen.getByRole("button", { name: "Next" }));
 
     await waitFor(() => expect(storedOutcomes()[GUID_2]).toMatchObject({ isCorrect: false, inputMode: "typed" }));
   });

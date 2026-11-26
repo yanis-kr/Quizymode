@@ -157,6 +157,9 @@ describe("ExploreModePage flashcards", () => {
     authState.isAuthenticated = false;
     const before = localStorage.getItem("quizymode.guest.v1");
     await start();
+    // AC 3.6.44: Flashcards keep both header arrows for signed-out visitors (#897).
+    expect(screen.getByTitle("Previous item")).toBeInTheDocument();
+    expect(screen.getByTitle("Next item")).toBeInTheDocument();
     flip();
     grade("Still learning");
     expect(screen.getByRole("button", { name: "Still learning" })).toHaveAttribute("aria-pressed", "true");

@@ -376,8 +376,9 @@ const SearchPage = () => {
           })}
         </div>
         <div
+          data-testid="search-tabs-edge-cue"
           aria-hidden="true"
-          className="pointer-events-none absolute inset-y-0 right-0 w-6 bg-gradient-to-l from-white to-transparent sm:hidden"
+          className="pointer-events-none absolute inset-y-0 right-0 w-6 bg-gradient-to-l from-surface to-transparent sm:hidden"
         />
       </div>
       <div ref={panelRef} role="tabpanel" id="search-panel" aria-labelledby={`search-tab-${tab}`} tabIndex={0}>

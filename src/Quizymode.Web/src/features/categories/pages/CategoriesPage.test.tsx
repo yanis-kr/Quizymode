@@ -124,12 +124,21 @@ describe("CategoriesPage landing header and hidden answers (#646, #647, #650)", 
     const header = h1.closest("[data-testid='scope-landing-header']") as HTMLElement;
     expect(await within(header).findByText("33 questions")).toBeInTheDocument();
     expect(within(header).getByText("Riddles with a twist.")).toBeInTheDocument();
-    expect(await within(header).findByRole("link", { name: "Games" })).toBeInTheDocument();
     expect(within(header).getByRole("link", { name: "Play 5" })).toHaveAttribute(
       "href",
       "/quiz/trivia?nav=brain-teasers%2Caha-moments&keywords=brain-teasers%2Caha-moments&size=5"
     );
     expect(within(header).getByRole("link", { name: "Play 10" })).toBeInTheDocument();
+    // AC 3.5.7: Flashcards and Games are offered by the mode tabs only.
+    expect(within(header).queryByRole("link", { name: "Flashcards" })).toBeNull();
+    expect(within(header).queryByRole("link", { name: "Games" })).toBeNull();
+    for (const name of ["Flashcards", "Quiz", "Learn", "Games"]) {
+      expect(screen.getByRole("tab", { name })).toBeInTheDocument();
+    }
+    // The header no longer probes the games roster.
+    expect(gamesApi.getRoster).not.toHaveBeenCalled();
+    // AC 3.33.1: a visitor who knows nothing yet sees no progress line.
+    expect(screen.queryByTestId("set-progress")).toBeNull();
     // The scope path header does not repeat the count.
     expect(screen.queryByLabelText("Item count")).not.toBeInTheDocument();
     await waitFor(() => expect(document.title).toBe("Aha! Brain Teasers | Quizymode"));
@@ -156,6 +165,15 @@ describe("CategoriesPage landing header and hidden answers (#646, #647, #650)", 
     expect(within(header).getByText("Fun facts and puzzles.")).toBeInTheDocument();
     expect(within(header).getByRole("link", { name: "Play 5" })).toHaveAttribute("href", "/quiz/trivia?size=5");
     await waitFor(() => expect(document.title).toBe("Trivia | Quizymode"));
+  });
+
+  it("AC 3.4.6 shows the category description once on the Sets view", async () => {
+    renderAt("/categories/trivia");
+
+    await screen.findByText("33 questions");
+    expect(await screen.findByRole("button", { name: /brain-teasers/ })).toBeInTheDocument();
+    expect(screen.getAllByText("Fun facts and puzzles.")).toHaveLength(1);
+    expect(screen.getByText("Browse subtopics in this scope.")).toBeInTheDocument();
   });
 
   it("falls back to the keyword display name when no Featured set matches", async () => {
