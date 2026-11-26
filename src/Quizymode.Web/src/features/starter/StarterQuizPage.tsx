@@ -2,7 +2,7 @@ import { useEffect, useMemo, useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useQuery, useQueryClient } from "@tanstack/react-query";
 import { SEO } from "@/components/SEO";
-import { starterApi, type StarterPoolEntry } from "@/api/starter";
+import { STARTER_POOL_QUERY_KEY, starterApi, type StarterPoolEntry } from "@/api/starter";
 import { useAuth } from "@/contexts/AuthContext";
 import { HOME_SAMPLE_COLLECTION_ID, HOME_SAMPLE_COLLECTION_NAME } from "@/features/home/homePageData";
 import { createAnalyticsId, trackEventOnce } from "@/features/analytics/analyticsEvents";
@@ -18,7 +18,6 @@ import { readStarterSeen, markStarterSeen } from "./starterSeen";
 import { clearStoredStarterRun, readStoredStarterRun, writeStoredStarterRun, type StoredStarterRun } from "./starterRunStorage";
 import { StarterEndCards } from "./StarterEndCards";
 
-export const STARTER_POOL_QUERY_KEY = ["starter-pool"] as const;
 const STILL_LOADING_MS = 4000;
 const GIVE_UP_MS = 8000;
 

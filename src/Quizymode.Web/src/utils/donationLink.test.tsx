@@ -18,6 +18,10 @@ vi.mock("@/api/learningLoop", async (importOriginal) => ({
   ...(await importOriginal<typeof import("@/api/learningLoop")>()),
   dailyQuizApi: { get: vi.fn() },
 }));
+vi.mock("@/api/starter", async (importOriginal) => ({
+  ...(await importOriginal<typeof import("@/api/starter")>()),
+  starterApi: { getPool: vi.fn(() => Promise.reject(new Error("offline"))) },
+}));
 vi.mock("@/components/UserProfileModal", () => ({ default: () => null }));
 vi.mock("@/features/feedback/components/FeedbackDialog", () => ({ default: () => null }));
 
