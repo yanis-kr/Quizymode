@@ -28,6 +28,7 @@ export interface Identity {
 export interface ApiResult {
   status: number;
   contentType: string;
+  cacheControl: string;
   json: any;
   bytes: number;
 }
@@ -74,7 +75,8 @@ export async function call(who: Identity, method: string, route: string, options
         json = null;
       }
     }
-    return { status: response.status(), contentType, json, bytes: body.length };
+    const cacheControl = response.headers()["cache-control"] ?? "";
+    return { status: response.status(), contentType, cacheControl, json, bytes: body.length };
   } catch (error) {
     throw new Error(`${method} ${route} failed: ${redact(String((error as Error).message).split("\n")[0])}`);
   }
@@ -211,6 +213,10 @@ export async function createPrivateItem(owner: Identity, data: ChecklistData): P
   });
 }
 
+/** AC 3.24.6: the header on picture bytes streamed by the API, so no browser or shared cache keeps a copy. */
+export const PICTURE_CACHE_CONTROL = "private, no-store, no-transform";
+
+/** A picture request: bytes come back uncacheable (AC 3.29.17), and a refusal is an empty 404. */
 export async function expectPicture(who: Identity, route: string, expected: 200 | 404, label: string): Promise<void> {
   const result = await call(who, "GET", route);
   // CloudFront delivery answers 302 to a short-lived signed URL; proxy delivery answers 200 with the bytes.
@@ -219,6 +225,10 @@ export async function expectPicture(who: Identity, route: string, expected: 200 
   if (result.status === 200) {
     expect(result.contentType, `${label} content type`).toContain("image/webp");
     expect(result.bytes, `${label} size`).toBeGreaterThan(0);
+    expect(result.cacheControl, `${label} cache header`).toBe(PICTURE_CACHE_CONTROL);
+  }
+  if (result.status === 404) {
+    expect(result.bytes, `${label} empty refusal`).toBe(0);
   }
 }
 
@@ -506,7 +516,7 @@ export async function removePictureInEditor(page: Page, testInfo: TestInfo, owne
   });
 }
 
-/** AC 3.29.16: both uploads stay private and unreferenced (AC 3.27.7); their ids go into the report. */
+/** AC 3.29.16 and AC 3.29.17: the uploads stay private and unreferenced (AC 3.27.7); their ids go into the report. */
 export async function recordUploadedAssets(testInfo: TestInfo, data: ChecklistData): Promise<void> {
   const ids = [data.assetId, data.replacementAssetId].filter((id): id is string => !!id);
   testInfo.annotations.push({ type: "uploaded-assets", description: ids.join(", ") || "none" });
