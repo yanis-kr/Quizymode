@@ -907,8 +907,7 @@ public sealed class SeedSyncAdminTests : ItemTestFixture
                 SourceFileCount: 1,
                 CollectionsPath: "data/seed-source/collections/public",
                 CollectionSourceFileCount: collections?.Count ?? 0),
-            BranchTaxonomyYaml: null,
-            BranchTaxonomySql: null);
+            BranchTaxonomyYaml: null);
 
         return new SeedSyncAdmin.Request(
             SchemaVersion: 2,

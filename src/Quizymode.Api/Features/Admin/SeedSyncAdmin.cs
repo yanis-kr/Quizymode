@@ -212,7 +212,9 @@ public static class SeedSyncAdmin
                 .NotEmpty()
                 .WithMessage("GitRef is required.")
                 .MaximumLength(200)
-                .WithMessage("GitRef must not exceed 200 characters.");
+                .WithMessage("GitRef must not exceed 200 characters.")
+                .Must(gitRef => gitRef?.Trim() is not ("." or ".."))
+                .WithMessage("GitRef must be a branch, tag or commit.");
 
             RuleFor(x => x.DeltaPreviewLimit)
                 .InclusiveBetween(0, 500)
@@ -226,12 +228,16 @@ public static class SeedSyncAdmin
                 .InclusiveBetween(1, 200)
                 .WithMessage("FileBatchSize must be between 1 and 200.");
 
+            // It becomes part of a GitHub API path, so only a commit SHA is accepted.
             RuleFor(x => x.SinceCommitSha)
-                .MaximumLength(200)
-                .When(x => x.SinceCommitSha is not null)
-                .WithMessage("SinceCommitSha must not exceed 200 characters.");
+                .Must(sha => IsCommitSha(sha!.Trim()))
+                .When(x => !string.IsNullOrWhiteSpace(x.SinceCommitSha))
+                .WithMessage("SinceCommitSha must be a commit SHA (7 to 64 hexadecimal characters).");
         }
     }
+
+    private static bool IsCommitSha(string value) =>
+        value.Length is >= 7 and <= 64 && value.All(char.IsAsciiHexDigit);
 
     private sealed class ManifestValidator : AbstractValidator<ManifestRequest>
     {
