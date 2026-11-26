@@ -1,34 +1,31 @@
 # Quizymode
 
-Quizymode is a full-stack study and quiz application built for people who want to learn from structured question banks. Users can browse items by category, study with flashcards, test themselves in quiz mode, and organise content into personal or shared collections. Content can be created manually, imported in bulk, or generated with AI assistance — and everything is tied to a taxonomy of categories and keywords to keep study sessions focused.
+A study and quiz app that got a little out of hand. Quizzes, flashcards, five small games, a daily quiz, and a tool that turns your own notes into questions. Built by one engineer working with AI coding agents, spec first: every new behaviour is written down, approved, and checked before it ships.
 
-For a full walkthrough with screenshots, see the **[Live User Guide](https://yanis-kr.github.io/Quizymode/)** (desktop and mobile, Dark and Light, refreshed daily when the UI changes) or the markdown sources: [User Guide](./docs/user-guide/user-guide.md) · [Mobile User Guide](./docs/user-guide/user-guide.mobile.md).
-
-> **Try it:** [www.quizymode.com](https://www.quizymode.com/). You can browse categories and take quizzes without an account. Sign in to keep progress across devices.
+**Try it:** [www.quizymode.com](https://www.quizymode.com/) (five questions, no account) · **Read about it:** [About page](https://www.quizymode.com/about) · [User Guide](https://yanis-kr.github.io/Quizymode/) · [the story on Medium](https://medium.com/@yanis.krumins/quizymode-today-a-study-app-a-content-tool-and-a-useful-engineering-sandbox-f7aeb25e6683)
 
 ![Quizymode home page as a guest on www.quizymode.com](docs/images/guest-home.jpg)
 
-**Tech:** `.NET 10` Minimal API, React 19 SPA, AWS Cognito authentication, PostgreSQL.
+## What it does
 
-Production shape:
+- **Study modes:** Quiz (with a timed Test option), Flashcards, and Learn, which repeats what you miss.
+- **Games:** Match Race, Swipe Blitz, Survival, Bucket Drop and Sort It, playable without an account. In Match Race and Survival you can race a ghost of your best run.
+- **Habit tools:** a daily quiz with streaks, a Review queue on 1, 3, 7, 14 and 30 day intervals, and a per-collection test-date plan.
+- **Your own material:** upload a PDF, Word or PowerPoint file, paste text, or photograph pages (read on your device) and review source-quoted questions generated from it. Limits apply and sign-in is required.
+- **Content:** a taxonomy of 12 categories, from certification exams to 16 languages to all 195 country flags, plus private, shared and public collections.
+- **Also:** global search with typo tolerance, text-to-speech, keyboard shortcuts, light and dark themes.
 
-- Web app: S3 + CloudFront
-- API: AWS Lightsail container
-- Database: Supabase Postgres
-- Auth: AWS Cognito
-- DNS / edge proxy / TLS: Cloudflare
-- Observability: Grafana Cloud
-- Local orchestration: Aspire AppHost
+## Why the repository might interest you
 
-Visit [https://www.quizymode.com/](https://www.quizymode.com/) to use the application.
+- **Specification first.** [`docs/AC.md`](docs/AC.md) holds every behaviour as a Given / When / Then acceptance criterion. A CI job (`ac-gate`) rejects a pull request that adds a criterion with no way to verify it.
+- **Refine, approve, ship, autopilot.** Issues are refined in batches into a release plan the owner approves by hash ([`qm-bundle-refine`](.claude/skills/qm-bundle-refine/SKILL.md)). An executor that is not allowed to ask questions then builds, releases and verifies it ([`qm-bundle-ship`](.claude/skills/qm-bundle-ship/SKILL.md)), or one autopilot run does both with a lead agent in the owner's seat ([`qm-bundle-autopilot`](.claude/skills/qm-bundle-autopilot/SKILL.md)).
+- **Agents with separate jobs.** Architect, UX designer, coder, tester, reviewer, reporter, validator and lead agents are defined in [`.claude/agents/`](.claude/agents/); the workflow rules are in [`AGENTS.md`](AGENTS.md).
+- **Production checks after every deploy.** A Playwright project runs against the live site as a visitor, a user and an admin, and a rollback workflow restores the previous API image and web build.
+- **Selective CI and deploy.** A change classifier decides which jobs run, so a content-only change does not rebuild the API.
+- **AI where it earns its place.** Question generation routes across several model providers with quotas and a monthly budget. Topic suggestion and search use no LLM at all.
+- **Vertical slices.** .NET 10 Minimal APIs under `Features/`, React 19 on the front end, OpenAPI checked in and verified at build time.
 
-## What Matters Most
-
-- Study modes: category browsing, flashcards, and quiz flows
-- Collections: private, bookmarked, and discoverable public collections
-- Auth: Cognito-backed sign-in with JWT bearer auth enforced by the API
-- Admin tools: review board, audit logs, seed sync, keyword/category management
-- AI-assisted workflows: paste/file import (cloze and term pairs) and AI study-guide documents (upload notes, review generated questions)
+**Tech:** .NET 10 Minimal API, React 19 SPA, PostgreSQL, AWS Cognito. Production runs on S3 + CloudFront (web), an AWS Lightsail container (API), Supabase Postgres, Cloudflare and Grafana Cloud. Aspire runs the whole stack locally.
 
 ## Stack
 
