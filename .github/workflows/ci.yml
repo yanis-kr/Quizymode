@@ -759,7 +759,7 @@ jobs:
         run: |
           npm ci
           npm ci --prefix src/Quizymode.Web
-          npx playwright install --with-deps chromium
+          npx playwright install --with-deps chromium webkit
 
       - name: Create HTTPS dev certificate (the Vite proxy targets https://localhost:8082)
         run: dotnet dev-certs https
@@ -798,7 +798,9 @@ jobs:
       - name: Run E2E tests
         env:
           PLAYWRIGHT_BASE_URL: http://localhost:7000
-        run: npx playwright test --project=e2e-ci
+        # One invocation, so results.json holds every project. e2e-mobile-* (AC 6.6.68, #365) run the OCR tab on the
+        # iPhone (WebKit) and Pixel (Chromium) device profiles.
+        run: npx playwright test --project=e2e-ci --project=e2e-mobile-ios --project=e2e-mobile-android
 
       - name: Upload traces and screenshots
         if: always()

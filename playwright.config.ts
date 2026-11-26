@@ -36,10 +36,35 @@ export default defineConfig({
       // Traces and screenshots are kept for every test so a green run is its own evidence.
       name: "e2e-ci",
       testMatch: "**/e2e-ci/**/*.spec.ts",
+      testIgnore: "**/e2e-ci/mobile/**", // device-profile specs run in the e2e-mobile-* projects below
       use: {
         ...devices["Desktop Chrome"],
         userAgent: e2eUserAgent(devices["Desktop Chrome"]),
         viewport: { width: 1280, height: 900 },
+        trace: "on",
+        screenshot: "on",
+      },
+    },
+    {
+      // AC 6.6.68 (#365): the OCR tab under mobile device emulation. iPhone profile on WebKit, Pixel profile on Chromium.
+      // Emulation, not hardware: physical camera capture is not exercised. Traces and screenshots are kept as evidence.
+      name: "e2e-mobile-ios",
+      testMatch: "**/e2e-ci/mobile/**/*.spec.ts",
+      metadata: { profile: "iPhone 15" },
+      use: {
+        ...devices["iPhone 15"],
+        userAgent: e2eUserAgent(devices["iPhone 15"]),
+        trace: "on",
+        screenshot: "on",
+      },
+    },
+    {
+      name: "e2e-mobile-android",
+      testMatch: "**/e2e-ci/mobile/**/*.spec.ts",
+      metadata: { profile: "Pixel 7" },
+      use: {
+        ...devices["Pixel 7"],
+        userAgent: e2eUserAgent(devices["Pixel 7"]),
         trace: "on",
         screenshot: "on",
       },
