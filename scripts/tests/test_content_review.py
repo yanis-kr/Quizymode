@@ -306,3 +306,19 @@ class PilotRunTests(unittest.TestCase):
         with patch.object(pilot_run, "eligible_source_url", lambda i, t, m: "https://a.example/cited"),                 patch.object(pilot_run, "read_cache", lambda url: {"status": "ok", "text": "x"}),                 patch.object(pilot_run, "fetch_run", lambda urls, base_delay: fetched.append(list(urls))):
             self.assertEqual(pilot_run.fetch_own_sources([item], {}, "T1", 0), [])
         self.assertEqual(len(fetched), 1)
+
+    def test_ledger_pages_lists_the_pages_earlier_l2_rows_used(self) -> None:
+        import pilot_run
+        with tempfile.TemporaryDirectory() as tmp:
+            ledger = Path(tmp) / "exams.jsonl"
+            rows = [
+                {"itemId": "a", "level": "L1", "sourceUrl": "https://a.example/l1"},
+                {"itemId": "a", "level": "L2", "sourceUrl": "https://a.example/one"},
+                {"itemId": "a", "level": "L2", "sourceUrl": "https://a.example/two"},
+                {"itemId": "b", "level": "L2", "sourceUrl": None},
+            ]
+            ledger.write_text("\n".join(json.dumps(r) for r in rows) + "\n", encoding="utf-8")
+            with patch.object(pilot_run, "ledger_path", lambda category: ledger):
+                self.assertEqual(pilot_run.ledger_pages("exams"), {"a": ["https://a.example/one", "https://a.example/two"]})
+            with patch.object(pilot_run, "ledger_path", lambda category: Path(tmp) / "missing.jsonl"):
+                self.assertEqual(pilot_run.ledger_pages("exams"), {})

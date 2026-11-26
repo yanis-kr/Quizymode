@@ -57,6 +57,17 @@ def fetch_own_sources(items: list, tiers: dict, minimum_tier: str, delay: float)
     return urls
 
 
+def ledger_pages(category: str) -> dict[str, list[str]]:
+    """itemId -> every source URL an earlier L2 row of the category ledger used (the pages already tried)."""
+    pages: dict[str, list[str]] = {}
+    path = ledger_path(category)
+    for line in path.read_text(encoding="utf-8").splitlines() if path.exists() else []:
+        row = json.loads(line)
+        if row.get("level") == "L2" and row.get("sourceUrl"):
+            pages.setdefault(str(row["itemId"]), []).append(row["sourceUrl"])
+    return pages
+
+
 def suggest(items: list, tried: dict[str, list[str]], seed: str, model: str, minimum_tier: str, tiers: dict, delay: float) -> dict[str, list[str]]:
     """Blind source-finder calls (level S) for the given items; returns itemId -> eligible URLs now in the cache."""
     found: dict[str, list[str]] = {}
@@ -83,6 +94,7 @@ def main() -> int:
     parser.add_argument("--seed", default="727")
     parser.add_argument("--rounds", type=int, default=2)
     parser.add_argument("--delay", type=float, default=1.0)
+    parser.add_argument("--retry-gaps", action="store_true", help="look for a DIFFERENT page than the ones earlier L2 rows used (source-finder rounds get the tried URLs from the first call)")
     parser.add_argument("--summary", type=Path, help="write the run summary JSON here")
     args = parser.parse_args()
     wanted = [line.strip() for line in args.item_ids.read_text(encoding="utf-8").splitlines() if line.strip()]
@@ -95,17 +107,18 @@ def main() -> int:
     chosen: dict[str, str | None] = {}
     tried: dict[str, list[str]] = {}
     fetch_own_sources(items, tiers, minimum, args.delay)
+    earlier = ledger_pages(args.category) if args.retry_gaps else {}
     for item in items:
         own = eligible_source_url(item, tiers, minimum)
-        tried[item.item_id] = [own] if own else []
-        chosen[item.item_id] = own if own and cache_is_ok(read_cache(own)) else None
+        tried[item.item_id] = ([own] if own else []) + earlier.get(item.item_id, [])
+        chosen[item.item_id] = None if args.retry_gaps else (own if own and cache_is_ok(read_cache(own)) else None)
     for round_number in range(1, args.rounds + 1):
         todo = [i for i in items if chosen[i.item_id] is None]
         if not todo:
             break
-        found = suggest(todo, tried if round_number > 1 else {}, args.seed, DEFAULT_MODELS["L1"], minimum, tiers, args.delay)
+        found = suggest(todo, tried if round_number > 1 or args.retry_gaps else {}, args.seed, DEFAULT_MODELS["L1"], minimum, tiers, args.delay)
         for item in todo:
-            urls = found.get(item.item_id, [])
+            urls = [u for u in found.get(item.item_id, []) if not args.retry_gaps or u not in tried[item.item_id]]
             tried[item.item_id].extend(urls)
             chosen[item.item_id] = choose_page(item, urls)
     packets = [packet(i, "L2", args.seed, source_url=chosen[i.item_id]) for i in items if chosen[i.item_id]]
