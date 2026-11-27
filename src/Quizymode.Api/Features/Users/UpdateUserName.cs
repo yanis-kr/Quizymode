@@ -27,7 +27,9 @@ public static class UpdateUserName
                 .NotEmpty()
                 .WithMessage("Name is required")
                 .MaximumLength(200)
-                .WithMessage("Name must not exceed 200 characters");
+                .WithMessage("Name must not exceed 200 characters")
+                .Must(name => name is null || !DisplayNameRules.LooksLikeEmail(name))
+                .WithMessage(DisplayNameRules.AtSignMessage);
         }
     }
 

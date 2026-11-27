@@ -78,6 +78,7 @@ const FIELD_DOM_ID: Record<FieldId, string> = {
 };
 const ERROR_ID = "signup-error";
 
+const DISPLAY_NAME_AT_SIGN = "Display name cannot contain @. Other people can see it.";
 const TOO_MANY_CHECKS = "Too many attempts. Please wait a few minutes and try again.";
 const EMAIL_IN_USE = "An account with this email may already exist. Go to Sign in, where you can also reset your password.";
 
@@ -186,6 +187,11 @@ const SignUpPage = () => {
 
     if (username.trim().toLowerCase() === email.trim().toLowerCase()) {
       showError("Display name cannot be the same as email", ["username", "email"]);
+      return;
+    }
+
+    if (username.includes("@")) {
+      showError(DISPLAY_NAME_AT_SIGN, ["username"]);
       return;
     }
 

@@ -202,6 +202,18 @@ public sealed class UpdateUserNameValidatorTests
         result.IsValid.Should().BeFalse();
     }
 
+    [Theory]
+    [InlineData("someone@example.com")]
+    [InlineData("write to me@home")]
+    [InlineData("@")]
+    public async Task AC_4_5_5_Validate_FailsForNameContainingAtSign(string name)
+    {
+        var result = await _validator.ValidateAsync(new UpdateUserName.Request(name));
+
+        result.IsValid.Should().BeFalse();
+        result.Errors.Should().ContainSingle(error => error.ErrorMessage == "Name cannot contain @");
+    }
+
     [Fact]
     public async Task Validate_FailsForNameExceeding200Characters()
     {

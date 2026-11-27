@@ -25,6 +25,15 @@ public sealed class DefaultCollectionFactoryTests
     }
 
     [Fact]
+    public void AC_4_1_10_BuildMetadata_EmailShapedName_IsNotUsed()
+    {
+        (string name, string? description) = DefaultCollectionFactory.BuildMetadata("someone@example.com");
+
+        name.Should().Be("Default Collection");
+        description.Should().BeNull();
+    }
+
+    [Fact]
     public void BuildMetadata_WithoutDisplayName_FallsBackToDefaultCollection()
     {
         (string name, string? description) = DefaultCollectionFactory.BuildMetadata("   ");

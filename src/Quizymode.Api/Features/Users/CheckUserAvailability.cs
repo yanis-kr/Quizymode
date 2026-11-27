@@ -35,8 +35,8 @@ public static class CheckUserAvailability
 
             string wanted = username.Trim().ToLower();
 
-            // A stored name can be an email address (a sign-in without a name claim), so a value shaped like one is
-            // not looked up. A duplicate display name is still made unique when the account is created.
+            // An older stored name can be an email address, so a value shaped like one is not looked up.
+            // New names cannot be one (AC 4.1.10).
             bool isTaken = !wanted.Contains('@')
                 && await db.Users.AnyAsync(u => u.Name != null && u.Name.ToLower() == wanted, cancellationToken);
 

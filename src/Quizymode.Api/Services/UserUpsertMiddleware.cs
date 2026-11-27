@@ -332,12 +332,16 @@ internal sealed class UserUpsertMiddleware
         
         // In Cognito, the User Name IS the Subject (GUID)
         // Use Subject as Name if no name claim is found
-        string? displayName = user.FindFirstValue("name") 
+        string? claimedName = user.FindFirstValue("name")
             ?? user.FindFirstValue("cognito:username")
             ?? user.FindFirstValue("preferred_username")
             ?? user.FindFirstValue(ClaimTypes.Name);
-        
-        string name = displayName ?? subject; // Fallback to Subject if no name claim
+
+        // The name is shown to other users, so an email address is not used (AC 4.1.10). The later claims are not
+        // tried instead: they hold account identifiers.
+        string? displayName = claimedName is null || DisplayNameRules.LooksLikeEmail(claimedName) ? null : claimedName;
+
+        string name = displayName ?? subject; // Fallback to Subject if no usable name claim
 
         // Subject only: email and name are personal data and stay out of logs (#476).
         _logger.LogDebug("Processing user upsert for subject: {Subject}", subject);
@@ -476,7 +480,8 @@ internal sealed class UserUpsertMiddleware
 
                     Collection defaultCollection = DefaultCollectionFactory.Create(
                         userEntity.Id.ToString(),
-                        displayName is null ? null : Truncate(displayName, MaxNameLength));
+                        // The subject is not a display name (the same rule as GET /collections).
+                        displayName is null || displayName == subject ? null : Truncate(displayName, MaxNameLength));
                     db.Collections.Add(defaultCollection);
 
                     var activeCollectionSetting = new UserSetting

@@ -116,14 +116,17 @@ const UserProfileModal = ({ isOpen, onClose }: UserProfileModalProps) => {
     },
   });
 
+  const nameHasAtSign = name.includes("@");
+
   const handleSave = () => {
-    if (name.trim()) {
+    if (name.trim() && !nameHasAtSign) {
       updateNameMutation.mutate(name.trim());
     }
   };
 
   const handleCancel = () => {
     setIsEditing(false);
+    updateNameMutation.reset();
     if (displayUser) {
       setName(displayUser.name || "");
     }
@@ -222,12 +225,20 @@ const UserProfileModal = ({ isOpen, onClose }: UserProfileModalProps) => {
                     onChange={(e) => setName(e.target.value)}
                     className="w-full px-3 py-2 border border-gray-300 rounded-md text-sm font-mono min-w-[400px]"
                     autoFocus
+                    aria-label="Name"
+                    aria-invalid={nameHasAtSign || undefined}
+                    aria-describedby={nameHasAtSign ? "profile-name-error" : undefined}
                     onKeyDown={(e) => {
                       if (e.key === "Escape") {
                         handleCancel();
                       }
                     }}
                   />
+                  {nameHasAtSign && (
+                    <p id="profile-name-error" role="alert" className="text-sm text-red-600">
+                      Name cannot contain @. Other people can see it.
+                    </p>
+                  )}
                   <div className="flex justify-end space-x-2">
                     <button
                       onClick={handleCancel}
@@ -238,7 +249,7 @@ const UserProfileModal = ({ isOpen, onClose }: UserProfileModalProps) => {
                     </button>
                     <button
                       onClick={handleSave}
-                      disabled={updateNameMutation.isPending || !name.trim()}
+                      disabled={updateNameMutation.isPending || !name.trim() || nameHasAtSign}
                       className="px-3 py-1 text-xs font-medium text-white bg-indigo-600 rounded-md hover:bg-indigo-700 disabled:opacity-50"
                     >
                       {updateNameMutation.isPending ? "Saving..." : "Save"}

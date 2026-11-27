@@ -347,6 +347,20 @@ describe("SignUpPage", () => {
       expect(mockCheckAvailability).toHaveBeenCalledWith({ username: "alice" });
     });
 
+    it("AC 4.2.15 refuses a display name containing @ before any request", async () => {
+      renderPage();
+      fillSignUpForm({ username: "someone@else.com", email: "alice@example.com" });
+      fireEvent.click(screen.getByRole("button", { name: /sign up/i }));
+
+      const alert = await screen.findByRole("alert");
+      expect(alert).toHaveTextContent("Display name cannot contain @. Other people can see it.");
+      const name = screen.getByLabelText(/display name/i);
+      expect(name).toHaveAttribute("aria-invalid", "true");
+      expect(name).toHaveFocus();
+      expect(mockCheckAvailability).not.toHaveBeenCalled();
+      expect(mockSignup).not.toHaveBeenCalled();
+    });
+
     it("AC 4.2.14 shows the provider's existing-account rejection on the email field", async () => {
       mockSignup.mockRejectedValueOnce(
         Object.assign(new Error("An account with the given email already exists."), {
