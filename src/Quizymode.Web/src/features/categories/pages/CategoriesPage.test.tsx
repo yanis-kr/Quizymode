@@ -600,3 +600,81 @@ describe("Empty topics (#900)", () => {
     expect(screen.getByPlaceholderText("All topics")).toHaveValue("general");
   });
 });
+
+describe("CategoriesPage category display names (#902)", () => {
+  function LocationProbe() {
+    const location = useLocation();
+    return <div data-testid="location">{`${location.pathname}${location.search}`}</div>;
+  }
+
+  function renderWithLocation(url: string) {
+    const queryClient = new QueryClient({ defaultOptions: { queries: { retry: false } } });
+    return render(
+      <HelmetProvider>
+        <QueryClientProvider client={queryClient}>
+          <MemoryRouter initialEntries={[url]}>
+            <LocationProbe />
+            <Routes>
+              <Route path="/categories/:category" element={<CategoriesPage />} />
+              <Route path="/categories" element={<CategoriesPage />} />
+            </Routes>
+          </MemoryRouter>
+        </QueryClientProvider>
+      </HelmetProvider>
+    );
+  }
+
+  beforeEach(() => {
+    vi.clearAllMocks();
+    installMemoryLocalStorage();
+    vi.mocked(categoriesApi.getAll).mockResolvedValue({
+      categories: [
+        { category: "geography", count: 12, description: "Maps.", averageRating: null },
+        { category: "act-math", count: 3, description: null, averageRating: null },
+      ],
+    } as never);
+    vi.mocked(keywordsApi.getNavigationKeywords).mockResolvedValue({
+      keywords: [{ name: "capitals", itemCount: 12, averageRating: null, navigationRank: 1, description: null }],
+    } as never);
+    vi.mocked(keywordsApi.getKeywordDescriptions).mockResolvedValue({ keywords: [] } as never);
+    vi.mocked(keywordsApi.getItemTagKeywords).mockResolvedValue({ names: [] });
+    vi.mocked(featuredApi.get).mockResolvedValue({ sets: [], collections: [] });
+    vi.mocked(gamesApi.getRoster).mockResolvedValue({ items: [], scopes: [] } as never);
+    vi.mocked(itemsApi.getAll).mockResolvedValue({
+      items: [], totalCount: 0, page: 1, pageSize: 10, totalPages: 1,
+    } as never);
+  });
+
+  it.each([
+    ["Geography", "/categories/geography?view=sets"],
+    ["Act Math", "/categories/act-math?view=sets"],
+  ])("shows the %s tile capitalised and opens the same address", async (name, address) => {
+    const user = userEvent.setup({ delay: null });
+    renderWithLocation("/categories");
+
+    await user.click(await screen.findByRole("button", { name: new RegExp(name) }));
+
+    await waitFor(() => expect(screen.getByTestId("location").textContent).toBe(address));
+  });
+
+  it("capitalises the category eyebrow on topic tiles and keeps the topic name as stored", async () => {
+    renderWithLocation("/categories/geography");
+
+    const tile = await screen.findByRole("button", { name: /capitals/ });
+    expect(within(tile).getByText("Geography")).toBeInTheDocument();
+    expect(within(tile).getByRole("heading", { name: "capitals" })).toBeInTheDocument();
+  });
+
+  it.each(["/categories/geography", "/categories/geography?view=items"])(
+    "capitalises the category filter options at %s and keeps their values",
+    async (url) => {
+      const user = userEvent.setup({ delay: null });
+      renderWithLocation(url);
+
+      await user.click(await screen.findByRole("button", { name: /^filters/i }));
+
+      expect(screen.getByRole("option", { name: "Geography" })).toHaveValue("geography");
+      expect(screen.getByRole("option", { name: "Act Math" })).toHaveValue("act-math");
+    }
+  );
+});

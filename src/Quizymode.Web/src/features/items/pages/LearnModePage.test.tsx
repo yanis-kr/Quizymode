@@ -170,6 +170,7 @@ describe("LearnModePage", () => {
       expect(screen.getByRole("progressbar")).toHaveAttribute("aria-valuenow", "0");
       expect(screen.getByText(/Round 1 · 1 of 3/)).toBeInTheDocument();
       expect(screen.getByText("Quiz: one pass. Learn: repeat until mastered. Review: spaced, due items.")).toBeInTheDocument();
+      expect(screen.getByText("Learn, Test and Review are free.")).toBeInTheDocument();
       expect(screen.getByRole("tab", { name: "Learn", selected: true })).toBeInTheDocument();
       expect(screen.queryByText(/Learning \d+ of/)).toBeNull();
     });
@@ -669,7 +670,7 @@ describe("LearnModePage question pictures (#403)", () => {
     expect(screen.queryByText(/Correct\.|Not quite/)).not.toBeInTheDocument();
     screen.getAllByRole("button", { name: /^[A-D]\. / }).forEach((option) => expect(option).toBeDisabled());
 
-    fireEvent.click(screen.getByRole("button", { name: "Skip question (not scored)" }));
+    fireEvent.click(screen.getByRole("button", { name: "Skip question" }));
 
     expect(screen.getByText(/Round 1 · 2 of 3/)).toBeInTheDocument();
     expect(currentItem(items).id).not.toBe(first.id);
@@ -684,7 +685,7 @@ describe("LearnModePage question pictures (#403)", () => {
     await screen.findByRole("progressbar");
 
     for (let index = 0; index < 3; index += 1) {
-      fireEvent.click(await screen.findByRole("button", { name: "Skip question (not scored)" }));
+      fireEvent.click(await screen.findByRole("button", { name: "Skip question" }));
     }
 
     expect(await screen.findByText("No questions were scored")).toBeInTheDocument();

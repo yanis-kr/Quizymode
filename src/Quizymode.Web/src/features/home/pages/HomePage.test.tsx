@@ -210,3 +210,53 @@ describe("HomePage Fun expressions card (#664)", () => {
     expect(link.className).toContain("min-h-[44px]");
   });
 });
+
+describe("HomePage plain wording (#902)", () => {
+  beforeEach(() => {
+    vi.clearAllMocks();
+    vi.mocked(categoriesApi.getAll).mockResolvedValue({ categories: [] });
+    vi.mocked(collectionsApi.discover).mockResolvedValue({ items: [], totalCount: 0 });
+    vi.mocked(featuredApi.get).mockResolvedValue({
+      sets: [
+        {
+          id: "f1",
+          displayName: "World Capitals",
+          categorySlug: "geography",
+          navKeyword1: "capitals",
+          navKeyword2: null,
+          itemCount: 12,
+          lastModifiedAt: null,
+          sortOrder: 1,
+        },
+      ],
+      collections: [],
+    } as never);
+  });
+
+  // The set also appears in the Recommended lane, so look inside Featured Sets only.
+  async function featuredSetLink() {
+    const lane = screen.getByText("Featured Sets").closest("section")!;
+    return { lane, featured: await within(lane).findByRole("link", { name: /World Capitals/ }) };
+  }
+
+  it("AC 3.0.3 does not show the free line", async () => {
+    renderPage();
+
+    await featuredSetLink();
+    expect(screen.queryByText(/Learn, Test and Review are free/)).not.toBeInTheDocument();
+  });
+
+  it("shows capitalised category chips on Featured Sets and Fun expressions and keeps the links (#902)", async () => {
+    renderPage();
+
+    const { lane, featured } = await featuredSetLink();
+    expect(within(featured).getByText("Geography")).toBeInTheDocument();
+    expect(within(featured).queryByText("geography")).not.toBeInTheDocument();
+    expect(featured).toHaveAttribute("href", "/categories/geography/capitals");
+
+    const fun = within(lane).getByRole("link", { name: /Fun expressions/ });
+    expect(within(fun).getByText("Languages")).toBeInTheDocument();
+    expect(within(fun).queryByText("languages")).not.toBeInTheDocument();
+    expect(fun).toHaveAttribute("href", "/categories/languages?keywords=idioms,funny&view=items");
+  });
+});

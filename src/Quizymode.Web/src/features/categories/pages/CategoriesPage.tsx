@@ -36,6 +36,7 @@ import {
   parseKeywordSegment,
   isAllCategoriesSlug,
   getAllCategoriesSlug,
+  categoryDisplayName,
 } from "@/utils/categorySlug";
 import { buildAddItemsPathWithParams } from "@/utils/addItemsScopeUrl";
 import { ScopeFilterCombobox } from "@/components/ScopeFilterCombobox";
@@ -1186,7 +1187,7 @@ const CategoriesPage = () => {
                       <option value={getAllCategoriesSlug()}>All categories</option>
                       {categoriesData?.categories?.map((c) => (
                         <option key={c.category} value={categoryNameToSlug(c.category)}>
-                          {c.category}
+                          {categoryDisplayName(c.category)}
                         </option>
                       ))}
                     </select>
@@ -1572,7 +1573,7 @@ const CategoriesPage = () => {
                       <option value={getAllCategoriesSlug()}>All categories</option>
                       {categoriesData?.categories?.map((c) => (
                         <option key={c.category} value={categoryNameToSlug(c.category)}>
-                          {c.category}
+                          {categoryDisplayName(c.category)}
                         </option>
                       ))}
                     </select>
@@ -1668,7 +1669,7 @@ const CategoriesPage = () => {
                   averageRating: kw.averageRating ?? null,
                   privateItemCount: kw.privateItemCount ?? 0,
                   backgroundImage: currentCategoryTheme.image,
-                  eyebrow: categoryName,
+                  eyebrow: categoryDisplayName(categoryName),
                 }))}
                 onOpenBucket={(bucket) => {
                   if (isLeaf) {
@@ -1758,7 +1759,7 @@ const CategoriesPage = () => {
             <BucketGridView
               buckets={sortedAndPaginatedCategories.categories.map((cat) => ({
                 id: cat.category,
-                label: cat.category,
+                label: categoryDisplayName(cat.category),
                 itemCount: cat.count,
                 description: cat.description ?? cat.shortDescription ?? null,
                 averageRating: cat.averageStars ?? null,
@@ -1767,7 +1768,7 @@ const CategoriesPage = () => {
               columnsClassName="grid-cols-2 gap-2.5 md:grid-cols-3 xl:grid-cols-4"
               compact
               onOpenBucket={(bucket) =>
-                navigateToSets(`/categories/${categoryNameToSlug(bucket.label)}`)
+                navigateToSets(`/categories/${categoryNameToSlug(bucket.id)}`)
               }
             />
 

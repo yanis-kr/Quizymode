@@ -206,7 +206,7 @@ describe("DailyQuizPage", () => {
       renderWithProviders(<DailyQuizPage />);
       expect(await screen.findByText("Picture isn't available")).toBeInTheDocument();
       expect(screen.getByRole("button", { name: /Right a/ })).toBeDisabled();
-      fireEvent.click(screen.getByRole("button", { name: "Skip question (not scored)" }));
+      fireEvent.click(screen.getByRole("button", { name: "Skip question" }));
       fireEvent.click(await screen.findByRole("button", { name: /Right b/ }));
       fireEvent.click(screen.getByRole("button", { name: "See my score" }));
 
@@ -233,8 +233,8 @@ describe("DailyQuizPage", () => {
       });
 
       renderWithProviders(<DailyQuizPage />);
-      fireEvent.click(await screen.findByRole("button", { name: "Skip question (not scored)" }));
-      fireEvent.click(await screen.findByRole("button", { name: "Skip question (not scored)" }));
+      fireEvent.click(await screen.findByRole("button", { name: "Skip question" }));
+      fireEvent.click(await screen.findByRole("button", { name: "Skip question" }));
       fireEvent.click(await screen.findByRole("button", { name: "View results" }));
 
       expect(await screen.findByText("No questions were scored")).toBeInTheDocument();
@@ -247,7 +247,7 @@ describe("DailyQuizPage", () => {
       vi.mocked(dailyQuizApi.get).mockResolvedValue({ date: "2026-10-18", items: pictureItems, completion: null, streak: null });
 
       renderWithProviders(<DailyQuizPage />);
-      fireEvent.click(await screen.findByRole("button", { name: "Skip question (not scored)" }));
+      fireEvent.click(await screen.findByRole("button", { name: "Skip question" }));
       fireEvent.click(await screen.findByRole("button", { name: /Right b/ }));
       fireEvent.click(screen.getByRole("button", { name: "See my score" }));
 

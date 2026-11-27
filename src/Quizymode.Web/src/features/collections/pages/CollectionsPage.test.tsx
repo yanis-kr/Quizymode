@@ -278,7 +278,7 @@ describe("CollectionsPage Discover (#899)", () => {
     renderPage("/collections?tab=discover");
     await screen.findByText("Public Set");
     fireEvent.click(filtersButton());
-    await screen.findByRole("option", { name: "science" });
+    await screen.findByRole("option", { name: "Science" });
     change("Category", "science");
 
     await screen.findByRole("option", { name: "physics" });
@@ -298,7 +298,7 @@ describe("CollectionsPage Discover (#899)", () => {
     const { queryClient } = renderPage("/collections?tab=discover");
     await screen.findByText("Public Set");
     fireEvent.click(filtersButton());
-    await screen.findByRole("option", { name: "science" });
+    await screen.findByRole("option", { name: "Science" });
     change("Category", "science");
     await screen.findByRole("option", { name: "physics" });
     change("Topic", "physics");
@@ -347,7 +347,8 @@ describe("CollectionsPage Discover (#899)", () => {
     fireEvent.change(screen.getByPlaceholderText(/collection id/i), { target: { value: collectionId } });
     expect(filtersButton()).toHaveTextContent(/^Filters$/);
 
-    await screen.findByRole("option", { name: "science" });
+    // Display name on the option, stored name as its value and in the request (#902).
+    expect(await screen.findByRole("option", { name: "Science" })).toHaveValue("science");
     change("Category", "science");
     change("Item tags", "s3");
     expect(filtersButton()).toHaveTextContent("Filters (2)");

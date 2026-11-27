@@ -10,7 +10,7 @@ import { featuredApi, type FeaturedSetDto } from "@/api/featured";
 import type { CollectionDiscoverItem } from "@/types/api";
 import { useAuth } from "@/contexts/AuthContext";
 import { buildCollectionPath } from "@/utils/collectionPath";
-import { buildCategoryPath } from "@/utils/categorySlug";
+import { buildCategoryPath, categoryDisplayName } from "@/utils/categorySlug";
 import { categorySetKey, collectionSetKey } from "@/features/progress/knownItems";
 import { useKnownCount } from "@/features/progress/useKnownCount";
 import { getCategoryThemeBySlug } from "@/features/categories/categoryThemes";
@@ -171,7 +171,7 @@ function CatalogLanes({ countsByCategory, featuredSets, publicCollections }: Cat
               <div className="relative flex h-full min-h-[80px] flex-col justify-between p-3 sm:min-h-[96px]">
                 <div className="flex justify-end">
                   <span className="rounded-full border border-white/20 bg-black/55 px-2 py-0.5 text-[10px] font-semibold text-white backdrop-blur-sm">
-                    languages
+                    {categoryDisplayName("languages")}
                   </span>
                 </div>
                 <div className="flex items-center justify-between gap-2">
@@ -200,7 +200,7 @@ function CatalogLanes({ countsByCategory, featuredSets, publicCollections }: Cat
                   <div className="relative flex h-full min-h-[80px] flex-col justify-between p-3 sm:min-h-[96px]">
                     <div className="flex justify-end">
                       <span className="rounded-full border border-white/20 bg-black/55 px-2 py-0.5 text-[10px] font-semibold text-white backdrop-blur-sm">
-                        {set.categorySlug}
+                        {categoryDisplayName(set.categorySlug)}
                       </span>
                     </div>
                     <div className="flex items-center justify-between gap-2">
@@ -371,7 +371,6 @@ const HomePage = () => {
                 <h1 className="text-xl font-semibold tracking-tight text-on-panel sm:text-2xl lg:text-[1.65rem] lg:leading-snug">
                   Learn something new in five questions.
                 </h1>
-                <p className="mt-1 text-xs font-semibold text-sky-ink">Learn, Test and Review are free.</p>
                 {!focused && (
                   <p className="mt-1.5 max-w-2xl text-xs leading-5 text-on-panel-muted lg:text-sm">
                     Five quick questions, from flags to space to AI. Then pick what to explore next.
