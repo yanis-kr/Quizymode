@@ -4,7 +4,9 @@ import assert from "node:assert/strict";
 import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
+import crypto from "node:crypto";
 import { buildCsp, buildHeadersFunction, buildPolicy, inlineScriptHashes, parseEnv } from "../infra/web-security-headers.mjs";
+import { blockedInlineScripts } from "../infra/check-live-csp.mjs";
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..", "..");
 const html = fs.readFileSync(path.join(root, "src", "Quizymode.Web", "index.html"), "utf8");
@@ -90,4 +92,24 @@ test("AC 4.6.23: the headers Function enforces the CSP in enforce mode", () => {
   assert.ok(!code.includes("content-security-policy-report-only"));
   assert.match(code, /headers\["permissions-policy"\]/);
   assert.throws(() => buildHeadersFunction({ html, env, mode: "maybe" }), /mode must be/);
+});
+
+// AC 4.6.25: the hash is the one a browser computes (over LF), whatever the line endings of the checkout (#916).
+test("AC 4.6.25: CRLF and LF copies of index.html give the same inline script hashes, equal to the LF digest", () => {
+  const lf = html.replace(/\r\n/g, "\n");
+  const crlf = lf.replace(/\n/g, "\r\n");
+  assert.deepEqual(inlineScriptHashes(crlf), inlineScriptHashes(lf));
+  const expected = "'sha256-" + crypto.createHash("sha256").update("\n  var a = 1;\n", "utf8").digest("base64") + "'";
+  assert.deepEqual(inlineScriptHashes("<script>\r\n  var a = 1;\r\n</script>"), [expected]);
+});
+
+// AC 4.6.26: the post-deploy check reports an executable inline script the policy does not allow, and ignores data blocks.
+test("AC 4.6.26: the live check flags a blocked executable inline script and ignores JSON-LD and external scripts", () => {
+  const page = '<script>var a = 1;</script><script type="application/ld+json">{"a":1}</script><script type="module" src="/a.js"></script>';
+  const [allowed] = inlineScriptHashes("<script>var a = 1;</script>");
+  assert.deepEqual(blockedInlineScripts(page, "default-src 'self'; script-src 'self' " + allowed), []);
+  assert.deepEqual(blockedInlineScripts(page, "default-src 'self'; script-src 'self' 'sha256-other='"), [allowed]);
+  assert.deepEqual(blockedInlineScripts(page, "default-src 'self'"), [allowed]);
+  // The generated policy allows every executable inline script of the checked-in page.
+  assert.deepEqual(blockedInlineScripts(html, buildCsp({ html, env })), []);
 });

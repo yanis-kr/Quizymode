@@ -13,12 +13,21 @@ import { fileURLToPath } from "node:url";
 
 export const POLICY_NAME = "quizymode-web-security-headers";
 
+/**
+ * The CSP source for one inline script body. Browsers turn CRLF into LF before hashing, and the deployed page is built
+ * with LF, so the hash must not depend on the line endings of the checkout that runs this (#916).
+ */
+export function inlineScriptHash(body) {
+  const text = body.replace(/\r\n?/g, "\n");
+  return `'sha256-${crypto.createHash("sha256").update(text, "utf8").digest("base64")}'`;
+}
+
 /** sha256 CSP source for each inline <script> (no src attribute) in an HTML document. */
 export function inlineScriptHashes(html) {
   const hashes = [];
   for (const m of html.matchAll(/<script(?![^>]*\bsrc=)[^>]*>([\s\S]*?)<\/script>/gi)) {
     if (!m[1].trim()) continue;
-    hashes.push(`'sha256-${crypto.createHash("sha256").update(m[1], "utf8").digest("base64")}'`);
+    hashes.push(inlineScriptHash(m[1]));
   }
   return hashes;
 }

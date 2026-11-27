@@ -48,4 +48,6 @@ aws cloudfront update-response-headers-policy --id <policy id> --if-match <ETag>
 curl.exe -sI https://www.quizymode.com/ | Select-String -Pattern "x-content-type|x-frame|referrer-policy|strict-transport|permissions-policy|content-security"
 ```
 
+After a change to an inline script in `index.html`, update the headers Function (see above). `node scripts/infra/check-live-csp.mjs` reports a served inline script that the served policy blocks; the deploy's `prod-verify` job runs it (#916).
+
 Re-run the OCR and sign-in checks after every policy change. A new external origin in the app (analytics, fonts, a CDN) must be added to `buildCsp` in the same change.
