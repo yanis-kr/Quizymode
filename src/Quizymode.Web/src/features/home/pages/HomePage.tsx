@@ -18,6 +18,7 @@ import { GuestHistoryCard } from "@/features/guestHistory/GuestHistoryCard";
 import { buildGamePath } from "@/features/games/gameScope";
 import { useInterests } from "@/features/interests/useInterests";
 import { TopicOnboardingPrompt } from "../TopicOnboardingPrompt";
+import { useTopicOnboarding } from "../useTopicOnboarding";
 import { PersonalizedLanes } from "../PersonalizedLanes";
 import { ContinueStudyingCard } from "../ContinueStudyingCard";
 import { NextUpCard } from "../NextUpCard";
@@ -293,6 +294,8 @@ const HomePage = () => {
             ? "focused"
             : "full";
   const focused = layout === "focused";
+  // The Make Home yours card and the For you lane share this, so only one asks for topics at a time (#903).
+  const onboarding = useTopicOnboarding();
   // A visitor with a completed quiz gets one Next up card instead of the first-visit hero (#670, AC 3.31).
   const nextUp = useNextUp();
   const firstTopic = interests.find(isTopicPath);
@@ -374,7 +377,7 @@ const HomePage = () => {
                     Five quick questions, from flags to space to AI. Then pick what to explore next.
                   </p>
                 )}
-                {(!focused || !isAuthenticated) && <p className="mt-1 text-xs font-semibold text-sky-ink">No account needed.</p>}
+                {!isAuthenticated && <p className="mt-1 text-xs font-semibold text-sky-ink">No account needed.</p>}
               </div>
               <div className="mt-3 flex shrink-0 flex-col items-stretch gap-2 sm:mt-0 sm:flex-row sm:items-center">
                 <Link
@@ -411,8 +414,8 @@ const HomePage = () => {
 
             {layout === "full" && (
               <>
-                <TopicOnboardingPrompt />
-                <PersonalizedLanes featuredSets={featuredSets} />
+                <TopicOnboardingPrompt onboarding={onboarding} />
+                <PersonalizedLanes featuredSets={featuredSets} hideTopicPrompt={onboarding.cardState !== "hidden"} />
                 <CatalogLanes
                   countsByCategory={countsByCategory}
                   featuredSets={featuredSets}
