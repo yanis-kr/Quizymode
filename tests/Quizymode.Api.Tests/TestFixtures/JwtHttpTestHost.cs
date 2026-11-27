@@ -124,7 +124,8 @@ internal sealed class JwtHttpTestHost : IAsyncDisposable
         DateTime? expiresUtc = null,
         object? emailVerified = null,
         string? name = null,
-        bool omitSubject = false)
+        bool omitSubject = false,
+        string? cognitoUsername = null)
     {
         DateTime expires = expiresUtc ?? DateTime.UtcNow.AddMinutes(30);
         Dictionary<string, object> claims = new()
@@ -140,6 +141,11 @@ internal sealed class JwtHttpTestHost : IAsyncDisposable
         if (name is not null)
         {
             claims["name"] = name;
+        }
+
+        if (cognitoUsername is not null)
+        {
+            claims["cognito:username"] = cognitoUsername;
         }
 
         if (emailVerified is not null)

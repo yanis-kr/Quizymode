@@ -25,7 +25,8 @@ internal static class DefaultCollectionFactory
 
     internal static (string Name, string? Description) BuildMetadata(string? displayName)
     {
-        string? trimmedDisplayName = string.IsNullOrWhiteSpace(displayName)
+        // A name stored before AC 4.1.10 may be an email address; it must not reach a collection others can see.
+        string? trimmedDisplayName = string.IsNullOrWhiteSpace(displayName) || DisplayNameRules.LooksLikeEmail(displayName)
             ? null
             : displayName.Trim();
 

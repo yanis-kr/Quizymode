@@ -6,6 +6,7 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { MemoryRouter } from "react-router-dom";
 import { studySessionsApi } from "@/api/studySessions";
 import { interestsApi } from "@/api/learningLoop";
+import { usersApi } from "@/api/users";
 import { installMemoryLocalStorage } from "@/test/memoryStorage";
 import { TopicEditorProvider } from "@/features/interests/TopicEditorProvider";
 import UserProfileModal from "./UserProfileModal";
@@ -15,6 +16,7 @@ const auth = vi.hoisted(() => ({ isAuthenticated: true, userId: "user-1" as stri
 vi.mock("@/contexts/AuthContext", () => ({ useAuth: () => auth }));
 vi.mock("@/api/users", () => ({
   usersApi: {
+    updateName: vi.fn(),
     getCurrent: vi.fn().mockResolvedValue({
       id: "u",
       name: "Ann",
@@ -160,5 +162,35 @@ describe("UserProfileModal study totals (issue #259)", () => {
     auth.isAuthenticated = false;
     renderModal();
     expect(screen.queryByRole("group", { name: "Appearance" })).not.toBeInTheDocument();
+  });
+});
+
+describe("UserProfileModal name editing", () => {
+  beforeEach(() => {
+    vi.clearAllMocks();
+    installMemoryLocalStorage();
+    auth.isAuthenticated = true;
+    vi.mocked(interestsApi.get).mockResolvedValue([]);
+    vi.mocked(studySessionsApi.getSummary).mockRejectedValue(new Error("not needed"));
+  });
+
+  it("AC 4.5.5 refuses a name containing @ and sends no request", async () => {
+    const user = userEvent.setup();
+    renderModal();
+    await user.click(await screen.findByRole("button", { name: "Change" }));
+    const input = screen.getByRole("textbox", { name: "Name" });
+
+    await user.clear(input);
+    await user.type(input, "ann@example.com");
+
+    expect(screen.getByRole("alert")).toHaveTextContent("Name cannot contain @. Other people can see it.");
+    expect(input).toHaveAttribute("aria-invalid", "true");
+    expect(screen.getByRole("button", { name: "Save" })).toBeDisabled();
+    expect(usersApi.updateName).not.toHaveBeenCalled();
+
+    await user.clear(input);
+    await user.type(input, "Ann B");
+    expect(screen.queryByRole("alert")).not.toBeInTheDocument();
+    expect(screen.getByRole("button", { name: "Save" })).toBeEnabled();
   });
 });

@@ -551,6 +551,66 @@ public sealed class UserUpsertMiddlewarePostgresTests(PostgresContainerFixture f
     }
 
     [SkippableFact]
+    public async Task AC_4_1_10_NewUser_EmailShapedNameClaim_IsNotStoredAnywhere()
+    {
+        string claim = NewEmail();
+        string subject = NewSubject();
+        await using Scenario scenario = await StartAsync();
+
+        WhoAmI who = await WhoAmIAsync(scenario, subject, NewEmail(), emailVerified: true, name: claim);
+
+        User? row = await UserByIdAsync(Guid.Parse(who.UserId!));
+        row!.Name.Should().Be(subject);
+        await using ApplicationDbContext db = fixture.CreateDbContext();
+        Collection collection = await db.Collections.SingleAsync(c => c.CreatedBy == who.UserId);
+        collection.Name.Should().Be("Default Collection");
+        collection.Description.Should().BeNull();
+        AssertNoUpsertFailure(scenario);
+    }
+
+    [SkippableTheory]
+    [InlineData("someone@example.com", null)]
+    [InlineData("someone@example.com", "Google_1234567890")]
+    [InlineData(null, "someone@example.com")]
+    [InlineData(null, null)]
+    public async Task AC_4_1_10_IdentifierValues_NeverNameTheDefaultCollection(string? name, string? cognitoUsername)
+    {
+        string subject = NewSubject();
+        // A null username claim stands for the pool default, where it equals the subject.
+        string username = cognitoUsername ?? subject;
+        await using Scenario scenario = await StartAsync();
+        string token = scenario.Host.CreateToken(
+            subject, NewEmail(), emailVerified: true, name: name, cognitoUsername: username);
+        using HttpRequestMessage request = JwtHttpTestHost.Request(HttpMethod.Get, "/test/whoami", token);
+
+        using HttpResponseMessage response = await scenario.Host.Client.SendAsync(request);
+        WhoAmI who = await ReadWhoAmIAsync(response);
+
+        User? row = await UserByIdAsync(Guid.Parse(who.UserId!));
+        row!.Name.Should().Be(subject);
+        await using ApplicationDbContext db = fixture.CreateDbContext();
+        Collection collection = await db.Collections.SingleAsync(c => c.CreatedBy == who.UserId);
+        collection.Name.Should().Be("Default Collection");
+        collection.Description.Should().BeNull();
+        AssertNoUpsertFailure(scenario);
+    }
+
+    [SkippableFact]
+    public async Task AC_4_1_10_ExistingUserWithStoredEmailName_KeepsIt()
+    {
+        string subject = NewSubject();
+        string email = NewEmail();
+        User seeded = await SeedUserAsync(subject, email, email, PastUtc);
+        await using Scenario scenario = await StartAsync();
+
+        WhoAmI who = await WhoAmIAsync(scenario, subject, email, emailVerified: true, name: email);
+
+        who.UserId.Should().Be(seeded.Id.ToString());
+        (await UserByIdAsync(seeded.Id))!.Name.Should().Be(email);
+        AssertNoUpsertFailure(scenario);
+    }
+
+    [SkippableFact]
     public async Task AC_4_1_8_TokenWithoutSubject_IsForbiddenOnSignedInEndpoint()
     {
         await using Scenario scenario = await StartAsync();
