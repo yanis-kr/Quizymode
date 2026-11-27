@@ -16,6 +16,8 @@ interface SignupPromptProps {
   /** Where to come back to after signup; defaults to the current page. Validated as same-origin. */
   returnTo?: string;
   className?: string;
+  /** Quiz results (#898): outlined main action, since the screen has its own filled one, and 44 px targets. */
+  quiet?: boolean;
 }
 
 /**
@@ -23,7 +25,7 @@ interface SignupPromptProps {
  * AC 4.2.10). It never blocks the page, is hidden for signed-in users (and while auth is still
  * resolving), and stays hidden for the tab session once dismissed.
  */
-export function SignupPrompt({ reason, returnTo, className }: SignupPromptProps) {
+export function SignupPrompt({ reason, returnTo, className, quiet = false }: SignupPromptProps) {
   const { isAuthenticated, isLoading } = useAuth();
   const location = useLocation();
   const headingId = useId();
@@ -56,7 +58,11 @@ export function SignupPrompt({ reason, returnTo, className }: SignupPromptProps)
         <Link
           to={signupHref}
           onClick={() => trackSignupPromptClicked(reason)}
-          className="rounded-md bg-indigo-600 px-4 py-2 text-center text-sm font-semibold text-white hover:bg-indigo-700 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500 focus-visible:ring-offset-2"
+          className={`rounded-md px-4 py-2 text-center text-sm font-semibold focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500 focus-visible:ring-offset-2 ${
+            quiet
+              ? "inline-flex min-h-[44px] items-center justify-center border border-indigo-600 text-indigo-ink hover:bg-indigo-100"
+              : "bg-indigo-600 text-white hover:bg-indigo-700"
+          }`}
         >
           {copy.cta}
         </Link>
@@ -66,7 +72,7 @@ export function SignupPrompt({ reason, returnTo, className }: SignupPromptProps)
             dismissSignupPrompt(reason);
             setDismissed(true);
           }}
-          className="rounded-md px-4 py-2 text-sm font-semibold text-gray-700 hover:bg-indigo-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500 focus-visible:ring-offset-2"
+          className={`rounded-md px-4 py-2 text-sm font-semibold text-gray-700 hover:bg-indigo-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500 focus-visible:ring-offset-2 ${quiet ? "min-h-[44px]" : ""}`}
         >
           Not now
         </button>
@@ -74,7 +80,7 @@ export function SignupPrompt({ reason, returnTo, className }: SignupPromptProps)
           Have an account?{" "}
           <Link
             to={loginHref}
-            className="font-medium text-indigo-ink underline hover:text-indigo-ink focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500"
+            className={`font-medium text-indigo-ink underline hover:text-indigo-ink focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500 ${quiet ? "inline-flex min-h-[44px] items-center" : ""}`}
           >
             Sign in
           </Link>
