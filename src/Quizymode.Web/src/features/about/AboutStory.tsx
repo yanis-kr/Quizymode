@@ -45,7 +45,7 @@ export const AboutStory = () => {
             Quizymode is free to use. If it helps you study, you can support its development with a donation on{" "}
             <AboutExternalLink
               href={donationUrl}
-              ariaLabel={`Support Quizymode (opens ${getDonationHost(donationUrl)} in a new tab)`}
+              ariaLabel={`${getDonationHost(donationUrl)}: support Quizymode (opens in a new tab)`}
               className={aboutLinkClass}
             >
               {getDonationHost(donationUrl)}
