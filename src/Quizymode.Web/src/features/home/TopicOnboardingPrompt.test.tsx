@@ -10,17 +10,29 @@ import { INTERESTS_QUERY_KEY } from "@/features/interests/useInterests";
 import { TopicEditorProvider } from "@/features/interests/TopicEditorProvider";
 import { clearLocalInterests, writeLocalInterests } from "@/features/learningLoop/localLearningState";
 import { TopicOnboardingPrompt } from "./TopicOnboardingPrompt";
+import { useTopicOnboarding } from "./useTopicOnboarding";
 
 const auth = vi.hoisted(() => ({ value: { isAuthenticated: true, isLoading: false, userId: "user-1" as string | null } }));
 vi.mock("@/contexts/AuthContext", () => ({ useAuth: () => auth.value }));
 vi.mock("@/api/learningLoop", () => ({ interestsApi: { get: vi.fn(), replace: vi.fn() } }));
 vi.mock("@/api/users", () => ({ usersApi: { getSettings: vi.fn(), updateSetting: vi.fn() } }));
 
+/** The card wired to its visibility rule, as Home does it; the state is exposed for the For you lane's side. */
+function Onboarding() {
+  const onboarding = useTopicOnboarding();
+  return (
+    <>
+      <output data-testid="card-state">{onboarding.cardState}</output>
+      <TopicOnboardingPrompt onboarding={onboarding} />
+    </>
+  );
+}
+
 const render = () =>
   renderWithProviders(
     <TopicEditorProvider>
       <a href="/daily">Daily quiz</a>
-      <TopicOnboardingPrompt />
+      <Onboarding />
     </TopicEditorProvider>,
   );
 
@@ -106,7 +118,7 @@ describe("TopicOnboardingPrompt", () => {
       <QueryClientProvider client={client}>
         <MemoryRouter>
           <TopicEditorProvider>
-            <TopicOnboardingPrompt />
+            <Onboarding />
           </TopicEditorProvider>
         </MemoryRouter>
       </QueryClientProvider>,
@@ -121,6 +133,22 @@ describe("TopicOnboardingPrompt", () => {
     });
     await new Promise((resolve) => setTimeout(resolve, 20));
     expect(card()).not.toBeInTheDocument();
+  });
+
+  it("#903: reports loading while the setting is unknown, without showing the card", async () => {
+    vi.mocked(usersApi.getSettings).mockReturnValue(new Promise(() => {}));
+    render();
+    await waitFor(() => expect(usersApi.getSettings).toHaveBeenCalled());
+    expect(screen.getByTestId("card-state")).toHaveTextContent("loading");
+    expect(card()).not.toBeInTheDocument();
+  });
+
+  it("#903: local picks waiting make the card ineligible even while the setting is loading", async () => {
+    writeLocalInterests(["history"]);
+    vi.mocked(usersApi.getSettings).mockReturnValue(new Promise(() => {}));
+    render();
+    await waitFor(() => expect(usersApi.getSettings).toHaveBeenCalled());
+    expect(screen.getByTestId("card-state")).toHaveTextContent("hidden");
   });
 
   it("Choose topics opens the shared editor", async () => {

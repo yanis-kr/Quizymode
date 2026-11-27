@@ -272,6 +272,25 @@ describe("PersonalizedLanes", () => {
     expect(screen.queryByRole("button", { name: /Edit topics|Choose topics/ })).not.toBeInTheDocument();
   });
 
+  it("#903: with the topic prompt hidden and nothing else to show, For you is not rendered", async () => {
+    renderWithProviders(<PersonalizedLanes featuredSets={[]} hideTopicPrompt />);
+    await waitFor(() => expect(interestsApi.popularCategories).toHaveBeenCalled());
+
+    expect(screen.getByRole("heading", { name: "Today" })).toBeInTheDocument();
+    expect(screen.queryByRole("heading", { name: "For you" })).not.toBeInTheDocument();
+    expect(screen.queryByRole("button", { name: "Change topics" })).not.toBeInTheDocument();
+    expect(screen.queryByText(/Choose a few topics/)).not.toBeInTheDocument();
+  });
+
+  it("#903: with the topic prompt hidden, the set list still shows under the For you heading", () => {
+    renderWithProviders(<PersonalizedLanes featuredSets={featured} hideTopicPrompt />);
+
+    expect(screen.getByRole("heading", { name: "For you" })).toBeInTheDocument();
+    expect(screen.getByRole("link", { name: /Guess the Flag/ })).toBeInTheDocument();
+    expect(screen.queryByRole("button", { name: "Change topics" })).not.toBeInTheDocument();
+    expect(screen.queryByText(/Choose a few topics/)).not.toBeInTheDocument();
+  });
+
   it("focused: every chosen topic is listed and no recommended sets come from the catalog", async () => {
     writeLocalInterests(["history", "languages", "tech", "exams"]);
     renderWithProviders(<PersonalizedLanes featuredSets={featured} focused />);

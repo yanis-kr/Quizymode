@@ -1,65 +1,16 @@
-import { useId, useState } from "react";
-import { useQuery, useQueryClient } from "@tanstack/react-query";
-import { usersApi, type UserSettingsResponse } from "@/api/users";
-import { useAuth } from "@/contexts/AuthContext";
-import { useInterests, useLocalVersion } from "@/features/interests/useInterests";
+import { useId } from "react";
 import { useTopicEditor } from "@/features/interests/topicEditorContext";
-import { readLocalInterests } from "@/features/learningLoop/localLearningState";
-
-const SETTING_KEY_TOPIC_ONBOARDING = "TopicOnboarding";
-const SESSION_DISMISSED_KEY = "quizymode.topicOnboarding.dismissed";
-
-function readSessionDismissed(): boolean {
-  try {
-    return window.sessionStorage.getItem(SESSION_DISMISSED_KEY) === "1";
-  } catch {
-    return false;
-  }
-}
-
-function writeSessionDismissed(): void {
-  try {
-    window.sessionStorage.setItem(SESSION_DISMISSED_KEY, "1");
-  } catch {
-    // Storage unavailable: the in-memory flag still hides the card for this page view.
-  }
-}
+import type { useTopicOnboarding } from "./useTopicOnboarding";
 
 /**
  * One-time "Make Home yours" card for signed-in visitors with no topics (#382). It never blocks: "Not now" hides it
- * at once (and for the page session even if saving the dismissal fails), and it stays hidden while browser-local
- * picks are waiting to be claimed into the account.
+ * at once (and for the page session even if saving the dismissal fails). When it shows is decided by
+ * {@link useTopicOnboarding}.
  */
-export function TopicOnboardingPrompt() {
-  const { isAuthenticated, isLoading: isAuthLoading } = useAuth();
-  const queryClient = useQueryClient();
+export function TopicOnboardingPrompt({ onboarding }: { onboarding: ReturnType<typeof useTopicOnboarding> }) {
   const topicEditor = useTopicEditor();
   const headingId = useId();
-  const [dismissedHere, setDismissedHere] = useState(false);
-  const signedIn = isAuthenticated && !isAuthLoading;
-
-  const { interests, status } = useInterests();
-  const settings = useQuery({
-    queryKey: ["userSettings"],
-    queryFn: () => usersApi.getSettings(),
-    enabled: signedIn,
-    staleTime: 5 * 60 * 1000,
-    retry: false,
-  });
-  // Re-read on every local change: a pending claim clears the local copy, and until then the prompt must not flash.
-  useLocalVersion();
-  const hasLocalPicks = readLocalInterests().length > 0;
-
-  const show =
-    signedIn &&
-    status === "ready" &&
-    interests.length === 0 &&
-    settings.isSuccess &&
-    !settings.data.settings[SETTING_KEY_TOPIC_ONBOARDING] &&
-    !hasLocalPicks &&
-    !dismissedHere &&
-    !readSessionDismissed();
-  if (!show) return null;
+  if (onboarding.cardState !== "shown") return null;
 
   const dismiss = () => {
     // Move focus to the next control before the card disappears, so it never falls back to the page body.
@@ -71,13 +22,7 @@ export function TopicOnboardingPrompt() {
       if (!next.matches("a,button,input,[tabindex]")) next.tabIndex = -1;
       next.focus();
     }
-    writeSessionDismissed();
-    setDismissedHere(true);
-    queryClient.setQueryData<UserSettingsResponse>(["userSettings"], (current) => ({
-      settings: { ...current?.settings, [SETTING_KEY_TOPIC_ONBOARDING]: "dismissed" },
-    }));
-    // Best effort: a failed write only means the card may return in a later session.
-    void usersApi.updateSetting({ key: SETTING_KEY_TOPIC_ONBOARDING, value: "dismissed" }).catch(() => {});
+    onboarding.dismiss();
   };
 
   return (
