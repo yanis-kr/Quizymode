@@ -51,7 +51,7 @@ test(
     await expect(page).toHaveURL(/\/items\//);
 
     // Both "Question" and "Answer" headings must be visible
-    await expect(page.getByText("Question")).toBeVisible();
+    await expect(page.getByRole("heading", { name: "Question", exact: true })).toBeVisible();
     await expect(page.getByText("Answer")).toBeVisible();
   }
 );

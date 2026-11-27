@@ -40,6 +40,7 @@ import {
   readLocalBookmarks,
   removeLocalBookmark,
 } from "@/features/collections/localBookmarks";
+import { questionCountLabel } from "@/utils/questionCountLabel";
 
 type TabId = "mine" | "bookmarked" | "discover";
 
@@ -149,7 +150,7 @@ function CollectionCard({
     <>
       <h3 className="text-lg font-semibold text-on-panel">{name}</h3>
       <p className="mt-2 text-sm text-on-panel-muted">
-        {itemCount} {itemCount === 1 ? "item" : "items"}
+        {questionCountLabel(itemCount)}
       </p>
       {description && description.trim() !== "" && (
         <p className="mt-2 line-clamp-2 text-sm leading-6 text-slate-400">
@@ -708,7 +709,7 @@ const CollectionsPage = () => {
     <>
       <SEO
         title={activeTab === "discover" ? "Collections" : activeTab === "bookmarked" ? "Bookmarked Collections" : "My Collections"}
-        description="Browse public study collections on Quizymode, open shared sets by topic, and switch into list, flashcard, or quiz modes."
+        description="Browse public study collections on Quizymode, open shared questions by topic, and switch into list, flashcard, or quiz modes."
         canonical="https://www.quizymode.com/collections"
         noindex={activeTab !== "discover"}
       />
@@ -875,7 +876,7 @@ const CollectionsPage = () => {
                 </div>
                 <div className="flex-1 min-w-[180px] max-w-xs">
                   <label htmlFor="discover-tags" className="mb-1 block text-xs font-medium text-on-panel-muted">
-                    Item tags
+                    Question tags
                   </label>
                   <input
                     id="discover-tags"

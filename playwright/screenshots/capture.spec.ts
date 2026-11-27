@@ -650,7 +650,7 @@ async function waitForCollectionDetailLoaded(page: Page) {
   await waitForAnyVisible(page, [
     "text=Collection",
     "button:has-text('Details')",
-    "text=No items in this collection.",
+    "text=No questions in this collection.",
   ]);
 }
 
@@ -662,7 +662,7 @@ async function waitForCollectionQuizModeLoaded(page: Page) {
     "h3:has-text('Question')",
     "h3:has-text('Select an answer:')",
     "text=/Score:\\s*\\d+\\s*\\/\\s*\\d+\\s*correct/i",
-    "button[title='View item details']",
+    "button[title='View question details']",
   ]);
 }
 
@@ -671,7 +671,7 @@ async function openStarterItem(page: Page, itemId: string) {
   await ensureSignedIn(page);
   await safeGoto(page, `/items/${itemId}`);
   await waitForAnyVisible(page, [
-    "text=Item details",
+    "text=Question details",
     "text=Question",
     "button:has-text('Comments')",
   ]);

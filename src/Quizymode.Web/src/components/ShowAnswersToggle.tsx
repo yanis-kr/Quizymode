@@ -7,7 +7,7 @@ interface ShowAnswersToggleProps {
 
 /**
  * Page-level "Show answers" switch (#647). The label stays stable and aria-pressed carries the state, so a screen
- * reader hears "Show answers, pressed". No eye icon: the eye already means "View item details" in list cards.
+ * reader hears "Show answers, pressed". No eye icon: the eye already means "View question details" in list cards.
  */
 export function ShowAnswersToggle({ showAnswers, onToggle, disabled = false }: ShowAnswersToggleProps) {
   return (

@@ -5,6 +5,7 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { MemoryRouter, Route, Routes, useLocation, useNavigate } from "react-router-dom";
 import ExploreModePage from "./ExploreModePage";
 import { itemsApi } from "@/api/items";
+import { collectionsApi } from "@/api/collections";
 import { categoriesApi } from "@/api/categories";
 import { keywordsApi } from "@/api/keywords";
 
@@ -344,6 +345,46 @@ describe("ExploreModePage", () => {
 });
 
 // AC 3.6.18 (#288)
+describe("ExploreModePage collection wording (#923)", () => {
+  beforeEach(() => {
+    vi.clearAllMocks();
+    sessionStorage.clear();
+    mockCreateAnalyticsId.mockReturnValue("run-abc");
+    mockFlashcardsEventContext.mockReturnValue({ contextType: "collection", contextId: "collection-1" });
+    vi.mocked(categoriesApi.getAll).mockResolvedValue({ categories: [] } as never);
+  });
+
+  it.each([
+    [1, "1 question"],
+    [2, "2 questions"],
+  ])("AC 3.6.49 counts %i in the collection Flashcards header", async (count, label) => {
+    const deck = [item, { ...item, id: "item-2", question: "What is 3 + 3?" }].slice(0, count);
+    vi.mocked(collectionsApi.getItems).mockResolvedValue({ items: deck } as never);
+    vi.mocked(collectionsApi.getById).mockResolvedValue({
+      id: "collection-1",
+      name: "Practice Deck",
+      itemCount: count,
+      createdBy: "someone",
+      createdAt: "2026-01-01T00:00:00Z",
+      isPublic: true,
+    } as never);
+    vi.mocked(collectionsApi.getRating).mockResolvedValue({ count: 0, averageStars: null, myStars: null } as never);
+    const queryClient = new QueryClient({ defaultOptions: { queries: { retry: false } } });
+    render(
+      <QueryClientProvider client={queryClient}>
+        <MemoryRouter initialEntries={["/explore/collections/collection-1"]}>
+          <Routes>
+            <Route path="/explore/collections/:collectionId" element={<ExploreModePage />} />
+            <Route path="/explore/collections/:collectionId/item/:itemId" element={<ExploreModePage />} />
+          </Routes>
+        </MemoryRouter>
+      </QueryClientProvider>,
+    );
+
+    expect(await screen.findByText(label)).toBeInTheDocument();
+  });
+});
+
 describe("ExploreModePage cold deep link deck", () => {
   const other = (id: string) => ({ ...item, id, question: `Question ${id}` });
 

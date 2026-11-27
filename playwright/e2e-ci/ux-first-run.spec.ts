@@ -206,8 +206,8 @@ test.describe("Quiz page (#897)", () => {
     const answers = page.getByRole("group", { name: "Answer options" }).getByRole("button");
     await expect(answers.nth(0)).toBeInViewport({ ratio: 1 });
     await expect(answers.nth(1)).toBeInViewport({ ratio: 1 });
-    await expect(page.getByTitle("Previous item")).toHaveCount(0);
-    await expect(page.getByTitle("Next item")).toHaveCount(0);
+    await expect(page.getByTitle("Previous question")).toHaveCount(0);
+    await expect(page.getByTitle("Next question")).toHaveCount(0);
     expect(await page.evaluate(() => window.scrollY)).toBe(0);
   });
 
@@ -216,9 +216,9 @@ test.describe("Quiz page (#897)", () => {
     await stubCatalog(page);
     await page.goto("/quiz/geography?size=5");
     await expect(page.getByLabel("Quiz size:")).toBeInViewport({ ratio: 1 });
-    await expect(page.getByTitle("Previous item")).toBeInViewport({ ratio: 1 });
-    await expect(page.getByTitle("Next item")).toBeInViewport({ ratio: 1 });
-    await expect(page.getByTitle("View item details")).toBeInViewport({ ratio: 1 });
+    await expect(page.getByTitle("Previous question")).toBeInViewport({ ratio: 1 });
+    await expect(page.getByTitle("Next question")).toBeInViewport({ ratio: 1 });
+    await expect(page.getByTitle("View question details")).toBeInViewport({ ratio: 1 });
     // One compact stripe: the quiz size, the counter and the details icon sit on the same line.
     const middle = async (locator: Locator): Promise<number> => {
       const box = (await locator.boundingBox())!;
@@ -226,7 +226,7 @@ test.describe("Quiz page (#897)", () => {
     };
     const counter = await middle(page.getByText(/^1 of \d+$/));
     expect(Math.abs((await middle(page.getByLabel("Quiz size:"))) - counter)).toBeLessThanOrEqual(12);
-    expect(Math.abs((await middle(page.getByTitle("View item details"))) - counter)).toBeLessThanOrEqual(12);
+    expect(Math.abs((await middle(page.getByTitle("View question details"))) - counter)).toBeLessThanOrEqual(12);
     await expect(page.getByRole("group", { name: "Answer options" })).toBeInViewport({ ratio: 1 });
     await expect(page.getByText(/^Score: 0 \/ 0 correct/)).toBeInViewport({ ratio: 1 });
     await expect(page.getByRole("button", { name: "Previous", exact: true })).toBeInViewport({ ratio: 1 });

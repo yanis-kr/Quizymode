@@ -103,11 +103,11 @@ describe("QuizCompletionView action hierarchy (#898)", () => {
   });
 
   it.each<[string, number, Partial<ViewProps>, string[]]>([
-    ["Next offered", 3, { nextRound: next(), share }, ["Play again (same questions)", "Share result", "Play a game with this set", "Browse topic"]],
-    ["perfect score", 5, { share }, ["Play again", "Play a game with this set", "Browse topic"]],
-    ["no Next otherwise", 3, { share }, ["Share result", "Play a game with this set", "Browse topic"]],
-    ["all questions seen", 3, { nextRound: seenAll, share }, ["Share result", "Play a game with this set", "Browse topic"]],
-    ["all questions seen with a perfect score", 5, { nextRound: seenAll, share }, ["Start over", "Play a game with this set", "Browse topic"]],
+    ["Next offered", 3, { nextRound: next(), share }, ["Play again (same questions)", "Share result", "Play a game with these questions", "Browse topic"]],
+    ["perfect score", 5, { share }, ["Play again", "Play a game with these questions", "Browse topic"]],
+    ["no Next otherwise", 3, { share }, ["Share result", "Play a game with these questions", "Browse topic"]],
+    ["all questions seen", 3, { nextRound: seenAll, share }, ["Share result", "Play a game with these questions", "Browse topic"]],
+    ["all questions seen with a perfect score", 5, { nextRound: seenAll, share }, ["Start over", "Play a game with these questions", "Browse topic"]],
   ])("AC 3.6.45 shows every other action as an underlined text link: %s", (_name, correct, extra, links) => {
     renderView(finishedRun(correct), extra);
     for (const name of links) expectTextLink(control(name));
@@ -116,12 +116,12 @@ describe("QuizCompletionView action hierarchy (#898)", () => {
     }
   });
 
-  it("AC 3.6.45 keeps the behaviour of the text links: replay, the share dialog and both destinations", async () => {
+  it("AC 3.6.45 AC 3.6.50 keeps the behaviour of the text links: replay, the share dialog and both destinations", async () => {
     const onPlayAgain = vi.fn();
     renderView(finishedRun(3), { nextRound: next(), share, onPlayAgain });
     const user = userEvent.setup({ delay: null });
 
-    expect(screen.getByRole("link", { name: "Play a game with this set" })).toHaveAttribute("href", "/games/exams");
+    expect(screen.getByRole("link", { name: "Play a game with these questions" })).toHaveAttribute("href", "/games/exams");
     expect(screen.getByRole("link", { name: "Browse topic" })).toHaveAttribute("href", "/categories/exams");
     await user.click(screen.getByRole("button", { name: "Play again (same questions)" }));
     expect(onPlayAgain).toHaveBeenCalledTimes(1);
@@ -131,14 +131,14 @@ describe("QuizCompletionView action hierarchy (#898)", () => {
 
   it.each<[string, number, QuizRunMode, Partial<ViewProps>, string[]]>([
     ["Next offered", 3, "practice", { nextRound: next(), share }, [
-      "Next 5 questions", "Review mistakes", "Play again (same questions)", "Share result", "Play a game with this set", "Browse topic",
+      "Next 5 questions", "Review mistakes", "Play again (same questions)", "Share result", "Play a game with these questions", "Browse topic",
     ]],
-    ["perfect score without Next", 5, "practice", { share }, ["Share result", "Play again", "Play a game with this set", "Browse topic"]],
+    ["perfect score without Next", 5, "practice", { share }, ["Share result", "Play again", "Play a game with these questions", "Browse topic"]],
     ["all questions seen", 3, "practice", { nextRound: seenAll, share }, [
-      "Start over", "Review mistakes", "Share result", "Play a game with this set", "Browse topic",
+      "Start over", "Review mistakes", "Share result", "Play a game with these questions", "Browse topic",
     ]],
     ["Test", 3, "test", { share, onReviewAll: () => {} }, [
-      "Play again", "Review all", "Review mistakes", "Share result", "Play a game with this set", "Browse topic",
+      "Play again", "Review all", "Review mistakes", "Share result", "Play a game with these questions", "Browse topic",
     ]],
   ])("AC 3.6.45 keeps DOM and keyboard order primary, outlined, text links, Keep going: %s", async (_name, correct, mode, extra, order) => {
     const { container } = renderView(finishedRun(correct, mode), { ...extra, keepGoing: <a href="/next-set">Keep going tile</a> });

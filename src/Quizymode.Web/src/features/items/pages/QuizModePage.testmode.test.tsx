@@ -222,7 +222,8 @@ describe("QuizModePage Test mode (AC 3.18)", () => {
     await renderPageWithOptions(TEST_URL);
 
     expect(await screen.findByRole("heading", { name: "Test mode" })).toBeInTheDocument();
-    expect(screen.getByText("3 questions")).toBeInTheDocument();
+    // The collection bar and the setup card both show the count.
+    expect(screen.getAllByText("3 questions")).toHaveLength(2);
     expect(screen.getByText("Learn, Test and Review are free.")).toBeInTheDocument();
     expect(screen.getByLabelText("Time limit")).toHaveValue("none");
     expect(screen.getByRole("button", { name: "Start test" })).toBeEnabled();
@@ -261,7 +262,7 @@ describe("QuizModePage Test mode (AC 3.18)", () => {
     expect(screen.queryByText(/Answer: /)).not.toBeInTheDocument();
     expect(screen.queryByText(/Score:/)).not.toBeInTheDocument();
     expect(screen.queryByText("Basic arithmetic.")).not.toBeInTheDocument();
-    expect(screen.queryByTitle("View item details")).not.toBeInTheDocument();
+    expect(screen.queryByTitle("View question details")).not.toBeInTheDocument();
     expect(screen.queryByText("ratings-and-comments")).not.toBeInTheDocument();
     expect(screen.queryByText("collection-controls")).not.toBeInTheDocument();
     expect(screen.queryByRole("button", { name: "Read answer aloud" })).not.toBeInTheDocument();
@@ -869,8 +870,8 @@ describe("QuizModePage Test mode (AC 3.18)", () => {
     const previous = () => screen.getByRole("button", { name: "Previous" });
     const expectCounter = async (text: string) => expect(await screen.findByText(text)).toBeInTheDocument();
     const expectNoArrows = () => {
-      expect(screen.queryByTitle("Previous item")).toBeNull();
-      expect(screen.queryByTitle("Next item")).toBeNull();
+      expect(screen.queryByTitle("Previous question")).toBeNull();
+      expect(screen.queryByTitle("Next question")).toBeNull();
     };
 
     it("AC 3.6.42 keeps the counter and the shortcuts and details icons in Practice", async () => {
@@ -878,7 +879,7 @@ describe("QuizModePage Test mode (AC 3.18)", () => {
       await expectCounter("1 of 3");
       expectNoArrows();
       expect(screen.getByRole("button", { name: "Keyboard shortcuts" })).toBeInTheDocument();
-      expect(screen.getByTitle("View item details")).toBeInTheDocument();
+      expect(screen.getByTitle("View question details")).toBeInTheDocument();
     });
 
     it.each([`/quiz/exams/item/${GUID_1}`, `/quiz/item/${GUID_1}`])(
@@ -1034,8 +1035,8 @@ describe("QuizModePage Test mode (AC 3.18)", () => {
       renderPage(mode === "test" ? TEST_URL : PRACTICE_URL);
       if (mode === "test") await startTest();
       await expectCounter("1 of 3");
-      expect(screen.getByTitle("Previous item")).toBeDisabled();
-      fireEvent.click(screen.getByTitle("Next item"));
+      expect(screen.getByTitle("Previous question")).toBeDisabled();
+      fireEvent.click(screen.getByTitle("Next question"));
       await expectCounter("2 of 3");
     });
   });

@@ -52,3 +52,23 @@ describe("CommentsDrawer error state (#822)", () => {
     await waitFor(() => expect(commentsApi.getByItemId).toHaveBeenCalledTimes(2));
   });
 });
+
+describe("CommentsDrawer navigation wording (#923)", () => {
+  it("AC 3.6.49 AC 3.6.50 names the arrows Previous question and Next question, and they open the same neighbours", async () => {
+    vi.mocked(commentsApi.getByItemId).mockResolvedValue({ comments: [] } as never);
+    const onNavigate = vi.fn();
+    const queryClient = new QueryClient({ defaultOptions: { queries: { retry: false } } });
+    render(
+      <QueryClientProvider client={queryClient}>
+        <CommentsDrawer itemId="item-2" onClose={() => {}} onNavigateToItem={onNavigate} previousItemId="item-1" nextItemId="item-3" />
+      </QueryClientProvider>
+    );
+
+    const user = userEvent.setup({ delay: null });
+    await user.click(await screen.findByTitle("Previous question"));
+    await user.click(screen.getByTitle("Next question"));
+
+    expect(onNavigate.mock.calls).toEqual([["item-1"], ["item-3"]]);
+    expect(screen.queryByTitle(/\bitem\b/i)).toBeNull();
+  });
+});

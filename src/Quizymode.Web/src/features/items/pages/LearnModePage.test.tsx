@@ -169,7 +169,7 @@ describe("LearnModePage", () => {
       expect(await screen.findByRole("progressbar", { name: "Mastered 0 of 3" })).toHaveAttribute("aria-valuemax", "3");
       expect(screen.getByRole("progressbar")).toHaveAttribute("aria-valuenow", "0");
       expect(screen.getByText(/Round 1 · 1 of 3/)).toBeInTheDocument();
-      expect(screen.getByText("Quiz: one pass. Learn: repeat until mastered. Review: spaced, due items.")).toBeInTheDocument();
+      expect(screen.getByText("Quiz: one pass. Learn: repeat until mastered. Review: spaced, due questions.")).toBeInTheDocument();
       expect(screen.getByText("Learn, Test and Review are free.")).toBeInTheDocument();
       expect(screen.getByRole("tab", { name: "Learn", selected: true })).toBeInTheDocument();
       expect(screen.queryByText(/Learning \d+ of/)).toBeNull();
@@ -212,13 +212,13 @@ describe("LearnModePage", () => {
       expect(await screen.findByRole("progressbar", { name: "Mastered 0 of 3" })).toBeInTheDocument();
     });
 
-    it("uses the requested size and keywords for a category and shows the real playable count", async () => {
+    it("AC 3.6.49 AC 3.6.50 uses the requested size and keywords for a category and shows the real playable count", async () => {
       vi.mocked(itemsApi.getRandom).mockResolvedValue({ items: [...makeItems(3), { ...makeItem(8), incorrectAnswers: [] }] } as never);
       renderPage("/learn/science?nav=a&keywords=a,b");
 
       expect(await screen.findByRole("progressbar", { name: "Mastered 0 of 3" })).toBeInTheDocument();
       expect(itemsApi.getRandom).toHaveBeenCalledWith("science", 10, ["b"], { navigationKeywords: ["a"] });
-      expect(screen.getByLabelText("Items to learn:")).toHaveValue(10);
+      expect(screen.getByLabelText("Questions to learn:")).toHaveValue(10);
     });
   });
 
@@ -332,7 +332,7 @@ describe("LearnModePage", () => {
       expect(screen.getByRole("progressbar")).toHaveAttribute("aria-valuenow", "1");
 
       fireEvent.click(screen.getByRole("button", { name: "Start over" }));
-      expect(screen.getByText("Start over? Your progress in this set will be lost.")).toBeInTheDocument();
+      expect(screen.getByText("Start over? Your progress on these questions will be lost.")).toBeInTheDocument();
       fireEvent.click(screen.getByRole("button", { name: "Keep learning" }));
       expect(screen.getByRole("progressbar")).toHaveAttribute("aria-valuenow", "1");
 
@@ -343,7 +343,7 @@ describe("LearnModePage", () => {
   });
 
   describe("finishing a signed-in run (AC 3.17.9, 3.17.11)", () => {
-    it("finishes on Continue after the last mastering answer and saves exactly one session", async () => {
+    it("AC 3.6.49 finishes on Continue after the last mastering answer and saves exactly one session", async () => {
       const items = makeItems(2);
       vi.mocked(collectionsApi.getItems).mockResolvedValue({ items } as never);
       const completed = vi.fn();
@@ -365,7 +365,7 @@ describe("LearnModePage", () => {
       expect(screen.getByText("Correct. Mastered.")).toBeInTheDocument();
       press({ key: "Enter", code: "Enter" });
 
-      expect(await screen.findByRole("heading", { name: "You've mastered all 2 items" })).toBeInTheDocument();
+      expect(await screen.findByRole("heading", { name: "You've mastered all 2 questions" })).toBeInTheDocument();
       expect(screen.getByText("First try: 1 / 2")).toBeInTheDocument();
       expect(screen.getByText("50% right first time")).toBeInTheDocument();
       expect(screen.getByRole("link", { name: "Back to collection" })).toHaveAttribute("href", expect.stringContaining(`/collections/${COLLECTION_ID}`));
@@ -386,7 +386,7 @@ describe("LearnModePage", () => {
       // The finish screen is restored without a second save.
       cleanup();
       renderPage(COLLECTION_PATH);
-      expect(await screen.findByRole("heading", { name: "You've mastered all 2 items" })).toBeInTheDocument();
+      expect(await screen.findByRole("heading", { name: "You've mastered all 2 questions" })).toBeInTheDocument();
       expect(recordAuthenticatedCompletion).toHaveBeenCalledTimes(1);
     });
 
@@ -434,14 +434,14 @@ describe("LearnModePage", () => {
       await waitFor(() => expect(screen.queryByText(/We couldn't save this session\./)).toBeNull());
     });
 
-    it("Learn again starts a new run id", async () => {
+    it("AC 3.6.49 AC 3.6.50 counts one mastered question in the singular and Learn again starts a new run id", async () => {
       const items = makeItems(1);
       vi.mocked(collectionsApi.getItems).mockResolvedValue({ items } as never);
       renderPage(COLLECTION_PATH);
       await screen.findByRole("progressbar");
       clickOption(currentItem(items).correctAnswer);
       fireEvent.click(screen.getByRole("button", { name: "Continue" }));
-      await screen.findByRole("heading", { name: "You've mastered all 1 item" });
+      await screen.findByRole("heading", { name: "You've mastered all 1 question" });
 
       fireEvent.click(screen.getByRole("button", { name: "Learn again" }));
 
@@ -466,7 +466,7 @@ describe("LearnModePage", () => {
       answerAndContinue(items, true);
       answerAndContinue(items, true);
 
-      await screen.findByRole("heading", { name: "You've mastered all 2 items" });
+      await screen.findByRole("heading", { name: "You've mastered all 2 questions" });
       expect(recordAuthenticatedCompletion).not.toHaveBeenCalled();
       const history = readGuestHistory();
       expect(history).toHaveLength(1);
@@ -596,7 +596,7 @@ describe("LearnModePage", () => {
       await screen.findByRole("progressbar");
       answerAndContinue(items, true);
 
-      const input = screen.getByLabelText("Items to learn:");
+      const input = screen.getByLabelText("Questions to learn:");
       fireEvent.change(input, { target: { value: "5" } });
       fireEvent.blur(input);
       expect(screen.getByText("Change size and start over?")).toBeInTheDocument();

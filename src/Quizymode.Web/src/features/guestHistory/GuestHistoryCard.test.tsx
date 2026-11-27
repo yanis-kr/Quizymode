@@ -114,7 +114,7 @@ describe("GuestHistoryCard", () => {
     );
   });
 
-  it("explains category practice is a new random set rather than an exact replay", () => {
+  it("AC 3.6.49 AC 3.6.50 explains category practice is a new random group of questions rather than an exact replay", () => {
     recordGuestCompletion(
       completion({
         scope: { kind: "category", category: "Exams", navigationKeywords: ["act"], filterKeywords: [], quizSize: 10 },
@@ -122,7 +122,7 @@ describe("GuestHistoryCard", () => {
       guest,
     );
     renderCard();
-    expect(screen.getByText(/new random set from this topic/i)).toBeInTheDocument();
+    expect(screen.getByText(/new random group of questions from this topic/i)).toBeInTheDocument();
     expect(screen.getByRole("link", { name: /practice again/i })).toHaveAttribute(
       "href",
       "/quiz/exams?nav=act&keywords=act",

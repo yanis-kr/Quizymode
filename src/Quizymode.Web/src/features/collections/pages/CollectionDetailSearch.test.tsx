@@ -112,7 +112,8 @@ describe("CollectionDetailPage in-collection search (#555, AC 1.5.12)", () => {
     await user.type(screen.getByRole("searchbox"), "zebra");
     expect(screen.getByText(/No questions match/)).toHaveTextContent("zebra");
     expect(screen.queryByTestId("item-list")).not.toBeInTheDocument();
-    expect(screen.getByText("3 items")).toBeInTheDocument();
+    // The collection bar and the landing header both show the unfiltered count.
+    expect(screen.getAllByText("3 questions")).toHaveLength(2);
   });
 
   it("returns to page one when the search term changes", async () => {

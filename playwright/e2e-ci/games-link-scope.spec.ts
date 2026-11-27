@@ -1,5 +1,5 @@
 /**
- * Games link scope (#768, AC 3.20 follow-up). The completion view's "Play a game with this set" link goes to
+ * Games link scope (#768, AC 3.20 follow-up). The completion view's "Play a game with these questions" link goes to
  * /games/exams?nav=...&keywords=...; the games page must send that scope to its roster request. API is stubbed.
  */
 import { test, expect } from "../fixtures";

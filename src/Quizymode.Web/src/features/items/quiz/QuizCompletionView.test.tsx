@@ -77,7 +77,7 @@ describe("QuizCompletionView tier, share and confetti", () => {
     expect(screen.getByText(label)).toBeInTheDocument();
   });
 
-  it("offers a game for the set just played on the end screen (AC 3.35.3)", () => {
+  it("offers a game for the questions just played on the end screen (AC 3.35.3, AC 3.6.49, AC 3.6.50)", () => {
     const { rerender } = render(
       <MemoryRouter>
         <QuizCompletionView
@@ -92,9 +92,9 @@ describe("QuizCompletionView tier, share and confetti", () => {
         />
       </MemoryRouter>
     );
-    expect(screen.getByRole("link", { name: "Play a game with this set" })).toHaveAttribute("href", "/games/collections/c1/my-set");
+    expect(screen.getByRole("link", { name: "Play a game with these questions" })).toHaveAttribute("href", "/games/collections/c1/my-set");
     rerender(ui(runWith(3, 5)));
-    expect(screen.queryByRole("link", { name: "Play a game with this set" })).not.toBeInTheDocument();
+    expect(screen.queryByRole("link", { name: "Play a game with these questions" })).not.toBeInTheDocument();
   });
 
   it("shows Share result after Play again, and none without a descriptor or in the review view", () => {
