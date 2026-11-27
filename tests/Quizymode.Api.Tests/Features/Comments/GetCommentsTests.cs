@@ -1,5 +1,7 @@
+using System.Net;
 using FluentAssertions;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
 using Quizymode.Api.Features.Comments;
 using Quizymode.Api.Shared.Kernel;
 using Quizymode.Api.Shared.Models;
@@ -154,6 +156,102 @@ public sealed class GetCommentsTests : DatabaseTestFixture
             .Should().BeEquivalentTo(new[] { privateItem.Id });
         (await IdsAsync(new GetComments.QueryRequest(privateItem.Id), FakeUserContext.Admin()))
             .Should().BeEquivalentTo(new[] { privateItem.Id });
+    }
+
+    // AC 2.5.1 (#904): one page, newest first, with the visibility-filtered total.
+
+    private async Task<(Item Item, List<Comment> NewestFirst)> SeedCommentsAsync(int count)
+    {
+        Category category = VisibilitySeed.AddCategory(DbContext);
+        Item item = VisibilitySeed.AddItem(DbContext, category, "owner", false);
+        DateTime start = new(2026, 11, 1, 0, 0, 0, DateTimeKind.Utc);
+        List<Comment> comments = Enumerable.Range(0, count)
+            .Select(i => new Comment
+            {
+                Id = Guid.NewGuid(), ItemId = item.Id, Text = $"Comment {i}", CreatedBy = "user", CreatedAt = start.AddMinutes(i)
+            })
+            .ToList();
+        DbContext.Comments.AddRange(comments);
+        await DbContext.SaveChangesAsync();
+        return (item, comments.AsEnumerable().Reverse().ToList());
+    }
+
+    private async Task<GetComments.Response> PageAsync(GetComments.QueryRequest request) =>
+        (await GetComments.HandleAsync(request, DbContext, FakeUserContext.Anonymous, CancellationToken.None)).Value;
+
+    [Fact]
+    public async Task HandleAsync_ReturnsOnePageOfFiftyNewestFirstWithTheTotal()
+    {
+        (Item item, List<Comment> expected) = await SeedCommentsAsync(55);
+
+        GetComments.Response first = await PageAsync(new GetComments.QueryRequest(item.Id));
+        GetComments.Response second = await PageAsync(new GetComments.QueryRequest(item.Id, Page: 2));
+
+        (first.TotalCount, first.Page, first.PageSize).Should().Be((55, 1, 50));
+        first.Comments.Select(c => c.Text).Should().Equal(expected.Take(50).Select(c => c.Text));
+        second.Comments.Select(c => c.Text).Should().Equal(expected.Skip(50).Select(c => c.Text));
+        second.TotalCount.Should().Be(55);
+    }
+
+    [Theory]
+    [InlineData(3, 50)]
+    [InlineData(2147483647, 100)]
+    public async Task HandleAsync_PageBeyondTheEnd_IsEmptyWithTheTotal(int page, int pageSize)
+    {
+        (Item item, _) = await SeedCommentsAsync(3);
+
+        GetComments.Response response = await PageAsync(new GetComments.QueryRequest(item.Id, page, pageSize));
+
+        response.Comments.Should().BeEmpty();
+        response.TotalCount.Should().Be(3);
+    }
+
+    [Fact]
+    public async Task HandleAsync_EqualTimestamps_PageWithoutGapsOrRepeats()
+    {
+        (Item item, List<Comment> comments) = await SeedCommentsAsync(5);
+        comments.ForEach(c => c.CreatedAt = comments[0].CreatedAt);
+        await DbContext.SaveChangesAsync();
+
+        List<string> seen = [];
+        for (int page = 1; page <= 3; page++)
+        {
+            seen.AddRange((await PageAsync(new GetComments.QueryRequest(item.Id, page, 2))).Comments.Select(c => c.Id));
+        }
+
+        seen.Should().OnlyHaveUniqueItems().And.HaveCount(5);
+    }
+
+    [Fact]
+    public async Task HandleAsync_TotalCount_ExcludesCommentsTheCallerCannotSee()
+    {
+        Category category = VisibilitySeed.AddCategory(DbContext);
+        Item publicItem = VisibilitySeed.AddItem(DbContext, category, "owner", false);
+        Item privateItem = VisibilitySeed.AddItem(DbContext, category, "owner", true);
+        VisibilitySeed.AddComment(DbContext, publicItem);
+        VisibilitySeed.AddComment(DbContext, privateItem);
+        await DbContext.SaveChangesAsync();
+
+        (await PageAsync(new GetComments.QueryRequest(null))).TotalCount.Should().Be(1);
+    }
+
+    [Theory]
+    [InlineData("comments", HttpStatusCode.OK)]
+    [InlineData("comments?page=2147483647&pageSize=100", HttpStatusCode.OK)]
+    [InlineData("comments?page=0", HttpStatusCode.BadRequest)]
+    [InlineData("comments?pageSize=0", HttpStatusCode.BadRequest)]
+    [InlineData("comments?pageSize=101", HttpStatusCode.BadRequest)]
+    [InlineData("comments?page=2147483648", HttpStatusCode.BadRequest)]
+    public async Task Get_OverHttp_ValidatesPaging(string path, HttpStatusCode expected)
+    {
+        await using JwtHttpTestHost host = await JwtHttpTestHost.StartAsync(
+            CreateDbContext,
+            services => new GetComments.FeatureRegistration().AddToServiceCollection(services, new ConfigurationBuilder().Build()),
+            app => new GetComments.Endpoint().MapEndpoint(app));
+
+        using HttpResponseMessage response = await host.Client.GetAsync(path);
+
+        response.StatusCode.Should().Be(expected, await response.Content.ReadAsStringAsync());
     }
 
     private async Task<List<Guid>> IdsAsync(GetComments.QueryRequest request, FakeUserContext user)

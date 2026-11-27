@@ -6,6 +6,7 @@ using Quizymode.Api.Services.Taxonomy;
 using Quizymode.Api.Shared.Helpers;
 using Quizymode.Api.Shared.Kernel;
 using Quizymode.Api.Shared.Models;
+using Quizymode.Api.Shared.Options;
 
 namespace Quizymode.Api.Features.Items.Add;
 
@@ -19,7 +20,8 @@ internal static class AddItemHandler
         IAuditService auditService,
         ITaxonomyItemCategoryResolver itemCategoryResolver,
         ITaxonomyRegistry taxonomyRegistry,
-        CancellationToken cancellationToken)
+        CancellationToken cancellationToken,
+        QuotaSettings? quotas = null)
     {
         IDbContextTransaction? transaction = null;
         try
@@ -39,6 +41,9 @@ internal static class AddItemHandler
                 if (prior is not null) return prior.CreateRequestHash == requestHash ? Result.Success(BuildResponse(prior, prior.Category?.Name ?? request.Category)) : Result.Failure<AddItem.Response>(Error.Conflict("Item.RequestKeyReused", "This save request belongs to different content. Start a new save."));
             }
 
+            // AC 17.4: after the replay lookup, so a repeated save still returns its item at quota.
+            Error? creationError = await CreationQuota.CheckItemsAsync(db, userContext, 1, quotas, null, cancellationToken);
+            if (creationError is not null) return Result.Failure<AddItem.Response>(creationError);
 
             Result<Category> categoryResult = await itemCategoryResolver.ResolveForItemAsync(
                 request.Category,

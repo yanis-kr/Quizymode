@@ -50,7 +50,9 @@ public static class TrackPageView
                 .WithDescription("Stores a page-view event for an anonymous or authenticated SPA route hit. The hit is flagged internal when the caller is an admin, is a user flagged internal, or sends internalBrowser=true. Each hit is classified by feature area and content scope. The first hit of a session also creates an attribution snapshot (channel, referrer host, UTM tags, device class, country).")
                 .AllowAnonymous()
                 .Produces<Response>(StatusCodes.Status201Created)
-                .ProducesProblem(StatusCodes.Status400BadRequest);
+                .ProducesProblem(StatusCodes.Status400BadRequest)
+                .ProducesProblem(StatusCodes.Status429TooManyRequests)
+                .RequireRateLimiting("page-views");
         }
 
         private static async Task<IResult> Handler(

@@ -34,6 +34,7 @@ public sealed class ItemInteractionVisibilityHttpTests : DatabaseTestFixture, IA
             {
                 services.AddMemoryCache();
                 services.AddScoped<IValidator<AddComment.Request>, AddComment.Validator>();
+                services.AddScoped<IValidator<GetComments.QueryRequest>, GetComments.Validator>();
                 services.AddScoped<IValidator<AddOrUpdateRating.Request>, AddOrUpdateRating.Validator>();
             },
             app =>

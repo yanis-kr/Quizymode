@@ -256,7 +256,12 @@ public static class QuickStudyGuideDocument
             await autoSaver.SaveDocumentAsync(documentId, cancellationToken);
         }
 
-        return await FinishAsync(document, db, options, nowUtc, value.QueuedCount, value.CachedCount, value.ChargedSections, cancellationToken);
+        Response finished = await FinishAsync(document, db, options, nowUtc, value.QueuedCount, value.CachedCount, value.ChargedSections, cancellationToken);
+
+        // A daily quota refused the inline save: say so instead of "no questions".
+        return autoSaver.QuotaRefusal is Error refusal && finished.Outcome == NeedsChoice
+            ? finished with { Message = refusal.Description }
+            : finished;
     }
 
     /// <summary>Rebuilds the document and derives Ready / Generating / NeedsChoice from what is saved or still pending.</summary>

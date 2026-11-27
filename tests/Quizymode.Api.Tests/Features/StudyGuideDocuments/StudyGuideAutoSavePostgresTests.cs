@@ -118,7 +118,7 @@ public sealed class StudyGuideAutoSavePostgresTests(PostgresContainerFixture fix
         return (documentId, candidateIds);
     }
 
-    private StudyGuideAutoSaver NewSaver(ApplicationDbContext db, IServiceScopeFactory scopes) =>
+    private StudyGuideAutoSaver NewSaver(ApplicationDbContext db, IServiceScopeFactory scopes, QuotaSettings? quotas = null) =>
         new(
             db,
             scopes,
@@ -129,6 +129,7 @@ public sealed class StudyGuideAutoSavePostgresTests(PostgresContainerFixture fix
             StudyGuideTestData.Moderation(),
             Options.Create(new StudyGuideGenerationOptions()),
             Options.Create(new StudyGuideDocumentOptions()),
+            Options.Create(quotas ?? new QuotaSettings()),
             TimeProvider.System,
             NullLogger<StudyGuideAutoSaver>.Instance);
 

@@ -1,6 +1,7 @@
-using System.Collections.Concurrent;
 using System.Net;
 using System.Text.Json;
+using Microsoft.Extensions.Caching.Memory;
+using Microsoft.Extensions.Internal;
 
 namespace Quizymode.Api.Services;
 
@@ -11,15 +12,32 @@ internal sealed class IpGeolocationService : IIpGeolocationService
         "::1", "127.0.0.1", "0:0:0:0:0:0:0:1", "localhost"
     };
 
+    private const int DefaultCacheSizeLimit = 10_000;
+    private static readonly TimeSpan SuccessTtl = TimeSpan.FromHours(24);
+    private static readonly TimeSpan FailureTtl = TimeSpan.FromMinutes(10);
+
+    // Shorter than the 2 s budget of page-view tracking, so a slow lookup ends here and is cached as a failure
+    // rather than counting as the caller giving up.
+    private static readonly TimeSpan LookupTimeout = TimeSpan.FromMilliseconds(1800);
+
     private readonly IHttpClientFactory _httpClientFactory;
     private readonly ILogger<IpGeolocationService> _logger;
-    private readonly ConcurrentDictionary<string, IpLocation?> _cache = new(StringComparer.OrdinalIgnoreCase);
 
-    public IpGeolocationService(IHttpClientFactory httpClientFactory, ILogger<IpGeolocationService> logger)
+    // Private, so its size limit does not apply to the application's shared IMemoryCache.
+    private readonly MemoryCache _cache;
+
+    public IpGeolocationService(
+        IHttpClientFactory httpClientFactory,
+        ILogger<IpGeolocationService> logger,
+        int cacheSizeLimit = DefaultCacheSizeLimit,
+        ISystemClock? clock = null)
     {
         _httpClientFactory = httpClientFactory;
         _logger = logger;
+        _cache = new MemoryCache(new MemoryCacheOptions { SizeLimit = cacheSizeLimit, Clock = clock });
     }
+
+    internal int CacheCount => _cache.Count;
 
     public async Task<string?> GetCountryAsync(string ipAddress, CancellationToken cancellationToken = default)
     {
@@ -46,43 +64,51 @@ internal sealed class IpGeolocationService : IIpGeolocationService
         if (IsPrivate(parsed))
             return local;
 
-        if (_cache.TryGetValue(ipAddress, out IpLocation? cached))
+        string key = parsed.ToString();
+
+        // A cached null is a remembered failure, which TryGetValue tells apart from a miss.
+        if (_cache.TryGetValue(key, out IpLocation? cached))
             return cached;
 
         try
         {
+            using CancellationTokenSource timeout = CancellationTokenSource.CreateLinkedTokenSource(cancellationToken);
+            timeout.CancelAfter(LookupTimeout);
+
             HttpClient client = _httpClientFactory.CreateClient("ipgeolocation");
             HttpResponseMessage response = await client.GetAsync(
                 $"https://ipinfo.io/{Uri.EscapeDataString(ipAddress)}/json",
-                cancellationToken);
+                timeout.Token);
 
             if (!response.IsSuccessStatusCode)
-            {
-                _cache[ipAddress] = null;
-                return null;
-            }
+                return Remember(key, null, FailureTtl);
 
-            string json = await response.Content.ReadAsStringAsync(cancellationToken);
+            string json = await response.Content.ReadAsStringAsync(timeout.Token);
             using JsonDocument doc = JsonDocument.Parse(json);
             JsonElement root = doc.RootElement;
 
             // ipinfo returns { "bogon": true } for private/reserved ranges
             if (root.TryGetProperty("bogon", out JsonElement bogon) && bogon.GetBoolean())
-            {
-                _cache[ipAddress] = local;
-                return local;
-            }
+                return Remember(key, local, SuccessTtl);
 
-            IpLocation location = ParseLocation(root);
-            _cache[ipAddress] = location;
-            return location;
+            return Remember(key, ParseLocation(root), SuccessTtl);
+        }
+        catch (Exception) when (cancellationToken.IsCancellationRequested)
+        {
+            // The caller gave up; that says nothing about the address, so nothing is cached.
+            return null;
         }
         catch (Exception ex)
         {
-            _logger.LogWarning(ex, "IP geolocation lookup failed for {IpAddress}", parsed.ToString());
-            _cache[ipAddress] = null;
-            return null;
+            _logger.LogWarning(ex, "IP geolocation lookup failed for {IpAddress}", key);
+            return Remember(key, null, FailureTtl);
         }
+    }
+
+    private IpLocation? Remember(string key, IpLocation? location, TimeSpan ttl)
+    {
+        _cache.Set(key, location, new MemoryCacheEntryOptions { Size = 1, AbsoluteExpirationRelativeToNow = ttl });
+        return location;
     }
 
     /// <summary>Reads country, region and city from an ipinfo response; blank values become null and are length-capped.</summary>

@@ -222,24 +222,4 @@ public sealed class LearningLoopHttpTests : DatabaseTestFixture, IAsyncLifetime
         using HttpResponseMessage otherResponse = await limited.Client.SendAsync(other);
         otherResponse.StatusCode.Should().Be(HttpStatusCode.NotFound);
     }
-
-    [Fact]
-    public void GetRejectionDetail_Search_HasItsOwnMessage()
-    {
-        ApiStartup.GetRejectionDetail(new PathString("/search"))
-            .Should().Be("Too many searches. Please wait a moment and try again.");
-        ApiStartup.GetRejectionDetail(new PathString("/api/search"))
-            .Should().Be("Too many searches. Please wait a moment and try again.");
-    }
-
-    [Fact]
-    public void GetRejectionDetail_ReviewText_AppliesOnlyToTheEnqueuePath()
-    {
-        Guid id = Guid.NewGuid();
-
-        ApiStartup.GetRejectionDetail(new PathString($"/api/review-queue/{id}"))
-            .Should().Be("Too many Review queue updates. Please slow down.");
-        ApiStartup.GetRejectionDetail(new PathString($"/api/review-queue/{id}/answers"))
-            .Should().NotContain("Review queue");
-    }
 }

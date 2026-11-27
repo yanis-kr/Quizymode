@@ -2932,6 +2932,16 @@
                 }
               }
             }
+          },
+          "429": {
+            "description": "Too Many Requests",
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails"
+                }
+              }
+            }
           }
         },
         "security": [
@@ -3079,6 +3089,16 @@
           },
           "400": {
             "description": "Bad Request"
+          },
+          "429": {
+            "description": "Too Many Requests",
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails"
+                }
+              }
+            }
           }
         },
         "security": [
@@ -3154,6 +3174,16 @@
           },
           "404": {
             "description": "Not Found"
+          },
+          "429": {
+            "description": "Too Many Requests",
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails"
+                }
+              }
+            }
           }
         },
         "security": [
@@ -4017,6 +4047,16 @@
           },
           "404": {
             "description": "Not Found"
+          },
+          "429": {
+            "description": "Too Many Requests",
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails"
+                }
+              }
+            }
           }
         },
         "security": [
@@ -4030,13 +4070,27 @@
           "Comments"
         ],
         "summary": "Get comments",
-        "description": "Returns comments. Optionally filter by itemId using ?itemId={guid}.",
+        "description": "Returns one page of comments, newest first, with the total count. Optionally filter by itemId using ?itemId={guid}. page defaults to 1; pageSize defaults to 50 (maximum 100).",
         "parameters": [
           {
             "name": "itemId",
             "in": "query",
             "schema": {
               "$ref": "#/components/schemas/System.NullableOfSystem.Guid"
+            }
+          },
+          {
+            "name": "page",
+            "in": "query",
+            "schema": {
+              "$ref": "#/components/schemas/System.NullableOfSystem.Int32"
+            }
+          },
+          {
+            "name": "pageSize",
+            "in": "query",
+            "schema": {
+              "$ref": "#/components/schemas/System.NullableOfSystem.Int32"
             }
           }
         ],
@@ -4047,6 +4101,16 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/Quizymode.Api.Features.Comments.GetComments.Response"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails"
                 }
               }
             }
@@ -4516,7 +4580,14 @@
             "description": "Bad Request"
           },
           "429": {
-            "description": "Too Many Requests"
+            "description": "Too Many Requests",
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails"
+                }
+              }
+            }
           },
           "409": {
             "description": "Conflict"
@@ -4614,6 +4685,16 @@
           },
           "400": {
             "description": "Bad Request"
+          },
+          "429": {
+            "description": "Too Many Requests",
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails"
+                }
+              }
+            }
           }
         },
         "security": [
@@ -4656,7 +4737,14 @@
             "description": "Bad Request"
           },
           "429": {
-            "description": "Too Many Requests"
+            "description": "Too Many Requests",
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails"
+                }
+              }
+            }
           },
           "401": {
             "description": "Unauthorized"
@@ -4852,6 +4940,16 @@
           },
           "400": {
             "description": "Bad Request"
+          },
+          "429": {
+            "description": "Too Many Requests",
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails"
+                }
+              }
+            }
           }
         },
         "security": [
@@ -5291,7 +5389,14 @@
             "description": "Bad Request"
           },
           "429": {
-            "description": "Too Many Requests"
+            "description": "Too Many Requests",
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails"
+                }
+              }
+            }
           }
         },
         "security": [
@@ -6268,6 +6373,16 @@
           },
           "404": {
             "description": "Not Found"
+          },
+          "429": {
+            "description": "Too Many Requests",
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails"
+                }
+              }
+            }
           }
         },
         "security": [
@@ -6664,6 +6779,16 @@
           },
           "404": {
             "description": "Not Found"
+          },
+          "429": {
+            "description": "Too Many Requests",
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails"
+                }
+              }
+            }
           }
         },
         "security": [
@@ -14955,14 +15080,27 @@
       },
       "Quizymode.Api.Features.Comments.GetComments.Response": {
         "required": [
-          "comments"
+          "comments",
+          "totalCount",
+          "page",
+          "pageSize"
         ],
         "type": "object",
         "properties": {
           "comments": {
             "$ref": "#/components/schemas/System.Collections.Generic.ListOfQuizymode.Api.Features.Comments.GetComments.CommentResponse"
+          },
+          "totalCount": {
+            "$ref": "#/components/schemas/System.Int32"
+          },
+          "page": {
+            "$ref": "#/components/schemas/System.Int32"
+          },
+          "pageSize": {
+            "$ref": "#/components/schemas/System.Int32"
           }
-        }
+        },
+        "description": "One page of comments, newest first. `TotalCount` counts every comment the caller can see."
       },
       "Quizymode.Api.Features.Comments.UpdateComment.Request": {
         "required": [

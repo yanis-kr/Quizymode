@@ -33,7 +33,11 @@ public sealed class StudyGuideQuickPathTests : StudyGuideDocumentFixture
         return services.BuildServiceProvider();
     }
 
-    private StudyGuideAutoSaver NewSaver(ApplicationDbContext db, IServiceScopeFactory scopes, IAuditService? audit = null) =>
+    private StudyGuideAutoSaver NewSaver(
+        ApplicationDbContext db,
+        IServiceScopeFactory scopes,
+        IAuditService? audit = null,
+        QuotaSettings? quotas = null) =>
         new(
             db,
             scopes,
@@ -44,6 +48,7 @@ public sealed class StudyGuideQuickPathTests : StudyGuideDocumentFixture
             StudyGuideTestData.Moderation(),
             MsOptions.Create(GenerationOptions),
             MsOptions.Create(DocumentOptions),
+            MsOptions.Create(quotas ?? new QuotaSettings()),
             Clock,
             NullLogger<StudyGuideAutoSaver>.Instance);
 
@@ -677,5 +682,105 @@ public sealed class StudyGuideQuickPathTests : StudyGuideDocumentFixture
         response.Outcome.Should().Be("Generating");
         response.Document.Sections[0].AutoSave.Should().Be("Pending");
         (await DbContext.Items.CountAsync(i => i.CreatedBy == UserA)).Should().Be(0);
+    }
+
+    // ----- Daily quotas (#904, AC 17) -----
+
+    private async Task SeedCollectionTodayAsync()
+    {
+        DbContext.Collections.Add(new Collection
+        {
+            Id = Guid.NewGuid(), Name = "Other", CreatedBy = UserA, CreatedAt = Clock.UtcNow
+        });
+        await DbContext.SaveChangesAsync();
+    }
+
+    [Theory]
+    [InlineData(1, 50, "Quota.ItemsPerDay")]
+    [InlineData(500, 1, "Quota.CollectionsPerDay")]
+    public async Task AutoSave_RefusedByAQuota_FailsTheSectionsAtOnceAndStoresNothing(int items, int collections, string code)
+    {
+        if (code == "Quota.CollectionsPerDay")
+        {
+            await SeedCollectionTodayAsync();
+        }
+
+        int collectionsBefore = await DbContext.Collections.CountAsync();
+        using ServiceProvider provider = Provider();
+        StudyGuideAutoSaver saver = NewSaver(
+            DbContext,
+            provider.GetRequiredService<IServiceScopeFactory>(),
+            quotas: new QuotaSettings { ItemsPerDay = items, CollectionsPerDay = collections });
+        QuickStudyGuideDocument.Response started = await QuickAsync(MultiSectionText(1), saver);
+        await CompleteAllAsync(started.Document);
+
+        bool saved = await saver.SaveDocumentAsync(Guid.Parse(started.Document.Id), CancellationToken.None);
+
+        saved.Should().BeFalse();
+        saver.QuotaRefusal!.Code.Should().Be(code);
+        DbContext.ChangeTracker.Clear();
+        StudyGuideSection section = await DbContext.StudyGuideSections.AsNoTracking().SingleAsync();
+        section.AutoSave.Should().Be(StudyGuideAutoSave.Failed);
+        section.AutoSaveAttempts.Should().Be(0);
+        (await DbContext.Items.CountAsync()).Should().Be(0);
+        (await DbContext.Collections.CountAsync()).Should().Be(collectionsBefore);
+        (await DbContext.StudyGuideAcceptedCandidates.CountAsync()).Should().Be(0);
+
+        // Manual review stays possible once the quota allows it.
+        Result<AcceptStudyGuideCandidates.Response?> manual = await ManualAcceptAsync(
+            started.Document.Id,
+            (await ReloadAsync(started.Document.Id)).Sections[0].Candidates.Select(c => Guid.Parse(c.Id)));
+        manual.IsSuccess.Should().BeTrue(manual.IsFailure ? manual.Error.Description : null);
+    }
+
+    [Fact]
+    public async Task Quick_CachedQuestionsRefusedByAQuota_NeedsAChoiceAndSaysWhy()
+    {
+        StudyGuideDocumentContracts.Document other = await CreateTextAsync(MultiSectionText(1, "cached"), UserB);
+        await GenerateAsync(other, other.Sections, UserB);
+        await CompleteGenerationAsync(await GenerationIdOfAsync(other.Sections[0].Id));
+        QuotaSettings quotas = new() { ItemsPerDay = 1 };
+        ServiceCollection services = new();
+        services.AddScoped(_ => CreateDbContext());
+        services.AddScoped(provider => NewSaver(
+            provider.GetRequiredService<ApplicationDbContext>(),
+            provider.GetRequiredService<IServiceScopeFactory>(),
+            quotas: quotas));
+        using ServiceProvider provider = services.BuildServiceProvider();
+        StudyGuideAutoSaver saver = NewSaver(DbContext, provider.GetRequiredService<IServiceScopeFactory>(), quotas: quotas);
+
+        QuickStudyGuideDocument.Response response = await QuickAsync(MultiSectionText(1, "cached"), saver);
+
+        response.Outcome.Should().Be("NeedsChoice");
+        response.Message.Should().Contain("Daily item limit reached");
+        (await DbContext.Items.CountAsync()).Should().Be(0);
+    }
+
+    [Fact]
+    public async Task ManualAccept_WhoseCollectionWasDeleted_IsRefusedAtTheCollectionQuotaAndKeepsNoNewItem()
+    {
+        StudyGuideDocumentContracts.Document document = await CreateTextAsync(MultiSectionText(1));
+        await GenerateAsync(document, document.Sections);
+        await CompleteGenerationAsync(await GenerationIdOfAsync(document.Sections[0].Id), candidates: 2);
+        List<Guid> candidates = (await GetAsync(document.Id))!.Sections[0].Candidates.Select(c => Guid.Parse(c.Id)).ToList();
+        Result<AcceptStudyGuideCandidates.Response?> first = await ManualAcceptAsync(document.Id, candidates.Take(1));
+        Guid collectionId = Guid.Parse(first.Value!.CollectionId);
+        DbContext.Collections.Remove(await DbContext.Collections.SingleAsync(c => c.Id == collectionId));
+        await DbContext.SaveChangesAsync();
+        await SeedCollectionTodayAsync();
+
+        Result<AcceptStudyGuideCandidates.Response?> refused = await AcceptStudyGuideCandidates.HandleAsync(
+            Guid.Parse(document.Id),
+            new AcceptStudyGuideCandidates.Request(candidates
+                .Select(id => new AcceptStudyGuideCandidates.CandidateEdit(id, null, null, null, null)).ToList()),
+            DbContext, StudyGuideTestData.User(UserA).Object, SimHashService, TaxonomyItemCategoryResolver, TaxonomyRegistry,
+            Mock.Of<IAuditService>(), StudyGuideTestData.Moderation(), DocumentOptions.RetentionDays, Clock.UtcNow,
+            CancellationToken.None, quotas: new QuotaSettings { CollectionsPerDay = 1 });
+
+        refused.Error.Code.Should().Be("Quota.CollectionsPerDay");
+        DbContext.ChangeTracker.Clear();
+        (await DbContext.Items.CountAsync()).Should().Be(1);
+        (await DbContext.Collections.CountAsync()).Should().Be(1);
+        (await DbContext.StudyGuideAcceptedCandidates.CountAsync()).Should().Be(1);
     }
 }

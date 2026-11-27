@@ -460,11 +460,4 @@ public sealed class SuggestTopicsHttpTests : TopicDbFixture
 
         response.StatusCode.Should().Be(HttpStatusCode.BadRequest);
     }
-
-    [Fact]
-    public void RejectionDetail_ForTheSuggestPath_IsTheTopicSuggestionMessage()
-    {
-        Quizymode.Api.StartupExtensions.StartupExtensions.GetRejectionDetail(new Microsoft.AspNetCore.Http.PathString("/taxonomy/suggest"))
-            .Should().Be("Too many topic suggestions. Please wait a moment and try again.");
-    }
 }

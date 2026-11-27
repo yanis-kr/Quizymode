@@ -19,6 +19,10 @@ internal sealed class CollectionConfiguration : IEntityTypeConfiguration<Collect
             .IsRequired()
             .HasDefaultValue(false);
 
+        builder.Property(x => x.IsAutoCreated)
+            .IsRequired()
+            .HasDefaultValue(false);
+
         builder.Property(x => x.Name)
             .IsRequired()
             .HasMaxLength(200);

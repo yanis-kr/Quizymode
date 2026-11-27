@@ -3,6 +3,7 @@ using Microsoft.Extensions.Options;
 using Quizymode.Api.Data;
 using Quizymode.Api.Services;
 using Quizymode.Api.Services.Taxonomy;
+using Quizymode.Api.Shared.Helpers;
 using Quizymode.Api.Shared.Kernel;
 using Quizymode.Api.Shared.Models;
 using Quizymode.Api.Shared.Options;
@@ -15,7 +16,8 @@ namespace Quizymode.Api.Features.StudyGuideDocuments.Generation;
 /// already cached. Each document is saved in its own DI scope and transaction as the document owner with a non-admin context:
 /// items are always private, never published. Blocked or invalid candidates are skipped. Idempotent and safe to run on
 /// several API instances (a busy document is skipped). A document that keeps failing is marked Failed after
-/// <c>AutoSaveMaxAttempts</c> and left to the manual review flow.
+/// <c>AutoSaveMaxAttempts</c> and left to the manual review flow. A daily item or collection quota refusal (AC 17) marks the
+/// sections Failed at once.
 /// </summary>
 internal sealed class StudyGuideAutoSaver(
     ApplicationDbContext db,
@@ -27,6 +29,7 @@ internal sealed class StudyGuideAutoSaver(
     ITextModerationService moderation,
     IOptions<StudyGuideGenerationOptions> generationOptions,
     IOptions<StudyGuideDocumentOptions> documentOptions,
+    IOptions<QuotaSettings> quotaOptions,
     TimeProvider timeProvider,
     ILogger<StudyGuideAutoSaver> logger)
 {
@@ -39,8 +42,12 @@ internal sealed class StudyGuideAutoSaver(
     private readonly ITextModerationService _moderation = moderation;
     private readonly StudyGuideGenerationOptions _options = generationOptions.Value;
     private readonly int _retentionDays = documentOptions.Value.RetentionDays;
+    private readonly QuotaSettings _quotas = quotaOptions.Value;
     private readonly TimeProvider _timeProvider = timeProvider;
     private readonly ILogger<StudyGuideAutoSaver> _logger = logger;
+
+    /// <summary>The daily quota that refused the last <see cref="SaveDocumentAsync"/> call on this instance, if any.</summary>
+    public Error? QuotaRefusal { get; private set; }
 
     /// <summary>Saves up to <c>AutoSaveBatchSize</c> documents that have completed Pending sections; returns how many were attempted.</summary>
     public async Task<int> SweepAsync(CancellationToken cancellationToken)
@@ -76,6 +83,7 @@ internal sealed class StudyGuideAutoSaver(
     public async Task<bool> SaveDocumentAsync(Guid documentId, CancellationToken cancellationToken)
     {
         List<Guid> sectionIds = [];
+        QuotaRefusal = null;
         try
         {
             string? ownerId = await _db.StudyGuideDocuments
@@ -125,7 +133,8 @@ internal sealed class StudyGuideAutoSaver(
                 _timeProvider.GetUtcNow().UtcDateTime,
                 cancellationToken,
                 _logger,
-                sectionIds);
+                sectionIds,
+                _quotas);
             if (result.IsSuccess)
             {
                 return true;
@@ -137,17 +146,22 @@ internal sealed class StudyGuideAutoSaver(
             }
 
             _logger.LogWarning("StudyGuideAutoSave: document {DocumentId} not saved: {Error}.", documentId, result.Error.Code);
+            if (CreationQuota.IsQuotaError(result.Error))
+            {
+                QuotaRefusal = result.Error;
+            }
         }
         catch (Exception ex) when (ex is not OperationCanceledException)
         {
             _logger.LogError(ex, "StudyGuideAutoSave: saving document {DocumentId} failed.", documentId);
         }
 
-        await RecordFailureAsync(documentId, sectionIds, cancellationToken);
+        // A quota refusal would repeat on every retry today, so it fails the sections at once (manual review stays possible).
+        await RecordFailureAsync(documentId, sectionIds, giveUpNow: QuotaRefusal is not null, cancellationToken);
         return false;
     }
 
-    private async Task RecordFailureAsync(Guid documentId, List<Guid> sectionIds, CancellationToken cancellationToken)
+    private async Task RecordFailureAsync(Guid documentId, List<Guid> sectionIds, bool giveUpNow, CancellationToken cancellationToken)
     {
         try
         {
@@ -159,8 +173,12 @@ internal sealed class StudyGuideAutoSaver(
             int maxAttempts = Math.Max(1, _options.AutoSaveMaxAttempts);
             foreach (StudyGuideSection section in sections)
             {
-                section.AutoSaveAttempts++;
-                if (section.AutoSaveAttempts >= maxAttempts)
+                if (!giveUpNow)
+                {
+                    section.AutoSaveAttempts++;
+                }
+
+                if (giveUpNow || section.AutoSaveAttempts >= maxAttempts)
                 {
                     section.AutoSave = StudyGuideAutoSave.Failed;
                     _logger.LogWarning(

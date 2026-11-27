@@ -1,4 +1,5 @@
 using Microsoft.Extensions.Logging;
+using Quizymode.Api.Shared.Helpers;
 using Quizymode.Api.Shared.Kernel;
 
 namespace Quizymode.Api.Shared.Http;
@@ -16,7 +17,10 @@ public static class CustomResults
             throw new InvalidOperationException();
         }
 
-        int statusCode = result.Error.Code == "Media.PendingReviewQuota" ? StatusCodes.Status429TooManyRequests : GetStatusCode(result.Error.Type);
+        bool isCreationQuota = CreationQuota.IsQuotaError(result.Error);
+        int statusCode = isCreationQuota || result.Error.Code == "Media.PendingReviewQuota"
+            ? StatusCodes.Status429TooManyRequests
+            : GetStatusCode(result.Error.Type);
         Exception? exception = result.Error.Exception;
         if (logger is not null && exception is not null)
         {
@@ -38,6 +42,12 @@ public static class CustomResults
             detail: GetDetail(result.Error),
             type: statusCode == 429 ? "https://tools.ietf.org/html/rfc6585#section-4" : GetType(result.Error.Type),
             statusCode: statusCode);
+
+        if (isCreationQuota)
+        {
+            // AC 17.4: quota days are UTC days.
+            return new RetryAfterProblemResult(problem, CreationQuota.SecondsToNextUtcDay(DateTime.UtcNow));
+        }
 
         if (exception is not null && logger is null)
         {
@@ -120,6 +130,23 @@ public static class CustomResults
             detail: detail ?? "The requested resource was not found",
             type: "https://tools.ietf.org/html/rfc7231#section-6.5.4",
             statusCode: StatusCodes.Status404NotFound);
+    }
+
+    /// <summary>Adds <c>Retry-After</c> to a problem result while keeping its status code and body observable.</summary>
+    internal sealed class RetryAfterProblemResult(IResult inner, int retryAfterSeconds)
+        : IResult, IStatusCodeHttpResult, IValueHttpResult, IContentTypeHttpResult
+    {
+        public int? StatusCode => (inner as IStatusCodeHttpResult)?.StatusCode;
+
+        public object? Value => (inner as IValueHttpResult)?.Value;
+
+        public string? ContentType => (inner as IContentTypeHttpResult)?.ContentType;
+
+        public Task ExecuteAsync(HttpContext httpContext)
+        {
+            httpContext.Response.Headers.RetryAfter = retryAfterSeconds.ToString(System.Globalization.CultureInfo.InvariantCulture);
+            return inner.ExecuteAsync(httpContext);
+        }
     }
 
     /// <summary>
