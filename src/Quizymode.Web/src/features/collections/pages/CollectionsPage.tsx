@@ -23,6 +23,7 @@ import {
 import { StarIcon as StarIconSolid } from "@heroicons/react/24/solid";
 import { BookmarkIcon as BookmarkIconSolid, CheckCircleIcon as CheckCircleIconSolid } from "@heroicons/react/24/solid";
 import LoadingSpinner from "@/components/LoadingSpinner";
+import SaveError from "@/components/SaveError";
 import ErrorMessage from "@/components/ErrorMessage";
 import { SEO } from "@/components/SEO";
 import { buildCollectionPath, buildCollectionStudyPath } from "@/utils/collectionPath";
@@ -338,6 +339,11 @@ function CollectionCard({
               ? `${ratingData.averageStars} (${ratingData.count})`
               : "No ratings yet"}
           </span>
+          <SaveError
+            error={setRatingMutation.error}
+            fallback="Could not save your rating. Please try again."
+            className="w-full text-xs text-red-ink"
+          />
         </div>
       )}
       <div className="flex flex-wrap gap-2 mt-4">
@@ -635,6 +641,7 @@ const CollectionsPage = () => {
     id: string,
     payload: { name: string; description: string | null; isPublic: boolean; isDiscoverable: boolean }
   ) => {
+    updateMutation.reset();
     setEditingCollectionId(id);
     setEditingName(payload.name);
     setEditingDescription(payload.description ?? "");
@@ -925,6 +932,7 @@ const CollectionsPage = () => {
           className="fixed inset-0 bg-black/50 overflow-y-auto h-full w-full z-50"
           onClick={() => {
             if (!createMutation.isPending) {
+              createMutation.reset();
               setShowCreateModal(false);
               setCollectionName("");
               setCreateCollectionDescription("");
@@ -1003,7 +1011,7 @@ const CollectionsPage = () => {
                 <div className="flex justify-end space-x-3">
                   <button
                     type="button"
-                    onClick={() => { setShowCreateModal(false); setCollectionName(""); setCreateCollectionDescription(""); setCreateCollectionIsPublic(false); setCreateCollectionIsDiscoverable(false); }}
+                    onClick={() => { createMutation.reset(); setShowCreateModal(false); setCollectionName(""); setCreateCollectionDescription(""); setCreateCollectionIsPublic(false); setCreateCollectionIsDiscoverable(false); }}
                     className="px-4 py-2 text-sm font-medium text-gray-700 bg-surface border border-gray-300 rounded-md hover:bg-gray-50"
                     disabled={createMutation.isPending}
                   >
@@ -1018,9 +1026,11 @@ const CollectionsPage = () => {
                   </button>
                 </div>
               </form>
-              {createMutation.isError && (
-                <div className="mt-3 text-sm text-red-600">Failed to create collection. Please try again.</div>
-              )}
+              <SaveError
+                error={createMutation.error}
+                fallback="Failed to create collection. Please try again."
+                className="mt-3 text-sm text-red-600"
+              />
             </div>
           </div>
         </div>
@@ -1031,6 +1041,7 @@ const CollectionsPage = () => {
           className="fixed inset-0 bg-black/50 overflow-y-auto h-full w-full z-50"
           onClick={() => {
             if (!updateMutation.isPending) {
+              updateMutation.reset();
               setEditingCollectionId(null);
             }
           }}
@@ -1106,7 +1117,7 @@ const CollectionsPage = () => {
                 <div className="flex justify-end space-x-3">
                   <button
                     type="button"
-                    onClick={() => setEditingCollectionId(null)}
+                    onClick={() => { updateMutation.reset(); setEditingCollectionId(null); }}
                     className="px-4 py-2 text-sm font-medium text-gray-700 bg-surface border border-gray-300 rounded-md hover:bg-gray-50"
                     disabled={updateMutation.isPending}
                   >
@@ -1121,9 +1132,11 @@ const CollectionsPage = () => {
                   </button>
                 </div>
               </form>
-              {updateMutation.isError && (
-                <div className="mt-3 text-sm text-red-600">Failed to update collection. Please try again.</div>
-              )}
+              <SaveError
+                error={updateMutation.error}
+                fallback="Failed to update collection. Please try again."
+                className="mt-3 text-sm text-red-600"
+              />
             </div>
           </div>
         </div>

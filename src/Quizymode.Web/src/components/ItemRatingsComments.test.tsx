@@ -5,6 +5,8 @@ import { MemoryRouter } from "react-router-dom";
 import ItemRatingsComments from "./ItemRatingsComments";
 import { ratingsApi } from "@/api/ratings";
 import { commentsApi } from "@/api/comments";
+import userEvent from "@testing-library/user-event";
+import { refusal } from "@/test/refusal";
 
 vi.mock("@/contexts/AuthContext", () => ({
   useAuth: () => ({
@@ -67,6 +69,9 @@ describe("ItemRatingsComments", () => {
         createdBy: "user-1",
         createdAt: "2026-04-11T12:00:00Z",
       })),
+      totalCount: 12,
+      page: 1,
+      pageSize: 1,
     });
     vi.mocked(ratingsApi.createOrUpdate).mockResolvedValue({
       id: "rating-1",
@@ -89,5 +94,33 @@ describe("ItemRatingsComments", () => {
       expect(screen.queryByText("(6)")).not.toBeInTheDocument();
     });
     expect(commentsButton.className).toContain("whitespace-nowrap");
+  });
+
+  it("AC 2.5.11 counts the server total, not the loaded comments, and asks for one comment", async () => {
+    vi.mocked(commentsApi.getByItemId).mockResolvedValue({
+      comments: [], totalCount: 212, page: 1, pageSize: 1,
+    });
+
+    renderItemRatingsComments();
+
+    expect(await screen.findByRole("button", { name: "Comments (212)" })).toBeInTheDocument();
+    expect(commentsApi.getByItemId).toHaveBeenCalledWith("item-1", 1, 1);
+  });
+
+  it("AC 17.8 shows the server message for a refused rating and does not retry", async () => {
+    vi.mocked(ratingsApi.createOrUpdate).mockRejectedValue(refusal("Too many changes in a short time."));
+    const user = userEvent.setup({ delay: null });
+    renderItemRatingsComments();
+    await waitFor(() => expect(ratingsApi.getUserRating).toHaveBeenCalled());
+    const fifth = screen.getByTitle("Rate 5 stars");
+    const before = fifth.innerHTML;
+
+    await user.click(fifth);
+
+    const alert = await screen.findByRole("alert");
+    expect(alert).toHaveTextContent("Too many changes in a short time.");
+    expect(alert).not.toHaveTextContent("429");
+    expect(fifth.innerHTML).toBe(before);
+    expect(ratingsApi.createOrUpdate).toHaveBeenCalledTimes(1);
   });
 });

@@ -1,7 +1,7 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { sanitizeInAppPath } from "@/utils/safeInAppPath";
 import { useParams, useNavigate, useSearchParams } from "react-router-dom";
-import { useQuery, useMutation, useQueryClient } from "@tanstack/react-query";
+import { useMutation, useQueryClient } from "@tanstack/react-query";
 import { commentsApi } from "@/api/comments";
 import { useAuth } from "@/contexts/AuthContext";
 import { useCurrentUserId } from "@/hooks/useCurrentUserId";
@@ -9,6 +9,9 @@ import { categoryNameToSlug } from "@/utils/categorySlug";
 import { PencilIcon, TrashIcon } from "@heroicons/react/24/outline";
 import LoadingSpinner from "@/components/LoadingSpinner";
 import ErrorMessage from "@/components/ErrorMessage";
+import LoadOlderComments from "@/components/LoadOlderComments";
+import SaveError from "@/components/SaveError";
+import { useItemComments } from "@/hooks/useItemComments";
 
 const ItemCommentsPage = () => {
   const { id: itemId } = useParams<{ id: string }>();
@@ -92,11 +95,17 @@ const ItemCommentsPage = () => {
   const previousItemId = getPreviousItemId();
   const nextItemId = getNextItemId();
 
-  const { data, isLoading, error, refetch } = useQuery({
-    queryKey: ["comments", itemId],
-    queryFn: () => commentsApi.getByItemId(itemId!),
-    enabled: !!itemId,
-  });
+  const {
+    comments,
+    isLoading,
+    hasLoadError,
+    refetch,
+    hasOlder,
+    loadOlder,
+    isFetching,
+    isLoadingOlder,
+    loadOlderError,
+  } = useItemComments(itemId);
 
   const createMutation = useMutation({
     mutationFn: (text: string) => commentsApi.create({ itemId: itemId!, text }),
@@ -123,7 +132,16 @@ const ItemCommentsPage = () => {
     },
   });
 
+  const resetCreate = createMutation.reset;
+  const resetUpdate = updateMutation.reset;
+  // A refusal belongs to the question it happened on.
+  useEffect(() => {
+    resetCreate();
+    resetUpdate();
+  }, [itemId, resetCreate, resetUpdate]);
+
   const handleEdit = (comment: { id: string; text: string }) => {
+    updateMutation.reset();
     setEditingCommentId(comment.id);
     setEditText(comment.text);
   };
@@ -135,20 +153,19 @@ const ItemCommentsPage = () => {
   };
 
   const handleCancelEdit = () => {
+    updateMutation.reset();
     setEditingCommentId(null);
     setEditText("");
   };
 
   if (isLoading) return <LoadingSpinner />;
-  if (error)
+  if (hasLoadError)
     return (
       <ErrorMessage
         message="Failed to load comments"
         onRetry={() => refetch()}
       />
     );
-
-  const comments = data?.comments || [];
 
   return (
     <div className="px-4 py-6 sm:px-0">
@@ -213,6 +230,10 @@ const ItemCommentsPage = () => {
                 {createMutation.isPending ? "Posting..." : "Post Comment"}
               </button>
             </div>
+            <SaveError
+              error={createMutation.error}
+              fallback="Could not post your comment. Please try again."
+            />
           </div>
         )}
 
@@ -253,6 +274,10 @@ const ItemCommentsPage = () => {
                           {updateMutation.isPending ? "Saving..." : "Save"}
                         </button>
                       </div>
+                      <SaveError
+                        error={updateMutation.error}
+                        fallback="Could not save your changes. Please try again."
+                      />
                     </div>
                   ) : (
                     <>
@@ -311,6 +336,13 @@ const ItemCommentsPage = () => {
             </div>
           )}
         </div>
+        <LoadOlderComments
+          hasOlder={hasOlder}
+          isFetching={isFetching}
+          isLoadingOlder={isLoadingOlder}
+          errorMessage={loadOlderError}
+          onLoadOlder={loadOlder}
+        />
       </div>
     </div>
   );

@@ -2,14 +2,17 @@
  * Drawer/sheet for viewing and adding comments without leaving the study flow.
  * Desktop: right-side drawer; mobile: full-screen overlay.
  */
-import { useState } from "react";
-import { useQuery, useMutation, useQueryClient } from "@tanstack/react-query";
+import { useEffect, useState } from "react";
+import { useMutation, useQueryClient } from "@tanstack/react-query";
 import { commentsApi, type CommentResponse } from "@/api/comments";
 import { useAuth } from "@/contexts/AuthContext";
 import { useCurrentUserId } from "@/hooks/useCurrentUserId";
 import { XMarkIcon, PencilIcon, TrashIcon } from "@heroicons/react/24/outline";
 import LoadingSpinner from "./LoadingSpinner";
 import ErrorMessage from "./ErrorMessage";
+import LoadOlderComments from "./LoadOlderComments";
+import SaveError from "./SaveError";
+import { useItemComments } from "@/hooks/useItemComments";
 
 export interface CommentsDrawerProps {
   itemId: string | null;
@@ -34,11 +37,17 @@ export function CommentsDrawer({
   const [editText, setEditText] = useState("");
   const [newCommentText, setNewCommentText] = useState("");
 
-  const { data, isLoading, error, refetch } = useQuery({
-    queryKey: ["comments", itemId],
-    queryFn: () => commentsApi.getByItemId(itemId!),
-    enabled: !!itemId,
-  });
+  const {
+    comments,
+    isLoading,
+    hasLoadError,
+    refetch,
+    hasOlder,
+    loadOlder,
+    isFetching,
+    isLoadingOlder,
+    loadOlderError,
+  } = useItemComments(itemId);
 
   const createMutation = useMutation({
     mutationFn: (text: string) =>
@@ -66,7 +75,16 @@ export function CommentsDrawer({
     },
   });
 
+  const resetCreate = createMutation.reset;
+  const resetUpdate = updateMutation.reset;
+  // A refusal belongs to the question it happened on.
+  useEffect(() => {
+    resetCreate();
+    resetUpdate();
+  }, [itemId, resetCreate, resetUpdate]);
+
   const handleEdit = (comment: CommentResponse) => {
+    updateMutation.reset();
     setEditingCommentId(comment.id);
     setEditText(comment.text);
   };
@@ -78,6 +96,7 @@ export function CommentsDrawer({
   };
 
   const handleCancelEdit = () => {
+    updateMutation.reset();
     setEditingCommentId(null);
     setEditText("");
   };
@@ -147,7 +166,7 @@ export function CommentsDrawer({
         <div className="flex-1 overflow-y-auto p-4">
           {isLoading ? (
             <LoadingSpinner />
-          ) : error ? (
+          ) : hasLoadError ? (
             <ErrorMessage
               message="Could not load comments. Try again."
               onRetry={() => refetch()}
@@ -177,12 +196,16 @@ export function CommentsDrawer({
                   >
                     {createMutation.isPending ? "Posting..." : "Post Comment"}
                   </button>
+                  <SaveError
+                    error={createMutation.error}
+                    fallback="Could not post your comment. Please try again."
+                  />
                 </div>
               )}
 
               <div className="space-y-3">
-                {(data?.comments || []).length > 0 ? (
-                  (data?.comments || []).map((comment) => {
+                {comments.length > 0 ? (
+                  comments.map((comment) => {
                     const isOwner = !!currentUserId && comment.createdBy === currentUserId;
                     const isEditing = editingCommentId === comment.id;
 
@@ -218,6 +241,10 @@ export function CommentsDrawer({
                                 {updateMutation.isPending ? "Saving..." : "Save"}
                               </button>
                             </div>
+                            <SaveError
+                              error={updateMutation.error}
+                              fallback="Could not save your changes. Please try again."
+                            />
                           </div>
                         ) : (
                           <>
@@ -280,6 +307,13 @@ export function CommentsDrawer({
                   </p>
                 )}
               </div>
+              <LoadOlderComments
+                hasOlder={hasOlder}
+                isFetching={isFetching}
+                isLoadingOlder={isLoadingOlder}
+                errorMessage={loadOlderError}
+                onLoadOlder={loadOlder}
+              />
             </>
           )}
         </div>

@@ -5,6 +5,7 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { MemoryRouter, Route, Routes, useLocation } from "react-router-dom";
 import CreateItemPage from "./CreateItemPage";
 import { itemsApi } from "@/api/items";
+import { refusal } from "@/test/refusal";
 import { collectionsApi } from "@/api/collections";
 import { taxonomyApi } from "@/api/taxonomy";
 import { useExtraKeywordAutocompleteSource } from "@/hooks/useExtraKeywordAutocompleteSource";
@@ -333,6 +334,22 @@ describe("CreateItemPage", () => {
         navigationKeyword2: "muscular",
       })
     );
+  });
+
+  it("AC 17.8 shows the server message for a refused save and keeps the question", async () => {
+    vi.mocked(itemsApi.create).mockRejectedValue(refusal("Daily question limit reached."));
+    const user = userEvent.setup({ delay: null });
+    renderPage("/create/question?category=science&keywords=anatomy,muscular");
+    await waitFor(() => expect(screen.getByLabelText(/subtopic/i)).toHaveValue("muscular"));
+    await user.type(getFieldControl("Question *"), "What connects muscle to bone?");
+    await user.type(getFieldControl("Correct Answer *"), "Tendons");
+    await user.type(screen.getByPlaceholderText("Incorrect answer 1"), "Ligaments");
+
+    await user.click(screen.getByRole("button", { name: /save and study/i }));
+
+    expect(await screen.findByText("Daily question limit reached.")).toBeInTheDocument();
+    expect(getFieldControl("Question *")).toHaveValue("What connects muscle to bone?");
+    expect(itemsApi.create).toHaveBeenCalledTimes(1);
   });
 
   it("Save and study opens the study route of the active collection (#296)", async () => {

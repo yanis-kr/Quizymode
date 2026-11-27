@@ -5,6 +5,7 @@ import { useNavigate, useSearchParams, Link } from "react-router-dom";
 import { useAuth } from "@/contexts/AuthContext";
 import { itemsApi, type UploadToCollectionResponse } from "@/api/items";
 import ErrorMessage from "@/components/ErrorMessage";
+import { getServerErrorMessage } from "@/utils/apiError";
 import { ItemTopicScopeFields, type TopicScopeFieldsHandle } from "@/components/items/ItemTopicScopeFields";
 import { applyTopicScopePatch, isTopicComplete, TOPIC_REQUIRED_MESSAGE } from "@/features/topics/topicScope";
 import {
@@ -494,9 +495,9 @@ const UploadToCollectionPage = ({
       </form>
 
       {(parseError || uploadMutation.error) && (
-        <div className="mt-4">
+        <div className="mt-4" role="alert">
           <ErrorMessage
-            message={parseError ?? (uploadMutation.error as Error)?.message ?? "Upload failed"}
+            message={parseError ?? getServerErrorMessage(uploadMutation.error, "Upload failed")}
             onRetry={uploadMutation.error ? () => uploadMutation.reset() : undefined}
           />
         </div>

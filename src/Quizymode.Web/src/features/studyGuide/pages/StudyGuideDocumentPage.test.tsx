@@ -323,6 +323,31 @@ describe("StudyGuideDocumentPage", () => {
     expect(screen.getByRole("heading", { name: "Choose sections" }).closest("div[tabindex='-1']")).toHaveFocus();
   });
 
+  it("AC 17.8 shows the server message for a refused save, keeps the collection name and does not retry", async () => {
+    vi.mocked(studyGuideDocumentsApi.get).mockResolvedValue(
+      makeDocument({ sections: [section(0, { status: "Generated", candidates: [candidate("c1")] }), section(1)] })
+    );
+    vi.mocked(studyGuideDocumentsApi.accept).mockRejectedValue(
+      new AxiosError("Too Many Requests", "ERR_BAD_REQUEST", undefined, undefined, {
+        status: 429,
+        statusText: "Too Many Requests",
+        headers: {},
+        config: { headers: new AxiosHeaders() },
+        data: { title: "Quota.CollectionsPerDay", detail: "Daily collection limit reached." },
+      })
+    );
+
+    renderPage();
+
+    const input = await screen.findByLabelText("Collection name");
+    fireEvent.change(input, { target: { value: "Keep me" } });
+    fireEvent.click(screen.getByRole("button", { name: "Save 1 selected" }));
+
+    expect(await screen.findByText("Daily collection limit reached.")).toBeInTheDocument();
+    expect(screen.getByLabelText("Collection name")).toHaveValue("Keep me");
+    expect(studyGuideDocumentsApi.accept).toHaveBeenCalledTimes(1);
+  });
+
   it("hides the Save as control from non-admins and never sends publish", async () => {
     // AC 6.6.28
     vi.mocked(studyGuideDocumentsApi.get).mockResolvedValue(

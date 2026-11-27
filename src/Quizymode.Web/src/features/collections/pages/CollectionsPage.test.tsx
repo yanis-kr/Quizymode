@@ -4,6 +4,8 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { MemoryRouter, useLocation } from "react-router-dom";
 import { addLocalBookmark } from "@/features/collections/localBookmarks";
 import CollectionsPage from "./CollectionsPage";
+import { collectionsApi } from "@/api/collections";
+import { refusal } from "@/test/refusal";
 
 const mockGetAll = vi.fn();
 const mockDiscover = vi.fn();
@@ -185,6 +187,66 @@ describe("CollectionsPage", () => {
         isDiscoverable: false,
       })
     );
+  });
+
+  describe("refused saves (AC 17.8)", () => {
+    beforeEach(() => {
+      mockUseAuth.mockReturnValue({ isAuthenticated: true, userId: "u1", isAdmin: false });
+      mockGetAll.mockResolvedValue({
+        collections: [
+          {
+            id: "c1", name: "My Set", description: null, isPublic: false, isDiscoverable: false,
+            itemCount: 2, createdBy: "u1", createdAt: "2024-01-01T00:00:00Z",
+          },
+        ],
+      });
+    });
+
+    it("shows the server message in the create modal, keeps the name and clears it on Cancel", async () => {
+      vi.mocked(collectionsApi.create).mockRejectedValue(refusal("Daily collection limit reached."));
+      renderPage();
+      fireEvent.click(await screen.findByRole("button", { name: "Create Collection" }));
+      fireEvent.change(screen.getByLabelText("Collection Name"), { target: { value: "Keep me" } });
+
+      fireEvent.click(screen.getByRole("button", { name: "Create" }));
+
+      expect(await screen.findByRole("alert")).toHaveTextContent("Daily collection limit reached.");
+      expect(screen.getByLabelText("Collection Name")).toHaveValue("Keep me");
+
+      fireEvent.click(screen.getByRole("button", { name: "Cancel" }));
+      fireEvent.click(screen.getByRole("button", { name: "Create Collection" }));
+      await waitFor(() => expect(screen.queryByRole("alert")).toBeNull());
+    });
+
+    it("shows the server message in the edit modal and keeps it open", async () => {
+      mockUpdate.mockRejectedValue(refusal("Too many requests."));
+      renderPage();
+      fireEvent.click(await screen.findByTitle("Edit collection"));
+
+      fireEvent.click(screen.getByRole("button", { name: /^save/i }));
+
+      expect(await screen.findByRole("alert")).toHaveTextContent("Too many requests.");
+      expect(screen.getByLabelText("Name")).toHaveValue("My Set");
+
+      fireEvent.click(screen.getByRole("button", { name: "Cancel" }));
+      fireEvent.click(screen.getByTitle("Edit collection"));
+      await waitFor(() => expect(screen.queryByRole("alert")).toBeNull());
+    });
+
+    it("shows the server message on the card when a rating is refused", async () => {
+      vi.mocked(collectionsApi.setRating).mockRejectedValue(refusal("Too many changes in a short time."));
+      mockGetBookmarks.mockResolvedValue({
+        collections: [
+          { id: "c2", name: "Saved Set", description: null, isPublic: true, itemCount: 2, createdBy: "u2", createdAt: "2024-01-01T00:00:00Z" },
+        ],
+      });
+      renderPage("/collections?tab=bookmarked");
+
+      fireEvent.click(await screen.findByTitle("Rate 4 stars"));
+
+      expect(await screen.findByRole("alert")).toHaveTextContent("Too many changes in a short time.");
+      expect(collectionsApi.setRating).toHaveBeenCalledTimes(1);
+    });
   });
 
   it("renders Discover tab", async () => {

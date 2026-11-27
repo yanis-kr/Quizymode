@@ -5,6 +5,7 @@ import { itemsApi } from "@/api/items";
 import { useAuth } from "@/contexts/AuthContext";
 import { useActiveCollection } from "@/hooks/useActiveCollection";
 import { XMarkIcon, PlusIcon } from "@heroicons/react/24/outline";
+import SaveError from "./SaveError";
 
 interface ItemCollectionsModalProps {
   isOpen: boolean;
@@ -145,6 +146,12 @@ const ItemCollectionsModal = ({
     },
   });
 
+  // The modal can stay mounted while closed, so a refusal is cleared on close and when the item changes.
+  const resetCreate = createCollectionMutation.reset;
+  useEffect(() => {
+    resetCreate();
+  }, [isOpen, singleItemId, resetCreate]);
+
   const handleCreateCollection = () => {
     if (newCollectionName.trim()) {
       createCollectionMutation.mutate(newCollectionName.trim());
@@ -258,6 +265,10 @@ const ItemCollectionsModal = ({
                 <PlusIcon className="h-5 w-5" />
               </button>
             </div>
+            <SaveError
+              error={createCollectionMutation.error}
+              fallback="Failed to create collection. Please try again."
+            />
 
             {/* All Collections with Checkboxes and Active */}
             <div>
