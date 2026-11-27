@@ -20,4 +20,12 @@ export default defineConfig([
       globals: globals.browser,
     },
   },
+  {
+    // #918: schemas must run after Zod's jitless setting, so app code takes `z` from src/utils/zodConfig.
+    files: ['src/**/*.{ts,tsx}'],
+    ignores: ['src/utils/zodConfig.ts', 'src/**/*.test.{ts,tsx}'],
+    rules: {
+      'no-restricted-imports': ['error', { paths: [{ name: 'zod', message: "Import { z } from '@/utils/zodConfig'." }] }],
+    },
+  },
 ])

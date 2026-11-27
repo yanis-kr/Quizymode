@@ -2,7 +2,7 @@ import { useCallback, useEffect, useRef, useState, type RefObject } from "react"
 import { createPortal } from "react-dom";
 import { useMutation, useQueryClient } from "@tanstack/react-query";
 import { XMarkIcon } from "@heroicons/react/24/outline";
-import { z } from "zod";
+import { z } from "@/utils/zodConfig";
 import { adminApi, type BulkImageReviewRequest, type ImageReviewQueueItem } from "@/api/admin";
 import ErrorMessage from "@/components/ErrorMessage";
 import LoadingSpinner from "@/components/LoadingSpinner";

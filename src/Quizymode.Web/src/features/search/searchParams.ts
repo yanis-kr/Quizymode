@@ -1,4 +1,4 @@
-import { z } from "zod";
+import { z } from "@/utils/zodConfig";
 import type { SearchType } from "@/api/search";
 
 export const SEARCH_TABS = ["all", "topics", "collections", "questions", "mine"] as const;

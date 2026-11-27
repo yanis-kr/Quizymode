@@ -21,3 +21,16 @@ describe("zodConfig", () => {
     }
   });
 });
+
+// AC 4.6.24: chunks of the production build can run before main.tsx's first import, so every schema module orders the
+// setting itself by importing z from zodConfig (#918).
+describe("zod imports", () => {
+  it("AC 4.6.24: only zodConfig imports z from the zod package", () => {
+    const sources = import.meta.glob("../**/*.{ts,tsx}", { query: "?raw", import: "default", eager: true }) as Record<string, string>;
+    const direct = Object.entries(sources)
+      .filter(([file, text]) => !/\.test\.tsx?$/.test(file) && /from\s+["']zod(\/[^"']*)?["']/.test(text))
+      .map(([file]) => file);
+    expect(Object.keys(sources).length).toBeGreaterThan(100);
+    expect(direct).toEqual(["./zodConfig.ts"]);
+  });
+});

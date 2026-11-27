@@ -1,4 +1,4 @@
-import { z } from "zod";
+import { z } from "@/utils/zodConfig";
 
 export const STUDY_GUIDE_PREMIUM_KEY = "StudyGuidePremium";
 export const STUDY_GUIDE_DAILY_SECTIONS_KEY = "StudyGuideDailySections";
