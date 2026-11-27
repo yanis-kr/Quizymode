@@ -26,6 +26,7 @@ import LoadingSpinner from "@/components/LoadingSpinner";
 import ErrorMessage from "@/components/ErrorMessage";
 import { SEO } from "@/components/SEO";
 import { buildCollectionPath, buildCollectionStudyPath } from "@/utils/collectionPath";
+import { categoryDisplayName } from "@/utils/categorySlug";
 import type {
   CollectionDiscoverItem,
   CollectionRatingResponse,
@@ -822,7 +823,7 @@ const CollectionsPage = () => {
                     <option value="">All categories</option>
                     {sortedDiscoverCategories.map((c) => (
                       <option key={c.category} value={c.category}>
-                        {c.category}
+                        {categoryDisplayName(c.category)}
                       </option>
                     ))}
                   </select>

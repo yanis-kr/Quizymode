@@ -99,7 +99,7 @@ describe("ReviewQueuePage", () => {
       renderWithProviders(<ReviewQueuePage />);
       await startBoss();
 
-      fireEvent.click(await screen.findByRole("button", { name: "Skip question (not scored)" }));
+      fireEvent.click(await screen.findByRole("button", { name: "Skip question" }));
       answer("b", true);
       answer("c", true);
       answer("d", true);

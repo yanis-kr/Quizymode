@@ -221,7 +221,7 @@ describe("ExploreModePage", () => {
     );
 
     expect(
-      await screen.findByText(/Flashcards-style study mode for reviewing quiz items/i)
+      await screen.findByText(/Tap the card to see the answer/i)
     ).toBeInTheDocument();
     expect(screen.getByLabelText(/item count/i)).toHaveTextContent("(1)");
     // Breadcrumb labels are display names; the paths keep the raw keywords (#713).
@@ -287,6 +287,12 @@ describe("ExploreModePage", () => {
       expect(screen.queryByRole("button", { name: /^← back$/i })).not.toBeInTheDocument();
     }
   );
+
+  it("shows the short card hint on an unscoped item too (#902)", async () => {
+    renderPage("/explore/item/item-1");
+
+    expect(await screen.findByText("Tap the card to see the answer.")).toBeInTheDocument();
+  });
 
   it("forwards a safe return path into the first-card URL (AC 4.3.5c)", async () => {
     renderPage("/explore/exams?return=%2Fcategories%2Fexams");

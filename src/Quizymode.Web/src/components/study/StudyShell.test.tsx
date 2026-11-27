@@ -29,7 +29,7 @@ describe("StudyShell", () => {
     render(
       <MemoryRouter>
         <StudyShell
-          description="Flashcards-style study mode for reviewing quiz items."
+          description="Tap the card to see the answer."
           currentIndex={0}
           totalCount={3}
           onPrev={() => {}}
@@ -47,7 +47,7 @@ describe("StudyShell", () => {
     );
 
     expect(
-      screen.getByText(/Flashcards-style study mode for reviewing quiz items/i)
+      screen.getByText(/Tap the card to see the answer/i)
     ).toBeInTheDocument();
     expect(
       screen.queryByRole("heading", { name: /Flashcards Mode/i })

@@ -883,7 +883,7 @@ const ExploreModePage = () => {
             />
           }
           count={sourceDeck.length}
-          hint="Flashcards-style study mode for reviewing quiz items."
+          hint="Tap the card to see the answer."
         />
       )}
       {showDetails && collectionId && collectionInfo && (
@@ -988,7 +988,7 @@ const ExploreModePage = () => {
         }
         description={
           !category || !!collectionId
-            ? "Flashcards-style study mode for reviewing quiz items."
+            ? "Tap the card to see the answer."
             : undefined
         }
         currentIndex={currentIndex}

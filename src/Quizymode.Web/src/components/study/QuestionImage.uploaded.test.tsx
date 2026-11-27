@@ -40,14 +40,14 @@ describe("Uploaded item-bound picture grants", () => {
     const onSkip = vi.fn(); vi.mocked(mediaApi.content).mockResolvedValue(new Blob(["normalized"]));
     render(<MemoryRouter><QuestionImage image={uploaded} itemId="item-1" onSkip={onSkip} /></MemoryRouter>);
     fireEvent.load(await screen.findByRole("img"));
-    const skip = screen.getByRole("button", { name: "Skip question (not scored)" }); skip.focus();
+    const skip = screen.getByRole("button", { name: "Skip question" }); skip.focus();
     await userEvent.keyboard("{Enter}"); expect(onSkip).toHaveBeenCalledOnce();
   });
   it("offers Skip when the picture failed to load", async () => {
     vi.mocked(mediaApi.content).mockRejectedValue(new Error("404"));
     render(<MemoryRouter><QuestionImage image={uploaded} itemId="item-1" onSkip={vi.fn()} /></MemoryRouter>);
     await screen.findByText("Picture couldn't load");
-    expect(screen.getAllByRole("button", { name: "Skip question (not scored)" })).toHaveLength(1);
+    expect(screen.getAllByRole("button", { name: "Skip question" })).toHaveLength(1);
     expect(screen.getByRole("button", { name: "Retry loading picture" })).toBeInTheDocument();
   });
   it("says a withdrawn picture was withdrawn, with no Retry, no fetch and no report link (AC 3.30.3)", () => {
