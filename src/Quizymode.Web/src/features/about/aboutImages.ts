@@ -49,8 +49,8 @@ export const ABOUT_IMAGES = {
   notesSections: {
     src: "/about/notes-sections.webp",
     width: 590,
-    height: 972,
-    alt: "Choose sections for sample notes on the water cycle: Evaporation, Condensation and clouds, and Precipitation, each with a checkbox and a short preview.",
+    height: 570,
+    alt: "Sections of sample notes on the water cycle to choose from: Evaporation, Condensation and clouds, and Precipitation, each with a checkbox and a short preview.",
   },
   notesReview: {
     src: "/about/notes-review.webp",

@@ -10,7 +10,7 @@ The `/about` page (#885, AC 3.0.60 to 3.0.62) shows eight screenshots from `src/
 - Format: WebP, converted in Chromium with `canvas.toDataURL("image/webp", 0.8)`. Cap 100 KB per file, target 60 KB.
 - Stack: local only. API in Development with `Authentication__DevTest__Enabled=true` and the dummy Cognito values from the `e2e` job in `.github/workflows/ci.yml`, against a fresh, throwaway Postgres container. The web dev server ran with `VITE_DEV_TEST_USER` set. No production sign-in and no personal data.
 - Seed data: the Development startup seed (`data/seed-dev/selection.json` items and the **Fun Trivia Facts** collection `8f9b8c14-8d30-4d94-9b20-4c7bb7f7f511`, five questions).
-- Notes-to-quiz: local Development has no LLM provider, so the capture stubbed `GET /api/study-guides/documents/config` and `GET /api/study-guides/documents/{id}` with an invented sample document ("The water cycle (class notes)", four sections, two drafted questions with source quotes). The pages render real UI; only that data is sample.
+- Notes-to-quiz: local Development has no LLM provider, so the capture stubbed `GET /api/study-guides/documents/config` and `GET /api/study-guides/documents/{id}` with an invented sample document ("The water cycle (class notes)", four sections, two drafted questions with source quotes). The pages render real UI. Everything those two requests return is invented, including the generation allowance, so no image may show the allowance box: `notes-sections.webp` is cropped to the section list.
 
 | File | Pixels | Bytes | Route | Crop (CSS px) | Used in |
 | --- | --- | --- | --- | --- | --- |
@@ -20,10 +20,10 @@ The `/about` page (#885, AC 3.0.60 to 3.0.62) shows eight screenshots from `src/
 | `match-race.webp` | 750x784 | 25,250 | `/games/match-race/collections/{Fun Trivia Facts}` after matching one pair | 375x392 from the Match Race heading | Learn your way, Games card |
 | `daily.webp` | 750x1444 | 39,092 | `/daily` (first question, no streak chip) | 375x722 from the Daily quiz heading | Small habits |
 | `notes-add.webp` | 590x580 | 21,498 | `/create/notes`, **Photos or scan** tab | 295x290 from the tab row | Notes step 1 |
-| `notes-sections.webp` | 590x972 | 39,630 | `/study-guides/documents/{sample}` (sections New) | 295x486 from Choose sections | Notes step 2 |
+| `notes-sections.webp` | 590x570 | 26,596 | `/study-guides/documents/{sample}` (sections New) | 295x285, the section list below the allowance box (quality 0.86) | Notes step 2 |
 | `notes-review.webp` | 590x644 | 24,886 | `/study-guides/documents/{sample}` (first section Generated) | 295x322, the first drafted question | Notes step 3 |
 
-Total: 215,842 bytes (about 211 KB), all loaded lazily below the fold.
+Total: 202,808 bytes (about 198 KB), all loaded lazily below the fold.
 
 ## Regenerate
 
