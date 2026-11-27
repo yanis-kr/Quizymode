@@ -953,6 +953,62 @@ describe("QuizModePage Test mode (AC 3.18)", () => {
       await expectCounter("2 of 3");
     });
 
+    const pictured = { ...item3, questionImage: { key: "curated:flags/fr", altText: "Flag" } };
+    const withPicturedLast = () =>
+      vi.mocked(collectionsApi.getItems).mockResolvedValue({ items: [item1, item2, pictured] } as Awaited<ReturnType<typeof collectionsApi.getItems>>);
+    const skipLast = async () => {
+      fireEvent.load(await screen.findByAltText("Flag"));
+      fireEvent.click(screen.getByRole("button", { name: "Skip question (not scored)" }));
+    };
+
+    it("AC 3.6.43 finishes with View results when the last question is skipped and nothing is left open", async () => {
+      withPicturedLast();
+      renderPage(PRACTICE_URL);
+      await expectCounter("1 of 3");
+      fireEvent.click(option("4"));
+      fireEvent.click(next());
+      await expectCounter("2 of 3");
+      fireEvent.click(option("Paris"));
+      fireEvent.click(next());
+      await expectCounter("3 of 3");
+      await skipLast();
+      expect(screen.getByText("You finished every question.")).toBeInTheDocument();
+      expectNoArrows();
+      fireEvent.click(screen.getByRole("button", { name: "View results" }));
+      await waitFor(() => expect(screen.queryByText("3 of 3")).toBeNull());
+    });
+
+    it("AC 3.6.43 keeps Previous on a skipped last question while earlier ones are open", async () => {
+      withPicturedLast();
+      renderPage(PRACTICE_URL);
+      await expectCounter("1 of 3");
+      fireEvent.click(next());
+      await expectCounter("2 of 3");
+      fireEvent.click(next());
+      await expectCounter("3 of 3");
+      await skipLast();
+      expect(screen.queryByRole("button", { name: /^(See my score|View results)$/ })).toBeNull();
+      expect(next()).toBeDisabled();
+      fireEvent.click(previous());
+      await expectCounter("2 of 3");
+    });
+
+    it("AC 3.6.43 keeps Previous after a typed last answer while earlier ones are open", async () => {
+      renderPage(PRACTICE_URL);
+      await expectCounter("1 of 3");
+      fireEvent.click(next());
+      await expectCounter("2 of 3");
+      fireEvent.click(next());
+      await expectCounter("3 of 3");
+      fireEvent.click(screen.getByLabelText("Type answer"));
+      fireEvent.change(screen.getByLabelText("Type your answer"), { target: { value: "Jupiter" } });
+      fireEvent.click(screen.getByRole("button", { name: "Check answer" }));
+      fireEvent.click(screen.getByRole("button", { name: "Finish" }));
+      expect(screen.queryByRole("button", { name: /^(See my score|View results)$/ })).toBeNull();
+      fireEvent.click(previous());
+      await expectCounter("2 of 3");
+    });
+
     it("AC 3.6.43 moves through a Test with the bottom buttons and can submit on the last question", async () => {
       renderPage(TEST_URL);
       await startTest();
