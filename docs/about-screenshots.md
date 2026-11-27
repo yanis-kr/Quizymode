@@ -1,6 +1,6 @@
 # About page screenshots
 
-The `/about` page (#885, AC 3.0.60 to 3.0.62) shows eight screenshots from `src/Quizymode.Web/public/about/`. The alt text, `width` and `height` of each one live in `src/Quizymode.Web/src/features/about/aboutImages.ts`. Keep the set small: every image here must be recaptured when its screen changes.
+The `/about` page (#885, AC 3.0.60 to 3.0.62) shows eight screenshots from `src/Quizymode.Web/src/assets/about/`. `src/Quizymode.Web/src/features/about/aboutImages.ts` imports each file and holds its alt text, `width` and `height`. Because they are imported, the build emits them like the curated pictures: content-hashed as `assets/m/<hash>.webp`, never inlined, and checked by `npm run check:curated-images` (AC 3.21.7). The deploy's immutable one-year cache for `*.webp` is then safe, since a changed image gets a new name. Do not put them under `public/`, where they would keep fixed names. Keep the set small: every image here must be recaptured when its screen changes.
 
 ## Current capture
 
@@ -32,5 +32,5 @@ Total: 202,808 bytes (about 198 KB), all loaded lazily below the fold.
 3. Start the web dev server with the same `VITE_*` values as the `e2e` job and any `VITE_DEV_TEST_USER`: `npm run dev -- --port 7000 --strictPort` in `src/Quizymode.Web`.
 4. With the Playwright library, open each route above at 375x812, device scale factor 2, with `localStorage["quizymode.theme.v1"] = "light"`, crop the region in the table, and convert the PNG to WebP in the page with a canvas at quality 0.8 (lower it only if a file passes 100 KB). For the notes document, route the two study-guide requests to a sample document as described above.
 5. Open every image and check it by eye: no personal data, no error or loading state, no dev-only banner or user name.
-6. Replace the files in `src/Quizymode.Web/public/about/`, update `width` and `height` in `aboutImages.ts` and this table, and run `npm test -- --run AboutPage` (AC 3.0.60 checks format, size, attributes and that every file is used).
+6. Replace the files in `src/Quizymode.Web/src/assets/about/`, update `width` and `height` in `aboutImages.ts` and this table, and run `npm test -- --run AboutPage` (AC 3.0.60 checks format, size, attributes and that every file is used). Then run `npm run build` and `npm run check:curated-images` (AC 3.21.7).
 7. Stop the API, the dev server and the container.

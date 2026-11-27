@@ -30,7 +30,9 @@ vi.mock("@/contexts/AuthContext", () => ({
 const AHA_ID = "e0eaca22-3e39-4f07-92e6-046baab0d3ea";
 const SOUNDS_FAKE_ID = "3c85dfe2-4365-406d-8056-d30bc451dd20";
 const LANDMARKS_ID = "abdbb0fd-ea31-4890-8a20-831592be74e3";
-const PUBLIC_ABOUT_DIR = path.join(process.cwd(), "public", "about");
+const ABOUT_ASSET_DIR = path.join(process.cwd(), "src", "assets", "about");
+// Vitest serves imported assets by their source path; the production build rewrites them to assets/m/<hash>.webp.
+const ABOUT_SRC = /^\/src\/assets\/about\/([a-z0-9-]+\.webp)$/;
 const getById = vi.mocked(collectionsApi.getById);
 
 function collection(id: string, name: string, itemCount: number, description: string): CollectionResponse {
@@ -349,13 +351,15 @@ describe("AboutPage (#883)", () => {
     }
   });
 
-  it("AC 3.0.60 every About image is a WebP file under public/about of at most 100 KB, with width, height, alt and lazy loading", () => {
+  it("AC 3.0.60 every About image is an imported WebP file under src/assets/about of at most 100 KB, with width, height, alt and lazy loading", () => {
     const container = renderAbout();
-    const files = fs.readdirSync(PUBLIC_ABOUT_DIR);
+    // Fixed-name files under public/ would ship with the immutable webp cache; About images must be imported instead.
+    expect(fs.existsSync(path.join(process.cwd(), "public", "about"))).toBe(false);
+    const files = fs.readdirSync(ABOUT_ASSET_DIR);
     expect(files.length).toBeGreaterThan(0);
     for (const file of files) {
       expect(file, file).toMatch(/\.webp$/);
-      const bytes = fs.readFileSync(path.join(PUBLIC_ABOUT_DIR, file));
+      const bytes = fs.readFileSync(path.join(ABOUT_ASSET_DIR, file));
       expect(bytes.subarray(0, 4).toString("ascii"), file).toBe("RIFF");
       expect(bytes.subarray(8, 12).toString("ascii"), file).toBe("WEBP");
       expect(bytes.length, `${file} size`).toBeLessThanOrEqual(100 * 1024);
@@ -365,15 +369,16 @@ describe("AboutPage (#883)", () => {
     const used = new Set<string>();
     for (const img of images) {
       const src = img.getAttribute("src") ?? "";
-      expect(src, src).toMatch(/^\/about\/[a-z0-9-]+\.webp$/);
-      expect(fs.existsSync(path.join(PUBLIC_ABOUT_DIR, src.slice("/about/".length))), src).toBe(true);
+      const file = ABOUT_SRC.exec(src)?.[1];
+      expect(file, src).toBeDefined();
+      expect(fs.existsSync(path.join(ABOUT_ASSET_DIR, file ?? "")), src).toBe(true);
       expect(Number(img.getAttribute("width")), `${src} width`).toBeGreaterThan(0);
       expect(Number(img.getAttribute("height")), `${src} height`).toBeGreaterThan(0);
       expect((img.getAttribute("alt") ?? "").trim(), `${src} alt`).not.toBe("");
       expect(img.getAttribute("alt") ?? "", `${src} alt`).not.toMatch(/screenshot/i);
       // No image sits above the fold (the Hero and the hook question come first), so every one loads lazily.
       expect(img, src).toHaveAttribute("loading", "lazy");
-      used.add(src.slice("/about/".length));
+      used.add(file ?? "");
     }
     expect([...used].sort()).toEqual([...files].sort());
   });
@@ -403,9 +408,9 @@ describe("AboutPage (#883)", () => {
     ]);
     const images = steps.map((step) => within(step).getByRole("img"));
     expect(images.map((img) => img.getAttribute("src"))).toEqual([
-      "/about/notes-add.webp",
-      "/about/notes-sections.webp",
-      "/about/notes-review.webp",
+      "/src/assets/about/notes-add.webp",
+      "/src/assets/about/notes-sections.webp",
+      "/src/assets/about/notes-review.webp",
     ]);
     expect(images[0]).toHaveAccessibleName(expect.stringContaining("Photos or scan"));
     expect(images[2]).toHaveAccessibleName(expect.stringContaining("quote"));
