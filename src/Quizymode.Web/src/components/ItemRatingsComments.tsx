@@ -3,6 +3,8 @@ import { useQuery, useMutation, useQueryClient } from "@tanstack/react-query";
 import { useNavigate } from "react-router-dom";
 import { ratingsApi } from "@/api/ratings";
 import { commentsApi } from "@/api/comments";
+import { patchBulkRating } from "@/features/items/hooks/useBulkRatings";
+import SaveError from "./SaveError";
 import { useAuth } from "@/contexts/AuthContext";
 import { StarIcon } from "@heroicons/react/24/outline";
 import { StarIcon as StarIconSolid } from "@heroicons/react/24/solid";
@@ -49,8 +51,9 @@ const ItemRatingsComments = ({
   });
 
   const { data: commentsData } = useQuery({
-    queryKey: ["comments", itemId],
-    queryFn: () => commentsApi.getByItemId(itemId),
+    // Only the total is needed here, so one comment is requested.
+    queryKey: ["comments", itemId, "count"],
+    queryFn: () => commentsApi.getByItemId(itemId, 1, 1),
     enabled: true,
   });
 
@@ -79,13 +82,18 @@ const ItemRatingsComments = ({
       setUserRating(response.stars);
       // Invalidate individual item rating stats
       queryClient.invalidateQueries({ queryKey: ["ratingStats", itemId] });
-      // Invalidate all bulk rating stats queries (used for filtering in list view)
-      queryClient.invalidateQueries({ queryKey: ["ratingStats", "bulk"] });
+      // Only this item changes in the bulk statistics used by list filtering; reloading them costs a request per item
+      void patchBulkRating(queryClient, itemId);
       queryClient.invalidateQueries({ queryKey: ["userRating", itemId] });
       // Invalidate categories (ratings affect category average display)
       queryClient.invalidateQueries({ queryKey: ["categories"] });
     },
   });
+
+  const resetRating = ratingMutation.reset;
+  useEffect(() => {
+    resetRating();
+  }, [itemId, resetRating]);
 
   const handleStarClick = (stars: number) => {
     if (!isAuthenticated) return;
@@ -93,7 +101,7 @@ const ItemRatingsComments = ({
     ratingMutation.mutate(newRating);
   };
 
-  const commentsCount = commentsData?.comments.length || 0;
+  const commentsCount = commentsData?.totalCount ?? 0;
   const averageStars = ratingStats?.averageStars;
   const ratingCount = ratingStats?.count || 0;
   const showStarControls = isAuthenticated;
@@ -105,7 +113,7 @@ const ItemRatingsComments = ({
 
   return (
     <div
-      className={`mt-4 flex items-center gap-4 border-t pt-4 ${
+      className={`mt-4 flex flex-wrap items-center gap-4 border-t pt-4 ${
         hasLeadingContent ? "justify-between" : "justify-end"
       }`}
     >
@@ -175,6 +183,12 @@ const ItemRatingsComments = ({
       >
         Comments ({commentsCount})
       </button>
+
+      <SaveError
+        error={ratingMutation.error}
+        fallback="Could not save your rating. Please try again."
+        className="w-full text-sm text-red-600"
+      />
     </div>
   );
 };

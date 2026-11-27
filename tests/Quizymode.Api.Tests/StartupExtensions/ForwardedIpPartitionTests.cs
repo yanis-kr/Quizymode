@@ -38,4 +38,24 @@ public sealed class ForwardedIpPartitionTests
         Quizymode.Api.StartupExtensions.StartupExtensions.GetAuthenticatedOrTrustedIpPartitionKey(first)
             .Should().NotBe(Quizymode.Api.StartupExtensions.StartupExtensions.GetAuthenticatedOrTrustedIpPartitionKey(second));
     }
+
+    [Theory]
+    [InlineData("2001:db8:1:2::1", "2001:db8:1:2:ffff:ffff:ffff:ffff", true)]
+    [InlineData("2001:db8:1:2::1", "2001:db8:1:3::1", false)]
+    [InlineData("::ffff:192.0.2.10", "192.0.2.10", true)]
+    [InlineData("::ffff:192.0.2.10", "::ffff:192.0.2.11", false)]
+    public void AnonymousPartition_GroupsIpv6ByItsSlash64(string firstAddress, string secondAddress, bool shared)
+    {
+        string first = KeyFor(firstAddress);
+        string second = KeyFor(secondAddress);
+
+        (first == second).Should().Be(shared, $"{first} and {second}");
+    }
+
+    private static string KeyFor(string address)
+    {
+        DefaultHttpContext context = new();
+        context.Connection.RemoteIpAddress = IPAddress.Parse(address);
+        return Quizymode.Api.StartupExtensions.StartupExtensions.GetAuthenticatedOrTrustedIpPartitionKey(context);
+    }
 }

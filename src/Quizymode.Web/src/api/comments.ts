@@ -12,6 +12,9 @@ export interface CommentResponse {
 
 export interface CommentsResponse {
   comments: CommentResponse[];
+  totalCount: number;
+  page: number;
+  pageSize: number;
 }
 
 export interface CreateCommentRequest {
@@ -24,9 +27,10 @@ export interface UpdateCommentRequest {
 }
 
 export const commentsApi = {
-  getByItemId: async (itemId: string): Promise<CommentsResponse> => {
+  /** One page, newest first. The API accepts a page size of at most 100. */
+  getByItemId: async (itemId: string, page = 1, pageSize = 50): Promise<CommentsResponse> => {
     const response = await apiClient.get<CommentsResponse>("/comments", {
-      params: { itemId },
+      params: { itemId, page, pageSize },
     });
     return response.data;
   },

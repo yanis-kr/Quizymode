@@ -40,7 +40,9 @@ public static class AddOrUpdateCollectionRating
                 .RequireAuthorization()
                 .Produces<Response>(StatusCodes.Status200OK)
                 .Produces(StatusCodes.Status400BadRequest)
-                .Produces(StatusCodes.Status404NotFound);
+                .Produces(StatusCodes.Status404NotFound)
+                .ProducesProblem(StatusCodes.Status429TooManyRequests)
+                .RequireRateLimiting("content-writes");
         }
 
         private static async Task<IResult> Handler(

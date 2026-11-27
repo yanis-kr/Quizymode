@@ -1,4 +1,6 @@
 using FluentValidation;
+using Microsoft.Extensions.Options;
+using Quizymode.Api.Shared.Options;
 using Quizymode.Api.Data;
 using Quizymode.Api.Shared.Helpers;
 using Quizymode.Api.Shared.Http;
@@ -151,8 +153,9 @@ public static class AddItem
                 .RequireAuthorization()
                 .Produces<Response>(StatusCodes.Status201Created)
                 .Produces(StatusCodes.Status400BadRequest)
-                .Produces(StatusCodes.Status429TooManyRequests)
-                .Produces(StatusCodes.Status409Conflict);
+                .ProducesProblem(StatusCodes.Status429TooManyRequests)
+                .Produces(StatusCodes.Status409Conflict)
+                .RequireRateLimiting("content-writes");
         }
 
         private static async Task<IResult> Handler(
@@ -164,6 +167,7 @@ public static class AddItem
             IAuditService auditService,
             ITaxonomyItemCategoryResolver itemCategoryResolver,
             ITaxonomyRegistry taxonomyRegistry,
+            IOptions<QuotaSettings> quotaOptions,
             CancellationToken cancellationToken)
         {
             var validationResult = await validator.ValidateAsync(request, cancellationToken);
@@ -180,7 +184,8 @@ public static class AddItem
                 auditService,
                 itemCategoryResolver,
                 taxonomyRegistry,
-                cancellationToken);
+                cancellationToken,
+                quotaOptions.Value);
 
             return result.Match(
                 value => Results.Created($"/api/items/{value.Id}", value),

@@ -6,6 +6,7 @@ using Quizymode.Api.Services.Taxonomy;
 using Quizymode.Api.Shared.Helpers;
 using Quizymode.Api.Shared.Kernel;
 using Quizymode.Api.Shared.Models;
+using Quizymode.Api.Shared.Options;
 
 namespace Quizymode.Api.Features.Items.AddBulk;
 
@@ -20,13 +21,17 @@ internal static class AddItemsBulkHandler
         ITaxonomyRegistry taxonomyRegistry,
         IAuditService auditService,
         ILogger logger,
-        CancellationToken cancellationToken)
+        CancellationToken cancellationToken,
+        QuotaSettings? quotas = null)
     {
         try
         {
             string userId = userContext.UserId ?? throw new InvalidOperationException("User ID is required for bulk item creation");
 
             await using IDbContextTransaction? mediaTransaction = await ItemImageSubmission.BeginAsync(db, cancellationToken);
+            // AC 17.5: the whole request counts, and is refused before anything is written.
+            Error? creationError = await CreationQuota.CheckItemsAsync(db, userContext, request.Items.Count, quotas, null, cancellationToken);
+            if (creationError is not null) return Result.Failure<AddItemsBulk.Response>(creationError);
             Error? mediaError = await ItemImageImport.ValidateAsync(db, userId, request.Items, cancellationToken);
             if (mediaError is not null) return Result.Failure<AddItemsBulk.Response>(mediaError);
             Dictionary<Guid, string> ownedHashes = await db.MediaAssets.AsNoTracking().Where(a => a.OwnerUserId == userId).ToDictionaryAsync(a => a.Id, a => a.Sha256, cancellationToken);

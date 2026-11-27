@@ -94,7 +94,8 @@ public static class GenerateStudyGuideSections
                 generationOptions.Value,
                 documentOptions.Value.RetentionDays,
                 timeProvider.GetUtcNow().UtcDateTime,
-                cancellationToken);
+                cancellationToken,
+                quotaExempt: userContext.IsAdmin);
 
             return result.Match(
                 value => value is null ? Results.NotFound() : Results.Accepted($"/study-guides/documents/{id}", value),
@@ -113,7 +114,8 @@ public static class GenerateStudyGuideSections
         DateTime nowUtc,
         CancellationToken cancellationToken,
         bool autoSave = false,
-        bool quickPath = false)
+        bool quickPath = false,
+        bool quotaExempt = false)
     {
         StudyGuideDocument? document = await db.StudyGuideDocuments
             .FirstOrDefaultAsync(d => d.Id == id && d.UserId == userId, cancellationToken);
@@ -335,6 +337,12 @@ public static class GenerateStudyGuideSections
                 section.AutoSave = StudyGuideAutoSave.Pending;
                 section.AutoSaveAttempts = 0;
             }
+        }
+
+        // Every queue request refreshes the exemption, so it follows the latest authenticated caller (AC 17.4).
+        foreach (StudyGuideSection section in sections)
+        {
+            section.AutoSaveQuotaExempt = quotaExempt;
         }
 
         foreach (Guid generationId in pulled)

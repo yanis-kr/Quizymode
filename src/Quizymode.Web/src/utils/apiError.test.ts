@@ -1,5 +1,6 @@
 import { describe, expect, it } from "vitest";
-import { getApiErrorMessage } from "./apiError";
+import { getApiErrorMessage, getServerErrorMessage } from "./apiError";
+import { refusal } from "@/test/refusal";
 
 describe("getApiErrorMessage", () => {
   it("prefers problem details detail text", () => {
@@ -36,5 +37,16 @@ describe("getApiErrorMessage", () => {
     expect(getApiErrorMessage(titleError)).toBe("[401] Unauthorized");
     expect(getApiErrorMessage(statusError)).toBe("HTTP 500: Server exploded");
     expect(getApiErrorMessage("plain-string-error")).toBe("plain-string-error");
+  });
+});
+
+describe("getServerErrorMessage (AC 17.8)", () => {
+  it("returns the server detail without a status prefix", () => {
+    expect(getServerErrorMessage(refusal("Daily limit reached."), "Fallback")).toBe("Daily limit reached.");
+  });
+
+  it("uses the fallback when there is no server message", () => {
+    expect(getServerErrorMessage(refusal(""), "Fallback")).toBe("Fallback");
+    expect(getServerErrorMessage(new Error("Network Error"), "Fallback")).toBe("Fallback");
   });
 });

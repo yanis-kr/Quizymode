@@ -1,6 +1,7 @@
 using System.Security.Cryptography;
 using System.Text;
 using FluentValidation;
+using Microsoft.Extensions.Options;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging.Abstractions;
 using Quizymode.Api.Data;
@@ -13,6 +14,7 @@ using Quizymode.Api.Services;
 using Quizymode.Api.Services.Taxonomy;
 using Quizymode.Api.Shared.Kernel;
 using Quizymode.Api.Shared.Models;
+using Quizymode.Api.Shared.Options;
 
 namespace Quizymode.Api.Features.Items.UploadToCollection;
 
@@ -86,7 +88,8 @@ public static class UploadItemsToCollection
                 .RequireAuthorization()
                 .Produces<Response>(StatusCodes.Status201Created)
                 .Produces(StatusCodes.Status400BadRequest)
-                .Produces(StatusCodes.Status429TooManyRequests);
+                .ProducesProblem(StatusCodes.Status429TooManyRequests)
+                .RequireRateLimiting("content-writes");
         }
 
         private static async Task<IResult> Handler(
@@ -100,6 +103,7 @@ public static class UploadItemsToCollection
             IAuditService auditService,
             ITextModerationService moderation,
             ILogger<Endpoint> logger,
+            IOptions<QuotaSettings> quotaOptions,
             CancellationToken cancellationToken)
         {
             if (!userContext.IsAuthenticated || string.IsNullOrEmpty(userContext.UserId))
@@ -123,7 +127,8 @@ public static class UploadItemsToCollection
                 auditService,
                 moderation,
                 cancellationToken,
-                logger);
+                logger,
+                quotaOptions.Value);
 
             return result.Match(
                 value => Results.Created($"/api/collections/{value.CollectionId}", value),
@@ -149,7 +154,8 @@ public static class UploadItemsToCollection
         IAuditService auditService,
         ITextModerationService moderation,
         CancellationToken cancellationToken,
-        ILogger? logger = null)
+        ILogger? logger = null,
+        QuotaSettings? quotas = null)
     {
         if (string.IsNullOrEmpty(userContext.UserId) || !Guid.TryParse(userContext.UserId, out Guid userIdGuid))
         {
@@ -177,6 +183,12 @@ public static class UploadItemsToCollection
             return Result.Failure<Response>(
                 Error.Conflict("Upload.Duplicate", "This content has already been uploaded. Duplicate uploads are not allowed."));
         }
+
+        // AC 17.5: refused before the upload row is saved. Item lock (held since BeginAsync) first, then the collection lock.
+        Error? creationError =
+            await CreationQuota.CheckItemsAsync(db, userContext, request.Items.Count, quotas, null, cancellationToken)
+            ?? await CreationQuota.CheckCollectionsAsync(db, userContext, 1, quotas, null, cancellationToken);
+        if (creationError is not null) return Result.Failure<Response>(creationError);
 
         Upload upload = new()
         {
@@ -208,7 +220,8 @@ public static class UploadItemsToCollection
             taxonomyRegistry,
             auditService,
             logger ?? NullLogger.Instance,
-            cancellationToken);
+            cancellationToken,
+            quotas);
 
         if (bulkResult.IsFailure)
         {

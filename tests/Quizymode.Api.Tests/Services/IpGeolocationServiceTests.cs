@@ -1,6 +1,7 @@
 using System.Net;
 using System.Text;
 using FluentAssertions;
+using Microsoft.Extensions.Internal;
 using Microsoft.Extensions.Logging.Abstractions;
 using Quizymode.Api.Services;
 using Xunit;
@@ -89,5 +90,121 @@ public sealed class IpGeolocationServiceTests
         await service.GetLocationAsync("8.8.4.4");
 
         handler.Calls.Should().Be(1);
+    }
+
+    // AC 17.7 (#904)
+
+    private sealed class FakeClock : ISystemClock
+    {
+        public DateTimeOffset UtcNow { get; set; } = new(2026, 11, 27, 12, 0, 0, TimeSpan.Zero);
+    }
+
+    private sealed class StubHandler(Func<CancellationToken, Task<HttpResponseMessage>> respond) : HttpMessageHandler
+    {
+        public int Calls { get; private set; }
+
+        protected override Task<HttpResponseMessage> SendAsync(HttpRequestMessage request, CancellationToken cancellationToken)
+        {
+            Calls++;
+            return respond(cancellationToken);
+        }
+    }
+
+    private static Task<HttpResponseMessage> Ok() => Task.FromResult(new HttpResponseMessage(HttpStatusCode.OK)
+    {
+        Content = new StringContent("""{"country":"US"}""", Encoding.UTF8, "application/json"),
+    });
+
+    private static IpGeolocationService Service(HttpMessageHandler handler, ISystemClock? clock = null, int sizeLimit = 100) =>
+        new(new SingleClientFactory(handler), NullLogger<IpGeolocationService>.Instance, sizeLimit, clock);
+
+    [Fact]
+    public async Task Cache_NeverExceedsItsSizeLimit()
+    {
+        StubHandler handler = new(_ => Ok());
+        IpGeolocationService service = Service(handler, sizeLimit: 3);
+
+        for (int i = 1; i <= 20; i++)
+        {
+            await service.GetLocationAsync($"8.8.8.{i}");
+            service.CacheCount.Should().BeLessThanOrEqualTo(3);
+        }
+    }
+
+    [Fact]
+    public async Task SuccessfulLookup_IsHeldForTwentyFourHours()
+    {
+        FakeClock clock = new();
+        StubHandler handler = new(_ => Ok());
+        IpGeolocationService service = Service(handler, clock);
+        await service.GetLocationAsync("8.8.8.8");
+
+        clock.UtcNow += TimeSpan.FromHours(24) - TimeSpan.FromSeconds(1);
+        await service.GetLocationAsync("8.8.8.8");
+        handler.Calls.Should().Be(1);
+
+        clock.UtcNow += TimeSpan.FromSeconds(2);
+        await service.GetLocationAsync("8.8.8.8");
+        handler.Calls.Should().Be(2);
+    }
+
+    [Theory]
+    [InlineData(false)]
+    [InlineData(true)]
+    public async Task FailedLookup_IsRetriedAfterTenMinutesAndNotBefore(bool throws)
+    {
+        FakeClock clock = new();
+        StubHandler handler = new(_ => throws
+            ? throw new HttpRequestException("unreachable")
+            : Task.FromResult(new HttpResponseMessage(HttpStatusCode.TooManyRequests)));
+        IpGeolocationService service = Service(handler, clock);
+        (await service.GetLocationAsync("8.8.8.8")).Should().BeNull();
+
+        clock.UtcNow += TimeSpan.FromMinutes(10) - TimeSpan.FromSeconds(1);
+        (await service.GetLocationAsync("8.8.8.8")).Should().BeNull();
+        handler.Calls.Should().Be(1);
+
+        clock.UtcNow += TimeSpan.FromSeconds(2);
+        await service.GetLocationAsync("8.8.8.8");
+        handler.Calls.Should().Be(2);
+    }
+
+    [Fact]
+    public async Task SlowLookup_EndsAtTheServiceTimeoutAndIsCachedAsAFailure()
+    {
+        StubHandler handler = new(async token =>
+        {
+            await Task.Delay(Timeout.Infinite, token);
+            return new HttpResponseMessage(HttpStatusCode.OK);
+        });
+        IpGeolocationService service = Service(handler);
+
+        (await service.GetLocationAsync("8.8.8.8")).Should().BeNull();
+        (await service.GetLocationAsync("8.8.8.8")).Should().BeNull();
+
+        handler.Calls.Should().Be(1);
+    }
+
+    [Fact]
+    public async Task LookupCancelledByTheCaller_IsNotCached()
+    {
+        using CancellationTokenSource caller = new();
+        StubHandler handler = new(token =>
+        {
+            if (!caller.IsCancellationRequested)
+            {
+                caller.Cancel();
+                token.ThrowIfCancellationRequested();
+            }
+
+            return Ok();
+        });
+        IpGeolocationService service = Service(handler);
+
+        (await service.GetLocationAsync("8.8.8.8", caller.Token)).Should().BeNull();
+        service.CacheCount.Should().Be(0);
+
+        (await service.GetLocationAsync("8.8.8.8")).Should().NotBeNull();
+        handler.Calls.Should().Be(2);
     }
 }

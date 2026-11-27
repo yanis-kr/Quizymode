@@ -47,6 +47,7 @@ public sealed class PictureEligibilityRoutesHttpTests : ItemTestFixture, IAsyncL
                 services.AddScoped<IValidator<Plans.UpsertRequest>, Plans.UpsertValidator>();
                 services.AddMemoryCache();
                 services.AddScoped<IValidator<AddComment.Request>, AddComment.Validator>();
+                services.AddScoped<IValidator<GetComments.QueryRequest>, GetComments.Validator>();
                 services.AddScoped<IValidator<AddOrUpdateRating.Request>, AddOrUpdateRating.Validator>();
             },
             app =>

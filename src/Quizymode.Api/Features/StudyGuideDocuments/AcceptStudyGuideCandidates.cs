@@ -100,7 +100,8 @@ public static class AcceptStudyGuideCandidates
                 .Produces(StatusCodes.Status400BadRequest)
                 .Produces(StatusCodes.Status401Unauthorized)
                 .Produces(StatusCodes.Status403Forbidden)
-                .Produces(StatusCodes.Status404NotFound);
+                .Produces(StatusCodes.Status404NotFound)
+                .ProducesProblem(StatusCodes.Status429TooManyRequests);
         }
 
         private static async Task<IResult> Handler(
@@ -115,6 +116,7 @@ public static class AcceptStudyGuideCandidates
             IAuditService auditService,
             ITextModerationService moderation,
             IOptions<StudyGuideDocumentOptions> documentOptions,
+            IOptions<QuotaSettings> quotaOptions,
             TimeProvider timeProvider,
             ILogger<Endpoint> logger,
             CancellationToken cancellationToken)
@@ -148,7 +150,8 @@ public static class AcceptStudyGuideCandidates
                 documentOptions.Value.RetentionDays,
                 timeProvider.GetUtcNow().UtcDateTime,
                 cancellationToken,
-                logger);
+                logger,
+                quotas: quotaOptions.Value);
 
             return result.Match(
                 value => value is null ? Results.NotFound() : Results.Ok(value),
@@ -177,7 +180,8 @@ public static class AcceptStudyGuideCandidates
         DateTime nowUtc,
         CancellationToken cancellationToken,
         ILogger? logger = null,
-        IReadOnlyCollection<Guid>? autoSaveSectionIds = null)
+        IReadOnlyCollection<Guid>? autoSaveSectionIds = null,
+        QuotaSettings? quotas = null)
     {
         IDbContextTransaction? ownTransaction = null;
         if (db.Database.IsRelational() && db.Database.CurrentTransaction is null)
@@ -227,7 +231,8 @@ public static class AcceptStudyGuideCandidates
             nowUtc,
             cancellationToken,
             logger,
-            autoSaveSectionIds);
+            autoSaveSectionIds,
+            quotas);
         if (transaction is null)
         {
             return result;
@@ -257,7 +262,8 @@ public static class AcceptStudyGuideCandidates
         DateTime nowUtc,
         CancellationToken cancellationToken,
         ILogger? logger,
-        IReadOnlyCollection<Guid>? autoSaveSectionIds)
+        IReadOnlyCollection<Guid>? autoSaveSectionIds,
+        QuotaSettings? quotas)
     {
         bool lenient = autoSaveSectionIds is not null;
         string userId = userContext.UserId!;
@@ -434,7 +440,8 @@ public static class AcceptStudyGuideCandidates
                 taxonomyRegistry,
                 auditService,
                 logger ?? NullLogger.Instance,
-                cancellationToken);
+                cancellationToken,
+                quotas);
             if (bulkResult.IsFailure)
             {
                 return Result.Failure<Response?>(bulkResult.Error);
@@ -502,7 +509,14 @@ public static class AcceptStudyGuideCandidates
 
         // Created and linked items both join the collection.
         List<Guid> collectionItemIds = createdIds.Concat(linked.Select(entry => entry.ItemId)).Distinct().ToList();
-        Collection collection = await EnsureCollectionAsync(db, document, userId, collectionName, nowUtc, cancellationToken);
+        Result<Collection> ensured = await EnsureCollectionAsync(db, document, userContext, collectionName, quotas, nowUtc, cancellationToken);
+        if (ensured.IsFailure)
+        {
+            // The caller rolls the transaction back, so items created above are not kept.
+            return Result.Failure<Response?>(ensured.Error);
+        }
+
+        Collection collection = ensured.Value;
         HashSet<Guid> inCollection = (await db.CollectionItems
                 .AsNoTracking()
                 .Where(ci => ci.CollectionId == collection.Id && collectionItemIds.Contains(ci.ItemId))
@@ -614,15 +628,20 @@ public static class AcceptStudyGuideCandidates
         return false;
     }
 
-    /// <summary>The document's collection if it still exists and is owned by the user; otherwise a new one.</summary>
-    private static async Task<Collection> EnsureCollectionAsync(
+    /// <summary>
+    /// The document's collection if it still exists and is owned by the user; otherwise a new one, subject to the daily
+    /// collection quota.
+    /// </summary>
+    private static async Task<Result<Collection>> EnsureCollectionAsync(
         ApplicationDbContext db,
         StudyGuideDocument document,
-        string userId,
+        IUserContext userContext,
         string collectionName,
+        QuotaSettings? quotas,
         DateTime nowUtc,
         CancellationToken cancellationToken)
     {
+        string userId = userContext.UserId!;
         if (document.CollectionId is Guid collectionId)
         {
             Collection? existing = await db.Collections
@@ -644,6 +663,12 @@ public static class AcceptStudyGuideCandidates
             IsPublic = false,
             IsDiscoverable = false
         };
+        Error? quotaError = await CreationQuota.CheckCollectionsAsync(db, userContext, 1, quotas, nowUtc, cancellationToken);
+        if (quotaError is not null)
+        {
+            return Result.Failure<Collection>(quotaError);
+        }
+
         db.Collections.Add(collection);
         return collection;
     }

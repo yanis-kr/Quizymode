@@ -21,11 +21,17 @@ describe("commentsApi", () => {
   beforeEach(() => vi.clearAllMocks());
 
   it("getByItemId calls GET /comments with itemId param", async () => {
-    const data = { comments: [] };
+    const data = { comments: [], totalCount: 0, page: 1, pageSize: 50 };
     mockGet.mockResolvedValueOnce({ data });
     const result = await commentsApi.getByItemId("item-1");
-    expect(mockGet).toHaveBeenCalledWith("/comments", { params: { itemId: "item-1" } });
+    expect(mockGet).toHaveBeenCalledWith("/comments", { params: { itemId: "item-1", page: 1, pageSize: 50 } });
     expect(result).toEqual(data);
+  });
+
+  it("AC 2.5.16 getByItemId sends the requested page and page size", async () => {
+    mockGet.mockResolvedValueOnce({ data: { comments: [], totalCount: 0, page: 3, pageSize: 1 } });
+    await commentsApi.getByItemId("item-1", 3, 1);
+    expect(mockGet).toHaveBeenCalledWith("/comments", { params: { itemId: "item-1", page: 3, pageSize: 1 } });
   });
 
   it("create calls POST /comments with itemId and text", async () => {

@@ -14,6 +14,7 @@ internal static class DefaultCollectionFactory
         {
             Id = Guid.NewGuid(),
             IsRepoManaged = false,
+            IsAutoCreated = true,
             Name = name,
             Description = description,
             CreatedBy = createdBy,

@@ -1,4 +1,8 @@
 using FluentValidation;
+using Microsoft.EntityFrameworkCore.Storage;
+using Microsoft.Extensions.Options;
+using Quizymode.Api.Shared.Helpers;
+using Quizymode.Api.Shared.Options;
 using Quizymode.Api.Data;
 using Quizymode.Api.Shared.Http;
 using Quizymode.Api.Services;
@@ -45,7 +49,9 @@ public static class AddCollection
                 .WithSummary("Create a collection (optionally public for shareable link)")
                 .RequireAuthorization()
                 .Produces<Response>(StatusCodes.Status201Created)
-                .Produces(StatusCodes.Status400BadRequest);
+                .Produces(StatusCodes.Status400BadRequest)
+                .ProducesProblem(StatusCodes.Status429TooManyRequests)
+                .RequireRateLimiting("content-writes");
         }
 
         private static async Task<IResult> Handler(
@@ -54,6 +60,7 @@ public static class AddCollection
             ApplicationDbContext db,
             IUserContext userContext,
             ILogger<Endpoint> logger,
+            IOptions<QuotaSettings> quotaOptions,
             CancellationToken cancellationToken)
         {
             if (!userContext.IsAuthenticated || string.IsNullOrEmpty(userContext.UserId))
@@ -69,7 +76,7 @@ public static class AddCollection
                 return Results.BadRequest(validationResult.Errors);
             }
 
-            Result<Response> result = await HandleAsync(request, db, userContext, logger, cancellationToken);
+            Result<Response> result = await HandleAsync(request, db, userContext, logger, cancellationToken, quotaOptions.Value);
 
             return result.Match(
                 value => Results.Created($"/api/collections/{value.Id}", value),
@@ -82,7 +89,8 @@ public static class AddCollection
         ApplicationDbContext db,
         IUserContext userContext,
         ILogger<Endpoint> logger,
-        CancellationToken cancellationToken)
+        CancellationToken cancellationToken,
+        QuotaSettings? quotas = null)
     {
         try
         {
@@ -108,8 +116,20 @@ public static class AddCollection
                 IsDiscoverable = (request.IsPublic ?? false) && (request.IsDiscoverable ?? false)
             };
 
+            // AC 17.4/17.6: count and insert in one transaction, serialised per user.
+            await using IDbContextTransaction? transaction = await CreationQuota.BeginAsync(db, cancellationToken);
+            Error? quotaError = await CreationQuota.CheckCollectionsAsync(db, userContext, 1, quotas, entity.CreatedAt, cancellationToken);
+            if (quotaError is not null)
+            {
+                return Result.Failure<Response>(quotaError);
+            }
+
             db.Collections.Add(entity);
             await db.SaveChangesAsync(cancellationToken);
+            if (transaction is not null)
+            {
+                await transaction.CommitAsync(cancellationToken);
+            }
 
             Response response = new(
                 entity.Id.ToString(),

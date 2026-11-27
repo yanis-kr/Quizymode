@@ -6,6 +6,7 @@ import { useAuth } from "@/contexts/AuthContext";
 import { useCurrentUserId } from "@/hooks/useCurrentUserId";
 import LoadingSpinner from "@/components/LoadingSpinner";
 import ErrorMessage from "@/components/ErrorMessage";
+import SaveError from "@/components/SaveError";
 import ItemListSection from "@/components/ItemListSection";
 import ItemCollectionsModal from "@/components/ItemCollectionsModal";
 import { ItemCollectionControls } from "@/components/ItemCollectionControls";
@@ -129,6 +130,17 @@ const CollectionDetailPage = () => {
       queryClient.invalidateQueries({ queryKey: ["collectionRating", id] });
     },
   });
+
+  const resetUpdate = updateCollectionMutation.reset;
+  const resetRating = setRatingMutation.reset;
+  useEffect(() => {
+    resetUpdate();
+    resetRating();
+  }, [id, resetUpdate, resetRating]);
+  // Description and visibility share one mutation; the message goes under the control that was saved.
+  const savedVisibility =
+    updateCollectionMutation.variables?.isPublic !== undefined ||
+    updateCollectionMutation.variables?.isDiscoverable !== undefined;
 
   const isOwner = isAuthenticated && !!currentUserId && collectionData?.createdBy === currentUserId;
 
@@ -371,6 +383,10 @@ const CollectionDetailPage = () => {
               }
             }}
           />
+          <SaveError
+            error={savedVisibility ? updateCollectionMutation.error : null}
+            fallback="Could not save your changes. Please try again."
+          />
         </div>
       )}
       {isOwner && (
@@ -387,6 +403,10 @@ const CollectionDetailPage = () => {
             placeholder="e.g. Biology chapter 5 practice set"
             rows={2}
             className="w-full rounded-md border border-slate-300 bg-surface px-3 py-2 text-sm text-slate-900"
+          />
+          <SaveError
+            error={savedVisibility ? null : updateCollectionMutation.error}
+            fallback="Could not save your changes. Please try again."
           />
         </div>
       )}
@@ -429,6 +449,11 @@ const CollectionDetailPage = () => {
                 ? `${ratingData.averageStars} (${ratingData.count} rating${ratingData.count === 1 ? "" : "s"})`
                 : "No ratings yet"}
             </span>
+            <SaveError
+              error={setRatingMutation.error}
+              fallback="Could not save your rating. Please try again."
+              className="w-full text-sm text-red-600"
+            />
           </div>
           {bookmarkedByData && bookmarkedByData.bookmarkedBy.length > 0 ? (
             <ul className="space-y-1 text-sm text-slate-600">

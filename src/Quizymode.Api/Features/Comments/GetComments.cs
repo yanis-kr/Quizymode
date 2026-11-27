@@ -1,3 +1,5 @@
+using FluentValidation;
+using FluentValidation.Results;
 using Microsoft.EntityFrameworkCore;
 using Quizymode.Api.Data;
 using Quizymode.Api.Services;
@@ -13,7 +15,10 @@ namespace Quizymode.Api.Features.Comments;
 /// </summary>
 public static class GetComments
 {
-    public sealed record QueryRequest(Guid? ItemId);
+    public const int DefaultPageSize = 50;
+    public const int MaxPageSize = 100;
+
+    public sealed record QueryRequest(Guid? ItemId, int Page = 1, int PageSize = DefaultPageSize);
 
     public sealed record CommentResponse(
         string Id,
@@ -24,7 +29,21 @@ public static class GetComments
         DateTime CreatedAt,
         DateTime? UpdatedAt);
 
-    public sealed record Response(List<CommentResponse> Comments);
+    /// <summary>One page of comments, newest first. <c>TotalCount</c> counts every comment the caller can see.</summary>
+    public sealed record Response(List<CommentResponse> Comments, int TotalCount, int Page, int PageSize);
+
+    public sealed class Validator : AbstractValidator<QueryRequest>
+    {
+        public Validator()
+        {
+            RuleFor(x => x.Page)
+                .GreaterThanOrEqualTo(1)
+                .WithMessage("Page must be greater than 0");
+            RuleFor(x => x.PageSize)
+                .InclusiveBetween(1, MaxPageSize)
+                .WithMessage($"PageSize must be between 1 and {MaxPageSize}");
+        }
+    }
 
     public sealed class Endpoint : IEndpoint
     {
@@ -33,18 +52,27 @@ public static class GetComments
             app.MapGet("comments", Handler)
                 .WithTags("Comments")
                 .WithSummary("Get comments")
-                .WithDescription("Returns comments. Optionally filter by itemId using ?itemId={guid}.")
+                .WithDescription("Returns one page of comments, newest first, with the total count. Optionally filter by itemId using ?itemId={guid}. page defaults to 1; pageSize defaults to 50 (maximum 100).")
                 .Produces<Response>(StatusCodes.Status200OK)
+                .ProducesProblem(StatusCodes.Status400BadRequest)
                 .Produces(StatusCodes.Status404NotFound);
         }
 
         private static async Task<IResult> Handler(
             Guid? itemId,
+            int? page,
+            int? pageSize,
+            IValidator<QueryRequest> validator,
             ApplicationDbContext db,
             IUserContext userContext,
             CancellationToken cancellationToken)
         {
-            QueryRequest request = new(itemId);
+            QueryRequest request = new(itemId, page ?? 1, pageSize ?? DefaultPageSize);
+            ValidationResult validation = await validator.ValidateAsync(request, cancellationToken);
+            if (!validation.IsValid)
+            {
+                return CustomResults.BadRequest(validation.Errors[0].ErrorMessage);
+            }
 
             Result<Response> result = await HandleAsync(request, db, userContext, cancellationToken);
 
@@ -88,9 +116,19 @@ public static class GetComments
                 query = query.Where(c => accessibleItemIds.Contains(c.ItemId));
             }
 
-            List<Comment> comments = await query
-                .OrderByDescending(c => c.CreatedAt)
-                .ToListAsync(cancellationToken);
+            // Counted on the same visibility-filtered query the page comes from.
+            int totalCount = await query.CountAsync(cancellationToken);
+
+            // long: a very large page number must not overflow into a wrong offset.
+            long skip = (long)(request.Page - 1) * request.PageSize;
+            List<Comment> comments = skip >= totalCount
+                ? []
+                : await query
+                    .OrderByDescending(c => c.CreatedAt)
+                    .ThenByDescending(c => c.Id)
+                    .Skip((int)skip)
+                    .Take(request.PageSize)
+                    .ToListAsync(cancellationToken);
 
             // Get unique user IDs from comments and fetch user names
             List<Guid> userIds = comments
@@ -123,7 +161,7 @@ public static class GetComments
                     c.UpdatedAt))
                 .ToList();
 
-            Response response = new(responseItems);
+            Response response = new(responseItems, totalCount, request.Page, request.PageSize);
 
             return Result.Success(response);
         }
@@ -138,7 +176,7 @@ public static class GetComments
     {
         public void AddToServiceCollection(IServiceCollection services, IConfiguration configuration)
         {
-            // No additional services required.
+            services.AddScoped<IValidator<QueryRequest>, Validator>();
         }
     }
 }

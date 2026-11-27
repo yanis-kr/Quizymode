@@ -1,4 +1,6 @@
 using FluentValidation;
+using Microsoft.Extensions.Options;
+using Quizymode.Api.Shared.Options;
 using Quizymode.Api.Data;
 using Quizymode.Api.Shared.Http;
 using Quizymode.Api.Services;
@@ -46,7 +48,9 @@ public static class AddComment
                 .RequireAuthorization()
                 .Produces<Response>(StatusCodes.Status201Created)
                 .Produces(StatusCodes.Status400BadRequest)
-                .Produces(StatusCodes.Status404NotFound);
+                .Produces(StatusCodes.Status404NotFound)
+                .ProducesProblem(StatusCodes.Status429TooManyRequests)
+                .RequireRateLimiting("content-writes");
         }
 
         private static async Task<IResult> Handler(
@@ -55,6 +59,7 @@ public static class AddComment
             ApplicationDbContext db,
             IUserContext userContext,
             IAuditService auditService,
+            IOptions<QuotaSettings> quotaOptions,
             CancellationToken cancellationToken)
         {
             if (!userContext.IsAuthenticated || string.IsNullOrEmpty(userContext.UserId))
@@ -68,7 +73,7 @@ public static class AddComment
                 return Results.BadRequest(validationResult.Errors);
             }
 
-            Result<Response> result = await HandleAsync(request, db, userContext, auditService, cancellationToken);
+            Result<Response> result = await HandleAsync(request, db, userContext, auditService, cancellationToken, quotaOptions.Value);
 
             return result.Match(
                 value => Results.Created($"/api/comments/{value.Id}", value),
@@ -83,14 +88,16 @@ public static class AddComment
         ApplicationDbContext db,
         IUserContext userContext,
         IAuditService auditService,
-        CancellationToken cancellationToken)
+        CancellationToken cancellationToken,
+        QuotaSettings? quotas = null)
     {
         return await AddCommentHandler.HandleAsync(
             request,
             db,
             userContext,
             auditService,
-            cancellationToken);
+            cancellationToken,
+            quotas);
     }
 
     public sealed class FeatureRegistration : IFeatureRegistration

@@ -35,8 +35,7 @@ internal static class MediaErrors
     }
 
     /// <summary>Whole seconds until the next UTC midnight.</summary>
-    public static int SecondsToNextUtcDay(DateTime now) =>
-        Math.Max(1, (int)Math.Ceiling((now.Date.AddDays(1) - now).TotalSeconds));
+    public static int SecondsToNextUtcDay(DateTime now) => Quizymode.Api.Shared.Helpers.CreationQuota.SecondsToNextUtcDay(now);
 
     public static MediaProblem TooLarge(long maxBytes) => new(
         "Media.TooLarge",

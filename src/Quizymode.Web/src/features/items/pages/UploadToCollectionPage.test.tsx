@@ -6,6 +6,7 @@ import { MemoryRouter, Route, Routes, useLocation } from "react-router-dom";
 import UploadToCollectionPage from "./UploadToCollectionPage";
 import { itemsApi } from "@/api/items";
 import { taxonomyApi } from "@/api/taxonomy";
+import { refusal } from "@/test/refusal";
 
 const authState = vi.hoisted(() => ({ isAdmin: false }));
 
@@ -267,9 +268,7 @@ describe("UploadToCollectionPage", () => {
     // AC 2.6.7
     const user = userEvent.setup({ delay: null });
 
-    const duplicateError = Object.assign(new Error("already uploaded"), {
-      response: { status: 409, data: { detail: "already uploaded" } },
-    });
+    const duplicateError = refusal("already uploaded", 409);
     vi.mocked(itemsApi.uploadToCollection).mockRejectedValue(duplicateError);
 
     renderPage("/items/upload-to-collection?category=science&keywords=anatomy,muscular");
@@ -294,6 +293,26 @@ describe("UploadToCollectionPage", () => {
     await waitFor(() => {
       expect(screen.getByText(/already uploaded/i)).toBeInTheDocument();
     });
+  });
+
+  it("AC 17.8 shows the server message for a refused upload, keeps the JSON and does not retry", async () => {
+    vi.mocked(itemsApi.uploadToCollection).mockRejectedValue(refusal("Daily question limit reached."));
+    const user = userEvent.setup({ delay: null });
+    renderPage("/items/upload-to-collection?category=science&keywords=anatomy,muscular");
+    await screen.findByLabelText(/^category \*$/i);
+    await waitFor(() => expect(screen.getByLabelText(/primary topic/i)).toHaveValue("anatomy"));
+    const json = JSON.stringify([{ question: "Q", correctAnswer: "A", incorrectAnswers: ["W1"] }]);
+    const input = screen.getByLabelText(/json array of items/i);
+    await user.click(input);
+    await user.paste(json);
+
+    await user.click(screen.getByRole("button", { name: /upload and open collection/i }));
+
+    const alert = await screen.findByRole("alert");
+    expect(alert).toHaveTextContent("Daily question limit reached.");
+    expect(alert).not.toHaveTextContent("status code");
+    expect(input).toHaveValue(json);
+    expect(itemsApi.uploadToCollection).toHaveBeenCalledTimes(1);
   });
   it("blocks submit with a row-numbered error when a row has no non-blank incorrect answer", async () => {
     // AC 2.6.8

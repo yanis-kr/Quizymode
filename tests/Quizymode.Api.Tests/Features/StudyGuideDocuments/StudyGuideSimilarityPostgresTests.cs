@@ -147,6 +147,57 @@ public sealed class StudyGuideSimilarityPostgresTests(PostgresContainerFixture f
         return response!;
     }
 
+    // AC 17.5 (#904): an accept that only links public items still creates a collection, so the collection quota applies.
+    [SkippableFact]
+    public async Task LinkedOnlyAccept_AtTheCollectionQuota_IsRefusedAndStoresNothing()
+    {
+        Skip.If(fixture.UnavailableReason is not null, fixture.UnavailableReason);
+        string userId = Guid.NewGuid().ToString();
+        string question = $"Which sea lies between Italy and the Balkan peninsula {Guid.NewGuid():N}?";
+        await SeedItemAsync("geography", "someone-else", isPrivate: false, question, "Adriatic");
+        (Guid documentId, List<Guid> ids) = await SeedDocumentAsync(userId, (question, "Adriatic", 1));
+        await using (ApplicationDbContext seed = fixture.CreateDbContext())
+        {
+            seed.Collections.Add(new Collection { Id = Guid.NewGuid(), Name = "Today", CreatedBy = userId, CreatedAt = Now });
+            await seed.SaveChangesAsync();
+        }
+
+        async Task<Result<AcceptStudyGuideCandidates.Response?>> AcceptAsync(int collectionsPerDay)
+        {
+            await using ApplicationDbContext db = fixture.CreateDbContext();
+            return await AcceptStudyGuideCandidates.HandleAsync(
+                documentId,
+                new AcceptStudyGuideCandidates.Request(ids.Select(id => new AcceptStudyGuideCandidates.CandidateEdit(id, null, null, null, null)).ToList()),
+                db,
+                StudyGuideTestData.User(userId).Object,
+                new SimHashService(),
+                new TaxonomyItemCategoryResolver(db, _taxonomy),
+                _taxonomy,
+                Mock.Of<IAuditService>(),
+                StudyGuideTestData.Moderation(),
+                30,
+                Now,
+                CancellationToken.None,
+                quotas: new QuotaSettings { CollectionsPerDay = collectionsPerDay });
+        }
+
+        Result<AcceptStudyGuideCandidates.Response?> refused = await AcceptAsync(1);
+
+        refused.IsFailure.Should().BeTrue();
+        refused.Error.Code.Should().Be("Quota.CollectionsPerDay");
+        await using (ApplicationDbContext verify = fixture.CreateDbContext())
+        {
+            (await verify.Collections.CountAsync(c => c.CreatedBy == userId)).Should().Be(1);
+            (await verify.StudyGuideAcceptedCandidates.CountAsync(a => a.DocumentId == documentId)).Should().Be(0);
+            (await verify.StudyGuideDocuments.SingleAsync(d => d.Id == documentId)).CollectionId.Should().BeNull();
+        }
+
+        Result<AcceptStudyGuideCandidates.Response?> allowed = await AcceptAsync(2);
+        allowed.IsSuccess.Should().BeTrue(allowed.IsFailure ? allowed.Error.Description : null);
+        allowed.Value!.LinkedCount.Should().Be(1);
+        allowed.Value.CreatedCount.Should().Be(0);
+    }
+
     [SkippableFact]
     public async Task SimilarVisibleItemInSameCategory_IsFlaggedWithTheItemQuestion()
     {

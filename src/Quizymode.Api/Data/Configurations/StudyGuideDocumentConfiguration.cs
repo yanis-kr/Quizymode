@@ -42,6 +42,8 @@ internal sealed class StudyGuideSectionConfiguration : IEntityTypeConfiguration<
         builder.Property(x => x.Id).ValueGeneratedNever();
         builder.Property(x => x.Label).IsRequired().HasMaxLength(200);
         builder.Property(x => x.TextSha256).IsRequired().HasMaxLength(64);
+        // The default keeps inserts from instances without the column valid during a rolling deploy.
+        builder.Property(x => x.AutoSaveQuotaExempt).IsRequired().HasDefaultValue(false);
         builder.HasIndex(x => new { x.DocumentId, x.Index }).IsUnique();
         builder.HasIndex(x => x.GenerationId);
     }

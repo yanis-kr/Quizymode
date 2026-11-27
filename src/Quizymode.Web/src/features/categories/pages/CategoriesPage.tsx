@@ -6,7 +6,7 @@ import { keywordsApi } from "@/api/keywords";
 import { itemsApi } from "@/api/items";
 import LoadingSpinner from "@/components/LoadingSpinner";
 import ErrorMessage from "@/components/ErrorMessage";
-import { getApiErrorMessage } from "@/utils/apiError";
+import { getApiErrorMessage, getServerErrorMessage } from "@/utils/apiError";
 import ItemListSection from "@/components/ItemListSection";
 import ItemCollectionsModal from "@/components/ItemCollectionsModal";
 import { ItemCollectionControls } from "@/components/ItemCollectionControls";
@@ -97,6 +97,7 @@ const CategoriesPage = () => {
   const [manageCollectionsItemId, setManageCollectionsItemId] = useState<string | null>(null);
   const [sortBy, setSortBy] = useState<SortOption>(sortFromUrl);
   const [isExporting, setIsExporting] = useState(false);
+  const [exportError, setExportError] = useState<string | null>(null);
   const { pageSize: userPageSize } = usePageSize();
   const pageSize = searchParams.has("pagesize") ? pageSizeFromUrl : userPageSize;
   const showAnswersParam = searchParams.get("showAnswers");
@@ -473,6 +474,10 @@ const CategoriesPage = () => {
       return true;
     });
   }, [navigationKeywordsForScope, itemTagKeywords]);
+  const exportScopeKey = [categoryName, ...keywordsForStudy].join("/");
+  useEffect(() => {
+    setExportError(null);
+  }, [exportScopeKey]);
   // Child buckets with questions for this viewer; empty topics are not listed (#900). Pickers still offer them.
   const childKeywords = useMemo(() => {
     if (!keywordsData?.keywords) return [];
@@ -496,8 +501,9 @@ const CategoriesPage = () => {
     (!!categoryName || isAllCategoriesSlug(categorySlugParam));
   const scopeIsPrivate =
     scopeFilterType === "all" ? undefined : scopeFilterType === "private";
-  const hasClientSideScopeFilters =
-    scopeSearchText !== "" || scopeRatingMin !== null || scopeRatingMax !== null || scopeRatingOnlyUnrated;
+  const hasRatingFilter =
+    scopeRatingMin !== null || scopeRatingMax !== null || scopeRatingOnlyUnrated;
+  const hasClientSideScopeFilters = scopeSearchText !== "" || hasRatingFilter;
   const scopeQueryPageSize = hasClientSideScopeFilters ? 1000 : pageSize;
   const scopeQueryPage = hasClientSideScopeFilters ? 1 : itemsPage;
 
@@ -528,9 +534,12 @@ const CategoriesPage = () => {
   });
 
   const itemIds = (itemsData?.items ?? []).map((i) => i.id);
-  const { ratingsMap, isSuccess: ratingsLoaded } = useBulkRatings(
-    hasClientSideScopeFilters ? itemIds : []
-  );
+  const {
+    ratingsMap,
+    isSuccess: ratingsLoaded,
+    error: ratingsError,
+    refetch: refetchRatings,
+  } = useBulkRatings(hasRatingFilter ? itemIds : []);
 
   const scopeFilteredItems = useMemo(
     () =>
@@ -951,6 +960,7 @@ const CategoriesPage = () => {
   const handleExport = async () => {
     if (!categoryName || keywordsForStudy.length === 0) return;
     setIsExporting(true);
+    setExportError(null);
     try {
       const data = await itemsApi.exportItems(categoryName, keywordsForStudy);
       const json = JSON.stringify(data, null, 2);
@@ -965,10 +975,19 @@ const CategoriesPage = () => {
       a.click();
       document.body.removeChild(a);
       URL.revokeObjectURL(url);
+    } catch (err) {
+      setExportError(getServerErrorMessage(err, "Could not export. Please try again."));
     } finally {
       setIsExporting(false);
     }
   };
+
+  // One message serves the desktop and the mobile Export button.
+  const exportErrorMessage = exportError ? (
+    <div role="alert">
+      <ErrorMessage message={exportError} />
+    </div>
+  ) : null;
 
   if (activeView === "items" && (categoryName || isAllCategoriesSlug(categorySlugParam))) {
     if (isLoadingItems) return <LoadingSpinner />;
@@ -1103,6 +1122,15 @@ const CategoriesPage = () => {
               }
               onOpenMap={() => setShowMapModal(true)}
             />
+            {exportErrorMessage}
+            {hasRatingFilter && ratingsError && (
+              <div role="alert">
+                <ErrorMessage
+                  message={getServerErrorMessage(ratingsError, "Could not load ratings. Try again.")}
+                  onRetry={() => void refetchRatings()}
+                />
+              </div>
+            )}
             <FilterBottomSheet
               isOpen={showFilters}
               onClose={() => setShowFilters(false)}
@@ -1499,6 +1527,7 @@ const CategoriesPage = () => {
                 { value: "rating", label: "Rating" },
               ]}
             />
+            {exportErrorMessage}
             <FilterBottomSheet
               isOpen={showFilters}
               onClose={() => setShowFilters(false)}

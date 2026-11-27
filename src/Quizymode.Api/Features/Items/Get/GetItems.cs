@@ -89,7 +89,9 @@ public static class GetItems
                 .WithTags("Items")
                 .WithSummary("Get quiz items with filtering and pagination")
                 .Produces<Response>(StatusCodes.Status200OK)
-                .Produces(StatusCodes.Status400BadRequest);
+                .Produces(StatusCodes.Status400BadRequest)
+                .ProducesProblem(StatusCodes.Status429TooManyRequests)
+                .RequireRateLimiting("large-item-pages");
         }
 
         /// <summary>

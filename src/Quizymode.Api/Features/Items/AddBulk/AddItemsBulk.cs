@@ -1,4 +1,6 @@
 using FluentValidation;
+using Microsoft.Extensions.Options;
+using Quizymode.Api.Shared.Options;
 using Quizymode.Api.Data;
 using Quizymode.Api.Shared.Helpers;
 using Quizymode.Api.Shared.Http;
@@ -180,7 +182,8 @@ public static class AddItemsBulk
                 .RequireAuthorization("Admin")
                 .Produces<Response>(StatusCodes.Status200OK)
                 .Produces(StatusCodes.Status400BadRequest)
-                .Produces(StatusCodes.Status429TooManyRequests)
+                .ProducesProblem(StatusCodes.Status429TooManyRequests)
+                .RequireRateLimiting("content-writes")
                 .Produces(StatusCodes.Status401Unauthorized)
                 .Produces(StatusCodes.Status403Forbidden);
         }
@@ -195,6 +198,7 @@ public static class AddItemsBulk
             ITaxonomyRegistry taxonomyRegistry,
             IAuditService auditService,
             ILogger<Endpoint> logger,
+            IOptions<QuotaSettings> quotaOptions,
             CancellationToken cancellationToken)
         {
             if (!userContext.IsAuthenticated || string.IsNullOrEmpty(userContext.UserId))
@@ -217,7 +221,8 @@ public static class AddItemsBulk
                 taxonomyRegistry,
                 auditService,
                 logger,
-                cancellationToken);
+                cancellationToken,
+                quotaOptions.Value);
 
             return result.Match(
                 value => Results.Ok(value),

@@ -1,4 +1,5 @@
-import type { AxiosError } from "axios";
+import { isAxiosError, type AxiosError } from "axios";
+import { readApiError } from "@/features/studyGuide/studyGuideApiErrors";
 
 /** RFC 7807 / ASP.NET Problem Details shape from the API */
 interface ProblemDetails {
@@ -6,6 +7,14 @@ interface ProblemDetails {
   detail?: string;
   status?: number;
   type?: string;
+}
+
+/**
+ * The server's refusal text (ProblemDetails `detail` or first validation message) with no status prefix, else `fallback`.
+ * Anything that is not a server response (network error, thrown code) gives `fallback`.
+ */
+export function getServerErrorMessage(error: unknown, fallback: string): string {
+  return isAxiosError(error) ? readApiError(error, fallback).message : fallback;
 }
 
 /**

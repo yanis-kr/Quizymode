@@ -39,7 +39,9 @@ public static class ExportItems
                 .WithSummary("Export items in seed JSON format")
                 .Produces<List<SeedItemDto>>(StatusCodes.Status200OK)
                 .Produces(StatusCodes.Status400BadRequest)
-                .RequireAuthorization();
+                .ProducesProblem(StatusCodes.Status429TooManyRequests)
+                .RequireAuthorization()
+                .RequireRateLimiting("item-export");
         }
 
         private static async Task<IResult> Handler(

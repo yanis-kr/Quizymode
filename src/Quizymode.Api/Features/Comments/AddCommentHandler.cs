@@ -1,9 +1,11 @@
 using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Storage;
 using Quizymode.Api.Data;
 using Quizymode.Api.Services;
 using Quizymode.Api.Shared.Helpers;
 using Quizymode.Api.Shared.Kernel;
 using Quizymode.Api.Shared.Models;
+using Quizymode.Api.Shared.Options;
 
 namespace Quizymode.Api.Features.Comments;
 
@@ -14,7 +16,8 @@ internal static class AddCommentHandler
         ApplicationDbContext db,
         IUserContext userContext,
         IAuditService auditService,
-        CancellationToken cancellationToken)
+        CancellationToken cancellationToken,
+        QuotaSettings? quotas = null)
     {
         try
         {
@@ -40,8 +43,22 @@ internal static class AddCommentHandler
                 CreatedAt = DateTime.UtcNow
             };
 
-            db.Comments.Add(entity);
-            await db.SaveChangesAsync(cancellationToken);
+            // AC 17.4/17.6: count and insert in one transaction, serialised per user. Audit logging stays after the commit.
+            await using (IDbContextTransaction? transaction = await CreationQuota.BeginAsync(db, cancellationToken))
+            {
+                Error? quotaError = await CreationQuota.CheckCommentsAsync(db, userContext, 1, quotas, entity.CreatedAt, cancellationToken);
+                if (quotaError is not null)
+                {
+                    return Result.Failure<AddComment.Response>(quotaError);
+                }
+
+                db.Comments.Add(entity);
+                await db.SaveChangesAsync(cancellationToken);
+                if (transaction is not null)
+                {
+                    await transaction.CommitAsync(cancellationToken);
+                }
+            }
 
             if (Guid.TryParse(userContext.UserId, out Guid userId))
             {

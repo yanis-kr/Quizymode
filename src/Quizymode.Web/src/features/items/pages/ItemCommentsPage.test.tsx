@@ -5,6 +5,7 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { MemoryRouter, Route, Routes, useLocation } from "react-router-dom";
 import ItemCommentsPage from "./ItemCommentsPage";
 import { commentsApi } from "@/api/comments";
+import { refusal } from "@/test/refusal";
 
 vi.mock("@/api/comments", () => ({
   commentsApi: {
@@ -15,12 +16,14 @@ vi.mock("@/api/comments", () => ({
   },
 }));
 
+const auth = vi.hoisted(() => ({ userId: null as string | null }));
+
 vi.mock("@/contexts/AuthContext", () => ({
-  useAuth: () => ({ isAuthenticated: false }),
+  useAuth: () => ({ isAuthenticated: !!auth.userId }),
 }));
 
 vi.mock("@/hooks/useCurrentUserId", () => ({
-  useCurrentUserId: () => null,
+  useCurrentUserId: () => auth.userId,
 }));
 
 vi.mock("@/components/LoadingSpinner", () => ({
@@ -91,4 +94,60 @@ describe("ItemCommentsPage return URL (AC 4.3.5c)", () => {
       expect(screen.getByTestId("location")).not.toHaveTextContent("evil");
     }
   );
+});
+
+describe("ItemCommentsPage paging and refused saves", () => {
+  const response = (id: string, page: number, totalCount: number) =>
+    ({
+      comments: [{ id, itemId: "item-1", text: `Text ${id}`, createdBy: "user-1", createdAt: "2026-01-01T00:00:00Z" }],
+      totalCount,
+      page,
+      pageSize: 50,
+    }) as Awaited<ReturnType<typeof commentsApi.getByItemId>>;
+
+  beforeEach(() => {
+    vi.resetAllMocks();
+    auth.userId = "user-1";
+  });
+
+  it("AC 2.5.16 appends older comments to the loaded ones", async () => {
+    vi.mocked(commentsApi.getByItemId)
+      .mockResolvedValueOnce(response("a", 1, 51))
+      .mockResolvedValueOnce(response("b", 2, 51));
+    const user = userEvent.setup({ delay: null });
+    renderPage("/items/item-1/comments");
+
+    await user.click(await screen.findByRole("button", { name: "Load older comments" }));
+
+    expect(await screen.findByText("Text b")).toBeInTheDocument();
+    expect(screen.getByText("Text a")).toBeInTheDocument();
+    expect(screen.queryByRole("button", { name: "Load older comments" })).toBeNull();
+  });
+
+  it("AC 2.5.17 keeps the typed comment and shows the server message when posting is refused", async () => {
+    vi.mocked(commentsApi.getByItemId).mockResolvedValue(response("a", 1, 1));
+    vi.mocked(commentsApi.create).mockRejectedValue(refusal("Daily comment limit reached."));
+    const user = userEvent.setup({ delay: null });
+    renderPage("/items/item-1/comments");
+    const box = await screen.findByPlaceholderText("Write your comment...");
+    await user.type(box, "Keep me");
+
+    await user.click(screen.getByRole("button", { name: "Post Comment" }));
+
+    expect(await screen.findByRole("alert")).toHaveTextContent("Daily comment limit reached.");
+    expect(box).toHaveValue("Keep me");
+  });
+
+  it("AC 2.5.17 stays in edit mode when saving an edit fails", async () => {
+    vi.mocked(commentsApi.getByItemId).mockResolvedValue(response("a", 1, 1));
+    vi.mocked(commentsApi.update).mockRejectedValue(new Error("network down"));
+    const user = userEvent.setup({ delay: null });
+    renderPage("/items/item-1/comments");
+    await user.click(await screen.findByTitle("Edit comment"));
+
+    await user.click(screen.getByRole("button", { name: "Save" }));
+
+    expect(await screen.findByRole("alert")).toHaveTextContent("Could not save your changes. Please try again.");
+    expect(screen.getByDisplayValue("Text a")).toBeInTheDocument();
+  });
 });

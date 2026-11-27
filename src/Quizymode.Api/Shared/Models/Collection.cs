@@ -6,6 +6,11 @@ public sealed class Collection
 
     public bool IsRepoManaged { get; set; }
 
+    /// <summary>
+    /// True for the default collection the server creates for a user; it does not count toward the daily collection quota (AC 17).
+    /// </summary>
+    public bool IsAutoCreated { get; set; }
+
     public string Name { get; set; } = string.Empty;
 
     /// <summary>
