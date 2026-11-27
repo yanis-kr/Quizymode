@@ -452,3 +452,151 @@ describe("Category filters (#707)", () => {
     ).toBeInTheDocument();
   });
 });
+
+describe("Empty topics (#900)", () => {
+  const bucket = (name: string, itemCount: number) => ({
+    name,
+    itemCount,
+    averageRating: null,
+    navigationRank: 1,
+    description: null,
+  });
+
+  /** Rows by "category/selected,keywords"; a missing entry is an empty response. */
+  let rows: Record<string, ReturnType<typeof bucket>[]> = {};
+  let scopeTotal = 12;
+
+  beforeEach(() => {
+    vi.clearAllMocks();
+    installMemoryLocalStorage();
+    rows = {};
+    scopeTotal = 12;
+    vi.mocked(categoriesApi.getAll).mockResolvedValue({
+      categories: [
+        { category: "Geography", count: 12, description: "Places.", averageRating: null },
+        { category: "History", count: 3, description: "Past.", averageRating: null },
+      ],
+    } as never);
+    vi.mocked(keywordsApi.getNavigationKeywords).mockImplementation(async (category, selected) => ({
+      keywords: rows[[category, ...(selected ?? [])].join("/")] ?? [],
+    }));
+    vi.mocked(keywordsApi.getKeywordDescriptions).mockResolvedValue({ keywords: [] });
+    vi.mocked(keywordsApi.getItemTagKeywords).mockResolvedValue({ names: [] });
+    vi.mocked(featuredApi.get).mockResolvedValue({ sets: [], collections: [] });
+    vi.mocked(itemsApi.getAll).mockImplementation(async (_c, _p, _k, _col, _r, _page, pageSize) => {
+      const items = scopeTotal > 0 ? [makeItem("1", "Q one", "Answer one")] : [];
+      return { items, totalCount: scopeTotal, page: 1, pageSize, totalPages: 1 } as never;
+    });
+  });
+
+  /** Names on the bucket tiles, in page order. */
+  const tiles = () =>
+    screen
+      .queryAllByRole("button")
+      .filter((el) => el.tagName === "DIV")
+      .map((el) => el.querySelector("h3")?.textContent);
+
+  const expectNoSetsTab = async () => {
+    expect(await screen.findByRole("tab", { name: "List" })).toBeInTheDocument();
+    expect(screen.queryByRole("tab", { name: "Sets" })).not.toBeInTheDocument();
+  };
+
+  it.each([
+    ["category", "/categories/geography", "Geography"],
+    ["topic", "/categories/geography/capitals", "Geography/capitals"],
+  ])("AC 3.4.2 hides empty buckets on a %s Sets view and sorts the shown ones", async (_name, url, key) => {
+    const user = userEvent.setup({ delay: null });
+    rows[key] = [bucket("apple", 5), bucket("general", 0), bucket("zebra", 9)];
+    renderAt(url);
+
+    await screen.findByRole("button", { name: /apple/ });
+    expect(tiles()).toEqual(["apple", "zebra"]);
+    expect(screen.queryByText("0 items")).not.toBeInTheDocument();
+    expect(screen.getByRole("tab", { name: "Sets" })).toBeInTheDocument();
+
+    await user.selectOptions(screen.getByDisplayValue("Name"), "count");
+    await waitFor(() => expect(tiles()).toEqual(["zebra", "apple"]));
+  });
+
+  it.each([
+    ["category", "/categories/geography", "Geography"],
+    ["topic", "/categories/geography/capitals", "Geography/capitals"],
+  ])("AC 3.4.4a treats a %s with questions and only empty subtopics as having no child buckets", async (_name, url, key) => {
+    rows[key] = [bucket("general", 0), bucket("misc", 0)];
+    renderAt(url);
+
+    expect(await screen.findByText("Q one")).toBeInTheDocument();
+    await expectNoSetsTab();
+    expect(tiles()).toEqual([]);
+    expect(screen.queryByText("No sets in this level.")).not.toBeInTheDocument();
+  });
+
+  it("AC 3.4.8 shows the empty state and no study buttons for a direct link to an empty topic", async () => {
+    scopeTotal = 0;
+    rows["Geography/general"] = [bucket("misc", 0), bucket("oddities", 0)];
+    renderAt("/categories/geography/general");
+
+    expect(await screen.findByText("No questions here yet.")).toBeInTheDocument();
+    expect(screen.getByRole("link", { name: "Browse categories" })).toHaveAttribute("href", "/categories");
+    await expectNoSetsTab();
+    expect(tiles()).toEqual([]);
+    expect(screen.queryByText(/misc|oddities/)).not.toBeInTheDocument();
+    expect(screen.queryByRole("group", { name: "Play this set" })).not.toBeInTheDocument();
+    expect(screen.queryByRole("button", { name: /list items|flashcards mode|quiz mode/i })).not.toBeInTheDocument();
+  });
+
+  const openFilters = async (user: ReturnType<typeof userEvent.setup>) => {
+    await user.click(await screen.findByRole("button", { name: /^filters/i }));
+  };
+  const optionNames = () =>
+    within(screen.getByRole("listbox"))
+      .getAllByRole("option")
+      .map((option) => option.textContent);
+
+  it("AC 3.9.3 offers only topics with questions in the filter dialog of a category", async () => {
+    const user = userEvent.setup({ delay: null });
+    rows["Geography"] = [bucket("capitals", 12), bucket("general", 0)];
+    rows["Geography/capitals"] = [bucket("europe", 4), bucket("misc", 0)];
+    renderAt("/categories/geography");
+    await openFilters(user);
+
+    await user.click(screen.getByPlaceholderText("All topics"));
+    await waitFor(() => expect(optionNames()).toEqual(["All topics", "capitals"]));
+    await user.click(screen.getByRole("option", { name: "capitals" }));
+
+    await user.click(screen.getByPlaceholderText("All subtopics"));
+    await waitFor(() => expect(optionNames()).toEqual(["All subtopics", "europe"]));
+  });
+
+  it("AC 3.9.3 under All categories offers a topic name when any category has questions under it", async () => {
+    const user = userEvent.setup({ delay: null });
+    rows["Geography"] = [bucket("general", 0), bucket("shared", 0), bucket("local", 12)];
+    rows["History"] = [bucket("general", 0), bucket("shared", 3)];
+    rows["Geography/shared"] = [bucket("maps", 0), bucket("rivers", 0)];
+    rows["History/shared"] = [bucket("maps", 2), bucket("rivers", 0)];
+    renderAt("/categories/geography");
+    await openFilters(user);
+    await user.selectOptions(screen.getByDisplayValue("Geography"), "all");
+
+    await user.click(screen.getByPlaceholderText("All topics"));
+    await waitFor(() => expect(optionNames()).toEqual(["All topics", "local", "shared"]));
+    await user.click(screen.getByRole("option", { name: "shared" }));
+
+    await user.click(screen.getByPlaceholderText("All subtopics"));
+    await waitFor(() => expect(optionNames()).toEqual(["All subtopics", "maps"]));
+  });
+
+  it("AC 3.9.3 keeps an empty topic taken from the URL selected", async () => {
+    const user = userEvent.setup({ delay: null });
+    scopeTotal = 0;
+    rows["Geography"] = [bucket("capitals", 12), bucket("general", 0)];
+    renderAt("/categories/geography/general");
+    await screen.findByText("No questions here yet.");
+    await openFilters(user);
+
+    expect(screen.getByPlaceholderText("All topics")).toHaveValue("general");
+    await user.click(screen.getByPlaceholderText("All topics"));
+    expect(screen.queryByRole("option", { name: "general" })).not.toBeInTheDocument();
+    expect(screen.getByPlaceholderText("All topics")).toHaveValue("general");
+  });
+});

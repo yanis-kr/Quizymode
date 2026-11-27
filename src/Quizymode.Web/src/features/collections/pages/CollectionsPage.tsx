@@ -528,16 +528,21 @@ const CollectionsPage = () => {
     enabled: activeTab === "discover",
   });
 
+  // Empty topics are not offered (#900); a topic already selected stays listed so the select keeps its value.
   const discoverRank1Options = useMemo(
     () =>
-      (discoverRank1Data?.keywords ?? []).filter((k) => k.name.toLowerCase() !== "other"),
-    [discoverRank1Data]
+      (discoverRank1Data?.keywords ?? []).filter(
+        (k) => k.name.toLowerCase() !== "other" && (k.itemCount > 0 || k.name === discoverNav1),
+      ),
+    [discoverRank1Data, discoverNav1]
   );
 
   const discoverRank2Options = useMemo(
     () =>
-      (discoverRank2Data?.keywords ?? []).filter((k) => k.name.toLowerCase() !== "other"),
-    [discoverRank2Data]
+      (discoverRank2Data?.keywords ?? []).filter(
+        (k) => k.name.toLowerCase() !== "other" && (k.itemCount > 0 || k.name === discoverNav2),
+      ),
+    [discoverRank2Data, discoverNav2]
   );
 
   const sortedDiscoverCategories = useMemo(

@@ -379,7 +379,7 @@ const CategoriesPage = () => {
       const names = new Set<string>();
       results.forEach((r) =>
         r.keywords.forEach((k) => {
-          if (k.name.toLowerCase() !== "other") names.add(k.name);
+          if (k.itemCount > 0 && k.name.toLowerCase() !== "other") names.add(k.name);
         })
       );
       return Array.from(names).sort();
@@ -408,7 +408,7 @@ const CategoriesPage = () => {
       const names = new Set<string>();
       results.forEach((r) =>
         r.keywords.forEach((k) => {
-          if (k.name.toLowerCase() !== "other") names.add(k.name);
+          if (k.itemCount > 0 && k.name.toLowerCase() !== "other") names.add(k.name);
         })
       );
       return Array.from(names).sort();
@@ -421,12 +421,12 @@ const CategoriesPage = () => {
 
   const rank1Options = useMemo(() => {
     if (isAllCategoriesSlug(filterCategorySlug)) return rank1AllData ?? [];
-    return rank1Data?.keywords?.filter((k) => k.name.toLowerCase() !== "other").map((k) => k.name) ?? [];
+    return rank1Data?.keywords?.filter((k) => k.itemCount > 0 && k.name.toLowerCase() !== "other").map((k) => k.name) ?? [];
   }, [filterCategorySlug, rank1Data, rank1AllData]);
 
   const rank2Options = useMemo(() => {
     if (isAllCategoriesSlug(filterCategorySlug)) return rank2AllData ?? [];
-    return rank2Data?.keywords?.map((k) => k.name) ?? [];
+    return rank2Data?.keywords?.filter((k) => k.itemCount > 0).map((k) => k.name) ?? [];
   }, [filterCategorySlug, rank2Data, rank2AllData]);
 
   const { data: keywordsData, isLoading: isLoadingKeywords } = useQuery({
@@ -472,17 +472,20 @@ const CategoriesPage = () => {
       return true;
     });
   }, [navigationKeywordsForScope, itemTagKeywords]);
-  const remainingNavigationKeywordCount = useMemo(() => {
-    if (!keywordsData?.keywords) return 0;
+  // Child buckets with questions for this viewer; empty topics are not listed (#900). Pickers still offer them.
+  const childKeywords = useMemo(() => {
+    if (!keywordsData?.keywords) return [];
     const pathKwLower = new Set(pathKeywordsFromUrl.map((k) => k.toLowerCase()));
     return keywordsData.keywords.filter(
-      (keyword) => !pathKwLower.has(keyword.name.toLowerCase())
-    ).length;
+      (keyword) => keyword.itemCount > 0 && !pathKwLower.has(keyword.name.toLowerCase())
+    );
   }, [keywordsData?.keywords, pathKeywordsFromUrl]);
 
   const isLeaf = !!categoryName && pathKeywordsFromUrl.length >= 2;
+  // A category root counts as childless only once its buckets have loaded, so it does not flash the List view.
   const effectiveLeaf =
-    isLeaf || (keywordsFromUrl.length >= 1 && remainingNavigationKeywordCount === 0);
+    isLeaf ||
+    ((keywordsFromUrl.length >= 1 || (!!categoryName && !!keywordsData)) && childKeywords.length === 0);
   const hideSetsMode = isLeaf || (view === "sets" && effectiveLeaf);
   const { activeView, availableModes: categoryAvailableModes } =
     getCategoryScopeModeConfig(view, hideSetsMode);
@@ -643,12 +646,7 @@ const CategoriesPage = () => {
   }, [categoriesData?.categories, categoriesPage]);
 
   const sortedKeywords = useMemo(() => {
-    if (!keywordsData?.keywords) return [];
-    const pathKwLower = new Set(pathKeywordsFromUrl.map((k) => k.toLowerCase()));
-    const filtered = keywordsData.keywords.filter(
-      (kw) => !pathKwLower.has(kw.name.toLowerCase())
-    );
-    return [...filtered].sort((a, b) => {
+    return [...childKeywords].sort((a, b) => {
       switch (sortBy) {
         case "name":
           return a.name.localeCompare(b.name);
@@ -665,7 +663,7 @@ const CategoriesPage = () => {
           return 0;
       }
     });
-  }, [keywordsData?.keywords, pathKeywordsFromUrl, sortBy]);
+  }, [childKeywords, sortBy]);
 
   const setsScopeCount = useMemo(() => {
     if (!categoryName) return null;

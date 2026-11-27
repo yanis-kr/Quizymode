@@ -56,7 +56,10 @@ async function stubCatalog(page: Page): Promise<{ rosterUrls: string[] }> {
     }
     if (url.pathname.endsWith("/api/users/settings")) return json({ settings: {} });
     if (url.pathname.endsWith("/api/keywords/item-tags")) return json({ names: [] });
-    if (url.pathname.endsWith("/api/keywords")) return json({ keywords: [] });
+    // A topic with questions keeps the category on its Sets view; empty topics are not listed (#900).
+    if (url.pathname.endsWith("/api/keywords")) {
+      return json({ keywords: [{ name: "capitals", itemCount: items.length, averageRating: null, navigationRank: 1, description: null }] });
+    }
     return json({ settings: {}, keywords: [], names: [], sets: [], collections: [], items: [], categories: [], totalCount: 0, page: 1, pageSize: 20, totalPages: 0 });
   });
   return { rosterUrls };
