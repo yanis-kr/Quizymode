@@ -1,5 +1,5 @@
 /**
- * About page (#883, #884). The API is stubbed, so the page does not depend on the catalog or the starter pool content.
+ * About page (#883, #884, #885). The API is stubbed, so the page does not depend on the catalog or the starter pool content.
  */
 import { test, expect } from "../fixtures";
 import type { Page, Route } from "@playwright/test";
@@ -30,7 +30,11 @@ const pictureEntry = {
 
 type PoolMode = { kind: "pool"; items: unknown[] } | { kind: "fail" };
 
-async function stubApi(page: Page, poolMode: PoolMode = { kind: "fail" }): Promise<void> {
+async function stubApi(
+  page: Page,
+  poolMode: PoolMode = { kind: "fail" },
+  collections: Record<string, unknown> = {}
+): Promise<void> {
   await page.route("**/*", async (route: Route) => {
     const pathname = new URL(route.request().url()).pathname;
     // Only API calls are stubbed; source modules under /src/ must load normally.
@@ -41,6 +45,13 @@ async function stubApi(page: Page, poolMode: PoolMode = { kind: "fail" }): Promi
       return json({ version: "test", items: poolMode.items });
     }
     if (pathname.endsWith("/api/users/settings")) return json({ settings: {} });
+    // GET /collections/{id} for the About cards: listed ids answer, any other id fails with 500.
+    const collectionId = /^\/api\/collections\/([0-9a-f-]{36})$/.exec(pathname)?.[1];
+    if (collectionId) {
+      const body = collections[collectionId];
+      if (!body) return route.fulfill({ status: 500, contentType: "application/json", body: "{}" });
+      return json(body);
+    }
     // Unknown endpoints get every list field empty so no page hook reads undefined.
     return json({ settings: {}, keywords: [], names: [], sets: [], collections: [], items: [], categories: [], totalCount: 0, page: 1, pageSize: 20, totalPages: 0 });
   });
@@ -105,4 +116,47 @@ test("AC 3.0.55 when the starter pool request fails the hook shows the static fa
     "href",
     "https://science.nasa.gov/saturn/facts/"
   );
+});
+
+const AHA_ID = "e0eaca22-3e39-4f07-92e6-046baab0d3ea";
+const SOUNDS_FAKE_ID = "3c85dfe2-4365-406d-8056-d30bc451dd20";
+const LANDMARKS_ID = "abdbb0fd-ea31-4890-8a20-831592be74e3";
+
+const collectionBody = (id: string, name: string, itemCount: number, description: string) => ({
+  id,
+  name,
+  description,
+  itemCount,
+  createdBy: "seeder",
+  createdAt: "2026-04-08T00:00:00Z",
+  isPublic: true,
+  isDiscoverable: true,
+});
+
+test("AC 3.0.58 the About collection cards link to /collections/{id} and show the API question count; a collection that fails to load hides only its own card", async ({ page }) => {
+  // Counts differ from the seed files on purpose, so the test proves the card shows what the API returned.
+  await stubApi(page, { kind: "fail" }, {
+    [AHA_ID]: collectionBody(AHA_ID, "Aha Moment Trivia", 41, "Clue-driven trivia."),
+    [LANDMARKS_ID]: collectionBody(LANDMARKS_ID, "Landmarks from Sideways Clues", 17, "Famous places from indirect clues."),
+  });
+  await page.goto("/about");
+
+  const explore = page.getByRole("region", { name: "Start with something odd." });
+  const cards = explore.getByTestId("about-collection-card");
+  await expect(cards).toHaveCount(2);
+  await expect(cards.nth(0)).toHaveAttribute("data-collection-id", AHA_ID);
+  await expect(cards.nth(0).getByRole("link", { name: "Aha Moment Trivia" })).toHaveAttribute("href", `/collections/${AHA_ID}`);
+  await expect(cards.nth(0).getByTestId("about-collection-count")).toHaveText("41 questions");
+  await expect(cards.nth(0)).toContainText("Clue-driven trivia.");
+  await expect(cards.nth(1)).toHaveAttribute("data-collection-id", LANDMARKS_ID);
+  await expect(cards.nth(1).getByRole("link", { name: "Landmarks from Sideways Clues" })).toHaveAttribute(
+    "href",
+    `/collections/${LANDMARKS_ID}`
+  );
+  await expect(cards.nth(1).getByTestId("about-collection-count")).toHaveText("17 questions");
+  await expect(explore.locator(`[data-collection-id="${SOUNDS_FAKE_ID}"]`)).toHaveCount(0);
+  await expect(explore.getByRole("link", { name: "All featured sets" })).toHaveAttribute("href", "/featured");
+
+  await cards.nth(1).getByRole("link", { name: "Landmarks from Sideways Clues" }).click();
+  await expect(page).toHaveURL(new RegExp(`/collections/${LANDMARKS_ID}$`));
 });

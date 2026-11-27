@@ -4,9 +4,15 @@ export const HOME_SAMPLE_COLLECTION_ID = "8f9b8c14-8d30-4d94-9b20-4c7bb7f7f511";
 export const HOME_SAMPLE_COLLECTION_NAME = "Fun Trivia Facts";
 /** Curated public sets the About page links to (#883): the mode cards use the first one. */
 export const ABOUT_SAMPLE_COLLECTION_ID = "e0eaca22-3e39-4f07-92e6-046baab0d3ea";
-export const ABOUT_SAMPLE_COLLECTION_NAME = "Aha Moment Trivia";
 export const ABOUT_SOUNDS_FAKE_COLLECTION_ID = "3c85dfe2-4365-406d-8056-d30bc451dd20";
-export const ABOUT_SOUNDS_FAKE_COLLECTION_NAME = "Sounds Fake, But It's True";
+/** Landmarks from Sideways Clues: the third About collection card (#885). */
+export const ABOUT_LANDMARKS_COLLECTION_ID = "abdbb0fd-ea31-4890-8a20-831592be74e3";
+/** The About page collection cards, in order (#885). Each card loads `GET /collections/{id}` live. */
+export const ABOUT_COLLECTION_IDS: readonly string[] = [
+  ABOUT_SAMPLE_COLLECTION_ID,
+  ABOUT_SOUNDS_FAKE_COLLECTION_ID,
+  ABOUT_LANDMARKS_COLLECTION_ID,
+];
 
 export interface HomeCategoryCard {
   slug: string;
