@@ -1,4 +1,4 @@
-import { z } from "zod";
+import { z } from "@/utils/zodConfig";
 import {
   INCORRECT_MATCHES_CORRECT_MESSAGE,
   getIncorrectAnswerConflict,

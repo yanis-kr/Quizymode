@@ -1,4 +1,4 @@
-import { z } from "zod";
+import { z } from "@/utils/zodConfig";
 
 /** Matches the API limit: 10 KB of UTF-8 text. */
 export const STUDY_GUIDE_UPLOAD_MAX_BYTES = 10 * 1024;

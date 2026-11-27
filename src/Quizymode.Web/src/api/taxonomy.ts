@@ -1,4 +1,4 @@
-import { z } from "zod";
+import { z } from "@/utils/zodConfig";
 import { apiClient } from "./client";
 
 export interface TaxonomyL2 {

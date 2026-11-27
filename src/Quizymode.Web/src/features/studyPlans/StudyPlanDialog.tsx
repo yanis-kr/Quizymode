@@ -1,5 +1,5 @@
 import { useEffect, useId, useMemo, useRef, useState, type FormEvent } from "react";
-import { z } from "zod";
+import { z } from "@/utils/zodConfig";
 import { useFocusTrap } from "@/hooks/useFocusTrap";
 import { StudyPlanError, useStudyPlanActions, type CollectionPlan } from "./useStudyPlans";
 import {
