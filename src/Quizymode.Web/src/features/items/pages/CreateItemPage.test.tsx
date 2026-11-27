@@ -9,10 +9,12 @@ import { collectionsApi } from "@/api/collections";
 import { taxonomyApi } from "@/api/taxonomy";
 import { useExtraKeywordAutocompleteSource } from "@/hooks/useExtraKeywordAutocompleteSource";
 
+const authState = vi.hoisted(() => ({ isAdmin: false }));
+
 vi.mock("@/contexts/AuthContext", () => ({
   useAuth: () => ({
     isAuthenticated: true,
-    isAdmin: false,
+    isAdmin: authState.isAdmin,
   }),
 }));
 
@@ -114,6 +116,7 @@ describe("CreateItemPage", () => {
   beforeEach(() => {
     vi.clearAllMocks();
     activeCollection.id = null;
+    authState.isAdmin = false;
 
     vi.mocked(taxonomyApi.getAll).mockResolvedValue({
       categories: [
@@ -379,4 +382,62 @@ describe("CreateItemPage", () => {
     expect(itemsApi.create).not.toHaveBeenCalled();
     expect(screen.queryByText("Saved. Add the next question.")).not.toBeInTheDocument();
   });
+
+  const SUBTITLE =
+    "Add a question with its correct answer and wrong answers. An explanation is optional.";
+
+  it("is headed Write a question with a subtitle and no admin wording for a regular user (AC 2.2.4, #901)", async () => {
+    const { container } = renderPage("/create/question");
+
+    expect(await screen.findByRole("heading", { level: 1 })).toHaveTextContent(/^Write a question$/);
+    expect(screen.getAllByRole("heading", { level: 1 })).toHaveLength(1);
+    expect(screen.getByText(SUBTITLE, { exact: false }).textContent).toBe(SUBTITLE);
+    // Closed disclosures stay in the DOM, so textContent covers the whole page.
+    expect(screen.getByRole("button", { name: "Read the content rules" })).toBeInTheDocument();
+    expect(container.textContent).not.toMatch(/admin/i);
+  });
+
+  it("also tells an admin that the question can be made public (AC 2.2.4, #901)", async () => {
+    authState.isAdmin = true;
+    renderPage("/create/question");
+
+    await screen.findByRole("heading", { level: 1, name: "Write a question" });
+    expect(screen.getByText(SUBTITLE, { exact: false }).textContent).toBe(
+      `${SUBTITLE} As an admin, you can make it public.`
+    );
+    expect(screen.getByRole("checkbox", { name: "Private question" })).toBeEnabled();
+  });
+
+  it.each([
+    [false, false],
+    [true, true],
+  ])(
+    "creates a regular user's question as private with review requested %s (AC 2.1.4, AC 2.1.5, #901)",
+    async (requestReview, expected) => {
+      const user = userEvent.setup({ delay: null });
+
+      renderPage("/create/question?category=science&keywords=anatomy,muscular");
+      await waitFor(() => expect(screen.getByLabelText(/subtopic/i)).toHaveValue("muscular"));
+
+      expect(
+        screen.getByText("Private: it is not listed in public categories or search.")
+      ).toBeInTheDocument();
+      expect(screen.queryByRole("checkbox", { name: /private/i })).not.toBeInTheDocument();
+
+      await user.type(getFieldControl("Question *"), "What connects muscle to bone?");
+      await user.type(getFieldControl("Correct Answer *"), "Tendons");
+      await user.type(screen.getByPlaceholderText("Incorrect answer 1"), "Ligaments");
+      if (requestReview) {
+        await user.click(
+          screen.getByRole("checkbox", { name: "Request review to make this question public" })
+        );
+      }
+      await user.click(screen.getByRole("button", { name: /save and study/i }));
+
+      await waitFor(() => expect(itemsApi.create).toHaveBeenCalledTimes(1));
+      const payload = vi.mocked(itemsApi.create).mock.calls[0][0];
+      expect(payload.isPrivate).toBe(true);
+      expect(payload.readyForReview).toBe(expected);
+    }
+  );
 });

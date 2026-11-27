@@ -522,6 +522,11 @@ async function waitForManageCollectionsDialog(page: Page) {
 }
 
 async function clickConsentIfPresent(page: Page) {
+  // The content notice keeps its dismiss button inside a closed disclosure, so open it first.
+  const rulesToggle = page.getByRole("button", { name: "Read the content rules", expanded: false });
+  if (await rulesToggle.isVisible().catch(() => false)) {
+    await rulesToggle.click().catch(() => {});
+  }
   const consentButton = page.getByRole("button", { name: /i understand/i });
   if (await consentButton.isVisible().catch(() => false)) {
     await consentButton.click().catch(() => {});

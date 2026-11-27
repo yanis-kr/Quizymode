@@ -77,7 +77,7 @@ function getFallbackTitle(pathname: string): string | undefined {
   }
 
   if (pathname === "/create/question" || pathname === "/items/create" || pathname === "/add-new-item") {
-    return "Add Items";
+    return "Write a question";
   }
 
   if (pathname === "/create/import") {

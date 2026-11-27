@@ -453,7 +453,7 @@ test.describe("create question: chips and the picker", () => {
     expect(label).toContain(l2);
 
     // A public item (admin) reports the path it used instead of the chips.
-    await page.getByRole("checkbox", { name: /private item/i }).uncheck();
+    await page.getByRole("checkbox", { name: "Private question" }).uncheck();
     await page.getByText("Correct Answer *").locator("xpath=following-sibling::input").first().fill(ANSWER);
     await page.getByPlaceholder("Incorrect answer 1").fill("By guessing");
     await page.getByRole("button", { name: "Save and study" }).click();

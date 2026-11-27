@@ -188,16 +188,26 @@ describe("EditItemPage", () => {
     expect(screen.queryByTestId("edit-item-picture")).not.toBeInTheDocument();
   });
 
-  it("regular user sees readyForReview checkbox", async () => {
-    // AC 2.1.4
+  it("shows a regular user editing a private question the sentence and review checkbox, and saves the request (AC 2.1.4, #901)", async () => {
+    const user = userEvent.setup({ delay: null });
     renderPage("/items/item-1/edit");
 
     // Wait for the form to load by checking for the save button
-    await screen.findByRole("button", { name: /^save$/i });
+    const save = await screen.findByRole("button", { name: /^save$/i });
 
     expect(
-      screen.getByText(/request admin review to make this item public/i)
+      screen.getByText("Private: it is not listed in public categories or search.")
     ).toBeInTheDocument();
+    expect(screen.queryByRole("checkbox", { name: /private/i })).not.toBeInTheDocument();
+    await user.click(
+      screen.getByRole("checkbox", { name: "Request review to make this question public" })
+    );
+    await user.click(save);
+
+    await waitFor(() => expect(itemsApi.update).toHaveBeenCalledTimes(1));
+    const payload = vi.mocked(itemsApi.update).mock.calls[0][1];
+    expect(payload.isPrivate).toBe(true);
+    expect(payload.readyForReview).toBe(true);
   });
 
   it("admin user sees isPrivate toggle", async () => {
@@ -213,8 +223,8 @@ describe("EditItemPage", () => {
     // Wait for the form to load
     await screen.findByRole("button", { name: /^save$/i });
 
-    // Admin sees the Private Item checkbox (enabled)
-    const privateCheckbox = screen.getByRole("checkbox", { name: /private item/i });
+    // Admin sees the Private question checkbox (enabled)
+    const privateCheckbox = screen.getByRole("checkbox", { name: "Private question" });
     expect(privateCheckbox).toBeInTheDocument();
     expect(privateCheckbox).not.toBeDisabled();
   });
@@ -540,6 +550,47 @@ describe("EditItemPage", () => {
       renderPage("/items/item-1/edit");
       await screen.findByRole("button", { name: /^save$/i });
       expect(screen.getByText(NOTICE)).toBeInTheDocument();
+    });
+
+    it("keeps the notice and review checkbox without the private sentence, and saves the same request (AC 2.1.4, AC 2.1.6, #901)", async () => {
+      const user = userEvent.setup({ delay: null });
+      vi.mocked(itemsApi.getById).mockResolvedValue(
+        publicItem as Awaited<ReturnType<typeof itemsApi.getById>>
+      );
+      renderPage("/items/item-1/edit");
+      const save = await screen.findByRole("button", { name: /^save$/i });
+
+      expect(screen.getByText(NOTICE)).toBeInTheDocument();
+      expect(
+        screen.getByRole("checkbox", { name: "Request review to make this question public" })
+      ).not.toBeChecked();
+      expect(screen.queryByRole("checkbox", { name: /private/i })).not.toBeInTheDocument();
+      expect(screen.queryByText(/not listed in public categories or search/i)).not.toBeInTheDocument();
+
+      await user.click(save);
+
+      await waitFor(() => expect(itemsApi.update).toHaveBeenCalledTimes(1));
+      expect(vi.mocked(itemsApi.update).mock.calls[0][1]).toStrictEqual({
+        category: "science",
+        navigationKeyword1: "anatomy",
+        navigationKeyword2: "muscular",
+        isPrivate: false,
+        question: "Old question?",
+        questionSpeech: undefined,
+        correctAnswer: "Old answer",
+        correctAnswerSpeech: undefined,
+        incorrectAnswers: ["W1", "W2", "W3"],
+        incorrectAnswerSpeech: undefined,
+        incorrectAnswerRationale: undefined,
+        explanation: "Old explanation",
+        expectedImageRevision: undefined,
+        questionImage: undefined,
+        explanationImage: undefined,
+        keywords: [],
+        source: undefined,
+        groupLabel: "",
+        readyForReview: false,
+      });
     });
 
     it("shows no notice for a private item", async () => {
