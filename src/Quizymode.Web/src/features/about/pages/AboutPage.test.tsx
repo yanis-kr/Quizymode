@@ -1,5 +1,5 @@
 /**
- * About page copy, structure and links (#883, #884). The AC ids in the test names are the ids in docs/AC.md.
+ * About page copy, structure, links and images (#883, #884, #885). The AC ids in the test names are the ids in docs/AC.md.
  * The starter pool request fails here, so the hook shows its static fallback question.
  */
 import fs from "node:fs";
@@ -13,10 +13,15 @@ import AboutPage from "./AboutPage";
 import { ABOUT_CANONICAL, ABOUT_SEO_DESCRIPTION, ABOUT_SEO_TITLE } from "../aboutSeo";
 import { GITHUB_REPO_URL, LINKEDIN_URL, MEDIUM_STORY_URL } from "@/utils/projectLinks";
 import { USER_GUIDE_URL } from "@/utils/userGuideLink";
+import { collectionsApi } from "@/api/collections";
+import type { CollectionResponse } from "@/types/api";
 
 vi.mock("@/api/starter", async (importOriginal) => ({
   ...(await importOriginal<typeof import("@/api/starter")>()),
   starterApi: { getPool: vi.fn(() => Promise.reject(new Error("offline"))) },
+}));
+vi.mock("@/api/collections", () => ({
+  collectionsApi: { getById: vi.fn() },
 }));
 vi.mock("@/contexts/AuthContext", () => ({
   useAuth: () => ({ isAuthenticated: false, isLoading: false, logout: vi.fn(), username: null, email: null, isAdmin: false }),
@@ -24,6 +29,21 @@ vi.mock("@/contexts/AuthContext", () => ({
 
 const AHA_ID = "e0eaca22-3e39-4f07-92e6-046baab0d3ea";
 const SOUNDS_FAKE_ID = "3c85dfe2-4365-406d-8056-d30bc451dd20";
+const LANDMARKS_ID = "abdbb0fd-ea31-4890-8a20-831592be74e3";
+const ABOUT_ASSET_DIR = path.join(process.cwd(), "src", "assets", "about");
+// Vitest serves imported assets by their source path; the production build rewrites them to assets/m/<hash>.webp.
+const ABOUT_SRC = /^\/src\/assets\/about\/([a-z0-9-]+\.webp)$/;
+const getById = vi.mocked(collectionsApi.getById);
+
+function collection(id: string, name: string, itemCount: number, description: string): CollectionResponse {
+  return { id, name, description, itemCount, createdBy: "seeder", createdAt: "2026-04-08T00:00:00Z", isPublic: true };
+}
+
+const COLLECTIONS: Record<string, CollectionResponse> = {
+  [AHA_ID]: collection(AHA_ID, "Aha Moment Trivia", 33, "Clue-driven trivia."),
+  [SOUNDS_FAKE_ID]: collection(SOUNDS_FAKE_ID, "Sounds Fake, But It's True", 12, "Surprising facts that feel made up."),
+  [LANDMARKS_ID]: collection(LANDMARKS_ID, "Landmarks from Sideways Clues", 12, "Famous places from indirect clues."),
+};
 const REPO_ROOT = path.resolve(process.cwd(), "..", "..");
 
 const SECTION_HEADINGS = [
@@ -74,6 +94,8 @@ function expectExternal(link: HTMLElement, href: string): void {
 
 describe("AboutPage (#883)", () => {
   beforeEach(() => {
+    getById.mockReset();
+    getById.mockRejectedValue(new Error("offline"));
     vi.stubGlobal("__ABOUT_HTML__", "<p><strong>Image credits.</strong> Country flag pictures are files from <a href=\"https://commons.wikimedia.org/\">Wikimedia Commons</a>. All flag files are marked public domain on Commons. The flag of Oman comes from the public-domain CIA World Factbook set.</p>");
     vi.stubGlobal("__APP_VERSION__", "9.9.9");
     vi.stubGlobal("__BUILD_LABEL__", "test");
@@ -132,9 +154,9 @@ describe("AboutPage (#883)", () => {
     expect(cards.getByRole("link", { name: "Try Games" })).toHaveAttribute("href", `/games/collections/${AHA_ID}`);
     expect(linkByName("Try 5 questions")).toHaveAttribute("href", "/start");
     expect(linkByName("Browse topics")).toHaveAttribute("href", "/categories");
-    expect(linkByName("Aha Moment Trivia")).toHaveAttribute("href", `/collections/${AHA_ID}`);
-    expect(linkByName("Sounds Fake, But It's True")).toHaveAttribute("href", `/collections/${SOUNDS_FAKE_ID}`);
+    // The collection cards are covered by AC 3.0.58; with every collection failing, only the featured link remains.
     expect(linkByName("All featured sets")).toHaveAttribute("href", "/featured");
+    expect(screen.queryByTestId("about-collection-card")).not.toBeInTheDocument();
   });
 
   it("AC 3.0.42 the donation paragraph shows only for an https URL and keeps its disclosures", () => {
@@ -290,5 +312,107 @@ describe("AboutPage (#883)", () => {
         expect(allowed, `${file} imports ${spec}`).toContain(pkg);
       }
     }
+  });
+
+  it("AC 3.0.58 each loaded collection card links to its page and shows the API count; a failed one hides only its card", async () => {
+    getById.mockImplementation((id: string) =>
+      id === SOUNDS_FAKE_ID ? Promise.reject(new Error("404")) : Promise.resolve(COLLECTIONS[id])
+    );
+    renderAbout();
+    const explore = screen.getByRole("region", { name: SECTION_HEADINGS[4] });
+    await waitFor(() => expect(within(explore).getAllByTestId("about-collection-card")).toHaveLength(2));
+    const cards = within(explore).getAllByTestId("about-collection-card");
+    expect(cards.map((card) => card.getAttribute("data-collection-id"))).toEqual([AHA_ID, LANDMARKS_ID]);
+    expect(within(cards[0]).getByRole("link", { name: "Aha Moment Trivia" })).toHaveAttribute("href", `/collections/${AHA_ID}`);
+    expect(cards[0]).toHaveTextContent("33 questions");
+    expect(cards[0]).toHaveTextContent("Clue-driven trivia.");
+    expect(within(cards[1]).getByRole("link", { name: "Landmarks from Sideways Clues" })).toHaveAttribute(
+      "href",
+      `/collections/${LANDMARKS_ID}`
+    );
+    expect(cards[1]).toHaveTextContent("12 questions");
+    expect(within(explore).queryByText("Sounds Fake, But It's True")).not.toBeInTheDocument();
+    expect(within(explore).getByRole("link", { name: "All featured sets" })).toHaveAttribute("href", "/featured");
+    expect(getById.mock.calls.map(([id]) => id)).toEqual(expect.arrayContaining([AHA_ID, SOUNDS_FAKE_ID, LANDMARKS_ID]));
+  });
+
+  it("AC 3.0.59 a collection response without a count renders its card without a count", async () => {
+    getById.mockImplementation((id: string) => {
+      const withoutCount: Partial<CollectionResponse> = { ...COLLECTIONS[id] };
+      delete withoutCount.itemCount;
+      return Promise.resolve(withoutCount as CollectionResponse);
+    });
+    renderAbout();
+    const cards = await screen.findAllByTestId("about-collection-card");
+    expect(cards).toHaveLength(3);
+    for (const card of cards) {
+      expect(within(card).queryByTestId("about-collection-count")).not.toBeInTheDocument();
+      expect(card.textContent ?? "").not.toMatch(/\d+\s+questions?/);
+    }
+  });
+
+  it("AC 3.0.60 every About image is an imported WebP file under src/assets/about of at most 100 KB, with width, height, alt and lazy loading", () => {
+    const container = renderAbout();
+    // Fixed-name files under public/ would ship with the immutable webp cache; About images must be imported instead.
+    expect(fs.existsSync(path.join(process.cwd(), "public", "about"))).toBe(false);
+    const files = fs.readdirSync(ABOUT_ASSET_DIR);
+    expect(files.length).toBeGreaterThan(0);
+    for (const file of files) {
+      expect(file, file).toMatch(/\.webp$/);
+      const bytes = fs.readFileSync(path.join(ABOUT_ASSET_DIR, file));
+      expect(bytes.subarray(0, 4).toString("ascii"), file).toBe("RIFF");
+      expect(bytes.subarray(8, 12).toString("ascii"), file).toBe("WEBP");
+      expect(bytes.length, `${file} size`).toBeLessThanOrEqual(100 * 1024);
+    }
+    const images = Array.from(container.querySelectorAll("img"));
+    expect(images.length).toBeGreaterThan(0);
+    const used = new Set<string>();
+    for (const img of images) {
+      const src = img.getAttribute("src") ?? "";
+      const file = ABOUT_SRC.exec(src)?.[1];
+      expect(file, src).toBeDefined();
+      expect(fs.existsSync(path.join(ABOUT_ASSET_DIR, file ?? "")), src).toBe(true);
+      expect(Number(img.getAttribute("width")), `${src} width`).toBeGreaterThan(0);
+      expect(Number(img.getAttribute("height")), `${src} height`).toBeGreaterThan(0);
+      expect((img.getAttribute("alt") ?? "").trim(), `${src} alt`).not.toBe("");
+      expect(img.getAttribute("alt") ?? "", `${src} alt`).not.toMatch(/screenshot/i);
+      // No image sits above the fold (the Hero and the hook question come first), so every one loads lazily.
+      expect(img, src).toHaveAttribute("loading", "lazy");
+      used.add(file ?? "");
+    }
+    expect([...used].sort()).toEqual([...files].sort());
+  });
+
+  it("AC 3.0.61 every image src on the About page is a same-origin path", () => {
+    const container = renderAbout();
+    const images = Array.from(container.querySelectorAll("img"));
+    expect(images.length).toBeGreaterThan(0);
+    for (const img of images) {
+      const src = img.getAttribute("src") ?? "";
+      expect(src, src).toMatch(/^\/(?!\/)/);
+      expect(new URL(src, window.location.origin).origin, src).toBe(window.location.origin);
+    }
+  });
+
+  it("AC 3.0.62 the notes section shows three numbered steps in order, each with its image; step 1 names Photos or scan", () => {
+    renderAbout();
+    const notes = screen.getByRole("region", { name: SECTION_HEADINGS[2] });
+    const list = within(notes).getByTestId("about-notes-steps");
+    expect(list.tagName).toBe("OL");
+    expect(list).toHaveClass("list-decimal");
+    const steps = within(list).getAllByRole("listitem");
+    expect(steps.map((step) => step.textContent)).toEqual([
+      "Add your notes.",
+      "Pick the sections that matter.",
+      "Keep the good questions, bin the rest.",
+    ]);
+    const images = steps.map((step) => within(step).getByRole("img"));
+    expect(images.map((img) => img.getAttribute("src"))).toEqual([
+      "/src/assets/about/notes-add.webp",
+      "/src/assets/about/notes-sections.webp",
+      "/src/assets/about/notes-review.webp",
+    ]);
+    expect(images[0]).toHaveAccessibleName(expect.stringContaining("Photos or scan"));
+    expect(images[2]).toHaveAccessibleName(expect.stringContaining("quote"));
   });
 });

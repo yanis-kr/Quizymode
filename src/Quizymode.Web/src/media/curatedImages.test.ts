@@ -19,6 +19,14 @@ describe("buildCuratedImageMap", () => {
   it("maps asset paths to curated keys and ignores everything else", () => {
     expect([...map.keys()].sort()).toEqual(["curated:flags/fr", "curated:flags/it"]);
   });
+
+  it("never maps the About screenshots (#885), which share assets/m but are not question pictures", () => {
+    const withAbout = buildCuratedImageMap({ "../assets/about/quiz.webp": "/assets/m/about.webp" });
+    expect(withAbout.size).toBe(0);
+    const source = fs.readFileSync(path.join(process.cwd(), "src", "media", "curatedImages.ts"), "utf8");
+    expect(source).toContain('import.meta.glob("../assets/curated/**/*.webp"');
+    expect(source).not.toContain("assets/about");
+  });
 });
 
 describe("resolveCuratedImage", () => {

@@ -1,4 +1,6 @@
 import { AboutSection } from "./AboutSection";
+import { AboutScreenshot } from "./AboutScreenshot";
+import { ABOUT_IMAGES } from "./aboutImages";
 
 const HABITS: { label: string; text: string }[] = [
   { label: "Daily quiz", text: "Five questions a day, the same five for everybody." },
@@ -18,15 +20,18 @@ const HABITS: { label: string; text: string }[] = [
   { label: "Share", text: "Post your daily result without spoiling the answers for anyone." },
 ];
 
-/** Keep it going: the habit tools (#883). */
+/** Keep it going: the habit tools (#883), next to a Daily quiz screenshot (#885). */
 export const AboutHabit = () => (
   <AboutSection id="about-habit" title="Small habits, no guilt trips.">
-    <ul className="mt-2 space-y-1.5 text-sm leading-relaxed text-slate-600">
-      {HABITS.map((habit) => (
-        <li key={habit.label}>
-          <span className="font-semibold text-slate-700">{habit.label}:</span> {habit.text}
-        </li>
-      ))}
-    </ul>
+    <div className="mt-2 flex flex-col gap-3 sm:flex-row sm:items-start">
+      <ul className="min-w-0 flex-1 space-y-1.5 text-sm leading-relaxed text-slate-600">
+        {HABITS.map((habit) => (
+          <li key={habit.label}>
+            <span className="font-semibold text-slate-700">{habit.label}:</span> {habit.text}
+          </li>
+        ))}
+      </ul>
+      <AboutScreenshot image={ABOUT_IMAGES.daily} className="mx-auto w-full max-w-[13rem] shrink-0" />
+    </div>
   </AboutSection>
 );

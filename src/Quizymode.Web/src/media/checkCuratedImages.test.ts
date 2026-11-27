@@ -63,6 +63,57 @@ describe("scripts/check-curated-images.mjs", () => {
     expect(result.stderr).toContain("expected 2");
   });
 
+  describe("with the About screenshots folder as a second source (#885)", () => {
+    let about: string;
+
+    beforeEach(() => {
+      about = path.join(tmp, "about");
+      fs.mkdirSync(about, { recursive: true });
+    });
+
+    function runBoth() {
+      return spawnSync(process.execPath, [script, "--src", src, "--src", about, "--dist", dist], { encoding: "utf8" });
+    }
+
+    it("passes when the curated and About webp files are all emitted under assets/m", () => {
+      fs.writeFileSync(path.join(src, "flags", "fr.webp"), "france");
+      fs.writeFileSync(path.join(about, "quiz.webp"), "quiz screen");
+      fs.writeFileSync(path.join(dist, "assets", "m", "aaa.webp"), "france");
+      fs.writeFileSync(path.join(dist, "assets", "m", "bbb.webp"), "quiz screen");
+      const result = runBoth();
+      expect(result.status).toBe(0);
+      expect(result.stdout).toContain("2 source, 2 emitted");
+    });
+
+    it("fails when an About webp is missing from assets/m", () => {
+      fs.writeFileSync(path.join(src, "flags", "fr.webp"), "france");
+      fs.writeFileSync(path.join(about, "quiz.webp"), "quiz screen");
+      fs.writeFileSync(path.join(dist, "assets", "m", "aaa.webp"), "france");
+      const result = runBoth();
+      expect(result.status).toBe(1);
+      expect(result.stderr).toContain("expected 2");
+    });
+
+    it("fails when an About webp keeps a fixed name outside assets/m", () => {
+      fs.writeFileSync(path.join(about, "quiz.webp"), "quiz screen");
+      fs.writeFileSync(path.join(dist, "assets", "m", "aaa.webp"), "quiz screen");
+      fs.mkdirSync(path.join(dist, "about"), { recursive: true });
+      fs.writeFileSync(path.join(dist, "about", "quiz.webp"), "quiz screen");
+      const result = runBoth();
+      expect(result.status).toBe(1);
+      expect(result.stderr).toContain("outside assets/m");
+    });
+
+    it("fails when an About webp is inlined as a data URI", () => {
+      fs.writeFileSync(path.join(about, "quiz.webp"), "quiz screen");
+      fs.writeFileSync(path.join(dist, "assets", "m", "aaa.webp"), "quiz screen");
+      fs.writeFileSync(path.join(dist, "assets", "AboutPage-1.js"), 'const a="data:image/webp;base64,AAAA";');
+      const result = runBoth();
+      expect(result.status).toBe(1);
+      expect(result.stderr).toContain("data:image/webp");
+    });
+  });
+
   it("fails when a webp is emitted outside assets/m", () => {
     fs.writeFileSync(path.join(dist, "assets", "fr-123.webp"), "france");
     const result = run();

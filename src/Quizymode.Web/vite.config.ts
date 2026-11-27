@@ -44,6 +44,11 @@ const aboutMarkdown = fs.readFileSync(
 );
 const aboutHtml = marked.parse(aboutMarkdown) as string;
 
+/** Source folders whose .webp files ship content-hashed under assets/m (AC 3.21.7): curated pictures, About screenshots. */
+const HASHED_WEBP_DIRS = ["assets/curated/", "assets/about/"];
+const isHashedWebpSource = (filePath: string): boolean =>
+  HASHED_WEBP_DIRS.some((dir) => filePath.replace(/\\/g, "/").includes(dir));
+
 function injectBuildMetadata() {
   return {
     name: "quizymode-build-metadata",
@@ -103,15 +108,15 @@ export default defineConfig({
     // Maps are generated for decoding reported stacks by hand, but bundles do not reference them and
     // deploy.yml never uploads *.map files; CI publishes them as a build artifact instead (OBS-001).
     sourcemap: "hidden",
-    // Curated question pictures (#407) are always emitted as files (never data: URIs in the JS bundle).
-    assetsInlineLimit: (filePath) => (filePath.includes("/assets/curated/") ? false : undefined),
+    // Curated question pictures (#407) and About screenshots (#885) are always emitted as files (never data: URIs).
+    assetsInlineLimit: (filePath) => (isHashedWebpSource(filePath) ? false : undefined),
     rolldownOptions: {
       output: {
-        // Curated pictures ship as assets/m/<hash>.webp so deploy.yml can give them an explicit content type.
+        // Curated pictures and About screenshots ship as assets/m/<hash>.webp so deploy.yml can give them an explicit
+        // content type and its immutable cache (the name changes whenever the file does).
         assetFileNames: (assetInfo) => {
           const sources = [...(assetInfo.originalFileNames ?? []), ...(assetInfo.names ?? [])];
-          const isCurated = sources.some((name) => name.includes("assets/curated/"));
-          return isCurated ? "assets/m/[hash][extname]" : "assets/[name]-[hash][extname]";
+          return sources.some(isHashedWebpSource) ? "assets/m/[hash][extname]" : "assets/[name]-[hash][extname]";
         },
         // Rolldown (Vite 8) has no object-form manualChunks; these groups keep the same vendor/query split.
         codeSplitting: {
