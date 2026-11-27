@@ -42,7 +42,7 @@ describe("FilterControlBar", () => {
         onSortChange={() => {}}
         sortOptions={[
           { value: "name", label: "Name" },
-          { value: "count", label: "Item count" },
+          { value: "count", label: "Question count" },
         ]}
       />
     );
@@ -110,6 +110,6 @@ describe("FilterControlBar", () => {
         onListenAll={() => {}}
       />
     );
-    expect(screen.getByTitle("Listen to all items (TTS)")).toBeInTheDocument();
+    expect(screen.getByTitle("Listen to all questions (TTS)")).toBeInTheDocument();
   });
 });

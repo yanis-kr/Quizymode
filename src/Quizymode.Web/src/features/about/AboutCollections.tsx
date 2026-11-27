@@ -47,7 +47,7 @@ export const AboutCollections = () => {
 
   return (
     <AboutSection id="about-explore" title="Start with something odd.">
-      <p className={aboutBodyClass}>Three sets that tend to end with &ldquo;wait, really?&rdquo;</p>
+      <p className={aboutBodyClass}>Three collections that tend to end with &ldquo;wait, really?&rdquo;</p>
       {loaded.length > 0 && (
         <ul className="mt-3 grid gap-3 sm:grid-cols-3">
           {loaded.map((collection) => (
@@ -56,7 +56,7 @@ export const AboutCollections = () => {
         </ul>
       )}
       <Link to="/featured" className={`${aboutLinkClass} mt-1 inline-flex min-h-[44px] items-center text-sm`}>
-        All featured sets
+        All featured topics
       </Link>
       <p className={aboutBodyClass}>
         Also in the building: certification prep (AWS and friends), 16 languages, and all 195 country flags, including the

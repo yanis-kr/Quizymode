@@ -36,6 +36,7 @@ import {
   parseKeywordSegment,
   isAllCategoriesSlug,
   getAllCategoriesSlug,
+  categoryDisplayName,
 } from "@/utils/categorySlug";
 import { buildAddItemsPathWithParams } from "@/utils/addItemsScopeUrl";
 import { ScopeFilterCombobox } from "@/components/ScopeFilterCombobox";
@@ -379,7 +380,7 @@ const CategoriesPage = () => {
       const names = new Set<string>();
       results.forEach((r) =>
         r.keywords.forEach((k) => {
-          if (k.name.toLowerCase() !== "other") names.add(k.name);
+          if (k.itemCount > 0 && k.name.toLowerCase() !== "other") names.add(k.name);
         })
       );
       return Array.from(names).sort();
@@ -408,7 +409,7 @@ const CategoriesPage = () => {
       const names = new Set<string>();
       results.forEach((r) =>
         r.keywords.forEach((k) => {
-          if (k.name.toLowerCase() !== "other") names.add(k.name);
+          if (k.itemCount > 0 && k.name.toLowerCase() !== "other") names.add(k.name);
         })
       );
       return Array.from(names).sort();
@@ -421,12 +422,12 @@ const CategoriesPage = () => {
 
   const rank1Options = useMemo(() => {
     if (isAllCategoriesSlug(filterCategorySlug)) return rank1AllData ?? [];
-    return rank1Data?.keywords?.filter((k) => k.name.toLowerCase() !== "other").map((k) => k.name) ?? [];
+    return rank1Data?.keywords?.filter((k) => k.itemCount > 0 && k.name.toLowerCase() !== "other").map((k) => k.name) ?? [];
   }, [filterCategorySlug, rank1Data, rank1AllData]);
 
   const rank2Options = useMemo(() => {
     if (isAllCategoriesSlug(filterCategorySlug)) return rank2AllData ?? [];
-    return rank2Data?.keywords?.map((k) => k.name) ?? [];
+    return rank2Data?.keywords?.filter((k) => k.itemCount > 0).map((k) => k.name) ?? [];
   }, [filterCategorySlug, rank2Data, rank2AllData]);
 
   const { data: keywordsData, isLoading: isLoadingKeywords } = useQuery({
@@ -472,17 +473,20 @@ const CategoriesPage = () => {
       return true;
     });
   }, [navigationKeywordsForScope, itemTagKeywords]);
-  const remainingNavigationKeywordCount = useMemo(() => {
-    if (!keywordsData?.keywords) return 0;
+  // Child buckets with questions for this viewer; empty topics are not listed (#900). Pickers still offer them.
+  const childKeywords = useMemo(() => {
+    if (!keywordsData?.keywords) return [];
     const pathKwLower = new Set(pathKeywordsFromUrl.map((k) => k.toLowerCase()));
     return keywordsData.keywords.filter(
-      (keyword) => !pathKwLower.has(keyword.name.toLowerCase())
-    ).length;
+      (keyword) => keyword.itemCount > 0 && !pathKwLower.has(keyword.name.toLowerCase())
+    );
   }, [keywordsData?.keywords, pathKeywordsFromUrl]);
 
   const isLeaf = !!categoryName && pathKeywordsFromUrl.length >= 2;
+  // A category root counts as childless only once its buckets have loaded, so it does not flash the List view.
   const effectiveLeaf =
-    isLeaf || (keywordsFromUrl.length >= 1 && remainingNavigationKeywordCount === 0);
+    isLeaf ||
+    ((keywordsFromUrl.length >= 1 || (!!categoryName && !!keywordsData)) && childKeywords.length === 0);
   const hideSetsMode = isLeaf || (view === "sets" && effectiveLeaf);
   const { activeView, availableModes: categoryAvailableModes } =
     getCategoryScopeModeConfig(view, hideSetsMode);
@@ -643,12 +647,7 @@ const CategoriesPage = () => {
   }, [categoriesData?.categories, categoriesPage]);
 
   const sortedKeywords = useMemo(() => {
-    if (!keywordsData?.keywords) return [];
-    const pathKwLower = new Set(pathKeywordsFromUrl.map((k) => k.toLowerCase()));
-    const filtered = keywordsData.keywords.filter(
-      (kw) => !pathKwLower.has(kw.name.toLowerCase())
-    );
-    return [...filtered].sort((a, b) => {
+    return [...childKeywords].sort((a, b) => {
       switch (sortBy) {
         case "name":
           return a.name.localeCompare(b.name);
@@ -665,7 +664,7 @@ const CategoriesPage = () => {
           return 0;
       }
     });
-  }, [keywordsData?.keywords, pathKeywordsFromUrl, sortBy]);
+  }, [childKeywords, sortBy]);
 
   const setsScopeCount = useMemo(() => {
     if (!categoryName) return null;
@@ -858,7 +857,7 @@ const CategoriesPage = () => {
     navigate(pathCategorySlug === "all" ? `/games${query}` : `/games/${pathCategorySlug}${query}`);
   };
 
-  // Sets view: click = add keyword to path (navigate deeper)
+  // Topics view: click = add keyword to path (navigate deeper)
   const handleKeywordClick = (keyword: string) => {
     const newPathKeywords = [...pathKeywordsFromUrl, keyword];
     const path = categoryName
@@ -980,7 +979,7 @@ const CategoriesPage = () => {
       }
       return (
         <ErrorMessage
-          message="Failed to load items"
+          message="Failed to load questions"
           errorDetail={itemsErrorDetail}
           onRetry={() => refetchItems()}
         />
@@ -993,7 +992,7 @@ const CategoriesPage = () => {
       <>
         <SEO
           title={showLanding ? landing.title : "All categories"}
-          description={categoryName ? (currentCategoryMeta?.description ?? `Browse items in the ${categoryName} category on Quizymode.`) : "Browse items across all categories on Quizymode."}
+          description={categoryName ? (currentCategoryMeta?.description ?? `Browse questions in the ${categoryName} category on Quizymode.`) : "Browse questions across all categories on Quizymode."}
           canonical={`https://www.quizymode.com${scopePath}`}
         />
         <div className="space-y-4 px-3 py-4 sm:px-0">
@@ -1051,7 +1050,7 @@ const CategoriesPage = () => {
                         filterKeywordsFromQuery
                       )}
                       className="inline-flex shrink-0 items-center gap-1 rounded-md bg-green-600 px-3 py-1.5 text-sm font-medium text-white hover:bg-green-700"
-                      title="Add items for this category and navigation path"
+                      title="Add questions for this category and navigation path"
                     >
                       <PlusIcon className="h-4 w-4" />
                       Add
@@ -1094,7 +1093,7 @@ const CategoriesPage = () => {
                         filterKeywordsFromQuery
                       )}
                       className="inline-flex shrink-0 items-center gap-1 rounded-lg bg-green-600 px-3 py-1.5 text-sm font-medium text-white hover:bg-green-700"
-                      title="Add items for this category and navigation path"
+                      title="Add questions for this category and navigation path"
                     >
                       <PlusIcon className="h-4 w-4" />
                       Add
@@ -1159,7 +1158,7 @@ const CategoriesPage = () => {
                     }
                   />
                   <p className="mt-1 text-xs text-gray-500" data-testid="keyword-suggestion-scope">
-                    Suggestions come only from the items loaded on this page.
+                    Suggestions come only from the questions loaded on this page.
                   </p>
                   {filterKeywordsFromQuery.length > 0 && (
                     <div className="mt-2 flex flex-wrap gap-1.5">
@@ -1188,7 +1187,7 @@ const CategoriesPage = () => {
                       <option value={getAllCategoriesSlug()}>All categories</option>
                       {categoriesData?.categories?.map((c) => (
                         <option key={c.category} value={categoryNameToSlug(c.category)}>
-                          {c.category}
+                          {categoryDisplayName(c.category)}
                         </option>
                       ))}
                     </select>
@@ -1269,7 +1268,7 @@ const CategoriesPage = () => {
                 />
               }
               count={showLanding ? null : scopeTotalCount}
-              hint="Browse items in this scope."
+              hint="Browse questions in this scope."
               endSlot={
                 <div className="flex items-center gap-1.5">
                   <label className="text-xs text-gray-500">Per page:</label>
@@ -1300,7 +1299,7 @@ const CategoriesPage = () => {
               <div className="py-12 text-center">
                 {itemTagKeywords.length > 0 ? (
                   <>
-                    <p className="text-gray-500">No items match all filters</p>
+                    <p className="text-gray-500">No questions match all filters</p>
                     <button
                       type="button"
                       onClick={() => navigateToItems(scopePathWithNav, true, undefined, [])}
@@ -1310,7 +1309,7 @@ const CategoriesPage = () => {
                     </button>
                   </>
                 ) : (
-                  <p className="text-gray-500">No items found.</p>
+                  <p className="text-gray-500">No questions found.</p>
                 )}
               </div>
             ) : (
@@ -1360,7 +1359,7 @@ const CategoriesPage = () => {
                     <Link
                       to={`/items/${item.id}${itemDetailSearch}`}
                       className="inline-flex rounded-md p-1.5 text-indigo-ink hover:bg-indigo-50 sm:p-2"
-                      title="View item details"
+                      title="View question details"
                     >
                       <EyeIcon className="h-4 w-4 sm:h-5 sm:w-5" />
                     </Link>
@@ -1396,7 +1395,7 @@ const CategoriesPage = () => {
       <>
         <SEO
           title={landing.title}
-          description={currentCategoryMeta?.description ?? `Browse sets in the ${categoryName} category on Quizymode.`}
+          description={currentCategoryMeta?.description ?? `Browse topics in the ${categoryName} category on Quizymode.`}
           canonical={`https://www.quizymode.com${scopePathWithNav}${filterKeywordsFromQuery.length > 0 ? `?keywords=${filterKeywordsFromQuery.map(encodeURIComponent).join(",")}` : ""}`}
         />
         <div className="space-y-4 px-3 py-4 sm:px-0">
@@ -1445,7 +1444,7 @@ const CategoriesPage = () => {
                         filterKeywordsFromQuery
                       )}
                       className="inline-flex shrink-0 items-center gap-1 rounded-md bg-green-600 px-3 py-1.5 text-sm font-medium text-white hover:bg-green-700"
-                      title="Add items for this category and navigation path"
+                      title="Add questions for this category and navigation path"
                     >
                       <PlusIcon className="h-4 w-4" />
                       Add
@@ -1483,7 +1482,7 @@ const CategoriesPage = () => {
                         filterKeywordsFromQuery
                       )}
                       className="inline-flex shrink-0 items-center gap-1 rounded-lg bg-green-600 px-3 py-1.5 text-sm font-medium text-white hover:bg-green-700"
-                      title="Add items for this category and navigation path"
+                      title="Add questions for this category and navigation path"
                     >
                       <PlusIcon className="h-4 w-4" />
                       Add
@@ -1496,7 +1495,7 @@ const CategoriesPage = () => {
               onSortChange={(s) => handleSortChange(s as SortOption)}
               sortOptions={[
                 { value: "name", label: "Name" },
-                { value: "count", label: "Item count" },
+                { value: "count", label: "Question count" },
                 { value: "rating", label: "Rating" },
               ]}
             />
@@ -1574,7 +1573,7 @@ const CategoriesPage = () => {
                       <option value={getAllCategoriesSlug()}>All categories</option>
                       {categoriesData?.categories?.map((c) => (
                         <option key={c.category} value={categoryNameToSlug(c.category)}>
-                          {c.category}
+                          {categoryDisplayName(c.category)}
                         </option>
                       ))}
                     </select>
@@ -1670,7 +1669,7 @@ const CategoriesPage = () => {
                   averageRating: kw.averageRating ?? null,
                   privateItemCount: kw.privateItemCount ?? 0,
                   backgroundImage: currentCategoryTheme.image,
-                  eyebrow: categoryName,
+                  eyebrow: categoryDisplayName(categoryName),
                 }))}
                 onOpenBucket={(bucket) => {
                   if (isLeaf) {
@@ -1690,7 +1689,7 @@ const CategoriesPage = () => {
             ) : effectiveLeaf ? (
               <div className="mb-6">
                 <p className="mb-4 text-gray-600">
-                  You&apos;ve reached the end of the sets hierarchy. Browse items, explore, or quiz.
+                  There are no more subtopics here. Browse questions, use flashcards, or take a quiz.
                 </p>
                 <div className="flex flex-wrap gap-2">
                   <ActionButtons
@@ -1709,7 +1708,7 @@ const CategoriesPage = () => {
               </div>
             ) : (
               <div className="py-12 text-center">
-                <p className="mb-4 text-gray-500">No sets in this level.</p>
+                <p className="mb-4 text-gray-500">No topics in this level.</p>
                 <ActionButtons
                   onListSets={undefined}
                   onListItems={() =>
@@ -1743,7 +1742,7 @@ const CategoriesPage = () => {
           <div className="rounded-[24px] border border-on-panel/10 bg-panel-deep/70 px-5 py-4 shadow-xl shadow-slate-950/25">
             <h1 className="text-2xl font-semibold text-on-panel">Categories</h1>
             <p className="mt-1 text-sm leading-6 text-on-panel-muted">
-              Browse the public question bank by category and jump into sets, flashcards, or quiz mode.
+              Browse the public question bank by category and jump into topics, flashcards, or quiz mode.
             </p>
           </div>
 
@@ -1760,7 +1759,7 @@ const CategoriesPage = () => {
             <BucketGridView
               buckets={sortedAndPaginatedCategories.categories.map((cat) => ({
                 id: cat.category,
-                label: cat.category,
+                label: categoryDisplayName(cat.category),
                 itemCount: cat.count,
                 description: cat.description ?? cat.shortDescription ?? null,
                 averageRating: cat.averageStars ?? null,
@@ -1769,7 +1768,7 @@ const CategoriesPage = () => {
               columnsClassName="grid-cols-2 gap-2.5 md:grid-cols-3 xl:grid-cols-4"
               compact
               onOpenBucket={(bucket) =>
-                navigateToSets(`/categories/${categoryNameToSlug(bucket.label)}`)
+                navigateToSets(`/categories/${categoryNameToSlug(bucket.id)}`)
               }
             />
 
@@ -1909,7 +1908,7 @@ function ActionButtons({
           className="inline-flex items-center gap-1 px-3 py-1.5 text-sm font-medium text-indigo-ink bg-indigo-50 rounded-md hover:bg-indigo-100"
         >
           <Squares2X2Icon className="h-4 w-4" />
-          List sets
+          List topics
         </button>
       )}
       <button
@@ -1917,7 +1916,7 @@ function ActionButtons({
         className="inline-flex items-center gap-1 px-3 py-1.5 text-sm font-medium text-emerald-600 bg-emerald-50 rounded-md hover:bg-emerald-100"
       >
         <ListBulletIcon className="h-4 w-4" />
-        List items
+        List questions
       </button>
       <button
         onClick={onExplore}

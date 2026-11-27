@@ -60,7 +60,7 @@ describe("DailyArchivePage", () => {
 
     renderWithProviders(<DailyArchivePage />);
     fireEvent.click(await screen.findByRole("button", { name: "Play 2026-11-18" }));
-    fireEvent.click(await screen.findByRole("button", { name: "Skip question (not scored)" }));
+    fireEvent.click(await screen.findByRole("button", { name: "Skip question" }));
     fireEvent.click(await screen.findByRole("button", { name: /Right b/ }));
     fireEvent.click(screen.getByRole("button", { name: "See my score" }));
     await screen.findByText(/Quiz complete/i);

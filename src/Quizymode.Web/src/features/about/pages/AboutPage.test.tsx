@@ -155,7 +155,7 @@ describe("AboutPage (#883)", () => {
     expect(linkByName("Try 5 questions")).toHaveAttribute("href", "/start");
     expect(linkByName("Browse topics")).toHaveAttribute("href", "/categories");
     // The collection cards are covered by AC 3.0.58; with every collection failing, only the featured link remains.
-    expect(linkByName("All featured sets")).toHaveAttribute("href", "/featured");
+    expect(linkByName("All featured topics")).toHaveAttribute("href", "/featured");
     expect(screen.queryByTestId("about-collection-card")).not.toBeInTheDocument();
   });
 
@@ -334,8 +334,16 @@ describe("AboutPage (#883)", () => {
     );
     expect(cards[1]).toHaveTextContent("12 questions");
     expect(within(explore).queryByText("Sounds Fake, But It's True")).not.toBeInTheDocument();
-    expect(within(explore).getByRole("link", { name: "All featured sets" })).toHaveAttribute("href", "/featured");
+    expect(within(explore).getByRole("link", { name: "All featured topics" })).toHaveAttribute("href", "/featured");
     expect(getById.mock.calls.map(([id]) => id)).toEqual(expect.arrayContaining([AHA_ID, SOUNDS_FAKE_ID, LANDMARKS_ID]));
+  });
+
+  it("AC 3.4.12 introduces the curated collections and links to all featured topics (#922)", () => {
+    renderAbout();
+    const explore = screen.getByRole("region", { name: SECTION_HEADINGS[4] });
+    expect(explore).toHaveTextContent("Three collections that tend to end with");
+    expect(within(explore).getByRole("link", { name: "All featured topics" })).toHaveAttribute("href", "/featured");
+    expect(document.body.textContent).not.toMatch(/\b(item|items|sets)\b/i);
   });
 
   it("AC 3.0.59 a collection response without a count renders its card without a count", async () => {

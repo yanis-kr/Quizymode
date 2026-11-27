@@ -10,7 +10,8 @@ import { featuredApi, type FeaturedSetDto } from "@/api/featured";
 import type { CollectionDiscoverItem } from "@/types/api";
 import { useAuth } from "@/contexts/AuthContext";
 import { buildCollectionPath } from "@/utils/collectionPath";
-import { buildCategoryPath } from "@/utils/categorySlug";
+import { buildCategoryPath, categoryDisplayName } from "@/utils/categorySlug";
+import { questionCountLabel } from "@/utils/questionCountLabel";
 import { categorySetKey, collectionSetKey } from "@/features/progress/knownItems";
 import { useKnownCount } from "@/features/progress/useKnownCount";
 import { getCategoryThemeBySlug } from "@/features/categories/categoryThemes";
@@ -18,6 +19,7 @@ import { GuestHistoryCard } from "@/features/guestHistory/GuestHistoryCard";
 import { buildGamePath } from "@/features/games/gameScope";
 import { useInterests } from "@/features/interests/useInterests";
 import { TopicOnboardingPrompt } from "../TopicOnboardingPrompt";
+import { useTopicOnboarding } from "../useTopicOnboarding";
 import { PersonalizedLanes } from "../PersonalizedLanes";
 import { ContinueStudyingCard } from "../ContinueStudyingCard";
 import { NextUpCard } from "../NextUpCard";
@@ -56,8 +58,8 @@ function publicCollectionCardImage(index: number): string {
 
 const numberFormatter = new Intl.NumberFormat("en-US");
 
-function formatItemCount(count: number) {
-  return `${numberFormatter.format(count)} item${count === 1 ? "" : "s"}`;
+function formatQuestionCount(count: number) {
+  return questionCountLabel(count, numberFormatter.format(count));
 }
 
 interface CatalogLanesProps {
@@ -124,7 +126,7 @@ function CatalogLanes({ countsByCategory, featuredSets, publicCollections }: Cat
                   <div className="flex justify-end">
                     {liveCount != null && (
                       <span className="rounded-full border border-white/20 bg-black/55 px-2 py-0.5 text-[10px] font-semibold text-white backdrop-blur-sm">
-                        {formatItemCount(liveCount)}
+                        {formatQuestionCount(liveCount)}
                       </span>
                     )}
                   </div>
@@ -139,11 +141,11 @@ function CatalogLanes({ countsByCategory, featuredSets, publicCollections }: Cat
         </div>
       </section>
 
-      {/* ── Featured Sets lane ── */}
+      {/* ── Featured topics lane ── */}
       <section className="rounded-[24px] border border-white/10 bg-panel-deep/70 p-2 sm:p-3 shadow-xl shadow-slate-950/25">
           <div className="mb-1.5 flex items-center justify-between gap-3">
             <div className="text-xs font-semibold uppercase tracking-[0.22em] text-sky-ink">
-              Featured Sets
+              Featured topics
             </div>
             {featuredSets.length > 0 && (
               <Link
@@ -170,7 +172,7 @@ function CatalogLanes({ countsByCategory, featuredSets, publicCollections }: Cat
               <div className="relative flex h-full min-h-[80px] flex-col justify-between p-3 sm:min-h-[96px]">
                 <div className="flex justify-end">
                   <span className="rounded-full border border-white/20 bg-black/55 px-2 py-0.5 text-[10px] font-semibold text-white backdrop-blur-sm">
-                    languages
+                    {categoryDisplayName("languages")}
                   </span>
                 </div>
                 <div className="flex items-center justify-between gap-2">
@@ -199,7 +201,7 @@ function CatalogLanes({ countsByCategory, featuredSets, publicCollections }: Cat
                   <div className="relative flex h-full min-h-[80px] flex-col justify-between p-3 sm:min-h-[96px]">
                     <div className="flex justify-end">
                       <span className="rounded-full border border-white/20 bg-black/55 px-2 py-0.5 text-[10px] font-semibold text-white backdrop-blur-sm">
-                        {set.categorySlug}
+                        {categoryDisplayName(set.categorySlug)}
                       </span>
                     </div>
                     <div className="flex items-center justify-between gap-2">
@@ -246,7 +248,7 @@ function CatalogLanes({ countsByCategory, featuredSets, publicCollections }: Cat
                 <div className="relative flex h-full min-h-[80px] flex-col justify-between p-3 sm:min-h-[96px]">
                   <div className="flex justify-end">
                     <span className="rounded-full border border-white/20 bg-black/55 px-2 py-0.5 text-[10px] font-semibold text-white backdrop-blur-sm">
-                      {collection.itemCount} {collection.itemCount === 1 ? "item" : "items"}
+                      {questionCountLabel(collection.itemCount)}
                     </span>
                   </div>
                   <div>
@@ -293,6 +295,8 @@ const HomePage = () => {
             ? "focused"
             : "full";
   const focused = layout === "focused";
+  // The Make Home yours card and the For you lane share this, so only one asks for topics at a time (#903).
+  const onboarding = useTopicOnboarding();
   // A visitor with a completed quiz gets one Next up card instead of the first-visit hero (#670, AC 3.31).
   const nextUp = useNextUp();
   const firstTopic = interests.find(isTopicPath);
@@ -332,7 +336,7 @@ const HomePage = () => {
   return (
     <>
       <SEO
-        description="Play a free five-question quiz with no account needed, then browse Quizymode categories, featured sets, and public collections."
+        description="Play a free five-question quiz with no account needed, then browse Quizymode categories, featured topics, and public collections."
         canonical="https://www.quizymode.com"
         structuredData={{
           "@context": "https://schema.org",
@@ -340,7 +344,7 @@ const HomePage = () => {
           name: "Quizymode",
           url: "https://www.quizymode.com",
           description:
-            "Play a free five-question quiz with no account needed, then explore categories, featured sets, and public collections.",
+            "Play a free five-question quiz with no account needed, then explore categories, featured topics, and public collections.",
         }}
       />
 
@@ -368,13 +372,12 @@ const HomePage = () => {
                 <h1 className="text-xl font-semibold tracking-tight text-on-panel sm:text-2xl lg:text-[1.65rem] lg:leading-snug">
                   Learn something new in five questions.
                 </h1>
-                <p className="mt-1 text-xs font-semibold text-sky-ink">Learn, Test and Review are free.</p>
                 {!focused && (
                   <p className="mt-1.5 max-w-2xl text-xs leading-5 text-on-panel-muted lg:text-sm">
                     Five quick questions, from flags to space to AI. Then pick what to explore next.
                   </p>
                 )}
-                {(!focused || !isAuthenticated) && <p className="mt-1 text-xs font-semibold text-sky-ink">No account needed.</p>}
+                {!isAuthenticated && <p className="mt-1 text-xs font-semibold text-sky-ink">No account needed.</p>}
               </div>
               <div className="mt-3 flex shrink-0 flex-col items-stretch gap-2 sm:mt-0 sm:flex-row sm:items-center">
                 <Link
@@ -411,8 +414,8 @@ const HomePage = () => {
 
             {layout === "full" && (
               <>
-                <TopicOnboardingPrompt />
-                <PersonalizedLanes featuredSets={featuredSets} />
+                <TopicOnboardingPrompt onboarding={onboarding} />
+                <PersonalizedLanes featuredSets={featuredSets} hideTopicPrompt={onboarding.cardState !== "hidden"} />
                 <CatalogLanes
                   countsByCategory={countsByCategory}
                   featuredSets={featuredSets}

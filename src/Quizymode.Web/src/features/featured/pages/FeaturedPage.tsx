@@ -6,6 +6,7 @@ import type { FeaturedSetDto, FeaturedCollectionDto } from "@/api/featured";
 import { buildCategoryPath } from "@/utils/categorySlug";
 import { buildCollectionPath } from "@/utils/collectionPath";
 import { SEO } from "@/components/SEO";
+import { questionCountLabel } from "@/utils/questionCountLabel";
 import LoadingSpinner from "@/components/LoadingSpinner";
 import ErrorMessage from "@/components/ErrorMessage";
 import {
@@ -18,8 +19,10 @@ import {
 type Tab = "sets" | "collections";
 type SortBy = "name" | "modified";
 
+const TAB_LABELS: Record<Tab, string> = { sets: "Topics", collections: "Collections" };
+
 function formatDate(iso: string | null): string {
-  if (!iso) return "No items yet";
+  if (!iso) return "No questions yet";
   const d = new Date(iso);
   return d.toLocaleDateString(undefined, { year: "numeric", month: "short", day: "numeric" });
 }
@@ -37,13 +40,13 @@ function SetCard({ item, onNavigate }: { item: FeaturedSetDto; onNavigate: () =>
       <div className="flex items-start justify-between gap-2 mb-3">
         <AcademicCapIcon className="h-5 w-5 text-indigo-400 shrink-0 mt-0.5" />
         <span className="ml-auto text-xs font-medium uppercase tracking-wider text-on-panel-muted bg-indigo-500/15 px-2 py-0.5 rounded-full">
-          Set
+          Topic
         </span>
       </div>
       <h3 className="text-lg font-semibold text-on-panel mb-1">{item.displayName}</h3>
       <p className="text-sm text-slate-400 mb-1">{subtitle}</p>
       <p className="text-sm text-slate-500 mb-4">
-        {item.itemCount} {item.itemCount === 1 ? "item" : "items"}
+        {questionCountLabel(item.itemCount)}
       </p>
       <div className="flex items-center gap-1.5 text-xs text-slate-500">
         <ClockIcon className="h-3.5 w-3.5" />
@@ -72,7 +75,7 @@ function CollectionCard({ item, onNavigate }: { item: FeaturedCollectionDto; onN
         <p className="text-sm text-slate-400 line-clamp-2 mb-2">{item.description}</p>
       )}
       <p className="text-sm text-slate-500 mb-4">
-        {item.itemCount} {item.itemCount === 1 ? "item" : "items"}
+        {questionCountLabel(item.itemCount)}
       </p>
       <div className="flex items-center gap-1.5 text-xs text-slate-500">
         <ClockIcon className="h-3.5 w-3.5" />
@@ -132,7 +135,7 @@ const FeaturedPage = () => {
     <>
       <SEO
         title="Featured"
-        description="Hand-picked quiz sets and collections curated by the Quizymode team."
+        description="Hand-picked quiz topics and collections curated by the Quizymode team."
         canonical="https://www.quizymode.com/featured"
       />
       <div className="bg-panel-deep text-on-panel min-h-screen">
@@ -140,7 +143,7 @@ const FeaturedPage = () => {
           <div className="rounded-[24px] border border-on-panel/10 bg-panel-deep/70 px-5 py-4 shadow-sm shadow-slate-950/25">
             <h1 className="mb-1 text-2xl font-semibold text-on-panel">Featured</h1>
             <p className="max-w-2xl text-sm leading-6 text-on-panel-muted">
-              Hand-picked sets and collections. Click any card to start exploring or quizzing.
+              Hand-picked topics and collections. Click any card to start exploring or quizzing.
             </p>
           </div>
 
@@ -157,7 +160,7 @@ const FeaturedPage = () => {
                       : "bg-transparent text-on-panel-muted hover:bg-on-panel/10"
                   }`}
                 >
-                  {tab === "sets" ? "Sets" : "Collections"}
+                  {TAB_LABELS[tab]}
                 </button>
               ))}
             </div>
@@ -187,7 +190,7 @@ const FeaturedPage = () => {
           {isEmpty ? (
             <div className="rounded-[28px] border border-dashed border-on-panel/20 bg-panel-raised/30 py-16 text-center">
               <p className="text-slate-400">
-                No featured {activeTab} yet. Check back soon.
+                No featured {TAB_LABELS[activeTab].toLowerCase()} yet. Check back soon.
               </p>
             </div>
           ) : (

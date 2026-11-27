@@ -8,6 +8,7 @@ import {
 } from "@heroicons/react/24/outline";
 import HighlightedText from "./HighlightedText";
 import TopicBreadcrumb from "@/features/topics/TopicBreadcrumb";
+import { questionCountLabel } from "@/utils/questionCountLabel";
 import type { SearchRowData } from "./searchResultLinks";
 
 interface SearchRowContentProps {
@@ -27,7 +28,7 @@ function CountPill({ count }: { count: number }) {
   return (
     <span className="ml-auto shrink-0 rounded bg-slate-200 px-1.5 py-0.5 text-xs font-semibold text-slate-800">
       <span aria-hidden="true">{count}</span>
-      <span className="sr-only">{count === 1 ? "1 item" : `${count} items`}</span>
+      <span className="sr-only">{questionCountLabel(count)}</span>
     </span>
   );
 }
@@ -100,7 +101,7 @@ const SearchRowContent = ({ data, tokens, density }: SearchRowContentProps) => {
           </div>
           {data.value.itemCount > 0 && (
             <span className="ml-auto shrink-0 text-xs text-slate-600">
-              {data.value.itemCount === 1 ? "1 item" : `${data.value.itemCount} items`}
+              {questionCountLabel(data.value.itemCount)}
             </span>
           )}
         </Row>

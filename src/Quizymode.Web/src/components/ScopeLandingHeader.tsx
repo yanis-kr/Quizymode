@@ -125,7 +125,7 @@ export function ScopeLandingHeader(props: ScopeLandingHeaderProps) {
           </Link>
         </div>
       ) : showActionGroup ? (
-        <div role="group" aria-label="Play this set" className="mt-3 grid grid-cols-2 gap-2 sm:flex sm:flex-wrap">
+        <div role="group" aria-label="Play these questions" className="mt-3 grid grid-cols-2 gap-2 sm:flex sm:flex-wrap">
           {countState === "loading" &&
             loadingSlots.map((i) => (
               <div key={i} aria-hidden="true" className="h-11 animate-pulse rounded-md bg-gray-100 sm:w-28" />

@@ -155,7 +155,7 @@ test("AC 3.0.58 the About collection cards link to /collections/{id} and show th
   );
   await expect(cards.nth(1).getByTestId("about-collection-count")).toHaveText("17 questions");
   await expect(explore.locator(`[data-collection-id="${SOUNDS_FAKE_ID}"]`)).toHaveCount(0);
-  await expect(explore.getByRole("link", { name: "All featured sets" })).toHaveAttribute("href", "/featured");
+  await expect(explore.getByRole("link", { name: "All featured topics" })).toHaveAttribute("href", "/featured");
 
   await cards.nth(1).getByRole("link", { name: "Landmarks from Sideways Clues" }).click();
   await expect(page).toHaveURL(new RegExp(`/collections/${LANDMARKS_ID}$`));

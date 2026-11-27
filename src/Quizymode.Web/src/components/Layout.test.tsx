@@ -97,6 +97,14 @@ describe("Layout", () => {
     expect(screen.getByRole("button", { name: "Search" })).toHaveAttribute("aria-haspopup", "dialog");
   });
 
+  it.each(["/create/question", "/items/create", "/add-new-item"])(
+    "titles %s Write a question (AC 2.2.4, #901)",
+    async (path) => {
+      renderLayout([path]);
+      await waitFor(() => expect(document.title).toBe("Write a question | Quizymode"));
+    }
+  );
+
   it("renders no donation link while VITE_DONATION_URL is unset", () => {
     renderLayout();
     expect(screen.queryByRole("link", { name: /Support Quizymode/ })).not.toBeInTheDocument();
@@ -219,5 +227,14 @@ describe("Layout", () => {
     await waitFor(() => {
       expect(document.title).toBe("My Study Guides | Quizymode");
     });
+  });
+
+  it.each([
+    ["/items", "Questions"],
+    ["/items/item-1", "Question Details"],
+    ["/items/item-1/comments", "Question Comments"],
+  ])("AC 3.6.49 titles %s %s (#923)", async (path, title) => {
+    renderLayout([path]);
+    await waitFor(() => expect(document.title).toBe(`${title} | Quizymode`));
   });
 });

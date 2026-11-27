@@ -9,7 +9,7 @@ test("AC 3.17.12 @smoke - Learn and Games tabs follow Quiz, the strip fits the v
   await page.goto("/categories");
   await page.waitForLoadState("networkidle");
 
-  const categoryCard = page.getByRole("button", { name: /\b[1-9]\d* items\b/i }).first();
+  const categoryCard = page.getByRole("button", { name: /\b[1-9]\d* questions?\b/i }).first();
   await expect(categoryCard).toBeVisible({ timeout: 3_000 });
   await categoryCard.click();
   await page.waitForLoadState("networkidle");

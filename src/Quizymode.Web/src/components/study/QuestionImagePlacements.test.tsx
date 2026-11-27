@@ -274,7 +274,7 @@ describe("QuizRenderer picture gate", () => {
     expect(screen.getByText("Picture loaded. Answers are available.")).toBeInTheDocument();
 
     fireEvent.error(screen.getByAltText(questionImage.altText));
-    await user.click(screen.getByRole("button", { name: "Skip question (not scored)" }));
+    await user.click(screen.getByRole("button", { name: "Skip question" }));
     expect(onSkip).toHaveBeenCalledTimes(1);
   });
 

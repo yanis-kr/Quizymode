@@ -87,7 +87,16 @@ function FeaturedCard({ set }: { set: FeaturedSetDto }) {
  * Personalized home lanes (epic #197): today's daily quiz and review, Continue (signed in), For you and Recommended
  * next (#116). Every query fails soft: a lane whose data is missing is simply not shown (AC 3.0.4).
  */
-export function PersonalizedLanes({ featuredSets, focused = false }: { featuredSets: FeaturedSetDto[]; focused?: boolean }) {
+export function PersonalizedLanes({
+  featuredSets,
+  focused = false,
+  hideTopicPrompt = false,
+}: {
+  featuredSets: FeaturedSetDto[];
+  focused?: boolean;
+  /** The Make Home yours card is shown or still loading, so For you does not ask for topics too (#903). */
+  hideTopicPrompt?: boolean;
+}) {
   const { isAuthenticated, isLoading: isAuthLoading, userId } = useAuth();
   const topicEditor = useTopicEditor();
   const localVersion = useLocalVersion();
@@ -192,6 +201,8 @@ export function PersonalizedLanes({ featuredSets, focused = false }: { featuredS
   const upcomingPlans = studyPlans.plans.filter((plan) => (daysUntil(plan.testDate, planNow) ?? -1) >= 0);
   const shownPlans = upcomingPlans.slice(0, MAX_LANE_PLANS);
   const morePlans = upcomingPlans.length - shownPlans.length;
+  // Without its own prompt, For you is only rendered when it has something else to show (#903).
+  const showForYou = !hideTopicPrompt || ranked.forYou.length > 0 || Boolean(suggestion) || ranked.recommended.length > 0;
 
   return (
     <>
@@ -277,69 +288,73 @@ export function PersonalizedLanes({ featuredSets, focused = false }: { featuredS
         </section>
       )}
 
-      <section className={laneClass} aria-labelledby="home-for-you-heading">
-        <div className="mb-1.5 flex items-center justify-between gap-3">
-          <h2 id="home-for-you-heading" className={eyebrowClass}>For you</h2>
-          <button
-            type="button"
-            onClick={topicEditor.open}
-            className="min-h-[44px] px-2 text-xs font-semibold text-sky-400 hover:text-sky-ink focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-200"
-          >
-            Change topics
-          </button>
-        </div>
-        {ranked.forYou.length > 0 ? (
-          <div className="flex flex-wrap gap-2">
-            {ranked.forYou.map((entry) => (
-              <Link key={entry.slug} to={topicBrowsePath(entry.slug)} className={pillLinkClass}>
-                {topicLabel(entry.slug, categoryNames)}
-              </Link>
-            ))}
+      {showForYou && (
+        <section className={laneClass} aria-labelledby="home-for-you-heading">
+          <div className="mb-1.5 flex items-center justify-between gap-3">
+            <h2 id="home-for-you-heading" className={eyebrowClass}>For you</h2>
+            {!hideTopicPrompt && (
+              <button
+                type="button"
+                onClick={topicEditor.open}
+                className="min-h-[44px] px-2 text-xs font-semibold text-sky-400 hover:text-sky-ink focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-200"
+              >
+                Change topics
+              </button>
+            )}
           </div>
-        ) : (
-          <p className="text-xs text-on-panel-muted">Choose a few topics and we'll put them first.</p>
-        )}
-        {suggestion && (
-          <div className="mt-2 flex flex-wrap items-center gap-2 rounded-[18px] border border-sky-300/30 bg-sky-500/10 p-3" role="group" aria-label="Topic suggestion">
-            <p className="min-w-0 flex-1 text-xs text-on-panel">
-              Because you played {topicLabel(suggestion.path, categoryNames)}, add it to My topics?
-              {suggestionError && <span className="block text-rose-ink">Could not save. Try again.</span>}
-            </p>
-            <button
-              type="button"
-              onClick={() => {
-                setSuggestionError(false);
-                saveInterests([...explicitInterests, suggestion.path]).catch(() => setSuggestionError(true));
-              }}
-              className="min-h-[44px] rounded-full bg-sky-400 px-3 text-xs font-semibold text-[#020617] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-200"
-            >
-              Add topic
-            </button>
-            <button
-              type="button"
-              onClick={() => {
-                addSuppression(suggestion.path);
-                setSuppressed((current) => [...current, suggestion.path]);
-              }}
-              className="min-h-[44px] px-2 text-xs font-semibold text-on-panel-muted hover:text-on-panel focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-200"
-            >
-              Not interested
-            </button>
-          </div>
-        )}
-        {ranked.recommended.length > 0 && (
-          <>
-            <h3 className="mt-3 mb-1.5 text-xs font-semibold text-on-panel-muted">
-              {ranked.isColdStart ? "Popular right now" : "Recommended next"}
-            </h3>
-            <div className="flex gap-2.5 overflow-x-auto pb-1 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
-              {ranked.recommended.map((set) => (
-                <FeaturedCard key={set.id} set={set} />
+          {ranked.forYou.length > 0 ? (
+            <div className="flex flex-wrap gap-2">
+              {ranked.forYou.map((entry) => (
+                <Link key={entry.slug} to={topicBrowsePath(entry.slug)} className={pillLinkClass}>
+                  {topicLabel(entry.slug, categoryNames)}
+                </Link>
               ))}
             </div>
-          </>
-        )}
-      </section>
+          ) : (
+            !hideTopicPrompt && <p className="text-xs text-on-panel-muted">Choose a few topics and we'll put them first.</p>
+          )}
+          {suggestion && (
+            <div className="mt-2 flex flex-wrap items-center gap-2 rounded-[18px] border border-sky-300/30 bg-sky-500/10 p-3" role="group" aria-label="Topic suggestion">
+              <p className="min-w-0 flex-1 text-xs text-on-panel">
+                Because you played {topicLabel(suggestion.path, categoryNames)}, add it to My topics?
+                {suggestionError && <span className="block text-rose-ink">Could not save. Try again.</span>}
+              </p>
+              <button
+                type="button"
+                onClick={() => {
+                  setSuggestionError(false);
+                  saveInterests([...explicitInterests, suggestion.path]).catch(() => setSuggestionError(true));
+                }}
+                className="min-h-[44px] rounded-full bg-sky-400 px-3 text-xs font-semibold text-[#020617] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-200"
+              >
+                Add topic
+              </button>
+              <button
+                type="button"
+                onClick={() => {
+                  addSuppression(suggestion.path);
+                  setSuppressed((current) => [...current, suggestion.path]);
+                }}
+                className="min-h-[44px] px-2 text-xs font-semibold text-on-panel-muted hover:text-on-panel focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-200"
+              >
+                Not interested
+              </button>
+            </div>
+          )}
+          {ranked.recommended.length > 0 && (
+            <>
+              <h3 className="mt-3 mb-1.5 text-xs font-semibold text-on-panel-muted">
+                {ranked.isColdStart ? "Popular right now" : "Recommended next"}
+              </h3>
+              <div className="flex gap-2.5 overflow-x-auto pb-1 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
+                {ranked.recommended.map((set) => (
+                  <FeaturedCard key={set.id} set={set} />
+                ))}
+              </div>
+            </>
+          )}
+        </section>
+      )}
     </>
   );
 }

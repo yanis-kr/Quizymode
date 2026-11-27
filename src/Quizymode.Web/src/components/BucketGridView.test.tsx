@@ -27,9 +27,25 @@ describe("BucketGridView", () => {
       <BucketGridView buckets={mockBuckets} onOpenBucket={() => {}} />
     );
     expect(screen.getByText("Category One")).toBeInTheDocument();
-    expect(screen.getByText("10 items")).toBeInTheDocument();
+    expect(screen.getByText("10 questions")).toBeInTheDocument();
     expect(screen.getByText("Category Two")).toBeInTheDocument();
-    expect(screen.getByText("5 items")).toBeInTheDocument();
+    expect(screen.getByText("5 questions")).toBeInTheDocument();
+  });
+
+  it("AC 3.4.12 says 1 question and N questions on the tiles, with and without a picture (#922)", () => {
+    render(
+      <BucketGridView
+        buckets={[
+          { id: "one", label: "one", itemCount: 1 },
+          { id: "two", label: "two", itemCount: 2, backgroundImage: "/images/theme.png" },
+          { id: "single", label: "single", itemCount: 1, backgroundImage: "/images/theme.png" },
+        ]}
+        onOpenBucket={() => {}}
+      />
+    );
+    expect(screen.getAllByText("1 question")).toHaveLength(2);
+    expect(screen.getByText("2 questions")).toBeInTheDocument();
+    expect(screen.queryByText(/\bitems?\b/)).not.toBeInTheDocument();
   });
 
   it("renders description when provided", () => {

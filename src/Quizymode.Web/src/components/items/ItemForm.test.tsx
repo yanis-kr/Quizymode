@@ -362,4 +362,58 @@ describe("ItemForm", () => {
     expect(screen.getByRole("button", { name: /save and add another/i })).toBeDisabled();
     expect(screen.getByRole("button", { name: /saving/i })).toBeDisabled();
   });
+
+  const PRIVATE_SENTENCE = "Private: it is not listed in public categories or search.";
+  const REVIEW_LABEL = "Request review to make this question public";
+
+  it.each(["create", "edit"] as const)(
+    "shows a regular user a private sentence and the review checkbox, no privacy checkbox, on %s (AC 2.1.4, #901)",
+    async (mode) => {
+      const user = userEvent.setup({ delay: null });
+      const onChange = vi.fn();
+      renderCreate({ mode, onChange });
+
+      expect(screen.getByText(PRIVATE_SENTENCE)).toBeInTheDocument();
+      expect(screen.queryByRole("checkbox", { name: /private/i })).not.toBeInTheDocument();
+      expect(screen.queryByText(/admin/i)).not.toBeInTheDocument();
+      const review = screen.getByRole("checkbox", { name: REVIEW_LABEL });
+      expect(review).not.toBeChecked();
+
+      await user.click(review);
+      expect(onChange).toHaveBeenLastCalledWith({ ...defaultValues, readyForReview: true });
+    }
+  );
+
+  it("drops the private sentence for a regular user's public question and keeps the review checkbox (AC 2.1.4, #901)", () => {
+    renderCreate({ mode: "edit", values: { ...defaultValues, isPrivate: false } });
+
+    expect(screen.queryByText(PRIVATE_SENTENCE)).not.toBeInTheDocument();
+    expect(screen.queryByRole("checkbox", { name: /private/i })).not.toBeInTheDocument();
+    expect(screen.getByRole("checkbox", { name: REVIEW_LABEL })).toBeInTheDocument();
+  });
+
+  it.each(["create", "edit"] as const)(
+    "gives an admin an editable Private question checkbox on %s (AC 2.1.3, #901)",
+    async (mode) => {
+      const user = userEvent.setup({ delay: null });
+      const onChange = vi.fn();
+      renderCreate({ mode, isAdmin: true, onChange });
+
+      const privacy = screen.getByRole("checkbox", { name: "Private question" });
+      expect(privacy).toBeEnabled();
+      expect(privacy).toBeChecked();
+      expect(screen.queryByText(PRIVATE_SENTENCE)).not.toBeInTheDocument();
+      expect(screen.queryByRole("checkbox", { name: REVIEW_LABEL })).not.toBeInTheDocument();
+
+      await user.click(privacy);
+      expect(onChange).toHaveBeenLastCalledWith({ ...defaultValues, isPrivate: false });
+    }
+  );
+
+  it("keeps the actions in DOM order Cancel, Save and add another, Save and study (AC 2.1.16, #901)", () => {
+    renderCreate();
+    const cancel = screen.getByRole("button", { name: "Cancel" });
+    const actions = Array.from(cancel.parentElement!.querySelectorAll("button"), (button) => button.textContent);
+    expect(actions).toEqual(["Cancel", "Save and add another", "Save and study"]);
+  });
 });

@@ -1,6 +1,6 @@
 /**
- * Shared mode tabs for study/browse screens: Sets | List | Flashcards | Quiz | Learn | Games.
- * Visibility: show Sets only when scope has child buckets; show Flashcards/Quiz/Learn/Games only when scope has items.
+ * Shared mode tabs for study/browse screens: Topics | List | Flashcards | Quiz | Learn | Games.
+ * Visibility: show Topics (mode "sets") only when scope has child buckets; show Flashcards/Quiz/Learn/Games only when scope has questions.
  */
 import { useEffect, useRef, useState } from "react";
 import {
@@ -36,7 +36,7 @@ export function ModeSwitcher({
     "text-gray-600 hover:bg-gray-100 hover:text-gray-900";
 
   const modes: { mode: ViewMode; label: string; icon: React.ComponentType<{ className?: string }> }[] = [
-    { mode: "sets", label: "Sets", icon: Squares2X2Icon },
+    { mode: "sets", label: "Topics", icon: Squares2X2Icon },
     { mode: "list", label: "List", icon: ListBulletIcon },
     { mode: "explore", label: "Flashcards", icon: MagnifyingGlassIcon },
     { mode: "quiz", label: "Quiz", icon: AcademicCapIcon },

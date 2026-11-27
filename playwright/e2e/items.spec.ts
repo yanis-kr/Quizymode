@@ -15,7 +15,7 @@ async function navigateToListItems(page: import("@playwright/test").Page) {
   await page.waitForLoadState("networkidle");
 
   const categoryCard = page
-    .getByRole("button", { name: /\b[1-9]\d* items\b/i })
+    .getByRole("button", { name: /\b[1-9]\d* questions?\b/i })
     .first();
   await expect(categoryCard).toBeVisible({ timeout: 3_000 });
   await categoryCard.click();
@@ -51,7 +51,7 @@ test(
     await expect(page).toHaveURL(/\/items\//);
 
     // Both "Question" and "Answer" headings must be visible
-    await expect(page.getByText("Question")).toBeVisible();
+    await expect(page.getByRole("heading", { name: "Question", exact: true })).toBeVisible();
     await expect(page.getByText("Answer")).toBeVisible();
   }
 );

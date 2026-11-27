@@ -375,7 +375,7 @@ export function ItemForm({
   return (
     <form
       onSubmit={e => { if (picturesBusy) { e.preventDefault(); return; } onSubmit(e); }}
-      className="bg-surface shadow rounded-lg p-6 space-y-6"
+      className="bg-surface shadow rounded-lg p-4 space-y-6 sm:p-6"
     >
       {validationError && (
         <ErrorMessage message={validationError} />
@@ -700,34 +700,39 @@ export function ItemForm({
           error={topicError}
         />
         <div className="pt-4 border-t border-gray-200/90 space-y-3">
-          <label className="flex items-center">
-            <input
-              type="checkbox"
-              checked={values.isPrivate}
-              onChange={(e) =>
-                onChange({ ...values, isPrivate: e.target.checked })
-              }
-              disabled={!isAdmin}
-              className="mr-2"
-            />
-            <span className="text-sm font-medium text-gray-700">
-              Private Item {!isAdmin && "(default for regular users)"}
-            </span>
-          </label>
-          {!isAdmin && (
+          {isAdmin ? (
             <label className="flex items-center">
               <input
                 type="checkbox"
-                checked={values.readyForReview}
+                checked={values.isPrivate}
                 onChange={(e) =>
-                  onChange({ ...values, readyForReview: e.target.checked })
+                  onChange({ ...values, isPrivate: e.target.checked })
                 }
                 className="mr-2"
               />
-              <span className="text-sm font-medium text-gray-700">
-                Request admin review to make this item public
-              </span>
+              <span className="text-sm font-medium text-gray-700">Private question</span>
             </label>
+          ) : (
+            <>
+              {values.isPrivate && (
+                <p className="text-sm text-gray-700">
+                  Private: it is not listed in public categories or search.
+                </p>
+              )}
+              <label className="flex items-center">
+                <input
+                  type="checkbox"
+                  checked={values.readyForReview}
+                  onChange={(e) =>
+                    onChange({ ...values, readyForReview: e.target.checked })
+                  }
+                  className="mr-2"
+                />
+                <span className="text-sm font-medium text-gray-700">
+                  Request review to make this question public
+                </span>
+              </label>
+            </>
           )}
         </div>
       </section>
@@ -738,11 +743,12 @@ export function ItemForm({
         </div>
       )}
 
-      <div className="flex justify-end space-x-4">
+      {/* Below sm the actions stack full width in DOM order, so keyboard and submit order do not change. */}
+      <div className="flex flex-col gap-3 sm:flex-row sm:justify-end sm:gap-4">
         <button
           type="button"
           onClick={onCancel}
-          className="px-4 py-2 text-sm font-medium text-gray-700 bg-surface border border-gray-300 rounded-md hover:bg-gray-50"
+          className="min-h-11 w-full whitespace-nowrap px-4 py-2 text-sm font-medium text-gray-700 bg-surface border border-gray-300 rounded-md hover:bg-gray-50 sm:min-h-0 sm:w-auto"
         >
           Cancel
         </button>
@@ -751,7 +757,7 @@ export function ItemForm({
             type="submit"
             data-action="another"
             disabled={isPending || picturesBusy}
-            className="px-4 py-2 text-sm font-medium text-indigo-ink bg-surface border border-indigo-300 rounded-md hover:bg-indigo-50 disabled:opacity-50"
+            className="min-h-11 w-full whitespace-nowrap px-4 py-2 text-sm font-medium text-indigo-ink bg-surface border border-indigo-300 rounded-md hover:bg-indigo-50 disabled:opacity-50 sm:min-h-0 sm:w-auto"
           >
             Save and add another
           </button>
@@ -759,7 +765,7 @@ export function ItemForm({
         <button
           type="submit"
           disabled={isPending || picturesBusy}
-          className="px-4 py-2 text-sm font-medium text-white bg-indigo-600 rounded-md hover:bg-indigo-700 disabled:opacity-50"
+          className="min-h-11 w-full whitespace-nowrap px-4 py-2 text-sm font-medium text-white bg-indigo-600 rounded-md hover:bg-indigo-700 disabled:opacity-50 sm:min-h-0 sm:w-auto"
         >
           {isPending ? "Saving..." : mode === "create" ? "Save and study" : "Save"}
         </button>

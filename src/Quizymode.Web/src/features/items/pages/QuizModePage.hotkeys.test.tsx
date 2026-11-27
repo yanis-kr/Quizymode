@@ -224,11 +224,11 @@ describe("QuizModePage keyboard shortcuts", () => {
       await screen.findByText("What is 2 + 2?");
       await screen.findByText("1 of 2");
       fireEvent.load(await screen.findByAltText("Four stripes"));
-      expect(screen.getByRole("button", { name: "Skip question (not scored)" })).toBeInTheDocument();
+      expect(screen.getByRole("button", { name: "Skip question" })).toBeInTheDocument();
 
       press({ key: "1", code: "Digit1" });
       expect(screen.getByText(/Score: [01] \/ 1 correct/)).toBeInTheDocument();
-      expect(screen.queryByRole("button", { name: "Skip question (not scored)" })).not.toBeInTheDocument();
+      expect(screen.queryByRole("button", { name: "Skip question" })).not.toBeInTheDocument();
     });
 
     it("does nothing on 1, A or F while the zoom is open, so no answer is recorded", async () => {
@@ -260,7 +260,7 @@ describe("QuizModePage keyboard shortcuts", () => {
       press({ key: "1", code: "Digit1" });
       expect(screen.getByText(/Score: 0 \/ 0 correct/)).toBeInTheDocument();
 
-      fireEvent.click(screen.getByRole("button", { name: "Skip question (not scored)" }));
+      fireEvent.click(screen.getByRole("button", { name: "Skip question" }));
 
       expect(await screen.findByText("What is 2 + 2?")).toBeInTheDocument();
       expect(screen.getByText(/Score: 0 \/ 0 correct/)).toBeInTheDocument();

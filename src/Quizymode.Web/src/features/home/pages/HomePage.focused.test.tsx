@@ -1,5 +1,5 @@
 import { beforeEach, describe, expect, it, vi } from "vitest";
-import { render, screen, waitFor, within } from "@testing-library/react";
+import { fireEvent, render, screen, waitFor, within } from "@testing-library/react";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { MemoryRouter } from "react-router-dom";
 import { HelmetProvider } from "react-helmet-async";
@@ -11,6 +11,7 @@ import { interestsApi } from "@/api/learningLoop";
 import { usersApi } from "@/api/users";
 import { studySessionsApi } from "@/api/studySessions";
 import { studyPlansApi } from "@/api/studyPlans";
+import { topicActivityApi } from "@/api/topicActivity";
 import { installMemoryLocalStorage } from "@/test/memoryStorage";
 import { renderWithProviders } from "@/features/learningLoop/learningLoopTestUtils";
 import { writeLocalInterests } from "@/features/learningLoop/localLearningState";
@@ -25,7 +26,13 @@ vi.mock("@/api/collections", () => ({ collectionsApi: { discover: vi.fn(), getBy
 vi.mock("@/api/featured", () => ({ featuredApi: { get: vi.fn() } }));
 vi.mock("@/api/users", () => ({ usersApi: { getSettings: vi.fn(), updateSetting: vi.fn() } }));
 vi.mock("@/api/studyPlans", () => ({ studyPlansApi: { list: vi.fn(), upsert: vi.fn(), remove: vi.fn() } }));
-vi.mock("@/api/studySessions", () => ({ studySessionsApi: { list: vi.fn() } }));
+vi.mock("@/api/studySessions", () => ({
+  MAX_SET_PROGRESS_SCOPES: 12,
+  studySessionsApi: { list: vi.fn(), getSetProgress: vi.fn().mockResolvedValue({ scopes: [] }) },
+}));
+vi.mock("@/api/topicActivity", () => ({
+  topicActivityApi: { get: vi.fn().mockResolvedValue({ windowDays: 30, topics: [] }) },
+}));
 vi.mock("@/api/learningLoop", () => ({
   interestsApi: { popularCategories: vi.fn(), get: vi.fn(), replace: vi.fn() },
   dailyQuizApi: { get: vi.fn() },
@@ -136,9 +143,15 @@ describe("HomePage personalized layout (#382)", () => {
   it("signed in cold start (no topics): full Home with the onboarding card above Today", async () => {
     auth.value = { isAuthenticated: true, isLoading: false, userId: "user-1" };
     vi.mocked(interestsApi.get).mockResolvedValue([]);
+    // For you needs something to show while the card holds the only topic prompt (#903).
+    vi.mocked(featuredApi.get).mockResolvedValue({
+      sets: [{ id: "f1", displayName: "Guess the Flag", categorySlug: "geography", navKeyword1: "flags", navKeyword2: null, itemCount: 10, lastModifiedAt: null, sortOrder: 1 }],
+      collections: [],
+    });
     renderWithProviders(<HomePage />);
 
     expect(await screen.findByRole("region", { name: "Make Home yours" })).toBeInTheDocument();
+    await screen.findByRole("heading", { name: "For you" });
     expect(headingOrder()).toEqual(["Make Home yours", "Today", "For you"]);
     expect(screen.getByText(/five quick questions, from flags to space to AI/i)).toBeInTheDocument();
     expect(screen.queryByText("Explore all topics")).not.toBeInTheDocument();
@@ -239,5 +252,196 @@ describe("HomePage personalized layout (#382)", () => {
 
     const details = exploreSummary().closest("details")!;
     expect(await within(details).findByRole("link", { name: /Fun expressions/ })).toBeInTheDocument();
+  });
+});
+
+describe("HomePage signed-in topic prompts (#903)", () => {
+  const flagSet = {
+    id: "f1",
+    displayName: "Guess the Flag",
+    categorySlug: "geography",
+    navKeyword1: "flags",
+    navKeyword2: null,
+    itemCount: 10,
+    lastModifiedAt: null,
+    sortOrder: 1,
+  };
+  const sentence = () => screen.queryByText("Choose a few topics and we'll put them first.");
+  const changeTopics = () => screen.queryByRole("button", { name: "Change topics" });
+  const forYou = () => screen.queryByRole("heading", { name: "For you" });
+  const card = () => screen.queryByRole("region", { name: "Make Home yours" });
+  const settle = () => new Promise((resolve) => setTimeout(resolve, 30));
+
+  beforeEach(async () => {
+    vi.clearAllMocks();
+    installMemoryLocalStorage();
+    window.sessionStorage.clear();
+    auth.value = { isAuthenticated: true, isLoading: false, userId: "user-1" };
+    vi.mocked(categoriesApi.getAll).mockResolvedValue({ categories: [] });
+    vi.mocked(collectionsApi.discover).mockResolvedValue({ items: [], totalCount: 0 });
+    vi.mocked(featuredApi.get).mockResolvedValue({ sets: [], collections: [] });
+    vi.mocked(interestsApi.get).mockResolvedValue([]);
+    vi.mocked(interestsApi.popularCategories).mockResolvedValue([]);
+    vi.mocked(studySessionsApi.list).mockResolvedValue([]);
+    vi.mocked(studyPlansApi.list).mockResolvedValue([]);
+    vi.mocked(topicActivityApi.get).mockResolvedValue({ windowDays: 30, topics: [] });
+    vi.mocked(usersApi.getSettings).mockResolvedValue({ settings: {} });
+    vi.mocked(usersApi.updateSetting).mockResolvedValue({ key: "TopicOnboarding", value: "dismissed", updatedAt: "" });
+    const { dailyQuizApi, reviewQueueApi } = await import("@/api/learningLoop");
+    vi.mocked(dailyQuizApi.get).mockResolvedValue({ date: "2026-10-27", items: [], completion: null, streak: 0 });
+    vi.mocked(reviewQueueApi.getSummary).mockResolvedValue({ dueCount: 0, totalCount: 0, nextDueAt: null });
+  });
+
+  it.each([
+    ["full", [] as string[]],
+    ["focused", ["history"]],
+  ])("AC1: the signed-in %s Home never says No account needed", async (layout, topics) => {
+    vi.mocked(interestsApi.get).mockResolvedValue(topics);
+    renderWithProviders(<HomePage />);
+
+    if (layout === "focused") await screen.findByText("Explore all topics");
+    else await screen.findByRole("region", { name: "Make Home yours" });
+    expect(hero()).toBeInTheDocument();
+    expect(screen.queryByText("No account needed.")).not.toBeInTheDocument();
+  });
+
+  it.each([
+    ["full", [] as string[]],
+    ["focused", ["history"]],
+  ])("AC1: the anonymous %s Home still says No account needed", (_layout, topics) => {
+    auth.value = { isAuthenticated: false, isLoading: false, userId: null };
+    if (topics.length > 0) writeLocalInterests(topics);
+    renderWithProviders(<HomePage />);
+
+    expect(screen.getByText("No account needed.")).toBeInTheDocument();
+  });
+
+  it("AC2: while the Make Home yours card is shown it is the only topic prompt", async () => {
+    vi.mocked(featuredApi.get).mockResolvedValue({ sets: [flagSet], collections: [] });
+    renderWithProviders(<HomePage />);
+
+    expect(await screen.findByRole("region", { name: "Make Home yours" })).toBeInTheDocument();
+    expect(await screen.findByRole("heading", { name: "For you" })).toBeInTheDocument();
+    expect(sentence()).not.toBeInTheDocument();
+    expect(changeTopics()).not.toBeInTheDocument();
+    expect(screen.getByRole("button", { name: "Choose topics" })).toBeInTheDocument();
+  });
+
+  it("AC3: For you is not rendered when it has nothing else to show", async () => {
+    renderWithProviders(<HomePage />);
+
+    expect(await screen.findByRole("region", { name: "Make Home yours" })).toBeInTheDocument();
+    await settle();
+    expect(forYou()).not.toBeInTheDocument();
+    expect(sentence()).not.toBeInTheDocument();
+    expect(changeTopics()).not.toBeInTheDocument();
+  });
+
+  it("AC3: topic links keep the For you section under its heading", async () => {
+    vi.mocked(studySessionsApi.list).mockResolvedValue([
+      {
+        id: "s1",
+        origin: "quiz",
+        runId: "run-1",
+        completedAt: new Date().toISOString(),
+        correct: 3,
+        total: 5,
+        source: { kind: "category", categorySlug: "science", navigationKeywords: [], filterKeywords: [] },
+        missedItemIds: [],
+      },
+    ]);
+    renderWithProviders(<HomePage />);
+
+    const section = await screen.findByRole("region", { name: "For you" });
+    expect(within(section).getByRole("link", { name: "Science" })).toHaveAttribute("href", "/categories/science");
+    expect(await screen.findByRole("region", { name: "Make Home yours" })).toBeInTheDocument();
+    expect(changeTopics()).not.toBeInTheDocument();
+  });
+
+  it("AC3: a suggestion card keeps the For you section under its heading", async () => {
+    vi.mocked(topicActivityApi.get).mockResolvedValue({
+      windowDays: 30,
+      topics: [{ path: "science", runs: 2, lastCompletedAt: new Date().toISOString() }],
+    });
+    renderWithProviders(<HomePage />);
+
+    const section = await screen.findByRole("region", { name: "For you" });
+    expect(await within(section).findByRole("group", { name: "Topic suggestion" })).toBeInTheDocument();
+    expect(card()).toBeInTheDocument();
+    expect(sentence()).not.toBeInTheDocument();
+    expect(changeTopics()).not.toBeInTheDocument();
+  });
+
+  it("AC3: a set list keeps the For you section under its heading", async () => {
+    vi.mocked(featuredApi.get).mockResolvedValue({ sets: [flagSet], collections: [] });
+    renderWithProviders(<HomePage />);
+
+    const section = await screen.findByRole("region", { name: "For you" });
+    expect(within(section).getByRole("heading", { name: "Popular right now" })).toBeInTheDocument();
+    expect(within(section).getByRole("link", { name: /Guess the Flag/ })).toBeInTheDocument();
+    expect(await screen.findByRole("region", { name: "Make Home yours" })).toBeInTheDocument();
+    expect(sentence()).not.toBeInTheDocument();
+    expect(changeTopics()).not.toBeInTheDocument();
+  });
+
+  it("AC4: no For you prompt while the TopicOnboarding setting is loading", async () => {
+    vi.mocked(usersApi.getSettings).mockReturnValue(new Promise(() => {}));
+    renderWithProviders(<HomePage />);
+
+    await waitFor(() => expect(usersApi.getSettings).toHaveBeenCalled());
+    await settle();
+    expect(screen.getByRole("heading", { name: "Today" })).toBeInTheDocument();
+    expect(card()).not.toBeInTheDocument();
+    expect(sentence()).not.toBeInTheDocument();
+    expect(changeTopics()).not.toBeInTheDocument();
+  });
+
+  const expectForYouPrompt = async () => {
+    await waitFor(() => expect(changeTopics()).toBeInTheDocument());
+    expect(forYou()).toBeInTheDocument();
+    expect(sentence()).toBeInTheDocument();
+    expect(card()).not.toBeInTheDocument();
+  };
+
+  it.each(["dismissed", "done"])("AC5: For you asks for topics when the setting is already %s", async (value) => {
+    vi.mocked(usersApi.getSettings).mockResolvedValue({ settings: { TopicOnboarding: value } });
+    renderWithProviders(<HomePage />);
+
+    await expectForYouPrompt();
+  });
+
+  it("AC5: For you asks for topics when the setting failed to load", async () => {
+    vi.mocked(usersApi.getSettings).mockRejectedValue(new Error("down"));
+    renderWithProviders(<HomePage />);
+
+    await expectForYouPrompt();
+  });
+
+  it("AC5: For you asks for topics when local picks are waiting", async () => {
+    writeLocalInterests(["history"]);
+    renderWithProviders(<HomePage />);
+
+    await expectForYouPrompt();
+  });
+
+  it("AC5: For you asks for topics when the card was dismissed earlier in this page session", async () => {
+    window.sessionStorage.setItem("quizymode.topicOnboarding.dismissed", "1");
+    vi.mocked(usersApi.getSettings).mockReturnValue(new Promise(() => {}));
+    renderWithProviders(<HomePage />);
+
+    await expectForYouPrompt();
+  });
+
+  it.each([
+    ["is saved", false],
+    ["cannot be saved", true],
+  ])("AC5: Not now brings back the For you prompt when the dismissal %s", async (_name, writeFails) => {
+    if (writeFails) vi.mocked(usersApi.updateSetting).mockRejectedValue(new Error("down"));
+    renderWithProviders(<HomePage />);
+
+    fireEvent.click(await screen.findByRole("button", { name: "Not now" }));
+
+    await expectForYouPrompt();
+    expect(screen.getByRole("link", { name: /Daily quiz/ })).toHaveFocus();
   });
 });

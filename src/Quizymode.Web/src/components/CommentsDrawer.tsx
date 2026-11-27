@@ -116,7 +116,7 @@ export function CommentsDrawer({
                   }
                   disabled={!previousItemId}
                   className="p-2 text-gray-600 hover:bg-gray-200 rounded-md disabled:opacity-40 disabled:cursor-not-allowed"
-                  title="Previous item"
+                  title="Previous question"
                 >
                   ←
                 </button>
@@ -127,7 +127,7 @@ export function CommentsDrawer({
                   }
                   disabled={!nextItemId}
                   className="p-2 text-gray-600 hover:bg-gray-200 rounded-md disabled:opacity-40 disabled:cursor-not-allowed"
-                  title="Next item"
+                  title="Next question"
                 >
                   →
                 </button>

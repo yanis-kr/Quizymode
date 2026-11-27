@@ -11,6 +11,7 @@ import { keywordsApi } from "@/api/keywords";
 import type { TaxonomyCategory, TaxonomyL1, TaxonomyL2 } from "@/api/taxonomy";
 import { useTaxonomy } from "@/features/topics/useTaxonomy";
 import { categoryNameToSlug } from "@/utils/categorySlug";
+import { questionCountLabel } from "@/utils/questionCountLabel";
 import LoadingSpinner from "./LoadingSpinner";
 import ErrorMessage from "./ErrorMessage";
 
@@ -76,6 +77,16 @@ function createCategoryNode(
       createGroupNode(category.slug, group)
     ),
   };
+}
+
+/** Drops nodes whose loaded count is 0. A node whose count has not loaded (or failed to load) stays listed (#900). */
+function withoutEmptyNodes(
+  nodes: CategoriesMapNode[],
+  counts: Map<string, number>
+): CategoriesMapNode[] {
+  return nodes
+    .filter((node) => counts.get(node.id) !== 0)
+    .map((node) => ({ ...node, children: withoutEmptyNodes(node.children, counts) }));
 }
 
 function collectExpandableNodeIds(nodes: CategoriesMapNode[]): string[] {
@@ -151,8 +162,8 @@ function TreeNode({
             {effectiveCount != null ? (
               <span
                 className="rounded bg-slate-200 px-1.5 py-0.5 text-xs font-semibold text-slate-800"
-                aria-label={`${effectiveCount} items`}
-                title={`${effectiveCount} items`}
+                aria-label={questionCountLabel(effectiveCount)}
+                title={questionCountLabel(effectiveCount)}
               >
                 {effectiveCount}
               </span>
@@ -219,15 +230,23 @@ const CategoriesMapModal = ({
     [categoryDefinitions]
   );
 
+  // A node with no row in its loaded response counts as 0.
   const categoryCountOverrides = useMemo(() => {
     const map = new Map<string, number>();
+    const rows = categoriesData?.categories;
+    if (!rows) return map;
 
-    for (const category of categoriesData?.categories ?? []) {
-      map.set(categoryNameToSlug(category.category), category.count);
+    for (const category of taxonomyData?.categories ?? []) {
+      const match = rows.find(
+        (item) =>
+          categoryNameToSlug(item.category).toLowerCase() ===
+          category.slug.toLowerCase()
+      );
+      map.set(category.slug, match?.count ?? 0);
     }
 
     return map;
-  }, [categoriesData?.categories]);
+  }, [categoriesData?.categories, taxonomyData?.categories]);
 
   const rank1Queries = useQueries({
     queries: categoryDefinitions.map((definition) => ({
@@ -280,28 +299,26 @@ const CategoriesMapModal = ({
 
     categoryDefinitions.forEach((definition, index) => {
       const rank1Data = rank1Queries[index]?.data;
+      if (!rank1Data) return;
       for (const group of definition.category.groups) {
-        const match = rank1Data?.keywords?.find(
+        const match = rank1Data.keywords.find(
           (keyword) => keyword.name.toLowerCase() === group.slug.toLowerCase()
         );
-        if (match) {
-          map.set(`${definition.category.slug}/${group.slug}`, match.itemCount);
-        }
+        map.set(`${definition.category.slug}/${group.slug}`, match?.itemCount ?? 0);
       }
     });
 
     rank2Definitions.forEach((definition, index) => {
       const rank2Data = rank2Queries[index]?.data;
+      if (!rank2Data) return;
       for (const keyword of definition.keywords) {
-        const match = rank2Data?.keywords?.find(
+        const match = rank2Data.keywords.find(
           (item) => item.name.toLowerCase() === keyword.slug.toLowerCase()
         );
-        if (match) {
-          map.set(
-            `${definition.categorySlug}/${definition.groupSlug}/${keyword.slug}`,
-            match.itemCount
-          );
-        }
+        map.set(
+          `${definition.categorySlug}/${definition.groupSlug}/${keyword.slug}`,
+          match?.itemCount ?? 0
+        );
       }
     });
 
@@ -314,9 +331,14 @@ const CategoriesMapModal = ({
     categoryDefinitions,
   ]);
 
+  const listedNodes = useMemo(
+    () => withoutEmptyNodes(nodes, liveCountOverrides),
+    [nodes, liveCountOverrides]
+  );
+
   const expandableNodeIds = useMemo(
-    () => collectExpandableNodeIds(nodes),
-    [nodes]
+    () => collectExpandableNodeIds(listedNodes),
+    [listedNodes]
   );
 
   const [expandedNodeIds, setExpandedNodeIds] = useState<Set<string>>(new Set());
@@ -412,7 +434,7 @@ const CategoriesMapModal = ({
                 void refetch();
               }}
             />
-          ) : nodes.length === 0 ? (
+          ) : listedNodes.length === 0 ? (
             <div className="rounded-[24px] border border-dashed border-slate-300 bg-surface/80 px-6 py-12 text-center">
               <p className="text-base font-medium text-slate-900">
                 No taxonomy categories are available right now.
@@ -423,7 +445,7 @@ const CategoriesMapModal = ({
             </div>
           ) : (
             <ul className="space-y-1">
-              {nodes.map((node) => (
+              {listedNodes.map((node) => (
                 <TreeNode
                   key={node.id}
                   node={node}

@@ -61,7 +61,7 @@ describe("StudyPlanTodayCard", () => {
     unmount();
 
     renderCard(learned, { isGuest: true });
-    expect(screen.getByRole("link", { name: /Practice quiz/ })).toHaveTextContent("About 7 min. Quiz yourself on the full set.");
+    expect(screen.getByRole("link", { name: /Practice quiz/ })).toHaveTextContent("About 7 min. Quiz yourself on all the questions.");
   });
 
   it("practice test day before: opens Test mode and offers Learn first only when not learned", () => {

@@ -95,6 +95,7 @@ import {
 } from "@/features/items/quiz/resumeStorage";
 import { entryMatchesStudyUrl, prepareResume, RESUME_RECOVERY_NOTICE } from "@/features/items/quiz/resumeRestore";
 import { ResumeChoice } from "@/features/items/quiz/ResumeChoice";
+import { questionCountLabel } from "@/utils/questionCountLabel";
 
 const TEST_RESTORE_NOTICE = "We could not restore your earlier test, so we started a new one.";
 /** AC 3.6.24: Resume was chosen but the saved run could not be restored on the page. */
@@ -1300,7 +1301,7 @@ const QuizModePageContent = ({ resumeRequested = false, initialNotice = null }: 
     );
   if (error && !collectionId && !itemId)
     return (
-      <ErrorMessage message="Failed to load items" onRetry={() => refetch()} />
+      <ErrorMessage message="Failed to load questions" onRetry={() => refetch()} />
     );
   if (items.length === 0 && mode === "test") {
     return (
@@ -1328,7 +1329,7 @@ const QuizModePageContent = ({ resumeRequested = false, initialNotice = null }: 
       <div className="py-4 sm:py-6">
         <div className="text-center py-12">
           <p className="text-gray-500 mb-4">
-            {collectionId ? "This collection has no playable quiz items." : "No items found."}
+            {collectionId ? "This collection has no questions to play." : "No questions found."}
           </p>
           <Link
             to="/categories"
@@ -1569,7 +1570,7 @@ const QuizModePageContent = ({ resumeRequested = false, initialNotice = null }: 
           <div className="flex flex-wrap items-center gap-4">
             <div className="text-sm text-gray-600">
               {/* AC 1.5.9: the header counts the playable roster the quiz plays, the same list as the run (not the detail count). */}
-              {collectionLoading ? "Loading" : playableItems.length} items
+              {collectionLoading ? "Loading questions" : questionCountLabel(playableItems.length)}
             </div>
             {ratingData && (
               <div className="flex items-center gap-2">
@@ -1657,7 +1658,7 @@ const QuizModePageContent = ({ resumeRequested = false, initialNotice = null }: 
                 </dd>
               </div>
               <div className="flex justify-between gap-4">
-                <dt className="font-medium text-gray-600">Items</dt>
+                <dt className="font-medium text-gray-600">Questions</dt>
                 <dd className="text-right">{collectionInfo.itemCount}</dd>
               </div>
               {"isPublic" in collectionInfo && (

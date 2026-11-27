@@ -203,14 +203,14 @@ describe("QuizModePage Test mode (AC 3.18)", () => {
     vi.mocked(collectionsApi.getItems).mockResolvedValue({ items: [pictured] } as Awaited<ReturnType<typeof collectionsApi.getItems>>);
     const view = await renderPageWithOptions(TEST_URL); await startTest("custom-1");
     fireEvent.load(await screen.findByAltText("Flag"));
-    const skip = screen.getByRole("button", { name: "Skip question (not scored)" }); skip.focus(); await userEvent.keyboard("{Enter}");
+    const skip = screen.getByRole("button", { name: "Skip question" }); skip.focus(); await userEvent.keyboard("{Enter}");
     await waitFor(() => expect(JSON.parse(sessionStorage.getItem("navigationContext_quiz")!).quizRun.skipped).toEqual([GUID_1]));
     const before = JSON.parse(sessionStorage.getItem("navigationContext_quiz")!).quizRun;
     expect(before.skippedReasons[GUID_1]).toBe("picture-inaccessible");
     expect(before.picturePausedAt).toBeNull();
     view.unmount(); await renderPageWithOptions(TEST_URL);
     await screen.findByText("What is 2 + 2?");
-    expect(screen.queryByRole("button", { name: "Skip question (not scored)" })).not.toBeInTheDocument();
+    expect(screen.queryByRole("button", { name: "Skip question" })).not.toBeInTheDocument();
     fireEvent.click(screen.getByRole("button", { name: "Submit test" }));
     fireEvent.click(within(screen.getByRole("dialog")).getByRole("button", { name: "Submit test" }));
     await waitFor(() => expect(JSON.parse(sessionStorage.getItem("navigationContext_quiz")!).quizRun.submittedAt).not.toBeNull());
@@ -222,7 +222,9 @@ describe("QuizModePage Test mode (AC 3.18)", () => {
     await renderPageWithOptions(TEST_URL);
 
     expect(await screen.findByRole("heading", { name: "Test mode" })).toBeInTheDocument();
-    expect(screen.getByText("3 questions")).toBeInTheDocument();
+    // The collection bar and the setup card both show the count.
+    expect(screen.getAllByText("3 questions")).toHaveLength(2);
+    expect(screen.getByText("Learn, Test and Review are free.")).toBeInTheDocument();
     expect(screen.getByLabelText("Time limit")).toHaveValue("none");
     expect(screen.getByRole("button", { name: "Start test" })).toBeEnabled();
     expect(screen.queryByText("What is 2 + 2?")).not.toBeInTheDocument();
@@ -260,7 +262,7 @@ describe("QuizModePage Test mode (AC 3.18)", () => {
     expect(screen.queryByText(/Answer: /)).not.toBeInTheDocument();
     expect(screen.queryByText(/Score:/)).not.toBeInTheDocument();
     expect(screen.queryByText("Basic arithmetic.")).not.toBeInTheDocument();
-    expect(screen.queryByTitle("View item details")).not.toBeInTheDocument();
+    expect(screen.queryByTitle("View question details")).not.toBeInTheDocument();
     expect(screen.queryByText("ratings-and-comments")).not.toBeInTheDocument();
     expect(screen.queryByText("collection-controls")).not.toBeInTheDocument();
     expect(screen.queryByRole("button", { name: "Read answer aloud" })).not.toBeInTheDocument();
@@ -868,8 +870,8 @@ describe("QuizModePage Test mode (AC 3.18)", () => {
     const previous = () => screen.getByRole("button", { name: "Previous" });
     const expectCounter = async (text: string) => expect(await screen.findByText(text)).toBeInTheDocument();
     const expectNoArrows = () => {
-      expect(screen.queryByTitle("Previous item")).toBeNull();
-      expect(screen.queryByTitle("Next item")).toBeNull();
+      expect(screen.queryByTitle("Previous question")).toBeNull();
+      expect(screen.queryByTitle("Next question")).toBeNull();
     };
 
     it("AC 3.6.42 keeps the counter and the shortcuts and details icons in Practice", async () => {
@@ -877,7 +879,7 @@ describe("QuizModePage Test mode (AC 3.18)", () => {
       await expectCounter("1 of 3");
       expectNoArrows();
       expect(screen.getByRole("button", { name: "Keyboard shortcuts" })).toBeInTheDocument();
-      expect(screen.getByTitle("View item details")).toBeInTheDocument();
+      expect(screen.getByTitle("View question details")).toBeInTheDocument();
     });
 
     it.each([`/quiz/exams/item/${GUID_1}`, `/quiz/item/${GUID_1}`])(
@@ -944,7 +946,7 @@ describe("QuizModePage Test mode (AC 3.18)", () => {
       renderPage(PRACTICE_URL);
       await expectCounter("1 of 3");
       fireEvent.load(await screen.findByAltText("Flag"));
-      fireEvent.click(screen.getByRole("button", { name: "Skip question (not scored)" }));
+      fireEvent.click(screen.getByRole("button", { name: "Skip question" }));
       await expectCounter("2 of 3");
       fireEvent.click(previous());
       await expectCounter("1 of 3");
@@ -958,7 +960,7 @@ describe("QuizModePage Test mode (AC 3.18)", () => {
       vi.mocked(collectionsApi.getItems).mockResolvedValue({ items: [item1, item2, pictured] } as Awaited<ReturnType<typeof collectionsApi.getItems>>);
     const skipLast = async () => {
       fireEvent.load(await screen.findByAltText("Flag"));
-      fireEvent.click(screen.getByRole("button", { name: "Skip question (not scored)" }));
+      fireEvent.click(screen.getByRole("button", { name: "Skip question" }));
     };
 
     it("AC 3.6.43 finishes with View results when the last question is skipped and nothing is left open", async () => {
@@ -1033,8 +1035,8 @@ describe("QuizModePage Test mode (AC 3.18)", () => {
       renderPage(mode === "test" ? TEST_URL : PRACTICE_URL);
       if (mode === "test") await startTest();
       await expectCounter("1 of 3");
-      expect(screen.getByTitle("Previous item")).toBeDisabled();
-      fireEvent.click(screen.getByTitle("Next item"));
+      expect(screen.getByTitle("Previous question")).toBeDisabled();
+      fireEvent.click(screen.getByTitle("Next question"));
       await expectCounter("2 of 3");
     });
   });

@@ -29,7 +29,7 @@ describe("StudyShell", () => {
     render(
       <MemoryRouter>
         <StudyShell
-          description="Flashcards-style study mode for reviewing quiz items."
+          description="Tap the card to see the answer."
           currentIndex={0}
           totalCount={3}
           onPrev={() => {}}
@@ -47,14 +47,14 @@ describe("StudyShell", () => {
     );
 
     expect(
-      screen.getByText(/Flashcards-style study mode for reviewing quiz items/i)
+      screen.getByText(/Tap the card to see the answer/i)
     ).toBeInTheDocument();
     expect(
       screen.queryByRole("heading", { name: /Flashcards Mode/i })
     ).not.toBeInTheDocument();
   });
 
-  it("passes the current quiz URL to item details so the user can return to the same card", () => {
+  it("AC 3.6.50 passes the current quiz URL to question details so the user can return to the same card (#923)", () => {
     render(
       <MemoryRouter initialEntries={["/quiz/collections/collection-1/sample+collection/item/item-1?keywords=space"]}>
         <StudyShell
@@ -80,7 +80,7 @@ describe("StudyShell", () => {
       </MemoryRouter>
     );
 
-    expect(screen.getByTitle(/view item details/i)).toHaveAttribute(
+    expect(screen.getByTitle(/view question details/i)).toHaveAttribute(
       "href",
       "/items/item-1?return=%2Fquiz%2Fcollections%2Fcollection-1%2Fsample%2Bcollection%2Fitem%2Fitem-1%3Fkeywords%3Dspace&returnMode=quiz"
     );
@@ -107,7 +107,7 @@ describe("StudyShell", () => {
       </MemoryRouter>
     );
 
-    expect(screen.queryAllByTitle(/^(Previous|Next) item$/)).toHaveLength(hideArrows ? 0 : 2);
+    expect(screen.queryAllByTitle(/^(Previous|Next) question$/)).toHaveLength(hideArrows ? 0 : 2);
     expect(screen.getByText("2 of 3")).toBeInTheDocument();
     expect(screen.getByRole("button", { name: "Previous" })).toBeEnabled();
     expect(screen.getByRole("button", { name: "Next" })).toBeEnabled();
@@ -140,5 +140,35 @@ describe("StudyShell", () => {
     expect(screen.queryByRole("button", { name: "Next" })).toBeNull();
     expect(screen.getByLabelText("2 of 2, Still learning round")).toHaveTextContent("2 of 2");
     expect(screen.getByText("Still learning")).toBeInTheDocument();
+  });
+
+  it("AC 3.6.49 AC 3.6.50 names the arrows and the details icon with question, and the arrows still move (#923)", () => {
+    const onPrev = vi.fn();
+    const onNext = vi.fn();
+    render(
+      <MemoryRouter>
+        <StudyShell
+          currentIndex={1}
+          totalCount={3}
+          onPrev={onPrev}
+          onNext={onNext}
+          isPrevDisabled={false}
+          isNextDisabled={false}
+          currentItem={item}
+          onOpenComments={() => {}}
+          onOpenManageCollections={() => {}}
+          isAuthenticated={false}
+        >
+          <div>Body</div>
+        </StudyShell>
+      </MemoryRouter>
+    );
+
+    expect(screen.getByTitle("View question details")).toHaveAttribute("href", expect.stringMatching(/^\/items\/item-1/));
+    expect(screen.queryByTitle(/\bitem\b/i)).toBeNull();
+    screen.getByTitle("Previous question").click();
+    screen.getByTitle("Next question").click();
+    expect(onPrev).toHaveBeenCalledTimes(1);
+    expect(onNext).toHaveBeenCalledTimes(1);
   });
 });

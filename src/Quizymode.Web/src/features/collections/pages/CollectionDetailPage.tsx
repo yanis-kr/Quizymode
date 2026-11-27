@@ -35,6 +35,7 @@ import { PlanForTestButton } from "@/features/studyPlans/PlanForTestButton";
 import { filterCollectionItems } from "../utils/collectionItemSearch";
 import { withQuizSize } from "@/utils/scopeStudyHref";
 import { SEO } from "@/components/SEO";
+import { questionCountLabel } from "@/utils/questionCountLabel";
 
 const CollectionDetailPage = () => {
   const { id } = useParams<{ id: string }>();
@@ -292,7 +293,7 @@ const CollectionDetailPage = () => {
         </div>
         <div className="flex flex-wrap items-center gap-4">
           <div className="text-sm text-slate-600">
-            {collectionData?.itemCount ?? totalCount} items
+            {questionCountLabel(collectionData?.itemCount ?? totalCount)}
           </div>
           {allItems.length > 0 && (
             <div className="flex items-center gap-2">
@@ -478,7 +479,7 @@ const CollectionDetailPage = () => {
                 </dd>
               </div>
               <div className="flex justify-between gap-4">
-                <dt className="font-medium text-gray-600">Items</dt>
+                <dt className="font-medium text-gray-600">Questions</dt>
                 <dd className="text-right">{collectionData.itemCount}</dd>
               </div>
               {"isPublic" in collectionData && (
@@ -500,7 +501,7 @@ const CollectionDetailPage = () => {
 
       {allItems.length === 0 ? (
         <div className="rounded-[28px] border border-dashed border-slate-300 bg-slate-50/90 py-12 text-center">
-          <p className="text-slate-700">No items in this collection.</p>
+          <p className="text-slate-700">No questions in this collection.</p>
         </div>
       ) : (
         <>
@@ -517,7 +518,7 @@ const CollectionDetailPage = () => {
                   listenAllState === "idle"
                     ? !showAnswers
                       ? "Listen to all questions (answers hidden)"
-                      : "Listen to all items (TTS)"
+                      : "Listen to all questions (TTS)"
                     : listenAllState === "playing"
                     ? "Pause"
                     : "Resume"
@@ -588,7 +589,7 @@ const CollectionDetailPage = () => {
                 <Link
                   to={`/items/${item.id}${itemDetailSearch}`}
                   className="inline-flex rounded-md p-1.5 text-indigo-ink hover:bg-indigo-50 sm:p-2"
-                  title="View item details"
+                  title="View question details"
                 >
                   <EyeIcon className="h-4 w-4 sm:h-5 sm:w-5" />
                 </Link>
