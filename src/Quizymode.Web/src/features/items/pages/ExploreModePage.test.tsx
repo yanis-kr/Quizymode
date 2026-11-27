@@ -223,7 +223,7 @@ describe("ExploreModePage", () => {
     expect(
       await screen.findByText(/Tap the card to see the answer/i)
     ).toBeInTheDocument();
-    expect(screen.getByLabelText(/item count/i)).toHaveTextContent("(1)");
+    expect(screen.getByLabelText(/question count/i)).toHaveTextContent("(1)");
     // Breadcrumb labels are display names; the paths keep the raw keywords (#713).
     expect(screen.getByRole("button", { name: "Act" })).toBeInTheDocument();
     expect(screen.getByRole("button", { name: "Math" })).toBeInTheDocument();
@@ -367,7 +367,7 @@ describe("ExploreModePage cold deep link deck", () => {
 
     renderPage("/explore/exams/item/item-1");
 
-    await waitFor(() => expect(screen.getByLabelText(/item count/i)).toHaveTextContent("(3)"));
+    await waitFor(() => expect(screen.getByLabelText(/question count/i)).toHaveTextContent("(3)"));
     expect(screen.getByTestId("location")).toHaveTextContent("/explore/exams/item/item-1");
     expect(mockTrackFlashcardsStarted).toHaveBeenCalledTimes(1);
     expect(mockTrackFlashcardsStarted).toHaveBeenCalledWith("run-abc", 3, expect.anything());
@@ -380,7 +380,7 @@ describe("ExploreModePage cold deep link deck", () => {
 
     renderPage("/explore/exams/item/item-1");
 
-    await waitFor(() => expect(screen.getByLabelText(/item count/i)).toHaveTextContent("(2)"));
+    await waitFor(() => expect(screen.getByLabelText(/question count/i)).toHaveTextContent("(2)"));
   });
 
   it("leaves the deck alone when the link carries keyword filters", async () => {
@@ -390,6 +390,6 @@ describe("ExploreModePage cold deep link deck", () => {
 
     renderPage("/explore/exams/item/item-1?keywords=act");
 
-    await waitFor(() => expect(screen.getByLabelText(/item count/i)).toHaveTextContent("(2)"));
+    await waitFor(() => expect(screen.getByLabelText(/question count/i)).toHaveTextContent("(2)"));
   });
 });

@@ -264,11 +264,11 @@ describe("QuizModePage", () => {
       "/quiz/exams/item/item-1?nav=act,math&keywords=act,math,algebra"
     );
 
-    // Breadcrumb labels are display names; there is no tagline and no item count (#713).
+    // Breadcrumb labels are display names; there is no tagline and no question count (#713).
     expect(await screen.findByRole("button", { name: "Act" })).toBeInTheDocument();
     expect(screen.getByRole("button", { name: "Math" })).toBeInTheDocument();
     expect(screen.queryByText(/Test your knowledge with interactive quizzes/i)).not.toBeInTheDocument();
-    expect(screen.queryByLabelText(/item count/i)).not.toBeInTheDocument();
+    expect(screen.queryByLabelText(/question count/i)).not.toBeInTheDocument();
     expect(
       screen.queryByRole("button", { name: "algebra" })
     ).not.toBeInTheDocument();
@@ -295,7 +295,7 @@ describe("QuizModePage", () => {
     );
   });
 
-  it("breadcrumb for exams/aws/saa-c03 uses display names, raw keyword paths and no item count (#713)", async () => {
+  it("breadcrumb for exams/aws/saa-c03 uses display names, raw keyword paths and no question count (#713)", async () => {
     renderPage("/quiz/exams/item/item-1?nav=aws,saa-c03");
 
     expect(await screen.findByRole("button", { name: "Exams" })).toBeInTheDocument();
@@ -303,7 +303,7 @@ describe("QuizModePage", () => {
     const leaf = screen.getByRole("button", { name: "SAA-C03" });
     expect(leaf.closest("nav")?.textContent).toBe("CategoriesExamsAWSSAA-C03");
     expect(leaf.closest("nav")).toHaveAttribute("aria-label", "Breadcrumb");
-    expect(screen.queryByLabelText(/item count/i)).not.toBeInTheDocument();
+    expect(screen.queryByLabelText(/question count/i)).not.toBeInTheDocument();
     expect(screen.queryByText(/\(\d+\)/)).not.toBeInTheDocument();
     expect(screen.queryByText(/Test your knowledge with interactive quizzes/i)).not.toBeInTheDocument();
 

@@ -140,7 +140,7 @@ describe("CategoriesMapModal", () => {
       "href",
       "/categories/exams"
     );
-    expect(screen.getByLabelText("10 items")).toBeInTheDocument();
+    expect(screen.getByLabelText("10 questions")).toBeInTheDocument();
     expect(screen.queryByRole("link", { name: "aws" })).not.toBeInTheDocument();
     expect(
       screen.queryByRole("link", { name: "saa-c03" })
@@ -152,7 +152,7 @@ describe("CategoriesMapModal", () => {
       "href",
       "/categories/exams/aws"
     );
-    expect(screen.getByLabelText("7 items")).toBeInTheDocument();
+    expect(screen.getByLabelText("7 questions")).toBeInTheDocument();
 
     await user.click(screen.getByRole("button", { name: /expand aws/i }));
 
@@ -160,7 +160,7 @@ describe("CategoriesMapModal", () => {
       "href",
       "/categories/exams/aws/saa-c03"
     );
-    expect(screen.getByLabelText("4 items")).toBeInTheDocument();
+    expect(screen.getByLabelText("4 questions")).toBeInTheDocument();
 
     await user.click(screen.getByRole("button", { name: /collapse all/i }));
 

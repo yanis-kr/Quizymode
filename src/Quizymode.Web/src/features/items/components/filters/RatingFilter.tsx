@@ -65,7 +65,7 @@ export const RatingFilter = ({
             <span className="absolute left-0.5 top-0.5 h-4 w-4 rounded-full bg-surface shadow-sm transition-transform peer-checked:translate-x-4" />
           </span>
           <span className="text-sm font-medium text-slate-700 group-hover:text-slate-900 transition-colors">
-            Only items with no rating
+            Only questions with no rating
           </span>
         </label>
 
@@ -141,7 +141,7 @@ export const RatingFilter = ({
             <span className="absolute left-0.5 top-0.5 h-4 w-4 rounded-full bg-surface shadow-sm transition-transform peer-checked:translate-x-4" />
           </span>
           <span className="text-sm text-slate-600 group-hover:text-slate-800 transition-colors">
-            Include items with no rating
+            Include questions with no rating
           </span>
         </label>
       </div>

@@ -118,7 +118,7 @@ describe("HomePage", () => {
     expect(screen.getByRole("link", { name: /play a 5-question quiz/i })).toBeInTheDocument();
 
     await waitFor(() => expect(categoriesApi.getAll).toHaveBeenCalledTimes(1));
-    expect(screen.queryByText("42 items")).not.toBeInTheDocument();
+    expect(screen.queryByText("42 questions")).not.toBeInTheDocument();
   });
 
   it.each([
@@ -177,8 +177,8 @@ describe("HomePage", () => {
 
     renderPage();
 
-    expect(await screen.findByText("42 items")).toBeInTheDocument();
-    expect(screen.getByText("7 items")).toBeInTheDocument();
+    expect(await screen.findByText("42 questions")).toBeInTheDocument();
+    expect(screen.getByText("7 questions")).toBeInTheDocument();
   });
 });
 
@@ -233,9 +233,9 @@ describe("HomePage plain wording (#902)", () => {
     } as never);
   });
 
-  // The set also appears in the Recommended lane, so look inside Featured Sets only.
+  // The set also appears in the Recommended lane, so look inside Featured topics only.
   async function featuredSetLink() {
-    const lane = screen.getByText("Featured Sets").closest("section")!;
+    const lane = screen.getByText("Featured topics").closest("section")!;
     return { lane, featured: await within(lane).findByRole("link", { name: /World Capitals/ }) };
   }
 
@@ -246,7 +246,7 @@ describe("HomePage plain wording (#902)", () => {
     expect(screen.queryByText(/Learn, Test and Review are free/)).not.toBeInTheDocument();
   });
 
-  it("shows capitalised category chips on Featured Sets and Fun expressions and keeps the links (#902)", async () => {
+  it("shows capitalised category chips on Featured topics and Fun expressions and keeps the links (#902)", async () => {
     renderPage();
 
     const { lane, featured } = await featuredSetLink();
@@ -258,5 +258,48 @@ describe("HomePage plain wording (#902)", () => {
     expect(within(fun).getByText("Languages")).toBeInTheDocument();
     expect(within(fun).queryByText("languages")).not.toBeInTheDocument();
     expect(fun).toHaveAttribute("href", "/categories/languages?keywords=idioms,funny&view=items");
+  });
+});
+
+describe("HomePage questions and topics wording (#922)", () => {
+  it("AC 3.4.12 names the lane Featured topics and counts questions in the singular and plural (#922)", async () => {
+    vi.clearAllMocks();
+    const category = (slug: string, count: number) => ({
+      id: slug,
+      category: slug,
+      description: slug,
+      shortDescription: slug,
+      count,
+      isPrivate: false,
+      averageStars: null,
+    });
+    const collection = (id: string, name: string, itemCount: number) => ({
+      id,
+      name,
+      description: null,
+      itemCount,
+      createdBy: "someone",
+      createdAt: "2026-01-01T00:00:00Z",
+    });
+    vi.mocked(categoriesApi.getAll).mockResolvedValue({ categories: [category("exams", 1), category("science", 1200)] });
+    vi.mocked(collectionsApi.discover).mockResolvedValue({
+      items: [collection("c1", "Alpha", 1), collection("c2", "Beta", 3)],
+      totalCount: 2,
+    } as never);
+    vi.mocked(featuredApi.get).mockResolvedValue({ sets: [], collections: [] });
+
+    renderPage();
+
+    expect(await screen.findByText("1,200 questions")).toBeInTheDocument();
+    expect(await screen.findByText("3 questions")).toBeInTheDocument();
+    expect(screen.getAllByText("1 question")).toHaveLength(2);
+    expect(screen.getByText("Featured topics")).toBeInTheDocument();
+    expect(document.body.textContent).not.toMatch(/\b(item|items|sets)\b/i);
+    await waitFor(() =>
+      expect(document.querySelector('meta[name="description"]')).toHaveAttribute(
+        "content",
+        expect.stringContaining("featured topics, and public collections")
+      )
+    );
   });
 });

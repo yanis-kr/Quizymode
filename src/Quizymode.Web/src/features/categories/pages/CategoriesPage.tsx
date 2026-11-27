@@ -857,7 +857,7 @@ const CategoriesPage = () => {
     navigate(pathCategorySlug === "all" ? `/games${query}` : `/games/${pathCategorySlug}${query}`);
   };
 
-  // Sets view: click = add keyword to path (navigate deeper)
+  // Topics view: click = add keyword to path (navigate deeper)
   const handleKeywordClick = (keyword: string) => {
     const newPathKeywords = [...pathKeywordsFromUrl, keyword];
     const path = categoryName
@@ -979,7 +979,7 @@ const CategoriesPage = () => {
       }
       return (
         <ErrorMessage
-          message="Failed to load items"
+          message="Failed to load questions"
           errorDetail={itemsErrorDetail}
           onRetry={() => refetchItems()}
         />
@@ -992,7 +992,7 @@ const CategoriesPage = () => {
       <>
         <SEO
           title={showLanding ? landing.title : "All categories"}
-          description={categoryName ? (currentCategoryMeta?.description ?? `Browse items in the ${categoryName} category on Quizymode.`) : "Browse items across all categories on Quizymode."}
+          description={categoryName ? (currentCategoryMeta?.description ?? `Browse questions in the ${categoryName} category on Quizymode.`) : "Browse questions across all categories on Quizymode."}
           canonical={`https://www.quizymode.com${scopePath}`}
         />
         <div className="space-y-4 px-3 py-4 sm:px-0">
@@ -1050,7 +1050,7 @@ const CategoriesPage = () => {
                         filterKeywordsFromQuery
                       )}
                       className="inline-flex shrink-0 items-center gap-1 rounded-md bg-green-600 px-3 py-1.5 text-sm font-medium text-white hover:bg-green-700"
-                      title="Add items for this category and navigation path"
+                      title="Add questions for this category and navigation path"
                     >
                       <PlusIcon className="h-4 w-4" />
                       Add
@@ -1093,7 +1093,7 @@ const CategoriesPage = () => {
                         filterKeywordsFromQuery
                       )}
                       className="inline-flex shrink-0 items-center gap-1 rounded-lg bg-green-600 px-3 py-1.5 text-sm font-medium text-white hover:bg-green-700"
-                      title="Add items for this category and navigation path"
+                      title="Add questions for this category and navigation path"
                     >
                       <PlusIcon className="h-4 w-4" />
                       Add
@@ -1158,7 +1158,7 @@ const CategoriesPage = () => {
                     }
                   />
                   <p className="mt-1 text-xs text-gray-500" data-testid="keyword-suggestion-scope">
-                    Suggestions come only from the items loaded on this page.
+                    Suggestions come only from the questions loaded on this page.
                   </p>
                   {filterKeywordsFromQuery.length > 0 && (
                     <div className="mt-2 flex flex-wrap gap-1.5">
@@ -1268,7 +1268,7 @@ const CategoriesPage = () => {
                 />
               }
               count={showLanding ? null : scopeTotalCount}
-              hint="Browse items in this scope."
+              hint="Browse questions in this scope."
               endSlot={
                 <div className="flex items-center gap-1.5">
                   <label className="text-xs text-gray-500">Per page:</label>
@@ -1299,7 +1299,7 @@ const CategoriesPage = () => {
               <div className="py-12 text-center">
                 {itemTagKeywords.length > 0 ? (
                   <>
-                    <p className="text-gray-500">No items match all filters</p>
+                    <p className="text-gray-500">No questions match all filters</p>
                     <button
                       type="button"
                       onClick={() => navigateToItems(scopePathWithNav, true, undefined, [])}
@@ -1309,7 +1309,7 @@ const CategoriesPage = () => {
                     </button>
                   </>
                 ) : (
-                  <p className="text-gray-500">No items found.</p>
+                  <p className="text-gray-500">No questions found.</p>
                 )}
               </div>
             ) : (
@@ -1359,7 +1359,7 @@ const CategoriesPage = () => {
                     <Link
                       to={`/items/${item.id}${itemDetailSearch}`}
                       className="inline-flex rounded-md p-1.5 text-indigo-ink hover:bg-indigo-50 sm:p-2"
-                      title="View item details"
+                      title="View question details"
                     >
                       <EyeIcon className="h-4 w-4 sm:h-5 sm:w-5" />
                     </Link>
@@ -1395,7 +1395,7 @@ const CategoriesPage = () => {
       <>
         <SEO
           title={landing.title}
-          description={currentCategoryMeta?.description ?? `Browse sets in the ${categoryName} category on Quizymode.`}
+          description={currentCategoryMeta?.description ?? `Browse topics in the ${categoryName} category on Quizymode.`}
           canonical={`https://www.quizymode.com${scopePathWithNav}${filterKeywordsFromQuery.length > 0 ? `?keywords=${filterKeywordsFromQuery.map(encodeURIComponent).join(",")}` : ""}`}
         />
         <div className="space-y-4 px-3 py-4 sm:px-0">
@@ -1444,7 +1444,7 @@ const CategoriesPage = () => {
                         filterKeywordsFromQuery
                       )}
                       className="inline-flex shrink-0 items-center gap-1 rounded-md bg-green-600 px-3 py-1.5 text-sm font-medium text-white hover:bg-green-700"
-                      title="Add items for this category and navigation path"
+                      title="Add questions for this category and navigation path"
                     >
                       <PlusIcon className="h-4 w-4" />
                       Add
@@ -1482,7 +1482,7 @@ const CategoriesPage = () => {
                         filterKeywordsFromQuery
                       )}
                       className="inline-flex shrink-0 items-center gap-1 rounded-lg bg-green-600 px-3 py-1.5 text-sm font-medium text-white hover:bg-green-700"
-                      title="Add items for this category and navigation path"
+                      title="Add questions for this category and navigation path"
                     >
                       <PlusIcon className="h-4 w-4" />
                       Add
@@ -1495,7 +1495,7 @@ const CategoriesPage = () => {
               onSortChange={(s) => handleSortChange(s as SortOption)}
               sortOptions={[
                 { value: "name", label: "Name" },
-                { value: "count", label: "Item count" },
+                { value: "count", label: "Question count" },
                 { value: "rating", label: "Rating" },
               ]}
             />
@@ -1689,7 +1689,7 @@ const CategoriesPage = () => {
             ) : effectiveLeaf ? (
               <div className="mb-6">
                 <p className="mb-4 text-gray-600">
-                  You&apos;ve reached the end of the sets hierarchy. Browse items, explore, or quiz.
+                  There are no more subtopics here. Browse questions, use flashcards, or take a quiz.
                 </p>
                 <div className="flex flex-wrap gap-2">
                   <ActionButtons
@@ -1708,7 +1708,7 @@ const CategoriesPage = () => {
               </div>
             ) : (
               <div className="py-12 text-center">
-                <p className="mb-4 text-gray-500">No sets in this level.</p>
+                <p className="mb-4 text-gray-500">No topics in this level.</p>
                 <ActionButtons
                   onListSets={undefined}
                   onListItems={() =>
@@ -1742,7 +1742,7 @@ const CategoriesPage = () => {
           <div className="rounded-[24px] border border-on-panel/10 bg-panel-deep/70 px-5 py-4 shadow-xl shadow-slate-950/25">
             <h1 className="text-2xl font-semibold text-on-panel">Categories</h1>
             <p className="mt-1 text-sm leading-6 text-on-panel-muted">
-              Browse the public question bank by category and jump into sets, flashcards, or quiz mode.
+              Browse the public question bank by category and jump into topics, flashcards, or quiz mode.
             </p>
           </div>
 
@@ -1908,7 +1908,7 @@ function ActionButtons({
           className="inline-flex items-center gap-1 px-3 py-1.5 text-sm font-medium text-indigo-ink bg-indigo-50 rounded-md hover:bg-indigo-100"
         >
           <Squares2X2Icon className="h-4 w-4" />
-          List sets
+          List topics
         </button>
       )}
       <button
@@ -1916,7 +1916,7 @@ function ActionButtons({
         className="inline-flex items-center gap-1 px-3 py-1.5 text-sm font-medium text-emerald-600 bg-emerald-50 rounded-md hover:bg-emerald-100"
       >
         <ListBulletIcon className="h-4 w-4" />
-        List items
+        List questions
       </button>
       <button
         onClick={onExplore}

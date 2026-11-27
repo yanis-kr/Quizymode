@@ -13,7 +13,7 @@ export const ItemTypeFilter = ({
   onRemove,
 }: ItemTypeFilterProps) => {
   return (
-    <FilterPanel label="Item Type" onRemove={onRemove}>
+    <FilterPanel label="Visibility" onRemove={onRemove}>
       <div className="flex space-x-4">
         <button
           onClick={() => onChange("all")}

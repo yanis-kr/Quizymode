@@ -138,7 +138,7 @@ export const ItemCollectionControls = ({
         title={
           canAddToActive
             ? `Add to ${activeCollection?.name ?? "active collection"}`
-            : "Add to active collection (select an active collection or item already in it)"
+            : "Add to active collection (select an active collection or question already in it)"
         }
       >
         <PlusIcon className={isCompactMobile ? "h-4 w-4 sm:h-5 sm:w-5" : "h-5 w-5"} />
@@ -152,7 +152,7 @@ export const ItemCollectionControls = ({
         title={
           canRemoveFromActive
             ? `Remove from ${activeCollection?.name ?? "active collection"}`
-            : "Remove from active collection (item not in active collection)"
+            : "Remove from active collection (question not in active collection)"
         }
       >
         <MinusIcon className={isCompactMobile ? "h-4 w-4 sm:h-5 sm:w-5" : "h-5 w-5"} />

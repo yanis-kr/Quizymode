@@ -11,6 +11,7 @@ import type { CollectionDiscoverItem } from "@/types/api";
 import { useAuth } from "@/contexts/AuthContext";
 import { buildCollectionPath } from "@/utils/collectionPath";
 import { buildCategoryPath, categoryDisplayName } from "@/utils/categorySlug";
+import { questionCountLabel } from "@/utils/questionCountLabel";
 import { categorySetKey, collectionSetKey } from "@/features/progress/knownItems";
 import { useKnownCount } from "@/features/progress/useKnownCount";
 import { getCategoryThemeBySlug } from "@/features/categories/categoryThemes";
@@ -57,8 +58,8 @@ function publicCollectionCardImage(index: number): string {
 
 const numberFormatter = new Intl.NumberFormat("en-US");
 
-function formatItemCount(count: number) {
-  return `${numberFormatter.format(count)} item${count === 1 ? "" : "s"}`;
+function formatQuestionCount(count: number) {
+  return questionCountLabel(count, numberFormatter.format(count));
 }
 
 interface CatalogLanesProps {
@@ -125,7 +126,7 @@ function CatalogLanes({ countsByCategory, featuredSets, publicCollections }: Cat
                   <div className="flex justify-end">
                     {liveCount != null && (
                       <span className="rounded-full border border-white/20 bg-black/55 px-2 py-0.5 text-[10px] font-semibold text-white backdrop-blur-sm">
-                        {formatItemCount(liveCount)}
+                        {formatQuestionCount(liveCount)}
                       </span>
                     )}
                   </div>
@@ -140,11 +141,11 @@ function CatalogLanes({ countsByCategory, featuredSets, publicCollections }: Cat
         </div>
       </section>
 
-      {/* ── Featured Sets lane ── */}
+      {/* ── Featured topics lane ── */}
       <section className="rounded-[24px] border border-white/10 bg-panel-deep/70 p-2 sm:p-3 shadow-xl shadow-slate-950/25">
           <div className="mb-1.5 flex items-center justify-between gap-3">
             <div className="text-xs font-semibold uppercase tracking-[0.22em] text-sky-ink">
-              Featured Sets
+              Featured topics
             </div>
             {featuredSets.length > 0 && (
               <Link
@@ -247,7 +248,7 @@ function CatalogLanes({ countsByCategory, featuredSets, publicCollections }: Cat
                 <div className="relative flex h-full min-h-[80px] flex-col justify-between p-3 sm:min-h-[96px]">
                   <div className="flex justify-end">
                     <span className="rounded-full border border-white/20 bg-black/55 px-2 py-0.5 text-[10px] font-semibold text-white backdrop-blur-sm">
-                      {collection.itemCount} {collection.itemCount === 1 ? "item" : "items"}
+                      {questionCountLabel(collection.itemCount)}
                     </span>
                   </div>
                   <div>
@@ -335,7 +336,7 @@ const HomePage = () => {
   return (
     <>
       <SEO
-        description="Play a free five-question quiz with no account needed, then browse Quizymode categories, featured sets, and public collections."
+        description="Play a free five-question quiz with no account needed, then browse Quizymode categories, featured topics, and public collections."
         canonical="https://www.quizymode.com"
         structuredData={{
           "@context": "https://schema.org",
@@ -343,7 +344,7 @@ const HomePage = () => {
           name: "Quizymode",
           url: "https://www.quizymode.com",
           description:
-            "Play a free five-question quiz with no account needed, then explore categories, featured sets, and public collections.",
+            "Play a free five-question quiz with no account needed, then explore categories, featured topics, and public collections.",
         }}
       />
 

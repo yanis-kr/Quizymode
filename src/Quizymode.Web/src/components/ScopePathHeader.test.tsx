@@ -16,7 +16,7 @@ describe("ScopePathHeader", () => {
     expect(
       screen.getByText("Categories > exams > act > math")
     ).toBeInTheDocument();
-    expect(screen.getByLabelText(/item count/i)).toHaveTextContent("(3)");
+    expect(screen.getByLabelText(/question count/i)).toHaveTextContent("(3)");
     expect(
       screen.getByText(/Tap the card to see the answer/i)
     ).toBeInTheDocument();
