@@ -210,68 +210,6 @@ public sealed class UpdateUserNameValidatorTests
     }
 }
 
-public sealed class CheckUserAvailabilityTests : DatabaseTestFixture
-{
-    /// <summary>Replicates the availability check logic from the handler.</summary>
-    private async Task<(bool isUsernameAvailable, bool isEmailAvailable)> CheckAsync(string? username, string? email)
-    {
-        bool isUsernameAvailable = true;
-        bool isEmailAvailable = true;
-
-        if (!string.IsNullOrWhiteSpace(username))
-        {
-            isUsernameAvailable = !await DbContext.Users
-                .AnyAsync(u => u.Name != null && u.Name.ToLower() == username.Trim().ToLower());
-        }
-
-        if (!string.IsNullOrWhiteSpace(email))
-        {
-            isEmailAvailable = !await DbContext.Users
-                .AnyAsync(u => u.Email != null && u.Email.ToLower() == email.Trim().ToLower());
-        }
-
-        return (isUsernameAvailable, isEmailAvailable);
-    }
-
-    [Fact]
-    public async Task BothAvailable_WhenNeitherExistsInDb()
-    {
-        var (usernameAvailable, emailAvailable) = await CheckAsync("newuser", "new@example.com");
-        usernameAvailable.Should().BeTrue();
-        emailAvailable.Should().BeTrue();
-    }
-
-    [Fact]
-    public async Task UsernameUnavailable_WhenExistingUserHasThatName()
-    {
-        DbContext.Users.Add(new User { Id = Guid.NewGuid(), Subject = "s1", Name = "TakenName", Email = "t@example.com" });
-        await DbContext.SaveChangesAsync();
-
-        var (usernameAvailable, _) = await CheckAsync("TakenName", null);
-        usernameAvailable.Should().BeFalse();
-    }
-
-    [Fact]
-    public async Task EmailUnavailable_WhenExistingUserHasThatEmail()
-    {
-        DbContext.Users.Add(new User { Id = Guid.NewGuid(), Subject = "s2", Email = "taken@example.com" });
-        await DbContext.SaveChangesAsync();
-
-        var (_, emailAvailable) = await CheckAsync(null, "TAKEN@example.com");
-        emailAvailable.Should().BeFalse();
-    }
-
-    [Fact]
-    public async Task CaseInsensitive_WhenCheckingUsername()
-    {
-        DbContext.Users.Add(new User { Id = Guid.NewGuid(), Subject = "s3", Name = "CaseUser", Email = "case@example.com" });
-        await DbContext.SaveChangesAsync();
-
-        var (usernameAvailable, _) = await CheckAsync("CASEUSER", null);
-        usernameAvailable.Should().BeFalse();
-    }
-}
-
 public sealed class RecordPolicyAcceptancesValidatorTests
 {
     private readonly RecordPolicyAcceptances.Validator _validator = new();

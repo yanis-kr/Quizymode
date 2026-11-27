@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { useNavigate, useLocation, Link, Navigate } from "react-router-dom";
+import { isAxiosError } from "axios";
 import { useAuth } from "@/contexts/AuthContext";
 import { usersApi } from "@/api/users";
 import { queueSignUpPolicyAcceptances } from "@/features/legal/policyAcceptanceStorage";
@@ -76,6 +77,9 @@ const FIELD_DOM_ID: Record<FieldId, string> = {
   code: "code",
 };
 const ERROR_ID = "signup-error";
+
+const TOO_MANY_CHECKS = "Too many attempts. Please wait a few minutes and try again.";
+const EMAIL_IN_USE = "An account with this email may already exist. Go to Sign in, where you can also reset your password.";
 
 function describeConfirmError(err: unknown): string {
   if (err instanceof Error) {
@@ -199,24 +203,11 @@ const SignUpPage = () => {
     trackSignupSubmitted(intent);
 
     try {
-      const availability = await usersApi.checkAvailability({
-        username: username.trim(),
-        email: email.trim(),
-      });
+      // Display name only. Whether an email is taken is left to the identity provider's sign-up response.
+      const availability = await usersApi.checkAvailability({ username: username.trim() });
 
-      const errors: string[] = [];
-      const errorFieldIds: FieldId[] = [];
       if (!availability.isUsernameAvailable && availability.usernameError) {
-        errors.push(availability.usernameError);
-        errorFieldIds.push("username");
-      }
-      if (!availability.isEmailAvailable && availability.emailError) {
-        errors.push(availability.emailError);
-        errorFieldIds.push("email");
-      }
-
-      if (errors.length > 0) {
-        showError(errors.join(". "), errorFieldIds);
+        showError(availability.usernameError, ["username"]);
         setIsLoading(false);
         return;
       }
@@ -234,6 +225,10 @@ const SignUpPage = () => {
       if (err instanceof Error && hasSentinel(err.message, QM_USE_GOOGLE)) {
         // The Pre sign-up Lambda (pool-wide) found a Google-only account with this email. Never show the sentinel.
         showError("This email uses Continue with Google", ["email"]);
+      } else if (err instanceof Error && err.name === "UsernameExistsException") {
+        showError(EMAIL_IN_USE, ["email"]);
+      } else if (isAxiosError(err) && err.response?.status === 429) {
+        showError(TOO_MANY_CHECKS);
       } else {
         showError(err instanceof Error ? err.message : "Sign up failed. Please try again.");
       }

@@ -36,9 +36,7 @@ vi.mock("@/api/users", () => ({
     checkAvailability: () =>
       Promise.resolve({
         isUsernameAvailable: true,
-        isEmailAvailable: true,
         usernameError: null,
-        emailError: null,
       }),
   },
 }));

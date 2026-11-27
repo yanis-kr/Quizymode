@@ -82,9 +82,7 @@ describe("SignUpPage", () => {
     mockAuthLoading = false;
     mockCheckAvailability.mockResolvedValue({
       isUsernameAvailable: true,
-      isEmailAvailable: true,
       usernameError: null,
-      emailError: null,
     });
   });
 
@@ -322,23 +320,65 @@ describe("SignUpPage", () => {
       expect(password).toHaveFocus();
     });
 
-    it("links a taken display name or email to its own field only", async () => {
+    it("links a taken display name to its own field and does not sign up", async () => {
       mockCheckAvailability.mockResolvedValueOnce({
-        isUsernameAvailable: true,
-        isEmailAvailable: false,
-        usernameError: null,
-        emailError: "That email is already registered",
+        isUsernameAvailable: false,
+        usernameError: "Username is already registered",
       });
       renderPage();
       fillSignUpForm();
       fireEvent.click(screen.getByRole("button", { name: /sign up/i }));
 
       await screen.findByRole("alert");
+      const name = screen.getByLabelText(/display name/i);
+      expect(name).toHaveAttribute("aria-invalid", "true");
+      expect(name).toHaveFocus();
+      expect(screen.getByLabelText(/^email$/i)).not.toHaveAttribute("aria-invalid");
+      expect(mockSignup).not.toHaveBeenCalled();
+    });
+
+    it("AC 4.2.12 asks the API about the display name only", async () => {
+      mockSignup.mockResolvedValueOnce(undefined);
+      renderPage();
+      fillSignUpForm({ username: "alice", email: "alice@example.com" });
+      fireEvent.click(screen.getByRole("button", { name: /sign up/i }));
+
+      await screen.findByLabelText(/confirmation code/i);
+      expect(mockCheckAvailability).toHaveBeenCalledWith({ username: "alice" });
+    });
+
+    it("AC 4.2.14 shows the provider's existing-account rejection on the email field", async () => {
+      mockSignup.mockRejectedValueOnce(
+        Object.assign(new Error("An account with the given email already exists."), {
+          name: "UsernameExistsException",
+        })
+      );
+      renderPage();
+      fillSignUpForm();
+      fireEvent.click(screen.getByRole("button", { name: /sign up/i }));
+
+      const alert = await screen.findByRole("alert");
+      expect(alert).toHaveTextContent("An account with this email may already exist. Go to Sign in, where you can also reset your password.");
       const email = screen.getByLabelText(/^email$/i);
       expect(email).toHaveAttribute("aria-invalid", "true");
       expect(email).toHaveFocus();
       expect(screen.getByLabelText(/display name/i)).not.toHaveAttribute("aria-invalid");
       expect(screen.getByLabelText(/^password$/i)).not.toHaveAttribute("aria-invalid");
+    });
+
+    it("AC 4.2.13 explains a rate-limited display name check", async () => {
+      mockCheckAvailability.mockRejectedValueOnce(
+        Object.assign(new Error("Request failed with status code 429"), {
+          isAxiosError: true,
+          response: { status: 429 },
+        })
+      );
+      renderPage();
+      fillSignUpForm();
+      fireEvent.click(screen.getByRole("button", { name: /sign up/i }));
+
+      expect(await screen.findByRole("alert")).toHaveTextContent("Too many attempts. Please wait a few minutes and try again.");
+      expect(mockSignup).not.toHaveBeenCalled();
     });
 
     it("links the unchecked legal acknowledgement error to the checkbox", async () => {

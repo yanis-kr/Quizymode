@@ -342,13 +342,10 @@ export interface UpdateUserNameRequest {
 }
 
 export interface CheckUserAvailabilityRequest {
-  username?: string;
-  email?: string;
+  username: string;
 }
 
 export interface CheckUserAvailabilityResponse {
   isUsernameAvailable: boolean;
-  isEmailAvailable: boolean;
   usernameError?: string | null;
-  emailError?: string | null;
 }

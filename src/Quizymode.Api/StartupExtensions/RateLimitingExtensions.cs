@@ -167,6 +167,10 @@ internal static partial class StartupExtensions
                     });
             });
 
+
+            // Sign-up's display name check (AC 4.2.13): anonymous, so capped per trusted client IP.
+            options.AddPolicy("username-availability", httpContext => RateLimitPartition.GetFixedWindowLimiter(
+                GetAuthenticatedOrTrustedIpPartitionKey(httpContext), static _ => new FixedWindowRateLimiterOptions { PermitLimit = 30, Window = TimeSpan.FromMinutes(10), QueueLimit = 0, AutoReplenishment = true }));
         });
 
         return builder;
@@ -197,6 +201,11 @@ internal static partial class StartupExtensions
         if (ReviewQueueEnqueuePath().IsMatch(path))
         {
             return "Too many Review queue updates. Please slow down.";
+        }
+
+        if (path.EndsWith("/users/availability", StringComparison.OrdinalIgnoreCase))
+        {
+            return "Too many display name checks. Please wait a few minutes and try again.";
         }
 
         if (path.EndsWith("/analytics/events", StringComparison.OrdinalIgnoreCase))

@@ -43,26 +43,14 @@ describe("usersApi", () => {
   });
 
   describe("checkAvailability", () => {
-    it("calls GET /users/availability with username and email params", async () => {
-      const response = { isUsernameAvailable: true, isEmailAvailable: true };
+    it("calls GET /users/availability with the username only", async () => {
+      const response = { isUsernameAvailable: true };
       mockGet.mockResolvedValueOnce({ data: response });
 
-      const result = await usersApi.checkAvailability({ username: "alice", email: "a@example.com" });
+      const result = await usersApi.checkAvailability({ username: "alice" });
 
-      expect(mockGet).toHaveBeenCalledWith(expect.stringContaining("/users/availability"));
-      const url = mockGet.mock.calls[0][0] as string;
-      expect(url).toContain("username=alice");
-      expect(url).toContain("email=");
+      expect(mockGet).toHaveBeenCalledWith("/users/availability?username=alice");
       expect(result).toEqual(response);
-    });
-
-    it("omits undefined params from query string", async () => {
-      mockGet.mockResolvedValueOnce({ data: {} });
-
-      await usersApi.checkAvailability({ username: "alice" });
-
-      const url = mockGet.mock.calls[0][0] as string;
-      expect(url).not.toContain("email");
     });
   });
 
