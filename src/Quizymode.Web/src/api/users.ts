@@ -61,9 +61,7 @@ export const usersApi = {
   },
 
   checkAvailability: async (data: CheckUserAvailabilityRequest): Promise<CheckUserAvailabilityResponse> => {
-    const params = new URLSearchParams();
-    if (data.username) params.append("username", data.username);
-    if (data.email) params.append("email", data.email);
+    const params = new URLSearchParams({ username: data.username });
     const response = await apiClient.get<CheckUserAvailabilityResponse>(`/users/availability?${params.toString()}`);
     return response.data;
   },

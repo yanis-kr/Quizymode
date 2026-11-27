@@ -6,72 +6,43 @@ namespace Quizymode.Api.Features.Users;
 
 public static class CheckUserAvailability
 {
-    public sealed record CheckUserAvailabilityRequest(string? Username, string? Email);
-
-    public sealed record CheckUserAvailabilityResponse(bool IsUsernameAvailable, bool IsEmailAvailable, string? UsernameError, string? EmailError);
+    public sealed record CheckUserAvailabilityResponse(bool IsUsernameAvailable, string? UsernameError);
 
     public sealed class Endpoint : IEndpoint
     {
         public void MapEndpoint(IEndpointRouteBuilder app)
         {
+            // Anonymous, so it answers about display names only: never whether an email address is registered.
             app.MapGet("users/availability", Handler)
                 .WithTags("Users")
-                .WithSummary("Check if username and/or email are available")
-                .WithDescription("Checks if the provided username and/or email are already registered. Returns availability status for each.")
+                .WithSummary("Check if a display name is available")
+                .WithDescription("Checks whether a display name is already in use. Rate limited per client.")
+                .RequireRateLimiting("username-availability")
                 .Produces<CheckUserAvailabilityResponse>(StatusCodes.Status200OK)
-                .Produces(StatusCodes.Status400BadRequest);
+                .Produces(StatusCodes.Status400BadRequest)
+                .Produces(StatusCodes.Status429TooManyRequests);
         }
 
         private static async Task<IResult> Handler(
             string? username,
-            string? email,
             ApplicationDbContext db,
             CancellationToken cancellationToken)
         {
-            if (string.IsNullOrWhiteSpace(username) && string.IsNullOrWhiteSpace(email))
+            if (string.IsNullOrWhiteSpace(username))
             {
-                return CustomResults.BadRequest("At least one of username or email must be provided");
+                return CustomResults.BadRequest("A username must be provided");
             }
 
-            bool isUsernameAvailable = true;
-            bool isEmailAvailable = true;
-            string? usernameError = null;
-            string? emailError = null;
+            string wanted = username.Trim().ToLower();
 
-            // Check username availability
-            if (!string.IsNullOrWhiteSpace(username))
-            {
-                bool usernameExists = await db.Users
-                    .AnyAsync(u => u.Name != null && u.Name.ToLower() == username.Trim().ToLower(), cancellationToken);
-                
-                if (usernameExists)
-                {
-                    isUsernameAvailable = false;
-                    usernameError = "Username is already registered";
-                }
-            }
+            // A stored name can be an email address (a sign-in without a name claim), so a value shaped like one is
+            // not looked up. A duplicate display name is still made unique when the account is created.
+            bool isTaken = !wanted.Contains('@')
+                && await db.Users.AnyAsync(u => u.Name != null && u.Name.ToLower() == wanted, cancellationToken);
 
-            // Check email availability
-            if (!string.IsNullOrWhiteSpace(email))
-            {
-                bool emailExists = await db.Users
-                    .AnyAsync(u => u.Email != null && u.Email.ToLower() == email.Trim().ToLower(), cancellationToken);
-                
-                if (emailExists)
-                {
-                    isEmailAvailable = false;
-                    emailError = "Email is already registered";
-                }
-            }
-
-            CheckUserAvailabilityResponse response = new(
-                isUsernameAvailable,
-                isEmailAvailable,
-                usernameError,
-                emailError);
-
-            return Results.Ok(response);
+            return Results.Ok(new CheckUserAvailabilityResponse(
+                !isTaken,
+                isTaken ? "Username is already registered" : null));
         }
     }
 }
-

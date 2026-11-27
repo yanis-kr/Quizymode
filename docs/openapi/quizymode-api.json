@@ -7655,18 +7655,11 @@
         "tags": [
           "Users"
         ],
-        "summary": "Check if username and/or email are available",
-        "description": "Checks if the provided username and/or email are already registered. Returns availability status for each.",
+        "summary": "Check if a display name is available",
+        "description": "Checks whether a display name is already in use. Rate limited per client.",
         "parameters": [
           {
             "name": "username",
-            "in": "query",
-            "schema": {
-              "$ref": "#/components/schemas/System.String"
-            }
-          },
-          {
-            "name": "email",
             "in": "query",
             "schema": {
               "$ref": "#/components/schemas/System.String"
@@ -7686,6 +7679,9 @@
           },
           "400": {
             "description": "Bad Request"
+          },
+          "429": {
+            "description": "Too Many Requests"
           }
         },
         "security": [
@@ -20333,29 +20329,14 @@
       "Quizymode.Api.Features.Users.CheckUserAvailability.CheckUserAvailabilityResponse": {
         "required": [
           "isUsernameAvailable",
-          "isEmailAvailable",
-          "usernameError",
-          "emailError"
+          "usernameError"
         ],
         "type": "object",
         "properties": {
           "isUsernameAvailable": {
             "$ref": "#/components/schemas/System.Boolean"
           },
-          "isEmailAvailable": {
-            "$ref": "#/components/schemas/System.Boolean"
-          },
           "usernameError": {
-            "oneOf": [
-              {
-                "type": "null"
-              },
-              {
-                "$ref": "#/components/schemas/System.String"
-              }
-            ]
-          },
-          "emailError": {
             "oneOf": [
               {
                 "type": "null"
