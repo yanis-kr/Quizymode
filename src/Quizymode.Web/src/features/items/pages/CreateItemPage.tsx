@@ -366,7 +366,7 @@ const CreateItemPage = () => {
   const addItemsBackTo = `/create${location.search}`;
 
   return (
-    <div className="px-4 py-6 sm:px-0">
+    <div className="px-4 py-2 sm:px-0 sm:py-6">
       <div className="max-w-2xl mx-auto">
         <div className="mb-4">
           <Link
@@ -377,13 +377,12 @@ const CreateItemPage = () => {
             Back to Create
           </Link>
         </div>
-        <h1 className="text-3xl font-bold text-gray-900 mb-2">
-          Create New Item
+        <h1 className="text-2xl font-bold text-gray-900 mb-2 sm:text-3xl">
+          Write a question
         </h1>
-        <p className="text-gray-600 text-sm mb-6">
-          Create a new quiz item with a question, correct answer, incorrect answer options, and
-          optional explanation. Regular users can create private items; admins can create public
-          items visible to everyone.
+        <p className="text-gray-600 text-sm mb-4 sm:mb-6">
+          Add a question with its correct answer and wrong answers. An explanation is optional.
+          {isAdmin && " As an admin, you can make it public."}
         </p>
 
         <ContentComplianceNotice />

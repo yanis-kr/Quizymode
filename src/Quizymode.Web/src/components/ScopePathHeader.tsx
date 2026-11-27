@@ -23,7 +23,7 @@ export function ScopePathHeader({
         <div className="flex items-center gap-1.5 min-w-0 overflow-x-auto">
           {breadcrumb}
           {showCount && (
-            <span className="text-xs text-gray-500 whitespace-nowrap flex-shrink-0" aria-label="Item count">
+            <span className="text-xs text-gray-500 whitespace-nowrap flex-shrink-0" aria-label="Question count">
               ({count})
             </span>
           )}

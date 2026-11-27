@@ -1,6 +1,7 @@
 import { useEffect, useRef, type ReactNode } from "react";
 import { Link } from "react-router-dom";
 import { SignupPrompt } from "@/features/auth/components/SignupPrompt";
+import { questionCountLabel } from "@/utils/questionCountLabel";
 
 interface LearnFinishProps {
   total: number;
@@ -43,7 +44,7 @@ export function LearnFinish({
   return (
     <section className="mx-auto max-w-2xl rounded-lg bg-surface p-4 text-center shadow sm:p-6">
       <h2 ref={headingRef} tabIndex={-1} className="text-2xl font-bold text-gray-900 focus:outline-none">
-        {total === 0 ? "No questions were scored" : <>You&apos;ve mastered all {total} {total === 1 ? "item" : "items"}</>}
+        {total === 0 ? "No questions were scored" : <>You&apos;ve mastered all {questionCountLabel(total)}</>}
       </h2>
       {total > 0 && (
         <>

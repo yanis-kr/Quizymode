@@ -106,8 +106,8 @@ export function describeNextUp(choice: NextUpChoice): NextUpView {
       const label = choice.source.kind === "collection" ? "your last collection" : describeGuestTopic(choice.source);
       return {
         title: "Keep going",
-        detail: `A fresh set from ${label}.`,
-        action: choice.mode === "learn" ? "Learn more" : "Play the next set",
+        detail: `Fresh questions from ${label}.`,
+        action: choice.mode === "learn" ? "Learn more" : "Play the next topic",
         to: buildGuestPracticePath(choice.source, choice.mode),
       };
     }

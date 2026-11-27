@@ -183,13 +183,13 @@ describe("QuestionImage", () => {
     fireEvent.error(screen.getByAltText(image.altText));
     expect(screen.getByText(/Answers are off until the picture shows/)).toBeInTheDocument();
     expect(screen.getByRole("button", { name: "Retry loading picture" })).toBeInTheDocument();
-    await user.click(screen.getByRole("button", { name: "Skip question (not scored)" }));
+    await user.click(screen.getByRole("button", { name: "Skip question" }));
     expect(onSkip).toHaveBeenCalledTimes(1);
     unmount();
 
     render(<QuestionImage image={{ key: "curated:flags/zz", altText: "x" }} onSkip={onSkip} />);
     expect(screen.queryByRole("button", { name: "Retry loading picture" })).not.toBeInTheDocument();
-    expect(screen.getByRole("button", { name: "Skip question (not scored)" })).toBeInTheDocument();
+    expect(screen.getByRole("button", { name: "Skip question" })).toBeInTheDocument();
   });
 
   describe("stuck loading", () => {
@@ -209,7 +209,7 @@ describe("QuestionImage", () => {
       });
       expect(onStatusChange).toHaveBeenLastCalledWith("stuck");
       expect(screen.getByText("Picture is taking too long to load")).toBeInTheDocument();
-      expect(screen.getByRole("button", { name: "Skip question (not scored)" })).toBeInTheDocument();
+      expect(screen.getByRole("button", { name: "Skip question" })).toBeInTheDocument();
 
       fireEvent.click(screen.getByRole("button", { name: "Retry loading picture" }));
       expect(onStatusChange).toHaveBeenLastCalledWith("loading");

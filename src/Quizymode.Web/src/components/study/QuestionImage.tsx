@@ -27,7 +27,7 @@ interface QuestionImageProps {
   className?: string;
   /** Reports every status change (and the initial "loading") before paint so a parent can gate answering. */
   onStatusChange?: (status: PictureStatus) => void;
-  /** Question slot only: when set, a failed or stuck picture offers "Skip question (not scored)". */
+  /** Question slot only: when set, a failed or stuck picture offers "Skip question". */
   onSkip?: () => void;
   /** Enlarge button (lg only; default true for lg). */
   showEnlarge?: boolean;
@@ -242,7 +242,7 @@ function QuestionImageBox({
               )}
               {showSkip && (
                 <button type="button" onClick={onSkip} data-testid="question-image-skip" className={buttonClass}>
-                  Skip question (not scored)
+                  Skip question
                 </button>
               )}
             </div>
@@ -273,7 +273,7 @@ function QuestionImageBox({
           </button>
         )}
       </div>
-      {status === "loaded" && isQuestion && onSkip && <button type="button" onClick={onSkip} data-testid="question-image-skip" className={`${buttonClass} mt-2`}>Skip question (not scored)</button>}
+      {status === "loaded" && isQuestion && onSkip && <button type="button" onClick={onSkip} data-testid="question-image-skip" className={`${buttonClass} mt-2`}>Skip question</button>}
       {!withdrawn && uploaded && itemId && (image.revision ?? 0) > 0 && <PictureReportButton itemId={itemId} slot={slot} revision={image.revision!} collectionId={collectionId} />}
       {image.longDescription && <details className="mt-2 text-sm"><summary>Picture description</summary><p className="whitespace-pre-wrap">{image.longDescription}</p></details>}
       {zoomOpen && url !== null && (

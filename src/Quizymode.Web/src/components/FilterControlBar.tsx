@@ -86,7 +86,7 @@ export function FilterControlBar({
             listenAllState === "idle"
               ? showAnswers === false
                 ? "Listen to all questions (answers hidden)"
-                : "Listen to all items (TTS)"
+                : "Listen to all questions (TTS)"
               : listenAllState === "playing"
               ? "Pause"
               : "Resume"

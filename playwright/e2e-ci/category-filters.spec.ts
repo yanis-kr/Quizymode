@@ -40,7 +40,10 @@ async function stubApi(page: Page): Promise<void> {
     if (pathname.endsWith("/api/keywords/item-tags")) return json({ names: [] });
     if (pathname.endsWith("/api/featured")) return json({ sets: [], collections: [] });
     if (pathname.endsWith("/api/games/roster")) return json({ items: [], scopes: [] });
-    if (pathname.endsWith("/api/keywords")) return json({ keywords: [] });
+    // A topic with questions keeps the root category on its Sets view; empty topics are not listed (#900).
+    if (pathname.endsWith("/api/keywords")) {
+      return json({ keywords: [{ name: "german", itemCount: 10, averageRating: null, navigationRank: 1, description: null }] });
+    }
     if (/^\/api\/ratings\/[^/]+\/me$/.test(pathname)) return json(null);
     if (/^\/api\/ratings\/[^/]+$/.test(pathname)) return json({ stats: { count: 0, averageStars: null, itemId: null } });
     if (pathname.endsWith("/api/comments")) return json({ comments: [], totalCount: 0 });

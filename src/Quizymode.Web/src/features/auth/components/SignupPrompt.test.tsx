@@ -214,6 +214,28 @@ describe("Quiz completion summary signup prompt", () => {
     expect(screen.queryByTestId("signup-prompt")).toBeNull();
   });
 
+  it("AC 3.6.46 keeps the card's copy and actions on the quiz results with an outlined main action (#898)", () => {
+    renderCompletion();
+    const copy = SIGNUP_PROMPT_COPY["save-progress"];
+    expect(screen.getByRole("heading", { name: copy.heading })).toBeInTheDocument();
+    expect(screen.getByText(copy.body)).toBeInTheDocument();
+    const cta = screen.getByRole("link", { name: copy.cta });
+    expect(cta).toHaveClass("border", "border-indigo-600", "min-h-[44px]");
+    expect(cta).not.toHaveClass("bg-indigo-600");
+    expect(cta.getAttribute("href")).toContain("/signup?");
+    expect(screen.getByRole("button", { name: "Not now" })).toHaveClass("min-h-[44px]");
+    expect(screen.getByRole("link", { name: "Sign in" })).toHaveClass("min-h-[44px]");
+  });
+
+  it("AC 3.6.46 leaves the same card filled everywhere else (#898)", () => {
+    renderPrompt("save-progress");
+    const cta = screen.getByRole("link", { name: SIGNUP_PROMPT_COPY["save-progress"].cta });
+    expect(cta).toHaveClass("bg-indigo-600", "text-white");
+    expect(cta).not.toHaveClass("border");
+    expect(screen.getByRole("button", { name: "Not now" })).not.toHaveClass("min-h-[44px]");
+    expect(screen.getByRole("link", { name: "Sign in" })).not.toHaveClass("min-h-[44px]");
+  });
+
   it("dismissing keeps the result summary and its actions on screen", () => {
     renderCompletion();
     fireEvent.click(screen.getByRole("button", { name: "Not now" }));

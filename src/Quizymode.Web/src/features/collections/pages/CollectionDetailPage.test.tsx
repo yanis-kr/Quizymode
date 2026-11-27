@@ -148,7 +148,7 @@ describe("CollectionDetailPage export and print (#258)", () => {
   it("does not render export controls for an empty collection", async () => {
     vi.mocked(collectionsApi.getItems).mockResolvedValue({ items: [] } as never);
     renderPage();
-    await screen.findByText(/no items in this collection/i);
+    await screen.findByText(/no questions in this collection/i);
     expect(screen.queryByRole("button", { name: "Download CSV" })).not.toBeInTheDocument();
   });
 
@@ -175,7 +175,7 @@ describe("CollectionDetailPage export and print (#258)", () => {
   it("hides Plan for a test for an empty collection (#364)", async () => {
     vi.mocked(collectionsApi.getItems).mockResolvedValue({ items: [] } as never);
     renderPage();
-    await screen.findByText(/no items in this collection/i);
+    await screen.findByText(/no questions in this collection/i);
     expect(screen.queryByRole("button", { name: "Plan for a test" })).not.toBeInTheDocument();
   });
 
@@ -199,5 +199,37 @@ describe("CollectionDetailPage export and print (#258)", () => {
   it("AC 3.6.30 the collection tab title is the collection name", async () => {
     renderPage();
     await waitFor(() => expect(document.title).toBe("Bio Set | Quizymode"));
+  });
+});
+
+describe("CollectionDetailPage wording (#923)", () => {
+  beforeEach(() => {
+    vi.restoreAllMocks();
+    installMemoryLocalStorage();
+    vi.mocked(collectionsApi.getRating).mockResolvedValue({ count: 0, averageStars: null, myStars: null } as never);
+  });
+
+  it.each([
+    [1, "1 question"],
+    [2, "2 questions"],
+  ])("AC 3.6.49 counts %i in the collection bar and lists the count under Questions in the details", async (count, label) => {
+    vi.mocked(collectionsApi.getById).mockResolvedValue({
+      id: "c1",
+      name: "Bio Set",
+      description: null,
+      createdBy: "someone-else",
+      createdAt: "2026-01-01T00:00:00Z",
+      itemCount: count,
+      isPublic: true,
+    } as Awaited<ReturnType<typeof collectionsApi.getById>>);
+    vi.mocked(collectionsApi.getItems).mockResolvedValue({ items: items.slice(0, count) } as never);
+    const user = userEvent.setup({ delay: null });
+    renderPage();
+
+    // The bar above the list and the landing header both count the questions.
+    await waitFor(() => expect(screen.getAllByText(label)).toHaveLength(2));
+    await user.click(screen.getByRole("button", { name: /details/i }));
+    expect(screen.getByText("Questions", { selector: "dt" })).toBeInTheDocument();
+    expect(document.body.textContent).not.toMatch(/\b(item|items|sets)\b/i);
   });
 });

@@ -18,10 +18,10 @@ describe("GamesEmptyState picture explanation (#403)", () => {
     expect(screen.queryByRole("status")).not.toBeInTheDocument();
   });
 
-  it("explains how many picture questions are not playable and links to the same scope's quiz", () => {
+  it("AC 3.6.49 AC 3.6.50 explains how many picture questions are not playable and links to the same scope's quiz", () => {
     renderState({ excludedPictures: 195 });
     expect(screen.getByRole("status")).toBeInTheDocument();
-    expect(screen.getByRole("heading", { name: "No games for this set" })).toBeInTheDocument();
+    expect(screen.getByRole("heading", { name: "No games for these questions" })).toBeInTheDocument();
     expect(screen.getByText("195 picture questions here aren't playable as games. Practise them in Quiz.")).toBeInTheDocument();
     const link = screen.getByRole("link", { name: "Open Quiz" });
     expect(link).toHaveAttribute("href", "/quiz/geography/flags");
@@ -32,7 +32,7 @@ describe("GamesEmptyState picture explanation (#403)", () => {
     renderState({ excludedPictures: 4, poolEmpty: false });
     expect(screen.getByRole("heading", { name: "Not enough short questions for games here" })).toBeInTheDocument();
     expect(screen.getByText("4 picture questions here aren't playable as games. Practise them in Quiz.")).toBeInTheDocument();
-    expect(screen.queryByRole("heading", { name: "No games for this set" })).not.toBeInTheDocument();
+    expect(screen.queryByRole("heading", { name: "No games for these questions" })).not.toBeInTheDocument();
   });
 
   it("uses the singular for one picture question", () => {

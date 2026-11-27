@@ -3,6 +3,7 @@
  * Mode switching is handled at page level via ModeSwitcher.
  */
 import { StarIcon as StarIconSolid } from "@heroicons/react/24/solid";
+import { questionCountLabel } from "@/utils/questionCountLabel";
 
 export interface BucketItem {
   id: string;
@@ -89,7 +90,7 @@ export function BucketGridView({
                       )}
                     </div>
                     <div className="rounded-full border border-white/20 bg-black/55 px-2 py-0.5 text-[10px] font-semibold text-white backdrop-blur-sm">
-                      {bucket.itemCount} items
+                      {questionCountLabel(bucket.itemCount)}
                     </div>
                   </div>
 
@@ -138,7 +139,7 @@ export function BucketGridView({
                   ) : null}
                 </div>
                 <div className="flex flex-col items-end gap-0.5 flex-shrink-0 text-sm text-gray-500">
-                  <span>{bucket.itemCount} items</span>
+                  <span>{questionCountLabel(bucket.itemCount)}</span>
                   {bucket.averageRating != null && (
                     <div className="flex items-center gap-1 text-gray-600">
                       <StarIconSolid className="h-4 w-4 text-yellow-400" />

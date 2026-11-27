@@ -37,7 +37,7 @@ describe("ScopeLandingHeader (#646)", () => {
     expect(screen.getByRole("heading", { level: 1, name: "Aha! Brain Teasers" })).toBeInTheDocument();
     expect(screen.getByText("Riddles with a twist.")).toBeInTheDocument();
     expect(screen.getByText("33 questions")).toBeInTheDocument();
-    const group = screen.getByRole("group", { name: "Play this set" });
+    const group = screen.getByRole("group", { name: "Play these questions" });
     expect(within(group).getAllByRole("link").map((l) => l.textContent)).toEqual(["Play 5", "Play 10"]);
     expect(screen.getByRole("link", { name: "Play 5" }).className).toContain("bg-indigo-600");
     expect(screen.getByRole("link", { name: "Play 10" }).className).not.toContain("bg-indigo-600");
@@ -121,7 +121,7 @@ describe("ScopeLandingHeader (#646)", () => {
     renderHeader({ countState: "error", count: undefined });
     expect(screen.getByText("Could not load the question count.")).toBeInTheDocument();
     expect(screen.queryAllByRole("link")).toHaveLength(0);
-    expect(screen.queryByRole("group", { name: "Play this set" })).toBeNull();
+    expect(screen.queryByRole("group", { name: "Play these questions" })).toBeNull();
   });
 
   it("AC 3.5.7 keeps Exam simulation when the count of an exam scope fails", () => {

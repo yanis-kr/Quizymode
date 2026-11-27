@@ -10,6 +10,7 @@ import { SignupPrompt } from "@/features/auth/components/SignupPrompt";
 import { celebratePerfectScore } from "./celebrate";
 import { scoreTier, type ResultShareDescriptor } from "./resultShare";
 import { ShareResultButton } from "./ShareResultButton";
+import { LINK_ACTION_CLASS, PRIMARY_ACTION_CLASS, SECONDARY_ACTION_CLASS } from "./completionActionStyles";
 import type { StudyEventContext } from "./quizAnalytics";
 
 interface QuizCompletionViewProps {
@@ -251,6 +252,24 @@ export function QuizCompletionView({
     );
   }
 
+  const showShare = Boolean(share) && summary.scoredTotal > 0;
+  const shareButton = (appearance: { emphasized?: boolean; asLink?: boolean }) =>
+    share && showShare ? (
+      <ShareResultButton
+        descriptor={share}
+        runId={run.runId}
+        score={summary.correct}
+        total={summary.scoredTotal}
+        context={analyticsContext ?? { contextType: "quiz" }}
+        {...appearance}
+      />
+    ) : null;
+
+  // Default results (#898): exactly one filled action. Next when offered, else Share on a perfect score, else Play again.
+  const nextOffer = nextRound && !nextRound.exhausted ? nextRound : null;
+  const primaryAction = nextOffer ? "next" : isPerfect && showShare ? "share" : "play-again";
+  const playAgainLabel = !nextRound ? "Play again" : nextRound.exhausted ? "Start over" : "Play again (same questions)";
+
   return (
     <section className={`mx-auto ${isStarter ? "max-w-3xl" : "max-w-2xl"} rounded-lg bg-surface p-4 text-center shadow sm:p-6`}>
       <h2 ref={headingRef} tabIndex={-1} className="text-2xl font-bold text-gray-900 focus:outline-none">
@@ -291,60 +310,65 @@ export function QuizCompletionView({
         </p>
       )}
       <div className="mt-6 flex flex-col justify-center gap-3 sm:flex-row sm:flex-wrap">
-        {!isStarter && nextRound && !nextRound.exhausted && (
-          <button
-            type="button"
-            onClick={nextRound.onNext}
-            className="min-h-[44px] rounded-md bg-indigo-600 px-4 py-2 font-semibold text-white hover:bg-indigo-700 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500 focus-visible:ring-offset-2"
-          >
-            Next {nextRound.size} questions
-          </button>
-        )}
-        {!isStarter && nextRound?.exhausted && (
-          <p className="w-full text-sm text-gray-700" role="status">
-            You have seen all {nextRound.total}.
-          </p>
-        )}
-        {isTest && onReviewAll && (
-          <button type="button" onClick={onReviewAll} className="rounded-md border border-indigo-600 px-4 py-2 font-semibold text-indigo-ink hover:bg-indigo-50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500 focus-visible:ring-offset-2">
-            Review all
-          </button>
-        )}
-        {!isStarter && summary.missedItemIds.length > 0 && (
-          <button type="button" onClick={onReviewMistakes} className="rounded-md border border-indigo-600 px-4 py-2 font-semibold text-indigo-ink hover:bg-indigo-50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500 focus-visible:ring-offset-2">
-            Review mistakes
-          </button>
-        )}
-        <button
-          type="button"
-          onClick={onPlayAgain}
-          className={
-            isPerfect && share && summary.scoredTotal > 0
-              ? "rounded-md border border-indigo-600 px-4 py-2 font-semibold text-indigo-ink hover:bg-indigo-50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500 focus-visible:ring-offset-2"
-              : "rounded-md bg-indigo-600 px-4 py-2 font-semibold text-white hover:bg-indigo-700 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500 focus-visible:ring-offset-2"
-          }
-        >
-          {isStarter ? "Another random five" : nextRound ? (nextRound.exhausted ? "Start over" : "Play again (same questions)") : "Play again"}
-        </button>
-        {share && summary.scoredTotal > 0 && (
-          <ShareResultButton
-            descriptor={share}
-            runId={run.runId}
-            score={summary.correct}
-            total={summary.scoredTotal}
-            context={analyticsContext ?? { contextType: "quiz" }}
-            emphasized={isPerfect}
-          />
-        )}
-        {!isStarter && gamesPath && (
-          <Link to={gamesPath} className="rounded-md border border-gray-300 px-4 py-2 font-semibold text-gray-700 hover:bg-gray-50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500 focus-visible:ring-offset-2">
-            Play a game with this set
-          </Link>
-        )}
-        {!isStarter && (
-          <Link to={browsePath} className="rounded-md border border-gray-300 px-4 py-2 font-semibold text-gray-700 hover:bg-gray-50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500 focus-visible:ring-offset-2">
-            {browseLabel}
-          </Link>
+        {isStarter ? (
+          <>
+            <button
+              type="button"
+              onClick={onPlayAgain}
+              className={
+                isPerfect && showShare
+                  ? "rounded-md border border-indigo-600 px-4 py-2 font-semibold text-indigo-ink hover:bg-indigo-50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500 focus-visible:ring-offset-2"
+                  : "rounded-md bg-indigo-600 px-4 py-2 font-semibold text-white hover:bg-indigo-700 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500 focus-visible:ring-offset-2"
+              }
+            >
+              Another random five
+            </button>
+            {shareButton({ emphasized: isPerfect })}
+          </>
+        ) : (
+          // DOM order is the keyboard order (#898): seen-all line, primary, outlined buttons, text links.
+          <>
+            {nextRound?.exhausted && (
+              <p className="w-full text-sm text-gray-700" role="status">
+                You have seen all {nextRound.total}.
+              </p>
+            )}
+            {nextOffer && (
+              <button type="button" onClick={nextOffer.onNext} className={PRIMARY_ACTION_CLASS}>
+                Next {nextOffer.size} questions
+              </button>
+            )}
+            {primaryAction === "share" && shareButton({ emphasized: true })}
+            {primaryAction === "play-again" && (
+              <button type="button" onClick={onPlayAgain} className={PRIMARY_ACTION_CLASS}>
+                {playAgainLabel}
+              </button>
+            )}
+            {isTest && onReviewAll && (
+              <button type="button" onClick={onReviewAll} className={SECONDARY_ACTION_CLASS}>
+                Review all
+              </button>
+            )}
+            {summary.missedItemIds.length > 0 && (
+              <button type="button" onClick={onReviewMistakes} className={SECONDARY_ACTION_CLASS}>
+                Review mistakes
+              </button>
+            )}
+            {primaryAction !== "play-again" && (
+              <button type="button" onClick={onPlayAgain} className={LINK_ACTION_CLASS}>
+                {playAgainLabel}
+              </button>
+            )}
+            {primaryAction !== "share" && shareButton({ asLink: true })}
+            {gamesPath && (
+              <Link to={gamesPath} className={LINK_ACTION_CLASS}>
+                Play a game with these questions
+              </Link>
+            )}
+            <Link to={browsePath} className={LINK_ACTION_CLASS}>
+              {browseLabel}
+            </Link>
+          </>
         )}
       </div>
       {/* Starter: Review mistakes sits above the Explore next cards so it is reachable on a phone without scrolling past them (AC 3.0.33). */}
@@ -358,7 +382,7 @@ export function QuizCompletionView({
       {isStarter && endExtras}
       {!isStarter && keepGoing}
       {/* Shown only after the run is complete (never mid-quiz), only to anonymous visitors (AC 4.2.10). */}
-      <SignupPrompt reason="save-progress" className="mt-6" />
+      <SignupPrompt reason="save-progress" className="mt-6" quiet={!isStarter} />
     </section>
   );
 }

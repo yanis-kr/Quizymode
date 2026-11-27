@@ -496,7 +496,7 @@ async function waitForCategoryItemsLoaded(page: Page) {
     "button[title*='Remove from ']",
     "h3.text-lg",
     "text=Answer:",
-    "text=No items found.",
+    "text=No questions found.",
   ]);
 }
 
@@ -522,6 +522,11 @@ async function waitForManageCollectionsDialog(page: Page) {
 }
 
 async function clickConsentIfPresent(page: Page) {
+  // The content notice keeps its dismiss button inside a closed disclosure, so open it first.
+  const rulesToggle = page.getByRole("button", { name: "Read the content rules", expanded: false });
+  if (await rulesToggle.isVisible().catch(() => false)) {
+    await rulesToggle.click().catch(() => {});
+  }
   const consentButton = page.getByRole("button", { name: /i understand/i });
   if (await consentButton.isVisible().catch(() => false)) {
     await consentButton.click().catch(() => {});
@@ -645,7 +650,7 @@ async function waitForCollectionDetailLoaded(page: Page) {
   await waitForAnyVisible(page, [
     "text=Collection",
     "button:has-text('Details')",
-    "text=No items in this collection.",
+    "text=No questions in this collection.",
   ]);
 }
 
@@ -657,7 +662,7 @@ async function waitForCollectionQuizModeLoaded(page: Page) {
     "h3:has-text('Question')",
     "h3:has-text('Select an answer:')",
     "text=/Score:\\s*\\d+\\s*\\/\\s*\\d+\\s*correct/i",
-    "button[title='View item details']",
+    "button[title='View question details']",
   ]);
 }
 
@@ -666,7 +671,7 @@ async function openStarterItem(page: Page, itemId: string) {
   await ensureSignedIn(page);
   await safeGoto(page, `/items/${itemId}`);
   await waitForAnyVisible(page, [
-    "text=Item details",
+    "text=Question details",
     "text=Question",
     "button:has-text('Comments')",
   ]);
@@ -767,7 +772,7 @@ async function applyKeywordFilterWithResults(page: Page) {
     ]);
 
     const itemCards = await page.locator("h3.text-lg").count().catch(() => 0);
-    const noItems = await page.getByText(/no items found/i).isVisible().catch(() => false);
+    const noItems = await page.getByText(/no questions found/i).isVisible().catch(() => false);
     if (itemCards > 0 && !noItems) {
       return;
     }
@@ -795,8 +800,8 @@ test.describe("User guide screenshots", () => {
 
   shotTest("featured", async (page, testInfo) => {
     await capture(page, testInfo, "featured", "/featured", [
-      "button:has-text('Sets')",
-      "text=No featured sets yet",
+      "button:has-text('Topics')",
+      "text=No featured topics yet",
     ]);
   });
 

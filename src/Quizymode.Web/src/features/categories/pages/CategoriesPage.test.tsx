@@ -5,6 +5,7 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { HelmetProvider } from "react-helmet-async";
 import { MemoryRouter, Route, Routes, useLocation } from "react-router-dom";
 import CategoriesPage from "./CategoriesPage";
+import categoriesPageSource from "./CategoriesPage.tsx?raw";
 import { categoriesApi } from "@/api/categories";
 import { keywordsApi } from "@/api/keywords";
 import { itemsApi } from "@/api/items";
@@ -140,7 +141,7 @@ describe("CategoriesPage landing header and hidden answers (#646, #647, #650)", 
     // AC 3.33.1: a visitor who knows nothing yet sees no progress line.
     expect(screen.queryByTestId("set-progress")).toBeNull();
     // The scope path header does not repeat the count.
-    expect(screen.queryByLabelText("Item count")).not.toBeInTheDocument();
+    expect(screen.queryByLabelText("Question count")).not.toBeInTheDocument();
     await waitFor(() => expect(document.title).toBe("Aha! Brain Teasers | Quizymode"));
     // The count request is the unfiltered scope: page size 1, path keywords only.
     expect(itemsApi.getAll).toHaveBeenCalledWith("Trivia", undefined, undefined, undefined, undefined, 1, 1, {
@@ -156,7 +157,7 @@ describe("CategoriesPage landing header and hidden answers (#646, #647, #650)", 
     expect(await within(header).findByText("33 questions")).toBeInTheDocument();
   });
 
-  it("shows the header with a real count in the Sets branch, titled with the category name", async () => {
+  it("shows the header with a real count in the Topics branch, titled with the category name", async () => {
     renderAt("/categories/trivia");
 
     const h1 = await screen.findByRole("heading", { level: 1, name: "Trivia" });
@@ -167,10 +168,10 @@ describe("CategoriesPage landing header and hidden answers (#646, #647, #650)", 
     await waitFor(() => expect(document.title).toBe("Trivia | Quizymode"));
   });
 
-  it("AC 3.4.6 shows the category description once on the Sets view", async () => {
+  it("AC 3.4.6 shows the category description once on the Topics view", async () => {
     renderAt("/categories/trivia");
 
-    await screen.findByText("33 questions");
+    await within(await screen.findByTestId("scope-landing-header")).findByText("33 questions");
     expect(await screen.findByRole("button", { name: /brain-teasers/ })).toBeInTheDocument();
     expect(screen.getAllByText("Fun facts and puzzles.")).toHaveLength(1);
     expect(screen.getByText("Browse subtopics in this scope.")).toBeInTheDocument();
@@ -329,7 +330,7 @@ describe("Active filters (#664)", () => {
       totalPages: 0,
     } as never);
     renderWithLocation(START);
-    expect(await screen.findByText("No items match all filters")).toBeInTheDocument();
+    expect(await screen.findByText("No questions match all filters")).toBeInTheDocument();
     await user.click(screen.getByRole("button", { name: "Clear tag filters" }));
     await waitFor(() => expect(currentUrl()).toBe("/categories/languages/german/idioms?view=items&page=1"));
   });
@@ -448,7 +449,320 @@ describe("Category filters (#707)", () => {
     await screen.findByText("Q one");
     await user.click(screen.getByRole("button", { name: /^Filters/ }));
     expect(
-      screen.getByText("Suggestions come only from the items loaded on this page.")
+      screen.getByText("Suggestions come only from the questions loaded on this page.")
     ).toBeInTheDocument();
+  });
+});
+
+describe("Empty topics (#900)", () => {
+  const bucket = (name: string, itemCount: number) => ({
+    name,
+    itemCount,
+    averageRating: null,
+    navigationRank: 1,
+    description: null,
+  });
+
+  /** Rows by "category/selected,keywords"; a missing entry is an empty response. */
+  let rows: Record<string, ReturnType<typeof bucket>[]> = {};
+  let scopeTotal = 12;
+
+  beforeEach(() => {
+    vi.clearAllMocks();
+    installMemoryLocalStorage();
+    rows = {};
+    scopeTotal = 12;
+    vi.mocked(categoriesApi.getAll).mockResolvedValue({
+      categories: [
+        { category: "Geography", count: 12, description: "Places.", averageRating: null },
+        { category: "History", count: 3, description: "Past.", averageRating: null },
+      ],
+    } as never);
+    vi.mocked(keywordsApi.getNavigationKeywords).mockImplementation(async (category, selected) => ({
+      keywords: rows[[category, ...(selected ?? [])].join("/")] ?? [],
+    }));
+    vi.mocked(keywordsApi.getKeywordDescriptions).mockResolvedValue({ keywords: [] });
+    vi.mocked(keywordsApi.getItemTagKeywords).mockResolvedValue({ names: [] });
+    vi.mocked(featuredApi.get).mockResolvedValue({ sets: [], collections: [] });
+    vi.mocked(itemsApi.getAll).mockImplementation(async (_c, _p, _k, _col, _r, _page, pageSize) => {
+      const items = scopeTotal > 0 ? [makeItem("1", "Q one", "Answer one")] : [];
+      return { items, totalCount: scopeTotal, page: 1, pageSize, totalPages: 1 } as never;
+    });
+  });
+
+  /** Names on the bucket tiles, in page order. */
+  const tiles = () =>
+    screen
+      .queryAllByRole("button")
+      .filter((el) => el.tagName === "DIV")
+      .map((el) => el.querySelector("h3")?.textContent);
+
+  const expectNoTopicsTab = async () => {
+    expect(await screen.findByRole("tab", { name: "List" })).toBeInTheDocument();
+    expect(screen.queryByRole("tab", { name: "Topics" })).not.toBeInTheDocument();
+  };
+
+  it.each([
+    ["category", "/categories/geography", "Geography"],
+    ["topic", "/categories/geography/capitals", "Geography/capitals"],
+  ])("AC 3.4.2 hides empty buckets on a %s Topics view and sorts the shown ones", async (_name, url, key) => {
+    const user = userEvent.setup({ delay: null });
+    rows[key] = [bucket("apple", 5), bucket("general", 0), bucket("zebra", 9)];
+    renderAt(url);
+
+    await screen.findByRole("button", { name: /apple/ });
+    expect(tiles()).toEqual(["apple", "zebra"]);
+    expect(screen.queryByText("0 questions")).not.toBeInTheDocument();
+    expect(screen.getByRole("tab", { name: "Topics" })).toBeInTheDocument();
+
+    await user.selectOptions(screen.getByDisplayValue("Name"), "count");
+    await waitFor(() => expect(tiles()).toEqual(["zebra", "apple"]));
+  });
+
+  it.each([
+    ["category", "/categories/geography", "Geography"],
+    ["topic", "/categories/geography/capitals", "Geography/capitals"],
+  ])("AC 3.4.4a treats a %s with questions and only empty subtopics as having no child buckets", async (_name, url, key) => {
+    rows[key] = [bucket("general", 0), bucket("misc", 0)];
+    renderAt(url);
+
+    expect(await screen.findByText("Q one")).toBeInTheDocument();
+    await expectNoTopicsTab();
+    expect(tiles()).toEqual([]);
+    expect(screen.queryByText("No topics in this level.")).not.toBeInTheDocument();
+  });
+
+  it("AC 3.4.8 shows the empty state and no study buttons for a direct link to an empty topic", async () => {
+    scopeTotal = 0;
+    rows["Geography/general"] = [bucket("misc", 0), bucket("oddities", 0)];
+    renderAt("/categories/geography/general");
+
+    expect(await screen.findByText("No questions here yet.")).toBeInTheDocument();
+    expect(screen.getByRole("link", { name: "Browse categories" })).toHaveAttribute("href", "/categories");
+    await expectNoTopicsTab();
+    expect(tiles()).toEqual([]);
+    expect(screen.queryByText(/misc|oddities/)).not.toBeInTheDocument();
+    expect(screen.queryByRole("group", { name: "Play these questions" })).not.toBeInTheDocument();
+    expect(screen.queryByRole("button", { name: /list questions|flashcards mode|quiz mode/i })).not.toBeInTheDocument();
+  });
+
+  const openFilters = async (user: ReturnType<typeof userEvent.setup>) => {
+    await user.click(await screen.findByRole("button", { name: /^filters/i }));
+  };
+  const optionNames = () =>
+    within(screen.getByRole("listbox"))
+      .getAllByRole("option")
+      .map((option) => option.textContent);
+
+  it("AC 3.9.3 offers only topics with questions in the filter dialog of a category", async () => {
+    const user = userEvent.setup({ delay: null });
+    rows["Geography"] = [bucket("capitals", 12), bucket("general", 0)];
+    rows["Geography/capitals"] = [bucket("europe", 4), bucket("misc", 0)];
+    renderAt("/categories/geography");
+    await openFilters(user);
+
+    await user.click(screen.getByPlaceholderText("All topics"));
+    await waitFor(() => expect(optionNames()).toEqual(["All topics", "capitals"]));
+    await user.click(screen.getByRole("option", { name: "capitals" }));
+
+    await user.click(screen.getByPlaceholderText("All subtopics"));
+    await waitFor(() => expect(optionNames()).toEqual(["All subtopics", "europe"]));
+  });
+
+  it("AC 3.9.3 under All categories offers a topic name when any category has questions under it", async () => {
+    const user = userEvent.setup({ delay: null });
+    rows["Geography"] = [bucket("general", 0), bucket("shared", 0), bucket("local", 12)];
+    rows["History"] = [bucket("general", 0), bucket("shared", 3)];
+    rows["Geography/shared"] = [bucket("maps", 0), bucket("rivers", 0)];
+    rows["History/shared"] = [bucket("maps", 2), bucket("rivers", 0)];
+    renderAt("/categories/geography");
+    await openFilters(user);
+    await user.selectOptions(screen.getByDisplayValue("Geography"), "all");
+
+    await user.click(screen.getByPlaceholderText("All topics"));
+    await waitFor(() => expect(optionNames()).toEqual(["All topics", "local", "shared"]));
+    await user.click(screen.getByRole("option", { name: "shared" }));
+
+    await user.click(screen.getByPlaceholderText("All subtopics"));
+    await waitFor(() => expect(optionNames()).toEqual(["All subtopics", "maps"]));
+  });
+
+  it("AC 3.9.3 keeps an empty topic taken from the URL selected", async () => {
+    const user = userEvent.setup({ delay: null });
+    scopeTotal = 0;
+    rows["Geography"] = [bucket("capitals", 12), bucket("general", 0)];
+    renderAt("/categories/geography/general");
+    await screen.findByText("No questions here yet.");
+    await openFilters(user);
+
+    expect(screen.getByPlaceholderText("All topics")).toHaveValue("general");
+    await user.click(screen.getByPlaceholderText("All topics"));
+    expect(screen.queryByRole("option", { name: "general" })).not.toBeInTheDocument();
+    expect(screen.getByPlaceholderText("All topics")).toHaveValue("general");
+  });
+});
+
+describe("CategoriesPage category display names (#902)", () => {
+  function LocationProbe() {
+    const location = useLocation();
+    return <div data-testid="location">{`${location.pathname}${location.search}`}</div>;
+  }
+
+  function renderWithLocation(url: string) {
+    const queryClient = new QueryClient({ defaultOptions: { queries: { retry: false } } });
+    return render(
+      <HelmetProvider>
+        <QueryClientProvider client={queryClient}>
+          <MemoryRouter initialEntries={[url]}>
+            <LocationProbe />
+            <Routes>
+              <Route path="/categories/:category" element={<CategoriesPage />} />
+              <Route path="/categories" element={<CategoriesPage />} />
+            </Routes>
+          </MemoryRouter>
+        </QueryClientProvider>
+      </HelmetProvider>
+    );
+  }
+
+  beforeEach(() => {
+    vi.clearAllMocks();
+    installMemoryLocalStorage();
+    vi.mocked(categoriesApi.getAll).mockResolvedValue({
+      categories: [
+        { category: "geography", count: 12, description: "Maps.", averageRating: null },
+        { category: "act-math", count: 3, description: null, averageRating: null },
+      ],
+    } as never);
+    vi.mocked(keywordsApi.getNavigationKeywords).mockResolvedValue({
+      keywords: [{ name: "capitals", itemCount: 12, averageRating: null, navigationRank: 1, description: null }],
+    } as never);
+    vi.mocked(keywordsApi.getKeywordDescriptions).mockResolvedValue({ keywords: [] } as never);
+    vi.mocked(keywordsApi.getItemTagKeywords).mockResolvedValue({ names: [] });
+    vi.mocked(featuredApi.get).mockResolvedValue({ sets: [], collections: [] });
+    vi.mocked(gamesApi.getRoster).mockResolvedValue({ items: [], scopes: [] } as never);
+    vi.mocked(itemsApi.getAll).mockResolvedValue({
+      items: [], totalCount: 0, page: 1, pageSize: 10, totalPages: 1,
+    } as never);
+  });
+
+  it.each([
+    ["Geography", "/categories/geography?view=sets"],
+    ["Act Math", "/categories/act-math?view=sets"],
+  ])("shows the %s tile capitalised and opens the same address", async (name, address) => {
+    const user = userEvent.setup({ delay: null });
+    renderWithLocation("/categories");
+
+    await user.click(await screen.findByRole("button", { name: new RegExp(name) }));
+
+    await waitFor(() => expect(screen.getByTestId("location").textContent).toBe(address));
+  });
+
+  it("capitalises the category eyebrow on topic tiles and keeps the topic name as stored", async () => {
+    renderWithLocation("/categories/geography");
+
+    const tile = await screen.findByRole("button", { name: /capitals/ });
+    expect(within(tile).getByText("Geography")).toBeInTheDocument();
+    expect(within(tile).getByRole("heading", { name: "capitals" })).toBeInTheDocument();
+  });
+
+  it.each(["/categories/geography", "/categories/geography?view=items"])(
+    "capitalises the category filter options at %s and keeps their values",
+    async (url) => {
+      const user = userEvent.setup({ delay: null });
+      renderWithLocation(url);
+
+      await user.click(await screen.findByRole("button", { name: /^filters/i }));
+
+      expect(screen.getByRole("option", { name: "Geography" })).toHaveValue("geography");
+      expect(screen.getByRole("option", { name: "Act Math" })).toHaveValue("act-math");
+    }
+  );
+});
+
+describe("Questions and topics wording (#922)", () => {
+  beforeEach(() => {
+    vi.clearAllMocks();
+    installMemoryLocalStorage();
+    vi.mocked(categoriesApi.getAll).mockResolvedValue({
+      categories: [{ category: "Geography", count: 12, description: "Places.", averageRating: null }],
+    } as never);
+    vi.mocked(keywordsApi.getNavigationKeywords).mockResolvedValue({
+      keywords: [{ name: "capitals", itemCount: 12, averageRating: null, navigationRank: 1, description: null }],
+    } as never);
+    vi.mocked(keywordsApi.getKeywordDescriptions).mockResolvedValue({ keywords: [] });
+    vi.mocked(keywordsApi.getItemTagKeywords).mockResolvedValue({ names: [] });
+    vi.mocked(featuredApi.get).mockResolvedValue({ sets: [], collections: [] });
+    vi.mocked(itemsApi.getAll).mockImplementation(async (_c, _p, _k, _col, _r, _page, pageSize) => {
+      const items = [makeItem("1", "Q one", "Answer one")];
+      return { items, totalCount: 12, page: 1, pageSize, totalPages: 1 } as never;
+    });
+  });
+
+  it.each([
+    ["/categories/geography"],
+    ["/categories/geography?view=sets"],
+  ])("AC 3.4.14 %s opens the Topics view with the Topics tab and the Question count sort (#922)", async (url) => {
+    renderAt(url);
+
+    expect(await screen.findByRole("button", { name: /capitals/ })).toHaveTextContent("12 questions");
+    expect(screen.getByRole("tab", { name: "Topics" })).toHaveAttribute("aria-selected", "true");
+    expect(screen.getByRole("option", { name: "Question count" })).toHaveValue("count");
+    expect(screen.queryByText("Q one")).not.toBeInTheDocument();
+    expect(document.body.textContent).not.toMatch(/\b(item|items|sets)\b/i);
+    await waitFor(() => expect(document.title).toBe("Geography | Quizymode"));
+  });
+
+  it("AC 3.4.14 ?view=items opens the List view with question wording (#922)", async () => {
+    renderAt("/categories/geography?view=items");
+
+    expect(await screen.findByText("Q one")).toBeInTheDocument();
+    expect(screen.getByRole("tab", { name: "List" })).toHaveAttribute("aria-selected", "true");
+    expect(screen.getByRole("tab", { name: "Topics" })).toHaveAttribute("aria-selected", "false");
+    expect(screen.getByText("Browse questions in this scope.")).toBeInTheDocument();
+    expect(screen.getByTitle("View question details")).toHaveAttribute("href", expect.stringMatching(/^\/items\/1/));
+    expect(screen.queryByRole("button", { name: /capitals/ })).not.toBeInTheDocument();
+  });
+
+  it("AC 3.4.12 says No questions found. for an empty list (#922)", async () => {
+    vi.mocked(itemsApi.getAll).mockResolvedValue({ items: [], totalCount: 0, page: 1, pageSize: 20, totalPages: 0 } as never);
+    renderAt("/categories/geography?view=items");
+
+    expect(await screen.findByText("No questions found.")).toBeInTheDocument();
+  });
+
+  it("AC 3.4.12 says No topics in this level. and List questions when no topics can be listed (#922)", async () => {
+    vi.mocked(keywordsApi.getNavigationKeywords).mockRejectedValue(new Error("down"));
+    renderAt("/categories/geography");
+
+    expect(await screen.findByText("No topics in this level.")).toBeInTheDocument();
+    expect(screen.getByRole("button", { name: "List questions" })).toBeInTheDocument();
+  });
+
+  it("AC 3.4.12 names the filters Visibility and speaks of questions (#922)", async () => {
+    const user = userEvent.setup({ delay: null });
+    renderAt("/categories/geography?view=items");
+
+    await user.click(await screen.findByRole("button", { name: /^Filters/ }));
+    await user.click(screen.getByRole("button", { name: /Visibility/ }));
+    await user.click(screen.getByRole("button", { name: /Rating/ }));
+    await user.click(screen.getByRole("button", { name: /Text Search/ }));
+
+    expect(screen.getByText("Visibility")).toBeInTheDocument();
+    expect(screen.getByRole("button", { name: "Public" })).toBeInTheDocument();
+    expect(screen.getByText("Only questions with no rating")).toBeInTheDocument();
+    expect(screen.getByText("Include questions with no rating")).toBeInTheDocument();
+    expect(screen.getByText("Searches across question content, category, and keywords")).toBeInTheDocument();
+    expect(screen.queryByText("Item Type")).not.toBeInTheDocument();
+  });
+
+  // ActionButtons gets no onListSets handler and the Topics branch never renders for a childless scope, so these two
+  // strings cannot be reached through the page; the source is the only place to check them.
+  it("AC 3.4.12 keeps the unreachable List topics and end-of-subtopics strings in the new wording (#922)", () => {
+    expect(categoriesPageSource).toContain("List topics");
+    expect(categoriesPageSource).toContain(
+      "There are no more subtopics here. Browse questions, use flashcards, or take a quiz."
+    );
+    expect(categoriesPageSource).not.toMatch(/List sets|List items|sets hierarchy/);
   });
 });

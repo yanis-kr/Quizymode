@@ -177,7 +177,7 @@ describe("CreateItemPage topic suggestions (#323)", () => {
     renderPage("/create/question");
     await user.click((await screen.findAllByTestId("topic-chip"))[0]);
     await fillRest(user);
-    await user.click(screen.getByRole("checkbox", { name: /private item/i }));
+    await user.click(screen.getByRole("checkbox", { name: /private question/i }));
     await user.click(screen.getByRole("button", { name: /save and study/i }));
     await screen.findByText("Item Detail");
 
@@ -203,7 +203,7 @@ describe("CreateItemPage topic suggestions (#323)", () => {
     expect(await screen.findByTestId("topic-pill")).toHaveTextContent("skeletal");
 
     await fillRest(user);
-    await user.click(screen.getByRole("checkbox", { name: /private item/i }));
+    await user.click(screen.getByRole("checkbox", { name: /private question/i }));
     await user.click(screen.getByRole("button", { name: /save and study/i }));
     await screen.findByText("Item Detail");
 

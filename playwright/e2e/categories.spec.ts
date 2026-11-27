@@ -1,5 +1,5 @@
 /**
- * Categories E2E tests — AC 3.1 Listing categories / AC 3.4 Sets view
+ * Categories E2E tests — AC 3.1 Listing categories / AC 3.4 Topics view
  */
 import { test, expect } from "../fixtures";
 
@@ -8,7 +8,7 @@ async function openFirstCategoryWithItems(page: import("@playwright/test").Page)
   await page.waitForLoadState("networkidle");
 
   const categoryCard = page
-    .getByRole("button", { name: /\b[1-9]\d* items\b/i })
+    .getByRole("button", { name: /\b[1-9]\d* questions?\b/i })
     .first();
 
   await expect(categoryCard).toBeVisible();
@@ -42,7 +42,7 @@ test(
 );
 
 test(
-  "AC 3.4 - category Sets view shows secondary navigation with mode tabs",
+  "AC 3.4 - category Topics view shows secondary navigation with mode tabs",
   async ({ page }) => {
     await openFirstCategoryWithItems(page);
 
@@ -57,13 +57,13 @@ test(
 );
 
 test(
-  "AC 3.4 - category Sets view shows keyword buckets",
+  "AC 3.4 - category Topics view shows keyword buckets",
   async ({ page }) => {
     await openFirstCategoryWithItems(page);
 
-    // Keyword bucket cards are buttons labeled with a non-zero item count.
+    // Keyword bucket cards are buttons labeled with a non-zero question count.
     const buckets = page.getByRole("button", {
-      name: /\b[1-9]\d* items\b/i,
+      name: /\b[1-9]\d* questions?\b/i,
     });
 
     await expect(buckets.first()).toBeVisible({ timeout: 3_000 });

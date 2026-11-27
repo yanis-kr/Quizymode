@@ -83,7 +83,7 @@ function describe(plan: PlanView, now: Date, isGuest: boolean): CardModel | null
       return {
         title: "Practice quiz",
         detail: isGuest
-          ? `About ${minutes} min. Quiz yourself on the full set.`
+          ? `About ${minutes} min. Quiz yourself on all the questions.`
           : `About ${minutes} min. Misses go to your Review queue.`,
         action: "Practice",
         to: pathFor("review", plan),

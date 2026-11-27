@@ -57,6 +57,7 @@ import {
   trackFlashcardRevealed,
   trackFlashcardsStarted,
 } from "@/features/items/quiz/quizAnalytics";
+import { questionCountLabel } from "@/utils/questionCountLabel";
 
 /** State of one Flashcards run (a pass through the deck); grades and the pile are per round and never persisted. */
 interface FlashcardRun {
@@ -691,13 +692,13 @@ const ExploreModePage = () => {
   if (isLoadingItems) return <LoadingSpinner />;
   if (error && !collectionId)
     return (
-      <ErrorMessage message="Failed to load items" onRetry={() => refetch()} />
+      <ErrorMessage message="Failed to load questions" onRetry={() => refetch()} />
     );
   if (sourceDeck.length === 0) {
     return (
       <div className="py-4 sm:py-6">
         <div className="text-center py-12">
-          <p className="text-gray-500 mb-4">No items found.</p>
+          <p className="text-gray-500 mb-4">No questions found.</p>
           <Link
             to="/categories"
             className="text-indigo-ink hover:text-indigo-ink"
@@ -833,7 +834,7 @@ const ExploreModePage = () => {
           </div>
           <div className="flex flex-wrap items-center gap-4">
             <div className="text-sm text-gray-600">
-              {collectionInfo.itemCount ?? sourceDeck.length} items
+              {questionCountLabel(collectionInfo.itemCount ?? sourceDeck.length)}
             </div>
             {ratingData && (
               <div className="flex items-center gap-2">
@@ -883,7 +884,7 @@ const ExploreModePage = () => {
             />
           }
           count={sourceDeck.length}
-          hint="Flashcards-style study mode for reviewing quiz items."
+          hint="Tap the card to see the answer."
         />
       )}
       {showDetails && collectionId && collectionInfo && (
@@ -923,7 +924,7 @@ const ExploreModePage = () => {
                 </dd>
               </div>
               <div className="flex justify-between gap-4">
-                <dt className="font-medium text-gray-600">Items</dt>
+                <dt className="font-medium text-gray-600">Questions</dt>
                 <dd className="text-right">{collectionInfo.itemCount}</dd>
               </div>
               {"isPublic" in collectionInfo && (
@@ -988,7 +989,7 @@ const ExploreModePage = () => {
         }
         description={
           !category || !!collectionId
-            ? "Flashcards-style study mode for reviewing quiz items."
+            ? "Tap the card to see the answer."
             : undefined
         }
         currentIndex={currentIndex}
@@ -1015,7 +1016,7 @@ const ExploreModePage = () => {
                 <Link to="/login" className="font-medium underline">
                   sign in
                 </Link>{" "}
-                to create your own items and collections!
+                to create your own questions and collections!
               </p>
             </div>
           ) : undefined
