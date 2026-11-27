@@ -501,8 +501,9 @@ const CategoriesPage = () => {
     (!!categoryName || isAllCategoriesSlug(categorySlugParam));
   const scopeIsPrivate =
     scopeFilterType === "all" ? undefined : scopeFilterType === "private";
-  const hasClientSideScopeFilters =
-    scopeSearchText !== "" || scopeRatingMin !== null || scopeRatingMax !== null || scopeRatingOnlyUnrated;
+  const hasRatingFilter =
+    scopeRatingMin !== null || scopeRatingMax !== null || scopeRatingOnlyUnrated;
+  const hasClientSideScopeFilters = scopeSearchText !== "" || hasRatingFilter;
   const scopeQueryPageSize = hasClientSideScopeFilters ? 1000 : pageSize;
   const scopeQueryPage = hasClientSideScopeFilters ? 1 : itemsPage;
 
@@ -538,9 +539,7 @@ const CategoriesPage = () => {
     isSuccess: ratingsLoaded,
     error: ratingsError,
     refetch: refetchRatings,
-  } = useBulkRatings(hasClientSideScopeFilters ? itemIds : []);
-  const hasRatingFilter =
-    scopeRatingMin !== null || scopeRatingMax !== null || scopeRatingOnlyUnrated;
+  } = useBulkRatings(hasRatingFilter ? itemIds : []);
 
   const scopeFilteredItems = useMemo(
     () =>

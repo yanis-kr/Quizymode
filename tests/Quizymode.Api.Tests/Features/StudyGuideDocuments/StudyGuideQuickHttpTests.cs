@@ -249,4 +249,34 @@ public sealed class StudyGuideQuickHttpTests : ItemTestFixture, IAsyncLifetime
         await using ApplicationDbContext db = CreateDbContext();
         (await db.Items.AsNoTracking().Where(i => i.CreatedBy == admin).ToListAsync()).Should().NotBeEmpty().And.OnlyContain(i => i.IsPrivate);
     }
+
+    [Theory]
+    [InlineData(true)]
+    [InlineData(false)]
+    public async Task Queuing_RecordsTheQuotaExemptionFromTheCallersRoleOnly(bool admin)
+    {
+        string token = _host.CreateToken("queue-subject", "queue@example.com", admin ? AdminGroups : []);
+        MultipartFormDataContent form = Form();
+        form.Add(new StringContent("true"), "quotaExempt");
+        form.Add(new StringContent("true"), "autoSaveQuotaExempt");
+
+        using HttpResponseMessage quick = await SendAsync(HttpMethod.Post, "/study-guides/documents/quick?quotaExempt=true", token, form);
+
+        quick.StatusCode.Should().Be(HttpStatusCode.Created);
+        await using ApplicationDbContext db = CreateDbContext();
+        StudyGuideSection section = await db.StudyGuideSections.SingleAsync();
+        section.AutoSaveQuotaExempt.Should().Be(admin);
+
+        section.AutoSaveQuotaExempt = !admin;
+        await db.SaveChangesAsync();
+        using HttpResponseMessage generate = await SendAsync(
+            HttpMethod.Post,
+            $"/study-guides/documents/{section.DocumentId}/generate?quotaExempt=true",
+            token,
+            JsonContent.Create(new { sectionIds = new[] { section.Id }, quotaExempt = true, autoSaveQuotaExempt = true }));
+
+        generate.StatusCode.Should().Be(HttpStatusCode.Accepted);
+        db.ChangeTracker.Clear();
+        (await db.StudyGuideSections.AsNoTracking().SingleAsync()).AutoSaveQuotaExempt.Should().Be(admin);
+    }
 }

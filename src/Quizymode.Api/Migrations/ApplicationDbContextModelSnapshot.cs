@@ -2538,6 +2538,11 @@ namespace Quizymode.Api.Migrations
                     b.Property<int>("AutoSaveAttempts")
                         .HasColumnType("integer");
 
+                    b.Property<bool>("AutoSaveQuotaExempt")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("boolean")
+                        .HasDefaultValue(false);
+
                     b.Property<Guid>("DocumentId")
                         .HasColumnType("uuid");
 

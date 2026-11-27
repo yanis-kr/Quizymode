@@ -1,5 +1,5 @@
 import { beforeEach, describe, expect, it, vi } from "vitest";
-import { render, screen, within } from "@testing-library/react";
+import { render, screen, waitFor, within } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { HelmetProvider } from "react-helmet-async";
@@ -86,6 +86,27 @@ describe("CategoriesPage refusals", () => {
     expect(screen.getAllByRole("alert")).toHaveLength(1);
     expect(screen.getByText("Q one")).toBeInTheDocument();
     expect(itemsApi.exportItems).toHaveBeenCalledTimes(1);
+  });
+
+  // Each of the 20 shown cards loads its own rating; the list filter adds one per loaded question.
+  it.each([
+    ["a text search", "search=Q", 20],
+    ["a rating filter", "ratingOnlyUnrated=1", 50],
+  ])("AC 17.11 loads ratings for every loaded question only for %s", async (_, filter, requests) => {
+    const items = Array.from({ length: 30 }, (_, index) => ({
+      id: `item-${index}`, category: "Trivia", isPrivate: false, question: `Q ${index}`, correctAnswer: "A",
+      incorrectAnswers: ["x"], explanation: "", createdAt: "2026-01-01T00:00:00Z", keywords: [], collections: [],
+    }));
+    vi.mocked(itemsApi.getAll).mockResolvedValue({
+      items, totalCount: 30, page: 1, pageSize: 1000, totalPages: 1,
+    } as never);
+
+    renderAt(`${LEAF}&${filter}`);
+
+    expect(await screen.findByText("Q 0")).toBeInTheDocument();
+    await waitFor(() => expect(ratingsApi.getStats).toHaveBeenCalledTimes(requests));
+    await new Promise((resolve) => setTimeout(resolve, 20));
+    expect(ratingsApi.getStats).toHaveBeenCalledTimes(requests);
   });
 
   it("AC 17.11 shows a 429 on ratings as an error and does not treat the questions as unrated", async () => {

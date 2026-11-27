@@ -14,7 +14,7 @@ namespace Quizymode.Api.Features.StudyGuideDocuments.Generation;
 /// Saves the generated questions of "Make a quiz" sections (<see cref="StudyGuideAutoSave.Pending"/>) once their generation
 /// has completed (#363, AC 6.6). The worker sweeps after every tick and the quick endpoint calls it inline when everything was
 /// already cached. Each document is saved in its own DI scope and transaction as the document owner with a non-admin context:
-/// items are always private, never published. Blocked or invalid candidates are skipped. Idempotent and safe to run on
+/// items are always private, never published. Sections queued by an admin skip the daily quotas only (AC 17.4). Blocked or invalid candidates are skipped. Idempotent and safe to run on
 /// several API instances (a busy document is skipped). A document that keeps failing is marked Failed after
 /// <c>AutoSaveMaxAttempts</c> and left to the manual review flow. A daily item or collection quota refusal (AC 17) marks the
 /// sections Failed at once.
@@ -102,7 +102,7 @@ internal sealed class StudyGuideAutoSaver(
                                   section.GenerationId != null &&
                                   _db.SectionGenerations.Any(generation => generation.Id == section.GenerationId &&
                                                                            generation.Status == SectionGenerationStatus.Completed))
-                .Select(section => new { section.Id, GenerationId = section.GenerationId!.Value })
+                .Select(section => new { section.Id, GenerationId = section.GenerationId!.Value, section.AutoSaveQuotaExempt })
                 .ToListAsync(cancellationToken);
             if (ready.Count == 0)
             {
@@ -110,6 +110,8 @@ internal sealed class StudyGuideAutoSaver(
             }
 
             sectionIds = ready.Select(section => section.Id).ToList();
+            // One accept saves every ready section, so all of them must carry the exemption.
+            bool quotaExempt = ready.All(section => section.AutoSaveQuotaExempt);
             List<Guid> generationIds = ready.Select(section => section.GenerationId).Distinct().ToList();
             List<Guid> candidateIds = await _db.GenerationCandidates
                 .AsNoTracking()
@@ -134,7 +136,7 @@ internal sealed class StudyGuideAutoSaver(
                 cancellationToken,
                 _logger,
                 sectionIds,
-                _quotas);
+                quotaExempt ? QuotaSettings.Unlimited : _quotas);
             if (result.IsSuccess)
             {
                 return true;

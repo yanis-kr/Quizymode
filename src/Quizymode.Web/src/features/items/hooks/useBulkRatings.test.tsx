@@ -68,6 +68,65 @@ describe("useBulkRatings (AC 17.11)", () => {
     expect(ratingsApi.getStats).toHaveBeenCalledTimes(3);
   });
 
+  it("stays stale after a failed refresh even when a later one succeeds", async () => {
+    const { queryClient, wrapper } = setup();
+    const view = renderHook(() => useBulkRatings(["a", "b"]), { wrapper });
+    await waitFor(() => expect(view.result.current.isSuccess).toBe(true));
+    vi.mocked(ratingsApi.getStats).mockRejectedValueOnce(refusal("Too many requests."));
+    await act(() => patchBulkRating(queryClient, "a"));
+    vi.mocked(ratingsApi.getStats).mockImplementation(async (itemId) => stats(itemId, 5));
+
+    await act(() => patchBulkRating(queryClient, "b"));
+
+    await waitFor(() => expect(view.result.current.ratingsMap.get("b")).toBe(5));
+    expect(
+      queryClient.getQueryCache().find({ queryKey: ["ratingStats", "bulk", "a,b"] })?.state.isInvalidated
+    ).toBe(true);
+    expect(ratingsApi.getStats).toHaveBeenCalledTimes(4);
+
+    view.unmount();
+    const next = renderHook(() => useBulkRatings(["a", "b"]), { wrapper });
+    await waitFor(() => expect(next.result.current.ratingsMap.get("a")).toBe(5));
+    expect(ratingsApi.getStats).toHaveBeenCalledTimes(6);
+  });
+
+  it.each(["first load", "reload"])(
+    "does not let a %s already under way bring back the value from before the rating",
+    async (kind) => {
+      const { queryClient, wrapper } = setup();
+      let release: () => void = () => {};
+      const held = new Promise<void>((resolve) => {
+        release = resolve;
+      });
+      // Every value is read before the rating; "b" holds the load open.
+      const holdB = () =>
+        vi.mocked(ratingsApi.getStats).mockImplementation(async (itemId) => {
+          if (itemId === "b") await held;
+          return stats(itemId, 3);
+        });
+      if (kind === "first load") holdB();
+      const view = renderHook(() => useBulkRatings(["a", "b"]), { wrapper });
+      if (kind === "reload") {
+        await waitFor(() => expect(view.result.current.isSuccess).toBe(true));
+        holdB();
+        act(() => {
+          void view.result.current.refetch();
+        });
+      }
+      await waitFor(() => expect(queryClient.isFetching()).toBe(1));
+      vi.mocked(ratingsApi.getStats).mockImplementation(async (itemId) =>
+        stats(itemId, itemId === "a" ? 5 : 3)
+      );
+
+      await act(() => patchBulkRating(queryClient, "a"));
+      await act(async () => release());
+
+      await waitFor(() => expect(queryClient.isFetching()).toBe(0));
+      await waitFor(() => expect(view.result.current.ratingsMap.get("a")).toBe(5));
+      expect(view.result.current.ratingsMap.get("b")).toBe(3);
+    }
+  );
+
   it("reports a 429 as an error instead of returning unrated items", async () => {
     const { wrapper } = setup();
     vi.mocked(ratingsApi.getStats).mockImplementation(async (itemId) => {

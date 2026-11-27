@@ -15,9 +15,23 @@ const isRateLimited = (error: unknown): boolean =>
  * Reloading the maps would send one request per listed item.
  */
 export const patchBulkRating = async (queryClient: QueryClient, itemId: string) => {
-  const holding = queryClient
-    .getQueriesData<RatingsMap>({ queryKey: BULK_RATINGS_KEY })
-    .filter(([, map]) => map?.has(itemId));
+  const cache = queryClient.getQueryCache();
+  // A load already under way may return the value from before this rating, so it is cancelled and started again.
+  const loading = cache.findAll({
+    queryKey: BULK_RATINGS_KEY,
+    predicate: (query) =>
+      query.state.fetchStatus !== "idle" && String(query.queryKey[2]).split(",").includes(itemId),
+  });
+  for (const { queryKey } of loading) {
+    await queryClient.cancelQueries({ queryKey, exact: true });
+    void queryClient.invalidateQueries({ queryKey, exact: true });
+  }
+
+  const holding = cache.findAll({
+    queryKey: BULK_RATINGS_KEY,
+    predicate: (query) =>
+      !loading.includes(query) && !!(query.state.data as RatingsMap | undefined)?.has(itemId),
+  });
   if (holding.length === 0) return;
 
   try {
@@ -26,15 +40,19 @@ export const patchBulkRating = async (queryClient: QueryClient, itemId: string) 
       queryFn: () => ratingsApi.getStats(itemId),
       staleTime: 0,
     });
-    for (const [key] of holding) {
-      const map = queryClient.getQueryData<RatingsMap>(key);
-      if (!map) continue;
+    for (const { queryKey } of holding) {
+      const state = queryClient.getQueryState<RatingsMap>(queryKey);
+      if (!state?.data) continue;
       queryClient.setQueryData<RatingsMap>(
-        key,
-        new Map(map).set(itemId, stats.averageStars ?? null),
+        queryKey,
+        new Map(state.data).set(itemId, stats.averageStars ?? null),
         // The other entries are no fresher than before.
-        { updatedAt: queryClient.getQueryState(key)?.dataUpdatedAt }
+        { updatedAt: state.dataUpdatedAt }
       );
+      // Writing data clears the stale mark an earlier failed refresh left for another item.
+      if (state.isInvalidated) {
+        await queryClient.invalidateQueries({ queryKey, exact: true, refetchType: "none" });
+      }
     }
   } catch {
     // Keep the old values and reload them the next time a list needs them.

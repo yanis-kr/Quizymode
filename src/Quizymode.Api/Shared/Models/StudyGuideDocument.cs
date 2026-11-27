@@ -81,6 +81,12 @@ public sealed class StudyGuideSection
 
     /// <summary>Failed auto-save attempts; the section becomes <see cref="StudyGuideAutoSave.Failed"/> after the cap.</summary>
     public int AutoSaveAttempts { get; set; }
+
+    /// <summary>
+    /// The auto-save skips the daily quotas (AC 17.4): the authenticated caller who last queued this section was an admin.
+    /// It grants nothing else; the saved items stay private.
+    /// </summary>
+    public bool AutoSaveQuotaExempt { get; set; }
 }
 
 /// <summary>Auto-save state of a quick-path section. Stored as a small integer.</summary>

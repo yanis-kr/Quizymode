@@ -149,7 +149,8 @@ public static class QuickStudyGuideDocument
                 documentOptions.Value.RetentionDays,
                 nowUtc,
                 logger,
-                cancellationToken);
+                cancellationToken,
+                quotaExempt: userContext.IsAdmin);
 
             return created.Value.Created
                 ? Results.Created($"/study-guides/documents/{response.Document.Id}", response)
@@ -168,7 +169,8 @@ public static class QuickStudyGuideDocument
         int retentionDays,
         DateTime nowUtc,
         ILogger logger,
-        CancellationToken cancellationToken)
+        CancellationToken cancellationToken,
+        bool quotaExempt = false)
     {
         int cap = Math.Max(1, options.QuickPathMaxSections);
 
@@ -197,7 +199,7 @@ public static class QuickStudyGuideDocument
         }
         else
         {
-            result = await GenerateAsync(document, targets, db, userId, vendors, autoSaver, options, retentionDays, nowUtc, cancellationToken);
+            result = await GenerateAsync(document, targets, db, userId, vendors, autoSaver, options, retentionDays, nowUtc, quotaExempt, cancellationToken);
         }
 
         logger.LogInformation(
@@ -220,17 +222,18 @@ public static class QuickStudyGuideDocument
         StudyGuideGenerationOptions options,
         int retentionDays,
         DateTime nowUtc,
+        bool quotaExempt,
         CancellationToken cancellationToken)
     {
         Guid documentId = Guid.Parse(document.Id);
         GenerateStudyGuideSections.Request request = new(targets.Select(section => Guid.Parse(section.Id)).ToList());
 
         Result<GenerateStudyGuideSections.Response?> generated = await GenerateStudyGuideSections.HandleAsync(
-            documentId, request, db, userId, vendors, options, retentionDays, nowUtc, cancellationToken, autoSave: true, quickPath: true);
+            documentId, request, db, userId, vendors, options, retentionDays, nowUtc, cancellationToken, autoSave: true, quickPath: true, quotaExempt: quotaExempt);
         if (generated.IsFailure && generated.Error.Code == StudyGuideDocumentErrors.Conflict.Code)
         {
             generated = await GenerateStudyGuideSections.HandleAsync(
-                documentId, request, db, userId, vendors, options, retentionDays, nowUtc, cancellationToken, autoSave: true, quickPath: true);
+                documentId, request, db, userId, vendors, options, retentionDays, nowUtc, cancellationToken, autoSave: true, quickPath: true, quotaExempt: quotaExempt);
         }
 
         if (generated.IsFailure)
