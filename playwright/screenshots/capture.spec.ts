@@ -496,7 +496,7 @@ async function waitForCategoryItemsLoaded(page: Page) {
     "button[title*='Remove from ']",
     "h3.text-lg",
     "text=Answer:",
-    "text=No items found.",
+    "text=No questions found.",
   ]);
 }
 
@@ -772,7 +772,7 @@ async function applyKeywordFilterWithResults(page: Page) {
     ]);
 
     const itemCards = await page.locator("h3.text-lg").count().catch(() => 0);
-    const noItems = await page.getByText(/no items found/i).isVisible().catch(() => false);
+    const noItems = await page.getByText(/no questions found/i).isVisible().catch(() => false);
     if (itemCards > 0 && !noItems) {
       return;
     }
@@ -800,8 +800,8 @@ test.describe("User guide screenshots", () => {
 
   shotTest("featured", async (page, testInfo) => {
     await capture(page, testInfo, "featured", "/featured", [
-      "button:has-text('Sets')",
-      "text=No featured sets yet",
+      "button:has-text('Topics')",
+      "text=No featured topics yet",
     ]);
   });
 

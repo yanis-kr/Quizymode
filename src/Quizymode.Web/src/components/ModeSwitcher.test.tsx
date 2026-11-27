@@ -14,7 +14,7 @@ describe("ModeSwitcher", () => {
     );
     expect(screen.getByRole("tab", { name: /list/i })).toBeInTheDocument();
     expect(screen.getByRole("tab", { name: /flashcards/i })).toBeInTheDocument();
-    expect(screen.queryByRole("tab", { name: /sets/i })).not.toBeInTheDocument();
+    expect(screen.queryByRole("tab", { name: /topics/i })).not.toBeInTheDocument();
     expect(screen.queryByRole("tab", { name: /quiz/i })).not.toBeInTheDocument();
   });
 
@@ -26,7 +26,7 @@ describe("ModeSwitcher", () => {
         onChange={() => {}}
       />
     );
-    expect(screen.getByRole("tab", { name: /sets/i })).toBeInTheDocument();
+    expect(screen.getByRole("tab", { name: /topics/i })).toBeInTheDocument();
     expect(screen.getByRole("tab", { name: /list/i })).toBeInTheDocument();
     expect(screen.getByRole("tab", { name: /flashcards/i })).toBeInTheDocument();
     expect(screen.getByRole("tab", { name: /quiz/i })).toBeInTheDocument();
@@ -139,7 +139,7 @@ describe("ModeSwitcher", () => {
       />
     );
     const labels = screen.getAllByRole("tab").map((tab) => tab.textContent);
-    expect(labels).toEqual(["Sets", "List", "Flashcards", "Quiz", "Learn"]);
+    expect(labels).toEqual(["Topics", "List", "Flashcards", "Quiz", "Learn"]);
     expect(screen.getByRole("tab", { name: "Learn" })).toHaveAttribute("aria-selected", "true");
   });
 
@@ -152,7 +152,7 @@ describe("ModeSwitcher", () => {
       />
     );
     const labels = screen.getAllByRole("tab").map((tab) => tab.textContent);
-    expect(labels).toEqual(["Sets", "List", "Flashcards", "Quiz", "Learn", "Games"]);
+    expect(labels).toEqual(["Topics", "List", "Flashcards", "Quiz", "Learn", "Games"]);
     expect(screen.getByRole("tab", { name: "Games" })).toHaveAttribute("aria-selected", "true");
   });
 

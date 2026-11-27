@@ -11,6 +11,7 @@ import { keywordsApi } from "@/api/keywords";
 import type { TaxonomyCategory, TaxonomyL1, TaxonomyL2 } from "@/api/taxonomy";
 import { useTaxonomy } from "@/features/topics/useTaxonomy";
 import { categoryNameToSlug } from "@/utils/categorySlug";
+import { questionCountLabel } from "@/utils/questionCountLabel";
 import LoadingSpinner from "./LoadingSpinner";
 import ErrorMessage from "./ErrorMessage";
 
@@ -161,8 +162,8 @@ function TreeNode({
             {effectiveCount != null ? (
               <span
                 className="rounded bg-slate-200 px-1.5 py-0.5 text-xs font-semibold text-slate-800"
-                aria-label={`${effectiveCount} items`}
-                title={`${effectiveCount} items`}
+                aria-label={questionCountLabel(effectiveCount)}
+                title={questionCountLabel(effectiveCount)}
               >
                 {effectiveCount}
               </span>

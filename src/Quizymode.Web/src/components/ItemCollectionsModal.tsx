@@ -223,7 +223,7 @@ const ItemCollectionsModal = ({
         <div className="flex justify-between items-center mb-4">
           <h3 id="item-collections-modal-title" className="text-lg font-medium text-gray-900">
             {isBulkMode
-              ? `Add ${multipleItemIds.length} Item${multipleItemIds.length > 1 ? "s" : ""} to Collections`
+              ? `Add ${multipleItemIds.length} Question${multipleItemIds.length > 1 ? "s" : ""} to Collections`
               : "Manage Collections"}
           </h3>
           <button

@@ -11,7 +11,7 @@ export const AddFiltersSection = ({
   onAddFilter,
 }: AddFiltersSectionProps) => {
   const filterLabels: Record<FilterType, string> = {
-    itemType: "Item Type",
+    itemType: "Visibility",
     category: "Category",
     keywords: "Keywords",
     search: "Text Search",

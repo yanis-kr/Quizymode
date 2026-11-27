@@ -15,7 +15,7 @@ async function navigateToListItems(page: import("@playwright/test").Page) {
   await page.waitForLoadState("networkidle");
 
   const categoryCard = page
-    .getByRole("button", { name: /\b[1-9]\d* items\b/i })
+    .getByRole("button", { name: /\b[1-9]\d* questions?\b/i })
     .first();
   await expect(categoryCard).toBeVisible({ timeout: 3_000 });
   await categoryCard.click();

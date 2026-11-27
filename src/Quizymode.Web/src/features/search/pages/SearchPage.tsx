@@ -33,7 +33,7 @@ const EMPTY_NOUN: Record<Exclude<SearchTab, "all">, string> = {
   topics: "topics",
   collections: "collections",
   questions: "questions",
-  mine: "items of yours",
+  mine: "questions of yours",
 };
 
 const TAB_BASE =

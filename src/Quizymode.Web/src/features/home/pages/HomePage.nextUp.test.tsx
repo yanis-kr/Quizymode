@@ -102,7 +102,9 @@ describe("HomePage Next up (#670, AC 3.31)", () => {
 
     localStorage.removeItem("quizymode.review.v1");
     renderPage();
-    expect(within(screen.getByTestId("next-up-card")).getByRole("link", { name: /play the next set/i })).toHaveAttribute(
+    // AC 3.4.12 (#922): the topic choice speaks of topics and questions.
+    expect(screen.getByTestId("next-up-card")).toHaveTextContent("Fresh questions from");
+    expect(within(screen.getByTestId("next-up-card")).getByRole("link", { name: /play the next topic/i })).toHaveAttribute(
       "href",
       "/quiz/geography?nav=flags&keywords=flags",
     );

@@ -333,3 +333,44 @@ describe("SearchPage", () => {
     });
   });
 });
+
+describe("SearchPage questions wording (#922)", () => {
+  beforeEach(() => {
+    vi.clearAllMocks();
+  });
+
+  it("AC 3.4.12 says a signed-in visitor has no questions of theirs on an empty Mine tab (#922)", async () => {
+    authState.isAuthenticated = true;
+    mockSearch.mockResolvedValue(response({ mine: { results: [], hasMore: false } }));
+
+    renderPage("/search?q=ai&tab=mine");
+
+    expect(await screen.findByText("No questions of yours for “ai”")).toBeInTheDocument();
+    authState.isAuthenticated = false;
+  });
+
+  it("AC 3.4.12 counts questions on result rows in the singular and plural (#922)", async () => {
+    mockSearch.mockResolvedValue(
+      response({
+        subcategories: {
+          results: [{ categorySlug: "tech", l1: "ai-ml", l2: null, description: null, itemCount: 1 }],
+          hasMore: false,
+        },
+        collections: {
+          results: [
+            { id: COLLECTION_ID, name: "Intro to AI", description: null, itemCount: 30 },
+            { id: ITEM_ID, name: "More AI", description: null, itemCount: 1 },
+          ],
+          hasMore: false,
+        },
+      })
+    );
+
+    renderPage("/search?q=ai");
+
+    expect(await screen.findByText("30 questions")).toBeInTheDocument();
+    // The topic row says it to screen readers only; the collection row shows it.
+    expect(screen.getAllByText("1 question")).toHaveLength(2);
+    expect(document.body.textContent).not.toMatch(/\b(item|items|sets)\b/i);
+  });
+});
