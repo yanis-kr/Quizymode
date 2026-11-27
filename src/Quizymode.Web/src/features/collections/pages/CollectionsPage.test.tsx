@@ -261,8 +261,52 @@ describe("CollectionsPage Discover (#899)", () => {
     mockGetRating.mockResolvedValue({ averageStars: null, count: 0, myStars: null });
     mockGetCategories.mockResolvedValue({ categories: [{ category: "science" }] });
     mockGetNavigationKeywords.mockImplementation((_category: string, selected: string[]) =>
-      Promise.resolve({ keywords: selected.length === 0 ? [{ name: "physics" }] : [{ name: "optics" }] }),
+      Promise.resolve({ keywords: [{ name: selected.length === 0 ? "physics" : "optics", itemCount: 1 }] }),
     );
+  });
+
+  it("AC 1.3.11 offers no empty topic or subtopic in the Discover filters", async () => {
+    signedOut();
+    mockGetNavigationKeywords.mockImplementation((_category: string, selected: string[]) =>
+      Promise.resolve({
+        keywords:
+          selected.length === 0
+            ? [{ name: "physics", itemCount: 2 }, { name: "general", itemCount: 0 }]
+            : [{ name: "optics", itemCount: 2 }, { name: "misc", itemCount: 0 }],
+      }),
+    );
+    renderPage("/collections?tab=discover");
+    await screen.findByText("Public Set");
+    fireEvent.click(filtersButton());
+    await screen.findByRole("option", { name: "science" });
+    change("Category", "science");
+
+    await screen.findByRole("option", { name: "physics" });
+    expect(screen.queryByRole("option", { name: "general" })).not.toBeInTheDocument();
+    change("Topic", "physics");
+
+    await screen.findByRole("option", { name: "optics" });
+    expect(screen.queryByRole("option", { name: "misc" })).not.toBeInTheDocument();
+  });
+
+  it("AC 1.3.11 keeps a selected topic listed when its count drops to 0", async () => {
+    signedOut();
+    let physicsCount = 2;
+    mockGetNavigationKeywords.mockImplementation(() =>
+      Promise.resolve({ keywords: [{ name: "physics", itemCount: physicsCount }] }),
+    );
+    const { queryClient } = renderPage("/collections?tab=discover");
+    await screen.findByText("Public Set");
+    fireEvent.click(filtersButton());
+    await screen.findByRole("option", { name: "science" });
+    change("Category", "science");
+    await screen.findByRole("option", { name: "physics" });
+    change("Topic", "physics");
+
+    physicsCount = 0;
+    await act(() => queryClient.refetchQueries({ queryKey: ["keywords"] }));
+
+    expect(screen.getByLabelText("Topic")).toHaveValue("physics");
   });
 
   it("keeps search visible and hides the filters and Open by ID until Filters is opened", async () => {

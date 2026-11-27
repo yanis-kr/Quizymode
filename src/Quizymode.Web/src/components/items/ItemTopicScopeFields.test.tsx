@@ -237,6 +237,16 @@ describe("ItemTopicScopeFields", () => {
     expect(screen.getByRole("button", { name: /remove topic tech, ai-ml, deep-learning/i })).toHaveFocus();
   });
 
+  it("AC 3.4.10 offers topics with 0 questions in the create, import and edit forms", async () => {
+    // The shared taxonomy fixture has itemCount 0 on every category, topic and subtopic.
+    renderHarness({ initial: { category: "tech", rank1: "ai-ml", rank2: "" } });
+
+    await screen.findByRole("option", { name: "science" });
+    expect(screen.getByRole("option", { name: "ai-ml" })).toBeInTheDocument();
+    expect(screen.getByRole("option", { name: "deep-learning" })).toBeInTheDocument();
+    expect(screen.getByRole("option", { name: "nlp" })).toBeInTheDocument();
+  });
+
   it("an edit-mode stored path renders the pill and no chips", async () => {
     // AC 12.11
     renderHarness({ initial: { category: "tech", rank1: "ai-ml", rank2: "nlp" } });

@@ -55,6 +55,20 @@ describe("My topics editor", () => {
     await waitFor(() => expect(interestsApi.replace).toHaveBeenCalledWith(["languages/french/core"]));
   });
 
+  it("AC 3.4.10 offers topics with 0 questions in the My topics editor", async () => {
+    vi.mocked(interestsApi.get).mockResolvedValue([]);
+    vi.mocked(taxonomyApi.getAll).mockResolvedValue({ categories: [{ slug: "languages", name: "Languages", description: null, itemCount: 0, allKeywordSlugs: ["french", "core"], groups: [{ slug: "french", description: null, itemCount: 0, keywords: [{ slug: "core", description: null, itemCount: 0 }] }] }] });
+    renderEditor();
+    fireEvent.click(screen.getByRole("button", { name: "Change topics" }));
+    await screen.findByRole("checkbox", { name: "Languages" });
+    fireEvent.click(screen.getByText("Refine a topic"));
+    fireEvent.change(await screen.findByLabelText("Category"), { target: { value: "languages" } });
+    fireEvent.change(screen.getByLabelText("Topic (optional)"), { target: { value: "french" } });
+    expect(screen.getByLabelText("Topic (optional)")).toHaveValue("french");
+    fireEvent.change(screen.getByLabelText("Subtopic (optional)"), { target: { value: "core" } });
+    expect(screen.getByLabelText("Subtopic (optional)")).toHaveValue("core");
+  });
+
   it("#380: a failed topics load never lets Save replace the saved topics, and Retry prefills them", async () => {
     vi.mocked(interestsApi.get).mockRejectedValueOnce(new Error("down")).mockResolvedValue(["history"]);
     vi.mocked(interestsApi.replace).mockResolvedValue([]);
