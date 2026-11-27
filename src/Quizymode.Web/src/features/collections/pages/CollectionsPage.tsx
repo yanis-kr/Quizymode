@@ -11,6 +11,7 @@ import {
   TrashIcon,
   ListBulletIcon,
   EyeIcon,
+  FunnelIcon,
   AcademicCapIcon,
   BookmarkIcon,
   MagnifyingGlassIcon,
@@ -49,7 +50,6 @@ interface CollectionCardProps {
   isDiscoverable?: boolean;
   itemCount: number;
   createdAt: string;
-  createdBy?: string;
   isOwner?: boolean;
   isBookmarked?: boolean;
   selectedCollectionId?: string | null;
@@ -79,7 +79,6 @@ function CollectionCard({
   isDiscoverable,
   itemCount,
   createdAt,
-  createdBy,
   isOwner,
   isBookmarked,
   selectedCollectionId,
@@ -155,9 +154,6 @@ function CollectionCard({
         <p className="mt-2 line-clamp-2 text-sm leading-6 text-slate-400">
           {description}
         </p>
-      )}
-      {createdBy && (
-        <p className="mt-1 text-xs font-medium text-slate-400">By {createdBy}</p>
       )}
       <p className="mt-1 text-sm text-slate-400">
         Created {new Date(createdAt).toLocaleDateString()}
@@ -287,13 +283,12 @@ function CollectionCard({
           )}
         </div>
       </div>
-      {showRating && readOnlyRating && (
+      {showRating && readOnlyRating && ratingData?.averageStars != null && (
         <div className="mt-3 flex flex-wrap items-center gap-2 border-t border-on-panel/10 pt-3">
           <span className="text-sm font-medium text-on-panel-muted">Rating</span>
           <div className="flex items-center gap-0.5" aria-hidden>
             {[1, 2, 3, 4, 5].map((star) => {
-              const avg = ratingData?.averageStars;
-              const filled = avg != null && star <= Math.round(avg);
+              const filled = star <= Math.round(ratingData.averageStars ?? 0);
               return filled ? (
                 <span key={star} className="p-0.5" title="Sign in to rate this collection.">
                   <StarIconSolid className="h-5 w-5 text-amber-500" />
@@ -306,9 +301,7 @@ function CollectionCard({
             })}
           </div>
           <span className="text-xs text-slate-400">
-            {ratingData?.averageStars != null
-              ? `${ratingData.averageStars} (${ratingData.count})`
-              : "No ratings yet"}
+            {`${ratingData.averageStars} (${ratingData.count})`}
           </span>
         </div>
       )}
@@ -409,6 +402,7 @@ const CollectionsPage = () => {
   const [discoverNav2, setDiscoverNav2] = useState("");
   const [discoverTags, setDiscoverTags] = useState("");
   const [collectionIdInput, setCollectionIdInput] = useState("");
+  const [discoverFiltersOpen, setDiscoverFiltersOpen] = useState(false);
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -681,6 +675,10 @@ const CollectionsPage = () => {
   const bookmarkedCollections = isAuthenticated ? (bookmarksData?.collections ?? []) : (guestBookmarksData ?? []);
   const discoverItems = discoverData?.items ?? [];
   const discoverTotal = discoverData?.totalCount ?? 0;
+  // Search and Open by ID are not counted: only the filters that Clear filters resets.
+  const discoverFilterCount = [discoverCategory, discoverNav1, discoverNav2, discoverTags].filter(
+    (value) => value.trim() !== "",
+  ).length;
   const discoverHasActiveFilters =
     !!discoverQuery.trim() ||
     !!discoverCategory.trim() ||
@@ -715,7 +713,7 @@ const CollectionsPage = () => {
           <p className="max-w-3xl text-sm leading-6 text-on-panel-muted">
             {isAuthenticated
               ? "Your collections, bookmarks, and discover public collections. You can also open a collection by ID."
-              : "Browse public collections by topic or search. Sign in to manage your own collections and bookmarks. You can open a collection by ID."}
+              : "Browse public collections. Sign in to manage your own."}
           </p>
         </div>
 
@@ -762,141 +760,156 @@ const CollectionsPage = () => {
 
       {activeTab === "discover" && (
         <div className="space-y-4 rounded-[28px] border border-on-panel/10 bg-panel/70 p-5 shadow-sm shadow-slate-950/25">
-          <div className="flex flex-wrap items-center gap-4">
-            <div className="flex flex-wrap items-center gap-2">
-              <div className="relative flex-1 min-w-[200px] max-w-md">
-                <MagnifyingGlassIcon className="absolute left-3 top-1/2 h-5 w-5 -translate-y-1/2 text-slate-500" />
-                <input
-                  type="search"
-                  placeholder="Search public collections..."
-                  value={discoverQuery}
-                  onChange={(e) => {
-                    setDiscoverQuery(e.target.value);
-                    setDiscoverPage(1);
-                  }}
-                  onKeyDown={(e) => e.key === "Enter" && setDiscoverPage(1)}
-                  className="w-full rounded-md border border-on-panel/15 bg-panel-raised/50 px-3 py-2 pl-10 text-sm text-on-panel placeholder:text-slate-400 focus:border-indigo-400 focus:ring-2 focus:ring-indigo-500"
-                />
-              </div>
-              <button
-                type="button"
-                onClick={() => setDiscoverPage(1)}
-                className="rounded-md bg-on-panel/10 px-3 py-2 text-sm text-on-panel hover:bg-on-panel/15"
-              >
-                Search
-              </button>
-            </div>
-            <div className="flex flex-wrap items-center gap-2">
+          <div className="flex flex-wrap items-center gap-2">
+            <div className="relative flex-1 min-w-[200px] max-w-md">
+              <MagnifyingGlassIcon className="absolute left-3 top-1/2 h-5 w-5 -translate-y-1/2 text-slate-500" />
               <input
-                type="text"
-                placeholder="Collection ID (e.g. from link)"
-                value={collectionIdInput}
-                onChange={(e) => setCollectionIdInput(e.target.value.trim())}
-                onKeyDown={(e) => e.key === "Enter" && handleOpenCollectionById()}
-                className="min-w-[240px] rounded-md border border-on-panel/15 bg-panel-raised/50 px-3 py-2 font-mono text-sm text-on-panel placeholder:text-slate-400 focus:border-indigo-400 focus:ring-2 focus:ring-indigo-500"
-              />
-              <button
-                type="button"
-                onClick={handleOpenCollectionById}
-                className="whitespace-nowrap rounded-md bg-indigo-600 px-3 py-2 text-sm text-white hover:bg-indigo-700"
-              >
-                Open by ID
-              </button>
-            </div>
-          </div>
-          <div className="flex flex-wrap items-end gap-3 rounded-2xl border border-on-panel/10 bg-panel-raised/40 p-4">
-            <div>
-              <label htmlFor="discover-category" className="mb-1 block text-xs font-medium text-on-panel-muted">
-                Category
-              </label>
-              <select
-                id="discover-category"
-                value={discoverCategory}
+                type="search"
+                placeholder="Search public collections..."
+                value={discoverQuery}
                 onChange={(e) => {
-                  setDiscoverCategory(e.target.value);
-                  setDiscoverNav1("");
-                  setDiscoverNav2("");
+                  setDiscoverQuery(e.target.value);
                   setDiscoverPage(1);
                 }}
-                className="min-w-[160px] rounded-md border border-on-panel/15 bg-panel-raised/50 px-2 py-2 text-sm text-on-panel focus:ring-2 focus:ring-indigo-500"
-              >
-                <option value="">All categories</option>
-                {sortedDiscoverCategories.map((c) => (
-                  <option key={c.category} value={c.category}>
-                    {c.category}
-                  </option>
-                ))}
-              </select>
-            </div>
-            <div>
-              <label htmlFor="discover-nav1" className="mb-1 block text-xs font-medium text-on-panel-muted">
-                Topic (L1)
-              </label>
-              <select
-                id="discover-nav1"
-                value={discoverNav1}
-                disabled={!discoverCategory.trim() || discoverRank1Loading}
-                onChange={(e) => {
-                  setDiscoverNav1(e.target.value);
-                  setDiscoverNav2("");
-                  setDiscoverPage(1);
-                }}
-                className="min-w-[140px] rounded-md border border-on-panel/15 bg-panel-raised/50 px-2 py-2 text-sm text-on-panel focus:ring-2 focus:ring-indigo-500 disabled:opacity-50"
-              >
-                <option value="">Any</option>
-                {discoverRank1Options.map((k) => (
-                  <option key={k.name} value={k.name}>
-                    {k.name}
-                  </option>
-                ))}
-              </select>
-            </div>
-            <div>
-              <label htmlFor="discover-nav2" className="mb-1 block text-xs font-medium text-on-panel-muted">
-                Subtopic (L2)
-              </label>
-              <select
-                id="discover-nav2"
-                value={discoverNav2}
-                disabled={!discoverNav1.trim() || discoverRank2Loading}
-                onChange={(e) => {
-                  setDiscoverNav2(e.target.value);
-                  setDiscoverPage(1);
-                }}
-                className="min-w-[140px] rounded-md border border-on-panel/15 bg-panel-raised/50 px-2 py-2 text-sm text-on-panel focus:ring-2 focus:ring-indigo-500 disabled:opacity-50"
-              >
-                <option value="">Any</option>
-                {discoverRank2Options.map((k) => (
-                  <option key={k.name} value={k.name}>
-                    {k.name}
-                  </option>
-                ))}
-              </select>
-            </div>
-            <div className="flex-1 min-w-[180px] max-w-xs">
-              <label htmlFor="discover-tags" className="mb-1 block text-xs font-medium text-on-panel-muted">
-                Item tags
-              </label>
-              <input
-                id="discover-tags"
-                type="text"
-                placeholder="e.g. s3, ec2"
-                value={discoverTags}
-                onChange={(e) => {
-                  setDiscoverTags(e.target.value);
-                  setDiscoverPage(1);
-                }}
-                className="w-full rounded-md border border-on-panel/15 bg-panel-raised/50 px-2 py-2 text-sm text-on-panel placeholder:text-slate-400 focus:ring-2 focus:ring-indigo-500"
+                onKeyDown={(e) => e.key === "Enter" && setDiscoverPage(1)}
+                className="w-full rounded-md border border-on-panel/15 bg-panel-raised/50 px-3 py-2 pl-10 text-sm text-on-panel placeholder:text-slate-400 focus:border-indigo-400 focus:ring-2 focus:ring-indigo-500"
               />
             </div>
             <button
               type="button"
-              onClick={clearDiscoverFilters}
-              className="rounded-md border border-on-panel/15 px-3 py-2 text-sm text-on-panel-muted hover:bg-on-panel/10"
+              onClick={() => setDiscoverPage(1)}
+              className="rounded-md bg-on-panel/10 px-3 py-2 text-sm text-on-panel hover:bg-on-panel/15"
             >
-              Clear filters
+              Search
+            </button>
+            <button
+              type="button"
+              aria-expanded={discoverFiltersOpen}
+              aria-controls={discoverFiltersOpen ? "discover-filters-panel" : undefined}
+              onClick={() => setDiscoverFiltersOpen((open) => !open)}
+              className="flex items-center gap-1 rounded-md border border-on-panel/15 px-3 py-2 text-sm text-on-panel hover:bg-on-panel/10"
+            >
+              <FunnelIcon className="h-4 w-4" aria-hidden="true" />
+              {discoverFilterCount > 0 ? `Filters (${discoverFilterCount})` : "Filters"}
             </button>
           </div>
+          {discoverFiltersOpen && (
+            <div
+              id="discover-filters-panel"
+              className="space-y-3 rounded-2xl border border-on-panel/10 bg-panel-raised/40 p-4"
+            >
+              <div className="flex flex-wrap items-end gap-3">
+                <div>
+                  <label htmlFor="discover-category" className="mb-1 block text-xs font-medium text-on-panel-muted">
+                    Category
+                  </label>
+                  <select
+                    id="discover-category"
+                    value={discoverCategory}
+                    onChange={(e) => {
+                      setDiscoverCategory(e.target.value);
+                      setDiscoverNav1("");
+                      setDiscoverNav2("");
+                      setDiscoverPage(1);
+                    }}
+                    className="min-w-[160px] rounded-md border border-on-panel/15 bg-panel-raised/50 px-2 py-2 text-sm text-on-panel focus:ring-2 focus:ring-indigo-500"
+                  >
+                    <option value="">All categories</option>
+                    {sortedDiscoverCategories.map((c) => (
+                      <option key={c.category} value={c.category}>
+                        {c.category}
+                      </option>
+                    ))}
+                  </select>
+                </div>
+                <div>
+                  <label htmlFor="discover-nav1" className="mb-1 block text-xs font-medium text-on-panel-muted">
+                    Topic
+                  </label>
+                  <select
+                    id="discover-nav1"
+                    value={discoverNav1}
+                    disabled={!discoverCategory.trim() || discoverRank1Loading}
+                    onChange={(e) => {
+                      setDiscoverNav1(e.target.value);
+                      setDiscoverNav2("");
+                      setDiscoverPage(1);
+                    }}
+                    className="min-w-[140px] rounded-md border border-on-panel/15 bg-panel-raised/50 px-2 py-2 text-sm text-on-panel focus:ring-2 focus:ring-indigo-500 disabled:opacity-50"
+                  >
+                    <option value="">Any</option>
+                    {discoverRank1Options.map((k) => (
+                      <option key={k.name} value={k.name}>
+                        {k.name}
+                      </option>
+                    ))}
+                  </select>
+                </div>
+                <div>
+                  <label htmlFor="discover-nav2" className="mb-1 block text-xs font-medium text-on-panel-muted">
+                    Subtopic
+                  </label>
+                  <select
+                    id="discover-nav2"
+                    value={discoverNav2}
+                    disabled={!discoverNav1.trim() || discoverRank2Loading}
+                    onChange={(e) => {
+                      setDiscoverNav2(e.target.value);
+                      setDiscoverPage(1);
+                    }}
+                    className="min-w-[140px] rounded-md border border-on-panel/15 bg-panel-raised/50 px-2 py-2 text-sm text-on-panel focus:ring-2 focus:ring-indigo-500 disabled:opacity-50"
+                  >
+                    <option value="">Any</option>
+                    {discoverRank2Options.map((k) => (
+                      <option key={k.name} value={k.name}>
+                        {k.name}
+                      </option>
+                    ))}
+                  </select>
+                </div>
+                <div className="flex-1 min-w-[180px] max-w-xs">
+                  <label htmlFor="discover-tags" className="mb-1 block text-xs font-medium text-on-panel-muted">
+                    Item tags
+                  </label>
+                  <input
+                    id="discover-tags"
+                    type="text"
+                    placeholder="e.g. s3, ec2"
+                    value={discoverTags}
+                    onChange={(e) => {
+                      setDiscoverTags(e.target.value);
+                      setDiscoverPage(1);
+                    }}
+                    className="w-full rounded-md border border-on-panel/15 bg-panel-raised/50 px-2 py-2 text-sm text-on-panel placeholder:text-slate-400 focus:ring-2 focus:ring-indigo-500"
+                  />
+                </div>
+                <button
+                  type="button"
+                  onClick={clearDiscoverFilters}
+                  className="rounded-md border border-on-panel/15 px-3 py-2 text-sm text-on-panel-muted hover:bg-on-panel/10"
+                >
+                  Clear filters
+                </button>
+              </div>
+              <div className="flex flex-wrap items-center gap-2 border-t border-on-panel/10 pt-3">
+                <input
+                  type="text"
+                  placeholder="Collection ID (e.g. from link)"
+                  value={collectionIdInput}
+                  onChange={(e) => setCollectionIdInput(e.target.value.trim())}
+                  onKeyDown={(e) => e.key === "Enter" && handleOpenCollectionById()}
+                  className="min-w-[240px] rounded-md border border-on-panel/15 bg-panel-raised/50 px-3 py-2 font-mono text-sm text-on-panel placeholder:text-slate-400 focus:border-indigo-400 focus:ring-2 focus:ring-indigo-500"
+                />
+                <button
+                  type="button"
+                  onClick={handleOpenCollectionById}
+                  className="whitespace-nowrap rounded-md bg-indigo-600 px-3 py-2 text-sm text-white hover:bg-indigo-700"
+                >
+                  Open by ID
+                </button>
+              </div>
+            </div>
+          )}
         </div>
       )}
 
@@ -1159,12 +1172,12 @@ const CollectionsPage = () => {
                 name={c.name}
                 itemCount={c.itemCount}
                 createdAt={c.createdAt}
-                createdBy={c.createdBy}
                 isOwner={currentUserId ? c.createdBy === currentUserId : false}
                 isBookmarked={true}
                 onUnbookmark={isAuthenticated ? (id) => unbookmarkMutation.mutate(id) : unbookmarkAsGuest}
                 isBookmarkPending={unbookmarkMutation.isPending}
                 showRating={true}
+                readOnlyRating={!isAuthenticated}
               />
             ))}
           </div>
@@ -1182,7 +1195,8 @@ const CollectionsPage = () => {
           ) : discoverItems.length > 0 ? (
             <>
               <p className="mb-4 text-sm text-on-panel-muted">
-                {discoverTotal} public collection{discoverTotal !== 1 ? "s" : ""} found. Make your collection public in its settings to appear here.
+                {discoverTotal} public collection{discoverTotal !== 1 ? "s" : ""} found.
+                {isAuthenticated && " Make your collection public in its settings to appear here."}
               </p>
               <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
                 {discoverItems.map((c: CollectionDiscoverItem) => (
@@ -1192,7 +1206,6 @@ const CollectionsPage = () => {
                     name={c.name}
                     itemCount={c.itemCount}
                     createdAt={c.createdAt}
-                    createdBy={c.createdBy}
                     isOwner={false}
                     isBookmarked={isAuthenticated ? c.isBookmarked : guestBookmarkIds.includes(c.id.toLowerCase())}
                     onBookmark={
