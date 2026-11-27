@@ -47,7 +47,7 @@ function renderShellWithUnmount(): { unmount: () => void } {
 }
 
 function donationLinks(): HTMLElement[] {
-  return screen.queryAllByRole("link", { name: /Support Quizymode/ });
+  return screen.queryAllByRole("link", { name: /support Quizymode/i });
 }
 
 describe("donation link rendering (#497)", () => {
@@ -80,7 +80,13 @@ describe("donation link rendering (#497)", () => {
       expect(link).toHaveAttribute("href", DONATION_URL);
       expect(link).toHaveAttribute("target", "_blank");
       expect(link).toHaveAttribute("rel", "noopener noreferrer");
-      expect(link).toHaveAttribute("aria-label", "Support Quizymode (opens ko-fi.com in a new tab)");
+      // The About link shows the host as its text, so its name starts with it (AC 3.0.42); the footer link does not.
+      expect(link).toHaveAttribute(
+        "aria-label",
+        link.textContent === "ko-fi.com"
+          ? "ko-fi.com: support Quizymode (opens in a new tab)"
+          : "Support Quizymode (opens ko-fi.com in a new tab)",
+      );
     }
   });
 

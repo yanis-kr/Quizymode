@@ -170,7 +170,9 @@ describe("AboutPage (#883)", () => {
         </QueryClientProvider>
       </HelmetProvider>
     );
-    const link = screen.getByRole("link", { name: "Support Quizymode (opens ko-fi.com in a new tab)" });
+    const link = screen.getByRole("link", { name: "ko-fi.com: support Quizymode (opens in a new tab)" });
+    // The accessible name starts with the visible text (WCAG 2.5.3).
+    expect(link.getAttribute("aria-label")?.startsWith(link.textContent ?? "-")).toBe(true);
     expectExternal(link, "https://ko-fi.com/example");
     const text = link.closest("p")?.textContent ?? "";
     expect(text).toContain("Quizymode is free to use.");
