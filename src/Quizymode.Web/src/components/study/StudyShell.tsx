@@ -50,7 +50,7 @@ export interface StudyShellProps {
   isAuthenticated: boolean;
   /** When false (e.g. quiz before answer), hide ratings and collection controls. Default true. */
   showRatingsAndCollections?: boolean;
-  /** Hides the "View item details" link (Test: the details page would show the answer). */
+  /** Hides the "View question details" link (Test: the details page would show the answer). */
   hideItemDetailsLink?: boolean;
   /** Opens the keyboard shortcuts dialog; shows the Shortcuts hint beside the details link. */
   onOpenShortcuts?: () => void;
@@ -126,7 +126,7 @@ export function StudyShell({
                   onClick={onPrev}
                   disabled={isPrevDisabled}
                   className="p-1 text-gray-600 hover:text-gray-900 disabled:text-gray-300 disabled:cursor-not-allowed"
-                  title="Previous item"
+                  title="Previous question"
                 >
                   <ChevronLeftIcon className="h-5 w-5" />
                 </button>
@@ -148,7 +148,7 @@ export function StudyShell({
                   onClick={onNext}
                   disabled={isNextDisabled}
                   className="p-1 text-gray-600 hover:text-gray-900 disabled:text-gray-300 disabled:cursor-not-allowed"
-                  title={nextLabel === "Next" ? "Next item" : nextLabel}
+                  title={nextLabel === "Next" ? "Next question" : nextLabel}
                 >
                   <ChevronRightIcon className="h-5 w-5" />
                 </button>
@@ -160,7 +160,7 @@ export function StudyShell({
                 <Link
                   to={itemDetailHref ?? `/items/${currentItem.id}`}
                   className="p-1.5 text-indigo-ink hover:bg-indigo-50 rounded-md"
-                  title="View item details"
+                  title="View question details"
                 >
                   <EyeIcon className="h-5 w-5" />
                 </Link>

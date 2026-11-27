@@ -362,7 +362,7 @@ export function QuizCompletionView({
             {primaryAction !== "share" && shareButton({ asLink: true })}
             {gamesPath && (
               <Link to={gamesPath} className={LINK_ACTION_CLASS}>
-                Play a game with this set
+                Play a game with these questions
               </Link>
             )}
             <Link to={browsePath} className={LINK_ACTION_CLASS}>

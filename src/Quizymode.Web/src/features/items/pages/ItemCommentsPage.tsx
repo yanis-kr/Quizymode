@@ -158,7 +158,7 @@ const ItemCommentsPage = () => {
             onClick={handleNavigateBack}
             className="text-indigo-ink hover:text-indigo-ink text-sm font-medium"
           >
-            ← Back to item
+            ← Back to question
           </button>
           {hasNavigation && (
             <div className="flex space-x-2">
@@ -184,7 +184,7 @@ const ItemCommentsPage = () => {
 
         <h1 className="text-3xl font-bold text-gray-900 mb-2">Comments</h1>
         <p className="text-gray-600 text-sm mb-6">
-          View and manage comments for this quiz item. Add your own comments, edit or delete your comments, and navigate to related items mentioned in comments.
+          View and manage comments for this quiz question. Add your own comments, edit or delete your comments, and navigate to related questions mentioned in comments.
         </p>
 
         {/* Add Comment Form */}

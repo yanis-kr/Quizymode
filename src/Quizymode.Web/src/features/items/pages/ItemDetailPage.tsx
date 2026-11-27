@@ -70,10 +70,10 @@ const ItemDetailPage = () => {
         status === 401
           ? "Your session has expired. Please sign in again."
           : status === 403
-            ? "You can only delete your own items."
+            ? "You can only delete your own questions."
             : status === 404
-              ? "This item no longer exists."
-              : "Could not delete this item. Try again."
+              ? "This question no longer exists."
+              : "Could not delete this question. Try again."
       );
     },
   });
@@ -88,7 +88,7 @@ const ItemDetailPage = () => {
     return (
       <div className="px-4 py-6 sm:px-0">
         <ErrorMessage
-          message="Failed to load item. It may not exist or you may not have access."
+          message="Failed to load question. It may not exist or you may not have access."
           onRetry={() => refetch()}
         />
         {returnUrl ? (
@@ -182,7 +182,7 @@ const ItemDetailPage = () => {
               <button
                 type="button"
                 onClick={() => {
-                  if (window.confirm("Are you sure you want to delete this item? This cannot be undone.")) {
+                  if (window.confirm("Are you sure you want to delete this question? This cannot be undone.")) {
                     setDeleteError(null);
                     deleteMutation.mutate();
                   }
@@ -206,7 +206,7 @@ const ItemDetailPage = () => {
         <div className="bg-surface shadow rounded-lg p-6">
           <div className="flex items-center gap-2 mb-4 text-gray-500">
             <EyeIcon className="h-5 w-5" />
-            <span className="text-sm font-medium">Item details</span>
+            <span className="text-sm font-medium">Question details</span>
           </div>
 
           <div className="space-y-6">

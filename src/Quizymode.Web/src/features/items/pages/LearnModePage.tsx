@@ -585,7 +585,7 @@ const LearnModePage = () => {
 
   const restartControl = confirmingRestart ? (
     <div role="group" aria-label="Start over" className="flex flex-wrap items-center gap-3 text-sm">
-      <span className="text-gray-700">Start over? Your progress in this set will be lost.</span>
+      <span className="text-gray-700">Start over? Your progress on these questions will be lost.</span>
       <button type="button" onClick={startNewRun} className="font-medium text-red-700 underline">
         Start over
       </button>
@@ -629,11 +629,11 @@ const LearnModePage = () => {
       <div className="min-w-0">
         <h1 className="truncate text-lg font-semibold text-gray-900">{title}</h1>
         <p className="text-xs font-medium text-gray-700">Learn, Test and Review are free.</p>
-        <p className="text-xs text-gray-500">Quiz: one pass. Learn: repeat until mastered. Review: spaced, due items.</p>
+        <p className="text-xs text-gray-500">Quiz: one pass. Learn: repeat until mastered. Review: spaced, due questions.</p>
       </div>
       {!collectionId && (
         <label className="flex items-center gap-2 text-sm text-gray-700">
-          <span>Items to learn:</span>
+          <span>Questions to learn:</span>
           <input
             type="number"
             min={1}

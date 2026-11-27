@@ -237,7 +237,7 @@ describe("CollectionsPage Discover (#899)", () => {
     createdAt: "2024-01-01T00:00:00Z",
     isBookmarked: false,
   };
-  const filterLabels = ["Category", "Topic", "Subtopic", "Item tags"];
+  const filterLabels = ["Category", "Topic", "Subtopic", "Question tags"];
 
   const signedOut = () => mockUseAuth.mockReturnValue({ isAuthenticated: false, userId: null, isAdmin: false });
   const signedIn = () => mockUseAuth.mockReturnValue({ isAuthenticated: true, userId: "u1", isAdmin: false });
@@ -350,7 +350,7 @@ describe("CollectionsPage Discover (#899)", () => {
     // Display name on the option, stored name as its value and in the request (#902).
     expect(await screen.findByRole("option", { name: "Science" })).toHaveValue("science");
     change("Category", "science");
-    change("Item tags", "s3");
+    change("Question tags", "s3");
     expect(filtersButton()).toHaveTextContent("Filters (2)");
     await waitFor(() => expect(lastDiscoverCall()).toMatchObject({ category: "science", tags: "s3", q: "set" }));
 
@@ -373,7 +373,7 @@ describe("CollectionsPage Discover (#899)", () => {
     expect(screen.getByLabelText("Category")).toHaveValue("science");
     expect(screen.getByLabelText("Topic")).toHaveValue("physics");
     expect(screen.getByLabelText("Subtopic")).toHaveValue("optics");
-    expect(screen.getByLabelText("Item tags")).toHaveValue("s3");
+    expect(screen.getByLabelText("Question tags")).toHaveValue("s3");
     expect(screen.getByPlaceholderText(/collection id/i)).toHaveValue(collectionId);
 
     fireEvent.click(screen.getByRole("button", { name: "Clear filters" }));
@@ -513,5 +513,20 @@ describe("CollectionsPage Discover (#899)", () => {
     renderPage("/collections?tab=discover");
 
     expect(await screen.findByText("Browse public collections. Sign in to manage your own.")).toBeInTheDocument();
+  });
+
+  it("AC 3.6.49 counts questions on collection cards in the singular and plural and names the Question tags filter (#923)", async () => {
+    signedOut();
+    mockDiscover.mockResolvedValue({
+      items: [{ ...card, itemCount: 1 }, { ...card, id: "00000000-0000-4000-8000-00000000000e", name: "Bigger Deck" }],
+      totalCount: 2,
+    });
+    renderPage("/collections?tab=discover");
+
+    expect(await screen.findByText("1 question")).toBeInTheDocument();
+    expect(screen.getByText("4 questions")).toBeInTheDocument();
+    fireEvent.click(filtersButton());
+    expect(screen.getByLabelText("Question tags")).toHaveAttribute("placeholder", "e.g. s3, ec2");
+    expect(screen.queryByText(/\bitems?\b/i)).not.toBeInTheDocument();
   });
 });

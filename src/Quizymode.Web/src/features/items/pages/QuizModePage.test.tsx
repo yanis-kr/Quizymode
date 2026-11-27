@@ -764,7 +764,7 @@ describe("QuizModePage", () => {
     vi.mocked(collectionsApi.getItems).mockResolvedValueOnce({ items: [] });
     renderPage("/quiz/collections/collection-1/practice+set");
 
-    expect(await screen.findByText(/no playable quiz items/i)).toBeInTheDocument();
+    expect(await screen.findByText(/no questions to play/i)).toBeInTheDocument();
     expect(screen.queryByText(/quiz complete/i)).not.toBeInTheDocument();
   });
 
@@ -778,7 +778,7 @@ describe("QuizModePage", () => {
     expect(screen.queryByText(legacy.question)).not.toBeInTheDocument();
   });
 
-  it("counts the playable roster in the collection quiz header, not the detail itemCount (#555, AC 1.5.9)", async () => {
+  it("AC 3.6.49 counts the playable roster in the collection quiz header, not the detail itemCount (#555, AC 1.5.9)", async () => {
     // The detail says 3 (for example, a nested question), but only 1 playable item is in the roster the quiz plays.
     vi.mocked(collectionsApi.getById).mockResolvedValueOnce({
       id: "collection-1",
@@ -794,20 +794,28 @@ describe("QuizModePage", () => {
     renderPage("/quiz/collections/collection-1/practice+set");
 
     expect(await screen.findByText("What is 2 + 2?")).toBeInTheDocument();
-    expect(screen.getByText("1 items")).toBeInTheDocument();
-    expect(screen.queryByText("3 items")).not.toBeInTheDocument();
+    expect(screen.getByText("1 question")).toBeInTheDocument();
+    expect(screen.queryByText("3 questions")).not.toBeInTheDocument();
   });
 
-  it("shows the empty state when every collection item is unplayable", async () => {
+  it("AC 3.6.49 counts two playable questions in the plural in the collection quiz header (#923)", async () => {
+    vi.mocked(collectionsApi.getItems).mockResolvedValueOnce({ items: [item, secondItem] });
+    renderPage("/quiz/collections/collection-1/practice+set");
+
+    expect(await screen.findByText("2 questions")).toBeInTheDocument();
+  });
+
+  it("AC 3.6.49 AC 3.6.50 shows the empty state when every collection item is unplayable", async () => {
     // AC 3.6.17
     const legacy = { ...item, incorrectAnswers: [] };
     vi.mocked(collectionsApi.getItems).mockResolvedValueOnce({ items: [legacy] });
     renderPage("/quiz/collections/collection-1/practice+set");
 
-    expect(await screen.findByText(/no playable quiz items/i)).toBeInTheDocument();
+    expect(await screen.findByText("This collection has no questions to play.")).toBeInTheDocument();
+    expect(screen.getByRole("link", { name: /categories/i })).toHaveAttribute("href", "/categories");
   });
 
-  it("shows No items found for a deep link to an unplayable item", async () => {
+  it("AC 3.6.49 shows No questions found for a deep link to an unplayable item", async () => {
     // AC 3.6.17
     const legacy = { ...item, incorrectAnswers: [""] };
     vi.mocked(itemsApi.getById).mockResolvedValue(legacy as Awaited<ReturnType<typeof itemsApi.getById>>);
@@ -823,7 +831,7 @@ describe("QuizModePage", () => {
     } as Awaited<ReturnType<typeof itemsApi.getAll>>);
     renderPage("/quiz/exams/item/item-1");
 
-    expect(await screen.findByText(/no items found/i)).toBeInTheDocument();
+    expect(await screen.findByText(/no questions found/i)).toBeInTheDocument();
     // AC 3.6.17 (#275): with nothing playable the URL is left unchanged.
     expect(screen.getByTestId("location")).toHaveTextContent("/quiz/exams/item/item-1");
   });

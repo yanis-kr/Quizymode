@@ -68,11 +68,11 @@ describe("ItemCommentsPage return URL (AC 4.3.5c)", () => {
     } as unknown as Awaited<ReturnType<typeof commentsApi.getByItemId>>);
   });
 
-  it("navigates back to a safe same-origin return path", async () => {
+  it("AC 3.6.49 AC 3.6.50 Back to question navigates to a safe same-origin return path", async () => {
     const user = userEvent.setup({ delay: null });
     renderPage("/items/item-1/comments?return=%2Fquiz%2Fexams%2Fitem%2Fitem-1");
 
-    await user.click(await screen.findByRole("button", { name: /back to item/i }));
+    await user.click(await screen.findByRole("button", { name: /back to question/i }));
 
     await waitFor(() =>
       expect(screen.getByTestId("location")).toHaveTextContent("/quiz/exams/item/item-1")
@@ -85,7 +85,7 @@ describe("ItemCommentsPage return URL (AC 4.3.5c)", () => {
       const user = userEvent.setup({ delay: null });
       renderPage(`/items/item-1/comments?return=${bad}`);
 
-      await user.click(await screen.findByRole("button", { name: /back to item/i }));
+      await user.click(await screen.findByRole("button", { name: /back to question/i }));
 
       await waitFor(() => expect(screen.getByTestId("location")).toHaveTextContent("/explore/item/item-1"));
       expect(screen.getByTestId("location")).not.toHaveTextContent("evil");

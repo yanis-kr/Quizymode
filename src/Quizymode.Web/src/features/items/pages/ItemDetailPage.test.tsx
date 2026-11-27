@@ -128,7 +128,7 @@ describe("ItemDetailPage", () => {
 
     renderPage("/items/item-1");
 
-    await screen.findByText("Item details");
+    await screen.findByText("Question details");
     expect(screen.queryByTestId("question-image")).not.toBeInTheDocument();
   });
 
@@ -183,7 +183,7 @@ describe("ItemDetailPage", () => {
 
       renderPage(`/items/item-1?return=${bad}&returnMode=quiz`);
 
-      await screen.findByText("Item details");
+      await screen.findByText("Question details");
       expect(screen.queryByRole("button", { name: /^back/i })).not.toBeInTheDocument();
     }
   );
@@ -197,10 +197,10 @@ describe("ItemDetailPage", () => {
 
     it.each([
       [401, "Your session has expired. Please sign in again."],
-      [403, "You can only delete your own items."],
-      [404, "This item no longer exists."],
-      [500, "Could not delete this item. Try again."],
-    ])("shows a clear message for a %s delete failure and stays on the page", async (status, message) => {
+      [403, "You can only delete your own questions."],
+      [404, "This question no longer exists."],
+      [500, "Could not delete this question. Try again."],
+    ])("AC 3.6.49 shows a clear message for a %s delete failure and stays on the page", async (status, message) => {
       // AC 2.1.14
       authState.isAuthenticated = true;
       authState.currentUserId = "user-1";

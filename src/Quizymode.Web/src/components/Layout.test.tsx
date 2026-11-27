@@ -228,4 +228,13 @@ describe("Layout", () => {
       expect(document.title).toBe("My Study Guides | Quizymode");
     });
   });
+
+  it.each([
+    ["/items", "Questions"],
+    ["/items/item-1", "Question Details"],
+    ["/items/item-1/comments", "Question Comments"],
+  ])("AC 3.6.49 titles %s %s (#923)", async (path, title) => {
+    renderLayout([path]);
+    await waitFor(() => expect(document.title).toBe(`${title} | Quizymode`));
+  });
 });

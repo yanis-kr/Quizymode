@@ -63,7 +63,7 @@ function SourceActions({ summary }: { summary: GuestRunSummary }) {
       <p className="text-xs text-on-panel-muted">
         <span className="font-semibold text-on-panel">{topicLabel}</span>
         {source.kind !== "collection" && (
-          <span> · Practice again starts a new random set from this topic.</span>
+          <span> · Practice again starts a new random group of questions from this topic.</span>
         )}
       </p>
       <div className="mt-2 flex flex-wrap items-center gap-2">

@@ -85,7 +85,7 @@ test("AC 3.6.47 at 375 px the quiz results have no horizontal scroll, every acti
     results.getByRole("button", { name: "Review mistakes" }),
     results.getByRole("button", { name: "Play again (same questions)" }),
     results.getByRole("button", { name: "Share result" }),
-    results.getByRole("link", { name: "Play a game with this set" }),
+    results.getByRole("link", { name: "Play a game with these questions" }),
     results.getByRole("link", { name: "Browse topic" }),
     results.getByRole("link", { name: /AWS Solutions Architect Professional/ }),
     results.getByRole("link", { name: /AWS Developer Associate/ }),

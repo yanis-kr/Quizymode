@@ -65,7 +65,7 @@ function getFallbackTitle(pathname: string): string | undefined {
   }
 
   if (pathname === "/items") {
-    return "Items";
+    return "Questions";
   }
 
   if (pathname === "/create") {
@@ -93,11 +93,11 @@ function getFallbackTitle(pathname: string): string | undefined {
   }
 
   if (pathname.includes("/comments")) {
-    return "Item Comments";
+    return "Question Comments";
   }
 
   if (pathname.startsWith("/items/")) {
-    return "Item Details";
+    return "Question Details";
   }
 
   if (pathname === "/search") {
