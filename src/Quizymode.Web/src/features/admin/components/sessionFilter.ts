@@ -1,4 +1,4 @@
-import { z } from "zod";
+import { z } from "@/utils/zodConfig";
 
 /** Mirrors the API limit on the sessionId filter. */
 export const MAX_SESSION_ID_LENGTH = 128;

@@ -795,6 +795,10 @@ jobs:
           done
           echo "web server did not start"; tail -n 80 vite.log; exit 1
 
+      # AC 4.6.27: built-csp.spec.ts loads the production bundle from dist under the production Content-Security-Policy.
+      - name: Build the web app for the production bundle check
+        run: npm run build --prefix src/Quizymode.Web
+
       - name: Run E2E tests
         env:
           PLAYWRIGHT_BASE_URL: http://localhost:7000

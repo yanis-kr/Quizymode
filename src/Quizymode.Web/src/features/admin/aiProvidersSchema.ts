@@ -1,4 +1,4 @@
-import { z } from "zod";
+import { z } from "@/utils/zodConfig";
 import { LLM_VENDORS, type LlmVendor } from "@/api/adminLlmProviders";
 
 const vendorSchema = z.enum(LLM_VENDORS as [LlmVendor, ...LlmVendor[]]);
