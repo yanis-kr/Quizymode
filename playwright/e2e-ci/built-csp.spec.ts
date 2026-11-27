@@ -1,8 +1,8 @@
 import fs from "node:fs";
 import path from "node:path";
-import { expect, test } from "@playwright/test";
 import { BUILT_APP_ORIGIN, readCspViolations, serveBuiltApp, watchCspViolations } from "../../scripts/infra/built-app-csp.mjs";
 import { buildCsp, parseEnv } from "../../scripts/infra/web-security-headers.mjs";
+import { expect, test } from "../fixtures";
 
 // AC 4.6.27 (#918): chunk evaluation order exists only in the production build, so this reads `dist` (built by the CI e2e
 // job before the tests), not the Development server the other specs use.
