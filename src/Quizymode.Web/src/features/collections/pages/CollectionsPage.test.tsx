@@ -586,6 +586,7 @@ describe("CollectionsPage Discover (#899)", () => {
     renderPage("/collections?tab=discover");
 
     expect(await screen.findByText("1 question")).toBeInTheDocument();
+    // getByText also proves each card shows its count once (#929).
     expect(screen.getByText("4 questions")).toBeInTheDocument();
     fireEvent.click(filtersButton());
     expect(screen.getByLabelText("Question tags")).toHaveAttribute("placeholder", "e.g. s3, ec2");

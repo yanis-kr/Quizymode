@@ -6,6 +6,7 @@ import { categoriesApi } from "@/api/categories";
 import { keywordsApi } from "@/api/keywords";
 import { searchApi } from "@/api/search";
 import { getApiErrorMessage } from "@/utils/apiError";
+import { categoryDisplayName } from "@/utils/categorySlug";
 
 /** The deepest a collection may nest: root is level 0, so a member may sit at most this many levels below it (AC 1.16.5). */
 export const MAX_NESTING_DEPTH = 3;
@@ -238,7 +239,7 @@ function TopicsPanel({ collectionId }: { collectionId: string }) {
           <option value="">Choose a category</option>
           {categories.map((c) => (
             <option key={c.id} value={c.id}>
-              {c.category}
+              {categoryDisplayName(c.category)}
             </option>
           ))}
         </select>

@@ -1568,10 +1568,13 @@ const QuizModePageContent = ({ resumeRequested = false, initialNotice = null }: 
             </div>
           </div>
           <div className="flex flex-wrap items-center gap-4">
-            <div className="text-sm text-gray-600">
-              {/* AC 1.5.9: the header counts the playable roster the quiz plays, the same list as the run (not the detail count). */}
-              {collectionLoading ? "Loading questions" : questionCountLabel(playableItems.length)}
-            </div>
+            {/* The Test setup card states the count itself, so the header leaves it out there (#929). */}
+            {!(run.mode === "test" && run.startedAt === null) && (
+              <div className="text-sm text-gray-600">
+                {/* AC 1.5.9: the header counts the playable roster the quiz plays, the same list as the run (not the detail count). */}
+                {collectionLoading ? "Loading questions" : questionCountLabel(playableItems.length)}
+              </div>
+            )}
             {ratingData && (
               <div className="flex items-center gap-2">
                 <span className="text-sm font-medium text-gray-700">Rating</span>

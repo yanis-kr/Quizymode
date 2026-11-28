@@ -254,6 +254,12 @@ describe("ExploreModePage", () => {
     );
   });
 
+  it("shows the category display name in the breadcrumb (#929)", async () => {
+    renderPage("/explore/exams/item/item-1?nav=act,math&keywords=act,math,algebra");
+
+    expect(await screen.findByRole("button", { name: "Exams" })).toBeInTheDocument();
+  });
+
   it("starts one Flashcards run once items load and reports the first reveal", async () => {
     const user = userEvent.setup({ delay: null });
     renderPage("/explore/exams/item/item-1?nav=act,math&keywords=act,math,algebra");

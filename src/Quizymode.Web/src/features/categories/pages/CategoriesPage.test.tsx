@@ -669,6 +669,18 @@ describe("CategoriesPage category display names (#902)", () => {
     expect(within(tile).getByRole("heading", { name: "capitals" })).toBeInTheDocument();
   });
 
+  it.each(["/categories/geography?view=sets", "/categories/geography?view=items"])(
+    "shows the category display name in the breadcrumb of %s and keeps the slug in its address (#929)",
+    async (url) => {
+      const user = userEvent.setup({ delay: null });
+      renderWithLocation(url);
+
+      await user.click(await screen.findByRole("button", { name: "Geography" }));
+
+      await waitFor(() => expect(screen.getByTestId("location").textContent).toMatch(/^\/categories\/geography\?/));
+    }
+  );
+
   it.each(["/categories/geography", "/categories/geography?view=items"])(
     "capitalises the category filter options at %s and keeps their values",
     async (url) => {
@@ -759,14 +771,33 @@ describe("Questions and topics wording (#922)", () => {
     expect(screen.queryByText("Item Type")).not.toBeInTheDocument();
   });
 
-  // ActionButtons gets no onListSets handler and the Topics branch never renders for a childless scope, so these two
-  // strings cannot be reached through the page; the source is the only place to check them.
-  it("AC 3.4.12 keeps the unreachable List topics and end-of-subtopics strings in the new wording (#922)", () => {
-    expect(categoriesPageSource).toContain("List topics");
+  it.each([
+    ["the topic tiles", "/categories/geography"],
+    ["an empty topic level", "/categories/geography/empty-topic"],
+    ["the List view", "/categories/geography?view=items"],
+    ["a childless scope", "/categories/geography/capitals/europe?view=sets"],
+  ])("renders no List topics button on %s (#929)", async (_state, url) => {
+    renderAt(url);
+
+    await screen.findAllByRole("tab", { name: "List" });
+    expect(screen.queryByRole("button", { name: "List topics" })).not.toBeInTheDocument();
+  });
+
+  it("renders no List topics button when the topics cannot be loaded (#929)", async () => {
+    vi.mocked(keywordsApi.getNavigationKeywords).mockRejectedValue(new Error("down"));
+    renderAt("/categories/geography");
+
+    expect(await screen.findByRole("button", { name: "List questions" })).toBeInTheDocument();
+    expect(screen.queryByRole("button", { name: "List topics" })).not.toBeInTheDocument();
+  });
+
+  // The Topics branch never renders for a childless scope, so this message cannot be reached through the page; it was
+  // not proved removable for every state, so it stays (#929).
+  it("AC 3.4.12 keeps the end-of-subtopics message and has no List topics handler left (#922, #929)", () => {
     expect(categoriesPageSource).toContain(
       "There are no more subtopics here. Browse questions, use flashcards, or take a quiz."
     );
-    expect(categoriesPageSource).not.toMatch(/List sets|List items|sets hierarchy/);
+    expect(categoriesPageSource).not.toMatch(/List topics|onListSets|List sets|List items|sets hierarchy/);
   });
 });
 

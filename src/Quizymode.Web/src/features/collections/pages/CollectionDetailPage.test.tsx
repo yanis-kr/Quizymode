@@ -212,7 +212,7 @@ describe("CollectionDetailPage wording (#923)", () => {
   it.each([
     [1, "1 question"],
     [2, "2 questions"],
-  ])("AC 3.6.49 counts %i in the collection bar and lists the count under Questions in the details", async (count, label) => {
+  ])("AC 3.6.49 shows the count of %i once (#929) and lists it under Questions in the details", async (count, label) => {
     vi.mocked(collectionsApi.getById).mockResolvedValue({
       id: "c1",
       name: "Bio Set",
@@ -226,8 +226,10 @@ describe("CollectionDetailPage wording (#923)", () => {
     const user = userEvent.setup({ delay: null });
     renderPage();
 
-    // The bar above the list and the landing header both count the questions.
-    await waitFor(() => expect(screen.getAllByText(label)).toHaveLength(2));
+    // Only the landing header counts the questions (#929).
+    await waitFor(() => expect(screen.getAllByText(label)).toHaveLength(1));
+    await screen.findByRole("button", { name: /details/i });
+    expect(screen.getAllByText(label)).toHaveLength(1);
     await user.click(screen.getByRole("button", { name: /details/i }));
     expect(screen.getByText("Questions", { selector: "dt" })).toBeInTheDocument();
     expect(document.body.textContent).not.toMatch(/\b(item|items|sets)\b/i);

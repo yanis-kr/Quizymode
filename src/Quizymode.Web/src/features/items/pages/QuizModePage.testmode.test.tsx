@@ -222,8 +222,9 @@ describe("QuizModePage Test mode (AC 3.18)", () => {
     await renderPageWithOptions(TEST_URL);
 
     expect(await screen.findByRole("heading", { name: "Test mode" })).toBeInTheDocument();
-    // The collection bar and the setup card both show the count.
-    expect(screen.getAllByText("3 questions")).toHaveLength(2);
+    // Only the setup card shows the count (#929).
+    expect(await screen.findByRole("button", { name: "Details" })).toBeInTheDocument();
+    expect(screen.getAllByText("3 questions")).toHaveLength(1);
     expect(screen.getByText("Learn, Test and Review are free.")).toBeInTheDocument();
     expect(screen.getByLabelText("Time limit")).toHaveValue("none");
     expect(screen.getByRole("button", { name: "Start test" })).toBeEnabled();

@@ -301,7 +301,7 @@ describe("EditItemPage", () => {
 
     renderPage("/items/item-1/edit");
 
-    expect(await screen.findByText("You can only edit your own items.")).toBeInTheDocument();
+    expect(await screen.findByText("You can only edit your own questions.")).toBeInTheDocument();
     expect(screen.queryByRole("button", { name: /^save$/i })).not.toBeInTheDocument();
   });
 
@@ -316,7 +316,7 @@ describe("EditItemPage", () => {
     renderPage("/items/item-1/edit");
 
     expect(await screen.findByText("Loading...")).toBeInTheDocument();
-    expect(screen.queryByText("You can only edit your own items.")).not.toBeInTheDocument();
+    expect(screen.queryByText("You can only edit your own questions.")).not.toBeInTheDocument();
     expect(screen.queryByRole("button", { name: /^save$/i })).not.toBeInTheDocument();
   });
 
@@ -353,8 +353,8 @@ describe("EditItemPage", () => {
 
   it.each([
     [401, "Your session has expired. Please sign in again."],
-    [403, "You can only edit your own items."],
-    [404, "This item no longer exists, or you do not have access to it."],
+    [403, "You can only edit your own questions."],
+    [404, "This question no longer exists, or you do not have access to it."],
   ])("maps a %s save failure to a clear message without leaving the page (#286)", async (status, message) => {
     // AC 2.1.14
     const user = userEvent.setup({ delay: null });
@@ -601,7 +601,7 @@ describe("EditItemPage", () => {
   });
 
   describe("re-review of public items (#290)", () => {
-    const NOTICE = "Saving changes will make this item private again until an administrator approves it.";
+    const NOTICE = "Saving changes will make this question private again until an administrator approves it.";
     const publicItem = { ...itemMock, isPrivate: false };
 
     it("warns a non-admin owner of a public item before saving", async () => {
@@ -685,9 +685,87 @@ describe("EditItemPage", () => {
       );
       renderPage("/items/item-1/edit");
       await user.click(await screen.findByRole("button", { name: /^save$/i }));
-      expect(await screen.findByRole("status")).toHaveTextContent(/now private again/i);
+      expect(await screen.findByRole("status")).toHaveTextContent(/this question is now private again/i);
       expect(screen.getByRole("button", { name: /back to categories/i })).toBeInTheDocument();
     });
+  });
+});
+
+describe("EditItemPage wording (#929)", () => {
+  beforeEach(() => {
+    vi.clearAllMocks();
+    vi.mocked(useAuth).mockReturnValue({ isAuthenticated: true, userId: "user-1", isAdmin: false } as ReturnType<typeof useAuth>);
+    vi.mocked(useCurrentUserIdState).mockReturnValue({ userId: "user-1", isLoading: false, isError: false });
+    vi.mocked(taxonomyApi.getAll).mockResolvedValue(taxonomyMock as Awaited<ReturnType<typeof taxonomyApi.getAll>>);
+    vi.mocked(itemsApi.getById).mockResolvedValue(itemMock as Awaited<ReturnType<typeof itemsApi.getById>>);
+  });
+
+  /** Visible text and accessible names; the test's own location probe is left out. */
+  function expectQuestionWording() {
+    const body = document.body.cloneNode(true) as HTMLElement;
+    body.querySelector('[data-testid="location"]')?.remove();
+    const attributes = Array.from(body.querySelectorAll("*")).flatMap((element) =>
+      ["aria-label", "title", "placeholder", "alt"].map((name) => element.getAttribute(name) ?? "")
+    );
+    expect([body.textContent ?? "", ...attributes].filter((text) => /\bitems?\b/i.test(text))).toEqual([]);
+  }
+
+  it("is titled Edit question and says question in the form of a public question", async () => {
+    vi.mocked(itemsApi.getById).mockResolvedValue({ ...itemMock, isPrivate: false } as Awaited<ReturnType<typeof itemsApi.getById>>);
+    renderPage("/items/item-1/edit");
+
+    expect(await screen.findByRole("heading", { level: 1, name: "Edit question" })).toBeInTheDocument();
+    expect(screen.getByText(/You can edit your own questions; admins can edit any question\./)).toBeInTheDocument();
+    expectQuestionWording();
+  });
+
+  it("says question while loading", () => {
+    vi.mocked(itemsApi.getById).mockReturnValue(new Promise(() => {}));
+    renderPage("/items/item-1/edit");
+
+    expect(screen.getByText("Loading...")).toBeInTheDocument();
+    expectQuestionWording();
+  });
+
+  it("says question after saving a public question as private", async () => {
+    const user = userEvent.setup({ delay: null });
+    vi.mocked(itemsApi.getById).mockResolvedValue({ ...itemMock, isPrivate: false } as Awaited<ReturnType<typeof itemsApi.getById>>);
+    vi.mocked(itemsApi.update).mockResolvedValue(itemMock as Awaited<ReturnType<typeof itemsApi.update>>);
+    renderPage("/items/item-1/edit");
+    await user.click(await screen.findByRole("button", { name: /^save$/i }));
+
+    expect(await screen.findByRole("status")).toHaveTextContent("This question is now private again");
+    expectQuestionWording();
+  });
+
+  it("says question when it cannot be loaded", async () => {
+    vi.mocked(itemsApi.getById).mockRejectedValue(new Error("nope"));
+    renderPage("/items/item-1/edit");
+
+    expect(await screen.findByText(/^Failed to load question\./)).toBeInTheDocument();
+    expectQuestionWording();
+  });
+
+  it("says question when editing is not allowed", async () => {
+    vi.mocked(useCurrentUserIdState).mockReturnValue({ userId: "someone-else", isLoading: false, isError: false });
+    renderPage("/items/item-1/edit");
+
+    expect(await screen.findByText("You can only edit your own questions.")).toBeInTheDocument();
+    expectQuestionWording();
+  });
+
+  it.each([
+    [{ response: { status: 500, data: {} } }, "Failed to update question."],
+    [{ response: { status: 409, data: { title: "Item.Duplicate" } } }, "A question with the same text already exists in this category."],
+    [{ response: { status: 409, data: { title: "Item.Duplicate", detail: "API item detail" } } }, "API item detail"],
+  ])("words its own save errors with question and leaves API text alone (%#)", async (failure, message) => {
+    const user = userEvent.setup({ delay: null });
+    vi.mocked(itemsApi.update).mockRejectedValueOnce(failure);
+    renderPage("/items/item-1/edit");
+    await user.click(await screen.findByRole("button", { name: /^save$/i }));
+
+    expect(await screen.findByText(message)).toBeInTheDocument();
+    if (!("detail" in failure.response.data)) expectQuestionWording();
   });
 });
 

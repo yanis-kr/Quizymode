@@ -62,7 +62,6 @@ import {
   ChevronLeftIcon,
   ChevronRightIcon,
   EyeIcon,
-  Squares2X2Icon,
   PlusIcon,
   ArrowDownTrayIcon,
   ChevronRightIcon as BreadcrumbChevron,
@@ -1723,7 +1722,6 @@ const CategoriesPage = () => {
                 </p>
                 <div className="flex flex-wrap gap-2">
                   <ActionButtons
-                    onListSets={undefined}
                     onListItems={() =>
                       navigateToItems(scopePathWithNav, true, undefined, filterKeywordsFromQuery)
                     }
@@ -1740,7 +1738,6 @@ const CategoriesPage = () => {
               <div className="py-12 text-center">
                 <p className="mb-4 text-gray-500">No topics in this level.</p>
                 <ActionButtons
-                  onListSets={undefined}
                   onListItems={() =>
                     navigateToItems(scopePathWithNav, true, undefined, filterKeywordsFromQuery)
                   }
@@ -1883,7 +1880,7 @@ function Breadcrumb({
   const pathSegments: { label: string; path: string; description?: string | null }[] = [];
   if (categoryName) {
     const slug = categoryNameToSlug(categoryName);
-    pathSegments.push({ label: categoryName, path: buildCategoryPath(slug, []) });
+    pathSegments.push({ label: categoryDisplayName(categoryName), path: buildCategoryPath(slug, []) });
     pathKeywords.forEach((kw, i) => {
       pathSegments.push({
         label: breadcrumbKeywordLabel(kw),
@@ -1920,27 +1917,16 @@ function Breadcrumb({
 }
 
 function ActionButtons({
-  onListSets,
   onListItems,
   onExplore,
   onQuiz,
 }: {
-  onListSets?: () => void;
   onListItems: () => void;
   onExplore: () => void;
   onQuiz: () => void;
 }) {
   return (
     <>
-      {onListSets && (
-        <button
-          onClick={onListSets}
-          className="inline-flex items-center gap-1 px-3 py-1.5 text-sm font-medium text-indigo-ink bg-indigo-50 rounded-md hover:bg-indigo-100"
-        >
-          <Squares2X2Icon className="h-4 w-4" />
-          List topics
-        </button>
-      )}
       <button
         onClick={onListItems}
         className="inline-flex items-center gap-1 px-3 py-1.5 text-sm font-medium text-emerald-600 bg-emerald-50 rounded-md hover:bg-emerald-100"

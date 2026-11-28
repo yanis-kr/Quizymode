@@ -17,7 +17,7 @@ import { Link } from "react-router-dom";
 import { ForeignPhraseText } from "@/components/ForeignPhraseText";
 import ItemRatingsComments from "@/components/ItemRatingsComments";
 import { CommentsDrawer } from "@/components/CommentsDrawer";
-import { buildCategoryPath, categoryNameToSlug } from "@/utils/categorySlug";
+import { buildCategoryPath, categoryDisplayName, categoryNameToSlug } from "@/utils/categorySlug";
 import { PronunciationHint } from "@/components/items/PronunciationHint";
 import { QuestionImage } from "@/components/study/QuestionImage";
 import { getIndexedSpeech } from "@/utils/itemSpeech";
@@ -145,7 +145,7 @@ const ItemDetailPage = () => {
                 className="inline-flex items-center gap-1 text-indigo-ink hover:text-indigo-ink"
               >
                 <ChevronRightIcon className="h-4 w-4 text-gray-400 flex-shrink-0" />
-                {item.category}
+                {categoryDisplayName(item.category)}
               </Link>
               {item.navigationBreadcrumb!.map((kw, i) => (
                 <Link
