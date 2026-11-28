@@ -14,11 +14,23 @@ const scriptPath = path.resolve(path.dirname(fileURLToPath(import.meta.url)), ".
 
 /** Text a reader sees: no scripts, styles, tags, slug captions (file names) or addresses. */
 function visibleText(html) {
-  return html
-    .replace(/<script[\s\S]*?<\/script>/gi, " ")
-    .replace(/<style[\s\S]*?<\/style>/gi, " ")
-    .replace(/<span class="guide-step__slug">[\s\S]*?<\/span>/gi, " ")
-    .replace(/<[^>]+>/g, " ")
+  const text = [];
+  let hidden = null; // name of the element whose content is being skipped
+  // Splitting on a capture group puts the tags at the odd positions.
+  html.split(/(<\/?[a-z!][^<>]*>)/i).forEach((part, index) => {
+    if (index % 2 === 0) {
+      if (!hidden) text.push(part);
+      return;
+    }
+    const name = /^<\/?([a-z]+)/i.exec(part)?.[1].toLowerCase();
+    if (hidden) {
+      if (part.startsWith("</") && name === hidden) hidden = null;
+    } else if (name === "script" || name === "style" || part.includes('class="guide-step__slug"')) {
+      hidden = name;
+    }
+  });
+  return text
+    .join(" ")
     .replace(/https?:\/\/\S+/g, " ")
     .replace(/&[a-z#0-9]+;/gi, " ")
     .replace(/\s+/g, " ");
