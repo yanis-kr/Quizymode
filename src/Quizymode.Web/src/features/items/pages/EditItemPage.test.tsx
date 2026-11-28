@@ -260,6 +260,18 @@ describe("EditItemPage", () => {
     expect(payload.readyForReview).toBe(expected);
   });
 
+  it("saves as Save does on Enter in a single-line field (#927)", async () => {
+    const user = userEvent.setup({ delay: null });
+    renderPage("/items/item-1/edit");
+    await screen.findByRole("button", { name: /^save$/i });
+
+    await user.type(screen.getByRole("textbox", { name: "Incorrect answer 1" }), "{Enter}");
+
+    await waitFor(() => expect(screen.getByTestId("location")).toHaveTextContent("/categories"));
+    expect(itemsApi.update).toHaveBeenCalledTimes(1);
+    expect(vi.mocked(itemsApi.update).mock.calls[0][1].question).toBe("Old question?");
+  });
+
   it("admin user sees isPrivate toggle", async () => {
     // AC 2.1.3
     vi.mocked(useAuth).mockReturnValue({

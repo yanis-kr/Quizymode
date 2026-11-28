@@ -192,3 +192,54 @@ test("AC 2.1.24 the edit actions Cancel and Save stack full width below 640 px a
 
   await checkActions(page, ["Cancel", "Save"]);
 });
+
+/** Opens the form with its topic chosen, fills the required fields and records every create request. */
+async function openFilledForm(page: Page): Promise<string[]> {
+  await stubApi(page);
+  const created: string[] = [];
+  await page.route("**/api/items", async (route: Route) => {
+    if (route.request().method() !== "POST") return route.fallback();
+    created.push(route.request().postData() ?? "");
+    await route.fulfill({ status: 200, contentType: "application/json", body: JSON.stringify(item) });
+  });
+  await page.goto("/create/question?category=science&keywords=biology,plants");
+  await expect(page.getByRole("heading", { level: 1, name: "Write a question" })).toBeVisible({ timeout: 20_000 });
+  await expect(page.getByTestId("topic-pill")).toBeVisible();
+  await expect(page.getByRole("link", { name: collection.name, exact: true })).toBeVisible();
+  await page.getByLabel("Question *", { exact: true }).fill(item.question);
+  await page.getByLabel("Correct Answer *", { exact: true }).fill(item.correctAnswer);
+  await page.getByLabel("Incorrect answer 1", { exact: true }).fill(item.incorrectAnswers[0]);
+  return created;
+}
+
+test("AC 927-A Enter in a single-line field saves once and opens the question like Save and study", async ({ page }) => {
+  const created = await openFilledForm(page);
+
+  await page.getByLabel("Correct Answer *", { exact: true }).press("Enter");
+
+  await expect(page).toHaveURL(new RegExp(`/explore/collections/${COLLECTION_ID}/item/${ITEM_ID}`));
+  expect(created).toHaveLength(1);
+});
+
+test("AC 927-B the create actions keep their order and Save and add another saves and clears the form", async ({ page }) => {
+  const created = await openFilledForm(page);
+  const cancel = page.getByRole("button", { name: "Cancel", exact: true });
+  const another = page.getByRole("button", { name: "Save and add another", exact: true });
+  const study = page.getByRole("button", { name: "Save and study", exact: true });
+
+  const boxes = await Promise.all([cancel, another, study].map((button) => button.boundingBox()));
+  expect(boxes[1]!.x).toBeGreaterThan(boxes[0]!.x);
+  expect(boxes[2]!.x).toBeGreaterThan(boxes[1]!.x);
+  await cancel.focus();
+  await page.keyboard.press("Tab");
+  await expect(another).toBeFocused();
+  await page.keyboard.press("Tab");
+  await expect(study).toBeFocused();
+
+  await another.click();
+
+  await expect(page.getByText("Saved. Add the next question.", { exact: true })).toBeVisible();
+  await expect(page.getByLabel("Question *", { exact: true })).toHaveValue("");
+  await expect(page).toHaveURL(/\/create\/question/);
+  expect(created).toHaveLength(1);
+});
