@@ -93,7 +93,7 @@ export function StudyGuideCandidateCard({
           </span>
         ) : alreadyHandled ? (
           <span className="mt-0.5 rounded-full border border-slate-300 bg-slate-50 px-2 py-0.5 text-xs font-semibold text-slate-700">
-            Already in your items
+            Already in your questions
           </span>
         ) : (
           <input

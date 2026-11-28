@@ -400,7 +400,7 @@ const CollectionDetailPage = () => {
               if (collectionData && v !== (collectionData.description ?? "") && !updateCollectionMutation.isPending)
                 updateCollectionMutation.mutate({ description: v || null });
             }}
-            placeholder="e.g. Biology chapter 5 practice set"
+            placeholder="e.g. Biology chapter 5 review"
             rows={2}
             className="w-full rounded-md border border-slate-300 bg-surface px-3 py-2 text-sm text-slate-900"
           />

@@ -971,7 +971,7 @@ const CollectionsPage = () => {
                     id="collection-description"
                     value={createCollectionDescription}
                     onChange={(e) => setCreateCollectionDescription(e.target.value)}
-                    placeholder="e.g. Biology chapter 5 practice set"
+                    placeholder="e.g. Biology chapter 5 review"
                     rows={2}
                     maxLength={2000}
                     className="w-full rounded-md border border-gray-300 bg-surface px-3 py-2 text-sm text-gray-900 placeholder:text-gray-500 focus:outline-none focus:ring-2 focus:ring-indigo-500"
@@ -1077,7 +1077,7 @@ const CollectionsPage = () => {
                     id="edit-collection-description"
                     value={editingDescription}
                     onChange={(e) => setEditingDescription(e.target.value)}
-                    placeholder="e.g. Biology chapter 5 practice set"
+                    placeholder="e.g. Biology chapter 5 review"
                     rows={2}
                     maxLength={2000}
                     className="w-full rounded-md border border-gray-300 bg-surface px-3 py-2 text-sm text-gray-900 placeholder:text-gray-500 focus:outline-none focus:ring-2 focus:ring-indigo-500"

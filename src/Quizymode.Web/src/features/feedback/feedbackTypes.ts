@@ -19,9 +19,9 @@ export const feedbackTypeOptions: FeedbackTypeOption[] = [
   },
   {
     value: "requestItems",
-    label: "Ask for more items",
-    helperText: "Request missing topics, question sets, or study areas.",
-    detailsLabel: "What items should we add?",
+    label: "Ask for more questions",
+    helperText: "Request missing topics or study areas.",
+    detailsLabel: "What questions should we add?",
     detailsPlaceholder:
       "Tell us what subject, exam, topic, or question type you want more of.",
   },

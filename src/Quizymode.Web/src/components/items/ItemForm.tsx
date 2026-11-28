@@ -516,7 +516,7 @@ export function ItemForm({
               className="w-full px-3 py-2 border border-gray-300 rounded-md text-sm bg-surface text-gray-900 placeholder:text-gray-500"
             />
             <p id={`${mode}-group-label-help`} className="mt-1 text-xs text-gray-500">
-              Used by Sort It. Items with the same label form a group. Up to 30 characters.
+              Used by Sort It. Questions with the same label form a group. Up to 30 characters.
             </p>
           </div>
 
@@ -690,7 +690,7 @@ export function ItemForm({
         <div>
           <h2 className="text-sm font-semibold text-gray-900">Save to</h2>
           <p className="mt-1 text-xs text-gray-500">
-            Category, primary topic, and subtopic define where the item appears when browsing.
+            Category, primary topic, and subtopic define where the question appears when browsing.
           </p>
         </div>
         <ItemTopicScopeFields

@@ -47,6 +47,18 @@ function renderModal(onClose: () => void = () => {}) {
   );
 }
 
+describe("UserProfileModal wording (#924)", () => {
+  it("offers page sizes in questions", async () => {
+    vi.mocked(interestsApi.get).mockResolvedValue([]);
+    vi.mocked(studySessionsApi.getSummary).mockReturnValue(new Promise(() => {}));
+    renderModal();
+
+    expect(await screen.findByRole("option", { name: "20 questions per page" })).toBeInTheDocument();
+    expect(screen.getByText("Number of questions displayed per page")).toBeInTheDocument();
+    expect(document.body.textContent).not.toMatch(/\b(item|items|sets)\b/i);
+  });
+});
+
 describe("UserProfileModal study totals (issue #259)", () => {
   beforeEach(() => {
     vi.clearAllMocks();

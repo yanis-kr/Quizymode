@@ -123,7 +123,7 @@ describe("UploadToCollectionPage", () => {
     renderPage("/items/upload-to-collection?category=science");
     await screen.findByLabelText(/^category \*$/i);
 
-    await user.click(screen.getByLabelText(/json array of items/i));
+    await user.click(screen.getByLabelText(/json array of questions/i));
     await user.paste(JSON.stringify([{ question: "Q", correctAnswer: "A", incorrectAnswers: ["W1"] }]));
     await user.click(screen.getByRole("button", { name: /upload and open collection/i }));
 
@@ -157,7 +157,7 @@ describe("UploadToCollectionPage", () => {
       correctAnswer: `Biceps ${i}`,
       incorrectAnswers: ["W"],
     }));
-    fireEvent.change(screen.getByLabelText(/json array of items/i), { target: { value: JSON.stringify(rows) } });
+    fireEvent.change(screen.getByLabelText(/json array of questions/i), { target: { value: JSON.stringify(rows) } });
 
     await waitFor(() => {
       const sent = vi.mocked(taxonomyApi.suggest).mock.calls.map((call) => call[0]).find((text) => text.length > 0);
@@ -196,7 +196,7 @@ describe("UploadToCollectionPage", () => {
 
     expect(screen.queryByRole("tablist")).not.toBeInTheDocument();
     expect(screen.queryByRole("tab")).not.toBeInTheDocument();
-    expect(screen.queryByLabelText(/json array of items/i)).not.toBeInTheDocument();
+    expect(screen.queryByLabelText(/json array of questions/i)).not.toBeInTheDocument();
     expect(screen.getByLabelText(/pasted text/i)).toBeInTheDocument();
   });
 
@@ -207,7 +207,7 @@ describe("UploadToCollectionPage", () => {
 
     expect(screen.getByRole("tab", { name: "JSON" })).toBeInTheDocument();
     expect(screen.getByRole("tab", { name: /paste text/i })).toBeInTheDocument();
-    expect(screen.getByLabelText(/json array of items/i)).toBeInTheDocument();
+    expect(screen.getByLabelText(/json array of questions/i)).toBeInTheDocument();
   });
 
   it("sends a trimmed collectionName only when it is filled in (AC 2.6.1)", async () => {
@@ -218,7 +218,7 @@ describe("UploadToCollectionPage", () => {
       await screen.findByLabelText(/^category \*$/i);
       await waitFor(() => expect(screen.getByLabelText(/subtopic/i)).toHaveValue("muscular"));
       if (name !== null) await user.type(screen.getByLabelText(/collection name/i), name);
-      await user.click(screen.getByLabelText(/json array of items/i));
+      await user.click(screen.getByLabelText(/json array of questions/i));
       await user.paste(JSON.stringify([{ question: "Q", correctAnswer: "A", incorrectAnswers: ["W1"] }]));
       await user.click(screen.getByRole("button", { name: /upload and open collection/i }));
       await waitFor(() => expect(itemsApi.uploadToCollection).toHaveBeenCalled());
@@ -248,7 +248,7 @@ describe("UploadToCollectionPage", () => {
       expect(rank2Select).toHaveValue("muscular");
     });
 
-    const jsonInput = screen.getByLabelText(/json array of items/i);
+    const jsonInput = screen.getByLabelText(/json array of questions/i);
     await user.click(jsonInput);
     await user.paste(
       JSON.stringify([
@@ -279,7 +279,7 @@ describe("UploadToCollectionPage", () => {
       expect(screen.getByLabelText(/primary topic/i)).toHaveValue("anatomy");
     });
 
-    const jsonInput = screen.getByLabelText(/json array of items/i);
+    const jsonInput = screen.getByLabelText(/json array of questions/i);
     await user.click(jsonInput);
     await user.paste(
       JSON.stringify([
@@ -302,7 +302,7 @@ describe("UploadToCollectionPage", () => {
     await screen.findByLabelText(/^category \*$/i);
     await waitFor(() => expect(screen.getByLabelText(/primary topic/i)).toHaveValue("anatomy"));
     const json = JSON.stringify([{ question: "Q", correctAnswer: "A", incorrectAnswers: ["W1"] }]);
-    const input = screen.getByLabelText(/json array of items/i);
+    const input = screen.getByLabelText(/json array of questions/i);
     await user.click(input);
     await user.paste(json);
 
@@ -323,7 +323,7 @@ describe("UploadToCollectionPage", () => {
       expect(screen.getByLabelText(/primary topic/i)).toHaveValue("anatomy");
     });
 
-    await user.click(screen.getByLabelText(/json array of items/i));
+    await user.click(screen.getByLabelText(/json array of questions/i));
     await user.paste(
       JSON.stringify([
         { question: "Q1", correctAnswer: "A", incorrectAnswers: ["W1"] },
@@ -333,7 +333,7 @@ describe("UploadToCollectionPage", () => {
     );
     await user.click(screen.getByRole("button", { name: /upload and open collection/i }));
 
-    expect(await screen.findByText(/items 2, 3: provide at least one non-blank incorrect answer/i)).toBeInTheDocument();
+    expect(await screen.findByText(/questions 2, 3: provide at least one non-blank incorrect answer/i)).toBeInTheDocument();
     expect(itemsApi.uploadToCollection).not.toHaveBeenCalled();
   });
 
@@ -345,7 +345,7 @@ describe("UploadToCollectionPage", () => {
       expect(screen.getByLabelText(/primary topic/i)).toHaveValue("anatomy");
     });
 
-    await user.click(screen.getByLabelText(/json array of items/i));
+    await user.click(screen.getByLabelText(/json array of questions/i));
     await user.paste(
       JSON.stringify([
         { question: "Q1", correctAnswer: "A", incorrectAnswers: ["W1"], questionImage: null, explanationImage: null },
@@ -357,13 +357,13 @@ describe("UploadToCollectionPage", () => {
 
     expect(
       await screen.findByText(
-        `Item 2 has "questionImage". Only your own uploaded asset references can be imported. Curated keys, URLs, bytes and other authors' pictures cannot be imported.`
+        `Question 2 has "questionImage". Only your own uploaded asset references can be imported. Curated keys, URLs, bytes and other authors' pictures cannot be imported.`
       )
     ).toBeInTheDocument();
     expect(itemsApi.uploadToCollection).not.toHaveBeenCalled();
     expect(upload).toBeDisabled();
 
-    await user.type(screen.getByLabelText(/json array of items/i), " ");
+    await user.type(screen.getByLabelText(/json array of questions/i), " ");
     expect(screen.getByRole("button", { name: /upload and open collection/i })).toBeEnabled();
   });
 
@@ -376,7 +376,7 @@ describe("UploadToCollectionPage", () => {
       expect(screen.getByLabelText(/primary topic/i)).toHaveValue("anatomy");
     });
 
-    await user.click(screen.getByLabelText(/json array of items/i));
+    await user.click(screen.getByLabelText(/json array of questions/i));
     await user.paste(
       JSON.stringify([
         { question: "Q1", correctAnswer: "A", incorrectAnswers: ["W1"], groupLabel: "  Mammals " },
@@ -401,7 +401,7 @@ describe("UploadToCollectionPage", () => {
       expect(screen.getByLabelText(/primary topic/i)).toHaveValue("anatomy");
     });
 
-    await user.click(screen.getByLabelText(/json array of items/i));
+    await user.click(screen.getByLabelText(/json array of questions/i));
     await user.paste(
       JSON.stringify([
         { question: "Q1", correctAnswer: "A", incorrectAnswers: ["W1"], groupLabel: "x".repeat(30) },
@@ -412,7 +412,7 @@ describe("UploadToCollectionPage", () => {
     await user.click(screen.getByRole("button", { name: /upload and open collection/i }));
 
     expect(
-      await screen.findByText(/items 2, 3: group label must be 30 characters or fewer, with no line breaks/i)
+      await screen.findByText(/questions 2, 3: group label must be 30 characters or fewer, with no line breaks/i)
     ).toBeInTheDocument();
     expect(itemsApi.uploadToCollection).not.toHaveBeenCalled();
   });
@@ -426,7 +426,7 @@ describe("UploadToCollectionPage", () => {
       expect(screen.getByLabelText(/primary topic/i)).toHaveValue("anatomy");
     });
 
-    await user.click(screen.getByLabelText(/json array of items/i));
+    await user.click(screen.getByLabelText(/json array of questions/i));
     await user.paste(
       JSON.stringify([
         { question: "Q1", correctAnswer: "A", incorrectAnswers: ["W1", "W2"] },
@@ -438,7 +438,7 @@ describe("UploadToCollectionPage", () => {
 
     expect(
       await screen.findByText(
-        /items 2, 3: incorrect answers must be different from each other and from the correct answer/i
+        /questions 2, 3: incorrect answers must be different from each other and from the correct answer/i
       )
     ).toBeInTheDocument();
     expect(itemsApi.uploadToCollection).not.toHaveBeenCalled();
@@ -453,7 +453,7 @@ describe("UploadToCollectionPage", () => {
       expect(screen.getByLabelText(/primary topic/i)).toHaveValue("anatomy");
     });
 
-    await user.click(screen.getByLabelText(/json array of items/i));
+    await user.click(screen.getByLabelText(/json array of questions/i));
     await user.paste(
       JSON.stringify([
         { question: "Q", correctAnswer: "A", incorrectAnswers: [" W1 ", "", "W2", "W3", "W4", "W5"], incorrectAnswerRationale: { W1: "First reason", W3: "Second reason", W5: "Omitted answer reason" } },
@@ -489,11 +489,11 @@ describe("UploadToCollectionPage", () => {
       // AC 2.6.9
       const user = userEvent.setup({ delay: null });
       await openPasteTab(user);
-      expect(screen.queryByLabelText(/json array of items/i)).not.toBeInTheDocument();
+      expect(screen.queryByLabelText(/json array of questions/i)).not.toBeInTheDocument();
 
       await user.click(screen.getByLabelText(/pasted text/i));
       await user.paste(rows);
-      expect(await screen.findByText(/4 items ready/i)).toBeInTheDocument();
+      expect(await screen.findByText(/4 questions ready/i)).toBeInTheDocument();
 
       await user.click(screen.getByRole("button", { name: /upload and open collection/i }));
       await waitFor(() => expect(itemsApi.uploadToCollection).toHaveBeenCalledTimes(1));
@@ -554,7 +554,7 @@ describe("UploadToCollectionPage", () => {
       await openPasteTab(user);
       const lines = (n: number) => Array.from({ length: n }, (_, i) => `t${i}\td${i}`).join("\n");
       fireEvent.change(screen.getByLabelText(/pasted text/i), { target: { value: lines(150) } });
-      expect(await screen.findByText(/150 items ready/i)).toBeInTheDocument();
+      expect(await screen.findByText(/150 questions ready/i)).toBeInTheDocument();
       expect(screen.queryByText(/only the first/i)).not.toBeInTheDocument();
       fireEvent.change(screen.getByLabelText(/pasted text/i), { target: { value: lines(1100) } });
       expect(await screen.findByText(/only the first 1000 will be imported/i)).toBeInTheDocument();

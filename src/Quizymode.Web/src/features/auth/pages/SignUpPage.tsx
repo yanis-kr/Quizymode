@@ -39,11 +39,11 @@ interface BenefitCopy {
 const BENEFIT_COPY: Record<AuthReason, BenefitCopy> = {
   "keep-collection": {
     heading: "Make your next study session yours.",
-    body: "Create a free account to bookmark this collection for later and build private practice sets.",
+    body: "Create a free account to bookmark this collection for later and build private collections of your own.",
   },
   "create-content": {
     heading: "Make your next study session yours.",
-    body: "Create a free account to create private items and collections, and turn your notes into quizzes.",
+    body: "Create a free account to create private questions and collections, and turn your notes into quizzes.",
   },
   "join-discussion": {
     heading: "Make your next study session yours.",
@@ -65,7 +65,7 @@ const BENEFIT_COPY: Record<AuthReason, BenefitCopy> = {
 
 const DEFAULT_BENEFIT: BenefitCopy = {
   heading: "Make your next study session yours.",
-  body: "Create a free account to bookmark public collections and build private practice sets.",
+  body: "Create a free account to bookmark public collections and build your own private ones.",
 };
 
 type FieldId = "username" | "email" | "password" | "legal" | "code";

@@ -12,7 +12,7 @@ _Screenshots are captured from the live site and published to [GitHub Pages](htt
 - [Browsing the Taxonomy](#browsing-the-taxonomy)
 - [Building Your Collection](#building-your-collection)
 - [Collections](#collections)
-- [Adding Items](#adding-items)
+- [Adding Questions](#adding-questions)
 - [Other Pages](#other-pages)
 
 ## Home
@@ -27,7 +27,7 @@ On mobile, the five-question quick quiz remains the primary home action and stat
 
 ### Featured
 
-On mobile, the **Featured** page keeps the same Sets / Collections tab switcher and Sort control, but both controls and the card grid stack into a single-column layout. Each card fills the full screen width, making the category path, item count, and last-modified date easy to read at a glance without horizontal scrolling.
+On mobile, the **Featured** page keeps the same Topics / Collections tab switcher and Sort control, but both controls and the card grid stack into a single-column layout. Each card fills the full screen width, making the category path, question count, and last-modified date easy to read at a glance without horizontal scrolling.
 
 ![Featured](https://yanis-kr.github.io/Quizymode/assets/dark/mobile/02.featured.png "Featured")
 
@@ -53,13 +53,13 @@ At the subtopic level, mobile keeps the same hierarchy but presents the choices 
 
 ### Nav Geography Capitals World
 
-At the leaf level, the item view switches into the same **List** mode as desktop, but the mode controls and action buttons may wrap across multiple lines. The narrow layout keeps the question content readable while still exposing the study-mode switcher.
+At the leaf level, the question view switches into the same **List** mode as desktop, but the mode controls and action buttons may wrap across multiple lines. The narrow layout keeps the question content readable while still exposing the study-mode switcher.
 
 ![Nav Geography Capitals World](https://yanis-kr.github.io/Quizymode/assets/dark/mobile/06.nav-geography-capitals-world.png "Nav Geography Capitals World")
 
 ### Mode Flashcards
 
-On mobile, flashcards stay focused on one item at a time, with the card taking most of the viewport. Navigation controls sit close to the card so you can flip and advance without leaving the screen.
+On mobile, flashcards stay focused on one question at a time, with the card taking most of the viewport. Navigation controls sit close to the card so you can flip and advance without leaving the screen.
 
 ![Mode Flashcards](https://yanis-kr.github.io/Quizymode/assets/dark/mobile/07.mode-flashcards.png "Mode Flashcards")
 
@@ -71,23 +71,23 @@ Quiz mode on mobile keeps the same multiple-choice flow, with the question, answ
 
 ## Building Your Collection
 
-### Items Add To Collection
+### Questions Add To Collection
 
 Collection controls remain available in mobile study views, but they compress beneath or alongside the content depending on space. The goal is the same one-tap add flow, with the controls adapted to a tighter card layout.
 
-![Items Add To Collection](https://yanis-kr.github.io/Quizymode/assets/dark/mobile/09.items-add-to-collection.png "Items Add To Collection")
+![Questions Add To Collection](https://yanis-kr.github.io/Quizymode/assets/dark/mobile/09.items-add-to-collection.png "Questions Add To Collection")
 
-### Items Collection Badges
+### Questions Collection Badges
 
-After you add items on mobile, the filled collection badges remain visible directly on the compact item cards. This makes it clear which items are already in the active collection without needing extra panels.
+After you add questions on mobile, the filled collection badges remain visible directly on the compact question cards. This makes it clear which questions are already in the active collection without needing extra panels.
 
-![Items Collection Badges](https://yanis-kr.github.io/Quizymode/assets/dark/mobile/10.items-collection-badges.png "Items Collection Badges")
+![Questions Collection Badges](https://yanis-kr.github.io/Quizymode/assets/dark/mobile/10.items-collection-badges.png "Questions Collection Badges")
 
-### Items Collection Removed
+### Questions Collection Removed
 
-Removing an item from the active collection works the same on mobile. The item card updates in place, freeing the add button again and keeping the workflow quick on a narrow screen.
+Removing a question from the active collection works the same on mobile. The question card updates in place, freeing the add button again and keeping the workflow quick on a narrow screen.
 
-![Items Collection Removed](https://yanis-kr.github.io/Quizymode/assets/dark/mobile/11.items-collection-removed.png "Items Collection Removed")
+![Questions Collection Removed](https://yanis-kr.github.io/Quizymode/assets/dark/mobile/11.items-collection-removed.png "Questions Collection Removed")
 
 ### Active Collection Selector
 
@@ -113,23 +113,23 @@ Keyword filtering still works with one tap on mobile, though the tag row may wra
 
 ![Keyword Filter](https://yanis-kr.github.io/Quizymode/assets/dark/mobile/15.keyword-filter.png "Keyword Filter")
 
-### Item Detail
+### Question Detail
 
-The item detail page on mobile shows the same information as desktop, but the sections stack into a single-column reading flow. This makes long answer, explanation, and metadata blocks easier to scan vertically.
+The question detail page on mobile shows the same information as desktop, but the sections stack into a single-column reading flow. This makes long answer, explanation, and metadata blocks easier to scan vertically.
 
-![Item Detail](https://yanis-kr.github.io/Quizymode/assets/dark/mobile/16.item-detail.png "Item Detail")
+![Question Detail](https://yanis-kr.github.io/Quizymode/assets/dark/mobile/16.item-detail.png "Question Detail")
 
-### Item Rating Five Stars
+### Question Rating Five Stars
 
-Rating on mobile keeps the same immediate-save behavior, but the stars are placed in a tighter row within the stacked item detail layout. The interaction remains quick and touch-friendly.
+Rating on mobile keeps the same immediate-save behavior, but the stars are placed in a tighter row within the stacked question detail layout. The interaction remains quick and touch-friendly.
 
-![Item Rating Five Stars](https://yanis-kr.github.io/Quizymode/assets/dark/mobile/17.item-rating-five-stars.png "Item Rating Five Stars")
+![Question Rating Five Stars](https://yanis-kr.github.io/Quizymode/assets/dark/mobile/17.item-rating-five-stars.png "Question Rating Five Stars")
 
-### Item Comment Added
+### Question Comment Added
 
 On mobile, the comments experience opens as a full-screen overlay rather than a side drawer. You can read and post comments without navigating away, while still keeping the focus entirely on the discussion thread.
 
-![Item Comment Added](https://yanis-kr.github.io/Quizymode/assets/dark/mobile/18.item-comment-added.png "Item Comment Added")
+![Question Comment Added](https://yanis-kr.github.io/Quizymode/assets/dark/mobile/18.item-comment-added.png "Question Comment Added")
 
 ## Collections
 
@@ -181,25 +181,25 @@ Bookmarked collections are shown as a mobile-friendly stacked list. You can open
 
 ![Collections Bookmarked](https://yanis-kr.github.io/Quizymode/assets/dark/mobile/26.collections-bookmarked.png "Collections Bookmarked")
 
-## Adding Items
+## Adding Questions
 
-### Add Items
+### Add Questions
 
-The Add Items hub keeps the same branching workflow on mobile, but the scope controls, notices, and action buttons stack into a single-column layout. This makes the create options easier to scan on a phone.
+The Add Questions hub keeps the same branching workflow on mobile, but the scope controls, notices, and action buttons stack into a single-column layout. This makes the create options easier to scan on a phone.
 
-![Add Items](https://yanis-kr.github.io/Quizymode/assets/dark/mobile/27.add-items.png "Add Items")
+![Add Questions](https://yanis-kr.github.io/Quizymode/assets/dark/mobile/27.add-items.png "Add Questions")
 
-### Add Items Prepopulated
+### Add Questions Prepopulated
 
-When Add Items opens from a scoped category on mobile, the same category and keyword selections are pre-filled. The difference is mostly layout: the scope controls and compliance notice stack for narrow screens.
+When Add Questions opens from a scoped category on mobile, the same category and keyword selections are pre-filled. The difference is mostly layout: the scope controls and compliance notice stack for narrow screens.
 
-![Add Items Prepopulated](https://yanis-kr.github.io/Quizymode/assets/dark/mobile/28.add-items-prepopulated.png "Add Items Prepopulated")
+![Add Questions Prepopulated](https://yanis-kr.github.io/Quizymode/assets/dark/mobile/28.add-items-prepopulated.png "Add Questions Prepopulated")
 
-### Add New Item
+### Add New Question
 
-The Create Item form becomes a long, single-column form on mobile, with fields and actions stacked top to bottom. This keeps every required input accessible without shrinking the form controls.
+The Create Question form becomes a long, single-column form on mobile, with fields and actions stacked top to bottom. This keeps every required input accessible without shrinking the form controls.
 
-![Add New Item](https://yanis-kr.github.io/Quizymode/assets/dark/mobile/29.add-new-item.png "Add New Item")
+![Add New Question](https://yanis-kr.github.io/Quizymode/assets/dark/mobile/29.add-new-item.png "Add New Question")
 
 ## Other Pages
 

@@ -46,7 +46,7 @@ async function loadGuestBatch(ids: string[]): Promise<LoadedBatch> {
   }
   const items = results.flatMap((result) => (result.item ? [result.item] : []));
   if (items.length === 0 && results.some((result) => result.failed)) {
-    throw new Error("Guest review items could not be loaded.");
+    throw new Error("Guest review questions could not be loaded.");
   }
   return { items };
 }

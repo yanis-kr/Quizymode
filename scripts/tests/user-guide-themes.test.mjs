@@ -13,7 +13,13 @@ import {
   publishedAssetPath,
   shotDir,
 } from "../user-guide-themes.js";
-import { publishedImageUrl, resolveScreenshotDir } from "../generate-user-guide.js";
+import {
+  getDescription,
+  label,
+  orderedSlugs,
+  publishedImageUrl,
+  resolveScreenshotDir,
+} from "../generate-user-guide.js";
 
 test("themes are Dark then Light and Dark is the default", () => {
   assert.deepEqual(THEMES, ["dark", "light"]);
@@ -56,6 +62,17 @@ test("screenshot dir resolves per theme and viewport under the configured root",
   } finally {
     if (previous === undefined) delete process.env.USER_GUIDE_SCREENSHOT_ROOT;
     else process.env.USER_GUIDE_SCREENSHOT_ROOT = previous;
+  }
+});
+
+test("guide headings and descriptions say questions and topics, not items or sets (#924)", () => {
+  const oldNouns = /\b(an item|items|sets view|sets \/ collections|item (card|count|detail)|each item)\b/i;
+  assert.equal(label("add-new-item"), "Add New Question");
+  assert.equal(label("items-collection-badges"), "Questions Collection Badges");
+  for (const slug of orderedSlugs) {
+    for (const guide of ["desktop", "mobile"]) {
+      assert.doesNotMatch(`${label(slug)} ${getDescription(guide, slug)}`, oldNouns, `${guide} ${slug}`);
+    }
   }
 });
 

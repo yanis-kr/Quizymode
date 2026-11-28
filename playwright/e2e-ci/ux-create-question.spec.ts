@@ -156,7 +156,7 @@ test("AC 2.1.25 at 375x812 the whole Question field is on the first screen with 
   // Both banners above the form must be on the page before the position of the field means anything.
   await expect(page.getByText(NOTICE_LINE, { exact: true })).toBeVisible();
   await expect(page.getByRole("button", { name: "Read the content rules" })).toHaveAttribute("aria-expanded", "false");
-  await expect(page.getByText("New items will be added to your active collection")).toBeVisible();
+  await expect(page.getByText("New questions will be added to your active collection")).toBeVisible();
   await expect(page.getByRole("link", { name: collection.name, exact: true })).toBeVisible();
   await expect(page.getByText("Private: it is not listed in public categories or search.", { exact: true })).toBeAttached();
 

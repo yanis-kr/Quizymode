@@ -74,6 +74,28 @@ function fillSignUpForm(options: {
   }
 }
 
+describe("SignUpPage wording (#924)", () => {
+  beforeEach(() => {
+    mockIsAuthenticated = false;
+    mockAuthLoading = false;
+  });
+
+  it.each([
+    ["", "bookmark public collections and build your own private ones."],
+    ["keep-collection", "bookmark this collection for later and build private collections of your own."],
+    ["create-content", "create private questions and collections"],
+    ["join-discussion", ""],
+    ["save-progress", ""],
+    ["review-later", ""],
+    ["track-progress", ""],
+  ])("says no items or sets to a signed-out visitor (reason: %s)", (reason, copy) => {
+    renderPage(reason ? `/signup?reason=${reason}` : "/signup");
+
+    expect(document.body.textContent).toContain(copy);
+    expect(document.body.textContent).not.toMatch(/\b(item|items|sets)\b/i);
+  });
+});
+
 describe("SignUpPage", () => {
   beforeEach(() => {
     vi.clearAllMocks();
@@ -96,7 +118,7 @@ describe("SignUpPage", () => {
 
   it.each([
     ["keep-collection", /bookmark this collection/i],
-    ["create-content", /create private items/i],
+    ["create-content", /create private questions/i],
     ["join-discussion", /join the discussion/i],
     ["save-progress", /streak and quiz results follow you to every device/i],
     ["review-later", /review queue that brings them back/i],

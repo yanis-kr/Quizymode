@@ -91,7 +91,7 @@ export function ItemListView({
                     : navigate(`/explore/item/${item.id}?return=${encodeURIComponent(window.location.pathname)}`)
                 }
                 className="p-2 text-indigo-ink hover:bg-indigo-50 rounded-md"
-                title="View item"
+                title="View question"
               >
                 <EyeIcon className="h-5 w-5" />
               </button>

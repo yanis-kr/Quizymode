@@ -317,7 +317,7 @@ const StudyGuideUploadPage = () => {
           <h2 className="text-sm font-semibold text-amber-900">That earlier upload is no longer available</h2>
           <p className="text-sm text-amber-800">
             Earlier one-step study guide uploads have been retired, so their results can no longer be opened.
-            Questions you already added from them are still in your private items. Upload your study guide below
+            Questions you already added from them are still in your private questions. Upload your study guide below
             to generate new questions.
           </p>
         </div>

@@ -124,11 +124,11 @@ describe("PasteTextImport cloze format (#296)", () => {
   it("restores term-pairs controls and preview when switching back", () => {
     renderImport();
     pasteText("cat\tgato\ndog\tperro\nbird\tpajaro\nfish\tpez");
-    expect(screen.getByText(/4 items ready/)).toBeInTheDocument();
+    expect(screen.getByText(/4 questions ready/)).toBeInTheDocument();
     chooseCloze();
-    expect(screen.queryByText(/4 items ready/)).not.toBeInTheDocument();
+    expect(screen.queryByText(/4 questions ready/)).not.toBeInTheDocument();
     fireEvent.click(screen.getByRole("radio", { name: /term pairs/i }));
     expect(screen.getByLabelText(/separator/i)).toBeInTheDocument();
-    expect(screen.getByText(/4 items ready/)).toBeInTheDocument();
+    expect(screen.getByText(/4 questions ready/)).toBeInTheDocument();
   });
 });

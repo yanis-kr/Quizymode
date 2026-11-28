@@ -76,18 +76,18 @@ function buildInitialFormData(
 
 function getSubmitErrorMessage(error: unknown): string {
   if (!isAxiosError<CreateItemErrorResponse>(error)) {
-    return error instanceof Error ? error.message : "Failed to create item.";
+    return error instanceof Error ? error.message : "Failed to create question.";
   }
 
   const data = error.response?.data;
-  if (!data) return error.message ?? "Failed to create item.";
+  if (!data) return error.message ?? "Failed to create question.";
   if (Array.isArray(data)) {
     return data
       .map((entry) => entry.errorMessage ?? entry.message ?? JSON.stringify(entry))
       .join(", ");
   }
   if (typeof data === "string") return data;
-  return data.detail ?? data.title ?? error.message ?? "Failed to create item.";
+  return data.detail ?? data.title ?? error.message ?? "Failed to create question.";
 }
 
 function CreateItemEditor({
