@@ -404,6 +404,8 @@ describe("ItemForm", () => {
       expect(privacy).toBeChecked();
       expect(screen.queryByText(PRIVATE_SENTENCE)).not.toBeInTheDocument();
       expect(screen.queryByRole("checkbox", { name: REVIEW_LABEL })).not.toBeInTheDocument();
+      // #928: admins have no review checkbox under any label.
+      expect(screen.queryByRole("checkbox", { name: /review/i })).not.toBeInTheDocument();
 
       await user.click(privacy);
       expect(onChange).toHaveBeenLastCalledWith({ ...defaultValues, isPrivate: false });

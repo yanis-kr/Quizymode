@@ -34,7 +34,8 @@ public static class GetItemById
         ItemImageReference? QuestionImage = null,
         ItemImageReference? ExplanationImage = null,
         ItemImageReviewInfo? ImageReview = null,
-        Dictionary<int, string>? IncorrectAnswerRationale = null);
+        Dictionary<int, string>? IncorrectAnswerRationale = null,
+        bool? ReadyForReview = null);
 
     public sealed record KeywordResponse(
         string Id,
@@ -154,10 +155,11 @@ public static class GetItemById
             // Build navigation breadcrumb: rank1, rank2 (or "other" when item has no nav keyword for that level)
             List<string> navigationBreadcrumb = await GetNavigationBreadcrumbAsync(db, item, cancellationToken);
 
-            // Review state is shown to the creator and admins only (AC 3.25.2); so is the rejection reason.
-            bool canSeeImageReview = userContext.IsAdmin || (userContext.IsAuthenticated && item.CreatedBy == userContext.UserId);
+            // Review state is shown to the creator and admins only (AC 3.25.2); so are the rejection reason
+            // and the ready-for-review flag.
+            bool isOwnerOrAdmin = userContext.IsAdmin || (userContext.IsAuthenticated && item.CreatedBy == userContext.UserId);
             string? rejectionReason = null;
-            if (canSeeImageReview && item.ImageReviewState == ItemImageReviewState.Rejected)
+            if (isOwnerOrAdmin && item.ImageReviewState == ItemImageReviewState.Rejected)
             {
                 Dictionary<Guid, string?> reasons = await ItemImageReviewRules.LoadRejectionReasonsAsync(db, [item], cancellationToken);
                 rejectionReason = reasons.GetValueOrDefault(item.Id);
@@ -186,8 +188,9 @@ public static class GetItemById
                 item.GroupLabel,
                 ItemImageReferenceHelper.FromColumns(item.QuestionImageKey, item.QuestionImageAlt, item.QuestionImageAttribution, item.QuestionImageLongDescription, item.ImageRevision),
                 ItemImageReferenceHelper.FromColumns(item.ExplanationImageKey, item.ExplanationImageAlt, item.ExplanationImageAttribution, item.ExplanationImageLongDescription, item.ImageRevision),
-                canSeeImageReview ? ItemImageReviewRules.InfoOf(item, rejectionReason) : null,
-                                item.IncorrectAnswerRationale.Count > 0 ? item.IncorrectAnswerRationale : null);
+                isOwnerOrAdmin ? ItemImageReviewRules.InfoOf(item, rejectionReason) : null,
+                item.IncorrectAnswerRationale.Count > 0 ? item.IncorrectAnswerRationale : null,
+                isOwnerOrAdmin ? item.ReadyForReview : null);
 
             return Result.Success(response);
         }

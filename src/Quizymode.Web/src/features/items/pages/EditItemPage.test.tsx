@@ -210,6 +210,56 @@ describe("EditItemPage", () => {
     expect(payload.readyForReview).toBe(true);
   });
 
+  it.each([
+    ["keeps it checked and sends true", false, true],
+    ["sends false after it is cleared", true, false],
+  ])("loads a set review flag into the owner's checkbox and %s (#928)", async (_name, clear, expected) => {
+    const user = userEvent.setup({ delay: null });
+    vi.mocked(itemsApi.getById).mockResolvedValue({
+      ...itemMock,
+      readyForReview: true,
+    } as Awaited<ReturnType<typeof itemsApi.getById>>);
+    renderPage("/items/item-1/edit");
+    const save = await screen.findByRole("button", { name: /^save$/i });
+
+    const review = screen.getByRole("checkbox", {
+      name: "Request review to make this question public",
+    });
+    expect(review).toBeChecked();
+    if (clear) await user.click(review);
+    await user.click(save);
+
+    await waitFor(() => expect(itemsApi.update).toHaveBeenCalledTimes(1));
+    expect(vi.mocked(itemsApi.update).mock.calls[0][1].readyForReview).toBe(expected);
+  });
+
+  it.each([
+    ["keeps the flag while Private question stays checked", false, true],
+    ["sends false once Private question is cleared", true, false],
+  ])("admin save %s (#928)", async (_name, makePublic, expected) => {
+    const user = userEvent.setup({ delay: null });
+    vi.mocked(useAuth).mockReturnValue({
+      isAuthenticated: true,
+      userId: "admin-1",
+      isAdmin: true,
+    } as ReturnType<typeof useAuth>);
+    vi.mocked(itemsApi.getById).mockResolvedValue({
+      ...itemMock,
+      readyForReview: true,
+    } as Awaited<ReturnType<typeof itemsApi.getById>>);
+    renderPage("/items/item-1/edit");
+    const save = await screen.findByRole("button", { name: /^save$/i });
+
+    expect(screen.queryByRole("checkbox", { name: /review/i })).not.toBeInTheDocument();
+    if (makePublic) await user.click(screen.getByRole("checkbox", { name: "Private question" }));
+    await user.click(save);
+
+    await waitFor(() => expect(itemsApi.update).toHaveBeenCalledTimes(1));
+    const payload = vi.mocked(itemsApi.update).mock.calls[0][1];
+    expect(payload.isPrivate).toBe(!makePublic);
+    expect(payload.readyForReview).toBe(expected);
+  });
+
   it("admin user sees isPrivate toggle", async () => {
     // AC 2.1.3
     vi.mocked(useAuth).mockReturnValue({

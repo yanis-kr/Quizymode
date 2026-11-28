@@ -1,4 +1,5 @@
 using System.Net;
+using System.Text.Json;
 using FluentAssertions;
 using Quizymode.Api.Features.Items.GetById;
 using Quizymode.Api.Shared.Models;
@@ -72,6 +73,48 @@ public sealed class GetItemByIdVisibilityHttpTests : DatabaseTestFixture, IAsync
     public async Task PublicItem_IsReadableAnonymously()
     {
         (await GetAsync(_publicItemId.ToString(), null)).Status.Should().Be(HttpStatusCode.OK);
+    }
+
+    [Theory]
+    [InlineData(true)]
+    [InlineData(false)]
+    public async Task OwnerAndAdmin_ReadTheStoredReviewFlag(bool stored)
+    {
+        // #928
+        await SetReviewFlagAsync(_privateItemId, stored);
+
+        foreach (string token in new[] { Token("owner"), Token("admin", AdminGroups) })
+        {
+            var result = await GetAsync(_privateItemId.ToString(), token);
+
+            result.Status.Should().Be(HttpStatusCode.OK);
+            using JsonDocument body = JsonDocument.Parse(result.Body);
+            body.RootElement.GetProperty("readyForReview").GetBoolean().Should().Be(stored);
+        }
+    }
+
+    [Fact]
+    public async Task OtherUserAndAnonymous_DoNotReadTheReviewFlagOfAPublicItem()
+    {
+        // #928
+        await SetReviewFlagAsync(_publicItemId, true);
+
+        foreach (string? token in new[] { Token("other"), null })
+        {
+            var result = await GetAsync(_publicItemId.ToString(), token);
+
+            result.Status.Should().Be(HttpStatusCode.OK);
+            using JsonDocument body = JsonDocument.Parse(result.Body);
+            bool present = body.RootElement.TryGetProperty("readyForReview", out JsonElement flag);
+            (!present || flag.ValueKind == JsonValueKind.Null).Should().BeTrue();
+        }
+    }
+
+    private async Task SetReviewFlagAsync(Guid itemId, bool value)
+    {
+        Item item = (await DbContext.Items.FindAsync(itemId))!;
+        item.ReadyForReview = value;
+        await DbContext.SaveChangesAsync();
     }
 
     [Fact]
