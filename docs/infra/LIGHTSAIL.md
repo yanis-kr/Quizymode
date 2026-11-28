@@ -14,6 +14,13 @@ AWS Lightsail hosts the Quizymode API container in production.
 - Cognito and Grafana settings referenced by the API should be supplied through environment variables in the service configuration.
 - After deployment changes, verify API health, auth flows, and telemetry export from the running container.
 
+## Proxy trust, CORS and security headers (#906)
+
+- **Forwarded headers are trusted from any network only because the Lightsail load balancer is the sole path in** to the container. `appsettings.Production.json` sets `ForwardedHeaders:KnownNetworks` to `0.0.0.0/0,::/0` with `ForwardLimit` 1, so only the hop the load balancer appended to `X-Forwarded-For` is used (AC 16.3.4). If a CDN or a second proxy is put in front of the API, or the container gets another way in, narrow those networks first.
+- The API honors `X-Forwarded-For` and `X-Forwarded-Proto` only. `X-Forwarded-Host` is ignored, so the request host is the `Host` header the load balancer passes on.
+- CORS in production allows only the web origins in `Cors:AllowedOrigins` (`https://www.quizymode.com`, `https://quizymode.com`). Development allows any origin. To add an origin, change that list (or set `APP_Cors__AllowedOrigins__<n>`), exact scheme and host, no trailing slash.
+- Every API response carries `X-Content-Type-Options: nosniff`; HTTPS responses outside Development also carry `Strict-Transport-Security: max-age=31536000`. The load balancer's internal plain-HTTP health probe gets no HSTS header, which is expected.
+
 ## Related Docs
 
 - [COGNITO_SETUP.md](./COGNITO_SETUP.md)

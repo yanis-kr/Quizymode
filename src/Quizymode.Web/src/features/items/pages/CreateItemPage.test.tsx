@@ -1,5 +1,5 @@
 import { beforeEach, describe, expect, it, vi } from "vitest";
-import { render, screen, waitFor } from "@testing-library/react";
+import { fireEvent, render, screen, waitFor } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { MemoryRouter, Route, Routes, useLocation } from "react-router-dom";
@@ -384,6 +384,74 @@ describe("CreateItemPage", () => {
 
     expect(await screen.findByText("Item Detail")).toBeInTheDocument();
     expect(screen.getByTestId("location")).toHaveTextContent("/items/item-123");
+  });
+
+  async function fillValidQuestion(user: ReturnType<typeof userEvent.setup>) {
+    renderPage("/create/question?category=science&keywords=anatomy,muscular");
+    await screen.findByTestId("topic-pill");
+    await user.type(getFieldControl("Question *"), "What moves muscles?");
+    await user.type(getFieldControl("Correct Answer *"), "Motor neurons");
+    await user.type(screen.getByPlaceholderText("Incorrect answer 1"), "Tendons");
+  }
+
+  it.each(["Correct Answer", "Incorrect answer 1"])(
+    "Enter in %s saves once and opens the question like Save and study (#927)",
+    async (field) => {
+      const user = userEvent.setup({ delay: null });
+      await fillValidQuestion(user);
+
+      const input =
+        field === "Correct Answer"
+          ? getFieldControl("Correct Answer *")
+          : screen.getByPlaceholderText(field);
+      await user.type(input, "{Enter}");
+
+      await waitFor(() => expect(screen.getByTestId("location")).toHaveTextContent("/items/item-123"));
+      expect(itemsApi.create).toHaveBeenCalledTimes(1);
+      expect(screen.queryByText("Saved. Add the next question.")).not.toBeInTheDocument();
+    }
+  );
+
+  it("Enter applies the highlighted keyword suggestion without submitting (#927)", async () => {
+    const user = userEvent.setup({ delay: null });
+    await fillValidQuestion(user);
+    await user.click(screen.getByRole("button", { name: "More options" }));
+
+    await user.type(screen.getByPlaceholderText(/^Keyword \(max/), "ar{Enter}");
+
+    expect(screen.getByRole("button", { name: "Remove arms" })).toBeInTheDocument();
+    expect(itemsApi.create).not.toHaveBeenCalled();
+  });
+
+  it("Enter saves nothing while a required field is empty (#927)", async () => {
+    const user = userEvent.setup({ delay: null });
+    renderPage("/create/question?category=science&keywords=anatomy,muscular");
+    await screen.findByTestId("topic-pill");
+
+    await user.type(getFieldControl("Correct Answer *"), "Motor neurons{Enter}");
+
+    expect(itemsApi.create).not.toHaveBeenCalled();
+  });
+
+  it("Enter saves nothing new while a save is in flight (#927)", async () => {
+    const user = userEvent.setup({ delay: null });
+    vi.mocked(itemsApi.create).mockReturnValue(new Promise(() => {}));
+    await fillValidQuestion(user);
+    await user.type(getFieldControl("Correct Answer *"), "{Enter}");
+    await screen.findByRole("button", { name: "Saving..." });
+
+    await user.type(getFieldControl("Correct Answer *"), "{Enter}");
+
+    expect(itemsApi.create).toHaveBeenCalledTimes(1);
+  });
+
+  it("Enter that confirms an input method conversion saves nothing (#927)", async () => {
+    const user = userEvent.setup({ delay: null });
+    await fillValidQuestion(user);
+
+    fireEvent.keyDown(getFieldControl("Correct Answer *"), { key: "Enter", keyCode: 229 });
+
+    expect(itemsApi.create).not.toHaveBeenCalled();
   });
 
   it("Save and add another runs native validation and does not save a blank question (#296)", async () => {

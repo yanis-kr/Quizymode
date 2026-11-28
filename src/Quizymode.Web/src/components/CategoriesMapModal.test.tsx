@@ -172,6 +172,18 @@ describe("CategoriesMapModal", () => {
     expect(screen.getByRole("link", { name: "saa-c03" })).toBeInTheDocument();
   });
 
+  it("shows the display name of a lowercase category and links to its slug (#929)", async () => {
+    vi.mocked(categoriesApi.getAll).mockResolvedValue({
+      categories: [{ id: "cat-g", category: "geography", description: null, count: 3, isPrivate: false, averageStars: null }],
+    } as never);
+    vi.mocked(taxonomyApi.getAll).mockResolvedValue({
+      categories: [{ slug: "geography", name: "geography", description: null, itemCount: 3, allKeywordSlugs: [], groups: [] }],
+    });
+    renderModal();
+
+    expect(await screen.findByRole("link", { name: "Geography" })).toHaveAttribute("href", "/categories/geography");
+  });
+
   const leaf = (slug: string) => ({ slug, description: null, itemCount: 0 });
   const group = (slug: string, keywords: string[]) => ({ ...leaf(slug), keywords: keywords.map(leaf) });
   const category = (slug: string, name: string, groups: ReturnType<typeof group>[]) => ({

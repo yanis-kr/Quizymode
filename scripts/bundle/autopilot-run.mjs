@@ -40,7 +40,8 @@ export function mainQmDir(cwd = process.cwd()) {
 }
 
 // Waiting on CI (#761, AC 7.19.20). While a run waits for an external event (a PR check or a main/Deploy run),
-// it records run.waiting so the Stop hook lets the turn end without counting toward the stall limit.
+// or only on background agents it dispatched (#930), it records run.waiting so the Stop hook lets the turn end
+// without counting toward the stall limit.
 // The wait expires after WAIT_MAX_MINUTES, so a monitor that never fires cannot hold the run open forever.
 export const WAIT_MAX_MINUTES = 60;
 
@@ -50,7 +51,7 @@ export function isWaiting(run, now = Date.now()) {
   return Number.isFinite(since) && now - since < WAIT_MAX_MINUTES * 60 * 1000;
 }
 
-// CLI: node autopilot-run.mjs wait --pr <n> | --run <id>   and   node autopilot-run.mjs wait-clear
+// CLI: node autopilot-run.mjs wait --pr <n> | --run <id> | --agents <count>   and   node autopilot-run.mjs wait-clear
 // Honors QM_DIR like the hooks do. Does nothing (exit 0, "no-run") when no run file exists.
 function cliMain(argv, env, cwd) {
   const [cmd, ...rest] = argv;
@@ -64,16 +65,17 @@ function cliMain(argv, env, cwd) {
     return { exit: 0, out: { ok: true, result: "cleared" } };
   }
   if (cmd === "wait") {
-    const pr = rest[rest.indexOf("--pr") + 1];
-    const runId = rest[rest.indexOf("--run") + 1];
-    if (!(rest.includes("--pr") || rest.includes("--run")) || (rest.includes("--pr") && !/^\d+$/.test(pr ?? "")) || (rest.includes("--run") && !/^\d+$/.test(runId ?? ""))) {
-      return { exit: 1, out: { ok: false, result: "usage: wait --pr <n> | --run <id>" } };
+    const kinds = [["--pr", "pr"], ["--run", "run"], ["--agents", "agents"]].filter(([flag]) => rest.includes(flag));
+    const value = kinds.length === 1 ? rest[rest.indexOf(kinds[0][0]) + 1] : undefined;
+    if (kinds.length !== 1 || !/^\d+$/.test(value ?? "") || (kinds[0][1] === "agents" && Number(value) < 1)) {
+      return { exit: 1, out: { ok: false, result: "usage: wait --pr <n> | --run <id> | --agents <count>" } };
     }
-    run.waiting = { kind: rest.includes("--pr") ? "pr" : "run", ...(rest.includes("--pr") ? { pr: Number(pr) } : { run: Number(runId) }), since: new Date().toISOString() };
+    const kind = kinds[0][1];
+    run.waiting = { kind, [kind]: Number(value), since: new Date().toISOString() };
     writeRun(file, run);
     return { exit: 0, out: { ok: true, result: "waiting", waiting: run.waiting } };
   }
-  return { exit: 1, out: { ok: false, result: "usage: autopilot-run.mjs wait --pr <n> | --run <id> | wait-clear" } };
+  return { exit: 1, out: { ok: false, result: "usage: autopilot-run.mjs wait --pr <n> | --run <id> | --agents <count> | wait-clear" } };
 }
 
 if (process.argv[1] && path.resolve(process.argv[1]) === fileURLToPath(import.meta.url)) {

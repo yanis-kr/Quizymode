@@ -668,7 +668,7 @@ test.describe("other flows", () => {
       correctAnswer: `Weighted sums ${index}`,
       incorrectAnswers: ["Nothing", "Random"],
     }));
-    await page.getByLabel("JSON array of items").fill(JSON.stringify(rows));
+    await page.getByLabel("JSON array of questions").fill(JSON.stringify(rows));
     await expect(topicGroup(page).getByText("Suggested from your text")).toBeVisible();
 
     const sent = api.suggestBodies.map((body) => body.text ?? "").find((text) => text.length > 0)!;

@@ -702,7 +702,7 @@ const StudyGuideDocumentPage = () => {
                 Publish to the library (public)
               </label>
               <p className="text-xs text-gray-500">
-                Published questions become public items. The collection itself stays private to you, and the
+                Published questions become public. The collection itself stays private to you, and the
                 document title is not added to the explanations.
               </p>
             </fieldset>
@@ -726,7 +726,7 @@ const StudyGuideDocumentPage = () => {
               {acceptMutation.isPending ? "Saving…" : `Save ${saveCount} selected`}
             </button>
             <span className="text-xs text-gray-500">
-              {isAdmin && publish ? "Questions are published as public items." : "Questions are saved as your private items."}
+              {isAdmin && publish ? "Questions are published as public." : "Questions are saved as private."}
             </span>
           </div>
           )}

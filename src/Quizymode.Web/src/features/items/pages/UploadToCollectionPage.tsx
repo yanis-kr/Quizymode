@@ -25,9 +25,9 @@ type UploadTab = "json" | "paste";
 
 const EXAMPLE_PROMPT = (topic: string, uploadId: string) => `You are creating study flashcards for an app called Quizymode.
 
-Create up to 30 quiz items about ${topic}. Attach Study Guide (optional).
+Create up to 30 quiz questions about ${topic}. Attach Study Guide (optional).
 
-Each item must be a JSON object with this exact shape:
+Each question must be a JSON object with this exact shape:
 
 {
   "category": "Category Name",
@@ -42,9 +42,9 @@ Each item must be a JSON object with this exact shape:
 }
 
 Requirements:
-- Return a single JSON array of items: [ { ... }, { ... }, ... ].
+- Return a single JSON array of questions: [ { ... }, { ... }, ... ].
 - Do NOT include any explanations, prose, comments, Markdown, or code fences. Output raw JSON only.
-- Every item must have:
+- Every question must have:
   - "category" (max 50 characters)
   - a non-empty "question" (max 1,000 characters)
   - a non-empty "correctAnswer" (max 200 characters)
@@ -64,7 +64,7 @@ interface UploadToCollectionPageProps {
 
 const UploadToCollectionPage = ({
   initialTab = "json",
-  heading = "Upload items to collection",
+  heading = "Upload questions to collection",
 }: UploadToCollectionPageProps) => {
   const { isAuthenticated, isAdmin } = useAuth();
   const [activeTab, setActiveTab] = React.useState<UploadTab>(initialTab);
@@ -197,11 +197,11 @@ const UploadToCollectionPage = ({
     try {
       items = JSON.parse(jsonText);
     } catch {
-      setParseError("Invalid JSON. Paste a JSON array of items.");
+      setParseError("Invalid JSON. Paste a JSON array of questions.");
       return;
     }
     if (!Array.isArray(items) || items.length === 0) {
-      setParseError("JSON must be a non-empty array of items.");
+      setParseError("JSON must be a non-empty array of questions.");
       return;
     }
     const pictureError = findPictureImportError(items);
@@ -252,7 +252,7 @@ const UploadToCollectionPage = ({
       .filter((n) => n > 0);
     if (groupLabelRows.length > 0) {
       setParseError(
-        `Item${groupLabelRows.length > 1 ? "s" : ""} ${groupLabelRows.join(", ")}: group label must be 30 characters or fewer, with no line breaks.`
+        `Question${groupLabelRows.length > 1 ? "s" : ""} ${groupLabelRows.join(", ")}: group label must be 30 characters or fewer, with no line breaks.`
       );
       return;
     }
@@ -261,7 +261,7 @@ const UploadToCollectionPage = ({
       .filter((n) => n > 0);
     if (missingRows.length > 0) {
       setParseError(
-        `Item${missingRows.length > 1 ? "s" : ""} ${missingRows.join(", ")}: provide at least one non-blank incorrect answer (1-4).`
+        `Question${missingRows.length > 1 ? "s" : ""} ${missingRows.join(", ")}: provide at least one non-blank incorrect answer (1-4).`
       );
       return;
     }
@@ -270,7 +270,7 @@ const UploadToCollectionPage = ({
       .filter((n) => n > 0);
     if (conflictRows.length > 0) {
       setParseError(
-        `Item${conflictRows.length > 1 ? "s" : ""} ${conflictRows.join(", ")}: incorrect answers must be different from each other and from the correct answer.`
+        `Question${conflictRows.length > 1 ? "s" : ""} ${conflictRows.join(", ")}: incorrect answers must be different from each other and from the correct answer.`
       );
       return;
     }
@@ -321,7 +321,7 @@ const UploadToCollectionPage = ({
   if (!isAuthenticated) {
     return (
       <div className="px-4 py-6 sm:px-0 max-w-2xl mx-auto">
-        <p className="text-gray-600 mb-4">Sign in to upload items to a new collection.</p>
+        <p className="text-gray-600 mb-4">Sign in to upload questions to a new collection.</p>
         <Link to="/login" className="text-indigo-ink hover:text-indigo-ink">
           Log in
         </Link>
@@ -334,8 +334,8 @@ const UploadToCollectionPage = ({
       <h1 className="text-3xl font-bold text-gray-900 mb-2">{heading}</h1>
       <p className="text-gray-600 text-sm mb-6">
         {effectiveTab === "json"
-          ? "Choose a topic (required), then paste a JSON array of items or upload a JSON file. Items are added to a new collection. Duplicate uploads (same content) are rejected."
-          : "Choose a topic (required), then paste your questions or upload a file. Items are added to a new collection. Duplicate uploads (same content) are rejected."}
+          ? "Choose a topic (required), then paste a JSON array of questions or upload a JSON file. Questions are added to a new collection. Duplicate uploads (same content) are rejected."
+          : "Choose a topic (required), then paste your questions or upload a file. Questions are added to a new collection. Duplicate uploads (same content) are rejected."}
       </p>
 
       <ContentComplianceNotice />
@@ -446,7 +446,7 @@ const UploadToCollectionPage = ({
 
         <div>
           <label htmlFor="json" className="block text-sm font-medium text-gray-700 mb-1">
-            JSON array of items
+            JSON array of questions
           </label>
           <textarea
             id="json"

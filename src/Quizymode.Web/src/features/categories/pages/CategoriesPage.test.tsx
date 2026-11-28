@@ -27,6 +27,9 @@ vi.mock("@/api/keywords", () => ({
 vi.mock("@/api/items", () => ({ itemsApi: { getAll: vi.fn() } }));
 vi.mock("@/api/featured", () => ({ featuredApi: { get: vi.fn() } }));
 vi.mock("@/api/games", () => ({ gamesApi: { getRoster: vi.fn() } }));
+vi.mock("@/api/taxonomy", () => ({
+  taxonomyApi: { getAll: vi.fn().mockResolvedValue({ categories: [] }), suggest: vi.fn() },
+}));
 vi.mock("@/api/ratings", () => ({
   ratingsApi: {
     getStats: vi.fn().mockResolvedValue({ averageStars: null, count: 0 }),
@@ -666,6 +669,18 @@ describe("CategoriesPage category display names (#902)", () => {
     expect(within(tile).getByRole("heading", { name: "capitals" })).toBeInTheDocument();
   });
 
+  it.each(["/categories/geography?view=sets", "/categories/geography?view=items"])(
+    "shows the category display name in the breadcrumb of %s and keeps the slug in its address (#929)",
+    async (url) => {
+      const user = userEvent.setup({ delay: null });
+      renderWithLocation(url);
+
+      await user.click(await screen.findByRole("button", { name: "Geography" }));
+
+      await waitFor(() => expect(screen.getByTestId("location").textContent).toMatch(/^\/categories\/geography\?/));
+    }
+  );
+
   it.each(["/categories/geography", "/categories/geography?view=items"])(
     "capitalises the category filter options at %s and keeps their values",
     async (url) => {
@@ -756,13 +771,81 @@ describe("Questions and topics wording (#922)", () => {
     expect(screen.queryByText("Item Type")).not.toBeInTheDocument();
   });
 
-  // ActionButtons gets no onListSets handler and the Topics branch never renders for a childless scope, so these two
-  // strings cannot be reached through the page; the source is the only place to check them.
-  it("AC 3.4.12 keeps the unreachable List topics and end-of-subtopics strings in the new wording (#922)", () => {
-    expect(categoriesPageSource).toContain("List topics");
+  it.each([
+    ["the topic tiles", "/categories/geography"],
+    ["an empty topic level", "/categories/geography/empty-topic"],
+    ["the List view", "/categories/geography?view=items"],
+    ["a childless scope", "/categories/geography/capitals/europe?view=sets"],
+  ])("renders no List topics button on %s (#929)", async (_state, url) => {
+    renderAt(url);
+
+    await screen.findAllByRole("tab", { name: "List" });
+    expect(screen.queryByRole("button", { name: "List topics" })).not.toBeInTheDocument();
+  });
+
+  it("renders no List topics button when the topics cannot be loaded (#929)", async () => {
+    vi.mocked(keywordsApi.getNavigationKeywords).mockRejectedValue(new Error("down"));
+    renderAt("/categories/geography");
+
+    expect(await screen.findByRole("button", { name: "List questions" })).toBeInTheDocument();
+    expect(screen.queryByRole("button", { name: "List topics" })).not.toBeInTheDocument();
+  });
+
+  // The Topics branch never renders for a childless scope, so this message cannot be reached through the page; it was
+  // not proved removable for every state, so it stays (#929).
+  it("AC 3.4.12 keeps the end-of-subtopics message and has no List topics handler left (#922, #929)", () => {
     expect(categoriesPageSource).toContain(
       "There are no more subtopics here. Browse questions, use flashcards, or take a quiz."
     );
-    expect(categoriesPageSource).not.toMatch(/List sets|List items|sets hierarchy/);
+    expect(categoriesPageSource).not.toMatch(/List topics|onListSets|List sets|List items|sets hierarchy/);
+  });
+});
+
+describe("Categories map button (#926)", () => {
+  beforeEach(() => {
+    vi.clearAllMocks();
+    installMemoryLocalStorage();
+    vi.mocked(categoriesApi.getAll).mockResolvedValue({
+      categories: [{ category: "Geography", count: 12, description: "Places.", averageRating: null }],
+    } as never);
+    vi.mocked(keywordsApi.getNavigationKeywords).mockResolvedValue({
+      keywords: [{ name: "capitals", itemCount: 12, averageRating: null, navigationRank: 1, description: null }],
+    } as never);
+    vi.mocked(keywordsApi.getKeywordDescriptions).mockResolvedValue({ keywords: [] });
+    vi.mocked(keywordsApi.getItemTagKeywords).mockResolvedValue({ names: [] });
+    vi.mocked(featuredApi.get).mockResolvedValue({ sets: [], collections: [] });
+    vi.mocked(itemsApi.getAll).mockResolvedValue({
+      items: [makeItem("1", "Q one", "Answer one")], totalCount: 1, page: 1, pageSize: 10, totalPages: 1,
+    } as never);
+  });
+
+  it.each([
+    ["the category List view", "/categories/geography?view=items"],
+    ["the All categories List view", "/categories/all?view=items"],
+  ])("opens the map from %s and closing it returns to the same list (#926)", async (_name, url) => {
+    const user = userEvent.setup({ delay: null });
+    renderAt(url);
+    await screen.findByText("Q one");
+    expect(screen.queryByRole("dialog")).not.toBeInTheDocument();
+
+    await user.click(screen.getByRole("button", { name: "Map" }));
+    const dialog = screen.getByRole("dialog", { name: /map/i });
+    await user.click(within(dialog).getByRole("button", { name: /close/i }));
+
+    expect(screen.queryByRole("dialog")).not.toBeInTheDocument();
+    expect(screen.getByText("Q one")).toBeInTheDocument();
+    expect(screen.getByRole("tab", { name: "List" })).toHaveAttribute("aria-selected", "true");
+  });
+
+  it.each([
+    ["the category index", "/categories"],
+    ["a category topic view", "/categories/geography"],
+  ])("still opens the map from %s (#926)", async (_name, url) => {
+    const user = userEvent.setup({ delay: null });
+    renderAt(url);
+
+    await user.click(await screen.findByRole("button", { name: "Map" }));
+
+    expect(screen.getByRole("dialog", { name: /map/i })).toBeInTheDocument();
   });
 });

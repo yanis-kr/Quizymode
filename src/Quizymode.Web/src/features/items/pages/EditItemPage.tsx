@@ -122,7 +122,7 @@ const EditItemPage = () => {
           : [],
         source: itemData.source || "",
         groupLabel: itemData.groupLabel || "",
-        readyForReview: false,
+        readyForReview: itemData.readyForReview ?? false,
       });
     }
   }, [itemData]);
@@ -218,7 +218,8 @@ const EditItemPage = () => {
       source: formData.source.trim() || undefined,
       // A blank value clears the stored label; an omitted one would keep it.
       groupLabel: formData.groupLabel.trim(),
-      readyForReview: formData.readyForReview,
+      // An admin has no review checkbox: making a question public also takes it out of the review queue.
+      readyForReview: isAdmin && !formData.isPrivate ? false : formData.readyForReview,
     };
 
     const uploaded = itemData?.questionImage?.key.startsWith("media:") || itemData?.explanationImage?.key.startsWith("media:");
@@ -235,18 +236,18 @@ const EditItemPage = () => {
     const err = updateMutation.error as any;
     const status = err?.response?.status;
     if (status === 401) return "Your session has expired. Please sign in again.";
-    if (status === 403) return "You can only edit your own items.";
-    if (status === 404) return "This item no longer exists, or you do not have access to it.";
-    if (!err?.response?.data) return err?.message ?? "Failed to update item.";
+    if (status === 403) return "You can only edit your own questions.";
+    if (status === 404) return "This question no longer exists, or you do not have access to it.";
+    if (!err?.response?.data) return err?.message ?? "Failed to update question.";
     const data = err.response.data;
     if (Array.isArray(data))
       // eslint-disable-next-line @typescript-eslint/no-explicit-any
       return data.map((e: any) => e.errorMessage ?? e.message ?? JSON.stringify(e)).join(", ");
     if (typeof data === "string") return data;
     if (data.title === "Item.Duplicate") {
-      return data.detail ?? "An item with the same question already exists in this category.";
+      return data.detail ?? "A question with the same text already exists in this category.";
     }
-    return data.detail ?? data.title ?? "Failed to update item.";
+    return data.detail ?? data.title ?? "Failed to update question.";
   };
 
   if (!isAuthenticated) {
@@ -261,7 +262,7 @@ const EditItemPage = () => {
     return (
       <div className="px-4 py-6 sm:px-0">
         <ErrorMessage
-          message="Failed to load item. It may not exist or you may not have permission to edit it."
+          message="Failed to load question. It may not exist or you may not have permission to edit it."
           onRetry={() => navigate("/categories")}
         />
       </div>
@@ -273,7 +274,7 @@ const EditItemPage = () => {
     return (
       <div className="px-4 py-6 sm:px-0">
         <ErrorMessage
-          message="You can only edit your own items."
+          message="You can only edit your own questions."
           onRetry={() => navigate("/categories")}
         />
       </div>
@@ -288,7 +289,7 @@ const EditItemPage = () => {
             role="status"
             className="rounded-md border border-amber-300 bg-amber-50 p-4 text-sm text-amber-900"
           >
-            Your changes were saved. This item is now private again until an administrator approves it.
+            Your changes were saved. This question is now private again until an administrator approves it.
           </div>
           <button
             type="button"
@@ -305,9 +306,9 @@ const EditItemPage = () => {
   return (
     <div className="px-4 py-6 sm:px-0">
       <div className="max-w-2xl mx-auto">
-        <h1 className="text-3xl font-bold text-gray-900 mb-2">Edit Item</h1>
+        <h1 className="text-3xl font-bold text-gray-900 mb-2">Edit question</h1>
         <p className="text-gray-600 text-sm mb-6">
-          Update the quiz item details. You can edit your own items; admins can edit any item.
+          Update the question details. You can edit your own questions; admins can edit any question.
         </p>
 
         {willBecomePrivate && (
@@ -315,7 +316,7 @@ const EditItemPage = () => {
             role="note"
             className="mb-4 rounded-md border border-amber-300 bg-amber-50 p-4 text-sm text-amber-900"
           >
-            Saving changes will make this item private again until an administrator approves it.
+            Saving changes will make this question private again until an administrator approves it.
           </div>
         )}
 
@@ -368,7 +369,7 @@ const EditItemPage = () => {
         {pendingReviewSave && (
           <ConfirmDialog
             title="Save changes for fresh picture review?"
-            message="These changes require fresh picture review. The item will be unavailable to other people, including through existing shares, until approved. Save changes?"
+            message="These changes require fresh picture review. The question will be unavailable to other people, including through existing shares, until approved. Save changes?"
             confirmLabel="Save changes"
             onCancel={() => setPendingReviewSave(null)}
             onConfirm={() => {

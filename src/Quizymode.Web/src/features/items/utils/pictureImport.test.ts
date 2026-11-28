@@ -12,25 +12,25 @@ describe("findPictureImportError", () => {
   });
 
   it("names the one item and the field that was found", () => {
-    expect(findPictureImportError([{}, {}, { questionImage: picture }])).toBe(`Item 3 has "questionImage". ${HINT}`);
-    expect(findPictureImportError([{ explanationImage: picture }])).toBe(`Item 1 has "explanationImage". ${HINT}`);
+    expect(findPictureImportError([{}, {}, { questionImage: picture }])).toBe(`Question 3 has "questionImage". ${HINT}`);
+    expect(findPictureImportError([{ explanationImage: picture }])).toBe(`Question 1 has "explanationImage". ${HINT}`);
     expect(findPictureImportError([{ questionImage: picture, explanationImage: picture }])).toBe(
-      `Item 1 has "questionImage" and "explanationImage". ${HINT}`,
+      `Question 1 has "questionImage" and "explanationImage". ${HINT}`,
     );
   });
 
   it("lists up to three items, then counts the rest", () => {
     const rows = Array.from({ length: 12 }, (_, index) => (index % 2 === 0 ? { questionImage: picture } : {}));
-    expect(findPictureImportError(rows.slice(0, 5))).toBe(`Items 1, 3 and 5 have "questionImage". ${HINT}`);
-    expect(findPictureImportError(rows.slice(0, 3))).toBe(`Items 1 and 3 have "questionImage". ${HINT}`);
-    expect(findPictureImportError(rows)).toBe(`Items 1, 3, 5 and 3 more have "questionImage". ${HINT}`);
+    expect(findPictureImportError(rows.slice(0, 5))).toBe(`Questions 1, 3 and 5 have "questionImage". ${HINT}`);
+    expect(findPictureImportError(rows.slice(0, 3))).toBe(`Questions 1 and 3 have "questionImage". ${HINT}`);
+    expect(findPictureImportError(rows)).toBe(`Questions 1, 3, 5 and 3 more have "questionImage". ${HINT}`);
   });
 
   it("names both fields when items differ, and treats a non-object value as a picture", () => {
     expect(findPictureImportError([{ questionImage: picture }, { explanationImage: picture }])).toBe(
-      `Items 1 and 2 have "questionImage" or "explanationImage". ${HINT}`,
+      `Questions 1 and 2 have "questionImage" or "explanationImage". ${HINT}`,
     );
-    expect(findPictureImportError([{ questionImage: "curated:flags/fr" }])).toContain('Item 1 has "questionImage"');
+    expect(findPictureImportError([{ questionImage: "curated:flags/fr" }])).toContain('Question 1 has "questionImage"');
   });
 
   it("ignores rows that are not objects", () => {

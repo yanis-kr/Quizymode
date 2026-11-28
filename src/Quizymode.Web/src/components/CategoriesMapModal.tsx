@@ -10,7 +10,7 @@ import { categoriesApi } from "@/api/categories";
 import { keywordsApi } from "@/api/keywords";
 import type { TaxonomyCategory, TaxonomyL1, TaxonomyL2 } from "@/api/taxonomy";
 import { useTaxonomy } from "@/features/topics/useTaxonomy";
-import { categoryNameToSlug } from "@/utils/categorySlug";
+import { categoryDisplayName, categoryNameToSlug } from "@/utils/categorySlug";
 import { questionCountLabel } from "@/utils/questionCountLabel";
 import LoadingSpinner from "./LoadingSpinner";
 import ErrorMessage from "./ErrorMessage";
@@ -69,7 +69,7 @@ function createCategoryNode(
   return {
     id: category.slug,
     kind: "category",
-    label: category.name,
+    label: categoryDisplayName(category.name),
     count: null,
     description: category.description ?? null,
     href: `/categories/${category.slug}`,

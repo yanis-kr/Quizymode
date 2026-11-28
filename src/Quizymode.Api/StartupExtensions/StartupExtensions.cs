@@ -20,39 +20,8 @@ internal static partial class StartupExtensions
         builder.AddPostgreSqlServices();
         builder.AddRateLimitingServices();
 
-        // Configure forwarded headers for proxy scenarios (Cloudflare in production, Aspire in development)
-        builder.Services.Configure<ForwardedHeadersOptions>(options =>
-        {
-            options.ForwardedHeaders = Microsoft.AspNetCore.HttpOverrides.ForwardedHeaders.XForwardedFor 
-                | Microsoft.AspNetCore.HttpOverrides.ForwardedHeaders.XForwardedProto 
-                | Microsoft.AspNetCore.HttpOverrides.ForwardedHeaders.XForwardedHost;
-            
-            if (builder.Environment.IsDevelopment())
-            {
-                // In development, trust localhost and loopback addresses for Aspire proxy
-                options.KnownProxies.Clear();
-                options.KnownProxies.Add(System.Net.IPAddress.Loopback);
-                options.KnownProxies.Add(System.Net.IPAddress.IPv6Loopback);
-            }
-            else
-            {
-                // In production, only trust Cloudflare's IP ranges
-                // Cloudflare IPs should be configured via KnownNetworks
-            }
-
-            // Proxies in front of the API (for example the load balancer's private range) are trusted only when
-            // configured: ForwardedHeaders:KnownNetworks is a comma-separated CIDR list. Only then does
-            // Connection.RemoteIpAddress take the hop such a proxy appended to X-Forwarded-For; a value the
-            // client sent itself is never trusted, so per-IP rate limits cannot be dodged by spoofing it.
-            string? knownNetworks = builder.Configuration["ForwardedHeaders:KnownNetworks"];
-            if (!string.IsNullOrWhiteSpace(knownNetworks))
-            {
-                foreach (string cidr in knownNetworks.Split(',', StringSplitOptions.RemoveEmptyEntries | StringSplitOptions.TrimEntries))
-                {
-                    options.KnownIPNetworks.Add(System.Net.IPNetwork.Parse(cidr));
-                }
-            }
-        });
+        // Forwarded headers from the load balancer (#753) and the security headers (#906).
+        builder.AddProxyAndSecurityHeaderServices();
 
         // Add authentication before custom services so middleware and IUserContext work
         builder.AddAuthenticationServices();
@@ -74,6 +43,9 @@ internal static partial class StartupExtensions
         // headers (X-Forwarded-Proto, X-Forwarded-For) are processed and the request
         // scheme is correctly identified as HTTPS even though Cloudflare forwards it as HTTP.
         app.UseForwardedHeaders();
+
+        // #906: security headers on every response, including the startup gate's 503 and error responses.
+        app.UseSecurityHeaders();
 
         // #732: 503 + Retry-After for everything except the probes until migrations and seeding are done.
         app.UseMiddleware<Services.Startup.StartupGateMiddleware>();
@@ -137,7 +109,7 @@ internal static partial class StartupExtensions
         }
 
         app.UseHttpsRedirection();
-        app.UseCors("AllowAll");
+        app.UseCors(CorsPolicyName);
 
         // Authentication & Authorization
         app.UseAuthentication();
@@ -154,5 +126,125 @@ internal static partial class StartupExtensions
         app.MapFeatureEndpoints();
 
         return app;
+    }
+
+    internal static readonly TimeSpan HstsMaxAge = TimeSpan.FromDays(365);
+
+    /// <summary>Forwarded-header trust (<see cref="ConfigureForwardedHeaderOptions"/>) and the HSTS settings used by
+    /// <see cref="UseSecurityHeaders"/>: one year, no includeSubDomains, no preload (#906).</summary>
+    internal static WebApplicationBuilder AddProxyAndSecurityHeaderServices(this WebApplicationBuilder builder)
+    {
+        builder.Services.Configure<ForwardedHeadersOptions>(options => ConfigureForwardedHeaderOptions(
+            options,
+            builder.Environment.IsDevelopment(),
+            builder.Configuration["ForwardedHeaders:KnownNetworks"]));
+
+        builder.Services.AddHsts(options =>
+        {
+            options.MaxAge = HstsMaxAge;
+            options.IncludeSubDomains = false;
+            options.Preload = false;
+        });
+
+        return builder;
+    }
+
+    /// <summary>
+    /// X-Forwarded-For and X-Forwarded-Proto are honored from trusted proxies; X-Forwarded-Host is not (#906), so the
+    /// request host is the Host header the load balancer passed on. Development trusts loopback only (Aspire proxy).
+    /// Other proxies are trusted only when configured: ForwardedHeaders:KnownNetworks is a comma-separated CIDR list.
+    /// Production trusts any network because the load balancer is the sole path in (appsettings.Production.json,
+    /// docs/infra/LIGHTSAIL.md). Only then does Connection.RemoteIpAddress take the hop such a proxy appended to
+    /// X-Forwarded-For; a value the client sent itself is never trusted, so per-IP rate limits cannot be dodged.
+    /// </summary>
+    internal static void ConfigureForwardedHeaderOptions(ForwardedHeadersOptions options, bool isDevelopment, string? knownNetworks)
+    {
+        options.ForwardedHeaders = Microsoft.AspNetCore.HttpOverrides.ForwardedHeaders.XForwardedFor
+            | Microsoft.AspNetCore.HttpOverrides.ForwardedHeaders.XForwardedProto;
+
+        if (isDevelopment)
+        {
+            options.KnownProxies.Clear();
+            options.KnownProxies.Add(System.Net.IPAddress.Loopback);
+            options.KnownProxies.Add(System.Net.IPAddress.IPv6Loopback);
+        }
+
+        if (!string.IsNullOrWhiteSpace(knownNetworks))
+        {
+            foreach (string cidr in knownNetworks.Split(',', StringSplitOptions.RemoveEmptyEntries | StringSplitOptions.TrimEntries))
+            {
+                options.KnownIPNetworks.Add(System.Net.IPNetwork.Parse(cidr));
+            }
+        }
+    }
+
+    /// <summary>
+    /// #906: every response carries exactly one <c>X-Content-Type-Options: nosniff</c> (set when the response starts,
+    /// so an endpoint that sets it too still sends one value). Outside Development, HTTPS responses also carry
+    /// <c>Strict-Transport-Security</c> with a one-year max-age (<see cref="HstsMaxAge"/>); plain HTTP, such as the
+    /// load balancer's internal health probe, does not.
+    /// </summary>
+    internal static WebApplication UseSecurityHeaders(this WebApplication app)
+    {
+        app.Use(static (context, next) =>
+        {
+            HttpResponse response = context.Response;
+            response.OnStarting(static state =>
+            {
+                ((HttpResponse)state).Headers.XContentTypeOptions = "nosniff";
+                return Task.CompletedTask;
+            }, response);
+            return next(context);
+        });
+
+        if (!app.Environment.IsDevelopment())
+        {
+            app.UseHsts();
+            app.UseUnhandledExceptionAs500();
+        }
+
+        return app;
+    }
+
+    /// <summary>
+    /// #906: Kestrel answers an unhandled exception with its own 500 after resetting every header and without running
+    /// OnStarting, so the security headers would be lost. Outside Development this middleware (inside UseHsts) turns
+    /// such an exception into an empty 500 that keeps them. It logs the exception under Kestrel's category, event and
+    /// message, as Kestrel did, and tags error.type for the request metric and trace. A started response or an aborted
+    /// request is rethrown to Kestrel unchanged; client-disconnect cancellations are absorbed further in (499).
+    /// </summary>
+    private static void UseUnhandledExceptionAs500(this WebApplication app)
+    {
+        Microsoft.Extensions.Logging.ILogger logger = app.Services.GetRequiredService<ILoggerFactory>().CreateLogger("Microsoft.AspNetCore.Server.Kestrel");
+        app.Use(async (context, next) =>
+        {
+            try
+            {
+                await next(context);
+            }
+            catch (Exception exception) when (!context.Response.HasStarted && !context.RequestAborted.IsCancellationRequested)
+            {
+                logger.LogError(
+                    new EventId(13, "ApplicationError"),
+                    exception,
+                    "Connection id \"{ConnectionId}\", Request id \"{TraceIdentifier}\": An unhandled exception was thrown by the application.",
+                    context.Connection.Id,
+                    context.TraceIdentifier);
+
+                string errorType = exception.GetType().FullName ?? exception.GetType().Name;
+                context.Features.Get<Microsoft.AspNetCore.Http.Features.IHttpMetricsTagsFeature>()?.Tags.Add(new("error.type", errorType));
+                System.Diagnostics.Activity.Current?.SetTag("error.type", errorType);
+
+                HttpResponse response = context.Response;
+                Microsoft.Extensions.Primitives.StringValues hsts = response.Headers.StrictTransportSecurity;
+                response.Clear();
+                if (!Microsoft.Extensions.Primitives.StringValues.IsNullOrEmpty(hsts))
+                {
+                    response.Headers.StrictTransportSecurity = hsts;
+                }
+
+                response.StatusCode = StatusCodes.Status500InternalServerError;
+            }
+        });
     }
 }

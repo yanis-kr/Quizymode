@@ -32,7 +32,7 @@ const FeedbackPage = () => {
     },
     {
       type: "requestItems",
-      title: "Ask for more items",
+      title: "Ask for more questions",
       description:
         "Request more questions for missing subjects, exams, or topics and include optional keywords for better routing.",
       icon: SparklesIcon,
@@ -65,7 +65,7 @@ const FeedbackPage = () => {
           </h1>
           <p className="mt-4 text-lg leading-8 text-gray-700">
             Quizymode is built iteratively. Use the in-app feedback flow to report bugs,
-            request more study items, or send general product feedback without leaving the site.
+            request more study questions, or send general product feedback without leaving the site.
           </p>
         </div>
 

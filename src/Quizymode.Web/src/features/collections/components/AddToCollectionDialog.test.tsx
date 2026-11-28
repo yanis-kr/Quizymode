@@ -3,6 +3,7 @@ import userEvent from "@testing-library/user-event";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { beforeEach, describe, expect, it, vi } from "vitest";
 import { AddToCollectionDialog } from "./AddToCollectionDialog";
+import { categoriesApi } from "@/api/categories";
 
 const mocks = vi.hoisted(() => ({
   getAll: vi.fn(),
@@ -69,6 +70,17 @@ describe("AddToCollectionDialog", () => {
     const dialog = screen.getByRole("dialog", { name: "Add to collection" });
     expect(container.querySelector("[data-testid='transformed']")).not.toContainElement(dialog);
     expect(document.body).toContainElement(dialog);
+  });
+
+  it("lists a lowercase category by its display name in the Topics tab (#929)", async () => {
+    vi.mocked(categoriesApi.getAll).mockResolvedValueOnce({
+      categories: [{ id: "g", category: "geography", count: 1, isPrivate: false }],
+    } as never);
+    renderDialog();
+
+    await userEvent.click(screen.getByRole("tab", { name: "Topics" }));
+
+    expect(await screen.findByRole("option", { name: "Geography" })).toHaveValue("g");
   });
 
   it("closes on Escape", async () => {

@@ -255,7 +255,7 @@ describe("StudyGuideDocumentPage: Make a quiz (#363)", () => {
 
     renderPage();
 
-    expect(await screen.findByText("Already in your items")).toBeInTheDocument();
+    expect(await screen.findByText("Already in your questions")).toBeInTheDocument();
     expect(screen.queryByRole("checkbox", { name: "Include question 2" })).not.toBeInTheDocument();
     expect(screen.queryByRole("button", { name: /^Save \d+ selected/ })).not.toBeInTheDocument();
   });

@@ -379,7 +379,7 @@ const UserProfileModal = ({ isOpen, onClose }: UserProfileModalProps) => {
                 Default Page Size
               </label>
               <p className="text-xs text-gray-500 mb-2">
-                Number of items displayed per page
+                Number of questions displayed per page
               </p>
               <select
                 value={pageSize}
@@ -388,7 +388,7 @@ const UserProfileModal = ({ isOpen, onClose }: UserProfileModalProps) => {
                 className="w-full px-3 py-2 border border-gray-300 rounded-md text-sm text-gray-900 bg-surface disabled:opacity-50"
               >
                 {PAGE_SIZE_OPTIONS.map((n) => (
-                  <option key={n} value={n}>{n} items per page</option>
+                  <option key={n} value={n}>{n} questions per page</option>
                 ))}
               </select>
             </div>

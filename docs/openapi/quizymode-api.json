@@ -16767,6 +16767,16 @@
                 "$ref": "#/components/schemas/System.Collections.Generic.DictionaryOfSystem.Int32AndSystem.String"
               }
             ]
+          },
+          "readyForReview": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/components/schemas/System.NullableOfSystem.Boolean"
+              }
+            ]
           }
         }
       },

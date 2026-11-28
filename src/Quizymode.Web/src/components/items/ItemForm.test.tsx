@@ -269,7 +269,7 @@ describe("ItemForm", () => {
     const input = screen.getByLabelText(/group label \(optional\)/i);
     expect(input).toHaveAttribute("maxlength", "30");
     expect(input).toHaveAttribute("placeholder", "e.g., Mammals");
-    expect(input).toHaveAccessibleDescription("Used by Sort It. Items with the same label form a group. Up to 30 characters.");
+    expect(input).toHaveAccessibleDescription("Used by Sort It. Questions with the same label form a group. Up to 30 characters.");
     const fields = screen.getByRole("group", { name: /more options/i }).querySelectorAll("input, textarea");
     expect(fields[0]).toBe(input);
   });
@@ -404,6 +404,8 @@ describe("ItemForm", () => {
       expect(privacy).toBeChecked();
       expect(screen.queryByText(PRIVATE_SENTENCE)).not.toBeInTheDocument();
       expect(screen.queryByRole("checkbox", { name: REVIEW_LABEL })).not.toBeInTheDocument();
+      // #928: admins have no review checkbox under any label.
+      expect(screen.queryByRole("checkbox", { name: /review/i })).not.toBeInTheDocument();
 
       await user.click(privacy);
       expect(onChange).toHaveBeenLastCalledWith({ ...defaultValues, isPrivate: false });

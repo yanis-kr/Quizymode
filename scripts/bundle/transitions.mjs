@@ -43,8 +43,14 @@ export function pastMerge(st) {
 // Bundle phases that hold the release slot: one bundle at a time between its release PR opening and its validation ending (design A, F3).
 export const RELEASE_SLOT_PHASES = new Set(["release_pr_open", "ci_green", "merged", "deployed", "validating"]);
 
+// Phases where the recorded release PR is read: a PR closed without merging there no longer holds the slot (#930).
+export const PR_CHECKED_PHASES = new Set(["release_pr_open", "ci_green"]);
+
 // The other bundle that holds the release slot, or null. Reads each bundle's state.json under bundlesDir.
-export function releaseSlotHolder(bundlesDir, bundleId) {
+// With prState(prNumber, repo) -> "OPEN" | "CLOSED" | "MERGED" | null, a bundle in release_pr_open or ci_green whose
+// recorded PR is CLOSED does not hold the slot. MERGED holds it (the merge is not recorded yet) and says so; a PR
+// state that cannot be read (null) holds it too.
+export function releaseSlotHolder(bundlesDir, bundleId, { prState } = {}) {
   if (!bundlesDir || !fs.existsSync(bundlesDir)) return null;
   for (const dir of fs.readdirSync(bundlesDir)) {
     if (dir === bundleId) continue;
@@ -52,9 +58,27 @@ export function releaseSlotHolder(bundlesDir, bundleId) {
     if (!fs.existsSync(file)) continue;
     let st;
     try { st = JSON.parse(fs.readFileSync(file, "utf8")); } catch { continue; }
-    if (RELEASE_SLOT_PHASES.has(st.phase)) return { bundleId: dir, phase: st.phase };
+    if (!RELEASE_SLOT_PHASES.has(st.phase)) continue;
+    const pr = st.release?.prNumber;
+    if (typeof prState !== "function" || !PR_CHECKED_PHASES.has(st.phase) || !pr) return { bundleId: dir, phase: st.phase };
+    let repo = null;
+    try { repo = JSON.parse(fs.readFileSync(path.join(bundlesDir, dir, "manifest.json"), "utf8")).repo?.nameWithOwner ?? null; } catch { repo = null; }
+    let state = null;
+    try { state = prState(pr, repo); } catch { state = null; }
+    if (state === "CLOSED") continue;
+    return { bundleId: dir, phase: st.phase, pr, prState: state ?? "unknown" };
   }
   return null;
+}
+
+// The refusal for a held slot. A merged PR names the commands that record the merge and finish the validation.
+export function releaseSlotMessage(holder) {
+  const base = `Release slot is held by bundle '${holder.bundleId}' (phase ${holder.phase})`;
+  if (holder.prState === "MERGED") {
+    return `${base}: its release PR #${holder.pr} is merged but the merge is not recorded. Record it with \`bundle.mjs phase ${holder.bundleId} merged --merge-sha <sha> --holder <token>\` (sha from \`gh pr view ${holder.pr} --json mergeCommit\`), then finish its validation: \`phase ${holder.bundleId} deployed --deploy-run <id>\`, \`phase ${holder.bundleId} validating\`, \`validation ${holder.bundleId} --issue <n> --result pass|fail --evidence <url>\` for each issue, then \`phase ${holder.bundleId} verified\` and \`done\`.`;
+  }
+  if (holder.prState === "unknown") return `${base}: the state of its release PR #${holder.pr} could not be read, so the slot stays held. Retry when gh can read it.`;
+  return `${base}. Wait until it is verified, done or blocked_terminal.`;
 }
 
 export const VALIDATION_KINDS = ["environmental", "defect", "ac-wrong", "product", "rolled-back"];

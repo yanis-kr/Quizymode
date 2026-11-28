@@ -17,6 +17,9 @@ import type { ImageSlotInput } from "@/api/media";
 
 const EXTRA_KEYWORD_AUTOCOMPLETE_LIMIT = 10;
 
+/** Input types where Enter activates the control itself instead of submitting the form. */
+const ENTER_ACTION_INPUT_TYPES = new Set(["button", "submit", "reset", "image", "file"]);
+
 export interface ItemFormValues {
   questionImage?: ImageSlotInput;
   explanationImage?: ImageSlotInput;
@@ -106,6 +109,7 @@ export function ItemForm({
   const [highlightIndex, setHighlightIndex] = useState(-1);
   const keywordInputContainerRef = useRef<HTMLDivElement>(null);
   const listboxId = `${mode}-extra-keyword-listbox`;
+  const primaryButtonRef = useRef<HTMLButtonElement>(null);
   const moreOptionsId = `${mode}-more-options`;
   const [moreOpenChoice, setMoreOpenChoice] = useState<boolean | null>(null);
 
@@ -230,6 +234,19 @@ export function ItemForm({
         [index]: updateSpeechSupport(values.incorrectAnswerSpeech[index], key, value),
       },
     });
+  };
+
+  // On Enter a browser uses the first submit button, which on Create is "Save and add another".
+  // Send it to the primary button instead (#927), unless the field handled Enter itself.
+  const submitWithPrimaryButton = (e: React.KeyboardEvent<HTMLFormElement>) => {
+    // Safari confirms an IME conversion with keyCode 229 and isComposing false.
+    const composing = e.nativeEvent.isComposing || e.nativeEvent.keyCode === 229;
+    if (e.key !== "Enter" || e.isDefaultPrevented() || composing) return;
+    const field = e.target;
+    if (!(field instanceof HTMLInputElement) || ENTER_ACTION_INPUT_TYPES.has(field.type)) return;
+    e.preventDefault();
+    const primary = primaryButtonRef.current;
+    if (primary && !primary.disabled) e.currentTarget.requestSubmit(primary);
   };
 
   const keywordBlock = (
@@ -375,6 +392,7 @@ export function ItemForm({
   return (
     <form
       onSubmit={e => { if (picturesBusy) { e.preventDefault(); return; } onSubmit(e); }}
+      onKeyDown={submitWithPrimaryButton}
       className="bg-surface shadow rounded-lg p-4 space-y-6 sm:p-6"
     >
       {validationError && (
@@ -500,7 +518,7 @@ export function ItemForm({
               className="w-full px-3 py-2 border border-gray-300 rounded-md text-sm bg-surface text-gray-900 placeholder:text-gray-500"
             />
             <p id={`${mode}-group-label-help`} className="mt-1 text-xs text-gray-500">
-              Used by Sort It. Items with the same label form a group. Up to 30 characters.
+              Used by Sort It. Questions with the same label form a group. Up to 30 characters.
             </p>
           </div>
 
@@ -674,7 +692,7 @@ export function ItemForm({
         <div>
           <h2 className="text-sm font-semibold text-gray-900">Save to</h2>
           <p className="mt-1 text-xs text-gray-500">
-            Category, primary topic, and subtopic define where the item appears when browsing.
+            Category, primary topic, and subtopic define where the question appears when browsing.
           </p>
         </div>
         <ItemTopicScopeFields
@@ -763,6 +781,7 @@ export function ItemForm({
           </button>
         )}
         <button
+          ref={primaryButtonRef}
           type="submit"
           disabled={isPending || picturesBusy}
           className="min-h-11 w-full whitespace-nowrap px-4 py-2 text-sm font-medium text-white bg-indigo-600 rounded-md hover:bg-indigo-700 disabled:opacity-50 sm:min-h-0 sm:w-auto"

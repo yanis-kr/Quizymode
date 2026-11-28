@@ -112,8 +112,8 @@ describe("CollectionDetailPage in-collection search (#555, AC 1.5.12)", () => {
     await user.type(screen.getByRole("searchbox"), "zebra");
     expect(screen.getByText(/No questions match/)).toHaveTextContent("zebra");
     expect(screen.queryByTestId("item-list")).not.toBeInTheDocument();
-    // The collection bar and the landing header both show the unfiltered count.
-    expect(screen.getAllByText("3 questions")).toHaveLength(2);
+    // Only the landing header shows the count (#929), and it stays unfiltered.
+    expect(screen.getAllByText("3 questions")).toHaveLength(1);
   });
 
   it("returns to page one when the search term changes", async () => {

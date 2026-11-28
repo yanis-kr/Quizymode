@@ -36,7 +36,6 @@ import { PlanForTestButton } from "@/features/studyPlans/PlanForTestButton";
 import { filterCollectionItems } from "../utils/collectionItemSearch";
 import { withQuizSize } from "@/utils/scopeStudyHref";
 import { SEO } from "@/components/SEO";
-import { questionCountLabel } from "@/utils/questionCountLabel";
 
 const CollectionDetailPage = () => {
   const { id } = useParams<{ id: string }>();
@@ -304,9 +303,6 @@ const CollectionDetailPage = () => {
           </div>
         </div>
         <div className="flex flex-wrap items-center gap-4">
-          <div className="text-sm text-slate-600">
-            {questionCountLabel(collectionData?.itemCount ?? totalCount)}
-          </div>
           {allItems.length > 0 && (
             <div className="flex items-center gap-2">
               <label className="text-sm text-slate-600">Per page:</label>
@@ -400,7 +396,7 @@ const CollectionDetailPage = () => {
               if (collectionData && v !== (collectionData.description ?? "") && !updateCollectionMutation.isPending)
                 updateCollectionMutation.mutate({ description: v || null });
             }}
-            placeholder="e.g. Biology chapter 5 practice set"
+            placeholder="e.g. Biology chapter 5 review"
             rows={2}
             className="w-full rounded-md border border-slate-300 bg-surface px-3 py-2 text-sm text-slate-900"
           />

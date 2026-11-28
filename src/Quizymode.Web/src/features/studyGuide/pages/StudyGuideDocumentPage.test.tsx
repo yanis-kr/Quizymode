@@ -362,6 +362,7 @@ describe("StudyGuideDocumentPage", () => {
     await screen.findByRole("button", { name: "Save 1 selected" });
     expect(screen.queryByText("Save as")).not.toBeInTheDocument();
     expect(screen.queryByRole("radio", { name: /publish to the library/i })).not.toBeInTheDocument();
+    expect(screen.getByText("Questions are saved as private.")).toBeInTheDocument(); // #924
     fireEvent.click(screen.getByRole("button", { name: "Save 1 selected" }));
     await waitFor(() => expect(studyGuideDocumentsApi.accept).toHaveBeenCalled());
     expect(vi.mocked(studyGuideDocumentsApi.accept).mock.calls[0][3]).toBeUndefined();
@@ -383,6 +384,8 @@ describe("StudyGuideDocumentPage", () => {
     await screen.findByRole("button", { name: "Save 205 selected" });
     expect(screen.getByRole("radio", { name: "Private (only me)" })).toBeChecked();
     fireEvent.click(screen.getByRole("radio", { name: /publish to the library/i }));
+    expect(screen.getByText("Questions are published as public.")).toBeInTheDocument(); // #924
+    expect(screen.getByText(/^Published questions become public\./)).toBeInTheDocument();
     fireEvent.click(screen.getByRole("button", { name: "Save 205 selected" }));
 
     await waitFor(() => expect(studyGuideDocumentsApi.accept).toHaveBeenCalledTimes(2));

@@ -50,7 +50,7 @@ function renderPage() {
   );
 }
 
-const descriptionBox = () => screen.findByPlaceholderText("e.g. Biology chapter 5 practice set");
+const descriptionBox = () => screen.findByPlaceholderText("e.g. Biology chapter 5 review");
 
 describe("CollectionDetailPage refused saves (AC 17.8)", () => {
   beforeEach(() => {

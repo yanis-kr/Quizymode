@@ -80,7 +80,7 @@ const RoadmapPage = () => {
               </li>
               <li className="flex items-start">
                 <span className="mr-2">•</span>
-                <span>Community-shared quiz sets</span>
+                <span>Community-shared quiz collections</span>
               </li>
               <li className="flex items-start">
                 <span className="mr-2">•</span>

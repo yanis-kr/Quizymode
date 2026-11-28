@@ -18,6 +18,7 @@ import {
   categoryNameToSlug,
   findCategoryNameFromSlug,
   buildCategoryPath,
+  categoryDisplayName,
 } from "@/utils/categorySlug";
 import { buildCollectionPath, buildCollectionStudyPath } from "@/utils/collectionPath";
 import { ExploreQuizBreadcrumb } from "@/components/ExploreQuizBreadcrumb";
@@ -877,7 +878,7 @@ const ExploreModePage = () => {
             <ExploreQuizBreadcrumb
               mode="explore"
               categorySlug={categoryNameToSlug(category)}
-              categoryDisplayName={category}
+              categoryDisplayName={categoryDisplayName(category)}
               keywords={navigationKeywords}
               keywordDescriptions={keywordDescriptions}
               onNavigate={(path) => navigate(path)}
