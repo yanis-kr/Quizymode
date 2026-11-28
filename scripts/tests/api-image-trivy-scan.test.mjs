@@ -63,8 +63,10 @@ test("AC 7.11.33: the job summary records the digest or image ID and the scanner
   assert.match(block, /trivy version --cache-dir "\$\{GITHUB_WORKSPACE\}\/\.cache\/trivy" --format json/);
 });
 
-test("AC 7.11.33: the first rollout is report-only and one value turns on enforcement", () => {
-  assert.match(block, /^ {6}TRIVY_ENFORCE: "false"$/m);
+// #906: the main report was clean, so the scan is enforced; the same one value returns it to report-only.
+test("AC 7.11.33: the scan is enforced, and one value switches it back to report-only", () => {
+  assert.match(block, /^ {6}TRIVY_ENFORCE: "true"$/m);
+  assert.doesNotMatch(block, /^ {6}TRIVY_ENFORCE: "false"$/m);
   assert.match(block, /continue-on-error: \$\{\{ env\.TRIVY_ENFORCE != 'true' \}\}/);
   assert.match(block, /exit-code: \$\{\{ env\.TRIVY_ENFORCE == 'true' && '1' \|\| '0' \}\}/);
   const target = block.slice(block.indexOf("id: scan_target"), block.indexOf("aquasecurity/trivy-action@"));
