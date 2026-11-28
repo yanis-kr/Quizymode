@@ -239,7 +239,9 @@ export function ItemForm({
   // On Enter a browser uses the first submit button, which on Create is "Save and add another".
   // Send it to the primary button instead (#927), unless the field handled Enter itself.
   const submitWithPrimaryButton = (e: React.KeyboardEvent<HTMLFormElement>) => {
-    if (e.key !== "Enter" || e.isDefaultPrevented() || e.nativeEvent.isComposing) return;
+    // Safari confirms an IME conversion with keyCode 229 and isComposing false.
+    const composing = e.nativeEvent.isComposing || e.nativeEvent.keyCode === 229;
+    if (e.key !== "Enter" || e.isDefaultPrevented() || composing) return;
     const field = e.target;
     if (!(field instanceof HTMLInputElement) || ENTER_ACTION_INPUT_TYPES.has(field.type)) return;
     e.preventDefault();

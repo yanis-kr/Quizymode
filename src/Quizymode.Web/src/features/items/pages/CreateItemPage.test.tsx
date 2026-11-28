@@ -1,5 +1,5 @@
 import { beforeEach, describe, expect, it, vi } from "vitest";
-import { render, screen, waitFor } from "@testing-library/react";
+import { fireEvent, render, screen, waitFor } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { MemoryRouter, Route, Routes, useLocation } from "react-router-dom";
@@ -443,6 +443,15 @@ describe("CreateItemPage", () => {
     await user.type(getFieldControl("Correct Answer *"), "{Enter}");
 
     expect(itemsApi.create).toHaveBeenCalledTimes(1);
+  });
+
+  it("Enter that confirms an input method conversion saves nothing (#927)", async () => {
+    const user = userEvent.setup({ delay: null });
+    await fillValidQuestion(user);
+
+    fireEvent.keyDown(getFieldControl("Correct Answer *"), { key: "Enter", keyCode: 229 });
+
+    expect(itemsApi.create).not.toHaveBeenCalled();
   });
 
   it("Save and add another runs native validation and does not save a blank question (#296)", async () => {
