@@ -36,7 +36,6 @@ import { PlanForTestButton } from "@/features/studyPlans/PlanForTestButton";
 import { filterCollectionItems } from "../utils/collectionItemSearch";
 import { withQuizSize } from "@/utils/scopeStudyHref";
 import { SEO } from "@/components/SEO";
-import { questionCountLabel } from "@/utils/questionCountLabel";
 
 const CollectionDetailPage = () => {
   const { id } = useParams<{ id: string }>();
@@ -304,9 +303,6 @@ const CollectionDetailPage = () => {
           </div>
         </div>
         <div className="flex flex-wrap items-center gap-4">
-          <div className="text-sm text-slate-600">
-            {questionCountLabel(collectionData?.itemCount ?? totalCount)}
-          </div>
           {allItems.length > 0 && (
             <div className="flex items-center gap-2">
               <label className="text-sm text-slate-600">Per page:</label>

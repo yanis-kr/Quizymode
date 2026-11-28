@@ -232,6 +232,7 @@ describe("Layout", () => {
   it.each([
     ["/items", "Questions"],
     ["/items/item-1", "Question Details"],
+    ["/items/item-1/edit", "Edit question"],
     ["/items/item-1/comments", "Question Comments"],
   ])("AC 3.6.49 titles %s %s (#923)", async (path, title) => {
     renderLayout([path]);

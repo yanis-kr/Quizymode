@@ -97,6 +97,17 @@ function renderPage(initialEntry: string) {
 }
 
 describe("ItemDetailPage", () => {
+  it("shows the category display name in the breadcrumb and links to its slug (#929)", async () => {
+    vi.mocked(itemsApi.getById).mockResolvedValue({
+      ...item,
+      category: "geography",
+      navigationBreadcrumb: ["capitals"],
+    } as never);
+    renderPage("/items/item-1");
+
+    expect(await screen.findByRole("link", { name: "Geography" })).toHaveAttribute("href", "/categories/geography");
+  });
+
   it("shows the curated question picture under the question (#407, AC 2.3.7)", async () => {
     vi.mocked(itemsApi.getById).mockResolvedValue({
       ...item,

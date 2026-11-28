@@ -89,7 +89,7 @@ function getFallbackTitle(pathname: string): string | undefined {
   }
 
   if (pathname.endsWith("/edit")) {
-    return "Edit Item";
+    return "Edit question";
   }
 
   if (pathname.includes("/comments")) {
