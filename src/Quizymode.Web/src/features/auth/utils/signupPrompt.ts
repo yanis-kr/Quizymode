@@ -23,8 +23,8 @@ export const SIGNUP_PROMPT_COPY: Record<AuthReason, SignupPromptCopy> = {
     cta: "Create account to bookmark",
   },
   "create-content": {
-    heading: "Create your own study sets",
-    body: "Create a free account to add private items and collections.",
+    heading: "Create your own collections",
+    body: "Create a free account to add private questions and collections.",
     cta: "Create a free account",
   },
   "join-discussion": {

@@ -107,7 +107,7 @@ For “send email to students signed to this app”: you need either:
 
 ### Teachers
 
-1. **Create a collection** (e.g. “Biology Ch. 5”) and add items.
+1. **Create a collection** (e.g. “Biology Ch. 5”) and add questions.
 2. **Make it public** (optional): so it can appear in Discover. Not required for sharing.
 3. **Share the collection**:
    - Open the collection → “Share” → enter student emails (and optional message).

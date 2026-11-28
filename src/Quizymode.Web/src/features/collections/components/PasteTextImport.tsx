@@ -117,7 +117,7 @@ const PasteTextImport = ({ maxItems, isPending, onImport, onPreviewChange }: Pas
       {format === "term-pairs" ? (
       <p className="text-xs text-gray-500">
         Paste a Quizlet export (term, tab, definition), an Anki text export, or CSV/TSV. Quizlet links and Anki .apkg
-        files are not supported. Wrong answers are picked from the other answers in the same set, so at least 4 usable
+        files are not supported. Wrong answers are picked from your other answers, so at least 4 usable
         rows are needed.
       </p>
       ) : (
@@ -255,7 +255,7 @@ const PasteTextImport = ({ maxItems, isPending, onImport, onPreviewChange }: Pas
             </p>
             {clozePreview.result.truncated && (
               <p role="alert" className="text-amber-700">
-                Your limit is {maxItems} items per upload, so only the first {maxItems} will be imported. Split the
+                Your limit is {maxItems} questions per upload, so only the first {maxItems} will be imported. Split the
                 rest into another upload.
               </p>
             )}
@@ -297,7 +297,7 @@ const PasteTextImport = ({ maxItems, isPending, onImport, onPreviewChange }: Pas
         {preview && (
           <div className="space-y-2">
             <p aria-live="polite">
-              {preview.built.items.length} item{preview.built.items.length === 1 ? "" : "s"} ready
+              {preview.built.items.length} question{preview.built.items.length === 1 ? "" : "s"} ready
               {preview.skipped.length > 0 && `, ${preview.skipped.length} row${preview.skipped.length === 1 ? "" : "s"} skipped`}
               {preview.built.duplicates > 0 &&
                 `, ${preview.built.duplicates} duplicate${preview.built.duplicates === 1 ? "" : "s"} removed`}
@@ -310,7 +310,7 @@ const PasteTextImport = ({ maxItems, isPending, onImport, onPreviewChange }: Pas
             )}
             {preview.built.truncated > 0 && (
               <p role="alert" className="text-amber-700">
-                Your limit is {maxItems} items per upload, so only the first {maxItems} will be imported. Split the
+                Your limit is {maxItems} questions per upload, so only the first {maxItems} will be imported. Split the
                 rest into another upload.
               </p>
             )}

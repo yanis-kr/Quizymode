@@ -29,7 +29,7 @@ export const MyItemsActions = ({
 
   const handleDelete = () => {
     if (
-      window.confirm("Are you sure you want to delete this item?")
+      window.confirm("Are you sure you want to delete this question?")
     ) {
       onDelete(item.id);
     }
@@ -47,7 +47,7 @@ export const MyItemsActions = ({
       <button
         onClick={handleViewItem}
         className="p-2 text-indigo-ink hover:bg-indigo-50 rounded-md"
-        title="View item"
+        title="View question"
       >
         <EyeIcon className="h-5 w-5" />
       </button>
@@ -73,8 +73,8 @@ export const MyItemsActions = ({
         }`}
         title={
           !canEditDelete
-            ? "Only admins can edit public items"
-            : "Update item"
+            ? "Only admins can edit public questions"
+            : "Update question"
         }
       >
         <PencilIcon className="h-5 w-5" />
@@ -89,8 +89,8 @@ export const MyItemsActions = ({
         }`}
         title={
           !canEditDelete
-            ? "Only admins can delete public items"
-            : "Delete item"
+            ? "Only admins can delete public questions"
+            : "Delete question"
         }
       >
         <TrashIcon className="h-5 w-5" />

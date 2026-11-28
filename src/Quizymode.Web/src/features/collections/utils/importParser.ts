@@ -332,7 +332,7 @@ export function buildImportItems(pairs: readonly TermPair[], options: BuildOptio
       skipped,
       duplicates,
       truncated: 0,
-      error: `At least ${MIN_USABLE_ROWS} usable rows are needed to build wrong answers from the same set.`,
+      error: `At least ${MIN_USABLE_ROWS} usable rows are needed to build wrong answers from your other rows.`,
     };
   }
 

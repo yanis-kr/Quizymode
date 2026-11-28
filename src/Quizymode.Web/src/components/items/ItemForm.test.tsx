@@ -269,7 +269,7 @@ describe("ItemForm", () => {
     const input = screen.getByLabelText(/group label \(optional\)/i);
     expect(input).toHaveAttribute("maxlength", "30");
     expect(input).toHaveAttribute("placeholder", "e.g., Mammals");
-    expect(input).toHaveAccessibleDescription("Used by Sort It. Items with the same label form a group. Up to 30 characters.");
+    expect(input).toHaveAccessibleDescription("Used by Sort It. Questions with the same label form a group. Up to 30 characters.");
     const fields = screen.getByRole("group", { name: /more options/i }).querySelectorAll("input, textarea");
     expect(fields[0]).toBe(input);
   });

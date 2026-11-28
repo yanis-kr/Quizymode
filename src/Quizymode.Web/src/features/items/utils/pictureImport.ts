@@ -34,12 +34,12 @@ export function findPictureImportError(rows: readonly unknown[]): string | null 
 
   if (offenders.length === 1) {
     const [{ itemNumber, fields }] = offenders;
-    return `Item ${itemNumber} has ${fields.map(quoted).join(" and ")}. ${FIX_HINT}`;
+    return `Question ${itemNumber} has ${fields.map(quoted).join(" and ")}. ${FIX_HINT}`;
   }
 
   const found = new Set(offenders.flatMap((offender) => offender.fields));
   const fieldText = PICTURE_FIELDS.filter((field) => found.has(field)).map(quoted).join(" or ");
-  return `Items ${formatItemNumbers(offenders.map((offender) => offender.itemNumber))} have ${fieldText}. ${FIX_HINT}`;
+  return `Questions ${formatItemNumbers(offenders.map((offender) => offender.itemNumber))} have ${fieldText}. ${FIX_HINT}`;
 }
 
 function isUploadedReference(value: unknown): boolean {

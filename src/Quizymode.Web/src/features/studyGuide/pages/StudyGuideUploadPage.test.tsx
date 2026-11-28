@@ -475,7 +475,7 @@ describe("StudyGuideUploadPage", () => {
     expect(notice).toHaveAttribute("role", "status");
     expect(notice).toHaveTextContent("That earlier upload is no longer available");
     expect(notice).toHaveTextContent(
-      "Earlier one-step study guide uploads have been retired, so their results can no longer be opened. Questions you already added from them are still in your private items. Upload your study guide below to generate new questions."
+      "Earlier one-step study guide uploads have been retired, so their results can no longer be opened. Questions you already added from them are still in your private questions. Upload your study guide below to generate new questions."
     );
     expect(studyGuideDocumentsApi.getConfig).toHaveBeenCalled();
     expect(await screen.findByRole("tab", { name: /upload file/i })).toBeInTheDocument();
