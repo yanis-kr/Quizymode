@@ -63,6 +63,7 @@ A failure inside an attempt goes back to step 3. Only validated issues are merge
 - If `BUNDLE state-init` or `BUNDLE select` exits 2 with `Autopilot is halted`, stop and report it. Two defect failures in one batch write `.qm/autopilot-halt.json`; only the owner removes that file, after reviewing the defects (AC 7.19.35).
 - Lanes never edit the version file (`version.file`), the `package.json` version, `docs/AC.md` (write an AC fragment to `.qm/ac-fragments/<n>.md` for the integrator instead), or `docs/openapi/quizymode-api.json`. Only the integrator does, in § Integration.
 - Lane branches merge into the release branch one at a time, in `order`, by the integrator.
+- Waiting on background agents (#930): when the only work left in a turn is lane agents running in the background, run `node scripts/bundle/autopilot-run.mjs wait --agents <count>` and end the turn. Their completion notices resume the run; on the resumed turn run `node scripts/bundle/autopilot-run.mjs wait-clear` first. The wait expires after 60 minutes like a PR wait, so a run whose agents never report stalls as usual.
 
 ## Integration
 

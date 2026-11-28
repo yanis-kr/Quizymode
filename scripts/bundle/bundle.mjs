@@ -19,7 +19,7 @@ import { sliceAc } from "../validation/ac-slice.mjs";
 import { ROLES, routeModel, classifyIssue, MODEL_ORDER } from "../automation/model-policy.mjs";
 import { readRun, writeRun, runFilePath, STALL_AFTER_BLOCKS } from "./autopilot-run.mjs";
 import { checkUserReply } from "./approval-reply.mjs";
-import { ISSUE_STATUSES, transitionError, releaseSlotHolder, VALIDATION_KINDS, validationOutcome, pastMerge } from "./transitions.mjs";
+import { ISSUE_STATUSES, transitionError, releaseSlotHolder, releaseSlotMessage, VALIDATION_KINDS, validationOutcome, pastMerge } from "./transitions.mjs";
 import { failureLabelPlan, applyFailureLabels, fixCycleFrom, readComments, nextFixCycleMarker } from "./failure-labels.mjs";
 import { batchGateErrors, gatherGateFacts, gateRecordError } from "./batch-gate.mjs";
 import { assertNoClosingKeywords } from "../release/prbody.mjs";
@@ -189,13 +189,37 @@ function profileErrors() {
   return errors;
 }
 // ---------- related ACs (#740) ----------
-function acMarkdown() {
-  const here = path.dirname(fileURLToPath(import.meta.url));
-  const file = typeof opts["ac-file"] === "string" ? path.resolve(String(opts["ac-file"])) : path.resolve(repoRoot(), profile().acFile);
-  return fs.existsSync(file) ? fs.readFileSync(file, "utf8") : "";
+// `check` and `approve` judge the manifest against the current AC file. Every later command reads the AC file at the
+// manifest's source commit, so a related heading or id that a bundle issue renames after approval still resolves (#930).
+const LIVE_AC_COMMANDS = new Set(["check", "approve"]);
+const acTextCache = new Map();
+/** The AC file at `commit` in the helper's checkout, or null when git cannot read it. */
+function acAtCommit(commit) {
+  if (!acTextCache.has(commit)) {
+    let text = null;
+    try {
+      text = execFileSync("git", ["-C", repoRoot(), "show", `${commit}:${profile().acFile}`], { encoding: "utf8", stdio: ["ignore", "pipe", "ignore"], maxBuffer: 64 * 1024 * 1024 });
+    } catch { text = null; }
+    acTextCache.set(commit, text);
+  }
+  return acTextCache.get(commit);
+}
+/** Where related references resolve for this command: an explicit --ac-file, the source commit's AC file, or the current one. */
+function acSource(sourceCommit) {
+  if (typeof opts["ac-file"] === "string") return { text: null, where: profile().acFile, file: path.resolve(String(opts["ac-file"])) };
+  if (sourceCommit && !LIVE_AC_COMMANDS.has(cmd)) {
+    const text = acAtCommit(sourceCommit);
+    if (text !== null) return { text, where: `${profile().acFile} at source commit ${sourceCommit.slice(0, 12)}` };
+  }
+  return { text: null, where: profile().acFile, file: path.resolve(repoRoot(), profile().acFile) };
+}
+function acMarkdown(sourceCommit) {
+  const s = acSource(sourceCommit);
+  if (s.text !== null) return s.text;
+  return fs.existsSync(s.file) ? fs.readFileSync(s.file, "utf8") : "";
 }
 const REL_KINDS = [["ids", "id", "id"], ["invariants", "invariant", "invariant"], ["headings", "heading", "heading"]];
-function relatedAcsErrors(it, tag) {
+function relatedAcsErrors(it, tag, sourceCommit) {
   if (it?.relatedAcs === undefined) return [];
   const r = it.relatedAcs;
   if (!r || typeof r !== "object" || Array.isArray(r)) return [`${tag}: relatedAcs must be an object { ids, invariants, headings }`];
@@ -205,8 +229,8 @@ function relatedAcsErrors(it, tag) {
     if (r[key] === undefined) continue;
     if (!Array.isArray(r[key]) || r[key].some((x) => typeof x !== "string" || !x)) { e.push(`${tag}: relatedAcs.${key} must be an array of non-empty strings`); continue; }
     for (const entry of r[key]) {
-      md ??= acMarkdown();
-      if (!sliceAc(md, { [arg]: entry }).length) e.push(`${tag}: relatedAcs ${label} '${entry}' does not resolve in ${profile().acFile}`);
+      md ??= acMarkdown(sourceCommit);
+      if (!sliceAc(md, { [arg]: entry }).length) e.push(`${tag}: relatedAcs ${label} '${entry}' does not resolve in ${acSource(sourceCommit).where}`);
     }
   }
   return e;
@@ -233,14 +257,14 @@ function dedupeSlice(lines, seen) {
   return out;
 }
 /** Builds the "Related ACs" lines: issue slice, then each id slice, then each invariant. Exits 2 naming a reference that no longer resolves. */
-function relatedAcsFor(issueSlice, rel) {
-  const md = acMarkdown();
+function relatedAcsFor(issueSlice, rel, sourceCommit) {
+  const md = acMarkdown(sourceCommit);
   const seen = new Set();
   const out = dedupeSlice(issueSlice.split("\n"), seen);
   for (const [key, arg, label] of REL_KINDS.filter((k) => k[0] !== "headings")) {
     for (const entry of rel?.[key] ?? []) {
       const lines = sliceAc(md, { [arg]: entry });
-      if (!lines.length) die(2, `Related AC ${label} '${entry}' no longer resolves in ${profile().acFile}; refine the issue again.`);
+      if (!lines.length) die(2, `Related AC ${label} '${entry}' no longer resolves in ${acSource(sourceCommit).where}; refine the issue again.`);
       const fresh = dedupeSlice(lines, seen);
       if (fresh.length) out.push("", ...fresh);
     }
@@ -302,7 +326,7 @@ function validateManifest(m, id) {
     req(typeof it?.ux === "boolean" && typeof it?.migration === "boolean", `${tag}: ux and migration must be booleans`);
     req(Array.isArray(it?.validation), `${tag}: validation must be an array`);
     req(Array.isArray(it?.acceptanceCriteria) && it.acceptanceCriteria.length > 0, `${tag}: at least one acceptance criterion required`);
-    e.push(...relatedAcsErrors(it, tag));
+    e.push(...relatedAcsErrors(it, tag, /^[0-9a-f]{40}$/.test(m.source?.commit ?? "") ? m.source.commit : null));
     for (const ac of it?.acceptanceCriteria ?? []) req(typeof ac?.id === "string" && typeof ac?.text === "string" && typeof ac?.evidence === "string", `${tag}: each AC needs id, text, evidence`);
     req(Array.isArray(it?.dependsOn), `${tag}: dependsOn must be an array`);
     req(it?.areas === undefined || (Array.isArray(it.areas) && it.areas.every((x) => /^area:[a-z0-9-]+$/.test(x))), `${tag}: areas must be area:<name> labels when set`);
@@ -437,6 +461,14 @@ function releaseHead(m) { return sh("git", ["rev-parse", "--verify", "--quiet", 
 function livePr(m, pr) {
   const raw = sh("gh", ["pr", "view", String(pr), "--repo", m.repo.nameWithOwner, "--json", "headRefOid,body"], true);
   return raw ? JSON.parse(raw) : null;
+}
+/** The state of a release PR from gh (OPEN, CLOSED or MERGED), or null when gh cannot read it (#930). */
+function prStateReader(defaultRepo) {
+  return (pr, repo) => {
+    const raw = sh("gh", ["pr", "view", String(pr), "--repo", repo ?? defaultRepo, "--json", "state"], true);
+    if (!raw) return null;
+    try { const s = JSON.parse(raw).state; return ["OPEN", "CLOSED", "MERGED"].includes(s) ? s : null; } catch { return null; }
+  };
 }
 /** Runs gh and throws an Error carrying gh's stderr, so a caller can tell "already exists" from a real failure. */
 function ghThrow(args) {
@@ -624,6 +656,8 @@ function renderPacket(p) {
   const L = [`# Work packet: #${p.issue} ${p.title}`, "", `attempt: ${p.attempt} of ${p.maxAttempts}`, `facts (${p.factSource}): size ${p.size}, risk ${p.risk}${p.riskSource ? ` (${p.riskSource})` : ""}, migration ${p.migration}${p.migrationSource ? ` (${p.migrationSource})` : ""}`, ...(p.classification ? [`classification: ${p.classification}`] : []), "", "## Goal", p.goal, ""];
   L.push("## Models by role (dispatch each agent with its role's model)", ...Object.entries(p.models).map(([r, m]) => `- ${r}: ${m.model}. Why: ${m.reason}`), "");
   L.push("## Acceptance criteria", ...p.acs.map((a) => `- ${a.id} [verify: ${a.evidence}] ${a.text}`), "");
+  // The release PR's ac-gate fails on an AC line with no verify tag, so lanes tag every line they propose (#930).
+  L.push(`Every new or reworded AC line in this lane's AC fragment ends with a \`[verify: <method>]\` tag, the method being one of ${profile().acceptanceMethods.join(", ")}.`, "");
   L.push("## Exclusions", ...(p.exclusions.length ? p.exclusions.map((x) => `- ${x}`) : ["- (none)"]), "");
   L.push("## scope.paths", ...(p.paths.length ? p.paths.map((x) => `- ${x}`) : ["- (unknown: none declared; find files by Grep and say what you checked)"]), "");
   L.push("## dependsOn", p.dependsOn.length ? p.dependsOn.map((d) => (typeof d === "number" ? `#${d}` : d.external)).join(", ") : "(none)", "");
@@ -638,11 +672,11 @@ function renderPacket(p) {
   return L.join("\n");
 }
 function writePacket(p) {
-  const md = acMarkdown();
+  const md = acMarkdown(p.sourceCommit);
   p.invariantIndex = sliceAc(md, { "invariants-index": true });
   const api = p.paths.some((x) => x.replaceAll(String.fromCharCode(92), "/").startsWith(`${profile().checks.api.root}/`));
   p.apiConventions = api ? sliceAc(md, { heading: "Common API conventions" }) : null;
-  p.related = relatedAcsFor(p.acSlice, p.relatedRefs);
+  p.related = relatedAcsFor(p.acSlice, p.relatedRefs, p.sourceCommit);
   p.relatedHeadings = p.relatedRefs?.headings ?? [];
   const dir = typeof opts["packets-dir"] === "string" ? path.resolve(String(opts["packets-dir"])) : path.join(mainCheckoutRoot(), ".qm", "packets");
   const hbDir = typeof opts["handbacks-dir"] === "string" ? path.resolve(String(opts["handbacks-dir"])) : path.join(mainCheckoutRoot(), ".qm", "handbacks");
@@ -1043,8 +1077,8 @@ switch (cmd) {
     if (phase === "release_pr_open") {
       refuseIfHalted(); // a halt stops new releases too (AC 7.19.35)
       // One release at a time (design A, F3): a second bundle may not open its release PR while another one holds the slot.
-      const holder = releaseSlotHolder(bundlesDir(), id);
-      if (holder) die(2, `Release slot is held by bundle '${holder.bundleId}' (phase ${holder.phase}). Wait until it is verified, done or blocked_terminal.`, { holder });
+      const holder = releaseSlotHolder(bundlesDir(), id, { prState: prStateReader(m.repo.nameWithOwner) });
+      if (holder) die(2, releaseSlotMessage(holder), { holder });
       // The batch gate must have passed on this exact release head (AC 7.19.44).
       const gateError = gateRecordError(st.batchGate, releaseHead(m));
       if (gateError) die(2, `Batch gate: ${gateError}.`, { batchGate: st.batchGate ?? null });
@@ -1072,8 +1106,8 @@ switch (cmd) {
     if (!vals.some((i) => i.status === "integrated")) errs.push("no integrated issue to ship");
     if (vals.some((i) => ["pending", "in_progress", "implemented"].includes(i.status))) errs.push("some issues are still in progress; finish or defer them first");
     if (vals.some((i) => i.status === "validated")) errs.push("some issues are validated but not integrated; integrate them into the release branch first");
-    const holder = releaseSlotHolder(bundlesDir(), id);
-    if (holder) errs.push(`release slot is held by bundle '${holder.bundleId}' (phase ${holder.phase})`);
+    const holder = releaseSlotHolder(bundlesDir(), id, { prState: prStateReader(m.repo.nameWithOwner) });
+    if (holder) errs.push(releaseSlotMessage(holder));
     if (m.policies.partialRelease === "all-or-nothing" && vals.some((i) => i.status !== "integrated" && i.status !== "skipped_already_done")) errs.push("partialRelease is all-or-nothing and not every issue is integrated");
     // The batch gate covers the PR head being merged, and the live PR body still closes nothing (AC 7.19.44).
     const live = pr ? livePr(m, pr) : null;
@@ -1485,7 +1519,7 @@ switch (cmd) {
     const size = it.size ?? "unknown";
     const extra = it.validation.filter((v) => /^(npm|npx|dotnet|node|eslint) /.test(v) && !/test:coverage/.test(v) && v !== "dotnet test");
     writePacket({ issue: num, title: it.title, goal: it.scope.summary ?? it.title, acs: it.acceptanceCriteria, exclusions: it.scope.exclusions ?? [], paths: it.scope.paths, scopeKnown: it.scope.paths.length > 0, dependsOn: it.dependsOn,
-      relatedRefs: it.relatedAcs, checks: packetChecks(it.scope.paths, num, extra), acSlice: acSliceFor(num), size, risk: it.risk, migration: it.migration,
+      relatedRefs: it.relatedAcs, sourceCommit: m.source.commit, checks: packetChecks(it.scope.paths, num, extra), acSlice: acSliceFor(num), size, risk: it.risk, migration: it.migration,
       attempt, maxAttempts: m.limits.maxAttemptsPerIssue, factSource: "approved manifest", models: modelsFor({ size, risk: it.risk, migration: it.migration, failure: failureFrom(opts.failure, attempt), priorModel: priorModelFrom(opts["prior-model"]) }) });
   }
   case "handback-check": {
