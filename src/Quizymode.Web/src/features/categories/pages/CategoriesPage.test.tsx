@@ -27,6 +27,9 @@ vi.mock("@/api/keywords", () => ({
 vi.mock("@/api/items", () => ({ itemsApi: { getAll: vi.fn() } }));
 vi.mock("@/api/featured", () => ({ featuredApi: { get: vi.fn() } }));
 vi.mock("@/api/games", () => ({ gamesApi: { getRoster: vi.fn() } }));
+vi.mock("@/api/taxonomy", () => ({
+  taxonomyApi: { getAll: vi.fn().mockResolvedValue({ categories: [] }), suggest: vi.fn() },
+}));
 vi.mock("@/api/ratings", () => ({
   ratingsApi: {
     getStats: vi.fn().mockResolvedValue({ averageStars: null, count: 0 }),
@@ -764,5 +767,54 @@ describe("Questions and topics wording (#922)", () => {
       "There are no more subtopics here. Browse questions, use flashcards, or take a quiz."
     );
     expect(categoriesPageSource).not.toMatch(/List sets|List items|sets hierarchy/);
+  });
+});
+
+describe("Categories map button (#926)", () => {
+  beforeEach(() => {
+    vi.clearAllMocks();
+    installMemoryLocalStorage();
+    vi.mocked(categoriesApi.getAll).mockResolvedValue({
+      categories: [{ category: "Geography", count: 12, description: "Places.", averageRating: null }],
+    } as never);
+    vi.mocked(keywordsApi.getNavigationKeywords).mockResolvedValue({
+      keywords: [{ name: "capitals", itemCount: 12, averageRating: null, navigationRank: 1, description: null }],
+    } as never);
+    vi.mocked(keywordsApi.getKeywordDescriptions).mockResolvedValue({ keywords: [] });
+    vi.mocked(keywordsApi.getItemTagKeywords).mockResolvedValue({ names: [] });
+    vi.mocked(featuredApi.get).mockResolvedValue({ sets: [], collections: [] });
+    vi.mocked(itemsApi.getAll).mockResolvedValue({
+      items: [makeItem("1", "Q one", "Answer one")], totalCount: 1, page: 1, pageSize: 10, totalPages: 1,
+    } as never);
+  });
+
+  it.each([
+    ["the category List view", "/categories/geography?view=items"],
+    ["the All categories List view", "/categories/all?view=items"],
+  ])("opens the map from %s and closing it returns to the same list (#926)", async (_name, url) => {
+    const user = userEvent.setup({ delay: null });
+    renderAt(url);
+    await screen.findByText("Q one");
+    expect(screen.queryByRole("dialog")).not.toBeInTheDocument();
+
+    await user.click(screen.getByRole("button", { name: "Map" }));
+    const dialog = screen.getByRole("dialog", { name: /map/i });
+    await user.click(within(dialog).getByRole("button", { name: /close/i }));
+
+    expect(screen.queryByRole("dialog")).not.toBeInTheDocument();
+    expect(screen.getByText("Q one")).toBeInTheDocument();
+    expect(screen.getByRole("tab", { name: "List" })).toHaveAttribute("aria-selected", "true");
+  });
+
+  it.each([
+    ["the category index", "/categories"],
+    ["a category topic view", "/categories/geography"],
+  ])("still opens the map from %s (#926)", async (_name, url) => {
+    const user = userEvent.setup({ delay: null });
+    renderAt(url);
+
+    await user.click(await screen.findByRole("button", { name: "Map" }));
+
+    expect(screen.getByRole("dialog", { name: /map/i })).toBeInTheDocument();
   });
 });

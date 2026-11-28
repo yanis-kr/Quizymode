@@ -1412,6 +1412,7 @@ const CategoriesPage = () => {
             )}
           </section>
         </div>
+        <CategoriesMapModal isOpen={showMapModal} onClose={() => setShowMapModal(false)} />
       </>
     );
   }
