@@ -456,7 +456,12 @@ describe("CreateItemPage", () => {
       expect(requestSubmit).not.toHaveBeenCalled();
       expect(itemsApi.create).not.toHaveBeenCalled();
 
-      // The same key event without keyCode 229 does save, so the check above is not vacuous.
+      // Other browsers report the same confirm Enter as isComposing.
+      fireEvent.keyDown(getFieldControl("Correct Answer *"), { key: "Enter", isComposing: true });
+
+      expect(requestSubmit).not.toHaveBeenCalled();
+
+      // The same key event without either does save, so the checks above are not vacuous.
       fireEvent.keyDown(getFieldControl("Correct Answer *"), { key: "Enter" });
 
       expect(requestSubmit).toHaveBeenCalledTimes(1);
