@@ -212,7 +212,7 @@ async function openFilledForm(page: Page): Promise<string[]> {
   return created;
 }
 
-test("AC 927-A Enter in a single-line field saves once and opens the question like Save and study", async ({ page }) => {
+test("AC 2.1.29 Enter in a single-line field saves once and opens the question like Save and study", async ({ page }) => {
   const created = await openFilledForm(page);
 
   await page.getByLabel("Correct Answer *", { exact: true }).press("Enter");
@@ -221,7 +221,7 @@ test("AC 927-A Enter in a single-line field saves once and opens the question li
   expect(created).toHaveLength(1);
 });
 
-test("AC 927-B the create actions keep their order and Save and add another saves and clears the form", async ({ page }) => {
+test("AC 2.1.32 the create actions keep their order and Save and add another saves and clears the form", async ({ page }) => {
   const created = await openFilledForm(page);
   const cancel = page.getByRole("button", { name: "Cancel", exact: true });
   const another = page.getByRole("button", { name: "Save and add another", exact: true });

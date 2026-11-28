@@ -96,13 +96,13 @@ test.describe("Create and feedback wording (#924)", () => {
   test.use({ navigationTimeout: 20_000, actionTimeout: 10_000 });
   test.describe.configure({ timeout: 45_000 });
 
-  test("AC 924-A the Create hub says questions and topics", async ({ page }) => {
+  test("AC 2.2.8 the Create hub says questions and topics", async ({ page }) => {
     await open(page, "/create");
     await expect(page.getByRole("heading", { level: 1, name: "Create" })).toBeVisible(FIRST);
     await expectNewWording(page, "/create");
   });
 
-  test("AC 924-A Write a question says questions and topics", async ({ page }) => {
+  test("AC 2.2.8 Write a question says questions and topics", async ({ page }) => {
     await open(page, "/create/question");
     await expect(page.getByRole("heading", { level: 1, name: "Write a question" })).toBeVisible(FIRST);
     await expect(page.getByText("New questions will be added to your active collection")).toBeVisible();
@@ -110,19 +110,19 @@ test.describe("Create and feedback wording (#924)", () => {
     await expectNewWording(page, "/create/question");
   });
 
-  test("AC 924-A Import questions says questions and topics", async ({ page }) => {
+  test("AC 2.2.8 Import questions says questions and topics", async ({ page }) => {
     await open(page, "/create/import");
     await expect(page.getByRole("heading", { level: 1, name: "Import questions" })).toBeVisible(FIRST);
     await expectNewWording(page, "/create/import");
   });
 
-  test("AC 924-A My collections says questions and topics", async ({ page }) => {
+  test("AC 2.2.8 My collections says questions and topics", async ({ page }) => {
     await open(page, "/collections");
     await expect(page.getByText(collection.name).first()).toBeVisible(FIRST);
     await expectNewWording(page, "/collections");
   });
 
-  test("AC 924-A Feedback and its request form say questions and topics", async ({ page }) => {
+  test("AC 2.2.8 Feedback and its request form say questions and topics", async ({ page }) => {
     await open(page, "/feedback");
     const request = page.getByRole("heading", { name: "Ask for more questions" });
     await expect(request).toBeVisible(FIRST);
