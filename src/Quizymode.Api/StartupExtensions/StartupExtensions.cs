@@ -200,8 +200,51 @@ internal static partial class StartupExtensions
         if (!app.Environment.IsDevelopment())
         {
             app.UseHsts();
+            app.UseUnhandledExceptionAs500();
         }
 
         return app;
+    }
+
+    /// <summary>
+    /// #906: Kestrel answers an unhandled exception with its own 500 after resetting every header and without running
+    /// OnStarting, so the security headers would be lost. Outside Development this middleware (inside UseHsts) turns
+    /// such an exception into an empty 500 that keeps them. It logs the exception under Kestrel's category, event and
+    /// message, as Kestrel did, and tags error.type for the request metric and trace. A started response or an aborted
+    /// request is rethrown to Kestrel unchanged; client-disconnect cancellations are absorbed further in (499).
+    /// </summary>
+    private static void UseUnhandledExceptionAs500(this WebApplication app)
+    {
+        Microsoft.Extensions.Logging.ILogger logger = app.Services.GetRequiredService<ILoggerFactory>().CreateLogger("Microsoft.AspNetCore.Server.Kestrel");
+        app.Use(async (context, next) =>
+        {
+            try
+            {
+                await next(context);
+            }
+            catch (Exception exception) when (!context.Response.HasStarted && !context.RequestAborted.IsCancellationRequested)
+            {
+                logger.LogError(
+                    new EventId(13, "ApplicationError"),
+                    exception,
+                    "Connection id \"{ConnectionId}\", Request id \"{TraceIdentifier}\": An unhandled exception was thrown by the application.",
+                    context.Connection.Id,
+                    context.TraceIdentifier);
+
+                string errorType = exception.GetType().FullName ?? exception.GetType().Name;
+                context.Features.Get<Microsoft.AspNetCore.Http.Features.IHttpMetricsTagsFeature>()?.Tags.Add(new("error.type", errorType));
+                System.Diagnostics.Activity.Current?.SetTag("error.type", errorType);
+
+                HttpResponse response = context.Response;
+                Microsoft.Extensions.Primitives.StringValues hsts = response.Headers.StrictTransportSecurity;
+                response.Clear();
+                if (!Microsoft.Extensions.Primitives.StringValues.IsNullOrEmpty(hsts))
+                {
+                    response.Headers.StrictTransportSecurity = hsts;
+                }
+
+                response.StatusCode = StatusCodes.Status500InternalServerError;
+            }
+        });
     }
 }

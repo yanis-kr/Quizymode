@@ -1,3 +1,4 @@
+using System.Collections.Concurrent;
 using System.Net;
 using FluentAssertions;
 using Microsoft.AspNetCore.Builder;
@@ -8,6 +9,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Microsoft.Extensions.Logging;
 using Quizymode.Api.StartupExtensions;
 using Xunit;
 
@@ -19,6 +21,7 @@ public sealed class SecurityHardeningHttpTests
 {
     private const string WebOrigin = "https://www.quizymode.com";
     private const string ApexOrigin = "https://quizymode.com";
+    private const string ThrowsMessage = "secret failure detail";
 
     [Fact]
     public void ProductionConfiguration_ListsExactlyTheTwoWebOrigins()
@@ -121,6 +124,7 @@ public sealed class SecurityHardeningHttpTests
     [InlineData("Production", "sets-nosniff")]
     [InlineData("Production", "appends-nosniff")]
     [InlineData("Production", "no-such-route")]
+    [InlineData("Production", "throws")]
     [InlineData("Development", "echo")]
     public async Task EveryResponse_HasExactlyOneNosniff(string environment, string path)
     {
@@ -129,6 +133,23 @@ public sealed class SecurityHardeningHttpTests
         using HttpResponseMessage response = await host.Client.SendAsync(Forwarded(path, "https"));
 
         response.Headers.GetValues("X-Content-Type-Options").Should().Equal("nosniff");
+    }
+
+    [Fact]
+    public async Task OutsideDevelopment_UnhandledException_Is500WithBothHeaders_NoDetail_AndIsLogged()
+    {
+        await using TestHost host = await TestHost.StartAsync(Environments.Production, useProductionSettings: true);
+
+        using HttpResponseMessage response = await host.Client.SendAsync(Forwarded("throws", "https"));
+        string body = await response.Content.ReadAsStringAsync();
+
+        response.StatusCode.Should().Be(HttpStatusCode.InternalServerError);
+        response.Headers.GetValues("X-Content-Type-Options").Should().Equal("nosniff");
+        response.Headers.GetValues("Strict-Transport-Security").Single().Should().StartWith("max-age=31536000");
+        body.Should().BeEmpty();
+        response.Headers.ToString().Should().NotContain(ThrowsMessage);
+        host.Logs.Should().ContainSingle(entry => entry.Level == LogLevel.Error && entry.Exception != null
+            && entry.Exception.Message == ThrowsMessage && entry.Message.Contains("unhandled exception"));
     }
 
     [Fact]
@@ -177,9 +198,31 @@ public sealed class SecurityHardeningHttpTests
             ?? throw new InvalidOperationException("Could not locate the repository root from the test output directory.");
     }
 
-    private sealed class TestHost(WebApplication app, HttpClient client) : IAsyncDisposable
+    private sealed record LogEntry(LogLevel Level, string Message, Exception? Exception);
+
+    private sealed class CapturingLoggerProvider : ILoggerProvider, ILogger
+    {
+        public ConcurrentQueue<LogEntry> Entries { get; } = new();
+
+        public ILogger CreateLogger(string categoryName) => this;
+
+        public IDisposable? BeginScope<TState>(TState state) where TState : notnull => null;
+
+        public bool IsEnabled(LogLevel logLevel) => true;
+
+        public void Log<TState>(LogLevel logLevel, EventId eventId, TState state, Exception? exception, Func<TState, Exception?, string> formatter) =>
+            Entries.Enqueue(new LogEntry(logLevel, formatter(state, exception), exception));
+
+        public void Dispose()
+        {
+        }
+    }
+
+    private sealed class TestHost(WebApplication app, HttpClient client, CapturingLoggerProvider logs) : IAsyncDisposable
     {
         public HttpClient Client { get; } = client;
+
+        public IReadOnlyCollection<LogEntry> Logs => logs.Entries;
 
         public static async Task<TestHost> StartAsync(string environment, bool useProductionSettings)
         {
@@ -194,6 +237,8 @@ public sealed class SecurityHardeningHttpTests
                 builder.Configuration.AddJsonFile(ProductionSettingsPath(), optional: false);
             }
 
+            CapturingLoggerProvider logs = new();
+            builder.Logging.AddProvider(logs);
             builder.AddProxyAndSecurityHeaderServices();
             builder.AddCorsServices();
 
@@ -214,11 +259,12 @@ public sealed class SecurityHardeningHttpTests
                 context.Response.Headers.Append("X-Content-Type-Options", "nosniff");
                 return "ok";
             });
+            app.MapGet("/throws", (HttpContext _) => throw new InvalidOperationException(ThrowsMessage));
             await app.StartAsync();
 
             string address = app.Services.GetRequiredService<IServer>()
                 .Features.Get<IServerAddressesFeature>()!.Addresses.First();
-            return new TestHost(app, new HttpClient { BaseAddress = new Uri(address) });
+            return new TestHost(app, new HttpClient { BaseAddress = new Uri(address) }, logs);
         }
 
         public async ValueTask DisposeAsync()
