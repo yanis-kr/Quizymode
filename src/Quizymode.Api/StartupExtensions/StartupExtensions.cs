@@ -47,6 +47,9 @@ internal static partial class StartupExtensions
         // #906: security headers on every response, including the startup gate's 503 and error responses.
         app.UseSecurityHeaders();
 
+        // #933: outside Development only the listed hosts get past here (400 otherwise); /health is exempt.
+        app.UseAllowedHostCheck();
+
         // #732: 503 + Retry-After for everything except the probes until migrations and seeding are done.
         app.UseMiddleware<Services.Startup.StartupGateMiddleware>();
 
