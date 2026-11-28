@@ -445,13 +445,30 @@ describe("CreateItemPage", () => {
     expect(itemsApi.create).toHaveBeenCalledTimes(1);
   });
 
-  it("Enter that confirms an input method conversion saves nothing (#927)", async () => {
+  it("Enter that confirms an input method conversion saves nothing (#927, #935)", async () => {
     const user = userEvent.setup({ delay: null });
-    await fillValidQuestion(user);
+    const requestSubmit = vi.spyOn(HTMLFormElement.prototype, "requestSubmit");
+    try {
+      await fillValidQuestion(user);
 
-    fireEvent.keyDown(getFieldControl("Correct Answer *"), { key: "Enter", keyCode: 229 });
+      fireEvent.keyDown(getFieldControl("Correct Answer *"), { key: "Enter", keyCode: 229 });
 
-    expect(itemsApi.create).not.toHaveBeenCalled();
+      expect(requestSubmit).not.toHaveBeenCalled();
+      expect(itemsApi.create).not.toHaveBeenCalled();
+
+      // Other browsers report the same confirm Enter as isComposing.
+      fireEvent.keyDown(getFieldControl("Correct Answer *"), { key: "Enter", isComposing: true });
+
+      expect(requestSubmit).not.toHaveBeenCalled();
+
+      // The same key event without either does save, so the checks above are not vacuous.
+      fireEvent.keyDown(getFieldControl("Correct Answer *"), { key: "Enter" });
+
+      expect(requestSubmit).toHaveBeenCalledTimes(1);
+      await waitFor(() => expect(itemsApi.create).toHaveBeenCalledTimes(1));
+    } finally {
+      requestSubmit.mockRestore();
+    }
   });
 
   it("Save and add another runs native validation and does not save a blank question (#296)", async () => {

@@ -294,7 +294,7 @@ function buildIndexHtml(manifest, options) {
           <p class="eyebrow">Quizymode User Guide</p>
           <h1>Learn, quiz, and organise — all in one place</h1>
           <p class="app-intro">
-            Quizymode is a study and quiz application for learning from structured question banks. Browse items by subject area and topic, practise with flashcards or multiple-choice quizzes, and organise content into personal or shared collections. Items can be created manually, imported in bulk, or generated with AI assistance — all anchored to a subject-area taxonomy that keeps study sessions focused.
+            Quizymode is a study and quiz application for learning from structured question banks. Browse questions by category and topic, practise with flashcards or multiple-choice quizzes, and organise them into personal or shared collections. Questions can be created manually, imported in bulk, or generated with AI assistance — all anchored to a subject-area taxonomy that keeps study sessions focused.
           </p>
           <p class="lede">
             This guide walks through every major feature available to signed-in users. Screenshots are captured automatically from the live production site after each deployment. Use the Desktop / Mobile and Dark / Light switches to compare the same scenario at each viewport and theme.

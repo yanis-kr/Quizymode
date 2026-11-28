@@ -21,6 +21,14 @@ AWS Lightsail hosts the Quizymode API container in production.
 - CORS in production allows only the web origins in `Cors:AllowedOrigins` (`https://www.quizymode.com`, `https://quizymode.com`). Development allows any origin. To add an origin, change that list (or set `APP_Cors__AllowedOrigins__<n>`), exact scheme and host, no trailing slash.
 - Every API response carries `X-Content-Type-Options: nosniff`; HTTPS responses outside Development also carry `Strict-Transport-Security: max-age=31536000`. The load balancer's internal plain-HTTP health probe gets no HSTS header, which is expected.
 
+## Allowed host names (#933)
+
+- In Production the API answers only the hosts in `HostFiltering:AllowedHosts` (`appsettings.Production.json`): today just the public host `container-service-1.g3tzw2psg9dm4.us-east-1.cs.amazonlightsail.com`, the host of `VITE_API_URL` in `src/Quizymode.Web/.env.production`. Any other or missing `Host` gets an empty 400 before the startup gate. Hosts compare case-insensitively and the port is ignored.
+- Only the exact path `/health` is exempt, because the load balancer probes it with the container's private address as `Host` (for example `172.26.0.5:8080`). `/alive` is not exempt.
+- The root `AllowedHosts` key stays `*`. The framework's own host filter runs before every middleware and cannot exempt `/health`, so setting it would fail the health check and the deployment.
+- If Production starts with an empty list, startup fails rather than accepting any host. Development accepts any host.
+- To add a custom domain, add its host to the list (or set `APP_HostFiltering__AllowedHosts__<n>`) in the same change that points it at the service, and update `VITE_API_URL` if the web app should call it; a test keeps the list equal to that host.
+
 ## Related Docs
 
 - [COGNITO_SETUP.md](./COGNITO_SETUP.md)
