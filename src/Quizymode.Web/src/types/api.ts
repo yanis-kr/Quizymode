@@ -96,6 +96,8 @@ export interface ItemResponse {
   navigationBreadcrumb?: string[];
   /** Picture review state (#401); present for the creator and admins only. */
   imageReview?: ItemImageReviewInfo | null;
+  /** Review request flag; GET /items/{id} returns it to the creator and admins only (#928). */
+  readyForReview?: boolean | null;
 }
 
 export interface ItemsResponse {

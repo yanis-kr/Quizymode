@@ -122,7 +122,7 @@ const EditItemPage = () => {
           : [],
         source: itemData.source || "",
         groupLabel: itemData.groupLabel || "",
-        readyForReview: false,
+        readyForReview: itemData.readyForReview ?? false,
       });
     }
   }, [itemData]);
@@ -218,7 +218,8 @@ const EditItemPage = () => {
       source: formData.source.trim() || undefined,
       // A blank value clears the stored label; an omitted one would keep it.
       groupLabel: formData.groupLabel.trim(),
-      readyForReview: formData.readyForReview,
+      // An admin has no review checkbox: making a question public also takes it out of the review queue.
+      readyForReview: isAdmin && !formData.isPrivate ? false : formData.readyForReview,
     };
 
     const uploaded = itemData?.questionImage?.key.startsWith("media:") || itemData?.explanationImage?.key.startsWith("media:");
